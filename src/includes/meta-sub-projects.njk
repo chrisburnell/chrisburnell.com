@@ -1,0 +1,8 @@
+<h3>Latest projects:</h3>
+<div class=" [ meta__list ] ">
+	{% for lookup in projects.personal | limit(site.limits.feature) %}
+		<a href="{{ lookup.url }}">{{ lookup.data.title }}</a>
+		{{ lookup.data.description | markdownFormat | safe }}
+	{% endfor %}
+</div>
+<p><a href="/projects/">See more →</a></p>

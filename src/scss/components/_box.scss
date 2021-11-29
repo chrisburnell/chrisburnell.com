@@ -4,7 +4,7 @@
 ////
 
 .box {
-	@include owl(small);
+	@include owl(medium);
 	background-color: h(thunder, delta);
 	@include v(padding, medium);
 	border-block-start: var(--measure-border-thin) solid h(raven, beta);

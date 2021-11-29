@@ -20,7 +20,7 @@ description: Browse all of my posts by a variety of metrics.
 		{% sparkline collection, first_year, latest_year %}
 	</div>
 
-	<div class=" [ content__body ] [ h-feed ] ">
+	<div class=" [ content__body ] [ h-feed ] {% if toc %}[ generate-toc ] {% endif %}">
 		{% for lookup in collections.categories %}
 			{%- if lookup.title == 'note' -%}
 				{% set collection = collections.notesWithoutReplies %}

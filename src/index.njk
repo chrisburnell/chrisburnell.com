@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: base
 title: The Homepage
 eleventyComputed:
   description: "{{ site.description | safe }}"
@@ -10,78 +10,100 @@ sitemap:
 ---
 {% from 'macros/deckItem.njk' import deckItem %}
 
-{% if collections.todayRSVPs.length %}
-	<div class=" [ box ] [ owl--medium ] ">
-		<h2 id="today-rsvps">
-			<a href="/rsvps/">Events I’m Attending Today</a>
-		</h2>
-		<nav class=" [ deck ] " aria-labelledby="today-rsvps">
-			{% for item in collections.todayRSVPs %}
-				{{ deckItem(item, global.now, collections.all, people, [], false) }}
-			{% endfor %}
-		</nav>
+<article id="content" class=" [ content ] [ wrap ] [ page ] ">
+
+	<h1 id="title" class=" [ title{% if title_error %} title--negative{% elif title_success %} title--positive{% endif %} ] ">
+		<span class=" [ p-name ] ">{{ tagline | default(title) | safe }}</span>
+	</h1>
+
+	<div class=" [ details ] ">
+		<p class=" [ p-summary ] " aria-hidden="true">{{ description | safe | replace('href=', 'tabindex="-1" href=') }}</p>
 	</div>
-{% endif %}
 
-<h2 id="latest">
-	<a href="/archive/">Latest Posts</a>
-</h2>
-<nav class=" [ deck ] [ h-feed ] " aria-labelledby="latest">
-	{% for item in collections.featurePosts | limit(site.limits.feature) %}
-		{{ deckItem(item, global.now, collections.all, people, webmentions) }}
-	{% endfor %}
-</nav>
+	<div class=" [ content__body ] ">
+		<div class=" [ e-content ] {% if toc %}[ generate-toc ] {% endif %}">
+			{% if collections.todayRSVPs.length %}
+				<div class=" [ box ] [ owl--medium ] ">
+					<h2 id="today-rsvps">
+						<a href="/rsvps/">Events I’m Attending Today</a>
+					</h2>
+					<nav class=" [ deck ] " aria-labelledby="today-rsvps">
+						{% for item in collections.todayRSVPs %}
+							{{ deckItem(item, global.now, collections.all, people, [], false) }}
+						{% endfor %}
+					</nav>
+				</div>
+			{% endif %}
 
-<h2 id="hot">
-	<a href="/hot/">Hot Posts</a>
-</h2>
-<nav class=" [ deck ] " aria-labelledby="hot">
-	{% for item in collections.hot | limit(site.limits.feature) %}
-		{{ deckItem(item, global.now, collections.all, people, webmentions, false, true, true) }}
-	{% endfor %}
-</nav>
+			<h2 id="latest">
+				<a href="/archive/">Latest Posts</a>
+			</h2>
+			<nav class=" [ deck ] [ h-feed ] " aria-labelledby="latest">
+				{% for item in collections.featurePosts | limit(site.limits.feature) %}
+					{{ deckItem(item, global.now, collections.all, people, webmentions) }}
+				{% endfor %}
+			</nav>
 
-<nav class=" [ navigator ] " aria-label="Archive Navigation">
-	<a class=" [ button ] " href="/archive/">Browse the Archive</a>
-</nav>
+			<h2 id="hot">
+				<a href="/hot/">Hot Posts</a>
+			</h2>
+			<nav class=" [ deck ] " aria-labelledby="hot">
+				{% for item in collections.hot | limit(site.limits.feature) %}
+					{{ deckItem(item, global.now, collections.all, people, webmentions, false, true, true) }}
+				{% endfor %}
+			</nav>
 
-<h2 id="projects">
-	<a href="/projects/">Latest Projects</a>
-</h2>
-<nav class=" [ deck ] " aria-labelledby="projects">
-	{% for item in projects.personal | limit(site.limits.feature) %}
-		<article>
-			<h3>
-				<a class=" [ p-name ] " href="{{ item.url }}">{{ item.data.title }}</a>
-			</h3>
-			<div class=" [ p-summary ] [ line-clamp ] ">
-				{{ item.data.description | markdownFormat | safe }}
-			</div>
-			<data class=" [ u-author ] " value="/" hidden=""></data>
-		</article>
-	{% endfor %}
-</nav>
+			<nav class=" [ navigator ] " aria-label="Archive Navigation">
+				<a class=" [ button ] " href="/archive/">Browse the Archive</a>
+			</nav>
 
-{% if collections.upcomingRSVPs.length %}
-	<div class=" [ box ] [ owl--medium ] ">
-		<h2 id="upcoming-rsvps">
-			<a href="/rsvps/">Upcoming Events</a>
-		</h2>
-		<nav class=" [ deck ] " aria-labelledby="upcoming-rsvps">
-			{% for item in collections.upcomingRSVPs %}
-				{{ deckItem(item, global.now, collections.all, people, [], false) }}
-			{% endfor %}
-		</nav>
+			<h2 id="projects">
+				<a href="/projects/">Latest Projects</a>
+			</h2>
+			<nav class=" [ deck ] " aria-labelledby="projects">
+				{% for item in projects.personal | limit(site.limits.feature) %}
+					<article>
+						<h3>
+							<a class=" [ p-name ] " href="{{ item.url }}">{{ item.data.title }}</a>
+						</h3>
+						<div class=" [ p-summary ] [ line-clamp ] ">
+							{{ item.data.description | markdownFormat | safe }}
+						</div>
+						<data class=" [ u-author ] " value="/" hidden=""></data>
+					</article>
+				{% endfor %}
+			</nav>
+
+			{% if collections.upcomingRSVPs.length %}
+				<div class=" [ box ] [ owl--medium ] ">
+					<h2 id="upcoming-rsvps">
+						<a href="/rsvps/">Upcoming Events</a>
+					</h2>
+					<nav class=" [ deck ] " aria-labelledby="upcoming-rsvps">
+						{% for item in collections.upcomingRSVPs %}
+							{{ deckItem(item, global.now, collections.all, people, [], false) }}
+						{% endfor %}
+					</nav>
+				</div>
+			{% endif %}
+
+			{% if collections.throwbackPosts.length %}
+				<div class=" [ box ] [ owl--medium ] ">
+					<h2 id="on-this-day">On This Day</h2>
+					<nav class=" [ deck ] " aria-labelledby="on-this-day">
+						{% for item in collections.throwbackPosts | limit(site.limits.feature) %}
+							{{ deckItem(item, global.now, collections.all, people, [], false) }}
+						{% endfor %}
+					</nav>
+				</div>
+			{% endif %}
+		</div>
+
+		{% include 'webmentions.njk' %}
 	</div>
-{% endif %}
 
-{% if collections.throwbackPosts.length %}
-	<div class=" [ box ] [ owl--medium ] ">
-		<h2 id="on-this-day">On This Day</h2>
-		<nav class=" [ deck ] " aria-labelledby="on-this-day">
-			{% for item in collections.throwbackPosts | limit(site.limits.feature) %}
-				{{ deckItem(item, global.now, collections.all, people, [], false) }}
-			{% endfor %}
-		</nav>
-	</div>
-{% endif %}
+	{% include 'meta-index.njk' %}
+
+	{% include 'ads.njk' %}
+
+</article>

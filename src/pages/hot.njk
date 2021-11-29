@@ -20,7 +20,7 @@ related_collection: hot
 		<p class=" [ p-summary ] ">{{ description | safe }}</p>
 	</div>
 
-	<div class=" [ content__body ] [ h-feed ] ">
+	<div class=" [ content__body ] [ h-feed ] {% if toc %}[ generate-toc ] {% endif %}">
 		<nav class=" [ deck ] ">
 			{% for item in collection %}
 				{{ deckItem(item, global.now, collections.all, people, webmentions) }}

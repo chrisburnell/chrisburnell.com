@@ -17,7 +17,7 @@ layout: base
 		{% sparkline collection, first_year, latest_year %}
 	</div>
 
-	<div class=" [ content__body ] [ h-feed ] ">
+	<div class=" [ content__body ] [ h-feed ] {% if toc %}[ generate-toc ] {% endif %}">
 		{%- set year = latest_year -%}
 		<h2 id="{{ year }}">
 			{{ year }}

@@ -25,7 +25,7 @@ eleventyComputed:
 		{% sparkline collection, first_year, latest_year %}
 	</div>
 
-	<div class=" [ content__body{% if collection[0].data.mf_root == 'review' %}  full{% endif %} ] [ h-feed ] ">
+	<div class=" [ content__body{% if collection[0].data.mf_root == 'review' %}  full{% endif %} ] [ h-feed ] {% if toc %}[ generate-toc ] {% endif %}">
 		{% if categoryIntroductions[category.title] %}
 			{{ categoryIntroductions[category.title] | join('\n\n') | markdownFormat | safe }}
 		{% endif %}

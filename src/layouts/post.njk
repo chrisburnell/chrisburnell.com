@@ -62,7 +62,7 @@ layout: base
 		<p>This <a class=" [ u-category ] " href="/{{ categoryPlural | default(category) }}/">{{ categoryProper | default(category) }}</a> {% if draft %}has not yet been published{% else %}was published on <time class=" [ dt-published ] " datetime="{{ date | rfcDate }}">{{ date | friendlyDate }}</time>{% if updated %} and last updated on <time class=" [ dt-updated ] " datetime="{{ updated | rfcDate }}">{{ updated | friendlyDate }}</time>{% endif %}{% endif %}.</p>
 	</div>
 
-	<div class=" [ content__body ] ">
+	<div class=" [ content__body ] {% if toc %}[ generate-toc ] {% endif %}">
 
 		{% if draft %}
 			<p class=" [ box  box--warning ] ">This is just a <em>draft</em>! The quality of this {{ categoryProper | default(category) | default('post') }} may not be up to snuff, a total work-in-progress, and is probably far from being complete (if we’re being real here). That being said, read on, knowing that you have been warned…</p>

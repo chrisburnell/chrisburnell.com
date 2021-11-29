@@ -5,8 +5,7 @@
   "categoryPlural": "bookmarks",
   "tags": [
     "bookmark",
-    "clickthrough",
-    "feature"
+    "clickthrough"
   ],
   "emoji": "🔖",
   "prefix": "h"

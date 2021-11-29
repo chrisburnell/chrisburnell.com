@@ -23,7 +23,7 @@ eleventyComputed:
 		<p class=" [ p-summary ] ">{% if count > 1 %}All {{ count | numberStringFormat }}{% else %}Only one{% endif %} of my posts tagged <q>{{ tag | capitalizeFormat }}</q>.</p>
 	</div>
 
-	<div class=" [ content__body ] ">
+	<div class=" [ content__body ] {% if toc %}[ generate-toc ] {% endif %}">
 		<nav class=" [ deck ] [ h-feed ] ">
 			{% for item in collection %}
 				{{ deckItem(item, global.now, collections.all, people, webmentions) }}
