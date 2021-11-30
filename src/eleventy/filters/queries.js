@@ -332,16 +332,14 @@ module.exports = {
 		}
 		return value.title || value
 	},
-	getWebmentions: (webmentions, url, allowedTypes) => {
+	getWebmentions: (webmentions, url, allowedTypes = ["like-of", "repost-of", "bookmark-of", "mention-of", "in-reply-to"]) => {
 		url = absoluteURL(url)
 
 		if (!url || !webmentions || !webmentions[url]) {
 			return []
 		}
 
-		if (!allowedTypes) {
-			allowedTypes = ["like-of", "repost-of", "bookmark-of", "mention-of", "in-reply-to"]
-		} else if (typeof allowedTypes === "string") {
+		if (typeof allowedTypes === "string") {
 			allowedTypes = [allowedTypes]
 		}
 

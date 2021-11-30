@@ -38,7 +38,7 @@ const fetchWebmentions = async () => {
 		if (response.ok) {
 			const feed = await response.json()
 			if (feed.children.length) {
-				console.log(`[${queryFilters.getHost(site.url)}] ${feed.children.length} new Webmentions fetched into cache.`)
+				console.log(`[${domain}] ${feed.children.length} new Webmentions fetched into cache.`)
 			}
 			webmentions.children = [...feed.children, ...webmentions.children].sort((a, b) => {
 				return dateFilters.epoch(b.published || b["wm-received"]) - dateFilters.epoch(a.published || a["wm-received"])
