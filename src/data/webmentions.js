@@ -7,7 +7,7 @@ const dateFilters = require("../eleventy/filters/dates.js")
 const queryFilters = require("../eleventy/filters/queries.js")
 
 const domain = queryFilters.getHost(site.url)
-const duration = "10m"
+const duration = "23h"
 
 // Load .env variables with dotenv
 require("dotenv").config()
