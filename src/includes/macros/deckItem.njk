@@ -184,7 +184,7 @@
 				{%- if item.data.updated %}
 					·
 					<small>updated</small>
-					<time class=" [ dt-updated ] " datetime="{{ item.data.updated | rfcDate }}">{{ item.data.updated | friendlyDate }}</time>
+					<a href="{{ item.url }}#updated" tabindex="-1"><time class=" [ dt-updated ] " datetime="{{ item.data.updated | rfcDate }}">{{ item.data.updated | friendlyDate }}</time></a>
 				{% endif %}
 				{%- set responses = webmentions | getWebmentions(item.url) -%}
 				{% if responses.length %}
