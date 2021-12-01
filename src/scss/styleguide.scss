@@ -152,8 +152,7 @@
 	@include v(box-shadow, medium);
 	@include v(z-index, above);
 
-	&:hover,
-	&:focus {
+	&:is(:hover, :focus) {
 		color: h(milou);
 	}
 
@@ -178,8 +177,7 @@
 			transform: translateX(-101%);
 		}
 
-		&:hover,
-		&:focus {
+		&:is(:hover, :focus) {
 			&::before {
 				transform: translateX(0);
 			}
@@ -194,8 +192,7 @@
 			opacity: 0;
 		}
 
-		&:hover,
-		&:focus {
+		&:is(:hover, :focus) {
 			&::before {
 				opacity: 1;
 			}

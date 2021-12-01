@@ -41,9 +41,7 @@ button:not([class*="anchor"]),
 	text-decoration: none;
 	appearance: none;
 
-	&:hover,
-	&:focus,
-	&:active {
+	&:is(:hover, :focus, :active) {
 		@include v(outline-offset, border-thin);
 		outline-width: v(measure, border-thin) !important;
 		text-decoration: none;

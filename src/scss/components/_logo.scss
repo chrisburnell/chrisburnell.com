@@ -15,9 +15,7 @@
 		object-fit: contain;
 	}
 
-	&:hover,
-	&:focus,
-	&:active {
+	&:is(:hover, :focus, :active) {
 		background: none;
 		outline: none;
 

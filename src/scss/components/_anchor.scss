@@ -19,9 +19,7 @@ a {
 
 // Fancy gradient anchor text
 .colourful-anchor {
-	&:hover,
-	&:focus,
-	&:active {
+	&:is(:hover, :focus, :active) {
 		background-image: linear-gradient(to bottom right, h(raven), h(maple));
 		background-clip: text;
 		text-fill-color: transparent;

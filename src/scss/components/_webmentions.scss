@@ -77,9 +77,7 @@
 	@include v(inline-size, avatar-small);
 	border: var(--measure-border-default) solid h(raven, beta);
 
-	&:link:hover,
-	&:link:focus,
-	&:link:active {
+	&:link:is(:hover, :focus, :active) {
 		border-color: h(maple);
 	}
 

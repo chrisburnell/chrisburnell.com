@@ -23,9 +23,7 @@
 
 	a {
 		&,
-		&:hover,
-		&:focus,
-		&:active {
+		&:is(:hover, :focus, :active) {
 			color: inherit;
 			text-decoration: none;
 		}

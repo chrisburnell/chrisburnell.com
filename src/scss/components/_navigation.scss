@@ -42,10 +42,8 @@
 			transform: scaleY(0);
 		}
 
-		&:hover,
-		&:focus,
-		&:active,
-		&[aria-current="page"] {
+		&[aria-current="page"],
+		&:is(:hover, :focus, :active) {
 			&::after {
 				opacity: 1;
 				transform: none;
@@ -55,8 +53,7 @@
 
 	// Cicada Interactions
 	:nth-child(1) a {
-		&:hover,
-		&:focus {
+		&:is(:hover, :focus) {
 			transform: translateY(-7.5%) rotateZ(-4deg);
 		}
 		&:active {
@@ -64,8 +61,7 @@
 		}
 	}
 	:nth-child(2) a {
-		&:hover,
-		&:focus {
+		&:is(:hover, :focus) {
 			transform: translateY(-7.5%) rotateZ(5deg);
 		}
 		&:active {
@@ -73,8 +69,7 @@
 		}
 	}
 	:nth-child(3) a {
-		&:hover,
-		&:focus {
+		&:is(:hover, :focus) {
 			transform: translateY(-7.5%) rotateZ(3deg);
 		}
 		&:active {
@@ -82,8 +77,7 @@
 		}
 	}
 	:nth-child(4) a {
-		&:hover,
-		&:focus {
+		&:is(:hover, :focus) {
 			transform: translateY(-7.5%) rotateZ(-4deg);
 		}
 		&:active {

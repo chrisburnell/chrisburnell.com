@@ -16,9 +16,7 @@ a,
 	@include v(text-decoration-thickness, border-thin);
 	text-decoration-skip-ink: auto;
 
-	&:hover,
-	&:focus,
-	&:active {
+	&:is(:hover, :focus, :active) {
 		text-decoration-color: h(maple);
 	}
 

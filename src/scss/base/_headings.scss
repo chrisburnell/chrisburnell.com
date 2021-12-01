@@ -75,6 +75,6 @@ h3 {
 	@extend %delta;
 }
 
-:is(h4, h5, h6) {
+:where(h4, h5, h6) {
 	@extend %epsilon;
 }

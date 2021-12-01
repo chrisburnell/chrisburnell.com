@@ -17,22 +17,18 @@
 }
 
 %collection-monospace,
-del,
-ins,
-mark {
+:where(del, ins, mark) {
 	// force text to wrap
 	@include break-words;
 
-	h1 > &,
-	h2 > &,
+	:where(h1, h2) > &,
 	%collection-content > &,
 	li > & {
 		@extend %collection-monospace-elements;
 	}
 }
 
-h1 > code,
-h2 > code,
+:where(h1, h2) > code,
 %collection-content > code,
 li > code,
 samp {
