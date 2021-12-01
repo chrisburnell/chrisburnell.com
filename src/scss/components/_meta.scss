@@ -43,11 +43,16 @@
 			}
 		}
 	}
-}
-.meta__list--block {
-	&,
-	li {
-		display: block;
+
+	&.meta__list--block {
+		&,
+		li {
+			display: block;
+		}
+
+		li::after {
+			display: none;
+		}
 	}
 }
 h3 + .meta__list {
