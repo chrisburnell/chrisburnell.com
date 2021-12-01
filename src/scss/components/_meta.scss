@@ -44,6 +44,12 @@
 		}
 	}
 }
+.meta__list--block {
+	&,
+	li {
+		display: block;
+	}
+}
 h3 + .meta__list {
 	margin-block-start: v(measure, small) !important;
 }

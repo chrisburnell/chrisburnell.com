@@ -98,7 +98,6 @@ pre[class*="language-"] {
 
 code[class*="language-"] {
 	&::before {
-		@include absolute(top-left);
 		@include font-family(alpha);
 		@include v(font-size);
 		background-color: h(dove);
@@ -107,6 +106,9 @@ code[class*="language-"] {
 		display: flex;
 		align-items: center;
 		padding: 0 var(--measure-gutter);
+		position: absolute;
+		top: 0;
+		left: 0;
 		border-radius: var(--measure-border-default) var(--measure-border-default) 0 0;
 		background-clip: padding-box;
 	}

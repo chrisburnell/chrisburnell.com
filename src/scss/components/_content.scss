@@ -38,7 +38,7 @@ spark-line {
 	display: inline-grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 1fr auto;
-	@include v(font-family);
+	@include font-family;
 	@include v(font-size, small);
 	font-style: normal;
 	@include v(font-weight, bold);

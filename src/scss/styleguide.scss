@@ -118,7 +118,10 @@
 
 	&::before {
 		content: "(Hover to interact.)";
-		@include absolute(top, 100%);
+		position: absolute;
+		top: 100%;
+		left: 50%;
+		transform: translateX(-50%);
 		color: h(kaiser);
 		@include v(margin-block-start, small);
 	}
@@ -156,7 +159,11 @@
 
 	&::before {
 		content: "";
-		@include absolute(full);
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
 		background-color: h(kaiser);
 		@include v(border-radius, border-thin);
 		@include v(z-index, below);

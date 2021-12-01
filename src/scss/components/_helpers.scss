@@ -68,11 +68,11 @@
 }
 
 .serif {
-	@include v(font-family, serif);
+	@include font-family(serif);
 }
 
 .monospace {
-	@include v(font-family, monospace);
+	@include font-family(monospace);
 }
 
 .small {
@@ -81,7 +81,7 @@
 
 // Make text serifed and italicised
 .fancy {
-	@include v(font-family, serif);
+	@include font-family(serif);
 	font-style: italic;
 }
 
