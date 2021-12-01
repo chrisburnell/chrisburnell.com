@@ -53,7 +53,7 @@
 		@error "There is no `font-family` named `#{$family}` in `$font-families`. `font-family` should be one of `#{map-keys($families)}`.";
 	}
 
-	@include font-family($family);
+	@include v(font-family, $family);
 
 	@if $family == "monospace" {
 		font-variant-ligatures: none;
