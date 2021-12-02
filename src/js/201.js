@@ -9,8 +9,8 @@
 	let targetURL = getParameterByName("query") ? getParameterByName("query") : getParameterByName("q") ? getParameterByName("q") : getParameterByName("t") ? getParameterByName("t") : null;
 
 	if (targetURL) {
-		function targetURLCheck() {
-			fetch(targetURL + "?q=" + +new Date()).then(function (response) {
+		const targetURLCheck = () => {
+			fetch(targetURL + "?q=" + +new Date()).then((response) => {
 				let targetURL = response.url.split("?q=")[0];
 				document.querySelector("#target-url").innerHTML = '<a href="' + targetURL + '">' + targetURL + "</a>";
 				console.log("Checking … " + targetURL);
@@ -21,7 +21,7 @@
 				}
 			});
 			setTimeout(targetURLCheck, 10000);
-		}
+		};
 		targetURLCheck();
 		setTimeout(targetURLCheck, 10000);
 	}

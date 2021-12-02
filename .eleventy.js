@@ -5,6 +5,7 @@ const site = require("./src/data/site.json")
 // Import Eleventy plugins
 const imageAvatarPlugin = require("./src/eleventy/plugins/imageAvatarPlugin.js")
 const imagePlugin = require("./src/eleventy/plugins/imagePlugin.js")
+const songlinkImagePlugin = require("./src/eleventy/plugins/songlinkImagePlugin.js")
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight")
 
 // Import transforms
@@ -29,10 +30,11 @@ const collections = require("./src/eleventy/collections.js")
 const categoriesBuilder = require("./src/eleventy/builders/categories.js")
 const tagsBuilder = require("./src/eleventy/builders/tags.js")
 
-module.exports = function (config) {
+module.exports = (config) => {
 	// Eleventy Plugins
 	config.addPlugin(imageAvatarPlugin)
 	config.addPlugin(imagePlugin)
+	config.addPlugin(songlinkImagePlugin)
 	config.addPlugin(syntaxHighlightPlugin)
 
 	// Transforms
@@ -92,7 +94,7 @@ module.exports = function (config) {
 	// BrowserSync and Local 404
 	config.setBrowserSyncConfig({
 		callbacks: {
-			ready: function (err, browserSync) {
+			ready: (err, browserSync) => {
 				const content_404 = fs.readFileSync("_site/404.html")
 				browserSync.addMiddleware("*", (req, res) => {
 					// Provides the 404 content without redirect.

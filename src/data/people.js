@@ -7,7 +7,7 @@ const API_ORIGIN = process.env.PERSONAL_API_URL
 const TOKEN = process.env.WEBMENTION_IO_TOKEN
 const TYPES = ["breweries", "gamePublishers", "humans", "meetups", "musicArtists", "publications"]
 
-async function getPeopleByType(type) {
+const getPeopleByType = async (type) => {
 	return await Cache(`${API_ORIGIN}/${type}.json?token=${TOKEN}`, {
 		duration: "23h",
 		type: "json",

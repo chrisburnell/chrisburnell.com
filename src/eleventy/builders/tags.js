@@ -1,7 +1,7 @@
 const ignoredTags = require("../../data/ignoredTags.json")
 const categoriesMap = require("./categories.js")
 
-module.exports = function tags(collection) {
+module.exports = (collection) => {
 	let tagSet = new Set()
 	let categories = categoriesMap(collection)
 

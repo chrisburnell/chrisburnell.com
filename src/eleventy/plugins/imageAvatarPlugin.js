@@ -17,38 +17,38 @@ const fixTwitterUsername = (twitterUsername) => {
 	}, twitterUsername)
 }
 
-function getImageOptions(lookup) {
+const getImageOptions = (lookup) => {
 	return {
 		widths: [size],
+		formats: process.env.ELEVENTY_PRODUCTION ? ["avif", "webp", "jpg"] : ["webp", "jpg"],
 		urlPath: "/images/avatars/",
 		outputDir: "./_site/images/avatars",
-		formats: process.env.ELEVENTY_PRODUCTION ? ["avif", "webp", "jpg"] : ["webp", "jpg"],
-		cacheDuration: "4w",
-		filenameFormat: function (id, src, width, format) {
+		duration: "4w",
+		filenameFormat: (id, src, width, format) => {
 			return `${String(lookup).toLowerCase()}.${format}`
 		},
 	}
 }
 
-function fetchImageData(lookup, url) {
+const fetchImageData = (lookup, url) => {
 	if (!url) {
 		throw new Error("src property required in `img` shortcode.")
 	}
 
-	Image(url, getImageOptions(lookup)).then(function () {
+	Image(url, getImageOptions(lookup)).then(() => {
 		// return nothing, even though this returns a promise
 	})
 }
 
-async function storeAvatar(id, classes = "") {
+const storeAvatar = async (id, classes = "") => {
 	// We know where the images will be
-	let fakeUrl = `https://chrisburnell.com/images/avatars/${id}.jpg`
+	let fakeUrl = `/images/avatars/${id}.jpg`
 	let imgData = Image.statsByDimensionsSync(fakeUrl, size, size, getImageOptions(id))
 	let markup = Image.generateHTML(
 		imgData,
 		{
 			alt: `Avatar for ${id}`,
-			class: "[ avatar ] [ u-author ] " + (classes ? ` ${classes}` : ""),
+			class: " [ avatar ] [ u-author ] " + (classes ? `[ ${classes} ] ` : ""),
 			loading: "lazy",
 			decoding: "async",
 		},
@@ -60,7 +60,7 @@ async function storeAvatar(id, classes = "") {
 	return markup
 }
 
-module.exports = function (config) {
+module.exports = (config) => {
 	let twitterUsernames, mastodonHandles, domains
 
 	config.on("beforeBuild", () => {
@@ -91,7 +91,7 @@ module.exports = function (config) {
 		}
 	})
 
-	config.addNunjucksAsyncShortcode("avatar", async function (photo, url, authorUrl, classes = "") {
+	config.addNunjucksAsyncShortcode("avatar", async (photo, url, authorUrl, classes = "") => {
 		const mastodonHandle = queryFilters.getMastodonHandle(authorUrl)
 		if (url.includes("twitter.com")) {
 			let target = url.includes(author.twitter) ? (authorUrl.includes(site.url) ? url : authorUrl) : url

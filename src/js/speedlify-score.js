@@ -1,4 +1,4 @@
-(function () {
+(() => {
 	if (!("customElements" in window) || !("fetch" in window)) {
 		return;
 	}

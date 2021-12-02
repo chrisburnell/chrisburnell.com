@@ -1,15 +1,15 @@
 const { JSDOM } = require("@tbranyen/jsdom")
 const slugify = require("slugify")
 
-function minify(input) {
+const minify = (input) => {
 	return input.replace(/\s{2,}/g, "").replace(/\'/g, '"')
 }
 
-function headingSlugify(heading) {
+const headingSlugify = (heading) => {
 	return heading.id || slugify(heading.textContent.toLowerCase())
 }
 
-module.exports = function parse(value, outputPath) {
+module.exports = (value, outputPath) => {
 	if (outputPath.endsWith(".html")) {
 		const DOM = new JSDOM(value, {
 			// resources: "usable" // loads external scripts, nah thanks

@@ -1,4 +1,4 @@
-module.exports = function categories(collection) {
+module.exports = (collection) => {
 	let categories = []
 
 	collection.getAll().forEach((item) => {

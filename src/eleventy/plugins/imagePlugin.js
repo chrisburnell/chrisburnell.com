@@ -4,8 +4,9 @@ const Image = require("@11ty/eleventy-img")
 // Load .env variables with dotenv
 require("dotenv").config()
 
-async function imageShortcode(src, alt, widths = [null]) {
+const imageShortcode = async (src, alt, widths = [null]) => {
 	const originalFormat = src.includes("png") ? "png" : "jpg"
+	console.log(src, originalFormat)
 
 	let options = Object.assign(
 		{},
@@ -14,8 +15,8 @@ async function imageShortcode(src, alt, widths = [null]) {
 			formats: process.env.ELEVENTY_PRODUCTION ? ["avif", "webp", originalFormat] : ["webp", originalFormat],
 			urlPath: "/images/built/",
 			outputDir: "./_site/images/built",
-			sharpAvifOptions: {},
-			filenameFormat: function (id, src, width, format) {
+			duration: "4w",
+			filenameFormat: (id, src, width, format) => {
 				const extension = path.extname(src)
 				const name = path.basename(src, extension)
 				return `${name}.${format}`
@@ -41,6 +42,6 @@ async function imageShortcode(src, alt, widths = [null]) {
 	})
 }
 
-module.exports = function (config) {
+module.exports = (config) => {
 	config.addNunjucksAsyncShortcode("img", imageShortcode)
 }

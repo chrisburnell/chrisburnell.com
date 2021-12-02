@@ -1,4 +1,4 @@
-(async function listPages() {
+(async () => {
 	const browsingHistory = [];
 	const parser = new DOMParser();
 	const cache = await caches.open("pages");

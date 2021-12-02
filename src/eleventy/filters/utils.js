@@ -40,7 +40,7 @@ module.exports = {
 	},
 	getRGB: (hex) => {
 		const COLOR = hex.replace("#", "").slice(0, 6)
-		return COLOR.match(/.{1,2}/g).map(function (value) {
+		return COLOR.match(/.{1,2}/g).map((value) => {
 			return parseInt(value, 16)
 		})
 	},

@@ -1,8 +1,8 @@
-(function (win, doc) {
+((win, doc) => {
 	const testButton = doc.createElement("button");
 	testButton.setAttribute("type", "share");
 	if (testButton.type != "share") {
-		win.addEventListener("click", function (ev) {
+		win.addEventListener("click", (ev) => {
 			ev = ev || win.event;
 			let target = ev.target;
 			let button = target.closest('button[type="share"]');

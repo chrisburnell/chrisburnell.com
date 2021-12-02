@@ -22,7 +22,7 @@ const IntToSxg = (num) => {
 	return sxg
 }
 
-module.exports = function newBase60(date, prefix, collection) {
+module.exports = (date, prefix, collection) => {
 	let postsToday = []
 	for (let i in collection) {
 		if ("date" in collection[i].data) {

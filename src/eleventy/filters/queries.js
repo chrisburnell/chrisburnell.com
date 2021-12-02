@@ -17,19 +17,19 @@ const allowedHTML = {
 	},
 }
 
-const toArray = function (value) {
+const toArray = (value) => {
 	if (Array.isArray(value)) {
 		return value
 	}
 	return [value]
 }
 
-const getPath = function (url) {
+const getPath = (url) => {
 	let urlObject = new URL(url)
 	return urlObject.pathname
 }
 
-const absoluteURL = function (url, base) {
+const absoluteURL = (url, base) => {
 	if (!base) {
 		base = site.url
 	}
