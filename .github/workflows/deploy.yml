@@ -33,6 +33,20 @@ jobs:
           key: ${{ runner.OS }}-11ty-cache-${{ hashFiles('**/lockfiles') }}
           restore-keys: |
             ${{ runner.OS }}-11ty-cache-
+      - name: Cache avatars
+        uses: actions/cache@v2
+        with:
+          path: _site/images/avatars
+          key: ${{ runner.OS }}-11ty-cache-${{ hashFiles('**/lockfiles') }}
+          restore-keys: |
+            ${{ runner.OS }}-11ty-cache-
+      - name: Cache built images
+        uses: actions/cache@v2
+        with:
+          path: _site/images/built
+          key: ${{ runner.OS }}-11ty-cache-${{ hashFiles('**/lockfiles') }}
+          restore-keys: |
+            ${{ runner.OS }}-11ty-cache-
       - name: Set the timezone
         uses: zcong1993/setup-timezone@master
         with:

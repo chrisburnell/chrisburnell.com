@@ -1,4 +1,4 @@
-(() => {
+(function () {
 	"use strict";
 
 	const form = document.getElementById("search");

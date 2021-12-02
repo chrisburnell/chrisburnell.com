@@ -1,4 +1,4 @@
-((win, doc) => {
+(function (win, doc) {
 	const testButton = doc.createElement("button");
 	testButton.setAttribute("type", "share");
 	if (testButton.type != "share") {

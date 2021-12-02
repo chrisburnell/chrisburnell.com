@@ -1,4 +1,4 @@
-(() => {
+(function () {
 	"use strict";
 
 	const LASTFM_URL = "https://api.chrisburnell.com/lastfm/chrisburnell";

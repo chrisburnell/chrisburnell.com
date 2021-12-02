@@ -1,4 +1,4 @@
-(() => {
+(function () {
 	"use strict";
 
 	const button = document.getElementById("palette-toggler");

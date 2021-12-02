@@ -5,7 +5,7 @@ const site = require("./src/data/site.json")
 // Import Eleventy plugins
 const imageAvatarPlugin = require("./src/eleventy/plugins/imageAvatarPlugin.js")
 const imagePlugin = require("./src/eleventy/plugins/imagePlugin.js")
-const songlinkImagePlugin = require("./src/eleventy/plugins/songlinkImagePlugin.js")
+const albumCoverPlugin = require("./src/eleventy/plugins/albumCoverPlugin.js")
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight")
 
 // Import transforms
@@ -34,7 +34,7 @@ module.exports = (config) => {
 	// Eleventy Plugins
 	config.addPlugin(imageAvatarPlugin)
 	config.addPlugin(imagePlugin)
-	config.addPlugin(songlinkImagePlugin)
+	config.addPlugin(albumCoverPlugin)
 	config.addPlugin(syntaxHighlightPlugin)
 
 	// Transforms

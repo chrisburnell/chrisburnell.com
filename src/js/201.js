@@ -1,4 +1,4 @@
-(() => {
+(function () {
 	"use strict";
 
 	let getParameterByName = (name) => {

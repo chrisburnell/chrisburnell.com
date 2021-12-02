@@ -6,7 +6,6 @@ require("dotenv").config()
 
 const imageShortcode = async (src, alt, classes = "", widths = [null]) => {
 	const originalFormat = src.includes("png") ? "png" : "jpg"
-	console.log(src, originalFormat)
 
 	let options = Object.assign(
 		{},

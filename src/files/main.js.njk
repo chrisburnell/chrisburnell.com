@@ -5,7 +5,7 @@ permalink: /js/main.js
 {% include '../../node_modules/@chrisburnell/pentatonic/pentatonic.js' %}
 {% include '../../node_modules/@chrisburnell/spark-line/spark-line.js' %}
 
-;(() => {
+;(function () {
 	"use strict"
 
 	{% if global.production %}{% include '../js/navigator.js' %}{% endif %}

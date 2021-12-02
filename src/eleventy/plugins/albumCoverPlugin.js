@@ -25,12 +25,12 @@ const getImageOptions = (lookup) => {
 	}
 }
 
-const fetchImageData = (url) => {
+const fetchImageData = (id, url) => {
 	if (!url) {
 		throw new Error("src property required in `img` shortcode.")
 	}
 
-	Image(url, getImageOptions()).then(() => {
+	Image(url, getImageOptions(id)).then(() => {
 		// return nothing, even though this returns a promise
 	})
 }
@@ -59,8 +59,8 @@ const fetchAlbumCoverUrl = async (id) => {
 	const response = await fetch(`https://api.song.link/v1-alpha.1/links?key=${TOKEN}&userCountry=UK&platform=spotify&type=album&id=${id}`)
 	if (response.ok) {
 		const album = await response.json()
-		console.log(album)
-		return album.entitiesByUniqueId[`SPOTIFY_ALBUM::${id}`].thumbnailUrl
+		console.log(album.entitiesByUniqueId[`SPOTIFY_ALBUM::${id}`].thumbnailUrl)
+		return await album.entitiesByUniqueId[`SPOTIFY_ALBUM::${id}`].thumbnailUrl
 	}
 
 	return ""
@@ -75,13 +75,13 @@ module.exports = async (config) => {
 
 	config.on("afterBuild", () => {
 		let array = Array.from(ids)
-		console.log(`[${queryFilters.getHost(site.url)}] Generating ${array.length} Songlink album covers.`)
+		console.log(`[${queryFilters.getHost(site.url)}] Generating ${array.length} album covers.`)
 		for (let id of array) {
-			fetchImageData(fetchAlbumCoverUrl(id))
+			fetchImageData(id, fetchAlbumCoverUrl(id))
 		}
 	})
 
-	config.addNunjucksAsyncShortcode("songlink_img", async (id, classes = "") => {
+	config.addNunjucksAsyncShortcode("album_cover", async (id, classes = "") => {
 		ids.add(id)
 		return storeAlbumCover(id, classes)
 	})

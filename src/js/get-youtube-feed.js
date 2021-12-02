@@ -1,4 +1,4 @@
-(() => {
+(function () {
 	"use strict";
 
 	let form = document.querySelector(".get-youtube-feed");

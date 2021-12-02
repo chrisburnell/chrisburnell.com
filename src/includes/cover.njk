@@ -1,5 +1,5 @@
 {% if cover %}
 	{% img './images/covers/' + cover, '', ' [ cover ] ' %}
 {% elif listen_of %}
-	{% songlink_img listen_if %}
+	{% album_cover listen_if, ' [ cover ] ' %}
 {% endif %}
