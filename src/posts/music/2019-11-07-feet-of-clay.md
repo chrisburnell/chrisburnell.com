@@ -6,6 +6,5 @@ authors:
   - title: Earl Sweatshirt
     url: https://open.spotify.com/artist/3A5tHz1SfngyOZM2gItYKu
 listen_of: 0N0EFoE8csbKxl5lxT1ylm
-cover: feet-of-clay.jpg
 rating: 2.25
 ---

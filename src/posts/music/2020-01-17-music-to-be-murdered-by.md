@@ -6,6 +6,5 @@ authors:
   - title: Eminem
     url: https://open.spotify.com/artist/7dGJo4pcD2V6oG8kP0tJRR
 listen_of: 4otkd9As6YaxxEkIjXPiZ6
-cover: music-to-be-murdered-by.jpg
 rating: 2.25
 ---

@@ -6,6 +6,5 @@ authors:
   - title: Masta Ace
     url: https://open.spotify.com/artist/1wo9h8DP7M0M1orKuGZgWv
 listen_of: 7qvw3MPdulHThAPqaM9ynF
-cover: a-long-hot-summer.jpg
 rating: 4.25
 ---

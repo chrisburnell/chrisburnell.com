@@ -8,6 +8,5 @@ authors:
   - title: Rocci
     url: https://open.spotify.com/artist/7JuMRNIHpmyFPoihd7NB7T
 listen_of: 0sl62xHit6SvrH7tkMVeKU
-cover: tha-playa$-manual.jpg
 rating: 4.5
 ---

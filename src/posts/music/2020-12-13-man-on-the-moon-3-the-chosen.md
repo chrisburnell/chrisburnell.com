@@ -6,6 +6,5 @@ authors:
   - title: Kid Cudi
     url: https://open.spotify.com/artist/0fA0VVWsXO9YnASrzqfmYu
 listen_of: 64nbgEEIcY4g1ElVLONJ0w
-cover: man-on-the-moon-3-the-chosen.jpg
 rating: 4.5
 ---

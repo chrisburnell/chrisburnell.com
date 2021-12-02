@@ -6,6 +6,5 @@ authors:
   - title: Ice Cube
     url: https://icecube.com/
 listen_of: 0EVgPaKOC8o9JFVpKLMSoz
-cover: everythangs-corrupt.jpg
 rating: 4
 ---

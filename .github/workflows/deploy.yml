@@ -43,6 +43,7 @@ jobs:
         run: npm run build
         env:
           ELEVENTY_PRODUCTION: true
+          ODESLI_URL: ${{ secrets.ODESLI_TOKEN }}
           PERSONAL_API_URL: ${{ secrets.PERSONAL_API_URL }}
           PERSONAL_API_TOKEN: ${{ secrets.PERSONAL_API_TOKEN }}
           TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}

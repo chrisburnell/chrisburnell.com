@@ -6,6 +6,5 @@ authors:
   - title: Gorillaz
     url: https://open.spotify.com/artist/3AA28KZvwAUcZuOKwyblJQ
 listen_of: 0bUTHlWbkSQysoM3VsWldT
-cover: demon-days.jpg
 rating: 5
 ---
