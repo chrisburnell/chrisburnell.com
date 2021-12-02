@@ -27,7 +27,7 @@
 	<article{% if hfeed %} class=" [ h-{{ item.data.mf_root }} ] "{% endif %}>
 		{% if item.data.cover %}
 			<a href="{{ item.url }}" title="{{ item_title | default(item_of_title) | striptags(true) | safe }}" tabindex="-1">
-				{% img './images/covers/' + item.data.cover, '' %}
+				{% img './images/covers/' + item.data.cover, '', ' [ cover ] ' %}
 			</a>
 		{% elif item.data.listen_of %}
 			<a href="{{ item.url }}" title="{{ item_title | default(item_of_title) | striptags(true) | safe }}" tabindex="-1">

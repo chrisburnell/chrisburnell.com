@@ -4,7 +4,7 @@ const Image = require("@11ty/eleventy-img")
 // Load .env variables with dotenv
 require("dotenv").config()
 
-const imageShortcode = async (src, alt, widths = [null]) => {
+const imageShortcode = async (src, alt, classes = "", widths = [null]) => {
 	const originalFormat = src.includes("png") ? "png" : "jpg"
 	console.log(src, originalFormat)
 
@@ -30,6 +30,7 @@ const imageShortcode = async (src, alt, widths = [null]) => {
 	let imageAttributes = Object.assign(
 		{
 			alt: alt,
+			class: classes,
 			loading: "lazy",
 			decoding: "async",
 		},
