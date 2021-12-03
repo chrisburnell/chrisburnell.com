@@ -6,6 +6,7 @@ const site = require("./src/data/site.json")
 const imageAvatarPlugin = require("./src/eleventy/plugins/imageAvatarPlugin.js")
 const imagePlugin = require("./src/eleventy/plugins/imagePlugin.js")
 const albumCoverPlugin = require("./src/eleventy/plugins/albumCoverPlugin.js")
+const webmentionsPlugin = require("./src/eleventy/plugins/webmentions.js")
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight")
 
 // Import transforms
@@ -35,6 +36,7 @@ module.exports = (config) => {
 	config.addPlugin(imageAvatarPlugin)
 	config.addPlugin(imagePlugin)
 	config.addPlugin(albumCoverPlugin)
+	config.addPlugin(webmentionsPlugin)
 	config.addPlugin(syntaxHighlightPlugin)
 
 	// Transforms

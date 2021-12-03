@@ -8,7 +8,6 @@ eleventyComputed:
   title: "Tagged: <q>{{ tag | capitalizeFormat }}</q>"
   description: "All of my posts tagged <q>{{ tag | capitalizeFormat }}</q>."
 ---
-{% from 'macros/deckItem.njk' import deckItem %}
 {%- set collection = collections[tag] | arePublished | reverse -%}
 {%- set count = collection.length -%}
 {%- set latest_year = collection[0].date.getFullYear() -%}
@@ -25,8 +24,12 @@ eleventyComputed:
 
 	<div class=" [ content__body ] {% if toc %}[ generate-toc ] {% endif %}">
 		<nav class=" [ deck ] [ h-feed ] ">
+			{% set hfeed = true %}
+			{% set truncate = true %}
+			{% set lineclamp = false %}
 			{% for item in collection %}
-				{{ deckItem(item, global.now, collections.all, people, webmentions) }}
+				{%- set responses = item.url | getWebmentions(['mention-of', 'in-reply-to', 'like-of', 'repost-of', 'bookmark-of']) -%}
+				{% include 'deck-item.njk' %}
 			{% endfor %}
 		</nav>
 	</div>

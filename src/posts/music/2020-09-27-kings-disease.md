@@ -6,5 +6,6 @@ authors:
   - title: Nas
     url: https://open.spotify.com/artist/20qISvAhX20dpIbOOzGK3q
 listen_of: 5ZQjqg9obFzyGuxGj0mjSi
+cover: kings-disease.jpg
 rating: 3.75
 ---

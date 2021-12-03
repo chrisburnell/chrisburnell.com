@@ -8,5 +8,6 @@ authors:
   - title: Wildstyle
     url: https://open.spotify.com/artist/5Gcwu8k019sVsmNoEOiFvd
 listen_of: 72LglewDl2LULJv40Ow7fh
+cover: chills-spotlight.jpg
 rating: 4.25
 ---

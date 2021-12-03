@@ -69,27 +69,29 @@ module.exports = (config) => {
 		domains = new Set()
 	})
 
-	config.on("afterBuild", () => {
-		let array = Array.from(twitterUsernames)
-		console.log(`[${queryFilters.getHost(site.url)}] Generating ${array.length} Twitter avatars.`)
-		TwitterAvatarUrl(array).then((results) => {
-			for (let result of results) {
-				fetchImageData(result.username, result.url.large)
+	if (process.env.ELEVENTY_PRODUCTION) {
+		config.on("afterBuild", () => {
+			let array = Array.from(twitterUsernames)
+			console.log(`[${queryFilters.getHost(site.url)}] Generating ${array.length} Twitter avatars.`)
+			TwitterAvatarUrl(array).then((results) => {
+				for (let result of results) {
+					fetchImageData(result.username, result.url.large)
+				}
+			})
+
+			array = Array.from(mastodonHandles)
+			console.log(`[${queryFilters.getHost(site.url)}] Generating ${array.length} Mastodon avatars.`)
+			for (let mastodonHandle of array) {
+				fetchImageData(mastodonHandle.handle, mastodonHandle.photo)
+			}
+
+			array = Array.from(domains)
+			console.log(`[${queryFilters.getHost(site.url)}] Generating ${array.length} domain avatars.`)
+			for (let domain of array) {
+				fetchImageData(domain.url, domain.photo)
 			}
 		})
-
-		array = Array.from(mastodonHandles)
-		console.log(`[${queryFilters.getHost(site.url)}] Generating ${array.length} Mastodon avatars.`)
-		for (let mastodonHandle of array) {
-			fetchImageData(mastodonHandle.handle, mastodonHandle.photo)
-		}
-
-		array = Array.from(domains)
-		console.log(`[${queryFilters.getHost(site.url)}] Generating ${array.length} domain avatars.`)
-		for (let domain of array) {
-			fetchImageData(domain.url, domain.photo)
-		}
-	})
+	}
 
 	config.addNunjucksAsyncShortcode("avatar", async (photo, url, authorUrl, classes = "") => {
 		const mastodonHandle = queryFilters.getMastodonHandle(authorUrl)

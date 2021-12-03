@@ -6,5 +6,6 @@ authors:
   - title: KIDS SEE GHOSTS
     url: https://open.spotify.com/artist/2hPgGN4uhvXAxiXQBIXOmE
 listen_of: 1v9d39PxNmtRvYWw2ztydx
+cover: kids-see-ghosts.jpg
 rating: 3.5
 ---

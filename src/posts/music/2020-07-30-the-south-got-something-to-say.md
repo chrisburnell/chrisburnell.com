@@ -6,5 +6,6 @@ authors:
   - title: Pouya
     url: https://open.spotify.com/artist/4nXOZlYoAD67hF9aUEncMY
 listen_of: 3SNpwvPDO9MfNJCJwhNCd7
+cover: the-south-got-something-to-say.jpg
 rating: 4
 ---

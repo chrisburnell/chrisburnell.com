@@ -8,7 +8,6 @@ sitemap:
   changefreq: daily
   priority: 1.0
 ---
-{% from 'macros/deckItem.njk' import deckItem %}
 
 <article id="content" class=" [ content ] [ wrap ] [ page ] ">
 
@@ -28,8 +27,12 @@ sitemap:
 						<a href="/rsvps/">Events I’m Attending Today</a>
 					</h2>
 					<nav class=" [ deck ] " aria-labelledby="today-rsvps">
+						{%- set hfeed = false -%}
+						{%- set truncate = false -%}
+						{%- set lineclamp = false -%}
 						{% for item in collections.todayRSVPs %}
-							{{ deckItem(item, global.now, collections.all, people, webmentions, false) }}
+							{%- set responses = item.url | getWebmentions(['mention-of', 'in-reply-to', 'like-of', 'repost-of', 'bookmark-of']) -%}
+							{% include 'deck-item.njk' %}
 						{% endfor %}
 					</nav>
 				</div>
@@ -39,8 +42,12 @@ sitemap:
 				<a href="/archive/">Latest Posts</a>
 			</h2>
 			<nav class=" [ deck ] [ h-feed ] " aria-labelledby="latest">
+				{%- set hfeed = true -%}
+				{%- set truncate = true -%}
+				{%- set lineclamp = false -%}
 				{% for item in collections.featurePosts | limit(site.limits.feature) %}
-					{{ deckItem(item, global.now, collections.all, people, webmentions) }}
+					{%- set responses = item.url | getWebmentions(['mention-of', 'in-reply-to', 'like-of', 'repost-of', 'bookmark-of']) -%}
+					{% include 'deck-item.njk' %}
 				{% endfor %}
 			</nav>
 
@@ -48,8 +55,12 @@ sitemap:
 				<a href="/hot/">Hot Posts</a>
 			</h2>
 			<nav class=" [ deck ] " aria-labelledby="hot">
+				{% set hfeed = false %}
+				{% set truncate = true %}
+				{% set lineclamp = true %}
 				{% for item in collections.hot | limit(site.limits.feature) %}
-					{{ deckItem(item, global.now, collections.all, people, webmentions, false, true, true) }}
+					{%- set responses = item.url | getWebmentions(['mention-of', 'in-reply-to', 'like-of', 'repost-of', 'bookmark-of']) -%}
+					{% include 'deck-item.njk' %}
 				{% endfor %}
 			</nav>
 
@@ -61,16 +72,12 @@ sitemap:
 				<a href="/projects/">Latest Projects</a>
 			</h2>
 			<nav class=" [ deck ] " aria-labelledby="projects">
+				{%- set hfeed = false -%}
+				{%- set truncate = true -%}
+				{%- set lineclamp = true -%}
 				{% for item in projects.personal | limit(site.limits.feature) %}
-					<article>
-						<h3>
-							<a class=" [ p-name ] " href="{{ item.url }}">{{ item.data.title }}</a>
-						</h3>
-						<div class=" [ p-summary ] [ line-clamp ] ">
-							{{ item.data.description | markdownFormat | safe }}
-						</div>
-						<data class=" [ u-author ] " value="/" hidden=""></data>
-					</article>
+					{%- set responses = [] -%}
+					{% include 'deck-item.njk' %}
 				{% endfor %}
 			</nav>
 
@@ -84,8 +91,12 @@ sitemap:
 						<a href="/rsvps/">Upcoming Events</a>
 					</h2>
 					<nav class=" [ deck ] " aria-labelledby="upcoming-rsvps">
+						{%- set hfeed = false -%}
+						{%- set truncate = true -%}
+						{%- set lineclamp = false -%}
 						{% for item in collections.upcomingRSVPs %}
-							{{ deckItem(item, global.now, collections.all, people, webmentions, false) }}
+							{%- set responses = item.url | getWebmentions(['mention-of', 'in-reply-to', 'like-of', 'repost-of', 'bookmark-of']) -%}
+							{% include 'deck-item.njk' %}
 						{% endfor %}
 					</nav>
 				</div>
@@ -95,8 +106,12 @@ sitemap:
 				<div class=" [ box ] [ owl--medium ] ">
 					<h2 id="on-this-day">On This Day</h2>
 					<nav class=" [ deck ] " aria-labelledby="on-this-day">
+						{%- set hfeed = false -%}
+						{%- set truncate = true -%}
+						{%- set lineclamp = false -%}
 						{% for item in collections.throwbackPosts | limit(site.limits.feature) %}
-							{{ deckItem(item, global.now, collections.all, people, webmentions, false) }}
+							{%- set responses = item.url | getWebmentions(['mention-of', 'in-reply-to', 'like-of', 'repost-of', 'bookmark-of']) -%}
+							{% include 'deck-item.njk' %}
 						{% endfor %}
 					</nav>
 				</div>

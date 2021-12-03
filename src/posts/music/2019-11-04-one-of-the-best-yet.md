@@ -6,5 +6,6 @@ authors:
   - title: Gang Starr
     url: https://open.spotify.com/artist/5cMgGlA1xGyeAB2ctYlRdZ
 listen_of: 4VxyKgulAGSpJwhIJjgiJr
+cover: one-of-the-best-yet.jpg
 rating: 4.5
 ---

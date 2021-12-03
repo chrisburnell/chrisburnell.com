@@ -6,5 +6,6 @@ authors:
   - title: Dizzee Rascal
     url: https://open.spotify.com/artist/0gusqTJKxtU1UTmNRMHZcv
 listen_of: 40s9ebO3BAEye8KqbIM8tU
+cover: dont-gas-me.jpg
 rating: 4
 ---

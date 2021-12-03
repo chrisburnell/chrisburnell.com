@@ -10,5 +10,6 @@ authors:
   - title: 21 Savage
     url: https://open.spotify.com/artist/1URnnhqYAYcrqrcwql10ft
 listen_of: 3IO8IPjwXuzPJnoaqkwYrj
+cover: not-all-heroes-wear-capes.jpg
 rating: 3.5
 ---

@@ -5,9 +5,7 @@ description: For a better part of the year, I've been working on a Jekyll-based 
 tags:
   - jekyll
   - liquid
-banner:
-  - numerals-romanticised@2x.jpg
-  - numerals-romanticised.jpg
+banner: numerals-romanticised@2x.jpg
 further_reading:
   - title: Roman numerals on Wikipedia
     url: https://en.wikipedia.org/wiki/Roman_numerals

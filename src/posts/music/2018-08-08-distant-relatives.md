@@ -8,5 +8,6 @@ authors:
   - title: Nas
     url: https://open.spotify.com/artist/20qISvAhX20dpIbOOzGK3q
 listen_of: 63bs3omFkaEXjzTfTFOEPj
+cover: distant-relatives.jpg
 rating: 5
 ---

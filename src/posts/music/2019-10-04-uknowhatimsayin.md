@@ -6,5 +6,6 @@ authors:
   - title: Danny Brown
     url: https://open.spotify.com/artist/7aA592KWirLsnfb5ulGWvU
 listen_of: 4G3BRVsGEpWzUdplFJ1VBl
+cover: uknowhatimsayin.jpg
 rating: 3.75
 ---

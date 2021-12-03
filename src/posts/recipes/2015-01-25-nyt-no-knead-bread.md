@@ -4,7 +4,7 @@ title: NYT No Knead Bread
 prep_time: 14–20 hours
 cooking_time: 45–60 minutes
 preheat: true
-photo: nyt-no-knead-bread.png
+banner: nyt-no-knead-bread.png
 ingredients:
   - title: flour
     g: 400

@@ -6,6 +6,7 @@ authors:
   - title: D Double E
     url: https://open.spotify.com/artist/6bwkMlweHsBCpI2a0C5nnN
 listen_of: 4evENpyS3oZUc9dk3MBcHj
+cover: double-or-nothing.jpg
 rating: 4.5
 ---
 

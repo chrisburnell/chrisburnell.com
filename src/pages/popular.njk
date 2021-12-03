@@ -8,7 +8,6 @@ description: |
   You can also <a href="/hot/">order by webmentions per day</a>.
 related_collection: popular
 ---
-{% from 'macros/deckItem.njk' import deckItem %}
 {%- set collection = collections[related_collection] -%}
 <div id="content" class=" [ content ] [ wrap ] [ archive ] ">
 
@@ -22,8 +21,12 @@ related_collection: popular
 
 	<div class=" [ content__body ] [ h-feed ] {% if toc %}[ generate-toc ] {% endif %}">
 		<nav class=" [ deck ] ">
+			{% set hfeed = true %}
+			{% set truncate = true %}
+			{% set lineclamp = false %}
 			{% for item in collection %}
-				{{ deckItem(item, global.now, collections.all, people, webmentions) }}
+				{%- set responses = item.url | getWebmentions(['mention-of', 'in-reply-to', 'like-of', 'repost-of', 'bookmark-of']) -%}
+				{% include 'deck-item.njk' %}
 			{% endfor %}
 		</nav>
 	</div>

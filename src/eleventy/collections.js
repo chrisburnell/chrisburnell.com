@@ -1,10 +1,22 @@
 const dateFilters = require("./filters/dates.js")
 const collectionFilters = require("./filters/collections.js")
-const queryFilters = require("./filters/queries.js")
 
 const global = require("../data/global.js")
 const site = require("../data/site.json")
-const webmentions = require("../data/webmentions.js")
+
+const { webmentions } = require("./plugins/webmentions.js")
+
+const absoluteURL = (url, base) => {
+	if (!base) {
+		base = site.url
+	}
+	try {
+		return new URL(url, base).toString()
+	} catch (e) {
+		console.log(`Trying to convert ${url} to be an absolute url with base ${base} and failed.`)
+		return url
+	}
+}
 
 module.exports = {
 	page: (collection) => {
@@ -18,51 +30,6 @@ module.exports = {
 	},
 	featurePosts: (collection) => {
 		return collection.getFilteredByTag("feature").filter(collectionFilters.isPublished).filter(collectionFilters.notReply).sort(collectionFilters.dateFilter)
-	},
-	hot: async (collection) => {
-		return (async () => {
-			const wm = await webmentions()
-			return await collection
-				.getFilteredByTag("feature")
-				.filter(collectionFilters.isPublished)
-				.filter(collectionFilters.notReply)
-				.filter((item) => queryFilters.getWebmentions(wm, item.url).length)
-				.sort((a, b) => {
-					const alpha = queryFilters.getWebmentions(wm, a.url)
-					let alphaPopularity = 0
-					for (let webmention of alpha) {
-						alphaPopularity = (alphaPopularity + dateFilters.epoch(webmention["wm-received"])) / 2
-					}
-					alphaPopularity = site.weights.time * dateFilters.epoch(a.date) + (1 - site.weights.time) * alphaPopularity
-
-					const beta = queryFilters.getWebmentions(wm, b.url)
-					let betaPopularity = 0
-					for (let webmention of beta) {
-						betaPopularity = (betaPopularity + dateFilters.epoch(webmention["wm-received"])) / 2
-					}
-					betaPopularity = site.weights.time * dateFilters.epoch(b.date) + (1 - site.weights.time) * betaPopularity
-
-					return betaPopularity - alphaPopularity
-				})
-				.slice(0, site.limits.feed)
-		})()
-	},
-	popular: async (collection) => {
-		return (async () => {
-			const wm = await webmentions()
-			return await collection
-				.getFilteredByTag("feature")
-				.filter(collectionFilters.isPublished)
-				.filter(collectionFilters.notReply)
-				.filter((item) => queryFilters.getWebmentions(wm, item.url).length)
-				.sort(collectionFilters.dateFilter)
-				.sort((a, b) => {
-					const alpha = queryFilters.getWebmentions(wm, a.url)
-					const beta = queryFilters.getWebmentions(wm, b.url)
-					return beta.length - alpha.length
-				})
-				.slice(0, site.limits.feed)
-		})()
 	},
 	throwbackPosts: (collection) => {
 		return collection
@@ -150,5 +117,64 @@ module.exports = {
 					return true
 				}
 			})
+	},
+	hot: async (collection) => {
+		const webmentionsByUrl = await webmentions()
+		return await collection
+			.getFilteredByTag("feature")
+			.filter(collectionFilters.isPublished)
+			.filter(collectionFilters.notReply)
+			.filter((item) => {
+				const url = absoluteURL(item.url)
+
+				if (!url || !webmentionsByUrl[url]) {
+					return false
+				}
+
+				return webmentionsByUrl[url]
+			})
+			.sort((a, b) => {
+				const aWebmentions = webmentionsByUrl[absoluteURL(a.url)]
+				const bWebmentions = webmentionsByUrl[absoluteURL(b.url)]
+
+				let aPopularity = 0
+				for (let webmention of aWebmentions) {
+					aPopularity = (aPopularity + dateFilters.epoch(webmention["wm-received"])) / 2
+				}
+				aPopularity = site.weights.time * dateFilters.epoch(a.date) + (1 - site.weights.time) * aPopularity
+
+				let bPopularity = 0
+				for (let webmention of bWebmentions) {
+					bPopularity = (bPopularity + dateFilters.epoch(webmention["wm-received"])) / 2
+				}
+				bPopularity = site.weights.time * dateFilters.epoch(b.date) + (1 - site.weights.time) * bPopularity
+
+				return bPopularity - aPopularity
+			})
+			.slice(0, site.limits.feed)
+	},
+	popular: async (collection) => {
+		const webmentionsByUrl = await webmentions()
+		return await collection
+			.getFilteredByTag("feature")
+			.filter(collectionFilters.isPublished)
+			.filter(collectionFilters.notReply)
+			.filter((item) => {
+				const url = absoluteURL(item.url)
+
+				if (!url || !webmentionsByUrl[url]) {
+					return false
+				}
+
+				return webmentionsByUrl[url]
+			})
+			.sort(collectionFilters.dateFilter)
+			.sort((a, b) => {
+				const aWebmentions = webmentionsByUrl[absoluteURL(a.url)]
+				const bWebmentions = webmentionsByUrl[absoluteURL(b.url)]
+
+				return bWebmentions.length - aWebmentions.length
+			})
+			.slice(0, site.limits.feed)
 	},
 }

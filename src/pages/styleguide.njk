@@ -9,7 +9,6 @@ css: styleguide.css
 js: styleguide.js
 toc: true
 ---
-{% from 'macros/deckItem.njk' import deckItem %}
 {% from 'macros/shelfItem.njk' import shelfItem %}
 
 <h2>Colours</h2>
@@ -460,8 +459,12 @@ p q r s t u v w x y z { | } ~
 <h2>Deck</h2>
 
 <nav class=" [ deck ] ">
+{% set hfeed = false %}
+{% set truncate = true %}
+{% set lineclamp = false %}
 {% for item in collections.article | arePublished | reverse | limit(site.limits.feature) %}
-	{{ deckItem(item, global.now, collections.all, people, webmentions, false) }}
+	{%- set responses = item.url | getWebmentions(['mention-of', 'in-reply-to', 'like-of', 'repost-of', 'bookmark-of']) -%}
+	{% include 'deck-item.njk' %}
 {% endfor %}
 </nav>
 

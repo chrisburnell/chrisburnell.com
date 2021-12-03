@@ -1,7 +1,6 @@
 ---
 layout: base
 ---
-{% from 'macros/deckItem.njk' import deckItem %}
 {%- set collection = collections[related_collection] -%}
 {%- set count = collection.length -%}
 {%- set latest_year = collection[0].date.getFullYear() -%}
@@ -29,6 +28,9 @@ layout: base
 			</a>
 		</h2>
 		<nav class=" [ deck ] ">
+			{% set hfeed = true %}
+			{% set truncate = true %}
+			{% set lineclamp = false %}
 			{% for item in collection %}
 				{% if item.date.getFullYear() != year %}
 					{%- set year = item.date.getFullYear() -%}
@@ -44,7 +46,8 @@ layout: base
 					</h2>
 					<nav class=" [ deck ] ">
 				{% endif %}
-				{{ deckItem(item, global.now, collections.all, people, webmentions) }}
+				{%- set responses = item.url | getWebmentions(['mention-of', 'in-reply-to', 'like-of', 'repost-of', 'bookmark-of']) -%}
+				{% include 'deck-item.njk' %}
 			{% endfor %}
 		</nav>
 	</div>

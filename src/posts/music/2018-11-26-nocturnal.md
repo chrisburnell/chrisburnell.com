@@ -6,5 +6,6 @@ authors:
   - title: The Midnight
     url: https://open.spotify.com/artist/2NFrAuh8RQdQoS7iYFbckw
 listen_of: 5MDQfxmG16gD34X0gUZW6A
+cover: nocturnal.jpg
 rating: 4
 ---

@@ -1,5 +1,3 @@
-const sanitizeHTML = require("sanitize-html")
-
 const site = require("../../data/site.json")
 const consoles = require("../../data/consoles.json")
 const mastodonInstances = require("../../data/mastodonInstances.json")
@@ -7,15 +5,6 @@ const places = require("../../data/places.json")
 const methods = require("../../data/postingMethods.json")
 const syndicationTargets = require("../../data/syndicationTargets.json")
 const urlReplacements = require("../../data/urlReplacements.json")
-
-const dateFilters = require("./dates.js")
-
-const allowedHTML = {
-	allowedTags: ["b", "i", "em", "strong", "a"],
-	allowedAttributes: {
-		a: ["href"],
-	},
-}
 
 const toArray = (value) => {
 	if (Array.isArray(value)) {
@@ -27,18 +16,6 @@ const toArray = (value) => {
 const getPath = (url) => {
 	let urlObject = new URL(url)
 	return urlObject.pathname
-}
-
-const absoluteURL = (url, base) => {
-	if (!base) {
-		base = site.url
-	}
-	try {
-		return new URL(url, base).toString()
-	} catch (e) {
-		console.log(`Trying to convert ${url} to be an absolute url with base ${base} and failed.`)
-		return url
-	}
 }
 
 module.exports = {
@@ -331,41 +308,5 @@ module.exports = {
 			return value.twitter || value
 		}
 		return value.title || value
-	},
-	getWebmentions: (webmentions, url, allowedTypes = ["like-of", "repost-of", "bookmark-of", "mention-of", "in-reply-to"]) => {
-		url = absoluteURL(url)
-
-		if (!url || !webmentions || !webmentions[url]) {
-			return []
-		}
-
-		if (typeof allowedTypes === "string") {
-			allowedTypes = [allowedTypes]
-		}
-
-		return webmentions[url]
-			.filter((entry) => {
-				return allowedTypes.includes(entry["wm-property"])
-			})
-			.filter((entry) => {
-				const { author } = entry
-				return !!author && !!author.name
-			})
-			.map((entry) => {
-				if (!("content" in entry)) {
-					return entry
-				}
-				const { html, text } = entry.content
-				if (html) {
-					// really long html mentions, usually newsletters or compilations
-					entry.content.value = html.length > 2000 ? `mentioned this in <a href="${entry["wm-source"]}">${entry["wm-source"]}</a>` : sanitizeHTML(html, allowedHTML)
-				} else {
-					entry.content.value = sanitizeHTML(text, allowedHTML)
-				}
-				return entry
-			})
-			.sort((a, b) => {
-				return dateFilters.epoch(a.published || a["wm-received"]) - dateFilters.epoch(b.published || b["wm-received"])
-			})
 	},
 }

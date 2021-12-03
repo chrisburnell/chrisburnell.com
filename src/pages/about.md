@@ -4,7 +4,6 @@ tagline: About me
 eleventyComputed:
   description: "{{ site.description | safe }}"
 ---
-{%- from 'macros/deckItem.njk' import deckItem -%}
 
 <figure>
     {% img './images/content/rachel-and-i.jpg', 'Chris Burnell' %}

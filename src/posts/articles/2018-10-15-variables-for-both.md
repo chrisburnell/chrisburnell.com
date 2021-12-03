@@ -5,9 +5,7 @@ description: Now that CSS Custom Properties, or CSS Variables, are becoming a so
 tags:
   - css
   - scss
-banner:
-  - variables-for-both@2x.jpg
-  - variables-for-both.jpg
+banner: variables-for-both@2x.jpg
 further_reading:
   - title: W3 CSS Custom Properties Specification
     url: https://www.w3.org/TR/css-variables/

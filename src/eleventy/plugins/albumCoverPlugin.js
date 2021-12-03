@@ -7,7 +7,7 @@ const Image = require("@11ty/eleventy-img")
 // Load .env variables with dotenv
 require("dotenv").config()
 
-const TOKEN = process.env.ODESLI_TOKEN
+const SPOTIFY_CLIENT_TOKEN = require("../../data/spotify_token.js")
 
 // Avatar Dimensions
 const size = 400
@@ -56,11 +56,15 @@ const storeAlbumCover = async (id, classes = "") => {
 }
 
 const fetchAlbumCoverUrl = async (id) => {
-	const response = await fetch(`https://api.song.link/v1-alpha.1/links?key=${TOKEN}&userCountry=UK&platform=spotify&type=album&id=${id}`)
-	if (response.ok) {
-		const album = await response.json()
-		console.log(album.entitiesByUniqueId[`SPOTIFY_ALBUM::${id}`].thumbnailUrl)
-		return await album.entitiesByUniqueId[`SPOTIFY_ALBUM::${id}`].thumbnailUrl
+	const album_request = await fetch(`https://api.spotify.com/v1/albums/${id}`, {
+		headers: {
+			Authorization: `Bearer ${SPOTIFY_CLIENT_TOKEN()}`,
+		},
+	})
+	if (album_request.ok) {
+		const album_response = await album_request.json()
+		console.log(album_response)
+		return album_response.images[0].url
 	}
 
 	return ""
