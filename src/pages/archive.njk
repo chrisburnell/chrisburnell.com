@@ -2,6 +2,8 @@
 layout: base
 title: Archive
 description: Browse all of my posts by a variety of metrics.
+hfeed: true
+truncate: true
 ---
 {%- set collection = collections.posts -%}
 {%- set count = collection.length -%}
@@ -35,22 +37,12 @@ description: Browse all of my posts by a variety of metrics.
 			</h2>
 			{% if collection[0].data.mf_root == 'review' %}
 				<nav class=" [ shelf {% if collection[0].data.read_of %}shelf--books {% endif %}] " aria-labelledby="{{ lookup.plural }}">
-					{%- set hfeed = true -%}
 					{% for item in collection | limit(site.limits.feature) %}
-						{%- set item_cover_markup = false -%}
-						{%- if item.data.cover -%}
-							{% set item_cover_url = item.data.cover.url | default(item.data.cover) %}
-							{% set item_cover_markup %}{% img './images/covers/' + item_cover_url, '' %}{% endset %}
-							<script>console.log("{{ item_cover_markup }}")</script>
-						{%- endif -%}
 						{% include 'item-shelf.njk' %}
 					{% endfor %}
 				</nav>
 			{% else %}
 				<nav class=" [ deck ] " aria-labelledby="{{ lookup.plural }}">
-					{% set hfeed = true %}
-					{% set truncate = true %}
-					{% set lineclamp = false %}
 					{% for item in collection | limit(site.limits.feature) %}
 						{%- set responses = item.url | getWebmentions(['mention-of', 'in-reply-to', 'like-of', 'repost-of', 'bookmark-of']) -%}
 						{% include 'item-deck.njk' %}

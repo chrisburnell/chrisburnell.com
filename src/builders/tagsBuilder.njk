@@ -7,6 +7,8 @@ permalink: /tag/{{ tag }}/
 eleventyComputed:
   title: "Tagged: <q>{{ tag | capitalizeFormat }}</q>"
   description: "All of my posts tagged <q>{{ tag | capitalizeFormat }}</q>."
+hfeed: true
+truncate: true
 ---
 {%- set collection = collections[tag] | arePublished | reverse -%}
 {%- set count = collection.length -%}
@@ -24,9 +26,6 @@ eleventyComputed:
 
 	<div class=" [ content__body ] {% if toc %}[ generate-toc ] {% endif %}">
 		<nav class=" [ deck ] [ h-feed ] ">
-			{% set hfeed = true %}
-			{% set truncate = true %}
-			{% set lineclamp = false %}
 			{% for item in collection %}
 				{%- set responses = item.url | getWebmentions(['mention-of', 'in-reply-to', 'like-of', 'repost-of', 'bookmark-of']) -%}
 				{% include 'item-deck.njk' %}

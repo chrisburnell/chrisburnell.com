@@ -5,9 +5,11 @@ caniuse: true
 codepen: true
 speakerdeck: true
 twitter: true
+hfeed: false
+truncate: true
+toc: true
 css: styleguide.css
 js: styleguide.js
-toc: true
 ---
 
 <h2>Colours</h2>
@@ -458,9 +460,6 @@ p q r s t u v w x y z { | } ~
 <h2>Deck</h2>
 
 <nav class=" [ deck ] ">
-{% set hfeed = false %}
-{% set truncate = true %}
-{% set lineclamp = false %}
 {% for item in collections.article | arePublished | reverse | limit(site.limits.feature) %}
 	{%- set responses = item.url | getWebmentions(['mention-of', 'in-reply-to', 'like-of', 'repost-of', 'bookmark-of']) -%}
 	{% include 'item-deck.njk' %}

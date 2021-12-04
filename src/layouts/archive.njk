@@ -1,5 +1,7 @@
 ---
 layout: base
+hfeed: true
+truncate: true
 ---
 {%- set collection = collections[related_collection] -%}
 {%- set count = collection.length -%}
@@ -28,9 +30,6 @@ layout: base
 			</a>
 		</h2>
 		<nav class=" [ deck ] ">
-			{% set hfeed = true %}
-			{% set truncate = true %}
-			{% set lineclamp = false %}
 			{% for item in collection %}
 				{% if item.date.getFullYear() != year %}
 					{%- set year = item.date.getFullYear() -%}

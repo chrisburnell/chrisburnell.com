@@ -29,7 +29,6 @@ sitemap:
 					<nav class=" [ deck ] " aria-labelledby="today-rsvps">
 						{%- set hfeed = false -%}
 						{%- set truncate = false -%}
-						{%- set lineclamp = false -%}
 						{% for item in collections.todayRSVPs %}
 							{%- set responses = item.url | getWebmentions(['mention-of', 'in-reply-to', 'like-of', 'repost-of', 'bookmark-of']) -%}
 							{% include 'item-deck.njk' %}
@@ -44,7 +43,6 @@ sitemap:
 			<nav class=" [ deck ] [ h-feed ] " aria-labelledby="latest">
 				{%- set hfeed = true -%}
 				{%- set truncate = true -%}
-				{%- set lineclamp = false -%}
 				{% for item in collections.featurePosts | limit(site.limits.feature) %}
 					{%- set responses = item.url | getWebmentions(['mention-of', 'in-reply-to', 'like-of', 'repost-of', 'bookmark-of']) -%}
 					{% include 'item-deck.njk' %}
@@ -57,7 +55,6 @@ sitemap:
 			<nav class=" [ deck ] " aria-labelledby="hot">
 				{% set hfeed = false %}
 				{% set truncate = true %}
-				{% set lineclamp = true %}
 				{% for item in collections.hot | limit(site.limits.feature) %}
 					{%- set responses = item.url | getWebmentions(['mention-of', 'in-reply-to', 'like-of', 'repost-of', 'bookmark-of']) -%}
 					{% include 'item-deck.njk' %}
@@ -74,7 +71,6 @@ sitemap:
 			<nav class=" [ deck ] " aria-labelledby="projects">
 				{%- set hfeed = false -%}
 				{%- set truncate = true -%}
-				{%- set lineclamp = true -%}
 				{% for item in projects.personal | limit(site.limits.feature) %}
 					{%- set responses = [] -%}
 					{% include 'item-deck.njk' %}
@@ -93,7 +89,6 @@ sitemap:
 					<nav class=" [ deck ] " aria-labelledby="upcoming-rsvps">
 						{%- set hfeed = false -%}
 						{%- set truncate = true -%}
-						{%- set lineclamp = false -%}
 						{% for item in collections.upcomingRSVPs %}
 							{%- set responses = item.url | getWebmentions(['mention-of', 'in-reply-to', 'like-of', 'repost-of', 'bookmark-of']) -%}
 							{% include 'item-deck.njk' %}
@@ -108,7 +103,6 @@ sitemap:
 					<nav class=" [ deck ] " aria-labelledby="on-this-day">
 						{%- set hfeed = false -%}
 						{%- set truncate = true -%}
-						{%- set lineclamp = false -%}
 						{% for item in collections.throwbackPosts | limit(site.limits.feature) %}
 							{%- set responses = item.url | getWebmentions(['mention-of', 'in-reply-to', 'like-of', 'repost-of', 'bookmark-of']) -%}
 							{% include 'item-deck.njk' %}
