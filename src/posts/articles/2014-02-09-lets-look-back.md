@@ -431,11 +431,6 @@ Next, let’s turn this CSS into SCSS.
 }
 ```
 
-<figure>
-    <img src="/images/content/welldone.gif" alt="Just look at it... Beautiful.">
-    <figcaption>Success.</figcaption>
-</figure>
-
 
 <h2 id="a-few-major-changes">You’ll notice a few major changes</h2>
 

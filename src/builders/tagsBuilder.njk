@@ -29,7 +29,7 @@ eleventyComputed:
 			{% set lineclamp = false %}
 			{% for item in collection %}
 				{%- set responses = item.url | getWebmentions(['mention-of', 'in-reply-to', 'like-of', 'repost-of', 'bookmark-of']) -%}
-				{% include 'deck-item.njk' %}
+				{% include 'item-deck.njk' %}
 			{% endfor %}
 		</nav>
 	</div>

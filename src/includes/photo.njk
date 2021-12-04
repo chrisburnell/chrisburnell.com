@@ -2,8 +2,8 @@
 	{% set photos = photo | toArray %}
 	{% for item in photos %}
 		<figure>
-			<img alt="" role="presentation"
-				 src="{{ item.url | default(item) }}">
+			{% set item_url = item.url | default(item) %}
+			{% img './images/content/' + item_url, '' %}
 			{% if item.alt %}
 				<figcaption>{{ item.alt }}</figcaption>
 			{% endif %}

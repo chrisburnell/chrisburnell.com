@@ -31,7 +31,7 @@ authors:
   - title: Tastes Better From Scratch
     url: https://tastesbetterfromscratch.com/homemade-olive-garden-breadsticks
 photo:
-  - url: https://chrisburnell.com/static/breadsticks.jpg
+  - url: breadsticks.jpg
     alt: Warm and fluffy breadsticks made by yours truly
 syndicate_to:
   - https://mymothers.recipes/recipe/WV4RI947lj3Rr5UpEUE4

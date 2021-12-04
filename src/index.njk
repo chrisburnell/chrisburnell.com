@@ -32,7 +32,7 @@ sitemap:
 						{%- set lineclamp = false -%}
 						{% for item in collections.todayRSVPs %}
 							{%- set responses = item.url | getWebmentions(['mention-of', 'in-reply-to', 'like-of', 'repost-of', 'bookmark-of']) -%}
-							{% include 'deck-item.njk' %}
+							{% include 'item-deck.njk' %}
 						{% endfor %}
 					</nav>
 				</div>
@@ -47,7 +47,7 @@ sitemap:
 				{%- set lineclamp = false -%}
 				{% for item in collections.featurePosts | limit(site.limits.feature) %}
 					{%- set responses = item.url | getWebmentions(['mention-of', 'in-reply-to', 'like-of', 'repost-of', 'bookmark-of']) -%}
-					{% include 'deck-item.njk' %}
+					{% include 'item-deck.njk' %}
 				{% endfor %}
 			</nav>
 
@@ -60,7 +60,7 @@ sitemap:
 				{% set lineclamp = true %}
 				{% for item in collections.hot | limit(site.limits.feature) %}
 					{%- set responses = item.url | getWebmentions(['mention-of', 'in-reply-to', 'like-of', 'repost-of', 'bookmark-of']) -%}
-					{% include 'deck-item.njk' %}
+					{% include 'item-deck.njk' %}
 				{% endfor %}
 			</nav>
 
@@ -77,7 +77,7 @@ sitemap:
 				{%- set lineclamp = true -%}
 				{% for item in projects.personal | limit(site.limits.feature) %}
 					{%- set responses = [] -%}
-					{% include 'deck-item.njk' %}
+					{% include 'item-deck.njk' %}
 				{% endfor %}
 			</nav>
 
@@ -96,7 +96,7 @@ sitemap:
 						{%- set lineclamp = false -%}
 						{% for item in collections.upcomingRSVPs %}
 							{%- set responses = item.url | getWebmentions(['mention-of', 'in-reply-to', 'like-of', 'repost-of', 'bookmark-of']) -%}
-							{% include 'deck-item.njk' %}
+							{% include 'item-deck.njk' %}
 						{% endfor %}
 					</nav>
 				</div>
@@ -111,7 +111,7 @@ sitemap:
 						{%- set lineclamp = false -%}
 						{% for item in collections.throwbackPosts | limit(site.limits.feature) %}
 							{%- set responses = item.url | getWebmentions(['mention-of', 'in-reply-to', 'like-of', 'repost-of', 'bookmark-of']) -%}
-							{% include 'deck-item.njk' %}
+							{% include 'item-deck.njk' %}
 						{% endfor %}
 					</nav>
 				</div>

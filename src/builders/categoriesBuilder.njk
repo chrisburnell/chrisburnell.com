@@ -29,18 +29,20 @@ eleventyComputed:
 		{% endif %}
 		{% if collection[0].data.mf_root == 'review' %}
 			<div class=" [ box ] ">
-				You can sort these {{ category.properPlural }}:
-				<button class=" [ anchor  strong  non-selectable ] " data-sort="alphabetical">by title</button>,
-				<button class=" [ anchor  strong  non-selectable ] " data-sort="author">by author</button>,
-				<button class=" [ anchor  strong  non-selectable ] " data-sort="rating">by rating</button>{% if category.title == 'beer' %}{% else %},
-				<button class=" [ anchor  strong  non-selectable ] " data-sort="release">by release date</button>{% endif %}, or
-				<button class=" [ anchor  strong  non-selectable ] " data-sort="chronological" data-direction="descending" aria-current="true">by publish date</button>.
-				<noscript>Although, you will need to enable JavaScript.</noscript>
+				<div>
+					You can sort these {{ category.properPlural }}:
+					<button class=" [ anchor  strong  non-selectable ] " data-sort="alphabetical">by title</button>,
+					<button class=" [ anchor  strong  non-selectable ] " data-sort="author">by author</button>,
+					<button class=" [ anchor  strong  non-selectable ] " data-sort="rating">by rating</button>{% if category.title == 'beer' %}{% else %},
+					<button class=" [ anchor  strong  non-selectable ] " data-sort="release">by release date</button>{% endif %}, or
+					<button class=" [ anchor  strong  non-selectable ] " data-sort="chronological" data-direction="descending" aria-current="true">by publish date</button>.
+					<noscript>Although, you will need to enable JavaScript.</noscript>
+				</div>
 			</div>
 			<nav class=" [ shelf {% if collection[0].data.read_of %}shelf--books {% endif %}] " aria-live="polite">
 				{%- set hfeed = true -%}
 				{% for item in collection %}
-					{% include 'shelf-item.njk' %}
+					{% include 'item-shelf.njk' %}
 				{% endfor %}
 			</nav>
 		{% else %}
@@ -64,7 +66,7 @@ eleventyComputed:
 						<nav class=" [ deck ] ">
 					{% endif %}
 					{%- set responses = item.url | getWebmentions(['mention-of', 'in-reply-to', 'like-of', 'repost-of', 'bookmark-of']) -%}
-					{% include 'deck-item.njk' %}
+					{% include 'item-deck.njk' %}
 				{% endfor %}
 			</nav>
 		{% endif %}

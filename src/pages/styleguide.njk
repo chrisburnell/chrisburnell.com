@@ -463,7 +463,7 @@ p q r s t u v w x y z { | } ~
 {% set lineclamp = false %}
 {% for item in collections.article | arePublished | reverse | limit(site.limits.feature) %}
 	{%- set responses = item.url | getWebmentions(['mention-of', 'in-reply-to', 'like-of', 'repost-of', 'bookmark-of']) -%}
-	{% include 'deck-item.njk' %}
+	{% include 'item-deck.njk' %}
 {% endfor %}
 </nav>
 
@@ -473,14 +473,14 @@ p q r s t u v w x y z { | } ~
 <nav class=" [ shelf ] ">
 {%- set hfeed = false -%}
 {% for item in collections.beer | arePublished | reverse | limit(site.limits.feature) %}
-	{% include 'shelf-item.njk' %}
+	{% include 'item-shelf.njk' %}
 {% endfor %}
 </nav>
 
 <nav class=" [ shelf ] ">
 {%- set hfeed = false -%}
 {% for item in collections.music | arePublished | reverse | limit(site.limits.feature) %}
-	{% include 'shelf-item.njk' %}
+	{% include 'item-shelf.njk' %}
 {% endfor %}
 </nav>
 

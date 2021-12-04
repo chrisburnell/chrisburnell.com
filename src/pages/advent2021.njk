@@ -19,7 +19,7 @@ description: Advent items for the year of 2021.
 			<nav class=" [ shelf ] ">
 		{% endif %}
 		{%- set responses = item.url | getWebmentions(['mention-of', 'in-reply-to', 'like-of', 'repost-of', 'bookmark-of']) -%}
-		{% include 'shelf-item.njk' %}
+		{% include 'item-shelf.njk' %}
 		{% if advent2021[day].crackling %}
 			<article>
 				<h3>{{ advent2021[day].crackling | replace('👍', '') }} Crackling</h3>

@@ -65,7 +65,7 @@
 		@error "There is no `measure` named `#{$measure}` in `$measures`. `measure` should be one of `#{map-keys($measures)}`.";
 	}
 
-	& > * + * {
+	& > * + *:not(.skip-owl) {
 		@include v(margin-block-start, $measure);
 	}
 }
