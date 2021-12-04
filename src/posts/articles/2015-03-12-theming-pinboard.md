@@ -53,7 +53,11 @@ So it was important for me to make these parts distinct in the new design, whils
 
 <h2 id="injection">injection"); DROP TABLE Bookmarks;--</h2>
 
-<aside><img src="/images/content/idontbelievemyeyes.gif" role="presentation" alt=""></aside>
+<aside>
+	<picture>
+		<img src="/images/content/idontbelievemyeyes.gif" alt="" loading="lazy">
+	</picture>
+</aside>
 
 That was a <del>hilarious</del> decent joke, right? And I'm sure you appreciated <del>that moment of tear-filled laughter</del> that I tried.
 
@@ -96,12 +100,16 @@ After tinkering with my own file for a few days and experimenting through daily 
 </figure>
 
 <figure>
-    <img src="/images/content/pinboard-icons-transition.gif" alt="">
+	<picture>
+		<img src="/images/animated/pinboard-icons-transition.gif" alt="" loading="lazy">
+	</picture>
     <figcaption>The icons transition. An example of the new sitewide transitions.</figcaption>
 </figure>
 
 <figure>
-    <img src="/images/content/pinboard-star-transition.gif" alt="">
+	<picture>
+		<img src="/images/animated/pinboard-star-transition.gif" alt="" loading="lazy">
+	</picture>
     <figcaption>The ‘star’ feature transition.</figcaption>
 </figure>
 

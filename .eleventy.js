@@ -85,7 +85,8 @@ module.exports = (config) => {
 	// Static Files
 	config.addPassthroughCopy("css")
 	config.addPassthroughCopy("fonts")
-	config.addPassthroughCopy("images")
+	config.addPassthroughCopy("images/*")
+	config.addPassthroughCopy("images/animated")
 	config.addPassthroughCopy("static")
 	config.addPassthroughCopy("src/js")
 

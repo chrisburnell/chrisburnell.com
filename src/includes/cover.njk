@@ -1,9 +1,9 @@
 {% if cover %}
-	{% img './images/covers/' + cover, '', 'cover' %}
-{% elif listen_of %}
-	{% album_cover listen_if, 'cover' %}
+	{% img './images/covers/' + cover, '', 'cover  u-photo', [400] %}
 {% elif item.data.cover %}
-	{% img './images/covers/' + item.data.cover, '', 'cover' %}
+	{% img './images/covers/' + item.data.cover, '', 'cover  u-photo', [400] %}
+{% elif listen_of %}
+	{% album_cover listen_if, 'cover  u-photo', [400] %}
 {% elif item.data.listen_of %}
-	{% album_cover item.data.listen_if, 'cover' %}
+	{% album_cover item.data.listen_if, 'cover  u-photo', [400] %}
 {% endif %}

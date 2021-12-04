@@ -9,11 +9,7 @@ toc: true
 ---
 
 <figure>
-    <picture class="pixelated">
-        <source srcset="/images/pentatonic.avif" type="image/avif" />
-        <source srcset="/images/pentatonic.webp" type="image/webp" />
-        <img class="pixelated" src="/images/pentatonic.png" alt="" role="presentation">
-    </picture>
+	{% img './images/content/pentatonic.png', '', 'pixelated' %}
     <figcaption><p>A snippet of a <a href="https://en.wikipedia.org/wiki/Pentatonic_scale">C Major Pentatonic scale</a>.</p></figcaption>
 </figure>
 

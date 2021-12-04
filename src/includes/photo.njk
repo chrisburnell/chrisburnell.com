@@ -1,11 +1,15 @@
-{% if photo %}
-	{% set photos = photo | toArray %}
+{% if photo or item.data.photo %}
+	{% set photos = item.data.photo | default(photo) | toArray %}
 	{% for item in photos %}
 		<figure>
 			{% set item_url = item.url | default(item) %}
-			{% img './images/content/' + item_url, '' %}
-			{% if item.alt %}
-				<figcaption>{{ item.alt }}</figcaption>
+			{% set item_alt = item.alt | default('') %}
+			{% if 'gif' in item_url %}
+				<picture>
+					<img src="/images/animated/{{ item_url }}" alt="{{ item.alt }}" loading="lazy">
+				</picture>
+			{% else %}
+				{% img './images/content/' + item_url, item_alt %}
 			{% endif %}
 		</figure>
 	{% endfor %}

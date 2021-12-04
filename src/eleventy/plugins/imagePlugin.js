@@ -4,14 +4,15 @@ const Image = require("@11ty/eleventy-img")
 // Load .env variables with dotenv
 require("dotenv").config()
 
-const imageShortcode = async (src, alt, classes = "", widths = [null]) => {
+const imageShortcode = (src, alt, classes = "", widths = [null]) => {
 	const originalFormat = src.includes("png") ? "png" : "jpg"
+	const formats = process.env.ELEVENTY_PRODUCTION ? ["avif", "webp", originalFormat] : ["webp", originalFormat]
 
 	let options = Object.assign(
 		{},
 		{
 			width: widths,
-			formats: process.env.ELEVENTY_PRODUCTION ? ["avif", "webp", originalFormat] : ["webp", originalFormat],
+			formats: formats,
 			urlPath: "/images/built/",
 			outputDir: "./_site/images/built",
 			duration: "4w",
@@ -24,7 +25,7 @@ const imageShortcode = async (src, alt, classes = "", widths = [null]) => {
 		{}
 	)
 
-	let metadata = await Image(src, options)
+	Image(src, options)
 
 	let imageAttributes = Object.assign(
 		{
@@ -36,6 +37,8 @@ const imageShortcode = async (src, alt, classes = "", widths = [null]) => {
 		{}
 	)
 
+	let metadata = Image.statsSync(src, options)
+
 	// You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
 	return Image.generateHTML(metadata, imageAttributes, {
 		whitespaceMode: "inline",
@@ -43,5 +46,5 @@ const imageShortcode = async (src, alt, classes = "", widths = [null]) => {
 }
 
 module.exports = (config) => {
-	config.addNunjucksAsyncShortcode("img", imageShortcode)
+	config.addNunjucksShortcode("img", imageShortcode)
 }

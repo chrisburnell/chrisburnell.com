@@ -157,17 +157,7 @@
 			{% endif %}
 		</h3>
 	{% endif %}
-	{# Very rudimentary workaround… #}
-	{% if item.data.photo %}
-		{% set photoArray = item.data.photo | toArray %}
-		<picture>
-			{% if global.production %}
-				<source srcset="/images/built/{{ photoArray[0].url | default(photoArray[0]) | replace('jpg', 'avif') | replace('png', 'avif') }}" type="image/avif">
-			{% endif %}
-			<source srcset="/images/built/{{ photoArray[0].url | default(photoArray[0]) | replace('jpg', 'webp') | replace('png', 'webp') }}" type="image/webp">
-			<img alt="" src="/images/built/{{ photoArray[0].url | default(photoArray[0]) | replace('jpg', 'jpeg') }}">
-		</picture>
-	{% endif %}
+	{% include 'photo.njk' %}
 	{% if item.data.description and item.data.tags and (item.data.tags.includes('page') or item.data.tags.includes('writing')) %}
 		<p class=" [ p-summary ] {% if item.data.category == 'article' %}[ line-clamp ] {% endif %}">{{ item.data.description | striptags(true) | urlize | safe }}</p>
 	{% elif item.data.description and item.data.description_markdown %}
