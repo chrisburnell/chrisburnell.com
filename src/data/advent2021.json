@@ -1,7 +1,7 @@
 {
   "1": {
     "crackling": "Sea Salt and Black Pepper",
-    "popcorn": "Classic Caramel",
+    "popcorn": "Salted Caramel",
     "chocolate": "Bunny"
   },
   "2": {
@@ -15,8 +15,8 @@
     "chocolate": "Square"
   },
   "4": {
-    "crackling": "",
-    "popcorn": "",
-    "chocolate": ""
+    "crackling": "BBQ",
+    "popcorn": "Classic Caramel",
+    "chocolate": "Sphere"
   }
 }
