@@ -9,7 +9,6 @@ css: styleguide.css
 js: styleguide.js
 toc: true
 ---
-{% from 'macros/shelfItem.njk' import shelfItem %}
 
 <h2>Colours</h2>
 
@@ -472,14 +471,16 @@ p q r s t u v w x y z { | } ~
 <h2>Shelf</h2>
 
 <nav class=" [ shelf ] ">
+{%- set hfeed = false -%}
 {% for item in collections.beer | arePublished | reverse | limit(site.limits.feature) %}
-	{{ shelfItem(item, global.now, people, false) }}
+	{% include 'shelf-item.njk' %}
 {% endfor %}
 </nav>
 
 <nav class=" [ shelf ] ">
+{%- set hfeed = false -%}
 {% for item in collections.music | arePublished | reverse | limit(site.limits.feature) %}
-	{{ shelfItem(item, global.now, people, false) }}
+	{% include 'shelf-item.njk' %}
 {% endfor %}
 </nav>
 

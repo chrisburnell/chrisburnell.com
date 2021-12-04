@@ -1,4 +1,3 @@
-{%- from 'macros/feedItem.njk' import feedItem -%}
 {%- set related_page = site.url + '/' + related_collection + '/' -%}
 {%- set related_page = related_page | replace('featurePosts/', '') | replace('writingPosts', 'writing') -%}
 <?xml version="1.0" encoding="utf-8" ?>
@@ -25,7 +24,7 @@
 		<atom:link rel="hub" href="{{ author.urls.switchboard }}" />
 
 		{% for item in collections[related_collection] | limit(site.limits.feed) %}
-			{{ feedItem(item, site) }}
+			{% include 'feed-item.njk' %}
 		{% endfor %}
 
 	</channel>

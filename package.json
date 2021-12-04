@@ -56,7 +56,7 @@
     "prefix": "npx postcss css/*.css --replace --no-map --use=autoprefixer",
     "js": "npx uglifyjs _site/js/main.js -o _site/js/main.js",
     "prettier": "npx prettier --write src",
-    "start": "npm run palette; concurrently \"npm run scss -- --watch\" \"npx @11ty/eleventy --serve --quiet\"",
+    "start": "concurrently \"npm run scss -- --watch\" \"npx @11ty/eleventy --serve --quiet\"",
     "serve": "npm run start",
     "build": "npm run palette; npm run scss -- --style=compressed; npm run prefix; npm run prettier; ELEVENTY_PRODUCTION=true npx @11ty/eleventy",
     "debug": "cross-env DEBUG=* npx @11ty/eleventy"

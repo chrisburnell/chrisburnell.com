@@ -8,7 +8,6 @@ eleventyComputed:
   title: "{{ category.properPlural | title }}"
   description: "All of my {{ category.properPlural }}."
 ---
-{% from 'macros/shelfItem.njk' import shelfItem %}
 {%- set collection = collections[category.title] | arePublished | reverse -%}
 {%- set count = collection.length -%}
 {%- set latest_year = collection[0].date.getFullYear() -%}
@@ -39,8 +38,10 @@ eleventyComputed:
 				<noscript>Although, you will need to enable JavaScript.</noscript>
 			</div>
 			<nav class=" [ shelf {% if collection[0].data.read_of %}shelf--books {% endif %}] " aria-live="polite">
+				{%- set hfeed = true -%}
 				{% for item in collection %}
-					{{ shelfItem(item, global.now, people) }}
+					<!-- hello -->
+					{% include 'shelf-item.njk' %}
 				{% endfor %}
 			</nav>
 		{% else %}

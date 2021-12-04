@@ -3,7 +3,6 @@ layout: base
 title: Archive
 description: Browse all of my posts by a variety of metrics.
 ---
-{% from 'macros/shelfItem.njk' import shelfItem %}
 {%- set collection = collections.posts -%}
 {%- set count = collection.length -%}
 {%- set latest_year = collection[0].date.getFullYear() -%}
@@ -36,8 +35,9 @@ description: Browse all of my posts by a variety of metrics.
 			</h2>
 			{% if collection[0].data.mf_root == 'review' %}
 				<nav class=" [ shelf {% if collection[0].data.read_of %}shelf--books {% endif %}] " aria-labelledby="{{ lookup.plural }}">
+					{%- set hfeed = true -%}
 					{% for item in collection | limit(site.limits.feature) %}
-						{{ shelfItem(item, global.now, people) }}
+						{% include 'shelf-item.njk' %}
 					{% endfor %}
 				</nav>
 			{% else %}
