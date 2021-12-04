@@ -22,7 +22,7 @@ I author posts of various *types* on this website, some of which I syndicate to 
     <dt><a href="/code/">Pens</a></dt>
     <dd>Ones that I’m especially proud of I will cross-post, manually, to this website.</dd>
     <dt><a href="/beer/">Beer</a></dt>
-    <dd><a href="https://indieweb.org/PESOS" rel="external"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> the check-in data from <a href="https://untappd.com" rel="external">Untappd</a> using my project, <a href="https://ownyour.beer" rel="external">OwnYourBeer</a>, to this website.</dd>
+    <dd><a href="https://indieweb.org/PESOS" rel="external"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> the check-in data from <a href="https://untappd.com" rel="external">Untappd</a> using my project, <a href="https://ownyourbeer.chrisburnell.com" rel="external">OwnYourBeer</a>, to this website.</dd>
     <dt><a href="/books/">Books</a></dt>
     <dd>Typically posted only on this website.</dd>
     <dt><a href="/music/">Music</a></dt>
@@ -42,7 +42,7 @@ To syndicate interactions on my content inside silos, I use *[Bridgy](https://br
 
 I also take advantage of both *[Bridgy Fed](https://fed.brid.gy)* and *[Switchboard](https://switchboard.p3k.io)* to interact with federated networks and to make *[WebSub](https://indieweb.org/WebSub)* and *[ActivityPub](https://activitypub.rocks)* work.
 
-Lastly, I use *[OwnYourBeer](https://ownyour.beer)* to syndicate check-ins from *[Untappd](https://untappd.com)* to my [beer](/beer) category</a>.
+Lastly, I use *[OwnYourBeer](https://ownyourbeer.chrisburnell.com)* to syndicate check-ins from *[Untappd](https://untappd.com)* to my [beer](/beer) category</a>.
 
 
 ## Thanks
