@@ -1,71 +1,48 @@
 ---
 title: Advent 2021
-description: Things wot we received from advents
+description: Advent items for the year of 2021.
 ---
+{%- set collection = collections.advent2021 | arePublished | reverse -%}
+{%- set count = collection.length -%}
+{%- set latest_day = collection[0].date.getDate() -%}
+{%- set first_day = collection[count-1].date.getDate() -%}
 
-<table>
-	<thead>
-		<tr>
-			<th>Monday</th>
-			<th>Tuesday</th>
-			<th>Wednesday</th>
-			<th>Thursday</th>
-			<th>Friday</th>
-			<th>Sunday</th>
-			<th>Sunday</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td> </td>
-			<td> </td>
-			<td data-day="1">
-				<a href="/beer/1105189257/"><q>Christmas in Florida</q></a>
-			</td>
-			<td data-day="2">
-				<a href="/beer/1105190997/"><q>10|Coffee Porter – Coffee &amp; Vanilla</q></a>
-			</td>
-			<td data-day="3">
-				Cherry Berliner Weisse
-			</td>
-			<td data-day="4"> </td>
-			<td data-day="5"> </td>
-		</tr>
-		<tr>
-			<td data-day="6"> </td>
-			<td data-day="7"> </td>
-			<td data-day="8"> </td>
-			<td data-day="9"> </td>
-			<td data-day="10"> </td>
-			<td data-day="11"> </td>
-			<td data-day="12"> </td>
-		</tr>
-		<tr>
-			<td data-day="13"> </td>
-			<td data-day="14"> </td>
-			<td data-day="15"> </td>
-			<td data-day="16"> </td>
-			<td data-day="17"> </td>
-			<td data-day="18"> </td>
-			<td data-day="19"> </td>
-		</tr>
-		<tr>
-			<td data-day="20"> </td>
-			<td data-day="21"> </td>
-			<td data-day="22"> </td>
-			<td data-day="23"> </td>
-			<td data-day="24"> </td>
-			<td data-day="25"> </td>
-			<td data-day="26"> </td>
-		</tr>
-		<tr>
-			<td data-day="27"> </td>
-			<td data-day="28"> </td>
-			<td data-day="29"> </td>
-			<td data-day="30"> </td>
-			<td data-day="31"> </td>
-			<td> </td>
-			<td> </td>
-		</tr>
-	</tbody>
-</table>
+{%- set day = latest_day -%}
+<h2>{{ day | numberOrdinalFormat(true) | safe }}</h2>
+<nav class=" [ shelf ] ">
+	{% set hfeed = true %}
+	{% for item in collection %}
+		{% if item.date.getDate() != day %}
+			{%- set day = item.date.getDate() -%}
+			</nav>
+			<h2>{{ day | numberOrdinalFormat(true) | safe }}</h2>
+			<nav class=" [ shelf ] ">
+		{% endif %}
+		{%- set responses = item.url | getWebmentions(['mention-of', 'in-reply-to', 'like-of', 'repost-of', 'bookmark-of']) -%}
+		{% include 'shelf-item.njk' %}
+		{% if advent2021[day].crackling %}
+			<article>
+				<h3>{{ advent2021[day].crackling | replace('👍', '') }} Crackling</h3>
+				{% if advent2021[day].crackling.includes('👍') %}
+					<div>👍</div>
+				{% endif %}
+			</article>
+		{% endif %}
+		{% if advent2021[day].popcorn %}
+			<article>
+				<h3>{{ advent2021[day].popcorn | replace('👍', '') }} Popcorn</h3>
+				{% if advent2021[day].popcorn.includes('👍') %}
+					<div>👍</div>
+				{% endif %}
+			</article>
+		{% endif %}
+		{% if advent2021[day].chocolate %}
+			<article>
+				<h3>{{ advent2021[day].chocolate | replace('👍', '') }} Chocolate</h3>
+				{% if advent2021[day].chocolate.includes('👍') %}
+					<div>👍</div>
+				{% endif %}
+			</article>
+		{% endif %}
+	{% endfor %}
+</nav>

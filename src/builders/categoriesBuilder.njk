@@ -40,7 +40,6 @@ eleventyComputed:
 			<nav class=" [ shelf {% if collection[0].data.read_of %}shelf--books {% endif %}] " aria-live="polite">
 				{%- set hfeed = true -%}
 				{% for item in collection %}
-					<!-- hello -->
 					{% include 'shelf-item.njk' %}
 				{% endfor %}
 			</nav>
@@ -49,11 +48,6 @@ eleventyComputed:
 			<h2 id="{{ year }}">
 				{{ year }}
 				<small>({{ collection | getCountByYear(year) }})</small>
-				<a href="#{{ year }}" class=" [ fragment-anchor ] ">
-					<svg fill="currentColor" aria-hidden="true" focusable="false" width="1em" height="1em">
-						<use href="/images/sprites.svg#svg--link"></use>
-					</svg>
-				</a>
 			</h2>
 			<nav class=" [ deck ] ">
 				{% set hfeed = true %}
@@ -66,11 +60,6 @@ eleventyComputed:
 						<h2 id="{{ year }}">
 							{{ year }}
 							<small>({{ collection | getCountByYear(year) }})</small>
-							<a href="#{{ year }}" class=" [ fragment-anchor ] ">
-								<svg fill="currentColor" aria-hidden="true" focusable="false" width="1em" height="1em">
-									<use href="/images/sprites.svg#svg--link"></use>
-								</svg>
-							</a>
 						</h2>
 						<nav class=" [ deck ] ">
 					{% endif %}

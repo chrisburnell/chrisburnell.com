@@ -159,9 +159,9 @@
 			<small>check-in</small>
 			{% set checkin = checkin.title | default(checkin) | getPlace('object') %}
 			{% if checkin.url %}
-				<a class=" [ u-location ] " href="{{ checkin.url }}">{{ checkin.title }}</span>
+				<a class=" [ u-location ] " href="{{ checkin.url }}">{{ checkin.title }}</a>
 			{% elif checkin.lat and checkin.long %}
-				<a class=" [ u-location ] " href="http://www.openstreetmap.org/#map=13/{{ checkin.lat }}/{{ checkin.long }}">{{ checkin.title }}</span>
+				<a class=" [ u-location ] " href="http://www.openstreetmap.org/#map=13/{{ checkin.lat }}/{{ checkin.long }}">{{ checkin.title }}</a>
 			{% else %}
 				<strong class=" [ p-location ] ">{{ checkin.title | default(checkin) }}</strong>
 			{% endif %}

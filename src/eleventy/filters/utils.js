@@ -1,13 +1,6 @@
 const Natural = require("natural")
 const analyze = new Natural.SentimentAnalyzer("English", Natural.PorterStemmer, "afinn")
 
-const allowedHTML = {
-	allowedTags: ["b", "i", "em", "strong", "a"],
-	allowedAttributes: {
-		a: ["href"],
-	},
-}
-
 module.exports = {
 	limit: (array, limit) => {
 		return array.slice(0, limit)

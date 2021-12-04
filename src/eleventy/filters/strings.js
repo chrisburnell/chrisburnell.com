@@ -14,6 +14,16 @@ const truncate = (() => {
 	})
 })()
 
+const ordinalRules = new Intl.PluralRules("en", {
+	type: "ordinal",
+})
+const ordinalSuffixes = {
+	one: "st",
+	two: "nd",
+	few: "rd",
+	other: "th",
+}
+
 const stringNumbers = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
 const specialNumbers = ["zeroth", "first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth", "eleventh", "twelfth", "thirteenth", "fourteenth", "fifteenth", "sixteenth", "seventeenth", "eighteenth", "nineteenth"]
 const decaNumbers = ["twent", "thirt", "fort", "fift", "sixt", "sevent", "eight", "ninet"]
@@ -41,6 +51,10 @@ module.exports = {
 			return decaNumbers[Math.floor(n / 10) - 2] + "ieth"
 		}
 		return decaNumbers[Math.floor(n / 10) - 2] + "y-" + specialNumbers[n % 10]
+	},
+	numberOrdinalFormat: (n, superscript = false) => {
+		const ordinal = ordinalSuffixes[ordinalRules.select(n)]
+		return `${n}${superscript ? "<sup>" : ""}${ordinal}${superscript ? "</sup>" : ""}`
 	},
 	numberStringFormat: (number) => {
 		if (number < stringNumbers.length) {
