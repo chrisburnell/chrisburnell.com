@@ -33,7 +33,6 @@
     "html-minifier": "^4.0.0",
     "image-size": "^1.0.0",
     "json-to-scss": "^1.6.2",
-    "libvips": "^0.0.2",
     "lodash": "^4.17.21",
     "luxon": "^2.0.2",
     "natural": "^5.1.1",
