@@ -6,14 +6,24 @@ const { AssetCache } = require("@11ty/eleventy-cache-assets")
 const urlReplacements = require("../../data/urlReplacements.json")
 
 const domain = "https://chrisburnell.com"
-const duration = "23h"
 
-const allowedHTML = {
-	allowedTags: ["b", "i", "em", "strong", "a"],
-	allowedAttributes: {
-		a: ["href"],
+let options = Object.assign(
+	{
+		duration: "23h",
+		key: "webmentions",
+		allowedHTML: {
+			allowedTags: ["b", "i", "em", "strong", "a"],
+			allowedAttributes: {
+				a: ["href"],
+			},
+		},
+		urlReplacements: [],
 	},
-}
+	// remove this later
+	{
+		urlReplacements: urlReplacements,
+	}
+)
 
 const absoluteURL = (url) => {
 	try {
@@ -54,7 +64,7 @@ require("dotenv").config()
 const TOKEN = process.env.WEBMENTION_IO_TOKEN
 
 const fetchWebmentions = async () => {
-	let asset = new AssetCache("webmentions")
+	let asset = new AssetCache(options.key)
 	asset.ensureDir()
 
 	let webmentions = {
@@ -70,8 +80,8 @@ const fetchWebmentions = async () => {
 
 	// If there is a cached file but it is outside of expiry, fetch fresh
 	// results since the most recent
-	if (!asset.isCacheValid(duration)) {
-		const since = asset._cache.getKey("webmentions") ? asset._cache.getKey("webmentions").cachedAt : false
+	if (!asset.isCacheValid(options.duration)) {
+		const since = asset._cache.getKey(options.key) ? asset._cache.getKey(options.key).cachedAt : false
 		const url = `https://webmention.io/api/mentions.jf2?domain=${hostname(domain)}&token=${TOKEN}&per-page=9001${since ? `&since=${since}` : ``}`
 		const response = await fetch(url)
 		if (response.ok) {
@@ -97,7 +107,7 @@ const filteredWebmentions = async () => {
 	// Sort Webmentions into groups by target
 	rawWebmentions.children.forEach((webmention) => {
 		// Get the target of the Webmention and fix it up
-		let url = baseUrl(fixUrl(webmention["wm-target"].replace(/\/?$/, "/"), urlReplacements))
+		let url = baseUrl(fixUrl(webmention["wm-target"].replace(/\/?$/, "/"), options.urlReplacements))
 
 		if (!webmentions[url]) {
 			webmentions[url] = []
@@ -139,9 +149,9 @@ const getWebmentions = async (url, allowedTypes) => {
 			const { html, text } = entry.content
 			if (html) {
 				// really long html mentions, usually newsletters or compilations
-				entry.content.value = html.length > 2000 ? `mentioned this in <a href="${entry["wm-source"]}">${entry["wm-source"]}</a>` : sanitizeHTML(html, allowedHTML)
+				entry.content.value = html.length > 2000 ? `mentioned this in <a href="${entry["wm-source"]}">${entry["wm-source"]}</a>` : sanitizeHTML(html, options.allowedHTML)
 			} else {
-				entry.content.value = sanitizeHTML(text, allowedHTML)
+				entry.content.value = sanitizeHTML(text, options.allowedHTML)
 			}
 			return entry
 		})

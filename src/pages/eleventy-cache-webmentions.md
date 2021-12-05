@@ -1,6 +1,6 @@
 ---
 title: eleventy-cache-webmentions
-description: Work-in-progress! ⚠️ Cache webmentions using eleventy-cache-assets and make them available to use in collection, templates, pages, etc.
+description: Work-in-progress! ⚠️ Cache webmentions using eleventy-cache-assets and make them available to use in collections, templates, pages, etc.
 show_webmentions: true
 toc: true
 ---
