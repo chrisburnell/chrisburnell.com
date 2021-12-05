@@ -99,6 +99,15 @@ You can now use this Object in a number of useful ways, not limited to things li
 ```javascript
 const Webmentions = require("@chrisburnell/eleventy-cache-webmentions")(null, { domain: "https://example.com" })
 
+const absoluteURL = (url, domain) => {
+	try {
+		return new URL(url, domain).toString()
+	} catch (e) {
+		console.log(`Trying to convert ${url} to be an absolute url with base ${domain} and failed.`)
+		return url
+	}
+}
+
 module.exports = (eleventyConfig) => {
 	eleventyConfig.addCollection("popular", async (collection) => {
 		const webmentionsByUrl = await Webmentions()
@@ -106,7 +115,7 @@ module.exports = (eleventyConfig) => {
 			.getFilteredByTag("post")
 			.filter((item) => {
 				// unfortunately necessary in order to match the key
-				const url = absoluteURL(item.url)
+				const url = absoluteURL(item.url, "https://example.com")
 
 				if (!url || !webmentionsByUrl[url]) {
 					return false
@@ -116,8 +125,8 @@ module.exports = (eleventyConfig) => {
 			})
 			.sort((a, b) => {
 				// unfortunately necessary in order to match the key
-				const aUrl = absoluteURL(a.url)
-				const bUrl = absoluteURL(b.url)
+				const aUrl = absoluteURL(a.url, "https://example.com")
+				const bUrl = absoluteURL(b.url, "https://example.com")
 				const aWebmentions = webmentionsByUrl[aUrl]
 				const bWebmentions = webmentionsByUrl[bUrl]
 
