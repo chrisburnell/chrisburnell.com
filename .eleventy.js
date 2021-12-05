@@ -7,7 +7,7 @@ const imageAvatarPlugin = require("./src/eleventy/plugins/imageAvatarPlugin.js")
 const imagePlugin = require("./src/eleventy/plugins/imagePlugin.js")
 const albumCoverPlugin = require("./src/eleventy/plugins/albumCoverPlugin.js")
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight")
-const webmentionsPlugin = require("./src/eleventy/plugins/webmentions.js")
+const webmentionsPlugin = require("@chrisburnell/eleventy-cache-webmentions")
 
 // Import transforms
 const parseTransform = require("./src/eleventy/transforms/parse.js")
@@ -31,6 +31,9 @@ const collections = require("./src/eleventy/collections.js")
 const categoriesBuilder = require("./src/eleventy/builders/categories.js")
 const tagsBuilder = require("./src/eleventy/builders/tags.js")
 
+// Import other bits and bobs
+const urlReplacements = require("./src/data/urlReplacements.json")
+
 module.exports = (config) => {
 	// Eleventy Plugins
 	config.addPlugin(imageAvatarPlugin)
@@ -39,6 +42,7 @@ module.exports = (config) => {
 	config.addPlugin(syntaxHighlightPlugin)
 	config.addPlugin(webmentionsPlugin, {
 		domain: site.url,
+		urlReplacements: urlReplacements,
 	})
 
 	// Transforms

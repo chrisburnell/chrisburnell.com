@@ -2,8 +2,8 @@
   {
     "url": "/eleventy-cache-webmentions/",
     "data": {
-      "title": "eleventy-cache-webmentions",
-      "description": "Work-in-progress! ⚠️ Cache webmentions using eleventy-cache-assets and make them available to use in collection, templates, pages, etc.",
+      "title": "eleventy-cache-webmentions (v{{ pkg.dependencies['@chrisburnell/eleventy-cache-webmentions'] | replace('^', '') }})",
+      "description": "Work-in-progress! ⚠️ Cache webmentions using eleventy-cache-assets and make them available to use in collections, templates, pages, etc.",
       "description_markdown": true,
       "emoji": "💬"
     }

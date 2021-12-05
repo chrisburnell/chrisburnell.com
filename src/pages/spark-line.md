@@ -2,7 +2,7 @@
 title: spark-line
 eleventyComputed:
   tagline: "spark-line v{{ pkg.dependencies['@chrisburnell/spark-line'] | replace('^', '') }}"
-  description: "{{ github.spark-line.description }} Lends well to <a href=\"/pentatonic/\">“automusic”</a>.<br>There are {{ github.sparkline['stargazers_count'] }} star-gazers <a href='https://github.com/chrisburnell/spark-line'>on GitHub</a> and it was downloaded {{ npm.sparkline['downloads'] }} times in the last month <a href='https://www.npmjs.com/package/@chrisburnell/spark-line'>on npm</a>."
+  description: "{{ github['spark-line'].description }} Lends well to <a href=\"/pentatonic/\">“automusic”</a>.<br>There are {{ github['spark-line']['stargazers_count'] }} star-gazers <a href='https://github.com/chrisburnell/spark-line'>on GitHub</a> and it was downloaded {{ npm['spark-line']['downloads'] }} times in the last month <a href='https://www.npmjs.com/package/@chrisburnell/spark-line'>on npm</a>."
 show_webmentions: true
 js: spark-line.js
 toc: true

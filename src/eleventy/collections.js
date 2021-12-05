@@ -4,7 +4,7 @@ const collectionFilters = require("./filters/collections.js")
 const global = require("../data/global.js")
 const site = require("../data/site.json")
 
-const { webmentions } = require("./plugins/webmentions.js")
+const Webmentions = require("@chrisburnell/eleventy-cache-webmentions")
 
 const absoluteURL = (url, base) => {
 	if (!base) {
@@ -119,7 +119,7 @@ module.exports = {
 			})
 	},
 	hot: async (collection) => {
-		const webmentionsByUrl = await webmentions()
+		const webmentionsByUrl = await Webmentions()
 		return await collection
 			.getFilteredByTag("feature")
 			.filter(collectionFilters.isPublished)
@@ -154,7 +154,7 @@ module.exports = {
 			.slice(0, site.limits.feed)
 	},
 	popular: async (collection) => {
-		const webmentionsByUrl = await webmentions()
+		const webmentionsByUrl = await Webmentions()
 		return await collection
 			.getFilteredByTag("feature")
 			.filter(collectionFilters.isPublished)
