@@ -13,7 +13,7 @@ toc: true
 
 ## Introduction
 
-It is currently hard-coded to utilise [webmention.io](https://webmention.io), but I'm not sure how to make this plugin agnostic of that. I need to do more research into what, if any, standard API parameters and output might be: ideally close to what I’m working with now.
+It is currently hard-coded to utilise [Webmention.io](https://webmention.io), but I'm not sure how to make this plugin agnostic of that. I need to do more research into what, if any, standard API parameters and output might be: ideally close to what I’m working with now.
 
 It utilises [eleventy-cache-assets](https://www.11ty.dev/docs/plugins/cache/) to manage caching; however, it intercepts the response so that it doesn’t request your ENTIRE webmention history every time the cache expires. Rather, it will figure out if you have an existing cache, and if so, will only request Webmentions since the last cached response and merge the existing and new. Once it has fetched the cached Webmentions (and merged with any incoming new ones) it sorts the output into an object where the keys are the target URLs found in your Webmentions and the value of each is an array containing the data for each webmention.
 
@@ -25,11 +25,15 @@ Furthermore, it exposes the cached Webmentions in JavaScript as well, so you can
 
 [Available on npm](https://www.npmjs.com/package/@chrisburnell/eleventy-cache-webmentions):
 
-```
+```bash
 npm install @chrisburnell/eleventy-cache-webmentions --save-dev
 ```
 
 You can also just download it directly [from GitHub](https://github.com/chrisburnell/eleventy-cache-webmentions): <samp>[https://github.com/chrisburnell/eleventy-cache-webmentions/archive/master.zip](https://github.com/chrisburnell/eleventy-cache-webmentions/archive/master.zip)</samp>
+
+Once installed there are **two** more **required** set-up steps:
+
+### Add it to your config
 
 Inside your Eleventy config file (typically `.eleventy.js`), use `addPlugin`:
 
@@ -38,9 +42,17 @@ const pluginWebmentions = require("@chrisburnell/eleventy-cache-webmentions")
 
 module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(pluginWebmentions, {
-		domain: "https://example.com"
+		domain: "https://example.com" // this is required!
 	})
 }
+```
+
+### Add your Webmention.io API Key
+
+Get set up on [Webmention.io](https://webmention.io) and add your **API Key** (found on your [settings page](https://webmention.io/settings)) to your project as an environment variable, i.e. in a `.env` file:
+
+```bash
+WEBMENTION_IO_TOKEN=njJql0lKXnotreal4x3Wmd
 ```
 
 ## Usage

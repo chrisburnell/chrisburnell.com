@@ -17,6 +17,18 @@ $christmas-palette: (
 	@each $name, $color in $christmas-palette {
 		--hsl-#{$name}: #{color.hue($color)} #{color.saturation($color)} #{color.lightness($color)};
 	}
+
+	&:is(html) {
+		scrollbar-color: h(maple) h(milou);
+	}
+
+	.logo svg {
+		fill: h(maple);
+	}
+
+	.navigation__list a::after {
+		background-color: h(maple);
+	}
 }
 
 .christmas {

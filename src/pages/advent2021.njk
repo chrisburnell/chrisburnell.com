@@ -13,6 +13,7 @@ theme: christmas
 <nav class=" [ shelf ] ">
 	{% set hfeed = true %}
 	{% for item in collection %}
+		{% set count = count - 1 %}
 		{% if item.date.getDate() != day %}
 			{%- set day = item.date.getDate() -%}
 			</nav>
@@ -21,26 +22,26 @@ theme: christmas
 		{% endif %}
 		{%- set responses = item.url | getWebmentions(['mention-of', 'in-reply-to', 'like-of', 'repost-of', 'bookmark-of']) -%}
 		{% include 'item-shelf.njk' %}
-		{% if advent2021[day].crackling %}
+		{% if advent2021[count].crackling %}
 			<article>
-				<h3>{{ advent2021[day].crackling | replace('👍', '') }} Crackling</h3>
-				{% if advent2021[day].crackling.includes('👍') %}
+				<h3>{{ advent2021[count].crackling | replace('👍', '') }} Crackling</h3>
+				{% if advent2021[count].crackling.includes('👍') %}
 					<div>👍</div>
 				{% endif %}
 			</article>
 		{% endif %}
-		{% if advent2021[day].popcorn %}
+		{% if advent2021[count].popcorn %}
 			<article>
-				<h3>{{ advent2021[day].popcorn | replace('👍', '') }} Popcorn</h3>
-				{% if advent2021[day].popcorn.includes('👍') %}
+				<h3>{{ advent2021[count].popcorn | replace('👍', '') }} Popcorn</h3>
+				{% if advent2021[count].popcorn.includes('👍') %}
 					<div>👍</div>
 				{% endif %}
 			</article>
 		{% endif %}
-		{% if advent2021[day].chocolate %}
+		{% if advent2021[count].chocolate %}
 			<article>
-				<h3>{{ advent2021[day].chocolate | replace('👍', '') }} Chocolate</h3>
-				{% if advent2021[day].chocolate.includes('👍') %}
+				<h3>{{ advent2021[count].chocolate | replace('👍', '') }} Chocolate</h3>
+				{% if advent2021[count].chocolate.includes('👍') %}
 					<div>👍</div>
 				{% endif %}
 			</article>

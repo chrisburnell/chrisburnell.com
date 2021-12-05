@@ -1,22 +1,27 @@
-{
-  "1": {
+[
+  {
     "crackling": "Sea Salt and Black Pepper",
     "popcorn": "Salted Caramel",
     "chocolate": "Bunny"
   },
-  "2": {
+  {
     "crackling": "Pigs in Blanket",
     "popcorn": "Caramel and Belgian Chocolate",
     "chocolate": "Square"
   },
-  "3": {
+  {
     "crackling": "Maple 👍",
     "popcorn": "Toffee Apple and Cinnamon 👍",
     "chocolate": "Square"
   },
-  "4": {
+  {
     "crackling": "BBQ",
     "popcorn": "Classic Caramel",
     "chocolate": "Sphere"
+  },
+  {
+    "crackling": "Maple",
+    "popcorn": "Chocolate Orange",
+    "chocolate": ""
   }
-}
+]

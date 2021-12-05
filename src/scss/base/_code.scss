@@ -90,6 +90,10 @@ pre[class*="language-"] {
 		word-break: normal;
 		white-space: pre;
 	}
+
+	&.language-bash {
+		margin-block-start: 0 !important;
+	}
 }
 
 code[class*="language-"] {
@@ -125,9 +129,6 @@ code[class*="language-"] {
 	}
 	&.language-javascript::before {
 		content: "JavaScript";
-	}
-	&.language-bash::before {
-		content: "bash";
 	}
 	&.language-scss::before {
 		content: "SCSS";
