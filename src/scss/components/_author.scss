@@ -83,8 +83,6 @@
 		@include non-interactive;
 		content: "";
 		opacity: 0;
-		// base64-encoded SVG generated from `/images/avatar@4x.png`
-		// https://github.com/technopagan/sqip using default settings
 		background-image: url("/images/avatar-pixelated.png");
 		background-size: 100%;
 		position: absolute;

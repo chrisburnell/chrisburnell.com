@@ -31,6 +31,7 @@
     "@tbranyen/jsdom": "^13.0.0",
     "autoprefixer": "^10.4.0",
     "dotenv": "^10.0.0",
+    "glob-promise": "^4.2.2",
     "html-minifier": "^4.0.0",
     "image-size": "^1.0.0",
     "json-to-scss": "^1.6.2",
@@ -60,6 +61,7 @@
     "start": "concurrently \"npm run scss -- --watch\" \"npx @11ty/eleventy --serve --quiet\"",
     "serve": "npm run start",
     "build": "npm run palette; npm run scss -- --style=compressed; npm run prefix; npm run prettier; ELEVENTY_PRODUCTION=true npx @11ty/eleventy",
+    "build-favicons": "npm run palette; npm run scss -- --style=compressed; npm run prefix; npm run prettier; ELEVENTY_PRODUCTION=true npx @11ty/eleventy",
     "debug": "cross-env DEBUG=* npx @11ty/eleventy"
   }
 }

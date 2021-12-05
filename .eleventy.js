@@ -3,6 +3,7 @@ const fs = require("fs")
 const site = require("./src/data/site.json")
 
 // Import Eleventy plugins
+const pregenImagePlugin = require("./src/eleventy/plugins/pregenImagePlugin.js")
 const imageAvatarPlugin = require("./src/eleventy/plugins/imageAvatarPlugin.js")
 const imagePlugin = require("./src/eleventy/plugins/imagePlugin.js")
 const albumCoverPlugin = require("./src/eleventy/plugins/albumCoverPlugin.js")
@@ -36,6 +37,7 @@ const urlReplacements = require("./src/data/urlReplacements.json")
 
 module.exports = (config) => {
 	// Eleventy Plugins
+	config.addPlugin(pregenImagePlugin)
 	config.addPlugin(imageAvatarPlugin)
 	config.addPlugin(imagePlugin)
 	config.addPlugin(albumCoverPlugin)

@@ -84,16 +84,12 @@ module.exports = function(eleventyConfig) {
 }
 ```
 
-### Accessing Webmentions
-
-You can access the cached Webmentions in a couple of different ways:
-
-#### JavaScript
+### Accessing Webmentions with JavaScript
 
 Accessing the plugin in JavaScript in the way shown below will give you an Object containing your cached Webmentions organised in key:value pairs where the key is a URL on your domain and the value is an array of data for Webmentions sent to that URL.
 
 ```javascript
-const Webmentions = require("@chrisburnell/eleventy-cache-webmentions")
+const Webmentions = require("@chrisburnell/eleventy-cache-webmentions")(null, { domain: "https://example.com" })
 
 const webmentionsByUrl = await Webmentions()
 ```
@@ -101,7 +97,7 @@ const webmentionsByUrl = await Webmentions()
 You can now use this Object in a number of useful ways, not limited to things like creating a collection of posts ordered by number of webmentions:
 
 ```javascript
-const Webmentions = require("@chrisburnell/eleventy-cache-webmentions")
+const Webmentions = require("@chrisburnell/eleventy-cache-webmentions")(null, { domain: "https://example.com" })
 
 module.exports = (eleventyConfig) => {
 	eleventyConfig.addCollection("popular", async (collection) => {
@@ -131,7 +127,7 @@ module.exports = (eleventyConfig) => {
 }
 ```
 
-#### Liquid/Nunjucks
+### Accessing Webmentions with Liquid/Nunjucks
 
 Accessing the plugin in Liquid/Nunjucks by using a Filter and passing in a URL in the way shown below will give you an Array containing the cached Webmentions for the given URL.
 
