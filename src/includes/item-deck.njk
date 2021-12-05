@@ -184,12 +184,12 @@
 				<a class=" [ u-url ] " href="{{ item.url }}"{{ ' tabindex="-1"' if item_title or item_of_title }}><time class=" [ dt-published ] " datetime="{{ item.date | rfcDate }}">{{ item.date | friendlyDate }}</time></a>
 			{%- endif -%}
 			{%- if item.data.updated %}
-				{%- if item.date -%}·{%- endif -%}
+				{% if item.date %}·{% endif %}
 				<small>updated</small>
 				<a href="{{ item.url }}#updated" tabindex="-1"><time class=" [ dt-updated ] " datetime="{{ item.data.updated | rfcDate }}">{{ item.data.updated | friendlyDate }}</time></a>
 			{% endif %}
 			{%- if responses.length %}
-				{%- if item.date or item.data.updated -%}·{%- endif -%}
+				{% if item.date or item.data.updated %}·{% endif %}
 				<a href="{{ item.url }}#webmentions" title="Jump to webmentions for this post">{{ responses.length }} response{{ 's' if responses.length > 1 }} <span class="hidden">to {{ item_title }}</span></a>
 			{% endif %}
 		</div>
