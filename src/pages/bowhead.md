@@ -25,10 +25,10 @@ This has a positive effect that ranges from giving the colours in your design sy
 
 ## Installation
 
-Yoink it [from npm](https://www.npmjs.com/package/@chrisburnell/bowhead):
+[Available on npm](https://www.npmjs.com/package/@chrisburnell/bowhead):
 
 ```
-npm install @chrisburnell/bowhead
+npm install @chrisburnell/bowhead --save-dev
 ```
 
 You can also just download it directly [from GitHub](https://github.com/chrisburnell/bowhead): <samp>[https://github.com/chrisburnell/bowhead/archive/master.zip](https://github.com/chrisburnell/bowhead/archive/master.zip)</samp>

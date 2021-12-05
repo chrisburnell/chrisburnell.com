@@ -27,10 +27,10 @@ toc: true
 
 ## Installation
 
-Yoink it [from npm](https://www.npmjs.com/package/@chrisburnell/pentatonic):
+[Available on npm](https://www.npmjs.com/package/@chrisburnell/pentatonic):
 
 ```
-npm install @chrisburnell/pentatonic
+npm install @chrisburnell/pentatonic --save-dev
 ```
 
 You can also just download it directly [from GitHub](https://github.com/chrisburnell/pentatonic):<br><samp>[https://github.com/chrisburnell/pentatonic/archive/master.zip](https://github.com/chrisburnell/pentatonic/archive/master.zip)</samp>

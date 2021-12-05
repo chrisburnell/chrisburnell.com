@@ -4,7 +4,7 @@ const collectionFilters = require("./filters/collections.js")
 const global = require("../data/global.js")
 const site = require("../data/site.json")
 
-const Webmentions = require("@chrisburnell/eleventy-cache-webmentions")
+const Webmentions = require("@chrisburnell/eleventy-cache-webmentions")(null, { domain: site.url })
 
 const absoluteURL = (url, base) => {
 	if (!base) {
@@ -125,6 +125,7 @@ module.exports = {
 			.filter(collectionFilters.isPublished)
 			.filter(collectionFilters.notReply)
 			.filter((item) => {
+				// unfortunately necessary in order to match the key
 				const url = absoluteURL(item.url)
 
 				if (!url || !webmentionsByUrl[url]) {
@@ -134,18 +135,21 @@ module.exports = {
 				return webmentionsByUrl[url]
 			})
 			.sort((a, b) => {
-				const aWebmentions = webmentionsByUrl[absoluteURL(a.url)]
-				const bWebmentions = webmentionsByUrl[absoluteURL(b.url)]
+				// unfortunately necessary in order to match the key
+				const aUrl = absoluteURL(a.url)
+				const bUrl = absoluteURL(b.url)
+				const aWebmentions = webmentionsByUrl[aUrl]
+				const bWebmentions = webmentionsByUrl[bUrl]
 
 				let aPopularity = 0
 				for (let webmention of aWebmentions) {
-					aPopularity = (aPopularity + dateFilters.epoch(webmention["wm-received"])) / 2
+					aPopularity = (aPopularity + dateFilters.epoch(webmention.published || webmention["wm-received"])) / 2
 				}
 				aPopularity = site.weights.time * dateFilters.epoch(a.date) + (1 - site.weights.time) * aPopularity
 
 				let bPopularity = 0
 				for (let webmention of bWebmentions) {
-					bPopularity = (bPopularity + dateFilters.epoch(webmention["wm-received"])) / 2
+					bPopularity = (bPopularity + dateFilters.epoch(webmention.published || webmention["wm-received"])) / 2
 				}
 				bPopularity = site.weights.time * dateFilters.epoch(b.date) + (1 - site.weights.time) * bPopularity
 
@@ -160,6 +164,7 @@ module.exports = {
 			.filter(collectionFilters.isPublished)
 			.filter(collectionFilters.notReply)
 			.filter((item) => {
+				// unfortunately necessary in order to match the key
 				const url = absoluteURL(item.url)
 
 				if (!url || !webmentionsByUrl[url]) {
@@ -170,8 +175,11 @@ module.exports = {
 			})
 			.sort(collectionFilters.dateFilter)
 			.sort((a, b) => {
-				const aWebmentions = webmentionsByUrl[absoluteURL(a.url)]
-				const bWebmentions = webmentionsByUrl[absoluteURL(b.url)]
+				// unfortunately necessary in order to match the key
+				const aUrl = absoluteURL(a.url)
+				const bUrl = absoluteURL(b.url)
+				const aWebmentions = webmentionsByUrl[aUrl]
+				const bWebmentions = webmentionsByUrl[bUrl]
 
 				return bWebmentions.length - aWebmentions.length
 			})

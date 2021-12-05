@@ -18,10 +18,10 @@ toc: true
 
 ## Installation
 
-Yoink it [from npm](https://www.npmjs.com/package/@chrisburnell/spark-line):
+[Available on npm](https://www.npmjs.com/package/@chrisburnell/spark-line):
 
 ```
-npm install @chrisburnell/spark-line
+npm install @chrisburnell/spark-line --save-dev
 ```
 
 You can also just download it directly [from GitHub](https://github.com/chrisburnell/spark-line):<br><samp>[https://github.com/chrisburnell/spark-line/archive/main.zip](https://github.com/chrisburnell/spark-line/archive/main.zip)</samp>
