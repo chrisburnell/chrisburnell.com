@@ -35,7 +35,7 @@ truncate: true
 					You can sort these {{ category.properPlural }}:
 					<button class=" [ anchor  strong  non-selectable ] " data-sort="alphabetical">by title</button>,
 					<button class=" [ anchor  strong  non-selectable ] " data-sort="author">by author</button>,
-					<button class=" [ anchor  strong  non-selectable ] " data-sort="rating">by rating</button>{% if category.title == 'beer' %}{% else %},
+					<button class=" [ anchor  strong  non-selectable ] " data-sort="rating">by rating</button>{% if category.title != 'beer' %},
 					<button class=" [ anchor  strong  non-selectable ] " data-sort="release">by release date</button>{% endif %}, or
 					<button class=" [ anchor  strong  non-selectable ] " data-sort="chronological" data-direction="descending" aria-current="true">by publish date</button>.
 					<noscript>Although, you will need to enable JavaScript.</noscript>

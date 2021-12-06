@@ -1,0 +1,21 @@
+---
+title: Pig's Ear Beer 2018
+description: Beers drank at Pig's Ear CAMRA Beer & Cider Festival in 2018
+---
+{%- set collection = collections.pigsear2018 | arePublished | reverse -%}
+
+<div class=" [ box ] ">
+	<div>
+		You can sort these beer reviews:
+		<button class=" [ anchor  strong  non-selectable ] " data-sort="alphabetical">by title</button>,
+		<button class=" [ anchor  strong  non-selectable ] " data-sort="author">by author</button>,
+		<button class=" [ anchor  strong  non-selectable ] " data-sort="rating">by rating</button>, or
+					<button class=" [ anchor  strong  non-selectable ] " data-sort="chronological" data-direction="descending" aria-current="true">by publish date</button>.
+		<noscript>Although, you will need to enable JavaScript.</noscript>
+	</div>
+</div>
+<nav class=" [ shelf ] " aria-live="polite">
+	{% for item in collection %}
+		{% include 'item-shelf.njk' %}
+	{% endfor %}
+</nav>
