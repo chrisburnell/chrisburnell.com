@@ -49,7 +49,7 @@ module.exports = (config) => {
 
 	// Transforms
 	config.addTransform("parse", parseTransform)
-	config.addTransform("htmlmin", htmlMinTransform)
+	// config.addTransform("htmlmin", htmlMinTransform)
 
 	// Filters
 	Object.keys(dateFilters).forEach((filterName) => {
