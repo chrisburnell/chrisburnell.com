@@ -167,7 +167,3 @@ You can get back only specific [response post types](https://indieweb.org/respon
 
 - Refactor sloppy code
   - Ideally, get another set of experienced eyes across it
-- Improve the README
-  - how to access the Webmentions from JS
-  - how to use the filter
-  - options, domain and TOKEN in particular
