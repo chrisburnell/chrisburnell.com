@@ -72,7 +72,7 @@ sitemap:
 				{%- set hfeed = false -%}
 				{%- set truncate = true -%}
 				{% for item in projects.personal | limit(site.limits.feature) %}
-					{%- set responses = [] -%}
+					{%- set responses = item.url | getWebmentions(['mention-of', 'in-reply-to', 'like-of', 'repost-of', 'bookmark-of']) -%}
 					{% include 'item-deck.njk' %}
 				{% endfor %}
 			</nav>
