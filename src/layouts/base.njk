@@ -21,7 +21,7 @@
 {%- set meta_description = description | striptags(true) | default('A page on chrisburnell.com') | safe -%}
 {%- set meta_image = site.url + author.avatar -%}
 {%- if banner -%}
-	{%- set meta_image -%}{{ site.url }}/images/built/{{ banner | replace('jpg', 'jpeg') | replace('.', '-800.') }}{%- endset -%}
+	{%- set meta_image -%}{{ site.url }}/images/built/{{ banner | replace('jpg', 'jpeg') }}{%- endset -%}
 {%- elif cover -%}
 	{%- set meta_image -%}{{ site.url }}/images/built/{{ cover | replace('jpg', 'jpeg') }}{%- endset -%}
 {%- elif photo -%}
