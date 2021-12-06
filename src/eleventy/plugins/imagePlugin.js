@@ -5,8 +5,13 @@ const Image = require("@11ty/eleventy-img")
 require("dotenv").config()
 
 const imageShortcode = (src, alt, classes = "", widths = [null]) => {
-	const originalFormat = src.includes("png") ? "png" : "jpg"
-	const formats = process.env.ELEVENTY_PRODUCTION ? ["avif", "webp", originalFormat] : ["webp", originalFormat]
+	let formats
+	if (src.includes(".svg")) {
+		formats = ["svg"]
+	} else {
+		const originalFormat = src.includes("png") ? "png" : "jpg"
+		formats = process.env.ELEVENTY_PRODUCTION ? ["avif", "webp", originalFormat] : ["webp", originalFormat]
+	}
 
 	let options = Object.assign(
 		{},

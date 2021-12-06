@@ -55,7 +55,7 @@ So it was important for me to make these parts distinct in the new design, whils
 
 <aside>
 	<picture>
-		<img src="/images/content/idontbelievemyeyes.gif" alt="" loading="lazy">
+		<img src="/images/animated/idontbelievemyeyes.gif" alt="" loading="lazy">
 	</picture>
 </aside>
 

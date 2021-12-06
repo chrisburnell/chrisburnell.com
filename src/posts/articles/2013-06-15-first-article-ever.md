@@ -66,9 +66,16 @@ The most important lesson of them all, of course, is to **keep it simple**. Whet
 
 I can’t take all the credit for this website, really. It’s the culmination of being lucky enough to work in a field where *cream of the crop* knowledge is available for everyone, so I’m going to give a few shout-outs to some awesome people who helped me immensely.
 
-<aside><figure><a rel="external" href="http://browser.londonwebstandards.org"><img src="/images/content/sotb-2013.jpg" alt="Photo of SOTB 2013"><figcaption>Image courtesy of State of the Browser</figcaption></a></figure></aside>
+<aside>
+	<figure>
+		<a rel="external" href="https://stateofthebrowser.com">
+			{% img './images/content/sotb-2013.jpg', 'Photo of SOTB 2013' %}
+		</a>
+		<figcaption>Image courtesy of State of the Browser</figcaption>
+	</figure>
+</aside>
 
-I was lucky enough to be able to attend the annual web conference held by [London Web Standards](https://londonwebstandards.org/ "London Web Standards"), [State of the Browser](http://browser.londonwebstandards.org/ "State of the Browser Conference"), which was really motivating for me, and opened my eyes to some parts of the browser space that I don’t pay enough attention to. I was super fortunate to be able to be present for talks by some insanely talented and motivating people, who I’m going to reel off here in no particular order (other than alphabetical):
+I was lucky enough to be able to attend the annual web conference held by [London Web Standards](https://londonwebstandards.org/ "London Web Standards"), [State of the Browser](https://stateofthebrowser.com "State of the Browser Conference"), which was really motivating for me, and opened my eyes to some parts of the browser space that I don’t pay enough attention to. I was super fortunate to be able to be present for talks by some insanely talented and motivating people, who I’m going to reel off here in no particular order (other than alphabetical):
 
 - [Jake Archibald (Google)](https://jakearchibald.com/ "Jake Archibald (Google)")
 - [Martin Beeby (Microsoft)](https://blogs.msdn.com/b/thebeebs/ "Martin Beeby (Microsoft)")

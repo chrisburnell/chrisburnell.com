@@ -5,7 +5,7 @@ toc: true
 ---
 
 <figure>
-    <img src="/images/content/indiewebcamp.svg" alt="IndieWebCamp logo">
+    {% img './images/content/indiewebcamp.svg', 'IndieWebCamp logo' %}
 </figure>
 
 ## My Setup
