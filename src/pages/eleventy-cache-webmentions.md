@@ -132,7 +132,7 @@ module.exports = (eleventyConfig) => {
 				// unfortunately necessary in order to match the key
 				const url = absoluteURL(item.url, "https://example.com")
 
-				if (!url || !webmentionsByUrl[url]) {
+				if (!url) {
 					return false
 				}
 

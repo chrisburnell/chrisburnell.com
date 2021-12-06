@@ -128,7 +128,7 @@ module.exports = {
 				// unfortunately necessary in order to match the key
 				const url = absoluteURL(item.url)
 
-				if (!url || !webmentionsByUrl[url]) {
+				if (!url) {
 					return false
 				}
 
@@ -167,7 +167,7 @@ module.exports = {
 				// unfortunately necessary in order to match the key
 				const url = absoluteURL(item.url)
 
-				if (!url || !webmentionsByUrl[url]) {
+				if (!url) {
 					return false
 				}
 
