@@ -28,9 +28,9 @@
 	{%- set meta_image -%}{{ site.url }}/images/built/{{ photo | replace('jpg', 'jpeg') }}{%- endset -%}
 {%- endif -%}
 {%- set canonical = site.url + page.url -%}
-{%- if category -%}
-	{% set previousPost = collections.posts | getPreviousCollectionItem(page) %}
-	{% set nextPost = collections.posts | getNextCollectionItem(page) %}
+{%- if category and not category.title -%}
+	{% set previous_post = collections[category] | arePublished | getPreviousCollectionItem(page) %}
+	{% set next_post = collections[category] | arePublished | getNextCollectionItem(page) %}
 {%- endif -%}
 <!DOCTYPE html>
 <html lang="{{ site.locale }}" class="{% if theme %}{{ theme }}  {% elseif site.theme %}{{ site.theme }}  {% endif %}no-js">
@@ -102,11 +102,11 @@
 	{% else %}
 		<!-- The URL -->
 		<link rel="canonical" href="{{ canonical }}">
-		{% if previousPost %}
-			<link rel="prev" href="{{ site.url + previousPost.url }}">
+		{% if previous_post %}
+			<link rel="prev" href="{{ site.url + previous_post.url }}">
 		{% endif %}
-		{% if nextPost %}
-			<link rel="next" href="{{ site.url + nextPost.url }}">
+		{% if next_post %}
+			<link rel="next" href="{{ site.url + next_post.url }}">
 		{% endif %}
 		<!-- Twitter Microdata -->
 		<meta name="twitter:card" content="summary">

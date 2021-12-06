@@ -1,0 +1,33 @@
+{%- if category and not category.title -%}
+	{% set previous_post = collections[category] | arePublished | getPreviousCollectionItem(page) %}
+	{% set next_post = collections[category] | arePublished | getNextCollectionItem(page) %}
+
+	{% if previous_post or next_post %}
+		<nav class="browse" aria-label="Browse to Previous and Next Posts">
+			{% if previous_post %}
+				<a class="browse__previous" href="{{ previous_post.url }}">
+					{% if previous_post.data.like_of.title %}
+						Liked: {{ previous_post.data.like_of.title }}
+					{% elif category == 'like' or category == 'note' %}
+						{{ category | capitalize }} from {{ previous_post.date | friendlyDate }}
+					{% else %}
+						{{ previous_post.data.title }}
+					{% endif %}
+				</a>
+			{% endif %}
+			{% if next_post %}
+				<a class="browse__next" href="{{ next_post.url }}">
+					{% if next_post.data.like_of.title %}
+						Liked: {{ next_post.data.like_of.title }}
+					{% elif category == 'like' or category == 'note' %}
+						{{ category | capitalize }} from {{ next_post.date | friendlyDate }}
+					{% else %}
+						{{ next_post.data.title }}
+					{% endif %}
+				</a>
+			{% endif %}
+		</nav>
+	{% else %}
+	fuck
+	{% endif %}
+{%- endif -%}

@@ -4,11 +4,13 @@
 ////
 
 $matrix-palette: (
-	lynx: #273d27,
-	bowhead: #00ee00,
-	raven: #00dd00,
-	coyote: #00cc00,
-	bear: #e0f6e0,
+	lynx: #151100,
+	wolf: #323200,
+	bowhead: #525d00,
+	raven: #738e22,
+	highland: #95bd50,
+	coyote: #b6e678,
+	bear: #e0fac9,
 );
 
 @mixin theme-matrix() {

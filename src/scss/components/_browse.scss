@@ -1,0 +1,32 @@
+////
+/// Browse
+/// @group components
+////
+
+.browse {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.browse__previous,
+.browse__next {
+	flex: 0 1 auto;
+
+	&::before {
+		display: block;
+	}
+}
+.browse__previous {
+	&::before {
+		content: "← Older";
+	}
+}
+.browse__next {
+	text-align: right;
+	margin-left: auto;
+
+	&::before {
+		content: "Newer →";
+	}
+}
