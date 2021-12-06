@@ -30,7 +30,7 @@ sitemap:
 						{%- set hfeed = false -%}
 						{%- set truncate = false -%}
 						{% for item in collections.todayRSVPs %}
-							{%- set responses = item.url | getWebmentions(['mention-of', 'in-reply-to', 'like-of', 'repost-of', 'bookmark-of']) -%}
+							{%- set responses = item.url | getWebmentions -%}
 							{% include 'item-deck.njk' %}
 						{% endfor %}
 					</nav>
@@ -44,7 +44,7 @@ sitemap:
 				{%- set hfeed = true -%}
 				{%- set truncate = true -%}
 				{% for item in collections.writingPosts | limit(site.limits.feature) %}
-					{%- set responses = item.url | getWebmentions(['mention-of', 'in-reply-to', 'like-of', 'repost-of', 'bookmark-of']) -%}
+					{%- set responses = item.url | getWebmentions -%}
 					{% include 'item-deck.njk' %}
 				{% endfor %}
 			</nav>
@@ -56,7 +56,7 @@ sitemap:
 				{% set hfeed = false %}
 				{% set truncate = true %}
 				{% for item in collections.popular | limit(site.limits.feature) %}
-					{%- set responses = item.url | getWebmentions(['mention-of', 'in-reply-to', 'like-of', 'repost-of', 'bookmark-of']) -%}
+					{%- set responses = item.url | getWebmentions -%}
 					{% include 'item-deck.njk' %}
 				{% endfor %}
 			</nav>
@@ -72,7 +72,7 @@ sitemap:
 				{%- set hfeed = false -%}
 				{%- set truncate = true -%}
 				{% for item in projects.personal | limit(site.limits.feature) %}
-					{%- set responses = item.url | getWebmentions(['mention-of', 'in-reply-to', 'like-of', 'repost-of', 'bookmark-of']) -%}
+					{%- set responses = item.url | getWebmentions -%}
 					{% include 'item-deck.njk' %}
 				{% endfor %}
 			</nav>
@@ -90,7 +90,7 @@ sitemap:
 						{%- set hfeed = false -%}
 						{%- set truncate = true -%}
 						{% for item in collections.upcomingRSVPs %}
-							{%- set responses = item.url | getWebmentions(['mention-of', 'in-reply-to', 'like-of', 'repost-of', 'bookmark-of']) -%}
+							{%- set responses = item.url | getWebmentions -%}
 							{% include 'item-deck.njk' %}
 						{% endfor %}
 					</nav>
@@ -104,7 +104,7 @@ sitemap:
 						{%- set hfeed = false -%}
 						{%- set truncate = true -%}
 						{% for item in collections.throwbackPosts | limit(site.limits.feature) %}
-							{%- set responses = item.url | getWebmentions(['mention-of', 'in-reply-to', 'like-of', 'repost-of', 'bookmark-of']) -%}
+							{%- set responses = item.url | getWebmentions -%}
 							{% include 'item-deck.njk' %}
 						{% endfor %}
 					</nav>

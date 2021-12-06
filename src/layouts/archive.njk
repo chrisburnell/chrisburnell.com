@@ -45,7 +45,7 @@ truncate: true
 					</h2>
 					<nav class=" [ deck ] ">
 				{% endif %}
-				{%- set responses = item.url | getWebmentions(['mention-of', 'in-reply-to', 'like-of', 'repost-of', 'bookmark-of']) -%}
+				{%- set responses = item.url | getWebmentions -%}
 				{% include 'item-deck.njk' %}
 			{% endfor %}
 		</nav>

@@ -461,7 +461,7 @@ p q r s t u v w x y z { | } ~
 
 <nav class=" [ deck ] ">
 {% for item in collections.article | arePublished | reverse | limit(site.limits.feature) %}
-	{%- set responses = item.url | getWebmentions(['mention-of', 'in-reply-to', 'like-of', 'repost-of', 'bookmark-of']) -%}
+	{%- set responses = item.url | getWebmentions -%}
 	{% include 'item-deck.njk' %}
 {% endfor %}
 </nav>

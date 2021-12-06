@@ -24,7 +24,7 @@ truncate: true
 	<div class=" [ content__body ] [ h-feed ] {% if toc %}[ generate-toc ] {% endif %}">
 		<nav class=" [ deck ] ">
 			{% for item in collection %}
-				{%- set responses = item.url | getWebmentions(['mention-of', 'in-reply-to', 'like-of', 'repost-of', 'bookmark-of']) -%}
+				{%- set responses = item.url | getWebmentions -%}
 				{% include 'item-deck.njk' %}
 			{% endfor %}
 		</nav>
