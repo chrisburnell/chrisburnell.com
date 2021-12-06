@@ -1,7 +1,17 @@
 [
   {
+    "title": "CodePen",
+    "url": "https://codepen.io/chrisburnell",
+    "primary": true
+  },
+  {
     "title": "GitHub",
     "url": "https://github.com/chrisburnell",
+    "primary": true
+  },
+  {
+    "title": "Mastodon",
+    "url": "https://mastodon.social/users/chrisburnell",
     "primary": true
   },
   {
@@ -10,26 +20,21 @@
     "primary": true
   },
   {
-    "title": "CodePen",
-    "url": "https://codepen.io/chrisburnell",
-    "primary": true
-  },
-  {
     "title": "RSS",
     "url": "/feed.xml",
     "primary": true
   },
   {
-    "title": "Mastodon",
-    "url": "https://mastodon.social/users/chrisburnell"
-  },
-  {
-    "title": "Untappd",
-    "url": "https://untappd.com/user/chrisburnell"
+    "title": "LastFM",
+    "url": "https://last.fm/user/chrisburnell"
   },
   {
     "title": "Speakerdeck",
     "url": "https://speakerdeck.com/chrisburnell"
+  },
+  {
+    "title": "Untappd",
+    "url": "https://untappd.com/user/chrisburnell"
   },
   {
     "title": "Nintendo Switch ID",
