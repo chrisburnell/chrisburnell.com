@@ -38,12 +38,12 @@ sitemap:
 			{% endif %}
 
 			<h2 id="latest">
-				<a href="/articles/">Latest Articles</a>
+				<a href="/writing/">Latest Writing</a>
 			</h2>
 			<nav class=" [ deck ] [ h-feed ] " aria-labelledby="latest">
 				{%- set hfeed = true -%}
 				{%- set truncate = true -%}
-				{% for item in collections.article | arePublished | reverse | limit(site.limits.feature) %}
+				{% for item in collections.writing | limit(site.limits.feature) %}
 					{%- set responses = item.url | getWebmentions(['mention-of', 'in-reply-to', 'like-of', 'repost-of', 'bookmark-of']) -%}
 					{% include 'item-deck.njk' %}
 				{% endfor %}
