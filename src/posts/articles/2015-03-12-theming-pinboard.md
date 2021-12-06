@@ -83,7 +83,7 @@ The gist of the plugin is that you can define CSS styles and apply them to pages
 
 <h2 id="brass-tacks">Good old Brass Tacks</h2>
 
-You can either write the stylesheets yourself or choose from [their vast selection](https://userstyles.org/categories). If you do install a theme from that repository, the styles manager in the *Pinboard* plugin will actually be able to update from the author at the click of a link. You can even build upon and modify stylesheets which you’ve installed, but I’m unsure what happens if you modify the stylesheet and install an update ([please comment if you do](#comments)).
+You can either write the stylesheets yourself or choose from [their vast selection](https://userstyles.org/categories). If you do install a theme from that repository, the styles manager in the *Pinboard* plugin will actually be able to update from the author at the click of a link. You can even build upon and modify stylesheets which you’ve installed, but I’m unsure what happens if you modify the stylesheet and install an update ([please comment if you do](#webmentions)).
 
 I took a look at a few of the top plugins available under the [Pinboard category](https://userstyles.org/styles/browse/pinboard) to see how other people were accomplishing their designs—what kind of selector overriding might be necessary, how easy is the markup to manipulate, etc.
 

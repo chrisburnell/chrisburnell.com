@@ -547,4 +547,4 @@ To sum up, the site looks <del>pretty much</del> the same, but the codebase behi
 
 You can see the raw, uncompiled SCSS files on GitHub [here](https://github.com/{{ author.github }}/{{ site.repository }}/tree/main/css "SCSS files for chrisburnell.com"), and the README file of the repository [here](https://github.com/{{ author.github }}/{{ site.repository }}).
 
-As always, please let me know if you have any comments, suggestions, or bug-fixes [in the comments below](#comments) or [create an Issue on Github](https://github.com/{{ author.github }}/{{ site.repository }}/issues)!
+As always, please let me know if you have any comments, suggestions, or bug-fixes [in the comments below](#webmentions) or [create an Issue on Github](https://github.com/{{ author.github }}/{{ site.repository }}/issues)!
