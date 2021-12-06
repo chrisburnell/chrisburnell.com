@@ -21,11 +21,11 @@
 {%- set meta_description = description | striptags(true) | default('A page on chrisburnell.com') | safe -%}
 {%- set meta_image = site.url + author.avatar -%}
 {%- if banner -%}
-	{%- set meta_image -%}{{ site.url }}/images/banners/{{ banner | toArray | last }}{%- endset -%}
+	{%- set meta_image -%}{{ site.url }}/images/built/{{ banner | replace('jpg', 'jpeg') | replace('.', '-800.') }}{%- endset -%}
 {%- elif cover -%}
-	{%- set meta_image -%}{{ site.url }}/images/covers/{{ cover }}{%- endset -%}
+	{%- set meta_image -%}{{ site.url }}/images/built/{{ cover | replace('jpg', 'jpeg') }}{%- endset -%}
 {%- elif photo -%}
-	{%- set meta_image -%}{{ photo }}{%- endset -%}
+	{%- set meta_image -%}{{ site.url }}/images/built/{{ photo | replace('jpg', 'jpeg') }}{%- endset -%}
 {%- endif -%}
 {%- set canonical = site.url + page.url -%}
 {%- if category -%}

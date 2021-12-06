@@ -5,7 +5,7 @@ title: Let me show you the door, <code>col-md-4</code>
 description: For over a decade now, it’s been the norm to layout our websites with a system in CSS that divides the page into columns and defines the size of components on the page based on the number of columns it should take up. I’m proposing we move away from using arbitrary column counts and write CSS that expresses what we actually want, shedding the limitations imposed by a column-based layout.
 # tags:
 #   - css
-banner: death-to-cols@2x.png
+banner: death-to-cols.png
 ---
 
 You’re likely familiar with the classic CSS grid system I’m talking about if you’ve ever developed a website using Twitter’s *Bootstrap*, Zurb’s *Foundation*, or a similar front-end framework like the ol’ [960 Grid System](https://960.gs/). Libraries of this sort present the developer with a large swathe of classes and *bits* of CSS to accelerate and jump-start the process of layout.

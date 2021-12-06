@@ -4,7 +4,7 @@ updated_text: This post expands on concepts and a mixin from a previous post, <a
 date: 2020-01-14T12:20:00+0000
 title: "Sassy Lobotomised Owl"
 description: "Managing spacing between elements and components on your page can be a tiring task if undertaken manually. This is where the lobotomised owl comes in: a short, simple snippet of CSS that simplifies this whole process for you. In this article I’ll explain how I make use of it in a more dynamic way using a SCSS mixin."
-banner: sassy-lobotomised-owl@2x.jpg
+banner: sassy-lobotomised-owl.jpg
 tags:
   - css
   - scss

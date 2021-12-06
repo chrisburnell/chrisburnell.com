@@ -4,7 +4,7 @@ title: Shoot for the Moon
 description: Don't be half-minded when dealing with fractions and pixels. How can we ensure all browsers interpret fractions in our CSS equally?
 tags:
   - css
-banner: shoot-for-the-moon@2x.jpg
+banner: shoot-for-the-moon.jpg
 codepen: true
 syndicate_to:
   - https://twitter.com/iamchrisburnell/status/712709693878173697

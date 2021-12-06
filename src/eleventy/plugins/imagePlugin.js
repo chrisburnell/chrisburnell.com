@@ -24,7 +24,7 @@ const imageShortcode = (src, alt, classes = "", widths = [null]) => {
 			filenameFormat: (id, src, width, format) => {
 				const extension = path.extname(src)
 				const name = path.basename(src, extension)
-				return `${name}.${format}`
+				return `${name}${widths.length > 1 ? `-${width}` : ``}.${format}`
 			},
 		},
 		{}
