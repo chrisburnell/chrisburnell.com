@@ -98,7 +98,6 @@ pre[class*="language-"] {
 
 code[class*="language-"] {
 	&::before {
-		@include v(font-weight, bold);
 		background-color: h(dove);
 		color: h(milou);
 		@include v(block-size, gap);
