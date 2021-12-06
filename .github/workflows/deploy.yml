@@ -26,24 +26,17 @@ jobs:
           key: ${{ runner.OS }}-npm-cache-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.OS }}-npm-cache-
-      - name: Cache 11ty dependencies
+      - name: Cache eleventy-cache-assets
         uses: actions/cache@v2
         with:
           path: .cache
           key: ${{ runner.OS }}-11ty-cache-${{ hashFiles('**/lockfiles') }}
           restore-keys: |
             ${{ runner.OS }}-11ty-cache-
-      - name: Cache avatars
+      - name: Cache images
         uses: actions/cache@v2
         with:
-          path: _site/images/avatars
-          key: ${{ runner.OS }}-11ty-cache-${{ hashFiles('**/lockfiles') }}
-          restore-keys: |
-            ${{ runner.OS }}-11ty-cache-
-      - name: Cache built images
-        uses: actions/cache@v2
-        with:
-          path: _site/images/built
+          path: _site/images
           key: ${{ runner.OS }}-11ty-cache-${{ hashFiles('**/lockfiles') }}
           restore-keys: |
             ${{ runner.OS }}-11ty-cache-
