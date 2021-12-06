@@ -3,6 +3,9 @@ title: eleventy-cache-webmentions
 eleventyComputed:
   tagline: "eleventy-cache-webmentions v{{ pkg.dependencies['@chrisburnell/eleventy-cache-webmentions'] | replace('^', '') }}"
   description: "{{ github['eleventy-cache-webmentions'].description }}<br>There are {{ github['eleventy-cache-webmentions']['stargazers_count'] }} star-gazers <a href='https://github.com/chrisburnell/eleventy-cache-webmentions'>on GitHub</a> and it was downloaded {{ npm['eleventy-cache-webmentions']['downloads'] }} times in the last month <a href='https://www.npmjs.com/package/@chrisburnell/eleventy-cache-webmentions'>on npm</a>."
+syndicate_to:
+  - https://mastodon.social/users/chrisburnell/statuses/107399910372983580
+  - https://twitter.com/iamchrisburnell/status/1467811195981860867
 show_webmentions: true
 toc: true
 ---
