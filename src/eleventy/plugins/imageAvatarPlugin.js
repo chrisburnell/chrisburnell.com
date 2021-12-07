@@ -60,17 +60,17 @@ const storeAvatar = async (id, classes = "") => {
 	return markup
 }
 
-module.exports = (config) => {
+module.exports = (eleventyConfig) => {
 	let twitterUsernames, mastodonHandles, domains
 
-	config.on("beforeBuild", () => {
+	eleventyConfig.on("beforeBuild", () => {
 		twitterUsernames = new Set()
 		mastodonHandles = new Set()
 		domains = new Set()
 	})
 
 	if (process.env.ELEVENTY_PRODUCTION) {
-		config.on("afterBuild", () => {
+		eleventyConfig.on("afterBuild", () => {
 			let array = Array.from(twitterUsernames)
 			console.log(`[${queryFilters.getHost(site.url)}] Generating ${array.length} Twitter avatars.`)
 			TwitterAvatarUrl(array).then((results) => {
@@ -93,7 +93,7 @@ module.exports = (config) => {
 		})
 	}
 
-	config.addNunjucksAsyncShortcode("avatar", async (photo, url, authorUrl, classes = "") => {
+	eleventyConfig.addNunjucksAsyncShortcode("avatar", async (photo, url, authorUrl, classes = "") => {
 		const mastodonHandle = queryFilters.getMastodonHandle(authorUrl)
 		if (url.includes("twitter.com")) {
 			let target = url.includes(author.twitter) ? (authorUrl.includes(site.url) ? url : authorUrl) : url

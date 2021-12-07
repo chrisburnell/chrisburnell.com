@@ -5,7 +5,7 @@ const Image = require("@11ty/eleventy-img")
 // Load .env variables with dotenv
 require("dotenv").config()
 
-module.exports = async (config) => {
+module.exports = async (eleventyConfig) => {
 	// Only run when GENERATE_FAVICON is true
 	if (process.env.GENERATE_FAVICON) {
 		const options = {

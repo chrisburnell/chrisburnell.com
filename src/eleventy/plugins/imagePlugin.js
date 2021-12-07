@@ -50,6 +50,6 @@ const imageShortcode = (src, alt, classes = "", widths = [null]) => {
 	})
 }
 
-module.exports = (config) => {
-	config.addNunjucksShortcode("img", imageShortcode)
+module.exports = (eleventyConfig) => {
+	eleventyConfig.addNunjucksShortcode("img", imageShortcode)
 }

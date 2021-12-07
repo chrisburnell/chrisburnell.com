@@ -70,14 +70,14 @@ const fetchAlbumCoverUrl = async (id) => {
 	return ""
 }
 
-module.exports = async (config) => {
+module.exports = async (eleventyConfig) => {
 	let ids
 
-	config.on("beforeBuild", () => {
+	eleventyConfig.on("beforeBuild", () => {
 		ids = new Set()
 	})
 
-	config.on("afterBuild", () => {
+	eleventyConfig.on("afterBuild", () => {
 		let array = Array.from(ids)
 		console.log(`[${queryFilters.getHost(site.url)}] Generating ${array.length} album covers.`)
 		for (let id of array) {
@@ -85,7 +85,7 @@ module.exports = async (config) => {
 		}
 	})
 
-	config.addNunjucksAsyncShortcode("album_cover", async (id, classes = "") => {
+	eleventyConfig.addNunjucksAsyncShortcode("album_cover", async (id, classes = "") => {
 		ids.add(id)
 		return storeAlbumCover(id, classes)
 	})

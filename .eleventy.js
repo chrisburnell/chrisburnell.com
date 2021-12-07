@@ -35,75 +35,75 @@ const tagsBuilder = require("./src/eleventy/builders/tags.js")
 // Import other bits and bobs
 const urlReplacements = require("./src/data/urlReplacements.json")
 
-module.exports = (config) => {
+module.exports = (eleventyConfig) => {
 	// Eleventy Plugins
-	config.addPlugin(pregenImagePlugin)
-	config.addPlugin(imageAvatarPlugin)
-	config.addPlugin(imagePlugin)
-	config.addPlugin(albumCoverPlugin)
-	config.addPlugin(syntaxHighlightPlugin)
-	config.addPlugin(webmentionsPlugin, {
+	eleventyConfig.addPlugin(pregenImagePlugin)
+	eleventyConfig.addPlugin(imageAvatarPlugin)
+	eleventyConfig.addPlugin(imagePlugin)
+	eleventyConfig.addPlugin(albumCoverPlugin)
+	eleventyConfig.addPlugin(syntaxHighlightPlugin)
+	eleventyConfig.addPlugin(webmentionsPlugin, {
 		domain: site.url,
 		urlReplacements: urlReplacements,
 	})
 
 	// Transforms
-	config.addTransform("parse", parseTransform)
-	// config.addTransform("htmlmin", htmlMinTransform)
+	eleventyConfig.addTransform("parse", parseTransform)
+	// eleventyConfig.addTransform("htmlmin", htmlMinTransform)
 
 	// Filters
 	Object.keys(dateFilters).forEach((filterName) => {
-		config.addFilter(filterName, dateFilters[filterName])
+		eleventyConfig.addFilter(filterName, dateFilters[filterName])
 	})
 	Object.keys(stringFilters).forEach((filterName) => {
-		config.addFilter(filterName, stringFilters[filterName])
+		eleventyConfig.addFilter(filterName, stringFilters[filterName])
 	})
 	Object.keys(queryFilters).forEach((filterName) => {
-		config.addFilter(filterName, queryFilters[filterName])
+		eleventyConfig.addFilter(filterName, queryFilters[filterName])
 	})
 	Object.keys(utilityFilters).forEach((filterName) => {
-		config.addFilter(filterName, utilityFilters[filterName])
+		eleventyConfig.addFilter(filterName, utilityFilters[filterName])
 	})
 	Object.keys(collectionFilters).forEach((filterName) => {
-		config.addFilter(filterName, collectionFilters[filterName])
+		eleventyConfig.addFilter(filterName, collectionFilters[filterName])
 	})
-	config.addFilter("newBase60", newBase60)
+	eleventyConfig.addFilter("newBase60", newBase60)
 
 	// Shortcodes
 	Object.keys(shortcodes).forEach((shortcodeName) => {
-		config.addShortcode(shortcodeName, shortcodes[shortcodeName])
+		eleventyConfig.addShortcode(shortcodeName, shortcodes[shortcodeName])
 	})
 
 	// Collections
 	Object.keys(collections).forEach((collectionName) => {
-		config.addCollection(collectionName, collections[collectionName])
+		eleventyConfig.addCollection(collectionName, collections[collectionName])
 	})
 
 	// Builder Collections
-	config.addCollection("categories", categoriesBuilder)
-	config.addCollection("tags", tagsBuilder)
+	eleventyConfig.addCollection("categories", categoriesBuilder)
+	eleventyConfig.addCollection("tags", tagsBuilder)
 
 	// Layouts
-	config.addLayoutAlias("base", "base.njk")
-	config.addLayoutAlias("page", "page.njk")
-	config.addLayoutAlias("archive", "archive.njk")
-	config.addLayoutAlias("post", "post.njk")
-	config.addLayoutAlias("feed", "feed.njk")
+	eleventyConfig.addLayoutAlias("base", "base.njk")
+	eleventyConfig.addLayoutAlias("page", "page.njk")
+	eleventyConfig.addLayoutAlias("archive", "archive.njk")
+	eleventyConfig.addLayoutAlias("post", "post.njk")
+	eleventyConfig.addLayoutAlias("feed", "feed.njk")
 
 	// Static Files
-	config.addPassthroughCopy("css")
-	config.addPassthroughCopy("fonts")
-	config.addPassthroughCopy("images/*")
-	config.addPassthroughCopy("images/animated")
-	config.addPassthroughCopy("static")
-	config.addPassthroughCopy("src/js")
+	eleventyConfig.addPassthroughCopy("css")
+	eleventyConfig.addPassthroughCopy("fonts")
+	eleventyConfig.addPassthroughCopy("images/*")
+	eleventyConfig.addPassthroughCopy("images/animated")
+	eleventyConfig.addPassthroughCopy("static")
+	eleventyConfig.addPassthroughCopy("src/js")
 
 	// Watch targets
-	config.addWatchTarget("./src/scss/")
-	config.addWatchTarget("./src/js/")
+	eleventyConfig.addWatchTarget("./src/scss/")
+	eleventyConfig.addWatchTarget("./src/js/")
 
 	// BrowserSync and Local 404
-	config.setBrowserSyncConfig({
+	eleventyConfig.setBrowserSyncConfig({
 		callbacks: {
 			ready: (err, browserSync) => {
 				const content_404 = fs.readFileSync("_site/404.html")
@@ -118,9 +118,9 @@ module.exports = (config) => {
 		ghostMode: false,
 	})
 
-	config.setDataDeepMerge(true)
+	eleventyConfig.setDataDeepMerge(true)
 
-	config.on("beforeBuild", () => {
+	eleventyConfig.on("beforeBuild", () => {
 		console.log(`[${queryFilters.getHost(site.url)}] Building…`)
 	})
 
