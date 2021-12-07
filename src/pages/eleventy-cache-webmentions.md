@@ -78,7 +78,7 @@ module.exports = function(eleventyConfig) {
 		//   dictates the name sent to eleventy-cache-assets to name the file
 		key: "webmentions",
 		// allowedHTML: Object by default
-		//   dictates what HTML elements are allowed through in content
+		//   see https://www.npmjs.com/package/sanitize-html for more info
 		allowedHTML: {
 			allowedTags: ["b", "i", "em", "strong", "a"],
 			allowedAttributes: {
