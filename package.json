@@ -45,7 +45,7 @@
     "sass": "^1.43.4",
     "slugify": "^1.6.1",
     "twitter-avatar-url": "^2.1.0",
-    "uglify-es": "^3.3.9"
+    "uglify-js": "^3.14.4"
   },
   "devDependencies": {
     "concurrently": "^6.3.0",
