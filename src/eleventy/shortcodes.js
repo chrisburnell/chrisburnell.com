@@ -50,12 +50,13 @@ module.exports = {
 		}
 		// Sparklines in A minor
 		return `<spark-line values="${values.join(",")}"
-                            endpoint-color="${palette.maple}"
-                            ${startLabel ? 'start-label="' + startLabel + '"' : ""}
-                            ${endLabel ? 'end-label="' + endLabel + '"' : ""}
-                            class=" [ pentatonic ] "
-                            key-start="25"
-                            key-intervals="2, 1, 2, 2, 1, 2, 2"
-                            key-limit="${site.limits.sparkline}"></spark-line>`
+							endpoint-color="${palette.maple}"
+							${startLabel ? 'start-label="' + startLabel + '"' : ""}
+							${endLabel ? 'end-label="' + endLabel + '"' : ""}
+							key-start="25"
+							key-intervals="2, 1, 2, 2, 1, 2, 2"
+							key-limit="${site.limits.sparkline}"
+							class=" [ pentatonic ] "
+							title="Click me to hear me!"></spark-line>`
 	},
 }

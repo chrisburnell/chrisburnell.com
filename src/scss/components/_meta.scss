@@ -58,7 +58,17 @@
 			display: none;
 		}
 	}
-}
-small + .meta__list {
-	@include v(padding-inline-start, tiny);
+
+	.meta > & {
+		&::before,
+		&::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+	}
+
+	small + & {
+		@include v(padding-inline-start, tiny);
+	}
 }
