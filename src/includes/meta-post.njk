@@ -1,4 +1,7 @@
 <ul class=" [ meta ] [ box ] ">
+	{% if subtitle %}
+		<li class=" [ small ] ">{{ subtitle | safe }}</li>
+	{% endif %}
 	{% if in_reply_to %}
 		<li class=" [ in-reply-to ] ">
 			{% if rsvp %}
@@ -98,6 +101,13 @@
 					{% if tags_filtered.length > 1 %}<li>{% endif %}<a class=" [ p-tag ] " href="/tag/{{ tag }}/">{{ tag }}</a>{% if tags_filtered.length > 1 %}</li>{% endif %}
 				{% endfor %}
 			{% if tags_filtered.length > 1 %}</ul>{% endif %}
+		</li>
+	{% endif %}
+	{% if style %}
+		<li class=" [ style ] ">
+			{% emoji '🎨' %}
+			<small>style</small>
+			<strong>{{ style | safe }}</strong>
 		</li>
 	{% endif %}
 	{% if authors %}

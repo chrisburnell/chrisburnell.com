@@ -26,12 +26,17 @@
 	}
 }
 
-.box--error {
-	background-color: h(maple, delta);
-	border-block-start-color: h(maple, beta);
+.box--success {
+	background-color: h(conifer, delta);
+	border-block-start-color: h(conifer, beta);
 }
 
 .box--warning {
 	background-color: h(aspen, delta);
 	border-block-start-color: h(aspen, beta);
+}
+
+.box--error {
+	background-color: h(maple, delta);
+	border-block-start-color: h(maple, beta);
 }
