@@ -15,8 +15,11 @@
 	font-style: normal;
 
 	:is(h2, h3) {
+		display: block;
 		@include v(font-size, default);
 		@include v(line-height, medium);
+		text-transform: none;
+		letter-spacing: 0;
 	}
 
 	a {

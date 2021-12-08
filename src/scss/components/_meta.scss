@@ -28,6 +28,10 @@
 	.rating {
 		@include v(margin-inline-start, tiny);
 	}
+
+	h2 {
+		@include v(margin-block-end, small);
+	}
 }
 
 .meta__list {
@@ -54,9 +58,6 @@
 			display: none;
 		}
 	}
-}
-h3 + .meta__list {
-	margin-block-start: v(measure, small) !important;
 }
 small + .meta__list {
 	@include v(padding-inline-start, tiny);
