@@ -4,9 +4,6 @@ const site = require("../../data/site.json")
 const queryFilters = require("../filters/queries.js")
 const Image = require("@11ty/eleventy-img")
 
-// Load .env variables with dotenv
-require("dotenv").config()
-
 const SPOTIFY_CLIENT_TOKEN = require("../../data/spotify_token.js")
 
 // Avatar Dimensions

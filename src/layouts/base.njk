@@ -60,7 +60,7 @@
 	<link rel="openid.delegate" href="{{ site.url }}" />
 	<link rel="openid.server" href="{{ author.urls.openid }}" />
 
-	{% if global.production %}
+	{% if env.ELEVENTY_PRODUCTION %}
 		<link rel="icon" href="/images/favicon.ico" sizes="512x512">
 		<link rel="apple-touch-icon" href="/images/favicon-180.png">
 		<link rel="apple-touch-icon-precomposed" href="/images/favicon-180.png">
@@ -149,7 +149,7 @@
 			<meta property="profile:username" content="{{ author.shortname }}">
 		{% endif %}
 
-		{% if global.production and site.monetization and monetization != false %}
+		{% if env.ELEVENTY_PRODUCTION and site.monetization and monetization != false %}
 			<meta name="monetization" content="{{ site.monetization }}">
 		{% endif %}
 	{% endif %}

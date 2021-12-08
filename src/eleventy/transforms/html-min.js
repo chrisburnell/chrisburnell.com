@@ -1,8 +1,5 @@
 const minifier = require("html-minifier")
 
-// Load .env variables with dotenv
-require("dotenv").config()
-
 module.exports = (value, outputPath) => {
 	if (outputPath.endsWith(".html")) {
 		return minifier.minify(value, {

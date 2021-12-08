@@ -1,9 +1,6 @@
 const path = require("path")
 const Image = require("@11ty/eleventy-img")
 
-// Load .env variables with dotenv
-require("dotenv").config()
-
 const imageShortcode = (src, alt, classes = "", widths = [null]) => {
 	let formats
 	if (src.includes(".svg")) {

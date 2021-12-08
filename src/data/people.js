@@ -1,8 +1,5 @@
 const Cache = require("@11ty/eleventy-cache-assets")
 
-// Load .env variables with dotenv
-require("dotenv").config()
-
 const API_ORIGIN = process.env.PERSONAL_API_URL
 const TOKEN = process.env.WEBMENTION_IO_TOKEN
 const TYPES = ["breweries", "gamePublishers", "humans", "meetups", "musicArtists", "publications"]

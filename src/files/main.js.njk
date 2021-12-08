@@ -8,7 +8,7 @@ permalink: /js/main.js
 ;(function () {
 	"use strict"
 
-	{% if global.production %}{% include '../js/navigator.js' %}{% endif %}
+	{% if env.ELEVENTY_PRODUCTION %}{% include '../js/navigator.js' %}{% endif %}
 	{% include '../js/welcome.js' %}
 	{% include '../js/neofetch.js' %}
 	{% include '../js/color-scheme.js' %}
