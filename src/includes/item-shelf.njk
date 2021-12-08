@@ -17,8 +17,7 @@
 
 {%- if item.data.listen_of -%}
 	{% set item_of_url = "https://album.link/s/" + item.data.listen_of %}
-{%- endif -%}
-{%- if item.data.read_of -%}
+{%- elif item.data.read_of -%}
 	{% set item_of_url = "https://openlibrary.org/isbn/" + item.data.read_of %}
 {%- endif -%}
 <article{% if hfeed %} class=" [ h-{{ item.data.mf_root }} ] "{% endif %}>
@@ -37,6 +36,8 @@
 	</h3>
 	{% if item.data.subtitle %}
 		<p class=" [ small ] ">{{ item.data.subtitle | safe }}</p>
+	{% elif item.data.style %}
+		<p class=" [ small ] ">{{ item.data.style | safe }}</p>
 	{% endif %}
 	{% if item.data.authors or item.data.release %}
 		<div>
