@@ -4,22 +4,6 @@
 /// @link https://chrisburnell.com/styleguide/
 ////
 
-@use "sass:color";
-@use "sass:math";
-
-/// REQUIRED — GENERATED, ABSTRACTS & VENDORS
-@import "generated/opacities";
-@import "generated/palette";
-@import "abstracts/collections";
-@import "abstracts/functions";
-@import "abstracts/maps";
-@import "abstracts/colors";
-@import "abstracts/tokens";
-@import "abstracts/mixins";
-@import "abstracts/config";
-@import "../../node_modules/@chrisburnell/bowhead/bowhead";
-@import "vendors/include-media";
-
 .palette-list {
 	background-color: h(milou);
 	inline-size: 100%;

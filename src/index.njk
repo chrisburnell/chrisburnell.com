@@ -36,7 +36,7 @@ sitemap:
 						{%- elif item.data.rsvp.value == 'maybe' or item.data.rsvp.value == 'interested' -%}
 							{%- set rsvp_class = 'box--warning' -%}
 						{%- endif -%}
-						<div class=" [ box ] ">
+						<div class=" [ box  {{ rsvp_class }} ] ">
 							{% include 'item-deck.njk' %}
 						</div>
 					{% endfor %}
@@ -102,7 +102,7 @@ sitemap:
 						{%- elif item.data.rsvp.value == 'maybe' or item.data.rsvp.value == 'interested' -%}
 							{%- set rsvp_class = 'box--warning' -%}
 						{%- endif -%}
-						<div class=" [ box ] ">
+						<div class=" [ box  {{ rsvp_class }} ] ">
 							{% include 'item-deck.njk' %}
 						</div>
 					{% endfor %}
@@ -114,11 +114,10 @@ sitemap:
 				<nav class=" [ deck ] " aria-labelledby="on-this-day">
 					{%- set hfeed = false -%}
 					{%- set truncate = true -%}
+					{%- set relative_time = true -%}
 					{% for item in collections.throwbackPosts | limit(site.limits.feature) %}
 						{%- set responses = item.url | getWebmentions -%}
-						<div class=" [ box ] ">
-							{% include 'item-deck.njk' %}
-						</div>
+						{% include 'item-deck.njk' %}
 					{% endfor %}
 				</nav>
 			{% endif %}

@@ -4,7 +4,10 @@
 ////
 
 .meta {
-	@include owl(tiny);
+	.h-entry,
+	.h-review {
+		@include owl(tiny);
+	}
 
 	.details ~ & {
 		@include v(margin-block-start, large);
