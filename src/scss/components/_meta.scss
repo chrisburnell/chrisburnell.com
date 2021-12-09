@@ -4,8 +4,8 @@
 ////
 
 .meta {
-	.h-entry,
-	.h-review {
+	.h-entry &,
+	.h-review & {
 		@include owl(tiny);
 	}
 
