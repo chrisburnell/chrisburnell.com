@@ -166,6 +166,16 @@ You can get back only specific [response post types](https://indieweb.org/respon
 {% set replies = page.url | getWebmentions(['mention-of', 'in-reply-to']) %}
 {% endraw %}```
 
+And, if you need it, the entire Object of sorted Webmentions is available too:
+
+```twig{% raw %}
+{% set count = 0 %}
+{% for url, array in webmentions %}
+	{% set count = array.length + count %}
+{% endfor %}
+<p>This site has received {{ count }} WebMentions!</p>
+{% endraw %}```
+
 ## Next steps
 
 - Refactor sloppy code

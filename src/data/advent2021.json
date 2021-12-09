@@ -5,7 +5,7 @@
     "chocolate": "Bunny"
   },
   {
-    "crackling": "Pigs in Blanket",
+    "crackling": "Pigs in Blankets",
     "popcorn": "Caramel and Belgian Chocolate",
     "chocolate": "Square"
   },
@@ -32,6 +32,11 @@
   {
     "crackling": "Salt and Vinegar",
     "popcorn": "Brandy Butter",
+    "chocolate": "Square"
+  },
+  {
+    "crackling": "Pigs in Blankets",
+    "popcorn": "Caramel and Belgian Chocolate",
     "chocolate": "Square"
   }
 ]
