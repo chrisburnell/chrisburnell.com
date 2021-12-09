@@ -100,8 +100,8 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.addPassthroughCopy("fonts")
 	eleventyConfig.addPassthroughCopy("images/*")
 	eleventyConfig.addPassthroughCopy("images/animated")
-	eleventyConfig.addPassthroughCopy("static")
-	eleventyConfig.addPassthroughCopy("src/js")
+	eleventyConfig.addPassthroughCopy("js")
+	eleventyConfig.addPassthroughCopy("src/js/pages")
 
 	// Watch targets
 	eleventyConfig.addWatchTarget("./src/scss/")

@@ -47,5 +47,6 @@ package-lock.json
 # Site Assets
 /css
 /fonts
+/js
 /static
 /.cache

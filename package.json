@@ -1,6 +1,6 @@
 {
   "name": "chrisburnell",
-  "version": "3.3.3",
+  "version": "3.4.0",
   "description": "Some real sweet codestuffs.",
   "author": "Chris Burnell <me@chrisburnell.com>",
   "contributors": [
@@ -25,11 +25,15 @@
     "@11ty/eleventy-img": "^1.0.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.3",
     "@chrisburnell/bowhead": "^0.2.2",
-    "@chrisburnell/eleventy-cache-webmentions": "^0.1.6",
-    "@chrisburnell/pentatonic": "^1.0.1",
-    "@chrisburnell/spark-line": "^1.0.4",
+    "@chrisburnell/eleventy-cache-webmentions": "^0.1.7",
+    "@chrisburnell/pentatonic": "^1.1.0",
+    "@chrisburnell/spark-line": "^1.1.0",
+    "@github/time-elements": "^3.1.2",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.0.6",
     "@tbranyen/jsdom": "^13.0.0",
     "autoprefixer": "^10.4.0",
+    "dotenv": "^10.0.0",
     "glob-promise": "^4.2.2",
     "html-minifier": "^4.0.0",
     "image-size": "^1.0.0",
@@ -40,11 +44,11 @@
     "node-fetch": "2.6.5",
     "postcss-cli": "^9.0.1",
     "prettier": "^2.4.1",
+    "rollup": "^2.60.2",
     "sanitize-html": "^2.5.2",
     "sass": "^1.43.4",
     "slugify": "^1.6.1",
-    "twitter-avatar-url": "^2.1.0",
-    "uglify-js": "^3.14.4"
+    "twitter-avatar-url": "^2.1.0"
   },
   "devDependencies": {
     "concurrently": "^6.3.0",
@@ -55,11 +59,11 @@
     "palette": "json-to-scss src/data/opacities.json src/scss/generated/_opacities.scss; json-to-scss src/data/palette.json src/scss/generated/_palette.scss",
     "scss": "npx sass src/scss:css --no-source-map --color",
     "prefix": "npx postcss css/*.css --replace --no-map --use=autoprefixer",
-    "js": "npx uglifyjs _site/js/main.js -o _site/js/main.js",
+    "js": "npx rollup -c",
     "prettier": "npx prettier --write src",
-    "start": "concurrently \"npm run scss -- --watch\" \"npx @11ty/eleventy --serve --quiet\"",
+    "start": "concurrently \"npm run js -- --watch\" \"npm run scss -- --watch\" \"npx @11ty/eleventy --serve --quiet\"",
     "serve": "npm run start",
-    "build": "npm run palette; npm run scss -- --style=compressed; npm run prefix; npm run prettier; ELEVENTY_PRODUCTION=true npx @11ty/eleventy",
+    "build": "npm run palette; npm run js; npm run scss -- --style=compressed; npm run prefix; npm run prettier; ELEVENTY_PRODUCTION=true npx @11ty/eleventy",
     "build-favicons": "npm run palette; npm run scss -- --style=compressed; npm run prefix; npm run prettier; ELEVENTY_PRODUCTION=true npx @11ty/eleventy",
     "debug": "cross-env DEBUG=* npx @11ty/eleventy"
   }

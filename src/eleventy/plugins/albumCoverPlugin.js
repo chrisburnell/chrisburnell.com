@@ -76,7 +76,7 @@ module.exports = async (eleventyConfig) => {
 
 	eleventyConfig.on("afterBuild", () => {
 		let array = Array.from(ids)
-		console.log(`[${queryFilters.getHost(site.url)}] Generating ${array.length} album covers.`)
+		// console.log(`[${queryFilters.getHost(site.url)}] Generating ${array.length} album covers.`)
 		for (let id of array) {
 			fetchImageData(id, fetchAlbumCoverUrl(id))
 		}

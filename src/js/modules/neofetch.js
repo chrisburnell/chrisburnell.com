@@ -19,5 +19,9 @@ const neofetch = () => {
 	console.log(`%c          RAVEN        OU`, "color: #507791");
 	console.log(`%c         SR AV`, "color: #507791");
 	console.log(`%c            EN`, "color: #507791");
+	console.log(`Checking out the source code, %ceh%c?`, "color: #eb2d37", "color: inherit");
+	console.log(`Get in touch with me if you want to know more!`);
 	return;
 };
+
+export default neofetch;
