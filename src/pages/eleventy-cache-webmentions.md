@@ -32,7 +32,7 @@ Furthermore, it exposes the cached Webmentions in JavaScript as well, so you can
 npm install @chrisburnell/eleventy-cache-webmentions --save-dev
 ```
 
-You can also just download it directly [from GitHub](https://github.com/chrisburnell/eleventy-cache-webmentions): <samp>[https://github.com/chrisburnell/eleventy-cache-webmentions/archive/master.zip](https://github.com/chrisburnell/eleventy-cache-webmentions/archive/master.zip)</samp>
+You can also just download it directly [from GitHub](https://github.com/chrisburnell/eleventy-cache-webmentions): <samp>[https://github.com/chrisburnell/eleventy-cache-webmentions/archive/main.zip](https://github.com/chrisburnell/eleventy-cache-webmentions/archive/main.zip)</samp>
 
 Once installed there are **two** more **required** set-up steps:
 
