@@ -194,7 +194,7 @@ self.addEventListener("fetch", event => {
 			.then(responseFromFetch => {
 				// NETWORK
 				// Stash a copy of this asset in the IMAGES cache
-				if (request.url.match(/\.(jpe?g|png|gif|webp)/)) {
+				if (request.url.match(/\.(avif|gif|jpe?g|png|svg|webp)/)) {
 					const copy = responseFromFetch.clone()
 					try {
 						event.waitUntil(
