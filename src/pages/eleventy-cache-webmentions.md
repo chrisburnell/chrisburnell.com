@@ -1,5 +1,6 @@
 ---
 title: eleventy-cache-webmentions
+photo: eleventy-cache-webmentions.png
 eleventyComputed:
   tagline: "eleventy-cache-webmentions v{{ pkg.dependencies['@chrisburnell/eleventy-cache-webmentions'] | replace('^', '') }}"
   description: "{{ github['eleventy-cache-webmentions'].description }}<br>There are {{ github['eleventy-cache-webmentions']['stargazers_count'] }} star-gazers <a href='https://github.com/chrisburnell/eleventy-cache-webmentions'>on GitHub</a> and it was downloaded {{ npm['eleventy-cache-webmentions']['downloads'] }} times in the last month <a href='https://www.npmjs.com/package/@chrisburnell/eleventy-cache-webmentions'>on npm</a>."
@@ -10,9 +11,9 @@ show_webmentions: true
 toc: true
 ---
 
-<nav class=" [ navigator ] ">
-	<a class=" [ button ] " href="{{ github['eleventy-cache-webmentions']['svn_url'] }}">Browse on GitHub</a>
-</nav>
+<figure>
+	{% img './images/content/eleventy-cache-webmentions.png', ''%}
+</figure>
 
 ## Introduction
 
