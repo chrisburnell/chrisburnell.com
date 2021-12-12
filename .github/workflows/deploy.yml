@@ -24,8 +24,6 @@ jobs:
         with:
           path: ~/.npm
           key: ${{ runner.OS }}-npm-cache-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.OS }}-npm-cache-
       - name: Cache eleventy assets
         uses: actions/cache@v2
         with:
