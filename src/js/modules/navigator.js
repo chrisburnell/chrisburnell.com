@@ -1,5 +1,5 @@
 const navigatorHandler = () => {
-	/*!
+	/**
 	 * Navigator
 	 * @author Chris Burnell <me@chrisburnell.com>
 	 */

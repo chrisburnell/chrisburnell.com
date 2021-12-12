@@ -240,7 +240,7 @@
 	{% if tags and tags.includes('httpstatus') %}
 		<script defer src="/js/simple.js?{{ pkg.version }}"></script>
 	{% else %}
-		<script defer src="/js/main.js?{{ pkg.version }}"></script>
+		<script defer src="/js/main{% if not env.ELEVENTY_PRODUCTION %}-dev{% endif %}.js?{{ pkg.version }}"></script>
 	{% endif %}
 	{% if js %}
 		<script defer src="/js/pages/{{ js }}?{{ pkg.version }}"></script>

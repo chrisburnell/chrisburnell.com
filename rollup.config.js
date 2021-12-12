@@ -1,5 +1,6 @@
 import commonjs from "@rollup/plugin-commonjs"
 import { nodeResolve } from "@rollup/plugin-node-resolve"
+import { terser } from "rollup-plugin-terser"
 
 export default [
 	{
@@ -8,6 +9,15 @@ export default [
 			dir: "js",
 			format: "iife",
 			name: "main",
+		},
+		plugins: [commonjs(), nodeResolve(), terser()],
+	},
+	{
+		input: "src/js/main-dev.js",
+		output: {
+			dir: "js",
+			format: "iife",
+			name: "mainDev",
 		},
 		plugins: [commonjs(), nodeResolve()],
 	},
@@ -18,7 +28,7 @@ export default [
 			format: "iife",
 			name: "simple",
 		},
-		plugins: [commonjs()],
+		plugins: [commonjs(), terser()],
 	},
 	{
 		input: "src/js/speedlify-score.js",

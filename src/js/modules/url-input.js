@@ -1,5 +1,5 @@
 const urlInput = () => {
-	/*!
+	/**
 	 * Add `http://` to URL input fields on blur or when Enter is pressed
 	 */
 	let addDefaultScheme = (target) => {
