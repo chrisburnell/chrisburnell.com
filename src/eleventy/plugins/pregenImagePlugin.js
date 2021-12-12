@@ -6,8 +6,8 @@ const path = require("path")
 const Image = require("@11ty/eleventy-img")
 
 module.exports = async (eleventyConfig) => {
-	// Only run when GENERATE_FAVICON is true
-	if (process.env.GENERATE_FAVICON) {
+	// Only run when PREGENERATE_IMAGES is true
+	if (process.env.PREGENERATE_IMAGES) {
 		const options = {
 			urlPath: "/images/",
 			outputDir: "./images",
@@ -22,6 +22,9 @@ module.exports = async (eleventyConfig) => {
 					{
 						formats: ["avif", "webp", "png"],
 						widths: [16, 32, 48, 64, 128, 180, 192, 256, 310, 512],
+						sharpOptions: {
+							quality: 100,
+						},
 						filenameFormat: (id, src, width, format) => {
 							const extension = path.extname(src)
 							const name = path.basename(src, extension)
@@ -42,6 +45,9 @@ module.exports = async (eleventyConfig) => {
 					{
 						formats: ["avif", "webp", "jpg"],
 						widths: [100, 200, 300, 400],
+						sharpOptions: {
+							quality: 100,
+						},
 						filenameFormat: (id, src, width, format) => {
 							const extension = path.extname(src)
 							const name = path.basename(src, extension)
@@ -62,6 +68,9 @@ module.exports = async (eleventyConfig) => {
 				Object.assign(
 					{
 						formats: ["avif", "webp", "jpg", "png"],
+						sharpOptions: {
+							quality: 100,
+						},
 						filenameFormat: (id, src, width, format) => {
 							const extension = path.extname(src)
 							const name = path.basename(src, extension)

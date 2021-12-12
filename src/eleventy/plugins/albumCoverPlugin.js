@@ -19,6 +19,9 @@ const getImageOptions = (lookup) => {
 		urlPath: "/images/built/",
 		outputDir: "./_site/images/built",
 		cacheDuration: "1y",
+		sharpOptions: {
+			quality: 100,
+		},
 		filenameFormat: (id, src, width, format) => {
 			return `${String(lookup).toLowerCase()}.${format}`
 		},

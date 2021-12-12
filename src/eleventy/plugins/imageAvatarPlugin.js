@@ -24,6 +24,9 @@ const getImageOptions = (lookup) => {
 		urlPath: "/images/avatars/",
 		outputDir: "./_site/images/avatars",
 		duration: "4w",
+		sharpOptions: {
+			quality: 100,
+		},
 		filenameFormat: (id, src, width, format) => {
 			return `${String(lookup).toLowerCase()}.${format}`
 		},

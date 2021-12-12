@@ -21,6 +21,9 @@ const imageShortcode = (src, alt, classes = "", widths = [null]) => {
 			urlPath: "/images/built/",
 			outputDir: "./_site/images/built",
 			duration: "4w",
+			sharpOptions: {
+				quality: 100,
+			},
 			filenameFormat: (id, src, width, format) => {
 				const extension = path.extname(src)
 				const name = path.basename(src, extension)
