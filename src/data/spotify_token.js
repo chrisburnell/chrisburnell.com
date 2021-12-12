@@ -1,6 +1,8 @@
+// Load .env variables with dotenv
+require("dotenv").config()
+
 const fetch = require("node-fetch")
 const { AssetCache } = require("@11ty/eleventy-cache-assets")
-const { data } = require("autoprefixer")
 
 const SPOTIFY_CLIENT_ID = process.env.SPOTIFY_CLIENT_ID
 const SPOTIFY_CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET

@@ -1,3 +1,6 @@
+// Load .env variables with dotenv
+require("dotenv").config()
+
 const path = require("path")
 const Image = require("@11ty/eleventy-img")
 

@@ -1,3 +1,6 @@
+// Load .env variables with dotenv
+require("dotenv").config()
+
 const site = require("../../data/site.json")
 const author = require("../../data/author.json")
 const twitterReplacements = require("../../data/twitterReplacements.json")

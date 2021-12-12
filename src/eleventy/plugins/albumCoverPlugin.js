@@ -1,3 +1,6 @@
+// Load .env variables with dotenv
+require("dotenv").config()
+
 const fetch = require("node-fetch")
 
 const site = require("../../data/site.json")
