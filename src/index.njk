@@ -28,7 +28,7 @@ sitemap:
 				<nav class=" [ deck ] " aria-labelledby="today-rsvps">
 					{%- set hfeed = false -%}
 					{%- set truncate = false -%}
-					{% for item in collections.todayRSVPs %}
+					{% asyncAll item in collections.todayRSVPs %}
 						{%- set responses = item.url | getWebmentions -%}
 						{%- set rsvp_class = 'box--error' -%}
 						{%- if item.data.rsvp.value == 'yes' -%}
@@ -39,7 +39,7 @@ sitemap:
 						<div class=" [ box  {{ rsvp_class }} ] ">
 							{% include 'item-deck.njk' %}
 						</div>
-					{% endfor %}
+					{% endall %}
 				</nav>
 			{% endif %}
 
@@ -49,10 +49,10 @@ sitemap:
 			<nav class=" [ deck ] [ h-feed ] " aria-labelledby="latest">
 				{%- set hfeed = true -%}
 				{%- set truncate = true -%}
-				{% for item in collections.writingPosts | limit(site.limits.feature) %}
+				{% asyncAll item in collections.writingPosts | limit(site.limits.feature) %}
 					{%- set responses = item.url | getWebmentions -%}
 					{% include 'item-deck.njk' %}
-				{% endfor %}
+				{% endall %}
 			</nav>
 
 			<h2 id="popular">
@@ -61,10 +61,10 @@ sitemap:
 			<nav class=" [ deck ] " aria-labelledby="popular">
 				{% set hfeed = false %}
 				{% set truncate = true %}
-				{% for item in collections.popular | limit(site.limits.feature) %}
+				{% asyncAll item in collections.popular | limit(site.limits.feature) %}
 					{%- set responses = item.url | getWebmentions -%}
 					{% include 'item-deck.njk' %}
-				{% endfor %}
+				{% endall %}
 			</nav>
 
 			<nav class=" [ navigator ] " aria-label="Archive Navigation">
@@ -77,10 +77,10 @@ sitemap:
 			<nav class=" [ deck ] " aria-labelledby="projects">
 				{%- set hfeed = false -%}
 				{%- set truncate = true -%}
-				{% for item in projects.personal | limit(site.limits.feature) %}
+				{% asyncAll item in projects.personal | limit(site.limits.feature) %}
 					{%- set responses = item.url | getWebmentions -%}
 					{% include 'item-deck.njk' %}
-				{% endfor %}
+				{% endall %}
 			</nav>
 
 			<nav class=" [ navigator ] " aria-label="Projects Navigation">
@@ -94,7 +94,7 @@ sitemap:
 				<nav class=" [ deck ] " aria-labelledby="upcoming-rsvps">
 					{%- set hfeed = false -%}
 					{%- set truncate = true -%}
-					{% for item in collections.upcomingRSVPs %}
+					{% asyncAll item in collections.upcomingRSVPs %}
 						{%- set responses = item.url | getWebmentions -%}
 						{%- set rsvp_class = 'box--error' -%}
 						{%- if item.data.rsvp.value == 'yes' -%}
@@ -105,7 +105,7 @@ sitemap:
 						<div class=" [ box  {{ rsvp_class }} ] ">
 							{% include 'item-deck.njk' %}
 						</div>
-					{% endfor %}
+					{% endall %}
 				</nav>
 			{% endif %}
 
@@ -115,10 +115,10 @@ sitemap:
 					{%- set hfeed = false -%}
 					{%- set truncate = true -%}
 					{%- set relative_time = true -%}
-					{% for item in collections.throwbackPosts | limit(site.limits.feature) %}
+					{% asyncAll item in collections.throwbackPosts | limit(site.limits.feature) %}
 						{%- set responses = item.url | getWebmentions -%}
 						{% include 'item-deck.njk' %}
-					{% endfor %}
+					{% endall %}
 				</nav>
 			{% endif %}
 		</div>

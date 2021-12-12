@@ -37,16 +37,16 @@ truncate: true
 			</h2>
 			{% if collection[0].data.mf_root == 'review' %}
 				<nav class=" [ shelf {% if collection[0].data.read_of %}shelf--books {% endif %}] " aria-labelledby="{{ lookup.plural }}">
-					{% for item in collection | limit(site.limits.feature) %}
+					{% asyncAll item in collection | limit(site.limits.feature) %}
 						{% include 'item-shelf.njk' %}
-					{% endfor %}
+					{% endall %}
 				</nav>
 			{% else %}
 				<nav class=" [ deck ] " aria-labelledby="{{ lookup.plural }}">
-					{% for item in collection | limit(site.limits.feature) %}
+					{% asyncAll item in collection | limit(site.limits.feature) %}
 						{%- set responses = item.url | getWebmentions -%}
 						{% include 'item-deck.njk' %}
-					{% endfor %}
+					{% endall %}
 				</nav>
 			{% endif %}
 			{% if collection.length > site.limits.feature %}

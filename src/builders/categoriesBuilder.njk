@@ -42,9 +42,9 @@ truncate: true
 				</div>
 			</div>
 			<nav class=" [ shelf {% if collection[0].data.read_of %}shelf--books {% endif %}] " aria-live="polite">
-				{% for item in collection %}
+				{% asyncAll item in collection %}
 					{% include 'item-shelf.njk' %}
-				{% endfor %}
+				{% endall %}
 			</nav>
 		{% else %}
 			{%- set year = latest_year -%}
@@ -53,7 +53,7 @@ truncate: true
 				<small>({{ collection | getCountByYear(year) }})</small>
 			</h2>
 			<nav class=" [ deck ] ">
-				{% for item in collection %}
+				{% asyncAll item in collection %}
 					{% if item.date.getFullYear() != year %}
 						{%- set year = item.date.getFullYear() -%}
 						</nav>
@@ -65,7 +65,7 @@ truncate: true
 					{% endif %}
 					{%- set responses = item.url | getWebmentions -%}
 					{% include 'item-deck.njk' %}
-				{% endfor %}
+				{% endall %}
 			</nav>
 		{% endif %}
 	</div>
