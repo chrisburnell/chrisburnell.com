@@ -26,20 +26,13 @@ jobs:
           key: ${{ runner.OS }}-npm-cache-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.OS }}-npm-cache-
-      - name: Cache eleventy-cache-assets
+      - name: Cache eleventy assets
         uses: actions/cache@v2
         with:
-          path: .cache
+          path: |
+            .cache
+            _site/images
           key: ${{ runner.OS }}-11ty-cache-${{ hashFiles('**/lockfiles') }}
-          restore-keys: |
-            ${{ runner.OS }}-11ty-cache-
-      - name: Cache images
-        uses: actions/cache@v2
-        with:
-          path: _site/images
-          key: ${{ runner.OS }}-11ty-cache-${{ hashFiles('**/lockfiles') }}
-          restore-keys: |
-            ${{ runner.OS }}-11ty-cache-
       - name: Set the timezone
         uses: zcong1993/setup-timezone@master
         with:
