@@ -35,7 +35,6 @@ truncate: true
 					</svg>
 				</a>
 			</h2>
-			<!-- {{ collection[0].data.mf_root }} -->
 			{% if collection[0].data.mf_root == 'review' %}
 				<nav class=" [ shelf {% if collection[0].data.read_of %}shelf--books {% endif %}] " aria-labelledby="{{ lookup.plural }}">
 					{% for item in collection | limit(site.limits.feature) %}
