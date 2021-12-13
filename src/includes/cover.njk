@@ -5,6 +5,6 @@
 			<img src="/images/animated/{{ src }}" alt="" class="cover  u-photo" loading="lazy" decoding="async">
 		</picture>
 	{% else %}
-		{% image './images/covers/' + src, '', 'cover  u-photo', '400' %}
+		{% image './images/covers/' + src, '', 'cover  u-photo', [400] %}
 	{% endif %}
 {% endif %}

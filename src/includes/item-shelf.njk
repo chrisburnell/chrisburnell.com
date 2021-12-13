@@ -21,7 +21,17 @@
 	{% set item_of_url = "https://openlibrary.org/isbn/" + item.data.read_of %}
 {%- endif -%}
 <article{% if hfeed %} class=" [ h-{{ item.data.mf_root }} ] "{% endif %}>
-	{# {% include 'cover.njk' %} #}
+	{# {%- include 'cover.njk' -%} #}
+	{# Rudimentary workaround... AGAIN #}
+	{% if item.data.cover %}
+		<picture>
+			{% if env.ELEVENTY_PRODUCTION %}
+				<source type="image/avif" srcset="/images/built/{{ item.data.cover | replace('jpg', 'avif') | replace('png', 'avif') }}">
+			{% endif %}
+			<source type="image/webp" srcset="/images/built/{{ item.data.cover | replace('jpg', 'webp') | replace('png', 'webp') }}">
+			<img alt="" class="cover  u-photo" loading="lazy" decoding="async" src="/images/built/{{ item.data.cover | replace('jpg', 'jpeg') }}" height="400">
+		</picture>
+	{% endif %}
 	<h3>
 		{% if item.data.tags and item.data.tags.includes('clickthrough') %}
 			<a href="{{ item_of_url | default(item.url) | striptags(true) | safe }}">
