@@ -20,6 +20,7 @@ const fixTwitterUsername = (twitterUsername) => {
 const getImageOptions = (lookup) => {
 	return {
 		widths: [size],
+		sizes: "100vw",
 		formats: process.env.ELEVENTY_PRODUCTION ? ["avif", "webp", "jpg"] : ["webp", "jpg"],
 		urlPath: "/images/avatars/",
 		outputDir: "./_site/images/avatars",

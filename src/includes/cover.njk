@@ -1,9 +1,10 @@
-{% if cover %}
-	{% img './images/covers/' + cover, '', 'cover  u-photo', [400] %}
-{% elif item.data.cover %}
-	{% img './images/covers/' + item.data.cover, '', 'cover  u-photo', [400] %}
-{# {% elif listen_of %}
-	{% album_cover listen_if, 'cover  u-photo', [400] %}
-{% elif item.data.listen_of %}
-	{% album_cover item.data.listen_if, 'cover  u-photo', [400] %} #}
+{% if item.data.cover or cover %}
+	{% set src = item.data.cover | default(cover) %}
+	{% if 'gif' in src %}
+		<picture>
+			<img src="/images/animated/{{ src }}" alt="" class="cover  u-photo" loading="lazy" decoding="async">
+		</picture>
+	{% else %}
+		{% img './images/covers/' + src, '', 'cover  u-photo', [400] %}
+	{% endif %}
 {% endif %}

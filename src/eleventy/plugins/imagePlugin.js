@@ -35,6 +35,7 @@ module.exports = (eleventyConfig) => {
 
 		let options = {
 			width: widths,
+			sizes: "100vw",
 			formats: formats,
 			urlPath: "/images/built/",
 			outputDir: "./_site/images/built",
@@ -67,6 +68,6 @@ module.exports = (eleventyConfig) => {
 			}
 		)
 
-		return await markup
+		return markup
 	})
 }

@@ -1,4 +1,4 @@
-{% if photo or item.data.photo %}
+{% if item.data.photo or photo %}
 	{% set photos = item.data.photo | default(photo) | toArray %}
 	{% for item in photos %}
 		<figure>
@@ -8,7 +8,7 @@
 			{% set item_widths = item.widths | default(null) %}
 			{% if 'gif' in item_url %}
 				<picture>
-					<img src="/images/animated/{{ item_url }}" alt="{{ item.alt }}" loading="lazy">
+					<img src="/images/animated/{{ item_url }}" alt="{{ item_alt }}" class="{{ item_classes }}" loading="lazy" decoding="async">
 				</picture>
 			{% else %}
 				{% img './images/content/' + item_url, item_alt, item_classes, [item_widths] %}
