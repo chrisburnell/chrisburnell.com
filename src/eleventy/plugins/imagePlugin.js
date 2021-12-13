@@ -1,50 +1,43 @@
-// Load .env variables with dotenv
-require("dotenv").config()
-
 const path = require("path")
 const Image = require("@11ty/eleventy-img")
+const env = require("../../data/env")
 
 module.exports = (eleventyConfig) => {
-	eleventyConfig.addNunjucksAsyncShortcode("img", async (src, alt, classes = "", widths = [null]) => {
+	eleventyConfig.addNunjucksShortcode("image", (src, alt, classes = "", widths = "null") => {
 		let formats
 		if (src.includes(".svg")) {
 			formats = ["svg"]
 		} else {
 			const originalFormat = src.includes("png") ? "png" : "jpg"
-			formats = process.env.ELEVENTY_PRODUCTION ? ["avif", "webp", originalFormat] : ["webp", originalFormat]
+			formats = env.ELEVENTY_PRODUCTION ? ["avif", "webp", originalFormat] : ["webp", originalFormat]
 		}
 
 		let options = {
-			width: widths,
-			sizes: "100vw",
+			width: [widths],
 			formats: formats,
 			urlPath: "/images/built/",
-			outputDir: "./_site/images/built",
+			outputDir: "./_site/images/built/",
 			duration: "4w",
 			sharpOptions: {
 				quality: 100,
 			},
-			filenameFormat: (id, src, width, format) => {
+			filenameFormat: (id, src, width, format, options) => {
 				const extension = path.extname(src)
 				const name = path.basename(src, extension)
 				return `${name}${widths.length > 1 ? `-${width}` : ``}.${format}`
 			},
 		}
 
-		let imgData = await Image(src, options)
-		let markup = Image.generateHTML(
-			imgData,
-			{
-				alt: alt,
-				class: classes,
-				loading: "lazy",
-				decoding: "async",
-			},
-			{
-				whitespaceMode: "inline",
-			}
-		)
+		Image(src, options)
 
-		return markup
+		let metadata = Image.statsSync(src, options)
+		let attributes = {
+			alt: alt,
+			class: classes,
+			sizes: "100vw",
+			loading: "lazy",
+			decoding: "async",
+		}
+		return Image.generateHTML(metadata, attributes)
 	})
 }

@@ -9,7 +9,7 @@ toc: true
 ---
 
 <figure>
-	{% img './images/content/pentatonic.png', '', 'pixelated' %}
+	{% image './images/content/pentatonic.png', '', 'pixelated' %}
     <figcaption><p>A snippet of a <a href="https://en.wikipedia.org/wiki/Pentatonic_scale">C Major Pentatonic scale</a>.</p></figcaption>
 </figure>
 

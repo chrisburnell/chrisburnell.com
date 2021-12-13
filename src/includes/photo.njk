@@ -5,13 +5,12 @@
 			{% set item_url = item.url | default(item) %}
 			{% set item_alt = item.alt | default('') %}
 			{% set item_classes = item.classes | default('') %}
-			{% set item_widths = item.widths | default(null) %}
 			{% if 'gif' in item_url %}
 				<picture>
 					<img src="/images/animated/{{ item_url }}" alt="{{ item_alt }}" class="{{ item_classes }}" loading="lazy" decoding="async">
 				</picture>
 			{% else %}
-				{% img './images/content/' + item_url, item_alt, item_classes, [item_widths] %}
+				{% image './images/content/' + item_url, item_alt, item_classes, item.widths %}
 			{% endif %}
 		</figure>
 	{% endfor %}

@@ -20,15 +20,14 @@ const fixTwitterUsername = (twitterUsername) => {
 const getImageOptions = (lookup) => {
 	return {
 		widths: [size],
-		sizes: "100vw",
 		formats: process.env.ELEVENTY_PRODUCTION ? ["avif", "webp", "jpg"] : ["webp", "jpg"],
 		urlPath: "/images/avatars/",
-		outputDir: "./_site/images/avatars",
+		outputDir: "./_site/images/avatars/",
 		duration: "4w",
 		sharpOptions: {
 			quality: 100,
 		},
-		filenameFormat: (id, src, width, format) => {
+		filenameFormat: (id, src, width, format, options) => {
 			return `${String(lookup).toLowerCase()}.${format}`
 		},
 	}
@@ -47,12 +46,13 @@ const fetchImageData = (lookup, url) => {
 const storeAvatar = async (id, classes = "") => {
 	// We know where the images will be
 	let fakeUrl = `/images/avatars/${id}.jpg`
-	let imgData = Image.statsByDimensionsSync(fakeUrl, size, size, getImageOptions(id))
+	let metadata = Image.statsByDimensionsSync(fakeUrl, size, size, getImageOptions(id))
 	let markup = Image.generateHTML(
-		imgData,
+		metadata,
 		{
 			alt: `Avatar for ${id}`,
 			class: " [ avatar ] [ u-author ] " + (classes ? `[ ${classes} ] ` : ""),
+			sizes: "100vw",
 			loading: "lazy",
 			decoding: "async",
 		},

@@ -12,7 +12,7 @@ toc: true
 ---
 
 <figure>
-	{% img './images/content/eleventy-cache-webmentions.png', ''%}
+	{% image './images/content/eleventy-cache-webmentions.png', ''%}
 </figure>
 
 ## Installation

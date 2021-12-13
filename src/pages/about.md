@@ -6,7 +6,7 @@ eleventyComputed:
 ---
 
 <figure>
-    {% img './images/content/rachel-and-i.jpg', 'Chris Burnell' %}
+    {% image './images/content/rachel-and-i.jpg', 'Chris Burnell' %}
 </figure>
 
 Hey, I’m <span class=" [ canada ] ">Chris</span>. Thanks for checking out my website.

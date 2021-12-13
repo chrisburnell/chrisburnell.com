@@ -10,7 +10,7 @@ module.exports = async (eleventyConfig) => {
 	if (process.env.PREGENERATE_IMAGES) {
 		const options = {
 			urlPath: "/images/",
-			outputDir: "./images",
+			outputDir: "./images/",
 		}
 
 		const favicons = await glob("./images/raven*.svg")
@@ -25,7 +25,7 @@ module.exports = async (eleventyConfig) => {
 						sharpOptions: {
 							quality: 100,
 						},
-						filenameFormat: (id, src, width, format) => {
+						filenameFormat: (id, src, width, format, options) => {
 							const extension = path.extname(src)
 							const name = path.basename(src, extension)
 							return `${name.replace(`raven`, `favicon-${width}`)}.${format}`
@@ -48,7 +48,7 @@ module.exports = async (eleventyConfig) => {
 						sharpOptions: {
 							quality: 100,
 						},
-						filenameFormat: (id, src, width, format) => {
+						filenameFormat: (id, src, width, format, options) => {
 							const extension = path.extname(src)
 							const name = path.basename(src, extension)
 							return `avatar${width > 100 ? `@${width / 100}x` : ``}.${format}`
@@ -71,7 +71,7 @@ module.exports = async (eleventyConfig) => {
 						sharpOptions: {
 							quality: 100,
 						},
-						filenameFormat: (id, src, width, format) => {
+						filenameFormat: (id, src, width, format, options) => {
 							const extension = path.extname(src)
 							const name = path.basename(src, extension)
 							return `${name}.${format}`

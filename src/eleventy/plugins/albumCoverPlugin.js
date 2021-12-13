@@ -17,12 +17,12 @@ const getImageOptions = (lookup) => {
 		widths: [size],
 		formats: process.env.ELEVENTY_PRODUCTION ? ["avif", "webp", "jpg"] : ["webp", "jpg"],
 		urlPath: "/images/built/",
-		outputDir: "./_site/images/built",
+		outputDir: "./_site/images/built/",
 		cacheDuration: "1y",
 		sharpOptions: {
 			quality: 100,
 		},
-		filenameFormat: (id, src, width, format) => {
+		filenameFormat: (id, src, width, format, options) => {
 			return `${String(lookup).toLowerCase()}.${format}`
 		},
 	}
@@ -41,9 +41,9 @@ const fetchImageData = (id, url) => {
 const storeAlbumCover = async (id, classes = "") => {
 	// We know where the images will be
 	let fakeUrl = `/images/built/${id}.jpg`
-	let imgData = Image.statsByDimensionsSync(fakeUrl, size, size, getImageOptions(id))
+	let metadata = Image.statsByDimensionsSync(fakeUrl, size, size, getImageOptions(id))
 	let markup = Image.generateHTML(
-		imgData,
+		metadata,
 		{
 			alt: `Album cover for ${id}`,
 			class: " [ u-photo ] " + (classes ? `[ ${classes} ] ` : ""),

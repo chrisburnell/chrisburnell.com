@@ -9,7 +9,7 @@ toc: true
 ---
 
 <figure>
-	{% img './images/content/bowhead.png', '', 'pixelated' %}
+	{% image './images/content/bowhead.png', '', 'pixelated' %}
     <figcaption><p>A lovely <a href="https://en.wikipedia.org/wiki/Bowhead_whale">bowhead whale</a>. I’d love other suggestions! 😅</p></figcaption>
 </figure>
 

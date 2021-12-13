@@ -69,7 +69,7 @@ I can’t take all the credit for this website, really. It’s the culmination o
 <aside>
 	<figure>
 		<a rel="external" href="https://stateofthebrowser.com">
-			{% img './images/content/sotb-2013.jpg', 'Photo of SOTB 2013' %}
+			{% image './images/content/sotb-2013.jpg', 'Photo of SOTB 2013' %}
 		</a>
 		<figcaption>Image courtesy of State of the Browser</figcaption>
 	</figure>
