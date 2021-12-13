@@ -29,24 +29,19 @@ truncate: true
 			{%- endif -%}
 			<h2 id="{{ lookup.plural }}">
 				<a href="/{{ lookup.plural }}/">{{ lookup.properPlural }}</a>
-				<a href="#{{ lookup.plural }}" class=" [ fragment-anchor ] ">
-					<svg fill="currentColor" aria-hidden="true" focusable="false" width="1em" height="1em">
-						<use href="/images/sprites.svg#svg--link"></use>
-					</svg>
-				</a>
 			</h2>
 			{% if collection[0].data.mf_root == 'review' %}
 				<nav class=" [ shelf {% if collection[0].data.read_of %}shelf--books {% endif %}] " aria-labelledby="{{ lookup.plural }}">
-					{% asyncAll item in collection | limit(site.limits.feature) %}
+					{%- for item in collection | limit(site.limits.feature) -%}
 						{% include 'item-shelf.njk' %}
-					{% endall %}
+					{%- endfor -%}
 				</nav>
 			{% else %}
 				<nav class=" [ deck ] " aria-labelledby="{{ lookup.plural }}">
-					{% asyncAll item in collection | limit(site.limits.feature) %}
+					{%- for item in collection | limit(site.limits.feature) -%}
 						{%- set responses = item.url | getWebmentions -%}
 						{% include 'item-deck.njk' %}
-					{% endall %}
+					{%- endfor -%}
 				</nav>
 			{% endif %}
 			{% if collection.length > site.limits.feature %}

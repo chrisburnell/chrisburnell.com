@@ -64,8 +64,8 @@
     "prettier": "npx prettier --write src",
     "start": "concurrently \"npm run js -- --watch\" \"npm run scss -- --watch\" \"npx @11ty/eleventy --serve --quiet\"",
     "serve": "npm run start",
-    "build": "npm run palette; npm run js; npm run scss -- --style=compressed; npm run prefix; npm run prettier; ELEVENTY_PRODUCTION=true npx @11ty/eleventy",
-    "pregenerate": "npm run palette; npm run scss -- --style=compressed; npm run prefix; npm run prettier; ELEVENTY_PRODUCTION=true, PREGENERATE_IMAGES=true npx @11ty/eleventy",
+    "build": "npm run palette; npm run js; npm run scss -- --style=compressed; npm run prefix; npm run prettier; cross-env ELEVENTY_PRODUCTION=true npx @11ty/eleventy",
+    "pregenerate": "npm run palette; npm run scss -- --style=compressed; npm run prefix; npm run prettier; cross-env PREGENERATE_IMAGES=true npx @11ty/eleventy",
     "debug": "cross-env DEBUG=* npx @11ty/eleventy"
   }
 }

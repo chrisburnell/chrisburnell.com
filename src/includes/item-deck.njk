@@ -181,7 +181,7 @@
 		<div class=" [ deck__meta ] ">
 			{%- if item.date -%}
 				<small>published</small>
-				<a class=" [ u-url ] " href="{{ item.url }}"{{ ' tabindex="-1"' if item_title or item_of_title }}><time class=" [ dt-published ] " datetime="{{ item.date | rfcDate }}">{{ item.date | friendlyDate }}</time></a>
+				<a class=" [ u-url ] " href="{{ item.url }}"{% if item_title or item_of_title %} tabindex="-1"{% endif %}><time class=" [ dt-published ] " datetime="{{ item.date | rfcDate }}">{{ item.date | friendlyDate }}</time></a>
 			{%- endif -%}
 			{%- if item.data.updated %}
 				{% if item.date %}·{% endif %}
@@ -195,7 +195,7 @@
 		</div>
 	{% endif %}
 	{% if item.data.mf_property and item_of %}
-		<data class=" [ u-{{ item.data.mf_property }} ] " hidden>{{ item_of_url | default(item_of) }}</data>
+		<data class=" [ u-{{ item.data.mf_property }} ] " value="{{ item_of_url | default(item_of) }}" hidden></data>
 	{% endif %}
 	{% if item.data.category %}
 		<data class=" [ u-category ] " value="/{{ item.data.categoryPlural | default(item.data.category) }}/" hidden>{{ item.data.category }}</data>

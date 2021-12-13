@@ -4,9 +4,9 @@ const site = require("./src/data/site.json")
 
 // Import Eleventy plugins
 const pregenImagePlugin = require("./src/eleventy/plugins/pregenImagePlugin.js")
-const imageAvatarPlugin = require("./src/eleventy/plugins/imageAvatarPlugin.js")
 const imagePlugin = require("./src/eleventy/plugins/imagePlugin.js")
-const albumCoverPlugin = require("./src/eleventy/plugins/albumCoverPlugin.js")
+const imageAvatarPlugin = require("./src/eleventy/plugins/imageAvatarPlugin.js")
+// const albumCoverPlugin = require("./src/eleventy/plugins/albumCoverPlugin.js")
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight")
 const webmentionsPlugin = require("@chrisburnell/eleventy-cache-webmentions")
 
@@ -43,9 +43,9 @@ const markdownIt = require("markdown-it")({
 module.exports = (eleventyConfig) => {
 	// Eleventy Plugins
 	eleventyConfig.addPlugin(pregenImagePlugin)
-	eleventyConfig.addPlugin(imageAvatarPlugin)
 	eleventyConfig.addPlugin(imagePlugin)
-	eleventyConfig.addPlugin(albumCoverPlugin)
+	eleventyConfig.addPlugin(imageAvatarPlugin)
+	// eleventyConfig.addPlugin(albumCoverPlugin)
 	eleventyConfig.addPlugin(syntaxHighlightPlugin)
 	eleventyConfig.addPlugin(webmentionsPlugin, {
 		domain: site.url,

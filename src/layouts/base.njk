@@ -25,7 +25,8 @@
 {%- elif cover -%}
 	{%- set meta_image -%}{{ site.url }}/images/built/{{ cover | replace('jpg', 'jpeg') }}{%- endset -%}
 {%- elif photo -%}
-	{%- set meta_image -%}{{ site.url }}/images/built/{{ photo | replace('jpg', 'jpeg') }}{%- endset -%}
+	{% set first_photo = photo | toArray | first %}
+	{%- set meta_image -%}{{ site.url }}/images/built/{{ first_photo.url | default(first_photo) | replace('jpg', 'jpeg') }}{%- endset -%}
 {%- endif -%}
 {%- set canonical = site.url + page.url -%}
 {%- if category and not category.title -%}

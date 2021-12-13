@@ -21,33 +21,21 @@ truncate: true
 	<div class=" [ content__body ] [ h-feed ] {% if toc %}[ generate-toc ] {% endif %}">
 		{%- set year = latest_year -%}
 		<h2 id="{{ year }}">
-			{{ year }}
-			<small>({{ collection | getCountByYear(year) }})</small>
-			<a href="#{{ year }}" class=" [ fragment-anchor ] ">
-				<svg fill="currentColor" aria-hidden="true" focusable="false" width="1em" height="1em">
-					<use href="/images/sprites.svg#svg--link"></use>
-				</svg>
-			</a>
+			{{ year }} <small>({{ collection | getCountByYear(year) }})</small>
 		</h2>
 		<nav class=" [ deck ] ">
-			{% asyncAll item in collection %}
+			{% for item in collection %}
 				{% if item.date.getFullYear() != year %}
 					{%- set year = item.date.getFullYear() -%}
 					</nav>
 					<h2 id="{{ year }}">
-						{{ year }}
-						<small>({{ collection | getCountByYear(year) }})</small>
-						<a href="#{{ year }}" class=" [ fragment-anchor ] ">
-							<svg fill="currentColor" aria-hidden="true" focusable="false" width="1em" height="1em">
-								<use href="/images/sprites.svg#svg--link"></use>
-							</svg>
-						</a>
+						{{ year }} <small>({{ collection | getCountByYear(year) }})</small>
 					</h2>
 					<nav class=" [ deck ] ">
 				{% endif %}
 				{%- set responses = item.url | getWebmentions -%}
 				{% include 'item-deck.njk' %}
-			{% endall %}
+			{% endfor %}
 		</nav>
 	</div>
 
