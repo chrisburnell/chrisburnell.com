@@ -467,7 +467,7 @@ p q r s t u v w x y z { | } ~
 <h2>Deck</h2>
 
 <nav class=" [ deck ] ">
-{% for item in collections.article | arePublished | reverse | limit(site.limits.feature) %}
+{% for item in collections.article | arePublished | reverse | limit(site.limits.deck) %}
 	{%- set responses = item.url | getWebmentions -%}
 	{% include 'item-deck.njk' %}
 {% endfor %}
@@ -478,14 +478,14 @@ p q r s t u v w x y z { | } ~
 
 <nav class=" [ shelf ] ">
 {%- set hfeed = false -%}
-{% for item in collections.beer | arePublished | reverse | limit(site.limits.feature) %}
+{% for item in collections.beer | arePublished | reverse | limit(site.limits.shelf) %}
 	{% include 'item-shelf.njk' %}
 {% endfor %}
 </nav>
 
 <nav class=" [ shelf ] ">
 {%- set hfeed = false -%}
-{% for item in collections.music | arePublished | reverse | limit(site.limits.feature) %}
+{% for item in collections.music | arePublished | reverse | limit(site.limits.shelf) %}
 	{% include 'item-shelf.njk' %}
 {% endfor %}
 </nav>

@@ -7,6 +7,8 @@
   "locale": "en",
   "established": "2008",
   "limits": {
+    "deck": 2,
+    "shelf": 3,
     "feature": 2,
     "feed": 10,
     "sparkline": 15

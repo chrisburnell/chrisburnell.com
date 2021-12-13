@@ -32,22 +32,27 @@ truncate: true
 			</h2>
 			{% if collection[0].data.mf_root == 'review' %}
 				<nav class=" [ shelf {% if collection[0].data.read_of %}shelf--books {% endif %}] " aria-labelledby="{{ lookup.plural }}">
-					{%- for item in collection | limit(site.limits.feature) -%}
+					{%- for item in collection | limit(site.limits.shelf) -%}
 						{% include 'item-shelf.njk' %}
 					{%- endfor -%}
 				</nav>
+				{% if collection.length > site.limits.shelf %}
+					<nav class=" [ navigator ] " aria-label="All {{ lookup.properPlural | title }}">
+						<a class=" [ button ] " href="/{{ lookup.plural }}/">All {{ lookup.properPlural | title }}</a>
+					</nav>
+				{% endif %}
 			{% else %}
 				<nav class=" [ deck ] " aria-labelledby="{{ lookup.plural }}">
-					{%- for item in collection | limit(site.limits.feature) -%}
+					{%- for item in collection | limit(site.limits.deck) -%}
 						{%- set responses = item.url | getWebmentions -%}
 						{% include 'item-deck.njk' %}
 					{%- endfor -%}
 				</nav>
-			{% endif %}
-			{% if collection.length > site.limits.feature %}
-				<nav class=" [ navigator ] " aria-label="All {{ lookup.properPlural | title }}">
-					<a class=" [ button ] " href="/{{ lookup.plural }}/">All {{ lookup.properPlural | title }}</a>
-				</nav>
+				{% if collection.length > site.limits.deck %}
+					<nav class=" [ navigator ] " aria-label="All {{ lookup.properPlural | title }}">
+						<a class=" [ button ] " href="/{{ lookup.plural }}/">All {{ lookup.properPlural | title }}</a>
+					</nav>
+				{% endif %}
 			{% endif %}
 		{% endfor %}
 
