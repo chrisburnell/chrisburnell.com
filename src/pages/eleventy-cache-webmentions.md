@@ -62,9 +62,12 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(pluginWebmentions, {
 		// domain: required or the plugin will not function
 		domain: "https://example.com",
-		// duration: "23h" by default
-		//   see https://www.11ty.dev/docs/plugins/cache/ for more info
-		duration: "23h",
+		// directory: ".cache" by default
+		//   see https://www.11ty.dev/docs/plugins/cache/#cache-directory for more info
+		directory: ".cache",
+		// duration: "1d" by default
+		//   see https://www.11ty.dev/docs/plugins/cache/#change-the-cache-duration for more info
+		duration: "1d",
 		// key: "webmentions" by default
 		//   dictates the name sent to eleventy-cache-assets to name the file
 		key: "webmentions",
