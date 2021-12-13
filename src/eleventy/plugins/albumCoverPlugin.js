@@ -73,7 +73,7 @@ const fetchAlbumCoverUrl = async (id) => {
 	return ""
 }
 
-module.exports = async (eleventyConfig) => {
+module.exports = (eleventyConfig) => {
 	let ids
 
 	eleventyConfig.on("beforeBuild", () => {

@@ -89,6 +89,8 @@ Element attributes:
 
 *That’s right! All spark-lines are dynamic out-of-the-box!*
 
+<!-- </textarea> -->
+<!-- '"´ -->
 <form>
     <fieldset>
         <label><input id="input-values" type="text" pattern="[0-9]+" value="12321" maxlength="26" oninput="processSparkline()"> Values</label>

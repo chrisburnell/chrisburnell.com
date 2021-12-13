@@ -1,29 +1,10 @@
 // Load .env variables with dotenv
 require("dotenv").config()
 
-const site = require("../../data/site.json")
-const queryFilters = require("../filters/queries.js")
-
 const path = require("path")
 const Image = require("@11ty/eleventy-img")
 
 module.exports = (eleventyConfig) => {
-	let localImages
-
-	eleventyConfig.on("beforeBuild", () => {
-		localImages = new Set()
-	})
-
-	if (process.env.ELEVENTY_PRODUCTION) {
-		eleventyConfig.on("afterBuild", () => {
-			let images = Array.from(localImages)
-			console.log(`[${queryFilters.getHost(site.url)}] Generating ${images.length} local images.`)
-			for (let image of images) {
-				Image(image.src, image.options)
-			}
-		})
-	}
-
 	eleventyConfig.addNunjucksAsyncShortcode("img", async (src, alt, classes = "", widths = [null]) => {
 		let formats
 		if (src.includes(".svg")) {
@@ -50,11 +31,7 @@ module.exports = (eleventyConfig) => {
 			},
 		}
 
-		localImages.add({
-			src: src,
-			options: options,
-		})
-		let imgData = Image.statsSync(src, options)
+		let imgData = await Image(src, options)
 		let markup = Image.generateHTML(
 			imgData,
 			{
