@@ -25,11 +25,11 @@ truncate: true
 		{% sparkline collection, first_year, latest_year %}
 	</div>
 
-	<div class=" [ content__body{% if collection[0].data.mf_root == 'review' %}  full{% endif %} ] [ h-feed ] {% if toc %}[ generate-toc ] {% endif %}">
+	<div class=" [ content__body{% if collection[0].data.list == 'shelf' %}  full{% endif %} ] [ h-feed ] {% if toc %}[ generate-toc ] {% endif %}">
 		{% if categoryIntroductions[category.title] %}
 			{{ categoryIntroductions[category.title] | join('\n\n') | markdownFormat | safe }}
 		{% endif %}
-		{% if collection[0].data.mf_root == 'review' %}
+		{% if collection[0].data.list == 'shelf' %}
 			<div class=" [ box ] ">
 				<div>
 					You can sort these {{ category.properPlural }}:

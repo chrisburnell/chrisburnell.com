@@ -1,4 +1,5 @@
 {
+  "list": "shelf",
   "mf_root": "review",
   "mf_property": "play-of",
   "permalink": "game/{{ page.fileSlug }}/",

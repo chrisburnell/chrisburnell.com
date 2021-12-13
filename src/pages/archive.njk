@@ -30,7 +30,7 @@ truncate: true
 			<h2 id="{{ lookup.plural }}">
 				<a href="/{{ lookup.plural }}/">{{ lookup.properPlural }}</a>
 			</h2>
-			{% if collection[0].data.mf_root == 'review' %}
+			{% if collection[0].data.list == 'shelf' %}
 				<nav class=" [ shelf {% if collection[0].data.read_of %}shelf--books {% endif %}] " aria-labelledby="{{ lookup.plural }}">
 					{%- for item in collection | limit(site.limits.shelf) -%}
 						{% include 'item-shelf.njk' %}

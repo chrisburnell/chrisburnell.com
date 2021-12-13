@@ -1,5 +1,6 @@
 {
   "hidden": true,
+  "list": "shelf",
   "mf_root": "review",
   "mf_property": "pk-drank",
   "permalink": "beer/{{ page.fileSlug }}/",
