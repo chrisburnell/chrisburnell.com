@@ -6,8 +6,8 @@ The source code for [chrisburnell.com](https://chrisburnell.com/) 🐦
 
 ## Table of Contents
 
-- [Title](#chrisburnellcom)
 - [Description](#description)
+  - [Cool stuff I like about my website](#cool-stuff-i-like-about-my-website)
 - [Code of Conduct](#code-of-conduct)
 - [Contributing](#contributing)
 - [Build Process](#build-process)
@@ -52,10 +52,10 @@ Please see the [Contributing Guide](CONTRIBUTING.md), [Commit Template](COMMIT_T
 
 ## Build Process
 
--   [Eleventy](https://11ty.dev)
--   [SCSS](http://sass-lang.com)
--   [Autoprefixer](https://github.com/ai/autoprefixer)
--   [PostCSS](http://postcss.org/)
+- [Eleventy](https://11ty.dev)
+- [SCSS](http://sass-lang.com)
+- [Autoprefixer](https://github.com/ai/autoprefixer)
+- [PostCSS](http://postcss.org/)
 
 ## Network
 
