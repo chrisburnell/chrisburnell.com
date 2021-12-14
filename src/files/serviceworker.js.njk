@@ -102,7 +102,6 @@ let clearOldCaches = () => {
 		})
 }
 
-
 self.addEventListener("install", event => {
 	event.waitUntil(updateAssetsCache()
 		.then(updatePagesCache())

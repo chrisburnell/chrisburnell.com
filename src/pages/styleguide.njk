@@ -36,7 +36,6 @@ js: styleguide.js
 	</figcaption>
 </figure>
 
-
 <h2>Measures</h2>
 
 <dl>
@@ -54,7 +53,6 @@ js: styleguide.js
 	<dd><div class="measure-example  measure-example--responsive"></div></dd>
 </dl>
 
-
 <div class="owl  requires-motion">
 	<h2>Transitions</h2>
 
@@ -66,7 +64,6 @@ js: styleguide.js
 		<div class="transition-example__demo  monospace">transition: all 0.2s ease;</div>
 	</div>
 </div>
-
 
 <h2>Fonts</h2>
 
@@ -84,7 +81,6 @@ js: styleguide.js
 
 <p style="font-family: 'Heebo', sans-serif; font-size: 1.375rem;">Title Font: Heebo, sans-serif;</p>
 
-
 <h2>Headings</h2>
 
 <p class="alpha">Heading Level 1 · α</p>
@@ -99,13 +95,11 @@ js: styleguide.js
 
 <p class="zeta">Heading Level 6 · ζ</p>
 
-
 <h2>Paragraph</h2>
 
 <p>A paragraph (from the Greek paragraphos, <q>to write beside</q> or <q>written beside</q>) is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
 
 <p class="columns">A paragraph (from the Greek paragraphos, <q>to write beside</q> or <q>written beside</q>) is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
-
 
 <h2>Aside</h2>
 
@@ -114,7 +108,6 @@ js: styleguide.js
 </aside>
 
 <p>A paragraph (from the Greek paragraphos, “to write beside” or “written beside”) is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
-
 
 <h2>Inline Elements</h2>
 
@@ -160,14 +153,12 @@ js: styleguide.js
 
 <p><button>Button</button></p>
 
-
 <h2>Blockquote</h2>
 
 <blockquote>
 	<p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text, and typically distinguished visually using indentation and a different typeface or smaller size quotation.</p>
 	<cite>Quote Source</cite>
 </blockquote>
-
 
 <h2>Unordered List</h2>
 
@@ -183,7 +174,6 @@ js: styleguide.js
 	</li>
 	<li>This is the last list item</li>
 </ul>
-
 
 <h2>Ordered List</h2>
 
@@ -224,7 +214,6 @@ js: styleguide.js
 	</li>
 </ol>
 
-
 <h2>Definition List</h2>
 
 <dl>
@@ -235,7 +224,6 @@ js: styleguide.js
 	<dt>And another term.</dt>
 	<dd>And it gets a definition too, which is this line.</dd>
 </dl>
-
 
 <h2>Table</h2>
 
@@ -279,7 +267,6 @@ js: styleguide.js
 		</tfoot>
 	</table>
 </figure>
-
 
 <h3>Table with Alternating Rows</h3>
 
@@ -329,7 +316,6 @@ js: styleguide.js
 	</table>
 </figure>
 
-
 <h3>Table with Subheadings</h3>
 
 <figure>
@@ -367,7 +353,6 @@ js: styleguide.js
 	</table>
 </figure>
 
-
 <h2>Details and Summary</h2>
 
 <figure>
@@ -378,20 +363,17 @@ js: styleguide.js
 	</details>
 </figure>
 
-
 <h2>Meter</h2>
 
 <figure>
 	<meter value="40" min="0" low="10" optimum="50" high="90" max="100" style="padding-block: var(--measure-small);"></meter>
 </figure>
 
-
 <h2>Progress</h2>
 
 <figure>
 	<progress style="padding-block: var(--measure-small);">progress</progress>
 </figure>
-
 
 <h2>Preformatted Text</h2>
 
@@ -405,11 +387,9 @@ P Q R S T U V W X Y Z [ \ ] ^ _
 p q r s t u v w x y z { | } ~
 </code></pre>
 
-
 <h2>Code Block</h2>
 
 <pre class="language-scss"><code class="language-scss"><span class="highlight-line"><span class="token keyword">@mixin</span> <span class="token function">owl</span><span class="token punctuation">(</span><span class="token property"><span class="token variable">$measure</span></span><span class="token punctuation">:</span> small<span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token keyword">@if</span> <span class="token operator">not</span> <span class="token function">map-has-key</span><span class="token punctuation">(</span><span class="token variable">$measures</span><span class="token punctuation">,</span> <span class="token variable">$measure</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br>    <span class="token atrule"><span class="token rule">@error</span> <span class="token string">"There is no measure named #{$measure} in `$measures`. measure should be one of #{map-keys($measures)}."</span><span class="token punctuation">;</span><br><span class="highlight-line">  <span class="token punctuation">}</span></span><br><span class="highlight-line"></span><br>  &amp; <span class="token operator">&gt;</span> <span class="token operator">*</span> <span class="token operator">+</span> *</span> <span class="token punctuation">{</span><br><span class="highlight-line">    <span class="token keyword">@include</span> <span class="token function">v</span><span class="token punctuation">(</span>margin-top<span class="token punctuation">,</span> <span class="token variable">$measure</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
-
 
 <h2>Figure</h2>
 
@@ -418,23 +398,19 @@ p q r s t u v w x y z { | } ~
 	<figcaption>Sintra, Portugal skyline by … me</figcaption>
 </figure>
 
-
 <h2>Audio</h2>
 
 <audio controls></audio>
 
-
 <h2>Video</h2>
 
 <video controls></video>
-
 
 <h2>Sparkline</h2>
 
 <div>
 	<spark-line values="3,6,1,1,1,3,1,1,0,4,3,0,9,1,0,2,2,5,2,3,2,5,1,3,3,6" endpoint-color="#eb2d36" class="pentatonic"></spark-line>
 </div>
-
 
 <h2>Navigator</h2>
 
@@ -443,7 +419,6 @@ p q r s t u v w x y z { | } ~
 	<button disabled>Button</button>
 	<a class=" [ button ] " href="#_">Anchor</a>
 </nav>
-
 
 <h2>Box</h2>
 
@@ -463,7 +438,6 @@ p q r s t u v w x y z { | } ~
 	<p>Uh oh, this box <strong>definitely</strong> means something went wrong.</p>
 </div>
 
-
 <h2>Deck</h2>
 
 <nav class=" [ deck ] ">
@@ -472,7 +446,6 @@ p q r s t u v w x y z { | } ~
 	{% include 'items/deck.njk' %}
 {% endfor %}
 </nav>
-
 
 <h2>Shelf</h2>
 
@@ -490,7 +463,6 @@ p q r s t u v w x y z { | } ~
 {% endfor %}
 </nav>
 
-
 <h2>Video</h2>
 
 <figure>
@@ -498,7 +470,6 @@ p q r s t u v w x y z { | } ~
 		<iframe src="https://player.vimeo.com/video/11933164?color={{ palette | keyValue("raven") }}&title=0&byline=0&portrait=0" allowfullscreen></iframe>
 	</div>
 </figure>
-
 
 <h2>Speakerdeck</h2>
 
@@ -508,16 +479,13 @@ p q r s t u v w x y z { | } ~
 	</div>
 </figure>
 
-
 <h2>CodePen</h2>
 
 {% codepen 'mglHp', false, 425 %}
 
-
 <h2>Can I Use</h2>
 
 {% caniuse 'css-sel3' %}
-
 
 <h2>Tweet</h2>
 
