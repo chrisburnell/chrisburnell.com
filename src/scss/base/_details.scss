@@ -31,11 +31,11 @@ details {
 }
 
 summary {
+	@extend %gamma;
 	@include non-selectable;
 	@include transition(padding);
 	display: list-item;
 	outline-width: 0;
-	@include v(font-weight, bold);
 	cursor: pointer;
 
 	&::-webkit-details-marker {
