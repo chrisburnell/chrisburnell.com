@@ -13,7 +13,7 @@ module.exports = (eleventyConfig) => {
 		}
 
 		let options = {
-			width: widths,
+			widths: widths,
 			formats: formats,
 			urlPath: "/images/built/",
 			outputDir: "./_site/images/built/",
@@ -24,7 +24,7 @@ module.exports = (eleventyConfig) => {
 			filenameFormat: (id, src, width, format, options) => {
 				const extension = path.extname(src)
 				const name = path.basename(src, extension)
-				return `${name}${[widths].length > 1 ? `-${width}` : ``}.${format}`
+				return `${name}${widths.length > 1 ? `-${width}` : ``}.${format}`
 			},
 		}
 

@@ -1,16 +1,16 @@
 {% if item.data.photo or photo %}
 	{% set photos = item.data.photo | default(photo) | toArray %}
-	{% for item in photos %}
+	{% for lookup in photos %}
 		<figure>
-			{% set item_url = item.url | default(item) %}
-			{% set item_alt = item.alt | default('') %}
-			{% set item_classes = item.classes | default('') %}
-			{% if 'gif' in item_url %}
+			{% set lookup_url = lookup.url | default(lookup) %}
+			{% set lookup_alt = lookup.alt | default('') %}
+			{% set lookup_classes = lookup.classes | default('') %}
+			{% if 'gif' in lookup_url %}
 				<picture>
-					<img src="/images/animated/{{ item_url }}" alt="{{ item_alt }}" class="{{ item_classes }}" loading="lazy" decoding="async">
+					<img src="/images/animated/{{ lookup_url }}" alt="{{ lookup_alt }}" class="{{ lookup_classes }}" loading="lazy" decoding="async">
 				</picture>
 			{% else %}
-				{% image './images/content/' + item_url, item_alt, item_classes, item.widths %}
+				{% image './images/content/' + lookup_url, lookup_alt, lookup_classes, lookup.widths %}
 			{% endif %}
 		</figure>
 	{% endfor %}
