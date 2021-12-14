@@ -21,14 +21,14 @@
 	// force text to wrap
 	@include break-words;
 
-	:where(h1, h2) > &,
+	%collection-headings > &,
 	%collection-content > &,
 	li > & {
 		@extend %collection-monospace-elements;
 	}
 }
 
-:where(h1, h2) > code,
+%collection-headings > code,
 %collection-content > code,
 li > code,
 samp {
@@ -37,6 +37,7 @@ samp {
 }
 
 kbd {
+	background-color: h(coyote, beta);
 	@include case(uppercase);
 	--color-shadow: #{h(kaiser)};
 	@include v(box-shadow, small);

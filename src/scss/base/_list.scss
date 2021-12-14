@@ -17,18 +17,18 @@
 }
 :is(ol, ul):not([class]),
 .default-list {
+	@include v(padding-inline-start, medium);
+	list-style: initial;
+
 	li {
-		@include v(padding-inline-start, large);
-		position: relative;
+		@include v(padding-inline-start, medium);
 
 		&:not(:last-child) {
 			@include v(margin-block-end, small);
 		}
 
-		&::before {
-			position: absolute;
-			top: 0;
-			left: 0;
+		&::marker {
+			color: h(bowhead);
 			@include font-family;
 			font-style: normal;
 			@include v(font-weight, bold);
@@ -53,30 +53,30 @@ ol.default-list {
 	& > li {
 		counter-increment: ordered-list;
 
-		&::before {
+		&::marker {
 			@include tabular-lining-numerals;
-			content: counters(ordered-list, "·", decimal-leading-zero);
+			content: counters(ordered-list, ".", decimal-leading-zero);
 		}
 	}
 
-	&[type="a"] li::before,
-	&.lower-alpha li::before {
-		content: counters(ordered-list, "·", lower-alpha);
+	&[type="a"] li::marker,
+	&.lower-alpha li::marker {
+		content: counters(ordered-list, ".", lower-alpha);
 	}
 
-	&[type="A"] li::before,
-	&.upper-alpha li::before {
-		content: counters(ordered-list, "·", upper-alpha);
+	&[type="A"] li::marker,
+	&.upper-alpha li::marker {
+		content: counters(ordered-list, ".", upper-alpha);
 	}
 
-	&[type="i"] li::before,
-	&.lower-roman li::before {
-		content: counters(ordered-list, "·", lower-roman);
+	&[type="i"] li::marker,
+	&.lower-roman li::marker {
+		content: counters(ordered-list, ".", lower-roman);
 	}
 
-	&[type="I"] li::before,
-	&.upper-roman li::before {
-		content: counters(ordered-list, "·", upper-roman);
+	&[type="I"] li::marker,
+	&.upper-roman li::marker {
+		content: counters(ordered-list, ".", upper-roman);
 	}
 
 	&[reversed] {
@@ -94,21 +94,18 @@ ol.default-list {
 			}
 		}
 	}
-
-	// Nested Ordered List Item
-	& & li {
-		padding-inline-start: calc(var(--measure-large) + var(--measure-medium));
-	}
 }
 [counter-reset] {
 	counter-reset: ordered-list;
 }
-ul:not([class]) li::before,
-ul.default-list li::before {
-	// BULLET
-	content: "•";
-	font-size: 1.5em;
-	line-height: 1;
+ul:not([class]),
+ul.default-list {
+	li::marker {
+		// BULLET
+		content: "•";
+		font-size: 1.5em;
+		line-height: 1;
+	}
 }
 dl {
 	display: grid;
