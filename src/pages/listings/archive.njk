@@ -33,7 +33,7 @@ truncate: true
 			{% if collection[0].data.list == 'shelf' %}
 				<nav class=" [ shelf {% if collection[0].data.read_of %}shelf--books {% endif %}] " aria-labelledby="{{ lookup.plural }}">
 					{%- for item in collection | limit(site.limits.shelf) -%}
-						{% include 'item-shelf.njk' %}
+						{% include 'items/shelf.njk' %}
 					{%- endfor -%}
 				</nav>
 				{% if collection.length > site.limits.shelf %}
@@ -45,7 +45,7 @@ truncate: true
 				<nav class=" [ deck ] " aria-labelledby="{{ lookup.plural }}">
 					{%- for item in collection | limit(site.limits.deck) -%}
 						{%- set responses = item.url | getWebmentions -%}
-						{% include 'item-deck.njk' %}
+						{% include 'items/deck.njk' %}
 					{%- endfor -%}
 				</nav>
 				{% if collection.length > site.limits.deck %}
@@ -59,7 +59,7 @@ truncate: true
 		{% include 'webmentions.njk' %}
 	</div>
 
-	{% include 'meta-archive.njk' %}
+	{% include 'meta/archive.njk' %}
 
 	{% include 'ads.njk' %}
 

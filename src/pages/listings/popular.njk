@@ -25,12 +25,12 @@ truncate: true
 		<nav class=" [ deck ] ">
 			{% for item in collection %}
 				{%- set responses = item.url | getWebmentions -%}
-				{% include 'item-deck.njk' %}
+				{% include 'items/deck.njk' %}
 			{% endfor %}
 		</nav>
 	</div>
 
-	{% include 'meta-archive.njk' %}
+	{% include 'meta/archive.njk' %}
 
 	{% include 'ads.njk' %}
 

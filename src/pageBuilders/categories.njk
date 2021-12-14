@@ -43,7 +43,7 @@ truncate: true
 			</div>
 			<nav class=" [ shelf {% if collection[0].data.read_of %}shelf--books {% endif %}] " aria-live="polite">
 				{% for item in collection %}
-					{% include 'item-shelf.njk' %}
+					{% include 'items/shelf.njk' %}
 				{% endfor %}
 			</nav>
 		{% else %}
@@ -62,12 +62,12 @@ truncate: true
 						<nav class=" [ deck ] ">
 					{% endif %}
 					{%- set responses = item.url | getWebmentions -%}
-					{% include 'item-deck.njk' %}
+					{% include 'items/deck.njk' %}
 				{% endfor %}
 			</nav>
 		{% endif %}
 	</div>
 
-	{% include 'meta-archive.njk' %}
+	{% include 'meta/archive.njk' %}
 
 </div>

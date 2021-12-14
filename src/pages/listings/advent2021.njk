@@ -21,7 +21,7 @@ theme: christmas
 			<nav class=" [ shelf ] ">
 		{% endif %}
 		{%- set responses = item.url | getWebmentions -%}
-		{% include 'item-shelf.njk' %}
+		{% include 'items/shelf.njk' %}
 		{% if advent2021[count].crackling %}
 			<article>
 				<h3>{{ advent2021[count].crackling | replace('👍', '') }} Crackling</h3>

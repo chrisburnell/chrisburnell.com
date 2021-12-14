@@ -28,9 +28,9 @@ const shortcodes = require("./src/eleventy/shortcodes.js")
 // Import collections
 const collections = require("./src/eleventy/collections.js")
 
-// Import collectionsbuilders
-const categoriesBuilder = require("./src/eleventy/builders/categories.js")
-const tagsBuilder = require("./src/eleventy/builders/tags.js")
+// Import collection builders
+const categoriesBuilder = require("./src/eleventy/collectionBuilders/categories.js")
+const tagsBuilder = require("./src/eleventy/collectionBuilders/tags.js")
 
 // Import other bits and bobs
 const urlReplacements = require("./src/data/urlReplacements.json")
@@ -85,7 +85,7 @@ module.exports = (eleventyConfig) => {
 		eleventyConfig.addCollection(collectionName, collections[collectionName])
 	})
 
-	// Builder Collections
+	// Collection Builders
 	eleventyConfig.addCollection("categories", categoriesBuilder)
 	eleventyConfig.addCollection("tags", tagsBuilder)
 

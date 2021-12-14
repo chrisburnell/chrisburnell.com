@@ -37,7 +37,7 @@ sitemap:
 							{%- set rsvp_class = 'box--warning' -%}
 						{%- endif -%}
 						<div class=" [ box  {{ rsvp_class }} ] ">
-							{% include 'item-deck.njk' %}
+							{% include 'items/deck.njk' %}
 						</div>
 					{% endfor %}
 				</nav>
@@ -51,7 +51,7 @@ sitemap:
 				{%- set truncate = true -%}
 				{% for item in collections.writingPosts | limit(site.limits.feature) %}
 					{%- set responses = item.url | getWebmentions -%}
-					{% include 'item-deck.njk' %}
+					{% include 'items/deck.njk' %}
 				{% endfor %}
 			</nav>
 
@@ -63,7 +63,7 @@ sitemap:
 				{% set truncate = true %}
 				{% for item in collections.popular | limit(site.limits.feature) %}
 					{%- set responses = item.url | getWebmentions -%}
-					{% include 'item-deck.njk' %}
+					{% include 'items/deck.njk' %}
 				{% endfor %}
 			</nav>
 
@@ -79,7 +79,7 @@ sitemap:
 				{%- set truncate = true -%}
 				{% for item in projects.personal | limit(site.limits.feature) %}
 					{%- set responses = item.url | getWebmentions -%}
-					{% include 'item-deck.njk' %}
+					{% include 'items/deck.njk' %}
 				{% endfor %}
 			</nav>
 
@@ -103,7 +103,7 @@ sitemap:
 							{%- set rsvp_class = 'box--warning' -%}
 						{%- endif -%}
 						<div class=" [ box  {{ rsvp_class }} ] ">
-							{% include 'item-deck.njk' %}
+							{% include 'items/deck.njk' %}
 						</div>
 					{% endfor %}
 				</nav>
@@ -117,7 +117,7 @@ sitemap:
 					{%- set relative_time = true -%}
 					{% for item in collections.throwbackPosts | limit(site.limits.feature) %}
 						{%- set responses = item.url | getWebmentions -%}
-						{% include 'item-deck.njk' %}
+						{% include 'items/deck.njk' %}
 					{% endfor %}
 				</nav>
 			{% endif %}
@@ -126,7 +126,7 @@ sitemap:
 		{% include 'webmentions.njk' %}
 	</div>
 
-	{% include 'meta-index.njk' %}
+	{% include 'meta/index.njk' %}
 
 	{% include 'ads.njk' %}
 

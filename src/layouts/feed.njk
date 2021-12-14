@@ -24,7 +24,7 @@
 		<atom:link rel="hub" href="{{ author.urls.switchboard }}" />
 
 		{% for item in collections[related_collection] | limit(site.limits.feed) %}
-			{% include 'item-feed.njk' %}
+			{% include 'items/feed.njk' %}
 		{% endfor %}
 
 	</channel>
