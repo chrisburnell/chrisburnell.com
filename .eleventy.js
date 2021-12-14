@@ -34,11 +34,7 @@ const tagsBuilder = require("./src/eleventy/collectionBuilders/tags.js")
 
 // Import other bits and bobs
 const urlReplacements = require("./src/data/urlReplacements.json")
-const markdownIt = require("markdown-it")({
-	html: true,
-	breaks: true,
-	linkify: true,
-}).disable("code")
+const markdownParser = require("markdown-it")
 
 module.exports = (eleventyConfig) => {
 	// Eleventy Plugins
@@ -109,7 +105,14 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.addWatchTarget("./src/js/")
 
 	// Customised markdown config
-	eleventyConfig.setLibrary("md", markdownIt)
+	eleventyConfig.setLibrary(
+		"md",
+		markdownParser({
+			html: true,
+			breaks: true,
+			linkify: true,
+		}).disable("code")
+	)
 
 	// BrowserSync and Local 404
 	eleventyConfig.setBrowserSyncConfig({
