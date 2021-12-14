@@ -15,13 +15,11 @@ Nearing the end of the work-day yesterday, I was struck with an idea. Having rec
 
 My idea was as such: I wonder if I could create something similar to the clock above using CSS3 *and maintain a persistent light source*. The trouble with the usual approach is that in using `transform` on an element, you are manipulating it’s `top`, `right`, `bottom`, and `left` attributes as you see them. If you `transform: rotate3d(0, 0, 1, 90deg);` a box, what you now see as the top of the box is in fact it’s `left` attribute. These shadow effects are typically done with `box-shadow`, and as the element rotates, the shadow will rotate with the element—`box-shadow: 2em 2em 0 black;` would produce a diagonal *bottom-right* shadow with no transform, but with `transform: rotate3d(0, 0, 1, 90deg);` it would become a diagonal *bottom-left* shadow…
 
-
 <h2 id="hit-a-snag">We’ve hit a snag!</h2>
 
 <aside><p>Here’s an example of this effect (which <a href="https://codepen.io/chrisburnell/details/mglHp#lovers">Chris Coyier loved on <em>CodePen</em></a>)!</p></aside>
 
 {% codepen 'mglHp', false, 425 %}
-
 
 ## How does that work?
 
@@ -31,11 +29,9 @@ Well, maybe if we’re `animate`ing an element *(or pseudo element)* and manipul
 
 It may be interesting to note that as the medium we’re working with is composed of boxes, we need to add a point in our animation for every corner in our rotation—since we are going a full 360-degrees, we need four defined points, not including the `0%` and `100%` duplicates.
 
-
 <h2 id="what-else">What else is there?</h2>
 
 What else do you think we could do with an effect like this? I think it could do from some simplification, and I wonder if there’s a solution more basic than this. If you know, let me know in the [comments](#webmentions), or [send me a pen](https://codepen.io/ "CodePen")!
-
 
 <h2 id="something-extra">A little something-something extra, just for you</h2>
 

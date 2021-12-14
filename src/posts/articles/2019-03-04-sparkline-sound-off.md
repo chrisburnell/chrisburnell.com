@@ -29,7 +29,7 @@ Let’s pause and review a little background about musical notes and their relat
 As an example, we’ll take **A<sub>4</sub>**, also known as the *Stuttgart pitch*. It’s the first **A** above **middle C** and sits at <samp>440Hz</samp>. Unfortunately, frequencies for other notes aren’t quite as simple. We cannot increment <samp>440</samp> by a fixed amount for each consecutive note. In fact, each consecutive note’s frequency is exactly *the 12<sup>th</sup> root of 2* times greater than the previous and vice versa.
 
 <figure>
-	{% image './images/content/diatonic-scale.svg', '' %}
+    {% image './images/content/diatonic-scale.svg', '' %}
     <figcaption>graph showing the logarithmic relationship of frequencies in a diatonic scale</figcaption>
 </figure>
 
@@ -62,7 +62,6 @@ So if we want to calculate the frequency of **C<sub>4</sub>** (Middle C), the *<
     <samp class="beta">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= 261.626Hz</samp>
 </figure>
 
-
 ## Quintuplets
 
 Now that we have established a way of translating each unitless value in our sparkline into a pitch, let’s get a bit more musical and start mapping to a Major Pentatonic scale.
@@ -88,7 +87,6 @@ With these keys we can calculate their respective frequencies:
 </figure>
 
 In order to quell any feverish posting on my part, *as unlikely as that may be*, I am limiting the highest value for the sparkline arbitrarily to <var>12</var>. This prevents clarity from being lost at the bottom end of the visual sparkline and limits the tunes that are generated from varying too wildly or playing notes which are unpleasant or [imperceptible](https://en.wikipedia.org/wiki/Hearing_range).
-
 
 ## Put your money where your mouth is
 

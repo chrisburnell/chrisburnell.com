@@ -25,7 +25,6 @@ updated_text: I’ve since turned this into a full-blown package of its own call
 
 One of my favourite parts of developing for the web is the ever-shifting landscape and the opportunity to work with new technologies. Sometimes they aren’t apt for use in production, but fortunately for us today, *CSS Variables* are pretty reliable to use on their own. However, if you’re in a position similar to mine and find yourself often needing to support old versions of *Internet Explorer* or making sure *all* of your browser support bases are covered, this *SCSS* setup should be useful for you.
 
-
 ## The Setup
 
 I won’t pretend I’m writing the introduction to a family recipe for chocolate cake and bore you with twenty minutes of introduction; instead, let’s just jump into the technique, then I’ll break it down a little bit. But before I get too ahead of myself, *please keep in mind there are some bits that require setting up!*

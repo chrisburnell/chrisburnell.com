@@ -19,7 +19,6 @@ The <a href="https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/"
 
 *And almost as if by magic*, you’ll have a robust spacing system in place. All you need to do is decide which elements <samp>X</samp> can represent, and what the value of <samp>margin-top</samp> is going to be.
 
-
 ## Working Backwards
 
 Let’s say our goal is to end up with the following CSS output:
@@ -75,7 +74,6 @@ article {
 ```
 
 --------
-
 
 But now let’s take the excitement up to to **4**.
 

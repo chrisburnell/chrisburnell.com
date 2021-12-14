@@ -32,7 +32,6 @@ Suddenly annoyed by this fact, I decided I’d once-and-for-all tackle the less-
     </a>
 </figure>
 
-
 ## The First Step
 
 <aside><p>What do I mean when I say <em>theming</em> or <em>skinning</em>? In essense, this the practice of applying a secondary or tertiary design or colour palette to a website or application. You can see this in action on <a rel="external" href="http://www.csszengarden.com">CSS Zen Garden</a> or <a rel="external" href="https://adactio.com/about/site/#skins">Adactio</a>.</p></aside>To begin with, I wanted to find the pain points of *Pinboard’s* default design and address them in my theme. Most of the problems I have with the design have to do with white-space and poorly distinguished categorisation.
@@ -50,13 +49,12 @@ Let’s break down how bookmarks are categorised, at least as far as I use them 
 
 So it was important for me to make these parts distinct in the new design, whilst maintaining a level of minimalism and a muted colour palette.
 
-
 <h2 id="injection">injection"); DROP TABLE Bookmarks;--</h2>
 
 <aside>
-	<picture>
-		<img src="/images/animated/idontbelievemyeyes.gif" alt="" loading="lazy">
-	</picture>
+    <picture>
+        <img src="/images/animated/idontbelievemyeyes.gif" alt="" loading="lazy">
+    </picture>
 </aside>
 
 That was a <del>hilarious</del> decent joke, right? And I'm sure you appreciated <del>that moment of tear-filled laughter</del> that I tried.
@@ -80,7 +78,6 @@ The gist of the plugin is that you can define CSS styles and apply them to pages
 
 <aside><p>I actually wish that the way in which styles are saved and stored could be improved—after switching to <a rel="external" href="https://git-scm.com">git</a>, I have a tendency to want to add versioning to all of my projects. If there was some sort of <a rel="external" href="https://gist.github.com">GitHub Gist</a> hook or something—Let me know <a href="#comments">in the comments</a> if you know of anything like what I’m looking for!</p></aside>The injected CSS actually refreshes as well, à la [LiveReload](http://livereload.com), so you don’t need to refresh your browser when saving changes. The in-browser code editor isn’t terrible either; it’s running on [CodeMirror](http://codemirror.net).
 
-
 <h2 id="brass-tacks">Good old Brass Tacks</h2>
 
 You can either write the stylesheets yourself or choose from [their vast selection](https://userstyles.org/categories). If you do install a theme from that repository, the styles manager in the *Pinboard* plugin will actually be able to update from the author at the click of a link. You can even build upon and modify stylesheets which you’ve installed, but I’m unsure what happens if you modify the stylesheet and install an update ([please comment if you do](#webmentions)).
@@ -100,19 +97,18 @@ After tinkering with my own file for a few days and experimenting through daily 
 </figure>
 
 <figure>
-	<picture>
-		<img src="/images/animated/pinboard-icons-transition.gif" alt="" loading="lazy">
-	</picture>
+    <picture>
+        <img src="/images/animated/pinboard-icons-transition.gif" alt="" loading="lazy">
+    </picture>
     <figcaption>The icons transition. An example of the new sitewide transitions.</figcaption>
 </figure>
 
 <figure>
-	<picture>
-		<img src="/images/animated/pinboard-star-transition.gif" alt="" loading="lazy">
-	</picture>
+    <picture>
+        <img src="/images/animated/pinboard-star-transition.gif" alt="" loading="lazy">
+    </picture>
     <figcaption>The ‘star’ feature transition.</figcaption>
 </figure>
-
 
 ## Challenges
 
@@ -131,7 +127,6 @@ Some of my personal gripes with *Pinboard’s* CSS specifically included:
 These factors made it difficult to nail down and style things exactly the way I wanted. It feels awkward for me to write CSS under these restrictions, but it’s always important to remember that although our pursuit of performant CSS is a necessary goal, CSS performance (painting and rendering after load aside) is relatively low on the totem pole.
 
 One avenue I could have investigated, but never did, was a similar browser plugin to modify the HTML of the page in conjunction and to compliment the CSS, but I figured that would result in a heavier performance hit than just injecting a simple stylesheet.
-
 
 ## Changes
 
@@ -214,16 +209,13 @@ html {
 - modified the colour palette to match [my styleguide](/styleguide)
 - implemented hooks with [IFTTT](https://ifttt.com/) to create bookmarks for specific events: Github stars, Twitter favourites, tweets by me with links, etc.
 
-
 --------
-
 
 **You can view the final stylesheet that I’m using on Github Gist:**
 
 <nav class=" [ navigator ] ">
     <a class="button" href="https://gist.github.com/{{ author.github }}/ef5367e7dd263356c48a">gist.github.com →</a>
 </nav>
-
 
 ## Conclusion
 

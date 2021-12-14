@@ -13,11 +13,9 @@ Here’s a quick, little *CodePen* showcasing two annoying bits of CSS that many
 
 {% codepen 'LHqFy', false, 740 %}
 
-
 ## What’s going on here?
 
 This is a User Experience or Accessibility issue. Anything we can do to make our users feel like we’re taking care of them should be pursued, and this is no exception. In fact, by not creating block links in these navigation list scenarios, these mistakes are potentially driving away clicks in situations where the padding is relatively thick and users try to click, but nothing happens. The everyday user doesn’t *know* that the developer has forgotten to do this for them, and could easily think that the intended purpose was nothing, when in fact we’ve got some juicy content behind that link.
-
 
 ## Don’t throw away your visitors!
 

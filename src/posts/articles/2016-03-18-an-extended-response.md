@@ -30,9 +30,7 @@ A couple of weeks ago, CSS Wizard, Harry Roberts, [wrote about](https://csswizar
 
 I’ve been using both `@extend` and `@mixin` in my Sass for a number of years, but finding the balance between the two techniques, to find what works for me, took some time. I think it was Harry’s article that prompted me to re-evaluate how I approach the subject.
 
-
 --------
-
 
 The gist of Harry’s article is that using `@extend` to repeat styles is not worth the fragile nature of how `@extend` works—declaring the styles once and pulling the selectors into a single declaration (somewhere in the compiled CSS output) can spell disaster for the cascade you work so hard to make performant and succinct. **You should always feel in complete control of your Sass’ compiled output.**
 
@@ -44,17 +42,13 @@ While using `@mixin` means repeated code in the compiled CSS output (remember: *
 
 Harry ran some benchmarking tests on both `@extend` and `@mixin`, and determined that `@mixin` were as performant as, if not more than, `@extend`. This spurred me on to refactor my Sass and make sure I was using `@extend` properly…
 
-
 --------
-
 
 While this may be a contentious topic, I believe there are some predictable use-cases for Sass’ `@extend`, and the key in these use-cases is *what exactly* is being `@extended`. Typically, developers use `@extend` to apply one or more *properties* to *multiple selectors*, but as we know, this can cause unpredictable CSS output as it’s difficult to remember every selector for which you’ve extended the properties.
 
 The method which is far more predictable in its use of `@extend` does something different. Instead of `@extending` *properties* to *multiple selectors*, `@extend` *multiple selectors* to a *[placeholder selector](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholder_selectors_)* (also called a *silent class*) and reference the *placeholder selector* wherever applying styles to those *multiple selectors*.
 
-
 --------
-
 
 - `%content-elements`
 - `%heading-elements`
@@ -118,8 +112,6 @@ I wholeheartedly believe in a very simplistic approach to Sass. Simplicity is ki
 
 **The purpose of Sass is not to write less CSS but to make the CSS that we write more understandable.**
 
-
 --------
-
 
 **tl;dr** If you find yourself referring to the same group of selectors over and over, try `@extending` them to a *placeholder selector* and refer to the *placeholder selector* outside of the scope of the selectors themselves.

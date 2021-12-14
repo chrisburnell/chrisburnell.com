@@ -16,7 +16,6 @@ But what about when you want to generate unique groups of more than <var>2</var>
 
 We’ll need to make sure our dataset contains more than <var>n</var> items—making unique groups of three items from a dataset of only three items would make our function entirely moot. From there, refactoring the function mostly comes down to keep track of how we’re iterating through the items in the dataset and repeating this iteration in a recursive-like way the same number of times as items per unique group.
 
-
 ## Let’s just jump right into it
 
 ```scss
@@ -113,7 +112,6 @@ As with the previous version of the function, it can accept the required dataset
     <p>So, from a dataset of size <var>4</var>, if we want a group size of <var>3</var>, we can expect <var>4</var> unique groups:</p>
     <samp class="beta"><var>4</var>(<var>4</var>&minus;1)&frasl;<var>3</var> = <var>4</var></samp>
 </figure>
-
 
 ## In Action
 

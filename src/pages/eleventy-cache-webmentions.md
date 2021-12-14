@@ -12,7 +12,7 @@ toc: true
 ---
 
 <figure>
-	{% image './images/content/eleventy-cache-webmentions.png', ''%}
+    {% image './images/content/eleventy-cache-webmentions.png', ''%}
 </figure>
 
 ## Installation
@@ -35,9 +35,9 @@ Inside your Eleventy config file (typically `.eleventy.js`), use `addPlugin`:
 const pluginWebmentions = require("@chrisburnell/eleventy-cache-webmentions")
 
 module.exports = function(eleventyConfig) {
-	eleventyConfig.addPlugin(pluginWebmentions, {
-		domain: "https://example.com" // this is required!
-	})
+    eleventyConfig.addPlugin(pluginWebmentions, {
+        domain: "https://example.com" // this is required!
+    })
 }
 ```
 
@@ -59,37 +59,37 @@ Advanced control over how the Webmentions are cached and processed is done by pa
 const pluginWebmentions = require("@chrisburnell/eleventy-cache-webmentions")
 
 module.exports = function(eleventyConfig) {
-	eleventyConfig.addPlugin(pluginWebmentions, {
-		// domain: required or the plugin will not function
-		domain: "https://example.com",
-		// directory: ".cache" by default
-		//   see https://www.11ty.dev/docs/plugins/cache/#cache-directory for more info
-		directory: ".cache",
-		// duration: "1d" by default
-		//   see https://www.11ty.dev/docs/plugins/cache/#change-the-cache-duration for more info
-		duration: "1d",
-		// key: "webmentions" by default
-		//   dictates the name sent to eleventy-cache-assets to name the file
-		key: "webmentions",
-		// allowedHTML: Object by default
-		//   see https://www.npmjs.com/package/sanitize-html for more info
-		allowedHTML: {
-			allowedTags: ["b", "i", "em", "strong", "a"],
-			allowedAttributes: {
-				a: ["href"],
-			},
-		},
-		// urlReplacements: {} by default
-		//   object of key:value pairs containing from:to URL replacements
-		urlReplacements: {},
-		// maximumHtmlLength: 2000 by default
-		//   number of characters in the HTML content at which a different
-		//   message is shown instead of the content
-		maximumHtmlLength: 2000,
-		// maximumHtmlText: "mentioned this in" by default
-		//   message shown when maximumHtmlLength is reached
-		maximumHtmlText: "mentioned this in",
-	})
+    eleventyConfig.addPlugin(pluginWebmentions, {
+        // domain: required or the plugin will not function
+        domain: "https://example.com",
+        // directory: ".cache" by default
+        //   see https://www.11ty.dev/docs/plugins/cache/#cache-directory for more info
+        directory: ".cache",
+        // duration: "1d" by default
+        //   see https://www.11ty.dev/docs/plugins/cache/#change-the-cache-duration for more info
+        duration: "1d",
+        // key: "webmentions" by default
+        //   dictates the name sent to eleventy-cache-assets to name the file
+        key: "webmentions",
+        // allowedHTML: Object by default
+        //   see https://www.npmjs.com/package/sanitize-html for more info
+        allowedHTML: {
+            allowedTags: ["b", "i", "em", "strong", "a"],
+            allowedAttributes: {
+                a: ["href"],
+            },
+        },
+        // urlReplacements: {} by default
+        //   object of key:value pairs containing from:to URL replacements
+        urlReplacements: {},
+        // maximumHtmlLength: 2000 by default
+        //   number of characters in the HTML content at which a different
+        //   message is shown instead of the content
+        maximumHtmlLength: 2000,
+        // maximumHtmlText: "mentioned this in" by default
+        //   message shown when maximumHtmlLength is reached
+        maximumHtmlText: "mentioned this in",
+    })
 }
 ```
 
@@ -109,39 +109,39 @@ You can now use this Object in a number of useful ways, not limited to things li
 const Webmentions = require("@chrisburnell/eleventy-cache-webmentions")(null, { domain: "https://example.com" })
 
 const absoluteURL = (url, domain) => {
-	try {
-		return new URL(url, domain).toString()
-	} catch (e) {
-		console.log(`Trying to convert ${url} to be an absolute url with base ${domain} and failed.`)
-		return url
-	}
+    try {
+        return new URL(url, domain).toString()
+    } catch (e) {
+        console.log(`Trying to convert ${url} to be an absolute url with base ${domain} and failed.`)
+        return url
+    }
 }
 
 module.exports = (eleventyConfig) => {
-	eleventyConfig.addCollection("popular", async (collection) => {
-		const webmentionsByUrl = await Webmentions()
-		return await collection
-			.getFilteredByTag("post")
-			.filter((item) => {
-				// unfortunately necessary in order to match the key
-				const url = absoluteURL(item.url, "https://example.com")
+    eleventyConfig.addCollection("popular", async (collection) => {
+        const webmentionsByUrl = await Webmentions()
+        return await collection
+            .getFilteredByTag("post")
+            .filter((item) => {
+                // unfortunately necessary in order to match the key
+                const url = absoluteURL(item.url, "https://example.com")
 
-				if (!url) {
-					return false
-				}
+                if (!url) {
+                    return false
+                }
 
-				return webmentionsByUrl[url]
-			})
-			.sort((a, b) => {
-				// unfortunately necessary in order to match the key
-				const aUrl = absoluteURL(a.url, "https://example.com")
-				const bUrl = absoluteURL(b.url, "https://example.com")
-				const aWebmentions = webmentionsByUrl[aUrl]
-				const bWebmentions = webmentionsByUrl[bUrl]
+                return webmentionsByUrl[url]
+            })
+            .sort((a, b) => {
+                // unfortunately necessary in order to match the key
+                const aUrl = absoluteURL(a.url, "https://example.com")
+                const bUrl = absoluteURL(b.url, "https://example.com")
+                const aWebmentions = webmentionsByUrl[aUrl]
+                const bWebmentions = webmentionsByUrl[bUrl]
 
-				return bWebmentions.length - aWebmentions.length
-			})
-	})
+                return bWebmentions.length - aWebmentions.length
+            })
+    })
 }
 ```
 
@@ -165,7 +165,7 @@ And, if you need it, the entire Object of sorted Webmentions is available too:
 ```twig{% raw %}
 {% set count = 0 %}
 {% for url, array in webmentions %}
-	{% set count = array.length + count %}
+    {% set count = array.length + count %}
 {% endfor %}
 <p>This site has received {{ count }} WebMentions!</p>
 {% endraw %}```

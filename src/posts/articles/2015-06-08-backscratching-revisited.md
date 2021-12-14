@@ -12,9 +12,7 @@ syndicate_to:
 
 In [I’ll Scratch Your Back, And Mine Too](/article/ill-scratch-your-back/), I wrote about a technique I came up with for styling default elements. To recap, this comes with a couple of advantages: managing styles for default elements is a lot easier for development and makes writing content for non-technical users as simple as possible—coupled with a nice <abbr title="What You See Is What You Get">WYSIWYG editor</abbr> or knowledge of Markdown.
 
-
 --------
-
 
 I’ve been revising the CSS architecture of my website recently trying to learn and expose myself to various techniques to see what works the best and feels the best for me. Alongside that, I’ve been lightly salting my HTML with little nuggets of [accessibility](https://www.a11yproject.com/) in the form of [ARIA](http://html5doctor.com/using-aria-in-html/) and [Microdata](https://schema.org/docs/documents.html).
 
@@ -42,9 +40,7 @@ The CSS technique above for hiding the `span`, itself, is a piece of code that s
 
 However, the code above *does* allow the element’s content to be read aloud, and is treated as any other text by text-to-speech software, despite it being completely visually hidden from the user.
 
-
 --------
-
 
 In my actual SCSS, I abstract this snippet out and `@extend` it where I need it, like so:
 
@@ -88,7 +84,6 @@ a {
 
 Since I know that if I have the need for a `span` to change some visual style, I will want to be specific enough to give it a `class`. The above code alteration, as we first discussed in [the previous article](/article/ill-scratch-your-back/), taps into that fact and allows us to take advantage of our rule to always `class`ify any `spans` I want to style for visual reasons, so using `class`-less `spans` will hide our textual accessibility cues.
 
-
 ## A Prickly Pear
 
 But there’s a problem if we want to use [Microdata](https://schema.org/docs/documents.html). Let me demonstrate with a modified snippet of HTML from my site.
@@ -118,7 +113,6 @@ a {
 ```
 
 Now we can be sure to only target `spans` without a `class` *or* `itemprop` attribute!
-
 
 ## The Takeaway
 

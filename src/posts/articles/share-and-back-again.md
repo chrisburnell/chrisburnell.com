@@ -9,7 +9,6 @@ Thick metaphors aside, I’m talking about writing code that speaks
 
 This post aims to unravel some of the mystery which surrounds *microdata*, *microformats*, <abbr title="Linked Data">JSON-LD</abbr>, <abbr title="Resource Description Framework in Attributes">RDFa</abbr>, and the like.
 
-
 <h2 id="whats-the-point">What's the point?</h2>
 
 The whole point of marking up your content with one of the various formats is to make your content <dfn title="capable of being understood">grokkable</dfn> by computers. By using one of these systems, you can, with relative ease (depending on the solution you choose), make a great portion of your content available for computers to parse and, in a way, understand.

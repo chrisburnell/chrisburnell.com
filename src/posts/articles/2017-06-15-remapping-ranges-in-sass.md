@@ -28,7 +28,6 @@ One of the most engaging ways I’ve found, of recent, to keep myself open-minde
 
 I’ve found a great deal of enjoyment in watching and participating in these live coding streams; it’s given me new perspectives on what I already know and expanded new horizons for things I don’t know but want to learn about.
 
-
 ## Inspiration Strikes
 
 It was during one of [Daniel Shiffman’s](https://twitter.com/shiffman) streams on his *YouTube* channel, [The Coding Train](https://www.youtube.com/user/shiffman/live), that I was struck by a concept he was explaining, and spurned me to play around with it in a programming language I was well-versed in.
@@ -38,7 +37,6 @@ Daniel Shiffman explains the concept of <q>mapping</q> a value from one range to
 <iframe src="https://www.youtube.com/embed/nicMAoW6u1g" title="2.4: The map() Function - p5.js Tutorial" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 Although CSS is meant for expressing presentation, and operations like this are best-suited for a <q>real programming language</q>, I wondered if this concept of <q>remapping</q> values from one range to another is possible with Sass.
-
 
 ## In Theory
 
@@ -63,7 +61,6 @@ Like most of my endeavours, this Sass technique is neither revolutionary, nor is
 Our `@function` takes a variable number of parameters, *three* or *five*, and we use Sass’ built-in `if()` as a <abbr title="an operator which takes three arguments and defines a conditional expression, resulting in one of two outputs based on a single input">ternary operator</abbr> to utilise the parameters appropriately in determining the value remapped in the new range.
 
 There really isn’t any magic going on here (as usual). Everything before the `@return` statement is just checking to make sure we’ve correctly passed in the right parameters, and that we’ve given the correct number of parameters. The `@return` statement performs a small calculation based on the 3–5 parameters and gives us back the remapped initial value.
-
 
 ## In Practice
 

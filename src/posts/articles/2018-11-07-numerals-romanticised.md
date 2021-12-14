@@ -86,7 +86,6 @@ X = 10
 </pre>
 </figure>
 
-
 ## History Lesson Over, On To The Code
 
 First we need to set up some data to be able to relate Arabic numerals to their Roman counterparts.

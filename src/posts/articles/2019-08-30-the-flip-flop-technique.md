@@ -119,7 +119,6 @@ Now we’ve managed to get our blue back, but the Dragon emoji looks completely 
 
 That’s done it. By applying the same filter *again* to the emoji, it flip-flops back to its unaltered appearance.
 
-
 ## Hue, Saturation, Lightness
 
 But something’s *off*. The colours of the emoji in the final example seem less saturated or less vibrant than the unaltered emoji in the first example, which is most noticeable on the yellow hair of the dragon. Interact with this demo to see the unaltered state alongside the fully-filtered state and see for yourself.
@@ -134,7 +133,6 @@ But something’s *off*. The colours of the emoji in the final example seem less
 </figure>
 
 Even more confusing to me is that this discrepancy only exists when I look at it using my default *light* theme—when viewed with my *dark* theme the unaltered emoji appears just as unsaturated as the final product.
-
 
 ## The Code
 

@@ -13,9 +13,7 @@ This is a big achievement for me because it nicely sums up and boils down my sen
 
 I feel extremely fortunate that the labour, for me, is one of perpetual love.
 
-
 --------
-
 
 I still remember my feelings towards rolling one’s own website when I registered my first domain.
 

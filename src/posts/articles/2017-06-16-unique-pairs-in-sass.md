@@ -29,7 +29,6 @@ If your code does the opposite of any of those things, you should re-evaluate wh
 
 Be wary of Sass which appears more complex or lengthier than its compiled CSS counterpart. It’s only worth the luxury of not having to manage something manually if the pre-compiled code is easy, if not easier, to understand than the compiled output. An example of where this would work might be within a grid system, when defining and maintaining the styles for multiple columns and layouts of columns in CSS is clearly more time-consuming than generating it automatically from a handful of Sass variables.
 
-
 ## An example
 
 Let’s say I want to be able to show and hide content based on screen size, and I want some level of minute control around these screen sizes and how they’re used. I’ve got to create a series of CSS classes which hide content based on some given media query breakpoints. Let’s define a small *Map* of breakpoint names (to reference in the class names) and their respective pixel values (to reference in the media queries).
@@ -86,7 +85,6 @@ So in our case, in which we have <var>4</var> breakpoints:
 
 We can expect <var>6</var> unique pairs from a list of <var>4</var> items.
 
-
 ## Here’s the function!
 
 Here’s the behemoth `@function` that accepts a Sass *List* or *Map* and spits out all the unique pairs to do with whatever necessary (and I <del>guarantee</del> <del>promise</del> think it’s less complex than building it manually):
@@ -137,7 +135,6 @@ Here’s the behemoth `@function` that accepts a Sass *List* or *Map* and spits 
 ```
 
 --------
-
 
 Let’s go through this piece-by-piece so we can undertand what’s going on.
 
@@ -202,7 +199,6 @@ Next, we’ll do the same, but for a *Map* of data:
 The code in this block is nearly identical to the one for *Lists*, with some small changes to how the *Map’s* <var>keys</var> and <var>values</var> are paired and passed into <var>$unique-pairs</var>.
 
 Now let’s look at how the `@function` is actually used.
-
 
 ## From a List
 

@@ -31,7 +31,6 @@ I author posts of various *types* on this website, some of which I syndicate to 
 
 I still need to do some work to change my syndication model from <abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr> to <abbr title="Publish on Own Site, Syndicate Elsewhere">POSSE</abbr>. At the moment, because my Micropub endpoint doesn’t have the ability to modify an existing post, I first post to *Twitter* and/or *Mastodon* and grab the permalinks from the responses which are then pumped into the front matter as syndication targets of the post when it gets posted to *GitHub*.
 
-
 ## Tools Used
 
 To handle *incoming* webmentions, I use *[Webmention.io](https://webmention.io)*, which takes care of parsing microformats and all sorts of filtering to ensure I’m not printing spam or advertisements on my website.
@@ -43,7 +42,6 @@ To syndicate interactions on my content inside silos, I use *[Bridgy](https://br
 I also take advantage of both *[Bridgy Fed](https://fed.brid.gy)* and *[Switchboard](https://switchboard.p3k.io)* to interact with federated networks and to make *[WebSub](https://indieweb.org/WebSub)* and *[ActivityPub](https://activitypub.rocks)* work.
 
 Lastly, I use *[OwnYourBeer](https://ownyourbeer.chrisburnell.com)* to syndicate check-ins from *[Untappd](https://untappd.com)* to my [beer](/beer) category</a>.
-
 
 ## Thanks
 

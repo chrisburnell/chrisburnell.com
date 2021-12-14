@@ -23,7 +23,6 @@ As CSS changes and morphs over time, we must not forget that legacy browsers rem
 
 A confusing subject for the uninitiated (myself included), decimals in CSS behave in a way that might not be straightforward to some, especially when you consider the variety of browsers and their individual behaviours.
 
-
 <h2 id="prerequisite-information">A Bit of Prerequisite Information</h2>
 
 It’s probably worth refreshing yourself on the various rounding methods used in CSS in various browsers. [Alex Kilgour](https://github.com/howlingmad/) wrote an excellent article on the subject, [Browser Rounding and Fractional Pixels](https://cruft.io/posts/percentage-calculations-in-ie/), that’s more than worth reading through and bookmarking, if only for his [concise table of rounding methods](http://cruft.io/posts/percentage-calculations-in-ie/#browser-table) used by browsers and when they’re used. I’ve summarised these different rounding methods below, but I still recommend checking out Alex’s article.
@@ -67,7 +66,6 @@ However, what is happening, as far as I can tell, is that the browser creates a 
 
 But let’s not concern ourselves with the mechanics of *sub-pixel rendering* for now, and just focus on legacy browsers that employ the less accurate methods of CSS rounding, such as <q>down</q> or <q>nearest integer.</q>
 
-
 ## An Example
 
 Let’s look at an example where we’re setting a *percentage*-based value that includes decimals. *Please ignore the glaringly obvious magic number in this example!*
@@ -99,7 +97,6 @@ Due to [discrepancies between browsers](http://cruft.io/posts/percentage-calcula
 
 As a result, more often than not, I recommend **overshooting** your target value with your fraction, whether it be a *percentage*, *em*, or *rem* <q>fraction</q>. The reason for overshooting is such that any browser’s method of rounding decimals will achieve your target value.
 
-
 ## Brass Tacks
 
 So let’s use the running example, and modify it to match these conditions and ensure that, no matter the rounding method used by the browser, the end-result *pixel* value is consistent.
@@ -120,7 +117,6 @@ So let’s use the running example, and modify it to match these conditions and 
 Because the worst truncation that will occur is to `2` decimal places, our value of `60.06%` will satisfy each rounding method, and our target value of `803px` will be achieved cross-browser.
 
 It’s also worth noting that a *percentage*-based value of `60.059%`, ever-so-slightly *less* than `60.06%`, will result in a computed value of `802.9888px`. This satisfies *almost* every method of rounding, but it still fails when rounding <q>down.</q> By making sure our computed value **overshoots** the target value, that is to say that the decimal value is *slightly* greater than the integer value, we satisfy the conditions to round <q>down</q> to our target value.
-
 
 <h2 id="tldr">The Takeaway</h2>
 

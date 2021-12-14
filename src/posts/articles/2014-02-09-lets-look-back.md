@@ -13,11 +13,9 @@ syndicate_to:
 
 One of the most important aspects to any codebase, besides the obvious fact that it should *work*, is that it should *work well*. What I mean by that is—it should be built upon an intelligent methodology and architecture that allows for maintenance and stronger comprehension. Fortunately, I was very conscious of this when I initially embarked on building my website and was *extremely* militant about how I organised my code. Thorough use of comments and sectioned components helped me to keep my code clean and maintainable. This is a practice I will undoubtedly carry forward to every project I work on—not just in an HTML and CSS sense, but in terms of project management, documentation, etc.
 
-
 ## In Comes Sass
 
 Well, not quite. I haven’t found a need myself for the full library of options available in [<abbr title="a CSS extension language">Sass</abbr>](https://sass-lang.com/ "Sass: Syntactically Awesome Style Sheets"), a CSS extension language, but I have adopted a few of the tools that comprise <abbr title="a superset of CSS3’s syntax">SCSS</abbr>. These tools include the ability *nest selectors*, *assign variables*, and *create mixins to be used and extended elsewhere in the CSS*. These utilities are extremely useful in writing CSS and in reading and understanding it. Because with SCSS we can nest selectors, children selectors sit inside their parents, and a clearer relationship is drawn between the two. Furthermore, due to the way that we indent CSS, child selectors will be indented to (roughly) match the DOM structure.
-
 
 <h2 id="i-dont-want-to-do-anything">I don’t want to do anything, anymore!</h2>
 
@@ -27,9 +25,7 @@ Ever since I was fortunate enough to attend [State of the Browser in 2013](http:
 
 One fantastic utility that helps immensely in trimming the fat, I learned about at State of the Browser: [Can I Use](https://caniuse.com/ "Can I Use"), a repository of compatibility tables for support of web technologies such as HTML5 and CSS3. The kicker is that the tables are updated based on global browser usage statistics, so the tables are always up-to-date on what is supported, what isn’t, what requires a vendor prefix, etc. for all major browsers. The tables are invaluable for quickly checking what options I have for support when developing a new piece of code, but it’s all a bit tedious if I want my code and vendor prefixes to be up-to-date all the time.
 
-
 --------
-
 
 Say an old version of Chrome becomes stale and the global usage of that version dips below an arbitrary percentage (which I do not support) such that I no longer need a webkit prefix for a property anymore; I would need to physically check the support tables, manually find out that the prefix fell out, and then crawl and update my entire codebase to remove the unnecessary code. That isn’t good enough if I want smooth sailing.
 
@@ -37,9 +33,7 @@ Say an old version of Chrome becomes stale and the global usage of that version 
 
 Fortunately there’s a great tool that plugs into *Can I Use*’s API: [Autoprefixer](https://github.com/postcss/autoprefixer "Autoprefixer"). In short, it "[parses] CSS and add[s] vendor prefixes to rules by Can I Use". That gets rid of the headache of updating vendor prefixes to match my arbitrary set of browser support rules, and I don’t even have to write them in my CSS anymore. *Very* convenient… but not the perfect solution; I still have to manually run this command whenever I want to compile.
 
-
 --------
-
 
 <aside><p><code>sass</code> to compile Sass or SCSS from the command line.</p></aside>
 
@@ -49,7 +43,6 @@ It’s only a small amount of time spent each time I wanted to compile my SCSS, 
 
 All the while, I desperately wanted to take the responsibility and menial tasks off of my hands: crushing images, compressing CSS, [combing my CSS](https://github.com/csscomb/csscomb.js "The Greatest tool for sorting CSS properties in specific order"), and compiling my SCSS for the most part.
 
-
 <h2 id="a-better-way">There must be a better way!</h2>
 
 <figure>
@@ -58,7 +51,6 @@ All the while, I desperately wanted to take the responsibility and menial tasks 
 </figure>
 
 And it comes in the form of *[gulp](https://gulpjs.com/ "gulp.js - the streaming build system")*. *gulp* is a <q>streaming build system</q> built on *[node.js](https://nodejs.org/en/ "node.js")* that automates complex tasks for you—the answer to all my prayers! I initially chose an alternative called *[Grunt](https://gruntjs.com/ "Grunt: The JavaScript Task Runner")* which does *almost* exactly the same thing, but I prefer the workflow used in *gulp*, which is why I ultimately chose it. I recommend checking it out if you haven’t; you can get started [right here](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md#getting-started "Get started with gulp")!
-
 
 <h2 id="what-gulp-does-for-me">Let’s see what gulp does for me</h2>
 
@@ -274,9 +266,7 @@ Here’s an example of what the CSS for my logo looked like prior to these chang
 
 Let’s face it, that’s a monumental amount of code to read, let alone scroll through. Although I spent a monumental amount of time organising it well and ensuring it was super-maintainable, there are a lot of repetitions and property values that could be assigned to variables and used elsewhere in the CSS. The advantage of this becomes obvious when you find yourself having to remember bespoke colour values, but we also have a lot of repetitions due to the requirement of vendor prefixes. Although we will need the vendor prefixes again when we deliver CSS to the user on the front-end, because we’re compiling our CSS beforehand, we can get rid of them in our uncompiled stylesheet.
 
-
 --------
-
 
 Firstly, let’s remove the vendor prefixes to take advantage of *Autoprefixer* and *Can I Use*.
 
@@ -356,9 +346,7 @@ Firstly, let’s remove the vendor prefixes to take advantage of *Autoprefixer* 
 
 Already looking much better! You’ll notice I was even able to exclude the entire repeated `-webkit-keyframes` declarations as *Autoprefixer* will include these for me when *gulp* runs.
 
-
 --------
-
 
 Next, let’s turn this CSS into SCSS.
 
@@ -430,7 +418,6 @@ Next, let’s turn this CSS into SCSS.
     87.5% { @include translate3d("-0.0625em, -0.5625em, 0"); }
 }
 ```
-
 
 <h2 id="a-few-major-changes">You’ll notice a few major changes</h2>
 
@@ -509,14 +496,11 @@ $heading-font-stack: "league-gothic", sans-serif;
 
 The CSS here a lot more concise now, and the advantages are tremendous as you get over the learning curve, however short it may be for you. If you extrapolate this methodology of components you can imagine how it simplifies development across a codebase and between contributing developers. Because we’ve defined variables and mixins, it’s now a lot easier to change code across the entire site’s codebase at once, for example: breakpoints, colours, transition timings, typefaces, to name a few.
 
-
 --------
-
 
 Another thing, which I won’t bother to illustrate here, is the splitting of files. Similar to how I talked about building a componential CSS architecture, Sass allows you to concatenate multiple SCSS files into one file in the output `.css` file. I’ve done exactly that with my SCSS files—split them into <abbr title="a Sass file named with a leading underscore to denote it is a part of a whole Sass codebase">partials</abbr>: `\_articles.scss`, `\_asides.scss`, `\_buttons.scss`, etc.—and this helps to create a bird’s-eye-view or holisitic view of the separation of components.
 
 It’s also extremely useful if you build a core set of styles and then extend those styles for bespoke designs in separate files; in this way, you only need to include the core styles on each page, instead of having to pull in all the bespoke CSS and using only a small part of it.
-
 
 ## Useful Links
 
@@ -531,7 +515,6 @@ It’s also extremely useful if you build a core set of styles and then extend t
 
 And if you want to start using *gulp*, here’s a fantastic guide, <q>[Getting started with gulp](https://markgoodyear.com/2014/01/getting-started-with-gulp/ "Getting started with gulp")</q>, by [Mark Goodyear](https://markgoodyear.com/ "Mark Goodyear — Front-end designer and developer").
 
-
 ## Wrapping it up
 
 I cannot stress how awesome Sass and SCSS are and how they can drastically speed up your workflow. If you’ve never written Sass or SCSS before, try it with variables first. When you’re building a big stylesheet, or group of stylesheets, it can be a pain to have to remember HEX colour values or font stacks. The advantage of Sass is that it allows you to set these values to variables and use them througout the rest of your CSS; furthermore, if you need to manipulate these colours (lighten, darken, opacity, etc.), Sass has the ability to do this for you, leaving you to only remember the variable names.
@@ -539,7 +522,6 @@ I cannot stress how awesome Sass and SCSS are and how they can drastically speed
 The power of *Autoprefixer* speaks for itself, really.
 
 And with *gulp* `watching`, the transition from the SCSS above to the minified CSS happens *almost instantly* and the browser refreshes almost as soon as you hit Save.
-
 
 <h2 id="thats-whats-up">So that’s what’s up</h2>
 

@@ -14,14 +14,11 @@ syndicate_to:
 
 Web Developers are excited about the future. Just as we recently saw a feature explosion in *JavaScript* (for good and for worse), we’re preparing for and beginning a feature explosion in *CSS* as well. People seem to be [twice](https://blog.twitter.com/official/en_us/topics/product/2017/Giving-you-more-characters-to-express-yourself.html) as excited about CSS Grid, CSS Variables, Element Queries, etc. as last year! So while I prepare myself for that tidal wave, I thought I’d take a step outside of my comfort zone to learn about and share some cool *JavaScript* coming into stability today.
 
-
 --------
-
 
 On the web, we’re used to change. We embrace change. It’s part of what makes the web unique: an ever-evolving, ever-moving ecosystem of growing users, each with their own ideas, challenges, and goals to bring to the web.
 
 Part of embracing that change means, as builders for the web, we have to be light on our toes and ready to adapt to factors within and without our control. It’s how you prepare and react to the changes that really matters.
-
 
 ## Hook, Line, & Sinker
 
@@ -32,7 +29,6 @@ In the case of *lazy-loading*, rather than force the browser to download every a
 Similarly, an infinite-scrolling technique typically involves a long list of many items—too many to display on the page at once (to keep the page weight low). When the user reaches the bottom of the list—that is to say that the bottom of the list is visible within the viewport—the next set of `n` items are loaded and placed in the DOM at the bottom of the list. This gives the user the impression that the list is never-ending, as it is technically as limitless as the dataset being represented.
 
 But be aware that these techniques come with their own set of UX and/or performance considerations.
-
 
 ## Let me take you on a trip down memory lane
 
@@ -66,9 +62,7 @@ This short, **16ms** portion of our performance budget is a critical one. It can
 
 If the <q>action</q> we need to perform involves checking the visibility of an element as we move around the page, we need to make sure that any <q>checks</q> we’re making happen in under **16ms**, or we’ll fail to build each <q>frame</q> of the 60 <abbr title="Frames Per Second">FPS</abbr> animation in time. Failing to do so results in frames being painted late or not being painted at all, and the delaying **or** removal of any frames will naturally result in a lower FPS. Too low and your users will start to notice.
 
-
 --------
-
 
 As the user scrolls quickly around the website, their browser is silently firing thousands of scroll events, **100%** of which we’re trying to gate-check and before their consequences are delivered to the user.
 
@@ -77,7 +71,6 @@ As the user scrolls quickly around the website, their browser is silently firing
 Like a [gatling gun](https://en.wikipedia.org/wiki/Gatling_gun), these events will fire at a rate nearly, if not completely, imperceptible to the human eye. In order to get an idea of the volume of these events, browse to your favourite news site and scroll from the top of the page to the bottom. Try to count the height of the page in pixels. Bonus points (and bonus events) if you do this on a small screen!
 
 Alternatively, check out how much you can resize a page on a pointer-based device. I’ve tried this on a desktop monitor, and was able to get my browser window as large as `1665px × 902px` and as small as `400px × 198px`. That gives me `1265 × 704 = 890,560` possible ways to resize my browser. While I doubt any of your users navigate your site by slinky-ing their browser around the screen, we must be aware of such a situation and do the <q>web development dance</q> of anticipating and preparing for outlier circumstances.
-
 
 ## How did we solve that?
 
@@ -130,7 +123,6 @@ And even then, we’re making a pretty broad assumption about the refresh rates 
 
 It seems the ideal solution would remove the guesswork in finding the best <q>middle-ground</q> delay and the assumptions we have to make about refresh rates.
 
-
 ## Prevalence of Garbage
 
 All of the techniques we’ve covered so far take an approach that, instead of reacting to each individual change as they happen, make proactive, repeated checks and set up reminders (in the form of `setInterval` or `setTimeout`) for the browser to do something with any changes that are found.
@@ -154,7 +146,6 @@ How often should the Crossing Guard cross the road?
 Is it better to go back-and-forth often, taking only one person per crossing? Or is it better to delay before each back-and-forth in order to potentially take more than one person per crossing?
 
 We have no way of guaranteeing an accurate <q>fits all</q> guess.
-
 
 ## What comes next?
 
@@ -197,7 +188,6 @@ Further, take also careful note of *IntersectionObserver’s* browser support to
 {% caniuse 'intersectionobserver' %}
 
 An important caveat to note before diving too deep, at least at the time of writing, is that [IntersectionObserver](https://github.com/w3c/IntersectionObserver) does not support observing [pseudo-elements](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements); rather, *IntersectionObserver’s* `observe()` method expects a single, [Element](https://developer.mozilla.org/en-US/docs/Web/API/Element)-type parameter. While this will make some implementations of *IntersectionObserver* more verbose than their equivalent older techniques, the mental overhead and performance tradeoffs that can be made are unquestionably beneficial.
-
 
 ## In Conclusion
 

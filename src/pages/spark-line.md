@@ -26,7 +26,6 @@ npm install @chrisburnell/spark-line --save-dev
 
 You can also just download it directly [from GitHub](https://github.com/chrisburnell/spark-line):<br><samp>[https://github.com/chrisburnell/spark-line/archive/main.zip](https://github.com/chrisburnell/spark-line/archive/main.zip)</samp>
 
-
 ## Usage
 
 This exposes/makes available a Custom HTML Element I’m calling <q>spark-line</q>. While this requires JavaScript on the front-end, it makes the process of invoking and displaying sparklines for X,Y data very simple.
@@ -49,7 +48,6 @@ Element attributes:
 - `endpoint-color`: defines the color of the endpoint *(defaults to whatever color is defined as)*
 - `start-label`: creates a label before the chart
 - `end-label`: creates a label after the chart
-
 
 ## Examples
 
@@ -83,7 +81,6 @@ Element attributes:
         <p><code>start-label="Start" end-label="End"</code></p>
     </article>
 </div>
-
 
 ## Interactive Example
 

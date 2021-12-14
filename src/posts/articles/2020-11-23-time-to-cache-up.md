@@ -17,7 +17,6 @@ It took some time for the pieces to fall into place—first-of-all was watching 
 
 It was during a pair programming exercise recently that I had a moment of enlightenment as to how I could leverage this advantage even further by using it to not just generate a list of popular posts based on their webmention count, but also to off-load and privately cache other parts of the source code too, like small directories of breweries and music artists. I’ll be exploring how I can use this more effectively as time goes on, but I found this to be a useful way to pull private information into your build without it appearing in your public repository.
 
-
 ## The Set-up
 
 First, we need to run through a checklist to make sure we’re prepared to build the collection:

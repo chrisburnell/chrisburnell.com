@@ -9,7 +9,6 @@ checkin:
 
 I wrote about this talk in another article, [April LWS Talk](/article/april-lws-talk/), if you’re interested in more detail or want to read about what I learned from giving my first public talk.
 
-
 ## Slides
 
 <figure>
@@ -21,7 +20,6 @@ I wrote about this talk in another article, [April LWS Talk](/article/april-lws-
     </figcaption>
 </figure>
 
-
 ## Video
 
 <figure>
@@ -29,7 +27,7 @@ I wrote about this talk in another article, [April LWS Talk](/article/april-lws-
         <source src="/videos/Supporting Middle-Out in CSS 640x360.mp4" type="video/mp4" media="all and (max-width: 640px)">
         <source src="/videos/Supporting Middle-Out in CSS 960x540.mp4" type="video/mp4" media="all and (max-width: 960px)">
         <source src="/videos/Supporting Middle-Out in CSS 1024x768.mp4" type="video/mp4">
-		<track kind="captions" label="English captions" src="/videos/Supporting Middle-Out in CSS.vtt" srclang="en" default="">
+        <track kind="captions" label="English captions" src="/videos/Supporting Middle-Out in CSS.vtt" srclang="en" default="">
         Sorry, your browser doesn't support embedded videos.
     </video>
 </figure>

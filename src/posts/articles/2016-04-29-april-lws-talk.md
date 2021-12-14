@@ -9,7 +9,6 @@ updated_text: Check out the Talk in question, <a href="/talk/middle-out/">Suppor
 
 Last week, [I spoke](http://londonwebstandards.org/2016/04/lws-18-april-2016-animation-chats-lwsaniquery/) at [London Web Standards](https://londonwebstandards.org/), a monthly meetup for Web Developers, Designers, UXers, Tech Managers, etc., and talked about writing intelligent *media queries*. Inspired by [Matt Zeunert’s thoughts, reflecting on running a free front-end development course](https://www.mattzeunert.com/2016/01/13/running-a-free-front-end-development-course.html), I’ve decided to flesh out some details of the talk that I thought were weak, could use more explanation, and to review how I feel the talk went, and what I might do differently next time.
 
-
 ## Nerves from Hell
 
 If you know me personally, using only one word, you might accurately describe me as <q>quiet,</q> so for me to speak publicly was really stepping outside of my comfort zone. Of course, teaching front-end development and sharing my passion for it is important to me, so, like writing articles on my website, giving a talk to strangers was an important step in enabling me to do what I *think* I want to do and be good at—teach about and share my passion for the web!
@@ -18,13 +17,11 @@ Stage fright is far-too-real for me. The last time I spoke in this kind of capac
 
 *Enough about me, though. Let’s jump into the talk.*
 
-
 ## Performance?
 
 When you compare the performance impact of *media queries* versus the impact of a JavaScript framework or a couple of images, it shows us that writing intelligent *media queries* is for the benefit of *us*, *developers*. Writing intelligent CSS relates to how we read it; CSS that is carefully laid-out and follows patterns paints a clearer picture of what the CSS is doing than if the CSS were written without much care, and properties and values are slapped together until the end-result is achieved.
 
 It’s one thing to achieve your end-result styles with your CSS, but to do so in a way that makes sense to you, your teammates, fresh eyes, yourself in a month’s time, and is pared down to the lowest common denominator of CSS is another story.
-
 
 <h2 id="relation-to-media-queries">How does this relate to media queries?</h2>
 
@@ -107,7 +104,6 @@ To me, it does. To you, maybe it makes less.
 
 We’ve deviated from our established *Mobile First* approach to writing *media queries*, and we’ve lost some organisation in the process! But in trade, we’ve broken our component into multiple explicit contexts which follows a distinct flow of extending the default component.
 
-
 ## The Bottom Line
 
 > Common sense trumps strict adherence to standards.
@@ -120,7 +116,6 @@ If we were to categorise this understandability of CSS into three general catego
   Focusses on delivering and never deviating from an established standard. This promotes rigid organisation and placing each component on a relatively-level playing field but can demote human understanding wherever mental overhead is introduced by switching contexts.
 0. Spaghetti
   [Has no focus or purpose. Don’t do it.](https://en.wikipedia.org/wiki/Spaghetti_code "Spaghetti Code on Wikipedia")
-
 
 ## The Next Talk
 

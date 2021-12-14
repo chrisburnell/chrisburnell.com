@@ -5,5 +5,4 @@
 # Ignore specific filetypes
 *.html
 *.json
-*.md
 *.njk

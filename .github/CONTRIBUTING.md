@@ -1,6 +1,5 @@
 # Contributing Guide
 
-
 ## Commit messages
 
 Commits must follow the [commit template](COMMIT_TEMPLATE.md).
@@ -13,11 +12,9 @@ Commits must follow the [commit template](COMMIT_TEMPLATE.md).
 0. Wrap the body at 72 characters
 0. Use the body to explain what and why vs. how
 
-
 ## Pull Requests
 
 Pull requests must follow the [pull request template](PULL_REQUEST_TEMPLATE.md).
-
 
 ## Issues
 
