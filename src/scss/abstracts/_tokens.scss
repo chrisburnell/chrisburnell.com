@@ -34,10 +34,9 @@ $tokens: (
 		monospace: monospace,
 	),
 	font-size: (
-		alpha: clamp(2.0738rem, 1.5648rem + 1.6286vw, 2.7863rem),
-		beta: clamp(1.7281rem, 1.4219rem + 0.98vw, 2.1569rem),
-		gamma: clamp(1.44rem, 1.2762rem + 0.5243vw, 1.6694rem),
-		delta: clamp(1.2rem, 1.1344rem + 0.21vw, 1.2919rem),
+		alpha: clamp(2rem, 1rem + 3.2vw, 3rem),
+		beta: clamp(1.25rem, 1.13rem + 0.4vw, 1.38rem),
+		gamma: clamp(1.13rem, 1rem + 0.4vw, 1.25rem),
 		default: 1rem,
 		small: 0.875rem,
 	),

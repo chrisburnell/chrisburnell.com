@@ -29,7 +29,7 @@
 	@include v(font-weight, bold);
 
 	.post & {
-		@include v(font-size, delta);
+		@include v(font-size, gamma);
 	}
 }
 
@@ -69,7 +69,7 @@ spark-line {
 .rating {
 	display: inline-block;
 	position: relative;
-	@include v(font-size, delta);
+	@include v(font-size, gamma);
 	line-height: 1;
 
 	&::before,

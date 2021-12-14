@@ -128,3 +128,10 @@
 		--line-clamp: #{$i};
 	}
 }
+
+// Speedlify
+.speedlify-anchor {
+	display: inline-block;
+	@include v(margin-block-start, small);
+	text-decoration: none;
+}

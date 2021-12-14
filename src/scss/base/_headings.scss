@@ -37,7 +37,7 @@
 
 %delta,
 .delta {
-	@include v(font-size, delta);
+	@include v(font-size, default);
 	@include v(font-weight, bold);
 }
 
@@ -59,7 +59,7 @@ h1 {
 }
 
 h2 {
-	@extend %delta;
+	@extend %beta;
 	@include case(uppercase);
 	border-block-end: v(measure, border-thin) solid h(alto);
 	inline-size: auto;
@@ -69,9 +69,9 @@ h2 {
 }
 
 h3 {
-	@extend %delta;
+	@extend %gamma;
 }
 
 :where(h4, h5, h6) {
-	@extend %epsilon;
+	@extend %delta;
 }
