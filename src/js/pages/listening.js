@@ -5,8 +5,8 @@
 	const LASTFM_FEED = document.querySelector(".js-lastfm-feed");
 	const LASTFM_TEMPLATE = `
 <a href="{{ url }}">
-	<picture class=" [ cover ] ">
-		<img class=" [ u-photo ] " src="{{ image }}" alt="" role="presentation">
+	<picture>
+		<img class=" [ cover ] [ u-photo ] " src="{{ image }}" alt="" role="presentation">
 	</picture>
 </a>
 <h3>

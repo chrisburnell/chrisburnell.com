@@ -22,8 +22,7 @@
 		}
 	}
 
-	.cover img,
-	img.cover {
+	.cover {
 		margin: 0;
 		object-fit: cover;
 		@include v(box-shadow, small);
@@ -31,10 +30,7 @@
 }
 
 .shelf--books {
-	grid-template-columns: repeat(auto-fill, minmax(8.5em, 1fr));
-
-	.cover img,
-	img.cover {
+	.cover {
 		block-size: 240px;
 	}
 }
