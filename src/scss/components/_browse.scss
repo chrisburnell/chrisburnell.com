@@ -23,8 +23,8 @@
 	}
 }
 .browse__next {
-	text-align: right;
-	margin-left: auto;
+	text-align: end;
+	margin-inline-start: auto;
 
 	&::before {
 		content: "Newer →";

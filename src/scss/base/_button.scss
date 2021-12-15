@@ -58,8 +58,7 @@ button:not([class*="anchor"]),
 			@include v(block-size, border-button);
 			position: absolute;
 			inset-block-end: 100%;
-			inset-inline-start: 0;
-			inset-inline-end: 0;
+			inset-inline: 0;
 		}
 	}
 

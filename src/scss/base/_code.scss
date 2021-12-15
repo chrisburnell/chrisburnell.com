@@ -106,8 +106,8 @@ code[class*="language-"] {
 		align-items: center;
 		padding: 0 var(--measure-gutter);
 		position: absolute;
-		top: 0;
-		left: 0;
+		inset-block-start: 0;
+		inset-inline-start: 0;
 		border-radius: var(--measure-border-default) var(--measure-border-default) 0 0;
 		background-clip: padding-box;
 	}

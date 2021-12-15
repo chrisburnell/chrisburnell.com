@@ -122,9 +122,8 @@ input[type="checkbox"] {
 			inline-size: var(--measure-large);
 			display: none;
 			position: absolute;
-			inset-block-start: 0;
+			inset-block: 0;
 			inset-inline-start: 0;
-			inset-block-end: 0;
 			@include v(font-size, gamma);
 			line-height: 1;
 			border-radius: var(--measure-border-default) 0 0 var(--measure-border-default);
