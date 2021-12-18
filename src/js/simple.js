@@ -1,5 +1,8 @@
-import colorScheme from "./modules/color-scheme.js";
-import shareButton from "./modules/share-button.js";
+import colorScheme from "./modules/color-scheme"
+colorScheme()
 
-colorScheme();
-shareButton();
+import welcome from "./modules/welcome"
+welcome()
+
+import shareButton from "./modules/share-button"
+shareButton()

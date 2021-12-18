@@ -1,8 +1,8 @@
 const author = require("../data/author.json")
-const global = require("../data/global.js")
+const global = require("../data/global")
 const palette = require("../data/palette.json")
 const site = require("../data/site.json")
-const dateFilters = require("./filters/dates.js")
+const dateFilters = require("./filters/dates")
 
 let rangeMap = (number, oldMinimum, oldMaximum, newMinimum, newMaximum) => {
 	return ((number - oldMinimum) / (oldMaximum - oldMinimum)) * (newMaximum - newMinimum) + newMinimum

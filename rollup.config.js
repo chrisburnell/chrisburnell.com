@@ -2,6 +2,9 @@ import commonjs from "@rollup/plugin-commonjs"
 import { nodeResolve } from "@rollup/plugin-node-resolve"
 import { terser } from "rollup-plugin-terser"
 
+// Load .env variables with dotenv
+require("dotenv").config()
+
 export default [
 	{
 		input: "src/js/main.js",
@@ -10,7 +13,7 @@ export default [
 			format: "iife",
 			name: "main",
 		},
-		plugins: [commonjs(), nodeResolve(), terser()],
+		plugins: process.env.ELEVENTY_PRODUCTION ? [commonjs(), nodeResolve(), terser()] : [commonjs(), nodeResolve()],
 	},
 	{
 		input: "src/js/main-dev.js",
@@ -28,7 +31,7 @@ export default [
 			format: "iife",
 			name: "simple",
 		},
-		plugins: [commonjs(), terser()],
+		plugins: process.env.ELEVENTY_PRODUCTION ? [commonjs(), nodeResolve(), terser()] : [commonjs(), nodeResolve()],
 	},
 	{
 		input: "src/js/speedlify-score.js",

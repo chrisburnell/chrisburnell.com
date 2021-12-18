@@ -4,10 +4,10 @@ require("dotenv").config()
 const fetch = require("node-fetch")
 
 const site = require("../../data/site.json")
-const queryFilters = require("../filters/queries.js")
+const queryFilters = require("../filters/queries")
 const Image = require("@11ty/eleventy-img")
 
-const SPOTIFY_CLIENT_TOKEN = require("../../data/spotify_token.js")
+const SPOTIFY_CLIENT_TOKEN = require("../../data/spotify_token")
 
 // Avatar Dimensions
 const size = 400

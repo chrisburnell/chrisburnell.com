@@ -4,22 +4,22 @@ const urlInput = () => {
 	 */
 	let addDefaultScheme = (target) => {
 		if (target.value.match(/^(?!https?:).+\..+/)) {
-			target.value = `http://${target.value}`;
+			target.value = `http://${target.value}`
 		}
-	};
+	}
 
-	let elements = document.querySelectorAll('input[type="url"]');
+	let elements = document.querySelectorAll('input[type="url"]')
 
 	for (let element of elements) {
 		element.addEventListener("blur", (event) => {
-			addDefaultScheme(event.target);
-		});
+			addDefaultScheme(event.target)
+		})
 		element.addEventListener("keydown", (event) => {
 			if (event.keyCode == 13) {
-				addDefaultScheme(event.target);
+				addDefaultScheme(event.target)
 			}
-		});
+		})
 	}
-};
+}
 
-export default urlInput;
+export default urlInput

@@ -3,34 +3,34 @@ const fs = require("fs")
 const site = require("./src/data/site.json")
 
 // Import Eleventy plugins
-const pregenImagePlugin = require("./src/eleventy/plugins/pregenImagePlugin.js")
-const imagePlugin = require("./src/eleventy/plugins/imagePlugin.js")
-const imageAvatarPlugin = require("./src/eleventy/plugins/imageAvatarPlugin.js")
-// const albumCoverPlugin = require("./src/eleventy/plugins/albumCoverPlugin.js")
+const pregenImagePlugin = require("./src/eleventy/plugins/pregenImagePlugin")
+const imagePlugin = require("./src/eleventy/plugins/imagePlugin")
+const imageAvatarPlugin = require("./src/eleventy/plugins/imageAvatarPlugin")
+// const albumCoverPlugin = require("./src/eleventy/plugins/albumCoverPlugin")
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight")
 const webmentionsPlugin = require("@chrisburnell/eleventy-cache-webmentions")
 
 // Import transforms
-const parseTransform = require("./src/eleventy/transforms/parse.js")
-const htmlMinTransform = require("./src/eleventy/transforms/html-min.js")
+const parseTransform = require("./src/eleventy/transforms/parse")
+const htmlMinTransform = require("./src/eleventy/transforms/html-min")
 
 // Import filters
-const dateFilters = require("./src/eleventy/filters/dates.js")
-const stringFilters = require("./src/eleventy/filters/strings.js")
-const queryFilters = require("./src/eleventy/filters/queries.js")
-const utilityFilters = require("./src/eleventy/filters/utils.js")
-const collectionFilters = require("./src/eleventy/filters/collections.js")
-const newBase60 = require("./src/eleventy/filters/newBase60.js")
+const dateFilters = require("./src/eleventy/filters/dates")
+const stringFilters = require("./src/eleventy/filters/strings")
+const queryFilters = require("./src/eleventy/filters/queries")
+const utilityFilters = require("./src/eleventy/filters/utils")
+const collectionFilters = require("./src/eleventy/filters/collections")
+const newBase60 = require("./src/eleventy/filters/newBase60")
 
 // Import shortcodes
-const shortcodes = require("./src/eleventy/shortcodes.js")
+const shortcodes = require("./src/eleventy/shortcodes")
 
 // Import collections
-const collections = require("./src/eleventy/collections.js")
+const collections = require("./src/eleventy/collections")
 
 // Import collection builders
-const categoriesBuilder = require("./src/eleventy/collectionBuilders/categories.js")
-const tagsBuilder = require("./src/eleventy/collectionBuilders/tags.js")
+const categoriesBuilder = require("./src/eleventy/collectionBuilders/categories")
+const tagsBuilder = require("./src/eleventy/collectionBuilders/tags")
 
 // Import other bits and bobs
 const urlReplacements = require("./src/data/urlReplacements.json")

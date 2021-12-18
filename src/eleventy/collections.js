@@ -1,7 +1,7 @@
-const dateFilters = require("./filters/dates.js")
-const collectionFilters = require("./filters/collections.js")
+const dateFilters = require("./filters/dates")
+const collectionFilters = require("./filters/collections")
 
-const global = require("../data/global.js")
+const global = require("../data/global")
 const site = require("../data/site.json")
 
 const Webmentions = require("@chrisburnell/eleventy-cache-webmentions")(null, { domain: site.url })

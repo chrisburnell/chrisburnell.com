@@ -4,7 +4,7 @@ require("dotenv").config()
 const site = require("../../data/site.json")
 const author = require("../../data/author.json")
 const twitterReplacements = require("../../data/twitterReplacements.json")
-const queryFilters = require("../filters/queries.js")
+const queryFilters = require("../filters/queries")
 const TwitterAvatarUrl = require("twitter-avatar-url")
 const Image = require("@11ty/eleventy-img")
 
