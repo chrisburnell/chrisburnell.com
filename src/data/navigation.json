@@ -6,9 +6,10 @@
     "secondary": true
   },
   {
-    "title": "Projects",
-    "url": "/projects/",
-    "primary": true
+    "title": "About",
+    "url": "/about/",
+    "primary": true,
+    "secondary": true
   },
   {
     "title": "Archive",
@@ -17,14 +18,13 @@
     "secondary": true
   },
   {
-    "title": "Writing",
-    "url": "/writing/",
-    "secondary": true
+    "title": "Projects",
+    "url": "/projects/",
+    "primary": true
   },
   {
-    "title": "About",
-    "url": "/about/",
-    "primary": true,
+    "title": "Writing",
+    "url": "/writing/",
     "secondary": true
   },
   {
