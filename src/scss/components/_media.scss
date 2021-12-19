@@ -9,7 +9,7 @@
 .media {
 	inline-size: 100%;
 
-	%collection-media {
+	& > * {
 		aspect-ratio: 16 / 9;
 		inline-size: 100% !important;
 		block-size: auto !important;
@@ -18,7 +18,7 @@
 }
 
 .media--4-by-3 {
-	%collection-media {
+	& > * {
 		aspect-ratio: 4 / 3;
 	}
 }
