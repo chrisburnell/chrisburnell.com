@@ -157,9 +157,6 @@
 
 	<script>document.documentElement.classList.remove("no-js");</script>
 
-	{% if category == 'code' or caniuse %}
-		<link rel="preconnect" href="https://cdn.jsdelivr.net">
-	{% endif %}
 	{% if category == 'code' or codepen %}
 		<link rel="preconnect" href="https://codepen.io">
 		<link rel="preconnect" href="https://assets.codepen.io">
@@ -167,9 +164,6 @@
 	{% endif %}
 	{% if speakerdeck %}
 		<link rel="preconnect" href="https://speakerdeck.com">
-	{% endif %}
-	{% if twitter %}
-		<link rel="preconnect" href="https://platform.twitter.com">
 	{% endif %}
 </head>
 <body>
@@ -248,11 +242,6 @@
 	{% endif %}
 	{% if speedlify[canonical] %}
 		<script defer src="/js/speedlify-score.js"></script>
-	{% endif %}
-
-	{% if category == 'code' or caniuse %}
-		<!-- Can I Use Embeds -->
-		<script defer src="https://cdn.jsdelivr.net/caniuse-embed/1.0.1/caniuse-embed.min.js"></script>
 	{% endif %}
 
 	{% if category == 'code' or codepen %}

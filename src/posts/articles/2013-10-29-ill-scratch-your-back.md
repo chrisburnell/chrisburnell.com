@@ -7,7 +7,6 @@ description: I've been playing around with CSS content and attribute selectors r
 tags:
   - css
 banner: ill-scratch-your-back.png
-caniuse: true
 syndicate_to:
   - https://twitter.com/iamchrisburnell/status/395115858814840833
 ---

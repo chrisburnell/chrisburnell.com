@@ -6,7 +6,6 @@ tags:
   - javascript
   - performance
 banner: crossing-guards.png
-caniuse: true
 codepen: true
 syndicate_to:
   - https://twitter.com/iamchrisburnell/status/928671414017773568

@@ -1,7 +1,6 @@
 ---
 title: Styleguide
 description: The style guide for <span class="canada">this website</span>.
-caniuse: true
 codepen: true
 speakerdeck: true
 twitter: true
@@ -181,6 +180,21 @@ js: styleguide.js
 	<li>This is the last list item</li>
 </ul>
 
+<h3>Reversed</h3>
+
+<ul reversed>
+	<li>This is a list item in an unordered list</li>
+	<li>An unordered list is a list in which the sequence of items is not important. Sometimes, an unordered list is a bulleted list. And this is a long list item in an unordered list that can wrap onto a new line. </li>
+	<li>
+		Lists can be nested inside of each other
+		<ul reversed>
+			<li>This is a nested list item</li>
+			<li>This is another nested list item in an unordered list</li>
+		</ul>
+	</li>
+	<li>This is the last list item</li>
+</ul>
+
 <h2>Ordered List</h2>
 
 <ol>
@@ -196,17 +210,7 @@ js: styleguide.js
 	<li>This is the last list item</li>
 </ol>
 
-<ol reversed>
-	<li>This is a list item in an ordered list</li>
-	<li>An ordered list is a list in which the sequence of items is important. An ordered list does not necessarily contain sequence characters.</li>
-	<li>
-		This is the last list item
-		<ol>
-			<li>This is a nested list item</li>
-			<li>This is another nested list item in an ordered list</li>
-		</ol>
-	</li>
-</ol>
+<h3>Reversed</h3>
 
 <ol reversed>
 	<li>This is a list item in an ordered list</li>
@@ -461,6 +465,14 @@ p q r s t u v w x y z { | } ~
 {% endfor %}
 </nav>
 
+<h2>Can I Use</h2>
+
+{% caniuse 'css-sel3' %}
+
+<h2>CodePen</h2>
+
+{% codepen 'mglHp', false, 425 %}
+
 <h2>Speakerdeck</h2>
 
 <figure>
@@ -468,15 +480,3 @@ p q r s t u v w x y z { | } ~
 		<div class="speakerdeck-embed" data-id="b933d8a3500240b8b7d2b879f075329b"></div>
 	</div>
 </figure>
-
-<h2>CodePen</h2>
-
-{% codepen 'mglHp', false, 425 %}
-
-<h2>Can I Use</h2>
-
-{% caniuse 'css-sel3' %}
-
-<h2>Tweet</h2>
-
-{% tweet 'assumptions do not a civil developer make', 'https://twitter.com/iamchrisburnell/status/590910692955389952' %}

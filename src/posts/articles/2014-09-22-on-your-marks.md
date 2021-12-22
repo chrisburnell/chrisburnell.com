@@ -120,7 +120,9 @@ What we’re doing here is:
 
 Everything’s looking sweet so far, so let’s tackle the 2<sup>nd</sup> and 3<sup>rd</sup> conditions from above: watching for a hash change in the URL (pointing to `#comment`) or catching it when the page is loaded.
 
-<aside><p>Check out the support for <a rel="external" href="http://caniuse.com/#search=onhashchange">onhashchange on Can I Use</a> before jumping in too deep!</p></aside>
+<aside><p>Check out the support for <a rel="external" href="http://caniuse.com/#feat=hashchange">onhashchange on Can I Use</a> before jumping in too deep!</p></aside>
+
+{% caniuse 'hashchange' %}
 
 ```javascript
 var commentsHash = ['#comment', '#disqus_thread'];

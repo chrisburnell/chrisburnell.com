@@ -1,5 +1,7 @@
 ---
 date: 2018-10-15T10:34:00+0100
+updated: 2021-05-06T12:00:00+0100
+updated_text: I’ve since turned this into a full-blown package of its own called <a href="/bowhead">Bowhead</a>!
 title: Variables for Both
 description: Now that CSS Custom Properties, or CSS Variables, are becoming a solid standard, I'm using a method to map their values to CSS Variables whilst providing a value-as-is fallback using a straightforward syntax in a SCSS function and mixin.
 tags:
@@ -16,12 +18,9 @@ further_reading:
 syndicate_to:
   - https://mastodon.social/users/chrisburnell/statuses/100899031142247634
   - https://twitter.com/iamchrisburnell/status/1051772305360195584
-caniuse: true
-updated: 2021-05-06T12:00:00+0100
-updated_text: I’ve since turned this into a full-blown package of its own called <a href="/bowhead">Bowhead</a>!
 ---
 
-{% caniuse 'css-variables', 'current' %}
+{% caniuse 'css-variables' %}
 
 One of my favourite parts of developing for the web is the ever-shifting landscape and the opportunity to work with new technologies. Sometimes they aren’t apt for use in production, but fortunately for us today, *CSS Variables* are pretty reliable to use on their own. However, if you’re in a position similar to mine and find yourself often needing to support old versions of *Internet Explorer* or making sure *all* of your browser support bases are covered, this *SCSS* setup should be useful for you.
 

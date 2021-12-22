@@ -3,6 +3,7 @@ const fs = require("fs")
 const site = require("./src/data/site.json")
 
 // Import Eleventy plugins
+const caniusePlugin = require("./src/eleventy/plugins/caniusePlugin")
 const pregenImagePlugin = require("./src/eleventy/plugins/pregenImagePlugin")
 const imagePlugin = require("./src/eleventy/plugins/imagePlugin")
 const imageAvatarPlugin = require("./src/eleventy/plugins/imageAvatarPlugin")
@@ -38,6 +39,7 @@ const markdownParser = require("markdown-it")
 
 module.exports = (eleventyConfig) => {
 	// Eleventy Plugins
+	eleventyConfig.addPlugin(caniusePlugin)
 	eleventyConfig.addPlugin(pregenImagePlugin)
 	eleventyConfig.addPlugin(imagePlugin)
 	eleventyConfig.addPlugin(imageAvatarPlugin)
