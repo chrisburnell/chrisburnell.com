@@ -6,9 +6,9 @@
 html {
 	background-color: h(kaiser);
 	position: relative;
-	overflow-inline: hidden;
+	overflow-x: hidden;
 	// prevent horizontal jump when navigating short page <--> tall page
-	overflow-block: scroll;
+	overflow-y: scroll;
 	overscroll-behavior: contain;
 	accent-color: h(raven);
 	scroll-behavior: smooth;

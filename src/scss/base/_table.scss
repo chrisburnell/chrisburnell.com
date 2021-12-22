@@ -9,8 +9,8 @@ table {
 	align-self: flex-start;
 	border-width: 0;
 	border-collapse: collapse;
-	overflow-inline: auto;
-	overflow-block: hidden;
+	overflow-x: auto;
+	overflow-y: hidden;
 	font-variant-numeric: lining-nums tabular-nums;
 
 	&.zebra {

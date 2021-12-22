@@ -13,8 +13,8 @@ figure {
 
 	// Allow for content to overflow without breaking the page with scrollbar
 	&:not(.highlight) {
-		overflow-inline: auto;
-		overflow-block: hidden;
+		overflow-x: auto;
+		overflow-y: hidden;
 	}
 
 	%collection-images,

@@ -130,7 +130,7 @@
 
 .table-of-contents {
 	@include v(margin-block, large);
-	overflow-block: auto;
+	overflow-y: auto;
 
 	@include media("below:medium") {
 		max-block-size: 60vh;

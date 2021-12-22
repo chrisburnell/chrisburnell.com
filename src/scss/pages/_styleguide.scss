@@ -129,7 +129,7 @@
 	border: v(measure, border-thin) solid h(alto);
 	margin-inline-start: auto;
 	margin-inline-end: auto;
-	overflow-inline: hidden;
+	overflow-x: hidden;
 	position: relative;
 	// line-height: strip-unit($measure-large * 1.5 - $measure-border-thin * 2);
 	text-align: center;

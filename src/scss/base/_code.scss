@@ -73,8 +73,8 @@ pre[class*="language-"] {
 	border-radius: 0 0 var(--measure-border-default) var(--measure-border-default);
 	background-clip: padding-box;
 	// disallow text from wrapping inside the container
-	overflow-inline: auto;
-	overflow-block: hidden;
+	overflow-x: auto;
+	overflow-y: hidden;
 	position: relative;
 	@include font-family(monospace);
 
