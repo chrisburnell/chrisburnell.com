@@ -82,8 +82,8 @@ module.exports = function(eleventyConfig) {
 
 Use the collection as you would any other, e.g.
 
-```twig{% raw %}
-{% for item in collections.popular %}
+```twig
+{% raw %}{% for item in collections.popular %}
     <h2>
         <a href="{{ item.url }}">
             {{ item.data.title }}
@@ -92,8 +92,8 @@ Use the collection as you would any other, e.g.
     <a href="{{ item.url }}#webmentions">
         {{ webmentions | getWebmentions(item.url) | length }} webmentions
     </a>
-{% endfor %}
-{% endraw %}```
+{% endfor %}{% endraw %}
+```
 
 to produce markup like this:
 
