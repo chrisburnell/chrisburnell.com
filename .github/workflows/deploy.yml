@@ -19,10 +19,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '16.x'
-      - name: Set Swap Space
-        uses: pierotofy/set-swap-space@master
-        with:
-          swap-size-gb: 2
       - name: Cache npm dependencies
         uses: actions/cache@v1
         with:
@@ -44,6 +40,7 @@ jobs:
       - name: Build website
         run: npm run build
         env:
+          NODE_OPTIONS: '--max_old_space_size=4096'
           ELEVENTY_PRODUCTION: true
           ODESLI_URL: ${{ secrets.ODESLI_TOKEN }}
           PERSONAL_API_URL: ${{ secrets.PERSONAL_API_URL }}
