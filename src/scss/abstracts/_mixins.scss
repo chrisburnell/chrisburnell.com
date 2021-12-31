@@ -216,6 +216,6 @@
 /// @author Chris Burnell
 ///
 @mixin tabular-lining-numerals() {
-	font-variant-numeric: tabular-nums lining-nums;
+	font-variant-numeric: lining-nums tabular-nums;
 	font-feature-settings: "tnum", "lnum";
 }

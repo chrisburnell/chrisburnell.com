@@ -7,21 +7,16 @@ table {
 	@include tabular-lining-numerals;
 	flex: 1 0 auto;
 	align-self: flex-start;
-	border-width: 0;
 	border-collapse: collapse;
+	border-width: 0;
 	overflow-x: auto;
 	overflow-y: hidden;
-	font-variant-numeric: lining-nums tabular-nums;
 
 	&.zebra {
 		tbody tr:nth-child(even) td {
 			background-color: h(thunder, delta);
 		}
 	}
-}
-
-// Rows
-tr {
 }
 
 // Cells
@@ -44,6 +39,16 @@ th {
 
 	&:not(:empty) {
 		background-color: h(thunder, delta);
+		position: sticky;
+		@include v(z-index, above);
+
+		thead & {
+			top: 0;
+		}
+
+		tbody & {
+			left: 0;
+		}
 	}
 
 	tbody & {
