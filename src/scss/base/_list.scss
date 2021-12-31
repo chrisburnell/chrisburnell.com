@@ -98,15 +98,6 @@ ol.default-list {
 [counter-reset] {
 	counter-reset: ordered-list;
 }
-ul:not([class]),
-ul.default-list {
-	li::marker {
-		// BULLET
-		content: "•";
-		font-size: 1.5em;
-		line-height: 1;
-	}
-}
 dl {
 	display: grid;
 	grid-template-columns: 100%;
@@ -141,7 +132,7 @@ dl {
 dt {
 	@include v(font-weight, bold);
 
-	h2 {
+	%collection-headings {
 		@include v(line-height);
 	}
 }
