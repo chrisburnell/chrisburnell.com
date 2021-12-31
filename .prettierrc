@@ -2,7 +2,3 @@
 semi: false
 printWidth: 9999
 tabWidth: 4
-overrides:
-  - files: "*.md"
-    useTabs: false
-    parser: "mdx"
