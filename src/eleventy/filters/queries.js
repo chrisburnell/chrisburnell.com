@@ -46,7 +46,7 @@ module.exports = {
 	},
 	getInternalTarget: (value, pages) => {
 		// Mastodon
-		if (value.includes("https://mastodon.social/users/chrisburnell/statuses/")) {
+		if (value.includes("https://social.chrisburnell.com") || value.includes("https://mastodon.social/users/chrisburnell/statuses/")) {
 			return "a previous toot"
 		}
 		// Twitter
