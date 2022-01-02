@@ -22,7 +22,7 @@
 			[content-start outdent-start]
 			repeat(6, 1fr)
 			[content-end outdent-end];
-		grid-template-rows: auto auto auto 1fr;
+		grid-template-rows: auto auto auto auto 1fr;
 	}
 
 	@include media("above:large") {
@@ -69,12 +69,43 @@
 	}
 }
 
-.title {
-	@include v(margin-block, gigantic);
+.breadcrumbs {
+	color: h(kaiser);
+	@include v(margin-block-start, gigantic);
 
 	@include media("above:medium") {
 		grid-column: content;
 		grid-row: 1 / 2;
+	}
+
+	li {
+		display: inline-block;
+		white-space: nowrap;
+
+		&:not(:first-child) {
+			&::before {
+				content: "→";
+				display: inline-block;
+				@include v(padding-inline, small);
+			}
+		}
+	}
+
+	a {
+		color: inherit;
+	}
+}
+
+.title {
+	@include v(margin-block, gigantic);
+
+	.breadcrumbs ~ & {
+		@include v(margin-block-start, medium);
+	}
+
+	@include media("above:medium") {
+		grid-column: content;
+		grid-row: 2 / 3;
 	}
 }
 
@@ -86,7 +117,7 @@
 
 	@include media("above:medium") {
 		grid-column: marginalia;
-		grid-row: 2 / 3;
+		grid-row: 3 / 4;
 		margin-block-end: 0;
 		text-align: end;
 	}
@@ -138,7 +169,7 @@
 
 	@include media("above:medium") {
 		grid-column: marginalia;
-		grid-row: 3 / 5;
+		grid-row: 4 / 6;
 		margin-block-end: 0;
 		max-block-size: calc(100vh - #{v(measure, medium)} * 2);
 		position: sticky;
@@ -152,13 +183,13 @@
 
 	@include media("above:medium") {
 		grid-column: content;
-		grid-row: 2 / 5;
+		grid-row: 3 / 6;
 	}
 
 	.full > &,
 	.wide > & {
 		@include media("above:medium") {
-			grid-row: 3 / 4;
+			grid-row: 4 / 5;
 		}
 	}
 
@@ -189,13 +220,13 @@
 .meta {
 	@include media("above:medium") {
 		grid-column: marginalia;
-		grid-row: 4 / 5;
+		grid-row: 5 / 6;
 	}
 }
 
 .ads {
 	@include media("above:medium") {
 		grid-column: content;
-		grid-row: 5 / 6;
+		grid-row: 6 / 7;
 	}
 }

@@ -67,14 +67,14 @@ button:not([class*="anchor"]),
 		pointer-events: none;
 	}
 
+	&.button--small {
+		min-inline-size: 5em;
+		@include v(padding-block, tiny);
+		@include v(font-size, small);
+		line-height: 1;
+	}
+
 	.icon {
 		filter: drop-shadow(0 0 var(--measure-border-hairline) #{h(bear, gamma)});
 	}
-}
-
-.button--small {
-	min-inline-size: 5em;
-	@include v(padding-block, tiny);
-	@include v(font-size, small);
-	line-height: 1;
 }

@@ -9,13 +9,13 @@
 {%- endif -%}
 
 {%- if category and of_title -%}
-	{% set meta_title %}{{ categoryProper | default(category) | title }} of “{{ title | default(of_title) | striptags(true) | safe }}” · {{ site.title }}{% endset %}
+	{% set meta_title %}{{ categoryProper | default(category) | title }} of “{{ title | default(of_title) | striptags(true) | safe }}”{% endset %}
 {%- elif title -%}
-	{% set meta_title %}{{ title | striptags(true) | safe }} · {{ site.title }}{% endset %}
+	{% set meta_title = title | striptags(true) | safe %}
 {%- elif category -%}
-	{% set meta_title %}{{ categoryProper | default(category) | title }} from {{ page.date | friendlyDate }} · {{ site.title }}{% endset %}
+	{% set meta_title %}{{ categoryProper | default(category) | title }} from {{ page.date | friendlyDate }}{% endset %}
 {%- else -%}
-	{% set meta_title %}{{ site.tagline | striptags(true) }} · {{ site.title }}{% endset %}
+	{% set meta_title = site.tagline | striptags(true) %}
 {%- endif -%}
 
 {%- set meta_description = description | striptags(true) | default('A page on chrisburnell.com') | safe -%}
@@ -37,14 +37,30 @@
 <html lang="{{ site.locale }}" class="{% if theme %}{{ theme }}  {% elseif site.theme %}{{ site.theme }}  {% endif %}no-js">
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-	<title>{{ meta_title | safe }}</title>
+	<title>{{ meta_title | safe }} · {{ site.title }}</title>
+
+	<meta name="description" content="{{ meta_description }}">
 
 	<link rel="preload" href="/fonts/heebo-black.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="preload" href="/fonts/proxima-nova-regular.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="preload" href="/fonts/proxima-nova-italic.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="preload" href="/fonts/proxima-nova-semibold.woff2" as="font" type="font/woff2" crossorigin>
+
+	{% if env.ELEVENTY_PRODUCTION %}
+		<link rel="icon" href="/images/favicon.ico">
+		<link rel="icon" href="/images/favicon-64.png">
+		<link rel="apple-touch-icon" href="/images/favicon-180.png">
+		<link rel="apple-touch-icon-precomposed" href="/images/favicon-180.png">
+		<link rel="msapplication-square310x310logo" href="/images/favicon-310.png">
+	{% else %}
+		<link rel="icon" href="/images/favicon-bw.ico">
+		<link rel="icon" href="/images/favicon-bw-64.png">
+		<link rel="apple-touch-icon" href="/images/favicon-180-bw.png">
+		<link rel="apple-touch-icon-precomposed" href="/images/favicon-180-bw.png">
+		<link rel="msapplication-square310x310logo" href="/images/favicon-310-bw.png">
+	{% endif %}
 
 	<link rel="self" href="{{ site.url + '/feed.xml' }}">
 	<link rel="alternate" type="application/rss+xml" title="Main Posts Feed" href="{{ site.url + '/feed.xml' }}">
@@ -61,34 +77,16 @@
 	<link rel="openid.delegate" href="{{ site.url }}" />
 	<link rel="openid.server" href="{{ author.urls.openid }}" />
 
-	{% if env.ELEVENTY_PRODUCTION %}
-		<link rel="icon" href="/images/favicon.ico" sizes="512x512">
-		<link rel="apple-touch-icon" href="/images/favicon-180.png">
-		<link rel="apple-touch-icon-precomposed" href="/images/favicon-180.png">
-		<link rel="msapplication-square310x310logo" href="/images/favicon-310.png">
-	{% else %}
-		<link rel="icon" href="/images/favicon-bw.ico" sizes="512x512">
-		<link rel="apple-touch-icon" href="/images/favicon-180-bw.png">
-		<link rel="apple-touch-icon-precomposed" href="/images/favicon-180-bw.png">
-		<link rel="msapplication-square310x310logo" href="/images/favicon-310-bw.png">
-	{% endif %}
-
 	<link rel="author" href="/humans.txt">
 	<link rel="manifest" href="/manifest.json">
 
 	<meta name="author" content="{{ author.name }}">
-	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="application-name" content="{{ site.title }}">
-	<meta name="apple-mobile-web-app-title" content="{{ site.title }}">
-	<meta name="msapplication-starturl" content="{{ site.url }}">
-	<meta name="description" content="{{ meta_description }}">
-	<meta name="theme-color" content="{{ palette | keyValue("raven") }}">
-	<meta name="msapplication-navbutton-color" content="{{ palette | keyValue("raven") }}">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-	<meta name="supported-color-schemes" content="light dark">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
 
-	<meta http-equiv="cleartype" content="on">
+	<meta name="theme-color" content="{{ palette | keyValue("raven") }}">
+	<meta name="supported-color-schemes" content="light dark">
 
 	<style>{%- include '../../css/main.css' -%}</style>
 	{% if css %}
@@ -109,6 +107,24 @@
 		{% if next_post %}
 			<link rel="next" href="{{ site.url + next_post.url }}">
 		{% endif %}
+
+		<!-- OpenGraph Microdata -->
+		{% if mf_root == 'review' %}
+			<meta property="og:type" content="review">
+		{% elif layout == 'post' %}
+			<meta property="og:type" content="article">
+		{% elif page.url.includes('/about') %}
+			<meta property="og:type" content="profile">
+		{% else %}
+			<meta property="og:type" content="website">
+		{% endif %}
+		<meta property="og:url" content="{{ canonical }}">
+		<meta property="og:title" content="{{ meta_title }}">
+		<meta property="og:description" content="{{ meta_description }}">
+		<meta property="og:locale" content="{{ site.locale }}">
+		<meta property="og:site_name" content="{{ site.title }}">
+		<meta property="og:image" content="{{ meta_image }}">
+
 		<!-- Twitter Microdata -->
 		<meta name="twitter:card" content="summary">
 		<meta name="twitter:creator" content="@{{ author.twitter }}">
@@ -121,20 +137,7 @@
 			<meta name="twitter:widgets:link-color" content="{{ palette | keyValue("raven") }}">
 			<meta name="twitter:widgets:border-color" content="{{ palette | keyValue("raven") }}">
 		{% endif %}
-		<!-- OpenGraph Microdata -->
-		{% if mf_root == 'review' %}
-			<meta property="og:type" content="review">
-		{% elif layout == 'post' %}
-			<meta property="og:type" content="article">
-		{% elif page.url.includes('/about') %}
-			<meta property="og:type" content="profile">
-		{% else %}
-			<meta property="og:type" content="website">
-		{% endif %}
-		<meta property="og:description" content="{{ meta_description }}">
-		<meta property="og:locale" content="{{ site.locale }}">
-		<meta property="og:url" content="{{ canonical }}">
-		<meta property="og:image" content="{{ meta_image }}">
+
 		{% if layout == 'post' %}
 			<meta property="article:published_time" content="{{ page.date | friendlyDate }}">
 			{% if updated or finish %}
