@@ -3,7 +3,7 @@ const Image = require("@11ty/eleventy-img")
 const env = require("../../data/env")
 
 module.exports = (eleventyConfig) => {
-	eleventyConfig.addNunjucksShortcode("image", (src, alt, classes = "", widths = [null]) => {
+	eleventyConfig.addNunjucksShortcode("image", (src, alt, classes = "", widths = [800]) => {
 		let formats
 		if (src.includes(".svg")) {
 			formats = ["svg"]

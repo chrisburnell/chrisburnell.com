@@ -41,7 +41,7 @@ Suddenly annoyed by this fact, I decided I’d once-and-for-all tackle the less-
 <aside><p>What do I mean when I say <em>theming</em> or <em>skinning</em>? In essense, this the practice of applying a secondary or tertiary design or colour palette to a website or application. You can see this in action on <a rel="external" href="http://www.csszengarden.com">CSS Zen Garden</a> or <a rel="external" href="https://adactio.com/about/site/#skins">Adactio</a>.</p></aside>To begin with, I wanted to find the pain points of *Pinboard’s* default design and address them in my theme. Most of the problems I have with the design have to do with white-space and poorly distinguished categorisation.
 
 <figure>
-    {% image './images/content/pinboard-before.png', '', [800] %}
+    {% image './images/content/pinboard-before.png', '' %}
     <figcaption><p>The <q>before shot.</q></p></figcaption>
 </figure>
 
@@ -91,12 +91,12 @@ I took a look at a few of the top plugins available under the [Pinboard category
 After tinkering with my own file for a few days and experimenting through daily use, I came up with what I think is a pretty decent, clean design:
 
 <figure>
-    {% image './images/content/pinboard-after.png', '', [800] %}
+    {% image './images/content/pinboard-after.png', '' %}
     <figcaption>The final piece.</figcaption>
 </figure>
 
 <figure>
-    {% image './images/content/pinboard-private.png', '', [800] %}
+    {% image './images/content/pinboard-private.png', '' %}
     <figcaption>Private bookmarks.</figcaption>
 </figure>
 
