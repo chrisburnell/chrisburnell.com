@@ -20,9 +20,9 @@ syndicate_to:
   - https://twitter.com/iamchrisburnell/status/1051772305360195584
 ---
 
-{% caniuse 'css-variables' %}
-
 One of my favourite parts of developing for the web is the ever-shifting landscape and the opportunity to work with new technologies. Sometimes they aren’t apt for use in production, but fortunately for us today, *CSS Variables* are pretty reliable to use on their own. However, if you’re in a position similar to mine and find yourself often needing to support old versions of *Internet Explorer* or making sure *all* of your browser support bases are covered, this *SCSS* setup should be useful for you.
+
+{% caniuse 'css-variables' %}
 
 ## The Setup
 
