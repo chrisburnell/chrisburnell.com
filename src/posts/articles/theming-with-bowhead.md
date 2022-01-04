@@ -1,5 +1,4 @@
 ---
-published: false
 draft: true
 date: 2021-06-17T09:30:00+0100
 title: "Theming with Bowhead"
