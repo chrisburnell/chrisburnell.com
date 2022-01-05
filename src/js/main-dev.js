@@ -13,8 +13,8 @@ urlInput()
 import sparkline from "@chrisburnell/spark-line"
 sparkline()
 
-import pentatonicLoop from "./modules/pentatonic-loop"
-pentatonicLoop()
+import sounds from "./modules/sounds"
+sounds()
 
 import shareButton from "./modules/share-button"
 shareButton()

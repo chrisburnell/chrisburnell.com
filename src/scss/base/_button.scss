@@ -15,7 +15,7 @@ button {
 	cursor: pointer;
 }
 
-button:not([class*="anchor"]),
+button:not(.anchor),
 [type="button"],
 .button {
 	@include font-family(default);

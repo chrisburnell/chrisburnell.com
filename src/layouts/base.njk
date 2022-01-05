@@ -205,7 +205,9 @@
 					{%- if link.secondary -%}
 						<li><a href="{{ link.url }}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title }}</a></li>
 					{%- endif -%}
-				{%- endfor -%}<li><button id="color-scheme-toggle" class=" [ anchor ] [ requires-js  js-color-scheme-toggle ] "><span class=" [ js-color-scheme-status ] ">Enable dark mode</span></button></li>
+				{%- endfor -%}
+				<li><button id="color-scheme-toggle" class=" [ anchor ] [ requires-js  js-color-scheme-toggle ] "><span class=" [ js-color-scheme-status ] ">Enable dark mode</span></button></li>
+				<li><button id="sounds-toggle" class=" [ anchor ] [ requires-js  js-sounds-toggle ] "><span class=" [ js-sounds-status ] ">Enable sounds</span></button></li>
 			</ol>
 			<ol class=" [ footer__navigation ] ">
 				<li>

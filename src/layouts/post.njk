@@ -59,7 +59,7 @@ layout: base
 
 	<h1 id="title" class=" [ title{% if title_error %} title--negative{% elif title_success %} title--positive{% endif %} ] {{ '[ hidden ] ' if not title and not of_title }}">
 		{% if of_title %}
-			<span>{{ categoryProper | default(category) | title }} of “{{ title | default(of_title) | striptags(true) | safe }}”</span>
+			<span>{{ categoryProper | default(category) | title }} of <q>{{ title | default(of_title) | striptags(true) | safe }}</q></span>
 		{% elif title %}
 			<span>{{ title | safe }}</span>
 		{% else %}
