@@ -26,11 +26,6 @@ const sounds = () => {
 
 		if (currentSetting) {
 			soundsStatusText.innerText = `${currentSetting === "true" ? "Disable" : "Enable"} sounds`
-
-			if (currentSetting === "true") {
-				const randomKey = Math.floor(Math.random() * headerDefaults.keyLimit)
-				pentatonic([randomKey], headerDefaults.duration, headerDefaults.volume)
-			}
 		} else {
 			soundsStatusText.innerText = `Enable sounds`
 		}
@@ -48,6 +43,11 @@ const sounds = () => {
 		event.preventDefault()
 
 		applySetting(toggleSetting())
+
+		if (currentSetting === "true") {
+			const randomKey = Math.floor(Math.random() * headerDefaults.keyLimit)
+			pentatonic([randomKey], headerDefaults.duration, headerDefaults.volume)
+		}
 	})
 
 	applySetting()
