@@ -55,22 +55,20 @@ const sounds = () => {
 	// Content + Sparklines
 	for (let target of document.querySelectorAll(".pentatonic")) {
 		target.addEventListener("click", () => {
-			if (localStorage.getItem(STORAGE_KEY) === "true") {
-				let values = target.values || target.dataset.values
-				let duration = target.getAttribute("duration") ? parseFloat(target.getAttribute("duration")) : target.dataset.duration ? parseFloat(target.dataset.duration) : defaults.duration
-				let keyStart = target.getAttribute("key-start") ? parseFloat(target.getAttribute("key-start")) : target.dataset.keyStart ? parseFloat(target.dataset.keyStart) : defaults.keyStart
-				let keyLimit = target.getAttribute("key-limit") ? parseFloat(target.getAttribute("key-limit")) : target.dataset.keyLimit ? parseFloat(target.dataset.keyLimit) : defaults.keyLimit
-				let keyIntervals = target.getAttribute("key-intervals")
-					? target
-							.getAttribute("key-intervals")
-							.split(",")
-							.map((interval) => parseFloat(interval))
-					: target.dataset.keyIntervals
-					? target.dataset.keyIntervals.split(",").map((interval) => parseFloat(interval))
-					: defaults.keyIntervals
-				if (values) {
-					pentatonic(values.split(","), duration, defaults.volume, keyStart, keyIntervals, keyLimit)
-				}
+			let values = target.values || target.dataset.values
+			let duration = target.getAttribute("duration") ? parseFloat(target.getAttribute("duration")) : target.dataset.duration ? parseFloat(target.dataset.duration) : defaults.duration
+			let keyStart = target.getAttribute("key-start") ? parseFloat(target.getAttribute("key-start")) : target.dataset.keyStart ? parseFloat(target.dataset.keyStart) : defaults.keyStart
+			let keyLimit = target.getAttribute("key-limit") ? parseFloat(target.getAttribute("key-limit")) : target.dataset.keyLimit ? parseFloat(target.dataset.keyLimit) : defaults.keyLimit
+			let keyIntervals = target.getAttribute("key-intervals")
+				? target
+						.getAttribute("key-intervals")
+						.split(",")
+						.map((interval) => parseFloat(interval))
+				: target.dataset.keyIntervals
+				? target.dataset.keyIntervals.split(",").map((interval) => parseFloat(interval))
+				: defaults.keyIntervals
+			if (values) {
+				pentatonic(values.split(","), duration, defaults.volume, keyStart, keyIntervals, keyLimit)
 			}
 		})
 	}
@@ -82,14 +80,32 @@ const sounds = () => {
 		}
 	})
 
-	// Primary Navigation + Buttons
-	// for (let target of document.querySelectorAll(".navigation__list a, button:not(.anchor), .button:not(.anchor), [type=button]")) {
 	// Primary Navigation
 	for (let target of document.querySelectorAll(".navigation__list a")) {
 		target.addEventListener("mouseenter", () => {
 			if (localStorage.getItem(STORAGE_KEY) === "true") {
 				const randomKey = Math.floor(Math.random() * headerDefaults.keyLimit)
 				pentatonic([randomKey], headerDefaults.duration, headerDefaults.volume)
+			}
+		})
+	}
+
+	const nameButtons = document.querySelectorAll(".js-name-button")
+	const nameAudio = new Audio("audio/name.mp3")
+	const nameDefaults = {
+		duration: 1410,
+	}
+
+	let isPlaying = false
+
+	for (let target of nameButtons) {
+		target.addEventListener("click", (event) => {
+			if (!isPlaying) {
+				isPlaying = true
+				nameAudio.play()
+				window.setTimeout(() => {
+					isPlaying = false
+				}, nameDefaults.duration)
 			}
 		})
 	}

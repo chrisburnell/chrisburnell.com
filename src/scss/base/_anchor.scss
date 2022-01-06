@@ -4,8 +4,7 @@
 /// @link https://chrisburnell.com/styleguide/#inline-elements
 ////
 
-a,
-.anchor {
+%collection-anchors {
 	@include transition(background-color, color, text-decoration-color);
 	background-color: transparent;
 	color: h(bowhead);

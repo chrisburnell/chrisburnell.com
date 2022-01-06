@@ -44,8 +44,7 @@
 		text-shadow: 0.025em -0.025em 0 h(mineshaft), 0.025em -0.0125em 0 h(mineshaft), 0.025em 0.025em 0 h(mineshaft), 0 0.025em 0 h(mineshaft), -0.025em 0.025em 0 h(mineshaft), -0.025em -0.0125em 0 h(mineshaft), -0.025em -0.025em 0 h(mineshaft);
 	}
 
-	a,
-	.anchor {
+	%collection-anchors {
 		color: h(highland);
 		text-decoration-color: h(kaiser);
 	}

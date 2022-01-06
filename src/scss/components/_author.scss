@@ -38,7 +38,7 @@
 		@include v(margin-inline-start, gap);
 	}
 
-	.anchor {
+	%collection-anchors {
 		@include case(uppercase, 0);
 		@include font-family(default);
 		color: inherit;
@@ -48,7 +48,7 @@
 	}
 
 	&:is(:hover, :focus, :active) {
-		.anchor {
+		%collection-anchors {
 			text-decoration-color: h(maple);
 		}
 	}

@@ -136,7 +136,7 @@
 		@include v(max-inline-size, line-length-clamp);
 	}
 
-	a {
+	%collection-anchors {
 		color: inherit;
 	}
 

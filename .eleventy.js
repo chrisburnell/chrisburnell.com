@@ -95,6 +95,7 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.addLayoutAlias("feed", "feed.njk")
 
 	// Static Files
+	eleventyConfig.addPassthroughCopy("audio")
 	eleventyConfig.addPassthroughCopy("css")
 	eleventyConfig.addPassthroughCopy("fonts")
 	eleventyConfig.addPassthroughCopy("images/*")

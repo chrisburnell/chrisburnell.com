@@ -3,6 +3,10 @@
 /// @group abstracts
 ////
 
+:is(a, .anchor) {
+	@extend %collection-anchors !optional;
+}
+
 :is(img, input[type="image"], picture, svg) {
 	@extend %collection-images !optional;
 }
