@@ -44,7 +44,7 @@ const sounds = () => {
 
 		applySetting(toggleSetting())
 
-		if (currentSetting === "true") {
+		if (localStorage.getItem(STORAGE_KEY) === "true") {
 			const randomKey = Math.floor(Math.random() * headerDefaults.keyLimit)
 			pentatonic([randomKey], headerDefaults.duration, headerDefaults.volume)
 		}
