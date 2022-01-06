@@ -26,7 +26,7 @@ module.exports = (eleventyConfig) => {
 					<li class="${support.ios_saf.y ? "supported" : support.ios_saf.a ? "partial" : "unsupported"}">iOS Safari: ${support.ios_saf.y ? `${support.ios_saf.y}+` : support.ios_saf.a ? `${support.ios_saf.a}+` : "No"}</li>
 					<li class="${support.samsung.y ? "supported" : support.samsung.a ? "partial" : "unsupported"}">Samsung Internet: ${support.samsung.y ? `${support.samsung.y}+` : support.samsung.a ? `${support.samsung.a}+` : "No"}</li>
 				</ul>
-				<p class="small">Browser support data for <code>${feature}</code> comes from <a href="https://caniuse.com/#feat=${feature}">caniuse.com</a> and is up-to-date as of ${DateTime.fromJSDate(new Date(global.now)).toFormat("dd LLLL yyyy")}.</p>
+				<p class="small">Browser support data for <code>${feature}</code> comes from <a href="https://caniuse.com/#feat=${feature}">caniuse.com</a> and is up-to-date as of <time datetime="${DateTime.fromJSDate(new Date(global.now)).toFormat("yyyy-MM-dd")}">${DateTime.fromJSDate(new Date(global.now)).toFormat("dd LLLL yyyy")}</time>.</p>
 			</div>
 		`,
 			{
