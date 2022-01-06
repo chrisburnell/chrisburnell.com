@@ -91,7 +91,7 @@ const sounds = () => {
 	}
 
 	const nameButtons = document.querySelectorAll(".js-name-button")
-	const nameAudio = new Audio("audio/name.mp3")
+	const nameAudio = new Audio("/audio/name.mp3")
 	const nameDefaults = {
 		duration: 1410,
 	}
