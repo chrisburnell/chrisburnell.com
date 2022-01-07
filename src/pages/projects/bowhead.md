@@ -190,8 +190,6 @@ With this knowledge under our belt, we can begin to define the design tokens for
 
 <h3 id="default">01. Variable As Default</h3>
 
-<div class="columns"><div class="owl">
-
 ```scss
 $bowhead-variable-as-default: true;
 body {
@@ -204,8 +202,6 @@ body {
     color: var(--color-brick);
 }
 ```
-
-</div><div class="owl">
 
 ```scss
 $bowhead-variable-as-default: false;
@@ -220,11 +216,7 @@ body {
 }
 ```
 
-</div></div>
-
 <h3 id="fallback">02. Show Fallback Value</h3>
-
-<div class="columns"><div class="owl">
 
 ```scss
 $bowhead-variable-as-default: true;
@@ -241,8 +233,6 @@ body {
 }
 ```
 
-</div><div class="owl">
-
 ```scss
 $bowhead-variable-as-default: true;
 $bowhead-show-fallback: false;
@@ -256,13 +246,9 @@ body {
     color: var(--color-desert);
 }
 ```
-
-</div></div>
 
 When <samp>$bowhead-variable-as-default</samp> is <samp>false</samp>, <samp>$bowhead-show-fallback</samp> has no effect.
 
-<div class="columns"><div class="owl">
-
 ```scss
 $bowhead-variable-as-default: false;
 $bowhead-show-fallback: true;
@@ -276,8 +262,6 @@ body {
     color: #d2b48c;
 }
 ```
-
-</div><div class="owl">
 
 ```scss
 $bowhead-variable-as-default: false;
@@ -293,11 +277,7 @@ body {
 }
 ```
 
-</div></div>
-
 <h3 id="generate">03. Generating CSS Variables</h3>
-
-<div class="columns"><div class="owl">
 
 ```scss
 $bowhead-generate: true;
@@ -321,15 +301,11 @@ $bowhead-generate: true;
 }
 ```
 
-</div><div class="owl">
-
 ```scss
 $bowhead-generate: false;
 ```
 
 Nothing is generated!
-
-</div></div>
 
 <h3 id="property-map">04. Property Map <em>(optional)</em></h3>
 
