@@ -5,8 +5,8 @@
 
 .logo {
 	fill: h(raven);
-	inline-size: 4rem;
-	block-size: 4rem;
+	block-size: clamp(4rem, 12vw + -3.5rem, 5.5rem);
+	inline-size: clamp(4rem, 12vw + -3.5rem, 5.5rem);
 	display: inline-block;
 
 	svg {
