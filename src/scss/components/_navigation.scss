@@ -9,6 +9,7 @@
 	grid-template-rows: repeat(2, auto);
 	@include v(column-gap, small);
 	@include v(row-gap, tiny);
+	text-align: center;
 
 	@include media("above:small") {
 		grid-template-columns: repeat(4, auto);
