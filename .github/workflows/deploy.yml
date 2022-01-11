@@ -38,7 +38,6 @@ jobs:
         with:
           timezone: Europe/London
       - name: Install npm modules
-        if: steps.cache_npm.outputs.cache-hit != 'true'
         run: npm ci
       - name: Build website
         run: npm run build
