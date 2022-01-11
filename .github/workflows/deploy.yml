@@ -20,11 +20,13 @@ jobs:
         with:
           node-version: '16.x'
       - name: Cache npm dependencies
+        id: cache_npm
         uses: actions/cache@v1
         with:
           path: ~/.npm
           key: ${{ runner.OS }}-npm-cache-${{ hashFiles('**/package-lock.json') }}
       - name: Cache eleventy assets
+        id: cache_eleventy
         uses: actions/cache@v2
         with:
           path: |
@@ -36,6 +38,7 @@ jobs:
         with:
           timezone: Europe/London
       - name: Install npm modules
+        if: steps.cache_npm.outputs.cache-hit != 'true'
         run: npm ci
       - name: Build website
         run: npm run build

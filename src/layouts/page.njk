@@ -8,11 +8,7 @@ layout: base
 	</h1>
 
 	<div class=" [ details ] ">
-		{% if description == site.description %}
-			<p class=" [ p-summary ] " aria-hidden="true">{{ description | safe | replace('href=', 'tabindex="-1" href=') }}</p>
-		{% elif description %}
-			<p class=" [ p-summary ] ">{{ description | safe }}</p>
-		{% endif %}
+		<p class=" [ p-summary ] ">{{ description | safe }}</p>
 	</div>
 
 	<div class=" [ content__body ] ">
