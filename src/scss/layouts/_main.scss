@@ -160,7 +160,29 @@
 }
 
 .table-of-contents {
+	$background: mix(map-get($palette, "thunder"), map-get($palette, "milou"), map-get($opacities, "delta") * 100%);
+	// prettier-ignore
+	background:
+		linear-gradient(#{$background} 30%, transparent),
+		linear-gradient(transparent, #{$background} 70%) 0 100%,
+		radial-gradient(farthest-side at 50% 0, #{h(thunder, gamma)}, transparent),
+		radial-gradient(farthest-side at 50% 100%, #{h(thunder, gamma)}, transparent) 0 100%;
+	background-color: #{$background};
+	// prettier-ignore
+	background-size:
+		100% #{v(measure, large)},
+		100% #{v(measure, large)},
+		100% #{v(font-size, small)},
+		100% #{v(font-size, small)};
+	// prettier-ignore
+	background-attachment:
+		local,
+		local,
+		scroll,
+		scroll;
+	background-repeat: no-repeat;
 	@include v(margin-block, large);
+	overflow-x: hidden;
 	overflow-y: auto;
 	overscroll-behavior: contain;
 

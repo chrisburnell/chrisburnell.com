@@ -7,7 +7,7 @@ html {
 	background-color: h(kaiser);
 	position: relative;
 	overflow-x: hidden;
-	// prevent horizontal jump when navigating short page <--> tall page
+	// prevent horizontal jump when navigating short page ←→ tall page
 	overflow-y: scroll;
 	overscroll-behavior: contain;
 	accent-color: h(raven);
@@ -40,23 +40,3 @@ body {
 		display: block;
 	}
 }
-
-// @page {
-//     @bottom-right {
-//         content: counter(page);
-//     }
-// }
-
-// @page cover-page {
-//     @bottom-right {
-//         content: none;
-//     }
-// }
-
-// // .title {
-// //     page: cover-page;
-// // }
-
-// figure:not(.no-counter) {
-//     counter-increment: figureNumber;
-// }
