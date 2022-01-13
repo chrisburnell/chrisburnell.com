@@ -4,12 +4,11 @@
 ////
 
 .logo {
-	fill: h(raven);
-	block-size: clamp(4rem, 12vw + -3.5rem, 5.5rem);
-	inline-size: clamp(4rem, 12vw + -3.5rem, 5.5rem);
+	@include v(block-size, logo);
+	@include v(inline-size, logo);
 	display: inline-block;
 
-	svg {
+	%collection-images {
 		@include transition(transform);
 		max-block-size: 100%;
 		object-fit: contain;
@@ -19,8 +18,8 @@
 		background: none;
 		outline: none;
 
-		svg {
-			transform: scale(1.1) rotate(-6deg);
+		%collection-images {
+			transform: scale(1.1) rotate(6deg);
 		}
 	}
 }
