@@ -6,7 +6,7 @@
 .logo {
 	@include v(block-size, logo);
 	@include v(inline-size, logo);
-	display: inline-block;
+	display: flex;
 
 	%collection-images {
 		@include transition(transform);
