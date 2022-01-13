@@ -13,8 +13,9 @@ module.exports = async (eleventyConfig) => {
 			outputDir: "./images/",
 		}
 
-		const favicons = await glob("./images/raven*.svg")
-		for (const f of favicons) {
+		const favicon_colour = await glob("./images/raven.svg")
+		const favicon_bw = await glob("./images/raven-bw.svg")
+		for (const f of [...favicon_colour, ...favicon_bw]) {
 			console.log(`Generating image varieties from: ${f}`)
 			await Image(
 				f,
