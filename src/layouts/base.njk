@@ -18,7 +18,12 @@
 	{% set meta_title = site.tagline | striptags(true) %}
 {%- endif -%}
 
-{%- set meta_description = description | striptags(true) | default('A page on chrisburnell.com') | safe -%}
+{%- set meta_description -%}A page on {{ site.url | getHost }}{%- endset -%}
+{%- if description -%}
+	{%- set meta_description = description | striptags(true) | safe -%}
+{%- elif category -%}
+	{%- set meta_description = meta_description | replace('page', categoryProper | default(category) | title) -%}
+{%- endif -%}
 {%- set meta_image = site.url + site.favicon -%}
 {%- if banner -%}
 	{%- set meta_image -%}{{ site.url }}/images/built/{{ banner | replace('jpg', 'jpeg') }}{%- endset -%}
