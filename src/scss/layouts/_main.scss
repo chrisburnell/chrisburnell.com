@@ -12,6 +12,8 @@
 	display: grid;
 	align-items: flex-start;
 	grid-template-columns: 1fr;
+	overflow-x: visible;
+	overflow-y: hidden;
 
 	@include media("above:medium") {
 		grid-template-columns:

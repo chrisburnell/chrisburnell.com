@@ -9,6 +9,27 @@
 	justify-content: space-between;
 	align-items: center;
 	@include v(gap, gutter);
+	position: relative;
+
+	.perch {
+		@include media("below:large") {
+			position: relative;
+		}
+
+		&::before {
+			content: "";
+			background-image: url("/images/raven.svg");
+			background-repeat: no-repeat;
+			@include v(opacity, gamma);
+			@include v(width, logo-large);
+			height: calc(#{v(measure, logo-large)} / 1.205);
+			position: absolute;
+			inset-inline-start: 100%;
+			inset-block-end: 0;
+			transform: translateX(-10%) translateY(-10%) scaleX(-1);
+			@include v(z-index, below);
+		}
+	}
 }
 .title--positive span,
 .title--negative span {
