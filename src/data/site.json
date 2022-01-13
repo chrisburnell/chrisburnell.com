@@ -6,6 +6,8 @@
   "repository": "chrisburnell.com",
   "locale": "en",
   "established": "2008",
+  "favicon": "/images/favicon-512.png",
+  "logo": "/images/raven.svg",
   "limits": {
     "deck": 2,
     "shelf": 3,
