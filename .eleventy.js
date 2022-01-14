@@ -47,7 +47,7 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.addPlugin(syntaxHighlightPlugin)
 	eleventyConfig.addPlugin(webmentionsPlugin, {
 		domain: site.url,
-		duration: "11h",
+		duration: "23h",
 		urlReplacements: urlReplacements,
 	})
 
