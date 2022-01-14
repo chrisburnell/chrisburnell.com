@@ -72,12 +72,13 @@
 }
 
 .breadcrumbs {
+	grid-column: content;
+	grid-row: 1 / 2;
 	color: h(kaiser);
 	@include v(margin-block-start, gigantic);
 
-	@include media("above:medium") {
-		grid-column: content;
-		grid-row: 1 / 2;
+	@include media("below:medium") {
+		display: none;
 	}
 
 	li {

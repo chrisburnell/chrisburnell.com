@@ -59,11 +59,11 @@ layout: base
 
 	<h1 id="title" class=" [ title{% if title_error %} title--negative{% elif title_success %} title--positive{% endif %} ] {{ '[ hidden ] ' if not title and not of_title }}">
 		{% if of_title %}
-			<span>{{ categoryProper | default(category) | title }} of <q>{{ title | default(of_title) | striptags(true) | safe }}</q></span>
+			<span class=" [ perch ] ">{{ categoryProper | default(category) | title }} of <q>{{ title | default(of_title) | striptags(true) | safe }}</q></span>
 		{% elif title %}
-			<span>{{ title | safe }}</span>
+			<span class=" [ perch ] ">{{ title | safe }}</span>
 		{% else %}
-			<span>{{ categoryProper | default(category) | title }} from {{ page.date | friendlyDate }}</span>
+			<span class=" [ perch ] ">{{ categoryProper | default(category) | title }} from {{ page.date | friendlyDate }}</span>
 		{% endif %}
 	</h1>
 
