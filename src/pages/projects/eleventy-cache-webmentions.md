@@ -173,5 +173,3 @@ And, if you need it, the entire Object of sorted Webmentions is available too:
 ## Next steps
 
 - It is currently hard-coded to utilise [Webmention.io](https://webmention.io), but I'm not sure how to make this plugin agnostic of that. I need to do more research into what, if any, standard API parameters and output might be: ideally close to what I’m working with now.
-- Refactor sloppy code
-  - Ideally, get another set of experienced eyes across it
