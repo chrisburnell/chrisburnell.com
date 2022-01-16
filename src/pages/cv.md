@@ -7,6 +7,7 @@ sitemap:
   exclude: true
 ads: false
 monetizaton: false
+perch: true
 toc: true
 ---
 

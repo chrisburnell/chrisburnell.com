@@ -4,7 +4,7 @@ layout: base
 <article id="content" class=" [ content ] [ wrap ] [ page ] ">
 
 	<h1 id="title" class=" [ title{% if title_error %} title--negative{% elif title_success %} title--positive{% endif %} ] ">
-		<span class=" [ perch ] [ p-name ] ">{{ tagline | default(title) | safe }}</span>
+		<span class=" [ p-name ] {% if perch %}[ perch ] {% endif %}">{{ tagline | default(title) | safe }}</span>
 	</h1>
 
 	<div class=" [ details ] ">
