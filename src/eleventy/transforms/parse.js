@@ -26,7 +26,6 @@ module.exports = (value, outputPath) => {
 		const articleHeadings = $("main article h2")
 		articleHeadings.each(function () {
 			const headingID = $(this).attr("id") || slugify($(this).text().toLowerCase())
-			console.log($(this).html())
 			$(this).html(
 				minify(`
 				${$(this).html()}

@@ -56,43 +56,18 @@
         </main>
         <footer class=" [ footer ] ">
           <div class=" [ wrap ] ">
-            <ol class=" [ footer__navigation ] ">
-              <li>
-                <a href="/">Home</a>
-              </li>
-              <li>
-                <a href="/archive/">Archive</a>
-              </li>
-              <li>
-                <a href="/projects/">Projects</a>
-              </li>
-              <li>
-                <a href="/about/">About</a>
-              </li>
-              <li>
-                <a href="/privacy/">Privacy</a>
-              </li>
-              <li>
-                <a href="/styleguide/">Styleguide</a>
-              </li>
+            <ol class=" [ footer__navigation ] ">{% for link in navigation %}{% if link.secondary %}<li>
+                <a href="{{ link.url }}">{{ link.title }}</a>
+              </li>{% endif %}{% endfor %}
             </ol>
             <ol class=" [ footer__navigation ] ">
               <li>
-                <a id="copyright" href="/license/">© {{ global.now | friendlyDate("yyyy") }} <span class=" [ canada ] ">{{ author.name }}</span></a>
-              </li>
+                <a id="copyright" rel="license" href="/license/">© {{ site.established }}–{{ global.now | friendlyDate("yyyy") }} <span class=" [ canada ] ">{{ author.name }}</span></a>
+              </li>{% for item in socials %}{% if item.url and not item.hidden and not item.primary %}
               <li>
-                <a href="https://github.com/{{ author.github }}">GitHub</a>
-              </li>
-              <li>
-                <a href="https://twitter.com/{{ author.twitter }}">Twitter</a>
-              </li>
-              <li>
-                <a href="https://codepen.io/{{ author.codepen }}">CodePen</a>
-              </li>
-              <li>
-                <a href="/feed.xml">RSS</a>
-              </li>
-            </ol>
+                <a href="{{ item.url }}">{{ item.title }}</a>
+              </li>{% endif %}{% endfor %}
+          </ol>
           </div>
         </footer>
       </body>
