@@ -3,12 +3,12 @@
 	<ul class=" [ meta__list ] ">
 		{% for lookup in collections.categories %}<li>{% if '/' + lookup.plural + '/' != page.url %}<a href="/{{ lookup.plural }}/">{{ lookup.properPlural }}</a>{% else %}<a href="#content">{{ lookup.properPlural }}</a>{% endif %}</li>{% endfor %}
 	</ul>
-	<h2 hidden>Browse by tag</h2>
-	<ul hidden class=" [ meta__list ] ">
+	<h2>Browse by tag</h2>
+	<ul class=" [ meta__list ] ">
 		{% for lookup in collections.tags | sort %}<li>{% if '/tag/' + lookup != page.url %}<a href="/tag/{{ lookup }}">#{{ lookup }}</a>{% else %}<a href="#content">#{{ lookup }}</a>{% endif %}</li>{% endfor %}
 	</ul>
 	<h2>More pages</h2>
-	<ul class=" [ meta__list  meta__list--block ] ">
+	<ul class=" [ meta__list  meta__list--block  skip-owl ] ">
 		<li><a href="/cv/">CV</a></li>
 		<li><a href="/guestbook/">Guestbook</a></li>
 		<li><a href="/indieweb/">Indieweb</a></li>
