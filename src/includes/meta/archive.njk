@@ -2,6 +2,8 @@
 	<h2>Browse by category</h2>
 	<ul class=" [ meta__list ] ">
 		{% for lookup in collections.categories %}<li>{% if '/' + lookup.plural + '/' != page.url %}<a href="/{{ lookup.plural }}/">{{ lookup.properPlural }}</a>{% else %}<a href="#content">{{ lookup.properPlural }}</a>{% endif %}</li>{% endfor %}
+		<li><a href="/hot/">hot</a></li>
+		<li><a href="/popular/">popular</a></li>
 	</ul>
 	<h2>Browse by tag</h2>
 	<ul class=" [ meta__list ] ">
