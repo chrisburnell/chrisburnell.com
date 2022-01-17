@@ -8,6 +8,7 @@ const pregenImagePlugin = require("./src/eleventy/plugins/pregenImagePlugin")
 const imagePlugin = require("./src/eleventy/plugins/imagePlugin")
 const imageAvatarPlugin = require("./src/eleventy/plugins/imageAvatarPlugin")
 // const albumCoverPlugin = require("./src/eleventy/plugins/albumCoverPlugin")
+const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output")
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight")
 const webmentionsPlugin = require("@chrisburnell/eleventy-cache-webmentions")
 
@@ -38,6 +39,11 @@ const urlReplacements = require("./src/data/urlReplacements.json")
 const markdownParser = require("markdown-it")
 
 module.exports = (eleventyConfig) => {
+	if (process.env.ELEVENTY_PRODUCTION) {
+		eleventyConfig.setQuietMode(true)
+		eleventyConfig.addPlugin(directoryOutputPlugin)
+	}
+
 	// Eleventy Plugins
 	eleventyConfig.addPlugin(caniusePlugin)
 	eleventyConfig.addPlugin(pregenImagePlugin)
