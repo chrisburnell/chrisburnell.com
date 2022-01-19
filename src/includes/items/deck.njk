@@ -157,7 +157,9 @@
 			{% endif %}
 		</h3>
 	{% endif %}
-	{% include 'photo.njk' %}
+	{% if not simple %}
+		{% include 'photo.njk' %}
+	{% endif %}
 	{% if item.data.description and item.data.tags and (item.data.tags.includes('page') or item.data.tags.includes('writing')) %}
 		<p class=" [ p-summary ] {% if item.data.category == 'article' %}[ line-clamp ] {% endif %}">{{ item.data.description | striptags(true) | urlize | safe }}</p>
 	{% elif item.data.description and item.data.description_markdown %}
@@ -177,19 +179,23 @@
 	{% elif item.data.category == 'talk' %}
 		<p class=" [ p-summary ] ">{{ item.templateContent | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
 	{% endif %}
-	{% if item.date or responses.length %}
+	{% if item.data.date or item.date or item.data.updated or responses.length %}
 		<div class=" [ deck__meta ] ">
-			{%- if item.date -%}
+			{%- if item.data.date or item.date -%}
 				<small>published</small>
-				<a class=" [ u-url ] " href="{{ item.url }}"{% if item_title or item_of_title %} tabindex="-1"{% endif %}><time class=" [ dt-published ] " datetime="{{ item.date | rfcDate }}">{{ item.date | friendlyDate }}</time></a>
+				<a class=" [ u-url ] " href="{{ item.url }}"{% if item_title or item_of_title %} tabindex="-1"{% endif %}>
+					<time class=" [ dt-published ] " datetime="{{ item.data.date | default(item.date) | rfcDate }}">{{ item.data.date | default(item.date) | friendlyDate }}</time>
+				</a>
 			{%- endif -%}
 			{%- if item.data.updated %}
 				{% if item.date %}·{% endif %}
 				<small>updated</small>
-				<a href="{{ item.url }}#updated" tabindex="-1"><time class=" [ dt-updated ] " datetime="{{ item.data.updated | rfcDate }}">{{ item.data.updated | friendlyDate }}</time></a>
+				<a href="{{ item.url }}#updated" tabindex="-1">
+					<time class=" [ dt-updated ] " datetime="{{ item.data.updated | rfcDate }}">{{ item.data.updated | friendlyDate }}</time>
+				</a>
 			{% endif %}
 			{%- if responses.length %}
-				{% if item.date or item.data.updated %}·{% endif %}
+				{% if item.data.date or item.date or item.data.updated %}·{% endif %}
 				<a href="{{ item.url }}#webmentions" title="Jump to webmentions for this post">{{ responses.length }} response{{ 's' if responses.length > 1 }} <span class="hidden">to {{ item_title }}</span></a>
 			{% endif %}
 		</div>

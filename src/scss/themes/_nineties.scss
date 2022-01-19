@@ -1,14 +1,18 @@
 ////
-/// Silly goose
+/// Geocities, baby!
 /// @group themes
 ////
 
-@mixin theme-silly() {
+@mixin theme-nineties() {
 	--font-family-default: "Comic Sans MS", monospace;
 	--font-family-alpha: "Papyrus", "Comic Sans MS", monospace;
 	--font-family-serif: "Comic Sans MS", monospace;
+
+	.primary-navigation {
+		@include v(font-family, alpha);
+	}
 }
 
-.silly {
-	@include theme-silly;
+.nineties {
+	@include theme-nineties;
 }

@@ -92,9 +92,6 @@ const sounds = () => {
 
 	const nameButtons = document.querySelectorAll(".js-name-button")
 	const nameAudio = new Audio("/audio/name.mp3")
-	const nameDefaults = {
-		duration: 1410,
-	}
 
 	let isPlaying = false
 
@@ -105,7 +102,7 @@ const sounds = () => {
 				nameAudio.play()
 				window.setTimeout(() => {
 					isPlaying = false
-				}, nameDefaults.duration)
+				}, nameAudio.duration)
 			}
 		})
 	}

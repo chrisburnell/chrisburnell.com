@@ -1,41 +1,5 @@
 [
   {
-    "url": "/eleventy-cache-webmentions/",
-    "data": {
-      "title": "eleventy-cache-webmentions (v{{ pkg.dependencies['@chrisburnell/eleventy-cache-webmentions'] | replace('^', '') }})",
-      "description": "Cache webmentions using eleventy-cache-assets and make them available to use in collections, templates, pages, etc.",
-      "description_markdown": true,
-      "emoji": "💬"
-    }
-  },
-  {
-    "url": "/spark-line/",
-    "data": {
-      "title": "spark-line (v{{ pkg.dependencies['@chrisburnell/spark-line'] | replace('^', '') }})",
-      "description": "Turn any array of integers into a fun little chart. Lends well to <a href=\"/pentatonic/\">“automusic”</a>.",
-      "description_markdown": true,
-      "emoji": "📈"
-    }
-  },
-  {
-    "url": "/bowhead/",
-    "data": {
-      "title": "Bowhead (v{{ pkg.dependencies['@chrisburnell/bowhead'] | replace('^', '') }})",
-      "description": "Memorable and maintainable design tokens in SCSS.",
-      "description_markdown": true,
-      "emoji": "🐋"
-    }
-  },
-  {
-    "url": "/pentatonic/",
-    "data": {
-      "title": "Pentatonic (v{{ pkg.dependencies['@chrisburnell/pentatonic'] | replace('^', '') }})",
-      "description": "Turn any array of integers into a fun little melody.",
-      "description_markdown": true,
-      "emoji": "🎹"
-    }
-  },
-  {
     "url": "https://dnd.chrisburnell.com",
     "data": {
       "title": "The Arcanum",

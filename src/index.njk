@@ -77,7 +77,7 @@ sitemap:
 			<nav class=" [ deck ] " aria-labelledby="projects">
 				{%- set hfeed = false -%}
 				{%- set truncate = true -%}
-				{% for item in projects.personal | limit(site.limits.feature) %}
+				{% for item in collections.projects | limit(site.limits.feature) %}
 					{%- set responses = item.url | getWebmentions -%}
 					{% include 'items/deck.njk' %}
 				{% endfor %}

@@ -4,8 +4,13 @@ const ignoredTags = require("../../data/ignoredTags.json")
 
 module.exports = {
 	isPublished: (item) => {
-		if ("data" in item && "draft" in item.data) {
-			return false
+		if ("data" in item) {
+			if ("draft" in item.data && item.data.draft === true) {
+				return false
+			}
+			if ("published" in item.data && item.data.published === false) {
+				return false
+			}
 		}
 		return true
 	},
