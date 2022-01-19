@@ -76,6 +76,7 @@ sitemap:
 			</h2>
 			<nav class=" [ deck ] " aria-labelledby="projects">
 				{%- set hfeed = false -%}
+				{%- set simple = true -%}
 				{%- set truncate = true -%}
 				{% for item in collections.projects | limit(site.limits.feature) %}
 					{%- set responses = item.url | getWebmentions -%}
@@ -93,6 +94,7 @@ sitemap:
 				</h2>
 				<nav class=" [ deck ] " aria-labelledby="upcoming-rsvps">
 					{%- set hfeed = false -%}
+					{%- set simple = false -%}
 					{%- set truncate = true -%}
 					{% for item in collections.upcomingRSVPs %}
 						{%- set responses = item.url | getWebmentions -%}
