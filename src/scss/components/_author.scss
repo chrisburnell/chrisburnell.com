@@ -26,14 +26,14 @@
 	}
 
 	@include media("below:medium") {
-		float: inline-start;
+		float: left;
 		float: inline-start;
 		@include v(margin-inline-end, gap);
 		@include v(margin-block-end, gap);
 	}
 
 	@include media("above:medium") {
-		float: inline-end;
+		float: right;
 		float: inline-end;
 		@include v(margin-inline-start, gap);
 	}
@@ -59,7 +59,7 @@
 	flex-shrink: 0;
 	@include v(flex-basis, avatar);
 	@include v(block-size, avatar);
-	float: inline-start;
+	float: left;
 	float: inline-start;
 	position: relative;
 	--color-shadow: #{h(thunder, gamma)};
