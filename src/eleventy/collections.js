@@ -23,7 +23,7 @@ module.exports = {
 		return collection.getFilteredByTag("page").filter(collectionFilters.isPublished)
 	},
 	projects: (collection) => {
-		const collection
+		return collection
 			.getFilteredByTag("project")
 			.filter(collectionFilters.isPublished)
 			.sort((a, b) => new Date(b.data.date) - new Date(a.data.date))
