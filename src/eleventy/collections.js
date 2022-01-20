@@ -3,7 +3,6 @@ const collectionFilters = require("./filters/collections")
 
 const global = require("../data/global")
 const site = require("../data/site.json")
-const personalProjects = require("../data/projects/personal.json")
 
 const Webmentions = require("@chrisburnell/eleventy-cache-webmentions")(null, { domain: site.url })
 
@@ -24,11 +23,10 @@ module.exports = {
 		return collection.getFilteredByTag("page").filter(collectionFilters.isPublished)
 	},
 	projects: (collection) => {
-		const project_posts = collection
+		const collection
 			.getFilteredByTag("project")
 			.filter(collectionFilters.isPublished)
 			.sort((a, b) => new Date(b.data.date) - new Date(a.data.date))
-		return [...project_posts, ...personalProjects]
 	},
 	posts: (collection) => {
 		return collection.getFilteredByTag("post").filter(collectionFilters.isPublished).sort(collectionFilters.dateFilter)
