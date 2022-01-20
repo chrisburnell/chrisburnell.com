@@ -6,7 +6,7 @@ eleventyComputed:
   date: "{{ github.bowhead.created_at }}"
   updated: "{{ github.bowhead.updated_at }}"
   tagline: "Bowhead v{{ pkg.dependencies['@chrisburnell/bowhead'] | replace('^', '') }}"
-  description: "{{ github.bowhead.description }} <br>There are {{ github.bowhead['stargazers_count'] | numberStringFormat }} star-gazers <a href='https://github.com/chrisburnell/bowhead'>on GitHub</a> and it was downloaded {{ npm.bowhead['downloads'] | numberStringFormat }} times in the last month <a href='https://www.npmjs.com/package/@chrisburnell/bowhead'>on npm</a>."
+  description: "{{ github.bowhead.description }}"
 toc: true
 ---
 

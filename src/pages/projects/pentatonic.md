@@ -6,7 +6,7 @@ eleventyComputed:
   date: "{{ github.pentatonic.created_at }}"
   updated: "{{ github.pentatonic.updated_at }}"
   tagline: "Pentatonic v{{ pkg.dependencies['@chrisburnell/pentatonic'] | replace('^', '') }}"
-  description: "{{ github.pentatonic.description }} <br>There are {{ github.pentatonic['stargazers_count'] | numberStringFormat }} star-gazers <a href='https://github.com/chrisburnell/pentatonic'>on GitHub</a> and it was downloaded {{ npm.pentatonic['downloads'] | numberStringFormat }} times in the last month <a href='https://www.npmjs.com/package/@chrisburnell/pentatonic'>on npm</a>."
+  description: "{{ github.pentatonic.description }}"
 toc: true
 ---
 

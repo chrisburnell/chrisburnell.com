@@ -8,7 +8,13 @@ layout: base
 	</h1>
 
 	<div class=" [ details ] ">
-		<p class=" [ p-summary ] ">{{ description | safe }}</p>
+		<p class=" [ p-summary ] ">
+			{{ description | safe }}
+			{% if 'project' in tags %}
+				<br>
+				There are {{ github[page.fileSlug]['stargazers_count'] | numberStringFormat }} star-gazers <a href="https://github.com/chrisburnell/{{ page.fileSlug }}" rel="external">on GitHub</a> and it was downloaded {{ npm[page.fileSlug]['downloads'] | numberStringFormat }} times in the last month <a href="https://www.npmjs.com/package/@chrisburnell/{{ page.fileSlug }}" rel="external">on npm</a>.
+			{% endif %}
+		</p>
 	</div>
 
 	<div class=" [ content__body ] ">
@@ -18,6 +24,10 @@ layout: base
 
 		{% include 'webmentions.njk' %}
 	</div>
+
+	{% if not toc %}
+		{% include 'meta/page.njk' %}
+	{% endif %}
 
 	{% include 'ads.njk' %}
 

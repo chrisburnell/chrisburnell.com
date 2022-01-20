@@ -6,7 +6,7 @@ eleventyComputed:
   date: "{{ github['eleventy-cache-webmentions'].created_at }}"
   updated: "{{ github['eleventy-cache-webmentions'].updated_at }}"
   tagline: "eleventy-cache-webmentions v{{ pkg.dependencies['@chrisburnell/eleventy-cache-webmentions'] | replace('^', '') }}"
-  description: "{{ github['eleventy-cache-webmentions'].description }} <br>There are {{ github['eleventy-cache-webmentions']['stargazers_count'] | numberStringFormat }} star-gazers <a href='https://github.com/chrisburnell/eleventy-cache-webmentions'>on GitHub</a> and it was downloaded {{ npm['eleventy-cache-webmentions']['downloads'] | numberStringFormat }} times in the last month <a href='https://www.npmjs.com/package/@chrisburnell/eleventy-cache-webmentions'>on npm</a>."
+  description: "{{ github[page.fileSlug].description }}"
 syndicate_to:
   - https://mastodon.social/users/chrisburnell/statuses/107399910372983580
   - https://twitter.com/iamchrisburnell/status/1467811195981860867
