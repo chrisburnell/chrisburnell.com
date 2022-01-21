@@ -122,7 +122,7 @@
 				<time class=" [ dt-start ] " datetime="{{ item.data.rsvp.date | rfcDate }}">{{ item.data.rsvp.date | friendlyTime(false) }}</time>
 				–
 				<time class=" [ dt-end ] " datetime="{{ item.data.rsvp.finish | rfcDate }}">{{ item.data.rsvp.finish | friendlyTime(true) }}</time>
-			{% else %}
+			{% elif item.data.rsvp.date %}
 				{# Past #}
 				<small>on</small>
 				<time class=" [ dt-start ] " datetime="{{ item.data.rsvp.date | rfcDate }}">{{ item.data.rsvp.date | friendlyDate }}</time>
