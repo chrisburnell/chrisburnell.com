@@ -16,7 +16,7 @@ icon_sizes:
   "lang": "{{ site.locale }}",
   "default_locale": "{{ site.locale }}",
   "name": "{{ site.title | striptags(true) }}",
-  "short_name": "{{ site.title | replace(' ', '') | striptags(true) }}",
+  "short_name": "{{ site.url | getHost }}",
   "description": "{{ site.description | striptags(true) }}",
   "display": "minimal-ui",
   "orientation": "any",
