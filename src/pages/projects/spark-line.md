@@ -92,17 +92,17 @@ Element attributes:
 <!-- '"´ -->
 <form>
     <fieldset>
-        <label><input id="input-values" type="text" pattern="[0-9]+" value="12321" maxlength="26" oninput="processSparkline()"> Values</label>
+        <label><input id="input-values" type="text" pattern="[0-9]+" value="12321" maxlength="26"> Values</label>
         <br>
-        <label><input id="input-line-width" type="number" min="1" step="1" value="2" max="5" oninput="processSparkline()"> Line Width</label>
+        <label><input id="input-line-width" type="number" min="1" step="1" value="2" max="5"> Line Width</label>
         <br>
-        <label><input id="input-curve" type="checkbox" checked oninput="processSparkline()"> Curve</label>
+        <label><input id="input-curve" type="checkbox" checked> Curve</label>
         <br>
-        <label><input id="input-endpoint" type="checkbox" checked oninput="processSparkline()"> Endpoint</label>
+        <label><input id="input-endpoint" type="checkbox" checked> Endpoint</label>
         <br>
-        <label><input id="input-color" type="color" value="#000000" oninput="processSparkline()"> Color</label>
+        <label><input id="input-color" type="color" value="#000000"> Color</label>
         <br>
-        <label><input id="input-endpoint-color" type="color" value="#000000" oninput="processSparkline()"> Endpoint Color</label>
+        <label><input id="input-endpoint-color" type="color" value="#000000"> Endpoint Color</label>
     </fieldset>
     <spark-line id="sparkline" class="pentatonic"></spark-line>
     <style>
