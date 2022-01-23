@@ -32,7 +32,7 @@ jobs:
           path: |
             .cache
             _site/images
-          key: ${{ runner.OS }}-11ty-cache-${{ hashFiles('**/lockfiles') }}
+          key: ${{ runner.OS }}-site-cache-${{ hashFiles('**/lockfiles') }}
       - name: Set the timezone
         uses: zcong1993/setup-timezone@master
         with:
