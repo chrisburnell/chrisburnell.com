@@ -14,12 +14,12 @@ module.exports = (value, outputPath) => {
 		// the permalink.
 		const tocHeadings = $(".generate-toc h2")
 		if (tocHeadings.length) {
-			let tocHtml = `<div class=" [ box ] [ table-of-contents ] "><ol class=" [ default-list ] ">`
+			let tocHtml = `<div class=" [ meta ] "><div class=" [ box ] [ table-of-contents ] "><ol class=" [ default-list ] ">`
 			tocHeadings.each(function () {
 				const headingID = $(this).attr("id") || slugify($(this).text().toLowerCase())
 				tocHtml += `<li><a href="#${headingID}">${$(this).text()}</a></li>`
 			})
-			tocHtml += `</ol></div>`
+			tocHtml += `</ol></div></div>`
 			$(tocHtml).insertBefore(".content__body")
 		}
 

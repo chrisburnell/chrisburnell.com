@@ -31,9 +31,11 @@
 			auto
 			[title-end details-start]
 			auto
-			[details-end content-start]
+			[details-end content-start sparkline-start]
+			auto
+			[sparkline-end meta-start]
 			1fr
-			[content-end ads-start]
+			[meta-end content-end ads-start]
 			auto
 			[ads-end];
 	}
@@ -202,8 +204,6 @@
 	}
 
 	@include media("above:medium") {
-		grid-column: marginalia;
-		grid-row: content;
 		margin-block-end: 0;
 		max-block-size: calc(100vh - #{v(measure, medium)} * 2);
 		position: sticky;
@@ -256,7 +256,7 @@
 
 	@include media("above:medium") {
 		grid-column: marginalia;
-		grid-row: content;
+		grid-row: meta;
 	}
 }
 
@@ -264,5 +264,16 @@
 	@include media("above:medium") {
 		grid-column: content;
 		grid-row: ads;
+	}
+}
+
+// Listing-Representative Sparkline
+.content > spark-line {
+	@include v(margin-block-start, large);
+	justify-self: start;
+
+	@include media("above:medium") {
+		grid-column: marginalia;
+		grid-row: sparkline;
 	}
 }

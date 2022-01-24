@@ -19,35 +19,37 @@ truncate: true
 		<p class=" [ p-summary ] ">Browse all {{ collections.posts.length }} of my posts by a variety of metrics, dating from {{ first_year }}–{{ latest_year }}.</p>
 	</div>
 
+	{% sparkline collection, first_year, latest_year %}
+
 	<div class=" [ content__body ] [ h-feed ] {% if toc %}[ generate-toc ] {% endif %}">
 		{% for lookup in collections.categories %}
 			{%- if lookup.title == 'note' -%}
-				{% set collection = collections.notesWithoutReplies %}
+				{% set lookup_collection = collections.notesWithoutReplies %}
 			{%- else -%}
-				{% set collection = collections[lookup.title] | arePublished | reverse %}
+				{% set lookup_collection = collections[lookup.title] | arePublished | reverse %}
 			{%- endif -%}
 			<h2 id="{{ lookup.plural }}">
 				<a href="/{{ lookup.plural }}/">{{ lookup.properPlural }}</a>
 			</h2>
-			{% if collection[0].data.list == 'shelf' %}
-				<nav class=" [ shelf {% if collection[0].data.read_of %}shelf--books {% endif %}] " aria-labelledby="{{ lookup.plural }}">
-					{%- for item in collection | limit(site.limits.shelf) -%}
+			{% if lookup_collection[0].data.list == 'shelf' %}
+				<nav class=" [ shelf {% if lookup_collection[0].data.read_of %}shelf--books {% endif %}] " aria-labelledby="{{ lookup.plural }}">
+					{%- for item in lookup_collection | limit(site.limits.shelf) -%}
 						{% include 'items/shelf.njk' %}
 					{%- endfor -%}
 				</nav>
-				{% if collection.length > site.limits.shelf %}
+				{% if lookup_collection.length > site.limits.shelf %}
 					<nav class=" [ navigator ] " aria-label="All {{ lookup.properPlural | title }}">
 						<a class=" [ button ] " href="/{{ lookup.plural }}/">All {{ lookup.properPlural | title }}</a>
 					</nav>
 				{% endif %}
 			{% else %}
 				<nav class=" [ deck ] " aria-labelledby="{{ lookup.plural }}">
-					{%- for item in collection | limit(site.limits.deck) -%}
+					{%- for item in lookup_collection | limit(site.limits.deck) -%}
 						{%- set responses = item.url | getWebmentions -%}
 						{% include 'items/deck.njk' %}
 					{%- endfor -%}
 				</nav>
-				{% if collection.length > site.limits.deck %}
+				{% if lookup_collection.length > site.limits.deck %}
 					<nav class=" [ navigator ] " aria-label="All {{ lookup.properPlural | title }}">
 						<a class=" [ button ] " href="/{{ lookup.plural }}/">All {{ lookup.properPlural | title }}</a>
 					</nav>
@@ -59,7 +61,6 @@ truncate: true
 	</div>
 
 	<div class=" [ meta ] ">
-		{% sparkline collection, first_year, latest_year %}
 		{% include 'meta/archive.njk' %}
 	</div>
 
