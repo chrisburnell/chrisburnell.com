@@ -6,11 +6,17 @@
 .meta {
 	.h-entry &,
 	.h-review & {
-		@include owl(tiny);
+		&,
+		.box {
+			@include owl(tiny);
+		}
 	}
 
 	.archive & {
-		@include owl(large);
+		&,
+		.box {
+			@include owl(large);
+		}
 	}
 
 	.emoji {
@@ -58,7 +64,8 @@
 		}
 	}
 
-	.meta > & {
+	.meta > &,
+	.meta > .box > & {
 		&::before,
 		&::after {
 			content: "";

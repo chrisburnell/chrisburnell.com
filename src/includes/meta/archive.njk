@@ -1,4 +1,4 @@
-<div class=" [ box ] [ meta ] ">
+<div class=" [ box ] ">
 	<h2>Browse by category</h2>
 	<ul class=" [ meta__list ] ">
 		{% for lookup in collections.categories %}<li>{% if '/' + lookup.plural + '/' != page.url %}<a href="/{{ lookup.plural }}/">{{ lookup.properPlural }}</a>{% else %}<a href="#content">{{ lookup.properPlural }}</a>{% endif %}</li>{% endfor %}

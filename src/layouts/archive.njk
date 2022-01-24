@@ -15,7 +15,6 @@ truncate: true
 
 	<div class=" [ details ] ">
 		<p class=" [ p-summary ] ">{{ description | replace('.', '') | safe }}{% if first_year != latest_year %}, dating from <a href="#{{ first_year }}">{{ first_year }}</a>–<a href="#{{ latest_year }}">{{ latest_year }}</a>{% endif %}.</p>
-		{% sparkline collection, first_year, latest_year %}
 	</div>
 
 	<div class=" [ content__body ] [ h-feed ] {% if toc %}[ generate-toc ] {% endif %}">
@@ -39,7 +38,10 @@ truncate: true
 		</nav>
 	</div>
 
-	{% include 'meta/archive.njk' %}
+	<div class=" [ meta ] ">
+		{% sparkline collection, first_year, latest_year %}
+		{% include 'meta/archive.njk' %}
+	</div>
 
 	{% include 'ads.njk' %}
 
