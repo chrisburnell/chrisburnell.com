@@ -6,7 +6,7 @@ const sounds = () => {
 	// Defaults for sitewide pentatonic
 	const defaults = {
 		duration: 4000,
-		volume: 0.25,
+		volume: 0.1,
 		keyStart: 29,
 		keyLimit: 12,
 		keyIntervals: [2, 2, 3, 2, 3],
