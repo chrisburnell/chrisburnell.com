@@ -9,10 +9,6 @@
 		@include owl(tiny);
 	}
 
-	.details ~ & {
-		@include v(margin-block-start, large);
-	}
-
 	.archive & {
 		@include owl(large);
 	}

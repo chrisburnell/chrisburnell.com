@@ -6,6 +6,7 @@
 .box {
 	@include owl(medium);
 	background-color: h(thunder, delta);
+	max-inline-size: 100% !important;
 	@include v(padding, medium);
 	border-block-start: var(--measure-border-thin) solid h(raven, beta);
 	border-radius: var(--measure-border-hairline) var(--measure-border-hairline) var(--measure-border-default) var(--measure-border-default);
