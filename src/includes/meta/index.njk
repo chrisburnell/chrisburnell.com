@@ -1,21 +1,4 @@
 <div class=" [ box ] ">
-	<h2>Browse by category</h2>
-	<ul class=" [ meta__list ] ">
-		{% for lookup in collections.categories %}<li>{% if '/' + lookup.plural + '/' != page.url %}<a href="/{{ lookup.plural }}/">{{ lookup.properPlural }}</a>{% else %}<a href="#content">{{ lookup.properPlural }}</a>{% endif %}</li>{% endfor %}
-	</ul>
-	<h2>Browse by tag</h2>
-	<ul class=" [ meta__list ] ">
-		{% for lookup in collections.tags | sort %}<li>{% if '/tag/' + lookup != page.url %}<a href="/tag/{{ lookup }}">#{{ lookup }}</a>{% else %}<a href="#content">#{{ lookup }}</a>{% endif %}</li>{% endfor %}
-	</ul>
-	<h2>More pages</h2>
-	<ul class=" [ meta__list  meta__list--block  skip-owl ] ">
-		<li><a href="/cv/">CV</a></li>
-		<li><a href="/guestbook/">Guestbook</a></li>
-		<li><a href="/indieweb/">Indieweb</a></li>
-		<li><a href="/listening/">Listening</a></li>
-		<li><a href="/search/">Search</a></li>
-		<li><a href="/styleguide/">Styleguide</a></li>
-		<li><a href="/hot/">Hot posts</a></li>
-		<li><a href="/popular/">Popular posts</a></li>
-	</ul>
+	{% include 'meta/sub/pages.njk' %}
+	{% include 'meta/sub/posts.njk' %}
 </div>
