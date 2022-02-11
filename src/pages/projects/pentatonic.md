@@ -31,7 +31,7 @@ toc: true
 
 [Available on npm](https://www.npmjs.com/package/@chrisburnell/pentatonic):
 
-```
+```bash
 npm install @chrisburnell/pentatonic --save-dev
 ```
 

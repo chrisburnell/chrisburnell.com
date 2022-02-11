@@ -24,7 +24,7 @@ js: spark-line.js
 
 [Available on npm](https://www.npmjs.com/package/@chrisburnell/spark-line):
 
-```
+```bash
 npm install @chrisburnell/spark-line --save-dev
 ```
 

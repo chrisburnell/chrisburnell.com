@@ -29,7 +29,7 @@ This has a positive effect that ranges from giving the colours in your design sy
 
 [Available on npm](https://www.npmjs.com/package/@chrisburnell/bowhead):
 
-```
+```bash
 npm install @chrisburnell/bowhead --save-dev
 ```
 
