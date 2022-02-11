@@ -2,11 +2,11 @@
 title: Projects
 description: A list of my projects and rabbit-hole deep-dives.
 hfeed: false
-simple: true
+hide_photos: true
 truncate: false
 ---
 
-<h2><abbr title="Open Source Software">OSS</abbr> projects</h2>
+<h2><abbr title="Free & Open Source Software">FOSS</abbr> projects</h2>
 
 <nav class=" [ deck ] [ h-feed ] ">
 	{% for item in collections.projects %}
@@ -24,7 +24,7 @@ truncate: false
 	{% endfor %}
 </nav>
 
-<h2>Previous versions of {{ site.url | getHost }}</h2>
+<h2>{{ site.url | getHost }} in the past</h2>
 
 <nav class=" [ deck ] [ h-feed ] ">
 	{% for item in projects.previousVersions %}

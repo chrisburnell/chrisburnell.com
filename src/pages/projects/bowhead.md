@@ -35,6 +35,10 @@ npm install @chrisburnell/bowhead --save-dev
 
 You can also just download it directly [from GitHub](https://github.com/chrisburnell/bowhead): <samp>[https://github.com/chrisburnell/bowhead/archive/master.zip](https://github.com/chrisburnell/bowhead/archive/master.zip)</samp>
 
+Make sure the browser support for CSS Variables meets your needs:
+
+{% caniuse 'css-variables' %}
+
 ## What are <q>types of values</q>?
 
 ```css

@@ -208,6 +208,16 @@ const helpers = {
 			return false
 		})
 	},
+
+	////
+	/// Array-Loop to set variable
+	////
+	setByArray(object, array, value) {
+		const last = array.pop()
+		array.reduce(function (v, k) {
+			return (v || {})[k]
+		}, object)[last] = value
+	},
 }
 
 export default helpers
