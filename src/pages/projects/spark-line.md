@@ -1,5 +1,5 @@
 ---
-title: <spark-line>
+title: "&lt;spark-line&gt;"
 emoji: 📈
 eleventyComputed:
   date: "{{ github['spark-line'].created_at }}"
