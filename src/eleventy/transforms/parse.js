@@ -23,7 +23,7 @@ module.exports = (value, outputPath) => {
 			$(tocHtml).insertBefore(".content__body")
 		}
 
-		const articleHeadings = $("main article h2")
+		const articleHeadings = $("main :is(article, .archive) h2")
 		articleHeadings.each(function () {
 			const headingID = $(this).attr("id") || slugify($(this).text().toLowerCase())
 			$(this).html(

@@ -60,7 +60,6 @@ h1 {
 
 h2 {
 	@extend %beta;
-	@include case(uppercase);
 	border-block-end: v(measure, border-thin) solid h(alto);
 	inline-size: auto;
 	max-inline-size: 100%;

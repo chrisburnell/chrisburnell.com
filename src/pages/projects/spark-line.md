@@ -4,7 +4,7 @@ emoji: 📈
 eleventyComputed:
   date: "{{ github['spark-line'].created_at }}"
   updated: "{{ github['spark-line'].updated_at }}"
-  tagline: "spark-line v{{ pkg.dependencies['@chrisburnell/spark-line'] | replace('^', '') }}"
+  tagline: "&lt;spark-line&gt; v{{ pkg.dependencies['@chrisburnell/spark-line'] | replace('^', '') }}"
   description: "{{ github[page.fileSlug].description }} Lends well to <a href=\"/pentatonic/\">“automusic”</a>."
 tags:
   - web-component

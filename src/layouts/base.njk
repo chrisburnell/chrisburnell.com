@@ -15,7 +15,7 @@
 {%- elif category -%}
 	{% set meta_title %}{{ categoryProper | default(category) | title }} from {{ page.date | friendlyDate }}{% endset %}
 {%- else -%}
-	{% set meta_title = site.tagline | striptags(true) %}
+	{% set meta_title = site.tagline | striptags(true) | safe %}
 {%- endif -%}
 
 {%- set meta_description -%}A page on {{ site.url | getHost }}{%- endset -%}

@@ -29,7 +29,7 @@ truncate: true
 				{% set lookup_collection = collections[lookup.title] | arePublished | reverse %}
 			{%- endif -%}
 			<h2 id="{{ lookup.plural }}">
-				<a href="/{{ lookup.plural }}/">{{ lookup.properPlural }}</a>
+				<a href="/{{ lookup.plural }}/">{{ lookup.properPlural | title }}</a>
 			</h2>
 			{% if lookup_collection[0].data.list == 'shelf' %}
 				<nav class=" [ shelf {% if lookup_collection[0].data.read_of %}shelf--books {% endif %}] " aria-labelledby="{{ lookup.plural }}">
