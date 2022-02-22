@@ -32,14 +32,16 @@
 		background-image: url("/images/raven.svg");
 		background-repeat: no-repeat;
 		@include v(opacity, gamma);
-		@include v(width, logo-large);
-		height: calc(#{v(measure, logo-large)} / 1.205);
+		@include v(inline-size, logo-large);
+		// depends on the specific dimensions of raven.svg
+		block-size: calc(#{v(measure, logo-large)} / 1.205);
 		position: absolute;
 		inset-inline-start: 100%;
 		inset-block-end: 0;
-		transform: translateX(-35%) translateY(-10%) scaleX(-1);
 		@include v(z-index, below);
+		transform: translateX(-35%) translateY(-10%) scaleX(-1);
 		animation: var(--animation-duration) ease-out var(--animation-fill-mode) perch;
+		will-change: transform;
 
 		@at-root {
 			@keyframes perch {
