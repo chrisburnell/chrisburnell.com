@@ -86,7 +86,7 @@
 }
 
 // Owls
-@each $key, $_ in map-get($tokens, "measure") {
+@each $key, $_ in map-get($tokens, "size") {
 	.owl--#{$key} {
 		@include owl($key);
 	}

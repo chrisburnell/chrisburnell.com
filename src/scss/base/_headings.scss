@@ -60,7 +60,7 @@ h1 {
 
 h2 {
 	@extend %beta;
-	border-block-end: v(measure, border-thin) solid h(alto);
+	border-block-end: v(size, border-thin) solid h(alto);
 	inline-size: auto;
 	max-inline-size: 100%;
 	display: inline-block;

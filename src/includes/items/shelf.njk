@@ -24,6 +24,11 @@
 	{# {%- include 'cover.njk' -%} #}
 	{# Rudimentary workaround... AGAIN #}
 	{% if item.data.cover %}
+		{% if item.url and item.data.tags and item.data.tags.includes('clickthrough') %}
+			<a href="{{ item_of_url | default(item.url) | striptags(true) | safe }}" tabindex="-1">
+		{% elif item.url %}
+			<a href="{{ item.url | striptags(true) | safe }}" tabindex="-1">
+		{% endif %}
 		<picture>
 			{% if env.ELEVENTY_PRODUCTION %}
 				<source type="image/avif" srcset="/images/built/{{ item.data.cover | replace('jpg', 'avif') | replace('png', 'avif') }}">
@@ -31,6 +36,9 @@
 			<source type="image/webp" srcset="/images/built/{{ item.data.cover | replace('jpg', 'webp') | replace('png', 'webp') }}">
 			<img alt="" class="cover  u-photo" loading="lazy" decoding="async" src="/images/built/{{ item.data.cover | replace('jpg', 'jpeg') }}" height="400">
 		</picture>
+		{% if item.url %}
+			</a>
+		{% endif %}
 	{% endif %}
 	<h3>
 		{% if item.url and item.data.tags and item.data.tags.includes('clickthrough') %}

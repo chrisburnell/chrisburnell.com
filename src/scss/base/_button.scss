@@ -26,7 +26,7 @@ button:not(.anchor),
 	min-inline-size: 8em;
 	display: inline-block;
 	@include v(padding, small);
-	margin: calc(#{v(measure, border-thin)} * 2); // accounts for outline-width + outline-offset
+	margin: calc(#{v(size, border-thin)} * 2); // accounts for outline-width + outline-offset
 	border-width: 0;
 	@include v(border-radius, border-default);
 	--color-shadow: #{h(bowhead, gamma)};
@@ -43,7 +43,7 @@ button:not(.anchor),
 
 	&:is(:hover, :focus, :active) {
 		@include v(outline-offset, border-thin);
-		outline-width: v(measure, border-thin) !important;
+		outline-width: v(size, border-thin) !important;
 		text-decoration: none;
 	}
 
@@ -51,7 +51,7 @@ button:not(.anchor),
 		background-color: h(bowhead) !important;
 		color: h(bear) !important;
 		box-shadow: none;
-		transform: translateY(v(measure, border-button));
+		transform: translateY(v(size, border-button));
 
 		&::before {
 			content: "";
@@ -75,6 +75,6 @@ button:not(.anchor),
 	}
 
 	.icon {
-		filter: drop-shadow(0 0 var(--measure-border-hairline) #{h(bear, gamma)});
+		filter: drop-shadow(0 0 var(--size-border-hairline) #{h(bear, gamma)});
 	}
 }

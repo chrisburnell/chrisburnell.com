@@ -93,7 +93,7 @@ $opacities: (
     gamma: 0.3
 ) !default;
 
-$measures: (
+$sizes: (
     small:  1rem,
     medium: 2rem,
     large:  4rem
@@ -103,8 +103,8 @@ $measures: (
     @each $key, $value in $opacities {
         --opacity-#{$key}: #{$value};
     }
-    @each $key, $value in $measures {
-        --measure-#{$key}: #{$value};
+    @each $key, $value in $sizes {
+        --size-#{$key}: #{$value};
     }
 }
 ```
@@ -115,13 +115,13 @@ $measures: (
     --opacity-beta:  0.6;
     --opacity-gamma: 0.3;
 
-    --measure-small:  1rem;
-    --measure-medium: 2rem;
-    --measure-large:  4rem;
+    --size-small:  1rem;
+    --size-medium: 2rem;
+    --size-large:  4rem;
 }
 ```
 
-One important thing to note about this new code is that we’ve introduced a new set of variables, `measures`, which are used as values for properties like `border-width` or `margin`. These `measures` establish consistent spacing and sizing across your components. We will be using the <var>--opacity-</var> <q>type</q> variables for `opacity` but the <var>--measure-</var> <q>type</q> variables can be used for a great number of properties.
+One important thing to note about this new code is that we’ve introduced a new set of variables, `sizes`, which are used as values for properties like `border-width` or `margin`. These `sizes` establish consistent spacing and sizing across your components. We will be using the <var>--opacity-</var> <q>type</q> variables for `opacity` but the <var>--size-</var> <q>type</q> variables can be used for a great number of properties.
 
 This is where the penultimate step really shines. First we’ll establish which SCSS Map of Variables should be used for each <q>type</q> by preparing <var>$variable-map</var>.
 
@@ -129,7 +129,7 @@ This is where the penultimate step really shines. First we’ll establish which 
 $variable-map: (
     z-index: $z-indexes,
     opacity: $opacities,
-    measure: $measures
+    size: $sizes
 ) !default;
 ```
 
@@ -139,23 +139,23 @@ Secondly, we’ll create a Map that relates each *CSS property* to a set of valu
 $property-map: (
     z-index: z-index,
     opacity: opacity,
-    margin: measure,
-    margin-top: measure,
-    margin-right: measure,
-    margin-bottom: measure,
-    margin-left: measure,
-    padding: measure,
-    padding-top: measure,
-    padding-right: measure,
-    padding-bottom: measure,
-    padding-left: measure,
-    grid-gap: measure,
-    column-gap: measure,
-    row-gap: measure
+    margin: size,
+    margin-top: size,
+    margin-right: size,
+    margin-bottom: size,
+    margin-left: size,
+    padding: size,
+    padding-top: size,
+    padding-right: size,
+    padding-bottom: size,
+    padding-left: size,
+    grid-gap: size,
+    column-gap: size,
+    row-gap: size
 ) !default;
 ```
 
-Things are pretty straightforward for `z-index` and `opacity`, but you can see that we’ve now assigned our <q>measure-type</q> variables to a handful of properties—we can use any of our <samp>measures</samp> (small, medium, large) when assigning a value to `margin`, `margin-X`, `padding`, `padding-X`, and `X-gap` properties.
+Things are pretty straightforward for `z-index` and `opacity`, but you can see that we’ve now assigned our <q>size-type</q> variables to a handful of properties—we can use any of our <samp>sizes</samp> (small, medium, large) when assigning a value to `margin`, `margin-X`, `padding`, `padding-X`, and `X-gap` properties.
 
 Lastly, we’ll check our passed-in value against a list of “generic” CSS property values, which includes: <samp>auto</samp>, <samp>inherit</samp>, <samp>initial</samp>, <samp>none</samp>, <samp>revert</samp>, <samp>unset</samp>, <samp>0</samp>, and <samp>1</samp>. If it does match one of those generic values, we’ll forego any processing and output a singular property-value pair.
 
@@ -167,7 +167,7 @@ Let’s tie it all together with this SCSS function and mixin.
         @return $value;
     }
     @else {
-        // if we're passing in a key in the variables Map (e.g. measure)
+        // if we're passing in a key in the variables Map (e.g. size)
         @if map-has-key($variable-map, $property) {
             $map-variables: map-get($variable-map, $property);
 
@@ -268,9 +268,9 @@ You might have noticed that there are a number of parameters you can pass to the
     opacity: 0.6;
     opacity: var(--opacity-beta);
     padding: 2rem;
-    padding: var(--measure-medium);
+    padding: var(--size-medium);
     margin-top: 2rem;
-    margin-top: var(--measure-medium);
+    margin-top: var(--size-medium);
 }
 ```
 
@@ -278,13 +278,13 @@ And if we want to do any kind of computation, modify the value, or combine value
 
 ```scss
 .modal {
-    border: v(measure, small) solid v(color, dove);
+    border: v(size, small) solid v(color, dove);
 }
 ```
 
 ```css
 .modal {
-    border: var(--measure-small) solid var(--color-dove);
+    border: var(--size-small) solid var(--color-dove);
 }
 ```
 
@@ -292,7 +292,7 @@ And by modifying the third parameter, `$fallback`, we can return the computed SC
 
 ```scss
 .modal {
-    border: v(measure, small, true) solid v(color, dove, true);
+    border: v(size, small, true) solid v(color, dove, true);
 }
 ```
 

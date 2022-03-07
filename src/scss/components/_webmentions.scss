@@ -75,7 +75,7 @@
 	@include transition(border-color);
 	box-sizing: content-box;
 	@include v(inline-size, avatar-small);
-	border: var(--measure-border-default) solid h(raven, beta);
+	border: var(--size-border-default) solid h(raven, beta);
 
 	&:link:is(:hover, :focus, :active) {
 		border-color: h(maple);
@@ -113,7 +113,7 @@
 }
 
 .webmentions__list__reactions {
-	padding-inline-start: calc(var(--measure-small) + var(--measure-tiny));
+	padding-inline-start: calc(var(--size-small) + var(--size-tiny));
 
 	.hidden + & {
 		grid-column-start: 1;
@@ -122,7 +122,7 @@
 
 	li {
 		display: inline-block;
-		margin-inline-start: calc((var(--measure-small) + var(--measure-tiny)) * -1);
+		margin-inline-start: calc((var(--size-small) + var(--size-tiny)) * -1);
 		@include v(margin-block-end, small);
 
 		&:hover {

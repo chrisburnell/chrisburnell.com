@@ -35,21 +35,21 @@ js: styleguide.js
 	</figcaption>
 </figure>
 
-<h2>Measures</h2>
+<h2>Sizes</h2>
 
 <dl>
 	<dt>Tiny</dt>
-	<dd><div class="measure-example  measure-example--tiny"></div></dd>
+	<dd><div class="size-example  size-example--tiny"></div></dd>
 	<dt>Small</dt>
-	<dd><div class="measure-example  measure-example--small"></div></dd>
+	<dd><div class="size-example  size-example--small"></div></dd>
 	<dt>Medium</dt>
-	<dd><div class="measure-example  measure-example--medium"></div></dd>
+	<dd><div class="size-example  size-example--medium"></div></dd>
 	<dt>Large</dt>
-	<dd><div class="measure-example  measure-example--large"></div></dd>
+	<dd><div class="size-example  size-example--large"></div></dd>
 	<dt>Gigantic</dt>
-	<dd><div class="measure-example  measure-example--gigantic"></div></dd>
+	<dd><div class="size-example  size-example--gigantic"></div></dd>
 	<dt>Responsive</dt>
-	<dd><div class="measure-example  measure-example--responsive"></div></dd>
+	<dd><div class="size-example  size-example--responsive"></div></dd>
 </dl>
 
 <h2>Fonts</h2>
@@ -345,7 +345,7 @@ js: styleguide.js
 <h2>Meter</h2>
 
 <figure>
-	<meter value="40" min="0" low="10" optimum="50" high="90" max="100" style="padding-block: var(--measure-small);"></meter>
+	<meter value="40" min="0" low="10" optimum="50" high="90" max="100" style="padding-block: var(--size-small);"></meter>
 </figure>
 -->
 
@@ -353,7 +353,7 @@ js: styleguide.js
 <h2>Progress</h2>
 
 <figure>
-	<progress style="padding-block: var(--measure-small);">progress</progress>
+	<progress style="padding-block: var(--size-small);">progress</progress>
 </figure>
 -->
 
@@ -373,7 +373,7 @@ p q r s t u v w x y z { | } ~
 
 <h2>Code Blocks</h2>
 
-<pre class="language-scss"><code class="language-scss"><span class="highlight-line"><span class="token keyword">@mixin</span> <span class="token function">owl</span><span class="token punctuation">(</span><span class="token property"><span class="token variable">$measure</span></span><span class="token punctuation">:</span> small<span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token keyword">@if</span> <span class="token operator">not</span> <span class="token function">map-has-key</span><span class="token punctuation">(</span><span class="token variable">$measures</span><span class="token punctuation">,</span> <span class="token variable">$measure</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br>    <span class="token atrule"><span class="token rule">@error</span> <span class="token string">"There is no measure named #{$measure} in `$measures`. measure should be one of #{map-keys($measures)}."</span><span class="token punctuation">;</span><br><span class="highlight-line">  <span class="token punctuation">}</span></span><br><span class="highlight-line"></span><br>  &amp; <span class="token operator">&gt;</span> <span class="token operator">*</span> <span class="token operator">+</span> *</span> <span class="token punctuation">{</span><br><span class="highlight-line">    <span class="token keyword">@include</span> <span class="token function">v</span><span class="token punctuation">(</span>margin-top<span class="token punctuation">,</span> <span class="token variable">$measure</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<pre class="language-scss"><code class="language-scss"><span class="highlight-line"><span class="token keyword">@mixin</span> <span class="token function">owl</span><span class="token punctuation">(</span><span class="token property"><span class="token variable">$size</span></span><span class="token punctuation">:</span> small<span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token keyword">@if</span> <span class="token operator">not</span> <span class="token function">map-has-key</span><span class="token punctuation">(</span><span class="token variable">$sizes</span><span class="token punctuation">,</span> <span class="token variable">$size</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br>    <span class="token atrule"><span class="token rule">@error</span> <span class="token string">"There is no size named #{$size} in `$sizes`. size should be one of #{map-keys($sizes)}."</span><span class="token punctuation">;</span><br><span class="highlight-line">  <span class="token punctuation">}</span></span><br><span class="highlight-line"></span><br>  &amp; <span class="token operator">&gt;</span> <span class="token operator">*</span> <span class="token operator">+</span> *</span> <span class="token punctuation">{</span><br><span class="highlight-line">    <span class="token keyword">@include</span> <span class="token function">v</span><span class="token punctuation">(</span>margin-top<span class="token punctuation">,</span> <span class="token variable">$size</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
 
 <h2>Buttons</h2>
 

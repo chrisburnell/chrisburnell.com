@@ -16,7 +16,7 @@
 
 	li {
 		@include tabular-lining-numerals;
-		padding: #{v(measure, medium)} 0;
+		padding: #{v(size, medium)} 0;
 		vertical-align: middle;
 		@include v(font-size, small);
 		text-align: center;
@@ -68,37 +68,37 @@
 	}
 }
 
-.measure-example {
+.size-example {
 	background-color: h(alto);
 	background-image: linear-gradient(to bottom, h(maple), h(maple));
 	background-position: center center;
-	background-size: 100% v(measure, border-thin);
+	background-size: 100% v(size, border-thin);
 	background-repeat: no-repeat;
 	@include v(block-size, medium);
 	display: block;
 }
-.measure-example--tiny {
+.size-example--tiny {
 	@include v(inline-size, tiny);
 }
-.measure-example--small {
+.size-example--small {
 	@include v(inline-size, small);
 }
-.measure-example--medium {
+.size-example--medium {
 	@include v(inline-size, medium);
 }
-.measure-example--large {
+.size-example--large {
 	@include v(inline-size, large);
 }
-.measure-example--gigantic {
+.size-example--gigantic {
 	@include v(inline-size, gigantic);
 }
-.measure-example--responsive {
+.size-example--responsive {
 	@include v(inline-size, line-length-clamp);
 }
 
 .transition-example {
 	position: relative;
-	margin-block-end: calc(v(measure, large) + v(measure, medium));
+	margin-block-end: calc(v(size, large) + v(size, medium));
 
 	&::before {
 		content: "(Hover to interact.)";
@@ -117,21 +117,21 @@
 	}
 }
 .transition-example__demo {
-	border-block-start: var(--measure-border-thin) solid h(raven, beta);
-	border-radius: 0 0 var(--measure-border-default) var(--measure-border-default);
+	border-block-start: var(--size-border-thin) solid h(raven, beta);
+	border-radius: 0 0 var(--size-border-default) var(--size-border-default);
 	@include transition(color);
 	inline-size: 100%;
 	@include v(max-inline-size, line-length-clamp);
-	block-size: calc(var(--measure-large) * 1.5);
+	block-size: calc(var(--size-large) * 1.5);
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	border: v(measure, border-thin) solid h(alto);
+	border: v(size, border-thin) solid h(alto);
 	margin-inline-start: auto;
 	margin-inline-end: auto;
 	overflow-x: hidden;
 	position: relative;
-	// line-height: strip-unit($measure-large * 1.5 - $measure-border-thin * 2);
+	// line-height: strip-unit($size-large * 1.5 - $size-border-thin * 2);
 	text-align: center;
 	@include v(box-shadow, medium);
 	@include v(z-index, above);

@@ -40,9 +40,9 @@ article > * + * {
 Let’s start things off by pumping the excitement all the way up to **3**. At its simplest, the mixin looks like this:
 
 ```scss
-@mixin owl($measure) {
+@mixin owl($size) {
   & > * + * {
-    margin-top: $measure;
+    margin-top: $size;
   }
 }
 ```
@@ -50,9 +50,9 @@ Let’s start things off by pumping the excitement all the way up to **3**. At i
 In fact, if we know that more often than not we'll be using a specific value, we can use a default parameter value, like so:
 
 ```scss
-@mixin owl($measure: 1em) {
+@mixin owl($size: 1em) {
   & > * + * {
-    margin-top: $measure;
+    margin-top: $size;
   }
 }
 ```
@@ -80,19 +80,19 @@ But now let’s take the excitement up to to **4**.
 Using the same concepts, and, in particular, the <a href="/article/variables-for-both/"><samp>v</samp> mixin</a> that I introduced in [Variables for Both](/article/variables-for-both) and have refined recently with a project called [Bowhead](/bowhead/), we need to set up some SCSS variables and assign them within a Map so that we can iterate through them and reference them using our chosen familiar words—<samp>small</samp>, <samp>medium</samp>, and <samp>large</samp> in this case.
 
 ```scss
-$measure-large:  4em;
-$measure-medium: 2em;
-$measure-small:  1em;
+$size-large:  4em;
+$size-medium: 2em;
+$size-small:  1em;
 
-$measures: (
-  large:  $measure-large,
-  medium: $measure-medium,
-  small:  $measure-small
+$sizes: (
+  large:  $size-large,
+  medium: $size-medium,
+  small:  $size-small
 )
 
 :root {
-  @each $key, $value in $measures {
-    --measure-#{$key}: #{$value};
+  @each $key, $value in $sizes {
+    --size-#{$key}: #{$value};
   }
 }
 ```
@@ -100,14 +100,14 @@ $measures: (
 And using *Bowhead* I can now rewrite my <samp>owl</samp> mixin with the above configuration in place.
 
 ```scss
-@mixin owl($measure: small) {
+@mixin owl($size: small) {
   & > * + * {
-    @include v(margin-top, $measure);
+    @include v(margin-top, $size);
   }
 }
 ```
 
-In congruency with the methodology behind *Bowhead*, we’ve now abstracted away the need to remember or look up the numeric values for the various measures you might be using, and can instead refer to them as you might think about them or speak about them—using words like <samp>small</samp>, <samp>medium</samp>, <samp>large</samp>, and so on:
+In congruency with the methodology behind *Bowhead*, we’ve now abstracted away the need to remember or look up the numeric values for the various sizes you might be using, and can instead refer to them as you might think about them or speak about them—using words like <samp>small</samp>, <samp>medium</samp>, <samp>large</samp>, and so on:
 
 ```scss
 body {
@@ -126,13 +126,13 @@ article {
 ## The Solution
 
 ```scss
-@mixin owl($measure: small) {
-  @if not map-has-key($measures, $measure) {
-    @error "There is no measure named #{$measure} in `$measures`. measure should be one of #{map-keys($measures)}.";
+@mixin owl($size: small) {
+  @if not map-has-key($sizes, $size) {
+    @error "There is no size named #{$size} in `$sizes`. size should be one of #{map-keys($sizes)}.";
   }
 
   & > * + * {
-    @include v(margin-top, $measure);
+    @include v(margin-top, $size);
   }
 }
 
@@ -149,7 +149,7 @@ article {
 }
 ```
 
-Because we’ve included some error-checking within the mixin, if we were to attempt to pass a parameter to the mixin that does not map to a defined measure (<samp>small</samp>, <samp>medium</samp>, or <samp>large</samp>)…
+Because we’ve included some error-checking within the mixin, if we were to attempt to pass a parameter to the mixin that does not map to a defined size (<samp>small</samp>, <samp>medium</samp>, or <samp>large</samp>)…
 
 ```scss
 header {
@@ -160,7 +160,7 @@ header {
 We get the following error message in our console:
 
 ```bash
-Error: There is no measure named gigantic in `$measures`. measure should be one of small, medium, large.
+Error: There is no size named gigantic in `$sizes`. size should be one of small, medium, large.
 ```
 
 And with that, I’m calling it a day!

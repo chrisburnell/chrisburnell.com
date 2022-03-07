@@ -59,14 +59,14 @@
 ///
 /// Space out elements evenly
 ///
-@mixin owl($measure: large) {
-	$measures: map-get($tokens, "measure");
-	@if not map-has-key($measures, $measure) {
-		@error "There is no `measure` named `#{$measure}` in `$measures`. `measure` should be one of `#{map-keys($measures)}`.";
+@mixin owl($size: large) {
+	$sizes: map-get($tokens, "size");
+	@if not map-has-key($sizes, $size) {
+		@error "There is no `size` named `#{$size}` in `$sizes`. `size` should be one of `#{map-keys($sizes)}`.";
 	}
 
 	& > * + *:not(.skip-owl) {
-		@include v(margin-block-start, $measure);
+		@include v(margin-block-start, $size);
 	}
 }
 

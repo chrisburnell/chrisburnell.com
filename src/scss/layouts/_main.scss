@@ -10,7 +10,7 @@
 
 .content {
 	display: grid;
-	align-items: flex-start;
+	align-items: start;
 	grid-template-columns: 1fr;
 	overflow: hidden;
 
@@ -19,7 +19,7 @@
 			[marginalia-start]
 			14em
 			[marginalia-end]
-			var(--measure-gutter)
+			var(--size-gutter)
 			[content-start outdent-start]
 			repeat(6, 1fr)
 			[content-end outdent-end];
@@ -44,11 +44,11 @@
 			[marginalia-start]
 			16em
 			[marginalia-end]
-			var(--measure-gap)
+			var(--size-gap)
 			[content-start]
 			repeat(6, 1fr)
 			[content-end]
-			var(--measure-gap)
+			var(--size-gap)
 			[outdent-start]
 			10em
 			[outdent-end];
@@ -159,7 +159,7 @@
 .details--published {
 	@include media("below:medium") {
 		order: -1;
-		margin-block: v(measure, large) 0;
+		margin-block: v(size, large) 0;
 		@include v(font-size, small);
 	}
 
@@ -182,8 +182,8 @@
 	background-color: #{$background};
 	// prettier-ignore
 	background-size:
-		100% #{v(measure, large)},
-		100% #{v(measure, large)},
+		100% #{v(size, large)},
+		100% #{v(size, large)},
 		100% #{v(font-size, small)},
 		100% #{v(font-size, small)};
 	// prettier-ignore
@@ -193,7 +193,6 @@
 		scroll,
 		scroll;
 	background-repeat: no-repeat;
-	@include v(margin-block, large);
 	overflow-x: hidden;
 	overflow-y: auto;
 	overscroll-behavior: contain;
@@ -203,8 +202,7 @@
 	}
 
 	@include media("above:medium") {
-		margin-block-end: 0;
-		max-block-size: calc(100vh - #{v(measure, medium)} * 2);
+		max-block-size: calc(100vh - #{v(size, medium)} * 2);
 		position: sticky;
 		@include v(top, medium);
 	}

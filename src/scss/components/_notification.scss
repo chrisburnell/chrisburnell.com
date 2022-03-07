@@ -7,7 +7,7 @@
 	background-color: h(mineshaft);
 	color: h(milou);
 	display: block;
-	padding: var(--measure-small) var(--measure-medium);
+	padding: var(--size-small) var(--size-medium);
 	position: fixed;
 	@include v(bottom, large);
 	@include v(right, medium);

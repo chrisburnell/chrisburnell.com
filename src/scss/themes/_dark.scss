@@ -70,7 +70,7 @@
 
 	pre[class*="language-"] {
 		background-color: h(mineshaft);
-		background-image: linear-gradient(to bottom, transparent 0, transparent calc(var(--measure-gap) - var(--measure-border-thin)), h(raven, beta) calc(var(--measure-gap) - var(--measure-border-thin)), h(raven, beta) var(--measure-gap), h(thunder, gamma) var(--measure-gap), h(thunder, gamma) 100%);
+		background-image: linear-gradient(to bottom, transparent 0, transparent calc(var(--size-gap) - var(--size-border-thin)), h(raven, beta) calc(var(--size-gap) - var(--size-border-thin)), h(raven, beta) var(--size-gap), h(thunder, gamma) var(--size-gap), h(thunder, gamma) 100%);
 
 		code {
 			background-color: transparent;

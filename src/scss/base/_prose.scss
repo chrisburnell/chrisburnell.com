@@ -7,7 +7,7 @@
 	color: h(dove);
 	font-style: italic;
 	font-weight: v(font-weight) !important;
-	border-block-end: v(measure, border-thin) dotted h(dove);
+	border-block-end: v(size, border-thin) dotted h(dove);
 	cursor: help;
 
 	a & {
@@ -70,7 +70,7 @@ sup {
 hr {
 	background-color: h(thunder, gamma);
 	inline-size: 100%;
-	block-size: var(--measure-border-thin);
+	block-size: var(--size-border-thin);
 	display: block;
 	border: 0;
 	position: relative;
@@ -87,7 +87,7 @@ hr {
 	}
 }
 // Breakpoint-conditional hidden
-@each $name, $measure in $breakpoints {
+@each $name, $size in $breakpoints {
 	.hidden-below--#{$name} {
 		@include media("below:#{$name}") {
 			@include hidden;

@@ -38,8 +38,8 @@ a {
 	@include v(padding-inline-start, small);
 	@include v(padding-inline-end, small);
 	position: absolute;
-	inset-block-start: var(--measure-border-thin);
-	inset-inline-end: calc(var(--measure-small) * -1);
+	inset-block-start: var(--size-border-thin);
+	inset-inline-end: calc(var(--size-small) * -1);
 	font-size: inherit;
 	@include v(font-weight, bold);
 	@include v(line-height);

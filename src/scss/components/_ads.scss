@@ -41,15 +41,15 @@
 .ad__split {
 	background-color: h(thunder, delta);
 	@include v(padding, medium);
-	border-block-start: var(--measure-border-thin) solid h(raven, beta);
-	border-radius: 0 0 var(--measure-border-default) var(--measure-border-default);
+	border-block-start: var(--size-border-thin) solid h(raven, beta);
+	border-radius: 0 0 var(--size-border-default) var(--size-border-default);
 	background-clip: padding-box;
 	display: flex;
 	align-items: center;
 }
 
 .ad__image {
-	border-radius: 0 0 0 var(--measure-border-default);
+	border-radius: 0 0 0 var(--size-border-default);
 	border-inline-end-width: 0;
 	justify-content: center;
 	margin: 0;
@@ -62,7 +62,7 @@
 
 .ad__content {
 	flex: 1;
-	border-radius: 0 0 var(--measure-border-default) 0;
+	border-radius: 0 0 var(--size-border-default) 0;
 	border-inline-start-width: 0;
 	@include v(line-height, small);
 }

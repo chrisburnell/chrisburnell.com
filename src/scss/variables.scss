@@ -19,8 +19,8 @@
 
 html {
 	@each $key, $map in $tokens {
-		@each $property, $value in $map {
-			#{"--" + $key + "-" + $property}: #{$value};
+		@each $name, $value in $map {
+			#{"--" + $key + "-" + $name}: #{$value};
 		}
 	}
 

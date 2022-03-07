@@ -10,7 +10,7 @@ blockquote {
 	@include v(max-inline-size, line-length-clamp);
 	@include v(padding, medium);
 	@include v(border-radius, border-default);
-	margin: 0 auto var(--measure-medium);
+	margin: 0 auto var(--size-medium);
 	@include v(box-shadow, medium);
 
 	:is(cite, strong) {

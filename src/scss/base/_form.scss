@@ -39,7 +39,7 @@ textarea {
 	color: h(thunder);
 	box-sizing: inherit !important;
 	padding: 0 0.4em;
-	border: v(measure, border-thin) solid h(alto);
+	border: v(size, border-thin) solid h(alto);
 	@include v(border-radius, border-default);
 	outline-width: 0;
 
@@ -108,7 +108,7 @@ input[type="checkbox"] {
 		background-color: h(kaiser);
 		color: h(milou);
 		display: inline-block;
-		padding: 0 v(measure, medium);
+		padding: 0 v(size, medium);
 		@include v(border-radius, border-default);
 		position: relative;
 		overflow: hidden;
@@ -119,21 +119,21 @@ input[type="checkbox"] {
 		&::after {
 			content: "✔";
 			background-color: h(thunder, gamma);
-			inline-size: var(--measure-large);
+			inline-size: var(--size-large);
 			display: none;
 			position: absolute;
 			inset-block: 0;
 			inset-inline-start: 0;
 			@include v(font-size, gamma);
 			line-height: 1;
-			border-radius: var(--measure-border-default) 0 0 var(--measure-border-default);
+			border-radius: var(--size-border-default) 0 0 var(--size-border-default);
 		}
 	}
 
 	&:checked + label {
 		background-color: h(conifer);
-		padding-inline-start: calc(var(--measure-large) + var(--measure-small));
-		padding-inline-end: calc(var(--measure-medium) - var(--measure-small));
+		padding-inline-start: calc(var(--size-large) + var(--size-small));
+		padding-inline-end: calc(var(--size-medium) - var(--size-small));
 
 		&::after {
 			display: flex;

@@ -64,11 +64,11 @@ selector {
 }
 ```
 
-If we take the above snippet as an example, we can quickly identify two <q>types</q> of values present: colors and measures. *Colors* typically stand out quite easily, and, historically, developers have done well to assign colors to variables to simplify their use throughout the codebase. *Measures* (or *sizes*), on the other hand, are rarely seen reflected as design tokens in *CSS* despite their frequent prescence in other forms of design tokens, e.g. the space around a logo or iconography is usually defined in a brand's guidelines.
+If we take the above snippet as an example, we can quickly identify two <q>types</q> of values present: colors and sizes. *Colors* typically stand out quite easily, and, historically, developers have done well to assign colors to variables to simplify their use throughout the codebase. *Sizes*, on the other hand, are rarely seen reflected as design tokens in *CSS* despite their frequent prescence in other forms of design tokens, e.g. the space around a logo or iconography is usually defined in a brand's guidelines.
 
 Despite being presented in different formats, we can confidently say that `background-color`, `color`, and `outline-color` expect a *color*-type value, not just because <q>color</q> is in their names, but because we can interchange the values between the properties and they still make sense.
 
-Measures can take trickier forms to identify and categorise, and I recommend allowing for more measures than you might expect at first and paring it back later. Getting everything categorised is the hard part; swapping tokens later becomes very trivial off the back of this up-front effort. Regardless, I attach any kind of distance-related value to a measure, and, once again, we could interchange any of the values between `padding`, `margin`, `border-width`, or `width` and the CSS still makes sense.
+Sizes can take trickier forms to identify and categorise, and I recommend allowing for more sizes than you might expect at first and paring it back later. Getting everything categorised is the hard part; swapping tokens later becomes very trivial off the back of this up-front effort. Regardless, I attach any kind of distance-related value to a size, and, once again, we could interchange any of the values between `padding`, `margin`, `border-width`, or `width` and the CSS still makes sense.
 
 Extrapolating from here across the vast variety of CSS *properties* and the *types of values* they expect, you end up with a map of *most properties* against value types:
 
@@ -76,7 +76,7 @@ Extrapolating from here across the vast variety of CSS *properties* and the *typ
     <thead>
         <tr>
             <th>color</th>
-            <th>measure</th>
+            <th>size</th>
             <th>alignment</th>
             <th>…</th>
         </tr>
@@ -117,7 +117,7 @@ With this knowledge under our belt, we can begin to define the design tokens for
     <thead>
         <tr>
             <th>color</th>
-            <th>measure</th>
+            <th>size</th>
             <th>alignment</th>
             <th>…</th>
         </tr>
@@ -185,6 +185,11 @@ With this knowledge under our belt, we can begin to define the design tokens for
             <th><code>$bowhead-property-map</code><br><em>(optional)</em></th>
             <td><a href="#property-map">See below.</a></td>
             <td>Defines which <q>types of values</q> each CSS property should map against.</td>
+        </tr>
+        <tr>
+            <th><code>$bowhead-type-map</code><br><em>(optional)</em></th>
+            <td><a href="#type-map">See below.</a></td>
+            <td>Defines custom remapping to rename the built-in names for types.</td>
         </tr>
         <tr>
             <th><code>$bowhead-tokens</code></th>
@@ -291,9 +296,9 @@ $bowhead-generate: true;
 
 ```css
 :root {
-    --measure-small: 0.5rem;
-    --measure-medium: 1rem;
-    --measure-large: 2rem;
+    --size-small: 0.5rem;
+    --size-medium: 1rem;
+    --size-large: 2rem;
     --color-brick: #b22222;
     --color-plankton: #3cb371;
     --color-desert: #d2b48c;
@@ -315,16 +320,16 @@ Nothing is generated!
 
 <h3 id="property-map">04. Property Map <em>(optional)</em></h3>
 
-`$bowhead-property-map` is another `map` that contains mappings from CSS properties (`padding-left`, `border-bottom-right-radius`, etc.) to our defined design token "types" (`measure`, `color`, etc.), i.e.
+`$bowhead-property-map` is another `map` that contains mappings from CSS properties (`padding-left`, `border-bottom-right-radius`, etc.) to our defined design token <q>types</q> (`size`, `color`, etc.), i.e.
 
 ```scss
 $bowhead-property-map: (
-    width: measure,
-    min-width: measure,
-    max-width: measure,
-    height: measure,
-    min-height: measure,
-    max-height: measure,
+    width: size,
+    min-width: size,
+    max-width: size,
+    height: size,
+    min-height: size,
+    max-height: size,
     ...
 )
 ```
@@ -337,7 +342,7 @@ $bowhead-property-map: (
 );
 ```
 
-Where `alignments` would be one of your design token "types", e.g.
+Where `alignments` would be one of your design token <q>types</q>, e.g.
 
 ```scss
 $bowhead-tokens: (
@@ -351,13 +356,24 @@ $bowhead-tokens: (
 
 **Bowhead** will merge new types in your defined map into its own defaults automatically! Any that you re-declare will overwrite what exists as a default from *Bowhead*.
 
-<h3 id="tokens">05. Tokens</h3>
+<h3 id="type-map">05. Type Map <em>(optional)</em></h3>
 
-`$bowhead-tokens` expects an *SCSS* `map` of "types" of tokens. These types could be a *measure*, *color*, *opacity*, *z-index*, etc.
+`$bowhead-type-map` is a `map` that allows defining alternate names for the <q>types of values</q>, e.g.
+
+```scss
+$bowhead-type-map: (
+    size: measure,
+    ...
+)
+```
+
+<h3 id="tokens">06. Tokens</h3>
+
+`$bowhead-tokens` expects an *SCSS* `map` of <q>types</q> of tokens. These types could be a *size*, *color*, *opacity*, *z-index*, etc.
 
 ```scss
 $bowhead-tokens: (
-    measure: (
+    size: (
         small:  0.5rem,
         medium:   1rem,
         large:    2rem,
@@ -406,8 +422,8 @@ Finally, you can use either **Bowhead's** `@v` function, `@v` mixin, both, or ju
 .thing {
     @include v(background-color, desert);
     @include v(color, brick);
-    border: v(measure, small) solid v(color, plankton);
-    padding: v(measure, medium) v(measure, large);
+    border: v(size, small) solid v(color, plankton);
+    padding: v(size, medium) v(size, large);
     @include v(z-index, above);
     opacity: var(--opacity-alpha);
     // 1. if you just want the raw value, this is not really recommended:
@@ -427,8 +443,8 @@ will generate…
     background-color: var(--color-desert);
     color: #b22222;
     color: var(--color-brick);
-    border: var(--measure-small) solid var(--color-plankton);
-    padding: var(--measure-medium) var(--measure-large);
+    border: var(--size-small) solid var(--color-plankton);
+    padding: var(--size-medium) var(--size-large);
     z-index: 2;
     z-index: var(--z-index-above);
     opacity: var(--opacity-alpha);
@@ -448,7 +464,7 @@ Need a negative value? Use `calc()`:
 
 ```scss
 .thing {
-    margin-left: calc(#{v(measure, medium)} * -1);
+    margin-left: calc(#{v(size, medium)} * -1);
 }
 ```
 
@@ -456,7 +472,7 @@ Combining values? Same idea:
 
 ```scss
 .thing {
-    margin-left: calc(#{v(measure, medium)} + #{v(measure, small)});
+    margin-left: calc(#{v(size, medium)} + #{v(size, small)});
 }
 ```
 

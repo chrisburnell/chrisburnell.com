@@ -25,7 +25,7 @@
     "@11ty/eleventy-img": "^1.1.0",
     "@11ty/eleventy-plugin-directory-output": "^1.0.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
-    "@chrisburnell/bowhead": "^0.2.2",
+    "@chrisburnell/bowhead": "^0.3.0",
     "@chrisburnell/eleventy-cache-webmentions": "^0.1.11",
     "@chrisburnell/pentatonic": "^1.1.1",
     "@chrisburnell/spark-line": "^1.1.0",

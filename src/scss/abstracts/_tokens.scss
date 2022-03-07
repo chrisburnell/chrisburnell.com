@@ -4,7 +4,7 @@
 ////
 
 $tokens: (
-	measure: (
+	size: (
 		breakpoint-small: 500px,
 		breakpoint-medium: 700px,
 		breakpoint-large: 1000px,
@@ -82,6 +82,6 @@ $tokens: (
 		small: "0.5px 1px 1px hsla(var(--hsl-shadow) / 0.7)",
 		medium: "1px 2px 2px hsla(var(--hsl-shadow) / 0.333), 2px 4px 4px hsla(var(--hsl-shadow) / 0.333), 3px 6px 6px hsla(var(--hsl-shadow) / 0.333)",
 		large: "1px 2px 2px hsla(var(--hsl-shadow) / 0.2), 2px 4px 4px hsla(var(--hsl-shadow) / 0.2), 4px 8px 8px hsla(var(--hsl-shadow) / 0.2), 8px 16px 16px hsla(var(--hsl-shadow) / 0.2), 16px 32px 32px hsla(var(--hsl-shadow) / 0.2)",
-		inset: "inset 0 calc(var(--measure-border-button) * -1) 0 0 hsl(var(--hsl-shadow))",
+		inset: "inset 0 calc(var(--size-border-button) * -1) 0 0 hsl(var(--hsl-shadow))",
 	),
 );

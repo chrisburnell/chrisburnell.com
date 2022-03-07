@@ -34,7 +34,7 @@
 		@include v(opacity, gamma);
 		@include v(inline-size, logo-large);
 		// depends on the specific dimensions of raven.svg
-		block-size: calc(#{v(measure, logo-large)} / 1.205);
+		block-size: calc(#{v(size, logo-large)} / 1.205);
 		position: absolute;
 		inset-inline-start: 100%;
 		inset-block-end: 0;

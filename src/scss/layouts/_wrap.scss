@@ -12,8 +12,8 @@
 	margin-inline-end: auto;
 }
 
-@each $name, $measure in $breakpoints {
+@each $name, $size in $breakpoints {
 	.wrap--#{$name} {
-		max-inline-size: $measure;
+		max-inline-size: $size;
 	}
 }

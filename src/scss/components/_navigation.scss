@@ -23,7 +23,7 @@
 		display: inline-block;
 		@include v(font-size, default);
 		@include v(font-weight, bold);
-		padding: v(measure, tiny) v(measure, small);
+		padding: v(size, tiny) v(size, small);
 		position: relative;
 		text-align: center;
 		text-decoration: none;
