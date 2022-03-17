@@ -1,8 +1,6 @@
 // Load .env variables with dotenv
 require("dotenv").config()
 
-const fetch = require("node-fetch")
-
 const site = require("../../data/site.json")
 const queryFilters = require("../filters/queries")
 const Image = require("@11ty/eleventy-img")
@@ -59,16 +57,17 @@ const storeAlbumCover = async (id, classes = "") => {
 }
 
 const fetchAlbumCoverUrl = async (id) => {
-	const album_request = await fetch(`https://api.spotify.com/v1/albums/${id}`, {
-		headers: {
-			Authorization: `Bearer ${SPOTIFY_CLIENT_TOKEN()}`,
-		},
-	})
-	if (album_request.ok) {
-		const album_response = await album_request.json()
-		console.log(album_response)
-		return album_response.images[0].url
-	}
+	// TODO
+	// const album_request = await fetch(`https://api.spotify.com/v1/albums/${id}`, {
+	// 	headers: {
+	// 		Authorization: `Bearer ${SPOTIFY_CLIENT_TOKEN()}`,
+	// 	},
+	// })
+	// if (album_request.ok) {
+	// 	const album_response = await album_request.json()
+	// 	console.log(album_response)
+	// 	return album_response.images[0].url
+	// }
 
 	return ""
 }

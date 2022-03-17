@@ -1,7 +1,6 @@
 // Load .env variables with dotenv
 require("dotenv").config()
 
-const fetch = require("node-fetch")
 const { AssetCache } = require("@11ty/eleventy-fetch")
 
 const SPOTIFY_CLIENT_ID = process.env.SPOTIFY_CLIENT_ID
@@ -19,21 +18,22 @@ const fetchSpotifyTokenData = async () => {
 		return await asset.getCachedValue()
 	}
 
-	const authorization_request = await fetch(`https://accounts.spotify.com/api/token`, {
-		method: "POST",
-		headers: {
-			Authorization: `Basic ${Buffer.from(SPOTIFY_CLIENT_ID + ":" + SPOTIFY_CLIENT_SECRET).toString("base64")}`,
-			"Content-Type": "application/json",
-		},
-		body: {
-			grant_type: "client_credentials",
-		},
-	})
-	if (authorization_request.ok) {
-		const authorization_response = await authorization_request.json()
-		await asset.save(authorization_response, "json")
-		return authorization_response
-	}
+	// TODO
+	// const authorization_request = await fetch(`https://accounts.spotify.com/api/token`, {
+	// 	method: "POST",
+	// 	headers: {
+	// 		Authorization: `Basic ${Buffer.from(SPOTIFY_CLIENT_ID + ":" + SPOTIFY_CLIENT_SECRET).toString("base64")}`,
+	// 		"Content-Type": "application/json",
+	// 	},
+	// 	body: {
+	// 		grant_type: "client_credentials",
+	// 	},
+	// })
+	// if (authorization_request.ok) {
+	// 	const authorization_response = await authorization_request.json()
+	// 	await asset.save(authorization_response, "json")
+	// 	return authorization_response
+	// }
 
 	if (asset.isCacheValid("9001y")) {
 		return await asset.getCachedValue()

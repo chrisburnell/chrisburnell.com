@@ -123,22 +123,6 @@ module.exports = (eleventyConfig) => {
 		}).disable("code")
 	)
 
-	// BrowserSync and Local 404
-	eleventyConfig.setBrowserSyncConfig({
-		callbacks: {
-			ready: (err, browserSync) => {
-				const content_404 = fs.readFileSync("_site/404.html")
-				browserSync.addMiddleware("*", (req, res) => {
-					// Provides the 404 content without redirect.
-					res.write(content_404)
-					res.end()
-				})
-			},
-		},
-		ui: false,
-		ghostMode: false,
-	})
-
 	eleventyConfig.setDataDeepMerge(true)
 
 	eleventyConfig.on("beforeBuild", () => {
