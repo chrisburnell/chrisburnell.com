@@ -39,9 +39,9 @@
 	}
 
 	%collection-anchors {
-		@include case(uppercase, 0);
-		@include font-family(default);
 		color: inherit;
+		@include font-family(default);
+		@include v(font-size);
 		font-style: normal;
 		@include v(font-weight, bold);
 		text-decoration-color: transparent;

@@ -6,38 +6,26 @@
 @mixin theme-dark() {
 	--hsl-shadow: var(--hsl-thunder);
 
-	background-color: h(mineshaft);
-	color: h(milou);
-	scrollbar-color: h(raven) h(mineshaft);
-
 	// Target these if applied to html or body elements
-	&:is(html, body) {
-		.header,
-		.main {
-			background-color: h(wolf);
-			color: h(milou);
-		}
-
-		.main {
-			background-color: h(mineshaft);
-		}
-
-		.footer {
-			background-image: linear-gradient(to bottom, h(thunder, gamma), h(thunder, gamma));
-		}
+	&:is(html, body),
+	body {
+		background-color: h(mineshaft);
+		color: h(milou);
+		scrollbar-color: h(raven) h(mineshaft);
 	}
 
-	:is(abbr, dfn)[title],
-	figure > a figcaption,
-	blockquote cite,
-	.fragment-anchor,
-	.webmentions__response small {
-		color: h(alto);
+	.header,
+	.main {
+		background-color: h(bowhead, beta);
+		color: h(milou);
 	}
 
-	var,
-	.box a {
-		color: h(highland);
+	.main {
+		background-color: h(mineshaft);
+	}
+
+	.footer {
+		background-image: linear-gradient(to bottom, h(thunder, gamma), h(thunder, gamma));
 	}
 
 	h1 {
@@ -54,6 +42,27 @@
 		text-decoration-color: transparent;
 	}
 
+	hr {
+		background-color: h(alto, beta);
+	}
+
+	:is(abbr, dfn)[title],
+	figure > a figcaption,
+	blockquote cite,
+	.fragment-anchor,
+	.webmentions__response small {
+		color: h(alto);
+	}
+
+	.box {
+		border-block-start-color: h(raven, alpha);
+	}
+
+	var,
+	.box a {
+		color: h(highland);
+	}
+
 	.rating {
 		&::before {
 			color: h(kaiser);
@@ -64,16 +73,20 @@
 		}
 	}
 
-	::marker {
-		color: h(coyote);
-	}
-
 	pre[class*="language-"] {
 		background-color: h(mineshaft);
 		background-image: linear-gradient(to bottom, transparent 0, transparent calc(var(--size-gap) - var(--size-border-thin)), h(raven, beta) calc(var(--size-gap) - var(--size-border-thin)), h(raven, beta) var(--size-gap), h(thunder, gamma) var(--size-gap), h(thunder, gamma) 100%);
 
 		code {
 			background-color: transparent;
+		}
+	}
+
+	:is(ol, ul):not([class]) {
+		li {
+			&::marker {
+				color: h(alto);
+			}
 		}
 	}
 
@@ -86,6 +99,12 @@
 			radial-gradient(farthest-side at 50% 0, #{h(milou, gamma)}, transparent),
 			radial-gradient(farthest-side at 50% 100%, #{h(milou, gamma)}, transparent) 0 100%;
 		background-color: #{$background};
+
+		li {
+			&::marker {
+				color: h(alto);
+			}
+		}
 	}
 }
 

@@ -206,6 +206,12 @@
 		position: sticky;
 		@include v(top, medium);
 	}
+
+	li {
+		&::marker {
+			color: h(kaiser);
+		}
+	}
 }
 
 .content__body {
