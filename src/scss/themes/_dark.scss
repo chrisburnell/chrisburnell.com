@@ -82,7 +82,8 @@
 		}
 	}
 
-	:is(ol, ul):not([class]) {
+	:is(ol, ul):not([class]),
+	.breadcrumbs {
 		li {
 			&::marker {
 				color: h(alto);
