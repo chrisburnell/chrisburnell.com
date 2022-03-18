@@ -20,7 +20,7 @@ button:not(.anchor),
 .button {
 	@include font-family(default);
 	@include non-selectable;
-	@include transition(background-color);
+	@include transition(background-color, outline-color);
 	background-color: h(bowhead);
 	color: h(bear) !important; // prevent dark theme from overriding this
 	min-inline-size: 8em;
@@ -31,7 +31,8 @@ button:not(.anchor),
 	@include v(border-radius, border-default);
 	--color-shadow: #{h(bowhead, gamma)};
 	@include v(box-shadow, small);
-	outline: 0 solid #{h(raven)};
+	outline: v(size, border-thin) solid transparent;
+	@include v(outline-offset, border-thin);
 	overflow: visible;
 	position: relative;
 	@include v(font-size, default);
@@ -42,8 +43,7 @@ button:not(.anchor),
 	appearance: none;
 
 	&:is(:hover, :focus, :active) {
-		@include v(outline-offset, border-thin);
-		outline-width: v(size, border-thin) !important;
+		outline-color: h(raven);
 		text-decoration: none;
 	}
 

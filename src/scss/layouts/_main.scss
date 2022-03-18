@@ -18,9 +18,7 @@
 		grid-template-columns:
 			[marginalia-start]
 			14em
-			[marginalia-end]
-			var(--size-gutter)
-			[content-start outdent-start]
+			[marginalia-end content-start outdent-start]
 			repeat(6, 1fr)
 			[content-end outdent-end];
 		grid-template-rows:
@@ -44,7 +42,7 @@
 			[marginalia-start]
 			16em
 			[marginalia-end]
-			var(--size-gap)
+			var(--size-gutter)
 			[content-start]
 			repeat(6, 1fr)
 			[content-end]
@@ -171,49 +169,6 @@
 	}
 }
 
-.table-of-contents {
-	$background: mix(map-get($palette, "thunder"), map-get($palette, "milou"), map-get($opacities, "delta") * 100%);
-	// prettier-ignore
-	background:
-		linear-gradient(#{$background} 30%, transparent),
-		linear-gradient(transparent, #{$background} 70%) 0 100%,
-		radial-gradient(farthest-side at 50% 0, #{h(thunder, gamma)}, transparent),
-		radial-gradient(farthest-side at 50% 100%, #{h(thunder, gamma)}, transparent) 0 100%;
-	background-color: #{$background};
-	// prettier-ignore
-	background-size:
-		100% #{v(size, large)},
-		100% #{v(size, large)},
-		100% #{v(font-size, small)},
-		100% #{v(font-size, small)};
-	// prettier-ignore
-	background-attachment:
-		local,
-		local,
-		scroll,
-		scroll;
-	background-repeat: no-repeat;
-	overflow-x: hidden;
-	overflow-y: auto;
-	overscroll-behavior: contain;
-
-	@include media("below:medium") {
-		max-block-size: 60vh;
-	}
-
-	@include media("above:medium") {
-		max-block-size: calc(100vh - #{v(size, medium)} * 2);
-		position: sticky;
-		@include v(top, medium);
-	}
-
-	li {
-		&::marker {
-			color: h(kaiser);
-		}
-	}
-}
-
 .content__body {
 	@include owl;
 	@include v(margin-block-start, large);
@@ -222,6 +177,7 @@
 	@include media("above:medium") {
 		grid-column: content;
 		grid-row: content;
+		@include v(padding-inline-start, gutter);
 	}
 
 	&.full,
@@ -278,5 +234,49 @@
 	@include media("above:medium") {
 		grid-column: marginalia;
 		grid-row: sparkline;
+	}
+}
+
+// Table of Contents, meta box variant
+.table-of-contents {
+	$background: mix(map-get($palette, "thunder"), map-get($palette, "milou"), map-get($opacities, "delta") * 100%);
+	// prettier-ignore
+	background:
+		linear-gradient(#{$background} 30%, transparent),
+		linear-gradient(transparent, #{$background} 70%) 0 100%,
+		radial-gradient(farthest-side at 50% 0, #{h(thunder, gamma)}, transparent),
+		radial-gradient(farthest-side at 50% 100%, #{h(thunder, gamma)}, transparent) 0 100%;
+	background-color: #{$background};
+	// prettier-ignore
+	background-size:
+		100% #{v(size, large)},
+		100% #{v(size, large)},
+		100% #{v(font-size, small)},
+		100% #{v(font-size, small)};
+	// prettier-ignore
+	background-attachment:
+		local,
+		local,
+		scroll,
+		scroll;
+	background-repeat: no-repeat;
+	overflow-x: hidden;
+	overflow-y: auto;
+	overscroll-behavior: contain;
+
+	@include media("below:medium") {
+		max-block-size: 60vh;
+	}
+
+	@include media("above:medium") {
+		max-block-size: calc(100vh - #{v(size, medium)} * 2);
+		position: sticky;
+		@include v(top, medium);
+	}
+
+	li {
+		&::marker {
+			color: h(kaiser);
+		}
 	}
 }

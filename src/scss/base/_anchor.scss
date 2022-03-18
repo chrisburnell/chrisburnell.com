@@ -9,6 +9,7 @@
 	background-color: transparent;
 	color: h(bowhead);
 	outline: 0 solid h(maple);
+	@include v(border-radius, border-hairline);
 	position: relative;
 	text-decoration: underline;
 	text-decoration-color: h(alto);
