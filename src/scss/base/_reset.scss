@@ -23,7 +23,8 @@
 	*::before,
 	*::after {
 		background-attachment: initial !important;
-		animation-play-state: paused !important;
+		animation-delay: 0s !important;
+		animation-duration: 0s !important;
 		transition: none !important;
 		scroll-behavior: auto !important;
 	}
