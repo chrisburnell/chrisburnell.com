@@ -31,7 +31,7 @@
 			[details-end content-start sparkline-start]
 			auto
 			[sparkline-end meta-start]
-			1fr
+			max-content
 			[meta-end content-end ads-start]
 			auto
 			[ads-end];
@@ -216,6 +216,7 @@
 	@include media("above:medium") {
 		grid-column: marginalia;
 		grid-row: meta;
+		align-self: stretch;
 	}
 }
 
