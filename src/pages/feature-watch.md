@@ -1,6 +1,6 @@
 ---
 title: Browser Feature Watch
-description: Because this website rebuilds automatically, this page serves as an easy way for me to keep track of feature compatability in browsers. Most of the content comes from [this article by Michelle Barker](https://www.smashingmagazine.com/2022/03/new-css-features-2022/).
+description: Because this website rebuilds automatically, this page serves as an easy way for me to keep track of feature compatability in browsers. Most of the content comes from <a href="https://www.smashingmagazine.com/2022/03/new-css-features-2022/">this article by Michelle Barker</a>.
 toc: true
 ---
 
