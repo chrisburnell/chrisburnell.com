@@ -82,7 +82,7 @@ hr {
 [hidden]:not([hidden="false"]),
 .hidden {
 	&:not([href]),
-	&[href]:not(:focus):not(:active) {
+	&[href]:not(:is(:focus, :active)) {
 		@include hidden;
 	}
 }

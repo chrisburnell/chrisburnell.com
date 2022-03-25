@@ -12,7 +12,6 @@ button {
 	font-family: inherit;
 	@include v(font-size, default);
 	user-select: text;
-	cursor: pointer;
 }
 
 button:not(.anchor),
@@ -40,6 +39,7 @@ button:not(.anchor),
 	@include v(line-height, medium);
 	text-align: center;
 	text-decoration: none;
+	cursor: pointer;
 	appearance: none;
 
 	&:is(:hover, :focus, :active) {

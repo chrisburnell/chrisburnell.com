@@ -45,9 +45,7 @@ a {
 	@include v(line-height);
 	text-shadow: none;
 
-	h2:hover &,
-	h2:focus &,
-	h2:active &,
+	h2:is(:hover, :focus, :active) &,
 	&:target {
 		display: inline-block;
 		visibility: visible;
