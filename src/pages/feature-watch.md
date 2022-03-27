@@ -86,7 +86,7 @@ Define colors using *hue*, *whiteness*, and *blackness*.
 - [Official Specification (CSS Color Module Level 5)](https://www.w3.org/TR/css-color-5/)
 - [Article by Michelle Barker](https://www.smashingmagazine.com/2021/11/guide-modern-css-colors/)
 
-*Can I Use data is currently unavailable from API.*
+*As this is still an experimental feature, Can I Use data is currently unavailable from API.*
 
 ## color-contrast() function
 
@@ -96,7 +96,7 @@ Given one color, chooses from a list of other colors to output the one with the 
 - [Official Specification (CSS Color Module Level 5)](https://www.w3.org/TR/css-color-5/)
 - [Article by Michelle Barker](https://www.smashingmagazine.com/2021/11/guide-modern-css-colors/)
 
-*Can I Use data is currently unavailable from API.*
+*As this is still an experimental feature, Can I Use data is currently unavailable from API.*
 
 ## color-mix() function
 
@@ -106,7 +106,7 @@ Mixes two colors together.
 - [Official Specification (CSS Color Module Level 5)](https://www.w3.org/TR/css-color-5/)
 - [Article by Michelle Barker](https://www.smashingmagazine.com/2021/11/guide-modern-css-colors/)
 
-*Can I Use data is currently unavailable from API.*
+*As this is still an experimental feature, Can I Use data is currently unavailable from API.*
 
 ## Scroll Timeline
 
@@ -116,3 +116,12 @@ Native-CSS animations based on scroll position—no more need for JS!
 - [Article by Bramus Van Damme](https://css-tricks.com/practical-use-cases-for-scroll-linked-animations-in-css-with-scroll-timelines/)
 
 {% caniuse 'css-scroll-timeline' %}
+
+## attr() function
+
+Expands the use of the `attr()` function by making it available to more properties and by allowing a <q>type or unit</q> to be passed alongside the targetted attribute. This could be used for things like passing a <q>url</q>-type attribute to `background-image`.
+
+- [Official Specification](https://www.w3.org/TR/css-values/#attr-notation)
+- [Page on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/attr)
+
+*As this is still an experimental feature, Can I Use data is currently unavailable from API.*
