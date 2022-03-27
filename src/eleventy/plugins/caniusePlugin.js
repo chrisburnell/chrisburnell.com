@@ -1,12 +1,29 @@
 const global = require("../../data/global")
 
+const { AssetCache } = require("@11ty/eleventy-fetch")
+
 const caniuse = require("caniuse-api")
 const minifier = require("html-minifier")
 const { DateTime } = require("luxon")
 
+const duration = "23h"
+
+const getFeatureSupport = async (feature) => {
+	let asset = new AssetCache(`caniuse_${feature}`, ".cache")
+	asset.ensureDir()
+
+	if (asset.isCacheValid(duration)) {
+		return await asset.getCachedValue()
+	}
+
+	const support = caniuse.getSupport(feature, true)
+	await asset.save(support, "json")
+	return support
+}
+
 module.exports = (eleventyConfig) => {
-	eleventyConfig.addNunjucksShortcode("caniuse", (feature) => {
-		const support = caniuse.getSupport(feature, true)
+	eleventyConfig.addNunjucksAsyncShortcode("caniuse", async (feature) => {
+		const support = await getFeatureSupport(feature)
 
 		return minifier.minify(
 			`

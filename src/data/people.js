@@ -1,14 +1,14 @@
 // Load .env variables with dotenv
 require("dotenv").config()
 
-const Cache = require("@11ty/eleventy-fetch")
+const EleventyFetch = require("@11ty/eleventy-fetch")
 
 const API_ORIGIN = process.env.PERSONAL_API_URL
-const TOKEN = process.env.WEBMENTION_IO_TOKEN
+const TOKEN = process.env.PERSONAL_API_TOKEN
 const TYPES = ["breweries", "gamePublishers", "humans", "meetups", "musicArtists", "publications"]
 
 const getPeopleByType = async (type) => {
-	return await Cache(`${API_ORIGIN}/${type}.json?token=${TOKEN}`, {
+	return await EleventyFetch(`${API_ORIGIN}/${type}.json?token=${TOKEN}`, {
 		duration: "23h",
 		type: "json",
 		fetchOptions: {
