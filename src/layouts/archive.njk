@@ -19,7 +19,7 @@ truncate: true
 
 	{% sparkline collection, first_year, latest_year %}
 
-	<div class=" [ content__body ] [ h-feed ] {% if toc %}[ generate-toc ] {% endif %}">
+	<div class=" [ content__body ] [ h-feed ] ">
 		{%- set year = latest_year -%}
 		<h2 id="{{ year }}">
 			{{ year }} <small>({{ collection | getCountByYear(year) }})</small>

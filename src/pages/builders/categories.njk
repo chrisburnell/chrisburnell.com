@@ -21,12 +21,12 @@ truncate: true
 	</h1>
 
 	<div class=" [ details ] ">
-		<p class=" [ p-summary ] ">{% if count > 1 %}All {{ count | numberStringFormat }}{% else %}Only one{% endif %} of my {{ category.properPlural }}{% if first_year != latest_year %}, dating from <a href="#{{ first_year }}">{{ first_year }}</a>–<a href="#{{ latest_year }}">{{ latest_year }}</a>{% endif %}.</p>
+		<p class=" [ p-summary ] ">{% if count > 1 %}All {{ count | numberStringFormat }}{% else %}Just the one{% endif %} of my {{ category.properPlural }}{% if first_year != latest_year %}, dating from {% if collection[0].data.list == 'shelf' %}{{ first_year }}–{{ latest_year }}{% else %}<a href="#{{ first_year }}">{{ first_year }}</a>–<a href="#{{ latest_year }}">{{ latest_year }}</a>{% endif %}{% endif %}.</p>
 	</div>
 
 	{% sparkline collection, first_year, latest_year %}
 
-	<div class=" [ content__body{% if collection[0].data.list == 'shelf' %}  full{% endif %} ] [ h-feed ] {% if toc %}[ generate-toc ] {% endif %}">
+	<div class=" [ content__body{% if collection[0].data.list == 'shelf' %}  full{% endif %} ] [ h-feed ] ">
 		{% if categoryIntroductions[category.title] %}
 			{{ categoryIntroductions[category.title] | join('\n\n') | markdownFormat | safe }}
 		{% endif %}

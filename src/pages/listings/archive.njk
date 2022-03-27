@@ -21,7 +21,7 @@ truncate: true
 
 	{% sparkline collection, first_year, latest_year %}
 
-	<div class=" [ content__body ] [ h-feed ] {% if toc %}[ generate-toc ] {% endif %}">
+	<div class=" [ content__body ] [ h-feed ] ">
 		{% for lookup in collections.categories %}
 			{%- if lookup.title == 'note' -%}
 				{% set lookup_collection = collections.notesWithoutReplies %}

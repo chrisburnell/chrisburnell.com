@@ -17,7 +17,7 @@ truncate: true
 		<p class=" [ p-summary ] ">{{ description | safe }}</p>
 	</div>
 
-	<div class=" [ content__body ] [ h-feed ] {% if toc %}[ generate-toc ] {% endif %}">
+	<div class=" [ content__body ] [ h-feed ] ">
 		<nav class=" [ deck ] ">
 			{% for item in collection %}
 				{%- set responses = item.url | getWebmentions -%}

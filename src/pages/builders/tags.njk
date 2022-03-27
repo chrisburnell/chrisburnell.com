@@ -21,7 +21,7 @@ truncate: true
 	</h1>
 
 	<div class=" [ details ] ">
-		<p class=" [ p-summary ] ">{% if count > 1 %}All {{ count | numberStringFormat }}{% else %}Only one{% endif %} of my posts tagged <q>{{ tag | capitalizeFormat }}</q>.</p>
+		<p class=" [ p-summary ] ">{% if count > 1 %}All {{ count | numberStringFormat }}{% else %}Just the one{% endif %} of my posts tagged <q>{{ tag | capitalizeFormat }}</q>.</p>
 	</div>
 
 	<div class=" [ content__body ] {% if toc %}[ generate-toc ] {% endif %}">
