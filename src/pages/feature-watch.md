@@ -4,6 +4,15 @@ description: Because this website rebuilds automatically, this page serves as an
 toc: true
 ---
 
+## dialog element
+
+Native method of displaying a dialog/modal window.
+
+- [Official Specification](https://html.spec.whatwg.org/multipage/forms.html#the-dialog-element)
+- [Page on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog)
+
+{% caniuse 'dialog' %}
+
 ## Container Queries
 
 Like media queries, but even better. Basically, allows you to write context-aware CSS by querying an element’s parent.
