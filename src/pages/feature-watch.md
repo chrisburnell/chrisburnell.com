@@ -95,7 +95,7 @@ Define colors using *hue*, *whiteness*, and *blackness*.
 - [Official Specification (CSS Color Module Level 5)](https://www.w3.org/TR/css-color-5/)
 - [Article by Michelle Barker](https://www.smashingmagazine.com/2021/11/guide-modern-css-colors/)
 
-*As this is still an experimental feature, Can I Use data is currently unavailable from API.*
+{% caniuse 'hwb' %}
 
 ## color-contrast() function
 
@@ -105,7 +105,7 @@ Given one color, chooses from a list of other colors to output the one with the 
 - [Official Specification (CSS Color Module Level 5)](https://www.w3.org/TR/css-color-5/)
 - [Article by Michelle Barker](https://www.smashingmagazine.com/2021/11/guide-modern-css-colors/)
 
-*As this is still an experimental feature, Can I Use data is currently unavailable from API.*
+{% caniuse 'css-color-contrast' %}
 
 ## color-mix() function
 
@@ -115,7 +115,7 @@ Mixes two colors together.
 - [Official Specification (CSS Color Module Level 5)](https://www.w3.org/TR/css-color-5/)
 - [Article by Michelle Barker](https://www.smashingmagazine.com/2021/11/guide-modern-css-colors/)
 
-*As this is still an experimental feature, Can I Use data is currently unavailable from API.*
+{% caniuse 'css-color-mix' %}
 
 ## Scroll Timeline
 
@@ -167,4 +167,4 @@ Expands the use of the `attr()` function by making it available to more properti
 - [Official Specification](https://www.w3.org/TR/css-values/#attr-notation)
 - [Page on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/attr)
 
-*As this is still an experimental feature, Can I Use data is currently unavailable from API.*
+{% caniuse 'css-attr-function' %}
