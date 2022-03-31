@@ -6,21 +6,19 @@
 .deck {
 	article {
 		@include owl(tiny);
-		@include v(max-inline-size, breakpoint-medium);
 		@include v(max-inline-size, line-length-clamp);
-		@include v(padding-block-start, medium);
-		@include v(padding-block-end, medium);
 
-		&:first-child {
-			padding-block-start: 0;
+		&:not(:first-child) {
+			@include v(padding-block-start, medium);
 		}
 
-		&:last-child {
+		&:not(:last-child) {
 			padding-block-end: 0;
+			@include v(padding-block-end, medium);
 		}
 	}
 	article + article {
-		border-block-start: var(--size-border-thin) solid h(thunder, delta);
+		border-block-start: var(--size-border-thin) solid h(mineshaft, delta);
 	}
 
 	a {

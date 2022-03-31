@@ -41,6 +41,8 @@ sitemap:
 						</div>
 					{% endfor %}
 				</nav>
+
+				<hr>
 			{% endif %}
 
 			<h2 id="latest">
@@ -54,7 +56,6 @@ sitemap:
 					{% include 'items/deck.njk' %}
 				{% endfor %}
 			</nav>
-
 			<h2 id="popular">
 				<a href="/popular/">Popular Posts</a>
 			</h2>
@@ -66,10 +67,11 @@ sitemap:
 					{% include 'items/deck.njk' %}
 				{% endfor %}
 			</nav>
-
 			<nav class=" [ navigator ] " aria-label="Posts Navigation">
 				<a class=" [ button ] " href="/archive/">Browse All Posts</a>
 			</nav>
+
+			<hr>
 
 			<h2 id="projects">
 				<a href="/projects/" tabindex="-1">Latest Projects</a>
@@ -83,12 +85,12 @@ sitemap:
 					{% include 'items/deck.njk' %}
 				{% endfor %}
 			</nav>
-
 			<nav class=" [ navigator ] " aria-label="Projects Navigation">
 				<a class=" [ button ] " href="/projects/">Browse Projects</a>
 			</nav>
 
 			{% if collections.upcomingRSVPs.length %}
+				<hr>
 				<h2 id="upcoming-rsvps">
 					<a href="/rsvps/">Upcoming Events</a>
 				</h2>
@@ -112,6 +114,8 @@ sitemap:
 			{% endif %}
 
 			{% if collections.throwbackPosts.length %}
+				<hr>
+
 				<h2 id="on-this-day">On This Day</h2>
 				<nav class=" [ deck ] " aria-labelledby="on-this-day">
 					{%- set hfeed = false -%}
