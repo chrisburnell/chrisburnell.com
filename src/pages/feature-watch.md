@@ -143,7 +143,7 @@ Small, large, and dynamic viewport units allow us clearer and more concise defin
 Define a palette from a color font.
 
 - [Official Specification](https://drafts.csswg.org/selectors-4/#the-focus-visible-pseudo)
-- [Page on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-focusring)
+- [Page on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible)
 
 {% caniuse 'css-focus-visible' %}
 
