@@ -138,7 +138,7 @@ Small, large, and dynamic viewport units allow us clearer and more concise defin
 
 {% caniuse 'viewport-unit-variants' %}
 
-## Focus Visible
+## :focus-visible
 
 Define a palette from a color font.
 

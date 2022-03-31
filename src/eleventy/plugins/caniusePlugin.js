@@ -76,6 +76,6 @@ module.exports = (eleventyConfig) => {
 			)
 		}
 
-		return `<div class="box  box--warning"><p>Because this is still an experimental feature, <em>Can I Use</em> data is currently unavailable from API.</p></div>`
+		return `<div class=" [ box  box--warning ] "><p class="italic">Because this is still an experimental feature, <a href="https://caniuse.com/">caniuse.com</a> data is currently unavailable from API.</p></div>`
 	})
 }
