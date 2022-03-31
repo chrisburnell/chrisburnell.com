@@ -1,4 +1,5 @@
 const cheerio = require("cheerio")
+var he = require("he")
 const slugify = require("slugify")
 
 const minify = (input) => {
@@ -17,7 +18,9 @@ module.exports = (value, outputPath) => {
 			let tocHtml = `<div class=" [ meta ] "><div class=" [ box ] [ table-of-contents ] "><ol class=" [ default-list ] ">`
 			tocHeadings.each(function () {
 				const headingID = $(this).attr("id") || slugify($(this).text().toLowerCase())
-				tocHtml += `<li><a href="#${headingID}">${$(this).text()}</a></li>`
+				tocHtml += `<li><a href="#${headingID}">${he.encode($(this).text(), {
+					useNamedReferences: true,
+				})}</a></li>`
 			})
 			tocHtml += `</ol></div></div>`
 			$(tocHtml).insertBefore(".content__body")

@@ -15,8 +15,8 @@ sitemap:
 		<span class=" [ p-name ] ">{{ tagline | default(title) | safe }}</span>
 	</h1>
 
-	<div class=" [ details ] ">
-		<p class=" [ p-summary ] " aria-hidden="true">{{ description | safe | replace('href=', 'tabindex="-1" href=') }}</p>
+	<div class=" [ description ] [ p-summary ] " aria-hidden="true">
+		{{ description | markdownFormat | safe | replace('href=', 'tabindex="-1" href=') }}
 	</div>
 
 	<div class=" [ content__body ] ">

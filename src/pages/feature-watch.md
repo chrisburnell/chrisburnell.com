@@ -1,10 +1,13 @@
 ---
 title: Browser Feature Watch
-description: Because this website rebuilds automatically, this page serves as an easy way for me to keep track of feature compatability in browsers. Most of the content comes from <a href="https://www.smashingmagazine.com/2022/03/new-css-features-2022/">this article by Michelle Barker</a>.
+description: |
+  Because this website rebuilds automatically, this page serves as an easy way for me to keep track of feature compatability in browsers.
+
+  A lot of inspiration for this living collection comes from [Michelle Barker](https://css-irl.info), who wrote about upcoming browser features [on Smashing Magazine](https://www.smashingmagazine.com/2022/03/new-css-features-2022/) and [on CSS { In Real Life }](https://css-irl.info/exciting-times-for-browsers-and-css/).
 toc: true
 ---
 
-## dialog element
+## &lt;dialog&gt; element
 
 Native method of displaying a dialog/modal window.
 
@@ -168,3 +171,12 @@ Expands the use of the `attr()` function by making it available to more properti
 - [Page on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/attr)
 
 {% caniuse 'css-attr-function' %}
+
+## Trigonometry functions
+
+I love this stuff and it actually proves very useful if you know how to leverage it! Excited to see them become native.
+
+- [Official Specification](https://www.w3.org/TR/css-values-4/#trig-funcs)
+- [Article by Michelle Barker](https://tympanus.net/codrops/2021/06/01/trigonometry-in-css-and-javascript-introduction-to-trigonometry/)
+
+{% caniuse 'trig-functions' %}

@@ -13,8 +13,8 @@ truncate: true
 		<span class=" [ p-name ] ">{{ title | safe }}</span>
 	</h1>
 
-	<div class=" [ details ] ">
-		<p class=" [ p-summary ] ">{{ description | safe }}</p>
+	<div class=" [ description ] [ p-summary ] ">
+		{{ description | markdownFormat | safe }}
 	</div>
 
 	<div class=" [ content__body ] [ h-feed ] ">

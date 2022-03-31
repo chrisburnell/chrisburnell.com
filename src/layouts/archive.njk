@@ -13,8 +13,8 @@ truncate: true
 		<span class=" [ p-name ] ">{{ title | safe }}</span>
 	</h1>
 
-	<div class=" [ details ] ">
-		<p class=" [ p-summary ] ">{{ description | replace('.', '') | safe }}{% if first_year != latest_year %}, dating from <a href="#{{ first_year }}">{{ first_year }}</a>–<a href="#{{ latest_year }}">{{ latest_year }}</a>{% endif %}.</p>
+	<div class=" [ description ] [ p-summary ] ">
+		<p>{{ description | replace('.', '') | safe }}{% if first_year != latest_year %}, dating from <a href="#{{ first_year }}">{{ first_year }}</a>–<a href="#{{ latest_year }}">{{ latest_year }}</a>{% endif %}.</p>
 	</div>
 
 	{% sparkline collection, first_year, latest_year %}

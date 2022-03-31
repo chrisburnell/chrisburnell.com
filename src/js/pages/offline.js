@@ -10,9 +10,9 @@
 			const dom = parser.parseFromString(html, "text/html");
 			const data = new Object();
 			data.url = request.url;
-			if (dom.querySelector(".details .dt-published")) {
-				data.timestamp = new Date(dom.querySelector(".details .dt-published").getAttribute("datetime"));
-				data.published = dom.querySelector(".details .dt-published").innerText;
+			if (dom.querySelector(".description .dt-published")) {
+				data.timestamp = new Date(dom.querySelector(".description .dt-published").getAttribute("datetime"));
+				data.published = dom.querySelector(".description .dt-published").innerText;
 			}
 			if (dom.querySelector("h1")) {
 				data.title = dom.querySelector("h1").innerText;

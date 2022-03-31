@@ -26,9 +26,9 @@
 			auto
 			[breadcrumbs-end title-start]
 			auto
-			[title-end details-start]
+			[title-end description-start]
 			auto
-			[details-end content-start sparkline-start]
+			[description-end content-start sparkline-start]
 			auto
 			[sparkline-end meta-start]
 			max-content
@@ -122,14 +122,14 @@
 	}
 }
 
-.details {
-	@include owl;
+.description {
+	@include owl(small);
 	@include font-family(serif);
 	font-style: italic;
 
 	@include media("above:medium") {
 		grid-column: marginalia / content;
-		grid-row: details;
+		grid-row: description;
 	}
 
 	.full &,
@@ -154,7 +154,7 @@
 		white-space: nowrap;
 	}
 }
-.details--published {
+.description--published {
 	@include media("below:medium") {
 		order: -1;
 		margin-block: v(size, large) 0;
@@ -187,7 +187,7 @@
 		}
 	}
 
-	.details--published ~ & {
+	.description--published ~ & {
 		@include media("below:medium") {
 			margin-block-start: 0;
 		}

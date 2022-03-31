@@ -25,15 +25,6 @@
 	color: h(milou);
 }
 
-.description {
-	@include v(max-inline-size, line-length-clamp);
-	@include v(font-weight, bold);
-
-	.post & {
-		@include v(font-size, gamma);
-	}
-}
-
 // Visual Data
 spark-line {
 	display: inline-grid;

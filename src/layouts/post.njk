@@ -67,7 +67,7 @@ layout: base
 		{% endif %}
 	</h1>
 
-	<div class=" [ details  details--published ] ">
+	<div class=" [ description  description--published ] ">
 		<p>This <a class=" [ u-category ] " href="/{{ categoryPlural | default(category) }}/">{{ categoryProper | default(category) }}</a> {% if draft %}has not yet been published{% else %}was published on <time class=" [ dt-published ] " datetime="{{ date | rfcDate }}">{{ date | friendlyDate }}</time>{% if updated %} and last updated on <time class=" [ dt-updated ] " datetime="{{ updated | rfcDate }}">{{ updated | friendlyDate }}</time>{% endif %}{% endif %}.</p>
 	</div>
 
