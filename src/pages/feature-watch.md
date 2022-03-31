@@ -15,7 +15,7 @@ Native method of displaying a dialog/modal window.
 
 ## Container Queries
 
-Like media queries, but even better. Basically, allows you to write context-aware CSS by querying an element’s parent.
+Like media queries, but even better. Basically, allows us to write context-aware CSS by querying an element’s parent.
 
 - [Official Specification](https://www.w3.org/TR/css-contain-3)
 - [Article by Stephanie Eckles](https://www.smashingmagazine.com/2021/05/complete-guide-css-container-queries/)
@@ -125,6 +125,40 @@ Native-CSS animations based on scroll position—no more need for JS!
 - [Article by Bramus Van Damme](https://css-tricks.com/practical-use-cases-for-scroll-linked-animations-in-css-with-scroll-timelines/)
 
 {% caniuse 'css-scroll-timeline' %}
+
+## New Viewport Units
+
+Small, large, and dynamic viewport units allow us clearer and more concise definitions for layout.
+
+- [Official Specification](https://www.w3.org/TR/css-values-4/#viewport-relative-lengths)
+- [Article by Bramus Van Damme](https://www.bram.us/2021/07/08/the-large-small-and-dynamic-viewports/)
+
+{% caniuse 'viewport-unit-variants' %}
+
+## Focus Visible
+
+Define a palette from a color font.
+
+- [Official Specification](https://drafts.csswg.org/selectors-4/#the-focus-visible-pseudo)
+- [Page on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-focusring)
+
+{% caniuse 'css-focus-visible' %}
+
+## Font Palette
+
+Define a palette from a color font.
+
+- [Official Specification](https://www.w3.org/TR/css-fonts-4/#propdef-font-palette)
+
+{% caniuse 'css-font-palette' %}
+
+## Array.prototype.at()
+
+Like `indexOf()` but allows us to pass a negative integer, rather than hinging upon the array’s length.
+
+- [Page on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/at)
+
+{% caniuse 'mdn-javascript_builtins_array_at' %}
 
 ## attr() function
 
