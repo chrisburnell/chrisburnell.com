@@ -1,0 +1,25 @@
+---
+date: 2022-04-01T12:00:00+0000
+updated: 2022-04-03T12:00:00+0000
+title: Browser Feature Watch
+description: This page serves as an one-stop shop for me to keep track of feature compatability in browsers, ordered by level of support and updated daily.
+emoji: 👀
+toc: true
+---
+
+<p>A lot of inspiration for this living collection comes from [Michelle Barker](https://css-irl.info), who wrote about upcoming browser features on [Smashing Magazine](https://www.smashingmagazine.com/2022/03/new-css-features-2022/) and on [CSS { In Real Life }](https://css-irl.info/exciting-times-for-browsers-and-css/).</p>
+
+<p>Please feel free to [suggest new features](https://github.com/{{ author.github }}/{{ site.repository }}/tree/main/src/data/browserFeatures.json) or even [other browsers](https://github.com/{{ author.github }}/{{ site.repository }}/tree/main/src/data/browsersByType.json).</p>
+
+{% for feature in browserFeaturesSorted %}
+	<section class=" [ owl--medium ] ">
+		<h2 id="{{ feature.id }}">{{ feature.title | safe }}{% if feature.language %} <small>({{ feature.language | capitalizeFormat }})</small>{% endif %}</h2>
+		{{ feature.description | markdownFormat | safe }}
+		<ul>
+			{% for link in feature.links %}
+				<li>{{ link | markdownFormat | safe }}</li>
+			{% endfor %}
+		</ul>
+		{% caniuse feature.id %}
+	</section>
+{% endfor %}

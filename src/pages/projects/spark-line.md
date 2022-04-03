@@ -2,11 +2,12 @@
 title: "&lt;spark-line&gt;"
 emoji: 📈
 eleventyComputed:
-  date: "{{ github['spark-line'].created_at }}"
-  updated: "{{ github['spark-line'].updated_at }}"
+  date: "{{ github[page.fileSlug].created_at }}"
+  updated: "{{ github[page.fileSlug].updated_at }}"
   tagline: "&lt;spark-line&gt; v{{ pkg.dependencies['@chrisburnell/spark-line'] | replace('^', '') }}"
   description: "{{ github[page.fileSlug].description }} Lends well to <a href=\"/pentatonic/\">“automusic”</a>."
 tags:
+  - package
   - web-component
 toc: true
 js: spark-line.js

@@ -3,10 +3,12 @@ title: Pentatonic
 photo: pentatonic.png
 emoji: 🎹
 eleventyComputed:
-  date: "{{ github.pentatonic.created_at }}"
-  updated: "{{ github.pentatonic.updated_at }}"
+  date: "{{ github[page.fileSlug].created_at }}"
+  updated: "{{ github[page.fileSlug].updated_at }}"
   tagline: "Pentatonic v{{ pkg.dependencies['@chrisburnell/pentatonic'] | replace('^', '') }}"
-  description: "{{ github.pentatonic.description }}"
+  description: "{{ github[page.fileSlug].description }}"
+tags:
+  - package
 toc: true
 ---
 

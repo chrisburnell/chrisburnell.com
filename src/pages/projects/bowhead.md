@@ -3,10 +3,12 @@ title: Bowhead
 photo: bowhead.png
 emoji: 🐋
 eleventyComputed:
-  date: "{{ github.bowhead.created_at }}"
-  updated: "{{ github.bowhead.updated_at }}"
+  date: "{{ github[page.fileSlug].created_at }}"
+  updated: "{{ github[page.fileSlug].updated_at }}"
   tagline: "Bowhead v{{ pkg.dependencies['@chrisburnell/bowhead'] | replace('^', '') }}"
-  description: "{{ github.bowhead.description }}"
+  description: "{{ github[page.fileSlug].description }}"
+tags:
+  - package
 toc: true
 ---
 

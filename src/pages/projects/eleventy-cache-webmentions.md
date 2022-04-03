@@ -3,10 +3,12 @@ title: eleventy-cache-webmentions
 photo: eleventy-cache-webmentions.png
 emoji: 💬
 eleventyComputed:
-  date: "{{ github['eleventy-cache-webmentions'].created_at }}"
-  updated: "{{ github['eleventy-cache-webmentions'].updated_at }}"
+  date: "{{ github[page.fileSlug].created_at }}"
+  updated: "{{ github[page.fileSlug].updated_at }}"
   tagline: "eleventy-cache-webmentions v{{ pkg.dependencies['@chrisburnell/eleventy-cache-webmentions'] | replace('^', '') }}"
   description: "{{ github[page.fileSlug].description }}"
+tags:
+  - package
 syndicate_to:
   - https://mastodon.social/users/chrisburnell/statuses/107399910372983580
   - https://twitter.com/iamchrisburnell/status/1467811195981860867
