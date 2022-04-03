@@ -20,7 +20,7 @@
 
 {%- set meta_description -%}A page on {{ site.url | getHost }}{%- endset -%}
 {%- if description -%}
-	{%- set meta_description = description | striptags(true) | safe -%}
+	{%- set meta_description = description | markdownFormat | replace("\n", " ") | striptags(true) | safe -%}
 {%- elif category -%}
 	{%- set meta_description = meta_description | replace('page', categoryProper | default(category) | title) -%}
 {%- endif -%}

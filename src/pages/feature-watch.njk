@@ -1,10 +1,13 @@
 ---
 title: Browser Feature Watch
-description: |
-  Because this website rebuilds automatically, this page serves as an easy way for me to keep track of feature compatability in browsers.
-
-  A lot of inspiration for this living collection comes from [Michelle Barker](https://css-irl.info), who wrote about upcoming browser features [on Smashing Magazine](https://www.smashingmagazine.com/2022/03/new-css-features-2022/) and [on CSS { In Real Life }](https://css-irl.info/exciting-times-for-browsers-and-css/).
 toc: true
+eleventyComputed:
+  description: |
+    Because this website rebuilds every day, this page serves as an one-stop-shop for me to keep track of feature compatability in browsers, ordered by level of support.
+
+    A lot of inspiration for this living collection comes from [Michelle Barker](https://css-irl.info), who wrote about upcoming browser features on [Smashing Magazine](https://www.smashingmagazine.com/2022/03/new-css-features-2022/) and on [CSS { In Real Life }](https://css-irl.info/exciting-times-for-browsers-and-css/).
+
+    Please feel free to [suggest new features](https://github.com/{{ author.github }}/{{ site.repository }}/tree/main/src/data/browserFeatures.json) or even alternative [browsers to check the support of](https://github.com/{{ author.github }}/{{ site.repository }}/tree/main/src/data/browsersByType.json).
 ---
 
 {% for feature in browserFeaturesSorted %}

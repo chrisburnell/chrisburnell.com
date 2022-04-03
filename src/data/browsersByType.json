@@ -1,0 +1,15 @@
+{
+  "Desktop": {
+  	"Chrome": "chrome",
+  	"Edge": "edge",
+  	"Firefox": "firefox",
+  	"Safari": "safari"
+  },
+  "Mobile / Tablet": {
+  	"Android Browser": "android",
+  	"Chrome (Android)": "and_chr",
+  	"Firefox (Android)": "and_ff",
+  	"Safari (iOS)": "ios_saf",
+  	"Samsung Internet": "samsung"
+  }
+}

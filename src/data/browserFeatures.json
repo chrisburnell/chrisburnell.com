@@ -137,7 +137,7 @@
   {
      "id": "viewport-unit-variants",
      "language": "css",
-     "title": "New Viewport Units",
+     "title": "Viewport Unit Variants",
      "description": "Small, large, and dynamic viewport units allow us clearer and more concise definitions for layout.",
      "links": [
         "[Official Specification](https://www.w3.org/TR/css-values-4/#viewport-relative-lengths)",

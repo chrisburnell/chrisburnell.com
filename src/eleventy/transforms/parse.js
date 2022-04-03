@@ -17,10 +17,11 @@ module.exports = (value, outputPath) => {
 		if (tocHeadings.length) {
 			let tocHtml = `<div class=" [ meta ] "><div class=" [ box ] [ table-of-contents ] "><ol class=" [ default-list ] ">`
 			tocHeadings.each(function () {
-				const headingID = $(this).attr("id") || slugify($(this).text().toLowerCase())
-				tocHtml += `<li><a href="#${headingID}">${he.encode($(this).text(), {
-					useNamedReferences: true,
-				})}</a></li>`
+				const headingText = $(this)
+					.html()
+					.replace(/\s+<small>.*<\/small>$/g, "")
+				const headingID = $(this).attr("id") || slugify(headingText.toLowerCase())
+				tocHtml += `<li><a href="#${headingID}">${headingText}</a></li>`
 			})
 			tocHtml += `</ol></div></div>`
 			$(tocHtml).insertBefore(".content__body")

@@ -1,26 +1,11 @@
-const browserFeatures = require("./browserFeatures")
-
 const { AssetCache } = require("@11ty/eleventy-fetch")
 const caniuse = require("caniuse-api")
 
 const site = require("./site")
 
+const browserFeatures = require("./browserFeatures")
+const browsersByType = require("./browsersByType")
 const duration = site.cacheDuration
-const browsersByType = {
-	Desktop: {
-		Chrome: "chrome",
-		Edge: "edge",
-		Firefox: "firefox",
-		Safari: "safari",
-	},
-	"Mobile / Tablet": {
-		"Android Browser": "android",
-		"Chrome (Android)": "and_chr",
-		"Firefox (Android)": "and_ff",
-		"Safari (iOS)": "ios_saf",
-		"Samsung Internet": "samsung",
-	},
-}
 
 const getFeatureSupport = async (feature) => {
 	let asset = new AssetCache(`caniuse_${feature}`, ".cache")

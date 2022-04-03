@@ -6,22 +6,8 @@ const { DateTime } = require("luxon")
 const global = require("../../data/global")
 const site = require("../../data/site")
 
+const browsersByType = require("../../data/browsersByType")
 const duration = site.cacheDuration
-const browsersByType = {
-	Desktop: {
-		Chrome: "chrome",
-		Edge: "edge",
-		Firefox: "firefox",
-		Safari: "safari",
-	},
-	"Mobile / Tablet": {
-		"Android Browser": "android",
-		"Chrome (Android)": "and_chr",
-		"Firefox (Android)": "and_ff",
-		"Safari (iOS)": "ios_saf",
-		"Samsung Internet": "samsung",
-	},
-}
 
 const getFeatureSupport = async (feature) => {
 	let asset = new AssetCache(`caniuse_${feature}`, ".cache")
