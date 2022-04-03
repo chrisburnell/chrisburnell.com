@@ -7,6 +7,7 @@ eleventyComputed:
 sitemap:
   changefreq: daily
   priority: 1.0
+truncate: true
 ---
 
 <article id="content" class=" [ content ] [ wrap ] [ page ] ">
@@ -20,66 +21,13 @@ sitemap:
 	</div>
 
 	<div class=" [ content__body ] ">
-		<div class=" [ e-content ] {% if toc %}[ generate-toc ] {% endif %}">
-			{% if collections.todayRSVPs.length %}
-				<h2 id="today-rsvps">
-					<a href="/rsvps/">Events I’m Attending Today</a>
-				</h2>
-				<nav class=" [ deck ] " aria-labelledby="today-rsvps">
-					{%- set hfeed = false -%}
-					{%- set truncate = false -%}
-					{% for item in collections.todayRSVPs %}
-						{%- set responses = item.url | getWebmentions -%}
-						{%- set rsvp_class = 'box--error' -%}
-						{%- if item.data.rsvp.value == 'yes' -%}
-							{%- set rsvp_class = 'box--success' -%}
-						{%- elif item.data.rsvp.value == 'maybe' or item.data.rsvp.value == 'interested' -%}
-							{%- set rsvp_class = 'box--warning' -%}
-						{%- endif -%}
-						<div class=" [ box  {{ rsvp_class }} ] ">
-							{% include 'items/deck.njk' %}
-						</div>
-					{% endfor %}
-				</nav>
+		<div class=" [ e-content ] ">
 
-				<hr>
-			{% endif %}
-
-			<h2 id="latest">
-				<a href="/writing/">Latest Writing</a>
-			</h2>
-			<nav class=" [ deck ] [ h-feed ] " aria-labelledby="latest">
-				{%- set hfeed = true -%}
-				{%- set truncate = true -%}
-				{% for item in collections.writingPosts | limit(site.limits.feature) %}
-					{%- set responses = item.url | getWebmentions -%}
-					{% include 'items/deck.njk' %}
-				{% endfor %}
-			</nav>
-			<h2 id="popular">
-				<a href="/popular/">Popular Posts</a>
-			</h2>
-			<nav class=" [ deck ] " aria-labelledby="popular">
-				{% set hfeed = false %}
-				{% set truncate = true %}
-				{% for item in collections.popular | limit(site.limits.feature) %}
-					{%- set responses = item.url | getWebmentions -%}
-					{% include 'items/deck.njk' %}
-				{% endfor %}
-			</nav>
-			<nav class=" [ navigator ] " aria-label="Posts Navigation">
-				<a class=" [ button ] " href="/archive/">Browse All Posts</a>
-			</nav>
-
-			<hr>
-
+			{%- set truncate = false -%}
 			<h2 id="projects">
 				<a href="/projects/" tabindex="-1">Latest Projects</a>
 			</h2>
 			<nav class=" [ deck ] " aria-labelledby="projects">
-				{%- set hfeed = false -%}
-				{%- set hide_photos = true -%}
-				{%- set truncate = true -%}
 				{% for item in collections.projects | limit(site.limits.feature) %}
 					{%- set responses = item.url | getWebmentions -%}
 					{% include 'items/deck.njk' %}
@@ -88,6 +36,56 @@ sitemap:
 			<nav class=" [ navigator ] " aria-label="Projects Navigation">
 				<a class=" [ button ] " href="/projects/">Browse Projects</a>
 			</nav>
+			{%- set truncate = true -%}
+
+			{% if collections.todayRSVPs.length %}
+				<hr>
+				<h2 id="today-rsvps">
+					<a href="/rsvps/">Events I’m Attending Today</a>
+				</h2>
+				<nav class=" [ deck ] " aria-labelledby="today-rsvps">
+					{% for item in collections.todayRSVPs %}
+						<div class=" [ box  {{ rsvp_class }} ] ">
+							{%- set rsvp_class = 'box--error' -%}
+							{%- if item.data.rsvp.value == 'yes' -%}
+								{%- set rsvp_class = 'box--success' -%}
+							{%- elif item.data.rsvp.value == 'maybe' or item.data.rsvp.value == 'interested' -%}
+								{%- set rsvp_class = 'box--warning' -%}
+							{%- endif -%}
+							{%- set responses = item.url | getWebmentions -%}
+							{% include 'items/deck.njk' %}
+						</div>
+					{% endfor %}
+				</nav>
+			{% endif %}
+
+			{%- set hfeed = true -%}
+			<hr>
+			<h2 id="latest">
+				<a href="/writing/">Latest Writing</a>
+			</h2>
+			<nav class=" [ deck ] [ h-feed ] " aria-labelledby="latest">
+				{% for item in collections.writingPosts | limit(site.limits.feature) %}
+					{%- set responses = item.url | getWebmentions -%}
+					{% include 'items/deck.njk' %}
+				{% endfor %}
+			</nav>
+			{% set hfeed = false %}
+
+			{%- set show_photos = true -%}
+			<h2 id="popular">
+				<a href="/popular/">Popular Posts</a>
+			</h2>
+			<nav class=" [ deck ] " aria-labelledby="popular">
+				{% for item in collections.popular | limit(site.limits.feature) %}
+					{%- set responses = item.url | getWebmentions -%}
+					{% include 'items/deck.njk' %}
+				{% endfor %}
+			</nav>
+			<nav class=" [ navigator ] " aria-label="Posts Navigation">
+				<a class=" [ button ] " href="/archive/">Browse All Posts</a>
+			</nav>
+			{%- set show_photos = false -%}
 
 			{% if collections.upcomingRSVPs.length %}
 				<hr>
@@ -95,18 +93,15 @@ sitemap:
 					<a href="/rsvps/">Upcoming Events</a>
 				</h2>
 				<nav class=" [ deck ] " aria-labelledby="upcoming-rsvps">
-					{%- set hfeed = false -%}
-					{%- set hide_photos = false -%}
-					{%- set truncate = true -%}
 					{% for item in collections.upcomingRSVPs %}
-						{%- set responses = item.url | getWebmentions -%}
-						{%- set rsvp_class = 'box--error' -%}
-						{%- if item.data.rsvp.value == 'yes' -%}
-							{%- set rsvp_class = 'box--success' -%}
-						{%- elif item.data.rsvp.value == 'maybe' or item.data.rsvp.value == 'interested' -%}
-							{%- set rsvp_class = 'box--warning' -%}
-						{%- endif -%}
 						<div class=" [ box  {{ rsvp_class }} ] ">
+							{%- set rsvp_class = 'box--error' -%}
+							{%- if item.data.rsvp.value == 'yes' -%}
+								{%- set rsvp_class = 'box--success' -%}
+							{%- elif item.data.rsvp.value == 'maybe' or item.data.rsvp.value == 'interested' -%}
+								{%- set rsvp_class = 'box--warning' -%}
+							{%- endif -%}
+							{%- set responses = item.url | getWebmentions -%}
 							{% include 'items/deck.njk' %}
 						</div>
 					{% endfor %}
@@ -114,18 +109,18 @@ sitemap:
 			{% endif %}
 
 			{% if collections.throwbackPosts.length %}
+				{%- set relative_time = true -%}
+				{%- set show_photos = true -%}
 				<hr>
-
 				<h2 id="on-this-day">On This Day</h2>
 				<nav class=" [ deck ] " aria-labelledby="on-this-day">
-					{%- set hfeed = false -%}
-					{%- set truncate = true -%}
-					{%- set relative_time = true -%}
 					{% for item in collections.throwbackPosts | limit(site.limits.feature) %}
 						{%- set responses = item.url | getWebmentions -%}
 						{% include 'items/deck.njk' %}
 					{% endfor %}
 				</nav>
+				{%- set relative_time = false -%}
+				{%- set show_photos = false -%}
 			{% endif %}
 		</div>
 	</div>

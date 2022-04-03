@@ -8,6 +8,7 @@ eleventyComputed:
   title: "{{ category.properPlural | title }}"
   description: "All of my {{ category.properPlural }}."
 hfeed: true
+show_photos: true
 truncate: true
 ---
 {%- set collection = collections[category.title] | arePublished | reverse -%}

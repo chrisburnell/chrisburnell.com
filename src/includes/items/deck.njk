@@ -152,7 +152,7 @@
 			{% endif %}
 		</h3>
 	{% endif %}
-	{% if not hide_photos %}
+	{% if show_photos %}
 		{% include 'photo.njk' %}
 	{% endif %}
 	{% if item.data.description and item.data.tags and (item.data.tags.includes('page') or item.data.tags.includes('writing')) %}
