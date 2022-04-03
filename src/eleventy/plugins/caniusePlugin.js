@@ -1,12 +1,27 @@
-const global = require("../../data/global")
-
 const { AssetCache } = require("@11ty/eleventy-fetch")
-
 const caniuse = require("caniuse-api")
 const minifier = require("html-minifier")
 const { DateTime } = require("luxon")
 
-const duration = "23h"
+const global = require("../../data/global")
+const site = require("../../data/site")
+
+const duration = site.cacheDuration
+const browsersByType = {
+	Desktop: {
+		Chrome: "chrome",
+		Edge: "edge",
+		Firefox: "firefox",
+		Safari: "safari",
+	},
+	"Mobile / Tablet": {
+		"Android Browser": "android",
+		"Chrome (Android)": "and_chr",
+		"Firefox (Android)": "and_ff",
+		"Safari (iOS)": "ios_saf",
+		"Samsung Internet": "samsung",
+	},
+}
 
 const getFeatureSupport = async (feature) => {
 	let asset = new AssetCache(`caniuse_${feature}`, ".cache")
@@ -22,24 +37,8 @@ const getFeatureSupport = async (feature) => {
 }
 
 module.exports = (eleventyConfig) => {
-	eleventyConfig.addNunjucksAsyncShortcode("caniuse", async (featureName) => {
-		const browsersByType = {
-			Desktop: {
-				Chrome: "chrome",
-				Edge: "edge",
-				Firefox: "firefox",
-				Safari: "safari",
-			},
-			"Mobile / Tablet": {
-				"Android Browser": "android",
-				"Chrome (Android)": "and_chr",
-				"Firefox (Android)": "and_ff",
-				"Safari (iOS)": "ios_saf",
-				"Samsung Internet": "samsung",
-			},
-		}
-
-		const support = await getFeatureSupport(featureName)
+	eleventyConfig.addNunjucksAsyncShortcode("caniuse", async (featureID) => {
+		const support = await getFeatureSupport(featureID)
 			.then((support) => support)
 			.catch(() => false)
 
@@ -70,7 +69,7 @@ module.exports = (eleventyConfig) => {
 			return minifier.minify(
 				`<div class=" [ box ${fullSupport ? " box--success " : zeroSupport ? " box--error " : ""}] ">
 					${browserList}
-					<p class="small">Browser support data for <code>${featureName}</code> comes from <a href="https://caniuse.com/#feat=${featureName}">caniuse.com</a> and is up-to-date as of <time datetime="${DateTime.fromJSDate(new Date(global.now)).toFormat("yyyy-MM-dd")}">${DateTime.fromJSDate(new Date(global.now)).toFormat("dd LLLL yyyy")}</time>.</p>
+					<p class="small">Browser support data for <code>${featureID}</code> comes from <a href="https://caniuse.com/#feat=${featureID}">caniuse.com</a> and is up-to-date as of <time datetime="${DateTime.fromJSDate(new Date(global.now)).toFormat("yyyy-MM-dd")}">${DateTime.fromJSDate(new Date(global.now)).toFormat("dd LLLL yyyy")}</time>.</p>
 				</div>`,
 				{ collapseWhitespace: true }
 			)

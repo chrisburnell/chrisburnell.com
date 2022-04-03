@@ -23,6 +23,9 @@ truncate: true
 
 	<div class=" [ content__body ] [ h-feed ] ">
 		{% for lookup in collections.categories %}
+			{% if not loop.first %}
+				<hr>
+			{% endif %}
 			{%- if lookup.title == 'note' -%}
 				{% set lookup_collection = collections.notesWithoutReplies %}
 			{%- else -%}

@@ -1,9 +1,9 @@
 // Load .env variables with dotenv
 require("dotenv").config()
 
-const site = require("../../data/site.json")
-const author = require("../../data/author.json")
-const twitterReplacements = require("../../data/twitterReplacements.json")
+const site = require("../../data/site")
+const author = require("../../data/author")
+const twitterReplacements = require("../../data/twitterReplacements")
 const queryFilters = require("../filters/queries")
 const TwitterAvatarUrl = require("twitter-avatar-url")
 const Image = require("@11ty/eleventy-img")

@@ -1,6 +1,4 @@
-const fs = require("fs")
-
-const site = require("./src/data/site.json")
+const site = require("./src/data/site")
 
 // Import Eleventy plugins
 const caniusePlugin = require("./src/eleventy/plugins/caniusePlugin")
@@ -35,7 +33,7 @@ const categoriesBuilder = require("./src/eleventy/collectionBuilders/categories"
 const tagsBuilder = require("./src/eleventy/collectionBuilders/tags")
 
 // Import other bits and bobs
-const urlReplacements = require("./src/data/urlReplacements.json")
+const urlReplacements = require("./src/data/urlReplacements")
 const markdownParser = require("markdown-it")
 
 module.exports = (eleventyConfig) => {
@@ -53,7 +51,7 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.addPlugin(syntaxHighlightPlugin)
 	eleventyConfig.addPlugin(webmentionsPlugin, {
 		domain: site.url,
-		duration: "23h",
+		duration: site.cacheDuration,
 		urlReplacements: urlReplacements,
 	})
 

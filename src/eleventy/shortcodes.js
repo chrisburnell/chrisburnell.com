@@ -1,6 +1,6 @@
-const author = require("../data/author.json")
-const palette = require("../data/palette.json")
-const site = require("../data/site.json")
+const author = require("../data/author")
+const palette = require("../data/palette")
+const site = require("../data/site")
 const dateFilters = require("./filters/dates")
 
 module.exports = {

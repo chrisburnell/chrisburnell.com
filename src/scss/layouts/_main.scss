@@ -270,7 +270,7 @@
 	}
 
 	@include media("above:medium") {
-		max-block-size: calc(100vh - #{v(size, medium)} * 2);
+		max-block-size: calc(60vh - #{v(size, medium)} * 2);
 		position: sticky;
 		@include v(top, medium);
 	}

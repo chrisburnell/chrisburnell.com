@@ -1,0 +1,21 @@
+---
+title: Browser Feature Watch
+description: |
+  Because this website rebuilds automatically, this page serves as an easy way for me to keep track of feature compatability in browsers.
+
+  A lot of inspiration for this living collection comes from [Michelle Barker](https://css-irl.info), who wrote about upcoming browser features [on Smashing Magazine](https://www.smashingmagazine.com/2022/03/new-css-features-2022/) and [on CSS { In Real Life }](https://css-irl.info/exciting-times-for-browsers-and-css/).
+toc: true
+---
+
+{% for feature in browserFeaturesSorted %}
+	<section class=" [ owl--medium ] ">
+		<h2 id="{{ feature.id }}">{{ feature.title | safe }}{% if feature.language %} <small>({{ feature.language | capitalizeFormat }})</small>{% endif %}</h2>
+		{{ feature.description | markdownFormat | safe }}
+		{% caniuse feature.id %}
+		<ul>
+			{% for link in feature.links %}
+				<li>{{ link | markdownFormat | safe }}</li>
+			{% endfor %}
+		</ul>
+	</section>
+{% endfor %}

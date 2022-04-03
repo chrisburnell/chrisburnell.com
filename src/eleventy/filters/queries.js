@@ -1,10 +1,10 @@
-const site = require("../../data/site.json")
-const consoles = require("../../data/consoles.json")
-const mastodonInstances = require("../../data/mastodonInstances.json")
-const places = require("../../data/places.json")
-const methods = require("../../data/postingMethods.json")
-const syndicationTargets = require("../../data/syndicationTargets.json")
-const urlReplacements = require("../../data/urlReplacements.json")
+const site = require("../../data/site")
+const consoles = require("../../data/consoles")
+const mastodonInstances = require("../../data/mastodonInstances")
+const places = require("../../data/places")
+const methods = require("../../data/postingMethods")
+const syndicationTargets = require("../../data/syndicationTargets")
+const urlReplacements = require("../../data/urlReplacements")
 
 const toArray = (value) => {
 	if (Array.isArray(value)) {

@@ -15,6 +15,7 @@
     "feed": 10,
     "sparkline": 15
   },
+  "cacheDuration": "23h",
   "weights": {
     "time": 0.02
   },

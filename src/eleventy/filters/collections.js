@@ -1,6 +1,6 @@
-const site = require("../../data/site.json")
-const categories = require("../../data/categories.json")
-const ignoredTags = require("../../data/ignoredTags.json")
+const site = require("../../data/site")
+const categories = require("../../data/categories")
+const ignoredTags = require("../../data/ignoredTags")
 
 module.exports = {
 	isPublished: (item) => {
