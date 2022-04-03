@@ -21,7 +21,7 @@
 	<comments>{{ site.url + item.url + "#webmentions" }}</comments>{% endif %}
 	<pubDate>{{ item.date | httpDate }}</pubDate>
 	<category domain="{{ site.url + '/' + item.data.category + '/' }}">{{ item.data.category }}</category>{% if item.data.description %}
-	<description>{{ item.data.description | striptags(true) | safe }}</description>{% elif (item.data.category == 'bookmark' or item.data.category == 'note') and item.templateContent != '' %}
+	<description>{{ item.data.description | markdownFormat | replace("\n", " ") | striptags(true) | safe }}</description>{% elif (item.data.category == 'bookmark' or item.data.category == 'note') and item.templateContent != '' %}
 	<description>{{ item.templateContent | striptags(true) | safe }}</description>
 	<content:encoded><![CDATA[
 		{{ item.templateContent | safe }}{% if item_of_url %}<p><a href="{{ item_of_url }}">{{ item_of_url }}</a></p>{% endif %}

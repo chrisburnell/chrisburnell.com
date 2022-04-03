@@ -46,20 +46,16 @@ module.exports = async () => {
 		sorted.push(feature)
 	}
 
-	sorted = sorted
-		.sort((a, b) => {
-			return a["id"].localeCompare(b["id"])
-		})
-		.sort((a, b) => {
-			if (typeof a.full !== "undefined" && typeof b.full !== "undefined") {
-				return b.full > a.full || (b.full == a.full && b.partial > a.partial) ? 1 : a?.full > b.full || (a.full == b.full && a.partial > b.partial) ? -1 : 0
-			} else if (typeof a.full !== "undefined" && typeof b.full === "undefined") {
-				return -1
-			} else if (typeof a.full === "undefined" && typeof b.full !== "undefined") {
-				return 1
-			}
-			return 0
-		})
+	sorted = sorted.sort((a, b) => {
+		if (typeof a.full !== "undefined" && typeof b.full !== "undefined") {
+			return b.full > a.full || (b.full == a.full && b.partial > a.partial) ? 1 : a?.full > b.full || (a.full == b.full && a.partial > b.partial) ? -1 : 0
+		} else if (typeof a.full !== "undefined" && typeof b.full === "undefined") {
+			return -1
+		} else if (typeof a.full === "undefined" && typeof b.full !== "undefined") {
+			return 1
+		}
+		return a["id"].localeCompare(b["id"])
+	})
 
 	return sorted
 }

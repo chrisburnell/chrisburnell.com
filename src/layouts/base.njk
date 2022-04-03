@@ -94,12 +94,12 @@
 	<meta name="supported-color-schemes" content="light dark">
 
 	<style>{%- include '../../css/main.css' -%}</style>
-	{% if css %}
+	{% if css -%}
 		<style>{%- include '../../css/' + css -%}</style>
-	{% endif %}
-	{% if speedlify[canonical] %}
+	{%- endif %}
+	{% if speedlify[canonical] -%}
 		<style>{%- include '../../css/speedlify-score.css' -%}</style>
-	{% endif %}
+	{%- endif %}
 
 	{% if tags and tags.includes('httpstatus') %}
 		<meta name="robots" content="noindex,nofollow">
