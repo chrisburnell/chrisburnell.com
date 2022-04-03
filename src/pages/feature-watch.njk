@@ -11,11 +11,11 @@ toc: true
 	<section class=" [ owl--medium ] ">
 		<h2 id="{{ feature.id }}">{{ feature.title | safe }}{% if feature.language %} <small>({{ feature.language | capitalizeFormat }})</small>{% endif %}</h2>
 		{{ feature.description | markdownFormat | safe }}
-		{% caniuse feature.id %}
 		<ul>
 			{% for link in feature.links %}
 				<li>{{ link | markdownFormat | safe }}</li>
 			{% endfor %}
 		</ul>
+		{% caniuse feature.id %}
 	</section>
 {% endfor %}
