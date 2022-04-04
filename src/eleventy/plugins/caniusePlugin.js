@@ -1,13 +1,26 @@
 const { AssetCache } = require("@11ty/eleventy-fetch")
+const { DateTime } = require("luxon")
 const caniuse = require("caniuse-api")
 const minifier = require("html-minifier")
-const { DateTime } = require("luxon")
 
 const global = require("../../data/global")
 const site = require("../../data/site")
 
 const browsersByType = require("../../data/browsersByType")
 const duration = site.cacheDuration
+
+const getLatestStableBrowsers = async () => {
+	let asset = new AssetCache(`caniuse_latest_browsers`, ".cache")
+	asset.ensureDir()
+
+	if (asset.isCacheValid(duration)) {
+		return await asset.getCachedValue()
+	}
+
+	const browsers = caniuse.getLatestStableBrowsers()
+	await asset.save(browsers, "json")
+	return browsers
+}
 
 const getFeatureSupport = async (feature) => {
 	let asset = new AssetCache(`caniuse_${feature}`, ".cache")
@@ -24,6 +37,10 @@ const getFeatureSupport = async (feature) => {
 
 module.exports = (eleventyConfig) => {
 	eleventyConfig.addNunjucksAsyncShortcode("caniuse", async (featureID) => {
+		const latestStableBrowsers = await getLatestStableBrowsers()
+			.then((latestStableBrowsers) => latestStableBrowsers)
+			.catch(() => false)
+
 		const support = await getFeatureSupport(featureID)
 			.then((support) => support)
 			.catch(() => false)
@@ -42,7 +59,7 @@ module.exports = (eleventyConfig) => {
 						${Object.keys(browsers).reduce((inside, name) => {
 							const id = browsers[name]
 							const featureClass = support[id].y ? "supported" : support[id].a ? "partial" : "unsupported"
-							const featureText = support[id].y ? `${support[id].y}+` : support[id].a ? `${support[id].a}+` : "No"
+							const featureText = support[id].y ? `${support[id].y}` : support[id].a ? `${support[id].a}` : "No"
 							fullSupport = !fullSupport ? false : support[id].y ? true : false
 							zeroSupport = !zeroSupport ? false : support[id].y || support[id].a ? false : true
 							return `

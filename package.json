@@ -44,15 +44,15 @@
     "luxon": "^2.3.1",
     "natural": "^5.1.13",
     "postcss-cli": "^9.1.0",
-    "prettier": "^2.6.1",
+    "prettier": "^2.6.2",
     "rollup": "^2.70.1",
     "rollup-plugin-terser": "^7.0.2",
-    "sass": "^1.49.10",
+    "sass": "^1.49.11",
     "slugify": "^1.6.5",
     "twitter-avatar-url": "^2.2.0"
   },
   "devDependencies": {
-    "concurrently": "^7.0.0",
+    "concurrently": "^7.1.0",
     "cross-env": "^7.0.3"
   },
   "scripts": {
@@ -64,7 +64,7 @@
     "prettier": "npx prettier --write src",
     "start": "concurrently \"npm run js -- --watch\" \"npm run scss -- --watch\" \"npx @11ty/eleventy --incremental --serve --quiet\"",
     "serve": "npm run start",
-    "build": "npm run palette; npm run js; npm run scss -- --style=compressed; npm run prefix; npm run prettier; cross-env ELEVENTY_PRODUCTION=true npx @11ty/eleventy",
+    "build": "npm run palette; npm run js; npm run scss -- --style=compressed; npm run prefix; npm run prettier; npx browserslist@latest --update-db; cross-env ELEVENTY_PRODUCTION=true npx @11ty/eleventy",
     "pregenerate": "npm run palette; npm run scss -- --style=compressed; npm run prefix; npm run prettier; cross-env PREGENERATE_IMAGES=true npx @11ty/eleventy",
     "debug": "cross-env DEBUG=* npx @11ty/eleventy"
   }

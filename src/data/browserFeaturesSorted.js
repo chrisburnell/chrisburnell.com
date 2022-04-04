@@ -7,6 +7,19 @@ const browserFeatures = require("./browserFeatures")
 const browsersByType = require("./browsersByType")
 const duration = site.cacheDuration
 
+const getLatestStableBrowsers = async () => {
+	let asset = new AssetCache(`caniuse_latest_browsers`, ".cache")
+	asset.ensureDir()
+
+	if (asset.isCacheValid(duration)) {
+		return await asset.getCachedValue()
+	}
+
+	const browsers = caniuse.getLatestStableBrowsers()
+	await asset.save(browsers, "json")
+	return browsers
+}
+
 const getFeatureSupport = async (feature) => {
 	let asset = new AssetCache(`caniuse_${feature}`, ".cache")
 	asset.ensureDir()
@@ -21,6 +34,10 @@ const getFeatureSupport = async (feature) => {
 }
 
 module.exports = async () => {
+	const latestStableBrowsers = await getLatestStableBrowsers()
+		.then((latestStableBrowsers) => latestStableBrowsers)
+		.catch(() => false)
+
 	let sorted = []
 
 	for (let feature of browserFeatures) {
