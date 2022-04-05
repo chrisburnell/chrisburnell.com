@@ -12,7 +12,6 @@
 	display: grid;
 	align-items: start;
 	grid-template-columns: 1fr;
-	overflow: hidden;
 
 	@include media("above:medium") {
 		grid-template-columns:
@@ -110,10 +109,13 @@
 }
 
 .title {
-	@include v(margin-block, gigantic);
+	@include v(padding-block, gigantic);
+	@include v(padding-inline, gutter);
+	margin-inline: calc(v(size, gutter) * -1);
+	overflow: hidden;
 
 	.breadcrumbs ~ & {
-		@include v(margin-block-start, medium);
+		@include v(padding-block-start, medium);
 	}
 
 	@include media("above:medium") {
