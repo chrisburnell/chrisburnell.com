@@ -95,9 +95,9 @@ Element attributes:
 <!-- '"´ -->
 <form>
     <fieldset>
-        <label><input id="input-values" type="text" pattern="[0-9]+" value="12321" maxlength="26"> Values</label>
+        <label><input id="input-values" type="text" pattern="[0-9]+" inputmode="numeric" value="12321" maxlength="26"> Values</label>
         <br>
-        <label><input id="input-line-width" type="number" min="1" step="1" value="2" max="5"> Line Width</label>
+        <label><input id="input-line-width" type="number" pattern="[0-9]*" inputmode="numeric" min="1" step="1" value="2" max="5"> Line Width</label>
         <br>
         <label><input id="input-curve" type="checkbox" checked> Curve</label>
         <br>

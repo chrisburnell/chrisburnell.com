@@ -52,7 +52,7 @@ meter,
 progress {
 	@include v(inline-size, line-length-clamp);
 	max-inline-size: 100%;
-	@include v(box-shadow, medium);
+	@include v(box-shadow, small);
 }
 
 meter {

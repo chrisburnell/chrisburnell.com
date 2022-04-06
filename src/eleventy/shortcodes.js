@@ -35,7 +35,8 @@ module.exports = {
 							key-start="25"
 							key-intervals="2,1,2,2,1,2,2"
 							key-limit="${site.limits.sparkline}"
+							line-width="1.5"
 							class=" [ pentatonic ] "
-							title="Click me to hear me!"></spark-line>`
+							title="Click to hear me!"></spark-line>`
 	},
 }

@@ -133,7 +133,7 @@
 	position: relative;
 	// line-height: strip-unit($size-large * 1.5 - $size-border-thin * 2);
 	text-align: center;
-	@include v(box-shadow, medium);
+	@include v(box-shadow, small);
 	@include v(z-index, above);
 
 	&:is(:hover, :focus) {

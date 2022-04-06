@@ -36,14 +36,11 @@
 	display: flex;
 	overflow: hidden;
 	position: relative;
+	@include v(box-shadow, small);
 }
 
 .ad__split {
-	background-color: h(thunder, delta);
-	@include v(padding, medium);
-	border-block-start: var(--size-border-thin) solid h(raven, beta);
-	border-radius: 0 0 var(--size-border-default) var(--size-border-default);
-	background-clip: padding-box;
+	@extend .box;
 	display: flex;
 	align-items: center;
 }
@@ -90,7 +87,6 @@
 }
 .carbon-wrap {
 	@extend .ad__wrap;
-	@include v(box-shadow, medium);
 }
 .carbon-img,
 .carbon-text {

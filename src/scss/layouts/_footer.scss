@@ -7,7 +7,7 @@
 	background-color: h(mineshaft);
 	@include v(padding-block-start, large);
 	@include v(padding-block-end, large);
-	border-block-start: var(--size-border-thin) solid h(coyote);
+	border-block-start: var(--size-border-thin) solid h(raven, beta);
 
 	@include media("print") {
 		display: none;

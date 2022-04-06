@@ -115,4 +115,4 @@ The function takes six parameters:
 
 ## Interactive Demo
 
-Check out my new interactive demo at [spark-line](/spark-line/)!
+Check out my new interactive demo at [spark-line](/spark-line/#interactive-example)!
