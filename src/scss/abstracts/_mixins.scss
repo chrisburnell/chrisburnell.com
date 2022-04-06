@@ -65,7 +65,7 @@
 		@error "There is no `size` named `#{$size}` in `$sizes`. `size` should be one of `#{map-keys($sizes)}`.";
 	}
 
-	& > * + *:not(.skip-owl) {
+	& > * + * {
 		@include v(margin-block-start, $size);
 	}
 }

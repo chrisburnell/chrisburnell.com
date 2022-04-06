@@ -4,18 +4,18 @@
 ////
 
 .meta {
-	.h-entry &,
-	.h-review & {
-		&,
-		.box {
-			@include owl(tiny);
+	@include owl(medium);
+
+	.box {
+		& > * + * {
+			margin-block-start: 0;
 		}
 	}
 
-	.archive & {
+	:is(.h-entry, .h-review) & {
 		&,
 		.box {
-			@include owl(large);
+			@include owl(tiny);
 		}
 	}
 

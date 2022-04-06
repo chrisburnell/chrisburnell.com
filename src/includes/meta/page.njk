@@ -1,6 +1,9 @@
 <div class=" [ box ] ">
 	{% include 'meta/sub/pages.njk' %}
-	{% if page.url != '/projects/' %}
-		{% include 'meta/sub/projects.njk' %}
-	{% endif %}
 </div>
+
+{% if page.url != '/projects/' %}
+	<div class=" [ box ] ">
+		{% include 'meta/sub/projects.njk' %}
+	</div>
+{% endif %}
