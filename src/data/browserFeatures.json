@@ -192,5 +192,15 @@
         "[Official Specification](https://www.w3.org/TR/css-values-4/#trig-funcs)",
         "[Article by Michelle Barker](https://tympanus.net/codrops/2021/06/01/trigonometry-in-css-and-javascript-introduction-to-trigonometry/)"
      ]
+  },
+  {
+     "id": "css-matches-pseudo",
+     "language": "css",
+     "title": ":is()",
+     "description": "Takes a list of selectors as its argument and targets any matching selector in the list. I find it useful for grouping headings, types of elements, and even interaction-based pseudo-classes for anchors, buttons, and the like.",
+     "links": [
+        "[Official Specification](https://www.w3.org/TR/selectors4/#matches)",
+        "[Page on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/:is)"
+     ]
   }
 ]
