@@ -1,32 +1,32 @@
 const librarian = () => {
 	let shelvers = document.querySelectorAll("[data-sort]")
-	let shelfItems = document.querySelectorAll(".shelf article")
+	let shelfItems = [...document.querySelectorAll(".shelf article")]
 
 	if (shelvers.length > 0) {
 		let sortingStyles = {
-			chronological: [...shelfItems],
-			alphabetical: [...shelfItems].sort((a, b) => {
+			chronological: shelfItems,
+			alphabetical: shelfItems.sort((a, b) => {
 				return a.innerText.localeCompare(b.innerText)
 			}),
-			release: [...shelfItems].sort((a, b) => {
+			release: shelfItems.sort((a, b) => {
 				if (a.querySelector(".release") && b.querySelector(".release")) {
 					return b.querySelector(".release").dateTime.localeCompare(a.querySelector(".release").dateTime)
 				}
 				return false
 			}),
-			rating: [...shelfItems]
+			rating: shelfItems
 				.sort((a, b) => {
 					return a.innerText.localeCompare(b.innerText)
 				})
 				.sort((a, b) => {
 					return (b.querySelector(".rating") ? b.querySelector(".rating").value : 0) - (a.querySelector(".rating") ? a.querySelector(".rating").value : 0)
 				}),
-			author: [...shelfItems]
+			author: shelfItems
 				.sort((a, b) => {
 					if (a.querySelector(".release") && b.querySelector(".release")) {
 						return b.querySelector(".release").dateTime.localeCompare(a.querySelector(".release").dateTime)
 					}
-					return false
+					return 0
 				})
 				.sort((a, b) => {
 					return (a.querySelector(".h-cite") ? a.querySelector(".h-cite").innerText : "").localeCompare(b.querySelector(".h-cite") ? b.querySelector(".h-cite").innerText : "")
