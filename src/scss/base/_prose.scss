@@ -106,8 +106,10 @@ hr {
 	background-color: h(raven);
 	color: h(milou);
 	text-shadow: none;
-
-	&.canada {
+}
+.canada {
+	&::selection,
+	&::target-text {
 		background-color: h(maple);
 	}
 }
