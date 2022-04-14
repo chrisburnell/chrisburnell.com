@@ -3,8 +3,8 @@
   "firstname": "Chris",
   "lastname": "Burnell",
   "shortname": "chrisburnell",
-  "description": "I’m <span class=\" [ canada ] \">Chris Burnell</span> <button class=\" [ anchor  small ] [ js-name-button ] \" aria-label=\"Hear my name read aloud\" tabindex=\"-1\">/<span title=\"'k' in 'kind'\">k</span><span title=\"'r' in 'rye'\">r</span><span title=\"'i' in 'rabbit'\">ɪ</span><span title=\"'s' in 'sigh'\">s</span> <span title=\"'b' in 'buy'\">b</span><span title=\"/ɜːr/: 'ur' in 'fur'\">ɜːr</span><span title=\"/ˈ/: primary stress follows\">ˈ</span><span title=\"'n' in 'nigh'\">n</span><span title=\"/ɛ/: 'e' in 'dress'\">ɛ</span><span title=\"'l' in 'lie'\">l</span>/</button>, a <span class=\" [ canada ] \">Canadian</span> <span class=\"p-job-title\">front end developer</span> hailing from <a href=\"https://www.openstreetmap.org/#map=12/44.6463/-63.6162\">Halifax, Nova Scotia</a> now living in <a href=\"https://www.openstreetmap.org/#map=10/51.4898/-0.0882\" class=\"p-locality\">London, England</a>. Right now I’m working for <a href=\"http://www.squiz.net\" class=\"p-org\">Squiz</a> as a Lead Developer, helping organise <a href=\"https://londonwebstandards.org\" class=\"p-org\">London Web Standards</a> and <a href=\"https://stateofthebrowser.com\" class=\"p-org\">State of the Browser</a>, and I’m perpetually <a href=\"/projects\">rabbit-hole deep-diving</a>. This is where I think, write, and share my passion for the web.",
-  "role": "Front End Developer",
+  "description": "I’m <span class=\" [ canada ] \">Chris Burnell</span> <button class=\" [ anchor  small ] [ js-name-button ] \" aria-label=\"Hear my name read aloud\" tabindex=\"-1\">/<span title=\"'k' in 'kind'\">k</span><span title=\"'r' in 'rye'\">r</span><span title=\"'i' in 'rabbit'\">ɪ</span><span title=\"'s' in 'sigh'\">s</span> <span title=\"'b' in 'buy'\">b</span><span title=\"/ɜːr/: 'ur' in 'fur'\">ɜːr</span><span title=\"/ˈ/: primary stress follows\">ˈ</span><span title=\"'n' in 'nigh'\">n</span><span title=\"/ɛ/: 'e' in 'dress'\">ɛ</span><span title=\"'l' in 'lie'\">l</span>/</button>, a <span class=\" [ canada ] \">Canadian</span> <span class=\"p-job-title\">front end developer</span> hailing from <a href=\"https://www.openstreetmap.org/#map=12/44.6463/-63.6162\">Halifax, Nova Scotia</a> now living in <a href=\"https://www.openstreetmap.org/#map=10/51.4898/-0.0882\" class=\"p-locality\">London, England</a>. Right now I’m working for <a href=\"http://www.squiz.net\" class=\"p-org\">Squiz</a> as a lead developer, helping organise <a href=\"https://londonwebstandards.org\" class=\"p-org\">London Web Standards</a> and <a href=\"https://stateofthebrowser.com\" class=\"p-org\">State of the Browser</a>, and I’m perpetually <a href=\"/projects\">rabbit-hole deep-diving</a>. This is where I think, write, and share my passion for the web.",
+  "role": "front end developer",
   "nationality": "Canadian",
   "location": "London, England",
   "email": "me@chrisburnell.com",
@@ -40,7 +40,7 @@
   },
   "employer": {
     "title": "Squiz",
-    "role": "Lead Developer",
+    "role": "lead developer",
     "url": "https://www.squiz.net"
   }
 }

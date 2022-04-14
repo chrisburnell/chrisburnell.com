@@ -33,7 +33,7 @@ You can also just download it directly [from GitHub](https://github.com/chrisbur
 
 ## Usage
 
-This exposes/makes available a Custom HTML Element I’m calling <q>spark-line</q>. While this requires JavaScript on the front-end, it makes the process of invoking and displaying sparklines for X,Y data very simple.
+This exposes/makes available a Custom HTML Element I’m calling <q>spark-line</q>. While this requires JavaScript on the front end, it makes the process of invoking and displaying sparklines for X,Y data very simple.
 
 Include `spark-line.js` in your page however you like (as-is, as part of a build script, etc.).
 
@@ -97,7 +97,7 @@ Element attributes:
     <fieldset>
         <label><input id="input-values" type="text" pattern="[0-9]+" inputmode="numeric" value="12321" maxlength="26"> Values</label>
         <br>
-        <label><input id="input-line-width" type="number" pattern="[0-9]*" inputmode="numeric" min="1" step="1" value="2" max="5"> Line Width</label>
+        <label><input id="input-line-width" type="text" pattern="[1-5]+" inputmode="numeric"> Line Width</label>
         <br>
         <label><input id="input-curve" type="checkbox" checked> Curve</label>
         <br>
@@ -107,13 +107,6 @@ Element attributes:
         <br>
         <label><input id="input-endpoint-color" type="color" value="#000000"> Endpoint Color</label>
     </fieldset>
-    <spark-line id="sparkline" class="pentatonic"></spark-line>
-    <style>
-        [id="sparkline"] {
-            margin-block-start: 0;
-            align-self: center;
-            justify-self: center;
-        }
-    </style>
+    <spark-line id="sparkline" class="pentatonic" style="margin-block-start: 0; align-self: center; justify-self: center;"></spark-line>
     <noscript>Requires JavaScript, unfortunately.</noscript>
 </form>

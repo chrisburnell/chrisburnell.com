@@ -1,7 +1,7 @@
 ---
 title: CV
 eleventyComputed:
-  description: "{{ author.role }}{% if author.employer %} and {{ author.employer.role }} at {{ author.employer.title }}{% endif %}"
+  description: "{{ author.role | title }}{% if author.employer %} and {{ author.employer.role | title }} at {{ author.employer.title }}{% endif %}"
   tagline: "{{ author.name }}"
 ads: false
 monetizaton: false
@@ -10,7 +10,7 @@ toc: true
 
 ## Biography
 
-I’m a self-taught developer driven by a passion for the front-end to create a faster and more open web for everyone. It’s always been important to me to keep abreast of trends on the web, and I enjoy [experimenting](https://codepen.io/{{ author.codepen }}) with these technologies to discover use-cases for my work, and I use my website as a platform to guide my learning and share what I’ve learned. In recent years, I’ve also become interested in content ownership online and have gravitated towards movements like [IndieWeb](https://indieweb.org).
+I’m a self-taught developer driven by a passion for the front end to create a faster and more open web for everyone. It’s always been important to me to keep abreast of trends on the web, and I enjoy [experimenting](https://codepen.io/{{ author.codepen }}) with these technologies to discover use-cases for my work, and I use my website as a platform to guide my learning and share what I’ve learned. In recent years, I’ve also become interested in content ownership online and have gravitated towards movements like [IndieWeb](https://indieweb.org).
 
 ## Work Experience
 
@@ -32,17 +32,17 @@ I’m a self-taught developer driven by a passion for the front-end to create a 
 
     *September 2021 – November 2021*<br><br>
 
-    *Front-End Developer (Contracting)*
+    *Front End Developer (Contracting)*
 
     *February 2021 – September 2021*<br><br>
 
-    *Front-End Developer*
+    *Front End Developer*
 
     *February 2018 – July 2020*<br><br>
 
-    I was part of a small team of front-end developers tasked with supporting *Squiz’s* digital transformation projects primarily through delivering cut-ups, coordinating and building design systems with other teams, and building solutions in *Squiz’s* CMS, *Matrix*.
+    I was part of a small team of front end developers tasked with supporting *Squiz’s* digital transformation projects primarily through delivering cut-ups, coordinating and building design systems with other teams, and building solutions in *Squiz’s* CMS, *Matrix*.
 
-    - was part of an internal group in charge of building and maintaining the company’s front-end build tools
+    - was part of an internal group in charge of building and maintaining the company’s front end build tools
     - championed and helped to educate our developers on best practices and techniques to make our jobs easier and more enjoyable<br><br>
 
 0. **[City, University of London](https://city.ac.uk)**
@@ -58,13 +58,13 @@ I’m a self-taught developer driven by a passion for the front-end to create a 
 
 0. **[Squiz](https://squiz.net)**
 
-    *Front-End Web Developer / UI Developer*
+    *Front End Web Developer / UI Developer*
 
     *April 2012 – April 2014*<br><br>
 
     This was my first job in the industry and was extremely invigourating to learn the ins-and-outs of professional web development. My main tasks were in delivering cut-ups and building solutions in *Squiz Matrix*; although, halfway into my time I switched roles and my focus became solely on cut-ups and advocating for best practices.
 
-    - worked on establishing a standard by which front-end code was written by the London team and helped educate and mentor designers and developers on collaborating on standards
+    - worked on establishing a standard by which front end code was written by the London team and helped educate and mentor designers and developers on collaborating on standards
     - organised and ran “Implementor Scrum”, a weekly meeting for developers to have fun and build something unrelated to work and for fun, but using skills that we could hone and apply to our work<br><br>
 
 ## Notable Projects & Articles

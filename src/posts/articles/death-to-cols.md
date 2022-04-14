@@ -8,7 +8,7 @@ description: For over a decade now, it's been the norm to layout our websites wi
 banner: death-to-cols.png
 ---
 
-If you’ve ever developed a website with Twitter’s *Bootstrap*, Zurb’s *Foundation*, or a similar front-end framework, you’re likely familiar with the concept of a CSS grid system. Libraries of this sort present the developer with a host of classes and *bits* of CSS to accelerate and jump-start the process of layout.
+If you’ve ever developed a website with Twitter’s *Bootstrap*, Zurb’s *Foundation*, or a similar front end framework, you’re likely familiar with the concept of a CSS grid system. Libraries of this sort present the developer with a host of classes and *bits* of CSS to accelerate and jump-start the process of layout.
 
 Specifically, they approach layout by dividing the page into <var>n</var> columns and assigning each section of the page to a different number of these columns, e.g. a 12-column layout being split into a 9-column content section and a 3-column sidebar.
 

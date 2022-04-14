@@ -8,7 +8,7 @@ description: For over a decade now, it’s been the norm to layout our websites 
 banner: death-to-cols.png
 ---
 
-You’re likely familiar with the classic CSS grid system I’m talking about if you’ve ever developed a website using Twitter’s *Bootstrap*, Zurb’s *Foundation*, or a similar front-end framework like the ol’ [960 Grid System](https://960.gs/). Libraries of this sort present the developer with a large swathe of classes and *bits* of CSS to accelerate and jump-start the process of layout.
+You’re likely familiar with the classic CSS grid system I’m talking about if you’ve ever developed a website using Twitter’s *Bootstrap*, Zurb’s *Foundation*, or a similar front end framework like the ol’ [960 Grid System](https://960.gs/). Libraries of this sort present the developer with a large swathe of classes and *bits* of CSS to accelerate and jump-start the process of layout.
 
 Specifically, they approach layout by dividing the width of the page into <var>n</var> (typically 12 or 24) columns and assigning the width of components on the page to a different number of these columns. For example, a <var>12</var>-column layout might be split into a <var>9</var>-column content section and a <var>3</var>-column sidebar. <var>12</var> is an especially common and useful number for layout on the web as it can easily be divided (and normalised) into *halves*, *thirds*, *quarters*, and *sixths*. Others attempt to inject *double* the granularity and opt for a <var>24</var>-column grid; although, you’re certainly not limited to these numbers.
 

@@ -13,7 +13,7 @@ syndicate_to:
 
 Since the last re-design of my website, I decided to make the switch to [Disqus](https://disqus.com/ "Disqus") for my commenting system. This comes with a couple of disadvantages but also with a few advantages.
 
-In this article I’m going to run through how I manage my comments section from a front-end development perspective, with respect to user experience, performance, and accessibility.
+In this article I’m going to run through how I manage my comments section from a front end development perspective, with respect to user experience, performance, and accessibility.
 
 <h2 id="cons">The Cons of Disqus</h2>
 

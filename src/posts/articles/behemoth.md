@@ -19,6 +19,6 @@ What makes me positive this was a good move for me is the mentality it’s given
 
 Hypocrite.
 
-One of the other main parts of the ethos behind my website then—and now—is that in front-end development, there’s no one way to do any given thing. Sure, there might be *the most performative way*, but am I really so interested in web development to spend that much time crunching numbers and mix-maxing on *my own website*? Even more so, does the person reading my website notice a difference between a solution that’s 99% of the way there versus the perfect one? *Maybe?* If they’re used to browsing perfect websites, definitely!
+One of the other main parts of the ethos behind my website then—and now—is that in front end development, there’s no one way to do any given thing. Sure, there might be *the most performative way*, but am I really so interested in web development to spend that much time crunching numbers and mix-maxing on *my own website*? Even more so, does the person reading my website notice a difference between a solution that’s 99% of the way there versus the perfect one? *Maybe?* If they’re used to browsing perfect websites, definitely!
 
 *I don’t think so.*

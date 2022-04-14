@@ -15,7 +15,7 @@ For example, if I respond to someone on *Twitter*, the reply target is the URL t
 
 ## How to present reply context
 
-This URL is exposed on the front-end as the context to my reply:
+This URL is exposed on the front end as the context to my reply:
 
 > in reply to https://twitter.com/dletorey/status/991247595132551168
 

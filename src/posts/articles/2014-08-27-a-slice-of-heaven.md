@@ -60,7 +60,7 @@ And the revisited version:
 
 {% codepen 'Cbiun', false, 250 %}
 
-Input fields have always been a point of pain for front-end developers. Using this method we get around having to worry about styling them and rely on the sibling selectors (`+` and `~`, see more [on Can I Use](http://caniuse.com/#search=css-sel2 "Sibling Selectors")) to modify the styles applied to the `input`’s associated `label` element based on the `:checked` state of the `input`.
+Input fields have always been a point of pain for front end developers. Using this method we get around having to worry about styling them and rely on the sibling selectors (`+` and `~`, see more [on Can I Use](http://caniuse.com/#search=css-sel2 "Sibling Selectors")) to modify the styles applied to the `input`’s associated `label` element based on the `:checked` state of the `input`.
 
 {% caniuse 'css-sel2' %}
 

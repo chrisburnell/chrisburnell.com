@@ -25,7 +25,7 @@ further_reading:
 A couple of weeks ago, CSS Wizard, Harry Roberts, [wrote about](https://csswizardry.com/2016/02/mixins-better-for-performance/) some performance benchmarking he did with Sass’s `@extend` and `@mixin`, specifically in the context of how the Sass is compiled into CSS in both cases and how that output affects the pipeline of data to the end-user.
 
 <div class="edit">
-    <p>N.B. This assumes that you are gzipping your assets on the front-end.</p>
+    <p>N.B. This assumes that you are gzipping your assets on the front end.</p>
 </div>
 
 I’ve been using both `@extend` and `@mixin` in my Sass for a number of years, but finding the balance between the two techniques, to find what works for me, took some time. I think it was Harry’s article that prompted me to re-evaluate how I approach the subject.
