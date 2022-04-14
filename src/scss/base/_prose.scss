@@ -108,9 +108,12 @@ hr {
 	text-shadow: none;
 }
 .canada {
-	&::selection,
-	&::target-text {
-		background-color: h(maple);
+	&,
+	* {
+		&::selection,
+		&::target-text {
+			background-color: h(maple);
+		}
 	}
 }
 
