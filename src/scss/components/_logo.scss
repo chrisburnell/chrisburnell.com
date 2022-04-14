@@ -56,10 +56,6 @@
 	}
 
 	.title > & {
-		@include media("above:large") {
-			position: static;
-		}
-
 		&::before {
 			@include media("below:large") {
 				transform: translateX(-10%) translateY(-10%) scaleX(-1);

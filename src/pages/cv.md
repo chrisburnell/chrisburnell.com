@@ -3,11 +3,8 @@ title: CV
 eleventyComputed:
   description: "{{ author.role }}{% if author.employer %} and {{ author.employer.role }} at {{ author.employer.title }}{% endif %}"
   tagline: "{{ author.name }}"
-sitemap:
-  exclude: true
 ads: false
 monetizaton: false
-perch: true
 toc: true
 ---
 
