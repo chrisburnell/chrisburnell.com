@@ -26,7 +26,7 @@
 										<a class=" [ webmentions__response__avatar ] [ p-author  h-card ] " href="{{ authorUrl | default(webmention.url) }}" title="{{ authorName | default(authorUrl) }} sent this {{ webmention['wm-property'] | replace('-of', '') | replace('in-reply-to', 'reply') }}">
 											{% avatar webmention.author.photo, webmention.url, webmention.author.url %}
 											<span class=" [ webmentions__response__name ] [ p-name ] ">{{ authorName }}</span>
-											<data class=" [ u-url  u-{{ webmention['wm-property'] }} ] " value="{{ authorUrl }}" hidden></data>
+											<data class=" [ u-url  u-{{ webmention['wm-property'] }} ] " value="{{ webmention.url }}" hidden></data>
 										</a>
 										<span class=" [ webmentions__response__type ] " aria-hidden="true"></span>
 										<time class=" [ dt-published ] " datetime="{{ webmentionDate | rfcDate }}" hidden>{{ webmentionDate | friendlyDate }}</time>
