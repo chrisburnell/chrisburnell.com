@@ -13,7 +13,7 @@ syndicate_to:
   - https://mastodon.social/users/chrisburnell/statuses/105260511557824260
 ---
 
-One of the great advantages I’ve found in using Eleventy since switching from Jekyll has been its ability to pull in external content and cache it for the build. I first experimented with this using [eleventy-img](https://github.com/11ty/eleventy-img) and [eleventy-cache-assets](https://github.com/11ty/eleventy-cache-assets), two Eleventy plugins aimed at simplifying that exact ability of Eleventy’s.
+One of the great advantages I’ve found in using Eleventy since switching from Jekyll has been its ability to pull in external content and cache it for the build. I first experimented with this using [eleventy-img](https://github.com/11ty/eleventy-img) and [eleventy-fetch](https://github.com/11ty/eleventy-fetch), two Eleventy plugins aimed at simplifying that exact ability of Eleventy’s.
 
 It took some time for the pieces to fall into place—first-of-all was watching [Sia Karamalegos’](https://sia.codes/) talk at [Jamstack Toronto: 11ties](/note/1603756300/) a couple of weeks ago, where she gave an incredible overview of the IndieWeb and how to embrace it without sacrificing connecting with others on social networks. In the talk, she briefly described her solution for fetching fresh webmentions and caching them for build and even included some fantastic code examples too; how lucky that this would be during a conference about Eleventy!
 

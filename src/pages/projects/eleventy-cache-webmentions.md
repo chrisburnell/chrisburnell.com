@@ -73,7 +73,7 @@ module.exports = function(eleventyConfig) {
         //   see https://www.11ty.dev/docs/plugins/cache/#change-the-cache-duration for more info
         duration: "1d",
         // key: "webmentions" by default
-        //   dictates the name sent to eleventy-cache-assets to name the file
+        //   dictates the name sent to eleventy-fetch to name the file
         key: "webmentions",
         // allowedHTML: Object by default
         //   see https://www.npmjs.com/package/sanitize-html for more info
