@@ -54,7 +54,6 @@ ol.default-list {
 		counter-increment: ordered-list;
 
 		&::marker {
-			@include tabular-lining-numerals;
 			content: counters(ordered-list, "-", decimal) ".";
 			@include v(font-family, monospace);
 		}
