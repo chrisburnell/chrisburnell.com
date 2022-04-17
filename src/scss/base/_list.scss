@@ -56,6 +56,7 @@ ol.default-list {
 		&::marker {
 			content: counters(ordered-list, "-", decimal) ".";
 			@include v(font-family, monospace);
+			@include v(font-size, small);
 		}
 	}
 
