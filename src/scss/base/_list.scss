@@ -55,28 +55,29 @@ ol.default-list {
 
 		&::marker {
 			@include tabular-lining-numerals;
-			content: counters(ordered-list, ".", decimal-leading-zero);
+			content: counters(ordered-list, "-", decimal) ".";
+			@include v(font-family, monospace);
 		}
 	}
 
 	&[type="a"] li::marker,
 	&.lower-alpha li::marker {
-		content: counters(ordered-list, ".", lower-alpha);
+		content: counters(ordered-list, "-", lower-alpha);
 	}
 
 	&[type="A"] li::marker,
 	&.upper-alpha li::marker {
-		content: counters(ordered-list, ".", upper-alpha);
+		content: counters(ordered-list, "-", upper-alpha);
 	}
 
 	&[type="i"] li::marker,
 	&.lower-roman li::marker {
-		content: counters(ordered-list, ".", lower-roman);
+		content: counters(ordered-list, "-", lower-roman);
 	}
 
 	&[type="I"] li::marker,
 	&.upper-roman li::marker {
-		content: counters(ordered-list, ".", upper-roman);
+		content: counters(ordered-list, "-", upper-roman);
 	}
 
 	&[reversed] {
