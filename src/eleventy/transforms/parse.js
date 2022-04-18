@@ -1,5 +1,4 @@
 const cheerio = require("cheerio")
-var he = require("he")
 const slugify = require("slugify")
 
 const minify = (input) => {
