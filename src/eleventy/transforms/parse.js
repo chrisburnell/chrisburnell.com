@@ -6,7 +6,7 @@ const minify = (input) => {
 }
 
 module.exports = (value, outputPath) => {
-	if (outputPath.endsWith(".html")) {
+	if (outputPath && outputPath.endsWith(".html")) {
 		const $ = cheerio.load(value)
 
 		// We have to process headings from table of contents before adding

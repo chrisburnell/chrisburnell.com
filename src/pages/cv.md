@@ -67,7 +67,7 @@ I’m a self-taught developer driven by a passion for the front end to create a 
     - worked on establishing a standard by which front end code was written by the London team and helped educate and mentor designers and developers on collaborating on standards
     - organised and ran “Implementor Scrum”, a weekly meeting for developers to have fun and build something unrelated to work and for fun, but using skills that we could hone and apply to our work<br><br>
 
-## Notable Projects & Articles
+## Notable Projects and Articles
 
 0. **[Pentatonic](https://chrisburnell.com/pentatonic/)**
 

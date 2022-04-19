@@ -12,7 +12,7 @@ module.exports = {
 				return false
 			}
 		}
-		return true
+		return !!item.url
 	},
 	arePublished: (array) => array.filter(module.exports.isPublished),
 	categoryFilter: (array) => {
