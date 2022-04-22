@@ -11,6 +11,7 @@ button {
 	border: 0;
 	font-family: inherit;
 	@include v(font-size, default);
+	cursor: pointer;
 	user-select: text;
 }
 
