@@ -21,7 +21,10 @@ const librarian = () => {
 			return false
 		},
 		rating: (a, b) => {
-			return (b.querySelector(".rating") ? b.querySelector(".rating").value : 0) - (a.querySelector(".rating") ? a.querySelector(".rating").value : 0)
+			if (a.querySelector(".rating")?.value === b.querySelector(".rating")?.value) {
+				return a.querySelector("h3").innerText.trim().localeCompare(b.querySelector("h3").innerText.trim())
+			}
+			return (b.querySelector(".rating")?.value || 0) - (a.querySelector(".rating")?.value || 0)
 		},
 		author: (a, b) => {
 			return (a.querySelector(".h-cite") ? a.querySelector(".h-cite").innerText : "").localeCompare(b.querySelector(".h-cite") ? b.querySelector(".h-cite").innerText : "")
