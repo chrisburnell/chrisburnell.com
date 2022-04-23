@@ -27,7 +27,10 @@ const librarian = () => {
 			return (b.querySelector(".rating")?.value || 0) - (a.querySelector(".rating")?.value || 0)
 		},
 		author: (a, b) => {
-			return (a.querySelector(".h-cite") ? a.querySelector(".h-cite").innerText : "").localeCompare(b.querySelector(".h-cite") ? b.querySelector(".h-cite").innerText : "")
+			if (a.querySelector(".h-cite")?.innerText === b.querySelector(".h-cite")?.innerText) {
+				return a.querySelector("h3").innerText.trim().localeCompare(b.querySelector("h3").innerText.trim())
+			}
+			return (a.querySelector(".h-cite")?.innerText || "").localeCompare(b.querySelector(".h-cite")?.innerText || "")
 		},
 	}
 
