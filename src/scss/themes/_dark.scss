@@ -8,7 +8,7 @@
 
 	// Target these if applied to html or body elements
 	&:is(html, body),
-	body {
+	&:is(html) body {
 		background-color: h(mineshaft);
 		color: h(milou);
 		scrollbar-color: h(raven) h(mineshaft);

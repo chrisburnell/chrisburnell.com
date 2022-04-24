@@ -191,14 +191,14 @@ And by applying that class to an element, those new values are both applied to i
 
 Or inside a box like this:
 
-<div class=" [ box ] [ code-red  silly ] ">
+<div class=" [ box ] [ code-red ] ">
     <p>I'm not sure why this is such a great thing, to be fair, though…</p>
 </div>
 
 Or inside a table like this:
 
 <figure>
-    <table class=" [ dark ] ">
+    <table class=" [ silly ] ">
         <thead>
             <tr>
                 <th>Heading A</th>
