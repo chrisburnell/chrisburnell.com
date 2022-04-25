@@ -212,5 +212,15 @@
         "[Official Specification](https://www.w3.org/TR/css-logical-1/)",
         "[Page on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Basic_concepts)"
      ]
+  },
+  {
+     "id": "css-gradients",
+     "language": "css",
+     "title": "CSS Gradients",
+     "description": "Methods for defining (linear / radial) gradients with CSS.",
+     "links": [
+        "[Official Specification](https://www.w3.org/TR/css3-images/)",
+        "[Page on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients)"
+     ]
   }
 ]
