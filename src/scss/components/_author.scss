@@ -38,6 +38,29 @@
 		@include v(margin-inline-start, gap);
 	}
 
+	&::before {
+		@include non-interactive;
+		content: "";
+		opacity: 0;
+		background-image: url("/images/avatar-pixelated.png");
+		background-size: 100%;
+		position: absolute;
+		inset-block-start: 0;
+		inset-inline-start: 0;
+		image-rendering: crisp-edges;
+		image-rendering: pixelated;
+		@include transition(opacity long, visibility);
+		transition: opacity v(transition-duration) v(transition-function), visibility 0s linear v(transition-duration);
+		@include v(z-index);
+	}
+
+	&:is(:hover, :focus, :active) {
+		&::before {
+			opacity: 1;
+			transition: opacity v(transition-duration, long) v(transition-function);
+		}
+	}
+
 	%collection-anchors {
 		color: inherit;
 		@include font-family(default);
@@ -66,42 +89,17 @@
 	@include v(box-shadow, inset);
 	text-decoration: none !important;
 	@include transition(opacity);
+}
 
-	&,
-	img,
-	&::before {
-		@include v(inline-size, avatar);
-		@include v(block-size, avatar);
-		border-radius: 50%;
+.author__image,
+.author__image img,
+.author__information::before {
+	@include v(inline-size, avatar);
+	@include v(block-size, avatar);
+	border-radius: 50%;
 
-		@supports (shape-outside: circle(50%)) {
-			shape-outside: circle(50%);
-		}
-	}
-
-	&::before {
-		@include non-interactive;
-		content: "";
-		opacity: 0;
-		background-image: url("/images/avatar-pixelated.png");
-		background-size: 100%;
-		position: absolute;
-		inset-block-start: 0;
-		inset-inline-start: 0;
-		image-rendering: crisp-edges;
-		image-rendering: pixelated;
-		@include transition(opacity long, visibility);
-		transition: opacity v(transition-duration) v(transition-function), visibility 0s linear v(transition-duration);
-		@include v(z-index);
-	}
-
-	.author__information:hover &,
-	.author__information:focus &,
-	.author__information:active & {
-		&::before {
-			opacity: 1;
-			transition: opacity v(transition-duration, long) v(transition-function);
-		}
+	@supports (shape-outside: circle(50%)) {
+		shape-outside: circle(50%);
 	}
 }
 
