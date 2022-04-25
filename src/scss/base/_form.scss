@@ -114,26 +114,26 @@ input[type="checkbox"] {
 		overflow: hidden;
 		text-align: center;
 		cursor: pointer;
-		line-height: calc(var(--line-height-code) * 1.25);
+		line-height: calc(v(line-height, code) * 1.25);
 
 		&::after {
 			content: "✔";
 			background-color: h(thunder, gamma);
-			inline-size: var(--size-large);
+			inline-size: v(size, large);
 			display: none;
 			position: absolute;
 			inset-block: 0;
 			inset-inline-start: 0;
 			@include v(font-size, gamma);
 			line-height: 1;
-			border-radius: var(--size-border-default) 0 0 var(--size-border-default);
+			border-radius: v(size, border-default) 0 0 v(size, border-default);
 		}
 	}
 
 	&:checked + label {
 		background-color: h(conifer);
-		padding-inline-start: calc(var(--size-large) + var(--size-small));
-		padding-inline-end: calc(var(--size-medium) - var(--size-small));
+		padding-inline-start: calc(v(size, large) + v(size, small));
+		padding-inline-end: calc(v(size, medium) - v(size, small));
 
 		&::after {
 			display: flex;

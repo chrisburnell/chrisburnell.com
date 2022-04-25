@@ -63,14 +63,14 @@ pre {
 
 // Highlighted Code Blocks
 pre[class*="language-"] {
-	background-image: linear-gradient(to bottom, transparent 0, transparent calc(var(--size-gap) - var(--size-border-thin)), h(raven, beta) calc(var(--size-gap) - var(--size-border-thin)), h(raven, beta) var(--size-gap), h(lynx) var(--size-gap), h(lynx) 100%);
+	background-image: linear-gradient(to bottom, transparent 0, transparent calc(v(size, gap) - v(size, border-thin)), h(raven, beta) calc(v(size, gap) - v(size, border-thin)), h(raven, beta) v(size, gap), h(lynx) v(size, gap), h(lynx) 100%);
 	color: h(milou);
 	inline-size: auto;
 	min-inline-size: 10vw;
 	margin-block-end: 0;
 	@include v(padding, gutter);
-	padding-block-start: calc(var(--size-gutter) + var(--size-gap));
-	border-radius: 0 0 var(--size-border-default) var(--size-border-default);
+	padding-block-start: calc(v(size, gutter) + v(size, gap));
+	border-radius: 0 0 v(size, border-default) v(size, border-default);
 	background-clip: padding-box;
 	// disallow text from wrapping inside the container
 	overflow-x: auto;
@@ -104,11 +104,11 @@ code[class*="language-"] {
 		@include v(block-size, gap);
 		display: flex;
 		align-items: center;
-		padding: 0 var(--size-gutter);
+		@include v(padding-inline, gutter);
 		position: absolute;
 		inset-block-start: 0;
 		inset-inline-start: 0;
-		border-radius: var(--size-border-default) var(--size-border-default) 0 0;
+		border-radius: v(size, border-default) v(size, border-default) 0 0;
 		background-clip: padding-box;
 	}
 

@@ -70,7 +70,7 @@ sup {
 hr {
 	background-color: h(thunder, gamma);
 	inline-size: 100%;
-	block-size: var(--size-border-thin);
+	@include v(block-size, border-thin);
 	display: block;
 	border: 0;
 	position: relative;

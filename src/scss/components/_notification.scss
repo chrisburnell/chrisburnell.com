@@ -7,7 +7,7 @@
 	background-color: h(mineshaft);
 	color: h(milou);
 	display: block;
-	padding: var(--size-small) var(--size-medium);
+	padding: v(size, small) v(size, medium);
 	position: fixed;
 	@include v(bottom, large);
 	@include v(right, medium);
@@ -19,7 +19,7 @@
 	}
 
 	&:not([class*="hidden"]) {
-		animation: var(--animation-duration) var(--animation-function) calc(var(--animation-duration) * 2) fade-out;
+		animation: v(animation-duration) v(animation-function) calc(v(animation-duration) * 2) fade-out;
 
 		@at-root {
 			@keyframes fade-out {

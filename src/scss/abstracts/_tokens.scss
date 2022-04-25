@@ -61,6 +61,15 @@ $tokens: (
 		default: 0,
 		uppercase: 1px,
 	),
+	animation-duration: (
+		default: 2s,
+	),
+	animation-fill-mode: (
+		default: forwards,
+	),
+	animation-function: (
+		default: linear,
+	),
 	transition-duration: (
 		default: 0.2s,
 		long: 1s,

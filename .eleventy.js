@@ -53,6 +53,8 @@ module.exports = (eleventyConfig) => {
 		domain: site.url,
 		duration: site.cacheDuration,
 		urlReplacements: urlReplacements,
+		maximumHtmlLength: 1000,
+		maximumHtmlText: "Mentioned this:",
 	})
 
 	// Transforms

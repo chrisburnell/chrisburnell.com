@@ -40,7 +40,7 @@
 		inset-block-end: 0;
 		@include v(z-index, below);
 		transform: translateX(-35%) translateY(-10%) scaleX(-1);
-		animation: var(--animation-duration) ease-out var(--animation-fill-mode) perch;
+		animation: v(animation-duration) ease-out v(animation-fill-mode) perch;
 		will-change: transform;
 
 		@at-root {

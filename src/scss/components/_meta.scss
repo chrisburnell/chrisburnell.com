@@ -20,7 +20,7 @@
 	}
 
 	.emoji {
-		inline-size: calc(var(--size-medium) + var(--size-tiny));
+		inline-size: calc(v(size, medium) + v(size, tiny));
 		display: inline-block;
 	}
 

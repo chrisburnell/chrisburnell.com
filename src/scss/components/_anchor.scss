@@ -38,8 +38,8 @@ a {
 	@include v(padding-inline-start, small);
 	@include v(padding-inline-end, small);
 	position: absolute;
-	inset-block-start: var(--size-border-thin);
-	inset-inline-end: calc(var(--size-small) * -1);
+	@include v(inset-block-start, border-thin);
+	inset-inline-end: calc(v(size, small) * -1);
 	font-size: inherit;
 	@include v(font-weight, bold);
 	@include v(line-height);
@@ -64,7 +64,7 @@ sup,
 li {
 	&[id] {
 		&:target {
-			animation: var(--animation-duration) var(--animation-function) anchor-target;
+			animation: v(animation-duration) v(animation-function) anchor-target;
 
 			@at-root {
 				@keyframes anchor-target {

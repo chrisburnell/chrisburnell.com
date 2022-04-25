@@ -117,12 +117,12 @@
 	}
 }
 .transition-example__demo {
-	border-block-start: var(--size-border-thin) solid h(raven, beta);
-	border-radius: 0 0 var(--size-border-default) var(--size-border-default);
+	border-block-start: v(size, border-thin) solid h(raven, beta);
+	border-radius: 0 0 v(size, border-default) v(size, border-default);
 	@include transition(color);
 	inline-size: 100%;
 	@include v(max-inline-size, line-length-clamp);
-	block-size: calc(var(--size-large) * 1.5);
+	block-size: calc(v(size, large) * 1.5);
 	display: flex;
 	align-items: center;
 	justify-content: center;

@@ -26,10 +26,10 @@ button:not(.anchor),
 	min-inline-size: 8em;
 	display: inline-block;
 	@include v(padding, small);
-	margin: calc(#{v(size, border-thin)} * 2); // accounts for outline-width + outline-offset
+	margin: calc(v(size, border-thin) * 2); // accounts for outline-width + outline-offset
 	border-width: 0;
 	@include v(border-radius, border-default);
-	--color-shadow: #{h(bowhead, gamma)};
+	--color-shadow: h(bowhead, gamma);
 	@include v(box-shadow, small);
 	outline: v(size, border-thin) solid transparent;
 	@include v(outline-offset, border-thin);
@@ -76,6 +76,6 @@ button:not(.anchor),
 	}
 
 	.icon {
-		filter: drop-shadow(0 0 var(--size-border-hairline) #{h(bear, gamma)});
+		filter: drop-shadow(0 0 v(size, border-hairline) h(bear, gamma));
 	}
 }

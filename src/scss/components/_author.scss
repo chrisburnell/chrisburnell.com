@@ -91,7 +91,7 @@
 		image-rendering: crisp-edges;
 		image-rendering: pixelated;
 		@include transition(opacity long, visibility);
-		transition: opacity var(--transition-duration-default) var(--transition-function-default), visibility 0s linear var(--transition-duration-default);
+		transition: opacity v(transition-duration) v(transition-function), visibility 0s linear v(transition-duration);
 		@include v(z-index);
 	}
 
@@ -100,7 +100,7 @@
 	.author__information:active & {
 		&::before {
 			opacity: 1;
-			transition: opacity var(--transition-duration-long) var(--transition-function-default);
+			transition: opacity v(transition-duration, long) v(transition-function);
 		}
 	}
 }

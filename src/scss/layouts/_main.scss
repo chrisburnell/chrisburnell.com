@@ -41,11 +41,11 @@
 			[marginalia-start]
 			16em
 			[marginalia-end]
-			var(--size-gutter)
+			v(size, gutter)
 			[content-start]
 			repeat(6, 1fr)
 			[content-end]
-			var(--size-gap)
+			v(size, gap)
 			[outdent-start]
 			10em
 			[outdent-end];

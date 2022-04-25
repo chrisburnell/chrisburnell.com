@@ -46,7 +46,7 @@
 }
 
 .ad__image {
-	border-radius: 0 0 0 var(--size-border-default);
+	border-radius: 0 0 0 v(size, border-default);
 	border-inline-end-width: 0;
 	justify-content: center;
 	margin: 0;
@@ -59,7 +59,7 @@
 
 .ad__content {
 	flex: 1;
-	border-radius: 0 0 var(--size-border-default) 0;
+	border-radius: 0 0 v(size, border-default) 0;
 	border-inline-start-width: 0;
 	@include v(line-height, small);
 }

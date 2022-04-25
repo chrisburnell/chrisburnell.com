@@ -7,7 +7,7 @@
 	background-color: h(mineshaft);
 	@include v(padding-block-start, large);
 	@include v(padding-block-end, large);
-	border-block-start: var(--size-border-thin) solid h(raven, beta);
+	border-block-start: v(size, border-thin) solid h(raven, beta);
 
 	@include media("print") {
 		display: none;
@@ -38,7 +38,7 @@
 				[left-start]
 				1fr
 				[left-end]
-				var(--size-gap)
+				v(size, gap)
 				[right-start]
 				1fr
 				[right-end];

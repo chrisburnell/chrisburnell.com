@@ -8,8 +8,8 @@
 	background-color: h(thunder, delta);
 	max-inline-size: 100% !important;
 	@include v(padding, medium);
-	border-block-start: var(--size-border-thin) solid h(raven, beta);
-	border-radius: var(--size-border-hairline) var(--size-border-hairline) var(--size-border-default) var(--size-border-default);
+	border-block-start: v(size, border-thin) solid h(raven, beta);
+	border-radius: v(size, border-hairline) v(size, border-hairline) v(size, border-default) v(size, border-default);
 	background-clip: padding-box;
 	text-align: start;
 	@include font-family;
