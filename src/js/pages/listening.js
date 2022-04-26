@@ -97,6 +97,6 @@
 		})
 		.catch((error) => {
 			// Fail!
-			console.error(`LastFM request status error: ${error}`);
+			console.error(`Last.fm request status error: ${error}`);
 		});
 })();
