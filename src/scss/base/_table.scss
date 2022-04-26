@@ -11,6 +11,7 @@ table {
 	border-width: 0;
 	overflow-x: auto;
 	overflow-y: hidden;
+	scrollbar-gutter: stable;
 
 	&.zebra {
 		tbody tr:nth-child(even) td {

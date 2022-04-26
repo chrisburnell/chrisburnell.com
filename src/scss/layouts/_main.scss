@@ -266,6 +266,7 @@
 	overflow-x: hidden;
 	overflow-y: auto;
 	overscroll-behavior: contain;
+	scrollbar-gutter: stable;
 
 	@include media("below:medium") {
 		max-block-size: 60vh;

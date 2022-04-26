@@ -95,6 +95,7 @@ input {
 
 textarea {
 	overflow: auto;
+	scrollbar-gutter: stable;
 }
 
 input[type="checkbox"] {

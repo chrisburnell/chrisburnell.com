@@ -75,6 +75,7 @@ pre[class*="language-"] {
 	// disallow text from wrapping inside the container
 	overflow-x: auto;
 	overflow-y: hidden;
+	scrollbar-gutter: stable;
 	position: relative;
 	@include font-family(monospace);
 

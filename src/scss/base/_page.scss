@@ -10,6 +10,7 @@ html {
 	// prevent horizontal jump when navigating short page ←→ tall page
 	overflow-y: scroll;
 	overscroll-behavior: contain;
+	scrollbar-gutter: stable;
 	accent-color: h(raven);
 	scroll-behavior: smooth;
 	scrollbar-color: h(raven) h(milou);
