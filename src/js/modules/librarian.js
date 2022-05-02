@@ -20,17 +20,20 @@ const librarian = () => {
 			}
 			return false
 		},
-		rating: (a, b) => {
-			if (a.querySelector(".rating")?.value === b.querySelector(".rating")?.value) {
-				return a.querySelector("h3").innerText.trim().localeCompare(b.querySelector("h3").innerText.trim())
-			}
-			return (b.querySelector(".rating")?.value || 0) - (a.querySelector(".rating")?.value || 0)
-		},
 		author: (a, b) => {
 			if (a.querySelector(".h-cite")?.innerText === b.querySelector(".h-cite")?.innerText) {
 				return a.querySelector("h3").innerText.trim().localeCompare(b.querySelector("h3").innerText.trim())
 			}
 			return (a.querySelector(".h-cite")?.innerText || "").localeCompare(b.querySelector(".h-cite")?.innerText || "")
+		},
+		rating: (a, b) => {
+			if (a.querySelector(".rating")?.value === b.querySelector(".rating")?.value) {
+				if (a.querySelector(".h-cite")?.innerText === b.querySelector(".h-cite")?.innerText) {
+					return a.querySelector("h3").innerText.trim().localeCompare(b.querySelector("h3").innerText.trim())
+				}
+				return (a.querySelector(".h-cite")?.innerText || "").localeCompare(b.querySelector(".h-cite")?.innerText || "")
+			}
+			return (b.querySelector(".rating")?.value || 0) - (a.querySelector(".rating")?.value || 0)
 		},
 	}
 
