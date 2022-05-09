@@ -9,17 +9,22 @@ $tokens: (
 		breakpoint-medium: 700px,
 		breakpoint-large: 1000px,
 		breakpoint-gigantic: 1200px,
-		gap: 2.5rem,
-		gutter: 1.25rem,
+		// 1200px (1.2) – 1600px (1.25)
+		tiny: clamp(0.31rem, calc(0.13rem + 0.25vw), 0.38rem),
+		// 1200px (1.2) – 1600px (1.25)
+		small: clamp(0.63rem, calc(0.44rem + 0.25vw), 0.69rem),
+		// 1200px (1.2) – 1600px (1.25)
+		medium: clamp(1.25rem, calc(0.69rem + 0.75vw), 1.44rem),
+		// 1200px (1.2) – 1600px (1.25)
+		large: clamp(2.25rem, calc(1.31rem + 1.25vw), 2.56rem),
+		// 1200px (1.2) – 1600px (1.25)
+		gigantic: clamp(4rem, calc(2.5rem + 2vw), 4.5rem),
+		gutter: var(--size-medium),
+		gap: calc(var(--size-gutter) * 2),
 		avatar: 100px,
 		avatar-small: 48px,
 		logo: clamp(5rem, 6.667vw + 0.825rem, 7.5rem),
 		logo-large: clamp(9rem, 28.8vw + -3.6rem, 18rem),
-		tiny: 0.3125rem,
-		small: 0.625rem,
-		medium: 1.25rem,
-		large: 2.25rem,
-		gigantic: 4rem,
 		line-length-clamp: clamp(21em, 100vw, 30em),
 		border-default: 0.25rem,
 		border-thin: 0.125rem,
