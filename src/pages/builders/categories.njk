@@ -27,7 +27,7 @@ truncate: true
 
 	{% sparkline collection, first_year, latest_year %}
 
-	<div class=" [ content{% if collection[0].data.list == 'shelf' %}  full{% endif %} ] [ h-feed ] ">
+	<div class=" [ content{% if collection[0].data.list == 'shelf' %}  full{% endif %} ] [ flow ] [ h-feed ] ">
 		{% if categoryIntroductions[category.title] %}
 			{{ categoryIntroductions[category.title] | join('\n\n') | markdownFormat | safe }}
 		{% endif %}
