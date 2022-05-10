@@ -22,7 +22,7 @@
 
 	&::after {
 		background-color: inherit;
-		color: h(kaiser);
+		color: currentColor;
 		inline-size: 0;
 		overflow: hidden;
 		position: absolute;

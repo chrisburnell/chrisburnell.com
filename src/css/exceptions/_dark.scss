@@ -32,12 +32,12 @@
 		text-shadow: 0.025em -0.025em 0 h(mineshaft), 0.025em -0.0125em 0 h(mineshaft), 0.025em 0.025em 0 h(mineshaft), 0 0.025em 0 h(mineshaft), -0.025em 0.025em 0 h(mineshaft), -0.025em -0.0125em 0 h(mineshaft), -0.025em -0.025em 0 h(mineshaft);
 	}
 
-	%collection-anchors {
+	%anchor {
 		color: h(highland);
 		text-decoration-color: h(kaiser);
 	}
 
-	h2 a {
+	h2 %anchor {
 		color: inherit !important;
 		text-decoration-color: transparent;
 	}
@@ -59,17 +59,13 @@
 	}
 
 	var,
-	.box a {
+	.box %anchor {
 		color: h(highland);
 	}
 
 	.rating {
 		&::before {
 			color: h(kaiser);
-		}
-
-		&::after {
-			color: h(alto);
 		}
 	}
 
