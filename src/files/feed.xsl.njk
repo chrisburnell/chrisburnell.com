@@ -11,7 +11,7 @@
       </head>
       <body>
         <header class=" [ header ] ">
-          <div class=" [ wrap  wrap--large ] ">
+          <div class=" [ wrap ] ">
             <nav>
               <p>
                 <strong>This is a web feed.</strong> Subscribe by copying the URL from the address bar into your newsreader.
@@ -22,15 +22,15 @@
             </nav>
           </div>
         </header>
-        <main class=" [ main ] ">
-          <div id="content" class=" [ content ] [ wrap ] [ page ] ">
+        <main class=" [ main ] [ flow ] ">
+          <div id="content" class=" [ platen ] [ wrap ] [ page ] ">
             <h1 id="title" class=" [ title ] ">
               <xsl:value-of select="/rss/channel/title" />
             </h1>
-            <div class=" [ description ] ">
+            <div class=" [ description ] [ flow ] ">
               <p><xsl:value-of select="/rss/channel/description" /></p>
             </div>
-            <div class=" [ content__body ] ">
+            <div class=" [ content ] [ flow ] ">
               <h2>Recent Posts</h2>
               <nav class=" [ deck ] ">
                 <xsl:for-each select="/rss/channel/item">
@@ -55,7 +55,7 @@
           </div>
         </main>
         <footer class=" [ footer ] ">
-          <div class=" [ wrap ] ">
+          <div class=" [ wrap ] [ footer__grid ] ">
             <ol class=" [ footer__navigation ] ">{% for link in navigation %}{% if link.secondary %}<li>
                 <a href="{{ link.url }}">{{ link.title }}</a>
               </li>{% endif %}{% endfor %}
@@ -67,7 +67,7 @@
               <li>
                 <a href="{{ item.url }}">{{ item.title }}</a>
               </li>{% endif %}{% endfor %}
-          </ol>
+            </ol>
           </div>
         </footer>
       </body>

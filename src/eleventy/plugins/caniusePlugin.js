@@ -70,7 +70,7 @@ module.exports = (eleventyConfig) => {
 			}, "")
 
 			return minifier.minify(
-				`<div class=" [ box ${fullSupport ? " box--success " : zeroSupport ? " box--error " : ""}] ">
+				`<div class=" [ box ${fullSupport ? " box--success " : zeroSupport ? " box--error " : ""}] [ flow ] ">
 					${browserList}
 					<p class="small">Browser support data for <code>${featureID}</code> comes from <a href="https://caniuse.com/#feat=${featureID}">caniuse.com</a> and is up-to-date as of <time datetime="${DateTime.fromJSDate(new Date(global.now)).toFormat("yyyy-MM-dd")}">${DateTime.fromJSDate(new Date(global.now)).toFormat("dd LLLL yyyy")}</time>.</p>
 				</div>`,
@@ -78,6 +78,6 @@ module.exports = (eleventyConfig) => {
 			)
 		}
 
-		return `<div class=" [ box  box--warning ] "><p class="italic">Because this is still an experimental feature, <a href="https://caniuse.com/">caniuse.com</a> data is currently unavailable from API.</p></div>`
+		return `<div class=" [ box  box--warning ] [ flow ] "><p class="italic">Because this is still an experimental feature, <a href="https://caniuse.com/">caniuse.com</a> data is currently unavailable from API.</p></div>`
 	})
 }

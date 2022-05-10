@@ -1,0 +1,39 @@
+////
+/// Anchors
+/// @group global
+/// @link https://chrisburnell.com/styleguide/#inline-elements
+////
+
+%anchor {
+	background-color: transparent;
+	color: h(bowhead);
+	outline: 0 solid h(maple);
+	border-radius: var(--size-border-hairline);
+	position: relative;
+	text-decoration: underline;
+	text-decoration-color: h(alto);
+	text-decoration-thickness: var(--size-border-thin);
+	text-decoration-skip-ink: auto;
+	// prettier-ignore
+	transition:
+		background-color var(--transition-duration) var(--transition-function),
+		color var(--transition-duration) var(--transition-function),
+		text-decoration-color var(--transition-duration) var(--transition-function);
+
+	&:is(:hover, :focus, :active) {
+		text-decoration-color: h(maple);
+	}
+
+	&:focus {
+		outline-color: h(raven);
+		outline-width: var(--size-border-thin);
+		outline-offset: var(--size-border-thin);
+	}
+
+	&:active {
+		background-color: h(maple);
+		color: h(milou);
+		outline-width: var(--size-border-thin);
+		outline-offset: 0;
+	}
+}

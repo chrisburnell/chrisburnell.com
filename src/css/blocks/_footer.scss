@@ -1,0 +1,67 @@
+.footer {
+	background-color: h(mineshaft);
+	padding-block-start: var(--size-large);
+	padding-block-end: var(--size-large);
+	border-block-start: var(--size-border-thin) solid h(raven, beta);
+
+	@include media("print") {
+		display: none;
+	}
+
+	&,
+	%anchor {
+		color: h(milou) !important;
+
+		&:not(:is(:hover, :focus, :active)) {
+			text-decoration-color: h(kaiser);
+		}
+	}
+
+	button {
+		font-size: inherit;
+	}
+}
+
+.footer__grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var(--size-gutter);
+
+	@include media("above:medium") {
+		grid-template-columns:
+			[left-start]
+			1fr
+			[left-end]
+			var(--size-gap)
+			[right-start]
+			1fr
+			[right-end];
+		grid-template-rows: auto 1fr auto;
+	}
+
+	.author {
+		grid-column: right;
+		grid-row: 1/4;
+	}
+
+	// Represents the two navigations and Speedlify
+	.footer__navigation,
+	p {
+		grid-column: left;
+	}
+}
+
+.footer__navigation {
+	li {
+		display: inline-block;
+	}
+
+	li + li {
+		&::before {
+			content: "·";
+			inline-size: 1em;
+			display: inline-block;
+			text-align: center;
+		}
+	}
+}

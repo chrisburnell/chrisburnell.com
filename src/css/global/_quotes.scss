@@ -1,0 +1,47 @@
+////
+/// Quotes
+/// @group global
+////
+
+blockquote {
+	background-color: h(raven, gamma);
+	inline-size: 100%;
+	max-inline-size: var(--size-line-length);
+	padding: var(--size-medium);
+	border-radius: var(--size-border-default);
+	margin: 0 auto var(--size-medium);
+	hanging-punctuation: first;
+
+	p {
+		font-family: var(--font-family-serif);
+		font-style: italic;
+
+		&::before {
+			content: open-quote;
+		}
+
+		&:not(:last-of-type) ::after {
+			content: close-quote;
+		}
+	}
+
+	cite {
+		color: h(kaiser);
+		display: block;
+		margin-block-start: var(--size-medium);
+		text-align: end;
+
+		&::before {
+			// EN DASH, NO-BREAK SPACE
+			content: "– ";
+		}
+	}
+}
+
+cite {
+	font-style: normal;
+}
+
+q {
+	hanging-punctuation: first;
+}

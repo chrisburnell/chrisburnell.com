@@ -1,0 +1,22 @@
+.header {
+	background-color: h(bear);
+
+	@include media("print") {
+		display: none;
+	}
+
+	.wrap {
+		--max-inline-size: var(--size-breakpoint-large);
+		inline-size: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-block-start: var(--size-small);
+		padding-block-end: var(--size-small);
+	}
+
+	.logo,
+	.navigation {
+		flex: 0 1 auto;
+	}
+}

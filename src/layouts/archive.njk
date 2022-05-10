@@ -8,19 +8,19 @@ truncate: true
 {%- set count = collection.length -%}
 {%- set latest_year = collection[0].date.getFullYear() -%}
 {%- set first_year = collection[count-1].date.getFullYear() -%}
-<div id="content" class=" [ content ] [ wrap ] [ archive ] ">
+<div id="content" class=" [ platen ] [ wrap ] [ archive ] ">
 
 	<h1 id="title" class=" [ title ] ">
 		<span class=" [ p-name ] ">{{ title | safe }}</span>
 	</h1>
 
-	<div class=" [ description ] [ p-summary ] ">
+	<div class=" [ description ] [ flow ] [ p-summary ] ">
 		<p>{{ description | replace('.', '') | safe }}{% if first_year != latest_year %}, dating from <a href="#{{ first_year }}">{{ first_year }}</a>–<a href="#{{ latest_year }}">{{ latest_year }}</a>{% endif %}.</p>
 	</div>
 
 	{% sparkline collection, first_year, latest_year %}
 
-	<div class=" [ content__body ] [ h-feed ] ">
+	<div class=" [ content ] [ flow ] [ h-feed ] ">
 		{%- set year = latest_year -%}
 		<h2 id="{{ year }}">
 			{{ year }} <small>({{ collection | getCountByYear(year) }})</small>
@@ -41,7 +41,7 @@ truncate: true
 		</nav>
 	</div>
 
-	<div class=" [ meta ] ">
+	<div class=" [ meta ] [ flow ] ">
 		{% include 'meta/archive.njk' %}
 	</div>
 

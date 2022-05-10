@@ -1,0 +1,54 @@
+////
+/// Variables
+/// @group global
+////
+
+:root {
+	@each $name, $value in $colors {
+		#{"--hsl-" + $name}: #{color.hue($value)} #{color.saturation($value)} #{color.lightness($value)};
+	}
+	@each $name, $value in $language-colors {
+		#{"--hsl-" + $name}: #{color.hue($value)} #{color.saturation($value)} #{color.lightness($value)};
+	}
+
+	@each $name, $value in $opacities {
+		#{"--opacity-" + $name}: #{$value};
+	}
+
+	@each $name, $value in $sizes {
+		#{"--size-" + $name}: #{$value};
+	}
+
+	@each $name, $value in $font-families {
+		#{"--font-family-" + $name}: #{$value};
+	}
+
+	@each $name, $value in $font-sizes {
+		#{"--font-size-" + $name}: #{$value};
+	}
+
+	@each $name, $value in $font-weights {
+		#{"--font-weight-" + $name}: #{$value};
+	}
+
+	@each $name, $value in $line-heights {
+		#{"--line-height-" + $name}: #{$value};
+	}
+
+	@each $name, $value in $z-indexes {
+		#{"--z-index-" + $name}: #{$value};
+	}
+
+	--color-scheme: "light";
+
+	--line-clamp: 3;
+
+	--animation-duration: 2s;
+	--animation-fill-mode: forwards;
+	--animation-function: linear;
+
+	--rotation-default: 5deg;
+
+	--transition-duration: 0.2s;
+	--transition-function: ease;
+}

@@ -1,0 +1,36 @@
+spark-line {
+	display: inline-grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr auto;
+	font-family: var(--font-family-default);
+	font-size: var(--font-size-small);
+	font-style: normal;
+	font-weight: var(--font-weight-bold);
+	speak: never;
+
+	canvas {
+		inline-size: auto;
+		grid-column: 1 / 3;
+		grid-row: 1 / 2;
+	}
+
+	span {
+		grid-column: 1 / 2;
+		text-align: start;
+	}
+	canvas + span {
+		grid-column: 2 / 3;
+		text-align: end;
+	}
+
+	// Listing-Representative Sparkline
+	.platen > & {
+		margin-block-start: var(--size-large);
+		justify-self: start;
+	}
+}
+
+// Musical Data
+.pentatonic {
+	cursor: pointer;
+}

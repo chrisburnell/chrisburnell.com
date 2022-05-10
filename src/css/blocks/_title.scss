@@ -1,0 +1,30 @@
+.title {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	gap: var(--size-gutter);
+	padding-block: var(--size-gigantic);
+	padding-inline: var(--size-gutter);
+	margin-inline: calc(var(--size-gutter) * -1);
+	overflow: hidden;
+	position: relative;
+
+	.breadcrumbs ~ & {
+		padding-block-start: var(--size-medium);
+	}
+}
+
+.title--positive span,
+.title--negative span {
+	padding: var(--size-tiny) var(--size-small);
+	text-shadow: none;
+}
+.title--positive > span {
+	background-color: h(conifer);
+	color: h(milou);
+}
+.title--negative > span {
+	background-color: h(maple);
+	color: h(milou);
+}

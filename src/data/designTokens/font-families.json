@@ -1,0 +1,6 @@
+{
+  "default": "\"Proxima Nova, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif\"",
+  "alpha": "\"Heebo, sans-serif\"",
+  "serif": "\"Georgia, Times, Times New Roman, serif\"",
+  "monospace": "monospace"
+}

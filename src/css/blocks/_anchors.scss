@@ -1,0 +1,84 @@
+////
+/// Anchor
+/// @group components
+////
+
+%anchor {
+	h2 & {
+		color: h(kaiser) !important;
+		text-decoration-color: transparent;
+		text-decoration-thickness: var(--size-border-thin);
+		text-underline-offset: var(--size-border-default);
+	}
+}
+
+a {
+	// hide extra content, text targetted only to screen readers
+	:not(.cf-wrapper) > & span:not([class]) {
+		@include hidden;
+	}
+}
+
+// Fancy gradient anchor text
+.colourful-anchor {
+	&:is(:hover, :focus, :active) {
+		background-image: linear-gradient(to bottom right, h(raven), h(maple));
+		background-clip: text;
+		text-fill-color: transparent;
+		box-decoration-break: clone;
+		text-shadow: none;
+	}
+}
+
+// Fragment Anchors inside Headings
+.fragment-anchor {
+	color: h(dove);
+	display: none;
+	visibility: hidden;
+	padding-inline-start: var(--size-small);
+	padding-inline-end: var(--size-small);
+	position: absolute;
+	inset-block-start: var(--size-border-thin);
+	inset-inline-end: calc(var(--size-small) * -1);
+	font-family: var(--font-family-monospace);
+	font-size: inherit;
+	font-weight: var(--font-weight-bold);
+	line-height: var(--line-height-default);
+	text-shadow: none;
+	text-transform: lowercase;
+
+	h2:is(:hover, :focus, :active) &,
+	&:target {
+		display: inline-block;
+		visibility: visible;
+	}
+}
+
+// Related Anchors
+.related-anchor::after {
+	// NO-BREAK SPACE, RIGHTWARDS ARROW
+	content: " →";
+}
+
+// Anchor Target Animation
+h2,
+sup,
+li {
+	&[id] {
+		&:target {
+			animation: var(--animation-duration) var(--animation-function) anchor-target;
+
+			@at-root {
+				@keyframes anchor-target {
+					0%,
+					50% {
+						background-color: h(aspen);
+					}
+					100% {
+						background-color: transparent;
+					}
+				}
+			}
+		}
+	}
+}

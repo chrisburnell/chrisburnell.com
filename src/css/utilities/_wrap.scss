@@ -1,0 +1,16 @@
+////
+/// Wrapper
+/// @group utilities
+///
+/// --max-inline-size (var(--size-breakpoint-gigantic))
+///     Defines how wide the wrapper should be.
+/// --gutter (var(--size-gutter))
+///     Defines the space along either side of the wrapper.
+////
+
+.wrap {
+	max-inline-size: var(--max-inline-size, var(--size-breakpoint-gigantic));
+	margin-inline: auto;
+	padding-inline: var(--gutter, var(--size-gutter));
+	position: relative;
+}

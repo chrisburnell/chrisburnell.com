@@ -1,0 +1,47 @@
+////
+/// Code
+/// @group base
+/// @link https://chrisburnell.com/styleguide/#code-block
+////
+
+%monospace {
+	font-family: var(--font-family-monospace);
+	font-size: var(--font-size-small);
+	line-height: var(--line-height-medium);
+	font-variant-numeric: proportional-nums;
+}
+
+%monospace,
+:where(del, ins, mark) {
+	padding: var(--size-border-default);
+	border-radius: var(--size-border-default);
+}
+
+:is(code, samp) {
+	background-color: h(raven, gamma);
+	user-select: all;
+}
+
+kbd {
+	background-color: h(coyote, beta);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+mark {
+	background-color: h(aspen);
+}
+
+var {
+	color: h(bowhead);
+	font-style: normal;
+	font-size: inherit;
+	font-weight: var(--font-weight-bold);
+}
+
+pre {
+	margin: 0 0 var(--size-large);
+	tab-size: 4;
+	font-size: initial;
+	white-space: pre-wrap;
+}

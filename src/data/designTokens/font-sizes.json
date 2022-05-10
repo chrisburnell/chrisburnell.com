@@ -1,0 +1,7 @@
+{
+  "small": "clamp(0.875rem, 0.5vw + 0.5rem, 1rem)",
+  "default": "clamp(1rem, 0.5vw + 0.625rem, 1.125rem)",
+  "gamma": "clamp(1.125rem, 0.571vw + 0.946rem, 1.375rem)",
+  "beta": "clamp(1.25rem, 0.571vw + 1.071rem, 1.5rem)",
+  "alpha": "clamp(2rem, 2.286vw + 1.286rem, 3rem)"
+}

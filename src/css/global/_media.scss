@@ -1,0 +1,82 @@
+////
+/// Media
+/// @group global
+////
+
+%image {
+	margin-inline: auto;
+	position: relative;
+
+	&,
+	a & {
+		max-inline-size: 100%;
+		block-size: auto;
+	}
+}
+img {
+	border-style: none;
+}
+picture {
+	&,
+	img,
+	svg {
+		display: block;
+	}
+}
+svg:not(:root) {
+	overflow: hidden;
+}
+
+:is(audio, canvas, iframe, video) {
+	inline-size: 100%;
+	display: block;
+	border: 0;
+	overflow-x: hidden;
+}
+audio {
+	inline-size: 100%;
+	max-inline-size: var(--size-breakpoint-small);
+
+	&:not([controls]) {
+		display: none;
+		block-size: 0;
+	}
+}
+iframe {
+	max-inline-size: 100% !important;
+	margin: 0;
+}
+
+meter,
+progress {
+	inline-size: var(--size-line-length);
+	max-inline-size: 100%;
+}
+
+meter {
+	&::-webkit-meter-bar {
+		background-color: h(dove);
+	}
+
+	&::-webkit-meter-optimum-value {
+		background-color: h(conifer);
+	}
+
+	&::-webkit-meter-suboptimum-value {
+		background-color: h(aspen);
+	}
+
+	&::-webkit-meter-even-less-good-value {
+		background-color: h(maple);
+	}
+}
+
+progress {
+	&::-webkit-progress-bar {
+		background-color: h(dove);
+	}
+
+	&::-webkit-progress-value {
+		background-color: h(raven);
+	}
+}

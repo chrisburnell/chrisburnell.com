@@ -14,7 +14,7 @@ module.exports = (value, outputPath) => {
 		// the permalink.
 		const tocHeadings = $(".generate-toc h2")
 		if (tocHeadings.length) {
-			let tocHtml = `<div class=" [ meta ] "><div class=" [ box ] [ table-of-contents ] "><ol class=" [ default-list ] ">`
+			let tocHtml = `<div class=" [ meta ] [ flow ] "><div class=" [ box ] [ flow ] [ table-of-contents ] "><ol class=" [ default-list ] ">`
 			tocHeadings.each(function () {
 				const headingText = $(this)
 					.html()
@@ -23,10 +23,10 @@ module.exports = (value, outputPath) => {
 				tocHtml += `<li><a href="#${headingID}">${headingText}</a></li>`
 			})
 			tocHtml += `</ol></div></div>`
-			$(tocHtml).insertBefore(".content__body")
+			$(tocHtml).insertBefore(".content")
 		}
 
-		const articleHeadings = $("main :is(article, .archive) .content__body h2")
+		const articleHeadings = $(".content h2")
 		articleHeadings.each(function () {
 			const headingID = $(this).attr("id") || slugify($(this).text().toLowerCase())
 			$(this).html(

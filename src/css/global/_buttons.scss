@@ -1,0 +1,74 @@
+////
+/// Buttons
+/// @group global
+/// @link https://chrisburnell.com/styleguide/#buttons
+///
+/// --min-inline-size (8em)
+///     Defines how wide the button should be as a minimum.
+/// --padding (var(--size-small)
+///     Defines the padding of the button.
+/// --font-size (var(--font-size-default)
+///     Defines the font size of the button.
+/// --line-height (var(--line-height-medium)
+///     Defines the line height of the button.
+////
+
+button {
+	appearance: none;
+	background: none;
+	color: inherit;
+	padding: 0;
+	border: 0;
+	font-family: inherit;
+	font-size: 1em;
+	cursor: pointer;
+	user-select: text;
+
+	&[disabled] {
+		@include non-interactive;
+		opacity: var(--opacity-beta);
+	}
+}
+
+%button {
+	@include non-selectable;
+	background-color: h(bowhead) !important;
+	color: h(bear) !important;
+	min-inline-size: var(--min-inline-size, 8em);
+	display: inline-block;
+	padding: var(--padding, var(--size-small));
+	margin: calc(var(--size-border-thin) * 2); // accounts for outline-width + outline-offset
+	border-radius: var(--size-border-default);
+	outline: var(--size-border-thin) solid transparent;
+	outline-offset: var(--size-border-thin);
+	overflow: visible;
+	position: relative;
+	font-size: var(--font-size, var(--font-size-default));
+	font-weight: var(--font-weight-bold);
+	line-height: var(--line-height, var(--line-height-medium));
+	text-align: center;
+	text-decoration: none !important;
+
+	&:is(:hover, :focus, :active) {
+		outline-color: h(raven);
+	}
+
+	&:active {
+		transform: translateY(var(--size-border-default));
+
+		&::before {
+			content: "";
+			block-size: var(--size-border-default);
+			position: absolute;
+			inset-inline: 0;
+			inset-block-end: 100%;
+		}
+	}
+}
+
+.button--small {
+	--min-inline-size: 5em;
+	--padding: var(--size-tiny);
+	--font-size: var(--font-size-small);
+	--line-height: 1;
+}

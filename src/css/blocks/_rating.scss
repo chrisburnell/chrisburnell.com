@@ -1,0 +1,40 @@
+// Rating
+.rating {
+	display: inline-block;
+	position: relative;
+	font-size: var(--font-size-gamma);
+	line-height: 1;
+
+	&::before,
+	&::after {
+		content: "★★★★★";
+		speak: never;
+	}
+
+	&::before {
+		color: h(alto);
+	}
+
+	&::after {
+		background-color: inherit;
+		color: h(kaiser);
+		inline-size: 0;
+		overflow: hidden;
+		position: absolute;
+		inset-block-start: 0;
+		inset-inline-start: 0;
+	}
+
+	&:not([value]) {
+		display: none;
+	}
+
+	@for $i from 1 through 19 {
+		&[value="#{math.div($i, 4)}"]::after {
+			inline-size: range-map($i, 0, 20, 0%, 100%);
+		}
+	}
+	&[value="5"]::after {
+		inline-size: 100%;
+	}
+}

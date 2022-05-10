@@ -1,0 +1,61 @@
+////
+/// Mixins
+/// @group global
+////
+
+///
+/// Break words.
+///
+@mixin break-words() {
+	overflow-wrap: break-word;
+	word-break: break-word;
+}
+
+///
+/// Visually hide an element properly.
+///
+@mixin hidden() {
+	inline-size: 1px !important;
+	block-size: 1px !important;
+	padding: 0 !important;
+	margin: -1px !important;
+	border: 0 !important;
+	overflow: hidden !important;
+	position: absolute !important;
+	white-space: nowrap !important;
+	clip: rect(0 0 0 0) !important;
+	clip-path: inset(100%) !important;
+}
+
+///
+/// Hyphenate words.
+///
+@mixin hyphenate() {
+	hyphens: auto;
+	hyphenate-limit-chars: 6 3 3;
+	hyphenate-limit-lines: 2;
+	hyphenate-limit-last: always;
+	hyphenate-limit-zone: 8%;
+}
+
+///
+/// Make text non-selectable.
+///
+/// @author Chris Burnell
+///
+@mixin non-selectable() {
+	user-select: none;
+	-webkit-touch-callout: default;
+	-webkit-touch-callout: none;
+}
+
+///
+/// Make text non-interactive.
+///
+/// @author Chris Burnell
+///
+@mixin non-interactive() {
+	@include non-selectable;
+	pointer-events: none;
+	cursor: not-allowed; // kind of redundant
+}

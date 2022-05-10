@@ -1,0 +1,77 @@
+////
+/// Style Guide
+/// @group pages
+/// @link https://chrisburnell.com/styleguide/
+////
+
+.palette-list {
+	background-color: h(milou);
+	inline-size: 100%;
+	display: flex;
+	flex-wrap: wrap;
+
+	@include media("screen", "below:small") {
+		flex-direction: column;
+	}
+
+	li {
+		padding: var(--size-medium) 0;
+		vertical-align: middle;
+		font-size: var(--font-size-small);
+		text-align: center;
+		white-space: nowrap;
+		font-variant-numeric: tabular-nums;
+
+		@include media("screen", "below:small") {
+			flex: 1 0 100%;
+		}
+
+		@include media("screen", "above:small", "below:large") {
+			flex: 1 0 50%;
+		}
+
+		@include media("screen", "above:large") {
+			flex: 1 0 33.333%;
+		}
+
+		%heading {
+			margin-block-end: 0;
+			font-size: var(--font-size-default);
+			text-transform: capitalize;
+		}
+	}
+}
+@each $name, $color in $colors {
+	.background--#{$name} {
+		background-color: h($name);
+		color: contrasting-color($color);
+	}
+}
+
+.size-example {
+	background-color: h(alto);
+	background-image: linear-gradient(to bottom, h(maple), h(maple));
+	background-position: center center;
+	background-size: 100% var(--size-border-thin);
+	background-repeat: no-repeat;
+	block-size: var(--size-medium);
+	display: block;
+}
+.size-example--tiny {
+	inline-size: var(--size-tiny);
+}
+.size-example--small {
+	inline-size: var(--size-small);
+}
+.size-example--medium {
+	inline-size: var(--size-medium);
+}
+.size-example--large {
+	inline-size: var(--size-large);
+}
+.size-example--gigantic {
+	inline-size: var(--size-gigantic);
+}
+.size-example--responsive {
+	inline-size: var(--size-line-length);
+}

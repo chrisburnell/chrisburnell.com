@@ -1,0 +1,43 @@
+////
+/// Page
+/// @group global
+////
+
+html {
+	background-color: h(kaiser);
+	position: relative;
+	overflow-x: hidden;
+	// prevent horizontal jump when navigating short page ←→ tall page
+	overflow-y: scroll;
+	overscroll-behavior: contain;
+	scrollbar-gutter: stable;
+	accent-color: h(raven);
+	scroll-behavior: smooth;
+	scrollbar-color: h(raven) h(milou);
+	font-size: 100%;
+	// prevent adjustments of font-size after orientation changes in IE on
+	// Windows Phone and in iOS
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	font-variant-numeric: oldstyle-nums;
+}
+
+body {
+	background-color: h(milou);
+	color: h(kaiser);
+	inline-size: 100%;
+	min-block-size: 100vh;
+	margin: 0;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	font-family: var(--font-family-default);
+	font-size: var(--font-size-default);
+	font-style: normal;
+	font-weight: var(--font-weight-default);
+	line-height: var(--line-height-default);
+	counter-reset: figureNumber;
+
+	@include media("print") {
+		display: block;
+	}
+}

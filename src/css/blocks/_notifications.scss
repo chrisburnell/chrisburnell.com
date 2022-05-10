@@ -1,0 +1,43 @@
+////
+/// Notification
+/// @group components
+////
+
+.notification {
+	background-color: h(mineshaft);
+	color: h(milou);
+	display: block;
+	padding: var(--size-small) var(--size-medium);
+	position: fixed;
+	inset-block-end: var(--size-large);
+	inset-inline: var(--size-medium);
+	font-weight: var(--font-weight-bold);
+	z-index: var(--z-index-notificaton);
+
+	@include media("screen", "above:small") {
+		inset-inline-end: auto;
+	}
+
+	&:not([class*="hidden"]) {
+		animation: var(--animation-duration) var(--animation-function) calc(var(--animation-duration) * 2) fade-out;
+
+		@at-root {
+			@keyframes fade-out {
+				from {
+					opacity: 1;
+				}
+				to {
+					opacity: 0;
+				}
+			}
+		}
+	}
+
+	&.notification--positive {
+		background-color: h(conifer);
+	}
+
+	&.notification--negative {
+		background-color: h(maple);
+	}
+}

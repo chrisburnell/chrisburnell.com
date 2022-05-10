@@ -1,0 +1,111 @@
+////
+/// Helpers
+/// @group components
+////
+
+// Full Bleed
+.full-bleed {
+	inline-size: 100vw;
+	margin-inline-start: 50%;
+	transform: translateX(-50%);
+}
+
+// <abbr class="acronym" title="National Aeronautics and Space Administration">Nasa</abbr>
+// This allows screen readers to read aloud acronyms as they would be spoken, as
+// opposed to an initialism, for which each letter is spoken individually,
+// (e.g. HTML, CSS).
+.acronym {
+	text-transform: uppercase;
+}
+
+// Break text on any character
+.break-anywhere {
+	word-wrap: anywhere;
+}
+
+// Hyphenate any looooooooooooooooooooo-
+// oooooong text
+.hyphen,
+.hyphenate {
+	@include hyphenate;
+}
+
+// Make things non-selectable
+.non-selectable {
+	@include non-selectable;
+}
+
+// Make things non-interactive
+.non-interactive {
+	pointer-events: none;
+}
+
+// Turn off motion (for reduced-motion-like cases)
+.non-motion {
+	animation-play-state: paused !important;
+	transition: none !important;
+	scroll-behavior: auto !important;
+}
+
+// Disable things which require JS when JS is not available
+.no-js .requires-js {
+	display: none;
+}
+
+// Disable things which require motion when reduced-motion is on
+.requires-motion {
+	@include media("reduced-motion") {
+		display: none;
+	}
+}
+
+.serif {
+	font-family: var(--font-family-serif);
+}
+
+.monospace {
+	font-family: var(--font-family-monospace);
+}
+
+// Make text serifed and italicised
+.fancy {
+	font-family: var(--font-family-serif);
+	font-style: italic;
+}
+
+// Emoji
+.emoji {
+	font-family: var(--font-family-default);
+	font-style: normal;
+	vertical-align: middle;
+	text-shadow: none;
+}
+
+// For salty/silly remarks
+.salty,
+.silly {
+	font-family: Comic Sans MS, Chalkboard SE, fantasy;
+}
+
+// Sorting labels
+[data-sort][aria-sort="ascending"]::after {
+	content: "​ ▲ ​";
+}
+[data-sort][aria-sort="descending"]::after {
+	content: "​ ▼ ​";
+}
+
+// Limit lines
+.line-clamp {
+	display: -webkit-box;
+	-webkit-line-clamp: var(--line-clamp);
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+// Speedlify
+.speedlify-anchor {
+	display: inline-block;
+	margin-block-start: var(--size-small);
+	text-decoration: none;
+}

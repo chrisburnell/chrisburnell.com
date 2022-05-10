@@ -1,0 +1,11 @@
+////
+/// Cover
+/// @group components
+////
+
+.cover {
+	&,
+	%image {
+		max-block-size: 100vh;
+	}
+}

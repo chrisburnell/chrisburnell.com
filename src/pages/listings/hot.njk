@@ -8,17 +8,17 @@ show_photos: true
 truncate: true
 ---
 {%- set collection = collections[related_collection] -%}
-<div id="content" class=" [ content ] [ wrap ] [ archive ] ">
+<div id="content" class=" [ platen ] [ wrap ] [ archive ] ">
 
 	<h1 id="title" class=" [ title ] ">
 		<span class=" [ p-name ] ">{{ title | safe }}</span>
 	</h1>
 
-	<div class=" [ description ] [ p-summary ] ">
+	<div class=" [ description ] [ flow ] [ p-summary ] ">
 		{{ description | markdownFormat | safe }}
 	</div>
 
-	<div class=" [ content__body ] [ h-feed ] ">
+	<div class=" [ content ] [ flow ] [ h-feed ] ">
 		<nav class=" [ deck ] ">
 			{% for item in collection %}
 				{%- set responses = item.url | getWebmentions -%}
@@ -27,7 +27,7 @@ truncate: true
 		</nav>
 	</div>
 
-	<div class=" [ meta ] ">
+	<div class=" [ meta ] [ flow ] ">
 		{% include 'meta/archive.njk' %}
 	</div>
 

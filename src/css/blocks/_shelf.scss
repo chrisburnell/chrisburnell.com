@@ -1,0 +1,31 @@
+.shelf {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
+	column-gap: var(--size-gutter);
+	row-gap: var(--size-gap);
+
+	article {
+		--flow-space: var(--size-small);
+
+		line-height: var(--line-height-medium);
+	}
+
+	%heading {
+		font-size: var(--font-size-default);
+
+		%anchor {
+			color: inherit;
+		}
+	}
+
+	.cover {
+		margin: 0;
+		object-fit: cover;
+	}
+}
+
+.shelf--books {
+	.cover {
+		block-size: 240px;
+	}
+}

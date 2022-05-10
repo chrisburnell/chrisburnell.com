@@ -1,5 +1,5 @@
 const author = require("../data/author")
-const palette = require("../data/palette")
+const colors = require("../data/designTokens/colors")
 const site = require("../data/site")
 const dateFilters = require("./filters/dates")
 
@@ -29,7 +29,7 @@ module.exports = {
 		}
 		// Sparklines in A minor
 		return `<spark-line values="${values.join(",")}"
-							endpoint-color="${palette.maple}"
+							endpoint-color="${colors.maple}"
 							${start ? 'start-label="' + start + '"' : ""}
 							${end ? 'end-label="' + end + '"' : ""}
 							key-start="25"

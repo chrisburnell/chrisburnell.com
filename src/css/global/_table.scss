@@ -1,0 +1,65 @@
+////
+/// Table
+/// @group global
+////
+
+table {
+	flex: 1 0 auto;
+	align-self: flex-start;
+	border-collapse: collapse;
+	border-width: 0;
+	overflow-x: auto;
+	overflow-y: hidden;
+	scrollbar-gutter: stable;
+	font-variant-numeric: tabular-nums;
+
+	&.zebra {
+		tbody tr:nth-child(even) td {
+			background-color: h(thunder, delta);
+		}
+	}
+}
+
+// Cells
+:is(th, td) {
+	padding: var(--size-small);
+	text-align: start;
+	vertical-align: top;
+	user-select: text;
+	transition: background-color var(--transition-duration) var(--transition-function);
+
+	&.numeral {
+		text-align: end;
+	}
+}
+
+// Heading Cells
+th {
+	font-weight: var(--font-weight-bold);
+	white-space: nowrap;
+
+	&:not(:empty) {
+		background-color: h(thunder, delta);
+		position: sticky;
+		z-index: var(--z-index-above);
+
+		thead & {
+			inset-block-start: 0;
+		}
+
+		tbody & {
+			inset-inline-start: 0;
+		}
+	}
+
+	tbody & {
+		inline-size: 1px;
+	}
+}
+
+// Body Cells
+td {
+	&.numeral {
+		white-space: nowrap;
+	}
+}

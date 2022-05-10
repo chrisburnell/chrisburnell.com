@@ -1,0 +1,40 @@
+////
+/// Collections
+/// @group abstracts
+////
+
+:is(a, button, input, label, select, summary, textarea) {
+	@extend %interactable !optional;
+}
+
+:is(a, .anchor) {
+	@extend %anchor !optional;
+}
+
+:is(button:not(.anchor), .button, [type="button"]) {
+	@extend %button !optional;
+}
+
+:is(h1, h2, h3, h4, h5, h6) {
+	@extend %heading !optional;
+}
+
+:is(blockquote, details, table, dl, ol, ul, figure:not([class]), p) {
+	@extend %content !optional;
+}
+
+:is(img, input[type="image"], picture, svg) {
+	@extend %image !optional;
+}
+
+:is(audio, canvas, embed, iframe, marquee, object, video) {
+	@extend %media !optional;
+}
+
+:is(input, optgroup, select, textarea) {
+	@extend %input !optional;
+}
+
+:is(code, kbd, samp, var, .monospace) {
+	@extend %monospace !optional;
+}

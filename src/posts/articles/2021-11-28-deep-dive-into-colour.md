@@ -11,7 +11,7 @@ syndicate_to:
 
 Even though I publicly released [Bowhead](/bowhead/) a little over a year ago, I’ve been using it across my website and other projects for some years now. In that time, it has evolved and changed, but the core principle of *what it does* has never changed: assign any reused CSS values to variables and put them into <q>value-type</q> maps which correspond to specific CSS properties and refer to your property-values through these maps.
 
-<div class=" [ box ] ">
+<div class=" [ box ] [ flow ] ">
     <h2>What’s Bowhead?</h2>
     <p><em>Bowhead</em> is a small SCSS framework on which to implement your design tokens, spitting out CSS Variables with optional fallbacks. You can read more about it on the <a href="/bowhead/">Bowhead page</a>.</p>
 </div>
@@ -191,7 +191,7 @@ And by applying that class to an element, those new values are both applied to i
 
 Or inside a box like this:
 
-<div class=" [ box ] [ code-red ] ">
+<div class=" [ box ] [ flow ] [ code-red ] ">
     <p>I'm not sure why this is such a great thing, to be fair, though…</p>
 </div>
 

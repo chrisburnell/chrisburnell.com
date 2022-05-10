@@ -1,0 +1,119 @@
+////
+/// Prose
+/// @group global
+////
+
+p {
+	@include break-words;
+	margin: 0;
+}
+
+:is(abbr, dfn)[title] {
+	color: h(dove);
+	font-style: italic;
+	font-weight: var(--font-weight-default);
+	border-block-end: var(--size-border-thin) dotted h(dove);
+	cursor: help;
+
+	%anchor & {
+		border-block-end-width: 0;
+	}
+}
+:is(abbr, dfn)[title],
+ins {
+	text-decoration: none;
+}
+
+ins {
+	background-color: h(conifer);
+	color: h(milou);
+	font-size: var(--font-size-default);
+}
+
+del {
+	color: h(maple);
+}
+
+s {
+	color: h(dove);
+}
+
+strong,
+.strong {
+	font-style: normal !important;
+	font-weight: var(--font-weight-bold) !important;
+}
+
+em,
+.italic {
+	font-style: italic !important;
+	font-weight: var(--font-weight-default) !important;
+
+	& > small,
+	small > & {
+		font-variant: small-caps;
+		text-transform: lowercase;
+	}
+}
+
+small,
+.small {
+	font-size: var(--font-size-small);
+}
+
+:is(sub, sup) {
+	position: relative;
+	vertical-align: baseline;
+	font-size: 1em;
+	line-height: 0;
+	text-transform: initial;
+}
+sub {
+	inset-block-end: 0;
+	font-variant-position: sub;
+}
+sup {
+	inset-block-start: 0;
+	font-variant-position: super;
+}
+
+hr {
+	background-color: h(thunder, gamma);
+	inline-size: 100%;
+	block-size: var(--size-border-thin);
+	display: block;
+	border: 0;
+	position: relative;
+	// show the overflow in Edge and IE
+	overflow: visible;
+}
+
+// Hide elements visually
+[hidden]:not([hidden="false"]),
+.hidden {
+	&:not([href]),
+	&[href]:not(:is(:focus, :active)) {
+		@include hidden;
+	}
+}
+
+::selection,
+::target-text {
+	background-color: h(raven);
+	color: h(milou);
+	text-shadow: none;
+}
+
+::spelling-error {
+	text-decoration: h(maple) wavy underline;
+}
+
+::grammar-error {
+	text-decoration: h(conifer) wavy underline;
+}
+
+%content {
+	@include media("print") {
+		page-break-inside: avoid;
+	}
+}

@@ -1,0 +1,38 @@
+.deck {
+	article {
+		--flow-space: var(--size-tiny);
+
+		max-inline-size: var(--size-line-length);
+
+		&:not(:first-child) {
+			padding-block-start: var(--size-medium);
+		}
+
+		&:not(:last-child) {
+			padding-block-end: var(--size-medium);
+		}
+	}
+	article + article {
+		border-block-start: var(--size-border-thin) solid h(mineshaft, delta);
+	}
+
+	%anchor {
+		color: inherit;
+	}
+
+	%heading {
+		.emoji {
+			display: inline-block;
+			padding-inline-end: var(--size-small);
+		}
+	}
+}
+
+.deck__context,
+.deck__meta {
+	font-style: italic;
+}
+
+.deck__meta a {
+	white-space: nowrap;
+}

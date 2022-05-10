@@ -1,0 +1,28 @@
+////
+/// Auto Grid
+/// @group compositions
+///
+/// --placement (auto-fill)
+///     Set either auto-fit or auto-fill to change how empty grid tracks are
+///     handled.
+/// --gutter (var(--size-gutter))
+///     Defines the space between each item.
+/// --min-inline-size (10rem)
+///     Defines how wide each item should be, ideally, as a minimum.
+////
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(var(--placement, auto-fill), minmax(var(--min-inline-size, 10rem), 1fr));
+	gap: var(--gutter, var(--size-gutter));
+
+	&[data-rows="masonry"] {
+		grid-template-rows: masonry;
+		align-items: start;
+	}
+
+	&[data-layout="50-50"] {
+		--placement: auto-fit;
+		--min-inline-size: clamp(10rem, 50vw, 20rem);
+	}
+}

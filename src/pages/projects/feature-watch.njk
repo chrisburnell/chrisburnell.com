@@ -13,7 +13,7 @@ toc: true
 <p>Please feel free to <a href="https://github.com/{{ author.github }}/{{ site.repository }}/tree/main/src/data/browserFeatures.json">suggest new features</a> or even <a href="https://github.com/{{ author.github }}/{{ site.repository }}/tree/main/src/data/browsersByType.json">other browsers</a>.</p>
 
 {% for feature in browserFeaturesSorted %}
-	<section class=" [ owl--medium ] ">
+	<section class=" [ flow ] ">
 		<h2 id="{{ feature.id }}">{{ feature.title | safe }}{% if feature.language %} <small>({{ feature.language | capitalizeFormat }})</small>{% endif %}</h2>
 		{{ feature.description | markdownFormat | safe }}
 		<ul>

@@ -1,0 +1,122 @@
+////
+/// Author
+/// @group components
+////
+
+.author {
+	@include media("below:medium") {
+		--flow-space: var(--size-small);
+	}
+	@include media("above:medium") {
+		--flow-space: 0;
+	}
+}
+
+.author__information {
+	--flow-space: var(--size-small);
+
+	color: inherit;
+	display: flex;
+	flex-direction: column;
+	font-family: var(--font-family-serif);
+	font-size: var(--font-size-small);
+	font-style: italic;
+	line-height: var(--line-height-medium);
+	text-align: center;
+	text-decoration: none;
+
+	@include media("below:small") {
+		margin-block-end: var(--size-gutter);
+	}
+
+	@include media("below:medium") {
+		float: left;
+		float: inline-start;
+		margin-inline-end: var(--size-gap);
+		margin-block-end: var(--size-gap);
+	}
+
+	@include media("above:medium") {
+		float: right;
+		float: inline-end;
+		margin-inline-start: var(--size-gap);
+	}
+
+	&::before {
+		@include non-interactive;
+		content: "";
+		opacity: 0;
+		background-image: url("/images/avatar-pixelated.png");
+		background-size: 100%;
+		position: absolute;
+		inset-block-start: 0;
+		inset-inline-start: 0;
+		image-rendering: crisp-edges;
+		image-rendering: pixelated;
+		// prettier-ignore
+		transition:
+			opacity var(--transition-duration) var(--transition-function),
+			visibility 0s linear var(--transition-duration);
+		z-index: var(--z-index-default);
+	}
+
+	&:is(:hover, :focus, :active) {
+		&::before {
+			opacity: 1;
+			transition: opacity var(--transition-duration) var(--transition-function);
+		}
+	}
+
+	%anchor {
+		color: inherit;
+		font-family: var(--font-family-default);
+		font-size: var(--font-size-default);
+		font-style: normal;
+		font-weight: var(--font-weight-bold);
+		text-decoration-color: transparent;
+	}
+
+	&:is(:hover, :focus, :active) {
+		%anchor {
+			text-decoration-color: h(maple);
+		}
+	}
+}
+
+.author__image {
+	flex-grow: 0;
+	flex-shrink: 0;
+	flex: 0 0 var(--size-avatar);
+	block-size: var(--size-avatar);
+	float: left;
+	float: inline-start;
+	position: relative;
+	text-decoration: none !important;
+	transition: opacity var(--transition-duration) var(--transition-function);
+}
+
+.author__image,
+.author__image img,
+.author__information::before {
+	inline-size: var(--size-avatar);
+	block-size: var(--size-avatar);
+	border-radius: 50%;
+
+	@supports (shape-outside: circle(50%)) {
+		shape-outside: circle(50%);
+	}
+}
+
+.author__biography {
+	font-size: var(--font-size-small);
+
+	@include media("above:medium") {
+		text-align: end;
+	}
+}
+
+.author__name {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}

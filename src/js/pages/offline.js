@@ -49,6 +49,6 @@
 			markup += `</article>`;
 		});
 		markup += "</nav>";
-		document.querySelector(".content__body").insertAdjacentHTML("beforeend", markup);
+		document.querySelector(".content").insertAdjacentHTML("beforeend", markup);
 	}
 })();

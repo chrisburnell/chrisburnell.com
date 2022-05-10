@@ -1,0 +1,31 @@
+////
+/// Browser Support
+/// @group blocks
+////
+
+.browser-support {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--size-small);
+
+	li {
+		border-radius: var(--size-border-default);
+		padding-inline: var(--size-small);
+		font-weight: var(--font-weight-bold);
+	}
+
+	.supported {
+		background-color: h(conifer);
+		color: h(milou);
+	}
+
+	.partial {
+		background-color: h(aspen);
+		color: h(kaiser);
+	}
+
+	.unsupported {
+		background-color: h(maple);
+		color: h(milou);
+	}
+}

@@ -110,7 +110,7 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.addPassthroughCopy("src/js/pages")
 
 	// Watch targets
-	eleventyConfig.addWatchTarget("./src/scss/")
+	eleventyConfig.addWatchTarget("./src/css/")
 	eleventyConfig.addWatchTarget("./src/js/")
 
 	// Customised markdown config

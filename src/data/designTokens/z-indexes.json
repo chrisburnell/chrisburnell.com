@@ -1,0 +1,9 @@
+{
+  "below": -1,
+  "root": 0,
+  "default": 1,
+  "above": 2,
+  "modal": 3,
+  "dialog": 4,
+  "notificaton": 5
+}

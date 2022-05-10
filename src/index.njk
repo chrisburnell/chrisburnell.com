@@ -10,18 +10,18 @@ sitemap:
 truncate: true
 ---
 
-<article id="content" class=" [ content ] [ wrap ] [ page ] ">
+<article id="content" class=" [ platen ] [ wrap ] [ page ] ">
 
 	<h1 id="title" class=" [ title{% if title_error %} title--negative{% elif title_success %} title--positive{% endif %} ] ">
 		<span class=" [ p-name ] ">{{ tagline | default(title) | safe }}</span>
 	</h1>
 
-	<div class=" [ description ] [ p-summary ] " aria-hidden="true">
+	<div class=" [ description ] [ flow ] [ p-summary ] " aria-hidden="true">
 		{{ description | markdownFormat | safe | replace('href=', 'tabindex="-1" href=') }}
 	</div>
 
-	<div class=" [ content__body ] ">
-		<div class=" [ e-content ] ">
+	<div class=" [ content ] [ flow ] ">
+		<div class=" [ e-content ] [ flow ] ">
 
 			{%- set truncate = false -%}
 			<h2 id="projects">
@@ -45,7 +45,7 @@ truncate: true
 				</h2>
 				<nav class=" [ deck ] " aria-labelledby="today-rsvps">
 					{% for item in collections.todayRSVPs %}
-						<div class=" [ box  {{ rsvp_class }} ] ">
+						<div class=" [ box  {{ rsvp_class }} ] [ flow ] ">
 							{%- set rsvp_class = 'box--error' -%}
 							{%- if item.data.rsvp.value == 'yes' -%}
 								{%- set rsvp_class = 'box--success' -%}
@@ -94,7 +94,7 @@ truncate: true
 				</h2>
 				<nav class=" [ deck ] " aria-labelledby="upcoming-rsvps">
 					{% for item in collections.upcomingRSVPs %}
-						<div class=" [ box  {{ rsvp_class }} ] ">
+						<div class=" [ box  {{ rsvp_class }} ] [ flow ] ">
 							{%- set rsvp_class = 'box--error' -%}
 							{%- if item.data.rsvp.value == 'yes' -%}
 								{%- set rsvp_class = 'box--success' -%}
@@ -125,7 +125,7 @@ truncate: true
 		</div>
 	</div>
 
-	<div class=" [ meta ] ">
+	<div class=" [ meta ] [ flow ] ">
 		{% include 'meta/index.njk' %}
 	</div>
 

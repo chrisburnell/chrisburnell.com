@@ -46,7 +46,7 @@ layout: base
 	{% set syndicate_to = [of_url] %}
 {%- endif -%}
 
-<article id="content" class=" [ content ] [ wrap ] [ post h-{{ mf_root }} ] ">
+<article id="content" class=" [ platen ] [ wrap ] [ post h-{{ mf_root }} ] ">
 
 	<ul class=" [ breadcrumbs ] ">
 		<li>
@@ -71,10 +71,10 @@ layout: base
 		<p>This <a class=" [ u-category ] " href="/{{ categoryPlural | default(category) }}/">{{ categoryProper | default(category) }}</a> {% if draft %}has not yet been published{% else %}was published on <time class=" [ dt-published ] " datetime="{{ date | rfcDate }}">{{ date | friendlyDate }}</time>{% if updated %} and last updated on <time class=" [ dt-updated ] " datetime="{{ updated | rfcDate }}">{{ updated | friendlyDate }}</time>{% endif %}{% endif %}.</p>
 	</div>
 
-	<div class=" [ content__body ] {% if toc %}[ generate-toc ] {% endif %}">
+	<div class=" [ content ] [ flow ] {% if toc %}[ generate-toc ] {% endif %}">
 
 		{% if draft %}
-			<p class=" [ box  box--warning ] ">This is just a <em>draft</em>! The quality of this {{ categoryProper | default(category) | default('post') }} may not be up to snuff, a total work-in-progress, and is probably far from being complete (if we’re being real here). That being said, read on, knowing that you have been warned…</p>
+			<p class=" [ box  box--warning ] [ flow ] ">This is just a <em>draft</em>! The quality of this {{ categoryProper | default(category) | default('post') }} may not be up to snuff, a total work-in-progress, and is probably far from being complete (if we’re being real here). That being said, read on, knowing that you have been warned…</p>
 		{% endif %}
 
 		{% include 'banner.njk' %}
@@ -84,7 +84,7 @@ layout: base
 		{% include 'photo.njk' %}
 
 		{% if description %}
-			<p class=" [ description ] [ p-summary ] ">{{ description | safe }}</p>
+			<p class=" [ description ] [ flow ] [ p-summary ] ">{{ description | safe }}</p>
 		{% endif %}
 
 		{% include 'updated.njk' %}
@@ -116,7 +116,7 @@ layout: base
 		{% endif %}
 
 		{% if content.length %}
-			<div class=" [ e-content ] ">
+			<div class=" [ e-content ] [ flow ] ">
 				{{ content | safe }}
 			</div>
 		{% endif %}
@@ -126,7 +126,7 @@ layout: base
 		{% include 'browse.njk' %}
 	</div>
 
-	<div class=" [ meta ] ">
+	<div class=" [ meta ] [ flow ] ">
 		{% include 'meta/post.njk' %}
 	</div>
 

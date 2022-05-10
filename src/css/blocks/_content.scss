@@ -1,0 +1,29 @@
+.content,
+.e-content {
+	--flow-space: var(--size-large);
+
+	& > * + h2 {
+		margin-block-start: var(--size-gigantic);
+	}
+}
+.content {
+	margin-block-start: var(--size-large);
+	overflow: hidden;
+
+	@include media("above:medium") {
+		padding-inline-start: var(--size-gutter);
+	}
+
+	.description--published ~ & {
+		@include media("below:medium") {
+			margin-block-start: 0;
+		}
+	}
+
+	.title[hidden] ~ &,
+	.title.hidden ~ & {
+		@include media("above:medium") {
+			margin-block-start: var(--size-gigantic);
+		}
+	}
+}

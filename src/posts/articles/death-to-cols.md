@@ -50,7 +50,7 @@ With flex or grid, it’s trivial now to compose a layout exactly as you and/or 
 
 ### Now we say:
 
-<dl class="full">
+<dl>
     <dt>By default…</dt>
     <dd>
         <ul>

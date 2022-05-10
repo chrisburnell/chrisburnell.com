@@ -90,7 +90,7 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="format-detection" content="telephone=no">
 
-	<meta name="theme-color" content="{{ palette | keyValue("raven") }}">
+	<meta name="theme-color" content="{{ designTokens.colors | keyValue("raven") }}">
 	<meta name="supported-color-schemes" content="light dark">
 
 	<style>{%- include '../../css/main.css' -%}</style>
@@ -139,8 +139,8 @@
 		<meta name="twitter:domain" content="{{ site.url | getHost }}">
 		{% if twitter %}
 			<meta name="twitter:widgets:theme" content="light">
-			<meta name="twitter:widgets:link-color" content="{{ palette | keyValue("raven") }}">
-			<meta name="twitter:widgets:border-color" content="{{ palette | keyValue("raven") }}">
+			<meta name="twitter:widgets:link-color" content="{{ designTokens.colors | keyValue("raven") }}">
+			<meta name="twitter:widgets:border-color" content="{{ designTokens.colors | keyValue("raven") }}">
 		{% endif %}
 
 		{% if layout == 'post' %}
@@ -178,7 +178,7 @@
 	<a href="#content" class=" [ hidden ] ">Skip to main content</a>
 
 	<header class=" [ header ] ">
-		<div class=" [ wrap  wrap--large ] ">
+		<div class=" [ wrap ] ">
 			<a rel="home" class=" [ logo ] [ canada ] " href="/" title="{{ site.title }}">
 				<img src="{{ site.logo }}" alt="" width="120" height="120">
 			</a>
@@ -196,12 +196,12 @@
 		</div>
 	</header>
 
-	<main class=" [ main ] ">
+	<main class=" [ main ] [ flow ] ">
 		{{ content | safe }}
 	</main>
 
 	<footer class=" [ footer ] ">
-		<div class=" [ wrap ] ">
+		<div class=" [ wrap ] [ footer__grid ] ">
 			{% include 'author.njk' %}
 			<ol class=" [ footer__navigation ] ">
 				{%- for link in navigation -%}

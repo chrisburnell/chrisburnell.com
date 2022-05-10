@@ -1,5 +1,5 @@
 {% if show_webmentions %}
-	<div id="webmentions" class=" [ box ] [ webmentions ] ">
+	<div id="webmentions" class=" [ box ] [ flow ] [ webmentions ] ">
 		<!-- </textarea> -->
 		<!-- '"´ -->
 		<form id="webmentions-form" class=" [ webmentions__form ] " method="post" action="https://webmention.io/{{ site.url | getHost }}/webmention">
@@ -8,12 +8,12 @@
 			<input type="hidden" name="target" value="{{ canonical }}">
 			<input class=" [ button ] [ webmentions__submit ] " type="submit" value="Send" enterkeyhint="send">
 		</form>
-		<div class=" [ webmentions__responses ] ">
+		<div class=" [ webmentions__responses ] [ flow ] ">
 			{%- set reactions = page.url | getWebmentions(['like-of', 'repost-of', 'bookmark-of']) -%}
 			{%- set replies = page.url | getWebmentions(['mention-of', 'in-reply-to']) -%}
 			{% if reactions.length or replies.length %}
 				<h2 id="responses">{{ reactions.length + replies.length }} Response{{ 's' if reactions.length + replies.length > 1 }}</h2>
-				<dl class=" [ webmentions__list ] [ full ] ">
+				<dl class=" [ webmentions__list ] ">
 					{% if reactions.length %}
 						<dt class=" [ hidden ] ">Reactions:</dt>
 						<dd id="reactions" class=" [ webmentions__list__reactions ] ">
@@ -51,7 +51,7 @@
 										<div class=" [ webmentions__response__avatar ] ">
 											{% avatar webmention.author.photo, webmention.url, webmention.author.url %}
 										</div>
-										<div class=" [ webmentions__response__content ] [ e-content ] ">{{ webmention.content.value | fixUrl | safe }}</div>
+										<div class=" [ webmentions__response__content ] [ e-content ] [ flow ] ">{{ webmention.content.value | fixUrl | safe }}</div>
 										<div class=" [ webmentions__response__meta ] ">
 											<small>by</small>
 											<a class=" [ p-author  h-card  u-url ] " href="{{ authorUrl }}" rel="external">

@@ -1,0 +1,98 @@
+////
+/// Form
+/// @group global
+/// @link https://chrisburnell.com/styleguide/#forms
+////
+
+form {
+	inline-size: 100%;
+	display: grid;
+	grid-gap: var(--size-small);
+	grid-template-columns: 65% 1fr;
+	position: relative;
+}
+
+fieldset {
+	padding: 0;
+	border-width: 0;
+	margin: 0;
+}
+
+%input {
+	margin: 0;
+	font-size: var(--font-size-small);
+	line-height: var(--line-height-default);
+}
+
+input,
+textarea,
+[contenteditable] {
+	caret-color: h(raven);
+}
+
+input,
+textarea {
+	background-color: h(milou);
+	color: h(thunder);
+	box-sizing: inherit !important;
+	padding: 0 0.4em;
+	border: var(--size-border-thin) solid h(alto);
+	border-radius: var(--size-border-default);
+	background-clip: padding-box;
+	outline-width: 0;
+	transition: border-color var(--transition-duration) var(--transition-function);
+
+	&:hover {
+		border-color: h(coyote);
+	}
+
+	&:focus {
+		border-color: h(raven);
+	}
+
+	&[disabled] {
+		opacity: var(--opacity-beta);
+		pointer-events: none;
+	}
+
+	&::-moz-focus-inner {
+		padding: 0;
+		margin: 0;
+	}
+}
+
+input {
+	overflow: visible;
+
+	&[type="number"]::-webkit-inner-spin-button,
+	&[type="number"]::-webkit-outer-spin-button {
+		block-size: auto;
+	}
+
+	&[type="search"],
+	&[type="url"] {
+		// correct odd appearance in Chrome and Safari
+		-webkit-appearance: textfield;
+		// correct the outline style in Safari
+		outline-offset: -2px;
+
+		&::-webkit-search-cancel-button,
+		&::-webkit-search-decoration {
+			-webkit-appearance: none;
+		}
+	}
+
+	&::-webkit-file-upload-button {
+		// correct inability to style clickable types in iOS and Safari
+		-webkit-appearance: button;
+	}
+
+	&::-webkit-inner-spin-button {
+		opacity: 1;
+	}
+}
+
+textarea {
+	overflow: auto;
+	scrollbar-gutter: stable;
+}

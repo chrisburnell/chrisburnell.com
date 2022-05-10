@@ -1,12 +1,4 @@
 {
-  "Bowhead Variable": {
-    "description": "De-abstracts variables from their colloquial names into their programmatic goodness and provides a fallback to the CSS Variables.",
-    "scope": "scss",
-    "prefix": "v",
-    "body": [
-      "@include v($1, $2);"
-    ]
-  },
   "HSL Colour": {
     "description": "Uses Bowhead to pull in HSL (and opacity) variables in a way that embraces the cascade.",
     "scope": "scss",

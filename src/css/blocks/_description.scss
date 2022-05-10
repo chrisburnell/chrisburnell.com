@@ -1,0 +1,40 @@
+.description {
+	font-family: var(--font-family-serif);
+	font-style: italic;
+
+	.full &,
+	.wide & {
+		text-align: start;
+	}
+
+	.title[hidden] ~ &,
+	.title.hidden ~ & {
+		margin-block-start: var(--size-gigantic);
+	}
+
+	p {
+		max-inline-size: var(--size-line-length);
+	}
+
+	%anchor {
+		color: inherit;
+	}
+
+	time {
+		white-space: nowrap;
+	}
+}
+.description--published {
+	@include media("below:medium") {
+		order: -1;
+		margin-block: var(--size-large) 0;
+		font-size: var(--font-size-small);
+	}
+
+	.title[hidden] ~ &,
+	.title.hidden ~ & {
+		@include media("below:medium") {
+			margin-block-end: var(--size-large);
+		}
+	}
+}

@@ -8,27 +8,17 @@ hfeed: false
 show_photos: true
 truncate: true
 toc: true
-js: styleguide.js
 ---
 
 <h2>Colours</h2>
 
-<div class="navigator  requires-js">
-	<button id="palette-toggler" aria-controls="palette-list" aria-expanded="false">Show opacity variants</button>
-</div>
 <figure>
-	<ul id="palette-list" aria-expanded="false" aria-labelledby="palette-toggler" class="palette-list" id="colors">
-		{%- for name, color in palette -%}
+	<ul id="colors" class="palette-list">
+		{%- for name, color in designTokens.colors -%}
 			<li class="background--{{ name }}">
-				<h3>{{ name }} <span class="hidden-above--large">— Full</span> </h3>
+				<h3>{{ name }}</h3>
 				<div class="monospace">{{ color }}</div>
 			</li>
-			{%- for opacity, value in opacities -%}
-				<li class="background--{{ name }}--{{ opacity }}  extra">
-					<h3><span class="hidden-above--large">{{ name | lower }} —</span> {{ opacity }}</h3>
-					<div class="monospace">{{ value * 100 | round }}%</div>
-				</li>
-			{%- endfor -%}
 		{%- endfor -%}
 	</ul>
 	<figcaption>
@@ -412,19 +402,19 @@ p q r s t u v w x y z { | } ~
 
 <h2>Boxes</h2>
 
-<div class=" [ box ] ">
+<div class=" [ box ] [ flow ] ">
 	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum suscipit id nulla vitae maximus.</p>
 </div>
 
-<div class=" [ box  box--success ] ">
+<div class=" [ box  box--success ] [ flow ] ">
 	<p>Hey—this box means something good happened!</p>
 </div>
 
-<div class=" [ box  box--warning ] ">
+<div class=" [ box  box--warning ] [ flow ] ">
 	<p>Uh oh, this box might mean something went wrong.</p>
 </div>
 
-<div class=" [ box  box--error ] ">
+<div class=" [ box  box--error ] [ flow ] ">
 	<p>Uh oh, this box <strong>definitely</strong> means something went wrong.</p>
 </div>
 
@@ -462,15 +452,3 @@ p q r s t u v w x y z { | } ~
 <h2>Can I Use</h2>
 
 {% caniuse 'css-has' %}
-
-<div class="owl  requires-motion">
-	<h2>Transitions</h2>
-
-	<div class="transition-example  transition-example--slide">
-		<div class="transition-example__demo  monospace">transition: all 0.2s ease;</div>
-	</div>
-
-	<div class="transition-example  transition-example--fade">
-		<div class="transition-example__demo  monospace">transition: all 0.2s ease;</div>
-	</div>
-</div>

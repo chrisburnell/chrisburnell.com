@@ -1,7 +1,7 @@
 <h2>Latest projects</h2>
 <div class=" [ meta__list ] ">
 	{% for lookup in collections.projects | limit(site.limits.feature) %}
-		<a href="{{ lookup.url }}">{{ lookup.data.title | striptags(true) | safe }}</a>
+		<a href="{{ lookup.url }}">{% emoji lookup.data.emoji %}{{ lookup.data.title | striptags(true) | safe }}</a>
 		{{ lookup.data.description | markdownFormat | safe }}
 	{% endfor %}
 </div>

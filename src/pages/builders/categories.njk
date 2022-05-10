@@ -15,24 +15,24 @@ truncate: true
 {%- set count = collection.length -%}
 {%- set latest_year = collection[0].date.getFullYear() -%}
 {%- set first_year = collection[count-1].date.getFullYear() -%}
-<div id="content" class=" [ content ] [ wrap ] [ archive ] ">
+<div id="content" class=" [ platen ] [ wrap ] [ archive ] ">
 
 	<h1 id="title" class=" [ title ] ">
 		<span class=" [ p-name ] ">{{ title | safe }}</span>
 	</h1>
 
-	<div class=" [ description ] [ p-summary ] ">
+	<div class=" [ description ] [ flow ] [ p-summary ] ">
 		<p>{% if count > 1 %}All {{ count | numberStringFormat }}{% else %}Just the one{% endif %} of my {{ category.properPlural }}{% if first_year != latest_year %}, dating from {% if collection[0].data.list == 'shelf' %}{{ first_year }}–{{ latest_year }}{% else %}<a href="#{{ first_year }}">{{ first_year }}</a>–<a href="#{{ latest_year }}">{{ latest_year }}</a>{% endif %}{% endif %}.</p>
 	</div>
 
 	{% sparkline collection, first_year, latest_year %}
 
-	<div class=" [ content__body{% if collection[0].data.list == 'shelf' %}  full{% endif %} ] [ h-feed ] ">
+	<div class=" [ content{% if collection[0].data.list == 'shelf' %}  full{% endif %} ] [ h-feed ] ">
 		{% if categoryIntroductions[category.title] %}
 			{{ categoryIntroductions[category.title] | join('\n\n') | markdownFormat | safe }}
 		{% endif %}
 		{% if collection[0].data.list == 'shelf' %}
-			<div class=" [ box ] ">
+			<div class=" [ box ] [ flow ] ">
 				<div>
 					You can sort these {{ category.properPlural }}:
 					<button class=" [ anchor  strong  non-selectable ] " data-sort="title" aria-sort="none">by title</button>,
@@ -70,7 +70,7 @@ truncate: true
 		{% endif %}
 	</div>
 
-	<div class=" [ meta ] ">
+	<div class=" [ meta ] [ flow ] ">
 		{% include 'meta/archive.njk' %}
 	</div>
 

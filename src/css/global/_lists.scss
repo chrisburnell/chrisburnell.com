@@ -1,0 +1,121 @@
+////
+/// Lists
+/// @group global
+////
+
+:is(ol, ul) {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+:is(dl, ol, ul):not([class]),
+.default-list {
+	// Space out lists nested in a list
+	& & {
+		margin-block-start: var(--size-medium);
+	}
+}
+:is(ol, ul):not([class]),
+.default-list {
+	padding-inline-start: var(--size-medium);
+	list-style: initial;
+
+	li {
+		padding-inline-start: var(--size-medium);
+
+		&:not(:last-child) {
+			margin-block-end: var(--size-small);
+		}
+
+		&::marker {
+			color: h(bowhead);
+			font-family: var(--font-family-default);
+			font-style: normal;
+			font-weight: var(--font-weight-bold);
+		}
+	}
+}
+ol:not([class]),
+ol.default-list {
+	// This class *requires* `default-list` to work
+	&:not([class*="continued-list"]) {
+		& > li:first-child {
+			counter-reset: ordered-list;
+		}
+	}
+
+	// Investigate custom properties (i.e. setting specific "type" of value)
+	@for $i from 1 through 10 {
+		&[start="#{$i}"] {
+			counter-increment: ordered-list #{$i - 1} !important;
+		}
+	}
+
+	& > li {
+		counter-increment: ordered-list;
+
+		&::marker {
+			content: counters(ordered-list, "-", decimal) ".";
+			font-family: var(--font-family-monospace);
+			font-size: var(--font-size-small);
+		}
+	}
+
+	&[type="a"] li::marker,
+	&.lower-alpha li::marker {
+		content: counters(ordered-list, "-", lower-alpha);
+	}
+
+	&[type="A"] li::marker,
+	&.upper-alpha li::marker {
+		content: counters(ordered-list, "-", upper-alpha);
+	}
+
+	&[type="i"] li::marker,
+	&.lower-roman li::marker {
+		content: counters(ordered-list, "-", lower-roman);
+	}
+
+	&[type="I"] li::marker,
+	&.upper-roman li::marker {
+		content: counters(ordered-list, "-", upper-roman);
+	}
+
+	&[reversed] {
+		display: flex;
+		flex-direction: column-reverse;
+
+		// fix spacing based on reverse ordering
+		& > li {
+			&:first-child {
+				margin-block-end: 0;
+			}
+
+			&:not(:first-child) {
+				margin-block-end: var(--size-small);
+			}
+		}
+	}
+}
+[counter-reset] {
+	counter-reset: ordered-list;
+}
+dl {
+	display: grid;
+	grid-template-columns: 100%;
+	column-gap: var(--size-medium);
+	row-gap: var(--size-large);
+	margin-block-start: 0;
+	overflow: hidden;
+
+	@include media("screen", "above:small") {
+		grid-template-columns: minmax(min-content, 33.33%) 1fr;
+	}
+}
+dt {
+	font-weight: var(--font-weight-bold);
+}
+dd {
+	margin: 0;
+	vertical-align: top;
+}

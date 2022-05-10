@@ -1,0 +1,12 @@
+.updated {
+	max-inline-size: var(--size-line-length);
+	margin-inline: auto;
+
+	& > * + * {
+		--flow-space: var(--size-small);
+	}
+
+	time {
+		font-weight: var(--font-weight-bold);
+	}
+}

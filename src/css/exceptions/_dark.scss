@@ -1,0 +1,125 @@
+////
+/// Dark
+/// @group themes
+////
+
+@mixin theme-dark() {
+	--hsl-shadow: var(--hsl-thunder);
+
+	// Target these if applied to html or body elements
+	&:is(html, body),
+	&:is(html) body {
+		background-color: h(mineshaft);
+		color: h(milou);
+		scrollbar-color: h(raven) h(mineshaft);
+	}
+
+	.header,
+	.main {
+		background-color: h(bowhead, beta);
+		color: h(milou);
+	}
+
+	.main {
+		background-color: h(mineshaft);
+	}
+
+	.footer {
+		background-image: linear-gradient(to bottom, h(thunder, gamma), h(thunder, gamma));
+	}
+
+	h1 {
+		text-shadow: 0.025em -0.025em 0 h(mineshaft), 0.025em -0.0125em 0 h(mineshaft), 0.025em 0.025em 0 h(mineshaft), 0 0.025em 0 h(mineshaft), -0.025em 0.025em 0 h(mineshaft), -0.025em -0.0125em 0 h(mineshaft), -0.025em -0.025em 0 h(mineshaft);
+	}
+
+	%collection-anchors {
+		color: h(highland);
+		text-decoration-color: h(kaiser);
+	}
+
+	h2 a {
+		color: inherit !important;
+		text-decoration-color: transparent;
+	}
+
+	hr {
+		background-color: h(alto, beta);
+	}
+
+	:is(abbr, dfn)[title],
+	figure > a figcaption,
+	blockquote cite,
+	.fragment-anchor,
+	.webmentions__response small {
+		color: h(alto);
+	}
+
+	.box {
+		border-block-start-color: h(raven, alpha);
+	}
+
+	var,
+	.box a {
+		color: h(highland);
+	}
+
+	.rating {
+		&::before {
+			color: h(kaiser);
+		}
+
+		&::after {
+			color: h(alto);
+		}
+	}
+
+	pre[class*="language-"] {
+		background-color: h(mineshaft);
+		background-image: linear-gradient(to bottom, transparent 0, transparent calc(v(size, gap) - v(size, border-thin)), h(raven, beta) calc(v(size, gap) - v(size, border-thin)), h(raven, beta) v(size, gap), h(thunder, gamma) v(size, gap), h(thunder, gamma) 100%);
+
+		code {
+			background-color: transparent;
+		}
+	}
+
+	:is(ol, ul):not([class]),
+	.breadcrumbs {
+		li {
+			&::marker {
+				color: h(alto);
+			}
+		}
+	}
+
+	.table-of-contents {
+		$background: mix(map-get($colors, "milou"), map-get($colors, "mineshaft"), map-get($opacities, "delta") * 100%);
+		// prettier-ignore
+		background:
+			linear-gradient(#{$background} 30%, transparent),
+			linear-gradient(transparent, #{$background} 70%) 0 100%,
+			radial-gradient(farthest-side at 50% 0, #{h(milou, gamma)}, transparent),
+			radial-gradient(farthest-side at 50% 100%, #{h(milou, gamma)}, transparent) 0 100%;
+		background-color: #{$background};
+
+		li {
+			&::marker {
+				color: h(alto);
+			}
+		}
+	}
+}
+
+@include media("dark") {
+	html {
+		--color-scheme: "dark";
+	}
+
+	html:not([data-user-color-scheme]) {
+		@include theme-dark;
+	}
+}
+
+[data-user-color-scheme="dark"],
+.dark {
+	@include theme-dark;
+}

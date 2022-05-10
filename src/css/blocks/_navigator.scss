@@ -1,0 +1,11 @@
+.navigator {
+	inline-size: 100%;
+	display: grid;
+	grid-template-columns: minmax(12em, max-content);
+	justify-content: center;
+	grid-gap: var(--size-gutter);
+
+	@include media("above:small") {
+		grid-template-columns: repeat(auto-fit, minmax(12em, max-content));
+	}
+}

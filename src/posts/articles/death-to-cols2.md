@@ -58,7 +58,7 @@ With the power of CSS’s Flex and Grid, it’s trivial now to compose a layout 
 
 ### Now we say:
 
-<dl class="full">
+<dl>
     <dt>By default…</dt>
     <dd>
         <ul>

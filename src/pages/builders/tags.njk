@@ -15,17 +15,17 @@ truncate: true
 {%- set count = collection.length -%}
 {%- set latest_year = collection[0].date.getFullYear() -%}
 {%- set first_year = collection[count-1].date.getFullYear() -%}
-<div id="content" class=" [ content ] [ wrap ] [ archive ] ">
+<div id="content" class=" [ platen ] [ wrap ] [ archive ] ">
 
 	<h1 id="title" class=" [ title ] ">
 		<span class=" [ p-name ] ">{{ title | safe }}</span>
 	</h1>
 
-	<div class=" [ description ] [ p-summary ] ">
+	<div class=" [ description ] [ flow ] [ p-summary ] ">
 		<p>{% if count > 1 %}All {{ count | numberStringFormat }}{% else %}Just the one{% endif %} of my posts tagged <q>{{ tag | capitalizeFormat }}</q>.</p>
 	</div>
 
-	<div class=" [ content__body ] {% if toc %}[ generate-toc ] {% endif %}">
+	<div class=" [ content ] [ flow ] {% if toc %}[ generate-toc ] {% endif %}">
 		<nav class=" [ deck ] [ h-feed ] ">
 			{% for item in collection %}
 				{%- set responses = item.url | getWebmentions -%}
@@ -34,7 +34,7 @@ truncate: true
 		</nav>
 	</div>
 
-	<div class=" [ meta ] ">
+	<div class=" [ meta ] [ flow ] ">
 		{% include 'meta/archive.njk' %}
 	</div>
 

@@ -1,7 +1,7 @@
 GIMP Palette
 #Palette Name: Ravenous
 #Description: Ravenous about 5f8aa6
-#Colors: {{ palette | length }}
-{% for name, color in palette -%}
+#Colors: {{ designTokens.colors | length }}
+{% for name, color in designTokens.colors -%}
 {{ color | getRGB | join('\t') | safe }}{{ '\t' | safe }}{{ color | replace('#', '') }}
 {% endfor %}
