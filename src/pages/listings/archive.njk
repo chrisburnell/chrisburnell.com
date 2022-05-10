@@ -36,13 +36,13 @@ truncate: true
 				<a href="/{{ lookup.plural }}/">{{ lookup.properPlural | title }}</a>
 			</h2>
 			{% if lookup_collection[0].data.list == 'shelf' %}
-				<nav class=" [ shelf {% if lookup_collection[0].data.read_of %}shelf--books {% endif %}] " aria-labelledby="{{ lookup.plural }}">
+				<nav class=" [ grid ] [ shelf {% if lookup_collection[0].data.read_of %}shelf--books {% endif %}] " aria-labelledby="{{ lookup.plural }}">
 					{%- for item in lookup_collection | limit(site.limits.shelf) -%}
 						{% include 'items/shelf.njk' %}
 					{%- endfor -%}
 				</nav>
 				{% if lookup_collection.length > site.limits.shelf %}
-					<nav class=" [ navigator ] " aria-label="All {{ lookup.properPlural | title }}">
+					<nav class=" [ grid ] [ navigator ] " aria-label="All {{ lookup.properPlural | title }}">
 						<a class=" [ button ] " href="/{{ lookup.plural }}/">All {{ lookup.properPlural | title }}</a>
 					</nav>
 				{% endif %}
@@ -54,7 +54,7 @@ truncate: true
 					{%- endfor -%}
 				</nav>
 				{% if lookup_collection.length > site.limits.deck %}
-					<nav class=" [ navigator ] " aria-label="All {{ lookup.properPlural | title }}">
+					<nav class=" [ grid ] [ navigator ] " aria-label="All {{ lookup.properPlural | title }}">
 						<a class=" [ button ] " href="/{{ lookup.plural }}/">All {{ lookup.properPlural | title }}</a>
 					</nav>
 				{% endif %}

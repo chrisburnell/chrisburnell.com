@@ -43,7 +43,7 @@ truncate: true
 					<noscript>Although, you will need to enable JavaScript.</noscript>
 				</div>
 			</div>
-			<nav class=" [ shelf {% if collection[0].data.read_of %}shelf--books {% endif %}] " aria-live="polite">
+			<nav class=" [ grid ] [ shelf {% if collection[0].data.read_of %}shelf--books {% endif %}] " aria-live="polite">
 				{% for item in collection %}
 					{% include 'items/shelf.njk' %}
 				{% endfor %}

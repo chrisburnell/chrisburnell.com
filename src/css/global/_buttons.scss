@@ -36,7 +36,7 @@ button {
 	color: h(bear) !important;
 	min-inline-size: var(--min-inline-size, 8em);
 	display: inline-block;
-	padding: var(--padding, var(--size-small));
+	padding: var(--padding-block, var(--padding, var(--size-small))) var(--padding-inline, var(--padding, var(--size-medium)));
 	margin: calc(var(--size-border-thin) * 2); // accounts for outline-width + outline-offset
 	border-radius: var(--size-border-default);
 	outline: var(--size-border-thin) solid transparent;

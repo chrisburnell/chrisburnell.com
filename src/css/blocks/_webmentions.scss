@@ -4,11 +4,8 @@
 ////
 
 .webmentions {
+	--flow-space: var(--size-medium);
 	margin-block-start: var(--size-gigantic);
-
-	& > * + * {
-		--flow-space: var(--size-medium);
-	}
 }
 
 .webmentions__thread {

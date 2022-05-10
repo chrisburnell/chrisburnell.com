@@ -217,7 +217,7 @@ html {
 
 **You can view the final stylesheet that I’m using on Github Gist:**
 
-<nav class=" [ navigator ] ">
+<nav class=" [ grid ] [ navigator ] ">
     <a class="button" href="https://gist.github.com/{{ author.github }}/ef5367e7dd263356c48a">gist.github.com →</a>
 </nav>
 

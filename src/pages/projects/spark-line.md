@@ -56,7 +56,7 @@ Element attributes:
 
 ## Examples
 
-<div class=" [ shelf ] ">
+<div class=" [ grid ] [ shelf ] ">
     <article>
         <spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0"></spark-line>
         <p><em>default</em></p>

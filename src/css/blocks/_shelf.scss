@@ -1,8 +1,12 @@
+////
+/// Shelf
+/// @group blocks
+/// Extends Auto Grid
+////
+
 .shelf {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
-	column-gap: var(--size-gutter);
-	row-gap: var(--size-gap);
+	--row-gap: var(--size-gap);
+	--min-inline-size: 10em;
 
 	article {
 		--flow-space: var(--size-small);

@@ -1,11 +1,12 @@
-.navigator {
-	inline-size: 100%;
-	display: grid;
-	grid-template-columns: minmax(12em, max-content);
-	justify-content: center;
-	grid-gap: var(--size-gutter);
+////
+/// Navigator
+/// @group blocks
+/// Extends Auto Grid
+////
 
-	@include media("above:small") {
-		grid-template-columns: repeat(auto-fit, minmax(12em, max-content));
-	}
+.navigator {
+	--min-inline-size: max-content;
+
+	inline-size: 100%;
+	justify-content: center;
 }

@@ -4,7 +4,7 @@ description: I've had the pleasure of meeting, knowing of, knowing personally, a
 ---
 {%- set collection = blogroll | keySort('title') -%}
 
-<nav class=" [ shelf ] ">
+<nav class=" [ grid ] [ shelf ] ">
 {% for item in collection %}
 	{% include 'items/shelf.njk' %}
 {% endfor %}

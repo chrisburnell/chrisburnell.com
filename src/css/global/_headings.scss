@@ -11,61 +11,43 @@
 	font-variant-numeric: lining-nums;
 }
 
-%alpha,
+h1,
 .alpha {
 	font-family: var(--font-family-alpha);
 	font-size: var(--font-size-alpha);
 	line-height: var(--line-height-medium);
-}
-
-%beta,
-.beta {
-	font-size: var(--font-size-beta);
-	font-weight: var(--font-weight-bold);
-}
-
-%gamma,
-.gamma {
-	font-size: var(--font-size-gamma);
-	font-weight: var(--font-weight-bold);
-}
-
-%delta,
-.delta {
-	font-size: var(--font-size-default);
-	font-weight: var(--font-weight-bold);
-}
-
-%epsilon,
-.epsilon {
-	font-size: var(--font-size-default);
-	font-weight: var(--font-weight-bold);
-}
-
-%zeta,
-.zeta {
-	font-size: var(--font-size-default);
-	font-weight: var(--font-weight-bold);
-}
-
-h1 {
-	@extend %alpha;
 	z-index: var(--z-index-above);
 }
 
-h2 {
-	@extend %beta;
+h2,
+.beta {
 	border-block-end: var(--size-border-thin) solid h(alto);
 	inline-size: auto;
 	max-inline-size: 100%;
 	display: inline-block;
 	padding-inline-end: var(--size-large);
+	font-size: var(--font-size-beta);
+	font-weight: var(--font-weight-bold);
 }
 
-h3 {
-	@extend %gamma;
+h3,
+.gamma {
+	font-size: var(--font-size-gamma);
+	font-weight: var(--font-weight-bold);
 }
 
-:where(h4, h5, h6) {
-	@extend %delta;
+:where(h4, h5, h6),
+.delta {
+	font-size: var(--font-size-default);
+	font-weight: var(--font-weight-bold);
+}
+
+.epsilon {
+	font-size: var(--font-size-default);
+	font-weight: var(--font-weight-bold);
+}
+
+.zeta {
+	font-size: var(--font-size-default);
+	font-weight: var(--font-weight-bold);
 }
