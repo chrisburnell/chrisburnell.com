@@ -18,6 +18,9 @@
 	@each $name, $value in $sizes {
 		#{"--size-" + $name}: #{$value};
 	}
+	@each $name, $value in $breakpoints {
+		#{"--size-breakpoint-" + $name}: #{$value};
+	}
 
 	@each $name, $value in $font-families {
 		#{"--font-family-" + $name}: #{$value};
