@@ -30,7 +30,7 @@
 .footer__grid {
 	display: grid;
 	grid-template-columns: 1fr;
-	gap: var(--size-gutter);
+	row-gap: var(--size-gutter);
 
 	@include media("above:medium") {
 		grid-template-columns:
@@ -42,6 +42,7 @@
 			1fr
 			[right-end];
 		grid-template-rows: auto 1fr auto;
+		column-gap: var(--size-gutter);
 	}
 
 	.author {

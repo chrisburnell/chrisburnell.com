@@ -3,15 +3,6 @@
 /// @group blocks
 ////
 
-.author {
-	@include media("below:medium") {
-		--flow-space: var(--size-small);
-	}
-	@include media("above:medium") {
-		--flow-space: 0;
-	}
-}
-
 .author__information {
 	--flow-space: var(--size-small);
 
@@ -108,6 +99,8 @@
 }
 
 .author__biography {
+	--flow-space: var(--size-small);
+
 	font-size: var(--font-size-small);
 
 	@include media("above:medium") {

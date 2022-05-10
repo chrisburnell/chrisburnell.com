@@ -1,4 +1,4 @@
-<div class=" [ author ] [ flow ] [ h-card  p-author ] ">
+<div class=" [ author ] [ h-card  p-author ] ">
 	<a class=" [ author__information ] [ flow ] [ u-url u-uid ] " href="/about/" rel="author  me">
 		<picture>
 			<source srcset="/images/avatar.avif 1x,
@@ -24,7 +24,7 @@
 			<span class=" [ anchor ] [ canada ] [ p-name ] ">{{ author.name }}</span>
 		</div>
 	</a>
-	<div class=" [ author__biography ] ">
+	<div class=" [ author__biography ] [ flow ] ">
 		<p class=" [ p-note ] ">{{ author.description | safe }}</p>
 		<p>You can <button type="share" class="anchor">share this page</button> and <a href="https://github.com/{{ author.github }}/{{ site.repository }}/tree/main/{{ page.inputPath }}" aria-label="edit this page">edit it too</a>.</p>
 	</div>
