@@ -6,10 +6,6 @@
 .content,
 .e-content {
 	--flow-space: var(--size-large);
-
-	& > * + h2 {
-		margin-block-start: var(--size-gigantic);
-	}
 }
 .content {
 	margin-block-start: var(--size-large);

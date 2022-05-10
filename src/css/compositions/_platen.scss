@@ -6,7 +6,26 @@
 .platen {
 	display: grid;
 	align-items: start;
-	grid-template-columns: 1fr;
+	grid-template-columns:
+		[marginalia-start content-start outdent-start]
+		1fr
+		[marginalia-end content-end outdent-end];
+	grid-template-rows:
+		[breadcrumbs-start]
+		auto
+		[breadcrumbs-end title-start]
+		auto
+		[title-end description-start]
+		auto
+		[description-end sparkline-start]
+		auto
+		[sparkline-end content-start]
+		auto
+		[sparkline-end meta-start]
+		auto
+		[meta-end ads-start]
+		auto
+		[ads-end];
 
 	@include media("above:medium") {
 		grid-template-columns:
@@ -101,9 +120,7 @@
 
 	&.full,
 	&.wide {
-		@include media("above:medium") {
-			grid-column: content / outdent;
-		}
+		grid-column: content / outdent;
 	}
 }
 
