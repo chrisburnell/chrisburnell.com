@@ -1,9 +1,9 @@
 ////
-/// Platen
+/// Pantheon
 /// @group compositions
 ////
 
-.platen {
+.pantheon {
 	display: grid;
 	align-items: start;
 	grid-template-columns:
@@ -21,7 +21,7 @@
 		auto
 		[sparkline-end content-start]
 		auto
-		[sparkline-end meta-start]
+		[content-end meta-start]
 		auto
 		[meta-end ads-start]
 		auto
