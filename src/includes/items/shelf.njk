@@ -20,7 +20,7 @@
 {%- elif item.data.read_of -%}
 	{% set item_of_url = "https://openlibrary.org/isbn/" + item.data.read_of %}
 {%- endif -%}
-<article class=" [ flow ] {% if hfeed %}[ h-{{ item.data.mf_root }} ] {% endif %}"">
+<article class=" [ flow ] {% if hfeed %}[ h-{{ item.data.mf_root }} ] {% endif %}">
 	{# {%- include 'cover.njk' -%} #}
 	{# Rudimentary workaround... AGAIN #}
 	{% if item.data.cover %}
