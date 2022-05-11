@@ -6,7 +6,7 @@ tags:
   - css
 ---
 
-I was lucky enough to attend [All Day Hey last week](/note/all-day-hey-2022/) and have been buzzing with ideas and inspiration. Since then, I’ve made some fun and powerful changes to the architecture and philosophy towards writing CSS, so here are a few of the highlights!
+Last week, I was lucky enough to attend [All Day Hey](https://alldayhey.com/) and have been buzzing with ideas and inspiration. Since then, I’ve made some fun and powerful changes to the architecture and philosophy towards writing CSS, so here are a few of the highlights!
 
 ## Let’s get logical
 
