@@ -36,7 +36,7 @@ I also serve (what I hope are unobtrusive) ads, currently coming through from [C
     <dd><a class=" [ canada ] " href="https://twitter.com/{{ author.twitter }}">{{'@' + author.twitter }}</a></dd>
     <dt>Twitter DM:</dt>
     <dd><a class=" [ canada ] " href="https://twitter.com/messages/compose?recipient_id={{ author.twitter }}">{{ '@' + author.twitter }}</a></dd>
-    <dt>Mastdon:</dt>
+    <dt>Mastodon:</dt>
     <dd><a class=" [ canada ] " href="https://{{ author.mastodon.split('@') | last }}/users/{{ author.mastodon.split('@') | first }}">{{ '@' + author.mastodon }}</a></dd>
 </dl>
 

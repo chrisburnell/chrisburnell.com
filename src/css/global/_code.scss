@@ -11,19 +11,18 @@
 	font-variant-numeric: proportional-nums;
 }
 
-%monospace,
-mark {
+:is(code, kbd, samp, mark) {
 	padding: var(--size-border-default);
 	border-radius: var(--size-border-default);
-}
-
-mark {
-	background-color: h(aspen);
 }
 
 :is(code, samp, kbd) {
 	background-color: h(bear);
 	user-select: all;
+}
+
+mark {
+	background-color: h(aspen);
 }
 
 kbd {

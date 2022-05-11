@@ -75,8 +75,8 @@
 	<link rel="alternate" type="application/rss+xml" title="Checkins Feed" href="{{ site.url + '/checkins.xml' }}">
 	<link rel="pingback" href="https://webmention.io/{{ site.url | getHost }}/xmlrpc">
 	<link rel="webmention" href="https://webmention.io/{{ site.url | getHost }}/webmention">
-	<link rel="authorization_endpoint" href="{{ author.urls.authorization }}">
-	<link rel="token_endpoint" href="{{ author.urls.token }}">
+	<link rel="authorization_endpoint" href="{{ author.urls.indieauth_endpoint }}">
+	<link rel="token_endpoint" href="{{ author.urls.indieauth_token }}">
 	<link rel="micropub" href="{{ author.urls.micropub }}">
 	<link rel="microsub" href="{{ author.urls.microsub }}">
 	<link rel="openid.delegate" href="{{ site.url }}" />
