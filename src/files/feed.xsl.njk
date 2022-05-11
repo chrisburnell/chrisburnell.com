@@ -63,7 +63,7 @@
             <ol class=" [ footer__navigation ] ">
               <li>
                 <a id="copyright" rel="license" href="/license/">© {{ site.established }}–{{ global.now | friendlyDate("yyyy") }} <span class=" [ canada ] ">{{ author.name }}</span></a>
-              </li>{% for item in socials %}{% if item.url and not item.hidden and not item.primary %}
+              </li>{% for item in socials %}{% if item.url and item.primary and not item.hidden %}
               <li>
                 <a href="{{ item.url }}">{{ item.title }}</a>
               </li>{% endif %}{% endfor %}
