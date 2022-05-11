@@ -1,4 +1,5 @@
 ---
+updated: 2022-05-11T17:10:00+0100
 date: 2021-11-28T10:00:00+0000
 title: Deep Dive into Colour
 description: How to make powerful use of CSS Variables, colour spaces, and the cascade using Bowhead.
@@ -191,9 +192,9 @@ And by applying that class to an element, those new values are both applied to i
 
 Or inside a box like this:
 
-<div class=" [ box ] [ flow ] [ code-red ] ">
+<blockquote class=" [ code-red ] ">
     <p>I'm not sure why this is such a great thing, to be fair, though…</p>
-</div>
+</blockquote>
 
 Or inside a table like this:
 
