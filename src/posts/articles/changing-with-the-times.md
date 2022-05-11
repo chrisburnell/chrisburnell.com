@@ -1,4 +1,5 @@
 ---
+draft: true
 title: Changing with the times
 description: Lessons learned, pieces of wisdom (and folly), and other things I have to say after running a website blog for a while.
 ---
