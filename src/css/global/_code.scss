@@ -12,9 +12,13 @@
 }
 
 %monospace,
-:where(del, ins, mark) {
+mark {
 	padding: var(--size-border-default);
 	border-radius: var(--size-border-default);
+}
+
+mark {
+	background-color: h(aspen);
 }
 
 :is(code, samp, kbd) {
@@ -26,10 +30,6 @@ kbd {
 	font-weight: var(--font-weight-bold);
 	text-transform: uppercase;
 	letter-spacing: 1px;
-}
-
-mark {
-	background-color: h(aspen);
 }
 
 var {
