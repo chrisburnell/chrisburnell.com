@@ -41,16 +41,16 @@
 }
 
 .box--success {
-	--background-color: h(conifer, delta);
-	--border-color: h(conifer, beta);
+	--background-color: #{h(conifer, delta)};
+	--border-color: #{h(conifer, beta)};
 }
 
 .box--warning {
-	--background-color: h(aspen, delta);
-	--border-color: h(aspen, beta);
+	--background-color: #{h(aspen, delta)};
+	--border-color: #{h(aspen, beta)};
 }
 
 .box--error {
-	--background-color: h(maple, delta);
-	--border-color: h(maple, beta);
+	--background-color: #{h(maple, delta)};
+	--border-color: #{h(maple, beta)};
 }
