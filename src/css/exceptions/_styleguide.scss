@@ -16,7 +16,6 @@
 
 	li {
 		padding: var(--size-medium) 0;
-		vertical-align: middle;
 		font-size: var(--font-size-small);
 		text-align: center;
 		white-space: nowrap;
@@ -43,83 +42,115 @@
 }
 .background--lynx {
 	background-color: h(lynx);
-	// color: color-contrast(h(lynx));
 	color: h(alto);
+	@supports (color: color-contrast()) {
+		color: color-contrast(#{h(lynx)} vs var(--contrast-list) to var(--contrast-ratio));
+	}
 }
 .background--wolf {
 	background-color: h(wolf);
-	// color: color-contrast(h(wolf));
 	color: h(milou);
+	@supports (color: color-contrast()) {
+		color: color-contrast(#{h(wolf)} vs var(--contrast-list) to var(--contrast-ratio));
+	}
 }
 .background--bowhead {
 	background-color: h(bowhead);
-	// color: color-contrast(h(bowhead));
 	color: h(milou);
+	@supports (color: color-contrast()) {
+		color: color-contrast(#{h(bowhead)} vs var(--contrast-list) to var(--contrast-ratio));
+	}
 }
 .background--raven {
 	background-color: h(raven);
-	// color: color-contrast(h(raven));
 	color: h(thunder);
+	@supports (color: color-contrast()) {
+		color: color-contrast(#{h(raven)} vs var(--contrast-list) to var(--contrast-ratio));
+	}
 }
 .background--highland {
 	background-color: h(highland);
-	// color: color-contrast(h(highland));
 	color: h(thunder);
+	@supports (color: color-contrast()) {
+		color: color-contrast(#{h(highland)} vs var(--contrast-list) to var(--contrast-ratio));
+	}
 }
 .background--coyote {
 	background-color: h(coyote);
-	// color: color-contrast(h(coyote));
 	color: h(mineshaft);
+	@supports (color: color-contrast()) {
+		color: color-contrast(#{h(coyote)} vs var(--contrast-list) to var(--contrast-ratio));
+	}
 }
 .background--bear {
 	background-color: h(bear);
-	// color: color-contrast(h(bear));
 	color: h(mineshaft);
+	@supports (color: color-contrast()) {
+		color: color-contrast(#{h(bear)} vs var(--contrast-list) to var(--contrast-ratio));
+	}
 }
 .background--maple {
 	background-color: h(maple);
-	// color: color-contrast(h(maple));
 	color: h(thunder);
+	@supports (color: color-contrast()) {
+		color: color-contrast(#{h(maple)} vs var(--contrast-list) to var(--contrast-ratio));
+	}
 }
 .background--conifer {
 	background-color: h(conifer);
-	// color: color-contrast(h(conifer));
 	color: h(milou);
+	@supports (color: color-contrast()) {
+		color: color-contrast(#{h(conifer)} vs var(--contrast-list) to var(--contrast-ratio));
+	}
 }
 .background--aspen {
 	background-color: h(aspen);
-	// color: color-contrast(h(aspen));
 	color: h(mineshaft);
+	@supports (color: color-contrast()) {
+		color: color-contrast(#{h(aspen)} vs var(--contrast-list) to var(--contrast-ratio));
+	}
 }
 .background--thunder {
 	background-color: h(thunder);
-	// color: color-contrast(h(thunder));
 	color: h(milou);
+	@supports (color: color-contrast()) {
+		color: color-contrast(#{h(thunder)} vs var(--contrast-list) to var(--contrast-ratio));
+	}
 }
 .background--mineshaft {
 	background-color: h(mineshaft);
-	// color: color-contrast(h(mineshaft));
 	color: h(milou);
+	@supports (color: color-contrast()) {
+		color: color-contrast(#{h(mineshaft)} vs var(--contrast-list) to var(--contrast-ratio));
+	}
 }
 .background--kaiser {
 	background-color: h(kaiser);
-	// color: color-contrast(h(kaiser));
 	color: h(milou);
+	@supports (color: color-contrast()) {
+		color: color-contrast(#{h(kaiser)} vs var(--contrast-list) to var(--contrast-ratio));
+	}
 }
 .background--dove {
 	background-color: h(dove);
-	// color: color-contrast(h(dove));
 	color: h(milou);
+	@supports (color: color-contrast()) {
+		color: color-contrast(#{h(dove)} vs var(--contrast-list) to var(--contrast-ratio));
+	}
 }
 .background--alto {
 	background-color: h(alto);
-	// color: color-contrast(h(alto));
 	color: h(mineshaft);
+	@supports (color: color-contrast()) {
+		color: color-contrast(#{h(alto)} vs var(--contrast-list) to var(--contrast-ratio));
+	}
 }
 .background--milou {
 	background-color: h(milou);
-	// color: color-contrast(h(milou));
 	color: h(mineshaft);
+	@supports (color: color-contrast()) {
+		color: color-contrast(#{h(milou)} vs var(--contrast-list) to var(--contrast-ratio));
+	}
 }
 
 .size-example {

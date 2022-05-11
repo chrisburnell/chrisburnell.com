@@ -66,57 +66,75 @@ code[class*="language-"] {
 	&.language-css::before {
 		content: "CSS";
 		background-color: h(css);
-		// color: color-contrast(#{ h(css) });
 		color: h(milou);
+		@supports (color: color-contrast()) {
+			color: color-contrast(#{h(css)} vs var(--contrast-list) to var(--contrast-ratio));
+		}
 	}
 	&.language-html::before {
 		content: "HTML";
 		background-color: h(html);
-		// color: color-contrast(#{ h(html) });
 		color: h(thunder);
+		@supports (color: color-contrast()) {
+			color: color-contrast(#{h(html)} vs var(--contrast-list) to var(--contrast-ratio));
+		}
 	}
 	&.language-javascript::before {
 		content: "JavaScript";
 		background-color: h(javascript);
-		// color: color-contrast(#{ h(javascript) });
 		color: h(mineshaft);
+		@supports (color: color-contrast()) {
+			color: color-contrast(#{h(javascript)} vs var(--contrast-list) to var(--contrast-ratio));
+		}
 	}
 	&.language-json::before {
 		content: "JSON";
 		background-color: h(json);
-		// color: color-contrast(#{ h(json) });
 		color: h(mineshaft);
+		@supports (color: color-contrast()) {
+			color: color-contrast(#{h(json)} vs var(--contrast-list) to var(--contrast-ratio));
+		}
 	}
 	&.language-liquid::before {
 		content: "Liquid";
 		background-color: h(liquid);
-		// color: color-contrast(#{ h(liquid) });
 		color: h(mineshaft);
+		@supports (color: color-contrast()) {
+			color: color-contrast(#{h(liquid)} vs var(--contrast-list) to var(--contrast-ratio));
+		}
 	}
 	&.language-markdown::before {
 		content: "Markdown";
 		background-color: h(markdown);
-		// color: color-contrast(#{ h(markdown) });
 		color: h(alto);
+		@supports (color: color-contrast()) {
+			color: color-contrast(#{h(markdown)} vs var(--contrast-list) to var(--contrast-ratio));
+		}
 	}
 	&.language-nunjucks::before,
 	&.language-twig::before {
 		content: "Nunjucks";
 		background-color: h(nunjucks);
-		// color: color-contrast(#{ h(nunjucks) });
 		color: h(milou);
+		@supports (color: color-contrast()) {
+			color: color-contrast(#{h(nunjucks)} vs var(--contrast-list) to var(--contrast-ratio));
+		}
 	}
 	&.language-scss::before {
 		content: "SCSS";
 		background-color: h(scss);
-		// color: color-contrast(#{ h(scss) });
 		color: h(thunder);
+		@supports (color: color-contrast()) {
+			color: color-contrast(#{h(scss)} vs var(--contrast-list) to var(--contrast-ratio));
+		}
 	}
 	&.language-yaml::before {
 		content: "YAML";
 		background-color: h(yaml);
-		// color: color-contrast(#{ h(yaml) });
 		color: h(milou);
+		@supports (color: color-contrast()) {
+			color: color-contrast(#{h(yaml)} vs var(--contrast-list) to var(--contrast-ratio));
+		}
 	}
 }
 

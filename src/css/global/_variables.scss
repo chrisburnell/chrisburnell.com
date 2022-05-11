@@ -54,4 +54,7 @@
 
 	--transition-duration: 0.2s;
 	--transition-function: ease;
+
+	--contrast-list: #{h(alto)}, #{h(milou)}, #{h(mineshaft)}, #{h(thunder)};
+	--contrast-ratio: AA;
 }
