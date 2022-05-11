@@ -1,0 +1,56 @@
+////
+/// Box
+/// @group compositions
+///
+/// --background-color (hsla(var(--color-thunder) / var(--opacity-delta)))
+///     Defines the background color the box.
+/// --gutter (var(--size-gutter))
+///     Defines the space around the box.
+/// --border-color (hsla(var(--color-raven) / var(--opacity-beta)))
+///     Defines the background color the box.
+////
+
+.box {
+	background-color: var(--background-color, h(thunder, delta));
+	background-clip: padding-box;
+	max-inline-size: 100% !important;
+	padding: var(--gutter, var(--size-gutter));
+	border-block-start: var(--size-border-thin) solid var(--border-color, h(raven, beta));
+	border-radius: 1px 1px var(--size-border-default) var(--size-border-default);
+	text-align: start;
+	font-family: var(--font-family-default);
+	font-style: normal;
+
+	& > * + * {
+		--flow-space: var(--size-medium);
+	}
+	.meta & > * + * {
+		--flow-space: 0;
+	}
+
+	:is(h2, h3) {
+		font-size: var(--font-size-default);
+		line-height: var(--line-height-medium);
+		text-transform: none;
+		letter-spacing: 0;
+	}
+
+	%anchor {
+		color: h(bowhead);
+	}
+}
+
+.box--success {
+	--background-color: h(conifer, delta);
+	--border-color: h(conifer, beta);
+}
+
+.box--warning {
+	--background-color: h(aspen, delta);
+	--border-color: h(aspen, beta);
+}
+
+.box--error {
+	--background-color: h(maple, delta);
+	--border-color: h(maple, beta);
+}

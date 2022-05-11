@@ -4,7 +4,7 @@
 ////
 
 blockquote {
-	background-color: h(raven, gamma);
+	background-color: h(bear);
 	inline-size: 100%;
 	max-inline-size: var(--size-line-length);
 	padding: var(--size-medium);
@@ -20,8 +20,12 @@ blockquote {
 			content: open-quote;
 		}
 
-		&:not(:last-of-type) ::after {
+		&::after {
 			content: close-quote;
+		}
+
+		&:not(:last-of-type)::after {
+			@include hidden;
 		}
 	}
 

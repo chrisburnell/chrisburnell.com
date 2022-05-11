@@ -1,4 +1,8 @@
-<h2>Browse by tag</h2>
+{% if is_homepage %}
+	<h2>Browse post tags</h2>
+{% else %}
+	<h2>Browse by tag</h2>
+{% endif %}
 <ul class=" [ meta__list ] ">
 	{% for lookup in collections.tags | sort %}<li>{% if '/tag/' + lookup != page.url %}<a href="/tag/{{ lookup }}">#{{ lookup }}</a>{% else %}<a href="#content">#{{ lookup }}</a>{% endif %}</li>{% endfor %}
 </ul>

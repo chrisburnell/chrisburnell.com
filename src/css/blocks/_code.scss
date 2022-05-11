@@ -63,37 +63,60 @@ code[class*="language-"] {
 	}
 
 	// Highlighted Code Block Labels
-	@each $name, $color in $language-colors {
-		&.language-#{$name} {
-			&::before {
-				background-color: $color !important;
-				color: contrasting-color($color) !important;
-			}
-		}
+	&.language-css::before {
+		content: "CSS";
+		background-color: h(css);
+		// color: color-contrast(#{ h(css) });
+		color: h(milou);
 	}
 	&.language-html::before {
 		content: "HTML";
-	}
-	&.language-css::before {
-		content: "CSS";
+		background-color: h(html);
+		// color: color-contrast(#{ h(html) });
+		color: h(thunder);
 	}
 	&.language-javascript::before {
 		content: "JavaScript";
-	}
-	&.language-scss::before {
-		content: "SCSS";
+		background-color: h(javascript);
+		// color: color-contrast(#{ h(javascript) });
+		color: h(mineshaft);
 	}
 	&.language-json::before {
 		content: "JSON";
-	}
-	&.language-yaml::before {
-		content: "YAML";
+		background-color: h(json);
+		// color: color-contrast(#{ h(json) });
+		color: h(mineshaft);
 	}
 	&.language-liquid::before {
 		content: "Liquid";
+		background-color: h(liquid);
+		// color: color-contrast(#{ h(liquid) });
+		color: h(mineshaft);
 	}
+	&.language-markdown::before {
+		content: "Markdown";
+		background-color: h(markdown);
+		// color: color-contrast(#{ h(markdown) });
+		color: h(alto);
+	}
+	&.language-nunjucks::before,
 	&.language-twig::before {
 		content: "Nunjucks";
+		background-color: h(nunjucks);
+		// color: color-contrast(#{ h(nunjucks) });
+		color: h(milou);
+	}
+	&.language-scss::before {
+		content: "SCSS";
+		background-color: h(scss);
+		// color: color-contrast(#{ h(scss) });
+		color: h(thunder);
+	}
+	&.language-yaml::before {
+		content: "YAML";
+		background-color: h(yaml);
+		// color: color-contrast(#{ h(yaml) });
+		color: h(milou);
 	}
 }
 

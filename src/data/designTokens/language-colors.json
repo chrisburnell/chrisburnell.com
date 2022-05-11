@@ -2,8 +2,10 @@
   "css": "#016fba",
 	"html": "#e54d26",
 	"javascript": "#f1c54c",
+	"json": "#a9a9a9",
 	"liquid": "#7ab55c",
 	"markdown": "#4a525a",
-	"twig": "#3d8137",
-	"scss": "#c6538c"
+	"nunjucks": "#3d8137",
+	"scss": "#c6538c",
+	"yaml": "#cc1018"
 }

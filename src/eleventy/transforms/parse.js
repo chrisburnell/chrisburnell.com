@@ -43,6 +43,12 @@ module.exports = (value, outputPath) => {
 			$(this).attr("id", headingID)
 		})
 
+		// Make <pre> code blocks keyboard-accessible by adding `tabindex="0"`
+		const preformatted = $("pre")
+		preformatted.each(function () {
+			$(this).attr("tabindex", 0)
+		})
+
 		return $.root().html()
 	}
 	return value

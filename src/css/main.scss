@@ -55,7 +55,6 @@
 @import "blocks/breadcrumbs";
 @import "blocks/title";
 @import "blocks/description";
-@import "blocks/box";
 @import "blocks/meta";
 @import "blocks/deck";
 @import "blocks/shelf";
@@ -77,6 +76,7 @@
 // Compositions
 @import "compositions/pantheon";
 @import "compositions/grid";
+@import "compositions/box";
 
 // Utilities
 @import "utilities/wrap";

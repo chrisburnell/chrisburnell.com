@@ -41,11 +41,85 @@
 		}
 	}
 }
-@each $name, $color in $colors {
-	.background--#{$name} {
-		background-color: h($name);
-		color: contrasting-color($color);
-	}
+.background--lynx {
+	background-color: h(lynx);
+	// color: color-contrast(h(lynx));
+	color: h(alto);
+}
+.background--wolf {
+	background-color: h(wolf);
+	// color: color-contrast(h(wolf));
+	color: h(milou);
+}
+.background--bowhead {
+	background-color: h(bowhead);
+	// color: color-contrast(h(bowhead));
+	color: h(milou);
+}
+.background--raven {
+	background-color: h(raven);
+	// color: color-contrast(h(raven));
+	color: h(thunder);
+}
+.background--highland {
+	background-color: h(highland);
+	// color: color-contrast(h(highland));
+	color: h(thunder);
+}
+.background--coyote {
+	background-color: h(coyote);
+	// color: color-contrast(h(coyote));
+	color: h(mineshaft);
+}
+.background--bear {
+	background-color: h(bear);
+	// color: color-contrast(h(bear));
+	color: h(mineshaft);
+}
+.background--maple {
+	background-color: h(maple);
+	// color: color-contrast(h(maple));
+	color: h(thunder);
+}
+.background--conifer {
+	background-color: h(conifer);
+	// color: color-contrast(h(conifer));
+	color: h(milou);
+}
+.background--aspen {
+	background-color: h(aspen);
+	// color: color-contrast(h(aspen));
+	color: h(mineshaft);
+}
+.background--thunder {
+	background-color: h(thunder);
+	// color: color-contrast(h(thunder));
+	color: h(milou);
+}
+.background--mineshaft {
+	background-color: h(mineshaft);
+	// color: color-contrast(h(mineshaft));
+	color: h(milou);
+}
+.background--kaiser {
+	background-color: h(kaiser);
+	// color: color-contrast(h(kaiser));
+	color: h(milou);
+}
+.background--dove {
+	background-color: h(dove);
+	// color: color-contrast(h(dove));
+	color: h(milou);
+}
+.background--alto {
+	background-color: h(alto);
+	// color: color-contrast(h(alto));
+	color: h(mineshaft);
+}
+.background--milou {
+	background-color: h(milou);
+	// color: color-contrast(h(milou));
+	color: h(mineshaft);
 }
 
 .size-example {

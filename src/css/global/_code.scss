@@ -17,13 +17,13 @@
 	border-radius: var(--size-border-default);
 }
 
-:is(code, samp) {
-	background-color: h(raven, gamma);
+:is(code, samp, kbd) {
+	background-color: h(bear);
 	user-select: all;
 }
 
 kbd {
-	background-color: h(coyote, beta);
+	font-weight: var(--font-weight-bold);
 	text-transform: uppercase;
 	letter-spacing: 1px;
 }

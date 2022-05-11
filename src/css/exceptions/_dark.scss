@@ -54,6 +54,10 @@
 		color: h(alto);
 	}
 
+	:is(blockquote, code, samp, kbd) {
+		background-color: h(coyote, gamma);
+	}
+
 	.box {
 		border-block-start-color: h(raven, alpha);
 	}

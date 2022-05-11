@@ -9,7 +9,7 @@ p {
 }
 
 :is(abbr, dfn)[title] {
-	color: h(dove);
+	color: h(kaiser);
 	font-style: italic;
 	font-weight: var(--font-weight-default);
 	border-block-end: var(--size-border-thin) dotted h(dove);
@@ -25,17 +25,17 @@ ins {
 }
 
 ins {
-	background-color: h(conifer);
-	color: h(milou);
+	background-color: h(conifer, gamma);
 	font-size: var(--font-size-default);
 }
 
 del {
-	color: h(maple);
+	text-decoration-color: h(maple);
+	text-decoration-thickness: var(--size-border-thin);
 }
 
 s {
-	color: h(dove);
+	text-decoration-thickness: var(--size-border-thin);
 }
 
 strong,

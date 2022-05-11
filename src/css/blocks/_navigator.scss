@@ -5,7 +5,8 @@
 ////
 
 .navigator {
-	--min-inline-size: max-content;
+	--placement: auto-fit;
+	--max-inline-size: max-content;
 
 	inline-size: 100%;
 	justify-content: center;

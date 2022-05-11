@@ -113,9 +113,11 @@ toc: true
 
 <p>Abbreviation: <abbr title="HyperText Markup Language">HTML</abbr></p>
 
-<p>This text has a <q cite="https://developer.mozilla.org/en-US/docs/HTML/Element/q">short inline quotation</q></p>
+<p>This text has <q cite="https://developer.mozilla.org/en-US/docs/HTML/Element/q">a short inline quotation</q></p>
 
-<p>This text has a <q cite="https://developer.mozilla.org/en-US/docs/HTML/Element/q">short inline quotation with <q>another short inline quotation</q> inside</q></p>
+<p>This text has <q>a short inline quotation with <q>another short inline quotation</q> spoken by a different voice</q></p>
+
+<p>This text has <q lang="fr-fr">une citation en incise</q> demonstrating quotes from non-English languages.</p>
 
 <p>The <dfn title="definition element">dfn element</dfn> indicates a definition</p>
 
@@ -434,10 +436,6 @@ p q r s t u v w x y z { | } ~
 {% for item in collections.beer | arePublished | reverse | limit(site.limits.shelf) %}
 	{% include 'items/shelf.njk' %}
 {% endfor %}
-</nav>
-
-<nav class=" [ grid ] [ shelf ] ">
-{%- set hfeed = false -%}
 {% for item in collections.music | arePublished | reverse | limit(site.limits.shelf) %}
 	{% include 'items/shelf.njk' %}
 {% endfor %}

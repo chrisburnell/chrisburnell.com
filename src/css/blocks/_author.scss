@@ -55,6 +55,58 @@
 		&::before {
 			opacity: 1;
 			transition: opacity var(--transition-duration) var(--transition-function);
+			animation: var(--animation-duration) var(--animation-function) infinite glitch;
+
+			@at-root {
+				@keyframes glitch {
+					0%,
+					15% {
+						opacity: 0;
+						filter: none;
+					}
+					15.01%,
+					20% {
+						opacity: 1;
+					}
+					20.01%,
+					41% {
+						opacity: 0;
+						transform: none;
+					}
+					41.01%,
+					47% {
+						opacity: 1;
+						transform: scaleY(-1);
+					}
+					47.01%,
+					73% {
+						opacity: 0;
+						transform: none;
+					}
+					73.01%,
+					75% {
+						opacity: 1;
+					}
+					75.01%,
+					78% {
+						opacity: 0;
+					}
+					78.01%,
+					83% {
+						opacity: 1;
+					}
+					83.01%,
+					92% {
+						opacity: 0;
+						filter: none;
+					}
+					92.01%,
+					100% {
+						opacity: 1;
+						filter: invert(1) hue-rotate(42deg);
+					}
+				}
+			}
 		}
 	}
 

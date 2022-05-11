@@ -28,7 +28,6 @@
 @import "blocks/content";
 @import "blocks/title";
 @import "blocks/description";
-@import "blocks/box";
 @import "blocks/meta";
 @import "blocks/deck";
 @import "blocks/updated";
@@ -38,6 +37,7 @@
 // Compositions
 @import "compositions/pantheon";
 @import "compositions/grid";
+@import "compositions/box";
 
 // Utilities
 @import "utilities/wrap";
