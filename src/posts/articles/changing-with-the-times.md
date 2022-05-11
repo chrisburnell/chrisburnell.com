@@ -1,7 +1,11 @@
 ---
-draft: true
+date: 2022-05-11T19:07:00+0100
 title: Changing with the times
 description: Lessons learned, pieces of wisdom (and folly), and other things I have to say after running a website blog for a while.
+tags:
+  - eleventy
+  - html
+  - personal
 ---
 
 Now, I don’t exactly *publish* a lot of content, but I do like to think about how I *present* and *structure* the content of my website, and after nine years and over 5000 git commits—am I working smart or working hard?…—there are some important lessons I’ve internalised over the years and some philosophies core to my website’s success that I’d like to share.
@@ -30,6 +34,11 @@ The point is, by making proper use of HTML’s wide array of powerful elements, 
 
 ## 3. Just write. Just publish.
 
-<aside><blockquote><p>But no one has read an article on that subject <em>that was written by you</em>.</p><cite>Jeremy Keith</cite></blockquote></aside>
+On the eve of [State of the Browser 2018](https://2018.stateofthebrowser.com/), while enjoy a beer at a favourite pub, I was meekly voicing my personal worries and concerns whenever I write and try to publish my work, and the fact that everything that I wanted to write about had already been covered more eloquently and in more detail than me. [Dave Letorey](https://letorey.co.uk) and [Jeremy Keith](https://adactio.com/) then gave me some of the most powerful advice of my entire <q>career</q> (paraphrased):
 
-I was and still am extremely tentative about publishing my own work, so this is advice I still need to hear myself.
+<blockquote>
+    <p>But no one has read an article on that subject <em>that was written by you</em>.</p>
+    <cite>Dave Letorey and Jeremy Keith (roughly)</cite>
+</blockquote>
+
+Don’t underestimate yourself. The context and viewpoint that you have on the world is entirely unique and your own. *Who* are you writing for? What level of *expertise* and *detail* are you hoping to convey to the reader? Identify a goal for your words and make them work towards that goal, and you’ll find you end up with something *oozing* with expertise, detail, and tremendous value. And don’t be shy to seek out feedback and create discourse around what you know and like to talk about!
