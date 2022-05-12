@@ -34,7 +34,7 @@ The point is, by making proper use of HTML’s wide array of powerful elements, 
 
 ## 3. Just write. Just publish.
 
-On the eve of [State of the Browser 2018](https://2018.stateofthebrowser.com/), while enjoy a beer at a favourite pub, I was meekly voicing my personal worries and concerns whenever I write and try to publish my work, and the fact that everything that I wanted to write about had already been covered more eloquently and in more detail than me. [Dave Letorey](https://letorey.co.uk) and [Jeremy Keith](https://adactio.com/) then gave me some of the most powerful advice of my entire <q>career</q> (paraphrased):
+On the eve of [State of the Browser 2018](https://2018.stateofthebrowser.com/), while enjoying a beer at a favourite pub, I was meekly voicing my personal worries and concerns whenever I write and try to publish my work, and the fact that everything that I wanted to write about had already been covered more eloquently and in more detail than me. [Dave Letorey](https://letorey.co.uk) and [Jeremy Keith](https://adactio.com/) then gave me some of the most powerful advice of my entire <q>career</q> (paraphrased):
 
 <blockquote>
     <p>But no one has read an article on that subject that was written by <strong>you</strong>.</p>
