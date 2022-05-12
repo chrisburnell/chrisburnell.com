@@ -10,7 +10,7 @@ tags:
 
 Now, I don’t exactly *publish* a lot of content, but I do like to think about how I *present* and *structure* the content of my website, and after nine years and over 5000 git commits—am I working smart or working hard?…—there are some important lessons I’ve internalised over the years and some philosophies core to my website’s success that I’d like to share.
 
-## 1. Eliminate barriers to authoring and publishing
+## Eliminate barriers to authoring and publishing
 
 Really just a fancy way of saying <q>Keep It Simple, Stupid</q>!
 
@@ -20,7 +20,7 @@ This is all to illustrate that you should aim to give yourself as much freedom t
 
 This also applies to publishing. Whether coincidence or *destiny*, my preference for writing with Markdown works well with the website I have. This means that when it comes to actually publishing what I’ve written, I don’t need to prepare a bunch of code-specific metadata. As it applies to my blog posts in particular, this means taking advtantage of [default/cascading data](https://www.11ty.dev/docs/data-cascade/) so that, once again, the heavy lifting on the programming side of things is handled, wherever possible, *outside* of where I write, the Markdown files. This has a huge effect in reducing my mental overhead when writing new content, which is *always* welcome!
 
-## 2. Trust in HTML, it knows what it’s doing
+## Trust in HTML, it knows what it’s doing
 
 It probably comes as no surprise that, as someone who’s made an egregious number of changes, reverts, tests, features, and bugs on this website, I’ve also gone through an atrocious number of minute iterations to the design over the years as well. Throughout that time, the most robust and resilient pieces of markup and functionality that have survived have been plain, old HTML. Nothing more fancy than that.
 
@@ -32,7 +32,7 @@ But what’s *even more mindblowing* is this: the functionality that we get from
 
 The point is, by making proper use of HTML’s wide array of powerful elements, suitably chosen for the needs at hand, I’ve saved myself countless hours and given my code an ephemeral quality by relying on HTML, rather than weaving a transient web of my own.
 
-## 3. Just write. Just publish.
+## Just write. Just publish.
 
 On the eve of [State of the Browser 2018](https://2018.stateofthebrowser.com/), while enjoying a beer at a favourite pub, I was meekly voicing my personal worries and concerns whenever I write and try to publish my work, and the fact that everything that I wanted to write about had already been covered more eloquently and in more detail than me. [Dave Letorey](https://letorey.co.uk) and [Jeremy Keith](https://adactio.com/) then gave me some of the most powerful advice of my entire <q>career</q> (paraphrased):
 

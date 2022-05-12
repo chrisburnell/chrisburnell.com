@@ -28,7 +28,7 @@ module.exports = (value, outputPath) => {
 
 		const articleHeadings = $(".content h2")
 		articleHeadings.each(function () {
-			const headingID = $(this).attr("id") || slugify($(this).text().toLowerCase())
+			const headingID = $(this).attr("id") || slugify($(this).text().replace(/\.\’/gi, "").toLowerCase())
 			$(this).html(
 				minify(`
 				${$(this).html()}
