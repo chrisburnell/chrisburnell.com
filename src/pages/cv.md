@@ -14,19 +14,15 @@ I’m a self-taught developer driven by a passion for the front end to create a 
 
 ## Work Experience
 
-0. **[London Web Standards](https://londonwebstandards.org) & [State of the Browser](https://stateofthebrowser.com)**
-
-    *Co-organiser*
-
-    *March 2018 – April 2022*<br><br>
-
-    Being an avid attendee of *London Web Standards*, a bi-monthly meetup, and *State of the Browser*, an annual conference, since 2012, I was ecstatic to give my [first lightning talk](https://chrisburnell.com/talk/middle-out/) in 2016. Two years later, I joined the Organisers team, and it’s been nothing short of a rewarding experience for me. At their cores, both *LWS* and *SotB* serve as free and cheap platforms for designers and developers to learn from some of the best thought-leaders and speakers in our industry.<br><br>
-
 0. **[Squiz](https://squiz.net)**
+
+    *Lead Developer & Chapter Lead*
+
+    *May 2022 – present*<br><br>
 
     *Lead Developer*
 
-    *November 2021 – Present*<br><br>
+    *November 2021 – May 2022*<br><br>
 
     *Lead Developer (Contracting)*
 
@@ -68,6 +64,14 @@ I’m a self-taught developer driven by a passion for the front end to create a 
     - organised and ran “Implementor Scrum”, a weekly meeting for developers to have fun and build something unrelated to work and for fun, but using skills that we could hone and apply to our work<br><br>
 
 ## Notable Projects and Articles
+
+0. **[London Web Standards](https://londonwebstandards.org) & [State of the Browser](https://stateofthebrowser.com)**
+
+    *Co-organiser*
+
+    *March 2018 – April 2022*<br><br>
+
+    Being an avid attendee of *London Web Standards*, a bi-monthly meetup, and *State of the Browser*, an annual conference, since 2012, I was ecstatic to give my [first lightning talk](https://chrisburnell.com/talk/middle-out/) in 2016. Two years later, I joined the Organisers team, and it’s been nothing short of a rewarding experience for me. At their cores, both *LWS* and *SotB* serve as free and cheap platforms for designers and developers to learn from some of the best thought-leaders and speakers in our industry.<br><br>
 
 0. **[Pentatonic](https://chrisburnell.com/pentatonic/)**
 
