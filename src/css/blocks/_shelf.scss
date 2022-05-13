@@ -15,9 +15,7 @@
 	}
 
 	%heading {
-		font-family: var(--font-family-sans);
-		font-size: var(--font-size-default);
-		font-weight: var(--font-weight-bold);
+		@extend %delta;
 
 		%anchor {
 			color: inherit;

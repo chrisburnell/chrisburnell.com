@@ -40,7 +40,7 @@
 			</a>
 		{% endif %}
 	{% endif %}
-	<h3>
+	<h1>
 		{% if item.url and item.data.tags and item.data.tags.includes('clickthrough') %}
 			<a href="{{ item_of_url | default(item.url) | striptags(true) | safe }}">
 		{% elif item.url %}
@@ -53,7 +53,7 @@
 		{% if item.url %}
 			</a>
 		{% endif %}
-	</h3>
+	</h1>
 	{% if item.data.subtitle %}
 		<p class=" [ small ] ">{{ item.data.subtitle | safe }}</p>
 	{% elif item.data.style %}

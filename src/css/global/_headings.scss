@@ -11,18 +11,21 @@
 }
 
 h1,
-.alpha {
-	font-family: var(--font-family-title);
+.alpha,
+%alpha {
 	font-size: var(--font-size-alpha);
 	font-weight: var(--font-weight-default);
 	line-height: var(--line-height-medium);
 }
 h1 {
+	font-family: var(--font-family-title);
 	z-index: var(--z-index-above);
 }
 
 h2,
-.beta {
+.beta,
+%beta {
+	font-family: var(--font-family-default);
 	font-size: var(--font-size-beta);
 	font-weight: var(--font-weight-bold);
 }
@@ -35,23 +38,33 @@ h2 {
 }
 
 h3,
-.gamma {
+.gamma,
+%gamma {
+	font-family: var(--font-family-default);
 	font-size: var(--font-size-gamma);
 	font-weight: var(--font-weight-bold);
 }
 
-:where(h4, h5, h6),
-.delta {
+h4,
+.delta,
+%delta {
+	font-family: var(--font-family-default);
 	font-size: var(--font-size-default);
 	font-weight: var(--font-weight-bold);
 }
 
-.epsilon {
-	font-size: var(--font-size-default);
+h5,
+.epsilon,
+%epsilon {
+	font-family: var(--font-family-default);
+	font-size: var(--font-size-small);
 	font-weight: var(--font-weight-bold);
 }
 
-.zeta {
-	font-size: var(--font-size-default);
-	font-weight: var(--font-weight-bold);
+h6,
+.zeta,
+%zeta {
+	font-family: var(--font-family-default);
+	font-size: var(--font-size-small);
+	font-weight: var(--font-weight-default);
 }

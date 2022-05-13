@@ -31,7 +31,9 @@
 		grid-template-columns:
 			[marginalia-start]
 			14em
-			[marginalia-end content-start outdent-start]
+			[marginalia-end]
+			var(--size-gap)
+			[content-start outdent-start]
 			repeat(6, 1fr)
 			[content-end outdent-end];
 		grid-template-rows:
@@ -55,13 +57,13 @@
 			[marginalia-start]
 			16em
 			[marginalia-end]
-			var(--size-gutter)
+			var(--size-gap)
 			[content-start]
 			repeat(6, 1fr)
 			[content-end]
 			var(--size-gap)
 			[outdent-start]
-			10em
+			1fr
 			[outdent-end];
 	}
 

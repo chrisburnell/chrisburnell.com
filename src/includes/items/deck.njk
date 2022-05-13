@@ -136,7 +136,7 @@
 		</div>
 	{% endif %}
 	{% if item_title or item_of_title %}
-		<h3>
+		<h1>
 			{% if item.data.tags and item.data.tags.includes('clickthrough') and item.data.emoji %}
 				<a class=" [ p-name ] " href="{{ item_of_url | default(item.url) | striptags(true) | safe }}">
 					{% emoji item.data.emoji %}{{ item_title | default(item_of_title) | striptags(true) | safe }}
@@ -150,7 +150,7 @@
 					{{ item_title | default(item_of_title) | striptags(true) | safe }}
 				</a>
 			{% endif %}
-		</h3>
+		</h1>
 	{% endif %}
 	{% if show_photos %}
 		{% include 'photo.njk' %}

@@ -11,10 +11,6 @@
 	margin-block-start: var(--size-large);
 	overflow: hidden;
 
-	@include media("above:medium") {
-		padding-inline-start: var(--size-gutter);
-	}
-
 	.description--published ~ & {
 		@include media("below:medium") {
 			margin-block-start: 0;
