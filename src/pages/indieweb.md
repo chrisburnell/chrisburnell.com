@@ -39,7 +39,9 @@ To syndicate interactions on my content inside silos, I use *[Bridgy](https://br
 
 *Outgoing* webmentions are handled for me by *[Telegraph](https://telegraph.p3k.io)*, which also takes care of microformats parsing and endpoint discovery for each link in my content.
 
-I also take advantage of both *[Bridgy Fed](https://fed.brid.gy)* and *[Switchboard](https://switchboard.p3k.io)* to interact with federated networks and to make *[WebSub](https://indieweb.org/WebSub)* and *[ActivityPub](https://activitypub.rocks)* work.
+I use *[Aperture](https://aperture.p3k.io/)* and *[Monocle](https://monocle.p3k.io/)* to manage feeds I want to follow and keep track of new content from.
+
+*Outgoing* webmentions are handled for me by *[Telegraph](https://telegraph.p3k.io)*, which also takes care of microformats parsing and endpoint discovery for each link in my content.
 
 Lastly, I use *[OwnYourBeer](https://ownyourbeer.chrisburnell.com)* to syndicate check-ins from *[Untappd](https://untappd.com)* to my [beer](/beer) category</a>.
 
@@ -54,6 +56,8 @@ As much work as I’ve put into my sections of code, I have to give a massive th
     <dd>for <a href="https://switchboard.p3k.io" rel="external">Switchboard</a>, <a href="https://telegraph.p3k.io" rel="external">Telegraph</a>, and <a href="https://webmention.io" rel="external">Webmention.io</a></dd>
     <dt><a href="https://snarfed.org" rel="external">Ryan Barrett</a></dt>
     <dd>for <a href="https://brid.gy" rel="external">Bridgy</a> and <a href="https://fed.brid.gy" rel="external">Bridgy Fed</a></dd>
+    <dt><a href="https://keithjgrant.com/" rel="external">Keith J. Grant</a></dt>
+    <dd>for <a href="https://omnibear.com/" rel="external">Omnibear</a></dd>
     <dt><a href="https://rusingh.com" rel="external">Ru Singh</a></dt>
     <dd>for <a href="https://gocelestial.herokuapp.com" rel="external">Celestial</a></dd>
 </dl>
