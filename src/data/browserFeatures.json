@@ -222,5 +222,32 @@
         "[Official Specification](https://www.w3.org/TR/css3-images/)",
         "[Page on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients)"
      ]
+  },
+  {
+     "id": "colr-v1",
+     "language": "css",
+     "title": "Colrv1 Font Formats",
+     "description": "A font format with additional graphic capabilities: different colours, gradients, and blend modes to name a few.",
+     "links": [
+        "[Official Specification](https://docs.microsoft.com/en-us/typography/opentype/spec/colr)"
+     ]
+  },
+  {
+     "id": "relative-colors",
+     "language": "css",
+     "title": "Relative Colors",
+     "description": "Gives us the ability to generate colours from other colours, with the ability to destructure the colour channels and manipulate them on the way.",
+     "links": [
+        "[Official Specification](https://www.w3.org/TR/css-color-5/#relative-colors)"
+     ]
+  },
+  {
+     "id": "mdn-html_global_attributes_inert",
+     "language": "html",
+     "title": "Inert",
+     "description": "A single HTML attribute that allows you designate parts of your document as inactive, disallowing any interaction (mouse/keyboard/otherwise) within those elements.",
+     "links": [
+      "[Page on MDN](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/inert)"
+     ]
   }
 ]

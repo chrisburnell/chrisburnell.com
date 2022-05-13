@@ -4,7 +4,7 @@ const welcome = () => {
 	console.log(`%c    ENOUSRA                          %cOS: ${navigator.oscpu}`, "color: #507791", "color: inherit")
 	console.log(`%c      VENOUSRA                       %cLanguage: ${navigator.language}`, "color: #507791", "color: inherit")
 	console.log(`%c       VENOUSR                       %cOnline: ${navigator.onLine === true ? "True" : "False"}`, "color: #507791", "color: inherit")
-	console.log(`%c       AVENOUSR               A`, "color: #507791")
+	console.log(`%c       AVENOUSR               A      %cService Worker: ${navigator?.serviceWorker?.controller?.state || "pending"}`, "color: #507791", "color: inherit")
 	console.log(`%c        VENOUSR             A VE`, "color: #507791")
 	console.log(`%c        NOUSRAVE         NO USRA V`, "color: #507791")
 	console.log(`%c         ENOUSRAV     ENOUSRAVENOU`, "color: #507791")
