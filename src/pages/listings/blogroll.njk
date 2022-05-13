@@ -1,11 +1,16 @@
 ---
 title: Blogroll
 description: I've had the pleasure of meeting, knowing of, knowing personally, and spending great time with a lot of amazing people that have inspired me in different ways over my years on this Earth. Here are a handful of them.
+full_width: true
 ---
 {%- set collection = blogroll | keySort('title') -%}
 
 <nav class=" [ grid ] [ shelf ] ">
 {% for item in collection %}
-	{% include 'items/shelf.njk' %}
+	<article class=" [ flow ] ">
+		<h1>
+			<a href="{{ item.url }}">{{ item.title | safe }}</a>
+		</h1>
+	</article>
 {% endfor %}
 </nav>

@@ -1,6 +1,7 @@
 ---
 title: Styleguide
 description: The style guide for <span class="canada">this website</span>.
+full_width: true
 codepen: true
 speakerdeck: true
 twitter: true
@@ -45,19 +46,22 @@ toc: true
 
 <h2>Fonts</h2>
 
-<div>
+<div class=" [ flow ] " style="--flow-space: 1rem">
 	<div style="font-family: var(--font-family-sans);">"Proxima Nova", sans-serif</div>
 	<div style="font-family: var(--font-family-sans);"><em>"Proxima Nova", sans-serif</em></div>
 	<div style="font-family: var(--font-family-sans);"><strong>"Proxima Nova", sans-serif</strong></div>
 	<div style="font-family: var(--font-family-serif);">Georgia, Times, Times New Roman, serif</div>
 	<div style="font-family: var(--font-family-serif);"><em>Georgia, Times, Times New Roman, serif</em></div>
+	<div style="font-family: var(--font-family-serif);"><strong>Georgia, Times, Times New Roman, serif</strong></div>
 	<div style="font-family: var(--font-family-monospace);">monospace</div>
 	<div style="font-family: var(--font-family-title);">Heebo, sans-serif</div>
 </div>
 
 <h2>Headings</h2>
 
-<div>
+<p>Fluid type scale generated with <a href="https://utopia.fyi/type/calculator?c=500,16,1.2,1200,18,1.333,4,1,&s=0.625|0.3125,1.25|2.25|4,s-l">Utopia</a>:</p>
+
+<div class=" [ flow ] " style="--flow-space: 1rem">
 	<div class="alpha">Heading Level 1</div>
 	<div class="beta">Heading Level 2</div>
 	<div class="gamma">Heading Level 3</div>
@@ -429,6 +433,9 @@ p q r s t u v w x y z { | } ~
 {% for item in collections.beer | arePublished | reverse | limit(site.limits.shelf) %}
 	{% include 'items/shelf.njk' %}
 {% endfor %}
+</nav>
+
+<nav class=" [ grid ] [ shelf ] ">
 {% for item in collections.music | arePublished | reverse | limit(site.limits.shelf) %}
 	{% include 'items/shelf.njk' %}
 {% endfor %}

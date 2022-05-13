@@ -5,6 +5,7 @@
 
 p {
 	@include break-words;
+	max-inline-size: 50ch;
 	margin: 0;
 }
 
