@@ -24,7 +24,7 @@ This also applies to publishing. Whether coincidence or *destiny*, my preference
 
 It probably comes as no surprise that, as someone who’s made an egregious number of changes, reverts, tests, features, and bugs on this website, I’ve also gone through an atrocious number of minute iterations to the design over the years as well. Throughout that time, the most robust and resilient pieces of markup and functionality that have survived have been plain, old HTML. Nothing more fancy than that.
 
-I think, with the sheer volume of functionality available to us nowadays on the front-end, it can be easy to forget how powerful and strong the functionality is that we get right off shelf with HTML. Yes, you read that right, *functionality*.
+I think, with the sheer volume of functionality available to us nowadays on the front end, it can be easy to forget how powerful and strong the functionality is that we get right off shelf with HTML. Yes, you read that right, *functionality*.
 
 Think about how much JavaScript you would have to write to replicate something like the `<details>` element. Think about how much JavaScript *you’ve seen* out in the wild *attempting* to replicate something akin to the `<details>` element. What about an `<input>` element? 🤯 Mindblowing to think about.
 
