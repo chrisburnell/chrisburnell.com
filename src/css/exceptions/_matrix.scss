@@ -17,6 +17,11 @@ $matrix-palette: (
 	@each $name, $color in $matrix-palette {
 		--hsl-#{$name}: #{color.hue($color)} #{color.saturation($color)} #{color.lightness($color)};
 	}
+
+	.logo,
+	.perch::before {
+		filter: hue-rotate(230deg);
+	}
 }
 
 .matrix {

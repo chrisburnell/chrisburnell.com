@@ -4,12 +4,13 @@
 ////
 
 @mixin theme-nineties() {
-	--font-family-sans: "Comic Sans MS", monospace;
-	--font-family-title: "Papyrus", "Comic Sans MS", monospace;
-	--font-family-serif: "Comic Sans MS", monospace;
+	--font-family-sans: var(--font-family-silly);
+	--font-family-title: var(--font-family-sophisticated);
+	--font-family-serif: var(--font-family-silly);
 
-	.primary-navigation {
-		font-family: var(--font-family-title);
+	%heading,
+	.navigation__list %anchor {
+		font-family: var(--font-family-title) !important;
 	}
 }
 

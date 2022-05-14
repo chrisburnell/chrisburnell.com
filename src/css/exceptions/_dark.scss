@@ -4,8 +4,6 @@
 ////
 
 @mixin theme-dark() {
-	--hsl-shadow: var(--hsl-thunder);
-
 	// Target these if applied to html or body elements
 	&:is(html, body),
 	&:is(html) body {

@@ -28,7 +28,7 @@
     "@chrisburnell/bowhead": "^0.3.1",
     "@chrisburnell/eleventy-cache-webmentions": "^0.1.11",
     "@chrisburnell/pentatonic": "^1.1.1",
-    "@chrisburnell/spark-line": "^1.1.0",
+    "@chrisburnell/spark-line": "^1.1.1",
     "@rollup/plugin-commonjs": "^22.0.0",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@zachleat/details-utils": "^2.0.2",

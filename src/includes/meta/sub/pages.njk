@@ -1,11 +1,11 @@
 <h2>More pages</h2>
 <ul class=" [ meta__list  meta__list--block ] ">
-	{% if page.url != '/search/' %}<li><a href="/search/">Search</a></li>{% endif %}
-	{% if page.url != '/blogroll/' %}<li><a href="/blogroll/">Blogroll</a></li>{% endif %}
-	{% if page.url != '/guestbook/' %}<li><a href="/guestbook/">Guestbook</a></li>{% endif %}
-	{% if page.url != '/indieweb/' %}<li><a href="/indieweb/">IndieWeb</a></li>{% endif %}
-	{% if page.url != '/links/' %}<li><a href="/links/">Links</a></li>{% endif %}
-	{% if page.url != '/listening/' %}<li><a href="/listening/">Listening</a></li>{% endif %}
-	{% if page.url != '/styleguide/' %}<li><a href="/styleguide/">Styleguide</a></li>{% endif %}
-	{% if page.url != '/cv/' %}<li><a href="/cv/">CV</a></li>{% endif %}
+	<li><a href="/search/"{% if page.url == '/search/' %} disabled{% endif %}>Search</a></li>
+	<li><a href="/blogroll/"{% if page.url == '/blogroll/' %} disabled{% endif %}>Blogroll</a></li>
+	<li><a href="/guestbook/"{% if page.url == '/guestbook/' %} disabled{% endif %}>Guestbook</a></li>
+	<li><a href="/indieweb/"{% if page.url == '/indieweb/' %} disabled{% endif %}>IndieWeb</a></li>
+	<li><a href="/links/"{% if page.url == '/links/' %} disabled{% endif %}>Links</a></li>
+	<li><a href="/listening/"{% if page.url == '/listening/' %} disabled{% endif %}>Listening</a></li>
+	<li><a href="/styleguide/"{% if page.url == '/styleguide/' %} disabled{% endif %}>Styleguide</a></li>
+	<li><a href="/cv/"{% if page.url == '/cv/' %} disabled{% endif %}>CV</a></li>
 </ul>

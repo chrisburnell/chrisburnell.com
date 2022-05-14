@@ -26,14 +26,16 @@ $font-families: (
   sans: "Proxima Nova, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif",
   serif: "Georgia, Times, Times New Roman, serif",
   monospace: monospace,
-  title: "Heebo, sans-serif"
+  title: "Heebo, sans-serif",
+  silly: "Comic Sans MS, Chalkboard SE, fantasy, serif",
+  sophisticated: "Papyrus, serif"
 );
 $font-sizes: (
-  small: clamp(0.875rem, 0.5vw + 0.5rem, 1rem),
-  default: clamp(1rem, 0.5vw + 0.625rem, 1.125rem),
-  gamma: clamp(1.125rem, 0.571vw + 0.946rem, 1.375rem),
+  alpha: clamp(2rem, 2.286vw + 1.286rem, 3rem),
   beta: clamp(1.25rem, 0.571vw + 1.071rem, 1.5rem),
-  alpha: clamp(2rem, 2.286vw + 1.286rem, 3rem)
+  gamma: clamp(1.125rem, 0.571vw + 0.946rem, 1.375rem),
+  default: clamp(1rem, 0.5vw + 0.625rem, 1.125rem),
+  small: clamp(0.875rem, 0.5vw + 0.5rem, 1rem)
 );
 $font-weights: (
   default: 400,

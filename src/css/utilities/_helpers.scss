@@ -85,7 +85,7 @@
 // For salty/silly remarks
 .salty,
 .silly {
-	font-family: Comic Sans MS, Chalkboard SE, fantasy;
+	font-family: var(--font-family-silly) !important;
 }
 
 // Sorting labels

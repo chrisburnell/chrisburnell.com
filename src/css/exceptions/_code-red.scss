@@ -17,6 +17,11 @@ $code-red-palette: (
 	@each $name, $color in $code-red-palette {
 		--hsl-#{$name}: #{color.hue($color)} #{color.saturation($color)} #{color.lightness($color)};
 	}
+
+	.logo,
+	.perch::before {
+		filter: hue-rotate(145deg);
+	}
 }
 
 .code-red {

@@ -22,8 +22,9 @@ $christmas-palette: (
 		scrollbar-color: h(maple) h(milou);
 	}
 
-	.logo svg {
-		fill: h(maple);
+	.logo,
+	.perch::before {
+		filter: hue-rotate(145deg);
 	}
 
 	.navigation__list a::after {
