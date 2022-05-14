@@ -32,6 +32,8 @@
 	}
 }
 .description--published {
+	font-size: var(--font-size-default);
+
 	@include media("below:medium") {
 		order: -1;
 		margin-block: var(--size-large) 0;
