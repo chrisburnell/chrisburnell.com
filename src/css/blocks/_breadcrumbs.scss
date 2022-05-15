@@ -7,10 +7,6 @@
 	color: h(kaiser);
 	margin-block-start: var(--size-gigantic);
 
-	@include media("below:medium") {
-		display: none;
-	}
-
 	li {
 		display: inline-block;
 		white-space: nowrap;

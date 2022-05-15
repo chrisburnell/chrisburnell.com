@@ -5,8 +5,8 @@ pagination:
   alias: tag
 permalink: /tag/{{ tag }}/
 eleventyComputed:
-  title: "Tagged: <q>{{ tag | capitalizeFormat }}</q>"
-  description: "All of my posts tagged <q>{{ tag | capitalizeFormat }}</q>."
+  title: "#{{ tag | capitalizeFormat }}"
+  description: "All of my posts tagged with <q>{{ tag | capitalizeFormat }}</q>."
 hfeed: true
 show_photos: true
 truncate: true
@@ -17,8 +17,17 @@ truncate: true
 {%- set first_year = collection[count-1].date.getFullYear() -%}
 <div id="content" class=" [ pantheon ] [ wrap ] [ archive ] ">
 
+	<ul class=" [ breadcrumbs ] ">
+		<li>
+			<a href="/archive/">All Posts</a>
+		</li>
+		<li aria-hidden="true">
+			#{{ tag | capitalizeFormat }}
+		</li>
+	</ul>
+
 	<h1 id="title" class=" [ title ] ">
-		<span class=" [ p-name ] ">{{ title | safe }}</span>
+		<span class=" [ p-name ] " aria-title="Tagged: {{ tag | capitalizeFormat }}">{{ title | safe }}</span>
 	</h1>
 
 	<div class=" [ description ] [ flow ] [ p-summary ] ">

@@ -10,6 +10,15 @@ truncate: true
 {%- set collection = collections[related_collection] -%}
 <div id="content" class=" [ pantheon ] [ wrap ] [ archive ] ">
 
+	<ul class=" [ breadcrumbs ] ">
+		<li>
+			<a href="/archive/">All Posts</a>
+		</li>
+		<li aria-hidden="true">
+			Hot Posts
+		</li>
+	</ul>
+
 	<h1 id="title" class=" [ title ] ">
 		<span class=" [ p-name ] ">{{ title | safe }}</span>
 	</h1>

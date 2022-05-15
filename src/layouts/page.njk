@@ -3,6 +3,14 @@ layout: base
 ---
 <article id="content" class=" [ pantheon ] [ wrap ] [ page ] ">
 
+	{% if 'project' in tags %}
+		<ul class=" [ breadcrumbs ] ">
+			<li>
+				<a href="/projects/">← All Projects</a>
+			</li>
+		</ul>
+	{% endif %}
+
 	<h1 id="title" class=" [ title{% if title_error %} title--negative{% elif title_success %} title--positive{% endif %} ] ">
 		<span class=" [ p-name ] {% if perch %}[ perch ] {% endif %}">{{ tagline | default(title) | safe }}</span>
 	</h1>
