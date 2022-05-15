@@ -26,7 +26,7 @@
     "@11ty/eleventy-plugin-directory-output": "^1.0.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
     "@chrisburnell/bowhead": "^0.3.1",
-    "@chrisburnell/eleventy-cache-webmentions": "^0.1.11",
+    "@chrisburnell/eleventy-cache-webmentions": "^0.1.12",
     "@chrisburnell/pentatonic": "^1.1.1",
     "@chrisburnell/spark-line": "^1.1.1",
     "@rollup/plugin-commonjs": "^22.0.0",
@@ -57,7 +57,7 @@
   },
   "scripts": {
     "clean": "rm -rf .cache && rm -rf _site",
-    "tokens": "npx json-to-scss './src/data/designTokens/*.json' ./src/css/abstracts/_generated.scss",
+    "tokens": "npx json-to-scss './src/data/designTokens/*.json' ./src/css/abstracts/_generated.scss; npx prettier --write src/css/abstracts/_generated.scss",
     "css": "npx sass src/css:css --no-source-map --color",
     "prefix": "npx postcss css/*.css --replace --no-map --use=autoprefixer",
     "js": "npx rollup -c",

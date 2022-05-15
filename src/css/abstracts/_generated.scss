@@ -1,97 +1,97 @@
 $breakpoints: (
-  small: 500px,
-  medium: 700px,
-  large: 1000px,
-  gigantic: 1200px
+	small: 500px,
+	medium: 700px,
+	large: 1000px,
+	gigantic: 1200px,
 );
 $colors: (
-  lynx: #091217,
-  wolf: #20323d,
-  bowhead: #3e5c6d,
-  raven: #5f8aa6,
-  highland: #80b7d7,
-  coyote: #c0dbed,
-  bear: #ebf3f9,
-  maple: #eb2d36,
-  conifer: #3d8137,
-  aspen: #ffd700,
-  thunder: #060606,
-  mineshaft: #2b2b2b,
-  kaiser: #4f4f4f,
-  dove: #737373,
-  alto: #dddddd,
-  milou: #f9f9f9
+	lynx: #091217,
+	wolf: #20323d,
+	bowhead: #3e5c6d,
+	raven: #5f8aa6,
+	highland: #80b7d7,
+	coyote: #c0dbed,
+	bear: #ebf3f9,
+	maple: #eb2d36,
+	conifer: #3d8137,
+	aspen: #ffd700,
+	thunder: #060606,
+	mineshaft: #2b2b2b,
+	kaiser: #4f4f4f,
+	dove: #737373,
+	alto: #dddddd,
+	milou: #f9f9f9,
 );
 $font-families: (
-  sans: "Proxima Nova, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif",
-  serif: "Georgia, Times, Times New Roman, serif",
-  monospace: monospace,
-  title: "Heebo, sans-serif",
-  silly: "Comic Sans MS, Chalkboard SE, fantasy, serif",
-  sophisticated: "Papyrus, serif"
+	sans: "Proxima Nova, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif",
+	serif: "Georgia, Times, Times New Roman, serif",
+	monospace: monospace,
+	title: "Heebo, sans-serif",
+	silly: "Comic Sans MS, Chalkboard SE, fantasy, serif",
+	sophisticated: "Papyrus, serif",
 );
 $font-sizes: (
-  alpha: clamp(2rem, 2.286vw + 1.286rem, 3rem),
-  beta: clamp(1.25rem, 0.571vw + 1.071rem, 1.5rem),
-  gamma: clamp(1.125rem, 0.571vw + 0.946rem, 1.375rem),
-  default: clamp(1rem, 0.5vw + 0.625rem, 1.125rem),
-  small: clamp(0.875rem, 0.5vw + 0.5rem, 1rem)
+	alpha: clamp(2rem, 2.286vw + 1.286rem, 3rem),
+	beta: clamp(1.25rem, 0.571vw + 1.071rem, 1.5rem),
+	gamma: clamp(1.125rem, 0.571vw + 0.946rem, 1.375rem),
+	default: clamp(1rem, 0.5vw + 0.625rem, 1.125rem),
+	small: clamp(0.875rem, 0.5vw + 0.5rem, 1rem),
 );
 $font-weights: (
-  default: 400,
-  bold: 600
+	default: 400,
+	bold: 600,
 );
 $language-colors: (
-  css: #016fba,
-  html: #e54d26,
-  javascript: #f1c54c,
-  json: #a9a9a9,
-  liquid: #7ab55c,
-  markdown: #4a525a,
-  nunjucks: #3d8137,
-  scss: #c6538c,
-  yaml: #cc1018
+	css: #016fba,
+	html: #e54d26,
+	javascript: #f1c54c,
+	json: #a9a9a9,
+	liquid: #7ab55c,
+	markdown: #4a525a,
+	nunjucks: #3d8137,
+	scss: #c6538c,
+	yaml: #cc1018,
 );
 $line-heights: (
-  default: 1.875,
-  small: 1.25,
-  medium: 1.429,
-  code: 2
+	default: 1.875,
+	small: 1.25,
+	medium: 1.429,
+	code: 2,
 );
 $opacities: (
-  alpha: 0.9,
-  beta: 0.5,
-  gamma: 0.1,
-  delta: 0.05
+	alpha: 0.9,
+	beta: 0.5,
+	gamma: 0.1,
+	delta: 0.05,
 );
 $sizes: (
-  tiny: clamp(0.31rem, calc(0.13rem + 0.25vw), 0.38rem),
-  small: clamp(0.63rem, calc(0.44rem + 0.25vw), 0.69rem),
-  medium: clamp(1.25rem, calc(0.69rem + 0.75vw), 1.44rem),
-  large: clamp(2.25rem, calc(1.31rem + 1.25vw), 2.56rem),
-  gigantic: clamp(4rem, calc(2.5rem + 2vw), 4.5rem),
-  gutter: var(--size-medium),
-  gap: calc(var(--size-gutter) * 2),
-  avatar: 100px,
-  avatar-small: 48px,
-  logo: clamp(9rem, 28.8vw + -3.6rem, 18rem),
-  logo-small: clamp(5rem, 6.667vw + 0.825rem, 7.5rem),
-  line-length: clamp(21em, 100vw, 30em),
-  border-default: 0.25rem,
-  border-thin: 0.125rem
+	tiny: clamp(0.31rem, calc(0.13rem + 0.25vw), 0.38rem),
+	small: clamp(0.63rem, calc(0.44rem + 0.25vw), 0.69rem),
+	medium: clamp(1.25rem, calc(0.69rem + 0.75vw), 1.44rem),
+	large: clamp(2.25rem, calc(1.31rem + 1.25vw), 2.56rem),
+	gigantic: clamp(4rem, calc(2.5rem + 2vw), 4.5rem),
+	gutter: var(--size-medium),
+	gap: calc(var(--size-gutter) * 2),
+	avatar: 100px,
+	avatar-small: 48px,
+	logo: clamp(9rem, 28.8vw + -3.6rem, 18rem),
+	logo-small: clamp(5rem, 6.667vw + 0.825rem, 7.5rem),
+	line-length: clamp(21em, 100vw, 30em),
+	border-default: 0.25rem,
+	border-thin: 0.125rem,
 );
 $viewports: (
-  title: "Viewports",
-  description: "The min and maximum viewports used to generate fluid type and space scales.",
-  min: 320,
-  max: 1350
+	title: "Viewports",
+	description: "The min and maximum viewports used to generate fluid type and space scales.",
+	min: 320,
+	max: 1350,
 );
 $z-indexes: (
-  below: -1,
-  root: 0,
-  default: 1,
-  above: 2,
-  modal: 3,
-  dialog: 4,
-  notificaton: 5
+	below: -1,
+	root: 0,
+	default: 1,
+	above: 2,
+	modal: 3,
+	dialog: 4,
+	notificaton: 5,
 );
