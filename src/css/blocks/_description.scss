@@ -36,14 +36,6 @@
 
 	@include media("below:medium") {
 		order: -1;
-		margin-block: var(--size-large) 0;
 		font-size: var(--font-size-small);
-	}
-
-	.title[hidden] ~ &,
-	.title.hidden ~ & {
-		@include media("below:medium") {
-			margin-block-end: var(--size-large);
-		}
 	}
 }

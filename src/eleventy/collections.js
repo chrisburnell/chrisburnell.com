@@ -35,7 +35,7 @@ module.exports = {
 		return collection.getFilteredByTag("writing").filter(collectionFilters.isPublished).sort(collectionFilters.dateFilter)
 	},
 	featurePosts: (collection) => {
-		return collection.getFilteredByTag("feature").filter(collectionFilters.isPublished).filter(collectionFilters.notReply).sort(collectionFilters.dateFilter)
+		return collection.getFilteredByTag("feature").filter(collectionFilters.isPublished).filter(collectionFilters.notReply).filter(collectionFilters.notSilly).sort(collectionFilters.dateFilter)
 	},
 	throwbackPosts: (collection) => {
 		return collection
