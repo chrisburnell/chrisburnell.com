@@ -47,7 +47,7 @@
 									{%- set webmentionDate = webmention['wm-received'] -%}
 									{%- if webmention.published -%}{%- set webmentionDate = webmention.published -%}{%- endif -%}
 									{%- set sentiment = webmention.content.text | getSentimentValue -%}
-									<li id="webmentions-{{ webmention['wm-id'] }}" class=" [ webmentions__response ] [ h-cite  p-comment ] {% if sentiment < -0.3 %}[ salty ] {% endif %}"{% if sentiment < -0.3 %} data-sentiment="{{ sentiment }}"{% endif %} data-type="{{ webmention['wm-property'] }}">
+									<li id="webmentions-{{ webmention['wm-id'] }}" class=" [ webmentions__response ] [ h-cite  p-comment ] {% if sentiment < -0.3 %}[ salty ] {% endif %}" data-type="{{ webmention['wm-property'] }}">
 										<div class=" [ webmentions__response__avatar ] ">
 											{% avatar webmention.author.photo, webmention.url, webmention.author.url %}
 										</div>
