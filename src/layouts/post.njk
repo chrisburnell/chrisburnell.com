@@ -68,7 +68,40 @@ layout: base
 	</h1>
 
 	<div class=" [ description  description--published ] ">
-		<p>This <a class=" [ u-category ] " href="/{{ categoryPlural | default(category) }}/">{{ categoryProper | default(category) }}</a> {% if draft %}has not yet been published{% else %}was published on <time class=" [ dt-published ] " datetime="{{ date | rfcDate }}">{{ date | friendlyDate }}</time>{% if updated %} and last updated on <time class=" [ dt-updated ] " datetime="{{ updated | rfcDate }}">{{ updated | friendlyDate }}</time>{% endif %}{% endif %}.</p>
+		<p>
+			{% if rsvp %}
+				This <a class=" [ u-category ] " href="/rsvps/">RSVP</a>
+			{% else %}
+				This <a class=" [ u-category ] " href="/{{ categoryPlural | default(category) }}/">{{ categoryProper | default(category) }}</a>{% if "writing" in tags %}, part of the <a href="/writing/">writing</a> collection,{% endif %}
+			{% endif %}
+			{%- if draft %}
+				has not yet been published
+			{%- else %}
+				{% if in_reply_to and not rsvp %}
+					in reply to <a href="{{ in_reply_to_url }}">{{ people | getPerson(in_reply_to_title) | getInternalTarget(collections.all) | getMastodonHandle | getTwitterHandle }}</a>
+					{% if in_reply_to_authors -%}
+						{% set first_author = in_reply_to_authors | toArray | first %}
+						{% set first_author_person = people | getPerson(first_author) %}
+						{% if first_author_person != people | getPerson(in_reply_to_title) %}
+							by
+							{% for author in in_reply_to_authors | toArray %}
+								{% set author = people | getPerson(author, 'object') %}
+								{% if not loop.first %}{% if in_reply_to_authors.length > 2 %}, {% endif %}{% if loop.last %} and {% endif %}{% endif %}
+								{% if author.url %}
+									<a href="{{ author.url | toArray | first }}">{{ author.title }}</a>
+								{% else %}
+									{{ author }}
+								{% endif %}
+							{% endfor %}
+						{% endif %}
+					{%- endif -%}
+				{%- endif %}
+				was published on <time class=" [ dt-published ] " datetime="{{ date | rfcDate }}">{{ date | friendlyDate }}</time>
+				{%- if updated %}
+					and last updated on <time class=" [ dt-updated ] " datetime="{{ updated | rfcDate }}">{{ updated | friendlyDate }}</time>
+				{%- endif -%}
+			{%- endif %}.
+		</p>
 	</div>
 
 	<div class=" [ content ] [ flow ] {% if toc %}[ generate-toc ] {% endif %}">

@@ -14,10 +14,6 @@
 		--flow-space: var(--size-medium);
 	}
 
-	:is(.h-entry, .h-review) & > * + * {
-		--flow-space: var(--size-tiny);
-	}
-
 	h2 {
 		margin-block-end: var(--size-small);
 	}
