@@ -10,6 +10,12 @@ truncate: true
 {%- set first_year = collection[count-1].date.getFullYear() -%}
 <div id="content" class=" [ pantheon ] [ wrap ] [ archive ] ">
 
+	<ul class=" [ breadcrumbs ] ">
+		<li>
+			<a href="/archive/">Back to All Posts</a>
+		</li>
+	</ul>
+
 	<h1 id="title" class=" [ title ] ">
 		<span class=" [ p-name ] ">{{ title | safe }}</span>
 	</h1>

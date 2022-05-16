@@ -47,6 +47,7 @@
 	:is(abbr, dfn)[title],
 	figure > a figcaption,
 	blockquote cite,
+	.breadcrumbs,
 	.fragment-anchor,
 	.webmentions__response small {
 		color: h(alto);
