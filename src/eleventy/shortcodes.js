@@ -2,6 +2,7 @@ const author = require("../data/author")
 const colors = require("../data/designTokens/colors")
 const site = require("../data/site")
 const dateFilters = require("./filters/dates")
+const utilityFilters = require("./filters/utils")
 
 module.exports = {
 	codepen: (slug, tabfree = false, height = 400) => {
@@ -27,8 +28,10 @@ module.exports = {
 			values.push(count)
 			count = 0
 		}
+		// Calculate simple moving average of each value
+		let normalized = utilityFilters.simpleMovingAverage(values, 3)
 		// Sparklines in A minor
-		return `<spark-line values="${values.join(",")}"
+		return `<spark-line values="${normalized.join(",")}"
 							endpoint-color="${colors.maple}"
 							${start ? 'start-label="' + start + '"' : ""}
 							${end ? 'end-label="' + end + '"' : ""}
