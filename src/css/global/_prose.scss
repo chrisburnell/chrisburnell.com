@@ -3,9 +3,12 @@
 /// @group global
 ////
 
-p {
+:is(p, li, dd) {
 	@include break-words;
 	max-inline-size: 50ch;
+}
+
+p {
 	margin: 0;
 }
 
