@@ -1,5 +1,5 @@
-const ignoredTags = require("../../data/ignoredTags")
-const categoriesMap = require("./categories")
+const ignoredTags = require("#data/ignoredTags")
+const categoriesMap = require("#builders/categories")
 
 module.exports = (collection) => {
 	let tagSet = new Set()

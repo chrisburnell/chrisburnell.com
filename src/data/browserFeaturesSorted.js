@@ -1,10 +1,10 @@
 const { AssetCache } = require("@11ty/eleventy-fetch")
 const caniuse = require("caniuse-api")
 
-const site = require("./site")
+const site = require("#data/site")
 
-const browserFeatures = require("./browserFeatures")
-const browsersByType = require("./browsersByType")
+const browserFeatures = require("#data/browserFeatures")
+const browsersByType = require("#data/browsersByType")
 const duration = site.cacheDuration
 
 const getLatestStableBrowsers = async () => {

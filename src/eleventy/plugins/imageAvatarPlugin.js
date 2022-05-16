@@ -1,12 +1,12 @@
 // Load .env variables with dotenv
 require("dotenv").config()
-
-const site = require("../../data/site")
-const author = require("../../data/author")
-const twitterReplacements = require("../../data/twitterReplacements")
-const queryFilters = require("../filters/queries")
 const TwitterAvatarUrl = require("twitter-avatar-url")
 const Image = require("@11ty/eleventy-img")
+
+const site = require("#data/site")
+const author = require("#data/author")
+const twitterReplacements = require("#data/twitterReplacements")
+const queryFilters = require("#filters/queries")
 
 // Avatar Dimensions
 const size = 96 // 48 * 2

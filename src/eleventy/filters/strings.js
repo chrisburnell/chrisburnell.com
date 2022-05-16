@@ -3,7 +3,7 @@ const markdownIt = require("markdown-it")({
 	breaks: true,
 	linkify: true,
 }).disable("code")
-const capitalizers = require("../../data/capitalizers")
+const capitalizers = require("#data/capitalizers")
 
 const truncate = (() => {
 	const truncate = (at, str = "", count = 1, end = "…") => (at === "" ? str.substring(0, count) : str.split(at).splice(0, count).join(at)) + (str.split(at).length > count ? end : "")

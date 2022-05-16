@@ -1,7 +1,7 @@
 // Load .env variables with dotenv
 require("dotenv").config()
 
-const site = require("./site")
+const site = require("#data/site")
 
 const EleventyFetch = require("@11ty/eleventy-fetch")
 

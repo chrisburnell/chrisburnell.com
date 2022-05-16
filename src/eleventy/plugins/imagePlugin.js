@@ -1,6 +1,6 @@
 const path = require("path")
 const Image = require("@11ty/eleventy-img")
-const env = require("../../data/env")
+const env = require("#datajs/env")
 
 module.exports = (eleventyConfig) => {
 	eleventyConfig.addNunjucksShortcode("image", (src, alt, classes = "", widths = [800]) => {

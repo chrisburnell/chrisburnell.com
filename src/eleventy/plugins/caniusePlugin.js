@@ -3,10 +3,10 @@ const { DateTime } = require("luxon")
 const caniuse = require("caniuse-api")
 const minifier = require("html-minifier")
 
-const global = require("../../data/global")
-const site = require("../../data/site")
+const global = require("#datajs/global")
+const site = require("#data/site")
 
-const browsersByType = require("../../data/browsersByType")
+const browsersByType = require("#data/browsersByType")
 const duration = site.cacheDuration
 
 const getLatestStableBrowsers = async () => {

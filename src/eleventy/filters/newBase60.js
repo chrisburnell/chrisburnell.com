@@ -1,4 +1,4 @@
-const dateFilters = require("./dates")
+const dateFilters = require("#filters/dates")
 
 // Converts a JS Date Object to a Sexageismal (Base 60) String
 const DateToSxg = (dateObj) => {

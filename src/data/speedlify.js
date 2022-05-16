@@ -1,6 +1,6 @@
 const EleventyFetch = require("@11ty/eleventy-fetch")
 
-const author = require("./author")
+const author = require("#data/author")
 
 module.exports = async () => {
 	let url = `${author.urls.speedlify}/api/urls.json`

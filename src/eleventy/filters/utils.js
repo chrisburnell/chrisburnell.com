@@ -37,13 +37,15 @@ module.exports = {
 			return parseInt(value, 16)
 		})
 	},
-	simpleMovingAverage: (values, period) => {
+	simpleMovingAverage: (values, period, preserveEnds) => {
+		preserveEnds = preserveEnds || false
 		let step = (period - 1) / 2
+		let end = values.length - 1
 		let normalized = []
 
 		for (let i in values) {
 			let min = Math.max(0, i - step)
-			let max = Math.min(values.length - 1, parseFloat(i) + step)
+			let max = Math.min(end, parseFloat(i) + step)
 			let count = Math.abs(max - min) + 1
 			let sum = 0
 
@@ -52,6 +54,10 @@ module.exports = {
 			}
 
 			normalized[i] = Math.floor(sum / count)
+		}
+		if (preserveEnds) {
+			normalized[0] = values[0]
+			normalized[end] = values[end]
 		}
 		return normalized
 	},
