@@ -17,6 +17,11 @@
 	touch-action: manipulation;
 }
 
+// Remove focus for mouse users
+:focus:not(:focus-visible) {
+	outline: none !important;
+}
+
 // Reduced Motion
 @include media("reduced-motion") {
 	*,
@@ -29,9 +34,4 @@
 		transition: none !important;
 		scroll-behavior: auto !important;
 	}
-}
-
-// Remove focus for mouse users
-:focus:not(:focus-visible) {
-	outline: none !important;
 }

@@ -27,14 +27,13 @@ svg:not(:root) {
 	overflow: hidden;
 }
 
-:is(audio, canvas, iframe, video) {
+:where(audio, canvas, iframe, video) {
 	inline-size: 100%;
 	display: block;
 	border: 0;
 	overflow-x: hidden;
 }
 audio {
-	inline-size: 100%;
 	max-inline-size: var(--size-breakpoint-small);
 
 	&:not([controls]) {

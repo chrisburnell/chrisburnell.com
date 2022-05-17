@@ -3,38 +3,38 @@
 /// @group abstracts
 ////
 
-:is(a, button, input, label, select, summary, textarea) {
+:where(a[href], audio[controls], button, details, embed, iframe, img[usemap], input:not([type="hidden"]), label, select, textarea, video[controls]) {
 	@extend %interactable !optional;
 }
 
-:is(a, .anchor) {
+:where(a, .anchor) {
 	@extend %anchor !optional;
 }
 
-:is(button:not(.anchor), .button, [type="button"]) {
+:where(button:not(.anchor), .button, [type="button"]) {
 	@extend %button !optional;
 }
 
-:is(h1, h2, h3, h4, h5, h6) {
+:where(h1, h2, h3, h4, h5, h6) {
 	@extend %heading !optional;
 }
 
-:is(blockquote, details, table, dl, ol, ul, figure:not([class]), p) {
+:where(blockquote, details, table, dl, ol, ul, figure:not([class]), p) {
 	@extend %content !optional;
 }
 
-:is(img, input[type="image"], picture, svg) {
+:where(img, input[type="image"], picture, svg) {
 	@extend %image !optional;
 }
 
-:is(audio, canvas, embed, iframe, marquee, object, video) {
+:where(audio, canvas, embed, iframe, marquee, object, video) {
 	@extend %media !optional;
 }
 
-:is(input, optgroup, select, textarea) {
+:where(input, optgroup, select, textarea) {
 	@extend %input !optional;
 }
 
-:is(code, kbd, samp, var, .monospace) {
+:where(code, kbd, samp, var, .monospace) {
 	@extend %monospace !optional;
 }
