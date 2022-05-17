@@ -119,7 +119,7 @@ module.exports = {
 			.getFilteredByTag("post")
 			.filter(collectionFilters.isPublished)
 			.filter((item) => {
-				if (item.data.rsvp && dateFilters.epoch(item.data.rsvp.date) > global.now && dateFilters.epoch(item.data.rsvp.date) - dateFilters.epoch(global.now) < 604800000 && dateFilters.friendlyDate(item.data.rsvp.date) != dateFilters.friendlyDate(global.now)) {
+				if (item.data.rsvp && dateFilters.epoch(item.data.rsvp.date) > global.now && dateFilters.epoch(item.data.rsvp.date) - dateFilters.epoch(global.now) < 7 * 24 * 60 * 60 * 1000 && dateFilters.friendlyDate(item.data.rsvp.date) != dateFilters.friendlyDate(global.now)) {
 					return true
 				}
 			})
