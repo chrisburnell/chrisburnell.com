@@ -36,5 +36,10 @@
     "title": "Styleguide",
     "url": "/styleguide/",
     "secondary": true
+  },
+  {
+    "title": "CV",
+    "url": "/cv/",
+    "secondary": true
   }
 ]
