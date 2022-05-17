@@ -4,7 +4,7 @@
 ////
 
 :where(a[href], audio[controls], button, details, embed, iframe, img[usemap], input:not([type="hidden"]), label, select, textarea, video[controls]) {
-	@extend %interactable !optional;
+	@extend %interactive !optional;
 }
 
 :where(a, .anchor) {
@@ -27,7 +27,7 @@
 	@extend %image !optional;
 }
 
-:where(audio, canvas, embed, iframe, marquee, object, video) {
+:where(audio, canvas, embed, iframe, marquee, math, object, video) {
 	@extend %media !optional;
 }
 

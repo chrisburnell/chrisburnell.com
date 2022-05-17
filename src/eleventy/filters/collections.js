@@ -11,6 +11,9 @@ module.exports = {
 			if ("published" in item.data && item.data.published === false) {
 				return false
 			}
+			if ("tags" in item.data && item.data.tags.includes("ignore")) {
+				return false
+			}
 		}
 		return !!item.url
 	},
@@ -34,5 +37,4 @@ module.exports = {
 	},
 	dateFilter: (a, b) => b.date - a.date,
 	notReply: (item) => !item.data.in_reply_to || (item.data.in_reply_to.url && item.data.in_reply_to.url.includes(site.url)) || (item.data.in_reply_to && typeof item.data.in_reply_to === "string" && item.data.in_reply_to.includes(site.url)),
-	notSilly: (item) => !item.data.tags.includes("silly"),
 }
