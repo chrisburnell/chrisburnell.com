@@ -22,7 +22,7 @@
   "dependencies": {
     "@11ty/eleventy": "^2.0.0-canary.9",
     "@11ty/eleventy-fetch": "^3.0.0",
-    "@11ty/eleventy-img": "^2.0.0",
+    "@11ty/eleventy-img": "^2.0.1",
     "@11ty/eleventy-plugin-directory-output": "^1.0.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
     "@chrisburnell/bowhead": "^0.3.1",
@@ -36,8 +36,8 @@
     "autoprefixer": "^10.4.7",
     "caniuse-api": "^3.0.0",
     "cheerio": "^1.0.0-rc.10",
-    "cssnano": "^5.1.7",
-    "dotenv": "^16.0.0",
+    "cssnano": "^5.1.8",
+    "dotenv": "^16.0.1",
     "glob-promise": "^4.2.2",
     "html-minifier": "^4.0.0",
     "json-to-scss": "^1.6.2",
@@ -45,14 +45,14 @@
     "natural": "^5.2.2",
     "postcss-cli": "^9.1.0",
     "prettier": "^2.6.2",
-    "rollup": "^2.72.1",
+    "rollup": "^2.73.0",
     "rollup-plugin-terser": "^7.0.2",
     "sass": "^1.51.0",
     "slugify": "^1.6.5",
     "twitter-avatar-url": "^2.2.0"
   },
   "devDependencies": {
-    "concurrently": "^7.1.0",
+    "concurrently": "^7.2.0",
     "cross-env": "^7.0.3"
   },
   "scripts": {
