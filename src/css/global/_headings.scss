@@ -25,7 +25,7 @@ h1 {
 h2,
 .beta,
 %beta {
-	font-family: var(--font-family-default);
+	font-family: var(--font-family-sans);
 	font-size: var(--font-size-beta);
 	font-weight: var(--font-weight-bold);
 }
@@ -40,7 +40,7 @@ h2 {
 h3,
 .gamma,
 %gamma {
-	font-family: var(--font-family-default);
+	font-family: var(--font-family-sans);
 	font-size: var(--font-size-gamma);
 	font-weight: var(--font-weight-bold);
 }
@@ -48,7 +48,7 @@ h3,
 h4,
 .delta,
 %delta {
-	font-family: var(--font-family-default);
+	font-family: var(--font-family-sans);
 	font-size: var(--font-size-default);
 	font-weight: var(--font-weight-bold);
 }
@@ -56,7 +56,7 @@ h4,
 h5,
 .epsilon,
 %epsilon {
-	font-family: var(--font-family-default);
+	font-family: var(--font-family-sans);
 	font-size: var(--font-size-small);
 	font-weight: var(--font-weight-bold);
 }
@@ -64,7 +64,7 @@ h5,
 h6,
 .zeta,
 %zeta {
-	font-family: var(--font-family-default);
+	font-family: var(--font-family-sans);
 	font-size: var(--font-size-small);
 	font-weight: var(--font-weight-default);
 }
