@@ -3,38 +3,38 @@
 /// @group abstracts
 ////
 
-:where(a[href], audio[controls], button, details, embed, iframe, img[usemap], input:not([type="hidden"]), label, select, textarea, video[controls]) {
+:is(a[href], audio[controls], button, details, embed, iframe, img[usemap], input:not([type="hidden"]), label, select, textarea, video[controls]) {
 	@extend %interactive !optional;
 }
 
-:where(a, .anchor) {
+:is(a, .anchor) {
 	@extend %anchor !optional;
 }
 
-:where(button:not(.anchor), .button, [type="button"]) {
+:is(button:not(.anchor), .button, [type="button"]) {
 	@extend %button !optional;
 }
 
-:where(h1, h2, h3, h4, h5, h6) {
+:is(h1, h2, h3, h4, h5, h6) {
 	@extend %heading !optional;
 }
 
-:where(blockquote, details, table, dl, ol, ul, figure:not([class]), p) {
+:is(blockquote, details, table, dl, ol, ul, figure:not([class]), p) {
 	@extend %content !optional;
 }
 
-:where(img, input[type="image"], picture, svg) {
+:is(img, input[type="image"], picture, svg) {
 	@extend %image !optional;
 }
 
-:where(audio, canvas, embed, iframe, marquee, math, object, video) {
+:is(audio, canvas, embed, iframe, marquee, math, object, video) {
 	@extend %media !optional;
 }
 
-:where(input, optgroup, select, textarea) {
+:is(input, optgroup, select, textarea) {
 	@extend %input !optional;
 }
 
-:where(code, kbd, samp, var, .monospace) {
+:is(code, kbd, samp, var, .monospace) {
 	@extend %monospace !optional;
 }
