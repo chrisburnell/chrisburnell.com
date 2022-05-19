@@ -12,7 +12,7 @@ const librarian = () => {
 			return a.innerText.trim().localeCompare(b.innerText.trim())
 		},
 		title: (a, b) => {
-			return a.querySelector("h3").innerText.trim().localeCompare(b.querySelector("h3").innerText.trim())
+			return a.querySelector("h1").innerText.trim().localeCompare(b.querySelector("h1").innerText.trim())
 		},
 		release: (a, b) => {
 			if (a.querySelector(".release") && b.querySelector(".release")) {
@@ -22,14 +22,14 @@ const librarian = () => {
 		},
 		author: (a, b) => {
 			if (a.querySelector(".h-cite")?.innerText === b.querySelector(".h-cite")?.innerText) {
-				return a.querySelector("h3").innerText.trim().localeCompare(b.querySelector("h3").innerText.trim())
+				return a.querySelector("h1").innerText.trim().localeCompare(b.querySelector("h1").innerText.trim())
 			}
 			return (a.querySelector(".h-cite")?.innerText || "").localeCompare(b.querySelector(".h-cite")?.innerText || "")
 		},
 		rating: (a, b) => {
 			if (a.querySelector(".rating")?.value === b.querySelector(".rating")?.value) {
 				if (a.querySelector(".h-cite")?.innerText === b.querySelector(".h-cite")?.innerText) {
-					return a.querySelector("h3").innerText.trim().localeCompare(b.querySelector("h3").innerText.trim())
+					return a.querySelector("h1").innerText.trim().localeCompare(b.querySelector("h1").innerText.trim())
 				}
 				return (a.querySelector(".h-cite")?.innerText || "").localeCompare(b.querySelector(".h-cite")?.innerText || "")
 			}
