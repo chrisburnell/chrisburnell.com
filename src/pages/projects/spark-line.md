@@ -51,6 +51,8 @@ Element attributes:
 - `endpoint`: toggles the display of a point at the end of the line *(default = true)*
 - `color`: defines the color of the line *(default = currentColor)*
 - `endpoint-color`: defines the color of the endpoint *(defaults to whatever color is defined as)*
+- `points`: supercedes `endpoint`; comma-delimited string of integers representing at which pairing `values` you want points to appear at; arrays of a length less than the length of the `values` array will be looped over according to `values`
+- `colors`: supercedes `endpoint-color`; comma-delimited string of integers representing the colour of the paired `points`; arrays of a length less than the length of the `values` array will be looped over according to `values`
 - `start-label`: creates a label before the chart
 - `end-label`: creates a label after the chart
 
@@ -82,8 +84,40 @@ Element attributes:
         <p><code>endpoint-color="red"</code></p>
     </article>
     <article>
+        <spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1"></spark-line>
+        <p><code>points="1"</code></p>
+    </article>
+    <article>
+        <spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1,0" curve="false"></spark-line>
+        <p><code>points="1,0"</code></p>
+    </article>
+    <article>
+        <spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="0,2,0,1" curve="false"></spark-line>
+        <p><code>points="0,2,0,1"</code></p>
+    </article>
+    <article>
+        <spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" endpoint-color="red" points="0,2,0,1" curve="false"></spark-line>
+        <p><code>endpoint-color="red" points="0,2,0,1"</code></p>
+    </article>
+    <article>
+        <spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" colors="red" curve="false"></spark-line>
+        <p><code>colors="red"</code></p>
+    </article>
+    <article>
+        <spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1" colors="rebeccapurple" curve="false"></spark-line>
+        <p><code>points="1" colors="rebeccapurple"</code></p>
+    </article>
+    <article>
+        <spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1" colors="red,green,blue" curve="false"></spark-line>
+        <p><code>points="1" colors="red,green,blue"</code></p>
+    </article>
+    <article>
         <spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" start-label="Start" end-label="End"></spark-line>
         <p><code>start-label="Start" end-label="End"</code></p>
+    </article>
+    <article>
+        <spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1" colors="red,red,red,red,red,red,red,red,green,red,red,green,violet,orange,green,blue,yellow,green,yellow,cyan,green,cyan,green,cyan,blue,red" curve="false"></spark-line>
+        <p><em>rainbow!</em></p>
     </article>
 </div>
 
