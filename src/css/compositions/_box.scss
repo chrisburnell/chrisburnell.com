@@ -24,7 +24,7 @@
 	& > * + * {
 		--flow-space: var(--size-medium);
 	}
-	.meta & > * + * {
+	.meta &:not(ul) > * + * {
 		--flow-space: 0;
 	}
 

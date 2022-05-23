@@ -34,6 +34,10 @@
 	}
 }
 
+.meta__information {
+	line-height: var(--line-height-medium);
+}
+
 .meta__list {
 	display: inline;
 	font-size: var(--font-size-small);
