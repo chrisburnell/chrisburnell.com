@@ -112,12 +112,12 @@ Element attributes:
         <p><code>points="1" colors="red,green,blue"</code></p>
     </article>
     <article>
-        <spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" start-label="Start" end-label="End"></spark-line>
-        <p><code>start-label="Start" end-label="End"</code></p>
-    </article>
-    <article>
         <spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1" colors="red,red,red,red,red,red,red,red,green,red,red,green,violet,orange,green,blue,yellow,green,yellow,cyan,green,cyan,green,cyan,blue,red" curve="false"></spark-line>
         <p><em>rainbow!</em></p>
+    </article>
+    <article>
+        <spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" start-label="Start" end-label="End"></spark-line>
+        <p><code>start-label="Start" end-label="End"</code></p>
     </article>
 </div>
 
