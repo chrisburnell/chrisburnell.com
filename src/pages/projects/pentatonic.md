@@ -8,6 +8,7 @@ eleventyComputed:
   tagline: "Pentatonic v{{ pkg.dependencies['@chrisburnell/pentatonic'] | replace('^', '') }}"
   description: "{{ github[page.fileSlug].description }}"
 tags:
+  - javascript
   - package
 toc: true
 ---

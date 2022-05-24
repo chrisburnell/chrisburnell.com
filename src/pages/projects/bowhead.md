@@ -8,6 +8,8 @@ eleventyComputed:
   tagline: "Bowhead v{{ pkg.dependencies['@chrisburnell/bowhead'] | replace('^', '') }}"
   description: "{{ github[page.fileSlug].description }}"
 tags:
+  - css
+  - scss
   - package
 toc: true
 ---

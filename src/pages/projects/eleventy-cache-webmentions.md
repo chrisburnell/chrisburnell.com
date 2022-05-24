@@ -8,6 +8,9 @@ eleventyComputed:
   tagline: "eleventy-cache-webmentions v{{ pkg.dependencies['@chrisburnell/eleventy-cache-webmentions'] | replace('^', '') }}"
   description: "{{ github[page.fileSlug].description }}"
 tags:
+  - eleventy
+  - indieweb
+  - javascript
   - package
 syndicate_to:
   - https://mastodon.social/users/chrisburnell/statuses/107399910372983580
