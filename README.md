@@ -1,6 +1,8 @@
+<img src="images/raven.svg" width="200" height="200" alt="">
+
 # chrisburnell.com
 
-The source code for [chrisburnell.com](https://chrisburnell.com/) 🐦
+The source code for [chrisburnell.com](https://chrisburnell.com/)
 
 [![Deploy](https://github.com/chrisburnell/chrisburnell.com/workflows/Deploy/badge.svg)](https://github.com/chrisburnell/chrisburnell.com/actions?query=workflow%3A%22Deploy%22)
 
