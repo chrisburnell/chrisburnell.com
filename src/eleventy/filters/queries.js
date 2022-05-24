@@ -47,11 +47,11 @@ module.exports = {
 	getInternalTarget: (value, pages) => {
 		// Mastodon
 		if (value.includes("https://social.chrisburnell.com") || value.includes("https://mastodon.social/users/chrisburnell/statuses/")) {
-			return "a previous toot"
+			return "a previous Mastodon post"
 		}
 		// Twitter
 		else if (value.includes("https://twitter.com/iamchrisburnell/status/")) {
-			return "a previous tweet"
+			return "a previous Twitter post"
 		}
 		// Internal URL
 		else if (value.includes(site.url) || value.includes("localhost")) {

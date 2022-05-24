@@ -46,7 +46,7 @@
 			[description-end content-start sparkline-start]
 			auto
 			[sparkline-end meta-start]
-			max-content
+			1fr
 			[meta-end content-end ads-start]
 			auto
 			[ads-end];
@@ -94,11 +94,6 @@
 	& > %content {
 		max-inline-size: var(--size-line-length);
 	}
-
-	& > spark-line {
-		grid-column: marginalia;
-		grid-row: sparkline;
-	}
 }
 
 .breadcrumbs {
@@ -124,6 +119,11 @@
 	&.wide {
 		grid-column: content / outdent;
 	}
+}
+
+.pantheon > spark-line {
+	grid-column: marginalia;
+	grid-row: sparkline;
 }
 
 .meta {
