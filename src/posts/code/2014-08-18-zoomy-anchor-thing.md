@@ -21,7 +21,6 @@ body {
     position: relative;
 }
 .article-link {
-    background-clip: padding-box;
     color: white;
     width: 425px;
     height: 255px;

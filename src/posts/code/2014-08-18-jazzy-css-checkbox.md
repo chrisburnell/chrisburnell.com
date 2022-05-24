@@ -30,7 +30,6 @@ input[type="checkbox"] {
 }
 .check {
     background-color: salmon;
-    background-clip: padding-box;
     color: snow;
     display: block;
     padding: 0 2.5em;

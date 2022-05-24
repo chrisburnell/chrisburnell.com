@@ -8,5 +8,7 @@
 	--flow-space: var(--size-large);
 }
 .content {
+	// required: works like overflow for this .pantheon grid item
+	min-width: 0;
 	margin-block-start: var(--size-large);
 }

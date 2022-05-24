@@ -64,6 +64,11 @@ button {
 			inset-block-end: 100%;
 		}
 	}
+
+	// prevent inline elements like code from displaying their background
+	* {
+		background-color: transparent !important;
+	}
 }
 
 .button--small {

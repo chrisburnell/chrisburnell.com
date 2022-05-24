@@ -45,18 +45,90 @@ Use `<spark-line>` in your HTML!
 <spark-line values="1,2,3,5,8,13,21"></spark-line>
 ```
 
-Element attributes:
+The element takes a number of attributes:
 
-- `values`: comma-delimited string of integers *(required)*
-- `line-width`: defines the width/thickness of the line as an integer *(default = 2)*
-- `curve`: toggles applying curves (cardinal splines) to the line *(default = true)*
-- `endpoint`: toggles the display of a point at the end of the line *(default = true)*
-- `color`: defines the color of the line *(default = currentColor)*
-- `endpoint-color`: defines the color of the endpoint *(defaults to whatever color is defined as)*
-- `points`: supercedes `endpoint`; comma-delimited string of integers representing at which pairing `values` you want points to appear at; arrays of a length less than the length of the `values` array will be looped over according to `values`
-- `colors`: supercedes `endpoint-color`; comma-delimited string of integers representing the colour of the paired `points`; arrays of a length less than the length of the `values` array will be looped over according to `values`
-- `start-label`: creates a label before the chart
-- `end-label`: creates a label after the chart
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Values</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th><code>values</code><br><em>(required)</em></th>
+            <td>
+                comma-delimited string of integers
+            </td>
+            <td>defines the values of the graph</td>
+        </tr>
+        <tr>
+            <th><code>line-width</code></th>
+            <td style="white-space:nowrap">
+                2 <em>(default)</em>
+            </td>
+            <td>defines the width/thickness of the line as an integer</td>
+        </tr>
+        <tr>
+            <th><code>curve</code></th>
+            <td style="white-space:nowrap">
+                true <em>(default)</em>
+            </td>
+            <td>toggles applying curves (cardinal splines) to the line</td>
+        </tr>
+        <tr>
+            <th><code>endpoint</code></th>
+            <td style="white-space:nowrap">
+                true <em>(default)</em>
+            </td>
+            <td>toggles the display of a point at the end of the line</td>
+        </tr>
+        <tr>
+            <th><code>color</code></th>
+            <td style="white-space:nowrap">
+                currentColor <em>(default)</em>
+            </td>
+            <td>defines the color of the line</td>
+        </tr>
+        <tr>
+            <th><code>endpoint-color</code></th>
+            <td style="white-space:nowrap">
+                <code>color</code> <em>(default)</em>
+            </td>
+            <td>defines the color of the endpoint</td>
+        </tr>
+        <tr>
+            <th><code>points</code></th>
+            <td>
+                comma-delimited string of integers
+            </td>
+            <td>supercedes <code>endpoint</code><br>comma-delimited string of integers representing at which pairing <code>values</code> you want points to appear at<br>arrays of a length less than the length of the <code>values</code> array will be looped over according to <code>values</code></td>
+        </tr>
+        <tr>
+            <th><code>colors</code></th>
+            <td>
+                comma-delimited string of integers
+            </td>
+            <td>supercedes <code>endpoint-color</code><br>comma-delimited string of integers representing the colour of the paired <code>points</code><br>arrays of a length less than the length of the <code>values</code> array will be looped over according to <code>values</code></td>
+        </tr>
+        <tr>
+            <th><code>start-label</code></th>
+            <td>
+                string
+            </td>
+            <td>creates a label before the graph</td>
+        </tr>
+        <tr>
+            <th><code>end-label</code></th>
+            <td>
+                string
+            </td>
+            <td>creates a label after the graph</td>
+        </tr>
+    </tbody>
+</table>
+
 
 ## Examples
 

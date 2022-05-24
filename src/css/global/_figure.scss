@@ -19,7 +19,6 @@ figure {
 	&:not(.highlight) {
 		overflow-x: auto;
 		overflow-y: hidden;
-		scrollbar-gutter: stable;
 	}
 
 	%image,

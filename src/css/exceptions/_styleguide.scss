@@ -4,7 +4,7 @@
 /// @link https://chrisburnell.com/styleguide/
 ////
 
-.palette-list {
+.palette {
 	background-color: h(milou);
 	inline-size: 100%;
 	display: flex;
@@ -15,6 +15,7 @@
 	}
 
 	li {
+		max-inline-size: 100%;
 		padding: var(--size-medium) 0;
 		font-size: var(--font-size-small);
 		text-align: center;

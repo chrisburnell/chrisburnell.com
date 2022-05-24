@@ -65,8 +65,10 @@ The function takes six parameters:
     <tbody>
         <tr>
             <th><code>notes</code><br><em>(required)</em></th>
-            <td><a href="#notes">See below.</a></td>
-            <td>an array of positive integers</td>
+            <td>
+                an array of positive integers
+            </td>
+            <td>defines the melody in the scale defined by <code>keyIntervals</code>, beginning from <code>keyStart</code></td>
         </tr>
         <tr>
             <th><code>duration</code></th>
@@ -85,7 +87,7 @@ The function takes six parameters:
         <tr>
             <th><code>keyStart</code></th>
             <td style="white-space:nowrap">
-                29 / C♯3 / D♭3 <em>(default)</em>
+                29 <em>(default: C♯3 / D♭3)</em>
             </td>
             <td>the zero-index of the key on a standard keyboard from which the scale should start</td>
         </tr>

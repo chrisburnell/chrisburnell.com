@@ -38,8 +38,9 @@ var {
 }
 
 pre {
-	margin: 0 0 var(--size-large);
+	margin: 0;
 	tab-size: 4;
 	font-size: initial;
+	hyphens: none;
 	white-space: pre-wrap;
 }
