@@ -26,7 +26,7 @@ site or this Github repository. If you have any questions or suggestions, please
 don’t hesitate to get in touch via [Mastodon](https://social.chrisburnell.com/@chris),
 [Twitter](https://twitter.com/iamchrisburnell), or [email me](mailto:me@chrisburnell.com).
 
-While the code for my website is open source, it is not intended to be used as a template for your own website. By all means, copy and share what you like, but make sure it’s part of something you can call your own. 🙂
+While the code for my website is open source, it is not intended to be used as a template for your own website. By all means, copy and share what you like, but make sure it’s part of something you can call your own. 😄
 
 ### Cool stuff I like about my website
 

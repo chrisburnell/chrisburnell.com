@@ -420,7 +420,7 @@ $bowhead-property-map: (
 @import "node_modules/@chrisburnell/bowhead/bowhead";
 ```
 
-Finally, you can use either **Bowhead's** `@v` function, `@v` mixin, both, or just the CSS Variables it can spit out. However you use it is totally up to you! 🙂
+Finally, you can use either **Bowhead's** `@v` function, `@v` mixin, both, or just the CSS Variables it can spit out. However you use it is totally up to you! 😄
 
 ```scss
 .thing {
