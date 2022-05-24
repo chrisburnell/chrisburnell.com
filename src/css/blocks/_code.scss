@@ -7,7 +7,7 @@ pre[class*="language-"] {
 	min-inline-size: 0;
 	max-inline-size: 100%;
 	display: block;
-	padding: var(--size-gutter);
+	padding: var(--size-gap) var(--size-gutter) var(--size-gutter);
 	border-block-start: var(--size-border-thin) solid var(--border-color, h(raven, beta));
 	border-radius: 1px 1px var(--size-border-default) var(--size-border-default);
 	overflow: auto;
@@ -32,104 +32,56 @@ pre[class*="language-"] {
 	}
 }
 
-// code[class*="language-"] {
-// 	&::before {
-// 		background-color: h(dove);
-// 		color: h(milou);
-// 		block-size: var(--size-gap);
-// 		display: flex;
-// 		align-items: center;
-// 		padding-inline: var(--size-gutter);
-// 		position: absolute;
-// 		inset-block-start: 0;
-// 		inset-inline-start: 0;
-// 		border-radius: var(--size-border-default) var(--size-border-default) 0 0;
-// 	}
+code[class*="language-"] {
+	&::before {
+		color: h(milou);
+		font-weight: var(--font-weight-bold);
+		position: absolute;
+		inset-block-start: var(--size-tiny);
+		inset-inline-start: var(--size-small);
+	}
 
-// 	// Highlighted Code Block Labels
-// 	&.language-bash::before {
-// 		content: "Terminal";
-// 		background-color: h(kaiser);
-// 		color: h(milou);
-// 		@supports (color: color-contrast()) {
-// 			color: color-contrast(#{h(kaiser)} vs var(--contrast-list) to var(--contrast-ratio));
-// 		}
-// 		margin-block-start: 0 !important;
-// 	}
-// 	&.language-css::before {
-// 		content: "CSS";
-// 		background-color: h(css);
-// 		color: h(milou);
-// 		@supports (color: color-contrast()) {
-// 			color: color-contrast(#{h(css)} vs var(--contrast-list) to var(--contrast-ratio));
-// 		}
-// 	}
-// 	&.language-html::before {
-// 		content: "HTML";
-// 		background-color: h(html);
-// 		color: h(thunder);
-// 		@supports (color: color-contrast()) {
-// 			color: color-contrast(#{h(html)} vs var(--contrast-list) to var(--contrast-ratio));
-// 		}
-// 	}
-// 	&.language-javascript::before {
-// 		content: "JavaScript";
-// 		background-color: h(javascript);
-// 		color: h(mineshaft);
-// 		@supports (color: color-contrast()) {
-// 			color: color-contrast(#{h(javascript)} vs var(--contrast-list) to var(--contrast-ratio));
-// 		}
-// 	}
-// 	&.language-json::before {
-// 		content: "JSON";
-// 		background-color: h(json);
-// 		color: h(mineshaft);
-// 		@supports (color: color-contrast()) {
-// 			color: color-contrast(#{h(json)} vs var(--contrast-list) to var(--contrast-ratio));
-// 		}
-// 	}
-// 	&.language-liquid::before {
-// 		content: "Liquid";
-// 		background-color: h(liquid);
-// 		color: h(mineshaft);
-// 		@supports (color: color-contrast()) {
-// 			color: color-contrast(#{h(liquid)} vs var(--contrast-list) to var(--contrast-ratio));
-// 		}
-// 	}
-// 	&.language-markdown::before {
-// 		content: "Markdown";
-// 		background-color: h(markdown);
-// 		color: h(alto);
-// 		@supports (color: color-contrast()) {
-// 			color: color-contrast(#{h(markdown)} vs var(--contrast-list) to var(--contrast-ratio));
-// 		}
-// 	}
-// 	&.language-nunjucks::before,
-// 	&.language-twig::before {
-// 		content: "Nunjucks";
-// 		background-color: h(nunjucks);
-// 		color: h(milou);
-// 		@supports (color: color-contrast()) {
-// 			color: color-contrast(#{h(nunjucks)} vs var(--contrast-list) to var(--contrast-ratio));
-// 		}
-// 	}
-// 	&.language-scss::before {
-// 		content: "SCSS";
-// 		background-color: h(scss);
-// 		color: h(thunder);
-// 		@supports (color: color-contrast()) {
-// 			color: color-contrast(#{h(scss)} vs var(--contrast-list) to var(--contrast-ratio));
-// 		}
-// 	}
-// 	&.language-yaml::before {
-// 		content: "YAML";
-// 		background-color: h(yaml);
-// 		color: h(milou);
-// 		@supports (color: color-contrast()) {
-// 			color: color-contrast(#{h(yaml)} vs var(--contrast-list) to var(--contrast-ratio));
-// 		}
-// 	}
-// }
+	// Highlighted Code Block Labels
+	&.language-bash::before {
+		content: "Terminal";
+	}
+	&.language-css::before {
+		content: "CSS";
+		color: h(css);
+	}
+	&.language-html::before {
+		content: "HTML";
+		color: h(html);
+	}
+	&.language-javascript::before {
+		content: "JavaScript";
+		color: h(javascript);
+	}
+	&.language-json::before {
+		content: "JSON";
+		color: h(json);
+	}
+	&.language-liquid::before {
+		content: "Liquid";
+		color: h(liquid);
+	}
+	&.language-markdown::before {
+		content: "Markdown";
+	}
+	&.language-nunjucks::before,
+	&.language-twig::before {
+		content: "Nunjucks";
+		color: h(nunjucks);
+	}
+	&.language-scss::before {
+		content: "SCSS";
+		color: h(scss);
+	}
+	&.language-yaml::before {
+		content: "YAML";
+		color: h(yaml);
+	}
+}
 
 /**
  * a11y-dark theme for JavaScript, CSS, and HTML
