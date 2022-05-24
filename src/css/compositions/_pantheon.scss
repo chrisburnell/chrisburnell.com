@@ -124,6 +124,14 @@
 .pantheon > spark-line {
 	grid-column: marginalia;
 	grid-row: sparkline;
+
+	@include media("below:medium") {
+		justify-self: start;
+	}
+
+	@include media("above:medium") {
+		justify-self: center;
+	}
 }
 
 .meta {
