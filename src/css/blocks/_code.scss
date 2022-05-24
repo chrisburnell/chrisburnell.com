@@ -38,7 +38,7 @@ code[class*="language-"] {
 		font-weight: var(--font-weight-bold);
 		position: absolute;
 		inset-block-start: var(--size-tiny);
-		inset-inline-start: var(--size-small);
+		inset-inline-end: 0;
 	}
 
 	// Highlighted Code Block Labels

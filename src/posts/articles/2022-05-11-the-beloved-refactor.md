@@ -34,8 +34,8 @@ For example, I have defined a palette of colours I’d like to reuse:
 
 ```css
 :root {
-    --hsl-raven: 203.661971831deg 28.5140562249% 51.1764705882%;
-    --hsl-maple: 357.1578947368deg 82.6086956522% 54.9019607843%;
+    --hsl-raven: 203deg 28% 51%;
+    --hsl-maple: 357deg 82% 54%;
 }
 
 .box {
