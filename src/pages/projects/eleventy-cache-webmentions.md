@@ -105,7 +105,9 @@ module.exports = function(eleventyConfig) {
 Accessing the plugin in JavaScript in the way shown below will give you an Object containing your cached Webmentions organised in key:value pairs where the key is a URL on your domain and the value is an array of data for Webmentions sent to that URL.
 
 ```javascript
-const Webmentions = require("@chrisburnell/eleventy-cache-webmentions")(null, { domain: "https://example.com" })
+const Webmentions = require("@chrisburnell/eleventy-cache-webmentions")(null, {
+    domain: "https://example.com"
+})
 
 const webmentionsByUrl = await Webmentions()
 ```

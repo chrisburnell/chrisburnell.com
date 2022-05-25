@@ -4,20 +4,25 @@
 ////
 
 pre[class*="language-"] {
+	&,
+	code {
+	}
+}
+
+pre[class*="language-"] {
+	background-color: h(lynx);
 	min-inline-size: 0;
 	max-inline-size: 100%;
-	display: block;
 	padding: var(--size-gap) var(--size-gutter) var(--size-gutter);
 	border-block-start: var(--size-border-thin) solid var(--border-color, h(raven, beta));
 	border-radius: 1px 1px var(--size-border-default) var(--size-border-default);
-	overflow: auto;
-	scrollbar-gutter: stable;
+	overflow: hidden;
 	position: relative;
 
 	&,
 	code {
-		background-color: h(lynx);
 		color: h(milou);
+		display: block;
 		font-family: var(--font-family-monospace);
 		line-height: var(--line-height-code);
 		overflow-wrap: normal;
@@ -29,19 +34,20 @@ pre[class*="language-"] {
 
 	code {
 		background-color: transparent;
+		border-radius: 0;
+		overflow: auto;
+		scrollbar-color: h(raven) h(lynx);
 	}
-}
 
-code[class*="language-"] {
+	// Highlighted Code Block Labels
 	&::before {
 		color: h(milou);
 		font-weight: var(--font-weight-bold);
 		position: absolute;
 		inset-block-start: var(--size-tiny);
-		inset-inline-end: 0;
+		inset-inline-end: var(--size-small);
 	}
 
-	// Highlighted Code Block Labels
 	&.language-bash::before {
 		content: "Terminal";
 	}
