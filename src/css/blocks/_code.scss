@@ -4,12 +4,6 @@
 ////
 
 pre[class*="language-"] {
-	&,
-	code {
-	}
-}
-
-pre[class*="language-"] {
 	background-color: h(lynx);
 	min-inline-size: 0;
 	max-inline-size: 100%;
@@ -42,10 +36,11 @@ pre[class*="language-"] {
 	// Highlighted Code Block Labels
 	&::before {
 		color: h(milou);
-		font-weight: var(--font-weight-bold);
 		position: absolute;
 		inset-block-start: var(--size-tiny);
-		inset-inline-end: var(--size-small);
+		inset-inline-end: var(--size-gutter);
+		font-family: var(--font-family-sans);
+		font-weight: var(--font-weight-bold);
 	}
 
 	&.language-bash::before {
