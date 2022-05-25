@@ -25,7 +25,7 @@ First, we need to run through a checklist to make sure we’re prepared to build
 
 0. Set yourself up with [IndieAuth](https://indieauth.com/) and [Webmention.io](https://webmention.io/)
 0. [Pull in Webmentions as cached data into your repository](https://gist.github.com/chrisburnell/4e29dcf84431808b6c915d87a3b5790e)
-    - Make sure you've set your `WEBMENTION_IO_TOKEN` environment variable, like in an `.env` file.
+    - Make sure you've set your `WEBMENTION_IO_TOKEN` environment variable, like in a `.env` file.
     - This is heavily inspired and in places downright taken from [Sia Karamalegos](https://sia.codes/posts/webmentions-eleventy-in-depth/), [Max Böck](https://github.com/maxboeck/eleventy-webmentions/blob/master/_data/webmentions.js), and [Zach Leatherman](https://github.com/zachleat/zachleat.com/blob/master/_data/webmentions.js)—many thanks to them for putting most of the work here!
 0. [Implement a way to pair webmentions with posts](https://gist.github.com/chrisburnell/36134bbb26234a4d92423e352a693f44)
 

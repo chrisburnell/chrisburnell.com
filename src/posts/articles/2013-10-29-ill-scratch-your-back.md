@@ -30,7 +30,7 @@ And the CSS:
 
 ```css
 ol {
-padding-left: 4em;
+    padding-left: 4em;
     list-style: outside decimal-leading-zero;
 }
 /* overqualified selector only for example: */

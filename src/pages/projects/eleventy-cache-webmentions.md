@@ -52,7 +52,7 @@ module.exports = function(eleventyConfig) {
 
 Get set up on [Webmention.io](https://webmention.io) and add your **API Key** (found on your [settings page](https://webmention.io/settings)) to your project as an environment variable, i.e. in a `.env` file:
 
-```bash
+```text
 WEBMENTION_IO_TOKEN=njJql0lKXnotreal4x3Wmd
 ```
 

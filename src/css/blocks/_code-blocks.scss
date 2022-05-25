@@ -7,7 +7,7 @@ pre[class*="language-"] {
 	background-color: h(lynx);
 	min-inline-size: 0;
 	max-inline-size: 100%;
-	padding: var(--size-gap) var(--size-gutter) var(--size-gutter);
+	padding: var(--size-gutter);
 	border-block-start: var(--size-border-thin) solid var(--border-color, h(raven, beta));
 	border-radius: 1px 1px var(--size-border-default) var(--size-border-default);
 	overflow: hidden;
@@ -41,6 +41,20 @@ pre[class*="language-"] {
 		inset-inline-end: var(--size-gutter);
 		font-family: var(--font-family-sans);
 		font-weight: var(--font-weight-bold);
+	}
+
+	&.language-bash,
+	&.language-css,
+	&.language-html,
+	&.language-javascript,
+	&.language-json,
+	&.language-liquid,
+	&.language-markdown,
+	&.language-nunjucks,
+	&.language-twig,
+	&.language-scss,
+	&.language-yaml {
+		padding-top: var(--size-gap);
 	}
 
 	&.language-bash::before {
