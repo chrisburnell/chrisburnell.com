@@ -45,6 +45,10 @@
 		row-gap: var(--size-small);
 	}
 
+	dd {
+		max-inline-size: 100%;
+	}
+
 	a {
 		@include break-words;
 	}
