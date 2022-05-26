@@ -13,7 +13,7 @@ truncate: true
 
 <article id="content" class=" [ pantheon ] [ wrap ] [ page ] ">
 
-	<h1 id="title" class=" [ title{% if title_error %} title--negative{% elif title_success %} title--positive{% endif %} ] ">
+	<h1 id="title" class=" [ title{% if title_error %}  title--negative{% elif title_success %}  title--positive{% endif %} ] ">
 		<span class=" [ p-name ] ">{{ tagline | default(title) | safe }}</span>
 	</h1>
 
@@ -23,21 +23,6 @@ truncate: true
 
 	<div class=" [ content ] [ flow ] ">
 		<div class=" [ e-content ] [ flow ] ">
-
-			{%- set truncate = false -%}
-			<h2 id="projects">
-				<a href="/projects/" tabindex="-1">Latest Projects</a>
-			</h2>
-			<nav class=" [ deck ] " aria-labelledby="projects">
-				{% for item in collections.projects | limit(site.limits.feature) %}
-					{%- set responses = item.url | getWebmentions -%}
-					{% include 'items/deck.njk' %}
-				{% endfor %}
-			</nav>
-			<nav class=" [ grid ] [ navigator ] " aria-label="Projects Navigation">
-				<a class=" [ button ] " href="/projects/">Browse Projects</a>
-			</nav>
-			{%- set truncate = true -%}
 
 			{% if collections.todayRSVPs.length %}
 				<hr>
@@ -59,6 +44,21 @@ truncate: true
 					{% endfor %}
 				</nav>
 			{% endif %}
+
+			{%- set truncate = false -%}
+			<h2 id="projects">
+				<a href="/projects/" tabindex="-1">Latest Projects</a>
+			</h2>
+			<nav class=" [ deck ] " aria-labelledby="projects">
+				{% for item in collections.projects | limit(site.limits.feature) %}
+					{%- set responses = item.url | getWebmentions -%}
+					{% include 'items/deck.njk' %}
+				{% endfor %}
+			</nav>
+			<nav class=" [ grid ] [ navigator ] " aria-label="Projects Navigation">
+				<a class=" [ button ] " href="/projects/">Browse Projects</a>
+			</nav>
+			{%- set truncate = true -%}
 
 			{%- set hfeed = true -%}
 			<hr>
