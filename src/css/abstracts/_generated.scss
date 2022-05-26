@@ -31,11 +31,11 @@ $font-families: (
 	sophisticated: "Papyrus, serif",
 );
 $font-sizes: (
-	alpha: clamp(2rem, 2.286vw + 1.286rem, 3rem),
-	beta: clamp(1.25rem, 0.571vw + 1.071rem, 1.5rem),
-	gamma: clamp(1.125rem, 0.571vw + 0.946rem, 1.375rem),
-	default: clamp(1rem, 0.5vw + 0.625rem, 1.125rem),
 	small: clamp(0.875rem, 0.5vw + 0.5rem, 1rem),
+	default: clamp(1rem, 0.5vw + 0.625rem, 1.125rem),
+	gamma: clamp(1.125rem, 0.571vw + 0.946rem, 1.375rem),
+	beta: clamp(1.25rem, 0.571vw + 1.071rem, 1.5rem),
+	alpha: clamp(2rem, 2.286vw + 1.286rem, 3rem),
 );
 $font-weights: (
 	default: 400,
@@ -64,11 +64,15 @@ $opacities: (
 	delta: 0.05,
 );
 $sizes: (
-	tiny: clamp(0.31rem, 0.13rem + 0.25vw, 0.38rem),
-	small: clamp(0.63rem, 0.44rem + 0.25vw, 0.69rem),
-	medium: clamp(1.25rem, 0.69rem + 0.75vw, 1.44rem),
-	large: clamp(2.25rem, 1.31rem + 1.25vw, 2.56rem),
-	gigantic: clamp(4rem, 2.5rem + 2vw, 4.5rem),
+	tiny: clamp(0.31rem, calc(0.27rem + 0.14vw), 0.38rem),
+	small: clamp(0.63rem, calc(0.58rem + 0.14vw), 0.69rem),
+	medium: clamp(1.25rem, calc(1.12rem + 0.43vw), 1.44rem),
+	large: clamp(2.25rem, calc(2.03rem + 0.71vw), 2.56rem),
+	gigantic: clamp(4rem, calc(3.64rem + 1.14vw), 4.5rem),
+	tiny-small: clamp(0.31rem, calc(0.04rem + 0.86vw), 0.69rem),
+	small-medium: clamp(0.63rem, calc(0.04rem + 1.86vw), 1.44rem),
+	medium-large: clamp(1.25rem, calc(0.31rem + 3vw), 2.56rem),
+	large-gigantic: clamp(2.25rem, calc(0.64rem + 5.14vw), 4.5rem),
 	gutter: var(--size-medium),
 	gap: calc(var(--size-gutter) * 2),
 	avatar: 100px,
