@@ -25,7 +25,6 @@ truncate: true
 		<div class=" [ e-content ] [ flow ] ">
 
 			{% if collections.todayRSVPs.length %}
-				<hr>
 				<h2 id="today-rsvps">
 					<a href="/rsvps/">Events I’m Attending Today</a>
 				</h2>
@@ -43,6 +42,7 @@ truncate: true
 						</div>
 					{% endfor %}
 				</nav>
+				<hr>
 			{% endif %}
 
 			{%- set truncate = false -%}
