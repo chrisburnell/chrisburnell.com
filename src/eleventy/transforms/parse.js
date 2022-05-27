@@ -26,6 +26,7 @@ module.exports = (value, outputPath) => {
 			$(tocHtml).insertBefore(".content")
 		}
 
+		// Process and generate fragment anchors for content headings
 		const articleHeadings = $(".content h2")
 		articleHeadings.each(function () {
 			const headingID =
