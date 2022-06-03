@@ -40,6 +40,17 @@
 	font-style: italic;
 }
 
-.deck__meta a {
-	white-space: nowrap;
+.deck__meta {
+	li {
+		display: inline-block;
+		white-space: nowrap;
+
+		&:not(:first-child) {
+			&::before {
+				content: "·";
+				display: inline-block;
+				padding-inline: var(--size-tiny);
+			}
+		}
+	}
 }

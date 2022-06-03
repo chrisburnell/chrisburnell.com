@@ -175,25 +175,23 @@
 		<p class=" [ p-summary ] ">{{ item.templateContent | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
 	{% endif %}
 	{% if item.data.date or item.date or item.data.updated or responses.length %}
-		<div class=" [ deck__meta ] ">
-			{%- if item.data.date or item.date -%}
-				<small>published</small>
-				<a class=" [ u-url ] " href="{{ item.url }}"{% if item_title or item_of_title %} tabindex="-1"{% endif %}>
-					<time class=" [ dt-published ] " datetime="{{ item.data.date | default(item.date) | rfcDate }}">{{ item.data.date | default(item.date) | friendlyDate }}</time>
-				</a>
-			{%- endif -%}
-			{%- if item.data.updated %}
-				{% if item.date %}·{% endif %}
-				<small>updated</small>
-				<a href="{{ item.url }}#updated" tabindex="-1">
-					<time class=" [ dt-updated ] " datetime="{{ item.data.updated | rfcDate }}">{{ item.data.updated | friendlyDate }}</time>
-				</a>
+		<ul class=" [ deck__meta ] ">
+			{% if item.data.date or item.date %}
+				<li>
+					<small>published</small> <a class=" [ u-url ] " href="{{ item.url }}"{% if item_title or item_of_title %} tabindex="-1"{% endif %}><time class=" [ dt-published ] " datetime="{{ item.data.date | default(item.date) | rfcDate }}">{{ item.data.date | default(item.date) | friendlyDate }}</time></a>
+				</li>
 			{% endif %}
-			{%- if responses.length %}
-				{% if item.data.date or item.date or item.data.updated %}·{% endif %}
-				<a href="{{ item.url }}#webmentions" title="Jump to webmentions for this post">{{ responses.length }} response{{ 's' if responses.length > 1 }} <span class="hidden">to {{ item_title }}</span></a>
+			{% if item.data.updated %}
+				<li>
+					<small>updated</small> <a href="{{ item.url }}#updated" tabindex="-1"><time class=" [ dt-updated ] " datetime="{{ item.data.updated | rfcDate }}">{{ item.data.updated | friendlyDate }}</time></a>
+				</li>
 			{% endif %}
-		</div>
+			{% if responses.length %}
+				<li>
+					<a href="{{ item.url }}#webmentions" title="Jump to webmentions for this post">{{ responses.length }} response{{ 's' if responses.length > 1 }} <span class="hidden">to {{ item_title }}</span></a>
+				</li>
+			{% endif %}
+		</ul>
 	{% endif %}
 	{% if item.data.mf_property and item_of %}
 		<data class=" [ u-{{ item.data.mf_property }} ] " value="{{ item_of_url | default(item_of) }}" hidden></data>

@@ -44,10 +44,11 @@
                       </a>
                     </h3>
                     <p><xsl:value-of select="description" /></p>
-                    <div class=" [ deck__meta ] ">
-                      <small>published </small>
-                      <xsl:value-of select="pubDate" />
-                    </div>
+                    <ul class=" [ deck__meta ] ">
+                      <li>
+                        <small>published</small> <xsl:value-of select="pubDate" />
+                      </li>
+                    </ul>
                   </article>
                 </xsl:for-each>
               </nav>

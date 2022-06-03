@@ -39,12 +39,11 @@
   `;
 			if (data.timestamp) {
 				markup += `
-  <div class=" [ deck__meta ] ">
-	  <small>published</small>
-	  <a href="${data.url}" tabindex="-1">
-		  <time datetime="${data.timestamp}">${data.published}</time>
-	  </a>
-  </div>`;
+<ul class=" [ deck__meta ] ">
+	<li>
+		<small>published</small> <a href="${data.url}" tabindex="-1"><time datetime="${data.timestamp}">${data.published}</time></a>
+	</li>
+</ul>`;
 			}
 			markup += `</article>`;
 		});
