@@ -60,7 +60,7 @@ module.exports = {
 		if (number < stringNumbers.length) {
 			return stringNumbers[number]
 		}
-		return number
+		return number.toLocaleString()
 	},
 	smartjoin: (array, joiner = ", ") => {
 		const last = array.pop()

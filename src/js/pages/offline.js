@@ -39,7 +39,7 @@
   `;
 			if (data.timestamp) {
 				markup += `
-<ul class=" [ deck__meta ] ">
+<ul class=" [ cluster ] [ deck__meta ] ">
 	<li>
 		<small>published</small> <a href="${data.url}" tabindex="-1"><time datetime="${data.timestamp}">${data.published}</time></a>
 	</li>

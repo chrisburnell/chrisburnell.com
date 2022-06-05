@@ -1,0 +1,80 @@
+---
+title: Stats
+description: Numbers, cause why not?
+---
+
+{%- set collection = collections.posts -%}
+{%- set count = collection.length -%}
+{%- set latest_year = collection[0].date.getFullYear() -%}
+{%- set first_year = collection[count-1].date.getFullYear() -%}
+
+{%- set wordiestPostIndex = 0 -%}
+{%- set wordiestWordCount = 0 -%}
+{%- set totalWordCount = 0 -%}
+{%- for item in collection -%}
+	{% set wordCount = item.templateContent | striptags | safe | wordcount %}
+	{% set totalWordCount = totalWordCount + wordCount %}
+	{% if wordCount > wordiestWordCount %}
+		{% set wordiestWordCount = wordCount %}
+		{% set wordiestPostIndex = loop.index0 %}
+	{% endif %}
+{%- endfor -%}
+
+<dl>
+	<dt>Total Posts</dt>
+	<dd>{{ count }}</dd>
+	<dt>Total Word Count</dt>
+	<dd>{{ totalWordCount | numberStringFormat }}</dd>
+	<dt>Most Insanely-Verbose Post</dt>
+	<dd><a href="{{ collection[wordiestPostIndex].url }}">{{ collection[wordiestPostIndex].data.title }}</a> with {{ wordiestWordCount | numberStringFormat }} words</dd>
+</dl>
+
+<h2>All Posts</h2>
+
+<p>{% sparkline collection, first_year, latest_year %}</p>
+
+{%- set collection = collection | reverse -%}
+{%- set year = first_year -%}
+<table>
+	<thead>
+		<tr>
+			<th>Year</th>
+			<th class=" [ numeral ] ">Number of Posts</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>{{ year }}</td>
+			<td class=" [ numeral ] ">{{ collection | getCountByYear(year) }}</td>
+		</tr>
+		{% for item in collection %}
+			{% if item.date.getFullYear() != year %}
+				{%- set year = item.date.getFullYear() -%}
+				<tr>
+					<td>{{ year }}</td>
+					<td class=" [ numeral ] ">{{ collection | getCountByYear(year) }}</td>
+				</tr>
+			{% endif %}
+		{% endfor %}
+	</tbody>
+</table>
+
+<h2>Categories</h2>
+
+<ul class=" [ cluster ] ">
+	{%- for item in collections.categories -%}
+		{%- set collection = collections[item.title] | arePublished | reverse -%}
+		{%- set count = collection.length -%}
+		<li><a href="/{{ item.plural }}/">{{ item.properPlural }} <sup>{{ count }}</sup></a></li>
+	{%- endfor -%}
+</ul>
+
+<h2>Tags</h2>
+
+<ul class=" [ cluster ] ">
+	{%- for item in collections.tags | sort -%}
+		{%- set collection = collections[item] | arePublished | reverse -%}
+		{%- set count = collection.length -%}
+		<li><a href="/tag/{{ item }}">#{{ item }} <sup>{{ count }}</sup></a></li>
+	{%- endfor -%}
+</ul>

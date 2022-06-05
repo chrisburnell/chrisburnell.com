@@ -175,7 +175,7 @@
 		<p class=" [ p-summary ] ">{{ item.templateContent | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
 	{% endif %}
 	{% if item.data.date or item.date or item.data.updated or responses.length %}
-		<ul class=" [ deck__meta ] ">
+		<ul class=" [ cluster ] [ deck__meta ] ">
 			{% if item.data.date or item.date %}
 				<li>
 					<small>published</small> <a class=" [ u-url ] " href="{{ item.url }}"{% if item_title or item_of_title %} tabindex="-1"{% endif %}><time class=" [ dt-published ] " datetime="{{ item.data.date | default(item.date) | rfcDate }}">{{ item.data.date | default(item.date) | friendlyDate }}</time></a>
