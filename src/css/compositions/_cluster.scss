@@ -1,0 +1,24 @@
+////
+/// Inline Cluster
+/// @group compositions
+///
+/// --delineator ("·")
+///     Defines the character between each cluster item.
+/// --padding-inline (var(--size-tiny))
+///     Defines the padding around the delineator charcter.
+////
+
+.cluster {
+	& > * {
+		display: inline-block;
+		white-space: nowrap;
+
+		&:not(:first-child) {
+			&::before {
+				content: var(--delineator, "·");
+				display: inline-block;
+				padding-inline: var(--padding-inline, var(--size-tiny));
+			}
+		}
+	}
+}

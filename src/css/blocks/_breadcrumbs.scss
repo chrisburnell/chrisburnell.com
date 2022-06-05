@@ -1,24 +1,15 @@
 ////
 /// Breadcrumbs
 /// @group blocks
+/// Extends Inline Cluster
 ////
 
 .breadcrumbs {
+	--delineator: "→";
+	--padding-inline: var(--size-small);
+
 	color: h(kaiser);
 	margin-block-start: var(--size-gigantic);
-
-	li {
-		display: inline-block;
-		white-space: nowrap;
-
-		&:not(:first-child) {
-			&::before {
-				content: "→";
-				display: inline-block;
-				padding-inline: var(--size-small);
-			}
-		}
-	}
 
 	%anchor {
 		color: inherit;

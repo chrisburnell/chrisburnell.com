@@ -56,18 +56,3 @@
 		grid-column: left;
 	}
 }
-
-.footer__navigation {
-	li {
-		display: inline-block;
-	}
-
-	li + li {
-		&::before {
-			content: "·";
-			inline-size: 1em;
-			display: inline-block;
-			text-align: center;
-		}
-	}
-}
