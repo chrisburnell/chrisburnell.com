@@ -45,21 +45,6 @@ truncate: true
 				<hr>
 			{% endif %}
 
-			{%- set truncate = false -%}
-			<h2 id="projects">
-				<a href="/projects/" tabindex="-1">Latest Projects</a>
-			</h2>
-			<nav class=" [ deck ] " aria-labelledby="projects">
-				{% for item in collections.projects | limit(site.limits.feature) %}
-					{%- set responses = item.url | getWebmentions -%}
-					{% include 'items/deck.njk' %}
-				{% endfor %}
-			</nav>
-			<nav class=" [ grid ] [ navigator ] " aria-label="Projects Navigation">
-				<a class=" [ button ] " href="/projects/">Browse Projects</a>
-			</nav>
-			{%- set truncate = true -%}
-
 			{%- set hfeed = true -%}
 			<hr>
 			<h2 id="latest">
@@ -127,6 +112,21 @@ truncate: true
 				{%- set relative_time = false -%}
 				{%- set show_photos = false -%}
 			{% endif %}
+
+			{%- set truncate = false -%}
+			<h2 id="projects">
+				<a href="/projects/" tabindex="-1">Latest Projects</a>
+			</h2>
+			<nav class=" [ deck ] " aria-labelledby="projects">
+				{% for item in collections.projects | limit(site.limits.feature) %}
+					{%- set responses = item.url | getWebmentions -%}
+					{% include 'items/deck.njk' %}
+				{% endfor %}
+			</nav>
+			<nav class=" [ grid ] [ navigator ] " aria-label="Projects Navigation">
+				<a class=" [ button ] " href="/projects/">Browse Projects</a>
+			</nav>
+			{%- set truncate = true -%}
 		</div>
 	</div>
 
