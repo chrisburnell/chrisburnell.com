@@ -103,8 +103,7 @@ ol.default-list {
 dl {
 	display: grid;
 	grid-template-columns: 100%;
-	column-gap: var(--size-medium);
-	row-gap: var(--size-large);
+	gap: var(--size-medium);
 	margin-block-start: 0;
 	overflow: hidden;
 

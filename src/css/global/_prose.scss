@@ -67,18 +67,15 @@ small,
 
 :is(sub, sup) {
 	position: relative;
-	vertical-align: baseline;
-	font-size: 1em;
+	font-size: 0.75em;
 	line-height: 0;
 	text-transform: initial;
 }
 sub {
 	inset-block-end: 0;
-	font-variant-position: sub;
 }
 sup {
 	inset-block-start: 0;
-	font-variant-position: super;
 }
 
 hr {
