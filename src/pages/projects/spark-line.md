@@ -219,3 +219,12 @@ The element takes a number of attributes:
     <spark-line id="sparkline" class="pentatonic" style="margin-block-start: 0; align-self: center; justify-self: center;"></spark-line>
     <noscript>Requires JavaScript, unfortunately.</noscript>
 </form>
+
+## License & Meta
+
+[![chrisburnell - spark-line](https://img.shields.io/static/v1?label=chrisburnell&message=spark-line&color=5f8aa6&logo=github)](https://github.com/chrisburnell/spark-line "Go to GitHub repo")
+[![stars - spark-line](https://img.shields.io/github/stars/chrisburnell/spark-line?style=social)](https://github.com/chrisburnell/spark-line)
+[![forks - spark-line](https://img.shields.io/github/forks/chrisburnell/spark-line?style=social)](https://github.com/chrisburnell/spark-line)
+
+[![GitHub release](https://img.shields.io/github/release/chrisburnell/spark-line?include_prereleases=&sort=semver&color=5f8aa6)](https://github.com/chrisburnell/spark-line/releases/)
+[![License](https://img.shields.io/badge/License-CC0-5f8aa6)](https://github.com/chrisburnell/spark-line/blob/main/LICENSE)

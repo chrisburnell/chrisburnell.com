@@ -492,3 +492,12 @@ What about multiple values in a function? Just make sure you're using the *raw* 
 
 - [Variables for Both](/article/variables-for-both/)
 - [A Deep Dive into Colour with Bowhead](/article/deep-dive-into-colour/)
+
+## License & Meta
+
+[![chrisburnell - bowhead](https://img.shields.io/static/v1?label=chrisburnell&message=bowhead&color=5f8aa6&logo=github)](https://github.com/chrisburnell/bowhead "Go to GitHub repo")
+[![stars - bowhead](https://img.shields.io/github/stars/chrisburnell/bowhead?style=social)](https://github.com/chrisburnell/bowhead)
+[![forks - bowhead](https://img.shields.io/github/forks/chrisburnell/bowhead?style=social)](https://github.com/chrisburnell/bowhead)
+
+[![GitHub release](https://img.shields.io/github/release/chrisburnell/bowhead?include_prereleases=&sort=semver&color=5f8aa6)](https://github.com/chrisburnell/bowhead/releases/)
+[![License](https://img.shields.io/badge/License-MIT-5f8aa6)](https://github.com/chrisburnell/bowhead/blob/master/LICENSE)

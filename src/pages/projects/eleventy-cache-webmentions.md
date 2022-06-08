@@ -182,3 +182,12 @@ And, if you need it, the entire Object of sorted Webmentions is available too:
 ## Next steps
 
 - It is currently hard-coded to utilise [Webmention.io](https://webmention.io), but I'm not sure how to make this plugin agnostic of that. I need to do more research into what, if any, standard API parameters and output might be: ideally close to what I’m working with now.
+
+## License & Meta
+
+[![chrisburnell - eleventy-cache-webmentions](https://img.shields.io/static/v1?label=chrisburnell&message=eleventy-cache-webmentions&color=5f8aa6&logo=github)](https://github.com/chrisburnell/eleventy-cache-webmentions "Go to GitHub repo")
+[![stars - eleventy-cache-webmentions](https://img.shields.io/github/stars/chrisburnell/eleventy-cache-webmentions?style=social)](https://github.com/chrisburnell/eleventy-cache-webmentions)
+[![forks - eleventy-cache-webmentions](https://img.shields.io/github/forks/chrisburnell/eleventy-cache-webmentions?style=social)](https://github.com/chrisburnell/eleventy-cache-webmentions)
+
+[![GitHub release](https://img.shields.io/github/release/chrisburnell/eleventy-cache-webmentions?include_prereleases=&sort=semver&color=5f8aa6)](https://github.com/chrisburnell/eleventy-cache-webmentions/releases/)
+[![License](https://img.shields.io/badge/License-MIT-5f8aa6)](https://github.com/chrisburnell/eleventy-cache-webmentions/blob/main/LICENSE)
