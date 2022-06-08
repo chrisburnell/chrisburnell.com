@@ -155,7 +155,7 @@ With this knowledge under our belt, we can begin to define the design tokens for
 <table>
     <thead>
         <tr>
-            <th></th>
+            <th> </th>
             <th>Values</th>
             <th>Description</th>
         </tr>

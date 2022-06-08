@@ -57,7 +57,7 @@ The function takes six parameters:
 <table>
     <thead>
         <tr>
-            <th></th>
+            <th> </th>
             <th>Values</th>
             <th>Description</th>
         </tr>
