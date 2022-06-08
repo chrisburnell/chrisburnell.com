@@ -52,7 +52,7 @@ module.exports = (value, outputPath) => {
 		})
 
 		// Make <pre> code blocks keyboard-accessible by adding `tabindex="0"`
-		const preformatted = $("pre")
+		const preformatted = $("pre > code")
 		preformatted.each(function () {
 			$(this).attr("tabindex", 0)
 		})
