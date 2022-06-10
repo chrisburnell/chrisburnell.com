@@ -5,7 +5,7 @@ module.exports = {
 		let format = "yyyy-MM-dd'T'HH:mm:ss" + (showTimezone ? "ZZZ" : "")
 		return DateTime.fromJSDate(new Date(value)).toFormat(format)
 	},
-	friendlyDate: (value, format = "dd LLLL yyyy") => {
+	friendlyDate: (value, format = "d LLLL yyyy") => {
 		return DateTime.fromJSDate(new Date(value)).toFormat(format)
 	},
 	friendlyTime: (value, showTimezone = true) => {
