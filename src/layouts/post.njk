@@ -63,7 +63,7 @@ layout: base
 		{% elif title %}
 			<span>{{ title | safe }}</span>
 		{% else %}
-			<span>{{ categoryProper | default(category) | title }} from {{ page.date | friendlyDate }}</span>
+			<span>{{ categoryProper | default(category) | title }} from {{ page.date | friendlyDateLong | safe }}</span>
 		{% endif %}
 	</h1>
 
@@ -96,9 +96,9 @@ layout: base
 						{% endif %}
 					{%- endif -%}
 				{%- endif %}
-				was published on <time class=" [ dt-published ] " datetime="{{ date | rfcDate }}">{{ date | friendlyDate }}</time>
+				was published on <time class=" [ dt-published ] " datetime="{{ date | rfcDate }}">{{ date | friendlyDateLong | safe }}</time>
 				{%- if updated %}
-					and last updated on <time class=" [ dt-updated ] " datetime="{{ updated | rfcDate }}">{{ updated | friendlyDate }}</time>
+					and last updated on <time class=" [ dt-updated ] " datetime="{{ updated | rfcDate }}">{{ updated | friendlyDateLong | safe }}</time>
 				{%- endif -%}
 			{%- endif %}.
 		</p>

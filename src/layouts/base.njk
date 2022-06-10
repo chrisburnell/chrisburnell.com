@@ -13,7 +13,7 @@
 {%- elif title -%}
 	{% set meta_title = title | striptags(true) | safe %}
 {%- elif category -%}
-	{% set meta_title %}{{ categoryProper | default(category) | title }} from {{ page.date | friendlyDate }}{% endset %}
+	{% set meta_title %}{{ categoryProper | default(category) | title }} from {{ page.date | friendlyDateLong | safe }}{% endset %}
 {%- else -%}
 	{% set meta_title = site.tagline | striptags(true) | safe %}
 {%- endif -%}
@@ -145,9 +145,9 @@
 		{% endif %}
 
 		{% if layout == 'post' %}
-			<meta property="article:published_time" content="{{ page.date | friendlyDate }}">
+			<meta property="article:published_time" content="{{ page.date | friendlyDateLong | safe }}">
 			{% if updated or finish %}
-				<meta property="article:modified_time" content="{{ updated | default(finish) | friendlyDate }}">
+				<meta property="article:modified_time" content="{{ updated | default(finish) | friendlyDateLong | safe }}">
 			{% endif %}
 			<meta property="article:author" content="{{ author.name }}">
 			{% for tag in tags | categoryFilter | tagFilter %}

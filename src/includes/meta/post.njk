@@ -79,9 +79,9 @@
 			{% else %}
 				<small>took place</small>
 			{% endif %}
-			<time class=" [ dt-start ] " datetime="{{ rsvp.date | rfcDate }}">{{ rsvp.date | friendlyDate }} {{ rsvp.date | friendlyTime(false) }}</time>
+			<time class=" [ dt-start ] " datetime="{{ rsvp.date | rfcDate }}">{{ rsvp.date | friendlyDateLong | safe }} {{ rsvp.date | friendlyTime(false) }}</time>
 			–
-			<time class=" [ dt-end ] " datetime="{{ rsvp.finish | rfcDate }}">{% if rsvp.date | friendlyDate != rsvp.finish | friendlyDate %}{{ rsvp.finish | friendlyDate }} {% endif %}{{ rsvp.finish | friendlyTime(true) }}</time>
+			<time class=" [ dt-end ] " datetime="{{ rsvp.finish | rfcDate }}">{% if rsvp.date | friendlyDateLong | safe != rsvp.finish | friendlyDateLong | safe %}{{ rsvp.finish | friendlyDateLong | safe }} {% endif %}{{ rsvp.finish | friendlyTime(true) }}</time>
 		</li>
 	{% endif %}
 	{% if show_reading_length %}

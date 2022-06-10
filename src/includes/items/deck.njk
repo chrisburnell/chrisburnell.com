@@ -178,12 +178,12 @@
 		<ul class=" [ cluster ] [ deck__meta ] ">
 			{% if item.data.date or item.date %}
 				<li>
-					<small>published</small> <a class=" [ u-url ] " href="{{ item.url }}"{% if item_title or item_of_title %} tabindex="-1"{% endif %}><time class=" [ dt-published ] " datetime="{{ item.data.date | default(item.date) | rfcDate }}">{{ item.data.date | default(item.date) | friendlyDate }}</time></a>
+					<small>published</small> <a class=" [ u-url ] " href="{{ item.url }}"{% if item_title or item_of_title %} tabindex="-1"{% endif %}><time class=" [ dt-published ] " datetime="{{ item.data.date | default(item.date) | rfcDate }}">{{ item.data.date | default(item.date) | friendlyDateLong | safe }}</time></a>
 				</li>
 			{% endif %}
 			{% if item.data.updated %}
 				<li>
-					<small>updated</small> <a href="{{ item.url }}#updated" tabindex="-1"><time class=" [ dt-updated ] " datetime="{{ item.data.updated | rfcDate }}">{{ item.data.updated | friendlyDate }}</time></a>
+					<small>updated</small> <a href="{{ item.url }}#updated" tabindex="-1"><time class=" [ dt-updated ] " datetime="{{ item.data.updated | rfcDate }}">{{ item.data.updated | friendlyDateLong | safe }}</time></a>
 				</li>
 			{% endif %}
 			{% if responses.length %}

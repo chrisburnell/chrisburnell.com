@@ -95,9 +95,9 @@
 		</div>
 	{% endif %}
 	{% if item.date %}
-		<time class=" [ dt-published ] " datetime="{{ item.date | rfcDate }}" hidden>{{ item.date | friendlyDate }}</time>
+		<time class=" [ dt-published ] " datetime="{{ item.date | rfcDate }}" hidden>{{ item.date | friendlyDateLong | safe }}</time>
 		{% if item.data.updated %}
-			<time class=" [ dt-updated ] " datetime="{{ item.data.updated | rfcDate }}" hidden>{{ item.data.updated | friendlyDate }}</time>
+			<time class=" [ dt-updated ] " datetime="{{ item.data.updated | rfcDate }}" hidden>{{ item.data.updated | friendlyDateLong | safe }}</time>
 		{% endif %}
 	{% endif %}
 	{% if item.data.mf_property and item_of %}

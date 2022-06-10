@@ -1,7 +1,7 @@
 {% if updated_text %}
 	<div id="updated" class=" [ updated ] [ box ] [ flow ] ">
 		{% if updated %}
-			<time datetime="{{ updated | rfcDate }}">Updated {{ updated | friendlyDate }}:</time>
+			<time datetime="{{ updated | rfcDate }}">Updated {{ updated | friendlyDateLong | safe }}:</time>
 		{% endif %}
 		{{ updated_text | markdownFormat | safe }}
 	</div>

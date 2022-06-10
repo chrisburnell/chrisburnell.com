@@ -8,7 +8,7 @@ tags:
   - personal
 ---
 
-Now, I don’t exactly *publish* a lot of content, but I do like to think about how I *present* and *structure* the content of my website, and after nine years and over 5000 git commits—am I working smart or working hard?…—there are some important lessons I’ve internalised over the years and some philosophies core to my website’s success that I’d like to share.
+Now, I don’t exactly *publish* a lot of content, but I do like to think about how I *present* and *structure* the content of my website, and after nine years and over 5000 git commits—am I working smart or working hard?… There are some important lessons I’ve internalised over the years and some philosophies core to my website’s success that I’d like to share.
 
 ## Eliminate barriers to authoring and publishing
 
