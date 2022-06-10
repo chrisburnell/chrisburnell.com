@@ -31,6 +31,7 @@
 
 	.rating {
 		margin-inline-start: var(--size-tiny);
+		vertical-align: text-bottom;
 	}
 }
 
@@ -38,43 +39,22 @@
 	line-height: var(--line-height-medium);
 }
 
+/// Extends Cluster
 .meta__list {
-	display: inline;
+	--padding-inline: 0;
+	--delineator: ",\00a0";
+
 	font-size: var(--font-size-small);
 
-	li {
+	&.cluster {
 		display: inline;
-
-		&:not(:last-child) {
-			&::after {
-				content: ", ";
-			}
-		}
 	}
 
-	&.meta__list--block {
-		&,
-		li {
-			display: block;
+	.meta__information &.cluster {
+		& > * {
+			display: inline;
+			white-space: normal;
 		}
-
-		li::after {
-			display: none;
-		}
-	}
-
-	.meta > &,
-	.meta > .box > & {
-		&::before,
-		&::after {
-			content: "";
-			display: block;
-			clear: both;
-		}
-	}
-
-	small + & {
-		padding-inline-start: var(--size-tiny);
 	}
 }
 

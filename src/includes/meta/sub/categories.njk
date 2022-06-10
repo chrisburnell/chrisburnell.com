@@ -1,5 +1,5 @@
 <h2>Browse by category</h2>
-<ul class=" [ meta__list ] ">
+<ul class=" [ cluster ] [ meta__list ] ">
 	{% for lookup in collections.categories -%}
 		<li>{% if '/' + lookup.plural + '/' == page.url %}<strong>{{ lookup.properPlural }}</strong>{% else %}<a href="/{{ lookup.plural }}/"{% if category == lookup.title %} class="code-red"{% endif %}>{{ lookup.properPlural }}</a>{% endif %}</li>
 	{%- endfor %}
