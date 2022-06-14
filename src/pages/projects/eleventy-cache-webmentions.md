@@ -191,7 +191,7 @@ And, if you need it, the entire Object of sorted Webmentions is available too:
 <p>This site has received {{ count }} WebMentions!</p>{% endraw %}
 ```
 
-## Usage with Webmention.io
+<h2 id="webmention-io">Webmention.io</h2>
 
 See [Webmention.io](https://webmention.io) for more information on usage.
 
@@ -217,7 +217,7 @@ module.exports = function(eleventyConfig) {
 }
 ```
 
-## Usage with go-jamming
+## go-jamming
 
 See [go-jamming on GitHub](https://github.com/wgroeneveld/go-jamming) for more information on usage.
 

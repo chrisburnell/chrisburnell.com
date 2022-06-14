@@ -38,7 +38,7 @@ pre[class*="language-"] {
 		color: h(milou);
 		position: absolute;
 		inset-block-start: var(--size-tiny);
-		inset-inline-end: var(--size-gutter);
+		inset-inline-start: var(--size-gutter);
 		font-family: var(--font-family-sans);
 		font-weight: var(--font-weight-bold);
 	}
