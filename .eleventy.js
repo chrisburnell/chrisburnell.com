@@ -51,6 +51,8 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.addPlugin(syntaxHighlightPlugin)
 	eleventyConfig.addPlugin(webmentionsPlugin, {
 		domain: site.url,
+		feed: `https://webmention.io/api/mentions.jf2?domain=${new URL(site.url).hostname}&token=${process.env.WEBMENTION_IO_TOKEN}&per-page=9001`,
+		key: "children",
 		duration: site.cacheDuration,
 		urlReplacements: urlReplacements,
 		maximumHtmlLength: 1000,

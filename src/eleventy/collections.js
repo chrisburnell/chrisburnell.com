@@ -4,7 +4,14 @@ const collectionFilters = require("#filters/collections")
 const global = require("#datajs/global")
 const site = require("#data/site")
 
-const Webmentions = require("@chrisburnell/eleventy-cache-webmentions")(null, { domain: site.url })
+// Load .env variables with dotenv
+require("dotenv").config()
+
+const Webmentions = require("@chrisburnell/eleventy-cache-webmentions")(null, {
+	domain: site.url,
+	feed: `https://webmention.io/api/mentions.jf2?domain=${new URL(site.url).hostname}&per-page=9001&token=${process.env.WEBMENTION_IO_TOKEN}`,
+	key: "children",
+})
 
 const absoluteURL = (url, base) => {
 	if (!base) {

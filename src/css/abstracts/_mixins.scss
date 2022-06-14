@@ -4,14 +4,6 @@
 ////
 
 ///
-/// Break words.
-///
-@mixin break-words() {
-	overflow-wrap: break-word;
-	word-break: break-word;
-}
-
-///
 /// Visually hide an element properly.
 ///
 @mixin hidden() {
@@ -28,6 +20,14 @@
 }
 
 ///
+/// Break words.
+///
+@mixin break-words() {
+	overflow-wrap: break-word;
+	word-break: break-word;
+}
+
+///
 /// Hyphenate words.
 ///
 @mixin hyphenate() {
@@ -39,9 +39,7 @@
 }
 
 ///
-/// Make text non-selectable.
-///
-/// @author Chris Burnell
+/// Make something non-selectable.
 ///
 @mixin non-selectable() {
 	user-select: none;
@@ -50,9 +48,7 @@
 }
 
 ///
-/// Make text non-interactive.
-///
-/// @author Chris Burnell
+/// Make something non-interactive.
 ///
 @mixin non-interactive() {
 	@include non-selectable;
