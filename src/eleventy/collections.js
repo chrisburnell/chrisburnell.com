@@ -9,7 +9,7 @@ require("dotenv").config()
 
 const Webmentions = require("@chrisburnell/eleventy-cache-webmentions")(null, {
 	domain: site.url,
-	feed: `https://webmention.io/api/mentions.jf2?domain=${new URL(site.url).hostname}&per-page=9001&token=${process.env.WEBMENTION_IO_TOKEN}`,
+	feed: `https://webmention.io/api/mentions.jf2?domain=${new URL(site.url).hostname}&token=${process.env.WEBMENTION_IO_TOKEN}&per-page=9001`,
 	key: "children",
 })
 

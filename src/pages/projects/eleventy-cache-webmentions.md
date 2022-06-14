@@ -195,7 +195,7 @@ And, if you need it, the entire Object of sorted Webmentions is available too:
 
 See [Webmention.io](https://webmention.io) for more information on usage.
 
-### Add your API Key
+### Add your token
 
 Get set up on [Webmention.io](https://webmention.io) and add your **API Key** (found on your [settings page](https://webmention.io/settings)) to your project as an environment variable, i.e. in a `.env` file in the root of your project:
 
