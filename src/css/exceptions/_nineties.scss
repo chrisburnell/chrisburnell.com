@@ -12,6 +12,11 @@
 	.navigation__list %anchor {
 		font-family: var(--font-family-title) !important;
 	}
+
+	* {
+		border-radius: 0 !important;
+		text-decoration-color: currentColor !important;
+	}
 }
 
 .nineties {
