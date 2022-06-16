@@ -198,9 +198,16 @@
 		<li class=" [ syndicate-to ] ">
 			{% emoji '⤴️' %}
 			<small>also on</small>
-			{% if syndicate_to.length > 1 %}<ul class=" [ cluster ] [ meta__list ] ">{% endif %}
-			{% for syndication in syndicate_to %}{% if syndicate_to.length > 1 %}<li>{% endif %}<a href="{{ syndication }}">{{ syndication | getSyndicationTarget }}</a>{% if syndicate_to.length > 1 %}</li>{% endif %}{% endfor %}
-			{% if syndicate_to.length > 1 %}</ul>{% endif %}
+			<ul class=" [ cluster ] [ meta__list ] ">
+			{% for syndication in syndicate_to %}
+				<li>
+					<a href="{{ syndication }}">{{ syndication | getSyndicationTarget }}</a>
+					{% if syndication.includes("twitter.com") %}
+						(<indie-action do="reply" with="{{ site.url + page.url }}"><a href="https://twitter.com/intent/tweet?in_reply_to={{ syndication.split("/") | last }}">Reply</a></indie-action>, <indie-action do="repost" with="{{ site.url + page.url }}"><a href="https://twitter.com/intent/retweet?tweet_id={{ syndication.split("/") | last }}">Repost</a></indie-action>, <indie-action do="like" with="{{ site.url + page.url }}"><a href="https://twitter.com/intent/favorite?tweet_id={{ syndication.split("/") | last }}">Like</a></indie-action>)
+					{% endif %}
+				</li>
+			{% endfor %}
+			</ul>
 		</li>
 	{% endif %}
 	{% if posting_method %}

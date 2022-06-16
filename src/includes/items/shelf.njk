@@ -24,7 +24,7 @@
 	{# {%- include 'cover.njk' -%} #}
 	{# Rudimentary workaround... AGAIN #}
 	{% if item.data.cover %}
-		{% if item.url and item.data.tags and item.data.tags.includes('clickthrough') %}
+		{% if item.url and item.data.tags and "clickthrough" in item.data.tags %}
 			<a href="{{ item_of_url | default(item.url) | striptags(true) | safe }}" aria-hidden="true" tabindex="-1">
 		{% elif item.url %}
 			<a href="{{ item.url | striptags(true) | safe }}" aria-hidden="true" tabindex="-1">
@@ -41,7 +41,7 @@
 		{% endif %}
 	{% endif %}
 	<h1>
-		{% if item.url and item.data.tags and item.data.tags.includes('clickthrough') %}
+		{% if item.url and item.data.tags and "clickthrough" in item.data.tags %}
 			<a href="{{ item_of_url | default(item.url) | striptags(true) | safe }}">
 		{% elif item.url %}
 			<a href="{{ item.url | striptags(true) | safe }}">

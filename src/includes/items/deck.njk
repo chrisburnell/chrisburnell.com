@@ -137,7 +137,7 @@
 	{% endif %}
 	{% if item_title or item_of_title %}
 		<h1>
-			{% if item.data.tags and item.data.tags.includes('clickthrough') and item.data.emoji %}
+			{% if item.data.tags and "clickthrough" in item.data.tags and item.data.emoji %}
 				<a class=" [ p-name ] " href="{{ item_of_url | default(item.url) | striptags(true) | safe }}">
 					{% emoji item.data.emoji %}{{ item_title | default(item_of_title) | striptags(true) | safe }}
 				</a>
@@ -155,7 +155,7 @@
 	{% if show_photos %}
 		{% include 'photo.njk' %}
 	{% endif %}
-	{% if item.data.description and item.data.tags and (item.data.tags.includes('page') or item.data.tags.includes('writing')) %}
+	{% if item.data.description and item.data.tags and ("page" in item.data.tags or "writing" in item.data.tags) %}
 		<p class=" [ p-summary ] {% if item.data.category == 'article' %}[ line-clamp ] {% endif %}">{{ item.data.description | striptags(true) | urlize | safe }}</p>
 	{% elif item.data.description and item.data.description_markdown %}
 		<p class=" [ p-summary ] {% if item.data.category == 'article' %}[ line-clamp ] {% endif %}">{{ item.data.description | markdownFormat | safe }}</p>

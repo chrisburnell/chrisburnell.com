@@ -257,6 +257,10 @@
 	{% if speedlify[canonical] %}
 		<script defer src="/js/speedlify-score.js"></script>
 	{% endif %}
+	{% if syndicate_to %}
+		<script defer src="/js/indieconfig.js"></script>
+		<script defer src="/js/webaction.js"></script>
+	{% endif %}
 
 	{% if category == 'code' or codepen %}
 		<!-- CodePen Embeds -->

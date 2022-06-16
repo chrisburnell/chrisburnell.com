@@ -39,4 +39,16 @@ export default [
 			dir: "js",
 		},
 	},
+	{
+		input: "src/js/indieconfig.js",
+		output: {
+			dir: "js",
+		},
+	},
+	{
+		input: "src/js/webaction.js",
+		output: {
+			dir: "js",
+		},
+	},
 ]
