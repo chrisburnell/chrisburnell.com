@@ -4,13 +4,17 @@
 ////
 
 %image {
+	max-inline-size: 100%;
+	block-size: auto;
 	margin-inline: auto;
 	position: relative;
 
-	&,
-	a & {
-		max-inline-size: 100%;
-		block-size: auto;
+	%anchor & {
+		outline: var(--size-border-thin) solid transparent;
+		outline-offset: var(--size-border-thin);
+	}
+	%anchor:is(:hover, :focus, :active) & {
+		outline-color: h(raven);
 	}
 }
 img {

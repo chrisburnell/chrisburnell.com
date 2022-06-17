@@ -35,8 +35,7 @@ a {
 	color: h(dove);
 	display: none;
 	visibility: hidden;
-	padding-inline-start: var(--size-small);
-	padding-inline-end: var(--size-small);
+	padding-inline: var(--size-small);
 	position: absolute;
 	inset-block-start: var(--size-border-thin);
 	inset-inline-end: calc(var(--size-small) * -1);

@@ -4,14 +4,11 @@
 ////
 
 .meta {
+	--flow-space: var(--size-medium);
 	margin-block-start: var(--size-large);
 
 	@include media("above:medium") {
 		align-self: stretch;
-	}
-
-	& > * + * {
-		--flow-space: var(--size-medium);
 	}
 
 	h2 {
