@@ -10,8 +10,8 @@
 	position: relative;
 
 	%anchor & {
-		outline: var(--size-border-thin) solid transparent;
-		outline-offset: var(--size-border-thin);
+		outline: var(--size-border, var(--size-border-thin)) solid var(--color, transparent);
+		outline-offset: var(--size-border, var(--size-border-thin));
 	}
 	%anchor:is(:hover, :focus, :active) & {
 		outline-color: h(raven);

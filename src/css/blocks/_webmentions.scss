@@ -71,6 +71,8 @@
 }
 
 .webmentions__response__avatar {
+	--size-border: 0;
+
 	box-sizing: content-box;
 	inline-size: var(--size-avatar-small);
 	border: var(--size-border-default) solid h(raven, beta);

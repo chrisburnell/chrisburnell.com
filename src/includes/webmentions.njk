@@ -9,7 +9,10 @@
 			<button class=" [ webmentions__submit ] " type="submit" enterkeyhint="send">Send</button>
 		</form>
 		<div class=" [ webmentions__responses ] [ flow ] ">
-			{%- set reactions = page.url | getWebmentions(['like-of', 'repost-of', 'bookmark-of']) -%}
+			{%- set likes = page.url | getWebmentions(['like-of']) -%}
+			{%- set reposts = page.url | getWebmentions(['repost-of']) -%}
+			{%- set bookmarks = page.url | getWebmentions(['bookmark-of']) -%}
+			{%- set reactions = likes.concat(reposts).concat(bookmarks) -%}
 			{%- set replies = page.url | getWebmentions(['mention-of', 'in-reply-to']) -%}
 			{% if reactions.length or replies.length %}
 				<h2 id="responses">{{ reactions.length + replies.length }} Response{{ 's' if reactions.length + replies.length > 1 }}</h2>
