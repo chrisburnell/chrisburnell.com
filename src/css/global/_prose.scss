@@ -76,6 +76,11 @@ sub {
 }
 sup {
 	inset-block-start: 0;
+
+	time &::before {
+		content: " ";
+		font-size: 0.75em;
+	}
 }
 
 hr {

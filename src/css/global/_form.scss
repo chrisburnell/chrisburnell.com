@@ -32,9 +32,9 @@ textarea,
 
 input,
 textarea {
+	box-sizing: inherit !important;
 	background-color: h(milou);
 	color: h(thunder);
-	box-sizing: inherit !important;
 	padding: 0 0.4em;
 	border: var(--size-border-thin) solid h(alto);
 	border-radius: var(--size-border-default);
