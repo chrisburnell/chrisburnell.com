@@ -1,6 +1,14 @@
 const Natural = require("natural")
 const analyze = new Natural.SentimentAnalyzer("English", Natural.PorterStemmer, "afinn")
 
+const postTypes = {
+	like: "like-of",
+	repost: "repost-of",
+	bookmark: "bookmark-of",
+	link: "mention-of",
+	reply: "in-reply-to",
+}
+
 module.exports = {
 	limit: (array, limit) => {
 		return array.slice(0, limit)
@@ -23,6 +31,9 @@ module.exports = {
 			return value
 		}
 		return [value]
+	},
+	getPostType: (type) => {
+		return postTypes[type] || type
 	},
 	getSentimentValue: (content) => {
 		if (content) {

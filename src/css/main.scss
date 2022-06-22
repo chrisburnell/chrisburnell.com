@@ -44,6 +44,12 @@
 @import "global/table";
 @import "global/details";
 
+// Compositions
+@import "compositions/pantheon";
+@import "compositions/grid";
+@import "compositions/box";
+@import "compositions/cluster";
+
 // Blocks
 @import "blocks/logo";
 @import "blocks/perch";
@@ -72,12 +78,6 @@
 @import "blocks/spark-line";
 @import "blocks/browse";
 @import "blocks/ads";
-
-// Compositions
-@import "compositions/pantheon";
-@import "compositions/grid";
-@import "compositions/box";
-@import "compositions/cluster";
 
 // Utilities
 @import "utilities/wrap";

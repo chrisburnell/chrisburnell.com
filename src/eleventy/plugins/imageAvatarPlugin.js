@@ -4,7 +4,6 @@ const TwitterAvatarUrl = require("twitter-avatar-url")
 const Image = require("@11ty/eleventy-img")
 
 const site = require("#data/site")
-const author = require("#data/author")
 const twitterReplacements = require("#data/twitterReplacements")
 const queryFilters = require("#filters/queries")
 
@@ -98,13 +97,12 @@ module.exports = (eleventyConfig) => {
 	}
 
 	eleventyConfig.addNunjucksAsyncShortcode("avatar", async (photo, url, authorUrl, classes = "") => {
-		const mastodonHandle = queryFilters.getMastodonHandle(authorUrl)
+		const mastodonHandle = authorUrl ? queryFilters.getMastodonHandle(authorUrl) : null
 		if (url.includes("twitter.com")) {
-			let target = url.includes(author.twitter) ? (authorUrl.includes(site.url) ? url : authorUrl) : url
-			let username = fixTwitterUsername(target.split("twitter.com/")[1].split("/")[0])
+			let username = fixTwitterUsername(url.split("twitter.com/")[1].split("/")[0])
 			twitterUsernames.add(username.toLowerCase())
 			return storeAvatar(username, classes)
-		} else if (mastodonHandle !== authorUrl) {
+		} else if (photo && mastodonHandle && mastodonHandle != authorUrl) {
 			mastodonHandles.add({
 				handle: mastodonHandle,
 				photo: photo.toLowerCase(),

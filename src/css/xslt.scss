@@ -21,6 +21,12 @@
 @import "global/figure";
 @import "global/quotes";
 
+// Compositions
+@import "compositions/pantheon";
+@import "compositions/grid";
+@import "compositions/box";
+@import "compositions/cluster";
+
 // Blocks
 @import "blocks/anchors";
 @import "blocks/header";
@@ -33,12 +39,6 @@
 @import "blocks/updated";
 @import "blocks/media";
 @import "blocks/footer";
-
-// Compositions
-@import "compositions/pantheon";
-@import "compositions/grid";
-@import "compositions/box";
-@import "compositions/cluster";
 
 // Utilities
 @import "utilities/wrap";

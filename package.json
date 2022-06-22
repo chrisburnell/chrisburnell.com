@@ -26,7 +26,7 @@
     "@11ty/eleventy-plugin-directory-output": "^1.0.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
     "@chrisburnell/bowhead": "^0.3.1",
-    "@chrisburnell/eleventy-cache-webmentions": "^0.2.0",
+    "@chrisburnell/eleventy-cache-webmentions": "^0.2.1",
     "@chrisburnell/pentatonic": "^1.1.1",
     "@chrisburnell/spark-line": "^1.2.0",
     "@rollup/plugin-commonjs": "^22.0.0",
@@ -36,7 +36,7 @@
     "autoprefixer": "^10.4.7",
     "caniuse-api": "^3.0.0",
     "cheerio": "^1.0.0-rc.11",
-    "cssnano": "^5.1.11",
+    "cssnano": "^5.1.12",
     "dotenv": "^16.0.1",
     "glob-promise": "^4.2.2",
     "html-minifier": "^4.0.0",
@@ -44,15 +44,15 @@
     "luxon": "^2.4.0",
     "natural": "^5.2.2",
     "postcss-cli": "^9.1.0",
-    "prettier": "^2.7.0",
-    "rollup": "^2.75.6",
+    "prettier": "^2.7.1",
+    "rollup": "^2.75.7",
     "rollup-plugin-terser": "^7.0.2",
     "sass": "^1.52.3",
     "slugify": "^1.6.5",
     "twitter-avatar-url": "^2.2.0"
   },
   "devDependencies": {
-    "concurrently": "^7.2.1",
+    "concurrently": "^7.2.2",
     "cross-env": "^7.0.3"
   },
   "scripts": {

@@ -16,7 +16,11 @@
 
 	&:is(:hover, :focus, :active) {
 		background: none;
-		outline: none;
+
+		&,
+		%image {
+			outline: none;
+		}
 
 		%image {
 			transform: scale(1.1) rotate(6deg);

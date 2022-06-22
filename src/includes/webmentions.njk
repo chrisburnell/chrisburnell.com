@@ -9,66 +9,55 @@
 			<button class=" [ webmentions__submit ] " type="submit" enterkeyhint="send">Send</button>
 		</form>
 		<div class=" [ webmentions__responses ] [ flow ] ">
-			{%- set likes = page.url | getWebmentions(['like-of']) -%}
-			{%- set reposts = page.url | getWebmentions(['repost-of']) -%}
-			{%- set bookmarks = page.url | getWebmentions(['bookmark-of']) -%}
+			{%- set likes = page.url | getWebmentions(['like']) -%}
+			{%- set reposts = page.url | getWebmentions(['repost']) -%}
+			{%- set bookmarks = page.url | getWebmentions(['bookmark']) -%}
+			{%- set replies = page.url | getWebmentions(['reply', 'link']) -%}
 			{%- set reactions = likes.concat(reposts).concat(bookmarks) -%}
-			{%- set replies = page.url | getWebmentions(['mention-of', 'in-reply-to']) -%}
 			{% if reactions.length or replies.length %}
-				<h2 id="responses">{{ reactions.length + replies.length }} Response{{ 's' if reactions.length + replies.length > 1 }}</h2>
-				<dl class=" [ webmentions__list ] ">
-					{% if reactions.length %}
-						<dt class=" [ hidden ] ">Reactions:</dt>
-						<dd id="reactions" class=" [ webmentions__list__reactions ] ">
-							<ol class=" [ reactions ] ">
-								{% for webmention in reactions %}
-									{%- set authorName = webmention.author.name | default('Anonymous') -%}
-									{%- set authorUrl = webmention.author.url -%}
-									{%- set webmentionDate = webmention['wm-received'] -%}
-									{%- if webmention.published -%}{%- set webmentionDate = webmention.published -%}{%- endif -%}
-									<li id="webmention-{{ webmention['wm-id'] }}" class=" [ webmentions__response ] [ h-cite  p-{{ webmention['wm-property'] }} ] " data-type="{{ webmention['wm-property'] }}">
-										<a class=" [ webmentions__response__avatar ] [ p-author  h-card ] " href="{{ authorUrl | default(webmention.url) }}" title="{{ authorName | default(authorUrl) }} sent this {{ webmention['wm-property'] | replace('-of', '') | replace('in-reply-to', 'reply') }}">
-											{% avatar webmention.author.photo, webmention.url, webmention.author.url %}
-											<span class=" [ webmentions__response__name ] [ p-name ] ">{{ authorName }}</span>
-											<data class=" [ u-url  u-{{ webmention['wm-property'] }} ] " value="{{ webmention.url }}" hidden></data>
-										</a>
-										<span class=" [ webmentions__response__type ] " title="{{ webmention['wm-property'] }}" aria-hidden="true"></span>
-										<time class=" [ dt-published ] " datetime="{{ webmentionDate | rfcDate }}" hidden>{{ webmentionDate | friendlyDate }}</time>
-									</li>
-								{% endfor %}
-							</ol>
-						</dd>
-					{% endif %}
-					{% if replies.length %}
-						<dt>Replies:</dt>
-						<dd id="replies" class=" [ webmentions__list__replies ] ">
-							<ol class=" [ replies ] ">
-								{% for webmention in replies %}
-									{%- set authorName = webmention.author.name | default('Anonymous') -%}
-									{%- set authorUrl = webmention.author.url -%}
-									{%- set authorUrlHost = authorUrl | getHost -%}
-									{%- set webmentionDate = webmention['wm-received'] -%}
-									{%- if webmention.published -%}{%- set webmentionDate = webmention.published -%}{%- endif -%}
-									{%- set sentiment = webmention.content.text | getSentimentValue -%}
-									<li id="webmentions-{{ webmention['wm-id'] }}" class=" [ webmentions__response ] [ h-cite  p-comment ] {% if sentiment < -0.3 %}[ salty ] {% endif %}" data-type="{{ webmention['wm-property'] }}">
-										<div class=" [ webmentions__response__avatar ] ">
-											{% avatar webmention.author.photo, webmention.url, webmention.author.url %}
-										</div>
-										<div class=" [ webmentions__response__content ] [ e-content ] [ flow ] ">{{ webmention.summary.value | default(webmention.content.value) | fixUrl | safe }}</div>
-										<div class=" [ webmentions__response__meta ] ">
-											<small>by</small>
-											<a class=" [ p-author  h-card  u-url ] " href="{{ authorUrl }}" rel="external">
-												<span class=" [ p-name ] ">{{ authorName }}</span>
-											</a>
-											<small>on</small>
-											<a class=" [ u-url  u-{{ webmention['wm-property'] }} ] " href="{{ webmention.url }}" rel="external" title="Read externally"><time class=" [ webmentions__response__time ] " datetime="{{ webmentionDate | rfcDate }}">{{ webmentionDate | friendlyDate }}</time></a>
-										</div>
-									</li>
-								{% endfor %}
-							</ol>
-						</dd>
-					{% endif %}
-				</dl>
+				<h2 id="responses">{{ reactions.length + replies.length }} Response{{ 's' if (reactions.length + replies.length) > 1 }}</h2>
+				{% if reactions.length %}
+					<ol id="reactions" class=" [ cluster ] [ reactions ] [ strong ] ">
+						{% if likes.length %}
+							<li><span class=" [ emoji ] ">❤️</span> {{ likes.length }} Like{{ 's' if likes.length > 1 }}</li>
+						{% endif %}
+						{% if reposts.length %}
+							<li><span class=" [ emoji ] ">🔄️</span> {{ reposts.length }} Repost{{ 's' if reposts.length > 1 }}</li>
+						{% endif %}
+						{% if bookmarks.length %}
+							<li><span class=" [ emoji ] ">🔖</span> {{ bookmarks.length }} Bookmark{{ 's' if bookmarks.length > 1 }}</li>
+						{% endif %}
+					</ol>
+				{% endif %}
+				{% if replies.length %}
+					<ol id="replies" class=" [ replies ] [ flow ] ">
+						{% for webmention in replies %}
+							{% if webmention.data.content %}
+								{%- set wmId = webmention.id -%}
+								{%- set wmType = webmention.activity.type | getPostType -%}
+								{%- set wmDate = webmention.data.published -%}
+								{%- set wmSource = webmention.data.url -%}
+								{%- set wmContent = webmention.data.content -%}
+								{%- set authorPhoto = webmention.data.author.photo -%}
+								{%- set authorUrl = webmention.data.author.url | default(wmSource) -%}
+								{%- set authorName = webmention.data.author.name | default("Anonymous") -%}
+								{%- set sentiment = wmContent | striptags(true) | getSentimentValue -%}
+								<li id="webmention-{{ wmId }}" class=" [ webmentions__response ] [ h-cite  p-comment ] {% if sentiment < -0.3 %}[ salty ] {% endif %}" data-type="{{ wmType }}">
+									<div class=" [ webmentions__response__avatar ] ">
+										{% avatar authorPhoto, wmSource, authorUrl %}
+									</div>
+									<div class=" [ webmentions__response__meta ] ">
+										<small>by</small>
+										<a class=" [ p-author  h-card  u-url ] " href="{{ authorUrl }}" rel="external" tabindex="-1"><span class=" [ p-name ] ">{{ authorName }}</span></a>
+										<small>on</small>
+										<a class=" [ u-url  u-{{ wmType }} ] " href="{{ wmSource }}" rel="external" title="Read externally"><time datetime="{{ wmDate | rfcDate }}">{{ wmDate | friendlyDate }}</time></a>
+									</div>
+									<div class=" [ e-content ] [ flow ] ">{{ wmContent | fixUrl | safe }}</div>
+								</li>
+							{% endif %}
+						{% endfor %}
+					</ol>
+				{% endif %}
 			{% endif %}
 		</div>
 	</div>

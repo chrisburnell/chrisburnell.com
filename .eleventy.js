@@ -51,8 +51,10 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.addPlugin(syntaxHighlightPlugin)
 	eleventyConfig.addPlugin(webmentionsPlugin, {
 		domain: site.url,
-		feed: `https://webmention.io/api/mentions.jf2?domain=${new URL(site.url).hostname}&token=${process.env.WEBMENTION_IO_TOKEN}&per-page=9001`,
-		key: "children",
+		feed: `https://webmention.io/api/mentions.json?domain=${new URL(site.url).hostname}&token=${process.env.WEBMENTION_IO_TOKEN}&per-page=9001`,
+		key: "links",
+		// feed: `https://jam.chrisburnell.com/webmention/chrisburnell.com/${process.env.GO_JAMMING_TOKEN}`,
+		// key: "json",
 		duration: site.cacheDuration,
 		urlReplacements: urlReplacements,
 		maximumHtmlLength: 1000,
