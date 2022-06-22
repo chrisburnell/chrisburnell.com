@@ -9,15 +9,19 @@
 			<button class=" [ webmentions__submit ] " type="submit" enterkeyhint="send">Send</button>
 		</form>
 		<div class=" [ webmentions__responses ] [ flow ] ">
+			{%- set mentions = page.url | getWebmentions(['link']) -%}
 			{%- set likes = page.url | getWebmentions(['like']) -%}
 			{%- set reposts = page.url | getWebmentions(['repost']) -%}
 			{%- set bookmarks = page.url | getWebmentions(['bookmark']) -%}
-			{%- set replies = page.url | getWebmentions(['reply', 'link']) -%}
-			{%- set reactions = likes.concat(reposts).concat(bookmarks) -%}
+			{%- set replies = page.url | getWebmentions(['reply']) -%}
+			{%- set reactions = mentions.concat(likes).concat(reposts).concat(bookmarks) -%}
 			{% if reactions.length or replies.length %}
 				<h2 id="responses">{{ reactions.length + replies.length }} Response{{ 's' if (reactions.length + replies.length) > 1 }}</h2>
 				{% if reactions.length %}
 					<ol id="reactions" class=" [ cluster ] [ reactions ] [ strong ] ">
+						{% if mentions.length %}
+							<li><span class=" [ emoji ] ">🔗</span> {{ mentions.length }} Mention{{ 's' if mentions.length > 1 }}</li>
+						{% endif %}
 						{% if likes.length %}
 							<li><span class=" [ emoji ] ">❤️</span> {{ likes.length }} Like{{ 's' if likes.length > 1 }}</li>
 						{% endif %}

@@ -5,32 +5,13 @@
 
 pre[class*="language-"] {
 	background-color: h(lynx);
-	min-inline-size: 0;
-	max-inline-size: 100%;
 	padding: var(--size-gutter);
 	border-block-start: var(--size-border-thin) solid var(--border-color, h(raven, beta));
 	border-radius: 1px 1px var(--size-border-default) var(--size-border-default);
-	overflow: hidden;
-	position: relative;
 
 	&,
 	code {
 		color: h(milou);
-		display: block;
-		font-family: var(--font-family-monospace);
-		line-height: var(--line-height-code);
-		overflow-wrap: normal;
-		white-space: pre;
-		word-break: normal;
-		word-spacing: normal;
-		word-wrap: normal;
-	}
-
-	code {
-		background-color: transparent;
-		border-radius: 0;
-		overflow: auto;
-		scrollbar-color: h(raven) h(lynx);
 	}
 
 	// Highlighted Code Block Labels

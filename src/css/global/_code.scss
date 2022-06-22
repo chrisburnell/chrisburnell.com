@@ -38,9 +38,32 @@ var {
 }
 
 pre {
+	min-inline-size: 0;
+	max-inline-size: 100%;
 	margin: 0;
 	tab-size: 4;
 	font-size: initial;
 	hyphens: none;
 	white-space: pre-wrap;
+	overflow: hidden;
+	position: relative;
+
+	&,
+	code {
+		display: block;
+		font-family: var(--font-family-monospace);
+		line-height: var(--line-height-code);
+		overflow-wrap: normal;
+		white-space: pre;
+		word-break: normal;
+		word-spacing: normal;
+		word-wrap: normal;
+	}
+
+	code {
+		background-color: transparent;
+		border-radius: 0;
+		overflow: auto;
+		scrollbar-color: h(raven) h(lynx);
+	}
 }

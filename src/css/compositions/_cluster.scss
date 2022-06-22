@@ -18,6 +18,7 @@
 				content: var(--delineator, "·");
 				display: inline-block;
 				padding-inline: var(--padding-inline, var(--size-tiny));
+				font-weight: var(--font-weight-bold);
 			}
 		}
 	}
