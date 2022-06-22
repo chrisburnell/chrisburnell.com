@@ -46,7 +46,7 @@
 								{%- set authorUrl = webmention.data.author.url | default(wmSource) -%}
 								{%- set authorName = webmention.data.author.name | default("Anonymous") -%}
 								{%- set sentiment = wmContent | striptags(true) | getSentimentValue -%}
-								<li id="webmention-{{ wmId }}" class=" [ webmentions__response ] [ h-cite  p-comment ] {% if sentiment < -0.3 %}[ salty ] {% endif %}" data-type="{{ wmType }}">
+								<li id="webmention-{{ wmId }}" class=" [ webmentions__response ] [ h-cite  p-comment ] " data-type="{{ wmType }}">
 									<div class=" [ webmentions__response__avatar ] ">
 										{% avatar authorPhoto, wmSource, authorUrl %}
 									</div>
@@ -56,7 +56,7 @@
 										<small>on</small>
 										<a class=" [ u-url  u-{{ wmType }} ] " href="{{ wmSource }}" rel="external" title="Read externally"><time datetime="{{ wmDate | rfcDate }}">{{ wmDate | friendlyDate }}</time></a>
 									</div>
-									<div class=" [ e-content ] [ flow ] ">{{ wmContent | fixUrl | safe }}</div>
+									<div class=" [ e-content ] [ flow ] {% if sentiment < -0.3 %}[ salty ] {% endif %}">{{ wmContent | fixUrl | safe }}</div>
 								</li>
 							{% endif %}
 						{% endfor %}
