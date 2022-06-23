@@ -49,7 +49,7 @@ pre {
 	position: relative;
 
 	&,
-	code {
+	%monospace {
 		display: block;
 		font-family: var(--font-family-monospace);
 		line-height: var(--line-height-code);
@@ -60,7 +60,7 @@ pre {
 		word-wrap: normal;
 	}
 
-	code {
+	%monospace {
 		background-color: transparent;
 		border-radius: 0;
 		overflow: auto;

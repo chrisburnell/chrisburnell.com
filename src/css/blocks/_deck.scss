@@ -31,7 +31,9 @@
 	}
 
 	%anchor {
-		color: inherit;
+		&:not(:is(:hover, :focus, :active)) {
+			color: inherit;
+		}
 	}
 }
 
