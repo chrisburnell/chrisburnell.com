@@ -16,13 +16,13 @@ toc: true
 js: spark-line.js
 ---
 
-<figure>
-    <spark-line values="0,0,2,5,7,13,13,18,14,11,19,44,37,37,38,27,23,9,6,5,6,1,1,2,1,0" key-start="23" endpoint-color="#eb2d36" class="pentatonic"></spark-line>
-</figure>
-
 [![chrisburnell - spark-line](https://img.shields.io/static/v1?label=chrisburnell&message=spark-line&color=5f8aa6&logo=github)](https://github.com/chrisburnell/spark-line "Go to GitHub repo") [![stars - spark-line](https://img.shields.io/github/stars/chrisburnell/spark-line?style=social)](https://github.com/chrisburnell/spark-line) [![forks - spark-line](https://img.shields.io/github/forks/chrisburnell/spark-line?style=social)](https://github.com/chrisburnell/spark-line)
 
 [![GitHub release](https://img.shields.io/github/release/chrisburnell/spark-line?include_prereleases=&sort=semver&color=5f8aa6)](https://github.com/chrisburnell/spark-line/releases/) [![License](https://img.shields.io/badge/License-CC0-5f8aa6)](https://github.com/chrisburnell/spark-line/blob/main/LICENSE)
+
+<figure>
+    <spark-line values="0,0,2,5,7,13,13,18,14,11,19,44,37,37,38,27,23,9,6,5,6,1,1,2,1,0" key-start="23" endpoint-color="#eb2d36" class="pentatonic"></spark-line>
+</figure>
 
 <div class="box">
     <p>Hey, psst!… You can jump straight down to the <a href="#examples">examples</a>!</p>
