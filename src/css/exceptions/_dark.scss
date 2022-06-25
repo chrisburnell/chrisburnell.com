@@ -71,15 +71,6 @@
 		}
 	}
 
-	pre[class*="language-"] {
-		background-color: h(thunder);
-		background-image: linear-gradient(to bottom, transparent 0, transparent calc(v(size, gap) - v(size, border-thin)), h(raven, beta) calc(v(size, gap) - v(size, border-thin)), h(raven, beta) v(size, gap), h(thunder, gamma) v(size, gap), h(thunder, gamma) 100%);
-
-		code {
-			background-color: transparent;
-		}
-	}
-
 	:is(ol, ul):not([class]),
 	.breadcrumbs {
 		li {

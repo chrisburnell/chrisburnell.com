@@ -155,29 +155,63 @@
 }
 
 .size-example {
-	background-color: h(alto);
-	background-image: linear-gradient(to bottom, h(maple), h(maple));
-	background-position: center center;
-	background-size: 100% var(--size-border-thin);
-	background-repeat: no-repeat;
-	block-size: var(--size-medium);
+	background-color: h(raven);
+	// prettier-ignore
+	background-image:
+		linear-gradient(
+			45deg,
+			transparent 0%,
+			transparent calc(50% - (var(--size-border-default) / 2)),
+			#{h(maple)} calc(50% - (var(--size-border-default) / 2)),
+			#{h(maple)} calc(50% + (var(--size-border-default) / 2)),
+			transparent calc(50% + (var(--size-border-default) / 2)),
+			transparent
+		),
+		linear-gradient(
+			-45deg,
+			transparent 0%,
+			transparent calc(50% - (var(--size-border-default) / 2)),
+			#{h(maple)} calc(50% - (var(--size-border-default) / 2)),
+			#{h(maple)} calc(50% + (var(--size-border-default) / 2)),
+			transparent calc(50% + (var(--size-border-default) / 2)),
+			transparent
+		);
+	background-size: 100%;
 	display: block;
 }
 .size-example--tiny {
 	inline-size: var(--size-tiny);
+	block-size: var(--size-tiny);
 }
 .size-example--small {
 	inline-size: var(--size-small);
+	block-size: var(--size-small);
 }
 .size-example--medium {
 	inline-size: var(--size-medium);
+	block-size: var(--size-medium);
 }
 .size-example--large {
 	inline-size: var(--size-large);
+	block-size: var(--size-large);
 }
 .size-example--gigantic {
 	inline-size: var(--size-gigantic);
+	block-size: var(--size-gigantic);
 }
-.size-example--responsive {
-	inline-size: var(--size-line-length);
+.size-example--tiny-small {
+	inline-size: var(--size-tiny-small);
+	block-size: var(--size-tiny-small);
+}
+.size-example--small-medium {
+	inline-size: var(--size-small-medium);
+	block-size: var(--size-small-medium);
+}
+.size-example--medium-large {
+	inline-size: var(--size-medium-large);
+	block-size: var(--size-medium-large);
+}
+.size-example--large-gigantic {
+	inline-size: var(--size-large-gigantic);
+	block-size: var(--size-large-gigantic);
 }

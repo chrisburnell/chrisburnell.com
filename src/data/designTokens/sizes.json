@@ -15,6 +15,6 @@
   "logo": "clamp(9rem, 28.8vw + -3.6rem, 18rem)",
   "logo-small": "clamp(5rem, 6.667vw + 0.825rem, 7.5rem)",
   "line-length": "clamp(21em, 100vw, 30em)",
-  "border-default": "0.25rem",
-  "border-thin": "0.125rem"
+  "border-default": "4px",
+  "border-thin": "2px"
 }
