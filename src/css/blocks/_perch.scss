@@ -19,8 +19,8 @@
 		inset-block-end: 0;
 		z-index: var(--z-index-below);
 		transform: translateX(-35%) translateY(-10%) scaleX(-1);
-		animation: var(--animation-duration) ease-out var(--animation-fill-mode) perch;
 		will-change: transform;
+		animation: var(--animation-duration) ease-out var(--animation-fill-mode) perch;
 
 		@at-root {
 			@keyframes perch {
