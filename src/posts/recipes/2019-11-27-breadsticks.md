@@ -33,8 +33,6 @@ authors:
 photo:
   - url: breadsticks.jpg
     alt: Warm and fluffy breadsticks made by yours truly
-syndicate_to:
-  - https://mymothers.recipes/recipe/WV4RI947lj3Rr5UpEUE4
 ---
 
 0. Add warm water, yeast and ½ tsp of the sugar to the bowl of a stand mixer and stir gently. Allow to rest for 10 minutes. The yeast should "proof" during this time, meaning the water mixture will get slightly foamy looking, which confirms the yeast is working. If this doesn't happen, your yeast is not fresh, or the water was too hot.
