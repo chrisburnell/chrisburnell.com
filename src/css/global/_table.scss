@@ -39,7 +39,7 @@ th {
 	white-space: nowrap;
 
 	&:not(:empty) {
-		background-color: h(thunder, delta);
+		background-color: h(alto);
 		position: sticky;
 		z-index: var(--z-index-above);
 
