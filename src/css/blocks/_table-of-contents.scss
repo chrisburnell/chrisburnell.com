@@ -1,0 +1,27 @@
+////
+/// Table of Contents
+/// @group blocks
+////
+
+.table-of-contents {
+	overflow-x: hidden;
+	overflow-y: auto;
+	overscroll-behavior: contain;
+	scrollbar-gutter: stable;
+
+	@include media("below:medium") {
+		max-block-size: 60vh;
+	}
+
+	@include media("above:medium") {
+		max-block-size: calc(60vh - var(--size-medium) * 2);
+		position: sticky;
+		top: var(--size-medium);
+	}
+
+	li {
+		&::marker {
+			color: h(kaiser);
+		}
+	}
+}
