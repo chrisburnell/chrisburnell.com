@@ -53,6 +53,10 @@
 			white-space: normal;
 		}
 	}
+
+	%heading + & {
+		display: block;
+	}
 }
 
 // Table of Contents, meta box variant
