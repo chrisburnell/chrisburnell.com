@@ -45,6 +45,10 @@
 
 	&.cluster {
 		display: inline;
+
+		%heading + & {
+			display: block;
+		}
 	}
 
 	.meta__information &.cluster {
@@ -52,10 +56,6 @@
 			display: inline;
 			white-space: normal;
 		}
-	}
-
-	%heading + & {
-		display: block;
 	}
 }
 
