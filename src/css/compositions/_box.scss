@@ -35,9 +35,7 @@
 	}
 
 	%anchor {
-		&:not(:active) {
-			color: h(bowhead);
-		}
+		color: h(bowhead);
 	}
 }
 

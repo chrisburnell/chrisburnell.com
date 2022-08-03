@@ -31,8 +31,8 @@
 	}
 
 	&:active {
-		background-color: h(maple);
-		color: h(milou);
+		background-color: h(maple) !important;
+		color: h(milou) !important;
 		outline-width: var(--size-border-thin);
 		outline-offset: 0;
 	}
