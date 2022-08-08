@@ -42,9 +42,7 @@ module.exports = (value, outputPath) => {
 				${$(this).html()}
 				<a class=" [ fragment-anchor ] " href="#${headingID}" title="Permalink for ${$(this).text().trim()}">
 					<span class="hidden"> permalink</span>
-					<svg fill="currentColor" aria-hidden="true" focusable="false" width="1em" height="1em">
-						<use href="/images/sprites.svg#svg--link"></use>
-					</svg>
+					¶
 				</a>
 			`)
 			)
@@ -56,6 +54,36 @@ module.exports = (value, outputPath) => {
 		preformatted.each(function () {
 			$(this).attr("tabindex", 0)
 		})
+
+		// Look for Custom HTML elements on the page, conditionally adding a
+		// module script to the page when found
+		const moduleMap = [
+			{
+				file: "librarian.js",
+				function: "librarian",
+				selector: "button[data-sort]",
+			},
+			{
+				file: "url-input.js",
+				function: "urlInput",
+				selector: "input[type=url]",
+			},
+			{
+				file: "spark-line.js",
+				function: "sparkline",
+				selector: "spark-line",
+			},
+		]
+		for (let module of moduleMap) {
+			if ($(module.selector).length) {
+				$(`
+					<script type="module">
+						import ${module.function} from "/js/${module.file}"
+						${module.function}()
+					</script>
+				`).appendTo("body")
+			}
+		}
 
 		return $.root().html()
 	}

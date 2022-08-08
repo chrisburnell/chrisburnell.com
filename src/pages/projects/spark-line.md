@@ -13,7 +13,7 @@ tags:
   - package
   - web-component
 toc: true
-js: spark-line.js
+js: spark-line-demo.js
 ---
 
 [![chrisburnell - spark-line](https://img.shields.io/static/v1?label=chrisburnell&message=spark-line&color=5f8aa6&logo=github)](https://github.com/chrisburnell/spark-line "Go to GitHub repo") [![stars - spark-line](https://img.shields.io/github/stars/chrisburnell/spark-line?style=social)](https://github.com/chrisburnell/spark-line) [![forks - spark-line](https://img.shields.io/github/forks/chrisburnell/spark-line?style=social)](https://github.com/chrisburnell/spark-line)

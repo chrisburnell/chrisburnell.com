@@ -94,10 +94,10 @@
 
 // Sorting labels
 [data-sort][aria-sort="ascending"]::after {
-	content: "​ ▲ ​";
+	content: "​ ↑ ​";
 }
 [data-sort][aria-sort="descending"]::after {
-	content: "​ ▼ ​";
+	content: "​ ↓ ​";
 }
 
 // Limit lines

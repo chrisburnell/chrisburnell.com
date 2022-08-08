@@ -4,6 +4,7 @@
 ////
 
 .logo {
+	background-color: transparent !important;
 	block-size: var(--size-logo-small);
 	inline-size: var(--size-logo-small);
 	display: flex;

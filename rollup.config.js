@@ -16,15 +16,6 @@ export default [
 		plugins: process.env.ELEVENTY_PRODUCTION ? [commonjs(), nodeResolve(), terser()] : [commonjs(), nodeResolve()],
 	},
 	{
-		input: "src/js/main-dev.js",
-		output: {
-			dir: "js",
-			format: "iife",
-			name: "mainDev",
-		},
-		plugins: [commonjs(), nodeResolve()],
-	},
-	{
 		input: "src/js/simple.js",
 		output: {
 			dir: "js",
@@ -34,19 +25,45 @@ export default [
 		plugins: process.env.ELEVENTY_PRODUCTION ? [commonjs(), nodeResolve(), terser()] : [commonjs(), nodeResolve()],
 	},
 	{
-		input: "src/js/speedlify-score.js",
+		input: "src/js/common/navigator.js",
+		output: {
+			dir: "js",
+			format: "iife",
+			name: "navigator",
+		},
+	},
+	{
+		input: "src/js/modules/librarian.js",
 		output: {
 			dir: "js",
 		},
 	},
 	{
-		input: "src/js/indieconfig.js",
+		input: "src/js/modules/url-input.js",
 		output: {
 			dir: "js",
 		},
 	},
 	{
-		input: "src/js/webaction.js",
+		input: "src/js/vendor/speedlify-score.js",
+		output: {
+			dir: "js",
+		},
+	},
+	{
+		input: "src/js/vendor/indieconfig.js",
+		output: {
+			dir: "js",
+		},
+	},
+	{
+		input: "src/js/vendor/webaction.js",
+		output: {
+			dir: "js",
+		},
+	},
+	{
+		input: "node_modules/@chrisburnell/spark-line/spark-line.js",
 		output: {
 			dir: "js",
 		},

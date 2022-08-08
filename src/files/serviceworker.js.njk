@@ -23,7 +23,8 @@ const TIMEOUT = 15000
 
 // Files that *must* be cached
 const REQUIRED_FILES = [
-	"/js/main.js?{{ pkg.version }}",
+	"/js/main.js?v={{ pkg.version }}",
+	"/js/navigator.js?v={{ pkg.version }}",
 ]
 
 // Files that are cached but non-blocking
@@ -33,7 +34,6 @@ const OPTIONAL_FILES = [
 	"/fonts/proxima-nova-semibold.woff2",
 	"/fonts/proxima-nova-italic.woff2",
 	"/images/raven.svg",
-	"/images/sprites.svg",
 ]
 
 // Pages to cache

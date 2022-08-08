@@ -1,8 +1,8 @@
-import colorScheme from "./modules/color-scheme"
+import colorScheme from "./common/color-scheme"
 colorScheme()
 
-import welcome from "./modules/welcome"
+import welcome from "./common/welcome"
 welcome()
 
-import shareButton from "./modules/share-button"
+import shareButton from "./common/share-button"
 shareButton()

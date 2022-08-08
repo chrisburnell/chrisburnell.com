@@ -1,23 +1,11 @@
-import navigatorHandler from "./modules/navigator"
-navigatorHandler()
-
-import colorScheme from "./modules/color-scheme"
+import colorScheme from "./common/color-scheme"
 colorScheme()
 
-import welcome from "./modules/welcome"
+import welcome from "./common/welcome"
 welcome()
 
-import librarian from "./modules/librarian"
-librarian()
-
-import urlInput from "./modules/url-input"
-urlInput()
-
-import sparkline from "@chrisburnell/spark-line"
-sparkline()
-
-import sounds from "./modules/sounds"
+import sounds from "./common/sounds"
 sounds()
 
-import shareButton from "./modules/share-button"
+import shareButton from "./common/share-button"
 shareButton()

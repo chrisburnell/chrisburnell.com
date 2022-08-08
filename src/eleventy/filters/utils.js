@@ -14,8 +14,13 @@ module.exports = {
 		return array.slice(0, limit)
 	},
 	arrayKeyEquals: (array, key, value) => {
-		return array.filter((a) => {
-			return a[key] === value
+		return array.filter((item) => {
+			const keys = key.split(".")
+			const reducedKey = keys.reduce((object, key) => {
+				return object[key]
+			}, item)
+
+			return reducedKey === value ? item : false
 		})
 	},
 	keyValue: (object, key) => {
