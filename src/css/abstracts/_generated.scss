@@ -12,7 +12,7 @@ $colors: (
 	highland: #80b7d7,
 	coyote: #c0dbed,
 	bear: #ebf3f9,
-	maple: #eb2d36,
+	maple: #e0151f,
 	conifer: #3d8137,
 	aspen: #ffd700,
 	thunder: #060606,
@@ -80,8 +80,8 @@ $sizes: (
 	logo: clamp(9rem, 28.8vw + -3.6rem, 18rem),
 	logo-small: clamp(5rem, 6.667vw + 0.825rem, 7.5rem),
 	line-length: clamp(21em, 100vw, 30em),
-	border-default: 0.25rem,
-	border-thin: 0.125rem,
+	border-default: 4px,
+	border-thin: 2px,
 );
 $viewports: (
 	title: "Viewports",
