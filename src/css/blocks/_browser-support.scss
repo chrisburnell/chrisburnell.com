@@ -15,17 +15,14 @@
 	}
 
 	.supported {
-		background-color: h(conifer);
-		color: h(milou);
+		@extend .background--conifer;
 	}
 
 	.partial {
-		background-color: h(aspen);
-		color: h(kaiser);
+		@extend .background--aspen;
 	}
 
 	.unsupported {
-		background-color: h(maple);
-		color: h(thunder);
+		@extend .background--maple;
 	}
 }
