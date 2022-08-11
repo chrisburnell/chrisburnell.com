@@ -4,7 +4,6 @@
 ////
 
 .logo {
-	background-color: transparent !important;
 	block-size: var(--size-logo-small);
 	inline-size: var(--size-logo-small);
 	display: flex;
@@ -16,7 +15,7 @@
 	}
 
 	&:is(:hover, :focus, :active) {
-		background: none;
+		background: none !important;
 
 		&,
 		%image {
