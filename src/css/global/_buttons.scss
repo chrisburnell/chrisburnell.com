@@ -54,6 +54,8 @@ button {
 	}
 
 	&:active {
+		background-color: h(bowhead) !important;
+		color: h(bear) !important;
 		transform: translateY(var(--size-border-default));
 
 		&::before {
