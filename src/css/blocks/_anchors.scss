@@ -32,21 +32,21 @@ a {
 
 // Fragment Anchors inside Headings
 .fragment-anchor {
-	color: h(dove);
 	display: none;
 	visibility: hidden;
+	color: h(dove);
 	padding-inline: var(--size-small);
 	position: absolute;
-	inset-block-start: var(--size-border-thin);
+	inset-block-start: 50%;
 	inset-inline-end: calc(var(--size-small) * -1);
 	font-family: var(--font-family-monospace);
 	font-size: inherit;
 	font-weight: var(--font-weight-bold);
-	line-height: var(--line-height-default);
 	text-shadow: none;
 	text-transform: lowercase;
+	transform: translateY(calc(-50% - (var(--size-border-thin) * 2)));
 
-	h2:is(:hover, :focus, :active) &,
+	%heading:is(:hover, :focus, :active) &,
 	&:target {
 		display: inline-block;
 		visibility: visible;
