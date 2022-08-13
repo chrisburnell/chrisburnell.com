@@ -1,7 +1,7 @@
 ---
 date: 2018-11-07T12:13:00+0000
 title: Numerals, Romanticised
-description: For a better part of the year, I've been working on a Jekyll-based Progressive Web App, <a href="https://bloodbuilder.online" rel="me  external">BloodBuilder</a>, for managing my Sorcerer in a game of Pathfinder I've been playing with some friends. One of the many intricate parts of logic involves the ability to convert Arabic numerals to and from Roman numerals, so I wrote a simple Liquid include to handle this.
+description: For a better part of the year, I've been working on a Jekyll-based Progressive Web App, <a href="https://dnd.chrisburnell.com/feonir/" rel="me  external">BloodBuilder</a>, for managing my Sorcerer in a game of Pathfinder I've been playing with some friends. One of the many intricate parts of logic involves the ability to convert Arabic numerals to and from Roman numerals, so I wrote a simple Liquid include to handle this.
 tags:
   - jekyll
   - liquid
@@ -10,7 +10,7 @@ further_reading:
   - title: Roman numerals on Wikipedia
     url: https://en.wikipedia.org/wiki/Roman_numerals
   - title: BloodBuilder, a Super Simple PWA for 1st Edition Pathfinder Pure Core Classes
-    url: https://bloodbuilder.online/
+    url: https://dnd.chrisburnell.com/feonir/
 syndicate_to:
   - https://mastodon.social/users/chrisburnell/statuses/101029942322511486
   - https://twitter.com/iamchrisburnell/status/1060150621091827712
