@@ -5,6 +5,8 @@ description: What’s the deal with relative units? Let’s find out.
 tags:
   - css
   - writing
+syndicate_to:
+  - https://social.chrisburnell.com/users/chris/statuses/108828106678063995
 ---
 
 You can think of `em` as a multiplier of the `font-size` you would get from `inherit`, i.e. *this* element’s *parent*.
