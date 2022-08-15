@@ -148,4 +148,4 @@ This means `<element>`'s `font-size` equals:
 
 ## You’re in control
 
-Ultimately, how you choose to structure your CSS is up to you. I enjoy embracing the cascade and building on the responsive nature of relative and parent-relative units. Let me know if you have a different way of thinking about this concept or a different way to utilise units in CSS!
+Ultimately, how you choose to structure your CSS is up to you. I enjoy embracing the cascade and building on the responsive nature of relative and parent-relative units. Let me know if you have a different way of thinking about this concept or a different way to utilise units in CSS! You can learn more about [absolute and relative units on MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units).
