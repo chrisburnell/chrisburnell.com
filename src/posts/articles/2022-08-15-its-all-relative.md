@@ -26,8 +26,8 @@ As we look at each element here, we can notice where things change as we dive in
     <thead>
         <tr>
             <th> </th>
-            <th><code>1em</code> <strong>=</strong></th>
-            <th><code>1rem</code> <strong>=</strong></th>
+            <th><code>1em =</code></th>
+            <th><code>1rem =</code></th>
         </tr>
     </thead>
     <tbody>
@@ -73,6 +73,12 @@ That means `<element>`'s `font-size` equals:
 </figure>
 
 <table>
+    <thead>
+        <tr>
+            <th> </th>
+            <th>calculated value</th>
+        </tr>
+    </thead>
     <tbody>
         <tr>
             <th><code>&lt;body&gt;</code></th>
@@ -116,6 +122,12 @@ This means `<element>`'s `font-size` equals:
 </figure>
 
 <table>
+    <thead>
+        <tr>
+            <th> </th>
+            <th>calculated value</th>
+        </tr>
+    </thead>
     <tbody>
         <tr>
             <th><code>&lt;body&gt;</code></th>
