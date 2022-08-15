@@ -32,11 +32,6 @@ As we look at each element here, we can notice where things change as we dive in
     </thead>
     <tbody>
         <tr>
-            <th><code>&lt;html&gt;</code></th>
-            <td><strong>1 ×</strong> <code>&lt;html&gt;</code></td>
-            <td><strong>1 ×</strong> <code>&lt;html&gt;</code></td>
-        </tr>
-        <tr>
             <th><code>&lt;body&gt;</code></th>
             <td><strong>1 ×</strong> <code>&lt;html&gt;</code></td>
             <td><strong>1 ×</strong> <code>&lt;html&gt;</code></td>
@@ -77,6 +72,23 @@ That means `<element>`'s `font-size` equals:
     <samp class="beta  center">1.5 × <var>&lt;parent&gt;</var> × <var>&lt;body&gt;</var> × <var>&lt;html&gt;</var><br>=<br>1.5 &times; 1 &times; clamp(1em, 0.75em + 0.8vw, 1.25em) &times; 1rem<br>=<br><em>between</em> 1.5rem <em>and</em> 1.875rem <em>@ 500–1000px browser width</em></samp>
 </figure>
 
+<table>
+    <tbody>
+        <tr>
+            <th><code>&lt;body&gt;</code></th>
+            <td><code>1rem</code>–<code>1.25rem</code></td>
+        </tr>
+        <tr>
+            <th><code>&lt;parent&gt;</code></th>
+            <td><code>1rem</code>–<code>1.25rem</code></td>
+        </tr>
+        <tr>
+            <th><code>&lt;element&gt;</code></th>
+            <td><code>1.5rem</code>–<code>1.875rem</code></td>
+        </tr>
+    </tbody>
+</table>
+
 ## Broken tree
 
 **However**, if `<parent>` has a non-relative `font-size` set:
@@ -102,6 +114,23 @@ This means `<element>`'s `font-size` equals:
 <figure>
     <samp class="beta  center">1.5 × <var>&lt;parent&gt;</var><br>=<br>1.5 &times; 30px<br>=<br>45px</samp>
 </figure>
+
+<table>
+    <tbody>
+        <tr>
+            <th><code>&lt;body&gt;</code></th>
+            <td><code>1rem</code>–<code>1.25rem</code></td>
+        </tr>
+        <tr>
+            <th><code>&lt;parent&gt;</code></th>
+            <td><code>30px</code></td>
+        </tr>
+        <tr>
+            <th><code>&lt;element&gt;</code></th>
+            <td><code>45px</code></td>
+        </tr>
+    </tbody>
+</table>
 
 ## You’re in control
 
