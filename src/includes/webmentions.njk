@@ -54,7 +54,7 @@
 										<small>by</small>
 										<a class=" [ p-author  h-card  u-url ] " href="{{ authorUrl }}" rel="external" tabindex="-1"><span class=" [ p-name ] ">{{ authorName }}</span></a>
 										<small>on</small>
-										<a class=" [ u-url  u-{{ wmType }} ] " href="{{ wmSource }}" rel="external" title="Read externally"><time datetime="{{ wmDate | rfcDate }}">{{ wmDate | friendlyDate }}</time></a>
+										<a class=" [ u-url  u-{{ wmType }} ] " href="{{ wmSource }}" rel="external" title="Read externally"><time datetime="{{ wmDate | rfcDate }}">{{ wmDate | friendlyDateLong | safe }}</time></a>
 									</div>
 									<div class=" [ e-content ] [ flow ] {% if sentiment < -0.3 %}[ salty ] {% endif %}">{{ wmContent | fixUrl | safe }}</div>
 								</li>

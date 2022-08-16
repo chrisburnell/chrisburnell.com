@@ -122,11 +122,13 @@ module.exports = {
 			})
 	},
 	upcomingRSVPs: (collection) => {
+		const durationDay = 24 * 60 * 60 * 1000
 		return collection
 			.getFilteredByTag("post")
 			.filter(collectionFilters.isPublished)
 			.filter((item) => {
-				if (item.data.rsvp && dateFilters.epoch(item.data.rsvp.date) > global.now && dateFilters.epoch(item.data.rsvp.date) - dateFilters.epoch(global.now) < 7 * 24 * 60 * 60 * 1000 && dateFilters.friendlyDate(item.data.rsvp.date) != dateFilters.friendlyDate(global.now)) {
+				const upcomingDaysLead = site.upcomingDaysLead * durationDay
+				if (item.data.rsvp && (item.data.rsvp.show_upcoming_always || (dateFilters.epoch(item.data.rsvp.date) > global.now && dateFilters.epoch(item.data.rsvp.date) - dateFilters.epoch(global.now) < upcomingDaysLead && dateFilters.friendlyDate(item.data.rsvp.date) != dateFilters.friendlyDate(global.now)))) {
 					return true
 				}
 			})

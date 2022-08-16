@@ -17,6 +17,7 @@
     "sparkline": 15
   },
   "cacheDuration": "11h",
+  "upcomingDaysLead": 7,
   "weights": {
     "time": 0.02
   },
