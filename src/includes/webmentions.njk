@@ -13,8 +13,8 @@
 			{%- set likes = page.url | getWebmentions(['like']) -%}
 			{%- set reposts = page.url | getWebmentions(['repost']) -%}
 			{%- set bookmarks = page.url | getWebmentions(['bookmark']) -%}
-			{%- set replies = page.url | getWebmentions(['reply']) -%}
 			{%- set reactions = mentions.concat(likes).concat(reposts).concat(bookmarks) -%}
+			{%- set replies = page.url | getWebmentions(['reply']) -%}
 			{% if reactions.length or replies.length %}
 				<h2 id="responses">{{ reactions.length + replies.length }} Response{{ 's' if (reactions.length + replies.length) > 1 }}</h2>
 				{% if reactions.length %}

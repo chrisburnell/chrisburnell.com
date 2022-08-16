@@ -186,9 +186,9 @@
 					<small>updated</small> <a href="{{ item.url }}#updated" tabindex="-1"><time class=" [ dt-updated ] " datetime="{{ item.data.updated | rfcDate }}">{{ item.data.updated | friendlyDateLong | safe }}</time></a>
 				</li>
 			{% endif %}
-			{% if responses.length %}
+			{% if item.data.show_webmentions and responses.length %}
 				<li>
-					<a href="{{ item.url }}#webmentions" title="Jump to webmentions for this post">{{ responses.length }} response{{ 's' if responses.length > 1 }} <span class="hidden">to {{ item_title }}</span></a>
+					<a href="{{ item.url }}#webmentions" title="Jump to webmentions for this {{ item.data.categoryProper }}">{{ responses.length }} response{{ 's' if responses.length > 1 }} <span class="hidden">to {{ item_title }}</span></a>
 				</li>
 			{% endif %}
 		</ul>
