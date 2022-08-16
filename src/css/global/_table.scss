@@ -35,11 +35,11 @@ table {
 
 // Heading Cells
 th {
+	background-color: h(alto);
 	font-weight: var(--font-weight-bold);
 	white-space: nowrap;
 
 	&:not(:empty) {
-		background-color: h(alto);
 		position: sticky;
 		z-index: var(--z-index-above);
 

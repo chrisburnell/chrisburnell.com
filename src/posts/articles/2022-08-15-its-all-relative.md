@@ -27,7 +27,7 @@ As we look at each element here, we can notice where things change as we dive in
 <table>
     <thead>
         <tr>
-            <th> </th>
+            <th></th>
             <th><code>1em =</code></th>
             <th><code>1rem =</code></th>
         </tr>
@@ -77,7 +77,7 @@ That means `<element>`'s `font-size` equals:
 <table>
     <thead>
         <tr>
-            <th> </th>
+            <th></th>
             <th>calculated value</th>
         </tr>
     </thead>
@@ -126,7 +126,7 @@ This means `<element>`'s `font-size` equals:
 <table>
     <thead>
         <tr>
-            <th> </th>
+            <th></th>
             <th>calculated value</th>
         </tr>
     </thead>

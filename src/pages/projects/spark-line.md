@@ -55,7 +55,7 @@ The element takes a number of attributes:
 <table>
     <thead>
         <tr>
-            <th> </th>
+            <th></th>
             <th>Values</th>
             <th>Description</th>
         </tr>
