@@ -34,7 +34,6 @@ summary {
 	@include non-selectable;
 	display: list-item;
 	outline-width: 0;
-	font-size: var(--font-size-gamma);
 	font-weight: var(--font-weight-bold);
 	cursor: pointer;
 	transition: padding var(--transition-duration) var(--transition-function);

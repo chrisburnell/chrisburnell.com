@@ -13,8 +13,15 @@ table {
 	scrollbar-gutter: stable;
 	font-variant-numeric: tabular-nums;
 
-	&.zebra {
+	&.zebra,
+	&.zebra--horizontal {
 		tbody tr:nth-child(even) td {
+			background-color: h(thunder, delta);
+		}
+	}
+	&.zebra,
+	&.zebra--vertical {
+		tbody td:nth-child(odd) {
 			background-color: h(thunder, delta);
 		}
 	}
@@ -61,5 +68,9 @@ th {
 td {
 	&.numeral {
 		white-space: nowrap;
+	}
+
+	tr:is(:hover, :focus) & {
+		background-color: h(alto, gamma);
 	}
 }

@@ -157,21 +157,6 @@ toc: true
 	<li>This is the last list item</li>
 </ul>
 
-<h3>Reversed</h3>
-
-<ul reversed>
-	<li>This is a list item in an unordered list</li>
-	<li>An unordered list is a list in which the sequence of items is not important. Sometimes, an unordered list is a bulleted list. And this is a long list item in an unordered list that can wrap onto a new line. </li>
-	<li>
-		Lists can be nested inside of each other
-		<ul reversed>
-			<li>This is a nested list item</li>
-			<li>This is another nested list item in an unordered list</li>
-		</ul>
-	</li>
-	<li>This is the last list item</li>
-</ul>
-
 <h2>Ordered Lists</h2>
 
 <ol>
@@ -187,19 +172,20 @@ toc: true
 	<li>This is the last list item</li>
 </ol>
 
-<h3>Reversed</h3>
-
-<ol reversed>
-	<li>This is a list item in an ordered list</li>
-	<li>An ordered list is a list in which the sequence of items is important. An ordered list does not necessarily contain sequence characters.</li>
-	<li>
-		This is the last list item
-		<ol reversed>
-			<li>This is a nested list item</li>
-			<li>This is another nested list item in an ordered list</li>
-		</ol>
-	</li>
-</ol>
+<details>
+	<summary>Reversed</summary>
+	<ol reversed>
+		<li>This is a list item in an ordered list</li>
+		<li>An ordered list is a list in which the sequence of items is important. An ordered list does not necessarily contain sequence characters.</li>
+		<li>
+			This is the last list item
+			<ol reversed>
+				<li>This is a nested list item</li>
+				<li>This is another nested list item in an ordered list</li>
+			</ol>
+		</li>
+	</ol>
+</details>
 
 <h2>Definition Lists</h2>
 
@@ -248,82 +234,202 @@ toc: true
 	</tfoot>
 </table>
 
-<h3>With Alternating Rows</h3>
+<details>
+	<summary>With Alternating Rows</summary>
+	<table class="zebra--horizontal">
+		<thead>
+			<tr>
+				<th>Heading A</th>
+				<th>Heading B</th>
+				<th>Heading C</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Cell A-1</td>
+				<td>Cell B-1</td>
+				<td>Cell C-1</td>
+			</tr>
+			<tr>
+				<td>Cell A-2</td>
+				<td>Cell B-2</td>
+				<td>Cell C-2</td>
+			</tr>
+			<tr>
+				<td>Cell A-3</td>
+				<td>Cell B-3</td>
+				<td>Cell C-3</td>
+			</tr>
+			<tr>
+				<td>Cell A-4</td>
+				<td>Cell B-4</td>
+				<td>Cell C-4</td>
+			</tr>
+			<tr>
+				<td>Cell A-5</td>
+				<td>Cell B-5</td>
+				<td>Cell C-5</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<th>Foot A</th>
+				<th>Foot B</th>
+				<th>Foot C</th>
+			</tr>
+		</tfoot>
+	</table>
+</details>
 
-<table class="zebra">
-	<thead>
-		<tr>
-			<th>Heading A</th>
-			<th>Heading B</th>
-			<th>Heading C</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>Cell A-1</td>
-			<td>Cell B-1</td>
-			<td>Cell C-1</td>
-		</tr>
-		<tr>
-			<td>Cell A-2</td>
-			<td>Cell B-2</td>
-			<td>Cell C-2</td>
-		</tr>
-		<tr>
-			<td>Cell A-3</td>
-			<td>Cell B-3</td>
-			<td>Cell C-3</td>
-		</tr>
-	</tbody>
-	<tfoot>
-		<tr>
-			<th>Foot A</th>
-			<th>Foot B</th>
-			<th>Foot C</th>
-		</tr>
-	</tfoot>
-</table>
+<details>
+	<summary>With Alternating Columns</summary>
+	<table class="zebra--vertical">
+		<thead>
+			<tr>
+				<th>Heading A</th>
+				<th>Heading B</th>
+				<th>Heading C</th>
+				<th>Heading D</th>
+				<th>Heading E</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Cell A-1</td>
+				<td>Cell B-1</td>
+				<td>Cell C-1</td>
+				<td>Cell D-1</td>
+				<td>Cell E-1</td>
+			</tr>
+			<tr>
+				<td>Cell A-2</td>
+				<td>Cell B-2</td>
+				<td>Cell C-2</td>
+				<td>Cell D-2</td>
+				<td>Cell E-2</td>
+			</tr>
+			<tr>
+				<td>Cell A-3</td>
+				<td>Cell B-3</td>
+				<td>Cell C-3</td>
+				<td>Cell D-3</td>
+				<td>Cell E-3</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<th>Foot A</th>
+				<th>Foot B</th>
+				<th>Foot C</th>
+				<th>Foot D</th>
+				<th>Foot E</th>
+			</tr>
+		</tfoot>
+	</table>
+</details>
 
-<h3>With Sub-headings</h3>
+<details>
+	<summary>With Alternating Rows &amp; Columns</summary>
+	<table class="zebra">
+		<thead>
+			<tr>
+				<th>Heading A</th>
+				<th>Heading B</th>
+				<th>Heading C</th>
+				<th>Heading D</th>
+				<th>Heading E</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Cell A-1</td>
+				<td>Cell B-1</td>
+				<td>Cell C-1</td>
+				<td>Cell D-1</td>
+				<td>Cell E-1</td>
+			</tr>
+			<tr>
+				<td>Cell A-2</td>
+				<td>Cell B-2</td>
+				<td>Cell C-2</td>
+				<td>Cell D-2</td>
+				<td>Cell E-2</td>
+			</tr>
+			<tr>
+				<td>Cell A-3</td>
+				<td>Cell B-3</td>
+				<td>Cell C-3</td>
+				<td>Cell D-3</td>
+				<td>Cell E-3</td>
+			</tr>
+			<tr>
+				<td>Cell A-4</td>
+				<td>Cell B-4</td>
+				<td>Cell C-4</td>
+				<td>Cell D-4</td>
+				<td>Cell E-4</td>
+			</tr>
+			<tr>
+				<td>Cell A-5</td>
+				<td>Cell B-5</td>
+				<td>Cell C-5</td>
+				<td>Cell D-5</td>
+				<td>Cell E-5</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<th>Foot A</th>
+				<th>Foot B</th>
+				<th>Foot C</th>
+				<th>Foot D</th>
+				<th>Foot E</th>
+			</tr>
+		</tfoot>
+	</table>
+</details>
 
-<table>
-	<thead>
-		<tr>
-			<th>&nbsp;</th>
-			<th>Heading A</th>
-			<th>Heading B</th>
-			<th>Heading C</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<th>Subheading 1</th>
-			<td>Cell A-1</td>
-			<td>Cell B-1</td>
-			<td>Cell C-1</td>
-		</tr>
-		<tr>
-			<th>Subheading 2</th>
-			<td>Cell A-2</td>
-			<td>Cell B-2</td>
-			<td>Cell C-2</td>
-		</tr>
-		<tr>
-			<th>Subheading 3</th>
-			<td>Cell A-3</td>
-			<td>Cell B-3</td>
-			<td>Cell C-3</td>
-		</tr>
-	</tbody>
-	<tfoot>
-		<tr>
-			<th>&nbsp;</th>
-			<th>Foot A</th>
-			<th>Foot B</th>
-			<th>Foot C</th>
-		</tr>
-	</tfoot>
-</table>
+<details>
+	<summary>With Sub-headings</summary>
+	<table>
+		<thead>
+			<tr>
+				<th>&nbsp;</th>
+				<th>Heading A</th>
+				<th>Heading B</th>
+				<th>Heading C</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>Subheading 1</th>
+				<td>Cell A-1</td>
+				<td>Cell B-1</td>
+				<td>Cell C-1</td>
+			</tr>
+			<tr>
+				<th>Subheading 2</th>
+				<td>Cell A-2</td>
+				<td>Cell B-2</td>
+				<td>Cell C-2</td>
+			</tr>
+			<tr>
+				<th>Subheading 3</th>
+				<td>Cell A-3</td>
+				<td>Cell B-3</td>
+				<td>Cell C-3</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<th>&nbsp;</th>
+				<th>Foot A</th>
+				<th>Foot B</th>
+				<th>Foot C</th>
+			</tr>
+		</tfoot>
+	</table>
+</details>
 
 <h2>Figures</h2>
 
