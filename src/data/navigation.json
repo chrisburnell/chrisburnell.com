@@ -20,11 +20,7 @@
   {
     "title": "Projects",
     "url": "/projects/",
-    "primary": true
-  },
-  {
-    "title": "Writing",
-    "url": "/writing/",
+    "primary": true,
     "secondary": true
   },
   {
