@@ -38,8 +38,12 @@ var {
 }
 
 pre {
+	background-color: h(lynx);
 	min-inline-size: 0;
 	max-inline-size: 100%;
+	border-block-start: var(--size-border-thin) solid var(--border-color, h(raven, beta));
+	border-radius: 1px 1px var(--size-border-default) var(--size-border-default);
+	padding: var(--size-gutter);
 	margin: 0;
 	tab-size: 4;
 	font-size: initial;
@@ -50,6 +54,7 @@ pre {
 
 	&,
 	%monospace {
+		color: h(milou);
 		display: block;
 		font-family: var(--font-family-monospace);
 		line-height: var(--line-height-code);
