@@ -127,7 +127,7 @@ module.exports = {
 			.getFilteredByTag("post")
 			.filter(collectionFilters.isPublished)
 			.filter((item) => {
-				const upcomingDaysLead = (item.data.rsvp.upcoming_days_lead || site.upcomingDaysLead) * durationDay
+				const upcomingDaysLead = (item.data.rsvp?.upcoming_days_lead || site.upcomingDaysLead) * durationDay
 				if (item.data.rsvp && (item.data.rsvp.show_upcoming_always || (dateFilters.epoch(item.data.rsvp.date) > global.now && dateFilters.epoch(item.data.rsvp.date) - dateFilters.epoch(global.now) < upcomingDaysLead && dateFilters.friendlyDate(item.data.rsvp.date) != dateFilters.friendlyDate(global.now)))) {
 					return true
 				}
