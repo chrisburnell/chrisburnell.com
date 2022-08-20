@@ -68,4 +68,10 @@ export default [
 			dir: "js",
 		},
 	},
+	{
+		input: "node_modules/@zachleat/details-utils/details-utils.js",
+		output: {
+			dir: "js",
+		},
+	},
 ]

@@ -5,7 +5,6 @@ description: Great inspiration can sometimes be found in exploring available opp
 tags:
   - css
   - scss
-codepen: true
 syndicate_to:
   - https://twitter.com/iamchrisburnell/status/877492210241032192
 further_reading:

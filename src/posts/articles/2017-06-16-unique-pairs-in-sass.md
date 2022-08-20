@@ -5,7 +5,6 @@ description: In creating a from-scratch grid for a redevelopment project, I was 
 tags:
   - scss
 banner: unique-pairs-in-sass.jpg
-codepen: true
 syndicate_to:
   - https://twitter.com/iamchrisburnell/status/877492210241032192
 ---

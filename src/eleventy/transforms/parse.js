@@ -56,32 +56,61 @@ module.exports = (value, outputPath) => {
 		})
 
 		// Look for Custom HTML elements on the page, conditionally adding a
-		// module script to the page when found
-		const moduleMap = [
+		// scripts to the page when found
+		const scriptMap = [
 			{
-				file: "librarian.js",
+				comment: "<details-utils> extends functionality of the details element",
+				file: "details-utils.js",
+				wrap: "details-utils",
+				selector: "details",
+			},
+			{
+				comment: "Allows different sorting options for shelf components",
+				module: "librarian.js",
 				function: "librarian",
 				selector: "button[data-sort]",
 			},
 			{
-				file: "url-input.js",
+				comment: "<spark-line> generates a sparkline chart",
+				module: "spark-line.js",
+				function: "sparkline",
+				selector: "spark-line",
+			},
+			{
+				comment: "Tidies the input of a URL input",
+				module: "url-input.js",
 				function: "urlInput",
 				selector: "input[type=url]",
 			},
 			{
-				file: "spark-line.js",
-				function: "sparkline",
-				selector: "spark-line",
+				comment: "CodePen Embeds",
+				url: "https://codepen.io/assets/embed/ei.js",
+				selector: "pre.codepen",
+			},
+			{
+				comment: "Speaker Deck Embeds",
+				url: "https://speakerdeck.com/assets/embed.js",
+				selector: ".speakerdeck-embed",
 			},
 		]
-		for (let module of moduleMap) {
-			if ($(module.selector).length) {
-				$(`
-					<script type="module">
-						import ${module.function} from "/js/${module.file}"
-						${module.function}()
-					</script>
-				`).appendTo("body")
+		for (let script of scriptMap) {
+			if ($(script.selector).length) {
+				$(`<!-- ${script.comment} -->\n`).appendTo("body")
+				if (script.module) {
+					$(`<script defer type="module">
+							import ${script.function} from "/js/${script.module}";
+							${script.function}();
+						</script>`).appendTo("body")
+				} else if (script.file) {
+					$(`<script defer src="/js/${script.file}"></script>\n`).appendTo("body")
+				} else if (script.url) {
+					$(`<script defer src="${script.url}"></script>\n`).appendTo("body")
+				}
+				if (script.wrap) {
+					$(script.selector).each(function (i, element) {
+						$(element).wrap(`<${script.wrap}></${script.wrap}>`)
+					})
+				}
 			}
 		}
 

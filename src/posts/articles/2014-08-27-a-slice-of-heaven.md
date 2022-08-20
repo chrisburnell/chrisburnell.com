@@ -7,7 +7,6 @@ syndicate_to:
 tags:
   - css
 banner: a-slice-of-heaven.png
-codepen: true
 ---
 
 I’ve been making quite a few pens over on [CodePen](https://codepen.io/) lately, mostly exploring what can be achieved with only CSS where in the past we would have to look to JavaScript or bloating our user’s pipes with image requests—which is a [whole other universe](http://www.w3.org/html/wg/drafts/html/master/embedded-content.html#the-picture-element "The Picture Element") nowadays.

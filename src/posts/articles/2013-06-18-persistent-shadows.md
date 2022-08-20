@@ -6,7 +6,6 @@ tags:
   - css
   - ux
 banner: persistent-shadows.png
-codepen: true
 ---
 
 Nearing the end of the work-day yesterday, I was struck with an idea. Having recently read through [Google’s Visual Assets Guidelines on Behance](https://www.behance.net/gallery/Google-Visual-Assets-Guidelines-Part-1/9028077 "Google’s Visual Assets Guidelines on Behance") and stumbling upon this awesome CodePen (actually a fork of [Lionel’s](https://codepen.io/elrumordelaluz "Lionel on Github"), from Italy: [https://codepen.io/elrumordelaluz/pen/dobAz](https://codepen.io/elrumordelaluz/pen/dobAz "CSS3 Flat Icons")):

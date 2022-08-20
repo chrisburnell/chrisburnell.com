@@ -5,5 +5,4 @@ module.exports = {
 	tags: ["talk", "feature"],
 	emoji: "🗣",
 	prefix: "t",
-	speakerdeck: true,
 }

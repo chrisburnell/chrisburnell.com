@@ -165,15 +165,6 @@
 	{% endif %}
 
 	<script>document.documentElement.classList.remove("no-js");</script>
-
-	{% if category == 'code' or codepen %}
-		<link rel="preconnect" href="https://codepen.io">
-		<link rel="preconnect" href="https://assets.codepen.io">
-		<link rel="preconnect" href="https://s.codepen.io">
-	{% endif %}
-	{% if speakerdeck %}
-		<link rel="preconnect" href="https://speakerdeck.com">
-	{% endif %}
 </head>
 <body>
 	<a href="#content" class=" [ hidden ] ">Skip to main content</a>
@@ -263,22 +254,6 @@
 	{% if syndicate_to %}
 		<script defer src="/js/indieconfig.js"></script>
 		<script defer src="/js/webaction.js"></script>
-	{% endif %}
-
-	{% if category == 'code' or codepen %}
-		<!-- CodePen Embeds -->
-		<script defer src="https://codepen.io/assets/embed/ei.js"></script>
-	{% endif %}
-
-	{%- set in_reply_to_url = in_reply_to.url | default(in_reply_to) -%}
-	{% if twitter or (in_reply_to_url.length and in_reply_to_url.includes('twitter.com')) %}
-		<!-- Twitter Cards -->
-		<script defer src="https://platform.twitter.com/widgets.js"></script>
-	{% endif %}
-
-	{% if speakerdeck or speakerdeck_slug %}
-		<!-- Speaker Deck Embeds -->
-		<script defer src="https://speakerdeck.com/assets/embed.js"></script>
 	{% endif %}
 </body>
 </html>

@@ -5,7 +5,6 @@ description: Don't be half-minded when dealing with fractions and pixels. How ca
 tags:
   - css
 banner: shoot-for-the-moon.jpg
-codepen: true
 syndicate_to:
   - https://twitter.com/iamchrisburnell/status/712709693878173697
 further_reading:

@@ -6,7 +6,6 @@ tags:
   - css
   - ux
 banner: theming-pinboard.png
-twitter: true
 syndicate_to:
   - https://twitter.com/iamchrisburnell/status/576014944627490816
 ---

@@ -6,7 +6,6 @@ tags:
   - css
   - ux
 banner: annoying-navigation-css.png
-codepen: true
 ---
 
 Here’s a quick, little *CodePen* showcasing two annoying bits of CSS that many developers, sadly, are guilty of writing. It’s interactive, so make sure you hover and click around:
