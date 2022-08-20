@@ -4,7 +4,7 @@ const urlInput = () => {
 	 */
 	let addDefaultScheme = (target) => {
 		if (target.value.match(/^(?!https?:).+\..+/)) {
-			target.value = `http://${target.value}`
+			target.value = `https://${target.value}`
 		}
 	}
 

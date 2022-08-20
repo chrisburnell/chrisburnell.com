@@ -60,47 +60,51 @@ module.exports = (value, outputPath) => {
 		const scriptMap = [
 			{
 				comment: "<details-utils> extends functionality of the details element",
+				selector: "details",
 				file: "details-utils.js",
 				wrap: "details-utils",
-				selector: "details",
 			},
 			{
 				comment: "Allows different sorting options for shelf components",
+				selector: "button[data-sort]",
 				module: "librarian.js",
 				function: "librarian",
-				selector: "button[data-sort]",
 			},
 			{
 				comment: "<spark-line> generates a sparkline chart",
+				selector: "spark-line",
 				module: "spark-line.js",
 				function: "sparkline",
-				selector: "spark-line",
 			},
 			{
 				comment: "Tidies the input of a URL input",
-				module: "url-input.js",
-				function: "urlInput",
 				selector: "input[type=url]",
+				module: "url-input.js",
+				feature: "urlInput",
 			},
 			{
 				comment: "CodePen Embeds",
-				url: "https://codepen.io/assets/embed/ei.js",
 				selector: "pre.codepen",
+				url: "https://codepen.io/assets/embed/ei.js",
 			},
 			{
 				comment: "Speaker Deck Embeds",
-				url: "https://speakerdeck.com/assets/embed.js",
 				selector: ".speakerdeck-embed",
+				url: "https://speakerdeck.com/assets/embed.js",
 			},
 		]
 		for (let script of scriptMap) {
 			if ($(script.selector).length) {
 				$(`<!-- ${script.comment} -->\n`).appendTo("body")
 				if (script.module) {
-					$(`<script defer type="module">
-							import ${script.function} from "/js/${script.module}";
-							${script.function}();
-						</script>`).appendTo("body")
+					$(
+						minify(`
+							<script defer type="module">
+								import ${script.feature} from "/js/${script.module}";
+								${script.feature}();
+							</script>
+						`) + "\n"
+					).appendTo("body")
 				} else if (script.file) {
 					$(`<script defer src="/js/${script.file}"></script>\n`).appendTo("body")
 				} else if (script.url) {
