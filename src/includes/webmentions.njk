@@ -8,7 +8,7 @@
 			<input type="hidden" name="target" value="{{ canonical }}">
 			<button class=" [ webmentions__submit ] " type="submit">Send</button>
 		</form>
-		{% if webmentions %}
+		{% if webmentions.length %}
 			<div class=" [ webmentions__responses ] [ flow ] ">
 				{%- set mentions = webmentions | arrayKeyEquals('activity.type', 'link') -%}
 				{%- set likes = webmentions | arrayKeyEquals('activity.type', 'like') -%}
