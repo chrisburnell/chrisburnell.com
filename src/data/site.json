@@ -14,12 +14,14 @@
     "shelf": 3,
     "feature": 2,
     "feed": 10,
-    "sparkline": 15
+    "sparkline": 15,
+    "minWebmentions": 2
   },
   "cacheDuration": "11h",
   "upcomingDaysLead": 7,
   "weights": {
-    "time": 0.02
+    "count": 1,
+    "deltasMedian": 0.7
   },
   "sitemap": {
     "changefreq": "monthly",

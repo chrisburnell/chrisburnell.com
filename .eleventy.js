@@ -1,4 +1,5 @@
 const site = require("#data/site")
+const webmentionsConfig = require("./src/data/webmentionsConfig.js")
 
 // Import Eleventy plugins
 const caniusePlugin = require("#plugins/caniusePlugin")
@@ -33,7 +34,6 @@ const categoriesBuilder = require("#builders/categories")
 const tagsBuilder = require("#builders/tags")
 
 // Import other bits and bobs
-const urlReplacements = require("#data/urlReplacements")
 const markdownParser = require("markdown-it")
 
 module.exports = (eleventyConfig) => {
@@ -49,17 +49,7 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.addPlugin(imageAvatarPlugin)
 	// eleventyConfig.addPlugin(albumCoverPlugin)
 	eleventyConfig.addPlugin(syntaxHighlightPlugin)
-	eleventyConfig.addPlugin(webmentionsPlugin, {
-		domain: site.url,
-		feed: `https://webmention.io/api/mentions.json?domain=${new URL(site.url).hostname}&token=${process.env.WEBMENTION_IO_TOKEN}&per-page=9001`,
-		key: "links",
-		// feed: `https://jam.chrisburnell.com/webmention/chrisburnell.com/${process.env.GO_JAMMING_TOKEN}`,
-		// key: "json",
-		duration: site.cacheDuration,
-		urlReplacements: urlReplacements,
-		maximumHtmlLength: 1000,
-		maximumHtmlText: "Mentioned this:",
-	})
+	eleventyConfig.addPlugin(webmentionsPlugin, webmentionsConfig)
 
 	// Transforms
 	eleventyConfig.addTransform("parse", parseTransform)

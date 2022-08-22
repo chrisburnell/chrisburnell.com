@@ -174,7 +174,7 @@
 	{% elif item.data.category == 'talk' %}
 		<p class=" [ p-summary ] ">{{ item.templateContent | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
 	{% endif %}
-	{% if item.data.date or item.date or item.data.updated or responses.length %}
+	{% if item.data.date or item.date or item.data.updated or item.data.webmentions.length %}
 		<ul class=" [ cluster ] [ deck__meta ] ">
 			{% if item.data.date or item.date %}
 				<li>
@@ -186,9 +186,9 @@
 					<small>updated</small> <a href="{{ item.url }}#updated" tabindex="-1"><time class=" [ dt-updated ] " datetime="{{ item.data.updated | rfcDate }}">{{ item.data.updated | friendlyDateLong | safe }}</time></a>
 				</li>
 			{% endif %}
-			{% if item.data.show_webmentions and responses.length %}
+			{% if item.data.show_webmentions and item.data.webmentions.length %}
 				<li>
-					<a href="{{ item.url }}#webmentions" title="Jump to webmentions for this {{ item.data.categoryProper }}">{{ responses.length }} response{{ 's' if responses.length > 1 }} <span class="hidden">to {{ item_title }}</span></a>
+					<a href="{{ item.url }}#webmentions" title="Jump to webmentions for this {{ item.data.categoryProper }}">{{ item.data.webmentions.length }} response{{ 's' if item.data.webmentions.length > 1 }} <span class="hidden">to {{ item_title }}</span></a>
 				</li>
 			{% endif %}
 		</ul>

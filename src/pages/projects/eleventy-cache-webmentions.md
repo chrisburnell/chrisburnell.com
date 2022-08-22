@@ -106,7 +106,7 @@ module.exports = function(eleventyConfig) {
 }
 ```
 
-### Accessing Webmentions with JavaScript
+### JavaScript
 
 Accessing the plugin in JavaScript in the way shown below will give you an Object containing your cached Webmentions organised in key:value pairs where the key is a URL on your domain and the value is an array of data for Webmentions sent to that URL.
 
@@ -120,7 +120,7 @@ const Webmentions = require("@chrisburnell/eleventy-cache-webmentions")(null, {
 const webmentionsByUrl = await Webmentions()
 ```
 
-You can now use this Object in a number of useful ways, not limited to things like creating a collection of posts ordered by number of webmentions:
+This can prove to be very useful when building out your pages. Using [Eleventy’s Data Cascade](https://www.11ty.dev/docs/data-cascade/), we can attach Webmentions to each page by using [Directory Specific Data Files](https://www.11ty.dev/docs/data-template-dir/):
 
 ```javascript
 const Webmentions = require("@chrisburnell/eleventy-cache-webmentions")(null, {
@@ -129,44 +129,42 @@ const Webmentions = require("@chrisburnell/eleventy-cache-webmentions")(null, {
     key: "children"
 })
 
-const absoluteURL = (url, domain) => {
-    try {
-        return new URL(url, domain).toString()
-    } catch (e) {
-        console.log(`Trying to convert ${url} to be an absolute url with base ${domain} and failed.`)
-        return url
-    }
+module.exports = async () => {
+	const filteredWebmentions = await Webmentions()
+
+	return {
+		eleventyComputed: {
+			webmentions: (data) => {
+				const urlWebmentions = filteredWebmentions["https://example.com" + data.page.url] || []
+
+				if (urlWebmentions.length) {
+					return urlWebmentions.sort((a, b) => (b.data.published || b.verified_date) - (a.data.published || a.verified_date))
+				}
+				return []
+			},
+		},
+	}
 }
+```
 
+You can now use this data in a number of useful ways, not limited to things like creating a collection of pages ordered by number of webmentions:
+
+```javascript
 module.exports = (eleventyConfig) => {
-    eleventyConfig.addCollection("popular", async (collection) => {
-        const webmentionsByUrl = await Webmentions()
-        return await collection
+    eleventyConfig.addCollection("popular", (collection) => {
+        return collection
             .getFilteredByTag("post")
-            .filter((item) => {
-                // unfortunately necessary in order to match the key
-                const url = absoluteURL(item.url, "https://example.com")
-
-                if (!url) {
-                    return false
-                }
-
-                return webmentionsByUrl[url]
-            })
-            .sort((a, b) => {
-                // unfortunately necessary in order to match the key
-                const aUrl = absoluteURL(a.url, "https://example.com")
-                const bUrl = absoluteURL(b.url, "https://example.com")
-                const aWebmentions = webmentionsByUrl[aUrl]
-                const bWebmentions = webmentionsByUrl[bUrl]
-
-                return bWebmentions.length - aWebmentions.length
-            })
+			.filter((item) => {
+				return item.data.webmentions.length
+			})
+			.sort((a, b) => {
+				return b.data.webmentions.length - a.data.webmentions.length
+			})
     })
 }
 ```
 
-### Accessing Webmentions with Liquid/Nunjucks
+### Liquid/Nunjucks
 
 Accessing the plugin in Liquid/Nunjucks by using a Filter and passing in a URL in the way shown below will give you an Array containing the cached Webmentions for the given URL.
 

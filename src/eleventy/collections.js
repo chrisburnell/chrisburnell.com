@@ -4,27 +4,6 @@ const collectionFilters = require("#filters/collections")
 const global = require("#datajs/global")
 const site = require("#data/site")
 
-// Load .env variables with dotenv
-require("dotenv").config()
-
-const Webmentions = require("@chrisburnell/eleventy-cache-webmentions")(null, {
-	domain: site.url,
-	feed: `https://webmention.io/api/mentions.jf2?domain=${new URL(site.url).hostname}&token=${process.env.WEBMENTION_IO_TOKEN}&per-page=9001`,
-	key: "children",
-})
-
-const absoluteURL = (url, base) => {
-	if (!base) {
-		base = site.url
-	}
-	try {
-		return new URL(url, base).toString()
-	} catch (e) {
-		console.log(`Trying to convert ${url} to be an absolute url with base ${base} and failed.`)
-		return url
-	}
-}
-
 module.exports = {
 	page: (collection) => {
 		return collection.getFilteredByTag("page").filter(collectionFilters.isPublished)
@@ -133,70 +112,56 @@ module.exports = {
 				}
 			})
 	},
-	hot: async (collection) => {
-		const webmentionsByUrl = await Webmentions()
-		return await collection
+	hot: (collection) => {
+		// "Hot" sorting is done by determining the average distance in
+		// time between webmentions and sorting by that average.
+		// This value is also weighted against the number of
+		// webmentions, where more webmentions is weighted higher.
+		return collection
 			.getFilteredByTag("feature")
 			.filter(collectionFilters.isPublished)
 			.filter(collectionFilters.notReply)
 			.filter((item) => {
-				// unfortunately necessary in order to match the key
-				const url = absoluteURL(item.url)
+				return item.data.webmentions.length >= site.limits.minWebmentions
+			})
+			.map((item) => {
+				// calculate difference in minutes between the published date
+				// of each Webmention in order to build a median from the sum
+				const deltas = item.data.webmentions.reduce(
+					(acc, webmention, index, array) => {
+						const difference = (dateFilters.epoch(webmention.data.published || webmention.verified_date) - dateFilters.epoch(acc.prev.data.published || acc.prev.verified_date)) / 1000 / 60
+						index && acc.array.push(difference)
+						acc.prev = webmention
+						return acc
+					},
+					{ array: [], prev: item.data.webmentions[0] }
+				)
+				// normalize the array of deltas
+				const deltasNormalizedRatio = Math.max(...deltas.array) / 100
+				const deltasNormalized = deltas.array.map((value) => value / deltasNormalizedRatio)
 
-				if (!url) {
-					return false
-				}
+				const deltasMedian = deltasNormalized.reduce((a, b) => a + b) / item.data.webmentions.length
 
-				return webmentionsByUrl[url]
+				item.popularity = (site.weights.deltasMedian * deltasMedian) / (site.weights.count * item.data.webmentions.length)
+
+				return item
 			})
 			.sort((a, b) => {
-				// unfortunately necessary in order to match the key
-				const aUrl = absoluteURL(a.url)
-				const bUrl = absoluteURL(b.url)
-				const aWebmentions = webmentionsByUrl[aUrl]
-				const bWebmentions = webmentionsByUrl[bUrl]
-
-				let aPopularity = 0
-				for (let webmention of aWebmentions) {
-					aPopularity = (aPopularity + dateFilters.epoch(webmention.published || webmention["wm-received"])) / 2
-				}
-				aPopularity = site.weights.time * dateFilters.epoch(a.date) + (1 - site.weights.time) * aPopularity
-
-				let bPopularity = 0
-				for (let webmention of bWebmentions) {
-					bPopularity = (bPopularity + dateFilters.epoch(webmention.published || webmention["wm-received"])) / 2
-				}
-				bPopularity = site.weights.time * dateFilters.epoch(b.date) + (1 - site.weights.time) * bPopularity
-
-				return bPopularity - aPopularity
+				return a.popularity - b.popularity
 			})
 			.slice(0, site.limits.feed)
 	},
-	popular: async (collection) => {
-		const webmentionsByUrl = await Webmentions()
-		return await collection
+	popular: (collection) => {
+		return collection
 			.getFilteredByTag("feature")
 			.filter(collectionFilters.isPublished)
 			.filter(collectionFilters.notReply)
 			.filter((item) => {
-				// unfortunately necessary in order to match the key
-				const url = absoluteURL(item.url)
-
-				if (!url) {
-					return false
-				}
-
-				return webmentionsByUrl[url]
+				return item.data.webmentions.length
 			})
 			.sort(collectionFilters.dateFilter)
 			.sort((a, b) => {
-				// unfortunately necessary in order to match the key
-				const aUrl = absoluteURL(a.url)
-				const bUrl = absoluteURL(b.url)
-				const aWebmentions = webmentionsByUrl[aUrl]
-				const bWebmentions = webmentionsByUrl[bUrl]
-
-				return bWebmentions.length - aWebmentions.length
+				return b.data.webmentions.length - a.data.webmentions.length
 			})
 			.slice(0, site.limits.feed)
 	},

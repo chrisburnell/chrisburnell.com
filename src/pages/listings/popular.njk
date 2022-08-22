@@ -30,7 +30,6 @@ truncate: true
 	<div class=" [ content ] [ flow ] [ h-feed ] ">
 		<nav class=" [ deck ] ">
 			{% for item in collection %}
-				{%- set responses = item.url | getWebmentions -%}
 				{% include 'items/deck.njk' %}
 			{% endfor %}
 		</nav>

@@ -9,7 +9,6 @@ truncate: false
 
 <nav class=" [ deck ] [ h-feed ] ">
 	{% for item in collections.projects %}
-		{%- set responses = item.url | getWebmentions -%}
 		{% include 'items/deck.njk' %}
 	{% endfor %}
 </nav>
@@ -18,7 +17,6 @@ truncate: false
 
 <nav class=" [ deck ] [ h-feed ] ">
 	{% for item in projects.personal %}
-		{%- set responses = item.url | getWebmentions -%}
 		{% include 'items/deck.njk' %}
 	{% endfor %}
 </nav>
@@ -27,7 +25,6 @@ truncate: false
 
 <nav class=" [ deck ] [ h-feed ] ">
 	{% for item in projects.previousVersions %}
-		{%- set responses = item.url | getWebmentions -%}
 		{% include 'items/deck.njk' %}
 	{% endfor %}
 </nav>

@@ -74,7 +74,6 @@ truncate: true
 						</h2>
 						<nav id="list-{{ year }}" class=" [ deck ] ">
 					{% endif %}
-					{%- set responses = item.url | getWebmentions -%}
 					{% include 'items/deck.njk' %}
 				{% endfor %}
 			</nav>

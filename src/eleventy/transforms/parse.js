@@ -15,11 +15,11 @@ module.exports = (value, outputPath) => {
 		const tocHeadings = $(".generate-toc h2")
 		if (tocHeadings.length) {
 			let tocHtml = `<div class=" [ meta ] [ flow ] "><div class=" [ box ] [ flow ] [ table-of-contents ] "><ol class=" [ default-list ] ">`
-			tocHeadings.each(function () {
-				const headingText = $(this)
+			tocHeadings.each((i, element) => {
+				const headingText = $(element)
 					.html()
 					.replace(/\s+<small>.*<\/small>$/g, "")
-				const headingID = $(this).attr("id") || slugify(headingText.toLowerCase())
+				const headingID = $(element).attr("id") || slugify(headingText.toLowerCase())
 				tocHtml += `<li><a href="#${headingID}">${headingText}</a></li>`
 			})
 			tocHtml += `</ol></div></div>`
@@ -28,31 +28,31 @@ module.exports = (value, outputPath) => {
 
 		// Process and generate fragment anchors for content headings
 		const articleHeadings = $(".content h2")
-		articleHeadings.each(function () {
+		articleHeadings.each((i, element) => {
 			const headingID =
-				$(this).attr("id") ||
+				$(element).attr("id") ||
 				slugify(
-					$(this)
+					$(element)
 						.text()
 						.toLowerCase()
 						.replace(/([.‘’“”])/g, "")
 				)
-			$(this).html(
+			$(element).html(
 				minify(`
-				${$(this).html()}
-				<a class=" [ fragment-anchor ] " href="#${headingID}" title="Permalink for ${$(this).text().trim()}">
+				${$(element).html()}
+				<a class=" [ fragment-anchor ] " href="#${headingID}" title="Permalink for ${$(element).text().trim()}">
 					<span class="hidden"> permalink</span>
 					¶
 				</a>
 			`)
 			)
-			$(this).attr("id", headingID)
+			$(element).attr("id", headingID)
 		})
 
 		// Make <pre> code blocks keyboard-accessible by adding `tabindex="0"`
 		const preformatted = $("pre > code")
-		preformatted.each(function () {
-			$(this).attr("tabindex", 0)
+		preformatted.each((i, element) => {
+			$(element).attr("tabindex", 0)
 		})
 
 		// Look for Custom HTML elements on the page, conditionally adding a
@@ -68,13 +68,13 @@ module.exports = (value, outputPath) => {
 				comment: "Allows different sorting options for shelf components",
 				selector: "button[data-sort]",
 				module: "librarian.js",
-				function: "librarian",
+				feature: "librarian",
 			},
 			{
 				comment: "<spark-line> generates a sparkline chart",
 				selector: "spark-line",
 				module: "spark-line.js",
-				function: "sparkline",
+				feature: "sparkline",
 			},
 			{
 				comment: "Tidies the input of a URL input",
@@ -111,7 +111,7 @@ module.exports = (value, outputPath) => {
 					$(`<script defer src="${script.url}"></script>\n`).appendTo("body")
 				}
 				if (script.wrap) {
-					$(script.selector).each(function (i, element) {
+					$(script.selector).each((i, element) => {
 						$(element).wrap(`<${script.wrap}></${script.wrap}>`)
 					})
 				}

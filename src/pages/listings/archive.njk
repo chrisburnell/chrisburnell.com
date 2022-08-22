@@ -49,7 +49,6 @@ truncate: true
 			{% else %}
 				<nav class=" [ deck ] " aria-labelledby="{{ lookup.plural }}">
 					{%- for item in lookup_collection | limit(site.limits.deck) -%}
-						{%- set responses = item.url | getWebmentions -%}
 						{% include 'items/deck.njk' %}
 					{%- endfor -%}
 				</nav>

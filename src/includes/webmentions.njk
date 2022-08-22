@@ -8,14 +8,14 @@
 			<input type="hidden" name="target" value="{{ canonical }}">
 			<button class=" [ webmentions__submit ] " type="submit">Send</button>
 		</form>
-		<div class=" [ webmentions__responses ] [ flow ] ">
-			{%- set mentions = page.url | getWebmentions(['link']) -%}
-			{%- set likes = page.url | getWebmentions(['like']) -%}
-			{%- set reposts = page.url | getWebmentions(['repost']) -%}
-			{%- set bookmarks = page.url | getWebmentions(['bookmark']) -%}
-			{%- set reactions = mentions.concat(likes).concat(reposts).concat(bookmarks) -%}
-			{%- set replies = page.url | getWebmentions(['reply']) -%}
-			{% if reactions.length or replies.length %}
+		{% if webmentions %}
+			<div class=" [ webmentions__responses ] [ flow ] ">
+				{%- set mentions = webmentions | arrayKeyEquals('activity.type', 'link') -%}
+				{%- set likes = webmentions | arrayKeyEquals('activity.type', 'like') -%}
+				{%- set reposts = webmentions | arrayKeyEquals('activity.type', 'repost') -%}
+				{%- set bookmarks = webmentions | arrayKeyEquals('activity.type', 'bookmark') -%}
+				{%- set reactions = mentions.concat(likes).concat(reposts).concat(bookmarks) -%}
+				{%- set replies = webmentions | arrayKeyEquals('activity.type', 'reply') -%}
 				<h2 id="responses">{{ reactions.length + replies.length }} Response{{ 's' if (reactions.length + replies.length) > 1 }}</h2>
 				{% if reactions.length %}
 					<ol id="reactions" class=" [ cluster ] [ reactions ] [ strong ] ">
@@ -39,7 +39,7 @@
 							{% if webmention.data.content %}
 								{%- set wmId = webmention.id -%}
 								{%- set wmType = webmention.activity.type | getPostType -%}
-								{%- set wmDate = webmention.data.published -%}
+								{%- set wmDate = webmention.data.published | default(webmention.verified_date) -%}
 								{%- set wmSource = webmention.data.url -%}
 								{%- set wmContent = webmention.data.content -%}
 								{%- set authorPhoto = webmention.data.author.photo -%}
@@ -62,7 +62,7 @@
 						{% endfor %}
 					</ol>
 				{% endif %}
-			{% endif %}
-		</div>
+			</div>
+		{% endif %}
 	</div>
 {% endif %}

@@ -515,7 +515,6 @@ p q r s t u v w x y z { | } ~</code></pre>
 
 <nav id="list-deck" class=" [ deck ] ">
 {% for item in collections.article | arePublished | reverse | limit(site.limits.deck) %}
-	{%- set responses = item.url | getWebmentions -%}
 	{% include 'items/deck.njk' %}
 {% endfor %}
 </nav>

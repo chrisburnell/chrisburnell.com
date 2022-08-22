@@ -37,7 +37,6 @@ truncate: true
 							{%- elif item.data.rsvp.value == 'maybe' or item.data.rsvp.value == 'interested' -%}
 								{%- set rsvp_class = 'box--warning' -%}
 							{%- endif -%}
-							{%- set responses = item.url | getWebmentions -%}
 							{% include 'items/deck.njk' %}
 						</div>
 					{% endfor %}
@@ -51,7 +50,6 @@ truncate: true
 			</h2>
 			<nav class=" [ deck ] [ h-feed ] " aria-labelledby="latest">
 				{% for item in collections.writingPosts | limit(site.limits.feature) %}
-					{%- set responses = item.url | getWebmentions -%}
 					{% include 'items/deck.njk' %}
 				{% endfor %}
 			</nav>
@@ -67,7 +65,6 @@ truncate: true
 			</h2>
 			<nav class=" [ deck ] " aria-labelledby="popular">
 				{% for item in collections.popular | limit(site.limits.feature) %}
-					{%- set responses = item.url | getWebmentions -%}
 					{% include 'items/deck.njk' %}
 				{% endfor %}
 			</nav>
@@ -90,7 +87,6 @@ truncate: true
 							{%- elif item.data.rsvp.value == 'maybe' or item.data.rsvp.value == 'interested' -%}
 								{%- set rsvp_class = 'box--warning' -%}
 							{%- endif -%}
-							{%- set responses = item.url | getWebmentions -%}
 							{% include 'items/deck.njk' %}
 						</div>
 					{% endfor %}
@@ -104,7 +100,6 @@ truncate: true
 				<h2 id="on-this-day">On This Day</h2>
 				<nav class=" [ deck ] " aria-labelledby="on-this-day">
 					{% for item in collections.throwbackPosts | limit(site.limits.feature) %}
-						{%- set responses = item.url | getWebmentions -%}
 						{% include 'items/deck.njk' %}
 					{% endfor %}
 				</nav>
@@ -119,7 +114,6 @@ truncate: true
 			</h2>
 			<nav class=" [ deck ] " aria-labelledby="projects">
 				{% for item in collections.projects | limit(site.limits.feature) %}
-					{%- set responses = item.url | getWebmentions -%}
 					{% include 'items/deck.njk' %}
 				{% endfor %}
 			</nav>
