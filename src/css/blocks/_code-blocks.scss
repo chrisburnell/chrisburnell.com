@@ -67,6 +67,10 @@ pre {
 		content: "YAML";
 		color: h(yaml);
 	}
+
+	%monospace {
+		padding: 0;
+	}
 }
 
 /**

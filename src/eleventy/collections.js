@@ -132,7 +132,7 @@ module.exports = {
 						const difference = (dateFilters.epoch(webmention.data.published || webmention.verified_date) - dateFilters.epoch(accumulator.prev.data.published || accumulator.prev.verified_date)) / 1000 / 60
 						index && accumulator.array.push(difference)
 						accumulator.prev = webmention
-						return acc
+						return accumulator
 					},
 					{ array: [], prev: item.data.webmentions[0] }
 				)

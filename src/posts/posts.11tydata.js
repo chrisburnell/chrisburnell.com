@@ -10,9 +10,9 @@ module.exports = async () => {
 
 	return {
 		layout: "post",
+		tags: ["post"],
 		list: "deck",
 		mf_root: "entry",
-		tags: ["post"],
 		show_webmentions: true,
 		eleventyComputed: {
 			webmentions: (data) => {
