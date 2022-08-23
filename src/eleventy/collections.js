@@ -124,15 +124,14 @@ module.exports = {
 			.filter((item) => {
 				return item.data.webmentions.length >= site.limits.minWebmentions
 			})
-			.sort(collectionFilters.dateFilter)
 			.map((item) => {
 				// calculate difference in minutes between the published date
 				// of each Webmention in order to build a mean from the sum
 				const deltas = item.data.webmentions.reduce(
-					(acc, webmention, index, array) => {
-						const difference = (dateFilters.epoch(webmention.data.published || webmention.verified_date) - dateFilters.epoch(acc.prev.data.published || acc.prev.verified_date)) / 1000 / 60
-						index && acc.array.push(difference)
-						acc.prev = webmention
+					(accumulator, webmention, index) => {
+						const difference = (dateFilters.epoch(webmention.data.published || webmention.verified_date) - dateFilters.epoch(accumulator.prev.data.published || accumulator.prev.verified_date)) / 1000 / 60
+						index && accumulator.array.push(difference)
+						accumulator.prev = webmention
 						return acc
 					},
 					{ array: [], prev: item.data.webmentions[0] }
@@ -141,23 +140,19 @@ module.exports = {
 				const deltasNormalizedRatio = Math.max(...deltas.array) / 100
 				const deltasNormalized = deltas.array.map((value) => value / deltasNormalizedRatio)
 				const deltasNormalizedMean = deltasNormalized.reduce((a, b) => a + b) / deltasNormalized.length
+
 				// calculate the z-score of each webmention in time to build a
 				// better mean from their sum
-				const deltasMean = deltas.array.reduce((a, b) => a + b) / deltas.array.length
-				const deltasStandardDeviation = Math.sqrt(deltas.array.reduce((a, b) => a + Math.pow(b - deltasMean, 2)) / deltas.array.length)
-				const deltasZScores = deltas.array.map((delta) => (delta - deltasMean) / deltasStandardDeviation)
-				const deltasZScoresMean = deltasZScores.reduce((a, b) => a + Math.abs(b)) / deltasZScores.length
-
-				// console.log("----")
-				// deltasZScores.forEach((g) => {
-				// 	console.log(g)
-				// })
-				// console.log("mean", deltasZScoresMean)
+				// const deltasMean = deltas.array.reduce((a, b) => a + b) / deltas.array.length
+				// const deltasStandardDeviation = Math.sqrt(deltas.array.reduce((a, b) => a + Math.pow(b - deltasMean, 2)) / deltas.array.length)
+				// const deltasZScores = deltas.array.map((delta) => (delta - deltasMean) / deltasStandardDeviation)
+				// const deltasZScoresMean = deltasZScores.reduce((a, b) => a + Math.abs(b)) / deltasZScores.length
 
 				item.hotness = (site.weights.deltas * deltasNormalizedMean) / (site.weights.count * item.data.webmentions.length)
 
 				return item
 			})
+			.sort(collectionFilters.dateFilter)
 			.sort((a, b) => {
 				return a.hotness - b.hotness
 			})

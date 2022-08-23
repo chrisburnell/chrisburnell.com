@@ -130,20 +130,20 @@ const Webmentions = require("@chrisburnell/eleventy-cache-webmentions")(null, {
 })
 
 module.exports = async () => {
-	const filteredWebmentions = await Webmentions()
+    const webmentionsByUrl = await Webmentions()
 
-	return {
-		eleventyComputed: {
-			webmentions: (data) => {
-				const urlWebmentions = filteredWebmentions["https://example.com" + data.page.url] || []
+    return {
+        eleventyComputed: {
+            webmentions: (data) => {
+                const webmentionsForUrl = webmentionsByUrl["https://example.com" + data.page.url] || []
 
-				if (urlWebmentions.length) {
-					return urlWebmentions.sort((a, b) => (b.data.published || b.verified_date) - (a.data.published || a.verified_date))
-				}
-				return []
-			},
-		},
-	}
+                if (webmentionsForUrl.length) {
+                    return webmentionsForUrl.sort((a, b) => (b.data.published || b.verified_date) - (a.data.published || a.verified_date))
+                }
+                return []
+            },
+        },
+    }
 }
 ```
 
@@ -153,13 +153,9 @@ You can now use this data in a number of useful ways, not limited to things like
 module.exports = (eleventyConfig) => {
     eleventyConfig.addCollection("popular", (collection) => {
         return collection
-            .getFilteredByTag("post")
-			.filter((item) => {
-				return item.data.webmentions.length
-			})
-			.sort((a, b) => {
-				return b.data.webmentions.length - a.data.webmentions.length
-			})
+            .sort((a, b) => {
+                return b.data.webmentions.length - a.data.webmentions.length
+            })
     })
 }
 ```
