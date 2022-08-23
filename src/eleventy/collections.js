@@ -124,9 +124,10 @@ module.exports = {
 			.filter((item) => {
 				return item.data.webmentions.length >= site.limits.minWebmentions
 			})
+			.sort(collectionFilters.dateFilter)
 			.map((item) => {
 				// calculate difference in minutes between the published date
-				// of each Webmention in order to build a median from the sum
+				// of each Webmention in order to build a mean from the sum
 				const deltas = item.data.webmentions.reduce(
 					(acc, webmention, index, array) => {
 						const difference = (dateFilters.epoch(webmention.data.published || webmention.verified_date) - dateFilters.epoch(acc.prev.data.published || acc.prev.verified_date)) / 1000 / 60
@@ -139,15 +140,26 @@ module.exports = {
 				// normalize the array of deltas
 				const deltasNormalizedRatio = Math.max(...deltas.array) / 100
 				const deltasNormalized = deltas.array.map((value) => value / deltasNormalizedRatio)
+				const deltasNormalizedMean = deltasNormalized.reduce((a, b) => a + b) / deltasNormalized.length
+				// calculate the z-score of each webmention in time to build a
+				// better mean from their sum
+				const deltasMean = deltas.array.reduce((a, b) => a + b) / deltas.array.length
+				const deltasStandardDeviation = Math.sqrt(deltas.array.reduce((a, b) => a + Math.pow(b - deltasMean, 2)) / deltas.array.length)
+				const deltasZScores = deltas.array.map((delta) => (delta - deltasMean) / deltasStandardDeviation)
+				const deltasZScoresMean = deltasZScores.reduce((a, b) => a + Math.abs(b)) / deltasZScores.length
 
-				const deltasMedian = deltasNormalized.reduce((a, b) => a + b) / item.data.webmentions.length
+				// console.log("----")
+				// deltasZScores.forEach((g) => {
+				// 	console.log(g)
+				// })
+				// console.log("mean", deltasZScoresMean)
 
-				item.popularity = (site.weights.deltasMedian * deltasMedian) / (site.weights.count * item.data.webmentions.length)
+				item.hotness = (site.weights.deltas * deltasNormalizedMean) / (site.weights.count * item.data.webmentions.length)
 
 				return item
 			})
 			.sort((a, b) => {
-				return a.popularity - b.popularity
+				return a.hotness - b.hotness
 			})
 			.slice(0, site.limits.feed)
 	},

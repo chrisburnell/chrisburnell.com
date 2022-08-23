@@ -21,7 +21,7 @@
   "upcomingDaysLead": 7,
   "weights": {
     "count": 1,
-    "deltasMedian": 0.7
+    "deltas": 0.7
   },
   "sitemap": {
     "changefreq": "monthly",
