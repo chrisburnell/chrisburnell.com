@@ -20,8 +20,8 @@
   "cacheDuration": "11h",
   "upcomingDaysLead": 7,
   "weights": {
-    "count": 1,
-    "deltas": 0.7
+    "count": 0.5,
+    "deltas": 1
   },
   "sitemap": {
     "changefreq": "monthly",
