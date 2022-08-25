@@ -93,6 +93,11 @@ hr {
 	position: relative;
 	// show the overflow in Edge and IE
 	overflow: visible;
+
+	&,
+	& + * {
+		--flow-space: var(--size-large);
+	}
 }
 
 // Hide elements visually

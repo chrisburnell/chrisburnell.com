@@ -73,6 +73,7 @@ $sizes: (
 	small-medium: clamp(0.63rem, calc(0.04rem + 1.86vw), 1.44rem),
 	medium-large: clamp(1.25rem, calc(0.31rem + 3vw), 2.56rem),
 	large-gigantic: clamp(2.25rem, calc(0.64rem + 5.14vw), 4.5rem),
+	space: clamp(1.5em, calc(0.31rem + 3vw), 2.25em),
 	gutter: var(--size-medium),
 	gap: calc(var(--size-gutter) * 2),
 	avatar: 100px,

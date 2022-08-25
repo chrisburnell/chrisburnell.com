@@ -46,7 +46,7 @@ pre {
 	padding: var(--size-gutter);
 	margin: 0;
 	tab-size: 4;
-	font-size: initial;
+	font-size: var(--font-size-default);
 	hyphens: none;
 	white-space: pre-wrap;
 	overflow: hidden;
