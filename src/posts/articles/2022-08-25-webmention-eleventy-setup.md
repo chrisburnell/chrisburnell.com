@@ -6,6 +6,7 @@ tags:
   - eleventy
   - indieweb
   - javascript
+  - writing
 ---
 
 **1.** Unless you already have your own Webmention receiver, sign up for one and add the secret key/token to your project. Below are two examples:
