@@ -1,5 +1,5 @@
 const site = require("#data/site")
-const webmentionsConfig = require("./src/data/webmentionsConfig.js")
+const configWebmentions = require("./src/data/config/webmentions.js")
 
 // Import Eleventy plugins
 const caniusePlugin = require("#plugins/caniusePlugin")
@@ -49,7 +49,7 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.addPlugin(imageAvatarPlugin)
 	// eleventyConfig.addPlugin(albumCoverPlugin)
 	eleventyConfig.addPlugin(syntaxHighlightPlugin)
-	eleventyConfig.addPlugin(webmentionsPlugin, webmentionsConfig)
+	eleventyConfig.addPlugin(webmentionsPlugin, configWebmentions)
 
 	// Transforms
 	eleventyConfig.addTransform("parse", parseTransform)

@@ -53,9 +53,7 @@ module.exports = function(eleventyConfig) {
 }
 ```
 
-## Usage
-
-### Options
+## Options
 
 Advanced control over how the Webmentions are cached and processed is done by passing `options` into the plugin when using `addPlugin`:
 
@@ -104,7 +102,7 @@ module.exports = function(eleventyConfig) {
 }
 ```
 
-### JavaScript
+## JavaScript Usage
 
 Accessing the plugin in JavaScript in the way shown below will give you an Object containing your cached Webmentions organised in key:value pairs where the key is a URL on your domain and the value is an array of data for Webmentions sent to that URL.
 
@@ -136,7 +134,9 @@ module.exports = async () => {
                 const webmentionsForUrl = webmentionsByUrl["https://example.com" + data.page.url] || []
 
                 if (webmentionsForUrl.length) {
-                    return webmentionsForUrl.sort((a, b) => (b.data.published || b.verified_date) - (a.data.published || a.verified_date))
+                    return webmentionsForUrl.sort((a, b) => {
+                        return (b.data.published || b.verified_date) - (a.data.published || a.verified_date)
+                    })
                 }
                 return []
             },
@@ -158,9 +158,15 @@ module.exports = (eleventyConfig) => {
 }
 ```
 
-### Liquid/Nunjucks
+## Liquid/Nunjucks Usage
 
 Accessing the plugin in Liquid/Nunjucks by using a Filter and passing in a URL in the way shown below will give you an Array containing the cached Webmentions for the given URL.
+
+```twig
+{% raw %}{% set responses = webmentions %}{% endraw %}
+```
+
+**OR**
 
 ```twig
 {% raw %}{% set responses = page.url | getWebmentions %}{% endraw %}
@@ -211,13 +217,13 @@ module.exports = function(eleventyConfig) {
 
 ## go-jamming
 
-See [go-jamming on GitHub](https://git.brainbaking.com/wgroeneveld/go-jamming) for more information on usage.
+See [go-jamming on Wouter Groenveld’s Git server](https://git.brainbaking.com/wgroeneveld/go-jamming) for more information on usage.
 
 ### Add your token
 
 Once you’ve set up your *go-jamming* server and you’ve defined your token, you’ll need add it to your project as an environment variable, i.e. in a `.env` file in the root of your project:
 
-```text
+```
 GO_JAMMING_TOKEN=njJql0lKXnotreal4x3Wmd
 ```
 

@@ -1,9 +1,8 @@
-const site = require("#data/site")
-const webmentionsConfig = require("../data/webmentionsConfig.js")
+const configWebmentions = require("../data/config/webmentions.js")
 
 const dateFilters = require("#filters/dates")
 
-const Webmentions = require("@chrisburnell/eleventy-cache-webmentions")(null, webmentionsConfig)
+const Webmentions = require("@chrisburnell/eleventy-cache-webmentions")(null, configWebmentions)
 
 module.exports = async () => {
 	const webmentionsByUrl = await Webmentions()
@@ -14,7 +13,7 @@ module.exports = async () => {
 		permalink: "/{{ page.fileSlug }}/index.html",
 		eleventyComputed: {
 			webmentions: (data) => {
-				const webmentionsForUrl = webmentionsByUrl[site.url + data.page.url] || []
+				const webmentionsForUrl = webmentionsByUrl[configWebmentions.domain + data.page.url] || []
 
 				if (webmentionsForUrl.length) {
 					return webmentionsForUrl.sort((a, b) => {
