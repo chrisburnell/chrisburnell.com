@@ -19,9 +19,7 @@ toc: true
     <figcaption><p>A lovely <a href="https://en.wikipedia.org/wiki/Bowhead_whale">bowhead whale</a>. I’d love other suggestions! 😅</p></figcaption>
 </figure>
 
-[![chrisburnell - bowhead](https://img.shields.io/static/v1?label=chrisburnell&message=bowhead&color=5f8aa6&logo=github)](https://github.com/chrisburnell/bowhead "Go to GitHub repo") [![stars - bowhead](https://img.shields.io/github/stars/chrisburnell/bowhead?style=social)](https://github.com/chrisburnell/bowhead) [![forks - bowhead](https://img.shields.io/github/forks/chrisburnell/bowhead?style=social)](https://github.com/chrisburnell/bowhead)
-
-[![GitHub release](https://img.shields.io/github/release/chrisburnell/bowhead?include_prereleases=&sort=semver&color=5f8aa6)](https://github.com/chrisburnell/bowhead/releases/) [![License](https://img.shields.io/badge/License-MIT-5f8aa6)](https://github.com/chrisburnell/bowhead/blob/master/LICENSE)
+[![chrisburnell - bowhead](https://img.shields.io/static/v1?label=chrisburnell&message=bowhead&color=5f8aa6&logo=github)](https://github.com/chrisburnell/bowhead "Go to GitHub repo") [![GitHub release](https://img.shields.io/github/release/chrisburnell/bowhead?include_prereleases=&sort=semver&color=5f8aa6)](https://github.com/chrisburnell/bowhead/releases/) [![License](https://img.shields.io/badge/License-MIT-5f8aa6)](https://github.com/chrisburnell/bowhead/blob/master/LICENSE) [![stars - bowhead](https://img.shields.io/github/stars/chrisburnell/bowhead?style=social)](https://github.com/chrisburnell/bowhead) [![forks - bowhead](https://img.shields.io/github/forks/chrisburnell/bowhead?style=social)](https://github.com/chrisburnell/bowhead)
 
 ## What?
 

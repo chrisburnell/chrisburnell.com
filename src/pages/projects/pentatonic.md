@@ -18,9 +18,7 @@ toc: true
     <figcaption><p>A snippet of a <a href="https://en.wikipedia.org/wiki/Pentatonic_scale">C Major Pentatonic scale</a>.</p></figcaption>
 </figure>
 
-[![chrisburnell - pentatonic](https://img.shields.io/static/v1?label=chrisburnell&message=pentatonic&color=5f8aa6&logo=github)](https://github.com/chrisburnell/pentatonic "Go to GitHub repo") [![stars - pentatonic](https://img.shields.io/github/stars/chrisburnell/pentatonic?style=social)](https://github.com/chrisburnell/pentatonic) [![forks - pentatonic](https://img.shields.io/github/forks/chrisburnell/pentatonic?style=social)](https://github.com/chrisburnell/pentatonic)
-
-[![GitHub release](https://img.shields.io/github/release/chrisburnell/pentatonic?include_prereleases=&sort=semver&color=5f8aa6)](https://github.com/chrisburnell/pentatonic/releases/) [![License](https://img.shields.io/badge/License-CC0-5f8aa6)](https://github.com/chrisburnell/pentatonic/blob/master/LICENSE)
+[![chrisburnell - pentatonic](https://img.shields.io/static/v1?label=chrisburnell&message=pentatonic&color=5f8aa6&logo=github)](https://github.com/chrisburnell/pentatonic "Go to GitHub repo") [![GitHub release](https://img.shields.io/github/release/chrisburnell/pentatonic?include_prereleases=&sort=semver&color=5f8aa6)](https://github.com/chrisburnell/pentatonic/releases/) [![License](https://img.shields.io/badge/License-CC0-5f8aa6)](https://github.com/chrisburnell/pentatonic/blob/master/LICENSE) [![stars - pentatonic](https://img.shields.io/github/stars/chrisburnell/pentatonic?style=social)](https://github.com/chrisburnell/pentatonic) [![forks - pentatonic](https://img.shields.io/github/forks/chrisburnell/pentatonic?style=social)](https://github.com/chrisburnell/pentatonic)
 
 <div class="box">
     <p>Hey, psst!… You can jump straight down to the <a href="#examples">examples</a>!</p>

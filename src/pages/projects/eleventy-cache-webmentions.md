@@ -22,9 +22,7 @@ toc: true
     {% image './images/content/eleventy-cache-webmentions.png', ''%}
 </figure>
 
-[![chrisburnell - eleventy-cache-webmentions](https://img.shields.io/static/v1?label=chrisburnell&message=eleventy-cache-webmentions&color=5f8aa6&logo=github)](https://github.com/chrisburnell/eleventy-cache-webmentions "Go to GitHub repo") [![stars - eleventy-cache-webmentions](https://img.shields.io/github/stars/chrisburnell/eleventy-cache-webmentions?style=social)](https://github.com/chrisburnell/eleventy-cache-webmentions) [![forks - eleventy-cache-webmentions](https://img.shields.io/github/forks/chrisburnell/eleventy-cache-webmentions?style=social)](https://github.com/chrisburnell/eleventy-cache-webmentions)
-
-[![GitHub release](https://img.shields.io/github/release/chrisburnell/eleventy-cache-webmentions?include_prereleases=&sort=semver&color=5f8aa6)](https://github.com/chrisburnell/eleventy-cache-webmentions/releases/) [![License](https://img.shields.io/badge/License-MIT-5f8aa6)](https://github.com/chrisburnell/eleventy-cache-webmentions/blob/main/LICENSE)
+[![chrisburnell - eleventy-cache-webmentions](https://img.shields.io/static/v1?label=chrisburnell&message=eleventy-cache-webmentions&color=5f8aa6&logo=github)](https://github.com/chrisburnell/eleventy-cache-webmentions "Go to GitHub repo") [![GitHub release](https://img.shields.io/github/release/chrisburnell/eleventy-cache-webmentions?include_prereleases=&sort=semver&color=5f8aa6)](https://github.com/chrisburnell/eleventy-cache-webmentions/releases/) [![License](https://img.shields.io/badge/License-MIT-5f8aa6)](https://github.com/chrisburnell/eleventy-cache-webmentions/blob/main/LICENSE) [![stars - eleventy-cache-webmentions](https://img.shields.io/github/stars/chrisburnell/eleventy-cache-webmentions?style=social)](https://github.com/chrisburnell/eleventy-cache-webmentions) [![forks - eleventy-cache-webmentions](https://img.shields.io/github/forks/chrisburnell/eleventy-cache-webmentions?style=social)](https://github.com/chrisburnell/eleventy-cache-webmentions)
 
 ## Installation
 
@@ -213,7 +211,7 @@ module.exports = function(eleventyConfig) {
 
 ## go-jamming
 
-See [go-jamming on GitHub](https://github.com/wgroeneveld/go-jamming) for more information on usage.
+See [go-jamming on GitHub](https://git.brainbaking.com/wgroeneveld/go-jamming) for more information on usage.
 
 ### Add your token
 
