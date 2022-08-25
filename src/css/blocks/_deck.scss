@@ -35,6 +35,10 @@
 			color: inherit;
 		}
 	}
+
+	figure {
+		padding: var(--padding, 1em);
+	}
 }
 
 .deck__context,
