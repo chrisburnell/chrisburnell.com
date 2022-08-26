@@ -60,6 +60,10 @@
 		border-block-start-color: h(raven, alpha);
 	}
 
+	.librarian {
+		background-color: mix(map-get($colors, mineshaft), rgba(map-get($colors, thunder), map-get($opacities, delta)));
+	}
+
 	var,
 	.box %anchor {
 		color: h(highland);

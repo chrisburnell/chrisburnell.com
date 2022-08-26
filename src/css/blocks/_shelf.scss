@@ -33,3 +33,10 @@
 		block-size: 240px;
 	}
 }
+
+.librarian {
+	background-color: mix(map-get($colors, milou), rgba(map-get($colors, thunder), map-get($opacities, delta)));
+	position: sticky;
+	top: 0;
+	z-index: var(--z-index-above);
+}
