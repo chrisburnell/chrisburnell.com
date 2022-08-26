@@ -49,6 +49,12 @@ module.exports = (value, outputPath) => {
 			$(element).attr("id", headingID)
 		})
 
+		// Make sure <ul> elements are accessible even with `list-style: none` in Safari
+		const unordered = $("ul")
+		unordered.each((i, element) => {
+			$(element).attr("role", "list")
+		})
+
 		// Make <pre> code blocks keyboard-accessible by adding `tabindex="0"`
 		const preformatted = $("pre > code")
 		preformatted.each((i, element) => {

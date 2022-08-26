@@ -45,7 +45,12 @@ Make sure the browser support for CSS Variables meets your needs:
 
 {% caniuse 'css-variables' %}
 
-## What are <q>types of values</q>?
+## What are <q>CSS Data Types</q>?
+
+<blockquote>
+    <p>CSS data types define typical values (including keywords and units) accepted by CSS properties and functions.</p>
+    <cite><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Types">CSS data types on MDN</a></cite>
+</blockquote>
 
 ```css
 selector {
@@ -53,7 +58,7 @@ selector {
 }
 ```
 
-An important first step to using *Bowhead* is to understand how it organises CSS properties into different <q>types</q>. By and large, this is done by looking at what the *expected* values for a given property are:
+An important first step to using *Bowhead* is to understand how it categorises CSS properties by the different <q>CSS data types</q>. By and large, this is done by looking at what the *expected* values for a given property are:
 
 ```css
 selector {
@@ -76,7 +81,7 @@ Despite being presented in different formats, we can confidently say that `backg
 
 Sizes can take trickier forms to identify and categorise, and I recommend allowing for more sizes than you might expect at first and paring it back later. Getting everything categorised is the hard part; swapping tokens later becomes very trivial off the back of this up-front effort. Regardless, I attach any kind of distance-related value to a size, and, once again, we could interchange any of the values between `padding`, `margin`, `border-width`, or `width` and the CSS still makes sense.
 
-Extrapolating from here across the vast variety of CSS *properties* and the *types of values* they expect, you end up with a map of *most properties* against value types:
+Extrapolating from here across the vast variety of CSS *properties* and the *data type of the values* they expect, you end up with a map of *most properties* against value types:
 
 <table>
     <thead>
@@ -190,7 +195,7 @@ With this knowledge under our belt, we can begin to define the design tokens for
         <tr>
             <th><code>$bowhead-property-map</code><br><em>(optional)</em></th>
             <td><a href="#property-map">See below.</a></td>
-            <td>Defines which <q>types of values</q> each CSS property should map against.</td>
+            <td>Defines which <q>data types</q> each CSS property should map against.</td>
         </tr>
         <tr>
             <th><code>$bowhead-type-map</code><br><em>(optional)</em></th>
@@ -200,7 +205,7 @@ With this knowledge under our belt, we can begin to define the design tokens for
         <tr>
             <th><code>$bowhead-tokens</code></th>
             <td><a href="#tokens">See below.</a></td>
-          <td>Defines the design token values, categorised by <q>types of values</q>.</td>
+          <td>Defines the design token values, categorised by <q>data types</q>.</td>
         </tr>
     </tbody>
 </table>
@@ -364,7 +369,7 @@ $bowhead-tokens: (
 
 <h3 id="type-map">05. Type Map <em>(optional)</em></h3>
 
-`$bowhead-type-map` is a `map` that allows defining alternate names for the <q>types of values</q>, e.g.
+`$bowhead-type-map` is a `map` that allows defining alternate names for the <q>data types</q>, e.g.
 
 ```scss
 $bowhead-type-map: (

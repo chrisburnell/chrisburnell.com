@@ -249,5 +249,14 @@
      "links": [
       "[Page on MDN](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/inert)"
      ]
+  },
+  {
+     "id": "mdn-css_at-rules_property",
+     "language": "css",
+     "title": "@property",
+     "description": "Gives us the ability to explicitly define our CSS custom properties, including type-checking, default values, and ability to cascade the value.",
+     "links": [
+      "[Page on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@property)"
+     ]
   }
 ]

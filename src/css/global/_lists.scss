@@ -118,3 +118,7 @@ dd {
 	margin: 0;
 	vertical-align: top;
 }
+
+:is(li, dt, dd) {
+	break-inside: avoid;
+}

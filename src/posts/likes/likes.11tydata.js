@@ -1,6 +1,5 @@
 module.exports = {
 	hidden: true,
-	list: "shelf",
 	mf_property: "like-of",
 	permalink: "like/{{ page.fileSlug }}/",
 	category: "like",
