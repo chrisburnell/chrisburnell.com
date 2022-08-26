@@ -38,5 +38,5 @@
 	background-color: mix(map-get($colors, thunder), map-get($colors, milou), map-get($opacities, delta) * 100%);
 	position: sticky;
 	top: 0;
-	z-index: var(--z-index-above);
+	z-index: var(--z-index-modal);
 }
