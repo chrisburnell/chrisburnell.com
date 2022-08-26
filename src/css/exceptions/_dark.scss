@@ -61,7 +61,7 @@
 	}
 
 	.librarian {
-		background-color: mix(map-get($colors, mineshaft), rgba(map-get($colors, thunder), map-get($opacities, delta)));
+		background-color: mix(map-get($colors, thunder), map-get($colors, mineshaft), map-get($opacities, delta) * 100%);
 	}
 
 	var,
