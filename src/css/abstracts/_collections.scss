@@ -23,7 +23,7 @@
 	@extend %content !optional;
 }
 
-:is(img, input[type="image"], picture, svg) {
+:is(img, input[type="image"], svg) {
 	@extend %image !optional;
 }
 
