@@ -60,6 +60,11 @@
 	}
 }
 
+.sticky {
+	position: sticky;
+	top: 0;
+}
+
 .serif {
 	font-family: var(--font-family-serif);
 }
