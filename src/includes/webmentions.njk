@@ -9,27 +9,27 @@
 			<button class=" [ webmentions__submit ] " type="submit">Send</button>
 		</form>
 		{% if webmentions.length %}
-			{%- set links = webmentions | arrayKeyEquals('activity.type', 'link') | arrayKeyEquals('data.content', null) -%}
-			{%- set likes = webmentions | arrayKeyEquals('activity.type', 'like') -%}
-			{%- set reposts = webmentions | arrayKeyEquals('activity.type', 'repost') -%}
 			{%- set bookmarks = webmentions | arrayKeyEquals('activity.type', 'bookmark') -%}
-			{%- set reactions = links.concat(likes).concat(reposts).concat(bookmarks) -%}
+			{%- set likes = webmentions | arrayKeyEquals('activity.type', 'like') -%}
+			{%- set links = webmentions | arrayKeyEquals('activity.type', 'link') | arrayKeyEquals('data.content', null) -%}
+			{%- set reposts = webmentions | arrayKeyEquals('activity.type', 'repost') -%}
+			{%- set reactions = bookmarks.concat(likes).concat(links).concat(reposts) -%}
 			{%- set replies = webmentions | arrayKeyEquals('activity.type', ['link', 'reply']) -%}
 			<div class=" [ webmentions__responses ] [ flow ] ">
 				<h2 id="responses">{{ webmentions.length }} Response{{ 's' if webmentions.length > 1 }}</h2>
 				{% if reactions.length %}
 					<ol id="reactions" class=" [ cluster ] [ reactions ] [ strong ] ">
-						{% if links.length %}
-							<li><span class=" [ emoji ] ">🔗</span> {{ links.length }} Link{{ 's' if links.length > 1 }}</li>
+						{% if bookmarks.length %}
+							<li><span class=" [ emoji ] ">🔖</span> {{ bookmarks.length }} Bookmark{{ 's' if bookmarks.length > 1 }}</li>
 						{% endif %}
 						{% if likes.length %}
 							<li><span class=" [ emoji ] ">❤️</span> {{ likes.length }} Like{{ 's' if likes.length > 1 }}</li>
 						{% endif %}
+						{% if links.length %}
+							<li><span class=" [ emoji ] ">🔗</span> {{ links.length }} Link{{ 's' if links.length > 1 }}</li>
+						{% endif %}
 						{% if reposts.length %}
 							<li><span class=" [ emoji ] ">🔄️</span> {{ reposts.length }} Repost{{ 's' if reposts.length > 1 }}</li>
-						{% endif %}
-						{% if bookmarks.length %}
-							<li><span class=" [ emoji ] ">🔖</span> {{ bookmarks.length }} Bookmark{{ 's' if bookmarks.length > 1 }}</li>
 						{% endif %}
 					</ol>
 				{% endif %}
