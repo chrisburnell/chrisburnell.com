@@ -16,14 +16,16 @@ module.exports = {
 	arrayKeyEquals: (array, key, value) => {
 		return array.filter((item) => {
 			const keys = key.split(".")
-			const reducedKey = keys.reduce((object, key) => {
+			const itemValue = keys.reduce((object, key) => {
 				return object[key]
 			}, item)
 
-			if (typeof value === "string" || value === null) {
-				return reducedKey === value
+			if (value === "notempty") {
+				return itemValue?.length
+			} else if (typeof value === "string" || value === null) {
+				return itemValue === value
 			}
-			return value.includes(reducedKey)
+			return value.includes(itemValue)
 		})
 	},
 	keyValue: (object, key) => {

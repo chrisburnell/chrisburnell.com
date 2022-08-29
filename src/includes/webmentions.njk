@@ -14,7 +14,7 @@
 			{%- set links = webmentions | arrayKeyEquals('activity.type', 'link') | arrayKeyEquals('data.content', null) -%}
 			{%- set reposts = webmentions | arrayKeyEquals('activity.type', 'repost') -%}
 			{%- set reactions = bookmarks.concat(likes).concat(links).concat(reposts) -%}
-			{%- set replies = webmentions | arrayKeyEquals('activity.type', ['link', 'reply']) -%}
+			{%- set replies = webmentions | arrayKeyEquals('activity.type', ['link', 'reply']) | arrayKeyEquals('data.content', 'notempty') -%}
 			<div class=" [ webmentions__responses ] [ flow ] ">
 				<h2 id="responses">{{ webmentions.length }} Response{{ 's' if webmentions.length > 1 }}</h2>
 				{% if reactions.length %}
@@ -41,7 +41,7 @@
 								{%- set wmType = webmention.activity.type | getPostType -%}
 								{%- set wmDate = webmention.data.published | default(webmention.verified_date) -%}
 								{%- set wmSource = webmention.data.url -%}
-								{%- set wmContent = webmention.data.content -%}
+								{%- set wmContent = webmention.data.content | fixUrl | safe -%}
 								{%- set authorPhoto = webmention.data.author.photo -%}
 								{%- set authorUrl = webmention.data.author.url | default(wmSource) -%}
 								{%- set authorName = webmention.data.author.name | default("Anonymous") -%}
@@ -56,7 +56,7 @@
 										<small>on</small>
 										<a class=" [ u-url  u-{{ wmType }} ] " href="{{ wmSource }}" rel="external" title="Read externally"><time datetime="{{ wmDate | rfcDate }}">{{ wmDate | friendlyDateLong | safe }}</time></a>
 									</div>
-									<div class=" [ e-content ] [ flow ] {% if sentiment < -0.3 %}[ salty ] {% endif %}">{{ wmContent | fixUrl | safe }}</div>
+									<div class=" [ e-content ] [ flow ] {% if sentiment < -0.3 %}[ salty ] {% endif %}">{{ wmContent }}</div>
 								</li>
 							{% endif %}
 						{% endfor %}
