@@ -9,18 +9,18 @@
 			<button class=" [ webmentions__submit ] " type="submit">Send</button>
 		</form>
 		{% if webmentions.length %}
+			{%- set links = webmentions | arrayKeyEquals('activity.type', 'link') | arrayKeyEquals('data.content', null) -%}
+			{%- set likes = webmentions | arrayKeyEquals('activity.type', 'like') -%}
+			{%- set reposts = webmentions | arrayKeyEquals('activity.type', 'repost') -%}
+			{%- set bookmarks = webmentions | arrayKeyEquals('activity.type', 'bookmark') -%}
+			{%- set reactions = links.concat(likes).concat(reposts).concat(bookmarks) -%}
+			{%- set replies = webmentions | arrayKeyEquals('activity.type', ['link', 'reply']) -%}
 			<div class=" [ webmentions__responses ] [ flow ] ">
-				{%- set mentions = webmentions | arrayKeyEquals('activity.type', 'link') -%}
-				{%- set likes = webmentions | arrayKeyEquals('activity.type', 'like') -%}
-				{%- set reposts = webmentions | arrayKeyEquals('activity.type', 'repost') -%}
-				{%- set bookmarks = webmentions | arrayKeyEquals('activity.type', 'bookmark') -%}
-				{%- set reactions = mentions.concat(likes).concat(reposts).concat(bookmarks) -%}
-				{%- set replies = webmentions | arrayKeyEquals('activity.type', 'reply') -%}
-				<h2 id="responses">{{ reactions.length + replies.length }} Response{{ 's' if (reactions.length + replies.length) > 1 }}</h2>
+				<h2 id="responses">{{ webmentions.length }} Response{{ 's' if webmentions.length > 1 }}</h2>
 				{% if reactions.length %}
 					<ol id="reactions" class=" [ cluster ] [ reactions ] [ strong ] ">
-						{% if mentions.length %}
-							<li><span class=" [ emoji ] ">🔗</span> {{ mentions.length }} Mention{{ 's' if mentions.length > 1 }}</li>
+						{% if links.length %}
+							<li><span class=" [ emoji ] ">🔗</span> {{ links.length }} Link{{ 's' if links.length > 1 }}</li>
 						{% endif %}
 						{% if likes.length %}
 							<li><span class=" [ emoji ] ">❤️</span> {{ likes.length }} Like{{ 's' if likes.length > 1 }}</li>

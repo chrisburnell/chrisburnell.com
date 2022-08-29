@@ -20,7 +20,10 @@ module.exports = {
 				return object[key]
 			}, item)
 
-			return reducedKey === value ? item : false
+			if (typeof value === "string" || value === null) {
+				return reducedKey === value
+			}
+			return value.includes(reducedKey)
 		})
 	},
 	keyValue: (object, key) => {
