@@ -42,7 +42,7 @@
   {
      "id": "css-cascade-layers",
      "language": "css",
-     "title": "Cascase Layers",
+     "title": "Cascade Layers",
      "description": "Gives us tighter control on the reigns of the cascade. This adds a layer of complexity to specificity in our CSS but allows us to designate different parts of our CSS to different layers, much like the concept of stacking with `z-index`. This complexity actually makes the practise of overriding selector specificity, using `!important` (proactively, of course!), and a number of other silly tricks we've added to our toolkit over the years.",
      "links": [
         "[Official Specification](https://www.w3.org/TR/css-cascade-5/)",

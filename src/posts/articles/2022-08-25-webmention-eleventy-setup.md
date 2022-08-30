@@ -125,7 +125,7 @@ And even when looping through something like a collection:
 {% endfor %}{% endraw %}
 ```
 
-How you want to filter the array of Webentions attached to each page is up to you, but I recommend using the *type* value (`activity.type` in [Webmention.io](https://webmention.io/); `type` in [go-jamming](https://git.brainbaking.com/wgroeneveld/go-jamming)) to split Webmentions into groups categorised by type—this will make it easier to figure out which Webmentions are binary interactions (e.g. likes, reposts) and which have richer content you might want to display (e.g. mentions, replies).
+How you want to filter the array of Webmentions attached to each page is up to you, but I recommend using the *type* value (`activity.type` in [Webmention.io](https://webmention.io/); `type` in [go-jamming](https://git.brainbaking.com/wgroeneveld/go-jamming)) to split Webmentions into groups categorised by type—this will make it easier to figure out which Webmentions are binary interactions (e.g. likes, reposts) and which have richer content you might want to display (e.g. mentions, replies).
 
 --------
 
