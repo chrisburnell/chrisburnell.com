@@ -13,16 +13,16 @@
 		padding-inline: var(--size-small);
 		font-weight: var(--font-weight-bold);
 	}
+}
 
-	.supported {
-		@extend .background--conifer;
-	}
+.supported {
+	@extend .background--conifer;
+}
 
-	.partial {
-		@extend .background--aspen;
-	}
+.partial {
+	@extend .background--aspen;
+}
 
-	.unsupported {
-		@extend .background--maple;
-	}
+.unsupported {
+	@extend .background--maple;
 }

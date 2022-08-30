@@ -23,7 +23,7 @@ layout: base
 	</div>
 
 	<div class=" [ content{% if full_width %}  full{% endif %} ] [ flow ] ">
-		<div class=" [ e-content ] [ flow ] {% if toc %}[ generate-toc ] {% endif %}">
+		<div class=" [ e-content ] [ flow ] {% if toc %}generate-toc{% endif %}">
 			{{ content | safe }}
 		</div>
 

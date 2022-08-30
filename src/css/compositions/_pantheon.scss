@@ -27,6 +27,25 @@
 		auto
 		[ads-end];
 
+	&:has(.table-of-contents) {
+		grid-template-rows:
+			[breadcrumbs-start]
+			auto
+			[breadcrumbs-end title-start]
+			auto
+			[title-end description-start]
+			auto
+			[description-end meta-start]
+			auto
+			[meta-end sparkline-start]
+			auto
+			[sparkline-end content-start]
+			auto
+			[content-end ads-start]
+			auto
+			[ads-end];
+	}
+
 	@include media("above:medium") {
 		grid-template-columns:
 			[marginalia-start]

@@ -12,6 +12,35 @@ toc: true
 
 <p>Please feel free to <a href="https://github.com/{{ author.github }}/{{ site.repository }}/tree/main/src/data/browserFeatures.json">suggest new features</a> or even <a href="https://github.com/{{ author.github }}/{{ site.repository }}/tree/main/src/data/browsersByType.json">other browsers</a>.</p>
 
+<figure>
+	<table>
+		<thead>
+			<tr>
+				<th></th>
+				{% for browser in browsersByType %}
+					<th class=" [ sideways ] ">{{ browser.name }}</th>
+				{% endfor %}
+				<th hidden class=" [ sideways ] ">Chrome</th>
+				<th hidden class=" [ sideways ] ">Edge</th>
+				<th hidden class=" [ sideways ] ">Firefox</th>
+				<th hidden class=" [ sideways ] ">Safari</th>
+				<th hidden class=" [ sideways ] ">Android Browser</th>
+				<th hidden class=" [ sideways ] ">Chrome (Android)</th>
+				<th hidden class=" [ sideways ] ">Firefox (Android)</th>
+				<th hidden class=" [ sideways ] ">Safari (iOS)</th>
+				<th hidden class=" [ sideways ] ">Samsung Internet</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for feature in browserFeaturesSorted %}
+				{% caniuse_table_row feature %}
+			{% endfor %}
+		</tbody>
+	</table>
+</figure>
+
+<hr>
+
 {% for feature in browserFeaturesSorted %}
 	<section class=" [ flow ] ">
 		<h2 id="{{ feature.id }}">{{ feature.title | safe }}{% if feature.language %} <small>({{ feature.language | capitalizeFormat }})</small>{% endif %}</h2>
@@ -21,6 +50,6 @@ toc: true
 				<li>{{ link | markdownFormat | safe }}</li>
 			{% endfor %}
 		</ul>
-		{% caniuse feature.id %}
+		{% caniuse feature %}
 	</section>
 {% endfor %}

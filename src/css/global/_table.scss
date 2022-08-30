@@ -38,15 +38,19 @@ table {
 	&.numeral {
 		text-align: end;
 	}
+
+	&.sideways {
+		writing-mode: vertical-lr;
+	}
 }
 
 // Heading Cells
 th {
-	background-color: h(alto);
 	font-weight: var(--font-weight-bold);
 	white-space: nowrap;
 
 	&:not(:empty) {
+		background-color: h(alto);
 		position: sticky;
 		z-index: var(--z-index-above);
 
@@ -68,9 +72,5 @@ th {
 td {
 	&.numeral {
 		white-space: nowrap;
-	}
-
-	tr:is(:hover, :focus) & {
-		background-color: h(alto, gamma);
 	}
 }

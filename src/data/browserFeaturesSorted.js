@@ -49,14 +49,12 @@ module.exports = async () => {
 			feature.full = 0
 			feature.partial = 0
 
-			Object.values(browsersByType).forEach((browsers) => {
-				Object.values(browsers).forEach((id) => {
-					if (support[id]?.y) {
-						feature.full += 1
-					} else if (support[id]?.a) {
-						feature.partial += 1
-					}
-				})
+			browsersByType.forEach((browser) => {
+				if (support[browser.id]?.y) {
+					feature.full += 1
+				} else if (support[browser.id]?.a) {
+					feature.partial += 1
+				}
 			})
 		}
 

@@ -1,15 +1,52 @@
-{
-  "Desktop": {
-  	"Chrome": "chrome",
-  	"Edge": "edge",
-  	"Firefox": "firefox",
-  	"Safari": "safari"
+[
+  {
+    "id": "chrome",
+    "name": "Chrome",
+    "type": "Desktop"
   },
-  "Mobile / Tablet": {
-  	"Android Browser": "android",
-  	"Chrome (Android)": "and_chr",
-  	"Firefox (Android)": "and_ff",
-  	"Safari (iOS)": "ios_saf",
-  	"Samsung Internet": "samsung"
+  {
+    "id": "edge",
+    "name": "Edge",
+    "type": "Desktop"
+  },
+  {
+    "id": "firefox",
+    "name": "Firefox",
+    "type": "Desktop"
+  },
+  {
+    "id": "opera",
+    "name": "Opera",
+    "type": "Desktop"
+  },
+  {
+    "id": "safari",
+    "name": "Safari",
+    "type": "Desktop"
+  },
+  {
+    "id": "android",
+    "name": "Android Browser",
+    "type": "Mobile"
+  },
+  {
+    "id": "and_chr",
+    "name": "Chrome (Android)",
+    "type": "Mobile"
+  },
+  {
+    "id": "and_ff",
+    "name": "Firefox (Android)",
+    "type": "Mobile"
+  },
+  {
+    "id": "ios_saf",
+    "name": "Safari (iOS)",
+    "type": "Mobile"
+  },
+  {
+    "id": "samsung",
+    "name": "Samsung Internet",
+    "type": "Mobile"
   }
-}
+]

@@ -24,6 +24,7 @@ module.exports = (value, outputPath) => {
 			})
 			tocHtml += `</ol></div></div>`
 			$(tocHtml).insertBefore(".content")
+			$(".generate-toc").removeClass("generate-toc")
 		}
 
 		// Process and generate fragment anchors for content headings
