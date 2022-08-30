@@ -1,15 +1,5 @@
 [
   {
-     "id": "dialog",
-     "language": "html",
-     "title": "&lt;dialog&gt;",
-     "description": "Native element for displaying a dialog/modal window.",
-     "links": [
-        "[Official Specification](https://html.spec.whatwg.org/multipage/forms.html#the-dialog-element)",
-        "[Page on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog)"
-     ]
-  },
-  {
      "id": "css-container-queries",
      "language": "css",
      "title": "Container Queries",
@@ -211,16 +201,6 @@
      "links": [
         "[Official Specification](https://www.w3.org/TR/css-logical-1/)",
         "[Page on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Basic_concepts)"
-     ]
-  },
-  {
-     "id": "css-gradients",
-     "language": "css",
-     "title": "CSS Gradients",
-     "description": "Methods for defining (linear / radial) gradients with CSS.",
-     "links": [
-        "[Official Specification](https://www.w3.org/TR/css3-images/)",
-        "[Page on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients)"
      ]
   },
   {
