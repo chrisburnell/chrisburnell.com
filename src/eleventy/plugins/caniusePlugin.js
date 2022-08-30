@@ -36,12 +36,12 @@ const getFeatureSupport = async (feature) => {
 }
 
 module.exports = (eleventyConfig) => {
-	eleventyConfig.addNunjucksAsyncShortcode("caniuse", async (feature) => {
+	eleventyConfig.addNunjucksAsyncShortcode("caniuse", async (featureID) => {
 		const latestStableBrowsers = await getLatestStableBrowsers()
 			.then((latestStableBrowsers) => latestStableBrowsers)
 			.catch(() => false)
 
-		const support = await getFeatureSupport(feature.id)
+		const support = await getFeatureSupport(featureID)
 			.then((support) => support)
 			.catch(() => false)
 
@@ -71,7 +71,7 @@ module.exports = (eleventyConfig) => {
 			return minifier.minify(
 				`<div class=" [ box ${fullSupport ? " box--success " : zeroSupport ? " box--error " : ""}] [ flow ] ">
 					${browserList}
-					<p class="small">Browser support data for <code>${feature.id}</code> comes from <a href="https://caniuse.com/#feat=${feature.id}">caniuse.com</a> and is up-to-date as of <time datetime="${DateTime.fromJSDate(new Date(global.now)).toFormat("yyyy-MM-dd")}">${DateTime.fromJSDate(new Date(global.now)).toFormat("dd LLLL yyyy")}</time>.</p>
+					<p class="small">Browser support data for <code>${featureID}</code> comes from <a href="https://caniuse.com/#feat=${featureID}">caniuse.com</a> and is up-to-date as of <time datetime="${DateTime.fromJSDate(new Date(global.now)).toFormat("yyyy-MM-dd")}">${DateTime.fromJSDate(new Date(global.now)).toFormat("dd LLLL yyyy")}</time>.</p>
 				</div>`,
 				{ collapseWhitespace: true }
 			)
