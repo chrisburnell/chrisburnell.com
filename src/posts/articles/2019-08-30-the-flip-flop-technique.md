@@ -3,7 +3,7 @@ updated: 2020-09-07T13:00:00+0100
 updated_text: "Since <a href=\"/note/1596729985/\">moving to Eleventy</a> I have put a bit more thought and effort into how I would transition my design from light to dark, and no longer use the <code>filter()</code> technique described below."
 date: 2019-08-30T10:48:00+0100
 title: "The Flip-Flop Technique"
-description: "I recently implemented a <a href=\"#color-scheme-toggle\">colour scheme toggler</a> in the footer of my website, following <a href=\"https://hankchizljaw.com\" rel=\"external\">Andy Bell’s</a> guide, <a href=\"https://hankchizljaw.com/wrote/create-a-user-controlled-dark-or-light-mode\" rel=\"external\">Create a user controlled dark or light mode</a>, and I found a wonky but fun alternative solution for styling my dark theme which leverages CSS’s filter property."
+description: "I recently implemented a <a href=\"#color-scheme-toggle\">colour scheme toggler</a> in the footer of my website, following <a href=\"https://hankchizljaw.com\" rel=\"external\">Andy Bell’s</a> guide, <a href=\"https://hankchizljaw.com/wrote/create-a-user-controlled-dark-or-light-mode\" rel=\"external\">Create a user controlled dark or light mode</a>, and found a wonky but fun alternative solution for styling my dark theme which leverages CSS’s filter property."
 tags:
   - css
 syndicate_to:
@@ -135,6 +135,8 @@ But something’s *off*. The colours of the emoji in the final example seem less
 Even more confusing to me is that this discrepancy only exists when I look at it using my default *light* theme—when viewed with my *dark* theme the unaltered emoji appears just as unsaturated as the final product.
 
 ## The Code
+
+<p class=" [ box  box--warning ] "><strong>Warning!</strong> The code below makes pretty heavy-handed use of <code>filter</code> and <em>probably</em> isn’t very performant!</p>
 
 ```scss
 img,
