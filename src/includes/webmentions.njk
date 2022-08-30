@@ -47,9 +47,9 @@
 								{%- set authorName = webmention.data.author.name | default("Anonymous") -%}
 								{%- set sentiment = wmContent | striptags(true) | getSentimentValue -%}
 								<li id="webmention-{{ wmId }}" class=" [ webmentions__response ] [ h-cite  p-comment ] " data-type="{{ wmType }}">
-									<div class=" [ webmentions__response__avatar ] ">
+									<a href="{{ authorUrl }}" class=" [ webmentions__response__avatar ] " tabindex="-1">
 										{% avatar authorPhoto, wmSource, authorUrl %}
-									</div>
+									</a>
 									<div class=" [ webmentions__response__meta ] ">
 										<small>by</small>
 										<a class=" [ p-author  h-card  u-url ] " href="{{ authorUrl }}" rel="external" tabindex="-1"><span class=" [ p-name ] ">{{ authorName }}</span></a>
