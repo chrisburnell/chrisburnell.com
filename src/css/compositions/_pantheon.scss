@@ -27,6 +27,7 @@
 		auto
 		[ads-end];
 
+	// moves meta above content
 	&:has(.table-of-contents) {
 		grid-template-rows:
 			[breadcrumbs-start]
@@ -49,12 +50,16 @@
 	@include media("above:medium") {
 		grid-template-columns:
 			[marginalia-start]
-			14em
+			var(--aside-width, 14em)
 			[marginalia-end]
 			var(--size-gap)
-			[content-start outdent-start]
-			repeat(6, 1fr)
-			[content-end outdent-end];
+			[content-start]
+			repeat(var(--content-columns, 6), 1fr)
+			[content-end]
+			var(--outdent-gap, 0)
+			[outdent-start]
+			var(--outdent-width, 0)
+			[outdent-end];
 		grid-template-rows:
 			[breadcrumbs-start]
 			auto
@@ -72,37 +77,13 @@
 	}
 
 	@include media("above:large") {
-		grid-template-columns:
-			[marginalia-start]
-			16em
-			[marginalia-end]
-			var(--size-gap)
-			[content-start]
-			repeat(6, 1fr)
-			[content-end]
-			var(--size-gap)
-			[outdent-start]
-			1fr
-			[outdent-end];
+		--aside-width: 16em;
 	}
 
-	&.full {
-		@include media("above:medium") {
-			grid-template-columns:
-				[content-start outdent-start marginalia-start]
-				repeat(6, 1fr)
-				[content-end outdent-end marginalia-end];
-		}
-	}
-
-	&.wide {
-		@include media("above:medium") {
-			grid-template-columns:
-				1fr
-				[content-start outdent-start marginalia-start]
-				repeat(6, 1fr)
-				[content-end outdent-end marginalia-end]
-				1fr;
+	&:not(.wide) {
+		@include media("above:large") {
+			--outdent-gap: var(--size-gap);
+			--outdent-width: 1fr;
 		}
 	}
 
