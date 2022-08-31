@@ -81,7 +81,7 @@
 	}
 
 	&:not(.wide) {
-		@include media("above:large") {
+		@include media("above:gigantic") {
 			--outdent-gap: var(--size-gap);
 			--outdent-width: 1fr;
 		}
