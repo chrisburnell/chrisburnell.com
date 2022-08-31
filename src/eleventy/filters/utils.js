@@ -28,6 +28,16 @@ module.exports = {
 			return value.includes(itemValue)
 		})
 	},
+	arrayKeyIncludes: (array, key, value) => {
+		return array.filter((item) => {
+			const keys = key.split(".")
+			const itemValue = keys.reduce((object, key) => {
+				return object[key]
+			}, item)
+
+			return itemValue.includes(value)
+		})
+	},
 	keyValue: (object, key) => {
 		return object[key]
 	},

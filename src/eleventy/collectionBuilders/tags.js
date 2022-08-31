@@ -10,9 +10,6 @@ module.exports = (collection) => {
 		.filter((item) => {
 			return "tags" in item.data
 		})
-		.filter((item) => {
-			return Object.values(item.data.tags).indexOf("post") > -1
-		})
 		.forEach((item) => {
 			let tags = item.data.tags
 

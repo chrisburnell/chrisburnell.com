@@ -11,7 +11,7 @@ hfeed: true
 show_photos: true
 truncate: true
 ---
-{%- set collection = collections[category.title] | arePublished | reverse -%}
+{%- set collection = collections[category.title] | arrayKeyIncludes('data.tags', 'post') | arePublished | reverse -%}
 {%- set count = collection.length -%}
 {%- set latest_year = collection[0].date.getFullYear() -%}
 {%- set first_year = collection[count-1].date.getFullYear() -%}

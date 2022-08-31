@@ -1,17 +1,22 @@
 module.exports = (collection) => {
 	let categories = []
 
-	collection.getAll().forEach((item) => {
-		if (typeof item.data.category === "string") {
-			let category = {
-				title: item.data.category,
-				proper: "categoryProper" in item.data ? item.data.categoryProper : item.data.category,
-				plural: "categoryPlural" in item.data ? item.data.categoryPlural : item.data.category,
-				properPlural: "categoryProperPlural" in item.data ? item.data.categoryProperPlural : "categoryPlural" in item.data ? item.data.categoryPlural : item.data.category,
+	collection
+		.getAll()
+		.filter((item) => {
+			return "category" in item.data
+		})
+		.forEach((item) => {
+			if (typeof item.data.category === "string") {
+				let category = {
+					title: item.data.category,
+					proper: "categoryProper" in item.data ? item.data.categoryProper : item.data.category,
+					plural: "categoryPlural" in item.data ? item.data.categoryPlural : item.data.category,
+					properPlural: "categoryProperPlural" in item.data ? item.data.categoryProperPlural : "categoryPlural" in item.data ? item.data.categoryPlural : item.data.category,
+				}
+				categories.push(category)
 			}
-			categories.push(category)
-		}
-	})
+		})
 
 	// Remove duplicates based on `title`
 	categories = categories.filter((category, index, self) => index === self.findIndex((t) => t.title === category.title))

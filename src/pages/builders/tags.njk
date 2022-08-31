@@ -11,7 +11,7 @@ hfeed: true
 show_photos: true
 truncate: true
 ---
-{%- set collection = collections[tag] | arePublished | reverse -%}
+{%- set collection = collections[tag] | arrayKeyIncludes('data.tags', 'post') | arePublished | reverse -%}
 {%- set count = collection.length -%}
 {%- set latest_year = collection[0].date.getFullYear() -%}
 {%- set first_year = collection[count-1].date.getFullYear() -%}
@@ -34,7 +34,7 @@ truncate: true
 		<p>{% if count > 1 %}All {{ count | numberStringFormat }}{% else %}Just the one{% endif %} of my posts tagged <q>{{ tag | capitalizeFormat }}</q>.</p>
 	</div>
 
-	<div class=" [ content ] [ flow ] {% if toc %}generate-toc{% endif %}">
+	<div class=" [ content ] [ flow ] ">
 		<nav class=" [ deck ] [ h-feed ] ">
 			{% for item in collection %}
 				{% include 'items/deck.njk' %}
