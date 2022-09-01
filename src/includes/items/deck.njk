@@ -40,15 +40,17 @@
 			{% if item.data.rsvp %}
 				<data class=" [ p-rsvp ] " value="{{ item.data.rsvp.value }}" hidden></data>
 				{% if item.data.rsvp.value == 'yes' %}
-					{% emoji '✅' %}
 					{% if item.data.rsvp.date | epoch > global.now %}
 						{# Future #}
+						{% emoji '➡️' %}
 						<small>going to</small>
 					{% elif item.data.rsvp.date | epoch <= global.now and item.data.rsvp.finish | epoch > global.now %}
 						{# Current #}
+						{% emoji '✅' %}
 						<small>currently attending</small>
 					{% else %}
 						{# Past #}
+						{% emoji '✅' %}
 						<small>went to</small>
 					{% endif %}
 				{% elif item.data.rsvp.value == 'maybe' %}
@@ -61,12 +63,13 @@
 						<small>thought about going to</small>
 					{% endif %}
 				{% elif item.data.rsvp.value == 'interested' %}
-					{% emoji '😯' %}
 					{% if item.data.rsvp.date | epoch > global.now %}
 						{# Future #}
+						{% emoji '🤔' %}
 						<small>interested in going to</small>
 					{% else %}
 						{# Past #}
+						{% emoji '😔' %}
 						<small>was interested in going to</small>
 					{% endif %}
 				{% else %}
