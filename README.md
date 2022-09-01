@@ -8,13 +8,13 @@ The source code for [chrisburnell.com](https://chrisburnell.com/)
 
 ## Table of Contents
 
-- [Description](#description)
-  - [Cool stuff I like about my website](#cool-stuff-i-like-about-my-website)
-- [Code of Conduct](#code-of-conduct)
-- [Contributing](#contributing)
-- [Build Process](#build-process)
-- [Network](#network)
-- [License](#license)
+- [chrisburnell.com](#chrisburnellcom)
+  - [Table of Contents](#table-of-contents)
+  - [Description](#description)
+    - [Cool stuff I like about my website](#cool-stuff-i-like-about-my-website)
+  - [Code of Conduct](#code-of-conduct)
+  - [Contributing](#contributing)
+  - [License](#license)
 
 ## Description
 
@@ -50,17 +50,6 @@ Please see the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md).
 ## Contributing
 
 Please see the [Contributing Guide](CONTRIBUTING.md), [Commit Template](COMMIT_TEMPLATE.md), [Issue Template](ISSUE_TEMPLATE.md), and [Pull Request Template](PULL_REQUEST_TEMPLATE.md).
-
-## Build Process
-
-- [Eleventy](https://11ty.dev)
-- [SCSS](http://sass-lang.com)
-- [Autoprefixer](https://github.com/ai/autoprefixer)
-- [PostCSS](http://postcss.org/)
-
-## Network
-
-SSL and Wildcard DNS are supported by [CloudFlare](https://www.cloudflare.com/) 🙏
 
 ## License
 
