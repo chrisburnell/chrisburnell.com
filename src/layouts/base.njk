@@ -211,10 +211,18 @@
 				{%- for item in socials -%}
 					{%- if not item.hidden -%}
 						<li {% if not item.primary %} hidden{% endif %}>
-							{%- if item.url -%}
-								<a{% if not item.primary %} tabindex="-1"{% endif %}{% if item.mf_property %} class=" [ p-{{ item.mf_property }} ] "{% endif %} href="{{ item.url }}" rel="me">{{ item.title }}</a>
+							{%- if item.url or item.split -%}
+								{%- set url = item.url -%}
+								{%- if item.key -%}
+									{%- set url = url + author[item.key] -%}
+								{%- endif -%}
+								{%- if item.split -%}
+									{%- set url -%}https://{{ author[item.key].split(item.split)[1] + '/' + item.split + author[item.key].split(item.split)[0] }}{%- endset -%}
+								{%- endif -%}
+								<a{% if not item.primary %} tabindex="-1"{% endif %}{% if item.mf_property %} class=" [ p-{{ item.mf_property }} ] "{% endif %} href="{{ url }}" rel="me">{{ item.title }}</a>
 							{%- else -%}
-								<data{% if item.mf_property %} class=" [ p-{{ item.mf_property }} ] "{% endif %} value="{{ item.value }}" rel="me">{{ item.title }}</data>
+								{%- set value = author[item.key] | default(item.value) -%}
+								<data{% if item.mf_property %} class=" [ p-{{ item.mf_property }} ] "{% endif %} value="{{ value }}" rel="me">{{ item.title }}</data>
 							{%- endif -%}
 						</li>
 					{%- endif -%}

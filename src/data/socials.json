@@ -1,22 +1,26 @@
 [
   {
     "title": "CodePen",
-    "url": "https://codepen.io/chrisburnell",
+    "url": "https://codepen.io/",
+    "key": "codepen",
     "primary": true
   },
   {
     "title": "GitHub",
-    "url": "https://github.com/chrisburnell",
+    "url": "https://github.com/",
+    "key": "github",
     "primary": true
   },
   {
     "title": "Mastodon",
-    "url": "https://social.chrisburnell.com/@chris",
+    "split": "@",
+    "key": "mastodon",
     "primary": true
   },
   {
     "title": "Twitter",
-    "url": "https://twitter.com/iamchrisburnell",
+    "url": "https://twitter.com/",
+    "key": "twitter",
     "primary": true
   },
   {
@@ -26,19 +30,27 @@
   },
   {
     "title": "Discord",
-    "value": "chrisburnell#6259"
+    "key": "discord"
   },
   {
     "title": "Last.fm",
-    "url": "https://last.fm/user/chrisburnell"
+    "url": "https://last.fm/user/",
+    "key": "lastfm"
+  },
+  {
+    "title": "npm",
+    "url": "https://npmjs.com/~",
+    "key": "npm"
   },
   {
     "title": "Speakerdeck",
-    "url": "https://speakerdeck.com/chrisburnell"
+    "url": "https://speakerdeck.com/",
+    "key": "speakerdeck"
   },
   {
     "title": "Untappd",
-    "url": "https://untappd.com/user/chrisburnell"
+    "url": "https://untappd.com/user/",
+    "key": "untappd"
   },
   {
     "title": "Nintendo Switch ID",

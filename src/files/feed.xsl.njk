@@ -7,7 +7,7 @@
         <title><xsl:value-of select="/rss/channel/title" /></title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <style>{%- include '../../css/xslt.css' -%}</style>
+        <style>{% include '../../css/xslt.css' %}</style>
       </head>
       <body>
         <header class=" [ header ] ">
@@ -64,9 +64,9 @@
             <ol class=" [ cluster ] [ footer__navigation ] ">
               <li>
                 <a id="copyright" rel="license" href="/license/">© {{ site.established }}–{{ global.now | friendlyDate("yyyy") }} <span class=" [ canada ] ">{{ author.name }}</span></a>
-              </li>{% for item in socials %}{% if item.url and item.primary and not item.hidden %}
+              </li>{% for item in socials %}{% if (item.url or item.split) and item.primary and not item.hidden %}{% set url = item.url %}{% if item.key %}{% set url = url + author[item.key] %}{% endif %}{% if item.split %}{% set url %}https://{{ author[item.key].split(item.split)[1] + '/' + item.split + author[item.key].split(item.split)[0] }}{% endset %}{% endif %}
               <li>
-                <a href="{{ item.url }}">{{ item.title }}</a>
+                <a href="{{ url }}">{{ item.title }}</a>
               </li>{% endif %}{% endfor %}
             </ol>
           </div>
