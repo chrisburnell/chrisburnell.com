@@ -13,7 +13,7 @@ $matrix-palette: (
 	bear: #e0fac9,
 );
 
-@mixin theme-matrix() {
+@mixin color-scheme-matrix() {
 	@each $name, $color in $matrix-palette {
 		--hsl-#{$name}: #{color.hue($color)} #{color.saturation($color)} #{color.lightness($color)};
 	}
@@ -25,6 +25,6 @@ $matrix-palette: (
 }
 
 .matrix {
-	@include theme-dark;
-	@include theme-matrix;
+	@include color-scheme-dark;
+	@include color-scheme-matrix;
 }

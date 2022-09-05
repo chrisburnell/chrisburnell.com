@@ -149,7 +149,7 @@ video {
     @extend %asset-elements;
 }
 
-@mixin theme-dark() {
+@mixin color-scheme-dark() {
     @supports (filter: invert(1) hue-rotate(180deg)) {
         &,
         %asset-elements {
@@ -167,18 +167,18 @@ video {
     }
 }
 
-@include media("dark") {
+@include media(prefers-color-scheme: dark) {
     :root {
         --color-scheme: "dark";
     }
 
     :root:not([data-color-scheme]) {
-        @include theme-dark;
+        @include color-scheme-dark;
     }
 }
 
 /*:root*/[data-color-scheme="dark"] {
-    @include theme-dark;
+    @include color-scheme-dark;
 }
 ```
 

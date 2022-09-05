@@ -3,7 +3,7 @@
 /// @group themes
 ////
 
-@mixin theme-dark() {
+@mixin color-scheme-dark() {
 	// Target these if applied to html or body elements
 	&:is(html, body),
 	&:is(html) body {
@@ -84,6 +84,10 @@
 		}
 	}
 
+	th:not(:empty) {
+		background-color: h(kaiser);
+	}
+
 	.table-of-contents {
 		$background: mix(map-get($colors, "milou"), map-get($colors, "mineshaft"), map-get($opacities, "delta") * 100%);
 		// prettier-ignore
@@ -104,11 +108,11 @@
 
 @include media("dark") {
 	html:not([data-color-scheme]) {
-		@include theme-dark;
+		@include color-scheme-dark;
 	}
 }
 
 [data-color-scheme="dark"],
 .dark {
-	@include theme-dark;
+	@include color-scheme-dark;
 }
