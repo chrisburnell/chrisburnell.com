@@ -21,18 +21,26 @@ const CACHE_SIZE = 30
 // Represents the maximum amount of time to wait for the network
 const TIMEOUT = 15000
 
-// Files that *must* be cached
-const REQUIRED_FILES = [
+// Define some reusable Regex patterns
+const ASSETS_REGEX = /\.(css|ics|js|json|txt|xml|xsl|ttf|woff|woff2)/
+const IMAGES_REGEX = /\.(avif|gif|ico|jpe?g|png|svg|webp)/
+
+// Assets that *must* be cached
+const REQUIRED_ASSETS = [
 	"/js/main.js?v={{ pkg.version }}",
 	"/js/navigator.js?v={{ pkg.version }}",
 ]
 
-// Files that are cached but non-blocking
-const OPTIONAL_FILES = [
+// Assets that are cached but non-blocking
+const OPTIONAL_ASSETS = [
 	"/fonts/heebo-black.woff2",
 	"/fonts/proxima-nova-regular.woff2",
 	"/fonts/proxima-nova-semibold.woff2",
 	"/fonts/proxima-nova-italic.woff2",
+]
+
+// Images that are cached but non-blocking
+const OPTIONAL_IMAGES = [
 	"/images/raven.svg",
 ]
 
@@ -58,9 +66,17 @@ let updateAssetsCache = () => {
 	return caches.open(ASSETS_CACHE)
 		.then(cache => {
 			// These items won"t block the installation of the Service Worker
-			cache.addAll(OPTIONAL_FILES)
+			cache.addAll(OPTIONAL_ASSETS)
 			// These items must be cached for the Service Worker to complete installation
-			return cache.addAll(REQUIRED_FILES)
+			return cache.addAll(REQUIRED_ASSETS)
+		})
+}
+
+let updateImagesCache = () => {
+	return caches.open(IMAGES_CACHE)
+		.then(cache => {
+			// These items won"t block the installation of the Service Worker
+			cache.addAll(OPTIONAL_IMAGES)
 		})
 }
 
@@ -106,6 +122,7 @@ let clearOldCaches = () => {
 
 self.addEventListener("install", event => {
 	event.waitUntil(updateAssetsCache()
+		.then(updateImagesCache())
 		.then(updatePagesCache())
 		.then(() => self.skipWaiting())
 	)
@@ -145,6 +162,7 @@ self.addEventListener("fetch", event => {
 	const retrieveFromCache = caches.match(request)
 
 	// For HTML requests, try the network first, fall back to the cache, finally the offline page
+	// Warning: This can also match when the user navigates directly to an asset
 	if (request.headers.get("Accept").includes("text/html")) {
 		event.respondWith(
 			new Promise(resolveWithResponse => {
@@ -163,14 +181,39 @@ self.addEventListener("fetch", event => {
 					// NETWORK
 					clearTimeout(timer)
 					let copy = responseFromFetch.clone()
-					// Stash a copy of this page in the PAGES cache
-					try {
-						event.waitUntil(
-							stashInCache(PAGES_CACHE, request, copy)
-						)
+					// Stash a copy of this page in the PAGES cache if the
+					// Content-Type that comes back from the response matches
+					if (copy.headers.get("Content-Type").includes("text/html")) {
+						try {
+							event.waitUntil(
+								stashInCache(PAGES_CACHE, request, copy)
+							)
+						}
+						catch(error) {
+							console.error(error)
+						}
 					}
-					catch(error) {
-						console.error(error)
+					// Stash a copy of this page in the ASSETS cache
+					else if (request.url.match(ASSETS_REGEX)) {
+						try {
+							event.waitUntil(
+								stashInCache(ASSETS_CACHE, request, copy)
+							)
+						}
+						catch (error) {
+							console.error(error)
+						}
+					}
+					// Stash a copy of this asset in the IMAGES cache
+					else if (request.url.match(IMAGES_REGEX)) {
+						try {
+							event.waitUntil(
+								stashInCache(IMAGES_CACHE, request, copy)
+							)
+						}
+						catch (error) {
+							console.error(error)
+						}
 					}
 					resolveWithResponse(responseFromFetch)
 				})
@@ -194,9 +237,20 @@ self.addEventListener("fetch", event => {
 			return responseFromCache || fetch(request)
 			.then(responseFromFetch => {
 				// NETWORK
+				const copy = responseFromFetch.clone()
+				// Stash a copy of this asset in the ASSETS cache
+				if (request.url.match(ASSETS_REGEX)) {
+					try {
+						event.waitUntil(
+							stashInCache(ASSETS_CACHE, request, copy)
+						)
+					}
+					catch (error) {
+						console.error(error)
+					}
+				}
 				// Stash a copy of this asset in the IMAGES cache
-				if (request.url.match(/\.(avif|gif|jpe?g|png|svg|webp)/)) {
-					const copy = responseFromFetch.clone()
+				else if (request.url.match(IMAGES_REGEX)) {
 					try {
 						event.waitUntil(
 							stashInCache(IMAGES_CACHE, request, copy)
@@ -212,7 +266,7 @@ self.addEventListener("fetch", event => {
 				console.error(fetchError)
 				// FALLBACK
 				// show an offline placeholder image
-				if (request.url.match(/\.(jpe?g|png|gif|webp)/)) {
+				if (request.url.match(IMAGES_REGEX)) {
 					return new Response('<svg role="img" aria-labelledby="offline-title" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><title id="offline-title">Offline</title><g fill="none" fill-rule="evenodd"><path fill="#D8D8D8" d="M0 0h400v300H0z"/><text fill="#9B9B9B" font-family="Helvetica Neue,Arial,Helvetica,sans-serif" font-size="72" font-weight="bold"><tspan x="93" y="172">offline</tspan></text></g></svg>', {headers: {'Content-Type': 'image/svg+xml', 'Cache-Control': 'no-store'}})
 				}
 			})
