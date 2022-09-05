@@ -32,7 +32,7 @@ class ColorScheme {
 		const oppositeColorScheme = colorScheme === "dark" ? "light" : "dark"
 
 		document.documentElement.setAttribute("data-user-color-scheme", oppositeColorScheme)
-		this.buttonText = `Enable ${oppositeColorScheme === "dark" ? "light" : "dark"} mode`
+		this.buttonText.innerText = `Enable ${oppositeColorScheme === "dark" ? "light" : "dark"} mode`
 	}
 
 	init() {
