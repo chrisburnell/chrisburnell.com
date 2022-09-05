@@ -19,12 +19,13 @@ module.exports = (eleventyConfig) => {
 			outputDir: "./_site/images/built/",
 			duration: "4w",
 			sharpOptions: {
+				animated: true,
 				quality: 100,
 			},
 			filenameFormat: (id, src, width, format, options) => {
 				const extension = path.extname(src)
 				const name = path.basename(src, extension)
-				return `${name}${widths.length > 1 ? `-${width}` : ``}.${format}`
+				return `${name}${widths.length > 1 ? "-" + width : ""}.${format}`
 			},
 		}
 
