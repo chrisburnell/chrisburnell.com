@@ -22,10 +22,10 @@ syndicate_to:
         line-height: 10rem;
         text-align: center;
     }
-    [data-user-color-scheme="dark"] .figure--dragon {
+    [data-color-scheme="dark"] .figure--dragon {
         filter: hue-rotate(180deg) invert(1);
     }
-    [data-user-color-scheme="dark"] .figure--dragon .emoji {
+    [data-color-scheme="dark"] .figure--dragon .emoji {
         filter: none;
     }
     .figure--dragon--animate {
@@ -60,7 +60,7 @@ The gist is that we have some JavaScript that hooks onto a number of CSS Variabl
 :root {
     --color-text: black;
 }
-[data-user-color-scheme="dark"] {
+[data-color-scheme="dark"] {
     --color-text: white;
 }
 ```
@@ -172,12 +172,12 @@ video {
         --color-scheme: "dark";
     }
 
-    :root:not([data-user-color-scheme]) {
+    :root:not([data-color-scheme]) {
         @include theme-dark;
     }
 }
 
-/*:root*/[data-user-color-scheme="dark"] {
+/*:root*/[data-color-scheme="dark"] {
     @include theme-dark;
 }
 ```
