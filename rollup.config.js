@@ -16,15 +16,6 @@ export default [
 		plugins: process.env.ELEVENTY_PRODUCTION ? [commonjs(), nodeResolve(), terser()] : [commonjs(), nodeResolve()],
 	},
 	{
-		input: "src/js/simple.js",
-		output: {
-			dir: "js",
-			format: "iife",
-			name: "simple",
-		},
-		plugins: process.env.ELEVENTY_PRODUCTION ? [commonjs(), nodeResolve(), terser()] : [commonjs(), nodeResolve()],
-	},
-	{
 		input: "src/js/common/navigator.js",
 		output: {
 			dir: "js",

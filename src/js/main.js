@@ -1,5 +1,5 @@
-import colorScheme from "./common/color-scheme"
-colorScheme()
+import ColorScheme from "./modules/color-scheme"
+new ColorScheme(document.getElementById("color-scheme-toggle"))
 
 import welcome from "./common/welcome"
 welcome()

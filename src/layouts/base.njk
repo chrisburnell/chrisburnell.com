@@ -248,11 +248,7 @@
 	{% if env.ELEVENTY_PRODUCTION %}
 		<script src="/js/navigator.js?v={{ pkg.version }}"></script>
 	{% endif %}
-	{% if tags and tags.includes('httpstatus') %}
-		<script defer src="/js/simple.js?v={{ pkg.version }}"></script>
-	{% else %}
-		<script defer src="/js/main.js?v={{ pkg.version }}"></script>
-	{% endif %}
+	<script defer src="/js/main.js?v={{ pkg.version }}"></script>
 	{% if js %}
 		<script defer src="/js/pages/{{ js }}?v={{ pkg.version }}"></script>
 	{% endif %}

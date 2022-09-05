@@ -103,10 +103,6 @@
 }
 
 @include media("dark") {
-	html {
-		--color-scheme: "dark";
-	}
-
 	html:not([data-user-color-scheme]) {
 		@include theme-dark;
 	}
