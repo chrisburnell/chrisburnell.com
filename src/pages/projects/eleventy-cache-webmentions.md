@@ -2,11 +2,8 @@
 title: eleventy-cache-webmentions
 photo: eleventy-cache-webmentions.png
 emoji: 💬
-eleventyComputed:
-  date: "{{ github[page.fileSlug].created_at }}"
-  updated: "{{ github[page.fileSlug].updated_at }}"
-  tagline: "eleventy-cache-webmentions v{{ pkg.dependencies['@chrisburnell/eleventy-cache-webmentions'] | replace('^', '') }}"
-  description: "{{ github[page.fileSlug].description }}"
+github: chrisburnell/eleventy-cache-webmentions
+npm: "@chrisburnell/eleventy-cache-webmentions"
 tags:
   - eleventy
   - indieweb

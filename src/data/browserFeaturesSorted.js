@@ -5,7 +5,7 @@ const site = require("#data/site")
 
 const browserFeatures = require("#data/browserFeatures")
 const browsersByType = require("#data/browsersByType")
-const duration = site.cacheDuration
+const duration = site.cacheDurations.short
 
 const getLatestStableBrowsers = async () => {
 	let asset = new AssetCache(`caniuse_latest_browsers`, ".cache")

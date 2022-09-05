@@ -10,7 +10,7 @@ module.exports = {
 	key: "links",
 	// feed: `https://jam.chrisburnell.com/webmention/chrisburnell.com/${process.env.GO_JAMMING_TOKEN}`,
 	// key: "json",
-	duration: site.cacheDuration,
+	duration: site.cacheDurations.short,
 	urlReplacements: urlReplacements,
 	maximumHtmlLength: 1000,
 	maximumHtmlText: "Mentioned this:",

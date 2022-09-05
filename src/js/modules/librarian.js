@@ -1,6 +1,7 @@
 const librarian = () => {
 	const sorters = document.querySelectorAll("[data-sort]")
-	const shelfItems = [...document.querySelectorAll(".shelf article")]
+	const shelf = document.querySelector(".shelf")
+	const shelfItems = [...shelf.querySelectorAll("article")]
 	const sortingMethods = {
 		chronological: (a, b) => {
 			if (a.querySelector(".dt-published") && b.querySelector(".dt-published")) {
@@ -56,6 +57,8 @@ const librarian = () => {
 				for (const i in sorted) {
 					sorted[i].style.order = i
 				}
+
+				shelf.scrollIntoView()
 			})
 		}
 	}

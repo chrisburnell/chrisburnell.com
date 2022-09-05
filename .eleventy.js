@@ -13,7 +13,6 @@ const webmentionsPlugin = require("@chrisburnell/eleventy-cache-webmentions")
 
 // Import transforms
 const parseTransform = require("#transforms/parse")
-const htmlMinTransform = require("#transforms/html-min")
 
 // Import filters
 const dateFilters = require("#filters/dates")

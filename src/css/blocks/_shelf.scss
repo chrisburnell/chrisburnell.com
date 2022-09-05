@@ -39,4 +39,8 @@
 	position: sticky;
 	top: 0;
 	z-index: var(--z-index-modal);
+
+	.no-js & {
+		display: none;
+	}
 }

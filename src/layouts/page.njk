@@ -16,10 +16,7 @@ layout: base
 	</h1>
 
 	<div class=" [ description ] [ flow ] [ p-summary ] ">
-		{{ description | markdownFormat | safe }}
-		{% if 'project' in tags and 'package' in tags %}
-			<p>There are {{ github[page.fileSlug]['stargazers_count'] | numberStringFormat }} star-gazers <a href="https://github.com/chrisburnell/{{ page.fileSlug }}" rel="external">on GitHub</a> and it was downloaded {{ npm[page.fileSlug]['downloads'] | numberStringFormat }} times in the last month <a href="https://www.npmjs.com/package/@chrisburnell/{{ page.fileSlug }}" rel="external">on npm</a>.</p>
-		{% endif %}
+		{{ descriptionLong | default(description) | markdownFormat | safe }}
 	</div>
 
 	<div class=" [ content{% if full_width %}  full{% endif %} ] [ flow ] ">

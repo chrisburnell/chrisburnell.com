@@ -2,11 +2,8 @@
 title: Bowhead
 photo: bowhead.png
 emoji: 🐋
-eleventyComputed:
-  date: "{{ github[page.fileSlug].created_at }}"
-  updated: "{{ github[page.fileSlug].updated_at }}"
-  tagline: "Bowhead v{{ pkg.dependencies['@chrisburnell/bowhead'] | replace('^', '') }}"
-  description: "{{ github[page.fileSlug].description }}"
+github: chrisburnell/bowhead
+npm: "@chrisburnell/bowhead"
 tags:
   - css
   - scss
@@ -33,10 +30,10 @@ This has a positive effect that ranges from giving the colours in your design sy
 
 ## Installation
 
-[Available on npm](https://www.npmjs.com/package/@chrisburnell/bowhead):
+[Available on npm](https://www.npmjs.com/package/{{ npm }}):
 
 ```bash
-npm install @chrisburnell/bowhead --save-dev
+npm install {{ npm }} --save-dev
 ```
 
 You can also just download it directly [from GitHub](https://github.com/chrisburnell/bowhead): <samp>[https://github.com/chrisburnell/bowhead/archive/master.zip](https://github.com/chrisburnell/bowhead/archive/master.zip)</samp>

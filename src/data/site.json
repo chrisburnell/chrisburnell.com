@@ -17,6 +17,10 @@
     "sparkline": 15,
     "minWebmentions": 2
   },
+  "cacheDurations": {
+    "short": "11h",
+    "long": "1w"
+  },
   "cacheDuration": "11h",
   "upcomingDaysLead": 7,
   "weights": {
