@@ -1,4 +1,5 @@
 module.exports = {
+	list: "deck",
 	permalink: "code/{{ page.fileSlug }}/",
 	category: "code",
 	categoryProper: "code snippet",

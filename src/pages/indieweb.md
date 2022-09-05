@@ -33,15 +33,15 @@ I still need to do some work to change my syndication model from <abbr title="Pu
 
 ## Tools Used
 
-To handle *incoming* webmentions, I use *[Webmention.io](https://webmention.io)*, which takes care of parsing microformats and all sorts of filtering to ensure I’m not printing spam or advertisements on my website.
+To handle *incoming* Webmentions, I use *[Webmention.io](https://webmention.io)*, which takes care of parsing microformats and all sorts of filtering to ensure I’m not printing spam or advertisements on my website.
 
 To syndicate interactions on my content inside silos, I use *[Bridgy](https://brid.gy)* to push those interactions through *Webmention.io* and onto my website.
 
-*Outgoing* webmentions are handled for me by *[Telegraph](https://telegraph.p3k.io)*, which also takes care of microformats parsing and endpoint discovery for each link in my content.
+*Outgoing* Webmentions are handled for me by *[Telegraph](https://telegraph.p3k.io)*, which also takes care of microformats parsing and endpoint discovery for each link in my content.
 
 I use *[Aperture](https://aperture.p3k.io/)* and *[Monocle](https://monocle.p3k.io/)* to manage feeds I want to follow and keep track of new content from.
 
-*Outgoing* webmentions are handled for me by *[Telegraph](https://telegraph.p3k.io)*, which also takes care of microformats parsing and endpoint discovery for each link in my content.
+*Outgoing* Webmentions are handled for me by *[Telegraph](https://telegraph.p3k.io)*, which also takes care of microformats parsing and endpoint discovery for each link in my content.
 
 Lastly, I use *[OwnYourBeer](https://ownyourbeer.chrisburnell.com)* to syndicate check-ins from *[Untappd](https://untappd.com)* to my [beer](/beer) category</a>.
 

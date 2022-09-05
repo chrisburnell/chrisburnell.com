@@ -1,9 +1,9 @@
 ---
 updated: 2022-01-24T12:30:00+0000
-updated_text: "I’ve since extrapolated on the ideas in this article and built <a href=\"/eleventy-cache-webmentions/\">eleventy-cache-webmentions</a> as a simplified method of retrieving and accessing webmentions in <a href=\"https://11ty.dev/\" rel=\"external\">Eleventy</a>."
+updated_text: "I’ve since extrapolated on the ideas in this article and built <a href=\"/eleventy-cache-webmentions/\">eleventy-cache-webmentions</a> as a simplified method of retrieving and accessing Webmentions in <a href=\"https://11ty.dev/\" rel=\"external\">Eleventy</a>."
 date: 2020-11-23T14:45:00+0000
 title: "Time to Cache Up"
-description: "For a long time I’ve been searching for a sound solution to storing the entire webmention history of my blog, as packaging it up with the rest of the repository was not cutting it for me. Enter the world of async."
+description: "For a long time I’ve been searching for a sound solution to storing the entire Webmention history of my blog, as packaging it up with the rest of the repository was not cutting it for me. Enter the world of async."
 tags:
   - eleventy
   - indieweb
@@ -15,9 +15,9 @@ syndicate_to:
 
 One of the great advantages I’ve found in using Eleventy since switching from Jekyll has been its ability to pull in external content and cache it for the build. I first experimented with this using [eleventy-img](https://github.com/11ty/eleventy-img) and [eleventy-fetch](https://github.com/11ty/eleventy-fetch), two Eleventy plugins aimed at simplifying that exact ability of Eleventy’s.
 
-It took some time for the pieces to fall into place—first-of-all was watching [Sia Karamalegos’](https://sia.codes/) talk at [Jamstack Toronto: 11ties](/note/1603756300/) a couple of weeks ago, where she gave an incredible overview of the IndieWeb and how to embrace it without sacrificing connecting with others on social networks. In the talk, she briefly described her solution for fetching fresh webmentions and caching them for build and even included some fantastic code examples too; how lucky that this would be during a conference about Eleventy!
+It took some time for the pieces to fall into place—first-of-all was watching [Sia Karamalegos’](https://sia.codes/) talk at [Jamstack Toronto: 11ties](/note/1603756300/) a couple of weeks ago, where she gave an incredible overview of the IndieWeb and how to embrace it without sacrificing connecting with others on social networks. In the talk, she briefly described her solution for fetching fresh Webmentions and caching them for build and even included some fantastic code examples too; how lucky that this would be during a conference about Eleventy!
 
-It was during a pair programming exercise recently that I had a moment of enlightenment as to how I could leverage this advantage even further by using it to not just generate a list of popular posts based on their webmention count, but also to off-load and privately cache other parts of the source code too, like small directories of breweries and music artists. I’ll be exploring how I can use this more effectively as time goes on, but I found this to be a useful way to pull private information into your build without it appearing in your public repository.
+It was during a pair programming exercise recently that I had a moment of enlightenment as to how I could leverage this advantage even further by using it to not just generate a list of popular posts based on their Webmention count, but also to off-load and privately cache other parts of the source code too, like small directories of breweries and music artists. I’ll be exploring how I can use this more effectively as time goes on, but I found this to be a useful way to pull private information into your build without it appearing in your public repository.
 
 ## The Set-up
 
@@ -27,9 +27,9 @@ First, we need to run through a checklist to make sure we’re prepared to build
 0. [Pull in Webmentions as cached data into your repository](https://gist.github.com/chrisburnell/4e29dcf84431808b6c915d87a3b5790e)
     - Make sure you've set your `WEBMENTION_IO_TOKEN` environment variable, like in a `.env` file.
     - This is heavily inspired and in places downright taken from [Sia Karamalegos](https://sia.codes/posts/webmentions-eleventy-in-depth/), [Max Böck](https://github.com/maxboeck/eleventy-webmentions/blob/master/_data/webmentions.js), and [Zach Leatherman](https://github.com/zachleat/zachleat.com/blob/master/_data/webmentions.js)—many thanks to them for putting most of the work here!
-0. [Implement a way to pair webmentions with posts](https://gist.github.com/chrisburnell/36134bbb26234a4d92423e352a693f44)
+0. [Implement a way to pair Webmentions with posts](https://gist.github.com/chrisburnell/36134bbb26234a4d92423e352a693f44)
 
-## Fetching and caching webmentions
+## Fetching and caching Webmentions
 
 Once you’re ready to go, you can implement the following:
 
@@ -106,7 +106,7 @@ to produce markup like this:
     </a>
 </h2>
 <a href="/posts/a/#webmentions">
-    10 webmentions
+    10 Webmentions
 </a>
 
 <h2>
@@ -115,7 +115,7 @@ to produce markup like this:
     </a>
 </h2>
 <a href="/posts/c/#webmentions">
-    5 webmentions
+    5 Webmentions
 </a>
 
 <h2>
@@ -124,13 +124,13 @@ to produce markup like this:
     </a>
 </h2>
 <a href="/posts/b/#webmentions">
-    2 webmentions
+    2 Webmentions
 </a>
 ```
 
 ---------
 
-Thanks for following along—I hope you enjoyed this tutorial and found it helpful to your [Eleventy](https://www.11ty.dev/) project, whether it be in joining the [IndieWeb](https://indieweb.org/), adding/caching webmentions to your website, or adding a popular collection as I’ve shown above!
+Thanks for following along—I hope you enjoyed this tutorial and found it helpful to your [Eleventy](https://www.11ty.dev/) project, whether it be in joining the [IndieWeb](https://indieweb.org/), adding/caching Webmentions to your website, or adding a popular collection as I’ve shown above!
 
 I’m positive there are some optimisations that could be made here, and I’m more than happy to hear them! Let me know with a reply or even [send me a pull request](https://github.com/{{ author.github }}/{{ site.repository }}).
 

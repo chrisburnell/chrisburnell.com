@@ -1,4 +1,5 @@
 module.exports = {
+	list: "deck",
 	mf_root: "recipe",
 	mf_property: "recipe-of",
 	permalink: "recipe/{{ page.fileSlug }}/",

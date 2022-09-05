@@ -191,7 +191,7 @@
 			{% endif %}
 			{% if item.data.show_webmentions and item.data.webmentions.length %}
 				<li>
-					<a href="{{ item.url }}#webmentions" title="Jump to webmentions for this {{ item.data.categoryProper }}">{{ item.data.webmentions.length }} response{{ 's' if item.data.webmentions.length > 1 }} <span class="hidden">to {{ item_title }}</span></a>
+					<a href="{{ item.url }}#webmentions" title="Jump to Webmentions for this {{ item.data.categoryProper }}">{{ item.data.webmentions.length }} response{{ 's' if item.data.webmentions.length > 1 }} <span class="hidden">to {{ item_title }}</span></a>
 				</li>
 			{% endif %}
 		</ul>

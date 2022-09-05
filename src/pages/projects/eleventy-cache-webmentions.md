@@ -63,13 +63,13 @@ const pluginWebmentions = require("@chrisburnell/eleventy-cache-webmentions")
 module.exports = function(eleventyConfig) {
     eleventyConfig.addPlugin(pluginWebmentions, {
         // domain: required or the plugin will not function
-        //   this is the website that you want to pull in webmentions for
+        //   this is the website that you want to pull in Webmentions for
         domain: "https://example.com",
         // feed: required or the plugin will not function
-        //   defines the URL of your webmention server where a feed of webmentions for your domain can be found
+        //   defines the URL of your Webmention server where a feed of Webmentions for your domain can be found
         feed: "https://webmentions.example.com?token=S3cr3tT0k3n",
         // key: required or the plugin will not function
-        //   dictates the key inside the feed where the array of webmentions is located
+        //   dictates the key inside the feed where the array of Webmentions is located
         key: "children",
         // directory: ".cache" by default
         //   see https://www.11ty.dev/docs/plugins/cache/#cache-directory for more info
@@ -145,7 +145,7 @@ module.exports = async () => {
 }
 ```
 
-You can now use this data in a number of useful ways, not limited to things like creating a collection of pages ordered by number of webmentions:
+You can now use this data in a number of useful ways, not limited to things like creating a collection of pages ordered by number of Webmentions:
 
 ```javascript
 module.exports = (eleventyConfig) => {

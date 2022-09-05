@@ -23,7 +23,7 @@ I also play the piano, bake bread from time to time, and play and DM Dungeons & 
 
 This website was built with [Eleventy](https://11ty.dev), which I love using. It makes sense to me and has allows me all the rigid order and flexibility I want out of my website. My source code is *mostly* available for your perusal on [GitHub](https://github.com/{{ author.github }}/{{ site.repository }}).
 
-There are also [quite a few](/archive/) different types of posts that I publish, and [the IndieWeb](https://indieweb.org) is the backbone of the mentality behind it all. Naturally, I support incoming [webmentions](https://indieweb.org/webmention) against posts, which *I think* is a way cooler alternative to giving my thoughts and conversations to a social network silo; *although, I totally still use some of them, mostly to syndicate my content to*.
+There are also [quite a few](/archive/) different types of posts that I publish, and [the IndieWeb](https://indieweb.org) is the backbone of the mentality behind it all. I support incoming [Webmentions](https://indieweb.org/webmention) against posts, which *I think* is a way cooler alternative to giving my thoughts and conversations to a social network silo; *although, I totally still use some of them, mostly to syndicate my content to*.
 
 I also serve (what I hope are unobtrusive) ads, currently coming through from [Carbon Ads](https://www.carbonads.net), whom I find to be a trustworthy and reliable service that presents sensible ads to my audience.
 

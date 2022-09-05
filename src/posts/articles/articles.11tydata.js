@@ -1,4 +1,5 @@
 module.exports = {
+	list: "deck",
 	permalink: "article/{{ page.fileSlug }}/",
 	category: "article",
 	categoryPlural: "articles",
