@@ -28,25 +28,25 @@ class ColorScheme {
 		return false
 	}
 
-	setColorScheme(colorScheme) {
-		const oppositeColorScheme = colorScheme === "dark" ? "light" : "dark"
+	setPreference(preference) {
+		const oppositePreference = preference === "dark" ? "light" : "dark"
 
-		document.documentElement.setAttribute("data-color-scheme", oppositeColorScheme)
-		this.buttonText.innerText = `Enable ${colorScheme} mode`
+		document.documentElement.setAttribute(`data-${this.STORAGE_KEY}`, oppositePreference)
+		this.buttonText.innerText = `Enable ${preference} mode`
 	}
 
 	init() {
 		this.button.addEventListener("click", this.onClick.bind(this))
 
 		if (this.colorScheme) {
-			return this.setColorScheme(this.colorScheme)
+			return this.setPreference(this.colorScheme)
 		}
 	}
 
 	onClick() {
 		this.colorScheme = this.shouldSetToDark ? "dark" : "light"
 
-		this.setColorScheme(this.colorScheme)
+		this.setPreference(this.colorScheme)
 		localStorage.setItem(this.STORAGE_KEY, this.colorScheme)
 	}
 }
