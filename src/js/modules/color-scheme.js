@@ -21,7 +21,7 @@ class ColorScheme {
 		return window.matchMedia("(prefers-color-scheme: no-preference)").matches
 	}
 
-	get shouldSetToDark() {
+	get matchesLight() {
 		if (this.colorScheme === "light") return true
 		if (!this.colorScheme && this.prefersLight) return true
 		if (!this.colorScheme && this.noPreference) return true
@@ -31,20 +31,22 @@ class ColorScheme {
 	setPreference(preference) {
 		const oppositePreference = preference === "dark" ? "light" : "dark"
 
-		document.documentElement.setAttribute(`data-${this.STORAGE_KEY}`, oppositePreference)
-		this.buttonText.innerText = `Enable ${preference} mode`
+		document.documentElement.setAttribute(`data-${this.STORAGE_KEY}`, preference)
+		this.buttonText.innerText = `Enable ${oppositePreference} mode`
 	}
 
 	init() {
 		this.button.addEventListener("click", this.onClick.bind(this))
 
 		if (this.colorScheme) {
-			return this.setPreference(this.colorScheme)
+			this.setPreference(this.colorScheme)
+		} else if (!this.matchesLight) {
+			this.buttonText.innerText = `Enable light mode`
 		}
 	}
 
 	onClick() {
-		this.colorScheme = this.shouldSetToDark ? "dark" : "light"
+		this.colorScheme = this.matchesLight ? "dark" : "light"
 
 		this.setPreference(this.colorScheme)
 		localStorage.setItem(this.STORAGE_KEY, this.colorScheme)
