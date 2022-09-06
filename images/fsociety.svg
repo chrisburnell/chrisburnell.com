@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <filter id="fsociety">
+        <feComponentTransfer>
+            <feFuncR type="linear" slope="0.4" />
+            <feFuncG type="linear" slope="0.7" />
+            <feFuncB type="linear" slope="0.6" />
+            <feFuncA type="linear" slope="0.3" />
+        </feComponentTransfer>
+        <feBlend in2="SourceGraphic" />
+    </filter>
+</svg>

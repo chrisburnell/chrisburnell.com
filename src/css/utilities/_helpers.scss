@@ -90,6 +90,16 @@
 	text-shadow: none;
 }
 
+.dreamy,
+%dreamy {
+	filter: url("/images/dreamy.svg#dreamy");
+}
+
+.fsociety,
+%fsociety {
+	filter: url("/images/fsociety.svg#fsociety");
+}
+
 // For salty/silly remarks
 .salty,
 .silly {

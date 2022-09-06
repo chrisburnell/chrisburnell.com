@@ -22,6 +22,11 @@ $matrix-palette: (
 	.perch::before {
 		filter: hue-rotate(230deg);
 	}
+
+	.avatar,
+	.author__image {
+		@extend %fsociety;
+	}
 }
 
 .matrix {
