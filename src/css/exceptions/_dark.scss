@@ -26,10 +26,6 @@
 		background-image: linear-gradient(to bottom, h(thunder, gamma), h(thunder, gamma));
 	}
 
-	h1 {
-		text-shadow: 0.025em -0.025em 0 h(mineshaft), 0.025em -0.0125em 0 h(mineshaft), 0.025em 0.025em 0 h(mineshaft), 0 0.025em 0 h(mineshaft), -0.025em 0.025em 0 h(mineshaft), -0.025em -0.0125em 0 h(mineshaft), -0.025em -0.025em 0 h(mineshaft);
-	}
-
 	%anchor {
 		color: h(highland);
 		text-decoration-color: h(kaiser);

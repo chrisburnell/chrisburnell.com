@@ -26,7 +26,6 @@ a {
 		background-clip: text;
 		text-fill-color: transparent;
 		box-decoration-break: clone;
-		text-shadow: none;
 	}
 }
 
@@ -42,7 +41,6 @@ a {
 	font-family: var(--font-family-monospace);
 	font-size: inherit;
 	font-weight: var(--font-weight-bold);
-	text-shadow: none;
 	text-transform: lowercase;
 	transform: translateY(calc(-50% - (var(--size-border-thin) * 2)));
 
