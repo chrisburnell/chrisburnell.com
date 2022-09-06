@@ -192,10 +192,6 @@
     "url": "https://kittygiraudel.com"
   },
   {
-    "title": "Ben Walters",
-    "url": "https://forgotten.media"
-  },
-  {
     "title": "Daniel Pontes",
     "url": "https://github.com/webdpontes"
   },
@@ -210,5 +206,33 @@
   {
     "title": "Jake Archibald",
     "url": "https://jakearchibald.com"
+  },
+  {
+    "title": "Wouter Groenveld",
+    "url": "https://brainbaking.com"
+  },
+  {
+    "title": "Bruce Lawson",
+    "url": "https://brucelawson.co.uk"
+  },
+  {
+    "title": "Alistair Shepherd",
+    "url": "https://alistairshepherd.uk"
+  },
+  {
+    "title": "Hidde de Vries",
+    "url": "https://hidde.blog"
+  },
+  {
+    "title": "Sophie Koonin",
+    "url": "https://localghost.dev"
+  },
+  {
+    "title": "Stephanie Stimac",
+    "url": "https://stephaniestimac.com"
+  },
+  {
+    "title": "Andy Clarke",
+    "url": "https://stuffandnonsense.co.uk"
   }
 ]

@@ -56,6 +56,10 @@
 		background-color: h(coyote, gamma);
 	}
 
+	ins {
+		background-color: h(conifer);
+	}
+
 	.box {
 		border-block-start-color: h(raven, alpha);
 	}
@@ -72,6 +76,10 @@
 	.rating {
 		&::before {
 			color: h(kaiser);
+		}
+
+		&::after {
+			color: h(alto);
 		}
 	}
 

@@ -9,7 +9,11 @@ full_width: true
 {% for item in collection %}
 	<article class=" [ flow ] ">
 		<h1>
-			<a href="{{ item.url }}">{{ item.title | safe }}</a>
+			<a href="{{ item.url }}">
+				{{ item.title | safe }}
+				<br>
+				<small aria-hidden="true">{{ item.url | getHost }}</small>
+			</a>
 		</h1>
 	</article>
 {% endfor %}

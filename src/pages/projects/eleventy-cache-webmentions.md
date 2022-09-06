@@ -4,6 +4,7 @@ photo: eleventy-cache-webmentions.png
 emoji: 💬
 github: chrisburnell/eleventy-cache-webmentions
 npm: "@chrisburnell/eleventy-cache-webmentions"
+license: MIT
 tags:
   - eleventy
   - indieweb
@@ -16,10 +17,10 @@ toc: true
 ---
 
 <figure>
-    {% image './images/content/eleventy-cache-webmentions.png', ''%}
+    {% image './images/content/eleventy-cache-webmentions.png', '' %}
 </figure>
 
-[![chrisburnell - eleventy-cache-webmentions](https://img.shields.io/static/v1?label=chrisburnell&message=eleventy-cache-webmentions&color=5f8aa6&logo=github)](https://github.com/chrisburnell/eleventy-cache-webmentions "Go to GitHub repo") [![GitHub release](https://img.shields.io/github/release/chrisburnell/eleventy-cache-webmentions?include_prereleases=&sort=semver&color=5f8aa6)](https://github.com/chrisburnell/eleventy-cache-webmentions/releases/) [![License](https://img.shields.io/badge/License-MIT-5f8aa6)](https://github.com/chrisburnell/eleventy-cache-webmentions/blob/main/LICENSE) [![stars - eleventy-cache-webmentions](https://img.shields.io/github/stars/chrisburnell/eleventy-cache-webmentions?style=social)](https://github.com/chrisburnell/eleventy-cache-webmentions) [![forks - eleventy-cache-webmentions](https://img.shields.io/github/forks/chrisburnell/eleventy-cache-webmentions?style=social)](https://github.com/chrisburnell/eleventy-cache-webmentions)
+{% include 'package.njk' %}
 
 ## Installation
 
