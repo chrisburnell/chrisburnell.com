@@ -6,10 +6,6 @@
 .pantheon {
 	display: grid;
 	align-items: start;
-	grid-template-columns:
-		[marginalia-start content-start outdent-start]
-		1fr
-		[marginalia-end content-end outdent-end];
 	grid-template-rows:
 		[breadcrumbs-start]
 		auto
