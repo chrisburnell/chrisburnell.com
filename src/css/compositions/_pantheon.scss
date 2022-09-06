@@ -19,33 +19,15 @@
 		auto
 		[description-end sparkline-start]
 		auto
-		[sparkline-end content-start]
+		[sparkline-end toc-start]
+		auto
+		[toc-end content-start]
 		auto
 		[content-end meta-start]
 		auto
 		[meta-end ads-start]
 		auto
 		[ads-end];
-
-	// moves meta above content
-	&:has(.table-of-contents) {
-		grid-template-rows:
-			[breadcrumbs-start]
-			auto
-			[breadcrumbs-end title-start]
-			auto
-			[title-end description-start]
-			auto
-			[description-end meta-start]
-			auto
-			[meta-end sparkline-start]
-			auto
-			[sparkline-end content-start]
-			auto
-			[content-end ads-start]
-			auto
-			[ads-end];
-	}
 
 	@include media("above:medium") {
 		grid-template-columns:
@@ -137,6 +119,12 @@
 .meta {
 	grid-column: marginalia;
 	grid-row: meta;
+
+	&:has(.table-of-contents) {
+		@include media("below:medium") {
+			grid-row: toc;
+		}
+	}
 }
 
 .ads {
