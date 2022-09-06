@@ -22,6 +22,10 @@
 	}
 }
 
+.dreamy {
+	filter: url("/images/dreamy.svg#dreamy");
+}
+
 .pixelated {
 	image-rendering: crisp-edges;
 	image-rendering: pixelated;
