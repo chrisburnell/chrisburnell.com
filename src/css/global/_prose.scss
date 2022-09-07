@@ -100,15 +100,6 @@ hr {
 	}
 }
 
-// Hide elements visually
-[hidden]:not([hidden="false"]),
-.hidden {
-	&:not([href]),
-	&[href]:not(:is(:focus, :active)) {
-		@include hidden;
-	}
-}
-
 ::selection,
 ::target-text {
 	background-color: h(raven);

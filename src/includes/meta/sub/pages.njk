@@ -1,11 +1,11 @@
 <h2>More pages</h2>
 <ul class=" [ cluster ] ">
-	<li{% if page.url == '/search/' %} hidden{% endif %}><a href="/search/">Search</a></li>
-	<li{% if page.url == '/blogroll/' %} hidden{% endif %}><a href="/blogroll/">Blogroll</a></li>
-	<li{% if page.url == '/guestbook/' %} hidden{% endif %}><a href="/guestbook/">Guestbook</a></li>
-	<li{% if page.url == '/indieweb/' %} hidden{% endif %}><a href="/indieweb/">IndieWeb</a></li>
-	<li{% if page.url == '/links/' %} hidden{% endif %}><a href="/links/">Links</a></li>
-	<li{% if page.url == '/listening/' %} hidden{% endif %}><a href="/listening/">Listening</a></li>
-	<li{% if page.url == '/styleguide/' %} hidden{% endif %}><a href="/styleguide/">Styleguide</a></li>
-	<li{% if page.url == '/cv/' %} hidden{% endif %}><a href="/cv/">CV</a></li>
+	{% if page.url != '/search/' %}<li><a href="/search/">Search</a></li>{% endif %}
+	{% if page.url != '/blogroll/' %}<li><a href="/blogroll/">Blogroll</a></li>{% endif %}
+	{% if page.url != '/guestbook/' %}<li><a href="/guestbook/">Guestbook</a></li>{% endif %}
+	{% if page.url != '/indieweb/' %}<li><a href="/indieweb/">IndieWeb</a></li>{% endif %}
+	{% if page.url != '/links/' %}<li><a href="/links/">Links</a></li>{% endif %}
+	{% if page.url != '/listening/' %}<li><a href="/listening/">Listening</a></li>{% endif %}
+	{% if page.url != '/styleguide/' %}<li><a href="/styleguide/">Styleguide</a></li>{% endif %}
+	{% if page.url != '/cv/' %}<li><a href="/cv/">CV</a></li>{% endif %}
 </ul>

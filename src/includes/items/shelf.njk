@@ -106,6 +106,6 @@
 	{% if item.data.category %}
 		<data class=" [ u-category ] " value="/{{ item.data.categoryPlural | default(item.data.category) }}" hidden>{{ item.data.category }}</data>
 	{% endif %}
-	<a class=" [ u-url ] " href="{{ item.url }}" hidden></a>
+	<data class=" [ u-url ] " value="{{ item.url }}" hidden></data>
 	<data class=" [ u-author ] " value="/" hidden></data>
 </article>

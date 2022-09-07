@@ -1,9 +1,9 @@
 <h2>Browse collections</h2>
 <ul class=" [ cluster ] ">
-	<li{% if page.url == '/archive/' %} hidden{% endif %}><a href="/archive/">All Posts</a></li>
-	<li{% if page.url == '/hot/' %} hidden{% endif %}><a href="/hot/">Hot Posts</a></li>
-	<li{% if page.url == '/popular/' %} hidden{% endif %}><a href="/popular/">Popular Posts</a></li>
-	<li{% if page.url == '/writing/' %} hidden{% endif %}><a href="/writing/">Writing</a></li>
-	<li{% if page.url == '/replies/' %} hidden{% endif %}><a href="/replies/">Replies</a></li>
-	<li{% if page.url == '/rsvps/' %} hidden{% endif %}><a href="/rsvps/">RSVPs</a></li>
+	{% if page.url != '/archive/' %}<li><a href="/archive/">All Posts</a></li>{% endif %}
+	{% if page.url != '/hot/' %}<li><a href="/hot/">Hot Posts</a></li>{% endif %}
+	{% if page.url != '/popular/' %}<li><a href="/popular/">Popular Posts</a></li>{% endif %}
+	{% if page.url != '/writing/' %}<li><a href="/writing/">Writing</a></li>{% endif %}
+	{% if page.url != '/replies/' %}<li><a href="/replies/">Replies</a></li>{% endif %}
+	{% if page.url != '/rsvps/' %}<li><a href="/rsvps/">RSVPs</a></li>{% endif %}
 </ul>
