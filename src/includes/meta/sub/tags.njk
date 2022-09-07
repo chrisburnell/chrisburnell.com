@@ -1,6 +1,6 @@
 <h2>Browse by tag</h2>
 <ul class=" [ cluster ] [ meta__list ] ">
-	{% for lookup in collections.tags | sort -%}
-		<li>{% if '/tag/' + lookup + '/' == page.url %}<strong>#{{ lookup }}</strong>{% else %}<a href="/tag/{{ lookup }}"{% if lookup in tags %} class="code-red"{% endif %}>#{{ lookup }}</a>{% endif %}</li>
-	{%- endfor %}
+	{% for lookup in collections.tags | sort %}
+		<li>{% if '/tag/' + lookup + '/' == page.url %}<strong>{{ lookup }}</strong>{% else %}<a href="/tag/{{ lookup }}"{% if lookup in tags %} class="code-red"{% endif %}>{{ lookup }}</a>{% endif %}</li>
+	{% endfor %}
 </ul>

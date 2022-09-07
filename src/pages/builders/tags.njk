@@ -5,7 +5,7 @@ pagination:
   alias: tag
 permalink: /tag/{{ tag }}/
 eleventyComputed:
-  title: "#{{ tag | capitalizeFormat }}"
+  title: "{{ tag | capitalizeFormat }}"
   description: "All of my posts tagged with <q>{{ tag | capitalizeFormat }}</q>."
 hfeed: true
 show_photos: true
@@ -22,7 +22,7 @@ truncate: true
 			<a href="/archive/">All Posts</a>
 		</li>
 		<li aria-hidden="true">
-			#{{ tag | capitalizeFormat }}
+			Tagged: {{ tag }}
 		</li>
 	</ul>
 

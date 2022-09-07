@@ -190,7 +190,7 @@
 					{%- if badge.id -%}
 						<a href="https://untappd.com/user/{{ author.untappd }}/badges/{{ badge.id }}">{{ badge.title | default(badge) }}</a>
 					{%- else -%}
-						<a href="#_">{{ badge.title | default(badge) }}</a>
+						<strong>{{ badge.title | default(badge) }}</strong>
 					{%- endif -%}
 				{%- if badges.length > 1 %}</li>{% endif -%}
 			{%- endfor -%}

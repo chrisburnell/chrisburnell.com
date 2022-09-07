@@ -2,9 +2,7 @@ const markdownIt = require("markdown-it")({
 	html: true,
 	breaks: true,
 	linkify: true,
-})
-	.use(require("markdown-it-abbr"))
-	.disable("code")
+}).disable("code")
 const capitalizers = require("#data/capitalizers")
 
 const truncate = (() => {

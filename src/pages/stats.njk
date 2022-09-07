@@ -75,6 +75,6 @@ description: Numbers, cause why not?
 	{%- for item in collections.tags | sort -%}
 		{%- set collection = collections[item] | arePublished | reverse -%}
 		{%- set count = collection.length -%}
-		<li><a href="/tag/{{ item }}">#{{ item }} <sup>{{ count }}</sup></a></li>
+		<li><a href="/tag/{{ item }}">{{ item }} <sup>{{ count }}</sup></a></li>
 	{%- endfor -%}
 </ul>
