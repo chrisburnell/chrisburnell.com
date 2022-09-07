@@ -62,7 +62,7 @@ truncate: true
 		{% else %}
 			{%- set year = latest_year -%}
 			<h2 id="{{ year }}">
-				{{ year }} <small>({{ collection | getCountByYear(year) }})</small>
+				{{ year }} <small>({{ collection | getCollectionCount(year, true) }})</small>
 			</h2>
 			<nav id="list-{{ year }}" class=" [ deck ] ">
 				{% for item in collection %}
@@ -70,7 +70,7 @@ truncate: true
 						{%- set year = item.date.getFullYear() -%}
 						</nav>
 						<h2 id="{{ year }}">
-							{{ year }} <small>({{ collection | getCountByYear(year) }})</small>
+							{{ year }} <small>({{ collection | getCollectionCount(year, true) }})</small>
 						</h2>
 						<nav id="list-{{ year }}" class=" [ deck ] ">
 					{% endif %}

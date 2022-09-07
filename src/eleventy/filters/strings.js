@@ -19,9 +19,8 @@ const specialNumbers = ["zeroth", "first", "second", "third", "fourth", "fifth",
 const decaNumbers = ["twent", "thirt", "fort", "fift", "sixt", "sevent", "eight", "ninet"]
 
 module.exports = {
-	getReadingTime: (text) => {
+	readingtime: (numberOfWords) => {
 		const wordsPerMinute = 200
-		const numberOfWords = text.split(/\s/g).length
 		return Math.ceil(numberOfWords / wordsPerMinute)
 	},
 	capitalizeFormat: (input) => {
@@ -32,6 +31,9 @@ module.exports = {
 	},
 	markdownFormat: (value) => {
 		return markdownIt.render(value)
+	},
+	cleantags: (input) => {
+		return input.replace(/\<pre(.*)\<\/pre\>/g, "").replace(/\<div class="\[ support(.*)\<\/div\>/g, "")
 	},
 	numberNthFormat: (n) => {
 		if (n < 20) {

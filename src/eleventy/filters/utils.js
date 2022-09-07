@@ -52,6 +52,9 @@ module.exports = {
 		}
 		return [value]
 	},
+	toNearest: (value, multiple) => {
+		return Math.round(value / multiple) * multiple
+	},
 	getPostType: (type) => {
 		return postTypes[type] || type
 	},

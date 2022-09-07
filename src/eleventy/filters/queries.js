@@ -28,13 +28,27 @@ module.exports = {
 
 		return value
 	},
-	getCountByYear: (items, year) => {
+	getCollectionCount: (items, year, showHidden = false) => {
 		return items
 			.filter((item) => {
-				return !item.data.draft
+				if ("data" in item) {
+					if ("draft" in item.data && item.data.draft === true) {
+						return false
+					}
+					if ("published" in item.data && item.data.published === false) {
+						return false
+					}
+					if ("hidden" in item.data && item.data.hidden === true && showHidden === false) {
+						return false
+					}
+					if ("tags" in item.data && item.data.tags.includes("ignore")) {
+						return false
+					}
+				}
+				return !!item.url
 			})
 			.filter((item) => {
-				return item.data.page.date.getFullYear() === parseInt(year, 10)
+				return !year || item.data.page.date.getFullYear() === parseInt(year, 10)
 			}).length
 	},
 	getHost: (value) => {

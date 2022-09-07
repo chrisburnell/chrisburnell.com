@@ -90,8 +90,8 @@
 	{% if show_reading_length %}
 		<li class=" [ reading-length ] ">
 			{% emoji '📚' %}
-			<strong>{{ stringFilters.getReadingTime(content) }}</strong>
-			<small>minute read</small>
+			<strong>~{{ content | cleantags | striptags | safe | wordcount | toNearest(25) | numberStringFormat }}</strong>
+			<small>words</small>
 		</li>
 	{% endif %}
 	{%- set tags_filtered = tags | categoryFilter | tagFilter -%}
