@@ -189,7 +189,7 @@ And, if you need it, the entire Object of sorted Webmentions is available too:
 
 <h2 id="webmention-io">Webmention.io</h2>
 
-See [Webmention.io](https://webmention.io) for more information on usage.
+[Webmention.io](https://webmention.io) is a in-place Webmention receiver solution that you can use by authenticating yourself via [IndieAuth](https://indieauth.com/) (or host it yourself), and, like so much other publically-available IndieWeb software, is built and hosted by [Aaron Parecki](https://aaronparecki.com/).
 
 ### Add your token
 
@@ -215,7 +215,7 @@ module.exports = function(eleventyConfig) {
 
 ## go-jamming
 
-See [go-jamming on Wouter Groenveld’s Git server](https://git.brainbaking.com/wgroeneveld/go-jamming) for more information on usage.
+[go-jamming](https://git.brainbaking.com/wgroeneveld/go-jamming) is a self-hosted Webmention sender and receiver, built in Go by [Wouter Groeneveld](https://brainbaking.com) and available with more information on his [personal git instance](https://git.brainbaking.com/wgroeneveld/go-jamming).
 
 ### Add your token
 
