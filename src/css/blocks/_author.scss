@@ -131,7 +131,6 @@
 	flex-grow: 0;
 	flex-shrink: 0;
 	flex: 0 0 var(--size-avatar);
-	block-size: var(--size-avatar);
 	float: left;
 	float: inline-start;
 	position: relative;
@@ -140,8 +139,9 @@
 }
 
 .author__image,
-.author__image img,
+.author__image %image,
 .author__information::before {
+	aspect-ratio: 1 / 1;
 	inline-size: var(--size-avatar);
 	block-size: var(--size-avatar);
 	border-radius: 50%;
