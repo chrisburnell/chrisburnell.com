@@ -75,7 +75,7 @@ The gist of the plugin is that you can define CSS styles and apply them to pages
 
 ```html
 <style id="stylish-3" class="stylish">
-... {}
+    ...
 </style>
 ```
 

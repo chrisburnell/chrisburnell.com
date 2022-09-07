@@ -19,7 +19,6 @@ export default [
 		input: "src/js/common/navigator.js",
 		output: {
 			dir: "js",
-			format: "iife",
 			name: "navigator",
 		},
 	},

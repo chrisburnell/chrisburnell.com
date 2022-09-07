@@ -1,7 +1,3 @@
-/**
- * Navigator
- * @author Chris Burnell <me@chrisburnell.com>
- */
 if (navigator.serviceWorker) {
 	navigator.serviceWorker
 		.register("/serviceworker.js")
