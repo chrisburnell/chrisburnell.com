@@ -24,7 +24,7 @@ module.exports = {
 			if (data.npm) {
 				return data.title + " v" + pkg.dependencies[data.npm].replace("^", "")
 			}
-			return data.tagline || ""
+			return data.tagline || data.title || ""
 		},
 		description: async (data) => {
 			if (data.github) {

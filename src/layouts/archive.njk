@@ -12,7 +12,10 @@ truncate: true
 
 	<ul class=" [ cluster ] [ breadcrumbs ] ">
 		<li>
-			<a href="/archive/">← All Posts</a>
+			<a href="/archive/">All Posts</a>
+		</li>
+		<li aria-hidden="true">
+			{{ title | safe }}
 		</li>
 	</ul>
 
@@ -24,26 +27,36 @@ truncate: true
 		<p>{{ description | replace('.', '') | safe }}{% if first_year != latest_year %}, dating from <a href="#{{ first_year }}">{{ first_year }}</a>–<a href="#{{ latest_year }}">{{ latest_year }}</a>{% endif %}.</p>
 	</div>
 
-	{% sparkline collection, first_year, latest_year %}
+	{% if by_year %}
+		{% sparkline collection, first_year, latest_year %}
+	{% endif %}
 
 	<div class=" [ content ] [ flow ] [ h-feed ] ">
-		{%- set year = latest_year -%}
-		<h2 id="{{ year }}">
-			{{ year }} <small>({{ collection | getCollectionCount(year, true) }})</small>
-		</h2>
-		<nav id="list-{{ year }}" class=" [ deck ] ">
-			{% for item in collection %}
-				{% if item.date.getFullYear() != year %}
-					{%- set year = item.date.getFullYear() -%}
-					</nav>
-					<h2 id="{{ year }}">
-						{{ year }} <small>({{ collection | getCollectionCount(year, true) }})</small>
-					</h2>
-					<nav id="list-{{ year }}" class=" [ deck ] ">
-				{% endif %}
-				{% include 'items/deck.njk' %}
-			{% endfor %}
-		</nav>
+		{%- if by_year -%}
+			{%- set year = latest_year -%}
+			<h2 id="{{ year }}">
+				{{ year }} <small>({{ collection | getCollectionCount(year, true) }})</small>
+			</h2>
+			<nav id="list-{{ year }}" class=" [ deck ] ">
+				{% for item in collection %}
+					{% if item.date.getFullYear() != year %}
+						{%- set year = item.date.getFullYear() -%}
+						</nav>
+						<h2 id="{{ year }}">
+							{{ year }} <small>({{ collection | getCollectionCount(year, true) }})</small>
+						</h2>
+						<nav id="list-{{ year }}" class=" [ deck ] ">
+					{% endif %}
+					{% include 'items/deck.njk' %}
+				{% endfor %}
+			</nav>
+		{%- else -%}
+			<nav class=" [ deck ] ">
+				{% for item in collection %}
+					{% include 'items/deck.njk' %}
+				{% endfor %}
+			</nav>
+		{%- endif -%}
 	</div>
 
 	<div class=" [ meta ] [ flow ] ">
