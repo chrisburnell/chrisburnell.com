@@ -498,7 +498,7 @@ The CSS here a lot more concise now, and the advantages are tremendous as you ge
 
 --------
 
-Another thing, which I won’t bother to illustrate here, is the splitting of files. Similar to how I talked about building a componential CSS architecture, Sass allows you to concatenate multiple SCSS files into one file in the output `.css` file. I’ve done exactly that with my SCSS files—split them into <abbr title="a Sass file named with a leading underscore to denote it is a part of a whole Sass codebase">partials</abbr>: `\_articles.scss`, `\_asides.scss`, `\_buttons.scss`, etc.—and this helps to create a bird’s-eye-view or holisitic view of the separation of components.
+Another thing, which I won’t bother to illustrate here, is the splitting of files. Similar to how I talked about building a componential CSS architecture, Sass allows you to concatenate multiple SCSS files into one file in the output `.css` file. I’ve done exactly that with my SCSS files—split them into <dfn title="a Sass file named with a leading underscore to denote it is a part of a whole Sass codebase">partials</dfn>: `\_articles.scss`, `\_asides.scss`, `\_buttons.scss`, etc.—and this helps to create a bird’s-eye-view or holisitic view of the separation of components.
 
 It’s also extremely useful if you build a core set of styles and then extend those styles for bespoke designs in separate files; in this way, you only need to include the core styles on each page, instead of having to pull in all the bespoke CSS and using only a small part of it.
 

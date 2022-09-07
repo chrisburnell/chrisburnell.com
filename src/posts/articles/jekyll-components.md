@@ -12,4 +12,4 @@ I think it’s worth mentioning that a lot of these snippets of *HTML* and *Liqu
 
 And because *Jekyll* is a [static site generator](https://davidwalsh.name/introduction-static-site-generators), I don’t mind deferring the heavy-lifting to the build process and away from the user, so many of these components serve as equivalents to functionality usually relegated for *JavaScript*.
 
-Another caveat to the challenge is that my site <s>is</s> was hosted on [GitHub Pages](https://pages.github.com/), so only a [small set of plugins](https://docs.github.com/en/github/working-with-github-pages/about-github-pages-and-jekyll) are available to use. This means achieving solutions with pure *Liquid*.
+Another caveat to the challenge is that my site ~~is~~ was hosted on [GitHub Pages](https://pages.github.com/), so only a [small set of plugins](https://docs.github.com/en/github/working-with-github-pages/about-github-pages-and-jekyll) are available to use. This means achieving solutions with pure *Liquid*.

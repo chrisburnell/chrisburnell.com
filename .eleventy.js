@@ -34,6 +34,7 @@ const tagsBuilder = require("#builders/tags")
 
 // Import other bits and bobs
 const markdownParser = require("markdown-it")
+const markdownAbbr = require("markdown-it-abbr")
 
 module.exports = (eleventyConfig) => {
 	if (process.env.ELEVENTY_PRODUCTION) {
@@ -113,7 +114,9 @@ module.exports = (eleventyConfig) => {
 			html: true,
 			breaks: true,
 			linkify: true,
-		}).disable("code")
+		})
+			.use(markdownAbbr)
+			.disable("code")
 	)
 
 	eleventyConfig.setDataDeepMerge(true)

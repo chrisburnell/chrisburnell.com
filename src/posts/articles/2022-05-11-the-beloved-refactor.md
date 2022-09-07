@@ -66,10 +66,12 @@ Further on CSS Custom Properties, I never made *full* use of the ability to supp
 
 However, following an [incredible talk by Andy Bell](/bookmark/build-excellent-websites/), *I have seen the light!* I seriously cannot give the talk and its counterpart website, [Build Excellent Websites](https://buildexcellentwebsit.es/), enough praise! It was nearly a spirital moment for me!
 
-The idea that I can create a component with *default* values and *override* them, like I’m used to doing in a <abbr title="Block Element Modifier">BEM</abbr> context, as a *variation* was the moment that clicked for me. Naturally, this concept of defaults/fallbacks is now sprinkled throughout my CSS, and has come with the satisfying knock-on effect of realising how similar a lot of my components were, and are now based on a more generic and flexible foundation.
+The idea that I can create a component with *default* values and *override* them, like I’m used to doing in a BEM context, as a *variation* was the moment that clicked for me. Naturally, this concept of defaults/fallbacks is now sprinkled throughout my CSS, and has come with the satisfying knock-on effect of realising how similar a lot of my components were, and are now based on a more generic and flexible foundation.
 
 ## Fresh eyes
 
 I’m looking forward to jumping back in in a week’s time to see what else I can simplify with fresh eyes. I’m sure things will change as I develop and work with the new code some more.
 
 If you’ve done any satisfying refactors or have any further ideas about building excellent websites like Andy, I’d love to hear about them!
+
+*[BEM]: Block Element Modifier

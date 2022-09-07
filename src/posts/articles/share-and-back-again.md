@@ -7,9 +7,9 @@ description: "On a website on the Internet there lived a webpage. Not a table-la
 
 Thick metaphors aside, I’m talking about writing code that speaks
 
-This post aims to unravel some of the mystery which surrounds *microdata*, *microformats*, <abbr title="Linked Data">JSON-LD</abbr>, <abbr title="Resource Description Framework in Attributes">RDFa</abbr>, and the like.
+This post aims to unravel some of the mystery which surrounds *microdata*, *microformats*, JSON-LD, RDFa, and the like.
 
-<h2 id="whats-the-point">What's the point?</h2>
+## What’s the point?
 
 The whole point of marking up your content with one of the various formats is to make your content <dfn title="capable of being understood">grokkable</dfn> by computers. By using one of these systems, you can, with relative ease (depending on the solution you choose), make a great portion of your content available for computers to parse and, in a way, understand.
 
@@ -23,3 +23,6 @@ In the same way that Facebook collects stasuses from your friends' feeds and dis
 - [https://www.w3.org/TR/rdfa-primer](https://www.w3.org/TR/rdfa-primer/)
 - [http://pin13.net/mf2/?url=https%3A%2F%2Fchrisburnell.com%2F](http://pin13.net/mf2/?url=https%3A%2F%2Fchrisburnell.com%2F)
 - [http://xray.p3k.io/parse?url=https%3A%2F%2Fchrisburnell.com%2F&pretty=true&expect=feed](http://xray.p3k.io/parse?url=https%3A%2F%2Fchrisburnell.com%2F&pretty=true&expect=feed)
+
+*[JSON-LD]: Linked Data
+*[RDFa]: Resource Description Framework in Attributes

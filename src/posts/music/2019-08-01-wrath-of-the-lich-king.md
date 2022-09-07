@@ -13,4 +13,4 @@ cover: wrath-of-the-lich-king.jpg
 rating: 5
 ---
 
-In November of 2008, my life was changed forever with the release of *World of Warcraft’s* second expansion, *Wrath of the Lich King*. So immersive was the game and the soundtrack that came with it, I ended up spending <s>hours</s> <s>days</s> weeks completely enveloped in the game, experiencing all it had to offer with friends I still know today. Although I don’t play more than once or twice a year anymore, this soundtrack was the backdrop of my late-teens and early-twenties and continues to enchant me to this day.
+In November of 2008, my life was changed forever with the release of *World of Warcraft’s* second expansion, *Wrath of the Lich King*. So immersive was the game and the soundtrack that came with it, I ended up spending ~~hours~~ ~~days~~ weeks completely enveloped in the game, experiencing all it had to offer with friends I still know today. Although I don’t play more than once or twice a year anymore, this soundtrack was the backdrop of my late-teens and early-twenties and continues to enchant me to this day.

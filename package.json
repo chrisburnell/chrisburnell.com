@@ -42,6 +42,7 @@
     "html-minifier": "^4.0.0",
     "json-to-scss": "^1.6.2",
     "luxon": "^3.0.1",
+    "markdown-it-abbr": "^1.0.4",
     "natural": "^5.2.3",
     "postcss-cli": "^10.0.0",
     "prettier": "^2.7.1",

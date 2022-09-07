@@ -7,7 +7,7 @@ description: 2019 marks ten years that I've been making a mess on the web. While
 #   - personal
 ---
 
-So I’ve officially been a <abbr title="an architect or engineer whose responsibilities include the maintenance of a website">Webmaster</abbr> for a decade now.
+So I’ve officially been a Webmaster for a decade now.
 
 This is a big achievement for me because it nicely sums up and boils down my sentiments towards the web. While others might be more inclined to celebrate the fruits of their labour, I’d like to celebrate the labour itself.
 
@@ -28,3 +28,5 @@ But it’s that I have any content to speak of that I’m celebrating. <q>Just w
 Over the years of writing, editing, and not publishing, I regret almost every piece of work I’ve not published. I naïvely wanted to write prose that was ephemeral and rung true no matter how far into the future a reader might be. Sure,
 
 But this is an impossible task. There is an inescapable timeliness to words and prose.
+
+*[Webmaster]: an architect or engineer whose responsibilities include the maintenance of a website

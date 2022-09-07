@@ -10,7 +10,7 @@ syndicate_to:
   - https://twitter.com/iamchrisburnell/status/607915792911495168
 ---
 
-In [I’ll Scratch Your Back, And Mine Too](/article/ill-scratch-your-back/), I wrote about a technique I came up with for styling default elements. To recap, this comes with a couple of advantages: managing styles for default elements is a lot easier for development and makes writing content for non-technical users as simple as possible—coupled with a nice <abbr title="What You See Is What You Get">WYSIWYG editor</abbr> or knowledge of Markdown.
+In [I’ll Scratch Your Back, And Mine Too](/article/ill-scratch-your-back/), I wrote about a technique I came up with for styling default elements. To recap, this comes with a couple of advantages: managing styles for default elements is a lot easier for development and makes writing content for non-technical users as simple as possible—coupled with a nice WYSIWYG editor or knowledge of Markdown.
 
 --------
 
@@ -119,3 +119,5 @@ Now we can be sure to only target `spans` without a `class` *or* `itemprop` attr
 You can extrapolate this idea to more than just `spans` for hiding text. The `:not([class])` technique is extremely versatile and will help you in keeping your CSS lean and maintainable.
 
 I have to reiterate that this technique needs to be taken with a grain of salt. **Do not [copy-pasta](https://gifs.chrisburnell.com/copypasta.gif "Copy and Paste") this code into your existing codebase without making careful considerations.** Think of it like switching the box model in your CSS—you wouldn’t want to do that without first thinking about how it will affect your current code.
+
+*[WYSIWYG]: What You See Is What You Get

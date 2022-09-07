@@ -43,7 +43,7 @@ $breakpoints: (
 
 The Sass needs to be able to handle any number of breakpoints, not just an arbitrary number, so we’re going to have to use `@each` and/or `@for` to create some loops. We need to be able to say <q>below <var>A</var></q>, <q>above <var>B</var></q>, <q>above <var>A</var> and below <var>B</var></q>, etc. do *something*.
 
-So using a <abbr title="Block Element Modifier">*BEM*</abbr> naming methodology, we’ll use a *base class* of `.hide` and extend it like so:
+So using a BEM naming methodology, we’ll use a *base class* of `.hide` and extend it like so:
 
 - `.hide--below-small`
 - `.hide--above-medium`
@@ -302,3 +302,5 @@ Here’s a small demo of the `@function` on *CodePen*, which I recommend opening
 {% codepen 'OWWYdj', false, 400 %}
 
 This is a pretty extreme example of how smart utilisation of Sass’ features makes writing and maintaining CSS easier (and more satisfying), but you can start on this path in a much smaller capacity. Investigate what kind of wins you’ll achieve through abstracting your colours, sizes, sets of styles, etc. and proceed, carefully, to organise and DRY out your code. If you’re unsure where to start with refactoring, [Harry Roberts](https://csswizardry.com/) has written some [excellent articles](https://csswizardry.com/2017/06/refactoring-tunnels/) [about refactoring](https://csswizardry.com/2016/08/refactoring-css-the-three-i-s/).
+
+*[BEM]: Block Element Modifier

@@ -66,7 +66,7 @@ Now we need to prepare our CSS Variables. In order to make them available for th
 }
 ```
 
-Additionally, because we’re using SCSS, and to keep our code <abbr title="Don’t Repeat Yourself">DRY</abbr>, we’ll utilise the SCSS Map that we set earlier and iterate over it to create a CSS Variable for each of our SCSS Variables and Map values.
+Additionally, because we’re using SCSS, and to keep our code DRY, we’ll utilise the SCSS Map that we set earlier and iterate over it to create a CSS Variable for each of our SCSS Variables and Map values.
 
 ```css
 :root {
@@ -309,3 +309,5 @@ Changing the default value of <var>$fallback</var> from `true` to `false` on the
 The benefits to using CSS Variables are enormous, and I’d strongly recommend using them as soon as you can across your projects. Others have better explained what those many benefits are, so I encourage you to read up on the subject. A function or mixin like the ones we’ve gone over in this article will help you both in transitioning towards using CSS Variables as well as, when the time comes for your project(s), ceasing to provide fallbacks for your CSS Variables.
 
 This technique could also certainly use some extra eyes to tighten up the code and make it more approachable to a wider audience. Let me know if you have any suggestions or feedback—I’d love to make this technique even stronger, or maybe you have an even better solution!
+
+*[DRY]: Don’t Repeat Yourself
