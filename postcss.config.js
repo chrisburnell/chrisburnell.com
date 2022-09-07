@@ -1,4 +1,14 @@
+const autoprefixer = require("autoprefixer")
+const postcssLogical = require("postcss-logical")
+
+const site = require("#data/site")
+
 module.exports = {
 	syntax: "postcss-scss",
-	plugins: [require("postcss-import-ext-glob"), require("postcss-import"), require("cssnano")],
+	plugins: [
+		autoprefixer,
+		postcssLogical({
+			dir: site.dir,
+		}),
+	],
 }

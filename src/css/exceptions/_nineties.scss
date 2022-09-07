@@ -8,14 +8,23 @@
 	--font-family-title: var(--font-family-sophisticated);
 	--font-family-serif: var(--font-family-silly);
 
-	%heading,
-	.navigation__list %anchor {
-		font-family: var(--font-family-title) !important;
+	html {
+		cursor: url("/images/animated/dinosaur.gif"), auto;
 	}
 
 	* {
 		border-radius: 0 !important;
 		text-decoration-color: currentColor !important;
+	}
+
+	%heading,
+	.navigation__list %anchor {
+		font-family: var(--font-family-title) !important;
+	}
+
+	.webmentions__response__avatar img,
+	.author__image {
+		filter: sepia(50%) saturate(75%) contrast(75%);
 	}
 }
 

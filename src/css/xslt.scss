@@ -8,10 +8,14 @@
 @import "abstracts/generated";
 @import "abstracts/collections";
 
-// Global
-@import "global/reset";
+// Fonts
 @import "global/fonts";
+
+// Reset
+@import "global/reset";
 @import "global/variables";
+
+// Global
 @import "global/page";
 @import "global/anchors";
 @import "global/headings";
@@ -22,6 +26,7 @@
 @import "global/quotes";
 
 // Compositions
+@import "compositions/wrap";
 @import "compositions/pantheon";
 @import "compositions/grid";
 @import "compositions/box";
@@ -41,7 +46,6 @@
 @import "blocks/footer";
 
 // Utilities
-@import "utilities/wrap";
 @import "utilities/flow";
 @import "utilities/canada";
 @import "utilities/helpers";

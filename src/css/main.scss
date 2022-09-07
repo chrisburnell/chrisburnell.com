@@ -17,17 +17,12 @@
 @import "abstracts/generated";
 @import "abstracts/collections";
 
-// Global (Critical)
-@import "global/reset";
+// Fonts
 @import "global/fonts";
-@import "global/variables";
 
-// Exceptions (Themes)
-@import "exceptions/dark";
-@import "exceptions/christmas";
-@import "exceptions/code-red";
-@import "exceptions/matrix";
-@import "exceptions/nineties";
+// Reset
+@import "global/reset";
+@import "global/variables";
 
 // Global
 @import "global/page";
@@ -45,6 +40,7 @@
 @import "global/details";
 
 // Compositions
+@import "compositions/wrap";
 @import "compositions/pantheon";
 @import "compositions/grid";
 @import "compositions/box";
@@ -81,10 +77,14 @@
 @import "blocks/ads";
 
 // Utilities
-@import "utilities/wrap";
 @import "utilities/flow";
 @import "utilities/canada";
 @import "utilities/helpers";
 
 // Exceptions
+@import "exceptions/dark";
+@import "exceptions/christmas";
+@import "exceptions/code-red";
+@import "exceptions/matrix";
+@import "exceptions/nineties";
 @import "exceptions/styleguide";

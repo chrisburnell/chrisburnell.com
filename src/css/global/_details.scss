@@ -7,6 +7,7 @@ details {
 	inline-size: 100%;
 	max-inline-size: var(--size-line-length);
 	border-radius: var(--size-border-default);
+	overflow-x: auto;
 	position: relative;
 
 	%content {
