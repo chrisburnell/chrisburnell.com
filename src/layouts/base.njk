@@ -39,7 +39,7 @@
 	{% set next_post = collections[category] | arePublished | getNextCollectionItem(page) %}
 {%- endif -%}
 <!DOCTYPE html>
-<html lang="{{ site.locale }}" class="{% if theme %}{{ theme }}  {% elseif site.theme %}{{ site.theme }}  {% endif %}no-js">
+<html lang="{{ site.locale }}" class="{% if theme %}{{ theme }}  {% elseif site.theme %}{{ site.theme }}  {% endif %}no-js" profile="http://gmpg.org/xfn/11">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">

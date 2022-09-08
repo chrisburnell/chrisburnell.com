@@ -60,4 +60,6 @@ As much work as I’ve put into my sections of code, I have to give a massive th
     <dd>for <a href="https://omnibear.com/" rel="external">Omnibear</a></dd>
     <dt><a href="https://rusingh.com" rel="external">Ru Singh</a></dt>
     <dd>for <a href="https://gocelestial.herokuapp.com" rel="external">Celestial</a></dd>
+    <dt><a href="https://brainbaking.com" rel="external">Wouter Groeneveld</a></dt>
+    <dd>for <a href="https://git.brainbaking.com/wgroeneveld/go-jamming" rel="external">go-jamming</a></dd>
 </dl>

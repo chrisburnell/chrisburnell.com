@@ -1,238 +1,287 @@
 [
   {
     "title": "Jeremy Keith",
+    "rel": "acquaintance met",
     "url": "https://adactio.com"
   },
   {
     "title": "Aaron Parecki",
+    "rel": "acquaintance met",
     "url": "https://aaronparecki.com"
   },
   {
     "title": "Calum Ryan",
+    "rel": "acquaintance met",
     "url": "https://calumryan.com"
   },
   {
     "title": "Max Böck",
+    "rel": "contact",
     "url": "https://mxb.dev"
   },
   {
     "title": "Ruth John",
+    "rel": "contact met",
     "url": "https://rumyra.com"
   },
   {
     "title": "Ire Aderinokun",
+    "rel": "contact",
     "url": "https://bitsofco.de"
   },
   {
     "title": "Dave Letorey",
+    "rel": "friend met",
     "url": "https://letorey.co.uk"
   },
   {
     "title": "Andy Bell",
+    "rel": "acquaintance met",
     "url": "https://andy-bell.co.uk"
   },
   {
     "title": "Heydon Pickering",
+    "rel": "acquaintance met",
     "url": "https://heydonworks.com"
   },
   {
     "title": "Michelle Barker",
+    "rel": "acquaintance met",
     "url": "https://css-irl.info"
   },
   {
     "title": "Zach Leatherman",
+    "rel": "contact",
     "url": "https://zachleat.com"
   },
   {
     "title": "Alistair Shepherd",
+    "rel": "acquaintance met",
     "url": "https://alistairshepherd.uk"
   },
   {
     "title": "Ben Myers",
+    "rel": "contact",
     "url": "https://benmyers.dev"
   },
   {
     "title": "Remy Sharp",
+    "rel": "contact met",
     "url": "https://remysharp.com"
   },
   {
     "title": "Ana Rodrigues",
+    "rel": "acquaintance met",
     "url": "https://ohhelloana.blog"
   },
   {
     "title": "Ru Singh",
+    "rel": "acquaintance",
     "url": "https://rusingh.com"
   },
   {
     "title": "Jacky Alciné",
+    "rel": "contact",
     "url": "https://jacky.wtf"
   },
   {
     "title": "Vincent Pickering",
+    "rel": "contact",
     "url": "https://vincentp.me"
   },
   {
     "title": "Stu Robson",
+    "rel": "contact",
     "url": "https://alwaystwisted.com"
   },
   {
     "title": "Chris Coyier",
+    "rel": "contact",
     "url": "https://chriscoyier.com"
   },
   {
     "title": "Dave Rupert",
+    "rel": "contact",
     "url": "https://daverupert.com"
   },
   {
     "title": "Jonathan Snook",
+    "rel": "contact",
     "url": "https://snook.ca"
   },
   {
     "title": "Harry Roberts",
+    "rel": "contact",
     "url": "https://csswizardry.com"
   },
   {
     "title": "Arek Chatys",
+    "rel": "friend met",
     "url": "https://iamarek.com"
   },
   {
     "title": "Dom Patmore",
+    "rel": "friend met",
     "url": "https://dompatmore.com"
   },
   {
     "title": "Matteo Pescarin",
+    "rel": "friend met",
     "url": "https://peach.smartart.it"
   },
   {
     "title": "Neil Mather",
+    "rel": "acquaintance met",
     "url": "https://doubleloop.net"
   },
   {
     "title": "Jeremy Cherfas",
+    "rel": "contact",
     "url": "https://jeremycherfas.net"
   },
   {
     "title": "Keith J. Grant",
+    "rel": "contact",
     "url": "https://keithjgrant.com"
   },
   {
     "title": "Tom Evans",
+    "rel": "friend met",
     "url": "https://thomas-evans-ux.com"
   },
   {
     "title": "Binyamin Green",
+    "rel": "acquaintance",
     "url": "https://binyam.in"
   },
   {
-    "title": "Chris Heilmann",
+    "title": "Christian Heilmann",
+    "rel": "acquaintance met",
     "url": "https://christianheilmann.com"
   },
   {
     "title": "Robin Rendle",
+    "rel": "contact",
     "url": "https://robinrendle.com"
   },
   {
     "title": "Jen Simmons",
+    "rel": "contact",
     "url": "https://jensimmons.com"
   },
   {
     "title": "Rachel Andrew",
+    "rel": "acquaintance met",
     "url": "https://rachelandrew.co.uk"
   },
   {
     "title": "Eric Meyer",
+    "rel": "contact",
     "url": "https://meyerweb.com"
   },
   {
     "title": "Ethan Marcotte",
+    "rel": "contact",
     "url": "https://ethanmarcotte.com"
   },
   {
     "title": "Adrian Roselli",
+    "rel": "contact met",
     "url": "https://adrianroselli.com"
   },
   {
     "title": "Jeffrey Zeldman",
+    "rel": "contact",
     "url": "https://zeldman.com"
   },
   {
     "title": "Cassie Evans",
+    "rel": "contact met",
     "url": "https://cassie.codes"
   },
   {
     "title": "Bruce Lawson",
+    "rel": "acquaintance met",
     "url": "https://brucelawson.co.uk"
   },
   {
     "title": "Lynn Fisher",
+    "rel": "contact",
     "url": "https://lynnandtonic.com"
   },
   {
     "title": "Léonie Watson",
+    "rel": "contact met",
     "url": "https://tink.uk"
   },
   {
     "title": "Ada Rose Cannon",
+    "rel": "acquaintance met",
     "url": "https://ada.is"
   },
   {
     "title": "Sally Lait",
+    "rel": "acquaintance met",
     "url": "https://sallylait.com"
   },
   {
     "title": "Matt Zeunert",
+    "rel": "acquaintance met",
     "url": "https://mattzeunert.com"
   },
   {
     "title": "Sara Soueidan",
+    "rel": "contact",
     "url": "https://sarasoueidan.com"
   },
   {
     "title": "Kitty Giraudel",
+    "rel": "contact",
     "url": "https://kittygiraudel.com"
   },
   {
     "title": "Daniel Pontes",
+    "rel": "friend met",
     "url": "https://github.com/webdpontes"
   },
   {
     "title": "Dan Sackett",
+    "rel": "acquaintance",
     "url": "https://dansackett.me"
   },
   {
     "title": "Laura Kalbag",
+    "rel": "acquaintance met",
     "url": "https://laurakalbag.com"
   },
   {
     "title": "Jake Archibald",
+    "rel": "acquaintance met",
     "url": "https://jakearchibald.com"
   },
   {
     "title": "Wouter Groeneveld",
+    "rel": "friend",
     "url": "https://brainbaking.com"
   },
   {
-    "title": "Bruce Lawson",
-    "url": "https://brucelawson.co.uk"
-  },
-  {
-    "title": "Alistair Shepherd",
-    "url": "https://alistairshepherd.uk"
-  },
-  {
     "title": "Hidde de Vries",
+    "rel": "contact",
     "url": "https://hidde.blog"
   },
   {
     "title": "Sophie Koonin",
+    "rel": "contact",
     "url": "https://localghost.dev"
   },
   {
     "title": "Stephanie Stimac",
+    "rel": "acquaintance met",
     "url": "https://stephaniestimac.com"
   },
   {
     "title": "Andy Clarke",
+    "rel": "acquaintance met",
     "url": "https://stuffandnonsense.co.uk"
   }
 ]
