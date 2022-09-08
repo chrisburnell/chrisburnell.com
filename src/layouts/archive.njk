@@ -24,7 +24,11 @@ truncate: true
 	</h1>
 
 	<div class=" [ description ] [ flow ] [ p-summary ] ">
-		<p>{{ description | replace('.', '') | safe }}{% if first_year != latest_year %}, dating from <a href="#{{ first_year }}">{{ first_year }}</a>–<a href="#{{ latest_year }}">{{ latest_year }}</a>{% endif %}.</p>
+		{% if by_year %}
+			<p>{{ description | replace('.', '') | safe }}{% if first_year != latest_year %}, dating from <a href="#{{ first_year }}">{{ first_year }}</a>–<a href="#{{ latest_year }}">{{ latest_year }}</a>{% endif %}.</p>
+		{% else %}
+			{{ description | markdownFormat | safe }}
+		{% endif %}
 	</div>
 
 	{% if by_year %}
