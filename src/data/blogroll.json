@@ -105,6 +105,11 @@
     "url": "https://daverupert.com"
   },
   {
+    "title": "Brad Frost",
+    "rel": "contact",
+    "url": "https://bradfrost.com"
+  },
+  {
     "title": "Jonathan Snook",
     "rel": "contact",
     "url": "https://snook.ca"
