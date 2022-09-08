@@ -22,26 +22,6 @@ $colors: (
 	alto: #dddddd,
 	milou: #f9f9f9,
 );
-$fluid-space: (
-	title: "Fluid Space Scale",
-	description: "https://utopia.fyi/space/calculator/?c=500,16,1.2,1200,18,1.25,5,2,&s=0.625%7C0.3125,1.25%7C2.25%7C4,xs-m",
-	min-width: 500,
-	max-width: 1200,
-	min-font-size: 16,
-	max-font-size: 18,
-	min-type-scale: 1.2,
-	max-type-scale: 1.25,
-);
-$fluid-type: (
-	title: "Fluid Type Scale",
-	description: "https://utopia.fyi/type/calculator/?c=320,16,1.2,1000,18,1.333,4,0,&s=0.625|0.3125,1.25|2.25|4,s-l",
-	min-width: 320,
-	max-width: 1000,
-	min-font-size: 16,
-	max-font-size: 18,
-	min-type-scale: 1.2,
-	max-type-scale: 1.333,
-);
 $font-families: (
 	sans: "Proxima Nova, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif",
 	serif: "Georgia, Times, Times New Roman, serif",
