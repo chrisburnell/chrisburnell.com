@@ -25,7 +25,7 @@ GO_JAMMING_TOKEN=njJql0lKXnotreal4x3Wmd
 
 --------
 
-**2.** Install `eleventy-cache-webmentions` from *npm*:
+**2.** Install [`eleventy-cache-webmentions`](/eleventy-cache-webmentions/) from *npm*:
 
 ```bash
 npm install @chrisburnell/eleventy-cache-webmentions --save-dev
