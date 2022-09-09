@@ -46,7 +46,7 @@ th {
 	white-space: nowrap;
 
 	&:not(:empty) {
-		background-color: h(alto);
+		background-color: mix(map-get($colors, thunder), map-get($colors, milou), map-get($opacities, delta) * 100%);
 		position: sticky;
 		z-index: var(--z-index-above);
 
