@@ -19,7 +19,7 @@
 			<width>100</width>
 			<height>100</height>
 		</image>
-		<generator>Eleventy v{{ pkg.dependencies['@11ty/eleventy'] | replace('^', '') }}</generator>
+		<generator>{{ eleventy.generator }}</generator>
 		<atom:link rel="self" href="{{ site.url + page.url }}" type="application/rss+xml" />
 		<atom:link rel="hub" href="{{ author.urls.switchboard }}" />
 

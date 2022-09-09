@@ -4,20 +4,18 @@
 	const LASTFM_URL = "https://api.chrisburnell.com/lastfm/chrisburnell";
 	const LASTFM_FEED = document.querySelector(".js-lastfm-feed");
 	const LASTFM_TEMPLATE = `
-<a href="{{ url }}">
-	<picture>
-		<img class=" [ cover ] [ u-photo ] " src="{{ image }}" alt="" role="presentation">
-	</picture>
+<a href="{{ url }}" aria-hidden="true" tabindex="-1">
+	<img class=" [ cover ] [ u-photo ] " src="{{ image }}" alt="" loading="lazy" decoding="async">
 </a>
-<h3>
-	<a href="{{ url }}">
-		<cite class=" [ p-name  p-summary ] ">{{ name }}</cite>
-	</a>
-</h3>
+<h1>
+	<a href="{{ url }}">{{ name }}</a>
+</h1>
 <div>
 	<a class=" [ h-cite ] " href="{{ artistURL }}" title="" rel="external">{{ artist }}</a>
 </div>
-<time class=" [ dt-published ] " datetime="{{ datetime }}">{{ datetimeFriendly }}</time>
+<div>
+	<time class=" [ dt-published ] " datetime="{{ datetime }}">{{ datetimeFriendly }}</time>
+</div>
 `;
 
 	const since = (datetime) => {
@@ -83,7 +81,7 @@
 				datetime = datetime.toISOString();
 
 				let article = document.createElement("article");
-				article.className = "h-review";
+				article.className = " [ flow ] [ h-review ] ";
 				article.innerHTML = LASTFM_TEMPLATE.replace(/{{ url }}/g, url)
 					.replace(/{{ name }}/g, trackName)
 					.replace(/{{ artist }}/g, trackArtist)
