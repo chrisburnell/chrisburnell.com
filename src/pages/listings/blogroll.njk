@@ -8,6 +8,7 @@ full_width: true
 <nav class=" [ grid ] [ shelf ] ">
 {% for item in collection %}
 	<article class=" [ flow ] ">
+		<img src="https://v1.indieweb-avatar.11ty.dev/{{ item.url | urlencode }}/" class=" [ avatar ] " width="30" height="30" alt="{{ item.title | safe }}’s avatar" loading="lazy" decoding="async">
 		<h1>
 			<a href="{{ item.url }}" rel="{{ item.ref }}">
 				{{ item.title | safe }}

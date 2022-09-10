@@ -16,7 +16,6 @@
   },
   {
     "title": "Max Böck",
-    "rel": "contact",
     "url": "https://mxb.dev"
   },
   {
@@ -26,7 +25,6 @@
   },
   {
     "title": "Ire Aderinokun",
-    "rel": "contact",
     "url": "https://bitsofco.de"
   },
   {
@@ -51,7 +49,7 @@
   },
   {
     "title": "Zach Leatherman",
-    "rel": "contact",
+    "rel": "acquaintance",
     "url": "https://zachleat.com"
   },
   {
@@ -61,7 +59,6 @@
   },
   {
     "title": "Ben Myers",
-    "rel": "contact",
     "url": "https://benmyers.dev"
   },
   {
@@ -81,42 +78,38 @@
   },
   {
     "title": "Jacky Alciné",
-    "rel": "contact",
+    "rel": "acquaintance",
     "url": "https://jacky.wtf"
   },
   {
     "title": "Vincent Pickering",
-    "rel": "contact",
+    "rel": "acquaintance",
     "url": "https://vincentp.me"
   },
   {
     "title": "Stu Robson",
-    "rel": "contact",
     "url": "https://alwaystwisted.com"
   },
   {
     "title": "Chris Coyier",
-    "rel": "contact",
+    "rel": "acquaintance",
     "url": "https://chriscoyier.com"
   },
   {
     "title": "Dave Rupert",
-    "rel": "contact",
     "url": "https://daverupert.com"
   },
   {
     "title": "Brad Frost",
-    "rel": "contact",
+    "rel": "acquaintance met",
     "url": "https://bradfrost.com"
   },
   {
     "title": "Jonathan Snook",
-    "rel": "contact",
     "url": "https://snook.ca"
   },
   {
     "title": "Harry Roberts",
-    "rel": "contact",
     "url": "https://csswizardry.com"
   },
   {
@@ -141,12 +134,12 @@
   },
   {
     "title": "Jeremy Cherfas",
-    "rel": "contact",
+    "rel": "acquaintance met",
     "url": "https://jeremycherfas.net"
   },
   {
     "title": "Keith J. Grant",
-    "rel": "contact",
+    "rel": "acquaintance",
     "url": "https://keithjgrant.com"
   },
   {
@@ -166,12 +159,10 @@
   },
   {
     "title": "Robin Rendle",
-    "rel": "contact",
     "url": "https://robinrendle.com"
   },
   {
     "title": "Jen Simmons",
-    "rel": "contact",
     "url": "https://jensimmons.com"
   },
   {
@@ -181,12 +172,10 @@
   },
   {
     "title": "Eric Meyer",
-    "rel": "contact",
     "url": "https://meyerweb.com"
   },
   {
     "title": "Ethan Marcotte",
-    "rel": "contact",
     "url": "https://ethanmarcotte.com"
   },
   {
@@ -196,7 +185,6 @@
   },
   {
     "title": "Jeffrey Zeldman",
-    "rel": "contact",
     "url": "https://zeldman.com"
   },
   {
@@ -211,12 +199,11 @@
   },
   {
     "title": "Lynn Fisher",
-    "rel": "contact",
     "url": "https://lynnandtonic.com"
   },
   {
     "title": "Léonie Watson",
-    "rel": "contact met",
+    "rel": "met",
     "url": "https://tink.uk"
   },
   {
@@ -236,12 +223,12 @@
   },
   {
     "title": "Sara Soueidan",
-    "rel": "contact",
+    "rel": "",
     "url": "https://sarasoueidan.com"
   },
   {
     "title": "Kitty Giraudel",
-    "rel": "contact",
+    "rel": "",
     "url": "https://kittygiraudel.com"
   },
   {

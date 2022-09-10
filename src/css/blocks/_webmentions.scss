@@ -50,30 +50,20 @@
 .webmentions__response {
 	--flow-space: 1em;
 
-	position: relative;
+	.e-content {
+		--flow-space: 0.5em;
+	}
 }
 
 .webmentions__response__avatar {
 	--size-border: 0;
 
-	box-sizing: content-box;
-	aspect-ratio: 1 / 1;
 	inline-size: var(--size-avatar-small);
+	border-radius: 50%;
 	float: left;
 	float: inline-start;
 	margin-inline-end: var(--size-medium);
 	margin-block-end: var(--size-small);
-	border: var(--size-border-default) solid h(raven, beta);
-	transition: border-color var(--transition-duration) var(--transition-function);
-
-	&[href]:is(:hover, :focus, :active) {
-		border-color: h(maple);
-	}
-
-	&,
-	%image {
-		border-radius: 50%;
-	}
 
 	%image {
 		display: block;

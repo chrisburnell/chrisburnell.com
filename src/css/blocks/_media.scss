@@ -22,9 +22,42 @@
 	}
 }
 
+.avatar {
+	box-sizing: content-box;
+	aspect-ratio: 1 / 1;
+	display: inline-block;
+	border-radius: 50%;
+	border: var(--size-border-thin) solid h(raven, beta);
+	transition: border-color var(--transition-duration) var(--transition-function);
+
+	[href]:is(:hover, :focus, :active) & {
+		border-color: h(maple);
+	}
+
+	.grid article & {
+		float: left;
+		float: inline-start;
+		margin-inline-end: var(--size-small);
+
+		& + * {
+			margin-block-start: 0;
+		}
+	}
+}
+
 .pixelated {
 	image-rendering: crisp-edges;
 	image-rendering: pixelated;
+}
+
+.dreamy,
+%dreamy {
+	filter: url("/images/dreamy.svg#dreamy");
+}
+
+.fsociety,
+%fsociety {
+	filter: url("/images/fsociety.svg#fsociety");
 }
 
 // CodePen Embeds
