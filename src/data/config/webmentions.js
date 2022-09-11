@@ -1,8 +1,6 @@
 const site = require("#data/site")
 const urlReplacements = require("#data/urlReplacements")
 
-const sanitizeHTML = require("sanitize-html")
-
 // Load .env variables with dotenv
 require("dotenv").config()
 
@@ -13,9 +11,7 @@ module.exports = {
 	// feed: `https://jam.chrisburnell.com/webmention/chrisburnell.com/${process.env.GO_JAMMING_TOKEN}`,
 	// key: "json",
 	duration: site.cacheDurations.short,
-	urlReplacements: urlReplacements,
-	maximumHtmlLength: 1000,
-	maximumHtmlText: "Mentioned this:",
+	uniqueKey: "webmentions",
 	allowedHTML: {
 		allowedTags: ["b", "i", "em", "strong", "a", "code", "s", "ins", "del", "mark", "samp", "var"],
 		allowedAttributes: {
@@ -24,4 +20,7 @@ module.exports = {
 		allowedSchemes: ["http", "https"],
 		nonTextTags: ["style", "script", "textarea", "option", "noscript", "pre"],
 	},
+	urlReplacements: urlReplacements,
+	maximumHtmlLength: 1000,
+	maximumHtmlText: "Mentioned this:",
 }
