@@ -36,12 +36,12 @@
 				{% if replies.length %}
 					<ol id="replies" class=" [ replies ] [ flow ] ">
 						{% for webmention in replies %}
-							{% if webmention.data.content %}
+							{% if webmention.content or webmention.data.content %}
 								{%- set wmId = webmention.id -%}
 								{%- set wmType = webmention.activity.type | getPostType -%}
 								{%- set wmDate = webmention.data.published | default(webmention.verified_date) -%}
 								{%- set wmSource = webmention.data.url -%}
-								{%- set wmContent = webmention.data.content | markdownFormat | safe -%}
+								{%- set wmContent = webmention.content | default(webmention.data.content) | markdownFormat | safe -%}
 								{%- set authorPhoto = webmention.data.author.photo -%}
 								{%- set authorUrl = webmention.data.author.url | default(wmSource) -%}
 								{%- set authorName = webmention.data.author.name | default("Anonymous") -%}

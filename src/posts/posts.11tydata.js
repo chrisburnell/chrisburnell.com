@@ -1,6 +1,6 @@
 const configWebmentions = require("../data/config/webmentions.js")
 
-const { getWebmentions } = require("@chrisburnell/eleventy-cache-webmentions")(null, configWebmentions)
+const { getWebmentions } = require("@chrisburnell/eleventy-cache-webmentions")()
 
 module.exports = {
 	layout: "post",

@@ -22,6 +22,10 @@ toc: true
 
 {% include 'package.njk' %}
 
+## Quick Guide
+
+I wrote a quicker and simpler guide to getting this Eleventy plugin working that cuts out all the fluff and extra details. You can read about it here: [Webmention Setup for Eleventy](/article/webmention-eleventy-setup/).
+
 ## Installation
 
 [Available on npm](https://www.npmjs.com/package/@chrisburnell/eleventy-cache-webmentions):

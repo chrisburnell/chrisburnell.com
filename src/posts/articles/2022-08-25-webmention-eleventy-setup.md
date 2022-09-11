@@ -25,10 +25,10 @@ GO_JAMMING_TOKEN=njJql0lKXnotreal4x3Wmd
 
 --------
 
-**2.** Install [`eleventy-cache-webmentions`](/eleventy-cache-webmentions/) from *npm*:
+**2.** Install the `v1.0.0` beta of [`eleventy-cache-webmentions`](/eleventy-cache-webmentions/) from *npm*:
 
 ```bash
-npm install @chrisburnell/eleventy-cache-webmentions --save-dev
+npm install @chrisburnell/eleventy-cache-webmentions@beta --save-dev
 ```
 
 --------
@@ -38,27 +38,31 @@ npm install @chrisburnell/eleventy-cache-webmentions --save-dev
 If you’re using **[Webmention.io](https://webmention.io/)**:
 
 ```javascript
+const { defaults } = require("@chrisburnell/eleventy-cache-webmentions")()
+
 // Load .env variables with dotenv
 require("dotenv").config()
 
-module.exports = {
+module.exports = Object.assign(defaults, {
 	domain: "https://EXAMPLE.COM",
 	feed: `https://webmention.io/api/mentions.json?domain=EXAMPLE.COM&token=${process.env.WEBMENTION_IO_TOKEN}&per-page=9001`,
 	key: "links",
-}
+})
 ```
 
 If you’re using **[go-jamming](https://git.brainbaking.com/wgroeneveld/go-jamming)**:
 
 ```javascript
+const { defaults } = require("@chrisburnell/eleventy-cache-webmentions")()
+
 // Load .env variables with dotenv
 require("dotenv").config()
 
-module.exports = {
+module.exports = Object.assign(defaults, {
 	domain: "https://EXAMPLE.COM",
 	feed: `https://JAM.EXAMPLE.COM/webmention/EXAMPLE.COM/${process.env.GO_JAMMING_TOKEN}`,
 	key: "json",
-}
+})
 ```
 
 --------
@@ -76,27 +80,17 @@ module.exports = function(eleventyConfig) {
 
 --------
 
-**5.** Add some [Directory Specific Data Files](https://www.11ty.dev/docs/data-template-dir/) wherever your pages and posts live. For example, if your pages all live in a `pages/` folder, you would add the following code block to a `pages.11tydata.js` file inside the folder:
+**5.** Add some [Directory Specific Data Files](https://www.11ty.dev/docs/data-template-dir/) wherever your pages and/or posts live. For example, if your pages all live in a `pages/` folder, you would add the following code block to a `pages.11tydata.js` file inside `pages/`:
 
 ```javascript
 const configWebmentions = require("configWebmentions.js")
-const Webmentions = require("@chrisburnell/eleventy-cache-webmentions")(null, configWebmentions)
 
-module.exports = async () => {
-    const webmentionsByUrl = await Webmentions()
+const { getWebmentions } = require("@chrisburnell/eleventy-cache-webmentions")()
 
-    return {
-        eleventyComputed: {
-            webmentions: (data) => {
-                const webmentionsForUrl = webmentionsByUrl[configWebmentions.domain + data.page.url] || []
-
-                if (webmentionsForUrl.length) {
-                    return webmentionsForUrl.sort((a, b) => {
-                        return (b.data.published || b.verified_date) - (a.data.published || a.verified_date)
-                   })
-                }
-                return []
-            },
+module.exports = {
+    eleventyComputed: {
+        webmentions: (data) => {
+            return getWebmentions(configWebmentions, configWebmentions.domain + data.page.url)
         },
     }
 }
