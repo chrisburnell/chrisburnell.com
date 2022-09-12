@@ -22,12 +22,17 @@
 	}
 }
 
+.banner {
+	box-shadow: var(--box-shadow, var(--box-shadow-medium));
+}
+
 .avatar {
 	box-sizing: content-box;
 	aspect-ratio: 1 / 1;
 	display: inline-block;
 	border-radius: 50%;
 	border: var(--size-border-thin) solid h(raven, beta);
+	box-shadow: var(--box-shadow, var(--box-shadow-low));
 	transition: border-color var(--transition-duration) var(--transition-function);
 
 	[href]:is(:hover, :focus, :active) & {

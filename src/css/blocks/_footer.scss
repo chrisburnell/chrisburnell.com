@@ -7,7 +7,7 @@
 	background-color: h(mineshaft);
 	padding-block-start: var(--size-large);
 	padding-block-end: var(--size-large);
-	border-block-start: var(--size-border-thin) solid h(highland);
+	border-block-start: var(--size-border-thin) solid var(--border-color, h(raven));
 
 	@include media("print") {
 		display: none;

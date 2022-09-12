@@ -5,49 +5,49 @@ speedlify-score {
 }
 /* The Lighthouse scoring circles */
 .speedlify-score {
-	font-size: 12px;
-	inline-size: 2.6em;
-	block-size: 2.6em;
+	font-size: var(--font-size-small);
+	inline-size: var(--size-large);
+	block-size: var(--size-large);
 	line-height: 1;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
 	border-radius: 50%;
-	border: 2px solid #0cce6b;
-	margin-inline-start: 8px;
+	border: var(--size-border-thin) solid hsl(var(--hsl-conifer));
+	margin-inline-start: var(--size-tiny-small);
 }
 .speedlify-score-ok {
-	color: #ffa400;
+	color: hsl(var(--hsl-aspen));
 	border-color: currentColor;
 }
 .speedlify-score-bad {
-	color: #ff4e42;
+	color: hsl(var(--hsl-maple));
 	border-color: currentColor;
 }
 .speedlify-rank:before {
 	content: "Rank #";
 }
 .speedlify-rank-change {
-	font-size: 12px;
+	font-size: var(--font-size-small);
 }
 .speedlify-rank-change:before {
 	line-height: 1;
 }
 .speedlify-rank-change.up {
-	color: green;
+	color: hsl(var(--hsl-conifer));
 }
 .speedlify-rank-change.up:before {
 	content: "⬆";
 }
 .speedlify-rank-change.down {
-	color: red;
+	color: hsl(var(--hsl-maple));
 }
 .speedlify-rank-change.down:before {
 	content: "⬇";
 }
 speedlify-score > :not(.speedlify-score) {
 	margin-inline-start: 1em;
-	font-size: 12px;
+	font-size: var(--font-size-small);
 }
 speedlify-score > :first-child {
 	margin-inline-start: 0;

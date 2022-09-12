@@ -44,7 +44,7 @@
 	display: flex;
 	align-items: center;
 	padding: var(--size-medium);
-	border-block-start: var(--size-border-thin) solid h(highland);
+	border-block-start: var(--size-border-thin) solid var(--border-color, h(raven));
 	border-radius: 1px 1px var(--size-border-default) var(--size-border-default);
 	text-align: start;
 	font-family: var(--font-family-sans);

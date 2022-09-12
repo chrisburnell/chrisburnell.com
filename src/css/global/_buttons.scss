@@ -41,6 +41,7 @@ button {
 	border-radius: var(--size-border-default);
 	outline: var(--size-border-thin) solid transparent;
 	outline-offset: var(--size-border-thin);
+	box-shadow: var(--box-shadow, var(--box-shadow-low));
 	overflow: visible;
 	position: relative;
 	font-size: var(--font-size, var(--font-size-default));

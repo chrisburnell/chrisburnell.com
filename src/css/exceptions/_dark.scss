@@ -4,6 +4,8 @@
 ////
 
 @mixin color-scheme-dark() {
+	--shadow-color: var(--hsl-shadow-dark);
+
 	// Target these if applied to html or body elements
 	&:is(html, body),
 	&:is(html) body {

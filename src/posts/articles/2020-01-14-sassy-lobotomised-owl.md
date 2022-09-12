@@ -25,15 +25,15 @@ Let’s say our goal is to end up with the following CSS output:
 
 ```css
 body > * + * {
-  margin-top: 4em;
+    margin-top: 4em;
 }
 
 main > * + * {
-  margin-top: 2em;
+    margin-top: 2em;
 }
 
 article > * + * {
-  margin-top: 1em;
+    margin-top: 1em;
 }
 ```
 
@@ -41,9 +41,9 @@ Let’s start things off by pumping the excitement all the way up to **3**. At i
 
 ```scss
 @mixin owl($size) {
-  & > * + * {
-    margin-top: $size;
-  }
+    & > * + * {
+        margin-top: $size;
+    }
 }
 ```
 
@@ -51,9 +51,9 @@ In fact, if we know that more often than not we'll be using a specific value, we
 
 ```scss
 @mixin owl($size: 1em) {
-  & > * + * {
-    margin-top: $size;
-  }
+    & > * + * {
+        margin-top: $size;
+    }
 }
 ```
 
@@ -61,15 +61,15 @@ And we can use it like so:
 
 ```scss
 body {
-  @include owl(4em);
+    @include owl(4em);
 }
 
 main {
-  @include owl(2em);
+    @include owl(2em);
 }
 
 article {
-  @include owl;
+    @include owl;
 }
 ```
 
@@ -85,15 +85,15 @@ $size-medium: 2em;
 $size-small:  1em;
 
 $sizes: (
-  large:  $size-large,
-  medium: $size-medium,
-  small:  $size-small
+    large:  $size-large,
+    medium: $size-medium,
+    small:  $size-small
 )
 
 :root {
-  @each $key, $value in $sizes {
-    --size-#{$key}: #{$value};
-  }
+    @each $key, $value in $sizes {
+        --size-#{$key}: #{$value};
+    }
 }
 ```
 
@@ -101,9 +101,9 @@ And using *Bowhead* I can now rewrite my <samp>owl</samp> mixin with the above c
 
 ```scss
 @mixin owl($size: small) {
-  & > * + * {
-    @include v(margin-top, $size);
-  }
+    & > * + * {
+        @include v(margin-top, $size);
+    }
 }
 ```
 
@@ -111,15 +111,15 @@ In congruency with the methodology behind *Bowhead*, we’ve now abstracted away
 
 ```scss
 body {
-  @include owl(large);
+    @include owl(large);
 }
 
 main {
-  @include owl(medium);
+    @include owl(medium);
 }
 
 article {
-  @include owl;
+    @include owl;
 }
 ```
 
@@ -127,13 +127,13 @@ article {
 
 ```scss
 @mixin owl($size: small) {
-  @if not map-has-key($sizes, $size) {
-    @error "There is no size named #{$size} in `$sizes`. size should be one of #{map-keys($sizes)}.";
-  }
+    @if not map-has-key($sizes, $size) {
+        @error "There is no size named #{$size} in `$sizes`. size should be one of #{map-keys($sizes)}.";
+    }
 
-  & > * + * {
-    @include v(margin-top, $size);
-  }
+    & > * + * {
+        @include v(margin-top, $size);
+    }
 }
 
 body {

@@ -128,8 +128,8 @@ module.exports = {
 			})
 			.slice(0, site.limits.feed)
 	},
-	hot: (collection) => {
-		// "Hot" sorting is done by determining the average delta of
+	popularWeight: (collection) => {
+		// "popularWeight" sorting is done by determining the average delta of
 		// time between webmentions and sorting by that average.
 		// This value is also weighted against the number of
 		// webmentions, where having more webmentions is weighted higher.
@@ -169,8 +169,8 @@ module.exports = {
 			})
 			.slice(0, site.limits.feed)
 	},
-	trending: (collection) => {
-		// "Trending" sorting is done by determining the average delta of
+	hot: (collection) => {
+		// "Hot" sorting is done by determining the average delta of
 		// time between webmentions and now.
 		return collection
 			.getFilteredByTag("feature")
@@ -180,7 +180,7 @@ module.exports = {
 				return item.data.webmentions.length >= site.limits.minWebmentions
 			})
 			.map((item) => {
-				item.trendiness = item.data.webmentions.reduce((accumulator, webmention) => {
+				item.hotness = item.data.webmentions.reduce((accumulator, webmention) => {
 					const delta = global.now / day - dateFilters.epoch(webmention.data.published || webmention.verified_date) / day
 					return accumulator + 1 / (1 + Math.log(Math.ceil(delta)))
 				}, 0)
@@ -189,7 +189,7 @@ module.exports = {
 			})
 			.sort(collectionFilters.dateFilter)
 			.sort((a, b) => {
-				return b.trendiness - a.trendiness
+				return b.hotness - a.hotness
 			})
 			.slice(0, site.limits.feed)
 	},

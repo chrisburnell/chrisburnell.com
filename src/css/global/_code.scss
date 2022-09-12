@@ -41,9 +41,10 @@ pre {
 	background-color: h(lynx);
 	min-inline-size: 0;
 	max-inline-size: 100%;
-	border-block-start: var(--size-border-thin) solid var(--border-color, h(highland));
-	border-radius: 1px 1px var(--size-border-default) var(--size-border-default);
+	border-block-start: var(--size-border-thin) solid var(--border-color, h(raven));
 	padding: var(--size-gutter);
+	border-radius: 1px 1px var(--size-border-default) var(--size-border-default);
+	box-shadow: var(--box-shadow, var(--box-shadow-medium));
 	margin: 0;
 	tab-size: 4;
 	font-size: var(--font-size-default);

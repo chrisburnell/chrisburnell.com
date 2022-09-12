@@ -14,8 +14,9 @@
 	background-color: var(--background-color, h(thunder, delta));
 	max-inline-size: 100% !important;
 	padding: var(--gutter, var(--size-gutter));
-	border-block-start: var(--size-border-thin) solid var(--border-color, h(highland));
+	border-block-start: var(--size-border-thin) solid var(--border-color, h(raven));
 	border-radius: 1px 1px var(--size-border-default) var(--size-border-default);
+	box-shadow: var(--box-shadow, var(--box-shadow-low));
 	text-align: start;
 	font-family: var(--font-family-sans);
 	font-style: normal;
@@ -27,7 +28,7 @@
 		--flow-space: 0;
 	}
 
-	:is(h2, h3) {
+	%heading {
 		font-size: var(--font-size-default);
 		line-height: var(--line-height-medium);
 		text-transform: none;
