@@ -26,7 +26,7 @@
     "@11ty/eleventy-plugin-directory-output": "^1.0.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.1.0",
     "@chrisburnell/bowhead": "^0.3.1",
-    "@chrisburnell/eleventy-cache-webmentions": "^1.0.0-beta.6",
+    "@chrisburnell/eleventy-cache-webmentions": "^1.0.0",
     "@chrisburnell/pentatonic": "^1.1.1",
     "@chrisburnell/spark-line": "^1.2.0",
     "@rollup/plugin-commonjs": "^22.0.2",

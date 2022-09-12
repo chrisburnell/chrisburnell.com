@@ -25,10 +25,10 @@ GO_JAMMING_TOKEN=njJql0lKXnotreal4x3Wmd
 
 --------
 
-**2.** Install the `v1.0.0` beta of [`eleventy-cache-webmentions`](/eleventy-cache-webmentions/) from *npm*:
+**2.** Install the [`eleventy-cache-webmentions`](/eleventy-cache-webmentions/) from *npm*:
 
 ```bash
-npm install @chrisburnell/eleventy-cache-webmentions@beta --save-dev
+npm install @chrisburnell/eleventy-cache-webmentions --save-dev
 ```
 
 --------
