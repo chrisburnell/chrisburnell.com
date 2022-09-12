@@ -28,7 +28,7 @@
 	@include media("above:medium") {
 		grid-template-columns:
 			[marginalia-start]
-			var(--aside-width, clamp(14em, calc(9.33rem + 10.67vw), 16em)) // 14–16em between 700–1000px
+			var(--aside-width, clamp(14em, 9.33rem + 10.67vw, 16em)) // 14–16em between 700–1000px
 			[marginalia-end]
 			var(--size-gap)
 			[content-start]
