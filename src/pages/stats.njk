@@ -40,11 +40,11 @@ description: Numbers, cause why not?
 
 {%- set collection = collection | reverse -%}
 {%- set year = first_year -%}
-<figure>
+<figure tabindex="0">
 	<table>
 		<thead>
 			<tr>
-				<th></th>
+				<td></td>
 				{% for i in range(first_year, latest_year + 1) %}
 					<th class=" [ center ] ">{{ i }}</th>
 				{% endfor %}

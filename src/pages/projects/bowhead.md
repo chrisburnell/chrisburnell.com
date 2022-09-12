@@ -161,7 +161,7 @@ With this knowledge under our belt, we can begin to define the design tokens for
 <table>
     <thead>
         <tr>
-            <th></th>
+            <td></td>
             <th>Values</th>
             <th>Description</th>
         </tr>
