@@ -4,6 +4,7 @@
 ////
 
 .table-of-contents {
+	box-shadow: var(--box-shadow, var(--box-shadow-medium));
 	overflow-x: hidden;
 	overflow-y: auto;
 	overscroll-behavior: contain;
