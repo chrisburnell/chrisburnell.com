@@ -25,6 +25,12 @@
 		color: inherit !important;
 		text-decoration: none !important;
 	}
+
+	&:has(%anchor:is(:hover, :focus, :active)) :is(.ad__image, .cardbon-img) {
+		%image {
+			outline-color: h(raven);
+		}
+	}
 }
 
 .ad__wrap,
@@ -32,6 +38,8 @@
 	display: flex;
 	flex: 1;
 	display: flex;
+	border-block-start: var(--size-border-thin) solid var(--border-color, h(raven));
+	border-radius: 1px 1px var(--size-border-default) var(--size-border-default);
 	overflow: hidden;
 	position: relative;
 }
@@ -44,8 +52,6 @@
 	display: flex;
 	align-items: center;
 	padding: var(--size-medium);
-	border-block-start: var(--size-border-thin) solid var(--border-color, h(raven));
-	border-radius: 1px 1px var(--size-border-default) var(--size-border-default);
 	text-align: start;
 	font-family: var(--font-family-sans);
 	font-style: normal;
