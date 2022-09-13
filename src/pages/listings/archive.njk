@@ -27,11 +27,7 @@ truncate: true
 			{% if not loop.first %}
 				<hr>
 			{% endif %}
-			{%- if lookup.title == 'note' -%}
-				{% set lookup_collection = collections.notesWithoutReplies %}
-			{%- else -%}
-				{% set lookup_collection = collections[lookup.title] | arePublished | reverse %}
-			{%- endif -%}
+			{% set lookup_collection = collections[lookup.title] | arePublished | reverse %}
 			<h2 id="{{ lookup.plural }}">
 				<a href="/{{ lookup.plural }}/">{{ lookup.properPlural | title }}</a>
 			</h2>
