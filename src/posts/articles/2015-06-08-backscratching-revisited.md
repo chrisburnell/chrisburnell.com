@@ -91,7 +91,7 @@ But there’s a problem if we want to use [Microdata](https://schema.org/docs/do
 ```html
 <aside class="author" itemtype="https://schema.org/Person">
     <div class="author-name">
-        by <a href="/about">
+        by <a href="/about/">
                <span>Chris Burnell</span>
            </a>
     </div>
