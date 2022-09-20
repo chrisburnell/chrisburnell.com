@@ -128,47 +128,6 @@ module.exports = {
 			})
 			.slice(0, site.limits.feed)
 	},
-	popularWeight: (collection) => {
-		// "popularWeight" sorting is done by determining the average delta of
-		// time between webmentions and sorting by that average.
-		// This value is also weighted against the number of
-		// webmentions, where having more webmentions is weighted higher.
-		return collection
-			.getFilteredByTag("feature")
-			.filter(collectionFilters.isPublished)
-			.filter(collectionFilters.notReply)
-			.filter((item) => {
-				return item.data.webmentions.length >= site.limits.minWebmentions
-			})
-			.map((item) => {
-				// calculate delta in halfdays between the published date
-				// of each Webmention in order to build a mean from the sum
-				const deltas = item.data.webmentions.reduce(
-					(accumulator, webmention, index) => {
-						const delta = (dateFilters.epoch(webmention.data.published || webmention.verified_date) - dateFilters.epoch(accumulator.prev.data.published || accumulator.prev.verified_date)) / day
-						index && accumulator.array.push(delta)
-						accumulator.prev = webmention
-						return accumulator
-					},
-					{ array: [], prev: item.data.webmentions[0] }
-				)
-				// use the natural log against the deltas
-				// as deltas increase, hotness goes down
-				const hotnessDeltas = deltas.array.map((delta) => {
-					return 1 / (1 + Math.log(Math.ceil(delta)))
-				})
-				const hotnessDeltasMean = hotnessDeltas.reduce((a, b) => a + b) / hotnessDeltas.length
-
-				item.hotness = site.weights.deltas * hotnessDeltasMean * (site.weights.count * item.data.webmentions.length)
-
-				return item
-			})
-			.sort(collectionFilters.dateFilter)
-			.sort((a, b) => {
-				return b.hotness - a.hotness
-			})
-			.slice(0, site.limits.feed)
-	},
 	hot: (collection) => {
 		// "Hot" sorting is done by determining the average delta of
 		// time between webmentions and now.
