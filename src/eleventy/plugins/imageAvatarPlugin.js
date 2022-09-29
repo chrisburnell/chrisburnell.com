@@ -22,7 +22,7 @@ const getImageOptions = (lookup) => {
 		formats: process.env.ELEVENTY_PRODUCTION ? ["avif", "webp", "jpg"] : ["webp", "jpg"],
 		urlPath: "/images/avatars/",
 		outputDir: "./_site/images/avatars/",
-		duration: "4w",
+		duration: site.cacheDurations.ages,
 		sharpOptions: {
 			quality: 100,
 		},

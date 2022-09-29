@@ -6,7 +6,7 @@ module.exports = {
 	githubData: async (repository) => {
 		let url = `https://api.github.com/repos/${repository}`
 		let json = await EleventyFetch(url, {
-			duration: "2m",
+			duration: site.cacheDurations.short,
 			type: "json",
 		})
 
@@ -15,7 +15,7 @@ module.exports = {
 	npmData: async (package) => {
 		let url = `https://api.npmjs.org/downloads/point/last-month/${package}`
 		let json = await EleventyFetch(url, {
-			duration: "2m",
+			duration: site.cacheDurations.short,
 			type: "json",
 		})
 

@@ -10,6 +10,10 @@
 	overscroll-behavior: contain;
 	scrollbar-gutter: stable;
 
+	@include media("print") {
+		display: none;
+	}
+
 	@include media("below:medium") {
 		max-block-size: 60vh;
 	}

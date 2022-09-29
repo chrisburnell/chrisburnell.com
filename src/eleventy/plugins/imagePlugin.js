@@ -2,6 +2,8 @@ const path = require("path")
 const Image = require("@11ty/eleventy-img")
 const env = require("#datajs/env")
 
+const site = require("#data/site")
+
 module.exports = (eleventyConfig) => {
 	eleventyConfig.addNunjucksShortcode("image", (src, alt, classes = "", widths = [800]) => {
 		let formats
@@ -17,7 +19,7 @@ module.exports = (eleventyConfig) => {
 			formats: formats,
 			urlPath: "/images/built/",
 			outputDir: "./_site/images/built/",
-			duration: "4w",
+			duration: site.cacheDurations.ages,
 			sharpOptions: {
 				animated: true,
 				quality: 100,

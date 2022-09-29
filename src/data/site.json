@@ -20,7 +20,8 @@
   },
   "cacheDurations": {
     "short": "11h",
-    "long": "1w"
+    "long": "1w",
+    "ages": "4w"
   },
   "cacheDuration": "11h",
   "upcomingDaysLead": 7,
