@@ -27,6 +27,8 @@ description: Numbers, cause why not?
 
 <dl>
 	<dt>Total Posts</dt>
+	<dd>{{ count }}</dd>
+	<dt>Total Blog Posts</dt>
 	<dd>{{ published_count }}</dd>
 	<dt>Total Word Count</dt>
 	<dd>{{ total_wordcount | numberStringFormat }}</dd>
@@ -52,7 +54,7 @@ description: Numbers, cause why not?
 		</thead>
 		<tbody>
 			<tr>
-				<th>Number of Posts</th>
+				<th>Blog Posts</th>
 				{% for i in range(first_year, latest_year + 1) %}
 					<td class=" [ center ] ">{{ collection | getCollectionCount(i) }}</td>
 				{% endfor %}

@@ -4,116 +4,88 @@ eleventyComputed:
   description: "{{ author.role | title }}{% if author.employer %} and {{ author.employer.role | title }} at {{ author.employer.title }}{% endif %}"
   tagline: "{{ author.name }}"
 ads: false
+contentClass: h-resume
 monetizaton: false
 toc: true
 ---
 
-## Biography
+<ul class=" [ cluster ] [ center ] " style='--delineator: "\0020·\0020"'>
+    <li><a href="mailto:{{ author.email }}">{{ author.email }}</a></li><li><a href="https://twitter.com/{{ author.twitter }}">@{{ author.twitter }}</a></li><li><a href="https://chrisburnell.com/cv/">chrisburnell.com/cv</a></li>
+</ul>
 
-I’m a self-taught developer driven by a passion for the front end to create a faster and more open web for everyone. It’s always been important to me to keep abreast of trends on the web, and I enjoy [experimenting](https://codepen.io/{{ author.codepen }}) with these technologies to discover use-cases for my work, and I use my website as a platform to guide my learning and share what I’ve learned. In recent years, I’ve also become interested in content ownership online and have gravitated towards movements like the [IndieWeb](https://indieweb.org).
+## Summary
 
-## Work Experience
+My name is Chris. I’ve been building websites since 2008 and working professionally since 2012, during which time I’ve been able to work with a wide variety of clients, most notably in the government and higher education sectors, including [The Electoral Commission](https://www.electoralcommission.org.uk/), [Ministry of Justice](https://www.gov.uk/government/organisations/ministry-of-justice), [University of the Arts London](https://www.arts.ac.uk/), [William Hill](https://www.williamhill.com/), and more.
 
-0. **[Squiz](https://squiz.net)**
+I specialise particularly in CSS, accessibility, design systems, progressive enhancement/graceful degradation, developer evangelism and education, technical writing and speaking, web performance, and keeping on the pulse of emerging web technologies.
 
-    *Lead Developer & Chapter Lead*
+## Professional Experience
 
-    *May 2022 – present*<br><br>
+### {% image './images/content/squiz-logo.svg', '', 'brand-logo' %} [Squiz](https://squiz.net) in London, UK <small style="float: right; line-height: 1.375;"> February 2018 – present</small>
 
-    Most recently I transitioned into a role managing a small handful of developers working from Squiz's London office.<br><br>
+#### Lead Developer & Chapter Lead <small style="float: right;"> May 2022 – present</small>
 
-    *Lead Developer*
+- Responsible as the primary technical contact for 8 clients, with a specialised understanding of higher-education and government websites.
+- In charge of setting the standard of quality and defining the complete technical implementation for critical project work as both Lead Developer for primary clients and in a consulting role for many others.
+- Managing and coaching a chapter/team of two developers, overseeing their career progression, and recognising their work by successfully referring them for pay rises and promotions.
+- Formulated learning packages to grow the front end expertise of over 30 developers across the organisation, spearheading adoption of best practices and stimulating rapid growth in expertise and knowledge of web development.
+- Established a robust design system for projects which *reduced development times by over 50%*, vastly exceeding client expectations, reducing mental overhead and jargon, which enabled both technical and non-technical colleagues/clients to understand and participate in dialogue about the high-level intersection between design and development.
 
-    *November 2021 – May 2022*<br><br>
+#### Lead Developer <small style="float: right;"> September 2021 – May 2022</small>
 
-    *Lead Developer (Contracting)*
+- Defined and implemented best practices and modern web standards, and updated existing codebases in order to meet the higher standards and reduce context-switching for developers working across multiple projects.
+- Acted as the Lead Developer for the northern hemisphere’s largest project of 2021, achieving massive success with the client through coordinating internal stakeholders across development, design, and UX to better align with their brand identity and make use of art direction capabilities made possible by modern CSS.
+- Mentored a Junior Developer for 20 hours a week over the course of a 6-week project and was not only able to deliver the project in *half the estimated time* but also achieved *perfect Lighthouse and WCAG AA scores*.
 
-    *September 2021 – November 2021*<br><br>
+#### Front End Developer <small style="float: right;"> February 2018 – September 2021</small>
 
-    *Front End Developer (Contracting)*
+- Contributed to both the front end and content management implementations for client work and was consistently relied-upon for expertise on the front end, particularly to do with CSS, and acted as a consultant on dozens of projects for this knowledge.
+- Volunteered to join a specialised team, tasked with standardising the front end boilerplate used across the entire organisation, documented its usage, and stepped up to be the key channel for developers in the northern hemisphere to provide feedback in order to qualify the technical decisions and developer new features.
+- Sole author of the first design system introduced to a project in the northern hemisphere, which has since been adopted by over half a dozen major projects, leading to more coherent codebases, which lead to a significant reduction in necessary bug fixes, support tickets, and turnaround time for ad-hoc work.
 
-    *February 2021 – September 2021*<br><br>
+### <img class="brand-logo" alt="" loading="lazy" decoding="async" src="/images/built/city-logo.png"> [City, University of London](https://city.ac.uk) in London, UK <small style="float: right; line-height: 1.375;"> June 2014 – February 2018</small>
 
-    *Front End Developer*
+#### Web Developer
 
-    *February 2018 – July 2020*<br><br>
+- Part of the Web Team, responsible for maintaining and building new features for both the University’s [Main Website](https://city.ac.uk) and [Bayes Business School](https://www.bayes.city.ac.uk/).
+- Collaborated with the Digital Marketing and Design teams to innovate, share ideas and goals, and bring the University’s online presence to life.
+- Revamped and supervised the development for the suite of websites to reflect the University’s brand refresh.
+- Overhauled the University’s [Clearing Website](https://clearing.city.ac.uk/) which optimised the Clearing process for the University, leading to significant cost and time savings, and continues to effectively serve students, call centre staff, and academic staff.
 
-    I was part of a small team of front end developers tasked with supporting *Squiz’s* digital transformation projects primarily through delivering cut-ups, coordinating and building design systems with other teams, and building solutions in *Squiz’s* CMS, *Matrix*.
+### {% image './images/content/squiz-logo.svg', '', 'brand-logo' %} [Squiz](https://squiz.net) in London, UK <small style="float: right; line-height: 1.375;"> April 2012 – January 2014</small>
 
-    - was part of an internal group in charge of building and maintaining the company’s front end build tools
-    - championed and helped to educate our developers on best practices and techniques to make our jobs easier and more enjoyable<br><br>
+#### Front End Web Developer / UI Developer
 
-0. **[City, University of London](https://city.ac.uk)**
+- Part of a team responsible with building both the front end and content management implementations for client work, specialising particularly in cross-browser compatability.
+- Set up and organised learning initiatives for developers in the form of **Implementor Scrum**, an opportunity for developers to explore best practices and emerging web technologies in a casual group setting, and regularly presented to colleagues in **Lunch and Learn** sessions to educate on emerging web technologies and highlight clever use of current methods of development.
 
-    *Web Developer*
+## Community Experience
 
-    *June 2014 – February 2018*<br><br>
+**Technical Writer** on <img class="brand-logo" alt="" loading="lazy" decoding="async" src="/images/raven.svg"> **[chrisburnell.com](https://chrisburnell.com/)**, a blog about Web Development.
 
-    The Web Team at *City* was in charge of maintaining *City’s* five school websites and fielding incoming requests and web-related queries. My work was heavily focussed on the CSS-side of our codebase, and this allowed me to research, build, and test a robust library of SCSS that simplified how we developed, how quickly and easily design iterations could be made, and significantly cut down on mental overhead. These skills and knowledge I acquired were critical on some important projects which I helped lead:
+- *2013 to present*
+- [{{ collections.posts | length }} blog posts](https://chrisburnell.com/archive/) since 2013, including [{{ collections.writingPosts | length }} longform articles](https://chrisburnell.com/writing/), [{{ collections.css | length }} articles about CSS](https://chrisburnell.com/tag/css/), and [{{ collections.code | length }} code demos](https://chrisburnell.com/tag/css/), some of which have been [featured on CodePen](https://codepen.io/collection/hfqlg)
+- 50,000 page views per month and over 400 social interactions
+- [Popular Blog Posts](https://chrisburnell.com/popular/)
+- [Web/Open Source and Personal Projects](https://chrisburnell.com/projects/)
 
-    - Clearing Web Application (<a href="https://clearing.city.ac.uk">clearing.city.ac.uk</a>) — Complex system of logic built around a Node.js app on top of a minimal design system
-    - *Cass Business School* Website Refresh (<a href="https://cass.city.ac.uk">cass.city.ac.uk</a>) — Full implementation of a design system<br><br>
+**Conference Organiser** for <img class="brand-logo" alt="" loading="lazy" decoding="async" src="/images/built/sotb-logo.png"> **[State of the Browser](https://stateofthebrowser.com)**
 
-0. **[Squiz](https://squiz.net)**
+- [2017](https://2017.stateofthebrowser.com/), [2018](https://2018.stateofthebrowser.com/), [2019](https://2019.stateofthebrowser.com/), [2021](https://2021.stateofthebrowser.com/), & [2022](https://2022.stateofthebrowser.com/)
+- 5 conferences, 43 speakers, 150+ attendees each year
+- Responsible for curating panels of speakers from the industry’s top thought leaders, fostering lucrative partnerships and promoting the conference, building and maintaining the website(s), liaising with speakers, sponsors, and venues, and overseeing the logistics of running a popular, annual conference.
+- State of the Browser is <q>a yearly one-day, single-track conference with widely-varying talks about the modern web, accessibility, web standards, and more</q>.
 
-    *Front End Web Developer / UI Developer*
+**Meetup Organiser** for <img class="brand-logo" alt="" loading="lazy" decoding="async" src="/images/built/lws-logo.png"> **[London Web Standards](https://londonwebstandards.org)**
 
-    *April 2012 – April 2014*<br><br>
+- *2017 to present*
+- Over 3,100 followers and over 400 active subscribers
+- Responsible for building and nurturing an enthusiastic in-person and online community, authoring content, seeking out high-profile speakers, encouraging new speakers to find their feet, and building and maintaining the website.
+- <q>London Web Standards brings together web professionals who are working for a better web. Our monthly meetups provide them with an opportunity to teach, inspire, learn, network and debate.</q>
 
-    This was my first job in the industry and was extremely invigourating to learn the ins-and-outs of professional web development. My main tasks were in delivering cut-ups and building solutions in *Squiz Matrix*; although, halfway into my time I switched roles and my focus became solely on cut-ups and advocating for best practices.
+**Open Source**
 
-    - worked on establishing a standard by which front end code was written by the London team and helped educate and mentor designers and developers on collaborating on standards
-    - organised and ran “Implementor Scrum”, a weekly meeting for developers to have fun and build something unrelated to work and for fun, but using skills that we could hone and apply to our work<br><br>
-
-## Notable Projects and Articles
-
-0. **[London Web Standards](https://londonwebstandards.org) & [State of the Browser](https://stateofthebrowser.com)**
-
-    *Co-organiser*
-
-    *March 2018 – April 2022*<br><br>
-
-    Being an avid attendee of *London Web Standards*, a bi-monthly meetup, and *State of the Browser*, an annual conference, since 2012, I was ecstatic to give my [first lightning talk](https://chrisburnell.com/talk/middle-out/) in 2016. Two years later, I joined the Organisers team, and it’s been nothing short of a rewarding experience for me. At their cores, both *LWS* and *SotB* serve as free and cheap platforms for designers and developers to learn from some of the best thought-leaders and speakers in our industry.<br><br>
-
-0. **[Pentatonic](https://chrisburnell.com/pentatonic/)**
-
-    <q>Turn any array of integers into a fun little melody.</q>
-
-    Pentatonic is a little JS library that turns any sequence of numbers on a page into generated music. Available [on GitHub](https://github.com/chrisburnell/pentatonic) and [on NPM](https://www.npmjs.com/package/@chrisburnell/pentatonic).<br><br>
-
-0. **[Bowhead](https://chrisburnell.com/bowhead/)**
-
-    <q>Memorable and maintainable design tokens in SCSS.</q>
-
-    Bowhead is a small SCSS framework on which to implement your design tokens, spitting out CSS Variables with optional fallbacks. Available [on GitHub](https://github.com/chrisburnell/bowhead) and [on NPM](https://www.npmjs.com/package/@chrisburnell/bowhead).<br><br>
-
-0. **[My Website](https://chrisburnell.com/)**
-
-    My website has been online in various forms since 2008, and it’s my favourite thing that I own—I think of it as part of who I am and gives others a rare lens into my life. Since discovering the [IndieWeb](https://indieweb.org/) in 2017, I’ve begun posting various types of content, from simple [notes](https://chrisburnell.com/notes/) to [likes](https://chrisburnell.com/likes/) and [bookmarks](https://chrisburnell.com/bookmarks/). Everything is built by [Eleventy](https://www.11ty.dev/) and is available for perusal [on GitHub](https://github.com/{{ author.github }}/{{ site.repository }}).<br><br>
-
-0. **[Sassy Lobotomoised Owl](https://chrisburnell.com/article/sassy-lobotomised-owl/)**
-
-    “Managing spacing between elements and components on your page can be a tiring task if undertaken manually. This is where the lobotomised owl comes in: a short, simple snippet of CSS that simplifies this whole process for you. In this article I’ll explain how I make use of it in a more dynamic way using a SCSS mixin.”<br><br>
-
-0. **[Sparkline Sound-Off](https://chrisburnell.com/article/sparkline-sound-off/)**
-
-    “I have been following in the footsteps of Jeremy Keith for a few months now. Dotted around my website, now, are sparklines, representing my activity over time. As an added bonus, a little tune based on the sparkline's values plays when you click on it. With a moderate amount of musical theory under my belt, here's how I accomplished that audio delight.”
-
-## Companies and brands I have worked with
-
-- [Glasgow Caledonian University](https://www.gcu.ac.uk/)
-- [Burness Paull](https://www.burnesspaull.com/)
-- [Buckinghamshire New University](https://bucks.ac.uk/)
-- [The Electoral Commission](https://www.electoralcommission.org.uk/)
-- [Mercator Media](https://www.mercatormedia.com/)
-- [Ministry of Justice](https://www.gov.uk/government/organisations/ministry-of-justice)
-- [National Federation of Women's Institutes](https://www.thewi.org.uk/)
-- [One Housing](https://www.onehousing.co.uk/)
-- [Shared Services Connected Ltd](https://www.sscl.com/)
-- [University of Hertfordshire](https://www.herts.ac.uk/)
-- [William Hill](https://www.williamhill.com/)
-- [Wood](https://www.woodplc.com/)
-
-## References
-
-*Contact details available upon request.*
+- **[Bowhead](https://chrisburnell.com/bowhead/)** <small>([>4,000 downloads](https://www.npmjs.com/package/@chrisburnell/bowhead) · [3 ★](https://github.com/chrisburnell/bowhead))</small><br>Author. A SCSS framework for integrating design tokens into a CSS codebase with support for CSS Variables. This framework has now been a key component in over half a dozen projects deployed during my time at *Squiz*.
+- **[eleventy-cache-webmentions](https://chrisburnell.com/eleventy-cache-webmentions/)** <small>([>2,900 downloads](https://www.npmjs.com/package/@chrisburnell/eleventy-cache-webmentions) · [13 ★](https://github.com/chrisburnell/eleventy-cache-webmentions))</small><br>Author. A plugin for the popular static site generator, [Eleventy](https://11ty.io/), that allows the caching of Webmentions and makes them available to use throughout one’s website.
+- **[Pentatonic](https://chrisburnell.com/pentatonic/)** <small>([>3,100 downloads](https://www.npmjs.com/package/@chrisburnell/pentatonic) · [1 ★](https://github.com/chrisburnell/pentatonic))</small><br>Author. A JavaScript library for turning any array of integers into a fun little melody using the Web Audio API.
+- **[spark-line](https://chrisburnell.com/spark-line/)** <small>([>1,900 downloads](https://www.npmjs.com/package/@chrisburnell/spark-line) · [3 ★](https://github.com/chrisburnell/spark-line))</small><br>Author. A custom element Web Component for generating sparkline graphs from a sequence of integers using the Canvas API.

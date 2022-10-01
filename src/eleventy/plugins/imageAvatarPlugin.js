@@ -98,7 +98,7 @@ module.exports = (eleventyConfig) => {
 
 	eleventyConfig.addNunjucksAsyncShortcode("avatar", async (photo, url, authorUrl, classes = "") => {
 		const mastodonHandle = authorUrl ? queryFilters.getMastodonHandle(authorUrl) : null
-		if (url.includes("twitter.com")) {
+		if (url && url.includes("twitter.com")) {
 			let username = fixTwitterUsername(url.split("twitter.com/")[1].split("/")[0])
 			twitterUsernames.add(username.toLowerCase())
 			return storeAvatar(username, classes)

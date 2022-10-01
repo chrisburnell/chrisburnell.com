@@ -188,7 +188,7 @@ And, if you need it, the entire Object of sorted Webmentions is available too:
 {% for url, array in webmentions %}
     {% set count = array.length + count %}
 {% endfor %}
-<p>This site has received {{ count }} WebMentions!</p>{% endraw %}
+<p>This site has received {{ count }} Webmentions!</p>{% endraw %}
 ```
 
 <h2 id="webmention-io">Webmention.io</h2>
