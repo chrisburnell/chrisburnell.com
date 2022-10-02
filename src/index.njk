@@ -31,15 +31,15 @@ truncate: true
 				<h2 id="today-rsvps">
 					<a href="/rsvps/">Events I’m Attending Today</a>
 				</h2>
-				<nav class=" [ deck ] " aria-labelledby="today-rsvps">
+				<nav class=" [ deck ] [ flow ] " aria-labelledby="today-rsvps">
 					{% for item in collections.todayRSVPs %}
+						{%- set rsvp_class = 'box--error' -%}
+						{%- if item.data.rsvp.value == 'yes' -%}
+							{%- set rsvp_class = 'box--success' -%}
+						{%- elif item.data.rsvp.value == 'maybe' or item.data.rsvp.value == 'interested' -%}
+							{%- set rsvp_class = 'box--warning' -%}
+						{%- endif -%}
 						<div class=" [ box  {{ rsvp_class }} ] [ flow ] ">
-							{%- set rsvp_class = 'box--error' -%}
-							{%- if item.data.rsvp.value == 'yes' -%}
-								{%- set rsvp_class = 'box--success' -%}
-							{%- elif item.data.rsvp.value == 'maybe' or item.data.rsvp.value == 'interested' -%}
-								{%- set rsvp_class = 'box--warning' -%}
-							{%- endif -%}
 							{% include 'items/deck.njk' %}
 						</div>
 					{% endfor %}
@@ -96,15 +96,15 @@ truncate: true
 				<h2 id="upcoming-rsvps">
 					<a href="/rsvps/">Upcoming Events</a>
 				</h2>
-				<nav class=" [ deck ] " aria-labelledby="upcoming-rsvps">
+				<nav class=" [ deck ] [ flow ] " aria-labelledby="upcoming-rsvps">
 					{% for item in collections.upcomingRSVPs %}
+						{%- set rsvp_class = 'box--error' -%}
+						{%- if item.data.rsvp.value == 'yes' -%}
+							{%- set rsvp_class = 'box--success' -%}
+						{%- elif item.data.rsvp.value == 'maybe' or item.data.rsvp.value == 'interested' -%}
+							{%- set rsvp_class = 'box--warning' -%}
+						{%- endif -%}
 						<div class=" [ box  {{ rsvp_class }} ] [ flow ] ">
-							{%- set rsvp_class = 'box--error' -%}
-							{%- if item.data.rsvp.value == 'yes' -%}
-								{%- set rsvp_class = 'box--success' -%}
-							{%- elif item.data.rsvp.value == 'maybe' or item.data.rsvp.value == 'interested' -%}
-								{%- set rsvp_class = 'box--warning' -%}
-							{%- endif -%}
 							{% include 'items/deck.njk' %}
 						</div>
 					{% endfor %}
