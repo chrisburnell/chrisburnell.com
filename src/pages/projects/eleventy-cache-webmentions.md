@@ -17,7 +17,7 @@ toc: true
 ---
 
 <figure>
-    {% image './images/content/eleventy-cache-webmentions.png', '' %}
+    {% image './images/content/eleventy-cache-webmentions.png', '', 'pixelated' %}
 </figure>
 
 {% include 'package.njk' %}
