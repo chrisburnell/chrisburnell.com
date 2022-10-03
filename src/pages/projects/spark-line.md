@@ -19,7 +19,7 @@ js: spark-line-demo.js
 </figure>
 
 <div class="box">
-    <p>Hey, psst!… You can jump straight down to the <a href="#examples">examples</a>!</p>
+    <p><em>Hey, psst!…</em> You can jump straight down to the <a href="#examples">examples</a>!</p>
 </div>
 
 {% include 'package.njk' %}
