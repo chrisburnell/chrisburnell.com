@@ -246,7 +246,7 @@
 	<div class=" [ notification ] " hidden aria-hidden="true"></div>
 
 	{% if env.ELEVENTY_PRODUCTION %}
-		<script src="/js/navigator.js?v={{ pkg.version }}"></script>
+		<script>{%- include '../../js/navigator.js' -%}</script>
 	{% endif %}
 	<script defer src="/js/main.js?v={{ pkg.version }}"></script>
 	{% if js %}
