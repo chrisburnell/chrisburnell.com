@@ -45,7 +45,7 @@ Passionate about organising in-person events for developers and designers such a
 </div>
 
 - Defined and implemented best practices and modern web standards, and updated existing codebases in order to meet the higher standards and reduce context-switching for developers working across multiple projects.
-- Lead Developer for the Northern Hemisphere’s largest project of 2021, achieving massive success with the client through coordinating internal stakeholders across development, design, and UX to better align with their brand identity and make use of art direction capabilities made possible by modern CSS.
+- Lead Developer for the UK’s largest project of 2021, achieving massive success with the client through coordinating internal stakeholders across development, design, and UX to better represent with their brand identity and make use of art direction capabilities made possible by modern CSS.
 - Mentored a Junior Developer for 20 hours a week over the course of a 6-week project and was not only able to deliver the project in *50% of the estimated time* but also achieved *perfect Lighthouse and WCAG AA scores*.
 
 <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;">
@@ -107,7 +107,7 @@ Passionate about organising in-person events for developers and designers such a
     <h3 class=" [ delta ] ">Open Source Author</h3>
 </div>
 
-Author of numerous open source projects for web developers and designers, some being utilised for client projects to this day and cumulating over 1,000 downloads per month, including:
+Author of numerous open source projects for web developers and designers, some being utilised for client projects to this day and grossing over 1,000 downloads per month, including:
 
 - **[Bowhead](https://chrisburnell.com/bowhead/)** <small>([>4,000 downloads](https://www.npmjs.com/package/@chrisburnell/bowhead) · [3 ★](https://github.com/chrisburnell/bowhead))</small><br>A SCSS framework for integrating design tokens into a CSS codebase with support for CSS Variables. This framework has now been a key component in over half a dozen projects deployed during my time at *Squiz*.
 - **[eleventy-cache-webmentions](https://chrisburnell.com/eleventy-cache-webmentions/)** <small>([>2,900 downloads](https://www.npmjs.com/package/@chrisburnell/eleventy-cache-webmentions) · [13 ★](https://github.com/chrisburnell/eleventy-cache-webmentions))</small><br>A plugin for the popular static site generator, [Eleventy](https://11ty.io/), that allows the caching of Webmentions and makes them available to use throughout one’s website.
