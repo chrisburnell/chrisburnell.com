@@ -19,7 +19,7 @@ Front End Developer with {{ global.now | friendlyDate("yyyy") - site.established
 
 Lead Developer for projects across multiple industries, including government and higher education sectors, with clients such as [The Electoral Commission](https://www.electoralcommission.org.uk/), [Ministry of Justice](https://www.gov.uk/government/organisations/ministry-of-justice), [University of the Arts London](https://www.arts.ac.uk/), [William Hill](https://www.williamhill.com/), and more.
 
-Passionate about organising in-person events for developers and designers such as *State of the Browser*, being actively involved in the web community, and developing open source projects that help developers explore exciting ways to utilise modern web technologies which are actively used by hundreds of developers globally every month.
+Passionate about organising in-person events for developers and designers such as *State of the Browser*, being actively involved in the web community, and developing open source projects that help developers explore exciting ways to utilise modern web technologies that are actively used by hundreds of developers globally every month.
 
 ## Professional Experience
 
