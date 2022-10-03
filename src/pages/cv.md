@@ -25,10 +25,13 @@ Passionate about organising in-person events for developers and designers such a
 
 <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;">
     <h3>{% image './images/content/squiz-logo.svg', '', 'brand-logo' %} <a href="https://squiz.net">Squiz</a></h3>
-    <small style="float: right;"><strong>February 2018 – present</strong></small>
+    <small><strong>February 2018 – present</strong></small>
 </div>
 
-#### Lead Developer & Chapter Lead <small style="float: right;"> May 2022 – present</small>
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;">
+    <h4>Lead Developer & Chapter Lead</h4>
+    <small><strong>May 2022 – present</strong></small>
+</div>
 
 - Primary technical contact for 8 clients, with a specialised understanding of higher-education and government websites.
 - Set the standard of quality and defined the complete technical implementation for critical project work as both Lead Developer for primary clients and as key advisor for many others.
@@ -36,13 +39,19 @@ Passionate about organising in-person events for developers and designers such a
 - Managed a chapter/team of two developers, propelling their career progression and enabling them to pursue and succeed in personal specialties.
 - Established a robust design system for projects which *reduced development times by over 50%*, vastly exceeding client expectations, reducing mental overhead and jargon, which enabled both technical and non-technical stakeholders to understand and participate in dialogue about the complex intersection between design and development.
 
-#### Lead Developer <small style="float: right;"> September 2021 – May 2022</small>
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;">
+    <h4>Lead Developer</h4>
+    <small><strong>September 2021 – May 2022</strong></small>
+</div>
 
 - Defined and implemented best practices and modern web standards, and updated existing codebases in order to meet the higher standards and reduce context-switching for developers working across multiple projects.
 - Lead Developer for the Northern Hemisphere’s largest project of 2021, achieving massive success with the client through coordinating internal stakeholders across development, design, and UX to better align with their brand identity and make use of art direction capabilities made possible by modern CSS.
 - Mentored a Junior Developer for 20 hours a week over the course of a 6-week project and was not only able to deliver the project in *50% of the estimated time* but also achieved *perfect Lighthouse and WCAG AA scores*.
 
-#### Front End Developer <small style="float: right;"> February 2018 – September 2021</small>
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;">
+    <h4>Front End Developer</h4>
+    <small><strong>February 2018 – September 2021</strong></small>
+</div>
 
 - Contributed to both the front end and content management implementations for client work and was the key advisor for expertise on front end development, particularly to do with CSS, and was consulted on dozens of projects for this knowledge.
 - Volunteered to facilitate the standardisation of the global company boilerplate, documented its usage, and, as the key channel for developers in the Northern Hemisphere to provide feedback, evaluated and incorporated new features. The new standardised boilerplate is now used by over 100 projects globally.
@@ -51,7 +60,7 @@ Passionate about organising in-person events for developers and designers such a
 
 <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;">
     <h3><img class="brand-logo" alt="" loading="lazy" decoding="async" src="/images/built/city-logo.png"> <a href="https://city.ac.uk">City, University of London</a></h3>
-    <small style="float: right;"><strong>June 2014 – February 2018</strong></small>
+    <small><strong>June 2014 – February 2018</strong></small>
 </div>
 
 #### Web Developer
@@ -63,7 +72,7 @@ Passionate about organising in-person events for developers and designers such a
 
 <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;">
     <h3>{% image './images/content/squiz-logo.svg', '', 'brand-logo' %} <a href="https://squiz.net">Squiz</a></h3>
-    <small style="float: right;"><strong>April 2012 – January 2014</strong></small>
+    <small><strong>April 2012 – January 2014</strong></small>
 </div>
 
 #### Front End Web Developer / UI Developer
@@ -73,14 +82,20 @@ Passionate about organising in-person events for developers and designers such a
 
 ## Community Experience
 
-<h3 class=" [ delta ] ">Technical Writer on <img class="brand-logo" alt="" loading="lazy" decoding="async" src="/images/raven.svg"> <a href="https://chrisburnell.com/">chrisburnell.com</a> <small style="float: right;"> 2013 – present</small></h3>
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;">
+    <h3 class=" [ delta ] ">Technical Writer on <img class="brand-logo" alt="" loading="lazy" decoding="async" src="/images/raven.svg"> <a href="https://chrisburnell.com/">chrisburnell.com</a></h3>
+    <small><strong>2013 – present</strong></small>
+</div>
 
 - A blog about web development, publishing over [{{ collections.posts | length | toNearest(100) }} blog posts](https://chrisburnell.com/archive/) garnering *over 50,000 page views per month*.
 - Notable content includes [{{ collections.writingPosts | length }} longform articles](https://chrisburnell.com/writing/), [{{ collections.css | length }} articles about CSS](https://chrisburnell.com/tag/css/), and [{{ collections.code | length }} code demos](https://chrisburnell.com/tag/css/), some of which have been [featured on CodePen](https://codepen.io/collection/hfqlg)
 - [Popular Blog Posts](https://chrisburnell.com/popular/)
 - [Open Source and Development Projects](https://chrisburnell.com/projects/)
 
-<h3 class=" [ delta ] ">Conference Organiser for <img class="brand-logo" alt="" loading="lazy" decoding="async" src="/images/built/sotb-logo.png"> <a href="https://stateofthebrowser.com" rel="external">State of the Browser</a> <small style="float: right;"> 2017 – present</small></h3>
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;">
+    <h3 class=" [ delta ] ">Conference Organiser for <img class="brand-logo" alt="" loading="lazy" decoding="async" src="/images/built/sotb-logo.png"> <a href="https://stateofthebrowser.com" rel="external">State of the Browser</a></h3>
+    <small><strong>2017 – present</strong></small>
+</div>
 
 - Organised 5 annual, not-for-profit conferences, showcasing over 40 speakers with 150+ in-person attendees each year: [2017](https://2017.stateofthebrowser.com/), [2018](https://2018.stateofthebrowser.com/), [2019](https://2019.stateofthebrowser.com/), [2021](https://2021.stateofthebrowser.com/), [2022](https://2022.stateofthebrowser.com/).
 - Curated panels of speakers from the industry’s top experts and thought leaders through networking and ongoing involvement in the web community.
@@ -88,7 +103,9 @@ Passionate about organising in-person events for developers and designers such a
 - Liaised with speakers, sponsors, and venues as well as handled the logistics of running a popular in-person and online conference.
 - Built and maintained the conference websites, including a complete codebase refresh in 2021 which included extensive work with APIs to automate many organisational aspects of the conference.
 
-**Open Source**
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;">
+    <h3 class=" [ delta ] ">Open Source Author</h3>
+</div>
 
 Author of numerous open source projects for web developers and designers, some being utilised for client projects to this day and cumulating over 1,000 downloads per month, including:
 
