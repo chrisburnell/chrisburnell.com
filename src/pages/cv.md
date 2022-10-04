@@ -77,7 +77,7 @@ Passionate about organising in-person events for developers and designers such a
 
 #### Front End Web Developer / UI Developer
 
-- Part of a team responsible with building both the front end and content management implementations for client work, specialising particularly in cross-browser compatability.
+- Built both the front end and content management implementations for client work, specialising particularly in cross-browser compatibility.
 - Set up and organised learning initiatives for developers in the form of **Implementor Scrum**, an opportunity for developers to explore best practices and emerging web technologies in a casual group setting, and regularly presented to colleagues in **Lunch and Learn** sessions to educate on emerging web technologies and highlight clever use of current methods of development.
 
 ## Community Experience
