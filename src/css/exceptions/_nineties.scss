@@ -5,8 +5,7 @@
 
 @mixin color-scheme-nineties() {
 	--font-family-sans: var(--font-family-silly);
-	--font-family-title: var(--font-family-sophisticated);
-	--font-family-serif: var(--font-family-silly);
+	--font-family-serif: var(--font-family-sophisticated);
 
 	html {
 		cursor: url("/images/animated/dinosaur.gif"), auto;
@@ -19,7 +18,7 @@
 
 	%heading,
 	.navigation__list %anchor {
-		font-family: var(--font-family-title) !important;
+		font-weight: var(--font-weight-bold) !important;
 	}
 
 	.webmentions__response__avatar img,

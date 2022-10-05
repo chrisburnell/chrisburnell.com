@@ -14,11 +14,10 @@ h1,
 .alpha,
 %alpha {
 	font-size: var(--font-size-alpha);
-	font-weight: var(--font-weight-default);
+	font-weight: var(--font-weight-bold);
 	line-height: var(--line-height-medium);
 }
 h1 {
-	font-family: var(--font-family-title);
 	z-index: var(--z-index-above);
 }
 
