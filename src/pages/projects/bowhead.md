@@ -44,18 +44,12 @@ Make sure the browser support for CSS Variables meets your needs:
 
 {% caniuse 'css-variables' %}
 
-## What are <q>CSS Data Types</q>?
+## CSS Data Types
 
 <blockquote>
     <p>CSS data types define typical values (including keywords and units) accepted by CSS properties and functions.</p>
     <cite><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Types">CSS data types on MDN</a></cite>
 </blockquote>
-
-```css
-selector {
-    property: value;
-}
-```
 
 An important first step to using *Bowhead* is to understand how it categorises CSS properties by the different <q>CSS data types</q>. By and large, this is done by looking at what the *expected* values for a given property are:
 

@@ -23,7 +23,7 @@ Before I dive into some terminology, I recommend briefly reading about how [even
 ## How do I do it?
 
 ```yaml
-in_reply_to: https://hwclondon.co.uk/meetups/20190626
+in_reply_to: https://www.hwclondon.co.uk/meetups/20190626
 rsvp:
   value: "yes"
   date: 2019-06-26T19:00:00+0100

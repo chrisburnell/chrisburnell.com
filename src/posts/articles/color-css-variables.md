@@ -12,7 +12,7 @@ Here’s a quick, little technique for working with colours in CSS that I allude
 
 I’m going to demonstrate this technique using the [HSL colour space](https://en.wikipedia.org/wiki/HSL_and_HSV) but it would work well with RGB or some other [upcoming](/feature-watch/#css-color-function) [colour](/feature-watch/#css-lch-lab) [formats](/feature-watch/#hwb).
 
-In short, this technique involves storing your colours as CSS Variables using a specific syntax. This allows us ti reuse them intelligently elsewhere in our code. In this example, I’ve defined a handful of `color` variables as the space-delimited values that need to be passed to a `hsl()` or `hsla()` function. I’ve also defined a couple of `opacity` variables:
+In short, this technique involves storing your colours as CSS Variables using a specific syntax. This allows us to reuse them elsewhere in our code. In this example, I’ve defined a handful of `color` variables as the space-delimited values that need to be passed to a `hsl()` or `hsla()` function. I’ve also defined a couple of `opacity` variables:
 
 ```css
 :root {
@@ -32,7 +32,7 @@ In short, this technique involves storing your colours as CSS Variables using a 
 Now that we’ve defined them at the root of the document (the `html` element), we can access these variables throughout our code, like so:
 
 ```css
-.wibble {
+.class {
     background-color: hsla(var(--hsl-conifer) / var(--nearly-opaque));
     color: hsl(var(--hsl-white));
 }

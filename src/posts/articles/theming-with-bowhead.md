@@ -2,40 +2,38 @@
 draft: true
 date: 2021-06-17T09:30:00+0100
 title: "Theming with Bowhead"
-description: "Bowhead, a small design token framework for SCSS and personal project of mine, works beautifully at its job. In this article, I'll explain how I go about extrapolating on it to build a robust way to apply colour-schemes across your site."
+description: "Bowhead, a small design token framework for SCSS and open source project of mine, works beautifully at its job. In this article, I'll explain how I extrapolated its capabilities to develop a robust way for applying colour-schemes across a website."
 # syndicate_to:
 #   - https://twitter.com/iamchrisburnell/status/
 #   - https://mastodon.social/users/chrisburnell/statuses/
 ---
 
-These are the colours in my palette:
+In my experience, the most common way that we see *theming* applied to a website or suite of websites is through the use of colour. And, with the widespread browser support for the `prefers-color-scheme` expression in media queries, we can now ask the user’s browser for their preference between <q>light</q> and <q>dark</q> schemes if the setting is available through their operating system or even through their browser.
+
+But theming doesn’t end there! For a number of projects in the last few years at [Squiz](https://squiz.net), I’ve been tasked with developing a reusaable system for adapting a website’s design to work with multiple colour palettes. This means that for any given component in a design, there should be a way for a website editor to dictate which colour palette should be used, whether it be to represent different schools on a University’s website or to differ between branches of a government body.
+
+First, let’s take a look at how we define colours to be consumed by *Bowhead*:
 
 ```scss
 $color: (
-    lynx: #091217,
-    wolf: #20323d,
-    bowhead: #3e5c6d,
-    raven: #5f8aa6,
-    highland: #80b7d7,
-    coyote: #c0dbed,
-    bear: #ebf3f9,
-    maple: #eb2d36,
-    conifer: #3d8137,
-    aspen: #ffd700,
+    coal: #111111,
+    tundora: #484848,
+    chalice: #d2d2d2,
+    alabaster: #f6f6f6
 );
 ```
 
-Example of color schemes:
+To keep in-line with Bowhead’s work in reducing mental overhead, let’s define some colour schemes, referring to the named colour tokens that we’ve passed to Bowhead:
 
 ```scss
 $color-schemes: (
     light: (
-        primary: lynx,
-        secondary: bear
+        primary: alabatster,
+        secondary: tundora
     ),
     dark: (
-        primary: bear,
-        secondary: lynx
+        primary: coal,
+        secondary: chalice
     )
 );
 ```
@@ -68,11 +66,11 @@ to generate:
 
 ```css
 .scheme--light .component {
-    background-color: var(--color-lynx);
-    color: var(--color-bear);
+    background-color: var(--color-alabaster);
+    color: var(--color-tundora);
 }
 .scheme--dark .component {
-    background-color: var(--color-bear);
-    color: var(--color-lynx);
+    background-color: var(--color-coal);
+    color: var(--color-chalice);
 }
 ```
