@@ -22,7 +22,7 @@
   "dependencies": {
     "@11ty/is-land": "^2.0.3",
     "@chrisburnell/pentatonic": "^1.1.1",
-    "@chrisburnell/spark-line": "^1.2.0",
+    "@chrisburnell/spark-line": "^1.2.1",
     "@zachleat/details-utils": "^2.0.2",
     "@zachleat/seven-minute-tabs": "^2.0.0",
     "speedlify-score": "^2.0.2"

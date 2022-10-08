@@ -36,4 +36,8 @@
 		outline-width: var(--size-border-thin);
 		outline-offset: 0;
 	}
+
+	@include media("print") {
+		text-decoration: none !important;
+	}
 }

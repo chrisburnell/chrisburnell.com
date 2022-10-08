@@ -81,7 +81,6 @@ module.exports = (value, outputPath) => {
 				comment: "<spark-line> generates a sparkline chart",
 				selector: "spark-line",
 				module: "spark-line.js",
-				feature: "sparkline",
 			},
 			{
 				comment: "Tidies the input of a URL input",
@@ -104,14 +103,18 @@ module.exports = (value, outputPath) => {
 			if ($(script.selector).length) {
 				$(`<!-- ${script.comment} -->\n`).appendTo("body")
 				if (script.module) {
-					$(
-						minify(`
-							<script defer type="module">
-								import ${script.feature} from "/js/${script.module}";
-								${script.feature}();
-							</script>
-						`) + "\n"
-					).appendTo("body")
+					if (script.feature) {
+						$(
+							minify(`
+								<script defer type="module">
+									import ${script.feature} from "/js/${script.module}";
+									${script.feature}();
+								</script>
+							`) + "\n"
+						).appendTo("body")
+					} else {
+						$(`<script defer type="module" src="/js/${script.module}"></script>\n`).appendTo("body")
+					}
 				} else if (script.file) {
 					$(`<script defer src="/js/${script.file}"></script>\n`).appendTo("body")
 				} else if (script.url) {
