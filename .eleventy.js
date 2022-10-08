@@ -10,7 +10,7 @@ const imageAvatarPlugin = require("#plugins/imageAvatarPlugin")
 // const albumCoverPlugin = require("#plugins/albumCoverPlugin")
 const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output")
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight")
-const webCPlugin = require("@11ty/eleventy-plugin-webc")
+const webCPlugin = require("./src/js/vendor/eleventy-plugin-webc/eleventyWebcPlugin.js")
 const { EleventyRenderPlugin } = require("@11ty/eleventy")
 const webmentionsPlugin = require("@chrisburnell/eleventy-cache-webmentions")
 
@@ -23,7 +23,6 @@ const stringFilters = require("#filters/strings")
 const queryFilters = require("#filters/queries")
 const utilityFilters = require("#filters/utils")
 const collectionFilters = require("#filters/collections")
-const fetchFilters = require("#filters/fetch")
 const newBase60 = require("#filters/newBase60")
 
 // Import shortcodes
@@ -88,9 +87,6 @@ module.exports = (eleventyConfig) => {
 	})
 	Object.keys(collectionFilters).forEach((filterName) => {
 		eleventyConfig.addFilter(filterName, collectionFilters[filterName])
-	})
-	Object.keys(fetchFilters).forEach((filterName) => {
-		eleventyConfig.addFilter(filterName, fetchFilters[filterName])
 	})
 	eleventyConfig.addFilter("newBase60", newBase60)
 
