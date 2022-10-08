@@ -6,4 +6,4 @@ title: Doubly-Center-Aligned Text
 codepen_slug: zJLoGK
 ---
 
-{% codepen codepen_slug %}
+<code-pen slug="{{ codepen_slug }}"></code-pen>

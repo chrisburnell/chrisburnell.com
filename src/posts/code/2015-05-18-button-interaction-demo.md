@@ -6,7 +6,7 @@ title: Button Interaction Demo
 codepen_slug: RPRwoo
 ---
 
-{% codepen codepen_slug, false, 300 %}
+<code-pen slug="{{ codepen_slug }}" height="300px"></code-pen>
 
 ```html
 <button>Hello!</button>

@@ -6,7 +6,7 @@ title: Jazzy CSS Checkbox
 codepen_slug: Cbiun
 ---
 
-{% codepen codepen_slug, false, 250 %}
+<code-pen slug="{{ codepen_slug }}" height="250px"></code-pen>
 
 ```html
 <input type="checkbox" id="jazzycheckbox" role="checkbox" aria-checked="false">

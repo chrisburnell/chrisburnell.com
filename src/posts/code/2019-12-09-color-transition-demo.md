@@ -6,6 +6,6 @@ title: Color Transition Demo
 codepen_slug: MWYKQdX
 ---
 
-{% codepen codepen_slug, false, 810 %}
+<code-pen slug="{{ codepen_slug }}" height="810px"></code-pen>
 
 A demo to visually see how different duration offsets affect transitioning both background-color and color.

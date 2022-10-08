@@ -4,7 +4,7 @@ title: Zoomy Anchor Thing
 codepen_featured: true
 ---
 
-{% codepen 'lcEvB', false, 350 %}
+<code-pen slug="lcEvB" height="350px"></code-pen>
 
 ```html
 <a href="#" class="article-link">

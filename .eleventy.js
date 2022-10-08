@@ -1,3 +1,4 @@
+const pkg = require("./package.json")
 const site = require("#data/site")
 const configWebmentions = require("./src/data/config/webmentions.js")
 
@@ -9,6 +10,8 @@ const imageAvatarPlugin = require("#plugins/imageAvatarPlugin")
 // const albumCoverPlugin = require("#plugins/albumCoverPlugin")
 const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output")
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight")
+const webCPlugin = require("@11ty/eleventy-plugin-webc")
+const { EleventyRenderPlugin } = require("@11ty/eleventy")
 const webmentionsPlugin = require("@chrisburnell/eleventy-cache-webmentions")
 
 // Import transforms
@@ -20,6 +23,7 @@ const stringFilters = require("#filters/strings")
 const queryFilters = require("#filters/queries")
 const utilityFilters = require("#filters/utils")
 const collectionFilters = require("#filters/collections")
+const fetchFilters = require("#filters/fetch")
 const newBase60 = require("#filters/newBase60")
 
 // Import shortcodes
@@ -35,6 +39,7 @@ const tagsBuilder = require("#builders/tags")
 // Import other bits and bobs
 const markdownParser = require("markdown-it")
 const markdownAbbr = require("markdown-it-abbr")
+const { RuleSet } = require("natural")
 
 module.exports = (eleventyConfig) => {
 	eleventyConfig.setQuietMode(true)
@@ -51,6 +56,18 @@ module.exports = (eleventyConfig) => {
 	// eleventyConfig.addPlugin(albumCoverPlugin)
 	eleventyConfig.addPlugin(syntaxHighlightPlugin)
 	eleventyConfig.addPlugin(webmentionsPlugin, configWebmentions)
+	eleventyConfig.addPlugin(webCPlugin, {
+		// Glob to find no-import global components
+		components: "./src/webc/**/*.webc",
+		useTransform: true,
+		transformData: {
+			pkg
+		}
+	})
+
+	// Let’s let webbsy... WebC!
+	eleventyConfig.ignores.add("./src/webc/**/*.webc")
+	eleventyConfig.addPlugin(EleventyRenderPlugin)
 
 	// Transforms
 	eleventyConfig.addTransform("parse", parseTransform)
@@ -71,6 +88,9 @@ module.exports = (eleventyConfig) => {
 	})
 	Object.keys(collectionFilters).forEach((filterName) => {
 		eleventyConfig.addFilter(filterName, collectionFilters[filterName])
+	})
+	Object.keys(fetchFilters).forEach((filterName) => {
+		eleventyConfig.addFilter(filterName, fetchFilters[filterName])
 	})
 	eleventyConfig.addFilter("newBase60", newBase60)
 

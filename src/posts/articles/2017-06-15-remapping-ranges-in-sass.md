@@ -117,6 +117,6 @@ Lastly, we’ll perform a similar operation as before, by remapping the index of
 }
 ```
 
-{% codepen 'vZyywR', false, 400 %}
+<code-pen slug="vZyywR"></code-pen>
 
-{% codepen 'myyRqp', false, 400 %}
+<code-pen slug="myyRqp"></code-pen>

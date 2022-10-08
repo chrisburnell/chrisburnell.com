@@ -90,7 +90,7 @@ module.exports = (value, outputPath) => {
 			},
 			{
 				comment: "CodePen Embeds",
-				selector: "pre.codepen",
+				selector: "code-pen",
 				url: "https://codepen.io/assets/embed/ei.js",
 			},
 			{

@@ -232,14 +232,7 @@
 			{% if speedlify[canonical] %}
 				<p>
 					<a class="speedlify-anchor" href="{{ author.urls.speedlify }}/{{ site.url | getHost }}/#site-{{ speedlify[canonical].hash }}" title="Link to this page's Speedlify Score">
-						<is-land on:visible>
-							<speedlify-score hash="{{ speedlify[canonical].hash }}" speedlify-url="{{ author.urls.speedlify }}" score weight requests></speedlify-score>
-
-							<template data-island="once">
-								<link rel="stylesheet" href="/css/speedlify-score.css?v={{ pkg.version }}">
-								<script src="/js/speedlify-score.js?v={{ pkg.version }}"></script>
-							</template>
-						</is-land>
+						<speedlify-score-component hash="{{ speedlify[canonical].hash }}" score weight requests></speedlify-score-component>
 					</a>
 				</p>
 			{% endif %}

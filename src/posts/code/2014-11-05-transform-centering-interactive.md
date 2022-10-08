@@ -3,7 +3,7 @@ date: 2014-11-05T13:00:00+0000
 title: Power of Transform Centering - Interactive
 ---
 
-{% codepen 'xutbs', false, 500 %}
+<code-pen slug="xutbs" height="500px"></code-pen>
 
 Check out the [demo version](/pen/transform-centering/).
 

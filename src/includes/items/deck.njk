@@ -189,6 +189,11 @@
 					<small>updated</small> <a href="{{ item.url }}#updated" tabindex="-1"><time class=" [ dt-updated ] " datetime="{{ item.data.updated | rfcDate }}">{{ item.data.updated | friendlyDateLong | safe }}</time></a>
 				</li>
 			{% endif %}
+			{% if item.data.github %}
+				<li>
+					{{ item.data.github | githubData | keyValue("stargazers_count")}} ★
+				</li>
+			{% endif %}
 			{% if item.data.show_webmentions and item.data.webmentions.length %}
 				<li>
 					<a href="{{ item.url }}#webmentions" title="Jump to Webmentions for this {{ item.data.categoryProper }}">{{ item.data.webmentions.length }} response{{ 's' if item.data.webmentions.length > 1 }} <span class="hidden">to {{ item_title }}</span></a>

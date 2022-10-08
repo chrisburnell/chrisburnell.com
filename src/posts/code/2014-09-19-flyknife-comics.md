@@ -7,7 +7,7 @@ codepen_slug: hIxaj
 codepen_featured: true
 ---
 
-{% codepen codepen_slug, false, 400 %}
+<code-pen slug="{{ codepen_slug }}"></code-pen>
 
 ```html
 <div>

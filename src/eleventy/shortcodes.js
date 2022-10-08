@@ -5,9 +5,6 @@ const dateFilters = require("#filters/dates")
 const utilityFilters = require("#filters/utils")
 
 module.exports = {
-	codepen: (slug, tabfree = false, height = 400) => {
-		return `<pre class="codepen" data-slug-hash="${slug}" data-default-tab="result" data-theme-id="${tabfree ? "8863" : "119"}" data-user="${author.codepen}" data-safe="true" data-height="${height.toString().replace("px", "")}px"><code></code></pre>`
-	},
 	emoji: (emoji, title = null) => {
 		if (title) {
 			return `<span class="emoji" title="${title}" aria-hidden="true">${emoji}</span><span class="hidden">${title}</span>`

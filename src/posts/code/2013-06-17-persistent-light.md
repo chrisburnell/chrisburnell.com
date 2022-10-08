@@ -6,7 +6,7 @@ title: Persistent Light Source Transform
 codepen_slug: mglHp
 ---
 
-{% codepen codepen_slug, false, 425 %}
+<code-pen slug="{{ codepen_slug }}" height="425px"></code-pen>
 
 ```html
 <div class="square">A</div>

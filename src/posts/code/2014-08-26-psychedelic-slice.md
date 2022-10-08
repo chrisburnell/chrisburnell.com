@@ -6,7 +6,7 @@ title: Psychedelic Slice
 codepen_slug: apogK
 ---
 
-{% codepen codepen_slug, false, 350 %}
+<code-pen slug="{{ codepen_slug }}" height="350px"></code-pen>
 
 ```html
 <div class="curvy-arrow"></div>
