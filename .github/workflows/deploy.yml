@@ -15,10 +15,10 @@ jobs:
     steps:
       - name: Checkout from git
         uses: actions/checkout@master
-      - name: Use Node.js 16.x
+      - name: Use Node.js 18.10.0
         uses: actions/setup-node@v1
         with:
-          node-version: '16.x'
+          node-version: '18.10.0'
       - name: Cache npm dependencies
         id: cache_npm
         uses: actions/cache@v1
