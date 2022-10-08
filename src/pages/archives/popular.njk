@@ -1,7 +1,8 @@
 ---
 title: Popular Posts
-description: Top 10 most interacted-with pieces of writing, cause, y'know, ego, I guess? You can also browse <a href="/hot/">hot posts</a>.
 related_collection: popular
 by_year: false
 truncate: true
+eleventyComputed:
+  description: "Top {{ site.limits.feed }} most interacted-with pieces of writing. You can also browse <a href=\"/hot/\">hot posts</a>."
 ---

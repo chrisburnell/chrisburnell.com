@@ -1,7 +1,8 @@
 ---
 title: Hot Posts
-description: Top 10 posts ordered by Webmentions per day. You can also browse <a href="/popular/">popular posts</a>.
 related_collection: hot
 by_year: false
 truncate: true
+eleventyComputed:
+  description: "Top {{ site.limits.feed }} posts ordered by Webmentions per day. You can also browse <a href=\"/popular/\">popular posts</a>."
 ---
