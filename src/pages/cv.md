@@ -40,7 +40,7 @@ Front End Developer with {{ global.now | friendlyDate("yyyy") - site.established
 </div>
 
 - Implemented modern web standards by redefining best practices, which led to higher code quality and reduced context-switching for developers working across multiple projects.
-- Lead Developer for the largest project of 2021, coordinating cross-functional stakeholders and making use of modern CSS for stronger art direction capabilities that improved the project’s reflection of the client’s brand identity.
+- Lead Developer for the UK’s largest project of 2021, coordinating cross-functional stakeholders and making use of modern CSS for stronger art direction capabilities that improved the project’s reflection of the client’s brand identity.
 - Mentored a Junior Developer for 20 hours a week over the course of a 6-week project and was able to deliver the project in *50% of the estimated time* and achieved *perfect Lighthouse and WCAG AA scores*.
 
 <div class=" [ space-between ] ">

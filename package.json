@@ -20,24 +20,29 @@
     "url": "https://github.com/chrisburnell/chrisburnell.com/issues"
   },
   "dependencies": {
+    "@11ty/is-land": "^2.0.3",
+    "@chrisburnell/pentatonic": "^1.1.1",
+    "@chrisburnell/spark-line": "^1.2.0",
+    "@zachleat/details-utils": "^2.0.2",
+    "@zachleat/seven-minute-tabs": "^2.0.0",
+    "speedlify-score": "^2.0.2"
+  },
+  "devDependencies": {
     "@11ty/eleventy": "^2.0.0-canary.16",
     "@11ty/eleventy-fetch": "^3.0.0",
     "@11ty/eleventy-img": "^2.0.1",
     "@11ty/eleventy-plugin-directory-output": "^1.0.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.1.0",
     "@11ty/eleventy-plugin-webc": "^0.4.0",
-    "@11ty/is-land": "^2.0.3",
     "@chrisburnell/bowhead": "^0.3.1",
     "@chrisburnell/eleventy-cache-webmentions": "^1.0.1",
-    "@chrisburnell/pentatonic": "^1.1.1",
-    "@chrisburnell/spark-line": "^1.2.0",
     "@rollup/plugin-commonjs": "^22.0.2",
     "@rollup/plugin-node-resolve": "^14.1.0",
-    "@zachleat/details-utils": "^2.0.2",
-    "@zachleat/seven-minute-tabs": "^2.0.0",
     "autoprefixer": "^10.4.12",
     "caniuse-api": "^3.0.0",
     "cheerio": "^1.0.0-rc.12",
+    "concurrently": "^7.4.0",
+    "cross-env": "^7.0.3",
     "dotenv": "^16.0.3",
     "glob-promise": "^5.0.0",
     "html-minifier": "^4.0.0",
@@ -55,10 +60,6 @@
     "slugify": "^1.6.5",
     "twitter-avatar-url": "^2.2.0"
   },
-  "devDependencies": {
-    "concurrently": "^7.4.0",
-    "cross-env": "^7.0.3"
-  },
   "scripts": {
     "clean": "rm -rf .cache && rm -rf _site",
     "tokens": "npx json-to-scss './src/data/designTokens/*.json' ./src/css/abstracts/_generated.scss; npx prettier --write src/css/abstracts/_generated.scss",
@@ -66,7 +67,7 @@
     "aftercss": "npx postcss css/*.css --replace --no-map",
     "js": "npx rollup -c",
     "prettier": "npx prettier --write src",
-    "start": "concurrently \"npm run js -- --watch\" \"npm run css -- --watch\" \"npx @11ty/eleventy --incremental --serve --quiet\"",
+    "start": "concurrently \"npm run js -- --watch\" \"npm run css -- --watch\" \"npx @11ty/eleventy --incremental --serve\"",
     "serve": "npm run start",
     "build": "npm run tokens; npm run js; npm run css -- --style=compressed; npm run aftercss; npm run prettier; npx browserslist@latest --update-db; cross-env ELEVENTY_PRODUCTION=true npx @11ty/eleventy",
     "pregenerate": "npm run tokens; npm run css -- --style=compressed; npm run aftercss; npm run prettier; cross-env PREGENERATE_IMAGES=true npx @11ty/eleventy",
