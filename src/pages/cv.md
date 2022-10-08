@@ -10,7 +10,7 @@ toc: true
 ---
 
 <ul class=" [ cluster ] [ center ] ">
-    <li><a href="mailto:{{ author.email }}">{{ author.email }}</a></li><li><a href="https://twitter.com/{{ author.twitter }}">@{{ author.twitter }}</a></li><li><a href="https://chrisburnell.com/cv/">chrisburnell.com/cv</a></li><li><a href="https://chrisburnell.com/cv.pdf">Download PDF</a></li>
+    <li><!--email_off--><a href="mailto:{{ author.email }}">{{ author.email }}</a><!--/email_off--></li><li><a href="https://twitter.com/{{ author.twitter }}">@{{ author.twitter }}</a></li><li><a href="https://chrisburnell.com/cv/">chrisburnell.com/cv</a></li><li><a href="https://chrisburnell.com/cv.pdf">Download PDF</a></li>
 </ul>
 
 ## Summary

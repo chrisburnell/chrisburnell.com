@@ -1,7 +1,6 @@
 ---
 title: IndieWeb
 description: How I've implemented and interact with the <a href="https://indieweb.org">IndieWeb</a>.
-toc: true
 ---
 
 <figure>
