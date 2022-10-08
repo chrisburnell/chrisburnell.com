@@ -229,7 +229,7 @@
 			</ol>
 			{% if speedlify[canonical] %}
 				<p>
-					<a class="speedlify-anchor" href="{{ author.urls.speedlify }}/{{ site.url | getHost }}/#site-{{ speedlify[canonical].hash }}">
+					<a class="speedlify-anchor" href="{{ author.urls.speedlify }}/{{ site.url | getHost }}/#site-{{ speedlify[canonical].hash }}" title="Link to this page's Speedlify Score">
 						<is-land on:visible>
 							<speedlify-score hash="{{ speedlify[canonical].hash }}" speedlify-url="{{ author.urls.speedlify }}" score weight requests></speedlify-score>
 
@@ -249,7 +249,7 @@
 	{% if env.ELEVENTY_PRODUCTION %}
 		<script>{%- include '../../js/navigator.js' -%}</script>
 	{% endif %}
-	<script type="module" src="/js/is-land.js?v={{ pkg.version }}"></script>
+	<script defer type="module" src="/js/is-land.js?v={{ pkg.version }}"></script>
 	<script defer src="/js/main.js?v={{ pkg.version }}"></script>
 	{% if js %}
 		<script defer src="/js/pages/{{ js }}?v={{ pkg.version }}"></script>
