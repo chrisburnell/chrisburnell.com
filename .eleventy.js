@@ -37,8 +37,9 @@ const markdownParser = require("markdown-it")
 const markdownAbbr = require("markdown-it-abbr")
 
 module.exports = (eleventyConfig) => {
+	eleventyConfig.setQuietMode(true)
+
 	if (process.env.ELEVENTY_PRODUCTION) {
-		eleventyConfig.setQuietMode(true)
 		eleventyConfig.addPlugin(directoryOutputPlugin)
 	}
 

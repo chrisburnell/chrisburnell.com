@@ -95,9 +95,6 @@
 	{% if css -%}
 		<style>{%- include '../../css/' + css -%}</style>
 	{%- endif %}
-	{% if speedlify[canonical] -%}
-		<style>{%- include '../../css/speedlify-score.css' -%}</style>
-	{%- endif %}
 
 	{% if tags and tags.includes('httpstatus') %}
 		<meta name="robots" content="noindex,nofollow">
@@ -233,7 +230,14 @@
 			{% if speedlify[canonical] %}
 				<p>
 					<a class="speedlify-anchor" href="{{ author.urls.speedlify }}/{{ site.url | getHost }}/#site-{{ speedlify[canonical].hash }}">
-						<speedlify-score hash="{{ speedlify[canonical].hash }}" speedlify-url="{{ author.urls.speedlify }}" score weight requests></speedlify-score>
+						<is-land on:visible>
+							<speedlify-score hash="{{ speedlify[canonical].hash }}" speedlify-url="{{ author.urls.speedlify }}" score weight requests></speedlify-score>
+
+							<template data-island="once">
+								<link rel="stylesheet" href="/css/speedlify-score.css?v={{ pkg.version }}">
+								<script src="/js/speedlify-score.js?v={{ pkg.version }}"></script>
+							</template>
+						</is-land>
 					</a>
 				</p>
 			{% endif %}
@@ -245,12 +249,10 @@
 	{% if env.ELEVENTY_PRODUCTION %}
 		<script>{%- include '../../js/navigator.js' -%}</script>
 	{% endif %}
+	<script type="module" src="/js/is-land.js?v={{ pkg.version }}"></script>
 	<script defer src="/js/main.js?v={{ pkg.version }}"></script>
 	{% if js %}
 		<script defer src="/js/pages/{{ js }}?v={{ pkg.version }}"></script>
-	{% endif %}
-	{% if speedlify[canonical] %}
-		<script defer src="/js/speedlify-score.js"></script>
 	{% endif %}
 	{% if syndicate_to %}
 		<script defer src="/js/indieconfig.js"></script>

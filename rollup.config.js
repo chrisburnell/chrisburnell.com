@@ -53,6 +53,12 @@ export default [
 		},
 	},
 	{
+		input: "node_modules/@11ty/is-land/is-land.js",
+		output: {
+			dir: "js",
+		},
+	},
+	{
 		input: "node_modules/@chrisburnell/spark-line/spark-line.js",
 		output: {
 			dir: "js",
