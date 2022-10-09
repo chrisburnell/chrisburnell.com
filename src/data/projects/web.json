@@ -11,7 +11,7 @@
   {
     "url": "https://ownyourbeer.chrisburnell.com",
     "data": {
-      "title": "OwnYour.Beer",
+      "title": "OwnYourBeer",
       "description": "An IndieWeb tool to help you pull check-ins from [Untappd](https://untappd.com). Still a work-in-progress.",
       "description_markdown": true,
       "emoji": "🍻"
