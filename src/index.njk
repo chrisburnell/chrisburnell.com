@@ -24,26 +24,21 @@ truncate: true
 	<div class=" [ content ] [ flow ] ">
 
 		{% include 'state-of-the-browser.njk' %}
+		<hr>
 
 		<div class=" [ e-content ] [ flow ] ">
 
 			{% if collections.todayRSVPs.length %}
-				<h2 id="today-rsvps">
-					<a href="/rsvps/">Events I’m Attending Today</a>
-				</h2>
-				<nav class=" [ deck ] [ flow ] " aria-labelledby="today-rsvps">
-					{% for item in collections.todayRSVPs %}
-						{%- set rsvp_class = 'box--error' -%}
-						{%- if item.data.rsvp.value == 'yes' -%}
-							{%- set rsvp_class = 'box--success' -%}
-						{%- elif item.data.rsvp.value == 'maybe' or item.data.rsvp.value == 'interested' -%}
-							{%- set rsvp_class = 'box--warning' -%}
-						{%- endif -%}
-						<div class=" [ box  {{ rsvp_class }} ] [ flow ] ">
+				<div class=" [ box ] [ flow ] ">
+					<h2 id="today-rsvps">
+						<a href="/rsvps/">Events I’m Attending Today</a>
+					</h2>
+					<nav class=" [ deck ] [ flow ] " aria-labelledby="today-rsvps">
+						{% for item in collections.todayRSVPs %}
 							{% include 'items/deck.njk' %}
-						</div>
-					{% endfor %}
-				</nav>
+						{% endfor %}
+					</nav>
+				</div>
 				<hr>
 			{% endif %}
 
@@ -91,36 +86,34 @@ truncate: true
 			</nav>
 			{%- set truncate = true -%}
 
+			{% if collections.upcomingRSVPs.length or collections.throwbackPosts.length %}
+			<hr>
+			{% endif %}
+
 			{% if collections.upcomingRSVPs.length %}
-				<hr>
-				<h2 id="upcoming-rsvps">
-					<a href="/rsvps/">Upcoming Events</a>
-				</h2>
-				<nav class=" [ deck ] [ flow ] " aria-labelledby="upcoming-rsvps">
-					{% for item in collections.upcomingRSVPs %}
-						{%- set rsvp_class = 'box--error' -%}
-						{%- if item.data.rsvp.value == 'yes' -%}
-							{%- set rsvp_class = 'box--success' -%}
-						{%- elif item.data.rsvp.value == 'maybe' or item.data.rsvp.value == 'interested' -%}
-							{%- set rsvp_class = 'box--warning' -%}
-						{%- endif -%}
-						<div class=" [ box  {{ rsvp_class }} ] [ flow ] ">
+				<div class=" [ box ] [ flow ] ">
+					<h2 id="upcoming-rsvps">
+						<a href="/rsvps/">Upcoming Events</a>
+					</h2>
+					<nav class=" [ deck ] [ flow ] " aria-labelledby="upcoming-rsvps">
+						{% for item in collections.upcomingRSVPs %}
 							{% include 'items/deck.njk' %}
-						</div>
-					{% endfor %}
-				</nav>
+						{% endfor %}
+					</nav>
+				</div>
 			{% endif %}
 
 			{% if collections.throwbackPosts.length %}
 				{%- set relative_time = true -%}
 				{%- set show_photos = true -%}
-				<hr>
-				<h2 id="on-this-day">On This Day</h2>
-				<nav class=" [ deck ] " aria-labelledby="on-this-day">
-					{% for item in collections.throwbackPosts | limit(site.limits.feature) %}
-						{% include 'items/deck.njk' %}
-					{% endfor %}
-				</nav>
+				<div class=" [ box ] [ flow ] ">
+					<h2 id="on-this-day">On This Day</h2>
+					<nav class=" [ deck ] " aria-labelledby="on-this-day">
+						{% for item in collections.throwbackPosts | limit(site.limits.feature) %}
+							{% include 'items/deck.njk' %}
+						{% endfor %}
+					</nav>
+				</div>
 				{%- set relative_time = false -%}
 				{%- set show_photos = false -%}
 			{% endif %}
