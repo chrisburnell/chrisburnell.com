@@ -13,7 +13,7 @@ speedlify-score {
 	align-items: center;
 	justify-content: center;
 	border-radius: 50%;
-	border: var(--size-border-thin) solid hsl(var(--hsl-conifer));
+	border: calc(var(--size-border-thin) * 1.5) solid hsl(var(--hsl-conifer));
 	margin-inline-start: var(--size-tiny-small);
 }
 .speedlify-score-ok {
