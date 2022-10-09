@@ -7,6 +7,11 @@
 			<input id="webmention-source" class=" [ webmentions__input ] " type="url" inputmode="url" enterkeyhint="send" name="source" size="1" aria-required="true" required>
 			<input type="hidden" name="target" value="{{ canonical }}">
 			<button class=" [ webmentions__submit ] " type="submit">Send</button>
+			<is-land on:visible>
+				<template data-island="once">
+					<script src="/js/url-input.js"></script>
+				</template>
+			</is-land>
 		</form>
 		{% if webmentions.length %}
 			{%- set bookmarks = webmentions | arrayKeyEquals('activity.type', 'bookmark') -%}

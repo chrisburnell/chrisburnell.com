@@ -1,3 +1,5 @@
 <is-land on:visible>
-	<pre webc:root webc:keep class="codepen" :data-slug-hash="this.slug" data-default-tab="result" :data-theme-id="`${this.tabfree ? `8863` : `119`}`" data-user="chrisburnell" data-safe="true" :data-height="`${this.height || `400px`}`"><code></code></pre>
+	<pre webc:keep class="codepen" :data-slug-hash="this.slug" data-default-tab="result" :data-theme-id="`${this.tabfree ? `8863` : `119`}`" data-user="chrisburnell" data-safe="true" :data-height="`${this.height || `400px`}`"><code></code></pre>
+
+	<script src="https://codepen.io/assets/embed/ei.js"></script>
 </is-land>

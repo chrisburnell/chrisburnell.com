@@ -72,6 +72,14 @@ module.exports = (value, outputPath) => {
 				wrap: "details-utils",
 			},
 			{
+				selector: "indie-action",
+				file: "indieconfig.js",
+			},
+			{
+				selector: "indie-action",
+				file: "webaction.js",
+			},
+			{
 				comment: "Allows different sorting options for shelf components",
 				selector: "button[data-sort]",
 				module: "librarian.js",
@@ -83,17 +91,6 @@ module.exports = (value, outputPath) => {
 				module: "spark-line.js",
 			},
 			{
-				comment: "Tidies the input of a URL input",
-				selector: "input[type=url]",
-				module: "url-input.js",
-				feature: "urlInput",
-			},
-			{
-				comment: "CodePen Embeds",
-				selector: "code-pen",
-				url: "https://codepen.io/assets/embed/ei.js",
-			},
-			{
 				comment: "Speaker Deck Embeds",
 				selector: ".speakerdeck-embed",
 				url: "https://speakerdeck.com/assets/embed.js",
@@ -101,7 +98,9 @@ module.exports = (value, outputPath) => {
 		]
 		for (let script of scriptMap) {
 			if ($(script.selector).length) {
-				$(`<!-- ${script.comment} -->\n`).appendTo("body")
+				if (script.comment) {
+					$(`<!-- ${script.comment} -->\n`).appendTo("body")
+				}
 				if (script.module) {
 					if (script.feature) {
 						$(
