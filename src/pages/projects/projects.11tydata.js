@@ -39,7 +39,7 @@ module.exports = {
 				const npm = await fetchFilter.npmData(data.npm)
 				return `${github["description"]}
 
-				There are ${github["stargazers_count"].toLocaleString()} star-gazers <a href="https://github.com/${data.github}" rel="external">on GitHub</a> and it was downloaded ${npm["downloads"].toLocaleString()} times in the last month <a href="https://www.npmjs.com/package/${data.npm}" rel="external">on npm</a>.`
+				There are ${github["stargazers_count"].toLocaleString()} stargazers <a href="https://github.com/${data.github}" rel="external">on GitHub</a> and it was downloaded ${npm["downloads"].toLocaleString()} times in the last month <a href="https://www.npmjs.com/package/${data.npm}" rel="external">on npm</a>.`
 			}
 			return data.description || ""
 		},

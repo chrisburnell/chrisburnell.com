@@ -13,22 +13,26 @@
 				</template>
 			</is-land>
 		</form>
-		{% if webmentions.length %}
+		{% if webmentions.length or stargazers %}
 			{%- set bookmarks = webmentions | arrayKeyEquals('activity.type', 'bookmark') -%}
 			{%- set likes = webmentions | arrayKeyEquals('activity.type', 'like') -%}
 			{%- set links = webmentions | arrayKeyEquals('activity.type', 'link') | arrayKeyEquals('data.content', null) -%}
 			{%- set reposts = webmentions | arrayKeyEquals('activity.type', 'repost') -%}
 			{%- set reactions = bookmarks.concat(likes).concat(links).concat(reposts) -%}
 			{%- set replies = webmentions | arrayKeyEquals('activity.type', ['link', 'reply']) | arrayKeyEquals('data.content', 'notempty') -%}
+			{%- set size = reactions.length + replies.length + stargazers -%}
 			<div class=" [ webmentions__responses ] [ flow ] ">
-				<h2 id="responses">{{ webmentions.length }} Response{{ 's' if webmentions.length > 1 }}</h2>
-				{% if reactions.length %}
+				<h2 id="responses">{{ size }} Response{{ 's' if size > 1 }}</h2>
+				{% if reactions.length or stargazers %}
 					<ol id="reactions" class=" [ cluster ] [ reactions ] [ strong ] ">
+						{% if stargazers %}
+							<li><span class=" [ emoji ] ">⭐️</span> {{ stargazers }} Stargazer{{ 's' if stargazers > 1 }}</li>
+						{% endif %}
 						{% if bookmarks.length %}
 							<li><span class=" [ emoji ] ">🔖</span> {{ bookmarks.length }} Bookmark{{ 's' if bookmarks.length > 1 }}</li>
 						{% endif %}
-						{% if likes.length or stargazers %}
-							<li><span class=" [ emoji ] ">❤️</span> {{ likes.length + stargazers }} Like{{ 's' if likes.length + stargazers > 1 }}</li>
+						{% if likes.length %}
+							<li><span class=" [ emoji ] ">❤️</span> {{ likes.length }} Like{{ 's' if likes.length > 1 }}</li>
 						{% endif %}
 						{% if links.length %}
 							<li><span class=" [ emoji ] ">🔗</span> {{ links.length }} Link{{ 's' if links.length > 1 }}</li>
