@@ -90,6 +90,13 @@ module.exports = function(eleventyConfig) {
                 a: ["href"],
             },
         },
+        // allowlist: [] by default
+        //   array of root URLs from which webmentions are wanted exclusively
+        allowlist: [],
+        // blocklist: [] by default
+        //   array of root URLs from which webmentions are not wanted
+        //   exclusively
+        blocklist: [],
         // urlReplacements: {} by default
         //   object of key:value pairs containing from:to URL replacements
         urlReplacements: {},
