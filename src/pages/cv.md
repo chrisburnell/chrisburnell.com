@@ -50,7 +50,7 @@ Front End Developer with {{ global.now | friendlyDate("yyyy") - site.established
 
 - Contributed to both the front end and content management implementations for client work and was the key advisor for expertise on front end development, particularly to do with CSS, and was consulted on dozens of projects for this knowledge.
 - Volunteered to facilitate the standardisation of the global company boilerplate, authored the project’s documentation, and incorporated new features as a key feedback channel for developers. This boilerplate is used by *over 100 projects globally*.
-- Single-handedly developed the first client design system which is now used by more than 10 enterprise-level projects, leading to more coherent codebases and a significant reduction in bugs and turnaround time for ad hoc work.
+- Single-handedly developed the UK’s first design system which is now used by more than 10 enterprise-level projects, leading to more coherent codebases and a significant reduction in bugs and turnaround time for ad hoc work.
 
 
 <div class=" [ space-between ] ">
