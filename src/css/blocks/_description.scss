@@ -6,7 +6,6 @@
 .description {
 	font-family: var(--font-family-serif);
 	font-size: var(--font-size-gamma);
-	font-style: italic;
 	font-weight: var(--font-weight-default);
 
 	.full &,
@@ -28,6 +27,7 @@
 	}
 
 	time {
+		font-style: italic;
 		white-space: nowrap;
 	}
 }
