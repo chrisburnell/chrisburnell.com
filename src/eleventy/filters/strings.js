@@ -4,6 +4,7 @@ const markdownIt = require("markdown-it")({
 	linkify: true,
 }).disable("code")
 const capitalizers = require("#data/capitalizers")
+const twitterReplacements = require("#data/twitterReplacements")
 
 const truncate = (() => {
 	const truncate = (at, str = "", count = 1, end = "…") => (at === "" ? str.substring(0, count) : str.split(at).splice(0, count).join(at)) + (str.split(at).length > count ? end : "")
@@ -22,6 +23,13 @@ module.exports = {
 	readingtime: (numberOfWords) => {
 		const wordsPerMinute = 200
 		return Math.ceil(numberOfWords / wordsPerMinute)
+	},
+	replaceTwitter: (input) => {
+		return Object.keys(twitterReplacements).reduce((output, old) => {
+			return output
+				.replace(`@${old}`, `@${twitterReplacements[old]}`)
+				.replace(`twitter.com/${old}`, `twitter.com/${twitterReplacements[old]}`)
+		}, input)
 	},
 	capitalizeFormat: (input) => {
 		return capitalizers.reduce((output, capitalizer) => {
