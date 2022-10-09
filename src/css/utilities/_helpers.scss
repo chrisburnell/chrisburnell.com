@@ -23,6 +23,11 @@
 	transform: translateX(-50%);
 }
 
+// Limit inline-size to line-length
+.line-length {
+	max-inline-size: var(--size-line-length) !important;
+}
+
 // Space out elements with flex
 .space-between {
 	display: flex;
@@ -97,6 +102,10 @@
 
 .center {
 	text-align: center;
+}
+
+.inline-center {
+	margin-inline: auto;
 }
 
 .sideways {
