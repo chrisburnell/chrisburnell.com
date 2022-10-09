@@ -18,7 +18,7 @@ module.exports = Object.assign(defaults, {
 		allowedAttributes: {
 			a: ["href"],
 		},
-		allowedSchemes: ["http", "https"],
+		allowedSchemes: ["https"],
 		nonTextTags: ["style", "script", "textarea", "option", "noscript", "pre"],
 	},
 	urlReplacements: urlReplacements,

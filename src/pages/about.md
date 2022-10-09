@@ -47,15 +47,17 @@ If you’d like to keep up-to-date of my work, you can follow me with [RSS](http
 
 Website built with [Eleventy](https://11ty.dev) and the following languages:
 
-- HTML
-- WebC
-- Markdown
-- Nunjucks
-- CSS & SCSS
-- JavaScript
-- JSON
-- XML
-- YAML
+<ul style="column-count: 2;">
+    <li>HTML</li>
+    <li>WebC</li>
+    <li>Markdown</li>
+    <li>Nunjucks</li>
+    <li>CSS & SCSS</li>
+    <li>JavaScript</li>
+    <li>JSON</li>
+    <li>XML</li>
+    <li>YAML</li>
+</ul>
 
 This website supports [Webmentions](https://indieweb.org/webmention) (powered by [Webmention.io](https://webmention.io)), which are displayed at the bottom of relevant pages using my plugin, [eleventy-cache-webmentions](/eleventy-cache-webmentions/).
 
