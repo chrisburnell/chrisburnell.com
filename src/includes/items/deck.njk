@@ -167,7 +167,7 @@
 	{% elif item.data.category == 'bookmark' %}
 		<p class=" [ p-summary ] ">{{ item.templateContent | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
 	{% elif item.data.category == 'code' %}
-		<p class=" [ p-summary ] ">One of my CodePens.</p>
+		<p class=" [ p-summary ] ">One of my code snippets.</p>
 	{% elif item.data.category == 'like' %}
 		<p class=" [ p-summary ] ">{{ item.templateContent | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
 	{% elif item.data.category == 'note' %}
