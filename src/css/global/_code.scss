@@ -46,12 +46,16 @@ pre {
 	border-radius: 1px 1px var(--size-border-default) var(--size-border-default);
 	box-shadow: var(--box-shadow, var(--box-shadow-medium));
 	margin: 0;
-	tab-size: 4;
+	tab-size: 2;
 	font-size: var(--font-size-default);
-	hyphens: none;
+	hyphens: manual;
 	white-space: pre-wrap;
 	overflow: hidden;
 	position: relative;
+
+	@include media("above:medium") {
+		tab-size: 4;
+	}
 
 	&,
 	%monospace {
@@ -60,7 +64,7 @@ pre {
 		font-family: var(--font-family-monospace);
 		line-height: var(--line-height-code);
 		overflow-wrap: normal;
-		white-space: pre;
+		white-space: pre-wrap;
 		word-break: normal;
 		word-spacing: normal;
 		word-wrap: normal;
