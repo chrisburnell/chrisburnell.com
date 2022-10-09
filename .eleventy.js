@@ -10,7 +10,7 @@ const imageAvatarPlugin = require("#plugins/imageAvatarPlugin")
 // const albumCoverPlugin = require("#plugins/albumCoverPlugin")
 const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output")
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight")
-const webCPlugin = require("./src/js/vendor/eleventy-plugin-webc/eleventyWebcPlugin.js")
+const webCPlugin = require("@11ty/eleventy-plugin-webc")
 const { EleventyRenderPlugin } = require("@11ty/eleventy")
 const webmentionsPlugin = require("@chrisburnell/eleventy-cache-webmentions")
 
