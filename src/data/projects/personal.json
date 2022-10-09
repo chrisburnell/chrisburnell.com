@@ -14,6 +14,7 @@
       "title": "Micrathene",
       "description": "Super Simple PWA for building [Microlite20](https://micro.bloodbuilder.online/docs/Microlite20.pdf) characters.",
       "description_markdown": true,
+      "github": "micrathene",
       "emoji": "🔬"
     }
   },

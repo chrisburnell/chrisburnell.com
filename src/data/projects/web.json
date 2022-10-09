@@ -14,6 +14,7 @@
       "title": "OwnYourBeer",
       "description": "An IndieWeb tool to help you pull check-ins from [Untappd](https://untappd.com). Still a work-in-progress.",
       "description_markdown": true,
+      "github": "OwnYourBeer",
       "emoji": "🍻"
     }
   },
@@ -32,6 +33,7 @@
       "title": "Corvus",
       "description": "My personal [micropub](https://indieweb.org/micropub) endpoint.",
       "description_markdown": true,
+      "github": "corvus",
       "emoji": "🐦"
     }
   },
@@ -41,6 +43,7 @@
       "title": "Media Controls",
       "description": "Play native web media and utilise keyboard controls à la YouTube.",
       "description_markdown": true,
+      "github": "mediaControls",
       "emoji": "🎧"
     }
   },

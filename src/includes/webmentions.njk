@@ -27,8 +27,8 @@
 						{% if bookmarks.length %}
 							<li><span class=" [ emoji ] ">🔖</span> {{ bookmarks.length }} Bookmark{{ 's' if bookmarks.length > 1 }}</li>
 						{% endif %}
-						{% if likes.length %}
-							<li><span class=" [ emoji ] ">❤️</span> {{ likes.length }} Like{{ 's' if likes.length > 1 }}</li>
+						{% if likes.length or stargazers %}
+							<li><span class=" [ emoji ] ">❤️</span> {{ likes.length + stargazers }} Like{{ 's' if likes.length + stargazers > 1 }}</li>
 						{% endif %}
 						{% if links.length %}
 							<li><span class=" [ emoji ] ">🔗</span> {{ links.length }} Link{{ 's' if links.length > 1 }}</li>
