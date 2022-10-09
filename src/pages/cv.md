@@ -88,7 +88,7 @@ Launched a web development blog, which accumulates *over 10,000 unique visitors 
     <small><strong>2017 – present</strong></small>
 </div>
 
-- Organised 5 annual, not-for-profit conferences, showcasing over 40 speakers with 150+ in-person attendees each year.
+- Organised 5 annual, not-for-profit conferences, showcasing over 45 speakers with 150+ in-person attendees each year.
 - Liaised with speakers, sponsors, and venues as well as handled the logistics of running an in-person and online conference.
 - Sourced event sponsorships to fund the events and enable under-represented groups to attend for free.
 - Built and maintained the conference websites, including a complete codebase refresh in 2021, which included extensive work with APIs, to automate many organisational tasks for the conference.
@@ -99,6 +99,6 @@ Launched a web development blog, which accumulates *over 10,000 unique visitors 
 </div>
 
 - **[Bowhead](https://chrisburnell.com/bowhead/)** <small>([>4,000 downloads](https://www.npmjs.com/package/@chrisburnell/bowhead) · [3 ★](https://github.com/chrisburnell/bowhead))</small><br>A SCSS framework for integrating design tokens into a CSS codebase with support for CSS Variables. This project has been a key component for 6 client websites during my time at Squiz.
-- **[eleventy-cache-webmentions](https://chrisburnell.com/eleventy-cache-webmentions/)** <small>([>2,900 downloads](https://www.npmjs.com/package/@chrisburnell/eleventy-cache-webmentions) · [13 ★](https://github.com/chrisburnell/eleventy-cache-webmentions))</small><br>A plugin for the popular static site generator, [Eleventy](https://11ty.io/), that allows the caching of Webmentions and makes them available to use throughout one’s website.
+- **[eleventy-cache-webmentions](https://chrisburnell.com/eleventy-cache-webmentions/)** <small>([>2,900 downloads](https://www.npmjs.com/package/@chrisburnell/eleventy-cache-webmentions) · [13 ★](https://github.com/chrisburnell/eleventy-cache-webmentions))</small><br>A plugin for the popular static site generator, [Eleventy](https://11ty.dev/), that allows the caching of Webmentions and makes them available to use throughout one’s website.
 - **[Pentatonic](https://chrisburnell.com/pentatonic/)** <small>([>3,100 downloads](https://www.npmjs.com/package/@chrisburnell/pentatonic) · [1 ★](https://github.com/chrisburnell/pentatonic))</small><br>A JavaScript library for turning any array of integers into a fun little melody using the Web Audio API.
 - **[spark-line](https://chrisburnell.com/spark-line/)** <small>([>1,900 downloads](https://www.npmjs.com/package/@chrisburnell/spark-line) · [3 ★](https://github.com/chrisburnell/spark-line))</small><br>A custom element Web Component for generating sparkline graphs from a sequence of integers using the Canvas API.

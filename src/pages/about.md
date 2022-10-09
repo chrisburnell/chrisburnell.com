@@ -5,29 +5,61 @@ eleventyComputed:
   description: "{{ site.description | safe }}"
 ---
 
-Hey, I’m <span class=" [ canada ] ">Chris</span>, and thanks for checking out my website! I’ve got a [CV](/cv/) too, if you’re interested.
+Hey, I’m <span class=" [ canada ] ">Chris</span>, and thanks for checking out my website!
+
+I’ve got a [CV](/cv/) too, if that’s what you’re looking for.
 
 <figure>
     {% image './images/content/rachel-and-i.jpg', 'Chris Burnell', ' [ canada ] ', [500, 672, 1000] %}
 </figure>
 
-The web is my passion and my website is my favourite thing that I own, something which I hope shines through my work and the way that I communicate about it. I believe the web to be one of the most powerful catalysts for change, and I consider it both my duty and responsibility to help curate and protect the future of the web to ensure it’s a catalyst for good. Helping people feel empowered, knowledgable, safe, and in-control of their experiences online is the uncompromising motive behind everything that I do.
+## Bio
 
-Although my love for the web extends across multiple fields and disciplines, I am most interested and capable in the world of Front End. This manifests in my desire to create accessible, performant, and future-friendly websites, where the end-user is the most important stakeholder in every decision that I make.
+Chris is a Canadian front end developer currently with [Squiz](http://www.squiz.net). He’s absolutely [ravenous about CSS](https://chrisburnell.com/tag/css/) and built [Bowhead](https://chrisburnell.com/bowhead/) to bring design tokens into SCSS. His [Webmention plugin](https://chrisburnell.com/eleventy-cache-webmentions/) for [Eleventy](https://11ty.dev) helps people connect through the [IndieWeb](https://indieweb.org), and his work in co-organising the [State of the Browser](https://stateofthebrowser.com) conference has brought together over 45 incredible speakers and 150+ attendees each year.
 
-I feed this desire by continuously finding myself in <q>rabbit-hole deep-dives</q>, a phrase I use to describe deep and exhilirating research into future technologies as well as using existing technologies to do incredible things, which, more often than not, serve as inspiration for new and weighty [projects](/projects/).
+## Other Formats
 
-If you’d like to keep up-to-date of my work, you can follow me with [RSS](/feed.xml), on [Mastodon](https://{{ author.mastodon.split('@') | last }}/users/{{ author.mastodon.split('@') | first }}), on [Twitter](https://twitter.com/{{ author.twitter }}), or on [GitHub](https://github.com/{{ author.github }}).
+```text
+Chris is a Canadian front end developer currently with Squiz. He’s absolutely ravenous about CSS and built Bowhead to bring design tokens into SCSS. His Webmention plugin for Eleventy helps people connect through the IndieWeb, and his work in co-organising the State of the Browser conference has brought together over 45 incredible speakers and 150+ attendees each year.
+```
 
-I also play the piano, bake bread from time to time, and play and DM Dungeons & Dragons here and there too.
+```markdown
+Chris is a Canadian front end developer currently with [Squiz](http://www.squiz.net). He’s absolutely [ravenous about CSS](https://chrisburnell.com/tag/css/) and built [Bowhead](https://chrisburnell.com/bowhead/) to bring design tokens into SCSS. His [Webmention plugin](https://chrisburnell.com/eleventy-cache-webmentions/) for [Eleventy](https://11ty.dev) helps people connect through the [IndieWeb](https://indieweb.org), and his work in co-organising the [State of the Browser](https://stateofthebrowser.com) conference has brought together over 45 incredible speakers and 150+ attendees each year.
+```
+
+```html
+Chris is a Canadian front end developer currently with <a href="http://www.squiz.net">Squiz</a>. He’s absolutely <a href="https://chrisburnell.com/tag/css/">ravenous about CSS</a> and built <a href="https://chrisburnell.com/bowhead/">Bowhead</a> to bring design tokens into SCSS. His <a href="https://chrisburnell.com/eleventy-cache-webmentions/">Webmention plugin</a> for <a href="https://11ty.dev">Eleventy</a> helps people connect through the <a href="https://indieweb.org">IndieWeb</a>, and his work in co-organising the <a href="https://stateofthebrowser.com">State of the Browser</a> conference has brought together over 45 incredible speakers and 150+ attendees each year.
+```
+
+## The Long Version
+
+I’m originally from [Halifax, Nova Scotia](https://www.openstreetmap.org/#map=13/44.6463/-63.6162) but now I live in [London, England](https://www.openstreetmap.org/#map=10/51.4898/-0.0882) where I work with [Squiz](http://www.squiz.net), a digital transformation agency, as a Lead Developer & Chapter Lead.
+
+I’ve had this website since 2008, and it is, by far, my favourite thing that I own. My passion for the web drives me to want a better web for tomorrow, and I pursue that through specialising in CSS, design systems, developer evangelism and education, and technical writing and speaking.
+
+I also feed this drive by continuously finding myself in <q>rabbit-hole deep-dives</q>, the thrill of deep and exhilirating research into the web to do new things, which, more often than not, serve as inspiration for my [projects](https://chrisburnell.com/projects/).
+
+I also love playing the piano, baking bread from time to time, and playing/DMing Dungeons & Dragons here and there too.
+
+If you’d like to keep up-to-date of my work, you can follow me with [RSS](https://chrisburnell.com/feed.xml), on [Mastodon](https://{{ author.mastodon.split('@') | last }}/users/{{ author.mastodon.split('@') | first }}), on [Twitter](https://twitter.com/{{ author.twitter }}), or on [GitHub](https://github.com/{{ author.github }}).
 
 ## Colophon
 
-This website was built with [Eleventy](https://11ty.dev), which I love using. It makes sense to me and has allows me all the rigid order and flexibility I want out of my website. My source code is *mostly* available for your perusal on [GitHub](https://github.com/{{ author.github }}/{{ site.repository }}).
+Website built with [Eleventy](https://11ty.dev) and the following languages:
 
-There are also [quite a few](/archive/) different types of posts that I publish, and [the IndieWeb](https://indieweb.org) and ownership of my content is the backbone of the mentality behind it all. I support incoming [Webmentions](https://indieweb.org/webmention) against posts, which *I think* is a way cooler alternative to giving my thoughts and conversations exclusively to a social network silo; *although, I totally still use some of them, mostly for syndicating my content*.
+- HTML
+- WebC
+- Markdown
+- Nunjucks
+- CSS & SCSS
+- JavaScript
+- JSON
+- XML
+- YAML
 
-I also serve (what I hope are unobtrusive) ads, currently coming through from [Carbon Ads](https://www.carbonads.net), whom I find to be a trustworthy and reliable service that presents sensible ads to my audience.
+This website supports [Webmentions](https://indieweb.org/webmention) (powered by [Webmention.io](https://webmention.io)), which are displayed at the bottom of relevant pages using my plugin, [eleventy-cache-webmentions](/eleventy-cache-webmentions/).
+
+The source code is available for your perusal on [GitHub](https://github.com/{{ author.github }}/{{ site.repository }}), and each page contains an edit link *(in the footer)* allowing you to go directly to the page’s source on GitHub.
 
 ## Contact
 
@@ -49,3 +81,9 @@ On the peculiar off-chance you *really*, *really* like the work that I do, you c
 <figure>
     <iframe src="https://github.com/sponsors/{{ author.github }}/card" title="Sponsor {{ author.github }}" height="225" width="360" style="border: 0;"></iframe>
 </figure>
+
+<style>
+    pre > code {
+        white-space: normal !important;
+    }
+</style>
