@@ -59,13 +59,8 @@ buttons.forEach(button => {
 			buttons.forEach(other => other.setAttribute("aria-sort", "none"))
 		}
 
-		console.log("--------")
-		console.log("Sorting method", button.dataset.sort)
-		console.log("Sorting direction", sort)
-
 		// Sort the items according to the button
 		const sorted = [...shelf.querySelectorAll(":scope > *")].sort(Librarian[button.dataset.sort])
-		console.log(sorted)
 		// Loop through items and set their order property with inline CSS
 		if (sort === "descending") {
 			sorted.reverse().forEach((item, i) => item.style.order = i)
