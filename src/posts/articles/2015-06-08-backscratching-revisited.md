@@ -5,7 +5,7 @@ description: I revised my original technique for styling default elements and to
 tags:
   - css
 banner: backscratching-revisited.png
-updated_text: I originally documented this technique in a previous article, <a href="https://chrisburnell.com/article/ill-scratch-your-back">I’ll Scratch Your Back, And Mine Too</a>, but have updated the techniques and explanation here to reflect accessibility needs and to better convey the message; although, I no longer use Microdata, opting for [Microformats](http://microformats.org/) instead.
+updated_text: I originally documented this technique in a previous article, <a href="https://chrisburnell.com/article/ill-scratch-your-back/">I’ll Scratch Your Back, And Mine Too</a>, but have updated the techniques and explanation here to reflect accessibility needs and to better convey the message; although, I no longer use Microdata, opting for [Microformats](http://microformats.org/) instead.
 syndicate_to:
   - https://twitter.com/iamchrisburnell/status/607915792911495168
 ---

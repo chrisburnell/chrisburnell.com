@@ -80,20 +80,9 @@ module.exports = (value, outputPath) => {
 				file: "webaction.js",
 			},
 			{
-				comment: "Allows different sorting options for shelf components",
-				selector: "button[data-sort]",
-				module: "librarian.js",
-				feature: "librarian",
-			},
-			{
 				comment: "<spark-line> generates a sparkline chart",
 				selector: "spark-line",
 				module: "spark-line.js",
-			},
-			{
-				comment: "Speaker Deck Embeds",
-				selector: ".speakerdeck-embed",
-				url: "https://speakerdeck.com/assets/embed.js",
 			},
 		]
 		for (let script of scriptMap) {

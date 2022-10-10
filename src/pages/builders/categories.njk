@@ -43,17 +43,14 @@ truncate: true
 			{{ categoryIntroductions[category.title] | join('\n\n') | markdownFormat | safe }}
 		{% endif %}
 		{% if collection[0].data.list == 'shelf' %}
-			<div class=" [ box  librarian ] [ flow ] ">
-				<div>
-					You can sort these {{ category.properPlural }}:
-					<button class=" [ anchor  strong  non-selectable ] " data-sort="title" aria-sort="none">by title</button>,
-					<button class=" [ anchor  strong  non-selectable ] " data-sort="author" aria-sort="none">by author</button>,
-					<button class=" [ anchor  strong  non-selectable ] " data-sort="rating" aria-sort="none">by rating</button>{% if category.title != 'beer' %},
-					<button class=" [ anchor  strong  non-selectable ] " data-sort="release" aria-sort="none">by release date</button>{% endif %}, or
-					<button class=" [ anchor  strong  non-selectable ] " data-sort="chronological" aria-sort="descending">by publish date</button>.
-					<noscript>Although, you will need to enable JavaScript.</noscript>
-				</div>
-			</div>
+			<librarian-component>
+				You can sort these {{ category.properPlural }}:
+				<librarian-button key="title">by title</librarian-button>,
+				<librarian-button key="author">by author</librarian-button>,
+				<librarian-button key="rating">by rating</librarian-button>{% if category.title != 'beer' %},
+				<librarian-button key="release">by release date</librarian-button>{% endif %}, or
+				<librarian-button key="chronological" default="descending">by publish date</librarian-button>.
+			</librarian-component>
 			<nav class=" [ grid ] [ shelf {% if collection[0].data.read_of %}shelf--books {% endif %}] " aria-live="polite">
 				{% for item in collection %}
 					{% include 'items/shelf.njk' %}

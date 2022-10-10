@@ -28,7 +28,7 @@ module.exports = async () => {
 			url: "https://repc.co",
 			data: {
 				title: "Reptile C",
-				description: "My personal (and automatic) URL-shortening service based on Tantek Çelik’s base-60 numbering system, NewBase60. <em>Note: the homepage just redirects to this website, but you can read about how it works here: [LiquidBase60](https://chrisburnell.com/article/liquid-base-60)</em>.",
+				description: "My personal (and automatic) URL-shortening service based on Tantek Çelik’s base-60 numbering system, NewBase60. <em>Note: the homepage just redirects to this website, but you can read about how it works here: [LiquidBase60](https://chrisburnell.com/article/liquid-base-60/)</em>.",
 				description_markdown: true,
 				emoji: "🔗",
 			},

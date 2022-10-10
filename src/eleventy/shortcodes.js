@@ -5,12 +5,6 @@ const dateFilters = require("#filters/dates")
 const utilityFilters = require("#filters/utils")
 
 module.exports = {
-	emoji: (emoji, title = null) => {
-		if (title) {
-			return `<span class="emoji" title="${title}" aria-hidden="true">${emoji}</span><span class="hidden">${title}</span>`
-		}
-		return `<span class="emoji" aria-hidden="true">${emoji}</span>`
-	},
 	sparkline: (collection, start, end) => {
 		let values = []
 		let count = 0

@@ -1,0 +1,11 @@
+<is-land on:visible>
+	<div webc:keep class=" [ box  librarian ] [ flow ] ">
+		<div webc:keep>
+			<slot></slot>
+		</div>
+	</div>
+
+	<template data-island="once">
+		<script type="module" :src="`/js/librarian.js?v=${this.pkg.version}`"></script>
+	</template>
+</is-land>

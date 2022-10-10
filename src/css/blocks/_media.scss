@@ -9,7 +9,7 @@
 	inline-size: 100%;
 
 	& > * {
-		aspect-ratio: 16 / 9;
+		aspect-ratio: var(--aspect-ratio, 16 / 9);
 		inline-size: 100% !important;
 		block-size: auto !important;
 		margin: 0 auto;
@@ -17,9 +17,7 @@
 }
 
 .media--4-by-3 {
-	& > * {
-		aspect-ratio: 4 / 3;
-	}
+	--aspect-ratio: 4 / 3;
 }
 
 .banner {

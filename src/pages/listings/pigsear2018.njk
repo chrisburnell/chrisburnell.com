@@ -4,16 +4,14 @@ description: Beer reviews from Pig's Ear CAMRA Beer & Cider Festival in 2018
 ---
 {%- set collection = collections.pigsear2018 | arePublished | reverse -%}
 
-<div class=" [ box  librarian ] [ flow ] ">
-	<div>
-		You can sort these beer reviews:
-		<button class=" [ anchor  strong  non-selectable ] " data-sort="title" aria-sort="none">by title</button>,
-		<button class=" [ anchor  strong  non-selectable ] " data-sort="author" aria-sort="none">by author</button>,
-		<button class=" [ anchor  strong  non-selectable ] " data-sort="rating" aria-sort="none">by rating</button>, or
-		<button class=" [ anchor  strong  non-selectable ] " data-sort="chronological" aria-sort="descending">by publish date</button>.
-		<noscript>Although, you will need to enable JavaScript.</noscript>
-	</div>
-</div>
+<librarian-component>
+	You can sort these beer reviews:
+	<librarian-button key="title">by title</librarian-button>,
+	<librarian-button key="author">by author</librarian-button>,
+	<librarian-button key="rating">by rating</librarian-button>, or
+	<librarian-button key="chronological" default="descending">by publish date</librarian-button>.
+</librarian-component>
+
 <nav class=" [ grid ] [ shelf ] " aria-live="polite">
 	{% for item in collection %}
 		{% include 'items/shelf.njk' %}
