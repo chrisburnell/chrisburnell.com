@@ -1,34 +1,40 @@
-class Librarian {
-	chronological(a, b) {
+const Librarian = {
+	chronological: (a, b) => {
+		console.log("chronological")
 		if (a.querySelector(".dt-published") && b.querySelector(".dt-published")) {
 			return b.querySelector(".dt-published").dateTime.localeCompare(a.querySelector(".dt-published").dateTime)
 		}
 		return false
-	}
+	},
 
-	alphabetical(a, b) {
+	alphabetical: (a, b) => {
+		console.log("alphabetical")
 		return a.innerText.trim().localeCompare(b.innerText.trim())
-	}
+	},
 
-	title(a, b) {
+	title: (a, b) => {
+		console.log("title")
 		return a.querySelector("h1").innerText.trim().localeCompare(b.querySelector("h1").innerText.trim())
-	}
+	},
 
-	release(a, b) {
+	release: (a, b) => {
+		console.log("release")
 		if (a.querySelector(".release") && b.querySelector(".release")) {
 			return b.querySelector(".release").dateTime.localeCompare(a.querySelector(".release").dateTime)
 		}
 		return false
-	}
+	},
 
-	author(a, b) {
+	author: (a, b) => {
+		console.log("author")
 		if (a.querySelector(".h-cite")?.innerText === b.querySelector(".h-cite")?.innerText) {
 			return a.querySelector("h1").innerText.trim().localeCompare(b.querySelector("h1").innerText.trim())
 		}
 		return (a.querySelector(".h-cite")?.innerText || "").localeCompare(b.querySelector(".h-cite")?.innerText || "")
-	}
+	},
 
-	rating(a, b) {
+	rating: (a, b) => {
+		console.log("rating")
 		if (a.querySelector(".rating")?.value === b.querySelector(".rating")?.value) {
 			if (a.querySelector(".h-cite")?.innerText === b.querySelector(".h-cite")?.innerText) {
 				return a.querySelector("h1").innerText.trim().localeCompare(b.querySelector("h1").innerText.trim())
@@ -39,31 +45,37 @@ class Librarian {
 	}
 }
 
-const sorters = document.querySelectorAll("[data-sort]")
+const buttons = document.querySelectorAll("[data-sort]")
 const shelf = document.querySelector(".shelf")
-const shelfItems = [...shelf.querySelectorAll("article")]
 
-if (sorters.length > 0) {
-	for (const button of sorters) {
-		button.addEventListener("click", () => {
-			const sort = button.getAttribute("aria-sort")
-			let sorted = shelfItems.sort(Librarian[button.dataset.sort])
+buttons.forEach(button => {
+	button.setAttribute("aria-sort", button.getAttribute("aria-sort") || "none")
+	button.addEventListener("click", () => {
+		// Set the current sorting direction
+		const sort = button.getAttribute("aria-sort")
 
-			if (sort === "none") {
-				// if it's the first click, set the active sorted one to none
-				document.querySelector('[data-sort]:not([aria-sort="none"])').setAttribute("aria-sort", "none")
-			} else if (sort === "descending") {
-				// reverse it when it's currently at descending
-				sorted = sorted.reverse()
-			}
+		// If the button state is "none", set all button states to "none"
+		if (sort === "none") {
+			buttons.forEach(other => other.setAttribute("aria-sort", "none"))
+		}
 
-			button.setAttribute("aria-sort", sort === "descending" ? "ascending" : "descending")
+		console.log("--------")
+		console.log("Sorting method", button.dataset.sort)
+		console.log("Sorting direction", sort)
 
-			for (const i in sorted) {
-				sorted[i].style.order = i
-			}
+		// Sort the items according to the button
+		const sorted = [...shelf.querySelectorAll(":scope > *")].sort(Librarian[button.dataset.sort])
+		console.log(sorted)
+		// Loop through items and set their order property with inline CSS
+		if (sort === "descending") {
+			sorted.reverse().forEach((item, i) => item.style.order = i)
+		} else {
+			sorted.forEach((item, i) => item.style.order = i)
+		}
 
-			window.scrollTo(0, shelf.offsetTop)
-		})
-	}
-}
+		// Toggle the sorting direction (or set to "descending" if "none")
+		button.setAttribute("aria-sort", sort === "descending" ? "ascending" : "descending")
+
+		window.scrollTo(0, shelf.offsetTop)
+	})
+})
