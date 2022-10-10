@@ -46,7 +46,7 @@ module.exports = {
 		stargazers: async (data) => {
 			if (data.github) {
 				const github = await fetchFilter.githubData(data.github)
-				return github["stargazers_count"]
+				return parseFloat(github["stargazers_count"])
 			}
 			return 0
 		},

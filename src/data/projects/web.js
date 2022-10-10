@@ -19,7 +19,7 @@ module.exports = async () => {
 				description_markdown: true,
 				stargazers: async () => {
 					const github = await fetchFilter.githubData("OwnYourBeer")
-					return github["stargazers_count"]
+					return parseFloat(github["stargazers_count"]) || 0
 				},
 				emoji: "🍻",
 			},
@@ -41,7 +41,7 @@ module.exports = async () => {
 				description_markdown: true,
 				stargazers: async () => {
 					const github = await fetchFilter.githubData("corvus")
-					return github["stargazers_count"]
+					return parseFloat(github["stargazers_count"]) || 0
 				},
 				emoji: "🐦",
 			},
@@ -54,7 +54,7 @@ module.exports = async () => {
 				description_markdown: true,
 				stargazers: async () => {
 					const github = await fetchFilter.githubData("mediaControls")
-					return github["stargazers_count"]
+					return parseFloat(github["stargazers_count"]) || 0
 				},
 				emoji: "🎧",
 			},

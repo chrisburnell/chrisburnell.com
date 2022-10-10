@@ -13,16 +13,16 @@
 				</template>
 			</is-land>
 		</form>
-		{% if webmentions.length or stargazers %}
+		{% if webmentions.length or stargazers > 0 %}
 			{%- set bookmarks = webmentions | arrayKeyEquals('activity.type', 'bookmark') -%}
 			{%- set likes = webmentions | arrayKeyEquals('activity.type', 'like') -%}
 			{%- set links = webmentions | arrayKeyEquals('activity.type', 'link') | arrayKeyEquals('data.content', null) -%}
 			{%- set reposts = webmentions | arrayKeyEquals('activity.type', 'repost') -%}
 			{%- set reactions = bookmarks.concat(likes).concat(links).concat(reposts) -%}
 			{%- set replies = webmentions | arrayKeyEquals('activity.type', ['link', 'reply']) | arrayKeyEquals('data.content', 'notempty') -%}
-			{%- set size = reactions.length + replies.length + stargazers -%}
+			{%- set responsesLength = webmentions | getResponsesLength(stargazers) -%}
 			<div class=" [ webmentions__responses ] [ flow ] ">
-				<h2 id="responses">{{ size }} Response{{ 's' if size > 1 }}</h2>
+				<h2 id="responses">{{ responsesLength }} Response{{ 's' if responsesLength > 1 }}</h2>
 				{% if reactions.length or stargazers %}
 					<ol id="reactions" class=" [ cluster ] [ reactions ] [ strong ] ">
 						{% if stargazers %}

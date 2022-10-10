@@ -55,8 +55,8 @@ module.exports = {
 	toNearest: (value, multiple) => {
 		return Math.round(value / multiple) * multiple
 	},
-	getResponsesLength: (data) => {
-		return (data.webmentions.length || 0) + (data.stargazers || 0)
+	getResponsesLength: (webmentions, other) => {
+		return (webmentions.length || 0) + (other || 0)
 	},
 	getPostType: (type) => {
 		return postTypes[type] || type

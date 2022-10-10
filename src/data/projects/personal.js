@@ -19,7 +19,7 @@ module.exports = async () => {
 				description_markdown: true,
 				stargazers: async () => {
 					const github = await fetchFilter.githubData("micrathene")
-					return github["stargazers_count"]
+					return parseFloat(github["stargazers_count"]) || 0
 				},
 				emoji: "🔬",
 			},

@@ -189,7 +189,7 @@
 					<small>updated</small> <a href="{{ item.url }}#updated" tabindex="-1"><time class=" [ dt-updated ] " datetime="{{ item.data.updated | rfcDate }}">{{ item.data.updated | friendlyDateLong | safe }}</time></a>
 				</li>
 			{% endif %}
-			{%- set responsesLength = item.data | getResponsesLength -%}
+			{%- set responsesLength = item.data.webmentions | getResponsesLength(item.data.stargazers) -%}
 			{% if (item.data.show_webmentions and responsesLength > 0) or item.data.stargazers > 0 %}
 				<li>
 					<a href="{{ item.url }}#webmentions" title="Jump to Webmentions for this {{ item.data.categoryProper }}">{{ responsesLength }} {% if item.data.webmentions.length %}response{% else %}stargazer{% endif %}{{ 's' if responsesLength > 1 }} <span class="hidden">to {{ item_title }}</span></a>
