@@ -1,6 +1,7 @@
 ---
 title: About
 tagline: About me
+bio: "<span class=\" [ canada ] \">Chris</span> is a <span class=\" [ canada ] \">Canadian</span> Front End Developer, working for [Squiz](http://www.squiz.net). He’s absolutely [ravenous about CSS](https://chrisburnell.com/tag/css/) and built [Bowhead](https://chrisburnell.com/bowhead/) to bring design tokens into SCSS. His [Webmention plugin](https://chrisburnell.com/eleventy-cache-webmentions/) for [Eleventy](https://11ty.dev) helps people connect through the [IndieWeb](https://indieweb.org), and his work in co-organising the [State of the Browser](https://stateofthebrowser.com) conference has brought together over 45 incredible speakers and 150+ attendees each year."
 eleventyComputed:
   description: "{{ site.description | safe }}"
 ---
@@ -18,26 +19,26 @@ eleventyComputed:
         <source srcset="/images/avatar@3x.webp 1x,
                         /images/avatar@4x.webp 4x" type="image/webp">
         <img alt="Chris Burnell" class="[ avatar ] [ canada ] " src="/images/avatar@3x.jpeg" srcset="/images/avatar@3x.jpeg 1x,
-                    /images/avatar@4x.jpeg 4x" width="300" height="300">
+                    /images/avatar@4x.jpeg 4x" width="250" height="250">
     </picture>
 </figure>
 
 ## Bio
 
-<span class=" [ canada ] ">Chris</span> is a <span class=" [ canada ] ">Canadian</span> Front End Developer, working for [Squiz](http://www.squiz.net). He’s absolutely [ravenous about CSS](https://chrisburnell.com/tag/css/) and built [Bowhead](https://chrisburnell.com/bowhead/) to bring design tokens into SCSS. His [Webmention plugin](https://chrisburnell.com/eleventy-cache-webmentions/) for [Eleventy](https://11ty.dev) helps people connect through the [IndieWeb](https://indieweb.org), and his work in co-organising the [State of the Browser](https://stateofthebrowser.com) conference has brought together over 45 incredible speakers and 150+ attendees each year.
+{{ bio | markdownFormat | safe }}
 
 ## Other Formats
 
 ```text
-Chris is a Canadian Front End Developer, working for Squiz. He’s absolutely ravenous about CSS and built Bowhead to bring design tokens into SCSS. His Webmention plugin for Eleventy helps people connect through the IndieWeb, and his work in co-organising the State of the Browser conference has brought together over 45 incredible speakers and 150+ attendees each year.
+{{ bio | markdownFormat | striptags(true) | safe }}
 ```
 
 ```markdown
-Chris is a Canadian Front End Developer, working for [Squiz](http://www.squiz.net). He’s absolutely [ravenous about CSS](https://chrisburnell.com/tag/css/) and built [Bowhead](https://chrisburnell.com/bowhead/) to bring design tokens into SCSS. His [Webmention plugin](https://chrisburnell.com/eleventy-cache-webmentions/) for [Eleventy](https://11ty.dev) helps people connect through the [IndieWeb](https://indieweb.org), and his work in co-organising the [State of the Browser](https://stateofthebrowser.com) conference has brought together over 45 incredible speakers and 150+ attendees each year.
+{{ bio | striptags(true) | safe }}
 ```
 
 ```html
-Chris is a Canadian Front End Developer, working for <a href="http://www.squiz.net">Squiz</a>. He’s absolutely <a href="https://chrisburnell.com/tag/css/">ravenous about CSS</a> and built <a href="https://chrisburnell.com/bowhead/">Bowhead</a> to bring design tokens into SCSS. His <a href="https://chrisburnell.com/eleventy-cache-webmentions/">Webmention plugin</a> for <a href="https://11ty.dev">Eleventy</a> helps people connect through the <a href="https://indieweb.org">IndieWeb</a>, and his work in co-organising the <a href="https://stateofthebrowser.com">State of the Browser</a> conference has brought together over 45 incredible speakers and 150+ attendees each year.
+{{ bio | striptags(true) | markdownFormat | replace('<p>', '') | replace('</p>', '') | safe }}
 ```
 
 ## The Long Version

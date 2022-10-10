@@ -23,13 +23,17 @@ pre {
 	&.language-markdown,
 	&.language-nunjucks,
 	&.language-twig,
+	&.language-plaintext,
+	&.language-text,
 	&.language-scss,
+	&.language-webc,
 	&.language-yaml {
 		padding-top: var(--size-gap);
 	}
 
 	&.language-bash::before {
 		content: "Terminal";
+		color: h(alto);
 	}
 	&.language-css::before {
 		content: "CSS";
@@ -53,15 +57,25 @@ pre {
 	}
 	&.language-markdown::before {
 		content: "Markdown";
+		color: h(milou);
 	}
 	&.language-nunjucks::before,
 	&.language-twig::before {
 		content: "Nunjucks";
 		color: h(nunjucks);
 	}
+	&.language-plaintext::before,
+	&.language-text::before {
+		content: "Plaintext";
+		color: h(alto);
+	}
 	&.language-scss::before {
 		content: "SCSS";
 		color: h(scss);
+	}
+	&.language-webc::before {
+		content: "WebC";
+		color: h(webc);
 	}
 	&.language-yaml::before {
 		content: "YAML";
