@@ -1,4 +1,4 @@
-import "@11ty/is-land/is-land";
+import "@11ty/is-land/is-land"
 
 import ColorScheme from "./modules/color-scheme"
 new ColorScheme(document.getElementById("color-scheme-toggle"))

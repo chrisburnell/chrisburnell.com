@@ -49,6 +49,6 @@ module.exports = {
 				return github["stargazers_count"]
 			}
 			return 0
-		}
+		},
 	},
 }

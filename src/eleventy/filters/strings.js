@@ -26,9 +26,7 @@ module.exports = {
 	},
 	replaceTwitter: (input) => {
 		return Object.keys(twitterReplacements).reduce((output, old) => {
-			return output
-				.replace(`@${old}`, `@${twitterReplacements[old]}`)
-				.replace(`twitter.com/${old}`, `twitter.com/${twitterReplacements[old]}`)
+			return output.replace(`@${old}`, `@${twitterReplacements[old]}`).replace(`twitter.com/${old}`, `twitter.com/${twitterReplacements[old]}`)
 		}, input)
 	},
 	capitalizeFormat: (input) => {
