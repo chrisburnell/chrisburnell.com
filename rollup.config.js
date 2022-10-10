@@ -25,7 +25,6 @@ export default [
 	{
 		input: "src/js/modules/librarian.js",
 		output: {
-			format: "iife",
 			dir: "js",
 		},
 	},
