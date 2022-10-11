@@ -100,6 +100,12 @@
 	font-style: italic;
 }
 
+// For salty/silly remarks
+.salty,
+.silly {
+	font-family: var(--font-family-silly) !important;
+}
+
 .center {
 	text-align: center;
 }
@@ -112,18 +118,28 @@
 	writing-mode: vertical-lr;
 }
 
+.overflow {
+	overflow: visible !important;
+}
+
+// Shadows
+.shadow,
+.shadow--medium {
+	box-shadow: var(--box-shadow, var(--box-shadow-medium));
+}
+.shadow--low {
+	--box-shadow: var(--box-shadow-low);
+}
+.shadow--high {
+	--box-shadow: var(--box-shadow-high);
+}
+
 // Emoji
 .emoji {
 	font-family: var(--font-family-sans);
 	font-style: normal;
 	vertical-align: middle;
 	text-shadow: none;
-}
-
-// For salty/silly remarks
-.salty,
-.silly {
-	font-family: var(--font-family-silly) !important;
 }
 
 // Sorting labels
