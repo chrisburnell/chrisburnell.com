@@ -66,12 +66,6 @@ module.exports = (value, outputPath) => {
 		// scripts to the page when found
 		const scriptMap = [
 			{
-				comment: "<details-utils> extends functionality of the details element",
-				selector: "details",
-				file: "details-utils.js",
-				wrap: "details-utils",
-			},
-			{
 				selector: "indie-action",
 				file: "indieconfig.js",
 			},
@@ -80,7 +74,6 @@ module.exports = (value, outputPath) => {
 				file: "webaction.js",
 			},
 			{
-				comment: "<spark-line> generates a sparkline chart",
 				selector: "spark-line",
 				module: "spark-line.js",
 			},
@@ -107,11 +100,6 @@ module.exports = (value, outputPath) => {
 					$(`<script defer src="/js/${script.file}"></script>\n`).appendTo("body")
 				} else if (script.url) {
 					$(`<script defer src="${script.url}"></script>\n`).appendTo("body")
-				}
-				if (script.wrap) {
-					$(script.selector).each((i, element) => {
-						$(element).wrap(`<${script.wrap}></${script.wrap}>`)
-					})
 				}
 			}
 		}

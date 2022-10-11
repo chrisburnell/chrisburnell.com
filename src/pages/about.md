@@ -12,14 +12,13 @@ eleventyComputed:
     <li><a href="https://codepen.io/chrisburnell" rel="external">CodePen</a></li><li><a href="https://github.com/chrisburnell" rel="external">GitHub</a></li><li><a href="https://social.chrisburnell.com/@chris" rel="external">Mastodon</a></li><li><a href="https://twitter.com/iamchrisburnell" rel="external">Twitter</a></li><li><a href="https://chrisburnell.com/feed.xml">RSS</a></li>
 </ul>
 
-<figure>
+<figure style="overflow: visible;">
     <picture>
         <source srcset="/images/avatar@3x.avif 1x,
                         /images/avatar@4x.avif 4x" type="image/avif">
         <source srcset="/images/avatar@3x.webp 1x,
                         /images/avatar@4x.webp 4x" type="image/webp">
-        <img alt="Chris Burnell" class="[ avatar ] [ canada ] " src="/images/avatar@3x.jpeg" srcset="/images/avatar@3x.jpeg 1x,
-                    /images/avatar@4x.jpeg 4x" width="250" height="250">
+        <img alt="Chris Burnell" class=" [ canada ] " src="/images/avatar@3x.jpeg" srcset="/images/avatar@3x.jpeg 1x, /images/avatar@4x.jpeg 4x" width="250" height="250" style="box-shadow: var(--box-shadow, var(--box-shadow-medium));">
     </picture>
 </figure>
 

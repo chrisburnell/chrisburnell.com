@@ -1,0 +1,7 @@
+<details-utils webc:keep>
+	<details webc:root webc:keep>
+		<slot></slot>
+	</details>
+</details-utils>
+
+<script defer :src="`/js/details-utils.js?v=${this.pkg.version}`"></script>
