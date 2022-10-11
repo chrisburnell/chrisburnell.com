@@ -3,22 +3,7 @@
 /// @group blocks
 ////
 
-// Contains embedded media properly and allows them to be dynamically resized
-// inside a set aspect ratio container.
-.media {
-	inline-size: 100%;
 
-	& > * {
-		aspect-ratio: var(--aspect-ratio, 16 / 9);
-		inline-size: 100% !important;
-		block-size: auto !important;
-		margin: 0 auto;
-	}
-}
-
-.media--4-by-3 {
-	--aspect-ratio: 4 / 3;
-}
 
 .banner {
 	box-shadow: var(--box-shadow, var(--box-shadow-medium));
