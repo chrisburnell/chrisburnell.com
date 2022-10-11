@@ -19,7 +19,7 @@ const CACHES = [
 const CACHE_SIZE = 30
 
 // Represents the maximum amount of time to wait for the network
-const TIMEOUT = 15000
+const TIMEOUT = 5000
 
 // Define some reusable Regex patterns
 const ASSETS_REGEX = /\.(css|ics|js|json|txt|xml|xsl|ttf|woff|woff2)/
@@ -176,15 +176,28 @@ self.addEventListener("fetch", event => {
 					})
 				}, TIMEOUT)
 
-				const retrieveFromFetch = event.preloadResponse || fetch(request)
+				const formattedRequest = new Request(request.url, {
+					method: "GET",
+					headers: request.headers,
+					mode: request.mode === "navigate" ? "cors" : request.mode,
+					cache: request.cache,
+					credentials: request.credentials,
+					redirect: request.redirect,
+					type: request.type
+				})
+				const retrieveFromFetch = event.preloadResponse || fetch(formattedRequest)
 
 				retrieveFromFetch.then(responseFromFetch => {
 					// NETWORK
 					clearTimeout(timer)
 					let copy = responseFromFetch.clone()
+					// If the response contains a redirect, ignore the URL
+					if (responseFromFetch.type === "opaqueredirect") {
+						resolveWithResponse(responseFromFetch)
+					}
 					// Stash a copy of this page in the PAGES cache if the
 					// Content-Type that comes back from the response matches
-					if (copy.headers.get("Content-Type").includes("text/html")) {
+					else if (copy.headers.get("Content-Type").includes("text/html")) {
 						try {
 							event.waitUntil(
 								stashInCache(PAGES_CACHE, request, copy)
@@ -235,12 +248,25 @@ self.addEventListener("fetch", event => {
 	event.respondWith(
 		retrieveFromCache.then(responseFromCache => {
 			// CACHE
-			return responseFromCache || fetch(request)
+			const formattedRequest = new Request(request.url, {
+				method: "GET",
+				headers: request.headers,
+				mode: request.mode === "navigate" ? "cors" : request.mode,
+				cache: request.cache,
+				credentials: request.credentials,
+				redirect: request.redirect,
+				type: request.type
+			})
+			return responseFromCache || fetch(formattedRequest)
 			.then(responseFromFetch => {
 				// NETWORK
 				const copy = responseFromFetch.clone()
+				// If the response contains a redirect, ignore the URL
+				if (responseFromFetch.type === "opaqueredirect") {
+					return responseFromFetch
+				}
 				// Stash a copy of this asset in the ASSETS cache
-				if (request.url.match(ASSETS_REGEX)) {
+				else if (request.url.match(ASSETS_REGEX)) {
 					try {
 						event.waitUntil(
 							stashInCache(ASSETS_CACHE, request, copy)
