@@ -17,11 +17,11 @@ class UrlInput {
 	init() {
 		this.inputs.forEach((input) => {
 			input.addEventListener("blur", (event) => {
-				addDefaultScheme(event.target)
+				this.addDefaultScheme(event.target)
 			})
 			input.addEventListener("keydown", (event) => {
 				if (event.keyCode == 13) {
-					addDefaultScheme(event.target)
+					this.addDefaultScheme(event.target)
 				}
 			})
 		})

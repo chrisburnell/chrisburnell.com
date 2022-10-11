@@ -24,6 +24,9 @@ description: Numbers, cause why not?
 		{% set wordiest_post_index = loop.index0 %}
 	{% endif %}
 {%- endfor -%}
+1369910934
+
+{%- set daysSinceFirstCommit = ((site.establishedEpoch - global.now) / 86400) -%}
 
 <dl>
 	<dt>Total Posts</dt>
@@ -34,6 +37,8 @@ description: Numbers, cause why not?
 	<dd>{{ total_wordcount | numberStringFormat }}</dd>
 	<dt>Most Insanely-Verbose Post</dt>
 	<dd><a href="{{ collection[wordiest_post_index].url }}">{{ collection[wordiest_post_index].data.title }}</a> with {{ wordiest_wordcount | numberStringFormat }} words</dd>
+	<dt>Commits / Day</dt>
+	<dd><a href="https://github.com/{{ author.github }}/{{ site.repository }}">TODO</a></dd>
 </dl>
 
 <h2>All Posts</h2>
