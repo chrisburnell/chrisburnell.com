@@ -13,7 +13,7 @@
 // Abstracts
 @import "abstracts/functions";
 @import "abstracts/mixins";
-@import "abstracts/media";
+@import "abstracts/include-media";
 @import "abstracts/generated";
 @import "abstracts/collections";
 
@@ -36,8 +36,9 @@
 	@import "global/headings";
 	@import "global/prose";
 	@import "global/lists";
-	@import "global/media";
+	@import "global/images";
 	@import "global/figure";
+	@import "global/embeds";
 	@import "global/quotes";
 	@import "global/code";
 	@import "global/form";
@@ -81,7 +82,8 @@
 	@import "blocks/notifications";
 	@import "blocks/webmentions";
 	@import "blocks/code-blocks";
-	@import "blocks/media";
+	@import "blocks/images";
+	@import "blocks/embeds";
 	@import "blocks/browser-support";
 	@import "blocks/spark-line";
 	@import "blocks/browse";

@@ -1,9 +1,7 @@
 ////
-/// Media
+/// Images
 /// @group blocks
 ////
-
-
 
 .banner {
 	box-shadow: var(--box-shadow, var(--box-shadow-medium));
@@ -53,14 +51,4 @@
 .fsociety,
 %fsociety {
 	filter: url("/images/fsociety.svg#fsociety");
-}
-
-// CodePen Embeds
-.cp_embed_wrapper {
-	resize: both;
-	overflow: auto;
-
-	iframe {
-		margin-block-end: 0;
-	}
 }

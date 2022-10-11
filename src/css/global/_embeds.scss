@@ -1,37 +1,9 @@
 ////
-/// Media
+/// Embeds & Media
 /// @group global
 ////
 
-%image {
-	max-inline-size: 100%;
-	block-size: auto;
-	margin-inline: auto;
-	position: relative;
-
-	%anchor & {
-		outline: var(--size-border, var(--size-border-thin)) solid var(--color, transparent);
-		outline-offset: var(--size-border, var(--size-border-thin));
-	}
-	%anchor:is(:hover, :focus, :active) & {
-		outline-color: h(raven);
-	}
-}
-img {
-	border-style: none;
-}
-picture {
-	&,
-	img,
-	svg {
-		display: block;
-	}
-}
-svg:not(:root) {
-	overflow: hidden;
-}
-
-:where(audio, canvas, iframe, video) {
+%media {
 	inline-size: 100%;
 	display: block;
 	border: 0;
@@ -45,6 +17,7 @@ audio {
 		block-size: 0;
 	}
 }
+
 iframe {
 	max-inline-size: 100% !important;
 	margin: 0;

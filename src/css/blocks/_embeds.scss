@@ -1,0 +1,14 @@
+////
+/// Embeds & Media
+/// @group blocks
+////
+
+// CodePen Embeds
+.cp_embed_wrapper {
+	resize: both;
+	overflow: auto;
+
+	iframe {
+		margin-block-end: 0;
+	}
+}
