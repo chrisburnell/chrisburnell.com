@@ -11,11 +11,11 @@ tags:
   - package
   - web-component
 toc: true
-js: spark-line-demo.js
+js: spark-line.js
 ---
 
 <figure>
-    <spark-line values="0,0,2,5,7,13,13,18,14,11,19,44,37,37,38,27,23,9,6,5,6,1,1,2,1,0" key-start="23" endpoint-color="#eb2d36" class="pentatonic"></spark-line>
+    <spark-line-component values="0,0,2,5,7,13,13,18,14,11,19,44,37,37,38,27,23,9,6,5,6,1,1,2,1,0"></spark-line-component>
 </figure>
 
 <div class="box">
@@ -135,63 +135,63 @@ The element takes a number of attributes:
 
 <div class=" [ grid ] [ shelf ] ">
     <article>
-        <spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0"></spark-line>
+        <spark-line-component values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0"></spark-line-component>
         <p><em>default</em></p>
     </article>
     <article>
-        <spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" line-width="4"></spark-line>
+        <spark-line-component values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" lineWidth="4"></spark-line-component>
         <p><code>line-width="4"</code></p>
     </article>
     <article>
-        <spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" curve="false"></spark-line>
+        <spark-line-component values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" curve="false"></spark-line-component>
         <p><code>curve="false"</code></p>
     </article>
     <article>
-        <spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" endpoint="false"></spark-line>
+        <spark-line-component values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" endpoint="false"></spark-line-component>
         <p><code>endpoint="false"</code></p>
     </article>
     <article>
-        <spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" color="rebeccapurple"></spark-line>
+        <spark-line-component values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" color="rebeccapurple"></spark-line-component>
         <p><code>color="rebeccapurple"</code></p>
     </article>
     <article>
-        <spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" endpoint-color="red"></spark-line>
+        <spark-line-component values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" endpointColor="red"></spark-line-component>
         <p><code>endpoint-color="red"</code></p>
     </article>
     <article>
-        <spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1"></spark-line>
+        <spark-line-component values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1"></spark-line-component>
         <p><code>points="1"</code></p>
     </article>
     <article>
-        <spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1,0" curve="false"></spark-line>
+        <spark-line-component values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1,0" curve="false"></spark-line-component>
         <p><code>points="1,0"</code></p>
     </article>
     <article>
-        <spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="0,2,0,1" curve="false"></spark-line>
+        <spark-line-component values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="0,2,0,1" curve="false"></spark-line-component>
         <p><code>points="0,2,0,1"</code></p>
     </article>
     <article>
-        <spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" endpoint-color="red" points="0,2,0,1" curve="false"></spark-line>
+        <spark-line-component values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" endpointColor="red" points="0,2,0,1" curve="false"></spark-line-component>
         <p><code>endpoint-color="red" points="0,2,0,1"</code></p>
     </article>
     <article>
-        <spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" colors="red" curve="false"></spark-line>
+        <spark-line-component values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" colors="red" curve="false"></spark-line-component>
         <p><code>colors="red"</code></p>
     </article>
     <article>
-        <spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1" colors="rebeccapurple" curve="false"></spark-line>
+        <spark-line-component values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1" colors="rebeccapurple" curve="false"></spark-line-component>
         <p><code>points="1" colors="rebeccapurple"</code></p>
     </article>
     <article>
-        <spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1" colors="red,green,blue" curve="false"></spark-line>
+        <spark-line-component values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1" colors="red,green,blue" curve="false"></spark-line-component>
         <p><code>points="1" colors="red,green,blue"</code></p>
     </article>
     <article>
-        <spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1" colors="red,red,red,red,red,red,red,red,green,red,red,green,violet,orange,green,blue,yellow,green,yellow,cyan,green,cyan,green,cyan,blue,red" curve="false"></spark-line>
+        <spark-line-component values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1" colors="red,red,red,red,red,red,red,red,green,red,red,green,violet,orange,green,blue,yellow,green,yellow,cyan,green,cyan,green,cyan,blue,red" curve="false"></spark-line-component>
         <p><em>rainbow!</em></p>
     </article>
     <article>
-        <spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" start-label="Start" end-label="End"></spark-line>
+        <spark-line-component values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" startLabel="Start" end-label="End"></spark-line-component>
         <p><code>start-label="Start" end-label="End"</code></p>
     </article>
 </div>
@@ -216,6 +216,6 @@ The element takes a number of attributes:
         <br>
         <label><input id="input-endpoint-color" type="color" value="#000000"> Endpoint Color</label>
     </fieldset>
-    <spark-line id="sparkline" class="pentatonic" style="margin-block-start: 0; align-self: center; justify-self: center;"></spark-line>
+    <spark-line values="1,2,3,2,1" id="sparkline" style="margin-block-start: 0; align-self: center; justify-self: center;"></spark-line>
     <noscript>Requires JavaScript, unfortunately.</noscript>
 </form>

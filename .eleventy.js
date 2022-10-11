@@ -119,6 +119,7 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.addPassthroughCopy("images/animated")
 	eleventyConfig.addPassthroughCopy("js")
 	eleventyConfig.addPassthroughCopy("src/js/pages")
+	eleventyConfig.addPassthroughCopy("src/js/vendor")
 	eleventyConfig.addPassthroughCopy({ "files/**/*": "." })
 
 	// Watch targets

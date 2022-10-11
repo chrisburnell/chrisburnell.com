@@ -26,7 +26,6 @@ class UrlInput {
 			})
 		})
 	}
-
 }
 
 if ("HTMLElement" in window) {

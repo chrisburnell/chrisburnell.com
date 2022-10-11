@@ -62,48 +62,6 @@ module.exports = (value, outputPath) => {
 			$(element).attr("tabindex", 0)
 		})
 
-		// Look for Custom HTML elements on the page, conditionally adding a
-		// scripts to the page when found
-		const scriptMap = [
-			{
-				selector: "indie-action",
-				file: "indieconfig.js",
-			},
-			{
-				selector: "indie-action",
-				file: "webaction.js",
-			},
-			{
-				selector: "spark-line",
-				module: "spark-line.js",
-			},
-		]
-		for (let script of scriptMap) {
-			if ($(script.selector).length) {
-				if (script.comment) {
-					$(`<!-- ${script.comment} -->\n`).appendTo("body")
-				}
-				if (script.module) {
-					if (script.feature) {
-						$(
-							minify(`
-								<script defer type="module">
-									import ${script.feature} from "/js/${script.module}";
-									${script.feature}();
-								</script>
-							`) + "\n"
-						).appendTo("body")
-					} else {
-						$(`<script defer type="module" src="/js/${script.module}"></script>\n`).appendTo("body")
-					}
-				} else if (script.file) {
-					$(`<script defer src="/js/${script.file}"></script>\n`).appendTo("body")
-				} else if (script.url) {
-					$(`<script defer src="${script.url}"></script>\n`).appendTo("body")
-				}
-			}
-		}
-
 		return $.root().html()
 	}
 	return value

@@ -47,11 +47,11 @@ class Librarian {
 				return (a.querySelector(".h-cite")?.innerText || "").localeCompare(b.querySelector(".h-cite")?.innerText || "")
 			}
 			return (b.querySelector(".rating")?.value || 0) - (a.querySelector(".rating")?.value || 0)
-		}
+		},
 	}
 
 	init() {
-		this.buttons.forEach(button => {
+		this.buttons.forEach((button) => {
 			button.setAttribute("aria-sort", button.getAttribute("aria-sort") || "none")
 			button.addEventListener("click", () => {
 				// Set the current sorting direction
@@ -59,7 +59,7 @@ class Librarian {
 
 				// If the button state is "none", set all button states to "none"
 				if (sort === "none") {
-					this.buttons.forEach(other => other.setAttribute("aria-sort", "none"))
+					this.buttons.forEach((other) => other.setAttribute("aria-sort", "none"))
 				}
 
 				// Sort the items according to the button
@@ -67,9 +67,9 @@ class Librarian {
 
 				// Loop through items and set their order property with inline CSS
 				if (sort === "descending") {
-					sorted.reverse().forEach((item, i) => item.style.order = i)
+					sorted.reverse().forEach((item, i) => (item.style.order = i))
 				} else {
-					sorted.forEach((item, i) => item.style.order = i)
+					sorted.forEach((item, i) => (item.style.order = i))
 				}
 
 				// Toggle the sorting direction (default to "descending")

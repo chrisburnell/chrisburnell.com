@@ -1,0 +1,7 @@
+<is-land on:visible>
+	<spark-line webc:root webc:keep :values="this.values" :original="this.original" :endpoint-color="this.endpointColor || `#e0151f`" :start-label="this.startLabel" :end-label="this.endLabel" :key-start="this.keyStart || 25" :key-intervals="this.keyIntervals || `2,1,2,2,1,2,2`" :key-limit="this.keyLimit || 15" :line-width="this.lineWidth || 1.5" :class="`pentatonic`" :title="`Click to hear me!`"></spark-line>
+
+	<template data-island="once">
+		<script type="module" :src="`/js/spark-line.js?v=${this.pkg.version}`"></script>
+	</template>
+</is-land>

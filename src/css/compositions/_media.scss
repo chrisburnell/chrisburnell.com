@@ -12,11 +12,14 @@
 .media {
 	inline-size: 100%;
 
-	& > * {
+	& > %image,
+	& > picture %image,
+	& > %media {
 		aspect-ratio: var(--aspect-ratio, 16 / 9);
 		inline-size: 100% !important;
 		block-size: auto !important;
 		margin: 0 auto;
+		object-fit: cover;
 	}
 }
 

@@ -9,6 +9,8 @@ Expects a URL in the following format:
 
 <pre><code>https://www.youtube.com/channel/AaBbCcDdEeFfGg0123456789</code></pre>
 
+<!-- </textarea> -->
+<!-- '"´ -->
 <form class="get-youtube-feed">
     <input type="text" inputmode="url" id="url">
     <button type="submit">Submit</button>

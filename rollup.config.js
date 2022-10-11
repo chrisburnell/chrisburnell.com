@@ -35,19 +35,7 @@ export default [
 		},
 	},
 	{
-		input: "src/js/vendor/speedlify-score.js",
-		output: {
-			dir: "js",
-		},
-	},
-	{
-		input: "src/js/vendor/indieconfig.js",
-		output: {
-			dir: "js",
-		},
-	},
-	{
-		input: "src/js/vendor/webaction.js",
+		input: "node_modules/speedlify-score/speedlify-score.js",
 		output: {
 			dir: "js",
 		},
@@ -60,6 +48,12 @@ export default [
 	},
 	{
 		input: "node_modules/@zachleat/details-utils/details-utils.js",
+		output: {
+			dir: "js",
+		},
+	},
+	{
+		input: "node_modules/@zachleat/seven-minute-tabs/seven-minute-tabs.js",
 		output: {
 			dir: "js",
 		},

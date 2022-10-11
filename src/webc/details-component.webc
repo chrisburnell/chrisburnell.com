@@ -4,4 +4,9 @@
 	</details>
 </details-utils>
 
-<script defer :src="`/js/details-utils.js?v=${this.pkg.version}`"></script>
+
+<is-land on:visible>
+	<template data-island="once">
+		<script defer :src="`/js/details-utils.js?v=${this.pkg.version}`"></script>
+	</template>
+</is-land>

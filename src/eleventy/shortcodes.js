@@ -22,16 +22,9 @@ module.exports = {
 		// Calculate simple moving average of each value, preserve head and tail
 		let normalized = utilityFilters.simpleMovingAverage(values, 3, true)
 		// Sparklines in A minor
-		return `<spark-line values="${normalized.join(",")}"
+		return `<spark-line-component values="${normalized.join(",")}"
 							original="${values.join(",")}"
-							endpoint-color="${colors.maple}"
 							${start ? 'start-label="' + start + '"' : ""}
-							${end ? 'end-label="' + end + '"' : ""}
-							key-start="25"
-							key-intervals="2,1,2,2,1,2,2"
-							key-limit="${site.limits.sparkline}"
-							line-width="1.5"
-							class=" [ pentatonic ] "
-							title="Click to hear me!"></spark-line>`
+							${end ? 'end-label="' + end + '"' : ""}></spark-line-component>`
 	},
 }
