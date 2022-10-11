@@ -31,7 +31,6 @@ export default [
 	{
 		input: "src/js/modules/url-input.js",
 		output: {
-			format: "iife",
 			dir: "js",
 		},
 	},
