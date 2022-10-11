@@ -50,10 +50,10 @@ If you’re using SCSS, this bit’s for you:
 
 ```scss
 @function h($value, $opacity: null) {
-	@if not $opacity {
-		@return hsl(var(--hsl-#{$value}));
-	}
-	@return hsla(var(--hsl-#{$value}) / var(--opacity-#{$opacity}));
+    @if not $opacity {
+        @return hsl(var(--hsl-#{$value}));
+    }
+    @return hsla(var(--hsl-#{$value}) / var(--opacity-#{$opacity}));
 }
 ```
 

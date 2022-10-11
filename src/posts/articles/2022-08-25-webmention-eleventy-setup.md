@@ -44,9 +44,9 @@ const { defaults } = require("@chrisburnell/eleventy-cache-webmentions")()
 require("dotenv").config()
 
 module.exports = Object.assign(defaults, {
-	domain: "https://EXAMPLE.COM",
-	feed: `https://webmention.io/api/mentions.json?domain=EXAMPLE.COM&token=${process.env.WEBMENTION_IO_TOKEN}&per-page=9001`,
-	key: "links",
+    domain: "https://EXAMPLE.COM",
+    feed: `https://webmention.io/api/mentions.json?domain=EXAMPLE.COM&token=${process.env.WEBMENTION_IO_TOKEN}&per-page=9001`,
+    key: "links",
 })
 ```
 
@@ -59,9 +59,9 @@ const { defaults } = require("@chrisburnell/eleventy-cache-webmentions")()
 require("dotenv").config()
 
 module.exports = Object.assign(defaults, {
-	domain: "https://EXAMPLE.COM",
-	feed: `https://JAM.EXAMPLE.COM/webmention/EXAMPLE.COM/${process.env.GO_JAMMING_TOKEN}`,
-	key: "json",
+    domain: "https://EXAMPLE.COM",
+    feed: `https://JAM.EXAMPLE.COM/webmention/EXAMPLE.COM/${process.env.GO_JAMMING_TOKEN}`,
+    key: "json",
 })
 ```
 

@@ -26,7 +26,7 @@ tags:
 const parseTransform = require("src/eleventy/transforms/parse.js")
 
 module.exports = (eleventyConfig) => {
-	eleventyConfig.addTransform("parse", parseTransform)
+    eleventyConfig.addTransform("parse", parseTransform)
 }
 ```
 
