@@ -12,6 +12,11 @@
     "secondary": true
   },
   {
+    "title": "CV",
+    "url": "/cv/",
+    "secondary": true
+  },
+  {
     "title": "All Posts",
     "url": "/archive/",
     "primary": true,
@@ -31,11 +36,6 @@
   {
     "title": "Styleguide",
     "url": "/styleguide/",
-    "secondary": true
-  },
-  {
-    "title": "CV",
-    "url": "/cv/",
     "secondary": true
   }
 ]

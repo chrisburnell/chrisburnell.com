@@ -18,7 +18,7 @@ module.exports = async () => {
 				description: "Super Simple PWA for building [Microlite20](https://micro.bloodbuilder.online/docs/Microlite20.pdf) characters.",
 				description_markdown: true,
 				stargazers: async () => {
-					const github = await fetchFilter.githubData("micrathene")
+					const github = await fetchFilter.githubData("chrisburnell/micrathene")
 					return parseFloat(github["stargazers_count"]) || 0
 				},
 				emoji: "🔬",

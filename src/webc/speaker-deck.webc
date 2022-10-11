@@ -1,5 +1,9 @@
-<is-land on:visible>
-	<div webc:keep class="speakerdeck-embed" :data-id="this.id"><slot></slot></div>
+<p webc:root webc:keep class="speakerdeck-embed" :data-id="this.id"></p>
 
-	<script src="https://speakerdeck.com/assets/embed.js"></script>
+<is-land on:visible>
+	<template data-island="once">
+		<script defer src="https://speakerdeck.com/assets/embed.js"></script>
+	</template>
 </is-land>
+
+<noscript>Sorry, this embed requires JavaScript.</noscript>

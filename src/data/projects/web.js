@@ -18,7 +18,7 @@ module.exports = async () => {
 				description: "An IndieWeb tool to help you pull check-ins from [Untappd](https://untappd.com). Still a work-in-progress.",
 				description_markdown: true,
 				stargazers: async () => {
-					const github = await fetchFilter.githubData("OwnYourBeer")
+					const github = await fetchFilter.githubData("chrisburnell/OwnYourBeer")
 					return parseFloat(github["stargazers_count"]) || 0
 				},
 				emoji: "🍻",
@@ -40,7 +40,7 @@ module.exports = async () => {
 				description: "My personal [micropub](https://indieweb.org/micropub) endpoint.",
 				description_markdown: true,
 				stargazers: async () => {
-					const github = await fetchFilter.githubData("corvus")
+					const github = await fetchFilter.githubData("chrisburnell/corvus")
 					return parseFloat(github["stargazers_count"]) || 0
 				},
 				emoji: "🐦",
@@ -53,7 +53,7 @@ module.exports = async () => {
 				description: "Play native web media and utilise keyboard controls à la YouTube.",
 				description_markdown: true,
 				stargazers: async () => {
-					const github = await fetchFilter.githubData("mediaControls")
+					const github = await fetchFilter.githubData("chrisburnell/mediaControls")
 					return parseFloat(github["stargazers_count"]) || 0
 				},
 				emoji: "🎧",

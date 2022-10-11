@@ -38,7 +38,7 @@ description: Numbers, cause why not?
 	<dt>Most Insanely-Verbose Post</dt>
 	<dd><a href="{{ collection[wordiest_post_index].url }}">{{ collection[wordiest_post_index].data.title }}</a> with {{ wordiest_wordcount | numberStringFormat }} words</dd>
 	<dt>Commits / Day</dt>
-	<dd><a href="https://github.com/{{ author.github }}/{{ site.repository }}">TODO</a></dd>
+	<dd><a href="https://github.com/{{ author.github }}/{{ site.repository }}">{{ repository.contributors[0].contributions / daysSinceFirstCommit }}</a></dd>
 </dl>
 
 <h2>All Posts</h2>

@@ -1,11 +1,10 @@
-<details-utils webc:keep>
-	<details webc:root webc:keep>
-		<slot></slot>
-	</details>
-</details-utils>
-
-
 <is-land on:visible>
+	<details-utils webc:keep>
+		<details webc:root webc:keep>
+			<slot></slot>
+		</details>
+	</details-utils>
+
 	<template data-island="once">
 		<script defer :src="`/js/details-utils.js?v=${this.pkg.version}`"></script>
 	</template>

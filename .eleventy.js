@@ -38,7 +38,6 @@ const tagsBuilder = require("#builders/tags")
 // Import other bits and bobs
 const markdownParser = require("markdown-it")
 const markdownAbbr = require("markdown-it-abbr")
-const { RuleSet } = require("natural")
 
 module.exports = (eleventyConfig) => {
 	eleventyConfig.setQuietMode(true)
