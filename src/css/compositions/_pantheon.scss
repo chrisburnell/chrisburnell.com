@@ -95,7 +95,8 @@
 	}
 }
 
-.pantheon > spark-line {
+.pantheon > spark-line,
+.pantheon > .spark-line {
 	grid-column: marginalia;
 	grid-row: sparkline;
 
