@@ -29,7 +29,8 @@ spark-line {
 	}
 
 	// Listing-Representative Sparkline
-	.pantheon > & {
+	.pantheon > &,
+	.pantheon > .spark-line & {
 		margin-block-start: var(--size-large);
 	}
 }
