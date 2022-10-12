@@ -7,7 +7,7 @@ module.exports = {
 	tags: ["post"],
 	list: "deck",
 	mf_root: "entry",
-	show_webmentions: true,
+	show_responses: true,
 	eleventyComputed: {
 		webmentions: (data) => {
 			return getWebmentions(configWebmentions, configWebmentions.domain + data.page.url)

@@ -203,7 +203,7 @@ With this knowledge under our belt, we can begin to define the design tokens for
     </tbody>
 </table>
 
-<h3 id="default">01. Variable As Default</h3>
+<h3 id="default">№ 1. Variable As Default</h3>
 
 ```scss
 $bowhead-variable-as-default: true;
@@ -231,7 +231,7 @@ body {
 }
 ```
 
-<h3 id="fallback">02. Show Fallback Value</h3>
+<h3 id="fallback">№ 2. Show Fallback Value</h3>
 
 ```scss
 $bowhead-variable-as-default: true;
@@ -292,7 +292,7 @@ body {
 }
 ```
 
-<h3 id="generate">03. Generating CSS Variables</h3>
+<h3 id="generate">№ 3. Generating CSS Variables</h3>
 
 ```scss
 $bowhead-generate: true;
@@ -322,7 +322,7 @@ $bowhead-generate: false;
 
 Nothing is generated!
 
-<h3 id="property-map">04. Property Map <em>(optional)</em></h3>
+<h3 id="property-map">№ 4. Property Map <em>(optional)</em></h3>
 
 `$bowhead-property-map` is another `map` that contains mappings from CSS properties (`padding-left`, `border-bottom-right-radius`, etc.) to our defined design token <q>types</q> (`size`, `color`, etc.), i.e.
 
@@ -360,7 +360,7 @@ $bowhead-tokens: (
 
 **Bowhead** will merge new types in your defined map into its own defaults automatically! Any that you re-declare will overwrite what exists as a default from *Bowhead*.
 
-<h3 id="type-map">05. Type Map <em>(optional)</em></h3>
+<h3 id="type-map">№ 5. Type Map <em>(optional)</em></h3>
 
 `$bowhead-type-map` is a `map` that allows defining alternate names for the <q>data types</q>, e.g.
 
@@ -371,7 +371,7 @@ $bowhead-type-map: (
 )
 ```
 
-<h3 id="tokens">06. Tokens</h3>
+<h3 id="tokens">№ 6. Tokens</h3>
 
 `$bowhead-tokens` expects an *SCSS* `map` of <q>types</q> of tokens. These types could be a *size*, *color*, *opacity*, *z-index*, etc.
 

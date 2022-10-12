@@ -17,7 +17,7 @@ toc: true
 
 Front End Developer with {{ global.now | friendlyDate("yyyy") - site.established }} years of experience, specialising in CSS, design systems, developer evangelism and education, and technical writing and speaking. Lead Developer for projects across multiple industries, including government and higher education sectors, with clients such as [The Electoral Commission](https://www.electoralcommission.org.uk/), [Ministry of Justice](https://www.gov.uk/government/organisations/ministry-of-justice), [University of the Arts London](https://www.arts.ac.uk/), [William Hill](https://www.williamhill.com/), and more. Passionate about developing open source software, organising in-person events like [State of the Browser](https://stateofthebrowser.com), and being actively-involved in the web community.
 
-## Professional Experience
+<h2 style="break-before: page;">Professional Experience</h2>
 
 <div class=" [ space-between ] ">
     <h3><a href="https://squiz.net"><span class="emoji">{% image './images/content/squiz-logo.svg', '', 'brand-logo' %} </span>Squiz</a> <small>(Northern Hemisphere / UK, Poland, USA)</small></h3>
@@ -74,7 +74,7 @@ Front End Developer with {{ global.now | friendlyDate("yyyy") - site.established
 - Built both the front end and content management implementations for client work, specialising particularly in cross-browser compatibility.
 - Set up and organised learning initiatives for developers, including *Implementor Scrum*, an opportunity for developers to explore best practices and emerging web technologies in a casual group setting.
 
-## Community Experience
+<h2 style="break-before: page;">Community Experience</h2>
 
 <div class=" [ space-between ] ">
     <h3 class=" [ delta ] ">Technical Writer on <a href="https://chrisburnell.com/"><span class="emoji"><img class="brand-logo" alt="" loading="lazy" decoding="async" src="/images/raven.svg"> </span>chrisburnell.com</a></h3>

@@ -1,11 +1,15 @@
 [
   "CodePen",
   "CSS",
+  "Eleventy",
   "GitHub",
   "HTML",
   "IndieWeb",
   "JavaScript",
+  "Jekyll",
   "JSON",
+  "Liquid",
+  "Micropub",
   "RSVP",
   "SCSS",
   "Service Worker",
@@ -14,5 +18,7 @@
   "StateOfTheBrowser",
   "SVG",
   "TV",
-  "UX"
+  "UX",
+  "WebC",
+  "Webmention"
 ]

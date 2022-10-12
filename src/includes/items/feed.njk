@@ -17,7 +17,7 @@
 <item>
 	<title>{{ item_title | safe }}</title>
 	<link>{{ site.url + item.url }}</link>
-	<guid>{{ site.url + item.url }}</guid>{% if item.data.show_webmentions %}
+	<guid>{{ site.url + item.url }}</guid>{% if item.data.show_responses %}
 	<comments>{{ site.url + item.url + "#webmentions" }}</comments>{% endif %}
 	<pubDate>{{ item.date | httpDate }}</pubDate>
 	<category domain="{{ site.url + '/' + item.data.category + '/' }}">{{ item.data.category }}</category>{% if item.data.description %}

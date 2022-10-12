@@ -24,26 +24,29 @@ description: Numbers, cause why not?
 		{% set wordiest_post_index = loop.index0 %}
 	{% endif %}
 {%- endfor -%}
-1369910934
 
-{%- set daysSinceFirstCommit = ((site.establishedEpoch - global.now) / 86400) -%}
+{%- set first_commit = repository.information.created_at | epoch -%}
+{%- set days_since_first_commit = (global.now - first_commit) / 86400000 -%}
+{%- set commits_per_day = repository.contributors[0].contributions / days_since_first_commit -%}
 
 <dl>
-	<dt>Total Posts</dt>
+	<dt>№ of Posts</dt>
 	<dd>{{ count }}</dd>
-	<dt>Total Blog Posts</dt>
+	<dt>№ of Blog Posts</dt>
 	<dd>{{ published_count }}</dd>
 	<dt>Total Word Count</dt>
 	<dd>{{ total_wordcount | numberStringFormat }}</dd>
 	<dt>Most Insanely-Verbose Post</dt>
 	<dd><a href="{{ collection[wordiest_post_index].url }}">{{ collection[wordiest_post_index].data.title }}</a> with {{ wordiest_wordcount | numberStringFormat }} words</dd>
-	<dt>Commits / Day</dt>
-	<dd><a href="https://github.com/{{ author.github }}/{{ site.repository }}">{{ repository.contributors[0].contributions / daysSinceFirstCommit }}</a></dd>
+	<dt>№ of Projects</dt>
+	<dd>{{ (projectsWeb.length + projectsPersonal.length + collections.projects.length) | numberStringFormat }}</dd>
+	<dt>Commits <small>per</small> Day</dt>
+	<dd><a href="https://github.com/{{ author.github }}/{{ site.repository }}">{{ commits_per_day.toFixed(3) }}</a></dd>
 </dl>
 
 <h2>All Posts</h2>
 
-<p>{% sparkline collection, first_year, latest_year %}</p>
+<p class=" [ center  inline-center ] ">{% sparkline collection, first_year, latest_year %}</p>
 
 {%- set collection = collection | reverse -%}
 {%- set year = first_year -%}
@@ -68,12 +71,25 @@ description: Numbers, cause why not?
 	</table>
 </figure>
 
+<h2>Collections</h2>
+
+<ul class=" [ cluster ] ">
+	{%- set count = collections.checkins | arePublished | getCollectionCount(false, true) -%}
+	<li><a href="/checkins/">Checkins <sup>{{ count }}</sup></a></li>
+	{%- set count = collections.replies | arePublished | getCollectionCount(false, true) -%}
+	<li><a href="/replies/">Replies <sup>{{ count }}</sup></a></li>
+	{%- set count = collections.rsvps | arePublished | getCollectionCount(false, true) -%}
+	<li><a href="/rsvps/">RSVPs <sup>{{ count }}</sup></a></li>
+	{%- set count = collections.writing | arePublished | getCollectionCount(false, true) -%}
+	<li><a href="/writing/">Writing <sup>{{ count }}</sup></a></li>
+</ul>
+
 <h2>Categories</h2>
 
 <ul class=" [ cluster ] ">
 	{%- for item in collections.categories -%}
 		{%- set count = collections[item.title] | arePublished | getCollectionCount(false, true) -%}
-		<li><a href="/{{ item.plural }}/">{{ item.properPlural }} <sup>{{ count }}</sup></a></li>
+		<li><a href="/{{ item.plural }}/">{{ item.properPlural | title }} <sup>{{ count }}</sup></a></li>
 	{%- endfor -%}
 </ul>
 

@@ -4,7 +4,7 @@ const pkg = require("../../../package.json")
 
 module.exports = {
 	tags: ["project"],
-	show_webmentions: true,
+	show_responses: true,
 	eleventyComputed: {
 		date: async (data) => {
 			if (data.github) {
@@ -16,7 +16,7 @@ module.exports = {
 		updated: async (data) => {
 			if (data.github) {
 				const github = await fetchFilter.githubData(data.github)
-				return github["updated_at"]
+				return github["updated_at"] || ""
 			}
 			return data.updated || ""
 		},

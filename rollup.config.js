@@ -16,7 +16,7 @@ export default [
 		plugins: process.env.ELEVENTY_PRODUCTION ? [commonjs(), nodeResolve(), terser()] : [commonjs(), nodeResolve()],
 	},
 	{
-		input: "src/js/common/navigator.js",
+		input: "src/js/navigator.js",
 		output: {
 			dir: "js",
 			name: "navigator",
@@ -26,24 +26,28 @@ export default [
 		input: "src/js/modules/librarian.js",
 		output: {
 			dir: "js",
+			name: "librarian",
 		},
 	},
 	{
 		input: "src/js/modules/url-input.js",
 		output: {
 			dir: "js",
+			name: "url-input",
 		},
 	},
 	{
 		input: "node_modules/speedlify-score/speedlify-score.js",
 		output: {
 			dir: "js",
+			name: "speedlify-score",
 		},
 	},
 	{
 		input: "node_modules/@chrisburnell/spark-line/spark-line.js",
 		output: {
 			dir: "js",
+			name: "spark-line",
 		},
 	},
 	{
