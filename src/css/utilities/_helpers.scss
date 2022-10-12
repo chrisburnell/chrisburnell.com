@@ -25,7 +25,7 @@
 
 // Limit inline-size to line-length
 .line-length {
-	max-inline-size: var(--size-line-length) !important;
+	max-inline-size: var(--max-inline-size, var(--size-line-length)) !important;
 }
 
 // Space out elements with flex

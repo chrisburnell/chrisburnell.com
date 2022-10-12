@@ -28,7 +28,7 @@ truncate: true
 		<div class=" [ e-content ] [ flow ] ">
 
 			{% if collections.todayRSVPs.length %}
-				<div class=" [ box ] [ flow ] ">
+				<div class=" [ box  box--line-length ] [ flow ] ">
 					<h2 id="today-rsvps">
 						<a href="/rsvps/">Events I’m Attending Today</a>
 					</h2>
@@ -90,7 +90,7 @@ truncate: true
 			{% endif %}
 
 			{% if collections.upcomingRSVPs.length %}
-				<div class=" [ box ] [ flow ] ">
+				<div class=" [ box  box--line-length ] [ flow ] ">
 					<h2 id="upcoming-rsvps">
 						<a href="/rsvps/">Upcoming Events</a>
 					</h2>
@@ -105,7 +105,7 @@ truncate: true
 			{% if collections.throwbackPosts.length %}
 				{%- set relative_time = true -%}
 				{%- set show_photos = true -%}
-				<div class=" [ box ] [ flow ] ">
+				<div class=" [ box  box--line-length ] [ flow ] ">
 					<h2 id="on-this-day">On This Day</h2>
 					<nav class=" [ deck ] " aria-labelledby="on-this-day">
 						{% for item in collections.throwbackPosts | limit(site.limits.feature) %}

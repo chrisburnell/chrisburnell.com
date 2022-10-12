@@ -89,5 +89,12 @@
     "lat": 50.825,
     "long": -0.137,
     "address": "103 North Rd, Brighton BN1 1YW"
+  },
+  {
+    "title": "Everyman Cinema Leeds",
+    "url": "https://www.everymancinema.com/leeds",
+    "lat": 53.796,
+    "long": -1.546,
+    "address": "Level 4, Trinity, Albion St, Leeds LS1 5AT"
   }
 ]

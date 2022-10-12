@@ -1,9 +1,9 @@
 // Load .env variables with dotenv
 require("dotenv").config()
 
-const site = require("#data/site")
-
 const EleventyFetch = require("@11ty/eleventy-fetch")
+
+const site = require("#data/site")
 
 const API_ORIGIN = process.env.PERSONAL_API_URL
 const TOKEN = process.env.PERSONAL_API_TOKEN

@@ -4,6 +4,8 @@
 ///
 /// --background-color (hsla(var(--color-thunder) / var(--opacity-delta)))
 ///     Defines the background color the box.
+/// --max-inline-size (100%)
+///     Defines how wide the box should be, as a maximum.
 /// --gutter (var(--size-gutter))
 ///     Defines the space around the box.
 /// --border-color (hsla(var(--color-raven) / var(--opacity-beta)))
@@ -12,10 +14,11 @@
 
 .box {
 	background-color: var(--background-color, h(thunder, delta));
-	max-inline-size: 100% !important;
+	max-inline-size: var(--max-inline-size, 100%) !important;
 	padding: var(--gutter, var(--size-gutter));
 	border-block-start: var(--size-border-thin) solid var(--border-color, h(raven));
 	border-radius: 1px 1px var(--size-border-default) var(--size-border-default);
+	margin-inline: auto;
 	box-shadow: var(--box-shadow, var(--box-shadow-low));
 	text-align: start;
 	font-family: var(--font-family-sans);
@@ -53,4 +56,9 @@
 .box--error {
 	--background-color: #{h(maple, delta)};
 	--border-color: #{h(maple, beta)};
+}
+
+.box.line-length,
+.box--line-length {
+	--max-inline-size: calc(var(--size-line-length) + var(--gutter, var(--size-gutter)) * 2);
 }

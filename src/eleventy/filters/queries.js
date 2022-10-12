@@ -58,6 +58,17 @@ module.exports = {
 		}
 		return value
 	},
+	getBaseUrl: (url) => {
+		let hashSplit = url.split("#")
+		let queryparamSplit = hashSplit[0].split("?")
+		return queryparamSplit[0]
+	},
+	fixUrl: (url) => {
+		return Object.entries(urlReplacements).reduce((accumulator, [key, value]) => {
+			const regex = new RegExp(key, "g")
+			return accumulator.replace(regex, value)
+		}, url)
+	},
 	getInternalTarget: (value, pages) => {
 		// Mastodon
 		if (value.includes("https://social.chrisburnell.com") || value.includes("https://mastodon.social/users/chrisburnell/statuses/")) {
@@ -206,17 +217,6 @@ module.exports = {
 		}
 		return value
 	},
-	fixUrl: (url) => {
-		return Object.entries(urlReplacements).reduce((accumulator, [key, value]) => {
-			const regex = new RegExp(key, "g")
-			return accumulator.replace(regex, value)
-		}, url)
-	},
-	getBaseUrl: (url) => {
-		let hashSplit = url.split("#")
-		let queryparamSplit = hashSplit[0].split("?")
-		return queryparamSplit[0]
-	},
 	getPerson: (people, value, intent) => {
 		if (!people) {
 			return value
@@ -322,5 +322,14 @@ module.exports = {
 			return value.twitter || value
 		}
 		return value.title || value
+	},
+	getDevToArticle: (articles, title) => {
+		for (let article of articles) {
+			if (article["title"] == title) {
+				return article
+			}
+		}
+
+		return id
 	},
 }
