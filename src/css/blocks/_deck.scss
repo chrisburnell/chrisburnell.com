@@ -41,7 +41,16 @@
 	}
 }
 
-.deck__context,
-.deck__meta {
+.deck__context {
+	font-family: var(--font-family-serif);
 	font-style: italic;
+}
+
+.deck__meta {
+	--flow-space: var(--size-small);
+
+	time {
+		font-style: italic;
+		white-space: nowrap;
+	}
 }
