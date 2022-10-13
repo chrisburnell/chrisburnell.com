@@ -108,6 +108,14 @@
 
 .center {
 	text-align: center;
+	align-items: center;
+	justify-content: center;
+
+	// just to be sure, and to override
+	& > * {
+		align-self: center;
+		justify-self: center;
+	}
 }
 
 .inline-center {

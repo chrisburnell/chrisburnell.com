@@ -13,6 +13,10 @@ table {
 	scrollbar-gutter: stable;
 	font-variant-numeric: tabular-nums;
 
+	&.full {
+		inline-size: 100%;
+	}
+
 	&.zebra,
 	&.zebra--horizontal {
 		tbody tr:nth-child(even) td {
