@@ -93,11 +93,6 @@
 	<meta name="theme-color" content="{{ designTokens.colors | keyValue("raven") }}">
 	<meta name="supported-color-schemes" content="light dark">
 
-	<style>{%- include '../../css/main.css' -%}</style>
-	{% if css -%}
-		<style>{%- include '../../css/' + css -%}</style>
-	{%- endif %}
-
 	{% if tags and tags.includes('httpstatus') %}
 		<meta name="robots" content="noindex,nofollow">
 	{% else %}
@@ -159,6 +154,11 @@
 			<meta name="monetization" content="{{ site.monetization }}">
 		{% endif %}
 	{% endif %}
+
+	<style>{%- include '../../css/main.css' -%}</style>
+	{% if css -%}
+		<style>{%- include '../../css/' + css -%}</style>
+	{%- endif %}
 
 	<script>document.documentElement.classList.remove("no-js");</script>
 </head>

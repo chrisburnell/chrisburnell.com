@@ -25,6 +25,7 @@
     "@chrisburnell/spark-line": "^1.2.1",
     "@zachleat/details-utils": "^2.0.2",
     "@zachleat/seven-minute-tabs": "^2.0.0",
+    "purgecss": "^5.0.0",
     "speedlify-score": "^2.0.2"
   },
   "devDependencies": {
@@ -63,14 +64,14 @@
   "scripts": {
     "clean": "rm -rf .cache && rm -rf _site",
     "tokens": "npx json-to-scss './src/data/designTokens/*.json' ./src/css/abstracts/_generated.scss; npx prettier --write src/css/abstracts/_generated.scss",
-    "css": "npx sass src/css:css --no-source-map --color",
+    "css": "npx sass src/css:css --style=compressed --no-source-map --color",
     "aftercss": "npx postcss css/*.css --replace --no-map",
     "js": "npx rollup -c",
     "prettier": "npx prettier --write src",
     "start": "concurrently \"npm run js -- --watch\" \"npm run css -- --watch\" \"npx @11ty/eleventy --incremental --serve\"",
     "serve": "npm run start",
-    "build": "npm run tokens; npm run js; npm run css -- --style=compressed; npm run aftercss; npm run prettier; npx browserslist@latest --update-db; cross-env ELEVENTY_PRODUCTION=true npx @11ty/eleventy",
-    "pregenerate": "npm run tokens; npm run css -- --style=compressed; npm run aftercss; npm run prettier; cross-env PREGENERATE_IMAGES=true npx @11ty/eleventy",
+    "build": "npm run tokens; npm run js; npm run css; npm run aftercss; npm run prettier; npx browserslist@latest --update-db; cross-env ELEVENTY_PRODUCTION=true npx @11ty/eleventy",
+    "pregenerate": "npm run tokens; npm run css; npm run aftercss; npm run prettier; cross-env PREGENERATE_IMAGES=true npx @11ty/eleventy",
     "debug": "cross-env DEBUG=* npx @11ty/eleventy"
   },
   "imports": {

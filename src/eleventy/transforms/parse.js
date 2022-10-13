@@ -1,11 +1,14 @@
 const cheerio = require("cheerio")
 const slugify = require("slugify")
+const { PurgeCSS } = require("purgecss")
+
+const env = require("#datajs/env")
 
 const minify = (input) => {
 	return input.replace(/\s{2,}/g, "").replace(/\'/g, '"')
 }
 
-module.exports = (value, outputPath) => {
+module.exports = async (value, outputPath) => {
 	if (outputPath && outputPath.endsWith(".html")) {
 		const $ = cheerio.load(value)
 
@@ -61,6 +64,16 @@ module.exports = (value, outputPath) => {
 		preformatted.each((i, element) => {
 			$(element).attr("tabindex", 0)
 		})
+
+		// Run PurgeCSS against the page and inject the styles
+		// if (env.ELEVENTY_PRODUCTION) {
+		// 	const purged = await new PurgeCSS().purge({
+		// 		content: [outputPath],
+		// 		css: ["./css/main.css"]
+		// 	})
+		// 	const cssContents = purged[0].css
+		// 	$(`<style>${cssContents}</style>`).append("head")
+		// }
 
 		return $.root().html()
 	}

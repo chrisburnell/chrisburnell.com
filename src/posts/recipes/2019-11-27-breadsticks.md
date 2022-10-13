@@ -40,6 +40,6 @@ photo:
 0. Add another ¾ cups flour and knead mixture for 5–7 minutes, until the dough is smooth and elastic. The dough should pull away from the sides of the bowl but still be slightly sticky to the touch.
 0. Transfer dough to a large, greased bowl and cover tightly with plastic wrap. Allow to rest in a warm place until double in size (about 1–1½ hours).
 0. Once risen, punch dough down and divide it into 6 equal parts. Roll each piece of dough into a 9 inch rope and transfer to a greased cookie sheet dusted with corn flour (optional). Cover with plastic wrap and let rise again for 1 hour.
-0. <a id="preheat-step" href="#preheat">Bake breadsticks at 220°C/425°F for 10–12 minutes.</a>
+0. <span id="preheat-step">Bake breadsticks at 220°C/425°F for 10–12 minutes.</span>
 0. While the breadsticks bake, mix the garlic butter topping ingredients together. Brush butter mixture over the tops of the breadsticks halfway through cooking and again once hot and cooked.
 0. Serve warm. Store in a airtight container or in the freezer.

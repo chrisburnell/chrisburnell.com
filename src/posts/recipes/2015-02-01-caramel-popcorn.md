@@ -26,4 +26,4 @@ authors: my mother
 0. Combine the margarine, brown sugar, packed, corn/golden syrup, and salt in a pan.
 0. Stir over medium heat *until boiling*, and boil while stirring for *5 minutes*.
 0. Remove from heat and stir in vanilla extract and baking soda.
-0. Toss over popcorn and <a id="preheat-step" href="#preheat">bake for 1 hour at 120°C/250°F</a>, tossing every *15 minutes*.
+0. Toss over popcorn and <span id="preheat-step">bake for 1 hour at 120°C/250°F</span>, tossing every *15 minutes*.

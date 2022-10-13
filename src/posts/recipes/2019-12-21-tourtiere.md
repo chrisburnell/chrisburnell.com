@@ -35,7 +35,7 @@ authors: my grandmother, Louise
 
 Combine all ingredients in a heavy pot. Add all ingredients except for the pie crusts and fill pot with water so that it just covers ingredients. Simmer for 1 hour, stirring often.
 
-<a id="preheat-step">Begin heating the oven to 175°C/350°F.</a> Let ingredients cool then cover the bottom of two pie plates with dough. Add the cooked ingredients and cover with other two rounds of dough. Make a few incisions into the top of each pie crust to allow steam to escape.
+<p><span id="preheat-step">Begin heating the oven to 175°C/350°F.</span> Let ingredients cool then cover the bottom of two pie plates with dough. Add the cooked ingredients and cover with other two rounds of dough. Make a few incisions into the top of each pie crust to allow steam to escape.</p>
 
 Bake until the tops of the pies are golden brown.
 
