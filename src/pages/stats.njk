@@ -39,7 +39,7 @@ description: Numbers, cause why not?
 	<dt>Most Insanely-Verbose Post</dt>
 	<dd><a href="{{ collection[wordiest_post_index].url }}">{{ collection[wordiest_post_index].data.title }}</a> with {{ wordiest_wordcount | numberStringFormat }} words</dd>
 	<dt>№ of Projects</dt>
-	<dd>{{ (projects.wec.length + projects.personal.length + collections.projects.length) | numberStringFormat }}</dd>
+	<dd>{{ (projects.web.length + projects.personal.length + collections.projects.length) | numberStringFormat }}</dd>
 	<dt>Commits <small>per</small> Day</dt>
 	<dd><a href="https://github.com/{{ author.github }}/{{ site.repository }}">{{ commits_per_day.toFixed(3) }}</a></dd>
 </dl>

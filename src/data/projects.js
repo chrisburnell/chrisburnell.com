@@ -83,8 +83,8 @@ module.exports = async () => {
 				title: "Version 2",
 				description: "The second version of my personal site that I used for over six years and laid the groundwork and mentality for the next version.",
 				description_markdown: true,
-				emoji: "🐓"
-			}
+				emoji: "🐓",
+			},
 		},
 		{
 			url: "https://v1.chrisburnell.com/",
@@ -94,9 +94,9 @@ module.exports = async () => {
 				title: "Version 1",
 				description: "The first-ever version of my personal site. Things have changed slightly since 2008.",
 				description_markdown: true,
-				emoji: "🐣"
-			}
-		}
+				emoji: "🐣",
+			},
+		},
 	]
 
 	const web = [
@@ -197,6 +197,6 @@ module.exports = async () => {
 	return {
 		personal: personal,
 		previousVersions: previousVersions,
-		web: web
+		web: web,
 	}
 }

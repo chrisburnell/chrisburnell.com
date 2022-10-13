@@ -11,14 +11,18 @@ const getGithubData = async (repository) => {
 module.exports = async () => {
 	const information = await getGithubData(`${author.github}/${site.repository}`)
 		.then((information) => information)
-		.catch(() => { return {} })
+		.catch(() => {
+			return {}
+		})
 
 	const contributors = await getGithubData(`${author.github}/${site.repository}/contributors`)
 		.then((contributors) => contributors)
-		.catch(() => { return {} })
+		.catch(() => {
+			return {}
+		})
 
 	return {
 		information: information,
-		contributors: contributors
+		contributors: contributors,
 	}
 }
