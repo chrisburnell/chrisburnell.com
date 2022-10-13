@@ -16,10 +16,6 @@ const numberOrdinalFormat = (n) => {
 }
 
 module.exports = {
-	rfcDate: (value, showTimezone = true) => {
-		let format = "yyyy-MM-dd'T'HH:mm:ss" + (showTimezone ? "ZZZ" : "")
-		return DateTime.fromJSDate(new Date(value)).toFormat(format)
-	},
 	friendlyDate: (value, format = "LLLL d, yyyy") => {
 		return DateTime.fromJSDate(new Date(value)).toFormat(format)
 	},
@@ -38,6 +34,13 @@ module.exports = {
 	},
 	httpDate: (value) => {
 		return DateTime.fromJSDate(new Date(value)).toHTTP()
+	},
+	rfcDate: (value, showTimezone = true) => {
+		let format = "yyyy-MM-dd'T'HH:mm:ss" + (showTimezone ? "ZZZ" : "")
+		return DateTime.fromJSDate(new Date(value)).toFormat(format)
+	},
+	w3cDate: (value) => {
+		return DateTime.fromJSDate(new Date(value)).toFormat("yyyy-MM-dd'T'HH:mm:ssZZ")
 	},
 	epoch: (value) => {
 		return new Date(value).getTime()

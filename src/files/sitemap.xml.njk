@@ -5,7 +5,7 @@
 		{% if item.url and published and not item.data.sitemap.exclude %}
 			<url>
 				<loc>{{ site.url + item.url }}</loc>
-				<lastmod>{{ item.data.update | default(item.date) | default(global.now) | rfcDate }}</lastmod>
+				<lastmod>{{ item.data.update | default(item.date) | default(global.now) | w3cDate }}</lastmod>
 				<changefreq>{{ item.data.sitemap.changefreq | default(site.sitemap.changefreq) }}</changefreq>
 				<priority>{{ item.data.sitemap.priority | default(site.sitemap.priority) }}</priority>
 			</url>
