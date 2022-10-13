@@ -58,23 +58,14 @@ a {
 }
 
 // Anchor Target Animation
-%heading,
-sup,
-li {
-	&[id] {
-		&:target {
-			animation: var(--animation-duration) var(--animation-function) anchor-target;
+[id]:target {
+	animation: var(--animation-duration) var(--animation-function) anchor-target reverse;
 
-			@at-root {
-				@keyframes anchor-target {
-					0%,
-					50% {
-						background-color: h(aspen);
-					}
-					100% {
-						background-color: transparent;
-					}
-				}
+	@at-root {
+		@keyframes anchor-target {
+			50%,
+			100% {
+				background-color: h(aspen);
 			}
 		}
 	}

@@ -177,7 +177,7 @@
 	{% elif item.data.category == 'talk' %}
 		<p class=" [ p-summary ] ">{{ item.templateContent | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
 	{% endif %}
-	{% if item.data.date or item.date or item.data.updated or item.data.webmentions or item.data.stargazers %}
+	{% if item.data.date or item.date or item.data.updated or item.data.webmentions or item.data.externalLikes or item.data.stargazers %}
 		<ul class=" [ cluster ] [ deck__meta ] ">
 			{% if item.data.updated %}
 				<li>
@@ -189,8 +189,9 @@
 					<small>published</small> <a class=" [ u-url ] " href="{{ item.url }}"{% if item_title or item_of_title %} tabindex="-1"{% endif %}><time class=" [ dt-published ] " datetime="{{ item.data.date | default(item.date) | rfcDate }}">{{ item.data.date | default(item.date) | friendlyDateLong | safe }}</time></a>
 				</li>
 			{% endif %}
-			{% if (item.data.show_responses and item.data.webmentions.length) or item.data.stargazers %}
-				{%- set responsesLength = item.data.webmentions | getResponsesLength(item.data.stargazers) -%}
+			{% if (item.data.show_responses and item.data.webmentions.length) or item.data.externalLikes or item.data.stargazers %}
+				{%- set nonWebmentionsLength = item.data.externalLikes | default(0) + item.data.stargazers | default(0) -%}
+				{%- set responsesLength = item.data.webmentions | getResponsesLength(nonWebmentionsLength) -%}
 				<li>
 					<a href="{{ item.url }}#webmentions" title="Jump to Webmentions for this {{ item.data.categoryProper }}">{{ responsesLength }} {% if item.data.webmentions %}response{% else %}stargazer{% endif %}{{ 's' if responsesLength > 1 }} <span class="hidden">to {{ item_title }}</span></a>
 				</li>

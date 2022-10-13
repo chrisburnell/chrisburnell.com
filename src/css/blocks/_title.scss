@@ -15,10 +15,6 @@
 	contain: paint; // helps painting with .perch inside
 	overflow: hidden;
 	position: relative;
-
-	.breadcrumbs ~ & {
-		padding-block-start: var(--size-medium);
-	}
 }
 
 .title--positive span,

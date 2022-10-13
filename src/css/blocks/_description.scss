@@ -18,6 +18,12 @@
 		margin-block-start: var(--size-gigantic);
 	}
 
+	.breadcrumbs ~ & {
+		@include media("below:medium") {
+			margin-block-start: var(--size-large);
+		}
+	}
+
 	p {
 		max-inline-size: var(--size-line-length);
 	}
@@ -35,7 +41,6 @@
 	font-size: var(--font-size-default);
 
 	@include media("below:medium") {
-		order: -1;
 		font-size: var(--font-size-small);
 	}
 }

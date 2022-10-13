@@ -9,7 +9,9 @@
 	grid-template-rows:
 		[breadcrumbs-start]
 		auto
-		[breadcrumbs-end title-start]
+		[breadcrumbs-end context-start]
+		auto
+		[context-end title-start]
 		auto
 		[title-end description-start]
 		auto
@@ -43,9 +45,9 @@
 			auto
 			[breadcrumbs-end title-start]
 			auto
-			[title-end description-start]
+			[title-end context-start description-start]
 			auto
-			[description-end content-start sparkline-start]
+			[context-end description-end content-start sparkline-start]
 			auto
 			[sparkline-end meta-start]
 			1fr
@@ -83,6 +85,9 @@
 .description {
 	grid-column: marginalia / content;
 	grid-row: description;
+}
+.description--published {
+	grid-row: context;
 }
 
 .content {

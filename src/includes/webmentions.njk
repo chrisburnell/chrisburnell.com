@@ -20,7 +20,8 @@
 			{%- set reposts = webmentions | arrayKeyEquals('activity.type', 'repost') -%}
 			{%- set reactions = bookmarks.concat(likes).concat(links).concat(reposts) -%}
 			{%- set replies = webmentions | arrayKeyEquals('activity.type', ['link', 'reply']) | arrayKeyEquals('data.content', 'notempty') -%}
-			{%- set responsesLength = webmentions | getResponsesLength(externalLikes + stargazers) -%}
+			{%- set nonWebmentionsLength = externalLikes | default(0) + stargazers | default(0) -%}
+			{%- set responsesLength = webmentions | getResponsesLength(nonWebmentionsLength) -%}
 			<div class=" [ webmentions__responses ] [ flow ] ">
 				<h2 id="responses">{{ responsesLength }} Response{{ 's' if responsesLength > 1 }}</h2>
 				{% if reactions.length or stargazers %}
@@ -31,8 +32,9 @@
 						{% if bookmarks.length %}
 							<li><span class=" [ emoji ] ">🔖</span> {{ bookmarks.length }} Bookmark{{ 's' if bookmarks.length > 1 }}</li>
 						{% endif %}
-						{% if likes.length %}
-							<li><span class=" [ emoji ] ">❤️</span> {{ likes.length }} Like{{ 's' if likes.length > 1 }}</li>
+						{%- set likesLength = likes.length + externalLikes | default(0) -%}
+						{% if likesLength %}
+							<li><span class=" [ emoji ] ">❤️</span> {{ likesLength }} Like{{ 's' if likesLength > 1 }}</li>
 						{% endif %}
 						{% if links.length %}
 							<li><span class=" [ emoji ] ">🔗</span> {{ links.length }} Link{{ 's' if links.length > 1 }}</li>

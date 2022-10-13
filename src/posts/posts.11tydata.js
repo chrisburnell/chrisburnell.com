@@ -6,14 +6,32 @@ const configWebmentions = require("../data/config/webmentions.js")
 
 const { getWebmentions } = require("@chrisburnell/eleventy-cache-webmentions")()
 
-const getLatestArticles = async () => {
-	return await EleventyFetch(`https://dev.to/api/articles?username=${author["dev_to"]}`, {
-		duration: site.cacheDurations.long,
-		type: "json",
-		fetchOptions: {
-			method: "GET",
-		},
-	})
+const getExternalLikes = async (syndicationLinks) => {
+	if (syndicationLinks) {
+		const matchingLinks = syndicationLinks.filter((link) => {
+			return link.includes("https://dev.to")
+		})
+
+		if (matchingLinks.length) {
+			const articles = await EleventyFetch(`https://dev.to/api/articles?username=${author["dev_to"]}`, {
+				duration: site.cacheDurations.long,
+				type: "json",
+				fetchOptions: {
+					method: "GET",
+				},
+			})
+
+			const matchingArticles = articles.filter((article) => {
+				return matchingLinks[0] === article["url"]
+			})
+
+			if (matchingArticles.length) {
+				return matchingArticles[0]["positive_reactions_count"] || 0
+			}
+		}
+	}
+
+	return 0
 }
 
 module.exports = {
@@ -26,21 +44,12 @@ module.exports = {
 		webmentions: (data) => {
 			return getWebmentions(configWebmentions, configWebmentions.domain + data.page.url)
 		},
-		externalLikes: (data) => {
-			return data.page.data?.syndicate_to.reduce((numberOfLikes, link) => {
-				if (link.includes("https://dev.to")) {
-					const latestArticles = getLatestArticles()
+		externalLikes: async (data) => {
+			const externalLikes = await getExternalLikes(data?.syndicate_to)
+				.then((externalLikes) => externalLikes)
+				.catch(() => 0)
 
-					console.log(latestArticles)
-
-					return latestArticles.filter((article) => {
-						return link.includes(article["url"])
-					}).reduce((numberOfLikes, article) => {
-						return numberOfLikes + article["positive_reactions_count"]
-					}, 0)
-				}
-				return numberOfLikes
-			}, 0) || 0
-		}
+			return externalLikes
+		},
 	},
 }

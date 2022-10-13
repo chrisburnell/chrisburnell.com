@@ -7,7 +7,7 @@
 	@extend %interactive !optional;
 }
 
-:is(a, .anchor) {
+:is(a[href], .anchor) {
 	@extend %anchor !optional;
 }
 
