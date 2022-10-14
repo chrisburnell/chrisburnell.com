@@ -69,7 +69,7 @@ module.exports = {
 		return 0
 	},
 	rangeMap: (number, inMin, inMax, outMin, outMax, decimals) => {
-		return ((number - inMin) * (outMax - outMin) / (inMax - inMin) + outMin).toFixed(decimals || 0);
+		return (((number - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin).toFixed(decimals || 0)
 	},
 	getRGB: (hex) => {
 		const COLOR = hex.replace("#", "").slice(0, 6)

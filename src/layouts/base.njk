@@ -93,6 +93,11 @@
 	<meta name="theme-color" content="{{ designTokens.colors | keyValue("raven") }}">
 	<meta name="supported-color-schemes" content="light dark">
 
+	<style>{%- include '../../css/main.css' -%}</style>
+	{% if css -%}
+		<style>{%- include '../../css/' + css -%}</style>
+	{%- endif %}
+
 	{% if tags and tags.includes('httpstatus') %}
 		<meta name="robots" content="noindex,nofollow">
 	{% else %}
@@ -155,11 +160,6 @@
 		{% endif %}
 	{% endif %}
 
-	<style>{%- include '../../css/main.css' -%}</style>
-	{% if css -%}
-		<style>{%- include '../../css/' + css -%}</style>
-	{%- endif %}
-
 	<script>document.documentElement.classList.remove("no-js");</script>
 </head>
 <body>
@@ -218,7 +218,7 @@
 								<a{% if not item.primary %} tabindex="-1"{% endif %}{% if item.mf_property %} class=" [ p-{{ item.mf_property }} ] "{% endif %} href="{{ url }}" rel="me">{{ item.title }}</a>
 							{%- else -%}
 								{%- set value = author[item.key] | default(item.value) -%}
-								<data{% if item.mf_property %} class=" [ p-{{ item.mf_property }} ] "{% endif %} value="{{ value }}" rel="me">{{ item.title }}</data>
+								<data{% if item.mf_property %} class=" [ p-{{ item.mf_property }} ] "{% endif %} value="{{ value }}">{{ item.title }}</data>
 							{%- endif -%}
 						</li>
 					{%- endif -%}

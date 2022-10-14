@@ -9,19 +9,19 @@
 				{% if rsvp.value == 'yes' %}
 					{% if rsvp.date | epoch > global.now %}
 						{# Future #}
-						<emoji-span>➡️</emoji-span>
+						<emoji-span>{{ emojis.future }}</emoji-span>
 						<small>going to</small>
 					{% elif rsvp.date | epoch <= global.now and rsvp.finish | epoch > global.now %}
 						{# Current #}
-						<emoji-span>✅</emoji-span>
+						<emoji-span>{{ emojis.going }}</emoji-span>
 						<small>currently attending</small>
 					{% else %}
 						{# Past #}
-						<emoji-span>✅</emoji-span>
+						<emoji-span>{{ emojis.going }}</emoji-span>
 						<small>went to</small>
 					{% endif %}
 				{% elif rsvp.value == 'maybe' %}
-					<emoji-span>🤔</emoji-span>
+					<emoji-span>{{ emojis.maybe }}</emoji-span>
 					{% if rsvp.date | epoch > global.now %}
 						{# Future #}
 						<small>might go to</small>
@@ -32,15 +32,15 @@
 				{% elif rsvp.value == 'interested' %}
 					{% if rsvp.date | epoch > global.now %}
 						{# Future #}
-						<emoji-span>🤔</emoji-span>
+						<emoji-span>{{ emojis.maybe }}</emoji-span>
 						<small>interested in going to</small>
 					{% else %}
 						{# Past #}
-						<emoji-span>😔</emoji-span>
+						<emoji-span>{{ emojis.not_going }}</emoji-span>
 						<small>was interested in going to</small>
 					{% endif %}
 				{% else %}
-					<emoji-span>😔</emoji-span>
+					<emoji-span>{{ emojis.not_going }}</emoji-span>
 					{% if rsvp.date | epoch > global.now %}
 						{# Future #}
 						<small>unable to go to</small>
@@ -50,7 +50,7 @@
 					{% endif %}
 				{% endif %}
 			{% else %}
-				<emoji-span>↪️</emoji-span>
+				<emoji-span>↪{{ emojis.reply }}</emoji-span>
 				<small>in reply to</small>
 			{% endif %}
 			<a class=" [ h-cite  u-in-reply-to ] " href="{{ in_reply_to_url }}">
@@ -76,7 +76,7 @@
 	{% endif %}
 	{% if rsvp %}
 		<li class=" [ rsvp ] ">
-			<emoji-span>🗓️</emoji-span>
+			<emoji-span>{{ emojis.calendar }}</emoji-span>
 			{% if rsvp.finish | epoch > global.now %}
 				<small>taking place</small>
 			{% else %}
@@ -89,7 +89,7 @@
 	{% endif %}
 	{% if show_reading_length %}
 		<li class=" [ reading-length ] ">
-			<emoji-span>📚</emoji-span>
+			<emoji-span>{{ emojis.reading_length }}</emoji-span>
 			<strong>~{{ content | cleantags | striptags | safe | wordcount | toNearest(25) | numberStringFormat }}</strong>
 			<small>words</small>
 		</li>
@@ -97,7 +97,7 @@
 	{%- set tags_filtered = tags | categoryFilter | tagFilter -%}
 	{% if tags_filtered.length %}
 		<li class=" [ tags ] ">
-			<emoji-span>🏷️</emoji-span>
+			<emoji-span>{{ emojis.tag }}</emoji-span>
 			<small>tagged</small>
 			{% if tags_filtered.length > 1 %}<ul class=" [ cluster ] [ meta__list ] ">{% endif %}
 				{% for tag in tags_filtered -%}
@@ -108,7 +108,7 @@
 	{% endif %}
 	{% if style %}
 		<li class=" [ style ] ">
-			<emoji-span>🎨</emoji-span>
+			<emoji-span>{{ emojis.style }}</emoji-span>
 			<small>style</small>
 			<strong>{{ style | safe }}</strong>
 		</li>
@@ -117,22 +117,22 @@
 		{%- set authors = authors | toArray -%}
 		<li class=" [ authors ] ">
 			{% if category == 'beer' %}
-				<emoji-span>🍺</emoji-span>
+				<emoji-span>{{ emojis.beer }}</emoji-span>
 				<small>brewed by</small>
 			{% elif category == 'book' %}
-				<emoji-span>✍️</emoji-span>
+				<emoji-span>{{ emojis.book }}</emoji-span>
 				<small>written by</small>
 			{% elif category == 'game' %}
-				<emoji-span>🕹️</emoji-span>
+				<emoji-span>{{ emojis.game }}</emoji-span>
 				<small>produced by</small>
 			{% elif category == 'music' %}
-				<emoji-span>🎼</emoji-span>
+				<emoji-span>{{ emojis.music }}</emoji-span>
 				<small>created by</small>
 			{% elif category == 'recipe' %}
-				<emoji-span>📝</emoji-span>
+				<emoji-span>{{ emojis.recipe }}</emoji-span>
 				<small>sourced from</small>
 			{% else %}
-				<emoji-span>✍️</emoji-span>
+				<emoji-span>{{ emojis.author }}</emoji-span>
 				<small>authored by</small>
 			{% endif %}
 			{% if authors.length > 1 %}<ul class=" [ cluster ] [ meta__list ] ">{% endif %}
@@ -148,14 +148,14 @@
 	{% endif %}
 	{% if release %}
 		<li class=" [ date-released ] ">
-			<emoji-span>🗓️</emoji-span>
+			<emoji-span>{{ emojis.calendar }}</emoji-span>
 			<small>released</small>
 			<time class=" [ dt-released ] " datetime="{{ release | rfcDate }}">{{ release | friendlyDate }}</time>
 		</li>
 	{% endif %}
 	{% if rating %}
 		<li class=" [ review-rating ] ">
-			<emoji-span>✨</emoji-span>
+			<emoji-span>{{ emojis.rating }}</emoji-span>
 			<small>my rating</small>
 			{% if rating == 'Parti Pris' %}
 				<data class=" [ p-rating ] " value="Parti Pris">Parti Pris</data>
@@ -168,7 +168,7 @@
 	{% endif %}
 	{% if checkin %}
 		<li class=" [ checkin ] ">
-			<emoji-span>📍</emoji-span>
+			<emoji-span>{{ emojis.checkin }}</emoji-span>
 			<small>check-in</small>
 			{% set checkin = checkin.title | default(checkin) | getPlace('object') %}
 			{% if checkin.url %}
@@ -182,7 +182,7 @@
 	{% endif %}
 	{% if badges %}
 		<li class=" [ badges ] ">
-			<emoji-span>🏆</emoji-span>
+			<emoji-span>{{ emojis.badge }}</emoji-span>
 			<small><span class=" [ hidden ] ">earning</span> badges</small>
 			{% if badges.length > 1 %}<ul class=" [ cluster ] [ meta__list ] ">{% endif %}
 			{% for badge in badges -%}
@@ -199,7 +199,7 @@
 	{% endif %}
 	{% if syndicate_to %}
 		<li class=" [ syndicate-to ] ">
-			<emoji-span>⤴️</emoji-span>
+			<emoji-span>{{ emojis.syndication }}</emoji-span>
 			<small>also on</small>
 			<ul class=" [ cluster ] [ meta__list ] ">
 			{% for syndication in syndicate_to %}
@@ -221,7 +221,7 @@
 	{% endif %}
 	{% if posting_method %}
 		<li class=" [ posting-method ] ">
-			<emoji-span>🖋️</emoji-span>
+			<emoji-span>{{ emojis.posting_method }}</emoji-span>
 			<small>posted with</small>
 			{% if posting_method | getPostingMethod('url') %}
 				<a href="{{ posting_method }}">{{ posting_method | getPostingMethod }}</a>
@@ -232,7 +232,7 @@
 	{% endif %}
 	<li class=" [ shorturl ] ">
 		{%- set shorturl_id %}{{ page.date | newBase60(prefix, collections[category]) }}{% endset -%}
-		<emoji-span>🔗</emoji-span>
+		<emoji-span>{{ emojis.link }}</emoji-span>
 		<a href="https://repc.co/{{ shorturl_id }}">repc.co/{{ shorturl_id }}</a>
 	</li>
 	<li hidden>
@@ -252,12 +252,5 @@
 
 <div class=" [ box ] [ flow ] ">
 	{% include 'meta/sub/categories.njk' %}
-</div>
-
-<div class=" [ box ] [ flow ] ">
 	{% include 'meta/sub/tags.njk' %}
-</div>
-
-<div class=" [ box ] [ flow ] ">
-	{% include 'meta/sub/collections.njk' %}
 </div>

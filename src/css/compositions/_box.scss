@@ -27,7 +27,7 @@
 	& > * + * {
 		--flow-space: var(--size-medium);
 	}
-	.meta &:not(ul) > * + * {
+	.meta &:not(ul) > %heading + * {
 		--flow-space: 0;
 	}
 

@@ -42,19 +42,19 @@
 				{% if item.data.rsvp.value == 'yes' %}
 					{% if item.data.rsvp.date | epoch > global.now %}
 						{# Future #}
-						<emoji-span>➡️</emoji-span>
+						<emoji-span>{{ emojis.future }}</emoji-span>
 						<small>going to</small>
 					{% elif item.data.rsvp.date | epoch <= global.now and item.data.rsvp.finish | epoch > global.now %}
 						{# Current #}
-						<emoji-span>✅</emoji-span>
+						<emoji-span>{{ emojis.going }}</emoji-span>
 						<small>currently attending</small>
 					{% else %}
 						{# Past #}
-						<emoji-span>✅</emoji-span>
+						<emoji-span>{{ emojis.going }}</emoji-span>
 						<small>went to</small>
 					{% endif %}
 				{% elif item.data.rsvp.value == 'maybe' %}
-					<emoji-span>🤔</emoji-span>
+					<emoji-span>{{ emojis.maybe }}</emoji-span>
 					{% if item.data.rsvp.date | epoch > global.now %}
 						{# Future #}
 						<small>might go to</small>
@@ -65,15 +65,15 @@
 				{% elif item.data.rsvp.value == 'interested' %}
 					{% if item.data.rsvp.date | epoch > global.now %}
 						{# Future #}
-						<emoji-span>🤔</emoji-span>
+						<emoji-span>{{ emojis.maybe }}</emoji-span>
 						<small>interested in going to</small>
 					{% else %}
 						{# Past #}
-						<emoji-span>😔</emoji-span>
+						<emoji-span>{{ emojis.not_going }}</emoji-span>
 						<small>was interested in going to</small>
 					{% endif %}
 				{% else %}
-					<emoji-span>😔</emoji-span>
+					<emoji-span>{{ emojis.not_going }}</emoji-span>
 					{% if item.data.rsvp.date | epoch > global.now %}
 						{# Future #}
 						<small>unable to go to</small>

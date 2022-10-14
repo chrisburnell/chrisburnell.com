@@ -1,12 +1,8 @@
 {% if env.ELEVENTY_PRODUCTION and ads != false %}
 	{% if site.carbon %}
 		<div class=" [ ads ] [ flow ] ">
-			<!-- Carbon Ads  -->
-			<is-land on:visible>
-				<template data-island="once">
-					<script async src="https://cdn.carbonads.com/carbon.js?serve={{ site.carbon }}&placement={{ site.url | getHost | replace(".", "") }}" id="_carbonads_js"></script>
-				</template>
-			</is-land>
+			<!-- Carbon Ads -->
+			<script async src="https://cdn.carbonads.com/carbon.js?serve={{ site.carbon }}&placement={{ site.url | getHost | replace(".", "") }}" id="_carbonads_js"></script>
 		</div>
 	{% endif %}
 {% endif %}
