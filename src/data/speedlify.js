@@ -6,7 +6,7 @@ const site = require("#data/site")
 module.exports = async () => {
 	let url = `${author.urls.speedlify}/api/urls.json`
 	let json = await EleventyFetch(url, {
-		duration: site.cacheDurations.long,
+		duration: site.cacheDurations.weekly,
 		type: "json",
 	})
 	return json

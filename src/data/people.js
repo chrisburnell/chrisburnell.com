@@ -11,7 +11,7 @@ const TYPES = ["breweries", "gamePublishers", "humans", "meetups", "musicArtists
 
 const getPeopleByType = async (type) => {
 	return await EleventyFetch(`${API_ORIGIN}/${type}.json?token=${TOKEN}`, {
-		duration: site.cacheDurations.short,
+		duration: site.cacheDurations.daily,
 		type: "json",
 		fetchOptions: {
 			method: "GET",

@@ -12,7 +12,7 @@ module.exports = Object.assign(defaults, {
 	key: "links",
 	// feed: `https://jam.chrisburnell.com/webmention/chrisburnell.com/${process.env.GO_JAMMING_TOKEN}`,
 	// key: "json",
-	duration: site.cacheDurations.short,
+	duration: site.cacheDurations.hourly,
 	allowedHTML: {
 		allowedTags: ["b", "i", "em", "strong", "a", "code", "s", "ins", "del", "mark", "samp", "var"],
 		allowedAttributes: {

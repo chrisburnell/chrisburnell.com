@@ -19,7 +19,7 @@ module.exports = (eleventyConfig) => {
 			formats: formats,
 			urlPath: "/images/built/",
 			outputDir: "./_site/images/built/",
-			duration: site.cacheDurations.ages,
+			duration: site.cacheDurations.monthly,
 			sharpOptions: {
 				animated: true,
 				quality: 100,

@@ -19,9 +19,10 @@
     "minWebmentions": 2
   },
   "cacheDurations": {
-    "short": "11h",
-    "long": "1w",
-    "ages": "4w"
+    "hourly": "1h",
+    "daily": "23h",
+    "weekly": "1w",
+    "monthly": "4w"
   },
   "cacheDuration": "11h",
   "upcomingDaysLead": 7,

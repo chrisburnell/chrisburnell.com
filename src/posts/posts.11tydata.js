@@ -14,7 +14,7 @@ const getExternalLikes = async (syndicationLinks) => {
 
 		if (matchingLinks.length) {
 			const articles = await EleventyFetch(`https://dev.to/api/articles?username=${author["dev_to"]}`, {
-				duration: site.cacheDurations.long,
+				duration: site.cacheDurations.weekly,
 				type: "json",
 				fetchOptions: {
 					method: "GET",
