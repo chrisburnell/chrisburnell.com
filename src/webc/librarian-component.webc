@@ -1,4 +1,4 @@
-<is-land on:visible>
+<is-land class="librarian-islan" on:visible>
 	<div webc:root webc:keep class=" [ box  librarian ] [ flow ] ">
 		<div webc:keep>
 			<slot></slot>
