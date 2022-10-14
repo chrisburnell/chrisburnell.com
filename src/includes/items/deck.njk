@@ -110,6 +110,8 @@
 				<time class=" [ dt-end ] " datetime="{{ item.data.rsvp.finish | rfcDate }}">{{ item.data.rsvp.finish | friendlyTime(true) }}</time>
 			{% elif item.data.rsvp.date | epoch > global.now %}
 				{# Future #}
+				<small>in</small>
+				{{ global.now | daysUntil(item.data.rsvp.date) }} days
 				<small>on</small>
 				{% if item.data.rsvp.date | friendlyDate != item.data.rsvp.finish | friendlyDate %}
 					<time class=" [ dt-start ] " datetime="{{ item.data.rsvp.date | rfcDate }}">{{ item.data.rsvp.date | friendlyDate }}</time>

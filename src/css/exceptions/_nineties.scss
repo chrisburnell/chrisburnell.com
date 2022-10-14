@@ -4,7 +4,7 @@
 ////
 
 @mixin color-scheme-nineties() {
-	--font-family-sans: var(--font-family-silly);
+	--font-family-sans: var(--font-family-nineties);
 	--font-family-serif: var(--font-family-sophisticated);
 
 	html {
@@ -19,6 +19,10 @@
 	%heading,
 	.navigation__list %anchor {
 		font-weight: var(--font-weight-bold) !important;
+	}
+
+	.title {
+		font-family: var(--font-family-sophisticated);
 	}
 
 	.webmentions__response__avatar img,

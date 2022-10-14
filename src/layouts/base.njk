@@ -197,38 +197,37 @@
 						<li><a href="{{ link.url }}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title }}</a></li>
 					{%- endif -%}
 				{%- endfor -%}
+			</ol>
+			<ol class=" [ cluster ] [ footer__navigation ] ">
 				<li class=" [ requires-js ] "><button id="color-scheme-toggle" class=" [ anchor ] [ js-color-scheme-toggle ] "><span class=" [ js-color-scheme-status ] ">Enable dark mode</span></button></li>
 				<li class=" [ requires-js ] "><button id="sounds-toggle" class=" [ anchor ] [ js-sounds-toggle ] "><span class=" [ js-sounds-status ] ">Enable sounds</span></button></li>
+				<li><a href="https://github.com/{{ author.github }}/{{ site.repository }}/tree/main/{{ page.inputPath }}" aria-label="Edit this page">Edit this page</a></li>
+				<li class=" [ requires-js ] "><button type="share" class="anchor">Share</button></li>
 			</ol>
 			<ol class=" [ cluster ] [ footer__navigation ] ">
 				<li>
 					<a id="copyright" rel="license" href="/license/">© {{ site.established }}–{{ global.now | friendlyDate("yyyy") }} <span class=" [ canada ] ">{{ author.name }}</span></a>
 				</li>
 				{%- for item in socials -%}
-					{%- if not item.hidden -%}
-						<li {% if not item.primary %} hidden{% endif %}>
-							{%- if item.url or item.split -%}
-								{%- set url = item.url -%}
-								{%- if item.key -%}
-									{%- set url = url + author[item.key] -%}
-								{%- endif -%}
-								{%- if item.split -%}
-									{%- set url -%}https://{{ author[item.key].split(item.split)[1] + '/' + item.split + author[item.key].split(item.split)[0] }}{%- endset -%}
-								{%- endif -%}
-								<a{% if not item.primary %} tabindex="-1"{% endif %}{% if item.mf_property %} class=" [ p-{{ item.mf_property }} ] "{% endif %} href="{{ url }}" rel="me">{{ item.title }}</a>
-							{%- else -%}
-								{%- set value = author[item.key] | default(item.value) -%}
-								<data{% if item.mf_property %} class=" [ p-{{ item.mf_property }} ] "{% endif %} value="{{ value }}">{{ item.title }}</data>
+					{%- if not item.hidden and item.primary -%}
+						<li>
+							{%- set url = item.url -%}
+							{%- if item.key -%}
+								{%- set url = url + author[item.key] -%}
 							{%- endif -%}
+							{%- if item.split -%}
+								{%- set url -%}https://{{ author[item.key].split(item.split)[1] + '/' + item.split + author[item.key].split(item.split)[0] }}{%- endset -%}
+							{%- endif -%}
+							<a{% if not item.primary %} tabindex="-1"{% endif %}{% if item.mf_property %} class=" [ p-{{ item.mf_property }} ] "{% endif %} href="{{ url }}" rel="me">{{ item.title }}</a>
 						</li>
 					{%- endif -%}
 				{%- endfor -%}
-				<li>
-					<a href="https://xn--sr8hvo.ws/💘🇹🇫/previous" class=" [ small ] " title="Previous website in the IndieWeb Web Ring">← Previous</a>
-					<a href="https://xn--sr8hvo.ws/">IndieWeb Webring</a>
-					<a href="https://xn--sr8hvo.ws/💘🇹🇫/next" class=" [ small ] " title="Next website in the IndieWeb Web Ring">Next →</a>
-				</li>
 			</ol>
+			{%- for item in socials -%}
+				{%- if not item.hidden and not item.primary -%}
+					<data{% if item.mf_property %} class=" [ p-{{ item.mf_property }} ] "{% endif %} value="{{ author[item.key] | default(item.value) | default(item.url) }}" hidden>{{ item.title }}</data>
+				{%- endif -%}
+			{%- endfor -%}
 			{% if speedlify[canonical] %}
 				<p>
 					<a class="speedlify-anchor" href="{{ author.urls.speedlify }}/{{ site.url | getHost }}/#site-{{ speedlify[canonical].hash }}" title="Link to this page's Speedlify Score">
