@@ -40,13 +40,7 @@ const markdownParser = require("markdown-it")
 const markdownAbbr = require("markdown-it-abbr")
 
 module.exports = (eleventyConfig) => {
-	eleventyConfig.setQuietMode(true)
-
-	if (process.env.ELEVENTY_PRODUCTION) {
-		eleventyConfig.addPlugin(directoryOutputPlugin)
-	}
-
-	// Eleventy Plugins
+	// Plugins
 	eleventyConfig.addPlugin(caniusePlugin)
 	eleventyConfig.addPlugin(pregenImagePlugin)
 	eleventyConfig.addPlugin(imagePlugin)
@@ -62,6 +56,9 @@ module.exports = (eleventyConfig) => {
 			pkg
 		}
 	})
+	if (process.env.ELEVENTY_PRODUCTION) {
+		eleventyConfig.addPlugin(directoryOutputPlugin)
+	}
 
 	// Let’s let webbsy... WebC!
 	eleventyConfig.ignores.add("./src/webc/**/*.webc")
@@ -138,12 +135,12 @@ module.exports = (eleventyConfig) => {
 			.disable("code")
 	)
 
+	// Build Settings
 	eleventyConfig.setDataDeepMerge(true)
-
+	eleventyConfig.setQuietMode(true)
 	eleventyConfig.on("beforeBuild", () => {
 		console.log(`[${queryFilters.getHost(site.url)}] Building…`)
 	})
-
 	return {
 		dataTemplateEngine: "njk",
 		htmlTemplateEngine: "njk",

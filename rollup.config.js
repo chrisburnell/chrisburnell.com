@@ -2,9 +2,6 @@ import commonjs from "@rollup/plugin-commonjs"
 import { nodeResolve } from "@rollup/plugin-node-resolve"
 import { terser } from "rollup-plugin-terser"
 
-// Load .env variables with dotenv
-require("dotenv").config()
-
 export default [
 	{
 		input: "src/js/main.js",

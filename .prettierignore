@@ -1,4 +1,4 @@
-# Ignore generated files
+# Ignore generated/vendor files
 **/generated
 **/vendors
 

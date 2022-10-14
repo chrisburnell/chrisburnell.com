@@ -1,5 +1,3 @@
-// Load .env variables with dotenv
-require("dotenv").config()
 const TwitterAvatarUrl = require("twitter-avatar-url")
 const Image = require("@11ty/eleventy-img")
 
