@@ -18,29 +18,30 @@
 			{%- set likes = webmentions | arrayKeyEquals('activity.type', 'like') -%}
 			{%- set links = webmentions | arrayKeyEquals('activity.type', 'link') | arrayKeyEquals('data.content', null) -%}
 			{%- set reposts = webmentions | arrayKeyEquals('activity.type', 'repost') -%}
-			{%- set reactions = bookmarks.concat(likes).concat(links).concat(reposts) -%}
 			{%- set replies = webmentions | arrayKeyEquals('activity.type', ['link', 'reply']) | arrayKeyEquals('data.content', 'notempty') -%}
-			{%- set nonWebmentionsLength = externalLikes | default(0) + stargazers | default(0) -%}
-			{%- set responsesLength = webmentions | getResponsesLength(nonWebmentionsLength) -%}
+			{%- set reactions = bookmarks.concat(likes).concat(links).concat(reposts) -%}
+			{%- set externalLikes = externalLikes | default(0) -%}
+			{%- set stargazers = stargazers | default(0) -%}
+			{%- set responsesLength = bookmarks.length + likes.length + links.length + reposts.length + replies.length | getResponsesLength(externalLikes + stargazers) -%}
 			<div class=" [ webmentions__responses ] [ flow ] ">
 				<h2 id="responses">{{ responsesLength }} Response{{ 's' if responsesLength > 1 }}</h2>
 				{% if reactions.length or stargazers %}
 					<ol id="reactions" class=" [ cluster ] [ reactions ] [ strong ] ">
 						{% if stargazers %}
-							<li><span class=" [ emoji ] ">⭐️</span> {{ stargazers }} Stargazer{{ 's' if stargazers > 1 }}</li>
+						<li><emoji-span>{{ emojis.star }}</emoji-span> {{ stargazers }} Stargazer{{ 's' if stargazers > 1 }}</li>
 						{% endif %}
 						{% if bookmarks.length %}
-							<li><span class=" [ emoji ] ">🔖</span> {{ bookmarks.length }} Bookmark{{ 's' if bookmarks.length > 1 }}</li>
+							<li><emoji-span>{{ emojis.tag }}</emoji-span> {{ bookmarks.length }} Bookmark{{ 's' if bookmarks.length > 1 }}</li>
 						{% endif %}
-						{%- set likesLength = likes.length + externalLikes | default(0) -%}
+						{%- set likesLength = likes.length + externalLikes -%}
 						{% if likesLength %}
-							<li><span class=" [ emoji ] ">❤️</span> {{ likesLength }} Like{{ 's' if likesLength > 1 }}</li>
+							<li><emoji-span>{{ emojis.heart }}</emoji-span> {{ likesLength }} Like{{ 's' if likesLength > 1 }}</li>
 						{% endif %}
 						{% if links.length %}
-							<li><span class=" [ emoji ] ">🔗</span> {{ links.length }} Link{{ 's' if links.length > 1 }}</li>
+							<li><emoji-span>{{ emojis.link }}</emoji-span> {{ links.length }} Link{{ 's' if links.length > 1 }}</li>
 						{% endif %}
 						{% if reposts.length %}
-							<li><span class=" [ emoji ] ">🔄️</span> {{ reposts.length }} Repost{{ 's' if reposts.length > 1 }}</li>
+							<li><emoji-span>{{ emojis.repost }}</emoji-span> {{ reposts.length }} Repost{{ 's' if reposts.length > 1 }}</li>
 						{% endif %}
 					</ol>
 				{% endif %}

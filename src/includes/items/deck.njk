@@ -192,8 +192,14 @@
 				</li>
 			{% endif %}
 			{% if (item.data.show_responses and item.data.webmentions.length) or item.data.externalLikes or item.data.stargazers %}
-				{%- set nonWebmentionsLength = item.data.externalLikes | default(0) + item.data.stargazers | default(0) -%}
-				{%- set responsesLength = item.data.webmentions | getResponsesLength(nonWebmentionsLength) -%}
+				{%- set bookmarks = item.data.webmentions | arrayKeyEquals('activity.type', 'bookmark') -%}
+				{%- set likes = item.data.webmentions | arrayKeyEquals('activity.type', 'like') -%}
+				{%- set links = item.data.webmentions | arrayKeyEquals('activity.type', 'link') | arrayKeyEquals('data.content', null) -%}
+				{%- set reposts = item.data.webmentions | arrayKeyEquals('activity.type', 'repost') -%}
+				{%- set replies = item.data.webmentions | arrayKeyEquals('activity.type', ['link', 'reply']) | arrayKeyEquals('data.content', 'notempty') -%}
+				{%- set externalLikes = item.data.externalLikes | default(0) -%}
+				{%- set stargazers = item.data.stargazers | default(0) -%}
+				{%- set responsesLength = bookmarks.length + likes.length + links.length + reposts.length + replies.length | getResponsesLength(externalLikes + stargazers) -%}
 				<li>
 					<a href="{{ item.url }}#webmentions" title="Jump to Webmentions for this {{ item.data.categoryProper }}">{{ responsesLength }} {% if item.data.webmentions %}response{% else %}stargazer{% endif %}{{ 's' if responsesLength > 1 }} <span class="hidden">to {{ item_title }}</span></a>
 				</li>

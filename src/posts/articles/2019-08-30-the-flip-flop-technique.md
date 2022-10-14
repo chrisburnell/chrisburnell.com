@@ -36,7 +36,7 @@ Eventually, I realised that with a handful of `filter` values, we can come up wi
 <figure class="figure--dragon">
     <h4>Figure 1</h4>
     <div>
-        <span class="emoji" role="img" aria-label="Dragon Face">🐲</span>
+        <emoji-span aria-label="Dragon Face">🐲</emoji-span>
     </div>
     <p>
         <strong>Theme:</strong> <code>unaltered</code>
@@ -46,7 +46,7 @@ Eventually, I realised that with a handful of `filter` values, we can come up wi
 <figure class="figure--dragon">
     <h4>Figure 2</h4>
     <div style="filter: invert(1);">
-        <span class="emoji" role="img" aria-label="Dragon Face">🐲</span>
+        <emoji-span aria-label="Dragon Face">🐲</emoji-span>
     </div>
     <p>
         <strong>Theme:</strong> <code>invert(1)</code>
@@ -58,7 +58,7 @@ Inversion complete. We’ve gone from a light background to a dark one. Now we n
 <figure class="figure--dragon">
     <h4>Figure 3</h4>
     <div style="filter: invert(1) hue-rotate(180deg);">
-        <span class="emoji" role="img" aria-label="Dragon Face">🐲</span>
+        <emoji-span aria-label="Dragon Face">🐲</emoji-span>
     </div>
     <p>
         <strong>Theme:</strong> <code>invert(1) hue-rotate(180deg)</code>
@@ -70,7 +70,7 @@ Now we’ve managed to get our blue back, but the Dragon emoji looks completely 
 <figure class="figure--dragon">
     <h4>Figure 4</h4>
     <div style="filter: invert(1) hue-rotate(180deg);">
-        <span class="emoji" role="img" aria-label="Dragon Face" style="filter: invert(1) hue-rotate(180deg);">🐲</span>
+        <emoji-span aria-label="Dragon Face" style="filter: invert(1) hue-rotate(180deg);">🐲</emoji-span>
     </div>
     <p>
         <strong>Theme:</strong> <code>invert(1) hue-rotate(180deg)</code>
@@ -87,10 +87,10 @@ But something’s *off*. The colours of the emoji in the final example seem less
 
 <figure class="figure--dragon  figure--dragon--animate" tabindex="0">
     <div>
-        <span class="emoji" role="img" aria-label="Dragon Face">🐲</span>
+        <emoji-span aria-label="Dragon Face">🐲</emoji-span>
     </div>
     <div style="filter: invert(1) hue-rotate(180deg);">
-        <span class="emoji" role="img" aria-label="Dragon Face" style="filter: invert(1) hue-rotate(180deg);">🐲</span>
+        <emoji-span aria-label="Dragon Face" style="filter: invert(1) hue-rotate(180deg);">🐲</emoji-span>
     </div>
 </figure>
 

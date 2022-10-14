@@ -120,7 +120,7 @@ module.exports = {
 			.filter(collectionFilters.isPublished)
 			.filter(collectionFilters.notReply)
 			.filter((item) => {
-				return item.data.webmentions.length
+				return item.data.webmentions.length + item.data.externalLikes
 			})
 			.sort(collectionFilters.dateFilter)
 			.sort((a, b) => {

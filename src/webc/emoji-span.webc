@@ -1,1 +1,1 @@
-<span webc:root webc:keep class=" [ emoji ] " :title="this.title" aria-hidden="true"><slot></slot></span>
+<span webc:root webc:keep class=" [ emoji ] " :title="this.title" role="img" aria-hidden="true"><slot></slot></span>

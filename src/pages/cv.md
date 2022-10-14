@@ -20,7 +20,7 @@ Front End Developer with {{ global.now | friendlyDate("yyyy") - site.established
 <h2 style="break-before: page;">Professional Experience</h2>
 
 <div class=" [ space-between ] ">
-    <h3><a href="https://squiz.net"><span class="emoji">{% image './images/content/squiz-logo.svg', '', 'brand-logo' %} </span>Squiz</a> <small>(Northern Hemisphere / UK, Poland, USA)</small></h3>
+    <h3><a href="https://squiz.net"><emoji-span>{% image './images/content/squiz-logo.svg', '', 'brand-logo' %}</emoji-span> Squiz</a> <small>(Northern Hemisphere / UK, Poland, USA)</small></h3>
     <small><strong>February 2018 – present</strong></small>
 </div>
 
@@ -54,7 +54,7 @@ Front End Developer with {{ global.now | friendlyDate("yyyy") - site.established
 
 
 <div class=" [ space-between ] ">
-    <h3><a href="https://city.ac.uk"><span class="emoji"><img class="brand-logo" alt="" loading="lazy" decoding="async" src="/images/built/city-logo.png"> </span>City, University of London</a> <small>(London, UK)</small></h3>
+    <h3><a href="https://city.ac.uk"><emoji-span><img class="brand-logo" alt="" loading="lazy" decoding="async" src="/images/built/city-logo.png"></emoji-span> City, University of London</a> <small>(London, UK)</small></h3>
     <small><strong>June 2014 – February 2018</strong></small>
 </div>
 
@@ -65,7 +65,7 @@ Front End Developer with {{ global.now | friendlyDate("yyyy") - site.established
 - Overhauled the University’s [Clearing Website](https://clearing.city.ac.uk/) to simplify the user journey and automate backend processes required for incoming applications, reducing processing times and dependence on staff. This led to significant cost and time savings for the University, and continues to be used to this day.
 
 <div class=" [ space-between ] ">
-    <h3><a href="https://squiz.net"><span class="emoji">{% image './images/content/squiz-logo.svg', '', 'brand-logo' %} </span>Squiz</a> <small>(Northern Hemisphere / UK, Poland)</small></h3>
+    <h3><a href="https://squiz.net"><emoji-span>{% image './images/content/squiz-logo.svg', '', 'brand-logo' %}</emoji-span> Squiz</a> <small>(Northern Hemisphere / UK, Poland)</small></h3>
     <small><strong>April 2012 – January 2014</strong></small>
 </div>
 
@@ -77,14 +77,14 @@ Front End Developer with {{ global.now | friendlyDate("yyyy") - site.established
 <h2 style="break-before: page;">Community Experience</h2>
 
 <div class=" [ space-between ] ">
-    <h3 class=" [ delta ] ">Technical Writer on <a href="https://chrisburnell.com/"><span class="emoji"><img class="brand-logo" alt="" loading="lazy" decoding="async" src="/images/raven.svg"> </span>chrisburnell.com</a></h3>
+    <h3 class=" [ delta ] ">Technical Writer on <a href="https://chrisburnell.com/"><emoji-span><img class="brand-logo" alt="" loading="lazy" decoding="async" src="/images/raven.svg"></emoji-span> chrisburnell.com</a></h3>
     <small><strong>2013 – present</strong></small>
 </div>
 
 Launched a web development blog, which accumulates *over 10,000 unique visitors per month*, and have published over [{{ collections.posts | length | toNearest(100) }} blog posts](https://chrisburnell.com/archive/), including [{{ collections.writingPosts | length }} longform articles](https://chrisburnell.com/writing/), [{{ collections.css | length }} articles about CSS](https://chrisburnell.com/tag/css/), and [{{ collections.code | length }} code demos](https://chrisburnell.com/tag/css/), some of which have been [featured on CodePen](https://codepen.io/collection/hfqlg).
 
 <div class=" [ space-between ] ">
-    <h3 class=" [ delta ] ">Conference Organiser for <a href="https://stateofthebrowser.com" rel="external"><span class="emoji"><img class="brand-logo" alt="" loading="lazy" decoding="async" src="/images/built/sotb-logo.png"> </span>State of the Browser</a></h3>
+    <h3 class=" [ delta ] ">Conference Organiser for <a href="https://stateofthebrowser.com" rel="external"><emoji-span><img class="brand-logo" alt="" loading="lazy" decoding="async" src="/images/built/sotb-logo.png"></emoji-span> State of the Browser</a></h3>
     <small><strong>2017 – present</strong></small>
 </div>
 
