@@ -115,7 +115,7 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.addPassthroughCopy("js")
 	eleventyConfig.addPassthroughCopy("src/js/pages")
 	eleventyConfig.addPassthroughCopy("src/js/vendor")
-	eleventyConfig.addPassthroughCopy("videos/*")
+	eleventyConfig.addPassthroughCopy("video")
 	eleventyConfig.addPassthroughCopy({ "files/**/*": "." })
 
 	// Watch targets
