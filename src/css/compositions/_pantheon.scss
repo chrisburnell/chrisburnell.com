@@ -37,18 +37,6 @@
 		[ads-end];
 
 	@include media("above:medium") {
-		grid-template-columns:
-			[marginalia-start]
-			var(--aside-size, clamp(14em, 9.33rem + 10.67vw, 16em)) // 14–16em between 700–1000px
-			[marginalia-end]
-			var(--size-gap)
-			[content-start]
-			repeat(var(--columns, 6), 1fr)
-			[content-end]
-			var(--outdent-gap, 0)
-			[outdent-start]
-			var(--outdent-size, 0)
-			[outdent-end];
 		grid-template-rows:
 			[breadcrumbs-start]
 			auto
@@ -63,6 +51,18 @@
 			[meta-end content-end ads-start]
 			auto
 			[ads-end];
+		grid-template-columns:
+			[marginalia-start]
+			var(--aside-size, clamp(14em, 9.33rem + 10.67vw, 16em)) // 14–16em between 700–1000px
+			[marginalia-end]
+			var(--size-gap)
+			[content-start]
+			repeat(var(--columns, 6), 1fr)
+			[content-end]
+			var(--outdent-gap, 0)
+			[outdent-start]
+			var(--outdent-size, 0)
+			[outdent-end];
 	}
 
 	&:not(.wide) {
@@ -81,18 +81,21 @@
 	}
 }
 
-.breadcrumbs {
+.breadcrumbs,
+.title,
+.description {
 	grid-column: marginalia / content;
+}
+
+.breadcrumbs {
 	grid-row: breadcrumbs;
 }
 
 .title {
-	grid-column: marginalia / content;
 	grid-row: title;
 }
 
 .description {
-	grid-column: marginalia / content;
 	grid-row: description;
 }
 .description--published {

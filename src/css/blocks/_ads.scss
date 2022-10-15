@@ -17,9 +17,7 @@
 	max-inline-size: var(--size-breakpoint-small);
 	display: flex;
 	flex-direction: column;
-
-	margin-inline-start: auto;
-	margin-inline-end: auto;
+	margin-inline: auto;
 
 	%anchor {
 		color: inherit !important;
