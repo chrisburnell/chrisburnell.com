@@ -28,7 +28,7 @@ pre {
 	&.language-scss,
 	&.language-webc,
 	&.language-yaml {
-		padding-top: var(--size-gap);
+		padding-block-start: var(--size-gap);
 	}
 
 	&.language-bash::before {

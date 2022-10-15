@@ -13,7 +13,7 @@ I wrote about this talk in another article, [April LWS Talk](/article/april-lws-
 
 <figure>
     <div class=" [ media ] " style="--aspect-ratio: 954 / 702;">
-        <speaker-deck id="b933d8a3500240b8b7d2b879f075329b"></speaker-deck>
+        <c-speakerdeck id="b933d8a3500240b8b7d2b879f075329b"></c-speakerdeck>
     </div>
     <figcaption>
         <a class="u-syndication" rel="syndication" href="https://speakerdeck.com/chrisburnell/supporting-middle-out-in-css" title="Supporting Middle-Out in CSS on Speaker Deck">View this Talk on <em>Speaker Deck</em></a>

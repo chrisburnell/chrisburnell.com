@@ -8,6 +8,7 @@
 	padding-block-start: var(--size-large);
 	padding-block-end: var(--size-large);
 	border-block-start: var(--size-border-thin) solid var(--border-color, h(raven));
+	z-index: var(--z-index-menu);
 
 	@include media("print") {
 		display: none;

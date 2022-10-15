@@ -20,7 +20,7 @@ Front End Developer with {{ global.now | friendlyDate("yyyy") - site.established
 <h2 style="break-before: page;">Professional Experience</h2>
 
 <div class=" [ space-between ] ">
-    <h3><a href="https://squiz.net"><emoji-span>{% image './images/content/squiz-logo.svg', '', 'brand-logo' %}</emoji-span> Squiz</a> <small>(Northern Hemisphere / UK, Poland, USA)</small></h3>
+    <h3><a href="https://squiz.net"><c-emoji>{% image './images/content/squiz-logo.svg', '', 'brand-logo' %}</c-emoji> Squiz</a> <small>(Northern Hemisphere / UK, Poland, USA)</small></h3>
     <small><strong>February 2018 – present</strong></small>
 </div>
 
@@ -54,7 +54,7 @@ Front End Developer with {{ global.now | friendlyDate("yyyy") - site.established
 
 
 <div class=" [ space-between ] ">
-    <h3><a href="https://city.ac.uk"><emoji-span><img class="brand-logo" alt="" loading="lazy" decoding="async" src="/images/built/city-logo.png"></emoji-span> City, University of London</a> <small>(London, UK)</small></h3>
+    <h3><a href="https://city.ac.uk"><c-emoji><img class="brand-logo" alt="" loading="lazy" decoding="async" src="/images/built/city-logo.png"></c-emoji> City, University of London</a> <small>(London, UK)</small></h3>
     <small><strong>June 2014 – February 2018</strong></small>
 </div>
 
@@ -65,7 +65,7 @@ Front End Developer with {{ global.now | friendlyDate("yyyy") - site.established
 - Overhauled the University’s [Clearing Website](https://clearing.city.ac.uk/) to simplify the user journey and automate backend processes required for incoming applications, reducing processing times and dependence on staff. This led to significant cost and time savings for the University, and continues to be used to this day.
 
 <div class=" [ space-between ] ">
-    <h3><a href="https://squiz.net"><emoji-span>{% image './images/content/squiz-logo.svg', '', 'brand-logo' %}</emoji-span> Squiz</a> <small>(Northern Hemisphere / UK, Poland)</small></h3>
+    <h3><a href="https://squiz.net"><c-emoji>{% image './images/content/squiz-logo.svg', '', 'brand-logo' %}</c-emoji> Squiz</a> <small>(Northern Hemisphere / UK, Poland)</small></h3>
     <small><strong>April 2012 – January 2014</strong></small>
 </div>
 
@@ -77,14 +77,14 @@ Front End Developer with {{ global.now | friendlyDate("yyyy") - site.established
 <h2 style="break-before: page;">Community Experience</h2>
 
 <div class=" [ space-between ] ">
-    <h3 class=" [ delta ] ">Technical Writer on <a href="https://chrisburnell.com/"><emoji-span><img class="brand-logo" alt="" loading="lazy" decoding="async" src="/images/raven.svg"></emoji-span> chrisburnell.com</a></h3>
+    <h3 class=" [ delta ] ">Technical Writer on <a href="https://chrisburnell.com/"><c-emoji><img class="brand-logo" alt="" loading="lazy" decoding="async" src="/images/raven.svg"></c-emoji> chrisburnell.com</a></h3>
     <small><strong>2013 – present</strong></small>
 </div>
 
 Launched a web development blog, which accumulates *over 10,000 unique visitors per month*, and have published over [{{ collections.posts | length | toNearest(100) }} blog posts](https://chrisburnell.com/archive/), including [{{ collections.writingPosts | length }} longform articles](https://chrisburnell.com/writing/), [{{ collections.css | length }} articles about CSS](https://chrisburnell.com/tag/css/), and [{{ collections.code | length }} code demos](https://chrisburnell.com/tag/css/), some of which have been [featured on CodePen](https://codepen.io/collection/hfqlg).
 
 <div class=" [ space-between ] ">
-    <h3 class=" [ delta ] ">Conference Organiser for <a href="https://stateofthebrowser.com" rel="external"><emoji-span><img class="brand-logo" alt="" loading="lazy" decoding="async" src="/images/built/sotb-logo.png"></emoji-span> State of the Browser</a></h3>
+    <h3 class=" [ delta ] ">Conference Organiser for <a href="https://stateofthebrowser.com" rel="external"><c-emoji><img class="brand-logo" alt="" loading="lazy" decoding="async" src="/images/built/sotb-logo.png"></c-emoji> State of the Browser</a></h3>
     <small><strong>2017 – present</strong></small>
 </div>
 
@@ -98,7 +98,7 @@ Launched a web development blog, which accumulates *over 10,000 unique visitors 
     <small><strong>2019 – present</strong></small>
 </div>
 
-- **[<emoji-span>🐋</emoji-span> Bowhead](https://chrisburnell.com/bowhead/)** <small>([>4,000 downloads](https://www.npmjs.com/package/@chrisburnell/bowhead) · [3 ★](https://github.com/chrisburnell/bowhead))</small><br>A SCSS framework for integrating design tokens into a CSS codebase with support for CSS Variables. This project has been a key component for 6 client websites during my time at Squiz.
-- **[<emoji-span>💬</emoji-span> eleventy-cache-webmentions](https://chrisburnell.com/eleventy-cache-webmentions/)** <small>([>2,900 downloads](https://www.npmjs.com/package/@chrisburnell/eleventy-cache-webmentions) · [13 ★](https://github.com/chrisburnell/eleventy-cache-webmentions))</small><br>A plugin for the popular static site generator, [Eleventy](https://11ty.dev/), that allows the caching of Webmentions and makes them available to use throughout one’s website.
-- **[<emoji-span>🎹</emoji-span> Pentatonic](https://chrisburnell.com/pentatonic/)** <small>([>3,100 downloads](https://www.npmjs.com/package/@chrisburnell/pentatonic) · [1 ★](https://github.com/chrisburnell/pentatonic))</small><br>A JavaScript library for turning any array of integers into a fun little melody using the Web Audio API.
-- **[<emoji-span>📈</emoji-span> spark-line](https://chrisburnell.com/spark-line/)** <small>([>1,900 downloads](https://www.npmjs.com/package/@chrisburnell/spark-line) · [3 ★](https://github.com/chrisburnell/spark-line))</small><br>A custom element Web Component for generating sparkline graphs from a sequence of integers using the Canvas API.
+- **[<c-emoji>🐋</c-emoji> Bowhead](https://chrisburnell.com/bowhead/)** <small>([>4,000 downloads](https://www.npmjs.com/package/@chrisburnell/bowhead) · [3 ★](https://github.com/chrisburnell/bowhead))</small><br>A SCSS framework for integrating design tokens into a CSS codebase with support for CSS Variables. This project has been a key component for 6 client websites during my time at Squiz.
+- **[<c-emoji>💬</c-emoji> eleventy-cache-webmentions](https://chrisburnell.com/eleventy-cache-webmentions/)** <small>([>2,900 downloads](https://www.npmjs.com/package/@chrisburnell/eleventy-cache-webmentions) · [13 ★](https://github.com/chrisburnell/eleventy-cache-webmentions))</small><br>A plugin for the popular static site generator, [Eleventy](https://11ty.dev/), that allows the caching of Webmentions and makes them available to use throughout one’s website.
+- **[<c-emoji>🎹</c-emoji> Pentatonic](https://chrisburnell.com/pentatonic/)** <small>([>3,100 downloads](https://www.npmjs.com/package/@chrisburnell/pentatonic) · [1 ★](https://github.com/chrisburnell/pentatonic))</small><br>A JavaScript library for turning any array of integers into a fun little melody using the Web Audio API.
+- **[<c-emoji>📈</c-emoji> spark-line](https://chrisburnell.com/spark-line/)** <small>([>1,900 downloads](https://www.npmjs.com/package/@chrisburnell/spark-line) · [3 ★](https://github.com/chrisburnell/spark-line))</small><br>A custom element Web Component for generating sparkline graphs from a sequence of integers using the Canvas API.

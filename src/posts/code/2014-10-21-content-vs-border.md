@@ -6,6 +6,6 @@ title: content-box vs. border-box
 codepen_slug: lBJnz
 ---
 
-<code-pen slug="{{ codepen_slug }}" tabfree="true" height="500px"></code-pen>
+<c-codepen slug="{{ codepen_slug }}" tabfree="true" height="500px"></c-codepen>
 
 This pen is really more about the visual display.

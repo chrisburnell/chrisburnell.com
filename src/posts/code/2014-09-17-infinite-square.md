@@ -7,7 +7,7 @@ codepen_slug: HlcAJ
 codepen_featured: true
 ---
 
-<code-pen slug="{{ codepen_slug }}" height="350px"></code-pen>
+<c-codepen slug="{{ codepen_slug }}" height="350px"></c-codepen>
 
 ```html
 <div class="square">

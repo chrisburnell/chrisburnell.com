@@ -7,7 +7,7 @@ codepen_slug: mybQEL
 codepen_featured: true
 ---
 
-<code-pen slug="{{ codepen_slug }}" height="525px"></code-pen>
+<c-codepen slug="{{ codepen_slug }}" height="525px"></c-codepen>
 
 ```html
 <div class="modal">

@@ -7,7 +7,7 @@ codepen_slug: IKHhC
 codepen_featured: true
 ---
 
-<code-pen slug="{{ codepen_slug }}" height="500px"></code-pen>
+<c-codepen slug="{{ codepen_slug }}" height="500px"></c-codepen>
 
 ```html
 <div class="container">

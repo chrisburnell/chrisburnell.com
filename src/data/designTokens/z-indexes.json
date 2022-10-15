@@ -3,7 +3,8 @@
   "root": 0,
   "default": 1,
   "above": 2,
-  "modal": 3,
-  "dialog": 4,
-  "notificaton": 5
+  "menu": 3,
+  "modal": 4,
+  "dialog": 5,
+  "notificaton": 6
 }

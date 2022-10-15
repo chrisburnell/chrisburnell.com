@@ -5,6 +5,13 @@
 
 .header {
 	background-color: h(bear);
+	z-index: var(--z-index-menu);
+
+	// TODO need to think more about this
+	// @media (min-height: 600px) {
+	// 	position: sticky;
+	// 	top: 0;
+	// }
 
 	@include media("print") {
 		display: none;

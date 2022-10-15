@@ -93,7 +93,7 @@ In order to quell any feverish posting on my part, *as unlikely as that may be*,
 ## Put your money where your mouth is
 
 <figure>
-    <spark-line-component values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0"></spark-line-component>
+    <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0"></c-spark-line>
 </figure>
 
 Here’s an example. First, we need the per-week data:
@@ -113,7 +113,7 @@ If we work through this array, item by item, using each value as the key to retr
 We can pump these values into the [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API) to create the tones in our browsers, playing each frequency in succession over four seconds:
 
 <figure>
-    <spark-line-component values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0"></spark-line-component>
+    <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0"></c-spark-line>
 </figure>
 
 ## Interactive Demo

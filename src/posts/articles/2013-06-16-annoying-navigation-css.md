@@ -10,7 +10,7 @@ banner: annoying-navigation-css.png
 
 Here’s a quick, little *CodePen* showcasing two annoying bits of CSS that many developers, sadly, are guilty of writing. It’s interactive, so make sure you hover and click around:
 
-<code-pen slug="LHqFy" height="740px"></code-pen>
+<c-codepen slug="LHqFy" height="740px"></c-codepen>
 
 ## What’s going on here?
 

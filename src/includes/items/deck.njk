@@ -42,19 +42,19 @@
 				{% if item.data.rsvp.value == 'yes' %}
 					{% if item.data.rsvp.date | epoch > global.now %}
 						{# Future #}
-						<emoji-span>{{ emojis.future }}</emoji-span>
+						<c-emoji>{{ emojis.future }}</c-emoji>
 						<small>going to</small>
 					{% elif item.data.rsvp.date | epoch <= global.now and item.data.rsvp.finish | epoch > global.now %}
 						{# Current #}
-						<emoji-span>{{ emojis.going }}</emoji-span>
+						<c-emoji>{{ emojis.going }}</c-emoji>
 						<small>currently attending</small>
 					{% else %}
 						{# Past #}
-						<emoji-span>{{ emojis.going }}</emoji-span>
+						<c-emoji>{{ emojis.going }}</c-emoji>
 						<small>went to</small>
 					{% endif %}
 				{% elif item.data.rsvp.value == 'maybe' %}
-					<emoji-span>{{ emojis.maybe }}</emoji-span>
+					<c-emoji>{{ emojis.maybe }}</c-emoji>
 					{% if item.data.rsvp.date | epoch > global.now %}
 						{# Future #}
 						<small>might go to</small>
@@ -65,15 +65,15 @@
 				{% elif item.data.rsvp.value == 'interested' %}
 					{% if item.data.rsvp.date | epoch > global.now %}
 						{# Future #}
-						<emoji-span>{{ emojis.maybe }}</emoji-span>
+						<c-emoji>{{ emojis.maybe }}</c-emoji>
 						<small>interested in going to</small>
 					{% else %}
 						{# Past #}
-						<emoji-span>{{ emojis.not_going }}</emoji-span>
+						<c-emoji>{{ emojis.not_going }}</c-emoji>
 						<small>was interested in going to</small>
 					{% endif %}
 				{% else %}
-					<emoji-span>{{ emojis.not_going }}</emoji-span>
+					<c-emoji>{{ emojis.not_going }}</c-emoji>
 					{% if item.data.rsvp.date | epoch > global.now %}
 						{# Future #}
 						<small>unable to go to</small>
@@ -144,11 +144,11 @@
 		<h1>
 			{% if item.data.tags and "clickthrough" in item.data.tags and item.data.emoji %}
 				<a class=" [ p-name ] " href="{{ item_of_url | default(item.url) | striptags(true) | safe }}">
-					<emoji-span>{{ item.data.emoji }}</emoji-span>{{ item_title | default(item_of_title) | striptags(true) | safe }}
+					<c-emoji>{{ item.data.emoji }}</c-emoji>{{ item_title | default(item_of_title) | striptags(true) | safe }}
 				</a>
 			{% elif item.data.emoji %}
 				<a class=" [ p-name ] " href="{{ item.url | striptags(true) | safe }}">
-					<emoji-span>{{ item.data.emoji }}</emoji-span>{{ item_title | default(item_of_title) | striptags(true) | safe }}
+					<c-emoji>{{ item.data.emoji }}</c-emoji>{{ item_title | default(item_of_title) | striptags(true) | safe }}
 				</a>
 			{% else %}
 				<a class=" [ p-name ] " href="{{ item.url | striptags(true) | safe }}">
@@ -202,7 +202,7 @@
 				{%- set stargazers = item.data.stargazers | default(0) -%}
 				{%- set responsesLength = reactions.length + replies.length + externalLikes + stargazers -%}
 				<li>
-					<a href="{{ item.url }}#webmentions" title="Jump to Webmentions for this {{ item.data.categoryProper }}">{{ responsesLength }} {% if not responsesLength %}response{% else %}stargazer{% endif %}{{ 's' if responsesLength > 1 }} <span class="hidden">to {{ item_title }}</span></a>
+					<a href="{{ item.url }}#webmentions" title="Jump to Webmentions for this {{ item.data.categoryProper }}">{{ responsesLength }} {% if stargazers == responsesLength %}stargazer{% else %}response{% endif %}{{ 's' if responsesLength > 1 }} <span class="hidden">to {{ item_title }}</span></a>
 				</li>
 			{% endif %}
 		</ul>

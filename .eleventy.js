@@ -1,5 +1,4 @@
 const pkg = require("./package.json")
-const site = require("#data/site")
 const configWebmentions = require("./src/data/config/webmentions.js")
 
 // Import Eleventy plugins
@@ -139,7 +138,7 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.setDataDeepMerge(true)
 	eleventyConfig.setQuietMode(true)
 	eleventyConfig.on("beforeBuild", () => {
-		console.log(`[${queryFilters.getHost(site.url)}] Building…`)
+		console.log("[11ty] Building…")
 	})
 	return {
 		dataTemplateEngine: "njk",

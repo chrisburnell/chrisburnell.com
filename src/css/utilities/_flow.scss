@@ -3,7 +3,7 @@
 /// @group utilities
 ////
 
-%flow > * + *,
-.flow > * + * {
+.flow > * + *,
+%flow > * + * {
 	margin-block-start: var(--flow-space, 1em);
 }

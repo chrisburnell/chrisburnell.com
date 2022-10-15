@@ -6,7 +6,7 @@ title: Interaction Jazz
 codepen_slug: myyRqp
 ---
 
-<code-pen slug="{{ codepen_slug }}" height="600px"></code-pen>
+<c-codepen slug="{{ codepen_slug }}" height="600px"></c-codepen>
 
 ```haml
 - (1...51).each do |row|

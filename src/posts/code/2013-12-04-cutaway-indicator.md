@@ -6,7 +6,7 @@ title: Cutaway Indicator
 codepen_slug: yIwzd
 ---
 
-<code-pen slug="{{ codepen_slug }}" height="200px"></code-pen>
+<c-codepen slug="{{ codepen_slug }}" height="200px"></c-codepen>
 
 ```html
 <button>Hover Me</button>

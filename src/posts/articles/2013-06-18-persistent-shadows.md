@@ -10,7 +10,7 @@ banner: persistent-shadows.png
 
 Nearing the end of the work-day yesterday, I was struck with an idea. Having recently read through [Google’s Visual Assets Guidelines on Behance](https://www.behance.net/gallery/Google-Visual-Assets-Guidelines-Part-1/9028077 "Google’s Visual Assets Guidelines on Behance") and stumbling upon this awesome CodePen (actually a fork of [Lionel’s](https://codepen.io/elrumordelaluz "Lionel on Github"), from Italy: [https://codepen.io/elrumordelaluz/pen/dobAz](https://codepen.io/elrumordelaluz/pen/dobAz "CSS3 Flat Icons")):
 
-<code-pen slug="kJcGE" tabfree="true" height="220px"></code-pen>
+<c-codepen slug="kJcGE" tabfree="true" height="220px"></c-codepen>
 
 My idea was as such: I wonder if I could create something similar to the clock above using CSS3 *and maintain a persistent light source*. The trouble with the usual approach is that in using `transform` on an element, you are manipulating it’s `top`, `right`, `bottom`, and `left` attributes as you see them. If you `transform: rotate3d(0, 0, 1, 90deg);` a box, what you now see as the top of the box is in fact it’s `left` attribute. These shadow effects are typically done with `box-shadow`, and as the element rotates, the shadow will rotate with the element—`box-shadow: 2em 2em 0 black;` would produce a diagonal *bottom-right* shadow with no transform, but with `transform: rotate3d(0, 0, 1, 90deg);` it would become a diagonal *bottom-left* shadow…
 
@@ -18,7 +18,7 @@ My idea was as such: I wonder if I could create something similar to the clock a
 
 <aside><p>Here’s an example of this effect (which <a href="https://codepen.io/chrisburnell/details/mglHp#lovers">Chris Coyier loved on <em>CodePen</em></a>)!</p></aside>
 
-<code-pen slug="mglHp" height="425px"></code-pen>
+<c-codepen slug="mglHp" height="425px"></c-codepen>
 
 ## How does that work?
 
@@ -38,8 +38,8 @@ Firstly, a CSS3 checkbox. Uses an invisible `<input type="checkbox">` field and 
 
 <aside><p>Add in a little bit of JavaScript to toggle the text, but even that might not be necessary if you utilise the <code>:before</code> attribute.</p></aside>
 
-<code-pen slug="arouk" tabfree="true" height="150px"></code-pen>
+<c-codepen slug="arouk" tabfree="true" height="150px"></c-codepen>
 
 And secondly, here’s a gimmicky mockup I made as a joke to demonstrate to a friend at work that converting from *left-to-right* to *right-to-left* text was a piece of cake.
 
-<code-pen slug="DoJKw" tabfree="true" height="200px"></code-pen>
+<c-codepen slug="DoJKw" tabfree="true" height="200px"></c-codepen>

@@ -6,7 +6,7 @@ title: Button Interaction Demo
 codepen_slug: RPRwoo
 ---
 
-<code-pen slug="{{ codepen_slug }}" height="300px"></code-pen>
+<c-codepen slug="{{ codepen_slug }}" height="300px"></c-codepen>
 
 ```html
 <button>Hello!</button>

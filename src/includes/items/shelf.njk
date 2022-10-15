@@ -48,7 +48,7 @@
 		{% endif %}
 			{{ item_title | default(item_of_title) | striptags(true) | safe }}
 			{% if item.data.listened %}
-				<emoji-span>{{ emojis.listen }}</emoji-span>
+				<c-emoji>{{ emojis.listen }}</c-emoji>
 			{% endif %}
 		{% if item.url %}
 			</a>

@@ -135,7 +135,7 @@ Might as well leave your oven on all day and all night, all year, because *event
 
 This is like running back-and-forth across a crosswalk, with a stop sign in hand, hoping that eventually, one of the times that you cross, you’ll find some use by helping someone across road.
 
-<code-pen slug="GOrvrJ" tabfree="true"></code-pen>
+<c-codepen slug="GOrvrJ" tabfree="true"></c-codepen>
 
 When we use these `setInterval` / `setTimeout` techniques, this is the kind of functionality we’re creating. We’re not coupling our *observation* and *action* steps in a simple way, and we’re creating arbitrary benchmarks based on our best guesses as developers. What we fail to account for is the unbelievably broad spectrum of devices we might be serving. And it is rightfully so that we should fail to account for this broad spectrum, as any guesses and benchmarks we make sit within a context and hold a bias that the browser/computer would not.
 
@@ -149,7 +149,7 @@ We have no way of guaranteeing an accurate <q>fits all</q> guess.
 
 Instead of doing so ourselves, let’s instead delegate these <del>guesses</del> decisions to each individual user’s browser and device. Instead of the Crossing Guard running across the road constantly, they should wait until someone needs to cross, and then do so.
 
-<code-pen slug="rYjpVJ" tabfree="true"></code-pen>
+<c-codepen slug="rYjpVJ" tabfree="true"></c-codepen>
 
 When we use this *IntersectionObserver* technique, we cease relying on arbitrary benchmarks, and we let the browser do the lifting that we had to burden ourselves with before. Rather than the Crossing Guard repeatedly crossing and hoping to be useful eventually, the Crossing Guard instead waits for any pedestrians before crossing with them.
 
@@ -189,7 +189,7 @@ An important caveat to note before diving too deep, at least at the time of writ
 
 ## In Conclusion
 
-<code-pen slug="JryQoM"></code-pen>
+<c-codepen slug="JryQoM"></c-codepen>
 
 *IntersectionObserver* could not be better suited as a technique for *lazy-loading* and *infinite-scrolling*. Because we aren’t defining any benchmarks by which the browser should operate, the limit to the performance with *IntersectionObserver* is defined by the user’s browser, not the developer building the website. This is the keystone of *IntersectionObserver* and other emerging techniques, such as [ResizeObserver](https://wicg.github.io/ResizeObserver/) and [Mutation Observer](https://dom.spec.whatwg.org/#mutation-observers):
 

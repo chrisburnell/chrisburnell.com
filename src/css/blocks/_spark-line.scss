@@ -27,12 +27,6 @@ spark-line {
 		grid-column: 2 / 3;
 		text-align: end;
 	}
-
-	// Listing-Representative Sparkline
-	.pantheon > &,
-	.pantheon > .spark-line & {
-		margin-block-start: var(--size-large);
-	}
 }
 
 // Musical Data

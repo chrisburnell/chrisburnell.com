@@ -117,6 +117,6 @@ Lastly, we’ll perform a similar operation as before, by remapping the index of
 }
 ```
 
-<code-pen slug="vZyywR"></code-pen>
+<c-codepen slug="vZyywR"></c-codepen>
 
-<code-pen slug="myyRqp"></code-pen>
+<c-codepen slug="myyRqp"></c-codepen>

@@ -57,6 +57,24 @@ a {
 	content: " →";
 }
 
+// Skip to main content
+.skip-link {
+	background-color: h(bowhead);
+	color: h(milou);
+	display: block;
+	padding: 1em 1.5em;
+	outline: var(--size-border-thin) solid h(bowhead);
+	outline-offset: var(--size-border-thin);
+	position: absolute;
+	inset-block-start: var(--size-medium);
+	inset-inline-start: 50%;
+	transform: translateX(-50%);
+	inset-block-start: var(--size-medium);
+	font-weight: var(--font-weight-bold);
+	text-align: center;
+	z-index: var(--z-index-notificaton);
+}
+
 // Anchor Target Animation
 [id]:target {
 	animation: var(--animation-duration) var(--animation-function) anchor-target reverse;

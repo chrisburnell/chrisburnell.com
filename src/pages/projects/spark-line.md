@@ -15,7 +15,7 @@ js: spark-line.js
 ---
 
 <figure>
-    <spark-line-component values="0,0,2,5,7,13,13,18,14,11,19,44,37,37,38,27,23,9,6,5,6,1,1,2,1,0"></spark-line-component>
+    <c-spark-line values="0,0,2,5,7,13,13,18,14,11,19,44,37,37,38,27,23,9,6,5,6,1,1,2,1,0"></c-spark-line>
 </figure>
 
 <div class="box">
@@ -135,63 +135,63 @@ The element takes a number of attributes:
 
 <div class=" [ grid ] [ shelf ] ">
     <article>
-        <spark-line-component values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0"></spark-line-component>
+        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0"></c-spark-line>
         <p><em>default</em></p>
     </article>
     <article>
-        <spark-line-component values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" lineWidth="4"></spark-line-component>
+        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" lineWidth="4"></c-spark-line>
         <p><code>line-width="4"</code></p>
     </article>
     <article>
-        <spark-line-component values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" curve="false"></spark-line-component>
+        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" curve="false"></c-spark-line>
         <p><code>curve="false"</code></p>
     </article>
     <article>
-        <spark-line-component values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" endpoint="false"></spark-line-component>
+        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" endpoint="false"></c-spark-line>
         <p><code>endpoint="false"</code></p>
     </article>
     <article>
-        <spark-line-component values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" color="rebeccapurple"></spark-line-component>
+        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" color="rebeccapurple"></c-spark-line>
         <p><code>color="rebeccapurple"</code></p>
     </article>
     <article>
-        <spark-line-component values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" endpointColor="red"></spark-line-component>
+        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" endpointColor="red"></c-spark-line>
         <p><code>endpoint-color="red"</code></p>
     </article>
     <article>
-        <spark-line-component values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1"></spark-line-component>
+        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1"></c-spark-line>
         <p><code>points="1"</code></p>
     </article>
     <article>
-        <spark-line-component values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1,0" curve="false"></spark-line-component>
+        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1,0" curve="false"></c-spark-line>
         <p><code>points="1,0"</code></p>
     </article>
     <article>
-        <spark-line-component values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="0,2,0,1" curve="false"></spark-line-component>
+        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="0,2,0,1" curve="false"></c-spark-line>
         <p><code>points="0,2,0,1"</code></p>
     </article>
     <article>
-        <spark-line-component values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" endpointColor="red" points="0,2,0,1" curve="false"></spark-line-component>
+        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" endpointColor="red" points="0,2,0,1" curve="false"></c-spark-line>
         <p><code>endpoint-color="red" points="0,2,0,1"</code></p>
     </article>
     <article>
-        <spark-line-component values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" colors="red" curve="false"></spark-line-component>
+        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" colors="red" curve="false"></c-spark-line>
         <p><code>colors="red"</code></p>
     </article>
     <article>
-        <spark-line-component values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1" colors="rebeccapurple" curve="false"></spark-line-component>
+        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1" colors="rebeccapurple" curve="false"></c-spark-line>
         <p><code>points="1" colors="rebeccapurple"</code></p>
     </article>
     <article>
-        <spark-line-component values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1" colors="red,green,blue" curve="false"></spark-line-component>
+        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1" colors="red,green,blue" curve="false"></c-spark-line>
         <p><code>points="1" colors="red,green,blue"</code></p>
     </article>
     <article>
-        <spark-line-component values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1" colors="red,red,red,red,red,red,red,red,green,red,red,green,violet,orange,green,blue,yellow,green,yellow,cyan,green,cyan,green,cyan,blue,red" curve="false"></spark-line-component>
+        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1" colors="red,red,red,red,red,red,red,red,green,red,red,green,violet,orange,green,blue,yellow,green,yellow,cyan,green,cyan,green,cyan,blue,red" curve="false"></c-spark-line>
         <p><em>rainbow!</em></p>
     </article>
     <article>
-        <spark-line-component values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" startLabel="Start" end-label="End"></spark-line-component>
+        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" startLabel="Start" end-label="End"></c-spark-line>
         <p><code>start-label="Start" end-label="End"</code></p>
     </article>
 </div>

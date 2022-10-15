@@ -1,6 +1,15 @@
 ////
 /// Pantheon
 /// @group compositions
+///
+/// --aside-size (clamp(14em, 9.33rem + 10.67vw, 16em))
+///     Defines the inline-size of the aside.
+/// --columns (6)
+///     Defines how many sub-columns should make up the content column.
+/// --outdent-gap (var(--size-gap) OR 0)
+///     Defines the gap between the content and outdent column.
+/// --outdent-size (1fr OR 0)
+///     Defines the inline-size of the outdent.
 ////
 
 .pantheon {
@@ -30,15 +39,15 @@
 	@include media("above:medium") {
 		grid-template-columns:
 			[marginalia-start]
-			var(--aside-width, clamp(14em, 9.33rem + 10.67vw, 16em)) // 14–16em between 700–1000px
+			var(--aside-size, clamp(14em, 9.33rem + 10.67vw, 16em)) // 14–16em between 700–1000px
 			[marginalia-end]
 			var(--size-gap)
 			[content-start]
-			repeat(var(--content-columns, 6), 1fr)
+			repeat(var(--columns, 6), 1fr)
 			[content-end]
 			var(--outdent-gap, 0)
 			[outdent-start]
-			var(--outdent-width, 0)
+			var(--outdent-size, 0)
 			[outdent-end];
 		grid-template-rows:
 			[breadcrumbs-start]
@@ -59,7 +68,7 @@
 	&:not(.wide) {
 		@include media("above:gigantic") {
 			--outdent-gap: var(--size-gap);
-			--outdent-width: 1fr;
+			--outdent-size: 1fr;
 		}
 	}
 
@@ -104,6 +113,7 @@
 .pantheon > .spark-line {
 	grid-column: marginalia;
 	grid-row: sparkline;
+	margin-block-start: var(--size-large);
 
 	@include media("below:medium") {
 		justify-self: start;

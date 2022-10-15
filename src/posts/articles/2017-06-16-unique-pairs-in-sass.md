@@ -299,7 +299,7 @@ While the `@function` that powers all this jazz is lengthy and intimidating, I t
 
 Here’s a small demo of the `@function` on *CodePen*, which I recommend opening in a new tab/window so you can resize properly:
 
-<code-pen slug="OWWYdj"></code-pen>
+<c-codepen slug="OWWYdj"></c-codepen>
 
 This is a pretty extreme example of how smart utilisation of Sass’ features makes writing and maintaining CSS easier (and more satisfying), but you can start on this path in a much smaller capacity. Investigate what kind of wins you’ll achieve through abstracting your colours, sizes, sets of styles, etc. and proceed, carefully, to organise and DRY out your code. If you’re unsure where to start with refactoring, [Harry Roberts](https://csswizardry.com/) has written some [excellent articles](https://csswizardry.com/2017/06/refactoring-tunnels/) [about refactoring](https://csswizardry.com/2016/08/refactoring-css-the-three-i-s/).
 

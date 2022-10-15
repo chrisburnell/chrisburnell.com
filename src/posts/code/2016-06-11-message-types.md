@@ -7,7 +7,7 @@ codepen_slug: rLxjBz
 codepen_featured: true
 ---
 
-<code-pen slug="{{ codepen_slug }}" height="500px"></code-pen>
+<c-codepen slug="{{ codepen_slug }}" height="500px"></c-codepen>
 
 ```html
 <div class="message  message--error">

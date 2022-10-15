@@ -29,7 +29,14 @@ body {
 	min-block-size: 100vh;
 	margin: 0;
 	display: grid;
-	grid-template-rows: auto 1fr auto;
+	grid-template-rows:
+		[header-start]
+		auto
+		[header-end main-start]
+		1fr
+		[main-end footer-start]
+		auto
+		[footer-end];
 	font-family: var(--font-family-sans);
 	font-size: var(--font-size-default);
 	font-style: normal;
@@ -40,4 +47,16 @@ body {
 	@include media("print") {
 		display: block;
 	}
+}
+
+.header {
+	grid-row: header;
+}
+
+.main {
+	grid-row: main;
+}
+
+.footer {
+	grid-row: footer;
 }

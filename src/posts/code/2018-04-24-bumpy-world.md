@@ -6,4 +6,4 @@ title: Bumpy World
 codepen_slug: MQNwqp
 ---
 
-<code-pen slug="{{ codepen_slug }}"></code-pen>
+<c-codepen slug="{{ codepen_slug }}"></c-codepen>

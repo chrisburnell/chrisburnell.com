@@ -43,14 +43,14 @@ truncate: true
 			{{ categoryIntroductions[category.title] | join('\n\n') | markdownFormat | safe }}
 		{% endif %}
 		{% if collection[0].data.list == 'shelf' %}
-			<librarian-component>
+			<c-librarian>
 				You can sort these {{ category.properPlural }}:
-				<librarian-button key="title">by title</librarian-button>,
-				<librarian-button key="author">by author</librarian-button>,
-				<librarian-button key="rating">by rating</librarian-button>{% if category.title != 'beer' %},
-				<librarian-button key="release">by release date</librarian-button>{% endif %}, or
-				<librarian-button key="chronological" default="descending">by publish date</librarian-button>.
-			</librarian-component>
+				<c-librarian-button key="title">by title</c-librarian-button>,
+				<c-librarian-button key="author">by author</c-librarian-button>,
+				<c-librarian-button key="rating">by rating</c-librarian-button>{% if category.title != 'beer' %},
+				<c-librarian-button key="release">by release date</c-librarian-button>{% endif %}, or
+				<c-librarian-button key="chronological" default="descending">by publish date</c-librarian-button>.
+			</c-librarian>
 			<nav class=" [ grid ] [ shelf {% if collection[0].data.read_of %}shelf--books {% endif %}] " aria-live="polite">
 				{% for item in collection %}
 					{% include 'items/shelf.njk' %}

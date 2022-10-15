@@ -57,7 +57,7 @@ It’s probably worth refreshing yourself on the various rounding methods used i
     </dd>
 </dl>
 
-<code-pen slug="ONmxEB" height="250px"></code-pen>
+<c-codepen slug="ONmxEB" height="250px"></c-codepen>
 
 While the `width` of each box in the above demo is technically `133.3333px`, *sub-pixel rendering* comes into play, and its behaviour might be surprising. You might expect that the `width` of each box would be rounded individually, creating three `133px`-wide boxes, leaving *one* extra pixel of the full `400px`-wide `.parent` unaccounted for.
 

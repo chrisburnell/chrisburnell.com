@@ -163,7 +163,7 @@
 	<script>document.documentElement.classList.remove("no-js");</script>
 </head>
 <body>
-	<a href="#content" class=" [ hidden ] ">Skip to main content</a>
+	<a href="#content" class=" [ skip-link ] [ hidden ] ">Skip to main content</a>
 
 	<header class=" [ header ] ">
 		<div class=" [ wrap ] ">
@@ -231,7 +231,7 @@
 			{% if speedlify[canonical] %}
 				<p>
 					<a class="speedlify-anchor" href="{{ author.urls.speedlify }}/{{ site.url | getHost }}/#site-{{ speedlify[canonical].hash }}" title="Link to this page's Speedlify Score">
-						<speedlify-score-component hash="{{ speedlify[canonical].hash }}" score weight requests></speedlify-score-component>
+						<c-speedlify-score hash="{{ speedlify[canonical].hash }}" score weight requests></c-speedlify-score>
 					</a>
 				</p>
 			{% endif %}

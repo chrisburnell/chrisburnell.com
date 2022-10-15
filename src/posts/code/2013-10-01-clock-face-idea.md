@@ -7,4 +7,4 @@ codepen_slug: AGtdF
 codepen_featured: true
 ---
 
-<code-pen slug="{{ codepen_slug }}" height="600px"></code-pen>
+<c-codepen slug="{{ codepen_slug }}" height="600px"></c-codepen>

@@ -17,7 +17,7 @@ All of the examples are interactive, so make sure you hover or click where neces
 
 Hover the slice to see how this one works.
 
-<code-pen slug="apogK"></code-pen>
+<c-codepen slug="apogK"></c-codepen>
 
 In this Pen, I’m taking advantage of `border-radius` and `overflow` on an element affecting its children—in this case pseudo elements—to create a one-third slice of a circle without images and a transparent background.
 
@@ -29,7 +29,7 @@ In this Pen, I’m taking advantage of `border-radius` and `overflow` on an elem
 
 This pen was inspired by an neat effect I saw on [Square](https://squareup.com#verticals).
 
-<code-pen slug="lcEvB" height="350px"></code-pen>
+<c-codepen slug="lcEvB" height="350px"></c-codepen>
 
 <div class="edit">
     updated_text: This pen was featured on <a href="https://ss.chrisburnell.com/2014-08-28_1411.png" title="ego boost manifested in PNG format" rel="me  external"><em>CodePen’s</em> front page</a>, netting me some <a href="https://codepen.io/chrisburnell/details/lcEvB/#stats" title="Stats for this pen" rel="external">sweet internet points</a>! Achievement Unlocked.
@@ -39,7 +39,7 @@ This pen was inspired by an neat effect I saw on [Square](https://squareup.com#v
 
 This pen was inspired by Chris Coyier’s [blog post on _CodePen_](https://codepen.io/chriscoyier/post/a-closeable-noscript-warning-modal "A Closeable Noscript Warning Modal") explaining how they handle users who have turned off JavaScript and won’t be able to use *CodePen* properly, as the website relies on JavaScript to display Pens.
 
-<code-pen slug="scyKF" height="350px"></code-pen>
+<c-codepen slug="scyKF" height="350px"></c-codepen>
 
 One of the often underused but **powerful** utilities available in HTML is the relationship between an `input` element and its `label` element—you can even use multiple `label`s to control your `input` field. This allows you a JavaScript-free toggle, which you can use to show/hide elements, toggle styles, and more.
 
@@ -47,17 +47,17 @@ One of the often underused but **powerful** utilities available in HTML is the r
 
 This was an effect I’ve seen used across the web before that I’d wanted to try building for myself but never got around to it. It’s a bit jittery, so if you can figure out how to make this one [jank-free](http://jankfree.org/ "Jank Free"), let me know in the [comments](#webmentions). It uses the same concept as the *Modal Container without JavaScript* to show and hide the modal content.
 
-<code-pen slug="sDBJk" height="630px"></code-pen>
+<c-codepen slug="sDBJk" height="630px"></c-codepen>
 
 ## Jazzy CSS Checkbox Revisited
 
 This is a pen which I overhauled a bit since I first wrote about it in <a href="/article/persistent-shadows/">Persistent Shadows</a>:
 
-<code-pen slug="arouk" height="250px"></code-pen>
+<c-codepen slug="arouk" height="250px"></c-codepen>
 
 And the revisited version:
 
-<code-pen slug="Cbiun" height="250px"></code-pen>
+<c-codepen slug="Cbiun" height="250px"></c-codepen>
 
 Input fields have always been a point of pain for front end developers. Using this method we get around having to worry about styling them and rely on the sibling selectors (`+` and `~`, see more [on Can I Use](http://caniuse.com/#search=css-sel2 "Sibling Selectors")) to modify the styles applied to the `input`’s associated `label` element based on the `:checked` state of the `input`.
 

@@ -21,7 +21,7 @@
 	@include media("above:medium") {
 		max-block-size: calc(60vh - var(--size-medium) * 2);
 		position: sticky;
-		top: var(--size-medium);
+		inset-block-start: var(--size-medium);
 	}
 
 	li {

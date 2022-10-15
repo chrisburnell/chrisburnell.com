@@ -9,19 +9,19 @@
 				{% if rsvp.value == 'yes' %}
 					{% if rsvp.date | epoch > global.now %}
 						{# Future #}
-						<emoji-span>{{ emojis.future }}</emoji-span>
+						<c-emoji>{{ emojis.future }}</c-emoji>
 						<small>going to</small>
 					{% elif rsvp.date | epoch <= global.now and rsvp.finish | epoch > global.now %}
 						{# Current #}
-						<emoji-span>{{ emojis.going }}</emoji-span>
+						<c-emoji>{{ emojis.going }}</c-emoji>
 						<small>currently attending</small>
 					{% else %}
 						{# Past #}
-						<emoji-span>{{ emojis.going }}</emoji-span>
+						<c-emoji>{{ emojis.going }}</c-emoji>
 						<small>went to</small>
 					{% endif %}
 				{% elif rsvp.value == 'maybe' %}
-					<emoji-span>{{ emojis.maybe }}</emoji-span>
+					<c-emoji>{{ emojis.maybe }}</c-emoji>
 					{% if rsvp.date | epoch > global.now %}
 						{# Future #}
 						<small>might go to</small>
@@ -32,15 +32,15 @@
 				{% elif rsvp.value == 'interested' %}
 					{% if rsvp.date | epoch > global.now %}
 						{# Future #}
-						<emoji-span>{{ emojis.maybe }}</emoji-span>
+						<c-emoji>{{ emojis.maybe }}</c-emoji>
 						<small>interested in going to</small>
 					{% else %}
 						{# Past #}
-						<emoji-span>{{ emojis.not_going }}</emoji-span>
+						<c-emoji>{{ emojis.not_going }}</c-emoji>
 						<small>was interested in going to</small>
 					{% endif %}
 				{% else %}
-					<emoji-span>{{ emojis.not_going }}</emoji-span>
+					<c-emoji>{{ emojis.not_going }}</c-emoji>
 					{% if rsvp.date | epoch > global.now %}
 						{# Future #}
 						<small>unable to go to</small>
@@ -50,7 +50,7 @@
 					{% endif %}
 				{% endif %}
 			{% else %}
-				<emoji-span>↪{{ emojis.reply }}</emoji-span>
+				<c-emoji>↪{{ emojis.reply }}</c-emoji>
 				<small>in reply to</small>
 			{% endif %}
 			<a class=" [ h-cite  u-in-reply-to ] " href="{{ in_reply_to_url }}">
@@ -76,7 +76,7 @@
 	{% endif %}
 	{% if rsvp %}
 		<li class=" [ rsvp ] ">
-			<emoji-span>{{ emojis.calendar }}</emoji-span>
+			<c-emoji>{{ emojis.calendar }}</c-emoji>
 			{% if rsvp.finish | epoch > global.now %}
 				<small>taking place</small>
 			{% else %}
@@ -89,7 +89,7 @@
 	{% endif %}
 	{% if show_reading_length %}
 		<li class=" [ reading-length ] ">
-			<emoji-span>{{ emojis.reading_length }}</emoji-span>
+			<c-emoji>{{ emojis.reading_length }}</c-emoji>
 			<strong>~{{ content | cleantags | striptags | safe | wordcount | toNearest(25) | numberStringFormat }}</strong>
 			<small>words</small>
 		</li>
@@ -97,7 +97,7 @@
 	{%- set tags_filtered = tags | categoryFilter | tagFilter -%}
 	{% if tags_filtered.length %}
 		<li class=" [ tags ] ">
-			<emoji-span>{{ emojis.tag }}</emoji-span>
+			<c-emoji>{{ emojis.tag }}</c-emoji>
 			<small>tagged</small>
 			{% if tags_filtered.length > 1 %}<ul class=" [ cluster ] [ meta__list ] ">{% endif %}
 				{% for tag in tags_filtered -%}
@@ -108,7 +108,7 @@
 	{% endif %}
 	{% if style %}
 		<li class=" [ style ] ">
-			<emoji-span>{{ emojis.style }}</emoji-span>
+			<c-emoji>{{ emojis.style }}</c-emoji>
 			<small>style</small>
 			<strong>{{ style | safe }}</strong>
 		</li>
@@ -117,22 +117,22 @@
 		{%- set authors = authors | toArray -%}
 		<li class=" [ authors ] ">
 			{% if category == 'beer' %}
-				<emoji-span>{{ emojis.beer }}</emoji-span>
+				<c-emoji>{{ emojis.beer }}</c-emoji>
 				<small>brewed by</small>
 			{% elif category == 'book' %}
-				<emoji-span>{{ emojis.book }}</emoji-span>
+				<c-emoji>{{ emojis.book }}</c-emoji>
 				<small>written by</small>
 			{% elif category == 'game' %}
-				<emoji-span>{{ emojis.game }}</emoji-span>
+				<c-emoji>{{ emojis.game }}</c-emoji>
 				<small>produced by</small>
 			{% elif category == 'music' %}
-				<emoji-span>{{ emojis.music }}</emoji-span>
+				<c-emoji>{{ emojis.music }}</c-emoji>
 				<small>created by</small>
 			{% elif category == 'recipe' %}
-				<emoji-span>{{ emojis.recipe }}</emoji-span>
+				<c-emoji>{{ emojis.recipe }}</c-emoji>
 				<small>sourced from</small>
 			{% else %}
-				<emoji-span>{{ emojis.author }}</emoji-span>
+				<c-emoji>{{ emojis.author }}</c-emoji>
 				<small>authored by</small>
 			{% endif %}
 			{% if authors.length > 1 %}<ul class=" [ cluster ] [ meta__list ] ">{% endif %}
@@ -148,14 +148,14 @@
 	{% endif %}
 	{% if release %}
 		<li class=" [ date-released ] ">
-			<emoji-span>{{ emojis.calendar }}</emoji-span>
+			<c-emoji>{{ emojis.calendar }}</c-emoji>
 			<small>released</small>
 			<time class=" [ dt-released ] " datetime="{{ release | rfcDate }}">{{ release | friendlyDate }}</time>
 		</li>
 	{% endif %}
 	{% if rating %}
 		<li class=" [ review-rating ] ">
-			<emoji-span>{{ emojis.rating }}</emoji-span>
+			<c-emoji>{{ emojis.rating }}</c-emoji>
 			<small>my rating</small>
 			{% if rating == 'Parti Pris' %}
 				<data class=" [ p-rating ] " value="Parti Pris">Parti Pris</data>
@@ -168,7 +168,7 @@
 	{% endif %}
 	{% if checkin %}
 		<li class=" [ checkin ] ">
-			<emoji-span>{{ emojis.checkin }}</emoji-span>
+			<c-emoji>{{ emojis.checkin }}</c-emoji>
 			<small>check-in</small>
 			{% set checkin = checkin.title | default(checkin) | getPlace('object') %}
 			{% if checkin.url %}
@@ -182,7 +182,7 @@
 	{% endif %}
 	{% if badges %}
 		<li class=" [ badges ] ">
-			<emoji-span>{{ emojis.trophy }}</emoji-span>
+			<c-emoji>{{ emojis.trophy }}</c-emoji>
 			<small><span class=" [ hidden ] ">earning</span> badges</small>
 			{% if badges.length > 1 %}<ul class=" [ cluster ] [ meta__list ] ">{% endif %}
 			{% for badge in badges -%}
@@ -199,7 +199,7 @@
 	{% endif %}
 	{% if syndicate_to %}
 		<li class=" [ syndicate-to ] ">
-			<emoji-span>{{ emojis.syndication }}</emoji-span>
+			<c-emoji>{{ emojis.syndication }}</c-emoji>
 			<small>also on</small>
 			<ul class=" [ cluster ] [ meta__list ] ">
 			{% for syndication in syndicate_to %}
@@ -221,7 +221,7 @@
 	{% endif %}
 	{% if posting_method %}
 		<li class=" [ posting-method ] ">
-			<emoji-span>{{ emojis.posting_method }}</emoji-span>
+			<c-emoji>{{ emojis.posting_method }}</c-emoji>
 			<small>posted with</small>
 			{% if posting_method | getPostingMethod('url') %}
 				<a href="{{ posting_method }}">{{ posting_method | getPostingMethod }}</a>
@@ -232,7 +232,7 @@
 	{% endif %}
 	<li class=" [ shorturl ] ">
 		{%- set shorturl_id %}{{ page.date | newBase60(prefix, collections[category]) }}{% endset -%}
-		<emoji-span>{{ emojis.link }}</emoji-span>
+		<c-emoji>{{ emojis.link }}</c-emoji>
 		<a href="https://repc.co/{{ shorturl_id }}">repc.co/{{ shorturl_id }}</a>
 	</li>
 	<li hidden>

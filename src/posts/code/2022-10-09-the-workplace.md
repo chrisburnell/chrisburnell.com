@@ -5,4 +5,4 @@ description: Relaxing, back-to-the-basics little pen playing with text effects.
 codepen_slug: vYjXGVJ
 ---
 
-<code-pen slug="{{ codepen_slug }}"></code-pen>
+<c-codepen slug="{{ codepen_slug }}"></c-codepen>
