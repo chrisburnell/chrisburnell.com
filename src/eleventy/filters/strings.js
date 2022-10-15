@@ -54,7 +54,7 @@ module.exports = {
 		if (number < stringNumbers.length) {
 			return stringNumbers[number]
 		}
-		return number.toLocaleString()
+		return Math.floor(Number(number)).toLocaleString()
 	},
 	smartjoin: (array, joiner = ", ") => {
 		const last = array.pop()

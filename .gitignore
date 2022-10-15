@@ -44,6 +44,7 @@ node_modules/
 .gitconfig
 
 # Site Assets
+/audio
 /css
 /fonts
 /js
