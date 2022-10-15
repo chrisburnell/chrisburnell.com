@@ -30,18 +30,18 @@ description: Numbers, cause why not?
 {%- set commits_per_day = repository.contributors[0].contributions / days_since_first_commit -%}
 
 <dl>
-	<dt>№ of Posts</dt>
+	<dt><span class="special">№</span> Posts</dt>
 	<dd>{{ count }}</dd>
-	<dt>№ of Blog Posts</dt>
+	<dt><span class="special">№</span> Blog Posts</dt>
 	<dd>{{ published_count }}</dd>
 	<dt>Total Word Count</dt>
 	<dd>{{ total_wordcount | numberStringFormat }}</dd>
 	<dt>Most Insanely-Verbose Post</dt>
 	<dd><a href="{{ collection[wordiest_post_index].url }}">{{ collection[wordiest_post_index].data.title }}</a> with {{ wordiest_wordcount | numberStringFormat }} words</dd>
-	<dt>№ of Projects</dt>
+	<dt><span class="special">№</span> Projects</dt>
 	<dd>{{ (projects.web.length + projects.personal.length + collections.projects.length) | numberStringFormat }}</dd>
 	<dt>Commits <small>per</small> Day</dt>
-	<dd><a href="https://github.com/{{ author.github }}/{{ site.repository }}">{{ commits_per_day.toFixed(3) }}</a></dd>
+	<dd><a href="https://github.com/{{ author.github }}/{{ site.repository }}">{{ commits_per_day.toFixed(3) }}</a> <small>({{ repository.contributors[0].contributions | numberStringFormat }} commits over {{ days_since_first_commit.toFixed() | numberStringFormat }} days)</small></dd>
 </dl>
 
 <h2>All Posts</h2>

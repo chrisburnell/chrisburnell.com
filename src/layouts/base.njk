@@ -192,6 +192,7 @@
 		<div class=" [ wrap ] [ footer__grid ] ">
 			{% include 'author.njk' %}
 			<ol class=" [ cluster ] [ footer__navigation ] ">
+				<li><a id="copyright" rel="license" href="/license/">© {{ site.established }}–{{ global.now | friendlyDate("yyyy") }} <span class=" [ canada ] ">{{ author.name }}</span></a></li>
 				{%- for link in navigation -%}
 					{%- if link.secondary -%}
 						<li><a href="{{ link.url }}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title }}</a></li>
@@ -199,15 +200,9 @@
 				{%- endfor -%}
 			</ol>
 			<ol class=" [ cluster ] [ footer__navigation ] ">
-				<li class=" [ requires-js ] "><button id="color-scheme-toggle" class=" [ anchor ] [ js-color-scheme-toggle ] "><span class=" [ js-color-scheme-status ] ">Enable dark mode</span></button></li>
-				<li class=" [ requires-js ] "><button id="sounds-toggle" class=" [ anchor ] [ js-sounds-toggle ] "><span class=" [ js-sounds-status ] ">Enable sounds</span></button></li>
-				<li><a href="https://github.com/{{ author.github }}/{{ site.repository }}/tree/main/{{ page.inputPath }}" aria-label="Edit this page">Edit this page</a></li>
-				<li class=" [ requires-js ] "><button type="share" class="anchor">Share</button></li>
+				<li class=" [ requires-js ] "><button id="color-scheme-toggle" class=" [ anchor ] [ js-color-scheme-toggle ] "><span class=" [ js-color-scheme-status ] ">Enable dark mode</span></button></li><li class=" [ requires-js ] "><button id="sounds-toggle" class=" [ anchor ] [ js-sounds-toggle ] "><span class=" [ js-sounds-status ] ">Enable sounds</span></button></li><li><a href="https://github.com/{{ author.github }}/{{ site.repository }}/tree/main/{{ page.inputPath }}" aria-label="Edit this page">Edit this page</a></li><li class=" [ requires-js ] "><button type="share" class="anchor">Share</button></li>
 			</ol>
 			<ol class=" [ cluster ] [ footer__navigation ] ">
-				<li>
-					<a id="copyright" rel="license" href="/license/">© {{ site.established }}–{{ global.now | friendlyDate("yyyy") }} <span class=" [ canada ] ">{{ author.name }}</span></a>
-				</li>
 				{%- for item in socials -%}
 					{%- if not item.hidden and item.primary -%}
 						<li>
@@ -231,7 +226,7 @@
 			{% if speedlify[canonical] %}
 				<p>
 					<a class="speedlify-anchor" href="{{ author.urls.speedlify }}/{{ site.url | getHost }}/#site-{{ speedlify[canonical].hash }}" title="Link to this page's Speedlify Score">
-						<c-speedlify-score hash="{{ speedlify[canonical].hash }}" score weight requests></c-speedlify-score>
+						<c-speedlify-score hash="{{ speedlify[canonical].hash }}" score weight requests rank rank-change></c-speedlify-score>
 					</a>
 				</p>
 			{% endif %}

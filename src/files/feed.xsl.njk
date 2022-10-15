@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <style>{% include '../../css/xslt.css' %}</style>
       </head>
-      <body>
+      <body class=" [ feed ] ">
         <header class=" [ header ] ">
           <div class=" [ wrap ] ">
             <nav>
@@ -46,7 +46,7 @@
                     <p><xsl:value-of select="description" /></p>
                     <ul class=" [ cluster ] [ deck__meta ] ">
                       <li>
-                        <small>published</small> <xsl:value-of select="pubDate" />
+                        <small>published </small> <xsl:value-of select="pubDate" />
                       </li>
                     </ul>
                   </article>
@@ -57,14 +57,32 @@
         </main>
         <footer class=" [ footer ] ">
           <div class=" [ wrap ] [ footer__grid ] ">
-            <ol class=" [ cluster ] [ footer__navigation ] ">{% for link in navigation %}{% if link.secondary %}<li>
-                <a href="{{ link.url }}">{{ link.title }}</a>
-              </li>{% endif %}{% endfor %}
-            </ol>
+            <div class=" [ author ] [ h-card  p-author ] ">
+              <a class=" [ author__information ] [ flow ] [ u-url u-uid ] " href="/about/" rel="author  me">
+                <img alt="{{ author.name }}" class=" [ author__image ] [ canada ] [ u-photo ] "
+                  src="/images/avatar.jpeg"
+                  srcset="/images/avatar.jpeg 1x,
+                      /images/avatar@2x.jpeg 2x,
+                      /images/avatar@3x.jpeg 3x,
+                      /images/avatar@4x.jpeg 4x"
+                  width="100" height="100" />
+                <div class=" [ author__name ] ">
+                  <small>about</small>
+                  <span class=" [ anchor ] [ canada ] [ p-name ] ">{{ author.name }}</span>
+                </div>
+              </a>
+              <div class=" [ author__biography ] [ flow ] ">
+                <p class=" [ p-note ] ">{{ author.description | safe }}</p>
+              </div>
+            </div>
             <ol class=" [ cluster ] [ footer__navigation ] ">
               <li>
                 <a id="copyright" rel="license" href="/license/">© {{ site.established }}–{{ global.now | friendlyDate("yyyy") }} <span class=" [ canada ] ">{{ author.name }}</span></a>
-              </li>{% for item in socials %}{% if (item.url or item.split) and item.primary and not item.hidden %}{% set url = item.url %}{% if item.key %}{% set url = url + author[item.key] %}{% endif %}{% if item.split %}{% set url %}https://{{ author[item.key].split(item.split)[1] + '/' + item.split + author[item.key].split(item.split)[0] }}{% endset %}{% endif %}
+              </li>{% for link in navigation %}{% if link.secondary %}<li>
+                <a href="{{ link.url }}">{{ link.title }}</a>
+              </li>{% endif %}{% endfor %}
+            </ol>
+            <ol class=" [ cluster ] [ footer__navigation ] ">{% for item in socials %}{% if (item.url or item.split) and item.primary and not item.hidden %}{% set url = item.url %}{% if item.key %}{% set url = url + author[item.key] %}{% endif %}{% if item.split %}{% set url %}https://{{ author[item.key].split(item.split)[1] + '/' + item.split + author[item.key].split(item.split)[0] }}{% endset %}{% endif %}
               <li>
                 <a href="{{ url }}">{{ item.title }}</a>
               </li>{% endif %}{% endfor %}

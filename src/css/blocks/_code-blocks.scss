@@ -151,6 +151,24 @@ pre {
 	color: #ffd700;
 }
 
+.token.deleted {
+	background-color: hsl(350deg 100% 88% / 47%);
+}
+.token.inserted {
+	background-color: hsl(120deg 73% 75% / 35%);
+}
+
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	user-select: none;
+}
+
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+}
+
 .token.important,
 .token.bold {
 	font-weight: bold;

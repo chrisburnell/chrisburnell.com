@@ -24,6 +24,9 @@ speedlify-score {
 	color: hsl(var(--hsl-maple));
 	border-color: currentColor;
 }
+.speedlify-rank {
+	display: none;
+}
 .speedlify-rank:before {
 	content: "Rank #";
 }
@@ -33,17 +36,17 @@ speedlify-score {
 .speedlify-rank-change:before {
 	line-height: 1;
 }
-.speedlify-rank-change.up {
-	color: hsl(var(--hsl-conifer));
-}
+// .speedlify-rank-change.up {
+// 	color: hsl(var(--hsl-conifer));
+// }
 .speedlify-rank-change.up:before {
-	content: "⬆";
+	content: "↑ ";
 }
-.speedlify-rank-change.down {
-	color: hsl(var(--hsl-maple));
-}
+// .speedlify-rank-change.down {
+// 	color: hsl(var(--hsl-maple));
+// }
 .speedlify-rank-change.down:before {
-	content: "⬇";
+	content: "↓ ";
 }
 speedlify-score > :not(.speedlify-score) {
 	margin-inline-start: 1em;

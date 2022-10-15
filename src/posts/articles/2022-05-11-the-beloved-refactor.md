@@ -4,6 +4,8 @@ title: The Beloved Refactor
 description: Following the incredible high from a great conference, I just finished an extremely refreshing refactor of the CSS on my site. Here’s what I did.
 tags:
   - css
+  - scss
+  - design-systems
 ---
 
 Last week, I was lucky enough to attend [All Day Hey](https://alldayhey.com/) and have been buzzing with ideas and inspiration. Since then, I’ve made some fun and powerful changes to the architecture and philosophy towards writing CSS, so here are a few of the highlights!

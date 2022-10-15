@@ -3,7 +3,7 @@ module.exports = {
 	permalink: "talk/{{ page.fileSlug }}/",
 	category: "talk",
 	categoryPlural: "talks",
-	tags: ["talk", "feature"],
+	tags: ["talk", "feature", "throwback"],
 	emoji: "🗣",
 	prefix: "t",
 }

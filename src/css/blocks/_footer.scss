@@ -30,29 +30,36 @@
 .footer__grid {
 	display: grid;
 	grid-template-columns: 1fr;
-	row-gap: var(--size-gutter);
 
 	@include media("above:medium") {
 		grid-template-columns:
 			[left-start]
 			1fr
-			[left-end]
-			var(--size-gap)
-			[right-start]
+			[left-end right-start]
 			1fr
 			[right-end];
-		grid-template-rows: auto 1fr auto;
-		column-gap: var(--size-gutter);
+			grid-auto-rows: auto;
+		column-gap: var(--size-gap);
 	}
 
 	.author {
 		grid-column: right;
-		grid-row: 1/4;
+		grid-row: 1/5;
 	}
 
-	// Represents the two navigations and Speedlify
+	// Represents the footer navigations and speedlify-score
 	.footer__navigation,
 	p {
 		grid-column: left;
+	}
+}
+
+.footer__navigation {
+	@include media("below:medium") {
+		margin-block-start: var(--size-medium);
+	}
+
+	& ~ * {
+		margin-block-start: var(--size-small);
 	}
 }

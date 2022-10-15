@@ -15,10 +15,10 @@
 $font-faces: (
 	(
 		family: "Proxima Nova",
-		name: "Regular",
+		name: "Semibold",
 		style: normal,
-		weight: 400,
-		filename: "proxima-nova-regular",
+		weight: 600,
+		filename: "proxima-nova-semibold",
 	),
 	(
 		family: "Proxima Nova",
@@ -29,10 +29,10 @@ $font-faces: (
 	),
 	(
 		family: "Proxima Nova",
-		name: "Semibold",
+		name: "Regular",
 		style: normal,
-		weight: 600,
-		filename: "proxima-nova-semibold",
+		weight: 400,
+		filename: "proxima-nova-regular",
 	)
 ) !default;
 
