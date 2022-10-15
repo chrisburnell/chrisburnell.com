@@ -39,6 +39,7 @@ $font-families: (
 	sans: "Proxima Nova, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif",
 	serif: "Georgia, Times, Times New Roman, serif",
 	monospace: monospace,
+	nineties: Courier,
 	silly: "Comic Sans MS, Chalkboard SE, fantasy, serif",
 	sophisticated: "Papyrus, serif",
 );
@@ -91,7 +92,8 @@ $z-indexes: (
 	root: 0,
 	default: 1,
 	above: 2,
-	modal: 3,
-	dialog: 4,
-	notificaton: 5,
+	menu: 3,
+	modal: 4,
+	dialog: 5,
+	notificaton: 6,
 );

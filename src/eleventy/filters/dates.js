@@ -45,9 +45,9 @@ module.exports = {
 	epoch: (value) => {
 		return new Date(value).getTime()
 	},
-    daysUntil: (date, finish) => {
-        date = DateTime.fromJSDate(new Date(date))
-        finish = DateTime.fromJSDate(new Date(finish))
-        return Math.floor(finish.diff(date, ["days"]).toObject().days) + 1
-    },
+	daysUntil: (date, finish) => {
+		date = DateTime.fromJSDate(new Date(date))
+		finish = DateTime.fromJSDate(new Date(finish))
+		return Math.floor(finish.diff(date, ["days"]).toObject().days) + 1
+	},
 }

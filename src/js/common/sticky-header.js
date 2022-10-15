@@ -6,9 +6,7 @@ class StickyHeader {
 	}
 
 	init() {
-		window.addEventListener("scroll", (event) => {
-
-		})
+		window.addEventListener("scroll", (event) => {})
 	}
 }
 
