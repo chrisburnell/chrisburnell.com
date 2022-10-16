@@ -21,7 +21,7 @@
 		transform: translateX(-35%) translateY(-10%) scaleX(-1);
 
 		@include media("above:large") {
-			animation: var(--animation-duration) ease-out fowards perch;
+			animation: var(--animation-duration) ease-out forwards perch;
 		}
 
 		@at-root {
