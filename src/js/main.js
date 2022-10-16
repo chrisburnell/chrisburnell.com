@@ -1,16 +1,13 @@
-import ColorScheme from "./common/color-scheme"
-new ColorScheme(document.getElementById("color-scheme-toggle"))
+import "./modules/color-scheme"
 
 import "@11ty/is-land/is-land"
 
-// import StickyHeader from "./common/sticky-header"
-// new StickyHeader()
+// import "./modules/sticky-header"
 
-import welcome from "./common/welcome"
-welcome()
+import "./modules/share-button"
 
-import WebsiteSounds from "./common/website-sounds"
-new WebsiteSounds()
+import "./modules/website-sounds"
 
-import shareButton from "./common/share-button"
-shareButton()
+import "./modules/welcome"
+
+// import "./modules/helpers"

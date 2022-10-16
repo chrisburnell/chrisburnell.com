@@ -8,17 +8,10 @@ module.exports = [
 		input: "src/js/main.js",
 		output: {
 			dir: "js",
-			format: "iife",
+			format: "module",
 			name: "main",
 		},
 		plugins: process.env.ELEVENTY_PRODUCTION ? [commonjs(), nodeResolve(), terser()] : [commonjs(), nodeResolve()],
-	},
-	{
-		input: "src/js/navigator.js",
-		output: {
-			dir: "js",
-			name: "navigator",
-		},
 	},
 	{
 		input: "src/js/modules/librarian.js",

@@ -6,6 +6,7 @@ title: Sparkline Sound-Off
 description: I have been following in the footsteps of Jeremy Keith for a few months now. Dotted around my website, now, are sparklines, representing my activity over time. As an added bonus, a little tune based on the sparkline's values plays when you click on it. With a moderate amount of musical theory under my belt, here's how I accomplished that audio delight.
 tags:
   - canvas
+  - html
   - javascript
   - web-component
 ---

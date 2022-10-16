@@ -4,6 +4,7 @@ title: It’s all relative!
 description: What’s the deal with relative units? Let’s find out.
 tags:
   - css
+  - html
   - writing
 syndicate_to:
   - https://social.chrisburnell.com/users/chris/statuses/108828106678063995

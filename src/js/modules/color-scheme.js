@@ -1,9 +1,9 @@
 class ColorScheme {
-	constructor(button) {
+	constructor() {
 		this.STORAGE_KEY = "color-scheme"
 
-		this.button = button
-		this.buttonText = button.querySelector(".js-color-scheme-status")
+		this.button = document.getElementById("color-scheme-toggle")
+		this.buttonText = this.button.querySelector(".js-color-scheme-status")
 		this.colorScheme = localStorage.getItem(this.STORAGE_KEY)
 
 		this.init()
@@ -51,6 +51,10 @@ class ColorScheme {
 		this.setPreference(this.colorScheme)
 		localStorage.setItem(this.STORAGE_KEY, this.colorScheme)
 	}
+}
+
+if ("HTMLElement" in window) {
+	window.ColorScheme = new ColorScheme()
 }
 
 export default ColorScheme

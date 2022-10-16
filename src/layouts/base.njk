@@ -238,7 +238,7 @@
 	{% if env.ELEVENTY_PRODUCTION %}
 		<script>{%- include '../../js/navigator.js' -%}</script>
 	{% endif %}
-	<script defer src="/js/main.js?v={{ pkg.version }}"></script>
+	<script defer type="module" src="/js/main.js?v={{ pkg.version }}"></script>
 	{% if js %}
 		<script defer src="/js/pages/{{ js }}?v={{ pkg.version }}"></script>
 	{% endif %}

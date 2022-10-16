@@ -21,8 +21,8 @@
   },
   "dependencies": {
     "@11ty/is-land": "^2.0.3",
-    "@chrisburnell/pentatonic": "^1.1.1",
-    "@chrisburnell/spark-line": "^1.2.1",
+    "@chrisburnell/pentatonic": "^1.1.2",
+    "@chrisburnell/spark-line": "^1.2.2",
     "@zachleat/details-utils": "^2.0.2",
     "@zachleat/seven-minute-tabs": "^2.0.0",
     "speedlify-score": "^2.0.2"
@@ -34,8 +34,8 @@
     "@11ty/eleventy-plugin-directory-output": "^1.0.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.1.0",
     "@11ty/eleventy-plugin-webc": "^0.5.0",
-    "@chrisburnell/bowhead": "^0.3.1",
-    "@chrisburnell/eleventy-cache-webmentions": "^1.1.0",
+    "@chrisburnell/bowhead": "^0.3.2",
+    "@chrisburnell/eleventy-cache-webmentions": "^1.1.1",
     "@rollup/plugin-commonjs": "^23.0.0",
     "@rollup/plugin-node-resolve": "^15.0.0",
     "autoprefixer": "^10.4.12",

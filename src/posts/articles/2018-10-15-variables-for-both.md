@@ -6,6 +6,7 @@ title: Variables for Both
 description: Now that CSS Custom Properties, or CSS Variables, are becoming a solid standard, I'm using a method to map their values to CSS Variables whilst providing a value-as-is fallback using a straightforward syntax in a SCSS function and mixin.
 tags:
   - css
+  - design-systems
   - scss
 banner: variables-for-both.jpg
 further_reading:
