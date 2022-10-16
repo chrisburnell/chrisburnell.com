@@ -62,9 +62,6 @@ module.exports = (eleventyConfig) => {
 
 	// Ignores
 	eleventyConfig.ignores.add("./src/webc/**/*.webc")
-	if (process.env.ELEVENTY_PRODUCTION) {
-		eleventyConfig.ignores.add("./src/**/local/*")
-	}
 
 	// Transforms
 	eleventyConfig.addTransform("parse", parseTransform)
