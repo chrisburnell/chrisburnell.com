@@ -156,7 +156,7 @@ If you remember, the `showComments()` function removes the `button` we created b
 
 Almost there! Let’s create a failsafe—if our `button` no longer exists when the `showComments()` function is run, that means we’ve already loaded the comments, so we shouldn’t do it again.
 
-<aside><p>This isn’t actually ideal. What would be best would be to attach a callback function after *Disqus* has finished loading comments and disable our <code>button</code> until it succeeds/fails. Unfortunately, since an update to *Disqus* in 2012, this doesn’t seem to work as intended anymore. If you know any more about this, please let me know in the <a href="#comments">comments</a>.</p></aside>
+<aside><p>This isn’t actually ideal. What would be best would be to attach a callback function after *Disqus* has finished loading comments and disable our <code>button</code> until it succeeds/fails. Unfortunately, since an update to *Disqus* in 2012, this doesn’t seem to work as intended anymore. If you know any more about this, please let me know in the <a href="#respond">comments</a>.</p></aside>
 
 ```javascript
 function showComments() {
@@ -285,4 +285,4 @@ We still have a small thorn when it comes to users without JavaScript enabled. O
 
 Big thanks to [Ben Walters](http://benwaltersweb.co.uk/ "Ben Walters Web"), a JavaScript wizard and close friend of mine, for helping me achieve this solution.
 
-Let me know, as always, [down below](#comments "Jump to the comments") *(treat that link as a proof of concept)* if you have any suggestions for improvements to my code or other ideas on the matter. ’Til next time!
+Let me know, as always, [down below](#respond "Jump to the comments") *(treat that link as a proof of concept)* if you have any suggestions for improvements to my code or other ideas on the matter. ’Til next time!

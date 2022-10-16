@@ -9,8 +9,8 @@ import "@11ty/is-land/is-land"
 import welcome from "./common/welcome"
 welcome()
 
-import sounds from "./common/sounds"
-sounds()
+import WebsiteSounds from "./common/website-sounds"
+new WebsiteSounds()
 
 import shareButton from "./common/share-button"
 shareButton()

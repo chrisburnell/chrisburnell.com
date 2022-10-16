@@ -121,4 +121,4 @@ If we were to categorise this understandability of CSS into three general catego
 
 This certainly isn’t the last talk I’ll give; in fact, I certainly hope it isn’t! Thanks for reading this far, coming out to the talk, or both!
 
-I’ll be sure to make it known when my next talk is. Let me know down in the [the comments](#webmentions) if you have any comments, suggestions, complaints, or anything else.
+I’ll be sure to make it known when my next talk is. Let me know down in the [the comments](#respond) if you have any comments, suggestions, complaints, or anything else.

@@ -92,7 +92,7 @@ Use the collection as you would any other, e.g.
         </a>
     </h2>
     <a href="{{ item.url }}#webmentions">
-        {{ webmentions | getWebmentions(item.url) | length }} webmentions
+        {{ webmentions | getWebmentions(item.url) | length }} Webmentions
     </a>
 {% endfor %}{% endraw %}
 ```

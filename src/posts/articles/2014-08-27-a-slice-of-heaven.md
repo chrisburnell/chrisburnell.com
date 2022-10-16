@@ -45,7 +45,7 @@ One of the often underused but **powerful** utilities available in HTML is the r
 
 ## Slip-n-slide Modal
 
-This was an effect I’ve seen used across the web before that I’d wanted to try building for myself but never got around to it. It’s a bit jittery, so if you can figure out how to make this one [jank-free](http://jankfree.org/ "Jank Free"), let me know in the [comments](#webmentions). It uses the same concept as the *Modal Container without JavaScript* to show and hide the modal content.
+This was an effect I’ve seen used across the web before that I’d wanted to try building for myself but never got around to it. It’s a bit jittery, so if you can figure out how to make this one [jank-free](http://jankfree.org/ "Jank Free"), let me know in the [comments](#respond). It uses the same concept as the *Modal Container without JavaScript* to show and hide the modal content.
 
 <c-codepen slug="sDBJk" height="630px"></c-codepen>
 
@@ -69,4 +69,4 @@ Big thanks goes to [Dan Simmons](https://twitter.com/dansimau "Dan Simmons on Tw
 
 Interested in these sorts of projects? Check out [A Single Div](https://a.singlediv.com/ "A Single Div"), a <q>CSS drawing experiment to see what’s possible with a single div</q>, by [Lynn Fisher](https://twitter.com/lynnandtonic "Lynn Fisher").
 
-Let me know in the [comments](#webmentions) if you have any examples or cool pens of your own!
+Let me know in the [comments](#respond) if you have any examples or cool pens of your own!

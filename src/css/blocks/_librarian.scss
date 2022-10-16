@@ -5,6 +5,7 @@
 
 .librarian {
 	background-color: mix(map-get($colors, thunder), map-get($colors, milou), map-get($opacities, delta) * 100%);
+	margin-block-start: var(--flow-space, 1em);
 	position: sticky;
 	inset-block-start: 0;
 	z-index: var(--z-index-modal);
@@ -15,6 +16,5 @@
 }
 
 .librarian-island {
-	display: block;
-	margin-block-start: var(--flow-space, 1em);
+	display: initial;
 }

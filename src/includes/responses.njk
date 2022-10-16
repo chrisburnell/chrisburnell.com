@@ -1,12 +1,12 @@
 {% if show_responses %}
-	<div id="webmentions" class=" [ box ] [ flow ] [ webmentions ] ">
+	<div id="respond" class=" [ box ] [ flow ] [ responses ] ">
 		<!-- </textarea> -->
 		<!-- '"´ -->
-		<form id="webmentions-form" class=" [ webmentions__form ] " method="post" action="https://webmention.io/{{ site.url | getHost }}/webmention">
-			<label class=" [ webmentions__label ] " for="webmention-source">Have you published a <a href="https://indieweb.org/responses" rel="external noopener" target="_blank">response</a> to this {{ categoryProper | default(category) | default('page') }}?<br><a href="https://indieweb.org/reply#How_To" rel="external noopener" target="_blank">Learn how to send a Webmention</a> or let me know the <abbr title="Uniform Resource Locator">URL</abbr>:</label>
-			<input id="webmention-source" class=" [ webmentions__input ] " type="url" inputmode="url" enterkeyhint="send" name="source" size="1" aria-required="true" required>
+		<form id="responses-form" class=" [ responses__form ] " method="post" action="https://webmention.io/{{ site.url | getHost }}/webmention">
+			<label class=" [ responses__label ] " for="responses-source">Have you published a <a href="https://indieweb.org/responses" rel="external noopener" target="_blank">response</a> to this {{ categoryProper | default(category) | default('page') }}?<br><a href="https://indieweb.org/reply#How_To" rel="external noopener" target="_blank">Learn how to send a Webmention</a> or let me know the <abbr title="Uniform Resource Locator">URL</abbr>:</label>
+			<input id="responses-source" class=" [ responses__input ] " type="url" inputmode="url" enterkeyhint="send" name="source" size="1" aria-required="true" required>
 			<input type="hidden" name="target" value="{{ canonical }}">
-			<button class=" [ webmentions__submit ] " type="submit">Send</button>
+			<button class=" [ responses__submit ] " type="submit">Send</button>
 			<is-land on:visible>
 				<template data-island="once">
 					<script type="module" src="/js/url-input.js?v={{ pkg.version }}"></script>
@@ -24,8 +24,8 @@
 			{%- set stargazers = stargazers | default(0) -%}
 			{%- set responsesLength = reactions.length + replies.length + externalLikes + stargazers -%}
 			{%- set likesLength = likes.length + externalLikes -%}
-			<div class=" [ webmentions__responses ] [ flow ] ">
-				<h2 id="responses">{{ responsesLength }} Response{{ 's' if responsesLength > 1 }}</h2>
+			<div class=" [ responses__thread ] [ flow ] ">
+				<h2>{{ responsesLength }} Response{{ 's' if responsesLength > 1 }}</h2>
 				{% if reactions.length or stargazers %}
 					<ol id="reactions" class=" [ cluster ] [ reactions ] [ strong ] ">
 						{% if stargazers %}
@@ -58,15 +58,15 @@
 								{%- set authorUrl = webmention.data.author.url | default(wmSource) -%}
 								{%- set authorName = webmention.data.author.name | default("Anonymous") -%}
 								{%- set sentiment = wmContent | striptags(true) | getSentimentValue -%}
-								<li id="webmention-{{ wmId }}" class=" [ webmentions__response ] [ h-cite  p-comment ] " data-type="{{ wmType }}">
-									<a href="{{ authorUrl }}" class=" [ webmentions__response__avatar ] " tabindex="-1">
+								<li id="response-{{ wmId }}" class=" [ response ] [ h-cite  p-comment ] " data-type="{{ wmType }}">
+									<a href="{{ authorUrl }}" class=" [ response__avatar ] " tabindex="-1">
 										{% avatar authorPhoto, wmSource, authorUrl %}
 									</a>
-									<div class=" [ webmentions__response__meta ] ">
+									<div class=" [ response__meta ] ">
 										<small>by</small>
-										<a class=" [ p-author  h-card  u-url ] " href="{{ authorUrl }}" rel="external" tabindex="-1"><span class=" [ p-name ] ">{{ authorName }}</span></a>
+										<a class=" [ p-author  h-card  u-url ] " href="{{ authorUrl }}" rel="external"><span class=" [ p-name ] ">{{ authorName }}</span></a>
 										<small>on</small>
-										<a class=" [ u-url  u-{{ wmType }} ] " href="{{ wmSource }}" rel="external" title="Read externally"><time datetime="{{ wmDate | rfcDate }}">{{ wmDate | friendlyDateLong | safe }}</time></a>
+										<a class=" [ u-url  u-{{ wmType }} ] " href="{{ wmSource }}" rel="external" title="Read externally"><time class=" [ dt-published ] " datetime="{{ wmDate | rfcDate }}">{{ wmDate | friendlyDateLong | safe }}</time></a>
 									</div>
 									<div class=" [ e-content ] [ flow ] {% if sentiment < -0.3 %}[ salty ] {% endif %}">{{ wmContent }}</div>
 								</li>

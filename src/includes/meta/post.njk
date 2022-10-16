@@ -99,7 +99,7 @@
 		<li class=" [ tags ] ">
 			<c-emoji>{{ emojis.tag }}</c-emoji>
 			<small>tagged</small>
-			{% if tags_filtered.length > 1 %}<ul class=" [ cluster ] [ meta__list ] ">{% endif %}
+			{% if tags_filtered.length > 1 %}<ul class=" [ cluster ] [ meta__list ] [ small ] ">{% endif %}
 				{% for tag in tags_filtered -%}
 					{% if tags_filtered.length > 1 %}<li>{% endif %}<a class=" [ p-tag ] " href="/tag/{{ tag }}/">{{ tag }}</a>{% if tags_filtered.length > 1 %}</li>{% endif %}
 				{%- endfor %}
@@ -135,7 +135,7 @@
 				<c-emoji>{{ emojis.author }}</c-emoji>
 				<small>authored by</small>
 			{% endif %}
-			{% if authors.length > 1 %}<ul class=" [ cluster ] [ meta__list ] ">{% endif %}
+			{% if authors.length > 1 %}<ul class=" [ cluster ] [ meta__list ] [ small ] ">{% endif %}
 			{% for author in authors -%}
 				{% if authors.length > 1 %}<li>{% endif %}{% set authorObject = people | getPerson(author, 'object') %}{% if authorObject.url %}<a href="{{ authorObject.url | toArray | first }}">{{ authorObject.title }}</a>{% else %}<strong>{{ author | safe }}</strong>{% endif %}{% if authors.length > 1 %}</li>{% endif %}
 			{%- endfor %}
@@ -184,7 +184,7 @@
 		<li class=" [ badges ] ">
 			<c-emoji>{{ emojis.trophy }}</c-emoji>
 			<small><span class=" [ hidden ] ">earning</span> badges</small>
-			{% if badges.length > 1 %}<ul class=" [ cluster ] [ meta__list ] ">{% endif %}
+			{% if badges.length > 1 %}<ul class=" [ cluster ] [ meta__list ] [ small ] ">{% endif %}
 			{% for badge in badges -%}
 				{%- if badges.length > 1 %}<li>{% endif -%}
 					{%- if badge.id -%}
@@ -201,7 +201,7 @@
 		<li class=" [ syndicate-to ] ">
 			<c-emoji>{{ emojis.syndication }}</c-emoji>
 			<small>also on</small>
-			<ul class=" [ cluster ] [ meta__list ] ">
+			<ul class=" [ cluster ] [ meta__list ] [ small ] ">
 			{% for syndication in syndicate_to %}
 				<li>
 					<a href="{{ syndication }}">{{ syndication | getSyndicationTarget }}</a>

@@ -70,6 +70,6 @@ In this way, we’re able to style some default elements that a content editor w
 
 --------
 
-If you have any comments or performance notes about this, please let me know in the [comments below](#webmentions) or [on twitter](https://twitter.com/iamchrisburnell).
+If you have any comments or performance notes about this, please let me know in the [comments below](#respond) or [on twitter](https://twitter.com/iamchrisburnell).
 
 *[WYSIWYG]: What You See Is What You Get
