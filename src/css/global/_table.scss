@@ -33,6 +33,7 @@ table {
 
 // Cells
 :is(th, td) {
+	max-width: 30vw;
 	padding: var(--size-small);
 	text-align: start;
 	vertical-align: top;
@@ -47,7 +48,7 @@ table {
 // Heading Cells
 th {
 	font-weight: var(--font-weight-bold);
-	white-space: nowrap;
+	// white-space: nowrap;
 
 	&:not(:empty) {
 		background-color: mix(map-get($colors, thunder), map-get($colors, milou), map-get($opacities, delta) * 100%);
