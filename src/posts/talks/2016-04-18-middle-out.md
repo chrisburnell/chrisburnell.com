@@ -23,7 +23,7 @@ I wrote about this talk in another article, [April LWS Talk](/article/april-lws-
 ## Video
 
 <figure>
-    <video controls>
+    <video autopictureinpicture controls controlslist="nodownload" poster="/video/Supporting Middle-Out in CSS.png">
         <source src="/video/Supporting Middle-Out in CSS 640x360.mp4" type="video/mp4" media="all and (max-width: 640px)">
         <source src="/video/Supporting Middle-Out in CSS 960x540.mp4" type="video/mp4" media="all and (max-width: 960px)">
         <source src="/video/Supporting Middle-Out in CSS 1024x768.mp4" type="video/mp4">

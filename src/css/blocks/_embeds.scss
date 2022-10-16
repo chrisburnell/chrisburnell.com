@@ -3,6 +3,12 @@
 /// @group blocks
 ////
 
+// Client-side Web Component Renderer
+// a.k.a. "Partial Hydration" B-)
+is-land {
+	display: block;
+}
+
 // CodePen Embeds
 .cp_embed_wrapper {
 	resize: both;
@@ -11,4 +17,9 @@
 	iframe {
 		margin-block-end: 0;
 	}
+}
+
+// Speakerdeck Embeds
+.speakerdeck-embed-wrapper iframe {
+	@extend %media-child;
 }

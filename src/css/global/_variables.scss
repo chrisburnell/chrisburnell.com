@@ -45,13 +45,13 @@
 	--line-clamp: 3;
 
 	--animation-duration: 2s;
-	--animation-fill-mode: forwards;
-	--animation-function: linear;
 
 	--rotation-default: 5deg;
 
 	--transition-duration: 0.2s;
 	--transition-function: ease;
+
+	--aspect-ratio: 16 / 9;
 
 	--contrast-list: #{h(alto)}, #{h(milou)}, #{h(mineshaft)}, #{h(thunder)};
 	--contrast-ratio: AA;

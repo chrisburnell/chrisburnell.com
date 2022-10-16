@@ -1,3 +1,5 @@
+require("dotenv").config()
+
 const glob = require("glob-promise")
 const path = require("path")
 const Image = require("@11ty/eleventy-img")

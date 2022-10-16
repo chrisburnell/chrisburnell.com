@@ -1,3 +1,5 @@
+require("dotenv").config()
+
 const minifier = require("html-minifier")
 
 module.exports = (value, outputPath) => {

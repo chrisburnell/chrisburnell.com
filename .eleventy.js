@@ -1,3 +1,4 @@
+require("dotenv").config()
 const pkg = require("./package.json")
 const configWebmentions = require("./src/data/config/webmentions.js")
 
@@ -40,28 +41,30 @@ const markdownAbbr = require("markdown-it-abbr")
 
 module.exports = (eleventyConfig) => {
 	// Plugins
+	eleventyConfig.addPlugin(EleventyRenderPlugin)
 	eleventyConfig.addPlugin(caniusePlugin)
 	eleventyConfig.addPlugin(pregenImagePlugin)
 	eleventyConfig.addPlugin(imagePlugin)
 	eleventyConfig.addPlugin(imageAvatarPlugin)
-	// eleventyConfig.addPlugin(albumCoverPlugin)
 	eleventyConfig.addPlugin(syntaxHighlightPlugin)
 	eleventyConfig.addPlugin(webmentionsPlugin, configWebmentions)
 	eleventyConfig.addPlugin(webCPlugin, {
-		// Glob to find no-import global components
 		components: "./src/webc/**/*.webc",
 		useTransform: true,
 		transformData: {
 			pkg
 		}
 	})
+	// eleventyConfig.addPlugin(albumCoverPlugin)
 	if (process.env.ELEVENTY_PRODUCTION) {
 		eleventyConfig.addPlugin(directoryOutputPlugin)
 	}
 
-	// Let’s let webbsy... WebC!
+	// Ignores
 	eleventyConfig.ignores.add("./src/webc/**/*.webc")
-	eleventyConfig.addPlugin(EleventyRenderPlugin)
+	if (process.env.ELEVENTY_PRODUCTION) {
+		eleventyConfig.ignores.add("./src/**/local/*")
+	}
 
 	// Transforms
 	eleventyConfig.addTransform("parse", parseTransform)

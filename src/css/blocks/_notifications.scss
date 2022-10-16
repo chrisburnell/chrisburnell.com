@@ -19,7 +19,7 @@
 	}
 
 	&:not([class*="hidden"]) {
-		animation: var(--animation-duration) var(--animation-function) calc(var(--animation-duration) * 2) fade-out;
+		animation: var(--animation-duration) ease-out calc(var(--animation-duration) * 2) fade-out;
 
 		@at-root {
 			@keyframes fade-out {

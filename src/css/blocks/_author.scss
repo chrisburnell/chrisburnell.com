@@ -55,7 +55,7 @@
 		&::before {
 			opacity: 1;
 			transition: opacity var(--transition-duration) var(--transition-function);
-			animation: var(--animation-duration) var(--animation-function) infinite glitch;
+			animation: var(--animation-duration) linear infinite glitch;
 
 			@at-root {
 				@keyframes glitch {

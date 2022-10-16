@@ -14,8 +14,9 @@
 
 	& > %image,
 	& > picture %image,
-	& > %media {
-		aspect-ratio: var(--aspect-ratio, 16 / 9);
+	& > %media,
+	& > %media-child {
+		aspect-ratio: var(--aspect-ratio);
 		inline-size: 100% !important;
 		block-size: auto !important;
 		margin: 0 auto;

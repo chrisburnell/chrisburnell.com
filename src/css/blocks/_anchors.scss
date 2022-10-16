@@ -76,7 +76,7 @@ a {
 
 // Anchor Target Animation
 [id]:target {
-	animation: var(--animation-duration) var(--animation-function) anchor-target reverse;
+	animation: var(--animation-duration) ease anchor-target reverse;
 
 	@at-root {
 		@keyframes anchor-target {

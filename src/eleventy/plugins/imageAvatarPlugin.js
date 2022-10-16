@@ -1,9 +1,11 @@
-const TwitterAvatarUrl = require("twitter-avatar-url")
-const Image = require("@11ty/eleventy-img")
+require("dotenv").config()
 
 const site = require("#data/site")
 const twitterReplacements = require("#data/twitterReplacements")
 const queryFilters = require("#filters/queries")
+
+const TwitterAvatarUrl = require("twitter-avatar-url")
+const Image = require("@11ty/eleventy-img")
 
 // Avatar Dimensions
 const size = 96 // 48 * 2

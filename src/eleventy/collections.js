@@ -19,6 +19,22 @@ module.exports = {
 	posts: (collection) => {
 		return collection.getFilteredByTag("post").filter(collectionFilters.isPublished).sort(collectionFilters.dateFilter)
 	},
+	drafts: (collection) => {
+		return collection
+			.getFilteredByTag("post")
+			.filter((item) => {
+				if ("data" in item) {
+					if ("draft" in item.data && item.data.draft === true) {
+						return !!item.url
+					}
+					if ("published" in item.data && item.data.published === false) {
+						return !!item.url
+					}
+				}
+				return false
+			})
+			.sort(collectionFilters.dateFilter)
+	},
 	writingPosts: (collection) => {
 		return collection.getFilteredByTag("writing").filter(collectionFilters.isPublished).sort(collectionFilters.dateFilter)
 	},

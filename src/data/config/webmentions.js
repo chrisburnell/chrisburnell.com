@@ -1,7 +1,9 @@
-const { defaults } = require("@chrisburnell/eleventy-cache-webmentions")()
+require("dotenv").config()
 
 const site = require("#data/site")
 const urlReplacements = require("#data/urlReplacements")
+
+const { defaults } = require("@chrisburnell/eleventy-cache-webmentions")()
 
 module.exports = Object.assign(defaults, {
 	domain: site.url,

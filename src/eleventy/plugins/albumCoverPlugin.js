@@ -1,3 +1,5 @@
+require("dotenv").config()
+
 const site = require("#data/site")
 const queryFilters = require("#filters/queries")
 const Image = require("@11ty/eleventy-img")
