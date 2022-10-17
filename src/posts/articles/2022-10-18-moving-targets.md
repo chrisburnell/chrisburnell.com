@@ -2,7 +2,7 @@
 draft: true
 date: 2022-10-18T10:00:00+0100
 title: Moving Targets
-description: I was just working on some styling changes to my website and fell into a rabbit-hole on URLs, the <code><mark></code> element and <code>:target</code> pseudo-class, and ended up writing an animation as a handy technique for drawing the reader’s attention.
+description: I was just working on some styling changes to my website and fell into a rabbit-hole on URLs, the <code>&lt;mark&gt;</code> element and <code>:target</code> pseudo-class, and ended up writing an animation as a handy technique for drawing the reader’s attention.
 tags:
   - css
   - html
@@ -13,7 +13,7 @@ tags:
 
 You’ve gone to the library to check out a book. You browse the many shelves on wildly-differing topics, themes, tones, and so on, until you find the one you’re looking for. Stained and tattered, you know this book must be good, or at least it’s seen some use!
 
-When you open the pages you find scrawlings in the columns from anonymous authors, and there are even sticky notes sticking out along the side. On these *special pages*, someone has highlighted a sentence here and there, and another, in ink, has put an enormous **!** in the column of the page.
+When you open the pages you find scrawlings in the columns from anonymous authors, and there are even sticky notes sticking out along the side. On these *special pages*, someone has highlighted a sentence here and there, and another, in pen, has put an enormous exclamation point in the column of the page.
 
 *To put the book down and find something else to read, <button class=" [ anchor ] " onClick="closeWindow(); return false;">click here</button>.*
 
