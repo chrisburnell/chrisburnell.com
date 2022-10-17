@@ -3,9 +3,9 @@ title: Bowhead
 photo: bowhead.png
 emoji: 🐋
 github: chrisburnell/bowhead
+branch: master
 npm: "@chrisburnell/bowhead"
 license: MIT
-branch: master
 tags:
   - css
   - scss
@@ -33,13 +33,7 @@ This has a positive effect that ranges from giving the colours in your design sy
 
 ## Installation
 
-[Available on npm](https://www.npmjs.com/package/{{ npm }}):
-
-```bash
-npm install {{ npm }} --save-dev
-```
-
-You can also just download it directly [from GitHub](https://github.com/chrisburnell/bowhead): <samp>[https://github.com/chrisburnell/bowhead/archive/master.zip](https://github.com/chrisburnell/bowhead/archive/master.zip)</samp>
+{% include 'installation.njk' %}
 
 Make sure the browser support for CSS Variables meets your needs:
 

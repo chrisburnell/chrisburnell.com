@@ -13,7 +13,7 @@ tags:
 
 If you’re using **[Webmention.io](https://webmention.io/)**, add your **API Key** (found on your [settings page](https://webmention.io/settings)) to your project as an environment variable, i.e. in a `.env` file in the root of your project:
 
-```
+```text
 WEBMENTION_IO_TOKEN=njJql0lKXnotreal4x3Wmd
 ```
 

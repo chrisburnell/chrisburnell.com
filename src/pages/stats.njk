@@ -37,7 +37,7 @@ description: Numbers, cause why not?
 	<dt>Total Word Count</dt>
 	<dd>{{ total_wordcount | numberStringFormat }}</dd>
 	<dt>Most Insanely-Verbose Post</dt>
-	<dd><a href="{{ collection[wordiest_post_index].url }}">{{ collection[wordiest_post_index].data.title }}</a> with {{ wordiest_wordcount | numberStringFormat }} words</dd>
+	<dd><a href="{{ collection[wordiest_post_index].url }}">{{ collection[wordiest_post_index].data.title }}</a> <small>with</small> {{ wordiest_wordcount | numberStringFormat }} words</dd>
 	<dt><span class="special">№</span> Projects</dt>
 	<dd>{{ (projects.web.length + projects.personal.length + collections.projects.length) | numberStringFormat }}</dd>
 	<dt>Commits <small>per</small> Day</dt>

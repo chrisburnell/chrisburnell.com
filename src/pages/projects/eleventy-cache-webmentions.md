@@ -3,6 +3,7 @@ title: eleventy-cache-webmentions
 photo: eleventy-cache-webmentions.png
 emoji: 💬
 github: chrisburnell/eleventy-cache-webmentions
+branch: main
 npm: "@chrisburnell/eleventy-cache-webmentions"
 license: MIT
 tags:
@@ -28,13 +29,7 @@ I wrote a quicker and simpler guide to getting this Eleventy plugin working that
 
 ## Installation
 
-[Available on npm](https://www.npmjs.com/package/@chrisburnell/eleventy-cache-webmentions):
-
-```bash
-npm install @chrisburnell/eleventy-cache-webmentions --save-dev
-```
-
-You can also just download it directly [from GitHub](https://github.com/chrisburnell/eleventy-cache-webmentions): <samp>[https://github.com/chrisburnell/eleventy-cache-webmentions/archive/main.zip](https://github.com/chrisburnell/eleventy-cache-webmentions/archive/main.zip)</samp>
+{% include 'installation.njk' %}
 
 Once installed there are **two** more **required** set-up steps:
 
@@ -232,7 +227,7 @@ module.exports = function(eleventyConfig) {
 
 Once you’ve set up your *go-jamming* server and you’ve defined your token, you’ll need add it to your project as an environment variable, i.e. in a `.env` file in the root of your project:
 
-```
+```text
 GO_JAMMING_TOKEN=njJql0lKXnotreal4x3Wmd
 ```
 

@@ -73,18 +73,3 @@ a {
 	text-align: center;
 	z-index: var(--z-index-notificaton);
 }
-
-// Anchor Target Animation
-[id]:target {
-	animation: var(--animation-duration) ease target reverse;
-
-	@at-root {
-		@keyframes target {
-			66.666%,
-			100% {
-				background-color: h(aspen);
-				color: h(mineshaft);
-			}
-		}
-	}
-}

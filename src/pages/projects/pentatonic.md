@@ -3,9 +3,9 @@ title: Pentatonic
 photo: pentatonic.png
 emoji: 🎹
 github: chrisburnell/pentatonic
+branch: master
 npm: "@chrisburnell/pentatonic"
 license: CC0
-branch: master
 tags:
   - javascript
   - package
@@ -33,13 +33,7 @@ toc: true
 
 ## Installation
 
-[Available on npm](https://www.npmjs.com/package/@chrisburnell/pentatonic):
-
-```bash
-npm install @chrisburnell/pentatonic --save-dev
-```
-
-You can also just download it directly [from GitHub](https://github.com/chrisburnell/pentatonic):<br><samp>[https://github.com/chrisburnell/pentatonic/archive/master.zip](https://github.com/chrisburnell/pentatonic/archive/master.zip)</samp>
+{% include 'installation.njk' %}
 
 ## Usage
 

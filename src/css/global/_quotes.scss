@@ -13,7 +13,7 @@ blockquote {
 	margin: 0 auto var(--size-medium);
 	hanging-punctuation: first;
 
-	p {
+	p:not(.no-quotes) {
 		font-family: var(--font-family-serif);
 		font-style: italic;
 

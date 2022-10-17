@@ -238,5 +238,14 @@
      "links": [
       "[Page on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@property)"
      ]
+  },
+  {
+     "id": "mdn-css_selectors_target-text",
+     "language": "css",
+     "title": "::target-text",
+     "description": "Represents the text that has been scrolled to if the browser supports scroll-to-text fragments, and allows styling similarly to `::selection`.",
+     "links": [
+      "[Page on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/::target-text)"
+     ]
   }
 ]

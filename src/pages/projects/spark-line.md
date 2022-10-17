@@ -2,6 +2,7 @@
 title: "&lt;spark-line&gt;"
 emoji: 📈
 github: chrisburnell/spark-line
+branch: main
 npm: "@chrisburnell/spark-line"
 license: CC0
 tags:
@@ -26,13 +27,7 @@ js: spark-line.js
 
 ## Installation
 
-[Available on npm](https://www.npmjs.com/package/@chrisburnell/spark-line):
-
-```bash
-npm install @chrisburnell/spark-line --save-dev
-```
-
-You can also just download it directly [from GitHub](https://github.com/chrisburnell/spark-line):<br><samp>[https://github.com/chrisburnell/spark-line/archive/main.zip](https://github.com/chrisburnell/spark-line/archive/main.zip)</samp>
+{% include 'installation.njk' %}
 
 ## Usage
 

@@ -2,7 +2,6 @@ if (navigator.serviceWorker) {
 	navigator.serviceWorker
 		.register("/serviceworker.js")
 		.then((registration) => {
-			console.log("ServiceWorker registration successful with scope:", registration.scope)
 			let serviceWorker
 			if (registration.installing) {
 				serviceWorker = registration.installing

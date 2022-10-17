@@ -12,6 +12,8 @@ eleventyComputed:
     <li><a href="https://codepen.io/chrisburnell" rel="external">CodePen</a></li><li><a href="https://github.com/chrisburnell" rel="external">GitHub</a></li><li><a href="https://social.chrisburnell.com/@chris" rel="external">Mastodon</a></li><li><a href="https://twitter.com/iamchrisburnell" rel="external">Twitter</a></li><li><a href="https://chrisburnell.com/feed.xml">RSS</a></li>
 </ul>
 
+<hr>
+
 <figure class=" [ overflow ] ">
     <picture>
         <source srcset="/images/avatar@3x.avif 1x,

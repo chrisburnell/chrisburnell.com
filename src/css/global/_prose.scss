@@ -3,6 +3,12 @@
 /// @group global
 ////
 
+%content {
+	@include media("print") {
+		break-inside: avoid;
+	}
+}
+
 :is(p, li, dd) {
 	@include break-words;
 	max-inline-size: 50ch;
@@ -83,6 +89,11 @@ sup {
 	}
 }
 
+mark {
+	background-color: h(aspen);
+	color: h(mineshaft);
+}
+
 hr {
 	background-color: h(thunder, gamma);
 	inline-size: 100%;
@@ -100,6 +111,21 @@ hr {
 	}
 }
 
+// Target Animation
+:target {
+	animation: var(--animation-duration) ease target;
+
+	@at-root {
+		@keyframes target {
+			0%,
+			33% {
+				background-color: h(aspen);
+				color: h(mineshaft);
+			}
+		}
+	}
+}
+
 ::selection,
 ::target-text {
 	background-color: h(raven);
@@ -113,10 +139,4 @@ hr {
 
 ::grammar-error {
 	text-decoration: h(conifer) wavy underline;
-}
-
-%content {
-	@include media("print") {
-		break-inside: avoid;
-	}
 }

@@ -20,11 +20,6 @@
 	background-color: h(bear);
 }
 
-mark {
-	background-color: h(aspen);
-	color: h(mineshaft);
-}
-
 kbd {
 	font-weight: var(--font-weight-bold);
 	text-transform: uppercase;
@@ -39,13 +34,8 @@ var {
 }
 
 pre {
-	background-color: h(lynx);
 	min-inline-size: 0;
 	max-inline-size: 100%;
-	border-block-start: var(--size-border-thin) solid var(--border-color, h(raven));
-	padding: var(--size-gutter);
-	border-radius: 1px 1px var(--size-border-default) var(--size-border-default);
-	box-shadow: var(--box-shadow, var(--box-shadow-medium));
 	margin: 0;
 	tab-size: 2;
 	font-size: var(--font-size-default);
@@ -59,8 +49,7 @@ pre {
 	}
 
 	&,
-	%monospace {
-		color: h(milou);
+	code {
 		display: block;
 		font-family: var(--font-family-monospace);
 		line-height: var(--line-height-code);
@@ -71,8 +60,9 @@ pre {
 		word-wrap: normal;
 	}
 
-	%monospace {
+	code {
 		background-color: transparent;
+		padding: 0;
 		border-radius: 0;
 		overflow: auto;
 		scrollbar-color: h(raven) h(lynx);

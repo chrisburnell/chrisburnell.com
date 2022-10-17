@@ -3,8 +3,14 @@
 /// @group blocks
 ////
 
-pre {
-	// Highlighted Code Block Labels
+pre[class*="language-"] {
+	background-color: h(lynx);
+	border-block-start: var(--size-border-thin) solid var(--border-color, h(raven));
+	padding: var(--size-gap) var(--size-gutter) var(--size-gutter);
+	border-radius: 1px 1px var(--size-border-default) var(--size-border-default);
+	box-shadow: var(--box-shadow, var(--box-shadow-medium));
+
+	// Labels
 	&::before {
 		color: h(milou);
 		position: absolute;
@@ -14,78 +20,61 @@ pre {
 		font-weight: var(--font-weight-bold);
 	}
 
-	&.language-bash,
-	&.language-css,
-	&.language-html,
-	&.language-javascript,
-	&.language-json,
-	&.language-liquid,
-	&.language-markdown,
-	&.language-nunjucks,
-	&.language-twig,
-	&.language-plaintext,
-	&.language-text,
-	&.language-scss,
-	&.language-webc,
-	&.language-yaml {
-		padding-block-start: var(--size-gap);
-	}
-
-	&.language-bash::before {
-		content: "Terminal";
-		color: h(alto);
-	}
-	&.language-css::before {
-		content: "CSS";
-		color: h(css);
-	}
-	&.language-html::before {
-		content: "HTML";
-		color: h(html);
-	}
-	&.language-javascript::before {
-		content: "JavaScript";
-		color: h(javascript);
-	}
-	&.language-json::before {
-		content: "JSON";
-		color: h(json);
-	}
-	&.language-liquid::before {
-		content: "Liquid";
-		color: h(liquid);
-	}
-	&.language-markdown::before {
-		content: "Markdown";
+	code {
 		color: h(milou);
-	}
-	&.language-nunjucks::before,
-	&.language-twig::before {
-		content: "Nunjucks";
-		color: h(nunjucks);
-	}
-	&.language-plaintext::before,
-	&.language-text::before {
-		content: "Plaintext";
-		color: h(alto);
-	}
-	&.language-scss::before {
-		content: "SCSS";
-		color: h(scss);
-	}
-	&.language-webc::before {
-		content: "WebC";
-		color: h(webc);
-	}
-	&.language-yaml::before {
-		content: "YAML";
-		color: h(yaml);
-	}
-
-	%monospace {
-		background-color: transparent !important;
 		padding: 0 0 1em;
 	}
+}
+
+pre.language-bash::before {
+	content: "Terminal";
+	color: h(alto);
+}
+pre.language-css::before {
+	content: "CSS";
+	color: h(css);
+}
+pre.language-html::before {
+	content: "HTML";
+	color: h(html);
+}
+pre.language-javascript::before {
+	content: "JavaScript";
+	color: h(javascript);
+}
+pre.language-json::before {
+	content: "JSON";
+	color: h(json);
+}
+pre.language-liquid::before {
+	content: "Liquid";
+	color: h(liquid);
+}
+pre.language-markdown::before {
+	content: "Markdown";
+	color: h(milou);
+}
+pre.language-nunjucks::before,
+pre.language-twig::before {
+	content: "Nunjucks";
+	color: h(nunjucks);
+}
+pre.language-plaintext::before,
+pre.language-text::before {
+	content: "Plaintext";
+	color: h(alto);
+}
+pre.language-scss::before {
+	content: "SCSS";
+	color: h(scss);
+}
+pre.language-webc::before {
+	content: "WebC";
+	color: h(webc);
+}
+pre.language-yaml::before {
+	content: "YAML";
+	color: h(yaml);
 }
 
 /**
@@ -130,7 +119,7 @@ pre {
 .token.operator,
 .token.entity,
 .token.url,
-.language-css .token.string,
+pre.language-css .token.string,
 .style .token.string,
 .token.variable {
 	color: #00e0e0;
