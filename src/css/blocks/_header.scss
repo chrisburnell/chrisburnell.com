@@ -7,11 +7,13 @@
 	background-color: h(bear);
 	z-index: var(--z-index-menu);
 
-	// TODO need to think more about this
-	// @media (min-height: 600px) {
-	// 	position: sticky;
-	// 	top: 0;
-	// }
+	// Media query is based on size of the logo, where the header is only
+	// sticky when browser height is at least calc(5 * var(--size-logo-small))
+	// Note: CSS Variables don't work in media queries
+	@media (min-height: calc(5 * #{map-get($sizes, "logo-small")})) {
+		position: sticky;
+		top: 0;
+	}
 
 	@include media("print") {
 		display: none;
