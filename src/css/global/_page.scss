@@ -20,6 +20,12 @@ html {
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
 	font-variant-numeric: oldstyle-nums;
+	scroll-padding-top: var(--size-small);
+
+	// to account for the sticky header
+	@media (min-height: calc(6 * #{map-get($sizes, "logo-small")})) {
+		scroll-padding-top: calc(var(--size-logo-small) + var(--size-small) * 3);
+	}
 }
 
 body {
