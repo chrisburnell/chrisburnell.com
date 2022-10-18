@@ -11,6 +11,7 @@
 		{%- endif -%}
 	{%- endfor -%}
 	{% for lookup in collections.tags | sort %}
+		{%- set count = collections[lookup] | arePublished | getCollectionCount(false, true) -%}
 		{# map range from lowest–highest to 1–1.125, 3 decimal places #}
 		{%- set fontSize = count | rangeMap(lowest, highest, 1, 1.375, 3) -%}
 		<li>{% if '/tag/' + lookup + '/' == page.url %}<strong>{{ lookup }}</strong>{% else %}<a href="/tag/{{ lookup }}/"{% if lookup in tags %} class="code-red"{% endif %} style="font-size: {{ fontSize }}em;">{{ lookup }}</a>{% endif %}</li>

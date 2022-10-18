@@ -5,15 +5,21 @@
 
 .header {
 	background-color: h(bear);
+	transition: all var(--transition-duration) var(--transition-function);
 	z-index: var(--z-index-menu);
 
 	// Media query is based on size of the logo, where the header is only
 	// sticky when browser height is at least calc(6 * var(--size-logo-small))
 	// Note: CSS Variables don't work in media queries
 	@media (min-height: calc(6 * #{map-get($sizes, "logo-small")})) {
+		background-color: h(bear, alpha);
 		box-shadow: var(--box-shadow-low);
 		position: sticky;
 		top: 0;
+
+		&.hiding {
+			transform: translateY(-100%);
+		}
 	}
 
 	@include media("print") {

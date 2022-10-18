@@ -2,19 +2,6 @@ class UrlInput {
 	constructor() {
 		this.inputs = document.querySelectorAll('input[type="url"]')
 
-		this.init()
-	}
-
-	/**
-	 * Add `http://` to URL input fields on blur or when Enter is pressed
-	 */
-	addDefaultScheme(target) {
-		if (target.value.match(/^(?!https?:).+\..+/)) {
-			target.value = `https://${target.value}`
-		}
-	}
-
-	init() {
 		this.inputs.forEach((input) => {
 			input.addEventListener("blur", (event) => {
 				this.addDefaultScheme(event.target)
@@ -25,6 +12,15 @@ class UrlInput {
 				}
 			})
 		})
+	}
+
+	/**
+	 * Add `http://` to URL input fields on blur or when Enter is pressed
+	 */
+	addDefaultScheme(target) {
+		if (target.value.match(/^(?!https?:).+\..+/)) {
+			target.value = `https://${target.value}`
+		}
 	}
 }
 

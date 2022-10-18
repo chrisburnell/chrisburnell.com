@@ -2,11 +2,24 @@ class StickyHeader {
 	constructor() {
 		this.header = document.querySelector("header")
 
-		this.init()
+		this.scrollPosition = 0
+
+		this.adjustHeader()
+		window.addEventListener("scroll", () => {
+			this.adjustHeader()
+		})
 	}
 
-	init() {
-		window.addEventListener("scroll", (event) => {})
+	adjustHeader() {
+		const scrolled = window.scrollY
+		if (scrolled > this.header.clientHeight) {
+			if (scrolled > this.scrollPosition) {
+				this.header.classList.add("hiding")
+			} else {
+				this.header.classList.remove("hiding")
+			}
+		}
+		this.scrollPosition = scrolled
 	}
 }
 
