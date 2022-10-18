@@ -1,6 +1,6 @@
 ---
 draft: true
-date: 2022-10-18T10:00:00+0100
+date: 2022-10-19T10:00:00+0100
 title: Moving Targets
 description: I was just working on some styling changes to my website and fell into a rabbit-hole on URLs, the <code>&lt;mark&gt;</code> element and <code>:target</code> pseudo-class, and ended up writing an animation as a handy technique for drawing the reader’s attention.
 tags:
@@ -31,7 +31,7 @@ This means that if we can return to the same URL, time and again, and expect the
 
 But enough about the URL. Let’s talk about how to use those `id` attributes to enhance the browsing experience and help readers to find their relevant content when they arrive at a page with an anchor in the URL pointing to an `id` on the page.
 
-When you navigate to a URL containing an anchor matching an `id` on the page, that matching element receives the [`:target`](https://developer.mozilla.org/en-US/docs/Web/CSS/:target) pseudo-class, and we can use that to apply some CSS to our `:target` element.
+When a reader navigate to a URL containing an anchor matching an `id` on the page, that matching element receives the [`:target`](https://developer.mozilla.org/en-US/docs/Web/CSS/:target) pseudo-class, and we can use that to apply some CSS to our `:target` element.
 
 For inspiration, let’s look to an HTML element used to *literally* highlight text, `<mark>`:
 
@@ -66,7 +66,7 @@ mark,
 }
 ```
 
-However, this introduces an unintended side effect: elements that have the `:target` pseudo-class applied to them won’t lose it until the anchor in the URL changes somehow. This means that the styles we’ve applied will remain until the reader clicks another in-page anchor or otherwise, and your target element will *probably* have a yellow background and black text until the reader navigates away.
+However, this introduces an unintended side effect: elements that have the `:target` pseudo-class applied to them won’t lose it until the anchor in the URL changes somehow. This means that our target element will have a yellow background and black text until the reader navigates away, unless they trigger `:target` on another element—only one element can be targetted at a time.
 
 While this *is* what we want for the `<mark>` element, which styles should appear permanently—like highlighting a page in a book—it’s *not* what we want for the `:target`. Instead, we need the styles to appear only temporarily.
 
@@ -92,13 +92,13 @@ We can solve this with a simple CSS animation that looks almost unfinished:
 
 That’s the charm. The browser figures it out, based on whatever styles would be applied *without* the `:target` pseudo-class. So, from `0%` to `50%`, or half of the animation’s duration, we’ve told our target element to maintain the yellow background and black text. Then, from `50%` onwards, the browser will animate the `background-color` / `color` properties between `yellow` / `black` and whatever the otherwise declared or inherited values for those two properties are.
 
-By the end of the animation, the element appears as if it is *not* being targeted, leaving your other styles to do their thing. This technique is particularly useful if you want to someone to navigate directly to an important heading, form element, footnote, etc.
+By the end of the animation, the element appears as if it is *not* being targeted, leaving our other styles to do their thing. This technique is particularly useful when we want to direct attention to an important heading, form element, footnote, etc.
 
 ## Covering all the bases
 
 Of course, it’s always best to put animations, transitions, and the like behind a check against the browser preference for *reduced motion*, which means they prefer that websites not use those properties. Because the preference is boolean (on/off), it’s best to err on the side of caution and completely disable these things when we can detect the browser preference is on. But before we go and wrap our CSS in a media query, consider the following:
 
-If you’re using any animations or transitions, it’s useful to include something like the following as part of your CSS Reset because all you have to do is… say it with me, now, folks: **set it and forget it!**
+Since we’re using motion, it’s useful to include something like the following snippet as part of our CSS Reset because all we have to do is… say it with me, now, folks: **set it and forget it!**
 
 ```css
 @media (prefers-reduced-motion: reduce) {
@@ -115,7 +115,7 @@ If you’re using any animations or transitions, it’s useful to include someth
 }
 ```
 
-These terse, twelve lines mean that you won’t have to remember to check reduced motion preferences every time you make use of motion in your CSS. This ensures that, when the browser preference is to *reduce motion*:
+These terse, twelve lines mean that we won’t have to remember to check reduced motion preferences every time we make use of motion in our CSS. This ensures that, when the browser preference is to *reduce motion*:
 
 0. Backgrounds images are fixed in place and unable to move
 0. Scrolling happens instantly, rather than smoothly over a short period of time
