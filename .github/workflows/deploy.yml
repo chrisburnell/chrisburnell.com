@@ -15,10 +15,10 @@ jobs:
     steps:
       - name: Checkout from git
         uses: actions/checkout@master
-      - name: Use Node.js 18.10.0
+      - name: Use Node.js 18.11.0
         uses: actions/setup-node@v1
         with:
-          node-version: '18.10.0'
+          node-version: "18.11.0"
       - name: Cache npm dependencies
         id: cache_npm
         uses: actions/cache@v1
@@ -42,7 +42,7 @@ jobs:
       - name: Build website
         run: npm run build
         env:
-          NODE_OPTIONS: '--max_old_space_size=4096'
+          NODE_OPTIONS: "--max_old_space_size=4096"
           ELEVENTY_PRODUCTION: true
           ODESLI_URL: ${{ secrets.ODESLI_TOKEN }}
           PERSONAL_API_URL: ${{ secrets.PERSONAL_API_URL }}
