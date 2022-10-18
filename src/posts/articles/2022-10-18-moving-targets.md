@@ -66,7 +66,9 @@ mark,
 }
 ```
 
-However, this introduces an unintended side effect: elements that have the `:target` pseudo-class applied to them won’t lose it until the anchor in the URL changes somehow. This means that the styles we’ve applied will remain until the reader clicks another in-page anchor or otherwise, and your target element will *probably* have a yellow background and black text until the reader navigates away. While this *is* what we want for the `<mark>` element, which styles should appear permanently—like highlighting a page in a book—it’s *not* what we want for the `:target`. Instead, we need the styles to appear only temporarily.
+However, this introduces an unintended side effect: elements that have the `:target` pseudo-class applied to them won’t lose it until the anchor in the URL changes somehow. This means that the styles we’ve applied will remain until the reader clicks another in-page anchor or otherwise, and your target element will *probably* have a yellow background and black text until the reader navigates away.
+
+While this *is* what we want for the `<mark>` element, which styles should appear permanently—like highlighting a page in a book—it’s *not* what we want for the `:target`. Instead, we need the styles to appear only temporarily.
 
 ## My target don’t jiggle jiggle, it fades
 
