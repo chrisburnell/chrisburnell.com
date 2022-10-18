@@ -1,6 +1,3 @@
-const author = require("#data/author")
-const colors = require("#data/designTokens/colors")
-const site = require("#data/site")
 const dateFilters = require("#filters/dates")
 const utilityFilters = require("#filters/utils")
 
@@ -24,7 +21,7 @@ module.exports = {
 		// Sparklines in A minor
 		return `<c-spark-line values="${normalized.join(",")}"
 							original="${values.join(",")}"
-							${start ? 'start-label="' + start + '"' : ""}
-							${end ? 'end-label="' + end + '"' : ""}></c-spark-line>`
+							${start ? `start-label="${start}"` : ""}
+							${end ? `end-label="${end}"` : ""}></c-spark-line>`
 	},
 }

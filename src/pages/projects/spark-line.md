@@ -134,7 +134,7 @@ The element takes a number of attributes:
         <p><em>default</em></p>
     </article>
     <article>
-        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" lineWidth="4"></c-spark-line>
+        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" line-width="4"></c-spark-line>
         <p><code>line-width="4"</code></p>
     </article>
     <article>
@@ -150,7 +150,7 @@ The element takes a number of attributes:
         <p><code>color="rebeccapurple"</code></p>
     </article>
     <article>
-        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" endpointColor="red"></c-spark-line>
+        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" endpoint-color="red"></c-spark-line>
         <p><code>endpoint-color="red"</code></p>
     </article>
     <article>
@@ -166,7 +166,7 @@ The element takes a number of attributes:
         <p><code>points="0,2,0,1"</code></p>
     </article>
     <article>
-        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" endpointColor="red" points="0,2,0,1" curve="false"></c-spark-line>
+        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" endpoint-color="red" points="0,2,0,1" curve="false"></c-spark-line>
         <p><code>endpoint-color="red" points="0,2,0,1"</code></p>
     </article>
     <article>
@@ -186,7 +186,7 @@ The element takes a number of attributes:
         <p><em>rainbow!</em></p>
     </article>
     <article>
-        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" startLabel="Start" end-label="End"></c-spark-line>
+        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" start-label="Start" end-label="End"></c-spark-line>
         <p><code>start-label="Start" end-label="End"</code></p>
     </article>
 </div>

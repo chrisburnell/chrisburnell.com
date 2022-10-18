@@ -23,7 +23,7 @@ When you open the pages you find scrawlings in the columns from anonymous author
 
 One of the most powerful features of the web is the [URL](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL). A <abbr title="Uniform Resource Locator">URL</abbr> acts like an address to a unique resource on the web. If the web was a library, and every domain had its own shelf, we can think of the web pages/URLs on a domain as the books on that shelf.
 
-By applying an [`id` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id) to an element on a web page, the author can mark that spot for the reader, like placing a sticky note along the side of a page in a book. But in this case, the bookmark is permanent, as long as the author doesn’t change/remove it (the `id` on the web page) or the book on the shelf (the URL on the domain). When someone visits that web page with the `id` in the URL as an [anchor](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL#anchor), their browser will jump them directly to the target element—extremely useful when sharing a URL, allowing readers to skip straight to the content relevant to them.
+By applying an [`id` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id) to an element on a web page, the author can mark that spot for the reader, like placing a sticky note along the side of a page in a book. But in this case, the sticky note is permanent, as long as the author doesn’t change/remove it (the `id` on the web page) or the book on the shelf (the URL on the domain). When someone visits that web page with the `id` in the URL as an [anchor](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL#anchor), their browser will jump them directly to the target element—extremely useful when sharing a URL, allowing readers to skip straight to the content relevant to them.
 
 This means that if we can return to the same URL, time and again, and expect the same content, we should reasonably be able to expect `ids` to remain unchanged as well. This is the backbone for how linking across the web works, and an important reason to [make sure your URLs stay the same](https://longbets.org/601/)!
 
@@ -56,13 +56,13 @@ Tell me what thy lordly name is on the Night’s Plutonian shore!</q><br>
 
 --------
 
-Just to get things moving, let’s *reuse* the styles we’ve chosen for our `<mark>` elements for our `:target` selector styles, at least as a starting point:
+Just to get things moving, let’s *reuse* the styles we’ve from our `<mark>` elements for our `:target` selector, at least as a starting point:
 
 ```css
 mark,
 :target {
-  background-color: yellow;
-  color: black;
+	background-color: yellow;
+	color: black;
 }
 ```
 
@@ -76,15 +76,15 @@ We can solve this with a simple CSS animation that looks almost unfinished:
 
 ```css
 :target {
-  animation: 2s ease target reverse;
+	animation: 2s ease target reverse;
 }
 
 @keyframes target {
-  0%,
-  50% {
-    background-color: yellow;
-    color: black;
-  }
+	0%,
+	50% {
+		background-color: yellow;
+		color: black;
+	}
 }
 ```
 
@@ -102,16 +102,16 @@ If you’re using any animations or transitions, it’s useful to include someth
 
 ```css
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    background-attachment: initial !important;
-    scroll-behavior: auto !important;
-    animation-delay: 0s !important;
-    animation-duration: 0s !important;
-    animation-iteration-count: 1 !important;
-    transition: none !important;
-  }
+	*,
+	*::before,
+	*::after {
+		background-attachment: initial !important;
+		scroll-behavior: auto !important;
+		animation-delay: 0s !important;
+		animation-duration: 0s !important;
+		animation-iteration-count: 1 !important;
+		transition: none !important;
+	}
 }
 ```
 
@@ -129,10 +129,10 @@ How do you handle `:target` styles? What about `<mark>`? Let me know, I’d love
 And check out other selectors like [`::selection`](https://developer.mozilla.org/en-US/docs/Web/CSS/::selection) for cursor-highlighted text or even the newer [`::target-text`](https://developer.mozilla.org/en-US/docs/Web/CSS/::target-text); although, make sure you’re content with the [browser support](/feature-watch/#mdn-javascript_builtins_array_at) before you get too deep!
 
 <script>
-  function closeWindow() {
-    if (window.confirm("Are you sure you wish to end this chapter?")) {
-      window.open('', '_self', '');
-      window.close();
-    }
-  }
+	function closeWindow() {
+		if (window.confirm("Are you sure you wish to end this chapter?")) {
+			window.open('', '_self', '');
+			window.close();
+		}
+	}
 </script>

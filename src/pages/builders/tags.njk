@@ -34,6 +34,10 @@ truncate: true
 		<p>{% if count > 1 %}All {{ count | numberStringFormat }}{% else %}Just the one{% endif %} of my posts tagged <q>{{ tag | capitalizeFormat }}</q>.</p>
 	</div>
 
+	{% if first_year != latest_year %}
+		{% sparkline collection, first_year, latest_year %}
+	{% endif %}
+
 	<div class=" [ content ] [ flow ] ">
 		<nav class=" [ deck ] ">
 			{% for item in collection %}
