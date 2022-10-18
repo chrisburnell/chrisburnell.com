@@ -66,7 +66,7 @@ module.exports = function(eleventyConfig) {
 }
 {% endraw %}```
 
-## What's going on here?
+## What’s going on here?
 
 0. Wait for the fetch/cache lookup for Webmentions to resolve and assign it to a `const`.
 0. Begin creating the collection by matching pages that have the `post` tag.

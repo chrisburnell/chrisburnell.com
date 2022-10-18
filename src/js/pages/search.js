@@ -1,14 +1,20 @@
-(function () {
-	"use strict";
+class SearchInput {
+	constructor() {
+		this.form = document.getElementById("search")
+		this.input = this.form.querySelector("input")
 
-	const form = document.getElementById("search");
-	const input = form.querySelector("input");
+		this.input.value = ""
 
-	input.value = "";
+		this.form.addEventListener("submit", (event) => {
+			event.preventDefault()
+			this.input.value = "site:chrisburnell.com " + this.input.value
+			this.form.submit()
+		})
+	}
+}
 
-	form.addEventListener("submit", (event) => {
-		event.preventDefault();
-		input.value = "site:chrisburnell.com " + input.value;
-		form.submit();
-	});
-})();
+if ("HTMLElement" in window) {
+	window.SearchInput = new SearchInput()
+}
+
+export default SearchInput

@@ -1,9 +1,9 @@
 import pentatonic from "@chrisburnell/pentatonic"
 
 class WebsiteSounds {
-	constructor() {
-		this.STORAGE_KEY = "user-sounds"
+	static STORAGE_KEY = "user-sounds"
 
+	constructor() {
 		// Defaults for sitewide pentatonic
 		this.defaults = {
 			duration: 4000,
@@ -56,7 +56,6 @@ class WebsiteSounds {
 		return currentSetting
 	}
 
-
 	playName() {
 		if (!this.isPlaying) {
 			if (!this.nameAudio) {
@@ -88,7 +87,7 @@ class WebsiteSounds {
 
 		// Content + Sparklines
 		this.pentatonicElements = document.querySelectorAll(".pentatonic")
-		this.pentatonicElements.forEach(element => {
+		this.pentatonicElements.forEach((element) => {
 			element.addEventListener("click", () => {
 				let values = element.values || element.dataset.values
 				let duration = element.getAttribute("duration") ? parseFloat(element.getAttribute("duration")) : element.dataset.duration ? parseFloat(element.dataset.duration) : this.defaults.duration
@@ -118,7 +117,7 @@ class WebsiteSounds {
 
 		// Primary Navigation
 		this.primaryNavigation = document.querySelectorAll(".navigation__list a")
-		this.primaryNavigation.forEach(element => {
+		this.primaryNavigation.forEach((element) => {
 			element.addEventListener("mouseenter", () => {
 				if (localStorage.getItem(this.STORAGE_KEY) === "true") {
 					const randomKey = Math.floor(Math.random() * this.headerDefaults.keyLimit)
@@ -129,7 +128,7 @@ class WebsiteSounds {
 
 		// Author Name
 		this.nameButtons = document.querySelectorAll(".js-name-button")
-		this.nameButtons.forEach(button => {
+		this.nameButtons.forEach((button) => {
 			button.addEventListener("click", () => {
 				this.playName()
 			})

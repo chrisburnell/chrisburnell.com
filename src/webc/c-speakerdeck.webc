@@ -2,7 +2,7 @@
 
 <is-land on:visible>
 	<template data-island="once">
-		<script defer src="https://speakerdeck.com/assets/embed.js"></script>
+		<script src="https://speakerdeck.com/assets/embed.js"></script>
 	</template>
 </is-land>
 

@@ -37,7 +37,8 @@ button {
 	min-inline-size: var(--min-inline-size, 8em);
 	display: inline-block;
 	padding: var(--padding-block, var(--padding, var(--size-small))) var(--padding-inline, var(--padding, var(--size-medium)));
-	margin: calc(var(--size-border-thin) * 2); // accounts for outline-width + outline-offset
+	// accounts for outline-width + outline-offset
+	margin: var(--margin-block, var(--margin, calc(var(--size-border-thin) * 2))) var(--margin-inline, var(--margin, calc(var(--size-border-thin) * 2)));
 	border-radius: var(--size-border-default);
 	outline: var(--size-border-thin) solid transparent;
 	outline-offset: var(--size-border-thin);
@@ -79,4 +80,13 @@ button {
 	--padding: var(--size-tiny);
 	--font-size: var(--font-size-small);
 	--line-height: 1;
+}
+
+.button--text {
+	--min-inline-size: auto;
+	--padding-block: 0;
+	--padding-inline: var(--size-tiny);
+	--margin: 0;
+	--font-size: inherit;
+	--line-height: inherit;
 }

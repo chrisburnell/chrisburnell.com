@@ -1,0 +1,7 @@
+<input webc:keep webc:root type="url" inputmode="url" enterkeyhint="send" />
+
+<is-land class="hidden" on:visible>
+	<template data-island="once">
+		<script type="module" src="/js/url-input.js?v={{ pkg.version }}"></script>
+	</template>
+</is-land>

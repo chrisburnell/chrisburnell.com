@@ -1,6 +1,6 @@
 <h2>Browse by category</h2>
 <ul class=" [ cluster ] ">
 	{% for lookup in collections.categories %}
-		<li>{% if page.url == '/' + lookup.plural + '/' %}<strong class="code-red" style="color: hsl(var(--hsl-bowhead));">{{ lookup.properPlural | capitalize }}</strong>{% else %}<a href="/{{ lookup.plural }}/"{% if category == lookup.title %} class="code-red"{% endif %}>{{ lookup.properPlural | capitalize }}</a>{% endif %}</li>
+		<li>{% if page.url == '/' + lookup.plural + '/' %}<strong>{{ lookup.properPlural | title }}</strong>{% else %}<a href="/{{ lookup.plural }}/" {% if category == lookup.title %}class=" [ button  button--text ] "{% endif %}>{{ lookup.properPlural | title }}</a>{% endif %}</li>
 	{% endfor %}
 </ul>

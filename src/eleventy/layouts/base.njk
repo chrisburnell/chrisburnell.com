@@ -238,9 +238,12 @@
 	{% if env.ELEVENTY_PRODUCTION %}
 		<script>{%- include '../../../js/navigator.js' -%}</script>
 	{% endif %}
-	<script defer type="module" src="/js/main.js?v={{ pkg.version }}"></script>
+	<script type="module" src="/js/main.js?v={{ pkg.version }}"></script>
+	{% if js_module %}
+		<script type="module" src="/js/pages/{{ js_module }}?v={{ pkg.version }}"></script>
+	{% endif %}
 	{% if js %}
-		<script defer src="/js/pages/{{ js }}?v={{ pkg.version }}"></script>
+		<script src="/js/pages/{{ js }}?v={{ pkg.version }}"></script>
 	{% endif %}
 </body>
 </html>

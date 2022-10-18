@@ -2,7 +2,7 @@
 
 <is-land on:visible>
 	<template data-island="once">
-		<script defer src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+		<script src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 	</template>
 </is-land>
 

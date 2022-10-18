@@ -3,15 +3,14 @@
 		<!-- </textarea> -->
 		<!-- '"´ -->
 		<form id="form" class=" [ responses__form ] " method="post" action="https://webmention.io/{{ site.url | getHost }}/webmention">
-			<label class=" [ responses__label ] " for="responses-source">Have you published a <a href="https://indieweb.org/responses" rel="external noopener" target="_blank">response</a> to this {{ categoryProper | default(category) | default('page') }}?<br><a href="https://indieweb.org/reply#How_To" rel="external noopener" target="_blank">Learn how to send a Webmention</a> or let me know the <abbr title="Uniform Resource Locator">URL</abbr>:</label>
-			<input id="responses-source" class=" [ responses__input ] " type="url" inputmode="url" enterkeyhint="send" name="source" size="1" aria-required="true" required>
+			<label class=" [ responses__label ] " for="responses-source">
+				Have you published a <a href="https://indieweb.org/responses" rel="external noopener" target="_blank">response</a> to this {{ categoryProper | default(category) | default('page') }}?
+				<br>
+				<a href="https://indieweb.org/reply#How_To" rel="external noopener" target="_blank">Learn how to send a Webmention</a> or let me know the <abbr title="Uniform Resource Locator">URL</abbr>:
+			</label>
+			<c-url-input id="responses-source" class=" [ responses__input ] " name="source" size="1" aria-required="true" required></c-url-input>
 			<input type="hidden" name="target" value="{{ canonical }}">
 			<button class=" [ responses__submit ] " type="submit">Send</button>
-			<is-land on:visible>
-				<template data-island="once">
-					<script type="module" src="/js/url-input.js?v={{ pkg.version }}"></script>
-				</template>
-			</is-land>
 		</form>
 		{% if webmentions.length or externalLikes > 0 or stargazers > 0 %}
 			{%- set bookmarks = webmentions | arrayKeyEquals('activity.type', 'bookmark') -%}

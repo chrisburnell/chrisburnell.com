@@ -12,7 +12,7 @@ tags:
   - package
   - web-component
 toc: true
-js: spark-line.js
+js_module: interactive-spark-line.js
 ---
 
 <figure>
@@ -31,15 +31,27 @@ js: spark-line.js
 
 ## Usage
 
-This exposes/makes available a Custom HTML Element I’m calling <q>spark-line</q>. While this requires JavaScript on the front end, it makes the process of invoking and displaying sparklines for X,Y data very simple.
+This package exposes/makes available a Custom HTML Element I’m calling <q>spark-line</q>. While this requires JavaScript on the front end, it makes the process of invoking and displaying sparklines for X,Y data very simple.
 
-Include `spark-line.js` in your page however you like (as-is, as part of a build script, etc.).
+Include `spark-line.js` in your page however you like, as an import to your existing JS:
 
-Use `<spark-line>` in your HTML!
+```javascript
+import "@chrisburnell/spark-line/spark-line"
+```
+
+Or as its own reference in your HTML:
+
+```html
+<script type="module" src="`/spark-line.js"></script>
+```
+
+Then you can start using `<spark-line>`!
 
 ```html
 <spark-line values="1,2,3,5,8,13,21"></spark-line>
 ```
+
+--------
 
 The element takes a number of attributes:
 
@@ -125,6 +137,22 @@ The element takes a number of attributes:
     </tbody>
 </table>
 
+## is-land
+
+Since this custom Web Component requires JavaScript to function, it could be a good idea to put it behind some kind of partial hydration. For my site, in particular, I’ve decided to use [`<is-land>`](https://github.com/11ty/is-land), which works as <q>a framework independent partial hydration islands architecture implementation</q>.
+
+If you wanted to use `<is-land>` as well, I recommend something like the following as a solid baseline:
+
+```html
+<is-land on:visible>
+	<spark-line webc:keep :values="this.values" :curve="this.curve" :color="this.color" :colors="this.colors" :endpoint-color="this['endpoint-color']" :points="this.points" :line-width="this['line-width']" :start-label="this['start-label']" :end-label="this['end-label']"></spark-line>
+
+	<template data-island="once">
+		<script type="module" :src="`/js/spark-line.js`"></script>
+	</template>
+</is-land>
+
+```
 
 ## Examples
 
@@ -158,31 +186,31 @@ The element takes a number of attributes:
         <p><code>points="1"</code></p>
     </article>
     <article>
-        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1,0" curve="false"></c-spark-line>
+        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1,0"></c-spark-line>
         <p><code>points="1,0"</code></p>
     </article>
     <article>
-        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="0,2,0,1" curve="false"></c-spark-line>
+        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="0,2,0,1"></c-spark-line>
         <p><code>points="0,2,0,1"</code></p>
     </article>
     <article>
-        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" endpoint-color="red" points="0,2,0,1" curve="false"></c-spark-line>
-        <p><code>endpoint-color="red" points="0,2,0,1"</code></p>
+        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" endpoint-color="rebeccapurple" points="0,2,0,1"></c-spark-line>
+        <p><code>endpoint-color="rebeccapurple" points="0,2,0,1"</code></p>
     </article>
     <article>
-        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" colors="red" curve="false"></c-spark-line>
-        <p><code>colors="red"</code></p>
+        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" colors="rebeccapurple"></c-spark-line>
+        <p><code>colors="rebeccapurple"</code></p>
     </article>
     <article>
-        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1" colors="rebeccapurple" curve="false"></c-spark-line>
+        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1" colors="rebeccapurple"></c-spark-line>
         <p><code>points="1" colors="rebeccapurple"</code></p>
     </article>
     <article>
-        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1" colors="red,green,blue" curve="false"></c-spark-line>
+        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1" colors="red,green,blue"></c-spark-line>
         <p><code>points="1" colors="red,green,blue"</code></p>
     </article>
     <article>
-        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1" colors="red,red,red,red,red,red,red,red,green,red,red,green,violet,orange,green,blue,yellow,green,yellow,cyan,green,cyan,green,cyan,blue,red" curve="false"></c-spark-line>
+        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1" colors="red,red,red,red,red,red,red,red,green,red,red,green,violet,orange,green,blue,yellow,green,yellow,cyan,green,cyan,green,cyan,blue,red"></c-spark-line>
         <p><em>rainbow!</em></p>
     </article>
     <article>
@@ -201,16 +229,15 @@ The element takes a number of attributes:
     <fieldset>
         <label><input id="input-values" type="text" pattern="[0-9]+" inputmode="numeric" value="12321" maxlength="26"> Values</label>
         <br>
-        <label><input id="input-line-width" type="text" pattern="[1-5]" value="2" inputmode="numeric"> Line Width</label>
+        <label><input id="input-line-width" type="text" pattern="[1-5]" inputmode="numeric" value="2" maxlength="1"> Line Width</label>
         <br>
         <label><input id="input-curve" type="checkbox" checked> Curve</label>
         <br>
         <label><input id="input-endpoint" type="checkbox" checked> Endpoint</label>
         <br>
-        <label><input id="input-color" type="color" value="#000000"> Color</label>
+        <label><input id="input-color" type="color" value="{{ designTokens.colors.kaiser }}"> Color</label>
         <br>
-        <label><input id="input-endpoint-color" type="color" value="#000000"> Endpoint Color</label>
+        <label><input id="input-endpoint-color" type="color" value="{{ designTokens.colors.maple }}"> Endpoint Color</label>
     </fieldset>
-    <spark-line values="1,2,3,2,1" id="sparkline" style="margin-block-start: 0; align-self: center; justify-self: center;"></spark-line>
-    <noscript>Requires JavaScript, unfortunately.</noscript>
+    <spark-line values="1,2,3,2,1" id="interactive-sparkline" style="margin-block-start: 0; align-self: center; justify-self: center;"></spark-line>
 </form>
