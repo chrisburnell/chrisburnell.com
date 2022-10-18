@@ -10,12 +10,15 @@ toc: true
 ---
 
 <ul class=" [ cluster ] [ center ] ">
-    <li><!--email_off--><a href="mailto:{{ author.email }}">{{ author.email }}</a><!--/email_off--></li><li><a href="https://twitter.com/{{ author.twitter }}">@{{ author.twitter }}</a></li><li><a href="https://chrisburnell.com/cv/">chrisburnell.com/cv</a></li><li><a href="https://chrisburnell.com/cv.pdf">Download PDF</a></li>
+    <li><!--email_off--><a href="mailto:{{ author.email }}">{{ author.email }}</a><!--/email_off--></li><li><a href="https://chrisburnell.com/cv/">chrisburnell.com/cv</a></li>
+</ul>
+
+<ul class=" [ cluster ] [ center ] "><li><a href="https://chrisburnell.com/cv.pdf">Download PDF</a></li>
 </ul>
 
 ## Summary
 
-Front End Developer with {{ global.now | friendlyDate("yyyy") - site.established }} years of experience, specialising in CSS, design systems, developer evangelism and education, and technical writing and speaking. Lead Developer for projects across multiple industries, including government and higher education sectors, with clients such as [The Electoral Commission](https://www.electoralcommission.org.uk/), [Ministry of Justice](https://www.gov.uk/government/organisations/ministry-of-justice), [University of the Arts London](https://www.arts.ac.uk/), [William Hill](https://www.williamhill.com/), and more. Passionate about developing open source software, organising in-person events like [State of the Browser](https://stateofthebrowser.com), and being actively-involved in the web community.
+Front End Developer with {{ global.now | friendlyDate("yyyy") - site.established }} years of experience, specialising in CSS, design systems, developer evangelism and education, and technical writing and speaking. Lead Developer for projects across multiple industries, including government and higher education sectors, with clients such as [The Electoral Commission](https://www.electoralcommission.org.uk/), [Ministry of Justice](https://www.gov.uk/government/organisations/ministry-of-justice), [University of the Arts London](https://www.arts.ac.uk/), [William Hill](https://www.williamhill.com/), and more. Passionate about developing for the open web, having published over 40 technical articles and authored 4 open source projects. Actively involved in the web community by organising in-person events like [State of the Browser](https://stateofthebrowser.com).
 
 <h2 style="break-before: page;">Professional Experience</h2>
 
