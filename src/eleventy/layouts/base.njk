@@ -93,9 +93,9 @@
 	<meta name="theme-color" content="{{ designTokens.colors | keyValue("raven") }}">
 	<meta name="supported-color-schemes" content="light dark">
 
-	<style>{%- include '../../css/main.css' -%}</style>
+	<style>{%- include '../../../css/main.css' -%}</style>
 	{% if css -%}
-		<style>{%- include '../../css/' + css -%}</style>
+		<style>{%- include '../../../css/' + css -%}</style>
 	{%- endif %}
 
 	{% if tags and tags.includes('httpstatus') %}
@@ -236,7 +236,7 @@
 	<div class=" [ notification ] " hidden aria-hidden="true"></div>
 
 	{% if env.ELEVENTY_PRODUCTION %}
-		<script>{%- include '../../js/navigator.js' -%}</script>
+		<script>{%- include '../../../js/navigator.js' -%}</script>
 	{% endif %}
 	<script defer type="module" src="/js/main.js?v={{ pkg.version }}"></script>
 	{% if js %}

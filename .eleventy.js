@@ -147,8 +147,8 @@ module.exports = (eleventyConfig) => {
 		passthroughFileCopy: true,
 		dir: {
 			input: "src",
-			includes: "includes",
-			layouts: "layouts",
+			includes: "eleventy/includes",
+			layouts: "eleventy/layouts",
 			data: "data",
 		},
 	}
