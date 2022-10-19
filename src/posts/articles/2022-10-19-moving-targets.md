@@ -91,7 +91,7 @@ We can solve this with a simple CSS animation that looks almost unfinished:
 
 That’s the charm. The browser figures it out, based on whatever styles would be applied *without* the `:target` pseudo-class. So, from `0%` to `50%`, or half of the animation’s duration, we’ve told our target element to maintain the yellow background and black text. Then, from `50%` onwards, the browser will animate the `background-color` / `color` properties between `yellow` / `black` and whatever the otherwise declared or inherited values for those two properties are.
 
-<c-codepen slug="wvjbZXN/6e81b71d773fbe0d137a0de9078a553a"></c-codepen>
+<c-codepen slug="wvjbZXN/6e81b71d773fbe0d137a0de9078a553a" tabfree="true"></c-codepen>
 
 By the end of the animation, the element appears as if it is *not* being targeted, leaving our other styles to do their thing. This technique is particularly useful when we want to direct attention to an important heading, form element, footnote, etc.
 
