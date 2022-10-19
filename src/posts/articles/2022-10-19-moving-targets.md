@@ -1,5 +1,4 @@
 ---
-draft: true
 date: 2022-10-19T10:00:00+0100
 title: Moving Targets
 description: I was just working on some styling changes to my website and fell into a rabbit-hole on URLs, the <code>&lt;mark&gt;</code> element and <code>:target</code> pseudo-class, and ended up writing an animation as a handy technique for drawing the reader’s attention.
