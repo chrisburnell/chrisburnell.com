@@ -6,6 +6,8 @@ tags:
   - css
   - html
   - ux
+syndicate_to:
+  - https://twitter.com/iamchrisburnell/status/1583014193909096448
 ---
 
 ## Choose your own adventure
