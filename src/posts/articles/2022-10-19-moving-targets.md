@@ -135,8 +135,8 @@ These terse, twelve lines mean that we won’t have to remember to check reduced
 
 0. Backgrounds images are fixed in place and unable to move
 0. Scrolling happens instantly, rather than smoothly over a short period of time
-0. Transitions are completely disabled, i.e. instant snap between properties/values
 0. Animation outcomes are *preserved*, but the delay, duration, and number of iterations is made to happen instantly
+0. Transitions are completely disabled, i.e. instant snap between properties/values
 
 ## Over to you
 
