@@ -58,8 +58,9 @@
 		background-color: h(conifer);
 	}
 
-	.box {
-		border-block-start-color: h(raven, alpha);
+	.box,
+	%box {
+		border-block-start-color: var(--border-color, h(raven, alpha));
 	}
 
 	.librarian {
@@ -67,7 +68,8 @@
 	}
 
 	var,
-	.box %anchor {
+	.box %anchor,
+	%box %anchor {
 		color: h(highland);
 	}
 
