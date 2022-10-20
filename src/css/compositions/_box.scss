@@ -14,6 +14,7 @@
 
 .box {
 	background-color: var(--background-color, h(thunder, delta));
+	color: var(--color, inherit);
 	max-inline-size: var(--max-inline-size, 100%) !important;
 	padding: var(--gutter, var(--size-gutter));
 	border-block-start: var(--size-border-thin) solid var(--border-color, h(raven));
@@ -61,4 +62,18 @@
 .box.line-length,
 .box--line-length {
 	--max-inline-size: calc(var(--size-line-length) + var(--gutter, var(--size-gutter)) * 2);
+}
+
+.box--ancient {
+	--background-color: #e7cb91;
+	color: h(mineshaft);
+	border-width: 11px;
+	border-style: solid;
+	border-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAA8CAMAAADG+c2+AAAAAXNSR0IArs4c6QAAAIpQTFRFFyA4JTpePF6LT4+6c77TpN3bGTMtJVYuRoIydadDqMpY0NqRTSsyekhBrXdXwJRz17WU59WzNBwnYCwsiEsrvncr3p5B6MFwJBUnQR0xdSQ4pTAwz1c82oY+Hh05QCdRejZ7oj6MxlGX34SlCQoUEBQfFR0oIC43OUpQV3J3gZeWqLWyx8/M6+3pGwlVKwAAAC50Uk5TAP///////////////////////////////////////////////////////////1KX8FIAAAB5SURBVFiF7dcxDsAwCENRbmC4/2WrKAp4DnSo6t8lXZ4a0QUzs9hZIyYifNcQkwh6mQCXkWf3e7CM+AIIP08DTGSB2T1YRpw/aKz7r1JKKaWUUkqp3za+mmF2ecQLYO26DZAQzG70MBIHQBiBrSuzAUyBOdfukFl4AFFcHnPlv4frAAAAAElFTkSuQmCC) 11;
+	border-image-outset: 0;
+	border-image-outset: 9px 0;
+
+	%anchor {
+		color: inherit !important;
+	}
 }

@@ -26,6 +26,9 @@ ingredients:
   - title: water
     amount: 1 tbsp
 authors: my mother, Stephanie
+photo:
+  - url: bread-rolls.jpg
+    alt: Warm and fluffy bread rolls, made by yours truly
 ---
 
 Place the dough ingredients into the bread pan in the order listed: egg + water; butter/margarine; salt; bread flour; non-fat dry mlk; sugar; active dry yeast. Set the bread machine on the Dough / Bread Roll setting.
