@@ -103,13 +103,13 @@ As with the previous version of the function, it can accept the required dataset
 <figure>
     <p>Let <var>n</var> = size of dataset<br>Let <var>m</var> = items / group</p>
     <samp class="beta">
-        <var>n</var>(<var>n</var>&minus;1)&frasl;<var>m</var>
+        <var>n</var>(<var>n</var>&minus;1) &frasl; <var>m</var>
     </samp>
 </figure>
 
 <figure>
     <p>So, from a dataset of size <var>4</var>, if we want a group size of <var>3</var>, we can expect <var>4</var> unique groups:</p>
-    <samp class="beta"><var>4</var>(<var>4</var>&minus;1)&frasl;<var>3</var> = <var>4</var></samp>
+    <samp class="beta"><var>4</var>(<var>4</var>&minus;1) &frasl; <var>3</var> = <var>4</var></samp>
 </figure>
 
 ## In Action
