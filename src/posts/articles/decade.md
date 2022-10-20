@@ -19,7 +19,7 @@ I still remember my feelings towards rolling one’s own website when I register
 
 The control. The confidence that came with being in control. The unending horizon of creative possibilities that came with that confidence.
 
-No longer was I just another not-yet-eclipsed star in the Geocities galaxy. More mine than any Blogger profile, I was finally part of the <q>Blogosphere</q>, whatever that meant for 18-year-old me *(very little, it turns out)*.
+No longer was I another not-yet-eclipsed star in the Geocities galaxy. More mine than any Blogger profile, I was finally part of the <q>Blogosphere</q>, whatever that meant for 18-year-old me *(very little, it turns out)*.
 
 Looking back on my content, *my, how I’ve aged… thankfully*.
 

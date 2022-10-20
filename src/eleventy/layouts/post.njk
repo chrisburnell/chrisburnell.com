@@ -107,7 +107,7 @@ layout: base
 	<div class=" [ content ] [ flow ] {% if toc %}generate-toc{% endif %}">
 
 		{% if draft %}
-			<p class=" [ box  box--warning ] [ flow ] ">This is just a <em>draft</em>! The quality of this {{ categoryProper | default(category) | default('post') }} may not be up to snuff, a total work-in-progress, and is probably far from being complete (if we’re being real here). That being said, read on, knowing that you have been warned…</p>
+			<p class=" [ box  box--warning ] [ flow ] ">This is still a <em>draft</em>! The quality of this {{ categoryProper | default(category) | default('post') }} may not be up to snuff, and is probably far from being complete.</p>
 		{% endif %}
 
 		{% include 'banner.njk' %}

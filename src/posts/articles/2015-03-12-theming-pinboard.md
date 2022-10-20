@@ -129,7 +129,7 @@ Some of my personal gripes with *Pinboard’s* CSS specifically included:
 
 These factors made it difficult to nail down and style things exactly the way I wanted. It feels awkward for me to write CSS under these restrictions, but it’s always important to remember that although our pursuit of performant CSS is a necessary goal, CSS performance (painting and rendering after load aside) is relatively low on the totem pole.
 
-One avenue I could have investigated, but never did, was a similar browser plugin to modify the HTML of the page in conjunction and to compliment the CSS, but I figured that would result in a heavier performance hit than just injecting a simple stylesheet.
+One avenue I could have investigated, but never did, was a similar browser plugin to modify the HTML of the page in conjunction and to compliment the CSS, but I figured that would result in a heavier performance hit than injecting a small stylesheet.
 
 ## Changes
 

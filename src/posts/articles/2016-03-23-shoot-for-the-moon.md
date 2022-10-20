@@ -63,7 +63,7 @@ While the `width` of each box in the above demo is technically `133.3333px`, *su
 
 However, what is happening, as far as I can tell, is that the browser creates a tally of the leftover `0.3333px` from each of the three boxes and adds that *one* extra pixel of `width` to *one* of the three boxes. The exact mechanics of how this happens are a bit of a mystery to me *(why does the middle box receive the extra pixel?)*, but the outcome makes some rhyme and reason.
 
-But let’s not concern ourselves with the mechanics of *sub-pixel rendering* for now, and just focus on legacy browsers that employ the less accurate methods of CSS rounding, such as <q>down</q> or <q>nearest integer.</q>
+But let’s not concern ourselves with the mechanics of *sub-pixel rendering* for now, and focus on legacy browsers that employ the less accurate methods of CSS rounding, such as <q>down</q> or <q>nearest integer.</q>
 
 ## An Example
 

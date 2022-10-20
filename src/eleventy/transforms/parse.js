@@ -77,5 +77,6 @@ module.exports = async (value, outputPath) => {
 
 		return $.root().html()
 	}
+
 	return value
 }

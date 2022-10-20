@@ -57,7 +57,7 @@ Tell me what thy lordly name is on the Night’s Plutonian shore!</q><br>
 
 --------
 
-Just to get things moving, let’s *reuse* the styles we’ve from our `<mark>` elements for our `:target` selector, at least as a starting point:
+To get things moving, let’s *reuse* the styles we’ve from our `<mark>` elements for our `:target` selector, at least as a starting point:
 
 ```css
 mark,
@@ -113,7 +113,7 @@ By the end of the animation, the element appears as if it is *not* being targete
 
 ## Covering all the bases
 
-Of course, it’s always best to put animations, transitions, and the like behind a check against the browser preference for *reduced motion*, which means they prefer that websites not use those properties. Because the preference is boolean (on/off), it’s best to err on the side of caution and completely disable these things when we can detect the browser preference is on. But before we go and wrap our CSS in a media query, consider the following:
+It’s best to put animations, transitions, and the like behind a check against the browser preference for *reduced motion*, which means they prefer that websites not use those properties. Because the preference is boolean (on/off), it’s best to err on the side of caution and completely disable these things when we can detect the browser preference is on. But before we go and wrap our CSS in a media query, consider the following:
 
 Since we’re using motion, it’s useful to include something like the following snippet as part of our CSS Reset because all we have to do is… say it with me, now, folks: **set it and forget it!**
 

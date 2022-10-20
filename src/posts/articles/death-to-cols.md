@@ -67,7 +67,7 @@ With flex or grid, it’s trivial now to compose a layout exactly as you and/or 
 
 --------
 
-One of the major selling points about *Bootstrap* or *Foundation* was the ability to express a variety of layouts with relative ease. By dividing the page into, for example, 12 columns, we can layout halves (6 columns each), thirds (4 columns each), quarters (3 columns each), sixths (2 columns each), and, of course, twelfths (1 columns each).
+One of the major selling points about *Bootstrap* or *Foundation* was the ability to express a variety of layouts with relative ease. By dividing the page into, for example, 12 columns, we can layout halves (6 columns each), thirds (4 columns each), quarters (3 columns each), sixths (2 columns each), and twelfths (1 columns each).
 
 But these are really just abstractions of how our brain thinks about layout, or at least, how we previously thought about layout before these column-based layout systems became popular and the de facto standard.
 

@@ -1,7 +1,7 @@
 ---
 date: 2013-08-29T12:02:00+0100
 title: Viewport Woes
-description: I've been around the block and seen just about every combination of variables and syntax in viewport meta tags. What's the correct way to go about it? And maybe I'll comment on the state of browsers today as well.
+description: I've been around the block and seen many variations of variables and syntax in viewport meta tags. What's the correct way to go about it? And maybe I'll comment on the state of browsers today as well.
 tags:
   - html
 banner: viewport-woes.png
@@ -49,12 +49,12 @@ These tell the browser a number of things, respectively:
 
 For reasons like having a consistent user experience for all users, this is a pivotal piece of your markup and if done incorrectly, could break your entire design and leave you barking up the wrong tree until you realise that yeah, maybe sometimes, syntax matters.
 
-<h2 id="plain-and-simple">Just give it to me plain and simple</h2>
+<h2 id="plain-and-simple">Give it to me plain and simple</h2>
 
 Fine. I’ve rambled enough.
 
 - Separate your variables with commas, *not semicolons*.
-- Don’t set an arbitrary width to your page… just don’t do it if you value your time and sanity later on. Responsive design is done best when the page is fluid, so in 99.9% of cases, set this to `device-width`. But this is not a blanket statement, you must assess this on a per-project basis.
+- Don’t set an arbitrary width to your page… don’t do it if you value your time and sanity later on. Responsive design is done best when the page is fluid, so in 99.9% of cases, set this to `device-width`. But this is not a blanket statement, you must assess this on a per-project basis.
 - Use `maximum-scale` and `minimum-scale`, other variations don’t cut it.
 - Scalable only has one *E*, at the end.
 

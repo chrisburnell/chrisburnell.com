@@ -41,156 +41,46 @@
 		}
 	}
 }
-.background--lynx {
-	background-color: h(lynx);
-	color: h(alto);
-	@supports (color: color-contrast()) {
-		color: color-contrast(#{h(lynx)} vs var(--contrast-list) to var(--contrast-ratio));
+@each $name, $color in $colors {
+	.background--#{$name} {
+		background-color: h(#{$name});
+		@supports (color: color-contrast()) {
+			color: color-contrast(#{$color} vs var(--contrast-list) to var(--contrast-ratio));
+		}
 	}
 }
-.background--wolf {
-	background-color: h(wolf);
-	color: h(milou);
-	@supports (color: color-contrast()) {
-		color: color-contrast(#{h(wolf)} vs var(--contrast-list) to var(--contrast-ratio));
-	}
-}
-.background--bowhead {
-	background-color: h(bowhead);
-	color: h(milou);
-	@supports (color: color-contrast()) {
-		color: color-contrast(#{h(bowhead)} vs var(--contrast-list) to var(--contrast-ratio));
-	}
-}
-.background--raven {
-	background-color: h(raven);
-	color: h(thunder);
-	@supports (color: color-contrast()) {
-		color: color-contrast(#{h(raven)} vs var(--contrast-list) to var(--contrast-ratio));
-	}
-}
-.background--highland {
-	background-color: h(highland);
-	color: h(thunder);
-	@supports (color: color-contrast()) {
-		color: color-contrast(#{h(highland)} vs var(--contrast-list) to var(--contrast-ratio));
-	}
-}
-.background--coyote {
-	background-color: h(coyote);
-	color: h(mineshaft);
-	@supports (color: color-contrast()) {
-		color: color-contrast(#{h(coyote)} vs var(--contrast-list) to var(--contrast-ratio));
-	}
-}
-.background--bear {
-	background-color: h(bear);
-	color: h(mineshaft);
-	@supports (color: color-contrast()) {
-		color: color-contrast(#{h(bear)} vs var(--contrast-list) to var(--contrast-ratio));
-	}
-}
-.background--maple {
-	background-color: h(maple);
-	color: h(milou);
-	@supports (color: color-contrast()) {
-		color: color-contrast(#{h(maple)} vs var(--contrast-list) to var(--contrast-ratio));
-	}
-}
-.background--conifer {
-	background-color: h(conifer);
-	color: h(milou);
-	@supports (color: color-contrast()) {
-		color: color-contrast(#{h(conifer)} vs var(--contrast-list) to var(--contrast-ratio));
-	}
-}
-.background--aspen {
-	background-color: h(aspen);
-	color: h(mineshaft);
-	@supports (color: color-contrast()) {
-		color: color-contrast(#{h(aspen)} vs var(--contrast-list) to var(--contrast-ratio));
-	}
-}
-.background--thunder {
-	background-color: h(thunder);
-	color: h(milou);
-	@supports (color: color-contrast()) {
-		color: color-contrast(#{h(thunder)} vs var(--contrast-list) to var(--contrast-ratio));
-	}
-}
-.background--mineshaft {
-	background-color: h(mineshaft);
-	color: h(milou);
-	@supports (color: color-contrast()) {
-		color: color-contrast(#{h(mineshaft)} vs var(--contrast-list) to var(--contrast-ratio));
-	}
-}
-.background--kaiser {
-	background-color: h(kaiser);
-	color: h(milou);
-	@supports (color: color-contrast()) {
-		color: color-contrast(#{h(kaiser)} vs var(--contrast-list) to var(--contrast-ratio));
-	}
-}
-.background--dove {
-	background-color: h(dove);
-	color: h(milou);
-	@supports (color: color-contrast()) {
-		color: color-contrast(#{h(dove)} vs var(--contrast-list) to var(--contrast-ratio));
-	}
-}
-.background--alto {
-	background-color: h(alto);
-	color: h(mineshaft);
-	@supports (color: color-contrast()) {
-		color: color-contrast(#{h(alto)} vs var(--contrast-list) to var(--contrast-ratio));
-	}
-}
+.background--alto,
+.background--aspen,
+.background--bear,
+.background--coyote,
 .background--milou {
-	background-color: h(milou);
 	color: h(mineshaft);
-	@supports (color: color-contrast()) {
-		color: color-contrast(#{h(milou)} vs var(--contrast-list) to var(--contrast-ratio));
-	}
+}
+.background--highland,
+.background--raven {
+	color: h(thunder);
+}
+.background--lynx {
+	color: h(alto);
+}
+.background--bowhead,
+.background--conifer,
+.background--dove,
+.background--kaiser,
+.background--maple,
+.background--mineshaft,
+.background--thunder,
+.background--wolf {
+	color: h(milou);
 }
 
 .size-example {
 	background-color: h(raven);
 	display: block;
 }
-.size-example--tiny {
-	inline-size: var(--size-tiny);
-	block-size: var(--size-tiny);
-}
-.size-example--small {
-	inline-size: var(--size-small);
-	block-size: var(--size-small);
-}
-.size-example--medium {
-	inline-size: var(--size-medium);
-	block-size: var(--size-medium);
-}
-.size-example--large {
-	inline-size: var(--size-large);
-	block-size: var(--size-large);
-}
-.size-example--gigantic {
-	inline-size: var(--size-gigantic);
-	block-size: var(--size-gigantic);
-}
-.size-example--tiny-small {
-	inline-size: var(--size-tiny-small);
-	block-size: var(--size-tiny-small);
-}
-.size-example--small-medium {
-	inline-size: var(--size-small-medium);
-	block-size: var(--size-small-medium);
-}
-.size-example--medium-large {
-	inline-size: var(--size-medium-large);
-	block-size: var(--size-medium-large);
-}
-.size-example--large-gigantic {
-	inline-size: var(--size-large-gigantic);
-	block-size: var(--size-large-gigantic);
+@each $name, $size in $sizes {
+	.size-example--#{$name} {
+		inline-size: var(--size-#{$name});
+		block-size: var(--size-#{$name});
+	}
 }

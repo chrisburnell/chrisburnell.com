@@ -55,7 +55,7 @@ The method which is far more predictable in its use of `@extend` does something 
 - `%monospace-elements`
 - `%button-elements`
 
-I have created the above *placeholder selectors* to represent different groups of *multiple selectors*, and the terse naming makes it easy to understand what they represent (at least I think so). How these are used is best explained with an example, so let’s look at how I target all *heading elements* (`h1`, `h2`, `h3`, `h4`, `h5`, `h6`) throughout my Sass:
+I have created the above *placeholder selectors* to represent different groups of *multiple selectors*, and the terse naming helps understanding what they represent (at least I think so). How these are used is best explained with an example, so let’s look at how I target all *heading elements* (`h1`, `h2`, `h3`, `h4`, `h5`, `h6`) throughout my Sass:
 
 ```scss
 h1,

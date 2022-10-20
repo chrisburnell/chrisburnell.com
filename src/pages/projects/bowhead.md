@@ -27,7 +27,7 @@ toc: true
 
 ## Why?
 
-Implementing a design system or even just a series of simple design tokens can come with some unpredictable mental overhead. **Bowhead** aims to reduce that mental overhead by abstracting the specifics of design tokens into human-sensible formats and nomenclature.
+Implementing a design system or even a series of simple design tokens can come with some unpredictable mental overhead. **Bowhead** aims to reduce that mental overhead by abstracting the specifics of design tokens into human-sensible formats and nomenclature.
 
 This has a positive effect that ranges from giving the colours in your design system fun and memorable names, to the time and effort saved when communicating about these colours with collaborators without getting bogged down by details, because let’s be real: you don’t want *or need* to memorise the six-character hex value for all your colours, nor does anyone else! Now imagine that scenario when applied to multiple times more design tokens.
 
@@ -65,7 +65,7 @@ selector {
 
 If we take the above snippet as an example, we can quickly identify two <q>types</q> of values present: colors and sizes. *Colors* typically stand out quite easily, and, historically, developers have done well to assign colors to variables to simplify their use throughout the codebase. *Sizes*, on the other hand, are rarely seen reflected as design tokens in *CSS* despite their frequent prescence in other forms of design tokens, e.g. the space around a logo or iconography is usually defined in a brand's guidelines.
 
-Despite being presented in different formats, we can confidently say that `background-color`, `color`, and `outline-color` expect a *color*-type value, not just because <q>color</q> is in their names, but because we can interchange the values between the properties and they still make sense.
+Despite being presented in different formats, we can confidently say that `background-color`, `color`, and `outline-color` expect a *color*-type value, not only because <q>color</q> is in their names, but because we can interchange the values between the properties and they still make sense.
 
 Sizes can take trickier forms to identify and categorise, and I recommend allowing for more sizes than you might expect at first and paring it back later. Getting everything categorised is the hard part; swapping tokens later becomes very trivial off the back of this up-front effort. Regardless, I attach any kind of distance-related value to a size, and, once again, we could interchange any of the values between `padding`, `margin`, `border-width`, or `width` and the CSS still makes sense.
 
@@ -421,7 +421,7 @@ $bowhead-property-map: (
 @import "node_modules/@chrisburnell/bowhead/bowhead";
 ```
 
-Finally, you can use either **Bowhead's** `@v` function, `@v` mixin, both, or just the CSS Variables it can spit out. However you use it is totally up to you! 😄
+Finally, you can use either **Bowhead's** `@v` function, `@v` mixin, both, or the CSS Variables it can spit out on their own. However you use it is totally up to you! 😄
 
 ```scss
 .thing {
@@ -431,7 +431,7 @@ Finally, you can use either **Bowhead's** `@v` function, `@v` mixin, both, or ju
     padding: v(size, medium) v(size, large);
     @include v(z-index, above);
     opacity: var(--opacity-alpha);
-    // 1. if you just want the raw value, this is not really recommended:
+    // 1. if you only want the raw value, this is not really recommended:
     text-decoration-color: map-get(map-get($bowhead-tokens, "color"), "brick");
     // 2. this does the same for you:
     text-decoration-color: v(color, brick, true);
@@ -481,7 +481,7 @@ Combining values? Same idea:
 }
 ```
 
-What about multiple values in a function? Just make sure you're using the *raw* values from the `v()` function:
+What about multiple values in a function? Make sure you're using the *raw* values from the `v()` function:
 
 ```scss
 .thing {

@@ -8,6 +8,7 @@ const pregenImagePlugin = require("#plugins/pregenImagePlugin")
 const imagePlugin = require("#plugins/imagePlugin")
 const imageAvatarPlugin = require("#plugins/imageAvatarPlugin")
 // const albumCoverPlugin = require("#plugins/albumCoverPlugin")
+// const inclusiveLanguagePlugin = require("@11ty/eleventy-plugin-inclusive-language")
 const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output")
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight")
 const webCPlugin = require("@11ty/eleventy-plugin-webc")
@@ -48,6 +49,10 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.addPlugin(imageAvatarPlugin)
 	eleventyConfig.addPlugin(syntaxHighlightPlugin)
 	eleventyConfig.addPlugin(webmentionsPlugin, configWebmentions)
+	// eleventyConfig.addPlugin(inclusiveLanguagePlugin, {
+	// 	// accepts an array or a comma-delimited string
+	// 	words: "simply,obviously,basically,of course,clearly,just,everyone knows,easy"
+	// })
 	eleventyConfig.addPlugin(webCPlugin, {
 		components: "./src/webc/**/*.webc",
 		useTransform: true,

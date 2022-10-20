@@ -38,11 +38,11 @@ Now that we’ve defined them at the root of the document (the `html` element), 
 }
 ```
 
-The advantage of defining our colours like this is that it makes for very readable colour definitions in your CSS, and makes it easy to combine any of your colours with any of your defined opacities.
+The advantage of defining our colours like this is that it makes for very readable colour definitions in your CSS, and makes it easier to combine any of your colours with any of your defined opacities.
 
-When I would have handled this with SCSS in the past, I would have had to define **18** variables to represent all the possible combinations of colours and opacities. On this website, that would mean generating **64** variables, and on some big projects I’ve worked on before with vast colour schemes, this called for **405** variables: 9 <q>main</q> colours, 2 tints and 2 shades of each, and 9 opacity options! This technique reduced that number down to 54, and when exciting CSS features like `color-mix()` become stable, that number will be whittled down even further to just 18.
+When I would have handled this with SCSS in the past, I would have had to define **18** variables to represent all the possible combinations of colours and opacities. On this website, that would mean generating **64** variables, and on some big projects I’ve worked on before with vast colour schemes, this called for **405** variables: 9 <q>main</q> colours, 2 tints and 2 shades of each, and 9 opacity options! This technique reduced that number down to 54, and when exciting CSS features like `color-mix()` become stable, that number will be whittled down even further to 18.
 
-It seems like the power of CSS has been just exploding recently, and I couldn’t be happier to have all these amazing new techniques available for developers to use!
+It seems like the power of CSS has been exploding recently, and I couldn’t be happier to have all these amazing new techniques available for developers to use!
 
 ## Give me some sugar
 

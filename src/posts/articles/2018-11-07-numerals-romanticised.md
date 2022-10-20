@@ -63,7 +63,7 @@ But to follow that line of thinking and think of <samp>9</samp> as <samp>5 + 1 +
 
 The rule here is that a character in Roman numerals can have no more than *three <q>modifiers</q>*. So, to represent <samp>9</samp> in Roman numerals, we instead refer to the *next higher value* (<samp>I</samp>, <samp>V</samp>, <samp>X</samp>, <samp>L</samp>, etc.) and modify that value. In this case, the next higher value from <samp>V</samp> is <samp>X</samp>, so we say <samp>10 - 1</samp>, or <q>one before ten</q>, so <samp>9</samp> is written as <samp>IX</samp>.
 
-An easy way to spot these <q>exceptions</q> is to look for letters which appear out of order—Roman numerals are written with higher-value letters *almost always* appearing before lower-value letters, reading from left to right, higher to lower—so any letter which appears before a higher value tells you that it falls under the <q>one before</q> exception.
+One way to spot these <q>exceptions</q> is to look for letters which appear out of order—Roman numerals are written with higher-value letters *almost always* appearing before lower-value letters, reading from left to right, higher to lower—so any letter which appears before a higher value tells you that it falls under the <q>one before</q> exception.
 
 <samp>IV</samp> is not <samp>1 + 5</samp>, it is <q>1 before 5</q>, or <samp>-1 + 5 = 4</samp>.
 
@@ -142,7 +142,7 @@ Let’s step through converting an Arabic numeral (e.g. <samp>1569</samp>) to Ro
 
 Because we’re subtracting values from our Arabic numeral as we loop and convert Arabic values to Roman numerals, we will know when we’re done because our Arabic numeral will equal <samp>0</samp>.
 
-The same can be done for going from Roman numerals to Arabic. To do so, we have to check each character in-sequence and tally up their values to arrive at the Arabic value. Like before, we have to watch out for the <q>one-value-less</q> exceptions, so instead of just checking each single character in sequence, we’ll first check if the *next two* characters in the Roman numeral sequence match an exception, and if so, use that value instead.
+The same can be done for going from Roman numerals to Arabic. To do so, we have to check each character in-sequence and tally up their values to arrive at the Arabic value. Like before, we have to watch out for the <q>one-value-less</q> exceptions, so instead of checking each single character in sequence, we’ll first check if the *next two* characters in the Roman numeral sequence match an exception, and if so, use that value instead.
 
 ```liquid{% raw %}
 {% assign input = include.value %}

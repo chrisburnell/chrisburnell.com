@@ -75,7 +75,7 @@ With the power of CSS’s Flex and Grid, it’s trivial now to compose a layout 
 
 --------
 
-One of the major selling points about these classic grid systems was their ability to express a variety of layouts with relative ease. By dividing the page into, for example, 12 columns, we can layout halves (6 columns each), thirds (4 columns each), quarters (3 columns each), sixths (2 columns each), and, of course, twelfths (1 columns each).
+One of the major selling points about these classic grid systems was their ability to express a variety of layouts with relative ease. By dividing the page into, for example, 12 columns, we can layout halves (6 columns each), thirds (4 columns each), quarters (3 columns each), sixths (2 columns each), and twelfths (1 columns each).
 
 But these are really just abstractions of how our brain thinks about layout, or at least, how we previously thought about layout before these column-based layout systems became popular and the de facto standard. Moreso, the designs that we come up with are compromised to fit into the framework that we're clinging to.
 

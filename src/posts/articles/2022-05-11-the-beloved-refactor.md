@@ -48,7 +48,7 @@ For example, I have defined a palette of colours I’d like to reuse:
 
 ## High Fluking Dive
 
-Sunsetted my personal use of [Bowhead](/bowhead/) in favour of simpler and more reusable code. I might still explore how to make it useful; its <q>type-setting for CSS</q> definitely has some value. At the very least, I might explore using it simply for *generating* the CSS variables it uses as part of its powerful `v()` <dfn title="SCSS mixins allow you to define styles that can be easily reused through your code.">mixin</dfn>.
+Sunsetted my personal use of [Bowhead](/bowhead/) in favour of simpler and more reusable code. I might still explore how to make it useful; its <q>type-setting for CSS</q> definitely has some value. At the very least, I might explore using it for *generating* the CSS variables it uses as part of its powerful `v()` <dfn title="SCSS mixins allow you to define styles that can be easily reused through your code.">mixin</dfn>.
 
 ```scss
 .box {

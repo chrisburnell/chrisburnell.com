@@ -74,7 +74,7 @@ Do I want my posts to be a reflection of the time they were made? Or should they
 
 If I responded to *John Doe* last year, but this year they are called *Jane Doe*, should my old replies display *John* or *Jane*?
 
-Can I pull the name of the person to whom I am responding from the *Twitter* API? <aside>Unfortunately, when I POST a new Tweet, the response from *Twitter’s* API does not include the target’s name, so pulling this data out cannot simply be tacked onto the end of the *Micropub* work. This means that a second request to the *Twitter* API would have to be made to pull out the name of the person.</aside> *Mastodon* API? Can it be extracted from microformats or clever parsing of the page?
+Can I pull the name of the person to whom I am responding from the *Twitter* API? <aside>Unfortunately, when I POST a new Tweet, the response from *Twitter’s* API does not include the target’s name, so pulling this data out cannot be tacked onto the end of the *Micropub* work. This means that a second request to the *Twitter* API would have to be made to pull out the name of the person.</aside> *Mastodon* API? Can it be extracted from microformats or clever parsing of the page?
 
 #### For Personal Websites:
 

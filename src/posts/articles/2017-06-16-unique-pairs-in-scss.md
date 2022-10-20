@@ -1,22 +1,22 @@
 ---
 date: 2017-06-16T14:00:00+0100
-title: Unique Pairs in Sass
-description: In creating a from-scratch grid for a redevelopment project, I was using Sass to loop through various bits of data to generate a bunch of repetitive CSS, but I realised I had no DRY way of generating a list of unique pairs of items from a given dataset, so I set out to find out how.
+title: Unique Pairs in SCSS
+description: In creating a from-scratch grid for a redevelopment project, I was using SCSS to loop through various bits of data to generate a bunch of repetitive CSS, but I realised I had no DRY way of generating a list of unique pairs of items from a given dataset, so I set out to find out how.
 tags:
   - scss
-banner: unique-pairs-in-sass.jpg
+banner: unique-pairs-in-scss.jpg
 syndicate_to:
   - https://twitter.com/iamchrisburnell/status/877492210241032192
 ---
 
 <blockquote>
-    <p>Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.</p>
+    <p>[SCSS] is the most mature, stable, and powerful professional grade CSS extension language in the world.</p>
     <cite class="h-cite"><a href="http://sass-lang.com" title="Sass: Syntactically Awesome Style Sheets" rel="external">Sass (sass-lang.com)</a></cite>
 </blockquote>
 
-CSS developers usually fall into one of two camps when it comes to preprocessors: a loving embrace or a cold shoulder. While I have an obvious bias, I get the sense that a portion of the <q>cold shoulder</q> folks perhaps hold a fundamental misunderstanding of Sass’ purpose, its strengths, and its weaknesses. This could be chaulked up to a poor introduction to Sass; it is not a tool that can be mindlessly slapped <q>on top</q> of CSS with the expectation that things will improve through its sheer use.
+CSS developers usually fall into one of two camps when it comes to preprocessors: a loving embrace or a cold shoulder. While I have an obvious bias, I get the sense that a portion of the <q>cold shoulder</q> folks perhaps hold a fundamental misunderstanding of SCSS’s purpose, its strengths, and its weaknesses. This could be chalked up to a poor introduction to SCSS; it is not a tool that can be mindlessly slapped <q>on top</q> of CSS with the expectation that things will improve through its sheer use.
 
-Like writing careful CSS, Sass thrives under very controlled and predictable conditions. Casting a bunch of CSS property values to Sass variables is all well and good, but only if they’re simple and cohesive with the rest of your stylesheets. Simply converting your CSS to Sass provides you with no wins unless it is done with consideration; in fact, without consideration, I would argue that doing so would add complexity—complexity which I feel can stain the first impression developers get of preprocessors. What purpose does Sass serve if it can never surpass the feature set and limitations of CSS?
+Like writing careful CSS, SCSS thrives under very controlled and predictable conditions. Casting a bunch of CSS property values to SCSS variables is all well and good, but only if they’re simple and cohesive with the rest of your stylesheets. Converting your CSS to SCSS provides you with no wins unless it is done with consideration; in fact, without consideration, I would argue that doing so would add complexity—complexity which I feel can stain the first impression developers get of preprocessors. What purpose does SCSS serve if it can never surpass the feature set and limitations of CSS?
 
 The purpose lies, *for me*, in:
 
@@ -26,7 +26,7 @@ The purpose lies, *for me*, in:
 
 If your code does the opposite of any of those things, you should re-evaluate what you’re trying to achieve to work out the path of least resistance.
 
-Be wary of Sass which appears more complex or lengthier than its compiled CSS counterpart. It’s only worth the luxury of not having to manage something manually if the pre-compiled code is easy, if not easier, to understand than the compiled output. An example of where this would work might be within a grid system, when defining and maintaining the styles for multiple columns and layouts of columns in CSS is clearly more time-consuming than generating it automatically from a handful of Sass variables.
+Be wary of SCSS which appears more complex or lengthier than its compiled CSS counterpart. It’s only worth the luxury of not having to manage something manually if the pre-compiled code is easy, if not easier, to understand than the compiled output. An example of where this would work might be within a grid system, when defining and maintaining the styles for multiple columns and layouts of columns in CSS is more time-consuming than generating it automatically from a handful of SCSS variables.
 
 ## An example
 
@@ -41,7 +41,7 @@ $breakpoints: (
 );
 ```
 
-The Sass needs to be able to handle any number of breakpoints, not just an arbitrary number, so we’re going to have to use `@each` and/or `@for` to create some loops. We need to be able to say <q>below <var>A</var></q>, <q>above <var>B</var></q>, <q>above <var>A</var> and below <var>B</var></q>, etc. do *something*.
+The SCSS needs to be able to handle any number of breakpoints, not just an arbitrary number, so we’re going to have to use `@each` and/or `@for` to create some loops. We need to be able to say <q>below <var>A</var></q>, <q>above <var>B</var></q>, <q>above <var>A</var> and below <var>B</var></q>, etc. do *something*.
 
 So using a BEM naming methodology, we’ll use a *base class* of `.hide` and extend it like so:
 
@@ -86,7 +86,7 @@ We can expect <var>6</var> unique pairs from a list of <var>4</var> items.
 
 ## Here’s the function!
 
-Here’s the behemoth `@function` that accepts a Sass *List* or *Map* and spits out all the unique pairs to do with whatever necessary (and I <del>guarantee</del> <del>promise</del> think it’s less complex than building it manually):
+Here’s the behemoth `@function` that accepts a SCSS *List* or *Map* and spits out all the unique pairs to do with whatever necessary (and I <del>guarantee</del> <del>promise</del> think it’s less complex than building it manually):
 
 ```scss
 @function unique-pairs($data) {
@@ -156,7 +156,7 @@ $unique-pairs: ();
 $seen: ();
 ```
 
-0. <var>$unique-pairs</var> will be returned by this function and will contain the unique pairs, obviously.
+0. <var>$unique-pairs</var> will be returned by this function and will contain the unique pairs.
 0. <var>$seen</var> is used to keep track of how far into the original dataset has been iterated to prevent duplication.
 
 Next, we’ll perform some operations in the case where the dataset is a *List*:
@@ -301,6 +301,6 @@ Here’s a small demo of the `@function` on *CodePen*, which I recommend opening
 
 <c-codepen slug="OWWYdj"></c-codepen>
 
-This is a pretty extreme example of how smart utilisation of Sass’ features makes writing and maintaining CSS easier (and more satisfying), but you can start on this path in a much smaller capacity. Investigate what kind of wins you’ll achieve through abstracting your colours, sizes, sets of styles, etc. and proceed, carefully, to organise and DRY out your code. If you’re unsure where to start with refactoring, [Harry Roberts](https://csswizardry.com/) has written some [excellent articles](https://csswizardry.com/2017/06/refactoring-tunnels/) [about refactoring](https://csswizardry.com/2016/08/refactoring-css-the-three-i-s/).
+This is a pretty extreme example of how smart utilisation of SCSS’s features makes writing and maintaining CSS easier (and more satisfying), but you can start on this path in a much smaller capacity. Investigate what kind of wins you’ll achieve through abstracting your colours, sizes, sets of styles, etc. and proceed, carefully, to organise and DRY out your code. If you’re unsure where to start with refactoring, [Harry Roberts](https://csswizardry.com/) has written some [excellent articles](https://csswizardry.com/2017/06/refactoring-tunnels/) [about refactoring](https://csswizardry.com/2016/08/refactoring-css-the-three-i-s/).
 
 *[BEM]: Block Element Modifier
