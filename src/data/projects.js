@@ -1,12 +1,5 @@
-const fetchFilter = require("#filters/fetch")
-
-const getGithubData = async (repository) => {
-	const github = await fetchFilter.githubData(repository)
-	return github
-}
-
-module.exports = async () => {
-	const personal = [
+module.exports = {
+	personal: [
 		{
 			url: "https://dnd.chrisburnell.com",
 			data: {
@@ -25,13 +18,6 @@ module.exports = async () => {
 				description: "Super Simple PWA for building [Microlite20](https://micro.bloodbuilder.online/docs/Microlite20.pdf) characters.",
 				description_markdown: true,
 				emoji: "🔬",
-				show_responses: true,
-				updated: await getGithubData("chrisburnell/micrathene")
-					.then((github) => github["updated_at"])
-					.catch(() => false),
-				// stargazers: await getGithubData("chrisburnell/micrathene")
-				// 	.then((github) => parseFloat(github["stargazers_count"]))
-				// 	.catch(() => 0),
 			},
 		},
 		{
@@ -72,9 +58,9 @@ module.exports = async () => {
 				emoji: "🌪️",
 			},
 		},
-	]
+	],
 
-	const previousVersions = [
+	previousVersions: [
 		{
 			url: "https://v2.chrisburnell.com",
 			data: {
@@ -97,9 +83,9 @@ module.exports = async () => {
 				emoji: "🐣",
 			},
 		},
-	]
+	],
 
-	const web = [
+	web: [
 		{
 			url: "https://weather.chrisburnell.com",
 			data: {
@@ -111,23 +97,6 @@ module.exports = async () => {
 			},
 		},
 		{
-			url: "https://ownyourbeer.chrisburnell.com",
-			data: {
-				date: "2019-05-15T12:00:00+0000",
-				title: "OwnYourBeer",
-				description: "An IndieWeb tool to help you pull check-ins from [Untappd](https://untappd.com). Still a work-in-progress.",
-				description_markdown: true,
-				emoji: "🍻",
-				show_responses: true,
-				updated: await getGithubData("chrisburnell/OwnYourBeer")
-					.then((github) => github["updated_at"])
-					.catch(() => false),
-				// stargazers: await getGithubData("chrisburnell/OwnYourBeer")
-				// 	.then((github) => parseFloat(github["stargazers_count"]))
-				// 	.catch(() => 0),
-			},
-		},
-		{
 			url: "https://repc.co",
 			data: {
 				date: "2019-03-04T12:00:00+0000",
@@ -135,40 +104,6 @@ module.exports = async () => {
 				description: "My personal (and automatic) URL-shortening service based on Tantek Çelik’s base-60 numbering system, NewBase60. <em>Note: the homepage just redirects to this website, but you can read about how it works here: [LiquidBase60](https://chrisburnell.com/article/liquid-base-60/)</em>.",
 				description_markdown: true,
 				emoji: "🔗",
-			},
-		},
-		{
-			url: "https://corvus.chrisburnell.com",
-			data: {
-				date: "2019-05-15T12:00:00+0000",
-				title: "Corvus",
-				description: "My personal [micropub](https://indieweb.org/micropub) endpoint.",
-				description_markdown: true,
-				emoji: "🐦",
-				show_responses: true,
-				updated: await getGithubData("chrisburnell/corvus")
-					.then((github) => github["updated_at"])
-					.catch(() => false),
-				// stargazers: await getGithubData("chrisburnell/corvus")
-				// 	.then((github) => parseFloat(github["stargazers_count"]))
-				// 	.catch(() => 0),
-			},
-		},
-		{
-			url: "https://media.chrisburnell.com",
-			data: {
-				date: "2018-02-21T12:00:00+0000",
-				title: "Media Controls",
-				description: "Play native web media and utilise keyboard controls à la YouTube.",
-				description_markdown: true,
-				emoji: "🎧",
-				show_responses: true,
-				updated: await getGithubData("chrisburnell/mediaControls")
-					.then((github) => github["updated_at"])
-					.catch(() => false),
-				// stargazers: await getGithubData("chrisburnell/mediaControls")
-				// 	.then((github) => parseFloat(github["stargazers_count"]))
-				// 	.catch(() => 0),
 			},
 		},
 		{
@@ -193,10 +128,4 @@ module.exports = async () => {
 			},
 		},
 	]
-
-	return {
-		personal: personal,
-		previousVersions: previousVersions,
-		web: web,
-	}
 }

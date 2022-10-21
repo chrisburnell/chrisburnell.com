@@ -144,11 +144,11 @@
 		<h1>
 			{% if item.data.tags and "clickthrough" in item.data.tags and item.data.emoji %}
 				<a class=" [ p-name ] " href="{{ item_of_url | default(item.url) | striptags(true) | safe }}">
-					<c-emoji>{{ item.data.emoji }}</c-emoji>{{ item_title | default(item_of_title) | striptags(true) | safe }}
+					<c-emoji>{{ item.data.emoji }}</c-emoji> {{ item_title | default(item_of_title) | striptags(true) | safe }}
 				</a>
 			{% elif item.data.emoji %}
 				<a class=" [ p-name ] " href="{{ item.url | striptags(true) | safe }}">
-					<c-emoji>{{ item.data.emoji }}</c-emoji>{{ item_title | default(item_of_title) | striptags(true) | safe }}
+					<c-emoji>{{ item.data.emoji }}</c-emoji> {{ item_title | default(item_of_title) | striptags(true) | safe }}
 				</a>
 			{% else %}
 				<a class=" [ p-name ] " href="{{ item.url | striptags(true) | safe }}">

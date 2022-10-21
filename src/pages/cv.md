@@ -1,5 +1,5 @@
 ---
-title: CV
+title: Curriculum Vitae
 eleventyComputed:
   description: "{{ author.role | title }}{% if author.employer %} / {{ author.employer.role | title }} at {{ author.employer.title }}{% endif %}"
   tagline: "{{ author.name }}"

@@ -16,18 +16,18 @@ truncate: false
 	{% endfor %}
 </nav>
 
-<h2>{{ site.url | getHost }} in the past</h2>
-
-<nav class=" [ deck ] ">
-	{% for item in projects.previousVersions %}
-		{% include 'items/deck.njk' %}
-	{% endfor %}
-</nav>
-
 <h2>Personal projects</h2>
 
 <nav class=" [ deck ] ">
 	{% for item in projects.personal %}
+		{% include 'items/deck.njk' %}
+	{% endfor %}
+</nav>
+
+<h2>{{ site.url | getHost }} in the past</h2>
+
+<nav class=" [ deck ] ">
+	{% for item in projects.previousVersions %}
 		{% include 'items/deck.njk' %}
 	{% endfor %}
 </nav>
