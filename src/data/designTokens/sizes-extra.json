@@ -1,0 +1,12 @@
+{
+  "space": "clamp(1.5em, 0.04rem + 1.86vw, 2.25em)",
+  "gutter": "var(--size-medium)",
+  "gap": "calc(var(--size-gutter) * 2)",
+  "avatar": "100px",
+  "avatar-small": "48px",
+  "logo": "clamp(9rem, -3.6rem + 28.8vw, 18rem)",
+  "logo-small": "clamp(5rem, 0.825rem + 6.667vw, 7.5rem)",
+  "line-length": "clamp(21em, 100vw, 30em)",
+  "border-default": "4px",
+  "border-thin": "2px"
+}

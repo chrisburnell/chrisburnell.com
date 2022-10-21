@@ -10,15 +10,21 @@ figure {
 	align-items: center;
 	justify-content: center;
 	margin: 0;
+	// Allow for content to overflow without breaking the page with scrollbar
+	overflow-x: auto;
+	overflow-y: hidden;
 
 	&:not(.no-counter) {
 		counter-increment: figureNumber;
 	}
 
-	// Allow for content to overflow without breaking the page with scrollbar
-	&:not(.highlight) {
-		overflow-x: auto;
-		overflow-y: hidden;
+	figcaption {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding-block-start: var(--size-medium);
+		font-family: var(--font-family-serif);
+		line-height: var(--line-height-small);
 	}
 
 	%image,
@@ -34,14 +40,5 @@ figure {
 	& > a figcaption {
 		color: h(dove);
 		font-style: italic;
-	}
-
-	figcaption {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		padding-block-start: var(--size-medium);
-		font-family: var(--font-family-serif);
-		line-height: var(--line-height-small);
 	}
 }

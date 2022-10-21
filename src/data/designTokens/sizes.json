@@ -7,15 +7,5 @@
   "tiny-small": "clamp(0.31rem, 0.04rem + 0.86vw, 0.69rem)",
   "small-medium": "clamp(0.63rem, 0.04rem + 1.86vw, 1.44rem)",
   "medium-large": "clamp(1.25rem, 0.31rem + 3.00vw, 2.56rem)",
-  "large-gigantic": "clamp(2.25rem, 0.64rem + 5.14vw, 4.5rem)",
-  "space": "clamp(1.5em, 0.04rem + 1.86vw, 2.25em)",
-  "gutter": "var(--size-medium)",
-  "gap": "calc(var(--size-gutter) * 2)",
-  "avatar": "100px",
-  "avatar-small": "48px",
-  "logo": "clamp(9rem, -3.6rem + 28.8vw, 18rem)",
-  "logo-small": "clamp(5rem, 0.825rem + 6.667vw, 7.5rem)",
-  "line-length": "clamp(21em, 100vw, 30em)",
-  "border-default": "4px",
-  "border-thin": "2px"
+  "large-gigantic": "clamp(2.25rem, 0.64rem + 5.14vw, 4.5rem)"
 }

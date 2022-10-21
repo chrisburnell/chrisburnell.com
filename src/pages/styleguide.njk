@@ -13,7 +13,7 @@ toc: true
 	<ul id="colors" class=" [ palette ] ">
 		{%- for name, color in designTokens.colors -%}
 			<li class=" [ background--{{ name }} ] ">
-				<h3>{{ name }}</h3>
+				<h3>{{ name | title }}</h3>
 				<div class="monospace">{{ color }}</div>
 			</li>
 		{%- endfor -%}
@@ -28,24 +28,10 @@ toc: true
 <p>Fluid size scale generated with <a href="https://utopia.fyi/space/calculator/?c=500,16,1.2,1200,18,1.25,5,2,&s=0.625|0.3125,1.25|2.25|4,xs-m">Utopia</a>:</p>
 
 <dl>
-	<dt>Tiny</dt>
-	<dd><div class=" [ size-example  size-example--tiny ] "></div></dd>
-	<dt>Small</dt>
-	<dd><div class=" [ size-example  size-example--small ] "></div></dd>
-	<dt>Medium</dt>
-	<dd><div class=" [ size-example  size-example--medium ] "></div></dd>
-	<dt>Large</dt>
-	<dd><div class=" [ size-example  size-example--large ] "></div></dd>
-	<dt>Gigantic</dt>
-	<dd><div class=" [ size-example  size-example--gigantic ] "></div></dd>
-	<dt>Tiny–Small</dt>
-	<dd><div class=" [ size-example  size-example--tiny-small ] "></div></dd>
-	<dt>Small–Medium</dt>
-	<dd><div class=" [ size-example  size-example--small-medium ] "></div></dd>
-	<dt>Medium–Large</dt>
-	<dd><div class=" [ size-example  size-example--medium-large ] "></div></dd>
-	<dt>Large–Gigantic</dt>
-	<dd><div class=" [ size-example  size-example--large-gigantic ] "></div></dd>
+	{%- for name, size in designTokens.sizes -%}
+		<dt>{{ name | title }}</dt>
+		<dd><div class=" [ size-example  size-example--{{ name }} ] " title="{{ size }}"></div></dd>
+	{%- endfor -%}
 </dl>
 
 <h2>Fonts</h2>

@@ -4,10 +4,7 @@
 ////
 
 :root {
-	@each $name, $value in $colors {
-		#{"--hsl-" + $name}: #{color.hue($value)} #{color.saturation($value)} #{color.lightness($value)};
-	}
-	@each $name, $value in $colors-extra {
+	@each $name, $value in map-merge($colors, $colors-extra) {
 		#{"--hsl-" + $name}: #{color.hue($value)} #{color.saturation($value)} #{color.lightness($value)};
 	}
 
@@ -15,7 +12,7 @@
 		#{"--opacity-" + $name}: #{$value};
 	}
 
-	@each $name, $value in $sizes {
+	@each $name, $value in map-merge($sizes, $sizes-extra) {
 		#{"--size-" + $name}: #{$value};
 	}
 	@each $name, $value in $breakpoints {
