@@ -45,6 +45,10 @@
   {
     "title": "Michelle Barker",
     "rel": "acquaintance met",
+    "url": "https://michellebarker.co.uk"
+  },
+  {
+    "title": "CSS { In Real Life }",
     "url": "https://css-irl.info"
   },
   {
@@ -223,12 +227,10 @@
   },
   {
     "title": "Sara Soueidan",
-    "rel": "",
     "url": "https://sarasoueidan.com"
   },
   {
     "title": "Kitty Giraudel",
-    "rel": "",
     "url": "https://kittygiraudel.com"
   },
   {
@@ -258,12 +260,12 @@
   },
   {
     "title": "Hidde de Vries",
-    "rel": "contact",
+    "rel": "acquaintance met",
     "url": "https://hidde.blog"
   },
   {
     "title": "Sophie Koonin",
-    "rel": "contact",
+    "rel": "acquaintance met",
     "url": "https://localghost.dev"
   },
   {
@@ -275,5 +277,14 @@
     "title": "Andy Clarke",
     "rel": "acquaintance met",
     "url": "https://stuffandnonsense.co.uk"
+  },
+  {
+    "title": "Ahmad Shadeed",
+    "url": "https://ishadeed.com"
+  },
+  {
+    "title": "Henri Helvetica",
+    "rel": "acquaintance met",
+    "url": "https://twitter.com/HenriHelvetica"
   }
 ]
