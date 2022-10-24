@@ -28,13 +28,13 @@
 }
 
 .footer__grid {
-	@include media("below:medium") {
+	@include media("below:large") {
 		display: flex;
 		flex-direction: column;
 		gap: var(--size-gutter);
 	}
 
-	@include media("above:medium") {
+	@include media("above:large") {
 		display: grid;
 		grid-template-columns:
 			[left-start]

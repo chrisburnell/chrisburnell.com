@@ -7,7 +7,7 @@
 	display: flex;
 	gap: var(--size-gap);
 
-	@include media("above:medium") {
+	@include media("above:large") {
 		flex-direction: row-reverse;
 	}
 }
@@ -152,7 +152,7 @@
 
 	font-size: var(--font-size-small);
 
-	@include media("above:medium") {
+	@include media("above:large") {
 		text-align: end;
 	}
 }
