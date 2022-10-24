@@ -3,38 +3,34 @@
 /// @group abstracts
 ////
 
-:is(a[href], audio[controls], button, details, embed, iframe, img[usemap], input:not([type="hidden"]), label, select, textarea, video[controls]) {
-	@extend %interactive !optional;
-}
-
-:is(a, .anchor) {
+a, .anchor {
 	@extend %anchor !optional;
 }
 
-:is(button:not(.anchor), .button, [type="button"]) {
+button:not(.anchor), .button, [type="button"] {
 	@extend %button !optional;
 }
 
-:is(h1, h2, h3, h4, h5, h6) {
+h1, h2, h3, h4, h5, h6 {
 	@extend %heading !optional;
 }
 
-:is(blockquote, details, table, dl, ol, ul, figure:not([class]), p) {
+p, blockquote, details, table, dl, ol, ul, figure:not([class]) {
 	@extend %content !optional;
 }
 
-:is(img, input[type="image"], svg) {
+img, input[type="image"], svg {
 	@extend %image !optional;
 }
 
-:is(audio, canvas, embed, iframe, marquee, math, object, video) {
+audio, canvas, embed, iframe, marquee, math, object, video {
 	@extend %media !optional;
 }
 
-:is(input, optgroup, select, textarea) {
+input, optgroup, select, textarea {
 	@extend %input !optional;
 }
 
-:is(code, kbd, samp, var, .monospace) {
+code, kbd, samp, var, .monospace {
 	@extend %monospace !optional;
 }

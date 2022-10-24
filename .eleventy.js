@@ -141,6 +141,7 @@ module.exports = (eleventyConfig) => {
 
 	// Build Settings
 	eleventyConfig.setDataDeepMerge(true)
+	eleventyConfig.setServerPassthroughCopyBehavior("copy")
 	eleventyConfig.setQuietMode(true)
 	eleventyConfig.on("beforeBuild", () => {
 		console.log("[11ty] Building…")

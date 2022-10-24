@@ -18,20 +18,25 @@ a {
 	}
 }
 
-// Fancy gradient anchor text
-.colourful-anchor {
-	&:is(:hover, :focus, :active) {
-		background-image: linear-gradient(to bottom right, h(raven), h(maple));
-		background-clip: text;
-		text-fill-color: transparent;
-		box-decoration-break: clone;
-	}
+// Skip to main content
+.skip-link {
+	--outline-color: #{h(bowhead)};
+
+	background-color: h(bowhead);
+	color: h(milou);
+	display: block;
+	padding: 1em 1.5em;
+	position: absolute;
+	inset-block-start: var(--size-medium);
+	inset-inline-start: 50%;
+	transform: translateX(-50%);
+	font-weight: var(--font-weight-bold);
+	text-align: center;
+	z-index: var(--z-index-notificaton);
 }
 
 // Fragment Anchors inside Headings
 .fragment-anchor {
-	display: none;
-	visibility: hidden;
 	color: h(dove);
 	padding-inline: var(--size-small);
 	position: absolute;
@@ -43,10 +48,8 @@ a {
 	text-transform: lowercase;
 	transform: translateY(calc(-50% - (var(--size-border-thin) * 2)));
 
-	%heading:is(:hover, :focus, :active) &,
-	&:target {
-		display: inline-block;
-		visibility: visible;
+	h2:not(:hover, :focus-within) > &:not(:hover, :focus, :active) {
+		@include hidden;
 	}
 }
 
@@ -56,19 +59,12 @@ a {
 	content: " →";
 }
 
-// Skip to main content
-.skip-link {
-	background-color: h(bowhead);
-	color: h(milou);
-	display: block;
-	padding: 1em 1.5em;
-	outline: var(--size-border-thin) solid h(bowhead);
-	outline-offset: var(--size-border-thin);
-	position: absolute;
-	inset-block-start: var(--size-medium);
-	inset-inline-start: 50%;
-	transform: translateX(-50%);
-	font-weight: var(--font-weight-bold);
-	text-align: center;
-	z-index: var(--z-index-notificaton);
+// Fancy gradient anchor text
+.colourful-anchor {
+	&:is(:hover, :focus, :active) {
+		background-image: linear-gradient(to bottom right, h(raven), h(maple));
+		background-clip: text;
+		text-fill-color: transparent;
+		box-decoration-break: clone;
+	}
 }

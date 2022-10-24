@@ -28,10 +28,14 @@
 }
 
 .footer__grid {
-	display: grid;
-	grid-template-columns: 1fr;
+	@include media("below:medium") {
+		display: flex;
+		flex-direction: column;
+		gap: var(--size-gutter);
+	}
 
 	@include media("above:medium") {
+		display: grid;
 		grid-template-columns:
 			[left-start]
 			1fr
@@ -40,6 +44,7 @@
 			[right-end];
 		grid-auto-rows: auto;
 		column-gap: var(--size-gap);
+		row-gap: var(--size-gutter);
 	}
 
 	.author {
@@ -51,15 +56,5 @@
 	.footer__navigation,
 	p {
 		grid-column: left;
-	}
-}
-
-.footer__navigation {
-	@include media("below:medium") {
-		margin-block-start: var(--size-medium);
-	}
-
-	& ~ * {
-		margin-block-start: var(--size-small);
 	}
 }

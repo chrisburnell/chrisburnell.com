@@ -3,19 +3,6 @@
 /// @group utilities
 ////
 
-// Remove elements from the DOM
-[hidden]:not([hidden="false"]) {
-	display: none;
-}
-
-// Hide elements visually
-.hidden {
-	&:not([href]),
-	&[href]:not(:is(:focus, :active)) {
-		@include hidden;
-	}
-}
-
 // Full Bleed
 .full-bleed {
 	inline-size: 100vw;
@@ -41,7 +28,6 @@
 // opposed to an initialism, for which each letter is spoken individually,
 // (e.g. HTML, CSS).
 .acronym {
-	letter-spacing: 1px;
 	text-transform: uppercase;
 }
 

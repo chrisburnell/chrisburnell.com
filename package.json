@@ -1,6 +1,6 @@
 {
   "name": "chrisburnell",
-  "version": "3.6.4",
+  "version": "3.6.5",
   "description": "Some real sweet codestuffs.",
   "author": "Chris Burnell <me@chrisburnell.com>",
   "contributors": [
@@ -19,15 +19,27 @@
   "bugs": {
     "url": "https://github.com/chrisburnell/chrisburnell.com/issues"
   },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^23.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.0",
+    "autoprefixer": "^10.4.12",
+    "concurrently": "^7.4.0",
+    "cross-env": "^7.0.3",
+    "json-to-scss": "^1.6.2",
+    "postcss-cli": "^10.0.0",
+    "postcss-scss": "^4.0.5",
+    "prettier": "^2.7.1",
+    "rollup": "^2.79.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "sass": "^1.55.0",
+    "speedlify-score": "^2.0.2"
+  },
   "dependencies": {
     "@11ty/is-land": "^2.0.3",
     "@chrisburnell/pentatonic": "^1.1.2",
     "@chrisburnell/spark-line": "^1.2.2",
     "@zachleat/details-utils": "^2.0.2",
     "@zachleat/seven-minute-tabs": "^2.0.0",
-    "speedlify-score": "^2.0.2"
-  },
-  "devDependencies": {
     "@11ty/eleventy": "^2.0.0-canary.16",
     "@11ty/eleventy-fetch": "^3.0.0",
     "@11ty/eleventy-img": "^2.0.1",
@@ -38,29 +50,17 @@
     "@chrisburnell/bowhead": "^0.3.2",
     "@chrisburnell/eleventy-cache-webmentions": "^1.1.1",
     "@mdn/browser-compat-data": "^5.2.8",
-    "@rollup/plugin-commonjs": "^23.0.0",
-    "@rollup/plugin-node-resolve": "^15.0.0",
-    "autoprefixer": "^10.4.12",
+    "@sindresorhus/slugify": "^1.1.2",
     "caniuse-api": "^3.0.0",
     "cheerio": "^1.0.0-rc.12",
-    "concurrently": "^7.4.0",
-    "cross-env": "^7.0.3",
     "dotenv": "^16.0.3",
     "glob-promise": "^5.0.0",
     "html-minifier": "^4.0.0",
-    "json-to-scss": "^1.6.2",
     "luxon": "^3.0.4",
     "markdown-it": "^13.0.1",
     "markdown-it-abbr": "^1.0.4",
     "natural": "^5.2.3",
-    "postcss-cli": "^10.0.0",
-    "postcss-scss": "^4.0.5",
-    "prettier": "^2.7.1",
     "purgecss": "^5.0.0",
-    "rollup": "^2.79.1",
-    "rollup-plugin-terser": "^7.0.2",
-    "sass": "^1.55.0",
-    "slugify": "^1.6.5",
     "twitter-avatar-url": "^2.2.0"
   },
   "scripts": {

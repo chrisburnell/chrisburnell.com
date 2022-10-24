@@ -1,6 +1,6 @@
 const cheerio = require("cheerio")
-const slugify = require("slugify")
 const { PurgeCSS } = require("purgecss")
+const slugify = require("@sindresorhus/slugify")
 
 const env = require("#datajs/env")
 

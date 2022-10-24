@@ -44,7 +44,7 @@
 	&.cluster {
 		display: inline;
 
-		%heading + & {
+		h2 + & {
 			display: block;
 		}
 	}

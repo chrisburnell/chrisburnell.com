@@ -7,7 +7,7 @@
 	--shadow-color: var(--hsl-shadow-dark);
 
 	// Target these if applied to html or body elements
-	&:is(html, body),
+	&:is(body),
 	&:is(html) body {
 		background-color: h(mineshaft);
 		color: h(milou);

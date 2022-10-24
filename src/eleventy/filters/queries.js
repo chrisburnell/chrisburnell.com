@@ -51,17 +51,12 @@ module.exports = {
 				return !year || item.data.page.date.getFullYear() === parseInt(year, 10)
 			}).length
 	},
-	getHost: (value) => {
+	getHost: (value, preservePathname = false) => {
 		if (typeof value === "string" && value.includes("//")) {
 			const urlObject = new URL(value)
-			return urlObject.hostname
+			return urlObject.hostname + (preservePathname ? urlObject.pathname : "")
 		}
 		return value
-	},
-	getBaseUrl: (url) => {
-		let hashSplit = url.split("#")
-		let queryparamSplit = hashSplit[0].split("?")
-		return queryparamSplit[0]
 	},
 	fixUrl: (url) => {
 		return Object.entries(urlReplacements).reduce((accumulator, [key, value]) => {

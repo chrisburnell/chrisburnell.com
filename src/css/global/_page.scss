@@ -12,13 +12,8 @@ html {
 	overscroll-behavior: contain;
 	scrollbar-gutter: stable;
 	accent-color: h(raven);
-	scroll-behavior: smooth;
 	scrollbar-color: h(raven) h(milou);
 	font-size: 100%;
-	// prevent adjustments of font-size after orientation changes in IE on
-	// Windows Phone and in iOS
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
 	font-variant-numeric: oldstyle-nums;
 	scroll-padding-top: var(--size-small);
 }
@@ -26,9 +21,6 @@ html {
 body {
 	background-color: h(milou);
 	color: h(kaiser);
-	inline-size: 100%;
-	min-block-size: 100vh;
-	margin: 0;
 	display: grid;
 	grid-template-rows:
 		[header-start]

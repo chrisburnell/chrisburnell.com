@@ -5,9 +5,10 @@
 ////
 
 %anchor {
+	--outline-color: #{h(raven)};
+
 	background-color: transparent;
 	color: h(bowhead);
-	outline: 0 solid h(maple);
 	border-radius: 1px;
 	position: relative;
 	text-decoration: underline;
@@ -25,17 +26,11 @@
 		text-decoration-color: h(maple);
 	}
 
-	&:focus {
-		outline-color: h(raven);
-		outline-width: var(--size-border-thin);
-		outline-offset: var(--size-border-thin);
-	}
-
 	&:active {
+		--outline-offset: 0;
+
 		background-color: h(maple) !important;
 		color: h(milou) !important;
-		outline-width: var(--size-border-thin);
-		outline-offset: 0;
 	}
 
 	@include media("print") {

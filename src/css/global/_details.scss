@@ -9,40 +9,25 @@ details {
 	overflow-x: auto;
 	position: relative;
 
-	%content {
+	& > * {
 		padding: 0 var(--size-gutter) var(--size-small);
-	}
-
-	& > div {
-		background-color: h(alto);
-		max-block-size: 0;
-		padding-block-start: var(--size-small);
-		position: absolute;
-		inset-block-start: 100%;
-		inset-inline-start: 0;
-		font-size: var(--font-size-small);
-		z-index: var(--z-index-above);
-		transition: max-height var(--transition-duration) var(--transition-function);
-	}
-
-	&[open] > div {
-		max-block-size: 9999vh;
 	}
 }
 
 summary {
+	--outline-offset: calc(var(--size-border-thin) * -1);
+
 	@include non-selectable;
 	display: list-item;
-	outline-width: 0;
+	padding: 0;
 	font-weight: var(--font-weight-bold);
-	cursor: pointer;
 	transition: padding var(--transition-duration) var(--transition-function);
 
 	&::-webkit-details-marker {
 		display: none;
 	}
 
-	& + %content {
+	& + * {
 		margin-block-start: var(--size-small);
 		border-block-start: var(--size-border-thin) solid h(bowhead);
 		padding-block-start: var(--size-medium);

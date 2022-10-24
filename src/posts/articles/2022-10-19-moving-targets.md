@@ -15,7 +15,7 @@ js: article-moving-targets.js
 
 <div class=" [ box  box--line-length  box--ancient ] [ flow ] ">
     <p>You’ve gone to the library to check out a book. You browse the many shelves on wildly-differing topics, themes, tones, and so on, until you find the one you’re looking for. Stained and tattered, you know this book must be good, or at least it’s seen some use!</p>
-    <p>When you open the pages you find scrawlings in the columns from anonymous authors, and there are even sticky notes sticking out along the side. On these <em>special pages</em>, someone has highlighted a sentence here and there, and another, in pen, has put an enormous exclamation point in the column of the page.</p>
+    <p>When you open the pages you find scrawlings in the columns from anonymous authors, and there are even sticky notes sticking out along the side. On <em>these</em> pages, someone has highlighted a sentence here and there, and another, in pen, has put an enormous exclamation point in the column of the page.</p>
     <p class="italic">To put the book down and find something else to read, <button class=" [ anchor ] [ js-end-adventure ] ">click here</button></p>
     <p class="italic">To turn to the first marked page and start reading, <a href="#the-url">click here</a></p>
 </div>

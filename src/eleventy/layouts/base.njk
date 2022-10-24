@@ -190,7 +190,6 @@
 
 	<footer class=" [ footer ] ">
 		<div class=" [ wrap ] [ footer__grid ] ">
-			{% include 'author.njk' %}
 			<ol class=" [ cluster ] [ footer__navigation ] ">
 				{%- for link in navigation -%}
 					{%- if link.secondary -%}
@@ -218,6 +217,7 @@
 					{%- endif -%}
 				{%- endfor -%}
 			</ol>
+			{% include 'author.njk' %}
 			{%- for item in socials -%}
 				{%- if not item.hidden and not item.primary -%}
 					<data{% if item.mf_property %} class=" [ p-{{ item.mf_property }} ] "{% endif %} value="{{ author[item.key] | default(item.value) | default(item.url) }}" hidden>{{ item.title }}</data>
@@ -225,15 +225,13 @@
 			{%- endfor -%}
 			{% if speedlify[canonical] %}
 				<p>
-					<a class="speedlify-anchor" href="{{ author.urls.speedlify }}/{{ site.url | getHost }}/#site-{{ speedlify[canonical].hash }}" title="Link to this page's Speedlify Score">
+					<a class="speedlify-anchor" href="{{ author.urls.speedlify }}/{{ site.speedlify }}/{{ canonical | getHost(true) | slugify }}/" title="Link to this page's Speedlify Score">
 						<c-speedlify-score hash="{{ speedlify[canonical].hash }}" score weight requests rank rank-change></c-speedlify-score>
 					</a>
 				</p>
 			{% endif %}
 		</div>
 	</footer>
-
-	<div class=" [ notification ] " hidden aria-hidden="true"></div>
 
 	{% if env.ELEVENTY_PRODUCTION %}
 		<script>{%- include '../../../js/navigator.js' -%}</script>

@@ -31,6 +31,8 @@ button {
 }
 
 %button {
+	--outline-color: #{h(raven)};
+
 	@include non-selectable;
 	background-color: h(bowhead) !important;
 	color: h(bear) !important;
@@ -40,8 +42,6 @@ button {
 	// accounts for outline-width + outline-offset
 	margin: var(--margin-block, var(--margin, calc(var(--size-border-thin) * 2))) var(--margin-inline, var(--margin, calc(var(--size-border-thin) * 2)));
 	border-radius: var(--size-border-default);
-	outline: var(--size-border-thin) solid transparent;
-	outline-offset: var(--size-border-thin);
 	box-shadow: var(--box-shadow, var(--box-shadow-low));
 	overflow: visible;
 	position: relative;
@@ -52,7 +52,8 @@ button {
 	text-decoration: none !important;
 
 	&:is(:hover, :focus, :active) {
-		outline-color: h(raven);
+		outline: var(--outline-width, var(--size-border-thin)) solid var(--outline-color, Highlight);
+		outline-offset: var(--outline-offset, var(--size-border-thin));
 	}
 
 	&:active {

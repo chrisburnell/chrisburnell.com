@@ -38,7 +38,6 @@ textarea {
 	padding: 0 0.4em;
 	border: var(--size-border-thin) solid h(alto);
 	border-radius: var(--size-border-default);
-	outline-width: 0;
 	transition: border-color var(--transition-duration) var(--transition-function);
 
 	&:hover {
