@@ -71,7 +71,7 @@ description: Numbers, cause why not?
 
 <h2>Collections</h2>
 
-<ul class=" [ cluster ] ">
+<ul class=" [ grid ] [ shelf ] " data-layout="natural">
 	{%- set count = collections.checkins | arePublished | getCollectionCount(false, true) -%}
 	<li><a href="/checkins/" class=" [ strong ] " style="font-size: 1.25em;">Checkins <sup>{{ count }}</sup></a></li>
 	{%- set count = collections.replies | arePublished | getCollectionCount(false, true) -%}
@@ -84,7 +84,7 @@ description: Numbers, cause why not?
 
 <h2>Categories</h2>
 
-<ul class=" [ cluster ] ">
+<ul class=" [ grid ] [ shelf ] " data-layout="natural">
 	{%- for item in collections.categories -%}
 		{%- set count = collections[item.title] | arePublished | getCollectionCount(false, true) -%}
 		<li><a href="/{{ item.plural }}/" class=" [ strong ] " style="font-size: 1.25em;">{{ item.properPlural | title }} <sup>{{ count }}</sup></a></li>
@@ -93,7 +93,7 @@ description: Numbers, cause why not?
 
 <h2>Tags</h2>
 
-<ul class=" [ cluster ] ">
+<ul class=" [ grid ] [ shelf ] " data-layout="natural">
 	{%- set lowest = 9001 -%}
 	{%- set highest = 0 -%}
 	{%- for item in collections.tags | sort -%}

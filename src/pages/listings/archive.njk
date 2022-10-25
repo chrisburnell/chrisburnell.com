@@ -25,7 +25,7 @@ truncate: true
 	<div class=" [ content ] [ flow ] ">
 		<h2>Categories</h2>
 
-		<ul class=" [ cluster ] ">
+		<ul class=" [ grid ] [ shelf ] " data-layout="natural">
 			{%- for item in collections.categories -%}
 				{%- set count = collections[item.title] | arePublished | getCollectionCount(false, true) -%}
 				<li><a href="/{{ item.plural }}/" class=" [ strong ] " style="font-size: 1.25em;">{{ item.properPlural | title }} <sup>{{ count }}</sup></a></li>
@@ -34,7 +34,7 @@ truncate: true
 
 		<h2>Tags</h2>
 
-		<ul class=" [ cluster ] ">
+		<ul class=" [ grid ] [ shelf ] " data-layout="natural">
 			{%- set lowest = 9001 -%}
 			{%- set highest = 0 -%}
 			{%- for item in collections.tags | sort -%}

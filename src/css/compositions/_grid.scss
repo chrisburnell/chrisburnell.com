@@ -44,7 +44,7 @@
 	&[data-layout="natural"] {
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: center;;
+		align-items: first baseline;
 		gap: var(--gap, var(--size-gutter));
 
 		& > * {

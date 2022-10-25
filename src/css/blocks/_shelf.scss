@@ -25,6 +25,12 @@
 	.cover {
 		margin: 0;
 		object-fit: cover;
+		transition: transform var(--transition-duration) var(--transition-function);
+	}
+	%anchor:is(:hover, :focus, :active) {
+		.cover {
+			transform: scale(1.05);
+		}
 	}
 }
 

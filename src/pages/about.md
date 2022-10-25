@@ -62,7 +62,7 @@ I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link
 
 <h2 id="clients">Companies I’ve worked with</h2>
 
-<nav class=" [ grid ] [ shelf ] " data-layout="natural" aria-labelledby="clients">
+<nav class=" [ grid ] [ shelf ] [ center ] " data-layout="natural" style="--gap: var(--size-gap);" aria-labelledby="clients">
     {%- for client in clients | sort(false, false, "title") -%}
         <article>
             <a class=" [ center ] [ flow ] " href="{{ client.url }}" title="{{ client.title | safe }}" rel="external" style="display: flex; inline-size: 128px; block-size: 72px;">
