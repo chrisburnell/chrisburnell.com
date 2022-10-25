@@ -1,8 +1,9 @@
 {% if github %}
-<p class=" [ center ] ">
+<p class=" [ inline-center  center ] ">
 	{%- set github_user = github.split('/')[0] -%}
 	{%- set github_repo = github.split('/')[1] -%}
-	[![{{ github_user }} - {{ github_repo }}](https://img.shields.io/static/v1?label={{ github_user }}&message={{ github_repo }}&color=5f8aa6&logo=github)](https://github.com/{{ github_user }}/{{ github_repo }} "Go to GitHub repo") [![GitHub release](https://img.shields.io/github/release/{{ github_user }}/{{ github_repo }}?include_prereleases=&sort=semver&color=5f8aa6)](https://github.com/{{ github_user }}/{{ github_repo }}/releases/){% if license %} [![License](https://img.shields.io/badge/License-{{ license }}-5f8aa6)](https://github.com/{{ github_user }}/{{ github_repo }}/blob/{{ branch | default('main') }}/LICENSE){% endif %}
-	<!-- [![Stars - {{ github_repo }}](https://img.shields.io/github/stars/{{ github_user }}/{{ github_repo }}?style=social)](https://github.com/{{ github_user }}/{{ github_repo }}) [![Forks - {{ github_repo }}](https://img.shields.io/github/forks/{{ github_user }}/{{ github_repo }}?style=social)](https://github.com/{{ github_user }}/{{ github_repo }}) -->
+	<a href="https://github.com/{{ github_user }}/{{ github_repo }}" title="Go to Repository: @{{ github_user }}/{{ github_repo }}"><img src="https://img.shields.io/static/v1?label={{ github_user }}&message={{ github_repo }}&color=5f8aa6&logo=github" alt=""></a>
+	<a href="https://github.com/{{ github_user }}/{{ github_repo }}/releases" title="Go to Releases: @{{ github_user }}/{{ github_repo }}"><img src="https://img.shields.io/github/release/{{ github_user }}/{{ github_repo }}?include_prereleases=&sort=semver&color=5f8aa6" alt=""></a>
+	<a href="https://github.com/{{ github_user }}/{{ github_repo }}/blob/{{ branch | default('main') }}/LICENSE" title="Go to License: @{{ github_user }}/{{ github_repo }}"><img src="https://img.shields.io/badge/License-{{ license }}-5f8aa6" alt=""></a>
 </p>
 {% endif %}
