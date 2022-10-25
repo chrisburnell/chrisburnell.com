@@ -40,4 +40,15 @@
 		--placement: auto-fit;
 		--min-inline-size: clamp(10rem, 50vw, 20rem);
 	}
+
+	&[data-layout="natural"] {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;;
+		gap: var(--gap, var(--size-gutter));
+
+		& > * {
+			flex: 0 1 var(--inline-size, auto);
+		}
+	}
 }

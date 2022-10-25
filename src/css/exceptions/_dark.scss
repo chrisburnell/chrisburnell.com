@@ -112,6 +112,10 @@
 			}
 		}
 	}
+
+	[aria-labelledby="clients"] img[src*="svg"] {
+		filter: saturate(0) invert(1) brightness(1.5) !important;
+	}
 }
 
 @include media("dark") {

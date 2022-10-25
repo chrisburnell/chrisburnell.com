@@ -15,3 +15,7 @@ monetization: false
 {% image './images/content/lws-logo.png', '' %}
 
 {% image './images/content/sotb-logo.png', '' %}
+
+{% for client in clients %}
+    {% image './images/content/' + client.image, '' %}
+{% endfor %}

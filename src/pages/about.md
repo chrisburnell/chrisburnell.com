@@ -60,6 +60,18 @@ I also feed this drive by continuously finding myself in <q>rabbit-hole deep-div
 
 I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link is a joke">playing the piano</a>, [baking bread](https://chrisburnell.com/note/1574856597/) from time to time, and [playing/DMing Dungeons & Dragons](https://chrisburnell.com/projects/#personal-projects) here and there too.
 
+<h2 id="clients">Companies I’ve worked with</h2>
+
+<nav class=" [ grid ] [ shelf ] " data-layout="natural" aria-labelledby="clients">
+    {%- for client in clients | sort(false, false, "title") -%}
+        <article>
+            <a class=" [ center ] [ flow ] " href="{{ client.url }}" title="{{ client.title | safe }}" rel="external" style="display: flex; inline-size: 128px; block-size: 72px;">
+                <img src="/images/built/{{ client.image }}" alt="" loading="lazy" decoding="async" role="presentation" style="object-fit: contain; max-height: 100%; filter: saturate(0);">
+            </a>
+        </article>
+    {%- endfor -%}
+</nav>
+
 ## Colophon
 
 Website built with [Eleventy](https://11ty.dev) and the following languages:
