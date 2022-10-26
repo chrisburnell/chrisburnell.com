@@ -7,11 +7,12 @@
 	--font-family-sans: var(--font-family-nineties);
 	--font-family-serif: var(--font-family-sophisticated);
 
-	html {
-		cursor: url("/images/animated/dinosaur.gif"), auto;
-	}
+	cursor: url("/images/animated/dinosaur.gif"), auto;
 
-	* {
+	&,
+	*,
+	*::before,
+	*::after {
 		border-radius: 0 !important;
 		text-decoration-color: currentColor !important;
 	}

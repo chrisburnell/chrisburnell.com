@@ -247,5 +247,14 @@
      "links": [
       "[Page on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/::target-text)"
      ]
+  },
+  {
+     "id": "web-share",
+     "language": "web",
+     "title": "Web Share API",
+     "description": "“A way to allow websites to invoke the native sharing capabilities of the host platform”",
+     "links": [
+      "[Page on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share)"
+     ]
   }
 ]

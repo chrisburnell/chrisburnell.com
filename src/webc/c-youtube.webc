@@ -1,0 +1,1 @@
+<iframe webc:keep :src="`https://www.youtube-nocookie.com/embed/${this.id}`" :title="this.title" frameborder="0" allow="encrypted-media; picture-in-picture" allowfullscreen>Apologies, you’ll need JavaScript to watch this livestream! But you can still watch it <a :href="`https://www.youtube.com/watch?v=${this.id}`">over on YouTube</a>!</iframe>
