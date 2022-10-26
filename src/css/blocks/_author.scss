@@ -33,12 +33,11 @@
 		background-image: url("/images/avatar-pixelated.png");
 		background-size: 100%;
 		aspect-ratio: 1 / 1;
-		width: 100%;
-		height: 0;
-		padding-block-end: 100%;
+		inline-size: 100%;
 		position: absolute;
 		inset-block-start: 0;
-		inset-inline-start: 0;
+		inset-inline-start: 50%;
+		transform: translateX(-50%);
 		image-rendering: pixelated;
 		// prettier-ignore
 		transition:
@@ -67,17 +66,17 @@
 					20.01%,
 					41% {
 						opacity: 0;
-						transform: none;
+						transform: translateX(-50%);
 					}
 					41.01%,
 					47% {
 						opacity: 1;
-						transform: scaleY(-1);
+						transform: translateX(-50%) scaleY(-1);
 					}
 					47.01%,
 					73% {
 						opacity: 0;
-						transform: none;
+						transform: translateX(-50%);
 					}
 					73.01%,
 					75% {
@@ -123,28 +122,17 @@
 }
 
 .author__image {
-	flex-grow: 0;
-	flex-shrink: 0;
-	flex: 0 0 var(--size-avatar);
-	float: left;
-	float: inline-start;
 	position: relative;
 	text-decoration: none !important;
 	transition: opacity var(--transition-duration) var(--transition-function);
 }
 
 .author__image,
-.author__image picture,
-.author__image %image,
 .author__information::before {
 	aspect-ratio: 1 / 1;
 	inline-size: var(--size-avatar);
 	block-size: var(--size-avatar);
 	border-radius: 50%;
-
-	@supports (shape-outside: circle(50%)) {
-		shape-outside: circle(50%);
-	}
 }
 
 .author__biography {
