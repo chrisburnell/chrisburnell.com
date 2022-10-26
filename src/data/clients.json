@@ -1,8 +1,8 @@
 [
   {
-    "title": "The Electoral Commission",
+    "title": "Electoral Commission",
     "url": "https://www.electoralcommission.org.uk",
-    "image": "the-electoral-commission-logo.svg"
+    "image": "electoral-commission-logo.svg"
   },
   {
     "title": "Ministry of Justice",
@@ -25,7 +25,7 @@
     "image": "gcu-logo.svg"
   },
   {
-    "title": "The National Federation of Women's Institutes",
+    "title": "National Federation of Women's Institutes",
     "url": "https://www.thewi.org.uk",
     "image": "nfwi-logo.png"
   },
@@ -63,5 +63,10 @@
     "title": "Middlesex University London",
     "url": "https://www.mdx.ac.uk",
     "image": "mdx-logo.svg"
+  },
+  {
+    "title": "State of the Browser",
+    "url": "https://stateofthebrowser.com",
+    "image": "sotb-logo.png"
   }
 ]

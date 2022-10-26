@@ -52,3 +52,28 @@
 %fsociety {
 	filter: url("/images/fsociety.svg#fsociety");
 }
+
+
+[aria-labelledby="clients"] {
+	%anchor {
+		inline-size: 128px;
+		block-size: 72px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	img {
+		object-fit: contain;
+		max-height: 100%;
+		transition: all var(--transition-duration) linear;
+
+		@include media("fine") {
+			filter: saturate(0);
+		}
+	}
+
+	:is(:hover, :focus, :active) > img {
+		filter: saturate(1);
+	}
+}

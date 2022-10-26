@@ -99,7 +99,7 @@
 	clip-path: inset(100%) !important;
 }
 
-@include media("reduced-motion") {
+@media (prefers-reduced-motion: reduce) {
 	*,
 	*::before,
 	*::after {

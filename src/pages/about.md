@@ -60,37 +60,17 @@ I also feed this drive by continuously finding myself in <q>rabbit-hole deep-div
 
 I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link is a joke">playing the piano</a>, [baking bread](https://chrisburnell.com/note/1574856597/) from time to time, and [playing/DMing Dungeons & Dragons](https://chrisburnell.com/projects/#personal-projects) here and there too.
 
-<h2 id="clients">Companies I’ve worked with</h2>
+<h2 id="worked-with">Companies I’ve worked with</h2>
 
-<nav class=" [ grid ] [ shelf ] [ center ] " data-layout="natural" style="--gap: var(--size-gap);" aria-labelledby="clients">
+<nav class=" [ grid ] [ shelf ] [ center ] " data-layout="natural" style="--gap: var(--size-gap);" aria-labelledby="worked-width">
     {%- for client in clients | sort(false, false, "title") -%}
         <article>
-            <a class=" [ center ] [ flow ] " href="{{ client.url }}" title="{{ client.title | safe }}" rel="external" style="display: flex; inline-size: 128px; block-size: 72px;">
-                <img src="/images/built/{{ client.image }}" alt="" loading="lazy" decoding="async" role="presentation" style="object-fit: contain; max-height: 100%; filter: saturate(0);">
+            <a href="{{ client.url }}" title="{{ client.title | safe }}" rel="external">
+                <img class=" [ interaction-grow ] " src="/images/built/{{ client.image }}" alt="" loading="lazy" decoding="async" role="presentation">
             </a>
         </article>
     {%- endfor -%}
 </nav>
-
-## Colophon
-
-Website built with [Eleventy](https://11ty.dev) and the following languages:
-
-<ul style="column-count: 2;">
-    <li>HTML</li>
-    <li>WebC</li>
-    <li>Markdown</li>
-    <li>Nunjucks</li>
-    <li>CSS & SCSS</li>
-    <li>JavaScript</li>
-    <li>JSON</li>
-    <li>XML</li>
-    <li>YAML</li>
-</ul>
-
-This website supports [Webmentions](https://indieweb.org/webmention) (powered by [Webmention.io](https://webmention.io)), displayed at the bottom of relevant pages using my plugin, [eleventy-cache-webmentions](/eleventy-cache-webmentions/).
-
-The source code is available for your perusal on [GitHub](https://github.com/{{ author.github }}/{{ site.repository }}), and each page contains an edit link *(in the footer)* allowing you to go directly to the page’s source on GitHub.
 
 ## Contact
 
@@ -105,6 +85,22 @@ The source code is available for your perusal on [GitHub](https://github.com/{{ 
     <dd><a class=" [ canada ] " href="https://twitter.com/messages/compose?recipient_id={{ author.twitter }}">{{ '@' + author.twitter }}</a></dd>
 </dl>
 
-## Support
+## Colophon
 
-On the peculiar off-chance you *really* like the work that I do, you can help support me by [sponsoring me on GitHub](https://github.com/sponsors/{{ author.github }}).
+This website was built with [Eleventy](https://11ty.dev) and the following languages:
+
+<ul style="column-count: 2;">
+    <li>HTML</li>
+    <li>WebC</li>
+    <li>Markdown</li>
+    <li>Nunjucks</li>
+    <li>CSS & SCSS</li>
+    <li>JavaScript</li>
+    <li>JSON</li>
+    <li>XML</li>
+    <li>YAML</li>
+</ul>
+
+This website also supports [Webmentions](https://indieweb.org/webmention) (powered by [Webmention.io](https://webmention.io)), displayed at the bottom of relevant pages using my [Eleventy](https://11ty.dev) plugin, [eleventy-cache-webmentions](/eleventy-cache-webmentions/).
+
+The source code is available for your perusal on [GitHub](https://github.com/{{ author.github }}/{{ site.repository }}), and each page contains an edit link *(in the footer)* allowing you to go directly to the page’s source on GitHub.
