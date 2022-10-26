@@ -46,7 +46,9 @@
 	--rotation-default: 5deg;
 
 	--transition-duration: 0.2s;
+	--transition-duration-short: 120ms;
 	--transition-function: ease;
+	--transition-function-bounce: cubic-bezier(1, 0.63, 0.72, 1.42);
 
 	--aspect-ratio: 16 / 9;
 

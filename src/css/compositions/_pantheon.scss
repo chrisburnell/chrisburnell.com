@@ -53,7 +53,7 @@
 			[ads-end];
 		grid-template-columns:
 			[marginalia-start]
-			var(--aside-size, clamp(16rem, 6.29rem + 18.29vw, 20rem)) // 16–20rem between 850px–1200px
+			var(--aside-size, clamp(15rem, 7.71rem + 13.71vw, 18rem)) // 15–18rem between 850px–1200px
 			[marginalia-end]
 			var(--size-gap)
 			[content-start]

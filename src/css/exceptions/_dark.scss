@@ -115,13 +115,7 @@
 
 	[aria-labelledby="worked-with"] {
 		img {
-			@include media("fine") {
-				filter: saturate(0) brightness(1.25);
-			}
-		}
-
-		:is(:hover, :focus, :active) > img {
-			filter: saturate(1) brightness(1.25);
+			filter: brightness(1.25);
 		}
 	}
 }

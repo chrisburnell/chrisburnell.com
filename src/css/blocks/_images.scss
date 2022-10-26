@@ -66,14 +66,10 @@
 	img {
 		object-fit: contain;
 		max-height: 100%;
-		transition: all var(--transition-duration) linear;
-
-		@include media("fine") {
-			filter: saturate(0);
-		}
+		transition: all var(--transition-duration-short) var(--transition-function-bounce);
 	}
 
 	:is(:hover, :focus, :active) > img {
-		filter: saturate(1);
+		transform: scale(1.1);
 	}
 }
