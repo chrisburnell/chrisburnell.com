@@ -62,7 +62,7 @@ I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link
 
 <h2 id="worked-with">Companies I’ve worked with</h2>
 
-<nav class=" [ grid ] [ shelf ] [ center ] " data-layout="natural" style="--gap: var(--size-gap);" aria-labelledby="worked-width">
+<nav class=" [ grid ] [ shelf ] [ center ] " data-layout="natural" style="--gap: var(--size-gap);" aria-labelledby="worked-with">
     {%- for client in clients | sort(false, false, "title") -%}
         <article>
             <a href="{{ client.url }}" title="{{ client.title | safe }}" rel="external">
