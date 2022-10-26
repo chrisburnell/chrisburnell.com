@@ -2,7 +2,7 @@
 /// Pantheon
 /// @group compositions
 ///
-/// --aside-size (clamp(14em, 9.33rem + 10.67vw, 16em))
+/// --aside-size (clamp(16.00rem, 1.43rem + 27.43vw, 22.00rem))
 ///     Defines the inline-size of the aside.
 /// --columns (6)
 ///     Defines how many sub-columns should make up the content column.
@@ -53,7 +53,7 @@
 			[ads-end];
 		grid-template-columns:
 			[marginalia-start]
-			var(--aside-size, clamp(14em, 9.33rem + 10.67vw, 16em)) // 14–16em between 700–1000px
+			var(--aside-size, clamp(16rem, 6.29rem + 18.29vw, 20rem)) // 16–20rem between 850px–1200px
 			[marginalia-end]
 			var(--size-gap)
 			[content-start]

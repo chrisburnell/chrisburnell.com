@@ -17,22 +17,11 @@
 .responses__label {
 	grid-column: 1 / span 2;
 	margin-block-end: var(--size-small);
-
-	@include media("below:small") {
-		margin-block-end: var(--size-medium);
-	}
 }
 
 .responses__submit {
 	min-inline-size: 5em;
 	margin-block-start: 0;
-
-	@include media("below:small") {
-		font-size: var(--font-size-small);
-	}
-	@include media("above:medium", "below:large") {
-		font-size: var(--font-size-small);
-	}
 }
 
 .responses__thread {

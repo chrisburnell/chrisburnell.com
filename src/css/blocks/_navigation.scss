@@ -11,7 +11,7 @@
 	row-gap: var(--size-tiny);
 	text-align: center;
 
-	@include media("above:small") {
+	@include media("above:tiny") {
 		grid-template-columns: repeat(4, auto);
 		grid-template-rows: auto;
 	}

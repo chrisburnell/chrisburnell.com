@@ -107,7 +107,7 @@ dl {
 	margin-block-start: 0;
 	overflow: hidden;
 
-	@include media("screen", "above:small") {
+	@include media("screen", "above:tiny") {
 		grid-template-columns: minmax(min-content, 33.33%) 1fr;
 	}
 }

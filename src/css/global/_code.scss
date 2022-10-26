@@ -44,7 +44,7 @@ pre {
 	overflow: hidden;
 	position: relative;
 
-	@include media("above:medium") {
+	@include media("above:small") {
 		tab-size: 4;
 	}
 

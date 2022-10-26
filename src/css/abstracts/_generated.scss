@@ -1,6 +1,7 @@
 $breakpoints: (
-	small: 500px,
-	medium: 700px,
+	tiny: 500px,
+	small: 700px,
+	medium: 850px,
 	large: 1000px,
 	gigantic: 1200px,
 );
@@ -67,9 +68,9 @@ $opacities: (
 	delta: 0.05,
 );
 $sizes-extra: (
-	space: clamp(1.5em, 0.04rem + 1.86vw, 2.25em),
 	gutter: var(--size-medium),
 	gap: calc(var(--size-gutter) * 2),
+	space: clamp(1.5em, 0.04rem + 1.86vw, 2.25em),
 	avatar: 100px,
 	avatar-small: 48px,
 	logo: clamp(9rem, -3.6rem + 28.8vw, 18rem),

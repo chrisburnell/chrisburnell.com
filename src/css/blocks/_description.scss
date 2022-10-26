@@ -40,7 +40,7 @@
 .description--published {
 	font-size: var(--font-size-default);
 
-	@include media("below:medium") {
+	@include media("below:tiny") {
 		font-size: var(--font-size-small);
 	}
 }
