@@ -1,5 +1,6 @@
 require("dotenv").config()
 const pkg = require("./package.json")
+const site = require("#data/site")
 const configWebmentions = require("./src/data/config/webmentions.js")
 
 // Import Eleventy plugins
@@ -144,7 +145,7 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.setServerPassthroughCopyBehavior("copy")
 	eleventyConfig.setQuietMode(true)
 	eleventyConfig.on("beforeBuild", () => {
-		console.log("[11ty] Building…")
+		console.log(`[${queryFilters.getHost(site.url)}] Building…`)
 	})
 	return {
 		dataTemplateEngine: "njk",

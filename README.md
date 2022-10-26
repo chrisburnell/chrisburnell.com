@@ -37,7 +37,7 @@ While the code for my website is open source, it is not intended to be used as a
 - Converts local images and serves optimised formats
 - Caches avatars from microformats2, Mastodon, and Twitter and serves optimised formats
 - Organised system of local and cached external data
-- Extremely flexible content creation through use of a lot of data-mapping and automation through Eleventy features
+- Extremely flexible content creation from data-mapping and automation through Eleventy features
 - Pulls down latest Webmentions against pages and posts and builds "hot" and "popular" collections
 - Pulls down data about people from my personal API to enrich data about other authors mentioned in replies, reviews, RSVPs, etc.
 - Pulls down data about projects on GitHub and NPM
