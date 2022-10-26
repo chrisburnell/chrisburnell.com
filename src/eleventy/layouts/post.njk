@@ -141,7 +141,7 @@ layout: base
 		{% endif %}
 
 		{% if listen_of %}
-			{% include 'post/odesli.njk' %}
+			<c-odesli id="{{ listen_of.url | default(listen_of) }}"></c-odesli>
 		{% endif %}
 
 		{% if category == 'recipe' %}
