@@ -153,15 +153,15 @@ layout: base
 				{{ content | safe }}
 			</div>
 		{% endif %}
-
-		{% include 'responses.njk' %}
-
-		{% include 'browse.njk' %}
 	</div>
 
 	<div class=" [ meta ] [ flow ] ">
 		{% include 'meta/post.njk' %}
 	</div>
+
+	{% include 'responses.njk' %}
+
+	{% include 'browse.njk' %}
 
 	{% include 'ads.njk' %}
 </article>

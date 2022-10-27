@@ -30,9 +30,13 @@
 		auto
 		[toc-end content-start]
 		auto
-		[content-end meta-start]
+		[content-end responses-start]
 		auto
-		[meta-end ads-start]
+		[responses-end meta-start]
+		auto
+		[meta-end browse-start]
+		auto
+		[browse-end ads-start]
 		auto
 		[ads-end];
 	grid-template-columns:
@@ -52,7 +56,11 @@
 			auto
 			[sparkline-end meta-start]
 			1fr
-			[meta-end content-end ads-start]
+			[meta-end content-end responses-start]
+			auto
+			[responses-end browse-start]
+			auto
+			[browse-end ads-start]
 			auto
 			[ads-end];
 		grid-template-columns:
@@ -138,8 +146,23 @@
 	&:has(.table-of-contents) {
 		@include media("below:medium") {
 			grid-row: toc;
+			margin-block-start: 0;
 		}
 	}
+}
+
+.responses,
+.browse,
+.ads {
+	grid-column: content;
+}
+
+.responses {
+	grid-row: responses;
+}
+
+.browse {
+	grid-row: browse;
 }
 
 .ads {

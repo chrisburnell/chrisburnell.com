@@ -6,6 +6,10 @@
 .meta {
 	--flow-space: var(--size-medium);
 
+	@include media("below:medium") {
+		margin-block-start: var(--size-large);
+	}
+
 	@include media("above:medium") {
 		align-self: stretch;
 	}
