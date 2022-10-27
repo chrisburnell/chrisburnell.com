@@ -64,14 +64,18 @@
 		border-block-start-color: var(--border-color, h(raven, alpha));
 	}
 
-	.librarian {
-		background-color: mix(map-get($colors, thunder), map-get($colors, mineshaft), map-get($opacities, delta) * 100%);
-	}
-
 	var,
 	.box %anchor,
 	%box %anchor {
 		color: h(highland);
+	}
+
+	dialog {
+		background-color: h(lynx);
+	}
+
+	.librarian {
+		background-color: mix(map-get($colors, thunder), map-get($colors, mineshaft), map-get($opacities, delta) * 100%);
 	}
 
 	.rating {

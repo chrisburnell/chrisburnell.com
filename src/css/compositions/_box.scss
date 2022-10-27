@@ -19,6 +19,7 @@
 	max-inline-size: var(--max-inline-size, 100%) !important;
 	padding: var(--gutter, var(--size-gutter));
 	margin-inline: auto;
+	border-width: 0;
 	border-block-start: var(--size-border-thin) solid var(--border-color, h(raven));
 	border-radius: 1px 1px var(--size-border-default) var(--size-border-default);
 	box-shadow: var(--box-shadow, var(--box-shadow-low));

@@ -111,6 +111,55 @@ hr {
 	}
 }
 
+dialog {
+	--box-shadow: var(--box-shadow-high);
+
+	@extend %box;
+	background-color: h(bear) !important;
+	position: fixed;
+	inset: 0;
+	margin: auto !important;
+	z-index: var(--z-index-dialog);
+
+	&::backdrop {
+		backdrop-filter: grayscale(1) blur(2px);
+	}
+}
+
+meter,
+progress {
+	inline-size: var(--size-line-length);
+	max-inline-size: 100%;
+}
+
+meter {
+	&::-webkit-meter-bar {
+		background-color: h(dove);
+	}
+
+	&::-webkit-meter-optimum-value {
+		background-color: h(conifer);
+	}
+
+	&::-webkit-meter-suboptimum-value {
+		background-color: h(aspen);
+	}
+
+	&::-webkit-meter-even-less-good-value {
+		background-color: h(maple);
+	}
+}
+
+progress {
+	&::-webkit-progress-bar {
+		background-color: h(dove);
+	}
+
+	&::-webkit-progress-value {
+		background-color: h(raven);
+	}
+}
+
 // Target Animation
 :target {
 	animation: var(--animation-duration) ease target;

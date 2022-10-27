@@ -1,7 +1,6 @@
 import pentatonic from "@chrisburnell/pentatonic"
 
 class WebsiteSounds {
-
 	constructor() {
 		this.STORAGE_KEY = "user-sounds"
 

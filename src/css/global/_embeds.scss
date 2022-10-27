@@ -22,37 +22,3 @@ iframe {
 	max-inline-size: 100% !important;
 	margin: 0;
 }
-
-meter,
-progress {
-	inline-size: var(--size-line-length);
-	max-inline-size: 100%;
-}
-
-meter {
-	&::-webkit-meter-bar {
-		background-color: h(dove);
-	}
-
-	&::-webkit-meter-optimum-value {
-		background-color: h(conifer);
-	}
-
-	&::-webkit-meter-suboptimum-value {
-		background-color: h(aspen);
-	}
-
-	&::-webkit-meter-even-less-good-value {
-		background-color: h(maple);
-	}
-}
-
-progress {
-	&::-webkit-progress-bar {
-		background-color: h(dove);
-	}
-
-	&::-webkit-progress-value {
-		background-color: h(raven);
-	}
-}
