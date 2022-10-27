@@ -1,6 +1,6 @@
 ---
 title: About
-tagline: About me
+tagline: "<span class=\" [ canada ] \">About me</span>"
 bio: "<span class=\" [ canada ] \">Chris</span> is a <span class=\" [ canada ] \">Canadian</span> Front End Developer working for [Squiz](http://www.squiz.net). He’s [ravenous for CSS](https://chrisburnell.com/tag/css/) and built [Bowhead](https://chrisburnell.com/bowhead/) to bring design tokens to CSS. His [Webmention plugin](https://chrisburnell.com/eleventy-cache-webmentions/) for [Eleventy](https://11ty.dev) helps people connect across the [IndieWeb](https://indieweb.org), and his work in co-organising the [State of the Browser](https://stateofthebrowser.com) conference has brought together over 45 speakers and 150+ attendees each year."
 eleventyComputed:
   description: "{{ site.description | safe }}"
@@ -103,4 +103,4 @@ This website was built with [Eleventy](https://11ty.dev) and the following langu
 
 This website also supports [Webmentions](https://indieweb.org/webmention) (powered by [Webmention.io](https://webmention.io)), displayed at the bottom of relevant pages using my [Eleventy](https://11ty.dev) plugin, [eleventy-cache-webmentions](/eleventy-cache-webmentions/).
 
-The source code is available for your perusal on [GitHub](https://github.com/{{ author.github }}/{{ site.repository }}), and each page contains an edit link *(in the footer)* allowing you to go directly to the page’s source on GitHub.
+The source code is available for your perusal on [GitHub](https://github.com/{{ author.github }}/{{ site.repository }}), and each page contains [an edit link](#edit) *(in the footer)* allowing you to go directly to the page’s source on GitHub.

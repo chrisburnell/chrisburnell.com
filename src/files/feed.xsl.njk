@@ -79,7 +79,7 @@
               <li>
                 <a id="copyright" rel="license" href="/license/">© {{ site.established }}–{{ global.now | friendlyDate("yyyy") }} <span class=" [ canada ] ">{{ author.name }}</span></a>
               </li>{% for link in navigation %}{% if link.secondary %}<li>
-                <a href="{{ link.url }}">{{ link.title }}</a>
+                <a href="{{ link.url }}">{{ link.title | safe }}</a>
               </li>{% endif %}{% endfor %}
             </ol>
             <ol class=" [ cluster ] [ footer__navigation ] ">{% for item in socials %}{% if (item.url or item.split) and item.primary and not item.hidden %}{% set url = item.url %}{% if item.key %}{% set url = url + author[item.key] %}{% endif %}{% if item.split %}{% set url %}https://{{ author[item.key].split(item.split)[1] + '/' + item.split + author[item.key].split(item.split)[0] }}{% endset %}{% endif %}
