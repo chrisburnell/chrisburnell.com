@@ -10,7 +10,7 @@
 	overflow-x: hidden;
 }
 audio {
-	max-inline-size: var(--size-breakpoint-small);
+	max-inline-size: var(--size-breakpoint-tiny);
 
 	&:not([controls]) {
 		display: none;

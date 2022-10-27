@@ -4,8 +4,6 @@
 ////
 
 .ads {
-	margin-block-start: var(--size-gigantic);
-
 	@include media("print") {
 		display: none;
 	}
@@ -14,9 +12,10 @@
 .ad,
 [id="carbonads"] {
 	inline-size: 100%;
-	max-inline-size: var(--size-breakpoint-small);
+	max-inline-size: var(--size-line-length);
 	display: flex;
 	flex-direction: column;
+	margin-block-start: var(--size-gigantic);
 	margin-inline: auto;
 
 	%anchor {
@@ -33,11 +32,10 @@
 
 .ad__wrap,
 .carbon-wrap {
-	display: flex;
+	@extend %box;
 	flex: 1;
 	display: flex;
-	border-block-start: var(--size-border-thin) solid var(--border-color, h(raven));
-	border-radius: 1px 1px var(--size-border-default) var(--size-border-default);
+	gap: var(--size-medium);
 	overflow: hidden;
 	position: relative;
 }
@@ -45,11 +43,9 @@
 .ad__split,
 .carbon-img,
 .carbon-text {
-	background-color: h(thunder, delta);
 	max-inline-size: 100% !important;
 	display: flex;
 	align-items: center;
-	padding: var(--size-medium);
 	text-align: start;
 	font-family: var(--font-family-sans);
 	font-style: normal;
@@ -61,8 +57,6 @@
 
 .ad__image,
 .carbon-img {
-	border-radius: 0 0 0 var(--size-border-default);
-	border-inline-end-width: 0;
 	justify-content: center;
 	margin: 0;
 	line-height: 1;
@@ -75,8 +69,6 @@
 .ad__content,
 .carbon-text {
 	flex: 1;
-	border-radius: 0 0 var(--size-border-default) 0;
-	border-inline-start-width: 0;
 	line-height: var(--line-height-small);
 }
 
@@ -101,6 +93,7 @@
 		flex-direction: column-reverse;
 	}
 }
+
 .carbon-img {
 	%image {
 		inline-size: 130px !important;
