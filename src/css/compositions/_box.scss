@@ -14,7 +14,7 @@
 
 .box,
 %box {
-	background-color: var(--background-color, h(bear, alpha));
+	background-color: var(--background-color, h(bear, beta));
 	color: var(--color, inherit);
 	max-inline-size: var(--max-inline-size, 100%) !important;
 	padding: var(--gutter, var(--size-gutter));
