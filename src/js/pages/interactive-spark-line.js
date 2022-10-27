@@ -7,13 +7,13 @@ class InteractiveSparkline {
 			inputEndpoint: document.querySelector("#input-endpoint"),
 			inputColor: document.querySelector("#input-color"),
 			inputEndpointColor: document.querySelector("#input-endpoint-color"),
-			component: document.querySelector("#interactive-sparkline")
+			component: document.querySelector("#interactive-sparkline"),
 		}
 
 		this.inputs.inputColor.value = this.rgbToHex(window.getComputedStyle(document.body, null).getPropertyValue("color"))
 
 		this.processSparkline(this.inputs)
-		Object.values(this.inputs).forEach(input => {
+		Object.values(this.inputs).forEach((input) => {
 			input.addEventListener("change", () => {
 				this.processSparkline(this.inputs)
 			})
@@ -24,7 +24,11 @@ class InteractiveSparkline {
 	}
 
 	rgbToHex(rgb) {
-		return `#${rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/).slice(1).map(n => parseInt(n, 10).toString(16).padStart(2, '0')).join('')}`
+		return `#${rgb
+			.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/)
+			.slice(1)
+			.map((n) => parseInt(n, 10).toString(16).padStart(2, "0"))
+			.join("")}`
 	}
 
 	processSparkline(inputs) {

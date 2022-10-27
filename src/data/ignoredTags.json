@@ -1,17 +1,1 @@
-[
-  "all",
-  "page",
-  "httpstatus",
-  "package",
-  "project",
-  "post",
-  "clickthrough",
-  "feature",
-  "ignore",
-  "throwback",
-  "writing",
-  "pigsear2018",
-  "pigsear2019",
-  "pigsear2021",
-  "advent2021"
-]
+["all", "page", "httpstatus", "package", "project", "post", "clickthrough", "feature", "ignore", "throwback", "writing", "pigsear2018", "pigsear2019", "pigsear2021", "advent2021"]

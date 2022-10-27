@@ -60,6 +60,7 @@
 
 	.box,
 	%box {
+		background-color: var(--background-color, h(bear, delta));
 		border-block-start-color: var(--border-color, h(raven, alpha));
 	}
 

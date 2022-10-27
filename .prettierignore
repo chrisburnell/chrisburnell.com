@@ -2,11 +2,7 @@
 **/generated
 **/vendors
 
-# Ignore specific paths
-src/js/pages/**/*
-
 # Ignore specific filetypes
 *.html
-*.json
 *.md
 *.njk

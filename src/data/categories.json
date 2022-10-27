@@ -1,13 +1,1 @@
-[
-  "article",
-  "beer",
-  "book",
-  "bookmark",
-  "code",
-  "game",
-  "like",
-  "music",
-  "note",
-  "recipe",
-  "talk"
-]
+["article", "beer", "book", "bookmark", "code", "game", "like", "music", "note", "recipe", "talk"]

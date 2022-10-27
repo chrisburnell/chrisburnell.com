@@ -1,14 +1,5 @@
 {
-  "beer": [
-    "Connect with me on <a href=\"https://untappd.com/user/chrisburnell\">Untappd</a>!",
-    "Check out my special collections of reviews: <a href=\"/pigsear2018/\">Pig’s Ear 2018</a>, <a href=\"/pigsear2019/\">Pig’s Ear 2019</a>, <a href=\"/pigsear2021/\">Pig’s Ear 2021</a>, <a href=\"/advent2021/\">Advent Calendar 2021</a>"
-  ],
-  "code": [
-    "<dl class=\"full\"><dt>What’s a <q>pen</q>?</dt><dd><q><a href=\"https://codepen.io\"><em>CodePen</em></a> is an HTML, CSS, and JavaScript code editor in your browser with instant previews.</q></dd></dl>",
-    "These are my best pens—seven of which were [featured on their homepage](https://codepen.io/collection/hfqlg)."
-  ],
-  "music": [
-    "If you like hip-hop, check out my chronological playlist, [Hippity Hop and Whatnot Through the Ages](https://open.spotify.com/playlist/75emnP49rQPR8D95pMIa3u), or, if you’re into synthwave, check out my playlist, [OutRetroSynthVapourRunWave](https://open.spotify.com/playlist/3H8w4bXd8Kwz70Z1cFNdc0).",
-    "Check out my [Listening page](/listening) to see what I’ve been listening to regularly."
-  ]
+  "beer": ["Connect with me on <a href=\"https://untappd.com/user/chrisburnell\">Untappd</a>!", "Check out my special collections of reviews: <a href=\"/pigsear2018/\">Pig’s Ear 2018</a>, <a href=\"/pigsear2019/\">Pig’s Ear 2019</a>, <a href=\"/pigsear2021/\">Pig’s Ear 2021</a>, <a href=\"/advent2021/\">Advent Calendar 2021</a>"],
+  "code": ["<dl class=\"full\"><dt>What’s a <q>pen</q>?</dt><dd><q><a href=\"https://codepen.io\"><em>CodePen</em></a> is an HTML, CSS, and JavaScript code editor in your browser with instant previews.</q></dd></dl>", "These are my best pens—seven of which were [featured on their homepage](https://codepen.io/collection/hfqlg)."],
+  "music": ["If you like hip-hop, check out my chronological playlist, [Hippity Hop and Whatnot Through the Ages](https://open.spotify.com/playlist/75emnP49rQPR8D95pMIa3u), or, if you’re into synthwave, check out my playlist, [OutRetroSynthVapourRunWave](https://open.spotify.com/playlist/3H8w4bXd8Kwz70Z1cFNdc0).", "Check out my [Listening page](/listening) to see what I’ve been listening to regularly."]
 }
