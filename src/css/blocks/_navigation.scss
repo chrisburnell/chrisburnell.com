@@ -32,14 +32,14 @@
 		&::after {
 			@include non-interactive;
 			content: "";
+			opacity: 0;
 			background-color: h(raven);
-			background-image: linear-gradient(to bottom, transparent, #{h(bear, beta)});
 			inline-size: 100%;
-			block-size: 0.375rem; // 6px cause it looks nice :)
+			block-size: 0.375em;
 			position: absolute;
 			inset-block-start: 100%;
 			inset-inline-start: 0;
-			opacity: 0;
+			box-shadow: var(--box-shadow-low);
 			transform: scaleY(0);
 			transition: all var(--transition-duration) var(--transition-function);
 		}
@@ -49,6 +49,11 @@
 			&::after {
 				opacity: 1;
 				transform: none;
+			}
+		}
+		&:active {
+			&::after {
+				background-image: linear-gradient(to bottom, #005bbb, #005bbb 50%, #ffd500 50%, #ffd500);
 			}
 		}
 	}
