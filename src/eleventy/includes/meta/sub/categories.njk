@@ -1,6 +1,6 @@
 <h2>Browse by category</h2>
 <ul class=" [ cluster ] ">
-	{% for lookup in collections.categories %}
+	{% for lookup in collections.categories -%}
 		<li>{% if page.url == '/' + lookup.plural + '/' %}<strong>{{ lookup.properPlural | title }}</strong>{% else %}<a href="/{{ lookup.plural }}/" {% if category == lookup.title %}class=" [ button  button--text ] "{% endif %}>{{ lookup.properPlural | title }}</a>{% endif %}</li>
-	{% endfor %}
+	{%- endfor %}
 </ul>

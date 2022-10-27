@@ -120,10 +120,10 @@
 .pantheon > .spark-line {
 	grid-column: marginalia;
 	grid-row: sparkline;
+	margin-block-end: var(--size-large);
 
 	@include media("below:medium") {
 		justify-self: start;
-		margin-block-end: var(--size-large);
 	}
 
 	@include media("above:medium") {
