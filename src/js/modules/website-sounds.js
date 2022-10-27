@@ -1,9 +1,10 @@
 import pentatonic from "@chrisburnell/pentatonic"
 
 class WebsiteSounds {
-	static STORAGE_KEY = "user-sounds"
 
 	constructor() {
+		this.STORAGE_KEY = "user-sounds"
+
 		// Defaults for sitewide pentatonic
 		this.defaults = {
 			duration: 4000,
