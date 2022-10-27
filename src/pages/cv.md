@@ -9,7 +9,7 @@ monetizaton: false
 toc: true
 ---
 
-<ul class=" [ cluster ] [ center ] ">
+<ul class=" [ cluster ] ">
     <li><!--email_off--><a href="mailto:{{ author.email }}">{{ author.email }}</a><!--/email_off--></li><li><a href="https://chrisburnell.com/cv/">chrisburnell.com/cv</a></li><li><a href="https://chrisburnell.com/cv.pdf">Download PDF</a></li>
 </ul>
 

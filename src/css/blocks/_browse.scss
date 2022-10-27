@@ -20,7 +20,7 @@
 }
 .browse__previous {
 	&::before {
-		content: "← Older";
+		content: "← Previously";
 	}
 }
 .browse__next {
@@ -28,6 +28,6 @@
 	margin-inline-start: auto;
 
 	&::before {
-		content: "Newer →";
+		content: "Next →";
 	}
 }

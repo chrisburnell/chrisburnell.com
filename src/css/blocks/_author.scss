@@ -3,28 +3,31 @@
 /// @group blocks
 ////
 
-.author {
-	display: flex;
-	gap: var(--size-gap);
-
-	@include media("above:large") {
-		flex-direction: row-reverse;
-	}
-}
-
 .author__information {
 	--flow-space: var(--size-small);
 	--size-border: 0;
 
-	flex-shrink: 0;
 	display: flex;
 	flex-direction: column;
+	margin-block-end: var(--size-small);
 	font-family: var(--font-family-serif);
 	font-size: var(--font-size-small);
 	font-style: italic;
 	line-height: var(--line-height-medium);
 	text-align: center;
 	text-decoration: none;
+
+	@include media("below:medium") {
+		float: left;
+		float: inline-start;
+		margin-inline-end: var(--size-medium);
+	}
+
+	@include media("above:medium") {
+		float: right;
+		float: inline-end;
+		margin-inline-start: var(--size-medium);
+	}
 
 	&::before {
 		@include non-interactive;
@@ -140,7 +143,7 @@
 
 	font-size: var(--font-size-small);
 
-	@include media("above:large") {
+	@include media("above:medium") {
 		text-align: end;
 	}
 }

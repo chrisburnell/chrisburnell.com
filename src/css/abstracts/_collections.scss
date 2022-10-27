@@ -3,34 +3,65 @@
 /// @group abstracts
 ////
 
-a, .anchor {
+a,
+.anchor {
 	@extend %anchor !optional;
 }
 
-button:not(.anchor), .button, [type="button"] {
+button:not(.anchor),
+.button,
+[type="button"] {
 	@extend %button !optional;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	@extend %heading !optional;
 }
 
-p, blockquote, details, table, dl, ol, ul, figure:not([class]) {
+p,
+blockquote,
+details,
+table,
+dl,
+ol,
+ul,
+figure:not([class]) {
 	@extend %content !optional;
 }
 
-img, input[type="image"], svg {
+img,
+input[type="image"],
+svg {
 	@extend %image !optional;
 }
 
-audio, canvas, embed, iframe, marquee, math, object, video {
+audio,
+canvas,
+embed,
+iframe,
+marquee,
+math,
+object,
+video {
 	@extend %media !optional;
 }
 
-input, optgroup, select, textarea {
+input,
+optgroup,
+select,
+textarea {
 	@extend %input !optional;
 }
 
-code, kbd, samp, var, .monospace {
+code,
+kbd,
+samp,
+var,
+.monospace {
 	@extend %monospace !optional;
 }

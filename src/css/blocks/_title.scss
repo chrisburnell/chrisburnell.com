@@ -4,17 +4,17 @@
 ////
 
 .title {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: center;
+	display: block;
 	gap: var(--size-gutter);
 	padding-block: var(--size-gigantic);
-	padding-inline: var(--size-gutter);
-	margin-inline: calc(var(--size-gutter) * -1);
 	contain: paint; // helps painting with .perch inside
 	overflow: hidden;
 	position: relative;
+
+	@include media("above:medium") {
+		padding-block-end: var(--size-large);
+		text-align: center;
+	}
 }
 
 .title--positive span,

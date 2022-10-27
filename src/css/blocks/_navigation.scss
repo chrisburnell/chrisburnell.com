@@ -33,6 +33,7 @@
 			@include non-interactive;
 			content: "";
 			background-color: h(raven);
+			background-image: linear-gradient(to bottom, transparent, #{h(bear, beta)});
 			inline-size: 100%;
 			block-size: 0.375rem; // 6px cause it looks nice :)
 			position: absolute;
@@ -49,40 +50,6 @@
 				opacity: 1;
 				transform: none;
 			}
-		}
-	}
-
-	// Cicada Interactions
-	:nth-child(1) %anchor {
-		&:is(:hover, :focus) {
-			transform: translateY(-7.5%) rotateZ(-4deg);
-		}
-		&:active {
-			transform: translateY(5%) rotateZ(-4deg);
-		}
-	}
-	:nth-child(2) %anchor {
-		&:is(:hover, :focus) {
-			transform: translateY(-7.5%) rotateZ(5deg);
-		}
-		&:active {
-			transform: translateY(5%) rotateZ(5deg);
-		}
-	}
-	:nth-child(3) %anchor {
-		&:is(:hover, :focus) {
-			transform: translateY(-7.5%) rotateZ(3deg);
-		}
-		&:active {
-			transform: translateY(5%) rotateZ(3deg);
-		}
-	}
-	:nth-child(4) %anchor {
-		&:is(:hover, :focus) {
-			transform: translateY(-7.5%) rotateZ(-4deg);
-		}
-		&:active {
-			transform: translateY(5%) rotateZ(-4deg);
 		}
 	}
 }

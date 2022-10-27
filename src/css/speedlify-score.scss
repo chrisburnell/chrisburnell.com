@@ -16,9 +16,6 @@ speedlify-score {
 	border: calc(var(--size-border-thin) * 1.5) solid hsl(var(--hsl-conifer));
 	margin-inline-start: var(--size-tiny-small);
 }
-.speedlify-score-good {
-	font-weight: var(--font-weight-bold);
-}
 .speedlify-score-ok {
 	color: hsl(var(--hsl-aspen));
 	border-color: currentColor;

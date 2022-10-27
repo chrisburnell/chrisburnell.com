@@ -35,6 +35,10 @@
 		[meta-end ads-start]
 		auto
 		[ads-end];
+	grid-template-columns:
+		[marginalia-start content-start outdent-start]
+		auto
+		[outdent-end content-end marginalia-end];
 
 	@include media("above:medium") {
 		grid-template-rows:
@@ -84,7 +88,7 @@
 .breadcrumbs,
 .title,
 .description {
-	grid-column: marginalia / content;
+	grid-column: marginalia / outdent;
 }
 
 .breadcrumbs {
@@ -116,10 +120,10 @@
 .pantheon > .spark-line {
 	grid-column: marginalia;
 	grid-row: sparkline;
-	margin-block-start: var(--size-large);
 
 	@include media("below:medium") {
 		justify-self: start;
+		margin-block-end: var(--size-large);
 	}
 
 	@include media("above:medium") {

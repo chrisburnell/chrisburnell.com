@@ -127,5 +127,5 @@ module.exports = {
 				emoji: "💻",
 			},
 		},
-	]
+	],
 }
