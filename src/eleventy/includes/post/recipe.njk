@@ -1,5 +1,12 @@
-{% if makes or serves %}
-	<p id="serves"><strong>{% if makes %}Makes{% else %}Serves{% endif %} {{ makes | default(serves) }}.</strong></p>
+{% if makes or serves or preheat %}
+	<p>
+		{% if makes or serves %}
+			<strong id="serves">{% if makes %}Makes{% else %}Serves{% endif %} {{ makes | default(serves) }}.</strong>
+		{% endif %}
+		{% if preheat %}
+			<strong id="preheat">There is a <a href="#preheat-step">preheat</a> step in this recipe.</strong>
+		{% endif %}
+	</p>
 {% endif %}
 
 {% if prep_time or cooking_time %}
@@ -13,10 +20,6 @@
 			<dd>{{ cooking_time }}</dd>
 		{% endif %}
 	</dl>
-{% endif %}
-
-{% if preheat %}
-	<p id="preheat"><strong>There is a <a href="#preheat-step">preheat</a> step in this recipe.</strong><p>
 {% endif %}
 
 <table>
