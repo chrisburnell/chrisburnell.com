@@ -30,12 +30,18 @@
 
 	%anchor {
 		color: h(highland);
-		text-decoration-color: h(kaiser);
+
+		&:not(:is(:hover, :focus, :active)) {
+			text-decoration-color: h(kaiser);
+		}
 	}
 
 	h2 %anchor {
 		color: inherit !important;
-		text-decoration-color: transparent;
+
+		&:not(:is(:hover, :focus, :active)) {
+			text-decoration-color: transparent;
+		}
 	}
 
 	hr {
