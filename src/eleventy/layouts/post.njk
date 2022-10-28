@@ -117,7 +117,9 @@ layout: base
 		{% include 'photo.njk' %}
 
 		{% if description %}
-			<p class=" [ description ] [ flow ] [ p-summary ] ">{{ description | safe }}</p>
+			<div class=" [ description ] [ flow ] [ p-summary ] ">
+				{{ description | markdownFormat | safe }}
+			</div>
 		{% endif %}
 
 		{% include 'updated.njk' %}

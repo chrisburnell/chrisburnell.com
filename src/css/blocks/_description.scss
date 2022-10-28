@@ -10,11 +10,13 @@
 	font-weight: var(--font-weight-default);
 
 	p {
-		max-inline-size: var(--size-line-length);
+		:not(.content) > & {
+			max-inline-size: var(--size-line-length);
 
-		@include media("above:medium") {
-			margin-inline: auto;
-			text-align: center;
+			@include media("above:tiny") {
+				margin-inline: auto;
+				text-align: center;
+			}
 		}
 	}
 

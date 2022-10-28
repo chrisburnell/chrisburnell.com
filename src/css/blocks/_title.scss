@@ -6,13 +6,13 @@
 .title {
 	display: block;
 	gap: var(--size-gutter);
-	padding-block: var(--size-gigantic);
+	padding-block-start: var(--size-gigantic);
+	padding-block-end: var(--size-large);
 	contain: paint; // helps painting with .perch inside
 	overflow: hidden;
 	position: relative;
 
-	@include media("above:medium") {
-		padding-block-end: var(--size-large);
+	@include media("above:tiny") {
 		text-align: center;
 	}
 }
