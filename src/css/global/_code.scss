@@ -61,10 +61,10 @@ pre {
 	}
 
 	code {
-		background-color: transparent;
+		background-color: transparent !important;
 		padding: 0;
 		border-radius: 0;
 		overflow: auto;
-		scrollbar-color: h(raven) h(lynx);
+		scrollbar-color: h(raven) h(mineshaft);
 	}
 }
