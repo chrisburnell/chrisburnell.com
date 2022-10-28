@@ -13,4 +13,10 @@
 	padding-inline: var(--gutter, var(--size-gutter));
 	margin-inline: auto;
 	position: relative;
+
+	// This helps account for the "notch" on some mobile devices
+	@supports (padding: max(0px)) {
+		padding-inline-start: max(env(safe-area-inset-left), var(--gutter, var(--size-gutter)));
+		padding-inline-end: max(env(safe-area-inset-right), var(--gutter, var(--size-gutter)));
+	}
 }
