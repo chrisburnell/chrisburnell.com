@@ -58,6 +58,10 @@
 		background-color: h(conifer);
 	}
 
+	pre[class*="language-"] {
+		background-color: h(thunder);
+	}
+
 	.box,
 	%box {
 		background-color: var(--background-color, h(bear, delta));
