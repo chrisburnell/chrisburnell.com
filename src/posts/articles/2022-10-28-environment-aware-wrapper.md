@@ -11,7 +11,7 @@ Quick one today.
 
 If you’re not familiar with the notch, check out [<q><q>The Notch</q> and CSS</q> on CSS-Tricks](https://css-tricks.com/the-notch-and-css/), which has a succinct and information-rich summary of what the notch is and how we can work with it in our CSS.
 
-In browsers that support it, we have the ability to query certain aspects of the environment with the [`env()` function](https://developer.mozilla.org/en-US/docs/Web/CSS/env). Used similarly to other functions that we probably use a bit more frequently—e.g. `var()`, `url()`, `attr()`)—and, importantly for the notch, allows us to query four environment variables in particular:
+In browsers that support it, we have the ability to query certain aspects of the environment with the [`env()` function](https://developer.mozilla.org/en-US/docs/Web/CSS/env). Used similarly to other functions that we probably use a bit more frequently—e.g. `var()`, `url()`, `attr()`—and, importantly for the notch, allows us to query four environment variables in particular:
 
 - `safe-area-inset-top`
 - `safe-area-inset-bottom`
