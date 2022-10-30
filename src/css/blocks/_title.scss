@@ -8,8 +8,9 @@
 	gap: var(--size-gutter);
 	padding-block-start: var(--size-gigantic);
 	padding-block-end: var(--size-large);
-	contain: paint; // helps painting with .perch inside
+	overflow: hidden;
 	position: relative;
+	contain: paint; // helps painting with .perch inside
 
 	@include media("above:tiny") {
 		text-align: center;
