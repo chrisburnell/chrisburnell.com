@@ -147,6 +147,7 @@
 		@include media("below:medium") {
 			grid-row: toc;
 			margin-block-start: 0;
+			margin-block-end: var(--size-gigantic);
 		}
 	}
 }
