@@ -52,17 +52,17 @@
 			auto
 			[title-end context-start description-start]
 			auto
-			[context-end description-end content-start sparkline-start]
+			[context-end description-end sparkline-start content-start]
 			auto
 			[sparkline-end meta-start]
 			1fr
-			[meta-end content-end responses-start]
+			[content-end responses-start]
 			auto
 			[responses-end browse-start]
 			auto
 			[browse-end ads-start]
 			auto
-			[ads-end];
+			[meta-end ads-end];
 		grid-template-columns:
 			[marginalia-start]
 			var(--aside-size, clamp(15rem, 7.71rem + 13.71vw, 18rem)) // 15–18rem between 850px–1200px

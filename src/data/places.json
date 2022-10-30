@@ -96,5 +96,12 @@
     "lat": 53.796,
     "long": -1.546,
     "address": "Level 4, Trinity, Albion St, Leeds LS1 5AT"
+  },
+  {
+    "title": "The Barbican",
+    "url": "https://www.barbican.org.uk",
+    "lat": 51.521,
+    "long": -0.0956,
+    "address": "Silk Street, London, EC2Y 8DS"
   }
 ]
