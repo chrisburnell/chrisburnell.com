@@ -67,8 +67,11 @@ Let me know if you’ve got other interesting uses for environment variables or 
 .notched {
     border: var(--size-tiny) solid currentColor;
     inline-size: 100%;
+    max-inline-size: var(--size-breakpoint-tiny);
     aspect-ratio: 2532 / 1170;
-    border-radius: 3vw;
+    margin-inline: auto;
+    border-radius: 2em;
+    overflow: hidden;
     position: relative;
 }
 
@@ -87,5 +90,9 @@ Let me know if you’ve got other interesting uses for environment variables or 
 .notched .wrap {
     max-block-size: 100%;
     overflow-y: hidden;
+}
+
+.notched p {
+    max-inline-size: 100%;
 }
 </style>
