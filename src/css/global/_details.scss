@@ -20,7 +20,7 @@ summary {
 	@include non-selectable;
 	display: list-item;
 	padding: 0;
-	font-weight: var(--font-weight-semibold);
+	font-weight: var(--font-weight-bold);
 	transition: padding var(--transition-duration) var(--transition-function);
 
 	&::-webkit-details-marker {

@@ -52,12 +52,14 @@ s {
 strong,
 .strong {
 	font-style: normal !important;
+	font-variation-settings: normal !important;
 	font-weight: var(--font-weight-semibold) !important;
 }
 
 em,
 .italic {
 	font-style: italic !important;
+	font-variation-settings: "ital" 125 !important;
 	font-weight: var(--font-weight-default) !important;
 
 	& > small,

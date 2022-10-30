@@ -28,8 +28,9 @@ kbd {
 
 var {
 	color: h(bowhead);
-	font-style: normal;
 	font-size: inherit;
+	font-style: normal;
+	font-variation-settings: normal;
 	font-weight: var(--font-weight-semibold);
 }
 

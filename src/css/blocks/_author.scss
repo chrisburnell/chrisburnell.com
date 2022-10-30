@@ -109,17 +109,18 @@
 		}
 	}
 
-	%anchor {
+	.anchor {
 		color: inherit;
 		font-family: var(--font-family-sans);
 		font-size: var(--font-size-default);
 		font-style: normal;
-		font-weight: var(--font-weight-semibold);
+		font-variation-settings: normal;
+		font-weight: var(--font-weight-bold);
 		text-decoration-color: transparent;
 	}
 
 	&:is(:hover, :focus, :active) {
-		%anchor {
+		.anchor {
 			text-decoration-color: h(maple);
 		}
 	}
