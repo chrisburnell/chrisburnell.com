@@ -59,7 +59,7 @@ Because we’re using the `max()` function to compare the `env()` and `var()` va
     </div>
 </div>
 
-Since Wrappers are so common in front end development, I thought that this technique could have widespread use, and hopefully you can slide it into your existing code without much trouble!
+Since Wrappers are so common in front end development, this technique could have widespread use, and hopefully you can slide it into your existing code without much trouble!
 
 Let me know if you’ve got other interesting uses for environment variables or ways to handle the <q>notch</q>!
 
