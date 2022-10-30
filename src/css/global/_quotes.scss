@@ -16,7 +16,7 @@ blockquote {
 	p:not(.no-quotes) {
 		font-family: var(--font-family-serif);
 		font-style: italic;
-		font-variation-settings: "ital" 1;
+		font-variation-settings: "ital" 125;
 
 		&::before {
 			content: open-quote;
