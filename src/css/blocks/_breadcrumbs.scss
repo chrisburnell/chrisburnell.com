@@ -8,6 +8,7 @@
 	--delineator: "→";
 	--padding-inline: var(--size-small);
 
+	max-inline-size: 100% !important;
 	color: h(kaiser);
 	padding-block-start: var(--size-large);
 	padding-block-end: var(--size-medium);
