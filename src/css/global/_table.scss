@@ -47,7 +47,7 @@ table {
 
 // Heading Cells
 th {
-	font-weight: var(--font-weight-bold);
+	font-weight: var(--font-weight-semibold);
 	// white-space: nowrap;
 
 	&:not(:empty) {

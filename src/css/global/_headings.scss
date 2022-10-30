@@ -14,7 +14,7 @@ h1,
 .alpha,
 %alpha {
 	font-size: var(--font-size-alpha);
-	font-weight: var(--font-weight-bold);
+	font-weight: var(--font-weight-heavy);
 	line-height: var(--line-height-medium);
 }
 h1 {
@@ -41,7 +41,7 @@ h3,
 %gamma {
 	font-family: var(--font-family-sans);
 	font-size: var(--font-size-gamma);
-	font-weight: var(--font-weight-bold);
+	font-weight: var(--font-weight-semibold);
 }
 
 h4,
@@ -49,7 +49,7 @@ h4,
 %delta {
 	font-family: var(--font-family-sans);
 	font-size: var(--font-size-default);
-	font-weight: var(--font-weight-bold);
+	font-weight: var(--font-weight-semibold);
 }
 
 h5,
@@ -57,7 +57,7 @@ h5,
 %epsilon {
 	font-family: var(--font-family-sans);
 	font-size: var(--font-size-small);
-	font-weight: var(--font-weight-bold);
+	font-weight: var(--font-weight-semibold);
 }
 
 h6,

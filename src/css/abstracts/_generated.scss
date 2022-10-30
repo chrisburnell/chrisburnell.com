@@ -37,7 +37,7 @@ $colors: (
 	milou: #f9f9f9,
 );
 $font-families: (
-	sans: "'Proxima Nova', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif",
+	sans: "'Proxima Vera', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif",
 	serif: "Georgia, Times, Times New Roman, serif",
 	monospace: "monospace",
 	nineties: "Courier",
@@ -52,8 +52,13 @@ $font-sizes: (
 	alpha: clamp(2rem, 1.286rem + 2.286vw, 3rem),
 );
 $font-weights: (
+	light: 300,
 	default: 400,
-	bold: 600,
+	medium: 500,
+	semibold: 600,
+	bold: 700,
+	extrabold: 800,
+	heavy: 900,
 );
 $line-heights: (
 	default: 1.875,

@@ -30,7 +30,7 @@ a {
 	inset-block-start: var(--size-medium);
 	inset-inline-start: 50%;
 	transform: translateX(-50%);
-	font-weight: var(--font-weight-bold);
+	font-weight: var(--font-weight-semibold);
 	text-align: center;
 	z-index: var(--z-index-notificaton);
 }
@@ -44,7 +44,7 @@ a {
 	inset-inline-end: calc(var(--size-small) * -1);
 	font-family: var(--font-family-monospace);
 	font-size: inherit;
-	font-weight: var(--font-weight-bold);
+	font-weight: var(--font-weight-semibold);
 	text-transform: lowercase;
 	transform: translateY(calc(-50% - (var(--size-border-thin) * 2)));
 

@@ -1,4 +1,9 @@
 {
+  "light": 300,
   "default": 400,
-  "bold": 600
+  "medium": 500,
+  "semibold": 600,
+  "bold": 700,
+  "extrabold": 800,
+  "heavy": 900
 }

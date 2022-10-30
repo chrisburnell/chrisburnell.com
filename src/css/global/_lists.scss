@@ -31,7 +31,7 @@
 			color: h(bowhead);
 			font-family: var(--font-family-sans);
 			font-style: normal;
-			font-weight: var(--font-weight-bold);
+			font-weight: var(--font-weight-semibold);
 		}
 	}
 }
@@ -112,7 +112,7 @@ dl {
 	}
 }
 dt {
-	font-weight: var(--font-weight-bold);
+	font-weight: var(--font-weight-semibold);
 }
 dd {
 	margin: 0;

@@ -16,12 +16,13 @@
 
 	h2 {
 		margin-block-end: var(--size-small);
+		font-weight: var(--font-weight-semibold);
 	}
 
 	%anchor,
 	data,
 	time {
-		font-weight: var(--font-weight-bold);
+		font-weight: var(--font-weight-semibold);
 	}
 
 	.emoji {

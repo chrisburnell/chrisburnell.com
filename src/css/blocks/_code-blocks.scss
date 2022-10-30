@@ -17,7 +17,7 @@ pre[class*="language-"] {
 		inset-block-start: var(--size-tiny);
 		inset-inline-start: var(--size-gutter);
 		font-family: var(--font-family-sans);
-		font-weight: var(--font-weight-bold);
+		font-weight: var(--font-weight-semibold);
 	}
 
 	code {
@@ -161,7 +161,7 @@ pre.language-css .token.string,
 
 .token.important,
 .token.bold {
-	font-weight: bold;
+	font-weight: var(--font-weight-semibold);
 }
 .token.italic {
 	font-style: italic;
