@@ -9,7 +9,6 @@
 	padding-block-start: var(--size-gigantic);
 	padding-block-end: var(--size-large);
 	contain: paint; // helps painting with .perch inside
-	overflow: hidden;
 	position: relative;
 
 	@include media("above:tiny") {

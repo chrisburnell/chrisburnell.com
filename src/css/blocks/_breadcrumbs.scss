@@ -9,7 +9,8 @@
 	--padding-inline: var(--size-small);
 
 	color: h(kaiser);
-	margin-block-start: var(--size-gigantic);
+	padding-block-start: var(--size-large);
+	padding-block-end: var(--size-medium);
 	font-weight: var(--font-weight-bold);
 
 	%anchor {
