@@ -21,6 +21,7 @@ p {
 :is(abbr, dfn)[title] {
 	color: h(kaiser);
 	font-style: italic;
+	font-variation-settings: "ital" 1;
 	font-weight: var(--font-weight-default);
 	border-block-end: var(--size-border-thin) dotted h(dove);
 	cursor: help;

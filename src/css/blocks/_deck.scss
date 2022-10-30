@@ -44,6 +44,7 @@
 .deck__context {
 	font-family: var(--font-family-serif);
 	font-style: italic;
+	font-variation-settings: "ital" 1;
 }
 
 .deck__meta {
@@ -51,6 +52,7 @@
 
 	time {
 		font-style: italic;
+		font-variation-settings: "ital" 1;
 		white-space: nowrap;
 	}
 }
