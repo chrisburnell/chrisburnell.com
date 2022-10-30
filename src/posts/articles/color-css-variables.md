@@ -8,7 +8,7 @@ title: How I use CSS Variables to manage colours
 #   - design-systems
 ---
 
-Here’s a quick, little technique for working with colours in CSS that I alluded to in [The Beloved Refactor](/article/the-beloved-refactor/) but I figured I’d go a little bit deeper on here.
+Here’s a quick, little technique for working with colours in CSS that I alluded to in [The Beloved Refactor](/article/the-beloved-refactor/) but I thought that I’d go a little bit deeper on here.
 
 I’m going to demonstrate this technique using the [HSL colour space](https://en.wikipedia.org/wiki/HSL_and_HSV) but it would work well with RGB or some other [upcoming](/feature-watch/#css-color-function) [colour](/feature-watch/#css-lch-lab) [formats](/feature-watch/#hwb).
 
