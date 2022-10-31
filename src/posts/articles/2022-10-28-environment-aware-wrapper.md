@@ -1,10 +1,10 @@
 ---
-draft: true
 date: 2022-10-30T10:00:00+0000
 title: The Environment-Aware Wrapper
 description: Here’s a handy CSS technique to make sure your content isn’t obscured by the pesky <q>notch</q> that seems to be present on many phones these days, and it <em>probably</em> already fits nicely into your existing codebase!
 tags:
   - css
+  - ux
 ---
 
 <figure>
