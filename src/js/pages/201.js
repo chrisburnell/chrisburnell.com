@@ -26,7 +26,7 @@
 		setTimeout(targetURLCheck, 10000)
 	}
 
-	let title = document.querySelector(".title")
+	let title = document.querySelector(".title .p-name")
 	let titleText = title.innerHTML
 	let dots
 	let inputCheck = setInterval(() => {

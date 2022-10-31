@@ -50,19 +50,19 @@
 
 	<link rel="preload" href="/fonts/proxima-vara.woff2" as="font" type="font/woff2" crossorigin>
 
-	{% if env.ELEVENTY_PRODUCTION %}
-		<link rel="icon" href="/images/favicon.ico">
-		<link rel="icon" href="/images/favicon-64.png">
-		<link rel="apple-touch-icon" href="/images/favicon-180.png">
-		<link rel="apple-touch-icon-precomposed" href="/images/favicon-180.png">
-		<link rel="msapplication-square310x310logo" href="/images/favicon-310.png">
-	{% else %}
-		<link rel="icon" href="/images/favicon-bw.ico">
-		<link rel="icon" href="/images/favicon-bw-64.png">
-		<link rel="apple-touch-icon" href="/images/favicon-180-bw.png">
-		<link rel="apple-touch-icon-precomposed" href="/images/favicon-180-bw.png">
-		<link rel="msapplication-square310x310logo" href="/images/favicon-310-bw.png">
-	{% endif %}
+	{% if env.ELEVENTY_PRODUCTION -%}
+	<link rel="icon" href="/images/favicon.ico">
+	<link rel="icon" href="/images/favicon-64.png">
+	<link rel="apple-touch-icon" href="/images/favicon-180.png">
+	<link rel="apple-touch-icon-precomposed" href="/images/favicon-180.png">
+	<link rel="msapplication-square310x310logo" href="/images/favicon-310.png">
+	{%- else -%}
+	<link rel="icon" href="/images/favicon-bw.ico">
+	<link rel="icon" href="/images/favicon-bw-64.png">
+	<link rel="apple-touch-icon" href="/images/favicon-180-bw.png">
+	<link rel="apple-touch-icon-precomposed" href="/images/favicon-180-bw.png">
+	<link rel="msapplication-square310x310logo" href="/images/favicon-310-bw.png">
+	{%- endif %}
 
 	<link rel="self" href="{{ site.url + '/feed.xml' }}">
 	<link rel="alternate" type="application/rss+xml" title="Main Posts Feed" href="{{ site.url + '/feed.xml' }}">
@@ -93,70 +93,70 @@
 
 	<style>{%- include '../../../css/main.css' -%}</style>
 	{% if css -%}
-		<style>{%- include '../../../css/' + css -%}</style>
+	<style>{%- include '../../../css/' + css -%}</style>
 	{%- endif %}
 
-	{% if tags and tags.includes('httpstatus') %}
-		<meta name="robots" content="noindex,nofollow">
-	{% else %}
-		<!-- The URL -->
-		<link rel="canonical" href="{{ canonical }}">
-		{% if previous_post %}
-			<link rel="prev" href="{{ site.url + previous_post.url }}">
-		{% endif %}
-		{% if next_post %}
-			<link rel="next" href="{{ site.url + next_post.url }}">
-		{% endif %}
+	{% if tags and tags.includes('httpstatus') -%}
+	<meta name="robots" content="noindex,nofollow">
+	{%- else -%}
+	<!-- The URL -->
+	<link rel="canonical" href="{{ canonical }}">
+	{% if previous_post -%}
+	<link rel="prev" href="{{ site.url + previous_post.url }}">
+	{%- endif %}
+	{% if next_post -%}
+	<link rel="next" href="{{ site.url + next_post.url }}">
+	{%- endif %}
 
-		<!-- OpenGraph Microdata -->
-		{% if mf_root == 'review' %}
-			<meta property="og:type" content="review">
-		{% elif layout == 'post' %}
-			<meta property="og:type" content="article">
-		{% elif page.url.includes('/about') %}
-			<meta property="og:type" content="profile">
-		{% else %}
-			<meta property="og:type" content="website">
-		{% endif %}
-		<meta property="og:url" content="{{ canonical }}">
-		<meta property="og:title" content="{{ meta_title }}">
-		<meta property="og:description" content="{{ meta_description }}">
-		<meta property="og:locale" content="{{ site.locale }}">
-		<meta property="og:site_name" content="{{ site.title }}">
-		<meta property="og:image" content="{{ meta_image }}">
+	<!-- OpenGraph Microdata -->
+	{% if mf_root == 'review' -%}
+	<meta property="og:type" content="review">
+	{%- elif layout == 'post' -%}
+	<meta property="og:type" content="article">
+	{%- elif page.url.includes('/about') -%}
+	<meta property="og:type" content="profile">
+	{%- else -%}
+	<meta property="og:type" content="website">
+	{% endif -%}
+	<meta property="og:url" content="{{ canonical }}">
+	<meta property="og:title" content="{{ meta_title }}">
+	<meta property="og:description" content="{{ meta_description }}">
+	<meta property="og:locale" content="{{ site.locale }}">
+	<meta property="og:site_name" content="{{ site.title }}">
+	<meta property="og:image" content="{{ meta_image }}">
 
-		<!-- Twitter Microdata -->
-		<meta name="twitter:card" content="summary">
-		<meta name="twitter:creator" content="@{{ author.twitter }}">
-		<meta name="twitter:title" content="{{ meta_title }}">
-		<meta name="twitter:description" content="{{ meta_description }}">
-		<meta name="twitter:image" content="{{ meta_image }}">
-		<meta name="twitter:domain" content="{{ site.url | getHost }}">
-		{% if twitter %}
-			<meta name="twitter:widgets:theme" content="light">
-			<meta name="twitter:widgets:link-color" content="{{ designTokens.colors | keyValue("raven") }}">
-			<meta name="twitter:widgets:border-color" content="{{ designTokens.colors | keyValue("raven") }}">
-		{% endif %}
+	<!-- Twitter Microdata -->
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:creator" content="@{{ author.twitter }}">
+	<meta name="twitter:title" content="{{ meta_title }}">
+	<meta name="twitter:description" content="{{ meta_description }}">
+	<meta name="twitter:image" content="{{ meta_image }}">
+	<meta name="twitter:domain" content="{{ site.url | getHost }}">
+	{% if twitter -%}
+	<meta name="twitter:widgets:theme" content="light">
+	<meta name="twitter:widgets:link-color" content="{{ designTokens.colors | keyValue("raven") }}">
+	<meta name="twitter:widgets:border-color" content="{{ designTokens.colors | keyValue("raven") }}">
+	{%- endif %}
 
-		{% if layout == 'post' %}
-			<meta property="article:published_time" content="{{ page.date | friendlyDateLong | safe }}">
-			{% if updated or finish %}
-				<meta property="article:modified_time" content="{{ updated | default(finish) | friendlyDateLong | safe }}">
-			{% endif %}
-			<meta property="article:author" content="{{ author.name }}">
-			{% for tag in tags | categoryFilter | tagFilter %}
-				<meta property="article:tag" content="{{ tag }}">
-			{% endfor %}
-		{% elif page_about %}
-			<meta property="profile:first_name" content="{{ author.firstname }}">
-			<meta property="profile:last_name" content="{{ author.lastname }}">
-			<meta property="profile:username" content="{{ author.shortname }}">
-		{% endif %}
+	{% if layout == 'post' -%}
+	<meta property="article:published_time" content="{{ page.date | friendlyDateLong | safe }}">
+	{% if updated or finish -%}
+	<meta property="article:modified_time" content="{{ updated | default(finish) | friendlyDateLong | safe }}">
+	{%- endif %}
+	<meta property="article:author" content="{{ author.name }}">
+	{% for tag in tags | categoryFilter | tagFilter -%}
+	<meta property="article:tag" content="{{ tag }}">
+	{%- endfor %}
+	{%- elif page_about -%}
+	<meta property="profile:first_name" content="{{ author.firstname }}">
+	<meta property="profile:last_name" content="{{ author.lastname }}">
+	<meta property="profile:username" content="{{ author.shortname }}">
+	{%- endif %}
 
-		{% if env.ELEVENTY_PRODUCTION and site.monetization and monetization != false %}
-			<meta name="monetization" content="{{ site.monetization }}">
-		{% endif %}
-	{% endif %}
+	{% if env.ELEVENTY_PRODUCTION and site.monetization and monetization != false -%}
+	<meta name="monetization" content="{{ site.monetization }}">
+	{%- endif %}
+	{%- endif %}
 
 	<script>document.documentElement.classList.remove("no-js");</script>
 </head>
