@@ -41,6 +41,6 @@ figure {
 	& > a figcaption {
 		color: h(dove);
 		font-style: italic;
-		font-variation-settings: "ital" 125;
+		font-variation-settings: "ital" var(--font-italic);
 	}
 }

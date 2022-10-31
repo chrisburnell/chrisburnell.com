@@ -39,7 +39,7 @@
 		#{"--z-index-" + $name}: #{$value};
 	}
 
-	--line-clamp: 3;
+	--font-italic: 100;
 
 	--animation-duration: 2s;
 
@@ -49,6 +49,8 @@
 	--transition-duration-short: 120ms;
 	--transition-function: ease;
 	--transition-function-bounce: cubic-bezier(1, 0.63, 0.72, 1.42);
+
+	--line-clamp: 3;
 
 	--aspect-ratio: 16 / 9;
 

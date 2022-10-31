@@ -21,8 +21,8 @@ p {
 :is(abbr, dfn)[title] {
 	color: h(kaiser);
 	font-style: italic;
-	font-variation-settings: "ital" 125;
-	font-weight: var(--font-weight-default);
+	font-variation-settings: "ital" var(--font-italic);
+	font-weight: var(--font-weight-regular);
 	border-block-end: var(--size-border-thin) dotted h(dove);
 	cursor: help;
 
@@ -49,6 +49,7 @@ s {
 	text-decoration-thickness: var(--size-border-thin);
 }
 
+b,
 strong,
 .strong {
 	font-style: normal !important;
@@ -56,11 +57,12 @@ strong,
 	font-weight: var(--font-weight-semibold) !important;
 }
 
+i,
 em,
 .italic {
 	font-style: italic !important;
-	font-variation-settings: "ital" 125 !important;
-	font-weight: var(--font-weight-default) !important;
+	font-variation-settings: "ital" var(--font-italic) !important;
+	font-weight: var(--font-weight-regular) !important;
 
 	& > small,
 	small > & {

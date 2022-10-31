@@ -165,7 +165,7 @@ pre.language-css .token.string,
 }
 .token.italic {
 	font-style: italic;
-	font-variation-settings: "ital" 125;
+	font-variation-settings: "ital" var(--font-italic);
 }
 
 .token.entity {

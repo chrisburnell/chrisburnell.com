@@ -8,7 +8,7 @@
 	margin-block-end: var(--size-large);
 	font-family: var(--font-family-serif);
 	font-size: var(--font-size-gamma);
-	font-weight: var(--font-weight-default);
+	font-weight: var(--font-weight-regular);
 
 	p {
 		:not(.content) > & {
@@ -27,7 +27,7 @@
 
 	time {
 		font-style: italic;
-		font-variation-settings: "ital" 125;
+		font-variation-settings: "ital" var(--font-italic);
 		white-space: nowrap;
 	}
 
