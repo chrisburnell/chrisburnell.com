@@ -9,7 +9,7 @@ tags:
   - writing
 ---
 
-<h2 id="1">№ 1. Account Creation</h2>
+<h2 id="1">Step № 1. Account Creation</h2>
 
 Unless you already have your own Webmention receiver, sign up for one and add the secret key/token to your project. Below are two examples:
 
@@ -25,7 +25,7 @@ If you’re using **[go-jamming](https://git.brainbaking.com/wgroeneveld/go-jamm
 GO_JAMMING_TOKEN=njJql0lKXnotreal4x3Wmd
 ```
 
-<h2 id="2">№ 2. Installation</h2>
+<h2 id="2">Step № 2. Installation</h2>
 
 Install the [`eleventy-cache-webmentions`](/eleventy-cache-webmentions/) from *npm*:
 
@@ -33,7 +33,7 @@ Install the [`eleventy-cache-webmentions`](/eleventy-cache-webmentions/) from *n
 npm install @chrisburnell/eleventy-cache-webmentions --save-dev
 ```
 
-<h2 id="3">№ 3. Configuration</h2>
+<h2 id="3">Step № 3. Configuration</h2>
 
 Create a config file for `eleventy-cache-webmentions`:
 
@@ -67,7 +67,7 @@ module.exports = Object.assign(defaults, {
 })
 ```
 
-<h2 id="4">№ 4. Integrate with Eleventy</h2>
+<h2 id="4">Step № 4. Integrate with Eleventy</h2>
 
 Add both to your `.eleventy.js` config file:
 
@@ -80,7 +80,7 @@ module.exports = function(eleventyConfig) {
 }
 ```
 
-<h2 id="5">№ 5. Attach Webmentions to Pages</h2>
+<h2 id="5">Step № 5. Attach Webmentions to Pages</h2>
 
 Add some [Directory Specific Data Files](https://www.11ty.dev/docs/data-template-dir/) wherever your pages and/or posts live. For example, if your pages all live in a `pages/` folder, you would add the following code block to a `pages.11tydata.js` file inside `pages/`:
 
@@ -98,7 +98,7 @@ module.exports = {
 }
 ```
 
-<h2 id="6">№ 6. Use Webmentions</h2>
+<h2 id="6">Step № 6. Use Webmentions</h2>
 
 Webmentions are now attached to each page!
 
