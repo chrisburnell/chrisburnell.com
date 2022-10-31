@@ -32,20 +32,20 @@ Here we’re using the inline-direction environment variables, `safe-area-inset-
 
 ```css
 .wrap {
-  max-inline-size: var(--max-inline-size, 100%);
-  padding-inline: var(--gutter, 1em);
-  margin-inline: auto;
+	max-inline-size: var(--max-inline-size, 100%);
+	padding-inline: var(--gutter, 1em);
+	margin-inline: auto;
 
-  @supports (padding: max(0px)) {
-    padding-inline-start: max(
-      env(safe-area-inset-left),
-      var(--gutter, 1em)
-    );
-    padding-inline-end: max(
-      env(safe-area-inset-right),
-      var(--gutter, 1em)
-    );
-  }
+	@supports (padding: max(0px)) {
+		padding-inline-start: max(
+			env(safe-area-inset-left),
+			var(--gutter, 1em)
+		);
+		padding-inline-end: max(
+			env(safe-area-inset-right),
+			var(--gutter, 1em)
+		);
+	}
 }
 ```
 
