@@ -80,6 +80,7 @@ $sizes-extra: (
 	avatar-small: 48px,
 	logo: clamp(9rem, -3.6rem + 28.8vw, 18rem),
 	logo-small: clamp(5rem, 0.825rem + 6.667vw, 7.5rem),
+	character-limit: 60ch,
 	line-length: clamp(21em, 100vw, 30em),
 	border-default: 4px,
 	border-thin: 2px,

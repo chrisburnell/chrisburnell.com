@@ -11,7 +11,7 @@
 
 :is(p, li, dd) {
 	@include break-words;
-	max-inline-size: 50ch;
+	max-inline-size: var(--size-character-limit);
 }
 
 p {

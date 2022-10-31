@@ -29,31 +29,47 @@
 		transition: all var(--transition-duration) var(--transition-function);
 		z-index: 0;
 
+		&::before,
 		&::after {
 			@include non-interactive;
 			content: "";
 			opacity: 0;
-			background-color: h(raven);
 			inline-size: 100%;
 			block-size: 0.375em;
 			position: absolute;
 			inset-block-start: 100%;
 			inset-inline-start: 0;
+		}
+
+		// Solid Colour
+		&::before {
+			background-color: h(raven);
 			box-shadow: var(--box-shadow-low);
 			transform: scaleY(0);
 			transition: all var(--transition-duration) var(--transition-function);
 		}
 
+		// Fancy
+		&::after {
+			background-image: linear-gradient(to bottom, #005bbb, #005bbb 50%, #ffd500 50%, #ffd500);
+		}
+
 		&[aria-current="page"],
 		&:is(:hover, :focus, :active) {
-			&::after {
+			&::before {
 				opacity: 1;
 				transform: none;
 			}
 		}
+		&:is(:hover, :focus) {
+			&::after {
+				opacity: 1;
+				transition: all var(--animation-duration) var(--transition-function) var(--transition-duration);
+			}
+		}
 		&:active {
 			&::after {
-				background-image: linear-gradient(to bottom, #005bbb, #005bbb 50%, #ffd500 50%, #ffd500);
+				opacity: 1;
 			}
 		}
 	}
