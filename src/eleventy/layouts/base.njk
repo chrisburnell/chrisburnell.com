@@ -139,14 +139,14 @@
 	{%- endif %}
 
 	{% if layout == 'post' -%}
-	<meta property="article:published_time" content="{{ page.date | friendlyDateLong | safe }}">
+	<meta property="article:published_time" content="{{ page.date | friendlyDateLong | striptags(true) | safe }}">
 	{% if updated or finish -%}
 	<meta property="article:modified_time" content="{{ updated | default(finish) | friendlyDateLong | safe }}">
 	{%- endif %}
 	<meta property="article:author" content="{{ author.name }}">
-	{% for tag in tags | categoryFilter | tagFilter -%}
+	{% for tag in tags | categoryFilter | tagFilter %}
 	<meta property="article:tag" content="{{ tag }}">
-	{%- endfor %}
+	{% endfor %}
 	{%- elif page_about -%}
 	<meta property="profile:first_name" content="{{ author.firstname }}">
 	<meta property="profile:last_name" content="{{ author.lastname }}">
