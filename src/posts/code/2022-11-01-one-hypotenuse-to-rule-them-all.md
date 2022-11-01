@@ -4,7 +4,7 @@ title: One Hypotenuse to rule them all
 description: Here’s a fun little demo of some math I found interesting.
 ---
 
-If a right triangle has two sides with lengths equalling <var>√2 / 2</var>, what is the length of its hypotenuse?
+If a right triangle has two sides, both with lengths equalling <var>√2 / 2</var>, what is the length of its hypotenuse?
 
 <figure>
     <div class="triangle">?</div>

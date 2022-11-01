@@ -5,7 +5,6 @@ module.exports = {
 	categoryProper: "code snippet",
 	categoryProperPlural: "code snippets",
 	tags: ["code"],
-	emoji: "🖋️",
 	prefix: "c",
 	on_this_day: true,
 }
