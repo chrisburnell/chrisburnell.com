@@ -45,8 +45,10 @@
 		&::before {
 			background-color: h(raven);
 			box-shadow: var(--box-shadow-low);
-			transform: scaleY(0);
-			transition: all var(--transition-duration) var(--transition-function);
+			transform: translateY(100%);
+			transition:
+				transform var(--transition-duration) ease-out,
+				opacity calc(2 * var(--transition-duration)) linear;
 		}
 
 		// Fancy
@@ -70,6 +72,7 @@
 		&:active {
 			&::after {
 				opacity: 1;
+				transition: none;
 			}
 		}
 	}

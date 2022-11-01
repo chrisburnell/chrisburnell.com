@@ -1,9 +1,10 @@
 ---
 date: 2014-11-05T13:00:00+0000
 title: Power of Transform Centering - Interactive
+codepen_slug: xutbs
 ---
 
-<c-codepen slug="xutbs" height="500px"></c-codepen>
+<c-codepen slug="{{ codepen_slug }}" height="500px"></c-codepen>
 
 Check out the [demo version](/pen/transform-centering/).
 

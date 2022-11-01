@@ -1,8 +1,6 @@
 ---
 date: 2014-11-10T12:00:00+0000
-
 title: Category Hover Demo
-
 codepen_slug: mybQEL
 codepen_featured: true
 ---

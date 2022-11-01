@@ -1,8 +1,6 @@
 ---
 date: 2015-05-18T13:07:00+0100
-
 title: Button Interaction Demo
-
 codepen_slug: RPRwoo
 ---
 

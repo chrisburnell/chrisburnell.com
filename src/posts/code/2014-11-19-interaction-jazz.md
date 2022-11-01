@@ -1,8 +1,6 @@
 ---
 date: 2014-11-19T12:00:00+0000
-
 title: Interaction Jazz
-
 codepen_slug: myyRqp
 ---
 

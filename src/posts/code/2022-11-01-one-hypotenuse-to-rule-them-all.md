@@ -2,12 +2,18 @@
 date: 2022-11-01T15:27:00+0000
 title: One Hypotenuse to rule them all
 description: Here’s a fun little demo of some math I found interesting.
+syndicate_to:
+  - https://codepen.io/chrisburnell/pen/NWzxwLO/554d7f21c9589850129efdaaf6b7f261
 ---
 
 If a right triangle has two side-lengths both equal to <var>√2 / 2</var>, what is the length of its hypotenuse?
 
 <figure aria-hidden="true">
-    <div class="triangle">?</div>
+    <div class="right-triangle">
+        <div class="hypotenuse  gamma"><var>?</var></div>
+        <div class="opposite">√2 / 2</div>
+        <div class="adjacent">√2 / 2</div>
+    </div>
 </figure>
 
 We’ll build a function to calculate the length of the hypotenuse given the length of the triangle’s other two sides.
@@ -45,60 +51,70 @@ const hypotenuse = calculateHypotenuse(side, side)
 Which gives us… <var>1</var>
 
 <figure aria-hidden="true">
-    <div class="triangle">1</div>
+    <div class="right-triangle">
+        <div class="hypotenuse  gamma"><var>1</var></div>
+        <div class="opposite">√2 / 2</div>
+        <div class="adjacent">√2 / 2</div>
+    </div>
 </figure>
 
 Interesting! 🤔
 
 <style>
-.triangle {
+.right-triangle {
     background-image:
         linear-gradient(
             to bottom right,
-            hsla(var(--hsl-dove) / var(--opacity-beta)),
-            transparent
-        ),
-        linear-gradient(
-            to bottom right,
             transparent 49.9%,
-            hsl(var(--hsl-alto)) 50%
+            hsl(var(--hsl-raven)) 50%
         );
-    background-repeat: no-repeat;
-    background-size:
-        15% 15%,
-        100% 100%;
-    background-position:
-        bottom right,
-        top left;
-    width:  10rem;
-    height: 10rem;
+    inline-size: 10rem;
+    block-size:  10rem;
     display: flex;
     align-items: center;
     justify-content: center;
     padding-inline-end: 1.25rem;
     padding-block-end:  1.25rem;
-    margin-right: 3.75rem;
-    margin-bottom: 2rem;
-    font-weight: 600;
+    margin-inline-end: 3.75rem;
+    margin-block-end: 2rem;
     position: relative;
+    font-weight: var(--font-weight-semibold);
 }
 
-.triangle::before,
-.triangle::after {
-    content: "√2 / 2";
+.right-triangle::before,
+.hypotenuse,
+.opposite,
+.adjacent {
     position: absolute;
     white-space: nowrap;
 }
 
-.triangle::before {
-    left: calc(100% + 0.5rem);
-    top: 50%;
+.right-triangle::before {
+    content: "";
+    inline-size: 1.25rem;
+    block-size:  1.25rem;
+    border-width: var(--size-border-thin) 0 0 var(--size-border-thin);
+    border-style: dashed;
+    border-color: hsla(var(--hsl-dove) / var(--opacity-beta));
+    inset-inline-end: 0;
+    inset-block-end: 0;
+}
+
+.hypotenuse {
+    text-align: right;
+    inset-block-end: 50%;
+    inset-inline-end: 50%;
+}
+
+.opposite {
+    inset-inline-start: calc(100% + 0.5rem);
+    inset-block-start: 50%;
     transform: translateY(-50%);
 }
 
-.triangle::after {
-    top: calc(100% + 0.5rem);
-    left: 50%;
+.adjacent {
+    inset-block-start: calc(100% + 0.5rem);
+    inset-inline-start: 50%;
     transform: translateX(-50%);
 }
 </style>

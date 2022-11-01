@@ -1,8 +1,6 @@
 ---
 date: 2019-12-09T18:41:00+0000
-
 title: Color Transition Demo
-
 codepen_slug: MWYKQdX
 ---
 
