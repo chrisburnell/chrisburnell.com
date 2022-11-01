@@ -28,8 +28,6 @@ eleventyComputed:
 
 {{ bio | markdownFormat | safe }}
 
-<div class=" [ flow ] " aria-hidden="true">
-
 ## Other Formats
 
 ```text
@@ -43,8 +41,6 @@ eleventyComputed:
 ```html
 {{ bio | striptags(true) | markdownFormat | replace('<p>', '') | replace('</p>', '') | safe }}
 ```
-
-</div>
 
 ## The Long Version
 

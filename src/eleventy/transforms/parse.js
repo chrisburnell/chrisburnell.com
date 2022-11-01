@@ -60,7 +60,7 @@ module.exports = async (value, outputPath) => {
 		})
 
 		// Make <pre> code blocks keyboard-accessible by adding `tabindex="0"`
-		const preformatted = $(":not[aria-hidden] > pre > code")
+		const preformatted = $("pre > code")
 		preformatted.each((i, element) => {
 			$(element).attr("tabindex", 0)
 		})
