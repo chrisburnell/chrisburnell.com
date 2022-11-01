@@ -4,9 +4,9 @@ title: One Hypotenuse to rule them all
 description: Here’s a fun little demo of some math I found interesting.
 ---
 
-If a right triangle has two sides, both with lengths equalling <var>√2 / 2</var>, what is the length of its hypotenuse?
+If a right triangle has two side-lengths both equal to <var>√2 / 2</var>, what is the length of its hypotenuse?
 
-<figure>
+<figure aria-hidden="true">
     <div class="triangle">?</div>
 </figure>
 
@@ -42,9 +42,9 @@ const calculateHypotenuse = (a, b) => {
 const hypotenuse = calculateHypotenuse(side, side)
 ```
 
-Which gives us…
+Which gives us… <var>1</var>
 
-<figure>
+<figure aria-hidden="true">
     <div class="triangle">1</div>
 </figure>
 
