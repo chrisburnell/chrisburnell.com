@@ -91,11 +91,11 @@ Interesting! 🤔
 
 .right-triangle::before {
     content: "";
-    inline-size: 1.25rem;
-    block-size:  1.25rem;
+    inline-size: 15%;
+    block-size:  15%;
     border-width: var(--size-border-thin) 0 0 var(--size-border-thin);
     border-style: dashed;
-    border-color: hsla(var(--hsl-dove) / var(--opacity-beta));
+    border-color: hsl(var(--hsl-milou));
     inset-inline-end: 0;
     inset-block-end: 0;
 }
