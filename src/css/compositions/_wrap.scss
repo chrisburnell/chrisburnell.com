@@ -10,8 +10,8 @@
 
 .wrap {
 	max-inline-size: var(--max-inline-size, var(--size-breakpoint-gigantic));
-	padding-inline: var(--gutter-start, var(--gutter, var(--size-gutter)));
-	padding-inline: var(--gutter-end, var(--gutter, var(--size-gutter)));
+	padding-inline-start: var(--gutter-start, var(--gutter, var(--size-gutter)));
+	padding-inline-end: var(--gutter-end, var(--gutter, var(--size-gutter)));
 	margin-inline: auto;
 	position: relative;
 
