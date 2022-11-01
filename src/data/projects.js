@@ -122,7 +122,7 @@ module.exports = {
 				date: "2013-04-08T12:00:00+0000",
 				updated: "2018-02-01T12:00:00+0000",
 				title: "My Featured Pens on CodePen",
-				description: "Pens of mine that were featured on Codepen’s homepage.",
+				description: "Pens of mine that were featured on CodePen.",
 				description_markdown: true,
 				emoji: "💻",
 			},

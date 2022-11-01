@@ -4,7 +4,6 @@
 <?xml-stylesheet href="/feed.xsl" type="text/xsl" ?>
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"  xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-
 		<title>{{ site.title | striptags(true) }} – {{ title | striptags(true) }}</title>
 		<description>{{ description | striptags(true) }}</description>
 		<language>{{ site.locale }}</language>
@@ -23,9 +22,8 @@
 		<atom:link rel="self" href="{{ site.url + page.url }}" type="application/rss+xml" />
 		<atom:link rel="hub" href="{{ author.urls.switchboard }}" />
 
-		{% for item in collections[related_collection] | limit(site.limits.feed) %}
-			{% include 'items/feed.njk' %}
+		{% for item in collections[related_collection] | limit(site.limits.feed) -%}
+		{% include 'items/feed.njk' %}
 		{% endfor %}
-
 	</channel>
 </rss>
