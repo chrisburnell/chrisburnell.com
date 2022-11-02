@@ -37,6 +37,7 @@
 	inline-size: 1.5rem;
 	display: inline-block;
 	vertical-align: sub;
+	object-fit: contain;
 }
 
 .pixelated {
@@ -54,7 +55,7 @@
 }
 
 [aria-labelledby="worked-with"] {
-	%anchor {
+	a {
 		inline-size: 128px;
 		block-size: 72px;
 		display: flex;
