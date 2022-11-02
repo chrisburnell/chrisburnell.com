@@ -29,7 +29,7 @@
 .responses__thread {
 	contain: content;
 
-	%anchor {
+	a {
 		@include break-words;
 	}
 }
@@ -61,7 +61,7 @@
 }
 
 .response__meta {
-	%anchor {
+	a {
 		color: inherit;
 	}
 

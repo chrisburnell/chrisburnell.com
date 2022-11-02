@@ -10,7 +10,7 @@
 	padding-block-end: var(--size-large);
 	overflow: hidden;
 	position: relative;
-	contain: paint; // helps painting with .perch inside
+	contain: content; // helps painting with .perch inside
 
 	@include media("above:tiny") {
 		text-align: center;

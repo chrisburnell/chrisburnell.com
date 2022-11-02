@@ -6,10 +6,7 @@
 .perch {
 	position: relative;
 
-	&::before {
-		content: "";
-		background-image: url("/images/raven.svg");
-		background-repeat: no-repeat;
+	img {
 		opacity: var(--opacity-gamma);
 		inline-size: var(--size-logo);
 		// depends on the specific dimensions of raven.svg
@@ -19,12 +16,20 @@
 		inset-block-end: 0;
 		z-index: var(--z-index-below);
 		transform: translateX(-35%) translateY(-10%) scaleX(-1);
-	}
+		pointer-events: none;
 
-	.title > & {
-		&::before {
-			@include media("below:large") {
-				transform: translateX(-10%) translateY(-10%) scaleX(-1);
+		@include media("above:large") {
+			animation: var(--animation-duration) ease-out forwards perch;
+		}
+
+		@at-root {
+			@keyframes perch {
+				0% {
+					transform: rotateZ(-5deg) translateY(-50%) scaleX(-1);
+				}
+				100% {
+					transform: translateX(-35%) translateY(-10%) scaleX(-1);
+				}
 			}
 		}
 	}
