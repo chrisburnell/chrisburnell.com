@@ -23,10 +23,6 @@ summary {
 	font-weight: var(--font-weight-bold);
 	transition: padding var(--transition-duration) var(--transition-function);
 
-	&::-webkit-details-marker {
-		display: none;
-	}
-
 	& + * {
 		margin-block-start: var(--size-small);
 		border-block-start: var(--size-border-thin) solid h(bowhead);
