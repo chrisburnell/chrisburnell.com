@@ -6,5 +6,6 @@ emoji: 🐦
 github: chrisburnell/corvus
 branch: master
 tags:
+  - clickthrough
   - indieweb
 ---

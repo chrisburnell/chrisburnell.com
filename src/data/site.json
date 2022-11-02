@@ -16,15 +16,14 @@
     "feature": 2,
     "feed": 10,
     "sparkline": 15,
-    "minWebmentions": 2
+    "minimumResponsesRequired": 5
   },
   "cacheDurations": {
     "hourly": "1h",
     "daily": "23h",
-    "weekly": "1w",
-    "monthly": "4w"
+    "weekly": "167h",
+    "monthly": "671h"
   },
-  "cacheDuration": "11h",
   "upcomingDaysLead": 7,
   "weights": {
     "count": 0.5,

@@ -1,19 +1,6 @@
 <h2>Browse by tag</h2>
 <ul class=" [ cluster ] [ small ] ">
-	{%- set lowest = 9001 -%}
-	{%- set highest = 0 -%}
-	{%- for item in collections.tags | sort -%}
-		{%- set count = collections[item] | arePublished | getCollectionCount(false, true) -%}
-		{%- if count < lowest -%}
-			{%- set lowest = count -%}
-		{%- elif count > highest -%}
-			{%- set highest = count -%}
-		{%- endif -%}
-	{%- endfor -%}
 	{% for lookup in collections.tags | sort -%}
-		{%- set count = collections[lookup] | arePublished | getCollectionCount(false, true) -%}
-		{#- map range from lowest–highest to 1–1.125, 3 decimal places -#}
-		{%- set fontSize = count | rangeMap(lowest, highest, 1, 1.375, 3) -%}
-		{%- if page.url != '/tag/' + lookup + '/' %}<li><a href="/tag/{{ lookup }}/" {% if lookup in tags %}class=" [ button  button--text ] " style="--font-size: {{ fontSize }}em"{% else %}style="font-size: {{ fontSize }}em;"{% endif %}>{{ lookup }}</a></li>{% endif -%}
+		{%- if page.url != '/tag/' + lookup + '/' %}<li><a href="/tag/{{ lookup }}/" {% if lookup in tags %}class=" [ button  button--text ] "{% endif %}>{{ lookup }}</a></li>{% endif -%}
 	{%- endfor %}
 </ul>

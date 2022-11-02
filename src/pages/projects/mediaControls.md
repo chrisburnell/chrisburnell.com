@@ -6,5 +6,6 @@ emoji: 🎧
 github: chrisburnell/mediaControls
 branch: master
 tags:
+  - clickthrough
   - javascript
 ---

@@ -50,10 +50,6 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.addPlugin(imageAvatarPlugin)
 	eleventyConfig.addPlugin(syntaxHighlightPlugin)
 	eleventyConfig.addPlugin(webmentionsPlugin, configWebmentions)
-	// eleventyConfig.addPlugin(inclusiveLanguagePlugin, {
-	// 	// accepts an array or a comma-delimited string
-	// 	words: "simply,obviously,basically,of course,clearly,just,everyone knows,easy"
-	// })
 	eleventyConfig.addPlugin(webCPlugin, {
 		components: "./src/webc/**/*.webc",
 		useTransform: true,
@@ -61,7 +57,12 @@ module.exports = (eleventyConfig) => {
 			pkg
 		}
 	})
+	// eleventyConfig.addPlugin(inclusiveLanguagePlugin, {
+	// 	// accepts an array or a comma-delimited string
+	// 	words: "simply,obviously,basically,of course,clearly,just,everyone knows,easy"
+	// })
 	// eleventyConfig.addPlugin(albumCoverPlugin)
+
 	if (process.env.ELEVENTY_PRODUCTION) {
 		eleventyConfig.addPlugin(directoryOutputPlugin)
 	}
@@ -113,16 +114,17 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.addLayoutAlias("feed", "feed.njk")
 
 	// Static Files
-	eleventyConfig.addPassthroughCopy("audio")
-	eleventyConfig.addPassthroughCopy("css")
-	eleventyConfig.addPassthroughCopy("fonts")
-	eleventyConfig.addPassthroughCopy("images/*")
-	eleventyConfig.addPassthroughCopy("images/animated")
-	eleventyConfig.addPassthroughCopy("js")
-	eleventyConfig.addPassthroughCopy("src/js/pages")
-	eleventyConfig.addPassthroughCopy("src/js/vendor")
-	eleventyConfig.addPassthroughCopy("video")
-	eleventyConfig.addPassthroughCopy({ "files/**/*": "." })
+	eleventyConfig
+		.addPassthroughCopy("audio")
+		.addPassthroughCopy("css")
+		.addPassthroughCopy("fonts")
+		.addPassthroughCopy("images/*")
+		.addPassthroughCopy("images/animated")
+		.addPassthroughCopy("js")
+		.addPassthroughCopy("src/js/pages")
+		.addPassthroughCopy("src/js/vendor")
+		.addPassthroughCopy("video")
+		.addPassthroughCopy({ "files/**/*": "." })
 
 	// Watch targets
 	eleventyConfig.addWatchTarget("./src/css/")
@@ -149,9 +151,8 @@ module.exports = (eleventyConfig) => {
 	})
 	return {
 		dataTemplateEngine: "njk",
-		htmlTemplateEngine: "njk",
+		htmlTemplateEngine: false,
 		markdownTemplateEngine: "njk",
-		passthroughFileCopy: true,
 		dir: {
 			input: "src",
 			includes: "eleventy/includes",

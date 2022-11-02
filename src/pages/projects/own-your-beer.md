@@ -6,5 +6,6 @@ emoji: 🍻
 github: chrisburnell/OwnYourBeer
 branch: master
 tags:
+  - clickthrough
   - indieweb
 ---

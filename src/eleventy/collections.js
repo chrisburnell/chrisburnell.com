@@ -136,11 +136,11 @@ module.exports = {
 			.filter(collectionFilters.isPublished)
 			.filter(collectionFilters.notReply)
 			.filter((item) => {
-				return item.data.webmentions.length + item.data.externalLikes
+				return item.data.webmentions.length + item.data.externalLikes >= site.limits.minimumResponsesRequired
 			})
 			.sort(collectionFilters.dateFilter)
 			.sort((a, b) => {
-				return b.data.webmentions.length - a.data.webmentions.length
+				return (b.data.webmentions.length + b.data.externalLikes) - (a.data.webmentions.length + a.data.externalLikes)
 			})
 			.slice(0, site.limits.feed)
 	},
@@ -152,7 +152,7 @@ module.exports = {
 			.filter(collectionFilters.isPublished)
 			.filter(collectionFilters.notReply)
 			.filter((item) => {
-				return item.data.webmentions.length >= site.limits.minWebmentions
+				return item.data.webmentions.length + item.data.externalLikes >= site.limits.minimumResponsesRequired
 			})
 			.map((item) => {
 				item.hotness = item.data.webmentions.reduce((accumulator, webmention) => {

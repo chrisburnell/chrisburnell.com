@@ -46,6 +46,7 @@
 			background-color: h(raven);
 			box-shadow: var(--box-shadow-low);
 			transform: translateY(100%);
+			// prettier-ignore
 			transition:
 				transform var(--transition-duration) ease-out,
 				opacity calc(2 * var(--transition-duration)) linear;

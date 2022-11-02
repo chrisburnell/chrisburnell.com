@@ -15,6 +15,6 @@ module.exports = {
 				return [`https://codepen.io/${author.codepen}/pen/${data.codepen_slug}`, ...data.syndicate_to]
 			}
 			return data.syndicate_to
-		}
-	}
+		},
+	},
 }
