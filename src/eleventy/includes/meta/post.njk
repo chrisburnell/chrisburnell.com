@@ -99,7 +99,7 @@
 		<li class=" [ tags ] ">
 			<c-emoji>{{ emojis.tag }}</c-emoji>
 			<small>tagged</small>
-			{% if tags_filtered.length > 1 %}<ul class=" [ cluster ] [ meta__list ] [ small ] ">{% endif %}
+			{% if tags_filtered.length > 1 %}<ul class=" [ cluster ] [ meta__list ] ">{% endif %}
 				{% for tag in tags_filtered -%}
 					{% if tags_filtered.length > 1 %}<li>{% endif %}<a class=" [ p-tag ] " href="/tag/{{ tag }}/">{{ tag }}</a>{% if tags_filtered.length > 1 %}</li>{% endif %}
 				{%- endfor %}
@@ -135,7 +135,7 @@
 				<c-emoji>{{ emojis.author }}</c-emoji>
 				<small>authored by</small>
 			{% endif %}
-			{% if authors.length > 1 %}<ul class=" [ cluster ] [ meta__list ] [ small ] ">{% endif %}
+			{% if authors.length > 1 %}<ul class=" [ cluster ] [ meta__list ] ">{% endif %}
 			{% for author in authors -%}
 				{% if authors.length > 1 %}<li>{% endif %}{% set authorObject = people | getPerson(author, 'object') %}{% if authorObject.url %}<a href="{{ authorObject.url | toArray | first }}">{{ authorObject.title }}</a>{% else %}<strong>{{ author | safe }}</strong>{% endif %}{% if authors.length > 1 %}</li>{% endif %}
 			{%- endfor %}
@@ -201,21 +201,21 @@
 		<li class=" [ syndicate-to ] ">
 			<c-emoji>{{ emojis.syndication }}</c-emoji>
 			<small>also on</small>
-			<ul class=" [ cluster ] [ meta__list ] [ small ] ">
-			{% for syndication in syndicate_to %}
+			<ul class=" [ cluster ] [ meta__list ] ">
+			{% for syndication in syndicate_to -%}
 				<li>
 					<a href="{{ syndication }}">{{ syndication | getSyndicationTarget }}</a>
-					{% if syndication.includes("twitter.com") %}
-						(<indie-action do="reply" with="{{ site.url + page.url }}"><a href="https://twitter.com/intent/tweet?in_reply_to={{ syndication.split("/") | last }}">Reply</a></indie-action>, <indie-action do="repost" with="{{ site.url + page.url }}"><a href="https://twitter.com/intent/retweet?tweet_id={{ syndication.split("/") | last }}">Repost</a></indie-action>, <indie-action do="like" with="{{ site.url + page.url }}"><a href="https://twitter.com/intent/favorite?tweet_id={{ syndication.split("/") | last }}">Like</a></indie-action>)
+					{%- if syndication.includes("twitter.com") %}
+						<small> (<indie-action do="reply" with="{{ site.url + page.url }}"><a href="https://twitter.com/intent/tweet?in_reply_to={{ syndication.split("/") | last }}">Reply</a></indie-action>, <indie-action do="repost" with="{{ site.url + page.url }}"><a href="https://twitter.com/intent/retweet?tweet_id={{ syndication.split("/") | last }}">Repost</a></indie-action>, <indie-action do="like" with="{{ site.url + page.url }}"><a href="https://twitter.com/intent/favorite?tweet_id={{ syndication.split("/") | last }}">Like</a></indie-action>)</small>
 						<is-land on:visible class="hidden">
 							<template data-island="once">
 								<script src="/js/vendor/indieconfig.js?v={{ pkg.version }}"></script>
 								<script src="/js/vendor/webaction.js?v={{ pkg.version }}"></script>
 							</template>
 						</is-land>
-					{% endif %}
+					{%- endif -%}
 				</li>
-			{% endfor %}
+			{%- endfor %}
 			</ul>
 		</li>
 	{% endif %}

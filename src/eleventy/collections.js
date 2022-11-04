@@ -140,7 +140,7 @@ module.exports = {
 			})
 			.sort(collectionFilters.dateFilter)
 			.sort((a, b) => {
-				return (b.data.webmentions.length + b.data.externalLikes) - (a.data.webmentions.length + a.data.externalLikes)
+				return b.data.webmentions.length + b.data.externalLikes - (a.data.webmentions.length + a.data.externalLikes)
 			})
 			.slice(0, site.limits.feed)
 	},

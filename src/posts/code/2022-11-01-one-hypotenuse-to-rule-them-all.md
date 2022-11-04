@@ -3,7 +3,7 @@ date: 2022-11-01T15:27:00+0000
 title: One Hypotenuse to rule them all
 description: Here’s a fun little demo of some math I found interesting.
 syndicate_to:
-  - https://codepen.io/chrisburnell/pen/NWzxwLO/554d7f21c9589850129efdaaf6b7f261
+  - https://codepen.io/chrisburnell/pen/poKgaoR
 ---
 
 If a right triangle has two side-lengths both equal to <var>√2 / 2</var>, what is the length of its hypotenuse?
