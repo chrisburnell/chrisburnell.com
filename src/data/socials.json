@@ -13,8 +13,7 @@
   },
   {
     "title": "Mastodon",
-    "split": "@",
-    "key": "mastodon",
+    "url": "https://fediverse.repc.co/@chrisburnell",
     "primary": true
   },
   {
