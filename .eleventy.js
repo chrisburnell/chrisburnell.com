@@ -128,7 +128,6 @@ module.exports = (eleventyConfig) => {
 			"files/**/*": "."
 		})
 		.addPassthroughCopy({
-			"src/js/navigator.js": "js/navigator.js",
 			"src/js/librarian.js": "js/librarian.js",
 			"src/js/url-input.js": "js/url-input.js",
 		})
