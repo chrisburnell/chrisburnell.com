@@ -11,7 +11,7 @@ Expects a URL in the following format:
 
 <!-- </textarea> -->
 <!-- '"´ -->
-<form class="get-youtube-feed">
+<form class=" [ responses__form ] ">
     <input type="text" inputmode="url" id="url">
     <button type="submit">Submit</button>
 </form>
