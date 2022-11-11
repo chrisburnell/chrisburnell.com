@@ -1,4 +1,5 @@
 ---
+date: 2022-11-11T21:38:00+0000
 title: "clamp() Calculator"
 description: "Handy little tool for calculating viewport-based clamped values."
 js_module: clamp-calculator.js
@@ -29,3 +30,12 @@ js_module: clamp-calculator.js
 		<input id="output" class=" [ center  gamma  strong ] " style="inline-size: 100%; margin-inline: auto; line-height: 3;" type="text" readonly></input>
 	</fieldset>
 </form>
+
+
+<h2 id="how">How does this work?</h2>
+	<pre><code>P = (fontSizeMax - fontSizeMin) / (viewportWidthMax - viewportWidthMin)
+R = fontSizeMax - viewportWidthMax * P
+V = P * 100
+
+Inner clamp value = R + V</code></pre>
+<p>
