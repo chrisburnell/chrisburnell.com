@@ -124,7 +124,22 @@ module.exports = (eleventyConfig) => {
 		.addPassthroughCopy("src/js/pages")
 		.addPassthroughCopy("src/js/vendor")
 		.addPassthroughCopy("video")
-		.addPassthroughCopy({ "files/**/*": "." })
+		.addPassthroughCopy({
+			"files/**/*": "."
+		})
+		.addPassthroughCopy({
+			"src/js/navigator.js": "js/navigator.js",
+			"src/js/librarian.js": "js/librarian.js",
+			"src/js/url-input.js": "js/url-input.js",
+		})
+		.addPassthroughCopy({
+			"node_modules/@chrisburnell/spark-line/spark-line.js": "js/spark-line.js",
+			"node_modules/@zachleat/details-utils/details-utils.js": "js/details-utils.js",
+			"node_modules/@zachleat/seven-minute-tabs/seven-minute-tabs.js": "js/seven-minute-tabs.js",
+			"node_modules/lite-youtube-embed/src/lite-yt-embed.css": "css/lite-yt-embed.css",
+			"node_modules/lite-youtube-embed/src/lite-yt-embed.js": "js/lite-yt-embed.js",
+			"node_modules/speedlify-score/speedlify-score.js": "js/speedlify-score.js"
+		})
 
 	// Watch targets
 	eleventyConfig.addWatchTarget("./src/css/")

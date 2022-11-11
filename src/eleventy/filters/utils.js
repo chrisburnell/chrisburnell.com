@@ -77,6 +77,9 @@ module.exports = {
 			return parseInt(value, 16)
 		})
 	},
+	maxDecimals: (value, decimals = 2) => {
+		return parseFloat(value.toFixed(decimals))
+	},
 	simpleMovingAverage: (values, period, preserveEnds) => {
 		preserveEnds = preserveEnds || false
 		let step = (period - 1) / 2
