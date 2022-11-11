@@ -128,8 +128,8 @@ module.exports = (eleventyConfig) => {
 			"files/**/*": "."
 		})
 		.addPassthroughCopy({
-			"src/js/librarian.js": "js/librarian.js",
-			"src/js/url-input.js": "js/url-input.js",
+			"src/js/modules/librarian.js": "js/librarian.js",
+			"src/js/modules/url-input.js": "js/url-input.js",
 		})
 		.addPassthroughCopy({
 			"node_modules/@chrisburnell/spark-line/spark-line.js": "js/spark-line.js",
