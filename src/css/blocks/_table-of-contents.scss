@@ -16,10 +16,12 @@
 
 	@include media("below:medium") {
 		max-block-size: 60vh;
+		max-block-size: 60dvb;
 	}
 
 	@include media("above:medium") {
 		max-block-size: calc(60vh - var(--size-medium) * 2);
+		max-block-size: calc(60dvb - var(--size-medium) * 2);
 		position: sticky;
 		inset-block-start: var(--size-medium);
 	}
