@@ -43,19 +43,11 @@ class ClampCalculator {
 		})
 		this.output = document.getElementById("output")
 
-		Object.values(this.inputs).forEach(input => {
-			input.addEventListener("change", () => {
-				this.calculate()
-			})
-			input.addEventListener("input", () => {
-				this.calculate()
-			})
-		})
-
 		this.button = document.getElementById("submit")
 		this.button.addEventListener("click", (event) => {
 			event.preventDefault()
 			this.calculate()
+			this.output.focus()
 		})
 
 		this.calculate()
