@@ -15,7 +15,7 @@ truncate: true
 {%- set count = collection.length -%}
 {%- set latest_year = collection[0].date.getFullYear() -%}
 {%- set first_year = collection[count-1].date.getFullYear() -%}
-<div id="content" class=" [ pantheon ] [ wrap ] [ archive ] ">
+<div class=" [ pantheon ] [ wrap ] [ archive ] ">
 
 	<ul class=" [ cluster ] [ breadcrumbs ] ">
 		<li>
@@ -38,7 +38,7 @@ truncate: true
 		{% sparkline collection, first_year, latest_year %}
 	{% endif %}
 
-	<div class=" [ content{% if collection[0].data.list == 'shelf' %}  full{% endif %} ] [ flow ] [ h-feed ] ">
+	<div id="content" class=" [ content{% if collection[0].data.list == 'shelf' %}  full{% endif %} ] [ flow ] [ h-feed ] ">
 		{% if categoryIntroductions[category.title] %}
 			{{ categoryIntroductions[category.title] | join('\n\n') | markdownFormat | safe }}
 		{% endif %}

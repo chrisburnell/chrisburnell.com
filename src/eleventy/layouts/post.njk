@@ -46,7 +46,7 @@ layout: base
 	{% set syndicate_to = [of_url] %}
 {%- endif -%}
 
-<article id="content" class=" [ pantheon{% if wide %}  wide{% endif %} ] [ wrap ] [ post h-{{ mf_root }} ] ">
+<article {% if not content.length %}id="content"{% endif %} class=" [ pantheon{% if wide %}  wide{% endif %} ] [ wrap ] [ post h-{{ mf_root }} ] ">
 
 	<ul class=" [ cluster ] [ breadcrumbs ] ">
 		<li>
@@ -151,7 +151,7 @@ layout: base
 		{% endif %}
 
 		{% if content.length %}
-			<div class=" [ e-content ] [ flow ] ">
+			<div id="content" class=" [ e-content ] [ flow ] ">
 				{{ content | safe }}
 			</div>
 		{% endif %}
