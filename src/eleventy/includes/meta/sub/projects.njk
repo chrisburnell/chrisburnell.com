@@ -1,8 +1,12 @@
 <h2>Latest projects</h2>
 <div class=" [ meta__list ] [ small ] ">
-	{% for lookup in collections.projects | limit(site.limits.feature) %}
-		<a href="{{ lookup.url }}" class=" [ riza ] "><c-emoji>{{ lookup.data.emoji }}</c-emoji>{{ lookup.data.title | striptags(true) | safe }}</a>
-		{{ lookup.data.description | markdownFormat | safe }}
+	{%- set count = 0 -%}
+	{% for lookup in collections.projects %}
+		{% if page.url != lookup.url and count < site.limits.feature %}
+			<a href="{{ lookup.url }}" class=" [ riza ] "><c-emoji>{{ lookup.data.emoji }}</c-emoji>{{ lookup.data.title | striptags(true) | safe }}</a>
+			{{ lookup.data.description | markdownFormat | safe }}
+			{%- set count = count + 1 -%}
+		{% endif %}
 	{% endfor %}
 </div>
 <p><a href="/projects/" class=" [ small ] ">Browse Projects →</a></p>

@@ -14,17 +14,22 @@
 	{% set item_title = item.data.category | title %}
 	{% set item_title = item_title + " from " + item_date %}
 {%- endif -%}
+
 <item>
 	<title>{{ item_title | safe }}</title>
 	<link>{{ site.url + item.url }}</link>
 	<guid>{{ site.url + item.url }}</guid>{% if item.data.show_responses %}
 	<comments>{{ site.url + item.url + "#responses" }}</comments>{% endif %}
 	<pubDate>{{ item.date | httpDate }}</pubDate>
-	<category domain="{{ site.url + '/' + item.data.category + '/' }}">{{ item.data.category }}</category>{% if item.data.description %}
-	<description>{{ item.data.description | markdownFormat | replace("\n", " ") | striptags(true) | safe }}</description>{% elif (item.data.category == 'bookmark' or item.data.category == 'note') and item.templateContent != '' %}
-	<description>{{ item.templateContent | striptags(true) | safe }}</description>
+	<category domain="{{ site.url + '/' + item.data.category + '/' }}">{{ item.data.category }}</category>{% if (item.data.category == 'article' or item.data.category == 'note') and item.data.description and item.templateContent != '' %}
+	<description>{{ item.data.description | markdownFormat | replace("\n", " ") | striptags(true) | safe }}</description>
 	<content:encoded><![CDATA[
-		{{ item.templateContent | safe }}{% if item_of_url %}<p><a href="{{ item_of_url }}">{{ item_of_url }}</a></p>{% endif %}
+		{{ item.templateContent | markdownFormat | safe }}
+	]]></content:encoded>{% elif item.data.description %}
+	<description>{{ item.data.description | markdownFormat | replace("\n", " ") | striptags(true) | safe }}</description>{% elif (item.data.category == 'bookmark' or item.data.category == 'note') and item.templateContent != '' %}
+	<description>{{ item.templateContent | markdownFormat | striptags(true) | safe }}</description>
+	<content:encoded><![CDATA[
+		{{ item.templateContent | markdownFormat | safe }}{% if item_of_url %}<p><a href="{{ item_of_url }}">{{ item_of_url }}</a></p>{% endif %}
 	]]></content:encoded>{% else %}
 	<description>{{ item.data.categoryProperPlural | default(item.data.categoryPlural) | default(item.data.category) | title }}</description>
 	{% endif %}{% if item_of_url %}

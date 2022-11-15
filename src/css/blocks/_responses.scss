@@ -12,6 +12,8 @@
 
 .responses__form {
 	max-inline-size: var(--size-line-length);
+	display: grid;
+	grid-gap: var(--size-small);
 	grid-template-columns: 1fr min-content;
 	margin-inline: auto;
 }
