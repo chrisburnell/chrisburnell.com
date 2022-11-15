@@ -5,8 +5,9 @@ title: Deep Dive into Colour
 description: How to make powerful use of CSS Variables, colour spaces, and the cascade using Bowhead.
 tags:
   - css
-  - scss
+  - custom-properties
   - design-systems
+  - scss
 syndicate_to:
   - https://twitter.com/iamchrisburnell/status/1465268696440582148
 ---

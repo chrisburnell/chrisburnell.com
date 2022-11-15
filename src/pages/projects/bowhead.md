@@ -8,8 +8,9 @@ npm: "@chrisburnell/bowhead"
 license: MIT
 tags:
   - css
-  - scss
+  - custom-properties
   - design-systems
+  - scss
   - package
 toc: true
 ---

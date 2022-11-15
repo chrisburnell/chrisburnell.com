@@ -5,6 +5,7 @@
 
 .header {
 	background-color: h(bear);
+	overflow-y: hidden;
 	box-shadow: var(--box-shadow-low);
 	transition: all var(--transition-duration) var(--transition-function);
 	z-index: var(--z-index-menu);
