@@ -53,7 +53,7 @@
 				<c-emoji>{{ emojis.reply }}</c-emoji>
 				<small>in reply to</small>
 			{% endif %}
-			<a class=" [ h-cite  u-in-reply-to ] " href="{{ in_reply_to_url | replace('https://twitter.com/iamchrisburnell/status/', 'https://twitter.chrisburnell.com/') }}">
+			<a class=" [ h-cite  u-in-reply-to ] " href="{{ in_reply_to_url | tweetback }}">
 				{{ people | getPerson(in_reply_to_title) | getInternalTarget(collections.all) | getMastodonHandle | getTwitterHandle }}
 			</a>
 			{% if in_reply_to_authors %}
@@ -203,9 +203,7 @@
 			<small>also on</small>
 			<ul class=" [ cluster ] [ meta__list ] ">
 			{% for syndication in syndicate_to -%}
-				<li>
-					<a href="{{ syndication }}">{{ syndication | getSyndicationTarget }}</a>
-				</li>
+				<li><a href="{{ syndication | tweetback }}">{{ syndication | getSyndicationTarget }}</a></li>
 			{%- endfor %}
 			</ul>
 		</li>

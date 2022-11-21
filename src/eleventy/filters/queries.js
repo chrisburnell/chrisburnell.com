@@ -6,6 +6,8 @@ const methods = require("#data/postingMethods")
 const syndicationTargets = require("#data/syndicationTargets")
 const urlReplacements = require("#data/urlReplacements")
 
+const transform = require("../../js/build/tweetback/transform")
+
 const toArray = (value) => {
 	if (Array.isArray(value)) {
 		return value
@@ -63,6 +65,9 @@ module.exports = {
 			const regex = new RegExp(key, "g")
 			return accumulator.replace(regex, value)
 		}, url)
+	},
+	tweetback: (url) => {
+		return transform(url)
 	},
 	getInternalTarget: (value, pages) => {
 		// Mastodon

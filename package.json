@@ -49,6 +49,7 @@
     "@chrisburnell/spark-line": "^1.2.2",
     "@mdn/browser-compat-data": "^5.2.17",
     "@sindresorhus/slugify": "^1.1.2",
+    "@tweetback/canonical": "^2.0.0",
     "@zachleat/details-utils": "^2.0.2",
     "@zachleat/seven-minute-tabs": "^2.0.0",
     "caniuse-api": "^3.0.0",

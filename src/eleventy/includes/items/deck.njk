@@ -85,7 +85,7 @@
 			{% else %}
 				<small>in reply to</small>
 			{% endif %}
-			<a class=" [ h-cite  u-in-reply-to ] " href="{{ item_in_reply_to_url | replace('https://twitter.com/iamchrisburnell/status/', 'https://twitter.chrisburnell.com/') }}">{{ people | getPerson(item_in_reply_to_title) | getInternalTarget(collections.all) | getMastodonHandle | getTwitterHandle }}</a>
+			<a class=" [ h-cite  u-in-reply-to ] " href="{{ item_in_reply_to_url | tweetback }}">{{ people | getPerson(item_in_reply_to_title) | getInternalTarget(collections.all) | getMastodonHandle | getTwitterHandle }}</a>
 			{% if item_in_reply_to_authors %}
 				{% set first_author = item_in_reply_to_authors | toArray | first %}
 				{% set first_author_person = people | getPerson(first_author) %}
