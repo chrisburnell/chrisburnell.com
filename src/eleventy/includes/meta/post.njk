@@ -205,15 +205,6 @@
 			{% for syndication in syndicate_to -%}
 				<li>
 					<a href="{{ syndication }}">{{ syndication | getSyndicationTarget }}</a>
-					{%- if syndication.includes("twitter.com") %}
-						<small> (<indie-action do="reply" with="{{ site.url + page.url }}"><a href="https://twitter.com/intent/tweet?in_reply_to={{ syndication.split("/") | last }}">Reply</a></indie-action>, <indie-action do="repost" with="{{ site.url + page.url }}"><a href="https://twitter.com/intent/retweet?tweet_id={{ syndication.split("/") | last }}">Repost</a></indie-action>, <indie-action do="like" with="{{ site.url + page.url }}"><a href="https://twitter.com/intent/favorite?tweet_id={{ syndication.split("/") | last }}">Like</a></indie-action>)</small>
-						<is-land on:visible class="hidden">
-							<template data-island="once">
-								<script src="/js/vendor/indieconfig.js?v={{ pkg.version }}"></script>
-								<script src="/js/vendor/webaction.js?v={{ pkg.version }}"></script>
-							</template>
-						</is-land>
-					{%- endif -%}
 				</li>
 			{%- endfor %}
 			</ul>
