@@ -34,9 +34,12 @@ js_module: clamp-calculator.js
 
 
 <h2 id="how">How does this work?</h2>
-	<pre><code>P = (fontSizeMax - fontSizeMin) / (viewportWidthMax - viewportWidthMin)
-R = fontSizeMax - viewportWidthMax * P
-V = P * 100
 
-Inner clamp value = R + V</code></pre>
-<p>
+<pre><code>X = (fontSizeMax - fontSizeMin) / (viewportWidthMax - viewportWidthMin)
+
+Y = fontSizeMax - viewportWidthMax * X
+Z = X * 100
+
+Result = clamp(fontSizeMin, Yrem + Zvw, fontSizeMax)</code></pre>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/clamp">Check out <code>clamp()</code> on MDN.</a></p>
