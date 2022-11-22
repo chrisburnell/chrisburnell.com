@@ -53,7 +53,7 @@
 				<c-emoji>{{ emojis.reply }}</c-emoji>
 				<small>in reply to</small>
 			{% endif %}
-			<a class=" [ h-cite  u-in-reply-to ] " href="{{ in_reply_to_url }}">
+			<a class=" [ h-cite  u-in-reply-to ] " href="{{ in_reply_to_url | replace('https://twitter.com/iamchrisburnell/status/', 'https://twitter.chrisburnell.com/') }}">
 				{{ people | getPerson(in_reply_to_title) | getInternalTarget(collections.all) | getMastodonHandle | getTwitterHandle }}
 			</a>
 			{% if in_reply_to_authors %}

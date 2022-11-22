@@ -70,7 +70,7 @@ module.exports = {
 			return "a previous Mastodon post"
 		}
 		// Twitter
-		else if (value.includes("https://twitter.com/iamchrisburnell/status/")) {
+		else if (value.includes("https://twitter.com/iamchrisburnell/status/") || value.includes("https://twitter.chrisburnell.com/")) {
 			return "a previous Twitter post"
 		}
 		// Internal URL

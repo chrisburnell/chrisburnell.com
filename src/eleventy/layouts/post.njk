@@ -78,7 +78,7 @@ layout: base
 				has not yet been published
 			{%- else %}
 				{% if in_reply_to and not rsvp %}
-					in reply to <a href="{{ in_reply_to_url }}">{{ people | getPerson(in_reply_to_title) | getInternalTarget(collections.all) | getMastodonHandle | getTwitterHandle }}</a>
+					in reply to <a href="{{ in_reply_to_url | replace('https://twitter.com/iamchrisburnell/status/', 'https://twitter.chrisburnell.com/') }}">{{ people | getPerson(in_reply_to_title) | getInternalTarget(collections.all) | getMastodonHandle | getTwitterHandle }}</a>
 					{% if in_reply_to_authors -%}
 						{% set first_author = in_reply_to_authors | toArray | first %}
 						{% set first_author_person = people | getPerson(first_author) %}
