@@ -9,34 +9,37 @@ js_module: clamp-calculator.js
 <form id="clamp-calculator" class=" [ grid ] " data-layout="50-50">
 	<fieldset>
 		<label for="font-size-min" class=" [ center  delta ] ">Minimum Font Size <small>(px)</small></label>
-		<input id="font-size-min" class=" [ center  delta  monospace ] " style="inline-size: 100%; line-height: 3;" type="text" inputmode="numeric" pattern="[0-9]{1,4}" value="16"></input>
+		<input id="font-size-min" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="text" inputmode="numeric" pattern="[0-9]{1,4}" value="16"></input>
 	</fieldset>
 	<fieldset>
 		<label for="font-size-max" class=" [ center  delta ] ">Maximum Font Size <small>(px)</small></label>
-		<input id="font-size-max" class=" [ center  delta  monospace ] " style="inline-size: 100%; line-height: 3;" type="text" inputmode="numeric" pattern="[0-9]{1,4}" value="18"></input>
+		<input id="font-size-max" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="text" inputmode="numeric" pattern="[0-9]{1,4}" value="18"></input>
 	</fieldset>
 	<fieldset>
 		<label for="viewport-width-min" class=" [ center  delta ] ">Minimum Viewport Width <small>(px)</small></label>
-		<input id="viewport-width-min" class=" [ center  delta  monospace ] " style="inline-size: 100%; line-height: 3;" type="text" inputmode="numeric" pattern="[0-9]{1,5}" value="500"></input>
+		<input id="viewport-width-min" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="text" inputmode="numeric" pattern="[0-9]{1,5}" value="500"></input>
 	</fieldset>
 	<fieldset>
 		<label for="viewport-width-max" class=" [ center  delta ] ">Maximum Viewport Width <small>(px)</small></label>
-		<input id="viewport-width-max" class=" [ center  delta  monospace ] " style="inline-size: 100%; line-height: 3;" type="text" inputmode="numeric" pattern="[0-9]{1,5}" value="1000"></input>
+		<input id="viewport-width-max" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="text" inputmode="numeric" pattern="[0-9]{1,5}" value="1000"></input>
 	</fieldset>
 	<fieldset class=" [ center ] " style="grid-column: span 2; margin-block-start: 1em;">
-		<button id="submit" class="margin-inline: auto;" type="submit">Calculate!</button>
+		<button id="submit" style="--min-inline-size: 10em; margin-inline: auto;" type="submit">Calculate!</button>
 	</fieldset>
 	<fieldset style="grid-column: span 2; margin-block-start: 1em;">
 		<label for="output" class=" [ center  gamma ] ">The Result</label>
-		<input id="output" class=" [ center  gamma  monospace ] " style="inline-size: 100%; margin-inline: auto; line-height: 3;" type="text" readonly></input>
+		<input id="output" class=" [ center  monospace ] " style="inline-size: 100%; margin-inline: auto; line-height: 3;" type="text" readonly></input>
 	</fieldset>
 </form>
 
 
 <h2 id="how">How does this work?</h2>
-	<pre><code>P = (fontSizeMax - fontSizeMin) / (viewportWidthMax - viewportWidthMin)
-R = fontSizeMax - viewportWidthMax * P
-V = P * 100
 
-Inner clamp value = R + V</code></pre>
-<p>
+<pre><code>X = (fontSizeMax - fontSizeMin) / (viewportWidthMax - viewportWidthMin)
+
+Y = fontSizeMax - viewportWidthMax * X
+Z = X * 100
+
+Result = clamp(fontSizeMin, Yrem + Zvw, fontSizeMax)</code></pre>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/clamp">Check out <code>clamp()</code> on MDN.</a></p>

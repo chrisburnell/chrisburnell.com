@@ -96,12 +96,16 @@
 	@import "utilities/helpers";
 }
 
+// Themes
+@layer themes {
+	@import "themes/dark";
+	@import "themes/christmas";
+	@import "themes/code-red";
+	@import "themes/matrix";
+	@import "themes/nineties";
+}
+
 // Exceptions
 @layer exceptions {
-	@import "exceptions/dark";
-	@import "exceptions/christmas";
-	@import "exceptions/code-red";
-	@import "exceptions/matrix";
-	@import "exceptions/nineties";
 	@import "exceptions/styleguide";
 }
