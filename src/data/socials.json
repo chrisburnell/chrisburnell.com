@@ -19,8 +19,7 @@
   {
     "title": "Twitter",
     "url": "https://twitter.com/",
-    "key": "twitter",
-    "primary": true
+    "key": "twitter"
   },
   {
     "title": "RSS",

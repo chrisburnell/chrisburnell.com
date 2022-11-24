@@ -1,11 +1,6 @@
 class ClampCalculator {
 	constructor() {
-		this.ids = [
-			"font-size-min",
-			"font-size-max",
-			"viewport-width-min",
-			"viewport-width-max"
-		]
+		this.ids = ["font-size-min", "font-size-max", "viewport-width-min", "viewport-width-max"]
 		this.inputs = {}
 
 		this.init()
@@ -35,7 +30,7 @@ class ClampCalculator {
 
 		const params = new URLSearchParams(window.location.search)
 
-		this.ids.forEach(id => {
+		this.ids.forEach((id) => {
 			this.inputs[id] = document.getElementById(id)
 			if (params.get(id)) {
 				this.inputs[id].value = params.get(id)

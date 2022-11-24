@@ -62,6 +62,7 @@
     "markdown-it": "^13.0.1",
     "markdown-it-abbr": "^1.0.4",
     "natural": "^5.2.3",
+    "pagefind": "^0.10.2",
     "purgecss": "^5.0.0",
     "twitter-avatar-url": "^2.2.0"
   },
@@ -71,10 +72,11 @@
     "css": "npx sass src/css:css --style=compressed --no-source-map --color",
     "aftercss": "npx postcss css/*.css --replace --no-map",
     "js": "npx rollup -c",
+    "pagefind": "npx -y pagefind --source _site",
     "prettier": "npx prettier --write src",
     "start": "concurrently \"npm run js -- --watch\" \"npm run css -- --watch\" \"npx @11ty/eleventy --incremental --serve\"",
     "serve": "npm run start",
-    "build": "npm run tokens; npm run js; npm run css; npm run aftercss; npm run prettier; npx browserslist@latest --update-db; cross-env ELEVENTY_PRODUCTION=true npx @11ty/eleventy",
+    "build": "npm run tokens; npm run js; npm run css; npm run aftercss; npm run prettier; npx browserslist@latest --update-db; cross-env ELEVENTY_PRODUCTION=true npx @11ty/eleventy; npm run pagefind",
     "pregenerate": "npm run tokens; npm run css; npm run aftercss; npm run prettier; cross-env PREGENERATE_IMAGES=true npx @11ty/eleventy",
     "debug": "cross-env DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
   },

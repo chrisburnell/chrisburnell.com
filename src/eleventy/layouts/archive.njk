@@ -30,7 +30,7 @@ truncate: true
 		{% sparkline collection, first_year, latest_year %}
 	{% endif %}
 
-	<div id="content" class=" [ content ] [ flow ] [ h-feed ] ">
+	<div id="content" class=" [ content ] [ flow ] [ h-feed ] " data-pagefind-body>
 		{%- if by_year -%}
 			{%- set year = latest_year -%}
 			<h2 id="{{ year }}">

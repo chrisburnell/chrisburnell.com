@@ -1,14 +1,30 @@
 ---
 title: Search
 description: Search for something!
-js_module: search.js
+wide: true
 ---
 
-<!-- </textarea> -->
-<!-- '"´ -->
-<form id="search" class=" [ responses__form ] " method="get" name="search" action="https://duckduckgo.com/">
-	<input id="search-query" type="search" name="q" value="site:chrisburnell.com ">
-	<button type="submit" enterkeyhint="submit">Submit</button>
-</form>
+<is-land on:visible class=" [ flow ] ">
+	<!-- </textarea> -->
+	<!-- '"´ -->
+	<form id="search" class=" [ responses__form ] " method="get" name="search" action="https://duckduckgo.com/">
+		<input id="search-query" type="search" name="q" value="site:chrisburnell.com ">
+		<button type="submit" enterkeyhint="submit">Submit</button>
+	</form>
 
-<p>Search provided by <a href="https://duckduckgo.com">DuckDuckGo</a>: <q>The Internet privacy company that empowers you to seamlessly take control of your personal information online, without any tradeoffs.</q></p>
+	<p>Search provided by <a href="https://duckduckgo.com">DuckDuckGo</a>: <q>The Internet privacy company that empowers you to seamlessly take control of your personal information online, without any tradeoffs.</q></p>
+
+	<template data-island="replace">
+		<div id="search"></div>
+
+		<p>Search powered by <a href="https://pagefind.app">Pagefind</a>. No external network requests are made and bandwidth is kept minimal.</p>
+
+		<link rel="stylesheet" href="/_pagefind/pagefind-ui.css?v=12341" />
+		<script src="/_pagefind/pagefind-ui.js?v=12341"></script>
+		<script type="module">
+			setTimeout(() => {
+				new PagefindUI({ element: "#search" });
+			}, 0);
+		</script>
+	</template>
+</is-land>

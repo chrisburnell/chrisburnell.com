@@ -119,11 +119,11 @@
 	<meta property="og:type" content="website">
 	{% endif -%}
 	<meta property="og:url" content="{{ canonical }}">
-	<meta property="og:title" content="{{ meta_title }}">
+	<meta property="og:title" data-pagefind-meta="image_alt[content]" content="{{ meta_title }}">
 	<meta property="og:description" content="{{ meta_description }}">
 	<meta property="og:locale" content="{{ site.locale }}">
 	<meta property="og:site_name" content="{{ site.title }}">
-	<meta property="og:image" content="{{ meta_image }}">
+	<meta property="og:image" data-pagefind-meta="image[content]" content="{{ meta_image }}">
 
 	<!-- Twitter Microdata -->
 	<meta name="twitter:card" content="summary">
@@ -210,7 +210,7 @@
 							{%- if item.split -%}
 								{%- set url -%}https://{{ author[item.key].split(item.split)[1] + '/' + item.split + author[item.key].split(item.split)[0] }}{%- endset -%}
 							{%- endif -%}
-							<a{% if not item.primary %} tabindex="-1"{% endif %}{% if item.mf_property %} class=" [ p-{{ item.mf_property }} ] "{% endif %} href="{{ url }}" rel="me">{{ item.title }}</a>
+							<a{% if not item.primary %} tabindex="-1"{% endif %}{% if item.mf_property %} class=" [ p-{{ item.mf_property }} ] "{% endif %} href="{{ url }}" rel="me"><svg width="20" height="20" viewBox="0 0 32 32" preserveAspectRatio="xMinYMin" aria-hidden="true" focusable="false"><use href="#svg--{{ item.title | lower }}"></use></svg> {{ item.title }}</a>
 						</li>
 					{%- endif -%}
 				{%- endfor -%}

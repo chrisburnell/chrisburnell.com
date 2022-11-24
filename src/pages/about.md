@@ -9,7 +9,7 @@ eleventyComputed:
 <p><strong>I’ve got <a href="https://chrisburnell.com/cv/">a CV/resume</a>, if that’s what you’re looking for.</strong></p>
 
 <ul class=" [ cluster ] ">
-    <li><a href="https://codepen.io/chrisburnell" rel="external">CodePen</a></li><li><a href="https://github.com/chrisburnell" rel="external">GitHub</a></li><li><a href="https://fediverse.repc.co/@chrisburnell" rel="external">Mastodon</a></li><li><a href="https://twitter.com/iamchrisburnell" rel="external">Twitter</a></li><li><a href="https://chrisburnell.com/feed.xml">RSS</a></li>
+    <li><a href="https://codepen.io/chrisburnell" rel="external">CodePen</a></li><li><a href="https://github.com/chrisburnell" rel="external">GitHub</a></li><li><a href="https://fediverse.repc.co/@chrisburnell" rel="external">Mastodon</a></li><li><a href="https://chrisburnell.com/feed.xml">RSS</a></li>
 </ul>
 
 <hr>
