@@ -19,12 +19,12 @@ wide: true
 
 		<p>Search powered by <a href="https://pagefind.app">Pagefind</a>. No external network requests are made and bandwidth is kept minimal.</p>
 
-		<link rel="stylesheet" href="/_pagefind/pagefind-ui.css?v=12341" />
-		<script src="/_pagefind/pagefind-ui.js?v=12341"></script>
-		<script type="module">
-			setTimeout(() => {
+		<link rel="stylesheet" href="/_pagefind/pagefind-ui.css?v={{ pkg.version }}" />
+		<script onload="initPagefind()" src="/_pagefind/pagefind-ui.js?v={{ pkg.version }}"></script>
+		<script>
+			function initPagefind() {
 				new PagefindUI({ element: "#search" });
-			}, 0);
+			}
 		</script>
 	</template>
 </is-land>
