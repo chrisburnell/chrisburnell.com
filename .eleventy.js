@@ -1,7 +1,7 @@
 require("dotenv").config()
 const pkg = require("./package.json")
 const site = require("#data/site")
-const configWebmentions = require("./src/data/config/webmentions.js")
+// const configWebmentions = require("./src/data/config/webmentions.js")
 
 // Import Eleventy plugins
 const caniusePlugin = require("#plugins/caniusePlugin")
@@ -14,7 +14,7 @@ const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output")
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight")
 const webCPlugin = require("@11ty/eleventy-plugin-webc")
 const { EleventyRenderPlugin } = require("@11ty/eleventy")
-const webmentionsPlugin = require("@chrisburnell/eleventy-cache-webmentions")
+// const webmentionsPlugin = require("@chrisburnell/eleventy-cache-webmentions")
 
 // Import transforms
 const parseTransform = require("#transforms/parse")
@@ -49,7 +49,7 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.addPlugin(imagePlugin)
 	eleventyConfig.addPlugin(imageAvatarPlugin)
 	eleventyConfig.addPlugin(syntaxHighlightPlugin)
-	eleventyConfig.addPlugin(webmentionsPlugin, configWebmentions)
+	// eleventyConfig.addPlugin(webmentionsPlugin, configWebmentions)
 	eleventyConfig.addPlugin(webCPlugin, {
 		components: "./src/webc/**/*.webc",
 		useTransform: true,
@@ -66,9 +66,6 @@ module.exports = (eleventyConfig) => {
 	if (process.env.ELEVENTY_PRODUCTION) {
 		eleventyConfig.addPlugin(directoryOutputPlugin)
 	}
-
-	// Ignores
-	eleventyConfig.ignores.add("./src/webc/**/*.webc")
 
 	// Transforms
 	eleventyConfig.addTransform("parse", parseTransform)
@@ -113,32 +110,31 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.addLayoutAlias("post", "post.njk")
 	eleventyConfig.addLayoutAlias("feed", "feed.njk")
 
-	// Static Files
-	eleventyConfig
-		.addPassthroughCopy("audio")
-		.addPassthroughCopy("css")
-		.addPassthroughCopy("fonts")
-		.addPassthroughCopy("images/*")
-		.addPassthroughCopy("images/animated")
-		.addPassthroughCopy("js")
-		.addPassthroughCopy("src/js/pages")
-		.addPassthroughCopy("src/js/vendor")
-		.addPassthroughCopy("video")
-		.addPassthroughCopy({
-			"files/**/*": "."
-		})
-		.addPassthroughCopy({
-			"src/js/modules/librarian.js": "js/librarian.js",
-			"src/js/modules/url-input.js": "js/url-input.js",
-		})
-		.addPassthroughCopy({
-			"node_modules/@chrisburnell/spark-line/spark-line.js": "js/spark-line.js",
-			"node_modules/@zachleat/details-utils/details-utils.js": "js/details-utils.js",
-			"node_modules/@zachleat/seven-minute-tabs/seven-minute-tabs.js": "js/seven-minute-tabs.js",
-			"node_modules/lite-youtube-embed/src/lite-yt-embed.css": "css/lite-yt-embed.css",
-			"node_modules/lite-youtube-embed/src/lite-yt-embed.js": "js/lite-yt-embed.js",
-			"node_modules/speedlify-score/speedlify-score.js": "js/speedlify-score.js"
-		})
+	// Static Files Passthrough
+	eleventyConfig.addPassthroughCopy("audio")
+	eleventyConfig.addPassthroughCopy("css")
+	eleventyConfig.addPassthroughCopy("fonts")
+	eleventyConfig.addPassthroughCopy("images/*")
+	eleventyConfig.addPassthroughCopy("images/animated")
+	eleventyConfig.addPassthroughCopy("js")
+	eleventyConfig.addPassthroughCopy("src/js/pages")
+	eleventyConfig.addPassthroughCopy("src/js/vendor")
+	eleventyConfig.addPassthroughCopy("video")
+	eleventyConfig.addPassthroughCopy({
+		"files/*": "."
+	})
+	eleventyConfig.addPassthroughCopy({
+		"src/js/modules/librarian.js": "js/librarian.js",
+		"src/js/modules/url-input.js": "js/url-input.js",
+	})
+	eleventyConfig.addPassthroughCopy({
+		"node_modules/@chrisburnell/spark-line/spark-line.js": "js/spark-line.js",
+		"node_modules/@zachleat/details-utils/details-utils.js": "js/details-utils.js",
+		"node_modules/@zachleat/seven-minute-tabs/seven-minute-tabs.js": "js/seven-minute-tabs.js",
+		"node_modules/lite-youtube-embed/src/lite-yt-embed.css": "css/lite-yt-embed.css",
+		"node_modules/lite-youtube-embed/src/lite-yt-embed.js": "js/lite-yt-embed.js",
+		"node_modules/speedlify-score/speedlify-score.js": "js/speedlify-score.js"
+	})
 
 	// Watch targets
 	eleventyConfig.addWatchTarget("./src/css/")

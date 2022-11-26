@@ -1,4 +1,12 @@
 .DS_Store
-.github
-.vscode
+.cache/
+.github/
+.vscode/
+.env
 README.md
+LICENSE
+package-lock.json
+src/css/
+src/eleventy/
+src/js/
+src/webc/
