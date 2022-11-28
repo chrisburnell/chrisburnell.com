@@ -44,7 +44,7 @@ module.exports = async (value, outputPath) => {
 			$(element).html(
 				minify(`
 				${$(element).html()}
-				<a class=" [ fragment-anchor ] " href="#${headingID}" title="Permalink for ${$(element).text().trim()}">
+				<a class=" [ fragment-anchor ] " href="#${headingID}" title="Permalink for ${$(element).text().trim()}" data-pagefind-ignore>
 					<span class="hidden"> permalink</span>
 					¶
 				</a>

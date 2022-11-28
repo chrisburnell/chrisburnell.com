@@ -25,6 +25,12 @@
 	button {
 		font-size: inherit;
 	}
+
+	svg {
+		fill: currentColor;
+		margin-inline-end: 0.5em;
+		vertical-align: sub;
+	}
 }
 
 .footer__grid {
