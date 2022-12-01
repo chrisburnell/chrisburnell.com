@@ -1,0 +1,20 @@
+---
+title: Pig's Ear 2022
+description: Beer reviews from Pig's Ear CAMRA Beer & Cider Festival in 2022
+---
+{%- set collection = collections.pigsear2022 | arePublished | reverse -%}
+
+<c-librarian>
+	You can sort these beer reviews:
+	<br>
+	<c-librarian-button key="title">by title</c-librarian-button>,
+	<c-librarian-button key="author">by author</c-librarian-button>,
+	<c-librarian-button key="rating">by rating</c-librarian-button>, or
+	<c-librarian-button key="chronological" default="descending">by publish date</c-librarian-button>
+</c-librarian>
+
+<nav class=" [ grid ] [ shelf ] " aria-live="polite">
+	{% for item in collection %}
+		{% include 'items/shelf.njk' %}
+	{% endfor %}
+</nav>
