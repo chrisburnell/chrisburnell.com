@@ -2,6 +2,6 @@
 	<spark-line webc:keep :values="this.values" :original="this.original" :curve="this.curve" :color="this.color" :colors="this.colors" :endpoint-color="this['endpoint-color'] || `#e0151f`" :points="this.points" :line-width="this['line-width'] || 1.5" :start-label="this['start-label']" :end-label="this['end-label']" :key-start="this['key-start'] || 25" :key-intervals="this['key-intervals'] || `2,1,2,2,1,2,2`" :key-limit="this['key-limit'] || 15" :id="this.id" class="pentatonic" title="Click to hear me!"></spark-line>
 
 	<template data-island="once">
-		<script type="module" :src="`/js/spark-line.js?v=${this.pkg.version}`"></script>
+		<script webc:keep type="module" :src="`/js/spark-line.js?v=${this.pkg.version}`"></script>
 	</template>
 </is-land>

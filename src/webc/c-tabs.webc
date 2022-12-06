@@ -12,6 +12,6 @@
 	</seven-minute-tabs>
 
 	<template data-island="once">
-		<script :src="`/js/seven-minute-tabs.js?v=${this.pkg.version}`"></script>
+		<script webc:keep :src="`/js/seven-minute-tabs.js?v=${this.pkg.version}`"></script>
 	</template>
 </is-land>

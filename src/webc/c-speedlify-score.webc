@@ -2,6 +2,6 @@
 	<speedlify-score webc:keep :class="this.class" :hash="this.hash" speedlify-url="https://speedlify.chrisburnell.com" :score="this.score" :weight="this.weight" :requests="this.requests" :rank="this.rank" :rank-change="this.rankChange"></speedlify-score>
 
 	<template data-island="once">
-		<link rel="stylesheet" :href="`/css/speedlify-score.css?v=${this.pkg.version}`" />
+		<link webc:keep rel="stylesheet" :href="`/css/speedlify-score.css?v=${this.pkg.version}`" />
 	</template>
 </is-land>
