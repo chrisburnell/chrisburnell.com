@@ -1,43 +1,3 @@
-{%- set of = bookmark_of | default(drink_of) | default(like_of) | default(listen_of) | default(play_of) | default(read_of) | default(watch_of) | default(link) -%}
-{%- set of_url = of -%}
-{%- if of.url -%}
-	{% set of_url = of.url %}
-{%- endif -%}
-{%- set of_title = of_url -%}
-{%- if of.title -%}
-	{% set of_title = of.title %}
-{%- endif -%}
-
-{%- if category and of_title -%}
-	{% set meta_title %}{{ categoryProper | default(category) | title }} of “{{ title | default(of_title) | striptags(true) | safe }}”{% endset %}
-{%- elif title -%}
-	{% set meta_title = title | striptags(true) | safe %}
-{%- elif category -%}
-	{% set meta_title %}{{ categoryProper | default(category) | title }} from {{ page.date | friendlyDateLong | safe }}{% endset %}
-{%- else -%}
-	{% set meta_title = site.tagline | striptags(true) | safe %}
-{%- endif -%}
-
-{%- set meta_description -%}A page on {{ site.url | getHost }}{%- endset -%}
-{%- if description -%}
-	{%- set meta_description = description | markdownFormat | replace("\n", " ") | striptags(true) | safe -%}
-{%- elif category -%}
-	{%- set meta_description = meta_description | replace('page', categoryProper | default(category) | title) -%}
-{%- endif -%}
-{%- set meta_image = site.url + site.favicon -%}
-{%- if banner -%}
-	{%- set meta_image -%}{{ site.url }}/images/built/{{ banner | replace('jpg', 'jpeg') }}{%- endset -%}
-{%- elif cover -%}
-	{%- set meta_image -%}{{ site.url }}/images/built/{{ cover | replace('jpg', 'jpeg') }}{%- endset -%}
-{%- elif photo -%}
-	{% set first_photo = photo | toArray | first %}
-	{%- set meta_image -%}{{ site.url }}/images/built/{{ first_photo.url | default(first_photo) | replace('jpg', 'jpeg') }}{%- endset -%}
-{%- endif -%}
-{%- set canonical = site.url + page.url -%}
-{%- if category and not category.title -%}
-	{% set previous_post = collections[category] | arePublished | getPreviousCollectionItem(page) %}
-	{% set next_post = collections[category] | arePublished | getNextCollectionItem(page) %}
-{%- endif -%}
 <!DOCTYPE html>
 <html lang="{{ site.locale }}" class="{% if theme %}{{ theme }}  {% elseif site.theme %}{{ site.theme }}  {% endif %}no-js" profile="http://gmpg.org/xfn/11">
 <head>
@@ -46,7 +6,7 @@
 
 	<title>{{ meta_title | safe }} · {{ site.title }}</title>
 
-	<meta name="description" content="{{ meta_description }}">
+	<meta name="description" content="{{ meta_description | safe }}">
 
 	<link rel="prefetch" href="/fonts/proxima-vara.woff2" as="font" type="font/woff2" crossorigin>
 
@@ -119,8 +79,8 @@
 	<meta property="og:type" content="website">
 	{% endif -%}
 	<meta property="og:url" content="{{ canonical }}">
-	<meta property="og:title" data-pagefind-meta="image_alt[content]" content="{{ meta_title }}">
-	<meta property="og:description" content="{{ meta_description }}">
+	<meta property="og:title" data-pagefind-meta="image_alt[content]" content="{{ meta_title | safe }}">
+	<meta property="og:description" content="{{ meta_description | safe }}">
 	<meta property="og:locale" content="{{ site.locale }}">
 	<meta property="og:site_name" content="{{ site.title }}">
 	<meta property="og:image" data-pagefind-meta="image[content]" content="{{ meta_image }}">
@@ -128,8 +88,8 @@
 	<!-- Twitter Microdata -->
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:creator" content="@{{ author.twitter }}">
-	<meta name="twitter:title" content="{{ meta_title }}">
-	<meta name="twitter:description" content="{{ meta_description }}">
+	<meta name="twitter:title" content="{{ meta_title | safe }}">
+	<meta name="twitter:description" content="{{ meta_description | safe }}">
 	<meta name="twitter:image" content="{{ meta_image }}">
 	<meta name="twitter:domain" content="{{ site.url | getHost }}">
 	{% if twitter -%}
