@@ -1,6 +1,6 @@
 const site = require("#data/site")
-const stringFilters = require("#filters/strings")
 const queryFilters = require("#filters/queries")
+const stringFilters = require("#filters/strings")
 
 module.exports = {
 	layout: "archive",

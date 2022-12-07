@@ -6,7 +6,10 @@ permalink: /images/sprites.svg
 {% for symbol in svg %}
 	<symbol id="svg--{{ symbol.title | lower }}" viewBox="0 0 {{ symbol.viewBox }}">
 		<title>{{ symbol.title }}</title>
-		<path d="{{ symbol.path }}" />
+		{%- set paths = symbol.path | toArray -%}
+		{%- for path in paths %}
+			<path d="{{ path }}" />
+		{% endfor %}
 	</symbol>
 {% endfor %}
 </svg>

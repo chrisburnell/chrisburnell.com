@@ -6,8 +6,8 @@ const site = require("#data/site")
 const configWebmentions = require("../data/config/webmentions.js")
 const people = require("../data/people.js")
 const dateFilters = require("#filters/dates")
-const stringFilters = require("#filters/strings")
 const queryFilters = require("#filters/queries")
+const stringFilters = require("#filters/strings")
 
 const getType = (data) => {
 	const type = data?.bookmark_of || data?.drink_of || data?.like_of || data?.listen_of || data?.play_of || data?.read_of || data?.watch_of || data?.link

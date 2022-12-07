@@ -2,8 +2,8 @@ const { getWebmentions } = require("@chrisburnell/eleventy-cache-webmentions")()
 
 const site = require("#data/site")
 const configWebmentions = require("../data/config/webmentions.js")
-const stringFilters = require("#filters/strings")
 const queryFilters = require("#filters/queries")
+const stringFilters = require("#filters/strings")
 
 module.exports = {
 	layout: "page",

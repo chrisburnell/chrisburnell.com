@@ -156,7 +156,7 @@
 				{%- endfor -%}
 			</ol>
 			<ol class=" [ cluster ] [ footer__navigation ] ">
-				<li class=" [ requires-js ] "><button id="color-scheme-toggle" class=" [ anchor ] [ js-color-scheme-toggle ] "><span class=" [ js-color-scheme-status ] ">Enable dark mode</span></button></li><li class=" [ requires-js ] "><button id="sounds-toggle" class=" [ anchor ] [ js-sounds-toggle ] "><span class=" [ js-sounds-status ] ">Enable sounds</span></button></li><li><a id="edit" href="https://github.com/{{ author.github }}/{{ site.repository }}/tree/main/{{ page.inputPath }}" aria-label="Edit this page">Edit this page</a></li><li class=" [ requires-js ] "><button id="share" type="share" class="anchor">Share</button></li>
+				<li class=" [ requires-js ] "><button id="color-scheme-toggle" class=" [ anchor ] [ js-color-scheme-toggle ] "><span class=" [ js-color-scheme-status ] "><svg width="20" height="20" aria-hidden="true" focusable="false"><use href="#svg--brightness"></use></svg>Enable dark mode</span></button></li><li class=" [ requires-js ] "><button id="sounds-toggle" class=" [ anchor ] [ js-sounds-toggle ] "><span class=" [ js-sounds-status ] "><svg width="20" height="20" aria-hidden="true" focusable="false"><use href="#svg--sound-on"></use></svg>Enable sounds</span></button></li><li><a id="edit" href="https://github.com/{{ author.github }}/{{ site.repository }}/tree/main/{{ page.inputPath }}" aria-label="Edit this page"><svg width="20" height="20" aria-hidden="true" focusable="false"><use href="#svg--edit"></use></svg>Edit this page</a></li><li class=" [ requires-js ] "><button id="share" type="share" class="anchor"><svg width="20" height="20" aria-hidden="true" focusable="false"><use href="#svg--share"></use></svg>Share</button></li>
 			</ol>
 			<ol class=" [ cluster ] [ footer__navigation ] ">
 				<li><a id="copyright" rel="license" href="/license/">© {{ site.established }}–{{ global.now | friendlyDate("yyyy") }} <span class=" [ canada ] ">{{ author.name }}</span></a></li>
@@ -170,7 +170,7 @@
 							{%- if item.split -%}
 								{%- set url -%}https://{{ author[item.key].split(item.split)[1] + '/' + item.split + author[item.key].split(item.split)[0] }}{%- endset -%}
 							{%- endif -%}
-							<a{% if not item.primary %} tabindex="-1"{% endif %}{% if item.mf_property %} class=" [ p-{{ item.mf_property }} ] "{% endif %} href="{{ url }}" rel="me"><svg width="20" height="20" viewBox="0 0 32 32" preserveAspectRatio="xMinYMin" aria-hidden="true" focusable="false"><use href="#svg--{{ item.title | lower }}"></use></svg>{{ item.title }}</a>
+							<a{% if not item.primary %} tabindex="-1"{% endif %}{% if item.mf_property %} class=" [ p-{{ item.mf_property }} ] "{% endif %} href="{{ url }}" rel="me"><svg width="20" height="20" aria-hidden="true" focusable="false"><use href="#svg--{{ item.title | lower }}"></use></svg>{{ item.title }}</a>
 						</li>
 					{%- endif -%}
 				{%- endfor -%}
@@ -206,7 +206,10 @@
 		{% for symbol in svg %}
 			<symbol id="svg--{{ symbol.title | lower }}" viewBox="0 0 {{ symbol.viewBox }}">
 				<title>{{ symbol.title }}</title>
-				<path d="{{ symbol.path }}" />
+				{%- set paths = symbol.path | toArray -%}
+				{%- for path in paths %}
+					<path d="{{ path }}" />
+				{% endfor %}
 			</symbol>
 		{% endfor %}
 	</svg>
