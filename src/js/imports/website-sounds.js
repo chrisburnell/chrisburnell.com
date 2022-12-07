@@ -43,8 +43,10 @@ class WebsiteSounds {
 
 		if (currentSetting) {
 			this.soundsStatusText.innerText = `${currentSetting === "true" ? "Disable" : "Enable"} sounds`
+			this.soundsStatusIcon.setAttribute("href", currentSetting === "true" ? "#svg--sound-on" : "#svg--sound-off")
 		} else {
 			this.soundsStatusText.innerText = `Enable sounds`
+			this.soundsStatusIcon.setAttribute("href", "#svg--sound-off")
 		}
 	}
 
@@ -71,8 +73,9 @@ class WebsiteSounds {
 
 	init() {
 		// In-page Sounds
-		this.soundsStatusText = document.querySelector(".js-sounds-status")
 		this.soundsToggleButton = document.querySelector(".js-sounds-toggle")
+		this.soundsStatusIcon = this.soundsToggleButton.querySelector(".js-sounds-toggle svg use")
+		this.soundsStatusText = this.soundsToggleButton.querySelector(".js-sounds-status")
 		this.soundsToggleButton.addEventListener("click", (event) => {
 			event.preventDefault()
 
@@ -95,12 +98,12 @@ class WebsiteSounds {
 				let keyLimit = element.getAttribute("key-limit") ? parseFloat(element.getAttribute("key-limit")) : element.dataset.keyLimit ? parseFloat(element.dataset.keyLimit) : this.defaults.keyLimit
 				let keyIntervals = element.getAttribute("key-intervals")
 					? element
-							.getAttribute("key-intervals")
-							.split(",")
-							.map((interval) => parseFloat(interval))
+						.getAttribute("key-intervals")
+						.split(",")
+						.map((interval) => parseFloat(interval))
 					: element.dataset.keyIntervals
-					? element.dataset.keyIntervals.split(",").map((interval) => parseFloat(interval))
-					: this.defaults.keyIntervals
+						? element.dataset.keyIntervals.split(",").map((interval) => parseFloat(interval))
+						: this.defaults.keyIntervals
 				if (values) {
 					pentatonic(values.split(","), duration, this.defaults.volume, keyStart, keyIntervals, keyLimit, this.waveform)
 				}

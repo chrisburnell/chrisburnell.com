@@ -41,4 +41,6 @@ I guess I’ll have to keep an eye on my server logs to see if I’m getting req
 
 The bright side to all of this is, of course, [Lindsay Wardell](https://www.lindsaykwardell.com/), who was so kind to track me down to reach out and let me know. It turns out she’s a super-talented software engineer and fellow D&D-enjoyer, so I now rightly know to [follow her on Mastodon](https://mastodon.social/@lindsaykwardell), and she has [a great website too](https://www.lindsaykwardell.com).
 
-This situation, as obscure and small this instance is, still has me a little worried, and I don’t really know what to do about it, if I can or should anything at all. One thing’s for sure, though: if we had more people like Lindsay in this world, I’m sure things like this would happen less often, and if they did, we could worry a little less knowing there are still wonderful people out there in the ethos looking out for us whose paths haven’t yet crossed ours.
+This situation, as obscure and small this instance is, still has me a little worried, and I don’t really know what to do about it, if I can or should anything at all.
+
+One thing’s for sure, though: if we had more people like Lindsay in this world, we could all worry a little less knowing there are still wonderful people out there in the ethos looking out for us whose path just hasn’t yet crossed ours.
