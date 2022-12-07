@@ -45,11 +45,11 @@ While the code for my website is open source, it is not intended to be used as a
 
 ## Code of Conduct
 
-Please see the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md).
+Please see the [Contributor Covenant Code of Conduct](.github/CODE_OF_CONDUCT.md).
 
 ## Contributing
 
-Please see the [Contributing Guide](CONTRIBUTING.md), [Commit Template](COMMIT_TEMPLATE.md), [Issue Template](ISSUE_TEMPLATE.md), and [Pull Request Template](PULL_REQUEST_TEMPLATE.md).
+Please see the [Contributing Guide](.github/CONTRIBUTING.md), [Commit Template](.github/COMMIT_TEMPLATE.md), [Issue Template](.github/ISSUE_TEMPLATE.md), and [Pull Request Template](.github/PULL_REQUEST_TEMPLATE.md).
 
 ## License
 
