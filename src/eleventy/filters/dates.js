@@ -9,7 +9,6 @@ const ordinalSuffixes = {
 	few: "rd",
 	other: "th",
 }
-
 const numberOrdinalFormat = (n) => {
 	const ordinal = ordinalSuffixes[ordinalRules.select(n)]
 	return `${n}<sup>${ordinal}</sup>`

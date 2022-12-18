@@ -74,7 +74,7 @@ I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link
     <dt>Email:</dt>
     <dd><a class=" [ canada ] " href="mailto:{{ author.email }}">{{ author.email }}</a></dd>
     <dt>Mastodon:</dt>
-    <dd><a class=" [ canada ] " href="https://{{ author.mastodon.split('@') | last }}/users/{{ author.mastodon.split('@') | first }}">{{ '@' + author.mastodon }}</a></dd>
+    <dd><a class=" [ canada ] " href="https://{{ author.mastodon_domain }}/users/{{ author.mastodon.split('@') | first }}">{{ '@' + author.mastodon }}</a></dd>
     <dt>Twitter:</dt>
     <dd><a class=" [ canada ] " href="https://twitter.com/{{ author.twitter }}">{{'@' + author.twitter }}</a></dd>
     <dt>Twitter DM:</dt>

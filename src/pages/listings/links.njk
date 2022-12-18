@@ -8,48 +8,87 @@ full_width: true
 
 <nav class=" [ grid ] [ shelf ] ">
 	<article class=" [ flow ] ">
+		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://codepen.io' | urlencode }}/" class=" [ avatar ] " width="30" height="30" alt="{{ item.title | safe }}’s avatar" loading="lazy" decoding="async">
 		<h1>
-			<a href="https://codepen.io/{{ author.codepen }}">CodePen</a>
+			<a href="https://codepen.io/{{ author.codepen }}">
+				CodePen
+				<br>
+				<small aria-hidden="true">@{{ author.codepen }}</small>
+			</a>
 		</h1>
 	</article>
 	<article class=" [ flow ] ">
+		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://discord.com' | urlencode }}/" class=" [ avatar ] " width="30" height="30" alt="{{ item.title | safe }}’s avatar" loading="lazy" decoding="async">
 		<h1>
-			<a href="https://last.fm/user/{{ author.lastfm }}">Discord</a>
+			Discord
+			<br>
+			<small>@{{ author.discord }}</small>
 		</h1>
 	</article>
 	<article class=" [ flow ] ">
+		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://github.com' | urlencode }}/" class=" [ avatar ] " width="30" height="30" alt="{{ item.title | safe }}’s avatar" loading="lazy" decoding="async">
 		<h1>
-			<a href="https://github.com/{{ author.github }}">GitHub</a>
+			<a href="https://github.com/{{ author.github }}">
+				GitHub
+				<br>
+				<small aria-hidden="true">@{{ author.github }}</small>
+			</a>
 		</h1>
 	</article>
 	<article class=" [ flow ] ">
+		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://indieweb.org' | urlencode }}/" class=" [ avatar ] " width="30" height="30" alt="{{ item.title | safe }}’s avatar" loading="lazy" decoding="async">
 		<h1>
-			<a href="https://indieweb.org/User:chrisburnell.com">IndieWeb</a>
+			<a href="https://indieweb.org/User:{{ author.indieweb }}">
+				IndieWeb
+			</a>
 		</h1>
 	</article>
 	<article class=" [ flow ] ">
+		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://last.fm' | urlencode }}/" class=" [ avatar ] " width="30" height="30" alt="{{ item.title | safe }}’s avatar" loading="lazy" decoding="async">
 		<h1>
-			<a href="https://last.fm/user/{{ author.lastfm }}">Last.fm</a>
+			<a href="https://last.fm/user/{{ author.lastfm }}">
+				Last.fm
+				<br>
+				<small aria-hidden="true">@{{ author.lastfm }}</small>
+			</a>
 		</h1>
 	</article>
 	<article class=" [ flow ] ">
+		<img src="https://v1.indieweb-avatar.11ty.dev/{{ ('https://' + author.mastodon_domain) | urlencode }}/" class=" [ avatar ] " width="30" height="30" alt="{{ item.title | safe }}’s avatar" loading="lazy" decoding="async">
 		<h1>
-			<a href="https://{{ author.mastodon.split('@') | last }}/users/{{ author.mastodon.split('@') | first }}">Mastodon</a>
+			<a href="https://{{ author.mastodon_domain }}/users/{{ author.mastodon.split('@') | first }}">
+				Mastodon
+				<br>
+				<small aria-hidden="true">@{{ author.mastodon }}</small>
+			</a>
 		</h1>
 	</article>
 	<article class=" [ flow ] ">
+		<img src="https://v1.indieweb-avatar.11ty.dev/{{ author.urls.spotify | urlencode }}/" class=" [ avatar ] " width="30" height="30" alt="{{ item.title | safe }}’s avatar" loading="lazy" decoding="async">
 		<h1>
-			<a href="{{ author.urls.spotify }}">Spotify</a>
+			<a href="{{ author.urls.spotify }}">
+				Spotify
+			</a>
 		</h1>
 	</article>
 	<article class=" [ flow ] ">
+		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://twitter.chrisburnell.com' | urlencode }}/" class=" [ avatar ] " width="30" height="30" alt="{{ item.title | safe }}’s avatar" loading="lazy" decoding="async">
 		<h1>
-			<a href="https://twitter.com/{{ author.twitter }}"><s>Twitter</s></a> <a href="https://twitter.chrisburnell.com">Twitter</a>
+			<a href="https://twitter.chrisburnell.com">
+				Twitter
+				<br>
+				<small aria-hidden="true">@{{ author.twitter }}</small>
+			</a>
 		</h1>
 	</article>
 	<article class=" [ flow ] ">
+		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://untappd.com' | urlencode }}/" class=" [ avatar ] " width="30" height="30" alt="{{ item.title | safe }}’s avatar" loading="lazy" decoding="async">
 		<h1>
-			<a href="https://untappd.com/user/{{ author.untappd }}">Untappd</a>
+			<a href="https://untappd.com/user/{{ author.untappd }}">
+				Untappd
+				<br>
+				<small aria-hidden="true">@{{ author.untappd }}</small>
+			</a>
 		</h1>
 	</article>
 </nav>

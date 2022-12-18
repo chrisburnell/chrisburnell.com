@@ -10,10 +10,10 @@ const imagePlugin = require("#plugins/imagePlugin")
 const imageAvatarPlugin = require("#plugins/imageAvatarPlugin")
 // const albumCoverPlugin = require("#plugins/albumCoverPlugin")
 // const inclusiveLanguagePlugin = require("@11ty/eleventy-plugin-inclusive-language")
+const { EleventyRenderPlugin } = require("@11ty/eleventy")
 const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output")
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight")
 const webCPlugin = require("@11ty/eleventy-plugin-webc")
-const { EleventyRenderPlugin } = require("@11ty/eleventy")
 // const webmentionsPlugin = require("@chrisburnell/eleventy-cache-webmentions")
 
 // Import transforms
@@ -45,11 +45,9 @@ module.exports = (eleventyConfig) => {
 	// Plugins
 	eleventyConfig.addPlugin(EleventyRenderPlugin)
 	eleventyConfig.addPlugin(caniusePlugin)
-	eleventyConfig.addPlugin(pregenImagePlugin)
 	eleventyConfig.addPlugin(imagePlugin)
 	eleventyConfig.addPlugin(imageAvatarPlugin)
 	eleventyConfig.addPlugin(syntaxHighlightPlugin)
-	// eleventyConfig.addPlugin(webmentionsPlugin, configWebmentions)
 	eleventyConfig.addPlugin(webCPlugin, {
 		components: "./src/webc/**/*.webc",
 		useTransform: true,
@@ -58,13 +56,16 @@ module.exports = (eleventyConfig) => {
 		}
 	})
 	// eleventyConfig.addPlugin(inclusiveLanguagePlugin, {
-	// 	// accepts an array or a comma-delimited string
-	// 	words: "simply,obviously,basically,of course,clearly,just,everyone knows,easy"
+	//   // accepts an array or a comma-delimited string
+	//   words: "simply,obviously,basically,of course,clearly,just,everyone knows,easy"
 	// })
 	// eleventyConfig.addPlugin(albumCoverPlugin)
 
 	if (process.env.ELEVENTY_PRODUCTION) {
 		eleventyConfig.addPlugin(directoryOutputPlugin)
+	}
+	if (process.env.PREGENERATE_IMAGES) {
+		eleventyConfig.addPlugin(pregenImagePlugin)
 	}
 
 	// Transforms
