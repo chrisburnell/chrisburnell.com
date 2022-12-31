@@ -111,7 +111,7 @@
 			<strong>{{ style | safe }}</strong>
 		</li>
 	{% endif %}
-	{% if authors %}
+	{% if authors.length %}
 		{%- set authors = authors | toArray -%}
 		<li class=" [ authors ] ">
 			{% if category == 'beer' %}
@@ -195,7 +195,7 @@
 			{%- if badges.length > 1 %}</ul>{% endif -%}
 		</li>
 	{% endif %}
-	{% if syndicate_to %}
+	{% if syndicate_to.length %}
 		<li class=" [ syndicate-to ] ">
 			<c-emoji>{{ emojis.syndication }}</c-emoji>
 			<small>also on</small>

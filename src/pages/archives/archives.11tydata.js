@@ -14,7 +14,10 @@ module.exports = {
 		},
 		meta_description: (data) => {
 			if (data.description) {
-				return stringFilters.markdownFormat(data.description).replace("\n", " ").replace(/(<([^>]+)>)/gi, "")
+				return stringFilters
+					.markdownFormat(data.description)
+					.replace("\n", " ")
+					.replace(/(<([^>]+)>)/gi, "")
 			}
 			return `A page on ${queryFilters.getHost(site.url)}`
 		},

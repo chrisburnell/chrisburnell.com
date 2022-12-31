@@ -46,7 +46,7 @@ module.exports = {
 			.getFilteredByTag("throwback")
 			.filter(collectionFilters.isPublished)
 			.filter((item) => {
-				if (item.data.rsvp && item.data.rsvp?.value == "yes" || !item.data.in_reply_to) {
+				if ((item.data.rsvp && item.data.rsvp?.value == "yes") || !item.data.in_reply_to) {
 					return true
 				}
 				return false

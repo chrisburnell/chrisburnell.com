@@ -13,7 +13,7 @@ const getType = (data) => {
 	const type = data?.bookmark_of || data?.drink_of || data?.like_of || data?.listen_of || data?.play_of || data?.read_of || data?.watch_of || data?.link
 	return {
 		url: type?.url || type || false,
-		title: type?.title || type?.url || type || false
+		title: type?.title || type?.url || type || false,
 	}
 }
 
@@ -55,20 +55,28 @@ module.exports = {
 		of_url: (data) => getType(data).url,
 		of_title: (data) => getType(data).title,
 		meta_title: (data) => {
+			let category
+			if (data.category) {
+				category = (data.categoryProper || data.category).charAt(0).toUpperCase() + (data.categoryProper || data.category).substring(1)
+			}
 			if (data.category && getType(data).title) {
-				return `${data.categoryProper || data.category} of “${(data.title || getType(data).title).replace(/(<([^>]+)>)/gi, "")}”`
+				return `${category} of “${(data.title || getType(data).title).replace(/(<([^>]+)>)/gi, "")}”`
 			} else if (data.title) {
 				return data.title.replace(/(<([^>]+)>)/gi, "")
 			} else if (data.category) {
-				return `${data.categoryProper || data.category} from ${dateFilters.friendlyDateLong(data.page.date)}`
+				return `${category} from ${dateFilters.friendlyDateLong(data.page.date)}`
 			}
 			return site.title.replace(/(<([^>]+)>)/gi, "")
 		},
 		meta_description: (data) => {
 			if (data.description) {
-				return stringFilters.markdownFormat(data.description).replace("\n", " ").replace(/(<([^>]+)>)/gi, "")
+				return stringFilters
+					.markdownFormat(data.description)
+					.replace("\n", " ")
+					.replace(/(<([^>]+)>)/gi, "")
 			} else if (data.category) {
-				return `A ${data.categoryProper || data.category} on ${queryFilters.getHost(site.url)}`
+				const category = (data.categoryProper || data.category).charAt(0).toUpperCase() + (data.categoryProper || data.category).substring(1)
+				return `A ${category} on ${queryFilters.getHost(site.url)}`
 			}
 			return `A page on ${queryFilters.getHost(site.url)}`
 		},
@@ -85,7 +93,7 @@ module.exports = {
 			if (data.authors) {
 				return data.authors
 			} else if (getType(data).url) {
-				const typeAuthors = queryFilters.getPerson(await people(), getType(data).url, "object")
+				let typeAuthors = queryFilters.getPerson(await people(), getType(data).url, "object")
 				if (typeAuthors != getType(data).url) {
 					return typeAuthors
 				}

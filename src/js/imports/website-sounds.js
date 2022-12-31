@@ -102,8 +102,8 @@ class WebsiteSounds {
 						.split(",")
 						.map((interval) => parseFloat(interval))
 					: element.dataset.keyIntervals
-						? element.dataset.keyIntervals.split(",").map((interval) => parseFloat(interval))
-						: this.defaults.keyIntervals
+					? element.dataset.keyIntervals.split(",").map((interval) => parseFloat(interval))
+					: this.defaults.keyIntervals
 				if (values) {
 					pentatonic(values.split(","), duration, this.defaults.volume, keyStart, keyIntervals, keyLimit, this.waveform)
 				}
