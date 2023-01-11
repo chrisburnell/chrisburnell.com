@@ -57,7 +57,7 @@
 	{% if item.data.subtitle %}
 		<p class=" [ small ] ">{{ item.data.subtitle | safe }}</p>
 	{% elif item.data.style %}
-		<p class=" [ small ] ">{{ item.data.style | safe }}</p>
+		<p class=" [ small ] ">{{ item.data.style | replace(' - Other', '') | safe }}</p>
 	{% endif %}
 	{% if item.description or item.data.description %}
 		{{ item.description | default(item.data.description) | markdownFormat | safe }}
