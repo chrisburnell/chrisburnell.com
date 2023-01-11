@@ -108,7 +108,7 @@
 		<li class=" [ style ] ">
 			<c-emoji>{{ emojis.style }}</c-emoji>
 			<small>style</small>
-			<strong>{{ style | safe }}</strong>
+			<strong>{{ style | replace(' - Other', '') | safe }}</strong>
 		</li>
 	{% endif %}
 	{% if authors.length %}
