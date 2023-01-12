@@ -15,18 +15,23 @@ toc: true
 
 ## Summary
 
-Front End Developer with {{ global.now | friendlyDate("yyyy") - site.established }} years of experience, specialising in CSS, design systems, developer advocacy and education, and technical writing and speaking. Lead Developer for projects across multiple industries, including government and higher education sectors, with clients such as [The Electoral Commission](https://www.electoralcommission.org.uk/), [Ministry of Justice](https://www.gov.uk/government/organisations/ministry-of-justice), [University of the Arts London](https://www.arts.ac.uk/), [William Hill](https://www.williamhill.com/), and more. Passionate about developing for the open web, having published over 40 technical articles and authored 4 open source projects. Actively involved in the web community by organising in-person events like [State of the Browser](https://stateofthebrowser.com).
+Front End Developer with {{ global.now | friendlyDate("yyyy") - site.established }} years of experience, specialising in CSS, design systems, developer advocacy and education, and technical writing and speaking. Software Engineer building design systems and tools to enable teams to build maintainable and performant websites, with an uncompromising focus on user experience. Passionate about the open web, having published over 40 technical articles and authored 4 open source projects. Actively involved in the web community and organising in-person events like [State of the Browser](https://stateofthebrowser.com) as a conference organiser.
 
 <h2 style="break-before: page;">Professional Experience</h2>
 
 <div class=" [ space-between ] ">
-    <h3><a href="https://squiz.net"><c-emoji>{% image './images/content/squiz-logo.svg', '', 'brand-logo' %}</c-emoji> Squiz</a> <small>(Northern Hemisphere / UK, Poland, USA)</small></h3>
+    <h3><a href="https://squiz.net"><c-emoji>{% image './images/content/squiz-logo.svg', '', 'brand-logo' %}</c-emoji> Squiz</a></h3>
     <small><strong>February 2018 – present</strong></small>
 </div>
 
 <div class=" [ space-between ] ">
+    <h4>Software Engineer</h4>
+    <small><strong>January 2023 – present</strong></small>
+</div>
+
+<div class=" [ space-between ] ">
     <h4>Lead Developer & Chapter Lead</h4>
-    <small><strong>May 2022 – present</strong></small>
+    <small><strong>May 2022 – January 2023</strong></small>
 </div>
 
 - Lead Developer and primary technical contact for 8 key clients, defining their complete technical implementation and standard of quality, with a focus on higher-education and government websites.
@@ -54,7 +59,7 @@ Front End Developer with {{ global.now | friendlyDate("yyyy") - site.established
 
 
 <div class=" [ space-between ] ">
-    <h3><a href="https://city.ac.uk"><c-emoji><img class="brand-logo" alt="" loading="lazy" decoding="async" src="/images/built/city-logo.png"></c-emoji> City, University of London</a> <small>(London, UK)</small></h3>
+    <h3><a href="https://city.ac.uk"><c-emoji><img class="brand-logo" alt="" loading="lazy" decoding="async" src="/images/built/city-logo.png"></c-emoji> City, University of London</a></h3>
     <small><strong>June 2014 – February 2018</strong></small>
 </div>
 
@@ -65,7 +70,7 @@ Front End Developer with {{ global.now | friendlyDate("yyyy") - site.established
 - Overhauled the University’s [Clearing Website](https://clearing.city.ac.uk/) to simplify the user journey and automate backend processes required for incoming applications, reducing processing times and dependence on staff. This led to significant cost and time savings for the University, and continues to be used to this day.
 
 <div class=" [ space-between ] ">
-    <h3><a href="https://squiz.net"><c-emoji>{% image './images/content/squiz-logo.svg', '', 'brand-logo' %}</c-emoji> Squiz</a> <small>(Northern Hemisphere / UK, Poland)</small></h3>
+    <h3><a href="https://squiz.net"><c-emoji>{% image './images/content/squiz-logo.svg', '', 'brand-logo' %}</c-emoji> Squiz</a></h3>
     <small><strong>April 2012 – January 2014</strong></small>
 </div>
 

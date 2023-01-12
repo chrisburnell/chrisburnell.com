@@ -48,7 +48,7 @@ eleventyComputed:
     {% image './images/content/rachel-and-i.jpg', 'Chris Burnell', ' [ shadow ] [ canada ] ', [500, 672, 1000] %}
 </figure>
 
-I’m originally from [<span class=" [ canada ] ">Halifax, Nova Scotia</span>](https://www.openstreetmap.org/#map=13/44.6463/-63.6162) but now I live in [London, England](https://www.openstreetmap.org/#map=10/51.4898/-0.0882) where I work with [Squiz](http://www.squiz.net), a digital transformation agency, as a Lead Developer & Chapter Lead.
+I’m originally from [<span class=" [ canada ] ">Halifax, Nova Scotia</span>](https://www.openstreetmap.org/#map=13/44.6463/-63.6162) but now I live in [London, England](https://www.openstreetmap.org/#map=10/51.4898/-0.0882) where I work for [Squiz](http://www.squiz.net), a digital transformation agency, as a Software Engineer.
 
 I’ve had this website since 2008, and is, by far, my favourite thing that I own. My passion for the web drives me to want a better web for tomorrow, and I pursue that through specialising in CSS, design systems, developer advocacy and education, and technical writing and speaking.
 
