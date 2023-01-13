@@ -6,7 +6,7 @@ eleventyComputed:
   description: "{{ site.description | safe }}"
 ---
 
-<p><strong>I’ve got <a href="https://chrisburnell.com/cv/">a CV/resume</a>, if that’s what you’re looking for.</strong></p>
+<p><strong>I’ve got a <a href="https://chrisburnell.com/cv/">CV / resumé</a>, if that’s what you’re looking for.</strong></p>
 
 <ul class=" [ cluster ] ">
     <li><a href="https://codepen.io/chrisburnell" rel="external">CodePen</a></li><li><a href="https://github.com/chrisburnell" rel="external">GitHub</a></li><li><a href="https://fediverse.repc.co/@chrisburnell" rel="external">Mastodon</a></li><li><a href="https://chrisburnell.com/feed.xml">RSS</a></li>
