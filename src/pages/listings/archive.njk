@@ -27,7 +27,7 @@ truncate: true
 
 		<ul class=" [ grid ] [ shelf ] " data-layout="natural">
 			{%- for item in collections.categories -%}
-				{%- set count = collections[item.title] | arePublished | getCollectionCount(false, true) -%}
+				{%- set count = collections[item.title] | arrayKeyIncludes('data.tags', 'post') | arePublished | getCollectionCount(false, true) -%}
 				<li><a href="/{{ item.plural }}/" class=" [ strong ] " style="font-size: 1.25em;">{{ item.properPlural | title }} <sup>{{ count }}</sup></a></li>
 			{%- endfor -%}
 		</ul>
@@ -38,7 +38,7 @@ truncate: true
 			{%- set lowest = 9001 -%}
 			{%- set highest = 0 -%}
 			{%- for item in collections.tags | sort -%}
-				{%- set count = collections[item] | arePublished | getCollectionCount(false, true) -%}
+				{%- set count = collections[item] | arrayKeyIncludes('data.tags', 'post') | arePublished | getCollectionCount(false, true) -%}
 				{%- if count < lowest -%}
 					{%- set lowest = count -%}
 				{%- elif count > highest -%}
