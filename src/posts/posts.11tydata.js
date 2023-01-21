@@ -135,7 +135,7 @@ module.exports = {
 			return []
 		},
 		// <head> links currently broken because this logic lives in browse.njk
-		// previous_post: collections[category] | arePublished | getPreviousCollectionItem(page),
-		// next_post: collections[category] | arePublished | getNextCollectionItem(page),
+		// previous_post: collections[category] | arrayKeyIncludes('data.tags', 'post') | arePublished | getPreviousCollectionItem(page),
+		// next_post: collections[category] | arrayKeyIncludes('data.tags', 'post') | arePublished | getNextCollectionItem(page),
 	},
 }
