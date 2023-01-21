@@ -48,4 +48,10 @@ module.exports = {
 	"mknepprath": "https://twitter.mknepprath.com/",
 	"AaronGustafson": "https://twitter.aaron-gustafson.com",
 	"linusgroh": "https://twitter.linus.dev",
+	"MinaMarkham": "https://tweets.mina.codes",
+	"markemer": "https://markemer.blue",
+	"bmann": "https://twitter.bmannconsulting.com",
+	"_dhar": "https://olivier.audard.net/twitter/",
+	"Robbb_J": "https://tweets.r0b.io/",
+	"lachlanjc": "https://tweets.lachlanjc.com",
 }
