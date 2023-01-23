@@ -24,6 +24,20 @@ pre[class*="language-"] {
 		color: h(milou);
 		padding: 0 0 1em;
 		line-height: var(--line-height-code);
+
+		&[tabindex="0"] {
+			user-select: all;
+
+			&:focus {
+				animation: codeblock var(--transition-duration-short) step-end forwards;
+
+				@keyframes codeblock {
+					to {
+						user-select: text;
+					}
+				}
+			}
+		}
 	}
 }
 
