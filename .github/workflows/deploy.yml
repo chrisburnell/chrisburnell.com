@@ -10,7 +10,7 @@ on:
     - cron: "01 13 * * *"
 
 jobs:
-  setup:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Set the timezone
@@ -38,14 +38,8 @@ jobs:
             _site/audio
             _site/images
           key: ${{ runner.OS }}-site-cache-${{ hashFiles('**/lockfiles') }}
-  install:
-    runs-on: ubuntu-latest
-    steps:
       - name: Install node modules
         run: npm ci
-  build:
-    runs-on: ubuntu-latest
-    steps:
       - name: Build with npm
         run: npm run build
         env:
@@ -58,9 +52,6 @@ jobs:
           SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
           TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
           WEBMENTION_IO_TOKEN: ${{ secrets.WEBMENTION_IO_TOKEN }}
-  copy:
-    runs-on: ubuntu-latest
-    steps:
       - name: Copy to server
         uses: appleboy/scp-action@master
         with:
@@ -72,9 +63,6 @@ jobs:
           source: "_site/*"
           target: "${{ secrets.DEPLOY_PATH }}build"
           strip_components: 1
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
       - name: Deploy to server
         uses: appleboy/ssh-action@master
         with:
