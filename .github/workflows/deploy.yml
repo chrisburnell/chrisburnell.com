@@ -10,36 +10,43 @@ on:
     - cron: "01 13 * * *"
 
 jobs:
-  build:
+  setup:
     runs-on: ubuntu-latest
     steps:
+      - name: Set the timezone
+        uses: zcong1993/setup-timezone@master
+        with:
+          timezone: Europe/London
       - name: Checkout from git
         uses: actions/checkout@v3
       - name: Use Node.js 19.0.0
         uses: actions/setup-node@v1
         with:
           node-version: "19.0.0"
-      - name: Cache npm dependencies
+      - name: Setup npm dependencies cache
         id: cache_npm
         uses: actions/cache@v3
         with:
           path: ~/.npm
           key: ${{ runner.OS }}-npm-cache-${{ hashFiles('**/package-lock.json') }}
-      - name: Cache eleventy assets
+      - name: Setup Eleventy assets cache
         id: cache_eleventy
         uses: actions/cache@v3
         with:
           path: |
             .cache
+            _site/audio
             _site/images
           key: ${{ runner.OS }}-site-cache-${{ hashFiles('**/lockfiles') }}
-      - name: Set the timezone
-        uses: zcong1993/setup-timezone@master
-        with:
-          timezone: Europe/London
-      - name: Install npm modules
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install node modules
         run: npm ci
-      - name: Build website
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build with npm
         run: npm run build
         env:
           NODE_OPTIONS: "--max_old_space_size=4096"
@@ -51,6 +58,9 @@ jobs:
           SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
           TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
           WEBMENTION_IO_TOKEN: ${{ secrets.WEBMENTION_IO_TOKEN }}
+  copy:
+    runs-on: ubuntu-latest
+    steps:
       - name: Copy to server
         uses: appleboy/scp-action@master
         with:
@@ -62,7 +72,10 @@ jobs:
           source: "_site/*"
           target: "${{ secrets.DEPLOY_PATH }}build"
           strip_components: 1
-      - name: Post-action
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to server
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.DEPLOY_HOST }}

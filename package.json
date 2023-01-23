@@ -74,7 +74,7 @@
     "js": "npx rollup -c",
     "pagefind": "npx -y pagefind --source _site",
     "prettier": "npx prettier --write src",
-    "start": "concurrently \"npm run js -- --watch\" \"npm run css -- --watch\" \"cross-env NODE_OPTIONS=--max-old-space-size=6144 npx @11ty/eleventy --serve\"",
+    "start": "concurrently \"npm run js -- --watch\" \"npm run css -- --watch\" \"cross-env NODE_OPTIONS=--max-old-space-size=6144 npx @11ty/eleventy --incremental --ignore-initial --serve\"",
     "serve": "npm run start",
     "build": "npm run tokens; npm run js; npm run css; npm run aftercss; npm run prettier; npx browserslist@latest --update-db; cross-env NODE_OPTIONS=--max-old-space-size=6144 ELEVENTY_PRODUCTION=true npx @11ty/eleventy; npm run pagefind",
     "pregenerate": "npm run tokens; npm run css; npm run aftercss; npm run prettier; cross-env NODE_OPTIONS=--max-old-space-size=6144 PREGENERATE_IMAGES=true npx @11ty/eleventy",
