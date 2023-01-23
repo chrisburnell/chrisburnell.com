@@ -61,7 +61,7 @@ module.exports = (eleventyConfig) => {
 	// })
 	// eleventyConfig.addPlugin(albumCoverPlugin)
 
-	if (process.env.ELEVENTY_PRODUCTION) {
+	if (process.env.DIRECTORY_OUTPUT) {
 		eleventyConfig.addPlugin(directoryOutputPlugin)
 	}
 	if (process.env.PREGENERATE_IMAGES) {

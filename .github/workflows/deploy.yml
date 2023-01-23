@@ -19,7 +19,7 @@ jobs:
           timezone: Europe/London
       - name: Checkout from git
         uses: actions/checkout@v3
-      - name: Use Node.js 19.0.0
+      - name: Set the Node version
         uses: actions/setup-node@v1
         with:
           node-version: "19.0.0"
@@ -38,7 +38,7 @@ jobs:
             _site/audio
             _site/images
           key: ${{ runner.OS }}-site-cache-${{ hashFiles('**/lockfiles') }}
-      - name: Install node modules
+      - name: Install Node Modules
         run: npm ci
       - name: Build with npm
         run: npm run build
