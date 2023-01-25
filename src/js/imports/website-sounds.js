@@ -98,9 +98,9 @@ class WebsiteSounds {
 				let keyLimit = element.getAttribute("key-limit") ? parseFloat(element.getAttribute("key-limit")) : element.dataset.keyLimit ? parseFloat(element.dataset.keyLimit) : this.defaults.keyLimit
 				let keyIntervals = element.getAttribute("key-intervals")
 					? element
-						.getAttribute("key-intervals")
-						.split(",")
-						.map((interval) => parseFloat(interval))
+							.getAttribute("key-intervals")
+							.split(",")
+							.map((interval) => parseFloat(interval))
 					: element.dataset.keyIntervals
 					? element.dataset.keyIntervals.split(",").map((interval) => parseFloat(interval))
 					: this.defaults.keyIntervals
