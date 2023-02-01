@@ -202,7 +202,7 @@ With this knowledge under our belt, we can begin to define the design tokens for
 <h3 id="default">№ 1. Variable As Default</h3>
 
 ```scss
-+$bowhead-variable-as-default: true;
+$bowhead-variable-as-default: true;
 
 body {
     color: v(color, brick);
@@ -216,7 +216,7 @@ body {
 ```
 
 ```scss
-+$bowhead-variable-as-default: false;
+$bowhead-variable-as-default: false;
 
 body {
     color: v(color, brick);
@@ -232,8 +232,8 @@ body {
 <h3 id="fallback">№ 2. Show Fallback Value</h3>
 
 ```scss
-+$bowhead-variable-as-default: true;
-+$bowhead-show-fallback: true;
+$bowhead-variable-as-default: true;
+$bowhead-show-fallback: true;
 
 body {
     @include v(color, desert);
@@ -248,8 +248,8 @@ body {
 ```
 
 ```scss
-+$bowhead-variable-as-default: true;
-+$bowhead-show-fallback: false;
+$bowhead-variable-as-default: true;
+$bowhead-show-fallback: false;
 
 body {
     @include v(color, desert);
@@ -265,8 +265,8 @@ body {
 When <samp>$bowhead-variable-as-default</samp> is <samp>false</samp>, <samp>$bowhead-show-fallback</samp> has no effect.
 
 ```scss
-+$bowhead-variable-as-default: false;
-+$bowhead-show-fallback: true;
+$bowhead-variable-as-default: false;
+$bowhead-show-fallback: true;
 
 body {
     @include v(color, desert);
@@ -280,8 +280,8 @@ body {
 ```
 
 ```scss
-+$bowhead-variable-as-default: false;
-+$bowhead-show-fallback: false;
+$bowhead-variable-as-default: false;
+$bowhead-show-fallback: false;
 
 body {
     @include v(color, desert);
