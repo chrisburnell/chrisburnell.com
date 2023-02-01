@@ -47,7 +47,7 @@ Make sure the browser support for CSS Variables meets your needs:
     <cite><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Types">CSS data types on MDN</a></cite>
 </blockquote>
 
-An important first step to using *Bowhead* is to understand how it categorises CSS properties by the different <q>CSS data types</q>. By and large, this is done by looking at what the *expected* values for a given property are:
+An important first step to using **Bowhead** is to understand how it categorises CSS properties by the different <q>CSS data types</q>. By and large, this is done by looking at what the *expected* values for a given property are:
 
 ```css
 selector {
@@ -360,7 +360,7 @@ $bowhead-tokens: (
 );
 ```
 
-**Bowhead** will merge new types in your defined map into its own defaults automatically! Any that you re-declare will overwrite what exists as a default from *Bowhead*.
+**Bowhead** will merge new types in your defined map into its own defaults automatically! Any that you re-declare will overwrite what exists as a default from **Bowhead**.
 
 <h3 id="type-map">№ 5. Type Map <em>(optional)</em></h3>
 
