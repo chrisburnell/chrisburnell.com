@@ -180,5 +180,12 @@
     "title": "Web Share API",
     "description": "“A way to allow websites to invoke the native sharing capabilities of the host platform”",
     "links": ["[Page on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share)"]
+  },
+  {
+    "id": "mdn-css_properties_margin-trim",
+    "language": "css",
+    "title": "margin-trim",
+    "description": "Allows a container to trim the margins of its children’s adjoining edges.",
+    "links": ["[Page on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/margin-trim)"]
   }
 ]
