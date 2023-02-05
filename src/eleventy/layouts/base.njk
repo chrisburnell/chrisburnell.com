@@ -79,11 +79,11 @@
 	<meta property="og:type" content="website">
 	{% endif -%}
 	<meta property="og:url" content="{{ canonical }}">
-	<meta property="og:title" data-pagefind-meta="image_alt[content]" content="{{ meta_title | striptags(true) | safe }}">
+	<meta property="og:title" content="{{ meta_title | striptags(true) | safe }}">
 	<meta property="og:description" content="{{ meta_description | striptags(true) | safe }}">
 	<meta property="og:locale" content="{{ site.locale }}">
 	<meta property="og:site_name" content="{{ site.title }}">
-	<meta property="og:image" data-pagefind-meta="image[content]" content="{{ meta_image }}">
+	<meta property="og:image" content="{{ meta_image }}">
 
 	<!-- Twitter Microdata -->
 	<meta name="twitter:card" content="summary">

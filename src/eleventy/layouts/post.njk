@@ -22,7 +22,7 @@ layout: base
 			{% if rsvp %}
 				This <a class=" [ u-category ] " href="/rsvps/">RSVP</a>
 			{% else %}
-				This <a class=" [ u-category ] " href="/{{ categoryPlural | default(category) }}/" data-pagefind-filter="category">{{ categoryProper | default(category) }}</a>{% if "writing" in tags %}, part of the <a href="/writing/">writing</a> collection,{% endif %}
+				This <a class=" [ u-category ] " href="/{{ categoryPlural | default(category) }}/">{{ categoryProper | default(category) }}</a>{% if "writing" in tags %}, part of the <a href="/writing/">writing</a> collection,{% endif %}
 			{% endif %}
 			{%- if draft %}
 				has not yet been published
@@ -101,7 +101,7 @@ layout: base
 		{% endif %}
 
 		{% if content.length %}
-			<div id="content" class=" [ e-content ] [ flow ] " data-pagefind-body>
+			<div id="content" class=" [ e-content ] [ flow ] ">
 				{{ content | safe }}
 			</div>
 		{% endif %}

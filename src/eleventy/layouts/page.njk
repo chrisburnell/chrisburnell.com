@@ -18,7 +18,7 @@ layout: base
 	</div>
 
 	<div class=" [ content{% if full_width %}  full{% endif %} ] [ flow ] ">
-		<div class=" [ e-content ] [ flow ] {% if contentClass %}[ {{ contentClass }} ] {% endif %}{% if toc %}generate-toc{% endif %}" data-pagefind-body>
+		<div class=" [ e-content ] [ flow ] {% if contentClass %}[ {{ contentClass }} ] {% endif %}{% if toc %}generate-toc{% endif %}">
 			{{ content | safe }}
 		</div>
 	</div>

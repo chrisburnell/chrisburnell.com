@@ -4,27 +4,11 @@ description: Search for something!
 wide: true
 ---
 
-<is-land on:visible class=" [ flow ] ">
-	<!-- </textarea> -->
-	<!-- '"´ -->
-	<form id="search" class=" [ responses__form ] " method="get" name="search" action="https://duckduckgo.com/">
-		<input id="search-query" type="search" name="q" value="site:chrisburnell.com ">
-		<button type="submit" enterkeyhint="submit">Submit</button>
-	</form>
+<!-- </textarea> -->
+<!-- '"´ -->
+<form id="search" class=" [ responses__form ] " method="get" name="search" action="https://duckduckgo.com/">
+	<input id="search-query" type="search" name="q" value="site:chrisburnell.com ">
+	<button type="submit" enterkeyhint="submit">Submit</button>
+</form>
 
-	<p>Search provided by <a href="https://duckduckgo.com">DuckDuckGo</a>: <q>The Internet privacy company that empowers you to seamlessly take control of your personal information online, without any tradeoffs.</q></p>
-
-	<template data-island="replace">
-		<div id="search"></div>
-
-		<p>Search powered by <a href="https://pagefind.app">Pagefind</a>. No external network requests are made and bandwidth is kept minimal.</p>
-
-		<link rel="stylesheet" href="/_pagefind/pagefind-ui.css?v={{ pkg.version }}" />
-		<script onload="initPagefind()" src="/_pagefind/pagefind-ui.js?v={{ pkg.version }}"></script>
-		<script>
-			function initPagefind() {
-				new PagefindUI({ element: "#search" });
-			}
-		</script>
-	</template>
-</is-land>
+<p>Search provided by <a href="https://duckduckgo.com">DuckDuckGo</a>: <q>The Internet privacy company that empowers you to seamlessly take control of your personal information online, without any tradeoffs.</q></p>

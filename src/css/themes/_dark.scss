@@ -12,13 +12,6 @@
 		background-color: h(mineshaft);
 		color: h(milou);
 		scrollbar-color: h(raven) h(mineshaft);
-
-		// Specific variables to Pagefind (/search/)
-		--pagefind-ui-background: #{h(mineshaft)};
-		--pagefind-ui-text: #{h(milou)};
-		--pagefind-ui-primary: var(--border-color, #{h(raven, alpha)});
-		--pagefind-ui-border: var(--border-color, #{h(raven, alpha)});
-		--pagefind-ui-tag: var(--border-color, #{h(raven, alpha)});
 	}
 
 	.header,

@@ -99,7 +99,7 @@
 			<small>tagged</small>
 			{% if tags_filtered.length > 1 %}<ul class=" [ cluster ] [ meta__list ] ">{% endif %}
 				{% for tag in tags_filtered -%}
-					{% if tags_filtered.length > 1 %}<li>{% endif %}<a class=" [ p-tag ] " href="/tag/{{ tag }}/" data-pagefind-filter="tag">{{ tag }}</a>{% if tags_filtered.length > 1 %}</li>{% endif %}
+					{% if tags_filtered.length > 1 %}<li>{% endif %}<a class=" [ p-tag ] " href="/tag/{{ tag }}/">{{ tag }}</a>{% if tags_filtered.length > 1 %}</li>{% endif %}
 				{%- endfor %}
 			{% if tags_filtered.length > 1 %}</ul>{% endif %}
 		</li>
