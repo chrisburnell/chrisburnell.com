@@ -15,10 +15,10 @@
 		{% if webmentions.length or externalLikes > 0 or stargazers > 0 %}
 			{%- set bookmarks = webmentions | arrayKeyEquals('activity.type', 'bookmark') -%}
 			{%- set likes = webmentions | arrayKeyEquals('activity.type', 'like') -%}
-			{%- set links = webmentions | arrayKeyEquals('activity.type', 'link') | arrayKeyEquals('data.content', null) -%}
+			{%- set links = webmentions | arrayKeyEquals('activity.type', 'link') -%}
 			{%- set reposts = webmentions | arrayKeyEquals('activity.type', 'repost') -%}
 			{%- set reactions = bookmarks.concat(likes).concat(links).concat(reposts) -%}
-			{%- set replies = webmentions | arrayKeyEquals('activity.type', ['link', 'reply']) | arrayKeyEquals('data.content', 'notempty') -%}
+			{%- set replies = webmentions | arrayKeyEquals('activity.type', 'reply') | arrayKeyEquals('data.content', 'notempty') -%}
 			{%- set externalLikes = externalLikes | default(0) -%}
 			{%- set stargazers = stargazers | default(0) -%}
 			{%- set responsesLength = reactions.length + replies.length + externalLikes + stargazers -%}
