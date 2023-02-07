@@ -50,14 +50,17 @@
 ///
 /// @return {Bool}
 ///
+$sides: (top, bottom, left, right);
+$corners: (top-left, top-right, bottom-left, bottom-right);
+$centers: (center, top-center, bottom-center, center-left, center-right);
 @function is-edge($value) {
 	@if not $value {
 		@warn "`is-edge()` expects one parameter.";
 		@return false;
 	}
 
-	$is-side: index((top, right, bottom, left), $value);
-	$is-corner: index((top-left, top-right, bottom-right, bottom-left), $value);
+	$is-side: index($sides, $value);
+	$is-corner: index($corners, $value);
 
 	@return $is-side or $is-corner;
 }
