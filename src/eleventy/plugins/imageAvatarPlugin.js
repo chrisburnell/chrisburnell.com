@@ -1,20 +1,12 @@
 require("dotenv").config()
 
 const site = require("#data/site")
-const twitterReplacements = require("#data/twitterReplacements")
 const queryFilters = require("#filters/queries")
 
-const TwitterAvatarUrl = require("twitter-avatar-url")
 const Image = require("@11ty/eleventy-img")
 
 // Avatar Dimensions
 const size = 96 // 48 * 2
-
-const fixTwitterUsername = (twitterUsername) => {
-	return Object.entries(twitterReplacements).reduce((accumulator, [key, value]) => {
-		return accumulator.replace(key, value)
-	}, twitterUsername)
-}
 
 const getImageOptions = (lookup) => {
 	return {
@@ -64,23 +56,16 @@ const storeAvatar = async (id, classes = "") => {
 }
 
 module.exports = (eleventyConfig) => {
-	let twitterUsernames, mastodonHandles, domains
+	let mastodonHandles, domains
 
 	eleventyConfig.on("beforeBuild", () => {
-		twitterUsernames = new Set()
 		mastodonHandles = new Set()
 		domains = new Set()
 	})
 
 	if (process.env.ELEVENTY_PRODUCTION) {
 		eleventyConfig.on("afterBuild", () => {
-			let array = Array.from(twitterUsernames)
-			console.log(`[${queryFilters.getHost(site.url)}] Generating ${array.length} Twitter avatars.`)
-			TwitterAvatarUrl(array).then((results) => {
-				for (let result of results) {
-					fetchImageData(result.username, result.url.large)
-				}
-			})
+			let array
 
 			array = Array.from(mastodonHandles)
 			console.log(`[${queryFilters.getHost(site.url)}] Generating ${array.length} Mastodon avatars.`)
@@ -98,17 +83,13 @@ module.exports = (eleventyConfig) => {
 
 	eleventyConfig.addNunjucksAsyncShortcode("avatar", async (photo, url, authorUrl, classes = "") => {
 		const mastodonHandle = authorUrl ? queryFilters.getMastodonHandle(authorUrl) : null
-		if (url && url.includes("twitter.com")) {
-			let username = fixTwitterUsername(url.split("twitter.com/")[1].split("/")[0])
-			twitterUsernames.add(username.toLowerCase())
-			return storeAvatar(username, classes)
-		} else if (photo && mastodonHandle && mastodonHandle != authorUrl) {
+		if (photo && mastodonHandle && mastodonHandle != authorUrl) {
 			mastodonHandles.add({
 				handle: mastodonHandle,
 				photo: photo.toLowerCase(),
 			})
 			return storeAvatar(mastodonHandle, classes)
-		} else if (photo) {
+		} else if (photo && !url.includes("https://twitter.com")) {
 			let domain = queryFilters.getHost(authorUrl || url)
 			domains.add({
 				url: domain,
