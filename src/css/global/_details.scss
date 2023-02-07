@@ -22,6 +22,17 @@ summary {
 	padding: 0;
 	font-weight: var(--font-weight-semibold);
 	transition: padding var(--transition-duration) var(--transition-function);
+	list-style: "+ " inside;
+
+	&::marker {
+		font-family: var(--font-family-monospace);
+		font-size: var(--font-size-gamma);
+		font-weight: var(--font-weight-heavy);
+	}
+
+	[open] & {
+		list-style: "- " inside;
+	}
 
 	& + * {
 		margin-block-start: var(--size-small);
