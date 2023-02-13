@@ -5,6 +5,8 @@ description: Paste a YouTube channel URL and get the URL to the equivalent Atom 
 js_module: get-youtube-feed.js
 ---
 
+<noscript><p>Unfortunately, this page requires JavaScript for the form to function correctly.</p></noscript>
+
 Expects a URL in the following format:
 
 <pre><code>https://www.youtube.com/channel/AaBbCcDdEeFfGg0123456789</code></pre>

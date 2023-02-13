@@ -15,6 +15,8 @@ toc: true
 js_module: interactive-spark-line.js
 ---
 
+<noscript><p>Unfortunately, this page requires JavaScript to display sparklines and use the interactive example.</p></noscript>
+
 <figure>
     <c-spark-line values="0,0,2,5,7,13,13,18,14,11,19,44,37,37,38,27,23,9,6,5,6,1,1,2,1,0"></c-spark-line>
 </figure>
