@@ -1,6 +1,6 @@
 {
   "name": "chrisburnell",
-  "version": "3.6.9",
+  "version": "3.6.10",
   "description": "Some real sweet codestuffs.",
   "author": "Chris Burnell <me@chrisburnell.com>",
   "contributors": [
@@ -47,7 +47,7 @@
     "@chrisburnell/eleventy-cache-webmentions": "^1.1.5",
     "@chrisburnell/pentatonic": "^1.1.4",
     "@chrisburnell/spark-line": "^1.2.4",
-    "@mdn/browser-compat-data": "^5.2.34",
+    "@mdn/browser-compat-data": "^5.2.35",
     "@sindresorhus/slugify": "1.1.2",
     "@tweetback/canonical": "^2.0.29",
     "@zachleat/details-utils": "^2.0.2",
