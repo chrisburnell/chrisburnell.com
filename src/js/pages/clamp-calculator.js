@@ -6,8 +6,8 @@ class ClampCalculator {
 		this.init()
 	}
 
-	limitDecimals(value) {
-		return parseFloat(value.toFixed(3))
+	limitDecimals(value, decimals = 3) {
+		return parseFloat(value.toFixed(decimals))
 	}
 
 	toRem(px) {
@@ -15,26 +15,32 @@ class ClampCalculator {
 	}
 
 	calculate() {
-		const vp = (this.inputs["font-size-max"].value - this.inputs["font-size-min"].value) / (this.inputs["viewport-width-max"].value - this.inputs["viewport-width-min"].value)
-		const rem = this.toRem(this.inputs["font-size-max"].value - this.inputs["viewport-width-max"].value * vp)
-		const vw = this.limitDecimals(vp * 100)
+		const fsMax = this.inputs["font-size-max"].value
+		const fsMin = this.inputs["font-size-min"].value
+		const vwMax = this.inputs["viewport-width-max"].value
+		const vwMin = this.inputs["viewport-width-min"].value
 
-		this.output.value = `clamp(${this.toRem(this.inputs["font-size-min"].value)}rem, ${rem}rem + ${vw}vw, ${this.toRem(this.inputs["font-size-max"].value)}rem)`
+		const x = (fsMax - fsMin) / (vwMax - vwMin)
+
+		const a = this.toRem(fsMax - vwMax * x)
+		const b = this.limitDecimals(x * 100)
+
+		this.output.value = `clamp(${this.toRem(fsMin)}rem, ${a}rem + ${b}vw, ${this.toRem(fsMax)}rem)`
 
 		this.result.innerHTML = `X = (fontSizeMax - fontSizeMin) / (viewportWidthMax - viewportWidthMin)
-X = (${this.inputs["font-size-max"].value}px - ${this.inputs["font-size-min"].value}px) / (${this.inputs["viewport-width-max"].value}px - ${this.inputs["viewport-width-min"].value}px)
-X = ${this.limitDecimals(vp)}
+X = (${fsMax}px - ${fsMin}px) / (${vwMax}px - ${vwMin}px)
+X = ${this.limitDecimals(x, 5)}
 
 A = fontSizeMax - viewportWidthMax * X
-A = ${this.inputs["font-size-max"].value}px - ${this.inputs["viewport-width-max"].value}px * ${this.limitDecimals(vp)}
-A = ${this.limitDecimals(this.inputs["font-size-max"].value - this.inputs["viewport-width-max"].value * vp)}px = ${rem}rem
+A = ${fsMax}px - ${vwMax}px * ${this.limitDecimals(x, 5)}
+A = ${this.limitDecimals(fsMax - vwMax * x)}px = ${a}rem
 
 B = X * 100vw
-B = ${this.limitDecimals(vp)} * 100vw
-B = ${vw}vw
+B = ${this.limitDecimals(x, 5)} * 100vw
+B = ${b}vw
 
 Result = clamp(fontSizeMin, A + B, fontSizeMax)
-Result = clamp(${this.toRem(this.inputs["font-size-min"].value)}rem, ${rem}rem + ${vw}vw, ${this.toRem(this.inputs["font-size-max"].value)}rem)`
+Result = clamp(${this.toRem(fsMin)}rem, ${a}rem + ${b}vw, ${this.toRem(fsMax)}rem)`
 	}
 
 	init() {
