@@ -85,19 +85,6 @@
 	<meta property="og:site_name" content="{{ site.title }}">
 	<meta property="og:image" content="{{ meta_image }}">
 
-	<!-- Twitter Microdata -->
-	<meta name="twitter:card" content="summary">
-	<meta name="twitter:creator" content="@{{ author.twitter }}">
-	<meta name="twitter:title" content="{{ meta_title | striptags(true) | safe }}">
-	<meta name="twitter:description" content="{{ meta_description | striptags(true) | safe }}">
-	<meta name="twitter:image" content="{{ meta_image }}">
-	<meta name="twitter:domain" content="{{ site.url | getHost }}">
-	{% if twitter -%}
-	<meta name="twitter:widgets:theme" content="light">
-	<meta name="twitter:widgets:link-color" content="{{ designTokens.colors | keyValue("raven") }}">
-	<meta name="twitter:widgets:border-color" content="{{ designTokens.colors | keyValue("raven") }}">
-	{%- endif %}
-
 	{% if layout == 'post' -%}
 	<meta property="article:published_time" content="{{ page.date | friendlyDateLong | striptags(true) | safe }}">
 	{% if updated or finish -%}

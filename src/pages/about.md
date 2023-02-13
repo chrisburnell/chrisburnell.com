@@ -28,19 +28,32 @@ eleventyComputed:
 
 {{ bio | markdownFormat | safe }}
 
-## Other Formats
+<c-details-utils>
+<summary>Plaintext</summary>
 
 ```text
 {{ bio | markdownFormat | striptags(true) | safe }}
 ```
 
+</c-details-utils>
+
+<c-details-utils>
+<summary>Markdown</summary>
+
 ```markdown
 {{ bio | striptags(true) | safe }}
 ```
 
+</c-details-utils>
+
+<c-details-utils>
+<summary>HTML</summary>
+
 ```html
 {{ bio | striptags(true) | markdownFormat | replace('<p>', '') | replace('</p>', '') | safe }}
 ```
+
+</c-details-utils>
 
 ## The Long Version
 
@@ -75,10 +88,6 @@ I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link
     <dd><a class=" [ canada ] " href="mailto:{{ author.email }}">{{ author.email }}</a></dd>
     <dt>Mastodon:</dt>
     <dd><a class=" [ canada ] " href="https://{{ author.mastodon_domain }}/users/{{ author.mastodon.split('@') | first }}">{{ '@' + author.mastodon }}</a></dd>
-    <dt>Twitter:</dt>
-    <dd><a class=" [ canada ] " href="https://twitter.com/{{ author.twitter }}">{{'@' + author.twitter }}</a></dd>
-    <dt>Twitter DM:</dt>
-    <dd><a class=" [ canada ] " href="https://twitter.com/messages/compose?recipient_id={{ author.twitter }}">{{ '@' + author.twitter }}</a></dd>
 </dl>
 
 ## Colophon

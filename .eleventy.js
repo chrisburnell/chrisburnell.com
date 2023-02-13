@@ -1,7 +1,6 @@
 require("dotenv").config()
 const pkg = require("./package.json")
 const site = require("#data/site")
-// const configWebmentions = require("./src/data/config/webmentions.js")
 
 // Import Eleventy plugins
 const caniusePlugin = require("#plugins/caniusePlugin")
@@ -14,7 +13,6 @@ const { EleventyRenderPlugin } = require("@11ty/eleventy")
 const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output")
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight")
 const webCPlugin = require("@11ty/eleventy-plugin-webc")
-// const webmentionsPlugin = require("@chrisburnell/eleventy-cache-webmentions")
 
 // Import transforms
 const parseTransform = require("#transforms/parse")
@@ -23,6 +21,7 @@ const parseTransform = require("#transforms/parse")
 const dateFilters = require("#filters/dates")
 const stringFilters = require("#filters/strings")
 const queryFilters = require("#filters/queries")
+const asyncFilters = require("#filters/async")
 const utilityFilters = require("#filters/utils")
 const collectionFilters = require("#filters/collections")
 const newBase60 = require("#filters/newBase60")
@@ -87,6 +86,9 @@ module.exports = (eleventyConfig) => {
 	})
 	Object.keys(collectionFilters).forEach((filterName) => {
 		eleventyConfig.addFilter(filterName, collectionFilters[filterName])
+	})
+	Object.keys(asyncFilters).forEach((filterName) => {
+		eleventyConfig.addAsyncFilter(filterName, asyncFilters[filterName])
 	})
 	eleventyConfig.addFilter("newBase60", newBase60)
 

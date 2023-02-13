@@ -17,11 +17,6 @@
     "primary": true
   },
   {
-    "title": "Twitter",
-    "url": "https://twitter.com/",
-    "key": "twitter"
-  },
-  {
     "title": "RSS",
     "url": "/feed.xml",
     "primary": true

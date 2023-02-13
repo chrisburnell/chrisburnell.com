@@ -23,8 +23,7 @@ comprises the site and to experiment with new methodologies and technologies.
 You may find that things change quite drastically or strangely over time; this
 is because I am always trying to learn new things and encorporate them into my
 site or this Github repository. If you have any questions or suggestions, please
-don’t hesitate to get in touch via [Mastodon](https://fediverse.repc.co/@chrisburnell),
-[Twitter](https://twitter.com/iamchrisburnell), or [email me](mailto:me@chrisburnell.com).
+don’t hesitate to get in touch via [Mastodon](https://fediverse.repc.co/@chrisburnell) or [email me](mailto:me@chrisburnell.com).
 
 While the code for my website is open source, it is not intended to be used as a template for your own website. By all means, copy and share what you like, but make sure it’s part of something you can call your own. 😄
 
@@ -35,7 +34,7 @@ While the code for my website is open source, it is not intended to be used as a
 - RSS feed generation
 - Calendar feed generation
 - Converts local images and serves optimised formats
-- Caches avatars from microformats2, Mastodon, and Twitter and serves optimised formats
+- Caches avatars from personal domains and Mastodon, and serves optimised formats
 - Organised system of local and cached external data
 - Extremely flexible content creation from data-mapping and automation through Eleventy features
 - Pulls down latest Webmentions against pages and posts and builds "hot" and "popular" collections
