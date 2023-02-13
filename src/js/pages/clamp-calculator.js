@@ -20,6 +20,21 @@ class ClampCalculator {
 		const vw = this.limitDecimals(vp * 100)
 
 		this.output.value = `clamp(${this.toRem(this.inputs["font-size-min"].value)}rem, ${rem}rem + ${vw}vw, ${this.toRem(this.inputs["font-size-max"].value)}rem)`
+
+		this.result.innerHTML = `X = (fontSizeMax - fontSizeMin) / (viewportWidthMax - viewportWidthMin)
+X = (${this.inputs["font-size-max"].value}px - ${this.inputs["font-size-min"].value}px) / (${this.inputs["viewport-width-max"].value}px - ${this.inputs["viewport-width-min"].value}px)
+X = ${this.limitDecimals(vp)}
+
+A = fontSizeMax - viewportWidthMax * X
+A = ${this.inputs["font-size-max"].value}px - ${this.inputs["viewport-width-max"].value}px * ${this.limitDecimals(vp)}
+A = ${this.limitDecimals(this.inputs["font-size-max"].value - this.inputs["viewport-width-max"].value * vp)}px = ${rem}rem
+
+B = X * 100vw
+B = ${this.limitDecimals(vp)} * 100vw
+B = ${vw}vw
+
+Result = clamp(fontSizeMin, A + B, fontSizeMax)
+Result = clamp(${this.toRem(this.inputs["font-size-min"].value)}rem, ${rem}rem + ${vw}vw, ${this.toRem(this.inputs["font-size-max"].value)}rem)`
 	}
 
 	init() {
@@ -37,6 +52,7 @@ class ClampCalculator {
 			}
 		})
 		this.output = document.getElementById("output")
+		this.result = document.getElementById("result")
 
 		this.button = document.getElementById("submit")
 		this.button.addEventListener("click", (event) => {

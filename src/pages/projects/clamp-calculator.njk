@@ -35,16 +35,25 @@ js_module: clamp-calculator.js
 
 <h2 id="how">How does this work?</h2>
 
-<pre><code>X = (fontSizeMax - fontSizeMin) / (viewportWidthMax - viewportWidthMin)
+<p>Assuming a standard root font size of <code>16px</code> (that’s the <code><html></code> element in most cases):</p>
 
-Y = fontSizeMax - viewportWidthMax * X
+<pre><code id="result">X = (fontSizeMax - fontSizeMin) / (viewportWidthMax - viewportWidthMin)
+X = (18px - 16px) / (1000px - 500px)
+X = 0.004
 
-Z = X * 100
+A = fontSizeMax - viewportWidthMax * X
+A = 18px - 1000px * 0.004
+A = 14px = 0.875rem
 
-Result = clamp(fontSizeMin, Yrem + Zvw, fontSizeMax)</code></pre>
+B = X * 100vw
+B = 0.004 * 100vw
+B = 0.4vw
+
+Result = clamp(fontSizeMin, A + B, fontSizeMax)
+Result = clamp(1rem, 0.875rem + 0.4vw, 1.125rem)</code></pre>
 
 <hr>
 
 <p>Wondering why we don’t need <code>calc()</code> around the middle value of the <code>clamp()</code> function? <a href="https://css-irl.info">Michelle Barker’s</a> got you covered with <a href="https://css-irl.info/quick-tip-you-might-not-need-calc/">this quick tip</a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/clamp">check out <code>clamp()</code> on MDN</a> to learn more.</p>
 
-<p>Shoutout to <a href="https://www.hustlersquad.net/">James Gilyead</a> and <a href="https://www.trysmudford.com/">Trys Mudford</a> for building <a href="https://utopia.fyi/">Utopia</a>, which first introduced me to this amazing technique!</p>
+<p>Shoutout to <a href="https://www.hustlersquad.net/">James Gilyead</a> and <a href="https://www.trysmudford.com/">Trys Mudford</a>, who first introduced me to this amazing technique, for building <a href="https://utopia.fyi/">Utopia</a>, a fully-fledged tool for calculating fluid type, space, and grids for your design systems!</p>
