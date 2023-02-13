@@ -25,6 +25,13 @@ js_module: clamp-calculator.js
 		<label for="viewport-width-max" class=" [ center  delta ] ">Maximum Viewport Width <small>(px)</small></label>
 		<input id="viewport-width-max" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="text" inputmode="numeric" pattern="[0-9]{1,5}" value="1000" data-default="1000"></input>
 	</fieldset>
+	<details style="grid-column: span 2;">
+		<summary>Optional</summary>
+		<fieldset style="border: 0; padding: 0; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between;">
+			<label for="root-font-size" class=" [ center  delta ] ">Root Font Size <small>(px)</small></label>
+			<input id="root-font-size" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="text" inputmode="numeric" pattern="[0-9]{1,4}" value="16" data-default="16"></input>
+		</fieldset>
+	</details>
 	<fieldset class=" [ center ] " style="grid-column: span 2; margin-block-start: 1em;">
 		<button style="--min-inline-size: 10em; margin-inline: auto;" type="submit">Calculate</button>
 		<button class="code-red" style="--min-inline-size: 10em; margin-inline: auto;" type="reset">Reset</button>
@@ -37,7 +44,7 @@ js_module: clamp-calculator.js
 
 <h2 id="how">How does this work?</h2>
 
-<p>This calculator assumes that there a standard root font size of <code>16px</code>. In most cases, that refers to the <code>html</code> element and the <code>rem</code> unit is relative to its font size.</p>
+<p>This calculator uses <code>rem</code> units which require knowing the font size at the document’s root. In most cases, that refers to the <code>html</code> element and this calculator currently operates with a root font size of <code id="how-base">16px</code>.</p>
 
 <p><strong aria-hidden="true">1.</strong> We need to figure out the rate of change: how much the font size needs to change across a distance of viewport width. In other words, for every pixel of change in viewport width, how many pixels of change should there be in font size? We can calculate this by dividing the difference in font size by the difference in viewport width.</p>
 
