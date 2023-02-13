@@ -38,7 +38,7 @@
 
 	&[data-layout="50-50"] {
 		--placement: auto-fit;
-		--min-inline-size: max(8rem, 50%);
+		--min-inline-size: clamp(12rem, 50vw, 16rem);
 	}
 
 	&[data-layout="natural"] {
