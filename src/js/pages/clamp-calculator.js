@@ -28,10 +28,10 @@ class ClampCalculator {
 		this.output.value = `clamp(${this.toRem(this.inputs["font-size-min"].value, this.inputs["font-size-root"].value)}rem, ${startingFontSize}rem + ${variableFontSize}vw, ${this.toRem(this.inputs["font-size-max"].value, this.inputs["font-size-root"].value)}rem)`
 
 		this.visual.style.fontSize = `${this.inputs["font-size-root"].value}px`
-		this.visual.querySelector(":last-child").style.fontSize = `clamp(${this.toRem(this.inputs["font-size-min"].value, this.inputs["font-size-root"].value)}em, ${startingFontSize}em + ${variableFontSize}vw, ${this.toRem(this.inputs["font-size-max"].value, this.inputs["font-size-root"].value)}em)`
+		this.visual.querySelector("li:last-child").style.fontSize = `clamp(${this.toRem(this.inputs["font-size-min"].value, this.inputs["font-size-root"].value)}em, ${startingFontSize}em + ${variableFontSize}vw, ${this.toRem(this.inputs["font-size-max"].value, this.inputs["font-size-root"].value)}em)`
 
-		this.visual.querySelector(":first-child span").innerText = `Root: ${this.inputs["font-size-root"].value}px`
-		this.visual.querySelector(":last-child span").innerText = `Clamped: ${this.inputs["font-size-min"].value}–${this.inputs["font-size-max"].value}px`
+		this.visual.querySelector("li:first-child span").innerText = `Root: ${this.inputs["font-size-root"].value}px`
+		this.visual.querySelector("li:last-child span").innerText = `Clamped: ${this.inputs["font-size-min"].value}–${this.inputs["font-size-max"].value}px`
 
 		this.howRoot.innerHTML = `${this.inputs["font-size-root"].value}px`
 
