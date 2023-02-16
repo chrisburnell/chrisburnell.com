@@ -1,0 +1,16 @@
+////
+/// clamp() Calculator
+/// @group pages
+/// @link https://chrisburnell.com/clamp-calculator/
+////
+
+.clamp-calculator__fieldset {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+
+.clamp-calculator__result {
+	@extend %selectall;
+}

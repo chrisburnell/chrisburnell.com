@@ -107,5 +107,6 @@
 
 // Exceptions
 @layer exceptions {
+	@import "exceptions/clamp-calculator";
 	@import "exceptions/styleguide";
 }

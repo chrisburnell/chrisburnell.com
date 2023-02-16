@@ -84,7 +84,7 @@ module.exports = {
 			if (data.banner || data.cover) {
 				return `${site.url}/images/built/${(data.banner || data.cover).replace("jpg", "jpeg")}`
 			} else if (data.photo) {
-				const photo = [...data.photo][0]
+				const photo = Array.isArray(data.photo) ? data.photo[0] : data.photo
 				return `${site.url}/images/built/${(photo.url || photo).replace("jpg", "jpeg")}`
 			}
 			return site.url + site.favicon

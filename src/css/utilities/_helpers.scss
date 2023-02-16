@@ -154,6 +154,20 @@
 	overflow: hidden;
 }
 
+// Animation for transitioning from user-select:all; to user-select:text;
+%selectall {
+	user-select: all;
+
+	&:focus {
+		animation: selectall var(--transition-duration-short) step-end forwards;
+	}
+}
+@keyframes selectall {
+	to {
+		user-select: text;
+	}
+}
+
 // Speedlify
 .speedlify-anchor {
 	display: inline-block;

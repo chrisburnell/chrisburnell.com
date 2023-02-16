@@ -6,55 +6,65 @@ emoji: 🗜
 js_module: clamp-calculator.js
 ---
 
-<noscript><p>Unfortunately, this page requires JavaScript for the calculator to function.</p></noscript>
+<noscript><p class=" [ box  box--error ] ">Unfortunately, this calculator requires JavaScript to function correctly!</p></noscript>
 
-<form id="clamp-calculator" class=" [ grid ] " data-layout="50-50" style="--min-inline-size: calc(50% - 1em)">
-	<fieldset style="display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between;">
+<form id="clamp-calculator" class=" [ grid ] [ clamp-calculator ] " data-layout="50-50">
+	<fieldset class=" [ clamp-calculator__fieldset ] ">
 		<label for="font-size-min" class=" [ center  delta ] ">Minimum Font Size <small>(px)</small></label>
 		<input id="font-size-min" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="text" inputmode="numeric" pattern="[0-9]{1,4}" value="16" data-default="16"></input>
 	</fieldset>
-	<fieldset style="display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between;">
+	<fieldset class=" [ clamp-calculator__fieldset ] ">
 		<label for="font-size-max" class=" [ center  delta ] ">Maximum Font Size <small>(px)</small></label>
 		<input id="font-size-max" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="text" inputmode="numeric" pattern="[0-9]{1,4}" value="18" data-default="18"></input>
 	</fieldset>
-	<fieldset style="display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between;">
-		<label for="viewport-width-min" class=" [ center  delta ] ">Minimum Viewport Width <small>(px)</small></label>
-		<input id="viewport-width-min" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="text" inputmode="numeric" pattern="[0-9]{1,5}" value="500" data-default="500"></input>
+	<fieldset class=" [ clamp-calculator__fieldset ] ">
+		<label for="viewport-min" class=" [ center  delta ] ">Minimum Viewport Width <small>(px)</small></label>
+		<input id="viewport-min" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="text" inputmode="numeric" pattern="[0-9]{1,5}" value="500" data-default="500"></input>
 	</fieldset>
-	<fieldset style="display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between;">
-		<label for="viewport-width-max" class=" [ center  delta ] ">Maximum Viewport Width <small>(px)</small></label>
-		<input id="viewport-width-max" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="text" inputmode="numeric" pattern="[0-9]{1,5}" value="1000" data-default="1000"></input>
+	<fieldset class=" [ clamp-calculator__fieldset ] ">
+		<label for="viewport-max" class=" [ center  delta ] ">Maximum Viewport Width <small>(px)</small></label>
+		<input id="viewport-max" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="text" inputmode="numeric" pattern="[0-9]{1,5}" value="1000" data-default="1000"></input>
 	</fieldset>
 	<details style="grid-column: span 2;">
 		<summary>Optional</summary>
-		<fieldset style="border: 0; padding: 0; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between;">
-			<label for="root-font-size" class=" [ center  delta ] ">Root Font Size <small>(px)</small></label>
-			<input id="root-font-size" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="text" inputmode="numeric" pattern="[0-9]{1,4}" value="16" data-default="16"></input>
+		<fieldset class=" [ clamp-calculator__fieldset ] " style="border: 0; padding: 0;">
+			<label for="font-size-root" class=" [ center  delta ] ">Root Font Size <small>(px)</small></label>
+			<input id="font-size-root" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="text" inputmode="numeric" pattern="[0-9]{1,4}" value="16" data-default="16"></input>
 		</fieldset>
 	</details>
-	<fieldset class=" [ center ] " style="grid-column: span 2; margin-block-start: 1em;">
+	<fieldset class=" [ center ] " style="grid-column: span 2;">
 		<button style="--min-inline-size: 10em; margin-inline: auto;" type="submit">Calculate</button>
 		<button class="code-red" style="--min-inline-size: 10em; margin-inline: auto;" type="reset">Reset</button>
 	</fieldset>
 	<fieldset style="grid-column: span 2; margin-block-start: 1em;">
 		<label for="output" class=" [ center  gamma ] ">The Result</label>
-		<input id="output" class=" [ center  monospace ] " style="inline-size: 100%; margin-inline: auto; line-height: 3;" type="text" readonly></input>
+		<input id="output" class=" [ clamp-calculator__result ] [ center  monospace ] " style="inline-size: 100%; margin-inline: auto; line-height: 3;" type="text" value="clamp(1rem, 0.875rem + 0.4vw, 1.125rem)" readonly></input>
 	</fieldset>
+	<ul id="visual" class=" [ clamp-calculator__fieldset ] [ flow ] " style="--flow-space: 1rem; grid-column: span 2; margin-block-start: 1rem; font-size: 16px; line-height: var(--line-height-small);">
+		<li>
+			<span>Root: 16px</span>
+			<div class="size-example" style="margin-block-start: 0.5rem; inline-size: 1em; block-size: 1em;"></div>
+		</li>
+		<li style="font-size: clamp(1em, 0.875em + 0.4vw, 1.125em)">
+			<span>Clamped: 16–18px</span>
+			<div class="size-example" style="margin-block-start: 0.5rem; inline-size: 1em; block-size: 1em;"></div>
+		</li>
+	</ul>
 </form>
 
 <h2 id="how">How does this work?</h2>
 
-<p>This calculator uses <code>rem</code> units which require knowing the font size at the document’s root. In most cases, that refers to the <code>html</code> element and this calculator currently operates with a root font size of <code id="how-base">16px</code>.</p>
+<p>This calculator uses <code>rem</code> units which require knowing the font size at the document’s root. In most cases, that refers to the <code>html</code> element and this calculator is currently operating with a root font size of <code id="how-root">16px</code>.</p>
 
 <p><strong aria-hidden="true">1.</strong> We need to figure out the rate of change: how much the font size needs to change across a distance of viewport width. In other words, for every pixel of change in viewport width, how many pixels of change should there be in font size? We can calculate this by dividing the difference in font size by the difference in viewport width.</p>
 
-<pre class="language-none"><code id="how-x">Change = (fontSizeMax - fontSizeMin) / (viewportWidthMax - viewportWidthMin)
+<pre class="language-none"><code id="how-x">Change = (fontSizeMax - fontSizeMin) / (viewportMax - viewportMin)
 Change = (18px - 16px) / (1000px - 500px)
 Change = 0.004</code></pre>
 
 <p><strong aria-hidden="true">2.</strong> Next, let’s figure out what our <em>starting</em> font size should be (this is different from our <em>minimum</em> font size). We do this by asking how much change is applied to the font size when the viewport is at its maximum width, and subtracting that from our desired font size at the maximum viewport width.</p>
 
-<pre class="language-none"><code id="how-a">A = fontSizeMax - viewportWidthMax * Change
+<pre class="language-none"><code id="how-a">A = fontSizeMax - viewportMax * Change
 A = 18px - 1000px * 0.004
 A = 14px = 0.875rem</code></pre>
 
