@@ -4,6 +4,8 @@
 ////
 
 .table-of-contents {
+	max-block-size: 40vh;
+	max-block-size: 40dvb;
 	box-shadow: var(--box-shadow, var(--box-shadow-medium));
 	overflow-x: hidden;
 	overflow-y: auto;
@@ -14,7 +16,7 @@
 		display: none;
 	}
 
-	@include media("below:medium") {
+	@include media("above:small") {
 		max-block-size: 60vh;
 		max-block-size: 60dvb;
 	}

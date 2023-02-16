@@ -17,7 +17,7 @@ module.exports = async (value, outputPath) => {
 		// the permalink.
 		const tocHeadings = $(".generate-toc h2")
 		if (tocHeadings.length) {
-			let tocHtml = `<aside class=" [ meta ] [ flow ] " role="complementary"><div class=" [ box ] [ flow ] [ table-of-contents ] "><ul>`
+			let tocHtml = `<aside class=" [ meta ] [ flow ] " role="complementary"><div class=" [ box ] [ flow ] [ table-of-contents ] "><ol>`
 			tocHeadings.each((i, element) => {
 				const headingText = $(element)
 					.html()
@@ -25,7 +25,7 @@ module.exports = async (value, outputPath) => {
 				const headingID = $(element).attr("id") || slugify(headingText.toLowerCase())
 				tocHtml += `<li><a href="#${headingID}">${headingText}</a></li>`
 			})
-			tocHtml += `</ul></div></aside>`
+			tocHtml += `</ol></div></aside>`
 			$(tocHtml).insertBefore(".content")
 			$(".generate-toc").removeClass("generate-toc")
 		}
