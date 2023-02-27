@@ -5,7 +5,7 @@ class ClampCalculator {
 			"font-size-max": null,
 			"viewport-min": null,
 			"viewport-max": null,
-			"font-size-root": null
+			"font-size-root": null,
 		}
 
 		this.init()

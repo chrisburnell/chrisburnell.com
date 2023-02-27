@@ -9,7 +9,6 @@ const imagePlugin = require("#plugins/imagePlugin")
 const imageAvatarPlugin = require("#plugins/imageAvatarPlugin")
 // const albumCoverPlugin = require("#plugins/albumCoverPlugin")
 // const inclusiveLanguagePlugin = require("@11ty/eleventy-plugin-inclusive-language")
-const { EleventyRenderPlugin } = require("@11ty/eleventy")
 const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output")
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight")
 const webCPlugin = require("@11ty/eleventy-plugin-webc")
@@ -42,7 +41,6 @@ const markdownAbbr = require("markdown-it-abbr")
 
 module.exports = (eleventyConfig) => {
 	// Plugins
-	eleventyConfig.addPlugin(EleventyRenderPlugin)
 	eleventyConfig.addPlugin(caniusePlugin)
 	eleventyConfig.addPlugin(imagePlugin)
 	eleventyConfig.addPlugin(imageAvatarPlugin)

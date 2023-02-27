@@ -43,6 +43,7 @@
 		[marginalia-start content-start outdent-start]
 		auto
 		[outdent-end content-end marginalia-end];
+	transition: all var(--transition-duration) var(--transition-function);
 
 	@include media("above:medium") {
 		grid-template-rows:

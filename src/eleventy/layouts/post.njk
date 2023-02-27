@@ -28,23 +28,14 @@ layout: base
 				has not yet been published
 			{%- else %}
 				{% if in_reply_to and not rsvp %}
-					in reply to <a href="{{ in_reply_to_url | tweetback }}">{{ people | getPerson(in_reply_to_title) | getInternalTarget(collections.all) | getMastodonHandle | getTwitterHandle }}</a>
-					{% if in_reply_to_authors -%}
-						{% set first_author = in_reply_to_authors | toArray | first %}
-						{% set first_author_person = people | getPerson(first_author) %}
-						{% if first_author_person != people | getPerson(in_reply_to_title) %}
-							by
-							{% for author in in_reply_to_authors | toArray %}
-								{% set author = people | getPerson(author, 'object') %}
-								{% if not loop.first %}{% if in_reply_to_authors.length > 2 %}, {% endif %}{% if loop.last %} and {% endif %}{% endif %}
-								{% if author.url %}
-									<a href="{{ author.url | toArray | first }}">{{ author.title }}</a>
-								{% else %}
-									{{ author }}
-								{% endif %}
-							{% endfor %}
-						{% endif %}
-					{%- endif -%}
+					{%- set in_reply_to_title = people | getPerson(in_reply_to_title) | getInternalTarget(collections.all) | getMastodonHandle | getTwitterHandle -%}
+					in reply to
+					<a href="{{ in_reply_to_url | tweetback }}">{{ in_reply_to_title }}</a>
+					{% set author_lookup = people | getPerson(in_reply_to_url, 'object') %}
+					{% if author_lookup != in_reply_to_url and author_lookup.title != in_reply_to_title %}
+						by
+						<a href="{{ author_lookup.url | toArray | first }}">{{ author_lookup.title }}</a>
+					{% endif %}
 				{%- endif %}
 				was published on <time class=" [ dt-published ] " datetime="{{ date | rfcDate }}">{{ date | friendlyDateLong | safe }}</time>
 				{%- if updated %}

@@ -14,21 +14,20 @@
 	{% endif %}
 {%- endif -%}
 
-{%- set item_in_reply_to = item.data.in_reply_to -%}
-{%- set item_in_reply_to_url = item_in_reply_to -%}
-{%- if item_in_reply_to.url -%}
-	{% set item_in_reply_to_url = item_in_reply_to.url %}
-{%- endif -%}
-{%- set item_in_reply_to_title = item_in_reply_to_url -%}
-{%- if item_in_reply_to.title -%}
-	{% set item_in_reply_to_title = item_in_reply_to.title %}
-{%- endif -%}
-{%- if item_in_reply_to.authors -%}
-	{% set item_in_reply_to_authors = item_in_reply_to.authors %}
-{%- else -%}
-	{% set item_in_reply_to_author_lookup = people | getPerson(item_in_reply_to_url, 'object') %}
-	{% if item_in_reply_to_author_lookup != item_in_reply_to_url %}
-		{% set item_in_reply_to_authors = item_in_reply_to_author_lookup %}
+{%- if item.data.in_reply_to -%}
+	{%- set item_in_reply_to = item.data.in_reply_to -%}
+	{%- set item_in_reply_to_url = item_in_reply_to -%}
+	{%- if item_in_reply_to.url -%}
+		{%- set item_in_reply_to_url = item_in_reply_to.url -%}
+	{%- endif -%}
+	{%- set item_in_reply_to_title = item_in_reply_to_url -%}
+	{%- if item_in_reply_to.title -%}
+		{%- set item_in_reply_to_title = item_in_reply_to.title -%}
+	{%- endif -%}
+	{%- set item_in_reply_to_title = people | getPerson(item_in_reply_to_title) | getInternalTarget(collections.all) | getMastodonHandle | getTwitterHandle -%}
+	{% set author_lookup = people | getPerson(item_in_reply_to_url, 'object') %}
+	{% if author_lookup != item_in_reply_to_url %}
+		{% set item_in_reply_to_author = author_lookup %}
 	{% endif %}
 {%- endif -%}
 
@@ -85,22 +84,11 @@
 			{% else %}
 				<small>in reply to</small>
 			{% endif %}
-			<a class=" [ h-cite  u-in-reply-to ] " href="{{ item_in_reply_to_url | tweetback }}">{{ people | getPerson(item_in_reply_to_title) | getInternalTarget(collections.all) | getMastodonHandle | getTwitterHandle }}</a>
-			{% if item_in_reply_to_authors %}
-				{% set first_author = item_in_reply_to_authors | toArray | first %}
-				{% set first_author_person = people | getPerson(first_author) %}
-				{% if first_author_person != people | getPerson(item_in_reply_to_title) %}
-					<small>by</small>
-					{% for author in item_in_reply_to_authors | toArray %}
-						{% set author = people | getPerson(author, 'object') %}
-						{% if not loop.first %}{% if item_in_reply_to_authors.length > 2 %}, {% endif %}{% if loop.last %} and {% endif %}{% endif %}
-						{% if author.url %}
-							<a href="{{ author.url | toArray | first }}">{{ author.title }}</a>
-						{% else %}
-							{{ author.title | default(author) | safe }}
-						{% endif %}
-					{% endfor %}
-				{% endif %}
+			<a class=" [ h-cite  u-in-reply-to ] " href="{{ item_in_reply_to_url | replace('https://twitter.com/iamchrisburnell/status/', 'https://twitter.chrisburnell.com/') }}">{{ item_in_reply_to_title }}</a>
+			{% set author_lookup = people | getPerson(item_in_reply_to_url, 'object') %}
+			{% if author_lookup != item_in_reply_to_url and author_lookup.title != item_in_reply_to_title %}
+				<small>by</small>
+				<a href="{{ author_lookup.url | toArray | first }}">{{ author_lookup.title }}</a>
 			{% endif %}
 			{% if item.data.rsvp.date | friendlyDate == global.now | friendlyDate %}
 				{# Today #}
@@ -157,17 +145,17 @@
 	{% elif item.data.description %}
 		<p class=" [ p-summary ] {% if item.data.category == 'article' %}[ line-clamp ] {% endif %}">{{ item.data.description | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
 	{% elif item.data.category == 'bookmark' %}
-		<p class=" [ p-summary ] ">{{ item.templateContent | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
+		<p class=" [ p-summary ] ">{{ item.content | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
 	{% elif item.data.category == 'code' %}
 		<p class=" [ p-summary ] ">One of my code snippets.</p>
 	{% elif item.data.category == 'like' %}
-		<p class=" [ p-summary ] ">{{ item.templateContent | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
+		<p class=" [ p-summary ] ">{{ item.content | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
 	{% elif item.data.category == 'note' %}
-		<p class=" [ p-summary ] ">{{ item.templateContent | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
+		<p class=" [ p-summary ] ">{{ item.content | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
 	{% elif item.data.category == 'recipe' %}
 		<p class=" [ p-summary ] ">A {{ item.data.categoryProper | default(item.data.category) }}{% if item.data.authors %} by {% for author in item.data.authors | toArray %}{% if author.url %}<a href="{{ people | getPerson(author, 'url') }}">{{ people | getPerson(author) }}</a>{% if not loop.last %}, {% endif %}{% else %}{{ people | getPerson(author) }}{% if not loop.last %}, {% endif %}{% endif %}{% endfor %}{% endif %}</p>
 	{% elif item.data.category == 'talk' %}
-		<p class=" [ p-summary ] ">{{ item.templateContent | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
+		<p class=" [ p-summary ] ">{{ item.content | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
 	{% endif %}
 	{% if item.data.date or item.date or item.data.updated or item.data.webmentions or item.data.externalLikes or item.data.stargazers %}
 		<ul class=" [ cluster ] [ deck__meta ] ">

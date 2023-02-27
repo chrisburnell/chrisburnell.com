@@ -53,22 +53,12 @@
 				<c-emoji>{{ emojis.reply }}</c-emoji>
 				<small>in reply to</small>
 			{% endif %}
-			<a class=" [ h-cite  u-in-reply-to ] " href="{{ in_reply_to_url | tweetback }}">{{ people | getPerson(in_reply_to_title) | getInternalTarget(collections.all) | getMastodonHandle | getTwitterHandle }}</a>
-			{% if in_reply_to_authors %}
-				{% set first_author = in_reply_to_authors | toArray | first %}
-				{% set first_author_person = people | getPerson(first_author) %}
-				{% if first_author_person != people | getPerson(in_reply_to_title) %}
-					<small>by</small>
-					{% for author in in_reply_to_authors | toArray %}
-						{% set author = people | getPerson(author, 'object') %}
-						{% if not loop.first %}{% if in_reply_to_authors.length > 2 %}, {% endif %}{% if loop.last %} and {% endif %}{% endif %}
-						{% if author.url %}
-							<a href="{{ author.url | toArray | first }}">{{ author.title }}</a>
-						{% else %}
-							{{ author }}
-						{% endif %}
-					{% endfor %}
-				{% endif %}
+			{%- set in_reply_to_title = people | getPerson(in_reply_to_title) | getInternalTarget(collections.all) | getMastodonHandle | getTwitterHandle -%}
+			<a class=" [ h-cite  u-in-reply-to ] " href="{{ in_reply_to_url | tweetback }}">{{ in_reply_to_title }}</a>
+			{% set author_lookup = people | getPerson(in_reply_to_url, 'object') %}
+			{% if author_lookup != in_reply_to_url and author_lookup.title != in_reply_to_title %}
+				<small>by</small>
+				<a href="{{ author_lookup.url | toArray | first }}">{{ author_lookup.title }}</a>
 			{% endif %}
 		</li>
 	{% endif %}

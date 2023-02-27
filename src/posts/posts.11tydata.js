@@ -102,15 +102,6 @@ module.exports = {
 		},
 		in_reply_to_url: (data) => data?.in_reply_to?.url || data?.in_reply_to || false,
 		in_reply_to_title: (data) => data?.in_reply_to?.title || data?.in_reply_to?.url || data?.in_reply_to || false,
-		in_reply_to_authors: async (data) => {
-			if (!data?.in_reply_to?.authors) {
-				const replyAuthors = queryFilters.getPerson(await people(), data.in_reply_to?.url || data.in_reply_to, "object")
-				if (replyAuthors != (data.in_reply_to?.url || data.in_reply_to)) {
-					return replyAuthors
-				}
-			}
-			return data?.in_reply_to?.authors || false
-		},
 		syndicate_to: (data) => {
 			if (data.drink_of) {
 				return [`https://untappd.com/user/${author.untappd}/checkin/${data.page.fileSlug}`]

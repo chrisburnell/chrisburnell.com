@@ -17,7 +17,7 @@ description: Numbers, cause why not?
 {%- set wordiest_wordcount = 0 -%}
 {%- set total_wordcount = 0 -%}
 {%- for item in collection -%}
-	{% set wordCount = item.templateContent | cleantags | striptags | safe | wordcount %}
+	{% set wordCount = item.content | cleantags | striptags | safe | wordcount %}
 	{% set total_wordcount = total_wordcount + wordCount %}
 	{% if wordCount > wordiest_wordcount %}
 		{% set wordiest_wordcount = wordCount %}
@@ -36,12 +36,14 @@ description: Numbers, cause why not?
 	<dd>{{ published_count }}</dd>
 	<dt>Total Word Count</dt>
 	<dd>{{ total_wordcount | numberStringFormat }}</dd>
-	<dt>Most Insanely-Verbose Post</dt>
+	<dt>Most Verbose</dt>
 	<dd><a href="{{ collection[wordiest_post_index].url }}">{{ collection[wordiest_post_index].data.title }}</a> <small>with</small> {{ wordiest_wordcount | numberStringFormat }} words</dd>
 	<dt>№ Projects</dt>
-	<dd>{{ (projects.web.length + projects.personal.length + collections.projects.length) | numberStringFormat }}</dd>
-	<dt>Commits <small>per</small> Day</dt>
-	<dd><a href="https://github.com/{{ author.github }}/{{ site.repository }}">{{ commits_per_day | maxDecimals(2) }}</a> <small>({{ repository.contributors[0].contributions | numberStringFormat }} commits over {{ (days_since_first_commit / 365.25) | maxDecimals(2) }} years)</small></dd>
+	<dd><a href="/projects/">{{ (projects.web.length + projects.personal.length + collections.projects.length) | numberStringFormat }}</a></dd>
+	<dt>№ Following</dt>
+	<dd><a href="/blogroll/">{{ (blogroll.length) | numberStringFormat }}</a></dd>
+	<dt hidden>Commits <small>per</small> Day</dt>
+	<dd hidden><a href="https://github.com/{{ author.github }}/{{ site.repository }}">{{ commits_per_day | maxDecimals(2) }}</a> <small>({{ repository.contributors[0].contributions | numberStringFormat }} commits over {{ (days_since_first_commit / 365.25) | maxDecimals(2) }} years)</small></dd>
 </dl>
 
 <h2><a href="/archive/">All Posts</a></h2>
