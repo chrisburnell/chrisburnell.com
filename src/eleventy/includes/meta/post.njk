@@ -2,64 +2,52 @@
 	{% if subtitle %}
 		<li class=" [ small ] ">{{ subtitle | safe }}</li>
 	{% endif %}
-	{% if in_reply_to %}
-		<li class=" [ in-reply-to ] ">
-			{% if rsvp %}
-				<data class=" [ p-rsvp ] " value="{{ rsvp.value }}" hidden></data>
-				{% if rsvp.value == 'yes' %}
-					{% if rsvp.date | epoch > global.now %}
-						{# Future #}
-						<c-emoji>{{ emojis.future }}</c-emoji>
-						<small>going to</small>
-					{% elif rsvp.date | epoch <= global.now and rsvp.finish | epoch > global.now %}
-						{# Current #}
-						<c-emoji>{{ emojis.going }}</c-emoji>
-						<small>currently attending</small>
-					{% else %}
-						{# Past #}
-						<c-emoji>{{ emojis.going }}</c-emoji>
-						<small>went to</small>
-					{% endif %}
-				{% elif rsvp.value == 'maybe' %}
-					<c-emoji>{{ emojis.maybe }}</c-emoji>
-					{% if rsvp.date | epoch > global.now %}
-						{# Future #}
-						<small>might go to</small>
-					{% else %}
-						{# Past #}
-						<small>thought about going to</small>
-					{% endif %}
-				{% elif rsvp.value == 'interested' %}
-					{% if rsvp.date | epoch > global.now %}
-						{# Future #}
-						<c-emoji>{{ emojis.maybe }}</c-emoji>
-						<small>interested in going to</small>
-					{% else %}
-						{# Past #}
-						<c-emoji>{{ emojis.not_going }}</c-emoji>
-						<small>was interested in going to</small>
-					{% endif %}
+	{% if in_reply_to and rsvp %}
+		<li class=" [ rsvp ] ">
+			{% if rsvp.value == 'yes' %}
+				{% if rsvp.date | epoch > global.now %}
+					{# Future #}
+					<c-emoji>{{ emojis.future }}</c-emoji>
+					<small>going to</small>
+				{% elif rsvp.date | epoch <= global.now and rsvp.finish | epoch > global.now %}
+					{# Current #}
+					<c-emoji>{{ emojis.going }}</c-emoji>
+					<small>currently attending</small>
 				{% else %}
+					{# Past #}
+					<c-emoji>{{ emojis.going }}</c-emoji>
+					<small>went to</small>
+				{% endif %}
+			{% elif rsvp.value == 'maybe' %}
+				<c-emoji>{{ emojis.maybe }}</c-emoji>
+				{% if rsvp.date | epoch > global.now %}
+					{# Future #}
+					<small>might go to</small>
+				{% else %}
+					{# Past #}
+					<small>thought about going to</small>
+				{% endif %}
+			{% elif rsvp.value == 'interested' %}
+				{% if rsvp.date | epoch > global.now %}
+					{# Future #}
+					<c-emoji>{{ emojis.maybe }}</c-emoji>
+					<small>interested in going to</small>
+				{% else %}
+					{# Past #}
 					<c-emoji>{{ emojis.not_going }}</c-emoji>
-					{% if rsvp.date | epoch > global.now %}
-						{# Future #}
-						<small>unable to go to</small>
-					{% else %}
-						{# Past #}
-						<small>wasn’t able to go to</small>
-					{% endif %}
+					<small>was interested in going to</small>
 				{% endif %}
 			{% else %}
-				<c-emoji>{{ emojis.reply }}</c-emoji>
-				<small>in reply to</small>
+				<c-emoji>{{ emojis.not_going }}</c-emoji>
+				{% if rsvp.date | epoch > global.now %}
+					{# Future #}
+					<small>unable to go to</small>
+				{% else %}
+					{# Past #}
+					<small>wasn’t able to go to</small>
+				{% endif %}
 			{% endif %}
-			{%- set in_reply_to_title = people | getPerson(in_reply_to_title) | getInternalTarget(collections.all) | getMastodonHandle | getTwitterHandle -%}
-			<a class=" [ h-cite  u-in-reply-to ] " href="{{ in_reply_to_url | tweetback }}">{{ in_reply_to_title }}</a>
-			{% set author_lookup = people | getPerson(in_reply_to_url, 'object') %}
-			{% if author_lookup != in_reply_to_url and author_lookup.title != in_reply_to_title %}
-				<small>by</small>
-				<a href="{{ author_lookup.url | toArray | first }}">{{ author_lookup.title }}</a>
-			{% endif %}
+			<data class=" [ p-rsvp ] " value="{{ rsvp.value }}" hidden></data>
 		</li>
 	{% endif %}
 	{% if rsvp %}

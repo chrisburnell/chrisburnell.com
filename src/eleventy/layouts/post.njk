@@ -19,29 +19,29 @@ layout: base
 
 	<div class=" [ description  description--published ] ">
 		<p>
-			{% if rsvp %}
+			{%- if rsvp %}
 				This <a class=" [ u-category ] " href="/rsvps/">RSVP</a>
-			{% else %}
-				This <a class=" [ u-category ] " href="/{{ categoryPlural | default(category) }}/">{{ categoryProper | default(category) }}</a>{% if "writing" in tags %}, part of the <a href="/writing/">writing</a> collection,{% endif %}
-			{% endif %}
+			{%- else %}
+				This <a class=" [ u-category ] " href="/{{ categoryPlural | default(category) }}/">{{ categoryProper | default(category) }}</a>{% if "writing" in tags %}, part of the <a href="/writing/">writing</a> collection{% if not in_reply_to %},{% endif %}{% endif %}
+			{%- endif -%}
 			{%- if draft %}
 				has not yet been published
-			{%- else %}
-				{% if in_reply_to and not rsvp %}
+			{%- else -%}
+				{%- if in_reply_to and not rsvp -%}
 					{%- set in_reply_to_title = people | getPerson(in_reply_to_title) | getInternalTarget(collections.all) | getMastodonHandle | getTwitterHandle -%}
-					in reply to
+					{%- set author_lookup = people | getPerson(in_reply_to_url, 'object') -%}
+					{%- if "writing" in tags %} and{% else %},{% endif %} in reply to
 					<a href="{{ in_reply_to_url | tweetback }}">{{ in_reply_to_title }}</a>
-					{% set author_lookup = people | getPerson(in_reply_to_url, 'object') %}
-					{% if author_lookup != in_reply_to_url and author_lookup.title != in_reply_to_title %}
+					{%- if author_lookup != in_reply_to_url and author_lookup.title != in_reply_to_title %}
 						by
 						<a href="{{ author_lookup.url | toArray | first }}">{{ author_lookup.title }}</a>
-					{% endif %}
+					{%- endif %},
 				{%- endif %}
 				was published on <time class=" [ dt-published ] " datetime="{{ date | rfcDate }}">{{ date | friendlyDateLong | safe }}</time>
 				{%- if updated %}
 					and last updated on <time class=" [ dt-updated ] " datetime="{{ updated | rfcDate }}">{{ updated | friendlyDateLong | safe }}</time>
 				{%- endif -%}
-			{%- endif %}.
+			{%- endif -%}.
 		</p>
 	</div>
 

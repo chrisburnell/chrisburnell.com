@@ -84,7 +84,7 @@
 			{% else %}
 				<small>in reply to</small>
 			{% endif %}
-			<a class=" [ h-cite  u-in-reply-to ] " href="{{ item_in_reply_to_url | replace('https://twitter.com/iamchrisburnell/status/', 'https://twitter.chrisburnell.com/') }}">{{ item_in_reply_to_title }}</a>
+			<a class=" [ h-cite  u-in-reply-to ] " href="{{ item_in_reply_to_url | replace('twitter.com/iamchrisburnell/status/', 'twitter.chrisburnell.com/') }}">{{ item_in_reply_to_title }}</a>
 			{% set author_lookup = people | getPerson(item_in_reply_to_url, 'object') %}
 			{% if author_lookup != item_in_reply_to_url and author_lookup.title != item_in_reply_to_title %}
 				<small>by</small>

@@ -8,4 +8,6 @@ branch: master
 tags:
   - clickthrough
   - javascript
+sitemap:
+  exclude: true
 ---

@@ -8,4 +8,6 @@ branch: master
 tags:
   - clickthrough
   - indieweb
+sitemap:
+  exclude: true
 ---
