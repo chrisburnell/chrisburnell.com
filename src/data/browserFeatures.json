@@ -187,5 +187,12 @@
     "title": "margin-trim",
     "description": "Allows a container to trim the margins of its children’s adjoining edges.",
     "links": ["[Page on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/margin-trim)"]
+  },
+  {
+    "id": "css-variables",
+    "language": "css",
+    "title": "CSS Variables",
+    "description": "Allows a declaring of native, cascading variables in CSS.",
+    "links": ["[MDN Web Docs - Using CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables)"]
   }
 ]
