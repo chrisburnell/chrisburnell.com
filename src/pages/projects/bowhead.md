@@ -8,7 +8,7 @@ npm: "@chrisburnell/bowhead"
 license: MIT
 tags:
   - css
-  - custom-properties
+  - css-variables
   - design-systems
   - scss
   - package

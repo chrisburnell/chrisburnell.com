@@ -1,6 +1,7 @@
 <h2>Browse collections</h2>
 <ul class=" [ cluster ] ">
 	{%- if page.url != '/archive/' %}<li><a href="/archive/">All Posts</a></li>{% endif -%}
+	{%- if page.url != '/latest/' %}<li><a href="/latest/">Latest Posts</a></li>{% endif -%}
 	{%- if page.url != '/hot/' %}<li><a href="/hot/">Hot Posts</a></li>{% endif -%}
 	{%- if page.url != '/popular/' %}<li><a href="/popular/">Popular Posts</a></li>{% endif -%}
 	{%- if page.url != '/replies/' %}<li><a href="/replies/">Replies</a></li>{% endif -%}

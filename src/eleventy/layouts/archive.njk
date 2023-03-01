@@ -8,6 +8,9 @@ truncate: true
 {%- set count = collection.length -%}
 {%- set latest_year = collection[0].date.getFullYear() -%}
 {%- set first_year = collection[count-1].date.getFullYear() -%}
+{%- if limit -%}
+	{% set collection = collection | limit(limit) %}
+{%- endif -%}
 <div class=" [ pantheon{% if wide %}  wide{% endif %} ] [ wrap ] [ archive ] ">
 
 	<ul class=" [ cluster ] [ breadcrumbs ] ">

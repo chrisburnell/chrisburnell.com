@@ -4,7 +4,7 @@ title: The Beloved Refactor
 description: Following the incredible high from a great conference, I just finished an extremely refreshing refactor of the CSS on my site. Here’s what I did.
 tags:
   - css
-  - custom-properties
+  - css-variables
   - design-systems
   - scss
 ---
