@@ -51,10 +51,13 @@
 	<meta name="theme-color" content="{{ designTokens.colors | keyValue("raven") }}">
 	<meta name="supported-color-schemes" content="light dark">
 
-	<style>{%- include '../../../css/main.css' -%}</style>
-	{% if css -%}
-	<style>{%- include '../../../css/' + css -%}</style>
-	{%- endif %}
+	<!-- Inlined critical styles -->
+	<style>{% getBundle 'css', 'critical' %}</style>
+	<!-- Deferred non-critical styles -->
+	<link rel="stylesheet" href="{% getBundleFileUrl 'css' %}" media="print" onload="this.media='all'">
+	<noscript>
+		<link rel="stylesheet" href="{% getBundleFileUrl 'css' %}">
+	</noscript>
 
 	{% if tags and tags.includes('httpstatus') -%}
 	<meta name="robots" content="noindex,nofollow">
@@ -105,6 +108,7 @@
 	{%- endif %}
 	{%- endif %}
 
+	<!-- Inlined critical JS -->
 	<script>document.documentElement.classList.remove("no-js");</script>
 </head>
 <body>
@@ -178,17 +182,16 @@
 		</div>
 	</footer>
 
-	{% if env.ELEVENTY_PRODUCTION %}
-		<script>{%- include '../../../js/navigator.js' -%}</script>
-	{% endif %}
-	<script type="module" src="/js/main.js?v={{ pkg.version }}"></script>
-	{% if js_module %}
-		<script type="module" src="/js/pages/{{ js_module }}?v={{ pkg.version }}"></script>
-	{% endif %}
-	{% if js %}
-		<script src="/js/pages/{{ js }}?v={{ pkg.version }}"></script>
+	<!-- ServiceWorker -->
+	<script>{% getBundle 'js', 'navigator' %}</script>
+
+	<!-- Deferred non-critical styles -->
+	<script type="module" src="{% getBundleFileUrl 'js', 'module' %}"></script>
+	{%- if js %}
+		<script src="{% getBundleFileUrl 'js' %}"></script>
 	{% endif %}
 
+	<!-- SVG Icons -->
 	<svg display="none" aria-hidden="true">
 		{% for symbol in svg %}
 			<symbol id="svg--{{ symbol.title | lower }}" viewBox="0 0 {{ symbol.viewBox }}">
@@ -200,5 +203,24 @@
 			</symbol>
 		{% endfor %}
 	</svg>
+
+	{# CSS Bundle #}
+	{%- css 'critical' %}{%- include '../../../css/critical.css' -%}{% endcss -%}
+	{%- css %}{%- include '../../../css/defer.css' -%}{% endcss -%}
+	{%- if css -%}
+		{%- css %}{%- include '../../../css/pages/' + css -%}{% endcss -%}
+	{%- endif -%}
+
+	{# JS Bundle #}
+	{%- js 'navigator' %}{%- include '../../../js/navigator.js' -%}{% endjs -%}
+	{%- js 'module' %}{%- include '../../../js/main.js' -%}{% endjs -%}
+	{% if js_module %}
+		{%- set js_module_path = '../../js/pages/' + js_module -%}
+		{%- js 'module' %}{%- include js_module_path -%}{% endjs -%}
+	{% endif %}
+	{% if js %}
+		{%- set js_path = '../../js/pages/' + js -%}
+		{%- js %}{%- include js_path -%}{% endjs -%}
+	{% endif %}
 </body>
 </html>

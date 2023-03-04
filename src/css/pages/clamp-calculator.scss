@@ -4,13 +4,18 @@
 /// @link https://chrisburnell.com/clamp-calculator/
 ////
 
+@use "sass:color";
+@use "sass:math";
+
+@import "../abstracts/functions";
+@import "../abstracts/mixins";
+@import "../abstracts/include-media";
+@import "../abstracts/generated";
+@import "../abstracts/collections";
+
 .clamp-calculator__fieldset {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: space-between;
-}
-
-.clamp-calculator__result {
-	@extend %selectall;
 }

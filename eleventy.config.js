@@ -11,6 +11,7 @@ const imageAvatarPlugin = require("#plugins/imageAvatarPlugin")
 // const inclusiveLanguagePlugin = require("@11ty/eleventy-plugin-inclusive-language")
 const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output")
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight")
+const bundlerPlugin = require("@11ty/eleventy-plugin-bundle")
 const webCPlugin = require("@11ty/eleventy-plugin-webc")
 
 // Import transforms
@@ -45,6 +46,7 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.addPlugin(imagePlugin)
 	eleventyConfig.addPlugin(imageAvatarPlugin)
 	eleventyConfig.addPlugin(syntaxHighlightPlugin)
+	eleventyConfig.addPlugin(bundlerPlugin)
 	eleventyConfig.addPlugin(webCPlugin, {
 		components: "./src/webc/**/*.webc",
 		useTransform: true,
@@ -118,23 +120,18 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.addPassthroughCopy("images/*")
 	eleventyConfig.addPassthroughCopy("images/animated")
 	eleventyConfig.addPassthroughCopy("js")
-	eleventyConfig.addPassthroughCopy("src/js/pages")
-	eleventyConfig.addPassthroughCopy("src/js/vendor")
 	eleventyConfig.addPassthroughCopy("video")
 	eleventyConfig.addPassthroughCopy({
-		"files/*": "."
-	})
-	eleventyConfig.addPassthroughCopy({
-		"src/js/modules/librarian.js": "js/librarian.js",
-		"src/js/modules/url-input.js": "js/url-input.js",
-	})
-	eleventyConfig.addPassthroughCopy({
-		"node_modules/@chrisburnell/spark-line/spark-line.js": "js/spark-line.js",
-		"node_modules/@zachleat/details-utils/details-utils.js": "js/details-utils.js",
-		"node_modules/@zachleat/seven-minute-tabs/seven-minute-tabs.js": "js/seven-minute-tabs.js",
-		"node_modules/lite-youtube-embed/src/lite-yt-embed.css": "css/lite-yt-embed.css",
-		"node_modules/lite-youtube-embed/src/lite-yt-embed.js": "js/lite-yt-embed.js",
-		"node_modules/speedlify-score/speedlify-score.js": "js/speedlify-score.js"
+		"files/*": ".",
+		"src/js/components/*": "js/components/",
+		"src/js/pages/*": "js/pages/",
+		"src/js/vendor/*": "js/vendor/",
+		"node_modules/@chrisburnell/spark-line/spark-line.js": "js/components/spark-line.js",
+		"node_modules/@zachleat/details-utils/details-utils.js": "js/components/details-utils.js",
+		"node_modules/@zachleat/seven-minute-tabs/seven-minute-tabs.js": "js/components/seven-minute-tabs.js",
+		"node_modules/lite-youtube-embed/src/lite-yt-embed.css": "css/components/lite-yt-embed.css",
+		"node_modules/lite-youtube-embed/src/lite-yt-embed.js": "js/components/lite-yt-embed.js",
+		"node_modules/speedlify-score/speedlify-score.js": "js/components/speedlify-score.js"
 	})
 
 	// Watch targets

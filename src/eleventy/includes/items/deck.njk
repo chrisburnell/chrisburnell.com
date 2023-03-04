@@ -1,3 +1,4 @@
+{%- css %}{%- include '../../../../css/components/deck.css' -%}{% endcss -%}
 {%- set item_of = item.data.bookmark_of | default(item.data.drink_of) | default(item.data.like_of) | default(item.data.listen_of) | default(item.data.play_of) | default(item.data.read_of) | default(item.data.watch_of) -%}
 {%- set item_of_url = item_of -%}
 {%- if item_of.url -%}

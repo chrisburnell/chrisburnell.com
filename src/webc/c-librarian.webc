@@ -6,6 +6,6 @@
 	</div>
 
 	<template data-island="once">
-		<script webc:keep type="module" :src="`/js/librarian.js?v=${this.pkg.version}`"></script>
+		<script webc:keep type="module" :src="`/js/components/librarian.js?v=${this.pkg.version}`"></script>
 	</template>
 </is-land>

@@ -1,10 +1,10 @@
 ////
 /// Quotes
 /// @group global
+/// @extends %flow
 ////
 
 blockquote {
-	@extend %flow;
 	background-color: h(bear);
 	inline-size: 100%;
 	max-inline-size: var(--size-line-length);

@@ -5,6 +5,7 @@ theme: christmas
 ---
 {%- set collection = collections.advent2021 | arePublished | reverse -%}
 
+{% css %}{%- include '../../../css/components/librarian.css' -%}{% endcss %}
 <c-librarian>
 	You can sort these beer reviews:
 	<br>

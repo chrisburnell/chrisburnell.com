@@ -1,4 +1,5 @@
 {% if updated_text %}
+	{%- css %}{%- include '../../../css/components/updated.css' -%}{% endcss -%}
 	<div id="updated" class=" [ updated ] [ box ] [ flow ] ">
 		{% if updated %}
 			<time datetime="{{ updated | rfcDate }}">Updated {{ updated | friendlyDateLong | safe }}:</time>

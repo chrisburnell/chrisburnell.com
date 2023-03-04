@@ -1,7 +1,16 @@
 ////
 /// Ads
-/// @group blocks
+/// @group components
 ////
+
+@use "sass:color";
+@use "sass:math";
+
+@import "../abstracts/functions";
+@import "../abstracts/mixins";
+@import "../abstracts/include-media";
+@import "../abstracts/generated";
+@import "../abstracts/collections";
 
 .ads {
 	@include media("print") {
@@ -32,7 +41,6 @@
 
 .ad__wrap,
 .carbon-wrap {
-	@extend %box;
 	flex: 1;
 	display: flex;
 	gap: var(--size-medium);

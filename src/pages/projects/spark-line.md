@@ -12,7 +12,7 @@ tags:
   - package
   - web-component
 toc: true
-js_module: interactive-spark-line.js
+js_module: spark-line.js
 ---
 
 <noscript><p>Unfortunately, this page requires JavaScript to display sparklines and use the interactive example.</p></noscript>
@@ -225,9 +225,11 @@ If you wanted to use `<is-land>` as well, I recommend something like the followi
 
 *That’s right! All spark-lines are dynamic out-of-the-box!*
 
+
 <!-- </textarea> -->
 <!-- '"´ -->
 <form>
+    <spark-line values="1,2,3,2,1" id="interactive-sparkline" style="margin-block-start: 0; align-self: center; justify-self: center;"></spark-line>
     <fieldset>
         <label><input id="input-values" type="text" pattern="[0-9]+" inputmode="numeric" value="12321" maxlength="26"> Values</label>
         <br>
@@ -241,5 +243,4 @@ If you wanted to use `<is-land>` as well, I recommend something like the followi
         <br>
         <label><input id="input-endpoint-color" type="color" value="{{ designTokens.colors.maple }}"> Endpoint Color</label>
     </fieldset>
-    <spark-line values="1,2,3,2,1" id="interactive-sparkline" style="margin-block-start: 0; align-self: center; justify-self: center;"></spark-line>
 </form>

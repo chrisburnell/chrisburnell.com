@@ -4,6 +4,7 @@ description: Beer reviews from Pig's Ear CAMRA Beer & Cider Festival in 2021
 ---
 {%- set collection = collections.pigsear2021 | arePublished | reverse -%}
 
+{% css %}{%- include '../../../css/components/librarian.css' -%}{% endcss %}
 <c-librarian>
 	You can sort these beer reviews:
 	<br>

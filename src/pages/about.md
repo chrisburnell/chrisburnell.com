@@ -28,32 +28,32 @@ eleventyComputed:
 
 {{ bio | markdownFormat | safe }}
 
-<c-details-utils>
+<c-details>
 <summary>Plaintext</summary>
 
 ```text
 {{ bio | markdownFormat | striptags(true) | safe }}
 ```
 
-</c-details-utils>
+</c-details>
 
-<c-details-utils>
+<c-details>
 <summary>Markdown</summary>
 
 ```markdown
 {{ bio | striptags(true) | safe }}
 ```
 
-</c-details-utils>
+</c-details>
 
-<c-details-utils>
+<c-details>
 <summary>HTML</summary>
 
 ```html
 {{ bio | striptags(true) | markdownFormat | replace('<p>', '') | replace('</p>', '') | safe }}
 ```
 
-</c-details-utils>
+</c-details>
 
 ## The Long Version
 

@@ -46,6 +46,7 @@ truncate: true
 			{{ categoryIntroductions[category.title] | join('\n\n') | markdownFormat | safe }}
 		{% endif %}
 		{% if collection[0].data.list == 'shelf' %}
+			{% css %}{%- include '../../../css/components/librarian.css' -%}{% endcss %}
 			<c-librarian>
 				You can sort these {{ category.properPlural }}:
 				<br>

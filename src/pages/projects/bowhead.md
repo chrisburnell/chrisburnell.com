@@ -38,6 +38,7 @@ This has a positive effect that ranges from giving the colours in your design sy
 
 Make sure the browser support for CSS Variables meets your needs:
 
+{%- css %}{%- include '../../../css/components/browser-support.css' -%}{% endcss -%}
 {% caniuse 'css-variables' %}
 
 ## CSS Data Types

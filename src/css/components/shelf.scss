@@ -1,8 +1,17 @@
 ////
 /// Shelf
-/// @group blocks
-/// Extends Auto Grid
+/// @group components
+/// @extends Auto Grid
 ////
+
+@use "sass:color";
+@use "sass:math";
+
+@import "../abstracts/functions";
+@import "../abstracts/mixins";
+@import "../abstracts/include-media";
+@import "../abstracts/generated";
+@import "../abstracts/collections";
 
 .shelf {
 	--row-gap: var(--size-gap);
@@ -14,9 +23,7 @@
 		line-height: var(--line-height-medium);
 	}
 
-	%heading {
-		@extend %delta;
-
+	h1 {
 		%anchor {
 			color: inherit;
 		}

@@ -11,9 +11,9 @@ is-land {
 
 // CodePen Embeds
 .cp_embed_wrapper {
-	@extend %box;
 	--max-inline-size: auto;
 	--gutter: 0;
+
 	resize: both;
 	overflow: auto;
 
@@ -24,11 +24,6 @@ is-land {
 
 // Speakerdeck Embeds
 .speakerdeck-embed-wrapper {
-	@extend %box;
 	--max-inline-size: auto;
 	--gutter: 0;
-
-	iframe {
-		@extend %media-child;
-	}
 }

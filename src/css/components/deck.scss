@@ -1,7 +1,16 @@
 ////
 /// Deck
-/// @group blocks
+/// @group components
 ////
+
+@use "sass:color";
+@use "sass:math";
+
+@import "../abstracts/functions";
+@import "../abstracts/mixins";
+@import "../abstracts/include-media";
+@import "../abstracts/generated";
+@import "../abstracts/collections";
 
 .deck {
 	article {
@@ -22,8 +31,6 @@
 	}
 
 	h1 {
-		@extend %gamma;
-
 		font-weight: var(--font-weight-semibold);
 
 		.emoji {

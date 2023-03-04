@@ -10,8 +10,6 @@
 	position: relative;
 }
 
-h1,
-.alpha,
 %alpha {
 	font-size: var(--font-size-alpha);
 	font-weight: var(--font-weight-heavy);
@@ -21,8 +19,6 @@ h1 {
 	z-index: var(--z-index-above);
 }
 
-h2,
-.beta,
 %beta {
 	font-size: var(--font-size-beta);
 	font-weight: var(--font-weight-semibold);
@@ -36,39 +32,30 @@ h2 {
 	border-block-end: var(--size-border-thin) solid h(alto);
 }
 
-h3,
-.gamma,
 %gamma {
 	font-size: var(--font-size-gamma);
 	font-weight: var(--font-weight-semibold);
 	line-height: var(--line-height-default);
 }
 
-h4,
-.delta,
 %delta {
 	font-size: var(--font-size-default);
 	font-weight: var(--font-weight-semibold);
 	line-height: var(--line-height-default);
 }
 
-h5,
-.epsilon,
 %epsilon {
 	font-size: var(--font-size-small);
 	font-weight: var(--font-weight-semibold);
 	line-height: var(--line-height-default);
 }
 
-h6,
-.zeta,
 %zeta {
 	font-size: var(--font-size-small);
 	font-weight: var(--font-weight-regular);
 	line-height: var(--line-height-default);
 }
 
-.riza,
 %riza {
 	font-size: var(--font-size-default);
 }

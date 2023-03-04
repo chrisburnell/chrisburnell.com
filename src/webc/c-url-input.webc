@@ -2,6 +2,6 @@
 
 <is-land class="hidden" on:visible>
 	<template data-island="once">
-		<script webc:keep type="module" :src="`/js/url-input.js?v=${this.pkg.version}`"></script>
+		<script webc:keep type="module" :src="`/js/components/url-input.js?v=${this.pkg.version}`"></script>
 	</template>
 </is-land>

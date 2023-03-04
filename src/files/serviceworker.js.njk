@@ -26,9 +26,7 @@ const ASSETS_REGEX = /\.(css|ics|js|json|pdf|txt|ttf|woff|woff2|xml|xsl)/
 const IMAGES_REGEX = /\.(avif|gif|ico|jpe?g|png|svg|webp)/
 
 // Assets that *must* be cached
-const REQUIRED_ASSETS = [
-	"/js/main.js?v={{ pkg.version }}",
-]
+const REQUIRED_ASSETS = []
 
 // Assets that are cached but non-blocking
 const OPTIONAL_ASSETS = [

@@ -184,3 +184,47 @@
 .feed .no-feed {
 	display: none;
 }
+
+@each $name, $color in $colors {
+	%background--#{$name} {
+		background-color: h(#{$name});
+		@supports (color: color-contrast()) {
+			color: color-contrast(#{$color} vs var(--contrast-list) to var(--contrast-ratio));
+		}
+	}
+}
+%background--alto,
+%background--aspen,
+%background--bear,
+%background--coyote,
+%background--milou {
+	color: h(mineshaft);
+}
+%background--highland,
+%background--raven {
+	color: h(thunder);
+}
+%background--lynx {
+	color: h(alto);
+}
+%background--bowhead,
+%background--conifer,
+%background--dove,
+%background--kaiser,
+%background--maple,
+%background--mineshaft,
+%background--thunder,
+%background--wolf {
+	color: h(milou);
+}
+
+.size-example {
+	background-color: h(raven);
+	display: block;
+}
+@each $name, $size in $sizes {
+	.size-example--#{$name} {
+		inline-size: var(--size-#{$name});
+		block-size: var(--size-#{$name});
+	}
+}

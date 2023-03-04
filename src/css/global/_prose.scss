@@ -119,7 +119,6 @@ hr {
 dialog {
 	--box-shadow: var(--box-shadow-high);
 
-	@extend %box;
 	background-color: h(bear) !important;
 	position: fixed;
 	inset: 0;

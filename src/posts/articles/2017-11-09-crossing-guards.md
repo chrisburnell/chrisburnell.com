@@ -183,6 +183,7 @@ Other benefits you’ll reap from *IntersectionObserver* include:
 
 Further, take also careful note of *IntersectionObserver’s* browser support to see if you need the [Polyfill](https://github.com/w3c/IntersectionObserver/tree/master/polyfill) or not.
 
+{%- css %}{%- include '../../../css/components/browser-support.css' -%}{% endcss -%}
 {% caniuse 'intersectionobserver' %}
 
 An important caveat to note before diving too deep, at least at the time of writing, is that [IntersectionObserver](https://github.com/w3c/IntersectionObserver) does not support observing [pseudo-elements](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements); rather, *IntersectionObserver’s* `observe()` method expects a single, [Element](https://developer.mozilla.org/en-US/docs/Web/API/Element)-type parameter. While this will make some implementations of *IntersectionObserver* more verbose than their equivalent older techniques, the mental overhead and performance tradeoffs that can be made are unquestionably beneficial.
