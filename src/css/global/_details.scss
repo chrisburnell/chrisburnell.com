@@ -5,9 +5,7 @@
 
 details {
 	inline-size: 100%;
-	border-radius: var(--size-border-default);
 	overflow-x: auto;
-	position: relative;
 
 	& > * {
 		padding: 0 var(--size-gutter) var(--size-small);

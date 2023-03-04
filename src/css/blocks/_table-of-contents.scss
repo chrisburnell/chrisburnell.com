@@ -5,33 +5,40 @@
 ////
 
 .table-of-contents {
-	max-block-size: 40vh;
-	max-block-size: 40dvb;
-	box-shadow: var(--box-shadow, var(--box-shadow-medium));
-	overflow-x: hidden;
-	overflow-y: auto;
-	overscroll-behavior: contain;
-	scrollbar-gutter: stable;
-
 	@include media("print") {
 		display: none;
 	}
-
-	@include media("above:small") {
-		max-block-size: 60vh;
-		max-block-size: 60dvb;
-	}
-
 	@include media("above:medium") {
-		max-block-size: calc(100vh - var(--size-medium) * 2);
-		max-block-size: calc(100dvb - var(--size-medium) * 2);
 		position: sticky;
+		inset-block-start: var(--size-medium);
 		inset-block-start: var(--size-medium);
 	}
 
-	li {
-		&::marker {
-			color: h(kaiser);
+	details {
+		overflow: visible;
+	}
+
+	summary {
+		font-size: var(--font-size-gamma);
+	}
+
+	.box {
+		max-block-size: 40vh;
+		max-block-size: 40dvb;
+		box-shadow: var(--box-shadow, var(--box-shadow-medium));
+		overflow-x: hidden;
+		overflow-y: auto;
+		overscroll-behavior: contain;
+		scrollbar-gutter: stable;
+
+		@include media("above:small") {
+			max-block-size: 60vh;
+			max-block-size: 60dvb;
+		}
+
+		@include media("above:medium") {
+			max-block-size: calc(100vh - 6rem);
+			max-block-size: calc(100dvb - 6rem);
 		}
 	}
 }
