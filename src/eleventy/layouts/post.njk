@@ -66,6 +66,11 @@ layout: base
 		{% include 'updated.njk' %}
 
 		{% if of_url %}
+			{%- if listen_of -%}
+				{% set of_url = "https://album.link/s/" + listen_of %}
+			{%- elif read_of -%}
+				{% set of_url = "https://openlibrary.org/isbn/" + read_of %}
+			{%- endif -%}
 			{% set of_url_lookup = of_url | getSyndicationTarget %}
 			{% if of_url_lookup %}
 				{% if category == 'beer' and of_url_lookup %}
