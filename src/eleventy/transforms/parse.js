@@ -1,5 +1,4 @@
 const cheerio = require("cheerio")
-const { PurgeCSS } = require("purgecss")
 const slugify = require("@sindresorhus/slugify")
 
 const env = require("#datajs/env")
@@ -79,16 +78,6 @@ module.exports = async (value, outputPath) => {
 		preformatted.each((i, element) => {
 			$(element).attr("tabindex", 0)
 		})
-
-		// Run PurgeCSS against the page and inject the styles
-		// if (env.ELEVENTY_PRODUCTION) {
-		// 	const purged = await new PurgeCSS().purge({
-		// 		content: [outputPath],
-		// 		css: ["./css/main.css"]
-		// 	})
-		// 	const cssContents = purged[0].css
-		// 	$(`<style>${cssContents}</style>`).append("head")
-		// }
 
 		return $.root().html()
 	}

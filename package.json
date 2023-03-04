@@ -62,8 +62,7 @@
     "luxon": "^3.2.1",
     "markdown-it": "^13.0.1",
     "markdown-it-abbr": "^1.0.4",
-    "natural": "^6.2.0",
-    "purgecss": "^5.0.0"
+    "natural": "^6.2.0"
   },
   "scripts": {
     "clean": "rm -rf .cache && rm -rf _site",
