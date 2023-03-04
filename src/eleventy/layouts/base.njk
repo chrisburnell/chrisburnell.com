@@ -182,10 +182,12 @@
 		</div>
 	</footer>
 
-	<!-- ServiceWorker -->
-	<script>{% getBundle 'js', 'navigator' %}</script>
+	{% if env.ELEVENTY_PRODUCTION %}
+		<!-- ServiceWorker -->
+		<script>{% getBundle 'js', 'navigator' %}</script>
+	{% endif %}
 
-	<!-- Deferred non-critical styles -->
+	<!-- Deferred non-critical JS -->
 	<script type="module" src="{% getBundleFileUrl 'js', 'module' %}"></script>
 	{%- if js %}
 		<script src="{% getBundleFileUrl 'js' %}"></script>
@@ -204,14 +206,14 @@
 		{% endfor %}
 	</svg>
 
-	{# CSS Bundle #}
+	{# CSS Bundles #}
 	{%- css 'critical' %}{%- include '../../../css/critical.css' -%}{% endcss -%}
 	{%- css %}{%- include '../../../css/defer.css' -%}{% endcss -%}
 	{%- if css -%}
 		{%- css %}{%- include '../../../css/pages/' + css -%}{% endcss -%}
 	{%- endif -%}
 
-	{# JS Bundle #}
+	{# JS Bundles #}
 	{%- js 'navigator' %}{%- include '../../../js/navigator.js' -%}{% endjs -%}
 	{%- js 'module' %}{%- include '../../../js/main.js' -%}{% endjs -%}
 	{% if js_module %}

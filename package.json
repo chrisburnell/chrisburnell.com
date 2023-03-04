@@ -29,8 +29,8 @@
     "postcss-cli": "^10.1.0",
     "postcss-scss": "^4.0.6",
     "prettier": "^2.8.4",
-    "rollup": "^2.79.1",
-    "rollup-plugin-terser": "^7.0.2",
+    "rollup": "2.79.1",
+    "rollup-plugin-terser": "7.0.2",
     "sass": "^1.58.3",
     "speedlify-score": "^3.0.0"
   },
