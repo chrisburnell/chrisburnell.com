@@ -82,7 +82,7 @@
                 <a href="{{ link.url }}">{{ link.title | safe }}</a>
               </li>{% endif %}{% endfor %}
             </ol>
-            <ol class=" [ cluster ] [ footer__navigation ] ">{% for item in socials %}{% if (item.url or item.split) and item.primary and not item.hidden %}{% set url = item.url %}{% if item.key %}{% set url = url + author[item.key] %}{% endif %}{% if item.split %}{% set url %}https://{{ author[item.key].split(item.split)[1] + '/' + item.split + author[item.key].split(item.split)[0] }}{% endset %}{% endif %}
+            <ol class=" [ cluster ] [ footer__navigation ] ">{% for item in socials %}{% if item.url and item.primary and not item.hidden %}{% set url = item.url %}{% if item.key %}{% set url = url + author[item.key] %}{% endif %}
               <li>
                 <a href="{{ url }}">{{ item.title }}</a>
               </li>{% endif %}{% endfor %}

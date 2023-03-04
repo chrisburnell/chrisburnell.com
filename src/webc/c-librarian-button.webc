@@ -1,1 +1,1 @@
-<button webc:root webc:keep class=" [ anchor  strong  non-selectable ] " :data-sort="this.key" :aria-sort="this.default"><slot></slot></button>
+<button webc:root="override" class="[ anchor strong non-selectable ]" :data-sort="this.key" :aria-sort="this.default"><slot></slot></button>

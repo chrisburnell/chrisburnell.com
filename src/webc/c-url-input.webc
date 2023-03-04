@@ -1,7 +1,7 @@
-<input webc:keep webc:root type="url" inputmode="url" enterkeyhint="send" />
+<input webc:root="override" type="url" inputmode="url" enterkeyhint="send" />
 
 <is-land class="hidden" on:visible>
-	<template data-island="once">
-		<script webc:keep type="module" :src="`/js/components/url-input.js?v=${this.pkg.version}`"></script>
+	<template webc:raw data-island="once">
+		<script type="module" src="/js/components/url-input.js"></script>
 	</template>
 </is-land>

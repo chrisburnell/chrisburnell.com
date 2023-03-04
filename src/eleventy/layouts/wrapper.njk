@@ -144,7 +144,7 @@
 	{%- css 'critical' %}{%- include '../../../css/critical.css' -%}{% endcss -%}
 	{%- css %}{%- include '../../../css/defer.css' -%}{% endcss -%}
 	{%- if css -%}
-		{%- css %}{%- include '../../../css/pages/' + css -%}{% endcss -%}
+		{%- css 'critical' %}{%- include '../../../css/pages/' + css -%}{% endcss -%}
 	{%- endif -%}
 
 	{# JS Bundles #}

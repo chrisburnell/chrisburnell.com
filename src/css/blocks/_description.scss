@@ -25,9 +25,7 @@
 	}
 
 	time {
-		font-style: italic;
-		font-synthesis: none;
-		font-variation-settings: "ital" 125;
+		@include italic;
 		white-space: nowrap;
 	}
 

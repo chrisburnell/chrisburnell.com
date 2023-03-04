@@ -12,9 +12,7 @@
 	margin-block-end: var(--size-small);
 	font-family: var(--font-family-serif);
 	font-size: var(--font-size-small);
-	font-style: italic;
-	font-synthesis: none;
-	font-variation-settings: "ital" 125;
+	@include italic;
 	line-height: var(--line-height-medium);
 	text-align: center;
 	text-decoration: none;

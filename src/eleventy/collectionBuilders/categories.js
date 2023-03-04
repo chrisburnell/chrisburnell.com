@@ -13,6 +13,7 @@ module.exports = (collection) => {
 					proper: "categoryProper" in item.data ? item.data.categoryProper : item.data.category,
 					plural: "categoryPlural" in item.data ? item.data.categoryPlural : item.data.category,
 					properPlural: "categoryProperPlural" in item.data ? item.data.categoryProperPlural : "categoryPlural" in item.data ? item.data.categoryPlural : item.data.category,
+					review: item.data.mf_root === "review",
 				}
 				categories.push(category)
 			}

@@ -50,11 +50,13 @@ truncate: true
 			<c-librarian>
 				You can sort these {{ category.properPlural }}:
 				<br>
-				<c-librarian-button key="title">by title</c-librarian-button>{% if 'review' in tags %},
-				<c-librarian-button key="author">by author</c-librarian-button>,
-				<c-librarian-button key="rating">by rating</c-librarian-button>{% endif %}{% if category.title != 'beer' and category.title != 'video' %},
-				<c-librarian-button key="release">by release date</c-librarian-button>{% endif %}{% if category.title != 'video' %},{% endif %} or
-				<c-librarian-button key="chronological" default="descending">by publish date</c-librarian-button>
+				<ul class=" [ cluster ] ">
+					<li><c-librarian-button key="title">by title</c-librarian-button></li>{% if category.review %}
+					<li><c-librarian-button key="author">by author</c-librarian-button></li>
+					<li><c-librarian-button key="rating">by rating</c-librarian-button></li>{% endif %}{% if category.title != 'beer' and category.title != 'video' %}
+					<li><c-librarian-button key="release">by release date</c-librarian-button></li>{% endif %}
+					<li><c-librarian-button key="chronological" default="descending">by publish date</c-librarian-button></li>
+				</ul>
 			</c-librarian>
 			<nav class=" [ grid ] [ shelf {% if collection[0].data.read_of %}shelf--books {% endif %}] " aria-live="polite">
 				{% for item in collection %}
@@ -64,7 +66,7 @@ truncate: true
 		{% else %}
 			{%- set year = latest_year -%}
 			<h2 id="{{ year }}">
-				{{ year }} <small><em>{{ collection | getCollectionCount(year, true) }} post{{ 's' if collection | getCollectionCount(year, true) > 1 }}</em></small>
+				{{ year }} <small><em>· {{ collection | getCollectionCount(year, true) }} post{{ 's' if collection | getCollectionCount(year, true) > 1 }}</em></small>
 			</h2>
 			<nav id="list-{{ year }}" class=" [ deck ] ">
 				{% for item in collection %}
@@ -72,7 +74,7 @@ truncate: true
 						{%- set year = item.date.getFullYear() -%}
 						</nav>
 						<h2 id="{{ year }}">
-							{{ year }} <small><em>{{ collection | getCollectionCount(year, true) }} post{{ 's' if collection | getCollectionCount(year, true) > 1 }}</em></small>
+							{{ year }} <small><em>· {{ collection | getCollectionCount(year, true) }} post{{ 's' if collection | getCollectionCount(year, true) > 1 }}</em></small>
 						</h2>
 						<nav id="list-{{ year }}" class=" [ deck ] ">
 					{% endif %}

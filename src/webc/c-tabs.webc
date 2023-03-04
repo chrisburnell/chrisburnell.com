@@ -1,5 +1,5 @@
 <is-land on:visible>
-	<seven-minute-tabs webc:root webc:keep>
+	<seven-minute-tabs webc:root="override">
 		<ol webc:keep role="tablist" :aria-label="this.title">
 			<li><a :href="`#${this.id}-1`" role="tab">First tab</a></li>
 			<li><a :href="`#${this.id}-2`" role="tab">Second tab</a></li>
@@ -11,7 +11,7 @@
 		<div id="third-tab" role="tabpanel">Third tab content</div>
 	</seven-minute-tabs>
 
-	<template data-island="once">
-		<script webc:keep :src="`/js/components/seven-minute-tabs.js?v=${this.pkg.version}`"></script>
+	<template webc:raw data-island="once">
+		<script src="/js/components/seven-minute-tabs.js"></script>
 	</template>
 </is-land>

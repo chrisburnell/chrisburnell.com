@@ -46,9 +46,6 @@ layout: wrapper
 						{%- if item.key -%}
 							{%- set url = url + author[item.key] -%}
 						{%- endif -%}
-						{%- if item.split -%}
-							{%- set url -%}https://{{ author[item.key].split(item.split)[1] + '/' + item.split + author[item.key].split(item.split)[0] }}{%- endset -%}
-						{%- endif -%}
 						<a{% if not item.primary %} tabindex="-1"{% endif %}{% if item.mf_property %} class=" [ p-{{ item.mf_property }} ] "{% endif %} href="{{ url }}" rel="me"><svg width="20" height="20" aria-hidden="true" focusable="false"><use href="#svg--{{ item.title | lower }}"></use></svg>{{ item.title }}</a>
 					</li>
 				{%- endif -%}

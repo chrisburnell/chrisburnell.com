@@ -82,9 +82,7 @@
 // Make text serifed and italicised
 .fancy {
 	font-family: var(--font-family-serif);
-	font-style: italic;
-	font-synthesis: none;
-	font-variation-settings: "ital" 125;
+	@include italic;
 }
 
 // For salty/silly remarks

@@ -54,7 +54,20 @@
 
 		// Fancy
 		&::after {
-			background-image: linear-gradient(to bottom, #005bbb, #005bbb 50%, #ffd500 50%, #ffd500);
+			background-image: linear-gradient(to right, h(bowhead), h(raven), h(highland), h(coyote), h(highland), h(raven), h(bowhead));
+			background-size: 800% 100%;
+			animation: rainbow calc(var(--animation-duration) * 4) linear infinite;
+
+			@at-root {
+				@keyframes rainbow {
+					from {
+						background-position: 0% 0%;
+					}
+					to {
+						background-position: -800% 0%;
+					}
+				}
+			}
 		}
 
 		&[aria-current="page"],

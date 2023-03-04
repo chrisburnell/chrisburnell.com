@@ -1,7 +1,7 @@
 ////
 /// Quotes
+/// extends %flow
 /// @group global
-/// @extends %flow
 ////
 
 blockquote {
@@ -15,9 +15,7 @@ blockquote {
 
 	p:not(.no-quotes) {
 		font-family: var(--font-family-serif);
-		font-style: italic;
-		font-synthesis: none;
-		font-variation-settings: "ital" 125;
+		@include italic;
 
 		&::before {
 			content: open-quote;

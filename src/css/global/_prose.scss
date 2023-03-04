@@ -20,9 +20,7 @@ p {
 
 :is(abbr, dfn)[title] {
 	color: h(kaiser);
-	font-style: italic;
-	font-synthesis: none;
-	font-variation-settings: "ital" 125;
+	@include italic;
 	font-weight: var(--font-weight-regular);
 	text-decoration: underline;
 	text-decoration-color: h(dove);
@@ -58,12 +56,11 @@ mark {
 	font-weight: var(--font-weight-semibold) !important;
 }
 
-:is(b, strong),
+:is(em, i),
 .italic {
 	font-style: italic !important;
-	font-synthesis: none;
+	font-synthesis: none !important;
 	font-variation-settings: "ital" 125 !important;
-	font-weight: var(--font-weight-regular) !important;
 
 	& > small,
 	small > & {

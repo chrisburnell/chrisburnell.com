@@ -1,11 +1,11 @@
 <is-land class="librarian-island" on:visible>
-	<div webc:root webc:keep class="[ box librarian ] [ flow ]">
+	<div webc:root="override" class="[ box librarian ] [ flow ]">
 		<div webc:keep>
 			<slot></slot>
 		</div>
 	</div>
 
-	<template data-island="once">
-		<script webc:keep type="module" :src="`/js/components/librarian.js?v=${this.pkg.version}`"></script>
+	<template webc:raw data-island="once">
+		<script type="module" src="/js/components/librarian.js"></script>
 	</template>
 </is-land>

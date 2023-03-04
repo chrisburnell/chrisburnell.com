@@ -1,7 +1,8 @@
-<is-land on:visible :import="`/js/components/speedlify-score.js?v=${this.pkg.version}`">
-	<speedlify-score webc:keep :class="this.class" :hash="this.hash" speedlify-url="https://speedlify.chrisburnell.com" :score="this.score" :weight="this.weight" :requests="this.requests" :rank="this.rank" :rank-change="this.rankChange"></speedlify-score>
+<is-land on:visible>
+	<speedlify-score webc:raw webc:root @attributes speedlify-url="https://speedlify.chrisburnell.com"></speedlify-score>
 
-	<template data-island="once">
-		<link webc:keep rel="stylesheet" :href="`/css/components/speedlify-score.css?v=${this.pkg.version}`" />
+	<template webc:raw data-island="once">
+		<link rel="stylesheet" href="/css/components/speedlify-score.css" />
+		<script src="/js/components/speedlify-score.js"></script>
 	</template>
 </is-land>

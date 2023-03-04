@@ -1,11 +1,11 @@
 <is-land on:visible>
 	<details-utils webc:keep>
-		<details webc:root webc:keep>
+		<details webc:root="override">
 			<slot></slot>
 		</details>
 	</details-utils>
 
-	<template data-island="once">
-		<script webc:keep :src="`/js/components/details-utils.js?v=${this.pkg.version}`"></script>
+	<template webc:raw data-island="once">
+		<script src="/js/components/details-utils.js"></script>
 	</template>
 </is-land>

@@ -1,6 +1,6 @@
 {
   "name": "chrisburnell",
-  "version": "3.7.0",
+  "version": "3.7.1",
   "description": "Some real sweet codestuffs.",
   "author": "Chris Burnell <me@chrisburnell.com>",
   "contributors": [
@@ -42,7 +42,7 @@
     "@11ty/eleventy-plugin-directory-output": "^1.0.1",
     "@11ty/eleventy-plugin-inclusive-language": "^1.0.3",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
-    "@11ty/eleventy-plugin-webc": "^0.8.1",
+    "@11ty/eleventy-plugin-webc": "^0.9.3",
     "@11ty/is-land": "^3.0.2",
     "@chrisburnell/bowhead": "^0.3.4",
     "@chrisburnell/eleventy-cache-webmentions": "^1.1.5",

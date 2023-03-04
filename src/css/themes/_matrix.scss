@@ -25,7 +25,7 @@ $matrix-palette: (
 
 	.avatar,
 	.author__image {
-		@extend %fsociety;
+		filter: url("/images/fsociety.svg#fsociety");
 	}
 }
 

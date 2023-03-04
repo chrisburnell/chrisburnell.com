@@ -168,9 +168,7 @@ pre.language-css .token.string,
 	font-weight: var(--font-weight-semibold);
 }
 .token.italic {
-	font-style: italic;
-	font-synthesis: none;
-	font-variation-settings: "ital" 125;
+	@include italic;
 }
 
 .token.entity {

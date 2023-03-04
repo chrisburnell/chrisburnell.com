@@ -21,6 +21,7 @@
 }
 
 kbd {
+	border: 1px solid currentColor;
 	font-weight: var(--font-weight-semibold);
 	text-transform: uppercase;
 	letter-spacing: 1px;

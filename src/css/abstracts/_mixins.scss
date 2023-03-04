@@ -20,6 +20,15 @@
 }
 
 ///
+/// Iralicise words..
+///
+@mixin italic() {
+	font-style: italic;
+	font-synthesis: none;
+	font-variation-settings: "ital" 125;
+}
+
+///
 /// Break words.
 ///
 @mixin break-words() {
