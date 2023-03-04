@@ -43,8 +43,8 @@ Change = ${this.limitDecimals(change, 5)}`
 A = ${this.inputs["font-size-max"].value}px - ${this.inputs["viewport-max"].value}px * ${this.limitDecimals(change, 5)}
 A = ${this.limitDecimals(this.inputs["font-size-max"].value - this.inputs["viewport-max"].value * change)}px = ${startingFontSize}rem`
 
-		this.howB.innerHTML = `B = X * 100vw
-B = ${this.limitDecimals(change, 5)} * 100vw
+		this.howB.innerHTML = `B = 100vw * X
+B = 100vw * ${this.limitDecimals(change, 5)}
 B = ${variableFontSize}vw`
 
 		this.howResult.innerHTML = `Result = clamp(fontSizeMin, A + B, fontSizeMax)

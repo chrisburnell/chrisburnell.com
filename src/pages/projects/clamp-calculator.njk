@@ -71,8 +71,8 @@ A = 14px = 0.875rem</code></pre>
 
 <p><strong aria-hidden="true">3.</strong> The last piece of the puzzle is the most straightforward: we need to represent the rate of change as a value relative to the viewport, and we do so by multiplying the rate of change with <code>100vw</code>.</p>
 
-<pre class="language-none"><code id="how-b">B = Change * 100vw
-B = 0.004 * 100vw
+<pre class="language-none"><code id="how-b">B = 100vw * Change
+B = 100vw * 0.004
 B = 0.4vw</code></pre>
 
 <p><strong aria-hidden="true">4.</strong> Let’s put everything together with the <code>clamp()</code> function, otherwise our calculated value will be incorrect above and below our designated viewport bounds.</p>
