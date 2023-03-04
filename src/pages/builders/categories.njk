@@ -50,10 +50,10 @@ truncate: true
 			<c-librarian>
 				You can sort these {{ category.properPlural }}:
 				<br>
-				<c-librarian-button key="title">by title</c-librarian-button>,
+				<c-librarian-button key="title">by title</c-librarian-button>{% if 'review' in tags %},
 				<c-librarian-button key="author">by author</c-librarian-button>,
-				<c-librarian-button key="rating">by rating</c-librarian-button>{% if category.title != 'beer' %},
-				<c-librarian-button key="release">by release date</c-librarian-button>{% endif %}, or
+				<c-librarian-button key="rating">by rating</c-librarian-button>{% endif %}{% if category.title != 'beer' and category.title != 'video' %},
+				<c-librarian-button key="release">by release date</c-librarian-button>{% endif %}{% if category.title != 'video' %},{% endif %} or
 				<c-librarian-button key="chronological" default="descending">by publish date</c-librarian-button>
 			</c-librarian>
 			<nav class=" [ grid ] [ shelf {% if collection[0].data.read_of %}shelf--books {% endif %}] " aria-live="polite">

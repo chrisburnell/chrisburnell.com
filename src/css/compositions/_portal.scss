@@ -1,0 +1,67 @@
+////
+/// Portal
+/// @group compositions
+///
+/// --aside-size (clamp(16.00rem, 1.43rem + 27.43vw, 22.00rem))
+///     Defines the inline-size of the aside.
+/// --columns (6)
+///     Defines how many sub-columns should make up the content column.
+/// --outdent-gap (var(--size-gap) OR 0)
+///     Defines the gap between the content and outdent column.
+/// --outdent-size (1fr OR 0)
+///     Defines the inline-size of the outdent.
+////
+
+.portal {
+	display: grid;
+	align-items: start;
+	grid-template-rows:
+		[title-start]
+		auto
+		[title-end content-start]
+		auto
+		[content-end responses-start]
+		auto
+		[responses-end browse-start]
+		auto
+		[browse-end ads-start]
+		auto
+		[ads-end];
+	grid-template-columns:
+		[marginalia-start content-start outdent-start]
+		auto
+		[outdent-end content-end marginalia-end];
+
+	@include media("above:medium") {
+		grid-template-columns:
+			[marginalia-start]
+			1fr
+			[marginalia-end content-start]
+			6fr
+			[content-end outdent-start]
+			1fr
+			[outdent-end];
+	}
+
+	.title {
+		background-color: h(wolf);
+		color: h(milou);
+		min-block-size: calc(100vh - var(--size-large));
+		min-block-size: calc(100dvb - var(--size-large));
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding-block: 0;
+		font-size: calc(var(--font-size-alpha) * 2);
+	}
+
+	.description {
+		margin-block: 0;
+		padding-block: var(--size-gigantic) 1rem;
+		font-size: var(--font-size-alpha);
+	}
+
+	.e-content {
+		font-size: var(--font-size-gamma);
+	}
+}

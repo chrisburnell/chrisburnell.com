@@ -6,7 +6,7 @@ module.exports = {
 	category: "music",
 	categoryProper: "music review",
 	categoryProperPlural: "music reviews",
-	tags: ["music"],
+	tags: ["music", "review"],
 	emoji: "🎶",
 	prefix: "m",
 }

@@ -83,7 +83,8 @@
 .fancy {
 	font-family: var(--font-family-serif);
 	font-style: italic;
-	font-variation-settings: "ital" 1;
+	font-synthesis: none;
+	font-variation-settings: "ital" 125;
 }
 
 // For salty/silly remarks

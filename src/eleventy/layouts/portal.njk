@@ -2,27 +2,38 @@
 layout: wrapper
 ---
 
-<header class=" [ header ] ">
-	<div class=" [ wrap ] ">
-		<a rel="home" class=" [ logo ] [ canada ] " href="/" title="{{ site.title }}">
-			<img src="{{ site.logo }}" alt="" width="120" height="120" role="presentation">
-		</a>
-		<nav class=" [ navigation ] " aria-label="Website">
-			<ol class=" [ navigation__list ] ">
-				{% for link in navigation %}
-					{% if link.header %}
-						<li>
-							<a href="{{ link.url }}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title | safe }}</a>
-						</li>
-					{% endif %}
-				{% endfor %}
-			</ol>
-		</nav>
-	</div>
-</header>
-
 <main class=" [ main ] [ flow ] ">
-	{{ content | safe }}
+	<article id="content" class=" [ portal ] [ post h-{{ mf_root }} ] ">
+
+		<h1 id="title" class=" [ title ] ">
+			<span>{{ title | safe }}</span>
+		</h1>
+
+		<div class=" [ content ] [ flow ] ">
+
+			{% if draft %}
+				<p class=" [ box  box--warning ] [ flow ] ">This is still a <em>draft</em>! The quality of this {{ categoryProper | default(category) | default('post') }} may not be up to snuff, and is probably far from being complete.</p>
+			{% endif %}
+
+			{% if description %}
+				<div class=" [ description ] [ flow ] [ p-summary ] ">
+					{{ description | markdownFormat | safe }}
+				</div>
+			{% endif %}
+
+			{% include 'updated.njk' %}
+
+			<div id="content" class=" [ e-content ] [ flow ] ">
+				{{ content | safe }}
+			</div>
+		</div>
+
+		{# {% include 'responses.njk' %} #}
+
+		{# {% include 'browse.njk' %} #}
+
+		{% include 'ads.njk' %}
+	</article>
 </main>
 
 <footer class=" [ footer ] ">

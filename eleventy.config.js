@@ -107,10 +107,12 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.addCollection("tags", tagsBuilder)
 
 	// Layouts
+	eleventyConfig.addLayoutAlias("wrapper", "wrapper.njk")
 	eleventyConfig.addLayoutAlias("base", "base.njk")
 	eleventyConfig.addLayoutAlias("page", "page.njk")
 	eleventyConfig.addLayoutAlias("archive", "archive.njk")
 	eleventyConfig.addLayoutAlias("post", "post.njk")
+	eleventyConfig.addLayoutAlias("portal", "portal.njk")
 	eleventyConfig.addLayoutAlias("feed", "feed.njk")
 
 	// Static Files Passthrough
@@ -135,6 +137,7 @@ module.exports = (eleventyConfig) => {
 	})
 
 	// Watch targets
+	eleventyConfig.addWatchTarget("css")
 	eleventyConfig.addWatchTarget("./src/css/")
 	eleventyConfig.addWatchTarget("./src/js/")
 

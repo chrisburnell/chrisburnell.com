@@ -5,7 +5,6 @@
 
 .description {
 	padding-block-end: var(--size-large);
-	margin-block-end: var(--size-large);
 	font-family: var(--font-family-serif);
 	font-size: var(--font-size-gamma);
 	font-weight: var(--font-weight-regular);
@@ -27,7 +26,8 @@
 
 	time {
 		font-style: italic;
-		font-variation-settings: "ital" 1;
+		font-synthesis: none;
+		font-variation-settings: "ital" 125;
 		white-space: nowrap;
 	}
 
@@ -46,6 +46,7 @@
 // Appears just below title above:medium, above title below:medium
 .description--published {
 	font-size: var(--font-size-default);
+	margin-block-end: var(--size-large);
 
 	@include media("below:tiny") {
 		font-size: var(--font-size-small);
