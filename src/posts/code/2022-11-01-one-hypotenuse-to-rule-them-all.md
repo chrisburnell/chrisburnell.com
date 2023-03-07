@@ -60,7 +60,7 @@ Which gives us… <var>1</var>
 
 Interesting! 🤔
 
-<style>
+{% css 'critical' %}
 .right-triangle {
     background-image:
         linear-gradient(
@@ -117,4 +117,4 @@ Interesting! 🤔
     inset-inline-start: 50%;
     transform: translateX(-50%);
 }
-</style>
+{% endcss %}

@@ -69,7 +69,7 @@ Change = 0.004</code></pre>
 A = 18px - 1000px * 0.004
 A = 14px = 0.875rem</code></pre>
 
-<p><strong aria-hidden="true">3.</strong> The last piece of the puzzle is the most straightforward: we need to represent the rate of change as a value relative to the viewport, and we do so by multiplying the rate of change with <code>100vw</code>.</p>
+<p><strong aria-hidden="true">3.</strong> The last piece of the puzzle is the most straightforward: we need to represent the rate of change as a value relative to the viewport, and we do so by multiplying the rate of change with <code>100vw</code>. <em>(Note: You could also substitute in other units, like <code>100vh</code> or <code>100dvb</code>, depending on whether you want to effect change with the viewport width, viewport height, etc.)</em></p>
 
 <pre class="language-none"><code id="how-b">B = 100vw * Change
 B = 100vw * 0.004
