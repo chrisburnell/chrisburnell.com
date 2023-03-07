@@ -39,11 +39,11 @@ class ClampCalculator {
 Change = (${this.inputs["font-size-max"].value}px - ${this.inputs["font-size-min"].value}px) / (${this.inputs["viewport-max"].value}px - ${this.inputs["viewport-min"].value}px)
 Change = ${this.limitDecimals(change, 5)}`
 
-		this.howA.innerHTML = `A = fontSizeMax - viewportMax * X
+		this.howA.innerHTML = `A = fontSizeMax - viewportMax * Change
 A = ${this.inputs["font-size-max"].value}px - ${this.inputs["viewport-max"].value}px * ${this.limitDecimals(change, 5)}
 A = ${this.limitDecimals(this.inputs["font-size-max"].value - this.inputs["viewport-max"].value * change)}px = ${startingFontSize}rem`
 
-		this.howB.innerHTML = `B = 100vw * X
+		this.howB.innerHTML = `B = 100vw * Change
 B = 100vw * ${this.limitDecimals(change, 5)}
 B = ${variableFontSize}vw`
 
