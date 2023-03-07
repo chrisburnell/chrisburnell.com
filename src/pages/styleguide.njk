@@ -26,33 +26,52 @@ css: styleguide.css
 
 <h2>Sizes</h2>
 
-<p>Fluid Size Scale below was generated with <a href="/clamp-calculator">clamp() Calculator</a> using the following values:</p>
+<c-details open>
+	<summary>Single-Steps</summary>
+	<dl>
+		{%- for name, size in designTokens.sizes -%}
+			{%- if not '-' in name -%}
+				<dt>{{ name | replace('-', ' ') | title | replace(' ', '–') }}</dt>
+				<dd><div class=" [ size-example  size-example--{{ name }} ] " title="{{ size }}"></div></dd>
+			{%- endif -%}
+		{%- endfor -%}
+	</dl>
+</c-details>
 
-<dl>
-	<dt>Root Font Size</dt>
-	<dd>16px</dd>
-	<dt>Viewport Widths</dt>
-	<dd>700–1600px</dd>
-	<dt>Sizes</dt>
-	<dd>
-		64–72px
-		<br>
-		36–42px
-		<br>
-		20–24px
-		<br>
-		10–12px
-		<br>
-		5–6px
-	</dd>
-</dl>
+<c-details>
+	<summary>Multi-Steps</summary>
+	<dl>
+		{%- for name, size in designTokens.sizes -%}
+			{%- if '-' in name -%}
+				<dt>{{ name | replace('-', ' ') | title | replace(' ', '–') }}</dt>
+				<dd><div class=" [ size-example  size-example--{{ name }} ] " title="{{ size }}"></div></dd>
+			{%- endif -%}
+		{%- endfor -%}
+	</dl>
+</c-details>
 
-<dl>
-	{%- for name, size in designTokens.sizes -%}
-		<dt>{{ name | title }}</dt>
-		<dd><div class=" [ size-example  size-example--{{ name }} ] " title="{{ size }}"></div></dd>
-	{%- endfor -%}
-</dl>
+<c-details>
+	<summary>Fluid Size Scale values</summary>
+	<p>Values generated using <strong><a href="/clamp-calculator/">clamp() Calculator</a></strong> with the following values:</p>
+	<dl>
+		<dt>Root Font Size</dt>
+		<dd class="monospace">16px</dd>
+		<dt>Viewport Widths</dt>
+		<dd class="monospace">700–1600px</dd>
+		<dt>Sizes</dt>
+		<dd class="monospace">
+			64–72px
+			<br>
+			36–42px
+			<br>
+			20–24px
+			<br>
+			10–12px
+			<br>
+			5–6px
+		</dd>
+	</dl>
+</c-details>
 
 <h2>Fonts</h2>
 
@@ -68,27 +87,6 @@ css: styleguide.css
 
 <h2>Headings</h2>
 
-<p>Fluid Type Scale was generated with <a href="/clamp-calculator">clamp() Calculator</a> using the following values:</p>
-
-<dl>
-	<dt>Root Font Size</dt>
-	<dd>16px</dd>
-	<dt>Viewport Widths</dt>
-	<dd>700–1600px</dd>
-	<dt>Font Sizes</dt>
-	<dd>
-		36–64px
-		<br>
-		20–24px
-		<br>
-		18–22px
-		<br>
-		16–18px
-		<br>
-		14–16px
-	</dd>
-</dl>
-
 <div class=" [ flow ] " style="--flow-space: 1rem">
 	<div class="alpha">Heading Level 1</div>
 	<div class="beta">Heading Level 2</div>
@@ -97,6 +95,29 @@ css: styleguide.css
 	<div class="epsilon">Heading Level 5</div>
 	<div class="zeta">Heading Level 6</div>
 </div>
+
+<c-details>
+	<summary>Fluid Type Scale values</summary>
+	<p>Values generated using <strong><a href="/clamp-calculator/">clamp() Calculator</a></strong> with the following values:</p>
+	<dl>
+		<dt>Root Font Size</dt>
+		<dd class="monospace">16px</dd>
+		<dt>Viewport Widths</dt>
+		<dd class="monospace">700–1600px</dd>
+		<dt>Font Sizes</dt>
+		<dd class="monospace">
+			36–64px
+			<br>
+			20–24px
+			<br>
+			18–22px
+			<br>
+			16–18px
+			<br>
+			14–16px
+		</dd>
+	</dl>
+</c-details>
 
 <h2>Paragraph</h2>
 

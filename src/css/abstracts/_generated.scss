@@ -46,11 +46,11 @@ $font-families: (
 	sophisticated: "Papyrus, serif",
 );
 $font-sizes: (
-	small: clamp(0.875rem, 0.778rem + 0.222vw, 1rem),
-	default: clamp(1rem, 0.903rem + 0.222vw, 1.125rem),
-	gamma: clamp(1.125rem, 0.931rem + 0.444vw, 1.375rem),
-	beta: clamp(1.25rem, 1.056rem + 0.444vw, 1.5rem),
 	alpha: clamp(2.25rem, 0.889rem + 3.111vw, 4rem),
+	beta: clamp(1.25rem, 1.056rem + 0.444vw, 1.5rem),
+	gamma: clamp(1.125rem, 0.931rem + 0.444vw, 1.375rem),
+	default: clamp(1rem, 0.903rem + 0.222vw, 1.125rem),
+	small: clamp(0.875rem, 0.778rem + 0.222vw, 1rem),
 );
 $font-weights: (
 	light: 300,
@@ -93,8 +93,14 @@ $sizes: (
 	small: clamp(0.625rem, 0.528rem + 0.222vw, 0.75rem),
 	tiny: clamp(0.313rem, 0.264rem + 0.111vw, 0.375rem),
 	large-gigantic: clamp(2.25rem, 0.5rem + 4vw, 4.5rem),
+	medium-gigantic: clamp(1.25rem, -1.278rem + 5.778vw, 4.5rem),
+	small-gigantic: clamp(0.625rem, -2.389rem + 6.889vw, 4.5rem),
+	tiny-gigantic: clamp(0.313rem, -2.944rem + 7.444vw, 4.5rem),
 	medium-large: clamp(1.25rem, 0.181rem + 2.444vw, 2.625rem),
+	small-large: clamp(0.625rem, -0.931rem + 3.556vw, 2.625rem),
+	tiny-large: clamp(0.313rem, -1.486rem + 4.111vw, 2.625rem),
 	small-medium: clamp(0.625rem, -0.056rem + 1.556vw, 1.5rem),
+	tiny-medium: clamp(0.313rem, -0.611rem + 2.111vw, 1.5rem),
 	tiny-small: clamp(0.313rem, -0.028rem + 0.778vw, 0.75rem),
 );
 $z-indexes: (

@@ -6,8 +6,8 @@
 .title {
 	display: block;
 	gap: var(--size-gutter);
-	padding-block-start: var(--size-gigantic);
-	padding-block-end: var(--size-large);
+	padding-block-start: var(--size-large-gigantic);
+	padding-block-end: var(--size-medium-large);
 	overflow: hidden;
 	position: relative;
 	contain: content; // helps painting with .perch inside

@@ -28,12 +28,20 @@ summary {
 		font-weight: var(--font-weight-heavy);
 	}
 
+	&:hover {
+		text-decoration: underline;
+		text-decoration-color: h(alto);
+		text-decoration-thickness: var(--size-border-thin);
+		text-decoration-skip-ink: auto;
+		text-underline-offset: 0.125em;
+	}
+
 	[open] & {
+		padding-block-end: var(--size-small);
 		list-style: "- " inside;
 	}
 
 	& + * {
-		margin-block-start: var(--size-small);
 		border-block-start: var(--size-border-thin) solid h(bowhead);
 		padding-block-start: var(--size-medium);
 	}

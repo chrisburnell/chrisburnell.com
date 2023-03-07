@@ -137,7 +137,6 @@ module.exports = (eleventyConfig) => {
 	})
 
 	// Watch targets
-	eleventyConfig.addWatchTarget("css")
 	eleventyConfig.addWatchTarget("./src/css/")
 	eleventyConfig.addWatchTarget("./src/js/")
 

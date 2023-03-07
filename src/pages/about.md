@@ -83,12 +83,14 @@ I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link
 
 ## Contact
 
-<dl>
-    <dt>Email:</dt>
-    <dd><a class=" [ canada ] " href="mailto:{{ author.email }}">{{ author.email }}</a></dd>
-    <dt>Mastodon:</dt>
-    <dd><a class=" [ canada ] " href="https://{{ author.mastodon_domain }}/users/{{ author.mastodon.split('@') | first }}">{{ '@' + author.mastodon }}</a></dd>
-</dl>
+<address>
+    <dl>
+        <dt>Email:</dt>
+        <dd><a class=" [ canada ] " href="mailto:{{ author.email }}">{{ author.email }}</a></dd>
+        <dt>Mastodon:</dt>
+        <dd><a class=" [ canada ] " href="https://{{ author.mastodon_domain }}/users/{{ author.mastodon.split('@') | first }}">{{ '@' + author.mastodon }}</a></dd>
+    </dl>
+</address>
 
 ## Colophon
 
