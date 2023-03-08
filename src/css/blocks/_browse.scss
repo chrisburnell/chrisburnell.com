@@ -19,6 +19,9 @@
 		display: block;
 		font-weight: var(--font-weight-semibold);
 	}
+	&:not(:active) {
+		color: h(dove);
+	}
 }
 .browse__previous {
 	&::before {

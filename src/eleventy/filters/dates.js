@@ -34,8 +34,8 @@ module.exports = {
 	httpDate: (value) => {
 		return DateTime.fromJSDate(new Date(value)).toHTTP()
 	},
-	rfcDate: (value, showTimezone = true) => {
-		let format = "yyyy-MM-dd'T'HH:mm:ss" + (showTimezone ? "ZZZ" : "")
+	rfc3339Date: (value, showTimezone = true) => {
+		let format = "yyyy-MM-dd'T'HH:mm:ss" + (showTimezone ? "ZZ" : "")
 		return DateTime.fromJSDate(new Date(value)).toFormat(format)
 	},
 	w3cDate: (value) => {
