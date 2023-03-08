@@ -4,7 +4,7 @@
   <xsl:template match="*">
     <html xmlns="http://www.w3.org/1999/xhtml">
       <head>
-        <title><xsl:value-of select="/rss/channel/title" /></title>
+        <title><xsl:value-of select="/feed/title" /></title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <style>{% include '../../css/xslt.css' %}</style>
@@ -25,28 +25,28 @@
         <main class=" [ main ] [ flow ] ">
           <div id="content" class=" [ pantheon ] [ wrap ] [ page ] ">
             <h1 id="title" class=" [ title ] ">
-              <xsl:value-of select="/rss/channel/title" />
+              <xsl:value-of select="/feed/title" />
             </h1>
             <div class=" [ description ] [ flow ] ">
-              <p><xsl:value-of select="/rss/channel/description" /></p>
+              <p><xsl:value-of select="/feed/subtitle" /></p>
             </div>
             <div class=" [ content ] [ flow ] ">
-              <h2>Recent Posts</h2>
+              <h2>Latest Posts</h2>
               <nav class=" [ deck ] ">
-                <xsl:for-each select="/rss/channel/item">
+                <xsl:for-each select="/feed/entry">
                   <article>
                     <h3>
                       <a target="_blank" rel="noopener">
                       <xsl:attribute name="href">
-                        <xsl:value-of select="link" />
+                        <xsl:value-of select="id" />
                       </xsl:attribute>
                       <xsl:value-of select="title" />
                       </a>
                     </h3>
-                    <p><xsl:value-of select="description" /></p>
+                    <p><xsl:value-of select="summary" /></p>
                     <ul class=" [ cluster ] [ deck__meta ] ">
                       <li>
-                        <small>published </small> <xsl:value-of select="pubDate" />
+                        <small>published </small> <xsl:value-of select="published" />
                       </li>
                     </ul>
                   </article>
@@ -57,6 +57,27 @@
         </main>
         <footer class=" [ footer ] ">
           <div class=" [ wrap ] [ footer__grid ] ">
+            <ol class=" [ cluster ] [ footer__navigation ] [ strong ] ">
+              {%- for link in navigation -%}
+                {%- if link.footer -%}
+                  <li><a href="{{ link.url }}">{{ link.title | safe }}</a></li>
+                {%- endif -%}
+              {%- endfor -%}
+            </ol>
+            <ol class=" [ cluster ] [ footer__navigation ] ">
+              <li><a id="copyright" rel="license" href="/license/">© {{ site.established }}–{{ global.now | friendlyDate("yyyy") }} <span class=" [ canada ] ">{{ author.name }}</span></a></li>
+              {%- for item in socials -%}
+                {%- if not item.hidden and item.primary -%}
+                  <li>
+                    {%- set url = item.url -%}
+                    {%- if item.key -%}
+                      {%- set url = url + author[item.key] -%}
+                    {%- endif -%}
+                    <a tabindex="-1"{% if item.mf_property %} class=" [ p-{{ item.mf_property }} ] "{% endif %} href="{{ url }}" rel="me">{{ item.title }}</a>
+                  </li>
+                {%- endif -%}
+              {%- endfor -%}
+            </ol>
             <div class=" [ author ] [ h-card  p-author ] ">
               <a class=" [ author__information ] [ flow ] [ u-url u-uid ] " href="/about/" rel="author  me">
                 <img alt="{{ author.name }}" class=" [ author__image ] [ canada ] [ u-photo ] "
@@ -73,20 +94,13 @@
               </a>
               <div class=" [ author__biography ] [ flow ] ">
                 <p class=" [ p-note ] ">{{ author.description | safe }}</p>
+                <ol class=" [ cluster ] ">
+                  <li><a href="https://xn--sr8hvo.ws/💘🇹🇫/previous" class=" [ small ] " title="Previous website in the IndieWeb Web Ring" style="white-space: nowrap;">← Previous</a></li>
+                  <li><a href="https://xn--sr8hvo.ws/" style="white-space: nowrap;">Part of the IndieWeb Webring</a></li>
+                  <li><a href="https://xn--sr8hvo.ws/💘🇹🇫/next" class=" [ small ] " title="Next website in the IndieWeb Web Ring" style="white-space: nowrap;">Next →</a></li>
+                </ol>
               </div>
             </div>
-            <ol class=" [ cluster ] [ footer__navigation ] ">
-              <li>
-                <a id="copyright" rel="license" href="/license/">© {{ site.established }}–{{ global.now | friendlyDate("yyyy") }} <span class=" [ canada ] ">{{ author.name }}</span></a>
-              </li>{% for link in navigation %}{% if link.secondary %}<li>
-                <a href="{{ link.url }}">{{ link.title | safe }}</a>
-              </li>{% endif %}{% endfor %}
-            </ol>
-            <ol class=" [ cluster ] [ footer__navigation ] ">{% for item in socials %}{% if item.url and item.primary and not item.hidden %}{% set url = item.url %}{% if item.key %}{% set url = url + author[item.key] %}{% endif %}
-              <li>
-                <a href="{{ url }}">{{ item.title }}</a>
-              </li>{% endif %}{% endfor %}
-            </ol>
           </div>
         </footer>
       </body>

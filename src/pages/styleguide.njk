@@ -26,17 +26,14 @@ css: styleguide.css
 
 <h2>Sizes</h2>
 
-<c-details open>
-	<summary>Single-Steps</summary>
-	<dl>
-		{%- for name, size in designTokens.sizes -%}
-			{%- if not '-' in name -%}
-				<dt>{{ name | replace('-', ' ') | title | replace(' ', '–') }}</dt>
-				<dd><div class=" [ size-example  size-example--{{ name }} ] " title="{{ size }}"></div></dd>
-			{%- endif -%}
-		{%- endfor -%}
-	</dl>
-</c-details>
+<dl>
+	{%- for name, size in designTokens.sizes -%}
+		{%- if not '-' in name -%}
+			<dt>{{ name | replace('-', ' ') | title | replace(' ', '–') }}</dt>
+			<dd><div class=" [ size-example  size-example--{{ name }} ] " title="{{ size }}"></div></dd>
+		{%- endif -%}
+	{%- endfor -%}
+</dl>
 
 <c-details>
 	<summary>Multi-Steps</summary>

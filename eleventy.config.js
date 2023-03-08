@@ -4,14 +4,15 @@ const site = require("#data/site")
 
 // Import Eleventy plugins
 const caniusePlugin = require("#plugins/caniusePlugin")
-const pregenImagePlugin = require("#plugins/pregenImagePlugin")
-const imagePlugin = require("#plugins/imagePlugin")
 const imageAvatarPlugin = require("#plugins/imageAvatarPlugin")
+const imagePlugin = require("#plugins/imagePlugin")
+const pregenImagePlugin = require("#plugins/pregenImagePlugin")
 // const albumCoverPlugin = require("#plugins/albumCoverPlugin")
 // const inclusiveLanguagePlugin = require("@11ty/eleventy-plugin-inclusive-language")
-const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output")
-const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight")
 const bundlerPlugin = require("@11ty/eleventy-plugin-bundle")
+const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output")
+const rssPlugin = require("@11ty/eleventy-plugin-rss");
+const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight")
 const webCPlugin = require("@11ty/eleventy-plugin-webc")
 
 // Import transforms
@@ -43,10 +44,17 @@ const markdownAbbr = require("markdown-it-abbr")
 module.exports = (eleventyConfig) => {
 	// Plugins
 	eleventyConfig.addPlugin(caniusePlugin)
-	eleventyConfig.addPlugin(imagePlugin)
 	eleventyConfig.addPlugin(imageAvatarPlugin)
-	eleventyConfig.addPlugin(syntaxHighlightPlugin)
+	eleventyConfig.addPlugin(imagePlugin)
+	if (process.env.PREGENERATE_IMAGES) {
+		eleventyConfig.addPlugin(pregenImagePlugin)
+	}
 	eleventyConfig.addPlugin(bundlerPlugin)
+	if (process.env.DIRECTORY_OUTPUT) {
+		eleventyConfig.addPlugin(directoryOutputPlugin)
+	}
+	eleventyConfig.addPlugin(rssPlugin)
+	eleventyConfig.addPlugin(syntaxHighlightPlugin)
 	eleventyConfig.addPlugin(webCPlugin, {
 		components: "./src/webc/**/*.webc",
 		useTransform: true,
@@ -60,12 +68,6 @@ module.exports = (eleventyConfig) => {
 	// })
 	// eleventyConfig.addPlugin(albumCoverPlugin)
 
-	if (process.env.DIRECTORY_OUTPUT) {
-		eleventyConfig.addPlugin(directoryOutputPlugin)
-	}
-	if (process.env.PREGENERATE_IMAGES) {
-		eleventyConfig.addPlugin(pregenImagePlugin)
-	}
 
 	// Transforms
 	eleventyConfig.addTransform("parse", parseTransform)
