@@ -14,8 +14,6 @@
 	<logo>{{ site.url + author.avatar }}</logo>
 	<updated>{{ collections[related_collection] | getNewestCollectionItemDate | rfc3339Date }}</updated>
 	<generator>{{ eleventy.generator }}</generator>
-	<atom:link rel="self" href="{{ site.url + page.url }}" type="application/rss+xml" />
-	<atom:link rel="hub" href="{{ author.urls.switchboard }}" />
 	{%- for item in collections[related_collection] | limit(site.limits.feed) %}
 	{%- set item_of = item.data.bookmark_of | default(item.data.drink_of) | default(item.data.like_of) | default(item.data.listen_of) | default(item.data.play_of) | default(item.data.read_of) | default(item.data.watch_of) -%}
 	{%- set item_of_url = item_of -%}
@@ -65,10 +63,6 @@
 			<id>{{ item_of_url }}</id>
 			<title>{{ item_of_title | safe }}</title>
 		</source>
-		<atom:link rel="via" href="{{ item_of_url }}" />
-		{%- endif %}
-		{% if item.data.in_reply_to -%}
-		<atom:link rel="related" href="{{ item.data.in_reply_to.url | default(item.data.in_reply_to) }}" />
 		{%- endif %}
 	</entry>
 	{%- endfor %}
