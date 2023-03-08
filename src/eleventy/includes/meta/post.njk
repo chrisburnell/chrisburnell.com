@@ -58,9 +58,9 @@
 			{% else %}
 				<small>took place</small>
 			{% endif %}
-			<time class=" [ dt-start ] " datetime="{{ rsvp.date | rfcDate }}">{{ rsvp.date | friendlyDate }} {{ rsvp.date | friendlyTime(false) }}</time>
+			<time class=" [ dt-start ] " datetime="{{ rsvp.date | rfc3339Date }}">{{ rsvp.date | friendlyDate }} {{ rsvp.date | friendlyTime(false) }}</time>
 			–
-			<time class=" [ dt-end ] " datetime="{{ rsvp.finish | rfcDate }}">{% if rsvp.date | friendlyDate != rsvp.finish | friendlyDate %}{{ rsvp.finish | friendlyDate }} {% endif %}{{ rsvp.finish | friendlyTime(true) }}</time>
+			<time class=" [ dt-end ] " datetime="{{ rsvp.finish | rfc3339Date }}">{% if rsvp.date | friendlyDate != rsvp.finish | friendlyDate %}{{ rsvp.finish | friendlyDate }} {% endif %}{{ rsvp.finish | friendlyTime(true) }}</time>
 		</li>
 	{% endif %}
 	{% if show_reading_length %}
@@ -126,7 +126,7 @@
 		<li class=" [ date-released ] ">
 			<c-emoji>{{ emojis.calendar }}</c-emoji>
 			<small>released</small>
-			<time class=" [ dt-released ] " datetime="{{ release | rfcDate }}">{{ release | friendlyDate }}</time>
+			<time class=" [ dt-released ] " datetime="{{ release | rfc3339Date }}">{{ release | friendlyDate }}</time>
 		</li>
 	{% endif %}
 	{% if rating %}

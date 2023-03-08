@@ -94,37 +94,37 @@
 			{% if item.data.rsvp.date | friendlyDate == global.now | friendlyDate %}
 				{# Today #}
 				<small>from</small>
-				<time class=" [ dt-start ] " datetime="{{ item.data.rsvp.date | rfcDate }}">{{ item.data.rsvp.date | friendlyTime(false) }}</time>
+				<time class=" [ dt-start ] " datetime="{{ item.data.rsvp.date | rfc3339Date }}">{{ item.data.rsvp.date | friendlyTime(false) }}</time>
 				–
-				<time class=" [ dt-end ] " datetime="{{ item.data.rsvp.finish | rfcDate }}">{{ item.data.rsvp.finish | friendlyTime(true) }}</time>
+				<time class=" [ dt-end ] " datetime="{{ item.data.rsvp.finish | rfc3339Date }}">{{ item.data.rsvp.finish | friendlyTime(true) }}</time>
 			{% elif item.data.rsvp.date | epoch > global.now %}
 				{# Future #}
 				<small>in</small>
 				{{ global.now | daysUntil(item.data.rsvp.date) }} days
 				<small>on</small>
 				{% if item.data.rsvp.date | friendlyDate != item.data.rsvp.finish | friendlyDate %}
-					<time class=" [ dt-start ] " datetime="{{ item.data.rsvp.date | rfcDate }}">{{ item.data.rsvp.date | friendlyDate }}</time>
+					<time class=" [ dt-start ] " datetime="{{ item.data.rsvp.date | rfc3339Date }}">{{ item.data.rsvp.date | friendlyDate }}</time>
 					–
-					<time class=" [ dt-end ] " datetime="{{ item.data.rsvp.finish | rfcDate }}">{{ item.data.rsvp.finish | friendlyDate }}</time>
+					<time class=" [ dt-end ] " datetime="{{ item.data.rsvp.finish | rfc3339Date }}">{{ item.data.rsvp.finish | friendlyDate }}</time>
 				{% else %}
-					<time class=" [ dt-start ] " datetime="{{ item.data.rsvp.date | rfcDate }}">{{ item.data.rsvp.date | friendlyDate }}</time>
-					<time class=" [ dt-end ] " datetime="{{ item.data.rsvp.finish | rfcDate }}" hidden></time>
+					<time class=" [ dt-start ] " datetime="{{ item.data.rsvp.date | rfc3339Date }}">{{ item.data.rsvp.date | friendlyDate }}</time>
+					<time class=" [ dt-end ] " datetime="{{ item.data.rsvp.finish | rfc3339Date }}" hidden></time>
 				{% endif %}
 			{% elif item.data.rsvp.date | epoch < global.now and item.data.rsvp.finish | epoch > global.now %}
 				{# Current #}
 				<small>from</small>
-				<time class=" [ dt-start ] " datetime="{{ item.data.rsvp.date | rfcDate }}">{{ item.data.rsvp.date | friendlyTime(false) }}</time>
+				<time class=" [ dt-start ] " datetime="{{ item.data.rsvp.date | rfc3339Date }}">{{ item.data.rsvp.date | friendlyTime(false) }}</time>
 				–
-				<time class=" [ dt-end ] " datetime="{{ item.data.rsvp.finish | rfcDate }}">{{ item.data.rsvp.finish | friendlyTime(true) }}</time>
+				<time class=" [ dt-end ] " datetime="{{ item.data.rsvp.finish | rfc3339Date }}">{{ item.data.rsvp.finish | friendlyTime(true) }}</time>
 			{% elif item.data.rsvp.date %}
 				{# Past #}
 				<small>on</small>
-				<time class=" [ dt-start ] " datetime="{{ item.data.rsvp.date | rfcDate }}">{{ item.data.rsvp.date | friendlyDate }}</time>
+				<time class=" [ dt-start ] " datetime="{{ item.data.rsvp.date | rfc3339Date }}">{{ item.data.rsvp.date | friendlyDate }}</time>
 				{% if item.data.rsvp.date | friendlyDate != item.data.rsvp.finish | friendlyDate %}
 					–
-					<time class=" [ dt-end ] " datetime="{{ item.data.rsvp.finish | rfcDate }}">{{ item.data.rsvp.finish | friendlyDate }}</time>
+					<time class=" [ dt-end ] " datetime="{{ item.data.rsvp.finish | rfc3339Date }}">{{ item.data.rsvp.finish | friendlyDate }}</time>
 				{% else %}
-					<time class=" [ dt-end ] " datetime="{{ item.data.rsvp.finish | rfcDate }}" hidden></time>
+					<time class=" [ dt-end ] " datetime="{{ item.data.rsvp.finish | rfc3339Date }}" hidden></time>
 				{% endif %}
 			{% endif %}
 		</div>
@@ -162,12 +162,12 @@
 		<ul class=" [ cluster ] [ deck__meta ] ">
 			{% if item.data.updated %}
 				<li>
-					<small>updated</small> <a href="{{ item.url }}#updated" tabindex="-1"><time class=" [ dt-updated ] " datetime="{{ item.data.updated | rfcDate }}">{{ item.data.updated | friendlyDateLong | safe }}</time></a>
+					<small>updated</small> <a href="{{ item.url }}#updated" tabindex="-1"><time class=" [ dt-updated ] " datetime="{{ item.data.updated | rfc3339Date }}">{{ item.data.updated | friendlyDateLong | safe }}</time></a>
 				</li>
 			{% endif %}
 			{% if item.data.date or item.date %}
 				<li>
-					<small>published</small> <a class=" [ u-url ] " href="{{ item.url }}"{% if item_title or item_of_title %} tabindex="-1"{% endif %}><time class=" [ dt-published ] " datetime="{{ item.data.date | default(item.date) | rfcDate }}">{{ item.data.date | default(item.date) | friendlyDateLong | safe }}</time></a>
+					<small>published</small> <a class=" [ u-url ] " href="{{ item.url }}"{% if item_title or item_of_title %} tabindex="-1"{% endif %}><time class=" [ dt-published ] " datetime="{{ item.data.date | default(item.date) | rfc3339Date }}">{{ item.data.date | default(item.date) | friendlyDateLong | safe }}</time></a>
 				</li>
 			{% endif %}
 			{% if (item.data.show_responses and item.data.webmentions.length) or item.data.externalLikes or item.data.stargazers %}

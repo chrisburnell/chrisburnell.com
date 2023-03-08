@@ -37,9 +37,9 @@ layout: base
 						<a href="{{ author_lookup.url | toArray | first }}">{{ author_lookup.title }}</a>
 					{%- endif %},
 				{%- endif %}
-				was published on <time class=" [ dt-published ] " datetime="{{ date | rfcDate }}">{{ date | friendlyDateLong | safe }}</time>
+				was published on <time class=" [ dt-published ] " datetime="{{ date | rfc3339Date }}">{{ date | friendlyDateLong | safe }}</time>
 				{%- if updated %}
-					and last updated on <time class=" [ dt-updated ] " datetime="{{ updated | rfcDate }}">{{ updated | friendlyDateLong | safe }}</time>
+					and last updated on <time class=" [ dt-updated ] " datetime="{{ updated | rfc3339Date }}">{{ updated | friendlyDateLong | safe }}</time>
 				{%- endif -%}
 			{%- endif -%}.
 		</p>

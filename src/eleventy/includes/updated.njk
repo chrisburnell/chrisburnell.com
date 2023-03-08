@@ -2,7 +2,7 @@
 	{%- css %}{%- include '../../../css/components/updated.css' -%}{% endcss -%}
 	<div id="updated" class=" [ updated ] [ box ] [ flow ] ">
 		{% if updated %}
-			<time datetime="{{ updated | rfcDate }}">Updated {{ updated | friendlyDateLong | safe }}:</time>
+			<time datetime="{{ updated | rfc3339Date }}">Updated {{ updated | friendlyDateLong | safe }}:</time>
 		{% endif %}
 		{{ updated_text | markdownFormat | safe }}
 	</div>
