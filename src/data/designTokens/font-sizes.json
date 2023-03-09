@@ -1,7 +1,8 @@
 {
-  "alpha": "clamp(2.25rem, 0.889rem + 3.111vw, 4rem)",
-  "beta": "clamp(1.25rem, 1.056rem + 0.444vw, 1.5rem)",
-  "gamma": "clamp(1.125rem, 0.931rem + 0.444vw, 1.375rem)",
+  "alpha": "clamp(2.074rem, 0.187rem + 4.312vw, 4.499rem)",
+  "inbetween": "clamp(1.728rem, 0.998rem + 1.669vw, 2.667rem)",
+  "beta": "clamp(1.438rem, 1rem + 1vw, 2rem)",
+  "gamma": "clamp(1.2rem, 0.967rem + 0.533vw, 1.5rem)",
   "default": "clamp(1rem, 0.903rem + 0.222vw, 1.125rem)",
   "small": "clamp(0.875rem, 0.778rem + 0.222vw, 1rem)"
 }

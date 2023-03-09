@@ -70,16 +70,12 @@ css: styleguide.css
 	</dl>
 </c-details>
 
-<h2>Fonts</h2>
+<h2>Font Families</h2>
 
 <div class=" [ flow ] " style="--flow-space: 1rem">
-	<div style="font-family: var(--font-family-sans);">"Proxima Vara", sans-serif</div>
-	<div style="font-family: var(--font-family-sans);"><em>"Proxima Vara", sans-serif</em></div>
-	<div style="font-family: var(--font-family-sans);"><strong>"Proxima Vara", sans-serif</strong></div>
-	<div style="font-family: var(--font-family-serif);">Georgia, Times, Times New Roman, serif</div>
-	<div style="font-family: var(--font-family-serif);"><em>Georgia, Times, Times New Roman, serif</em></div>
-	<div style="font-family: var(--font-family-serif);"><strong>Georgia, Times, Times New Roman, serif</strong></div>
-	<div style="font-family: var(--font-family-monospace);">monospace</div>
+	<div style="font-family: var(--font-family-sans);">{{ designTokens['font-families']['sans'] | replace('"', '') | replace("'", "") }}</div>
+	<div style="font-family: var(--font-family-serif);">{{ designTokens['font-families']['serif'] | replace('"', '') | replace("'", "") }}</div>
+	<div style="font-family: var(--font-family-monospace);">{{ designTokens['font-families']['monospace'] | replace('"', '') | replace("'", "") }}</div>
 </div>
 
 <h2>Headings</h2>
@@ -101,17 +97,21 @@ css: styleguide.css
 		<dd class="monospace">16px</dd>
 		<dt>Viewport Widths</dt>
 		<dd class="monospace">700–1600px</dd>
+		<dt>Type Scales</dt>
+		<dd class="monospace"><strong>Min:</strong> Minor Third 1.2<br><strong>Max:</strong> Perfect Fourth 1.333</dd>
 		<dt>Font Sizes</dt>
 		<dd class="monospace">
-			36–64px
+			33.178–71.985px <small>(Augmented Fourth 1.414)</small>
 			<br>
-			20–24px
+			27.648–42.666px
 			<br>
-			18–22px
+			23.04–32px
+			<br>
+			19.2–24px
 			<br>
 			16–18px
 			<br>
-			14–16px
+			14–16px <small>(Custom)</small>
 		</dd>
 	</dl>
 </c-details>

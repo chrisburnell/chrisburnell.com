@@ -20,7 +20,9 @@
 		font-weight: var(--font-weight-semibold);
 	}
 	&:not(:active) {
-		color: h(dove);
+		&::before {
+			color: h(dove);
+		}
 	}
 }
 .browse__previous {

@@ -12,25 +12,25 @@ js_module: clamp-calculator.js
 <form id="clamp-calculator" class=" [ grid ] [ clamp-calculator ] " data-layout="50-50">
 	<fieldset class=" [ clamp-calculator__fieldset ] ">
 		<label for="font-size-min" class=" [ center  delta ] ">Minimum Font Size <small>(px)</small></label>
-		<input id="font-size-min" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="text" inputmode="numeric" pattern="[0-9]{1,4}" value="16" data-default="16"></input>
+		<input id="font-size-min" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="text" inputmode="numeric" pattern="[1-9]\d*(\.\d+)?" value="16" data-default="16"></input>
 	</fieldset>
 	<fieldset class=" [ clamp-calculator__fieldset ] ">
 		<label for="font-size-max" class=" [ center  delta ] ">Maximum Font Size <small>(px)</small></label>
-		<input id="font-size-max" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="text" inputmode="numeric" pattern="[0-9]{1,4}" value="18" data-default="18"></input>
+		<input id="font-size-max" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="text" inputmode="numeric" pattern="[1-9]\d*(\.\d+)?" value="18" data-default="18"></input>
 	</fieldset>
 	<fieldset class=" [ clamp-calculator__fieldset ] ">
 		<label for="viewport-min" class=" [ center  delta ] ">Minimum Viewport Width <small>(px)</small></label>
-		<input id="viewport-min" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="text" inputmode="numeric" pattern="[0-9]{1,5}" value="500" data-default="500"></input>
+		<input id="viewport-min" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="text" inputmode="numeric" pattern="[1-9]\d*" value="500" data-default="500"></input>
 	</fieldset>
 	<fieldset class=" [ clamp-calculator__fieldset ] ">
 		<label for="viewport-max" class=" [ center  delta ] ">Maximum Viewport Width <small>(px)</small></label>
-		<input id="viewport-max" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="text" inputmode="numeric" pattern="[0-9]{1,5}" value="1000" data-default="1000"></input>
+		<input id="viewport-max" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="text" inputmode="numeric" pattern="[1-9]\d*" value="1000" data-default="1000"></input>
 	</fieldset>
 	<details style="grid-column: span 2;">
 		<summary>Optional</summary>
 		<fieldset class=" [ clamp-calculator__fieldset ] " style="border: 0; padding: 0;">
 			<label for="font-size-root" class=" [ center  delta ] ">Root Font Size <small>(px)</small></label>
-			<input id="font-size-root" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="text" inputmode="numeric" pattern="[0-9]{1,4}" value="16" data-default="16"></input>
+			<input id="font-size-root" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="text" inputmode="numeric" pattern="[1-9]\d*(\.\d+)?" value="16" data-default="16"></input>
 		</fieldset>
 	</details>
 	<fieldset class=" [ center ] " style="grid-column: span 2;">

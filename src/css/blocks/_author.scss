@@ -143,6 +143,7 @@
 	--flow-space: var(--size-small);
 
 	font-size: var(--font-size-small);
+	text-wrap: balance;
 
 	@include media("above:medium") {
 		text-align: end;

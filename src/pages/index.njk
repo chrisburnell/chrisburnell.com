@@ -15,7 +15,7 @@ truncate: true
 <article class=" [ pantheon ] [ wrap ] [ page ] ">
 
 	<h1 id="title" class=" [ title{% if title_error %}  title--negative{% elif title_success %}  title--positive{% endif %} ] ">
-		<span class=" [ perch ] [ p-name ] ">
+		<span class=" [ p-name ] [ perch ] ">
 			{{ tagline | default(title) | safe }}
 			<img src="{{ site.logo }}" alt="" width="324" height="324" loading="lazy" decoding="async" role="presentation">
 		</span>

@@ -37,8 +37,8 @@
 		}
 
 		@include media("above:medium") {
-			max-block-size: calc(100vh - 6rem);
-			max-block-size: calc(100dvb - 6rem);
+			max-block-size: calc(100vh - 7rem);
+			max-block-size: calc(100dvb - 7rem);
 		}
 	}
 }

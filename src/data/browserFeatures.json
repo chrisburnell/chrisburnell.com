@@ -194,5 +194,12 @@
     "title": "CSS Variables",
     "description": "Allows a declaring of native, cascading variables in CSS.",
     "links": ["[MDN Web Docs - Using CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables)"]
+  },
+  {
+    "id": "css-text-wrap",
+    "language": "css",
+    "title": "Balanced Text",
+    "description": "Evenly distributes words across multiple lines to prevent widows.",
+    "links": ["[Article by Richard Rutter](https://clagnut.com/blog/2424/)"]
   }
 ]
