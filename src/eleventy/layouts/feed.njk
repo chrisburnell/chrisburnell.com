@@ -65,7 +65,7 @@
 		<link rel="alternate" href="{{ item_of_url }}" />
 		{%- endif %}
 		{% if item.data.in_reply_to -%}
-		<link href="{{ item.data.in_reply_to.url | default(item.data.in_reply_to) }}" />
+		<link rel="related" href="{{ item.data.in_reply_to.url | default(item.data.in_reply_to) }}" />
 		{%- endif %}
 	</entry>
 	{%- endfor %}
