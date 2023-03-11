@@ -49,6 +49,8 @@ B = ${variableFontSize}vw`
 
 		this.howResult.innerHTML = `Result = clamp(fontSizeMin, A + B, fontSizeMax)
 Result = clamp(${this.toRem(this.inputs["font-size-min"].value, this.inputs["font-size-root"].value)}rem, ${startingFontSize}rem + ${variableFontSize}vw, ${this.toRem(this.inputs["font-size-max"].value, this.inputs["font-size-root"].value)}rem)`
+
+		this.measureViewport()
 	}
 
 	measureViewport() {

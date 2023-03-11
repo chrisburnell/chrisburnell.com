@@ -42,6 +42,12 @@ js_module: clamp-calculator.js
 		<input id="output" class=" [ clamp-calculator__result ] [ center  monospace ] " style="inline-size: 100%; margin-inline: auto; line-height: 3;" type="text" value="clamp(1rem, 0.875rem + 0.4vw, 1.125rem)" readonly></input>
 	</fieldset>
 	<ul id="visual" class=" [ clamp-calculator__fieldset ] [ flow ] " style="--flow-space: 1rem; grid-column: span 2; margin-block-start: 1rem; font-size: 16px; font-family: var(--font-family-monospace); line-height: var(--line-height-small);">
+		<li id="visual-viewport" class="requires-js">
+			<span>Viewport Width: 9001px</span>
+		</li>
+		<li id="visual-calculated">
+			<span>Calculated: 16px<span>
+		</li>
 		<li id="visual-root">
 			<span>Root: 16px</span>
 			<div class="size-example" style="margin-block-start: 0.5rem; inline-size: 1em; block-size: 1em;"></div>
@@ -49,12 +55,6 @@ js_module: clamp-calculator.js
 		<li id="visual-output" style="font-size: clamp(1em, 0.875em + 0.4vw, 1.125em)">
 			<span>Clamped: 16–18px</span>
 			<div class="size-example" style="margin-block-start: 0.5rem; inline-size: 1em; block-size: 1em;"></div>
-		</li>
-		<li id="visual-viewport" class="requires-js">
-			<span>Viewport Width: 9001px</span>
-		</li>
-		<li id="visual-calculated">
-			<span>Calculated: 16px<span>
 		</li>
 	</ul>
 </form>
