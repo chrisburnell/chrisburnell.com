@@ -38,13 +38,6 @@
 }
 ol:not([class]),
 ol.default-list {
-	// This class *requires* `default-list` to work
-	&:not([class*="continued-list"]) {
-		& > li:first-child {
-			counter-reset: ordered-list;
-		}
-	}
-
 	// Investigate custom properties (i.e. setting specific "type" of value)
 	@for $i from 1 through 10 {
 		&[start="#{$i}"] {
@@ -97,6 +90,10 @@ ol.default-list {
 			}
 		}
 	}
+}
+ol:not([class]),
+ol:not([class*="continued-list"]) {
+	counter-reset: ordered-list;
 }
 [counter-reset] {
 	counter-reset: ordered-list;

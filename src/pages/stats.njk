@@ -63,8 +63,8 @@ description: Numbers, cause why not?
 		<tbody>
 			{% for i in range(first_year, latest_year + 1) | reverse %}
 				<tr>
-					<td class=" [ center ] ">{{ i }}</td>
-					<td class=" [ center ] ">{{ collection | getCollectionCount(i) }}</td>
+					<td>{{ i }}</td>
+					<td class=" [ numeral ] ">{{ collection | getCollectionCount(i) }}</td>
 				</tr>
 			{% endfor %}
 		</tbody>

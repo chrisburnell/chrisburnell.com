@@ -6,6 +6,7 @@
 	</div>
 
 	<template webc:raw data-island="once">
+		<link rel="stylesheet" href="/css/components/librarian.css" />
 		<script type="module" src="/js/components/librarian.js"></script>
 	</template>
 </is-land>
