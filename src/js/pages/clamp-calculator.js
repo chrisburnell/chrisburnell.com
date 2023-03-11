@@ -28,10 +28,10 @@ class ClampCalculator {
 		this.output.value = `clamp(${this.toRem(this.inputs["font-size-min"].value, this.inputs["font-size-root"].value)}rem, ${startingFontSize}rem + ${variableFontSize}vw, ${this.toRem(this.inputs["font-size-max"].value, this.inputs["font-size-root"].value)}rem)`
 
 		this.visual.style.fontSize = `${this.inputs["font-size-root"].value}px`
-		this.visual.querySelector("li:last-child").style.fontSize = `clamp(${this.toRem(this.inputs["font-size-min"].value, this.inputs["font-size-root"].value)}em, ${startingFontSize}em + ${variableFontSize}vw, ${this.toRem(this.inputs["font-size-max"].value, this.inputs["font-size-root"].value)}em)`
+		this.visualOutput.style.fontSize = `clamp(${this.toRem(this.inputs["font-size-min"].value, this.inputs["font-size-root"].value)}em, ${startingFontSize}em + ${variableFontSize}vw, ${this.toRem(this.inputs["font-size-max"].value, this.inputs["font-size-root"].value)}em)`
 
-		this.visual.querySelector("li:first-child span").innerText = `Root: ${this.inputs["font-size-root"].value}px`
-		this.visual.querySelector("li:last-child span").innerText = `Clamped: ${this.inputs["font-size-min"].value}–${this.inputs["font-size-max"].value}px`
+		this.visualRoot.querySelector("span").innerText = `Root: ${this.inputs["font-size-root"].value}px`
+		this.visualOutput.querySelector("span").innerText = `Clamped: ${this.inputs["font-size-min"].value}–${this.inputs["font-size-max"].value}px`
 
 		this.howRoot.innerHTML = `${this.inputs["font-size-root"].value}px`
 
@@ -49,6 +49,11 @@ B = ${variableFontSize}vw`
 
 		this.howResult.innerHTML = `Result = clamp(fontSizeMin, A + B, fontSizeMax)
 Result = clamp(${this.toRem(this.inputs["font-size-min"].value, this.inputs["font-size-root"].value)}rem, ${startingFontSize}rem + ${variableFontSize}vw, ${this.toRem(this.inputs["font-size-max"].value, this.inputs["font-size-root"].value)}rem)`
+	}
+
+	measureViewport() {
+		this.visualViewport.querySelector("span").innerText = `Viewport Width: ${window.innerWidth}px`
+		this.visualCalculated.querySelector("span").innerText = `Calculated: ${this.limitDecimals(this.visualOutput.querySelector(".size-example").getBoundingClientRect().width, 3)}px`
 	}
 
 	init() {
@@ -79,6 +84,10 @@ Result = clamp(${this.toRem(this.inputs["font-size-min"].value, this.inputs["fon
 
 		this.output = document.getElementById("output")
 		this.visual = document.getElementById("visual")
+		this.visualViewport = document.getElementById("visual-viewport")
+		this.visualRoot = document.getElementById("visual-root")
+		this.visualOutput = document.getElementById("visual-output")
+		this.visualCalculated = document.getElementById("visual-calculated")
 		this.howRoot = document.getElementById("how-root")
 		this.howX = document.getElementById("how-x")
 		this.howA = document.getElementById("how-a")
@@ -86,6 +95,10 @@ Result = clamp(${this.toRem(this.inputs["font-size-min"].value, this.inputs["fon
 		this.howResult = document.getElementById("how-result")
 
 		this.calculate()
+		this.measureViewport()
+		window.addEventListener("resize", () => {
+			this.measureViewport()
+		})
 	}
 }
 
