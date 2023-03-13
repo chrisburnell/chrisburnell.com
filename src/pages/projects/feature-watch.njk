@@ -34,7 +34,7 @@ toc: true
 
 {% for feature in browserFeaturesSorted %}
 	<section class=" [ flow ] ">
-		<h2 id="{{ feature.id }}">{{ feature.title | safe }}{% if feature.language %} <small><em>· {{ feature.language | capitalizeFormat }}</em></small>{% endif %}</h2>
+		<h2 id="{{ feature.id }}">{{ feature.title | safe }}{% if feature.language %} <small>· {{ feature.language | capitalizeFormat }}</small>{% endif %}</h2>
 		{{ feature.description | markdownFormat | safe }}
 		<ul>
 			{% for link in feature.links %}
