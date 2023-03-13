@@ -60,7 +60,7 @@ Which gives us… <var>1</var>
 
 Interesting! 🤔
 
-{% css 'critical' %}
+{% css %}
 .right-triangle {
     background-image:
         linear-gradient(

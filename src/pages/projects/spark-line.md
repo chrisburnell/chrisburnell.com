@@ -149,7 +149,7 @@ If you wanted to use `<is-land>` as well, I recommend something like the followi
 <is-land on:visible>
 	<spark-line webc:keep :values="this.values" :curve="this.curve" :color="this.color" :colors="this.colors" :endpoint-color="this['endpoint-color']" :points="this.points" :line-width="this['line-width']" :start-label="this['start-label']" :end-label="this['end-label']"></spark-line>
 
-	<template data-island="once">
+	<template webc:raw data-island="once">
 		<script type="module" :src="`/js/spark-line.js`"></script>
 	</template>
 </is-land>

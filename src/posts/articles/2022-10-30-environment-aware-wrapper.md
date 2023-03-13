@@ -67,7 +67,7 @@ Since Wrappers are such a common pattern in front end development, this techniqu
 
 Let me know if you’ve got other interesting uses for environment variables or ways to handle the <q>notch</q>!
 
-{% css 'critical' %}
+{% css %}
 .notched {
     border: var(--size-tiny) solid currentColor;
     inline-size: 100%;

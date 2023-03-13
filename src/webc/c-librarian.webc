@@ -1,6 +1,6 @@
 <is-land class="librarian-island" on:visible>
-	<div webc:root="override" class="[ box librarian ] [ flow ]">
-		<div webc:keep>
+	<div webc:root="override" class="[ box ] [ librarian ] [ flow ]">
+		<div>
 			<slot></slot>
 		</div>
 	</div>

@@ -1,6 +1,6 @@
 <is-land on:visible>
-	<details-utils webc:keep>
-		<details webc:root="override">
+	<details-utils webc:root="override" @attributes>
+		<details>
 			<slot></slot>
 		</details>
 	</details-utils>

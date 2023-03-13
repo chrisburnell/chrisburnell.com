@@ -1,6 +1,6 @@
-<p webc:root="override" class="speakerdeck-embed" :data-id="this.id"><span class="canada">Sorry</span>, this embed requires JavaScript.</p>
-
 <is-land on:visible>
+	<p webc:root="override" class="speakerdeck-embed" :data-id="this.id"><span class="canada">Sorry</span>, this embed requires JavaScript.</p>
+
 	<template webc:raw data-island="once">
 		<script src="https://speakerdeck.com/assets/embed.js"></script>
 	</template>
