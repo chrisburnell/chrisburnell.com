@@ -4,17 +4,17 @@
 	const LASTFM_URL = "https://api.chrisburnell.com/lastfm/chrisburnell"
 	const LASTFM_FEED = document.querySelector(".js-lastfm-feed")
 	const LASTFM_TEMPLATE = `
-<a href="{{ url }}" aria-hidden="true" tabindex="-1">
-	<img class=" [ cover ] [ u-photo ] " src="{{ image }}" alt="" loading="lazy" decoding="async">
+<a href="URL" aria-hidden="true" tabindex="-1">
+	<img class=" [ cover ] [ u-photo ] " src="IMAGE" alt="" loading="lazy" decoding="async">
 </a>
 <h1>
-	<a href="{{ url }}">{{ name }}</a>
+	<a href="URL">NAME</a>
 </h1>
 <div>
-	<a class=" [ h-cite ] " href="{{ artistURL }}" title="" rel="external">{{ artist }}</a>
+	<a class=" [ h-cite ] " href="ARTIST_URL" title="" rel="external">ARTIST</a>
 </div>
 <div>
-	<time class=" [ dt-published ] " datetime="{{ datetime }}">{{ datetimeFriendly }}</time>
+	<time class=" [ dt-published ] " datetime="DATETIME">DATETIME_FRIENDLY</time>
 </div>
 `
 
@@ -82,13 +82,14 @@
 
 				let article = document.createElement("article")
 				article.className = " [ flow ] [ h-review ] "
-				article.innerHTML = LASTFM_TEMPLATE.replace(/{{ url }}/g, url)
-					.replace(/{{ name }}/g, trackName)
-					.replace(/{{ artist }}/g, trackArtist)
-					.replace(/{{ artistURL }}/g, trackArtistURL)
-					.replace(/{{ datetime }}/g, datetime)
-					.replace(/{{ datetimeFriendly }}/g, datetimeFriendly)
-					.replace(/{{ image }}/g, image)
+				article.innerHTML = LASTFM_TEMPLATE
+					.replace(/URL/g, url)
+					.replace(/NAME/g, trackName)
+					.replace(/ARTIST_URL/g, trackArtistURL)
+					.replace(/ARTIST/g, trackArtist)
+					.replace(/DATETIME_FRIENDLY/g, datetimeFriendly)
+					.replace(/DATETIME/g, datetime)
+					.replace(/IMAGE/g, image)
 
 				LASTFM_FEED.appendChild(article)
 			}

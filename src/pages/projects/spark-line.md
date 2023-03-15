@@ -14,6 +14,7 @@ tags:
 toc: true
 js_module: spark-line.js
 ---
+{%- css %}{%- include '../../../css/components/shelf.css' -%}{% endcss -%}
 
 <noscript><p>Unfortunately, this page requires JavaScript to display sparklines and use the interactive example.</p></noscript>
 

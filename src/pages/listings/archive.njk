@@ -6,6 +6,7 @@ hfeed: true
 show_photos: true
 truncate: true
 ---
+{%- css %}{%- include '../../../css/components/shelf.css' -%}{% endcss -%}
 {%- set collection = collections.posts -%}
 {%- set count = collection.length -%}
 {%- set latest_year = collection[0].date.getFullYear() -%}

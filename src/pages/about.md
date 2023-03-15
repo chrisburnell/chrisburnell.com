@@ -5,6 +5,7 @@ bio: "<span class=\" [ canada ] \">Chris Burnell</span> is a <span class=\" [ ca
 eleventyComputed:
   description: "{{ site.description | safe }}"
 ---
+{%- css %}{%- include '../../css/components/shelf.css' -%}{% endcss -%}
 
 <p><strong>I’ve got a <a href="https://chrisburnell.com/cv/">CV / resumé</a>, if that’s what you’re looking for.</strong></p>
 

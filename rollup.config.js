@@ -5,11 +5,20 @@ const { terser } = require("rollup-plugin-terser")
 
 module.exports = [
 	{
-		input: "src/js/main.js",
+		input: "src/js/critical.js",
 		output: {
 			dir: "js",
 			format: "module",
-			name: "main",
+			name: "critical",
+		},
+		plugins: process.env.ELEVENTY_PRODUCTION ? [commonjs(), nodeResolve(), terser()] : [commonjs(), nodeResolve()],
+	},
+	{
+		input: "src/js/defer.js",
+		output: {
+			dir: "js",
+			format: "module",
+			name: "defer",
 		},
 		plugins: process.env.ELEVENTY_PRODUCTION ? [commonjs(), nodeResolve(), terser()] : [commonjs(), nodeResolve()],
 	},
