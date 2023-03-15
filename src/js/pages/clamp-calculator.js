@@ -56,11 +56,11 @@ A + B = ${preferredSizePixels}px + ${variableSize}vw
 
 Minimum Size = ${preferredSizePixels}px + (${this.limitDecimals(change, 5)} * ${this.inputs["viewport-min"].value}px)
 Minimum Size = ${preferredSizePixels}px + ${this.limitDecimals(change, 5) * this.inputs["viewport-min"].value}px
-Minimum Size = ${this.inputs["size-min"].value}px
+Minimum Size = ${this.inputs["size-min"].value}px ✅
 
 Maximum Size = ${preferredSizePixels}px + (${this.limitDecimals(change, 5)} * ${this.inputs["viewport-max"].value}px)
 Maximum Size = ${preferredSizePixels}px + ${this.limitDecimals(change, 5) * this.inputs["viewport-max"].value}px
-Maximum Size = ${this.inputs["size-max"].value}px`
+Maximum Size = ${this.inputs["size-max"].value}px ✅`
 
 		this.measureViewport()
 	}
