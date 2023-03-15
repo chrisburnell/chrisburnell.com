@@ -11,12 +11,12 @@ js_module: clamp-calculator.js
 
 <form id="clamp-calculator" class=" [ grid ] [ clamp-calculator ] " data-layout="50-50">
 	<fieldset class=" [ clamp-calculator__fieldset ] ">
-		<label for="font-size-min" class=" [ center  delta ] ">Minimum Font Size <small>(px)</small></label>
-		<input id="font-size-min" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="text" inputmode="numeric" pattern="[1-9]\d*(\.\d+)?" value="16" data-default="16"></input>
+		<label for="size-min" class=" [ center  delta ] ">Minimum Size <small>(px)</small></label>
+		<input id="size-min" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="text" inputmode="numeric" pattern="[1-9]\d*(\.\d+)?" value="16" data-default="16"></input>
 	</fieldset>
 	<fieldset class=" [ clamp-calculator__fieldset ] ">
-		<label for="font-size-max" class=" [ center  delta ] ">Maximum Font Size <small>(px)</small></label>
-		<input id="font-size-max" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="text" inputmode="numeric" pattern="[1-9]\d*(\.\d+)?" value="18" data-default="18"></input>
+		<label for="size-max" class=" [ center  delta ] ">Maximum Size <small>(px)</small></label>
+		<input id="size-max" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="text" inputmode="numeric" pattern="[1-9]\d*(\.\d+)?" value="18" data-default="18"></input>
 	</fieldset>
 	<fieldset class=" [ clamp-calculator__fieldset ] ">
 		<label for="viewport-min" class=" [ center  delta ] ">Minimum Viewport Width <small>(px)</small></label>
@@ -33,9 +33,9 @@ js_module: clamp-calculator.js
 			<input id="font-size-root" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="text" inputmode="numeric" pattern="[1-9]\d*(\.\d+)?" value="16" data-default="16"></input>
 		</fieldset>
 	</details>
-	<fieldset class=" [ center ] " style="grid-column: span 2;">
-		<button style="--min-inline-size: 10em; margin-inline: auto;" type="submit">Calculate</button>
-		<button class="code-red" style="--min-inline-size: 10em; margin-inline: auto;" type="reset">Reset</button>
+	<fieldset class=" [ grid  navigator ] " style="grid-column: span 2;">
+		<button style="--min-inline-size: 10em;" type="submit">Calculate</button>
+		<button class="code-red" style="--min-inline-size: 10em;" type="reset">Reset</button>
 	</fieldset>
 	<fieldset style="grid-column: span 2; margin-block-start: 1em;">
 		<label for="output" class=" [ center  gamma ] ">The Result</label>
@@ -63,19 +63,19 @@ js_module: clamp-calculator.js
 
 <p>This calculator uses <code>rem</code> units which require knowing the font size at the document’s root. In most cases, that refers to the <code>html</code> element and this calculator is currently operating with a root font size of <code id="how-root">16px</code>.</p>
 
-<p><strong aria-hidden="true">1.</strong> We need to figure out the rate of change: how much the font size needs to change across a distance of viewport width. In other words, for every pixel of change in viewport width, how many pixels of change should there be in font size? We can calculate this by dividing the difference in font size by the difference in viewport width.</p>
+<p><strong aria-hidden="true">1.</strong> We need to figure out the rate of change: how much the size needs to change across a distance of viewport width. In other words, for every pixel of change in viewport width, how many pixels of change should there be in size? We can calculate this by dividing the difference in size by the difference in viewport width.</p>
 
-<pre class="language-none"><code id="how-x">Change = (fontSizeMax - fontSizeMin) / (viewportMax - viewportMin)
+<pre class="language-none"><code id="how-x">Change = (sizeMax - sizeMin) / (viewportMax - viewportMin)
 Change = (18px - 16px) / (1000px - 500px)
 Change = 0.004</code></pre>
 
-<p><strong aria-hidden="true">2.</strong> Next, let’s figure out what our <em>starting</em> font size should be (this is different from our <em>minimum</em> font size). We do this by asking how much change is applied to the font size when the viewport is at its maximum width, and subtracting that from our desired font size at the maximum viewport width.</p>
+<p><strong aria-hidden="true">2.</strong> Next, let’s figure out what our <em>preferred</em> size should be (this is different from our <em>minimum</em> font size). We do this by asking how much change is applied to the size when the viewport is at its maximum width, and subtracting that from our desired size at the maximum viewport width.</p>
 
-<pre class="language-none"><code id="how-a">A = fontSizeMax - viewportMax * Change
+<pre class="language-none"><code id="how-a">A = sizeMax - viewportMax * Change
 A = 18px - 1000px * 0.004
 A = 14px = 0.875rem</code></pre>
 
-<p><strong aria-hidden="true">3.</strong> The last piece of the puzzle is the most straightforward: we need to represent the rate of change as a value relative to the viewport, and we do so by multiplying the rate of change with <code>100vw</code>. <em>(Note: You could also substitute in other units, like <code>100vh</code> or <code>100dvb</code>, depending on whether you want to effect change with the viewport width, viewport height, etc.)</em></p>
+<p><strong aria-hidden="true">3.</strong> The last piece of the puzzle is the most straightforward: we need to represent the rate of change as a value relative to the viewport, and we do so by multiplying the rate of change with <code>100vw</code>.<br><em>(Note: You could also substitute in other units, like <code>100vh</code> or <code>100dvb</code>, depending on whether you want to effect change with the viewport width, viewport height, etc.)</em></p>
 
 <pre class="language-none"><code id="how-b">B = 100vw * Change
 B = 100vw * 0.004
@@ -83,8 +83,21 @@ B = 0.4vw</code></pre>
 
 <p><strong aria-hidden="true">4.</strong> Let’s put everything together with the <code>clamp()</code> function, otherwise our calculated value will be incorrect above and below our designated viewport bounds.</p>
 
-<pre class="language-none"><code id="how-result">Result = clamp(fontSizeMin, A + B, fontSizeMax)
+<pre class="language-none"><code id="how-result">Result = clamp(sizeMin, A + B, sizeMax)
 Result = clamp(1rem, 0.875rem + 0.4vw, 1.125rem)</code></pre>
+
+<p><strong aria-hidden="true">Optional.</strong> We can perform a simple check that our calculations are correct by plugging in our minimum and maximum viewport values and seeing if they result in our desired minimum and maximum sizes, not forgetting that the <code>vw</code> unit is kind of like a percentage, which we can factor into our calculations by dividing <code>B</code> by 100 when figuring out the true pixel-value result.</p>
+
+<pre class="language-none"><code id="how-check">A + B = 0.875rem + 0.4vw
+A + B = 14px + 0.4vw
+
+Minimum Size = 14px + (0.004 * 500px)
+Minimum Size = 14px + 2px
+Minimum Size = 16px ✅
+
+Maximum Size = 14px + (0.004 * 1000px)
+Maximum Size = 14px + 4px
+Maximum Size = 18px ✅</code></pre>
 
 <h2 id="more">Learn more</h2>
 
