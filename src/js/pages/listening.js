@@ -82,8 +82,7 @@
 
 				let article = document.createElement("article")
 				article.className = " [ flow ] [ h-review ] "
-				article.innerHTML = LASTFM_TEMPLATE
-					.replace(/URL/g, url)
+				article.innerHTML = LASTFM_TEMPLATE.replace(/URL/g, url)
 					.replace(/NAME/g, trackName)
 					.replace(/ARTIST_URL/g, trackArtistURL)
 					.replace(/ARTIST/g, trackArtist)

@@ -124,6 +124,7 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.addPassthroughCopy("images/*")
 	eleventyConfig.addPassthroughCopy("images/animated")
 	eleventyConfig.addPassthroughCopy("js")
+	eleventyConfig.addPassthroughCopy("static")
 	eleventyConfig.addPassthroughCopy("video")
 	eleventyConfig.addPassthroughCopy({
 		"files/*": ".",
