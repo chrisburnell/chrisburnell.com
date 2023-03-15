@@ -1,8 +1,8 @@
 ;(function () {
 	const STORAGE_KEY = "color-scheme"
-	const theme = localStorage.getItem(STORAGE_KEY)
+	const COLOR_SCHEME = localStorage.getItem(STORAGE_KEY)
 
-	if (theme) {
-		document.documentElement.setAttribute(`data-${STORAGE_KEY}`, theme)
+	if (COLOR_SCHEME) {
+		document.documentElement.setAttribute(`data-${STORAGE_KEY}`, COLOR_SCHEME)
 	}
 })()
