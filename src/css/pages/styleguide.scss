@@ -19,7 +19,7 @@
 	display: flex;
 	flex-wrap: wrap;
 
-	@include media("screen", "below:tiny") {
+	@include container("below:tiny") {
 		flex-direction: column;
 	}
 
@@ -31,15 +31,15 @@
 		white-space: nowrap;
 		font-variant-numeric: tabular-nums;
 
-		@include media("screen", "below:tiny") {
+		@include container("below:tiny") {
 			flex: 1 0 100%;
 		}
 
-		@include media("screen", "above:tiny", "below:large") {
+		@include container("above:tiny", "below:small") {
 			flex: 1 0 50%;
 		}
 
-		@include media("screen", "above:large") {
+		@include container("above:small") {
 			flex: 1 0 33.333%;
 		}
 

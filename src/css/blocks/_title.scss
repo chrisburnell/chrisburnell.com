@@ -12,7 +12,7 @@
 	position: relative;
 	contain: content; // helps painting with .perch inside
 
-	@include media("above:tiny") {
+	@include container("above:tiny") {
 		text-align: center;
 	}
 }

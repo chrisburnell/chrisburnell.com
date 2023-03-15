@@ -554,3 +554,15 @@ $im-no-media-expressions: ("screen", "portrait", "landscape") !default;
 		}
 	}
 }
+@mixin container($conditions...) {
+	@if ($im-media-support and length($conditions) == 0) or (not $im-media-support and im-intercepts-static-breakpoint($conditions...)) {
+		@content;
+	} @else if ($im-media-support and length($conditions) > 0) {
+		@container #{unquote(parse-expression(nth($conditions, 1)))} {
+			// Recursive call
+			@include container(slice($conditions, 2)...) {
+				@content;
+			}
+		}
+	}
+}

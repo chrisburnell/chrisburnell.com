@@ -32,7 +32,7 @@
 		auto
 		[outdent-end content-end marginalia-end];
 
-	@include media("above:medium") {
+	@include container("above:medium") {
 		grid-template-columns:
 			[marginalia-start]
 			1fr

@@ -14,7 +14,7 @@
 		:not(.content) > & {
 			max-inline-size: var(--size-line-length);
 
-			@include media("above:tiny") {
+			@include container("above:small") {
 				margin-inline: auto;
 				text-align: center;
 			}
@@ -47,18 +47,18 @@
 	font-size: var(--font-size-default);
 	margin-block-end: var(--size-large);
 
-	@include media("below:tiny") {
+	@include container("below:tiny") {
 		font-size: var(--font-size-small);
 	}
 
 	.breadcrumbs ~ & {
-		@include media("below:medium") {
+		@include container("below:medium") {
 			margin-block-start: var(--size-large);
 		}
 	}
 
 	.breadcrumbs ~ .title:not([hidden], .hidden) ~ & {
-		@include media("below:medium") {
+		@include container("below:medium") {
 			margin-block-end: 0;
 		}
 	}

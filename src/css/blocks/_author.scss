@@ -17,13 +17,13 @@
 	text-align: center;
 	text-decoration: none;
 
-	@include media("below:medium") {
+	@include container("below:medium") {
 		float: left;
 		float: inline-start;
 		margin-inline-end: var(--size-medium);
 	}
 
-	@include media("above:medium") {
+	@include container("above:medium") {
 		float: right;
 		float: inline-end;
 		margin-inline-start: var(--size-medium);
@@ -35,7 +35,7 @@
 		opacity: 0;
 		background-image: url("/images/avatar-pixelated.png");
 		background-size: 100%;
-		aspect-ratio: 1 / 1;
+		aspect-ratio: 1;
 		inline-size: 100%;
 		position: absolute;
 		inset-block-start: 0;
@@ -133,7 +133,7 @@
 
 .author__image,
 .author__information::before {
-	aspect-ratio: 1 / 1;
+	aspect-ratio: 1;
 	inline-size: var(--size-avatar);
 	block-size: var(--size-avatar);
 	border-radius: 50%;
@@ -145,7 +145,7 @@
 	font-size: var(--font-size-small);
 	text-wrap: balance;
 
-	@include media("above:medium") {
+	@include container("above:medium") {
 		text-align: end;
 	}
 }

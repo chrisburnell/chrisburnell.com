@@ -4,6 +4,7 @@
 ////
 
 .header {
+	container: header / inline-size;
 	background-color: h(bear);
 	overflow-y: hidden;
 	box-shadow: var(--box-shadow-low);

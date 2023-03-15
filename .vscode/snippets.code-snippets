@@ -7,12 +7,20 @@
       "@include h($1);"
     ]
   },
+  "Container Query": {
+    "description": "Container Query",
+    "scope": "scss",
+    "prefix": "c",
+    "body": [
+        "@include container(\"$1:$2\") {$0}"
+    ]
+  },
   "Media Query": {
     "description": "Media Query",
     "scope": "scss",
     "prefix": "m",
     "body": [
-        "@include media(\"screen\", \"$1:$2\") {$0}"
+        "@include media(\"$1:$2\") {$0}"
     ]
   },
   "Query Selector": {

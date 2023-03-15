@@ -45,7 +45,7 @@
 		[outdent-end content-end marginalia-end];
 	transition: all var(--transition-duration) var(--transition-function);
 
-	@include media("above:medium") {
+	@include container("above:medium") {
 		grid-template-rows:
 			[breadcrumbs-start]
 			auto
@@ -79,7 +79,7 @@
 	}
 
 	&:not(.wide) {
-		@include media("above:gigantic") {
+		@include container("above:gigantic") {
 			--outdent-gap: var(--size-gap);
 			--outdent-size: 1fr;
 		}
@@ -131,11 +131,11 @@
 	grid-row: sparkline;
 	margin-block-end: var(--size-large);
 
-	@include media("below:medium") {
+	@include container("below:medium") {
 		justify-self: start;
 	}
 
-	@include media("above:medium") {
+	@include container("above:medium") {
 		justify-self: center;
 	}
 }
@@ -145,7 +145,7 @@
 	grid-row: meta;
 
 	&:has(.table-of-contents) {
-		@include media("below:medium") {
+		@include container("below:medium") {
 			grid-row: toc;
 			margin-block-start: 0;
 			margin-block-end: var(--size-gigantic);

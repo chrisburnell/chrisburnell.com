@@ -8,6 +8,7 @@
 	--flow-space: var(--size-space);
 }
 .content {
+	container: content / inline-size;
 	// required: works like overflow for this .pantheon grid item
 	min-inline-size: 0;
 }

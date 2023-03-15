@@ -14,14 +14,14 @@
 		scrollbar-color: h(raven) h(mineshaft);
 	}
 
-	.header,
-	.main {
+	.header {
 		background-color: h(bowhead, beta);
 		color: h(milou);
 	}
 
 	.main {
 		background-color: h(mineshaft);
+		color: h(milou);
 	}
 
 	.footer {
@@ -68,6 +68,17 @@
 		background-color: h(thunder);
 	}
 
+	input,
+	textarea {
+		background-color: h(thunder);
+		color: h(milou);
+		border-color: h(kaiser);
+
+		&:hover {
+			border-color: h(bowhead);
+		}
+	}
+
 	.box,
 	%box {
 		background-color: var(--background-color, h(bear, delta));
@@ -98,6 +109,15 @@
 		}
 	}
 
+	.browse__previous,
+	.browse__next {
+		&:not(:active) {
+			&::before {
+				color: h(alto);
+			}
+		}
+	}
+
 	:is(ol, ul):not([class]),
 	.breadcrumbs {
 		li {
@@ -112,14 +132,6 @@
 	}
 
 	.table-of-contents {
-		$background: mix(map-get($colors, "milou"), map-get($colors, "mineshaft"), map-get($opacities, "delta") * 100%);
-		// prettier-ignore
-		background: linear-gradient(#{$background} 30%, transparent),
-		linear-gradient(transparent, #{$background} 70%) 0 100%,
-		radial-gradient(farthest-side at 50% 0, #{h(milou, gamma)}, transparent),
-		radial-gradient(farthest-side at 50% 100%, #{h(milou, gamma)}, transparent) 0 100%;
-		background-color: #{$background};
-
 		li {
 			&::marker {
 				color: h(alto);
