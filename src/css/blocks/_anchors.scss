@@ -3,21 +3,6 @@
 /// @group blocks
 ////
 
-%anchor {
-	h2 & {
-		color: h(kaiser) !important;
-		text-decoration-color: transparent;
-		text-underline-offset: var(--size-border-default);
-	}
-}
-
-a {
-	// hide extra content, text targetted only to screen readers
-	:not(.cf-wrapper) > & span:not([class]) {
-		@include hidden;
-	}
-}
-
 // Skip to main content
 .skip-link {
 	--outline-color: #{h(bowhead)};

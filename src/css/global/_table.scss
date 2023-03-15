@@ -48,6 +48,7 @@ table {
 // Heading Cells
 th {
 	font-weight: var(--font-weight-semibold);
+	line-height: var(--line-height-medium);
 	// white-space: nowrap;
 
 	&:not(:empty) {

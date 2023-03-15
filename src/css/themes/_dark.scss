@@ -14,20 +14,24 @@
 		scrollbar-color: h(raven) h(mineshaft);
 	}
 
+	// Header Block
 	.header {
 		background-color: h(bowhead, beta);
 		color: h(milou);
 	}
 
+	// Main Block
 	.main {
 		background-color: h(mineshaft);
 		color: h(milou);
 	}
 
+	// Footer Block
 	.footer {
 		background-image: linear-gradient(to bottom, h(thunder, gamma), h(thunder, gamma));
 	}
 
+	// Anchor Global
 	%anchor {
 		color: h(highland);
 
@@ -36,25 +40,9 @@
 		}
 	}
 
-	h2 %anchor {
-		color: inherit !important;
-
-		&:not(:is(:hover, :focus, :active)) {
-			text-decoration-color: transparent;
-		}
-	}
-
-	hr {
-		background-color: h(alto, beta);
-	}
-
-	:is(abbr, dfn)[title],
-	figure > a figcaption,
-	blockquote cite,
-	.breadcrumbs,
-	.fragment-anchor {
-		color: h(alto);
-	}
+	///
+	// Global Content Elements
+	///
 
 	:is(blockquote, code, samp, kbd) {
 		background-color: h(coyote, gamma);
@@ -79,6 +67,43 @@
 		}
 	}
 
+	hr {
+		background-color: h(alto, beta);
+	}
+
+	dialog {
+		background-color: h(lynx);
+	}
+
+	th:not(:empty) {
+		background-color: h(kaiser);
+	}
+
+	///
+	// Global and Block Content Elements
+	///
+
+	:is(ol, ul):not([class]),
+	.breadcrumbs {
+		li {
+			&::marker {
+				color: h(alto);
+			}
+		}
+	}
+
+	:is(abbr, dfn)[title],
+	figure > a figcaption,
+	blockquote cite,
+	.breadcrumbs,
+	.fragment-anchor {
+		color: h(alto);
+	}
+
+	///
+	// Compositions
+	///
+
 	.box,
 	%box {
 		background-color: var(--background-color, h(bear, delta));
@@ -89,10 +114,6 @@
 	.box %anchor,
 	%box %anchor {
 		color: h(highland);
-	}
-
-	dialog {
-		background-color: h(lynx);
 	}
 
 	.librarian {
@@ -118,19 +139,6 @@
 		}
 	}
 
-	:is(ol, ul):not([class]),
-	.breadcrumbs {
-		li {
-			&::marker {
-				color: h(alto);
-			}
-		}
-	}
-
-	th:not(:empty) {
-		background-color: h(kaiser);
-	}
-
 	.table-of-contents {
 		li {
 			&::marker {
@@ -139,6 +147,10 @@
 		}
 	}
 
+	///
+	// Exceptions
+	///
+
 	[aria-labelledby="worked-with"] {
 		img {
 			filter: brightness(1.25);
@@ -146,12 +158,14 @@
 	}
 }
 
+// Apply the Dark color scheme when the media query matches
 @include media("dark") {
 	html:not([data-color-scheme]) {
 		@include color-scheme-dark;
 	}
 }
 
+// Apply the Dark color scheme when it has been set manually (visitor, author)
 [data-color-scheme="dark"],
 .dark {
 	@include color-scheme-dark;

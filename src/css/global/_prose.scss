@@ -93,6 +93,8 @@ sup {
 }
 
 hr {
+	--flow-space: var(--size-large);
+
 	background-color: h(thunder, gamma);
 	inline-size: 100%;
 	block-size: var(--size-border-thin);
@@ -103,9 +105,8 @@ hr {
 	// show the overflow in Edge and IE
 	overflow: visible;
 
-	&,
-	& + * {
-		--flow-space: var(--size-large);
+	.flow > & + * {
+		margin-block-start: var(--size-large);
 	}
 }
 
