@@ -86,18 +86,18 @@ B = 0.4vw</code></pre>
 <pre class="language-none"><code id="how-result">Result = clamp(sizeMin, A + B, sizeMax)
 Result = clamp(1rem, 0.875rem + 0.4vw, 1.125rem)</code></pre>
 
-<p><strong aria-hidden="true">Optional.</strong> We can perform a simple check that our calculations are correct by plugging in our minimum and maximum viewport values and seeing if they result in our desired minimum and maximum sizes, not forgetting that the <code>vw</code> unit is kind of like a percentage, which we can factor into our calculations by dividing <code>B</code> by 100 when figuring out the true pixel-value result.</p>
+<p><strong aria-hidden="true">Optional.</strong> We can perform a simple check that our calculations are correct by plugging in our minimum and maximum viewport values and seeing if they result in our desired minimum and maximum sizes. Let’s not forget that the viewport-based units (<code>vw</code>, <code>vh</code>, etc.) are kind of like a percentage, which we can factor into our calculations by dividing <code>B</code> by 100 when figuring out the true pixel-value result.<br><em>(Note: Because of rounding, there may be some less of accuracy around the 3<sup>rd</sup> decimal place in these calculations, but the browser will interpret them well.)</em></p>
 
 <pre class="language-none"><code id="how-check">A + B = 0.875rem + 0.4vw
 A + B = 14px + 0.4vw
 
-Minimum Size = 14px + (0.004 * 500px)
-Minimum Size = 14px + 2px
-Minimum Size = 16px ✅
+Minimum Size ≈ 14px + (0.004 * 500px)
+Minimum Size ≈ 14px + 2px
+Minimum Size ≈ 16px
 
-Maximum Size = 14px + (0.004 * 1000px)
-Maximum Size = 14px + 4px
-Maximum Size = 18px ✅</code></pre>
+Maximum Size ≈ 14px + (0.004 * 1000px)
+Maximum Size ≈ 14px + 4px
+Maximum Size ≈ 18px</code></pre>
 
 <h2 id="more">Learn more</h2>
 
