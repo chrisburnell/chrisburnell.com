@@ -116,12 +116,14 @@ class WebsiteSounds {
 			})
 		})
 
-		// Logo
-		this.logo = document.querySelector(".logo")
-		this.logo.addEventListener("mouseenter", () => {
-			if (localStorage.getItem(this.STORAGE_KEY) === "true") {
-				pentatonic([0], this.headerDefaults.duration, this.headerDefaults.volume, this.defaults.keyStart - this.defaults.keyLimit, undefined, undefined, this.waveform)
-			}
+		// Tonics
+		this.tonics = document.querySelectorAll(".logo, .author__information")
+		this.tonics.forEach(tonic => {
+			tonic.addEventListener("mouseenter", () => {
+				if (localStorage.getItem(this.STORAGE_KEY) === "true") {
+					pentatonic([0], this.headerDefaults.duration, this.headerDefaults.volume, this.defaults.keyStart - this.defaults.keyLimit, undefined, undefined, this.waveform)
+				}
+			})
 		})
 
 		// Primary Navigation

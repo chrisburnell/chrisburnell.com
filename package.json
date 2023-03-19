@@ -1,6 +1,6 @@
 {
   "name": "chrisburnell",
-  "version": "3.7.4",
+  "version": "3.7.5",
   "description": "Some real sweet codestuffs.",
   "author": "Chris Burnell <me@chrisburnell.com>",
   "contributors": [
@@ -36,7 +36,7 @@
   },
   "dependencies": {
     "@11ty/eleventy": "^2.0.0",
-    "@11ty/eleventy-fetch": "^3.0.0",
+    "@11ty/eleventy-fetch": "^4.0.0",
     "@11ty/eleventy-img": "^3.0.0",
     "@11ty/eleventy-plugin-bundle": "^1.0.4",
     "@11ty/eleventy-plugin-directory-output": "^1.0.1",
@@ -49,7 +49,7 @@
     "@chrisburnell/eleventy-cache-webmentions": "^1.1.5",
     "@chrisburnell/pentatonic": "^1.1.4",
     "@chrisburnell/spark-line": "^1.2.4",
-    "@mdn/browser-compat-data": "^5.2.42",
+    "@mdn/browser-compat-data": "^5.2.43",
     "@sindresorhus/slugify": "1.1.2",
     "@tweetback/canonical": "^2.0.29",
     "@zachleat/details-utils": "^2.0.2",
