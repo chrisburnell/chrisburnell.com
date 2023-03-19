@@ -92,17 +92,23 @@ class WebsiteSounds {
 		this.pentatonicElements = document.querySelectorAll(".pentatonic")
 		this.pentatonicElements.forEach((element) => {
 			element.addEventListener("click", () => {
-				let values = element.values || element.dataset.values
-				let duration = element.getAttribute("duration") ? parseFloat(element.getAttribute("duration")) : element.dataset.duration ? parseFloat(element.dataset.duration) : this.defaults.duration
-				let keyStart = element.getAttribute("key-start") ? parseFloat(element.getAttribute("key-start")) : element.dataset.keyStart ? parseFloat(element.dataset.keyStart) : this.defaults.keyStart
-				let keyLimit = element.getAttribute("key-limit") ? parseFloat(element.getAttribute("key-limit")) : element.dataset.keyLimit ? parseFloat(element.dataset.keyLimit) : this.defaults.keyLimit
-				let keyIntervals = element.getAttribute("key-intervals")
-					? element
+				let target = element
+				if (!element.values && !element.dataset.values) {
+					target = [...element.children].filter((child) => {
+						return child.values || child.dataset.values
+					})[0];
+				}
+				let values = target.values || target.dataset.values
+				let duration = target.getAttribute("duration") ? parseFloat(target.getAttribute("duration")) : target.dataset.duration ? parseFloat(target.dataset.duration) : this.defaults.duration
+				let keyStart = target.getAttribute("key-start") ? parseFloat(target.getAttribute("key-start")) : target.dataset.keyStart ? parseFloat(target.dataset.keyStart) : this.defaults.keyStart
+				let keyLimit = target.getAttribute("key-limit") ? parseFloat(target.getAttribute("key-limit")) : target.dataset.keyLimit ? parseFloat(target.dataset.keyLimit) : this.defaults.keyLimit
+				let keyIntervals = target.getAttribute("key-intervals")
+					? target
 							.getAttribute("key-intervals")
 							.split(",")
 							.map((interval) => parseFloat(interval))
-					: element.dataset.keyIntervals
-					? element.dataset.keyIntervals.split(",").map((interval) => parseFloat(interval))
+					: target.dataset.keyIntervals
+					? target.dataset.keyIntervals.split(",").map((interval) => parseFloat(interval))
 					: this.defaults.keyIntervals
 				if (values) {
 					pentatonic(values.split(","), duration, this.defaults.volume, keyStart, keyIntervals, keyLimit, this.waveform)

@@ -129,14 +129,11 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.addPassthroughCopy({
 		"files/*": ".",
 		"src/js/components/*": "js/components/",
-		"src/js/pages/*": "js/pages/",
-		"src/js/vendor/*": "js/vendor/",
-		"node_modules/@chrisburnell/spark-line/spark-line.js": "js/components/spark-line.js",
+		"node_modules/speedlify-score/speedlify-score.js": "js/components/speedlify-score.js",
 		"node_modules/@zachleat/details-utils/details-utils.js": "js/components/details-utils.js",
-		"node_modules/@zachleat/seven-minute-tabs/seven-minute-tabs.js": "js/components/seven-minute-tabs.js",
-		"node_modules/lite-youtube-embed/src/lite-yt-embed.css": "css/components/lite-yt-embed.css",
-		"node_modules/lite-youtube-embed/src/lite-yt-embed.js": "js/components/lite-yt-embed.js",
-		"node_modules/speedlify-score/speedlify-score.js": "js/components/speedlify-score.js"
+		"node_modules/lite-youtube-embed/src/lite-yt-embed.{css,js}": "css/components/",
+		"node_modules/@chrisburnell/spark-line/spark-line.{css,js}": "js/components/",
+		"node_modules/@zachleat/seven-minute-tabs/seven-minute-tabs.{css,js}": "js/components/",
 	})
 
 	// Watch targets
@@ -157,7 +154,7 @@ module.exports = (eleventyConfig) => {
 
 	// Build Settings
 	eleventyConfig.setDataDeepMerge(true)
-	eleventyConfig.setServerPassthroughCopyBehavior("copy")
+	eleventyConfig.setServerPassthroughCopyBehavior("passthrough")
 	eleventyConfig.setQuietMode(true)
 	eleventyConfig.on("beforeBuild", () => {
 		console.log(`[${queryFilters.getHost(site.url)}] Building…`)

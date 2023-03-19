@@ -22,11 +22,4 @@ module.exports = [
 		},
 		plugins: process.env.ELEVENTY_PRODUCTION ? [commonjs(), nodeResolve(), terser()] : [commonjs(), nodeResolve()],
 	},
-	{
-		input: "src/js/navigator.js",
-		output: {
-			dir: "js",
-			name: "navigator",
-		},
-	}
 ]

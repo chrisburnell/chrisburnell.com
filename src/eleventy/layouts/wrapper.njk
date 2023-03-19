@@ -149,7 +149,7 @@
 
 	{# JS Bundles #}
 	{%- js 'critical' %}{%- include '../../../js/critical.js' -%}{% endjs -%}
-	{%- js 'navigator' %}{%- include '../../../js/navigator.js' -%}{% endjs -%}
+	{%- js 'navigator' %}{%- include '../../js/navigator.js' -%}{% endjs -%}
 	{% if js_module %}
 		{%- set js_module_path = '../../js/pages/' + js_module -%}
 		{%- js 'module' %}{%- include js_module_path -%}{% endjs -%}

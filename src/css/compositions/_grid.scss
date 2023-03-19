@@ -38,7 +38,7 @@
 
 	&[data-layout="50-50"] {
 		--placement: auto-fit;
-		--min-inline-size: clamp(12rem, 50vw, 16rem);
+		--min-inline-size: clamp(8rem, 50% - var(--column-gap, var(--gap, var(--size-gutter))), 16rem);
 	}
 
 	&[data-layout="natural"] {
