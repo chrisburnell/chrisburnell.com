@@ -51,9 +51,9 @@
 	<meta name="theme-color" content="{{ designTokens.colors | keyValue("raven") }}">
 	<meta name="supported-color-schemes" content="light dark">
 
-	<!-- Inlined critical styles -->
+	<!-- Inlined Critical CSS -->
 	<style>{% getBundle 'css', 'critical' %}</style>
-	<!-- Deferred non-critical styles -->
+	<!-- Deferred CSS -->
 	<link rel="stylesheet" href="{% getBundleFileUrl 'css' %}" media="print" onload="this.media='all'">
 	<noscript>
 		<link rel="stylesheet" href="{% getBundleFileUrl 'css' %}">
@@ -121,7 +121,7 @@
 		<script>{% getBundle 'js', 'navigator' %}</script>
 	{% endif %}
 
-	<!-- Deferred non-critical JS -->
+	<!-- Deferred JS -->
 	<script type="module" src="{% getBundleFileUrl 'js', 'module' %}"></script>
 	{%- if js %}
 		<script src="{% getBundleFileUrl 'js' %}"></script>

@@ -106,7 +106,13 @@
       <p><xsl:value-of select="atom:summary" /></p>
       <ul class=" [ cluster ] [ deck__meta ] ">
         <li>
-          <small>published </small> <xsl:value-of select="atom:published" />
+          <small>published </small>
+          <time>
+            <xsl:attribute name="datetime">
+              <xsl:value-of select="atom:published" />
+            </xsl:attribute>
+            <xsl:value-of select="atom:published" />
+          </time>
         </li>
       </ul>
     </article>

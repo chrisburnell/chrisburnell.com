@@ -5,11 +5,9 @@ full_width: true
 ---
 {%- css %}{%- include '../../../css/components/shelf.css' -%}{% endcss -%}
 
-<h2>Find me elsewhere</h2>
-
 <nav class=" [ grid ] [ shelf ] ">
 	<article class=" [ flow ] ">
-		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://codepen.io' | urlencode }}/" class=" [ avatar ] " width="30" height="30" alt="{{ item.title | safe }}’s avatar" loading="lazy" decoding="async">
+		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://codepen.io' | urlencode }}/" class=" [ avatar ] " width="30" height="30" alt="" role="presentation" loading="lazy" decoding="async">
 		<h1>
 			<a href="https://codepen.io/{{ author.codepen }}">
 				CodePen
@@ -19,7 +17,7 @@ full_width: true
 		</h1>
 	</article>
 	<article class=" [ flow ] ">
-		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://discord.com' | urlencode }}/" class=" [ avatar ] " width="30" height="30" alt="{{ item.title | safe }}’s avatar" loading="lazy" decoding="async">
+		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://discord.com' | urlencode }}/" class=" [ avatar ] " width="30" height="30" alt="" role="presentation" loading="lazy" decoding="async">
 		<h1>
 			Discord
 			<br>
@@ -27,7 +25,17 @@ full_width: true
 		</h1>
 	</article>
 	<article class=" [ flow ] ">
-		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://github.com' | urlencode }}/" class=" [ avatar ] " width="30" height="30" alt="{{ item.title | safe }}’s avatar" loading="lazy" decoding="async">
+		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://11ty.dev' | urlencode }}/" class=" [ avatar ] " width="30" height="30" alt="" role="presentation" loading="lazy" decoding="async">
+		<h1>
+			<a href="https://11ty.dev/authors/{{ author.eleventy }}">
+				Eleventy
+				<br>
+				<small aria-hidden="true">@{{ author.eleventy }}</small>
+			</a>
+		</h1>
+	</article>
+	<article class=" [ flow ] ">
+		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://github.com' | urlencode }}/" class=" [ avatar ] " width="30" height="30" alt="" role="presentation" loading="lazy" decoding="async">
 		<h1>
 			<a href="https://github.com/{{ author.github }}">
 				GitHub
@@ -37,15 +45,17 @@ full_width: true
 		</h1>
 	</article>
 	<article class=" [ flow ] ">
-		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://indieweb.org' | urlencode }}/" class=" [ avatar ] " width="30" height="30" alt="{{ item.title | safe }}’s avatar" loading="lazy" decoding="async">
+		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://indieweb.org' | urlencode }}/" class=" [ avatar ] " width="30" height="30" alt="" role="presentation" loading="lazy" decoding="async">
 		<h1>
 			<a href="https://indieweb.org/User:{{ author.indieweb }}">
 				IndieWeb
+				<br>
+				<small aria-hidden="true">{{ author.indieweb }}</small>
 			</a>
 		</h1>
 	</article>
 	<article class=" [ flow ] ">
-		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://last.fm' | urlencode }}/" class=" [ avatar ] " width="30" height="30" alt="{{ item.title | safe }}’s avatar" loading="lazy" decoding="async">
+		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://last.fm' | urlencode }}/" class=" [ avatar ] " width="30" height="30" alt="" role="presentation" loading="lazy" decoding="async">
 		<h1>
 			<a href="https://last.fm/user/{{ author.lastfm }}">
 				Last.fm
@@ -55,7 +65,7 @@ full_width: true
 		</h1>
 	</article>
 	<article class=" [ flow ] ">
-		<img src="https://v1.indieweb-avatar.11ty.dev/{{ ('https://' + author.mastodon_domain) | urlencode }}/" class=" [ avatar ] " width="30" height="30" alt="{{ item.title | safe }}’s avatar" loading="lazy" decoding="async">
+		<img src="https://v1.indieweb-avatar.11ty.dev/{{ ('https://' + author.mastodon_domain) | urlencode }}/" class=" [ avatar ] " width="30" height="30" alt="" role="presentation" loading="lazy" decoding="async">
 		<h1>
 			<a href="https://{{ author.mastodon_domain }}/users/{{ author.mastodon.split('@') | first }}">
 				Mastodon
@@ -65,15 +75,37 @@ full_width: true
 		</h1>
 	</article>
 	<article class=" [ flow ] ">
-		<img src="https://v1.indieweb-avatar.11ty.dev/{{ author.urls.spotify | urlencode }}/" class=" [ avatar ] " width="30" height="30" alt="{{ item.title | safe }}’s avatar" loading="lazy" decoding="async">
+		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://npmjs.com' | urlencode }}/" class=" [ avatar ] " width="30" height="30" alt="" role="presentation" loading="lazy" decoding="async">
 		<h1>
-			<a href="{{ author.urls.spotify }}">
-				Spotify
+			<a href="https://npmjs.com/{{ author.npm }}">
+				npm
+				<br>
+				<small aria-hidden="true">@{{ author.npm }}</small>
 			</a>
 		</h1>
 	</article>
 	<article class=" [ flow ] ">
-		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://untappd.com' | urlencode }}/" class=" [ avatar ] " width="30" height="30" alt="{{ item.title | safe }}’s avatar" loading="lazy" decoding="async">
+		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://speakerdeck.com' | urlencode }}/" class=" [ avatar ] " width="30" height="30" alt="" role="presentation" loading="lazy" decoding="async">
+		<h1>
+			<a href="https://speakerdeck.com/{{ author.speakerdeck }}">
+				Speakerdeck
+				<br>
+				<small aria-hidden="true">@{{ author.speakerdeck }}</small>
+			</a>
+		</h1>
+	</article>
+	<article class=" [ flow ] ">
+		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://spotify.com' | urlencode }}/" class=" [ avatar ] " width="30" height="30" alt="" role="presentation" loading="lazy" decoding="async">
+		<h1>
+			<a href="{{ author.urls.spotify }}">
+				Spotify
+				<br>
+				<small aria-hidden="true">{{ author.name }}</small>
+			</a>
+		</h1>
+	</article>
+	<article class=" [ flow ] ">
+		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://untappd.com' | urlencode }}/" class=" [ avatar ] " width="30" height="30" alt="" role="presentation" loading="lazy" decoding="async">
 		<h1>
 			<a href="https://untappd.com/user/{{ author.untappd }}">
 				Untappd

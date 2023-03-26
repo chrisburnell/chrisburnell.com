@@ -1,44 +1,45 @@
-const dateFilters = require("#filters/dates")
+// 60 characters that make up the Sexagesimal numeral system
+const SEQUENCE = "0123456789ABCDEFGHJKLMNPQRSTUVWXYZ_abcdefghijkmnopqrstuvwxyz"
 
-// Converts a JS Date Object to a Sexageismal (Base 60) String
-const DateToSxg = (dateObj) => {
-	let sinceEpoch = dateObj.getTime()
-	let epochDays = Math.floor(sinceEpoch / (1000 * 60 * 60 * 24))
-	return IntToSxg(epochDays)
-}
-
-// Converts a Base 10 Integer into Sexagesimal (Base 60) String
-const IntToSxg = (num) => {
-	let sxg = ""
-	let sequence = "0123456789ABCDEFGHJKLMNPQRSTUVWXYZ_abcdefghijkmnopqrstuvwxyz"
-	if (num === undefined || num === 0) {
+// Converts a Decimal (Base 10) Integer to a Sexagesimal (Base 60) String
+const DecimalToSexagesimal = (value) => {
+	if (value === undefined || value === 0) {
 		return 0
 	}
-	while (num > 0) {
-		let index = num % 60
-		sxg = sequence[index] + sxg
-		num = (num - index) / 60
+	let sexagesimalValue = ""
+	while (value > 0) {
+		let index = value % 60
+		sexagesimalValue = SEQUENCE[index] + sexagesimalValue
+		value = (value - index) / 60
 	}
-	return sxg
+	return sexagesimalValue
 }
 
-module.exports = (date, prefix, collection) => {
-	let postsToday = []
-	for (let i in collection) {
-		if ("date" in collection[i].data) {
-			if (dateFilters.friendlyDate(collection[i].data.date) == dateFilters.friendlyDate(date)) {
-				postsToday.push(collection[i])
-			}
-		}
-	}
+// Converts a JS Date Object to a Sexageismal (Base 60) String
+const DateToSexagesimal = (dateObject) => {
+	let sinceEpoch = dateObject.getTime()
+	let epochDays = Math.floor(sinceEpoch / (1000 * 60 * 60 * 24))
+	return DecimalToSexagesimal(epochDays)
+}
 
-	let postOfTheDay = 0
-	for (let i in postsToday) {
-		postOfTheDay += 1
-		if (dateFilters.epoch(postsToday[i].data.date) == dateFilters.epoch(date)) {
-			break
+// Export a function for an Eleventy Filter
+module.exports = (date, categoryCode, collection) => {
+	// Get all posts where DATE matches in UTC
+	const postsToday = collection.filter((post) => {
+		if ("date" in post.data) {
+			return new Date(post.data.date).toLocaleDateString("en", { timeZone: "UTC" }) === new Date(date).toLocaleDateString("en", { timeZone: "UTC" })
 		}
-	}
+		return false
+	})
 
-	return prefix + DateToSxg(date) + postOfTheDay
+	// Get the index of the post where EPOCH TIMESTAMP matches
+	// Note: Indices start at 1 for ShortURLs
+	const postIndex =
+		1 +
+		postsToday.findIndex((post) => {
+			return new Date(post.data.date).getTime() === new Date(date).getTime()
+		})
+
+	// Build the string
+	return categoryCode + DateToSexagesimal(date) + postIndex
 }

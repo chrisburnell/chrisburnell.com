@@ -21,7 +21,8 @@ module.exports = {
 			}, item)
 
 			if (value === "notempty") {
-				return itemValue?.length
+				// console.log(item.date, key, !!itemValue?.length)
+				return !!itemValue?.length
 			} else if (typeof value === "string" || value === null) {
 				return itemValue === value
 			}

@@ -3,7 +3,7 @@ module.exports = {
 	permalink: "article/{{ page.fileSlug }}/",
 	category: "article",
 	categoryPlural: "articles",
+	categoryCode: "a",
 	tags: ["article", "feature", "throwback", "writing"],
-	prefix: "a",
 	show_reading_length: true,
 }

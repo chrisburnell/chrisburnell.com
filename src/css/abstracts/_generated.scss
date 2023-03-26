@@ -78,6 +78,7 @@ $sizes-extra: (
 	gutter: var(--size-medium),
 	gap: calc(var(--size-gutter) * 2),
 	space: clamp(1.5em, 0.04rem + 1.86vw, 2.25em),
+	aside: clamp(15rem, 7.71rem + 13.71vw, 18rem),
 	avatar: 100px,
 	avatar-small: 48px,
 	logo: clamp(9rem, -3.6rem + 28.8vw, 18rem),

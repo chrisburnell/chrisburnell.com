@@ -3,7 +3,7 @@ module.exports = {
 	permalink: "video/{{ page.fileSlug }}/",
 	category: "video",
 	categoryPlural: "videos",
+	categoryCode: "v",
 	tags: ["video", "feature", "throwback"],
 	emoji: "🎥",
-	prefix: "v",
 }

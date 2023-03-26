@@ -96,7 +96,7 @@ class WebsiteSounds {
 				if (!element.values && !element.dataset.values) {
 					target = [...element.children].filter((child) => {
 						return child.values || child.dataset.values
-					})[0];
+					})[0]
 				}
 				let values = target.values || target.dataset.values
 				let duration = target.getAttribute("duration") ? parseFloat(target.getAttribute("duration")) : target.dataset.duration ? parseFloat(target.dataset.duration) : this.defaults.duration
@@ -118,7 +118,7 @@ class WebsiteSounds {
 
 		// Tonics
 		this.tonics = document.querySelectorAll(".logo, .author__information")
-		this.tonics.forEach(tonic => {
+		this.tonics.forEach((tonic) => {
 			tonic.addEventListener("mouseenter", () => {
 				if (localStorage.getItem(this.STORAGE_KEY) === "true") {
 					pentatonic([0], this.headerDefaults.duration, this.headerDefaults.volume, this.defaults.keyStart - this.defaults.keyLimit, undefined, undefined, this.waveform)

@@ -16,6 +16,11 @@ layout: wrapper
 						</li>
 					{% endif %}
 				{% endfor %}
+				{% if not env.ELEVENTY_PRODUCTION -%}
+				<li>
+					<a href="/drafts/"{% if page.url == '/drafts/' %} aria-current="page"{% endif %}>Drafts</a>
+				</li>
+				{%- endif %}
 			</ol>
 		</nav>
 	</div>

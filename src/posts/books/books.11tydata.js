@@ -7,7 +7,7 @@ module.exports = {
 	categoryProper: "book review",
 	categoryPlural: "books",
 	categoryProperPlural: "book reviews",
+	categoryCode: "r",
 	tags: ["book", "review"],
 	emoji: "📖",
-	prefix: "r",
 }

@@ -10,6 +10,7 @@ tags:
   - eleventy
   - indieweb
   - javascript
+  - nunjucks
   - package
 syndicate_to:
   - https://mastodon.social/users/chrisburnell/statuses/107399910372983580

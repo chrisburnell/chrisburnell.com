@@ -67,6 +67,10 @@
 		}
 	}
 
+	var {
+		color: h(highland);
+	}
+
 	hr {
 		background-color: h(alto, beta);
 	}
@@ -110,29 +114,24 @@
 		border-block-start-color: var(--border-color, h(raven, alpha));
 	}
 
-	var,
 	.box %anchor,
 	%box %anchor {
 		color: h(highland);
 	}
 
 	.librarian {
-		background-color: mix(map-get($colors, thunder), map-get($colors, mineshaft), map-get($opacities, delta) * 100%);
+		--background-color: #{mix(map-get($colors, thunder), map-get($colors, mineshaft), map-get($opacities, delta) * 100%)};
 	}
 
 	.rating {
-		&::before {
-			color: h(kaiser);
-		}
-
-		&::after {
-			color: h(alto);
-		}
+		--rating-background-color: #{h(kaiser)};
+		--rating-color: #{mix(map-get($colors, thunder), map-get($colors, aspen), map-get($opacities, gamma) * 100%)};
+		--rating-border: #{h(dove)};
 	}
 
 	.browse__previous,
 	.browse__next {
-		&:not(:active) {
+		&:not(:is(:hover, :focus, :active)) {
 			&::before {
 				color: h(alto);
 			}

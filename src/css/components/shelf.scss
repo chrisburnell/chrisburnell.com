@@ -24,6 +24,8 @@
 	}
 
 	h1 {
+		line-height: var(--line-height-medium);
+
 		%anchor {
 			color: inherit;
 		}
@@ -32,11 +34,11 @@
 	.cover {
 		margin: 0;
 		object-fit: cover;
-		transition: transform var(--transition-duration) var(--transition-function);
+		transition: transform var(--transition-duration-short) var(--transition-function);
 	}
 	%anchor:is(:hover, :focus, :active) {
 		.cover {
-			transform: scale(1.05);
+			transform: scaleZ(1.05);
 		}
 	}
 }

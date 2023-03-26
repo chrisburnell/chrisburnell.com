@@ -1,15 +1,6 @@
 ////
 /// Portal
 /// @group compositions
-///
-/// --aside-size (clamp(16.00rem, 1.43rem + 27.43vw, 22.00rem))
-///     Defines the inline-size of the aside.
-/// --columns (6)
-///     Defines how many sub-columns should make up the content column.
-/// --outdent-gap (var(--size-gap) OR 0)
-///     Defines the gap between the content and outdent column.
-/// --outdent-size (1fr OR 0)
-///     Defines the inline-size of the outdent.
 ////
 
 .portal {

@@ -19,9 +19,9 @@
 		display: block;
 		font-weight: var(--font-weight-semibold);
 	}
-	&:not(:active) {
+	&:not(:is(:hover, :focus, :active)) {
 		&::before {
-			color: h(dove);
+			color: h(kaiser);
 		}
 	}
 }

@@ -11,7 +11,7 @@ hfeed: true
 show_photos: true
 truncate: true
 ---
-{%- set collection = collections[tag] | arrayKeyIncludes('data.tags', 'post') | arePublished | reverse -%}
+{%- set collection = collections[tag] | arePublished | dateSort -%}
 {%- set count = collection.length -%}
 {%- set latest_year = collection[0].date.getFullYear() -%}
 {%- set first_year = collection[count-1].date.getFullYear() -%}
@@ -20,9 +20,6 @@ truncate: true
 	<ul class=" [ cluster ] [ breadcrumbs ] ">
 		<li>
 			<a href="/archive/">All Posts</a>
-		</li>
-		<li>
-			<a href="/archive/#tags">Tags</a>
 		</li>
 		<li aria-hidden="true">
 			{{ tag | capitalizeFormat }}

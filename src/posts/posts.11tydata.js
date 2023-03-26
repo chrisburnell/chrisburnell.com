@@ -3,11 +3,12 @@ const { getWebmentions } = require("@chrisburnell/eleventy-cache-webmentions")()
 
 const author = require("#data/author")
 const site = require("#data/site")
-const configWebmentions = require("../data/config/webmentions.js")
-const people = require("../data/people.js")
-const dateFilters = require("#filters/dates")
-const queryFilters = require("#filters/queries")
-const stringFilters = require("#filters/strings")
+const configWebmentions = require("#datajs/config/webmentions")
+const people = require("#datajs/people")
+
+const { friendlyDateLong } = require("#filters/dates")
+const { getHost, getPerson } = require("#filters/queries")
+const { markdownFormat } = require("#filters/strings")
 
 const getType = (data) => {
 	const type = data?.bookmark_of || data?.drink_of || data?.like_of || data?.listen_of || data?.play_of || data?.read_of || data?.watch_of || data?.link
@@ -64,21 +65,20 @@ module.exports = {
 			} else if (data.title) {
 				return data.title.replace(/(<([^>]+)>)/gi, "")
 			} else if (data.category) {
-				return `${category} from ${dateFilters.friendlyDateLong(data.page.date)}`
+				return `${category} from ${friendlyDateLong(data.page.date)}`
 			}
 			return site.title.replace(/(<([^>]+)>)/gi, "")
 		},
 		meta_description: (data) => {
 			if (data.description) {
-				return stringFilters
-					.markdownFormat(data.description)
+				return markdownFormat(data.description)
 					.replace("\n", " ")
 					.replace(/(<([^>]+)>)/gi, "")
 			} else if (data.category) {
 				const category = (data.categoryProper || data.category).charAt(0).toUpperCase() + (data.categoryProper || data.category).substring(1)
-				return `A ${category} on ${queryFilters.getHost(site.url)}`
+				return `A ${category} on ${getHost(site.url)}`
 			}
-			return `A page on ${queryFilters.getHost(site.url)}`
+			return `A page on ${getHost(site.url)}`
 		},
 		meta_image: (data) => {
 			if (data.banner || data.cover) {
@@ -93,7 +93,7 @@ module.exports = {
 			if (data.authors) {
 				return data.authors
 			} else if (getType(data).url) {
-				let typeAuthors = queryFilters.getPerson(await people(), getType(data).url, "object")
+				let typeAuthors = getPerson(await people(), getType(data).url, "object")
 				if (typeAuthors != getType(data).url) {
 					return typeAuthors
 				}

@@ -5,9 +5,9 @@ module.exports = {
 	permalink: "like/{{ page.fileSlug }}/",
 	category: "like",
 	categoryPlural: "likes",
+	categoryCode: "f",
 	tags: ["like", "clickthrough"],
 	emoji: "❤️",
-	prefix: "f",
 	sitemap: {
 		exclude: true,
 	},

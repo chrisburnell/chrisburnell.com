@@ -1,9 +1,10 @@
 const { getWebmentions } = require("@chrisburnell/eleventy-cache-webmentions")()
 
 const site = require("#data/site")
-const configWebmentions = require("../data/config/webmentions.js")
-const queryFilters = require("#filters/queries")
-const stringFilters = require("#filters/strings")
+const configWebmentions = require("#datajs/config/webmentions")
+
+const { getHost } = require("#filters/queries")
+const { markdownFormat } = require("#filters/strings")
 
 module.exports = {
 	layout: "page",
@@ -16,12 +17,11 @@ module.exports = {
 		},
 		meta_description: (data) => {
 			if (data.description) {
-				return stringFilters
-					.markdownFormat(data.description)
+				return markdownFormat(data.description)
 					.replace("\n", " ")
 					.replace(/(<([^>]+)>)/gi, "")
 			}
-			return `A page on ${queryFilters.getHost(site.url)}`
+			return `A page on ${getHost(site.url)}`
 		},
 		meta_image: (data) => {
 			if (data.banner || data.cover) {

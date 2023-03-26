@@ -1,10 +1,10 @@
-const fetchFilter = require("#filters/fetch")
-
 const author = require("#data/author")
 const site = require("#data/site")
 
+const { githubData } = require("#filters/fetch")
+
 const getGithubData = async (repository) => {
-	const github = await fetchFilter.githubData(repository)
+	const github = await githubData(repository)
 	return github
 }
 

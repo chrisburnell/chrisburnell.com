@@ -1,5 +1,5 @@
 ---
-date: 2019-03-14T12:00:00+0000
+date: 2019-03-14T13:00:00+0000
 title: Buffalo Sauce
 description: Throw this on some wings and you're off to the races.
 prep_time: 5 minutes

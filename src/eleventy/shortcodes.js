@@ -1,5 +1,5 @@
-const dateFilters = require("#filters/dates")
-const utilityFilters = require("#filters/utils")
+const { friendlyDate } = require("#filters/dates")
+const { simpleMovingAverage } = require("#filters/utils")
 
 module.exports = {
 	sparkline: (collection, start, end) => {
@@ -9,7 +9,7 @@ module.exports = {
 		for (let i = parseFloat(start); i <= parseFloat(end); i++) {
 			// Loop through collection comparing Year
 			for (let item of collection) {
-				if (i === parseFloat(dateFilters.friendlyDate(item.date, "yyyy"))) {
+				if (i === parseFloat(friendlyDate(item.date, "yyyy"))) {
 					count++
 				}
 			}
@@ -17,7 +17,7 @@ module.exports = {
 			count = 0
 		}
 		// Calculate simple moving average of each value, preserve head and tail
-		let normalized = utilityFilters.simpleMovingAverage(values, 3, true)
+		let normalized = simpleMovingAverage(values, 3, true)
 		// Sparklines in A minor
 		return `<c-spark-line values="${normalized.join(",")}"
 							original="${values.join(",")}"

@@ -1,5 +1,7 @@
 {%- set related_page = site.url + '/' + related_collection + '/' -%}
 {%- set related_page = related_page | replace('featurePosts/', '') | replace('writingPosts', 'writing') -%}
+{%- set collection = collections[related_collection] | arePublished | sort(true, false, 'date') -%}
+{%- set limit = limit_collection | default(site.limits.feed) -%}
 <?xml version="1.0" encoding="utf-8" ?>
 <?xml-stylesheet href="/feed.xsl" type="text/xsl" ?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ site.locale }}" xml:base="{{ site.url }}">
@@ -15,9 +17,9 @@
 	</author>
 	<logo>{{ site.url + site.logo }}</logo>
 	<image>{{ site.url + author.avatar }}</image>
-	<updated>{{ collections[related_collection] | getNewestCollectionItemDate | rfc3339Date }}</updated>
+	<updated>{{ collection | getNewestCollectionItemDate | rfc3339Date }}</updated>
 	<generator>{{ eleventy.generator }}</generator>
-	{% for item in collections[related_collection] | limit(site.limits.feed) -%}
+	{% for item in collection | limit(limit) -%}
 	{%- set item_of = item.data.bookmark_of | default(item.data.drink_of) | default(item.data.like_of) | default(item.data.listen_of) | default(item.data.play_of) | default(item.data.read_of) | default(item.data.watch_of) -%}
 	{%- set item_of_url = item_of -%}
 	{% if item_of.url -%}

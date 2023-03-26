@@ -45,7 +45,7 @@ pre {
 	overflow: hidden;
 	position: relative;
 
-	@include container("above:small") {
+	@include container("above:tiny") {
 		tab-size: 4;
 	}
 

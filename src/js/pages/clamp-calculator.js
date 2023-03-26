@@ -31,8 +31,8 @@ class ClampCalculator {
 		this.visual.style.fontSize = `${this.inputs["font-size-root"].value}px`
 		this.visualOutput.style.fontSize = `clamp(${this.toRem(this.inputs["size-min"].value, this.inputs["font-size-root"].value)}em, ${preferredSize}em + ${variableSize}vw, ${this.toRem(this.inputs["size-max"].value, this.inputs["font-size-root"].value)}em)`
 
-		this.visualRoot.querySelector("span").innerText = `Root: ${this.inputs["font-size-root"].value}px`
-		this.visualOutput.querySelector("span").innerText = `Clamped: ${this.inputs["size-min"].value}–${this.inputs["size-max"].value}px`
+		this.visualRoot.querySelector("span").innerText = `Root Size: ${this.inputs["font-size-root"].value}px`
+		this.visualOutput.querySelector("span").innerText = `Clamped Size: ${this.inputs["size-min"].value}–${this.inputs["size-max"].value}px`
 
 		this.howRoot.innerHTML = `${this.inputs["font-size-root"].value}px`
 
@@ -67,7 +67,7 @@ Maximum Size ≈ ${this.limitDecimals(this.inputs["size-max"].value - this.input
 
 	measureViewport() {
 		this.visualViewport.querySelector("span").innerText = `Viewport Width: ${window.innerWidth}px`
-		this.visualCalculated.querySelector("span").innerText = `Calculated: ${this.limitDecimals(this.visualOutput.querySelector(".size-example").getBoundingClientRect().width, 3)}px`
+		this.visualCalculated.querySelector("span").innerText = `Current Size: ${this.limitDecimals(this.visualOutput.querySelector(".size-example").getBoundingClientRect().width, 3)}px`
 	}
 
 	init() {

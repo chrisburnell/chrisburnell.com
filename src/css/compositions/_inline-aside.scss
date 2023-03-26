@@ -1,0 +1,22 @@
+////
+/// Inline Aside
+/// @group compositions
+////
+
+.inline-aside {
+	@include media("above:medium") {
+		inline-size: 100% !important;
+		block-size: 0 !important;
+		margin: 0 !important;
+		position: relative;
+	}
+
+	& > * {
+		@include media("above:medium") {
+			inline-size: var(--size-aside) !important;
+			position: absolute;
+			inset-block-start: var(--inset-block-start, 0);
+			inset-inline-end: calc(100% + var(--size-gap));
+		}
+	}
+}

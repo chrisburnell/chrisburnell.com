@@ -3,6 +3,6 @@ module.exports = {
 	permalink: "note/{{ page.fileSlug }}/",
 	category: "note",
 	categoryPlural: "notes",
+	categoryCode: "n",
 	tags: ["note", "feature", "throwback"],
-	prefix: "n",
 }

@@ -4,17 +4,12 @@
 ////
 
 .navigation__list {
-	display: grid;
-	grid-template-columns: repeat(2, auto);
-	grid-template-rows: repeat(2, auto);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
 	column-gap: var(--size-small);
 	row-gap: var(--size-tiny);
 	text-align: center;
-
-	@include container("above:tiny") {
-		grid-template-columns: repeat(4, auto);
-		grid-template-rows: auto;
-	}
 
 	%anchor {
 		background-color: transparent !important;

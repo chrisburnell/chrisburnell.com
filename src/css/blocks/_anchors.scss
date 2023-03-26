@@ -3,6 +3,10 @@
 /// @group blocks
 ////
 
+h2 %anchor:not(:is(:hover, :focus, :active)) {
+	text-decoration: none;
+}
+
 // Skip to main content
 .skip-link {
 	--outline-color: #{h(bowhead)};
@@ -31,7 +35,7 @@
 	font-size: inherit;
 	font-weight: var(--font-weight-semibold);
 	text-transform: lowercase;
-	transform: translateY(calc(-50% - (var(--size-border-thin) * 2)));
+	transform: translateY(calc(-50% - var(--size-border-thin)));
 
 	h2:not(:hover, :focus-within) > &:not(:hover, :focus, :active) {
 		@include hidden;

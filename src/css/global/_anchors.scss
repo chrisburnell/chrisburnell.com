@@ -33,6 +33,11 @@
 		color: h(milou) !important;
 	}
 
+	&[disabled] {
+		@include non-interactive;
+		opacity: var(--opacity-beta);
+	}
+
 	@include media("print") {
 		text-decoration: none !important;
 	}

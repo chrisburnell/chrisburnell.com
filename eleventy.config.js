@@ -25,7 +25,8 @@ const queryFilters = require("#filters/queries")
 const asyncFilters = require("#filters/async")
 const utilityFilters = require("#filters/utils")
 const collectionFilters = require("#filters/collections")
-const newBase60 = require("#filters/newBase60")
+const intlFilters = require("#filters/intl")
+const NewBase60 = require("#filters/NewBase60")
 
 // Import shortcodes
 const shortcodes = require("#core/shortcodes")
@@ -86,13 +87,16 @@ module.exports = (eleventyConfig) => {
 	Object.keys(utilityFilters).forEach((filterName) => {
 		eleventyConfig.addFilter(filterName, utilityFilters[filterName])
 	})
+	Object.keys(intlFilters).forEach((filterName) => {
+		eleventyConfig.addFilter(filterName, intlFilters[filterName])
+	})
 	Object.keys(collectionFilters).forEach((filterName) => {
 		eleventyConfig.addFilter(filterName, collectionFilters[filterName])
 	})
 	Object.keys(asyncFilters).forEach((filterName) => {
 		eleventyConfig.addAsyncFilter(filterName, asyncFilters[filterName])
 	})
-	eleventyConfig.addFilter("newBase60", newBase60)
+	eleventyConfig.addFilter("NewBase60", NewBase60)
 
 	// Shortcodes
 	Object.keys(shortcodes).forEach((shortcodeName) => {

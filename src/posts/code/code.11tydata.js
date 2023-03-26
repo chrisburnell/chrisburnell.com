@@ -6,8 +6,8 @@ module.exports = {
 	category: "code",
 	categoryProper: "code snippet",
 	categoryProperPlural: "code snippets",
+	categoryCode: "c",
 	tags: ["code"],
-	prefix: "c",
 	on_this_day: true,
 	eleventyComputed: {
 		syndicate_to: (data) => {

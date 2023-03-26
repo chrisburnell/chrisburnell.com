@@ -1,9 +1,9 @@
 require("dotenv").config()
+const Image = require("@11ty/eleventy-img")
 
 const site = require("#data/site")
-const queryFilters = require("#filters/queries")
 
-const Image = require("@11ty/eleventy-img")
+const { getHost, getMastodonHandle } = require("#filters/queries")
 
 // Avatar Dimensions
 const size = 96 // 48 * 2
@@ -68,13 +68,13 @@ module.exports = (eleventyConfig) => {
 			let array
 
 			array = Array.from(mastodonHandles)
-			console.log(`[${queryFilters.getHost(site.url)}] Generating ${array.length} Mastodon avatars.`)
+			console.log(`[${getHost(site.url)}] Generating ${array.length} Mastodon avatars.`)
 			for (let mastodonHandle of array) {
 				fetchImageData(mastodonHandle.handle, mastodonHandle.photo)
 			}
 
 			array = Array.from(domains)
-			console.log(`[${queryFilters.getHost(site.url)}] Generating ${array.length} domain avatars.`)
+			console.log(`[${getHost(site.url)}] Generating ${array.length} domain avatars.`)
 			for (let domain of array) {
 				fetchImageData(domain.url, domain.photo)
 			}
@@ -82,7 +82,7 @@ module.exports = (eleventyConfig) => {
 	}
 
 	eleventyConfig.addNunjucksAsyncShortcode("avatar", async (photo, url, authorUrl, classes = "") => {
-		const mastodonHandle = authorUrl ? queryFilters.getMastodonHandle(authorUrl) : null
+		const mastodonHandle = authorUrl ? getMastodonHandle(authorUrl) : null
 		if (photo && mastodonHandle && mastodonHandle != authorUrl) {
 			mastodonHandles.add({
 				handle: mastodonHandle,
@@ -90,7 +90,7 @@ module.exports = (eleventyConfig) => {
 			})
 			return storeAvatar(mastodonHandle, classes)
 		} else if (photo && !url.includes("https://twitter.com")) {
-			let domain = queryFilters.getHost(authorUrl || url)
+			let domain = getHost(authorUrl || url)
 			domains.add({
 				url: domain,
 				photo: photo.toLowerCase(),

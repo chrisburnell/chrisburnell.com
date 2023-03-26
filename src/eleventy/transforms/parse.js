@@ -45,7 +45,7 @@ module.exports = async (value, outputPath) => {
 		}
 
 		// Process and generate fragment anchors for content headings
-		const articleHeadings = $(".content h2")
+		const articleHeadings = $(".content h2:not(.no-fragment)")
 		articleHeadings.each((i, element) => {
 			const headingID =
 				$(element).attr("id") ||

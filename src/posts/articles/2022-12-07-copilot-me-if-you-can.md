@@ -2,6 +2,9 @@
 date: 2022-12-07T10:40:00+0000
 title: Copilot me if you can
 description: A short tale about how GitHub Copilot generated some “real” data about my website.
+tags:
+  - ai
+  - state-of-the-web
 ---
 
 On <time datetime="">the 17<sup>th</sup> of November</time>, I received a notification that I’d been [mentioned on Twitter](https://twitter.com/lindsaykwardell/status/1593358142376931328) by someone I didn’t recognise. Since I don’t get a lot of mentions — maybe because I don’t tweet very much… — curiousity immediately got the better of me!

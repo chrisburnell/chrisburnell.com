@@ -49,30 +49,36 @@ ol.default-list {
 		counter-increment: ordered-list;
 
 		&::marker {
-			content: counters(ordered-list, "-", decimal) ".";
+			content: counter(ordered-list) ".";
 			font-family: var(--font-family-monospace);
 			font-size: var(--font-size-small);
 		}
 	}
 
-	&[type="a"] li::marker,
-	&.lower-alpha li::marker {
-		content: counters(ordered-list, "-", lower-alpha);
+	& & > li {
+		&::marker {
+			content: counters(ordered-list, "-", var(--ordered-list-type, decimal)) ".";
+		}
 	}
 
-	&[type="A"] li::marker,
-	&.upper-alpha li::marker {
-		content: counters(ordered-list, "-", upper-alpha);
+	&[type="a"],
+	&.lower-alpha {
+		--ordered-list-type: lower-alpha;
 	}
 
-	&[type="i"] li::marker,
-	&.lower-roman li::marker {
-		content: counters(ordered-list, "-", lower-roman);
+	&[type="A"],
+	&.upper-alpha {
+		--ordered-list-type: upper-alpha;
 	}
 
-	&[type="I"] li::marker,
-	&.upper-roman li::marker {
-		content: counters(ordered-list, "-", upper-roman);
+	&[type="i"],
+	&.lower-roman {
+		--ordered-list-type: lower-roman;
+	}
+
+	&[type="I"],
+	&.upper-roman {
+		--ordered-list-type: upper-roman;
 	}
 
 	&[reversed] {
@@ -92,9 +98,7 @@ ol.default-list {
 	}
 }
 ol:not([class]),
-ol:not([class*="continued-list"]) {
-	counter-reset: ordered-list;
-}
+ol:not([class*="continued-list"]),
 [counter-reset] {
 	counter-reset: ordered-list;
 }

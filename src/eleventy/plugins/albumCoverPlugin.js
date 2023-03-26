@@ -1,10 +1,10 @@
 require("dotenv").config()
-
-const site = require("#data/site")
-const queryFilters = require("#filters/queries")
 const Image = require("@11ty/eleventy-img")
 
+const site = require("#data/site")
 const SPOTIFY_CLIENT_TOKEN = require("#data/spotify_token")
+
+const { getHost } = require("#filters/queries")
 
 // Avatar Dimensions
 const size = 400
@@ -80,7 +80,7 @@ module.exports = (eleventyConfig) => {
 
 	eleventyConfig.on("afterBuild", () => {
 		let array = Array.from(ids)
-		// console.log(`[${queryFilters.getHost(site.url)}] Generating ${array.length} album covers.`)
+		// console.log(`[${getHost(site.url)}] Generating ${array.length} album covers.`)
 		for (let id of array) {
 			fetchImageData(id, fetchAlbumCoverUrl(id))
 		}

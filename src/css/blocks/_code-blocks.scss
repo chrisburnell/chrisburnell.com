@@ -25,6 +25,10 @@ pre[class*="language-"] {
 		padding: 0 0 1em;
 		line-height: var(--line-height-code);
 	}
+
+	%flow > * + & {
+		margin-block: var(--flow-space, var(--size-large));
+	}
 }
 
 pre.language-none {

@@ -9,5 +9,5 @@ module.exports = {
 	categoryProperPlural: "beer reviews",
 	tags: ["beer", "review"],
 	emoji: "🍺",
-	prefix: "b",
+	categoryCode: "b",
 }

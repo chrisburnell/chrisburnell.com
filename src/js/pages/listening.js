@@ -18,23 +18,23 @@
 </div>
 `
 
+	const rtf = new Intl.RelativeTimeFormat("en", {
+		localeMatcher: "best fit", // other values: "lookup"
+		numeric: "always", // other values: "auto"
+		style: "long", // other values: "short" or "narrow"
+	})
+
+	const today = Math.floor(Date.now() / 1000)
+	const minute = 60
+	const hour = 60 * minute
+	const day = 24 * hour
+	const week = 7 * day
+	const month = 30.436875 * day
+	const year = 12 * month
+
 	const since = (datetime) => {
-		const today = Math.floor(Date.now() / 1000)
 		const compare = Math.floor(datetime.getTime() / 1000)
 		const difference = Math.abs(compare - today)
-
-		const minute = 60
-		const hour = 60 * minute
-		const day = 24 * hour
-		const week = 7 * day
-		const month = 30.436875 * day
-		const year = 12 * month
-
-		const rtf = new Intl.RelativeTimeFormat("en", {
-			localeMatcher: "best fit", // other values: "lookup"
-			numeric: "always", // other values: "auto"
-			style: "long", // other values: "short" or "narrow"
-		})
 
 		if (difference < minute * 2) {
 			return "just moments ago"

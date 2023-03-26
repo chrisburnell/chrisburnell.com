@@ -5,7 +5,7 @@ module.exports = {
 	permalink: "recipe/{{ page.fileSlug }}/",
 	category: "recipe",
 	categoryPlural: "recipes",
+	categoryCode: "d",
 	tags: ["recipe", "feature"],
 	emoji: "📝",
-	prefix: "d",
 }

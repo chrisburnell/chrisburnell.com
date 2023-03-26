@@ -4,7 +4,7 @@ module.exports = {
 	permalink: "bookmark/{{ page.fileSlug }}/",
 	category: "bookmark",
 	categoryPlural: "bookmarks",
+	categoryCode: "h",
 	tags: ["bookmark", "clickthrough"],
 	emoji: "🔖",
-	prefix: "h",
 }
