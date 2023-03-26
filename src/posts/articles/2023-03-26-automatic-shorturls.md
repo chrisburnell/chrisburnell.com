@@ -9,7 +9,7 @@ tags:
   - nunjucks
 ---
 
-<nav class=" [ box ] [ flow ] ">
+<nav class=" [ box ] [ flow ] " style="margin-block-end: var(--size-large);">
     <h2>Table of Contents</h2>
     <ol>
         <li>
