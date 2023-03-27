@@ -67,7 +67,7 @@ class NumberConverter {
 	}
 
 	convertFromSexagesimal() {
-		this.decimal.value = this.SexagesimalToDecimal(parseInt(this.sexagesimal.value))
+		this.decimal.value = this.SexagesimalToDecimal(this.sexagesimal.value)
 		this.binary.value = (parseInt(this.decimal.value) >>> 0).toString(2)
 	}
 
