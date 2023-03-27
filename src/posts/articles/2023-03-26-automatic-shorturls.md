@@ -7,6 +7,7 @@ tags:
   - javascript
   - liquid
   - nunjucks
+js_module: article-automatic-shorturls.js
 ---
 
 <nav class=" [ box ] [ flow ] " style="margin-block-end: var(--size-large);">
@@ -151,6 +152,84 @@ First, we need to decide how we want to represent a base-60 numeral system. Fort
 // 60 characters that make up our Sexagesimal numeral system
 const SEQUENCE = "0123456789ABCDEFGHJKLMNPQRSTUVWXYZ_abcdefghijkmnopqrstuvwxyz"
 ```
+
+<c-details>
+<summary>Example Conversions</summary>
+<table>
+    <thead>
+        <tr>
+            <th>Decimal</th>
+            <th>Binary</th>
+            <th>Sexagesimal</th>
+        </tr>
+    </thead>
+    <tbody class=" [ monospace numeral ] ">
+        <tr>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>10</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>1010</td>
+            <td>A</td>
+        </tr>
+        <tr>
+            <td>59</td>
+            <td>111011</td>
+            <td>z</td>
+        </tr>
+        <tr>
+            <td>60</td>
+            <td>111100</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>901</td>
+            <td>1110000101</td>
+            <td>F1</td>
+        </tr>
+        <tr>
+            <td>9001</td>
+            <td>10001100101001</td>
+            <td>2W1</td>
+        </tr>
+        <tr>
+            <td>90001</td>
+            <td>10101111110010001</td>
+            <td>R01</td>
+        </tr>
+    </tbody>
+</table>
+</c-details>
+
+<c-details class="requires-js">
+<summary>Decimal / Binary / Sexagesimal Converter</summary>
+<form id="number-converter" class=" [ grid ] " style="--placement: auto-fit; --min-inline-size: 0;">
+	<fieldset>
+		<label for="decimal" class=" [ delta ] ">Decimal</label>
+		<input id="decimal" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="number" min="0" inputmode="numeric" pattern="[0-9]+" lang="en" value="9001"></input>
+	</fieldset>
+	<fieldset>
+		<label for="binary" class=" [ delta ] ">Binary</label>
+		<input id="binary" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;"  type="number" min="0" inputmode="numeric" pattern="[0-1]+" lang="en" value="10001100101001"></input>
+	</fieldset>
+	<fieldset>
+		<label for="sexagesimal" class=" [ delta ] ">Sexagesimal</label>
+		<input id="sexagesimal" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="text" pattern="[0123456789ABCDEFGHJKLMNPQRSTUVWXYZ_abcdefghijkmnopqrstuvwxyz]+" lang="en" value="2W1"></input>
+	</fieldset>
+</form>
+</c-details>
 
 Now we can just about drop Tantek’s JavaScript implemention of NewBase60 into our project.
 
