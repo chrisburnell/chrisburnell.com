@@ -153,6 +153,63 @@ First, we need to decide how we want to represent a base-60 numeral system. Fort
 const SEQUENCE = "0123456789ABCDEFGHJKLMNPQRSTUVWXYZ_abcdefghijkmnopqrstuvwxyz"
 ```
 
+Now we can just about drop Tantek’s JavaScript implemention of NewBase60 into our project.
+
+<aside class="inline-aside">
+    <div id="packages" class=" [ box  box--warning ] ">
+        <p>If you prefer, there are a number of <a href="https://www.npmjs.com/search?q=newbase60">npm packages</a> and <a href="https://github.com/search?q=newbase60+language%3AJavaScript&type=repositories&l=JavaScript">projects on GitHub</a> that will provide the same NewBase60 conversion that we’ll be building below.</p>
+    </div>
+</aside>
+
+The purpose of this code is to consume a JavaScript Date Object and return the Sexagesimal value for how many days since [Epoch](https://en.wikipedia.org/wiki/Epoch_(computing)), 01 January 1970 00:00:00 UTC, the given date is:
+
+```javascript
+// Converts a Decimal (Base 10) Integer to a Sexagesimal (Base 60) String
+const DecimalToSexagesimal = (value) => {
+	if (value === undefined || value === 0) {
+		return 0
+	}
+	let sexagesimalValue = ""
+	while (value > 0) {
+		let index = value % 60
+		sexagesimalValue = SEQUENCE[index] + sexagesimalValue
+		value = (value - index) / 60
+	}
+	return sexagesimalValue
+}
+
+// Converts a JS Date Object to a Sexageismal (Base 60) String
+const DateToSexagesimal = (dateObject) => {
+	let sinceEpoch = dateObject.getTime()
+	let epochDays = Math.floor(sinceEpoch / (1000 * 60 * 60 * 24))
+	return DecimalToSexagesimal(epochDays)
+}
+```
+
+<p class="requires-js">Check out this little tool to convert between decimal (base 10), binary (base 2), sexagesimal (base 60), and even the date, based on the number as days since Epoch:</p>
+
+<div class=" [ box ] [ flow ] [ requires-js ] ">
+    <h2>Converter</h2>
+    <form id="converter" class=" [ grid ] " style="--placement: auto-fit;">
+        <fieldset>
+            <label for="decimal" class=" [ delta ] ">Decimal</label>
+            <input id="decimal" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="number" min="0" inputmode="numeric" pattern="[0-9]+" lang="en" value="17959"></input>
+        </fieldset>
+        <fieldset>
+            <label for="binary" class=" [ delta ] ">Binary</label>
+            <input id="binary" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;"  type="number" min="0" inputmode="numeric" pattern="[0-1]+" lang="en" value="100011000100111"></input>
+        </fieldset>
+        <fieldset>
+            <label for="sexagesimal" class=" [ delta ] ">Sexagesimal</label>
+            <input id="sexagesimal" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="text" pattern="[0123456789ABCDEFGHJKLMNPQRSTUVWXYZ_abcdefghijkmnopqrstuvwxyz]+" lang="en" value="4zK"></input>
+        </fieldset>
+        <fieldset>
+            <label for="date" class=" [ delta ] ">Date</label>
+            <input id="date" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="text" value="4 March 2019" readonly></input>
+        </fieldset>
+    </form>
+</div>
+
 <c-details>
 <summary>Example Conversions</summary>
 <table>
@@ -212,57 +269,6 @@ const SEQUENCE = "0123456789ABCDEFGHJKLMNPQRSTUVWXYZ_abcdefghijkmnopqrstuvwxyz"
     </tbody>
 </table>
 </c-details>
-
-<c-details class="requires-js">
-<summary>Decimal / Binary / Sexagesimal Converter</summary>
-<form id="number-converter" class=" [ grid ] " style="--placement: auto-fit; --min-inline-size: 0;">
-	<fieldset>
-		<label for="decimal" class=" [ delta ] ">Decimal</label>
-		<input id="decimal" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="number" min="0" inputmode="numeric" pattern="[0-9]+" lang="en" value="9001"></input>
-	</fieldset>
-	<fieldset>
-		<label for="binary" class=" [ delta ] ">Binary</label>
-		<input id="binary" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;"  type="number" min="0" inputmode="numeric" pattern="[0-1]+" lang="en" value="10001100101001"></input>
-	</fieldset>
-	<fieldset>
-		<label for="sexagesimal" class=" [ delta ] ">Sexagesimal</label>
-		<input id="sexagesimal" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="text" pattern="[0123456789ABCDEFGHJKLMNPQRSTUVWXYZ_abcdefghijkmnopqrstuvwxyz]+" lang="en" value="2W1"></input>
-	</fieldset>
-</form>
-</c-details>
-
-Now we can just about drop Tantek’s JavaScript implemention of NewBase60 into our project.
-
-<aside class="inline-aside">
-    <div id="packages" class=" [ box  box--warning ] ">
-        <p>If you prefer, there are a number of <a href="https://www.npmjs.com/search?q=newbase60">npm packages</a> and <a href="https://github.com/search?q=newbase60+language%3AJavaScript&type=repositories&l=JavaScript">projects on GitHub</a> that will provide the same NewBase60 conversion that we’ll be building below.</p>
-    </div>
-</aside>
-
-The purpose of this code is to consume a JavaScript Date Object and return the Sexagesimal value for how many days since [Epoch](https://en.wikipedia.org/wiki/Epoch_(computing)), 01 January 1970 00:00:00 UTC, the given date is:
-
-```javascript
-// Converts a Decimal (Base 10) Integer to a Sexagesimal (Base 60) String
-const DecimalToSexagesimal = (value) => {
-	if (value === undefined || value === 0) {
-		return 0
-	}
-	let sexagesimalValue = ""
-	while (value > 0) {
-		let index = value % 60
-		sexagesimalValue = SEQUENCE[index] + sexagesimalValue
-		value = (value - index) / 60
-	}
-	return sexagesimalValue
-}
-
-// Converts a JS Date Object to a Sexageismal (Base 60) String
-const DateToSexagesimal = (dateObject) => {
-	let sinceEpoch = dateObject.getTime()
-	let epochDays = Math.floor(sinceEpoch / (1000 * 60 * 60 * 24))
-	return DecimalToSexagesimal(epochDays)
-}
-```
 
 ## Post Index for the Day
 

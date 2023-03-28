@@ -6,6 +6,7 @@ class NumberConverter {
 			binary: null,
 			sexagesimal: null,
 		}
+		this.dateFormatter = new Intl.DateTimeFormat("en-GB", { dateStyle: "long" })
 
 		this.init()
 	}
@@ -56,25 +57,34 @@ class NumberConverter {
 		return output
 	}
 
+	DecimalToDate(value) {
+		let dateObject = new Date(parseInt(value) * 86400 * 1000)
+		return this.dateFormatter.format(dateObject)
+	}
+
 	convertFromDecimal() {
 		this.binary.value = (parseInt(this.decimal.value) >>> 0).toString(2)
 		this.sexagesimal.value = this.DecimalToSexagesimal(parseInt(this.decimal.value))
+		this.date.value = this.DecimalToDate(this.decimal.value)
 	}
 
 	convertFromBinary() {
 		this.decimal.value = parseInt(this.binary.value, 2)
 		this.sexagesimal.value = this.DecimalToSexagesimal(parseInt(this.decimal.value))
+		this.date.value = this.DecimalToDate(this.decimal.value)
 	}
 
 	convertFromSexagesimal() {
 		this.decimal.value = this.SexagesimalToDecimal(this.sexagesimal.value)
 		this.binary.value = (parseInt(this.decimal.value) >>> 0).toString(2)
+		this.date.value = this.DecimalToDate(this.decimal.value)
 	}
 
 	init() {
 		this.decimal = document.getElementById("decimal")
 		this.binary = document.getElementById("binary")
 		this.sexagesimal = document.getElementById("sexagesimal")
+		this.date = document.getElementById("date")
 
 		this.decimal.addEventListener("blur", (event) => {
 			this.convertFromDecimal()
