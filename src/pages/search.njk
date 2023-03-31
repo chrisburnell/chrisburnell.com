@@ -4,10 +4,14 @@ description: Search for something!
 js_module: search.js
 ---
 
+{%- css %}{%- include '../../css/components/responses.css' -%}{% endcss -%}
 <!-- </textarea> -->
 <!-- '"´ -->
 <form id="search" class=" [ responses__form ] " method="get" name="search" action="https://duckduckgo.com/">
-	<input id="search-query" type="search" name="q" value="site:chrisburnell.com ">
+	<label class=" [ responses__label ] hidden" for="search-query">
+		Search:
+	</label>
+	<input id="search-query" class=" [ responses__input ] " type="search" name="q" value="site:chrisburnell.com ">
 	<button type="submit" enterkeyhint="submit">Submit</button>
 </form>
 
