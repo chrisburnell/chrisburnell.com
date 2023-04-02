@@ -65,9 +65,9 @@ element {
 }
 ```
 
-0. `<body>` has a `font-size` of `clamp(…)`, <br>which equals `clamp(…)` × `<html>`'s `font-size`
-0. `<parent>` has a `font-size` of `1em` by default, <br>which equals 1 × `<body>`'s `font-size`
-0. `<element>` has a `font-size` of `1.5em`, <br>which equals 1 × `<parent>`'s `font-size`
+1. `<body>` has a `font-size` of `clamp(…)`, <br>which equals `clamp(…)` × `<html>`'s `font-size`
+2. `<parent>` has a `font-size` of `1em` by default, <br>which equals 1 × `<body>`'s `font-size`
+3. `<element>` has a `font-size` of `1.5em`, <br>which equals 1 × `<parent>`'s `font-size`
 
 That means `<element>`'s `font-size` equals:
 

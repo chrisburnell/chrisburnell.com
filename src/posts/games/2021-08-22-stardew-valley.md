@@ -7,5 +7,5 @@ rating: 5
 cover: stardew-valley.jpg
 console: PC
 authors: ConcernedApe
-finish: true
+complete: true
 ---

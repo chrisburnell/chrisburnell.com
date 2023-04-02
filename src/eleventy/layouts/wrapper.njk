@@ -52,6 +52,7 @@
 	<meta name="theme-color" content="{{ designTokens.colors | keyValue("raven") }}">
 	<meta name="supported-color-schemes" content="light dark">
 
+	{% if not global.cssnakedday -%}
 	<!-- Inlined Critical CSS -->
 	<style>{% getBundle 'css', 'critical' %}</style>
 	<!-- Deferred CSS -->
@@ -59,6 +60,7 @@
 	<noscript>
 		<link rel="stylesheet" href="{% getBundleFileUrl 'css' %}">
 	</noscript>
+	{%- endif %}
 
 	{% if tags and tags.includes('httpstatus') -%}
 	<meta name="robots" content="noindex,nofollow">
@@ -91,8 +93,8 @@
 
 	{% if layout == 'post' -%}
 	<meta property="article:published_time" content="{{ page.date | friendlyDateLong | striptags(true) | safe }}">
-	{% if updated or finish -%}
-	<meta property="article:modified_time" content="{{ updated | default(finish) | friendlyDateLong | safe }}">
+	{% if updated or end -%}
+	<meta property="article:modified_time" content="{{ updated | default(end) | friendlyDateLong | safe }}">
 	{%- endif %}
 	<meta property="article:author" content="{{ author.name }}">
 	{% for tag in tags | categoryFilter | tagFilter %}

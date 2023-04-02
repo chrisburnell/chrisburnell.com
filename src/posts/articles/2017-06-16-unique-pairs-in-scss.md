@@ -146,8 +146,8 @@ Let’s go through this piece-by-piece so we can undertand what’s going on.
 
 We begin by doing some error-checking by confirming two things:
 
-0. if the input has been passed to the `@function`
-0. if the input is either of the *List* or *Map* type
+1. if the input has been passed to the `@function`
+2. if the input is either of the *List* or *Map* type
 
 Next, we instantiate two *Maps*:
 
@@ -156,8 +156,8 @@ $unique-pairs: ();
 $seen: ();
 ```
 
-0. <var>$unique-pairs</var> will be returned by this function and will contain the unique pairs.
-0. <var>$seen</var> is used to keep track of how far into the original dataset has been iterated to prevent duplication.
+1. <var>$unique-pairs</var> will be returned by this function and will contain the unique pairs.
+2. <var>$seen</var> is used to keep track of how far into the original dataset has been iterated to prevent duplication.
 
 Next, we’ll perform some operations in the case where the dataset is a *List*:
 

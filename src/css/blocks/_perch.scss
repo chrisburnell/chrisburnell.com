@@ -11,6 +11,8 @@
 		inline-size: var(--size-logo);
 		// depends on the specific dimensions of raven.svg
 		block-size: calc(var(--size-logo) / 1.205);
+		// overrides the `hidden` attribute
+		display: block !important;
 		position: absolute;
 		inset-inline-start: 100%;
 		inset-block-end: 0;

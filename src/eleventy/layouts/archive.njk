@@ -18,7 +18,14 @@ truncate: true
 	</ul>
 
 	<h1 id="title" class=" [ title ] ">
-		<span class=" [ p-name ] ">{{ title | safe }}</span>
+		{%- if perch %}
+			<span class=" [ perch ] [ p-name ] ">
+				{{ title | safe }}
+				<img src="{{ site.logo }}" alt="" width="324" height="324" loading="lazy" decoding="async" role="presentation" hidden>
+			</span>
+		{%- else -%}
+			<span class=" [ p-name ] ">{{ title | safe }}</span>
+		{%- endif %}
 	</h1>
 
 	<div class=" [ description ] [ flow ] [ p-summary ] ">
@@ -34,6 +41,8 @@ truncate: true
 	{% endif %}
 
 	<div id="content" class=" [ content ] [ flow ] [ h-feed ] ">
+		{% include 'cssnakedday.njk' %}
+
 		{%- if by_year -%}
 			{%- set year = latest_year -%}
 			<h2 id="{{ year }}">

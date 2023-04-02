@@ -10,7 +10,14 @@ layout: base
 	{% endif %}
 
 	<h1 id="title" class=" [ title{% if title_error %} title--negative{% elif title_success %} title--positive{% endif %} ] ">
-		<span class=" [ p-name ] {% if perch %}[ perch ] {% endif %}">{{ tagline | default(title) | safe }}</span>
+		{%- if perch %}
+			<span class=" [ perch ] [ p-name ] ">
+				{{ tagline | default(title) | safe }}
+				<img src="{{ site.logo }}" alt="" width="324" height="324" loading="lazy" decoding="async" role="presentation" hidden>
+			</span>
+		{%- else -%}
+			<span class=" [ p-name ] ">{{ tagline | default(title) | safe }}</span>
+		{%- endif %}
 	</h1>
 
 	<div class=" [ description ] [ flow ] [ p-summary ] ">
@@ -18,6 +25,8 @@ layout: base
 	</div>
 
 	<div class=" [ content{% if full_width %}  full{% endif %} ] [ flow ] ">
+		{% include 'cssnakedday.njk' %}
+
 		<div class=" [ e-content ] [ flow ] {% if contentClass %}[ {{ contentClass }} ] {% endif %}{% if toc %}generate-toc{% endif %}">
 			{{ content | safe }}
 		</div>

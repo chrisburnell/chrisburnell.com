@@ -7,5 +7,5 @@ rating: 4.75
 cover: gta-san-andreas.jpg
 console: PS2
 authors: Rockstar
-finish: true
+complete: true
 ---

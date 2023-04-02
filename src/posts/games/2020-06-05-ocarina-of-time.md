@@ -7,5 +7,5 @@ rating: 5
 cover: ocarina-of-time.jpg
 console: Nintendo 64
 authors: Nintendo
-finish: true
+complete: true
 ---

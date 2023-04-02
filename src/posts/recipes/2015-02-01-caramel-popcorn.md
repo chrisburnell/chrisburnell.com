@@ -22,8 +22,8 @@ ingredients:
 authors: my mother
 ---
 
-0. Pop the unpopped popcorn and spread on one or more cooking sheets (one 9" x 13" or two 8" x 8").
-0. Combine the margarine, brown sugar, packed, corn/golden syrup, and salt in a pan.
-0. Stir over medium heat *until boiling*, and boil while stirring for *5 minutes*.
-0. Remove from heat and stir in vanilla extract and baking soda.
-0. Toss over popcorn and <span id="preheat-step">bake for 1 hour at 120°C/250°F</span>, tossing every *15 minutes*.
+1. Pop the unpopped popcorn and spread on one or more cooking sheets (one 9" x 13" or two 8" x 8").
+2. Combine the margarine, brown sugar, packed, corn/golden syrup, and salt in a pan.
+3. Stir over medium heat *until boiling*, and boil while stirring for *5 minutes*.
+4. Remove from heat and stir in vanilla extract and baking soda.
+5. Toss over popcorn and <span id="preheat-step">bake for 1 hour at 120°C/250°F</span>, tossing every *15 minutes*.

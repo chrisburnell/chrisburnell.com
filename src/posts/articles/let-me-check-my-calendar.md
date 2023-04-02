@@ -27,5 +27,5 @@ in_reply_to: https://www.hwclondon.co.uk/meetups/20190626
 rsvp:
   value: "yes"
   date: 2019-06-26T19:00:00+0100
-  finish: 2019-06-26T20:30:00+0100
+  end: 2019-06-26T20:30:00+0100
 ```

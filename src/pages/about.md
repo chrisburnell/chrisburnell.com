@@ -2,6 +2,7 @@
 title: About
 tagline: "<span class=\" [ canada ] \">About me</span>"
 bio: "<span class=\" [ canada ] \">Chris Burnell</span> is a <span class=\" [ canada ] \">Canadian</span> Front End Developer working for [Squiz](http://www.squiz.net). He’s [ravenous for CSS](https://chrisburnell.com/tag/css/) and built [Bowhead](https://chrisburnell.com/bowhead/) to bring design tokens to CSS. His [Webmention plugin](https://chrisburnell.com/eleventy-cache-webmentions/) for [Eleventy](https://11ty.dev) helps people connect across the [IndieWeb](https://indieweb.org), and his work in co-organising the [State of the Browser](https://stateofthebrowser.com) conference has brought together over 45 speakers and 150+ attendees each year."
+perch: true
 eleventyComputed:
   description: "{{ site.description | safe }}"
 ---

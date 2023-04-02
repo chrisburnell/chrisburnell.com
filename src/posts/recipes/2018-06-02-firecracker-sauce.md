@@ -41,5 +41,5 @@ authors:
     url: https://www.kitchensanctuary.com/firecracker-chicken/
 ---
 
-0. Combine all ingredients except water in a bowl. If *not* marinating, add the water.
-0. Simmer sauce over medium heat until thickened to your liking!
+1. Combine all ingredients except water in a bowl. If *not* marinating, add the water.
+2. Simmer sauce over medium heat until thickened to your liking!

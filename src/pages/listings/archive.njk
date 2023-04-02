@@ -2,6 +2,7 @@
 layout: base
 title: All Posts
 description: Browse all of my posts by a variety of metrics.
+perch: true
 hfeed: true
 show_photos: true
 truncate: true
@@ -24,6 +25,8 @@ truncate: true
 	{% sparkline collection, first_year, latest_year %}
 
 	<div id="content" class=" [ content ] [ flow ] ">
+		{% include 'cssnakedday.njk' %}
+
 		<h2>Categories</h2>
 
 		<ul class=" [ grid ] [ shelf ] " data-layout="natural">

@@ -110,11 +110,11 @@ We’ve deviated from our established *Mobile First* approach to writing *media 
 
 If we were to categorise this understandability of CSS into three general categories, in order of most desirable to least desirable, we might end up with something this:
 
-0. Common Sense
+1. Common Sense
   Focusses on the specific context of the component and how to best express its styles. This promotes strong human understanding of the code but can demote organisation and expectation when viewing the codebase holistically.
-0. Strict Adherence
+2. Strict Adherence
   Focusses on delivering and never deviating from an established standard. This promotes rigid organisation and placing each component on a relatively-level playing field but can demote human understanding wherever mental overhead is introduced by switching contexts.
-0. Spaghetti
+3. Spaghetti
   [Has no focus or purpose. Don’t do it.](https://en.wikipedia.org/wiki/Spaghetti_code "Spaghetti Code on Wikipedia")
 
 ## The Next Talk

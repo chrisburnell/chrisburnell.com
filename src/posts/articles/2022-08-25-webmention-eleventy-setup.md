@@ -104,22 +104,26 @@ Webmentions are now attached to each page!
 
 You can access them quite easily on a given page:
 
+{% raw %}
 ```twig
-{% raw %}{% for webmention in webmentions %}
+{% for webmention in webmentions %}
     <!-- Loop through all webmentions on a given page -->
     {{ webmention.author.name }} sent this page a {{ webmention.activity.type }}
-{% endfor %}{% endraw %}
+{% endfor %}
 ```
+{% endraw %}
 
 And even when looping through something like a collection:
 
+{% raw %}
 ```twig
-{% raw %}{% for item in collections.pages %}
+{% for item in collections.pages %}
     <!-- Loop through all items in a collection -->
     <h2>{{ item.data.title }}</h2>
     <p>This page has {{ item.data.webmentions.length }} webmention{{ 's' if item.data.webmentions.length == 2 }}</p>
-{% endfor %}{% endraw %}
+{% endfor %}
 ```
+{% endraw %}
 
 How you want to filter the array of Webmentions attached to each page is up to you, but I recommend using the *type* value (`activity.type` in [Webmention.io](https://webmention.io/); `type` in [go-jamming](https://git.brainbaking.com/wgroeneveld/go-jamming)) to split Webmentions into groups categorised by type—this will make it easier to figure out which Webmentions are binary interactions (e.g. likes, reposts) and which have richer content you might want to display (e.g. mentions, replies).
 

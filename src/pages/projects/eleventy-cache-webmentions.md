@@ -167,32 +167,40 @@ module.exports = (eleventyConfig) => {
 
 Accessing the plugin in Liquid/Nunjucks by using a Filter and passing in a URL in the way shown below will give you an Array containing the cached Webmentions for the given URL.
 
+{% raw %}
 ```twig
-{% raw %}{% set responses = webmentions %}{% endraw %}
+{% set responses = webmentions %}
 ```
+{% endraw %}
 
 **OR**
 
+{% raw %}
 ```twig
-{% raw %}{% set responses = page.url | getWebmentions %}{% endraw %}
+{% set responses = page.url | getWebmentions %}
 ```
+{% endraw %}
 
 You can get back only specific [response post types](https://indieweb.org/responses#Response_Post_Types) by passing a second argument:
 
+{% raw %}
 ```twig
-{% raw %}{% set reactions = page.url | getWebmentions(['like-of', 'repost-of', 'bookmark-of']) %}
-{% set replies = page.url | getWebmentions(['mention-of', 'in-reply-to']) %}{% endraw %}
+{% set reactions = page.url | getWebmentions(['like-of', 'repost-of', 'bookmark-of']) %}
+{% set replies = page.url | getWebmentions(['mention-of', 'in-reply-to']) %}
 ```
+{% endraw %}
 
 And, if you need it, the entire Object of sorted Webmentions is available too:
 
+{% raw %}
 ```twig
-{% raw %}{% set count = 0 %}
+{% set count = 0 %}
 {% for url, array in webmentions %}
     {% set count = array.length + count %}
 {% endfor %}
-<p>This site has received {{ count }} Webmentions!</p>{% endraw %}
+<p>This site has received {{ count }} Webmentions!</p>
 ```
+{% endraw %}
 
 <h2 id="webmention-io">Webmention.io</h2>
 

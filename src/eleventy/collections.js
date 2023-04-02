@@ -56,7 +56,7 @@ module.exports = {
 					return true
 				} else if (item.data.rsvp && friendlyDate(item.data.rsvp.date, "dd LLLL") == friendlyDate(global.now, "dd LLLL") && friendlyDate(item.data.rsvp.date, "yyyy") != friendlyDate(global.now, "yyyy")) {
 					return true
-				} else if (item.data.rsvp && friendlyDate(item.data.rsvp.finish, "dd LLLL") == friendlyDate(global.now, "dd LLLL") && friendlyDate(item.data.rsvp.finish, "yyyy") != friendlyDate(global.now, "yyyy")) {
+				} else if (item.data.rsvp && friendlyDate(item.data.rsvp.end, "dd LLLL") == friendlyDate(global.now, "dd LLLL") && friendlyDate(item.data.rsvp.end, "yyyy") != friendlyDate(global.now, "yyyy")) {
 					return true
 				}
 				return false

@@ -22,6 +22,6 @@ ingredients:
     amount: to taste
 ---
 
-0. Melt unsalted butter.
-0. Combine all ingredients in a bowl.
-0. Toss your to-be-sauced items in the bowl.
+1. Melt unsalted butter.
+2. Combine all ingredients in a bowl.
+3. Toss your to-be-sauced items in the bowl.

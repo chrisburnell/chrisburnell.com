@@ -7,5 +7,5 @@ rating: 4.25
 cover: the-legend-of-zelda.jpg
 console: NES
 authors: Nintendo
-finish: true
+complete: true
 ---

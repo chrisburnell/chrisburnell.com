@@ -123,7 +123,8 @@ You’ll notice that I have included the double-letter combinations which repres
 
 Let’s step through converting an Arabic numeral (e.g. <samp>1569</samp>) to Roman numerals (<samp>MDLXIX</samp>). To do this we have to loop through our numeral conversion data from highest to lowest values. If our Arabic numeral is **greater than** the Arabic value in the data, we subtract that value from our Arabic numeral, we append the Roman value to our <var>output</var> string (which starts as being empty), and we start looping through the data from the top again. If our Arabic numeral is **less than** the Arabic value in the data, we continue looping and comparing the data to our Arabic numeral.
 
-```liquid{% raw %}
+{% raw %}
+```liquid
 {% assign input = include.value %}
 {% for c in (1..9999) %}
     {% for numeral in site.data.numerals %}
@@ -138,13 +139,15 @@ Let’s step through converting an Arabic numeral (e.g. <samp>1569</samp>) to Ro
     {% endif %}
 {% endfor %}
 {{ output }}
-{% endraw %}```
+```
+{% endraw %}
 
 Because we’re subtracting values from our Arabic numeral as we loop and convert Arabic values to Roman numerals, we will know when we’re done because our Arabic numeral will equal <samp>0</samp>.
 
 The same can be done for going from Roman numerals to Arabic. To do so, we have to check each character in-sequence and tally up their values to arrive at the Arabic value. Like before, we have to watch out for the <q>one-value-less</q> exceptions, so instead of checking each single character in sequence, we’ll first check if the *next two* characters in the Roman numeral sequence match an exception, and if so, use that value instead.
 
-```liquid{% raw %}
+{% raw %}
+```liquid
 {% assign input = include.value %}
 {% for c in (1..9999) %}
     {% assign slice_double = input | slice: 0, 2 %}
@@ -161,7 +164,8 @@ The same can be done for going from Roman numerals to Arabic. To do so, we have 
     {% endif %}
 {% endfor %}
 {{ output }}
-{% endraw %}```
+```
+{% endraw %}
 
 In this case we know we’re done converting when we’ve run out of Roman characters to parse.
 
@@ -169,7 +173,8 @@ You’ll also notice, in both cases, that there’s a loop that goes from <samp>
 
 ## Copy This Part
 
-```liquid{% raw %}
+{% raw %}
+```liquid
 {%- assign input = include.value | to_integer -%}
 {%- if input != 0 -%}
     {%- assign output = '' -%}
@@ -204,6 +209,7 @@ You’ll also notice, in both cases, that there’s a loop that goes from <samp>
     {%- endfor -%}
 {%- endif -%}
 {{ output }}
-{% endraw %}```
+```
+{% endraw %}
 
 And there you have it. Should you need a <q>covers-all-bases</q> solution in *Liquid* for converting to and from Roman numerals, this will do the trick.

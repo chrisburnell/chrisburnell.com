@@ -21,8 +21,8 @@ This URL is exposed on the front end as the context to my reply:
 
 But this looks a little unwieldy. There are a handful of things that we can infer from the above URL.
 
-0. The reply target is on *Twitter*.
-0. The username of the reply target is <q>dletorey</q>.
+1. The reply target is on *Twitter*.
+2. The username of the reply target is <q>dletorey</q>.
 
 With this information, and a little [splitting](https://shopify.github.io/liquid/filters/split/), we can extract the username and present the reply target a little differently:
 

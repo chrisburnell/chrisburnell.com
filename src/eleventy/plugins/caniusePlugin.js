@@ -96,7 +96,7 @@ module.exports = (eleventyConfig) => {
 
 			const browserList = browsersByType.reduce((output, browser) => {
 				const featureClass = support[browser.id].y ? "supported" : support[browser.id].a ? "partial" : "unsupported"
-				const featureText = support[browser.id].y ? `${support[browser.id].y}` : support[browser.id].a ? `${support[browser.id].a}` : "No"
+				const featureText = support[browser.id].y ? `${support[browser.id].y}` : support[browser.id].a ? `${support[browser.id].a}` : "<strong>No</strong>"
 				fullSupport = !fullSupport ? false : support[browser.id].y ? true : false
 				zeroSupport = !zeroSupport ? false : support[browser.id].y || support[browser.id].a ? false : true
 				return output + `<td class=" [ center ] [ ${featureClass} ] ">${featureText}</td>`

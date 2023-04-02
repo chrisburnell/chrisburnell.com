@@ -52,9 +52,9 @@ So what can we do to reduce the page weight and load time for a majority of user
 
 Let’s decide what the conditions are for loading the comments:
 
-0. The user has finished reading the article, gets to the bottom of the page, and wants to read the comments
-0. The user navigates to the page from a link that directs them to the comments (with `#comments` appended to the URL)
-0. The user clicks a link to the comments section from within the article itself (also by `#comments` being appended to the URL)
+1. The user has finished reading the article, gets to the bottom of the page, and wants to read the comments
+2. The user navigates to the page from a link that directs them to the comments (with `#comments` appended to the URL)
+3. The user clicks a link to the comments section from within the article itself (also by `#comments` being appended to the URL)
 
 Let’s dive into some code. Here’s how I was loading *Disqus* *non-conditionally*:
 
@@ -112,9 +112,9 @@ function showComments() {
 
 What we’re doing here is:
 
-0. Assigning our `button` to a variable
-0. Adding an click event listener to our `button` (which fortunately also works via keyboard commands)
-0. When the `button` *is* clicked, remove the `button` and load in our comments
+1. Assigning our `button` to a variable
+2. Adding an click event listener to our `button` (which fortunately also works via keyboard commands)
+3. When the `button` *is* clicked, remove the `button` and load in our comments
 
 --------
 
@@ -147,9 +147,9 @@ function updateFromHash() {
 
 What we’re doing here is:
 
-0. Assign our hash value to a variable (because why not?)
-0. If the URL already contains our desired hash on page load, run the `showComments()` command
-0. If the hash changes in the URL after the page has loaded, and it matches our desired value, run the `showComments()` command
+1. Assign our hash value to a variable (because why not?)
+2. If the URL already contains our desired hash on page load, run the `showComments()` command
+3. If the hash changes in the URL after the page has loaded, and it matches our desired value, run the `showComments()` command
 
 If you remember, the `showComments()` function removes the `button` we created before—we want to do the same thing if `#comment` is in the URL and we’re loading *Disqus*, as we don’t want or need users to be able to load comments twice; in fact, that would be completely the opposite of what we’re trying to achieve here!
 
@@ -270,9 +270,9 @@ var disqusShortname = 'chrisburnell';
 
 We’ve met all the conditions we set when we embarked upon this task:
 
-0. Create a button to load the comments
-0. Load the comments if the page was navigated to with the `#comment` hash
-0. Load the comments if the user clicks an anchor to jump to `#comment` section
+1. Create a button to load the comments
+2. Load the comments if the page was navigated to with the `#comment` hash
+3. Load the comments if the user clicks an anchor to jump to `#comment` section
 
 As we saw in [the statistics](#the-weigh-in "The Weigh In") of *Disqus’* impact, these aren’t massive savings, but they’ll certainly help out some of my users whom I know are browsing on slow connections and slow mobile phones.
 

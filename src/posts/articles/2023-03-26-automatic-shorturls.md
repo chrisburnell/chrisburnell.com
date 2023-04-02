@@ -43,15 +43,15 @@ Let’s refresh by taking a look at an example ShortURL and what each of its con
     <samp class=" [ beta ] " style="font-weight: var(--font-weight-regular);"><a href="https://repc.co/a4zK2" title="Permalink: LiquidBase60, a previous article on NewBase60">repc.co/<strong style="color: hsl(var(--hsl-bowhead));">a</strong><strong style="color: hsl(var(--hsl-maple));">4zK</strong><strong style="color: hsl(var(--hsl-liquid));">2</strong></a></samp>
 </figure>
 
-0. <samp class="strong" style="color: hsl(var(--hsl-bowhead));">a</samp> — <a href="#category-code">**Category Code**</a> *(required, 1 character)*
-0. <samp class="strong" style="color: hsl(var(--hsl-maple));">4zK</samp> — **[Sexagesimal Epoch Days](#sexagesimal-epoch-days)** *(required, 3 characters)*
-0. <samp class="strong" style="color: hsl(var(--hsl-liquid));">2</samp> — <a href="#post-index-for-the-day">**Post Index for the Day**</a> *(optional, 1 character, default = 1)*
+1. <samp class="strong" style="color: hsl(var(--hsl-bowhead));">a</samp> — <a href="#category-code">**Category Code**</a> *(required, 1 character)*
+2. <samp class="strong" style="color: hsl(var(--hsl-maple));">4zK</samp> — **[Sexagesimal Epoch Days](#sexagesimal-epoch-days)** *(required, 3 characters)*
+3. <samp class="strong" style="color: hsl(var(--hsl-liquid));">2</samp> — <a href="#post-index-for-the-day">**Post Index for the Day**</a> *(optional, 1 character, default = 1)*
 
 These three segments allow us to uniquely identify any given post by referencing:
 
-0. Which **category** the post belongs to (article, note, bookmark, etc.)<br>*Note: this implementation assumes each post is assigned to a single category; tagging is used to group posts into multiple collections*
-0. The post’s **published date** (year, month, and day)<br>*Note: this implementation assumes each post has a unique date*
-0. *If there are other posts in the **same category** with the **same published date**,* the post’s **published time** is compared against those posts to chronologically determine if the post is the {{ 1 | ordinal | safe }}, {{ 2 | ordinal | safe }}, {{ 3 | ordinal | safe }}, etc. for the day
+1. Which **category** the post belongs to (article, note, bookmark, etc.)<br>*Note: this implementation assumes each post is assigned to a single category; tagging is used to group posts into multiple collections*
+2. The post’s **published date** (year, month, and day)<br>*Note: this implementation assumes each post has a unique date*
+3. *If there are other posts in the **same category** with the **same published date**,* the post’s **published time** is compared against those posts to chronologically determine if the post is the {{ 1 | ordinal | safe }}, {{ 2 | ordinal | safe }}, {{ 3 | ordinal | safe }}, etc. for the day
 
 ## Category Code
 

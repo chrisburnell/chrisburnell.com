@@ -7,5 +7,5 @@ rating: 4.75
 cover: red-dead-redemption-2.jpg
 console: PS4
 authors: Rockstar
-finish: true
+complete: true
 ---

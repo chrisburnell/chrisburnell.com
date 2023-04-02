@@ -32,9 +32,9 @@ const content = {
 
 Wait, what?
 
-0. I have never published a post titled *The Future of the Web*.
-0. There is no `cdn` subdomain attached to my domain, and my website is built with Eleventy, not Astro.
-0. My website’s domain is `chrisburnell.com`, certainly not [`web.dev`](https://web.dev)!
+1. I have never published a post titled *The Future of the Web*.
+2. There is no `cdn` subdomain attached to my domain, and my website is built with Eleventy, not Astro.
+3. My website’s domain is `chrisburnell.com`, certainly not [`web.dev`](https://web.dev)!
 
 What’s going on here?
 
