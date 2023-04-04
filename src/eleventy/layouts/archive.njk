@@ -11,7 +11,7 @@ truncate: true
 {%- if limit -%}
 	{% set collection = collection | limit(limit) %}
 {%- endif -%}
-<div class=" [ pantheon{% if wide %}  wide{% endif %} ] [ wrap ] [ archive ] ">
+<div class=" [ pantheon{% if full %}  full{% elif wide %}  wide{% endif %} ] [ wrap ] [ archive ] ">
 
 	<ul class=" [ cluster ] [ breadcrumbs ] ">
 		<li><a href="/archive/">← All Posts</a></li>

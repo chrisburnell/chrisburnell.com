@@ -1,7 +1,6 @@
 import "@11ty/is-land/is-land"
 
-// Not used at present
-// import "./imports/sticky-header"
+import "./imports/sticky-header"
 
 import "./imports/color-scheme-toggler"
 

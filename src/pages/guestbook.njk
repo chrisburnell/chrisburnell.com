@@ -3,36 +3,44 @@ title: My Guestbook
 description: Welcome to my guestbook, powered by <a href="https://indieweb.org/Webmention">Webmentions</a>!
 show_responses: true
 theme: matrix  nineties
+full: true
+wide: true
 ---
-
-<figure>
-	<audio src="/audio/mononoke-hime.mp3" controls loop>
-</figure>
-
-<p>Please don’t bother my Tamagotchi, he’s excercising right now.</p>
-
-<figure>
-	<img src="/images/animated/tamagotchi.gif" alt="" loading="lazy">
-</figure>
 
 <marquee>
 	<img src="/images/animated/canada.gif" alt="" loading="lazy">
 </marquee>
 
-<p>
+<p style="margin-inline: auto">Thanks for stopping by! Welcome to my guestbook. Please enjoy my gallery of images and sign at the bottom.</p>
+
+<figure class="table">
+	<audio src="/audio/mononoke-hime.mp3" controls loop></audio>
+	<figcaption>
+		<p>Mononoke Hime. Original composed by Joe Hisaishi. MIDI arranged by Unknown.</p>
+	</figcaption>
+</figure>
+
+<figure class="table">
+	<div style="inline-size: 265px; block-size: 311px; position: relative;">
+		{% image './images/content/tamagotchi.png', '', 'pixelated' %}
+		<img src="/images/animated/tamagotchi.gif" alt="" loading="lazy" class="pixelated" style="position: absolute;
+		inset-block-start: 128px; inset-inline-start: 70px;">
+	</div>
+	<figcaption>
+		<p>Please don’t bother my Tamagotchi, he’s excercising right now.</p>
+	</figcaption>
+</figure>
+
+<p style="margin-inline: auto">
 	<img src="/images/animated/wizard.gif" alt="" loading="lazy">
 	<img src="/images/animated/cow.gif" alt="" loading="lazy">
+	<img src="/images/animated/kodama.gif" alt="" loading="lazy" style="float: right">
 	<br>
 	Give me back my Horadric Cube!
-	<img src="/images/animated/kodama.gif" alt="" loading="lazy" style="float: right">
 </p>
 
 <figure>
 	{% image './images/content/bowhead.png', '', 'pixelated' %}
-</figure>
-
-<figure>
-	<img src="/images/animated/computerlearningmonth.gif" alt="" loading="lazy">
 </figure>
 
 <figure>

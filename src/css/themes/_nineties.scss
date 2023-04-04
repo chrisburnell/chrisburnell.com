@@ -4,8 +4,9 @@
 ////
 
 @mixin color-scheme-nineties() {
-	--font-family-sans: var(--font-family-nineties);
+	--font-family-sans: var(--font-family-serious);
 	--font-family-serif: var(--font-family-sophisticated);
+	--max-inline-size: var(--size-breakpoint-medium);
 
 	cursor: url("/images/animated/dinosaur.gif"), auto;
 
@@ -14,6 +15,8 @@
 	*::before,
 	*::after {
 		border-radius: 0 !important;
+		box-shadow: none !important;
+		text-shadow: none !important;
 		text-decoration-color: currentColor !important;
 	}
 
@@ -22,8 +25,58 @@
 		font-weight: var(--font-weight-semibold) !important;
 	}
 
-	.title {
-		font-family: var(--font-family-sophisticated);
+	.footer,
+	.box,
+	.author__image,
+	/*figure*/.table,
+	button:not(.anchor),
+	input,
+	textarea {
+		border-block-start: 2px solid h(alto);
+		border-block-end: 2px solid h(thunder);
+	}
+
+	.box,
+	/*figure*/.table,
+	button:not(.anchor),
+	input,
+	textarea {
+		border-inline-start: 2px solid h(alto);
+		border-inline-end: 2px solid h(thunder);
+	}
+
+	.header,
+	.author__image {
+		border-block-start: 2px solid h(bear);
+		border-block-end: 2px solid h(lynx);
+	}
+
+	.author__image {
+		border-inline-start: 2px solid h(bear);
+		border-inline-end: 2px solid h(lynx);
+	}
+
+	/*figure*/.table {
+		background-color: h(bear, delta);
+		padding-block: 1em;
+	}
+
+	figcaption {
+		inline-size: 100%;
+		margin-block-start: 1em;
+		border-block-start: 2px solid h(alto);
+		padding-block-start: 1em;
+		font-family: inherit;
+		box-shadow: inset 0 2px h(thunder) !important;
+	}
+
+	h2 {
+		padding-block-end: initial;
+		border-block-end-width: 0;
+	}
+
+	.responses {
+		font-family: var(--font-family-silly);
 	}
 
 	.response__avatar img,

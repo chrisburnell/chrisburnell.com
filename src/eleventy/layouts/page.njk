@@ -1,7 +1,7 @@
 ---
 layout: base
 ---
-<article id="content" class=" [ pantheon{% if wide %}  wide{% endif %} ] [ wrap ] [ page ] ">
+<article id="content" class=" [ pantheon{% if full %}  full{% elif wide %}  wide{% endif %} ] [ wrap ] [ page ] ">
 
 	{% if 'project' in tags %}
 		<ul class=" [ cluster ] [ breadcrumbs ] ">
@@ -24,7 +24,7 @@ layout: base
 		{{ descriptionLong | default(description) | markdownFormat | safe }}
 	</div>
 
-	<div class=" [ content{% if full_width %}  full{% endif %} ] [ flow ] ">
+	<div class=" [ content ] [ flow ] ">
 		{% include 'cssnakedday.njk' %}
 
 		<div class=" [ e-content ] [ flow ] {% if contentClass %}[ {{ contentClass }} ] {% endif %}{% if toc %}generate-toc{% endif %}">
@@ -32,7 +32,7 @@ layout: base
 		</div>
 	</div>
 
-	{% if not toc %}
+	{% if not full and not toc %}
 		<aside class=" [ meta ] [ flow ] " role="complementary">
 			{% include 'meta/page.njk' %}
 		</aside>

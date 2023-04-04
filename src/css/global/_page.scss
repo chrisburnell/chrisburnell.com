@@ -15,7 +15,8 @@ html {
 	scrollbar-color: h(raven) h(milou);
 	font-size: 100%;
 	font-variant: common-ligatures proportional-nums;
-	scroll-padding-top: var(--size-small);
+	// more than block-size of header when navigation spans two rows
+	scroll-padding-top: 7rem;
 }
 
 body {

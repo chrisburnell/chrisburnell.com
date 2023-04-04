@@ -1,25 +1,17 @@
 class StickyHeader {
 	constructor() {
+		this.observerInterceptor = document.querySelector("observer-interceptor")
 		this.header = document.querySelector("header")
 
-		this.scrollPosition = 0
-
-		this.adjustHeader()
-		window.addEventListener("scroll", () => {
-			this.adjustHeader()
-		})
+		this.init()
 	}
 
-	adjustHeader() {
-		const scrolled = window.scrollY
-		if (scrolled > this.header.clientHeight) {
-			if (scrolled > this.scrollPosition) {
-				this.header.classList.add("hiding")
-			} else {
-				this.header.classList.remove("hiding")
-			}
-		}
-		this.scrollPosition = scrolled
+	init() {
+		const observer = new IntersectionObserver(([entry]) => {
+			this.header.classList.toggle("active", !entry.isIntersecting)
+		})
+
+		observer.observe(this.observerInterceptor)
 	}
 }
 

@@ -4,6 +4,8 @@
 ///
 /// --aside-size (clamp(15rem, 7.71rem + 13.71vw, 18rem))
 ///     Defines the inline-size of the aside.
+/// --margin-gap (var(--size-gap) OR 0)
+///     Defines the gap between the marginalia and content column.
 /// --columns (6)
 ///     Defines how many sub-columns should make up the content column.
 /// --outdent-gap (var(--size-gap) OR 0)
@@ -66,9 +68,9 @@
 			[meta-end ads-end];
 		grid-template-columns:
 			[marginalia-start]
-			var(--size-aside) // 15–18rem between 850px–1200px
+			var(--aside-size, 0)
 			[marginalia-end]
-			var(--size-gap)
+			var(--margin-gap, 0)
 			[content-start]
 			repeat(var(--columns, 6), 1fr)
 			[content-end]
@@ -80,9 +82,15 @@
 
 	&:not(.wide) {
 		@include container("above:gigantic") {
+			// only show outdent above gigantic on non-wide/non-full pages
 			--outdent-gap: var(--size-gap);
 			--outdent-size: 1fr;
 		}
+	}
+
+	&:not(.full) {
+		--aside-size: var(--size-aside); // 15–18rem between 850px–1200px
+		--margin-gap: var(--size-gap);
 	}
 
 	@include media("print") {
@@ -118,11 +126,6 @@
 .content {
 	grid-column: content;
 	grid-row: content;
-
-	&.full,
-	&.wide {
-		grid-column: content / outdent;
-	}
 }
 
 .pantheon > spark-line,
@@ -170,4 +173,9 @@
 .ads {
 	grid-column: content;
 	grid-row: ads;
+}
+
+observer-interceptor {
+	position: absolute;
+	inset-block-start: 1rem;
 }

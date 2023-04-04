@@ -24,7 +24,7 @@
 		background-color: inherit;
 		color: var(--rating-color, h(aspen));
 		inline-size: 0;
-		text-shadow: -1px -1px 1px var(--rating-border, h(mineshaft)), 1px -1px 1px var(--rating-border, h(mineshaft)), -1px 1px 1px var(--rating-border, h(mineshaft)), 1px 1px 1px var(--rating-border, h(mineshaft));
+		text-shadow: 0 1px 1px var(--rating-border, h(dove));
 		overflow: hidden;
 		position: absolute;
 		inset-block-start: 0;

@@ -16,7 +16,7 @@
 
 	// Header Block
 	.header {
-		background-color: h(bowhead, beta);
+		background-color: mix(map-get($colors, mineshaft), map-get($colors, bear), (1 - map-get($opacities, delta)) * 100%);
 		color: h(milou);
 	}
 
@@ -126,7 +126,6 @@
 	.rating {
 		--rating-background-color: #{h(kaiser)};
 		--rating-color: #{mix(map-get($colors, thunder), map-get($colors, aspen), map-get($opacities, gamma) * 100%)};
-		--rating-border: #{h(dove)};
 	}
 
 	.browse__previous,
