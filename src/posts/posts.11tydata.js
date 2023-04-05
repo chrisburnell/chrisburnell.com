@@ -116,14 +116,14 @@ module.exports = {
 			return data.show_responses ? getWebmentions(configWebmentions, configWebmentions.domain + data.page.url) : []
 		},
 		externalLikes: async (data) => {
-			if (data.show_responses) {
-				const externalLikes = await getExternalLikes(data?.syndicate_to)
+			if (data.show_responses && data.syndicate_to) {
+				const externalLikes = await getExternalLikes(data.syndicate_to)
 					.then((externalLikes) => externalLikes)
 					.catch(() => 0)
 
 				return externalLikes
 			}
-			return []
+			return 0
 		},
 		// <head> links currently broken because this logic lives in browse.njk
 		// previous_post: collections[category] | arrayKeyIncludes('data.tags', 'post') | arePublished | getPreviousCollectionItem(page),

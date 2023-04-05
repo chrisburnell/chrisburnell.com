@@ -1,25 +1,29 @@
 [
   {
+    "title": "RSS",
+    "url": "/feed.xml",
+    "primary": true,
+    "fillHover": "#ff8c00"
+  },
+  {
     "title": "CodePen",
     "url": "https://codepen.io/",
     "key": "codepen",
-    "primary": true
+    "primary": true,
+    "fillHover": "#ffffff"
   },
   {
     "title": "GitHub",
     "url": "https://github.com/",
     "key": "github",
-    "primary": true
+    "primary": true,
+    "fillHover": "#cdd9e5"
   },
   {
     "title": "Mastodon",
     "url": "https://fediverse.repc.co/@chrisburnell",
-    "primary": true
-  },
-  {
-    "title": "RSS",
-    "url": "/feed.xml",
-    "primary": true
+    "primary": true,
+    "fillHover": "#595aff"
   },
   {
     "title": "Discord",

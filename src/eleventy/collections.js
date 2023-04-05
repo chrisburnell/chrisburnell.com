@@ -131,8 +131,7 @@ module.exports = {
 			})
 	},
 	popular: (collection) => {
-		return collection
-			.getFilteredByTag("feature")
+		return [...collection.getFilteredByTag("feature"), ...collection.getFilteredByTag("project")]
 			.filter(isPublished)
 			.filter(notReply)
 			.filter((item) => {
@@ -147,13 +146,13 @@ module.exports = {
 	hot: (collection) => {
 		// "Hot" sorting is done by determining the average delta of
 		// time between webmentions and now.
-		return collection
-			.getFilteredByTag("feature")
+		return [...collection.getFilteredByTag("feature"), ...collection.getFilteredByTag("project")]
 			.filter(isPublished)
 			.filter(notReply)
 			.filter((item) => {
 				return item.data.webmentions.length + item.data.externalLikes >= site.limits.minimumResponsesRequired
 			})
+			.sort(dateFilter)
 			.map((item) => {
 				item.hotness = item.data.webmentions.reduce((accumulator, webmention) => {
 					const delta = global.now / day - epoch(webmention.data.published || webmention.verified_date) / day
@@ -162,7 +161,6 @@ module.exports = {
 
 				return item
 			})
-			.sort(dateFilter)
 			.sort((a, b) => {
 				return b.hotness - a.hotness
 			})

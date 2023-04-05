@@ -28,9 +28,13 @@
 	}
 
 	svg {
-		fill: currentColor;
+		fill: var(--fill, currentColor);
 		margin-inline-end: 0.5em;
 		vertical-align: sub;
+		transition: fill var(--transition-duration) var(--transition-function);
+	}
+	:is(:hover, :focus, :active) > svg {
+		fill: var(--fill-hover, var(--fill, currentColor));
 	}
 }
 

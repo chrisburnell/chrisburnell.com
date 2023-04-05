@@ -57,7 +57,7 @@ layout: wrapper
 						{%- if item.key -%}
 							{%- set url = url + author[item.key] -%}
 						{%- endif -%}
-						<a{% if not item.primary %} tabindex="-1"{% endif %}{% if item.mf_property %} class=" [ p-{{ item.mf_property }} ] "{% endif %} href="{{ url }}" rel="me"><svg width="20" height="20" aria-hidden="true" focusable="false"><use href="#svg--{{ item.title | lower }}"></use></svg>{{ item.title }}</a>
+						<a{% if not item.primary %} tabindex="-1"{% endif %}{% if item.mf_property %} class=" [ p-{{ item.mf_property }} ] "{% endif %} href="{{ url }}" rel="me"><svg width="20" height="20" aria-hidden="true" focusable="false"{% if item.fill or item.fillHover %} style="{% if item.fill %}--fill: {{ item.fill }}; {% endif %}{% if item.fillHover %}--fill-hover: {{ item.fillHover }}; {% endif %}"{% endif %}><use href="#svg--{{ item.title | lower }}"></use></svg>{{ item.title }}</a>
 					</li>
 				{%- endif -%}
 			{%- endfor -%}

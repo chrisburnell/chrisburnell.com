@@ -2,6 +2,7 @@
 permalink: "/index.html"
 layout: base
 is_homepage: true
+ads: false
 title: The Homepage
 eleventyComputed:
   description: "{{ site.description | safe }}"
@@ -58,21 +59,6 @@ truncate: true
 			</nav>
 			{% set hfeed = false %}
 
-			{%- set show_photos = true -%}
-			<hr>
-			<h2 id="hot">
-				<a href="/hot/">Hot Posts</a>
-			</h2>
-			<nav class=" [ deck ] " aria-labelledby="hot">
-				{% for item in collections.hot | limit(site.limits.feature) %}
-					{% include 'items/deck.njk' %}
-				{% endfor %}
-			</nav>
-			<nav class=" [ grid ] [ navigator ] " aria-label="Posts Navigation">
-				<a class=" [ button ] " href="/archive/">Browse All Posts</a>
-			</nav>
-			{%- set show_photos = false -%}
-
 			{%- set truncate = false -%}
 			<hr>
 			<h2 id="projects">
@@ -88,11 +74,34 @@ truncate: true
 			</nav>
 			{%- set truncate = true -%}
 
-			{% if collections.upcomingRSVPs.length or collections.throwbackPosts.length %}
+			{%- set show_photos = true -%}
 			<hr>
+			<h2 id="popular">
+				<a href="/popular/">Popular Pages</a>
+			</h2>
+			<nav class=" [ deck ] " aria-labelledby="popular">
+				{% for item in collections.popular | limit(site.limits.feature) %}
+					{% include 'items/deck.njk' %}
+				{% endfor %}
+			</nav>
+			{%- set show_photos = false -%}
+
+			{% if collections.throwbackPosts.length %}
+				{%- set relative_time = true -%}
+				{%- set show_photos = true -%}
+				<hr>
+				<h2 id="on-this-day">On This Day</h2>
+				<nav class=" [ deck ] " aria-labelledby="on-this-day">
+					{% for item in collections.throwbackPosts | limit(site.limits.feature) %}
+						{% include 'items/deck.njk' %}
+					{% endfor %}
+				</nav>
+				{%- set relative_time = false -%}
+				{%- set show_photos = false -%}
 			{% endif %}
 
 			{% if collections.upcomingRSVPs.length %}
+				<hr>
 				<div class=" [ box  box--line-length ] [ flow ] ">
 					<h2 id="upcoming-rsvps">
 						<a href="/rsvps/">Upcoming Events</a>
@@ -103,21 +112,6 @@ truncate: true
 						{% endfor %}
 					</nav>
 				</div>
-			{% endif %}
-
-			{% if collections.throwbackPosts.length %}
-				{%- set relative_time = true -%}
-				{%- set show_photos = true -%}
-				<div class=" [ box  box--line-length ] [ flow ] ">
-					<h2 id="on-this-day">On This Day</h2>
-					<nav class=" [ deck ] " aria-labelledby="on-this-day">
-						{% for item in collections.throwbackPosts | limit(site.limits.feature) %}
-							{% include 'items/deck.njk' %}
-						{% endfor %}
-					</nav>
-				</div>
-				{%- set relative_time = false -%}
-				{%- set show_photos = false -%}
 			{% endif %}
 		</div>
 	</div>
