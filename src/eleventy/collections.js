@@ -1,10 +1,9 @@
 const global = require("#datajs/global")
 const site = require("#data/site")
 
-const { epoch, friendlyDate } = require("#filters/dates")
 const { dateFilter, isPublished, notReply } = require("#filters/collections")
-
-const day = 1000 * 60 * 60 * 24
+const { epoch, friendlyDate } = require("#filters/dates")
+const { exponentialMovingAverage } = require("#filters/utils")
 
 module.exports = {
 	page: (collection) => {
@@ -146,6 +145,8 @@ module.exports = {
 	hot: (collection) => {
 		// "Hot" sorting is done by determining the average delta of
 		// time between webmentions and now.
+		const deltaModifier = 1000 * 60 * 60 * 24 // day
+		const coefficient = 0.333
 		return [...collection.getFilteredByTag("feature"), ...collection.getFilteredByTag("project")]
 			.filter(isPublished)
 			.filter(notReply)
@@ -155,14 +156,23 @@ module.exports = {
 			.sort(dateFilter)
 			.map((item) => {
 				item.hotness = item.data.webmentions.reduce((accumulator, webmention) => {
-					const delta = global.now / day - epoch(webmention.data.published || webmention.verified_date) / day
-					return accumulator + 1 / (1 + Math.log(Math.ceil(delta)))
+					// get delta between now and then in days
+					// const delta = global.now / deltaModifier - epoch(webmention.data.published || webmention.verified_date) / deltaModifier
+					// return average delta of time
+					// return accumulator + 1 / (1 + Math.log(Math.ceil(delta)))
+
+					// return exponential moving average
+					return exponentialMovingAverage(epoch(webmention.data.published || webmention.verified_date) / deltaModifier, accumulator, coefficient)
 				}, 0)
 
 				return item
 			})
 			.sort((a, b) => {
 				return b.hotness - a.hotness
+			})
+			.map((item) => {
+				console.log(item.url + "     " + item.hotness)
+				return item
 			})
 			.slice(0, site.limits.feed)
 	},

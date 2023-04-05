@@ -81,6 +81,9 @@ module.exports = {
 	maxDecimals: (value, decimals = 2) => {
 		return parseFloat(value.toFixed(decimals))
 	},
+	exponentialMovingAverage: (timestamp, current = 0, coefficient = 0.5) => {
+		return (coefficient * timestamp) + ((1 - coefficient) * current)
+	},
 	simpleMovingAverage: (values, period, preserveEnds) => {
 		preserveEnds = preserveEnds || false
 		let step = (period - 1) / 2
