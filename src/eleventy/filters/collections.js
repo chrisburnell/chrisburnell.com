@@ -1,4 +1,4 @@
-const site = require("#data/site")
+const { url } = require("#data/site")
 const categories = require("#data/categories")
 const ignoredTags = require("#data/ignoredTags")
 
@@ -38,5 +38,5 @@ module.exports = {
 	dateFilter: (a, b) => {
 		return new Date(b.data.date || b.date) - new Date(a.data.date || a.date)
 	},
-	notReply: (item) => !item.data.in_reply_to || (item.data.in_reply_to.url && item.data.in_reply_to.url.includes(site.url)) || (item.data.in_reply_to && typeof item.data.in_reply_to === "string" && item.data.in_reply_to.includes(site.url)),
+	notReply: (item) => !item.data.in_reply_to || (item.data.in_reply_to.url && item.data.in_reply_to.url.includes(url)) || (item.data.in_reply_to && typeof item.data.in_reply_to === "string" && item.data.in_reply_to.includes(url)),
 }

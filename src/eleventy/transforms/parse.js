@@ -1,8 +1,6 @@
 const cheerio = require("cheerio")
 const slugify = require("@sindresorhus/slugify")
 
-const env = require("#datajs/env")
-
 const minify = (input) => {
 	return input.replace(/\s{2,}/g, "").replace(/\'/g, '"')
 }

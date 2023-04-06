@@ -1,12 +1,12 @@
 const EleventyFetch = require("@11ty/eleventy-fetch")
 
-const author = require("#data/author")
-const site = require("#data/site")
+const { urls: { speedlify } } = require("#data/author")
+const { cacheDurations } = require("#data/site")
 
 module.exports = async () => {
-	let url = `${author.urls.speedlify}/api/urls.json`
+	let url = `${speedlify}/api/urls.json`
 	let json = await EleventyFetch(url, {
-		duration: site.cacheDurations.weekly,
+		duration: cacheDurations.weekly,
 		type: "json",
 	})
 	return json

@@ -1,7 +1,7 @@
 require("dotenv").config()
 const Image = require("@11ty/eleventy-img")
 
-const site = require("#data/site")
+const { url } = require("#data/site")
 const SPOTIFY_CLIENT_TOKEN = require("#data/spotify_token")
 
 const { getHost } = require("#filters/queries")
@@ -25,12 +25,12 @@ const getImageOptions = (lookup) => {
 	}
 }
 
-const fetchImageData = (id, url) => {
-	if (!url) {
+const fetchImageData = (options, src) => {
+	if (!src) {
 		throw new Error("src property required in `img` shortcode.")
 	}
 
-	Image(url, getImageOptions(id)).then(() => {
+	Image(src, getImageOptions(options)).then(() => {
 		// return nothing, even though this returns a promise
 	})
 }
@@ -80,7 +80,7 @@ module.exports = (eleventyConfig) => {
 
 	eleventyConfig.on("afterBuild", () => {
 		let array = Array.from(ids)
-		// console.log(`[${getHost(site.url)}] Generating ${array.length} album covers.`)
+		// console.log(`[${getHost(url)}] Generating ${array.length} album covers.`)
 		for (let id of array) {
 			fetchImageData(id, fetchAlbumCoverUrl(id))
 		}

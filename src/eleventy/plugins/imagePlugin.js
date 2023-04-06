@@ -1,8 +1,7 @@
 const path = require("path")
 const Image = require("@11ty/eleventy-img")
-const env = require("#datajs/env")
-
-const site = require("#data/site")
+const { ELEVENTY_PRODUCTION } = require("#datajs/env")
+const { cacheDurations } = require("#data/site")
 
 module.exports = (eleventyConfig) => {
 	eleventyConfig.addNunjucksShortcode("image", (src, alt, classes = "", widths = [800]) => {
@@ -11,7 +10,7 @@ module.exports = (eleventyConfig) => {
 			formats = ["svg"]
 		} else {
 			const originalFormat = src.includes("png") ? "png" : "jpg"
-			formats = env.ELEVENTY_PRODUCTION ? ["avif", "webp", originalFormat] : ["webp", originalFormat]
+			formats = ELEVENTY_PRODUCTION ? ["avif", "webp", originalFormat] : ["webp", originalFormat]
 		}
 
 		let options = {
@@ -19,7 +18,7 @@ module.exports = (eleventyConfig) => {
 			formats: formats,
 			urlPath: "/images/built/",
 			outputDir: "./_site/images/built/",
-			duration: site.cacheDurations.monthly,
+			duration: cacheDurations.monthly,
 			sharpOptions: {
 				animated: true,
 				quality: 100,

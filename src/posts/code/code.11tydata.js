@@ -1,4 +1,4 @@
-const author = require("#data/author")
+const { codepen } = require("#data/author")
 
 module.exports = {
 	list: "deck",
@@ -12,7 +12,7 @@ module.exports = {
 	eleventyComputed: {
 		syndicate_to: (data) => {
 			if (data.codepen_slug) {
-				return [`https://codepen.io/${author.codepen}/pen/${data.codepen_slug}`, ...data.syndicate_to]
+				return [`https://codepen.io/${codepen}/pen/${data.codepen_slug}`, ...data.syndicate_to]
 			}
 			return data.syndicate_to
 		},

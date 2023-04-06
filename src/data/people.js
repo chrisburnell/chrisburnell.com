@@ -1,6 +1,6 @@
 require("dotenv").config()
 
-const site = require("#data/site")
+const { cacheDurations } = require("#data/site")
 
 const EleventyFetch = require("@11ty/eleventy-fetch")
 
@@ -10,7 +10,7 @@ const TYPES = ["breweries", "gamePublishers", "humans", "meetups", "musicArtists
 
 const getPeopleByType = async (type) => {
 	return await EleventyFetch(`${API_ORIGIN}/${type}.json?token=${TOKEN}`, {
-		duration: site.cacheDurations.daily,
+		duration: cacheDurations.daily,
 		type: "json",
 		fetchOptions: {
 			method: "GET",

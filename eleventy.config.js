@@ -1,6 +1,6 @@
 require("dotenv").config()
 const pkg = require("./package.json")
-const site = require("#data/site")
+const { url } = require("#data/site")
 
 // Import Eleventy plugins
 const caniusePlugin = require("#plugins/caniusePlugin")
@@ -161,7 +161,7 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.setServerPassthroughCopyBehavior("passthrough")
 	eleventyConfig.setQuietMode(true)
 	eleventyConfig.on("beforeBuild", () => {
-		console.log(`[${queryFilters.getHost(site.url)}] Building…`)
+		console.log(`[${queryFilters.getHost(url)}] Building…`)
 	})
 	return {
 		dataTemplateEngine: "njk",

@@ -1,8 +1,8 @@
 const EleventyFetch = require("@11ty/eleventy-fetch")
 const { getWebmentions } = require("@chrisburnell/eleventy-cache-webmentions")()
 
-const author = require("#data/author")
-const site = require("#data/site")
+const { cacheDurations, favicon, title, url } = require("#data/site")
+const { untappd } = require("#data/author")
 const configWebmentions = require("#datajs/config/webmentions")
 const people = require("#datajs/people")
 
@@ -26,7 +26,7 @@ const getExternalLikes = async (syndicationLinks) => {
 
 		if (matchingLinks.length) {
 			const articles = await EleventyFetch(`https://dev.to/api/articles?username=${author["dev_to"]}`, {
-				duration: site.cacheDurations.weekly,
+				duration: cacheDurations.weekly,
 				type: "json",
 				fetchOptions: {
 					method: "GET",
@@ -52,7 +52,7 @@ module.exports = {
 	mf_root: "entry",
 	show_responses: true,
 	eleventyComputed: {
-		canonical: (data) => site.url + data.page.url,
+		canonical: (data) => url + data.page.url,
 		of_url: (data) => getType(data).url,
 		of_title: (data) => getType(data).title,
 		meta_title: (data) => {
@@ -67,7 +67,7 @@ module.exports = {
 			} else if (data.category) {
 				return `${category} from ${friendlyDateLong(data.page.date)}`
 			}
-			return site.title.replace(/(<([^>]+)>)/gi, "")
+			return title.replace(/(<([^>]+)>)/gi, "")
 		},
 		meta_description: (data) => {
 			if (data.description) {
@@ -76,18 +76,18 @@ module.exports = {
 					.replace(/(<([^>]+)>)/gi, "")
 			} else if (data.category) {
 				const category = (data.categoryProper || data.category).charAt(0).toUpperCase() + (data.categoryProper || data.category).substring(1)
-				return `A ${category} on ${getHost(site.url)}`
+				return `A ${category} on ${getHost(url)}`
 			}
-			return `A page on ${getHost(site.url)}`
+			return `A page on ${getHost(url)}`
 		},
 		meta_image: (data) => {
 			if (data.banner || data.cover) {
-				return `${site.url}/images/built/${(data.banner || data.cover).replace("jpg", "jpeg")}`
+				return `${url}/images/built/${(data.banner || data.cover).replace("jpg", "jpeg")}`
 			} else if (data.photo) {
 				const photo = Array.isArray(data.photo) ? data.photo[0] : data.photo
-				return `${site.url}/images/built/${(photo.url || photo).replace("jpg", "jpeg")}`
+				return `${url}/images/built/${(photo.url || photo).replace("jpg", "jpeg")}`
 			}
-			return site.url + site.favicon
+			return url + favicon
 		},
 		authors: async (data) => {
 			if (data.authors) {
@@ -104,7 +104,7 @@ module.exports = {
 		in_reply_to_title: (data) => data?.in_reply_to?.title || data?.in_reply_to?.url || data?.in_reply_to || false,
 		syndicate_to: (data) => {
 			if (data.drink_of) {
-				return [`https://untappd.com/user/${author.untappd}/checkin/${data.page.fileSlug}`]
+				return [`https://untappd.com/user/${untappd}/checkin/${data.page.fileSlug}`]
 			} else if (data.listen_of) {
 				return [`https://album.link/s/${data.listen_of}`]
 			} else if (data.read_of) {

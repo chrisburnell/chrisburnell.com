@@ -1,6 +1,6 @@
 const { getWebmentions } = require("@chrisburnell/eleventy-cache-webmentions")()
 
-const site = require("#data/site")
+const { url, tagline, favicon } = require("#data/site")
 const configWebmentions = require("#datajs/config/webmentions")
 
 const { getHost } = require("#filters/queries")
@@ -11,9 +11,9 @@ module.exports = {
 	tags: ["page"],
 	permalink: "/{{ page.fileSlug }}/index.html",
 	eleventyComputed: {
-		canonical: (data) => site.url + data.page.url,
+		canonical: (data) => url + data.page.url,
 		meta_title: (data) => {
-			return (data.title || site.tagline).replace(/(<([^>]+)>)/gi, "")
+			return (data.title || tagline).replace(/(<([^>]+)>)/gi, "")
 		},
 		meta_description: (data) => {
 			if (data.description) {
@@ -21,16 +21,16 @@ module.exports = {
 					.replace("\n", " ")
 					.replace(/(<([^>]+)>)/gi, "")
 			}
-			return `A page on ${getHost(site.url)}`
+			return `A page on ${getHost(url)}`
 		},
 		meta_image: (data) => {
 			if (data.banner || data.cover) {
-				return `${site.url}/images/built/${(data.banner || data.cover).replace("jpg", "jpeg")}`
+				return `${url}/images/built/${(data.banner || data.cover).replace("jpg", "jpeg")}`
 			} else if (data.photo) {
 				const photo = Array.isArray(data.photo) ? data.photo[0] : data.photo
-				return `${site.url}/images/built/${(photo.url || photo).replace("jpg", "jpeg")}`
+				return `${url}/images/built/${(photo.url || photo).replace("jpg", "jpeg")}`
 			}
-			return site.url + site.favicon
+			return url + favicon
 		},
 		webmentions: (data) => {
 			return data.show_responses ? getWebmentions(configWebmentions, configWebmentions.domain + data.page.url) : []

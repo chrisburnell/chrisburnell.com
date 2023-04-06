@@ -3,11 +3,11 @@ const { DateTime } = require("luxon")
 const caniuse = require("caniuse-api")
 const minifier = require("html-minifier")
 
-const global = require("#datajs/global")
-const site = require("#data/site")
+const { now } = require("#datajs/global")
+const { cacheDurations } = require("#data/site")
 
 const browsersByType = require("#data/browsersByType")
-const duration = site.cacheDurations.daily
+const duration = cacheDurations.daily
 
 const getLatestStableBrowsers = async () => {
 	let asset = new AssetCache(`caniuse_latest_browsers`, ".cache")
@@ -71,7 +71,7 @@ module.exports = (eleventyConfig) => {
 			return minifier.minify(
 				`<div class=" [ support ] [ box ${fullSupport ? " box--success " : zeroSupport ? " box--error " : ""}] [ flow ] ">
 					${browserList}
-					<p class="small">Browser support data for <code>${featureID}</code> comes from <a href="https://caniuse.com/#feat=${featureID}">caniuse.com</a> and is up-to-date as of <time datetime="${DateTime.fromJSDate(new Date(global.now)).toFormat("yyyy-MM-dd")}">${DateTime.fromJSDate(new Date(global.now)).toFormat("dd LLLL yyyy")}</time>.</p>
+					<p class="small">Browser support data for <code>${featureID}</code> comes from <a href="https://caniuse.com/#feat=${featureID}">caniuse.com</a> and is up-to-date as of <time datetime="${DateTime.fromJSDate(new Date(now)).toFormat("yyyy-MM-dd")}">${DateTime.fromJSDate(new Date(now)).toFormat("dd LLLL yyyy")}</time>.</p>
 				</div>`,
 				{ collapseWhitespace: true }
 			)

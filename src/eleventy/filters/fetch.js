@@ -1,12 +1,12 @@
 const EleventyFetch = require("@11ty/eleventy-fetch")
 
-const site = require("#data/site")
+const { cacheDurations } = require("#data/site")
 
 module.exports = {
 	githubData: async (repository) => {
 		let url = `https://api.github.com/repos/${repository}`
 		let json = await EleventyFetch(url, {
-			duration: site.cacheDurations.weekly,
+			duration: cacheDurations.weekly,
 			type: "json",
 		})
 
@@ -15,7 +15,7 @@ module.exports = {
 	npmData: async (package) => {
 		let url = `https://api.npmjs.org/downloads/point/last-month/${package}`
 		let json = await EleventyFetch(url, {
-			duration: site.cacheDurations.weekly,
+			duration: cacheDurations.weekly,
 			type: "json",
 		})
 

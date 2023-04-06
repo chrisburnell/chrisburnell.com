@@ -1,5 +1,5 @@
-const global = require("#datajs/global")
-const site = require("#data/site")
+const { now } = require("#datajs/global")
+const { limits, upcomingDaysLead } = require("#data/site")
 
 const { dateFilter, isPublished, notReply } = require("#filters/collections")
 const { epoch, friendlyDate } = require("#filters/dates")
@@ -51,11 +51,11 @@ module.exports = {
 				return false
 			})
 			.filter((item) => {
-				if (!item.data.rsvp && item.date && friendlyDate(item.date, "dd LLLL") == friendlyDate(global.now, "dd LLLL") && friendlyDate(item.date, "yyyy") != friendlyDate(global.now, "yyyy")) {
+				if (!item.data.rsvp && item.date && friendlyDate(item.date, "dd LLLL") == friendlyDate(now, "dd LLLL") && friendlyDate(item.date, "yyyy") != friendlyDate(now, "yyyy")) {
 					return true
-				} else if (item.data.rsvp && friendlyDate(item.data.rsvp.date, "dd LLLL") == friendlyDate(global.now, "dd LLLL") && friendlyDate(item.data.rsvp.date, "yyyy") != friendlyDate(global.now, "yyyy")) {
+				} else if (item.data.rsvp && friendlyDate(item.data.rsvp.date, "dd LLLL") == friendlyDate(now, "dd LLLL") && friendlyDate(item.data.rsvp.date, "yyyy") != friendlyDate(now, "yyyy")) {
 					return true
-				} else if (item.data.rsvp && friendlyDate(item.data.rsvp.end, "dd LLLL") == friendlyDate(global.now, "dd LLLL") && friendlyDate(item.data.rsvp.end, "yyyy") != friendlyDate(global.now, "yyyy")) {
+				} else if (item.data.rsvp && friendlyDate(item.data.rsvp.end, "dd LLLL") == friendlyDate(now, "dd LLLL") && friendlyDate(item.data.rsvp.end, "yyyy") != friendlyDate(now, "yyyy")) {
 					return true
 				}
 				return false
@@ -112,7 +112,7 @@ module.exports = {
 			.getFilteredByTag("post")
 			.filter(isPublished)
 			.filter((item) => {
-				if (item.data.rsvp && friendlyDate(item.data.rsvp.date) == friendlyDate(global.now)) {
+				if (item.data.rsvp && friendlyDate(item.data.rsvp.date) == friendlyDate(now)) {
 					return true
 				}
 			})
@@ -123,8 +123,8 @@ module.exports = {
 			.getFilteredByTag("post")
 			.filter(isPublished)
 			.filter((item) => {
-				const upcomingDaysLead = (item.data.rsvp?.upcoming_days_lead || site.upcomingDaysLead) * durationDay
-				if (item.data.rsvp && (item.data.rsvp.show_upcoming_always || (epoch(item.data.rsvp.date) > global.now && epoch(item.data.rsvp.date) - epoch(global.now) < upcomingDaysLead && friendlyDate(item.data.rsvp.date) != friendlyDate(global.now)))) {
+				const lead = (item.data.rsvp?.upcoming_days_lead || upcomingDaysLead) * durationDay
+				if (item.data.rsvp && (item.data.rsvp.show_upcoming_always || (epoch(item.data.rsvp.date) > now && epoch(item.data.rsvp.date) - epoch(now) < lead && friendlyDate(item.data.rsvp.date) != friendlyDate(now)))) {
 					return true
 				}
 			})
@@ -134,13 +134,13 @@ module.exports = {
 			.filter(isPublished)
 			.filter(notReply)
 			.filter((item) => {
-				return item.data.webmentions.length + item.data.externalLikes >= site.limits.minimumResponsesRequired
+				return item.data.webmentions.length + item.data.externalLikes >= limits.minimumResponsesRequired
 			})
 			.sort(dateFilter)
 			.sort((a, b) => {
 				return b.data.webmentions.length + b.data.externalLikes - (a.data.webmentions.length + a.data.externalLikes)
 			})
-			.slice(0, site.limits.feed)
+			.slice(0, limits.feed)
 	},
 	hot: (collection) => {
 		// "Hot" sorting is done by determining the average delta of
@@ -151,13 +151,13 @@ module.exports = {
 			.filter(isPublished)
 			.filter(notReply)
 			.filter((item) => {
-				return item.data.webmentions.length + item.data.externalLikes >= site.limits.minimumResponsesRequired
+				return item.data.webmentions.length + item.data.externalLikes >= limits.minimumResponsesRequired
 			})
 			.sort(dateFilter)
 			.map((item) => {
 				item.hotness = item.data.webmentions.reduce((accumulator, webmention) => {
 					// get delta between now and then in days
-					// const delta = global.now / deltaModifier - epoch(webmention.data.published || webmention.verified_date) / deltaModifier
+					// const delta = now / deltaModifier - epoch(webmention.data.published || webmention.verified_date) / deltaModifier
 					// return average delta of time
 					// return accumulator + 1 / (1 + Math.log(Math.ceil(delta)))
 
@@ -170,10 +170,6 @@ module.exports = {
 			.sort((a, b) => {
 				return b.hotness - a.hotness
 			})
-			.map((item) => {
-				console.log(item.url + "     " + item.hotness)
-				return item
-			})
-			.slice(0, site.limits.feed)
+			.slice(0, limits.feed)
 	},
 }

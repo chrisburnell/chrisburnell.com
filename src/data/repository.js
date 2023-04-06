@@ -1,5 +1,5 @@
-const author = require("#data/author")
-const site = require("#data/site")
+const { github } = require("#data/author")
+const { repository } = require("#data/site")
 
 const { githubData } = require("#filters/fetch")
 
@@ -9,13 +9,13 @@ const getGithubData = async (repository) => {
 }
 
 module.exports = async () => {
-	const information = await getGithubData(`${author.github}/${site.repository}`)
+	const information = await getGithubData(`${github}/${repository}`)
 		.then((information) => information)
 		.catch(() => {
 			return {}
 		})
 
-	const contributors = await getGithubData(`${author.github}/${site.repository}/contributors`)
+	const contributors = await getGithubData(`${github}/${repository}/contributors`)
 		.then((contributors) => contributors)
 		.catch(() => {
 			return {}
