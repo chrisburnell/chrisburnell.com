@@ -55,7 +55,7 @@ module.exports = async (value, outputPath) => {
 				)
 			$(element).html(`
 				${$(element).html()}
-				<a class=" [ fragment-anchor ] " href="#${headingID}" title="Permalink for ${$(element).text().trim()}"><span class="hidden">Permalink</span> <span aria-hidden="true">¶</span></a>
+				<a class=" [ fragment-anchor ] " href="#${headingID}" title="Permalink for ${$(element).text().trim()}"><span class="hidden">Permalink </span>¶</a>
 			`)
 			$(element).attr("id", headingID)
 		})
