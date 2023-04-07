@@ -150,6 +150,7 @@ Maybe someone knowledgable about colours or filters on the web has an idea of wh
 I’m definitely missing *something*, but it’s *close*.
 
 {% css %}
+@layer overrides {
     .figure--dragon div {
         background-color: #f9f9f9;
         background-image: linear-gradient(to bottom right, transparent 50%, #5f8aa6 50%, #5f8aa6);
@@ -185,4 +186,5 @@ I’m definitely missing *something*, but it’s *close*.
         clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
         transform: translateX(-50%);
     }
+}
 {% endcss %}

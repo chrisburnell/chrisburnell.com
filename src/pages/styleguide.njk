@@ -594,7 +594,11 @@ p q r s t u v w x y z { | } ~</code></pre>
 	{% sparkline collections['beer'], 2013, 2023 %}
 </div>
 
+<p class="italic">Like these? Check out my custom web component, <a href="/spark-line/">&lt;spark-line&gt;</a>.</p>
+
 <h2>Can I Use</h2>
 
-{%- css %}{%- include '../../css/components/browser-support.css' -%}{% endcss -%}
+{% css %}@layer components { {%- include '../../css/components/browser-support.css' -%} }{% endcss -%}
 {% caniuse 'css-has' %}
+
+<p class="italic">I keep track of a whole bunch of different browser features over on my <a href="/feature-watch/">Browser Feature Watch</a> project.</p>

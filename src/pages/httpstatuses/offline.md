@@ -5,7 +5,7 @@ description: <span class="canada">Sorry</span>, it looks like there's a problem 
 js: offline.js
 theme: null
 ---
-{%- css %}{%- include '../../../css/components/deck.css' -%}{% endcss -%}
+{% css %}@layer components { {%- include '../../../css/components/deck.css' -%} }{% endcss -%}
 
 <nav class=" [ buttons-list ] " role="navigation">
   <button onclick="window.location.reload()" aria-label="Refresh">Refresh!</button>

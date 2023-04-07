@@ -3,9 +3,9 @@ title: Blogroll
 description: I've had the pleasure of meeting, knowing of, knowing personally, and spending great time with a lot of amazing people that have inspired me in different ways over my years on this Earth. Here are a handful of them.
 wide: true
 ---
-{%- css %}{%- include '../../../css/components/shelf.css' -%}{% endcss -%}
 {%- set collection = blogroll | keySort('title') -%}
 
+{% css %}@layer components { {%- include '../../../css/components/shelf.css' -%} }{% endcss -%}
 <nav class=" [ grid ] [ shelf ] ">
 {% for item in collection %}
 	<article class=" [ flow ] ">

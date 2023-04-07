@@ -4,7 +4,7 @@ description: Search for something!
 js_module: search.js
 ---
 
-{%- css %}{%- include '../../css/components/responses.css' -%}{% endcss -%}
+{% css %}@layer components { {%- include '../../css/components/responses.css' -%} }{% endcss -%}
 <!-- </textarea> -->
 <!-- '"´ -->
 <form id="search" class=" [ responses__form ] " method="get" name="search" action="https://duckduckgo.com/">

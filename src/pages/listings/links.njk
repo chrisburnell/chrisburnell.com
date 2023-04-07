@@ -3,8 +3,8 @@ title: Links
 description: Find me all over the web (mostly)!
 wide: true
 ---
-{%- css %}{%- include '../../../css/components/shelf.css' -%}{% endcss -%}
 
+{% css %}@layer components { {%- include '../../../css/components/shelf.css' -%} }{% endcss -%}
 <nav class=" [ grid ] [ shelf ] ">
 	<article class=" [ flow ] ">
 		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://codepen.io' | urlencode }}/" class=" [ avatar ] " width="30" height="30" alt="" role="presentation" loading="lazy" decoding="async">

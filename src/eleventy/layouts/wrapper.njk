@@ -144,10 +144,10 @@
 	</svg>
 
 	{# CSS Bundles #}
+	{%- css 'critical' %}{%- include '../../../css/critical.css' -%}{% endcss -%}
 	{%- if css -%}
 		{%- css 'critical' %}{%- include '../../../css/pages/' + css -%}{% endcss -%}
 	{%- endif -%}
-	{%- css 'critical' %}{%- include '../../../css/critical.css' -%}{% endcss -%}
 	{%- css %}{%- include '../../../css/defer.css' -%}{% endcss -%}
 
 	{# JS Bundles #}

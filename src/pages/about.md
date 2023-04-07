@@ -6,7 +6,6 @@ perch: true
 eleventyComputed:
   description: "{{ site.description | safe }}"
 ---
-{%- css %}{%- include '../../css/components/shelf.css' -%}{% endcss -%}
 
 <p><strong>I’ve got a <a href="https://chrisburnell.com/cv/">CV / resumé</a>, if that’s what you’re looking for.</strong></p>
 
@@ -73,6 +72,7 @@ I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link
 
 <h2 id="worked-with">Companies I’ve worked with</h2>
 
+{% css %}@layer components { {%- include '../../css/components/shelf.css' -%} }{% endcss -%}
 <nav class=" [ grid ] [ shelf ] [ center ] " data-layout="natural" style="--gap: var(--size-gap);" aria-labelledby="worked-with">
     {%- for client in clients | sort(false, false, "title") -%}
         <article>

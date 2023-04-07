@@ -146,6 +146,7 @@ How do you handle `:target` styles? What about `<mark>`? Let me know, I’d love
 And check out other selectors like [`::selection`](https://developer.mozilla.org/en-US/docs/Web/CSS/::selection) for cursor-highlighted text or even the newer [`::target-text`](https://developer.mozilla.org/en-US/docs/Web/CSS/::target-text); although, make sure you’re content with the [browser support](/feature-watch/#mdn-javascript_builtins_array_at) before you get too deep!
 
 {% css %}
+@layer overrides {
     .box--ancient {
         --flow-space: 2em;
         --background-color: #e7cb91;
@@ -160,4 +161,5 @@ And check out other selectors like [`::selection`](https://developer.mozilla.org
         color: inherit !important;
         text-decoration-color: currentColor;
     }
+}
 {% endcss %}

@@ -2,7 +2,6 @@
 title: Stats
 description: Numbers, cause why not?
 ---
-{%- css %}{%- include '../../css/components/shelf.css' -%}{% endcss -%}
 
 {%- set collection = collections.posts -%}
 {%- set count = collection.length -%}
@@ -74,6 +73,7 @@ description: Numbers, cause why not?
 
 <h2>Collections</h2>
 
+{% css %}@layer components { {%- include '../../css/components/shelf.css' -%} }{% endcss -%}
 <ul class=" [ grid ] [ shelf ] " data-layout="natural">
 	{%- set count = collections.checkins | arePublished | getCollectionCount(false, true) -%}
 	<li><a href="/checkins/" class=" [ strong ] " style="font-size: 1.25em;">Checkins <sup>{{ count }}</sup></a></li>

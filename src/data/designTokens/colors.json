@@ -6,13 +6,13 @@
   "highland": "#80b7d7",
   "coyote": "#c0dbed",
   "bear": "#ebf3f9",
-  "maple": "#e0151f",
-  "conifer": "#3d8137",
-  "aspen": "#ffd700",
   "thunder": "#060606",
   "mineshaft": "#2b2b2b",
   "kaiser": "#4f4f4f",
   "dove": "#737373",
   "alto": "#dddddd",
-  "milou": "#f9f9f9"
+  "milou": "#f9f9f9",
+  "aspen": "#ffd700",
+  "conifer": "#3d8137",
+  "maple": "#e0151f"
 }

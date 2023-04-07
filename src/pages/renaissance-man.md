@@ -5,12 +5,12 @@ description: test
 ads: false
 monetization: false
 ---
-{%- css %}{%- include '../../css/components/shelf.css' -%}{% endcss -%}
 
 ## Renaissance Man
 
 I had a wonderfully-fortunate upbringing, and I attribute a great deal of who I am today to my parents and their parents.
 
+{% css %}@layer components { {%- include '../../css/components/shelf.css' -%} }{% endcss -%}
 <div class=" [ grid ] [ shelf ] ">
     <figure>
         {% image './images/content/opa.jpg', 'Reinhold Kaiser, my maternal grandfather, or as I called him: Opa', '', [400] %}

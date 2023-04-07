@@ -14,7 +14,6 @@ tags:
 toc: true
 js_module: spark-line.js
 ---
-{%- css %}{%- include '../../../css/components/shelf.css' -%}{% endcss -%}
 
 <noscript><p>Unfortunately, this page requires JavaScript to display sparklines and use the interactive example.</p></noscript>
 
@@ -159,6 +158,7 @@ If you wanted to use `<is-land>` as well, I recommend something like the followi
 
 ## Examples
 
+{% css %}@layer components { {%- include '../../../css/components/shelf.css' -%} }{% endcss -%}
 <div class=" [ grid ] [ shelf ] ">
     <article>
         <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0"></c-spark-line>

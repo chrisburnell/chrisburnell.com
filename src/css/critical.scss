@@ -8,6 +8,8 @@
 @use "sass:color";
 @use "sass:math";
 
+@layer reset, global, compositions, blocks, utilities, components, themes, thirdparty, overrides;
+
 // Abstracts
 @import "abstracts/functions";
 @import "abstracts/mixins";
@@ -19,49 +21,61 @@
 @import "global/fonts";
 
 // Reset
-@import "global/reset";
-@import "global/variables";
+@layer reset {
+	@import "global/reset";
+	@import "global/variables";
+}
 
 // Global
-@import "global/page";
-@import "global/anchors";
-@import "global/buttons";
-@import "global/headings";
-@import "global/prose";
-@import "global/lists";
-@import "global/images";
+@layer global {
+	@import "global/page";
+	@import "global/anchors";
+	@import "global/buttons";
+	@import "global/headings";
+	@import "global/prose";
+	@import "global/lists";
+	@import "global/images";
+}
 
 // Compositions
-@import "compositions/wrap";
-@import "compositions/pantheon";
-@import "compositions/portal";
-@import "compositions/grid";
-@import "compositions/box";
-@import "compositions/cluster";
+@layer compositions {
+	@import "compositions/wrap";
+	@import "compositions/pantheon";
+	@import "compositions/portal";
+	@import "compositions/grid";
+	@import "compositions/box";
+	@import "compositions/cluster";
+}
 
 // Blocks
-@import "blocks/logo";
-@import "blocks/perch";
-@import "blocks/anchors";
-@import "blocks/header";
-@import "blocks/navigation";
-@import "blocks/main";
-@import "blocks/content";
-@import "blocks/breadcrumbs";
-@import "blocks/title";
-@import "blocks/description";
-@import "blocks/navigator";
-@import "blocks/meta";
-@import "blocks/table-of-contents";
+@layer blocks {
+	@import "blocks/logo";
+	@import "blocks/perch";
+	@import "blocks/anchors";
+	@import "blocks/header";
+	@import "blocks/navigation";
+	@import "blocks/main";
+	@import "blocks/content";
+	@import "blocks/breadcrumbs";
+	@import "blocks/title";
+	@import "blocks/description";
+	@import "blocks/navigator";
+	@import "blocks/meta";
+	@import "blocks/table-of-contents";
+}
 
 // Utilities
-@import "utilities/flow";
-@import "utilities/helpers";
-@import "utilities/canada";
+@layer utilities {
+	@import "utilities/flow";
+	@import "utilities/helpers";
+	@import "utilities/canada";
+}
 
 // Themes
-@import "themes/dark";
-@import "themes/christmas";
-@import "themes/code-red";
-@import "themes/matrix";
-@import "themes/nineties";
+@layer themes {
+	@import "themes/dark";
+	@import "themes/christmas";
+	@import "themes/code-red";
+	@import "themes/matrix";
+	@import "themes/nineties";
+}

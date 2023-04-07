@@ -61,60 +61,62 @@ Which gives us… <var>1</var>
 Interesting! 🤔
 
 {% css %}
-.right-triangle {
-    background-image:
-        linear-gradient(
-            to bottom right,
-            transparent 49.9%,
-            hsl(var(--hsl-raven)) 50%
-        );
-    inline-size: 10rem;
-    block-size:  10rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-inline-end: 1.25rem;
-    padding-block-end:  1.25rem;
-    margin-inline-end: 3.75rem;
-    margin-block-end: 2rem;
-    position: relative;
-    font-weight: var(--font-weight-semibold);
-}
+@layer overrides {
+    .right-triangle {
+        background-image:
+            linear-gradient(
+                to bottom right,
+                transparent 49.9%,
+                hsl(var(--hsl-raven)) 50%
+            );
+        inline-size: 10rem;
+        block-size:  10rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-inline-end: 1.25rem;
+        padding-block-end:  1.25rem;
+        margin-inline-end: 3.75rem;
+        margin-block-end: 2rem;
+        position: relative;
+        font-weight: var(--font-weight-semibold);
+    }
 
-.right-triangle::before,
-.hypotenuse,
-.opposite,
-.adjacent {
-    position: absolute;
-    white-space: nowrap;
-}
+    .right-triangle::before,
+    .hypotenuse,
+    .opposite,
+    .adjacent {
+        position: absolute;
+        white-space: nowrap;
+    }
 
-.right-triangle::before {
-    content: "";
-    inline-size: 15%;
-    block-size:  15%;
-    border-width: var(--size-border-thin) 0 0 var(--size-border-thin);
-    border-style: dashed;
-    border-color: hsl(var(--hsl-milou));
-    inset-inline-end: 0;
-    inset-block-end: 0;
-}
+    .right-triangle::before {
+        content: "";
+        inline-size: 15%;
+        block-size:  15%;
+        border-width: var(--size-border-thin) 0 0 var(--size-border-thin);
+        border-style: dashed;
+        border-color: hsl(var(--hsl-milou));
+        inset-inline-end: 0;
+        inset-block-end: 0;
+    }
 
-.hypotenuse {
-    text-align: right;
-    inset-block-end: 50%;
-    inset-inline-end: 50%;
-}
+    .hypotenuse {
+        text-align: right;
+        inset-block-end: 50%;
+        inset-inline-end: 50%;
+    }
 
-.opposite {
-    inset-inline-start: calc(100% + 0.5rem);
-    inset-block-start: 50%;
-    transform: translateY(-50%);
-}
+    .opposite {
+        inset-inline-start: calc(100% + 0.5rem);
+        inset-block-start: 50%;
+        transform: translateY(-50%);
+    }
 
-.adjacent {
-    inset-block-start: calc(100% + 0.5rem);
-    inset-inline-start: 50%;
-    transform: translateX(-50%);
+    .adjacent {
+        inset-block-start: calc(100% + 0.5rem);
+        inset-inline-start: 50%;
+        transform: translateX(-50%);
+    }
 }
 {% endcss %}

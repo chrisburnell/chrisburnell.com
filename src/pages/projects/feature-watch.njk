@@ -47,4 +47,4 @@ now: 1680955100000
 	</section>
 {% endfor %}
 
-{%- css %}{%- include '../../../css/components/browser-support.css' -%}{% endcss -%}
+{%- css %}@layer components { {%- include '../../../css/components/browser-support.css' -%} }{% endcss -%}
