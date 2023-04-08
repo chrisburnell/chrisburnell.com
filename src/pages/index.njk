@@ -6,7 +6,7 @@ ads: false
 title: The Homepage
 eleventyComputed:
   description: "{{ site.description | safe }}"
-  tagline: "{{ site.tagline | safe }}"
+  tagline: "{{ (site.tagline if not global.cssnakedday else site.tagline | replace('CSS', '<s>CSS</s>')) | safe }}"
 sitemap:
   changefreq: daily
   priority: 1.0
