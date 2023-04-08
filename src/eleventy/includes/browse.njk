@@ -3,29 +3,39 @@
 	{% set next_post = collections[category] | arrayKeyIncludes('data.tags', 'post') | arePublished | getNextCollectionItem(page) %}
 
 	{% if previous_post or next_post %}
-		<nav class="browse" aria-label="Browse to Previous and Next Posts">
-			{% if previous_post %}
-				<a class="browse__previous" href="{{ previous_post.url }}">
-					{% if previous_post.data.like_of.title %}
-						Liked: {{ previous_post.data.like_of.title }}
-					{% elif category == 'like' or category == 'note' %}
-						{{ category | capitalize }} from {{ previous_post.date | friendlyDate }}
-					{% else %}
-						{{ previous_post.data.title }}
-					{% endif %}
-				</a>
-			{% endif %}
-			{% if next_post %}
-				<a class="browse__next" href="{{ next_post.url }}">
-					{% if next_post.data.like_of.title %}
-						Liked: {{ next_post.data.like_of.title }}
-					{% elif category == 'like' or category == 'note' %}
-						{{ category | capitalize }} from {{ next_post.date | friendlyDate }}
-					{% else %}
-						{{ next_post.data.title }}
-					{% endif %}
-				</a>
-			{% endif %}
+		<nav class=" [ browse ] " aria-label="Browse to Previous and Next Posts">
+			<ol class=" [ browse__list ] ">
+				{% if previous_post %}
+					<li>
+						<a class=" [ browse__previous ] " href="{{ previous_post.url }}">
+							<strong>← Previously</strong>
+							<br>
+							{% if previous_post.data.like_of.title %}
+								Liked: {{ previous_post.data.like_of.title }}
+							{% elif category == 'like' or category == 'note' %}
+								{{ category | capitalize }} from {{ previous_post.date | friendlyDate }}
+							{% else %}
+								{{ previous_post.data.title }}
+							{% endif %}
+						</a>
+					</li>
+				{% endif %}
+				{% if next_post %}
+					<li>
+						<a class=" [ browse__next ] " href="{{ next_post.url }}">
+							<strong>Next →</strong>
+							<br>
+							{% if next_post.data.like_of.title %}
+								Liked: {{ next_post.data.like_of.title }}
+							{% elif category == 'like' or category == 'note' %}
+								{{ category | capitalize }} from {{ next_post.date | friendlyDate }}
+							{% else %}
+								{{ next_post.data.title }}
+							{% endif %}
+						</a>
+					</li>
+				{% endif %}
+			</ol>
 		</nav>
 	{% endif %}
 {%- endif -%}

@@ -19,6 +19,76 @@ $colors-extra: (
 	webc: #00bcd4,
 	yaml: #ee2b34,
 );
+$colors-oklch: (
+	hue-brand: 237.73,
+	brand: (
+		lynx: (
+			lightness: 17.58%,
+			chroma: 0.017,
+		),
+		wolf: (
+			lightness: 30.65%,
+			chroma: 0.031,
+		),
+		bowhead: (
+			lightness: 45.82%,
+			chroma: 0.045,
+		),
+		raven: (
+			lightness: 61.29%,
+			chroma: 0.064,
+		),
+		highland: (
+			lightness: 75.29%,
+			chroma: 0.074,
+		),
+		coyote: (
+			lightness: 87.72%,
+			chroma: 0.038,
+		),
+		bear: (
+			lightness: 95.99%,
+			chroma: 0.012,
+		),
+	),
+	monochrome: (
+		thunder: (
+			lightness: 12.21%,
+		),
+		mineshaft: (
+			lightness: 28.91%,
+		),
+		kaiser: (
+			lightness: 42.76%,
+		),
+		dove: (
+			lightness: 55.55%,
+		),
+		alto: (
+			lightness: 89.75%,
+		),
+		milou: (
+			lightness: 98.21%,
+		),
+	),
+	utility: (
+		aspen: (
+			lightness: 88.68%,
+			chroma: 0.182,
+			hue: 95.33,
+		),
+		conifer: (
+			lightness: 54.11%,
+			chroma: 0.128,
+			hue: 142.09,
+		),
+		maple: (
+			lightness: 57.59%,
+			chroma: 0.227,
+			hue: 27.03,
+		),
+	),
+);
 $colors: (
 	lynx: #091217,
 	wolf: #20323d,
@@ -27,21 +97,21 @@ $colors: (
 	highland: #80b7d7,
 	coyote: #c0dbed,
 	bear: #ebf3f9,
-	maple: #e0151f,
-	conifer: #3d8137,
-	aspen: #ffd700,
 	thunder: #060606,
 	mineshaft: #2b2b2b,
 	kaiser: #4f4f4f,
 	dove: #737373,
 	alto: #dddddd,
 	milou: #f9f9f9,
+	aspen: #ffd700,
+	conifer: #3d8137,
+	maple: #e0151f,
 );
 $font-families: (
 	sans: "'Proxima Vara', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif",
 	serif: "Georgia, Times, Times New Roman, serif",
 	monospace: "monospace",
-	serious: "Times New Roman, serif",
+	nineties: "Courier",
 	silly: "Comic Sans MS, Chalkboard SE, fantasy, serif",
 	sophisticated: "Papyrus, serif",
 );

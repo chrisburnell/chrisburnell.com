@@ -14,27 +14,9 @@
 .browse__previous,
 .browse__next {
 	flex: 0 1 50%;
+}
 
-	&::before {
-		display: block;
-		font-weight: var(--font-weight-semibold);
-	}
-	&:not(:is(:hover, :focus, :active)) {
-		&::before {
-			color: h(kaiser);
-		}
-	}
-}
-.browse__previous {
-	&::before {
-		content: "← Previously";
-	}
-}
 .browse__next {
 	text-align: end;
 	margin-inline-start: auto;
-
-	&::before {
-		content: "Next →";
-	}
 }
