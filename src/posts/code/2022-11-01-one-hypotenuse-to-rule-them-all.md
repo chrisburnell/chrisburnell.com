@@ -96,7 +96,7 @@ Interesting! 🤔
         block-size:  15%;
         border-width: var(--size-border-thin) 0 0 var(--size-border-thin);
         border-style: dashed;
-        border-color: hsl(var(--hsl-milou));
+        border-color: hsl(var(--hsl-snowy));
         inset-inline-end: 0;
         inset-block-end: 0;
     }

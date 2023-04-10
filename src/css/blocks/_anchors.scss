@@ -12,7 +12,7 @@ h2 %anchor:not(:is(:hover, :focus, :active)) {
 	--outline-color: #{h(bowhead)};
 
 	background-color: h(bowhead);
-	color: h(milou);
+	color: h(snowy);
 	display: block;
 	padding: 1em 1.5em;
 	position: absolute;
@@ -26,7 +26,7 @@ h2 %anchor:not(:is(:hover, :focus, :active)) {
 
 // Fragment Anchors inside Headings
 .fragment-anchor {
-	color: h(dove);
+	color: h(nickel);
 	padding-inline: var(--size-small);
 	position: absolute;
 	inset-block-start: 50%;

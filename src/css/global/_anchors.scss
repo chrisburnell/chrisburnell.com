@@ -12,7 +12,7 @@
 	border-radius: 1px;
 	position: relative;
 	text-decoration: underline;
-	text-decoration-color: h(alto);
+	text-decoration-color: h(yeti);
 	text-decoration-thickness: var(--size-border-thin);
 	text-decoration-skip-ink: auto;
 	text-underline-offset: 0.125em;
@@ -30,7 +30,7 @@
 		--outline-offset: 0;
 
 		background-color: h(maple) !important;
-		color: h(milou) !important;
+		color: h(snowy) !important;
 	}
 
 	&[disabled] {

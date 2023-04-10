@@ -12,15 +12,15 @@ html {
 	overscroll-behavior: contain;
 	scrollbar-gutter: stable;
 	accent-color: h(raven);
-	scrollbar-color: h(raven) h(milou);
+	scrollbar-color: h(raven) h(snowy);
 	font-size: 100%;
 	font-variant: common-ligatures proportional-nums;
 	// more than block-size of header when navigation spans two rows
-	scroll-padding-top: 7rem;
+	scroll-padding-top: 5.5125rem;
 }
 
 body {
-	background-color: h(milou);
+	background-color: h(snowy);
 	color: h(kaiser);
 	display: grid;
 	grid-template-rows:

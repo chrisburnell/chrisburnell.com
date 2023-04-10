@@ -10,20 +10,20 @@
 	&:is(body),
 	&:is(html) body {
 		background-color: h(mineshaft);
-		color: h(milou);
+		color: h(snowy);
 		scrollbar-color: h(raven) h(mineshaft);
 	}
 
 	// Header Block
 	.header {
 		background-color: mix(map-get($colors, mineshaft), map-get($colors, bear), (1 - map-get($opacities, delta)) * 100%);
-		color: h(milou);
+		color: h(snowy);
 	}
 
 	// Main Block
 	.main {
 		background-color: h(mineshaft);
-		color: h(milou);
+		color: h(snowy);
 	}
 
 	// Footer Block
@@ -59,7 +59,7 @@
 	input,
 	textarea {
 		background-color: h(thunder);
-		color: h(milou);
+		color: h(snowy);
 		border-color: h(kaiser);
 
 		&:hover {
@@ -72,7 +72,7 @@
 	}
 
 	hr {
-		background-color: h(alto, beta);
+		background-color: h(yeti, beta);
 	}
 
 	dialog {
@@ -91,7 +91,7 @@
 	.breadcrumbs {
 		li {
 			&::marker {
-				color: h(alto);
+				color: h(yeti);
 			}
 		}
 	}
@@ -101,7 +101,7 @@
 	blockquote cite,
 	.breadcrumbs,
 	.fragment-anchor {
-		color: h(alto);
+		color: h(yeti);
 	}
 
 	///
@@ -132,7 +132,7 @@
 	.browse__next {
 		&:not(:is(:hover, :focus, :active)) {
 			&::before {
-				color: h(alto);
+				color: h(yeti);
 			}
 		}
 	}
@@ -140,7 +140,7 @@
 	.table-of-contents {
 		li {
 			&::marker {
-				color: h(alto);
+				color: h(yeti);
 			}
 		}
 	}

@@ -5,7 +5,5 @@
 		</details>
 	</details-utils>
 
-	<template webc:raw data-island="once">
-		<script src="/js/components/details-utils.js"></script>
-	</template>
+	<template webc:raw data-island="once"><script src="/js/components/details-utils.js"></script></template>
 </is-land>

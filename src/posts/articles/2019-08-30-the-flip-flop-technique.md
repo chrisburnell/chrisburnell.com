@@ -122,10 +122,10 @@ video {
 
     @supports not (filter: invert(1) hue-rotate(180deg)) {
         --color-black: #{$color-white};
-        --color-mineshaft: #{$color-alto};
-        --color-kaiser: #{$color-dove};
-        --color-dove: #{$color-kaiser};
-        --color-alto: #{$color-mineshaft};
+        --color-mineshaft: #{$color-yeti};
+        --color-kaiser: #{$color-nickel};
+        --color-nickel: #{$color-kaiser};
+        --color-yeti: #{$color-mineshaft};
         --color-white: #{$color-black};
     }
 }

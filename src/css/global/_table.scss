@@ -53,16 +53,20 @@ th {
 	// white-space: nowrap;
 
 	&:not(:empty) {
-		background-color: mix(map-get($colors, thunder), map-get($colors, milou), map-get($opacities, delta) * 100%);
+		background-color: mix(map-get($colors, thunder), map-get($colors, snowy), map-get($opacities, delta) * 100%);
 		position: sticky;
 		z-index: var(--z-index-above);
 
 		thead & {
-			inset-block-start: 0;
+			inset-block-start: 5.5125rem;
 		}
 
 		tbody & {
 			inset-inline-start: 0;
+		}
+
+		details & {
+			position: initial;
 		}
 	}
 

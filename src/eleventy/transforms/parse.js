@@ -33,9 +33,7 @@ module.exports = async (value, outputPath) => {
 								</div>
 							</details>
 						</details-utils>
-						<template data-island="once">
-							<script src="/js/components/details-utils.js"></script>
-						</template>
+						<template data-island="once"><script src="/js/components/details-utils.js"></script></template>
 					</is-land>
 				</aside>`
 			$(tocHtml).insertBefore(".content")

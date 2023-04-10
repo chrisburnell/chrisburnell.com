@@ -281,13 +281,13 @@ And if we want to do any kind of computation, modify the value, or combine value
 
 ```scss
 .modal {
-    border: v(size, small) solid v(color, dove);
+    border: v(size, small) solid v(color, nickel);
 }
 ```
 
 ```css
 .modal {
-    border: var(--size-small) solid var(--color-dove);
+    border: var(--size-small) solid var(--color-nickel);
 }
 ```
 
@@ -295,7 +295,7 @@ And by modifying the third parameter, `$fallback`, we can return the computed SC
 
 ```scss
 .modal {
-    border: v(size, small, true) solid v(color, dove, true);
+    border: v(size, small, true) solid v(color, nickel, true);
 }
 ```
 

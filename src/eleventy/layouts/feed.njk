@@ -38,7 +38,7 @@
 	{%- endif %}
 	<entry>
 		<id>{{ site.url + item.url }}</id>
-		<title>{{ item_title | safe }}</title>
+		<title>{{ item_title }}</title>
 		<published>{{ item.date | rfc3339Date }}</published>
 		<updated>{{ item.data.updated | default(item.date) | rfc3339Date }}</updated>
 		<category term="{{ item.data.category }}" scheme="{{ site.url + '/' + item.data.category + '/' }}" label="{{ item.data.categoryProper | default(item.data.category) | title }}" />

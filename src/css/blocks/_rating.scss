@@ -17,14 +17,14 @@
 	}
 
 	&::before {
-		color: var(--rating-background-color, h(alto));
+		color: var(--rating-background-color, h(yeti));
 	}
 
 	&::after {
 		background-color: inherit;
 		color: var(--rating-color, h(aspen));
 		inline-size: 0;
-		text-shadow: 0 1px 1px var(--rating-border, h(dove));
+		text-shadow: 0 1px 1px var(--rating-border, h(nickel));
 		overflow: hidden;
 		position: absolute;
 		inset-block-start: 0;

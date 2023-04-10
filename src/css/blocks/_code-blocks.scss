@@ -12,7 +12,7 @@ pre[class*="language-"] {
 
 	// Labels
 	&::before {
-		color: h(milou);
+		color: h(snowy);
 		position: absolute;
 		inset-block-start: var(--size-tiny);
 		inset-inline-start: var(--size-gutter);
@@ -21,7 +21,7 @@ pre[class*="language-"] {
 	}
 
 	code {
-		color: h(milou);
+		color: h(snowy);
 		padding: 0 0 1em;
 		line-height: var(--line-height-code);
 	}
@@ -37,7 +37,7 @@ pre.language-none {
 
 pre.language-bash::before {
 	content: "Terminal";
-	color: h(alto);
+	color: h(yeti);
 }
 pre.language-css::before {
 	content: "CSS";
@@ -61,7 +61,7 @@ pre.language-liquid::before {
 }
 pre.language-markdown::before {
 	content: "Markdown";
-	color: h(milou);
+	color: h(snowy);
 }
 pre.language-nunjucks::before,
 pre.language-twig::before {
@@ -71,7 +71,7 @@ pre.language-twig::before {
 pre.language-plaintext::before,
 pre.language-text::before {
 	content: "Plaintext";
-	color: h(alto);
+	color: h(yeti);
 }
 pre.language-scss::before {
 	content: "SCSS";

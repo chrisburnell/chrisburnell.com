@@ -30,7 +30,7 @@ summary {
 
 	&:hover {
 		text-decoration: underline;
-		text-decoration-color: h(alto);
+		text-decoration-color: h(yeti);
 		text-decoration-thickness: var(--size-border-thin);
 		text-decoration-skip-ink: auto;
 		text-underline-offset: 0.125em;
@@ -42,7 +42,7 @@ summary {
 	}
 
 	& + * {
-		border-block-start: var(--size-border-thin) solid h(alto);
+		border-block-start: var(--size-border-thin) solid h(yeti);
 		padding-block-start: var(--size-medium);
 	}
 }

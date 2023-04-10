@@ -23,7 +23,7 @@ p {
 	@include italic;
 	font-weight: var(--font-weight-regular);
 	text-decoration: underline;
-	text-decoration-color: h(dove);
+	text-decoration-color: h(nickel);
 	text-decoration-style: dotted;
 	text-decoration-thickness: var(--size-border-thin);
 	cursor: help;
@@ -132,7 +132,7 @@ progress {
 
 meter {
 	&::-webkit-meter-bar {
-		background-color: h(dove);
+		background-color: h(nickel);
 	}
 
 	&::-webkit-meter-optimum-value {
@@ -150,7 +150,7 @@ meter {
 
 progress {
 	&::-webkit-progress-bar {
-		background-color: h(dove);
+		background-color: h(nickel);
 	}
 
 	&::-webkit-progress-value {
@@ -176,7 +176,7 @@ progress {
 ::selection,
 ::target-text {
 	background-color: h(raven);
-	color: h(milou);
+	color: h(snowy);
 	text-shadow: none;
 }
 

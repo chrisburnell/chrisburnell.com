@@ -56,7 +56,7 @@ These three segments allow us to uniquely identify any given post by referencing
 ## Category Code
 
 <figure>
-    <p class=" [ beta  center ] " style="font-weight: var(--font-weight-default);"><a href="#refresh" style="color: hsl(var(--hsl-dove));" title="Jump to Refresh section">repc.co/<strong style="color: hsl(var(--hsl-bowhead));">a</strong>4zK2</a></p>
+    <p class=" [ beta  center ] " style="font-weight: var(--font-weight-default);"><a href="#refresh" style="color: hsl(var(--hsl-nickel));" title="Jump to Refresh section">repc.co/<strong style="color: hsl(var(--hsl-bowhead));">a</strong>4zK2</a></p>
 </figure>
 
 One way to attach the category code to each post is to use Front Matter:
@@ -124,7 +124,7 @@ module.exports = {
 ## Sexagesimal Epoch Days
 
 <figure>
-    <p class=" [ beta  center ] " style="font-weight: var(--font-weight-default);"><a href="#refresh" style="color: hsl(var(--hsl-dove));" title="Jump to Refresh section">repc.co/a<strong style="color: hsl(var(--hsl-maple));">4zK</strong>2</a></p>
+    <p class=" [ beta  center ] " style="font-weight: var(--font-weight-default);"><a href="#refresh" style="color: hsl(var(--hsl-nickel));" title="Jump to Refresh section">repc.co/a<strong style="color: hsl(var(--hsl-maple));">4zK</strong>2</a></p>
 </figure>
 
 Compared to the previous Liquid solution, things are quite a bit more terse in Eleventy where we can essentially implement NewBase60 [as provided by Tantek Çelik](http://tantek.pbworks.com/w/page/19402946/NewBase60).
@@ -273,7 +273,7 @@ const DateToSexagesimal = (dateObject) => {
 ## Post Index for the Day
 
 <figure>
-    <p class=" [ beta  center ] " style="font-weight: var(--font-weight-default);"><a href="#refresh" style="color: hsl(var(--hsl-dove));" title="Jump to Refresh section">repc.co/a4zK<strong style="color: hsl(var(--hsl-liquid));">2</strong></a></p>
+    <p class=" [ beta  center ] " style="font-weight: var(--font-weight-default);"><a href="#refresh" style="color: hsl(var(--hsl-nickel));" title="Jump to Refresh section">repc.co/a4zK<strong style="color: hsl(var(--hsl-liquid));">2</strong></a></p>
 </figure>
 
 The last step in building the ShortURL is to pull everything together into a function that we can pass to Eleventy to use as a Filter:

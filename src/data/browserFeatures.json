@@ -49,6 +49,20 @@
     "links": ["[Official Specification (CSS Color Module Level 4)](https://www.w3.org/TR/css-color-4/)", "[Official Specification (CSS Color Module Level 5)](https://www.w3.org/TR/css-color-5/)", "[Article by Michelle Barker](https://www.smashingmagazine.com/2021/11/guide-modern-css-colors/)"]
   },
   {
+    "id": "mdn-css_types_color_oklch",
+    "language": "css",
+    "title": "oklch()",
+    "description": "The oklch() functional notation expresses a given color in the OKLCH color space.",
+    "links": ["[Page on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklch)"]
+  },
+  {
+    "id": "mdn-css_types_color_oklab",
+    "language": "css",
+    "title": "oklab()",
+    "description": "The oklab() functional notation expresses a given color in the OKLCH color space.",
+    "links": ["[Page on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklab)"]
+  },
+  {
     "id": "css-lch-lab",
     "language": "css",
     "title": "lab()/lch()",
