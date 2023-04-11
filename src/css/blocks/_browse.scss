@@ -9,11 +9,15 @@
 	justify-content: space-between;
 	margin-block-start: var(--size-large);
 	font-weight: var(--font-weight-semibold);
+
+	li {
+		flex: 0 1 50%;
+	}
 }
 
 .browse__previous,
 .browse__next {
-	flex: 0 1 50%;
+	display: block;
 }
 
 .browse__next {
