@@ -102,15 +102,15 @@ layout: base
 				{{ content | safe }}
 			</div>
 		{% endif %}
+
+		{% include 'responses.njk' %}
+
+		{% include 'browse.njk' %}
 	</div>
 
 	<aside class=" [ meta ] [ flow ] " role="complementary">
 		{% include 'meta/post.njk' %}
 	</aside>
-
-	{% include 'responses.njk' %}
-
-	{% include 'browse.njk' %}
 
 	{% include 'ads.njk' %}
 </article>

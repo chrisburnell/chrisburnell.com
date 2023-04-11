@@ -10,27 +10,21 @@ toc: true
 now: 1680955100000
 ---
 
-<p>A lot of inspiration for this living collection comes from <a href="https://css-irl.info">Michelle Barker</a>, who wrote about upcoming browser features <a href="https://www.smashingmagazine.com/2022/03/new-css-features-2022/">on Smashing Magazine</a> and on <a href="https://css-irl.info/exciting-times-for-browsers-and-css/">CSS { In Real Life }</a>.</p>
-
-<p>Please feel free to <a href="https://github.com/{{ author.github }}/{{ site.repository }}/tree/main/src/data/browserFeatures.json">suggest new features</a> or even <a href="https://github.com/{{ author.github }}/{{ site.repository }}/tree/main/src/data/browsersByType.json">other browsers</a>.</p>
-
-<figure>
-	<table>
-		<thead>
-			<tr>
-				<td></td>
-				{% for browser in browsersByType %}
-					<th class=" [ sideways ] ">{{ browser.name }}</th>
-				{% endfor %}
-			</tr>
-		</thead>
-		<tbody>
-			{% for feature in browserFeaturesSorted %}
-				{% caniuse_table_row feature %}
+<table>
+	<thead>
+		<tr>
+			<td></td>
+			{% for browser in browsersByType %}
+				<th class=" [ sideways ] " style="padding-block: var(--size-small-medium)">{{ browser.name }}</th>
 			{% endfor %}
-		</tbody>
-	</table>
-</figure>
+		</tr>
+	</thead>
+	<tbody>
+		{% for feature in browserFeaturesSorted %}
+			{% caniuse_table_row feature %}
+		{% endfor %}
+	</tbody>
+</table>
 
 <hr>
 
@@ -46,5 +40,11 @@ now: 1680955100000
 		{% caniuse feature.id %}
 	</section>
 {% endfor %}
+
+<hr>
+
+<p>A lot of inspiration for this living collection comes from <a href="https://css-irl.info">Michelle Barker</a>, who wrote about upcoming browser features <a href="https://www.smashingmagazine.com/2022/03/new-css-features-2022/">on Smashing Magazine</a> and on <a href="https://css-irl.info/exciting-times-for-browsers-and-css/">CSS { In Real Life }</a>.</p>
+
+<p>Please feel free to <a href="https://github.com/{{ author.github }}/{{ site.repository }}/tree/main/src/data/browserFeatures.json">suggest new features</a> or even <a href="https://github.com/{{ author.github }}/{{ site.repository }}/tree/main/src/data/browsersByType.json">other browsers</a>.</p>
 
 {%- css %}@layer components { {%- include '../../../css/components/browser-support.css' -%} }{% endcss -%}

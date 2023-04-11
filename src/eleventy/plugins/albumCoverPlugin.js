@@ -64,7 +64,6 @@ const fetchAlbumCoverUrl = async (id) => {
 	// })
 	// if (album_request.ok) {
 	// 	const album_response = await album_request.json()
-	// 	console.log(album_response)
 	// 	return album_response.images[0].url
 	// }
 

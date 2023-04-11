@@ -32,13 +32,9 @@
 		auto
 		[toc-end content-start]
 		auto
-		[content-end responses-start]
+		[content-end meta-start]
 		auto
-		[responses-end meta-start]
-		auto
-		[meta-end browse-start]
-		auto
-		[browse-end ads-start]
+		[meta-end ads-start]
 		auto
 		[ads-end];
 	grid-template-columns:
@@ -59,11 +55,7 @@
 			auto
 			[sparkline-end meta-start]
 			1fr
-			[content-end responses-start]
-			auto
-			[responses-end browse-start]
-			auto
-			[browse-end ads-start]
+			[content-end ads-start]
 			auto
 			[meta-end ads-end];
 		grid-template-columns:

@@ -12,7 +12,7 @@ module.exports = async (value, outputPath) => {
 		// We have to process headings from table of contents before adding
 		// the permalink to them later, or the links will include the text of
 		// the permalink.
-		const tocHeadings = $(".generate-toc h2")
+		const tocHeadings = $(".generate-toc h2:not(.no-fragment)")
 		if (tocHeadings.length) {
 			let tocHtml = `
 				<aside class=" [ meta ] " role="complementary">

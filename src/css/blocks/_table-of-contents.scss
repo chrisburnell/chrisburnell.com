@@ -12,7 +12,7 @@
 	// TODO Refactor container mixin to support this
 	@container main (min-width: 851px) {
 		position: sticky;
-		inset-block-start: 6.5125rem;
+		inset-block-start: calc(var(--size-header) + 1rem);
 	}
 
 	details {
@@ -40,8 +40,8 @@
 
 		// TODO Refactor container mixin to support this
 		@container main (min-width: 851px) {
-			max-block-size: calc(100vh - 11rem);
-			max-block-size: calc(100dvb - 11rem);
+			max-block-size: calc(100vh - (var(--size-header) * 2));
+			max-block-size: calc(100dvb - (var(--size-header) * 2));
 		}
 	}
 }

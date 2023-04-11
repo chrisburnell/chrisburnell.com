@@ -1,6 +1,4 @@
-const now = Date.now()
-
-const cssnakedday = () => {
+const cssnakedday = (now) => {
 	const thisYear = new Date().getFullYear()
 	const startEpoch = new Date(`${thisYear}-04-08T12:00:00Z`).getTime()
 	const endEpoch = new Date(`${thisYear}-04-10T12:00:00Z`).getTime()
@@ -16,7 +14,7 @@ const random = () => {
 }
 
 module.exports = {
-	now: now,
-	cssnakedday: cssnakedday(now),
+	now: Date.now(),
+	cssnakedday: cssnakedday(Date.now()),
 	random: random(),
 }

@@ -30,6 +30,8 @@ layout: base
 		<div class=" [ e-content ] [ flow ] {% if contentClass %}[ {{ contentClass }} ] {% endif %}{% if toc %}generate-toc{% endif %}">
 			{{ content | safe }}
 		</div>
+
+		{% include 'responses.njk' %}
 	</div>
 
 	{% if not full and not toc %}
@@ -37,8 +39,6 @@ layout: base
 			{% include 'meta/page.njk' %}
 		</aside>
 	{% endif %}
-
-	{% include 'responses.njk' %}
 
 	{% include 'ads.njk' %}
 </article>

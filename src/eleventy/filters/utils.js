@@ -21,7 +21,6 @@ module.exports = {
 			}, item)
 
 			if (value === "notempty") {
-				// console.log(item.date, key, !!itemValue?.length)
 				return !!itemValue?.length
 			} else if (typeof value === "string" || value === null) {
 				return itemValue === value

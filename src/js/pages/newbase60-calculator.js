@@ -86,7 +86,7 @@ class NumberConverter {
 		this.sexagesimal = document.getElementById("sexagesimal")
 		this.date = document.getElementById("date")
 
-		this.decimal.addEventListener("blur", (event) => {
+		this.decimal.addEventListener("blur", () => {
 			this.convertFromDecimal()
 		})
 		this.decimal.addEventListener("keydown", (event) => {
@@ -95,7 +95,7 @@ class NumberConverter {
 			}
 		})
 
-		this.binary.addEventListener("blur", (event) => {
+		this.binary.addEventListener("blur", () => {
 			this.convertFromBinary()
 		})
 		this.binary.addEventListener("keydown", (event) => {
@@ -104,7 +104,7 @@ class NumberConverter {
 			}
 		})
 
-		this.sexagesimal.addEventListener("blur", (event) => {
+		this.sexagesimal.addEventListener("blur", () => {
 			this.convertFromSexagesimal()
 		})
 		this.sexagesimal.addEventListener("keydown", (event) => {

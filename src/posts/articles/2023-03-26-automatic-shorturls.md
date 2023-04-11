@@ -7,7 +7,7 @@ tags:
   - javascript
   - liquid
   - nunjucks
-js_module: article-automatic-shorturls.js
+js_module: newbase60-calculator.js
 ---
 
 <nav class=" [ box ] [ flow ] " style="margin-block-end: var(--size-large);">

@@ -16,7 +16,7 @@
 	background-color: var(--background-color, mix(map-get($colors, thunder), map-get($colors, snowy), map-get($opacities, delta) * 100%));
 	margin-block-start: var(--flow-space, 1em);
 	position: sticky;
-	inset-block-start: 5.5125rem;
+	inset-block-start: var(--size-header);
 	z-index: var(--z-index-modal);
 
 	.no-js & {
