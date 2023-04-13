@@ -46,7 +46,9 @@ I don’t think it’s uncommon that progressive enhancement is thought of in th
 
 But I think what Andy really drove home for me was that progressive enhancement can start all the way back at the inception of HTML and we can think of CSS itself as a progressive enhancement: we should aim to get as much of what the page wants to achieve just through carefully-crafted HTML.
 
-This means that before we even apply styles, we should make sure that our page follows a clear hierarchy, provides semantic markup, etc. *Hold on*, [this sounds familiar](#cssnakedday-quote), doesn’t it… *Let’s close this long tangential loop.*
+This means that before we even apply styles, we should make sure that our page follows a clear hierarchy, provides semantic markup, etc. *Hold on*, [this sounds familiar](#cssnakedday-quote), doesn’t it…
+
+### Brass tacks
 
 By stripping our websites of CSS, and even building our websites *without CSS first*, we are making a clear division between content and styles, and when we do this, we have to rely on the browser’s default method of presenting HTML. This seems to me like a reasonable place to start progressively enhancing the content with styles, so let’s make sure that the foundation we’re building off of is absolutely rock-solid.
 
