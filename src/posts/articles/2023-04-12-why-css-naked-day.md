@@ -1,5 +1,5 @@
 ---
-date: 2023-04-12T20:00:00+0100
+date: 2023-04-14T00:30:00+0100
 title: Why I participated in CSS Naked Day
 description: "CSS Naked Day has come and gone for this year, but I’ll be making it a point to participate for many years to come."
 tags:
