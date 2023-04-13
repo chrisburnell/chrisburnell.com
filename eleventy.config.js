@@ -11,7 +11,7 @@ const pregenImagePlugin = require("#plugins/pregenImagePlugin")
 // const inclusiveLanguagePlugin = require("@11ty/eleventy-plugin-inclusive-language")
 const bundlerPlugin = require("@11ty/eleventy-plugin-bundle")
 const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output")
-const rssPlugin = require("@11ty/eleventy-plugin-rss");
+const rssPlugin = require("@11ty/eleventy-plugin-rss")
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight")
 const webCPlugin = require("@11ty/eleventy-plugin-webc")
 
@@ -41,6 +41,7 @@ const tagsBuilder = require("#builders/tags")
 // Import other bits and bobs
 const markdownParser = require("markdown-it")
 const markdownAbbr = require("markdown-it-abbr")
+const markdownFootnote = require("markdown-it-footnote")
 
 module.exports = (eleventyConfig) => {
 	// Plugins
@@ -145,16 +146,42 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.addWatchTarget("./src/js/")
 
 	// Customised markdown config
-	eleventyConfig.setLibrary(
-		"md",
-		markdownParser({
+	const md = markdownParser({
 			html: true,
 			breaks: true,
 			linkify: true,
 		})
 			.use(markdownAbbr)
+			.use(markdownFootnote)
 			.disable("code")
-	)
+	md.renderer.rules.footnote_block_open = () => {
+		return `<hr>
+		<nav aria-label="Footnotes">
+			<ol>`
+	}
+	md.renderer.rules.footnote_block_close = () => {
+		return `</ol>
+		</nav>`
+	}
+	md.renderer.rules.render_footnote_caption = (tokens, idx) => {
+		let n = Number(tokens[idx].meta.id + 1).toString()
+
+		if (tokens[idx].meta.subId > 0) {
+			n += ':' + tokens[idx].meta.subId
+		}
+
+		return `${n}`
+	}
+	md.renderer.rules.render_footnote_open = (tokens, idx, options, env, slf) => {
+		var id = slf.rules.footnote_anchor_name(tokens, idx, options, env, slf)
+
+		if (tokens[idx].meta.subId > 0) {
+			id += ':' + tokens[idx].meta.subId
+		}
+
+		return `<li id="fn${id}">`
+	}
+	eleventyConfig.setLibrary("md", md)
 
 	// Build Settings
 	eleventyConfig.setDataDeepMerge(true)

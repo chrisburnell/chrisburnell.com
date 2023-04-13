@@ -1,7 +1,7 @@
 ---
 layout: base
 ---
-<article {% if not content.length %}id="content"{% endif %} class=" [ pantheon{% if full %}  full{% elif wide %}  wide{% endif %} ] [ wrap ] [ post h-{{ mf_root }} ] ">
+<article {% if not content.length %}id="content"{% endif %} class=" [ pantheon{% if full %}  full{% elif wide %}  wide{% endif %} ] [ wrap ] [ post h-{{ mf_root }} ] {% if perch %}[ perch ] {% endif %}">
 
 	<ul class=" [ cluster ] [ breadcrumbs ] " hidden>
 		<li><a href="/archive/">All Posts</a></li><li><a href="/{{ categoryPlural | default(category) }}/">{{ categoryProperPlural | default(categoryPlural) | default(category) | title }}</a></li>

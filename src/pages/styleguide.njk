@@ -563,26 +563,26 @@ p q r s t u v w x y z { | } ~</code></pre>
 
 <h2>Deck</h2>
 
-<nav id="list-deck" class=" [ deck ] ">
+<div id="list-deck" class=" [ deck ] ">
 {% for item in collections.article | arePublished | reverse | limit(site.limits.deck) %}
 	{% include 'items/deck.njk' %}
 {% endfor %}
-</nav>
+</div>
 
 <h2>Shelf</h2>
 
-<nav id="list-shelf-beer" class=" [ grid ] [ shelf ] ">
+<div id="list-shelf-beer" class=" [ grid ] [ shelf ] ">
 {%- set hfeed = false -%}
 {% for item in collections.beer | arePublished | reverse | limit(site.limits.shelf) %}
 	{% include 'items/shelf.njk' %}
 {% endfor %}
-</nav>
+</div>
 
-<nav id="list-shelf-music" class=" [ grid ] [ shelf ] ">
+<div id="list-shelf-music" class=" [ grid ] [ shelf ] ">
 {% for item in collections.music | arePublished | reverse | limit(site.limits.shelf) %}
 	{% include 'items/shelf.njk' %}
 {% endfor %}
-</nav>
+</div>
 
 <h2>Sparklines</h2>
 

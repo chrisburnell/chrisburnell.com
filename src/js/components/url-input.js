@@ -6,8 +6,8 @@ class UrlInput {
 			input.addEventListener("blur", (event) => {
 				this.addDefaultScheme(event.target)
 			})
-			input.addEventListener("keydown", (event) => {
-				if (event.keyCode == 13) {
+			input.addEventListener("keypress", (event) => {
+				if (event.key === "Enter") {
 					this.addDefaultScheme(event.target)
 				}
 			})

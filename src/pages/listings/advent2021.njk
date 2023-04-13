@@ -16,8 +16,8 @@ theme: christmas
 	</ul>
 </c-librarian>
 
-<nav class=" [ grid ] [ shelf ] " aria-live="polite">
+<div class=" [ grid ] [ shelf ] " aria-live="polite">
 	{% for item in collection %}
 		{% include 'items/shelf.njk' %}
 	{% endfor %}
-</nav>
+</div>

@@ -1,7 +1,7 @@
 ---
 layout: base
 ---
-<article id="content" class=" [ pantheon{% if full %}  full{% elif wide %}  wide{% endif %} ] [ wrap ] [ page ] ">
+<article id="content" class=" [ pantheon{% if full %}  full{% elif wide %}  wide{% endif %} ] [ wrap ] [ page ] {% if perch %}[ perch ] {% endif %}">
 
 	{% if 'project' in tags %}
 		<ul class=" [ cluster ] [ breadcrumbs ] " hidden>
@@ -10,14 +10,7 @@ layout: base
 	{% endif %}
 
 	<h1 id="title" class=" [ title{% if title_error %} title--negative{% elif title_success %} title--positive{% endif %} ] ">
-		{%- if perch %}
-			<span class=" [ perch ] [ p-name ] ">
-				{{ tagline | default(title) | safe }}
-				<img src="{{ site.logo }}" alt="" width="324" height="324" loading="lazy" decoding="async" role="presentation" hidden>
-			</span>
-		{%- else -%}
-			<span class=" [ p-name ] ">{{ tagline | default(title) | safe }}</span>
-		{%- endif %}
+		<span class=" [ p-name ] ">{{ tagline | default(title) | safe }}</span>
 	</h1>
 
 	<div class=" [ description ] [ flow ] [ p-summary ] ">

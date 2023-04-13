@@ -11,7 +11,7 @@ truncate: true
 {%- if limit -%}
 	{% set collection = collection | limit(limit) %}
 {%- endif -%}
-<div class=" [ pantheon{% if full %}  full{% elif wide %}  wide{% endif %} ] [ wrap ] [ archive ] ">
+<div class=" [ pantheon{% if full %}  full{% elif wide %}  wide{% endif %} ] [ wrap ] [ archive ] {% if perch %}[ perch ] {% endif %}">
 
 	<ul class=" [ cluster ] [ breadcrumbs ] " hidden>
 		<li><a href="/archive/">← All Posts</a></li>
@@ -48,25 +48,25 @@ truncate: true
 			<h2 id="{{ year }}">
 				{{ year }} <small>· {{ collection | getCollectionCount(year, true) }} post{{ 's' if collection | getCollectionCount(year, true) > 1 }}</small>
 			</h2>
-			<nav id="list-{{ year }}" class=" [ deck ] ">
+			<div id="list-{{ year }}" class=" [ deck ] ">
 				{% for item in collection %}
 					{% if item.date.getFullYear() != year %}
 						{%- set year = item.date.getFullYear() -%}
-						</nav>
+						</div>
 						<h2 id="{{ year }}">
 							{{ year }} <small>· {{ collection | getCollectionCount(year, true) }} post{{ 's' if collection | getCollectionCount(year, true) > 1 }}</small>
 						</h2>
-						<nav id="list-{{ year }}" class=" [ deck ] ">
+						<div id="list-{{ year }}" class=" [ deck ] ">
 					{% endif %}
 					{% include 'items/deck.njk' %}
 				{% endfor %}
-			</nav>
+			</div>
 		{%- else -%}
-			<nav class=" [ deck ] ">
+			<div class=" [ deck ] ">
 				{% for item in collection %}
 					{% include 'items/deck.njk' %}
 				{% endfor %}
-			</nav>
+			</div>
 		{%- endif -%}
 	</div>
 

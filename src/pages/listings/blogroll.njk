@@ -6,7 +6,7 @@ wide: true
 {%- set collection = blogroll | keySort('title') -%}
 
 {% css %}@layer components { {%- include '../../../css/components/shelf.css' -%} }{% endcss -%}
-<nav class=" [ grid ] [ shelf ] ">
+<div class=" [ grid ] [ shelf ] ">
 {% for item in collection %}
 	<article class=" [ flow ] ">
 		<img src="https://v1.indieweb-avatar.11ty.dev/{{ item.url | urlencode }}/" class=" [ avatar ] " width="30" height="30" alt="{{ item.title | safe }}’s avatar" loading="lazy" decoding="async">
@@ -19,4 +19,4 @@ wide: true
 		</h1>
 	</article>
 {% endfor %}
-</nav>
+</div>

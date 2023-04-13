@@ -63,6 +63,7 @@
     "luxon": "^3.3.0",
     "markdown-it": "^13.0.1",
     "markdown-it-abbr": "^1.0.4",
+    "markdown-it-footnote": "^3.0.3",
     "natural": "^6.2.0"
   },
   "scripts": {

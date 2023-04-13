@@ -1,8 +1,6 @@
 ---
 permalink: "/index.html"
 layout: base
-is_homepage: true
-ads: false
 title: The Homepage
 eleventyComputed:
   description: "{{ site.description | safe }}"
@@ -10,16 +8,14 @@ eleventyComputed:
 sitemap:
   changefreq: daily
   priority: 1.0
+ads: false
 truncate: true
 ---
 
-<article class=" [ pantheon ] [ wrap ] [ page ] ">
+<article class=" [ pantheon ] [ wrap ] [ page ] [ perch ] ">
 
 	<h1 id="title" class=" [ title{% if title_error %}  title--negative{% elif title_success %}  title--positive{% endif %} ] ">
-		<span class=" [ perch ] [ p-name ] ">
-			{{ tagline | default(title) | safe }}
-			<img src="{{ site.logo }}" alt="" width="324" height="324" loading="lazy" decoding="async" role="presentation" hidden>
-		</span>
+		<span class=" [ p-name ] ">{{ tagline | default(title) | safe }}</span>
 	</h1>
 
 	<div class=" [ description ] [ flow ] [ p-summary ] " aria-hidden="true">
@@ -36,11 +32,11 @@ truncate: true
 					<h2 id="today-rsvps">
 						<a href="/rsvps/">Events I’m Attending Today</a>
 					</h2>
-					<nav class=" [ deck ] [ flow ] " aria-labelledby="today-rsvps">
+					<div class=" [ deck ] [ flow ] ">
 						{% for item in collections.todayRSVPs %}
 							{% include 'items/deck.njk' %}
 						{% endfor %}
-					</nav>
+					</div>
 				</div>
 				<hr>
 			{% endif %}
@@ -49,11 +45,11 @@ truncate: true
 			<h2 id="latest">
 				<a href="/writing/">Latest Writing</a>
 			</h2>
-			<nav class=" [ deck ] [ h-feed ] " aria-labelledby="latest">
+			<div class=" [ deck ] [ h-feed ] ">
 				{% for item in collections.writingPosts | limit(site.limits.feature) %}
 					{% include 'items/deck.njk' %}
 				{% endfor %}
-			</nav>
+			</div>
 			<nav class=" [ grid ] [ navigator ] " aria-label="Writing Navigation">
 				<a class=" [ button ] " href="/writing/">Browse Writing</a>
 			</nav>
@@ -64,11 +60,11 @@ truncate: true
 			<h2 id="projects">
 				<a href="/projects/" tabindex="-1">Latest Projects</a>
 			</h2>
-			<nav class=" [ deck ] " aria-labelledby="projects">
+			<div class=" [ deck ] ">
 				{% for item in collections.projects | limit(site.limits.feature) %}
 					{% include 'items/deck.njk' %}
 				{% endfor %}
-			</nav>
+			</div>
 			<nav class=" [ grid ] [ navigator ] " aria-label="Projects Navigation">
 				<a class=" [ button ] " href="/projects/">Browse Projects</a>
 			</nav>
@@ -79,11 +75,11 @@ truncate: true
 			<h2 id="popular">
 				<a href="/popular/">Popular Pages</a>
 			</h2>
-			<nav class=" [ deck ] " aria-labelledby="popular">
+			<div class=" [ deck ] ">
 				{% for item in collections.popular | limit(site.limits.feature) %}
 					{% include 'items/deck.njk' %}
 				{% endfor %}
-			</nav>
+			</div>
 			{%- set show_photos = false -%}
 
 			{% if collections.throwbackPosts.length %}
@@ -91,26 +87,24 @@ truncate: true
 				{%- set show_photos = true -%}
 				<hr>
 				<h2 id="on-this-day">On This Day</h2>
-				<nav class=" [ deck ] " aria-labelledby="on-this-day">
+				<div class=" [ deck ] ">
 					{% for item in collections.throwbackPosts | limit(site.limits.feature) %}
 						{% include 'items/deck.njk' %}
 					{% endfor %}
-				</nav>
+				</div>
 				{%- set relative_time = false -%}
 				{%- set show_photos = false -%}
 			{% endif %}
 
 			{% if collections.upcomingRSVPs.length %}
 				<hr>
-				<div class=" [ box  box--line-length ] [ flow ] ">
-					<h2 id="upcoming-rsvps">
-						<a href="/rsvps/">Upcoming Events</a>
-					</h2>
-					<nav class=" [ deck ] [ flow ] " aria-labelledby="upcoming-rsvps">
-						{% for item in collections.upcomingRSVPs %}
-							{% include 'items/deck.njk' %}
-						{% endfor %}
-					</nav>
+				<h2 id="upcoming-rsvps">
+					<a href="/rsvps/">Upcoming Events</a>
+				</h2>
+				<div class=" [ deck ] [ flow ] ">
+					{% for item in collections.upcomingRSVPs %}
+						{% include 'items/deck.njk' %}
+					{% endfor %}
 				</div>
 			{% endif %}
 		</div>

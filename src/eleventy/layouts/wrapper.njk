@@ -54,13 +54,11 @@
 	{% if not global.cssnakedday -%}
 	<!-- Inlined Critical CSS -->
 	<style>{% getBundle 'css', 'critical' %}</style>
-	{% css 'critical' %}{%- include '../../../css/critical.css' -%}{% endcss %}
 	<!-- Deferred CSS -->
 	<link rel="stylesheet" href="{% getBundleFileUrl 'css' %}" media="print" onload="this.media='all'">
 	<noscript>
 		<link rel="stylesheet" href="{% getBundleFileUrl 'css' %}">
 	</noscript>
-	{% css %}{%- include '../../../css/defer.css' -%}{% endcss %}
 	{%- endif %}
 
 	{% if (tags and tags.includes('httpstatus')) or (noindex and nofollow) -%}
@@ -125,17 +123,6 @@
 
 	{{ content | safe }}
 
-	{% if env.ELEVENTY_PRODUCTION %}
-		<!-- ServiceWorker -->
-		<script>{% getBundle 'js', 'navigator' %}</script>
-	{% endif %}
-
-	<!-- Deferred JS -->
-	<script type="module" src="{% getBundleFileUrl 'js', 'module' %}"></script>
-	{%- if js %}
-		<script src="{% getBundleFileUrl 'js' %}"></script>
-	{% endif %}
-
 	<!-- SVG Icons -->
 	<svg display="none" aria-hidden="true">
 		{% for symbol in svg %}
@@ -149,10 +136,23 @@
 		{% endfor %}
 	</svg>
 
+	{% if env.ELEVENTY_PRODUCTION %}
+		<!-- ServiceWorker -->
+		<script>{% getBundle 'js', 'navigator' %}</script>
+	{% endif %}
+
+	<!-- Deferred JS -->
+	<script type="module" src="{% getBundleFileUrl 'js', 'module' %}"></script>
+	{%- if js %}
+		<script src="{% getBundleFileUrl 'js' %}"></script>
+	{% endif %}
+
 	{# CSS Bundles #}
+	{% css 'critical' %}{%- include '../../../css/critical.css' -%}{% endcss %}
 	{%- if css -%}
 		{%- css 'critical' %}{%- include '../../../css/pages/' + css -%}{% endcss -%}
 	{%- endif -%}
+	{% css %}{%- include '../../../css/defer.css' -%}{% endcss %}
 
 	{# JS Bundles #}
 	{%- js 'critical' %}{%- include '../../../js/critical.js' -%}{% endjs -%}

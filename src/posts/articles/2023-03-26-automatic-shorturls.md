@@ -7,7 +7,6 @@ tags:
   - javascript
   - liquid
   - nunjucks
-js_module: newbase60-calculator.js
 ---
 
 <nav class=" [ box ] [ flow ] " style="margin-block-end: var(--size-large);">
@@ -186,30 +185,6 @@ const DateToSexagesimal = (dateObject) => {
 }
 ```
 
-<p class="requires-js">Check out this little tool to convert between decimal (base 10), binary (base 2), sexagesimal (base 60), and even the date, based on the number as days since Epoch:</p>
-
-<div class=" [ box ] [ flow ] [ requires-js ] ">
-    <h2>Converter</h2>
-    <form id="converter" class=" [ grid ] " style="--placement: auto-fit;">
-        <fieldset>
-            <label for="decimal" class=" [ delta ] ">Decimal</label>
-            <input id="decimal" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="number" min="0" inputmode="numeric" pattern="[0-9]+" lang="en" value="17959"></input>
-        </fieldset>
-        <fieldset>
-            <label for="binary" class=" [ delta ] ">Binary</label>
-            <input id="binary" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;"  type="number" min="0" inputmode="numeric" pattern="[0-1]+" lang="en" value="100011000100111"></input>
-        </fieldset>
-        <fieldset>
-            <label for="sexagesimal" class=" [ delta ] ">Sexagesimal</label>
-            <input id="sexagesimal" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="text" pattern="[0123456789ABCDEFGHJKLMNPQRSTUVWXYZ_abcdefghijkmnopqrstuvwxyz]+" lang="en" value="4zK"></input>
-        </fieldset>
-        <fieldset>
-            <label for="date" class=" [ delta ] ">Date</label>
-            <input id="date" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="text" value="4 March 2019" readonly></input>
-        </fieldset>
-    </form>
-</div>
-
 <c-details>
 <summary>Example Conversions</summary>
 <table>
@@ -220,7 +195,7 @@ const DateToSexagesimal = (dateObject) => {
             <th>Sexagesimal</th>
         </tr>
     </thead>
-    <tbody class=" [ monospace numeral ] ">
+    <tbody class=" [ monospace ] ">
         <tr>
             <td>0</td>
             <td>0</td>
@@ -269,6 +244,14 @@ const DateToSexagesimal = (dateObject) => {
     </tbody>
 </table>
 </c-details>
+
+<div class=" [ box ] [ flow ] ">
+    <h2><a href="/newbase60-calculator/">NewBase60 Calculator</a></h2>
+    <p>I’ve built a calculator to convert between decimal (base 10), binary (base 2), sexagesimal (base 60), and even the date, based on the number of days since Epoch.</p>
+    <nav class=" [ grid ] [ navigator ] " style="--flow-space: inherit;">
+        <a href="/newbase60-calculator/" class=" [ button ] ">NewBase60 Calculator</a>
+    </nav>
+</div>
 
 ## Post Index for the Day
 
@@ -450,7 +433,7 @@ You can now use it in your posts’ Layout or wherever else you have access to a
 
 </c-details>
 
-<aside class="inline-aside" style="--inset-block-start: -5em">
+<aside class="inline-aside">
     <div class=" [ box  box--warning ] ">
         <p>As I mentioned <a href="#packages">above</a>, there are a number of open-source projects already available to handle NewBase60 conversion for you, but I’d be remiss if I didn’t also mention <a href="https://www.benji.dog/">benji’s</a> plugin for Eleventy, <a href="https://www.npmjs.com/package/eleventy-plugin-shortlinks">eleventy-plugin-shortlinks</a> <a href="https://github.com/benjifs/eleventy-plugin-shortlinks">(GitHub)</a>, which can handle <strong>everything</strong> we’ve built above!</p>
     </div>

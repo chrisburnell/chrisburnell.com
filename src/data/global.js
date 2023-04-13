@@ -1,7 +1,7 @@
 const cssnakedday = (now) => {
 	const thisYear = new Date().getFullYear()
-	const startEpoch = new Date(`${thisYear}-04-08T12:00:00Z`).getTime()
-	const endEpoch = new Date(`${thisYear}-04-10T12:00:00Z`).getTime()
+	const startEpoch = new Date(`${thisYear}-04-09T00:00:00+1400`).getTime()
+	const endEpoch = new Date(`${thisYear}-04-09T23:59:59-1200`).getTime()
 
 	return startEpoch <= now && now <= endEpoch
 }

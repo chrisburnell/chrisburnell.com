@@ -89,28 +89,22 @@ class NumberConverter {
 		this.decimal.addEventListener("blur", () => {
 			this.convertFromDecimal()
 		})
-		this.decimal.addEventListener("keydown", (event) => {
-			if (event.keyCode == 13) {
-				this.convertFromDecimal()
-			}
+		this.decimal.addEventListener("input", () => {
+			this.convertFromDecimal()
 		})
 
 		this.binary.addEventListener("blur", () => {
 			this.convertFromBinary()
 		})
-		this.binary.addEventListener("keydown", (event) => {
-			if (event.keyCode == 13) {
-				this.convertFromBinary()
-			}
+		this.binary.addEventListener("input", () => {
+			this.convertFromBinary()
 		})
 
 		this.sexagesimal.addEventListener("blur", () => {
 			this.convertFromSexagesimal()
 		})
-		this.sexagesimal.addEventListener("keydown", (event) => {
-			if (event.keyCode == 13) {
-				this.convertFromSexagesimal()
-			}
+		this.sexagesimal.addEventListener("input", () => {
+			this.convertFromSexagesimal()
 		})
 	}
 }

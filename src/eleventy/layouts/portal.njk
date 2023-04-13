@@ -5,7 +5,7 @@ layout: wrapper
 <main class=" [ main ] [ flow ] ">
 	<article id="content" class=" [ portal ] [ post h-{{ mf_root }} ] ">
 
-		<h1 id="title" class=" [ title ] ">
+		<h1 id="title" class=" [ title ] {% if perch %}[ perch ] {% endif %}">
 			<span>{{ title | safe }}</span>
 		</h1>
 

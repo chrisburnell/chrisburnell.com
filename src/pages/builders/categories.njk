@@ -57,29 +57,29 @@ truncate: true
 					<li><c-librarian-button key="chronological" default="descending">by publish date</c-librarian-button></li>
 				</ul>
 			</c-librarian>
-			<nav class=" [ grid ] [ shelf {% if collection[0].data.read_of %}shelf--books {% endif %}] " aria-live="polite">
+			<div class=" [ grid ] [ shelf {% if collection[0].data.read_of %}shelf--books {% endif %}] " aria-live="polite">
 				{% for item in collection %}
 					{% include 'items/shelf.njk' %}
 				{% endfor %}
-			</nav>
+			</div>
 		{% else %}
 			{%- set year = latest_year -%}
 			<h2 id="{{ year }}">
 				{{ year }} <small>· {{ collection | getCollectionCount(year, true) }} post{{ 's' if collection | getCollectionCount(year, true) > 1 }}</small>
 			</h2>
-			<nav id="list-{{ year }}" class=" [ deck ] ">
+			<div id="list-{{ year }}" class=" [ deck ] ">
 				{% for item in collection %}
 					{% if item.date.getFullYear() != year %}
 						{%- set year = item.date.getFullYear() -%}
-						</nav>
+						</div>
 						<h2 id="{{ year }}">
 							{{ year }} <small>· {{ collection | getCollectionCount(year, true) }} post{{ 's' if collection | getCollectionCount(year, true) > 1 }}</small>
 						</h2>
-						<nav id="list-{{ year }}" class=" [ deck ] ">
+						<div id="list-{{ year }}" class=" [ deck ] ">
 					{% endif %}
 					{% include 'items/deck.njk' %}
 				{% endfor %}
-			</nav>
+			</div>
 		{% endif %}
 	</div>
 
