@@ -12,7 +12,7 @@ An annual event falling on April 9<sup>th</sup> of every year since 2006, the <d
 
 ## How long is a day?
 
-Although the event takes place on April 9<sup>th</sup>, *CSS Naked Day* actually lasts for <s>48</s> 50 hours ^[In writing this article, I learned that [UTC offsets](https://en.wikipedia.org/wiki/List_of_UTC_offsets) actually extend to UTC+13 and UTC+14.]. This is so that no matter where in the world a website’s visitor might be—in other words, no matter their timezone—if it’s April 9<sup>th</sup> on *their calendar*, our websites should be served without CSS.
+Although the event takes place on April 9<sup>th</sup>, *CSS Naked Day* actually lasts for <s>48</s> 50 hours ^[Through writing this article, I learned that [UTC offsets](https://en.wikipedia.org/wiki/List_of_UTC_offsets) actually extend to [UTC+13](https://en.wikipedia.org/wiki/UTC%2B13:00) and [UTC+14](https://en.wikipedia.org/wiki/UTC%2B14:00).]. This is so that no matter where in the world a website’s visitor might be—in other words, no matter their timezone—if it’s April 9<sup>th</sup> on *their calendar*, our websites should be served without CSS.
 
 For example, someone living in the <abbr title="Coordinated Universal Time">UTC</abbr>+14 timezone will arrive on April 9<sup>th</sup> first, whilst the rest of the world is still on April 7<sup>th</sup> / 8<sup>th</sup>, so we need to make sure that our CSS is disabled *by then*.
 
