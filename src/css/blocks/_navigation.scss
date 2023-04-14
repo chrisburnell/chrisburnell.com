@@ -17,17 +17,12 @@
 		display: inline-block;
 		font-size: var(--font-size-default);
 		font-weight: var(--font-weight-bold);
-		padding-block: var(--size-tiny);
+		padding: var(--size-tiny) var(--size-tiny-small);
 		position: relative;
 		text-align: center;
 		text-decoration: none;
 		transition: all var(--transition-duration) var(--transition-function);
 		z-index: 0;
-
-		// TODO Refactor container mixin to support this
-		@container main (min-width: 501px) {
-			padding-inline: var(--size-tiny-small);
-		}
 
 		.header.active & {
 			font-size: var(--font-size-small);
