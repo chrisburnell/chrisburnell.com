@@ -26,11 +26,16 @@ h1 {
 	line-height: var(--line-height-default);
 }
 h2 {
-	inline-size: auto;
-	max-inline-size: 100%;
-	display: inline-block;
-	padding-inline-end: var(--size-large);
-	border-block-end: var(--size-border-thin) solid h(yeti);
+	&::after {
+		content: "";
+		inline-size: 100%;
+		max-inline-size: calc(var(--size-gigantic) * 3);
+		border-block-end: var(--size-border-thin) solid h(yeti);
+		position: absolute;
+		inset-block-start: 100%;
+		inset-inline-start: 0;
+		pointer-events: none;
+	}
 }
 
 %gamma {
