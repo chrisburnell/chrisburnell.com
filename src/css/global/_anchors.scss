@@ -48,10 +48,3 @@
 		color: inherit !important;
 	}
 }
-
-a {
-	// hide extra content, text targetted only to screen readers
-	:not(.cf-wrapper) > & span:not([class]) {
-		@include hidden;
-	}
-}
