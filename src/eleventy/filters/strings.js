@@ -19,6 +19,8 @@ const stringNumbers = ["zero", "one", "two", "three", "four", "five", "six", "se
 const specialNumbers = ["zeroth", "first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth", "eleventh", "twelfth", "thirteenth", "fourteenth", "fifteenth", "sixteenth", "seventeenth", "eighteenth", "nineteenth"]
 const decaNumbers = ["twent", "thirt", "fort", "fift", "sixt", "sevent", "eight", "ninet"]
 
+
+
 module.exports = {
 	readingtime: (numberOfWords) => {
 		const wordsPerMinute = 200
@@ -27,7 +29,7 @@ module.exports = {
 	replaceTwitter: (input) => {
 		return Object.keys(twitterReplacements).reduce((output, old) => {
 			return output.replace(`@${old}`, `@${twitterReplacements[old]}`).replace(`twitter.com/${old}`, `twitter.com/${twitterReplacements[old]}`)
-		}, input)
+		}, input.replace(`\n<a class=\"u-mention`, `<a class=\"u-mention`))
 	},
 	capitalizeFormat: (input) => {
 		return capitalizers.reduce((output, capitalizer) => {

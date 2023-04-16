@@ -52,9 +52,9 @@
 								{%- set wmId = webmention.id -%}
 								{%- set wmType = webmention.activity.type | getPostType -%}
 								{%- set wmDate = webmention.data.published | default(webmention.verified_date) -%}
-								{%- set wmSource = webmention.data.url -%}
+								{%- set wmSource = webmention.data.url | tweetback -%}
 								{%- set authorPhoto = webmention.data.author.photo -%}
-								{%- set authorUrl = webmention.data.author.url | default(wmSource) -%}
+								{%- set authorUrl = webmention.data.author.url | default(wmSource) | tweetback -%}
 								{%- set authorName = webmention.data.author.name | default("Anonymous") -%}
 								{%- set sentiment = webmention.data.content | striptags(true) | getSentimentValue -%}
 								<li id="response-{{ wmId }}" class=" [ response ] [ h-cite  p-comment ] " data-type="{{ wmType }}">
