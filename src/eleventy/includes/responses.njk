@@ -63,9 +63,9 @@
 									</a>
 									<div class=" [ response__meta ] ">
 										<a href="#response-{{ wmId }}" class=" [ strong ] " title="Permalink to this response" tabindex="-1">#</a>
-										<a class=" [ p-author  h-card  u-url ] " href="{{ authorUrl }}" rel="external nofollow"><span class=" [ p-name ] ">{{ authorName }}</span></a>
+										<a href="{{ authorUrl }}" class=" [ p-author  h-card  u-url ] " rel="external nofollow"><span class=" [ p-name ] ">{{ authorName }}</span></a>
 										<small>wrote on</small>
-										<a class=" [ u-url  u-{{ wmType }} ] " href="{{ wmSource }}" rel="external nofollow" title="Read externally"><time class=" [ dt-published ] " datetime="{{ wmDate | rfc3339Date }}">{{ wmDate | friendlyDate | safe }}</time></a>
+										<a href="{{ wmSource }}" class=" [ u-url  u-{{ wmType }} ] " rel="external nofollow" title="Read externally"><time class=" [ dt-published ] " datetime="{{ wmDate | rfc3339Date }}">{{ wmDate | friendlyDate | safe }}</time></a>
 									</div>
 									<div class=" [ e-content ] [ flow ] {% if sentiment < -0.3 %}[ salty ] {% endif %}">
 										{% if wmSource.includes('twitter.com') -%}

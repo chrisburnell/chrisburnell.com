@@ -19,7 +19,12 @@ summary {
 	display: list-item;
 	padding: 0;
 	font-weight: var(--font-weight-semibold);
-	transition: padding var(--transition-duration) var(--transition-function);
+		text-decoration: underline;
+		text-decoration-color: h(yeti);
+		text-decoration-thickness: var(--size-border-thin);
+		text-decoration-skip-ink: auto;
+		text-underline-offset: 0.125em;
+	transition: all var(--transition-duration) var(--transition-function);
 	list-style: "+ " inside;
 
 	&::marker {
@@ -28,12 +33,8 @@ summary {
 		font-weight: var(--font-weight-heavy);
 	}
 
-	&:hover {
-		text-decoration: underline;
-		text-decoration-color: h(yeti);
-		text-decoration-thickness: var(--size-border-thin);
-		text-decoration-skip-ink: auto;
-		text-underline-offset: 0.125em;
+	&:is(:hover, :focus, :active) {
+		text-decoration-color: h(maple);
 	}
 
 	[open] & {
