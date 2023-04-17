@@ -61,7 +61,7 @@
 	</noscript>
 	{%- endif %}
 
-	{% if (tags and tags.includes('httpstatus')) or (noindex and nofollow) -%}
+	{% if (tags and 'httpstatus' in tags) or (noindex and nofollow) -%}
 	<meta name="robots" content="noindex,nofollow">
 	{%- else -%}
 	{% if noindex -%}
@@ -83,11 +83,11 @@
 	<meta property="og:type" content="review">
 	{%- elif layout == 'post' -%}
 	<meta property="og:type" content="article">
-	{%- elif page.url.includes('/about') -%}
+	{%- elif '/about' in page.url -%}
 	<meta property="og:type" content="profile">
 	{%- else -%}
 	<meta property="og:type" content="website">
-	{% endif -%}
+	{%- endif %}
 	<meta property="og:url" content="{{ canonical }}">
 	<meta property="og:title" content="{{ meta_title | striptags(true) | safe }}">
 	<meta property="og:description" content="{{ meta_description | striptags(true) | safe }}">

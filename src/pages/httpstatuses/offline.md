@@ -7,6 +7,6 @@ theme: null
 ---
 {% css %}@layer components { {%- include '../../../css/components/deck.css' -%} }{% endcss -%}
 
-<nav class=" [ grid ] [ navigator ] ">
+<nav class=" [ grid ] [ navigator ] " aria-label="Error Navigation">
   <button onclick="window.location.reload()" aria-label="Refresh">Refresh!</button>
 </nav>

@@ -28,11 +28,14 @@ h2 %anchor:not(:is(:hover, :focus, :active)) {
 .fragment-anchor {
 	color: h(nickel);
 	padding-inline: var(--size-small);
+	position: absolute;
+	inset-block-start: 50%;
+	inset-inline-end: 0;
+	transform: translateY(-50%);
 	font-family: var(--font-family-monospace);
 	font-size: 0.8em;
 	font-weight: var(--font-weight-semibold);
 	text-transform: lowercase;
-	transform: translateY(calc(-50% - var(--size-border-thin)));
 
 	%heading:not(:hover, :focus-within) > &:not(:hover, :focus, :active) {
 		@include hidden;

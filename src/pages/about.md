@@ -73,7 +73,7 @@ I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link
 <h2 id="worked-with">Companies I’ve worked with</h2>
 
 {% css %}@layer components { {%- include '../../css/components/shelf.css' -%} }{% endcss -%}
-<div class=" [ grid ] [ shelf ] [ center ] " data-layout="natural" style="--gap: var(--size-gap);">
+<div class=" [ grid ] [ shelf ] [ center ] " style="--gap: var(--size-gap);">
     {%- for client in clients | sort(false, false, "title") -%}
         <article>
             <a href="{{ client.url }}" title="{{ client.title | safe }}" rel="external">

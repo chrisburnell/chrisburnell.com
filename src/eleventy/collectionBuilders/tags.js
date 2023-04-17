@@ -2,33 +2,32 @@ const ignoredTags = require("#data/ignoredTags")
 const categoriesMap = require("#builders/categories")
 
 module.exports = (collection) => {
-	let tagSet = new Set()
 	let categories = categoriesMap(collection)
 
-	collection
-		.getAll()
+	return collection.getAll()
+		// Only select pages with tags
 		.filter((item) => {
 			return "tags" in item.data
 		})
-		.forEach((item) => {
-			let tags = item.data.tags
-
-			tags = tags.filter((item) => {
-				if (ignoredTags.includes(item)) {
-					return false
-				}
-				for (let category of categories) {
-					if (item == category.title) {
-						return false
-					}
-				}
-				return true
-			})
-
-			for (const tag of tags) {
-				tagSet.add(tag)
-			}
+        // Remap each page into its tags
+		.map((item) => {
+			return item.data.tags
+				.filter((tag) => {
+					return !ignoredTags.includes(tag) && !categories.map((category) => category.title).includes(tag)
+				})
 		})
-
-	return [...tagSet]
+		// Condense each array into a single array
+		.reduce((singleArray, tagArray) => {
+			return [...singleArray, ...tagArray]
+		}, [])
+		// Remove duplicates
+		.filter((tag, index, self) => {
+			return index === self.findIndex((t) => {
+				return t === tag
+			})
+		})
+		// Sort
+		.sort((a, b) => {
+			return a.localeCompare(b)
+		})
 }

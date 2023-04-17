@@ -68,7 +68,7 @@
 										<a href="{{ wmSource }}" class=" [ u-url  u-{{ wmType }} ] " rel="external nofollow" title="Read externally"><time class=" [ dt-published ] " datetime="{{ wmDate | rfc3339Date }}">{{ wmDate | friendlyDate | safe }}</time></a>
 									</div>
 									<div class=" [ e-content ] [ flow ] {% if sentiment < -0.3 %}[ salty ] {% endif %}">
-										{% if wmSource.includes('twitter.com') -%}
+										{% if 'twitter.com' in wmSource -%}
 											{{ webmention.data.content | markdownFormat | replaceTwitter | safe }}
 										{%- else -%}
 											{{ webmention.data.content | markdownFormat | safe }}

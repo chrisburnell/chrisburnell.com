@@ -289,7 +289,7 @@
     "key": "margin-trim",
     "title": "margin-trim",
     "description": "Allows a container to trim the margins of its children’s adjoining edges.",
-    "links": ["[Page on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/margin-trim)"]
+    "links": ["[Working Draft](https://www.w3.org/TR/css-box-4/#margin-trim)", "[Page on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/margin-trim)"]
   },
   {
     "id": "css-variables",
@@ -305,6 +305,13 @@
     "language": "css",
     "title": "Balanced Text",
     "description": "Evenly distributes words across multiple lines to prevent widows.",
-    "links": ["[Article by Richard Rutter](https://clagnut.com/blog/2424/)"]
+    "links": ["[Working Draft](https://www.w3.org/TR/css-text-4/#text-wrapping)", "[Article by Richard Rutter](https://clagnut.com/blog/2424/)"]
+  },
+  {
+    "id": "intrinsic-width",
+    "language": "css",
+    "title": "Intrinsic & Extrinsic Sizing",
+    "description": "Allows defining size using intrinsic values: `max-content`, `min-content`, `fit-content`, and `stretch`.",
+    "links": ["[Working Draft](https://www.w3.org/TR/css-sizing-3/#sizing-values)"]
   }
 ]

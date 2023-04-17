@@ -98,7 +98,9 @@
 @media (prefers-reduced-motion: reduce) {
 	*,
 	*::before,
-	*::after {
+	*::after,
+	::view-transition-old(*),
+	::view-transition-new(*) {
 		background-attachment: initial !important;
 		animation-delay: 0s !important;
 		animation-duration: 0s !important;

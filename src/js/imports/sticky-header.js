@@ -7,11 +7,13 @@ class StickyHeader {
 	}
 
 	init() {
-		const observer = new IntersectionObserver(([entry]) => {
-			this.header.classList.toggle("active", !entry.isIntersecting)
-		})
+		if (this.observerInterceptor && this.header) {
+			const observer = new IntersectionObserver(([entry]) => {
+				this.header.classList.toggle("active", !entry.isIntersecting)
+			})
 
-		observer.observe(this.observerInterceptor)
+			observer.observe(this.observerInterceptor)
+		}
 	}
 }
 

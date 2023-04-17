@@ -20,7 +20,7 @@ module.exports = async (value, outputPath) => {
 						<details-utils force-close="(max-width: 850px)" force-restore>
 							<details open>
 								<summary>Table of Contents</summary>
-								<div class=" [ box ] ">
+								<nav class=" [ box ] " aria-label="Table of Contents">
 									<ol>`
 			tocHeadings.each((i, element) => {
 				const headingText = $(element)
@@ -30,7 +30,7 @@ module.exports = async (value, outputPath) => {
 				tocHtml += `<li><a href="#${headingID}">${headingText}</a></li>`
 			})
 			tocHtml += `			</ol>
-								</div>
+								</nav>
 							</details>
 						</details-utils>
 						<template data-island="once"><script src="/js/components/details-utils.js"></script></template>

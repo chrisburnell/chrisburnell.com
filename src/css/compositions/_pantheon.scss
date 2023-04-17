@@ -72,7 +72,7 @@
 			[outdent-end];
 	}
 
-	&:not(.wide) {
+	&:not(:is(.full, .wide)) {
 		@include container("above:gigantic") {
 			// only show outdent above gigantic on non-wide/non-full pages
 			--outdent-gap: var(--size-gap);
