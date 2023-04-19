@@ -32,6 +32,7 @@ $christmas-palette: (
 	}
 }
 
+[data-color-scheme="christmas"],
 .christmas {
 	@include color-scheme-christmas;
 }

@@ -29,9 +29,9 @@ h2 {
 
 The new heavy-hitter here is the `fit-content` value that I’m assigning to the `inline-size` (`width`). This means that the heading’s box will use the *available space* as its content grows and will never exceed its computed `max-content`, or however much space is taken up when its content does not wrap.
 
-Importantly, this allows me to limit the width of the headings without re-assigning the default `display: block` of headings, which browsers assign by default, to `display: inline-block`, for example. This would achieve the same visual effect for the headings *in a vacuum*, but if placed around other elements which also have `display: inline-block` assigned to them, there’s the possibility that they’ll sit alongside the heading (in the inline axis) rather than headings appear on their own line.
+Importantly, this allows me to limit the width of the headings without re-assigning the default `display: block;` of headings, which browsers assign by default, to `display: inline-block;`, for example. This would achieve the same visual effect for the headings *in a vacuum*, but if placed around other elements which also have `display: inline-block;` assigned to them, there’s the possibility that they’ll sit alongside the heading (in the inline axis) rather than headings appear on their own line.
 
-This is already achieved by block-level elements, so I’m much happier relying on defaults and building progressively on those with fantastically-terse new CSS features like `fit-content`.
+Forced line breaks around headings is already achieved by browser defaults, so I’m much happier relying on that and building progressively on top with fantastically-terse new CSS features like `fit-content`.
 
 --------
 

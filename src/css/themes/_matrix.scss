@@ -29,6 +29,7 @@ $matrix-palette: (
 	}
 }
 
+[data-color-scheme="matrix"],
 .matrix {
 	@include color-scheme-dark;
 	@include color-scheme-matrix;

@@ -1,5 +1,6 @@
 ---
 date: 2023-04-17T07:49:36+0100
+updated: 2023-04-19T22:22:30+0100
 title: CSS Naked Day JavaScript Function
 description: Rather than remove CSS from my website manually on CSS Naked Day, I have employed a short JavaScript function to perform the check for me.
 tags:
@@ -66,9 +67,3 @@ The returned value of this function, a boolean `true`/`false`, can then be used 
 {% endraw %}
 
 This way we don’t need to worry about manual intervention, and we can simply rebuild our website or let continuous deployment take care of the CSS Naked Day check and decide whether or not to include the <samp>link</samp> tag in a template’s HTML.
-
-## What’s in a day?
-
-It’s worth noting that at the time of publishing, there is an [open Pull Request](https://github.com/css-naked-day/css-naked-day.github.io/pull/95) on the CSS Naked Day website to refine the duration of the event from 48 hours to 50 hours to account for the UTC+13 and UTC+14 timezones, which will see the start of April 9<sup>th</sup> earlier than the current published implementations account for.
-
-While I have, on my own website and in this article, decided that CSS Naked Day is 50 hours long, I’ll be keeping an eye on the Pull Request in order to keep my code and this article in parity with the rest of the participants.

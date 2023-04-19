@@ -43,33 +43,39 @@
 		[outdent-end content-end marginalia-end];
 	transition: all var(--transition-duration) var(--transition-function);
 
-	@include container("above:medium") {
-		grid-template-rows:
-			[breadcrumbs-start]
-			auto
-			[breadcrumbs-end title-start]
-			auto
-			[title-end context-start description-start]
-			auto
-			[context-end description-end sparkline-start content-start]
-			auto
-			[sparkline-end meta-start]
-			1fr
-			[content-end ads-start]
-			auto
-			[meta-end ads-end];
-		grid-template-columns:
-			[marginalia-start]
-			var(--aside-size, 0)
-			[marginalia-end]
-			var(--margin-gap, 0)
-			[content-start]
-			repeat(var(--columns, 6), 1fr)
-			[content-end]
-			var(--outdent-gap, 0)
-			[outdent-start]
-			var(--outdent-size, 0)
-			[outdent-end];
+
+	&:not(.full) {
+		--aside-size: var(--size-aside); // 15–18rem between 850px–1200px
+		--margin-gap: var(--size-gap);
+
+		@include container("above:medium") {
+			grid-template-rows:
+				[breadcrumbs-start]
+				auto
+				[breadcrumbs-end title-start]
+				auto
+				[title-end context-start description-start]
+				auto
+				[context-end description-end sparkline-start content-start]
+				auto
+				[sparkline-end meta-start]
+				1fr
+				[content-end ads-start]
+				auto
+				[meta-end ads-end];
+			grid-template-columns:
+				[marginalia-start]
+				var(--aside-size, 0)
+				[marginalia-end]
+				var(--margin-gap, 0)
+				[content-start]
+				repeat(var(--columns, 6), 1fr)
+				[content-end]
+				var(--outdent-gap, 0)
+				[outdent-start]
+				var(--outdent-size, 0)
+				[outdent-end];
+		}
 	}
 
 	&:not(:is(.full, .wide)) {
@@ -78,11 +84,6 @@
 			--outdent-gap: var(--size-gap);
 			--outdent-size: 1fr;
 		}
-	}
-
-	&:not(.full) {
-		--aside-size: var(--size-aside); // 15–18rem between 850px–1200px
-		--margin-gap: var(--size-gap);
 	}
 
 	@include media("print") {

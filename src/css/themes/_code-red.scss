@@ -24,6 +24,7 @@ $code-red-palette: (
 	}
 }
 
+[data-color-scheme="code-red"],
 .code-red {
 	@include color-scheme-code-red;
 }
