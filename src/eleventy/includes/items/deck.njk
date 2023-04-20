@@ -132,7 +132,7 @@
 	{% if item_title or item_of_title %}
 		<h1>
 			<a class=" [ p-name ] " href="{% if item.data.tags and "clickthrough" in item.data.tags %}{{ item_of_url | default(item.url) | safe }}{% else %}{{ item.url | safe }}{% endif %}">
-				{% if item.data.emoji %}<c-emoji>{{ item.data.emoji }}</c-emoji> {% endif %}{{ item_title | default(item_of_title) | striptags(true) | safe }}
+				{% if item.data.emoji %}<c-emoji>{{ item.data.emoji }}</c-emoji>{% endif %}{{ item_title | default(item_of_title) | striptags(true) | safe }}
 			</a>
 		</h1>
 	{% endif %}

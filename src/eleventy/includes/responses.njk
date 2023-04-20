@@ -29,19 +29,19 @@
 				{% if reactions.length or stargazers %}
 					<ol id="reactions" class=" [ cluster ] [ reactions ] [ strong ] ">
 						{% if stargazers %}
-						<li><c-emoji>{{ emojis.stars }}</c-emoji> {{ stargazers }} Stargazer{{ 's' if stargazers > 1 }}</li>
+						<li><c-emoji>{{ emojis.stars }}</c-emoji>{{ stargazers }} Stargazer{{ 's' if stargazers > 1 }}</li>
 						{% endif %}
 						{% if bookmarks.length %}
-							<li><c-emoji>{{ emojis.bookmark }}</c-emoji> {{ bookmarks.length }} Bookmark{{ 's' if bookmarks.length > 1 }}</li>
+							<li><c-emoji>{{ emojis.bookmark }}</c-emoji>{{ bookmarks.length }} Bookmark{{ 's' if bookmarks.length > 1 }}</li>
 						{% endif %}
 						{% if likesLength %}
-							<li><c-emoji>{{ emojis.heart }}</c-emoji> {{ likesLength }} Like{{ 's' if likesLength > 1 }}</li>
+							<li><c-emoji>{{ emojis.heart }}</c-emoji>{{ likesLength }} Like{{ 's' if likesLength > 1 }}</li>
 						{% endif %}
 						{% if links.length %}
-							<li><c-emoji>{{ emojis.link }}</c-emoji> {{ links.length }} Link{{ 's' if links.length > 1 }}</li>
+							<li><c-emoji>{{ emojis.link }}</c-emoji>{{ links.length }} Link{{ 's' if links.length > 1 }}</li>
 						{% endif %}
 						{% if reposts.length %}
-							<li><c-emoji>{{ emojis.repost }}</c-emoji> {{ reposts.length }} Repost{{ 's' if reposts.length > 1 }}</li>
+							<li><c-emoji>{{ emojis.repost }}</c-emoji>{{ reposts.length }} Repost{{ 's' if reposts.length > 1 }}</li>
 						{% endif %}
 					</ol>
 				{% endif %}

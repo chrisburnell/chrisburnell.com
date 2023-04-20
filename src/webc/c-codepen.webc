@@ -1,4 +1,0 @@
-<is-land on:visible>
-	<template data-island="once"><script src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script></template>
-</is-land>
-<p webc:root="override" class="codepen box" :data-slug-hash="this.slug" data-default-tab="result" :data-theme-id="this.tabfree ? `8863` : `119`" data-user="chrisburnell" data-safe="true" :data-height="`${this.height || `400px`}`"><span class="canada">Sorry</span>, this code snippet failed to load, but you can still check it out <a :href="`https://codepen.io/chrisburnell/pen/${this.slug}`">over on CodePen</a>!</p>

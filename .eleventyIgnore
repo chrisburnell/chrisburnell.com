@@ -6,8 +6,4 @@
 README.md
 LICENSE
 package-lock.json
-src/css/
-src/eleventy/
-src/js/
-src/webc/
 src/pages/builders/shorturls.njk

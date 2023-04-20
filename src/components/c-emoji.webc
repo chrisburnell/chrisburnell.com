@@ -1,0 +1,1 @@
+<span webc:root="override" class="[ emoji ]" :title="this.title" role="img" aria-hidden="true"><slot></slot></span>

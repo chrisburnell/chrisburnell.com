@@ -8,6 +8,7 @@ module.exports = (collection) => {
 		.map((item) => {
 			return {
 				title: item.data.category,
+				emoji: item.data.emoji,
 				proper: "categoryProper" in item.data ? item.data.categoryProper : item.data.category,
 				plural: "categoryPlural" in item.data ? item.data.categoryPlural : item.data.category,
 				properPlural: "categoryProperPlural" in item.data ? item.data.categoryProperPlural : "categoryPlural" in item.data ? item.data.categoryPlural : item.data.category,

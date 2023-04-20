@@ -10,7 +10,7 @@ tags:
 wide: true
 ---
 
-Recently, I [wrote](/article/why-css-naked-day/) about my experience preparing for CSS Naked Day and why it was so productive. But how did I go about actually turning off CSS across my website?
+Recently, I wrote *[Why I participated in CSS Naked Day](/article/why-css-naked-day/)*, discussing my experience preparing for CSS Naked Day and why it was so productive. Today I’ll explain how I turned off CSS across my website.
 
 <c-details>
 <summary>TL;DR: The JavaScript function</summary>

@@ -58,7 +58,7 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.addPlugin(rssPlugin)
 	eleventyConfig.addPlugin(syntaxHighlightPlugin)
 	eleventyConfig.addPlugin(webCPlugin, {
-		components: "./src/webc/**/*.webc",
+		components: "./src/components/**/*.webc",
 		useTransform: true,
 		transformData: {
 			pkg
