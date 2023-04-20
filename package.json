@@ -49,7 +49,7 @@
     "@chrisburnell/eleventy-cache-webmentions": "^1.1.5",
     "@chrisburnell/pentatonic": "^1.1.4",
     "@chrisburnell/spark-line": "^1.2.4",
-    "@mdn/browser-compat-data": "^5.2.50",
+    "@mdn/browser-compat-data": "^5.2.51",
     "@sindresorhus/slugify": "1.1.2",
     "@tweetback/canonical": "^2.0.32",
     "@zachleat/details-utils": "^2.0.2",

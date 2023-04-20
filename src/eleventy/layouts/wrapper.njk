@@ -143,9 +143,7 @@
 
 	<!-- Deferred JS -->
 	<script type="module" src="{% getBundleFileUrl 'js', 'module' %}"></script>
-	{%- if js %}
-		<script src="{% getBundleFileUrl 'js' %}"></script>
-	{% endif %}
+	<script src="{% getBundleFileUrl 'js' %}"></script>
 
 	{# CSS Bundles #}
 	{% css 'critical' %}{%- include '../../../css/critical.css' -%}{% endcss %}

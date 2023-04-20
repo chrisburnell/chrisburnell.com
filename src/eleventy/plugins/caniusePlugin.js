@@ -111,7 +111,7 @@ module.exports = (eleventyConfig) => {
 			)
 		}
 
-		return `<div class=" [ box  box--warning ] [ flow ] "><p class="italic">Because this is still an experimental feature, <a href="https://caniuse.com/">caniuse.com</a> data is currently unavailable from API.</p></div>`
+		return `<div class=" [ box  box--warning ] [ flow ] "><p class="italic">Because this is still an experimental feature, data is currently unavailable.</p></div>`
 	})
 
 	eleventyConfig.addNunjucksAsyncShortcode("caniuse_table_row", async (feature) => {

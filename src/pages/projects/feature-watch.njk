@@ -7,7 +7,6 @@ description: This page serves as an one-stop shop for me to keep track of featur
 emoji: 🏄
 wide: true
 toc: true
-now: 1680955100000
 ---
 
 <table>
@@ -30,7 +29,7 @@ now: 1680955100000
 
 {% for feature in browserFeaturesSorted %}
 	<section class=" [ flow ] ">
-		<h2 id="{{ feature.id }}">{{ feature.title | safe }}{% if feature.language %} <small>· {{ feature.language | capitalizeFormat }}</small>{% endif %}</h2>
+		<h2 id="{{ feature.id }}">{{ feature.title | safe }}{% if feature.language %} <small>· {{ feature.language | capitalizeFormat }}</small>{% endif %}{% if feature.supports or feature.supportsJS %} <small id="support-{{ feature.id }}" title="Supported by your browser" hidden>· ✅</small>{% endif %}</h2>
 		{{ feature.description | markdownFormat | safe }}
 		<ul>
 			{% for link in feature.links %}
@@ -38,6 +37,24 @@ now: 1680955100000
 			{% endfor %}
 		</ul>
 		{% caniuse feature.id %}
+		{% if feature.supports -%}
+			{%- css -%}
+				@layer utilities {
+					@supports {{ feature.supports}} {
+						[id="support-{{ feature.id }}"] {
+							display: inline;
+						}
+					}
+				}
+			{%- endcss -%}
+		{%- endif %}
+		{% if feature.supportsJS -%}
+			{%- js -%}
+				if (window["{{ feature.supportsJS }}"]) {
+					document.getElementById("support-{{ feature.id }}").style.display = "inline"
+				}
+			{%- endjs -%}
+		{%- endif %}
 	</section>
 {% endfor %}
 
