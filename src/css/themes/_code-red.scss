@@ -13,7 +13,7 @@ $code-red-palette: (
 	bear: #fbe9e9,
 );
 
-@mixin color-scheme-code-red() {
+@mixin theme-code-red() {
 	@each $name, $color in $code-red-palette {
 		--hsl-#{$name}: #{color.hue($color)} #{color.saturation($color)} #{color.lightness($color)};
 	}
@@ -24,7 +24,7 @@ $code-red-palette: (
 	}
 }
 
-[data-color-scheme="code-red"],
+[data-theme="code-red"],
 .code-red {
-	@include color-scheme-code-red;
+	@include theme-code-red;
 }

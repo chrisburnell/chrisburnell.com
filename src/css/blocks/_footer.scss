@@ -29,7 +29,7 @@
 
 	svg {
 		fill: var(--fill, currentColor);
-		margin-inline-end: 0.5em;
+		margin-inline-end: 0.333em;
 		vertical-align: sub;
 		transition: fill var(--transition-duration) var(--transition-function);
 	}

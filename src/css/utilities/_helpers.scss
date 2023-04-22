@@ -167,6 +167,11 @@
 	}
 }
 
+// Dangerous! Be careful how you use this!
+.contents-only {
+	display: contents;
+}
+
 // Speedlify
 .speedlify-anchor {
 	display: inline-block;

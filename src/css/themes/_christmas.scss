@@ -13,7 +13,7 @@ $christmas-palette: (
 	bear: #e6fbe9,
 );
 
-@mixin color-scheme-christmas() {
+@mixin theme-christmas() {
 	@each $name, $color in $christmas-palette {
 		--hsl-#{$name}: #{color.hue($color)} #{color.saturation($color)} #{color.lightness($color)};
 	}
@@ -32,7 +32,7 @@ $christmas-palette: (
 	}
 }
 
-[data-color-scheme="christmas"],
+[data-theme="christmas"],
 .christmas {
-	@include color-scheme-christmas;
+	@include theme-christmas;
 }

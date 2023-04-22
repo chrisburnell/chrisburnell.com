@@ -1,0 +1,26 @@
+[
+  {
+    "id": "light",
+    "title": "Light"
+  },
+  {
+    "id": "dark",
+    "title": "Dark"
+  },
+  {
+    "id": "christmas",
+    "title": "Christmas"
+  },
+  {
+    "id": "code-red",
+    "title": "Code Red"
+  },
+  {
+    "id": "matrix",
+    "title": "Matrix"
+  },
+  {
+    "id": "nineties",
+    "title": "90s"
+  }
+]

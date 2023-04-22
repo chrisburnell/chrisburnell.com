@@ -3,7 +3,7 @@
 /// @group themes
 ////
 
-@mixin color-scheme-dark() {
+@mixin theme-dark() {
 	--shadow-color: var(--hsl-shadow-dark);
 
 	// Target these if applied to html or body elements
@@ -158,13 +158,13 @@
 
 // Apply the Dark color scheme when the media query matches
 @include media("dark") {
-	html:not([data-color-scheme]) {
-		@include color-scheme-dark;
+	html:not([data-theme]) {
+		@include theme-dark;
 	}
 }
 
 // Apply the Dark color scheme when it has been set manually (visitor, author)
-[data-color-scheme="dark"],
+[data-theme="dark"],
 .dark {
-	@include color-scheme-dark;
+	@include theme-dark;
 }
