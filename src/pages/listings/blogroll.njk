@@ -5,7 +5,6 @@ wide: true
 ---
 {%- set collection = blogroll | keySort('title') -%}
 
-{% css %}@layer components { {%- include '../../../css/components/shelf.css' -%} }{% endcss -%}
 <div class=" [ grid ] [ shelf ] ">
 {% for item in collection %}
 	<article class=" [ flow ] ">
@@ -20,3 +19,10 @@ wide: true
 	</article>
 {% endfor %}
 </div>
+
+{% set shelf_css %}
+	@layer components {
+		{% include '../../../css/components/shelf.css' %}
+	}
+{% endset %}
+{%- css 'critical' %}{{ shelf_css | cssmin }}{% endcss -%}

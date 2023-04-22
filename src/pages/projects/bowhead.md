@@ -38,7 +38,6 @@ This has a positive effect that ranges from giving the colours in your design sy
 
 Make sure the browser support for CSS Variables meets your needs:
 
-{% css %}@layer components { {%- include '../../../css/components/browser-support.css' -%} }{% endcss -%}
 {% caniuse 'css-variables' %}
 
 ## CSS Data Types
@@ -495,3 +494,5 @@ What about multiple values in a function? Make sure you're using the *raw* value
 
 - [Variables for Both](/article/variables-for-both/)
 - [Deep Dive into Colour](/article/deep-dive-into-colour/)
+
+{%- css %}@layer components { {%- include '../../../css/components/browser-support.css' -%} }{% endcss -%}

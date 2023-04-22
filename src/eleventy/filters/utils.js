@@ -1,3 +1,4 @@
+const CleanCSS = require("clean-css")
 const Natural = require("natural")
 const analyze = new Natural.SentimentAnalyzer("English", Natural.PorterStemmer, "afinn")
 
@@ -10,6 +11,9 @@ const postTypes = {
 }
 
 module.exports = {
+	cssmin: (code) => {
+		return new CleanCSS({}).minify(code).styles;
+	},
 	limit: (array, limit) => {
 		return array.slice(0, limit)
 	},

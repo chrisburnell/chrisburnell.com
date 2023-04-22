@@ -9,5 +9,11 @@ js: listening.js
 
 <p>To see (almost) my entire listening history, checkout my <a href="https://last.fm/user/{{ author.lastfm }}">Last.fm profile</a>.</p>
 
-{% css %}@layer components { {%- include '../../css/components/shelf.css' -%} }{% endcss -%}
 <div id="listening" class=" [ grid ] [ shelf ] [ js-lastfm-feed ] "></div>
+
+{% set shelf_css %}
+	@layer components {
+		{% include '../../css/components/shelf.css' %}
+	}
+{% endset %}
+{%- css 'critical' %}{{ shelf_css | cssmin }}{% endcss -%}

@@ -159,7 +159,6 @@ If you wanted to use `<is-land>` as well, I recommend something like the followi
 
 ## Examples
 
-{% css %}@layer components { {%- include '../../../css/components/shelf.css' -%} }{% endcss -%}
 <div class=" [ grid ] [ shelf ] ">
     <article>
         <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0"></c-spark-line>
@@ -246,3 +245,10 @@ If you wanted to use `<is-land>` as well, I recommend something like the followi
         <label><input id="input-endpoint-color" type="color" value="{{ designTokens.colors.maple }}"> Endpoint Color</label>
     </fieldset>
 </form>
+
+{% set shelf_css %}
+	@layer components {
+		{% include '../../../css/components/shelf.css' %}
+	}
+{% endset %}
+{%- css 'critical' %}{{ shelf_css | cssmin }}{% endcss -%}

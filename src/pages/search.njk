@@ -6,7 +6,6 @@ nofollow: true
 js_module: search.js
 ---
 
-{% css %}@layer components { {%- include '../../css/components/responses.css' -%} }{% endcss -%}
 <!-- </textarea> -->
 <!-- '"´ -->
 <form id="search" class=" [ responses__form ] " method="get" name="search" action="https://duckduckgo.com/">
@@ -18,3 +17,10 @@ js_module: search.js
 </form>
 
 <p>Search provided by <a href="https://duckduckgo.com">DuckDuckGo</a>: <q>The Internet privacy company that empowers you to seamlessly take control of your personal information online, without any tradeoffs.</q></p>
+
+{% set responses_css %}
+	@layer components {
+		{% include '../../css/components/responses.css' %}
+	}
+{% endset %}
+{%- css %}{{ responses_css | cssmin }}{% endcss -%}

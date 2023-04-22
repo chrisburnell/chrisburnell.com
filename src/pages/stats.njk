@@ -73,7 +73,6 @@ description: Numbers, cause why not?
 
 <h2>Collections</h2>
 
-{% css %}@layer components { {%- include '../../css/components/shelf.css' -%} }{% endcss -%}
 <ul class=" [ grid ] [ shelf ] " data-layout="natural">
 	{%- set count = collections.checkins | arePublished | getCollectionCount(false, true) -%}
 	<li><a href="/checkins/" class=" [ strong ] " style="font-size: 1.25em;">Checkins <sup>{{ count }}</sup></a></li>
@@ -114,3 +113,10 @@ description: Numbers, cause why not?
 		<li><a href="/tag/{{ item }}/" class=" [ strong ] " style="font-size: {{ fontSize }}em;">{{ item }} <sup>{{ count }}</sup></a></li>
 	{%- endfor -%}
 </ul>
+
+{% set shelf_css %}
+	@layer components {
+		{% include '../../css/components/shelf.css' %}
+	}
+{% endset %}
+{%- css 'critical' %}{{ shelf_css | cssmin }}{% endcss -%}

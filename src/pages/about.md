@@ -72,7 +72,6 @@ I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link
 
 <h2 id="worked-with">Companies I’ve worked with</h2>
 
-{% css %}@layer components { {%- include '../../css/components/shelf.css' -%} }{% endcss -%}
 <div class=" [ grid ] [ shelf ] [ center ] " style="--gap: var(--size-gap);">
     {%- for client in clients | sort(false, false, "title") -%}
         <article>
@@ -113,3 +112,10 @@ This website was built with [Eleventy](https://11ty.dev) and the following langu
 This website also supports [Webmentions](https://indieweb.org/webmention) (powered by [Webmention.io](https://webmention.io)), displayed at the bottom of relevant pages using my [Eleventy](https://11ty.dev) plugin, [eleventy-cache-webmentions](/eleventy-cache-webmentions/).
 
 The source code is available for your perusal on [GitHub](https://github.com/{{ author.github }}/{{ site.repository }}), and each page contains [an edit link](#edit) *(in the footer)* allowing you to go directly to the page’s source on GitHub.
+
+{%- set shelf_css -%}
+	@layer components {
+		{% include '../../css/components/shelf.css' %}
+	}
+{%- endset -%}
+{%- css 'critical' %}{{ shelf_css | cssmin }}{% endcss -%}

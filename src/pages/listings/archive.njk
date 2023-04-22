@@ -7,7 +7,6 @@ hfeed: true
 show_photos: true
 truncate: true
 ---
-{% css %}@layer components { {%- include '../../../css/components/shelf.css' -%} }{% endcss -%}
 {% set collection = collections.posts -%}
 {% set count = collection.length -%}
 {% set latest_year = collection[0].date.getFullYear() -%}
@@ -64,3 +63,10 @@ truncate: true
 
 	{% include 'ads.njk' %}
 </div>
+
+{% set shelf_css %}
+	@layer components {
+		{% include '../../../css/components/shelf.css' %}
+	}
+{% endset %}
+{%- css 'critical' %}{{ shelf_css | cssmin }}{% endcss -%}

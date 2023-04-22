@@ -4,7 +4,6 @@ description: Find me all over the web (mostly)!
 wide: true
 ---
 
-{% css %}@layer components { {%- include '../../../css/components/shelf.css' -%} }{% endcss -%}
 <div class=" [ grid ] [ shelf ] ">
 	<article class=" [ flow ] ">
 		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://codepen.io' | urlencode }}/" class=" [ avatar ] " width="30" height="30" alt="" role="presentation" loading="lazy" decoding="async">
@@ -115,3 +114,10 @@ wide: true
 		</h1>
 	</article>
 </div>
+
+{% set shelf_css %}
+	@layer components {
+		{% include '../../../css/components/shelf.css' %}
+	}
+{% endset %}
+{%- css 'critical' %}{{ shelf_css | cssmin }}{% endcss -%}

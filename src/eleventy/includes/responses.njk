@@ -1,5 +1,10 @@
 {% if show_responses %}
-	{%- css %}@layer components { {%- include '../../../css/components/responses.css' -%} }{% endcss -%}
+	{% set responses_css %}
+		@layer components {
+			{% include '../../../css/components/responses.css' %}
+		}
+	{% endset %}
+	{%- css %}{{ responses_css | cssmin }}{% endcss -%}
 	<div id="respond" class=" [ box ] [ flow ] [ responses ] ">
 		<!-- </textarea> -->
 		<!-- '"´ -->

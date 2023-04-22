@@ -1,4 +1,9 @@
-{%- css 'critical' %}@layer components { {%- include '../../../../css/components/shelf.css' -%} }{% endcss -%}
+{% set shelf_css %}
+	@layer components {
+		{% include '../../../../css/components/shelf.css' %}
+	}
+{% endset %}
+{%- css 'critical' %}{{ shelf_css | cssmin }}{% endcss -%}
 {%- set item_title = item.title | default(item.data.title) -%}
 {%- set item_of = item.data.bookmark_of | default(item.data.drink_of) | default(item.data.like_of) | default(item.data.listen_of) | default(item.data.play_of) | default(item.data.read_of) | default(item.data.watch_of) -%}
 {%- set item_of_url = item_of -%}

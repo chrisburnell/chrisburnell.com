@@ -53,12 +53,13 @@
 
 	{% if not global.cssnakedday -%}
 	<!-- Inlined Critical CSS -->
-	<style>{% getBundle 'css', 'critical' %}</style>
+	<style>
+		{%- getBundle 'css', 'supercritical' -%}
+		{%- getBundle 'css', 'critical' -%}
+	</style>
 	<!-- Deferred CSS -->
 	<link rel="stylesheet" href="{% getBundleFileUrl 'css' %}" media="print" onload="this.media='all'">
-	<noscript>
-		<link rel="stylesheet" href="{% getBundleFileUrl 'css' %}">
-	</noscript>
+	<noscript><link rel="stylesheet" href="{% getBundleFileUrl 'css' %}"></noscript>
 	{%- endif %}
 
 	{% if (tags and 'httpstatus' in tags) or (noindex and nofollow) -%}
@@ -143,26 +144,26 @@
 
 	<!-- Deferred JS -->
 	<script type="module" src="{% getBundleFileUrl 'js', 'module' %}"></script>
-	<script src="{% getBundleFileUrl 'js' %}"></script>
+	{% if js or inlinejs -%}
+		<script src="{% getBundleFileUrl 'js' %}"></script>
+	{%- endif %}
 
 	{# CSS Bundles #}
-	{% css 'critical' %}{%- include '../../../css/critical.css' -%}{% endcss %}
+	{%- css 'supercritical' -%}{% include '../../../css/critical.css' %}{%- endcss -%}
 	{%- if css -%}
-		{%- css 'critical' %}{%- include '../../../css/pages/' + css -%}{% endcss -%}
+		{% css 'critical' -%}{% include '../../../css/pages/' + css %}{%- endcss -%}
 	{%- endif -%}
-	{% css %}{%- include '../../../css/defer.css' -%}{% endcss %}
+	{%- css -%}{% include '../../../css/defer.css' %}{%- endcss -%}
 
 	{# JS Bundles #}
-	{%- js 'critical' %}{%- include '../../../js/critical.js' -%}{% endjs -%}
-	{%- js 'navigator' %}{%- include '../../js/navigator.js' -%}{% endjs -%}
-	{% if js_module %}
-		{%- set js_module_path = '../../js/pages/' + js_module -%}
-		{%- js 'module' %}{%- include js_module_path -%}{% endjs -%}
-	{% endif %}
-	{%- js 'module' %}{%- include '../../../js/defer.js' -%}{% endjs -%}
-	{% if js %}
-		{%- set js_path = '../../js/pages/' + js -%}
-		{%- js %}{%- include js_path -%}{% endjs -%}
-	{% endif %}
+	{%- js 'critical' -%}{% include '../../../js/critical.js' %}{%- endjs -%}
+	{%- js 'navigator' -%}{% include '../../js/navigator.js' %}{%- endjs -%}
+	{%- js 'module' -%}{% include '../../../js/defer.js' %}{%- endjs -%}
+	{%- if js_module -%}
+		{%- js 'module' -%}{% include '../../js/pages/' + js_module %}{%- endjs -%}
+	{%- endif %}
+	{%- if js -%}
+		{%- js -%}{% include '../../js/pages/' + js %}{%- endjs -%}
+	{%- endif -%}
 </body>
 </html>

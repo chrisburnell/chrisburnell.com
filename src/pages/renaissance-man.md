@@ -10,7 +10,6 @@ monetization: false
 
 I had a wonderfully-fortunate upbringing, and I attribute a great deal of who I am today to my parents and their parents.
 
-{% css %}@layer components { {%- include '../../css/components/shelf.css' -%} }{% endcss -%}
 <div class=" [ grid ] [ shelf ] ">
     <figure>
         {% image './images/content/opa.jpg', 'Reinhold Kaiser, my maternal grandfather, or as I called him: Opa', '', [400] %}
@@ -28,3 +27,10 @@ My maternal grandfather, or *Opa* as his grandchildren called him, was a highly-
 <figure>
     {% image './images/content/gpp-dad-me.jpg', 'Robert Burnell, my paternal grandfather, or as I called him: Grandpapa; Chris Burnell (that’s me!); and Jean Burnell (my father) in 1993' %}
 </figure>
+
+{% set shelf_css %}
+	@layer components {
+		{% include '../../css/components/shelf.css' %}
+	}
+{% endset %}
+{%- css 'critical' %}{{ shelf_css | cssmin }}{% endcss -%}

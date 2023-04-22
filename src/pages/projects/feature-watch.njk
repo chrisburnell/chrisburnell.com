@@ -7,6 +7,7 @@ description: This page serves as an one-stop shop for me to keep track of featur
 emoji: 🏄
 wide: true
 toc: true
+inlinejs: true
 ---
 
 <table>
@@ -27,36 +28,18 @@ toc: true
 
 <hr>
 
-{% for feature in browserFeaturesSorted %}
+{% for feature in browserFeaturesSorted -%}
 	<section class=" [ flow ] ">
 		<h2 id="{{ feature.id }}">{{ feature.title | safe }}{% if feature.language %} <small>· {{ feature.language | capitalizeFormat }}</small>{% endif %}{% if feature.supports or feature.supportsJS %} <small id="support-{{ feature.id }}" title="Supported by your browser" hidden>· ✅</small>{% endif %}</h2>
 		{{ feature.description | markdownFormat | safe }}
 		<ul>
-			{% for link in feature.links %}
+			{% for link in feature.links -%}
 				<li>{{ link | markdownFormat | safe }}</li>
-			{% endfor %}
+			{%- endfor %}
 		</ul>
 		{% caniuse feature.id %}
-		{% if feature.supports -%}
-			{%- css -%}
-				@layer utilities {
-					@supports {{ feature.supports}} {
-						[id="support-{{ feature.id }}"] {
-							display: inline;
-						}
-					}
-				}
-			{%- endcss -%}
-		{%- endif %}
-		{% if feature.supportsJS -%}
-			{%- js -%}
-				if (window["{{ feature.supportsJS }}"]) {
-					document.getElementById("support-{{ feature.id }}").style.display = "inline"
-				}
-			{%- endjs -%}
-		{%- endif %}
 	</section>
-{% endfor %}
+{%- endfor %}
 
 <hr>
 
@@ -65,3 +48,28 @@ toc: true
 <p>Please feel free to <a href="https://github.com/{{ author.github }}/{{ site.repository }}/tree/main/src/data/browserFeatures.json">suggest new features</a> or even <a href="https://github.com/{{ author.github }}/{{ site.repository }}/tree/main/src/data/browsersByType.json">other browsers</a>.</p>
 
 {%- css %}@layer components { {%- include '../../../css/components/browser-support.css' -%} }{% endcss -%}
+
+{%- set utilities_css -%}
+	@layer utilities {
+		{%- for feature in browserFeaturesSorted -%}
+			{%- if feature.supports -%}
+				@supports {{ feature.supports}} {
+					[id="support-{{ feature.id }}"] {
+						display: inline;
+					}
+				}
+			{%- endif %}
+		{%- endfor -%}
+	}
+{%- endset -%}
+{%- css %}{{ utilities_css | cssmin }}{% endcss -%}
+
+{%- for feature in browserFeaturesSorted -%}
+	{%- if feature.supportsJS -%}
+		{%- js -%}
+			if (window["{{ feature.supportsJS }}"]) {
+				document.getElementById("support-{{ feature.id }}").style.display = "inline"
+			}
+		{%- endjs -%}
+	{%- endif %}
+{%- endfor -%}

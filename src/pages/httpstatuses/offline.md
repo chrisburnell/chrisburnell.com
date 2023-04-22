@@ -5,8 +5,14 @@ description: <span class="canada">Sorry</span>, it looks like there's a problem 
 js: offline.js
 theme: null
 ---
-{% css %}@layer components { {%- include '../../../css/components/deck.css' -%} }{% endcss -%}
 
 <nav class=" [ grid ] [ navigator ] " aria-label="Error Navigation">
   <button onclick="window.location.reload()" aria-label="Refresh">Refresh!</button>
 </nav>
+
+{% set deck_css %}
+	@layer components {
+		{% include '../../../css/components/deck.css' %}
+	}
+{% endset %}
+{%- css 'critical' %}{{ deck_css | cssmin }}{% endcss -%}
