@@ -34,8 +34,8 @@
 
 // Used inside h-resume / CV Page
 .brand-logo {
-	block-size: 1.5rem;
-	inline-size: 1.5rem;
+	block-size: var(--size-logo-brand);
+	inline-size: var(--size-logo-brand);
 	display: inline-block;
 	vertical-align: sub;
 	object-fit: contain;

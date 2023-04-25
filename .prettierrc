@@ -2,9 +2,6 @@
 	"semi": false,
 	"printWidth": 9999,
 	"tabWidth": 4,
-	"options": {
-		"editorConfig": true
-	},
 	"overrides": [
 		{
 			"files": "*.json",

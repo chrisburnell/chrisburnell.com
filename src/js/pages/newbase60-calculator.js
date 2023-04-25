@@ -34,18 +34,15 @@ class NumberConverter {
 				c -= 55
 			} else if (c == 73 || c == 108) {
 				c = 1
-			}
-			else if (c >= 74 && c <= 78) {
+			} else if (c >= 74 && c <= 78) {
 				c -= 56
 			} else if (c == 79) {
 				c = 0
-			}
-			else if (c >= 80 && c <= 90) {
+			} else if (c >= 80 && c <= 90) {
 				c -= 57
 			} else if (c == 95) {
 				c = 34
-			}
-			else if (c >= 97 && c <= 107) {
+			} else if (c >= 97 && c <= 107) {
 				c -= 62
 			} else if (c >= 109 && c <= 122) {
 				c -= 63

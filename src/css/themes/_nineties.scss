@@ -28,7 +28,7 @@
 	.footer,
 	.box,
 	.author__image,
-	/*figure*/.table,
+	.table,
 	button:not(.anchor),
 	input,
 	textarea {
@@ -37,7 +37,7 @@
 	}
 
 	.box,
-	/*figure*/.table,
+	.table,
 	button:not(.anchor),
 	input,
 	textarea {
@@ -60,7 +60,7 @@
 		border-inline-end: 2px solid h(lynx);
 	}
 
-	/*figure*/.table {
+	.table {
 		background-color: h(bear, delta);
 		padding-block: 1em;
 	}

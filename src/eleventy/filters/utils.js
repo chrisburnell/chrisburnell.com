@@ -12,7 +12,7 @@ const postTypes = {
 
 module.exports = {
 	cssmin: (code) => {
-		return new CleanCSS({}).minify(code).styles;
+		return new CleanCSS({}).minify(code).styles
 	},
 	limit: (array, limit) => {
 		return array.slice(0, limit)
@@ -85,7 +85,7 @@ module.exports = {
 		return parseFloat(value.toFixed(decimals))
 	},
 	exponentialMovingAverage: (timestamp, current = 0, coefficient = 0.5) => {
-		return (coefficient * timestamp) + ((1 - coefficient) * current)
+		return coefficient * timestamp + (1 - coefficient) * current
 	},
 	simpleMovingAverage: (values, period, preserveEnds) => {
 		preserveEnds = preserveEnds || false

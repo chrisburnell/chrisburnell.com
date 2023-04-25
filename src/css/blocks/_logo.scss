@@ -29,7 +29,7 @@
 	}
 
 	.header.active & {
-		block-size: 3.75rem;
-		inline-size: 3.75rem;
+		block-size: var(--logo-small-min);
+		inline-size: var(--logo-small-min);
 	}
 }

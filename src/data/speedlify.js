@@ -1,6 +1,8 @@
 const EleventyFetch = require("@11ty/eleventy-fetch")
 
-const { urls: { speedlify } } = require("#data/author")
+const {
+	urls: { speedlify },
+} = require("#data/author")
 const { cacheDurations } = require("#data/site")
 
 module.exports = async () => {

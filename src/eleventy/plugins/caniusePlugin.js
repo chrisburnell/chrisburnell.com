@@ -29,7 +29,7 @@ const getCaniuseSupport = async (feature) => {
 const getBrowserslistSupport = async (feature) => {
 	const featureData = browserFeatures.filter((lookup) => feature === lookup.id)[0]
 	const featureSet = browserData[featureData.language][featureData.type]
-	const browserslistData = featureData['key'].split(".").reduce((object, key) => {
+	const browserslistData = featureData["key"].split(".").reduce((object, key) => {
 		return object[key]
 	}, featureSet)
 	return browserslistData["__compat"]["support"]
@@ -105,7 +105,7 @@ module.exports = (eleventyConfig) => {
 			return minifier.minify(
 				`<div class=" [ support ] [ box ${fullSupport ? " box--success " : zeroSupport ? " box--error " : ""}] [ flow ] ">
 					${browserList}
-					<p class="small">Browser support data for <code>${featureID}</code> comes from <a href="https://github.com/mdn/browser-compat-data">MDN’s <code>browser-compat-data</code></a> and is up-to-date as of <a href="https://www.npmjs.com/package/@mdn/browser-compat-data" rel="external nofollow">version ${pkg.dependencies['@mdn/browser-compat-data'].replace("^", "")}</a>.</p>
+					<p class="small">Browser support data for <code>${featureID}</code> comes from <a href="https://github.com/mdn/browser-compat-data">MDN’s <code>browser-compat-data</code></a> and is up-to-date as of <a href="https://www.npmjs.com/package/@mdn/browser-compat-data" rel="external nofollow">version ${pkg.dependencies["@mdn/browser-compat-data"].replace("^", "")}</a>.</p>
 				</div>`,
 				{ collapseWhitespace: true }
 			)
@@ -154,7 +154,7 @@ module.exports = (eleventyConfig) => {
 			const browserList = browsersByType.reduce((output, browser) => {
 				const support = Array.isArray(browserslistSupport[browser.key]) ? browserslistSupport[browser.key][0] : browserslistSupport[browser.key]
 				const featureClass = (support.version_added && support.flags) || (support?.version_added + "").match(/preview/) ? "partial" : support.version_added ? "supported" : "unsupported"
-				const featureText = support.version_added ? support.version_added.replace("≤", "").replace("preview", "<abbr title=\"Preview\" style=\"color: inherit\">P</abbr>") : "No"
+				const featureText = support.version_added ? support.version_added.replace("≤", "").replace("preview", '<abbr title="Preview" style="color: inherit">P</abbr>') : "No"
 				fullSupport = !fullSupport ? false : support.version_added ? true : false
 				zeroSupport = !zeroSupport ? false : support.version_added ? false : true
 				return output + `<td class=" [ center ] [ ${featureClass} ] ">${featureText}</td>`

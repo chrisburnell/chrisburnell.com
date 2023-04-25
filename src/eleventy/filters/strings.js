@@ -19,8 +19,6 @@ const stringNumbers = ["zero", "one", "two", "three", "four", "five", "six", "se
 const specialNumbers = ["zeroth", "first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth", "eleventh", "twelfth", "thirteenth", "fourteenth", "fifteenth", "sixteenth", "seventeenth", "eighteenth", "nineteenth"]
 const decaNumbers = ["twent", "thirt", "fort", "fift", "sixt", "sevent", "eight", "ninet"]
 
-
-
 module.exports = {
 	readingtime: (numberOfWords) => {
 		const wordsPerMinute = 200

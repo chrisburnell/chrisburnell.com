@@ -24,7 +24,7 @@ const getCaniuseSupport = async (feature) => {
 const getBrowserslistSupport = async (feature) => {
 	const featureData = browserFeatures.filter((lookup) => feature === lookup.id)[0]
 	const featureSet = browserData[featureData.language][featureData.type]
-	const browserslistData = featureData['key'].split(".").reduce((object, key) => {
+	const browserslistData = featureData["key"].split(".").reduce((object, key) => {
 		return object[key]
 	}, featureSet)
 	return browserslistData["__compat"]["support"]

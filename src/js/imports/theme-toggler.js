@@ -38,9 +38,7 @@ class ThemeToggler {
 	}
 
 	onChange() {
-		this.theme = [...this.options]
-			.filter((option) => option.selected)
-			.map((option) => option.getAttribute("value"))[0]
+		this.theme = [...this.options].filter((option) => option.selected).map((option) => option.getAttribute("value"))[0]
 
 		this.setTheme(this.theme)
 		localStorage.setItem(this.STORAGE_KEY, this.theme)
