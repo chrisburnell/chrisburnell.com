@@ -41,7 +41,7 @@ module.exports = {
 		return markdownIt.render(value)
 	},
 	cleantags: (input) => {
-		return input.replace(/\<pre(.*)\<\/pre\>/g, "").replace(/\<div class="\[ support(.*)\<\/div\>/g, "")
+		return input.replace(/\<pre(.|\n)*?\<\/pre\>/g, "").replace(/\<div class="\[ support(.*)\<\/div\>/g, "")
 	},
 	numberNthFormat: (n) => {
 		if (n < 20) {

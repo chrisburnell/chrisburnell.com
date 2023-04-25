@@ -130,7 +130,7 @@ video {
     }
 }
 
-@include media(prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
     :root {
         --color-scheme: "dark";
     }

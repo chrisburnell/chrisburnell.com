@@ -52,24 +52,22 @@ description: Numbers, cause why not?
 
 {%- set collection = collection | reverse -%}
 {%- set year = first_year -%}
-<figure class=" [ center ] " tabindex="0">
-	<table>
-		<thead>
+<table class=" [ inline-center ] ">
+	<thead>
+		<tr>
+			<th>Year</th>
+			<th>Blog Posts</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for i in range(first_year, latest_year + 1) | reverse %}
 			<tr>
-				<th>Year</th>
-				<th>Blog Posts</th>
+				<td>{{ i }}</td>
+				<td class=" [ numeral ] ">{{ collection | getCollectionCount(i) }}</td>
 			</tr>
-		</thead>
-		<tbody>
-			{% for i in range(first_year, latest_year + 1) | reverse %}
-				<tr>
-					<td>{{ i }}</td>
-					<td class=" [ numeral ] ">{{ collection | getCollectionCount(i) }}</td>
-				</tr>
-			{% endfor %}
-		</tbody>
-	</table>
-</figure>
+		{% endfor %}
+	</tbody>
+</table>
 
 <h2>Collections</h2>
 

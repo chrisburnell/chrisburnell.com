@@ -10,7 +10,7 @@
 	border-block-start: var(--size-border-thin) solid var(--border-color, h(raven));
 	z-index: var(--z-index-menu);
 
-	@include media("print") {
+	@media print {
 		display: none;
 	}
 
@@ -39,13 +39,13 @@
 }
 
 .footer__grid {
-	@include container("below:medium") {
+	@container (inline-size <= #{map-get($breakpoints, "medium")}) {
 		display: flex;
 		flex-direction: column;
 		gap: var(--size-gutter);
 	}
 
-	@include container("above:medium") {
+	@container (inline-size > #{map-get($breakpoints, "medium")}) {
 		display: grid;
 		grid-template-columns:
 			[left-start]

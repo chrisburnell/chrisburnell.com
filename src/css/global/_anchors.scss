@@ -38,7 +38,7 @@
 		opacity: var(--opacity-beta);
 	}
 
-	@include media("print") {
+	@media print {
 		text-decoration: none !important;
 	}
 

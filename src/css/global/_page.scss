@@ -39,7 +39,7 @@ body {
 	line-height: var(--line-height-default);
 	counter-reset: figureNumber;
 
-	@include media("print") {
+	@media print {
 		display: block;
 	}
 }

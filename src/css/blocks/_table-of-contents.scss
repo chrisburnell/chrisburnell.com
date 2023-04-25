@@ -5,12 +5,12 @@
 ////
 
 .table-of-contents {
-	@include media("print") {
+	@media print {
 		display: none;
 	}
 
 	// TODO Refactor container mixin to support this
-	@container main (min-width: 851px) {
+	@container main (inline-size > #{map-get($breakpoints, "medium")}) {
 		position: sticky;
 		inset-block-start: calc(var(--size-header) + 1rem);
 	}
@@ -32,14 +32,12 @@
 		overscroll-behavior: contain;
 		scrollbar-gutter: stable;
 
-		// TODO Refactor container mixin to support this
-		@container main (min-width: 701px) {
+		@container main (inline-size > #{map-get($breakpoints, "small")}) {
 			max-block-size: 60vh;
 			max-block-size: 60dvb;
 		}
 
-		// TODO Refactor container mixin to support this
-		@container main (min-width: 851px) {
+		@container main (inline-size > #{map-get($breakpoints, "medium")}) {
 			max-block-size: calc(100vh - (var(--size-header) * 2));
 			max-block-size: calc(100dvb - (var(--size-header) * 2));
 		}

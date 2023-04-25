@@ -58,11 +58,11 @@ th {
 		z-index: var(--z-index-above);
 
 		thead & {
-			top: var(--size-header); // doesn't work with inset-block-start for some reason
+			inset-block-start: var(--size-header);
 		}
 
 		tbody & {
-			left: 0; // doesn't work with inset-inline-start for some reason
+			inset-inline-start: 0;
 		}
 
 		details & {

@@ -8,12 +8,11 @@
 
 @import "../abstracts/functions";
 @import "../abstracts/mixins";
-@import "../abstracts/include-media";
 @import "../abstracts/generated";
 @import "../abstracts/collections";
 
 .ads {
-	@include media("print") {
+	@media print {
 		display: none;
 	}
 }

@@ -17,13 +17,13 @@
 	text-align: center;
 	text-decoration: none;
 
-	@include container("below:medium") {
+	@container (inline-size <= #{map-get($breakpoints, "medium")}) {
 		float: left;
 		float: inline-start;
 		margin-inline-end: var(--size-medium);
 	}
 
-	@include container("above:medium") {
+	@container (inline-size > #{map-get($breakpoints, "medium")}) {
 		float: right;
 		float: inline-end;
 		margin-inline-start: var(--size-medium);
@@ -145,7 +145,7 @@
 	font-size: var(--font-size-small);
 	text-wrap: balance;
 
-	@include container("above:medium") {
+	@container (inline-size > #{map-get($breakpoints, "medium")}) {
 		text-align: end;
 	}
 }

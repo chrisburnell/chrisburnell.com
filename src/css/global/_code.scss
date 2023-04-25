@@ -45,7 +45,7 @@ pre {
 	overflow: hidden;
 	position: relative;
 
-	@include container("above:tiny") {
+	@container (inline-size > #{map-get($breakpoints, "tiny")}) {
 		tab-size: 4;
 	}
 

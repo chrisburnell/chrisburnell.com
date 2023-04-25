@@ -9,7 +9,6 @@
 
 @import "../abstracts/functions";
 @import "../abstracts/mixins";
-@import "../abstracts/include-media";
 @import "../abstracts/generated";
 @import "../abstracts/collections";
 
@@ -19,7 +18,7 @@
 	display: flex;
 	flex-wrap: wrap;
 
-	@include container("below:tiny") {
+	@container (inline-size <= #{map-get($breakpoints, "tiny")}) {
 		flex-direction: column;
 	}
 
@@ -31,15 +30,15 @@
 		white-space: nowrap;
 		font-variant-numeric: tabular-nums;
 
-		@include container("below:tiny") {
+		@container (inline-size <= #{map-get($breakpoints, "tiny")}) {
 			flex: 1 0 100%;
 		}
 
-		@include container("above:tiny", "below:small") {
+		@container (#{map-get($breakpoints, "tiny")} < inline-size <= #{map-get($breakpoints, "small")}) {
 			flex: 1 0 50%;
 		}
 
-		@include container("above:small") {
+		@container (inline-size > #{map-get($breakpoints, "small")}) {
 			flex: 1 0 33.333%;
 		}
 

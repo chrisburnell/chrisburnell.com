@@ -157,7 +157,7 @@
 }
 
 // Apply the Dark color scheme when the media query matches
-@include media("dark") {
+@media (prefers-color-scheme: dark) {
 	html:not([data-theme]) {
 		@include theme-dark;
 	}

@@ -4,7 +4,7 @@
 ////
 
 %content {
-	@include media("print") {
+	@media print {
 		break-inside: avoid;
 	}
 }
