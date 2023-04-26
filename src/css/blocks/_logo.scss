@@ -29,7 +29,7 @@
 	}
 
 	.header.active & {
-		block-size: var(--logo-small-min);
-		inline-size: var(--logo-small-min);
+		block-size: var(--size-logo-small-min);
+		inline-size: var(--size-logo-small-min);
 	}
 }
