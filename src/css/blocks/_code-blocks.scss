@@ -55,6 +55,10 @@ pre.language-json::before {
 	content: "JSON";
 	color: h(json);
 }
+pre.language-jsx::before {
+	content: "JSX";
+	color: h(jsx);
+}
 pre.language-liquid::before {
 	content: "Liquid";
 	color: h(liquid);
