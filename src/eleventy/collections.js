@@ -130,15 +130,20 @@ module.exports = {
 			})
 	},
 	popular: (collection) => {
+		// "Popular" sorting is done by totalling webmentions, external likes,
+		// and stargazers as a sorting method.
 		return [...collection.getFilteredByTag("feature"), ...collection.getFilteredByTag("project")]
 			.filter(isPublished)
 			.filter(notReply)
 			.filter((item) => {
-				return item.data.webmentions.length + item.data.externalLikes >= limits.minimumResponsesRequired
+				const interactions = item.data.webmentions.length + item.data.externalLikes + (item.data.stargazers || 0)
+				return interactions >= limits.minimumResponsesRequired
 			})
 			.sort(dateFilter)
 			.sort((a, b) => {
-				return b.data.webmentions.length + b.data.externalLikes - (a.data.webmentions.length + a.data.externalLikes)
+				const interactionsA = a.data.webmentions.length + a.data.externalLikes + (a.data.stargazers || 0)
+				const interactionsB = b.data.webmentions.length + b.data.externalLikes + (b.data.stargazers || 0)
+				return interactionsB - interactionsA
 			})
 			.slice(0, limits.feed)
 	},
@@ -151,7 +156,7 @@ module.exports = {
 			.filter(isPublished)
 			.filter(notReply)
 			.filter((item) => {
-				return item.data.webmentions.length + item.data.externalLikes >= limits.minimumResponsesRequired
+				return item.data.webmentions.length >= limits.minimumResponsesRequired
 			})
 			.sort(dateFilter)
 			.map((item) => {
