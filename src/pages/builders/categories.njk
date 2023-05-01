@@ -30,8 +30,11 @@ truncate: true
 		<span class=" [ p-name ] ">{{ title | safe }}</span>
 	</h1>
 
-	<div class=" [ description ] [ flow ] [ p-summary ] ">
-		<p>{% if count > 1 %}All {{ count | numberStringFormat }}{% else %}Just the one{% endif %} of my {{ category.properPlural }}{% if first_year != latest_year %}, dating from {% if collection[0].data.list == 'shelf' %}{{ first_year }}–{{ latest_year }}{% else %}<a href="#{{ first_year }}">{{ first_year }}</a>–<a href="#{{ latest_year }}">{{ latest_year }}</a>{% endif %}{% endif %}.</p>
+	<div class=" [ description ] [ flow ] ">
+		<p>
+			<span class=" [ p-summary ] ">{% if count > 1 %}All {{ count | numberStringFormat }}{% else %}Just the one{% endif %} of my {{ category.properPlural }}{% if first_year != latest_year %}, dating from {% if collection[0].data.list == 'shelf' %}{{ first_year }}–{{ latest_year }}{% else %}<a href="#{{ first_year }}">{{ first_year }}</a>–<a href="#{{ latest_year }}">{{ latest_year }}</a>{% endif %}{% endif %}.</span>
+			<a href="{{ site.url }}/{{ category.properPlural }}.xml" title="{{ title | safe }} Feed"><svg width="20" height="20" aria-hidden="true" focusable="false" style="fill: #ff8c00"><use href="#svg--rss"></use></svg></a>
+		</p>
 	</div>
 
 	{% if first_year != latest_year %}

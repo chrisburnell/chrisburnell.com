@@ -1,11 +1,9 @@
 ---
+permalink: /archive/
 layout: base
 title: All Posts
 description: Browse all of my posts by a variety of metrics.
 perch: true
-hfeed: true
-show_photos: true
-truncate: true
 ---
 {% set collection = collections.posts -%}
 {% set count = collection.length -%}
@@ -26,18 +24,29 @@ truncate: true
 	<div id="content" class=" [ content ] [ flow ] ">
 		{% include 'cssnakedday.njk' %}
 
+		<h2>Collections</h2>
+
+		<ol>
+			<li><a href="/latest/" class=" [ strong ] " style="font-size: 1.25em;">Latest Posts</a></li>
+			<li><a href="/writing/" class=" [ strong ] " style="font-size: 1.25em;">Writing</a></li>
+			<li><a href="/replies/" class=" [ strong ] " style="font-size: 1.25em;">Replies</a></li>
+			<li><a href="/rsvps/" class=" [ strong ] " style="font-size: 1.25em;">RSVPs</a></li>
+			<li><a href="/hot/" class=" [ strong ] " style="font-size: 1.25em;">Hot Pages</a></li>
+			<li><a href="/popular/" class=" [ strong ] " style="font-size: 1.25em;">Popular Pages</a></li>
+		</ol>
+
 		<h2>Categories</h2>
 
-		<ul class=" [ grid ] [ shelf ] " data-layout="natural">
+		<ol class=" [ grid ] [ shelf ] " data-layout="natural">
 			{%- for item in collections.categories -%}
 				{%- set count = collections[item.title] | arrayKeyIncludes('data.tags', 'post') | arePublished | getCollectionCount(false, true) -%}
 				<li><a href="/{{ item.plural }}/" class=" [ strong ] " style="font-size: 1.25em;">{{ item.properPlural | title }} <sup>{{ count }}</sup></a></li>
 			{%- endfor -%}
-		</ul>
+		</ol>
 
 		<h2>Tags</h2>
 
-		<ul class=" [ grid ] [ shelf ] " data-layout="natural">
+		<ol class=" [ grid ] [ shelf ] " data-layout="natural">
 			{%- set lowest = 9001 -%}
 			{%- set highest = 0 -%}
 			{%- for item in collections.tags | sort -%}
@@ -54,11 +63,15 @@ truncate: true
 				{%- set fontSize = count | rangeMap(lowest, highest, 1, 1.375, 3) -%}
 				<li><a href="/tag/{{ item }}/" class=" [ strong ] " style="font-size: {{ fontSize }}em;">{{ item }} <sup>{{ count }}</sup></a></li>
 			{%- endfor -%}
-		</ul>
+		</ol>
+
+		<div class=" [ grid ] [ navigator ] ">
+			<a class=" [ button ] " href="/feeds/">Browse Feeds</a>
+		</div>
 	</div>
 
 	<div class=" [ meta ] [ flow ] ">
-		{% include 'meta/index.njk' %}
+		{% include 'meta/page.njk' %}
 	</div>
 
 	{% include 'ads.njk' %}

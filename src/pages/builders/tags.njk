@@ -30,8 +30,11 @@ truncate: true
 		<span class=" [ p-name ] " aria-title="Tagged: {{ tag | capitalizeFormat }}">{{ title | safe }}</span>
 	</h1>
 
-	<div class=" [ description ] [ flow ] [ p-summary ] ">
-		<p>{% if count > 1 %}All {{ count | numberStringFormat }}{% else %}Just the one{% endif %} of my posts tagged <q>{{ tag | capitalizeFormat }}</q>.</p>
+	<div class=" [ description ] [ flow ] ">
+		<p>
+			<span class=" [ p-summary ] ">{% if count > 1 %}All {{ count | numberStringFormat }}{% else %}Just the one{% endif %} of my posts tagged <q>{{ tag | capitalizeFormat }}</q>.</span>
+			<a href="{{ site.url }}/{{ tag }}.xml" title="Tagged: {{ tag | capitalizeFormat | safe }} Feed"><svg width="20" height="20" aria-hidden="true" focusable="false" style="fill: #ff8c00"><use href="#svg--rss"></use></svg></a>
+		</p>
 	</div>
 
 	{% if first_year != latest_year %}
