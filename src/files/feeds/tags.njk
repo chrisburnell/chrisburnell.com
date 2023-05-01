@@ -1,0 +1,13 @@
+---
+pagination:
+  data: collections.tags
+  size: 1
+  alias: tag
+permalink: /{{ tag }}.xml
+eleventyComputed:
+  title: "{{ tag | title }}"
+  description: "All of my posts tagged “{{ tag }}”."
+  related_collection: "{{ tag }}"
+  reverse_collection: true
+  limit_collection: 9001
+---
