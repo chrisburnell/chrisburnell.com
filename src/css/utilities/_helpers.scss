@@ -23,6 +23,12 @@
 	justify-content: space-between;
 }
 
+// Make anything top sticky
+.sticky {
+	position: sticky;
+	inset-block-start: var(--size-header);
+}
+
 // <abbr class="acronym" title="National Aeronautics and Space Administration">Nasa</abbr>
 // This allows screen readers to read aloud acronyms as they would be spoken, as
 // opposed to an initialism, for which each letter is spoken individually,
