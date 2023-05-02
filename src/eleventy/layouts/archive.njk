@@ -41,7 +41,9 @@ truncate: true
 	{% endif %}
 
 	<div id="content" class=" [ content ] [ flow ] [ h-feed ] ">
-		{% include 'cssnakedday.njk' %}
+		{% include 'css-naked-day.njk' %}
+
+		{% include 'state-of-the-browser.njk' %}
 
 		{%- if by_year -%}
 			{%- set year = latest_year -%}

@@ -18,7 +18,9 @@ layout: base
 	</div>
 
 	<div class=" [ content ] [ flow ] ">
-		{% include 'cssnakedday.njk' %}
+		{% include 'css-naked-day.njk' %}
+
+		{% include 'state-of-the-browser.njk' %}
 
 		<div class=" [ e-content ] [ flow ] {% if contentClass %}[ {{ contentClass }} ] {% endif %}{% if toc %}generate-toc{% endif %}">
 			{{ content | safe }}

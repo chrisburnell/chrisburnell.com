@@ -1,3 +1,5 @@
+const { sotb_date } = require("#data/site")
+
 const cssnakedday = () => {
 	const now = Date.now()
 	const thisYear = new Date().getFullYear()
@@ -5,6 +7,14 @@ const cssnakedday = () => {
 	const endEpoch = new Date(`${thisYear}-04-09T23:59:59-1200`).getTime()
 
 	return startEpoch <= now && now <= endEpoch
+}
+
+const sotbUpcoming = () => {
+	const now = Date.now()
+	const startEpoch = new Date(sotb_date).getTime()
+	const hundredDays = 1000 * 60 * 60 * 24 * 100
+
+	return startEpoch - now < hundredDays
 }
 
 const random = () => {
@@ -18,4 +28,5 @@ module.exports = {
 	now: Date.now(),
 	cssnakedday: cssnakedday(),
 	random: random(),
+	sotb_upcoming: sotbUpcoming(),
 }

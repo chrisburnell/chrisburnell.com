@@ -42,7 +42,7 @@ truncate: true
 	{% endif %}
 
 	<div id="content" class=" [ content{% if collection[0].data.list == 'shelf' %}  full{% endif %} ] [ flow ] [ h-feed ] ">
-		{% include 'cssnakedday.njk' %}
+		{% include 'css-naked-day.njk' %}
 
 		{% if categoryIntroductions[category.title] %}
 			{{ categoryIntroductions[category.title] | join('\n\n') | markdownFormat | safe }}

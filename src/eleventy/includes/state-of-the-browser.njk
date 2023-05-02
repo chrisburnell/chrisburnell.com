@@ -1,6 +1,8 @@
-<div class=" [ box  box--line-length ] [ flow ] " style="--border-color: #c61440;">
-	{% image './images/content/sotb-banner.svg', 'State of the Browser logo' %}
-	<p><a href="https://2022.stateofthebrowser.com" rel="external"><strong>State of the Browser</strong></a>, a yearly one-day, single-track conference with widely-varying talks about the modern web, accessibility, web standards, and more, is back with its tenth edition—join us in-person in London or online in {{ global.now | daysUntil("2022-10-22T09:20:00+0100") }} days on <strong>22 October 2022</strong>!</p>
-	<div class=" [ center ] "><a class=" [ button ] " href="https://2022.stateofthebrowser.com/tickets/">Get yourself a ticket!</a></div>
-</div>
-<hr>
+{% if global.sotb_upcoming -%}
+	<div class=" [ box  box--line-length ] [ flow ] [ small ] " style="--border-color: #c61440;">
+		{% image './images/content/sotb-banner.svg', 'State of the Browser logo', '', [400] %}
+		<p><a href="https://2023.stateofthebrowser.com" rel="external"><strong>State of the Browser</strong></a>, a yearly one-day, single-track conference with widely-varying talks about the modern web, accessibility, web standards, and more, is back! Join us in-person in London or online in {{ global.now | daysUntil(site.sotb_date) }} days on <strong><time datetime="{{ site.sotb_date }}">{{ site.sotb_date | friendlyDate }}</time></strong>!</p>
+		<div class=" [ center ] "><a class=" [ button ] " href="https://2023.stateofthebrowser.com/tickets/">Get yourself a ticket!</a></div>
+	</div>
+	<hr>
+{%- endif %}
