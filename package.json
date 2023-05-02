@@ -32,7 +32,7 @@
     "prettier": "^2.8.8",
     "rollup": "2.79.1",
     "rollup-plugin-terser": "7.0.2",
-    "sass": "^1.62.0",
+    "sass": "^1.62.1",
     "speedlify-score": "^3.0.0"
   },
   "dependencies": {
@@ -44,14 +44,14 @@
     "@11ty/eleventy-plugin-inclusive-language": "^1.0.3",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-    "@11ty/eleventy-plugin-webc": "^0.11.0",
+    "@11ty/eleventy-plugin-webc": "^0.11.1",
     "@11ty/is-land": "^4.0.0",
     "@chrisburnell/bowhead": "^0.3.4",
     "@chrisburnell/eleventy-cache-webmentions": "^1.1.5",
     "@chrisburnell/pentatonic": "^1.1.4",
     "@chrisburnell/spark-line": "^1.2.4",
     "@csstools/postcss-oklab-function": "^2.2.1",
-    "@mdn/browser-compat-data": "^5.2.53",
+    "@mdn/browser-compat-data": "^5.2.54",
     "@sindresorhus/slugify": "1.1.2",
     "@tweetback/canonical": "^2.0.32",
     "@zachleat/details-utils": "^2.0.2",
@@ -66,7 +66,7 @@
     "markdown-it": "^13.0.1",
     "markdown-it-abbr": "^1.0.4",
     "markdown-it-footnote": "^3.0.3",
-    "natural": "^6.2.0"
+    "natural": "^6.3.0"
   },
   "scripts": {
     "clean": "rm -rf .cache && rm -rf _site",
