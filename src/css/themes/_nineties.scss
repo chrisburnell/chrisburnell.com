@@ -25,6 +25,7 @@
 		font-weight: var(--font-weight-semibold) !important;
 	}
 
+	.header,
 	.footer,
 	.box,
 	.author__image,
@@ -32,32 +33,14 @@
 	button:not(.anchor),
 	input,
 	textarea {
-		border-block-start: 2px solid h(yeti);
-		border-block-end: 2px solid h(thunder);
-	}
-
-	.box,
-	.table,
-	button:not(.anchor),
-	input,
-	textarea {
-		border-inline-start: 2px solid h(yeti);
-		border-inline-end: 2px solid h(thunder);
+		border-block-start: 2px solid h(bear);
+		border-block-end: 2px solid h(wolf);
+		border-inline-start: 2px solid h(bear);
+		border-inline-end: 2px solid h(wolf);
 	}
 
 	.header {
 		position: relative;
-	}
-
-	.header,
-	.author__image {
-		border-block-start: 2px solid h(bear);
-		border-block-end: 2px solid h(lynx);
-	}
-
-	.author__image {
-		border-inline-start: 2px solid h(bear);
-		border-inline-end: 2px solid h(lynx);
 	}
 
 	.table {
@@ -84,7 +67,7 @@
 	}
 }
 
-[data-theme="nineties"],
+[data-theme*="nineties"],
 .nineties {
 	@include theme-nineties;
 }

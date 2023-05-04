@@ -4,13 +4,13 @@
 ////
 
 $matrix-palette: (
-	lynx: #151100,
-	wolf: #323200,
-	bowhead: #525d00,
-	raven: #738e22,
-	highland: #95bd50,
-	coyote: #b6e678,
-	bear: #e0fac9,
+	lynx: #004801,
+	wolf: #016302,
+	bowhead: #028004,
+	raven: #049e06,
+	highland: #06bd0a,
+	coyote: #08de0e,
+	bear: #ccffcd,
 );
 
 @mixin theme-matrix() {
@@ -19,8 +19,8 @@ $matrix-palette: (
 	}
 
 	.logo,
-	.perch::before {
-		filter: hue-rotate(230deg);
+	.perch::after {
+		filter: hue-rotate(270deg) saturate(300%);
 	}
 
 	.avatar,
@@ -29,7 +29,7 @@ $matrix-palette: (
 	}
 }
 
-[data-theme="matrix"],
+[data-theme*="matrix"],
 .matrix {
 	@include theme-dark;
 	@include theme-matrix;

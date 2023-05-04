@@ -164,7 +164,7 @@
 }
 
 // Apply the Dark color scheme when it has been set manually (visitor, author)
-[data-theme="dark"],
+[data-theme*="dark"],
 .dark {
 	@include theme-dark;
 }

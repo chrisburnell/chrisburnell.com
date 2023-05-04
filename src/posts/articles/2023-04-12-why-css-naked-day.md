@@ -16,9 +16,9 @@ Although the event takes place on April 9<sup>th</sup>, *CSS Naked Day* actually
 
 For example, someone living in the <abbr title="Coordinated Universal Time">UTC</abbr>+14 timezone will arrive on April 9<sup>th</sup> first, whilst the rest of the world is still on April 7<sup>th</sup> / 8<sup>th</sup>, so we need to make sure that our CSS is disabled *by then*.
 
-Likewise, for someone in the <abbr title="Coordinated Universal Time">UTC</abbr>-12 timezone, they will be in the last timezone to tick over from the 9<sup>th</sup> to the 10<sup>th</sup>, so we need to make sure CSS is disabled *until then*.
+Likewise, someone in the <abbr title="Coordinated Universal Time">UTC</abbr>-12 timezone will be in the last timezone to tick over from the 9<sup>th</sup> to the 10<sup>th</sup>, so we need to make sure CSS is disabled *until then*.
 
-This leaves us with a 50-hour period, stretching from <time datetime="2023-04-08T10:00:00Z">April 8<sup>th</sup> @ 10:00:00 UTC</time> until <time datetime="2023-04-10T12:00:00Z">April 10<sup>th</sup> @ 12:00:00 UTC</time>, during which time participants’ websites will be served without CSS.
+This leaves us with a 50-hour period during which time participants’ websites will be served without CSS, stretching from <time datetime="2023-04-08T10:00:00Z">April 8<sup>th</sup> @ 10:00:00 UTC</time> until <time datetime="2023-04-10T12:00:00Z">April 10<sup>th</sup> @ 12:00:00 UTC</time>.
 
 ## What’s the point?
 
