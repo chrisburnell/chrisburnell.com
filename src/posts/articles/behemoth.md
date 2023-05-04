@@ -7,7 +7,7 @@ description: Ever since hearing of Zach Leatherman’s static site generator, <a
 #   - eleventy
 ---
 
-So the seed was planted, and the rabbit-hole deep-dive began, but it seemed like such an undertaking. A major part of the ethos behind my website as it was then had to do with getting more people to create their *own* website, to *own their content*, and lowering the barriers to doing that. It all had to do with a fascination-turned-passion for the [IndieWeb](https://indieweb.org/), a movement dedicated to providing alternatives to the siloed web of today, putting control in the hands of users, rather than the companies operating behemoth social networks.
+So the seed was planted, and the rabbit hole deep-dive began, but it seemed like such an undertaking. A major part of the ethos behind my website as it was then had to do with getting more people to create their *own* website, to *own their content*, and lowering the barriers to doing that. It all had to do with a fascination-turned-passion for the [IndieWeb](https://indieweb.org/), a movement dedicated to providing alternatives to the siloed web of today, putting control in the hands of users, rather than the companies operating behemoth social networks.
 
 But I digress—oh, speaking of behemoth—so during the inception of the Jekyll build, one simple avenue for developers to get their own website or blog was to use GitHub Pages, which, *conveniently*, is powered by Jekyll! But it comes with a small but understandable catch: you can't use any Jekyll plugins (except a small but truly incredibly useful handful). I was determined to make my build plugin-free, so I did.
 

@@ -6,12 +6,15 @@
 @mixin theme-dark() {
 	--shadow-color: var(--hsl-shadow-dark);
 
+	&:is(html) {
+		scrollbar-color: h(raven) h(mineshaft);
+	}
+
 	// Target these if applied to html or body elements
 	&:is(body),
 	&:is(html) body {
 		background-color: h(mineshaft);
 		color: h(snowy);
-		scrollbar-color: h(raven) h(mineshaft);
 	}
 
 	// Header Block
