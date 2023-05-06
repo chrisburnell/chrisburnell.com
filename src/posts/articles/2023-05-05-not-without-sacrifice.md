@@ -44,7 +44,7 @@ This shift hasn’t only just begun; we’ve seen great articles musing on this 
 - accessibility overlays ([though mileage may vary](https://adrianroselli.com/tag/overlay))
 - web features like [`prefers-reduced-motion`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion) and [`color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme)
 - [accessibility compliance laws](https://www.gov.uk/guidance/accessibility-requirements-for-public-sector-websites-and-apps)
-- an ever-growing focus on [building greener websites](https://css-irl.info/building-a-greener-web/).
+- an ever-growing focus on [building greener websites](https://css-irl.info/building-a-greener-web/)
 
 It’s heartwarming to see concerns about performance, sub-optimal browsing conditions, diversity, and more being brought back to the forefront of our discussions about how we should build for the open and inclusive web that we want.
 

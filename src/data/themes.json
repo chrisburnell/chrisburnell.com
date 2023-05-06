@@ -8,20 +8,20 @@
     "title": "Dark"
   },
   {
-    "id": "koala",
-    "title": "Koala"
-  },
-  {
-    "id": "dark  koala",
-    "title": "Koala Dark"
-  },
-  {
     "id": "code-red",
     "title": "Code Red"
   },
   {
     "id": "dark  code-red",
     "title": "Code Red Dark"
+  },
+  {
+    "id": "koala",
+    "title": "Koala"
+  },
+  {
+    "id": "dark  koala",
+    "title": "Koala Dark"
   },
   {
     "id": "nineties",
