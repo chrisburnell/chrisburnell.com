@@ -1,5 +1,4 @@
 ---
-draft: true
 date: 2023-05-05T00:20:09+0100
 title: Not without sacrifice
 description: With the boom of JavaScript frameworks and legends-come-true like the new CSS parent selector, we’ve borne witness to an explosion of new technologies and ways to build for the web. But what tradeoffs have we made for all these new bells and whistles?
@@ -25,9 +24,9 @@ In recent years, there has been a growing emphasis on the importance of Develope
 
 However, when we compare our efforts in *DX* to efforts in User Experience (*UX*), it is important to remember that resources are not infinite. We can only expect to complete a day’s work in *nothing less* than a day. A decade ago, when the capabilities of the web were fewer and we didn’t have such a wide array of tools to aid in our work, we had more time to focus on the user’s experience. Assuming, of course, you hadn’t spent the entire week debugging a dropdown in Internet Explorer.
 
-As [new web features bubbled to the surface](/feature-watch/) (growing now to a *rolling boil!*) the responsibility for learning and implementing new and/or complex has shifted to the front end developer. As a result, the time we once dedicated to ensuring the best experience for all users has been consumed by more developer-centric tasks. Unfortunately, this has left experiences for users who are not browsing under optimal conditions neglected.
+As [new web features](/feature-watch/) bubble to the surface (growing now to a *rolling boil!*) the responsibility for learning and implementing new and/or complex has shifted to the front end developer. As a result, the time we once dedicated to ensuring the best experience for all users has been consumed by more developer-centric tasks. Unfortunately, this has left experiences for users who are not browsing under optimal conditions neglected.
 
-In light of these constraints, our priorities as front end developers and the time we have to dedicate to each part of our work has shifted, and changing how we look at this shift puts the <q>battle</q> between *DX* and *UX* in a different perspective:
+In light of these constraints, our priorities as front end developers and the time we have to dedicate to each part of our work has shifted. Changing how we look at this shift puts the <q>battle</q> between *DX* and *UX* in a different perspective:
 
 <figure>
     <div id="pie-2" title="Now">
@@ -36,11 +35,20 @@ In light of these constraints, our priorities as front end developers and the ti
     </div>
 </figure>
 
-That being said, it seems like there’s a shift nowadays to once again turn our attention more to the *UX* of our work—not to say that it’s *DX’s* <q>turn</q> to be thrown to the wayside, but that a concerted effort needs to be made to maintain an *appropriate balance*.
+That being said, it seems like things are moving once again focus more on the *UX* of our work—not to say that it’s *DX’s* <q>turn</q> to be thrown to the wayside, but that a concerted effort needs to be made to maintain an *appropriate balance*.
 
-This is being done not just by dutiful practitioners of the web and inspirational speakers motivating designers and developers, but also by the new web features themselves, creating a powerful positive feedback loop. It’s heartwarming to see concerns about performance, sub-optimal browsing conditions, diversity, and more being brought back to the forefront of our discussions about how we should build for the open and inclusive web that we want.
+This shift hasn’t only just begun; we’ve seen great articles musing on this subject and even evidence of this shift in different forms today, e.g.
 
-**And I think it’s working.**
+- *[The <q>Developer Experience</q> Bait-and-Switch](https://infrequently.org/2018/09/the-developer-experience-bait-and-switch/)* by [Alex Russell](https://infrequently.org/)
+- *[Split](https://adactio.com/journal/15050)* by [Jeremy Keith](https://adactio.com/)
+- accessibility overlays ([though mileage may vary](https://adrianroselli.com/tag/overlay))
+- web features like [`prefers-reduced-motion`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion) and [`color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme)
+- [accessibility compliance laws](https://www.gov.uk/guidance/accessibility-requirements-for-public-sector-websites-and-apps)
+- an ever-growing focus on [building greener websites](https://css-irl.info/building-a-greener-web/).
+
+It’s heartwarming to see concerns about performance, sub-optimal browsing conditions, diversity, and more being brought back to the forefront of our discussions about how we should build for the open and inclusive web that we want.
+
+> A society grows great when there are those who would plant trees under whose shade they know they will never sit.
 
 {% css %}
 @layer overrides {

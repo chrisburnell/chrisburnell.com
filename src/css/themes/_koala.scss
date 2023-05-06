@@ -1,0 +1,30 @@
+////
+/// Koala
+/// @group themes
+////
+
+$koala-palette: (
+	lynx: #260048,
+	wolf: #540095,
+	bowhead: #841de0,
+	raven: #a66ff3,
+	highland: #c5abf4,
+	coyote: #e1d6f7,
+	bear: #f5f2fc,
+);
+
+@mixin theme-koala() {
+	@each $name, $color in $koala-palette {
+		--hsl-#{$name}: #{color.hue($color)} #{color.saturation($color)} #{color.lightness($color)};
+	}
+
+	.logo,
+	.perch::after {
+		filter: hue-rotate(80deg) saturate(200%);
+	}
+}
+
+[data-theme*="koala"],
+.koala {
+	@include theme-koala;
+}

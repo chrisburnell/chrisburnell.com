@@ -23,8 +23,8 @@ $christmas-palette: (
 	}
 
 	.logo,
-	.perch::before {
-		filter: hue-rotate(145deg);
+	.perch::after {
+		filter: hue-rotate(270deg) saturate(200%);
 	}
 
 	.navigation__list a::after {

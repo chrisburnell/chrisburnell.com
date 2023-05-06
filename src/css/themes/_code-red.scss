@@ -19,8 +19,8 @@ $code-red-palette: (
 	}
 
 	.logo,
-	.perch::before {
-		filter: hue-rotate(145deg);
+	.perch::after {
+		filter: hue-rotate(155deg) saturate(200%);
 	}
 }
 

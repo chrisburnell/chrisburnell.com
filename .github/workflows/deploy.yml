@@ -20,7 +20,7 @@ jobs:
       - name: Checkout from git
         uses: actions/checkout@v3
       - name: Set the Node version
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: "19.0.0"
       - name: Setup npm dependencies cache
