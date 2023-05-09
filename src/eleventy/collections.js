@@ -161,12 +161,6 @@ module.exports = {
 			.sort(dateFilter)
 			.map((item) => {
 				item.hotness = item.data.webmentions.reduce((accumulator, webmention) => {
-					// get delta between now and then in days
-					// const delta = now / deltaModifier - epoch(webmention.data.published || webmention.verified_date) / deltaModifier
-					// return average delta of time
-					// return accumulator + 1 / (1 + Math.log(Math.ceil(delta)))
-
-					// return exponential moving average
 					return exponentialMovingAverage(epoch(webmention.data.published || webmention.verified_date) / deltaModifier, accumulator, coefficient)
 				}, 0)
 
