@@ -51,7 +51,7 @@
     "@chrisburnell/pentatonic": "^1.1.4",
     "@chrisburnell/spark-line": "^1.2.4",
     "@csstools/postcss-oklab-function": "^2.2.1",
-    "@mdn/browser-compat-data": "^5.2.54",
+    "@mdn/browser-compat-data": "^5.2.57",
     "@sindresorhus/slugify": "1.1.2",
     "@tweetback/canonical": "^2.0.32",
     "@zachleat/details-utils": "^2.0.2",

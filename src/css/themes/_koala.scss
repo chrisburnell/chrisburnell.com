@@ -10,7 +10,7 @@ $koala-palette: (
 	raven: #855fda,
 	highland: #a08fea,
 	coyote: #bbb4f1,
-	bear: #cfccf5,
+	bear: #dddaf3,
 );
 
 @mixin theme-koala() {
@@ -20,7 +20,7 @@ $koala-palette: (
 
 	.logo,
 	.perch::after {
-		filter: hue-rotate(80deg) saturate(200%);
+		filter: hue-rotate(62deg) saturate(150%);
 	}
 }
 
