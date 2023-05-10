@@ -32,6 +32,7 @@
 	.table,
 	button:not(.anchor),
 	input,
+	select,
 	textarea {
 		border-block-start: 2px solid h(bear);
 		border-block-end: 2px solid h(wolf);
