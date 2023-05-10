@@ -69,7 +69,7 @@ Maximum Size ≈ ${this.limitDecimals(this.inputs["size-max"].value - this.input
 
 	measureViewport() {
 		this.visualCalculated.querySelector("span").innerText = `Current Size: ${this.limitDecimals(this.visualOutput.querySelector(".size-example").getBoundingClientRect().width, 3)}px`
-		this.visualViewport.querySelector("span").innerText = `Viewport Size: ${window.innerWidth}px`
+		this.visualViewport.querySelector("span").innerText = `Viewport Size: ${window.innerWidth}px × ${window.innerHeight}px`
 	}
 
 	init() {
