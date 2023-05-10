@@ -36,6 +36,11 @@
 	:is(:hover, :focus, :active) > svg {
 		fill: var(--fill-hover, var(--fill, currentColor));
 	}
+
+	select {
+		background-color: transparent;
+		color: inherit;
+	}
 }
 
 .footer__grid {

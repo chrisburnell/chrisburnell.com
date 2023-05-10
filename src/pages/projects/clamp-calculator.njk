@@ -22,19 +22,50 @@ js_module: clamp-calculator.js
 		<input id="size-max" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="number" step="0.001" min="0" inputmode="numeric" pattern="[1-9]\d*(\.\d+)?" lang="en" value="18" data-default="18"></input>
 	</fieldset>
 	<fieldset class=" [ clamp-calculator__fieldset ] ">
-		<label for="viewport-min" class=" [ delta ] ">Minimum Viewport Width <small>(px)</small></label>
+		<label for="viewport-min" class=" [ delta ] ">Minimum Viewport <small>(px)</small></label>
 		<input id="viewport-min" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="number" step="0.001" min="0" inputmode="numeric" pattern="[1-9]\d*(\.\d+)?" lang="en" value="500" data-default="500"></input>
 	</fieldset>
 	<fieldset class=" [ clamp-calculator__fieldset ] ">
-		<label for="viewport-max" class=" [ delta ] ">Maximum Viewport Width <small>(px)</small></label>
+		<label for="viewport-max" class=" [ delta ] ">Maximum Viewport <small>(px)</small></label>
 		<input id="viewport-max" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="number" step="0.001" min="0" inputmode="numeric" pattern="[1-9]\d*(\.\d+)?" lang="en" value="1000" data-default="1000"></input>
 	</fieldset>
 	<details style="grid-column: span 2;">
-		<summary>Optional</summary>
-		<fieldset class=" [ clamp-calculator__fieldset ] " style="border: 0; padding: 0;">
-			<label for="font-size-root" class=" [ center  delta ] ">Root Font Size <small>(px)</small></label>
-			<input id="font-size-root" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="number" step="0.001" min="0" inputmode="numeric" pattern="[1-9]\d*(\.\d+)?" lang="en" value="16" data-default="16"></input>
-		</fieldset>
+		<summary>Optional Stuff</summary>
+		<div class=" [ grid ] " data-layout="50-50" style="padding-inline: 0">
+			<fieldset class=" [ clamp-calculator__fieldset ] ">
+				<label for="font-size-root" class=" [ center  delta ] ">Root Font Size <small>(px)</small></label>
+				<input id="font-size-root" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="number" step="0.001" min="0" inputmode="numeric" pattern="[1-9]\d*(\.\d+)?" lang="en" value="16" data-default="16"></input>
+			</fieldset>
+			<fieldset class=" [ clamp-calculator__fieldset ] ">
+				<label for="viewport-units" class=" [ center  delta ] ">Viewport Units</label>
+				<select id="viewport-units" class=" [ center  monospace ] " style="inline-size: 100%; padding-block: 0.86rem;" lang="en">
+					<option value="vw" selected data-default="true">Width</opton>
+					<option value="vh">Height</opton>
+					<option value="vi">Inline</opton>
+					<option value="vb">Block</opton>
+					<option value="vmin">Minimum</opton>
+					<option value="vmax">Maximum</opton>
+					<option value="svw">Small Width</opton>
+					<option value="svh">Small Height</opton>
+					<option value="svi">Small Inline</opton>
+					<option value="svb">Small Block</opton>
+					<option value="svmin">Small Minimum</opton>
+					<option value="svmax">Small Maximum</opton>
+					<option value="lvw">Large Width</opton>
+					<option value="lvh">Large Height</opton>
+					<option value="lvi">Large Inline</opton>
+					<option value="lvb">Large Block</opton>
+					<option value="lvmin">Large Minimum</opton>
+					<option value="lvmax">Large Maximum</opton>
+					<option value="dvw">Dynamic Width</opton>
+					<option value="dvh">Dynamic Height</opton>
+					<option value="dvi">Dynamic Inline</opton>
+					<option value="dvb">Dynamic Block</opton>
+					<option value="dvmin">Dynamic Minimum</opton>
+					<option value="dvmax">Dynamic Maximum</opton>
+				</select>
+			</fieldset>
+		</div>
 	</details>
 	<fieldset class=" [ grid  navigator ] " style="grid-column: span 2;">
 		<button style="--min-inline-size: 10em;" type="submit">Calculate</button>
@@ -62,7 +93,7 @@ js_module: clamp-calculator.js
 			<span>Current Size: 16px<span>
 		</li>
 		<li id="visual-viewport" class="requires-js">
-			<span>Viewport Width: 9001px</span>
+			<span>Viewport Size: 9001px</span>
 		</li>
 	</ul>
 </div>
@@ -71,21 +102,19 @@ js_module: clamp-calculator.js
 
 <p>This calculator uses <code>rem</code> units which require knowing the font size at the document’s root. In most cases, that refers to the <code>html</code> element and this calculator is currently operating with a root font size of <code id="how-root">16px</code>.</p>
 
-<p><strong aria-hidden="true">1.</strong> We need to figure out the rate of change: how much the size needs to change across a distance of viewport width. In other words, for every pixel of change in viewport width, how many pixels of change should there be in size? We can calculate this by dividing the difference in size by the difference in viewport width.</p>
+<p><strong aria-hidden="true">1.</strong> We need to figure out the rate of change: how much the size needs to change across a distance across the viewport. In other words, for every pixel of change across the viewport, how many pixels of change should there be in size? We can calculate this by dividing the difference in size by the difference in viewport.</p>
 
 <pre class="language-none"><code id="how-x">Change = (sizeMax - sizeMin) / (viewportMax - viewportMin)
 Change = (18px - 16px) / (1000px - 500px)
 Change = 0.004</code></pre>
 
-<p><strong aria-hidden="true">2.</strong> Next, let’s figure out what our <em>preferred</em> size should be (this is different from our <em>minimum</em> font size). We do this by asking how much change is applied to the size when the viewport is at its maximum width, and subtracting that from our desired size at the maximum viewport width.</p>
+<p><strong aria-hidden="true">2.</strong> Next, let’s figure out what our <em>preferred</em> size should be (this is different from our <em>minimum</em> font size). We do this by asking how much change is applied to the size when the viewport is at its maximum size, and subtracting that from our desired size at the maximum viewport size.</p>
 
 <pre class="language-none"><code id="how-a">A = sizeMax - viewportMax * Change
 A = 18px - 1000px * 0.004
 A = 14px = 0.875rem</code></pre>
 
 <p><strong aria-hidden="true">3.</strong> The last piece of the puzzle is the most straightforward: we need to represent the rate of change as a value relative to the viewport, and we do so by multiplying the rate of change with <code>100vw</code>.</p>
-
-<p><em>Note: You could also substitute in other units, like <code>100vh</code> or <code>100dvb</code>, depending on whether you want to effect change with the viewport width, viewport height, etc.</em></p>
 
 <pre class="language-none"><code id="how-b">B = 100vw * Change
 B = 100vw * 0.004

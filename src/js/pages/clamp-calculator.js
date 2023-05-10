@@ -5,6 +5,7 @@ class ClampCalculator {
 			"size-max": null,
 			"viewport-min": null,
 			"viewport-max": null,
+			"viewport-units": null,
 			"font-size-root": null,
 		}
 
@@ -20,16 +21,17 @@ class ClampCalculator {
 	}
 
 	calculate() {
+		const viewportUnits = this.inputs["viewport-units"].value;
 		const change = (this.inputs["size-max"].value - this.inputs["size-min"].value) / (this.inputs["viewport-max"].value - this.inputs["viewport-min"].value)
 
 		const preferredSizePixels = this.limitDecimals(this.inputs["size-max"].value - this.inputs["viewport-max"].value * change)
 		const preferredSize = this.toRem(this.inputs["size-max"].value - this.inputs["viewport-max"].value * change, this.inputs["font-size-root"].value)
 		const variableSize = this.limitDecimals(change * 100)
 
-		this.output.value = `clamp(${this.toRem(this.inputs["size-min"].value, this.inputs["font-size-root"].value)}rem, ${preferredSize}rem + ${variableSize}vw, ${this.toRem(this.inputs["size-max"].value, this.inputs["font-size-root"].value)}rem)`
+		this.output.value = `clamp(${this.toRem(this.inputs["size-min"].value, this.inputs["font-size-root"].value)}rem, ${preferredSize}rem + ${variableSize}${viewportUnits}, ${this.toRem(this.inputs["size-max"].value, this.inputs["font-size-root"].value)}rem)`
 
 		this.visual.style.fontSize = `${this.inputs["font-size-root"].value}px`
-		this.visualOutput.style.fontSize = `clamp(${this.toRem(this.inputs["size-min"].value, this.inputs["font-size-root"].value)}em, ${preferredSize}em + ${variableSize}vw, ${this.toRem(this.inputs["size-max"].value, this.inputs["font-size-root"].value)}em)`
+		this.visualOutput.style.fontSize = `clamp(${this.toRem(this.inputs["size-min"].value, this.inputs["font-size-root"].value)}em, ${preferredSize}em + ${variableSize}${viewportUnits}, ${this.toRem(this.inputs["size-max"].value, this.inputs["font-size-root"].value)}em)`
 
 		this.visualRoot.querySelector("span").innerText = `Root Size: ${this.inputs["font-size-root"].value}px`
 		this.visualOutput.querySelector("span").innerText = `Clamped Size: ${this.inputs["size-min"].value}–${this.inputs["size-max"].value}px`
@@ -44,15 +46,15 @@ Change = ${this.limitDecimals(change, 5)}`
 A = ${this.inputs["size-max"].value}px - ${this.inputs["viewport-max"].value}px * ${this.limitDecimals(change, 5)}
 A = ${preferredSizePixels}px = ${preferredSize}rem`
 
-		this.howB.innerHTML = `B = 100vw * Change
-B = 100vw * ${this.limitDecimals(change, 5)}
-B = ${variableSize}vw`
+		this.howB.innerHTML = `B = 100${viewportUnits} * Change
+B = 100${viewportUnits} * ${this.limitDecimals(change, 5)}
+B = ${variableSize}${viewportUnits}`
 
 		this.howResult.innerHTML = `Result = clamp(sizeMin, A + B, sizeMax)
-Result = clamp(${this.toRem(this.inputs["size-min"].value, this.inputs["font-size-root"].value)}rem, ${preferredSize}rem + ${variableSize}vw, ${this.toRem(this.inputs["size-max"].value, this.inputs["font-size-root"].value)}rem)`
+Result = clamp(${this.toRem(this.inputs["size-min"].value, this.inputs["font-size-root"].value)}rem, ${preferredSize}rem + ${variableSize}${viewportUnits}, ${this.toRem(this.inputs["size-max"].value, this.inputs["font-size-root"].value)}rem)`
 
-		this.howCheck.innerHTML = `A + B = ${preferredSize}rem + ${variableSize}vw
-A + B = ${preferredSizePixels}px + ${variableSize}vw
+		this.howCheck.innerHTML = `A + B = ${preferredSize}rem + ${variableSize}${viewportUnits}
+A + B = ${preferredSizePixels}px + ${variableSize}${viewportUnits}
 
 Minimum Size ≈ ${preferredSizePixels}px + (${this.limitDecimals(change, 5)} * ${this.inputs["viewport-min"].value}px)
 Minimum Size ≈ ${preferredSizePixels}px + ${this.limitDecimals(change, 5) * this.inputs["viewport-min"].value}px
@@ -66,8 +68,8 @@ Maximum Size ≈ ${this.limitDecimals(this.inputs["size-max"].value - this.input
 	}
 
 	measureViewport() {
-		this.visualViewport.querySelector("span").innerText = `Viewport Width: ${window.innerWidth}px`
 		this.visualCalculated.querySelector("span").innerText = `Current Size: ${this.limitDecimals(this.visualOutput.querySelector(".size-example").getBoundingClientRect().width, 3)}px`
+		this.visualViewport.querySelector("span").innerText = `Viewport Size: ${window.innerWidth}px`
 	}
 
 	init() {
@@ -80,16 +82,25 @@ Maximum Size ≈ ${this.limitDecimals(this.inputs["size-max"].value - this.input
 			}
 		})
 
+		this.inputs["viewport-units"].addEventListener("change", (event) => {
+			event.preventDefault()
+			this.calculate()
+			history.replaceState({}, document.title, `${location.protocol}//${location.host}${location.pathname}?font-size-root=${this.inputs["font-size-root"].value}&size-min=${this.inputs["size-min"].value}&size-max=${this.inputs["size-max"].value}&viewport-min=${this.inputs["viewport-min"].value}&viewport-max=${this.inputs["viewport-max"].value}&viewport-units=${this.inputs["viewport-units"].value}`)
+		})
+
 		this.form = document.getElementById("clamp-calculator")
 		this.form.addEventListener("submit", (event) => {
 			event.preventDefault()
 			this.calculate()
 			this.output.focus()
-			history.replaceState({}, document.title, `${location.protocol}//${location.host}${location.pathname}?font-size-root=${this.inputs["font-size-root"].value}&size-min=${this.inputs["size-min"].value}&size-max=${this.inputs["size-max"].value}&viewport-min=${this.inputs["viewport-min"].value}&viewport-max=${this.inputs["viewport-max"].value}`)
+			history.replaceState({}, document.title, `${location.protocol}//${location.host}${location.pathname}?font-size-root=${this.inputs["font-size-root"].value}&size-min=${this.inputs["size-min"].value}&size-max=${this.inputs["size-max"].value}&viewport-min=${this.inputs["viewport-min"].value}&viewport-max=${this.inputs["viewport-max"].value}&viewport-units=${this.inputs["viewport-units"].value}`)
 		})
 		this.form.addEventListener("reset", (event) => {
 			event.preventDefault()
-			Object.values(this.inputs).forEach((element) => {
+			this.inputs["viewport-units"].options[0].selected = true
+			Object.values(this.inputs).filter(element => {
+				return element.localName === "input"
+			}).forEach((element) => {
 				element.value = element.dataset.default
 			})
 			this.calculate()
