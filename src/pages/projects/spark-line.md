@@ -251,4 +251,4 @@ If you wanted to use `<is-land>` as well, I recommend something like the followi
 		{% include '../../../css/components/shelf.css' %}
 	}
 {% endset %}
-{%- css 'critical' %}{{ shelf_css | cssmin }}{% endcss -%}
+{%- css 'critical' %}{{ shelf_css | cssmin | safe }}{% endcss -%}

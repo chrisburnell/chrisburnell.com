@@ -4,7 +4,7 @@
 			{% include '../../../css/components/ads.css' %}
 		}
 	{% endset %}
-	{%- css %}{{ ads_css | cssmin }}{% endcss -%}
+	{%- css %}{{ ads_css | cssmin | safe }}{% endcss -%}
 	<div class=" [ ads ] ">
 		<!-- Carbon Ads -->
 		<script async src="https://cdn.carbonads.com/carbon.js?serve={{ site.carbon }}&placement={{ site.url | getHost | replace(".", "") }}" id="_carbonads_js"></script>

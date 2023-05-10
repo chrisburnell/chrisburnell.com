@@ -65,7 +65,7 @@
 	img {
 		object-fit: contain;
 		max-height: 100%;
-		transition: all var(--transition-duration-short) var(--transition-function-bounce);
+		transition: all var(--transition-duration-short) var(--transition-function);
 	}
 
 	:is(:hover, :focus, :active) > img {

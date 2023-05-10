@@ -25,7 +25,7 @@
 	h1 {
 		line-height: var(--line-height-medium);
 
-		%anchor {
+		& > a {
 			color: inherit;
 		}
 	}
@@ -33,17 +33,41 @@
 	.cover {
 		margin: 0;
 		object-fit: cover;
-		transition: transform var(--transition-duration-short) var(--transition-function);
+		object-position: center;
+		transition: transform var(--transition-duration) var(--transition-function);
 	}
-	%anchor:is(:hover, :focus, :active) {
+
+	.cover-anchor {
+		display: block;
+		overflow: hidden;
+	}
+
+	// Two-way interactivity between .cover-anchor / h1 > a
+	.cover-anchor:is(:hover, :focus, :active),
+	article:has(h1 > a:is(:hover, :focus, :active)) {
 		.cover {
-			transform: scaleZ(1.05);
+			transform: scale(1.1);
 		}
+	}
+	.cover-anchor:is(:hover, :focus, :active) + h1 > a {
+		text-decoration-color: h(maple) !important;
+	}
+
+	// Mimic an outline on .cover-anchor when h1 > a is viisbly focussed
+	.cover-anchor:has(+ h1 > a:focus-visible) {
+		outline: var(--outline-width, var(--size-border-thin)) solid var(--outline-color, Highlight);
+		outline-offset: var(--outline-offset, var(--size-border-thin));
 	}
 }
 
 .shelf--books {
 	.cover {
 		block-size: 240px;
+	}
+}
+
+.shelf--music {
+	.cover-link {
+		aspect-ratio: 1 / 1;
 	}
 }

@@ -33,4 +33,4 @@ My maternal grandfather, or *Opa* as his grandchildren called him, was a highly-
 		{% include '../../css/components/shelf.css' %}
 	}
 {% endset %}
-{%- css 'critical' %}{{ shelf_css | cssmin }}{% endcss -%}
+{%- css 'critical' %}{{ shelf_css | cssmin | safe }}{% endcss -%}

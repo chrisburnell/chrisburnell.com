@@ -15,4 +15,4 @@ theme: null
 		{% include '../../../css/components/deck.css' %}
 	}
 {% endset %}
-{%- css 'critical' %}{{ deck_css | cssmin }}{% endcss -%}
+{%- css 'critical' %}{{ deck_css | cssmin | safe }}{% endcss -%}

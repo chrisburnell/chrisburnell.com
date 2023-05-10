@@ -4,7 +4,7 @@
 			{% include '../../../css/components/responses.css' %}
 		}
 	{% endset %}
-	{%- css %}{{ responses_css | cssmin }}{% endcss -%}
+	{%- css %}{{ responses_css | cssmin | safe }}{% endcss -%}
 	<div id="respond" class=" [ box ] [ flow ] [ responses ] ">
 		<!-- </textarea> -->
 		<!-- '"´ -->

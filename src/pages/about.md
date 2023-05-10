@@ -118,4 +118,4 @@ The source code is available for your perusal on [GitHub](https://github.com/{{ 
 		{% include '../../css/components/shelf.css' %}
 	}
 {%- endset -%}
-{%- css 'critical' %}{{ shelf_css | cssmin }}{% endcss -%}
+{%- css 'critical' %}{{ shelf_css | cssmin | safe }}{% endcss -%}
