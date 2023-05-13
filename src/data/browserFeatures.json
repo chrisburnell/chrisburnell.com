@@ -40,7 +40,7 @@
   {
     "id": "css-subgrid",
     "language": "css",
-    "supports": "(grid-template-columns: subgrid)",
+    "supports": "grid-template-columns: subgrid",
     "key": "grid-template-rows.subgrid",
     "title": "Subgrid",
     "description": "Allows grid to cascade into children of a grid container, rather than the need for a flat layout.",
@@ -56,7 +56,7 @@
   {
     "id": "css-color-function",
     "language": "css",
-    "supports": "(color: color(sRGB 0 1 0))",
+    "supports": "color: color(sRGB 0 1 0)",
     "type": "types",
     "key": "color.color",
     "title": "color()",
@@ -66,7 +66,7 @@
   {
     "id": "mdn-css_types_color_oklch",
     "language": "css",
-    "supports": "(color: oklch(0 0 0))",
+    "supports": "color: oklch(0 0 0)",
     "type": "types",
     "key": "color.oklch",
     "title": "oklch()",
@@ -76,7 +76,7 @@
   {
     "id": "mdn-css_types_color_oklab",
     "language": "css",
-    "supports": "(color: oklab(0 0 0))",
+    "supports": "color: oklab(0 0 0)",
     "type": "types",
     "key": "color.oklab",
     "title": "oklab()",
@@ -86,7 +86,7 @@
   {
     "id": "css-lch-lab",
     "language": "css",
-    "supports": "(color: lch(0 0 0))",
+    "supports": "color: lch(0 0 0)",
     "type": "types",
     "key": "color.lab",
     "title": "lab()/lch()",
@@ -96,7 +96,7 @@
   {
     "id": "hwb",
     "language": "css",
-    "supports": "(color: hwb(0 0% 0%))",
+    "supports": "color: hwb(0 0% 0%)",
     "type": "types",
     "key": "color.hwb",
     "title": "hwb()",
@@ -106,7 +106,7 @@
   {
     "id": "css-color-contrast",
     "language": "css",
-    "supports": "(color: color-contrast(black vs white, snow))",
+    "supports": "color: color-contrast(black vs white, snow)",
     "type": "types",
     "key": "color.color-contrast",
     "title": "color-contrast()",
@@ -116,7 +116,7 @@
   {
     "id": "css-color-mix",
     "language": "css",
-    "supports": "(color: color-mix(in hsl, red, blue))",
+    "supports": "color: color-mix(in hsl, red, blue)",
     "type": "types",
     "key": "color.color-mix",
     "title": "color-mix()",
@@ -126,7 +126,7 @@
   {
     "id": "css-scroll-timeline",
     "language": "css",
-    "supports": "(scroll-timeline: none block)",
+    "supports": "scroll-timeline: none block",
     "type": "properties",
     "key": "scroll-timeline",
     "title": "Scroll Timeline",
@@ -136,7 +136,7 @@
   {
     "id": "viewport-unit-variants",
     "language": "css",
-    "supports": "(height: 100dvb)",
+    "supports": "height: 100dvb",
     "type": "properties",
     "key": "viewport_percentage_units_dynamic",
     "title": "Viewport Unit Variants",
@@ -175,7 +175,7 @@
   {
     "id": "css3-attr",
     "language": "css",
-    "supports": "(width: attr(charlength ch, 60ch))",
+    "supports": "width: attr(charlength ch, 60ch)",
     "title": "attr()",
     "description": "Expands the use of the `attr()` function by making it available to more properties and by allowing a <q>type or unit</q> to be passed alongside the targetted attribute. This could be used for things like passing a <q>url</q>-type attribute to `background-image`.",
     "links": ["[Official Specification](https://www.w3.org/TR/css-values/#attr-notation)", "[Page on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/attr)"]
@@ -183,7 +183,7 @@
   {
     "id": "css-math-functions",
     "language": "css",
-    "supports": "(width: clamp(1.438rem, 1rem + 1vw, 2rem))",
+    "supports": "width: clamp(1.438rem, 1rem + 1vw, 2rem)",
     "title": "Comparison Functions",
     "description": "Brings `min()`, `max()`, and `clamp()` to CSS.",
     "links": ["[Official Specification](https://www.w3.org/TR/css-values-4/#comp-func)"]
@@ -191,7 +191,7 @@
   {
     "id": "stepped-value-funcs",
     "language": "css",
-    "supports": "(width: mod(16px, 5px))",
+    "supports": "width: mod(16px, 5px)",
     "type": "types",
     "key": "round",
     "title": "Stepped Value Functions",
@@ -201,7 +201,7 @@
   {
     "id": "trig-funcs",
     "language": "css",
-    "supports": "(width: calc(1px * sin(45deg)))",
+    "supports": "width: calc(1px * sin(45deg))",
     "type": "types",
     "key": "sin",
     "title": "Trigonometry Functions",
@@ -211,7 +211,7 @@
   {
     "id": "exponent-funcs",
     "language": "css",
-    "supports": "(width: calc(2px * pow(2, 3)))",
+    "supports": "width: calc(2px * pow(2, 3))",
     "type": "types",
     "key": "pow",
     "title": "Exponential Functions",
@@ -221,7 +221,7 @@
   {
     "id": "sign-funcs",
     "language": "css",
-    "supports": "(width: abs(100% - 16px))",
+    "supports": "width: abs(100% - 16px)",
     "type": "types",
     "key": "abs",
     "title": "Sign-Related Functions",
@@ -231,7 +231,7 @@
   {
     "id": "calc-constants",
     "language": "css",
-    "supports": "(transform: scale(min(pi, 5, e)))",
+    "supports": "transform: scale(min(pi, 5, e))",
     "type": "types",
     "key": "calc-constant.pi",
     "title": "Numeric Constants",
@@ -249,7 +249,7 @@
   {
     "id": "css-logical-props",
     "language": "css",
-    "supports": "(inline-size: 100%)",
+    "supports": "inline-size: 100%",
     "title": "Logical Properties",
     "description": "Properties used to define size-based values, what we’re used as being `width`, `height`, `margin-left`, and so on, but in such a way that works hand-in-hand with `writing-mode` without the need to redefine the “top” or “bottom” of an element to do so.",
     "links": ["[Official Specification](https://www.w3.org/TR/css-logical-1/)", "[Page on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Basic_concepts)"]
@@ -265,7 +265,7 @@
   {
     "id": "relative-colors",
     "language": "css",
-    "supports": "(color: rgb(from blue r g b / 80%))",
+    "supports": "color: rgb(from blue r g b / 80%)",
     "title": "Relative Colors",
     "description": "Gives us the ability to generate colours from other colours, with the ability to destructure the colour channels and manipulate them on the way.",
     "links": ["[Official Specification](https://www.w3.org/TR/css-color-5/#relative-colors)"]
@@ -311,7 +311,7 @@
   {
     "id": "mdn-css_properties_margin-trim",
     "language": "css",
-    "supports": "(margin-trim: block)",
+    "supports": "margin-trim: block",
     "type": "properties",
     "key": "margin-trim",
     "title": "margin-trim",
@@ -321,7 +321,7 @@
   {
     "id": "css-variables",
     "language": "css",
-    "supports": "(--var: red)",
+    "supports": "--var: red",
     "type": "properties",
     "key": "custom-property",
     "title": "CSS Variables",
@@ -331,7 +331,7 @@
   {
     "id": "css-text-wrap",
     "language": "css",
-    "supports": "(text-wrap: balance)",
+    "supports": "text-wrap: balance",
     "title": "Balanced Text",
     "description": "Evenly distributes words across multiple lines to prevent widows.",
     "links": ["[Working Draft](https://www.w3.org/TR/css-text-4/#text-wrapping)", "[Article by Richard Rutter](https://clagnut.com/blog/2424/)"]
@@ -339,9 +339,19 @@
   {
     "id": "intrinsic-width",
     "language": "css",
-    "supports": "(width: fit-content)",
+    "supports": "width: fit-content",
     "title": "Intrinsic & Extrinsic Sizing",
     "description": "Allows defining size using intrinsic values: `max-content`, `min-content`, `fit-content`, and `stretch`.",
     "links": ["[Working Draft](https://www.w3.org/TR/css-sizing-3/#sizing-values)"]
+  },
+  {
+    "id": "mdn-css_types_easing-function_linear-function",
+    "language": "css",
+    "supports": "transition-timing-function: linear(1, -0.5, 0)",
+    "type": "types",
+    "key": "linear-function",
+    "title": "Linear Easing Function",
+    "description": "Allows defining more complex mathematical functions to describe the rate of change for numerical value changes.",
+    "links": ["[Working Draft](https://drafts.csswg.org/css-images-4/#linear-gradients)", "[Page on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/easing-function)"]
   }
 ]

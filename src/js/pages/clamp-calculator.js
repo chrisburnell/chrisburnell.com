@@ -97,7 +97,7 @@ Maximum Size ≈ ${this.limitDecimals(this.inputs["size-max"].value - this.input
 		})
 		this.form.addEventListener("reset", (event) => {
 			event.preventDefault()
-			this.inputs["viewport-units"].options[0].selected = true
+			this.inputs["viewport-units"].querySelector("[data-default]").selected = true
 			Object.values(this.inputs).filter(element => {
 				return element.localName === "input"
 			}).forEach((element) => {

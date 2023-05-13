@@ -53,7 +53,7 @@ inlinejs: true
 	@layer utilities {
 		{%- for feature in browserFeaturesSorted -%}
 			{%- if feature.supports -%}
-				@supports {{ feature.supports}} {
+				@supports ({{ feature.supports}}) {
 					[id="support-{{ feature.id }}"] {
 						display: inline;
 					}

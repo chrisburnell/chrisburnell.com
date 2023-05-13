@@ -95,6 +95,7 @@ textarea {
 }
 
 select {
+	padding-block: 0.2em;
 	font-size: inherit;
 	line-height: var(--line-height-small);
 	transition: border-color var(--transition-duration) var(--transition-function);
