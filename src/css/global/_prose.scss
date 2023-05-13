@@ -88,21 +88,16 @@ sup {
 }
 
 hr {
-	--flow-space: var(--size-large);
-
 	background-color: h(thunder, gamma);
 	inline-size: 100%;
+	max-inline-size: 20ch;
 	block-size: var(--size-border-thin);
 	display: block;
 	border: 0;
-	margin: 0;
+	margin: var(--size-large) auto !important;
 	position: relative;
 	// show the overflow in Edge and IE
 	overflow: visible;
-
-	.flow > & + * {
-		margin-block-start: var(--size-large);
-	}
 }
 
 dialog {

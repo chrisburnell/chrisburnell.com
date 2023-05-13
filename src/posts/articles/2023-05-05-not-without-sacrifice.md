@@ -1,17 +1,15 @@
 ---
 date: 2023-05-05T00:20:09+0100
+updated_date: 2023-05-13T09:13:00+0100
 title: Not without sacrifice
 description: With the boom of JavaScript frameworks and legends-come-true like the new CSS parent selector, we’ve borne witness to an explosion of new technologies and ways to build for the web. But what tradeoffs have we made for all these new bells and whistles?
 tags:
   - state-of-the-web
 ---
 
-<figure>
-    <div id="bars-1" class="flow" title="Then">
-        <data class="dx  background--maple" title="DX" value="50%"></data>
-        <data class="ux  background--highland" title="UX" value="50%"></data>
-    </div>
-</figure>
+I recently had the pleasure of watching [Jack Franklin’s](https://www.jackfranklin.co.uk) talk from [All Day Hey! 2023](https://heypresents.com/conferences/2023), [<q>Abstractions, complexities and off-ramps</q>](https://www.youtube.com/watch?v=Siq8eBkgpjY), and a couple of slides [at the end](https://youtu.be/Siq8eBkgpjY?t=2582) got me thinking about the landscape of developer concerns in front end; *a bit cynically, I’ll admit, but it comes back around in the end!*
+
+----
 
 In recent years, there has been a growing emphasis on the importance of Developer Experience (*DX*) in front end development. This has lead to the creation of powerful tools that assist developers in building and organising more feature-rich websites. With the introduction of new web technologies and seeing the maturity of beloved tools that have become essential to many in the field, suffice to say it has been an exciting time for web development.
 
@@ -66,6 +64,7 @@ It’s heartwarming to see concerns about performance, sub-optimal browsing cond
     }
     [id*="bars-"]::after,
     [id*="pie-"]::after {
+        display: none;
         content: attr(title);
         font-size: var(--font-size-gamma);
         font-weight: var(--font-weight-semibold);

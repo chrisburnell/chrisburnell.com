@@ -24,25 +24,17 @@
 		transition: all var(--transition-duration) var(--transition-function);
 		z-index: 0;
 
-		.header.active & {
-			font-size: var(--font-size-small);
-		}
-
-		&::before,
-		&::after {
+		// Solid Colour
+		&::before {
 			@include non-interactive;
 			content: "";
+			background-color: h(raven);
 			opacity: 0;
 			inline-size: 100%;
 			block-size: 0.375em;
 			position: absolute;
 			inset-block-start: 100%;
 			inset-inline-start: 0;
-		}
-
-		// Solid Colour
-		&::before {
-			background-color: h(raven);
 			box-shadow: var(--box-shadow-low);
 			transform: translateY(100%);
 			// prettier-ignore
@@ -51,41 +43,11 @@
 				opacity calc(2 * var(--transition-duration)) linear;
 		}
 
-		// Fancy
-		&::after {
-			background-image: linear-gradient(to right, h(bowhead), h(raven), h(highland), h(coyote), h(highland), h(raven), h(bowhead));
-			background-size: 800% 100%;
-			animation: rainbow calc(var(--animation-duration) * 4) linear infinite;
-
-			@at-root {
-				@keyframes rainbow {
-					from {
-						background-position: 0% 0%;
-					}
-					to {
-						background-position: -800% 0%;
-					}
-				}
-			}
-		}
-
 		&[aria-current="page"],
 		&:is(:hover, :focus, :active) {
 			&::before {
 				opacity: 1;
 				transform: none;
-			}
-		}
-		&:is(:hover, :focus) {
-			&::after {
-				opacity: 1;
-				transition: all var(--animation-duration) var(--transition-function) var(--transition-duration);
-			}
-		}
-		&:active {
-			&::after {
-				opacity: 1;
-				transition: none;
 			}
 		}
 	}
