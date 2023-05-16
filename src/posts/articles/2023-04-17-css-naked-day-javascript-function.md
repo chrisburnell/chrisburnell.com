@@ -1,6 +1,6 @@
 ---
-date: 2023-04-17T07:49:36+0100
 updated: 2023-04-19T22:22:30+0100
+date: 2023-04-17T07:49:36+0100
 title: CSS Naked Day JavaScript Function
 description: Rather than remove CSS from my website manually on CSS Naked Day, I have employed a short JavaScript function to perform the check for me.
 tags:

@@ -1,6 +1,6 @@
 ---
+updated: 2023-05-13T09:13:00+0100
 date: 2023-05-05T00:20:09+0100
-updated_date: 2023-05-13T09:13:00+0100
 title: Not without sacrifice
 description: With the boom of JavaScript frameworks and legends-come-true like the new CSS parent selector, we’ve borne witness to an explosion of new technologies and ways to build for the web. But what tradeoffs have we made for all these new bells and whistles?
 tags:
