@@ -21,7 +21,7 @@ class ClampCalculator {
 	}
 
 	calculate() {
-		const viewportUnits = this.inputs["viewport-units"].value;
+		const viewportUnits = this.inputs["viewport-units"].value
 		const change = (this.inputs["size-max"].value - this.inputs["size-min"].value) / (this.inputs["viewport-max"].value - this.inputs["viewport-min"].value)
 
 		const preferredSizePixels = this.limitDecimals(this.inputs["size-max"].value - this.inputs["viewport-max"].value * change)
@@ -98,11 +98,13 @@ Maximum Size ≈ ${this.limitDecimals(this.inputs["size-max"].value - this.input
 		this.form.addEventListener("reset", (event) => {
 			event.preventDefault()
 			this.inputs["viewport-units"].querySelector("[data-default]").selected = true
-			Object.values(this.inputs).filter(element => {
-				return element.localName === "input"
-			}).forEach((element) => {
-				element.value = element.dataset.default
-			})
+			Object.values(this.inputs)
+				.filter((element) => {
+					return element.localName === "input"
+				})
+				.forEach((element) => {
+					element.value = element.dataset.default
+				})
 			this.calculate()
 			history.replaceState({}, document.title, `${location.protocol}//${location.host}${location.pathname}`)
 		})

@@ -20,7 +20,7 @@
     "url": "https://github.com/chrisburnell/chrisburnell.com/issues"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^24.1.0",
+    "@rollup/plugin-commonjs": "^25.0.0",
     "@rollup/plugin-node-resolve": "^15.0.2",
     "autoprefixer": "^10.4.14",
     "clean-css": "^5.3.2",
@@ -50,8 +50,8 @@
     "@chrisburnell/eleventy-cache-webmentions": "^1.1.5",
     "@chrisburnell/pentatonic": "^1.1.4",
     "@chrisburnell/spark-line": "^1.2.4",
-    "@csstools/postcss-oklab-function": "^2.2.1",
-    "@mdn/browser-compat-data": "^5.2.57",
+    "@csstools/postcss-oklab-function": "^2.2.2",
+    "@mdn/browser-compat-data": "^5.2.59",
     "@sindresorhus/slugify": "1.1.2",
     "@tweetback/canonical": "^2.0.32",
     "@zachleat/details-utils": "^2.0.2",
