@@ -4,6 +4,6 @@ module.exports = {
 	category: "video",
 	categoryPlural: "videos",
 	categoryCode: "v",
-	tags: ["video", "feature", "throwback"],
+	tags: ["video", "blog", "feature"],
 	emoji: "🎥",
 }

@@ -41,7 +41,7 @@ perch: true
 
 		<ol class=" [ grid ] [ shelf ] " data-layout="natural">
 			{%- for item in collections.categories -%}
-				{%- set count = collections[item.title] | arrayKeyIncludes('data.tags', 'post') | arePublished | getCollectionCount(false, true) -%}
+				{%- set count = collections[item.title] | arePublished | getCollectionCount -%}
 				<li><a href="/{{ item.plural }}/" class=" [ strong ] " style="font-size: 1.25em;">{{ item.properPlural | title }} <sup>{{ count }}</sup></a></li>
 			{%- endfor -%}
 		</ol>
@@ -52,7 +52,7 @@ perch: true
 			{%- set lowest = 9001 -%}
 			{%- set highest = 0 -%}
 			{%- for item in collections.tags | sort -%}
-				{%- set count = collections[item] | arrayKeyIncludes('data.tags', 'post') | arePublished | getCollectionCount(false, true) -%}
+				{%- set count = collections[item] | arePublished | getCollectionCount -%}
 				{%- if count < lowest -%}
 					{%- set lowest = count -%}
 				{%- elif count > highest -%}
@@ -60,7 +60,7 @@ perch: true
 				{%- endif -%}
 			{%- endfor -%}
 			{%- for item in collections.tags | sort -%}
-				{%- set count = collections[item] | arrayKeyIncludes('data.tags', 'post') | arePublished | getCollectionCount(false, true) -%}
+				{%- set count = collections[item] | arePublished | getCollectionCount -%}
 				{# map range from lowest–highest to 1–1.375, 3 decimal places #}
 				{%- set fontSize = count | rangeMap(lowest, highest, 1, 1.375, 3) -%}
 				<li><a href="/tag/{{ item }}/" class=" [ strong ] " style="font-size: {{ fontSize }}em;">{{ item }} <sup>{{ count }}</sup></a></li>
@@ -68,7 +68,10 @@ perch: true
 		</ol>
 
 		<div class=" [ grid ] [ navigator ] ">
-			<a class=" [ button ] " href="/feeds/">Browse Feeds</a>
+			<a class=" [ button ] " href="/feeds/">
+				<svg width="20" height="20" aria-hidden="true" focusable="false" style="fill: #ff8c00; vertical-align: sub;"><use href="#svg--rss"></use></svg>
+				Browse Feeds
+			</a>
 		</div>
 	</div>
 

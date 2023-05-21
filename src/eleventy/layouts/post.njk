@@ -7,7 +7,7 @@ layout: base
 		<li><a href="/archive/">All Posts</a></li><li><a href="/{{ categoryPlural | default(category) }}/">{{ categoryProperPlural | default(categoryPlural) | default(category) | title }}</a></li>
 	</ul>
 
-	<h1 id="title" class=" [ title{% if title_error %} title--negative{% elif title_success %} title--positive{% endif %} ] {{ '[ hidden ] ' if not title and not of_title }}">
+	<h1 id="title" class=" [ title{% if title_error %} title--negative{% elif title_success %} title--positive{% endif %} ] {{ '[ hidden ] ' if not title and not of_title }}" style="view-transition-name: title-{{ page.fileSlug }};">
 		{% if of_title %}
 			<span>{{ title | default(of_title) | striptags(true) | safe }}</span>
 		{% elif title %}

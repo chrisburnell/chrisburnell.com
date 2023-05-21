@@ -11,7 +11,7 @@ hfeed: true
 show_photos: true
 truncate: true
 ---
-{%- set collection = collections[category.title] | arrayKeyIncludes('data.tags', 'post') | arePublished | reverse -%}
+{%- set collection = collections[category.title] | arePublished | reverse -%}
 {%- set count = collection.length -%}
 {%- set latest_year = collection[0].date.getFullYear() -%}
 {%- set first_year = collection[count-1].date.getFullYear() -%}
@@ -68,7 +68,7 @@ truncate: true
 		{% else %}
 			{%- set year = latest_year -%}
 			<h2 id="{{ year }}">
-				{{ year }} <small>{{ collection | getCollectionCount(year, true) }} post{{ 's' if collection | getCollectionCount(year, true) > 1 }}</small>
+				{{ year }} <small>{{ collection | getCollectionCount(year) }} post{{ 's' if collection | getCollectionCount(year) > 1 }}</small>
 			</h2>
 			<div id="list-{{ year }}" class=" [ deck ] ">
 				{% for item in collection %}
@@ -76,7 +76,7 @@ truncate: true
 						{%- set year = item.date.getFullYear() -%}
 						</div>
 						<h2 id="{{ year }}">
-							{{ year }} <small>{{ collection | getCollectionCount(year, true) }} post{{ 's' if collection | getCollectionCount(year, true) > 1 }}</small>
+							{{ year }} <small>{{ collection | getCollectionCount(year) }} post{{ 's' if collection | getCollectionCount(year) > 1 }}</small>
 						</h2>
 						<div id="list-{{ year }}" class=" [ deck ] ">
 					{% endif %}

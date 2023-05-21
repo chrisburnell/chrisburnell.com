@@ -4,5 +4,5 @@ module.exports = {
 	category: "note",
 	categoryPlural: "notes",
 	categoryCode: "n",
-	tags: ["note", "feature", "throwback"],
+	tags: ["note", "blog", "feature"],
 }

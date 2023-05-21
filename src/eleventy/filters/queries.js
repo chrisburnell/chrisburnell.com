@@ -28,7 +28,7 @@ module.exports = {
 
 		return value
 	},
-	getCollectionCount: (items, year, showHidden = false) => {
+	getCollectionCount: (items, year, blogOnly = false) => {
 		return items
 			.filter((item) => {
 				if ("data" in item) {
@@ -38,10 +38,7 @@ module.exports = {
 					if ("published" in item.data && item.data.published === false) {
 						return false
 					}
-					if ("hidden" in item.data && item.data.hidden === true && showHidden === false) {
-						return false
-					}
-					if ("tags" in item.data && item.data.tags.includes("ignore")) {
+					if (item.data.tags.includes("ignore") || (blogOnly && !item.data.tags.includes("blog"))) {
 						return false
 					}
 				}

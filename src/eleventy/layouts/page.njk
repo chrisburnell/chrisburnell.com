@@ -9,7 +9,7 @@ layout: base
 		</ul>
 	{% endif %}
 
-	<h1 id="title" class=" [ title{% if title_error %} title--negative{% elif title_success %} title--positive{% endif %} ] ">
+	<h1 id="title" class=" [ title{% if title_error %} title--negative{% elif title_success %} title--positive{% endif %} ] " style="view-transition-name: title-{{ page.fileSlug }};">
 		<span class=" [ p-name ] ">{{ tagline | default(title) | safe }}</span>
 	</h1>
 

@@ -42,7 +42,7 @@ module.exports = {
 	},
 	throwbackPosts: (collection) => {
 		return collection
-			.getFilteredByTag("throwback")
+			.getFilteredByTag("blog")
 			.filter(isPublished)
 			.filter((item) => {
 				if ((item.data.rsvp && item.data.rsvp?.value == "yes") || !item.data.in_reply_to) {

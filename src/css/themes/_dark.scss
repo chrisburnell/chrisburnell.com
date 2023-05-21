@@ -14,24 +14,28 @@
 	&:is(body),
 	&:is(html) body {
 		background-color: h(mineshaft);
-		color: h(snowy);
+		color: h(yeti);
+	}
+
+	// Set some special dark backgrounds
+	:is(.header, .footer, .box, .librarian) {
+		background-color: var(--background-color, #{mix(map-get($colors, mineshaft), map-get($colors, thunder), (1 - map-get($opacities, gamma)) * 100%)});
 	}
 
 	// Header Block
 	.header {
-		background-color: mix(map-get($colors, mineshaft), map-get($colors, bear), (1 - map-get($opacities, delta)) * 100%);
-		color: h(snowy);
+		color: h(yeti);
 	}
 
 	// Main Block
 	.main {
 		background-color: h(mineshaft);
-		color: h(snowy);
+		color: h(yeti);
 	}
 
 	// Footer Block
 	.footer {
-		background-image: linear-gradient(to bottom, h(thunder, gamma), h(thunder, gamma));
+		color: h(yeti) !important;
 	}
 
 	// Anchor Global
@@ -46,6 +50,10 @@
 	///
 	// Global Content Elements
 	///
+
+	h2 {
+		box-shadow: inset 0 calc(-1 * var(--size-border-thin)) 0 h(nickel);
+	}
 
 	:is(blockquote, code, samp, kbd) {
 		background-color: h(coyote, gamma);
@@ -63,7 +71,7 @@
 	select,
 	textarea {
 		background-color: h(thunder);
-		color: h(snowy);
+		color: h(yeti);
 		border-color: h(kaiser);
 
 		&:hover {
@@ -114,17 +122,12 @@
 
 	.box,
 	%box {
-		background-color: var(--background-color, h(bear, delta));
 		border-block-start-color: var(--border-color, h(raven, alpha));
 	}
 
 	.box %anchor,
 	%box %anchor {
 		color: h(highland);
-	}
-
-	.librarian {
-		--background-color: #{mix(map-get($colors, thunder), map-get($colors, mineshaft), map-get($opacities, delta) * 100%)};
 	}
 
 	.rating {

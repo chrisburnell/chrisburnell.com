@@ -4,6 +4,6 @@ module.exports = {
 	category: "talk",
 	categoryPlural: "talks",
 	categoryCode: "t",
-	tags: ["talk", "feature", "throwback"],
+	tags: ["talk", "blog", "feature"],
 	emoji: "🗣",
 }

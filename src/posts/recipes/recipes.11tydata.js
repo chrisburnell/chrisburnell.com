@@ -6,6 +6,6 @@ module.exports = {
 	category: "recipe",
 	categoryPlural: "recipes",
 	categoryCode: "d",
-	tags: ["recipe", "feature"],
+	tags: ["recipe", "blog", "feature"],
 	emoji: "📝",
 }
