@@ -36,16 +36,16 @@ module.exports = {
 		date: async (data) => {
 			if (data.github) {
 				const github = await githubData(data.github)
-				return github["created_at"]
+				return github["created_at"] || null
 			}
-			return data.date || ""
+			return data.date || null
 		},
 		updated: async (data) => {
 			if (data.github) {
 				const github = await githubData(data.github)
-				return github["updated_at"] || ""
+				return github["pushed_at"] || null
 			}
-			return data.updated || ""
+			return data.updated || null
 		},
 		tagline: async (data) => {
 			if (data.npm) {

@@ -33,7 +33,7 @@ truncate: true
 	<div class=" [ description ] [ flow ] ">
 		<p>
 			<span class=" [ p-summary ] ">{% if count > 1 %}All {{ count | numberStringFormat }}{% else %}Just the one{% endif %} of my posts tagged <q>{{ tag | capitalizeFormat }}</q>.</span>
-			<a href="{{ site.url }}/{{ tag }}.xml" title="Tagged: {{ tag | capitalizeFormat | safe }} Feed"><svg width="20" height="20" aria-hidden="true" focusable="false" style="fill: #ff8c00"><use href="#svg--rss"></use></svg></a>
+			<a href="{{ site.url }}/{{ tag }}.xml" title="Tagged: {{ tag | capitalizeFormat | safe }} Feed"><svg width="20" height="20" aria-hidden="true" focusable="false" style="fill: #ff8c00; vertical-align: sub;"><use href="#svg--rss"></use></svg></a>
 		</p>
 	</div>
 
