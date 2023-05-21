@@ -18,7 +18,7 @@
 	}
 
 	// Set some special dark backgrounds
-	:is(.header, .footer, .box, .librarian) {
+	:is(.header, .footer, .box) {
 		background-color: var(--background-color, #{mix(map-get($colors, mineshaft), map-get($colors, thunder), (1 - map-get($opacities, gamma)) * 100%)});
 	}
 
