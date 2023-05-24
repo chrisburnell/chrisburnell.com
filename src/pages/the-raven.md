@@ -1,7 +1,7 @@
 ---
-layout: portal
 title: "The Raven"
 description: "by Edgar Allan Poe"
+portal: true
 perch: true
 ---
 

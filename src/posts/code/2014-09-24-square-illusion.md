@@ -1,6 +1,9 @@
 ---
 date: 2014-09-24T12:00:00+0100
 title: Square Illusion
+tags:
+  - css
+  - motion
 codepen_slug: IKHhC
 codepen_featured: true
 ---

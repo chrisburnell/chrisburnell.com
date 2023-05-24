@@ -1,6 +1,9 @@
 ---
 date: 2014-09-17T12:00:00+0100
 title: Infinite Square
+tags:
+  - css
+  - motion
 codepen_slug: HlcAJ
 codepen_featured: true
 ---

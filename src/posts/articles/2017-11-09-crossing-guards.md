@@ -5,6 +5,7 @@ description: Throttle back on your scroll events and watch out for the Intersect
 tags:
   - javascript
   - performance
+  - motion
 banner: crossing-guards.png
 syndicate_to:
   - https://twitter.com/iamchrisburnell/status/928671414017773568

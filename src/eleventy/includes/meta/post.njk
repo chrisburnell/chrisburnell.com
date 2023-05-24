@@ -72,7 +72,7 @@
 			<small>words</small>
 		</li>
 	{% endif %}
-	{%- set tags_filtered = tags | categoryFilter | tagFilter -%}
+	{%- set tags_filtered = tags | categoryFilter | tagFilter | sort -%}
 	{% if tags_filtered.length %}
 		<li class=" [ tags ] ">
 			<c-emoji>{{ emojis.tag }}</c-emoji>

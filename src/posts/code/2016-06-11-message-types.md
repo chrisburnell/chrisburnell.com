@@ -1,6 +1,8 @@
 ---
 date: 2016-06-11T01:00:00+0100
 title: Message Types
+tags:
+  - css
 codepen_slug: rLxjBz
 codepen_featured: true
 ---

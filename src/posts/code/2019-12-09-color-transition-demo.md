@@ -1,6 +1,10 @@
 ---
 date: 2019-12-09T18:41:00+0000
 title: Color Transition Demo
+tags:
+  - color
+  - css
+  - motion
 codepen_slug: MWYKQdX
 ---
 

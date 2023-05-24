@@ -1,6 +1,9 @@
 ---
 date: 2014-08-18T13:00:00+0100
 title: Zoomy Anchor Thing
+tags:
+  - css
+  - motion
 codepen_slug: lcEvB
 codepen_featured: true
 ---

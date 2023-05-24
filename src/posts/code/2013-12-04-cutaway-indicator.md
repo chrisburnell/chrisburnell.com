@@ -1,6 +1,8 @@
 ---
 date: 2013-12-04T12:00:00+0000
 title: Cutaway Indicator
+tags:
+  - css
 codepen_slug: yIwzd
 ---
 

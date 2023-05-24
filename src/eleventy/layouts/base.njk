@@ -1,73 +1,237 @@
----
-layout: wrapper
----
+<!DOCTYPE html>
+<html lang="{{ site.locale }}" class="{% if theme %}{{ theme }}  {% elseif site.theme %}{{ site.theme }}  {% endif %}no-js" profile="http://gmpg.org/xfn/11">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+	<meta name="view-transition" content="same-origin">
 
-{% if not theme or (theme and not 'nineties' in theme) -%}
-	<observer-interceptor></observer-interceptor>
-{%- endif %}
+	<title>{{ meta_title | striptags(true) | safe }} · {{ site.title }}</title>
 
-<header class=" [ header ] ">
-	<div class=" [ wrap ] ">
-		<a rel="home" class=" [ logo ] [ canada ] " href="/" title="{{ site.title }}">
-			<img src="{{ site.logo }}" alt="" width="120" height="120" role="presentation">
-		</a>
-		<nav class=" [ navigation ] " aria-label="Website">
-			<ol class=" [ navigation__list ] ">
-				{% for link in navigation %}
-					{% if link.header %}
+	<meta name="description" content="{{ meta_description | striptags(true) | safe }}">
+
+	<link rel="prefetch" href="/fonts/proxima-vara-subset.woff2" as="font" type="font/woff2" crossorigin>
+
+	{% if env.ELEVENTY_PRODUCTION -%}
+	<link rel="icon" href="/images/favicon.ico">
+	<link rel="icon" href="/images/favicon-64.png">
+	<link rel="apple-touch-icon" href="/images/favicon-180.png">
+	<link rel="apple-touch-icon-precomposed" href="/images/favicon-180.png">
+	<link rel="msapplication-square310x310logo" href="/images/favicon-310.png">
+	{%- else -%}
+	<link rel="icon" href="/images/favicon-bw.ico">
+	<link rel="icon" href="/images/favicon-bw-64.png">
+	<link rel="apple-touch-icon" href="/images/favicon-180-bw.png">
+	<link rel="apple-touch-icon-precomposed" href="/images/favicon-180-bw.png">
+	<link rel="msapplication-square310x310logo" href="/images/favicon-310-bw.png">
+	{%- endif %}
+
+	<link rel="self" href="{{ site.url + '/feed.xml' }}">
+	<link rel="alternate" type="application/rss+xml" title="Featured Posts Feed" href="{{ site.url + '/feed.xml' }}">
+	<link rel="alternate" type="application/rss+xml" title="Writing Feed" href="{{ site.url + '/writing.xml' }}">
+	<link rel="alternate" type="application/rss+xml" title="Replies Feed" href="{{ site.url + '/replies.xml' }}">
+	<link rel="alternate" type="application/rss+xml" title="RSVPs Feed" href="{{ site.url + '/rsvps.xml' }}">
+	<link rel="alternate" type="application/rss+xml" title="Checkins Feed" href="{{ site.url + '/checkins.xml' }}">
+	<link rel="pingback" href="https://webmention.io/{{ site.url | getHost }}/xmlrpc">
+	<link rel="webmention" href="https://webmention.io/{{ site.url | getHost }}/webmention">
+	<link rel="authorization_endpoint" href="{{ author.urls.indieauth_endpoint }}">
+	<link rel="token_endpoint" href="{{ author.urls.indieauth_token }}">
+	<link rel="micropub" href="{{ author.urls.micropub }}">
+	<link rel="openid.delegate" href="{{ site.url }}" />
+	<link rel="openid.server" href="{{ author.urls.openid }}" />
+
+	<link rel="author" href="/humans.txt">
+	<link rel="manifest" href="/manifest.json">
+
+	<meta name="generator" content="{{ eleventy.generator }}">
+	<meta name="author" content="{{ author.name }}">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+
+	<meta name="theme-color" content="{{ designTokens.colors | keyValue("raven") }}">
+	<meta name="supported-color-schemes" content="light dark">
+
+	{% if not global.cssnakedday -%}
+	<!-- Inlined Critical CSS -->
+	<style>
+		{%- getBundle 'css', 'supercritical' -%}
+		{%- getBundle 'css', 'critical' -%}
+	</style>
+	<!-- Deferred CSS -->
+	<link rel="stylesheet" href="{% getBundleFileUrl 'css' %}" media="print" onload="this.media='all'">
+	<noscript><link rel="stylesheet" href="{% getBundleFileUrl 'css' %}"></noscript>
+	{%- endif %}
+
+	{% if (tags and 'httpstatus' in tags) or (noindex and nofollow) -%}
+	<meta name="robots" content="noindex,nofollow">
+	{%- else -%}
+	{% if noindex -%}
+	<meta name="robots" content="noindex">
+	{% elif nofollow -%}
+	<meta name="robots" content="nofollow">
+	{% endif -%}
+	<!-- The URL -->
+	<link rel="canonical" href="{{ canonical }}">
+	{% if previous_post -%}
+	<link rel="prev" href="{{ site.url + previous_post.url }}">
+	{%- endif %}
+	{% if next_post -%}
+	<link rel="next" href="{{ site.url + next_post.url }}">
+	{%- endif %}
+
+	<!-- OpenGraph Microdata -->
+	{% if mf_root == 'review' -%}
+	<meta property="og:type" content="review">
+	{%- elif layout == 'post' -%}
+	<meta property="og:type" content="article">
+	{%- elif '/about' in page.url -%}
+	<meta property="og:type" content="profile">
+	{%- else -%}
+	<meta property="og:type" content="website">
+	{%- endif %}
+	<meta property="og:url" content="{{ canonical }}">
+	<meta property="og:title" content="{{ meta_title | striptags(true) | safe }}">
+	<meta property="og:description" content="{{ meta_description | striptags(true) | safe }}">
+	<meta property="og:locale" content="{{ site.locale }}">
+	<meta property="og:site_name" content="{{ site.title }}">
+	<meta property="og:image" content="{{ meta_image }}">
+
+	{% if layout == 'post' -%}
+	<meta property="article:published_time" content="{{ page.date | friendlyDateLong | striptags(true) | safe }}">
+	{% if updated or end -%}
+	<meta property="article:modified_time" content="{{ updated | default(end) | friendlyDateLong | safe }}">
+	{%- endif %}
+	<meta property="article:author" content="{{ author.name }}">
+	{% for tag in tags | categoryFilter | tagFilter %}
+	<meta property="article:tag" content="{{ tag }}">
+	{% endfor %}
+	{%- elif page_about -%}
+	<meta property="profile:first_name" content="{{ author.firstname }}">
+	<meta property="profile:last_name" content="{{ author.lastname }}">
+	<meta property="profile:username" content="{{ author.shortname }}">
+	{%- endif %}
+
+	{% if env.ELEVENTY_PRODUCTION and site.monetization and monetization != false -%}
+	<meta name="monetization" content="{{ site.monetization }}">
+	{%- endif %}
+	{%- endif %}
+
+	<!-- Inlined critical JS -->
+	<script>{% getBundle 'js', 'critical' %}</script>
+</head>
+<body>
+	<a href="#content" class=" [ skip-link ] [ hidden ] ">Skip to main content</a>
+
+	{% if not theme or (theme and not 'nineties' in theme) -%}
+		<observer-interceptor></observer-interceptor>
+	{%- endif %}
+
+	<header class=" [ header ] ">
+		<div class=" [ wrap ] ">
+			<a rel="home" class=" [ logo ] [ canada ] " href="/" title="{{ site.title }}">
+				<img src="{{ site.logo }}" alt="" width="120" height="120" role="presentation">
+			</a>
+			<nav class=" [ navigation ] " aria-label="Website">
+				<ol class=" [ navigation__list ] ">
+					{% for link in navigation %}
+						{% if link.header %}
+							<li>
+								<a href="{{ link.url }}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title | safe }}</a>
+							</li>
+						{% endif %}
+					{% endfor %}
+				</ol>
+			</nav>
+		</div>
+	</header>
+
+	<main class=" [ main ] [ flow ] ">
+		{{ content | safe }}
+	</main>
+
+	<footer class=" [ footer ] ">
+		<div class=" [ wrap ] [ footer__grid ] ">
+			<ul class=" [ cluster ] [ footer__navigation ] [ strong ] ">
+				{%- for link in navigation -%}
+					{%- if link.footer -%}
+						<li><a href="{{ link.url }}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title | safe }}</a></li>
+					{%- endif -%}
+				{%- endfor -%}
+			</ul>
+			<ul class=" [ cluster ] [ footer__navigation ] ">
+				{# <button id="theme-toggle" class=" [ anchor ] [ js-theme-toggle ] "><svg width="16" height="16" aria-hidden="true" focusable="false"><use href="#svg--brightness"></use></svg><span class=" [ js-theme-status ] ">Enable dark mode</span></button> #}
+				<li class=" [ requires-js ] ">{% include 'theme-toggler.njk' %}</li><li class=" [ requires-js ] "><button id="sounds-toggle" class=" [ anchor ] [ js-sounds-toggle ] "><svg width="16" height="16" aria-hidden="true" focusable="false"><use href="#svg--sound-off"></use></svg><span class=" [ js-sounds-status ] ">Enable sounds</span></button></li><li><a id="edit" href="https://github.com/{{ author.github }}/{{ site.repository }}/tree/main/{{ page.inputPath }}" aria-label="Edit this page"><svg width="16" height="16" aria-hidden="true" focusable="false"><use href="#svg--edit"></use></svg>Edit this page</a></li><li class=" [ requires-js ] "><button id="share" type="share" class="anchor"><svg width="16" height="16" aria-hidden="true" focusable="false"><use href="#svg--share"></use></svg>Share</button></li>
+			</ul>
+			<ul class=" [ cluster ] [ footer__navigation ] ">
+				<li><a id="copyright" rel="license" href="/license/">© {{ site.established }}–{{ global.now | friendlyDate("yyyy") }} <span class=" [ canada ] ">{{ author.name }}</span></a></li>
+				{%- for item in socials -%}
+					{%- if not item.hidden and item.primary -%}
 						<li>
-							<a href="{{ link.url }}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title | safe }}</a>
+							{%- set url = item.url -%}
+							{%- if item.key -%}
+								{%- set url = url + author[item.key] -%}
+							{%- endif -%}
+							<a{% if not item.primary %} tabindex="-1"{% endif %}{% if item.mf_property %} class=" [ p-{{ item.mf_property }} ] "{% endif %} href="{{ url }}" rel="me"><svg width="20" height="20" aria-hidden="true" focusable="false"{% if item.fill or item.fillHover %} style="{% if item.fill %}--fill: {{ item.fill }}; {% endif %}{% if item.fillHover %}--fill-hover: {{ item.fillHover }}; {% endif %}"{% endif %}><use href="#svg--{{ item.title | lower }}"></use></svg>{{ item.title }}</a>
 						</li>
-					{% endif %}
-				{% endfor %}
-			</ol>
-		</nav>
-	</div>
-</header>
-
-<main class=" [ main ] [ flow ] ">
-	{{ content | safe }}
-</main>
-
-<footer class=" [ footer ] ">
-	<div class=" [ wrap ] [ footer__grid ] ">
-		<ul class=" [ cluster ] [ footer__navigation ] [ strong ] ">
-			{%- for link in navigation -%}
-				{%- if link.footer -%}
-					<li><a href="{{ link.url }}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title | safe }}</a></li>
-				{%- endif -%}
-			{%- endfor -%}
-		</ul>
-		<ul class=" [ cluster ] [ footer__navigation ] ">
-			{# <button id="theme-toggle" class=" [ anchor ] [ js-theme-toggle ] "><svg width="16" height="16" aria-hidden="true" focusable="false"><use href="#svg--brightness"></use></svg><span class=" [ js-theme-status ] ">Enable dark mode</span></button> #}
-			<li class=" [ requires-js ] ">{% include 'theme-toggler.njk' %}</li><li class=" [ requires-js ] "><button id="sounds-toggle" class=" [ anchor ] [ js-sounds-toggle ] "><svg width="16" height="16" aria-hidden="true" focusable="false"><use href="#svg--sound-off"></use></svg><span class=" [ js-sounds-status ] ">Enable sounds</span></button></li><li><a id="edit" href="https://github.com/{{ author.github }}/{{ site.repository }}/tree/main/{{ page.inputPath }}" aria-label="Edit this page"><svg width="16" height="16" aria-hidden="true" focusable="false"><use href="#svg--edit"></use></svg>Edit this page</a></li><li class=" [ requires-js ] "><button id="share" type="share" class="anchor"><svg width="16" height="16" aria-hidden="true" focusable="false"><use href="#svg--share"></use></svg>Share</button></li>
-		</ul>
-		<ul class=" [ cluster ] [ footer__navigation ] ">
-			<li><a id="copyright" rel="license" href="/license/">© {{ site.established }}–{{ global.now | friendlyDate("yyyy") }} <span class=" [ canada ] ">{{ author.name }}</span></a></li>
+					{%- endif -%}
+				{%- endfor -%}
+			</ul>
+			{% include 'author.njk' %}
 			{%- for item in socials -%}
-				{%- if not item.hidden and item.primary -%}
-					<li>
-						{%- set url = item.url -%}
-						{%- if item.key -%}
-							{%- set url = url + author[item.key] -%}
-						{%- endif -%}
-						<a{% if not item.primary %} tabindex="-1"{% endif %}{% if item.mf_property %} class=" [ p-{{ item.mf_property }} ] "{% endif %} href="{{ url }}" rel="me"><svg width="20" height="20" aria-hidden="true" focusable="false"{% if item.fill or item.fillHover %} style="{% if item.fill %}--fill: {{ item.fill }}; {% endif %}{% if item.fillHover %}--fill-hover: {{ item.fillHover }}; {% endif %}"{% endif %}><use href="#svg--{{ item.title | lower }}"></use></svg>{{ item.title }}</a>
-					</li>
+				{%- if not item.hidden and not item.primary -%}
+					<data{% if item.mf_property %} class=" [ p-{{ item.mf_property }} ] "{% endif %} value="{{ author[item.key] | default(item.value) | default(item.url) }}" hidden>{{ item.title }}</data>
 				{%- endif -%}
 			{%- endfor -%}
-		</ul>
-		{% include 'author.njk' %}
-		{%- for item in socials -%}
-			{%- if not item.hidden and not item.primary -%}
-				<data{% if item.mf_property %} class=" [ p-{{ item.mf_property }} ] "{% endif %} value="{{ author[item.key] | default(item.value) | default(item.url) }}" hidden>{{ item.title }}</data>
-			{%- endif -%}
-		{%- endfor -%}
-		{% if speedlify[canonical] %}
-			<p>
-				<a class="speedlify-anchor" href="{{ author.urls.speedlify }}/{{ site.speedlify }}/{{ canonical | getHost(true) | slugify }}/" title="Link to this page's Speedlify Score">
-					<c-speedlify-score hash="{{ speedlify[canonical].hash }}" score weight requests rank rank-change></c-speedlify-score>
-				</a>
-			</p>
-		{% endif %}
-	</div>
-</footer>
+			{% if speedlify[canonical] %}
+				<p>
+					<a class="speedlify-anchor" href="{{ author.urls.speedlify }}/{{ site.speedlify }}/{{ canonical | getHost(true) | slugify }}/" title="Link to this page's Speedlify Score">
+						<c-speedlify-score hash="{{ speedlify[canonical].hash }}" score weight requests rank rank-change></c-speedlify-score>
+					</a>
+				</p>
+			{% endif %}
+		</div>
+	</footer>
+
+	<!-- SVG Icons -->
+	<svg display="none" aria-hidden="true">
+		{% for symbol in svg %}
+			<symbol id="svg--{{ symbol.title | lower }}" viewBox="0 0 {{ symbol.viewBox }}">
+				<title>{{ symbol.title }}</title>
+				{%- set paths = symbol.path | toArray -%}
+				{%- for path in paths %}
+					<path d="{{ path }}" />
+				{% endfor %}
+			</symbol>
+		{% endfor %}
+	</svg>
+
+	{% if env.ELEVENTY_PRODUCTION %}
+		<!-- ServiceWorker -->
+		<script>{% getBundle 'js', 'navigator' %}</script>
+	{% endif %}
+
+	<!-- Deferred JS -->
+	<script type="module" src="{% getBundleFileUrl 'js', 'module' %}"></script>
+	{% if js or inlinejs -%}
+		<script src="{% getBundleFileUrl 'js' %}"></script>
+	{%- endif %}
+
+	{# CSS Bundles #}
+	{%- css 'supercritical' -%}{% include '../../../css/critical.css' %}{%- endcss -%}
+	{%- if css -%}
+		{% css 'critical' -%}{% include '../../../css/pages/' + css %}{%- endcss -%}
+	{%- endif -%}
+	{%- css -%}{% include '../../../css/defer.css' %}{%- endcss -%}
+
+	{# JS Bundles #}
+	{%- js 'critical' -%}{% include '../../../js/critical.js' %}{%- endjs -%}
+	{%- js 'navigator' -%}{% include '../../js/navigator.js' %}{%- endjs -%}
+	{%- js 'module' -%}{% include '../../../js/defer.js' %}{%- endjs -%}
+	{%- if js_module -%}
+		{%- js 'module' -%}{% include '../../js/pages/' + js_module %}{%- endjs -%}
+	{%- endif %}
+	{%- if js -%}
+		{%- js -%}{% include '../../js/pages/' + js %}{%- endjs -%}
+	{%- endif -%}
+</body>
+</html>

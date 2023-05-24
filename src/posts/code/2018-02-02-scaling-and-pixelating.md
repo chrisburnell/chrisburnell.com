@@ -1,6 +1,9 @@
 ---
 date: 2018-02-02T16:48:00+0000
 title: Scaling and Pixelating
+tags:
+  - css
+  - ux
 codepen_slug: vdNeEa
 syndicate_to:
   - https://twitter.com/iamchrisburnell/status/959107237590589441

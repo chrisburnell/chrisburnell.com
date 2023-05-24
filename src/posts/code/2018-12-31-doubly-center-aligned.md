@@ -1,6 +1,8 @@
 ---
 date: 2018-12-31T18:08:00+0000
 title: Doubly-Center-Aligned Text
+tags:
+  - css
 codepen_slug: zJLoGK
 ---
 

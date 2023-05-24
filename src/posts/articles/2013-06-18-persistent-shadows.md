@@ -5,6 +5,7 @@ description: How easy is it to keep a shadow's direction consistent whilst rotat
 tags:
   - css
   - ux
+  - motion
 banner: persistent-shadows.png
 ---
 
