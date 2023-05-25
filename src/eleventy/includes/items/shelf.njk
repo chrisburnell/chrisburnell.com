@@ -26,7 +26,7 @@
 {%- elif item.data.read_of -%}
 	{% set item_of_url = "https://openlibrary.org/isbn/" + item.data.read_of %}
 {%- endif -%}
-<article class=" [ flow ] {% if hfeed %}[ h-{{ item.data.mf_root }} ] {% endif %}">
+<article class=" [ flow ] {% if hfeed and item.data.mf_root %}[ h-{{ item.data.mf_root }} ] {% endif %}">
 	{# {%- include 'cover.njk' -%} #}
 	{# Rudimentary workaround... AGAIN #}
 	{% if item.data.cover %}
@@ -101,8 +101,8 @@
 			{% endif %}
 		</div>
 	{% endif %}
-	{% if item.date %}
-		<time class=" [ dt-published ] " datetime="{{ item.date | rfc3339Date }}" hidden>{{ item.date | friendlyDateLong | safe }}</time>
+	{% if item.data.date or item.date %}
+		<time class=" [ dt-published ] " datetime="{{ item.data.date | default(item.date) | rfc3339Date }}" hidden>{{ item.data.date | default(item.date) | friendlyDateLong | safe }}</time>
 		{% if item.data.updated %}
 			<time class=" [ dt-updated ] " datetime="{{ item.data.updated | rfc3339Date }}" hidden>{{ item.data.updated | friendlyDateLong | safe }}</time>
 		{% endif %}

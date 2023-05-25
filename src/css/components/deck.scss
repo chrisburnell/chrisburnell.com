@@ -45,7 +45,11 @@
 	}
 
 	figure {
-		padding: var(--padding, 1em);
+		align-items: start;
+
+		& + * {
+			--flow-space: 1em;
+		}
 	}
 }
 

@@ -13,8 +13,8 @@ truncate: true
 ---
 {%- set collection = collections[category.title] | arePublished | reverse -%}
 {%- set count = collection.length -%}
-{%- set latest_year = collection[0].date.getFullYear() -%}
-{%- set first_year = collection[count-1].date.getFullYear() -%}
+{%- set latest_year = collection[0].data.date | default(collection[0].date) | friendlyDate('yyyy') -%}
+{%- set first_year = collection[count-1].data.date | default(collection[count-1].date) | friendlyDate('yyyy') -%}
 <div class=" [ pantheon ] [ wrap ] [ archive ] ">
 
 	<ul class=" [ cluster ] [ breadcrumbs ] " hidden>
@@ -72,8 +72,9 @@ truncate: true
 			</h2>
 			<div id="list-{{ year }}" class=" [ deck ] ">
 				{% for item in collection %}
-					{% if item.date.getFullYear() != year %}
-						{%- set year = item.date.getFullYear() -%}
+					{%- set check = item.data.date | default(item.date) | friendlyDate('yyyy') -%}
+					{% if check != year %}
+						{%- set year = check -%}
 						</div>
 						<h2 id="{{ year }}">
 							{{ year }} <small>{{ collection | getCollectionCount(year) }} post{{ 's' if collection | getCollectionCount(year) > 1 }}</small>

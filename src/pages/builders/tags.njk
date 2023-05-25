@@ -13,8 +13,8 @@ truncate: true
 ---
 {%- set collection = collections[tag] | arePublished | dateSort -%}
 {%- set count = collection.length -%}
-{%- set latest_year = collection[0].date.getFullYear() -%}
-{%- set first_year = collection[count-1].date.getFullYear() -%}
+{%- set latest_year = collection[0].data.date | default(collection[0].date) | friendlyDate('yyyy') -%}
+{%- set first_year = collection[count-1].data.date | default(collection[count-1].date) | friendlyDate('yyyy') -%}
 <div id="content" class=" [ pantheon ] [ wrap ] [ archive ] ">
 
 	<ul class=" [ cluster ] [ breadcrumbs ] " hidden>
@@ -32,7 +32,7 @@ truncate: true
 
 	<div class=" [ description ] [ flow ] ">
 		<p>
-			<span class=" [ p-summary ] ">{% if count > 1 %}All {{ count | numberStringFormat }}{% else %}Just the one{% endif %} of my posts tagged <q>{{ tag | capitalizeFormat }}</q>.</span>
+			<span class=" [ p-summary ] ">{% if count > 1 %}All {{ count | numberStringFormat }}{% else %}Just the one{% endif %} of my posts tagged <q>{{ tag | capitalizeFormat }}</q>{% if first_year != latest_year %}, dating from {% if collection[0].data.list == 'shelf' %}{{ first_year }}–{{ latest_year }}{% else %}<a href="#{{ first_year }}">{{ first_year }}</a>–<a href="#{{ latest_year }}">{{ latest_year }}</a>{% endif %}{% endif %}.</span>
 			<a href="{{ site.url }}/{{ tag }}.xml" title="Tagged: {{ tag | capitalizeFormat | safe }} Feed"><svg width="20" height="20" aria-hidden="true" focusable="false" style="fill: #ff8c00; vertical-align: sub;"><use href="#svg--rss"></use></svg></a>
 		</p>
 	</div>
@@ -44,8 +44,21 @@ truncate: true
 	<div class=" [ content ] [ flow ] ">
 		{% include 'css-naked-day.njk' %}
 
-		<div class=" [ deck ] ">
+		{%- set year = latest_year -%}
+		<h2 id="{{ year }}">
+			{{ year }} <small>{{ collection | getCollectionCount(year) }} post{{ 's' if collection | getCollectionCount(year) > 1 }}</small>
+		</h2>
+		<div id="list-{{ year }}" class=" [ deck ] ">
 			{% for item in collection %}
+				{%- set check = item.data.date | default(item.date) | friendlyDate('yyyy') -%}
+				{% if check != year %}
+					{%- set year = check -%}
+					</div>
+					<h2 id="{{ year }}">
+						{{ year }} <small>{{ collection | getCollectionCount(year) }} post{{ 's' if collection | getCollectionCount(year) > 1 }}</small>
+					</h2>
+					<div id="list-{{ year }}" class=" [ deck ] ">
+				{% endif %}
 				{% include 'items/deck.njk' %}
 			{% endfor %}
 		</div>

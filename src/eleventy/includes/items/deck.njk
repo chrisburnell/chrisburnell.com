@@ -39,7 +39,7 @@
 
 {%- set item_title = item.data.title -%}
 
-<article class=" [ flow ]{% if hfeed %} [ h-{{ item.data.mf_root }} ] {% endif %}">
+<article class=" [ flow ]{% if hfeed and item.data.mf_root %} [ h-{{ item.data.mf_root }} ] {% endif %}">
 	{% if item_in_reply_to %}
 		<div class=" [ deck__context ] ">
 			{% if item.data.rsvp %}
