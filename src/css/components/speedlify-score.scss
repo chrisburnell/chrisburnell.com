@@ -18,16 +18,20 @@ speedlify-score {
 }
 /* The Lighthouse scoring circles */
 .speedlify-score {
-	font-size: var(--font-size-small);
+	color: inherit;
 	inline-size: var(--size-large);
 	block-size: var(--size-large);
-	line-height: 1;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	border-radius: 50%;
-	border: calc(var(--size-border-thin) * 1.5) solid hsl(var(--hsl-conifer));
 	margin-inline-start: var(--size-tiny-small);
+	border-radius: 50%;
+	border: calc(var(--size-border-thin) * 1.5) solid h(conifer);
+	font-size: var(--font-size-small);
+	font-style: normal;
+	font-variation-settings: normal;
+	line-height: 1;
+	text-decoration: none;
 }
 .speedlify-score-ok {
 	color: hsl(var(--hsl-aspen));

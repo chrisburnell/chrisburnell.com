@@ -177,18 +177,26 @@
 				{%- endfor -%}
 			</ul>
 			{% include 'author.njk' %}
+			<c-details>
+				<summary>Webrings</summary>
+				<ol class=" [ cluster ] ">
+					<li><a href="https://xn--sr8hvo.ws/💘🇹🇫/previous" class=" [ small ] " title="Previous website in the IndieWeb Web Ring" style="white-space: nowrap;">← Previous</a></li>
+					<li><a href="https://xn--sr8hvo.ws/" style="white-space: nowrap;">IndieWeb Webring</a></li>
+					<li><a href="https://xn--sr8hvo.ws/💘🇹🇫/next" class=" [ small ] " title="Next website in the IndieWeb Web Ring" style="white-space: nowrap;">Next →</a></li>
+				</ol>
+			</c-details>
+			{% if speedlify[canonical] %}
+				<p class=" [ speedlify ] ">
+					<a class="[ speedlify-anchor ] " href="{{ author.urls.speedlify }}/{{ site.speedlify }}/{{ canonical | getHost(true) | slugify }}/" title="Link to this page's Speedlify Score">
+						<c-speedlify-score hash="{{ speedlify[canonical].hash }}" score weight requests rank rank-change></c-speedlify-score>
+					</a>
+				</p>
+			{% endif %}
 			{%- for item in socials -%}
 				{%- if not item.hidden and not item.primary -%}
 					<data{% if item.mf_property %} class=" [ p-{{ item.mf_property }} ] "{% endif %} value="{{ author[item.key] | default(item.value) | default(item.url) }}" hidden>{{ item.title }}</data>
 				{%- endif -%}
 			{%- endfor -%}
-			{% if speedlify[canonical] %}
-				<p>
-					<a class="speedlify-anchor" href="{{ author.urls.speedlify }}/{{ site.speedlify }}/{{ canonical | getHost(true) | slugify }}/" title="Link to this page's Speedlify Score">
-						<c-speedlify-score hash="{{ speedlify[canonical].hash }}" score weight requests rank rank-change></c-speedlify-score>
-					</a>
-				</p>
-			{% endif %}
 		</div>
 	</footer>
 

@@ -3,6 +3,10 @@
 /// @group blocks
 ////
 
+.author {
+	margin: 0;
+}
+
 .author__information {
 	--flow-space: var(--size-small);
 	--size-border: 0;

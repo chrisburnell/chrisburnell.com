@@ -63,14 +63,29 @@
 		row-gap: var(--size-gutter);
 	}
 
+	.footer__navigation {
+		grid-column: left;
+	}
+
 	.author {
 		grid-column: right;
 		grid-row: 1/4;
 	}
 
-	// Represents the footer navigations and speedlify-score
-	.footer__navigation,
-	p {
-		grid-column: left;
+	.speedlify {
+		grid-column: right;
+
+		@container (inline-size > #{map-get($breakpoints, "medium")}) {
+			text-align: end;
+		}
+	}
+
+	summary + * {
+		border-block-start-width: 0;
+		padding-block-start: 0;
+	}
+
+	summary ~ * {
+		padding-inline: 0;
 	}
 }

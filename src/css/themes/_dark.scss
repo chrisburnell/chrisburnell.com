@@ -41,7 +41,10 @@
 	// Anchor Global
 	%anchor {
 		color: h(highland);
-
+	}
+	// Anchor & Summary
+	%anchor,
+	summary {
 		&:not(:is(:hover, :focus, :active)) {
 			text-decoration-color: h(kaiser);
 		}
