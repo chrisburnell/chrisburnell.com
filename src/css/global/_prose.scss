@@ -18,7 +18,7 @@ p {
 	margin: 0;
 }
 
-:is(abbr, dfn)[title] {
+:is(abbr, dfn, span)[title] {
 	color: h(kaiser);
 	@include italic;
 	font-weight: var(--font-weight-regular);

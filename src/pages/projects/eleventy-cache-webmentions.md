@@ -195,7 +195,7 @@ And, if you need it, the entire Object of sorted Webmentions is available too:
 {% raw %}
 ```twig
 {% set count = 0 %}
-{% for url, array in webmentions %}
+{% for url, array in webmentionsAll %}
     {% set count = array.length + count %}
 {% endfor %}
 <p>This site has received {{ count }} Webmentions!</p>

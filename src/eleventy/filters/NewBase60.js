@@ -17,7 +17,7 @@ const DecimalToSexagesimal = (value) => {
 
 // Converts a JS Date Object to a Sexageismal (Base 60) String
 const DateToSexagesimal = (dateObject) => {
-	let sinceEpoch = dateObject.getTime()
+	let sinceEpoch = new Date(dateObject).getTime()
 	let epochDays = Math.floor(sinceEpoch / (1000 * 60 * 60 * 24))
 	return DecimalToSexagesimal(epochDays)
 }

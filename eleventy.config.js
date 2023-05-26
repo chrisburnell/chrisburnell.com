@@ -3,30 +3,32 @@ const pkg = require("./package.json")
 const { url } = require("#data/site")
 
 // Import Eleventy plugins
-const caniusePlugin = require("#plugins/caniusePlugin")
-const imageAvatarPlugin = require("#plugins/imageAvatarPlugin")
-const imagePlugin = require("#plugins/imagePlugin")
-const pregenImagePlugin = require("#plugins/pregenImagePlugin")
-// const albumCoverPlugin = require("#plugins/albumCoverPlugin")
-// const inclusiveLanguagePlugin = require("@11ty/eleventy-plugin-inclusive-language")
-const bundlerPlugin = require("@11ty/eleventy-plugin-bundle")
-const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output")
-const rssPlugin = require("@11ty/eleventy-plugin-rss")
-const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight")
-const webCPlugin = require("@11ty/eleventy-plugin-webc")
+const pluginCaniuse = require("#plugins/caniuse")
+const pluginAvatar = require("#plugins/avatar")
+const pluginImage = require("#plugins/image")
+const pluginPregenerateImages = require("#plugins/pregenerateImages")
+// const pluginCover = require("#plugins/cover")
+// const pluginInclusiveLanguage = require("@11ty/eleventy-plugin-inclusive-language")
+const pluginBundler = require("@11ty/eleventy-plugin-bundle")
+const pluginDirectoryOutput = require("@11ty/eleventy-plugin-directory-output")
+const pluginRSS = require("@11ty/eleventy-plugin-rss")
+const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
+const pluginWebC = require("@11ty/eleventy-plugin-webc")
+const pluginWebmentions = require("@chrisburnell/eleventy-cache-webmentions")
+const configWebmentions = require("#datajs/config/webmentions")
 
 // Import transforms
-const parseTransform = require("#transforms/parse")
+const transformParse = require("#transforms/parse")
 
 // Import filters
-const dateFilters = require("#filters/dates")
-const stringFilters = require("#filters/strings")
-const queryFilters = require("#filters/queries")
-const asyncFilters = require("#filters/async")
-const utilityFilters = require("#filters/utils")
-const collectionFilters = require("#filters/collections")
-const intlFilters = require("#filters/intl")
-const NewBase60 = require("#filters/NewBase60")
+const filterDates = require("#filters/dates")
+const filterStrings = require("#filters/strings")
+const filterQueries = require("#filters/queries")
+const filterUtils = require("#filters/utils")
+const filterIntl = require("#filters/intl")
+const filterCollections = require("#filters/collections")
+const filterAsync = require("#filters/async")
+const filterNewBase60 = require("#filters/NewBase60")
 
 // Import shortcodes
 const shortcodes = require("#core/shortcodes")
@@ -35,8 +37,8 @@ const shortcodes = require("#core/shortcodes")
 const collections = require("#core/collections")
 
 // Import collection builders
-const categoriesBuilder = require("#builders/categories")
-const tagsBuilder = require("#builders/tags")
+const builderCategories = require("#builders/categories")
+const builderTags = require("#builders/tags")
 
 // Import other bits and bobs
 const markdownParser = require("markdown-it")
@@ -45,59 +47,58 @@ const markdownFootnote = require("markdown-it-footnote")
 
 module.exports = (eleventyConfig) => {
 	// Plugins
-	eleventyConfig.addPlugin(caniusePlugin)
-	eleventyConfig.addPlugin(imageAvatarPlugin)
-	eleventyConfig.addPlugin(imagePlugin)
+	eleventyConfig.addPlugin(pluginCaniuse)
+	eleventyConfig.addPlugin(pluginAvatar)
+	eleventyConfig.addPlugin(pluginImage)
 	if (process.env.PREGENERATE_IMAGES) {
-		eleventyConfig.addPlugin(pregenImagePlugin)
+		eleventyConfig.addPlugin(pluginPregenerateImages)
 	}
-	eleventyConfig.addPlugin(bundlerPlugin)
+	eleventyConfig.addPlugin(pluginBundler)
 	if (process.env.DIRECTORY_OUTPUT) {
-		eleventyConfig.addPlugin(directoryOutputPlugin)
+		eleventyConfig.addPlugin(pluginDirectoryOutput)
 	}
-	eleventyConfig.addPlugin(rssPlugin)
-	eleventyConfig.addPlugin(syntaxHighlightPlugin)
-	eleventyConfig.addPlugin(webCPlugin, {
+	eleventyConfig.addPlugin(pluginRSS)
+	eleventyConfig.addPlugin(pluginSyntaxHighlight)
+	eleventyConfig.addPlugin(pluginWebC, {
 		components: "./src/components/**/*.webc",
 		useTransform: true,
 		transformData: {
-			pkg
-		}
+			pkg,
+		},
 	})
-	// eleventyConfig.addPlugin(inclusiveLanguagePlugin, {
+	eleventyConfig.addPlugin(pluginWebmentions, configWebmentions)
+	// eleventyConfig.addPlugin(pluginCover)
+	// eleventyConfig.addPlugin(pluginInclusiveLanguage, {
 	//   // accepts an array or a comma-delimited string
 	//   words: "simply,obviously,basically,of course,clearly,just,everyone knows,easy"
 	// })
-	// eleventyConfig.addPlugin(albumCoverPlugin)
-
 
 	// Transforms
-	eleventyConfig.addTransform("parse", parseTransform)
-	// eleventyConfig.addTransform("htmlmin", htmlMinTransform)
+	eleventyConfig.addTransform("parse", transformParse)
 
 	// Filters
-	Object.keys(dateFilters).forEach((filterName) => {
-		eleventyConfig.addFilter(filterName, dateFilters[filterName])
+	Object.keys(filterDates).forEach((filterName) => {
+		eleventyConfig.addFilter(filterName, filterDates[filterName])
 	})
-	Object.keys(stringFilters).forEach((filterName) => {
-		eleventyConfig.addFilter(filterName, stringFilters[filterName])
+	Object.keys(filterStrings).forEach((filterName) => {
+		eleventyConfig.addFilter(filterName, filterStrings[filterName])
 	})
-	Object.keys(queryFilters).forEach((filterName) => {
-		eleventyConfig.addFilter(filterName, queryFilters[filterName])
+	Object.keys(filterQueries).forEach((filterName) => {
+		eleventyConfig.addFilter(filterName, filterQueries[filterName])
 	})
-	Object.keys(utilityFilters).forEach((filterName) => {
-		eleventyConfig.addFilter(filterName, utilityFilters[filterName])
+	Object.keys(filterUtils).forEach((filterName) => {
+		eleventyConfig.addFilter(filterName, filterUtils[filterName])
 	})
-	Object.keys(intlFilters).forEach((filterName) => {
-		eleventyConfig.addFilter(filterName, intlFilters[filterName])
+	Object.keys(filterIntl).forEach((filterName) => {
+		eleventyConfig.addFilter(filterName, filterIntl[filterName])
 	})
-	Object.keys(collectionFilters).forEach((filterName) => {
-		eleventyConfig.addFilter(filterName, collectionFilters[filterName])
+	Object.keys(filterCollections).forEach((filterName) => {
+		eleventyConfig.addFilter(filterName, filterCollections[filterName])
 	})
-	Object.keys(asyncFilters).forEach((filterName) => {
-		eleventyConfig.addAsyncFilter(filterName, asyncFilters[filterName])
+	Object.keys(filterAsync).forEach((filterName) => {
+		eleventyConfig.addAsyncFilter(filterName, filterAsync[filterName])
 	})
-	eleventyConfig.addFilter("NewBase60", NewBase60)
+	eleventyConfig.addFilter("NewBase60", filterNewBase60)
 
 	// Shortcodes
 	Object.keys(shortcodes).forEach((shortcodeName) => {
@@ -110,8 +111,8 @@ module.exports = (eleventyConfig) => {
 	})
 
 	// Collection Builders
-	eleventyConfig.addCollection("categories", categoriesBuilder)
-	eleventyConfig.addCollection("tags", tagsBuilder)
+	eleventyConfig.addCollection("categories", builderCategories)
+	eleventyConfig.addCollection("tags", builderTags)
 
 	// Layouts
 	eleventyConfig.addLayoutAlias("wrapper", "wrapper.njk")
@@ -147,13 +148,13 @@ module.exports = (eleventyConfig) => {
 
 	// Customised markdown config
 	const md = markdownParser({
-			html: true,
-			breaks: true,
-			linkify: true,
-		})
-			.use(markdownAbbr)
-			.use(markdownFootnote)
-			.disable("code")
+		html: true,
+		breaks: true,
+		linkify: true,
+	})
+		.use(markdownAbbr)
+		.use(markdownFootnote)
+		.disable("code")
 	md.renderer.rules.footnote_block_open = () => {
 		return `<hr>
 		<nav aria-label="Footnotes">
@@ -167,7 +168,7 @@ module.exports = (eleventyConfig) => {
 		let n = Number(tokens[idx].meta.id + 1).toString()
 
 		if (tokens[idx].meta.subId > 0) {
-			n += ':' + tokens[idx].meta.subId
+			n += ":" + tokens[idx].meta.subId
 		}
 
 		return `${n}`
@@ -176,7 +177,7 @@ module.exports = (eleventyConfig) => {
 		var id = slf.rules.footnote_anchor_name(tokens, idx, options, env, slf)
 
 		if (tokens[idx].meta.subId > 0) {
-			id += ':' + tokens[idx].meta.subId
+			id += ":" + tokens[idx].meta.subId
 		}
 
 		return `<li id="fn${id}">`
@@ -188,7 +189,7 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.setServerPassthroughCopyBehavior("passthrough")
 	eleventyConfig.setQuietMode(true)
 	eleventyConfig.on("beforeBuild", () => {
-		console.log(`[${queryFilters.getHost(url)}] Building…`)
+		console.log(`[${filterQueries.getHost(url)}] Building…`)
 	})
 	return {
 		dataTemplateEngine: "njk",

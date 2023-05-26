@@ -510,7 +510,7 @@ It’s also extremely useful if you build a core set of styles and then extend t
 4. [Sass Guide - Partials](http://sass-lang.com/guide#4 "Sass: Sass Parials")
 5. [Sass Guide - Import](http://sass-lang.com/guide#5 "Sass: Sass Import")
 6. [Sass Guide - Mixins](http://sass-lang.com/guide#6 "Sass: Sass Mixins")
-7. [My Sass files](https://github.com/{{ author.github }}/{{ site.repository }}/tree/main/src/scss "Sass files for chrisburnell.com")
+7. [My Sass files](https://github.com/{{ author.github }}/{{ site.repository }}/tree/{{ site.branch }}/src/scss "Sass files for chrisburnell.com")
 8. [My gulpfile configuration](https://gist.github.com/{{ author.github }}/87346fa1e8e8538ee7ce "My gulpfile configuration")
 
 And if you want to start using *gulp*, here’s a fantastic guide, <q>[Getting started with gulp](https://markgoodyear.com/2014/01/getting-started-with-gulp/ "Getting started with gulp")</q>, by [Mark Goodyear](https://markgoodyear.com/ "Mark Goodyear — Front-end designer and developer").
@@ -527,6 +527,6 @@ And with *gulp* `watching`, the transition from the SCSS above to the minified C
 
 To sum up, the site looks <del>pretty much</del> the same, but the codebase behind it is different. I can’t recommend getting into SCSS and *gulp* enough. They changed my workflow for the better and I save a lot of time as a result of it. I feel wrong for saying it, being so loyal to <q>vanilla</q> CSS for so long, but writing SCSS feels more natural, and coupled with *gulp* makes for a seamless and more focussed coding workflow.
 
-You can see the raw, uncompiled SCSS files on GitHub [here](https://github.com/{{ author.github }}/{{ site.repository }}/tree/main/css "SCSS files for chrisburnell.com"), and the README file of the repository [here](https://github.com/{{ author.github }}/{{ site.repository }}).
+You can see the raw, uncompiled SCSS files on GitHub [here](https://github.com/{{ author.github }}/{{ site.repository }}/tree/{{ site.branch }}/css "SCSS files for chrisburnell.com"), and the README file of the repository [here](https://github.com/{{ author.github }}/{{ site.repository }}).
 
 As always, please let me know if you have any comments, suggestions, or bug-fixes [in the comments below](#respond) or [create an Issue on Github](https://github.com/{{ author.github }}/{{ site.repository }}/issues)!

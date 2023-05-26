@@ -108,7 +108,7 @@
 		}
 	}
 
-	:is(abbr, dfn)[title],
+	:is(abbr, dfn, span)[title],
 	figure > a figcaption,
 	blockquote cite,
 	.breadcrumbs,

@@ -24,7 +24,7 @@ Last week, I was lucky enough to attend [All Day Hey](https://alldayhey.com/) an
 
 ## If you reuse it, give it a name
 
-Robust system for design tokens, [defined with JSON](https://github.com/chrisburnell/chrisburnell.com/tree/main/src/data/designTokens), converted to CSS Custom Properties for CSS and usable as-is for JavaScript, which Eleventy can consume with ease.
+Robust system for design tokens, [defined with JSON](https://github.com/{{ author.github }}/{{ site.repository }}/tree/{{ site.branch }}/src/data/designTokens), converted to CSS Custom Properties for CSS and usable as-is for JavaScript, which Eleventy can consume with ease.
 
 For example, I have defined a palette of colours I’d like to reuse:
 
