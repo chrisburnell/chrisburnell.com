@@ -41,6 +41,10 @@
 		background-color: hsl(var(--hsl-thunder));
 		color: inherit;
 	}
+
+	span[title] {
+		color: inherit;
+	}
 }
 
 .footer__grid {
