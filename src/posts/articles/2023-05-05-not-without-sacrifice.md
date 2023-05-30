@@ -20,7 +20,7 @@ In recent years, there has been a growing emphasis on the importance of Develope
     </div>
 </figure>
 
-However, when we compare our efforts in *DX* to efforts in User Experience (*UX*), it is important to remember that resources are not infinite. We can only expect to complete a day’s work in *nothing less* than a day. A decade ago, when the capabilities of the web were fewer and we didn’t have such a wide array of tools to aid in our work, we had more time to focus on the user’s experience. Assuming, of course, you hadn’t spent the entire week debugging a dropdown in Internet Explorer.
+However, when we compare our efforts in *DX* to efforts in User Experience (*UX*), it is important to remember that **resources are not infinite**. We can only expect to complete a day’s work in *nothing less* than a day. A decade ago, when the capabilities of the web were fewer and we didn’t have such a wide array of tools to aid in our work, we had more time to focus on the user’s experience. Assuming, of course, you hadn’t spent the entire week debugging a dropdown in Internet Explorer.
 
 As [new web features](/feature-watch/) bubble to the surface (growing now to a *rolling boil!*) the responsibility for learning and implementing new and/or complex has shifted to the front end developer. As a result, the time we once dedicated to ensuring the best experience for all users has been consumed by more developer-centric tasks. Unfortunately, this has left experiences for users who are not browsing under optimal conditions neglected.
 
