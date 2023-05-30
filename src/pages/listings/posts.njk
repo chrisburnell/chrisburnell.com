@@ -29,11 +29,11 @@ perch: true
 
 		<ol>
 			<li><a href="/latest/" class=" [ strong ] " style="font-size: 1.25em;">Latest Posts</a></li>
-			<li><a href="/writing/" class=" [ strong ] " style="font-size: 1.25em;">Writing</a></li>
 			<li><a href="/hot/" class=" [ strong ] " style="font-size: 1.25em;">Hot Pages</a></li>
 			<li><a href="/popular/" class=" [ strong ] " style="font-size: 1.25em;">Popular Pages</a></li>
-			<li><a href="/replies/" class=" [ strong ] " style="font-size: 1.25em;">Replies</a></li>
-			<li><a href="/rsvps/" class=" [ strong ] " style="font-size: 1.25em;">RSVPs</a></li>
+			<li><a href="/writing/" class=" [ strong ] " style="font-size: 1.25em;">Writing <sup>{{ collections.writingPosts | getCollectionCount }}</sup></a></li>
+			<li><a href="/replies/" class=" [ strong ] " style="font-size: 1.25em;">Replies <sup>{{ collections.replies | getCollectionCount }}</sup></a></li>
+			<li><a href="/rsvps/" class=" [ strong ] " style="font-size: 1.25em;">RSVPs <sup>{{ collections.rsvps | getCollectionCount }}</sup></a></li>
 		</ol>
 
 		<h2>Categories</h2>
@@ -41,7 +41,7 @@ perch: true
 		<ol class=" [ grid ] [ shelf ] " data-layout="natural">
 			{%- for item in collections.categories -%}
 				{%- set count = collections[item.title] | arePublished | getCollectionCount -%}
-				<li><a href="/{{ item.plural }}/" class=" [ strong ] " style="font-size: 1.25em;">{{ item.properPlural | title }} <sup>{{ count }}</sup></a></li>
+				<li><a href="/{{ item.plural }}/" class=" [ strong ] " style="font-size: 1.25em;"><c-emoji>{{ item.emoji | default('📄') }}</c-emoji> {{ item.properPlural | title }} <sup>{{ count }}</sup></a></li>
 			{%- endfor -%}
 		</ol>
 

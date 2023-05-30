@@ -1,4 +1,4 @@
-const { url } = require("#data/site")
+const { url: siteUrl } = require("#data/site")
 const consoles = require("#data/consoles")
 const mastodonInstances = require("#data/mastodonInstances")
 const places = require("#data/places")
@@ -71,7 +71,7 @@ module.exports = {
 			return "a previous Twitter post"
 		}
 		// Internal URL
-		else if (value.includes(url) || value.includes("localhost")) {
+		else if (value.includes(siteUrl) || value.includes("localhost")) {
 			let page = pages.filter((item) => {
 				if (getPath(value) == item.url) {
 					return true

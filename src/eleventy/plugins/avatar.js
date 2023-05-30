@@ -1,7 +1,7 @@
 require("dotenv").config()
 const Image = require("@11ty/eleventy-img")
 
-const { cacheDurations, url } = require("#data/site")
+const { cacheDurations, url: siteUrl } = require("#data/site")
 
 const { getHost, getMastodonHandle } = require("#filters/queries")
 
@@ -68,13 +68,13 @@ module.exports = (eleventyConfig) => {
 			let array
 
 			array = Array.from(mastodonHandles)
-			console.log(`[${getHost(url)}] Generating ${array.length} Mastodon avatars.`)
+			console.log(`[${getHost(siteUrl)}] Generating ${array.length} Mastodon avatars.`)
 			for (let mastodonHandle of array) {
 				fetchImageData(mastodonHandle.handle, mastodonHandle.photo)
 			}
 
 			array = Array.from(domains)
-			console.log(`[${getHost(url)}] Generating ${array.length} domain avatars.`)
+			console.log(`[${getHost(siteUrl)}] Generating ${array.length} domain avatars.`)
 			for (let domain of array) {
 				fetchImageData(domain.url, domain.photo)
 			}

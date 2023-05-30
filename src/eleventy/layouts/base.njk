@@ -177,12 +177,18 @@
 				{%- endfor -%}
 			</ul>
 			{% include 'author.njk' %}
-			<c-details>
+			<c-details id="webrings">
 				<summary>Webrings</summary>
 				<ol class=" [ cluster ] ">
-					<li><a href="https://xn--sr8hvo.ws/💘🇹🇫/previous" class=" [ small ] " title="Previous website in the IndieWeb Web Ring" style="white-space: nowrap;">← Previous</a></li>
-					<li><a href="https://xn--sr8hvo.ws/" style="white-space: nowrap;">IndieWeb Webring</a></li>
-					<li><a href="https://xn--sr8hvo.ws/💘🇹🇫/next" class=" [ small ] " title="Next website in the IndieWeb Web Ring" style="white-space: nowrap;">Next →</a></li>
+					<li><a href="https://webri.ng/webring/cssjoy/previous?via={{ (site.url + '/') | urlencode }}" class=" [ small ] " rel="external" title="Previous website in the CS.Sjoy.lol Webring" style="white-space: nowrap;">← Previous</a></li>
+					<li><a href="https://cs.sjoy.lol/#webring" rel="external" title="CS.Sjoy.lol Webring" style="white-space: nowrap;">CS.Sjoy.lol</a></li>
+					<li><a href="https://webri.ng/webring/cssjoy/random?via={{ (site.url + '/') | urlencode }}" class=" [ small ] " rel="external" title="Random website in the CS.Sjoy.lol Webring">Random</a></li>
+					<li><a href="https://webri.ng/webring/cssjoy/next?via={{ (site.url + '/') | urlencode }}" class=" [ small ] " rel="external" title="Next website in the CS.Sjoy.lol Webring" style="white-space: nowrap;">Next →</a></li>
+				</ol>
+				<ol class=" [ cluster ] ">
+					<li><a href="https://xn--sr8hvo.ws/💘🇹🇫/previous" class=" [ small ] " rel="external" title="Previous website in the IndieWeb Webring" style="white-space: nowrap;">← Previous</a></li>
+					<li><a href="https://xn--sr8hvo.ws/" rel="external" title="IndieWeb Webring" style="white-space: nowrap;">IndieWeb</a></li>
+					<li><a href="https://xn--sr8hvo.ws/💘🇹🇫/next" class=" [ small ] " rel="external" title="Next website in the IndieWeb Webring" style="white-space: nowrap;">Next →</a></li>
 				</ol>
 			</c-details>
 			{% if speedlify[canonical] %}

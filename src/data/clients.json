@@ -2,17 +2,20 @@
   {
     "title": "Electoral Commission",
     "url": "https://www.electoralcommission.org.uk",
-    "image": "electoral-commission-logo.svg"
+    "image": "electoral-commission-logo.svg",
+    "darkInvert": true
   },
   {
     "title": "Ministry of Justice",
     "url": "https://www.gov.uk/government/organisations/ministry-of-justice",
-    "image": "dbs-logo.svg"
+    "image": "dbs-logo.svg",
+    "darkInvert": true
   },
   {
     "title": "University of the Arts London",
     "url": "https://www.arts.ac.uk",
-    "image": "ual-logo.svg"
+    "image": "ual-logo.svg",
+    "darkInvert": true
   },
   {
     "title": "William Hill",
@@ -22,17 +25,20 @@
   {
     "title": "Glasgow Caledonian University",
     "url": "https://www.gcu.ac.uk",
-    "image": "gcu-logo.svg"
+    "image": "gcu-logo.svg",
+    "darkInvert": true
   },
   {
     "title": "National Federation of Women's Institutes",
     "url": "https://www.thewi.org.uk",
-    "image": "nfwi-logo.png"
+    "image": "nfwi-logo.png",
+    "darkInvert": true
   },
   {
     "title": "One Housing",
     "url": "https://www.onehousing.co.uk",
-    "image": "one-housing-logo.svg"
+    "image": "one-housing-logo.svg",
+    "darkInvert": true
   },
   {
     "title": "Martin Currie",
@@ -42,12 +48,14 @@
   {
     "title": "Wood",
     "url": "https://www.woodplc.com",
-    "image": "wood-logo.svg"
+    "image": "wood-logo.svg",
+    "darkInvert": true
   },
   {
     "title": "University of Hertfordshire",
     "url": "https://www.herts.ac.uk",
-    "image": "herts-logo.svg"
+    "image": "herts-logo.svg",
+    "darkInvert": true
   },
   {
     "title": "City, University of London",
@@ -57,7 +65,8 @@
   {
     "title": "Energy Institute",
     "url": "https://www.energyinst.org",
-    "image": "energy-institute-logo.svg"
+    "image": "energy-institute-logo.svg",
+    "darkInvert": true
   },
   {
     "title": "Middlesex University London",
@@ -68,5 +77,11 @@
     "title": "State of the Browser",
     "url": "https://stateofthebrowser.com",
     "image": "sotb-logo.png"
+  },
+  {
+    "title": "Squiz",
+    "url": "https://squiz.net",
+    "image": "squiz-logo-text.svg",
+    "darkInvert": true
   }
 ]

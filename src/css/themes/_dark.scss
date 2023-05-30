@@ -155,6 +155,10 @@
 		}
 	}
 
+	.dark-invert-colors {
+		filter: invert(1) hue-rotate(180deg);
+	}
+
 	///
 	// Exceptions
 	///

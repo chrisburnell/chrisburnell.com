@@ -68,7 +68,8 @@ main {
     @include owl(2em);
 }
 
-article {
+article,
+aside {
     @include owl;
 }
 ```
@@ -118,7 +119,8 @@ main {
     @include owl(medium);
 }
 
-article {
+article,
+aside {
     @include owl;
 }
 ```
@@ -144,7 +146,8 @@ main {
     @include owl(medium);
 }
 
-article {
+article,
+aside {
     @include owl;
 }
 ```

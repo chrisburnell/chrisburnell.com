@@ -1,4 +1,4 @@
-const { sotb_date } = require("#data/site")
+const { sotbDate } = require("#data/site")
 
 const cssnakedday = () => {
 	const now = Date.now()
@@ -11,7 +11,7 @@ const cssnakedday = () => {
 
 const sotbUpcoming = () => {
 	const now = Date.now()
-	const startEpoch = new Date(sotb_date).getTime()
+	const startEpoch = new Date(sotbDate).getTime()
 	const hundredDays = 1000 * 60 * 60 * 24 * 100
 
 	return startEpoch - now < hundredDays

@@ -76,7 +76,7 @@ I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link
     {%- for client in clients | sort(false, false, "title") -%}
         <article>
             <a href="{{ client.url }}" title="{{ client.title | safe }}" rel="external">
-                <img class=" [ interaction-grow ] " src="/images/built/{{ client.image }}" alt="" loading="lazy" decoding="async" role="presentation">
+                <img class=" [ interaction-grow{% if client.darkInvert %}  dark-invert-colors{% endif %} ] " src="/images/built/{{ client.image }}" alt="" loading="lazy" decoding="async" role="presentation" style="max-height: 8rem">
             </a>
         </article>
     {%- endfor -%}
@@ -88,6 +88,8 @@ I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link
     <dl>
         <dt>Email:</dt>
         <dd><a class=" [ canada ] " href="mailto:{{ author.email }}">{{ author.email }}</a></dd>
+        <dt>Bluesky:</dt>
+        <dd><a class=" [ canada ] " href="https://bsky.app/profile/{{ author.bluesky }}">{{ '@' + author.bluesky }}</a></dd>
         <dt>Mastodon:</dt>
         <dd><a class=" [ canada ] " href="https://{{ author.mastodon_domain }}/users/{{ author.mastodon.split('@') | first }}">{{ '@' + author.mastodon }}</a></dd>
     </dl>
@@ -112,6 +114,8 @@ This website was built with [Eleventy](https://11ty.dev) and the following langu
 This website also supports [Webmentions](https://indieweb.org/webmention) (powered by [Webmention.io](https://webmention.io)), displayed at the bottom of relevant pages using my [Eleventy](https://11ty.dev) plugin, [eleventy-cache-webmentions](/eleventy-cache-webmentions/).
 
 The source code is available for your perusal on [GitHub](https://github.com/{{ author.github }}/{{ site.repository }}), and each page contains [an edit link](#edit) *(in the footer)* allowing you to go directly to the page’s source on GitHub.
+
+No language models were used in any of the writing on this website.
 
 {%- set shelf_css -%}
 	@layer components {

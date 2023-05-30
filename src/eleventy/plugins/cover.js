@@ -1,7 +1,7 @@
 require("dotenv").config()
 const Image = require("@11ty/eleventy-img")
 
-const { url } = require("#data/site")
+const { url: siteUrl } = require("#data/site")
 const SPOTIFY_CLIENT_TOKEN = require("#data/spotify_token")
 
 const { getHost } = require("#filters/queries")
@@ -79,7 +79,7 @@ module.exports = (eleventyConfig) => {
 
 	eleventyConfig.on("afterBuild", () => {
 		let array = Array.from(ids)
-		// console.log(`[${getHost(url)}] Generating ${array.length} album covers.`)
+		// console.log(`[${getHost(siteUrl)}] Generating ${array.length} album covers.`)
 		for (let id of array) {
 			fetchImageData(id, fetchAlbumCoverUrl(id))
 		}

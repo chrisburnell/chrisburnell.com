@@ -1,7 +1,7 @@
 const EleventyFetch = require("@11ty/eleventy-fetch")
 const { getWebmentions } = require("@chrisburnell/eleventy-cache-webmentions")()
 
-const { cacheDurations, favicon, title, url } = require("#data/site")
+const { cacheDurations, favicon, title: siteTitle, url: siteUrl } = require("#data/site")
 const { untappd } = require("#data/author")
 const configWebmentions = require("#datajs/config/webmentions")
 const people = require("#datajs/people")
@@ -52,7 +52,7 @@ module.exports = {
 	mf_root: "entry",
 	show_responses: true,
 	eleventyComputed: {
-		canonical: (data) => url + data.page.url,
+		canonical: (data) => siteUrl + data.page.url,
 		of_url: (data) => getType(data).url,
 		of_title: (data) => getType(data).title,
 		meta_title: (data) => {
@@ -67,7 +67,7 @@ module.exports = {
 			} else if (data.category) {
 				return `${category} from ${friendlyDateLong(data.page.date)}`
 			}
-			return title.replace(/(<([^>]+)>)/gi, "")
+			return siteTitle.replace(/(<([^>]+)>)/gi, "")
 		},
 		meta_description: (data) => {
 			if (data.description) {
@@ -76,18 +76,18 @@ module.exports = {
 					.replace(/(<([^>]+)>)/gi, "")
 			} else if (data.category) {
 				const category = (data.categoryProper || data.category).charAt(0).toUpperCase() + (data.categoryProper || data.category).substring(1)
-				return `A ${category} on ${getHost(url)}`
+				return `A ${category} on ${getHost(siteUrl)}`
 			}
-			return `A page on ${getHost(url)}`
+			return `A page on ${getHost(siteUrl)}`
 		},
 		meta_image: (data) => {
 			if (data.banner || data.cover) {
-				return `${url}/images/built/${(data.banner || data.cover).replace("jpg", "jpeg")}`
+				return `${siteUrl}/images/built/${(data.banner || data.cover).replace("jpg", "jpeg")}`
 			} else if (data.photo) {
 				const photo = Array.isArray(data.photo) ? data.photo[0] : data.photo
-				return `${url}/images/built/${(photo.url || photo).replace("jpg", "jpeg")}`
+				return `${siteUrl}/images/built/${(photo.url || photo).replace("jpg", "jpeg")}`
 			}
-			return url + favicon
+			return siteUrl + favicon
 		},
 		authors: async (data) => {
 			if (data.authors) {

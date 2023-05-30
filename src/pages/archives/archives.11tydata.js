@@ -1,4 +1,4 @@
-const { favicon, url } = require("#data/site")
+const { favicon, url: siteUrl } = require("#data/site")
 const { getHost } = require("#filters/queries")
 const { markdownFormat } = require("#filters/strings")
 
@@ -8,7 +8,7 @@ module.exports = {
 	hfeed: true,
 	show_photos: true,
 	eleventyComputed: {
-		canonical: (data) => url + data.page.url,
+		canonical: (data) => siteUrl + data.page.url,
 		meta_title: (data) => {
 			return data.title.replace(/(<([^>]+)>)/gi, "")
 		},
@@ -18,13 +18,13 @@ module.exports = {
 					.replace("\n", " ")
 					.replace(/(<([^>]+)>)/gi, "")
 			}
-			return `A page on ${getHost(url)}`
+			return `A page on ${getHost(siteUrl)}`
 		},
 		meta_image: (data) => {
 			if (data.banner || data.cover) {
-				return `${url}/images/built/${(data.banner || data.cover).replace("jpg", "jpeg")}`
+				return `${siteUrl}/images/built/${(data.banner || data.cover).replace("jpg", "jpeg")}`
 			}
-			return url + favicon
+			return siteUrl + favicon
 		},
 	},
 }

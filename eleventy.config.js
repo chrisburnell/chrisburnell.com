@@ -1,6 +1,6 @@
 require("dotenv").config()
 const pkg = require("./package.json")
-const { url } = require("#data/site")
+const { url: siteUrl } = require("#data/site")
 
 // Import Eleventy plugins
 const pluginCaniuse = require("#plugins/caniuse")
@@ -119,6 +119,7 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.addLayoutAlias("base", "base.njk")
 	eleventyConfig.addLayoutAlias("page", "page.njk")
 	eleventyConfig.addLayoutAlias("archive", "archive.njk")
+	eleventyConfig.addLayoutAlias("httpstatus", "httpstatus.njk")
 	eleventyConfig.addLayoutAlias("post", "post.njk")
 	eleventyConfig.addLayoutAlias("portal", "portal.njk")
 	eleventyConfig.addLayoutAlias("feed", "feed.njk")
@@ -189,7 +190,7 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.setServerPassthroughCopyBehavior("passthrough")
 	eleventyConfig.setQuietMode(true)
 	eleventyConfig.on("beforeBuild", () => {
-		console.log(`[${filterQueries.getHost(url)}] Building…`)
+		console.log(`[${filterQueries.getHost(siteUrl)}] Building…`)
 	})
 	return {
 		dataTemplateEngine: "njk",

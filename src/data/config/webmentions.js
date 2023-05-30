@@ -1,13 +1,13 @@
 require("dotenv").config()
 
-const { cacheDurations, url } = require("#data/site")
+const { cacheDurations, url: siteUrl } = require("#data/site")
 const urlReplacements = require("#data/urlReplacements")
 
 const { defaults } = require("@chrisburnell/eleventy-cache-webmentions")()
 
 module.exports = Object.assign(defaults, {
-	domain: url,
-	feed: `https://webmention.io/api/mentions.json?domain=${new URL(url).hostname}&token=${process.env.WEBMENTION_IO_TOKEN}&per-page=9001`,
+	domain: siteUrl,
+	feed: `https://webmention.io/api/mentions.json?domain=${new URL(siteUrl).hostname}&token=${process.env.WEBMENTION_IO_TOKEN}&per-page=9001`,
 	key: "links",
 	// feed: `https://jam.chrisburnell.com/webmention/chrisburnell.com/${process.env.GO_JAMMING_TOKEN}`,
 	// key: "json",
