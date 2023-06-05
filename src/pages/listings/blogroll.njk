@@ -10,7 +10,7 @@ wide: true
 	<article class=" [ flow ] ">
 		<img src="https://v1.indieweb-avatar.11ty.dev/{{ item.url | urlencode }}/" class=" [ avatar ] " width="30" height="30" alt="{{ item.title | safe }}’s avatar" loading="lazy" decoding="async">
 		<h1>
-			<a href="{{ item.url }}" rel="{{ item.ref }}">
+			<a href="{{ item.url }}" rel="external">
 				{{ item.title | safe }}
 				<br>
 				<small aria-hidden="true">{{ item.url | getHost }}</small>

@@ -1,17 +1,14 @@
 [
   {
     "title": "Jeremy Keith",
-    "rel": "acquaintance met",
     "url": "https://adactio.com"
   },
   {
     "title": "Aaron Parecki",
-    "rel": "acquaintance met",
     "url": "https://aaronparecki.com"
   },
   {
     "title": "Calum Ryan",
-    "rel": "acquaintance met",
     "url": "https://calumryan.com"
   },
   {
@@ -20,7 +17,6 @@
   },
   {
     "title": "Ruth John",
-    "rel": "contact met",
     "url": "https://rumyra.com"
   },
   {
@@ -29,22 +25,18 @@
   },
   {
     "title": "Dave Letorey",
-    "rel": "friend met",
     "url": "https://letorey.co.uk"
   },
   {
     "title": "Andy Bell",
-    "rel": "acquaintance met",
     "url": "https://andy-bell.co.uk"
   },
   {
     "title": "Heydon Pickering",
-    "rel": "acquaintance met",
     "url": "https://heydonworks.com"
   },
   {
     "title": "Michelle Barker",
-    "rel": "acquaintance met",
     "url": "https://michellebarker.co.uk"
   },
   {
@@ -53,12 +45,10 @@
   },
   {
     "title": "Zach Leatherman",
-    "rel": "acquaintance",
     "url": "https://zachleat.com"
   },
   {
     "title": "Alistair Shepherd",
-    "rel": "acquaintance met",
     "url": "https://alistairshepherd.uk"
   },
   {
@@ -67,27 +57,22 @@
   },
   {
     "title": "Remy Sharp",
-    "rel": "contact met",
     "url": "https://remysharp.com"
   },
   {
     "title": "Ana Rodrigues",
-    "rel": "acquaintance met",
     "url": "https://ohhelloana.blog"
   },
   {
     "title": "Ru Singh",
-    "rel": "acquaintance",
     "url": "https://rusingh.com"
   },
   {
     "title": "Jacky Alciné",
-    "rel": "acquaintance",
     "url": "https://jacky.wtf"
   },
   {
     "title": "Vincent Pickering",
-    "rel": "acquaintance",
     "url": "https://vincentp.me"
   },
   {
@@ -96,7 +81,6 @@
   },
   {
     "title": "Chris Coyier",
-    "rel": "acquaintance",
     "url": "https://chriscoyier.net"
   },
   {
@@ -105,7 +89,6 @@
   },
   {
     "title": "Brad Frost",
-    "rel": "acquaintance met",
     "url": "https://bradfrost.com"
   },
   {
@@ -118,42 +101,34 @@
   },
   {
     "title": "Arek Chatys",
-    "rel": "friend met",
     "url": "https://iamarek.com"
   },
   {
     "title": "Dom Patmore",
-    "rel": "friend met",
     "url": "https://dompatmore.com"
   },
   {
     "title": "Matteo Pescarin",
-    "rel": "friend met",
     "url": "https://peach.smartart.it"
   },
   {
     "title": "Neil Mather",
-    "rel": "acquaintance met",
     "url": "https://doubleloop.net"
   },
   {
     "title": "Jeremy Cherfas",
-    "rel": "acquaintance met",
     "url": "https://jeremycherfas.net"
   },
   {
     "title": "Keith J. Grant",
-    "rel": "acquaintance",
     "url": "https://keithjgrant.com"
   },
   {
     "title": "Binyamin Green",
-    "rel": "acquaintance",
     "url": "https://binyam.in"
   },
   {
     "title": "Christian Heilmann",
-    "rel": "acquaintance met",
     "url": "https://christianheilmann.com"
   },
   {
@@ -166,7 +141,6 @@
   },
   {
     "title": "Rachel Andrew",
-    "rel": "acquaintance met",
     "url": "https://rachelandrew.co.uk"
   },
   {
@@ -179,7 +153,6 @@
   },
   {
     "title": "Adrian Roselli",
-    "rel": "contact met",
     "url": "https://adrianroselli.com"
   },
   {
@@ -188,12 +161,10 @@
   },
   {
     "title": "Cassie Evans",
-    "rel": "contact met",
     "url": "https://cassie.codes"
   },
   {
     "title": "Bruce Lawson",
-    "rel": "acquaintance met",
     "url": "https://brucelawson.co.uk"
   },
   {
@@ -202,22 +173,18 @@
   },
   {
     "title": "Léonie Watson",
-    "rel": "met",
     "url": "https://tink.uk"
   },
   {
     "title": "Ada Rose Cannon",
-    "rel": "acquaintance met",
     "url": "https://ada.is"
   },
   {
     "title": "Sally Lait",
-    "rel": "acquaintance met",
     "url": "https://sallylait.com"
   },
   {
     "title": "Matt Zeunert",
-    "rel": "acquaintance met",
     "url": "https://mattzeunert.com"
   },
   {
@@ -230,47 +197,38 @@
   },
   {
     "title": "Daniel Pontes",
-    "rel": "friend met",
     "url": "https://medium.com/@webdpontes"
   },
   {
     "title": "Dan Sackett",
-    "rel": "acquaintance",
     "url": "https://dansackett.me"
   },
   {
     "title": "Laura Kalbag",
-    "rel": "acquaintance met",
     "url": "https://laurakalbag.com"
   },
   {
     "title": "Jake Archibald",
-    "rel": "acquaintance met",
     "url": "https://jakearchibald.com"
   },
   {
     "title": "Wouter Groeneveld",
-    "rel": "friend",
     "url": "https://brainbaking.com"
   },
   {
     "title": "Hidde de Vries",
-    "rel": "acquaintance met",
     "url": "https://hidde.blog"
   },
   {
     "title": "Sophie Koonin",
-    "rel": "acquaintance met",
     "url": "https://localghost.dev"
   },
   {
     "title": "Stephanie Stimac",
-    "rel": "acquaintance met",
     "url": "https://stephaniestimac.com"
   },
   {
     "title": "Andy Clarke",
-    "rel": "acquaintance met",
     "url": "https://stuffandnonsense.co.uk"
   },
   {
@@ -278,23 +236,135 @@
     "url": "https://ishadeed.com"
   },
   {
-    "title": "Henri Helvetica",
-    "rel": "acquaintance met",
-    "url": "https://twitter.com/HenriHelvetica"
-  },
-  {
     "title": "Ben Agricola",
-    "rel": "friend met",
     "url": "https://ben.agrico.la"
   },
   {
     "title": "Ginestra Ferraro",
-    "rel": "friend met",
     "url": "https://www.thatsmood.com"
   },
   {
     "title": "Oliver Turner",
-    "rel": "friend met",
     "url": "https://www.oliverturner.cloud"
+  },
+  {
+    "title": "Bruce Delo",
+    "url": "https://flyknifecomics.com"
+  },
+  {
+    "title": "Christian DeWolf",
+    "url": "https://www.mirthturtle.com"
+  },
+  {
+    "title": "Cory Dransfeldt",
+    "url": "https://coryd.dev"
+  },
+  {
+    "title": "Yoav Weiss",
+    "url": "https://blog.yoav.ws"
+  },
+  {
+    "title": "Josh Tumath",
+    "url": "https://www.joshtumath.uk"
+  },
+  {
+    "title": "Luke Harris",
+    "url": "https://www.lkhrs.com"
+  },
+  {
+    "title": "Miriam Suzanne",
+    "url": "https://www.miriamsuzanne.com"
+  },
+  {
+    "title": "Sia Karamalegos",
+    "url": "https://sia.codes"
+  },
+  {
+    "title": "Trys Mudford",
+    "url": "https://trysmudford.com"
+  },
+  {
+    "title": "Sindre Sorhus",
+    "url": "https://sindresorhus.com"
+  },
+  {
+    "title": "Charlotte Dann",
+    "url": "https://charlottedann.com"
+  },
+  {
+    "title": "Web Platform News",
+    "url": "https://webplatform.news"
+  },
+  {
+    "title": "Trent Walton",
+    "url": "https://trentwalton.com"
+  },
+  {
+    "title": "Nicolas Hoizey",
+    "url": "https://nicolas-hoizey.com"
+  },
+  {
+    "title": "Sara Joy",
+    "url": "https://sarajoy.dev"
+  },
+  {
+    "title": "Phil Nash",
+    "url": "https://philna.sh"
+  },
+  {
+    "title": "Andy Davies",
+    "url": "https://andydavies.me"
+  },
+  {
+    "title": "Eric Bailey",
+    "url": "https://ericwbailey.website"
+  },
+  {
+    "title": "Manuel Matuzović",
+    "url": "https://www.matuzo.at"
+  },
+  {
+    "title": "Amy Hupe",
+    "url": "https://amyhupe.co.uk"
+  },
+  {
+    "title": "Seren Davies",
+    "url": "https://www.serendavies.me"
+  },
+  {
+    "title": "Luke Murphy",
+    "url": "https://www.lurkmoophy.com"
+  },
+  {
+    "title": "Stephanie Eckles",
+    "url": "https://moderncss.dev"
+  },
+  {
+    "title": "Surma",
+    "url": "https://surma.dev"
+  },
+  {
+    "title": "Phil Hawksworth",
+    "url": "https://www.hawksworx.com"
+  },
+  {
+    "title": "Pelle Wessman",
+    "url": "https://voxpelli.com"
+  },
+  {
+    "title": "Paul Robert Lloyd",
+    "url": "https://paulrobertlloyd.com"
+  },
+  {
+    "title": "Alex Russell",
+    "url": "https://infrequently.org"
+  },
+  {
+    "title": "Jason Lengstorf",
+    "url": "https://jason.af"
+  },
+  {
+    "title": "Evan Sheehan",
+    "url": "https://darthmall.net"
   }
 ]
