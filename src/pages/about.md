@@ -1,7 +1,7 @@
 ---
 title: About
 tagline: "<span class=\" [ canada ] \">About me</span>"
-bio: "<span class=\" [ canada ] \">Chris Burnell</span> is a <span class=\" [ canada ] \">Canadian</span> Front End Developer working for [Squiz](http://www.squiz.net). He’s [ravenous for CSS](https://chrisburnell.com/tag/css/) and built [Bowhead](https://chrisburnell.com/bowhead/) to bring design tokens to CSS. His [Webmention plugin](https://chrisburnell.com/eleventy-cache-webmentions/) for [Eleventy](https://11ty.dev) helps people connect across the [IndieWeb](https://indieweb.org), and his work in co-organising the [State of the Browser](https://stateofthebrowser.com) conference has brought together over 45 speakers and 150+ attendees each year."
+bio: "<span class=\" [ canada ] \">Chris Burnell</span> is a <span class=\" [ canada ] \">Canadian</span> Front End Developer working for [Squiz](http://www.squiz.net) as a Software Engineer. He also volunteers as an Organiser for the [State of the Browser](https://stateofthebrowser.com) conference, having brought together over 50 leading speakers to the delight of 150+ attendees each year. He’s self-proclaimed as [“Ravenous for CSS”](https://chrisburnell.com/tag/css/), and his [Webmention Plugin](https://chrisburnell.com/eleventy-cache-webmentions/) for [Eleventy](https://11ty.dev) helps people connect across the [IndieWeb](https://indieweb.org)."
 perch: true
 eleventyComputed:
   description: "{{ site.description | safe }}"
@@ -10,7 +10,7 @@ eleventyComputed:
 <p><strong>I’ve got a <a href="https://chrisburnell.com/cv/">CV / resumé</a>, if that’s what you’re looking for.</strong></p>
 
 <ul class=" [ cluster ] ">
-    <li><a href="https://codepen.io/chrisburnell" rel="external">CodePen</a></li><li><a href="https://github.com/chrisburnell" rel="external">GitHub</a></li><li><a href="https://fediverse.repc.co/@chrisburnell" rel="external">Mastodon</a></li><li><a href="https://chrisburnell.com/feed.xml">RSS</a></li>
+    <li><a href="https://chrisburnell.com/feed.xml"><svg width="20" height="20" aria-hidden="true" focusable="false" style="--fill: #ff8c00; margin-inline-end: 1ex; vertical-align: sub;"><use href="#svg--rss"></use></svg>RSS</a></li><li><a href="https://bsky.app/profile/chrisburnell.com" rel="external"><svg width="20" height="20" aria-hidden="true" focusable="false" style="--fill: #0085ff; margin-inline-end: 1ex; vertical-align: sub;"><use href="#svg--bluesky"></use></svg>Bluesky</a></li><li><a href="https://codepen.io/chrisburnell" rel="external"><svg width="20" height="20" aria-hidden="true" focusable="false" style="margin-inline-end: 1ex; vertical-align: sub;"><use href="#svg--codepen"></use></svg>CodePen</a></li><li><a href="https://github.com/chrisburnell" rel="external"><svg width="20" height="20" aria-hidden="true" focusable="false" style="margin-inline-end: 1ex; vertical-align: sub;"><use href="#svg--github"></use></svg>GitHub</a></li><li><a href="https://fediverse.repc.co/@chrisburnell" rel="external"><svg width="20" height="20" aria-hidden="true" focusable="false" style="--fill: #595aff; margin-inline-end: 1ex; vertical-align: sub;"><use href="#svg--mastodon"></use></svg>Mastodon</a></li>
 </ul>
 
 <hr>
@@ -72,7 +72,7 @@ I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link
 
 <h2 id="worked-with">Companies I’ve worked with</h2>
 
-<div class=" [ grid ] [ shelf ] [ center ] " style="--gap: var(--size-gap);">
+<div class=" [ grid ] [ shelf ] [ center ] " style="--min-inline-size: 6em; --gap: var(--size-gap);">
     {%- for client in clients | sort(false, false, "title") -%}
         <article>
             <a href="{{ client.url }}" title="{{ client.title | safe }}" rel="external">
@@ -87,11 +87,11 @@ I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link
 <address>
     <dl>
         <dt>Email:</dt>
-        <dd><a class=" [ canada ] " href="mailto:{{ author.email }}">{{ author.email }}</a></dd>
+        <dd><a class=" [ canada ] " href="mailto:{{ author.email }}"><img alt="" loading="lazy" decoding="async" src="/images/raven.svg" class="brand-logo" style="margin-inline-end: 1ex;">{{ author.email }}</a></dd>
         <dt>Bluesky:</dt>
-        <dd><a class=" [ canada ] " href="https://bsky.app/profile/{{ author.bluesky }}">{{ '@' + author.bluesky }}</a></dd>
+        <dd><a class=" [ canada ] " href="https://bsky.app/profile/{{ author.bluesky }}" title="{{ author.name }} on Bluesky"><svg width="20" height="20" aria-hidden="true" focusable="false" style="--fill: #0085ff; margin-inline-end: 1ex; vertical-align: sub;"><use href="#svg--bluesky"></use></svg>{{ '@' + author.bluesky }}</a></dd>
         <dt>Mastodon:</dt>
-        <dd><a class=" [ canada ] " href="https://{{ author.mastodon_domain }}/users/{{ author.mastodon.split('@') | first }}">{{ '@' + author.mastodon }}</a></dd>
+        <dd><a class=" [ canada ] " href="https://{{ author.mastodon_domain }}/users/{{ author.mastodon.split('@') | first }}" title="{{ author.name }} on Mastodon"><svg width="20" height="20" aria-hidden="true" focusable="false" style="--fill: #595aff; margin-inline-end: 1ex; vertical-align: sub;"><use href="#svg--mastodon"></use></svg>{{ '@' + author.mastodon }}</a></dd>
     </dl>
 </address>
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="420" height="87" viewBox="0 0 140 29">
-	<path fill="#ffffff" d="M107.8 4.3h5.7v19.8h-5.7zM126.6 24.1h9.6V18h-3.9V4.3h-5.7zM115.5 24.1h9.7V18h-3.9V4.3h-5.8zM100 4.3v7h-2.8v-7h-5.6v19.8h5.6v-7.8h2.8v7.8h5.7V4.3z"/>
+	<path fill="#777777" d="M107.8 4.3h5.7v19.8h-5.7zM126.6 24.1h9.6V18h-3.9V4.3h-5.7zM115.5 24.1h9.7V18h-3.9V4.3h-5.8zM100 4.3v7h-2.8v-7h-5.6v19.8h5.6v-7.8h2.8v7.8h5.7V4.3z"/>
 	<linearGradient id="william-hill-linear-gradient" gradientUnits="userSpaceOnUse" x1="67.044" y1="1906.162" x2="72.93" y2="1864.286" gradientTransform="matrix(1 0 0 -1 0 1901)">
 		<stop offset=".014" stop-color="#ab9357"/>
 		<stop offset=".708" stop-color="#c69d41"/>

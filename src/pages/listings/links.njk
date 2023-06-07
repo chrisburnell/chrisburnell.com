@@ -6,6 +6,16 @@ wide: true
 
 <div class=" [ grid ] [ shelf ] ">
 	<article class=" [ flow ] ">
+		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://bsky.app' | urlencode }}/" class=" [ avatar ] " width="30" height="30" alt="" role="presentation" loading="lazy" decoding="async">
+		<h1>
+			<a href="https://bsky.app/profile/{{ author.bluesky }}">
+				Bluesky
+				<br>
+				<small aria-hidden="true">@{{ author.bluesky }}</small>
+			</a>
+		</h1>
+	</article>
+	<article class=" [ flow ] ">
 		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://codepen.io' | urlencode }}/" class=" [ avatar ] " width="30" height="30" alt="" role="presentation" loading="lazy" decoding="async">
 		<h1>
 			<a href="https://codepen.io/{{ author.codepen }}">
