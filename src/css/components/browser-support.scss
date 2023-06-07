@@ -17,7 +17,7 @@
 	gap: var(--size-small);
 
 	li {
-		border-radius: var(--size-border-default);
+		border-radius: var(--border-radius, var(--size-border-thin));
 		padding-inline: var(--size-small);
 		font-weight: var(--font-weight-semibold);
 	}

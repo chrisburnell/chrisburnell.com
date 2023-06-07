@@ -21,7 +21,7 @@
 	margin-inline: auto;
 	border-width: 0;
 	border-block-start: var(--size-border-thin) solid var(--border-color, h(raven));
-	border-radius: 1px 1px var(--size-border-default) var(--size-border-default);
+	border-radius: var(--border-radius, var(--size-border-thin));
 	box-shadow: var(--box-shadow, var(--box-shadow-low));
 	text-align: start;
 	font-family: var(--font-family-sans);

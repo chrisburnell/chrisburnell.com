@@ -18,7 +18,7 @@
 	}
 
 	// Set some special dark backgrounds
-	:is(.header, .footer, .box) {
+	:is(.header, .footer, %box) {
 		background-color: var(--background-color, #{mix(map-get($colors, mineshaft), map-get($colors, thunder), (1 - map-get($opacities, gamma)) * 100%)});
 	}
 
@@ -90,10 +90,6 @@
 		background-color: h(yeti, beta);
 	}
 
-	dialog {
-		background-color: h(lynx);
-	}
-
 	th:not(:empty) {
 		background-color: h(kaiser);
 	}
@@ -123,14 +119,12 @@
 	// Compositions
 	///
 
-	.box,
 	%box {
 		border-block-start-color: var(--border-color, h(raven, alpha));
-	}
 
-	.box %anchor,
-	%box %anchor {
-		color: h(highland);
+		%anchor {
+			color: h(highland);
+		}
 	}
 
 	.rating {

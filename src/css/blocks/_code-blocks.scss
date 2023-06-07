@@ -7,7 +7,7 @@ pre[class*="language-"] {
 	background-color: h(mineshaft);
 	border-block-start: var(--size-border-thin) solid var(--border-color, h(raven));
 	padding: var(--size-gap) var(--size-gutter) var(--size-small);
-	border-radius: 1px 1px var(--size-border-default) var(--size-border-default);
+	border-radius: var(--border-radius, var(--size-border-thin));
 	box-shadow: var(--box-shadow, var(--box-shadow-medium));
 
 	// Labels

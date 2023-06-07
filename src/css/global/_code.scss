@@ -13,7 +13,7 @@
 
 :is(code, kbd, samp, mark) {
 	padding: var(--size-border-default);
-	border-radius: var(--size-border-default);
+	border-radius: var(--border-radius, var(--size-border-default));
 }
 
 :is(code, samp, kbd) {

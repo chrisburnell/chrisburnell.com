@@ -4,7 +4,7 @@
 ////
 
 .banner {
-	border-radius: var(--size-border-thin);
+	border-radius: var(--border-radius, var(--size-border-thin));
 	box-shadow: var(--box-shadow, var(--box-shadow-medium));
 }
 

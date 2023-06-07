@@ -148,9 +148,9 @@ module.exports = {
 			.slice(0, limits.feed)
 	},
 	hot: (collection) => {
-		// "Hot" sorting is done by determining the average delta of
-		// time between webmentions and now.
-		const deltaModifier = 1000 * 60 * 60 * 24 // day
+		// "Hot" sorting is done by determining the exponential moving average
+		// as a function of Webmentions across time
+		const deltaModifier = 1000 * 60 * 60 * 24 // 1 day
 		const coefficient = 0.333
 		return [...collection.getFilteredByTag("feature"), ...collection.getFilteredByTag("project")]
 			.filter(isPublished)

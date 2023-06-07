@@ -9,7 +9,7 @@ blockquote {
 	inline-size: 100%;
 	max-inline-size: var(--size-line-length);
 	padding: var(--size-medium);
-	border-radius: var(--size-border-default);
+	border-radius: var(--border-radius, var(--size-border-thin));
 	margin: 0 auto var(--size-medium);
 	hanging-punctuation: first;
 

@@ -34,6 +34,10 @@ figure {
 		max-block-size: 100dvb;
 	}
 
+	%image {
+		border-radius: var(--border-radius, var(--size-border-thin));
+	}
+
 	& > a {
 		display: block;
 		text-decoration: none;

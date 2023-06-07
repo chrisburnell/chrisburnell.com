@@ -4,7 +4,7 @@ class ThemeToggler {
 		this.theme = localStorage.getItem(this.STORAGE_KEY)
 
 		this.select = document.getElementById("theme-toggler")
-		this.options = this.select.querySelectorAll("option")
+		this.options = [...this.select.options]
 
 		this.init()
 	}
@@ -20,7 +20,7 @@ class ThemeToggler {
 	setSelected(id) {
 		this.options.forEach((option) => {
 			if (option.value === id) {
-				option.setAttribute("selected", "selected")
+				option.selected = true
 			}
 		})
 	}

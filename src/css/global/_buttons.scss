@@ -41,7 +41,7 @@ button {
 	padding: var(--padding-block, var(--padding, var(--size-small))) var(--padding-inline, var(--padding, var(--size-medium)));
 	// accounts for outline-width + outline-offset
 	margin: var(--margin-block, var(--margin, calc(var(--size-border-thin) * 2))) var(--margin-inline, var(--margin, calc(var(--size-border-thin) * 2)));
-	border-radius: var(--size-border-default);
+	border-radius: var(--border-radius, var(--size-border-default));
 	box-shadow: var(--box-shadow, var(--box-shadow-low));
 	overflow: visible;
 	position: relative;
