@@ -18,6 +18,10 @@ $matrix-palette: (
 		--hsl-#{$name}: #{color.hue($color)} #{color.saturation($color)} #{color.lightness($color)};
 	}
 
+	main {
+		background-image: url("/images/matrix.svg");
+	}
+
 	.logo,
 	.perch::after {
 		filter: hue-rotate(270deg) saturate(300%);

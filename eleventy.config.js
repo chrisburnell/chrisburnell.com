@@ -3,8 +3,8 @@ const pkg = require("./package.json")
 const { url: siteUrl } = require("#data/site")
 
 // Import Eleventy plugins
-const pluginCaniuse = require("#plugins/caniuse")
 const pluginAvatar = require("#plugins/avatar")
+const pluginBrowserSupport = require("#plugins/browserSupport")
 const pluginImage = require("#plugins/image")
 const pluginPregenerateImages = require("#plugins/pregenerateImages")
 // const pluginCover = require("#plugins/cover")
@@ -47,8 +47,8 @@ const markdownFootnote = require("markdown-it-footnote")
 
 module.exports = (eleventyConfig) => {
 	// Plugins
-	eleventyConfig.addPlugin(pluginCaniuse)
 	eleventyConfig.addPlugin(pluginAvatar)
+	eleventyConfig.addPlugin(pluginBrowserSupport)
 	eleventyConfig.addPlugin(pluginImage)
 	if (process.env.PREGENERATE_IMAGES) {
 		eleventyConfig.addPlugin(pluginPregenerateImages)

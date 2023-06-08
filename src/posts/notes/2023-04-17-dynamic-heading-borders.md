@@ -37,3 +37,6 @@ Forced line breaks around headings is already achieved by browser defaults, so I
 --------
 
 You can read more about `fit-content` and its brethren, `max-content` and `min-content`, [on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/fit-content) as well as track its progress towards full stability across modern browsers on my [Browser Feature Watch page](/feature-watch/#intrinsic-width).
+
+{% css %}@layer components { {%- include '../../../css/components/browser-support.css' -%} }{% endcss -%}
+{% browserSupport 'intrinsic-width' %}

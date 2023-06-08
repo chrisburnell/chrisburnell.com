@@ -600,8 +600,8 @@ p q r s t u v w x y z { | } ~</code></pre>
 
 <h2>Can I Use</h2>
 
-{% caniuse 'css-has' %}
+{%- css %}@layer components { {%- include '../../css/components/browser-support.css' -%} }{% endcss -%}
+{% browserSupport 'css-has' %}
 
 <p class="italic">I keep track of a whole bunch of different browser features over on my <a href="/feature-watch/">Browser Feature Watch</a> project.</p>
 
-{%- css %}@layer components { {%- include '../../css/components/browser-support.css' -%} }{% endcss -%}

@@ -5,7 +5,7 @@
     "supportsJS": "CSSContainerRule",
     "type": "at-rules",
     "key": "container",
-    "title": "Container Queries",
+    "title": "@container",
     "description": "Like media queries, but even better. Basically, allows us to write context-aware CSS by querying an element’s parent.",
     "links": ["[Official Specification](https://www.w3.org/TR/css-contain-3)", "[Article by Stephanie Eckles](https://www.smashingmagazine.com/2021/05/complete-guide-css-container-queries/)"]
   },
@@ -42,7 +42,7 @@
     "language": "css",
     "supports": "grid-template-columns: subgrid",
     "key": "grid-template-rows.subgrid",
-    "title": "Subgrid",
+    "title": "subgrid",
     "description": "Allows grid to cascade into children of a grid container, rather than the need for a flat layout.",
     "links": ["[Official Specification](https://www.w3.org/TR/css-grid-2/)", "[Article by Rachel Andrew](https://www.smashingmagazine.com/2018/07/css-grid-2/)"]
   },
@@ -64,7 +64,7 @@
     "links": ["[Official Specification (CSS Color Module Level 4)](https://www.w3.org/TR/css-color-4/)", "[Official Specification (CSS Color Module Level 5)](https://www.w3.org/TR/css-color-5/)", "[Article by Michelle Barker](https://www.smashingmagazine.com/2021/11/guide-modern-css-colors/)"]
   },
   {
-    "id": "mdn-css_types_color_oklch",
+    "id": "oklch",
     "language": "css",
     "supports": "color: oklch(0 0 0)",
     "type": "types",
@@ -74,7 +74,7 @@
     "links": ["[Page on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklch)"]
   },
   {
-    "id": "mdn-css_types_color_oklab",
+    "id": "oklab",
     "language": "css",
     "supports": "color: oklab(0 0 0)",
     "type": "types",
@@ -129,7 +129,7 @@
     "supports": "scroll-timeline: none block",
     "type": "properties",
     "key": "scroll-timeline",
-    "title": "Scroll Timeline",
+    "title": "@scroll-timeline",
     "description": "Native-CSS animations based on scroll position—no more need for JS!",
     "links": ["[Official Specification](https://drafts.csswg.org/scroll-animations-1/)", "[Article by Bramus Van Damme](https://css-tricks.com/practical-use-cases-for-scroll-linked-animations-in-css-with-scroll-timelines/)"]
   },
@@ -159,12 +159,12 @@
     "supports": "font-tech(palettes)",
     "type": "properties",
     "key": "font-palette",
-    "title": "Font Palette",
+    "title": "font-palette",
     "description": "Define a palette from a color font.",
     "links": ["[Official Specification](https://www.w3.org/TR/css-fonts-4/#propdef-font-palette)"]
   },
   {
-    "id": "mdn-javascript_builtins_array_at",
+    "id": "array-at",
     "language": "javascript",
     "type": "buildins",
     "key": "Array.at",
@@ -271,16 +271,16 @@
     "links": ["[Official Specification](https://www.w3.org/TR/css-color-5/#relative-colors)"]
   },
   {
-    "id": "mdn-html_global_attributes_inert",
+    "id": "inert",
     "language": "html",
     "type": "global_attributes",
     "key": "inert",
-    "title": "Inert",
-    "description": "A single HTML attribute that allows you designate parts of your document as inactive, disallowing any interaction (mouse/keyboard/otherwise) within those elements.",
+    "title": "Inert Attribute",
+    "description": "An HTML attribute that allows you designate parts of your document as inactive, disallowing any interaction (mouse/keyboard/otherwise) within those elements.",
     "links": ["[Page on MDN](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/inert)"]
   },
   {
-    "id": "mdn-css_at-rules_property",
+    "id": "at-rules",
     "language": "css",
     "supports": "at-rule(@property)",
     "type": "at-rules",
@@ -290,7 +290,7 @@
     "links": ["[Page on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@property)"]
   },
   {
-    "id": "mdn-css_selectors_target-text",
+    "id": "target-text",
     "language": "css",
     "supports": "selector(::target-text)",
     "type": "selectors",
@@ -309,7 +309,7 @@
     "links": ["[Page on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share)"]
   },
   {
-    "id": "mdn-css_properties_margin-trim",
+    "id": "margin-trim",
     "language": "css",
     "supports": "margin-trim: block",
     "type": "properties",
@@ -329,10 +329,12 @@
     "links": ["[MDN Web Docs - Using CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables)"]
   },
   {
-    "id": "css-text-wrap",
+    "id": "text-wrap",
     "language": "css",
     "supports": "text-wrap: balance",
-    "title": "Balanced Text",
+    "type": "properties",
+    "key": "text-wrap",
+    "title": "text-wrap",
     "description": "Evenly distributes words across multiple lines to prevent widows.",
     "links": ["[Working Draft](https://www.w3.org/TR/css-text-4/#text-wrapping)", "[Article by Richard Rutter](https://clagnut.com/blog/2424/)"]
   },
@@ -345,13 +347,56 @@
     "links": ["[Working Draft](https://www.w3.org/TR/css-sizing-3/#sizing-values)"]
   },
   {
-    "id": "mdn-css_types_easing-function_linear-function",
+    "id": "easing-function",
     "language": "css",
     "supports": "transition-timing-function: linear(1, -0.5, 0)",
     "type": "types",
-    "key": "linear-function",
-    "title": "Linear Easing Function",
+    "key": "easing-function",
+    "title": "linear()",
     "description": "Allows defining more complex mathematical functions to describe the rate of change for numerical value changes.",
     "links": ["[Working Draft](https://drafts.csswg.org/css-images-4/#linear-gradients)", "[Page on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/easing-function)"]
+  },
+  {
+    "id": "popover",
+    "language": "html",
+    "type": "global_attributes",
+    "key": "popover",
+    "title": "Popover Attribute",
+    "description": "An HTML attribute to get and set the popover state of an element via JavaScript.",
+    "links": ["[Working Draft](https://html.spec.whatwg.org/multipage/popover.html#dom-popover)", "[Page on MDN](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/popover)", "[Article by Hidde de Vries](https://hidde.blog/popover-semantics/)"]
+  },
+  {
+    "id": "dialog",
+    "language": "html",
+    "title": "&lt;dialog&gt;",
+    "description": "An HTML element to create a custom dialog box much like a modal window and includes a backdrop pseudo element.",
+    "links": ["[Official Specification](https://html.spec.whatwg.org/multipage/forms.html#the-dialog-element)", "[Page on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog)", "[Article by Hidde de Vries](https://hidde.blog/popover-semantics/)"]
+  },
+  {
+    "id": "accent-color",
+    "language": "css",
+    "supports": "accent-color: rebeccapurple",
+    "type": "properties",
+    "key": "accent-color",
+    "title": "accent-color",
+    "description": "Allows defining the accent color used for UI controls generated by some elements (forms, media, etc.).",
+    "links": ["[Page on MDN](https://developer.mozilla.org/docs/Web/CSS/accent-color)"]
+  },
+  {
+    "id": "view-transition",
+    "language": "css",
+    "supports": "view-transition-name: wibble",
+    "type": "selectors",
+    "key": "view-transition",
+    "title": "View Transition API",
+    "description": "Allows defining visual transitions which react to state changes, e.g. navigating between pages.",
+    "links": ["[Page on MDN](https://developer.mozilla.org/en-US/docs/Web/API/ViewTransition)", "[Article by Dave Rupert](https://daverupert.com/2023/05/getting-started-view-transitions/)"]
+  },
+  {
+    "id": "css-media-range-syntax",
+    "language": "css",
+    "title": "Media Queries Range Syntax",
+    "description": "Adds syntax improvements to media queries to better describe ranges and comparison operators.",
+    "links": ["[Page on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries)"]
   }
 ]

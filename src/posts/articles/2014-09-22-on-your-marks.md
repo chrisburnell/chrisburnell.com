@@ -123,7 +123,7 @@ Everything’s looking sweet so far, so let’s tackle the 2<sup>nd</sup> and 3<
 <aside><p>Check out the support for <a rel="external" href="http://caniuse.com/#feat=hashchange">onhashchange on Can I Use</a> before jumping in too deep!</p></aside>
 
 {% css %}@layer components { {%- include '../../../css/components/browser-support.css' -%} }{% endcss -%}
-{% caniuse 'hashchange' %}
+{% browserSupport 'hashchange' %}
 
 ```javascript
 var commentsHash = ['#comment', '#disqus_thread'];

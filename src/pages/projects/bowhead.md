@@ -38,7 +38,7 @@ This has a positive effect that ranges from giving the colours in your design sy
 
 Make sure the browser support for CSS Variables meets your needs:
 
-{% caniuse 'css-variables' %}
+{% browserSupport 'css-variables' %}
 
 ## CSS Data Types
 

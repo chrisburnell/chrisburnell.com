@@ -1,18 +1,19 @@
 const { AssetCache } = require("@11ty/eleventy-fetch")
-const browserData = require("@mdn/browser-compat-data")
+const mdnBrowserData = require("@mdn/browser-compat-data")
 const caniuse = require("caniuse-api")
 
-const { cacheDurations } = require("#data/site")
+const {
+	cacheDurations: { daily },
+} = require("#data/site")
 
 const browserFeatures = require("#data/browserFeatures")
 const browsersByType = require("#data/browsersByType")
-const duration = cacheDurations.daily
 
 const getCaniuseSupport = async (feature) => {
 	let asset = new AssetCache(`caniuse_${feature}`, ".cache")
 	asset.ensureDir()
 
-	if (asset.isCacheValid(duration)) {
+	if (asset.isCacheValid(daily)) {
 		return await asset.getCachedValue()
 	}
 
@@ -23,7 +24,7 @@ const getCaniuseSupport = async (feature) => {
 
 const getBrowserslistSupport = async (feature) => {
 	const featureData = browserFeatures.filter((lookup) => feature === lookup.id)[0]
-	const featureSet = browserData[featureData.language][featureData.type]
+	const featureSet = mdnBrowserData[featureData.language][featureData.type]
 	const browserslistData = featureData["key"].split(".").reduce((object, key) => {
 		return object[key]
 	}, featureSet)
@@ -50,24 +51,24 @@ module.exports = async () => {
 					feature.partial += 1
 				}
 			})
-		}
+		} else {
+			const browserslistSupport = await getBrowserslistSupport(feature.id)
+				.then((browserslistSupport) => browserslistSupport)
+				.catch(() => false)
 
-		const browserslistSupport = await getBrowserslistSupport(feature.id)
-			.then((browserslistSupport) => browserslistSupport)
-			.catch(() => false)
+			if (browserslistSupport) {
+				feature.full = 0
+				feature.partial = 0
 
-		if (browserslistSupport) {
-			feature.full = 0
-			feature.partial = 0
-
-			browsersByType.forEach((browser) => {
-				const support = Array.isArray(browserslistSupport[browser.key]) ? browserslistSupport[browser.key][0] : browserslistSupport[browser.key]
-				if ((support?.version_added && support?.flags) || (support?.version_added + "").match(/preview/)) {
-					feature.partial += 1
-				} else if (support?.version_added) {
-					feature.full += 1
-				}
-			})
+				browsersByType.forEach((browser) => {
+					const support = Array.isArray(browserslistSupport[browser.key]) ? browserslistSupport[browser.key][0] : browserslistSupport[browser.key]
+					if ((support?.version_added && support?.flags) || (support?.version_added + "").match(/preview/)) {
+						feature.partial += 1
+					} else if (support?.version_added) {
+						feature.full += 1
+					}
+				})
+			}
 		}
 
 		sorted.push(feature)
