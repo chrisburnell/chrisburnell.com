@@ -65,6 +65,7 @@
 
 	.footer__navigation {
 		grid-column: left;
+		line-height: var(--line-height-code);
 	}
 
 	.author {
@@ -91,5 +92,6 @@
 
 	summary ~ * {
 		padding: 0;
+		line-height: var(--line-height-code);
 	}
 }

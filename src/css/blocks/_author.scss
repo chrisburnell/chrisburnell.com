@@ -4,13 +4,18 @@
 ////
 
 .author {
+	display: flex;
+	flex-direction: row;
+	gap: var(--size-large);
 	margin: 0;
 }
 
 .author__information {
 	--flow-space: var(--size-small);
 	--size-border: 0;
+	--size-character-limit: 30em;
 
+	min-inline-size: var(--size-avatar);
 	display: flex;
 	flex-direction: column;
 	margin-block-end: var(--size-small);
@@ -21,16 +26,8 @@
 	text-align: center;
 	text-decoration: none;
 
-	@container (inline-size <= #{map-get($breakpoints, "medium")}) {
-		float: left;
-		float: inline-start;
-		margin-inline-end: var(--size-medium);
-	}
-
 	@container (inline-size > #{map-get($breakpoints, "medium")}) {
-		float: right;
-		float: inline-end;
-		margin-inline-start: var(--size-medium);
+		order: 2;
 	}
 
 	&::before {
