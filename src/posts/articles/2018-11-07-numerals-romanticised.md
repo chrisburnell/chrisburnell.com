@@ -17,7 +17,7 @@ syndicate_to:
 ---
 
 <blockquote>
-    <p>You found a Bag of Holding (III)…</p>
+	<p>You found a Bag of Holding (III)…</p>
 </blockquote>
 
 In case you aren’t familiar with Roman numerals and how they relate to Arabic numerals, Roman numerals are denoted by letters, each of which represents a numeric value, and by adding each of the values in the sequence together, you arrive at the result.
@@ -127,16 +127,16 @@ Let’s step through converting an Arabic numeral (e.g. <samp>1569</samp>) to Ro
 ```liquid
 {% assign input = include.value %}
 {% for c in (1..9999) %}
-    {% for numeral in site.data.numerals %}
-        {% if input >= numeral.arabic %}
-            {% assign input = input | minus: numeral.arabic %}
-            {% assign output = output | append: numeral.roman %}
-            {% break %}
-        {% endif %}
-    {% endfor %}
-    {% if input == 0 %}
-        {% break %}
-    {% endif %}
+	{% for numeral in site.data.numerals %}
+		{% if input >= numeral.arabic %}
+			{% assign input = input | minus: numeral.arabic %}
+			{% assign output = output | append: numeral.roman %}
+			{% break %}
+		{% endif %}
+	{% endfor %}
+	{% if input == 0 %}
+		{% break %}
+	{% endif %}
 {% endfor %}
 {{ output }}
 ```
@@ -150,18 +150,18 @@ The same can be done for going from Roman numerals to Arabic. To do so, we have 
 ```liquid
 {% assign input = include.value %}
 {% for c in (1..9999) %}
-    {% assign slice_double = input | slice: 0, 2 %}
-    {% assign slice_single = input | slice: 0 %}
-    {% for numeral in site.data.numerals %}
-        {% if slice_double == numeral.roman or slice_single == numeral.roman %}
-            {% assign input = input | replace_first: numeral.roman %}
-            {% assign output = output | plus: numeral.arabic %}
-            {% break %}
-        {% endif %}
-    {% endfor %}
-    {% if input == '' %}
-        {% break %}
-    {% endif %}
+	{% assign slice_double = input | slice: 0, 2 %}
+	{% assign slice_single = input | slice: 0 %}
+	{% for numeral in site.data.numerals %}
+		{% if slice_double == numeral.roman or slice_single == numeral.roman %}
+			{% assign input = input | replace_first: numeral.roman %}
+			{% assign output = output | plus: numeral.arabic %}
+			{% break %}
+		{% endif %}
+	{% endfor %}
+	{% if input == '' %}
+		{% break %}
+	{% endif %}
 {% endfor %}
 {{ output }}
 ```
@@ -177,36 +177,36 @@ You’ll also notice, in both cases, that there’s a loop that goes from <samp>
 ```liquid
 {%- assign input = include.value | to_integer -%}
 {%- if input != 0 -%}
-    {%- assign output = '' -%}
-    {%- for c in (1..9999) -%}
-        {%- for numeral in site.data.numerals -%}
-            {%- if input >= numeral.arabic -%}
-                {%- assign input = input | minus: numeral.arabic -%}
-                {%- assign output = output | append: numeral.roman -%}
-                {%- break -%}
-            {%- endif -%}
-        {%- endfor -%}
-        {%- if input == 0 -%}
-            {%- break -%}
-        {%- endif -%}
-    {%- endfor -%}
+	{%- assign output = '' -%}
+	{%- for c in (1..9999) -%}
+		{%- for numeral in site.data.numerals -%}
+			{%- if input >= numeral.arabic -%}
+				{%- assign input = input | minus: numeral.arabic -%}
+				{%- assign output = output | append: numeral.roman -%}
+				{%- break -%}
+			{%- endif -%}
+		{%- endfor -%}
+		{%- if input == 0 -%}
+			{%- break -%}
+		{%- endif -%}
+	{%- endfor -%}
 {%- else -%}
-    {%- assign input = include.value -%}
-    {%- assign output = 0 -%}
-    {%- for c in (1..9999) -%}
-        {%- assign slice_double = input | slice: 0, 2 -%}
-        {%- assign slice_single = input | slice: 0 -%}
-        {%- for numeral in site.data.numerals -%}
-            {%- if slice_double == numeral.roman or slice_single == numeral.roman -%}
-                {%- assign input = input | replace_first: numeral.roman -%}
-                {%- assign output = output | plus: numeral.arabic -%}
-                {%- break -%}
-            {%- endif -%}
-        {%- endfor -%}
-        {%- if input == '' -%}
-            {%- break -%}
-        {%- endif -%}
-    {%- endfor -%}
+	{%- assign input = include.value -%}
+	{%- assign output = 0 -%}
+	{%- for c in (1..9999) -%}
+		{%- assign slice_double = input | slice: 0, 2 -%}
+		{%- assign slice_single = input | slice: 0 -%}
+		{%- for numeral in site.data.numerals -%}
+			{%- if slice_double == numeral.roman or slice_single == numeral.roman -%}
+				{%- assign input = input | replace_first: numeral.roman -%}
+				{%- assign output = output | plus: numeral.arabic -%}
+				{%- break -%}
+			{%- endif -%}
+		{%- endfor -%}
+		{%- if input == '' -%}
+			{%- break -%}
+		{%- endif -%}
+	{%- endfor -%}
 {%- endif -%}
 {{ output }}
 ```

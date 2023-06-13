@@ -31,32 +31,32 @@ An oft-used method for organising *media queries* comes in the form of some sort
 
 ```html
 <button class="navigation-toggle-button">
-    <span>Toggle Navigation</span>
+	<span>Toggle Navigation</span>
 </button>
 ```
 
 ```css
 .navigation-toggle-button {
-    display: inline-block;
-    background-image: url("hamburger.png");
-    width:  40px;
-    height: 40px;
+	display: inline-block;
+	background-image: url("hamburger.png");
+	width:  40px;
+	height: 40px;
 }
 
 .navigation-toggle-button span {
-    display: none;
+	display: none;
 }
 
 @media (min-width: 800px) {
-    .navigation-toggle-button {
-        background-image: none;
-        width:  auto;
-        height: auto;
-    }
+	.navigation-toggle-button {
+		background-image: none;
+		width:  auto;
+		height: auto;
+	}
 
-    .navigation-toggle-button span {
-        display: inline;
-    }
+	.navigation-toggle-button span {
+		display: inline;
+	}
 }
 ```
 
@@ -76,25 +76,25 @@ Let’s refactor the CSS to describe the exact same styles but with some readabi
 
 ```css
 .navigation-toggle-button {
-    display: inline-block;
+	display: inline-block;
 }
 
 @media (min-width: 800px) {
-    .navigation-toggle-button {
-        border: 2px solid black;
-    }
+	.navigation-toggle-button {
+		border: 2px solid black;
+	}
 }
 
 @media (max-width: 799px) {
-    .navigation-toggle-button span {
-        display: none;
-    }
+	.navigation-toggle-button span {
+		display: none;
+	}
 
-    .navigation-toggle-button {
-        background-image: url("hamburger.png");
-        width:  40px;
-        height: 40px;
-    }
+	.navigation-toggle-button {
+		background-image: url("hamburger.png");
+		width:  40px;
+		height: 40px;
+	}
 }
 ```
 

@@ -18,33 +18,6 @@ const getType = (data) => {
 	}
 }
 
-const getExternalLikes = async (syndicationLinks) => {
-	if (syndicationLinks) {
-		const matchingLinks = syndicationLinks.filter((link) => {
-			return link.includes("https://dev.to")
-		})
-
-		if (matchingLinks.length) {
-			const articles = await EleventyFetch(`https://dev.to/api/articles?username=${author["dev_to"]}`, {
-				duration: cacheDurations.weekly,
-				type: "json",
-				fetchOptions: {
-					method: "GET",
-				},
-			})
-
-			const matchingArticles = articles.filter((article) => {
-				return matchingLinks[0] === article["url"]
-			})
-
-			if (matchingArticles.length) {
-				return matchingArticles[0]["positive_reactions_count"] || 0
-			}
-		}
-	}
-	return 0
-}
-
 module.exports = {
 	layout: "post",
 	tags: ["post"],
@@ -113,17 +86,7 @@ module.exports = {
 			return data.syndicate_to || []
 		},
 		webmentions: (data) => {
-			return data.show_responses ? getWebmentions(configWebmentions, configWebmentions.domain + data.page.url) : []
-		},
-		externalLikes: async (data) => {
-			if (data.show_responses && data.syndicate_to) {
-				const externalLikes = await getExternalLikes(data.syndicate_to)
-					.then((externalLikes) => externalLikes)
-					.catch(() => 0)
-
-				return externalLikes
-			}
-			return 0
+			return data.page.url ? getWebmentions(configWebmentions, configWebmentions.domain + data.page.url) : []
 		},
 		// <head> links currently broken because this logic lives in browse.njk
 		// previous_post: collections[category] | arrayKeyIncludes('data.tags', 'post') | arePublished | getPreviousCollectionItem(page),

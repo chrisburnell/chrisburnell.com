@@ -75,7 +75,7 @@ The gist of the plugin is that you can define CSS styles and apply them to pages
 
 ```html
 <style id="stylish-3" class="stylish">
-    ...
+	...
 </style>
 ```
 
@@ -140,10 +140,10 @@ I made a couple of over-arching changes to the CSS of *Pinboard*, which affected
 
 ```css
 html {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 *, *:before, *:after {
-    box-sizing: inherit;
+	box-sizing: inherit;
 }
 ```
 
@@ -170,43 +170,43 @@ html {
 .edit_links a.delete:visited,
 .edit_links a.mark_read,
 .edit_links a.mark_read:visited {
-    background-color: transparent;
-    background-position: center;
-    background-size: 19px 19px;
-    background-repeat: no-repeat;
-    opacity: .4;
-    width:  19px;
-    height: 19px;
-    display: inline-block;
-    padding: .25rem;
-    position: relative;
-    overflow: hidden;
-    vertical-align: middle;
-    text-indent: 100%;
-    white-space: nowrap;
-    -webkit-transition: opacity .1s ease;
-            transition: opacity .1s ease;
+	background-color: transparent;
+	background-position: center;
+	background-size: 19px 19px;
+	background-repeat: no-repeat;
+	opacity: .4;
+	width:  19px;
+	height: 19px;
+	display: inline-block;
+	padding: .25rem;
+	position: relative;
+	overflow: hidden;
+	vertical-align: middle;
+	text-indent: 100%;
+	white-space: nowrap;
+	-webkit-transition: opacity .1s ease;
+	transition: opacity .1s ease;
 }
-    .edit_links a.edit:hover,
-    .edit_links a.edit:focus,
-    .edit_links a.delete:hover,
-    .edit_links a.delete:focus,
-    .edit_links a.mark_read:hover,
-    .edit_links a.mark_read:focus {
-        opacity: 1;
-    }
+.edit_links a.edit:hover,
+.edit_links a.edit:focus,
+.edit_links a.delete:hover,
+.edit_links a.delete:focus,
+.edit_links a.mark_read:hover,
+.edit_links a.mark_read:focus {
+	opacity: 1;
+}
 
 ...
 
 /* dark colour green */
 .edit_links a.edit {
-    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lv...);
+	background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lv...);
 }
-    /* light colour green */
-    .edit_links a.edit:hover,
-    .edit_links a.edit:focus {
-        background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lv...);
-    }
+	/* light colour green */
+	.edit_links a.edit:hover,
+	.edit_links a.edit:focus {
+		background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lv...);
+	}
 ```
 
 - modified the colour palette to match [my style guide](/styleguide)

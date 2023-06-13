@@ -16,8 +16,8 @@ toc: true
 ---
 
 <figure>
-    {% image './images/content/bowhead.png', '', 'pixelated' %}
-    <figcaption><p>A lovely <a href="https://en.wikipedia.org/wiki/Bowhead_whale">bowhead whale</a>. I’d love other suggestions! 😅</p></figcaption>
+	{% image './images/content/bowhead.png', '', 'pixelated' %}
+	<figcaption><p>A lovely <a href="https://en.wikipedia.org/wiki/Bowhead_whale">bowhead whale</a>. I’d love other suggestions! 😅</p></figcaption>
 </figure>
 
 {% include 'package.njk' %}
@@ -43,24 +43,24 @@ Make sure the browser support for CSS Variables meets your needs:
 ## CSS Data Types
 
 <blockquote>
-    <p>CSS data types define typical values (including keywords and units) accepted by CSS properties and functions.</p>
-    <cite><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Types">CSS data types on MDN</a></cite>
+	<p>CSS data types define typical values (including keywords and units) accepted by CSS properties and functions.</p>
+	<cite><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Types">CSS data types on MDN</a></cite>
 </blockquote>
 
 An important first step to using **Bowhead** is to understand how it categorises CSS properties by the different <q>CSS data types</q>. By and large, this is done by looking at what the *expected* values for a given property are:
 
 ```css
 selector {
-    background-color: #b22222;
-    color: #3cb371;
-    outline-color: #d2b48c;
+	background-color: #b22222;
+	color: #3cb371;
+	outline-color: #d2b48c;
 
-    padding: 0.5rem;
-    margin: 2rem;
+	padding: 0.5rem;
+	margin: 2rem;
 
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-end;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-end;
 }
 ```
 
@@ -73,130 +73,130 @@ Sizes can take trickier forms to identify and categorise, and I recommend allowi
 Extrapolating from here across the vast variety of CSS *properties* and the *data type of the values* they expect, you end up with a map of *most properties* against value types:
 
 <table>
-    <thead>
-        <tr>
-            <th>color</th>
-            <th>size</th>
-            <th>alignment</th>
-            <th>…</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-                <code>background-color</code><br>
-                <code>border-color</code><br>
-                <code>outline-color</code><br>
-                <code>color</code><br>
-                <code>fill</code><br>
-                <code>stroke</code><br>
-                <code>…</code>
-            </td>
-            <td>
-                <code>width</code><br>
-                <code>height</code><br>
-                <code>padding</code><br>
-                <code>margin</code><br>
-                <code>border-width</code><br>
-                <code>min-width</code><br>
-                <code>max-width</code><br>
-                <code>…</code>
-            </td>
-            <td>
-                <code>align-items</code><br>
-                <code>justify-content</code><br>
-                <code>…</code>
-            </td>
-        </tr>
-    </tbody>
+	<thead>
+		<tr>
+			<th>color</th>
+			<th>size</th>
+			<th>alignment</th>
+			<th>…</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<code>background-color</code><br>
+				<code>border-color</code><br>
+				<code>outline-color</code><br>
+				<code>color</code><br>
+				<code>fill</code><br>
+				<code>stroke</code><br>
+				<code>…</code>
+			</td>
+			<td>
+				<code>width</code><br>
+				<code>height</code><br>
+				<code>padding</code><br>
+				<code>margin</code><br>
+				<code>border-width</code><br>
+				<code>min-width</code><br>
+				<code>max-width</code><br>
+				<code>…</code>
+			</td>
+			<td>
+				<code>align-items</code><br>
+				<code>justify-content</code><br>
+				<code>…</code>
+			</td>
+		</tr>
+	</tbody>
 </table>
 
 With this knowledge under our belt, we can begin to define the design tokens for our particular project by fleshing out what *values* are available underneath each *type*:
 
 <table>
-    <thead>
-        <tr>
-            <th>color</th>
-            <th>size</th>
-            <th>alignment</th>
-            <th>…</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-                <code>#b22222</code><br>
-                <code>#3cb371</code><br>
-                <code>#d2b48c</code><br>
-                <code>…</code>
-            </td>
-            <td>
-                <code>1em</code><br>
-                <code>20px</code><br>
-                <code>2px</code><br>
-                <code>…</code>
-            </td>
-            <td>
-                <code>flex-start</code><br>
-                <code>flex-end</code><br>
-                <code>center</code><br>
-                <code>…</code>
-            </td>
-        </tr>
-    </tbody>
+	<thead>
+		<tr>
+			<th>color</th>
+			<th>size</th>
+			<th>alignment</th>
+			<th>…</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<code>#b22222</code><br>
+				<code>#3cb371</code><br>
+				<code>#d2b48c</code><br>
+				<code>…</code>
+			</td>
+			<td>
+				<code>1em</code><br>
+				<code>20px</code><br>
+				<code>2px</code><br>
+				<code>…</code>
+			</td>
+			<td>
+				<code>flex-start</code><br>
+				<code>flex-end</code><br>
+				<code>center</code><br>
+				<code>…</code>
+			</td>
+		</tr>
+	</tbody>
 </table>
 
 ## Usage
 
 <table>
-    <thead>
-        <tr>
-            <td></td>
-            <th>Values</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th><code>$bowhead-variable-as-default</code><br><em>(optional)</em></th>
-            <td style="white-space:nowrap">
-                <strong>true</strong> <em>(default)</em><br>
-                <strong>false</strong>
-            </td>
-            <td>Decides whether or not use the CSS Variable or raw value when calling the <samp>@v</samp> function.</td>
-        </tr>
-        <tr>
-            <th><code>$bowhead-show-fallback</code><br><em>(optional)</em></th>
-            <td style="white-space:nowrap">
-                <strong>true</strong> <em>(default)</em><br>
-                <strong>false</strong>
-            </td>
-            <td>Decides whether or not to show a fallback value for the CSS Variable. Only works when <samp>$bowhead-variable-as-default</samp> is also <samp>true</samp>.</td>
-        </tr>
-        <tr>
-            <th><code>$bowhead-generate</code><br><em>(optional)</em></th>
-            <td style="white-space:nowrap">
-                <strong>true</strong> <em>(default)</em><br>
-                <strong>false</strong>
-            </td>
-            <td>Decides whether or not to generate CSS Variables for you.</td>
-        </tr>
-        <tr>
-            <th><code>$bowhead-property-map</code><br><em>(optional)</em></th>
-            <td><a href="#property-map">See below.</a></td>
-            <td>Defines which <q>data types</q> each CSS property should map against.</td>
-        </tr>
-        <tr>
-            <th><code>$bowhead-type-map</code><br><em>(optional)</em></th>
-            <td><a href="#type-map">See below.</a></td>
-            <td>Defines custom remapping to rename the built-in names for types.</td>
-        </tr>
-        <tr>
-            <th><code>$bowhead-tokens</code></th>
-            <td><a href="#tokens">See below.</a></td>
-          <td>Defines the design token values, categorised by <q>data types</q>.</td>
-        </tr>
-    </tbody>
+	<thead>
+		<tr>
+			<td></td>
+			<th>Values</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th><code>$bowhead-variable-as-default</code><br><em>(optional)</em></th>
+			<td style="white-space:nowrap">
+				<strong>true</strong> <em>(default)</em><br>
+				<strong>false</strong>
+			</td>
+			<td>Decides whether or not use the CSS Variable or raw value when calling the <samp>@v</samp> function.</td>
+		</tr>
+		<tr>
+			<th><code>$bowhead-show-fallback</code><br><em>(optional)</em></th>
+			<td style="white-space:nowrap">
+				<strong>true</strong> <em>(default)</em><br>
+				<strong>false</strong>
+			</td>
+			<td>Decides whether or not to show a fallback value for the CSS Variable. Only works when <samp>$bowhead-variable-as-default</samp> is also <samp>true</samp>.</td>
+		</tr>
+		<tr>
+			<th><code>$bowhead-generate</code><br><em>(optional)</em></th>
+			<td style="white-space:nowrap">
+				<strong>true</strong> <em>(default)</em><br>
+				<strong>false</strong>
+			</td>
+			<td>Decides whether or not to generate CSS Variables for you.</td>
+		</tr>
+		<tr>
+			<th><code>$bowhead-property-map</code><br><em>(optional)</em></th>
+			<td><a href="#property-map">See below.</a></td>
+			<td>Defines which <q>data types</q> each CSS property should map against.</td>
+		</tr>
+		<tr>
+			<th><code>$bowhead-type-map</code><br><em>(optional)</em></th>
+			<td><a href="#type-map">See below.</a></td>
+			<td>Defines custom remapping to rename the built-in names for types.</td>
+		</tr>
+		<tr>
+			<th><code>$bowhead-tokens</code></th>
+			<td><a href="#tokens">See below.</a></td>
+		  <td>Defines the design token values, categorised by <q>data types</q>.</td>
+		</tr>
+	</tbody>
 </table>
 
 <h3 id="default">№ 1. Variable As Default</h3>
@@ -205,13 +205,13 @@ With this knowledge under our belt, we can begin to define the design tokens for
 $bowhead-variable-as-default: true;
 
 body {
-    color: v(color, brick);
+	color: v(color, brick);
 }
 ```
 
 ```css
 body {
-    color: var(--color-brick);
+	color: var(--color-brick);
 }
 ```
 
@@ -219,13 +219,13 @@ body {
 $bowhead-variable-as-default: false;
 
 body {
-    color: v(color, brick);
+	color: v(color, brick);
 }
 ```
 
 ```css
 body {
-    color: #b22222;
+	color: #b22222;
 }
 ```
 
@@ -236,14 +236,14 @@ $bowhead-variable-as-default: true;
 $bowhead-show-fallback: true;
 
 body {
-    @include v(color, desert);
+	@include v(color, desert);
 }
 ```
 
 ```css
 body {
-    color: #d2b48c;
-    color: var(--color-desert);
+	color: #d2b48c;
+	color: var(--color-desert);
 }
 ```
 
@@ -252,13 +252,13 @@ $bowhead-variable-as-default: true;
 $bowhead-show-fallback: false;
 
 body {
-    @include v(color, desert);
+	@include v(color, desert);
 }
 ```
 
 ```css
 body {
-    color: var(--color-desert);
+	color: var(--color-desert);
 }
 ```
 
@@ -269,13 +269,13 @@ $bowhead-variable-as-default: false;
 $bowhead-show-fallback: true;
 
 body {
-    @include v(color, desert);
+	@include v(color, desert);
 }
 ```
 
 ```css
 body {
-    color: #d2b48c;
+	color: #d2b48c;
 }
 ```
 
@@ -284,13 +284,13 @@ $bowhead-variable-as-default: false;
 $bowhead-show-fallback: false;
 
 body {
-    @include v(color, desert);
+	@include v(color, desert);
 }
 ```
 
 ```css
 body {
-    color: #d2b48c;
+	color: #d2b48c;
 }
 ```
 
@@ -302,19 +302,19 @@ $bowhead-generate: true;
 
 ```css
 :root {
-    --size-small: 0.5rem;
-    --size-medium: 1rem;
-    --size-large: 2rem;
-    --color-brick: #b22222;
-    --color-plankton: #3cb371;
-    --color-desert: #d2b48c;
-    --opacity-alpha: 0.8;
-    --opacity-beta: 0.5;
-    --opacity-gamma: 0.2;
-    --z-index-below: -1;
-    --z-index-root: 0;
-    --z-index-default: 1;
-    --z-index-above: 2;
+	--size-small: 0.5rem;
+	--size-medium: 1rem;
+	--size-large: 2rem;
+	--color-brick: #b22222;
+	--color-plankton: #3cb371;
+	--color-desert: #d2b48c;
+	--opacity-alpha: 0.8;
+	--opacity-beta: 0.5;
+	--opacity-gamma: 0.2;
+	--z-index-below: -1;
+	--z-index-root: 0;
+	--z-index-default: 1;
+	--z-index-above: 2;
 }
 ```
 
@@ -330,13 +330,13 @@ Nothing is generated!
 
 ```scss
 $bowhead-property-map: (
-    width: size,
-    min-width: size,
-    max-width: size,
-    height: size,
-    min-height: size,
-    max-height: size,
-    ...
+	width: size,
+	min-width: size,
+	max-width: size,
+	height: size,
+	min-height: size,
+	max-height: size,
+	...
 )
 ```
 
@@ -344,7 +344,7 @@ If you wish, you can create new mappings or overwrite existing defaults by defin
 
 ```scss
 $bowhead-property-map: (
-    vertical-align: alignments
+	vertical-align: alignments
 );
 ```
 
@@ -352,11 +352,11 @@ Where `alignments` would be one of your design token <q>types</q>, e.g.
 
 ```scss
 $bowhead-tokens: (
-    alignments: (
-        default: baseline,
-        alternate: middle
-    ),
-    ...
+	alignments: (
+		default: baseline,
+		alternate: middle
+	),
+	...
 );
 ```
 
@@ -368,8 +368,8 @@ $bowhead-tokens: (
 
 ```scss
 $bowhead-type-map: (
-    size: measure,
-    ...
+	size: measure,
+	...
 )
 ```
 
@@ -379,27 +379,27 @@ $bowhead-type-map: (
 
 ```scss
 $bowhead-tokens: (
-    size: (
-        small:  0.5rem,
-        medium:   1rem,
-        large:    2rem
-    ),
-    color: (
-        brick:    #b22222,
-        plankton: #3cb371,
-        desert:   #d2b48c
-    ),
-    opacity: (
-        alpha: 0.8,
-        beta:  0.5,
-        gamma: 0.2
-    ),
-    z-index: (
-        below:  -1,
-        root:    0,
-        default: 1,
-        above:   2
-    )
+	size: (
+		small:  0.5rem,
+		medium:   1rem,
+		large:	2rem
+	),
+	color: (
+		brick:	#b22222,
+		plankton: #3cb371,
+		desert:   #d2b48c
+	),
+	opacity: (
+		alpha: 0.8,
+		beta:  0.5,
+		gamma: 0.2
+	),
+	z-index: (
+		below:  -1,
+		root:	0,
+		default: 1,
+		above:   2
+	)
 );
 ```
 
@@ -411,12 +411,12 @@ Take note that you need to define any of your **Bowhead** variables (`$bowhead-t
 
 ```scss
 $bowhead-tokens: (
-    ...
+	...
 );
 $bowhead-show-fallback: true;
 $bowhead-generate: true;
 $bowhead-property-map: (
-    ...
+	...
 );
 
 @import "node_modules/@chrisburnell/bowhead/bowhead";
@@ -426,18 +426,18 @@ Finally, you can use either **Bowhead's** `@v` function, `@v` mixin, both, or th
 
 ```scss
 .thing {
-    @include v(background-color, desert);
-    @include v(color, brick);
-    border: v(size, small) solid v(color, plankton);
-    padding: v(size, medium) v(size, large);
-    @include v(z-index, above);
-    opacity: var(--opacity-alpha);
-    // 1. if you only want the raw value, this is not really recommended:
-    text-decoration-color: map-get(map-get($bowhead-tokens, "color"), "brick");
-    // 2. this does the same for you:
-    text-decoration-color: v(color, brick, true);
-    // 3. so does this, although it includes the CSS Variable too:
-    @include v(text-decoration-color, brick, true);
+	@include v(background-color, desert);
+	@include v(color, brick);
+	border: v(size, small) solid v(color, plankton);
+	padding: v(size, medium) v(size, large);
+	@include v(z-index, above);
+	opacity: var(--opacity-alpha);
+	// 1. if you only want the raw value, this is not really recommended:
+	text-decoration-color: map-get(map-get($bowhead-tokens, "color"), "brick");
+	// 2. this does the same for you:
+	text-decoration-color: v(color, brick, true);
+	// 3. so does this, although it includes the CSS Variable too:
+	@include v(text-decoration-color, brick, true);
 }
 ```
 
@@ -445,22 +445,22 @@ will generate…
 
 ```css
 .thing {
-    background-color: #d2b48c;
-    background-color: var(--color-desert);
-    color: #b22222;
-    color: var(--color-brick);
-    border: var(--size-small) solid var(--color-plankton);
-    padding: var(--size-medium) var(--size-large);
-    z-index: 2;
-    z-index: var(--z-index-above);
-    opacity: var(--opacity-alpha);
-    /* 1 */
-    text-decoration-color: #b22222;
-    /* 2 */
-    text-decoration-color: #b22222;
-    /* 3 */
-    text-decoration-color: #b22222;
-    text-decoration-color: var(--color-brick);
+	background-color: #d2b48c;
+	background-color: var(--color-desert);
+	color: #b22222;
+	color: var(--color-brick);
+	border: var(--size-small) solid var(--color-plankton);
+	padding: var(--size-medium) var(--size-large);
+	z-index: 2;
+	z-index: var(--z-index-above);
+	opacity: var(--opacity-alpha);
+	/* 1 */
+	text-decoration-color: #b22222;
+	/* 2 */
+	text-decoration-color: #b22222;
+	/* 3 */
+	text-decoration-color: #b22222;
+	text-decoration-color: var(--color-brick);
 }
 ```
 
@@ -470,7 +470,7 @@ Need a negative value? Use `calc()`:
 
 ```scss
 .thing {
-    margin-left: calc(#{v(size, medium)} * -1);
+	margin-left: calc(#{v(size, medium)} * -1);
 }
 ```
 
@@ -478,7 +478,7 @@ Combining values? Same idea:
 
 ```scss
 .thing {
-    margin-left: calc(#{v(size, medium)} + #{v(size, small)});
+	margin-left: calc(#{v(size, medium)} + #{v(size, small)});
 }
 ```
 
@@ -486,7 +486,7 @@ What about multiple values in a function? Make sure you're using the *raw* value
 
 ```scss
 .thing {
-    background-color: rgba(v(color, desert, true), v(opacity, alpha, true));
+	background-color: rgba(v(color, desert, true), v(opacity, alpha, true));
 }
 ```
 

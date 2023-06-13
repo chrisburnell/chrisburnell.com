@@ -46,9 +46,9 @@ const { defaults } = require("@chrisburnell/eleventy-cache-webmentions")()
 require("dotenv").config()
 
 module.exports = Object.assign(defaults, {
-    domain: "https://EXAMPLE.COM",
-    feed: `https://webmention.io/api/mentions.json?domain=EXAMPLE.COM&token=${process.env.WEBMENTION_IO_TOKEN}&per-page=9001`,
-    key: "links",
+	domain: "https://EXAMPLE.COM",
+	feed: `https://webmention.io/api/mentions.json?domain=EXAMPLE.COM&token=${process.env.WEBMENTION_IO_TOKEN}&per-page=9001`,
+	key: "links",
 })
 ```
 
@@ -61,9 +61,9 @@ const { defaults } = require("@chrisburnell/eleventy-cache-webmentions")()
 require("dotenv").config()
 
 module.exports = Object.assign(defaults, {
-    domain: "https://EXAMPLE.COM",
-    feed: `https://JAM.EXAMPLE.COM/webmention/EXAMPLE.COM/${process.env.GO_JAMMING_TOKEN}`,
-    key: "json",
+	domain: "https://EXAMPLE.COM",
+	feed: `https://JAM.EXAMPLE.COM/webmention/EXAMPLE.COM/${process.env.GO_JAMMING_TOKEN}`,
+	key: "json",
 })
 ```
 
@@ -76,7 +76,7 @@ const pluginWebmentions = require("@chrisburnell/eleventy-cache-webmentions")
 const configWebmentions = require("configWebmentions.js")
 
 module.exports = function(eleventyConfig) {
-    eleventyConfig.addPlugin(pluginWebmentions, configWebmentions)
+	eleventyConfig.addPlugin(pluginWebmentions, configWebmentions)
 }
 ```
 
@@ -90,11 +90,11 @@ const configWebmentions = require("configWebmentions.js")
 const { getWebmentions } = require("@chrisburnell/eleventy-cache-webmentions")()
 
 module.exports = {
-    eleventyComputed: {
-        webmentions: (data) => {
-            return getWebmentions(configWebmentions, configWebmentions.domain + data.page.url)
-        },
-    }
+	eleventyComputed: {
+		webmentions: (data) => {
+			return getWebmentions(configWebmentions, configWebmentions.domain + data.page.url)
+		},
+	}
 }
 ```
 
@@ -107,8 +107,8 @@ You can access them quite easily on a given page:
 {% raw %}
 ```twig
 {% for webmention in webmentions %}
-    <!-- Loop through all webmentions on a given page -->
-    {{ webmention.author.name }} sent this page a {{ webmention.activity.type }}
+	<!-- Loop through all webmentions on a given page -->
+	{{ webmention.author.name }} sent this page a {{ webmention.activity.type }}
 {% endfor %}
 ```
 {% endraw %}
@@ -118,9 +118,9 @@ And even when looping through something like a collection:
 {% raw %}
 ```twig
 {% for item in collections.pages %}
-    <!-- Loop through all items in a collection -->
-    <h2>{{ item.data.title }}</h2>
-    <p>This page has {{ item.data.webmentions.length }} webmention{{ 's' if item.data.webmentions.length == 2 }}</p>
+	<!-- Loop through all items in a collection -->
+	<h2>{{ item.data.title }}</h2>
+	<p>This page has {{ item.data.webmentions.length }} webmention{{ 's' if item.data.webmentions.length == 2 }}</p>
 {% endfor %}
 ```
 {% endraw %}

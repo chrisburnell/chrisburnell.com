@@ -33,7 +33,7 @@ module.exports = {
 			return siteUrl + favicon
 		},
 		webmentions: (data) => {
-			return data.show_responses ? getWebmentions(configWebmentions, configWebmentions.domain + data.page.url) : []
+			return data.page.url ? getWebmentions(configWebmentions, configWebmentions.domain + data.page.url) : []
 		},
 	},
 }

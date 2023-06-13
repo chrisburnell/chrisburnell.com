@@ -20,10 +20,10 @@ First, let’s take a look at how we define colours to be consumed by *Bowhead*:
 
 ```scss
 $color: (
-    coal: #111111,
-    tundora: #484848,
-    chalice: #d2d2d2,
-    alabaster: #f6f6f6
+	coal: #111111,
+	tundora: #484848,
+	chalice: #d2d2d2,
+	alabaster: #f6f6f6
 );
 ```
 
@@ -31,14 +31,14 @@ To keep in-line with Bowhead’s work in reducing mental overhead, let’s defin
 
 ```scss
 $color-schemes: (
-    light: (
-        primary: alabatster,
-        secondary: tundora
-    ),
-    dark: (
-        primary: coal,
-        secondary: chalice
-    )
+	light: (
+		primary: alabatster,
+		secondary: tundora
+	),
+	dark: (
+		primary: coal,
+		secondary: chalice
+	)
 );
 ```
 
@@ -46,14 +46,14 @@ Very simple example, but you can see from the values picked that we're setting u
 
 ```scss
 @mixin scheme($property, $key) {
-    // Loop through all color schemes building classes and properties
-    @each $scheme, $data in $color-schemes {
-        @if map-has-key($data, $key) {
-            .scheme--#{$scheme} & {
-                @include v($property, map-get($data, $key));
-            }
-        }
-    }
+	// Loop through all color schemes building classes and properties
+	@each $scheme, $data in $color-schemes {
+		@if map-has-key($data, $key) {
+			.scheme--#{$scheme} & {
+				@include v($property, map-get($data, $key));
+			}
+		}
+	}
 }
 ```
 
@@ -61,8 +61,8 @@ Used like so:
 
 ```scss
 .component {
-    @include scheme(background-color, primary);
-    @include scheme(color, secondary);
+	@include scheme(background-color, primary);
+	@include scheme(color, secondary);
 }
 ```
 
@@ -70,11 +70,11 @@ to generate:
 
 ```css
 .scheme--light .component {
-    background-color: var(--color-alabaster);
-    color: var(--color-tundora);
+	background-color: var(--color-alabaster);
+	color: var(--color-tundora);
 }
 .scheme--dark .component {
-    background-color: var(--color-coal);
-    color: var(--color-chalice);
+	background-color: var(--color-coal);
+	color: var(--color-chalice);
 }
 ```

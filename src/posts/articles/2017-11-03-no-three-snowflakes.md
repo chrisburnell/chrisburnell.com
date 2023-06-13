@@ -19,97 +19,97 @@ We’ll need to make sure our dataset contains more than <var>n</var> items—ma
 
 ```scss
 @function unique-groups($data, $size: 2) {
-    @if not $data or not (type-of($data) == list or type-of($data) == map) {
-        @warn "`unique-groups()` expects either a single List or single Map for `$data`.";
-        @return false;
-    }
+	@if not $data or not (type-of($data) == list or type-of($data) == map) {
+		@warn "`unique-groups()` expects either a single List or single Map for `$data`.";
+		@return false;
+	}
 
-    $unique-groups: ();
+	$unique-groups: ();
 
-    @if type-of($data) == list {
-        $seen-first: ();
-        @each $first in $data {
-            $seen-first: append($seen-first, $first);
-            $seen-second: ();
-            @each $second in $data {
-                $seen-second: append($seen-second, $second);
-                @if $first != $second and not index($seen-first, $second) {
-                    @if $size >= 3 {
-                        @each $third in $data {
-                            @if $second != $third and not index($seen-second, $third) {
-                                $unique-group: (
-                                    $first,
-                                    $second,
-                                    $third
-                                );
-                                $unique-groups: append($unique-groups, $unique-group);
-                            }
-                        }
-                    }
-                    @else {
-                        $unique-group: (
-                            $first,
-                            $second
-                        );
-                        $unique-groups: append($unique-groups, $unique-group);
-                    }
-                }
-            }
-        }
-    }
-    @else if type-of($data) == map {
-        $seen-first: ();
-        @each $first-key, $first-value in $data {
-            $seen-first: append($seen-first, $first-key);
-            $seen-second: ();
-            @each $second-key, $second-value in $data {
-                $seen-second: append($seen-second, $second-key);
-                @if $first-key != $second-key and not index($seen-first, $second-key) {
-                    @if $size >= 3 {
-                        @each $third-key, $third-value in $data {
-                            @if $second-key != $third-key and not index($seen-second, $third-key) {
-                                $unique-group: (
-                                    ($first-key: $first-value),
-                                    ($second-key: $second-value),
-                                    ($third-key: $third-value)
-                                );
-                                $unique-groups: append($unique-groups, $unique-group);
-                            }
-                        }
-                    }
-                    @else {
-                        $unique-group: (
-                            ($first-key: $first-value),
-                            ($second-key: $second-value)
-                        );
-                        $unique-groups: append($unique-groups, $unique-group);
-                    }
-                }
-            }
-        }
-    }
+	@if type-of($data) == list {
+		$seen-first: ();
+		@each $first in $data {
+			$seen-first: append($seen-first, $first);
+			$seen-second: ();
+			@each $second in $data {
+				$seen-second: append($seen-second, $second);
+				@if $first != $second and not index($seen-first, $second) {
+					@if $size >= 3 {
+						@each $third in $data {
+							@if $second != $third and not index($seen-second, $third) {
+								$unique-group: (
+									$first,
+									$second,
+									$third
+								);
+								$unique-groups: append($unique-groups, $unique-group);
+							}
+						}
+					}
+					@else {
+						$unique-group: (
+							$first,
+							$second
+						);
+						$unique-groups: append($unique-groups, $unique-group);
+					}
+				}
+			}
+		}
+	}
+	@else if type-of($data) == map {
+		$seen-first: ();
+		@each $first-key, $first-value in $data {
+			$seen-first: append($seen-first, $first-key);
+			$seen-second: ();
+			@each $second-key, $second-value in $data {
+				$seen-second: append($seen-second, $second-key);
+				@if $first-key != $second-key and not index($seen-first, $second-key) {
+					@if $size >= 3 {
+						@each $third-key, $third-value in $data {
+							@if $second-key != $third-key and not index($seen-second, $third-key) {
+								$unique-group: (
+									($first-key: $first-value),
+									($second-key: $second-value),
+									($third-key: $third-value)
+								);
+								$unique-groups: append($unique-groups, $unique-group);
+							}
+						}
+					}
+					@else {
+						$unique-group: (
+							($first-key: $first-value),
+							($second-key: $second-value)
+						);
+						$unique-groups: append($unique-groups, $unique-group);
+					}
+				}
+			}
+		}
+	}
 
-    @else {
-        @warn "`unique-groups()` expects either a List or Map `$data` parameter.";
-        @return false;
-    }
+	@else {
+		@warn "`unique-groups()` expects either a List or Map `$data` parameter.";
+		@return false;
+	}
 
-    @return $unique-groups;
+	@return $unique-groups;
 }
 ```
 
 As with the previous version of the function, it can accept the required dataset as either a *List* or *Map*. Using our mathematical formula from before, we can plug in our variables and figure out how many unique multiples to expect from a dataset.
 
 <figure>
-    <p>Let <var>n</var> = size of dataset<br>Let <var>m</var> = items / group</p>
-    <samp class="beta">
-        <var>n</var>(<var>n</var>&minus;1) &frasl; <var>m</var>
-    </samp>
+	<p>Let <var>n</var> = size of dataset<br>Let <var>m</var> = items / group</p>
+	<samp class="beta">
+		<var>n</var>(<var>n</var>&minus;1) &frasl; <var>m</var>
+	</samp>
 </figure>
 
 <figure>
-    <p>So, from a dataset of size <var>4</var>, if we want a group size of <var>3</var>, we can expect <var>4</var> unique groups:</p>
-    <samp class="beta"><var>4</var>(<var>4</var>&minus;1) &frasl; <var>3</var> = <var>4</var></samp>
+	<p>So, from a dataset of size <var>4</var>, if we want a group size of <var>3</var>, we can expect <var>4</var> unique groups:</p>
+	<samp class="beta"><var>4</var>(<var>4</var>&minus;1) &frasl; <var>3</var> = <var>4</var></samp>
 </figure>
 
 ## In Action
@@ -118,47 +118,47 @@ As with the previous version of the function, it can accept the required dataset
 $border-styles: 5px solid black;
 
 $list:
-    top,
-    right,
-    bottom,
-    left;
+	top,
+	right,
+	bottom,
+	left;
 
 @each $unique-group in unique-groups($list, 3) {
-    $unique-group-first:  nth($unique-group, 1);
-    $unique-group-second: nth($unique-group, 2);
-    $unique-group-third:  nth($unique-group, 3);
+	$unique-group-first:  nth($unique-group, 1);
+	$unique-group-second: nth($unique-group, 2);
+	$unique-group-third:  nth($unique-group, 3);
 
-    .border--#{$unique-group-first}-and-#{$unique-group-second}-and-#{$unique-group-third} {
-        border-#{$unique-group-first}:  $border-styles;
-        border-#{$unique-group-second}: $border-styles;
-        border-#{$unique-group-third}:  $border-styles;
-    }
+	.border--#{$unique-group-first}-and-#{$unique-group-second}-and-#{$unique-group-third} {
+		border-#{$unique-group-first}:  $border-styles;
+		border-#{$unique-group-second}: $border-styles;
+		border-#{$unique-group-third}:  $border-styles;
+	}
 }
 ```
 
 ```css
 .border--top-and-right-and-bottom {
-    border-top:    5px solid black;
-    border-right:  5px solid black;
-    border-bottom: 5px solid black;
+	border-top: 5px solid black;
+	border-right: 5px solid black;
+	border-bottom: 5px solid black;
 }
 
 .border--top-and-right-and-left {
-    border-top:   5px solid black;
-    border-right: 5px solid black;
-    border-left:  5px solid black;
+	border-top: 5px solid black;
+	border-right: 5px solid black;
+	border-left: 5px solid black;
 }
 
 .border--top-and-bottom-and-left {
-    border-top:    5px solid black;
-    border-bottom: 5px solid black;
-    border-left:   5px solid black;
+	border-top: 5px solid black;
+	border-bottom: 5px solid black;
+	border-left: 5px solid black;
 }
 
 .border--right-and-bottom-and-left {
-    border-right:  5px solid black;
-    border-bottom: 5px solid black;
-    border-left:   5px solid black;
+	border-right: 5px solid black;
+	border-bottom: 5px solid black;
+	border-left: 5px solid black;
 }
 ```
 

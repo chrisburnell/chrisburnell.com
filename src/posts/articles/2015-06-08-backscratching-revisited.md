@@ -21,17 +21,17 @@ In doing this research, I learned a lot about the [title attribute on anchors](h
 
 ```html
 <a href="/article/interesting-article">
-    <span>Continue reading </span>Interesting Article by Emily
+	<span>Continue reading </span>Interesting Article by Emily
 </a>
 ```
 
 ```css
 a span {
-    width:  1px;
-    height: 1px;
-    position: absolute;
-    overflow: hidden;
-    clip: rect(1px, 1px, 1px, 1px);
+	width:  1px;
+	height: 1px;
+	position: absolute;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
 }
 ```
 
@@ -47,19 +47,19 @@ In my actual SCSS, I abstract this snippet out and `@extend` it where I need it,
 
 ```scss
 @mixin hidden() {
-    width:  1px !important;
-    height: 1px !important;
-    padding: 0 !important;
-    border: 0 !important;
-    position: absolute !important;
-    overflow: hidden !important;
-    clip: rect(1px, 1px, 1px, 1px) !important;
+	width:  1px !important;
+	height: 1px !important;
+	padding: 0 !important;
+	border: 0 !important;
+	position: absolute !important;
+	overflow: hidden !important;
+	clip: rect(1px, 1px, 1px, 1px) !important;
 }
 
 a {
-    span {
-        @include hidden;
-    }
+	span {
+		@include hidden;
+	}
 }
 ```
 
@@ -69,7 +69,7 @@ We can tighten this up by slowing down a touch. What happens if we *do want* a `
 
 ```html
 <a href="/article/interesting-article">
-    <span>Continue reading</span>Interesting Article by <span class="author--emily">Emily</span>
+	<span>Continue reading</span>Interesting Article by <span class="author--emily">Emily</span>
 </a>
 ```
 
@@ -77,9 +77,9 @@ Looks like we’ve been a bit heavy-handed in hiding *all* `spans` nested inside
 
 ```scss
 a {
-    span:not([class]) {
-        @include hidden;
-    }
+	span:not([class]) {
+		@include hidden;
+	}
 }
 ```
 
@@ -91,11 +91,9 @@ But there’s a problem if we want to use [Microdata](https://schema.org/docs/do
 
 ```html
 <aside class="author" itemtype="https://schema.org/Person">
-    <div class="author-name">
-        by <a href="/about/">
-               <span>Chris Burnell</span>
-           </a>
-    </div>
+	<div class="author-name">
+		by <a href="/about/"><span>Chris Burnell</span></a>
+	</div>
 </aside>
 ```
 
@@ -107,9 +105,9 @@ But let’s focus on the `span` with the `itemprop` attribute. This isn’t text
 
 ```scss
 a {
-    span:not([class]):not([itemprop]) {
-        @include hidden;
-    }
+	span:not([class]):not([itemprop]) {
+		@include hidden;
+	}
 }
 ```
 

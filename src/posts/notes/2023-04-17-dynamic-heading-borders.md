@@ -22,7 +22,7 @@ In essence, what I want is for the borders underneath each heading to be the sam
 ```css
 h2 {
 	inline-size: fit-content;
-    display: flex;
+	display: flex;
 	padding-inline-end: clamp(2.25rem, 0.5rem + 4vw, 4.5rem);
 	box-shadow: inset 0 -2px 0 #dddddd;
 }

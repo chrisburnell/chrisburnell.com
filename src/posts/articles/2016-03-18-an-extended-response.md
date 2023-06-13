@@ -64,7 +64,7 @@ h3,
 h4,
 h5,
 h6 {
-    @extend %heading-elements;
+	@extend %heading-elements;
 }
 ```
 
@@ -74,22 +74,22 @@ For example, so that users can easily link to a specific part of the content, at
 
 ```scss
 .fragment-anchor {
-    display: none;
+	display: none;
 
-    h1:hover &,
-    h2:hover &,
-    h3:hover &,
-    h4:hover &,
-    h5:hover &,
-    h6:hover &,
-    h1:focus &,
-    h2:focus &,
-    h3:focus &,
-    h4:focus &,
-    h5:focus &,
-    h6:focus & {
-        display: inline-block;
-    }
+	h1:hover &,
+	h2:hover &,
+	h3:hover &,
+	h4:hover &,
+	h5:hover &,
+	h6:hover &,
+	h1:focus &,
+	h2:focus &,
+	h3:focus &,
+	h4:focus &,
+	h5:focus &,
+	h6:focus & {
+		display: inline-block;
+	}
 }
 ```
 
@@ -97,12 +97,12 @@ This makes sense, but is just too *long-winded*. We can simplify this declaratio
 
 ```scss
 .fragment-anchor {
-    display: none;
+	display: none;
 
-    %heading-elements:hover &,
-    %heading-elements:focus & {
-        display: inline-block;
-    }
+	%heading-elements:hover &,
+	%heading-elements:focus & {
+		display: inline-block;
+	}
 }
 ```
 

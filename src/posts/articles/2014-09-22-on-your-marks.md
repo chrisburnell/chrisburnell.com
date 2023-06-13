@@ -26,10 +26,10 @@ In this article I’m going to run through how I manage my comments section from
 
 - Once you’ve signed up for a *Disqus* account, you’ll be able to comment on *every* site that has implemented *Disqus* for their commenting system and allows comments from the public.
 - *Disqus* has nearly all the bells and whistles you could want for making comments:
-    - threaded replies; mentions; notifications
+  - threaded replies; mentions; notifications
 - Robust Administration tools
 - Automatic anti-spam filters, and ones you can customise yourself, including:
-    - whitelist / blacklist; restricted words
+  - whitelist / blacklist; restricted words
 - Option to display related articles from your own blog or from other blogs using *Disqus*
 - Option to add targeted ads and monetise upon clickthroughs
 
@@ -38,7 +38,7 @@ In this article I’m going to run through how I manage my comments section from
 First, let’s look at some statistics for loading *Disqus* comments on page load:
 
 - **37%** of an article page’s load time comes from loading *Disqus*
-    - This was tested on my article, <a href="/article/lets-look-back/">Let’s Look Back</a>, which has more (heavy) images than any of my other articles—totalling nearly *1MB* of image data—meaning that the percentage of load time dedicated to *Disqus* could get even higher on my more minimal articles.
+  - This was tested on my article, <a href="/article/lets-look-back/">Let’s Look Back</a>, which has more (heavy) images than any of my other articles—totalling nearly *1MB* of image data—meaning that the percentage of load time dedicated to *Disqus* could get even higher on my more minimal articles.
 - **298kB** of data comes from *Disqus’* three servers used to load comments, which isn’t a hell of a lot—at least, when you compare it to a decent-sized image asset.
 - **40** requests are made from *Disqus* in order to display the comments section.
 
@@ -60,17 +60,17 @@ Let’s dive into some code. Here’s how I was loading *Disqus* *non-conditiona
 
 ```javascript
 (function(d) {
-    var typekitTimeout = 5000;
-    if( window.sessionStorage ) {
-        if( sessionStorage.getItem('useTypekit') === 'false' ) {
-            typekitTimeout = 0;
-        }
-    }
-    var config = {
-        kitId: 'bbn1puz',
-        scriptTimeout: typekitTimeout
-    },
-    h = d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+"wf-inactive";if(window.sessionStorage){sessionStorage.setItem("useTypekit","false")}},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+="wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+	var typekitTimeout = 5000;
+	if( window.sessionStorage ) {
+		if( sessionStorage.getItem('useTypekit') === 'false' ) {
+			typekitTimeout = 0;
+		}
+	}
+	var config = {
+		kitId: 'bbn1puz',
+		scriptTimeout: typekitTimeout
+	},
+	h = d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+"wf-inactive";if(window.sessionStorage){sessionStorage.setItem("useTypekit","false")}},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+="wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
 })(document);
 ```
 
@@ -80,8 +80,8 @@ I didn’t want to reinvent the wheel, so I followed in the footsteps of others 
 
 ```html
 <button class="button--show-comments" id="js-show-comments" aria-pressed="false" disabled>
-    <svg class="icon  icon--feather"><use href="#svg--feather" /></svg>
-    <span class="disqus-comment-count" data-disqus-url="http://foo.bar">Leave a Comment</span>
+	<svg class="icon  icon--feather"><use href="#svg--feather" /></svg>
+	<span class="disqus-comment-count" data-disqus-url="http://foo.bar">Leave a Comment</span>
 </button>
 ```
 
@@ -93,20 +93,20 @@ var commentsButton  = document.querySelector('#js-show-comments');
 commentsButton.disabled = false;
 
 commentsButton.addEventListener('click', function() {
-    showComments();
+	showComments();
 });
 
 function showComments() {
-    commentsButton.parentNode.removeChild(commentsButton);
-    commentsButton.removeEventListener('click', function(){});
+	commentsButton.parentNode.removeChild(commentsButton);
+	commentsButton.removeEventListener('click', function(){});
 
-    (function() {
-        var dsq = document.createElement('script');
-            dsq.type = 'text/javascript';
-            dsq.async = true;
-            dsq.src = '//' + disqusShortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
+	(function() {
+		var dsq = document.createElement('script');
+			dsq.type = 'text/javascript';
+			dsq.async = true;
+			dsq.src = '//' + disqusShortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
 }
 ```
 
@@ -129,19 +129,19 @@ Everything’s looking sweet so far, so let’s tackle the 2<sup>nd</sup> and 3<
 var commentsHash = ['#comment', '#disqus_thread'];
 
 window.addEventListener('load', function() {
-    updateFromHash();
+	updateFromHash();
 });
 
 window.addEventListener('hashchange', function() {
-    updateFromHash();
+	updateFromHash();
 });
 
 function updateFromHash() {
-    commentsHash.forEach( function(hash) {
-        if( window.location.hash.indexOf(hash) !== -1 ) {
-            showComments();
-        }
-    });
+	commentsHash.forEach( function(hash) {
+		if( window.location.hash.indexOf(hash) !== -1 ) {
+			showComments();
+		}
+	});
 }
 ```
 
@@ -161,18 +161,18 @@ Almost there! Let’s create a failsafe—if our `button` no longer exists when 
 
 ```javascript
 function showComments() {
-    if( commentsButton !== null ) {
-        commentsButton.parentNode.removeChild(commentsButton);
-        commentsButton.removeEventListening('click', function(){});
+	if( commentsButton !== null ) {
+		commentsButton.parentNode.removeChild(commentsButton);
+		commentsButton.removeEventListening('click', function(){});
 
-        (function() {
-            var dsq = document.createElement('script');
-                dsq.type = 'text/javascript';
-                dsq.async = true;
-                dsq.src = '//' + disqusShortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.  getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    }
+		(function() {
+			var dsq = document.createElement('script');
+				dsq.type = 'text/javascript';
+				dsq.async = true;
+				dsq.src = '//' + disqusShortname + '.disqus.com/embed.js';
+			(document.getElementsByTagName('head')[0] || document.  getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+	}
 }
 ```
 
@@ -182,15 +182,15 @@ Here’s the entire snippet of code for my comments section:
 
 ```html
 <button class="button--show-comments" id="js-show-comments" aria-pressed="false" disabled>
-    <svg class="icon  icon--feather"><use href="#svg--feather" /></svg>
-    <span class="disqus-comment-count" data-disqus-url="http://foo.bar">Leave a Comment</span>
+	<svg class="icon  icon--feather"><use href="#svg--feather" /></svg>
+	<span class="disqus-comment-count" data-disqus-url="http://foo.bar">Leave a Comment</span>
 </button>
 ```
 
 ```html
 <section id="comments" class="clear  comments">
-    <div id="disqus_thread"></div>
-    <noscript>Please enable JavaScript to view comments.</noscript>
+	<div id="disqus_thread"></div>
+	<noscript>Please enable JavaScript to view comments.</noscript>
 </section>
 ```
 
@@ -201,70 +201,69 @@ var disqusShortname = 'chrisburnell';
 ```javascript
 (function () {
 
-    'use strict';
+	'use strict';
 
-    ////
-    /// Initialisation
-    ////
+	////
+	/// Initialisation
+	////
 
-    var commentsSection = document.querySelector('#comments');
-    var commentsButton  = document.querySelector('#js-show-comments');
-    var commentsHash    = ['#comment', '#disqus_thread'];
+	var commentsSection = document.querySelector('#comments');
+	var commentsButton  = document.querySelector('#js-show-comments');
+	var commentsHash	= ['#comment', '#disqus_thread'];
 
-    ////
-    /// Conditions to initiate `showComments()`
-    ////
+	////
+	/// Conditions to initiate `showComments()`
+	////
 
-    // if Comments Button exists, enable it and attach Event Listener
-    if( commentsButton !== null ) {
-        commentsButton.disabled = false;
-        commentsButton.addEventListener('click', function() {
-            showComments();
-        });
-    }
+	// if Comments Button exists, enable it and attach Event Listener
+	if( commentsButton !== null ) {
+		commentsButton.disabled = false;
+		commentsButton.addEventListener('click', function() {
+			showComments();
+		});
+	}
 
-    // run `updateFromHash()` on window load
-    window.addEventListener('load', function() {
-        updateFromHash();
-    });
-    // run `updateFromHash()` on window hashchange
-    window.addEventListener('hashchange', function() {
-        updateFromHash();
-    });
-    ////
-    /// If URL contains a hash from `commentsHash`, initiate `showComments()`
-    ////
-    function updateFromHash() {
-        commentsHash.forEach( function(hash) {
-            if( window.location.hash.indexOf(hash) !== -1 ) {
-                showComments();
-            }
-        });
-    }
+	// run `updateFromHash()` on window load
+	window.addEventListener('load', function() {
+		updateFromHash();
+	});
+	// run `updateFromHash()` on window hashchange
+	window.addEventListener('hashchange', function() {
+		updateFromHash();
+	});
+	////
+	/// If URL contains a hash from `commentsHash`, initiate `showComments()`
+	////
+	function updateFromHash() {
+		commentsHash.forEach( function(hash) {
+			if( window.location.hash.indexOf(hash) !== -1 ) {
+				showComments();
+			}
+		});
+	}
 
-    ////
-    /// Load in Disqus comments and remove the comments button
-    ////
-    function showComments() {
-        if( commentsSection !== null ) {
-            window.scrollTo(0, commentsSection.offsetTop);
-            // only if the button still exists should we load Disqus and remove the button
-            if( commentsButton !== null ) {
-                commentsButton.parentNode.removeChild(commentsButton);
-                commentsButton.removeEventListener('click', function(){});
-                (function() {
-                    var dsq = document.createElement('script');
-                        dsq.type = 'text/javascript';
-                        dsq.async = true;
-                        dsq.src = '//' + disqusShortname + '.disqus.com/embed.js';
-                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-                })();
-                // make sure we are indeed scrolled to the right part of the page
-                window.scrollTo(0, commentsSection.offsetTop);
-            }
-        }
-    }
-
+	////
+	/// Load in Disqus comments and remove the comments button
+	////
+	function showComments() {
+		if( commentsSection !== null ) {
+			window.scrollTo(0, commentsSection.offsetTop);
+			// only if the button still exists should we load Disqus and remove the button
+			if( commentsButton !== null ) {
+				commentsButton.parentNode.removeChild(commentsButton);
+				commentsButton.removeEventListener('click', function(){});
+				(function() {
+					var dsq = document.createElement('script');
+						dsq.type = 'text/javascript';
+						dsq.async = true;
+						dsq.src = '//' + disqusShortname + '.disqus.com/embed.js';
+					(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+				})();
+				// make sure we are indeed scrolled to the right part of the page
+				window.scrollTo(0, commentsSection.offsetTop);
+			}
+		}
+	}
 }());
 ```
 

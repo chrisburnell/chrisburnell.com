@@ -35,7 +35,7 @@ First, we’ll look at how default parameter values work in a JavaScript functio
 
 ```javascript
 const readingtime = (numberOfWords, wordsPerMinute = 200) => {
-    return Math.ceil(numberOfWords / wordsPerMinute)
+	return Math.ceil(numberOfWords / wordsPerMinute)
 }
 ```
 
@@ -116,7 +116,7 @@ This means that <q>switching on</q> a CSS Variable can be done by a selector of 
 }
 
 h2 {
-    --spacing: 5em;
+	--spacing: 5em;
 }
 ```
 
@@ -187,7 +187,7 @@ Like before, this allows us to make simple, one-line variations of our component
 
 ```css
 .component--variation {
-    --spacing: 5%;
+	--spacing: 5%;
 	--spacing-block: 120px;
 }
 ```
@@ -196,27 +196,27 @@ This one change results in a variation that has the computed values quite differ
 
 ```css
 .component {
-    padding-block-start: 1em;
-    padding-inline-end: 1em;
-    padding-block-end: 1em;
-    padding-inline-start: 1em;
+	padding-block-start: 1em;
+	padding-inline-end: 1em;
+	padding-block-end: 1em;
+	padding-inline-start: 1em;
 
-    margin-block-start: 2em;
-    margin-inline-end: 2em;
-    margin-block-end: 2em;
-    margin-inline-start: 2em;
+	margin-block-start: 2em;
+	margin-inline-end: 2em;
+	margin-block-end: 2em;
+	margin-inline-start: 2em;
 }
 
 .component-variation {
-    padding-block-start: 120px;
-    padding-inline-end: 5%;
-    padding-block-end: 120px;
-    padding-inline-start: 5%;
+	padding-block-start: 120px;
+	padding-inline-end: 5%;
+	padding-block-end: 120px;
+	padding-inline-start: 5%;
 
-    margin-block-start: 240px;
-    margin-inline-end: 10%;
-    margin-block-end: 240px;
-    margin-inline-start: 10%;
+	margin-block-start: 240px;
+	margin-inline-end: 10%;
+	margin-block-end: 240px;
+	margin-inline-start: 10%;
 }
 ```
 

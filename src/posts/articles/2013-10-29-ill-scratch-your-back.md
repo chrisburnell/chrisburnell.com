@@ -21,8 +21,8 @@ Say we want the default ordered list to appear with `padding-left` and `list-sty
 
 ```html
 <ol class="table-of-contents">
-    <li>Chapter 1</li>
-    <li>Chapter 2</li>
+	<li>Chapter 1</li>
+	<li>Chapter 2</li>
 </ol>
 ```
 
@@ -30,14 +30,14 @@ And the CSS:
 
 ```css
 ol {
-    padding-left: 4em;
-    list-style: outside decimal-leading-zero;
+	padding-left: 4em;
+	list-style: outside decimal-leading-zero;
 }
 /* overqualified selector only for example: */
 ol.table-of-contents {
-    padding-left: 0;
-    list-style: none;
-    margin-bottom: 1em;
+	padding-left: 0;
+	list-style: none;
+	margin-bottom: 1em;
 }
 ```
 
@@ -51,8 +51,8 @@ In experimenting with CSS content and attribute selectors, I’ve discovered a n
 
 ```css
 ol:not([class]) {
-    padding-left: 4em;
-    list-style: outside decimal-leading-zero;
+	padding-left: 4em;
+	list-style: outside decimal-leading-zero;
 }
 ```
 

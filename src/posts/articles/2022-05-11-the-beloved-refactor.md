@@ -17,8 +17,8 @@ Last week, I was lucky enough to attend [All Day Hey](https://alldayhey.com/) an
 
 ```css
 .box {
-    border-block-start-size: 2px;
-    margin-inline: 1em;
+	border-block-start-size: 2px;
+	margin-inline: 1em;
 }
 ```
 
@@ -37,13 +37,13 @@ For example, I have defined a palette of colours I’d like to reuse:
 
 ```css
 :root {
-    --hsl-raven: 203deg 28% 51%;
-    --hsl-maple: 357deg 82% 54%;
+	--hsl-raven: 203deg 28% 51%;
+	--hsl-maple: 357deg 82% 54%;
 }
 
 .box {
-    background-color: hsla(var(--hsl-raven) / 0.5);
-    color: hsl(var(--hsl-maple));
+	background-color: hsla(var(--hsl-raven) / 0.5);
+	color: hsl(var(--hsl-maple));
 }
 ```
 
@@ -53,7 +53,7 @@ Sunsetted my personal use of [Bowhead](/bowhead/) in favour of simpler and more 
 
 ```scss
 .box {
-    @include v(padding, gutter);
+	@include v(padding, gutter);
 }
 ```
 
@@ -63,7 +63,7 @@ Further on CSS Custom Properties, I never made *full* use of the ability to supp
 
 ```css
 .box {
-    padding: var(--gutter, 1em);
+	padding: var(--gutter, 1em);
 }
 ```
 

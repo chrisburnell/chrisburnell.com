@@ -10,22 +10,22 @@ title: How I use CSS Variables to manage colours
 
 Here’s a quick, little technique for working with colours in CSS that I alluded to in [The Beloved Refactor](/article/the-beloved-refactor/) but I thought that I’d go a little bit deeper on here.
 
-I’m going to demonstrate this technique using the [HSL colour space](https://en.wikipedia.org/wiki/HSL_and_HSV) but it would work well with RGB or some other [upcoming](/feature-watch/#css-color-function) [colour](/feature-watch/#css-lch-lab) [formats](/feature-watch/#hwb).
+I’m going to demonstrate this technique using the [HSL colour space](https://en.wikipedia.org/wiki/HSL_and_HSV) but it would work well with RGB or some [other](/feature-watch/#css-color-function) [upcoming](/feature-watch/#oklab) [colour](/feature-watch/#oklch) [formats](/feature-watch/#hwb).
 
 In short, this technique involves storing your colours as CSS Variables using a specific syntax. This allows us to reuse them elsewhere in our code. In this example, I’ve defined a handful of `color` variables as the space-delimited values that need to be passed to a `hsl()` or `hsla()` function. I’ve also defined a couple of `opacity` variables:
 
 ```css
 :root {
-    --hsl-raven: 203deg 28% 51%;
-    --hsl-maple: 357deg 82% 54%;
-    --hsl-conifer: 115deg 40% 36%;
-    --hsl-aspen: 50deg 100% 50%;
-    --hsl-black: 0deg 0% 2%;
-    --hsl-white: 0deg 0% 98%;
+	--hsl-raven: 203deg 28% 51%;
+	--hsl-maple: 357deg 82% 54%;
+	--hsl-conifer: 115deg 40% 36%;
+	--hsl-aspen: 50deg 100% 50%;
+	--hsl-black: 0deg 0% 2%;
+	--hsl-white: 0deg 0% 98%;
 
-    --nearly-opaque: 0.9;
-    --whoa-were-halfway-there: 0.5;
-    --nearly-transparent: 0.1;
+	--nearly-opaque: 0.9;
+	--whoa-were-halfway-there: 0.5;
+	--nearly-transparent: 0.1;
 }
 ```
 
@@ -33,8 +33,8 @@ Now that we’ve defined them at the root of the document (the `html` element), 
 
 ```css
 .class {
-    background-color: hsla(var(--hsl-conifer) / var(--nearly-opaque));
-    color: hsl(var(--hsl-white));
+	background-color: hsla(var(--hsl-conifer) / var(--nearly-opaque));
+	color: hsl(var(--hsl-white));
 }
 ```
 
@@ -50,10 +50,10 @@ If you’re using SCSS, this bit’s for you:
 
 ```scss
 @function h($value, $opacity: null) {
-    @if not $opacity {
-        @return hsl(var(--hsl-#{$value}));
-    }
-    @return hsla(var(--hsl-#{$value}) / var(--opacity-#{$opacity}));
+	@if not $opacity {
+		@return hsl(var(--hsl-#{$value}));
+	}
+	@return hsla(var(--hsl-#{$value}) / var(--opacity-#{$opacity}));
 }
 ```
 

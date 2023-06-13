@@ -90,11 +90,11 @@ For every post in the `articles` folder, we can define some default metadata in 
 ```javascript
 module.exports = {
 	permalink: "article/{{ page.fileSlug }}/",
-    tags: ["article"], // this creates an Article Collection
+	tags: ["article"], // this creates an Article Collection
 	category: "article",
 	categoryCode: "a",
 }
-```
+.replace(/^ {4}/gm, '	').replace(/^ {4}/gm, '	')```
 {% endraw %}
 
 Likewise, for every post in the `notes` folder, we can define some default metadata in <samp>notes.11tydata.js</samp>:
@@ -103,11 +103,11 @@ Likewise, for every post in the `notes` folder, we can define some default metad
 ```javascript
 module.exports = {
 	permalink: "note/{{ page.fileSlug }}/",
-    tags: ["note"], // this creates a Note Collection
+	tags: ["note"], // this creates a Note Collection
 	category: "note",
 	categoryCode: "n",
 }
-```
+.replace(/^ {4}/gm, '	')```
 {% endraw %}
 
 We can also define some default metadata for every post in the `posts` folder, including subfolders like `articles` and `notes` above, in <samp>posts.11tydata.js</samp>:
@@ -115,7 +115,7 @@ We can also define some default metadata for every post in the `posts` folder, i
 {% raw %}
 ```javascript
 module.exports = {
-    tags: ["post"], // this creates a Post Collection
+	tags: ["post"], // this creates a Post Collection
 }
 ```
 {% endraw %}
@@ -426,7 +426,7 @@ You can now use it in your posts’ Layout or wherever else you have access to a
 ```twig
 {% set shorturl_id = page.date | NewBase60(categoryCode, collections[category]) %}
 <a href="http://repc.co/{{ shorturl_id }}">
-    repc.co/{{ shorturl_id }}
+	repc.co/{{ shorturl_id }}
 </a>
 ```
 {% endraw %}

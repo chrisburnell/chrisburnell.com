@@ -10,8 +10,8 @@ syndicate_to:
 ---
 
 <blockquote>
-    <p>[SCSS] is the most mature, stable, and powerful professional grade CSS extension language in the world.</p>
-    <cite class="h-cite"><a href="http://sass-lang.com" title="Sass: Syntactically Awesome Style Sheets" rel="external">Sass (sass-lang.com)</a></cite>
+	<p>[SCSS] is the most mature, stable, and powerful professional grade CSS extension language in the world.</p>
+	<cite class="h-cite"><a href="http://sass-lang.com" title="Sass: Syntactically Awesome Style Sheets" rel="external">Sass (sass-lang.com)</a></cite>
 </blockquote>
 
 CSS developers usually fall into one of two camps when it comes to preprocessors: a loving embrace or a cold shoulder. While I have an obvious bias, I get the sense that a portion of the <q>cold shoulder</q> folks perhaps hold a fundamental misunderstanding of SCSS’s purpose, its strengths, and its weaknesses. This could be chalked up to a poor introduction to SCSS; it is not a tool that can be mindlessly slapped <q>on top</q> of CSS with the expectation that things will improve through its sheer use.
@@ -34,10 +34,10 @@ Let’s say I want to be able to show and hide content based on screen size, and
 
 ```scss
 $breakpoints: (
-    "small":     500px,
-    "medium":    750px,
-    "large":    1000px,
-    "gigantic": 1250px
+	"small":	 500px,
+	"medium":	750px,
+	"large":	1000px,
+	"gigantic": 1250px
 );
 ```
 
@@ -55,16 +55,16 @@ The single breakpoint <q>below <var>A</var></q> and <q>above <var>B</var></q> va
 
 ```scss
 @each $breakpoint-name, $breakpoint-value in $breakpoints {
-    .hide--below-#{$breakpoint-name} {
-        @media (max-width: #{$breakpoint-value}) {
-            @include hidden;
-        }
-    }
-    .hide--above-#{$breakpoint-name} {
-        @media (min-width: #{$breakpoint-value}) {
-            @include hidden;
-        }
-    }
+	.hide--below-#{$breakpoint-name} {
+		@media (max-width: #{$breakpoint-value}) {
+			@include hidden;
+		}
+	}
+	.hide--above-#{$breakpoint-name} {
+		@media (min-width: #{$breakpoint-value}) {
+			@include hidden;
+		}
+	}
 }
 ```
 
@@ -73,13 +73,13 @@ But the <q>between <var>A</var> and <var>B</var></q> variations are a bit more i
 We can actually determine how many unique pairs there will be with a simple mathematical formula, letting <var>n</var> represent the length of the dataset:
 
 <figure>
-    <samp class="beta"><var>n</var>(<var>n</var>&minus;1) &frasl; 2</samp>
+	<samp class="beta"><var>n</var>(<var>n</var>&minus;1) &frasl; 2</samp>
 </figure>
 
 So in our case, in which we have <var>4</var> breakpoints:
 
 <figure>
-    <samp class="beta"><var>4</var>(<var>4</var>&minus;1) &frasl; 2 = <var>6</var></samp>
+	<samp class="beta"><var>4</var>(<var>4</var>&minus;1) &frasl; 2 = <var>6</var></samp>
 </figure>
 
 We can expect <var>6</var> unique pairs from a list of <var>4</var> items.
@@ -90,46 +90,46 @@ Here’s the behemoth `@function` that accepts a SCSS *List* or *Map* and spits 
 
 ```scss
 @function unique-pairs($data) {
-    @if not $data or not (type-of($data) == list or type-of($data) == map) {
-        @warn "unique-pairs() expects either a single List or single Map dataset.";
-        @return false;
-    }
+	@if not $data or not (type-of($data) == list or type-of($data) == map) {
+		@warn "unique-pairs() expects either a single List or single Map dataset.";
+		@return false;
+	}
 
-    $unique-pairs: ();
-    $seen: ();
+	$unique-pairs: ();
+	$seen: ();
 
-    @if type-of($data) == list {
-        @each $first in $data {
-            $seen: append($seen, $first);
-            @each $second in $data {
-                @if $first != $second and not index($seen, $second) {
-                    $unique-pair: ($first, $second);
-                    $unique-pairs: append($unique-pairs, $unique-pair);
-                }
-            }
-        }
-    }
+	@if type-of($data) == list {
+		@each $first in $data {
+			$seen: append($seen, $first);
+			@each $second in $data {
+				@if $first != $second and not index($seen, $second) {
+					$unique-pair: ($first, $second);
+					$unique-pairs: append($unique-pairs, $unique-pair);
+				}
+			}
+		}
+	}
 
-    @else if type-of($data) == map {
-        @each $first-key, $first-value in $data {
-            $seen: append($seen, $first-key);
-            @each $second-key, $second-value in $data {
-                @if $first-key != $second-key and not index($seen, $second-key) {
-                    $unique-pair: (
-                        ($first-key: $first-value), ($second-key: $second-value)
-                    );
-                    $unique-pairs: append($unique-pairs, $unique-pair);
-                }
-            }
-        }
-    }
+	@else if type-of($data) == map {
+		@each $first-key, $first-value in $data {
+			$seen: append($seen, $first-key);
+			@each $second-key, $second-value in $data {
+				@if $first-key != $second-key and not index($seen, $second-key) {
+					$unique-pair: (
+						($first-key: $first-value), ($second-key: $second-value)
+					);
+					$unique-pairs: append($unique-pairs, $unique-pair);
+				}
+			}
+		}
+	}
 
-    @else {
-        @warn "unique-pairs() expects either a List or Map.";
-        @return false;
-    }
+	@else {
+		@warn "unique-pairs() expects either a List or Map.";
+		@return false;
+	}
 
-    @return $unique-pairs;
+	@return $unique-pairs;
 }
 ```
 
@@ -139,8 +139,8 @@ Let’s go through this piece-by-piece so we can undertand what’s going on.
 
 ```scss
 @if not $data or not (type-of($data) == list or type-of($data) == map) {
-    @warn "unique-pairs() expects either a single List or single Map dataset.";
-    @return false;
+	@warn "unique-pairs() expects either a single List or single Map dataset.";
+	@return false;
 }
 ```
 
@@ -163,15 +163,15 @@ Next, we’ll perform some operations in the case where the dataset is a *List*:
 
 ```scss
 @if type-of($data) == list {
-    @each $first in $data {
-        $seen: append($seen, $first);
-        @each $second in $data {
-            @if $first != $second and not index($seen, $second) {
-                $unique-pair: ($first, $second);
-                $unique-pairs: append($unique-pairs, $unique-pair);
-            }
-        }
-    }
+	@each $first in $data {
+		$seen: append($seen, $first);
+		@each $second in $data {
+			@if $first != $second and not index($seen, $second) {
+				$unique-pair: ($first, $second);
+				$unique-pairs: append($unique-pairs, $unique-pair);
+			}
+		}
+	}
 }
 ```
 
@@ -181,17 +181,17 @@ Next, we’ll do the same, but for a *Map* of data:
 
 ```scss
 @else if type-of($data) == map {
-    @each $first-key, $first-value in $data {
-        $seen: append($seen, $first-key);
-        @each $second-key, $second-value in $data {
-            @if $first-key != $second-key and not index($seen, $second-key) {
-                $unique-pair: (
-                    ($first-key: $first-value), ($second-key: $second-value)
-                );
-                $unique-pairs: append($unique-pairs, $unique-pair);
-            }
-        }
-    }
+	@each $first-key, $first-value in $data {
+		$seen: append($seen, $first-key);
+		@each $second-key, $second-value in $data {
+			@if $first-key != $second-key and not index($seen, $second-key) {
+				$unique-pair: (
+					($first-key: $first-value), ($second-key: $second-value)
+				);
+				$unique-pairs: append($unique-pairs, $unique-pair);
+			}
+		}
+	}
 }
 ```
 
@@ -203,30 +203,30 @@ Now let’s look at how the `@function` is actually used.
 
 ```scss
 $list:
-    "small",
-    "medium",
-    "large";
+	"small",
+	"medium",
+	"large";
 
 @each $unique-pair in unique-pairs($list) {
-    $unique-pair-first:  nth($unique-pair, 1);
-    $unique-pair-second: nth($unique-pair, 2);
-    .from-#{$unique-pair-first}-to-#{$unique-pair-second} {
-        display: none;
-    }
+	$unique-pair-first:  nth($unique-pair, 1);
+	$unique-pair-second: nth($unique-pair, 2);
+	.from-#{$unique-pair-first}-to-#{$unique-pair-second} {
+		display: none;
+	}
 }
 ```
 
 ```css
 .from-small-to-medium {
-    display: none;
+	display: none;
 }
 
 .from-small-to-large {
-    display: none;
+	display: none;
 }
 
 .from-medium-to-large {
-    display: none;
+	display: none;
 }
 ```
 
@@ -234,62 +234,62 @@ $list:
 
 ```scss
 $map: (
-    "small":     500px,
-    "medium":    750px,
-    "large":    1000px,
-    "gigantic": 1250px
+	"small":	 500px,
+	"medium":	750px,
+	"large":	1000px,
+	"gigantic": 1250px
 );
 
 @each $unique-pair in unique-pairs($map) {
-    $map-first:  nth($unique-pair, 1);
-    $map-second: nth($unique-pair, 2);
-    @each $map-first-key, $map-first-value in $map-first {
-        @each $map-second-key, $map-second-value in $map-second {
-            .from-#{$map-first-key}-to-#{$map-second-key} {
-                @media (min-width: #{$map-first-value}) and (max-width: #{$map-second-value}) {
-                    display: none;
-                }
-            }
-        }
-    }
+	$map-first:  nth($unique-pair, 1);
+	$map-second: nth($unique-pair, 2);
+	@each $map-first-key, $map-first-value in $map-first {
+		@each $map-second-key, $map-second-value in $map-second {
+			.from-#{$map-first-key}-to-#{$map-second-key} {
+				@media (min-width: #{$map-first-value}) and (max-width: #{$map-second-value}) {
+					display: none;
+				}
+			}
+		}
+	}
 }
 ```
 
 ```css
 .from-small-to-medium {
-    @media (min-width: 500px) and (max-width: 750px) {
-        display: none;
-    }
+	@media (min-width: 500px) and (max-width: 750px) {
+		display: none;
+	}
 }
 
 .from-small-to-large {
-    @media (min-width: 500px) and (max-width: 1000px) {
-        display: none;
-    }
+	@media (min-width: 500px) and (max-width: 1000px) {
+		display: none;
+	}
 }
 
 .from-small-to-gigantic {
-    @media (min-width: 500px) and (max-width: 1250px) {
-        display: none;
-    }
+	@media (min-width: 500px) and (max-width: 1250px) {
+		display: none;
+	}
 }
 
 .from-medium-to-large {
-    @media (min-width: 750px) and (max-width: 1000px) {
-        display: none;
-    }
+	@media (min-width: 750px) and (max-width: 1000px) {
+		display: none;
+	}
 }
 
 .from-medium-to-gigantic {
-    @media (min-width: 750px) and (max-width: 1250px) {
-        display: none;
-    }
+	@media (min-width: 750px) and (max-width: 1250px) {
+		display: none;
+	}
 }
 
 .from-large-to-gigantic {
-    @media (min-width: 1000px) and (max-width: 1250px) {
-        display: none;
-    }
+	@media (min-width: 1000px) and (max-width: 1250px) {
+		display: none;
+	}
 }
 ```
 

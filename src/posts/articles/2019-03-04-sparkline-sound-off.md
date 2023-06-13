@@ -32,8 +32,8 @@ Let’s pause and review a little background about musical notes and their relat
 As an example, we’ll take **A<sub>4</sub>**, also known as the *Stuttgart pitch*. It’s the first **A** above **middle C** and sits at <samp>440Hz</samp>. Unfortunately, frequencies for other notes aren’t quite as simple. We cannot increment <samp>440</samp> by a fixed amount for each consecutive note. In fact, each consecutive note’s frequency is exactly *the 12<sup>th</sup> root of 2* times greater than the previous and vice versa.
 
 <figure>
-    {% image './images/content/diatonic-scale.svg', '' %}
-    <figcaption>graph showing the logarithmic relationship of frequencies in a diatonic scale</figcaption>
+	{% image './images/content/diatonic-scale.svg', '' %}
+	<figcaption>graph showing the logarithmic relationship of frequencies in a diatonic scale</figcaption>
 </figure>
 
 **A<sub>4</sub>** = <samp>440Hz</samp>
@@ -49,20 +49,20 @@ Wikipedia has [a great chart](https://upload.wikimedia.org/wikipedia/commons/a/a
 We’ll use the following function to calculate the frequency for a given note on a piano, where **A<sub>4</sub>** is the *<var>49</var><sup>th</sup> key* on a standard piano:
 
 <figure>
-    <samp class="beta">f(<var>n</var>) = (<sup>12</sup>√2)<sup><var>n</var>-49</sup> × 440Hz</samp>
+	<samp class="beta">f(<var>n</var>) = (<sup>12</sup>√2)<sup><var>n</var>-49</sup> × 440Hz</samp>
 </figure>
 
 ```javascript
 let getFrequencyFromKeys = (key) => {
-    return 2 ** ((key - 49) / 12) * 440;
+	return 2 ** ((key - 49) / 12) * 440;
 };
 ```
 
 So if we want to calculate the frequency of **C<sub>4</sub>** (Middle C), the *<var>40</var><sup>th</sup> key* on the keyboard:
 
 <figure>
-    <samp class="beta">f(<var>40</var>) = (<sup>12</sup>√2)<sup><var>40</var>-49</sup> × 440Hz</samp>
-    <samp class="beta">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= 261.626Hz</samp>
+	<samp class="beta">f(<var>40</var>) = (<sup>12</sup>√2)<sup><var>40</var>-49</sup> × 440Hz</samp>
+	<samp class="beta">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= 261.626Hz</samp>
 </figure>
 
 ## Quintuplets
@@ -80,13 +80,13 @@ let keyIntervals = [2, 2, 3, 2, 3];
 Given that our base note is **C<sub>4</sub>**, the *<var>40</var><sup>th</sup> key* on a keyboard, the possible keys that we’re working with are as follows:
 
 <figure>
-    <samp style="max-width: var(--size-line-length);">40, 42, 44, 47, 49, 52, 54, 56, 59, 61, 64, 66, …</samp>
+	<samp style="max-width: var(--size-line-length);">40, 42, 44, 47, 49, 52, 54, 56, 59, 61, 64, 66, …</samp>
 </figure>
 
 With these keys we can calculate their respective frequencies:
 
 <figure>
-    <samp style="max-width: var(--size-line-length);">261.626, 293.665, 349.228, 391.995, 440.000, 523.251, 587.330, 698.456, 783.991, 880.000, 1046.502, 1174.659, …</samp>
+	<samp style="max-width: var(--size-line-length);">261.626, 293.665, 349.228, 391.995, 440.000, 523.251, 587.330, 698.456, 783.991, 880.000, 1046.502, 1174.659, …</samp>
 </figure>
 
 In order to quell any feverish posting on my part, *as unlikely as that may be*, I am limiting the highest value for the sparkline arbitrarily to <var>12</var>. This prevents clarity from being lost at the bottom end of the visual sparkline and limits the tunes that are generated from varying too wildly or playing notes which are unpleasant or [imperceptible](https://en.wikipedia.org/wiki/Hearing_range).
@@ -94,27 +94,27 @@ In order to quell any feverish posting on my part, *as unlikely as that may be*,
 ## Put your money where your mouth is
 
 <figure>
-    <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0"></c-spark-line>
+	<c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0"></c-spark-line>
 </figure>
 
 Here’s an example. First, we need the per-week data:
 
 <figure>
-    <samp style="max-width: var(--size-line-length);">0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 4, 9, 1, 4, 5, 2, 4, 2, 6, 4, 6, 4, 6, 5, 0</samp>
+	<samp style="max-width: var(--size-line-length);">0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 4, 9, 1, 4, 5, 2, 4, 2, 6, 4, 6, 4, 6, 5, 0</samp>
 </figure>
 
 If we work through this array, item by item, using each value as the key to retrieve the correct frequency, we end up with the following keys and frequencies:
 
 <figure>
-    <samp style="max-width: var(--size-line-length);">40, 40, 40, 40, 40, 40, 40, 40, 49, 40, 40, 49, 61, 42, 49, 52, 45, 49, 45, 54, 49, 54, 49, 54, 52, 40</samp>
-    <span>becomes</span>
-    <samp style="max-width: var(--size-line-length);">261.626, 261.626, 261.626, 261.626, 261.626, 261.626, 261.626, 261.626, 440.000, 261.626, 261.626, 440.000, 880.000, 293.665, 440.000, 523.251, 349.228, 440.000, 349.228, 587.330, 440.000, 587.330, 440.000, 587.330, 523.251, 261.626</samp>
+	<samp style="max-width: var(--size-line-length);">40, 40, 40, 40, 40, 40, 40, 40, 49, 40, 40, 49, 61, 42, 49, 52, 45, 49, 45, 54, 49, 54, 49, 54, 52, 40</samp>
+	<span>becomes</span>
+	<samp style="max-width: var(--size-line-length);">261.626, 261.626, 261.626, 261.626, 261.626, 261.626, 261.626, 261.626, 440.000, 261.626, 261.626, 440.000, 880.000, 293.665, 440.000, 523.251, 349.228, 440.000, 349.228, 587.330, 440.000, 587.330, 440.000, 587.330, 523.251, 261.626</samp>
 </figure>
 
 We can pump these values into the [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API) to create the tones in our browsers, playing each frequency in succession over four seconds:
 
 <figure>
-    <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0"></c-spark-line>
+	<c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0"></c-spark-line>
 </figure>
 
 ## Interactive Demo

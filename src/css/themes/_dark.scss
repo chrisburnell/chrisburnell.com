@@ -12,8 +12,10 @@
 
 	// Target these if applied to html or body elements
 	&:is(body),
-	&:is(html) body {
+	&:is(html) body,
+	.main {
 		background-color: h(mineshaft);
+		background-color: color-mix(in oklab, h(mineshaft), h(wolf) 40%);
 		color: h(yeti);
 	}
 
@@ -24,12 +26,6 @@
 
 	// Header Block
 	.header {
-		color: h(yeti);
-	}
-
-	// Main Block
-	.main {
-		background-color: h(mineshaft);
 		color: h(yeti);
 	}
 
@@ -125,6 +121,20 @@
 		%anchor {
 			color: h(highland);
 		}
+	}
+	.box--success {
+		background-color: #{mix(map-get($colors, mineshaft), map-get($colors, conifer), (1 - map-get($opacities, gamma)) * 100%)};
+		--border-color: #{h(conifer)};
+	}
+
+	.box--warning {
+		background-color: #{mix(map-get($colors, mineshaft), map-get($colors, aspen), (1 - map-get($opacities, gamma)) * 100%)};
+		--border-color: #{h(aspen)};
+	}
+
+	.box--error {
+		background-color: #{mix(map-get($colors, mineshaft), map-get($colors, maple), (1 - map-get($opacities, gamma)) * 100%)};
+		--border-color: #{h(maple)};
 	}
 
 	.rating {

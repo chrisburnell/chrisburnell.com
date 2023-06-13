@@ -154,7 +154,6 @@ If you wanted to use `<is-land>` as well, I recommend something like the followi
 		<script type="module" :src="`/js/components/spark-line.js`"></script>
 	</template>
 </is-land>
-
 ```
 
 ## Examples

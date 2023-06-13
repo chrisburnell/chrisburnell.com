@@ -18,41 +18,39 @@
 			<input type="hidden" name="target" value="{{ canonical }}">
 			<button class=" [ responses__submit ] " type="submit">Send</button>
 		</form>
-		{% if webmentions.length or externalLikes > 0 or stargazers > 0 %}
+		{% if webmentions.length or stargazers > 0 %}
 			{%- set bookmarks = webmentions | arrayKeyEquals('activity.type', 'bookmark') -%}
 			{%- set likes = webmentions | arrayKeyEquals('activity.type', 'like') -%}
 			{%- set links = webmentions | arrayKeyEquals('activity.type', 'link') -%}
 			{%- set reposts = webmentions | arrayKeyEquals('activity.type', 'repost') -%}
 			{%- set reactions = bookmarks.concat(likes).concat(links).concat(reposts) -%}
 			{%- set replies = webmentions | arrayKeyEquals('activity.type', 'reply') | arrayKeyEquals('data.content', 'notempty') -%}
-			{%- set externalLikes = externalLikes | default(0) -%}
 			{%- set stargazers = stargazers | default(0) -%}
-			{%- set responsesLength = reactions.length + replies.length + externalLikes + stargazers -%}
-			{%- set likesLength = likes.length + externalLikes -%}
+			{%- set responsesLength = reactions.length + replies.length + stargazers -%}
 			<div id="responses" class=" [ responses__thread ] [ flow ] ">
 				<h2 class="no-fragment">{{ responsesLength }} Response{{ 's' if responsesLength > 1 }}</h2>
 				{% if reactions.length or stargazers %}
-					<ol id="reactions" class=" [ cluster ] [ reactions ] [ strong ] ">
-						{% if stargazers %}
-						<li><c-emoji>{{ emojis.stars }}</c-emoji> {{ stargazers }} Stargazer{{ 's' if stargazers > 1 }}</li>
-						{% endif %}
-						{% if bookmarks.length %}
+					<ol id="reactions" class=" [ reactions ] [ cluster ] [ strong ] ">
+						{% if stargazers -%}
+							<li><c-emoji>{{ emojis.stars }}</c-emoji> {{ stargazers }} Stargazer{{ 's' if stargazers > 1 }}</li>
+						{%- endif %}
+						{% if bookmarks.length -%}
 							<li><c-emoji>{{ emojis.bookmark }}</c-emoji> {{ bookmarks.length }} Bookmark{{ 's' if bookmarks.length > 1 }}</li>
-						{% endif %}
-						{% if likesLength %}
-							<li><c-emoji>{{ emojis.heart }}</c-emoji> {{ likesLength }} Like{{ 's' if likesLength > 1 }}</li>
-						{% endif %}
-						{% if links.length %}
+						{%- endif %}
+						{% if likes.length -%}
+							<li><c-emoji>{{ emojis.heart }}</c-emoji> {{ likes.length }} Like{{ 's' if likes.length > 1 }}</li>
+						{%- endif %}
+						{% if links.length -%}
 							<li><c-emoji>{{ emojis.link }}</c-emoji> {{ links.length }} Link{{ 's' if links.length > 1 }}</li>
-						{% endif %}
-						{% if reposts.length %}
+						{%- endif %}
+						{% if reposts.length -%}
 							<li><c-emoji>{{ emojis.repost }}</c-emoji> {{ reposts.length }} Repost{{ 's' if reposts.length > 1 }}</li>
-						{% endif %}
+						{%- endif %}
 					</ol>
 				{% endif %}
-				{% if replies.length %}
+				{% if replies.length or links.length %}
 					<ol id="replies" class=" [ replies ] [ flow ] ">
-						{% for webmention in replies %}
+						{% for webmention in replies.concat(links) %}
 							{% if webmention.content or webmention.data.content %}
 								{%- set wmId = webmention.id -%}
 								{%- set wmType = webmention.activity.type | getPostType -%}

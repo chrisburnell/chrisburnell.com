@@ -16,8 +16,8 @@ further_reading:
 ---
 
 <blockquote>
-    <p>Life moves pretty fast. If you don't stop and look around once in a while, you could miss it.</p>
-    <cite class="h-cite"><a href="http://www.imdb.com/title/tt0091042/quotes/qt0441210" rel="external">Ferris Bueller</a></cite>
+	<p>Life moves pretty fast. If you don't stop and look around once in a while, you could miss it.</p>
+	<cite class="h-cite"><a href="http://www.imdb.com/title/tt0091042/quotes/qt0441210" rel="external">Ferris Bueller</a></cite>
 </blockquote>
 
 There’s no questioning that [technology moves pretty fast](https://en.wikipedia.org/wiki/Moore%27s_law). Ferris is too right, if we don’t pause to take stock and count our blessings, we might miss out in being able to appreciate them. It’s all too easy to get caught up in the speed and momentum of web development that we become engrossed on *the goal*—nailing the code review, delivering on time, etc.—that we forget to make sure we’re treading on solid ground in pursuit of our goals.
@@ -35,7 +35,7 @@ It was during one of [Daniel Shiffman’s](https://twitter.com/shiffman) streams
 Daniel Shiffman explains the concept of <q>mapping</q> a value from one range to another in this thoroughly informative video:
 
 <figure class=" [ media ] ">
-    <c-youtube id="nicMAoW6u1g" title="2.4: The map() Function - p5.js Tutorial"></c-youtube>
+	<c-youtube id="nicMAoW6u1g" title="2.4: The map() Function - p5.js Tutorial"></c-youtube>
 </figure>
 
 Although CSS is meant for expressing presentation, and operations like this are best-suited for a <q>real programming language</q>, I wondered if this concept of <q>remapping</q> values from one range to another is possible with Sass.
@@ -46,17 +46,17 @@ Like most of my endeavours, this Sass technique is neither revolutionary, nor is
 
 ```scss
 @function range-map($value, $ranges...) {
-    @if not $value or not $ranges or not (length($ranges) == 2 or length($ranges) == 4) {
-        @warn "`range-map()` requires three or five parameters: initial value, (old minimum), old maximum, (new minimum), and new maximum.";
-        @return false;
-    }
+	@if not $value or not $ranges or not (length($ranges) == 2 or length($ranges) == 4) {
+		@warn "`range-map()` requires three or five parameters: initial value, (old minimum), old maximum, (new minimum), and new maximum.";
+		@return false;
+	}
 
-    $old-minimum: if(length($ranges) == 2, 0,               nth($ranges, 1));
-    $old-maximum: if(length($ranges) == 2, nth($ranges, 1), nth($ranges, 2));
-    $new-minimum: if(length($ranges) == 2, 0,               nth($ranges, 3));
-    $new-maximum: if(length($ranges) == 2, nth($ranges, 2), nth($ranges, 4));
+	$old-minimum: if(length($ranges) == 2, 0,			   nth($ranges, 1));
+	$old-maximum: if(length($ranges) == 2, nth($ranges, 1), nth($ranges, 2));
+	$new-minimum: if(length($ranges) == 2, 0,			   nth($ranges, 3));
+	$new-maximum: if(length($ranges) == 2, nth($ranges, 2), nth($ranges, 4));
 
-    @return ($value - $old-minimum) / ($old-maximum - $old-minimum) * ($new-maximum - $new-minimum) + $new-minimum;
+	@return ($value - $old-minimum) / ($old-maximum - $old-minimum) * ($new-maximum - $new-minimum) + $new-minimum;
 }
 ```
 
@@ -95,16 +95,16 @@ Before we apply our different rotations to the globe, we can even use our `@func
 
 ```scss
 .interact {
-    width: (100% / $number-of-columns);
-    height: 100%;
-    position: absolute;
-    top: 0;
+	width: (100% / $number-of-columns);
+	height: 100%;
+	position: absolute;
+	top: 0;
 }
 
 @for $i from 1 through $number-of-columns {
-    .interact--#{$i} {
-        left: range-map($i, 1, $number-of-columns, 0%, (100% - 100% / $number-of-columns));
-    }
+	.interact--#{$i} {
+		left: range-map($i, 1, $number-of-columns, 0%, (100% - 100% / $number-of-columns));
+	}
 }
 ```
 
@@ -114,9 +114,9 @@ Lastly, we’ll perform a similar operation as before, by remapping the index of
 
 ```scss
 @for $i from 1 through $number-of-columns {
-    .interact--#{$i}:hover ~ .globe {
-        transform: rotateZ(range-map($i, 1, $number-of-columns, ($rotation-start - $rotation-offset), ($rotation-start + $rotation-offset)));
-    }
+	.interact--#{$i}:hover ~ .globe {
+		transform: rotateZ(range-map($i, 1, $number-of-columns, ($rotation-start - $rotation-offset), ($rotation-start + $rotation-offset)));
+	}
 }
 ```
 

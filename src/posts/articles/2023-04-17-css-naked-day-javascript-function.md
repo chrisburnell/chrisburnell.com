@@ -61,7 +61,7 @@ The returned value of this function, a boolean `true`/`false`, can then be used 
 {% raw %}
 ```twig
 {% if not cssnakedday %}
-    <link rel="stylesheet" href="/css/global.css" />
+	<link rel="stylesheet" href="/css/global.css" />
 {% endif %}
 ```
 {% endraw %}

@@ -7,8 +7,16 @@ details {
 	inline-size: 100%;
 	overflow-x: auto;
 
-	& > :not(summary) {
+	// add spacing around non-summary children
+	&:not(.no-padding) > :not(summary) {
 		padding: 0 var(--size-gutter) var(--size-small);
+	}
+
+	// add a border above the first non-summary child
+	&:not(.no-border) summary + * {
+		margin-block-start: var(--size-small);
+		border-block-start: var(--size-border-thin) solid h(yeti);
+		padding-block-start: var(--size-medium);
 	}
 }
 
@@ -38,11 +46,5 @@ summary {
 
 	[open] & {
 		list-style: "- " inside;
-	}
-
-	& + * {
-		margin-block-start: var(--size-small);
-		border-block-start: var(--size-border-thin) solid h(yeti);
-		padding-block-start: var(--size-medium);
 	}
 }

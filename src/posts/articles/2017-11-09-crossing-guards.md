@@ -37,7 +37,7 @@ At it’s simplest, we hook into the window’s `scroll` and `resize` events:
 
 ```javascript
 let visibilityCheck = function(event) {
-    // DO SOMETHING
+	// DO SOMETHING
 };
 
 window.addEventListener('scroll', visibilityCheck);
@@ -49,8 +49,8 @@ But we run a performance risk with this implementation. And in order to understa
 Given that the [refresh rate](https://en.wikipedia.org/wiki/Refresh_rate) of most devices today is **60Hz**—the display refreshes its screen 60 times per second—we can determine that we have a budget of approximately **16 milliseconds** to do what we need to do for each frame/display refresh.
 
 <blockquote>
-    <p>In reality, however, the browser has housekeeping work to do, so all of your work needs to be completed inside 10ms.</p>
-    <cite class="h-cite"><a href="https://developers.google.com/web/fundamentals/performance/rendering" rel="external">Google Web Fundamentals</a></cite>
+	<p>In reality, however, the browser has housekeeping work to do, so all of your work needs to be completed inside 10ms.</p>
+	<cite class="h-cite"><a href="https://developers.google.com/web/fundamentals/performance/rendering" rel="external">Google Web Fundamentals</a></cite>
 </blockquote>
 
 This might seem like an impossible amount of time to do **anything** with, but for a computer, this isn’t so much of a stretch. That’s not to say that it’s **easy** for the browser, nor that the browser is even doing it in the most efficient manner, in the most efficient circumstances, so we should do what we can to offer the browser any help!
@@ -79,12 +79,12 @@ There are a handful of approaches to prevent our code from thrashing our users' 
 let locked = false;
 
 let visibilityCheck = function(event) {
-    if (locked) {
-        return;
-    }
-    locked = true;
-    // DO SOMETHING
-    locked = false;
+	if (locked) {
+		return;
+	}
+	locked = true;
+	// DO SOMETHING
+	locked = false;
 };
 
 window.addEventListener('scroll', visibilityCheck);
@@ -99,15 +99,15 @@ While we’ve stopped our code from executing every scroll or resize event, we�
 let checkTimeout;
 
 let visibilityCheck = function(event) {
-    if (checkTimeout) {
-        clearTimeout(checkTimeout);
-        checkTimeout = null;
-    }
-    checkTimeout = setTimeout(visibilityAction, 250);
+	if (checkTimeout) {
+		clearTimeout(checkTimeout);
+		checkTimeout = null;
+	}
+	checkTimeout = setTimeout(visibilityAction, 250);
 };
 
 let visibilityAction = function() {
-    // DO SOMETHING
+	// DO SOMETHING
 };
 
 window.addEventListener('scroll', visibilityCheck);
@@ -159,15 +159,15 @@ let target = document.querySelector('.target');
 let observer = new IntersectionObserver(callback);
 
 let callback = function(entries, observer) {
-    entries.forEach(entry => {
-        let boundingClientRect = entry.boundingClientRect;
-        let intersectionRatio  = entry.intersectionRatio;
-        let intersectionRect   = entry.intersectionRect;
-        let isIntersecting     = entry.isIntersecting;
-        let rootBounds         = entry.rootBounds;
-        let target             = entry.target;
-        let time               = entry.time;
-    });
+	entries.forEach(entry => {
+		let boundingClientRect = entry.boundingClientRect;
+		let intersectionRatio  = entry.intersectionRatio;
+		let intersectionRect   = entry.intersectionRect;
+		let isIntersecting	 = entry.isIntersecting;
+		let rootBounds		 = entry.rootBounds;
+		let target			 = entry.target;
+		let time			   = entry.time;
+	});
 };
 
 observer.observe(target);

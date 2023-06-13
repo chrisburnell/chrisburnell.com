@@ -85,13 +85,7 @@
 		text-decoration-color: hsl(var(--hsl-kaiser));
 	}
 
-	summary + * {
-		border-block-start-width: 0;
-		margin-block-start: 0;
-	}
-
 	summary ~ * {
-		padding: 0;
 		line-height: var(--line-height-code);
 	}
 }

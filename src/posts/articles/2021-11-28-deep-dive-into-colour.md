@@ -15,8 +15,8 @@ syndicate_to:
 Even though I publicly released [Bowhead](/bowhead/) a little over a year ago, I’ve been using it across my website and other projects for some years now. In that time, it has evolved and changed, but the core principle of *what it does* has never changed: assign any reused CSS values to variables and put them into <q>value-type</q> maps which correspond to specific CSS properties and refer to your property-values through these maps.
 
 <div class=" [ box ] [ flow ] ">
-    <h2>What’s Bowhead?</h2>
-    <p><em>Bowhead</em> is a small SCSS framework on which to implement your design tokens, spitting out CSS Variables with optional fallbacks. You can read more about it on the <a href="/bowhead/">Bowhead page</a>.</p>
+	<h2>What’s Bowhead?</h2>
+	<p><em>Bowhead</em> is a small SCSS framework on which to implement your design tokens, spitting out CSS Variables with optional fallbacks. You can read more about it on the <a href="/bowhead/">Bowhead page</a>.</p>
 </div>
 
 As with the passing of time, technology matures and becomes more widespread and common, and with that, I decided to overhaul the way I refer to colours in my (S)CSS through the power of CSS Variables and HSL.
@@ -29,14 +29,14 @@ This is pretty well-documented (I hope) on the [Bowhead page](/bowhead/) but in 
 
 ```scss
 $palette: (
-    lynx: #091217,
-    raven: #5f8aa6,
-    maple: #eb2d36,
+	lynx: #091217,
+	raven: #5f8aa6,
+	maple: #eb2d36,
 );
 $tokens: (
-    ...
-    colors: $palette,
-    ...
+	...
+	colors: $palette,
+	...
 );
 ```
 
@@ -44,13 +44,13 @@ And I’m using that map of colours like so:
 
 ```scss
 .class {
-    @include v(color, raven);
+	@include v(color, raven);
 }
 ```
 
 ```css
 .class {
-    color: var(--color-raven);
+	color: var(--color-raven);
 }
 ```
 
@@ -58,38 +58,38 @@ This works, but it spins out of control when I introduce a map of opacities, wit
 
 ```scss
 $opacities: (
-    alpha: 0.9,
-    beta: 0.5,
-    gamma: 0.1,
-    delta: 0.05,
+	alpha: 0.9,
+	beta: 0.5,
+	gamma: 0.1,
+	delta: 0.05,
 );
 $palette: (
-    lynx: #091217,
-    raven: #5f8aa6,
-    maple: #eb2d36,
+	lynx: #091217,
+	raven: #5f8aa6,
+	maple: #eb2d36,
 );
 @each $name, $color in $palette {
-    @each $friendly, $value in $opacities {
-        $palette: map-merge(
-            $palette,
-            (
-                #{$name}--#{$friendly}: rgba($color, $value)
-            )
-        );
-    }
+	@each $friendly, $value in $opacities {
+		$palette: map-merge(
+			$palette,
+			(
+				#{$name}--#{$friendly}: rgba($color, $value)
+			)
+		);
+	}
 ```
 
 And this generates four new CSS Variables for each colour in the palette, so I can use them like so:
 
 ```scss
 .class {
-    @include v(color, raven--beta);
+	@include v(color, raven--beta);
 }
 ```
 
 ```css
 .class {
-    color: var(--color-raven--beta);
+	color: var(--color-raven--beta);
 }
 ```
 
@@ -105,8 +105,8 @@ So now comes the task of taking my palette and generating the same list in HSL f
 @use "sass:color";
 $hsl-palette: ();
 @each $name, $color in $palette {
-    // name: Xdeg Y% Z%
-    $hsl-palette: map-merge($hsl-palette, (#{$name}: #{color.hue($color)} #{color.saturation($color)} #{color.lightness($color)}));
+	// name: Xdeg Y% Z%
+	$hsl-palette: map-merge($hsl-palette, (#{$name}: #{color.hue($color)} #{color.saturation($color)} #{color.lightness($color)}));
 }
 ```
 
@@ -114,9 +114,9 @@ And now we can use them like so:
 
 ```scss
 .class {
-    color: hsl(#{v(hsl, raven)});
-    /* or */
-    color: hsla(#{v(hsl, raven)}, #{v(opacity, beta)});
+	color: hsl(#{v(hsl, raven)});
+	/* or */
+	color: hsla(#{v(hsl, raven)}, #{v(opacity, beta)});
 }
 ```
 
@@ -134,15 +134,15 @@ And because I reuse this pattern so often, and it's a bit unwieldy, I ended up c
 /// @return {Color}
 ///
 @function h($value, $opacity: null) {
-    @if not $value {
-        @warn "`h()` expects one parameter.";
-        @return false;
-    }
+	@if not $value {
+		@warn "`h()` expects one parameter.";
+		@return false;
+	}
 
-    @if not $opacity {
-        @return hsl(v(hsl, $value));
-    }
-    @return hsla(v(hsl, $value) / v(opacity, $opacity));
+	@if not $opacity {
+		@return hsl(v(hsl, $value));
+	}
+	@return hsla(v(hsl, $value) / v(opacity, $opacity));
 }
 ```
 
@@ -150,17 +150,17 @@ Accessing the HSL versions of my colours and applying opacities against them is 
 
 ```scss
 .class {
-    color: h(raven);
-    /* or */
-    color: h(raven, beta);
+	color: h(raven);
+	/* or */
+	color: h(raven, beta);
 }
 ```
 
 ```css
 .class {
-    color: hsl(var(--hsl-raven));
-    /* or */
-    color: hsla(var(--hsl-raven) / var(--opacity-beta));
+	color: hsl(var(--hsl-raven));
+	/* or */
+	color: hsla(var(--hsl-raven) / var(--opacity-beta));
 }
 ```
 
@@ -171,18 +171,18 @@ Because all my references to colours in my CSS now rely on the CSS Variables for
 ```scss
 @use "sass:color";
 $code-red-palette: (
-    lynx: #270a0a,
-    wolf: #4c1313,
-    bowhead: #822020,
-    raven: #c62d2d,
-    highland: #e06969,
-    coyote: #efadad,
-    bear: #fbe9e9,
+	lynx: #270a0a,
+	wolf: #4c1313,
+	bowhead: #822020,
+	raven: #c62d2d,
+	highland: #e06969,
+	coyote: #efadad,
+	bear: #fbe9e9,
 );
 .code-red {
-    @each $name, $color in $code-red-palette {
-        --hsl-#{$name}: #{color.hue($color)} #{color.saturation($color)} #{color.lightness($color)};
-    }
+	@each $name, $color in $code-red-palette {
+		--hsl-#{$name}: #{color.hue($color)} #{color.saturation($color)} #{color.lightness($color)};
+	}
 }
 ```
 
@@ -195,38 +195,38 @@ And by applying that class to an element, those new values are both applied to i
 Or inside a box like this:
 
 <blockquote class=" [ code-red ] ">
-    <p>I'm not sure why this is such a great thing, to be fair, though…</p>
+	<p>I'm not sure why this is such a great thing, to be fair, though…</p>
 </blockquote>
 
 Or inside a table like this:
 
 <table class=" [ silly ] ">
-    <thead>
-        <tr>
-            <th>Heading A</th>
-            <th>Heading B</th>
-            <th>Heading C</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Cell A-1</td>
-            <td>Cell B-1</td>
-            <td>Cell C-1</td>
-        </tr>
-        <tr>
-            <td>Cell A-2</td>
-            <td>Cell B-2</td>
-            <td>Cell C-2</td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th>Foot A</th>
-            <th>Foot B</th>
-            <th>Foot C</th>
-        </tr>
-    </tfoot>
+	<thead>
+		<tr>
+			<th>Heading A</th>
+			<th>Heading B</th>
+			<th>Heading C</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Cell A-1</td>
+			<td>Cell B-1</td>
+			<td>Cell C-1</td>
+		</tr>
+		<tr>
+			<td>Cell A-2</td>
+			<td>Cell B-2</td>
+			<td>Cell C-2</td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<tr>
+			<th>Foot A</th>
+			<th>Foot B</th>
+			<th>Foot C</th>
+		</tr>
+	</tfoot>
 </table>
 
 --------

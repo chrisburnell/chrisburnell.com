@@ -8,14 +8,8 @@
 		#{"--hsl-" + $name}: #{color.hue($value)} #{color.saturation($value)} #{color.lightness($value)};
 	}
 
-	@each $name, $values in map-get($colors-oklch, "brand") {
-		#{"--oklch-" + $name}: #{map-get($values, "lightness")} #{map-get($values, "chroma")} #{map-get($colors-oklch, "hue-brand")};
-	}
-	@each $name, $values in map-get($colors-oklch, "monochrome") {
-		#{"--oklch-" + $name}: #{map-get($values, "lightness")} 0 0;
-	}
-	@each $name, $values in map-get($colors-oklch, "utility") {
-		#{"--oklch-" + $name}: #{map-get($values, "lightness")} #{map-get($values, "chroma")} #{map-get($values, "hue")};
+	@each $name, $value in $colors-oklab {
+		#{"--oklab-" + $name}: #{$value};
 	}
 
 	@each $name, $value in $opacities {

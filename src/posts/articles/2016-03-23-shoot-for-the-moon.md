@@ -71,10 +71,10 @@ Let’s look at an example where we’re setting a *percentage*-based value that
 
 ```css
 .parent {
-    width: 1337px;
+	width: 1337px;
 }
 .child {
-    width: 60.029%;
+	width: 60.029%;
 }
 ```
 
@@ -102,10 +102,10 @@ So let’s use the running example, and modify it to match these conditions and 
 
 ```css
 .parent {
-    width: 1337px;
+	width: 1337px;
 }
 .child {
-    width: 60.06%;
+	width: 60.06%;
 }
 ```
 

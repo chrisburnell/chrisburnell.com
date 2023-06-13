@@ -58,10 +58,10 @@ When we use **parent-relative** units like `em` or `smaller`, elements can reach
 
 ```css
 body {
-  font-size: clamp(1em, 0.75em + 0.8vw, 1.25em);
+	font-size: clamp(1em, 0.75em + 0.8vw, 1.25em);
 }
 element {
-  font-size: 1.5em;
+	font-size: 1.5em;
 }
 ```
 
@@ -104,13 +104,13 @@ That means `<element>`'s `font-size` equals:
 
 ```css
 body {
-  font-size: clamp(1em, 0.75em + 0.8vw, 1.25em);
+	font-size: clamp(1em, 0.75em + 0.8vw, 1.25em);
 }
 parent {
-  font-size: 30px;
+	font-size: 30px;
 }
 element {
-  font-size: 1.5em;
+	font-size: 1.5em;
 }
 ```
 

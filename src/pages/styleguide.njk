@@ -17,6 +17,7 @@ css: styleguide.css
 			<li class=" [ background--{{ name }} ] ">
 				<h3>{{ name | title }}</h3>
 				<div class="monospace">{{ color }}</div>
+				<div class="monospace" style="font-size: var(--font-size-small-min)">oklab({{ designTokens['colors-oklab'][name] }})</div>
 			</li>
 		{%- endfor -%}
 	</ul>
@@ -40,7 +41,7 @@ css: styleguide.css
 	<summary>Multi-Steps</summary>
 	<dl>
 		{%- for name, size in designTokens.sizes -%}
-			{%- if '-' in name -%}
+			{%- if '-' in name and not '-min' in name and not '-max' in name -%}
 				<dt>{{ name | replace('-', ' ') | title | replace(' ', '–') }}</dt>
 				<dd><div class=" [ size-example  size-example--{{ name }} ] " title="{{ size }}"></div></dd>
 			{%- endif -%}

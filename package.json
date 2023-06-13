@@ -75,11 +75,12 @@
     "aftercss": "npx postcss css/*.css --replace --no-map",
     "js": "npx rollup -c",
     "prettier": "npx prettier --write src",
-    "start": "concurrently \"npm run js -- --watch\" \"npm run css -- --watch\" \"cross-env NODE_OPTIONS=--max-old-space-size=6144 npx @11ty/eleventy --incremental --serve\"",
-    "now": "concurrently \"npm run js -- --watch\" \"npm run css -- --watch\" \"cross-env NODE_OPTIONS=--max-old-space-size=6144 npx @11ty/eleventy --incremental --ignore-initial --serve\"",
+    "start": "concurrently \"npm run js -- --watch\" \"npm run css -- --watch\" \"npx @11ty/eleventy --incremental --serve\"",
+    "now": "npx @11ty/eleventy --incremental --ignore-initial --serve",
     "serve": "NODE_OPTIONS=--max-old-space-size=6144 npx @11ty/eleventy --incremental --serve",
-    "build": "npm run tokens; npm run js; npm run css; npm run aftercss; npm run prettier; npx browserslist@latest --update-db; cross-env NODE_OPTIONS=--max-old-space-size=6144 ELEVENTY_PRODUCTION=true npx @11ty/eleventy",
-    "pregenerate": "npm run tokens; npm run css; npm run aftercss; npm run prettier; cross-env PREGENERATE_IMAGES=true npx @11ty/eleventy",
+    "prepare": "npm run tokens; npm run css; npm run aftercss; npm run js; npm run prettier; npx browserslist@latest --update-db",
+    "build": "npm run prepare; cross-env NODE_OPTIONS=--max-old-space-size=6144 ELEVENTY_PRODUCTION=true npx @11ty/eleventy",
+    "pregenerate": "npm run prepare; cross-env PREGENERATE_IMAGES=true npx @11ty/eleventy",
     "debug": "cross-env DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
   },
   "imports": {

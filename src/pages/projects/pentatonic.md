@@ -41,9 +41,9 @@ toc: true
 
 ```javascript
 document.querySelectorAll(".pentatonic").forEach(target => {
-    target.addEventListener("click", () => {
-        pentatonic(target.dataset.values.split(","));
-    });
+	target.addEventListener("click", () => {
+		pentatonic(target.dataset.values.split(","));
+	});
 });
 ```
 

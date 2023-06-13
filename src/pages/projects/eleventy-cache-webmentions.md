@@ -42,12 +42,12 @@ Inside your Eleventy config file (typically `.eleventy.js`), use `addPlugin`:
 const pluginWebmentions = require("@chrisburnell/eleventy-cache-webmentions")
 
 module.exports = function(eleventyConfig) {
-    eleventyConfig.addPlugin(pluginWebmentions, {
-        // these 3 fields are all required!
-        domain: "https://example.com",
-        feed: "https://webmentions.example.com?token=S3cr3tT0k3n",
-        key: "children"
-    })
+	eleventyConfig.addPlugin(pluginWebmentions, {
+		// these 3 fields are all required!
+		domain: "https://example.com",
+		feed: "https://webmentions.example.com?token=S3cr3tT0k3n",
+		key: "children"
+	})
 }
 ```
 
@@ -144,25 +144,25 @@ Advanced control over how the Webmentions are cached and processed is done by pa
 const pluginWebmentions = require("@chrisburnell/eleventy-cache-webmentions")
 
 module.exports = function(eleventyConfig) {
-    eleventyConfig.addPlugin(pluginWebmentions, {
-        domain: "https://example.com",
-        feed: "https://webmentions.example.com?token=S3cr3tT0k3n",
-        key: "children",
-        directory: ".cache",
-        duration: "1d",
-        uniqueKey: "webmentions",
-        allowedHTML: {
-            allowedTags: ["b", "i", "em", "strong", "a"],
-            allowedAttributes: {
-                a: ["href"],
-            },
-        },
-        allowlist: [],
-        blocklist: [],
-        urlReplacements: {},
-        maximumHtmlLength: 2000,
-        maximumHtmlText: "mentioned this in",
-    })
+	eleventyConfig.addPlugin(pluginWebmentions, {
+		domain: "https://example.com",
+		feed: "https://webmentions.example.com?token=S3cr3tT0k3n",
+		key: "children",
+		directory: ".cache",
+		duration: "1d",
+		uniqueKey: "webmentions",
+		allowedHTML: {
+			allowedTags: ["b", "i", "em", "strong", "a"],
+			allowedAttributes: {
+				a: ["href"],
+			},
+		},
+		allowlist: [],
+		blocklist: [],
+		urlReplacements: {},
+		maximumHtmlLength: 2000,
+		maximumHtmlText: "mentioned this in",
+	})
 }
 ```
 
@@ -172,9 +172,9 @@ Accessing the plugin in JavaScript in the way shown below will give you an Objec
 
 ```javascript
 const Webmentions = require("@chrisburnell/eleventy-cache-webmentions")(null, {
-    domain: "https://example.com",
-    feed: "https://webmentions.example.com?token=S3cr3tT0k3n",
-    key: "children"
+	domain: "https://example.com",
+	feed: "https://webmentions.example.com?token=S3cr3tT0k3n",
+	key: "children"
 })
 
 const webmentionsByUrl = await Webmentions()
@@ -184,28 +184,28 @@ This can prove to be very useful when building out your pages. Using [Eleventyâ€
 
 ```javascript
 const Webmentions = require("@chrisburnell/eleventy-cache-webmentions")(null, {
-    domain: "https://example.com",
-    feed: "https://webmentions.example.com?token=S3cr3tT0k3n",
-    key: "children"
+	domain: "https://example.com",
+	feed: "https://webmentions.example.com?token=S3cr3tT0k3n",
+	key: "children"
 })
 
 module.exports = async () => {
-    const webmentionsByUrl = await Webmentions()
+	const webmentionsByUrl = await Webmentions()
 
-    return {
-        eleventyComputed: {
-            webmentions: (data) => {
-                const webmentionsForUrl = webmentionsByUrl["https://example.com" + data.page.url] || []
+	return {
+		eleventyComputed: {
+			webmentions: (data) => {
+				const webmentionsForUrl = webmentionsByUrl["https://example.com" + data.page.url] || []
 
-                if (webmentionsForUrl.length) {
-                    return webmentionsForUrl.sort((a, b) => {
-                        return (b.data.published || b.verified_date) - (a.data.published || a.verified_date)
-                    })
-                }
-                return []
-            },
-        },
-    }
+				if (webmentionsForUrl.length) {
+					return webmentionsForUrl.sort((a, b) => {
+						return (b.data.published || b.verified_date) - (a.data.published || a.verified_date)
+					})
+				}
+				return []
+			},
+		},
+	}
 }
 ```
 
@@ -213,12 +213,12 @@ You can now use this data in a number of useful ways, not limited to things like
 
 ```javascript
 module.exports = (eleventyConfig) => {
-    eleventyConfig.addCollection("popular", (collection) => {
-        return collection
-            .sort((a, b) => {
-                return b.data.webmentions.length - a.data.webmentions.length
-            })
-    })
+	eleventyConfig.addCollection("popular", (collection) => {
+		return collection
+			.sort((a, b) => {
+				return b.data.webmentions.length - a.data.webmentions.length
+			})
+	})
 }
 ```
 
@@ -255,7 +255,7 @@ And, if you need it, the entire Object of sorted Webmentions is available too:
 ```twig
 {% set count = 0 %}
 {% for url, array in webmentionsAll %}
-    {% set count = array.length + count %}
+	{% set count = array.length + count %}
 {% endfor %}
 <p>This site has received {{ count }} Webmentions!</p>
 ```
@@ -279,11 +279,11 @@ WEBMENTION_IO_TOKEN=njJql0lKXnotreal4x3Wmd
 const pluginWebmentions = require("@chrisburnell/eleventy-cache-webmentions")
 
 module.exports = function(eleventyConfig) {
-    eleventyConfig.addPlugin(pluginWebmentions, {
-        domain: "https://example.com",
-        feed: `https://webmention.io/api/mentions.jf2?domain=example.com&per-page=9001&token=${process.env.WEBMENTION_IO_TOKEN}`,
-        key: "children"
-    })
+	eleventyConfig.addPlugin(pluginWebmentions, {
+		domain: "https://example.com",
+		feed: `https://webmention.io/api/mentions.jf2?domain=example.com&per-page=9001&token=${process.env.WEBMENTION_IO_TOKEN}`,
+		key: "children"
+	})
 }
 ```
 
@@ -305,10 +305,10 @@ GO_JAMMING_TOKEN=njJql0lKXnotreal4x3Wmd
 const pluginWebmentions = require("@chrisburnell/eleventy-cache-webmentions")
 
 module.exports = function(eleventyConfig) {
-    eleventyConfig.addPlugin(pluginWebmentions, {
-        domain: "https://example.com",
-        feed: `https://jam.example.com/webmention/example.com/${process.env.GO_JAMMING_TOKEN}`,
-        key: "json"
-    })
+	eleventyConfig.addPlugin(pluginWebmentions, {
+		domain: "https://example.com",
+		feed: `https://jam.example.com/webmention/example.com/${process.env.GO_JAMMING_TOKEN}`,
+		key: "json"
+	})
 }
 ```

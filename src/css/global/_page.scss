@@ -21,6 +21,7 @@ html {
 
 body {
 	background-color: h(snowy);
+	background-color: color-mix(in oklab, h(snowy), h(bear) 40%);
 	color: h(kaiser);
 	display: grid;
 	grid-template-rows:

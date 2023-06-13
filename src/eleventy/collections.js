@@ -136,13 +136,13 @@ module.exports = {
 			.filter(isPublished)
 			.filter(notReply)
 			.filter((item) => {
-				const interactions = item.data.webmentions.length + item.data.externalLikes + (item.data.stargazers || 0)
+				const interactions = item.data.webmentions.length + (item.data.stargazers || 0)
 				return interactions >= limits.minimumResponsesRequired
 			})
 			.sort(dateFilter)
 			.sort((a, b) => {
-				const interactionsA = a.data.webmentions.length + a.data.externalLikes + (a.data.stargazers || 0)
-				const interactionsB = b.data.webmentions.length + b.data.externalLikes + (b.data.stargazers || 0)
+				const interactionsA = a.data.webmentions.length + (a.data.stargazers || 0)
+				const interactionsB = b.data.webmentions.length + (b.data.stargazers || 0)
 				return interactionsB - interactionsA
 			})
 			.slice(0, limits.feed)

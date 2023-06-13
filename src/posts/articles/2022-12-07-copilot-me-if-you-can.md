@@ -13,20 +13,20 @@ After some quick reading, I suddenly had mixed feelings. It turned out that anot
 
 ```javascript
 const content = {
-  title: "The Future of the Web",
-  description: "A look at the future of the web, and how we can make it better.",
-  date: "2021-09-01",
-  image: "https://cdn.chrisburnell.com/astro-blog/2021-09-01-the-future-of-the-web/og-image.png",
-  imageAlt: " A screenshot of the web. dev website, with the text left corner.",
-  imageTitle: "The Future of the Web",
-  imageLink: "https://web.dev/future-of-the-web/",
-  imagewidth: 1200,
-  imageHeight: 630,
-  imageType: "image/png",
-  imageCreator: "Chris Burnell",
-  imageCreatorLink: "https://chrisburnell.com",
-  imageLicense: "CC BY-NC-SA 4.0 ",
-  imageLicenseLink: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+	title: "The Future of the Web",
+	description: "A look at the future of the web, and how we can make it better.",
+	date: "2021-09-01",
+	image: "https://cdn.chrisburnell.com/astro-blog/2021-09-01-the-future-of-the-web/og-image.png",
+	imageAlt: " A screenshot of the web. dev website, with the text left corner.",
+	imageTitle: "The Future of the Web",
+	imageLink: "https://web.dev/future-of-the-web/",
+	imagewidth: 1200,
+	imageHeight: 630,
+	imageType: "image/png",
+	imageCreator: "Chris Burnell",
+	imageCreatorLink: "https://chrisburnell.com",
+	imageLicense: "CC BY-NC-SA 4.0 ",
+	imageLicenseLink: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
 }
 ```
 

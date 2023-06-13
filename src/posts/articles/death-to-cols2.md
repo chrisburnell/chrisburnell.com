@@ -83,8 +83,8 @@ This is where CSS Flex and Grid really shine and take away a great deal of menta
 
 ```html
 <div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-md-5"></div>
+	<div class="col-md-3"></div>
+	<div class="col-md-5"></div>
 </div>
 ```
 
