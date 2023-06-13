@@ -38,6 +38,7 @@
 	{%- endif %}
 	<entry>
 		<id>{{ site.url + item.url }}</id>
+		<link href="{{ site.url + item.url }}" />
 		<title>{{ item_title | safe }}</title>
 		<published>{{ item.data.date | default(item.date) | rfc3339Date }}</published>
 		<updated>{{ item.data.updated | default(item.date) | rfc3339Date }}</updated>
