@@ -71,7 +71,6 @@ truncate: true
 			</nav>
 			{%- set truncate = true -%}
 
-			{%- set show_photos = true -%}
 			<h2 id="popular">
 				<a href="/popular/">Popular Pages</a>
 			</h2>
@@ -80,11 +79,9 @@ truncate: true
 					{% include 'items/deck.njk' %}
 				{% endfor %}
 			</div>
-			{%- set show_photos = false -%}
 
 			{% if collections.throwbackPosts.length %}
 				{%- set relative_time = true -%}
-				{%- set show_photos = true -%}
 				<hr>
 				<h2 id="on-this-day">On This Day</h2>
 				<div class=" [ deck ] ">
@@ -93,7 +90,6 @@ truncate: true
 					{% endfor %}
 				</div>
 				{%- set relative_time = false -%}
-				{%- set show_photos = false -%}
 			{% endif %}
 
 			{% if collections.upcomingRSVPs.length %}
