@@ -10,9 +10,10 @@
 			const dom = parser.parseFromString(html, "text/html")
 			const data = new Object()
 			data.url = request.url
+			data.timestamp = new Date(response.headers.get("Date"))
 			if (dom.querySelector(".description .dt-published")) {
-				data.timestamp = new Date(dom.querySelector(".description .dt-published").getAttribute("datetime"))
-				data.published = dom.querySelector(".description .dt-published").innerText
+				data.published = new Date(dom.querySelector(".description .dt-published").getAttribute("datetime")).toISOString()
+				data.publishedString = dom.querySelector(".description .dt-published").innerText
 			}
 			if (dom.querySelector("h1")) {
 				data.title = dom.querySelector("h1").innerText
@@ -37,11 +38,11 @@
 		  </h3>
 		  <p>${data.description}</div>
   `
-			if (data.timestamp) {
+			if (data.published) {
 				markup += `
 <ul class=" [ cluster ] [ deck__meta ] ">
 	<li>
-		<small>published</small> <a href="${data.url}" tabindex="-1"><time datetime="${data.timestamp}">${data.published}</time></a>
+		<small>published</small> <a href="${data.url}" tabindex="-1"><time datetime="${data.published}">${data.publishedString}</time></a>
 	</li>
 </ul>`
 			}

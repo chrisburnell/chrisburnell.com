@@ -10,7 +10,7 @@
 	inset-block-start: 0;
 	overflow-y: hidden;
 	box-shadow: var(--box-shadow-low);
-	transition: all var(--transition-duration) var(--transition-function);
+	transition: all var(--transition-duration) var(--transition-function) var(--transition-duration);
 	z-index: var(--z-index-menu);
 
 	@media print {

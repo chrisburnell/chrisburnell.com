@@ -20,8 +20,7 @@ const specialNumbers = ["zeroth", "first", "second", "third", "fourth", "fifth",
 const decaNumbers = ["twent", "thirt", "fort", "fift", "sixt", "sevent", "eight", "ninet"]
 
 module.exports = {
-	readingtime: (numberOfWords) => {
-		const wordsPerMinute = 200
+	readingtime: (numberOfWords, wordsPerMinute = 200) => {
 		return Math.ceil(numberOfWords / wordsPerMinute)
 	},
 	replaceTwitter: (input) => {
