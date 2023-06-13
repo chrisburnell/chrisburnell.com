@@ -48,9 +48,9 @@
 						{%- endif %}
 					</ol>
 				{% endif %}
-				{% if replies.length or links.length %}
+				{% if replies.length %}
 					<ol id="replies" class=" [ replies ] [ flow ] ">
-						{% for webmention in replies.concat(links) %}
+						{% for webmention in replies %}
 							{% if webmention.content or webmention.data.content %}
 								{%- set wmId = webmention.id -%}
 								{%- set wmType = webmention.activity.type | getPostType -%}
