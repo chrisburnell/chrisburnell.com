@@ -77,7 +77,7 @@ With this line of CSS, we’ve given our component a set of ordered instructions
 
 1. Use the `--first` CSS Variable if it has been defined
 2. Use the `--second` CSS Variable if it has been defined
-3. Use the default `1em` value
+3. Otherwise, use the default `1em` value
 
 
 ----

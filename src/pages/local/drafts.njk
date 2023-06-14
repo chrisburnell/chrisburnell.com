@@ -9,5 +9,5 @@ show_photos: true
 sitemap:
   exclude: true
 eleventyComputed:
-  description: "All {{ collections.drafts.length }} of your drafts. This page is local-only."
+  description: "All {{ collections.drafts.length | numberStringFormat }} of your drafts. This page is local-only."
 ---

@@ -15,7 +15,7 @@ perch: true
 	</h1>
 
 	<div class=" [ description ] [ flow ] [ p-summary ] ">
-		<p>Browse all {{ collections.posts.length }} of my posts by a variety of metrics, dating from {{ first_year }}–{{ latest_year }}.</p>
+		<p>Browse all {{ collections.posts.length | numberStringFormat }} of my posts by a variety of metrics, dating from {{ first_year }}–{{ latest_year }}.</p>
 	</div>
 
 	{% sparkline collection, first_year, latest_year %}

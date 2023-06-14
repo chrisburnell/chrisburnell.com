@@ -68,4 +68,12 @@ module.exports = {
 	maxChars: (string, count, condition = true) => {
 		return condition ? truncate.characters(string, count) : string
 	},
+	spongebob: (string) => {
+		let modifier = 0
+		return string.split("").reduce((string, character) => {
+			const random = Math.max(0, Math.min(1, Math.round(Math.random() + modifier)))
+			modifier = random ? Math.max(modifier - 0.333, -1) : Math.min(modifier + 0.333, 1)
+			return string + (random > 0 ? character.toUpperCase() : character.toLowerCase())
+		}, "")
+	},
 }

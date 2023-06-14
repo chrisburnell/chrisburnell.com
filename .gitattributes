@@ -2,13 +2,15 @@
 *.css       text
 *.js        text
 *.html      text
-*.php       text
-*.phtml     text
 *.json      text
+*.scss      text
+*.webc      text
 
 # Images should be treated as binary
 # (binary is a macro for -text -diff)
-*.png       binary
+*.avif      binary
+*.gif       binary
 *.jpeg      binary
 *.jpg       binary
-*.gif       binary
+*.png       binary
+*.webp      binary

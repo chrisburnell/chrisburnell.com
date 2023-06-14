@@ -86,8 +86,12 @@
 		background-color: h(yeti, beta);
 	}
 
-	th:not(:empty) {
+	table {
 		background-color: h(kaiser);
+	}
+
+	th:not(:empty) {
+		background-color: h(mineshaft);
 	}
 
 	///

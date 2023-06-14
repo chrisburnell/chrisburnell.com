@@ -8,6 +8,7 @@
       "name": "Chris Burnell",
       "email": "me@chrisburnell.com",
       "url": "https://chrisburnell.com",
+      "bluesky": "@chrisburnell.com",
       "mastodon": "@chrisburnell@repc.co"
     }
   ],
@@ -20,6 +21,7 @@
     "url": "https://github.com/chrisburnell/chrisburnell.com/issues"
   },
   "devDependencies": {
+    "@csstools/postcss-oklab-function": "^2.2.3",
     "@rollup/plugin-commonjs": "^25.0.0",
     "@rollup/plugin-node-resolve": "^15.1.0",
     "autoprefixer": "^10.4.14",
@@ -50,7 +52,6 @@
     "@chrisburnell/eleventy-cache-webmentions": "^1.2.2",
     "@chrisburnell/pentatonic": "^1.1.4",
     "@chrisburnell/spark-line": "^1.2.4",
-    "@csstools/postcss-oklab-function": "^2.2.3",
     "@mdn/browser-compat-data": "^5.2.62",
     "@sindresorhus/slugify": "1.1.2",
     "@tweetback/canonical": "^2.0.33",
@@ -72,22 +73,22 @@
     "clean": "rm -rf .cache && rm -rf _site",
     "tokens": "npx json-to-scss './src/data/designTokens/*.json' ./src/css/abstracts/_generated.scss; npx prettier --write src/css/abstracts/_generated.scss",
     "css": "npx sass src/css:css --style=compressed --no-source-map --color",
-    "aftercss": "npx postcss css/*.css --replace --no-map",
+    "postcss": "npx postcss css/*.css --replace --no-map",
     "js": "npx rollup -c",
     "prettier": "npx prettier --write src",
     "start": "concurrently \"npm run js -- --watch\" \"npm run css -- --watch\" \"npx @11ty/eleventy --incremental --serve\"",
     "now": "npx @11ty/eleventy --incremental --ignore-initial --serve",
     "serve": "NODE_OPTIONS=--max-old-space-size=6144 npx @11ty/eleventy --incremental --serve",
-    "prepare": "npm run tokens; npm run css; npm run aftercss; npm run js; npm run prettier; npx browserslist@latest --update-db",
+    "prepare": "npm run tokens; npm run css; npm run js; npm run prettier; npx browserslist@latest --update-db",
     "build": "npm run prepare; cross-env NODE_OPTIONS=--max-old-space-size=6144 ELEVENTY_PRODUCTION=true npx @11ty/eleventy",
     "pregenerate": "npm run prepare; cross-env PREGENERATE_IMAGES=true npx @11ty/eleventy",
     "debug": "cross-env DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
   },
   "imports": {
+    "#builders/*": "./src/eleventy/collectionBuilders/*.js",
     "#data/*": "./src/data/*.json",
     "#datajs/*": "./src/data/*.js",
-    "#core/*": "./src/eleventy/*.js",
-    "#builders/*": "./src/eleventy/collectionBuilders/*.js",
+    "#eleventy/*": "./src/eleventy/*.js",
     "#filters/*": "./src/eleventy/filters/*.js",
     "#plugins/*": "./src/eleventy/plugins/*.js",
     "#transforms/*": "./src/eleventy/transforms/*.js"

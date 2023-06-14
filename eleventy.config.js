@@ -31,10 +31,10 @@ const filterAsync = require("#filters/async")
 const filterNewBase60 = require("#filters/NewBase60")
 
 // Import shortcodes
-const shortcodes = require("#core/shortcodes")
+const shortcodes = require("#eleventy/shortcodes")
 
 // Import collections
-const collections = require("#core/collections")
+const collections = require("#eleventy/collections")
 
 // Import collection builders
 const builderCategories = require("#builders/categories")
@@ -115,7 +115,6 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.addCollection("tags", builderTags)
 
 	// Layouts
-	eleventyConfig.addLayoutAlias("wrapper", "wrapper.njk")
 	eleventyConfig.addLayoutAlias("base", "base.njk")
 	eleventyConfig.addLayoutAlias("page", "page.njk")
 	eleventyConfig.addLayoutAlias("archive", "archive.njk")
