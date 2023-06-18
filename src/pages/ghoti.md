@@ -1,6 +1,8 @@
 ---
 title: The Absurdity of English
 description: A list of things about the language that I find weird.
+sitemap:
+  exclude: true
 ---
 
 ## ghoti

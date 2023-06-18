@@ -2,6 +2,8 @@
 draft: true
 title: Renaissance Man
 description: test
+sitemap:
+  exclude: true
 ads: false
 monetization: false
 ---
