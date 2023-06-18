@@ -116,10 +116,6 @@ blockquote {
 	@extend %flow !optional;
 }
 
-.media {
-	@extend %media-parent !optional;
-}
-
 .speakerdeck-embed-wrapper iframe {
 	@extend %media-child !optional;
 }

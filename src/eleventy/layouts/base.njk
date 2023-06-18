@@ -122,10 +122,6 @@
 <body>
 	<a href="#content" class=" [ skip-link ] [ hidden ] ">Skip to main content</a>
 
-	{% if not theme or (theme and not 'nineties' in theme) -%}
-		<observer-interceptor></observer-interceptor>
-	{%- endif %}
-
 	<header class=" [ header ] ">
 		<div class=" [ wrap ] ">
 			<a rel="home" class=" [ logo ] [ canada ] " href="/" title="{{ site.title }}">
@@ -219,7 +215,7 @@
 	{# CSS Bundles #}
 	{%- css 'supercritical' -%}{% include '../../../css/critical.css' %}{%- endcss -%}
 	{%- if css -%}
-		{% css 'critical' -%}{% include '../../../css/pages/' + css %}{%- endcss -%}
+		{% css 'critical' -%}@layer pages { {% include '../../../css/pages/' + css %} }{%- endcss -%}
 	{%- endif -%}
 	{%- css -%}{% include '../../../css/defer.css' %}{%- endcss -%}
 

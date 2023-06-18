@@ -1,7 +1,5 @@
 import "@11ty/is-land/is-land"
 
-import "./imports/sticky-header"
-
 import "./imports/theme-toggler"
 
 import "./imports/share-button"

@@ -398,5 +398,12 @@
     "title": "Media Queries Range Syntax",
     "description": "Adds syntax improvements to media queries to better describe ranges and comparison operators.",
     "links": ["[Page on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries)"]
+  },
+  {
+    "id": "style-scoped",
+    "language": "css",
+    "title": "@scope",
+    "description": "Allows for CSS rules to be scoped to part of the DOM based on the position of the subject to be styled.",
+    "links": ["[Working Draft](https://drafts.csswg.org/css-cascade-6/#scope-atrule)"]
   }
 ]

@@ -51,7 +51,7 @@
 	grid-template-columns: min-content 1fr;
 	grid-template-rows: auto auto;
 	column-gap: var(--size-medium);
-	row-gap: var(--size-small);
+	row-gap: var(--size-tiny);
 
 	.e-content {
 		--flow-space: 0.5em;

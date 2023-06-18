@@ -27,9 +27,4 @@
 			transform: scale(1.1) rotate(6deg);
 		}
 	}
-
-	.header.active & {
-		block-size: var(--size-logo-small-min);
-		inline-size: var(--size-logo-small-min);
-	}
 }

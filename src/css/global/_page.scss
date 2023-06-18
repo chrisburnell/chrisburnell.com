@@ -17,6 +17,10 @@ html {
 	font-variant: common-ligatures proportional-nums;
 	// more than block-size of header when navigation spans two rows
 	scroll-padding-block-start: calc(var(--size-header) + 1rem);
+
+	&.toggling * {
+		transition: all var(--transition-duration-long) var(--transition-function);
+	}
 }
 
 body {

@@ -40,8 +40,12 @@ class ThemeToggler {
 	onChange() {
 		this.theme = [...this.options].filter((option) => option.selected).map((option) => option.getAttribute("value"))[0]
 
+		document.documentElement.classList.add("toggling")
 		this.setTheme(this.theme)
 		localStorage.setItem(this.STORAGE_KEY, this.theme)
+		setTimeout(() => {
+			document.documentElement.classList.remove("toggling")
+		}, 1000)
 	}
 }
 

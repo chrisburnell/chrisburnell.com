@@ -49,6 +49,14 @@ mark {
 	color: h(mineshaft);
 }
 
+:is(em, i),
+.italic {
+	font-family: var(--font-family-serif) !important;
+	font-style: italic !important;
+	font-synthesis: none !important;
+	font-variation-settings: "ital" 125 !important;
+}
+
 :is(b, strong),
 .strong {
 	font-style: normal !important;
@@ -56,12 +64,26 @@ mark {
 	font-weight: var(--font-weight-semibold) !important;
 }
 
-:is(em, i),
-.italic {
-	font-family: var(--font-family-serif) !important;
-	font-style: italic !important;
-	font-synthesis: none !important;
-	font-variation-settings: "ital" 125 !important;
+.light {
+	font-weight: var(--font-weight-light) !important;
+}
+.regular {
+	font-weight: var(--font-weight-regular) !important;
+}
+.medium {
+	font-weight: var(--font-weight-medium) !important;
+}
+.semibold {
+	font-weight: var(--font-weight-semibold) !important;
+}
+.bold {
+	font-weight: var(--font-weight-bold) !important;
+}
+.extrabold {
+	font-weight: var(--font-weight-extrabold) !important;
+}
+.heavy {
+	font-weight: var(--font-weight-heavy) !important;
 }
 
 small,
@@ -163,8 +185,7 @@ progress {
 	}
 }
 
-::selection,
-::target-text {
+::selection {
 	background-color: h(raven);
 	color: h(snowy);
 	text-shadow: none;

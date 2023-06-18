@@ -72,7 +72,7 @@
 										{% avatar authorPhoto, wmSource, authorUrl %}
 									</a>
 									<div class=" [ response__meta ] ">
-										<a href="#response-{{ wmId }}" class=" [ strong ] " title="Permalink to this response" tabindex="-1">#</a>
+										<a href="#response-{{ wmId }}" class=" [ gamma  extrabold ] " title="Permalink to this response" tabindex="-1">#</a>
 										<a href="{{ authorUrl }}" class=" [ p-author  h-card  u-url ] " rel="external nofollow"><span class=" [ p-name ] ">{{ authorName }}</span></a>
 										<small>wrote on</small>
 										<a href="{{ wmSource }}" class=" [ u-url  u-{{ wmType }} ] " rel="external nofollow" title="Read externally"><time class=" [ dt-published ] " datetime="{{ wmDate | rfc3339Date }}">{{ wmDate | friendlyDate | safe }}</time></a>
