@@ -9,7 +9,8 @@
     "title": "Bluesky",
     "url": "https://bsky.app/profile/chrisburnell.com",
     "primary": true,
-    "fillHover": "#0085ff"
+    "fillHover": "url(#bluesky)",
+    "defs": "<defs><linearGradient id=\"bluesky\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0%\" stop-color=\"#2962f6\" /><stop offset=\"100%\" stop-color=\"#3f8df7\" /></linearGradient></defs>"
   },
   {
     "title": "CodePen",

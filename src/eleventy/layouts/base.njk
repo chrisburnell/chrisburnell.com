@@ -166,7 +166,7 @@
 							{%- if item.key -%}
 								{%- set url = url + author[item.key] -%}
 							{%- endif -%}
-							<a{% if not item.primary %} tabindex="-1"{% endif %}{% if item.mf_property %} class=" [ p-{{ item.mf_property }} ] "{% endif %} href="{{ url }}" rel="me"><svg width="20" height="20" aria-hidden="true" focusable="false"{% if item.fill or item.fillHover %} style="{% if item.fill %}--fill: {{ item.fill }}; {% endif %}{% if item.fillHover %}--fill-hover: {{ item.fillHover }}; {% endif %}"{% endif %}><use href="#svg--{{ item.title | lower }}"></use></svg>{{ item.title }}</a>
+							<a{% if not item.primary %} tabindex="-1"{% endif %}{% if item.mf_property %} class=" [ p-{{ item.mf_property }} ] "{% endif %} href="{{ url }}" rel="me"><svg width="20" height="20" aria-hidden="true" focusable="false"{% if item.fill or item.fillHover %} style="{% if item.fill %}--fill: {{ item.fill }}; {% endif %}{% if item.fillHover %}--fill-hover: {{ item.fillHover }}; {% endif %}"{% endif %}>{% if item.defs %}{{ item.defs | safe }}{% endif %}<use href="#svg--{{ item.title | lower }}"></use></svg>{{ item.title }}</a>
 						</li>
 					{%- endif -%}
 				{%- endfor -%}
@@ -189,7 +189,7 @@
 	</footer>
 
 	<!-- SVG Icons -->
-	<svg display="none" aria-hidden="true">
+	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" display="none" aria-hidden="true">
 		{% for symbol in svg %}
 			<symbol id="svg--{{ symbol.title | lower }}" viewBox="0 0 {{ symbol.viewBox }}">
 				<title>{{ symbol.title }}</title>

@@ -34,10 +34,7 @@
 	input,
 	select,
 	textarea {
-		border-block-start: 2px solid h(bear);
-		border-block-end: 2px solid h(wolf);
-		border-inline-start: 2px solid h(bear);
-		border-inline-end: 2px solid h(wolf);
+		border: var(--size-border-thin) outset;
 	}
 
 	.header {
@@ -51,10 +48,9 @@
 	figcaption {
 		inline-size: 100%;
 		margin-block-start: 1em;
-		border-block-start: 2px solid h(yeti);
+		border-block-start: 2px inset;
 		padding-block-start: 1em;
 		font-family: inherit;
-		box-shadow: inset 0 2px h(thunder) !important;
 	}
 
 	.responses {

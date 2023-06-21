@@ -275,7 +275,7 @@
     "language": "html",
     "type": "global_attributes",
     "key": "inert",
-    "title": "Inert Attribute",
+    "title": "inert Attribute",
     "description": "An HTML attribute that allows you designate parts of your document as inactive, disallowing any interaction (mouse/keyboard/otherwise) within those elements.",
     "links": ["[Page on MDN](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/inert)"]
   },
@@ -361,7 +361,7 @@
     "language": "html",
     "type": "global_attributes",
     "key": "popover",
-    "title": "Popover Attribute",
+    "title": "popover Attribute",
     "description": "An HTML attribute to get and set the popover state of an element via JavaScript.",
     "links": ["[Working Draft](https://html.spec.whatwg.org/multipage/popover.html#dom-popover)", "[Page on MDN](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/popover)", "[Article by Hidde de Vries](https://hidde.blog/popover-semantics/)"]
   },
@@ -405,5 +405,14 @@
     "title": "@scope",
     "description": "Allows for CSS rules to be scoped to part of the DOM based on the position of the subject to be styled.",
     "links": ["[Working Draft](https://drafts.csswg.org/css-cascade-6/#scope-atrule)"]
+  },
+  {
+    "id": "is",
+    "language": "html",
+    "type": "global_attributes",
+    "key": "is",
+    "title": "is Attribute",
+    "description": "An HTML attribute to allow specifying a standard HTML element to behave like a custom element.",
+    "links": ["[Page on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/is)"]
   }
 ]
