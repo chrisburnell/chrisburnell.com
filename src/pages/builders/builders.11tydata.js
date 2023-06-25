@@ -1,4 +1,6 @@
 module.exports = {
 	layout: "base",
-	tags: null,
+	sitemap: {
+		exclude: true,
+	},
 }

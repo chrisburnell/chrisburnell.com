@@ -207,7 +207,7 @@ This one change results in a variation that has the computed values quite differ
 	margin-inline-start: 2em;
 }
 
-.component-variation {
+.component--variation {
 	padding-block-start: 120px;
 	padding-inline-end: 5%;
 	padding-block-end: 120px;
