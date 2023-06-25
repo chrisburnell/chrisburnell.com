@@ -78,7 +78,7 @@ aside {
 
 But now let’s take the excitement up to to **4**.
 
-Using the same concepts, and, in particular, the <a href="/article/variables-for-both/"><samp>v</samp> mixin</a> that I introduced in [Variables for Both](/article/variables-for-both) and have refined recently with a project called [Bowhead](/bowhead/), we need to set up some SCSS variables and assign them within a Map so that we can iterate through them and reference them using our chosen familiar words—<samp>small</samp>, <samp>medium</samp>, and <samp>large</samp> in this case.
+Using the same concepts, and, in particular, the <a href="/article/variables-for-both/"><samp>v</samp> mixin</a> that I introduced in [Variables for Both](/article/variables-for-both/) and have refined recently with a project called [Bowhead](/bowhead/), we need to set up some SCSS variables and assign them within a Map so that we can iterate through them and reference them using our chosen familiar words—<samp>small</samp>, <samp>medium</samp>, and <samp>large</samp> in this case.
 
 ```scss
 $size-large:  4em;

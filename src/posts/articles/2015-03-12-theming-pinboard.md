@@ -209,7 +209,7 @@ html {
 	}
 ```
 
-- modified the colour palette to match [my style guide](/styleguide)
+- modified the colour palette to match [my style guide](/styleguide/)
 - implemented hooks with [IFTTT](https://ifttt.com/) to create bookmarks for specific events: Github stars, Twitter favourites, tweets by me with links, etc.
 
 --------

@@ -42,7 +42,7 @@ I use *[Aperture](https://aperture.p3k.io/)* and *[Monocle](https://monocle.p3k.
 
 *Outgoing* Webmentions are handled for me by *[Telegraph](https://telegraph.p3k.io)*, which also takes care of microformats parsing and endpoint discovery for each link in my content.
 
-Lastly, I use *[OwnYourBeer](https://ownyourbeer.chrisburnell.com)* to syndicate check-ins from *[Untappd](https://untappd.com)* to my [beer](/beer) category</a>.
+Lastly, I use *[OwnYourBeer](https://ownyourbeer.chrisburnell.com)* to syndicate check-ins from *[Untappd](https://untappd.com)* to my [beer](/beer/) category</a>.
 
 ## Thanks
 
