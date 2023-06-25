@@ -82,7 +82,7 @@ module.exports = {
 		})
 	},
 	maxDecimals: (value, decimals = 2) => {
-		return parseFloat(value.toFixed(decimals))
+		return +value.toFixed(decimals)
 	},
 	exponentialMovingAverage: (timestamp, current = 0, coefficient = 0.5) => {
 		return coefficient * timestamp + (1 - coefficient) * current

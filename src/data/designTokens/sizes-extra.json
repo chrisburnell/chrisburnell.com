@@ -1,16 +1,16 @@
 {
   "gutter": "var(--size-medium)",
   "gap": "calc(var(--size-gutter) * 2)",
-  "space": "clamp(1.5em, 0.04rem + 1.86vw, 2.25em)",
+  "space": "clamp(1.5em, 0.04rem + 1.86vi, 2.25em)",
   "avatar": "100px",
   "avatar-small": "48px",
-  "logo": "clamp(9rem, -3.6rem + 28.8vw, 18rem)",
+  "logo": "clamp(9rem, -3.6rem + 28.8vi, 18rem)",
   "logo-small": "4rem",
   "logo-brand": "1.5rem",
   "header": "calc(var(--size-logo-small) + var(--size-small) * 2)",
-  "aside": "clamp(15rem, 7.71rem + 13.71vw, 18rem)",
+  "aside": "clamp(15rem, 7.71rem + 13.71vi, 18rem)",
   "character-limit": "60ch",
-  "line-length": "clamp(21em, 100vw, 30em)",
+  "line-length": "clamp(21em, 100vi, 30em)",
   "border-default": "4px",
   "border-thin": "2px"
 }
