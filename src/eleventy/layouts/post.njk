@@ -31,7 +31,7 @@ layout: base
 					{%- set in_reply_to_title = people | getPerson(in_reply_to_title) | getInternalTarget(collections.all) | getMastodonHandle | getTwitterHandle -%}
 					{%- set author_lookup = people | getPerson(in_reply_to_url, 'object') -%}
 					{%- if "writing" in tags %} and{% else %},{% endif %} in reply to
-					<a href="{{ in_reply_to_url | tweetback }}">{{ in_reply_to_title }}</a>
+					<a class=" [ h-cite  u-in-reply-to ] " href="{{ in_reply_to_url | tweetback }}">{{ in_reply_to_title }}</a>
 					{%- if author_lookup != in_reply_to_url and author_lookup.title != in_reply_to_title %}
 						by
 						<a href="{{ author_lookup.url | toArray | first }}">{{ author_lookup.title }}</a>
