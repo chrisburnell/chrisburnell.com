@@ -4,6 +4,8 @@ title: Cutaway Indicator
 tags:
   - css
 codepen_slug: yIwzd
+syndicate_to:
+  - https://codepen.io/chrisburnell/pen/yIwzd
 ---
 
 <c-codepen slug="{{ codepen_slug }}" height="200px"></c-codepen>

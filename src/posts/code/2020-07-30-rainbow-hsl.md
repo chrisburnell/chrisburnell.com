@@ -6,6 +6,8 @@ tags:
   - css
   - motion
 codepen_slug: WNrqYLV
+syndicate_to:
+  - https://codepen.io/chrisburnell/pen/WNrqYLV
 ---
 
 <c-codepen slug="{{ codepen_slug }}"></c-codepen>

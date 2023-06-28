@@ -5,7 +5,8 @@ tags:
   - css
   - motion
 codepen_slug: HlcAJ
-codepen_featured: true
+syndicate_to:
+  - https://codepen.io/chrisburnell/pen/HlcAJ
 ---
 
 <c-codepen slug="{{ codepen_slug }}" height="350px"></c-codepen>

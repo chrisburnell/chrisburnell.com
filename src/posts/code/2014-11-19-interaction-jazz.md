@@ -5,6 +5,8 @@ tags:
   - css
   - motion
 codepen_slug: myyRqp
+syndicate_to:
+  - https://codepen.io/chrisburnell/pen/myyRqp
 ---
 
 <c-codepen slug="{{ codepen_slug }}" height="600px"></c-codepen>

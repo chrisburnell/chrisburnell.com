@@ -5,7 +5,8 @@ tags:
   - css
   - motion
 codepen_slug: lcEvB
-codepen_featured: true
+syndicate_to:
+  - https://codepen.io/chrisburnell/pen/lcEvB
 ---
 
 <c-codepen slug="{{ codepen_slug }}" height="350px"></c-codepen>

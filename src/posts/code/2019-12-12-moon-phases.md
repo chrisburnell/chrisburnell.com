@@ -6,6 +6,8 @@ tags:
   - javascript
   - motion
 codepen_slug: MWYeWRZ
+syndicate_to:
+  - https://codepen.io/chrisburnell/pen/MWYeWRZ
 ---
 
 <c-codepen slug="{{ codepen_slug }}" height="750px"></c-codepen>

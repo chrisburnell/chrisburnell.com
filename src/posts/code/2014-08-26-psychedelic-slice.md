@@ -5,6 +5,8 @@ tags:
   - css
   - motion
 codepen_slug: apogK
+syndicate_to:
+  - https://codepen.io/chrisburnell/pen/apogK
 ---
 
 <c-codepen slug="{{ codepen_slug }}" height="350px"></c-codepen>

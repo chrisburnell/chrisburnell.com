@@ -5,6 +5,8 @@ tags:
   - css
   - motion
 codepen_slug: RPRwoo
+syndicate_to:
+  - https://codepen.io/chrisburnell/pen/RPRwoo
 ---
 
 <c-codepen slug="{{ codepen_slug }}" height="300px"></c-codepen>

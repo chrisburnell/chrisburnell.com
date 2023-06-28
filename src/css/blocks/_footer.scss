@@ -4,8 +4,10 @@
 ////
 
 .footer {
+	--background-color: #{h(mineshaft)};
+
 	container: footer / inline-size;
-	background-color: h(mineshaft);
+	background-color: var(--background-color);
 	padding-block: var(--size-large);
 	border-block-start: var(--size-border-thin) solid var(--border-color, h(raven));
 	z-index: var(--z-index-menu);

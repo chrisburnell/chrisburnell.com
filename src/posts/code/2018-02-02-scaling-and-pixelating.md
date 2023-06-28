@@ -6,6 +6,7 @@ tags:
   - ux
 codepen_slug: vdNeEa
 syndicate_to:
+  - https://codepen.io/chrisburnell/pen/vdNeEa
   - https://twitter.com/iamchrisburnell/status/959107237590589441
 ---
 

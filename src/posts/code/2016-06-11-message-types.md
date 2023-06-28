@@ -4,7 +4,8 @@ title: Message Types
 tags:
   - css
 codepen_slug: rLxjBz
-codepen_featured: true
+syndicate_to:
+  - https://codepen.io/chrisburnell/pen/rLxjBz
 ---
 
 <c-codepen slug="{{ codepen_slug }}" height="500px"></c-codepen>

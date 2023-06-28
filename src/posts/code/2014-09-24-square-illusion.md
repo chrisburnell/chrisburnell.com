@@ -5,7 +5,8 @@ tags:
   - css
   - motion
 codepen_slug: IKHhC
-codepen_featured: true
+syndicate_to:
+  - https://codepen.io/chrisburnell/pen/IKHhC
 ---
 
 <c-codepen slug="{{ codepen_slug }}" height="500px"></c-codepen>

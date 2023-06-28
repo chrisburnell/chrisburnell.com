@@ -4,6 +4,8 @@ title: content-box vs. border-box
 tags:
   - css
 codepen_slug: lBJnz
+syndicate_to:
+  - https://codepen.io/chrisburnell/pen/lBJnz
 ---
 
 <c-codepen slug="{{ codepen_slug }}" tabfree="true" height="500px"></c-codepen>

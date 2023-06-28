@@ -188,18 +188,8 @@
 		</div>
 	</footer>
 
-	<!-- SVG Icons -->
-	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" display="none" aria-hidden="true">
-		{% for symbol in svg %}
-			<symbol id="svg--{{ symbol.title | lower }}" viewBox="0 0 {{ symbol.viewBox }}">
-				<title>{{ symbol.title }}</title>
-				{%- set paths = symbol.path | toArray -%}
-				{%- for path in paths %}
-					<path d="{{ path }}" />
-				{% endfor %}
-			</symbol>
-		{% endfor %}
-	</svg>
+	<!-- SVG Sprites -->
+	{% set svg %}{% include '../../../images/sprites.svg' %}{% endset %}{{ svg | replace('<?xml version="1.0" encoding="utf-8"?>', '') | replace('<svg', '<svg display="none" aria-hidden="true"') | safe }}
 
 	{% if env.ELEVENTY_PRODUCTION %}
 		<!-- ServiceWorker -->

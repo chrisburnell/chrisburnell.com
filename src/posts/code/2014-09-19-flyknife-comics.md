@@ -4,7 +4,8 @@ title: Flyknife Comics
 tags:
   - css
 codepen_slug: hIxaj
-codepen_featured: true
+syndicate_to:
+  - https://codepen.io/chrisburnell/pen/hIxaj
 ---
 
 <c-codepen slug="{{ codepen_slug }}"></c-codepen>

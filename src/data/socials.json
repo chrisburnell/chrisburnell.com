@@ -9,27 +9,32 @@
     "title": "Bluesky",
     "url": "https://bsky.app/profile/chrisburnell.com",
     "primary": true,
-    "fillHover": "url(#bluesky)",
-    "defs": "<defs><linearGradient id=\"bluesky\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0%\" stop-color=\"#2962f6\" /><stop offset=\"100%\" stop-color=\"#3f8df7\" /></linearGradient></defs>"
+    "fillHover": "url(#bluesky)"
   },
   {
     "title": "CodePen",
     "url": "https://codepen.io/",
     "key": "codepen",
     "primary": true,
-    "fillHover": "#ffffff"
+    "fillHover": "#737373"
   },
   {
     "title": "GitHub",
     "url": "https://github.com/",
     "key": "github",
     "primary": true,
-    "fillHover": "#cdd9e5"
+    "fillHover": "#737373"
   },
   {
     "title": "Mastodon",
     "url": "https://fediverse.repc.co/@chrisburnell",
     "primary": true,
+    "fillHover": "#595aff"
+  },
+  {
+    "title": "T2",
+    "url": "https://t2.social/",
+    "key": "t2",
     "fillHover": "#595aff"
   },
   {

@@ -5,7 +5,8 @@ tags:
   - css
   - motion
 codepen_slug: AGtdF
-codepen_featured: true
+syndicate_to:
+  - https://codepen.io/chrisburnell/pen/AGtdF
 ---
 
 <c-codepen slug="{{ codepen_slug }}" height="600px"></c-codepen>

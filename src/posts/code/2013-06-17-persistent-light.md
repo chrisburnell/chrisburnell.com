@@ -5,6 +5,8 @@ tags:
   - css
   - motion
 codepen_slug: mglHp
+syndicate_to:
+  - https://codepen.io/chrisburnell/pen/mglHp
 ---
 
 <c-codepen slug="{{ codepen_slug }}" height="425px"></c-codepen>

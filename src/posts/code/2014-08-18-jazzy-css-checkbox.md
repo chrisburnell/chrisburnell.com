@@ -4,6 +4,8 @@ title: Jazzy CSS Checkbox
 tags:
   - css
 codepen_slug: Cbiun
+syndicate_to:
+  - https://codepen.io/chrisburnell/pen/Cbiun
 ---
 
 <c-codepen slug="{{ codepen_slug }}" height="250px"></c-codepen>

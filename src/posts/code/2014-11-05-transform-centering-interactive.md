@@ -4,6 +4,8 @@ title: Power of Transform Centering - Interactive
 tags:
   - css
 codepen_slug: xutbs
+syndicate_to:
+  - https://codepen.io/chrisburnell/pen/xutbs
 ---
 
 <c-codepen slug="{{ codepen_slug }}" height="500px"></c-codepen>

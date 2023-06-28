@@ -4,6 +4,7 @@ title: One Hypotenuse to rule them all
 description: Here’s a fun little demo of some math I found interesting.
 tags:
   - javascript
+codepen_slug: poKgaoR
 syndicate_to:
   - https://codepen.io/chrisburnell/pen/poKgaoR
 ---

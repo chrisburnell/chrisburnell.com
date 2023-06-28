@@ -17,7 +17,7 @@ My idea was as such: I wonder if I could create something similar to the clock a
 
 <h2 id="hit-a-snag">We’ve hit a snag!</h2>
 
-<aside><p>Here’s an example of this effect (which <a href="https://codepen.io/chrisburnell/details/mglHp#lovers">Chris Coyier loved on <em>CodePen</em></a>)!</p></aside>
+<aside><p>Here’s an example of this effect:</p></aside>
 
 <c-codepen slug="mglHp" height="425px"></c-codepen>
 

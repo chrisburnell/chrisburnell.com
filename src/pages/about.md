@@ -10,7 +10,15 @@ eleventyComputed:
 <p><strong>I’ve got a <a href="https://chrisburnell.com/cv/">CV / resumé</a>, if that’s what you’re looking for.</strong></p>
 
 <ul class=" [ cluster ] ">
-    <li><a href="https://chrisburnell.com/feed.xml"><svg width="20" height="20" aria-hidden="true" focusable="false" style="--fill: #ff8c00; margin-inline-end: 1ex; vertical-align: sub;"><use href="#svg--rss"></use></svg>RSS</a></li><li><a href="https://bsky.app/profile/chrisburnell.com" rel="external"><svg width="20" height="20" aria-hidden="true" focusable="false" style="--fill: url(#bluesky); margin-inline-end: 1ex; vertical-align: sub;"><defs><linearGradient id="bluesky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2962f6" /><stop offset="100%" stop-color="#3f8df7" /></linearGradient></defs><use href="#svg--bluesky"></use></svg>Bluesky</a></li><li><a href="https://codepen.io/chrisburnell" rel="external"><svg width="20" height="20" aria-hidden="true" focusable="false" style="margin-inline-end: 1ex; vertical-align: sub;"><use href="#svg--codepen"></use></svg>CodePen</a></li><li><a href="https://github.com/chrisburnell" rel="external"><svg width="20" height="20" aria-hidden="true" focusable="false" style="margin-inline-end: 1ex; vertical-align: sub;"><use href="#svg--github"></use></svg>GitHub</a></li><li><a href="https://fediverse.repc.co/@chrisburnell" rel="external"><svg width="20" height="20" aria-hidden="true" focusable="false" style="--fill: #595aff; margin-inline-end: 1ex; vertical-align: sub;"><use href="#svg--mastodon"></use></svg>Mastodon</a></li>
+    {%- for item in socials -%}
+        {%- if not item.hidden and item.primary -%}
+            {%- set url = item.url -%}
+            {%- if item.key -%}
+                {%- set url = url + author[item.key] -%}
+            {%- endif -%}
+            <li><a href="{{ url }}"><svg width="20" height="20" aria-hidden="true" focusable="false" style="{% if item.fillHover %}--fill: {{ item.fillHover }}; {% endif %}margin-inline-end: 1ex; vertical-align: sub;">{% if item.defs %}{{ item.defs | safe }}{% endif %}<use href="#svg--{{ item.title | lower }}"></use></svg>{{ item.title }}</a></li>
+        {%- endif -%}
+    {%- endfor -%}
 </ul>
 
 <hr>

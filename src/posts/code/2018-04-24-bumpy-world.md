@@ -5,6 +5,8 @@ tags:
   - css
   - motion
 codepen_slug: MQNwqp
+syndicate_to:
+  - https://codepen.io/chrisburnell/pen/MQNwqp
 ---
 
 <c-codepen slug="{{ codepen_slug }}"></c-codepen>

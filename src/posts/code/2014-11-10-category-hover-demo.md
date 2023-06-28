@@ -4,7 +4,8 @@ title: Category Hover Demo
 tags:
   - css
 codepen_slug: mybQEL
-codepen_featured: true
+syndicate_to:
+  - https://codepen.io/chrisburnell/pen/mybQEL
 ---
 
 <c-codepen slug="{{ codepen_slug }}" height="525px"></c-codepen>

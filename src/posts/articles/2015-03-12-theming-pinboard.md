@@ -14,14 +14,14 @@ I’ve been inspired by sites like [CSS Zen Garden](http://www.csszengarden.com/
 
 <blockquote>
     <p>Pinboard implemented their own simpler layout model & used canvas for the drawing which is GPU-backed.</p>
-    <cite>— Jake Archibald (@jaffathecake) <a href="https://twitter.com/jaffathecake/status/569894563147608066">February 23, 2015</a></cite>
+    <cite>Jake Archibald (@jaffathecake) <a href="https://twitter.com/jaffathecake/status/569894563147608066">February 23, 2015</a></cite>
 </blockquote>
 
 Excited, I quickly jumped to my *Pinboard* tab and hammered the refresh button. Nothing changed. I dug into my account settings looking for a flag to switch on for this newfangled layout, but couldn’t find one. *What’s going on?!*
 
 <blockquote>
     <p>(hah, I mean Flipboard, not Pinboard)</p>
-    <cite>— Jake Archibald (@jaffathecake) <a href="https://twitter.com/jaffathecake/status/569895188367319042">February 23, 2015</a></cite>
+    <cite>Jake Archibald (@jaffathecake) <a href="https://twitter.com/jaffathecake/status/569895188367319042">February 23, 2015</a></cite>
 </blockquote>
 
 *Okay then.*
@@ -55,9 +55,7 @@ So it was important for me to make these parts distinct in the new design, whils
 <h2 id="injection">injection"); DROP TABLE Bookmarks;--</h2>
 
 <aside>
-    <picture>
-        <img src="/images/animated/idontbelievemyeyes.gif" alt="" loading="lazy">
-    </picture>
+    <video src="/images/animated/idontbelievemyeyes.mp4" autoplay loop muted width="250" height="250"></video>
 </aside>
 
 That was a <del>hilarious</del> decent joke, right? And I'm sure you appreciated <del>that moment of tear-filled laughter</del> that I tried.
