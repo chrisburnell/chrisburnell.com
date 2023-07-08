@@ -1,4 +1,5 @@
 const CleanCSS = require("clean-css")
+const { transform } = require("lightningcss")
 const Natural = require("natural")
 const analyze = new Natural.SentimentAnalyzer("English", Natural.PorterStemmer, "afinn")
 
@@ -13,6 +14,12 @@ const postTypes = {
 module.exports = {
 	cssmin: (code) => {
 		return new CleanCSS({}).minify(code).styles
+	},
+	lightning: (value) => {
+		return transform({
+			code: Buffer.from(value),
+			minify: true,
+		}).code
 	},
 	limit: (array, limit) => {
 		return array.slice(0, limit)
