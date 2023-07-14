@@ -93,24 +93,24 @@ class WebsiteSounds {
 		this.pentatonicElements.forEach((element) => {
 			element.addEventListener("click", () => {
 				let target = element
-				if (!element.values && !element.dataset.values) {
+				if (!element.getAttribute("values") && !element.dataset.values) {
 					target = [...element.children].filter((child) => {
-						return child.values || child.dataset.values
+						return child.getAttribute("values") || child.dataset.values
 					})[0]
 				}
-				let values = target.values || target.dataset.values
-				let duration = target.getAttribute("duration") ? parseFloat(target.getAttribute("duration")) : target.dataset.duration ? parseFloat(target.dataset.duration) : this.defaults.duration
-				let keyStart = target.getAttribute("key-start") ? parseFloat(target.getAttribute("key-start")) : target.dataset.keyStart ? parseFloat(target.dataset.keyStart) : this.defaults.keyStart
-				let keyLimit = target.getAttribute("key-limit") ? parseFloat(target.getAttribute("key-limit")) : target.dataset.keyLimit ? parseFloat(target.dataset.keyLimit) : this.defaults.keyLimit
-				let keyIntervals = target.getAttribute("key-intervals")
-					? target
-							.getAttribute("key-intervals")
-							.split(",")
-							.map((interval) => parseFloat(interval))
-					: target.dataset.keyIntervals
-					? target.dataset.keyIntervals.split(",").map((interval) => parseFloat(interval))
-					: this.defaults.keyIntervals
+				let values = target.getAttribute("values") || target.dataset.values
 				if (values) {
+					let duration = target.getAttribute("duration") ? parseFloat(target.getAttribute("duration")) : target.dataset.duration ? parseFloat(target.dataset.duration) : this.defaults.duration
+					let keyStart = target.getAttribute("key-start") ? parseFloat(target.getAttribute("key-start")) : target.dataset.keyStart ? parseFloat(target.dataset.keyStart) : this.defaults.keyStart
+					let keyLimit = target.getAttribute("key-limit") ? parseFloat(target.getAttribute("key-limit")) : target.dataset.keyLimit ? parseFloat(target.dataset.keyLimit) : this.defaults.keyLimit
+					let keyIntervals = target.getAttribute("key-intervals")
+						? target
+								.getAttribute("key-intervals")
+								.split(",")
+								.map((interval) => parseFloat(interval))
+						: target.dataset.keyIntervals
+						? target.dataset.keyIntervals.split(",").map((interval) => parseFloat(interval))
+						: this.defaults.keyIntervals
 					pentatonic(values.split(","), duration, this.defaults.volume, keyStart, keyIntervals, keyLimit, this.waveform)
 				}
 			})

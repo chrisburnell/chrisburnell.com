@@ -1,0 +1,52 @@
+<script webc:setup>
+function getViewBox(string) {
+	const values = string.split(",")
+	return `0 0 ${values.length - 1} ${Math.max(...values) + 2}`
+}
+function getPath(string) {
+	const values = string.split(",")
+	return values
+		.map((value) => Math.max(...values) - value + 1)
+		.reduce((string, value, i) => {
+			return string + `${i < 1 ? "M" : "L"} ${i} ${value} `
+		}, "")
+}
+function getFinalX(string) {
+	return string.split(",").length - 1
+}
+function getFinalY(string) {
+	const values = string.split(",")
+	return Math.max(...values) - values[values.length - 1] + 1
+}
+function getHighestY(string) {
+	const values = string.split(",")
+	return Math.max(...values) + 2
+}
+</script>
+<is-land class=" [ spark-line ] [ pentatonic ] " on:visible>
+	<spark-line :values="this.values" :original="this.original" :curve="this.curve" :colors="this.colors" :points="this.points" :key-start="this['key-start'] || 25" :key-intervals="this['key-intervals'] || `2,1,2,2,1,2,2`" :key-limit="this['key-limit'] || 15" :id="this.id" title="Click to hear me!">
+		<span webc:if="this.start" @text="this.start"></span>
+		<svg width="160px" height="28px" :viewBox="getViewBox(this.values)" preserveAspectRatio="none">
+			<path
+				:d="`${getPath(this.values)} L ${getFinalX(this.values)} ${getHighestY(this.values)} L 0 ${getHighestY(this.values)} Z`"
+				fill="color-mix(in oklab, var(--fill, oklab(var(--oklab-raven))), transparent)"
+				stroke="transparent"
+			/>
+			<path
+				:d="getPath(this.values)"
+				:stroke-width="this['stroke-width'] || 2"
+				:stroke="this.color || `currentColor`"
+				fill="transparent"
+				vector-effect="non-scaling-stroke"
+			/>
+		</svg>
+		<svg width="160px" height="28px" viewBox="0 0 160 28" preserveAspectRatio="xMaxYMid meet">
+			<circle r="3" cx="160" :cy="(28 / getHighestY(this.values)) * getFinalY(this.values)" fill="var(--dot, oklab(var(--oklab-maple)))"></circle>
+		</svg>
+		<span webc:if="this.end" @text="this.end"></span>
+	</spark-line>
+
+	<template webc:raw data-island="once">
+		<link rel="stylesheet" href="/css/components/spark-line.css" />
+	</template>
+</is-land>

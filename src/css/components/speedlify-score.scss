@@ -35,11 +35,11 @@
 		text-decoration: none;
 	}
 	.speedlify-score-ok {
-		color: hsl(var(--hsl-aspen));
+		color: h(aspen);
 		border-color: currentColor;
 	}
 	.speedlify-score-bad {
-		color: hsl(var(--hsl-maple));
+		color: h(maple);
 		border-color: currentColor;
 	}
 	.speedlify-rank {
@@ -55,13 +55,13 @@
 		line-height: 1;
 	}
 	// .speedlify-rank-change.up {
-	// 	color: hsl(var(--hsl-conifer));
+	// 	color: h(conifer);
 	// }
 	.speedlify-rank-change.up:before {
 		content: "↑ ";
 	}
 	// .speedlify-rank-change.down {
-	// 	color: hsl(var(--hsl-maple));
+	// 	color: h(maple);
 	// }
 	.speedlify-rank-change.down:before {
 		content: "↓ ";

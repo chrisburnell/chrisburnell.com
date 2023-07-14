@@ -3,19 +3,19 @@
 /// @group themes
 ////
 
-$koala-palette: (
-	lynx: #2e0435,
-	wolf: #4d166d,
-	bowhead: #6b34ab,
-	raven: #855fda,
-	highland: #a08fea,
-	coyote: #bbb4f1,
-	bear: #dddaf3,
+$koala-colors: (
+	lynx: "22.27% 7.51% -5.98%",
+	wolf: "33.76% 9.07% -11.04%",
+	bowhead: "46.12% 9.18% -15.53%",
+	raven: "58.5% 7.46% -16.46%",
+	highland: "70.18% 4.75% -12.25%",
+	coyote: "79.71% 2.87% -8.09%",
+	bear: "89.83% 1.23% -3.18%",
 );
 
 @mixin theme-koala() {
-	@each $name, $color in $koala-palette {
-		--hsl-#{$name}: #{color.hue($color)} #{color.saturation($color)} #{color.lightness($color)};
+	@each $name, $value in $koala-colors {
+		#{"--oklab-" + $name}: #{$value};
 	}
 
 	.logo,

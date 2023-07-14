@@ -1,14 +1,14 @@
 {
-  "shadow-light": "#9c9c9c",
-  "shadow-dark": "#0f0f0f",
-  "css": "#0181d9",
-  "html": "#e54d26",
-  "javascript": "#f1c54c",
-  "json": "#a9a9a9",
-  "jsx": "#e6f7ff",
-  "liquid": "#7ab55c",
-  "nunjucks": "#448f3d",
-  "scss": "#c6538c",
-  "webc": "#00bcd4",
-  "yaml": "#ee2b34"
+  "shadow-light": "69.3% 0% 0%",
+  "shadow-dark": "16.8% 0% 0%",
+  "css": "59.1% -14.5% -38%",
+  "html": "62.6% 40% 28%",
+  "javascript": "84.1% 1% 36%",
+  "json": "73.5% 0% 0%",
+  "jsx": "96.6% -3.5% -3.75%",
+  "liquid": "71.2% -24.5% 23.5%",
+  "nunjucks": "58.3% -27.5% 21.5%",
+  "scss": "60.6% 39.25% -5.5%",
+  "webc": "72.9% -27.25% -16.25%",
+  "yaml": "61.4% 51.25% 24.25%"
 }

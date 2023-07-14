@@ -3,19 +3,19 @@
 /// @group themes
 ////
 
-$code-red-palette: (
-	lynx: #270a0a,
-	wolf: #4c1313,
-	bowhead: #822020,
-	raven: #c62d2d,
-	highland: #e06969,
-	coyote: #efadad,
-	bear: #fbe9e9,
+$code-red-colors: (
+	lynx: "19.44% 4.53% 1.9%",
+	wolf: "28.4% 7.84% 3.56%",
+	bowhead: "40.5% 12.02% 5.72%",
+	raven: "54.3% 17% 8.39%",
+	highland: "66.39% 13.84% 5.58%",
+	coyote: "80.95% 7.36% 2.52%",
+	bear: "94.84% 1.87% 0.59%",
 );
 
 @mixin theme-code-red() {
-	@each $name, $color in $code-red-palette {
-		--hsl-#{$name}: #{color.hue($color)} #{color.saturation($color)} #{color.lightness($color)};
+	@each $name, $value in $code-red-colors {
+		#{"--oklab-" + $name}: #{$value};
 	}
 
 	.logo,

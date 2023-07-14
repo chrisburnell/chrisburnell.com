@@ -91,7 +91,7 @@ module.exports = {
 	maxDecimals: (value, decimals = 2) => {
 		return +value.toFixed(decimals)
 	},
-	exponentialMovingAverage: (timestamp, current = 0, coefficient = 0.5) => {
+	exponentialMovingAverage: (timestamp, current = 0, coefficient = 0.333) => {
 		return coefficient * timestamp + (1 - coefficient) * current
 	},
 	simpleMovingAverage: (values, period, preserveEnds) => {

@@ -10,8 +10,6 @@ class InteractiveSparkline {
 			component: document.querySelector("#interactive-sparkline"),
 		}
 
-		this.inputs.inputColor.value = this.rgbToHex(window.getComputedStyle(document.body, null).getPropertyValue("color"))
-
 		this.processSparkline(this.inputs)
 		Object.values(this.inputs).forEach((input) => {
 			input.addEventListener("change", () => {
@@ -21,14 +19,6 @@ class InteractiveSparkline {
 				this.processSparkline(this.inputs)
 			})
 		})
-	}
-
-	rgbToHex(rgb) {
-		return `#${rgb
-			.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/)
-			.slice(1)
-			.map((n) => parseInt(n, 10).toString(16).padStart(2, "0"))
-			.join("")}`
 	}
 
 	processSparkline(inputs) {

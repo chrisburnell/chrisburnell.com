@@ -4,7 +4,7 @@
 ////
 
 @mixin theme-dark() {
-	--shadow-color: var(--hsl-shadow-dark);
+	--shadow-color: var(--oklab-shadow-dark);
 
 	&:is(html) {
 		scrollbar-color: h(raven) h(mineshaft);
@@ -22,7 +22,8 @@
 
 	// Set some special dark backgrounds
 	:is(.header, .footer, %box, .table) {
-		background-color: var(--background-color, #{mix(map-get($colors, mineshaft), map-get($colors, thunder), (1 - map-get($opacities, gamma)) * 100%)});
+		background-color: h(thunder);
+		background-color: var(--background-color, color-mix(in oklab, h(thunder), h(mineshaft) 80%));
 	}
 
 	// Header Block
@@ -117,30 +118,29 @@
 	///
 
 	%box {
-		border-block-start-color: var(--border-color, h(raven, alpha));
+		border-block-start-color: var(--box-border-color, h(raven, alpha));
 
 		%anchor {
 			color: h(highland);
 		}
 	}
 	.box--success {
-		background-color: #{mix(map-get($colors, mineshaft), map-get($colors, conifer), (1 - map-get($opacities, gamma)) * 100%)};
-		--border-color: #{h(conifer)};
+		background-color: color-mix(in oklab, h(mineshaft), h(conifer) 20%);
+		--box-border-color: #{h(conifer)};
 	}
 
 	.box--warning {
-		background-color: #{mix(map-get($colors, mineshaft), map-get($colors, aspen), (1 - map-get($opacities, gamma)) * 100%)};
-		--border-color: #{h(aspen)};
+		background-color: color-mix(in oklab, h(mineshaft), h(aspen) 20%);
+		--box-border-color: #{h(aspen)};
 	}
 
 	.box--error {
-		background-color: #{mix(map-get($colors, mineshaft), map-get($colors, maple), (1 - map-get($opacities, gamma)) * 100%)};
-		--border-color: #{h(maple)};
+		background-color: color-mix(in oklab, h(mineshaft), h(maple) 20%);
+		--box-border-color: #{h(maple)};
 	}
 
 	.rating {
 		--rating-background-color: #{h(kaiser)};
-		--rating-color: #{mix(map-get($colors, thunder), map-get($colors, aspen), map-get($opacities, gamma) * 100%)};
 	}
 
 	.browse__previous,

@@ -19,9 +19,8 @@ module.exports = {
 		// Calculate simple moving average of each value, preserve head and tail
 		let normalized = simpleMovingAverage(values, 3, true)
 		// Sparklines in A minor
-		return `<c-spark-line values="${normalized.join(",")}"
-							original="${values.join(",")}"
-							${start ? `start-label="${start}"` : ""}
-							${end ? `end-label="${end}"` : ""}></c-spark-line>`
+		return `<c-sparkline values="${normalized.join(",")}"
+							${start ? `start="${start}"` : ""}
+							${end ? `end="${end}"` : ""}></c-sparkline>`
 	},
 }

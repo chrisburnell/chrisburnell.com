@@ -120,8 +120,7 @@
 	grid-row: content;
 }
 
-.pantheon > spark-line,
-.pantheon > .spark-line {
+.pantheon > :is(spark-line, .spark-line) {
 	grid-column: marginalia;
 	grid-row: sparkline;
 	margin-block-end: var(--size-large);

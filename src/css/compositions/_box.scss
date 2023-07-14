@@ -2,13 +2,13 @@
 /// Box
 /// @group compositions
 ///
-/// --background-color (hsla(var(--hsl-bear)(--opacity-delta)))
+/// --background-color (oklab(var(--oklab-bear)(--opacity-delta)))
 ///     Defines the background color the box.
 /// --max-inline-size (100%)
 ///     Defines how wide the box should be, as a maximum.
 /// --gutter (var(--size-gutter))
 ///     Defines the space around the box.
-/// --border-color (hsla(var(--hsl-raven) / var(--opacity-beta)))
+/// --border-color (oklab(var(--oklab-raven) / var(--opacity-beta)))
 ///     Defines the background color the box.
 ////
 

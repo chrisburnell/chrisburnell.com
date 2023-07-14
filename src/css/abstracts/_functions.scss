@@ -4,23 +4,6 @@
 ////
 
 ///
-/// Return an HLS(A) color
-///
-/// @param {String} $value - key from `hsl` map
-/// @param {String} $opacity [null] - key from `opacity` map
-///
-/// @throw Error if no parameter is passed.
-///
-/// @return {Color}
-///
-@function h($value, $opacity: null) {
-	@if not $opacity {
-		@return hsl(var(--hsl-#{$value}));
-	}
-	@return hsla(var(--hsl-#{$value}) / var(--opacity-#{$opacity}));
-}
-
-///
 /// Return an OKLab color
 ///
 /// @param {String} $value - key from `oklab` map
@@ -30,7 +13,7 @@
 ///
 /// @return {Color}
 ///
-@function c($value, $opacity: null) {
+@function h($value, $opacity: null) {
 	@if not $opacity {
 		@return oklab(var(--oklab-#{$value}));
 	}
@@ -118,33 +101,6 @@ $centers: (center, top-center, bottom-center, center-left, center-right);
 		$merged: map-merge($merged, $map);
 	}
 	@return $merged;
-}
-
-///
-/// Accepts 2 or 3 parameters.
-///
-/// @param {String} $direction [to bottom] - Gradient direction
-/// @param {List} $color-stops - List of Color values
-///
-/// @throw Error if 2 or 3 parameters are not passed.
-///
-/// @return {String} Scrim Gradient snippet
-///
-@function scrim-gradient($direction, $color-stops...) {
-	@if not $direction and not $color-stops {
-		@warn "`scrim-gradient()` expects a direction and/or two colors to gradient between.";
-		@return false;
-	}
-
-	@if not is-direction($direction) {
-		$color-stops: join($direction, $color-stops);
-		$direction: "to bottom";
-	}
-
-	$start-color: nth($color-stops, 1);
-	$end-color: nth($color-stops, 2);
-
-	@return linear-gradient(#{$direction}, mix($start-color, $end-color, 100%) 0%, mix($start-color, $end-color, 73.8%) 19%, mix($start-color, $end-color, 54.1%) 34%, mix($start-color, $end-color, 38.2%) 47%, mix($start-color, $end-color, 27.8%) 56.5%, mix($start-color, $end-color, 19.4%) 65%, mix($start-color, $end-color, 12.6%) 73%, mix($start-color, $end-color, 7.5%) 80.2%, mix($start-color, $end-color, 4.2%) 86.1%, mix($start-color, $end-color, 2.1%) 91%, mix($start-color, $end-color, 0.8%) 95.2%, mix($start-color, $end-color, 0.2%) 98.2%, mix($start-color, $end-color, 0%) 100%);
 }
 
 ///

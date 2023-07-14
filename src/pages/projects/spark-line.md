@@ -74,7 +74,7 @@ The element takes a number of attributes:
             <td>defines the values of the graph</td>
         </tr>
         <tr>
-            <th><code>line-width</code></th>
+            <th><code>stroke-width</code></th>
             <td style="white-space:nowrap">
                 2 <em>(default)</em>
             </td>
@@ -239,9 +239,9 @@ If you wanted to use `<is-land>` as well, I recommend something like the followi
         <br>
         <label><input id="input-endpoint" type="checkbox" checked> Endpoint</label>
         <br>
-        <label><input id="input-color" type="color" value="{{ designTokens.colors.kaiser }}"> Color</label>
+        <label><input id="input-color" type="color" value="#4f4f4f"> Color</label>
         <br>
-        <label><input id="input-endpoint-color" type="color" value="{{ designTokens.colors.maple }}"> Endpoint Color</label>
+        <label><input id="input-endpoint-color" type="color" value="#e0151f"> Endpoint Color</label>
     </fieldset>
 </form>
 

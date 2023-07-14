@@ -3,19 +3,19 @@
 /// @group themes
 ////
 
-$matrix-palette: (
-	lynx: #004801,
-	wolf: #016302,
-	bowhead: #028004,
-	raven: #049e06,
-	highland: #06bd0a,
-	coyote: #08de0e,
-	bear: #ccffcd,
+$matrix-colors: (
+	lynx: "34.81% -9.36% 7.14%",
+	wolf: "43.32% -11.62% 8.89%",
+	bowhead: "52.01% -13.94% 10.65%",
+	raven: "60.63% -16.24% 12.42%",
+	highland: "69.23% -18.53% 14.17%",
+	coyote: "78.09% -20.91% 15.98%",
+	bear: "95.19% -6.95% 4.8%",
 );
 
 @mixin theme-matrix() {
-	@each $name, $color in $matrix-palette {
-		--hsl-#{$name}: #{color.hue($color)} #{color.saturation($color)} #{color.lightness($color)};
+	@each $name, $value in $matrix-colors {
+		#{"--oklab-" + $name}: #{$value};
 	}
 
 	main {

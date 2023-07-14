@@ -36,7 +36,7 @@
 	}
 
 	select {
-		background-color: hsl(var(--hsl-thunder));
+		background-color: h(thunder);
 		color: inherit;
 	}
 
@@ -84,7 +84,7 @@
 	}
 
 	summary:not(:is(:hover, :focus, :active)) {
-		text-decoration-color: hsl(var(--hsl-kaiser));
+		text-decoration-color: h(kaiser);
 	}
 
 	summary ~ * {

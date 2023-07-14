@@ -15,23 +15,25 @@ spark-line {
 	display: inline-grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 1fr auto;
+	padding-inline-end: 1.5px;
 	font-family: var(--font-family-sans);
 	font-size: var(--font-size-small);
 	font-style: normal;
 	font-variation-settings: normal;
 	font-weight: var(--font-weight-semibold);
 
-	canvas {
+	:is(canvas, svg) {
 		inline-size: auto;
 		grid-column: 1 / 3;
 		grid-row: 1 / 2;
+		overflow: visible;
 	}
 
 	span {
 		grid-column: 1 / 2;
 		text-align: start;
 	}
-	canvas + span {
+	:is(canvas, svg) + span {
 		grid-column: 2 / 3;
 		text-align: end;
 	}

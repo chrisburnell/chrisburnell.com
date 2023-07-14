@@ -198,14 +198,6 @@
 	display: none;
 }
 
-@each $name, $color in $colors {
-	%background--#{$name} {
-		background-color: h(#{$name});
-		@supports (color: color-contrast()) {
-			color: color-contrast(#{$color} vs var(--contrast-list) to var(--contrast-ratio));
-		}
-	}
-}
 %background--highland,
 %background--raven {
 	color: h(thunder);
@@ -229,6 +221,14 @@
 %background--thunder,
 %background--wolf {
 	color: h(snowy);
+}
+@each $name, $color in $colors {
+	%background--#{$name} {
+		background-color: h(#{$name});
+		@supports (color: color-contrast()) {
+			color: color-contrast(#{$color} vs var(--contrast-list) to var(--contrast-ratio));
+		}
+	}
 }
 
 .size-example {
