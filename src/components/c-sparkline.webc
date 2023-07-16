@@ -34,8 +34,9 @@ function getHighestY(string) {
 			/>
 			<path
 				:d="getPath(this.values)"
-				:stroke-width="this['stroke-width'] || 2"
 				:stroke="this.color || `currentColor`"
+				:stroke-width="this['stroke-width'] || 2"
+				stroke-linecap="round"
 				fill="transparent"
 				vector-effect="non-scaling-stroke"
 			/>
