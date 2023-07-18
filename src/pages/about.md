@@ -96,8 +96,6 @@ I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link
     <dl>
         <dt>Email:</dt>
         <dd><a class=" [ canada ] " href="mailto:{{ author.email }}"><img alt="" loading="lazy" decoding="async" src="/images/raven.svg" class="brand-logo" style="margin-inline-end: 1ex;">{{ author.email }}</a></dd>
-        <dt>Bluesky:</dt>
-        <dd><a class=" [ canada ] " href="https://bsky.app/profile/{{ author.bluesky }}" title="{{ author.name }} on Bluesky"><svg width="20" height="20" aria-hidden="true" focusable="false" style="--fill: url(#bluesky); margin-inline-end: 1ex; vertical-align: sub;"><defs><linearGradient id="bluesky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2962f6" /><stop offset="100%" stop-color="#3f8df7" /></linearGradient></defs><use href="#svg--bluesky"></use></svg>{{ '@' + author.bluesky }}</a></dd>
         <dt>Mastodon:</dt>
         <dd><a class=" [ canada ] " href="https://{{ author.mastodon_domain }}/users/{{ author.mastodon.split('@') | first }}" title="{{ author.name }} on Mastodon"><svg width="20" height="20" aria-hidden="true" focusable="false" style="--fill: #595aff; margin-inline-end: 1ex; vertical-align: sub;"><use href="#svg--mastodon"></use></svg>{{ '@' + author.mastodon }}</a></dd>
     </dl>
