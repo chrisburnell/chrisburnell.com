@@ -70,7 +70,7 @@ module.exports = Object.assign(defaults, {
 
 <h2 id="4">4. Integrate with Eleventy</h2>
 
-Add both to your `.eleventy.js` config file:
+Add both to Eleventy by adding them to your [Eleventy Config](https://www.11ty.dev/docs/config/):
 
 ```javascript
 const pluginWebmentions = require("@chrisburnell/eleventy-cache-webmentions")
