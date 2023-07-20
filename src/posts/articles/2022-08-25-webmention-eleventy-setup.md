@@ -1,4 +1,5 @@
 ---
+updated: 2023-07-20T20:06:36+0100
 date: 2022-08-25T16:31:04+0100
 title: Webmention Setup for Eleventy
 description: Here’s a quick run-through of how I retrieve and utilise Webmentions with my Eleventy website.
@@ -9,7 +10,7 @@ tags:
   - writing
 ---
 
-<h2 id="1">Step № 1. Account Creation</h2>
+<h2 id="1">1. Account Creation</h2>
 
 Unless you already have your own Webmention receiver, sign up for one and add the secret key/token to your project. Below are two examples:
 
@@ -25,7 +26,7 @@ If you’re using **[go-jamming](https://git.brainbaking.com/wgroeneveld/go-jamm
 GO_JAMMING_TOKEN=njJql0lKXnotreal4x3Wmd
 ```
 
-<h2 id="2">Step № 2. Installation</h2>
+<h2 id="2">2. Installation</h2>
 
 Install the [`eleventy-cache-webmentions`](/eleventy-cache-webmentions/) package from *npm*:
 
@@ -33,9 +34,9 @@ Install the [`eleventy-cache-webmentions`](/eleventy-cache-webmentions/) package
 npm install @chrisburnell/eleventy-cache-webmentions --save-dev
 ```
 
-<h2 id="3">Step № 3. Configuration</h2>
+<h2 id="3">3. Configuration</h2>
 
-Create a config file for `eleventy-cache-webmentions`:
+Create a config file. You may wish to put this file in your [Global Data Folder](https://www.11ty.dev/docs/data-global/) so you can access the data in Eleventy as well. However, the location and filename of your config file are up to you, as long as it’s somewhere in your project that you can access with JavaScript using `require()`.
 
 If you’re using **[Webmention.io](https://webmention.io/)**:
 
@@ -67,27 +68,26 @@ module.exports = Object.assign(defaults, {
 })
 ```
 
-<h2 id="4">Step № 4. Integrate with Eleventy</h2>
+<h2 id="4">4. Integrate with Eleventy</h2>
 
 Add both to your `.eleventy.js` config file:
 
 ```javascript
 const pluginWebmentions = require("@chrisburnell/eleventy-cache-webmentions")
-const configWebmentions = require("configWebmentions.js")
+const configWebmentions = require("../path_to_your_config/configWebmentions.js")
 
 module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(pluginWebmentions, configWebmentions)
 }
 ```
 
-<h2 id="5">Step № 5. Attach Webmentions to Pages</h2>
+<h2 id="5">5. Attach Webmentions to Pages</h2>
 
 Add some [Directory Specific Data Files](https://www.11ty.dev/docs/data-template-dir/) wherever your pages and/or posts live. For example, if your pages all live in a `pages/` folder, you would add the following code block to a `pages.11tydata.js` file inside `pages/`:
 
 ```javascript
-const configWebmentions = require("configWebmentions.js")
-
 const { getWebmentions } = require("@chrisburnell/eleventy-cache-webmentions")()
+const configWebmentions = require("../path_to_your_config/configWebmentions.js")
 
 module.exports = {
 	eleventyComputed: {
@@ -98,7 +98,7 @@ module.exports = {
 }
 ```
 
-<h2 id="6">Step № 6. Use Webmentions</h2>
+<h2 id="6">6. Use Webmentions</h2>
 
 Webmentions are now attached to each page!
 
