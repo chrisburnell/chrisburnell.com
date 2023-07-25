@@ -21,6 +21,7 @@ module.exports = {
 		// Sparklines in A minor
 		return `<c-sparkline values="${normalized.join(",")}"
 							${start ? `start="${start}"` : ""}
-							${end ? `end="${end}"` : ""}></c-sparkline>`
+							${end ? `end="${end}"` : ""}
+							curve="true"></c-sparkline>`
 	},
 }

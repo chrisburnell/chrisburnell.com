@@ -1,14 +1,56 @@
 <script webc:setup>
+function maxDecimals(value, decimals = 2) {
+	return +value.toFixed(decimals)
+}
 function getViewBox(string) {
 	const values = string.split(",")
 	return `0 0 ${values.length - 1} ${Math.max(...values) + 2}`
 }
-function getPath(string) {
-	const values = string.split(",")
+function lineCommand(point, i) {
+	return `L ${i},${point}`
+}
+function line(ax, ay, bx, by) {
+	const lengthX = bx - ax
+	const lengthY = by - ay
+
+	return {
+		length: Math.sqrt(Math.pow(lengthX, 2) + Math.pow(lengthY, 2)),
+		angle: Math.atan2(lengthY, lengthX)
+	}
+}
+function controlPoint(cx, cy, px, py, nx, ny, reverse) {
+	// When the current is the first or last point of the array, previous and
+	// next don't exist. Replace with current.
+	px = px || cx
+	py = py || cy
+	nx = nx || cx
+	ny = ny || cy
+
+	const smoothing = 0.2
+
+	const o = line(px, py, nx, ny)
+
+	const angle = o.angle + (reverse ? Math.PI : 0)
+	const length = o.length * smoothing
+
+	const x = cx + Math.cos(angle) * length
+	const y = cy + Math.sin(angle) * length
+
+	return [x, y]
+}
+function bezierCommand(point, i, a) {
+	const [csx, csy] = controlPoint(i-1, a[i-1], i-2, a[i-2], i, point)
+	const [cex, cey] = controlPoint(i, point, i-1, a[i-1], i+1, a[i+1], true)
+	return `C ${maxDecimals(csx)},${maxDecimals(csy)} ${maxDecimals(cex)},${maxDecimals(cey)} ${i},${point}`
+}
+function getPath(points, command = lineCommand) {
+	const values = points.split(",")
 	return values
-		.map((value) => Math.max(...values) - value + 1)
-		.reduce((string, value, i) => {
-			return string + `${i < 1 ? "M" : "L"} ${i} ${value} `
+		// flips each point in the vertical range
+		.map((point) => Math.max(...values) - point + 1)
+		// generate a string
+		.reduce((acc, point, i, a) => {
+			return i < 1 ? `M 0,${point}` : `${acc} ${command(point, i, a)}`
 		}, "")
 }
 function getFinalX(string) {
@@ -28,12 +70,12 @@ function getHighestY(string) {
 		<span webc:if="this.start" @text="this.start"></span>
 		<svg width="160px" height="28px" :viewBox="getViewBox(this.values)" preserveAspectRatio="none">
 			<path
-				:d="`${getPath(this.values)} L ${getFinalX(this.values)} ${getHighestY(this.values)} L 0 ${getHighestY(this.values)} Z`"
+				:d="`${getPath(this.values, this.curve ? bezierCommand : lineCommand)} L ${getFinalX(this.values)} ${getHighestY(this.values)} L 0 ${getHighestY(this.values)} Z`"
 				fill="color-mix(in oklab, var(--fill, oklab(var(--oklab-raven))), transparent)"
 				stroke="transparent"
 			/>
 			<path
-				:d="getPath(this.values)"
+				:d="getPath(this.values, this.curve ? bezierCommand : lineCommand)"
 				:stroke="this.color || `currentColor`"
 				:stroke-width="this['stroke-width'] || 2"
 				stroke-linecap="round"
