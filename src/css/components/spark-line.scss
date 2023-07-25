@@ -12,7 +12,7 @@
 @import "../abstracts/collections";
 
 spark-line {
-	display: inline-grid;
+	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 1fr auto;
 	padding-inline-end: 1.5px;
