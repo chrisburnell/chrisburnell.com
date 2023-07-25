@@ -76,7 +76,7 @@ I’ve had this website since 2008, and is, by far, my favourite thing that I ow
 
 I also feed this drive by continuously finding myself in <q>rabbit hole deep-dives</q>, the thrill of deep and exhilirating research into the web to achieve some goal, which, more often than not, serve as inspiration for my [projects](https://chrisburnell.com/projects/).
 
-I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link is a joke">playing the piano</a>, [baking bread](https://chrisburnell.com/note/1574856597/) from time to time, and [playing/DMing Dungeons & Dragons](https://chrisburnell.com/projects/#personal-projects) here and there too.
+I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link is a joke">playing the piano</a>, [baking bread](https://chrisburnell.com/note/1574856597/) from time to time, and [playing/DMing Dungeons & Dragons](https://chrisburnell.com/projects/#personal-projects) here and there. Check out my [Uses](/uses/) page too!
 
 <h2 id="worked-with">Companies I’ve worked with</h2>
 
