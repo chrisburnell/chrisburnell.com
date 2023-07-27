@@ -13,9 +13,10 @@
 
 spark-line {
 	display: grid;
+	display: inline-grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 1fr auto;
-	padding-inline-end: 1.5px;
+	padding-inline-end: 1.5px; // accounts for the endpoint
 	font-family: var(--font-family-sans);
 	font-size: var(--font-size-small);
 	font-style: normal;
@@ -28,10 +29,33 @@ spark-line {
 		grid-row: 1 / 2;
 		overflow: visible;
 	}
+	svg {
+		clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+		transition: transform var(--transition-duration) var(--transition-function);
+		animation: swipe var(--transition-duration-long) linear var(--transition-duration) forwards;
+
+		@at-root {
+			@keyframes swipe {
+				to {
+					clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+				}
+			}
+		}
+	}
 
 	span {
 		grid-column: 1 / 2;
 		text-align: start;
+		opacity: 0;
+		animation: fadein var(--transition-duration) linear calc(var(--transition-duration-long) + var(--transition-duration)) forwards;
+
+		@at-root {
+			@keyframes fadein {
+				to {
+					opacity: 1;
+				}
+			}
+		}
 	}
 	:is(canvas, svg) + span {
 		grid-column: 2 / 3;
