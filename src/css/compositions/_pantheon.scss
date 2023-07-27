@@ -121,6 +121,7 @@
 }
 
 .pantheon > :is(spark-line, .spark-line) {
+	opacity: 0;
 	grid-column: marginalia;
 	grid-row: sparkline;
 	margin-block-end: var(--size-large);
