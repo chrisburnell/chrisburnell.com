@@ -1,7 +1,7 @@
 ---
 date: 2022-11-11T21:38:00+0000
 title: "clamp() Calculator"
-description: "Handy little tool for calculating viewport-based clamped values."
+description: "Handy little tool for calculating viewport-based clamped values for use in CSS."
 tags:
   - css
   - calculator
@@ -11,11 +11,12 @@ css: clamp-calculator.css
 js_module: clamp-calculator.js
 ---
 
-<noscript><p class=" [ box  box--error ] ">Unfortunately, this calculator requires JavaScript to function correctly!</p></noscript>
-
 <!-- </textarea> -->
 <!-- '"´ -->
 <form id="clamp-calculator" class=" [ grid ] [ clamp-calculator ] " data-layout="50-50">
+	<legend class=" [ hidden ] ">
+		<h2>{{ title }}</h2>
+	</legend>
 	<fieldset class=" [ clamp-calculator__fieldset ] ">
 		<label for="size-min" class=" [ delta ] ">Minimum Size <small>(px)</small></label>
 		<input id="size-min" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="number" step="0.001" min="0" inputmode="numeric" pattern="[1-9]\d*(\.\d+)?" lang="en" value="16" data-default="16"></input>
@@ -33,7 +34,7 @@ js_module: clamp-calculator.js
 		<input id="viewport-max" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="number" step="0.001" min="0" inputmode="numeric" pattern="[1-9]\d*(\.\d+)?" lang="en" value="1000" data-default="1000"></input>
 	</fieldset>
 	<details style="grid-column: span 2;">
-		<summary>Optional Stuff</summary>
+		<summary>Optional Configuration</summary>
 		<div class=" [ grid ] " data-layout="50-50" style="padding-inline: 0">
 			<fieldset class=" [ clamp-calculator__fieldset ] ">
 				<label for="font-size-root" class=" [ center  delta ] ">Root Font Size <small>(px)</small></label>
@@ -42,36 +43,36 @@ js_module: clamp-calculator.js
 			<fieldset class=" [ clamp-calculator__fieldset ] ">
 				<label for="viewport-units" class=" [ center  delta ] ">Viewport Units</label>
 				<select id="viewport-units" class=" [ center  monospace ] " style="inline-size: 100%; padding-block: 0.86rem;" lang="en">
-					<option value="vw" selected data-default="true">Width</opton>
-					<option value="vh">Height</opton>
-					<option value="vi">Inline</opton>
-					<option value="vb">Block</opton>
-					<option value="vmin">Minimum</opton>
-					<option value="vmax">Maximum</opton>
-					<option value="svw">Small Width</opton>
-					<option value="svh">Small Height</opton>
-					<option value="svi">Small Inline</opton>
-					<option value="svb">Small Block</opton>
-					<option value="svmin">Small Minimum</opton>
-					<option value="svmax">Small Maximum</opton>
-					<option value="lvw">Large Width</opton>
-					<option value="lvh">Large Height</opton>
-					<option value="lvi">Large Inline</opton>
-					<option value="lvb">Large Block</opton>
-					<option value="lvmin">Large Minimum</opton>
-					<option value="lvmax">Large Maximum</opton>
-					<option value="dvw">Dynamic Width</opton>
-					<option value="dvh">Dynamic Height</opton>
-					<option value="dvi">Dynamic Inline</opton>
-					<option value="dvb">Dynamic Block</opton>
-					<option value="dvmin">Dynamic Minimum</opton>
-					<option value="dvmax">Dynamic Maximum</opton>
-					<option value="cqw">Container Width</opton>
-					<option value="cqh">Container Height</opton>
-					<option value="cqi">Container Inline</opton>
-					<option value="cqb">Container Block</opton>
-					<option value="cqmin">Container Minimum</opton>
-					<option value="cqmax">Container Maximum</opton>
+					<option value="vw" selected data-default="true">Width (vw)</opton>
+					<option value="vh">Height (vh)</opton>
+					<option value="vi">Inline (vi)</opton>
+					<option value="vb">Block (vb)</opton>
+					<option value="vmin">Minimum (vmin)</opton>
+					<option value="vmax">Maximum (vmax)</opton>
+					<option value="svw">Small Width (svw)</opton>
+					<option value="svh">Small Height (svh)</opton>
+					<option value="svi">Small Inline (svi)</opton>
+					<option value="svb">Small Block (svb)</opton>
+					<option value="svmin">Small Minimum (svmin)</opton>
+					<option value="svmax">Small Maximum (svmax)</opton>
+					<option value="lvw">Large Width (lvw)</opton>
+					<option value="lvh">Large Height (lvh)</opton>
+					<option value="lvi">Large Inline (lvi)</opton>
+					<option value="lvb">Large Block (lvb)</opton>
+					<option value="lvmin">Large Minimum (lvmin)</opton>
+					<option value="lvmax">Large Maximum (lvmax)</opton>
+					<option value="dvw">Dynamic Width (dvw)</opton>
+					<option value="dvh">Dynamic Height (dvh)</opton>
+					<option value="dvi">Dynamic Inline (dvi)</opton>
+					<option value="dvb">Dynamic Block (dvb)</opton>
+					<option value="dvmin">Dynamic Minimum (dvmin)</opton>
+					<option value="dvmax">Dynamic Maximum (dvmax)</opton>
+					<option value="cqw">Container Width (cqw)</opton>
+					<option value="cqh">Container Height (cqh)</opton>
+					<option value="cqi">Container Inline (cqi)</opton>
+					<option value="cqb">Container Block (cqb)</opton>
+					<option value="cqmin">Container Minimum (cqmin)</opton>
+					<option value="cqmax">Container Maximum (cqmax)</opton>
 				</select>
 			</fieldset>
 		</div>
@@ -85,6 +86,8 @@ js_module: clamp-calculator.js
 		<input id="output" class=" [ clamp-calculator__result ] [ center  monospace ] " style="inline-size: 100%; margin-inline: auto; line-height: 3;" type="text" value="clamp(1rem, 0.875rem + 0.4vw, 1.125rem)" readonly></input>
 	</fieldset>
 </form>
+
+<noscript><p class=" [ box  box--error ] ">Unfortunately, the calculator requires JavaScript to function correctly!</p></noscript>
 
 <div id="examples" class="gamma">Visual Example</div>
 
@@ -153,4 +156,4 @@ Maximum Size ≈ 18px</code></pre>
 
 <p>Wondering why we don’t need <code>calc()</code> around the middle value of the <code>clamp()</code> function? <a href="https://css-irl.info">Michelle Barker’s</a> got you covered with <a href="https://css-irl.info/quick-tip-you-might-not-need-calc/">this quick tip</a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/clamp">check out <code>clamp()</code> on MDN</a> to learn more.</p>
 
-<p>Shoutout to <a href="https://www.hustlersquad.net/">James Gilyead</a> and <a href="https://www.trysmudford.com/">Trys Mudford</a> for building <a href="https://utopia.fyi/">Utopia</a>—a fully-fledged tool for calculating fluid type, space, and grids for your design systems—and first introducing me to this amazing technique!</p>
+<p>Shoutout to <a href="https://www.hustlersquad.net/">James Gilyead</a> and <a href="https://www.trysmudford.com/">Trys Mudford</a> for building <a href="https://utopia.fyi/">Utopia</a> which first introduced me to this amazing technique! <em>Utopia</em> helps you in calculating fluid type, space, and grids for fluid responsive designs, and includes tonnes of great information about <em>Utopian Design</em>.</p>
