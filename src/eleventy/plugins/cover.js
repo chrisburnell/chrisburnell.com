@@ -49,7 +49,7 @@ const storeAlbumCover = async (id, classes = "") => {
 		},
 		{
 			whitespaceMode: "inline",
-		}
+		},
 	)
 
 	return markup

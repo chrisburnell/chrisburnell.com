@@ -52,9 +52,9 @@
 					{% set item_photo_url = item_photo.url | default(item_photo) %}
 					{% set item_photo_alt = item_photo.alt | default('') %}
 					{%- if 'gif' in item_photo_url %}
-						<img src="/images/animated/{{ item_photo_url }}" alt="{{ item_photo_alt }}"></img>
+						&lt;img src="/images/animated/{{ item_photo_url }}" alt="{{ item_photo_alt }}"&gt;&lt;/img&gt;
 					{% else %}
-						<img src="/images/content/{{ item_photo_url }}" alt="{{ item_photo_alt }}"></img>
+						&lt;img src="/images/content/{{ item_photo_url }}" alt="{{ item_photo_alt }}"&gt;&lt;/img&gt;
 					{% endif -%}
 				{% endfor -%}
 			{%- endif -%}
@@ -68,9 +68,9 @@
 					{% set item_photo_url = item_photo.url | default(item_photo) %}
 					{% set item_photo_alt = item_photo.alt | default('') %}
 					{%- if 'gif' in item_photo_url %}
-						<img src="/images/animated/{{ item_photo_url }}" alt="{{ item_photo_alt }}"></img>
+						&lt;img src="/images/animated/{{ item_photo_url }}" alt="{{ item_photo_alt }}"&gt;&lt;/img&gt;
 					{% else %}
-						<img src="/images/content/{{ item_photo_url }}" alt="{{ item_photo_alt }}"></img>
+						&lt;img src="/images/content/{{ item_photo_url }}" alt="{{ item_photo_alt }}"&gt;&lt;/img&gt;
 					{% endif -%}
 				{% endfor -%}
 			{%- endif -%}
@@ -84,9 +84,9 @@
 					{% set item_photo_url = item_photo.url | default(item_photo) %}
 					{% set item_photo_alt = item_photo.alt | default('') %}
 					{%- if 'gif' in item_photo_url %}
-						<img src="/images/animated/{{ item_photo_url }}" alt="{{ item_photo_alt }}"></img>
+						&lt;img src="/images/animated/{{ item_photo_url }}" alt="{{ item_photo_alt }}"&gt;&lt;/img&gt;
 					{% else %}
-						<img src="/images/content/{{ item_photo_url }}" alt="{{ item_photo_alt }}"></img>
+						&lt;img src="/images/content/{{ item_photo_url }}" alt="{{ item_photo_alt }}"&gt;&lt;/img&gt;
 					{% endif -%}
 				{% endfor -%}
 			{%- endif -%}
@@ -100,9 +100,9 @@
 					{% set item_photo_url = item_photo.url | default(item_photo) %}
 					{% set item_photo_alt = item_photo.alt | default('') %}
 					{%- if 'gif' in item_photo_url %}
-						<img src="/images/animated/{{ item_photo_url }}" alt="{{ item_photo_alt }}"></img>
+						&lt;img src="/images/animated/{{ item_photo_url }}" alt="{{ item_photo_alt }}"&gt;&lt;/img&gt;
 					{% else %}
-						<img src="/images/content/{{ item_photo_url }}" alt="{{ item_photo_alt }}"></img>
+						&lt;img src="/images/content/{{ item_photo_url }}" alt="{{ item_photo_alt }}"&gt;&lt;/img&gt;
 					{% endif -%}
 				{% endfor -%}
 			{%- endif -%}

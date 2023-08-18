@@ -49,7 +49,7 @@ const storeAvatar = async (id, classes = "") => {
 		},
 		{
 			whitespaceMode: "inline",
-		}
+		},
 	)
 
 	return markup

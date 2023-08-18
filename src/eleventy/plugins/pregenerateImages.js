@@ -29,8 +29,8 @@ module.exports = async (eleventyConfig) => {
 						return `${name.replace(`raven`, `favicon-${width}`)}.${format}`
 					},
 				},
-				options
-			)
+				options,
+			),
 		)
 	}
 
@@ -52,8 +52,8 @@ module.exports = async (eleventyConfig) => {
 						return `avatar${width > 100 ? `@${width / 100}x` : ``}.${format}`
 					},
 				},
-				options
-			)
+				options,
+			),
 		)
 	}
 
@@ -75,8 +75,8 @@ module.exports = async (eleventyConfig) => {
 						return `${name}.${format}`
 					},
 				},
-				options
-			)
+				options,
+			),
 		)
 	}
 }

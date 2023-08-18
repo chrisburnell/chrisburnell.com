@@ -72,7 +72,7 @@ module.exports = (eleventyConfig) => {
 					${browserList}
 					<p class="small">Browser support data for <code>${featureID}</code> comes from <a href="https://caniuse.com/#feat=${featureID}" rel="external nofollow">caniuse.com</a> and is up-to-date as of <time datetime="${DateTime.fromJSDate(new Date(now)).toFormat("yyyy-MM-dd")}">${DateTime.fromJSDate(new Date(now)).toFormat("dd LLLL yyyy")}</time>.</p>
 				</div>`,
-				{ collapseWhitespace: true }
+				{ collapseWhitespace: true },
 			)
 		} else {
 			const browserslistSupport = await getBrowserslistSupport(featureID)
@@ -108,7 +108,7 @@ module.exports = (eleventyConfig) => {
 						${browserList}
 						<p class="small">Browser support data for <code>${featureID}</code> comes from <a href="https://github.com/mdn/browser-compat-data">MDN’s <code>browser-compat-data</code></a> and is up-to-date as of <a href="https://www.npmjs.com/package/@mdn/browser-compat-data" rel="external nofollow">version ${pkg.dependencies["@mdn/browser-compat-data"].replace("^", "")}</a>.</p>
 					</div>`,
-					{ collapseWhitespace: true }
+					{ collapseWhitespace: true },
 				)
 			}
 		}
@@ -140,7 +140,7 @@ module.exports = (eleventyConfig) => {
 					<th><a href="#${feature.id}">${feature.title}</a></th>
 					${browserList}
 				</tr>`,
-				{ collapseWhitespace: true }
+				{ collapseWhitespace: true },
 			)
 		} else {
 			const browserslistSupport = await getBrowserslistSupport(feature.id)
@@ -166,7 +166,7 @@ module.exports = (eleventyConfig) => {
 						<th><a href="#${feature.id}">${feature.title}</a></th>
 						${browserList}
 					</tr>`,
-					{ collapseWhitespace: true }
+					{ collapseWhitespace: true },
 				)
 			}
 		}

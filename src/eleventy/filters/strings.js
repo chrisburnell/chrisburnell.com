@@ -24,9 +24,12 @@ module.exports = {
 		return Math.ceil(numberOfWords / wordsPerMinute)
 	},
 	replaceTwitter: (input) => {
-		return Object.keys(twitterReplacements).reduce((output, old) => {
-			return output.replace(`@${old}`, `@${twitterReplacements[old]}`).replace(`twitter.com/${old}`, `twitter.com/${twitterReplacements[old]}`)
-		}, input.replace(`\n<a class=\"u-mention`, `<a class=\"u-mention`))
+		return Object.keys(twitterReplacements).reduce(
+			(output, old) => {
+				return output.replace(`@${old}`, `@${twitterReplacements[old]}`).replace(`twitter.com/${old}`, `twitter.com/${twitterReplacements[old]}`)
+			},
+			input.replace(`\n<a class=\"u-mention`, `<a class=\"u-mention`),
+		)
 	},
 	capitalizeFormat: (input) => {
 		return capitalizers.reduce((output, capitalizer) => {

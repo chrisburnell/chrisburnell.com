@@ -49,7 +49,7 @@ module.exports = async (value, outputPath) => {
 					$(element)
 						.text()
 						.toLowerCase()
-						.replace(/([.‘’“”])/g, "")
+						.replace(/([.‘’“”])/g, ""),
 				)
 			$(element).html(`
 				${$(element).html()}
