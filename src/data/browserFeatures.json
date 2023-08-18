@@ -186,7 +186,7 @@
     "supports": "width: clamp(1.438rem, 1rem + 1vw, 2rem)",
     "title": "Comparison Functions",
     "description": "Brings `min()`, `max()`, and `clamp()` to CSS.",
-    "links": ["[Official Specification](https://www.w3.org/TR/css-values-4/#comp-func)"]
+    "links": ["[Official Specification](https://www.w3.org/TR/css-values-4/#comp-func)", "[clamp() calculator](https://chrisburnell.com/clamp-calculator/)"]
   },
   {
     "id": "stepped-value-funcs",
@@ -414,5 +414,15 @@
     "title": "is Attribute",
     "description": "An HTML attribute to allow specifying a standard HTML element to behave like a custom element.",
     "links": ["[Page on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/is)"]
+  },
+  {
+    "id": "mdn-css_properties_animation-timeline",
+    "language": "css",
+    "supports": "animation-timeline: scroll(nearest block)",
+    "type": "properties",
+    "key": "animation-timeline",
+    "title": "animation-timeline",
+    "description": "Allows specifying a timeline to control the progress of a CSS animation.",
+    "links": ["[Page on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timeline)"]
   }
 ]

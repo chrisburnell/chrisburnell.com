@@ -10,21 +10,23 @@ toc: true
 inlinejs: true
 ---
 
-<table>
-	<thead>
-		<tr>
-			<td></td>
-			{% for browser in browsersByType %}
-				<th class=" [ sideways ] " style="padding-block: var(--size-small-medium); vertical-align: bottom;">{{ browser.name }}</th>
+<div class=" [ scroll-inline  scroll-inline-shadow ] ">
+	<table>
+		<thead>
+			<tr>
+				<th style="inset-block-start: 0;"> </th>
+				{% for browser in browsersByType %}
+					<th class=" [ sideways ] " style="padding-block: var(--size-small-medium); vertical-align: bottom;">{{ browser.name }}</th>
+				{% endfor %}
+			</tr>
+		</thead>
+		<tbody>
+			{% for feature in browserFeaturesSorted %}
+				{% browserSupportRow feature %}
 			{% endfor %}
-		</tr>
-	</thead>
-	<tbody>
-		{% for feature in browserFeaturesSorted %}
-			{% browserSupportRow feature %}
-		{% endfor %}
-	</tbody>
-</table>
+		</tbody>
+	</table>
+</div>
 
 <hr>
 

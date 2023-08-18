@@ -59,10 +59,14 @@ th {
 
 		thead & {
 			inset-block-start: var(--size-header);
+			animation: block-shadow-outside linear;
+			animation-timeline: scroll(nearest block);
 		}
 
 		tbody & {
 			inset-inline-start: 0;
+			animation: inline-shadow-outside linear;
+			animation-timeline: scroll(nearest inline);
 		}
 
 		details & {
@@ -80,5 +84,10 @@ td {
 	.numeral &,
 	&.numeral {
 		white-space: nowrap;
+	}
+
+	.scroll-inline-shadow & {
+		position: relative;
+		z-index: var(--z-index-below);
 	}
 }

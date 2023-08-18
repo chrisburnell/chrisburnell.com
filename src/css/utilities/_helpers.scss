@@ -242,3 +242,55 @@
 		block-size: var(--size-#{$name});
 	}
 }
+
+// Scroll & Shadows
+
+.scroll-inline {
+	overflow-x: auto !important;
+}
+.scroll-inline-shadow {
+	animation: inline-shadow-inside linear;
+	animation-timeline: scroll(self inline);
+}
+.scroll-block {
+	max-block-size: calc(100vh - (var(--size-header) * 2));
+	max-block-size: calc(100dvb - (var(--size-header) * 2));
+	overflow-y: auto !important;
+}
+.scroll-block-shadow {
+	animation: block-shadow-inside linear;
+	animation-timeline: scroll(self block);
+}
+
+@keyframes block-shadow-inside {
+	from {
+		box-shadow: inset 0 -1em 1.5em 0 oklab(var(--shadow-color) / 0.4);
+	}
+	to {
+		box-shadow: inset 0 1em 1.5em 0 oklab(var(--shadow-color) / 0.4);
+	}
+}
+@keyframes inline-shadow-inside {
+	from {
+		box-shadow: inset -1em -1em 1.5em 0 oklab(var(--shadow-color) / 0.4);
+	}
+	to {
+		box-shadow: inset 1em -1em 1.5em 0 oklab(var(--shadow-color) / 0.4);
+	}
+}
+@keyframes block-shadow-outside {
+	from {
+		box-shadow: none;
+	}
+	to {
+		box-shadow: 0 1em 1.5em 0 oklab(var(--shadow-color) / 0.4);
+	}
+}
+@keyframes inline-shadow-outside {
+	from {
+		box-shadow: none;
+	}
+	to {
+		box-shadow: 1em 1em 1.5em 0 oklab(var(--shadow-color) / 0.4);
+	}
+}

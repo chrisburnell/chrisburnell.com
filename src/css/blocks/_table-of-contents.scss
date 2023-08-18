@@ -23,7 +23,7 @@
 		font-size: var(--font-size-gamma);
 	}
 
-	.box {
+	nav {
 		max-block-size: 40vh;
 		max-block-size: 40dvb;
 		box-shadow: var(--box-shadow, var(--box-shadow-medium));
@@ -31,6 +31,8 @@
 		overflow-y: auto;
 		overscroll-behavior: contain;
 		scrollbar-gutter: stable;
+		animation: toc-shadow-inside linear;
+		animation-timeline: scroll(self block);
 
 		@container main (inline-size > #{map-get($breakpoints, "small")}) {
 			max-block-size: 60vh;
@@ -41,5 +43,18 @@
 			max-block-size: calc(100vh - (var(--size-header) * 2));
 			max-block-size: calc(100dvb - (var(--size-header) * 2));
 		}
+	}
+}
+
+@keyframes toc-shadow-inside {
+	from {
+		box-shadow:
+			var(--box-shadow, var(--box-shadow-medium)),
+			inset 0 -1em 1.5em 0 oklab(var(--shadow-color) / 0.4);
+	}
+	to {
+		box-shadow:
+			var(--box-shadow, var(--box-shadow-medium)),
+			inset 0 1em 1.5em 0 oklab(var(--shadow-color) / 0.4);
 	}
 }
