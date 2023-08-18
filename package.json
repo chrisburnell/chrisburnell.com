@@ -79,7 +79,7 @@
     "lightning": "npx lightningcss --minify --bundle css/*.css --output-dir css/",
     "js": "npx rollup -c",
     "prettier": "npx prettier --write src",
-    "start": "concurrently \"npm run js -- --watch\" \"npm run css -- --watch\" \"npx @11ty/eleventy --incremental --serve\"",
+    "start": "concurrently \"npm run js -- --watch\" \"npm run css -- --watch\" \"NODE_OPTIONS=--max-old-space-size=6144 npx @11ty/eleventy --incremental --serve\"",
     "now": "npx @11ty/eleventy --incremental --ignore-initial --serve",
     "serve": "NODE_OPTIONS=--max-old-space-size=6144 npx @11ty/eleventy --incremental --serve",
     "setup": "npm run tokens; npm run css; npm run js; npm run prettier; npx browserslist@latest --update-db",
