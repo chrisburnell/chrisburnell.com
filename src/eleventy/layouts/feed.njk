@@ -34,7 +34,17 @@
 	{%- else -%}
 		{% set item_date = item.data.date | default(item.date) | friendlyDate | striptags(true) %}
 		{% set item_title = item.data.categoryProper | default(item.data.category) | title %}
-		{% set item_title = item_title + " from " + item_date %}
+		{% if item.data.rsvp and item.data.in_reply_to %}
+			{% set item_reply = item.data.in_reply_to.title | default(item.data.in_reply_to.url) | default(item.data.in_reply_to) %}
+			{% set item_reply = people | getPerson(item_reply) | getInternalTarget(collections.all) | getMastodonHandle | getTwitterHandle %}
+			{% set item_title = "RSVP to " + item_reply %}
+		{% elif item.data.in_reply_to %}
+			{% set item_reply = item.data.in_reply_to.title | default(item.data.in_reply_to.url) | default(item.data.in_reply_to) %}
+			{% set item_reply = people | getPerson(item_reply) | getInternalTarget(collections.all) | getMastodonHandle | getTwitterHandle %}
+			{% set item_title = "Reply to " + item_reply %}
+		{% else %}
+			{% set item_title = item_title + " from " + item_date %}
+		{% endif %}
 	{%- endif %}
 	{%- set item_photos = item.data.photo | toArray -%}
 	<entry>
