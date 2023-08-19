@@ -6,11 +6,6 @@
     "fillHover": "#ff8c00"
   },
   {
-    "title": "Bluesky",
-    "url": "https://bsky.app/profile/chrisburnell.com",
-    "fillHover": "url(#bluesky)"
-  },
-  {
     "title": "CodePen",
     "url": "https://codepen.io/",
     "key": "codepen",
@@ -29,6 +24,11 @@
     "url": "https://fediverse.repc.co/@chrisburnell",
     "primary": true,
     "fillHover": "#595aff"
+  },
+  {
+    "title": "Bluesky",
+    "url": "https://bsky.app/profile/chrisburnell.com",
+    "fillHover": "url(#bluesky)"
   },
   {
     "title": "T2",

@@ -7,7 +7,7 @@ monetization: false
 
 ## Activity and Interaction
 
-I use a handful of services, most often in the form of Webmentions, to keep track of how people interact with the content I make. If you have responded to, liked, reposted, quoted, commented on my activity on Bluesky, Mastodon, Twitter, or this website, it may be stored and displayed on this website. If you would like your interaction(s) removed, blocked, or even corrected, please [get in touch](/about/#contact), and I would be happy to oblige your request.
+I use a handful of services, most often in the form of Webmentions, to keep track of how people interact with the content I make. If you have responded to, liked, reposted, quoted, commented on my activity on Mastodon, Twitter, or this website, it may be stored and displayed on this website. If you would like your interaction(s) removed, blocked, or even corrected, please [get in touch](/about/#contact), and I would be happy to oblige your request.
 
 ## Browse Freely
 
