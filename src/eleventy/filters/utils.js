@@ -1,3 +1,4 @@
+const blogroll = require("#data/blogroll")
 const CleanCSS = require("clean-css")
 const { transform } = require("lightningcss")
 const Natural = require("natural")
@@ -24,7 +25,7 @@ module.exports = {
 	limit: (array, limit) => {
 		return array.slice(0, limit)
 	},
-	arrayKeyEquals: (array, key, value) => {
+	arrayKeyEquals: (array, key, value, negate = false) => {
 		return array.filter((item) => {
 			const keys = key.split(".")
 			const itemValue = keys.reduce((object, key) => {
@@ -34,20 +35,51 @@ module.exports = {
 			if (value === "notempty") {
 				return !!itemValue?.length
 			} else if (typeof value === "string" || value === null) {
-				return itemValue === value
+				return negate ? itemValue !== value : itemValue === value
 			}
-			return value.includes(itemValue)
+			return negate ? !value.includes(itemValue) : value.includes(itemValue)
 		})
 	},
-	arrayKeyIncludes: (array, key, value) => {
+	arrayKeyIncludes: (array, key, value, negate = false) => {
 		return array.filter((item) => {
 			const keys = key.split(".")
 			const itemValue = keys.reduce((object, key) => {
 				return object[key]
 			}, item)
 
-			return itemValue.includes(value)
+			return negate ? !itemValue.includes(value) : itemValue.includes(value)
 		})
+	},
+	getAllLinks: (array) => {
+		return array
+			.filter((item) => {
+				return item.activity.type === "link"
+			})
+			.filter((item) => {
+				if (item.source.includes("post/twitter")) {
+					return !blogroll.find((blog) => {
+						return blog.title.localeCompare(item.data.author.name, undefined, { sensitivity: "accent" }) === 0
+					})
+				}
+				return !item.source.includes("post/mastodon")
+			})
+	},
+	getAllReplies: (array) => {
+		return array
+			.filter((item) => {
+				if (item.activity.type === "link") {
+					if (item.source.includes("post/twitter")) {
+						return blogroll.find((blog) => {
+							return blog.title.localeCompare(item.data.author.name, undefined, { sensitivity: "accent" }) === 0
+						})
+					}
+					return item.source.includes("post/mastodon")
+				}
+				return item.activity.type === "reply"
+			})
+			.filter((item) => {
+				return !!item.data?.content?.length
+			})
 	},
 	keyValue: (object, key) => {
 		return object[key]
