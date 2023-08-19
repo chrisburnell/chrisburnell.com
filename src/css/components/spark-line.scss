@@ -30,7 +30,7 @@ spark-line {
 		inline-size: auto;
 		grid-column: 1 / 3;
 		grid-row: 1 / 2;
-		padding: var(--size-tiny);
+		padding: var(--size-tiny-max);
 		overflow: visible;
 	}
 	svg {
@@ -49,7 +49,7 @@ spark-line {
 
 	span {
 		opacity: 0;
-		padding-inline: var(--size-tiny);
+		padding-inline: var(--size-tiny-max);
 		animation: fadein var(--transition-duration) linear calc(var(--transition-duration-long) + var(--transition-duration)) forwards;
 
 		@at-root {

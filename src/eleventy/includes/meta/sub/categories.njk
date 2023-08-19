@@ -1,12 +1,18 @@
 <h2>Browse by category</h2>
 <ul class=" [ grid ] " style="--min-inline-size: 10em; --row-gap: 0;">
 	{% for lookup in collections.categories -%}
-		{% if page.url != '/' + lookup.plural + '/' -%}
-			<li>
+		<li>
+			{% if page.url != '/' + lookup.plural + '/' -%}
 				<a href="/{{ lookup.plural }}/" {% if category == lookup.title %}class=" [ button  button--text ] "{% endif %}>
-					{% if category != lookup.title %}<c-emoji>{{ lookup.emoji | default('📄') }}</c-emoji>{% endif %}{{ lookup.properPlural | title }}
+			{%- else -%}
+				<strong>
+			{%- endif %}
+				{% if category != lookup.title %}<c-emoji>{{ lookup.emoji | default('📄') }}</c-emoji>{% endif %}{{ lookup.properPlural | title }}
+			{% if page.url != '/' + lookup.plural + '/' -%}
 				</a>
-			</li>
-		{%- endif %}
+			{%- else -%}
+				</strong>
+			{%- endif %}
+		</li>
 	{%- endfor %}
 </ul>
