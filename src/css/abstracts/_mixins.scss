@@ -62,7 +62,6 @@
 @mixin non-interactive() {
 	@include non-selectable;
 	pointer-events: none;
-	cursor: not-allowed; // kind of redundant
 }
 
 ///
