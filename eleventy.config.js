@@ -189,7 +189,7 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.setServerPassthroughCopyBehavior("passthrough")
 	eleventyConfig.setQuietMode(true)
 	eleventyConfig.on("beforeBuild", () => {
-		console.log(`[${filterQueries.getHost(siteUrl)}] Building…`)
+		console.log(`[${filterQueries.getHost(siteUrl)}] Generating…`)
 	})
 	return {
 		dataTemplateEngine: "njk",

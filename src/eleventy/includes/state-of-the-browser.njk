@@ -1,8 +1,8 @@
 {% if global.sotb_upcoming -%}
 	<div class=" [ box  box--line-length ] [ flow ] [ small ] " style="--box-border-color: #c61440;">
 		{% image './images/content/sotb-banner.svg', 'State of the Browser logo', '', [400] %}
-		<p><a href="{{ site.sotb_url }}" rel="external"><strong>State of the Browser</strong></a>, a yearly one-day, single-track conference with widely-varying talks about the modern web, accessibility, web standards, and more, is back! Join us in-person in London or online in {{ global.now | daysUntil(site.sotb_date) }} days on <strong><time datetime="{{ site.sotb_date }}">{{ site.sotb_date | friendlyDate }}</time></strong>!</p>
-		<div class=" [ center ] "><a class=" [ button ] " href="{{ site.sotb_url }}/tickets/">Get yourself a ticket!</a></div>
+		<p><a href="{{ site.sotb.url }}" rel="external"><strong>State of the Browser</strong></a>, a yearly one-day, single-track conference with widely-varying talks about the modern web, accessibility, web standards, and more, is back! Join us in-person in London or online in {{ global.now | daysUntil(site.sotb.date) }} days on <strong><time datetime="{{ site.sotb.date }}">{{ site.sotb.date | friendlyDate }}</time></strong>!</p>
+		<div class=" [ center ] "><a class=" [ button ] " href="{{ site.sotb.url }}/tickets/">Get yourself a ticket!</a></div>
 	</div>
 	<hr>
 {%- endif %}

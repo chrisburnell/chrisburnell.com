@@ -25,60 +25,58 @@ module.exports = {
 	limit: (array, limit) => {
 		return array.slice(0, limit)
 	},
-	arrayKeyEquals: (array, key, value, negate = false) => {
+	arrayKeyEquals: (array, key, value) => {
 		return array.filter((item) => {
 			const keys = key.split(".")
 			const itemValue = keys.reduce((object, key) => {
 				return object[key]
 			}, item)
-
 			if (value === "notempty") {
 				return !!itemValue?.length
 			} else if (typeof value === "string" || value === null) {
-				return negate ? itemValue !== value : itemValue === value
+				return itemValue === value
 			}
-			return negate ? !value.includes(itemValue) : value.includes(itemValue)
+			return value.includes(itemValue)
 		})
 	},
-	arrayKeyIncludes: (array, key, value, negate = false) => {
+	arrayKeyIncludes: (array, key, value) => {
 		return array.filter((item) => {
 			const keys = key.split(".")
 			const itemValue = keys.reduce((object, key) => {
 				return object[key]
 			}, item)
-
-			return negate ? !itemValue.includes(value) : itemValue.includes(value)
+			return itemValue.includes(value)
 		})
 	},
 	getAllLinks: (array) => {
 		return array
 			.filter((item) => {
-				return item.activity.type === "link"
+				return item?.activity?.type === "link"
 			})
 			.filter((item) => {
-				if (item.source.includes("post/twitter")) {
+				if (item?.source.includes("post/twitter")) {
 					return !blogroll.find((blog) => {
-						return blog.title.localeCompare(item.data.author.name, undefined, { sensitivity: "accent" }) === 0
+						return blog.title.localeCompare(item?.data?.author?.name, undefined, { sensitivity: "accent" }) === 0
 					})
 				}
-				return !item.source.includes("post/mastodon")
+				return !item?.source.includes("post/mastodon")
 			})
 	},
 	getAllReplies: (array) => {
 		return array
 			.filter((item) => {
-				if (item.activity.type === "link") {
+				if (item?.activity?.type === "link") {
 					if (item.source.includes("post/twitter")) {
 						return blogroll.find((blog) => {
-							return blog.title.localeCompare(item.data.author.name, undefined, { sensitivity: "accent" }) === 0
+							return blog.title.localeCompare(item?.data?.author?.name, undefined, { sensitivity: "accent" }) === 0
 						})
 					}
-					return item.source.includes("post/mastodon")
+					return item?.source.includes("post/mastodon")
 				}
-				return item.activity.type === "reply"
+				return item?.activity?.type === "reply"
 			})
 			.filter((item) => {
-				return !!item.data?.content?.length
+				return !!item?.data?.content.length
 			})
 	},
 	keyValue: (object, key) => {

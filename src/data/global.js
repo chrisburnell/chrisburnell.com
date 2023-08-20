@@ -1,4 +1,6 @@
-const { sotbDate } = require("#data/site")
+const {
+	sotb: { date: sotbDate, lead: sotbLead },
+} = require("#data/site")
 
 const cssnakedday = () => {
 	const now = Date.now()
@@ -12,9 +14,9 @@ const cssnakedday = () => {
 const sotbUpcoming = () => {
 	const now = Date.now()
 	const startEpoch = new Date(sotbDate).getTime()
-	const hundredDays = 1000 * 60 * 60 * 24 * 100
+	const lead = 1000 * 60 * 60 * 24 * sotbLead
 
-	return startEpoch - now < hundredDays
+	return startEpoch - now < lead
 }
 
 const random = () => {
