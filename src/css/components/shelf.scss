@@ -18,14 +18,15 @@
 
 	article {
 		--flow-space: var(--size-small);
-
 		line-height: var(--line-height-medium);
 	}
 
 	h1 {
 		line-height: var(--line-height-medium);
+	}
 
-		& > a {
+	%anchor {
+		&:not(:is(:hover, :focus, :active)) {
 			color: inherit;
 		}
 	}

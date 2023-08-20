@@ -8,7 +8,7 @@
 @use "sass:color";
 @use "sass:math";
 
-@layer reset, global, compositions, blocks, utilities, components, pages, themes, thirdparty, overrides;
+@layer reset, global, compositions, blocks, utilities, themes, components, pages, thirdparty, overrides;
 
 // Abstracts
 @import "abstracts/functions";
