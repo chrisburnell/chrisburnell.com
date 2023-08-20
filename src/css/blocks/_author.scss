@@ -51,6 +51,8 @@
 	}
 
 	&:is(:hover, :focus, :active) {
+		background-color: transparent;
+
 		&::before {
 			opacity: 1;
 			transition: opacity var(--transition-duration) var(--transition-function);
@@ -116,13 +118,6 @@
 		font-style: normal;
 		font-variation-settings: normal;
 		font-weight: var(--font-weight-semibold);
-		text-decoration-color: transparent;
-	}
-
-	&:is(:hover, :focus, :active) {
-		.anchor {
-			text-decoration-color: h(maple);
-		}
 	}
 }
 
@@ -152,6 +147,7 @@
 }
 
 .author__name {
+	background-color: transparent !important;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;

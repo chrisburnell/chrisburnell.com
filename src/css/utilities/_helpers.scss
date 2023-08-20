@@ -27,6 +27,7 @@
 .sticky {
 	position: sticky;
 	inset-block-start: var(--size-header);
+	z-index: var(--z-index-default);
 }
 
 // <abbr class="acronym" title="National Aeronautics and Space Administration">Nasa</abbr>
