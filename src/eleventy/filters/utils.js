@@ -170,5 +170,8 @@ module.exports = {
 				// otherwise, discard it
 				return false
 			})
+			.sort((a, b) => {
+				return new Date(a.published || a["wm-recevied"]) - new Date(b.published || b["wm-recevied"])
+			})
 	},
 }
