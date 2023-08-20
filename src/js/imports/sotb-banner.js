@@ -6,11 +6,13 @@ class sotbBanner {
 		this.banner = document.getElementById("sotb-banner")
 		this.button = document.getElementById("sotb-banner-button")
 
-		if (this.state) {
-			this.setHidden()
-		} else {
-			this.banner.removeAttribute("hidden")
-			this.button.addEventListener("click", this.setHidden.bind(this))
+		if (this.banner) {
+			if (this.state) {
+				this.setHidden()
+			} else if (this.button) {
+				this.banner.removeAttribute("hidden")
+				this.button.addEventListener("click", this.setHidden.bind(this))
+			}
 		}
 	}
 

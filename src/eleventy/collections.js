@@ -160,7 +160,7 @@ module.exports = {
 			.sort(dateFilter)
 			.map((item) => {
 				item.hotness = item.data.webmentions.reduce((accumulator, webmention) => {
-					return exponentialMovingAverage(epoch(webmention.data.published || webmention.verified_date) / deltaModifier, accumulator)
+					return exponentialMovingAverage(epoch(webmention.published || webmention["wm-received"]) / deltaModifier, accumulator)
 				}, 0)
 
 				return item

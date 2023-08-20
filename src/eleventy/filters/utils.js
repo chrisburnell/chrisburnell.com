@@ -1,16 +1,10 @@
 const blogroll = require("#data/blogroll")
+const peopleAsync = require("#datajs/people")
+
 const CleanCSS = require("clean-css")
 const { transform } = require("lightningcss")
 const Natural = require("natural")
 const analyze = new Natural.SentimentAnalyzer("English", Natural.PorterStemmer, "afinn")
-
-const postTypes = {
-	like: "like-of",
-	repost: "repost-of",
-	bookmark: "bookmark-of",
-	link: "mention-of",
-	reply: "in-reply-to",
-}
 
 module.exports = {
 	cssmin: (code) => {
@@ -48,37 +42,6 @@ module.exports = {
 			return itemValue.includes(value)
 		})
 	},
-	getAllLinks: (array) => {
-		return array
-			.filter((item) => {
-				return item?.activity?.type === "link"
-			})
-			.filter((item) => {
-				if (item?.source.includes("post/twitter")) {
-					return !blogroll.find((blog) => {
-						return blog.title.localeCompare(item?.data?.author?.name, undefined, { sensitivity: "accent" }) === 0
-					})
-				}
-				return !item?.source.includes("post/mastodon")
-			})
-	},
-	getAllReplies: (array) => {
-		return array
-			.filter((item) => {
-				if (item?.activity?.type === "link") {
-					if (item.source.includes("post/twitter")) {
-						return blogroll.find((blog) => {
-							return blog.title.localeCompare(item?.data?.author?.name, undefined, { sensitivity: "accent" }) === 0
-						})
-					}
-					return item?.source.includes("post/mastodon")
-				}
-				return item?.activity?.type === "reply"
-			})
-			.filter((item) => {
-				return !!item?.data?.content.length
-			})
-	},
 	keyValue: (object, key) => {
 		return object[key]
 	},
@@ -98,9 +61,6 @@ module.exports = {
 	},
 	getResponsesLength: (webmentions, other) => {
 		return (webmentions.length || 0) + (other || 0)
-	},
-	getPostType: (type) => {
-		return postTypes[type] || type
 	},
 	getSentimentValue: (content) => {
 		if (content) {
@@ -147,5 +107,68 @@ module.exports = {
 			normalized[end] = values[end]
 		}
 		return normalized
+	},
+	getAllLinks: (array) => {
+		// const people = await peopleAsync()
+		return array
+			.filter((item) => {
+				// if it's a link type
+				if (item["wm-property"] === "mention-of") {
+					// if from Twitter
+					if (item["wm-source"].includes("/post/twitter")) {
+						// if a person's name is found, discard it
+						return !blogroll.find((lookup) => {
+							return lookup.title.localeCompare(item.author.name, undefined, { sensitivity: "accent" }) === 0
+						})
+					}
+					// if from Mastodon, discard it
+					if (item["wm-source"].includes("/post/mastodon")) {
+						return false
+					}
+					// if it's a webmention (i.e. not a pingback)
+					if (item["wm-protocol"] === "webmention") {
+						// if it has valid content, discard it
+						return !(item.contentSanitized || (item.content?.html || item.content))
+					}
+					// otherwise, include it
+					return true
+				}
+				// otherwise discard it
+				return false
+			})
+	},
+	getAllReplies: (array) => {
+		// const people = await peopleAsync()
+		return array
+			.filter((item) => {
+				// if it's a link type
+				if (item["wm-property"] === "mention-of") {
+					// if it's from Twitter
+					if (item["wm-source"].includes("/post/twitter")) {
+						// if a person's name is found, include it
+						return blogroll.find((lookup) => {
+							return lookup.title.localeCompare(item.author.name, undefined, { sensitivity: "accent" }) === 0
+						})
+					}
+					// if it's from Mastodon, include it
+					if (item["wm-source"].includes("/post/mastodon")) {
+						return true
+					}
+					// if it's a webmention
+					if (item["wm-protocol"] === "webmention") {
+						// if it has valid content, include it
+						return !!(item.contentSanitized || (item.content?.html || item.content))
+					}
+					// otherwise, discard it
+					return false
+				}
+				// if it's a reply type
+				if (item["wm-property"] === "in-reply-to") {
+					// if it has valid content, include it
+					return !!(item.contentSanitized || (item.content?.html || item.content))
+				}
+				// otherwise, discard it
+				return false
+			})
 	},
 }

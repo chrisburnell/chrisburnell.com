@@ -7,8 +7,8 @@ const { defaults } = require("@chrisburnell/eleventy-cache-webmentions")()
 
 module.exports = Object.assign(defaults, {
 	domain: siteUrl,
-	feed: `https://webmention.io/api/mentions.json?domain=${new URL(siteUrl).hostname}&token=${process.env.WEBMENTION_IO_TOKEN}&per-page=9001`,
-	key: "links",
+	feed: `https://webmention.io/api/mentions.jf2?domain=${new URL(siteUrl).hostname}&token=${process.env.WEBMENTION_IO_TOKEN}&per-page=9001`,
+	key: "children",
 	// feed: `https://jam.chrisburnell.com/webmention/chrisburnell.com/${process.env.GO_JAMMING_TOKEN}`,
 	// key: "json",
 	duration: cacheDurations.hourly,
