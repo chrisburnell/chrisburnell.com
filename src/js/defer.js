@@ -2,6 +2,8 @@ import "@11ty/is-land/is-land"
 
 import "./imports/theme-toggler"
 
+import "./imports/sotb-banner"
+
 import "./imports/share-button"
 
 import "./imports/website-sounds"
