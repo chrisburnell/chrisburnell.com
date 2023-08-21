@@ -96,8 +96,8 @@ Launched a web development blog, which accumulates *over 10,000 unique visitors 
 - Organised 5 annual, not-for-profit conferences, showcasing over 45 speakers with 150+ in-person attendees each year.
 - Liaised with speakers, sponsors, and venues as well as handled the logistics of running an in-person and online conference.
 - Sourced event sponsorships to fund the events and enable under-represented groups to attend for free.
-- Built and maintained the conference websites, including a complete codebase refresh in 2021, which included extensive work with APIs, to automate many organisational tasks for the conference.
-- Annual conference websites: [2017](https://2017.stateofthebrowser.com), [2018](https://2018.stateofthebrowser.com), [2019](https://2019.stateofthebrowser.com), [2021](https://2021.stateofthebrowser.com), [2022](https://2022.stateofthebrowser.com), [2023](https://2022.stateofthebrowser.com)
+- Built and maintained the conference websites, including a design refresh in 2018 and codebase refresh in 2021 as well as extensive work with APIs, to automate many organisational tasks for the conference.
+- Annual conference websites: [2018](https://2018.stateofthebrowser.com), [2019](https://2019.stateofthebrowser.com), [2021](https://2021.stateofthebrowser.com), [2022](https://2022.stateofthebrowser.com), [2023](https://2022.stateofthebrowser.com)
 
 <div class=" [ space-between ] ">
     <h3 class=" [ delta ] "><a href="https://chrisburnell.com/projects/">Open Source Author</a></h3>
