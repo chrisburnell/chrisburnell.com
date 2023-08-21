@@ -148,7 +148,7 @@
 		<li class=" [ checkin ] ">
 			<c-emoji>{{ emojis.checkin }}</c-emoji>
 			<small>check-in</small>
-			{% set checkin = checkin.title | default(checkin) | getPlace('object') %}
+			{% set checkin = checkin | getPlace('object') %}
 			{% if checkin.url %}
 				<a class=" [ u-location ] " href="{{ checkin.url }}">{{ checkin.title }}</a>
 			{% elif checkin.lat and checkin.long %}

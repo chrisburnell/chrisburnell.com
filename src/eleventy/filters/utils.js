@@ -110,32 +110,31 @@ module.exports = {
 	},
 	getAllLinks: (array) => {
 		// const people = await peopleAsync()
-		return array
-			.filter((item) => {
-				// if it's a link type
-				if (item["wm-property"] === "mention-of") {
-					// if from Twitter
-					if (item["wm-source"].includes("/post/twitter")) {
-						// if a person's name is found, discard it
-						return !blogroll.find((lookup) => {
-							return lookup.title.localeCompare(item.author.name, undefined, { sensitivity: "accent" }) === 0
-						})
-					}
-					// if from Mastodon, discard it
-					if (item["wm-source"].includes("/post/mastodon")) {
-						return false
-					}
-					// if it's a webmention (i.e. not a pingback)
-					if (item["wm-protocol"] === "webmention") {
-						// if it has valid content, discard it
-						return !(item.contentSanitized || (item.content?.html || item.content))
-					}
-					// otherwise, include it
-					return true
+		return array.filter((item) => {
+			// if it's a link type
+			if (item["wm-property"] === "mention-of") {
+				// if from Twitter
+				if (item["wm-source"].includes("/post/twitter")) {
+					// if a person's name is found, discard it
+					return !blogroll.find((lookup) => {
+						return lookup.title.localeCompare(item.author.name, undefined, { sensitivity: "accent" }) === 0
+					})
 				}
-				// otherwise discard it
-				return false
-			})
+				// if from Mastodon, discard it
+				if (item["wm-source"].includes("/post/mastodon")) {
+					return false
+				}
+				// if it's a webmention (i.e. not a pingback)
+				if (item["wm-protocol"] === "webmention") {
+					// if it has valid content, discard it
+					return !(item.contentSanitized || item.content?.html || item.content)
+				}
+				// otherwise, include it
+				return true
+			}
+			// otherwise discard it
+			return false
+		})
 	},
 	getAllReplies: (array) => {
 		// const people = await peopleAsync()
@@ -157,7 +156,7 @@ module.exports = {
 					// if it's a webmention
 					if (item["wm-protocol"] === "webmention") {
 						// if it has valid content, include it
-						return !!(item.contentSanitized || (item.content?.html || item.content))
+						return !!(item.contentSanitized || item.content?.html || item.content)
 					}
 					// otherwise, discard it
 					return false
@@ -165,7 +164,7 @@ module.exports = {
 				// if it's a reply type
 				if (item["wm-property"] === "in-reply-to") {
 					// if it has valid content, include it
-					return !!(item.contentSanitized || (item.content?.html || item.content))
+					return !!(item.contentSanitized || item.content?.html || item.content)
 				}
 				// otherwise, discard it
 				return false

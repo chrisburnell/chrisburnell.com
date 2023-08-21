@@ -1,6 +1,8 @@
 const { url: siteUrl } = require("#data/site")
+const { now } = require("#datajs/global")
 const categories = require("#data/categories")
 const ignoredTags = require("#data/ignoredTags")
+const { epoch } = require("#filters/dates")
 
 module.exports = {
 	isPublished: (item) => {
@@ -12,6 +14,9 @@ module.exports = {
 				return false
 			}
 			if ("tags" in item.data && item.data.tags.includes("ignore")) {
+				return false
+			}
+			if ("date" in item && epoch(item.date) > now) {
 				return false
 			}
 		}

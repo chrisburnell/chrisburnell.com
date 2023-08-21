@@ -43,6 +43,7 @@ const storeAlbumCover = async (id, classes = "") => {
 		metadata,
 		{
 			alt: `Album cover for ${id}`,
+			title: `Album cover for ${id}`,
 			class: " [ u-photo ] " + (classes ? `[ ${classes} ] ` : ""),
 			loading: "lazy",
 			decoding: "async",

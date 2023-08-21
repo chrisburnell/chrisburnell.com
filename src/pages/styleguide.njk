@@ -509,7 +509,13 @@ p q r s t u v w x y z { | } ~</code></pre>
 
 <h2>Code Blocks</h2>
 
-<pre class="language-css"><code class="language-css" tabindex="0"><span class="token selector">.box</span> <span class="token punctuation">{</span><br>    <span class="token property">padding</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--gutter<span class="token punctuation">,</span> 1em<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-javascript"><code tabindex="0" class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">cssnakedday</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+	<span class="token keyword">const</span> now <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token keyword">const</span> thisYear <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getFullYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token keyword">const</span> startEpoch <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>thisYear<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">-04-09T00:00:00+1400</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token keyword">const</span> endEpoch <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>thisYear<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">-04-09T23:59:59-1200</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token keyword">return</span> startEpoch <span class="token operator">&lt;=</span> now <span class="token operator">&amp;&amp;</span> now <span class="token operator">&lt;=</span> endEpoch
+<span class="token punctuation">}</span></code></pre>
 
 <h2>Buttons</h2>
 
@@ -584,7 +590,21 @@ p q r s t u v w x y z { | } ~</code></pre>
 {% endfor %}
 </div>
 
-<p class="italic">Like these? Check out my custom web component, <a href="/spark-line/">&lt;spark-line&gt;</a>.</p>
+<h2>Sparklines</h2>
+
+<div class=" [ grid ] [ shelf ] ">
+	<article>
+		<c-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" curve="true" class="no-motion"></c-sparkline>
+	</article>
+	<article data-theme="matrix" style="--dot: currentColor;">
+		<c-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" curve="true" class="no-motion" start="Start" end="End"></c-sparkline>
+	</article>
+	<article data-theme="koala" style="--dot: transparent;">
+		<c-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" color="oklab(var(--oklab-raven))" class="no-motion"></c-sparkline>
+	</article>
+</div>
+
+<p class="italic">Like these? Check out <a href="https://github.com/chrisburnell/chrisburnell.com/blob/main/src/components/c-sparkline.webc">how they work</a> (without client-side JavaScript!) or try out my custom web component, <a href="/spark-line/">&lt;spark-line&gt;</a>.</p>
 
 <p class="italic">Or the sound the make? <a href="/pentatonic/">Pentatonic</a> uses the Web Audio API to generate fun little melodies from data.</p>
 

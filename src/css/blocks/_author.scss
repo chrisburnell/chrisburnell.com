@@ -50,6 +50,15 @@
 		z-index: var(--z-index-default);
 	}
 
+	.anchor {
+		color: inherit;
+		font-family: var(--font-family-sans);
+		font-size: var(--font-size-default);
+		font-style: normal;
+		font-variation-settings: normal;
+		font-weight: var(--font-weight-semibold);
+	}
+
 	&:is(:hover, :focus, :active) {
 		background-color: transparent;
 
@@ -109,15 +118,13 @@
 				}
 			}
 		}
-	}
 
-	.anchor {
-		color: inherit;
-		font-family: var(--font-family-sans);
-		font-size: var(--font-size-default);
-		font-style: normal;
-		font-variation-settings: normal;
-		font-weight: var(--font-weight-semibold);
+		.anchor {
+			--outline-offset: 0;
+
+			background-color: h(maple);
+			color: h(snowy);
+		}
 	}
 }
 

@@ -26,6 +26,16 @@ spark-line {
 	font-variation-settings: normal;
 	font-weight: var(--font-weight-semibold);
 
+	&.no-motion {
+		--transition-override: 0s;
+	}
+
+	&.no-gradient {
+		.spark-line__gradient {
+			display: none;
+		}
+	}
+
 	:is(canvas, svg) {
 		inline-size: auto;
 		grid-column: 1 / 3;
@@ -35,8 +45,8 @@ spark-line {
 	}
 	svg {
 		clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-		transition: transform var(--transition-duration) var(--transition-function);
-		animation: swipe var(--transition-duration-long) linear var(--transition-duration) forwards;
+		transition: transform var(--transition-override, var(--transition-duration)) var(--transition-function);
+		animation: swipe var(--transition-override, var(--transition-duration-long)) linear var(--transition-override, var(--transition-duration)) forwards;
 
 		@at-root {
 			@keyframes swipe {
@@ -50,7 +60,7 @@ spark-line {
 	span {
 		opacity: 0;
 		padding-inline: var(--size-tiny-max);
-		animation: fadein var(--transition-duration) linear calc(var(--transition-duration-long) + var(--transition-duration)) forwards;
+		animation: fadein var(--transition-override, var(--transition-duration)) linear calc(var(--transition-override, var(--transition-duration-long)) + var(--transition-override, var(--transition-duration))) forwards;
 
 		@at-root {
 			@keyframes fadein {

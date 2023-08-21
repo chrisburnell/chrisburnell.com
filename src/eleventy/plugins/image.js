@@ -35,6 +35,7 @@ module.exports = (eleventyConfig) => {
 		let metadata = Image.statsSync(src, options)
 		let attributes = {
 			alt: alt,
+			title: alt,
 			class: classes,
 			sizes: "100vw",
 			loading: "lazy",

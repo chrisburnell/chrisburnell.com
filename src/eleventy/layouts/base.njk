@@ -125,7 +125,7 @@
 	<header class=" [ header ] ">
 		<div class=" [ wrap ] ">
 			<a rel="home" class=" [ logo ] [ canada ] " href="/" aria-label="{{ site.title }}">
-				<img src="{{ site.logo }}" alt="{{ site.title }}" width="120" height="120" aria-hidden="true" role="presentation">
+				<img src="{{ site.logo }}" alt="{{ site.title }}" title="Go to Home" width="120" height="120" aria-hidden="true" role="presentation">
 			</a>
 			<nav class=" [ navigation ] " aria-label="Website">
 				<ol class=" [ navigation__list ] ">
@@ -155,7 +155,7 @@
 				{%- endfor -%}
 			</ul>
 			<ul class=" [ cluster ] [ footer__navigation ] ">
-				<li class=" [ requires-js ] ">{% include 'theme-toggler.njk' %}</li><li class=" [ requires-js ] "><button id="sounds-toggle" class=" [ anchor ] [ js-sounds-toggle ] "><svg width="16" height="16" aria-hidden="true" focusable="false" style="--fill-hover: oklab(var(--oklab-coyote));"><use href="#svg--sound-off"></use></svg><span class=" [ js-sounds-status ] ">Enable sounds</span></button></li><li><a id="edit" href="https://github.com/{{ author.github }}/{{ site.repository }}/tree/{{ site.branch }}/{{ page.inputPath }}" aria-label="Edit this page"><svg width="16" height="16" aria-hidden="true" focusable="false" style="--fill-hover: oklab(var(--oklab-coyote));"><use href="#svg--edit"></use></svg>Edit this page</a></li><li class=" [ requires-js ] "><button id="share" type="share" class="anchor"><svg width="16" height="16" aria-hidden="true" focusable="false"><use href="#svg--share" style="--fill-hover: oklab(var(--oklab-coyote));"></use></svg>Share</button></li>
+				<li class=" [ requires-js ] ">{% include 'theme-toggler.njk' %}</li><li class=" [ requires-js ] "><button id="sounds-toggle" class=" [ anchor ] [ js-sounds-toggle ] "><svg width="16" height="16" aria-hidden="true" focusable="false" style="--fill-hover: oklab(var(--oklab-highland));"><use href="#svg--sound-off"></use></svg><span class=" [ js-sounds-status ] ">Enable sounds</span></button></li><li><a id="edit" href="https://github.com/{{ author.github }}/{{ site.repository }}/tree/{{ site.branch }}/{{ page.inputPath }}" aria-label="Edit this page"><svg width="16" height="16" aria-hidden="true" focusable="false" style="--fill-hover: oklab(var(--oklab-highland));"><use href="#svg--edit"></use></svg>Edit this page</a></li><li class=" [ requires-js ] "><button id="share" type="share" class="anchor"><svg width="16" height="16" aria-hidden="true" focusable="false" style="--fill-hover: oklab(var(--oklab-highland));"><use href="#svg--share"></use></svg>Share</button></li>
 			</ul>
 			<ul class=" [ cluster ] [ footer__navigation ] ">
 				<li><a id="copyright" rel="license" href="/license/">© {{ site.established }}–{{ global.now | friendlyDate("yyyy") }} <span class=" [ canada ] ">{{ author.name }}</span></a></li>

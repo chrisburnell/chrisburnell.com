@@ -10,14 +10,14 @@
     "url": "https://codepen.io/",
     "key": "codepen",
     "primary": true,
-    "fillHover": "#737373"
+    "fillHover": "#ffffff"
   },
   {
     "title": "GitHub",
     "url": "https://github.com/",
     "key": "github",
     "primary": true,
-    "fillHover": "#737373"
+    "fillHover": "#adbac7"
   },
   {
     "title": "Mastodon",
@@ -27,7 +27,8 @@
   },
   {
     "title": "Bluesky",
-    "url": "https://bsky.app/profile/chrisburnell.com",
+    "url": "https://bsky.app/profile/",
+    "key": "bluesky",
     "fillHover": "url(#bluesky)"
   },
   {

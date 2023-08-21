@@ -41,7 +41,8 @@ const storeAvatar = async (id, classes = "") => {
 	let markup = Image.generateHTML(
 		metadata,
 		{
-			alt: `Avatar for ${id}`,
+			alt: `${id}’s avatar`,
+			title: `${id}’s avatar`,
 			class: " [ avatar ] [ u-author ] " + (classes ? `[ ${classes} ] ` : ""),
 			sizes: "100vw",
 			loading: "lazy",

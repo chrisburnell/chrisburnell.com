@@ -6,4 +6,3 @@ bookmark_of:
   title: "Optical Toys"
   url: https://optical.toys/
 ---
-

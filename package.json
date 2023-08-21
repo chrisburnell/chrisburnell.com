@@ -1,6 +1,6 @@
 {
   "name": "chrisburnell",
-  "version": "3.7.10",
+  "version": "3.7.11",
   "description": "Some real sweet codestuffs.",
   "author": "Chris Burnell <me@chrisburnell.com>",
   "contributors": [
@@ -28,8 +28,8 @@
     "concurrently": "^8.2.0",
     "cross-env": "^7.0.3",
     "json-to-scss": "^1.6.2",
-    "lightningcss": "^1.21.5",
-    "lightningcss-cli": "^1.21.5",
+    "lightningcss": "^1.21.7",
+    "lightningcss-cli": "^1.21.7",
     "postcss-cli": "^10.1.0",
     "postcss-scss": "^4.0.7",
     "prettier": "^3.0.2",
@@ -53,7 +53,7 @@
     "@chrisburnell/eleventy-cache-webmentions": "^1.2.5",
     "@chrisburnell/pentatonic": "^1.1.4",
     "@chrisburnell/spark-line": "^1.2.4",
-    "@mdn/browser-compat-data": "^5.3.10",
+    "@mdn/browser-compat-data": "^5.3.11",
     "@sindresorhus/slugify": "1.1.2",
     "@tweetback/canonical": "^2.0.35",
     "@zachleat/details-utils": "^2.0.2",
