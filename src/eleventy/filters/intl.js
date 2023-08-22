@@ -53,6 +53,6 @@ module.exports = {
 	},
 	ordinal: (n) => {
 		const ordinal = ordinalSuffixes[pluralRules.select(n)]
-		return `${module.exports.numberFormat(n)}<sup class="underline">${ordinal}</sup>`
+		return `${module.exports.numberFormat(n)}<sup>${ordinal}</sup>`
 	},
 }
