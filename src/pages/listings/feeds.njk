@@ -32,11 +32,12 @@ perch: true
 		</h2>
 
 		<ol>
-			<li><a href="{{ site.url + '/feed.xml' }}" class=" [ strong ] " style="font-size: 1.25em;">Featured Posts</a></li>
-			<li><a href="{{ site.url + '/writing.xml' }}" class=" [ strong ] " style="font-size: 1.25em;">Writing</a></li>
-			<li><a href="{{ site.url + '/replies.xml' }}" class=" [ strong ] " style="font-size: 1.25em;">Replies</a></li>
-			<li><a href="{{ site.url + '/rsvps.xml' }}" class=" [ strong ] " style="font-size: 1.25em;">RSVPs</a></li>
-			<li><a href="{{ site.url + '/checkins.xml' }}" class=" [ strong ] " style="font-size: 1.25em;">Checkins</a></li>
+			<li><a href="{{ site.url + '/feed.xml' }}" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Featured Posts</a></li>
+			<li><a href="{{ site.url + '/writing.xml' }}" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Writing</a></li>
+			<li><a href="{{ site.url + '/replies.xml' }}" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Replies</a></li>
+			<li><a href="{{ site.url + '/rsvps.xml' }}" class=" [ strong ] " style="font-size: var(--font-size-gamma);">RSVPs</a></li>
+			<li><a href="{{ site.url + '/attendances.xml' }}" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Attendances</a></li>
+			<li><a href="{{ site.url + '/checkins.xml' }}" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Checkins</a></li>
 		</ol>
 
 		<h2 id="categories">
@@ -47,7 +48,7 @@ perch: true
 		<ul class=" [ grid ] [ shelf ] " data-layout="natural">
 		{% for item in collections.categories -%}
 			{%- set count = collections[item.title] | arePublished | getCollectionCount -%}
-			<li><a href="{{ site.url }}/{{ item.plural }}.xml" class=" [ strong ] " style="font-size: 1.25em;">{{ item.properPlural | title }} <sup>{{ count }}</sup></a></li>
+			<li><a href="{{ site.url }}/{{ item.plural }}.xml" class=" [ strong ] " style="font-size: var(--font-size-gamma);">{{ item.properPlural | title }} <sup>{{ count }}</sup></a></li>
 		{%- endfor %}
 		</ul>
 

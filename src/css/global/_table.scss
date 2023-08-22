@@ -58,15 +58,24 @@ th {
 		z-index: var(--z-index-above);
 
 		thead & {
-			inset-block-start: var(--size-header);
+			inset-block-start: 0;
 			animation: block-shadow-outside linear;
 			animation-timeline: scroll(nearest block);
 		}
 
 		tbody & {
 			inset-inline-start: 0;
+		}
+		tbody &,
+		.shadow-child {
 			animation: inline-shadow-outside linear;
-			animation-timeline: scroll(nearest inline);
+			animation-timeline: --scrollInline;
+		}
+		tbody &:has(.shadow-child) {
+			padding: 0;
+		}
+		.shadow-child {
+			padding: var(--size-small);
 		}
 
 		details & {

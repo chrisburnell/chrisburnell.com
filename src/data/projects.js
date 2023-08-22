@@ -5,7 +5,7 @@ module.exports = {
 			data: {
 				date: "2021-04-26T12:00:00+0000",
 				title: "Fëonir’s Workshop",
-				description: 'Another <abbr title="Dungeons & Dragons">D&D</abbr>-related labour of love, this time a general site for all things D&D, including the draft of my new 12-chapter campaign for {{ 5 | ordinal | safe }} Edition.',
+				description: 'Another <abbr title="Dungeons & Dragons">D&D</abbr>-related labour of love, this time a general site for all things D&D, including the draft of my new 12-chapter campaign for 5<sup>th</sup> Edition.',
 				description_markdown: true,
 				emoji: "🦎",
 			},

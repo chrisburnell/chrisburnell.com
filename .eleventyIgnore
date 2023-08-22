@@ -1,4 +1,4 @@
-.DS_Store
+**/.DS_Store
 .cache/
 .github/
 .vscode/
@@ -6,4 +6,3 @@
 README.md
 LICENSE
 package-lock.json
-src/pages/builders/shorturls.njk

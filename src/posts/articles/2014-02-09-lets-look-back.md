@@ -23,7 +23,7 @@ Well, not quite. I haven’t found a need myself for the full library of options
 
 Ever since I was fortunate enough to attend [State of the Browser in 2013](http://browser.londonwebstandards.org "State of the Browser 2013") and saw talks from [Paul Kinlan](https://twitter.com/paul_kinlan "Paul Kinlan") and [Jake Archibald](https://twitter.com/jaffathecake "Jake Archibald"), I’ve grown to care a great deal more about automation and performance. In the past months I’ve strived to maintain a streamlined site that not only has pristine, carefully-crafted code, but also responds quickly and *loads in under one second*, a personal goal of mine. Because I put such rigid limitations on the code and it being lightning-fast, I wanted to make sure that every line of code served a purpose—trim the fat.
 
-One fantastic utility that helps immensely in trimming the fat, I learned about at State of the Browser: [Can I Use](https://caniuse.com/ "Can I Use"), a repository of compatibility tables for support of web technologies such as HTML5 and CSS3. The kicker is that the tables are updated based on global browser usage statistics, so the tables are always up-to-date on what is supported, what isn’t, what requires a vendor prefix, etc. for all major browsers. The tables are invaluable for quickly checking what options I have for support when developing a new piece of code, but it’s all a bit tedious if I want my code and vendor prefixes to be up-to-date all the time.
+One fantastic utility that helps immensely in trimming the fat, I learned about at State of the Browser: [Can I use...](https://caniuse.com/), a repository of compatibility tables for support of web technologies such as HTML5 and CSS3. The kicker is that the tables are updated based on global browser usage statistics, so the tables are always up-to-date on what is supported, what isn’t, what requires a vendor prefix, etc. for all major browsers. The tables are invaluable for quickly checking what options I have for support when developing a new piece of code, but it’s all a bit tedious if I want my code and vendor prefixes to be up-to-date all the time.
 
 --------
 
@@ -31,7 +31,7 @@ Say an old version of Chrome becomes stale and the global usage of that version 
 
 <aside><p><code>autoprefixer -i</code> to run <em>Autoprefixer</em> from the command line.</p></aside>
 
-Fortunately there’s a great tool that plugs into *Can I Use*’s API: [Autoprefixer](https://github.com/postcss/autoprefixer "Autoprefixer"). In short, it "[parses] CSS and add[s] vendor prefixes to rules by Can I Use". That gets rid of the headache of updating vendor prefixes to match my arbitrary set of browser support rules, and I don’t even have to write them in my CSS anymore. *Very* convenient… but not the perfect solution; I still have to manually run this command whenever I want to compile.
+Fortunately there’s a great tool that plugs into *Can I use...*’s API: [Autoprefixer](https://github.com/postcss/autoprefixer "Autoprefixer"). In short, it "[parses] CSS and add[s] vendor prefixes to rules by Can I use". That gets rid of the headache of updating vendor prefixes to match my arbitrary set of browser support rules, and I don’t even have to write them in my CSS anymore. *Very* convenient… but not the perfect solution; I still have to manually run this command whenever I want to compile.
 
 --------
 
@@ -268,7 +268,7 @@ Let’s face it, that’s a monumental amount of code to read, let alone scroll 
 
 --------
 
-Firstly, let’s remove the vendor prefixes to take advantage of *Autoprefixer* and *Can I Use*.
+Firstly, let’s remove the vendor prefixes to take advantage of *Autoprefixer* and *Can I use...*
 
 ```css
 .logo {

@@ -62,6 +62,16 @@ module.exports = {
 			})
 			.sort(dateFilter)
 	},
+	attendances: (collection) => {
+		const conferences = collection.getFilteredByTag("conference")
+		const meetups = collection.getFilteredByTag("meetup")
+		return [...conferences, ...meetups]
+			.filter(isPublished)
+			.filter((item) => {
+				return "rsvp" in item.data && item.data.rsvp?.value === "yes"
+			})
+			.sort(dateFilter)
+	},
 	checkins: (collection) => {
 		return collection
 			.getFilteredByTag("post")

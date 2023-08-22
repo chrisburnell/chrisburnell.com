@@ -64,7 +64,7 @@ Normally in CSS, we would use `.` to target an element by *class name*, but we c
 
 --------
 
-In this way, we’re able to style some default elements that a content editor would output onto a page without having to *repeatedly un-style* them later on where they’re not needed. This technique has broad support—everything except IE8 and older works just fine, but, as always, check [Can I Use](http://caniuse.com/#search=css-sel3 "Can I Use - CSS3 selectors") for the specifics.
+In this way, we’re able to style some default elements that a content editor would output onto a page without having to *repeatedly un-style* them later on where they’re not needed. This technique has broad support—everything except IE8 and older works just fine, but, as always, check [Can I use...](http://caniuse.com/#search=css-sel3 "Can I use... - CSS3 selectors") for the specifics.
 
 --------
 

@@ -11,6 +11,29 @@
 @import "../abstracts/generated";
 @import "../abstracts/collections";
 
+.support,
+.support__meta {
+	display: flex;
+	gap: var(--size-gutter);
+
+	@container (inline-size > #{map-get($breakpoints, "small")}) {
+		gap: var(--size-large);
+	}
+}
+
+.support {
+	flex-direction: column-reverse;
+
+	@container (inline-size > #{map-get($breakpoints, "small")}) {
+		flex-direction: row-reverse;
+	}
+}
+
+.support__meta {
+	flex-direction: column;
+	justify-content: center;
+}
+
 .browser-support {
 	display: flex;
 	flex-wrap: wrap;

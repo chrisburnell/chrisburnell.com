@@ -37,7 +37,7 @@ css: styleguide.css
 </dl>
 
 <c-details>
-	<summary>Multi-Steps</summary>
+	<summary style="font-size: var(--font-size-gamma);">Multi-Steps</summary>
 	<dl>
 		{%- for name, size in designTokens.sizes -%}
 			{%- if '-' in name and not '-min' in name and not '-max' in name -%}
@@ -49,7 +49,7 @@ css: styleguide.css
 </c-details>
 
 <c-details>
-	<summary>Fluid Size Scale values</summary>
+	<summary style="font-size: var(--font-size-gamma);">Fluid Size Scale values</summary>
 	<p>Values generated using <strong><a href="/clamp-calculator/">clamp() Calculator</a></strong> with the following values:</p>
 	<dl>
 		<dt>Root Font Size</dt>
@@ -91,7 +91,7 @@ css: styleguide.css
 </div>
 
 <c-details>
-	<summary>Fluid Type Scale values</summary>
+	<summary style="font-size: var(--font-size-gamma);">Fluid Type Scale values</summary>
 	<p>Values generated using <strong><a href="/clamp-calculator/">clamp() Calculator</a></strong> with the following values:</p>
 	<dl>
 		<dt>Root Font Size</dt>
@@ -128,11 +128,13 @@ css: styleguide.css
 
 <p class="columns">A paragraph (from the Greek paragraphos, <q>to write beside</q> or <q>written beside</q>) is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
 
+<!--
 <h2>Aside</h2>
 
 <aside>
 	<p>An aside represents a section of the page with content connected tangentially to the rest, which could be considered separate from that content.</p>
 </aside>
+-->
 
 <p>A paragraph (from the Greek paragraphos, “to write beside” or “written beside”) is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
 
@@ -220,17 +222,11 @@ css: styleguide.css
 </ol>
 
 <c-details>
-	<summary>Reversed</summary>
+	<summary style="font-size: var(--font-size-gamma);">Reversed</summary>
 	<ol reversed>
 		<li>This is a list item in an ordered list</li>
 		<li>An ordered list is a list in which the sequence of items is important. An ordered list does not necessarily contain sequence characters.</li>
-		<li>
-			This is the last list item
-			<ol reversed>
-				<li>This is a nested list item</li>
-				<li>This is another nested list item in an ordered list</li>
-			</ol>
-		</li>
+		<li>This is the last list item</li>
 	</ol>
 </c-details>
 
@@ -282,7 +278,7 @@ css: styleguide.css
 </table>
 
 <c-details>
-	<summary>With Alternating Rows</summary>
+	<summary style="font-size: var(--font-size-gamma);">With Alternating Rows</summary>
 	<table class="zebra--horizontal">
 		<thead>
 			<tr>
@@ -329,7 +325,7 @@ css: styleguide.css
 </c-details>
 
 <c-details>
-	<summary>With Alternating Columns</summary>
+	<summary style="font-size: var(--font-size-gamma);">With Alternating Columns</summary>
 	<table class="zebra--vertical">
 		<thead>
 			<tr>
@@ -376,7 +372,7 @@ css: styleguide.css
 </c-details>
 
 <c-details>
-	<summary>With Alternating Rows &amp; Columns</summary>
+	<summary style="font-size: var(--font-size-gamma);">With Alternating Rows &amp; Columns</summary>
 	<table class="zebra">
 		<thead>
 			<tr>
@@ -437,7 +433,7 @@ css: styleguide.css
 </c-details>
 
 <c-details>
-	<summary>With Sub-headings</summary>
+	<summary style="font-size: var(--font-size-gamma);">With Sub-headings</summary>
 	<table>
 		<thead>
 			<tr>
@@ -525,29 +521,25 @@ p q r s t u v w x y z { | } ~</code></pre>
 	<a class=" [ button ] " href="#_">Styled Anchor</a>
 </div>
 
-<!--
-<h2>Details and Summary</h2>
+<h2>Details</h2>
 
 <c-details>
 	<summary>Summary</summary>
 	<p>A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
 	<p>A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
 </c-details>
--->
 
-<!--
 <h2>Audio</h2>
 
-<audio controls></audio>
--->
+<figure class=" [ media ] ">
+	<audio src="/audio/mononoke-hime.mp3" loading="lazy" decoding="async" controls style="max-inline-size: 480px; margin-inline: auto;"></audio>
+</figure>
 
-<!--
 <h2>Video</h2>
 
-<figure class=" [ media  media--4-by-3 ] ">
-	<video controls></video>
+<figure class=" [ media ] ">
+	<video src="/images/animated/whywastetime.mp4" controls loading="lazy" decoding="async" style="max-inline-size: 480px; margin-inline: auto; aspect-ratio: 480 / 270;"></video>
 </figure>
--->
 
 <h2>Boxes</h2>
 
@@ -593,14 +585,29 @@ p q r s t u v w x y z { | } ~</code></pre>
 <h2>Sparklines</h2>
 
 <div class=" [ grid ] [ shelf ] ">
-	<article>
-		<c-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" curve="true" class="no-motion"></c-sparkline>
+	<article style="display: grid; place-items: center;">
+		<c-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" curve="true" animate="true" start="Start" end="End"></c-sparkline>
 	</article>
-	<article data-theme="matrix" style="--dot: currentColor;">
-		<c-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" curve="true" class="no-motion" start="Start" end="End"></c-sparkline>
+	<article style="display: grid; place-items: center;">
+		<c-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" gradient="true"></c-sparkline>
 	</article>
-	<article data-theme="koala" style="--dot: transparent;">
-		<c-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" color="oklab(var(--oklab-raven))" class="no-motion"></c-sparkline>
+	<article style="display: grid; place-items: center;">
+		<c-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" fill="false"></c-sparkline>
+	</article>
+	<article style="display: grid; place-items: center;">
+		<c-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" fill="false" point="false"></c-sparkline>
+	</article>
+	<article class="sparkline-dark" style="display: grid; place-items: center;">
+		<c-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" curve="true" animate="true" start="Start" end="End"></c-sparkline>
+	</article>
+	<article style="display: grid; place-items: center;" data-theme="matrix" style="--point: currentColor;">
+		<c-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4"></c-sparkline>
+	</article>
+	<article style="display: grid; place-items: center; --point: currentColor;" data-theme="koala">
+		<c-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4"></c-sparkline>
+	</article>
+	<article style="display: grid; place-items: center;" data-theme="code-red">
+		<c-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" color="oklab(var(--oklab-aspen))" point="false"></c-sparkline>
 	</article>
 </div>
 
@@ -608,7 +615,7 @@ p q r s t u v w x y z { | } ~</code></pre>
 
 <p class="italic">Or the sound the make? <a href="/pentatonic/">Pentatonic</a> uses the Web Audio API to generate fun little melodies from data.</p>
 
-<h2>Can I Use</h2>
+<h2>Can I use... Widget</h2>
 
 {%- css %}@layer components { {%- include '../../css/components/browser-support.css' -%} }{% endcss -%}
 {% browserSupport 'css-has' %}

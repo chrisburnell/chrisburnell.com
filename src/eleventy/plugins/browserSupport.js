@@ -68,9 +68,14 @@ module.exports = (eleventyConfig) => {
 			}, "")
 
 			return minifier.minify(
-				`<div class=" [ support ] [ box ${fullSupport ? " box--success " : zeroSupport ? " box--error " : " box--warning "}] [ flow ] ">
-					${browserList}
-					<p class="small">Browser support data for <code>${featureID}</code> comes from <a href="https://caniuse.com/#feat=${featureID}" rel="external nofollow">caniuse.com</a> and is up-to-date as of <time datetime="${DateTime.fromJSDate(new Date(now)).toFormat("yyyy-MM-dd")}">${DateTime.fromJSDate(new Date(now)).toFormat("dd LLLL yyyy")}</time>.</p>
+				`<div class=" [ support ] [ box ${fullSupport ? " box--success " : zeroSupport ? " box--error " : " box--warning "}] ">
+					<div class=" [ support__data ] [ flow ] ">
+						${browserList}
+					</div>
+					<div class=" [ support__meta ] ">
+						<p class=" [ monospace  strong ] " style="font-size: var(--font-size-gamma);">${featureID}</p>
+						<p class="small">Browser support data for <code>${featureID}</code> comes from <a href="https://caniuse.com/#feat=${featureID}" rel="external nofollow">caniuse.com</a> and is up-to-date as of <time datetime="${DateTime.fromJSDate(new Date(now)).toFormat("yyyy-MM-dd")}">${DateTime.fromJSDate(new Date(now)).toFormat("dd LLLL yyyy")}</time>.</p>
+					</div>
 				</div>`,
 				{ collapseWhitespace: true },
 			)
@@ -104,9 +109,14 @@ module.exports = (eleventyConfig) => {
 				}, "")
 
 				return minifier.minify(
-					`<div class=" [ support ] [ box ${fullSupport ? " box--success " : zeroSupport ? " box--error " : " box--warning "}] [ flow ] ">
-						${browserList}
-						<p class="small">Browser support data for <code>${featureID}</code> comes from <a href="https://github.com/mdn/browser-compat-data">MDN’s <code>browser-compat-data</code></a> and is up-to-date as of <a href="https://www.npmjs.com/package/@mdn/browser-compat-data" rel="external nofollow">version ${pkg.dependencies["@mdn/browser-compat-data"].replace("^", "")}</a>.</p>
+					`<div class=" [ support ] [ box ${fullSupport ? " box--success " : zeroSupport ? " box--error " : " box--warning "}] ">
+						<div class=" [ support__data ] [ flow ] ">
+							${browserList}
+						</div>
+						<div class=" [ support__meta ] ">
+							<p class=" [ monospace  strong ] " style="font-size: var(--font-size-gamma);">${featureID}</p>
+							<p class="small">Browser support data for <code>${featureID}</code> comes from <a href="https://github.com/mdn/browser-compat-data">MDN’s <code>browser-compat-data</code></a> and is up-to-date as of <a href="https://www.npmjs.com/package/@mdn/browser-compat-data" rel="external nofollow">version ${pkg.dependencies["@mdn/browser-compat-data"].replace("^", "")}</a>.</p>
+						</div>
 					</div>`,
 					{ collapseWhitespace: true },
 				)

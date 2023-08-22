@@ -22,8 +22,8 @@ icon_sizes:
   "orientation": "any",
   "start_url": "{{ site.url }}",
   "homepage_url": "{{ site.url }}",
-  "theme_color": "{{ designTokens.colors | keyValue("raven") }}",
-  "background_color": "{{ designTokens.colors | keyValue("mineshaft") }}",
+  "theme_color": "{{ designTokens['colors-hex'] | keyValue("raven") }}",
+  "background_color": "{{ designTokens['colors-hex'] | keyValue("mineshaft") }}",
   "background": {
     "persistent": false
   },

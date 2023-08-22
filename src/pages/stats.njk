@@ -55,18 +55,18 @@ description: Numbers, cause why not?
 
 {%- set collection = collection | reverse -%}
 {%- set year = first_year -%}
-<figure>
-	<table class=" [ inline-center ] ">
+<figure class=" [ scroll-inline  scroll-inline-shadow ] ">
+	<table>
 		<tbody>
 			<tr>
-				<th class=" [ sticky ] " style="white-space: nowrap; inset-block-start: 0;">Year</th>
-				{% for i in range(first_year, latest_year + 1) | reverse %}
+				<th><div class="shadow-child" style="white-space: nowrap;">Year</div></th>
+				{% for i in range(first_year, latest_year + 1) %}
 					<td><strong>{{ i }}</strong></td>
 				{% endfor %}
 			</tr>
 			<tr>
-				<th class=" [ sticky ] " style="white-space: nowrap; inset-block-start: 0;">Blog Posts</th>
-				{% for i in range(first_year, latest_year + 1) | reverse -%}
+				<th><div class="shadow-child" style="white-space: nowrap;">Blog Posts</div></th>
+				{% for i in range(first_year, latest_year + 1) -%}
 					{% set count = collection | getCollectionCount(i, true) -%}
 					<td class=" [ numeral{% if count > blog_count_average %} strong {% endif %} ] ">{{ collection | getCollectionCount(i, true) }}</td>
 				{%- endfor %}
@@ -78,13 +78,14 @@ description: Numbers, cause why not?
 <h2>Collections</h2>
 
 <ul class=" [ grid ] [ shelf ] " data-layout="natural">
-	<li><a href="/latest/" class=" [ strong ] " style="font-size: 1.25em;">Latest Posts <sup>{{ site.limits.feed }}</sup></a></li>
-	<li><a href="/hot/" class=" [ strong ] " style="font-size: 1.25em;">Hot Pages <sup>{{ site.limits.feed }}</sup></a></li>
-	<li><a href="/popular/" class=" [ strong ] " style="font-size: 1.25em;">Popular Pages <sup>{{ site.limits.feed }}</sup></a></li>
-	<li><a href="/writing/" class=" [ strong ] " style="font-size: 1.25em;">Writing <sup>{{ collections.writingPosts | getCollectionCount }}</sup></a></li>
-	<li><a href="/replies/" class=" [ strong ] " style="font-size: 1.25em;">Replies <sup>{{ collections.replies | getCollectionCount }}</sup></a></li>
-	<li><a href="/rsvps/" class=" [ strong ] " style="font-size: 1.25em;">RSVPs <sup>{{ collections.rsvps | getCollectionCount }}</sup></a></li>
-	<li><a href="/checkins/" class=" [ strong ] " style="font-size: 1.25em;">Checkins <sup>{{ collections.checkins | getCollectionCount }}</sup></a></li>
+	<li><a href="/latest/" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Latest Posts <sup>{{ site.limits.feed }}</sup></a></li>
+	<li><a href="/hot/" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Hot Pages <sup>{{ site.limits.feed }}</sup></a></li>
+	<li><a href="/popular/" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Popular Pages <sup>{{ site.limits.feed }}</sup></a></li>
+	<li><a href="/writing/" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Writing <sup>{{ collections.writingPosts | getCollectionCount }}</sup></a></li>
+	<li><a href="/replies/" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Replies <sup>{{ collections.replies | getCollectionCount }}</sup></a></li>
+	<li><a href="/rsvps/" class=" [ strong ] " style="font-size: var(--font-size-gamma);">RSVPs <sup>{{ collections.rsvps | getCollectionCount }}</sup></a></li>
+	<li><a href="/attendances/" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Attendances <sup>{{ collections.attendances | getCollectionCount }}</sup></a></li>
+	<li><a href="/checkins/" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Checkins <sup>{{ collections.checkins | getCollectionCount }}</sup></a></li>
 </ul>
 
 <h2>Categories</h2>
@@ -92,7 +93,7 @@ description: Numbers, cause why not?
 <ul class=" [ grid ] [ shelf ] " data-layout="natural">
 	{%- for item in collections.categories -%}
 		{%- set count = collections[item.title] | arePublished | getCollectionCount -%}
-		<li><a href="/{{ item.plural }}/" class=" [ strong ] " style="font-size: 1.25em;"><c-emoji>{{ item.emoji | default('📄') }}</c-emoji> {{ item.properPlural | title }} <sup>{{ count }}</sup></a></li>
+		<li><a href="/{{ item.plural }}/" class=" [ strong ] " style="font-size: var(--font-size-gamma);"><c-emoji>{{ item.emoji | default('📄') }}</c-emoji> {{ item.properPlural | title }} <sup>{{ count }}</sup></a></li>
 	{%- endfor -%}
 </ul>
 

@@ -252,6 +252,8 @@
 .scroll-inline-shadow {
 	animation: inline-shadow-inside linear;
 	animation-timeline: scroll(self inline);
+	scroll-timeline-name: --scrollInline;
+	scroll-timeline-axis: inline;
 }
 .scroll-block {
 	max-block-size: calc(100vh - (var(--size-header) * 2));
@@ -261,22 +263,24 @@
 .scroll-block-shadow {
 	animation: block-shadow-inside linear;
 	animation-timeline: scroll(self block);
+	scroll-timeline-name: --scrollBlock;
+	scroll-timeline-axis: block;
 }
 
 @keyframes block-shadow-inside {
 	from {
-		box-shadow: inset 0 -1em 1.5em 0 oklab(var(--shadow-color) / 0.4);
+		box-shadow: inset 0 -2em 2em -2em oklab(var(--shadow-color) / 0.4);
 	}
 	to {
-		box-shadow: inset 0 1em 1.5em 0 oklab(var(--shadow-color) / 0.4);
+		box-shadow: inset 0 2em 2em -2em oklab(var(--shadow-color) / 0.4);
 	}
 }
 @keyframes inline-shadow-inside {
 	from {
-		box-shadow: inset -1em -1em 1.5em 0 oklab(var(--shadow-color) / 0.4);
+		box-shadow: inset -2em 0 2em -2em oklab(var(--shadow-color) / 0.4);
 	}
 	to {
-		box-shadow: inset 1em -1em 1.5em 0 oklab(var(--shadow-color) / 0.4);
+		box-shadow: inset 2em 0 2em -2em oklab(var(--shadow-color) / 0.4);
 	}
 }
 @keyframes block-shadow-outside {
@@ -284,7 +288,7 @@
 		box-shadow: none;
 	}
 	to {
-		box-shadow: 0 1em 1.5em 0 oklab(var(--shadow-color) / 0.4);
+		box-shadow: 0 2em 2em -2em oklab(var(--shadow-color) / 0.4);
 	}
 }
 @keyframes inline-shadow-outside {
@@ -292,6 +296,6 @@
 		box-shadow: none;
 	}
 	to {
-		box-shadow: 1em 1em 1.5em 0 oklab(var(--shadow-color) / 0.4);
+		box-shadow: 2em 0 2em -2em oklab(var(--shadow-color) / 0.4);
 	}
 }

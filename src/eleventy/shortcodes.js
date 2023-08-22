@@ -2,7 +2,7 @@ const { friendlyDate } = require("#filters/dates")
 const { simpleMovingAverage } = require("#filters/utils")
 
 module.exports = {
-	sparkline: (collection, start, end, motion = true, curve = true) => {
+	sparkline: (collection, start, end, animate = true, curve = true, point = true, fill = true) => {
 		let values = []
 		let count = 0
 		// Loop through years
@@ -22,7 +22,9 @@ module.exports = {
 		return `<c-sparkline values="${normalized.join(",")}"
 							${start ? `start="${start}"` : ""}
 							${end ? `end="${end}"` : ""}
-							${curve ? `curve="true"` : ""}
-							${motion == false ? `class="no-motion"` : ""}></c-sparkline>`
+							${animate ? `animate="${animate}"` : ""}
+							${curve ? `curve="${curve}"` : ""}
+							${point ? `point="${point}"` : ""}
+							${fill ? `fill="${fill}"` : ""}></c-sparkline>`
 	},
 }

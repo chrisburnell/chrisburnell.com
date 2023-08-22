@@ -48,3 +48,20 @@
 		}
 	}
 }
+
+.sparkline-dark {
+	background-color: h(kaiser);
+	color: h(snowy);
+
+	@media (prefers-color-scheme: dark) {
+		html:not([data-theme]) & {
+			background-color: h(snowy);
+			color: h(kaiser);
+		}
+	}
+	[data-theme*="dark"] &,
+	.dark & {
+		background-color: h(snowy);
+		color: h(kaiser);
+	}
+}

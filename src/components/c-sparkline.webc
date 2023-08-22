@@ -66,16 +66,17 @@ function getHighestY(string) {
 }
 </script>
 <is-land class=" [ spark-line ] [ pentatonic ] " on:visible style="width: 172px; height: 70px;">
-	<spark-line @attributes :values="this.values" :original="this.original" :curve="this.curve" :colors="this.colors" :points="this.points" :key-start="this['key-start'] || 25" :key-intervals="this['key-intervals'] || `2,1,2,2,1,2,2`" :key-limit="this['key-limit'] || 15" :id="this.id" title="Click to hear me!">
+	<spark-line :values="this.values" :original="this.original" :colors="this.colors" :points="this.points" :key-start="this['key-start'] || 25" :key-intervals="this['key-intervals'] || `2,1,2,2,1,2,2`" :key-limit="this['key-limit'] || 15" :id="this.id" :class="this.animate ? 'animate' : ''" title="Click to hear me!">
 		<span webc:if="this.start" @text="this.start"></span>
 		<svg width="160px" height="28px" :viewBox="getViewBox(this.values)" preserveAspectRatio="none">
-			<defs webc:if="this.gradient">
+			<defs webc:if="this.gradient && this.fill !== 'false'">
 				<linearGradient id="gradient" gradientTransform="rotate(90)">
 					<stop offset="0%" stop-color="color-mix(in oklab, var(--fill, oklab(var(--oklab-raven))), transparent)" />
 					<stop offset="100%" stop-color="transparent" />
 				</linearGradient>
 			</defs>
 			<path
+				webc:if="this.fill !== 'false'"
 				class=" [ spark-line__gradient ] "
 				:d="`${getPath(this.values, this.curve ? bezierCommand : lineCommand)} L ${getFinalX(this.values)} ${getHighestY(this.values)} L 0 ${getHighestY(this.values)} Z`"
 				:fill="this.gradient ? `url('#gradient')` : `color-mix(in oklab, var(--fill, oklab(var(--oklab-raven))), transparent)`"
@@ -91,8 +92,8 @@ function getHighestY(string) {
 				vector-effect="non-scaling-stroke"
 			/>
 		</svg>
-		<svg width="160px" height="28px" viewBox="0 0 160 28" preserveAspectRatio="xMaxYMid meet">
-			<circle class=" [ spark-line__endpoint ] " r="3" cx="160" :cy="(28 / getHighestY(this.values)) * getFinalY(this.values)" fill="var(--dot, oklab(var(--oklab-maple)))"></circle>
+		<svg webc:if="this.point !== 'false'" width="160px" height="28px" viewBox="0 0 160 28" preserveAspectRatio="xMaxYMid meet">
+			<circle class=" [ spark-line__endpoint ] " r="3" cx="160" :cy="(28 / getHighestY(this.values)) * getFinalY(this.values)" fill="var(--point, oklab(var(--oklab-maple)))"></circle>
 		</svg>
 		<span webc:if="this.end" @text="this.end"></span>
 	</spark-line>
