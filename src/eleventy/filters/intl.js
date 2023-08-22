@@ -13,7 +13,9 @@ const week = 7 * day
 const month = 30.436875 * day
 const year = 12 * month
 
-const pr = new Intl.PluralRules("en", {
+const numberFormat = new Intl.NumberFormat("en", { maximumSignificantDigits: 3 })
+
+const pluralRules = new Intl.PluralRules("en", {
 	type: "ordinal",
 })
 const ordinalSuffixes = {
@@ -46,8 +48,11 @@ module.exports = {
 		}
 		return rtf.format(Math.ceil((compare - today) / year), "year")
 	},
+	numberFormat: (n) => {
+		return numberFormat.format(n)
+	},
 	ordinal: (n) => {
-		const ordinal = ordinalSuffixes[pr.select(n)]
-		return `${n}<sup>${ordinal}</sup>`
+		const ordinal = ordinalSuffixes[pluralRules.select(n)]
+		return `${module.exports.numberFormat(n)}<sup class="underline">${ordinal}</sup>`
 	},
 }

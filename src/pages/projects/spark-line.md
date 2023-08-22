@@ -225,7 +225,6 @@ If you wanted to use `<is-land>` as well, I recommend something like the followi
 
 *That’s right! All spark-lines are dynamic out-of-the-box!*
 
-
 <!-- </textarea> -->
 <!-- '"´ -->
 <form>

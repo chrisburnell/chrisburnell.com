@@ -29,7 +29,7 @@ I’ve chosen **C<sub>4</sub>**, also known as [Middle C](https://en.wikipedia.o
 
 Let’s pause and review a little background about musical notes and their relationship to the frequency of each note.
 
-As an example, we’ll take **A<sub>4</sub>**, also known as the *Stuttgart pitch*. It’s the first **A** above **middle C** and sits at <samp>440Hz</samp>. Unfortunately, frequencies for other notes aren’t quite as simple. We cannot increment <samp>440</samp> by a fixed amount for each consecutive note. In fact, each consecutive note’s frequency is exactly *the 12<sup>th</sup> root of 2* times greater than the previous and vice versa.
+As an example, we’ll take **A<sub>4</sub>**, also known as the *Stuttgart pitch*. It’s the first **A** above **middle C** and sits at <samp>440Hz</samp>. Unfortunately, frequencies for other notes aren’t quite as simple. We cannot increment <samp>440</samp> by a fixed amount for each consecutive note. In fact, each consecutive note’s frequency is exactly *the {{ 12 | ordinal | safe }} root of 2* times greater than the previous and vice versa.
 
 <figure>
 	{% image './images/content/diatonic-scale.svg', '' %}

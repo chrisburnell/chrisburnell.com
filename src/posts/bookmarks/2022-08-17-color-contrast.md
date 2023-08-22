@@ -7,4 +7,3 @@ bookmark_of:
   url: https://colorandcontrast.com
 posting_method: https://quill.p3k.io/
 ---
-

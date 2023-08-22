@@ -79,7 +79,6 @@ With this line of CSS, we’ve given our component a set of ordered instructions
 2. Use the `--second` CSS Variable if it has been defined
 3. Otherwise, use the default `1em` value
 
-
 ----
 
 This is handy in all sorts of ways. Take the `fill` colour of an SVG, for example:

@@ -7,7 +7,7 @@ tags:
   - state-of-the-web
 ---
 
-On <time datetime="">the 17<sup>th</sup> of November</time>, I received a notification that I’d been [mentioned on Twitter](https://twitter.com/lindsaykwardell/status/1593358142376931328) by someone I didn’t recognise. Since I don’t get a lot of mentions — maybe because I don’t tweet very much… — curiousity immediately got the better of me!
+On <time datetime="">the {{ 17 | ordinal | safe }} of November</time>, I received a notification that I’d been [mentioned on Twitter](https://twitter.com/lindsaykwardell/status/1593358142376931328) by someone I didn’t recognise. Since I don’t get a lot of mentions — maybe because I don’t tweet very much… — curiousity immediately got the better of me!
 
 After some quick reading, I suddenly had mixed feelings. It turned out that another programmer out there in the ethos had been tinkering with [GitHub Copilot](https://github.com/features/copilot/), an AI-powered tool for developers to generate code on-the-fly. She had asked Copilot to generate some <q>real</q> data, and here’s what it generated:
 

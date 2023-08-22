@@ -57,7 +57,6 @@ Front End Developer with {{ global.now | friendlyDate("yyyy") - site.established
 - Volunteered to facilitate the standardisation of the global company boilerplate, authored the project’s documentation, and incorporated new features as a key feedback channel for developers. This boilerplate is used by *over 100 projects globally*.
 - Single-handedly developed the UK’s first design system which is now used by more than 10 enterprise-level projects, leading to more coherent codebases and a significant reduction in bugs and turnaround time for ad hoc work.
 
-
 <div class=" [ space-between ] ">
     <h3><a href="https://city.ac.uk"><c-emoji><img class="brand-logo" alt="" loading="lazy" decoding="async" src="/images/built/city-logo.png"></c-emoji> City, University of London</a></h3>
     <small><strong>June 2014 – February 2018</strong></small>

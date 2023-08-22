@@ -19,8 +19,6 @@ tags:
     </ol>
 </nav>
 
-
-
 In the previous article, I wrote about how we can use the Sexagesimal numbering system to represent dates in an extremely-terse way. Combined with some single-character codes to represent different categories of posts, we were able to develop a convention for representing any dated post on our website until the year 2561, at which point our convention doesn’t stop working, it simply requires one extra character to represent the date.
 
 In this article, we’ll step through building a counterpart to the URL convention we worked through before: the redirect pages themselves.
