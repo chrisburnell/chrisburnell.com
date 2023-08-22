@@ -1,0 +1,12 @@
+---
+pagination:
+  data: collections.archive
+  size: 1
+  alias: archive
+permalink: /{{ archive.data.feed_name | default(archive.data.related_collection) }}.xml
+eleventyComputed:
+  title: "{{ archive.data.title | safe }}"
+  description: "{{ archive.data.description | safe }}"
+  related_collection: "{{ archive.data.related_collection }}"
+  reverse_collection: true
+---

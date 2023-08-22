@@ -1,7 +1,7 @@
 {%- set related_page = site.url + '/' + ('tag/' if tag_collection) + related_collection + '/' -%}
 {%- set related_page = related_page | replace('featurePosts/', '') | replace('writingPosts', 'writing') -%}
 {%- set collection = collections[related_collection] | arePublished | dateSort -%}
-{%- set limit = limit_collection | default(site.limits.feed) -%}
+{%- set limit = limit | default(site.limits.feed) -%}
 <?xml version="1.0" encoding="utf-8" ?>
 <?xml-stylesheet href="/feed.xsl" type="text/xsl" ?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ site.locale }}" xml:base="{{ site.url }}">
