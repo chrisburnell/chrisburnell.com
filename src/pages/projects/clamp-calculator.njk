@@ -33,53 +33,48 @@ js_module: clamp-calculator.js
 		<label for="viewport-max" class=" [ delta ] ">Maximum Viewport <small>(px)</small></label>
 		<input id="viewport-max" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="number" step="0.001" min="0" inputmode="numeric" pattern="[1-9]\d*(\.\d+)?" lang="en" value="1000" data-default="1000"></input>
 	</fieldset>
-	<details style="grid-column: span 2;">
-		<summary>Optional Configuration</summary>
-		<div class=" [ grid ] " data-layout="50-50" style="padding-inline: 0">
-			<fieldset class=" [ clamp-calculator__fieldset ] ">
-				<label for="font-size-root" class=" [ center  delta ] ">Root Font Size <small>(px)</small></label>
-				<input id="font-size-root" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="number" step="0.001" min="0" inputmode="numeric" pattern="[1-9]\d*(\.\d+)?" lang="en" value="16" data-default="16"></input>
-			</fieldset>
-			<fieldset class=" [ clamp-calculator__fieldset ] ">
-				<label for="viewport-units" class=" [ center  delta ] ">Viewport Units</label>
-				<select id="viewport-units" class=" [ center  monospace ] " style="inline-size: 100%; padding-block: 0.86rem;" lang="en">
-					<option value="vw" selected data-default="true">Width (vw)</opton>
-					<option value="vh">Height (vh)</opton>
-					<option value="vi">Inline (vi)</opton>
-					<option value="vb">Block (vb)</opton>
-					<option value="vmin">Minimum (vmin)</opton>
-					<option value="vmax">Maximum (vmax)</opton>
-					<option value="svw">Small Width (svw)</opton>
-					<option value="svh">Small Height (svh)</opton>
-					<option value="svi">Small Inline (svi)</opton>
-					<option value="svb">Small Block (svb)</opton>
-					<option value="svmin">Small Minimum (svmin)</opton>
-					<option value="svmax">Small Maximum (svmax)</opton>
-					<option value="lvw">Large Width (lvw)</opton>
-					<option value="lvh">Large Height (lvh)</opton>
-					<option value="lvi">Large Inline (lvi)</opton>
-					<option value="lvb">Large Block (lvb)</opton>
-					<option value="lvmin">Large Minimum (lvmin)</opton>
-					<option value="lvmax">Large Maximum (lvmax)</opton>
-					<option value="dvw">Dynamic Width (dvw)</opton>
-					<option value="dvh">Dynamic Height (dvh)</opton>
-					<option value="dvi">Dynamic Inline (dvi)</opton>
-					<option value="dvb">Dynamic Block (dvb)</opton>
-					<option value="dvmin">Dynamic Minimum (dvmin)</opton>
-					<option value="dvmax">Dynamic Maximum (dvmax)</opton>
-					<option value="cqw">Container Width (cqw)</opton>
-					<option value="cqh">Container Height (cqh)</opton>
-					<option value="cqi">Container Inline (cqi)</opton>
-					<option value="cqb">Container Block (cqb)</opton>
-					<option value="cqmin">Container Minimum (cqmin)</opton>
-					<option value="cqmax">Container Maximum (cqmax)</opton>
-				</select>
-			</fieldset>
-		</div>
-	</details>
+	<fieldset class=" [ clamp-calculator__fieldset ] ">
+		<label for="font-size-root" class=" [ center  delta ] ">Root Font Size <small>(px)</small></label>
+		<input id="font-size-root" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="number" step="0.001" min="0" inputmode="numeric" pattern="[1-9]\d*(\.\d+)?" lang="en" value="16" data-default="16"></input>
+	</fieldset>
+	<fieldset class=" [ clamp-calculator__fieldset ] ">
+		<label for="viewport-units" class=" [ center  delta ] ">Viewport Units</label>
+		<select id="viewport-units" class=" [ center  monospace ] " style="inline-size: 100%; padding-block: 0.86rem;" lang="en">
+			<option value="vw" selected data-default="true">Width (vw)</opton>
+			<option value="vh">Height (vh)</opton>
+			<option value="vi">Inline (vi)</opton>
+			<option value="vb">Block (vb)</opton>
+			<option value="vmin">Minimum (vmin)</opton>
+			<option value="vmax">Maximum (vmax)</opton>
+			<option value="svw">Small Width (svw)</opton>
+			<option value="svh">Small Height (svh)</opton>
+			<option value="svi">Small Inline (svi)</opton>
+			<option value="svb">Small Block (svb)</opton>
+			<option value="svmin">Small Minimum (svmin)</opton>
+			<option value="svmax">Small Maximum (svmax)</opton>
+			<option value="lvw">Large Width (lvw)</opton>
+			<option value="lvh">Large Height (lvh)</opton>
+			<option value="lvi">Large Inline (lvi)</opton>
+			<option value="lvb">Large Block (lvb)</opton>
+			<option value="lvmin">Large Minimum (lvmin)</opton>
+			<option value="lvmax">Large Maximum (lvmax)</opton>
+			<option value="dvw">Dynamic Width (dvw)</opton>
+			<option value="dvh">Dynamic Height (dvh)</opton>
+			<option value="dvi">Dynamic Inline (dvi)</opton>
+			<option value="dvb">Dynamic Block (dvb)</opton>
+			<option value="dvmin">Dynamic Minimum (dvmin)</opton>
+			<option value="dvmax">Dynamic Maximum (dvmax)</opton>
+			<option value="cqw">Container Width (cqw)</opton>
+			<option value="cqh">Container Height (cqh)</opton>
+			<option value="cqi">Container Inline (cqi)</opton>
+			<option value="cqb">Container Block (cqb)</opton>
+			<option value="cqmin">Container Minimum (cqmin)</opton>
+			<option value="cqmax">Container Maximum (cqmax)</opton>
+		</select>
+	</fieldset>
 	<fieldset class=" [ grid  navigator ] " style="grid-column: span 2;">
 		<button style="--min-inline-size: 10em;" type="submit">Calculate</button>
-		<button class="code-red" style="--min-inline-size: 10em;" type="reset">Reset</button>
+		<button style="--min-inline-size: 10em; background-color: color-mix(in oklab, oklab(var(--oklab-maple)), oklab(var(--oklab-mineshaft)) 40%) !important;" type="reset">Reset</button>
 	</fieldset>
 	<fieldset style="grid-column: span 2; margin-block-start: 1em;">
 		<label for="output" class=" [ center  gamma ] ">The Result</label>
