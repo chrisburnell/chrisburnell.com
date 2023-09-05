@@ -5,17 +5,14 @@ description: I found a useful trick for achieving the long-standing design of Le
 tags:
   - css
   - writing
+photo:
+  url: h2-titles.png
+  alt: three headings in succession, the second and third containing more words than their previous, accompanied by a thin border under the text, its inline size equal to the inline size of the text plus some arbitrary amount
 ---
 
 For a long time, I’ve had a specific look to the most-common heading in my articles: the Level 2 Heading, or `<h2>` element. While doing some refactoring recently, in light of [many developments on the frontiers of CSS](/feature-watch/), I found a new way to get the same result with a bit of new CSS that makes understanding *what it does* a lot clearer, and clarity is always important—if not for your teammates or the wider web’s understanding, at least for future *you*’s understanding!
 
 ## Inception
-
-Let’s take a look at what we’re trying to rebuild:
-
-<figure>
-    {% image './images/content/h2-titles.png', 'three headings in succession, the second and third containing more words than their previous, accompanied by a thin border under the text, its inline size equal to the inline size of the text plus some arbitrary amount' %}
-</figure>
 
 In essence, what I want is for the borders underneath each heading to be the same width (`inline-size`) as the text inside, plus a small but consistent amount. I decided to use the relatively-new CSS value, `fit-content`, to achieve this:
 

@@ -22,7 +22,7 @@ module.exports = {
 		},
 		meta_image: (data) => {
 			if (data.banner || data.cover) {
-				return `${siteUrl}/images/built/${(data.banner || data.cover).replace("jpg", "jpeg")}`
+				return `${siteUrl}/images/built/${(data.banner?.url || data.banner || data.cover?.url || data.cover).replace("jpg", "jpeg")}`
 			}
 			return siteUrl + favicon
 		},

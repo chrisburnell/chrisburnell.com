@@ -150,7 +150,7 @@ And check out other selectors like [`::selection`](https://developer.mozilla.org
 @layer overrides {
     .box--ancient {
         --flow-space: 2em;
-        --background-color: #e7cb91;
+        --box-background-color: #e7cb91;
         color: hsl(var(--hsl-mineshaft));
         border-width: 11px;
         border-style: solid;

@@ -25,7 +25,7 @@ module.exports = {
 		},
 		meta_image: (data) => {
 			if (data.banner || data.cover) {
-				return `${siteUrl}/images/built/${(data.banner || data.cover).replace("jpg", "jpeg")}`
+				return `${siteUrl}/images/built/${(data.banner?.url || data.banner || data.cover?.url || data.cover).replace("jpg", "jpeg")}`
 			} else if (data.photo) {
 				const photo = Array.isArray(data.photo) ? data.photo[0] : data.photo
 				return `${siteUrl}/images/built/${(photo.url || photo).replace("jpg", "jpeg")}`

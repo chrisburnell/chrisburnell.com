@@ -5,6 +5,9 @@ description: A short tale about how GitHub Copilot generated some “real” dat
 tags:
   - ai
   - state-of-the-web
+banner:
+  url: copilot-me-if-you-can.jpg
+  alt: a horrific, twisted, generated image depicting some transmogrified airplane flying through nonsensical space
 ---
 
 On <time datetime="">the {{ 17 | ordinal | safe }} of November</time>, I received a notification that I’d been [mentioned on Twitter](https://twitter.com/lindsaykwardell/status/1593358142376931328) by someone I didn’t recognise. Since I don’t get a lot of mentions — maybe because I don’t tweet very much… — curiousity immediately got the better of me!

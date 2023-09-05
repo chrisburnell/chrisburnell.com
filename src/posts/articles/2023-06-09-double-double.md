@@ -4,6 +4,7 @@ title: Double-Double
 description: Today I’m introducing a little dash of CSS syntactic sugar I’ve been using a lot when building components recently that I’m calling the <em>Double-Double</em> technique.
 photo:
   url: double-double.png
+  alt: "A pixel-art image of a 1990’s-era cup of Tim Horton’s coffee"
   classes: pixelated
 tags:
   - css

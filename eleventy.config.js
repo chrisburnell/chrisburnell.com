@@ -164,22 +164,18 @@ module.exports = (eleventyConfig) => {
 		return `</ol>
 		</nav>`
 	}
-	md.renderer.rules.render_footnote_caption = (tokens, idx) => {
+	md.renderer.rules.footnote_caption = (tokens, idx) => {
 		let n = Number(tokens[idx].meta.id + 1).toString()
-
 		if (tokens[idx].meta.subId > 0) {
 			n += ":" + tokens[idx].meta.subId
 		}
-
 		return `${n}`
 	}
-	md.renderer.rules.render_footnote_open = (tokens, idx, options, env, slf) => {
+	md.renderer.rules.footnote_open = (tokens, idx, options, env, slf) => {
 		var id = slf.rules.footnote_anchor_name(tokens, idx, options, env, slf)
-
 		if (tokens[idx].meta.subId > 0) {
 			id += ":" + tokens[idx].meta.subId
 		}
-
 		return `<li id="fn${id}">`
 	}
 	eleventyConfig.setLibrary("md", md)
