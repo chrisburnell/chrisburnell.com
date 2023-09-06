@@ -9,7 +9,7 @@
 
 	<meta name="description" content="{{ meta_description | striptags(true) | safe }}">
 
-	<link rel="prefetch" href="/fonts/proxima-vara-subset.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="/fonts/proxima-vara-subset.woff2" as="font" type="font/woff2" crossorigin>
 
 	{% if env.ELEVENTY_PRODUCTION -%}
 	<link rel="icon" href="/images/favicon.ico">
@@ -161,13 +161,11 @@
 				<li><a id="copyright" rel="license" href="/license/">© {{ site.established }}–{{ global.now | friendlyDate("yyyy") }} <span class=" [ canada ] ">{{ author.name }}</span></a></li>
 				{%- for item in socials -%}
 					{%- if not item.hidden and item.primary -%}
-						<li>
-							{%- set url = item.url -%}
-							{%- if item.key -%}
-								{%- set url = url + author[item.key] -%}
-							{%- endif -%}
-							<a{% if not item.primary %} tabindex="-1"{% endif %}{% if item.mf_property %} class=" [ p-{{ item.mf_property }} ] "{% endif %} href="{{ url }}" rel="me"><svg width="20" height="20" aria-hidden="true" focusable="false"{% if item.fill or item.fillHover %} style="{% if item.fill %}--fill: {{ item.fill }}; {% endif %}{% if item.fillHover %}--fill-hover: {{ item.fillHover }}; {% endif %}"{% endif %}>{% if item.defs %}{{ item.defs | safe }}{% endif %}<use href="#svg--{{ item.title | lower }}"></use></svg>{{ item.title }}</a>
-						</li>
+						<li>{%- set url = item.url -%}
+						{%- if item.key -%}
+							{%- set url = url + author[item.key] -%}
+						{%- endif -%}
+						<a{% if not item.primary %} tabindex="-1"{% endif %}{% if item.mf_property %} class=" [ p-{{ item.mf_property }} ] "{% endif %} href="{{ url }}" rel="me"><svg width="20" height="20" aria-hidden="true" focusable="false"{% if item.fill or item.fillHover %} style="{% if item.fill %}--fill: {{ item.fill }}; {% endif %}{% if item.fillHover %}--fill-hover: {{ item.fillHover }}; {% endif %}"{% endif %}>{% if item.defs %}{{ item.defs | safe }}{% endif %}<use href="#svg--{{ item.title | lower }}"></use></svg>{{ item.title }}</a></li>
 					{%- endif -%}
 				{%- endfor -%}
 			</ul>

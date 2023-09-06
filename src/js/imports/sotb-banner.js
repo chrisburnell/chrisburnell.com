@@ -16,7 +16,7 @@ class sotbBanner {
 			if (this.hide) {
 				this.setHidden()
 			} else if (this.button) {
-				this.banner.removeAttribute("hidden")
+				this.button.removeAttribute("hidden")
 				this.button.addEventListener("click", this.setHidden.bind(this))
 			}
 		}

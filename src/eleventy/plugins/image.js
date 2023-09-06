@@ -4,7 +4,7 @@ const { ELEVENTY_PRODUCTION } = require("#datajs/env")
 const { cacheDurations } = require("#data/site")
 
 module.exports = (eleventyConfig) => {
-	eleventyConfig.addNunjucksShortcode("image", (src, alt, classes = "", widths = [800]) => {
+	eleventyConfig.addNunjucksShortcode("image", (src, alt, classes = "", widths = [800], styles = "") => {
 		let formats
 		if (src.includes(".svg")) {
 			formats = ["svg"]
@@ -37,6 +37,7 @@ module.exports = (eleventyConfig) => {
 			alt: alt,
 			title: alt,
 			class: classes,
+			style: styles,
 			sizes: "100vw",
 			loading: "lazy",
 			decoding: "async",
