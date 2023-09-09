@@ -71,6 +71,11 @@
 	@import "utilities/canada";
 }
 
+// Components
+@layer components {
+	@import "components/spark-line";
+}
+
 // Themes
 @layer themes {
 	@import "themes/dark";

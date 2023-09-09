@@ -24,8 +24,6 @@ truncate: true
 	<div class=" [ content ] [ flow ] ">
 		{% include 'css-naked-day.njk' %}
 
-		{% include 'state-of-the-browser.njk' %}
-
 		<div id="content" class=" [ e-content ] [ flow ] ">
 
 			{% if collections.todayRSVPs.length %}
@@ -103,6 +101,8 @@ truncate: true
 				</div>
 			{% endif %}
 		</div>
+
+		{% include 'state-of-the-browser.njk' %}
 	</div>
 
 	<div class=" [ meta ] [ flow ] ">

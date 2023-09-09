@@ -57,8 +57,6 @@ truncate: true
 	<div id="content" class=" [ content ] [ flow ] [ h-feed ] ">
 		{% include 'css-naked-day.njk' %}
 
-		{% include 'state-of-the-browser.njk' %}
-
 		{%- if by_year -%}
 			{%- set year = latest_year -%}
 			<h2 id="{{ year }}">
@@ -85,6 +83,8 @@ truncate: true
 				{% endfor %}
 			</div>
 		{%- endif -%}
+
+		{% include 'state-of-the-browser.njk' %}
 	</div>
 
 	<aside class=" [ meta ] [ flow ] " role="complementary">

@@ -20,13 +20,13 @@ layout: base
 	<div class=" [ content ] [ flow ] ">
 		{% include 'css-naked-day.njk' %}
 
-		{% include 'state-of-the-browser.njk' %}
-
 		<div class=" [ e-content ] [ flow ] {% if contentClass %}[ {{ contentClass }} ] {% endif %}{% if toc %}generate-toc{% endif %}">
 			{{ content | safe }}
 		</div>
 
 		{% include 'responses.njk' %}
+
+		{% include 'state-of-the-browser.njk' %}
 	</div>
 
 	{% if not full and not toc %}
