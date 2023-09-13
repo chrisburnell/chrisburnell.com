@@ -20,7 +20,7 @@ Front End Developer with {{ global.now | friendlyDate("yyyy") - site.established
 <h2 style="break-before: page;">Professional Experience</h2>
 
 <div class=" [ space-between ] ">
-    <h3><a href="https://squiz.net"><c-emoji>{% image './images/content/squiz-logo.svg', '', 'brand-logo' %}</c-emoji> Squiz</a></h3>
+    <h3><a href="https://squiz.net"><c-emoji>{% image './images/content/squiz-logo.svg', 'Squiz’s logo', 'brand-logo' %}</c-emoji> Squiz</a></h3>
     <small><strong>February 2018 – present</strong></small>
 </div>
 
@@ -69,7 +69,7 @@ Front End Developer with {{ global.now | friendlyDate("yyyy") - site.established
 - Overhauled the University’s [Clearing Website](https://clearing.city.ac.uk/) to simplify the user journey and automate backend processes required for incoming applications, reducing processing times and dependence on staff. This led to significant cost and time savings for the University, and continues to be used to this day.
 
 <div class=" [ space-between ] ">
-    <h3><a href="https://squiz.net"><c-emoji>{% image './images/content/squiz-logo.svg', '', 'brand-logo' %}</c-emoji> Squiz</a></h3>
+    <h3><a href="https://squiz.net"><c-emoji>{% image './images/content/squiz-logo.svg', 'Squiz’s logo', 'brand-logo' %}</c-emoji> Squiz</a></h3>
     <small><strong>April 2012 – January 2014</strong></small>
 </div>
 

@@ -40,7 +40,7 @@
 				<source type="image/avif" srcset="/images/built/{{ item.data.cover | replace('jpg', 'avif') | replace('png', 'avif') }}">
 			{% endif %}
 			<source type="image/webp" srcset="/images/built/{{ item.data.cover | replace('jpg', 'webp') | replace('png', 'webp') }}">
-			<img alt="" class=" [ cover ] [ u-photo ] " loading="lazy" decoding="async" src="/images/built/{{ item.data.cover | replace('jpg', 'jpeg') }}" height="400">
+			<img alt="Art for {{ item_title }}" class=" [ cover ] [ u-photo ] " loading="lazy" decoding="async" src="/images/built/{{ item.data.cover | replace('jpg', 'jpeg') }}" height="400">
 		</picture>
 		{% if item.url %}
 			</a>

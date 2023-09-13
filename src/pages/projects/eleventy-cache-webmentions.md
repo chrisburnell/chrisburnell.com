@@ -1,6 +1,8 @@
 ---
 title: eleventy-cache-webmentions
-photo: eleventy-cache-webmentions.png
+photo:
+  url: eleventy-cache-webmentions.png
+  alt: A hand emblazoned with a tattoo reading, “Cache up Sucker” with a dollar sign in the middle
 emoji: 💬
 github: chrisburnell/eleventy-cache-webmentions
 branch: main
@@ -19,7 +21,7 @@ toc: true
 ---
 
 <figure>
-    {% image './images/content/eleventy-cache-webmentions.png', '', 'pixelated' %}
+    {% image './images/content/eleventy-cache-webmentions.png', 'A hand emblazoned with a tattoo reading, “Cache up Sucker” with a dollar sign in the middle', 'pixelated' %}
 </figure>
 
 {% include 'package.njk' %}

@@ -1,6 +1,8 @@
 ---
 title: Bowhead
-photo: bowhead.png
+photo:
+  url: bowhead.png
+  alt: A pixel art graphic of a bowhead whale, which is coming towards the viewer, its tail fading into the dark water around it
 emoji: 🐋
 github: chrisburnell/bowhead
 branch: master
@@ -16,7 +18,7 @@ toc: true
 ---
 
 <figure>
-	{% image './images/content/bowhead.png', '', 'pixelated' %}
+	{% image './images/content/bowhead.png', 'A pixel art graphic of a bowhead whale, which is coming towards the viewer, its tail fading into the dark water around it', 'pixelated' %}
 	<figcaption><p>A lovely <a href="https://en.wikipedia.org/wiki/Bowhead_whale">bowhead whale</a>. I’d love other suggestions! 😅</p></figcaption>
 </figure>
 
