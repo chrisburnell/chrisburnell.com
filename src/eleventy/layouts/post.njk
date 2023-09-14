@@ -54,7 +54,10 @@ layout: base
 
 		{% include 'banner.njk' %}
 
-		{% include 'cover.njk' %}
+		{% if cover %}
+			{% set alt = 'Art for ' + (title | default(of_title) | striptags(true) | safe) -%}
+			{% image './images/covers/' + cover, alt, ' [ cover ] [ u-photo ] ', [400] %}
+		{% endif %}
 
 		{% include 'photo.njk' %}
 

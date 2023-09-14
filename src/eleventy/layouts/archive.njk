@@ -21,7 +21,7 @@ truncate: true
 		{%- if perch %}
 			<span class=" [ perch ] [ p-name ] ">
 				{{ title | safe }}
-				<img src="{{ site.logo }}" alt="" width="324" height="324" loading="lazy" decoding="async" role="presentation" hidden>
+				<img src="{{ site.logo }}" alt="{{ site.name }}" width="324" height="324" loading="lazy" decoding="async" role="presentation" hidden>
 			</span>
 		{%- else -%}
 			<span class=" [ p-name ] ">{{ title | safe }}</span>

@@ -5,7 +5,7 @@
 	const LASTFM_FEED = document.querySelector(".js-lastfm-feed")
 	const LASTFM_TEMPLATE = `
 <a href="URL" aria-hidden="true" tabindex="-1">
-	<img class=" [ cover ] [ u-photo ] " src="IMAGE" alt="" loading="lazy" decoding="async">
+	<img class=" [ cover ] [ u-photo ] " src="IMAGE" alt="Cover art for NAME" loading="lazy" decoding="async">
 </a>
 <h1>
 	<a href="URL">NAME</a>

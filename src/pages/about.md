@@ -84,7 +84,7 @@ I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link
     {%- for client in clients | sort(false, false, "title") -%}
         <article>
             <a href="{{ client.url }}" title="{{ client.title | safe }}" rel="external">
-                <img class=" [ interaction-grow{% if client.darkInvert %}  dark-invert-colors{% endif %} ] " src="/images/built/{{ client.image }}" alt="" loading="lazy" decoding="async" role="presentation" style="max-height: 8rem">
+                <img class=" [ interaction-grow{% if client.darkInvert %}  dark-invert-colors{% endif %} ] " src="/images/built/{{ client.image }}" alt="Logo for {{ client.title | safe }}" loading="lazy" decoding="async" role="presentation" style="max-height: 8rem">
             </a>
         </article>
     {%- endfor -%}
@@ -95,7 +95,7 @@ I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link
 <address>
     <dl>
         <dt>Email:</dt>
-        <dd><a class=" [ canada ] " href="mailto:{{ author.email }}"><img alt="" loading="lazy" decoding="async" src="/images/raven.svg" class="brand-logo" style="margin-inline-end: 1ex;">{{ author.email }}</a></dd>
+        <dd><a class=" [ canada ] " href="mailto:{{ author.email }}"><img alt="{{ site.title }}" loading="lazy" decoding="async" src="/images/raven.svg" class="brand-logo" style="margin-inline-end: 1ex;">{{ author.email }}</a></dd>
         <dt>Mastodon:</dt>
         <dd><a class=" [ canada ] " href="https://{{ author.mastodon_domain }}/users/{{ author.mastodon.split('@') | first }}" title="{{ author.name }} on Mastodon"><svg width="20" height="20" aria-hidden="true" focusable="false" style="--fill: #595aff; margin-inline-end: 1ex; vertical-align: sub;"><use href="#svg--mastodon"></use></svg>{{ '@' + author.mastodon }}</a></dd>
     </dl>

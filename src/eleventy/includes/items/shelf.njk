@@ -27,8 +27,6 @@
 	{% set item_of_url = "https://openlibrary.org/isbn/" + item.data.read_of %}
 {%- endif -%}
 <article class=" [ flow ] {% if hfeed and item.data.mf_root %}[ h-{{ item.data.mf_root }} ] {% endif %}">
-	{# {%- include 'cover.njk' -%} #}
-	{# Rudimentary workaround... AGAIN #}
 	{% if item.data.cover %}
 		{% if item.url and item.data.tags and "clickthrough" in item.data.tags %}
 			<a class=" [ cover-anchor ] " href="{{ item_of_url | default(item.url) | striptags(true) | safe }}" aria-hidden="true" tabindex="-1">

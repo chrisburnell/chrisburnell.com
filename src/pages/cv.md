@@ -58,7 +58,7 @@ Front End Developer with {{ global.now | friendlyDate("yyyy") - site.established
 - Single-handedly developed the UK’s first design system which is now used by more than 10 enterprise-level projects, leading to more coherent codebases and a significant reduction in bugs and turnaround time for ad hoc work.
 
 <div class=" [ space-between ] ">
-    <h3><a href="https://city.ac.uk"><c-emoji><img class="brand-logo" alt="" loading="lazy" decoding="async" src="/images/built/city-logo.png"></c-emoji> City, University of London</a></h3>
+    <h3><a href="https://city.ac.uk"><c-emoji><img class="brand-logo" alt="City, University of London’s logo" loading="lazy" decoding="async" src="/images/built/city-logo.png"></c-emoji> City, University of London</a></h3>
     <small><strong>June 2014 – February 2018</strong></small>
 </div>
 
@@ -81,14 +81,14 @@ Front End Developer with {{ global.now | friendlyDate("yyyy") - site.established
 <h2 style="break-before: page;">Community Experience</h2>
 
 <div class=" [ space-between ] ">
-    <h3 class=" [ delta ] ">Technical Writer on <a href="https://chrisburnell.com/"><c-emoji><img class="brand-logo" alt="" loading="lazy" decoding="async" src="/images/raven.svg"></c-emoji> chrisburnell.com</a></h3>
+    <h3 class=" [ delta ] ">Technical Writer on <a href="https://chrisburnell.com/"><c-emoji><img class="brand-logo" alt="{{ site.title }}" loading="lazy" decoding="async" src="/images/raven.svg"></c-emoji> chrisburnell.com</a></h3>
     <small><strong>2013 – present</strong></small>
 </div>
 
 Launched a web development blog, which accumulates *over 10,000 unique visitors per month*, and have published over [{{ collections.posts | length | toNearest(100) }} blog posts](https://chrisburnell.com/posts/), including [{{ collections.writingPosts | length }} longform articles](https://chrisburnell.com/writing/), [{{ collections.css | length }} articles about CSS](https://chrisburnell.com/tag/css/), and [{{ collections.code | length }} code demos](https://chrisburnell.com/tag/css/), some of which have been [featured on CodePen](https://codepen.io/collection/hfqlg).
 
 <div class=" [ space-between ] ">
-    <h3 class=" [ delta ] ">Conference Organiser for <a href="https://stateofthebrowser.com" rel="external"><c-emoji><img class="brand-logo" alt="" loading="lazy" decoding="async" src="/images/built/sotb-logo.png"></c-emoji> State of the Browser</a></h3>
+    <h3 class=" [ delta ] ">Conference Organiser for <a href="https://stateofthebrowser.com" rel="external"><c-emoji><img class="brand-logo" alt="State of the Browser’s logo" loading="lazy" decoding="async" src="/images/built/sotb-logo.png"></c-emoji> State of the Browser</a></h3>
     <small><strong>2017 – present</strong></small>
 </div>
 

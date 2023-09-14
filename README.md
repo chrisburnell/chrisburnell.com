@@ -1,4 +1,4 @@
-<img src="images/raven.svg" width="200" height="200" alt="">
+<img src="images/raven.svg" width="200" height="200" alt="Chris Burnell">
 
 # chrisburnell.com
 
