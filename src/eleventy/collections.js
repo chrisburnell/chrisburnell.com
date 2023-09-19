@@ -126,6 +126,9 @@ module.exports = {
 					return true
 				}
 			})
+			.sort((a, b) => {
+				return new Date(a.data.rsvp) - new Date(b.data.rsvp)
+			})
 	},
 	upcomingRSVPs: (collection) => {
 		const durationDay = 24 * 60 * 60 * 1000
@@ -137,6 +140,9 @@ module.exports = {
 				if (item.data.rsvp && (item.data.rsvp.show_upcoming_always || (epoch(item.data.rsvp.date) > now && epoch(item.data.rsvp.date) - epoch(now) < lead && friendlyDate(item.data.rsvp.date) != friendlyDate(now)))) {
 					return true
 				}
+			})
+			.sort((a, b) => {
+				return new Date(b.data.rsvp) - new Date(a.data.rsvp)
 			})
 	},
 	popular: (collection) => {
