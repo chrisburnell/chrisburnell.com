@@ -1,6 +1,10 @@
 const { DateTime } = require("luxon")
 const { ordinal } = require("./intl.js")
 
+const formatDate = (value, format) => {
+	return DateTime.fromJSDate(new Date(value)).toFormat(format)
+}
+
 module.exports = {
 	dateSort: (array) => {
 		return array.sort((a, b) => {
@@ -8,17 +12,15 @@ module.exports = {
 		})
 	},
 	friendlyDate: (value, format = "LLLL d, yyyy") => {
-		return DateTime.fromJSDate(new Date(value)).toFormat(format)
+		return formatDate(value, format)
 	},
 	friendlyDateLong: (value) => {
 		let day = DateTime.fromJSDate(new Date(value)).toFormat("d")
-		return DateTime.fromJSDate(new Date(value)).toFormat("cccc, LLLL _, yyyy").replace("_", ordinal(day))
+		return formatDate(value, `cccc, LLLL ${ordinal(day)}, yyyy`)
 	},
 	friendlyTime: (value, showTimezone = true) => {
-		if (showTimezone) {
-			return DateTime.fromJSDate(new Date(value)).toFormat("HH:mm ZZZZ").replace("GMT+1", "BST")
-		}
-		return DateTime.fromJSDate(new Date(value)).toFormat("HH:mm")
+		const timeFormat = showTimezone ? "HH:mm ZZZZ" : "HH:mm"
+		return formatDate(value, timeFormat).replace("GMT+1", "BST")
 	},
 	friendlyTimezone: (value) => {
 		return DateTime.fromJSDate(new Date(value)).zoneName

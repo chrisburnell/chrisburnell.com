@@ -23,25 +23,24 @@ module.exports = {
 		return !!item.url
 	},
 	arePublished: (array) => array.filter(module.exports.isPublished),
-	categoryFilter: (array) => {
-		array = array.filter((item) => {
-			if (categories.includes(item)) {
-				return false
-			}
-			return true
+	filterBy: (array, filterList) => {
+		return array.filter((item) => {
+			return !filterList.includes(item)
 		})
-		return array
+	},
+	categoryFilter: (array) => {
+		return module.exports.filterBy(array, categories)
 	},
 	tagFilter: (array) => {
-		return array.filter((item) => {
-			if (ignoredTags.includes(item)) {
-				return false
-			}
-			return true
-		})
+		return module.exports.filterBy(array, ignoredTags)
 	},
 	dateFilter: (a, b) => {
 		return new Date(b.data.date || b.date) - new Date(a.data.date || a.date)
 	},
-	notReply: (item) => !item.data.in_reply_to || (item.data.in_reply_to.url && item.data.in_reply_to.url.includes(siteUrl)) || (item.data.in_reply_to && typeof item.data.in_reply_to === "string" && item.data.in_reply_to.includes(siteUrl)),
+	notReply: (item) => {
+		const isReply = item.data.in_reply_to
+		const isReplyString = typeof item.data.in_reply_to === "string"
+
+		return !isReply || (isReply.url && isReply.url.includes(siteUrl)) || (isReplyString && isReply.includes(siteUrl))
+	},
 }

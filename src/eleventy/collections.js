@@ -5,18 +5,21 @@ const { dateFilter, isPublished, notReply } = require("#filters/collections")
 const { epoch, friendlyDate } = require("#filters/dates")
 const { exponentialMovingAverage } = require("#filters/utils")
 
+const durationDay = 24 * 60 * 60 * 1000
+
+const filterPosts = (collection, tags) => {
+	return collection.getFilteredByTag(tags).filter(isPublished).sort(dateFilter)
+}
+
 module.exports = {
 	page: (collection) => {
 		return collection.getFilteredByTag("page").filter(isPublished)
 	},
 	projects: (collection) => {
-		return collection
-			.getFilteredByTag("project")
-			.filter(isPublished)
-			.sort((a, b) => new Date(b.data.date) - new Date(a.data.date))
+		return filterPosts(collection, "project")
 	},
 	posts: (collection) => {
-		return collection.getFilteredByTag("post").filter(isPublished).sort(dateFilter)
+		return filterPosts(collection, "post")
 	},
 	drafts: (collection) => {
 		return collection
@@ -35,7 +38,7 @@ module.exports = {
 			.sort(dateFilter)
 	},
 	writingPosts: (collection) => {
-		return collection.getFilteredByTag("writing").filter(isPublished).sort(dateFilter)
+		return filterPosts(collection, "writing")
 	},
 	featurePosts: (collection) => {
 		return collection.getFilteredByTag("feature").filter(isPublished).filter(notReply).sort(dateFilter)
@@ -131,7 +134,6 @@ module.exports = {
 			})
 	},
 	upcomingRSVPs: (collection) => {
-		const durationDay = 24 * 60 * 60 * 1000
 		return collection
 			.getFilteredByTag("post")
 			.filter(isPublished)
