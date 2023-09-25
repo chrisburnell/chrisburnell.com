@@ -16,7 +16,7 @@ const sotbUpcoming = () => {
 	const startEpoch = new Date(sotbDate).getTime()
 	const lead = 1000 * 60 * 60 * 24 * sotbLead
 
-	return startEpoch - now < lead
+	return startEpoch - now < lead && now < startEpoch
 }
 
 const random = () => {
