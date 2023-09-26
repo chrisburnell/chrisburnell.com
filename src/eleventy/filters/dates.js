@@ -16,7 +16,7 @@ module.exports = {
 	},
 	friendlyDateLong: (value) => {
 		let day = DateTime.fromJSDate(new Date(value)).toFormat("d")
-		return formatDate(value, `cccc, LLLL _, yyyy`).replace("_", ordinal(day))
+		return formatDate(value, `cccc, LLLL '${ordinal(day)}', yyyy`)
 	},
 	friendlyTime: (value, showTimezone = true) => {
 		const timeFormat = showTimezone ? "HH:mm ZZZZ" : "HH:mm"
