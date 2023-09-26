@@ -5,7 +5,9 @@ description: I recently decided I would embark on the task of theming Pinboard. 
 tags:
   - css
   - ux
-banner: theming-pinboard.png
+banner:
+  url: theming-pinboard.png
+  alt: a screenshot of Pinboard, an online tool for managing and organising bookmarks
 syndicate_to:
   - https://twitter.com/iamchrisburnell/status/576014944627490816
 ---

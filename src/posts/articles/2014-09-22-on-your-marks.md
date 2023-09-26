@@ -6,7 +6,9 @@ title: On Your Marks, Get Set, Wait
 description: What's really important when reading an article online? Content should always come first, and give users the option for more later.
 tags:
   - javascript
-banner: on-your-marks.png
+banner:
+  url: on-your-marks.png
+  alt: a photograph of a person opening the hood of their car, alone on a road lined on either side by sidewalk and grass
 syndicate_to:
   - https://twitter.com/iamchrisburnell/status/514049979347107840
 ---

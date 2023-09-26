@@ -5,7 +5,9 @@ description: Navigation is crucial to a functional website. It is how your users
 tags:
   - css
   - ux
-banner: annoying-navigation-css.png
+banner:
+  url: annoying-navigation-css.png
+  alt: a photograph showing a dizzying scene of dozens, if not hundreds, of cars arranged tightly in all sorts of directions in what may be some kind of parking lot
 ---
 
 Here’s a quick, little *CodePen* showcasing two annoying bits of CSS that many developers, sadly, are guilty of writing. It’s interactive, so make sure you hover and click around:

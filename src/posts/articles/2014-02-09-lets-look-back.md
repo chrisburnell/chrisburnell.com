@@ -6,7 +6,9 @@ tags:
   - css
   - github
   - scss
-banner: lets-look-back.png
+banner:
+  url: lets-look-back.png
+  alt: a photograph of a hiker walking up a foggy path lined with moss and coniferous trees, two steep mountains reaching high up on either side of the valley trail
 syndicate_to:
   - https://twitter.com/iamchrisburnell/status/432475967098224640
 ---

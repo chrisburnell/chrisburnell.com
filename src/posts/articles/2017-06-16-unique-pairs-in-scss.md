@@ -4,7 +4,9 @@ title: Unique Pairs in SCSS
 description: In creating a from-scratch grid for a redevelopment project, I was using SCSS to loop through various bits of data to generate a bunch of repetitive CSS, but I realised I had no DRY way of generating a list of unique pairs of items from a given dataset, so I set out to find out how.
 tags:
   - scss
-banner: unique-pairs-in-scss.jpg
+banner:
+  url: unique-pairs-in-scss.jpg
+  alt: a photograph looking upwards at many umbrellas of varying colours, arranged in columns and rows
 syndicate_to:
   - https://twitter.com/iamchrisburnell/status/877492210241032192
 ---

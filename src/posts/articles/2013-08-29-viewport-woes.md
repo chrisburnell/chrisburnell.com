@@ -4,7 +4,9 @@ title: Viewport Woes
 description: I've been around the block and seen many variations of variables and syntax in viewport meta tags. What's the correct way to go about it? And maybe I'll comment on the state of browsers today as well.
 tags:
   - html
-banner: viewport-woes.png
+banner:
+  url: viewport-woes.png
+  alt: an old black and white photograph of a person using a telescope to peer across the bow of a sailing boat at a large iceberg in the water some 100 or so metres away
 syndicate_to:
   - https://twitter.com/iamchrisburnell/status/373096041509568512
 ---

@@ -3,7 +3,9 @@ date: 2015-02-01T12:00:00+0000
 title: Caramel Popcorn
 cooking_time: 75 minutes
 preheat: true
-banner: caramel-popcorn.png
+banner:
+  url: caramel-popcorn.png
+  alt: a photograph of the finished product of this recipe, caramel popcorn, spread liberally across the popcorn, but not enough to fully-coat it
 ingredients:
   - title: unpopped popcorn
     ml: 250

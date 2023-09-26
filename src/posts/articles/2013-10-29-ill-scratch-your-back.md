@@ -6,7 +6,9 @@ title: I’ll Scratch Your Back, And Mine Too
 description: I've been playing around with CSS content and attribute selectors recently, and came across a useful trick for styling default elements.
 tags:
   - css
-banner: ill-scratch-your-back.png
+banner:
+  url: ill-scratch-your-back.png
+  alt: an old black and white photograph of a trainyard where a black train comes towards the viewer, a grand city appearing in the background beyond a row of powerlines and a sign for a steel company
 syndicate_to:
   - https://twitter.com/iamchrisburnell/status/395115858814840833
 ---

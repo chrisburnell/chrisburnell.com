@@ -6,7 +6,9 @@ tags:
   - javascript
   - performance
   - motion
-banner: crossing-guards.png
+banner:
+  url: crossing-guards.png
+  alt: a cartoonised-image of a crossing guard holding a stop sign at the middle of a crosswalk
 syndicate_to:
   - https://twitter.com/iamchrisburnell/status/928671414017773568
 ---

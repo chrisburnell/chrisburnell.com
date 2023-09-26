@@ -8,7 +8,9 @@ tags:
   - github
   - jekyll
   - sotb
-banner: first-article-ever.png
+banner:
+  url: first-article-ever.png
+  alt: an old black and white photograph of a person in a rowboat looking out across a still and glassy lake, with the distant shore visible in the far background
 syndicate_to:
   - https://twitter.com/iamchrisburnell/status/345878691110334466
 ---

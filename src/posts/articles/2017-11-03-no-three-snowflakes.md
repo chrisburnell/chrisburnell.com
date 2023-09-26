@@ -4,7 +4,9 @@ title: No Three Snowflakes Are Alike
 description: I developed a Sass function to generate a list of unique pairs given a List or Map of data, so I extrapolated the idea and refactored the function to generate a series of unique groups of size <var>n</var>.
 tags:
   - scss
-banner: no-three-snowflakes.jpg
+banner:
+  url: no-three-snowflakes.jpg
+  alt: a microscopic photo of a large clump of mostly-unbroken snowflakes
 syndicate_to:
   - https://twitter.com/iamchrisburnell/status/926496715213033472
 ---

@@ -5,7 +5,9 @@ description: For a better part of the year, I've been working on a Jekyll-based 
 tags:
   - jekyll
   - liquid
-banner: numerals-romanticised.jpg
+banner:
+  url: numerals-romanticised.jpg
+  alt: a photograph of the Trevi Fountain, up-close on Neptune in the middle of the sculpture
 further_reading:
   - title: Roman numerals on Wikipedia
     url: https://en.wikipedia.org/wiki/Roman_numerals
