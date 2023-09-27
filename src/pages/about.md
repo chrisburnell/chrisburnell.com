@@ -84,7 +84,7 @@ I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link
     {%- for client in clients | sort(false, false, "title") -%}
         <article>
             <a href="{{ client.url }}" title="{{ client.title | safe }}" rel="external">
-                <img class=" [ interaction-grow{% if client.darkInvert %}  dark-invert-colors{% endif %} ] " src="/images/built/{{ client.image }}" alt="Logo for {{ client.title | safe }}" loading="lazy" decoding="async" role="presentation" style="max-height: 8rem">
+                <img class=" [ interaction-grow{% if client.darkInvert %}  dark-invert-colors{% endif %} ] " src="/images/built/{{ client.image }}" alt="" loading="lazy" decoding="async" style="max-height: 8rem">
             </a>
         </article>
     {%- endfor -%}
