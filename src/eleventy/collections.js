@@ -119,6 +119,9 @@ module.exports = {
 				return "rsvp" in item.data
 			})
 			.sort(dateFilter)
+			.sort((a, b) => {
+				return new Date(b.data.rsvp.end) - new Date(a.data.rsvp.end)
+			})
 	},
 	todayRSVPs: (collection) => {
 		return collection
