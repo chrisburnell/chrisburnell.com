@@ -75,77 +75,77 @@ Sizes can take trickier forms to identify and categorise, and I recommend allowi
 Extrapolating from here across the vast variety of CSS *properties* and the *data type of the values* they expect, you end up with a map of *most properties* against value types:
 
 <table>
-	<thead>
-		<tr>
-			<th>color</th>
-			<th>size</th>
-			<th>alignment</th>
-			<th>…</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>
-				<code>background-color</code><br>
-				<code>border-color</code><br>
-				<code>outline-color</code><br>
-				<code>color</code><br>
-				<code>fill</code><br>
-				<code>stroke</code><br>
-				<code>…</code>
-			</td>
-			<td>
-				<code>width</code><br>
-				<code>height</code><br>
-				<code>padding</code><br>
-				<code>margin</code><br>
-				<code>border-width</code><br>
-				<code>min-width</code><br>
-				<code>max-width</code><br>
-				<code>…</code>
-			</td>
-			<td>
-				<code>align-items</code><br>
-				<code>justify-content</code><br>
-				<code>…</code>
-			</td>
-		</tr>
-	</tbody>
+    <thead>
+        <tr>
+            <th>color</th>
+            <th>size</th>
+            <th>alignment</th>
+            <th>…</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <code>background-color</code><br>
+                <code>border-color</code><br>
+                <code>outline-color</code><br>
+                <code>color</code><br>
+                <code>fill</code><br>
+                <code>stroke</code><br>
+                <code>…</code>
+            </td>
+            <td>
+                <code>width</code><br>
+                <code>height</code><br>
+                <code>padding</code><br>
+                <code>margin</code><br>
+                <code>border-width</code><br>
+                <code>min-width</code><br>
+                <code>max-width</code><br>
+                <code>…</code>
+            </td>
+            <td>
+                <code>align-items</code><br>
+                <code>justify-content</code><br>
+                <code>…</code>
+            </td>
+        </tr>
+    </tbody>
 </table>
 
 With this knowledge under our belt, we can begin to define the design tokens for our particular project by fleshing out what *values* are available underneath each *type*:
 
 <table>
-	<thead>
-		<tr>
-			<th>color</th>
-			<th>size</th>
-			<th>alignment</th>
-			<th>…</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>
-				<code>#b22222</code><br>
-				<code>#3cb371</code><br>
-				<code>#d2b48c</code><br>
-				<code>…</code>
-			</td>
-			<td>
-				<code>1em</code><br>
-				<code>20px</code><br>
-				<code>2px</code><br>
-				<code>…</code>
-			</td>
-			<td>
-				<code>flex-start</code><br>
-				<code>flex-end</code><br>
-				<code>center</code><br>
-				<code>…</code>
-			</td>
-		</tr>
-	</tbody>
+    <thead>
+        <tr>
+            <th>color</th>
+            <th>size</th>
+            <th>alignment</th>
+            <th>…</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <code>#b22222</code><br>
+                <code>#3cb371</code><br>
+                <code>#d2b48c</code><br>
+                <code>…</code>
+            </td>
+            <td>
+                <code>1em</code><br>
+                <code>20px</code><br>
+                <code>2px</code><br>
+                <code>…</code>
+            </td>
+            <td>
+                <code>flex-start</code><br>
+                <code>flex-end</code><br>
+                <code>center</code><br>
+                <code>…</code>
+            </td>
+        </tr>
+    </tbody>
 </table>
 
 ## Usage
@@ -153,7 +153,7 @@ With this knowledge under our belt, we can begin to define the design tokens for
 <table>
 	<thead>
 		<tr>
-			<td></td>
+			<th> </th>
 			<th>Values</th>
 			<th>Description</th>
 		</tr>

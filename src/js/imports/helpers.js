@@ -30,7 +30,7 @@ const helpers = {
 
 	////
 	/// Enable a button
-	/// @param {Element} element
+	/// @param {HTMLElement} element
 	/// @param {Function} action
 	/// @return false
 	////
@@ -74,14 +74,14 @@ const helpers = {
 	////
 	formatTime: (date, includeSeconds = false, includeMeridiem = true) => {
 		let hours = date.getHours()
-		let minutes = `:${date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes()}`
-		let seconds = includeSeconds ? `:${date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds()}` : ""
-		let meridiem = includeMeridiem ? ` ${hours < 12 ? "am" : "pm"}` : ""
+		const minutes = date.getMinutes().toString().padStart(2, "0")
+		const seconds = includeSeconds ? `:${date.getSeconds().toString().padStart(2, "0")}` : ""
+		const meridiem = includeMeridiem ? ` ${hours < 12 ? "am" : "pm"}` : ""
 
 		// format from 24-hours to 12-hours if including meridiem
 		hours = includeMeridiem ? hours % 12 || 12 : hours
 
-		return `${hours}${minutes}${seconds}${meridiem}`
+		return `${hours}:${minutes}${seconds}${meridiem}`
 	},
 
 	////
@@ -187,26 +187,23 @@ const helpers = {
 	////
 	/// Deep Includes for Objects
 	////
-	includesDeep: (object, value, caseSensitive = true) => {
-		if (typeof value === "string") {
-			value = caseSensitive ? value : value.toLowerCase()
-		}
-		return Object.values(object).some((v) => {
-			if (typeof v === "number") {
-				if (typeof value === "number") {
-					return v === value
-				}
-				return `${v}`.includes(value)
-			}
-			if (typeof v === "string") {
-				v = caseSensitive ? v : v.toLowerCase()
-				return v.includes(value)
-			}
-			if (typeof v === "object") {
-				return helpers.includesDeep(v, value, caseSensitive)
+	includesDeep: (object, searchValue, caseSensitive = true) => {
+		const normalizeValue = (value) => (caseSensitive && typeof value === "string" ? value : value.toString().toLowerCase())
+
+		const normalizedSearchValue = typeof searchValue === "string" ? normalizeValue(searchValue) : searchValue
+
+		const checkValue = (value) => {
+			if (typeof value === "number") {
+				return value === normalizedSearchValue || `${value}`.includes(normalizedSearchValue)
+			} else if (typeof value === "string") {
+				return normalizeValue(value).includes(normalizedSearchValue)
+			} else if (typeof value === "object") {
+				return helpers.includesDeep(value, normalizedSearchValue, caseSensitive)
 			}
 			return false
-		})
+		}
+
+		return Object.values(object).some(checkValue)
 	},
 
 	////

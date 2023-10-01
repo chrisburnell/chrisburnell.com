@@ -1,6 +1,6 @@
 {
   "name": "chrisburnell",
-  "version": "3.7.11",
+  "version": "3.7.12",
   "description": "Some real sweet codestuffs.",
   "author": "Chris Burnell <me@chrisburnell.com>",
   "contributors": [
@@ -20,7 +20,7 @@
     "url": "https://github.com/chrisburnell/chrisburnell.com/issues"
   },
   "devDependencies": {
-    "@csstools/postcss-oklab-function": "^3.0.4",
+    "@csstools/postcss-oklab-function": "^3.0.5",
     "@rollup/plugin-commonjs": "^25.0.4",
     "@rollup/plugin-node-resolve": "^15.2.1",
     "autoprefixer": "^10.4.16",
@@ -31,7 +31,7 @@
     "lightningcss": "^1.22.0",
     "lightningcss-cli": "^1.22.0",
     "postcss-cli": "^10.1.0",
-    "postcss-scss": "^4.0.8",
+    "postcss-scss": "^4.0.9",
     "prettier": "^3.0.3",
     "rollup": "2.79.1",
     "rollup-plugin-terser": "7.0.2",
@@ -53,11 +53,12 @@
     "@chrisburnell/eleventy-cache-webmentions": "^1.2.5",
     "@chrisburnell/pentatonic": "^1.1.4",
     "@chrisburnell/spark-line": "^1.2.6",
-    "@mdn/browser-compat-data": "^5.3.18",
+    "@mdn/browser-compat-data": "^5.3.19",
     "@sindresorhus/slugify": "1.1.2",
     "@tweetback/canonical": "^2.0.37",
     "@zachleat/details-utils": "^2.0.2",
     "@zachleat/seven-minute-tabs": "^2.0.0",
+    "@zachleat/table-saw": "^1.0.2",
     "caniuse-api": "^3.0.0",
     "cheerio": "^1.0.0-rc.12",
     "dotenv": "^16.3.1",
@@ -65,7 +66,7 @@
     "html-minifier": "^4.0.0",
     "lite-youtube-embed": "^0.2.0",
     "luxon": "^3.4.3",
-    "markdown-it": "^13.0.1",
+    "markdown-it": "^13.0.2",
     "markdown-it-abbr": "^1.0.4",
     "markdown-it-footnote": "^3.0.3",
     "natural": "^6.7.2"

@@ -15,12 +15,12 @@ toc: true
 ---
 
 <figure>
-    {% image './images/content/pentatonic.png', 'A simple pixel-art graphic of some piano keys where the keys of the C Major Pentatonic scale are highlighted', 'pixelated' %}
-    <figcaption><p>A snippet of a <a href="https://en.wikipedia.org/wiki/Pentatonic_scale">C Major Pentatonic scale</a>.</p></figcaption>
+	{% image './images/content/pentatonic.png', 'A simple pixel-art graphic of some piano keys where the keys of the C Major Pentatonic scale are highlighted', 'pixelated' %}
+	<figcaption><p>A snippet of a <a href="https://en.wikipedia.org/wiki/Pentatonic_scale">C Major Pentatonic scale</a>.</p></figcaption>
 </figure>
 
 <div class="box">
-    <p><em>Hey, psst!…</em> You can jump straight down to the <a href="#examples">examples</a>!</p>
+	<p><em>Hey, psst!…</em> You can jump straight down to the <a href="#examples">examples</a>!</p>
 </div>
 
 {% include 'package.njk' %}
@@ -54,7 +54,7 @@ The function takes six parameters:
 <table>
     <thead>
         <tr>
-            <td></td>
+            <th> </th>
             <th>Values</th>
             <th>Description</th>
         </tr>
@@ -93,14 +93,14 @@ The function takes six parameters:
             <td style="white-space:nowrap">
                 [2, 2, 3, 2, 3] <em>(default)</em>
             </td>
-          <td>an array of integers which represent half-steps in a loop which composes the desired scale</td>
+            <td>an array of integers which represent half-steps in a loop which composes the desired scale</td>
         </tr>
         <tr>
             <th><code>keyLimit</code></th>
             <td style="white-space:nowrap">
                 12 <em>(default)</em>
             </td>
-          <td>represents the highest index in the desired scale by which notes are bound by</td>
+            <td>represents the highest index in the desired scale by which notes are bound by</td>
         </tr>
     </tbody>
 </table>

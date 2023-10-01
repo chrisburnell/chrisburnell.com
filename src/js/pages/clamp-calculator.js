@@ -1,3 +1,7 @@
+/**
+ * Clamp Calculator
+ * @class
+ */
 class ClampCalculator {
 	constructor() {
 		this.inputs = {
@@ -12,14 +16,29 @@ class ClampCalculator {
 		this.init()
 	}
 
+	/**
+	 * Force a number to a specific number of decimal places.
+	 * @param {Number} value
+	 * @param {Number} decimals
+	 * @returns {Number}
+	 */
 	limitDecimals(value, decimals = 3) {
 		return parseFloat(value.toFixed(decimals))
 	}
 
+	/**
+	 * Converts a value from units in pixels to rems.
+	 * @param {Number} px
+	 * @param {Number} base
+	 * @returns {Number}
+	 */
 	toRem(px, base = 16) {
 		return this.limitDecimals(px / base)
 	}
 
+	/**
+	 * Perform the necessary calculations and pump the results into the DOM.
+	 */
 	calculate() {
 		const viewportUnits = this.inputs["viewport-units"].value
 		const change = (this.inputs["size-max"].value - this.inputs["size-min"].value) / (this.inputs["viewport-max"].value - this.inputs["viewport-min"].value)
@@ -67,11 +86,17 @@ Maximum Size ≈ ${this.limitDecimals(this.inputs["size-max"].value - this.input
 		this.measureViewport()
 	}
 
+	/**
+	 * Calculate and inject the measure of the viewport.
+	 */
 	measureViewport() {
 		this.visualCalculated.querySelector("span").innerText = `Current Size: ${this.limitDecimals(this.visualOutput.querySelector(".size-example").getBoundingClientRect().width, 3)}px`
 		this.visualViewport.querySelector("span").innerText = `Viewport Size: ${window.innerWidth}px × ${window.innerHeight}px`
 	}
 
+	/**
+	 * Look for URL parameters and attach event listeners to form elements.
+	 */
 	init() {
 		const params = new URLSearchParams(window.location.search)
 
@@ -131,7 +156,13 @@ Maximum Size ≈ ${this.limitDecimals(this.inputs["size-max"].value - this.input
 }
 
 if ("HTMLElement" in window) {
+	/**
+	 * @type {ClampCalculator}
+	 */
 	window.ClampCalculator = new ClampCalculator()
 }
 
+/**
+ * @type {ClampCalculator}
+ */
 export default ClampCalculator

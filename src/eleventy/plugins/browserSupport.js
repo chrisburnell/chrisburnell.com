@@ -41,7 +41,10 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.addNunjucksAsyncShortcode("browserSupport", async (featureID) => {
 		const caniuseSupport = await getCaniuseSupport(featureID)
 			.then((caniuseSupport) => caniuseSupport)
-			.catch(() => false)
+			.catch((error) => {
+				// console.error("No CanIUse Support", error)
+				return false
+			})
 
 		if (caniuseSupport) {
 			// We'll rewrite these as we go
@@ -82,7 +85,10 @@ module.exports = (eleventyConfig) => {
 		} else {
 			const browserslistSupport = await getBrowserslistSupport(featureID)
 				.then((browserslistSupport) => browserslistSupport)
-				.catch(() => false)
+				.catch((error) => {
+					// console.error("No Browserslist Support", error)
+					return false
+				})
 
 			if (browserslistSupport) {
 				// We'll rewrite these as we go
@@ -129,7 +135,10 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.addNunjucksAsyncShortcode("browserSupportRow", async (feature) => {
 		const caniuseSupport = await getCaniuseSupport(feature.id)
 			.then((caniuseSupport) => caniuseSupport)
-			.catch(() => false)
+			.catch((error) => {
+				// console.error("No CanIUse Support", error)
+				return false
+			})
 
 		if (caniuseSupport) {
 			// We'll rewrite these as we go
@@ -155,7 +164,10 @@ module.exports = (eleventyConfig) => {
 		} else {
 			const browserslistSupport = await getBrowserslistSupport(feature.id)
 				.then((browserslistSupport) => browserslistSupport)
-				.catch(() => false)
+				.catch((error) => {
+					// console.error("No Browserslist Support", error)
+					return false
+				})
 
 			if (browserslistSupport) {
 				// We'll rewrite these as we go

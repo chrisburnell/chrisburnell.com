@@ -28,9 +28,8 @@
 
 	let title = document.querySelector(".title .p-name")
 	let titleText = title.innerHTML
-	let dots
-	let inputCheck = setInterval(() => {
-		dots = (title.innerHTML.match(/\./g) || []).length
+	setInterval(() => {
+		let dots = (title.innerHTML.match(/\./g) || []).length
 		if (dots == 3) {
 			title.innerHTML = titleText
 		} else {

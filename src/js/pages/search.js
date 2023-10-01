@@ -1,4 +1,11 @@
+/**
+ * Search Input
+ * @class
+ */
 class SearchInput {
+	/**
+	 * @constructor
+	 */
 	constructor() {
 		this.form = document.getElementById("search")
 		this.input = this.form.querySelector("input")
@@ -14,7 +21,13 @@ class SearchInput {
 }
 
 if ("HTMLElement" in window) {
+	/**
+	 * @type {SearchInput}
+	 */
 	window.SearchInput = new SearchInput()
 }
 
+/**
+ * @type {SearchInput}
+ */
 export default SearchInput

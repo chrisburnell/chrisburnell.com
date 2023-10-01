@@ -11,8 +11,8 @@ if (navigator.serviceWorker) {
 				serviceWorker = registration.active
 			}
 		})
-		.catch((err) => {
-			console.log("ServiceWorker registration failed:", err)
+		.catch((error) => {
+			console.log("ServiceWorker Registration failed", error)
 		})
 	window.addEventListener("load", () => {
 		if (navigator.serviceWorker.controller) {

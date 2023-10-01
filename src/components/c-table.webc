@@ -1,0 +1,7 @@
+<is-land>
+	<table-saw webc:keep type="container" breakpoint="(max-width: 500px)" zero-padding>
+		<slot></slot>
+	</table-saw>
+
+	<template webc:raw data-island="once"><script src="/js/components/table-saw.js" type="module"></script></template>
+</is-land>

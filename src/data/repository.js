@@ -11,13 +11,15 @@ const getGithubData = async (repository) => {
 module.exports = async () => {
 	const information = await getGithubData(`${github}/${repository}`)
 		.then((information) => information)
-		.catch(() => {
+		.catch((error) => {
+			console.error("GitHub Repository Information Error", error)
 			return {}
 		})
 
 	const contributors = await getGithubData(`${github}/${repository}/contributors`)
 		.then((contributors) => contributors)
-		.catch(() => {
+		.catch((error) => {
+			console.error("GitHub Contributors Error", error)
 			return {}
 		})
 

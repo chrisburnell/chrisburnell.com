@@ -1,4 +1,11 @@
+/**
+ * URL Input
+ * @class
+ */
 class UrlInput {
+	/**
+	 * @constructor
+	 */
 	constructor() {
 		this.inputs = document.querySelectorAll('input[type="url"]')
 
@@ -16,16 +23,23 @@ class UrlInput {
 
 	/**
 	 * Add `http://` to URL input fields on blur or when Enter is pressed
+	 * @param {HTMLElement} input - A URL input element.
 	 */
-	addDefaultScheme(target) {
-		if (target.value.match(/^(?!https?:).+\..+/)) {
-			target.value = `https://${target.value}`
+	addDefaultScheme(input) {
+		if (input.value.match(/^(?!https?:).+\..+/)) {
+			input.value = `https://${input.value}`
 		}
 	}
 }
 
 if ("HTMLElement" in window) {
+	/**
+	 * @type {UrlInput}
+	 */
 	window.UrlInput = new UrlInput()
 }
 
+/**
+ * @type {UrlInput}
+ */
 export default UrlInput

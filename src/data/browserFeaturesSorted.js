@@ -37,7 +37,10 @@ module.exports = async () => {
 	for (let feature of browserFeatures) {
 		const caniuseSupport = await getCaniuseSupport(feature.id)
 			.then((caniuseSupport) => caniuseSupport)
-			.catch(() => false)
+			.catch((error) => {
+				// console.error("No CanIUse Support", error)
+				return false
+			})
 
 		if (caniuseSupport) {
 			feature.full = 0
@@ -54,7 +57,10 @@ module.exports = async () => {
 		} else {
 			const browserslistSupport = await getBrowserslistSupport(feature.id)
 				.then((browserslistSupport) => browserslistSupport)
-				.catch(() => false)
+				.catch((error) => {
+					// console.error("No Browserslist Support", error)
+					return false
+				})
 
 			if (browserslistSupport) {
 				feature.full = 0

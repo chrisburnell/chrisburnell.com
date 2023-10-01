@@ -1,4 +1,10 @@
-class DetailsExclusivePolyfill {
+/**
+ * Polyfill for Exclusively-Opened Details Elements
+ */
+class PolyfillDetailsExclusive {
+	/**
+	 * @constructor
+	 */
 	constructor() {
 		this.details = [...document.querySelectorAll("details[name]")]
 		this.summaries = [...document.querySelectorAll("details[name] > summary")]
@@ -14,7 +20,8 @@ class DetailsExclusivePolyfill {
 				this.details
 					.filter((d) => {
 						return d.getAttribute("name") === name && d !== details
-					}).forEach((d) => {
+					})
+					.forEach((d) => {
 						d.removeAttribute("open")
 					})
 			})
@@ -23,7 +30,13 @@ class DetailsExclusivePolyfill {
 }
 
 if ("HTMLElement" in window) {
-	window.DetailsExclusivePolyfill = new DetailsExclusivePolyfill()
+	/**
+	 * @type {PolyfillDetailsExclusive}
+	 */
+	window.PolyfillDetailsExclusive = new PolyfillDetailsExclusive()
 }
 
-export default DetailsExclusivePolyfill
+/**
+ * @type {PolyfillDetailsExclusive}
+ */
+export default PolyfillDetailsExclusive

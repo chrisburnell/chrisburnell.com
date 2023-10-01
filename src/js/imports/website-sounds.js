@@ -1,6 +1,13 @@
 import pentatonic from "@chrisburnell/pentatonic"
 
+/**
+ * Website Sounds
+ * @class
+ */
 class WebsiteSounds {
+	/**
+	 * @constructor
+	 */
 	constructor() {
 		this.STORAGE_KEY = "user-sounds"
 
@@ -38,6 +45,10 @@ class WebsiteSounds {
 		this.init()
 	}
 
+	/**
+	 * Applies a specific setting.
+	 * @param {String} passedSetting
+	 */
 	applySetting(passedSetting) {
 		const currentSetting = passedSetting || localStorage.getItem(this.STORAGE_KEY)
 
@@ -50,6 +61,10 @@ class WebsiteSounds {
 		}
 	}
 
+	/**
+	 * Enables/Disables website sounds.
+	 * @returns {String} The opposite setting to the current one.
+	 */
 	toggleSetting() {
 		const currentSetting = localStorage.getItem(this.STORAGE_KEY) === "true" ? "false" : "true"
 
@@ -58,6 +73,9 @@ class WebsiteSounds {
 		return currentSetting
 	}
 
+	/**
+	 * Plays the author name audio file.
+	 */
 	playName() {
 		if (!this.isPlaying) {
 			if (!this.nameAudio) {
@@ -71,6 +89,9 @@ class WebsiteSounds {
 		}
 	}
 
+	/**
+	 * Initialises Website Sounds.
+	 */
 	init() {
 		// In-page Sounds
 		this.soundsToggleButton = document.querySelector(".js-sounds-toggle")
@@ -151,7 +172,13 @@ class WebsiteSounds {
 }
 
 if ("HTMLElement" in window) {
+	/**
+	 * @type {WebsiteSounds}
+	 */
 	window.WebsiteSounds = new WebsiteSounds()
 }
 
+/**
+ * @type {WebsiteSounds}
+ */
 export default WebsiteSounds

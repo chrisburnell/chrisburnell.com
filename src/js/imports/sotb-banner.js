@@ -1,4 +1,11 @@
+/**
+ * SotB Banner
+ * @class
+ */
 class sotbBanner {
+	/**
+	 * @constructor
+	 */
 	constructor() {
 		this.HIDE_KEY = "hide-sotb-banner"
 		this.OPEN_KEY = "open-sotb-banner"
@@ -22,18 +29,30 @@ class sotbBanner {
 		}
 	}
 
+	/**
+	 * Hides the banner.
+	 */
 	setHidden() {
 		localStorage.setItem(this.HIDE_KEY, true)
 		this.banner.hidden = true
 	}
 
+	/**
+	 * Opens/Closes the details element enclosing the banner contents.
+	 */
 	toggleOpen() {
 		localStorage.setItem(this.OPEN_KEY, this.banner.open)
 	}
 }
 
 if ("HTMLElement" in window) {
+	/**
+	 * @type {sotbBanner}
+	 */
 	window.sotbBanner = new sotbBanner()
 }
 
+/**
+ * @type {sotbBanner}
+ */
 export default sotbBanner

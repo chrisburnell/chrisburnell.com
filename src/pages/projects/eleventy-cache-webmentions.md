@@ -21,7 +21,7 @@ toc: true
 ---
 
 <figure>
-    {% image './images/content/eleventy-cache-webmentions.png', 'A hand emblazoned with a tattoo reading, “Cache up Sucker” with a dollar sign in the middle', 'pixelated' %}
+	{% image './images/content/eleventy-cache-webmentions.png', 'A hand emblazoned with a tattoo reading, “Cache up Sucker” with a dollar sign in the middle', 'pixelated' %}
 </figure>
 
 {% include 'package.njk' %}

@@ -1,4 +1,11 @@
+/**
+ * Get YouTube RSS Feed
+ * @class
+ */
 class GetYouTubeFeed {
+	/**
+	 * @constructor
+	 */
 	constructor() {
 		this.form = document.querySelector(".get-youtube-feed")
 		this.input = this.form.querySelector("input")
@@ -15,6 +22,10 @@ class GetYouTubeFeed {
 		})
 	}
 
+	/**
+	 * Figures out how to extract the channel from the input URL and then
+	 * injects the input to hold the URL of the respective feed.
+	 */
 	convertURL() {
 		const url = this.input.value
 
@@ -26,7 +37,13 @@ class GetYouTubeFeed {
 }
 
 if ("HTMLElement" in window) {
+	/**
+	 * @type {GetYouTubeFeed}
+	 */
 	window.GetYouTubeFeed = new GetYouTubeFeed()
 }
 
+/**
+ * @type {GetYouTubeFeed}
+ */
 export default GetYouTubeFeed

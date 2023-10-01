@@ -18,11 +18,11 @@ js_module: spark-line.js
 <noscript><p>Unfortunately, this page requires JavaScript to display sparklines and use the interactive example.</p></noscript>
 
 <figure>
-    <c-spark-line values="0,0,2,5,7,13,13,18,14,11,19,44,37,37,38,27,23,9,6,5,6,1,1,2,1,0"></c-spark-line>
+	<c-spark-line values="0,0,2,5,7,13,13,18,14,11,19,44,37,37,38,27,23,9,6,5,6,1,1,2,1,0"></c-spark-line>
 </figure>
 
 <div class="box">
-    <p><em>Hey, psst!…</em> You can jump straight down to the <a href="#examples">examples</a>!</p>
+	<p><em>Hey, psst!…</em> You can jump straight down to the <a href="#examples">examples</a>!</p>
 </div>
 
 {% include 'package.njk' %}
@@ -60,7 +60,7 @@ The element takes a number of attributes:
 <table>
     <thead>
         <tr>
-            <td></td>
+            <th> </th>
             <th>Values</th>
             <th>Description</th>
         </tr>
@@ -159,66 +159,66 @@ If you wanted to use `<is-land>` as well, I recommend something like the followi
 ## Examples
 
 <div class=" [ grid ] [ shelf ] ">
-    <article>
-        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0"></c-spark-line>
-        <p><em>default</em></p>
-    </article>
-    <article>
-        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" line-width="4"></c-spark-line>
-        <p><code>line-width="4"</code></p>
-    </article>
-    <article>
-        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" curve="false"></c-spark-line>
-        <p><code>curve="false"</code></p>
-    </article>
-    <article>
-        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" endpoint="false"></c-spark-line>
-        <p><code>endpoint="false"</code></p>
-    </article>
-    <article>
-        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" color="rebeccapurple"></c-spark-line>
-        <p><code>color="rebeccapurple"</code></p>
-    </article>
-    <article>
-        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" endpoint-color="red"></c-spark-line>
-        <p><code>endpoint-color="red"</code></p>
-    </article>
-    <article>
-        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1"></c-spark-line>
-        <p><code>points="1"</code></p>
-    </article>
-    <article>
-        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1,0"></c-spark-line>
-        <p><code>points="1,0"</code></p>
-    </article>
-    <article>
-        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="0,2,0,1"></c-spark-line>
-        <p><code>points="0,2,0,1"</code></p>
-    </article>
-    <article>
-        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" endpoint-color="rebeccapurple" points="0,2,0,1"></c-spark-line>
-        <p><code>endpoint-color="rebeccapurple" points="0,2,0,1"</code></p>
-    </article>
-    <article>
-        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" colors="rebeccapurple"></c-spark-line>
-        <p><code>colors="rebeccapurple"</code></p>
-    </article>
-    <article>
-        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1" colors="rebeccapurple"></c-spark-line>
-        <p><code>points="1" colors="rebeccapurple"</code></p>
-    </article>
-    <article>
-        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1" colors="red,green,blue"></c-spark-line>
-        <p><code>points="1" colors="red,green,blue"</code></p>
-    </article>
-    <article>
-        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1" colors="red,red,red,red,red,red,red,red,green,red,red,green,violet,orange,green,blue,yellow,green,yellow,cyan,green,cyan,green,cyan,blue,red"></c-spark-line>
-        <p><em>rainbow!</em></p>
-    </article>
-    <article>
-        <c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" start-label="Start" end-label="End"></c-spark-line>
-        <p><code>start-label="Start" end-label="End"</code></p>
-    </article>
+	<article>
+		<c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0"></c-spark-line>
+		<p><em>default</em></p>
+	</article>
+	<article>
+		<c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" line-width="4"></c-spark-line>
+		<p><code>line-width="4"</code></p>
+	</article>
+	<article>
+		<c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" curve="false"></c-spark-line>
+		<p><code>curve="false"</code></p>
+	</article>
+	<article>
+		<c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" endpoint="false"></c-spark-line>
+		<p><code>endpoint="false"</code></p>
+	</article>
+	<article>
+		<c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" color="rebeccapurple"></c-spark-line>
+		<p><code>color="rebeccapurple"</code></p>
+	</article>
+	<article>
+		<c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" endpoint-color="red"></c-spark-line>
+		<p><code>endpoint-color="red"</code></p>
+	</article>
+	<article>
+		<c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1"></c-spark-line>
+		<p><code>points="1"</code></p>
+	</article>
+	<article>
+		<c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1,0"></c-spark-line>
+		<p><code>points="1,0"</code></p>
+	</article>
+	<article>
+		<c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="0,2,0,1"></c-spark-line>
+		<p><code>points="0,2,0,1"</code></p>
+	</article>
+	<article>
+		<c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" endpoint-color="rebeccapurple" points="0,2,0,1"></c-spark-line>
+		<p><code>endpoint-color="rebeccapurple" points="0,2,0,1"</code></p>
+	</article>
+	<article>
+		<c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" colors="rebeccapurple"></c-spark-line>
+		<p><code>colors="rebeccapurple"</code></p>
+	</article>
+	<article>
+		<c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1" colors="rebeccapurple"></c-spark-line>
+		<p><code>points="1" colors="rebeccapurple"</code></p>
+	</article>
+	<article>
+		<c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1" colors="red,green,blue"></c-spark-line>
+		<p><code>points="1" colors="red,green,blue"</code></p>
+	</article>
+	<article>
+		<c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1" colors="red,red,red,red,red,red,red,red,green,red,red,green,violet,orange,green,blue,yellow,green,yellow,cyan,green,cyan,green,cyan,blue,red"></c-spark-line>
+		<p><em>rainbow!</em></p>
+	</article>
+	<article>
+		<c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" start-label="Start" end-label="End"></c-spark-line>
+		<p><code>start-label="Start" end-label="End"</code></p>
+	</article>
 </div>
 
 ## Interactive Example
@@ -228,20 +228,20 @@ If you wanted to use `<is-land>` as well, I recommend something like the followi
 <!-- </textarea> -->
 <!-- '"´ -->
 <form>
-    <spark-line values="1,2,3,2,1" id="interactive-sparkline" style="margin-block-start: 0; align-self: center; justify-self: center;"></spark-line>
-    <fieldset>
-        <label><input id="input-values" type="text" pattern="[0-9]+" inputmode="numeric" value="12321" maxlength="26"> Values</label>
-        <br>
-        <label><input id="input-line-width" type="text" pattern="[1-5]" inputmode="numeric" value="2" maxlength="1"> Line Width</label>
-        <br>
-        <label><input id="input-curve" type="checkbox" checked> Curve</label>
-        <br>
-        <label><input id="input-endpoint" type="checkbox" checked> Endpoint</label>
-        <br>
-        <label><input id="input-color" type="color" value="#4f4f4f"> Color</label>
-        <br>
-        <label><input id="input-endpoint-color" type="color" value="#e0151f"> Endpoint Color</label>
-    </fieldset>
+	<spark-line values="1,2,3,2,1" id="interactive-sparkline" style="margin-block-start: 0; align-self: center; justify-self: center;"></spark-line>
+	<fieldset>
+		<label><input id="input-values" type="text" pattern="[0-9]+" inputmode="numeric" value="12321" maxlength="26"> Values</label>
+		<br>
+		<label><input id="input-line-width" type="text" pattern="[1-5]" inputmode="numeric" value="2" maxlength="1"> Line Width</label>
+		<br>
+		<label><input id="input-curve" type="checkbox" checked> Curve</label>
+		<br>
+		<label><input id="input-endpoint" type="checkbox" checked> Endpoint</label>
+		<br>
+		<label><input id="input-color" type="color" value="#4f4f4f"> Color</label>
+		<br>
+		<label><input id="input-endpoint-color" type="color" value="#e0151f"> Endpoint Color</label>
+	</fieldset>
 </form>
 
 {% set shelf_css %}

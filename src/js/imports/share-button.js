@@ -1,4 +1,11 @@
+/**
+ * Share Button
+ * @class
+ */
 class ShareButton {
+	/**
+	 * @constructor
+	 */
 	constructor() {
 		this.test = document.createElement("button")
 		this.test.setAttribute("type", "share")
@@ -13,10 +20,12 @@ class ShareButton {
 				const url = window.location.href
 
 				if (navigator.share) {
-					navigator.share({
-						title: title,
-						url: url,
-					})
+					navigator
+						.share({
+							title: title,
+							url: url,
+						})
+						.catch((error) => console.error("Error Sharing", error))
 				} else {
 					window.location.href = "mailto:?subject=" + title + "&body=" + url
 				}
@@ -26,7 +35,13 @@ class ShareButton {
 }
 
 if ("HTMLElement" in window) {
+	/**
+	 * @type {ShareButton}
+	 */
 	window.ShareButton = new ShareButton()
 }
 
+/**
+ * @type {ShareButton}
+ */
 export default ShareButton

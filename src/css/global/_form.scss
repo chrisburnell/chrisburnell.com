@@ -19,6 +19,10 @@ fieldset {
 	margin: 0;
 	font-size: var(--font-size-small);
 	line-height: var(--line-height-default);
+
+	&:invalid {
+		border-color: h(maple) !important; // break through layers
+	}
 }
 
 input,
@@ -110,3 +114,5 @@ select {
 address {
 	font-style: inherit;
 }
+
+:invalid {}

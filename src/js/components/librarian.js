@@ -1,89 +1,107 @@
+/**
+ * Librarian
+ * @class
+ */
 class Librarian {
+	/**
+	 * @constructor
+	 * @param {String} buttonsSelector - The selector for sorting buttons.
+	 * @param {String} shelfSelector - The selector for the shelf.
+	 */
 	constructor(buttonsSelector, shelfSelector) {
-		buttonsSelector = buttonsSelector || "[data-sort]"
-		shelfSelector = shelfSelector || ".shelf"
-
-		this.buttons = document.querySelectorAll(buttonsSelector)
-		this.shelf = document.querySelector(shelfSelector)
+		this.buttonsSelector = buttonsSelector || "[data-sort]"
+		this.shelfSelector = shelfSelector || ".shelf"
 
 		this.init()
 	}
 
-	sortingMethods = {
-		title: (a, b) => {
-			return a.querySelector("h1").innerText.trim().localeCompare(b.querySelector("h1").innerText.trim())
-		},
-
-		author: (a, b) => {
-			if (a.querySelector(".h-cite")?.innerText === b.querySelector(".h-cite")?.innerText) {
-				return a.querySelector("h1").innerText.trim().localeCompare(b.querySelector("h1").innerText.trim())
-			}
-			return (a.querySelector(".h-cite")?.innerText || "").localeCompare(b.querySelector(".h-cite")?.innerText || "")
-		},
-
-		release: (a, b) => {
-			if (a.querySelector(".release") && b.querySelector(".release")) {
-				return b.querySelector(".release").dateTime.localeCompare(a.querySelector(".release").dateTime)
-			}
-			return false
-		},
-
-		chronological: (a, b) => {
-			if (a.querySelector(".dt-published") && b.querySelector(".dt-published")) {
-				return b.querySelector(".dt-published").dateTime.localeCompare(a.querySelector(".dt-published").dateTime)
-			}
-			return false
-		},
-
-		alphabetical: (a, b) => {
-			return a.innerText.trim().localeCompare(b.innerText.trim())
-		},
-
-		rating: (a, b) => {
-			if (a.querySelector(".rating")?.value === b.querySelector(".rating")?.value) {
-				if (a.querySelector(".h-cite")?.innerText === b.querySelector(".h-cite")?.innerText) {
-					return a.querySelector("h1").innerText.trim().localeCompare(b.querySelector("h1").innerText.trim())
-				}
-				return (a.querySelector(".h-cite")?.innerText || "").localeCompare(b.querySelector(".h-cite")?.innerText || "")
-			}
-			return (b.querySelector(".rating")?.value || 0) - (a.querySelector(".rating")?.value || 0)
-		},
-	}
-
+	/**
+	 * Initialises the Librarian.
+	 */
 	init() {
+		this.buttons = document.querySelectorAll(this.buttonsSelector)
+		this.shelf = document.querySelector(this.shelfSelector)
+		this.content = document.getElementById("content")
+
 		this.buttons.forEach((button) => {
 			button.setAttribute("aria-sort", button.getAttribute("aria-sort") || "none")
-			button.addEventListener("click", () => {
-				// Set the current sorting direction
-				const sort = button.getAttribute("aria-sort")
-
-				// If the button state is "none", set all button states to "none"
-				if (sort === "none") {
-					this.buttons.forEach((other) => other.setAttribute("aria-sort", "none"))
-				}
-
-				// Sort the items according to the button
-				const sorted = [...this.shelf.querySelectorAll(":scope > *")].sort(this.sortingMethods[button.dataset.sort])
-
-				// Loop through items and set their order property with inline CSS
-				if (sort === "descending") {
-					sorted.reverse().forEach((item, i) => (item.style.order = i))
-				} else {
-					sorted.forEach((item, i) => (item.style.order = i))
-				}
-
-				// Toggle the sorting direction (default to "descending")
-				button.setAttribute("aria-sort", sort === "descending" ? "ascending" : "descending")
-
-				// Scroll to the top of the shelf
-				window.scrollTo(0, this.shelf.offsetTop)
-			})
+			button.addEventListener("click", () => this.handleButtonClick(button))
 		})
+	}
+
+	/**
+	 * Methods of sorting used by the librarian.
+	 * @type {Object}
+	 */
+	sortingMethods = {
+		alphabetical: (a, b) => a.innerText.localeCompare(b.innerText),
+		author: (a, b) => this.compareBy(b, a, ".h-cite"),
+		chronological: (a, b) => this.compareBy(a, b, ".dt-published", "dateTime"),
+		rating: (a, b) => this.compareBy(a, b, ".rating", "value"),
+		release: (a, b) => this.compareBy(a, b, ".release", "dateTime"),
+		title: (a, b) => this.compareBy(b, a, "h1"),
+	}
+
+	/**
+	 * Grabs the appropriate value from a given shelf item.
+	 * @param {HTMLElement} element - A given shelf item.
+	 * @param {String} selector - A selector to query a subElement of the shelf item.
+	 * @param {String} property - A property of the subElement.
+	 * @returns {String | null} The value obtained from the subElement.
+	 */
+	getValue(element, selector, property) {
+		const subElement = element.querySelector(selector)
+		return subElement ? (property ? subElement[property] : subElement.innerText.trim()) : null
+	}
+
+	/**
+	 * Compares specific values between items on the shelf.
+	 * @param {HTMLElement} a
+	 * @param {HTMLElement} b
+	 * @param {String} selector - A selector to query a subElement of the shelf item.
+	 * @param {String} property - A property of the subElement.
+	 * @returns {Number} The comparison result.
+	 */
+	compareBy(a, b, selector, property) {
+		const valueA = this.getValue(a, selector, property) || ""
+		const valueB = this.getValue(b, selector, property) || ""
+
+		if (selector !== "h1" && valueA === valueB) {
+			return this.sortingMethods.title(a, b)
+		}
+
+		return valueB.localeCompare(valueA)
+	}
+
+	/**
+	 * Alter the sorting of the shelf based on a button’s corresponding sorting
+	 * method.
+	 * @param {HTMLElement} button
+	 */
+	handleButtonClick(button) {
+		const sort = button.getAttribute("aria-sort")
+		const isNone = sort === "none"
+
+		if (isNone) {
+			this.buttons.forEach((other) => other.setAttribute("aria-sort", "none"))
+		}
+
+		const sorted = [...this.shelf.children].sort(this.sortingMethods[button.dataset.sort])
+		sorted.forEach((item, i) => (item.style.order = sort === "descending" ? sorted.length - i - 1 : i))
+
+		button.setAttribute("aria-sort", isNone ? "descending" : sort === "descending" ? "ascending" : "descending")
+		this.content.scrollIntoView()
 	}
 }
 
 if ("HTMLElement" in window) {
+	/**
+	 * @type {Librarian}
+	 */
 	window.Librarian = new Librarian()
 }
 
+/**
+ * @type {Librarian}
+ */
 export default Librarian

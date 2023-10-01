@@ -1,4 +1,11 @@
-class NumberConverter {
+/**
+ * NewBase60 Converter
+ * @class
+ */
+class NewBase60Converter {
+	/**
+	 * @constructor
+	 */
 	constructor() {
 		this.SEQUENCE = "0123456789ABCDEFGHJKLMNPQRSTUVWXYZ_abcdefghijkmnopqrstuvwxyz"
 		this.inputs = {
@@ -11,6 +18,10 @@ class NumberConverter {
 		this.init()
 	}
 
+	/**
+	 * @param {Number} value
+	 * @returns {String}
+	 */
 	DecimalToSexagesimal(value) {
 		if (value === undefined || value === 0) {
 			return 0
@@ -24,6 +35,10 @@ class NumberConverter {
 		return sexagesimalValue
 	}
 
+	/**
+	 * @param {String} value
+	 * @returns {Number}
+	 */
 	SexagesimalToDecimal(value) {
 		let output = 0
 		for (var i = 0; i < value.length; i++) {
@@ -54,29 +69,51 @@ class NumberConverter {
 		return output
 	}
 
+	/**
+	 * @param {Number} value
+	 * @returns {DateTime}
+	 */
 	DecimalToDate(value) {
 		let dateObject = new Date(parseInt(value) * 86400 * 1000)
 		return this.dateFormatter.format(dateObject)
 	}
 
-	convertFromDecimal() {
-		this.binary.value = (parseInt(this.decimal.value) >>> 0).toString(2)
-		this.sexagesimal.value = this.DecimalToSexagesimal(parseInt(this.decimal.value))
-		this.date.value = this.DecimalToDate(this.decimal.value)
-	}
-
+	/**
+	 * Calculates other units from binary input.
+	 */
 	convertFromBinary() {
-		this.decimal.value = parseInt(this.binary.value, 2)
-		this.sexagesimal.value = this.DecimalToSexagesimal(parseInt(this.decimal.value))
-		this.date.value = this.DecimalToDate(this.decimal.value)
+		if (new RegExp(this.binary.getAttribute("pattern")).test(this.binary.value)) {
+			this.decimal.value = parseInt(this.binary.value, 2)
+			this.sexagesimal.value = this.DecimalToSexagesimal(parseInt(this.decimal.value))
+			this.date.value = this.DecimalToDate(this.decimal.value)
+		}
 	}
 
+	/**
+	 * Calculates other units from decimal input.
+	 */
+	convertFromDecimal() {
+		if (new RegExp(this.decimal.getAttribute("pattern")).test(this.decimal.value)) {
+			this.binary.value = (parseInt(this.decimal.value) >>> 0).toString(2)
+			this.sexagesimal.value = this.DecimalToSexagesimal(parseInt(this.decimal.value))
+			this.date.value = this.DecimalToDate(this.decimal.value)
+		}
+	}
+
+	/**
+	 * Calculates other units from sexagesimal input.
+	 */
 	convertFromSexagesimal() {
-		this.decimal.value = this.SexagesimalToDecimal(this.sexagesimal.value)
-		this.binary.value = (parseInt(this.decimal.value) >>> 0).toString(2)
-		this.date.value = this.DecimalToDate(this.decimal.value)
+		if (new RegExp(this.sexagesimal.getAttribute("pattern")).test(this.sexagesimal.value)) {
+			this.decimal.value = this.SexagesimalToDecimal(this.sexagesimal.value)
+			this.binary.value = (parseInt(this.decimal.value) >>> 0).toString(2)
+			this.date.value = this.DecimalToDate(this.decimal.value)
+		}
 	}
 
+	/**
+	 * Attach event listeners to the form.
+	 */
 	init() {
 		this.decimal = document.getElementById("decimal")
 		this.binary = document.getElementById("binary")
@@ -107,7 +144,13 @@ class NumberConverter {
 }
 
 if ("HTMLElement" in window) {
-	window.NumberConverter = new NumberConverter()
+	/**
+	 * @type {NewBase60Converter}
+	 */
+	window.NewBase60Converter = new NewBase60Converter()
 }
 
-export default NumberConverter
+/**
+ * @type {NewBase60Converter}
+ */
+export default NewBase60Converter

@@ -234,9 +234,9 @@ self.addEventListener("fetch", event => {
 					}
 					resolveWithResponse(responseFromFetch)
 				})
-				.catch(fetchError => {
+				.catch((error) => {
 					clearTimeout(timer)
-					console.error(fetchError)
+					console.error(error)
 					// CACHE or OFFLINE PAGE FALLBACK
 					retrieveFromCache.then(responseFromCache => {
 						resolveWithResponse(responseFromCache || caches.match("/offline/"))
@@ -292,8 +292,8 @@ self.addEventListener("fetch", event => {
 				}
 				return responseFromFetch
 			})
-			.catch(fetchError => {
-				console.error(fetchError)
+			.catch((error) => {
+				console.error(error)
 				// FALLBACK
 				// show an offline placeholder image
 				if (request.url.match(IMAGES_REGEX)) {

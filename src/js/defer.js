@@ -4,7 +4,7 @@ import "./imports/theme-toggler"
 
 // import "./imports/sotb-banner"
 
-import "./imports/details-exclusive-polyfill"
+import "./imports/polyfill-details-exclusive"
 
 import "./imports/share-button"
 

@@ -41,7 +41,7 @@ Front End Developer with {{ global.now | friendlyDate("yyyy") - site.established
 
 <div class=" [ space-between ] ">
     <h4>Lead Developer</h4>
-    <small><strong>September 2021 – May 2022</strong></small>
+    <small><strong>February 2021 – May 2022</strong></small>
 </div>
 
 - Implemented modern web standards by redefining best practices, which led to higher code quality and reduced context-switching for developers working across multiple projects.
@@ -50,7 +50,7 @@ Front End Developer with {{ global.now | friendlyDate("yyyy") - site.established
 
 <div class=" [ space-between ] ">
     <h4>Front End Developer</h4>
-    <small><strong>February 2018 – September 2021</strong></small>
+    <small><strong>February 2018 – July 2020</strong></small>
 </div>
 
 - Contributed to both the front end and content management implementations for client work and was the key advisor for expertise on front end development, particularly to do with CSS, and was consulted on dozens of projects for this knowledge.

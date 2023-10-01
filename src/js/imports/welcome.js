@@ -1,4 +1,11 @@
+/**
+ * Welcome
+ * @class
+ */
 class Welcome {
+	/**
+	 * @constructor
+	 */
 	constructor() {
 		console.log(`%c                        █▒▒      %cchrisburnell.com`, "color: #507791", "color: inherit")
 		console.log(`%c ▒▒▒▒▒▒▒▒▒             ▒███▓     %c--------------------------`, "color: #507791", "color: inherit")
@@ -19,7 +26,13 @@ class Welcome {
 }
 
 if ("HTMLElement" in window) {
+	/**
+	 * @type {Welcome}
+	 */
 	window.Welcome = new Welcome()
 }
 
+/**
+ * @type {Welcome}
+ */
 export default Welcome

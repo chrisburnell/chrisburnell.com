@@ -1,4 +1,11 @@
+/**
+ * Interactive Sparkline
+ * @class
+ */
 class InteractiveSparkline {
+	/**
+	 * @constructor
+	 */
 	constructor() {
 		this.inputs = {
 			inputValues: document.querySelector("#input-values"),
@@ -21,6 +28,10 @@ class InteractiveSparkline {
 		})
 	}
 
+	/**
+	 * Build the sparkline based on the given input values.
+	 * @param {Object} inputs
+	 */
 	processSparkline(inputs) {
 		// strip non-numbers from the input
 		inputs.inputValues.value = inputs.inputValues.value.replace(/(?![0-9])./gim, "")
@@ -36,7 +47,13 @@ class InteractiveSparkline {
 }
 
 if ("HTMLElement" in window) {
+	/**
+	 * @type {InteractiveSparkline}
+	 */
 	window.InteractiveSparkline = new InteractiveSparkline()
 }
 
+/**
+ * @type {InteractiveSparkline}
+ */
 export default InteractiveSparkline
