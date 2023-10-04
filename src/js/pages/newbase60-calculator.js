@@ -140,6 +140,12 @@ class NewBase60Converter {
 		this.sexagesimal.addEventListener("input", () => {
 			this.convertFromSexagesimal()
 		})
+
+		// Set calculator to current day since epoch
+		const now = new Date()
+		const daysSinceEpoch = Math.floor(now / 8.64e7)
+		this.decimal.value = daysSinceEpoch
+		this.convertFromDecimal()
 	}
 }
 
