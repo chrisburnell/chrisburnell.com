@@ -16,7 +16,7 @@
 	display: flex;
 	gap: var(--size-gutter);
 
-	@container (inline-size > #{map-get($breakpoints, "small")}) {
+	@include cq(null, "small") {
 		gap: var(--size-large);
 	}
 }
@@ -24,7 +24,7 @@
 .support {
 	flex-direction: column-reverse;
 
-	@container (inline-size > #{map-get($breakpoints, "small")}) {
+	@include cq(null, "small") {
 		flex-direction: row-reverse;
 	}
 }

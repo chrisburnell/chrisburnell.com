@@ -23,7 +23,7 @@
 		auto
 		[outdent-end content-end marginalia-end];
 
-	@container (inline-size > #{map-get($breakpoints, "medium")}) {
+	@include cq(null, "medium") {
 		grid-template-columns:
 			[marginalia-start]
 			1fr

@@ -46,13 +46,13 @@
 }
 
 .footer__grid {
-	@container (inline-size <= #{map-get($breakpoints, "medium")}) {
+	@include cq(null, null, "medium") {
 		display: flex;
 		flex-direction: column;
 		gap: var(--size-gutter);
 	}
 
-	@container (inline-size > #{map-get($breakpoints, "medium")}) {
+	@include cq(null, "medium") {
 		display: grid;
 		grid-template-columns:
 			[left-start]
@@ -78,7 +78,7 @@
 	.speedlify {
 		grid-column: right;
 
-		@container (inline-size > #{map-get($breakpoints, "medium")}) {
+		@include cq(null, "medium") {
 			text-align: end;
 		}
 	}

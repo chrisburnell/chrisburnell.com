@@ -9,8 +9,7 @@
 		display: none;
 	}
 
-	// TODO Refactor container mixin to support this
-	@container main (inline-size > #{map-get($breakpoints, "medium")}) {
+	@include cq("main", "medium") {
 		position: sticky;
 		inset-block-start: calc(var(--size-header) + 1rem);
 	}
@@ -34,12 +33,12 @@
 		animation: toc-shadow-inside linear;
 		animation-timeline: scroll(self block);
 
-		@container main (inline-size > #{map-get($breakpoints, "small")}) {
+		@include cq("main", "small") {
 			max-block-size: 60vh;
 			max-block-size: 60dvb;
 		}
 
-		@container main (inline-size > #{map-get($breakpoints, "medium")}) {
+		@include cq("main", "medium") {
 			max-block-size: calc(100vh - (var(--size-header) * 2));
 			max-block-size: calc(100dvb - (var(--size-header) * 2));
 		}

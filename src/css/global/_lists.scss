@@ -109,7 +109,7 @@ dl {
 	margin-block-start: 0;
 	overflow: hidden;
 
-	@container (inline-size > #{map-get($breakpoints, "tiny")}) {
+	@include cq(null, "tiny") {
 		grid-template-columns: minmax(min-content, 33.33%) 1fr;
 	}
 }

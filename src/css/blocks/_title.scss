@@ -11,7 +11,7 @@
 	position: relative;
 	contain: content; // helps painting with .perch inside
 
-	@container (inline-size > #{map-get($breakpoints, "small")}) {
+	@include cq(null, "small") {
 		text-align: center;
 	}
 }

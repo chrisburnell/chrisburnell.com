@@ -18,7 +18,7 @@
 	display: flex;
 	flex-wrap: wrap;
 
-	@container (inline-size <= #{map-get($breakpoints, "tiny")}) {
+	@include cq(null, null, "tiny") {
 		flex-direction: column;
 	}
 
@@ -30,15 +30,15 @@
 		white-space: nowrap;
 		font-variant-numeric: tabular-nums;
 
-		@container (inline-size <= #{map-get($breakpoints, "tiny")}) {
+		@include cq(null, null, "tiny") {
 			flex: 1 0 100%;
 		}
 
-		@container (#{map-get($breakpoints, "tiny")} < inline-size <= #{map-get($breakpoints, "small")}) {
+		@include cq(null, "tiny", "small") {
 			flex: 1 0 50%;
 		}
 
-		@container (inline-size > #{map-get($breakpoints, "small")}) {
+		@include cq(null, "small") {
 			flex: 1 0 33.333%;
 		}
 

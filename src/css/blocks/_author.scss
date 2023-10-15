@@ -26,7 +26,7 @@
 	text-align: center;
 	text-decoration: none;
 
-	@container (inline-size > #{map-get($breakpoints, "medium")}) {
+	@include cq(null, "medium") {
 		order: 2;
 	}
 
@@ -148,7 +148,7 @@
 	font-size: var(--font-size-small);
 	text-wrap: balance;
 
-	@container (inline-size > #{map-get($breakpoints, "medium")}) {
+	@include cq(null, "medium") {
 		text-align: end;
 	}
 }

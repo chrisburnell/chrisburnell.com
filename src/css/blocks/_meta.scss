@@ -7,11 +7,11 @@
 	--flow-space: var(--size-medium);
 	container: meta / inline-size;
 
-	@container (inline-size <= #{map-get($breakpoints, "medium")}) {
+	@include cq(null, null, "medium") {
 		margin-block-start: var(--size-large);
 	}
 
-	@container (inline-size > #{map-get($breakpoints, "medium")}) {
+	@include cq(null, "medium") {
 		align-self: stretch;
 	}
 
