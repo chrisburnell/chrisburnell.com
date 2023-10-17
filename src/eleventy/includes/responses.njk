@@ -32,7 +32,7 @@
 				{% if reactions.length or stargazers %}
 					<ol id="reactions" class=" [ reactions ] [ cluster ] [ strong ] ">
 						{% if stargazers -%}
-							<li><c-emoji>{{ emojis.stars }}</c-emoji> {{ stargazers }} Stargazer{{ 's' if stargazers > 1 }}</li>
+							<li><c-emoji>{{ emojis.stars }}</c-emoji> <a href="https://github.com/{{ github }}">{{ stargazers }} Stargazer{{ 's' if stargazers > 1 }}</a></li>
 						{%- endif %}
 						{% if bookmarks.length -%}
 							<li><c-emoji>{{ emojis.bookmark }}</c-emoji> {{ bookmarks.length }} Bookmark{{ 's' if bookmarks.length > 1 }}</li>
