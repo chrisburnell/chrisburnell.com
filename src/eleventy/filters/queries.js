@@ -19,15 +19,26 @@ const getPath = (url) => {
 }
 
 module.exports = {
+	/**
+	 * Return an abbreviated console name.
+	 * @param {String} value
+	 * @returns {String}
+	 */
 	getConsole: (value) => {
 		for (let console of consoles) {
 			if (value == console.title) {
 				return `<abbr title="${console.abbreviation}">${console.title}</abbr>`
 			}
 		}
-
 		return value
 	},
+	/**
+	 * Get a count of items in a collection with certain features.
+	 * @param {Object[]} items
+	 * @param {String} year
+	 * @param {Boolean} [blogOnly]
+	 * @returns {number}
+	 */
 	getCollectionCount: (items, year, blogOnly = false) => {
 		return items
 			.filter((item) => {
@@ -48,6 +59,12 @@ module.exports = {
 				return !year || item.data.page.date.getFullYear() === parseInt(year, 10)
 			}).length
 	},
+	/**
+	 * Grab the host from a URL.
+	 * @param {String} value
+	 * @param {Boolean} [preservePathname]
+	 * @returns {String}
+	 */
 	getHost: (value, preservePathname = false) => {
 		if (typeof value === "string" && value.includes("//")) {
 			const urlObject = new URL(value)
@@ -55,12 +72,23 @@ module.exports = {
 		}
 		return value
 	},
+	/**
+	 * Pass a URL through a dead-link replacer.
+	 * @param {String} url
+	 * @returns {String}
+	 */
 	fixUrl: (url) => {
 		return Object.entries(urlReplacements).reduce((accumulator, [key, value]) => {
 			const regex = new RegExp(key, "g")
 			return accumulator.replace(regex, value)
 		}, url)
 	},
+	/**
+	 * Replace a URL with a string if it points to an internal/syndication target.
+	 * @param {String} value
+	 * @param {Object[]} pages
+	 * @returns {String}
+	 */
 	getInternalTarget: (value, pages) => {
 		// Mastodon
 		if (value.includes("https://fediverse.repc.co") || value.includes("https://social.chrisburnell.com") || value.includes("https://mastodon.social/users/chrisburnell/statuses/")) {
@@ -99,6 +127,11 @@ module.exports = {
 		}
 		return value
 	},
+	/**
+	 * Parse a string to return a Mastodon handle
+	 * @param {String} value
+	 * @returns {String}
+	 */
 	getMastodonHandle: (value) => {
 		for (let instance of mastodonInstances) {
 			if (value.includes(instance)) {
@@ -111,6 +144,12 @@ module.exports = {
 		}
 		return value
 	},
+	/**
+	 * Figure out where a post took place based on checkin/
+	 * @param {any} value
+	 * @param {any} intent
+	 * @returns {any}
+	 */
 	getPlace: (value, intent) => {
 		// Default metadata to the passed value (string/object)
 		let title, url, lat, long, address
@@ -175,6 +214,11 @@ module.exports = {
 		}
 		return value.title || value
 	},
+	/**
+	 * Return richer information about where a post was made from.
+	 * @param {String} url
+	 * @returns {String}
+	 */
 	getPostingMethod: (url) => {
 		let target
 		if (url.includes("//")) {
@@ -190,6 +234,11 @@ module.exports = {
 		}
 		return target
 	},
+	/**
+	 * Return richer information about a syndication URL.
+	 * @param {String} value
+	 * @returns {String}
+	 */
 	getSyndicationTarget: (value) => {
 		if (typeof value === "string" && value.includes("//")) {
 			let urlObject = new URL(value)
@@ -203,12 +252,24 @@ module.exports = {
 				return item.title
 			})[0]
 	},
+	/**
+	 * Get a Twitter handle from a URL.
+	 * @param {String} value
+	 * @returns {String}
+	 */
 	getTwitterHandle: (value) => {
 		if (value.includes("https://twitter.com")) {
 			return "@" + value.split("/status/")[0].split("twitter.com/")[1]
 		}
 		return value
 	},
+	/**
+	 * Return rich information about a Person.
+	 * @param {Object[]} people
+	 * @param {any} value
+	 * @param {any} intent
+	 * @returns {any}
+	 */
 	getPerson: (people, value, intent) => {
 		if (!people) {
 			return value
@@ -315,13 +376,18 @@ module.exports = {
 		}
 		return value.title || value
 	},
+	/**
+	 * Get DEV.to information.
+	 * @param {Object[]} articles
+	 * @param {String} title
+	 * @returns {any}
+	 */
 	getDevToArticle: (articles, title) => {
 		for (let article of articles) {
 			if (article["title"] == title) {
 				return article
 			}
 		}
-
 		return id
 	},
 }

@@ -7,18 +7,41 @@ const Natural = require("natural")
 const analyze = new Natural.SentimentAnalyzer("English", Natural.PorterStemmer, "afinn")
 
 module.exports = {
+	/**
+	 * Minify CSS.
+	 * @param {any} code
+	 * @returns {String}
+	 */
 	cssmin: (code) => {
 		return new CleanCSS({}).minify(code).styles
 	},
+	/**
+	 * Description
+	 * @param {any} value
+	 * @returns {Uint8Array}
+	 */
 	lightning: (value) => {
 		return transform({
 			code: Buffer.from(value),
 			minify: true,
 		}).code
 	},
+	/**
+	 * Truncate an array to a set length.
+	 * @param {Object[]} array
+	 * @param {Number} limit
+	 * @returns {Object[]}
+	 */
 	limit: (array, limit) => {
 		return array.slice(0, limit)
 	},
+	/**
+	 * Check if an object within an array has a key with a value matching a term.
+	 * @param {Object[]} array
+	 * @param {String} key
+	 * @param {any} value
+	 * @returns {Boolean}
+	 */
 	arrayKeyEquals: (array, key, value) => {
 		return array.filter((item) => {
 			const keys = key.split(".")
@@ -33,6 +56,13 @@ module.exports = {
 			return value.includes(itemValue)
 		})
 	},
+	/**
+	 * Check if an object within an array has a value that includes a term.
+	 * @param {Object[]} array
+	 * @param {String} key
+	 * @param {any} value
+	 * @returns {Boolean}
+	 */
 	arrayKeyIncludes: (array, key, value) => {
 		return array.filter((item) => {
 			const keys = key.split(".")
@@ -42,26 +72,60 @@ module.exports = {
 			return itemValue.includes(value)
 		})
 	},
+	/**
+	 * Return a key’s value from an Object.
+	 * @param {Object[]} object
+	 * @param {String} key
+	 * @returns {any}
+	 */
 	keyValue: (object, key) => {
 		return object[key]
 	},
+	/**
+	 * Sort an array of Object’s by a common key’s value.
+	 * @param {Object[]} array
+	 * @param {String} key
+	 * @returns {Object[]}
+	 */
 	keySort: (array, key) => {
 		return array.sort((a, b) => {
 			return a[key].localeCompare(b[key])
 		})
 	},
+	/**
+	 * Cast a value into an array.
+	 * @param {any} value
+	 * @returns {Object[]}
+	 */
 	toArray: (value) => {
 		if (Array.isArray(value)) {
 			return value
 		}
 		return [value]
 	},
+	/**
+	 * Round a value to a nearest multiple of a given number.
+	 * @param {Number} value
+	 * @param {Number} multiple
+	 * @returns {Number}
+	 */
 	toNearest: (value, multiple) => {
 		return Math.round(value / multiple) * multiple
 	},
+	/**
+	 * Return total number of webmentions and other counted values.
+	 * @param {Object[]} webmentions
+	 * @param {number} other
+	 * @returns {Number}
+	 */
 	getResponsesLength: (webmentions, other) => {
 		return (webmentions.length || 0) + (other || 0)
 	},
+	/**
+	 * Get a vibe for the sentiment of a string—for use against comments and replies.
+	 * @param {String} content
+	 * @returns {Number}
+	 */
 	getSentimentValue: (content) => {
 		if (content) {
 			const tokenizer = new Natural.WordTokenizer()
@@ -69,23 +133,58 @@ module.exports = {
 		}
 		return 0
 	},
+	/**
+	 * Map a number from one range to another including number of decimals.
+	 * @param {Number} number
+	 * @param {Number} inMin
+	 * @param {Number} inMax
+	 * @param {Number} outMin
+	 * @param {Number} outMax
+	 * @param {Number} decimals
+	 * @returns {Number}
+	 */
 	rangeMap: (number, inMin, inMax, outMin, outMax, decimals) => {
 		return (((number - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin).toFixed(decimals || 0)
 	},
+	/**
+	 * Return the RGB equivalent of a Hex Color.
+	 * @param {String} hex
+	 * @returns {Number}
+	 */
 	getRGB: (hex) => {
 		const COLOR = hex.replace("#", "").slice(0, 6)
 		return COLOR.match(/.{1,2}/g).map((value) => {
 			return parseInt(value, 16)
 		})
 	},
+	/**
+	 * Limit a number to a maximum number of decimals.
+	 * @param {Number} value
+	 * @param {Number} [decimals]
+	 * @returns {Number}
+	 */
 	maxDecimals: (value, decimals = 2) => {
 		return +value.toFixed(decimals)
 	},
-	exponentialMovingAverage: (timestamp, current = 0, coefficient = 0.333) => {
-		return coefficient * timestamp + (1 - coefficient) * current
+	/**
+	 * Calculate an exponential moving average.
+	 * @see {@link https://en.wikipedia.org/wiki/Moving_average#Exponential_moving_average}
+	 * @param {Number} value
+	 * @param {Number} [current]
+	 * @param {Number} [coefficient]
+	 * @returns {Number}
+	 */
+	exponentialMovingAverage: (value, current = 0, coefficient = 0.333) => {
+		return coefficient * value + (1 - coefficient) * current
 	},
-	simpleMovingAverage: (values, period, preserveEnds) => {
-		preserveEnds = preserveEnds || false
+	/**
+	 * Calculate a simple moving average.
+	 * @param {Number} values
+	 * @param {Number} period
+	 * @param {Boolean} [preserveEnds]
+	 * @returns {Number}
+	 */
+	simpleMovingAverage: (values, period, preserveEnds = false) => {
 		let step = (period - 1) / 2
 		let end = values.length - 1
 		let normalized = []
@@ -108,6 +207,11 @@ module.exports = {
 		}
 		return normalized
 	},
+	/**
+	 * Get all link-type responses from a set of Webmentions.
+	 * @param {Object[]} array
+	 * @returns {Object[]}
+	 */
 	getAllLinks: (array) => {
 		// const people = await peopleAsync()
 		return array.filter((item) => {
@@ -136,6 +240,11 @@ module.exports = {
 			return false
 		})
 	},
+	/**
+	 * Get all reply-type responses from a set of Webmentions.
+	 * @param {Object[]} array
+	 * @returns {Object[]}
+	 */
 	getAllReplies: (array) => {
 		// const people = await peopleAsync()
 		return array

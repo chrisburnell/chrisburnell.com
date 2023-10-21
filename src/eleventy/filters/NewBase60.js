@@ -22,7 +22,13 @@ const DateToSexagesimal = (dateObject) => {
 	return DecimalToSexagesimal(epochDays)
 }
 
-// Export a function for an Eleventy Filter
+/**
+ * Export a function for an Eleventy Filter
+ * @param {Datetime} date
+ * @param {String} categoryCode
+ * @param {Object[]} collection
+ * @returns {String}
+ */
 module.exports = (date, categoryCode, collection) => {
 	// Get all posts where DATE matches in UTC
 	const postsToday = collection.filter((post) => {

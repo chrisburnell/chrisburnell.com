@@ -3,37 +3,36 @@
  * @author Chris Burnell <me@chrisburnell.com>
  */
 const helpers = {
-	////
-	/// Injects content into template using placeholder
-	/// @param {String} originalContent
-	/// @param {String} injection
-	/// @param {String} placeholder
-	/// @return {String} injected content
-	////
+	/**
+	 * Inject content into some string based on finding a provided placeholder.
+	 * @param {String} originalContent
+	 * @param {String} placeholder
+	 * @param {String} injection
+	 * @param {String} [flags]
+	 * @returns {String}
+	 */
 	injectContent: (originalContent, placeholder, injection, flags = "g") => {
 		const PATTERN = new RegExp(placeholder, flags)
-
 		return originalContent.replace(PATTERN, injection)
 	},
 
-	////
-	/// Gets query string parameter
-	/// @see Taken from `http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript`
-	/// @param {String} name
-	/// @return {String} parameter value
-	////
+	/**
+	 * Grab query string values by name.
+	 * @see {@link http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript}
+	 * @param {String} name
+	 * @returns {String}
+	 */
 	getParameterByName: (name) => {
 		const regex = RegExp(`[?&]${name}=([^&]*)`).exec(window.location.search)
-
 		return regex && decodeURIComponent(regex[1].replace(/\+/g, " "))
 	},
 
-	////
-	/// Enable a button
-	/// @param {HTMLElement} element
-	/// @param {Function} action
-	/// @return false
-	////
+	/**
+	 * Remove disabled attributes from an element and optionally attach a click
+	 * event callback function.
+	 * @param {HTMLElement} element
+	 * @param {Function} [action]
+	 */
 	enableElement: (element, action) => {
 		if (element !== null) {
 			element.disabled = false
@@ -44,11 +43,12 @@ const helpers = {
 		}
 	},
 
-	////
-	/// Format a Date
-	/// @param {String} date
-	/// @return {String} formattedDate
-	////
+	/**
+	 * Format a Date.
+	 * @param {Datetime} date
+	 * @param {Boolean} [includeWeekday]
+	 * @returns {String}
+	 */
 	formatDate: (date, includeWeekday = false) => {
 		const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 		const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
@@ -65,13 +65,13 @@ const helpers = {
 		return `${weekday}${day} ${month} ${year}`
 	},
 
-	////
-	/// Format a Time
-	/// @param {Date} date
-	/// @param {Boolean} [false] includeSeconds
-	/// @param {Boolean} [true] includeMerdiem
-	/// @return {String} formattedTime
-	////
+	/**
+	 * Format a Time.
+	 * @param {Datetime} date
+	 * @param {Boolean} [includeSeconds]
+	 * @param {Boolean} [includeMerdiem]
+	 * @returns {String}
+	 */
 	formatTime: (date, includeSeconds = false, includeMeridiem = true) => {
 		let hours = date.getHours()
 		const minutes = date.getMinutes().toString().padStart(2, "0")
@@ -84,12 +84,12 @@ const helpers = {
 		return `${hours}:${minutes}${seconds}${meridiem}`
 	},
 
-	////
-	/// Action from Hash
-	/// @param {Array} hashes
-	/// @param {Function} action
-	/// @return false
-	////
+	/**
+	 * Perform an action based on the hash in the URL.
+	 * @param {Array} hashes
+	 * @param {Function} action
+	 * @returns false
+	 */
 	actionFromHash: (hashes, action) => {
 		for (let hash of hashes) {
 			if (window.location.hash.indexOf(hash) !== -1) {
@@ -98,12 +98,12 @@ const helpers = {
 		}
 	},
 
-	////
-	/// Ensure fetch response is OK
-	/// @param {Object} response
-	/// @return {Object} response
-	/// @throw {Object} error
-	////
+	/**
+	 * Ensure fetch response is OK.
+	 * @param {Object} response
+	 * @returns {Object}
+	 * @throws Response must return correctly.
+	 */
 	getFetchResponse: (response) => {
 		if (response.ok) {
 			return response
@@ -114,31 +114,34 @@ const helpers = {
 		}
 	},
 
-	////
-	/// Return a frequency based on starting key and interval
-	/// @param {Number} keyStart [49]
-	/// @param {Number} keyInterval [0]
-	/// @return {Number} frequency
-	////
+	/**
+	 * Format a number by padding with zeroes.
+	 * @param {Number} number
+	 * @param {Number} [integersMax]
+	 * @returns {String}
+	 */
 	padWithZeroes: (number, integersMax = 2) => {
 		const [integers, decimals] = number.toString().split(".")
 		return integers.toString().padStart(integersMax, "0") + (decimals ? `.${decimals}` : "")
 	},
 
-	////
-	/// Reliably extract text from HTML
-	/// @param {String} html
-	/// @return {String} text
-	////
+	/**
+	 * Extract text from a string of HTML.
+	 * @param {String} html
+	 * @returns {String}
+	 */
 	decodeHTML: (html) => {
 		let text = document.createElement("textarea")
 		text.innerHTML = html
 		return text.value
 	},
 
-	////
-	/// Truncate text to n words
-	////
+	/**
+	 * Truncate text to n words.
+	 * @param {String} string
+	 * @param {Number} [maximum]
+	 * @returns {String}
+	 */
 	truncate: (string, maximum = 10) => {
 		let array = string.trim().split(" ")
 		let ellipsis = array.length > maximum ? "…" : ""
@@ -150,6 +153,11 @@ const helpers = {
 		)
 	},
 
+	/**
+	 * Return a string based on the recency of a Datetime.
+	 * @param {Datetime} datetime
+	 * @returns {String}
+	 */
 	since: (datetime) => {
 		const today = Math.floor(Date.now() / 1000)
 		const compare = Math.floor(datetime.getTime() / 1000)
@@ -184,9 +192,13 @@ const helpers = {
 		return rtf.format(Math.ceil((compare - today) / year), "year")
 	},
 
-	////
-	/// Deep Includes for Objects
-	////
+	/**
+	 * Search for a value within all nodes of an Object.
+	 * @param {Object} object
+	 * @param {any} searchValue
+	 * @param {Boolean} [caseSensitive]
+	 * @returns {Boolean}
+	 */
 	includesDeep: (object, searchValue, caseSensitive = true) => {
 		const normalizeValue = (value) => (caseSensitive && typeof value === "string" ? value : value.toString().toLowerCase())
 
@@ -206,9 +218,12 @@ const helpers = {
 		return Object.values(object).some(checkValue)
 	},
 
-	////
-	/// Array-Loop to set variable
-	////
+	/**
+	 * Loop through an array to set a variable.
+	 * @param {Object} object
+	 * @param {Object[]} array
+	 * @param {any} value
+	 */
 	setByArray(object, array, value) {
 		const last = array.pop()
 		array.reduce(function (v, k) {

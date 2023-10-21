@@ -3,7 +3,7 @@
     // "activityBar.background" : "#507791",
     // "activityBar.foreground" : "#f9f9f9",
     "titleBar.activeBackground" : "#5f8aa6",
-    "titleBar.activeForeground" : "#f9f9f9",
+    "titleBar.activeForeground" : "#060606",
     "titleBar.inactiveBackground" : "#507791",
     "titleBar.inactiveForeground" : "#f9f9f9",
     "statusBar.background" : "#eb2d36",

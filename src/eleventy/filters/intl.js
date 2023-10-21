@@ -26,9 +26,19 @@ const ordinalSuffixes = {
 }
 
 module.exports = {
+	/**
+	 * Format an array of values.
+	 * @param {Object[]} array
+	 * @returns {String}
+	 */
 	conjuction: (array) => {
 		return lf.format(array)
 	},
+	/**
+	 * Format a Datetime.
+	 * @param {Datetime} datetime
+	 * @returns {String}
+	 */
 	since: (datetime) => {
 		const compare = Math.floor(datetime.getTime() / 1000)
 		const difference = Math.abs(compare - today)
@@ -48,9 +58,19 @@ module.exports = {
 		}
 		return rtf.format(Math.ceil((compare - today) / year), "year")
 	},
+	/**
+	 * Format a Number.
+	 * @param {Number} n
+	 * @returns {String}
+	 */
 	numberFormat: (n) => {
 		return numberFormat.format(n)
 	},
+	/**
+	 * Add an ordinal to a Number.
+	 * @param {Number} n
+	 * @returns {String}
+	 */
 	ordinal: (n) => {
 		const ordinal = ordinalSuffixes[pluralRules.select(n)]
 		return `${module.exports.numberFormat(n)}<sup>${ordinal}</sup>`
