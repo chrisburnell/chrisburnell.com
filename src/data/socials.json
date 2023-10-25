@@ -32,12 +32,6 @@
     "fillHover": "url(#bluesky)"
   },
   {
-    "title": "Pebble",
-    "url": "https://pebble.is/",
-    "key": "pebble",
-    "fillHover": "#595aff"
-  },
-  {
     "title": "Discord",
     "key": "discord"
   },
