@@ -6,7 +6,7 @@
 :is(ol, ul) {
 	padding: 0;
 	margin: 0;
-	list-style: none;
+	list-style-type: ""; // preferred over list-style: none; as it preserves semantics
 }
 :is(dl, ol, ul):not([class]),
 .default-list {

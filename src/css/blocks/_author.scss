@@ -146,7 +146,6 @@
 	--flow-space: var(--size-small);
 
 	font-size: var(--font-size-small);
-	text-wrap: balance;
 
 	@include cq(null, "medium") {
 		text-align: end;
