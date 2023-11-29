@@ -33,6 +33,6 @@ toc: true
 
 ## Services
 
-- [Corvus](https://corvus.chrisburnell.com) — My personal [Micropub](https://indieweb.org/Micropub) server which allows me to create posts on my website from external services (authenticated through [IndieAuth](https://indieweb.org/indieauth)) across all [categories](/categories/) and syndicate them out to social networks if I choose.
+- [Corvus](https://corvus.chrisburnell.com) — My personal [Micropub](https://indieweb.org/Micropub) server which allows me to create posts on my website from external services (authenticated through [IndieAuth](https://indieweb.org/indieauth)) across all [categories](/posts/#categories) and syndicate them out to social networks if I choose.
 - [FreshRSS](https://www.freshrss.org/) — A self-hosted RSS aggregator. Helps me keep track of many RSS feeds, and I mostly enjoy its built-in reader; although, it still makes it easy to jump into a browser to read a post.
 - [Quill](https://quill.p3k.io/) — My preferred web app for posting to my website through my Micropub server.

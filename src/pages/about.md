@@ -67,14 +67,15 @@ eleventyComputed:
 ## The Long Version
 
 <figure class=" [ line-length  overflow ] ">
-    {% image './images/content/rachel-and-i.jpg', 'Chris Burnell', ' [ shadow ] [ canada ] ', [500, 672, 1000] %}
+    {% image './images/content/rachel-and-i.jpg', 'a photo of my fiancée, Rachel, and myself', ' [ shadow ] [ canada ] ', [500, 672, 1000] %}
+    <figcaption>a photo of my fiancée, Rachel, and myself</figcaption>
 </figure>
 
 I’m originally from [<span class=" [ canada ] ">Halifax, Nova Scotia</span>](https://www.openstreetmap.org/#map=13/44.6463/-63.6162) but now I live in [London, England](https://www.openstreetmap.org/#map=10/51.4898/-0.0882) where I work for [Squiz](http://www.squiz.net), a digital transformation agency, as a Software Engineer.
 
-I’ve had this website since 2008, and is, by far, my favourite thing that I own. My passion for the web drives me to want a better web for tomorrow, and I pursue that through specialising in CSS, design systems, developer advocacy and education, and technical writing and speaking.
+Although I’ve been building websites since 2006, I’ve had this website since 2009, and it’s my favourite thing that I own. My passion for the web drives me to want a better web for tomorrow, and I pursue that through specialising in CSS, design systems, developer advocacy and education, and technical writing and speaking.
 
-I also feed this drive by continuously finding myself in <q>rabbit hole deep-dives</q>, the thrill of deep and exhilirating research into the web to achieve some goal, which, more often than not, serve as inspiration for my [projects](https://chrisburnell.com/projects/).
+I also feed my passion for the web by continuously finding myself in <q>rabbit hole deep-dives</q>, which involve exhilirating research into something new and exciting to achieve some goal—more often than not, these deep-dives serve as inspiration for my [projects](https://chrisburnell.com/projects/).
 
 I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link is a joke">playing the piano</a>, [baking bread](https://chrisburnell.com/note/1574856597/) from time to time, and [playing/DMing Dungeons & Dragons](https://chrisburnell.com/projects/#personal-projects) here and there. Check out my [Uses](/uses/) page too!
 

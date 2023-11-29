@@ -29,6 +29,9 @@ Front End Developer with {{ global.now | friendlyDate("yyyy") - site.established
     <small><strong>January 2023 – present</strong></small>
 </div>
 
+- Built, maintained, and published a library of React components to enable developers to build accessible and customised client websites quickly that have been fully-tested and are production-ready.
+- Responsible for keeping track of web standards and introducing my team to how we can leverage stable, new technologies to simplify/enhance the library of components.
+
 <div class=" [ space-between ] ">
     <h4>Lead Developer & Chapter Lead</h4>
     <small><strong>May 2022 – January 2023</strong></small>
@@ -36,7 +39,7 @@ Front End Developer with {{ global.now | friendlyDate("yyyy") - site.established
 
 - Lead Developer and primary technical contact for 8 key clients, defining their complete technical implementation and standard of quality, with a focus on higher-education and government websites.
 - Formulated learning packages as Chapter Lead to grow the front end knowledge of over 30 developers, which catalysed adoption of best practices and expertise.
-- Managed a chapter of two developers, enabling them to pursue and succeed in career development.
+- Managed a team of two developers, enabling them to pursue and succeed in career goals and development.
 - Established a robust design system for projects which *reduced development times by over 50%* and enabled both technical and non-technical stakeholders to understand and participate in dialogue about the complex intersection between design and development.
 
 <div class=" [ space-between ] ">
