@@ -2,7 +2,9 @@
 title: Pig's Ear 2021
 description: Beer reviews from Pig's Ear CAMRA Beer & Cider Festival in 2021
 ---
-{%- set collection = collections.pigsear2021 | arePublished | reverse -%}
+{%- set collection = collections.pigsear2021 | arePublished | sort('rating') -%}
+
+<p>{{ categoryIntroductions.beer | safe }}</p>
 
 <c-librarian>
 	You can sort these beer reviews:
@@ -10,8 +12,8 @@ description: Beer reviews from Pig's Ear CAMRA Beer & Cider Festival in 2021
 	<ul class=" [ cluster ] ">
 		<li><c-librarian-button key="title">by title</c-librarian-button></li>
 		<li><c-librarian-button key="author">by author</c-librarian-button></li>
-		<li><c-librarian-button key="rating">by rating</c-librarian-button></li>
-		<li><c-librarian-button key="chronological" default="descending">by publish date</c-librarian-button></li>
+		<li><c-librarian-button key="rating" default="descending">by rating</c-librarian-button></li>
+		<li><c-librarian-button key="chronological">by publish date</c-librarian-button></li>
 	</ul>
 </c-librarian>
 
