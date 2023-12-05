@@ -3,9 +3,6 @@ const peopleAsync = require("#datajs/people")
 
 const CleanCSS = require("clean-css")
 const { transform } = require("lightningcss")
-const Natural = require("natural")
-const analyze = new Natural.SentimentAnalyzer("English", Natural.PorterStemmer, "afinn")
-
 module.exports = {
 	/**
 	 * Minify CSS.
@@ -120,18 +117,6 @@ module.exports = {
 	 */
 	getResponsesLength: (webmentions, other) => {
 		return (webmentions.length || 0) + (other || 0)
-	},
-	/**
-	 * Get a vibe for the sentiment of a string—for use against comments and replies.
-	 * @param {String} content
-	 * @returns {Number}
-	 */
-	getSentimentValue: (content) => {
-		if (content) {
-			const tokenizer = new Natural.WordTokenizer()
-			return analyze.getSentiment(tokenizer.tokenize(content))
-		}
-		return 0
 	},
 	/**
 	 * Map a number from one range to another including number of decimals.

@@ -24,7 +24,7 @@
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "autoprefixer": "^10.4.16",
-    "clean-css": "^5.3.2",
+    "clean-css": "^5.3.3",
     "concurrently": "^8.2.2",
     "cross-env": "^7.0.3",
     "json-to-scss": "^1.6.2",
@@ -42,7 +42,7 @@
     "@11ty/eleventy": "^2.0.2-alpha.2",
     "@11ty/eleventy-fetch": "^4.0.0",
     "@11ty/eleventy-img": "^3.1.8",
-    "@11ty/eleventy-plugin-bundle": "^1.0.4",
+    "@11ty/eleventy-plugin-bundle": "^1.0.5",
     "@11ty/eleventy-plugin-directory-output": "^1.0.1",
     "@11ty/eleventy-plugin-inclusive-language": "^1.0.3",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
@@ -53,7 +53,7 @@
     "@chrisburnell/eleventy-cache-webmentions": "^1.2.5",
     "@chrisburnell/pentatonic": "^1.1.4",
     "@chrisburnell/spark-line": "^1.2.6",
-    "@mdn/browser-compat-data": "^5.4.0",
+    "@mdn/browser-compat-data": "^5.4.3",
     "@sindresorhus/slugify": "1.1.2",
     "@tweetback/canonical": "^2.0.37",
     "@zachleat/details-utils": "^2.0.2",
@@ -68,8 +68,7 @@
     "luxon": "^3.4.4",
     "markdown-it": "^13.0.2",
     "markdown-it-abbr": "^1.0.4",
-    "markdown-it-footnote": "^3.0.3",
-    "natural": "^6.8.1"
+    "markdown-it-footnote": "^3.0.3"
   },
   "scripts": {
     "clean": "rm -rf .cache && rm -rf _site",

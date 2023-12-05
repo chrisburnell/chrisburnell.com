@@ -57,7 +57,7 @@
 							{%- if not wmDate -%}{% set wmDate = webmention['wm-received'] %}{%- endif -%}
 							{%- set wmSource = webmention.url | tweetback -%}
 							{%- set wmContent = webmention.contentSanitized | default(webmention.content.html) | default(webmention.content.value) | default(webmention.content) -%}
-							{%- set sentiment = webmention.content.value | default(webmention.content) | striptags(true) | getSentimentValue -%}
+							{%- set sentiment = webmention.content.value | default(webmention.content) | striptags(true) -%}
 							{%- set authorPhoto = webmention.author.photo -%}
 							{%- set authorUrl = webmention.author.url | default(wmSource) | tweetback -%}
 							{%- set authorName = webmention.author.name | default('Anonymous') -%}
