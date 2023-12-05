@@ -46,7 +46,7 @@ jobs:
             _site/video
           key: ${{ runner.OS }}-site-cache-${{ hashFiles('**/lockfiles') }}
       - name: Install Node Modules
-        run: npm install
+        run: npm ci
       - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
         name: List the state of node modules
         continue-on-error: true
