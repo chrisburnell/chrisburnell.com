@@ -120,7 +120,7 @@ And even when looping through something like a collection:
 {% for item in collections.pages %}
 	<!-- Loop through all items in a collection -->
 	<h2>{{ item.data.title }}</h2>
-	<p>This page has {{ item.data.webmentions.length }} webmention{{ 's' if item.data.webmentions.length == 2 }}</p>
+	<p>This page has {{ item.data.webmentions.length }} webmention{{ 's' if item.data.webmentions.length > 1 }}</p>
 {% endfor %}
 ```
 {% endraw %}
