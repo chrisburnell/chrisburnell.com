@@ -1,8 +1,13 @@
 <is-land on:visible>
-	<speedlify-score webc:raw webc:root @attributes speedlify-url="https://speedlify.chrisburnell.com"></speedlify-score>
+	<speedlify-score webc:raw webc:root @attributes speedlify-url="https://speedlify.chrisburnell.com">
+		<style>
+			:host .circle {
+				border-color: purple !important;
+			}
+		</style>
+	</speedlify-score>
 
 	<template webc:raw data-island="once">
-		<link rel="stylesheet" href="/css/components/speedlify-score.css" />
 		<script src="/js/components/speedlify-score.js"></script>
 	</template>
 </is-land>

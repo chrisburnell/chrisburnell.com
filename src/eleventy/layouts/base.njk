@@ -174,7 +174,7 @@
 			{% if speedlify[canonical] %}
 				<p class=" [ speedlify ] ">
 					<a class="[ speedlify-anchor ] " href="{{ author.urls.speedlify }}/{{ site.speedlify }}/{{ canonical | getHost(true) | slugify }}/" title="Link to this page's Speedlify Score">
-						<c-speedlify-score hash="{{ speedlify[canonical].hash }}" score weight requests rank rank-change></c-speedlify-score>
+						<c-speedlify-score hash="{{ speedlify[canonical].hash }}" score weight requests></c-speedlify-score>
 					</a>
 				</p>
 			{% endif %}

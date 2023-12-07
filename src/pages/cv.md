@@ -15,18 +15,18 @@ toc: true
 
 ## Summary
 
-Front End Developer with {{ global.now | friendlyDate("yyyy") - site.established }} years of experience, specialising in CSS, design systems, developer advocacy and education, and technical writing and speaking. Software Engineer building design systems and tools to enable teams to build maintainable and performant websites, with an uncompromising focus on user experience. Passionate about the open web, having published over 40 technical articles and authored 4 open source projects. Actively involved in the web community and organising in-person events like [State of the Browser](https://stateofthebrowser.com) as a conference organiser.
+Front End Developer / Software Engineer / Aspiring Developer Advocate with {{ global.now | friendlyDate("yyyy") - site.established }} years of experience, specialising in CSS, design systems, developer advocacy and education, and technical writing and speaking. Work roles involved in creating design systems and tools to enable teams to build maintainable and performant websites, with an uncompromising focus on user experience. Passionate about the open web, having published over 40 technical articles, and author of several open-source projects. Actively involved in the web community and act as co-organiser for an annual, in-person conference, [State of the Browser](https://stateofthebrowser.com).
 
 <h2 style="break-before: page;">Professional Experience</h2>
 
 <div class=" [ space-between ] ">
     <h3><a href="https://squiz.net"><c-emoji>{% image './images/content/squiz-logo.svg', 'Squiz’s logo', 'brand-logo' %}</c-emoji> Squiz</a></h3>
-    <small><strong>February 2018 – present</strong></small>
+    <small><strong>February 2018 – December 2023</strong></small>
 </div>
 
 <div class=" [ space-between ] ">
     <h4>Software Engineer</h4>
-    <small><strong>January 2023 – present</strong></small>
+    <small><strong>January 2023 – December 2023</strong></small>
 </div>
 
 - Built, maintained, and published a library of React components to enable developers to build accessible and customised client websites quickly that have been fully-tested and are production-ready.
@@ -34,7 +34,7 @@ Front End Developer with {{ global.now | friendlyDate("yyyy") - site.established
 
 <div class=" [ space-between ] ">
     <h4>Lead Developer & Chapter Lead</h4>
-    <small><strong>May 2022 – January 2023</strong></small>
+    <small><strong>May 2022 – January 2023</strong></small>
 </div>
 
 - Lead Developer and primary technical contact for 8 key clients, defining their complete technical implementation and standard of quality, with a focus on higher-education and government websites.
@@ -44,7 +44,7 @@ Front End Developer with {{ global.now | friendlyDate("yyyy") - site.established
 
 <div class=" [ space-between ] ">
     <h4>Lead Developer</h4>
-    <small><strong>February 2021 – May 2022</strong></small>
+    <small><strong>February 2021 – May 2022</strong></small>
 </div>
 
 - Implemented modern web standards by redefining best practices, which led to higher code quality and reduced context-switching for developers working across multiple projects.
@@ -73,7 +73,7 @@ Front End Developer with {{ global.now | friendlyDate("yyyy") - site.established
 
 <div class=" [ space-between ] ">
     <h3><a href="https://squiz.net"><c-emoji>{% image './images/content/squiz-logo.svg', 'Squiz’s logo', 'brand-logo' %}</c-emoji> Squiz</a></h3>
-    <small><strong>April 2012 – January 2014</strong></small>
+    <small><strong>April 2012 – January 2014</strong></small>
 </div>
 
 #### Front End Web Developer / UI Developer
@@ -84,15 +84,8 @@ Front End Developer with {{ global.now | friendlyDate("yyyy") - site.established
 <h2 style="break-before: page;">Community Experience</h2>
 
 <div class=" [ space-between ] ">
-    <h3 class=" [ delta ] ">Technical Writer on <a href="https://chrisburnell.com/"><c-emoji><img class="brand-logo" alt="{{ site.title }}" loading="lazy" decoding="async" src="/images/raven.svg"></c-emoji> chrisburnell.com</a></h3>
-    <small><strong>2013 – present</strong></small>
-</div>
-
-Launched a web development blog, which accumulates *over 10,000 unique visitors per month*, and have published over [{{ collections.posts | length | toNearest(100) }} blog posts](https://chrisburnell.com/posts/), including [{{ collections.writingPosts | length }} longform articles](https://chrisburnell.com/writing/), [{{ collections.css | length }} articles about CSS](https://chrisburnell.com/tag/css/), and [{{ collections.code | length }} code demos](https://chrisburnell.com/tag/css/), some of which have been [featured on CodePen](https://codepen.io/collection/hfqlg).
-
-<div class=" [ space-between ] ">
     <h3 class=" [ delta ] ">Conference Organiser for <a href="https://stateofthebrowser.com" rel="external"><c-emoji><img class="brand-logo" alt="State of the Browser’s logo" loading="lazy" decoding="async" src="/images/built/sotb-logo.png"></c-emoji> State of the Browser</a></h3>
-    <small><strong>2017 – present</strong></small>
+    <small><strong>May 2018 – December 2023</strong></small>
 </div>
 
 - Organised 5 annual, not-for-profit conferences, showcasing over 45 speakers with 150+ in-person attendees each year.
@@ -102,11 +95,20 @@ Launched a web development blog, which accumulates *over 10,000 unique visitors 
 - Annual conference websites: [2018](https://2018.stateofthebrowser.com), [2019](https://2019.stateofthebrowser.com), [2021](https://2021.stateofthebrowser.com), [2022](https://2022.stateofthebrowser.com), [2023](https://2022.stateofthebrowser.com)
 
 <div class=" [ space-between ] ">
+    <h3 class=" [ delta ] ">Developer Advocate on <a href="https://chrisburnell.com/"><c-emoji><img class="brand-logo" alt="{{ site.title }}" loading="lazy" decoding="async" src="/images/raven.svg"></c-emoji> chrisburnell.com</a></h3>
+    <small><strong>2013 – present</strong></small>
+</div>
+
+Launched a web development blog, which accumulates *over 10,000 unique visitors per month*, and have published over [{{ collections.posts | length | toNearest(100) }} blog posts](https://chrisburnell.com/posts/), including [{{ collections.writingPosts | length }} longform articles](https://chrisburnell.com/writing/), [{{ collections.css | length }} articles about CSS](https://chrisburnell.com/tag/css/), and [{{ collections.code | length }} code demos](https://chrisburnell.com/tag/css/), some of which have been [featured on CodePen](https://codepen.io/collection/hfqlg).
+
+<div class=" [ space-between ] ">
     <h3 class=" [ delta ] "><a href="https://chrisburnell.com/projects/">Open Source Author</a></h3>
     <small><strong>2019 – present</strong></small>
 </div>
 
-- **[<c-emoji>🐋</c-emoji> Bowhead](https://chrisburnell.com/bowhead/)** <small>([>5,000 downloads](https://www.npmjs.com/package/@chrisburnell/bowhead) · [4 ★](https://github.com/chrisburnell/bowhead))</small><br>A SCSS framework for integrating design tokens into a CSS codebase with support for CSS Variables. This project has been a key component for 6 client websites during my time at Squiz.
-- **[<c-emoji>💬</c-emoji> eleventy-cache-webmentions](https://chrisburnell.com/eleventy-cache-webmentions/)** <small>([>5,100 downloads](https://www.npmjs.com/package/@chrisburnell/eleventy-cache-webmentions) · [14 ★](https://github.com/chrisburnell/eleventy-cache-webmentions))</small><br>A plugin for the popular static site generator, [Eleventy](https://11ty.dev/), that allows the caching of Webmentions and makes them available to use throughout one’s website.
-- **[<c-emoji>🎹</c-emoji> Pentatonic](https://chrisburnell.com/pentatonic/)** <small>([>3,900 downloads](https://www.npmjs.com/package/@chrisburnell/pentatonic) · [1 ★](https://github.com/chrisburnell/pentatonic))</small><br>A JavaScript library for turning any array of integers into a fun little melody using the Web Audio API.
-- **[<c-emoji>📈</c-emoji> spark-line](https://chrisburnell.com/spark-line/)** <small>([>2,800 downloads](https://www.npmjs.com/package/@chrisburnell/spark-line) · [5 ★](https://github.com/chrisburnell/spark-line))</small><br>A Web Component for generating sparkline graphs from a sequence of integers using the Canvas API.
+- **[<c-emoji>🗜<c-emoji> clamp() Calculator](https://chrisburnell.com/clamp-calculator/)** <br>Handy little tool for calculating viewport-based clamped values for use in CSS.
+- **[<c-emoji>🏄<c-emoji> Browser Feature Watch](https://chrisburnell.com/clamp-calculator/)** <br>This page serves as an one-stop shop to keep track of feature support across the major, modern browsers, ordered by level of support. Updated automatically daily.
+- **[<c-emoji>🐋</c-emoji> Bowhead](https://chrisburnell.com/bowhead/)** <small>([>5,600 downloads](https://www.npmjs.com/package/@chrisburnell/bowhead) · [4 ★](https://github.com/chrisburnell/bowhead))</small><br>A SCSS framework for integrating design tokens into a CSS codebase with support for CSS Variables. This project has been a key component for 6 client websites during my time at Squiz.
+- **[<c-emoji>💬</c-emoji> eleventy-cache-webmentions](https://chrisburnell.com/eleventy-cache-webmentions/)** <small>([>7,200 downloads](https://www.npmjs.com/package/@chrisburnell/eleventy-cache-webmentions) · [15 ★](https://github.com/chrisburnell/eleventy-cache-webmentions))</small><br>A plugin for the popular static site generator, [Eleventy](https://11ty.dev/), that allows the caching of Webmentions and makes them available to use throughout one’s website.
+- **[<c-emoji>🎹</c-emoji> Pentatonic](https://chrisburnell.com/pentatonic/)** <small>([>4,400 downloads](https://www.npmjs.com/package/@chrisburnell/pentatonic) · [1 ★](https://github.com/chrisburnell/pentatonic))</small><br>A JavaScript library for turning any array of integers into a fun little melody using the Web Audio API.
+- **[<c-emoji>📈</c-emoji> spark-line](https://chrisburnell.com/spark-line/)** <small>([>3,700 downloads](https://www.npmjs.com/package/@chrisburnell/spark-line) · [6 ★](https://github.com/chrisburnell/spark-line))</small><br>A Web Component for generating sparkline graphs from a sequence of integers using the Canvas API.

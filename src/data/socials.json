@@ -46,6 +46,11 @@
     "key": "lastfm"
   },
   {
+    "title": "LinkedIn",
+    "url": "https://www.linkedin.com/in/",
+    "key": "linkedin"
+  },
+  {
     "title": "npm",
     "url": "https://npmjs.com/~",
     "key": "npm"

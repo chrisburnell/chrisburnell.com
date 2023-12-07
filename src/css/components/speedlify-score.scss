@@ -16,61 +16,66 @@
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
+
+		/* The Lighthouse scoring circles */
+		.circle {
+			color: h(snowy);
+			inline-size: var(--size-large);
+			block-size: var(--size-large);
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			margin-inline-start: var(--size-tiny-small);
+			border-radius: 50%;
+			border: calc(var(--size-border-thin) * 1.5) solid h(conifer);
+			font-size: var(--font-size-small);
+			font-style: normal;
+			font-variation-settings: normal;
+			line-height: 1;
+			text-decoration: none;
+		}
+
+		.circle-ok {
+			border-color: h(aspen);
+		}
+
+		.circle-bad {
+			border-color: h(maple);
+		}
+
+		.rank {
+			display: none;
+		}
+		.rank:before {
+			content: "Rank #";
+		}
+
+		.rank-change {
+			font-size: var(--font-size-small);
+		}
+		.rank-change:before {
+			line-height: 1;
+		}
+
+		// .rank-change.up {
+		// 	color: h(conifer);
+		// }
+		.rank-change.up:before {
+			content: "↑ ";
+		}
+		// .rank-change.down {
+		// 	color: h(maple);
+		// }
+		.rank-change.down:before {
+			content: "↓ ";
+		}
 	}
-	/* The Lighthouse scoring circles */
-	.speedlify-score {
-		color: inherit;
-		inline-size: var(--size-large);
-		block-size: var(--size-large);
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		margin-inline-start: var(--size-tiny-small);
-		border-radius: 50%;
-		border: calc(var(--size-border-thin) * 1.5) solid h(conifer);
-		font-size: var(--font-size-small);
-		font-style: normal;
-		font-variation-settings: normal;
-		line-height: 1;
-		text-decoration: none;
-	}
-	.speedlify-score-ok {
-		color: h(aspen);
-		border-color: currentColor;
-	}
-	.speedlify-score-bad {
-		color: h(maple);
-		border-color: currentColor;
-	}
-	.speedlify-rank {
-		display: none;
-	}
-	.speedlify-rank:before {
-		content: "Rank #";
-	}
-	.speedlify-rank-change {
-		font-size: var(--font-size-small);
-	}
-	.speedlify-rank-change:before {
-		line-height: 1;
-	}
-	// .speedlify-rank-change.up {
-	// 	color: h(conifer);
-	// }
-	.speedlify-rank-change.up:before {
-		content: "↑ ";
-	}
-	// .speedlify-rank-change.down {
-	// 	color: h(maple);
-	// }
-	.speedlify-rank-change.down:before {
-		content: "↓ ";
-	}
-	speedlify-score > :not(.speedlify-score) {
+
+	:is(.circle, .meta) {
 		margin-inline-start: 1em;
 		font-size: var(--font-size-small);
 	}
-	speedlify-score > :first-child {
+	:first-child {
 		margin-inline-start: 0;
 	}
 }
