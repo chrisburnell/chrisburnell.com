@@ -1,0 +1,19 @@
+////
+/// Sepia
+/// @group themes
+////
+
+$sepia-colors: (
+	snowy: "88% 0% 0.05",
+);
+
+@mixin theme-sepia() {
+	@each $name, $value in $sepia-colors {
+		#{"--oklab-" + $name}: #{$value};
+	}
+}
+
+[data-theme*="sepia"],
+.sepia {
+	@include theme-sepia;
+}

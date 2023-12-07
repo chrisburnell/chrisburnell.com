@@ -9,15 +9,13 @@
     "title": "CodePen",
     "url": "https://codepen.io/",
     "key": "codepen",
-    "primary": true,
-    "fillHover": "#ffffff"
+    "primary": true
   },
   {
     "title": "GitHub",
     "url": "https://github.com/",
     "key": "github",
-    "primary": true,
-    "fillHover": "#adbac7"
+    "primary": true
   },
   {
     "title": "Mastodon",

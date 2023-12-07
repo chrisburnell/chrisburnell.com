@@ -1,7 +1,7 @@
 ---
 title: About
 tagline: "<span class=\" [ canada ] \">About me</span>"
-bio: "<span class=\" [ canada ] \">Chris Burnell</span> is a <span class=\" [ canada ] \">Canadian</span> Front End Developer working for [Squiz](http://www.squiz.net) as a Software Engineer. He also volunteers as an Organiser for the [State of the Browser](https://stateofthebrowser.com) conference, having brought together over 50 leading speakers to the delight of 150+ attendees each year. He’s [“Ravenous for CSS”](https://chrisburnell.com/tag/css/), often found [rabbit-hole deep-diving](https://chrisburnell.com/projects/), and his [Webmention Plugin](https://chrisburnell.com/eleventy-cache-webmentions/) for [Eleventy](https://11ty.dev) helps people connect across the [Fediverse](https://en.wikipedia.org/wiki/Fediverse) and [IndieWeb](https://indieweb.org)."
+bio: "<span class=\" [ canada ] \">Chris Burnell</span> is a <span class=\" [ canada ] \">Canadian</span> Front End Developer and aspiring Developer Advocate. He was a passionate volunteer Organiser for the [State of the Browser](https://stateofthebrowser.com) conference from 2018 to 2023, having brought together over 50 leading speakers to the delight of 150+ attendees each year. He’s [“Ravenous for CSS”](https://chrisburnell.com/tag/css/), often found [rabbit-hole deep-diving](https://chrisburnell.com/projects/), and his [Webmention Plugin](https://chrisburnell.com/eleventy-cache-webmentions/) for [Eleventy](https://11ty.dev) helps people connect across the [Fediverse](https://en.wikipedia.org/wiki/Fediverse) and [IndieWeb](https://indieweb.org)."
 perch: true
 eleventyComputed:
   description: "{{ site.description | safe }}"
@@ -79,7 +79,7 @@ I also feed my passion for the web by continuously finding myself in <q>rabbit h
 
 I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link is a joke">playing the piano</a>, [baking bread](https://chrisburnell.com/note/1574856597/) from time to time, and [playing/DMing Dungeons & Dragons](https://chrisburnell.com/projects/#personal-projects) here and there. Check out my [Uses](/uses/) page too!
 
-<h2 id="worked-with">Companies I’ve worked with</h2>
+<h2 id="worked-with">Companies and Organisations I’ve worked with</h2>
 
 <div class=" [ grid ] [ shelf ] [ center ] " style="--min-inline-size: 6em; --gap: var(--size-gap);">
     {%- for client in clients | sort(false, false, "title") -%}
@@ -99,6 +99,8 @@ I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link
         <dd><a class=" [ canada ] " href="mailto:{{ author.email }}"><img alt="{{ site.title }}" loading="lazy" decoding="async" src="/images/raven.svg" class="brand-logo" style="margin-inline-end: 1ex;">{{ author.email }}</a></dd>
         <dt>Mastodon:</dt>
         <dd><a class=" [ canada ] " href="https://{{ author.mastodon_domain }}/users/{{ author.mastodon.split('@') | first }}" title="{{ author.name }} on Mastodon"><svg width="20" height="20" aria-hidden="true" focusable="false" style="--fill: #595aff; margin-inline-end: 1ex; vertical-align: sub;"><use href="#svg--mastodon"></use></svg>{{ '@' + author.mastodon }}</a></dd>
+        <dt>LinkedIn:</dt>
+        <dd><a class=" [ canada ] " href="https://www.linkedin.com/in/{{ author.linkedin }}" title="{{ author.name }} on LinkedIn">{{ '@' + author.linkedin }}</a></dd>
     </dl>
 </address>
 

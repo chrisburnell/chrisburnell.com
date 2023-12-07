@@ -6,6 +6,7 @@
 .header {
 	container: header / inline-size;
 	background-color: h(bear);
+	background-color: color-mix(in oklab, h(snowy), h(coyote) 20%);
 	overflow-y: hidden;
 	box-shadow: var(--box-shadow-low);
 	z-index: var(--z-index-menu);
