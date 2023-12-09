@@ -119,8 +119,6 @@ description: Numbers, cause why not?
 </ul>
 
 {% set shelf_css %}
-	@layer components {
-		{% include '../../css/components/shelf.css' %}
-	}
+	{% include '../../css/components/shelf.css' %}
 {% endset %}
 {%- css 'critical' %}{{ shelf_css | cssmin }}{% endcss -%}

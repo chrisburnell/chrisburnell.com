@@ -496,5 +496,3 @@ What about multiple values in a function? Make sure you're using the *raw* value
 
 - [Variables for Both](/article/variables-for-both/)
 - [Deep Dive into Colour](/article/deep-dive-into-colour/)
-
-{%- css %}@layer components { {%- include '../../../css/components/browser-support.css' -%} }{% endcss -%}

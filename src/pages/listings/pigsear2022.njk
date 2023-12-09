@@ -2,7 +2,7 @@
 title: Pig's Ear 2022
 description: Beer reviews from Pig's Ear CAMRA Beer & Cider Festival in 2022
 ---
-{%- set collection = collections.pigsear2022 | arePublished | sort('rating') -%}
+{%- set collection = collections.pigsear2022 | arePublished | keySort('data.rating') | reverse -%}
 
 <p>{{ categoryIntroductions.beer | safe }}</p>
 

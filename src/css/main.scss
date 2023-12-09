@@ -46,17 +46,6 @@
 @import "compositions/inline-aside";
 @import "compositions/media";
 
-// Components
-@import "components/deck";
-@import "components/shelf";
-@import "components/updated";
-@import "components/browser-support";
-@import "components/librarian";
-@import "components/responses";
-@import "components/spark-line";
-@import "components/speedlify-score";
-@import "components/ads";
-
 // Blocks
 @import "blocks/logo";
 @import "blocks/perch";
@@ -84,6 +73,16 @@
 @import "utilities/flow";
 @import "utilities/helpers";
 @import "utilities/canada";
+
+// Components
+@import "components/deck";
+@import "components/shelf";
+@import "components/updated";
+@import "components/browser-support";
+@import "components/librarian";
+@import "components/responses";
+@import "components/spark-line";
+@import "components/ads";
 
 // Themes
 @import "themes/dark";

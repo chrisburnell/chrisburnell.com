@@ -11,100 +11,102 @@
 @import "../abstracts/generated";
 @import "../abstracts/collections";
 
-.ads {
-	@media print {
-		display: none;
-	}
-}
-
-.ad,
-[id="carbonads"] {
-	inline-size: 100%;
-	max-inline-size: var(--size-line-length);
-	display: flex;
-	flex-direction: column;
-	margin-block-start: var(--size-gigantic);
-	margin-inline: auto;
-
-	%anchor {
-		color: inherit !important;
-		text-decoration: none !important;
-	}
-
-	&:has(%anchor:is(:hover, :focus, :active)) :is(.ad__image, .cardbon-img) {
-		%image {
-			--outline-color: #{h(raven)};
+@layer components {
+	.ads {
+		@media print {
+			display: none;
 		}
 	}
-}
 
-.ad__wrap,
-.carbon-wrap {
-	flex: 1;
-	display: flex;
-	gap: var(--size-medium);
-	overflow: hidden;
-	position: relative;
-}
-
-.ad__split,
-.carbon-img,
-.carbon-text {
-	max-inline-size: 100% !important;
-	display: flex;
-	align-items: center;
-	text-align: start;
-	font-family: var(--font-family-sans);
-	font-style: normal;
-	font-variation-settings: normal;
-
-	%anchor {
-		color: h(bowhead);
-	}
-}
-
-.ad__image,
-.carbon-img {
-	justify-content: center;
-	margin: 0;
-	line-height: 1;
-
-	%image {
-		display: block;
-	}
-}
-
-.ad__content,
-.carbon-text {
-	flex: 1;
-	line-height: var(--line-height-small);
-}
-
-.ad__label,
-.carbon-poweredby {
-	color: h(kaiser);
-	display: block;
-	padding: var(--size-small);
-	font-size: var(--font-size-small);
-	font-weight: var(--font-weight-semibold);
-	line-height: 1;
-	letter-spacing: 1px;
-	text-align: center;
-	text-transform: uppercase;
-}
-
-[id="carbonads"] {
-	min-block-size: 156px;
-
-	& > span {
+	.ad,
+	[id="carbonads"] {
+		inline-size: 100%;
+		max-inline-size: var(--size-line-length);
 		display: flex;
-		flex-direction: column-reverse;
-	}
-}
+		flex-direction: column;
+		margin-block-start: var(--size-gigantic);
+		margin-inline: auto;
 
-.carbon-img {
-	%image {
-		inline-size: 130px !important;
-		block-size: 100px !important;
+		%anchor {
+			color: inherit !important;
+			text-decoration: none !important;
+		}
+
+		&:has(%anchor:is(:hover, :focus, :active)) :is(.ad__image, .cardbon-img) {
+			%image {
+				--outline-color: #{h(raven)};
+			}
+		}
+	}
+
+	.ad__wrap,
+	.carbon-wrap {
+		flex: 1;
+		display: flex;
+		gap: var(--size-medium);
+		overflow: hidden;
+		position: relative;
+	}
+
+	.ad__split,
+	.carbon-img,
+	.carbon-text {
+		max-inline-size: 100% !important;
+		display: flex;
+		align-items: center;
+		text-align: start;
+		font-family: var(--font-family-sans);
+		font-style: normal;
+		font-variation-settings: normal;
+
+		%anchor {
+			color: h(bowhead);
+		}
+	}
+
+	.ad__image,
+	.carbon-img {
+		justify-content: center;
+		margin: 0;
+		line-height: 1;
+
+		%image {
+			display: block;
+		}
+	}
+
+	.ad__content,
+	.carbon-text {
+		flex: 1;
+		line-height: var(--line-height-small);
+	}
+
+	.ad__label,
+	.carbon-poweredby {
+		color: h(kaiser);
+		display: block;
+		padding: var(--size-small);
+		font-size: var(--font-size-small);
+		font-weight: var(--font-weight-semibold);
+		line-height: 1;
+		letter-spacing: 1px;
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	[id="carbonads"] {
+		min-block-size: 156px;
+
+		& > span {
+			display: flex;
+			flex-direction: column-reverse;
+		}
+	}
+
+	.carbon-img {
+		%image {
+			inline-size: 130px !important;
+			block-size: 100px !important;
+		}
 	}
 }

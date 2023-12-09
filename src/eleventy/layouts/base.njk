@@ -147,6 +147,7 @@
 
 	<footer class=" [ footer ] ">
 		<div class=" [ wrap ] [ footer__grid ] ">
+			{% include 'author.njk' %}
 			<ul class=" [ cluster ] [ footer__navigation ] [ strong ] ">
 				{%- for link in navigation -%}
 					{%- if link.footer -%}
@@ -169,7 +170,6 @@
 					{%- endif -%}
 				{%- endfor -%}
 			</ul>
-			{% include 'author.njk' %}
 			{% include 'webrings.njk' %}
 			{% if speedlify[canonical] %}
 				<p class=" [ speedlify ] ">

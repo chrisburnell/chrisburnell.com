@@ -562,7 +562,7 @@ p q r s t u v w x y z { | } ~</code></pre>
 <h2>Deck</h2>
 
 <div id="list-deck" class=" [ deck ] ">
-{% for item in collections.article | arePublished | reverse | limit(site.limits.deck) %}
+{% for item in collections.hot | limit(site.limits.deck) %}
 	{% include 'items/deck.njk' %}
 {% endfor %}
 </div>
@@ -571,13 +571,13 @@ p q r s t u v w x y z { | } ~</code></pre>
 
 <div id="list-shelf-beer" class=" [ grid ] [ shelf ] ">
 {%- set hfeed = false -%}
-{% for item in collections.beer | arePublished | reverse | limit(site.limits.shelf) %}
+{% for item in collections.beer | arePublished | keySort('data.rating') | reverse | limit(site.limits.shelf) %}
 	{% include 'items/shelf.njk' %}
 {% endfor %}
 </div>
 
 <div id="list-shelf-music" class=" [ grid ] [ shelf ] ">
-{% for item in collections.music | arePublished | reverse | limit(site.limits.shelf) %}
+{% for item in collections.music | arePublished | keySort('data.rating') | reverse | limit(site.limits.shelf) %}
 	{% include 'items/shelf.njk' %}
 {% endfor %}
 </div>
@@ -607,7 +607,7 @@ p q r s t u v w x y z { | } ~</code></pre>
 		<c-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4"></c-sparkline>
 	</article>
 	<article style="display: grid; place-items: center;" data-theme="code-red">
-		<c-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" color="var(--color-aspen)" point="false"></c-sparkline>
+		<c-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" color="var(--color-maple)" point="false"></c-sparkline>
 	</article>
 </div>
 
@@ -617,7 +617,6 @@ p q r s t u v w x y z { | } ~</code></pre>
 
 <h2>Can I use... Widget</h2>
 
-{%- css %}@layer components { {%- include '../../css/components/browser-support.css' -%} }{% endcss -%}
 {% browserSupport 'css-has' %}
 
 <p class="italic">I keep track of a whole bunch of different browser features over on my <a href="/feature-watch/">Browser Feature Watch</a> project.</p>

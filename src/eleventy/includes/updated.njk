@@ -1,8 +1,6 @@
 {% if updated_text %}
 	{% set updated_css %}
-		@layer components {
-			{% include '../../../css/components/updated.css' %}
-		}
+		{% include '../../../css/components/updated.css' %}
 	{% endset %}
 	{%- css %}{{ updated_css | cssmin }}{% endcss -%}
 	<div id="updated" class=" [ updated ] [ box ] [ flow ] ">

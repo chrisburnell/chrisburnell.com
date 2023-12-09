@@ -11,8 +11,6 @@ theme: null
 </nav>
 
 {% set deck_css %}
-	@layer components {
-		{% include '../../../css/components/deck.css' %}
-	}
+    {% include '../../../css/components/deck.css' %}
 {% endset %}
 {%- css 'critical' %}{{ deck_css | cssmin | safe }}{% endcss -%}

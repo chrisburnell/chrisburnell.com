@@ -124,7 +124,6 @@ Everything’s looking sweet so far, so let’s tackle the {{ 2 | ordinal | safe
 
 <aside><p>Check out the support for <a rel="external" href="http://caniuse.com/#feat=hashchange">onhashchange on Can I use...</a> before jumping in too deep!</p></aside>
 
-{% css %}@layer components { {%- include '../../../css/components/browser-support.css' -%} }{% endcss -%}
 {% browserSupport 'hashchange' %}
 
 ```javascript

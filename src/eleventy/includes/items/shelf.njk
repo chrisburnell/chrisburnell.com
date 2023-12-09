@@ -1,7 +1,5 @@
 {% set shelf_css %}
-	@layer components {
-		{% include '../../../../css/components/shelf.css' %}
-	}
+	{% include '../../../../css/components/shelf.css' %}
 {% endset %}
 {%- css 'critical' %}{{ shelf_css | cssmin | safe }}{% endcss -%}
 {%- set item_title = item.title | default(item.data.title) -%}

@@ -12,8 +12,6 @@ js: listening.js
 <div id="listening" class=" [ grid ] [ shelf ] [ js-lastfm-feed ] "></div>
 
 {% set shelf_css %}
-	@layer components {
-		{% include '../../css/components/shelf.css' %}
-	}
+	{% include '../../css/components/shelf.css' %}
 {% endset %}
 {%- css 'critical' %}{{ shelf_css | cssmin | safe }}{% endcss -%}

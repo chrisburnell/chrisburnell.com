@@ -79,7 +79,12 @@ module.exports = (eleventyConfig) => {
 						<p class=" [ monospace  strong ] " style="font-size: var(--font-size-gamma);">${featureID}</p>
 						<p class="small">Browser support data for <code>${featureID}</code> comes from <a href="https://caniuse.com/#feat=${featureID}" rel="external nofollow">caniuse.com</a> and is up-to-date as of <time datetime="${DateTime.fromJSDate(new Date(now)).toFormat("yyyy-MM-dd")}">${DateTime.fromJSDate(new Date(now)).toFormat("dd LLLL yyyy")}</time>.</p>
 					</div>
-				</div>`,
+				</div>
+				<is-land on:visible on:idle>
+					<template data-island="once">
+						<link rel="stylesheet" href="/css/components/browser-support.css" />
+					</template>
+				</is-land>`,
 				{ collapseWhitespace: true },
 			)
 		} else {

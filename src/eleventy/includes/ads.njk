@@ -1,8 +1,6 @@
 {% if env.ELEVENTY_PRODUCTION and site.carbon and ads != false %}
 	{% set ads_css %}
-		@layer components {
-			{% include '../../../css/components/ads.css' %}
-		}
+		{% include '../../../css/components/ads.css' %}
 	{% endset %}
 	{%- css %}{{ ads_css | cssmin | safe }}{% endcss -%}
 	<div class=" [ ads ] ">

@@ -11,17 +11,19 @@
 @import "../abstracts/generated";
 @import "../abstracts/collections";
 
-.librarian {
-	margin-block-start: var(--flow-space, 1em);
-	position: sticky;
-	inset-block-start: var(--size-header);
-	z-index: var(--z-index-modal);
+@layer components {
+	.librarian {
+		margin-block-start: var(--flow-space, 1em);
+		position: sticky;
+		inset-block-start: var(--size-header);
+		z-index: var(--z-index-modal);
 
-	.no-js & {
-		display: none;
+		.no-js & {
+			display: none;
+		}
 	}
-}
 
-.librarian-island {
-	display: initial;
+	.librarian-island {
+		display: initial;
+	}
 }

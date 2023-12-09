@@ -1,7 +1,5 @@
 {%- set deck_css -%}
-	@layer components {
-		{% include '../../../../css/components/deck.css' %}
-	}
+	{% include '../../../../css/components/deck.css' %}
 {%- endset -%}
 {%- css 'critical' %}{{ deck_css | cssmin | safe }}{% endcss -%}
 {%- set item_of = item.data.bookmark_of | default(item.data.drink_of) | default(item.data.like_of) | default(item.data.listen_of) | default(item.data.play_of) | default(item.data.read_of) | default(item.data.watch_of) -%}

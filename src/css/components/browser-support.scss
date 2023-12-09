@@ -11,37 +11,39 @@
 @import "../abstracts/generated";
 @import "../abstracts/collections";
 
-.support,
-.support__meta {
-	display: flex;
-	gap: var(--size-gutter);
+@layer components {
+	.support,
+	.support__meta {
+		display: flex;
+		gap: var(--size-gutter);
 
-	@include cq(null, "small") {
-		gap: var(--size-large);
+		@include cq(null, "small") {
+			gap: var(--size-large);
+		}
 	}
-}
 
-.support {
-	flex-direction: column-reverse;
+	.support {
+		flex-direction: column-reverse;
 
-	@include cq(null, "small") {
-		flex-direction: row-reverse;
+		@include cq(null, "small") {
+			flex-direction: row-reverse;
+		}
 	}
-}
 
-.support__meta {
-	flex-direction: column;
-	justify-content: center;
-}
+	.support__meta {
+		flex-direction: column;
+		justify-content: center;
+	}
 
-.browser-support {
-	display: flex;
-	flex-wrap: wrap;
-	gap: var(--size-small);
+	.browser-support {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--size-small);
 
-	li {
-		border-radius: var(--border-radius, var(--size-border-thin));
-		padding-inline: var(--size-small);
-		font-weight: var(--font-weight-semibold);
+		li {
+			border-radius: var(--border-radius, var(--size-border-thin));
+			padding-inline: var(--size-small);
+			font-weight: var(--font-weight-semibold);
+		}
 	}
 }

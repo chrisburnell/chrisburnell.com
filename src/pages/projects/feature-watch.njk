@@ -51,8 +51,6 @@ inlinejs: true
 
 <p>Please feel free to <a href="https://github.com/{{ author.github }}/{{ site.repository }}/tree/{{ site.branch }}/src/data/browserFeatures.json">suggest new features</a> or even <a href="https://github.com/{{ author.github }}/{{ site.repository }}/tree/{{ site.branch }}/src/data/browsersByType.json">other browsers</a>.</p>
 
-{%- css %}@layer components { {%- include '../../../css/components/browser-support.css' -%} }{% endcss -%}
-
 {%- set utilities_css -%}
 	@layer utilities {
 		{%- for feature in browserFeaturesSorted -%}

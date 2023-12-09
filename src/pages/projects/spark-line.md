@@ -245,8 +245,6 @@ If you wanted to use `<is-land>` as well, I recommend something like the followi
 </form>
 
 {% set shelf_css %}
-	@layer components {
-		{% include '../../../css/components/shelf.css' %}
-	}
+    {% include '../../../css/components/shelf.css' %}
 {% endset %}
 {%- css 'critical' %}{{ shelf_css | cssmin | safe }}{% endcss -%}

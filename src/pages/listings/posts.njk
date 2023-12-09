@@ -84,8 +84,6 @@ perch: true
 </div>
 
 {% set shelf_css %}
-	@layer components {
-		{% include '../../../css/components/shelf.css' %}
-	}
+	{% include '../../../css/components/shelf.css' %}
 {% endset %}
 {%- css 'critical' %}{{ shelf_css | cssmin | safe }}{% endcss -%}
