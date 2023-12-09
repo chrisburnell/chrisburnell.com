@@ -3,20 +3,10 @@
 /// @group themes
 ////
 
-$koala-colors: (
-	lynx: "22.3% 0.03% -0.024",
-	wolf: "33.8% 0.036 -0.044",
-	bowhead: "46.1% 0.037 -0.062",
-	raven: "58.5% 0.03 -0.066",
-	highland: "70.2% 0.019 -0.049",
-	coyote: "79.7% 0.011 -0.032",
-	bear: "89.8% 0.005 -0.013",
-);
-
 @mixin theme-koala() {
-	@each $name, $value in $koala-colors {
-		#{"--oklab-" + $name}: #{$value};
-	}
+	--raven-l: 58.5%;
+	--raven-a: 0.03;
+	--raven-b: -0.066;
 
 	.logo,
 	.perch::after {

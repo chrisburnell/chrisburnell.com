@@ -14,17 +14,17 @@ $matrix-colors: (
 );
 
 @mixin theme-matrix() {
-	@each $name, $value in $matrix-colors {
-		#{"--oklab-" + $name}: #{$value};
-	}
-
-	main {
-		background-image: url("/images/matrix.svg");
-	}
+	--raven-l: 60.6%;
+	--raven-a: -0.065;
+	--raven-b: 0.05;
 
 	.logo,
 	.perch::after {
 		filter: hue-rotate(270deg) saturate(300%);
+	}
+
+	main {
+		background-image: url("/images/matrix.svg");
 	}
 
 	.avatar,

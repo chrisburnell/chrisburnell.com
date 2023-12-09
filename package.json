@@ -20,7 +20,6 @@
     "url": "https://github.com/chrisburnell/chrisburnell.com/issues"
   },
   "devDependencies": {
-    "@csstools/postcss-oklab-function": "^3.0.7",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "autoprefixer": "^10.4.16",
@@ -72,7 +71,7 @@
   "scripts": {
     "clean": "rm -rf .cache && rm -rf _site",
     "tokens": "npx json-to-scss './src/data/designTokens/*.json' ./src/css/abstracts/_generated.scss; npx prettier --write src/css/abstracts/_generated.scss",
-    "css": "npx sass src/css:css --style=compressed --no-source-map --color",
+    "css": "npx sass src/css:css --style=expanded --no-source-map --color",
     "postcss": "npx postcss css/*.css --replace --no-map",
     "lightning": "npx lightningcss --minify --bundle css/*.css --output-dir css/",
     "js": "npx rollup -c",

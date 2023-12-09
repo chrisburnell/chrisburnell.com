@@ -3,20 +3,10 @@
 /// @group themes
 ////
 
-$code-red-colors: (
-	lynx: "19.4% 0.018 0.008",
-	wolf: "28.4% 0.031 0.014",
-	bowhead: "40.5% 0.048 0.023",
-	raven: "54.3% 0.068 0.034",
-	highland: "66.4% 0.055 0.022",
-	coyote: "81% 0.029 0.01",
-	bear: "94.8% 0.007 0.002",
-);
-
 @mixin theme-code-red() {
-	@each $name, $value in $code-red-colors {
-		#{"--oklab-" + $name}: #{$value};
-	}
+	--raven-l: 54.3%;
+	--raven-a: 0.068;
+	--raven-b: 0.034;
 
 	.logo,
 	.perch::after {

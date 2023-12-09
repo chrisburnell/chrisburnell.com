@@ -60,7 +60,11 @@
 	}
 
 	&:is(:hover, :focus, :active) {
-		background-color: transparent;
+		&,
+		.anchor {
+			background-color: transparent;
+			text-decoration-color: h(maple);
+		}
 
 		&::before {
 			opacity: 1;

@@ -53,7 +53,7 @@ th {
 	// white-space: nowrap;
 
 	&:not(:empty) {
-		background-color: color-mix(in oklab, h(yeti), h(snowy));
+		background-color: color-mix(in oklab, h(yeti), h(snowy) 40%);
 		position: sticky;
 		z-index: var(--z-index-above);
 

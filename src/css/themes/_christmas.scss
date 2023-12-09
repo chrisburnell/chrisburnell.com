@@ -3,20 +3,14 @@
 /// @group themes
 ////
 
-$christmas-colors: (
-	lynx: "24.6% -0.017 0.008",
-	wolf: "37.1% -0.029 0.015",
-	bowhead: "53.7% -0.045 0.024",
-	raven: "72.3% -0.064 0.036",
-	highland: "81.5% -0.056 0.03",
-	coyote: "89.3% -0.034 0.018",
-	bear: "96.8% -0.011 0.007",
-);
-
 @mixin theme-christmas() {
-	@each $name, $value in $christmas-colors {
-		#{"--oklab-" + $name}: #{$value};
-	}
+	--color-lynx: oklab(24.6% -0.017 0.008);
+	--color-wolf: oklab(37.1% -0.029 0.015);
+	--color-bowhead: oklab(53.7% -0.045 0.024);
+	--color-raven: oklab(72.3% -0.064 0.036);
+	--color-highland: oklab(81.5% -0.056 0.03);
+	--color-coyote: oklab(89.3% -0.034 0.018);
+	--color-bear: oklab(96.8% -0.011 0.007);
 
 	&:is(html) {
 		scrollbar-color: h(maple) h(snowy);

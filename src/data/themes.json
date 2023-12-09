@@ -1,11 +1,19 @@
 [
   {
     "id": "light",
-    "title": "Light"
+    "title": "Ravenous"
   },
   {
     "id": "dark",
-    "title": "Dark"
+    "title": "Ravenous Dark"
+  },
+  {
+    "id": "light  sepia",
+    "title": "Sepia"
+  },
+  {
+    "id": "dark  sepia",
+    "title": "Sepia Dark"
   },
   {
     "id": "code-red",

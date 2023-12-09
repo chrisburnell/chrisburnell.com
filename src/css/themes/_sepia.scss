@@ -3,13 +3,13 @@
 /// @group themes
 ////
 
-$sepia-colors: (
-	snowy: "88% 0% 0.05",
-);
-
 @mixin theme-sepia() {
-	@each $name, $value in $sepia-colors {
-		#{"--oklab-" + $name}: #{$value};
+	--snowy-l: 88%;
+	--monochrome-b: 0.04;
+
+	.logo,
+	.perch::after {
+		filter: hue-rotate(210deg) saturate(200%);
 	}
 }
 

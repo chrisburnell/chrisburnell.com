@@ -4,7 +4,7 @@
 ////
 
 @mixin theme-dark() {
-	--shadow-color: var(--oklab-shadow-dark);
+	--shadow-color: var(--color-shadow-dark);
 
 	&:is(html) {
 		scrollbar-color: h(raven) h(mineshaft);

@@ -84,17 +84,17 @@ class SpeedlifyScore extends HTMLElement {
 	align-items: center;
 	justify-content: center;
 	border-radius: 50%;
-	border: calc(var(--size-border-thin) * 1.5) solid oklab(var(--oklab-nickel));
+	border: calc(var(--size-border-thin) * 1.5) solid var(--color-nickel);
 	font-variation-settings: normal;
 }
 .circle-good {
-	border-color: oklab(var(--oklab-conifer));
+	border-color: var(--color-conifer);
 }
 .circle-ok {
-	border-color: oklab(var(--oklab-aspen));
+	border-color: var(--color-aspen);
 }
 .circle-bad {
-	border-color: oklab(var(--oklab-maple));
+	border-color: var(--color-maple);
 }
 .rank {
 	display: none;

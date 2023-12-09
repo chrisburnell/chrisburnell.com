@@ -16,7 +16,7 @@ css: styleguide.css
 		{%- for name, color in designTokens.colors -%}
 			<li class=" [ background--{{ name }} ] ">
 				<h3>{{ name | title }}</h3>
-				<div class="monospace" style="font-size: var(--font-size-small-min)">oklab({{ color }})</div>
+				<div class="monospace" style="font-size: var(--font-size-small-min)">{{ color }}</div>
 			</li>
 		{%- endfor -%}
 	</ul>
@@ -607,7 +607,7 @@ p q r s t u v w x y z { | } ~</code></pre>
 		<c-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4"></c-sparkline>
 	</article>
 	<article style="display: grid; place-items: center;" data-theme="code-red">
-		<c-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" color="oklab(var(--oklab-aspen))" point="false"></c-sparkline>
+		<c-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" color="var(--color-aspen)" point="false"></c-sparkline>
 	</article>
 </div>
 
