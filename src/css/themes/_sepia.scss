@@ -5,11 +5,16 @@
 
 @mixin theme-sepia() {
 	// bring down the brightness
-	--snowy-l: 88%;
+	--snowy-lightness: 88%;
 	// apply slight yellow-filter to monochrome colours
-	--monochrome-b: 0.06;
+	--monochrome-chroma: 0.06;
+	--monochrome-hue: 90;
 	// apply slight yellow-filter to raven-based colours
-	--raven-b: 0;
+	--raven-chroma: 0.034;
+	--raven-hue: 180;
+
+	@include setup-monochrome-colors;
+	@include setup-raven-colors;
 
 	.logo,
 	.perch::after {

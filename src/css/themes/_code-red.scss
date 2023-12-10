@@ -4,9 +4,11 @@
 ////
 
 @mixin theme-code-red() {
-	--raven-l: 54.3%;
-	--raven-a: 0.068;
-	--raven-b: 0.034;
+	--raven-lightness: 54.3%;
+	--raven-chroma: 0.076;
+	--raven-hue: 26.565;
+
+	@include setup-raven-colors;
 
 	.logo,
 	.perch::after {

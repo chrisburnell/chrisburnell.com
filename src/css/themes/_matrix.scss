@@ -3,20 +3,12 @@
 /// @group themes
 ////
 
-$matrix-colors: (
-	lynx: "34.8% -0.037 0.029",
-	wolf: "43.3% -0.046 0.036",
-	bowhead: "52% -0.056 0.043",
-	raven: "60.6% -0.065 0.05",
-	highland: "69.2% -0.074 0.057",
-	coyote: "78.1% -0.084 0.064",
-	bear: "95.2% -0.028 0.019",
-);
-
 @mixin theme-matrix() {
-	--raven-l: 60.6%;
-	--raven-a: -0.065;
-	--raven-b: 0.05;
+	--raven-lightness: 60.6%;
+	--raven-chroma: 0.082;
+	--raven-hue: 142.62;
+
+	@include setup-raven-colors;
 
 	.logo,
 	.perch::after {

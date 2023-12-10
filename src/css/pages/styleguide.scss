@@ -13,7 +13,6 @@
 @import "../abstracts/collections";
 
 .palette {
-	background-color: h(snowy);
 	inline-size: 100%;
 	display: flex;
 	flex-wrap: wrap;
@@ -24,7 +23,7 @@
 
 	li {
 		max-inline-size: 100%;
-		padding: var(--size-medium) 0;
+		padding: var(--size-medium) var(--size-small);
 		font-size: var(--font-size-small);
 		text-align: center;
 		white-space: nowrap;

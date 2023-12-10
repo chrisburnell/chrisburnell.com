@@ -68,7 +68,7 @@ module.exports = {
 	 * @returns {String}
 	 */
 	cleantags: (input) => {
-		return input.replace(/\<pre(.|\n)*?\<\/pre\>/g, "").replace(/\<div class="\[ support(.*)\<\/div\>/g, "")
+		return input.replace(/\<pre(.|\n)*?\<\/pre\>/g, "").replace(/\<div class="\[ support(.*)\<\/div\>/g, "").replace(/\<ul class="\[ palette(.*)\<\/ul\>/g, "")
 	},
 	/**
 	 * Convert a number to Latin characters in a counting format.

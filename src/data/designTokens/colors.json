@@ -1,18 +1,18 @@
 {
-  "thunder": "oklab(15% 0 0)",
+  "thunder": "oklch(15% 0 0)",
   "mineshaft": "mix snowy/thunder 83.6%",
   "kaiser": "mix snowy/thunder 66.6%",
   "nickel": "mix snowy/thunder 51.8%",
   "yeti": "mix snowy/thunder 10.2%",
-  "snowy": "oklab(98.2% 0 0)",
+  "snowy": "oklch(98.2% 0 0)",
   "lynx": "mix raven/thunder 86%",
   "wolf": "mix raven/thunder 62%",
   "bowhead": "mix raven/thunder 38%",
-  "raven": "oklab(61.3% -0.034 -0.054)",
+  "raven": "oklch(61.3% 0.0638 236.14)",
   "highland": "mix raven/snowy 38%",
   "coyote": "mix raven/snowy 62%",
   "bear": "mix raven/snowy 86%",
-  "aspen": "oklab(88.7% -0.017 0.181)",
-  "conifer": "oklab(54.1% -0.101 0.079)",
-  "maple": "oklab(57.6% 0.202 0.103)"
+  "aspen": "oklch(88.7% 0.1818 92.07)",
+  "conifer": "oklch(54.1% 0.1282 142.13)",
+  "maple": "oklch(57.6% 0.2268 27.77)"
 }

@@ -4,13 +4,13 @@
 ////
 
 @mixin theme-christmas() {
-	--color-lynx: oklab(24.6% -0.017 0.008);
-	--color-wolf: oklab(37.1% -0.029 0.015);
-	--color-bowhead: oklab(53.7% -0.045 0.024);
-	--color-raven: oklab(72.3% -0.064 0.036);
-	--color-highland: oklab(81.5% -0.056 0.03);
-	--color-coyote: oklab(89.3% -0.034 0.018);
-	--color-bear: oklab(96.8% -0.011 0.007);
+	--color-lynx: oklch(24.6% 0.0188 153.43);
+	--color-wolf: oklch(37.1% 0.0326 152.35);
+	--color-bowhead: oklch(53.7% 0.051 151.36);
+	--color-raven: oklch(72.3% 0.0735 152.51);
+	--color-highland: oklch(81.5% 0.0635 153.29);
+	--color-coyote: oklch(89.3% 0.0385 152.86);
+	--color-bear: oklch(96.8% 0.0131 151.92);
 
 	&:is(html) {
 		scrollbar-color: h(maple) h(snowy);

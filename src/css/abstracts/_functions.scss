@@ -4,9 +4,9 @@
 ////
 
 ///
-/// Return an OKLab color
+/// Return an OKLCH color
 ///
-/// @param {String} $value - key from `oklab` map
+/// @param {String} $value - key from `color` map
 /// @param {String} $opacity [null] - key from `opacity` map
 ///
 /// @throw Error if no parameter is passed.

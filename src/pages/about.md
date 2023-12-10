@@ -67,8 +67,8 @@ eleventyComputed:
 ## The Long Version
 
 <figure class=" [ line-length  overflow ] ">
-    {% image './images/content/rachel-and-i.jpg', 'a photo of my fiancée, Rachel, and myself', ' [ shadow ] [ canada ] ', [500, 672, 1000] %}
-    <figcaption>a photo of my fiancée, Rachel, and myself</figcaption>
+    {% image './images/content/rachel-and-i.jpg', 'a photo of my wife, Rachel, and myself', ' [ shadow ] [ canada ] ', [500, 672, 1000] %}
+    <figcaption>a photo of my wife, Rachel, and myself</figcaption>
 </figure>
 
 I’m originally from [<span class=" [ canada ] ">Halifax, Nova Scotia</span>](https://www.openstreetmap.org/#map=13/44.6463/-63.6162) but now I live in [London, England](https://www.openstreetmap.org/#map=10/51.4898/-0.0882) where I work for [Squiz](http://www.squiz.net), a digital transformation agency, as a Software Engineer.

@@ -4,32 +4,21 @@
 ////
 
 :root {
-	// Build the monochrome colours
-	--monochrome-a: 0;
-	--monochrome-b: 0;
-	--snowy-l: 98.2%;
-	--color-snowy: oklab(var(--snowy-l) var(--monochrome-a) var(--monochrome-b));
-	--thunder-l: 15%;
-	--color-thunder: oklab(var(--thunder-l) var(--monochrome-a) var(--monochrome-b));
-	--color-mineshaft: color-mix(in oklab, var(--color-snowy), var(--color-thunder) 83.6%);
-	--color-kaiser: color-mix(in oklab, var(--color-snowy), var(--color-thunder) 66.6%);
-	--color-nickel: color-mix(in oklab, var(--color-snowy), var(--color-thunder) 51.8%);
-	--color-yeti: color-mix(in oklab, var(--color-snowy), var(--color-thunder) 10.2%);
+	/* Build the Monochrome colors */
+	--monochrome-chroma: 0;
+	--monochrome-hue: 0;
+	--snowy-lightness: 98.2%;
+	--thunder-lightness: 15%;
+	@include setup-monochrome-colors;
 
-	// Build the Raven-based colours
-	--raven-l: 61.3%;
-	--raven-a: -0.034;
-	--raven-b: -0.054;
-	--color-raven: oklab(var(--raven-l) var(--raven-a) var(--raven-b));
-	--color-lynx: color-mix(in oklab, var(--color-raven), var(--color-thunder) 86%);
-	--color-wolf: color-mix(in oklab, var(--color-raven), var(--color-thunder) 62%);
-	--color-bowhead: color-mix(in oklab, var(--color-raven), var(--color-thunder) 38%);
-	--color-highland: color-mix(in oklab, var(--color-raven), var(--color-snowy) 38%);
-	--color-coyote: color-mix(in oklab, var(--color-raven), var(--color-snowy) 62%);
-	--color-bear: color-mix(in oklab, var(--color-raven), var(--color-snowy) 86%);
+	/* Build the Raven colors */
+	--raven-lightness: 61.3%;
+	--raven-chroma: 0.0638;
+	--raven-hue: 236.14;
+	@include setup-raven-colors;
 
 	@each $name, $value in map-merge($colors-secondary, $colors-tertiary) {
-		#{"--color-" + $name}: oklab(#{$value});
+		#{"--color-" + $name}: oklch(#{$value});
 	}
 
 	@each $name, $value in $opacities {

@@ -4,9 +4,11 @@
 ////
 
 @mixin theme-koala() {
-	--raven-l: 58.5%;
-	--raven-a: 0.03;
-	--raven-b: -0.066;
+	--raven-lightness: 58.5%;
+	--raven-chroma: 0.0725;
+	--raven-hue: 294.53;
+
+	@include setup-raven-colors;
 
 	.logo,
 	.perch::after {
