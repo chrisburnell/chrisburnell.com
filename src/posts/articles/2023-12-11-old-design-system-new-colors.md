@@ -12,8 +12,6 @@ css: styleguide.css
 wide: true
 ---
 
-Over the years, I’ve changed the colours used on my website a number of times, but I think I’m mostly settled on what I have now—besides the [themes](#theme-toggler) available in the footer. But what I’m going to talk about today has to do with the most recent <q>behind-the-scenes</q> changes I made to the way the colours are defined.
-
 ## Hexidecimal / RGB
 
 <figure>
