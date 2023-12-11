@@ -344,6 +344,8 @@ Now, because the 13 colours in the palette are defined by a small number of vari
 --raven-hue: 180;
 ```
 
+#### Sepia Theme
+
 <figure>
     <ul class="[ palette ] [ sepia ] ">
         <li class="[ background--raven ]">
@@ -390,6 +392,8 @@ Now, because the 13 colours in the palette are defined by a small number of vari
 
 This makes it easy to change the <q>theme</q> of my website just by manipulating the `raven`-based variables. Critically, you might notice that the perceived brightness of the colours between these themes look much more consistant than what the RGB colour space provided.
 
+#### Koala Theme
+
 <figure>
     <ul class="[ palette ] [ koala ] ">
         <li class="[ background--raven ]">
@@ -415,6 +419,8 @@ This makes it easy to change the <q>theme</q> of my website just by manipulating
         </li>
     </ul>
 </figure>
+
+#### Code Red Theme
 
 <figure>
     <ul class="[ palette ] [ code-red ] ">
