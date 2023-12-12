@@ -1,6 +1,6 @@
 ---
 draft: true
-date: 2023-12-12T14:00:00+0000
+date: 2023-12-13T10:00:00+0000
 title: Can you teach an old design system new colours?
 description: Over the years, I’ve changed the colours used across my website a number of times, and I’m happy with what I have now, but what I’m going to talk about today are <em>formats</em> for defining colours and some recent <q>behind-the-scenes</q> changes I made to how I define colours on my website, making theming my website easier.
 tags:
@@ -30,7 +30,7 @@ css: styleguide.css
     </ul>
 </figure>
 
-For many years, my colours were defined in Hexidecimal format, or **Hex** as it’s commonly-known as, which maps to the <abbr class=" [ strong ] " title="Red, Green, Blue">RGB</abbr> colour model. This was essentially the de facto way of defining colours back in 2008.
+For many years, my colours were defined in Hexidecimal format, or **Hex** as it’s commonly known as, which maps to the <abbr class=" [ strong ] " title="Red, Green, Blue">RGB</abbr> colour model. This was essentially the de facto way of defining colours back in 2008.
 
 But when it comes to *reading* and *understanding* **Hex/RGB** colours, it’s a bit more tricky.
 
@@ -38,24 +38,24 @@ But when it comes to *reading* and *understanding* **Hex/RGB** colours, it’s a
 <form id="demo-hex" class=" [ grid ] " style="--placement: auto-fit; --min-inline-size: 6rem;">
 	<fieldset>
 		<label for="input-hex-red" class=" [ delta ] ">Red</label>
-		<input id="input-hex-red" type="range" min="0" max="255" value="255" style="inline-size: 100%; line-height: 3;" />
+		<input id="input-hex-red" type="range" min="0" max="255" value="95" style="inline-size: 100%; line-height: 3;" />
 	</fieldset>
 	<fieldset>
 		<label for="input-hex-green" class=" [ delta ] ">Green</label>
-		<input id="input-hex-green" type="range" min="0" max="255" value="0" style="inline-size: 100%; line-height: 3;" />
+		<input id="input-hex-green" type="range" min="0" max="255" value="138" style="inline-size: 100%; line-height: 3;" />
 	</fieldset>
 	<fieldset>
 		<label for="input-hex-blue" class=" [ delta ] ">Blue</label>
-		<input id="input-hex-blue" type="range" min="0" max="255" value="0" style="inline-size: 100%; line-height: 3;" />
+		<input id="input-hex-blue" type="range" min="0" max="255" value="166" style="inline-size: 100%; line-height: 3;" />
 	</fieldset>
 </form>
-<div id="output-hex" class="output-color" style="background-color: rgb(255, 0, 0);"></div>
+<div id="output-hex" class="output-color" style="background-color: rgb(95, 138, 166);"></div>
 
 **RGB** is an additive colour format. This means that, starting from black, we combine **r**ed, **g**reen, and **b**lue together to create a colour, and the syntax we use when coding to define **Hex/RGB** colours follows this format: we have to provide a red, green, and blue value.
 
-Try to make <code style="background-color: orange; color: black;">orange</code>.
+Try to make <code style="background-color: orange; color: black;">orange</code> using the sliders above.
 
-This is definitely not an easy task! This is because all three value, in tandem, are responsible for controlling not just the hue, but also the saturation and lightness of that hue. This makes authoring and reading **Hex/RGB** values difficult as it’s difficult to imagine how certain ratios and amounts of each value mix to produce a colour.
+This is definitely not an easy task! This is because all three values, in tandem, are responsible for controlling not just the hue, but also the saturation and the lightness of that hue. This makes authoring and reading **Hex/RGB** values difficult as it’s difficult to imagine how certain ratios and amounts of each value mix to produce a colour.
 
 These limitations, particularly in *creating* (or *finding*) colours, were probably a good thing for web development, as it spawned countless, incredible tools that presented **Hex/RGB** in ways that are generally easier to understand and manipulate for humans than manually adjusting **RGB** values. This almost-surely pushed the collective understanding of colour on the web further and helped ingratiate people towards alternative and newer formats for defining colour.
 
@@ -86,22 +86,22 @@ It’s important to know that **HSL** uses the same colour space as **Hex** and 
 <form id="demo-hsl" class=" [ grid ] " style="--placement: auto-fit; --min-inline-size: 6rem;">
 	<fieldset>
 		<label for="input-hsl-hue" class=" [ delta ] ">Hue</label>
-		<input id="input-hsl-hue" type="range" min="0" max="360" value="0" style="inline-size: 100%; line-height: 3;" />
+		<input id="input-hsl-hue" type="range" min="0" max="360" value="204" style="inline-size: 100%; line-height: 3;" />
 	</fieldset>
 	<fieldset>
 		<label for="input-hsl-saturation" class=" [ delta ] ">Saturation</label>
-		<input id="input-hsl-saturation" type="range" min="0" max="100" value="100" style="inline-size: 100%; line-height: 3;" />
+		<input id="input-hsl-saturation" type="range" min="0" max="100" value="29" style="inline-size: 100%; line-height: 3;" />
 	</fieldset>
 	<fieldset>
 		<label for="input-hsl-lightness" class=" [ delta ] ">Lightness</label>
-		<input id="input-hsl-lightness" type="range" min="0" max="100" value="50" style="inline-size: 100%; line-height: 3;" />
+		<input id="input-hsl-lightness" type="range" min="0" max="100" value="51" style="inline-size: 100%; line-height: 3;" />
 	</fieldset>
 </form>
-<div id="output-hsl" class="output-color" style="background-color: hsl(0 100% 50%);"></div>
+<div id="output-hsl" class="output-color" style="background-color: hsl(204 29% 51%);"></div>
 
-Like before, try to make <code style="background-color: orange; color: black;">orange</code>.
+Like before, try to make <code style="background-color: orange; color: black;">orange</code> using the sliders above.
 
-You’ll probably find it quite a bit more quickly, as the inputs that we get with **HSL** are far more intuitive to work with and comprehend than **RGB**. Importantly, it puts two of the ways that we typically describe colour with language, by a colour’s **Hue** and **Lightness**, as two of the colour format’s inputs (which, I *imagine* maps to parts of the brain more easily than **RGB**). The third input, **Saturation** may not be immediately obvious, but can be understood by playing with its value.
+It may not necessarily be quicker to do, but the inputs that we get with **HSL** are certainly more intuitive to work with and comprehend than **RGB’s**. Importantly, it puts two of the ways that we typically describe colour with language, by a colour’s **Hue** and **Lightness**, as two of the colour format’s inputs (which, I *imagine* maps to parts of the brain more easily than **RGB**). The third input, **Saturation** may not be immediately obvious, but can be understood by playing with its value.
 
 ### Hue
 
@@ -170,20 +170,20 @@ And finally, where I’ve happily landed: **OKLCH**. This is the most flexible a
 <form id="demo-oklch" class=" [ grid ] " style="--placement: auto-fit; --min-inline-size: 6rem;">
 	<fieldset>
 		<label for="input-oklch-lightness" class=" [ delta ] ">Lightness</label>
-		<input id="input-oklch-lightness" type="range" min="0" max="100" value="63" style="inline-size: 100%; line-height: 3;" />
+		<input id="input-oklch-lightness" type="range" min="0" max="100" value="61" style="inline-size: 100%; line-height: 3;" />
 	</fieldset>
 	<fieldset>
 		<label for="input-oklch-chroma" class=" [ delta ] ">Chroma</label>
-		<input id="input-oklch-chroma" type="range" min="0" max="0.4" value="0.26" step="0.01" style="inline-size: 100%; line-height: 3;" />
+		<input id="input-oklch-chroma" type="range" min="0" max="0.4" value="0.06" step="0.01" style="inline-size: 100%; line-height: 3;" />
 	</fieldset>
 	<fieldset>
 		<label for="input-oklch-hue" class=" [ delta ] ">Hue</label>
-		<input id="input-oklch-hue" type="range" min="0" max="360" value="29" style="inline-size: 100%; line-height: 3;" />
+		<input id="input-oklch-hue" type="range" min="0" max="360" value="238" style="inline-size: 100%; line-height: 3;" />
 	</fieldset>
 </form>
-<div id="output-oklch" class="output-color" style="background-color: oklch(63% 0.26 29);"></div>
+<div id="output-oklch" class="output-color" style="background-color: oklch(61.29% 0.064 237.73);"></div>
 
-Last time now; try to make <code style="background-color: orange; color: black;">orange</code>.
+Last time now; try to make <code style="background-color: orange; color: black;">orange</code> using the sliders above.
 
 This is about on the same level as **HSL** in terms of authoring and reading, but **OKLCH** fixes a [number of problems with the RGB colour space](#problems-with-rgb) that makes it more consistent and reliable across its colour space. In addition, it offers both *more* colours and colours that are *outside* of the **RGB** colour space, i.e. colours that were not achievable on the web before.
 
@@ -584,7 +584,6 @@ I can’t overstate how much clearer **HSL** and **OKLCH** colour formats are to
 Colour formats like **HSL** and **OKLCH** give us much more intuitive understanding of the nature of a given colour, and the ways to manipulate and create variations of those colours
 
 I hope you found this useful, and I’d love to know how others are doing this sort of things or what kind of pitfalls I might run into using this technique!
-
 
 {% css %}
 @layer pages {

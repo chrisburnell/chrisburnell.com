@@ -65,11 +65,6 @@
 			<time class=" [ dt-end ] " datetime="{{ rsvp.end | rfc3339Date }}">{% if rsvp.date | friendlyDate != rsvp.end | friendlyDate %}{{ rsvp.end | friendlyDate }} {% endif %}{{ rsvp.end | friendlyTime(true) }}</time>
 		</li>
 	{% endif %}
-	{% for lookup in collections.popular %}
-		{% if lookup.title == title %}
-			<li>AHSDIOAHGSIODHGASIODHISAOHDIOASHDIO</li>
-		{% endif %}
-	{% endfor %}
 	{% if show_reading_length %}
 		<li class=" [ reading-length ] ">
 			<c-emoji>{{ emojis.reading_length }}</c-emoji>

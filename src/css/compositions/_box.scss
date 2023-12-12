@@ -14,7 +14,7 @@
 
 .box,
 %box {
-	background-color: var(--box-background-color, h(bear));
+	background-color: var(--box-background-color, color-mix(in oklab, h(bear), h(snowy)));
 	color: var(--box-color, inherit);
 	max-inline-size: var(--box-max-inline-size, 100%) !important;
 	padding: var(--box-padding, var(--size-gutter));

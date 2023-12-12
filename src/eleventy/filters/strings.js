@@ -70,8 +70,12 @@ module.exports = {
 	cleantags: (input) => {
 		return input
 			.replace(/\<pre(.|\n)*?\<\/pre\>/g, "")
-			.replace(/\<div class="\[ support(.*)\<\/div\>/g, "")
-			.replace(/\<ul class="\[ palette(.*)\<\/ul\>/g, "")
+			.replace(/\<form(.|\n)*?\<\/form\>/g, "")
+			.replace(/\<link(.|\n)*?\<\/link\>/g, "")
+			.replace(/\<script(.|\n)*?\<\/script\>/g, "")
+			.replace(/\<style(.|\n)*?\<\/style\>/g, "")
+			.replace(/\<(\w+).*?class="\s*\[ support(.|\n)*?\<\/\1\>/g, "")
+			.replace(/\<(\w+).*?class="\s*\[ palette(.|\n)*?\<\/\1\>/g, "")
 	},
 	/**
 	 * Convert a number to Latin characters in a counting format.
