@@ -14,9 +14,9 @@ css: styleguide.css
 <figure>
 	<ul id="colors" class=" [ palette ] ">
 		{%- for name, color in designTokens.colors -%}
-			<li class=" [ background--{{ name }} ] ">
+			<li class=" [ background--{{ name }} ] {% if name == 'aspen' or name == 'conifer' or name == 'maple' %}[ third ] {% endif %}"{% if name == 'raven' or name == 'thunder' or name == 'snowy' %} style="flex: 1 0 100%;"{% endif %}>
 				<h3>{{ name | title }}</h3>
-				<div class="monospace" style="font-size: var(--font-size-small-min)">{{ color }}</div>
+				<pre style="font-size: var(--font-size-small-min)">{{ color }}</pre>
 			</li>
 		{%- endfor -%}
 	</ul>
@@ -53,15 +53,15 @@ css: styleguide.css
 	<p>Values generated using <strong><a href="/clamp-calculator/">clamp() Calculator</a></strong> with the following values:</p>
 	<dl>
 		<dt>Root Font Size</dt>
-		<dd class="monospace">
+		<dd>
 			<pre>16px</pre>
 		</dd>
 		<dt>Viewport Widths</dt>
-		<dd class="monospace">
+		<dd>
 			<pre>700px – 1600px</pre>
 		</dd>
 		<dt>Sizes <small>(px)</small></dt>
-		<dd class="monospace">
+		<dd>
 			<pre>64 – 72
 36 – 42
 20 – 24
@@ -95,11 +95,11 @@ css: styleguide.css
 	<p>Values generated using <strong><a href="/clamp-calculator/">clamp() Calculator</a></strong> with the following values:</p>
 	<dl>
 		<dt>Root Font Size</dt>
-		<dd class="monospace">
+		<dd>
 			<pre>16px</pre>
 		</dd>
 		<dt>Viewport Widths</dt>
-		<dd class="monospace">
+		<dd>
 			<pre>700px – 1600px</pre>
 		</dd>
 		<dt>Type Scales</dt>
@@ -111,7 +111,7 @@ css: styleguide.css
 			<strong><span style="font-size: var(--font-size-gamma); line-height: 0;">*</span>:</strong> Augmented Fourth <span class="monospace">1.414</span>
 		</dd>
 		<dt>Font Sizes <small>(px)</small></dt>
-		<dd class="monospace">
+		<dd>
 			<pre>33.178 – 72.000 (*)
 27.648 – 42.666
 23.040 – 32.000
@@ -495,13 +495,13 @@ css: styleguide.css
 
 <h2>Preformatted Text</h2>
 
-<pre><code>P R E F O R M A T T E D T E X T
+<pre>P R E F O R M A T T E D T E X T
 ! " # $ % &amp; ' ( ) * + , - . /
 0 1 2 3 4 5 6 7 8 9 : ; &lt; = > ?
 @ A B C D E F G H I J K L M N O
 P Q R S T U V W X Y Z [ \ ] ^ _
 ` a b c d e f g h i j k l m n o
-p q r s t u v w x y z { | } ~</code></pre>
+p q r s t u v w x y z { | } ~</pre>
 
 <h2>Code Blocks</h2>
 

@@ -22,8 +22,9 @@
 	}
 
 	li {
+		--flow-space: var(--size-tiny);
 		max-inline-size: 100%;
-		padding: var(--size-medium) var(--size-small);
+		padding: var(--size-small-medium) var(--size-small);
 		font-size: var(--font-size-small);
 		text-align: center;
 		white-space: nowrap;
@@ -33,18 +34,31 @@
 			flex: 1 0 100%;
 		}
 
-		@include cq(null, "tiny", "small") {
+		@include cq(null, "tiny") {
 			flex: 1 0 50%;
 		}
 
-		@include cq(null, "small") {
+		& > * + * {
+			margin-top: var(--size-tiny);
+		}
+	}
+
+	&.thirds li,
+	& .third {
+		@include cq(null, "tiny") {
 			flex: 1 0 33.333%;
 		}
+	}
 
-		%heading {
-			margin-block-end: 0;
-			font-size: var(--font-size-default);
-		}
+	%heading {
+		margin-block-end: 0;
+		font-size: var(--font-size-default);
+	}
+
+	pre {
+		inline-size: fit-content;
+		line-height: var(--line-height-medium);
+		margin-inline: auto;
 	}
 }
 

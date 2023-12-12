@@ -12,9 +12,9 @@
 	@include setup-monochrome-colors;
 
 	/* Build the Raven colors */
-	--raven-lightness: 61.3%;
-	--raven-chroma: 0.0638;
-	--raven-hue: 236.14;
+	--raven-lightness: 61.29%;
+	--raven-chroma: 0.064;
+	--raven-hue: 237.73;
 	@include setup-raven-colors;
 
 	@each $name, $value in map-merge($colors-secondary, $colors-tertiary) {

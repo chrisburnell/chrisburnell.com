@@ -199,19 +199,14 @@
 	display: none;
 }
 
-%background--highland,
-%background--raven {
-	color: h(thunder);
-}
-%background--yeti,
 %background--aspen,
 %background--bear,
 %background--coyote,
-%background--snowy {
-	color: h(mineshaft);
-}
-%background--lynx {
-	color: h(yeti);
+%background--highland,
+%background--raven,
+%background--snowy,
+%background--yeti {
+	color: h(thunder);
 }
 %background--bowhead,
 %background--conifer,
@@ -219,6 +214,7 @@
 %background--kaiser,
 %background--maple,
 %background--mineshaft,
+%background--lynx,
 %background--thunder,
 %background--wolf {
 	color: h(snowy);

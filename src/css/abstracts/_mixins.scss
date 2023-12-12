@@ -118,10 +118,10 @@
 ///
 @mixin setup-raven-colors() {
 	--color-raven: oklch(var(--raven-lightness) var(--raven-chroma) var(--raven-hue));
-	--color-lynx: color-mix(in oklab, var(--color-raven), var(--color-thunder) 86%);
-	--color-wolf: color-mix(in oklab, var(--color-raven), var(--color-thunder) 62%);
-	--color-bowhead: color-mix(in oklab, var(--color-raven), var(--color-thunder) 38%);
-	--color-highland: color-mix(in oklab, var(--color-raven), var(--color-snowy) 38%);
-	--color-coyote: color-mix(in oklab, var(--color-raven), var(--color-snowy) 62%);
-	--color-bear: color-mix(in oklab, var(--color-raven), var(--color-snowy) 86%);
+	--color-lynx: color-mix(in oklab, var(--color-raven), var(--color-thunder) 75%);
+	--color-wolf: color-mix(in oklab, var(--color-raven), var(--color-thunder) 54%);
+	--color-bowhead: color-mix(in oklab, var(--color-raven), var(--color-thunder) 33%);
+	--color-highland: color-mix(in oklab, var(--color-raven), var(--color-snowy) 33%);
+	--color-coyote: color-mix(in oklab, var(--color-raven), var(--color-snowy) 54%);
+	--color-bear: color-mix(in oklab, var(--color-raven), var(--color-snowy) 75%);
 }

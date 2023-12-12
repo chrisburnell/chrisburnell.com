@@ -87,8 +87,12 @@ module.exports = {
 	keySort: (array, key) => {
 		const keys = key.split(".")
 		return array.sort((a, b) => {
-			const aValue = keys.reduce((o, k) => { return o[k] }, a)
-			const bValue = keys.reduce((o, k) => { return o[k] }, b)
+			const aValue = keys.reduce((o, k) => {
+				return o[k]
+			}, a)
+			const bValue = keys.reduce((o, k) => {
+				return o[k]
+			}, b)
 
 			return String(aValue || "").localeCompare(String(bValue || ""))
 		})

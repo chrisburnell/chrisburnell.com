@@ -121,6 +121,7 @@ blockquote {
 }
 
 pre[class*="language-"] code[tabindex="0"],
+pre:not(:has(code)),
 .clamp-calculator__result {
 	@extend %selectall !optional;
 }

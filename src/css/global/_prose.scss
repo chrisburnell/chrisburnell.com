@@ -12,7 +12,7 @@
 :is(p, li, dd) {
 	@include break-words;
 	max-inline-size: var(--size-character-limit);
-	text-wrap: balance;
+	text-wrap: pretty;
 }
 
 p {
@@ -193,7 +193,7 @@ progress {
 
 ::selection {
 	background-color: h(raven);
-	color: h(snowy);
+	color: h(thunder);
 	text-shadow: none;
 }
 
