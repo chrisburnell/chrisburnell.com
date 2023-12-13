@@ -7,7 +7,4 @@ module.exports = {
 	categoryCode: "f",
 	tags: ["like", "clickthrough"],
 	emoji: "❤️",
-	sitemap: {
-		exclude: true,
-	},
 }

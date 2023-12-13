@@ -15,11 +15,6 @@
 
 	@include setup-monochrome-colors;
 	@include setup-raven-colors;
-
-	.logo,
-	.perch::after {
-		filter: hue-rotate(210deg) saturate(200%);
-	}
 }
 
 [data-theme*="sepia"],

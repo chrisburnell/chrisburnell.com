@@ -51,11 +51,13 @@ But when it comes to *reading* and *understanding* **Hex/RGB** colours, it’s a
 </form>
 <div id="output-hex" class="output-color" style="background-color: rgb(95, 138, 166);"></div>
 
-**RGB** is an additive colour format. This means that, starting from black, we combine **r**ed, **g**reen, and **b**lue together to create a colour, and the syntax we use when coding to define **Hex/RGB** colours follows this format: we have to provide a red, green, and blue value.
+Using the sliders above, try to make <code style="background-color: #b5f1fd; color: #060606; font-size: 1.25em;">this blue</code>.
 
-Try to make <code style="background-color: orange; color: black;">orange</code> using the sliders above.
+Now try to make it <code style="background-color: #f2a5f4; color: #060606; font-size: 1.25em;">this pink</code>.
 
 This is definitely not an easy task! This is because all three values, in tandem, are responsible for controlling not just the hue, but also the saturation and the lightness of that hue. This makes authoring and reading **Hex/RGB** values difficult as it’s difficult to imagine how certain ratios and amounts of each value mix to produce a colour.
+
+**RGB** is an additive colour format. This means that, starting from black, we combine **r**ed, **g**reen, and **b**lue together to create a colour, and the syntax we use when coding to define **Hex/RGB** colours follows this format: we have to provide a red, green, and blue value.
 
 These limitations, particularly in *creating* (or *finding*) colours, were probably a good thing for web development, as it spawned countless, incredible tools that presented **Hex/RGB** in ways that are generally easier to understand and manipulate for humans than manually adjusting **RGB** values. This almost-surely pushed the collective understanding of colour on the web further and helped ingratiate people towards alternative and newer formats for defining colour.
 
@@ -83,8 +85,8 @@ Enter <abbr class=" [ strong ] " title="Hue, Saturation, Lightness">HSL</abbr>. 
 It’s important to know that **HSL** uses the same colour space as **Hex** and **RGB**, it just provides different parameters from **Hex/RGB** for us as developers to achieve the same colours we could with **Hex** and **RGB**.
 
 <noscript><p class=" [ box  box--error ] ">Unfortunately, this demo requires JavaScript to function correctly!</p></noscript>
-<form id="demo-hsl" class=" [ grid ] " style="--placement: auto-fit; --min-inline-size: 6rem;">
-	<fieldset>
+<form id="demo-hsl" class=" [ grid ] ">
+	<fieldset style="grid-column: 1 / -1;">
 		<label for="input-hsl-hue" class=" [ delta ] ">Hue</label>
 		<input id="input-hsl-hue" type="range" min="0" max="360" value="204" style="inline-size: 100%; line-height: 3;" />
 	</fieldset>
@@ -99,7 +101,9 @@ It’s important to know that **HSL** uses the same colour space as **Hex** and 
 </form>
 <div id="output-hsl" class="output-color" style="background-color: hsl(204 29% 51%);"></div>
 
-Like before, try to make <code style="background-color: orange; color: black;">orange</code> using the sliders above.
+Like before, using the sliders above, try to make <code style="background-color: #b5f1fd; color: #060606; font-size: 1.25em;">this blue</code>.
+
+Then try to make it <code style="background-color: #f2a5f4; color: #060606; font-size: 1.25em;">this pink</code>.
 
 It may not necessarily be quicker to do, but the inputs that we get with **HSL** are certainly more intuitive to work with and comprehend than **RGB’s**. Importantly, it puts two of the ways that we typically describe colour with language, by a colour’s **Hue** and **Lightness**, as two of the colour format’s inputs (which, I *imagine* maps to parts of the brain more easily than **RGB**). The third input, **Saturation** may not be immediately obvious, but can be understood by playing with its value.
 
@@ -183,7 +187,9 @@ And finally, where I’ve happily landed: **OKLCH**. This is the most flexible a
 </form>
 <div id="output-oklch" class="output-color" style="background-color: oklch(61.29% 0.064 237.73);"></div>
 
-Last time now; try to make <code style="background-color: orange; color: black;">orange</code> using the sliders above.
+Last time now, using the sliders above, try to make <code style="background-color: #b5f1fd; color: #060606; font-size: 1.25em;">this blue</code>.
+
+Finally, try to make it <code style="background-color: #f2a5f4; color: #060606; font-size: 1.25em;">this pink</code>.
 
 This is about on the same level as **HSL** in terms of authoring and reading, but **OKLCH** fixes a [number of problems with the RGB colour space](#problems-with-rgb) that makes it more consistent and reliable across its colour space. In addition, it offers both *more* colours and colours that are *outside* of the **RGB** colour space, i.e. colours that were not achievable on the web before.
 
