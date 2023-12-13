@@ -171,7 +171,7 @@ In the example, I’ve instructed the browser to create a gradient between red a
 And finally, where I’ve happily landed: **OKLCH**. This is the most flexible and understandable colour format that I’ve [found](/feature-watch/) yet.
 
 <noscript><p class=" [ box  box--error ] ">Unfortunately, this demo requires JavaScript to function correctly!</p></noscript>
-<form id="demo-oklch" class=" [ grid ] " style="--placement: auto-fit; --min-inline-size: 6rem;">
+<form id="demo-oklch" class=" [ grid ] ">
 	<fieldset>
 		<label for="input-oklch-lightness" class=" [ delta ] ">Lightness</label>
 		<input id="input-oklch-lightness" type="range" min="0" max="100" value="61" style="inline-size: 100%; line-height: 3;" />
@@ -180,7 +180,7 @@ And finally, where I’ve happily landed: **OKLCH**. This is the most flexible a
 		<label for="input-oklch-chroma" class=" [ delta ] ">Chroma</label>
 		<input id="input-oklch-chroma" type="range" min="0" max="0.4" value="0.06" step="0.01" style="inline-size: 100%; line-height: 3;" />
 	</fieldset>
-	<fieldset>
+	<fieldset style="grid-column: 1 / -1;">
 		<label for="input-oklch-hue" class=" [ delta ] ">Hue</label>
 		<input id="input-oklch-hue" type="range" min="0" max="360" value="238" style="inline-size: 100%; line-height: 3;" />
 	</fieldset>
