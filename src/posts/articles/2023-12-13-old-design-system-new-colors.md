@@ -30,12 +30,12 @@ css: styleguide.css
     </ul>
 </figure>
 
-For many years, my colours were defined in Hexidecimal format, or **Hex** as it’s commonly known as, which maps to the <abbr class=" [ strong ] " title="Red, Green, Blue">RGB</abbr> colour model. This was essentially the de facto way of defining colours back in 2008.
+For many years, my colours were defined in **Hexidecimal** format, or **Hex** as it’s commonly known as, which maps to the <abbr class=" [ strong ] " title="Red, Green, Blue">RGB</abbr> colour model. This was essentially the de facto way of defining colours back when I started web development in 2008.
 
-But when it comes to *reading* and *understanding* **Hex/RGB** colours, it’s a bit more tricky.
+But when it comes to *reading* and *understanding* Hex and RGB colours, it’s a bit more tricky, particularly when dealing with the hexidecimal numbering system.
 
 <noscript><p class=" [ box  box--error ] ">Unfortunately, this demo requires JavaScript to function correctly!</p></noscript>
-<form id="demo-hex" class=" [ grid ] " style="--placement: auto-fit; --min-inline-size: 6rem;">
+<form id="demo-hex">
 	<fieldset>
 		<label for="input-hex-red" class=" [ delta ] ">Red</label>
 		<input id="input-hex-red" type="range" min="0" max="255" value="95" style="inline-size: 100%; line-height: 3;" />
@@ -55,11 +55,11 @@ Using the sliders above, try to make <code style="background-color: #b5f1fd; col
 
 Now try to make it <code style="background-color: #f2a5f4; color: #060606; font-size: 1.25em;">this pink</code>.
 
-This is definitely not an easy task! This is because all three values, in tandem, are responsible for controlling not just the hue, but also the saturation and the lightness of that hue. This makes authoring and reading **Hex/RGB** values difficult as it’s difficult to imagine how certain ratios and amounts of each value mix to produce a colour.
+This is absolutely not an easy task! This is because all three values, in tandem, are responsible for controlling not just the hue, but also the saturation and the lightness of that hue. This makes authoring and reading Hex and RGB values difficult as it’s difficult to imagine how certain ratios and amounts of each value mix to produce a colour.
 
-**RGB** is an additive colour format. This means that, starting from black, we combine **r**ed, **g**reen, and **b**lue together to create a colour, and the syntax we use when coding to define **Hex/RGB** colours follows this format: we have to provide a red, green, and blue value.
+RGB is an additive colour format. This means that, starting from black, we combine **r**ed, **g**reen, and **b**lue together to create a colour, and the syntax we use when coding to define Hex/RGB colours follows this format: we have to provide a red, green, and blue value.
 
-These limitations, particularly in *creating* (or *finding*) colours, were probably a good thing for web development, as it spawned countless, incredible tools that presented **Hex/RGB** in ways that are generally easier to understand and manipulate for humans than manually adjusting **RGB** values. This almost-surely pushed the collective understanding of colour on the web further and helped ingratiate people towards alternative and newer formats for defining colour.
+These limitations, particularly in *creating* (or *finding*) colours, were probably a good thing for web development, as it spawned countless, incredible tools that presented Hex/RGB in ways that are generally easier to understand and manipulate for humans than manually adjusting RGB values. This almost-surely pushed the collective understanding of colour on the web further and helped ingratiate people towards alternative and newer formats for defining colour.
 
 ## HSL
 
@@ -80,13 +80,13 @@ These limitations, particularly in *creating* (or *finding*) colours, were proba
     </ul>
 </figure>
 
-Enter <abbr class=" [ strong ] " title="Hue, Saturation, Lightness">HSL</abbr>. Coming from the world of **Hex/RGB**, it was immediately more-readable to me, where the values in the **HSL** syntax tell us: which direction in the colour wheel to point; how saturated (how *much*) of that colour we want, and the lightness of the produced colour.
+Enter <abbr class=" [ strong ] " title="Hue, Saturation, Lightness">HSL</abbr>. Coming from the world of Hex/RGB, it was immediately more-readable to me, where the values in the HSL syntax tell us: which direction in the colour wheel to point; how saturated (how *much*) of that colour we want, and the lightness of the produced colour.
 
-It’s important to know that **HSL** uses the same colour space as **Hex** and **RGB**, it just provides different parameters from **Hex/RGB** for us as developers to achieve the same colours we could with **Hex** and **RGB**.
+It’s important to know that HSL uses the same sRGB colour space as Hex and RGB, it just provides different parameters for us as developers to achieve the same colours.
 
 <noscript><p class=" [ box  box--error ] ">Unfortunately, this demo requires JavaScript to function correctly!</p></noscript>
-<form id="demo-hsl" class=" [ grid ] ">
-	<fieldset style="grid-column: 1 / -1;">
+<form id="demo-hsl">
+	<fieldset>
 		<label for="input-hsl-hue" class=" [ delta ] ">Hue</label>
 		<input id="input-hsl-hue" type="range" min="0" max="360" value="204" style="inline-size: 100%; line-height: 3;" />
 	</fieldset>
@@ -105,41 +105,41 @@ Like before, using the sliders above, try to make <code style="background-color:
 
 Then try to make it <code style="background-color: #f2a5f4; color: #060606; font-size: 1.25em;">this pink</code>.
 
-It may not necessarily be quicker to do, but the inputs that we get with **HSL** are certainly more intuitive to work with and comprehend than **RGB’s**. Importantly, it puts two of the ways that we typically describe colour with language, by a colour’s **Hue** and **Lightness**, as two of the colour format’s inputs (which, I *imagine* maps to parts of the brain more easily than **RGB**). The third input, **Saturation** may not be immediately obvious, but can be understood by playing with its value.
+It may not necessarily be quicker to do, but the inputs that we get with HSL are certainly more intuitive to work with and comprehend than RGB’s. Importantly, it puts two of the ways that we typically describe colour with language, by a colour’s Hue and Lightness, as two of the colour format’s inputs (which, I *imagine* maps to parts of the brain more easily than RGB). The third input, Saturation may not be immediately obvious, but can be understood by playing with its value.
 
 ### Hue
 
 <div class="rgb-hue-gradient"></div>
 
-In stark contrast to manipulating **RGB** values, finding the **Hue** of your target colour is much easier here; although, not perfect, it’s still not trivial to be able to remember how much rotation is required to find your target **Hue**.
+In contrast to manipulating RGB values, finding the Hue of your target colour is much easier here; although, not perfect, it’s still not trivial to be able to remember how much rotation is required to find your target Hue.
 
-Setting the **Saturation** to 100% and **Lightness** to 50%, and then cycling through the values for **Hue**, from 0° to 360° will give you an idea of what colours look like in their most saturated and untinted/unshaded form.
+Setting the Saturation to 100% and Lightness to 50%, and then cycling through the values for Hue, from 0° to 360° will give you an idea of what colours look like in their most saturated and untinted/unshaded form.
 
 ### Saturation
 
 <div class="rgb-saturation-gradient"></div>
 
-Next is **Saturation** which dictates <q>how much</q> of our given **Hue** we want.
+Next is Saturation which dictates <q>how much</q> of our given Hue we want.
 
-With any **Hue**, try setting the **Lightness** to 50%, and then cycling through the values for **Saturation**, from 0% to 100%. This will give you an idea of how the amount of **Saturation** we apply to **Hue** dictates how far away from being completely-greyscale we make the colour. You’ll also notice that when the **Saturation** is at 0%, it doesn’t matter what the **Hue** is anymore—given the same **Lightness**, an unsaturated Red **Hue** and an unsaturated Cyan **Hue** appear the same.
+With any Hue, try setting the Lightness to 50%, and then cycling through the values for Saturation, from 0% to 100%. This will give you an idea of how the amount of Saturation we apply to Hue dictates how far away from being completely-greyscale we make the colour. You’ll also notice that when the Saturation is at 0%, it doesn’t matter what the Hue is anymore—given the same Lightness, an unsaturated Red Hue and an unsaturated Cyan Hue appear the same.
 
 ### Lightness
 
 <div class="rgb-lightness-gradient"></div>
 
-The easiest way for me to understand the **Lightness** value is to think of it like a slide between black and white. The midpoint at 50% mixes your colour with both black and white (so a grey colour that is perfectly between black and white). As you deviate away from the midpoint, your colour is mixed with either more black and less white (as **Lightness** decreases) or more white and less black (as **Lightness** increases), reaching a point of being pure black at 0% and pure white at 100%.
+The easiest way for me to understand the Lightness value is to think of it like a slide between black and white. The midpoint at 50% mixes your colour with both black and white (so a grey colour that is perfectly between black and white). As you deviate away from the midpoint, your colour is mixed with either more black and less white (as Lightness decreases) or more white and less black (as Lightness increases), reaching a point of being pure black at 0% and pure white at 100%.
 
-You can see this effect no matter what the **Hue** and **Saturation** values are.
+You can see this effect no matter what the Hue and Saturation values are.
 
-<h2 id="problems-with-rgb">Problems with the RGB colour space</h2>
+<h2 id="problems-with-srgb">Problems with the sRGB colour space</h2>
 
 ### Inconsistent perceived lightness
 
 <div class="hsl-lightness-block"></div>
 
-While one of the parameters of an **HSL** colour is **Lightness**, you’ll find that there is a stark contrast in how we perceive the brightness of **Hues** around the wheel.
+While one of the parameters of an HSL colour is Lightness, you’ll find that there is a stark contrast in how we perceive the brightness of Hues around the wheel.
 
-These two colours, cyan and blue, both have identical **Saturation** and **Lightness** values—only their **Hues** differ—but despite this we perceive the cyan as being much brighter than the blue. We can account for this, but an ideal colour space would provide consistency in its parameters.
+Cyan and blue both have identical Saturation and Lightness values—only their Hues differ—but we perceive the cyan as being much brighter than the blue. We can account for this by changing Saturation and Lightness to compensate, but an ideal colour space would provide consistency in its parameters.
 
 ### Dead grey zones
 
@@ -147,7 +147,7 @@ These two colours, cyan and blue, both have identical **Saturation** and **Light
 
 A clear example of this is in displaying gradients; when instructing the browser to traverse the colour space to find a line between two colours that will make up the gradient, you’ll often find that it takes a path that you don’t expect or want. It’s not uncommon to find that developers have created gradients that don’t simply traverse from point A to point B in the colour space; they provide additional colour stops to ensure that the gradient looks correct.
 
-In the example, I’ve instructed the browser to create a gradient between red and cyan, but you’ll notice that it goes through a grey/monochrome area of the colour space around the midpoint. I would hope that the produced gradient would tween between not just the hues of red and cyan, but also their lightness and saturation. It seems, however, that the path taken to draw gradients often goes through parts of the **RGB** colour space that have little or no saturation, leading to [dead grey zones](https://www.smashingmagazine.com/2023/08/oklch-color-spaces-gamuts-css/#dead-grey-zones).
+In the example, I’ve instructed the browser to create a gradient between red and cyan, but you’ll notice that it goes through a grey/monochrome area of the colour space around the midpoint. I would hope that the produced gradient would tween between not just the hues of red and cyan, but also their lightness and saturation. It seems, however, that the path taken to draw gradients often goes through parts of the sRGB colour space that have little or no saturation, leading to [dead grey zones](https://www.smashingmagazine.com/2023/08/oklch-color-spaces-gamuts-css/#dead-grey-zones).
 
 ## OKLCH
 
@@ -168,10 +168,10 @@ In the example, I’ve instructed the browser to create a gradient between red a
     </ul>
 </figure>
 
-And finally, where I’ve happily landed: **OKLCH**. This is the most flexible and understandable colour format that I’ve [found](/feature-watch/) yet.
+And finally, where I’ve happily landed: **OKLCH**. This is the most flexible and understandable colour format that I’ve [found](/feature-watch/), but do check out [the list of predfined colour spaces in the CSS Color Specifications](https://drafts.csswg.org/css-color/#predefined) for all the possibilities.
 
 <noscript><p class=" [ box  box--error ] ">Unfortunately, this demo requires JavaScript to function correctly!</p></noscript>
-<form id="demo-oklch" class=" [ grid ] ">
+<form id="demo-oklch">
 	<fieldset>
 		<label for="input-oklch-lightness" class=" [ delta ] ">Lightness</label>
 		<input id="input-oklch-lightness" type="range" min="0" max="100" value="61" style="inline-size: 100%; line-height: 3;" />
@@ -180,7 +180,7 @@ And finally, where I’ve happily landed: **OKLCH**. This is the most flexible a
 		<label for="input-oklch-chroma" class=" [ delta ] ">Chroma</label>
 		<input id="input-oklch-chroma" type="range" min="0" max="0.4" value="0.06" step="0.01" style="inline-size: 100%; line-height: 3;" />
 	</fieldset>
-	<fieldset style="grid-column: 1 / -1;">
+	<fieldset>
 		<label for="input-oklch-hue" class=" [ delta ] ">Hue</label>
 		<input id="input-oklch-hue" type="range" min="0" max="360" value="238" style="inline-size: 100%; line-height: 3;" />
 	</fieldset>
@@ -191,7 +191,7 @@ Last time now, using the sliders above, try to make <code style="background-colo
 
 Finally, try to make it <code style="background-color: #f2a5f4; color: #060606; font-size: 1.25em;">this pink</code>.
 
-This is about on the same level as **HSL** in terms of authoring and reading, but **OKLCH** fixes a [number of problems with the RGB colour space](#problems-with-rgb) that makes it more consistent and reliable across its colour space. In addition, it offers both *more* colours and colours that are *outside* of the **RGB** colour space, i.e. colours that were not achievable on the web before.
+This is about on the same level as HSL in terms of authoring and reading, but OKLCH fixes a [number of problems with the sRGB colour space](#problems-with-srgb) that makes it more consistent and reliable across its colour space. In addition, it offers both *more* colours and colours that are *outside* of the sRGB colour space, i.e. colours that were not achievable on the web before.
 
 <c-details hidden>
     <summary>Browser Support</summary>
@@ -202,25 +202,25 @@ This is about on the same level as **HSL** in terms of authoring and reading, bu
 
 <div class="oklch-lightness-gradient"></div>
 
-This functions similarly to the **HSL** **Lightness** value in that it mixes your colour with different levels of black and white.
+Lightness here functions similarly to the HSL Lightness value in that it mixes your colour with different levels of black and white.
 
-You can see this effect no matter what the **Chroma** and **Hue** values are.
+You can see this effect no matter what the Chroma and Hue values are.
 
 ### Chroma
 
 <div class="oklch-chroma-gradient"></div>
 
-**Chroma** is similar, again, to **HSL’s** **Saturation**; it dictates <q>how much</q> of our given **Hue** we want. What differs from **HSL’s** **Saturation** is that even when the **Lightness** is zero, we still get some colour, depending on how much **Chroma** we apply. So in this colour space, greyscale colours, including black and white, require that the **Chroma** value be 0.
+Chroma is similar, again, to HSL’s Saturation; it dictates <q>how much</q> of our given Hue we want. What differs from HSL’s Saturation is that even when the Lightness is zero, we still get some colour, depending on how much Chroma we apply. So in this colour space, greyscale colours, including black and white, require that the Chroma value be 0.
 
-You’ll also notice that, like with **HSL’s** **Saturation**, when the **Chroma** is at 0%, it doesn’t matter what the **Hue** is anymore—given the same **Lightness** values and zero **Chroma**, changing **Hue** no longer affects the produced colour.
+You’ll also notice that, like with HSL’s Saturation, when the Chroma is at 0%, it doesn’t matter what the Hue is anymore—given the same Lightness values and zero Chroma, changing Hue no longer affects the produced colour.
 
 ### Hue
 
 <div class="oklch-hue-gradient"></div>
 
-This functions very much the same as **HSL’s** **Hue**, but the values don’t line up exactly the same. This is because unlike **Hex/RGB** and **HSL**, **OKLCH** operates in a different colour space and actually makes available (to supporting browsers and devices) even more colours than were available in the **RGB** colour space.
+OKLCH’s Hue functions very much the same as HSL’s Hue, but the values don’t line up exactly the same. This is because unlike Hex/RGB and HSL, OKLCH operates in a different colour space and actually makes available (to supporting browsers and devices) even more colours than were available in the sRGB colour space.
 
-Try setting the **Lightness** to 50% and the **Chroma** to 100%, and then cycling through the values for **Hue**, from 0° to 360°. This will give you an idea of what colours look like in their most saturated and untinted/unshaded form.
+Try setting the Lightness to 50% and the Chroma to 100%, and then cycling through the values for Hue from 0° to 360°. This will give you an idea of what colours look like in their most saturated and untinted/unshaded form.
 
 ## Colours in practice
 
@@ -583,11 +583,49 @@ You’ll notice that I’m using `calc()` at the end to invert the opacity varia
 </form>
 <div id="output-opacity" class="output-color  output-opacity"></div>
 
+## Problems with new colour spaces
+
+There are some limitations and gotchas to be aware of when using these new colour spaces like [OKLCH], [OKLAB]
+
+### Fallbacks
+
+First of all, older browsers that don’t support `oklch()` ([see modern browser support](/feature-watch/#oklch)), for example, will require fallbacks wherever you use newer colour formats:
+
+```css
+/* put one of these first: */
+color: #5f8aa6;
+color: rgb(95, 138, 166);
+color: hsl(204 29% 51%);
+/* to fallback on from this, where the
+entire line of CSS fails in
+unsupported browsers: */
+color: oklch(61.29% 0.064 237.73);
+```
+
+**However, this does not work:**
+
+```css
+--color-raven: #5f8aa6;
+--color-raven: oklch(61.29% 0.064 237.73);
+```
+
+Instead of what you’d hope would happen—older browsers ignore the second line—the `--color-raven` variable is instead always set to the second value, even if it isn’t supported and won’t work. This is also important if you plan on supporting older browsers and using `color-mix()` too ([see modern browser support](/feature-watch/#css-color-function)) because you’ll be unable to use the technique I’m using to combine colours.
+
+You can use the amazing website, [OKLCH Color Picker & Converter](https://oklch.com/) to calculate colours in the sRGB colour space that are relatively close to your OKLCH
+
+### Out of range
+
+Secondly, there are areas of the new colour spaces you’ll find when using [`oklch()`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklch), [`oklab()`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklab), [`lch()`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/lch), [`lab()`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/lab), [`color()`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color), etc., that are *outside* of the sRGB colour space, and therefore cannot be accurately represented in Hex, RGB, or HSL, for example.
+
+You may also run into the issue of *hardware* being unable to present your vivid, new colours because they exist outside the colour space that a given display is built to show. I hope it’s only a matter of time before supporting hardware becomes more widespread and we can have more confidence that our colours will be presented to our website visitors just as we intend; although, I certainly dislike the waste involved in “upgrading” all those devices.
+
+However, like with new and emerging web standards, without adopting these new colour spaces, we’ll be missing out on huge chunks of a beautiful spectrum that the web of today is already ready for!
+
 ## Taking this further
 
-I can’t overstate how much clearer **HSL** and **OKLCH** colour formats are to read and author compared to **Hex** and **RGB**. Unless you’re using a CSS preprocessor (like SCSS), it can be laborious to calculate combinations of colours or create tints, particularly if the colours in your palette ever change.
+I can’t overstate how much clearer HSL and OKLCH colour formats are to read and author compared to Hex and RGB. Unless you’re using a CSS preprocessor (like SCSS), it can be laborious to calculate combinations of colours or create tints, particularly if the colours in your palette ever change.
 
-Colour formats like **HSL** and **OKLCH** give us much more intuitive understanding of the nature of a given colour, and the ways to manipulate and create variations of those colours
+Colour formats like HSL and OKLCH give us much more intuitive understanding of the nature of a given colour, and the ways to manipulate and create variations of those colours
 
 I hope you found this useful, and I’d love to know how others are doing this sort of things or what kind of pitfalls I might run into using this technique!
 

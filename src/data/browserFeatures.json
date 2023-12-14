@@ -80,7 +80,7 @@
     "type": "types",
     "key": "color.oklab",
     "title": "oklab()",
-    "description": "The `oklab()` functional notation expresses a given color in the OKLCH color space.",
+    "description": "The `oklab()` functional notation expresses a given color in the OKLAB color space.",
     "links": ["[Page on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklab)"]
   },
   {
