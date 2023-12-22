@@ -1,6 +1,6 @@
 ---
 draft: true
-date: 2023-12-13T10:00:00+0000
+date: 2023-12-21T12:00:00+0000
 title: Can you teach an old design system new colours?
 description: Over the years, I’ve changed the colours used across my website a number of times, and I’m happy with what I have now, but what I’m going to talk about today are <em>formats</em> for defining colours and some recent <q>behind-the-scenes</q> changes I made to how I define colours on my website, making theming my website easier.
 tags:
@@ -8,6 +8,7 @@ tags:
   - css
   - css-variables
   - design-systems
+  - writing
 css: styleguide.css
 ---
 
@@ -623,7 +624,7 @@ However, like with new and emerging web standards, without adopting these new co
 
 ## Taking this further
 
-I can’t overstate how much clearer HSL and OKLCH colour formats are to read and author compared to Hex and RGB. Unless you’re using a CSS preprocessor (like SCSS), it can be laborious to calculate combinations of colours or create tints, particularly if the colours in your palette ever change.
+I can’t overstate how much clearer HSL and OKLCH colour formats are to read and author compared to Hex and RGB. Unless you’re using a CSS preprocessor like Sass/SCSS, it can be laborious to calculate combinations of colours or create tints, particularly if the colours in your palette ever change.
 
 Colour formats like HSL and OKLCH give us much more intuitive understanding of the nature of a given colour, and the ways to manipulate and create variations of those colours
 
