@@ -195,7 +195,7 @@ This is about on the same level as HSL in terms of authoring and reading, but OK
 
 <c-details>
     <summary>Browser Support</summary>
-    {% browserSupport 'mdn-css_types_color_oklch' %}
+    {% browserSupport 'oklch' %}
 </c-details>
 
 ### Lightness
