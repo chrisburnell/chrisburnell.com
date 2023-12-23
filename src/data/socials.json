@@ -18,6 +18,13 @@
     "primary": true
   },
   {
+    "title": "LinkedIn",
+    "url": "https://www.linkedin.com/in/",
+    "key": "linkedin",
+    "primary": true,
+    "fillHover": "#0a66c2"
+  },
+  {
     "title": "Mastodon",
     "url": "https://fediverse.repc.co/@chrisburnell",
     "primary": true,
@@ -42,11 +49,6 @@
     "title": "Last.fm",
     "url": "https://last.fm/user/",
     "key": "lastfm"
-  },
-  {
-    "title": "LinkedIn",
-    "url": "https://www.linkedin.com/in/",
-    "key": "linkedin"
   },
   {
     "title": "npm",

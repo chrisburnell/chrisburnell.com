@@ -1,4 +1,4 @@
-<is-land on:visible>
+<is-land on:idle on:visible>
 	<details-utils webc:root="override">
 		<details>
 			<slot></slot>

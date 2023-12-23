@@ -15,7 +15,7 @@ ingredients:
     amount: 1 tsp
   - title: bread flour
     amount: 3 ¼ cups
-  - title: non-fat dry milk
+  - title: non/low-fat evaporated milk
     amount: 2 tbsp
   - title: sugar
     amount: 3 tbsp

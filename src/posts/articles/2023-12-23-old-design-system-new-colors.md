@@ -1,6 +1,5 @@
 ---
-draft: true
-date: 2023-12-21T12:00:00+0000
+date: 2023-12-23T13:00:00+0800
 title: Can you teach an old design system new colours?
 description: Over the years, I’ve changed the colours used across my website a number of times, and I’m happy with what I have now, but what I’m going to talk about today are <em>formats</em> for defining colours and some recent <q>behind-the-scenes</q> changes I made to how I define colours on my website, making theming my website easier.
 tags:
@@ -194,7 +193,7 @@ Finally, try to make it <code style="background-color: #f2a5f4; color: #060606; 
 
 This is about on the same level as HSL in terms of authoring and reading, but OKLCH fixes a [number of problems with the sRGB colour space](#problems-with-srgb) that makes it more consistent and reliable across its colour space. In addition, it offers both *more* colours and colours that are *outside* of the sRGB colour space, i.e. colours that were not achievable on the web before.
 
-<c-details hidden>
+<c-details>
     <summary>Browser Support</summary>
     {% browserSupport 'mdn-css_types_color_oklch' %}
 </c-details>
@@ -391,93 +390,6 @@ Now that we have **3 base colours** and **10 variations**, built in the browser 
 
 This makes it easy to change the <q>theme</q> of my website just by manipulating the `raven`-based variables. Critically, you might notice that the perceived brightness of the colours between these themes look much more consistant than what the **RGB** colour space provided.
 
-<c-details hidden>
-    <summary>Koala Theme</summary>
-    <figure>
-        <ul class=" [ palette  thirds ] [ koala ] ">
-            <li class=" [ background--raven ] " style="flex: 1 0 100%;">
-                <div class=" [ delta ] ">Raven</div>
-            </li>
-            <li class=" [ background--lynx ] ">
-                <div class=" [ delta ] ">Lynx</div>
-            </li>
-            <li class=" [ background--wolf ] ">
-                <div class=" [ delta ] ">Wolf</div>
-            </li>
-            <li class=" [ background--bowhead ] ">
-                <div class=" [ delta ] ">Bowhead</div>
-            </li>
-            <li class=" [ background--highland ] ">
-                <div class=" [ delta ] ">Highland</div>
-            </li>
-            <li class=" [ background--coyote ] ">
-                <div class=" [ delta ] ">Coyote</div>
-            </li>
-            <li class=" [ background--bear ] ">
-                <div class=" [ delta ] ">Bear</div>
-            </li>
-        </ul>
-    </figure>
-</c-details>
-
-<c-details hidden>
-    <summary>Code Red Theme</summary>
-    <figure>
-        <ul class=" [ palette  thirds ] [ code-red ] ">
-            <li class=" [ background--raven ] " style="flex: 1 0 100%;">
-                <div class=" [ delta ] ">Raven</div>
-            </li>
-            <li class=" [ background--lynx ] ">
-                <div class=" [ delta ] ">Lynx</div>
-            </li>
-            <li class=" [ background--wolf ] ">
-                <div class=" [ delta ] ">Wolf</div>
-            </li>
-            <li class=" [ background--bowhead ] ">
-                <div class=" [ delta ] ">Bowhead</div>
-            </li>
-            <li class=" [ background--highland ] ">
-                <div class=" [ delta ] ">Highland</div>
-            </li>
-            <li class=" [ background--coyote ] ">
-                <div class=" [ delta ] ">Coyote</div>
-            </li>
-            <li class=" [ background--bear ] ">
-                <div class=" [ delta ] ">Bear</div>
-            </li>
-        </ul>
-    </figure>
-</c-details>
-
-<c-details hidden>
-    <summary>Rabbit Hole Theme</summary>
-    <figure>
-        <ul class=" [ palette  thirds ] [ matrix ] ">
-            <li class=" [ background--raven ] " style="flex: 1 0 100%;">
-                <div class=" [ delta ] ">Raven</div>
-            </li>
-            <li class=" [ background--lynx ] ">
-                <div class=" [ delta ] ">Lynx</div>
-            </li>
-            <li class=" [ background--wolf ] ">
-                <div class=" [ delta ] ">Wolf</div>
-            </li>
-            <li class=" [ background--bowhead ] ">
-                <div class=" [ delta ] ">Bowhead</div>
-            </li>
-            <li class=" [ background--highland ] ">
-                <div class=" [ delta ] ">Highland</div>
-            </li>
-            <li class=" [ background--coyote ] ">
-                <div class=" [ delta ] ">Coyote</div>
-            </li>
-            <li class=" [ background--bear ] ">
-                <div class=" [ delta ] ">Bear</div>
-            </li>
-        </ul>
-    </figure>
-</c-details>
-
 <noscript><p class=" [ box  box--error ] ">Unfortunately, this demo requires JavaScript to function correctly!</p></noscript>
 <form id="demo-palette" class=" [ grid ] " data-layout="50-50" style="">
 	<fieldset>
@@ -586,7 +498,7 @@ You’ll notice that I’m using `calc()` at the end to invert the opacity varia
 
 ## Problems with new colour spaces
 
-There are some limitations and gotchas to be aware of when using these new colour spaces like [OKLCH], [OKLAB]
+There are some limitations and gotchas to be aware of when using these new colour spaces; although, they have more to do with compatability and browser support than difficulty in describing and representing colour.
 
 ### Fallbacks
 

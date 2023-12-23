@@ -1,4 +1,4 @@
-<is-land on:visible>
+<is-land on:idle on:visible>
 	<seven-minute-tabs webc:root="override">
 		<ol webc:keep role="tablist" :aria-label="this.title">
 			<li><a :href="`#${this.id}-1`" role="tab">First tab</a></li>
