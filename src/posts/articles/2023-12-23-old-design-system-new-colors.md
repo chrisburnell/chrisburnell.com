@@ -491,7 +491,7 @@ You’ll notice that I’m using `calc()` at the end to invert the opacity varia
 <form id="demo-opacity" class=" [ grid ] ">
 	<fieldset style="grid-column: 1 / -1;">
 		<label for="input-opacity" class=" [ delta ] ">Opacity</label>
-		<input id="input-opacity" type="range" min="0" max="100" value="25" style="inline-size: 100%; line-height: 3;" />
+		<input id="input-opacity" type="range" min="0" max="100" value="75" style="inline-size: 100%; line-height: 3;" />
 	</fieldset>
 </form>
 <div id="output-opacity" class="output-color  output-opacity"></div>
