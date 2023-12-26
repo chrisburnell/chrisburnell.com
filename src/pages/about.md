@@ -100,7 +100,7 @@ I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link
         <dt>Mastodon:</dt>
         <dd><a class=" [ canada ] " href="https://{{ author.mastodon_domain }}/users/{{ author.mastodon.split('@') | first }}" title="{{ author.name }} on Mastodon"><svg width="20" height="20" aria-hidden="true" focusable="false" style="--fill: #595aff; margin-inline-end: 1ex; vertical-align: sub;"><use href="#svg--mastodon"></use></svg>{{ '@' + author.mastodon }}</a></dd>
         <dt>LinkedIn:</dt>
-        <dd><a class=" [ canada ] " href="https://www.linkedin.com/in/{{ author.linkedin }}" title="{{ author.name }} on LinkedIn">{{ '@' + author.linkedin }}</a></dd>
+        <dd><a class=" [ canada ] " href="https://www.linkedin.com/in/{{ author.linkedin }}" title="{{ author.name }} on LinkedIn"><svg width="20" height="20" aria-hidden="true" focusable="false" style="--fill: #0a66c2; margin-inline-end: 1ex; vertical-align: sub;"><use href="#svg--linkedin"></use></svg>{{ '@' + author.linkedin }}</a></dd>
     </dl>
 </address>
 
