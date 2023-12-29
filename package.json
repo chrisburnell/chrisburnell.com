@@ -48,7 +48,7 @@
     "@11ty/eleventy-plugin-webc": "^0.11.1",
     "@11ty/is-land": "^4.0.0",
     "@chrisburnell/bowhead": "^0.3.4",
-    "@chrisburnell/eleventy-cache-webmentions": "^1.2.5",
+    "@chrisburnell/eleventy-cache-webmentions": "^1.2.6-rc.1",
     "@chrisburnell/pentatonic": "^1.1.4",
     "@chrisburnell/spark-line": "^1.2.6",
     "@mdn/browser-compat-data": "^5.4.3",
