@@ -6,7 +6,7 @@
 <?xml-stylesheet href="/feed.xsl" type="text/xsl" ?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ site.locale }}" xml:base="{{ site.url }}">
 	<title>{{ site.title | striptags(true) }} – {{ title | striptags(true) }}</title>
-	<subtitle>{{ description | striptags(true) }}</subtitle>
+	<subtitle>{{ description | stripnewlines | stripstrikethrough | striptags(true) }}</subtitle>
 	<id>{{ related_page }}</id>
 	<link href="{{ site.url + page.url }}" rel="self" />
 	<link href="{{ related_page }}" rel="alternate" />
@@ -55,7 +55,7 @@
 		<updated>{{ item.data.updated | default(item.date) | rfc3339Date }}</updated>
 		<category term="{{ item.data.category }}" scheme="{{ site.url + '/' + item.data.category + '/' }}" label="{{ item.data.categoryProper | default(item.data.category) | title }}" />
 		{% if item.data.description and item.content != '' -%}
-		<summary>{{ item.data.description | markdownFormat | replace("\n", " ") | striptags(true) | safe }}</summary>
+		<summary>{{ item.data.description | markdownFormat | stripnewlines | stripstrikethrough | striptags(true) | safe }}</summary>
 		<content type="html">
 			{%- if item.data.photo %}
 				{%- for item_photo in item_photos %}
@@ -71,7 +71,7 @@
 			{{ item.content | markdownFormat }}
 		</content>
 		{% elif not item.data.description and item.content != '' -%}
-		<summary>{{ item.content | markdownFormat | replace("\n", " ") | striptags(true) | maxSentences(2) }}</summary>
+		<summary>{{ item.content | markdownFormat | stripnewlines | stripstrikethrough | striptags(true) | maxSentences(2) }}</summary>
 		<content type="html">
 			{%- if item.data.photo %}
 				{%- for item_photo in item_photos %}
@@ -87,7 +87,7 @@
 			{{ item.content | markdownFormat }}{% if item_of_url %}<p>Original post can be found at: <a href="{{ item_of_url }}">{{ item_of_title }}</a></p>{% endif %}
 		</content>
 		{% elif item.data.description and not item.content -%}
-		<summary>{{ item.data.description | markdownFormat | replace("\n", " ") | striptags(true) | safe }}</summary>
+		<summary>{{ item.data.description | markdownFormat | stripnewlines | stripstrikethrough | striptags(true) | safe }}</summary>
 		<content type="html">
 			{%- if item.data.photo %}
 				{%- for item_photo in item_photos %}

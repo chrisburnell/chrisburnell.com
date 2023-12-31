@@ -72,10 +72,27 @@ module.exports = {
 			.replace(/\<pre(.|\n)*?\<\/pre\>/g, "")
 			.replace(/\<form(.|\n)*?\<\/form\>/g, "")
 			.replace(/\<link(.|\n)*?\<\/link\>/g, "")
+			.replace(/\<s(.|\n)*?\<\/s\>/g, "")
 			.replace(/\<script(.|\n)*?\<\/script\>/g, "")
 			.replace(/\<style(.|\n)*?\<\/style\>/g, "")
 			.replace(/\<(\w+).*?class="\s*\[ support(.|\n)*?\<\/\1\>/g, "")
 			.replace(/\<(\w+).*?class="\s*\[ palette(.|\n)*?\<\/\1\>/g, "")
+	},
+	/**
+	 * Remove newlines from a string.
+	 * @param {String} input
+	 * @returns {String}
+	 */
+	stripnewlines: (input) => {
+		return input.replace("\n", "")
+	},
+	/**
+	 * Remove <s> HTML elements (and their descendants) from a string.
+	 * @param {String} input
+	 * @returns {String}
+	 */
+	stripstrikethrough: (input) => {
+		return input.replace(/\<s(.|\n)*?\<\/s\>/g, "")
 	},
 	/**
 	 * Convert a number to Latin characters in a counting format.
