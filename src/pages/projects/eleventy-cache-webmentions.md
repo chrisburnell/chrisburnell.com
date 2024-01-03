@@ -48,7 +48,7 @@ module.exports = function(eleventyConfig) {
 		// these 3 fields are all required!
 		domain: "https://example.com",
 		feed: "https://webmentions.example.com?token=S3cr3tT0k3n",
-		key: "children"
+		key: "array_of_webmentions"
 	})
 }
 ```
@@ -149,7 +149,7 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(pluginWebmentions, {
 		domain: "https://example.com",
 		feed: "https://webmentions.example.com?token=S3cr3tT0k3n",
-		key: "children",
+		key: "array_of_webmentions",
 		directory: ".cache",
 		duration: "1d",
 		uniqueKey: "webmentions",
@@ -176,7 +176,7 @@ Accessing the plugin in JavaScript in the way shown below will give you an Objec
 const Webmentions = require("@chrisburnell/eleventy-cache-webmentions")(null, {
 	domain: "https://example.com",
 	feed: "https://webmentions.example.com?token=S3cr3tT0k3n",
-	key: "children"
+	key: "array_of_webmentions"
 })
 
 const webmentionsByUrl = await Webmentions()
@@ -277,6 +277,8 @@ WEBMENTION_IO_TOKEN=njJql0lKXnotreal4x3Wmd
 
 ### Set your feed and key config options
 
+The example below requests the [JF2](https://www.w3.org/TR/jf2/) file format, which I highly recommend using; although, there is a JSON format that is available as well. The key difference between the two feed formats is in the *naming* of the keys: the JF2 format holds the array of Webmentions in the `children` key, whereas the JSON format holds them in the `links` key. The JF2 format, however, provides keys and values that more tightly-align with [microformats](https://indieweb.org/microformats), the method I recommend the most for marking up HTML such that it can be consumed and understood by <q>search engines, aggregators, and other tools</q> across the Indieweb.
+
 ```javascript
 const pluginWebmentions = require("@chrisburnell/eleventy-cache-webmentions")
 
@@ -288,6 +290,8 @@ module.exports = function(eleventyConfig) {
 	})
 }
 ```
+
+If you want to use the JSON format instead, make sure that you replace `mentions.jf2` in the URL with `mentions.json` and change the value of the key from `children` to `links`.
 
 ## go-jamming
 

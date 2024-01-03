@@ -1,5 +1,5 @@
-<is-land class="[ librarian-island ]" on:idle on:visible>
-	<div webc:root="override" class="[ box ] [ librarian ] [ flow ]">
+<is-land class=" [ librarian-island ] " on:idle on:visible>
+	<div webc:root="override" class=" [ box ] [ librarian ] [ flow ] ">
 		<div>
 			<slot></slot>
 		</div>

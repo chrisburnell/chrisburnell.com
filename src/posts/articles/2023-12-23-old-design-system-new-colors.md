@@ -8,6 +8,8 @@ tags:
   - css-variables
   - design-systems
   - writing
+syndicate_to:
+  - https://fediverse.repc.co/@chrisburnell/111691333492575973
 css: styleguide.css
 ---
 

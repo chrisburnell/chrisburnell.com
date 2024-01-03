@@ -48,8 +48,8 @@ require("dotenv").config()
 
 module.exports = Object.assign(defaults, {
 	domain: "https://EXAMPLE.COM",
-	feed: `https://webmention.io/api/mentions.json?domain=EXAMPLE.COM&token=${process.env.WEBMENTION_IO_TOKEN}&per-page=9001`,
-	key: "links",
+	feed: `https://webmention.io/api/mentions.jf2?domain=EXAMPLE.COM&token=${process.env.WEBMENTION_IO_TOKEN}&per-page=9001`,
+	key: "children",
 })
 ```
 
