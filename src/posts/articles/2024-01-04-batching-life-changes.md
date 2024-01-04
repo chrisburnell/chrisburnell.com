@@ -4,6 +4,8 @@ title: Batching Life Changes
 description: I’ve never really done a “year in review” post before, but 2023 and, in particular, the last few months, have brought tides of change that I feel the need to share.
 tags:
   - personal
+syndicate_to:
+  - https://fediverse.repc.co/@chrisburnell/111697758030729122
 ---
 
 I kicked 2023 off with a pretty big change in my professional life as I transitioned roles at [Squiz](https://squiz.net). Before 2023, I had been a *Lead Developer*, working on projects for clients in the Services team and acting as line manager to a couple of developers.
