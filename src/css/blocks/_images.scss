@@ -37,7 +37,8 @@
 	block-size: var(--size-logo-brand);
 	inline-size: var(--size-logo-brand);
 	display: inline-block;
-	vertical-align: sub;
+	vertical-align: middle;
+	margin-block-start: calc(1ex - 1cap);
 	object-fit: contain;
 }
 

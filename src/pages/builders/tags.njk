@@ -33,7 +33,7 @@ truncate: true
 	<div class=" [ description ] [ flow ] ">
 		<p>
 			<span class=" [ p-summary ] ">{% if count > 1 %}All {{ count | numberStringFormat }}{% else %}Just the one{% endif %} of my posts tagged <q>{{ tag | capitalizeFormat }}</q>{% if first_year != latest_year %}, dating from {% if collection[0].data.list == 'shelf' %}{{ first_year }}–{{ latest_year }}{% else %}<a href="#{{ first_year }}">{{ first_year }}</a>–<a href="#{{ latest_year }}">{{ latest_year }}</a>{% endif %}{% endif %}.</span>
-			<a href="{{ site.url }}/{{ tag }}.xml" title="Tagged: {{ tag | capitalizeFormat | safe }} Feed"><svg width="20" height="20" aria-hidden="true" focusable="false" style="fill: #ff8c00; vertical-align: sub;"><use href="#svg--rss"></use></svg></a>
+			<a href="{{ site.url }}/{{ tag }}.xml" title="Tagged: {{ tag | capitalizeFormat | safe }} Feed"><svg width="20" height="20" aria-hidden="true" focusable="false" style="fill: #ff8c00; vertical-align: middle; margin-block-start: calc(1ex - 1cap);"><use href="#svg--rss"></use></svg></a>
 		</p>
 	</div>
 

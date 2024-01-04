@@ -31,7 +31,8 @@
 
 	svg {
 		margin-inline-end: 0.333em;
-		vertical-align: sub;
+		vertical-align: middle;
+		margin-block-start: calc(1ex - 1cap);
 		transition: fill var(--transition-duration) var(--transition-function);
 	}
 
