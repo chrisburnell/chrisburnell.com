@@ -1,25 +1,21 @@
 /**
- * Theme Toggler
+ * Theme Selector
  * @class
  */
-class ThemeToggler {
-	/**
-	 * @constructor
-	 */
-	constructor() {
-		this.STORAGE_KEY = "theme"
-		this.theme = localStorage.getItem(this.STORAGE_KEY)
-
-		this.select = document.getElementById("theme-toggler")
-		this.options = [...this.select.options]
-
-		this.init()
+class ThemeSelector extends HTMLElement {
+	static register(tagName) {
+		if ("customElements" in window) {
+			customElements.define(tagName || "theme-selector", ThemeSelector);
+		}
 	}
 
 	/**
-	 * Initialises the Theme Toggler.
+	 * @constructor
 	 */
-	init() {
+	connectedCallback() {
+		this.STORAGE_KEY = "theme"
+		this.theme = localStorage.getItem(this.STORAGE_KEY)
+
 		this.select.addEventListener("change", this.onChange.bind(this))
 
 		if (this.theme) {
@@ -29,6 +25,26 @@ class ThemeToggler {
 			this.setTheme("dark")
 			this.setSelected("dark")
 		}
+	}
+
+	get root() {
+		return document.documentElement
+	}
+
+	/**
+	 * Grabs the select element associated with the Theme Selector.
+	 * @returns {HTMLSelectElement}
+	 */
+	get select() {
+		return this.querySelector("select")
+	}
+
+	/**
+	 * Grabs the options available within the select element.
+	 * @returns {Array}
+	 */
+	get options() {
+		return [...this.select.options]
 	}
 
 	/**
@@ -44,7 +60,7 @@ class ThemeToggler {
 	 * @param {string} id - The ID of the selected theme.
 	 */
 	setTheme(id) {
-		document.documentElement.setAttribute(`data-${this.STORAGE_KEY}`, id)
+		this.root.setAttribute(`data-${this.STORAGE_KEY}`, id)
 	}
 
 	/**
@@ -63,25 +79,17 @@ class ThemeToggler {
 	 * Event handler for the theme change.
 	 */
 	onChange() {
-		this.theme = [...this.options].filter((option) => option.selected).map((option) => option.getAttribute("value"))[0]
+		this.theme = this.options
+			.filter((option) => option.selected)
+			.map((option) => option.getAttribute("value"))[0]
 
-		document.documentElement.classList.add("toggling")
+		this.root.classList.add("transition")
 		this.setTheme(this.theme)
 		localStorage.setItem(this.STORAGE_KEY, this.theme)
 		setTimeout(() => {
-			document.documentElement.classList.remove("toggling")
+			this.root.classList.remove("transition")
 		}, 1000)
 	}
 }
 
-if ("HTMLElement" in window) {
-	/**
-	 * @type {ThemeToggler}
-	 */
-	window.ThemeToggler = new ThemeToggler()
-}
-
-/**
- * @type {ThemeToggler}
- */
-export default ThemeToggler
+ThemeSelector.register()

@@ -76,6 +76,12 @@
 		grid-row: 1/4;
 	}
 
+	.author__name {
+		.anchor {
+			background-color: transparent !important;
+		}
+	}
+
 	.speedlify {
 		grid-column: right;
 

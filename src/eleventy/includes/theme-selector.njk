@@ -1,0 +1,12 @@
+<label for="theme-selector" class="hidden">Select a theme</label>
+<theme-selector>
+	<select id="theme-selector" autocomplete="off">
+		<optgroup label="Select a theme">
+			{% for theme in themes %}
+				<option value="{{ theme.id }}">
+					{{ theme.title }}
+				</option>
+			{% endfor %}
+		</optgroup>
+	</select>
+</theme-selector>

@@ -226,7 +226,7 @@ Try setting the Lightness to 50% and the Chroma to 100%, and then cycling throug
 
 ## Colours in practice
 
-This all came about when I decided that I wanted to add a *Sepia* theme to my website (check out the [theme toggler in the footer!](#theme-toggler)), but I didn't have a clean and concise way to go about it. What I wanted was a way to slightly-tint all the colours on my website into the sepia range.
+This all came about when I decided that I wanted to add a *Sepia* theme to my website (check out the [theme selector in the footer!](#theme-selector)), but I didn't have a clean and concise way to go about it. What I wanted was a way to slightly-tint all the colours on my website into the sepia range.
 
 Until recently, I had defined my colours manually, like this:
 
