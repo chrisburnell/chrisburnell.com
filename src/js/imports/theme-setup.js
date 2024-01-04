@@ -3,6 +3,6 @@
 	const THEME = localStorage.getItem(STORAGE_KEY)
 
 	if (THEME) {
-		document.documentElement.setAttribute(`data-${STORAGE_KEY}`, THEME)
+		document.documentElement.dataset[STORAGE_KEY] = THEME
 	}
 })()

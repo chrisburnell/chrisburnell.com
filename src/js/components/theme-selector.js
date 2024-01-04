@@ -5,35 +5,31 @@
 class ThemeSelector extends HTMLElement {
 	static register(tagName) {
 		if ("customElements" in window) {
-			customElements.define(tagName || "theme-selector", ThemeSelector);
+			customElements.define(tagName || "theme-selector", ThemeSelector)
 		}
 	}
 
-	/**
-	 * @constructor
-	 */
 	connectedCallback() {
-		this.STORAGE_KEY = "theme"
+		this.STORAGE_KEY = this.dataset.key || "theme"
+		this.DARK_THEME_KEY = this.dataset.darkThemeKey || "dark"
+		this.ROOT_ELEMENT = document.querySelector(this.dataset.rootElement) || document.documentElement
+
 		this.theme = localStorage.getItem(this.STORAGE_KEY)
 
 		this.select.addEventListener("change", this.onChange.bind(this))
 
 		if (this.theme) {
-			this.setTheme(this.theme)
-			this.setSelected(this.theme)
+			this.setDataAttribute(this.theme)
+			this.setSelectedOption(this.theme)
 		} else if (this.prefersDark) {
-			this.setTheme("dark")
-			this.setSelected("dark")
+			this.setDataAttribute(this.DARK_THEME_KEY)
+			this.setSelectedOption(this.DARK_THEME_KEY)
 		}
 	}
 
-	get root() {
-		return document.documentElement
-	}
-
 	/**
-	 * Grabs the select element associated with the Theme Selector.
-	 * @returns {HTMLSelectElement}
+	 * Grabs the select element.
+	 * @returns {Array}
 	 */
 	get select() {
 		return this.querySelector("select")
@@ -56,38 +52,40 @@ class ThemeSelector extends HTMLElement {
 	}
 
 	/**
-	 * Sets the theme for the website.
-	 * @param {string} id - The ID of the selected theme.
+	 * Sets the theme as a data attribute on the root element.
+	 * @param {string} value - The option element’s value for the desired theme.
 	 */
-	setTheme(id) {
-		this.root.setAttribute(`data-${this.STORAGE_KEY}`, id)
+	setDataAttribute(value) {
+		this.ROOT_ELEMENT.setAttribute(`data-${this.STORAGE_KEY}`, value)
 	}
 
 	/**
-	 * Sets the selected theme option in the <select>.
-	 * @param {string} id - The ID of the selected theme.
+	 * Sets the selected theme option in the select element.
+	 * @param {string} value - The option element’s value for the desired theme.
 	 */
-	setSelected(id) {
+	setSelectedOption(value) {
 		this.options.forEach((option) => {
-			if (option.value === id) {
+			if (option.value === value) {
 				option.selected = true
 			}
 		})
 	}
 
 	/**
-	 * Event handler for the theme change.
+	 * Event handler for the selecting a new theme in the select element.
 	 */
 	onChange() {
 		this.theme = this.options
 			.filter((option) => option.selected)
-			.map((option) => option.getAttribute("value"))[0]
+			.map((option) => option.value)[0]
 
-		this.root.classList.add("transition")
-		this.setTheme(this.theme)
+		this.ROOT_ELEMENT.classList.add("transition")
+
+		this.setDataAttribute(this.theme)
 		localStorage.setItem(this.STORAGE_KEY, this.theme)
+
 		setTimeout(() => {
-			this.root.classList.remove("transition")
+			this.ROOT_ELEMENT.classList.remove("transition")
 		}, 1000)
 	}
 }
