@@ -40,24 +40,3 @@
 	--flow-space: var(--size-small);
 	line-height: var(--line-height-medium);
 }
-
-/// Extends Cluster
-.meta__list {
-	--padding-inline: 0;
-	--delineator: ",\00a0";
-
-	&.cluster {
-		display: inline;
-
-		h2 + & {
-			display: block;
-		}
-	}
-
-	.meta__information &.cluster {
-		& > * {
-			display: inline;
-			white-space: normal;
-		}
-	}
-}

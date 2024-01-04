@@ -77,11 +77,10 @@
 		<li class=" [ tags ] ">
 			<c-emoji>{{ emojis.tag }}</c-emoji>
 			<small>tagged</small>
-			{% if tags_filtered.length > 1 %}<ul class=" [ cluster ] [ meta__list ] ">{% endif %}
-				{% for tag in tags_filtered -%}
-					{% if tags_filtered.length > 1 %}<li>{% endif %}<a class=" [ p-tag ] " href="/tag/{{ tag }}/">{{ tag }}</a>{% if tags_filtered.length > 1 %}</li>{% endif %}
-				{%- endfor %}
-			{% if tags_filtered.length > 1 %}</ul>{% endif %}
+			{% for tag in tags_filtered -%}
+				<a class=" [ p-tag ] " href="/tag/{{ tag }}/">{{ tag }}</a>
+				{%- if not loop.last %}, {% endif %}
+			{%- endfor %}
 		</li>
 	{% endif %}
 	{% if style %}
@@ -113,11 +112,11 @@
 				<c-emoji>{{ emojis.author }}</c-emoji>
 				<small>authored by</small>
 			{% endif %}
-			{% if authors.length > 1 %}<ul class=" [ cluster ] [ meta__list ] ">{% endif %}
 			{% for author in authors -%}
-				{% if authors.length > 1 %}<li>{% endif %}{% set authorObject = people | getPerson(author, 'object') %}{% if authorObject.url %}<a href="{{ authorObject.url | toArray | first }}">{{ authorObject.title }}</a>{% else %}<strong>{{ author | safe }}</strong>{% endif %}{% if authors.length > 1 %}</li>{% endif %}
+				{% set authorObject = people | getPerson(author, 'object') -%}
+				{% if authorObject.url %}<a href="{{ authorObject.url | toArray | first }}">{{ authorObject.title }}</a>{% else %}<strong>{{ author | safe }}</strong>{% endif %}
+				{%- if not loop.last %}, {% endif %}
 			{%- endfor %}
-			{% if authors.length > 1 %}</ul>{% endif %}
 			{% if console %}
 				<small>for</small>
 				<strong>{{ console | getConsole | safe }}</strong>
@@ -162,28 +161,24 @@
 		<li class=" [ badges ] ">
 			<c-emoji>{{ emojis.trophy }}</c-emoji>
 			<small><span class=" [ hidden ] ">earning</span> badges</small>
-			{% if badges.length > 1 %}<ul class=" [ cluster ] [ meta__list ] [ small ] ">{% endif %}
 			{% for badge in badges -%}
-				{%- if badges.length > 1 %}<li>{% endif -%}
-					{%- if badge.id -%}
-						<a href="https://untappd.com/user/{{ author.untappd }}/badges/{{ badge.id }}">{{ badge.title | default(badge) }}</a>
-					{%- else -%}
-						<strong>{{ badge.title | default(badge) }}</strong>
-					{%- endif -%}
-				{%- if badges.length > 1 %}</li>{% endif -%}
+				{%- if badge.id -%}
+					<a href="https://untappd.com/user/{{ author.untappd }}/badges/{{ badge.id }}">{{ badge.title | default(badge) }}</a>
+				{%- else -%}
+					<strong>{{ badge.title | default(badge) }}</strong>
+				{%- endif -%}
+				{% if not loop.last %}, {% endif %}
 			{%- endfor -%}
-			{%- if badges.length > 1 %}</ul>{% endif -%}
 		</li>
 	{% endif %}
 	{% if syndicate_to.length %}
 		<li class=" [ syndicate-to ] ">
 			<c-emoji>{{ emojis.syndication }}</c-emoji>
 			<small>also on</small>
-			<ul class=" [ cluster ] [ meta__list ] ">
 			{% for syndication in syndicate_to -%}
-				<li><a href="{{ syndication | tweetback }}">{{ syndication | getSyndicationTarget }}</a></li>
+				<a href="{{ syndication | tweetback }}">{{ syndication | getSyndicationTarget }}</a>
+				{%- if not loop.last %}, {% endif %}
 			{%- endfor %}
-			</ul>
 		</li>
 	{% endif %}
 	{% if posting_method %}
