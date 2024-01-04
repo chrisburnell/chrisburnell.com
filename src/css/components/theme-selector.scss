@@ -3,6 +3,10 @@
 /// @group components
 ////
 
-theme-selector:not(:defined) {
-	display: none;
+[id="theme-selector"] {
+	display: inline-block;
+
+	&:not(:defined) {
+		display: none;
+	}
 }
