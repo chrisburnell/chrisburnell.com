@@ -184,6 +184,7 @@
 
 // Apply the Dark color scheme when it has been set manually (visitor, author)
 :root:has([name="theme"] [value*="dark"]:checked),
+[data-theme*="dark"],
 .dark:not(.light) {
 	@include theme-dark;
 }

@@ -18,6 +18,7 @@
 }
 
 :root:has([name="theme"] [value*="sepia"]:checked),
+[data-theme*="sepia"],
 .sepia {
 	@include theme-sepia;
 }

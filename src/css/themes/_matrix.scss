@@ -26,6 +26,7 @@
 }
 
 :root:has([name="theme"] [value*="matrix"]:checked),
+[data-theme*="matrix"],
 .matrix {
 	@include theme-dark;
 	@include theme-matrix;

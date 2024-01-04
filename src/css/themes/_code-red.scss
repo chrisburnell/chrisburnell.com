@@ -17,6 +17,7 @@
 }
 
 :root:has([name="theme"] [value*="code-red"]:checked),
+[data-theme*="code-red"],
 .code-red {
 	@include theme-code-red;
 }

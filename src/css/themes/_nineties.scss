@@ -68,6 +68,7 @@
 }
 
 :root:has([name="theme"] [value*="nineties"]:checked),
+[data-theme*="nineties"],
 .nineties {
 	@include theme-nineties;
 }
