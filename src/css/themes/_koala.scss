@@ -16,7 +16,7 @@
 	}
 }
 
-[data-theme*="koala"],
+:root:has([name="theme"] [value*="koala"]:checked),
 .koala {
 	@include theme-koala;
 }

@@ -17,7 +17,7 @@
 	@include setup-raven-colors;
 }
 
-[data-theme*="sepia"],
+:root:has([name="theme"] [value*="sepia"]:checked),
 .sepia {
 	@include theme-sepia;
 }

@@ -26,7 +26,7 @@
 	}
 }
 
-[data-theme*="christmas"],
+:root:has([name="theme"] [value*="christmas"]:checked),
 .christmas {
 	@include theme-christmas;
 }

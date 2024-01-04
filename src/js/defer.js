@@ -1,7 +1,5 @@
 import "@11ty/is-land/is-land"
 
-import "@chrisburnell/theme-selector/theme-selector"
-
 // import "./imports/sotb-banner"
 
 import "./imports/polyfill-details-exclusive"

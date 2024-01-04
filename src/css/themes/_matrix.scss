@@ -25,7 +25,7 @@
 	}
 }
 
-[data-theme*="matrix"],
+:root:has([name="theme"] [value*="matrix"]:checked),
 .matrix {
 	@include theme-dark;
 	@include theme-matrix;

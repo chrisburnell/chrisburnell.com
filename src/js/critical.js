@@ -1,5 +1,5 @@
 document.documentElement.classList.remove("no-js")
 
-import "./imports/theme-setup"
+import "@daviddarnes/storage-form/storage-form"
 
 // import "./imports/sotb-banner-setup"

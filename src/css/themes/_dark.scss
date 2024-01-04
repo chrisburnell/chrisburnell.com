@@ -177,13 +177,13 @@
 
 // Apply the Dark color scheme when the media query matches
 @media (prefers-color-scheme: dark) {
-	html:not([data-theme]) {
+	:root:not(:has([name="theme"] [value*="light"]:checked)) {
 		@include theme-dark;
 	}
 }
 
 // Apply the Dark color scheme when it has been set manually (visitor, author)
-[data-theme*="dark"],
+:root:has([name="theme"] [value*="dark"]:checked),
 .dark:not(.light) {
 	@include theme-dark;
 }
