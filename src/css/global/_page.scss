@@ -23,10 +23,6 @@ html {
 		// more than block-size of header when navigation spans two rows
 		scroll-padding-block-start: calc(var(--size-header) + 1rem);
 	}
-
-	&.theme-transitioning * {
-		transition: all var(--transition-duration) var(--transition-function);
-	}
 }
 
 body {

@@ -12,6 +12,10 @@ tags:
   - web-component
 ---
 
+<div id="updated" class=" [ updated ] [ box ] [ flow ] ">
+    <p>Even though I had a great time building out and testing this Web Component, I’m currently using <a href="https://darn.es/storage-form-web-component/"><code>&lt;storage-form&gt;</code></a> by <a href="https://darn.es">David Darnes</a> to handle toggling of themes for its simplicity and ability to be used in a much wider array of situations!</p>
+</div>
+
 {% include 'package.njk' %}
 
 <code>&lt;theme-selector&gt;</code> is a native Web Component that adds functionality on top of the native HTML <code>&lt;select&gt;</code> element that adds the ability for to set a user-preferred theme across your website that persists between pages and visits by saving the choice in local storage.
