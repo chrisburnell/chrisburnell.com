@@ -1,6 +1,6 @@
 import "@11ty/is-land/is-land"
 
-import "./components/theme-selector"
+import "@chrisburnell/theme-selector/theme-selector"
 
 // import "./imports/sotb-banner"
 
