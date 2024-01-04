@@ -3,7 +3,7 @@
 /// @group components
 ////
 
-[id="theme-selector"] {
+storage-form:has([id="theme-selector"]) {
 	display: inline-block;
 
 	&:not(:defined) {
