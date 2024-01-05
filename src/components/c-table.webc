@@ -1,4 +1,4 @@
-<is-land>
+<is-land on:idle on:visible>
 	<table-saw webc:keep type="container" breakpoint="(max-width: 500px)" zero-padding>
 		<slot></slot>
 	</table-saw>

@@ -31,7 +31,10 @@ p {
 }
 
 ins {
-	background-color: h(conifer, gamma);
+	background-color: h(conifer);
+	color: h(snowy);
+	padding: var(--size-border-default);
+	border-radius: var(--border-radius, var(--size-border-default));
 	font-size: var(--font-size-default);
 	text-decoration: none;
 }
@@ -192,8 +195,8 @@ progress {
 }
 
 ::selection {
-	background-color: h(raven);
-	color: h(thunder);
+	background-color: h(wolf);
+	color: h(snowy);
 	text-shadow: none;
 }
 
