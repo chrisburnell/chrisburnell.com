@@ -14,6 +14,15 @@ module.exports = [
 		plugins: process.env.ELEVENTY_PRODUCTION ? [commonjs(), nodeResolve(), terser()] : [commonjs(), nodeResolve()],
 	},
 	{
+		input: "src/js/critical_module.js",
+		output: {
+			dir: "js",
+			format: "module",
+			name: "critical_module",
+		},
+		plugins: process.env.ELEVENTY_PRODUCTION ? [commonjs(), nodeResolve(), terser()] : [commonjs(), nodeResolve()],
+	},
+	{
 		input: "src/js/defer.js",
 		output: {
 			dir: "js",

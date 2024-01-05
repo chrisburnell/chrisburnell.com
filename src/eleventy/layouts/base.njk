@@ -116,8 +116,10 @@
 	{%- endif %}
 	{%- endif %}
 
-	<!-- Inlined critical JS -->
+	<!-- Inlined Critical JS -->
 	<script>{% getBundle 'js', 'critical' %}</script>
+	<!-- Critical JS -->
+	<script type="module" src="{% getBundleFileUrl 'js', 'critical_module' %}"></script>
 </head>
 <body>
 	<a href="#content" class=" [ skip-link ] [ hidden ] ">Skip to main content</a>
@@ -209,6 +211,7 @@
 
 	{# JS Bundles #}
 	{%- js 'critical' -%}{% include '../../../js/critical.js' %}{%- endjs -%}
+	{%- js 'critical_module' -%}{% include '../../../js/critical_module.js' %}{%- endjs -%}
 	{%- js 'navigator' -%}{% include '../../js/navigator.js' %}{%- endjs -%}
 	{%- js 'module' -%}{% include '../../../js/defer.js' %}{%- endjs -%}
 	{%- if js_module -%}
