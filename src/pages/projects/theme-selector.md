@@ -3,7 +3,7 @@ title: "&lt;theme-selector&gt;"
 emoji: 🎨
 github: chrisburnell/theme-selector
 branch: main
-# npm: "@chrisburnell/theme-selector"
+npm: "@chrisburnell/theme-selector"
 license: MIT
 tags:
   - html
