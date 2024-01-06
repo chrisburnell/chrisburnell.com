@@ -18,8 +18,8 @@
 					<c-emoji>{{ emojis.going }}</c-emoji>
 					<small>went to</small>
 				{%- endif %}
-			{%- elif rsvp.value == 'maybe' -%}
-				<c-emoji>{{ emojis.maybe }}</c-emoji>
+			{%- elif rsvp.value == 'hopefully' -%}
+				<c-emoji>{{ emojis.hopefully }}</c-emoji>
 				{% if rsvp.date | epoch > global.now -%}
 					{# Future #}
 					<small>might go to</small>
@@ -30,12 +30,12 @@
 			{%- elif rsvp.value == 'interested' -%}
 				{% if rsvp.date | epoch > global.now -%}
 					{# Future #}
-					<c-emoji>{{ emojis.maybe }}</c-emoji>
-					<small>interested in going to</small>
+					<c-emoji>{{ emojis.hoping }}</c-emoji>
+					<small>hoping to going to</small>
 				{%- else -%}
 					{# Past #}
 					<c-emoji>{{ emojis.not_going }}</c-emoji>
-					<small>was interested in going to</small>
+					<small>was hoping to go to</small>
 				{%- endif %}
 			{%- else -%}
 				<c-emoji>{{ emojis.not_going }}</c-emoji>
