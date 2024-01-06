@@ -93,6 +93,6 @@ module.exports = {
 	daysUntil: (date, end) => {
 		date = DateTime.fromJSDate(new Date(date))
 		end = DateTime.fromJSDate(new Date(end))
-		return Math.floor(end.diff(date, ["days"]).toObject().days) + 1
+		return Math.floor(end.diff(date, ["days"]).toObject().days)
 	},
 }
