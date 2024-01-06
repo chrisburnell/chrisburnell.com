@@ -69,6 +69,11 @@
 	.footer__navigation {
 		grid-column: left;
 		line-height: var(--line-height-code);
+		font-size: 0;
+
+		& > * {
+			font-size: var(--font-size-default);
+		}
 	}
 
 	.author {

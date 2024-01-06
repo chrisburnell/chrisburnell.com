@@ -1,6 +1,6 @@
 {
   "name": "chrisburnell",
-  "version": "3.7.15",
+  "version": "3.7.2",
   "description": "Some real sweet codestuffs.",
   "author": "Chris Burnell <me@chrisburnell.com>",
   "contributors": [
@@ -52,6 +52,7 @@
     "@chrisburnell/pentatonic": "^1.1.4",
     "@chrisburnell/spark-line": "^1.2.6",
     "@chrisburnell/theme-selector": "^1.0.1",
+    "@daviddarnes/share-button": "^1.1.2",
     "@daviddarnes/storage-form": "^2.0.0",
     "@mdn/browser-compat-data": "^5.5.4",
     "@sindresorhus/slugify": "1.1.2",

@@ -149,26 +149,63 @@
 		<div class=" [ wrap ] [ footer__grid ] ">
 			{% include 'author.njk' %}
 			<ul class=" [ cluster ] [ footer__navigation ] [ strong ] ">
-				{%- for link in navigation -%}
-					{%- if link.footer -%}
-						<li><a href="{{ link.url }}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title | safe }}</a></li>
-					{%- endif -%}
-				{%- endfor -%}
+				{%- for link in navigation %}
+					{%- if link.footer %}
+						<li>
+							<a href="{{ link.url }}"{% if page.url == link.url %} aria-current="page"{% endif %}>
+								{{ link.title | safe }}
+							</a>
+						</li>
+					{% endif -%}
+				{% endfor -%}
 			</ul>
 			<ul class=" [ cluster ] [ footer__navigation ] ">
-				<li class=" [ requires-js ] ">{% include 'theme-selector.njk' %}</li><li class=" [ requires-js ] "><button id="sounds-toggle" class=" [ anchor ] [ js-sounds-toggle ] "><svg width="16" height="16" aria-hidden="true" focusable="false" style="--fill-hover: var(--color-highland);"><use href="#svg--sound-off"></use></svg><span class=" [ js-sounds-status ] ">Enable sounds</span></button></li><li><a id="edit" href="https://github.com/{{ author.github }}/{{ site.repository }}/tree/{{ site.branch }}/{{ page.inputPath }}" aria-label="Edit this page"><svg width="16" height="16" aria-hidden="true" focusable="false" style="--fill-hover: var(--color-highland);"><use href="#svg--edit"></use></svg>Edit this page</a></li><li class=" [ requires-js ] "><button id="share" type="share" class="anchor"><svg width="16" height="16" aria-hidden="true" focusable="false" style="--fill-hover: var(--color-highland);"><use href="#svg--share"></use></svg>Share</button></li>
+				<li class=" [ requires-js ] ">
+					{% include 'theme-selector.njk' %}
+				</li>
+				<li class=" [ requires-js ] ">
+					<button id="sounds-toggle" class=" [ anchor ] [ js-sounds-toggle ] ">
+						<svg width="16" height="16" aria-hidden="true" focusable="false" style="--fill-hover: var(--color-highland);">
+							<use href="#svg--sound-off"></use>
+						</svg>
+						<span class=" [ js-sounds-status ] ">Enable sounds</span>
+					</button>
+				</li>
+				<li>
+					<a id="edit" href="https://github.com/{{ author.github }}/{{ site.repository }}/tree/{{ site.branch }}/{{ page.inputPath }}" aria-label="Edit this page">
+						<svg width="16" height="16" aria-hidden="true" focusable="false" style="--fill-hover: var(--color-highland);">
+							<use href="#svg--edit"></use>
+						</svg>
+						Edit this page
+					</a>
+				</li>
+				<li>
+					{% include 'share-button.njk' %}
+				</li>
 			</ul>
 			<ul class=" [ cluster ] [ footer__navigation ] ">
-				<li><a id="copyright" rel="license" href="/license/">© {{ site.established }}–{{ global.now | friendlyDate("yyyy") }} <span class=" [ canada ] ">{{ author.name }}</span></a></li>
-				{%- for item in socials -%}
-					{%- if not item.hidden and item.primary -%}
-						<li>{%- set url = item.url -%}
-						{%- if item.key -%}
-							{%- set url = url + author[item.key] -%}
-						{%- endif -%}
-						<a{% if not item.primary %} tabindex="-1"{% endif %}{% if item.mf_property %} class=" [ p-{{ item.mf_property }} ] "{% endif %} href="{{ url }}" rel="me"><svg width="20" height="20" aria-hidden="true" focusable="false"{% if item.fill or item.fillHover %} style="{% if item.fill %}--fill: {{ item.fill }}; {% endif %}{% if item.fillHover %}--fill-hover: {{ item.fillHover }}; {% endif %}"{% endif %}>{% if item.defs %}{{ item.defs | safe }}{% endif %}<use href="#svg--{{ item.title | lower }}"></use></svg>{{ item.title }}</a></li>
-					{%- endif -%}
-				{%- endfor -%}
+				<li>
+					<a id="copyright" rel="license" href="/license/">
+						© {{ site.established }}–{{ global.now | friendlyDate("yyyy") }} <span class=" [ canada ] ">{{ author.name }}</span>
+					</a>
+				</li>
+				{%- for item in socials %}
+					{%- if not item.hidden and item.primary %}
+						{%- set url = item.url %}
+						<li>
+							{% if item.key -%}
+								{%- set url = url + author[item.key] -%}
+							{%- endif -%}
+							<a{% if item.mf_property %} class=" [ p-{{ item.mf_property }} ] "{% endif %} href="{{ url }}" rel="me">
+								<svg width="20" height="20" aria-hidden="true" focusable="false"{% if item.fill or item.fillHover %} style="{% if item.fill %}--fill: {{ item.fill }}; {% endif %}{% if item.fillHover %}--fill-hover: {{ item.fillHover }}; {% endif %}"{% endif %}>
+									{% if item.defs %}{{ item.defs | safe }}{% endif %}
+									<use href="#svg--{{ item.title | lower }}"></use>
+								</svg>
+								{{ item.title }}
+							</a>
+						</li>
+					{% endif -%}
+				{% endfor -%}
 			</ul>
 			{% include 'webrings.njk' %}
 			{% if speedlify[canonical] %}

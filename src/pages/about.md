@@ -7,7 +7,9 @@ eleventyComputed:
   description: "{{ site.description | safe }}"
 ---
 
-<p><strong>I’ve got a <a href="https://chrisburnell.com/cv/">CV / resumé</a>, if that’s what you’re looking for.</strong></p>
+{% include 'lfw.njk' %}
+
+<p hidden><strong>I’ve got a <a href="https://chrisburnell.com/cv/">CV / resumé</a>, if that’s what you’re looking for.</strong></p>
 
 <ul class=" [ cluster ] ">
     {%- for item in socials -%}

@@ -5,11 +5,11 @@ import "@11ty/is-land/is-land";
 // Not used until SotB is announced
 // import "./imports/sotb-banner"
 
+import "./imports/website-sounds";
+
 import "./imports/polyfill-details-exclusive";
 
-import "./imports/share-button";
-
-import "./imports/website-sounds";
+import "@daviddarnes/share-button/share-button";
 
 import "./imports/welcome";
 
