@@ -26,13 +26,25 @@ toc: true
 ## Development
 
 - [Visual Studio Code](https://code.visualstudio.com/) — My *current* preferred text editor.
+  -
 - [iTerm 2](https://iterm2.com/) — My preferred console / terminal.
-- [Z shell/zsh](https://www.zsh.org) — My preferred terminal shell.
+  - [Z shell/zsh](https://www.zsh.org) — My preferred terminal shell.
 - [Cobalt 2 Colour Theme](https://marketplace.visualstudio.com/items?itemName=wesbos.theme-cobalt2) — A dark theme for text editors by [Wes Bos](https://wesbos.com).
-- [Menlo](https://en.wikipedia.org/wiki/Menlo_(typeface)) / [Menlo for Powerline](https://github.com/abertsch/Menlo-for-Powerline) — My preferred coding font, which I’ve been using for like a decade. Text doesn’t look right without it anymore! 😅
+- [Menlo](https://en.wikipedia.org/wiki/Menlo_(typeface)) / [Menlo for Powerline](https://github.com/abertsch/Menlo-for-Powerline) — I’ve been using this font for like a decade. Text doesn’t look right without it anymore! 😅
 
 ## Services
 
 - [Corvus](https://corvus.chrisburnell.com) — My personal [Micropub](https://indieweb.org/Micropub) server which allows me to create posts on my website from external services (authenticated through [IndieAuth](https://indieweb.org/indieauth)) across all [categories](/posts/#categories) and syndicate them out to social networks if I choose.
 - [FreshRSS](https://www.freshrss.org/) — A self-hosted RSS aggregator. Helps me keep track of many RSS feeds, and I mostly enjoy its built-in reader; although, it still makes it easy to jump into a browser to read a post.
 - [Quill](https://quill.p3k.io/) — My preferred web app for posting to my website through my Micropub server.
+
+## Coffee
+
+*Currently missing the hell out of my coffee gear, currently on a shipping container on its way to Singapore…* 😢
+
+- **Machine:** Rancilio Silvia PRO X — This thing is an (expensive!) beast but makes beautiful coffee.
+- **Grinder:** [Niche Zero](https://www.nichecoffee.co.uk/products/niche-zero) — Another expensive purchase but a total workhorse. The easily-adjustable and readable dial has made it easy to switch between methods of brewing and the beans I’m using, and it's easy to transfer into my portafilter.
+- **Other bits and bobs:**
+  - [Fellow Stagg Gooseneck Kettle](https://fellowproducts.com/products/stagg-ekg-electric-pour-over-kettle)
+  - [Aeropress](https://aeropress.com/)
+  - French Press

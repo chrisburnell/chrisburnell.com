@@ -68,7 +68,7 @@ eleventyComputed:
 
 ## The Long Version
 
-<figure class=" [ line-length  overflow ] ">
+<figure>
     {% image './images/content/rachel-and-i.jpg', 'a photo of my wife, Rachel, and myself', ' [ shadow ] [ canada ] ', [500, 672, 1000] %}
     <figcaption>a photo of my wife, Rachel, and myself</figcaption>
 </figure>
