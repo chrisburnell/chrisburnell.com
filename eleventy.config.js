@@ -135,11 +135,12 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.addPassthroughCopy({
 		"files/*": ".",
 		"src/js/components/*": "js/components/",
-		"node_modules/@zachleat/details-utils/details-utils.js": "js/components/details-utils.js",
-		"node_modules/@zachleat/table-saw/table-saw.js": "js/components/table-saw.js",
 		"node_modules/lite-youtube-embed/src/lite-yt-embed.{css,js}": "css/components/",
 		"node_modules/@chrisburnell/spark-line/spark-line.{css,js}": "js/components/",
+		"node_modules/@zachleat/details-utils/details-utils.js": "js/components/details-utils.js",
+		"node_modules/@zachleat/pagefind-search/pagefind-search.js": "js/pages/pagefind-search.js",
 		"node_modules/@zachleat/seven-minute-tabs/seven-minute-tabs.{css,js}": "js/components/",
+		"node_modules/@zachleat/table-saw/table-saw.js": "js/components/table-saw.js",
 	})
 
 	// Watch targets

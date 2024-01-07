@@ -37,7 +37,7 @@
     "sass": "^1.69.7"
   },
   "dependencies": {
-    "@11ty/eleventy": "^2.0.2-alpha.2",
+    "@11ty/eleventy": "^3.0.0-alpha.4",
     "@11ty/eleventy-fetch": "^4.0.0",
     "@11ty/eleventy-img": "^3.1.8",
     "@11ty/eleventy-plugin-bundle": "^1.0.5",
@@ -48,7 +48,7 @@
     "@11ty/eleventy-plugin-webc": "^0.11.2",
     "@11ty/is-land": "^4.0.0",
     "@chrisburnell/bowhead": "^0.3.4",
-    "@chrisburnell/eleventy-cache-webmentions": "^1.2.6-rc.1",
+    "@chrisburnell/eleventy-cache-webmentions": "^1.2.6-rc.2",
     "@chrisburnell/pentatonic": "^1.1.4",
     "@chrisburnell/spark-line": "^1.2.6",
     "@chrisburnell/theme-selector": "^1.0.1",
@@ -58,6 +58,7 @@
     "@sindresorhus/slugify": "1.1.2",
     "@tweetback/canonical": "^2.0.38",
     "@zachleat/details-utils": "^2.0.2",
+    "@zachleat/pagefind-search": "^1.0.3",
     "@zachleat/seven-minute-tabs": "^2.0.0",
     "@zachleat/table-saw": "^1.0.6",
     "caniuse-api": "^3.0.0",
@@ -69,7 +70,8 @@
     "luxon": "^3.4.4",
     "markdown-it": "^14.0.0",
     "markdown-it-abbr": "^2.0.0",
-    "markdown-it-footnote": "^4.0.0"
+    "markdown-it-footnote": "^4.0.0",
+    "pagefind": "^1.0.4"
   },
   "scripts": {
     "clean": "rm -rf .cache && rm -rf _site",
@@ -84,6 +86,7 @@
     "serve": "NODE_OPTIONS=--max-old-space-size=6144 npx @11ty/eleventy --incremental --serve",
     "setup": "npm run tokens; npm run css; npm run js; npm run prettier; npx browserslist@latest --update-db",
     "build": "npm run setup; cross-env NODE_OPTIONS=--max-old-space-size=6144 ELEVENTY_PRODUCTION=true npx @11ty/eleventy",
+    "create-search-index": "npx pagefind --site \"_site\"",
     "pregenerate": "npm run setup; cross-env PREGENERATE_IMAGES=true npx @11ty/eleventy",
     "debug": "cross-env DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
   },

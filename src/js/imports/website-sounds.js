@@ -130,8 +130,8 @@ class WebsiteSounds {
 								.split(",")
 								.map((interval) => parseFloat(interval))
 						: target.dataset.keyIntervals
-						? target.dataset.keyIntervals.split(",").map((interval) => parseFloat(interval))
-						: this.defaults.keyIntervals
+							? target.dataset.keyIntervals.split(",").map((interval) => parseFloat(interval))
+							: this.defaults.keyIntervals
 					pentatonic(values.split(","), duration, this.defaults.volume, keyStart, keyIntervals, keyLimit, this.waveform)
 				}
 			})

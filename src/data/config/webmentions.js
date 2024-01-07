@@ -22,4 +22,6 @@ module.exports = Object.assign(defaults, {
 	},
 	urlReplacements: urlReplacements,
 	maximumHtmlText: "Mentioned this:",
+	allowlist: [],
+	blocklist: ["prix-collegiens-marguerite-audoux.fr"],
 })
