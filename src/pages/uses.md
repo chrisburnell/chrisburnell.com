@@ -26,7 +26,6 @@ toc: true
 ## Development
 
 - [Visual Studio Code](https://code.visualstudio.com/) — My *current* preferred text editor.
-  -
 - [iTerm 2](https://iterm2.com/) — My preferred console / terminal.
   - [Z shell/zsh](https://www.zsh.org) — My preferred terminal shell.
 - [Cobalt 2 Colour Theme](https://marketplace.visualstudio.com/items?itemName=wesbos.theme-cobalt2) — A dark theme for text editors by [Wes Bos](https://wesbos.com).
