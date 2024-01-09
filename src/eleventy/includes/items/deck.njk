@@ -93,7 +93,7 @@
 			{% elif item.data.rsvp.date | epoch > global.now %}
 				{# Future #}
 				<small>in</small>
-				{{ global.now | daysUntil(item.data.rsvp.date) }} days
+				{{ global.now | daysUntil(item.data.rsvp.date) }} day{{ 's' if (global.now | daysUntil(item.data.rsvp.date)) > 1 }}
 				<small>on</small>
 				{% if item.data.rsvp.date | friendlyDate != item.data.rsvp.end | friendlyDate %}
 					<time class=" [ dt-start ] " datetime="{{ item.data.rsvp.date | rfc3339Date }}">{{ item.data.rsvp.date | friendlyDate }}</time>

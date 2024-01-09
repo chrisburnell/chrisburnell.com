@@ -5,6 +5,8 @@ const urlReplacements = require("#data/urlReplacements")
 
 const { defaults } = require("@chrisburnell/eleventy-cache-webmentions")()
 
+const blocklist = require("./blocklist.js")
+
 module.exports = Object.assign(defaults, {
 	domain: siteUrl,
 	feed: `https://webmention.io/api/mentions.jf2?domain=${new URL(siteUrl).hostname}&token=${process.env.WEBMENTION_IO_TOKEN}&per-page=9001`,
@@ -23,5 +25,5 @@ module.exports = Object.assign(defaults, {
 	urlReplacements: urlReplacements,
 	maximumHtmlText: "Mentioned this:",
 	allowlist: [],
-	blocklist: ["prix-collegiens-marguerite-audoux.fr"],
+	blocklist: blocklist,
 })
