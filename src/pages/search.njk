@@ -5,22 +5,19 @@ noindex: true
 nofollow: true
 sitemap:
   exclude: true
-js_module: search.js
 ---
 
-<!-- </textarea> -->
-<!-- '"´ -->
-<form id="search" class=" [ responses__form ] " method="get" name="search" action="https://duckduckgo.com/">
-	<label class=" [ responses__label ] hidden" for="search-query">
-		Search:
-	</label>
-	<input id="search-query" class=" [ responses__input ] " type="search" name="q" value="site:chrisburnell.com ">
-	<button type="submit" enterkeyhint="submit">Submit</button>
-</form>
+<script type="module" src="/js/pages/pagefind-search.js"></script>
 
-<p>Search provided by <a href="https://duckduckgo.com">DuckDuckGo</a>: <q>The Internet privacy company that empowers you to seamlessly take control of your personal information online, without any tradeoffs.</q></p>
-
-{% set responses_css %}
-	{% include '../../css/components/responses.css' %}
-{% endset %}
-{%- css %}{{ responses_css | cssmin | safe }}{% endcss -%}
+<pagefind-search>
+	<!-- </textarea> -->
+	<!-- '"´ -->
+	<form action="https://duckduckgo.com/" method="get" style="min-height: 3.2em;">
+		<label>
+			Search for:
+			<input type="search" name="q" autocomplete="off" autofocus>
+		</label>
+		<input type="hidden" name="sites" value="chrisburnell.com">
+		<button type="submit">Search</button>
+	</form>
+</pagefind-search>

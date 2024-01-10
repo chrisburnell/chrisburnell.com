@@ -30,9 +30,11 @@
 	}
 
 	svg {
-		margin-inline-end: 0.333em;
-		vertical-align: middle;
+		inline-size: calc(1lh - 1.25cap);
+		block-size: calc(1lh - 1.25cap);
+		margin-inline-end: 0.5em;
 		margin-block-start: calc(1ex - 1cap);
+		vertical-align: middle;
 		transition: fill var(--transition-duration) var(--transition-function);
 	}
 
@@ -69,11 +71,6 @@
 	.footer__navigation {
 		grid-column: left;
 		line-height: var(--line-height-code);
-		font-size: 0;
-
-		& > * {
-			font-size: var(--font-size-default);
-		}
 	}
 
 	.author {

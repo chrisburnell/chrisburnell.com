@@ -105,7 +105,7 @@ Interesting! 🤔
     }
 
     .hypotenuse {
-        text-align: right;
+        text-align: end;
         inset-block-end: 50%;
         inset-inline-end: 50%;
     }

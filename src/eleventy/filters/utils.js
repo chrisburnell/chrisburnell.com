@@ -2,7 +2,6 @@ const blogroll = require("#data/blogroll")
 const peopleAsync = require("#datajs/people")
 
 const CleanCSS = require("clean-css")
-const { transform } = require("lightningcss")
 module.exports = {
 	/**
 	 * Minify CSS.
@@ -11,17 +10,6 @@ module.exports = {
 	 */
 	cssmin: (code) => {
 		return new CleanCSS({}).minify(code).styles
-	},
-	/**
-	 * Description
-	 * @param {any} value
-	 * @returns {Uint8Array}
-	 */
-	lightning: (value) => {
-		return transform({
-			code: Buffer.from(value),
-			minify: true,
-		}).code
 	},
 	/**
 	 * Truncate an array to a set length.

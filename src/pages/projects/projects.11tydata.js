@@ -21,9 +21,6 @@ module.exports = {
 			return data.updated || null
 		},
 		tagline: async (data) => {
-			if (data.npm) {
-				return data.title + " v" + (pkg.dependencies[data.npm] || pkg.devDependencies[data.npm]).replace("^", "")
-			}
 			return data.tagline || data.title || ""
 		},
 		description: async (data) => {

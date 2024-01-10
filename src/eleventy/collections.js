@@ -171,7 +171,6 @@ module.exports = {
 	hot: (collection) => {
 		// "Hot" sorting is done by determining the exponential moving average
 		// as a function of Webmentions across time
-		const deltaModifier = 1000 * 60 * 60 * 24 // 1 day
 		return [...collection.getFilteredByTag("feature"), ...collection.getFilteredByTag("project")]
 			.filter(isPublished)
 			.filter(notReply)
@@ -181,7 +180,7 @@ module.exports = {
 			.sort(dateFilter)
 			.map((item) => {
 				item.hotness = item.data.webmentions.reduce((accumulator, webmention) => {
-					return exponentialMovingAverage(epoch(webmention.published || webmention["wm-received"]) / deltaModifier, accumulator)
+					return exponentialMovingAverage(epoch(webmention.published || webmention["wm-received"]) / durationDay, accumulator)
 				}, 0)
 
 				return item

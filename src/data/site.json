@@ -8,6 +8,7 @@
   "branch": "main",
   "dir": "ltr",
   "locale": "en",
+  "timezone": "Asia/Singapore",
   "established": "2008",
   "favicon": "/images/favicon-512.png",
   "logo": "/images/raven.svg",

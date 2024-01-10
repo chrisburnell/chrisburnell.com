@@ -49,7 +49,7 @@
 
 		// Animate the pieces
 		&.animate {
-			svg {
+			svg:first-of-type {
 				clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
 				transition: transform var(--transition-override, var(--transition-duration)) var(--transition-function);
 				animation: swipe var(--transition-override, var(--transition-duration-long)) linear var(--transition-override, var(--transition-duration)) forwards;
@@ -63,6 +63,7 @@
 				}
 			}
 
+			svg:last-of-type,
 			span {
 				opacity: 0;
 				animation: fadein var(--transition-override, var(--transition-duration)) linear calc(var(--transition-override, var(--transition-duration-long)) + var(--transition-override, var(--transition-duration))) forwards;

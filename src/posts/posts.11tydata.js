@@ -1,7 +1,6 @@
-const EleventyFetch = require("@11ty/eleventy-fetch")
 const { getWebmentions } = require("@chrisburnell/eleventy-cache-webmentions")()
 
-const { cacheDurations, favicon, title: siteTitle, url: siteUrl } = require("#data/site")
+const { favicon, title: siteTitle, url: siteUrl } = require("#data/site")
 const { untappd } = require("#data/author")
 const configWebmentions = require("#datajs/config/webmentions")
 const people = require("#datajs/people")
