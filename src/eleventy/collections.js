@@ -2,7 +2,7 @@ const { now } = require("#datajs/global")
 const { limits, upcomingDaysLead } = require("#data/site")
 
 const { dateFilter, isPublished, notReply } = require("#filters/collections")
-const { epoch, friendlyDate } = require("#filters/dates")
+const { epoch, friendlyDate, daysUntil } = require("#filters/dates")
 const { exponentialMovingAverage } = require("#filters/utils")
 
 const durationDay = 24 * 60 * 60 * 1000
@@ -126,11 +126,13 @@ module.exports = {
 	todayRSVPs: (collection) => {
 		return collection
 			.getFilteredByTag("post")
+			.filter((item) => item.data.rsvp)
 			.filter(isPublished)
 			.filter((item) => {
-				if (item.data.rsvp && friendlyDate(item.data.rsvp.date) == friendlyDate(now)) {
+				if (daysUntil(now, item.data.rsvp.date) == 0) {
 					return true
 				}
+				return false
 			})
 			.sort((a, b) => {
 				return new Date(a.data.rsvp) - new Date(b.data.rsvp)
@@ -139,12 +141,17 @@ module.exports = {
 	upcomingRSVPs: (collection) => {
 		return collection
 			.getFilteredByTag("post")
+			.filter((item) => item.data.rsvp)
 			.filter(isPublished)
 			.filter((item) => {
+				if (daysUntil(now, item.data.rsvp.date) == 0) {
+					return false
+				}
 				const lead = (item.data.rsvp?.upcoming_days_lead || upcomingDaysLead) * durationDay
-				if (item.data.rsvp && (item.data.rsvp.show_upcoming_always || (epoch(item.data.rsvp.date) > now && epoch(item.data.rsvp.date) - epoch(now) < lead && friendlyDate(item.data.rsvp.date) != friendlyDate(now)))) {
+				if (item.data.rsvp.show_upcoming_always || (epoch(item.data.rsvp.date) > now && epoch(item.data.rsvp.date) - epoch(now) < lead)) {
 					return true
 				}
+				return false
 			})
 			.sort((a, b) => {
 				return new Date(b.data.rsvp) - new Date(a.data.rsvp)
