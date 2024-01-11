@@ -8,7 +8,7 @@
 				{% if previous_post %}
 					<li>
 						<a class=" [ browse__previous ] " href="{{ previous_post.url }}">
-							<strong>← Previously</strong>
+							<strong>← Older</strong>
 							<br>
 							{% if previous_post.data.like_of.title %}
 								Liked: {{ previous_post.data.like_of.title }}
@@ -23,7 +23,7 @@
 				{% if next_post %}
 					<li>
 						<a class=" [ browse__next ] " href="{{ next_post.url }}">
-							<strong>Next →</strong>
+							<strong>Newer →</strong>
 							<br>
 							{% if next_post.data.like_of.title %}
 								Liked: {{ next_post.data.like_of.title }}
