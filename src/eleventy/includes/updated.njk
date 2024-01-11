@@ -2,7 +2,7 @@
 	{% set updated_css %}
 		{% include '../../../css/components/updated.css' %}
 	{% endset %}
-	{%- css %}{{ updated_css | cssmin }}{% endcss -%}
+	{%- css %}{{ updated_css }}{% endcss -%}
 	<div id="updated" class=" [ updated ] [ box ] [ flow ] ">
 		{% if updated %}
 			<time datetime="{{ updated | rfc3339Date }}">Updated {{ updated | friendlyDateLong | safe }}:</time>

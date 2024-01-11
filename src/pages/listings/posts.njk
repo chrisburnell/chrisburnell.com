@@ -85,7 +85,4 @@ perch: true
 	{% include 'ads.njk' %}
 </div>
 
-{% set shelf_css %}
-	{% include '../../../css/components/shelf.css' %}
-{% endset %}
-{%- css 'critical' %}{{ shelf_css | cssmin | safe }}{% endcss -%}
+{%- css 'critical' %}{% include '../../../css/components/shelf.css' %}{% endcss %}

@@ -7,7 +7,7 @@ import "@11ty/is-land/is-land"
 
 import "./imports/website-sounds"
 
-import "./imports/polyfill-details-exclusive"
+// import "./imports/polyfill-details-exclusive"
 
 import "@daviddarnes/share-button/share-button"
 

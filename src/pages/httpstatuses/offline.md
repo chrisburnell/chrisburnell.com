@@ -10,7 +10,4 @@ theme: null
   <button onclick="window.location.reload()" aria-label="Refresh">Refresh!</button>
 </nav>
 
-{% set deck_css %}
-    {% include '../../../css/components/deck.css' %}
-{% endset %}
-{%- css 'critical' %}{{ deck_css | cssmin | safe }}{% endcss -%}
+{%- css 'critical' %}{% include '../../../css/components/deck.css' %}{% endcss %}

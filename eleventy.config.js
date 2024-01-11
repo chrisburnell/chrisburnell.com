@@ -44,6 +44,10 @@ const builderTags = require("#builders/tags")
 const markdownParser = require("markdown-it")
 const markdownAbbr = require("markdown-it-abbr")
 const markdownFootnote = require("markdown-it-footnote")
+const postcss = require("postcss")
+const autoprefixer = require("autoprefixer")
+const cssnano = require("cssnano")
+const UglifyJS = require("uglify-js")
 
 module.exports = (eleventyConfig) => {
 	// Plugins
@@ -53,7 +57,37 @@ module.exports = (eleventyConfig) => {
 	if (process.env.PREGENERATE_IMAGES) {
 		eleventyConfig.addPlugin(pluginPregenerateImages)
 	}
-	eleventyConfig.addPlugin(pluginBundler)
+	eleventyConfig.addPlugin(pluginBundler, {
+		transforms: [
+			async function (code) {
+				// if (this.type === 'css') {
+				// 	let result = await postcss([
+				// 		autoprefixer,
+				// 		cssnano
+				// 	]).process(code, {
+				// 		from: this.page.inputPath,
+				// 		to: null
+				// 	}).catch(error => {
+				// 		if (error.name === 'CssSyntaxError') {
+				// 			process.stderr.write(error.message + error.showSourceCode())
+				// 		} else {
+				// 			throw error
+				// 		}
+				// 	})
+				// 	return result.css
+				// }
+				if (this.type === 'js') {
+					let minified = UglifyJS.minify(code)
+					if (minified.error) {
+						console.log(`UglifyJS error: `, minified.error)
+						return code
+					}
+					return minified.code
+				}
+				return code
+			}
+		]
+	})
 	if (process.env.DIRECTORY_OUTPUT) {
 		eleventyConfig.addPlugin(pluginDirectoryOutput)
 	}
@@ -135,12 +169,7 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.addPassthroughCopy({
 		"files/*": ".",
 		"src/js/components/*": "js/components/",
-		"node_modules/lite-youtube-embed/src/lite-yt-embed.{css,js}": "css/components/",
 		"node_modules/@chrisburnell/spark-line/spark-line.{css,js}": "js/components/",
-		"node_modules/@zachleat/details-utils/details-utils.js": "js/components/details-utils.js",
-		"node_modules/@zachleat/pagefind-search/pagefind-search.js": "js/pages/pagefind-search.js",
-		"node_modules/@zachleat/seven-minute-tabs/seven-minute-tabs.{css,js}": "js/components/",
-		"node_modules/@zachleat/table-saw/table-saw.js": "js/components/table-saw.js",
 	})
 
 	// Watch targets

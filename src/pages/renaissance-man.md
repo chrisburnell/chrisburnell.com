@@ -30,7 +30,4 @@ My maternal grandfather, or *Opa* as his grandchildren called him, was a highly-
     {% image './images/content/gpp-dad-me.jpg', 'Robert Burnell, my paternal grandfather, or as I called him: Grandpapa; Chris Burnell (that’s me!); and Jean Burnell (my father) in 1993' %}
 </figure>
 
-{% set shelf_css %}
-    {% include '../../css/components/shelf.css' %}
-{% endset %}
-{%- css 'critical' %}{{ shelf_css | cssmin | safe }}{% endcss -%}
+{%- css 'critical' %}{% include '../../css/components/shelf.css' %}{% endcss %}

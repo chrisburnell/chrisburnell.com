@@ -64,7 +64,7 @@ inlinejs: true
 		{%- endfor -%}
 	}
 {%- endset -%}
-{%- css %}{{ utilities_css | cssmin | safe }}{% endcss -%}
+{%- css %}{{ utilities_css }}{% endcss -%}
 
 {%- for feature in browserFeaturesSorted -%}
 	{%- if feature.supportsJS -%}

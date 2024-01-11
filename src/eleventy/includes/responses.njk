@@ -1,8 +1,6 @@
 {% if show_responses %}
-	{% set responses_css %}
-		{% include '../../../css/components/responses.css' %}
-	{% endset %}
-	{%- css %}{{ responses_css | cssmin | safe }}{% endcss -%}
+	{% css %}{% include '../../../css/components/responses.css' %}{% endcss -%}
+
 	<div id="respond" class=" [ box ] [ flow ] [ responses ] ">
 		<!-- </textarea> -->
 		<!-- '"´ -->

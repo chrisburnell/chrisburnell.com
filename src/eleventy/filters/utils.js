@@ -1,16 +1,6 @@
 const blogroll = require("#data/blogroll")
-const peopleAsync = require("#datajs/people")
 
-const CleanCSS = require("clean-css")
 module.exports = {
-	/**
-	 * Minify CSS.
-	 * @param {any} code
-	 * @returns {String}
-	 */
-	cssmin: (code) => {
-		return new CleanCSS({}).minify(code).styles
-	},
 	/**
 	 * Truncate an array to a set length.
 	 * @param {Object[]} array

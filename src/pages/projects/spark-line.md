@@ -244,7 +244,4 @@ If you wanted to use `<is-land>` as well, I recommend something like the followi
 	</fieldset>
 </form>
 
-{% set shelf_css %}
-    {% include '../../../css/components/shelf.css' %}
-{% endset %}
-{%- css 'critical' %}{{ shelf_css | cssmin | safe }}{% endcss -%}
+{%- css 'critical' %}{% include '../../../css/components/shelf.css' %}}{% endcss %}

@@ -118,7 +118,4 @@ description: Numbers, cause why not?
 	{%- endfor -%}
 </ul>
 
-{% set shelf_css %}
-	{% include '../../css/components/shelf.css' %}
-{% endset %}
-{%- css 'critical' %}{{ shelf_css | cssmin }}{% endcss -%}
+{%- css 'critical' %}{% include '../../css/components/shelf.css' %}{% endcss -%}

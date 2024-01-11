@@ -128,7 +128,4 @@ The source code is available for your perusal on [GitHub](https://github.com/{{ 
 
 No language models were used in any of the writing on this website.
 
-{%- set shelf_css -%}
-    {% include '../../css/components/shelf.css' %}
-{%- endset -%}
-{%- css 'critical' %}{{ shelf_css | cssmin | safe }}{% endcss -%}
+{%- css 'critical' %}{% include '../../css/components/shelf.css' %}{% endcss %}
