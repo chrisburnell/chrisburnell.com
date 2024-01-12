@@ -26,12 +26,6 @@
 			"options": {
 				"tabWidth": 2
 			}
-		},
-		{
-			"files": "*.webc",
-			"options": {
-				"editorConfig": true
-			}
 		}
 	]
 }

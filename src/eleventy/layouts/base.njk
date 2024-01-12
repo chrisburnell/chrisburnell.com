@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 	<meta name="view-transition" content="same-origin">
 
-	<title>{{ meta_title | striptags(true) | safe }} · {{ site.title }}</title>
+	<title>{% if page.url != '/' %}{{ meta_title | striptags(true) | safe }} · {% endif %}{{ site.title }}</title>
 
 	<meta name="description" content="{{ meta_description | striptags(true) | safe }}">
 
