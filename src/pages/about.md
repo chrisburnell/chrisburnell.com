@@ -11,7 +11,7 @@ eleventyComputed:
 
 <p hidden><strong>I’ve got a <a href="https://chrisburnell.com/cv/">CV / resumé</a>, if that’s what you’re looking for.</strong></p>
 
-<ul class=" [ cluster ] ">
+<ul class=" [ cluster  center ] ">
     {%- for item in socials -%}
         {%- if not item.hidden and item.primary -%}
             {%- set url = item.url -%}
@@ -26,13 +26,7 @@ eleventyComputed:
 <hr>
 
 <figure class=" [ overflow ] ">
-    <picture>
-        <source srcset="/images/avatar@3x.avif 1x,
-                        /images/avatar@4x.avif 4x" type="image/avif">
-        <source srcset="/images/avatar@3x.webp 1x,
-                        /images/avatar@4x.webp 4x" type="image/webp">
-        <img alt="Chris Burnell" class=" [ shadow ] [ canada ] " src="/images/avatar@3x.jpeg" srcset="/images/avatar@3x.jpeg 1x, /images/avatar@4x.jpeg 4x" width="250" height="250">
-    </picture>
+    <img alt="Chris Burnell" class=" [ shadow ] [ canada ] " src="/images/avatar@4x.jpeg" width="400" height="400">
 </figure>
 
 ## Bio

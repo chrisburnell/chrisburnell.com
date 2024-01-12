@@ -44,9 +44,9 @@ const builderTags = require("#builders/tags")
 const markdownParser = require("markdown-it")
 const markdownAbbr = require("markdown-it-abbr")
 const markdownFootnote = require("markdown-it-footnote")
-const postcss = require("postcss")
-const autoprefixer = require("autoprefixer")
-const cssnano = require("cssnano")
+// const postcss = require("postcss")
+// const cleanCSS = require("postcss-clean")
+// const autoprefixer = require("autoprefixer")
 const UglifyJS = require("uglify-js")
 
 module.exports = (eleventyConfig) => {
@@ -63,7 +63,7 @@ module.exports = (eleventyConfig) => {
 				// if (this.type === 'css') {
 				// 	let result = await postcss([
 				// 		autoprefixer,
-				// 		cssnano
+				// 		cleanCSS
 				// 	]).process(code, {
 				// 		from: this.page.inputPath,
 				// 		to: null

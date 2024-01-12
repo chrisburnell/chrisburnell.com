@@ -25,8 +25,8 @@
     "autoprefixer": "^10.4.16",
     "concurrently": "^8.2.2",
     "cross-env": "^7.0.3",
-    "cssnano": "^6.0.3",
     "json-to-scss": "^1.6.2",
+    "postcss-clean": "^1.2.2",
     "postcss-cli": "^11.0.0",
     "postcss-scss": "^4.0.9",
     "prettier": "^3.1.1",
@@ -96,13 +96,5 @@
     "#filters/*": "./src/eleventy/filters/*.js",
     "#plugins/*": "./src/eleventy/plugins/*.js",
     "#transforms/*": "./src/eleventy/transforms/*.js"
-  },
-  "cssnano": {
-    "preset": [
-      "default",
-      {
-        "calc": false
-      }
-    ]
   }
 }
