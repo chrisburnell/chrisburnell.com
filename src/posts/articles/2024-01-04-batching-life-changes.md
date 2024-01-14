@@ -3,6 +3,7 @@ date: 2024-01-04T11:40:00+0800
 title: Batching Life Changes
 description: I’ve never really done a “year in review” post before, but 2023 and, in particular, the last few months, have brought tides of change that I feel the need to share.
 tags:
+  - ignore
   - personal
 syndicate_to:
   - https://fediverse.repc.co/@chrisburnell/111697758030729122
@@ -24,7 +25,7 @@ People who know me well could probably tell you how quiet and private I tend to 
 
 <p class=" [ alpha  center ] " style="margin-block-start: 1rem">I got married!</p>
 
-After nearly 13 of the best years of my life with my incomparable partner, Rachel, we tied the knot at the beautiful [Hackney Town Hall](https://www.hackneyvenues.com/hackney-town-hall)! It was *unequivocally* one of the best days of my life. Completely and utterly unforgettable. I’m looking forward to years to come of showing her my unending love, making her laugh every day (whether she wants to or not), and being by her side as we shape the most joyful and fulfilling lives together.
+Well, eloped, really! After nearly 13 of the best years of my life with my incomparable partner, Rachel, we tied the knot at the beautiful [Hackney Town Hall](https://www.hackneyvenues.com/hackney-town-hall)! It was *unequivocally* one of the best days of my life. Completely and utterly unforgettable. I’m looking forward to years to come of showing her my unending love, making her laugh every day (whether she wants to or not), and being by her side as we shape the most joyful and fulfilling lives together.
 
 I do have to admit that I don’t feel *entirely* different now that it’s <span class="silly">{{ 'official in the eyes of the law' | spongebob }}</span>—after 13 years together, I’d like to think we’ve got this thing figured out—but our getting married has set the stage for the next chapter of our lives together.
 
