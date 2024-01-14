@@ -170,6 +170,7 @@ module.exports = (eleventyConfig) => {
 		"files/*": ".",
 		"src/js/components/*": "js/components/",
 		"node_modules/@chrisburnell/spark-line/spark-line.{css,js}": "js/components/",
+		"node_modules/@zachleat/details-utils/details-utils.{css,js}": "js/components/",
 	})
 
 	// Watch targets

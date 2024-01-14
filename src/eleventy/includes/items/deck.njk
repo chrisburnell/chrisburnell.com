@@ -162,10 +162,10 @@
 				</li>
 			{% endif %}
 			{% if (item.data.show_responses and item.data.webmentions.length) or item.data.stargazers %}
-				{%- set bookmarks = item.data.webmentions | arrayKeyEquals('wm-property', 'bookmark-of') -%}
-				{%- set likes = item.data.webmentions | arrayKeyEquals('wm-property', 'like-of') -%}
+				{%- set bookmarks = item.data.webmentions | getWebmentionsByTypes(['bookmark-of']) -%}
+				{%- set likes = item.data.webmentions | getWebmentionsByTypes(['like-of']) -%}
 				{%- set links = item.data.webmentions | getAllLinks -%}
-				{%- set reposts = item.data.webmentions | arrayKeyEquals('wm-property', 'repost-of') -%}
+				{%- set reposts = item.data.webmentions | getWebmentionsByTypes(['repost-of']) -%}
 				{%- set reactions = bookmarks.concat(likes).concat(links).concat(reposts) -%}
 				{%- set replies = item.data.webmentions | getAllReplies -%}
 				{%- set stargazers = item.data.stargazers | default(0) -%}

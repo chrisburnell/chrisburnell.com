@@ -15,10 +15,10 @@
 			<button class=" [ responses__submit ] " type="submit">Send</button>
 		</form>
 		{% if webmentions.length or stargazers > 0 %}
-			{%- set bookmarks = webmentions | arrayKeyEquals('wm-property', 'bookmark-of') -%}
-			{%- set likes = webmentions | arrayKeyEquals('wm-property', 'like-of') -%}
+			{%- set bookmarks = webmentions | getWebmentionsByTypes(['bookmark-of']) -%}
+			{%- set likes = webmentions | getWebmentionsByTypes(['like-of']) -%}
 			{%- set links = webmentions | getAllLinks -%}
-			{%- set reposts = webmentions | arrayKeyEquals('wm-property', 'repost-of') -%}
+			{%- set reposts = webmentions | getWebmentionsByTypes(['repost-of']) -%}
 			{%- set reactions = bookmarks.concat(likes).concat(links).concat(reposts) -%}
 			{%- set replies = webmentions | getAllReplies -%}
 			{%- set stargazers = stargazers | default(0) -%}
@@ -48,10 +48,9 @@
 					<ol id="replies" class=" [ replies ] [ flow ] ">
 						{% for webmention in replies %}
 							{%- set wmId = webmention['wm-id'] -%}
-							{%- set wmType = webmention['wm-property'] -%}
-							{%- set wmDate = webmention.published | default(webmention['wm-received']) -%}
-							{%- if not wmDate -%}{% set wmDate = webmention['wm-received'] %}{%- endif -%}
-							{%- set wmSource = webmention.url | tweetback -%}
+							{%- set wmType = webmention | getWebmentionType -%}
+							{%- set wmDate = webmention | getWebmentionPublished -%}
+							{%- set wmSource = webmention | getWebmentionSource | tweetback -%}
 							{%- set wmContent = webmention.contentSanitized | default(webmention.content.html) | default(webmention.content.value) | default(webmention.content) -%}
 							{%- set sentiment = webmention.content.value | default(webmention.content) | striptags(true) -%}
 							{%- set authorPhoto = webmention.author.photo -%}

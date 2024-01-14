@@ -1,5 +1,5 @@
 ---
-updated: 2023-07-20T20:06:36+0100
+updated: 2024-01-14T03:45:00+0800
 date: 2022-08-25T16:31:04+0100
 title: Webmention Setup for Eleventy
 description: Here’s a quick run-through of how I retrieve and utilise Webmentions with my Eleventy website.
@@ -31,17 +31,17 @@ GO_JAMMING_TOKEN=njJql0lKXnotreal4x3Wmd
 Install the [`eleventy-cache-webmentions`](/eleventy-cache-webmentions/) package from *npm*:
 
 ```bash
-npm install @chrisburnell/eleventy-cache-webmentions --save-dev
+npm install @chrisburnell/eleventy-cache-webmentions
 ```
 
 <h2 id="3">3. Configuration</h2>
 
-Create a config file. You may wish to put this file in your [Global Data Folder](https://www.11ty.dev/docs/data-global/) so you can access the data in Eleventy as well. However, the location and filename of your config file are up to you, as long as it’s somewhere in your project that you can access with JavaScript using `require()`.
+Create a config file. You may wish to put this file in your [Global Data Folder](https://www.11ty.dev/docs/data-global/) so you can access the data across your Eleventy project. The location and filename of your config file are up to you, as long as it’s somewhere in your project that you can access with JavaScript using `require()`.
 
 If you’re using **[Webmention.io](https://webmention.io/)**:
 
 ```javascript
-const { defaults } = require("@chrisburnell/eleventy-cache-webmentions")()
+const { defaults } = require("@chrisburnell/eleventy-cache-webmentions")
 
 // Load .env variables with dotenv
 require("dotenv").config()
@@ -56,7 +56,7 @@ module.exports = Object.assign(defaults, {
 If you’re using **[go-jamming](https://git.brainbaking.com/wgroeneveld/go-jamming)**:
 
 ```javascript
-const { defaults } = require("@chrisburnell/eleventy-cache-webmentions")()
+const { defaults } = require("@chrisburnell/eleventy-cache-webmentions")
 
 // Load .env variables with dotenv
 require("dotenv").config()
@@ -86,7 +86,7 @@ module.exports = function(eleventyConfig) {
 Add some [Directory Specific Data Files](https://www.11ty.dev/docs/data-template-dir/) wherever your pages and/or posts live. For example, if your pages all live in a `pages/` folder, you would add the following code block to a `pages.11tydata.js` file inside `pages/`:
 
 ```javascript
-const { getWebmentions } = require("@chrisburnell/eleventy-cache-webmentions")()
+const { getWebmentions } = require("@chrisburnell/eleventy-cache-webmentions")
 const configWebmentions = require("../path_to_your_config/configWebmentions.js")
 
 module.exports = {
@@ -108,7 +108,7 @@ You can access them quite easily on a given page:
 ```twig
 {% for webmention in webmentions %}
 	<!-- Loop through all webmentions on a given page -->
-	{{ webmention.author.name }} sent this page a {{ webmention.activity.type }}
+	{{ webmention.author.name }} sent this page a {{ webmention | getType }}
 {% endfor %}
 ```
 {% endraw %}
@@ -125,7 +125,15 @@ And even when looping through something like a collection:
 ```
 {% endraw %}
 
-How you want to filter the array of Webmentions attached to each page is up to you, but I recommend using the *type* value (`activity.type` in [Webmention.io](https://webmention.io/); `type` in [go-jamming](https://git.brainbaking.com/wgroeneveld/go-jamming)) to split Webmentions into groups categorised by type—this will make it easier to figure out which Webmentions are binary interactions (e.g. likes, reposts) and which have richer content you might want to display (e.g. mentions, replies).
+How you want to filter the array of Webmentions attached to each page is up to you, but I recommend using the `getTypes` Filter to split Webmentions into groups categorised by type—this will make it easier to figure out which Webmentions are binary interactions (e.g. likes, reposts) and which have richer content you might want to display (e.g. mentions, replies).
+
+{% raw %}
+```twig
+{% set reactions = webmentions | getTypes(['like-of', 'repost-of', 'bookmark-of']) %}
+
+{% set replies = webmentions | getTypes(['mention-of', 'in-reply-to']) %}
+```
+{% endraw %}
 
 --------
 

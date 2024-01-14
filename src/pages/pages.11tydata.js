@@ -1,4 +1,4 @@
-const { getWebmentions } = require("@chrisburnell/eleventy-cache-webmentions")()
+const { getWebmentions } = require("@chrisburnell/eleventy-cache-webmentions")
 
 const { favicon, tagline: siteTagline, url: siteUrl } = require("#data/site")
 const configWebmentions = require("#datajs/config/webmentions")
