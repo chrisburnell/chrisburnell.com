@@ -63,8 +63,8 @@ eleventyComputed:
 ## The Long Version
 
 <figure>
-    {% image './images/content/rachel-and-i.jpg', 'a photo of my wife, Rachel, and myself', ' [ shadow ] [ canada ] ', [500, 672, 1000] %}
-    <figcaption>a photo of my wife, Rachel, and myself</figcaption>
+    {% image './images/content/rachel-and-i.jpg', 'a photo of my partner, Rachel, and myself', ' [ shadow ] [ canada ] ', [500, 672, 1000] %}
+    <figcaption>a photo of my partner, Rachel, and myself</figcaption>
 </figure>
 
 I’m originally from [<span class=" [ canada ] ">Halifax, Nova Scotia</span>](https://www.openstreetmap.org/#map=13/44.6463/-63.6162), started my career in [London, England](https://www.openstreetmap.org/#map=10/51.4898/-0.0882) for 12 years, and now live in [Singapore](https://www.openstreetmap.org/#map=14/1.3156/103.9425) where I’m looking to transition from pure front end development work to a developer advocacy role.
