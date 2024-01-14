@@ -27,7 +27,29 @@ toc: true
 
 {% include 'package.njk' %}
 
-<div class=" [ box  flow ] ">
+
+<div class=" [ box  box--warning ] ">
+<details class=" [ flow ] ">
+<summary>Breaking changes for v2.0.0!</summary>
+
+Version 2.0.0 introduces a breaking change for those migrating from earlier versions of the plugin. This affects usage of the plugin from JavaScript files; specifically, you will need to make a small change to the way that you `require()` the plugin by removing an extra set of parentheses:
+
+**v1.2.5 and below**
+
+```javascript
+const pluginWebmentions = require("@chrisburnell/eleventy-cache-webmentions")()
+```
+
+**v2.0.0**
+
+```javascript
+const pluginWebmentions = require("@chrisburnell/eleventy-cache-webmentions")
+```
+
+</details>
+</div>
+
+<div class=" [ box ] [ flow ] ">
 
 ## Quick Guide
 
