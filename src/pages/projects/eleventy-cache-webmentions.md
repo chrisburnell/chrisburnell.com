@@ -37,13 +37,13 @@ Version 2.0.0 introduces a breaking change for those migrating from earlier vers
 **v1.2.5 and below**
 
 ```javascript
-const pluginWebmentions = require("@chrisburnell/eleventy-cache-webmentions")()
+require("@chrisburnell/eleventy-cache-webmentions")()
 ```
 
 **v2.0.0**
 
 ```javascript
-const pluginWebmentions = require("@chrisburnell/eleventy-cache-webmentions")
+require("@chrisburnell/eleventy-cache-webmentions")
 ```
 
 </details>
