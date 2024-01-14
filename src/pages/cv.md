@@ -15,7 +15,11 @@ toc: true
 
 ## Summary
 
-Front End Developer / Software Engineer / Aspiring Developer Advocate with {{ global.now | friendlyDate("yyyy") - site.established }} years of experience, specialising in CSS, design systems, developer advocacy and education, and technical writing and speaking. Work roles involved in creating design systems and tools to enable teams to build maintainable and performant websites, with an uncompromising focus on user experience. Passionate about the open web, having published over 40 technical articles, and author of several open-source projects. Actively involved in the web community and act as co-organiser for an annual, in-person conference, [State of the Browser](https://stateofthebrowser.com).
+Front End Developer / Software Engineer / Aspiring Developer Advocate with {{ global.now | friendlyDate("yyyy") - site.established }} years of experience, specialising in CSS, design systems, developer advocacy and education, and technical writing and speaking.
+
+Work roles involved in creating design systems and tools to enable teams to build maintainable and performant websites, with an uncompromising focus on user experience.
+
+Passionate about the open web, having published over 40 technical articles, and author of several open-source projects. Actively involved in the web community and act as co-organiser for an annual, in-person conference, [State of the Browser](https://stateofthebrowser.com).
 
 <h2 style="break-before: page;">Professional Experience</h2>
 
