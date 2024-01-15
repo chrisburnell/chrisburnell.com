@@ -6,9 +6,9 @@ import pentatonic from "@chrisburnell/pentatonic"
  */
 class WebsiteSounds {
 	/**
-	 * @constructor
+	 * @connectedCallback
 	 */
-	constructor() {
+	connectedCallback() {
 		this.STORAGE_KEY = "user-sounds"
 
 		// Defaults for sitewide pentatonic

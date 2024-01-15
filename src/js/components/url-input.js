@@ -4,9 +4,9 @@
  */
 class UrlInput {
 	/**
-	 * @constructor
+	 * @connectedCallback
 	 */
-	constructor() {
+	connectedCallback() {
 		this.inputs = document.querySelectorAll('input[type="url"]')
 
 		this.inputs.forEach((input) => {

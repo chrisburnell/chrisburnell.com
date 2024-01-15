@@ -4,9 +4,9 @@
  */
 class NewBase60Converter {
 	/**
-	 * @constructor
+	 * @connectedCallback
 	 */
-	constructor() {
+	connectedCallback() {
 		this.SEQUENCE = "0123456789ABCDEFGHJKLMNPQRSTUVWXYZ_abcdefghijkmnopqrstuvwxyz"
 		this.inputs = {
 			decimal: null,

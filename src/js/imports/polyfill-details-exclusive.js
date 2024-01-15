@@ -3,9 +3,9 @@
  */
 class PolyfillDetailsExclusive {
 	/**
-	 * @constructor
+	 * @connectedCallback
 	 */
-	constructor() {
+	connectedCallback() {
 		this.details = [...document.querySelectorAll("details[name]")]
 		this.summaries = [...document.querySelectorAll("details[name] > summary")]
 

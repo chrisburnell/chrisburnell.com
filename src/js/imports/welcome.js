@@ -4,9 +4,9 @@
  */
 class Welcome {
 	/**
-	 * @constructor
+	 * @connectedCallback
 	 */
-	constructor() {
+	connectedCallback() {
 		console.log(`%c                        █▒▒      %cchrisburnell.com`, "color: #507791", "color: inherit")
 		console.log(`%c ▒▒▒▒▒▒▒▒▒             ▒███▓     %c--------------------------`, "color: #507791", "color: inherit")
 		console.log(`%c  ▒▓███████▓▓▒       ▒█▓████▓    %cOS: ${navigator.oscpu}`, "color: #507791", "color: inherit")

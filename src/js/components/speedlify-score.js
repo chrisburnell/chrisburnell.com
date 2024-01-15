@@ -1,5 +1,5 @@
 class SpeedlifyUrlStore {
-	constructor() {
+	connectedCallback() {
 		this.fetches = {}
 		this.responses = {}
 		this.urls = {}

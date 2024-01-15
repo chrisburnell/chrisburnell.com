@@ -4,9 +4,9 @@
  */
 class ShareButton {
 	/**
-	 * @constructor
+	 * @connectedCallback
 	 */
-	constructor() {
+	connectedCallback() {
 		this.test = document.createElement("button")
 		this.test.setAttribute("type", "share")
 

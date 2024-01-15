@@ -4,9 +4,9 @@
  */
 class GetYouTubeFeed {
 	/**
-	 * @constructor
+	 * @connectedCallback
 	 */
-	constructor() {
+	connectedCallback() {
 		this.form = document.querySelector(".get-youtube-feed")
 		this.input = this.form.querySelector("input")
 

@@ -4,11 +4,11 @@
  */
 class Librarian {
 	/**
-	 * @constructor
+	 * @connectedCallback
 	 * @param {String} buttonsSelector - The selector for sorting buttons.
 	 * @param {String} shelfSelector - The selector for the shelf.
 	 */
-	constructor(buttonsSelector, shelfSelector) {
+	connectedCallback(buttonsSelector, shelfSelector) {
 		this.buttonsSelector = buttonsSelector || "[data-sort]"
 		this.shelfSelector = shelfSelector || ".shelf"
 

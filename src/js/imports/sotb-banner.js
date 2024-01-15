@@ -4,9 +4,9 @@
  */
 class sotbBanner {
 	/**
-	 * @constructor
+	 * @connectedCallback
 	 */
-	constructor() {
+	connectedCallback() {
 		this.HIDE_KEY = "hide-sotb-banner"
 		this.OPEN_KEY = "open-sotb-banner"
 		this.hide = localStorage.getItem(this.HIDE_KEY)
