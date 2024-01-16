@@ -3,7 +3,7 @@
  * @class
  */
 class ClampCalculator {
-	connectedCallback() {
+	constructor() {
 		this.inputs = {
 			"size-min": null,
 			"size-max": null,

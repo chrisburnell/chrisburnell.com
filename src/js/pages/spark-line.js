@@ -4,9 +4,9 @@
  */
 class InteractiveSparkline {
 	/**
-	 * @connectedCallback
+	 * @constructor
 	 */
-	connectedCallback() {
+	constructor() {
 		this.inputs = {
 			inputValues: document.querySelector("#input-values"),
 			inputLineWidth: document.querySelector("#input-line-width"),

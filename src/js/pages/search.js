@@ -4,9 +4,9 @@
  */
 class SearchInput {
 	/**
-	 * @connectedCallback
+	 * @constructor
 	 */
-	connectedCallback() {
+	constructor() {
 		this.form = document.getElementById("search")
 		this.input = this.form.querySelector("input")
 
