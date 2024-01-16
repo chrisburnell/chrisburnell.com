@@ -15,11 +15,11 @@ toc: true
 
 ## Summary
 
-Front End Developer / Software Engineer / Aspiring Developer Advocate with {{ global.now | friendlyDate("yyyy") - site.established }} years of experience, specialising in CSS, design systems, developer advocacy and education, and technical writing and speaking.
+Front End Developer and Software Engineer with {{ global.now | friendlyDate("yyyy") - site.established }} years of experience, specialising in CSS, design systems, developer advocacy and education, and technical writing and speaking.
 
 Work roles involved in creating design systems and tools to enable teams to build maintainable and performant websites, with an uncompromising focus on user experience.
 
-Passionate about the open web, having published over 40 technical articles, and author of several open-source projects. Actively involved in the web community and act as co-organiser for an annual, in-person conference, [State of the Browser](https://stateofthebrowser.com).
+Passionate about the open web, having published over 50 technical articles, and author of several open-source projects. Actively involved in the web community and act as co-organiser for an annual, in-person conference, [State of the Browser](https://stateofthebrowser.com).
 
 <h2 style="break-before: page;">Professional Experience</h2>
 
@@ -99,11 +99,11 @@ Passionate about the open web, having published over 40 technical articles, and 
 - Annual conference websites: [2018](https://2018.stateofthebrowser.com), [2019](https://2019.stateofthebrowser.com), [2021](https://2021.stateofthebrowser.com), [2022](https://2022.stateofthebrowser.com), [2023](https://2022.stateofthebrowser.com)
 
 <div class=" [ space-between ] ">
-    <h3 class=" [ delta ] ">Developer Advocate on <a href="https://chrisburnell.com/"><c-emoji><img class="brand-logo" alt="{{ site.title }}" loading="lazy" decoding="async" src="/images/raven.svg"></c-emoji> chrisburnell.com</a></h3>
+    <h3 class=" [ delta ] ">Technical Writer on <a href="https://chrisburnell.com/"><c-emoji><img class="brand-logo" alt="{{ site.title }}" loading="lazy" decoding="async" src="/images/raven.svg"></c-emoji> chrisburnell.com</a></h3>
     <small><strong>2013 – present</strong></small>
 </div>
 
-Launched a web development blog, which accumulates *over 10,000 unique visitors per month*, and have published over [{{ collections.posts | length | toNearest(100) }} blog posts](https://chrisburnell.com/posts/), including [{{ collections.writingPosts | length }} longform articles](https://chrisburnell.com/writing/), [{{ collections.css | length }} articles about CSS](https://chrisburnell.com/tag/css/), and [{{ collections.code | length }} code demos](https://chrisburnell.com/tag/css/), some of which have been [featured on CodePen](https://codepen.io/collection/hfqlg).
+Launched a web development blog and have published over [{{ collections.posts | length | toNearest(100) }} blog posts](https://chrisburnell.com/posts/), including [{{ collections.writingPosts | length }} longform articles](https://chrisburnell.com/writing/), [{{ collections.css | length }} articles about CSS](https://chrisburnell.com/tag/css/), and [{{ collections.code | length }} code demos](https://chrisburnell.com/tag/css/), some of which have been [featured on CodePen](https://codepen.io/collection/hfqlg).
 
 <div class=" [ space-between ] ">
     <h3 class=" [ delta ] "><a href="https://chrisburnell.com/projects/">Open Source Author</a></h3>

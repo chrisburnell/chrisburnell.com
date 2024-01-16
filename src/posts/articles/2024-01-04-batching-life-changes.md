@@ -39,7 +39,7 @@ Between getting married, ending my 8-year (cumulative) tenure at *Squiz*, and se
 
 After saying our goodbyes and tying up *way too many* loose ends, we were all set and left on a one-way trip to Singapore. It was and has been sad for us to leave our lives, friends, and beloved walking paths of Clapton behind, but we’re optimistic about our future here and looking forward to enjoying all that Singapore has to offer. I’m already up 2 kilograms… the food here is unparalleled!
 
-We had an amazing Christmas and New Year’s Eve, but now it’s time to get down to more serious business: going through the process of securing my long-term visitor’s pass and finding myself a job here, where I’m really hoping I can lean even further into my passion for front end development, mentoring, writing, and educating in the form of a Developer Advocate role.
+We had an amazing Christmas and New Year’s Eve, but now it’s time to get down to more serious business: going through the process of securing my long-term visitor’s pass and finding myself a job here, where I’m really hoping I can lean even further into my passion for front end development, mentoring, writing, and educating in the form of a developer relations role.
 
 *Please get in touch if you have any leads, contacts, or even words of advice!*
 
