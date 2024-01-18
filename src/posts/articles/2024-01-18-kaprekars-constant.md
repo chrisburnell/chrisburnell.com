@@ -33,4 +33,16 @@ js_module: kaprekar-calculator.js
 	</fieldset>
 </form>
 
-<table id="output" style="margin-inline: auto;"></table>
+<table id="output" style="margin-inline: auto;">
+	<tbody>
+		<tr>
+			<td class="monospace">8541 - 1458 = 7083</td>
+		</tr>
+		<tr>
+			<td class="monospace">8730 - 0378 = 8352</td>
+		</tr>
+		<tr>
+			<td class="monospace">8532 - 2358 = 6174</td>
+		</tr>
+	</tbody>
+</table>
