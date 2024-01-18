@@ -1,8 +1,8 @@
 /**
- * NewBase60 Converter
+ * NewBase60 Calculator
  * @class
  */
-class NewBase60Converter {
+class NewBase60Calculator {
 	/**
 	 * @constructor
 	 */
@@ -151,12 +151,12 @@ class NewBase60Converter {
 
 if ("HTMLElement" in window) {
 	/**
-	 * @type {NewBase60Converter}
+	 * @type {NewBase60Calculator}
 	 */
-	window.NewBase60Converter = new NewBase60Converter()
+	window.NewBase60Calculator = new NewBase60Calculator()
 }
 
 /**
- * @type {NewBase60Converter}
+ * @type {NewBase60Calculator}
  */
-export default NewBase60Converter
+export default NewBase60Calculator
