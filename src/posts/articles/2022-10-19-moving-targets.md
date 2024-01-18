@@ -43,7 +43,7 @@ By the grave and stern decorum of the countenance it wore,<br>
 <q>Though thy crest be shorn and shaven, thou,</q> I said, <q>art sure no craven,<br>
 Ghastly grim and ancient Raven wandering from the Nightly shore—<br>
 Tell me what thy lordly name is on the Night’s Plutonian shore!</q><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<mark>Quoth the Raven <q>Nevermore.</q></mark></p>
+<mark>Quoth the Raven <q>Nevermore.</q></mark></p>
     <cite>Edgar Allan Poe</cite>
 </blockquote>
 

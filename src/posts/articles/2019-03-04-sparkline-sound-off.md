@@ -62,7 +62,7 @@ So if we want to calculate the frequency of **C<sub>4</sub>** (Middle C), the *<
 
 <figure>
 	<samp class="beta">f(<var>40</var>) = (<sup>12</sup>√2)<sup><var>40</var>-49</sup> × 440Hz</samp>
-	<samp class="beta">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= 261.626Hz</samp>
+	<samp class="beta">= 261.626Hz</samp>
 </figure>
 
 ## Quintuplets
