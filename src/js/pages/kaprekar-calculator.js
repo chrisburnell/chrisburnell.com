@@ -24,7 +24,7 @@ class KaprekarConstantCalculator {
 
 		const cell = row.insertCell()
 		cell.classList.add("monospace")
-		cell.appendChild(document.createTextNode(`${dstring} - ${aString} = ${tString}`))
+		cell.appendChild(document.createTextNode(`${dString} - ${aString} = ${tString}`))
 
 		return tString
 	}
