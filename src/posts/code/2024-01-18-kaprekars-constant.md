@@ -4,7 +4,6 @@ title: Kaprekar’s Constant
 description: I came across an interesting mathematical observation today called Kaprekar’s constant, named after the mathematician, Dattatreya Ramchandra Kaprekar, and built an interactive tool to demonstrate it.
 tags:
   - calculator
-show_reading_length: false
 js_module: kaprekar-calculator.js
 ---
 
@@ -17,6 +16,8 @@ js_module: kaprekar-calculator.js
     </ol>
     <cite><a href="https://en.wikipedia.org/wiki/6174">Wikipedia</a></cite>
 </blockquote>
+
+Following the above steps always leads you to the same number: 6174.
 
 <!-- </textarea> -->
 <!-- '"´ -->
