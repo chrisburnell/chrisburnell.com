@@ -51,17 +51,13 @@
 							{%- set wmType = webmention | getWebmentionType -%}
 							{%- set wmDate = webmention | getWebmentionPublished -%}
 							{%- set wmSource = webmention | getWebmentionSource | tweetback -%}
-							{%- set wmContent = webmention.contentSanitized | default(webmention.content.html) | default(webmention.content.value) | default(webmention.content) -%}
-							{%- set sentiment = webmention.content.value | default(webmention.content) | striptags(true) -%}
+							{%- set wmContent = webmention | getWebmentionContent -%}
 							{%- set authorPhoto = webmention.author.photo -%}
 							{%- set authorUrl = webmention.author.url | default(wmSource) | tweetback -%}
 							{%- set authorName = webmention.author.name | default('Anonymous') -%}
 							{%- if authorName == '' -%}{% set authorName = 'Anonymous' %}{%- endif -%}
 							{% if 'twitter.com' in wmSource -%}
 								{% set wmContent = wmContent | replaceTwitter %}
-							{%- endif %}
-							{% if sentiment < -0.3 -%}
-								{% set wmContent = wmContent | spongebob %}
 							{%- endif %}
 							<li id="response-{{ wmId }}" class=" [ response ] [ h-cite  p-comment ] " data-type="{{ wmType }}">
 								<div class=" [ response__avatar ] ">
@@ -75,7 +71,7 @@
 									<small>wrote on</small>
 									<a href="{{ wmSource }}" class=" [ u-url  u-{{ wmType }} ] " rel="external nofollow" title="Read externally"><time class=" [ dt-published ] " datetime="{{ wmDate | rfc3339Date }}">{{ wmDate | friendlyDate | safe }}</time></a>
 								</div>
-								<div class=" [ e-content ] [ flow ] {% if sentiment < -0.3 %}[ salty ] {% endif %}">
+								<div class=" [ e-content ] [ flow ] ">
 									{{ wmContent | safe }}
 								</div>
 							</li>
