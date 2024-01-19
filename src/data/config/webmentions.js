@@ -14,7 +14,7 @@ module.exports = Object.assign(defaults, {
 	// key: "json",
 	duration: cacheDurations.hourly,
 	allowedHTML: {
-		allowedTags: ["b", "i", "em", "strong", "a", "code", "s", "ins", "del", "mark", "samp", "var"],
+		allowedTags: ["p", "b", "i", "em", "strong", "a", "code", "s", "ins", "del", "mark", "samp", "var"],
 		allowedAttributes: {
 			a: ["href"],
 		},
