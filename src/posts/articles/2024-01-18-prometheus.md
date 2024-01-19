@@ -1,7 +1,7 @@
 ---
 date: 2024-01-18T19:45:00+0800
 title: Prometheus
-description: Relfecting on what striving for success has meant to me over the years until today.
+description: Reflecting on what striving for success has meant to me over the years until today.
 tags:
   - personal
 syndicate_to: https://fediverse.repc.co/@chrisburnell/111782589135953879
