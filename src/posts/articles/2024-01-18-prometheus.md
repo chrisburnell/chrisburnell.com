@@ -4,7 +4,8 @@ title: Prometheus
 description: Reflecting on what striving for success has meant to me over the years until today.
 tags:
   - personal
-syndicate_to: https://fediverse.repc.co/@chrisburnell/111782589135953879
+syndicate_to:
+  - https://fediverse.repc.co/@chrisburnell/111782589135953879
 ---
 
 Thinking back on the time that my Mum gave me the first six [A Book Apart](https://abookapart.com) books as a gift when I first left Canada to start my career in the UK in 2011. They meant so, so much to me. Not just for the enlightening words within, but also because they were this tangible thing that reminded me of the encouragement from my very academic family to take on the daunting task of “making it on my own” without a degree.
