@@ -48,7 +48,7 @@ jobs:
             _site/audio
             _site/images
             _site/video
-          key: ${{ runner.OS }}-site-cache-${{ hashFiles('**/lockfiles') }}
+          key: ${{ runner.OS }}-site-cache-${{ hashFiles('**/package-lock.json') }}
       - name: Install Node Modules
         run: npm ci
       - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}

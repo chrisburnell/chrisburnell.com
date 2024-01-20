@@ -20,6 +20,18 @@
 		text-decoration-color: currentColor !important;
 	}
 
+	main {
+		background-image: url("/images/animated/stars.gif");
+	}
+
+	hr {
+		background-image: url("/images/animated/hr.gif");
+		inline-size: 475px;
+		max-inline-size: 475px;
+		block-size: 10px;
+		border-width: 0;
+	}
+
 	%heading,
 	.navigation__list %anchor {
 		font-weight: var(--font-weight-semibold) !important;
@@ -27,7 +39,6 @@
 
 	.header,
 	.footer,
-	%box,
 	.author__image,
 	.table,
 	button:not(.anchor),
@@ -52,8 +63,6 @@
 	figcaption {
 		inline-size: 100%;
 		margin-block-start: 1em;
-		border-block-start: 2px inset;
-		padding-block-start: 1em;
 		font-family: inherit;
 	}
 
