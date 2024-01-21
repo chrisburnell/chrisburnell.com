@@ -35,9 +35,7 @@ svg-sparkline:not(:defined) {
 }
 ```
 
-There are a number of ways to augment and customise the functionality of the Web Component by attaching data attributes to <code>&lt;svg-sparkline&gt;</code>:
-
-TODO
+There are a number of ways to augment and customise the functionality of the Web Component by attaching attributes to <code>&lt;svg-sparkline&gt;</code>:
 
 <table>
     <thead>
@@ -49,29 +47,79 @@ TODO
     </thead>
     <tbody>
         <tr>
-            <td><code>data-key</code></td>
-            <td><code>theme</code></td>
+            <td><code>values</code></td>
+            <td><strong>Required</strong></td>
             <td>Controls the name of the data attribute that holds the name of the currently-selected theme.</td>
         </tr>
         <tr>
-            <td><code>data-dark-theme</code></td>
-            <td><code>dark</code></td>
-            <td>Controls the name of the <q>dark</q> theme which is applied when either the user’s browser/OS preference is set to <q>Dark</q> or they have specifically selected your custom dark theme.</td>
+            <td><code>width</code></td>
+            <td><code>160</code></td>
+            <td>TODO</td>
         </tr>
         <tr>
-            <td><code>data-root-element</code></td>
-            <td><code>document.documentElement</code></td>
-            <td>When undefined, the theme data attribute will be applied to the document’s root element (<code>&lt;html&gt;</code>/<code>:root</code> in most cases).<br>When defined, this acts as a selector query to target a specific element in the document on which the theme data attribute is applied.</td>
+            <td><code>height</code></td>
+            <td><code>28</code></td>
+            <td>TODO</td>
         </tr>
         <tr>
-            <td><code>data-transition-class</code></td>
-            <td><code>theme-transitioning</code></td>
-            <td>Controls the class name that is applied to the root element which you can use to apply CSS, to allow a smooth transition between themes.</td>
+            <td><code>color</code></td>
+            <td><code>currentColor</code></td>
+            <td>TODO</td>
         </tr>
         <tr>
-            <td><code>data-transition-duration</code></td>
-            <td><code>1000</code></td>
-            <td>Controls the amount of time (in *milliseconds*) that the transition class will be applied to the root element.</td>
+            <td><code>curve</code></td>
+            <td><code>false</code></td>
+            <td>TODO</td>
+        </tr>
+        <tr>
+            <td><code>animation-duration</code></td>
+            <td><code>1s</code></td>
+            <td>TODO</td>
+        </tr>
+        <tr>
+            <td><code>endpoint</code></td>
+            <td><code>true</code></td>
+            <td>TODO</td>
+        </tr>
+        <tr>
+            <td><code>endpoint-color</code></td>
+            <td><code>color</code> attribute</td>
+            <td>TODO</td>
+        </tr>
+        <tr>
+            <td><code>endpoint-width</code></td>
+            <td><code>6</code></td>
+            <td>TODO</td>
+        </tr>
+        <tr>
+            <td><code>fill</code></td>
+            <td><code>false</code></td>
+            <td>TODO</td>
+        </tr>
+        <tr>
+            <td><code>gradient</code></td>
+            <td><code>false</code></td>
+            <td>TODO</td>
+        </tr>
+        <tr>
+            <td><code>gradient-color</code></td>
+            <td><code>color</code> attribute</td>
+            <td>TODO</td>
+        </tr>
+        <tr>
+            <td><code>line-width</code></td>
+            <td><code>2</code></td>
+            <td>TODO</td>
+        </tr>
+        <tr>
+            <td><code>start-label</code></td>
+            <td>—</td>
+            <td>TODO</td>
+        </tr>
+        <tr>
+            <td><code>end-label</code></td>
+            <td>—</td>
+            <td>TODO</td>
         </tr>
     </tbody>
 </table>
