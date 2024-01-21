@@ -12,8 +12,23 @@
 @import "../abstracts/collections";
 
 @layer components {
-	:is(spark-line, .spark-line) {
+	:is(spark-line, .spark-line, svg-sparkline) {
 		opacity: 1;
+	}
+
+	:is(spark-line, svg-sparkline) {
+		font-family: var(--font-family-sans);
+		font-size: var(--font-size-small);
+		font-style: normal;
+		font-variation-settings: normal;
+		font-weight: var(--font-weight-semibold);
+	}
+
+	svg-sparkline {
+		--svg-sparkline-endpoint-color: var(--color-maple);
+		--svg-sparkline-gradient-color: var(--color-raven);
+		--svg-sparkline-animation-duration: var(--transition-duration-long);
+		--svg-sparkline-animation-delay: var(--transition-duration);
 	}
 
 	spark-line {
@@ -21,11 +36,6 @@
 		display: inline-grid;
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: 1fr auto;
-		font-family: var(--font-family-sans);
-		font-size: var(--font-size-small);
-		font-style: normal;
-		font-variation-settings: normal;
-		font-weight: var(--font-weight-semibold);
 
 		:is(canvas, svg) {
 			inline-size: auto;

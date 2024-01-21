@@ -2,7 +2,7 @@ const { friendlyDate } = require("#filters/dates")
 const { simpleMovingAverage } = require("#filters/utils")
 
 module.exports = {
-	sparkline: (collection, start, end, animate = true, curve = true, point = true, fill = true) => {
+	sparkline: (collection, start, end, animate = true, curve = true) => {
 		let values = []
 		let count = 0
 		// Loop through years
@@ -19,12 +19,16 @@ module.exports = {
 		// Calculate simple moving average of each value, preserve head and tail
 		let normalized = simpleMovingAverage(values, 3, true)
 		// Sparklines in A minor
-		return `<c-sparkline values="${normalized.join(",")}"
-							${start ? `start="${start}"` : ""}
-							${end ? `end="${end}"` : ""}
+		return `<svg-sparkline values="${normalized.join(",")}"
+							fill="true"
+							${start ? `start-label="${start}"` : ""}
+							${end ? `end-label="${end}"` : ""}
 							${animate ? `animate="${animate}"` : ""}
 							${curve ? `curve="${curve}"` : ""}
-							${point ? `point="${point}"` : ""}
-							${fill ? `fill="${fill}"` : ""}></c-sparkline>`
+							class=" [ pentatonic ] "
+							key-start="25"
+							key-intervals="2,1,2,2,1,2,2"
+							key-limit="15"
+							title="Click to hear me!"></svg-sparkline>`
 	},
 }

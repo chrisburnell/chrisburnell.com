@@ -586,32 +586,32 @@ p q r s t u v w x y z { | } ~</pre>
 
 <div class=" [ grid ] [ shelf ] ">
 	<article style="display: grid; place-items: center;">
-		<c-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" curve="true" animate="true" start="Start" end="End"></c-sparkline>
+		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" gradient-color="var(--color-raven)" fill="true" endpoint-color="var(--color-maple)" curve="true" animate="true" start-label="Start" end-label="End"></svg-sparkline>
 	</article>
 	<article style="display: grid; place-items: center;">
-		<c-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" gradient="true"></c-sparkline>
+		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" endpoint-color="var(--color-maple)"></svg-sparkline>
 	</article>
 	<article style="display: grid; place-items: center;">
-		<c-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" fill="false"></c-sparkline>
+		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" endpoint="false"></svg-sparkline>
 	</article>
 	<article style="display: grid; place-items: center;">
-		<c-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" fill="false" point="false"></c-sparkline>
+		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" fill="true" endpoint-color="var(--color-maple)"></svg-sparkline>
 	</article>
 	<article class="sparkline-dark" style="display: grid; place-items: center;">
-		<c-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" curve="true" animate="true" start="Start" end="End"></c-sparkline>
+		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" gradient-color="var(--color-raven)" fill="true" endpoint-color="var(--color-maple)" curve="true" animate="true" start-label="Start" end-label="End"></svg-sparkline>
 	</article>
-	<article style="display: grid; place-items: center;" data-theme="matrix" style="--point: currentColor;">
-		<c-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4"></c-sparkline>
+	<article style="display: grid; place-items: center;" data-theme="matrix">
+		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" gradient-color="var(--color-raven)" fill="true" endpoint-color="var(--color-maple)" curve="true" start-label="Start" end-label="End"></svg-sparkline>
 	</article>
-	<article style="display: grid; place-items: center; --point: currentColor;" data-theme="koala">
-		<c-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4"></c-sparkline>
+	<article style="display: grid; place-items: center;" data-theme="koala">
+		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" gradient-color="var(--color-raven)" fill="true" endpoint-color="var(--color-maple)" curve="true" start-label="Start" end-label="End"></svg-sparkline>
 	</article>
 	<article style="display: grid; place-items: center;" data-theme="code-red">
-		<c-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" point="false"></c-sparkline>
+		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" gradient-color="var(--color-raven)" fill="true" endpoint-color="var(--color-maple)" curve="true" start-label="Start" end-label="End"></svg-sparkline>
 	</article>
 </div>
 
-<p class="italic">Like these? Check out <a href="https://github.com/chrisburnell/chrisburnell.com/blob/main/src/components/c-sparkline.webc">how they work</a> (without client-side JavaScript!) or try out my custom web component, <a href="/spark-line/">&lt;spark-line&gt;</a>.</p>
+<p class="italic">Like these? Check out <a href="/svg-sparkline/">how they work</a> with out my custom web component, <code>&lt;svg-sparkline&gt;</code>.</p>
 
 <p class="italic">Or the sound the make? <a href="/pentatonic/">Pentatonic</a> uses the Web Audio API to generate fun little melodies from data.</p>
 

@@ -12,13 +12,15 @@ tags:
   - package
   - web-component
 toc: true
-js_module: spark-line.js
+js_module: interactive-spark-line.js
 ---
+
+<script type="module" src="/js/components/spark-line.js"></script>
 
 <noscript><p>Unfortunately, this page requires JavaScript to display sparklines and use the interactive example.</p></noscript>
 
 <figure>
-	<c-spark-line values="0,0,2,5,7,13,13,18,14,11,19,44,37,37,38,27,23,9,6,5,6,1,1,2,1,0"></c-spark-line>
+	<spark-line values="0,0,2,5,7,13,13,18,14,11,19,44,37,37,38,27,23,9,6,5,6,1,1,2,1,0"></spark-line>
 </figure>
 
 <div class="box">
@@ -160,63 +162,63 @@ If you wanted to use `<is-land>` as well, I recommend something like the followi
 
 <div class=" [ grid ] [ shelf ] ">
 	<article>
-		<c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0"></c-spark-line>
+		<spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0"></spark-line>
 		<p><em>default</em></p>
 	</article>
 	<article>
-		<c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" line-width="4"></c-spark-line>
+		<spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" line-width="4"></spark-line>
 		<p><code>line-width="4"</code></p>
 	</article>
 	<article>
-		<c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" curve="false"></c-spark-line>
+		<spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" curve="false"></spark-line>
 		<p><code>curve="false"</code></p>
 	</article>
 	<article>
-		<c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" endpoint="false"></c-spark-line>
+		<spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" endpoint="false"></spark-line>
 		<p><code>endpoint="false"</code></p>
 	</article>
 	<article>
-		<c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" color="rebeccapurple"></c-spark-line>
+		<spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" color="rebeccapurple"></spark-line>
 		<p><code>color="rebeccapurple"</code></p>
 	</article>
 	<article>
-		<c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" endpoint-color="red"></c-spark-line>
+		<spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" endpoint-color="red"></spark-line>
 		<p><code>endpoint-color="red"</code></p>
 	</article>
 	<article>
-		<c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1"></c-spark-line>
+		<spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1"></spark-line>
 		<p><code>points="1"</code></p>
 	</article>
 	<article>
-		<c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1,0"></c-spark-line>
+		<spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1,0"></spark-line>
 		<p><code>points="1,0"</code></p>
 	</article>
 	<article>
-		<c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="0,2,0,1"></c-spark-line>
+		<spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="0,2,0,1"></spark-line>
 		<p><code>points="0,2,0,1"</code></p>
 	</article>
 	<article>
-		<c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" endpoint-color="rebeccapurple" points="0,2,0,1"></c-spark-line>
+		<spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" endpoint-color="rebeccapurple" points="0,2,0,1"></spark-line>
 		<p><code>endpoint-color="rebeccapurple" points="0,2,0,1"</code></p>
 	</article>
 	<article>
-		<c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" colors="rebeccapurple"></c-spark-line>
+		<spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" colors="rebeccapurple"></spark-line>
 		<p><code>colors="rebeccapurple"</code></p>
 	</article>
 	<article>
-		<c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1" colors="rebeccapurple"></c-spark-line>
+		<spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1" colors="rebeccapurple"></spark-line>
 		<p><code>points="1" colors="rebeccapurple"</code></p>
 	</article>
 	<article>
-		<c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1" colors="red,green,blue"></c-spark-line>
+		<spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1" colors="red,green,blue"></spark-line>
 		<p><code>points="1" colors="red,green,blue"</code></p>
 	</article>
 	<article>
-		<c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1" colors="red,red,red,red,red,red,red,red,green,red,red,green,violet,orange,green,blue,yellow,green,yellow,cyan,green,cyan,green,cyan,blue,red"></c-spark-line>
+		<spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" points="1" colors="red,red,red,red,red,red,red,red,green,red,red,green,violet,orange,green,blue,yellow,green,yellow,cyan,green,cyan,green,cyan,blue,red"></spark-line>
 		<p><em>rainbow!</em></p>
 	</article>
 	<article>
-		<c-spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" start-label="Start" end-label="End"></c-spark-line>
+		<spark-line values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,0" start-label="Start" end-label="End"></spark-line>
 		<p><code>start-label="Start" end-label="End"</code></p>
 	</article>
 </div>

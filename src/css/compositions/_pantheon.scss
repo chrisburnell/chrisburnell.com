@@ -120,7 +120,7 @@
 	grid-row: content;
 }
 
-.pantheon > :is(spark-line, .spark-line) {
+.pantheon > :is(spark-line, .spark-line, svg-sparkline) {
 	opacity: 0;
 	grid-column: marginalia;
 	grid-row: sparkline;
