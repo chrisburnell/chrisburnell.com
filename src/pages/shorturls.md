@@ -4,7 +4,6 @@ description: Unused Shorturls Page
 tags: []
 sitemap:
   exclude: true
-ads: false
 monetization: false
 ---
 

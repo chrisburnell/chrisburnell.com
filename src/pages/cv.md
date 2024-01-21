@@ -3,7 +3,6 @@ title: Curriculum Vitae
 eleventyComputed:
   description: "{{ author.role | title }}{% if not author.employer %} and Software Engineer{% else %}, Software Engineer, and {{ author.employer.role | title }} at {{ author.employer.title }}{% endif %}"
   tagline: "{{ author.name }}"
-ads: false
 contentClass: h-resume
 monetizaton: false
 toc: true

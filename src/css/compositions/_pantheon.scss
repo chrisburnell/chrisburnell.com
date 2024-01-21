@@ -34,9 +34,7 @@
 		auto
 		[content-end meta-start]
 		auto
-		[meta-end ads-start]
-		auto
-		[ads-end];
+		[meta-end];
 	grid-template-columns:
 		[marginalia-start content-start outdent-start]
 		auto
@@ -59,9 +57,7 @@
 				auto
 				[sparkline-end meta-start]
 				1fr
-				[content-end ads-start]
-				auto
-				[meta-end ads-end];
+				[content-end meta-end];
 			grid-template-columns:
 				[marginalia-start]
 				var(--aside-size, 0)
@@ -149,8 +145,7 @@
 }
 
 .responses,
-.browse,
-.ads {
+.browse {
 	grid-column: content;
 }
 
@@ -160,9 +155,4 @@
 
 .browse {
 	grid-row: browse;
-}
-
-.ads {
-	grid-column: content;
-	grid-row: ads;
 }

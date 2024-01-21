@@ -4,7 +4,6 @@ module.exports = {
 	sitemap: {
 		exclude: true,
 	},
-	ads: false,
 	monetization: false,
 	theme: "code-red",
 }
