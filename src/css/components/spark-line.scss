@@ -29,6 +29,10 @@
 		--svg-sparkline-gradient-color: var(--color-raven);
 		--svg-sparkline-animation-duration: var(--transition-duration-long);
 		--svg-sparkline-animation-delay: var(--transition-duration);
+
+		&:not(:defined) {
+			display: none;
+		}
 	}
 
 	spark-line {
