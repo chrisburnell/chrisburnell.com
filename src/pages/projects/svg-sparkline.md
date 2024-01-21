@@ -13,6 +13,10 @@ tags:
   - web-component
 ---
 
+<figure>
+    <svg-sparkline values="8,3,2,7,9,1,5,6,4,10,3,8,2,7,1,9" fill="true" curve="true"></svg-sparkline>
+</figure>
+
 {% include 'package.njk' %}
 
 <code>&lt;svg-sparkline&gt;</code> is a native Web Component that builds a sparkline using SVGs in the element’s shadow root and includes a base set of styles to give it a decent appearance out of the box.
@@ -24,7 +28,7 @@ You can begin using the <code>&lt;svg-sparkline&gt;</code> Web Component by incl
 ```html
 <script type="module" src="svg-sparkline.js"></script>
 
-<svg-sparkline values="1,2,3,4,5,3,1></svg-sparkline>
+<svg-sparkline values="8,3,2,7,9,1,5,6,4,10,3,8,2,7,1,9"></svg-sparkline>
 ```
 
 To prevent <code>&lt;svg-sparkline&gt;</code> from appearing in browsers which either do not support Web Components or have JavaScript disabled, this small snippet of CSS will check if the element has been properly defined (to the browser’s understanding) and apply `display: none;` if not:
