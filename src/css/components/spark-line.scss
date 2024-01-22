@@ -24,17 +24,6 @@
 		font-weight: var(--font-weight-semibold);
 	}
 
-	svg-sparkline {
-		--svg-sparkline-endpoint-color: var(--color-maple);
-		--svg-sparkline-gradient-color: var(--color-raven);
-		--svg-sparkline-animation-duration: var(--transition-duration-long);
-		--svg-sparkline-animation-delay: var(--transition-duration);
-
-		&:not(:defined) {
-			display: none;
-		}
-	}
-
 	spark-line {
 		display: grid;
 		display: inline-grid;
@@ -90,6 +79,15 @@
 					}
 				}
 			}
+		}
+	}
+
+	svg-sparkline {
+		--svg-sparkline-endpoint-color: var(--color-maple);
+		--svg-sparkline-gradient-color: var(--color-raven);
+
+		&:not(:defined) {
+			display: none;
 		}
 	}
 
