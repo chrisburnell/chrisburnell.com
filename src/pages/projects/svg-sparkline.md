@@ -167,7 +167,7 @@ There are also a handful of CSS variables that you can set which will override t
   --svg-sparkline-color: red;
 
   /* override the color of the gradient/fill for sparklines with either */
-  --svg-sparkline-color: red;
+  --svg-sparkline-gradient-color: red;
 
   /* override the padding around the SVGs and start/end labels */
   --svg-sparkline-padding: 1rem;
