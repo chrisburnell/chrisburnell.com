@@ -1,10 +1,9 @@
 ---
-draft: true
 title: "&lt;svg-sparkline&gt;"
 emoji: 📈
 github: chrisburnell/svg-sparkline
 branch: main
-# npm: "@chrisburnell/svg-sparkline"
+npm: "@chrisburnell/svg-sparkline"
 license: MIT
 tags:
   - html
@@ -23,7 +22,7 @@ tags:
 
 ## Usage
 
-You can begin using the <code>&lt;svg-sparkline&gt;</code> Web Component by including a <code>&lt;script&gt;</code> tag in your HTML, with the component itself wrapping a <code>&lt;select&gt;</code> element containing an <code>&lt;option&gt;</code> for each of the themes you want to provide to the user:
+You can begin using the <code>&lt;svg-sparkline&gt;</code> Web Component by including a <code>&lt;script&gt;</code> tag in your HTML and setting a <code>values</code> attribute containing comma-separated numbers to build into a sparkline:
 
 ```html
 <script type="module" src="svg-sparkline.js"></script>
@@ -57,79 +56,105 @@ There are a number of ways to augment and customise the functionality of the Web
         </tr>
         <tr>
             <td><code>width</code></td>
-            <td><code>160</code></td>
-            <td>TODO</td>
+            <td><code>200</code></td>
+            <td>Sets the width of the sparkline SVGs.</td>
         </tr>
         <tr>
             <td><code>height</code></td>
-            <td><code>28</code></td>
-            <td>TODO</td>
+            <td><code>36</code></td>
+            <td>Sets the height of the sparkline SVGs.</td>
         </tr>
         <tr>
             <td><code>color</code></td>
             <td><code>currentColor</code></td>
-            <td>TODO</td>
+            <td>Sets the color of the sparkline lines (and endpoint if not set)</td>
         </tr>
         <tr>
             <td><code>curve</code></td>
             <td><code>false</code></td>
-            <td>TODO</td>
-        </tr>
-        <tr>
-            <td><code>animation-duration</code></td>
-            <td><code>1s</code></td>
-            <td>TODO</td>
+            <td>When set to <code>true</true>, will use <code>bezier</code> curves between points instead of straight lines</td>
         </tr>
         <tr>
             <td><code>endpoint</code></td>
             <td><code>true</code></td>
-            <td>TODO</td>
+            <td>Controls whether or not to show an endpoint</td>
         </tr>
         <tr>
             <td><code>endpoint-color</code></td>
             <td><code>color</code> attribute</td>
-            <td>TODO</td>
+            <td>Sets the color of the endpoint (if visible)</td>
         </tr>
         <tr>
             <td><code>endpoint-width</code></td>
             <td><code>6</code></td>
-            <td>TODO</td>
+            <td>Controls the width/diameter of the endpoint</td>
         </tr>
         <tr>
             <td><code>fill</code></td>
             <td><code>false</code></td>
-            <td>TODO</td>
+            <td>When set to <code>true</code>, will fill underneath the sparkline with a solid color</td>
         </tr>
         <tr>
             <td><code>gradient</code></td>
             <td><code>false</code></td>
-            <td>TODO</td>
+            <td>When set to <code>true</code>, will fill underneath the sparkline with a gradient going from the <code>gradient-color</code> to <code>transparent</code></td>
         </tr>
         <tr>
-            <td><code>gradient-color</code></td>
+            <td><code>gradient-color</code> / <code>fill-color</code></td>
             <td><code>color</code> attribute</td>
-            <td>TODO</td>
+            <td>Sets the color of the gradient / fill underneath the sparkline</td>
         </tr>
         <tr>
             <td><code>line-width</code></td>
             <td><code>2</code></td>
-            <td>TODO</td>
+            <td>Controls the width of the stroke used to draw the sparkline</td>
         </tr>
         <tr>
             <td><code>start-label</code></td>
             <td>—</td>
-            <td>TODO</td>
+            <td>Adds a label that appears on the bottom left of the sparkline</td>
         </tr>
         <tr>
             <td><code>end-label</code></td>
             <td>—</td>
-            <td>TODO</td>
+            <td>Adds a label that appears on the bottom right of the sparkline</td>
+        </tr>
+        <tr>
+            <td><code>animation-duration</code></td>
+            <td><code>1s</code></td>
+            <td>Sets the duration of the animation for animated sparklines</td>
+        </tr>
+        <tr>
+            <td><code>animation-delay</code></td>
+            <td><code>animation-duration</code> attribute</td>
+            <td>Sets the delay before the animation for animated sparklines</td>
         </tr>
     </tbody>
 </table>
 
+There are also a handful of CSS variables that you can set which will override the default behaviour and appearance of the sparklines. This is useful if you want to set up some defaults to override all sparklines on your website:
+
+```css
+:root {
+  /* override the color of the line (and endpoint, if not set) */
+  --svg-sparkline-color: red;
+
+  /* override the color of the gradient/fill for sparklines with either */
+  --svg-sparkline-color: red;
+
+  /* override the padding around the SVGs and start/end labels */
+  --svg-sparkline-padding: 1rem;
+
+  /* override the duration of the animation for animated sparklines */
+  --svg-sparkline-animation-duration: 2s;
+
+  /* override the delay before the animation for animated sparklines */
+  --svg-sparkline-animation-delay: 2s;
+}
+```
+
 ## Further Reading
 
-You can check out the full documentation, source code, and demos on GitHub, as well as provide feedback and report bugs on GitHub:
+You can check out the full documentation, source code, demos, and provide feedback and report bugs on GitHub:
 
 [https://github.com/chrisburnell/svg-sparkline](https://github.com/chrisburnell/svg-sparkline)
