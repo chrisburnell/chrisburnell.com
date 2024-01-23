@@ -51,7 +51,7 @@
     "@chrisburnell/instant-photo": "^0.0.2",
     "@chrisburnell/pentatonic": "^1.1.4",
     "@chrisburnell/spark-line": "^1.2.6",
-    "@chrisburnell/svg-sparkline": "^1.0.0",
+    "@chrisburnell/svg-sparkline": "^1.0.2",
     "@chrisburnell/theme-selector": "^1.0.1",
     "@daviddarnes/share-button": "^1.1.2",
     "@daviddarnes/storage-form": "^2.0.0",
@@ -75,7 +75,7 @@
     "pagefind": "^1.0.4"
   },
   "scripts": {
-    "clean": "rm -rf .cache && rm -rf _site",
+    "clean": "npx rimraf .cache && npx rimraf _site",
     "tokens": "npx json-to-scss './src/data/designTokens/*.json' ./src/css/abstracts/_generated.scss; npx prettier --write src/css/abstracts/_generated.scss",
     "css": "npx sass src/css:css --style=compressed --no-source-map --color",
     "postcss": "npx postcss css/*.css --replace --no-map",

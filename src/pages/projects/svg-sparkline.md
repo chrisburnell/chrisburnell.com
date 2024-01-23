@@ -153,7 +153,7 @@ There are a number of ways to augment and customise the functionality of the Web
         </tr>
         <tr>
             <td><code>animation-delay</code></td>
-            <td><code>animation-duration</code> attribute</td>
+            <td><code>animation-duration</code> attribute + <code>1s</code></td>
             <td>Sets the delay before the animation for animated sparklines</td>
         </tr>
     </tbody>
@@ -166,8 +166,11 @@ There are also a handful of CSS variables that you can set which will override t
   /* override the color of the line (and endpoint, if not set) */
   --svg-sparkline-color: red;
 
+  /* override the color of the endpoint */
+  --svg-sparkline-endpoint-color: rebeccapurple;
+
   /* override the color of the gradient/fill for sparklines with either */
-  --svg-sparkline-gradient-color: red;
+  --svg-sparkline-gradient-color: coral;
 
   /* override the padding around the SVGs and start/end labels */
   --svg-sparkline-padding: 1rem;
@@ -177,6 +180,12 @@ There are also a handful of CSS variables that you can set which will override t
 
   /* override the delay before the animation for animated sparklines */
   --svg-sparkline-animation-delay: 2s;
+
+  /* override the delay before drawing the sparkline */
+  --svg-sparkline-animation-first-delay: 2s;
+
+  /* override the delay before the endpoint and labels appear */
+  --svg-sparkline-animation-second-delay: 2s;
 }
 ```
 

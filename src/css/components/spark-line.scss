@@ -85,6 +85,7 @@
 	svg-sparkline {
 		--svg-sparkline-endpoint-color: var(--color-maple);
 		--svg-sparkline-gradient-color: var(--color-raven);
+		--svg-sparkline-animation-delay: 0.5s;
 
 		&:not(:defined) {
 			display: none;
