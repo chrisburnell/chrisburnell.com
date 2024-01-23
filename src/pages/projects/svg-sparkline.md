@@ -188,20 +188,19 @@ You can check out the full documentation, source code, demos, and provide feedba
 
 {% css %}
 .sparkline-dark {
-	background-color: h(kaiser);
-	color: h(snowy);
-
-	@media (prefers-color-scheme: dark) {
-		:root:not(:has([name="theme"] [value*="light"]:checked)) & {
-			background-color: h(snowy);
-			color: h(kaiser);
-		}
-	}
-	:root:has([name="theme"] [value*="dark"]:checked),
-	[data-theme*="dark"],
-	.dark & {
-		background-color: h(snowy);
-		color: h(kaiser);
-	}
+    background-color: h(kaiser);
+    color: h(snowy);
+}
+@media (prefers-color-scheme: dark) {
+    :root:not(:has([name="theme"] [value*="light"]:checked)) .sparkline-dark {
+        background-color: h(snowy);
+        color: h(kaiser);
+    }
+}
+:root:has([name="theme"] [value*="dark"]:checked) .sparkline-dark,
+[data-theme*="dark"] .sparkline-dark,
+.dark .sparkline-dark {
+    background-color: h(snowy);
+    color: h(kaiser);
 }
 {% endcss %}
