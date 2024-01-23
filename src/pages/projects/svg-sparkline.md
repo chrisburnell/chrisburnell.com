@@ -20,8 +20,11 @@ tags:
 
 <code>&lt;svg-sparkline&gt;</code> is a native Web Component that builds a sparkline using SVGs in the element’s shadow root and includes a base set of styles to give it a decent appearance out of the box.
 
-<div class=" [ grid ] [ shelf ] ">
+<div class=" [ grid ] ">
 	<article style="display: grid; place-items: center;">
+		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" gradient-color="var(--color-raven)" fill="true" endpoint-color="var(--color-maple)" curve="true" animate="true" start-label="Start" end-label="End"></svg-sparkline>
+	</article>
+	<article class="sparkline-dark" style="display: grid; place-items: center;">
 		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" gradient-color="var(--color-raven)" fill="true" endpoint-color="var(--color-maple)" curve="true" animate="true" start-label="Start" end-label="End"></svg-sparkline>
 	</article>
 	<article style="display: grid; place-items: center;">
@@ -33,17 +36,14 @@ tags:
 	<article style="display: grid; place-items: center;">
 		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" fill="true" endpoint-color="var(--color-maple)"></svg-sparkline>
 	</article>
-	<article class="sparkline-dark" style="display: grid; place-items: center;">
-		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" gradient-color="var(--color-raven)" fill="true" endpoint-color="var(--color-maple)" curve="true" animate="true" start-label="Start" end-label="End"></svg-sparkline>
-	</article>
 	<article style="display: grid; place-items: center;" data-theme="matrix">
-		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" gradient-color="var(--color-raven)" fill="true" endpoint-color="var(--color-maple)" curve="true" start-label="Start" end-label="End"></svg-sparkline>
+		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" gradient-color="var(--color-raven)" fill="true" endpoint-color="var(--color-maple)" curve="true"></svg-sparkline>
 	</article>
 	<article style="display: grid; place-items: center;" data-theme="koala">
-		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" gradient-color="var(--color-raven)" fill="true" endpoint-color="var(--color-maple)" curve="true" start-label="Start" end-label="End"></svg-sparkline>
+		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" gradient-color="var(--color-raven)" fill="true" endpoint-color="var(--color-maple)" curve="true"></svg-sparkline>
 	</article>
 	<article style="display: grid; place-items: center;" data-theme="code-red">
-		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" gradient-color="var(--color-raven)" fill="true" endpoint-color="var(--color-maple)" curve="true" start-label="Start" end-label="End"></svg-sparkline>
+		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" gradient-color="var(--color-raven)" fill="true" endpoint-color="var(--color-maple)" curve="true"></svg-sparkline>
 	</article>
 </div>
 
@@ -188,19 +188,19 @@ You can check out the full documentation, source code, demos, and provide feedba
 
 {% css %}
 .sparkline-dark {
-    background-color: h(kaiser);
-    color: h(snowy);
+    background-color: var(--color-kaiser);
+    color: var(--color-snowy);
 }
 @media (prefers-color-scheme: dark) {
     :root:not(:has([name="theme"] [value*="light"]:checked)) .sparkline-dark {
-        background-color: h(snowy);
-        color: h(kaiser);
+        background-color: var(--color-snowy);
+        color: var(--color-kaiser);
     }
 }
 :root:has([name="theme"] [value*="dark"]:checked) .sparkline-dark,
 [data-theme*="dark"] .sparkline-dark,
 .dark .sparkline-dark {
-    background-color: h(snowy);
-    color: h(kaiser);
+    background-color: var(--color-snowy);
+    color: var(--color-kaiser);
 }
 {% endcss %}
