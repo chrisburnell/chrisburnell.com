@@ -20,6 +20,33 @@ tags:
 
 <code>&lt;svg-sparkline&gt;</code> is a native Web Component that builds a sparkline using SVGs in the element’s shadow root and includes a base set of styles to give it a decent appearance out of the box.
 
+<div class=" [ grid ] [ shelf ] ">
+	<article style="display: grid; place-items: center;">
+		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" gradient-color="var(--color-raven)" fill="true" endpoint-color="var(--color-maple)" curve="true" animate="true" start-label="Start" end-label="End"></svg-sparkline>
+	</article>
+	<article style="display: grid; place-items: center;">
+		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" endpoint-color="var(--color-maple)"></svg-sparkline>
+	</article>
+	<article style="display: grid; place-items: center;">
+		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" endpoint="false"></svg-sparkline>
+	</article>
+	<article style="display: grid; place-items: center;">
+		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" fill="true" endpoint-color="var(--color-maple)"></svg-sparkline>
+	</article>
+	<article class="sparkline-dark" style="display: grid; place-items: center;">
+		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" gradient-color="var(--color-raven)" fill="true" endpoint-color="var(--color-maple)" curve="true" animate="true" start-label="Start" end-label="End"></svg-sparkline>
+	</article>
+	<article style="display: grid; place-items: center;" data-theme="matrix">
+		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" gradient-color="var(--color-raven)" fill="true" endpoint-color="var(--color-maple)" curve="true" start-label="Start" end-label="End"></svg-sparkline>
+	</article>
+	<article style="display: grid; place-items: center;" data-theme="koala">
+		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" gradient-color="var(--color-raven)" fill="true" endpoint-color="var(--color-maple)" curve="true" start-label="Start" end-label="End"></svg-sparkline>
+	</article>
+	<article style="display: grid; place-items: center;" data-theme="code-red">
+		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" gradient-color="var(--color-raven)" fill="true" endpoint-color="var(--color-maple)" curve="true" start-label="Start" end-label="End"></svg-sparkline>
+	</article>
+</div>
+
 ## Usage
 
 You can begin using the <code>&lt;svg-sparkline&gt;</code> Web Component by including a <code>&lt;script&gt;</code> tag in your HTML and setting a <code>values</code> attribute containing comma-separated numbers to build into a sparkline:
@@ -158,3 +185,23 @@ There are also a handful of CSS variables that you can set which will override t
 You can check out the full documentation, source code, demos, and provide feedback and report bugs on GitHub:
 
 [https://github.com/chrisburnell/svg-sparkline](https://github.com/chrisburnell/svg-sparkline)
+
+{% css %}
+.sparkline-dark {
+	background-color: h(kaiser);
+	color: h(snowy);
+
+	@media (prefers-color-scheme: dark) {
+		:root:not(:has([name="theme"] [value*="light"]:checked)) & {
+			background-color: h(snowy);
+			color: h(kaiser);
+		}
+	}
+	:root:has([name="theme"] [value*="dark"]:checked),
+	[data-theme*="dark"],
+	.dark & {
+		background-color: h(snowy);
+		color: h(kaiser);
+	}
+}
+{% endcss %}

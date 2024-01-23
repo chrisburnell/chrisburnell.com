@@ -1,5 +1,3 @@
-const pkg = require("../../../package.json")
-
 const { githubData, npmData } = require("#filters/fetch")
 
 module.exports = {
