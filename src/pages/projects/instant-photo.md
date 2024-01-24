@@ -1,6 +1,6 @@
 ---
 title: "&lt;instant-photo&gt;"
-emoji: 📈
+emoji: 🌃
 github: chrisburnell/instant-photo
 branch: main
 npm: "@chrisburnell/instant-photo"
