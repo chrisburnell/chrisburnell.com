@@ -20,7 +20,7 @@ jobs:
       - name: Set the timezone
         uses: zcong1993/setup-timezone@master
         with:
-          timezone: Europe/London
+          timezone: Asia/Singapore
       - name: Checkout from git
         uses: actions/checkout@v3
       - name: Set the Node version
