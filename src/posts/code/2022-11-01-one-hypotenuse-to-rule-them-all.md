@@ -70,7 +70,7 @@ Interesting! 🤔
             linear-gradient(
                 to bottom right,
                 transparent 49.9%,
-                hsl(var(--hsl-raven)) 50%
+                var(--color-raven) 50%
             );
         inline-size: 10rem;
         block-size:  10rem;
@@ -99,7 +99,7 @@ Interesting! 🤔
         block-size:  15%;
         border-width: var(--size-border-thin) 0 0 var(--size-border-thin);
         border-style: dashed;
-        border-color: hsl(var(--hsl-snowy));
+        border-color: var(--color-snowy);
         inset-inline-end: 0;
         inset-block-end: 0;
     }

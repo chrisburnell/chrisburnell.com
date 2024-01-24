@@ -13,6 +13,8 @@ import "./imports/website-sounds"
 
 import "@daviddarnes/share-button/share-button"
 
+import "@chrisburnell/instant-photo/instant-photo"
+
 import "./imports/welcome"
 
 // Not used at present

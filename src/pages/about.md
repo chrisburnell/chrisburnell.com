@@ -120,6 +120,9 @@ This website also supports [Webmentions](https://indieweb.org/webmention) (power
 
 The source code is available for your perusal on [GitHub](https://github.com/{{ author.github }}/{{ site.repository }}), and each page contains [an edit link](#edit) *(in the footer)* allowing you to go directly to the page’s source on GitHub.
 
-No language models were used in any of the writing on this website.
+No large language models were used in any of the writing on this website.
+
+<div id="wcb" class="carbonbadge wcb-d"></div>
+<script src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" defer></script>
 
 {%- css 'critical' %}{% include '../../css/components/shelf.css' %}{% endcss %}

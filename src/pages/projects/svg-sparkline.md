@@ -61,7 +61,20 @@ To prevent <code>&lt;svg-sparkline&gt;</code> from appearing in browsers which e
 
 ```css
 svg-sparkline:not(:defined) {
-    display: none;
+  display: none;
+}
+```
+
+You may also want to set some dimensions ahead of time to your component to help prevent cumulative layout shift:
+
+```css
+svg-sparkline {
+  inline-size: 212px;
+  block-size: 48px;
+
+  &:is([start-label], [end-label]) {
+    block-size: 78px;
+  }
 }
 ```
 

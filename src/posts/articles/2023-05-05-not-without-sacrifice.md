@@ -107,10 +107,10 @@ It’s heartwarming to see concerns about performance, sub-optimal browsing cond
         position: absolute;
     }
     #pie-1 {
-        background-image: conic-gradient(hsl(var(--hsl-maple)) 50%, hsl(var(--hsl-highland)) 0%);
+        background-image: conic-gradient(var(--color-maple) 50%, var(--color-highland) 0%);
     }
     #pie-2 {
-        background-image: conic-gradient(hsl(var(--hsl-maple)) 60%, hsl(var(--hsl-highland)) 0%);
+        background-image: conic-gradient(var(--color-maple) 60%, var(--color-highland) 0%);
     }
     #pie-1 .dx {
         inset-inline-end: 20%;

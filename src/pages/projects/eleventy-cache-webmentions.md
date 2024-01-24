@@ -41,7 +41,7 @@ Version 2.0.0 introduces a breaking change for those migrating from earlier vers
 require("@chrisburnell/eleventy-cache-webmentions")()
 ```
 
-**v2.0.0**
+**v2.0.0 and above**
 
 ```javascript
 require("@chrisburnell/eleventy-cache-webmentions")
