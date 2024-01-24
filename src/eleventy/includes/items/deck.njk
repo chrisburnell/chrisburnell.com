@@ -82,7 +82,7 @@
 				<small>by</small>
 				<a href="{{ author_lookup.url | toArray | first }}">{{ author_lookup.title }}</a>
 			{% endif %}
-			{% if global.now | daysUntil(item.data.rsvp.date) == 0 %}
+			{% if item.data.rsvp.date | daysUntil == 0 %}
 				{# Today #}
 				<small>today, from</small>
 				<time class=" [ dt-start ] " datetime="{{ item.data.rsvp.date | rfc3339Date }}">{{ item.data.rsvp.date | friendlyTime(false) }}</time>
@@ -91,7 +91,7 @@
 			{% elif item.data.rsvp.date | epoch > global.now %}
 				{# Future #}
 				<small>in</small>
-				{{ global.now | daysUntil(item.data.rsvp.date) }} day{{ 's' if (global.now | daysUntil(item.data.rsvp.date)) > 1 }}
+				{{ item.data.rsvp.date | daysUntil }} day{{ 's' if (item.data.rsvp.date | daysUntil) > 1 }}
 				<small>on</small>
 				{% if item.data.rsvp.date | friendlyDate != item.data.rsvp.end | friendlyDate %}
 					<time class=" [ dt-start ] " datetime="{{ item.data.rsvp.date | rfc3339Date }}">{{ item.data.rsvp.date | friendlyDate }}</time>

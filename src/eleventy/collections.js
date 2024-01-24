@@ -129,10 +129,7 @@ module.exports = {
 			.filter((item) => item.data.rsvp)
 			.filter(isPublished)
 			.filter((item) => {
-				if (daysUntil(now, item.data.rsvp.date) == 0) {
-					return true
-				}
-				return false
+				return daysUntil(item.data.rsvp.date) == 0
 			})
 			.sort((a, b) => {
 				return new Date(a.data.rsvp) - new Date(b.data.rsvp)
@@ -144,7 +141,7 @@ module.exports = {
 			.filter((item) => item.data.rsvp)
 			.filter(isPublished)
 			.filter((item) => {
-				if (daysUntil(now, item.data.rsvp.date) == 0) {
+				if (daysUntil(item.data.rsvp.date) == 0) {
 					return false
 				}
 				const lead = (item.data.rsvp?.upcoming_days_lead || upcomingDaysLead) * durationDay

@@ -2,7 +2,7 @@ const { DateTime } = require("luxon")
 const { ordinal } = require("./intl.js")
 
 const formatDate = (value, format) => {
-	return DateTime.fromJSDate(new Date(value)).toFormat(format)
+	return DateTime.fromISO(value, { setZone: true }).toFormat(format)
 }
 
 module.exports = {
@@ -31,7 +31,7 @@ module.exports = {
 	 * @returns {String}
 	 */
 	friendlyDateLong: (value) => {
-		let day = DateTime.fromJSDate(new Date(value)).toFormat("d")
+		let day = DateTime.fromISO(value, { setZone: true }).toFormat("d")
 		return formatDate(value, `cccc, LLLL '${ordinal(day)}', yyyy`)
 	},
 	/**
@@ -50,7 +50,7 @@ module.exports = {
 	 * @returns {String}
 	 */
 	friendlyTimezone: (value) => {
-		return DateTime.fromJSDate(new Date(value)).zoneName
+		return DateTime.fromISO(value, { setZone: true }).zoneName
 	},
 	/**
 	 * Format a Datetime into an HTTP Date String.
@@ -58,7 +58,7 @@ module.exports = {
 	 * @returns {String}
 	 */
 	httpDate: (value) => {
-		return DateTime.fromJSDate(new Date(value)).toHTTP()
+		return DateTime.fromISO(value, { setZone: true }).toHTTP()
 	},
 	/**
 	 * Format a Datetime into an RFC-3339 Date String.
@@ -67,7 +67,7 @@ module.exports = {
 	 */
 	rfc3339Date: (value, showTimezone = true) => {
 		let format = "yyyy-MM-dd'T'HH:mm:ss" + (showTimezone ? "ZZ" : "")
-		return DateTime.fromJSDate(new Date(value)).toFormat(format)
+		return DateTime.fromISO(value, { setZone: true }).toFormat(format)
 	},
 	/**
 	 * Format a Datetime into an XML-formatted Date String.
@@ -75,7 +75,7 @@ module.exports = {
 	 * @returns {String}
 	 */
 	w3cDate: (value) => {
-		return DateTime.fromJSDate(new Date(value)).toFormat("yyyy-MM-dd'T'HH:mm:ssZZ")
+		return DateTime.fromISO(value, { setZone: true }).toFormat("yyyy-MM-dd'T'HH:mm:ssZZ")
 	},
 	/**
 	 * Format a Datetime into an Epoch timestamp.
@@ -86,13 +86,13 @@ module.exports = {
 		return new Date(value).getTime()
 	},
 	/**
-	 * Calculate number of days between two Datetimes.
-	 * @param {Datetime} value
+	 * Calculate number of days between now and a given date.
+	 * @param {Datetime} date
 	 * @returns {String}
 	 */
-	daysUntil: (date, end) => {
-		date = DateTime.fromJSDate(new Date(date))
-		end = DateTime.fromJSDate(new Date(end))
-		return Math.floor(end.diff(date, ["days"]).toObject().days)
+	daysUntil: (date) => {
+		const future = new Date(date)
+		const timeDifference = future - new Date()
+		return Math.round(timeDifference / (1000 * 60 * 60 * 24))
 	},
 }
