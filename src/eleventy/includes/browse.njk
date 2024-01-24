@@ -12,8 +12,6 @@
 							<br>
 							{% if previous_post.data.like_of.title %}
 								Liked: {{ previous_post.data.like_of.title }}
-							{% elif category == 'like' or category == 'note' %}
-								{{ category | capitalize }} from {{ previous_post.date | friendlyDate }}
 							{% else %}
 								{{ previous_post.data.title }}
 							{% endif %}
@@ -27,8 +25,6 @@
 							<br>
 							{% if next_post.data.like_of.title %}
 								Liked: {{ next_post.data.like_of.title }}
-							{% elif category == 'like' or category == 'note' %}
-								{{ category | capitalize }} from {{ next_post.date | friendlyDate }}
 							{% else %}
 								{{ next_post.data.title }}
 							{% endif %}

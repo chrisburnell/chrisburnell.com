@@ -7,7 +7,7 @@ const minifier = require("html-minifier")
 const mdnBrowserData = require("@mdn/browser-compat-data")
 const caniuse = require("caniuse-api")
 
-const { now } = require("#datajs/global")
+const { nowISO } = require("#datajs/global")
 const {
 	cacheDurations: { daily },
 } = require("#data/site")
@@ -82,7 +82,7 @@ module.exports = (eleventyConfig) => {
 					</div>
 					<div class=" [ support__meta ] ">
 						<p class=" [ monospace  strong ] " style="font-size: var(--font-size-gamma);">${featureID}</p>
-						<p class="small">Browser support data for <code>${featureID}</code> comes from <a href="https://caniuse.com/#feat=${featureID}" rel="external nofollow">caniuse.com</a> and is up-to-date as of <time datetime="${DateTime.fromISO(now, { setZone: true }).toFormat("yyyy-MM-dd")}">${DateTime.fromISO(now, { setZone: true }).toFormat("dd LLLL yyyy")}</time>.</p>
+						<p class="small">Browser support data for <code>${featureID}</code> comes from <a href="https://caniuse.com/#feat=${featureID}" rel="external nofollow">caniuse.com</a> and is up-to-date as of <time datetime="${DateTime.fromISO(nowISO).toFormat("yyyy-MM-dd")}">${DateTime.fromISO(nowISO).toFormat("dd LLLL yyyy")}</time>.</p>
 					</div>
 				</div>`,
 				{ collapseWhitespace: true },

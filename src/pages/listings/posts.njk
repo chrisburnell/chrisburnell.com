@@ -62,8 +62,8 @@ perch: true
 			{%- endfor -%}
 			{%- for item in collections.tags | sort -%}
 				{%- set count = collections[item] | arePublished | getCollectionCount -%}
-				{# map range from lowest–highest to 1–1.375, 3 decimal places #}
-				{%- set fontSize = count | rangeMap(lowest, highest, 1, 1.375, 3) -%}
+				{# map range from lowest–highest to 1–1.5, 3 decimal places #}
+				{%- set fontSize = count | rangeMap(lowest, highest, 1, 1.5, 3) -%}
 				<li><a href="/tag/{{ item }}/" class=" [ strong ] " style="font-size: {{ fontSize }}em;">{{ item }} <sup>{{ count }}</sup></a></li>
 			{%- endfor -%}
 		</ol>

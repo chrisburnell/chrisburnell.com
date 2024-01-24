@@ -17,7 +17,7 @@
 	</author>
 	<logo>{{ site.url + site.logo }}</logo>
 	<image>{{ site.url + author.avatar }}</image>
-	<updated>{{ collection | getNewestCollectionItemDate | rfc3339Date }}</updated>
+	<updated>{{ collection | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
 	<generator>{{ eleventy.generator }}</generator>
 	{% for item in collection | limit(limit) -%}
 	{%- set item_of = item.data.bookmark_of | default(item.data.drink_of) | default(item.data.like_of) | default(item.data.listen_of) | default(item.data.play_of) | default(item.data.read_of) | default(item.data.watch_of) -%}
@@ -52,8 +52,10 @@
 		<link href="{{ site.url + item.url }}" />
 		<title>{{ item_title }}</title>
 		<published>{{ item.data.date | default(item.date) | rfc3339Date }}</published>
-		<updated>{{ item.data.updated | default(item.date) | rfc3339Date }}</updated>
+		<updated>{{ item.data.updated | default(item.data.date) | default(item.date) | default(global.now) | rfc3339Date }}</updated>
+		{% if item.data.category -%}
 		<category term="{{ item.data.category }}" scheme="{{ site.url + '/' + item.data.category + '/' }}" label="{{ item.data.categoryProper | default(item.data.category) | title }}" />
+		{%- endif %}
 		{% if item.data.description and item.content != '' -%}
 		<summary>{{ item.data.description | markdownFormat | stripnewlines | stripstrikethrough | striptags(true) | safe }}</summary>
 		<content type="html">

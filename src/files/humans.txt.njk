@@ -4,14 +4,14 @@
 
     Name: {{ author.name }}
     Email: {{ author.email }}
-	CodePen: https://codepen.io/{{ author.codepen }}
+    CodePen: https://codepen.io/{{ author.codepen }}
     GitHub: https://github.com/{{ author.github }}
     Mastodon: https://{{ author.mastodon_domain }}/users/{{ author.mastodon.split('@') | first }}
     PGP: {{ author.pgp }}
 
 /* SITE */
 
-    Last updated:  {{ global.now | friendlyDate }} {{ global.now | friendlyTime }}
+    Last updated:  {{ global.nowISO | friendlyDate }} {{ global.nowISO | friendlyTime }}
     URL:           {{ site.url }}
     Language:      {{ site.locale }}
     Doctype:       HTML5

@@ -14,7 +14,7 @@ toc: true
 
 ## Summary
 
-Front End Developer and Software Engineer with {{ global.now | friendlyDate("yyyy") - site.established }} years of experience, specialising in CSS, design systems, developer advocacy and education, and technical writing and speaking.
+Front End Developer and Software Engineer with {{ global.nowISO | friendlyDate("yyyy") - site.established }} years of experience, specialising in CSS, design systems, developer advocacy and education, and technical writing and speaking.
 
 Work roles involved in creating design systems and tools to enable teams to build maintainable and performant websites, with an uncompromising focus on user experience.
 

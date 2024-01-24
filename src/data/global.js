@@ -28,6 +28,7 @@ const random = () => {
 
 module.exports = {
 	now: Date.now(),
+	nowISO: new Date().toISOString(),
 	cssnakedday: cssnakedday(),
 	random: random(),
 	sotb_upcoming: sotbUpcoming(),

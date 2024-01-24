@@ -1,4 +1,4 @@
-const { now } = require("#datajs/global")
+const { now, nowISO } = require("#datajs/global")
 const { limits, upcomingDaysLead } = require("#data/site")
 
 const { dateFilter, isPublished, notReply } = require("#filters/collections")
@@ -54,11 +54,11 @@ module.exports = {
 				return false
 			})
 			.filter((item) => {
-				if (!item.data.rsvp && item.date && friendlyDate(item.date, "dd LLLL") == friendlyDate(now, "dd LLLL") && friendlyDate(item.date, "yyyy") != friendlyDate(now, "yyyy")) {
+				if (!item.data.rsvp && item.date && friendlyDate(item.date, "dd LLLL") == friendlyDate(nowISO, "dd LLLL") && friendlyDate(item.date, "yyyy") != friendlyDate(nowISO, "yyyy")) {
 					return true
-				} else if (item.data.rsvp && friendlyDate(item.data.rsvp.date, "dd LLLL") == friendlyDate(now, "dd LLLL") && friendlyDate(item.data.rsvp.date, "yyyy") != friendlyDate(now, "yyyy")) {
+				} else if (item.data.rsvp && friendlyDate(item.data.rsvp.date, "dd LLLL") == friendlyDate(nowISO, "dd LLLL") && friendlyDate(item.data.rsvp.date, "yyyy") != friendlyDate(nowISO, "yyyy")) {
 					return true
-				} else if (item.data.rsvp && friendlyDate(item.data.rsvp.end, "dd LLLL") == friendlyDate(now, "dd LLLL") && friendlyDate(item.data.rsvp.end, "yyyy") != friendlyDate(now, "yyyy")) {
+				} else if (item.data.rsvp && friendlyDate(item.data.rsvp.end, "dd LLLL") == friendlyDate(nowISO, "dd LLLL") && friendlyDate(item.data.rsvp.end, "yyyy") != friendlyDate(nowISO, "yyyy")) {
 					return true
 				}
 				return false

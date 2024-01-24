@@ -97,7 +97,7 @@
 	<meta property="og:image" content="{{ meta_image }}">
 
 	{% if layout == 'post' -%}
-	<meta property="article:published_time" content="{{ page.date | friendlyDateLong | striptags(true) | safe }}">
+	<meta property="article:published_time" content="{{ date | friendlyDateLong | striptags(true) | safe }}">
 	{% if updated or end -%}
 	<meta property="article:modified_time" content="{{ updated | default(end) | friendlyDateLong | safe }}">
 	{%- endif %}
@@ -160,7 +160,7 @@
 				</li><li><a id="edit" href="https://github.com/{{ author.github }}/{{ site.repository }}/tree/{{ site.branch }}/{{ page.inputPath }}" aria-label="Edit this page"><svg width="16" height="16" aria-hidden="true" focusable="false" style="--fill-hover: var(--color-highland);"><use href="#svg--edit"></use></svg>Edit this page</a></li><li>{% include 'share-button.njk' %}</li>
 			</ul>
 			<ul class=" [ cluster ] [ footer__navigation ] ">
-				<li><a id="copyright" rel="license" href="/license/">© {{ site.established }}–{{ global.now | friendlyDate("yyyy") }} <span class=" [ canada ] ">{{ author.name }}</span></a></li>
+				<li><a id="copyright" rel="license" href="/license/">© {{ site.established }}–{{ global.nowISO | friendlyDate("yyyy") }} <span class=" [ canada ] ">{{ author.name }}</span></a></li>
 				{%- for item in socials -%}
 					{%- if not item.hidden and item.primary -%}
 						{%- set url = item.url -%}

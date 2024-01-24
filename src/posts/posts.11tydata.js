@@ -37,7 +37,7 @@ module.exports = {
 			} else if (data.title) {
 				return data.title.replace(/(<([^>]+)>)/gi, "")
 			} else if (data.category) {
-				return `${category} from ${friendlyDateLong(data.page.date)}`
+				return category
 			}
 			return siteTitle.replace(/(<([^>]+)>)/gi, "")
 		},

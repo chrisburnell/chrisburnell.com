@@ -56,7 +56,7 @@
               {%- endfor -%}
             </ol>
             <ol class=" [ cluster ] [ footer__navigation ] ">
-              <li><a id="copyright" rel="license" href="/license/">© {{ site.established }}–{{ global.now | friendlyDate("yyyy") }} <span class=" [ canada ] ">{{ author.name }}</span></a></li>
+              <li><a id="copyright" rel="license" href="/license/">© {{ site.established }}–{{ global.nowISO | friendlyDate("yyyy") }} <span class=" [ canada ] ">{{ author.name }}</span></a></li>
               {%- for item in socials -%}
                 {%- if not item.hidden and item.primary -%}
                   <li>

@@ -9,7 +9,7 @@ module.exports = {
 		for (let i = parseFloat(start); i <= parseFloat(end); i++) {
 			// Loop through collection comparing Year
 			for (let item of collection) {
-				if (i === parseFloat(friendlyDate(item.data.date || item.date, "yyyy"))) {
+				if (i === parseFloat(friendlyDate(item.date, "yyyy"))) {
 					count++
 				}
 			}

@@ -56,7 +56,7 @@ module.exports = {
 				return !!item.url
 			})
 			.filter((item) => {
-				return !year || item.data.page.date.getFullYear() === parseInt(year, 10)
+				return !year || item.date.getFullYear() === parseInt(year, 10)
 			}).length
 	},
 	/**

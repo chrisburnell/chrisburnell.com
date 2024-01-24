@@ -184,7 +184,7 @@
 	{% endif %}
 	{% if env.ELEVENTY_PRODUCTION %}
 		<li class=" [ shorturl ] ">
-			{% set shorturl_id = page.date | NewBase60(categoryCode, collections[category]) -%}
+			{% set shorturl_id = date | NewBase60(categoryCode, collections[category]) -%}
 			<c-emoji>{{ emojis.link }}</c-emoji>
 			<a href="https://repc.co/{{ shorturl_id }}">repc.co/{{ shorturl_id }}</a>
 		</li>
