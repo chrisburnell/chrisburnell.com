@@ -9,5 +9,3 @@ theme: null
 <nav class=" [ grid ] [ navigator ] " aria-label="Error Navigation">
   <button onclick="window.location.reload()" aria-label="Refresh">Refresh!</button>
 </nav>
-
-{%- css 'critical' %}{% include '../../../css/components/deck.css' %}{% endcss %}

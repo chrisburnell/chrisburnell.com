@@ -11,17 +11,15 @@
 @import "../abstracts/generated";
 @import "../abstracts/collections";
 
-@layer components {
-	.updated {
-		max-inline-size: var(--size-line-length);
-		margin-inline: auto;
+.updated {
+	max-inline-size: var(--size-line-length);
+	margin-inline: auto;
 
-		& > * + * {
-			--flow-space: var(--size-small);
-		}
+	& > * + * {
+		--flow-space: var(--size-small);
+	}
 
-		time {
-			font-weight: var(--font-weight-semibold);
-		}
+	time {
+		font-weight: var(--font-weight-semibold);
 	}
 }

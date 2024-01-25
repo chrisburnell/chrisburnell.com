@@ -1,7 +1,1 @@
 <share-button id="share"><button class="anchor"><svg width="16" height="16" aria-hidden="true" focusable="false" style="--fill-hover: var(--color-highland);"><use href="#svg--share"></use></svg>Share</button><a href="mailto:?subject={{ meta_title | striptags(true) | safe }}&body={{ canonical }}"><svg width="16" height="16" aria-hidden="true" focusable="false" style="--fill-hover: var(--color-highland);"><use href="#svg--share"></use></svg>Share</a></share-button>
-{%- css -%}
-	share-button:not(:defined) button,
-	share-button:defined a {
-		display: none;
-	}
-{%- endcss %}

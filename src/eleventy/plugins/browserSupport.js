@@ -71,12 +71,7 @@ module.exports = (eleventyConfig) => {
 			}, "")
 
 			return minifier.minify(
-				`<is-land on:visible on:idle>
-					<template data-island="once">
-						<link rel="stylesheet" href="/css/components/browser-support.css" />
-					</template>
-				</is-land>
-				<div class=" [ support ] [ box ${fullSupport ? " box--success " : zeroSupport ? " box--error " : " box--warning "}] ">
+				`<div class=" [ support ] [ box ${fullSupport ? " box--success " : zeroSupport ? " box--error " : " box--warning "}] ">
 					<div class=" [ support__data ] [ flow ] ">
 						${browserList}
 					</div>

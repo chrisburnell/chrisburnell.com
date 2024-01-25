@@ -28,5 +28,3 @@ My maternal grandfather, or *Opa* as his grandchildren called him, was a highly-
 <figure>
     {% image './images/content/gpp-dad-me.jpg', 'Robert Burnell, my paternal grandfather, or as I called him: Grandpapa; Chris Burnell (that’s me!); and Jean Burnell (my father) in 1993' %}
 </figure>
-
-{%- css 'critical' %}{% include '../../css/components/shelf.css' %}{% endcss %}

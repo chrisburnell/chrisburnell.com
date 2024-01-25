@@ -152,7 +152,6 @@ If you wanted to use `<is-land>` as well, I recommend something like the followi
 	<spark-line webc:keep :values="this.values" :curve="this.curve" :color="this.color" :colors="this.colors" :endpoint-color="this['endpoint-color']" :points="this.points" :line-width="this['line-width']" :start-label="this['start-label']" :end-label="this['end-label']"></spark-line>
 
 	<template webc:raw data-island="once">
-		<link rel="stylesheet" href="/css/components/spark-line.css" />
 		<script type="module" :src="`/js/components/spark-line.js`"></script>
 	</template>
 </is-land>
@@ -245,5 +244,3 @@ If you wanted to use `<is-land>` as well, I recommend something like the followi
 		<label><input id="input-endpoint-color" type="color" value="#e0151f"> Endpoint Color</label>
 	</fieldset>
 </form>
-
-{%- css 'critical' %}{% include '../../../css/components/shelf.css' %}}{% endcss %}

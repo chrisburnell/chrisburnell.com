@@ -124,5 +124,3 @@ No large language models were used in any of the writing on this website.
 
 <div id="wcb" class="carbonbadge wcb-d"></div>
 <script src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" defer></script>
-
-{%- css 'critical' %}{% include '../../css/components/shelf.css' %}{% endcss %}

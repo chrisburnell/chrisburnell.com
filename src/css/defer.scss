@@ -41,3 +41,11 @@
 	@import "blocks/embeds";
 	@import "blocks/browse";
 }
+
+// Components
+@layer components {
+	@import "components/updated";
+	@import "components/librarian";
+	@import "components/responses";
+	@import "components/browser-support";
+}

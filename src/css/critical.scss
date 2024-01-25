@@ -72,8 +72,12 @@
 }
 
 // Components
-@import "components/spark-line";
-@import "components/theme-selector";
+@layer components {
+	@import "components/spark-line";
+	@import "components/deck";
+	@import "components/shelf";
+	@import "components/theme-selector";
+}
 
 // Themes
 @layer themes {
