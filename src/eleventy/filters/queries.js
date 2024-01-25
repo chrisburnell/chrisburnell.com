@@ -49,6 +49,9 @@ module.exports = {
 					if ("published" in item.data && item.data.published === false) {
 						return false
 					}
+					if ((!"date") in item.data) {
+						return false
+					}
 					if (item.data.tags.includes("ignore") || (blogOnly && !item.data.tags.includes("blog"))) {
 						return false
 					}

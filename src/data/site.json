@@ -35,11 +35,6 @@
     "changefreq": "monthly",
     "priority": 0.5
   },
-  "sotb": {
-    "date": "2023-09-23T09:20:00+0100",
-    "lead": 30,
-    "url": "https://2023.stateofthebrowser.com"
-  },
   "speedlify": "chrisburnell",
   "carbon": "CE7D523U",
   "monetization": "$ilp.uphold.com/wDqKwewbX8by"

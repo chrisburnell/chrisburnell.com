@@ -95,8 +95,8 @@
 			{% endif %}
 		</div>
 	{% endif %}
-	{% if item.data.date or item.date %}
-		<time class=" [ dt-published ] " datetime="{{ item.data.date | default(item.date) | rfc3339Date }}" hidden>{{ item.data.date | default(item.date) | friendlyDateLong | safe }}</time>
+	{% if item.data.date %}
+		<time class=" [ dt-published ] " datetime="{{ item.data.date | rfc3339Date }}" hidden>{{ item.data.date | friendlyDateLong | safe }}</time>
 		{% if item.data.updated %}
 			<time class=" [ dt-updated ] " datetime="{{ item.data.updated | rfc3339Date }}" hidden>{{ item.data.updated | friendlyDateLong | safe }}</time>
 		{% endif %}

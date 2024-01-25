@@ -54,7 +54,7 @@ module.exports = {
 				return false
 			})
 			.filter((item) => {
-				if (!item.data.rsvp && item.date && friendlyDate(item.date, "dd LLLL") == friendlyDate(nowISO, "dd LLLL") && friendlyDate(item.date, "yyyy") != friendlyDate(nowISO, "yyyy")) {
+				if (!item.data.rsvp && item.data.date && friendlyDate(item.data.date, "dd LLLL") == friendlyDate(nowISO, "dd LLLL") && friendlyDate(item.data.date, "yyyy") != friendlyDate(nowISO, "yyyy")) {
 					return true
 				} else if (item.data.rsvp && friendlyDate(item.data.rsvp.date, "dd LLLL") == friendlyDate(nowISO, "dd LLLL") && friendlyDate(item.data.rsvp.date, "yyyy") != friendlyDate(nowISO, "yyyy")) {
 					return true

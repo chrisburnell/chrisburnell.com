@@ -4,9 +4,6 @@ import "@11ty/is-land/is-land"
 
 import "@chrisburnell/svg-sparkline/svg-sparkline"
 
-// Not used until SotB is announced
-// import "./imports/sotb-banner"
-
 import "./imports/website-sounds"
 
 // import "./imports/polyfill-details-exclusive"

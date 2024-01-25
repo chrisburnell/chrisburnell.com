@@ -64,7 +64,7 @@ truncate: true
 			</h2>
 			<div id="list-{{ year }}" class=" [ deck ] ">
 				{% for item in collection %}
-					{%- set check = item.data.date | default(item.date) | friendlyDate('yyyy') -%}
+					{%- set check = item.data.date | friendlyDate('yyyy') -%}
 					{% if check != year %}
 						{%- set year = check -%}
 						</div>
@@ -83,8 +83,6 @@ truncate: true
 				{% endfor %}
 			</div>
 		{%- endif -%}
-
-		{% include 'state-of-the-browser.njk' %}
 	</div>
 
 	<aside class=" [ meta ] [ flow ] " role="complementary">

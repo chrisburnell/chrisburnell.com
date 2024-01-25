@@ -300,7 +300,7 @@ pagination:
   data: collections.post
   size: 1
   alias: item
-permalink: "{{ item.date | NewBase60: item.data.categoryCode, collections[item.data.category] }}/"
+permalink: "{{ item.data.date | NewBase60: item.data.categoryCode, collections[item.data.category] }}/"
 ---
 
 <!DOCTYPE html><html><head><meta http-equiv=refresh content="0; url={{ item.url }}">
@@ -320,7 +320,7 @@ pagination:
   data: collections.post
   size: 1
   alias: item
-permalink: "{{ item.date | NewBase60(item.data.categoryCode, collections[item.data.category]) }}/"
+permalink: "{{ item.data.date | NewBase60(item.data.categoryCode, collections[item.data.category]) }}/"
 ---
 
 <!DOCTYPE html><html><head><meta http-equiv=refresh content="0; url={{ item.url }}">

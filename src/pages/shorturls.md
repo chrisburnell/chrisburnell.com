@@ -15,7 +15,7 @@ pagination:
   data: collections.posts
   size: 1
   alias: item
-permalink: "{{ item.data.date | default(item.date) | NewBase60(item.data.categoryCode, collections[item.data.category]) }}/"
+permalink: "{{ item.data.date | NewBase60(item.data.categoryCode, collections[item.data.category]) }}/"
 ---
 
 <!DOCTYPE html><html><head><meta http-equiv=refresh content="0; url={{ item.url }}">

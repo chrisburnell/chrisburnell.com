@@ -9,5 +9,3 @@ if (THEME) {
 		document.documentElement.removeAttribute(`data-${STORAGE_KEY}`)
 	}, 1000)
 }
-
-// import "./imports/sotb-banner-setup"

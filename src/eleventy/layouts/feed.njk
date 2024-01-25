@@ -32,7 +32,7 @@
 	{% if item.data.title or item_of_title -%}
 		{% set item_title = item.data.title | default(item_of_title) %}
 	{%- else -%}
-		{% set item_date = item.data.date | default(item.date) | friendlyDate | striptags(true) %}
+		{% set item_date = item.data.date | friendlyDate | striptags(true) %}
 		{% set item_title = item.data.categoryProper | default(item.data.category) | title %}
 		{% if item.data.rsvp and item.data.in_reply_to %}
 			{% set item_reply = item.data.in_reply_to.title | default(item.data.in_reply_to.url) | default(item.data.in_reply_to) %}
@@ -51,8 +51,8 @@
 		<id>{{ site.url + item.url }}</id>
 		<link href="{{ site.url + item.url }}" />
 		<title>{{ item_title }}</title>
-		<published>{{ item.data.date | default(item.date) | rfc3339Date }}</published>
-		<updated>{{ item.data.updated | default(item.data.date) | default(item.date) | default(global.now) | rfc3339Date }}</updated>
+		<published>{{ item.data.date | rfc3339Date }}</published>
+		<updated>{{ item.data.updated | default(item.data.date) | default(global.now) | rfc3339Date }}</updated>
 		{% if item.data.category -%}
 		<category term="{{ item.data.category }}" scheme="{{ site.url + '/' + item.data.category + '/' }}" label="{{ item.data.categoryProper | default(item.data.category) | title }}" />
 		{%- endif %}
