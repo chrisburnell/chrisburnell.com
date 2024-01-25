@@ -12,8 +12,10 @@
 							<br>
 							{% if previous_post.data.like_of.title %}
 								Liked: {{ previous_post.data.like_of.title }}
-							{% else %}
+							{% elif previous_post.data.title %}
 								{{ previous_post.data.title }}
+							{% else %}
+								{{ category | title }} from {{ previous_post.data.date | friendlyDate }}
 							{% endif %}
 						</a>
 					</li>
@@ -25,8 +27,10 @@
 							<br>
 							{% if next_post.data.like_of.title %}
 								Liked: {{ next_post.data.like_of.title }}
-							{% else %}
+							{% elif next_post.data.title %}
 								{{ next_post.data.title }}
+							{% else %}
+								{{ category | title }} from {{ next_post.data.date | friendlyDate }}
 							{% endif %}
 						</a>
 					</li>

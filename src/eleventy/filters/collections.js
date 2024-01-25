@@ -21,7 +21,7 @@ module.exports = {
 			if ("tags" in item.data && item.data.tags.includes("ignore")) {
 				return false
 			}
-			if ("date" in item && epoch(item.date) > now) {
+			if ("date" in item.data && epoch(item.data.date) > now) {
 				return false
 			}
 		}

@@ -13,7 +13,7 @@ layout: base
 		{% elif title %}
 			<span>{{ title | safe }}</span>
 		{% else %}
-			<span>{{ categoryProper | default(category) | title }}</span>
+			<span>{{ categoryProper | default(category) | title }} from {{ date | friendlyDateLong | safe }}</span>
 		{% endif %}
 	</h1>
 
