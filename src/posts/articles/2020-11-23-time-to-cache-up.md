@@ -53,7 +53,7 @@ module.exports = function(eleventyConfig) {
                 // 04
                 .filter(item => getWebmentions(wm, item.url).length)
                 // 05
-                .sort((a, b) => b.date - a.date)
+                .sort((a, b) => b.data.date - a.data.date)
                 // 06
                 .sort((a, b) => {
                     const alpha = getWebmentions(wm, a.url)

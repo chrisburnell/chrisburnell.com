@@ -182,7 +182,7 @@
 			{% endif %}
 		</li>
 	{% endif %}
-	{% if env.ELEVENTY_PRODUCTION %}
+	{% if env.ELEVENTY_PRODUCTION and not draft and not "ignore" in tags %}
 		<li class=" [ shorturl ] ">
 			{% set shorturl_id = date | NewBase60(categoryCode, collections[category]) -%}
 			<c-emoji>{{ emojis.link }}</c-emoji>

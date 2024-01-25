@@ -43,8 +43,7 @@ function bezierCommand(point, i, a) {
 	const [cex, cey] = controlPoint(i, point, i-1, a[i-1], i+1, a[i+1], true)
 	return `C ${maxDecimals(csx)},${maxDecimals(csy)} ${maxDecimals(cex)},${maxDecimals(cey)} ${i},${point}`
 }
-function getPath(points, command = lineCommand) {
-	const values = points.split(",")
+function getPath(values, command = lineCommand) {
 	return values
 		// flips each point in the vertical range
 		.map((point) => Math.max(...values) - point + 1)
@@ -53,20 +52,18 @@ function getPath(points, command = lineCommand) {
 			return i < 1 ? `M 0,${point}` : `${acc} ${command(point, i, a)}`
 		}, "")
 }
-function getFinalX(string) {
-	return string.split(",").length - 1
+function getFinalX(values) {
+	return values.length - 1
 }
-function getFinalY(string) {
-	const values = string.split(",")
+function getFinalY(values) {
 	return Math.max(...values) - values[values.length - 1] + 1
 }
-function getHighestY(string) {
-	const values = string.split(",")
+function getHighestY(values) {
 	return Math.max(...values) + 2
 }
 </script>
-<spark-line webc:keep :values="this.values" :original="this.original" :colors="this.colors" :points="this.points" :key-start="this['key-start'] || 25" :key-intervals="this['key-intervals'] || `2,1,2,2,1,2,2`" :key-limit="this['key-limit'] || 15" :id="this.id" :class="` [ spark-line ] [ pentatonic ${this.animate ? ' animate ' : ''}] `" title="Click to hear me!">
-	<span webc:if="this.start" @text="this.start"></span>
+<svg-sparkline webc:keep :values="this.values" :key-start="this['key-start'] || 25" :key-intervals="this['key-intervals'] || `2,1,2,2,1,2,2`" :key-limit="this['key-limit'] || 15" :animate="this.animate" :id="this.id" :class="` [ pentatonic ] `" title="Click to hear me!">
+	<span webc:if="this['start-label']" @text="this['start-label']"></span>
 	<svg width="160px" height="28px" :viewBox="getViewBox(this.values)" preserveAspectRatio="none">
 		<defs webc:if="this.gradient && this.fill !== 'false'">
 			<linearGradient id="gradient" gradientTransform="rotate(90)">
@@ -94,5 +91,5 @@ function getHighestY(string) {
 	<svg webc:if="this.point !== 'false'" width="160px" height="28px" viewBox="0 0 160 28" preserveAspectRatio="xMaxYMid meet">
 		<circle class=" [ spark-line__endpoint ] " r="3" cx="160" :cy="(28 / getHighestY(this.values)) * getFinalY(this.values)" fill="var(--point, var(--color-maple))"></circle>
 	</svg>
-	<span webc:if="this.end" @text="this.end"></span>
-</spark-line>
+	<span webc:if="this['end-label']" @text="this['end-label']"></span>
+</svg-sparkline>

@@ -67,7 +67,7 @@ module.exports = {
 	 * @returns {Number}
 	 */
 	dateFilter: (a, b) => {
-		return new Date(b.data.date || b.date) - new Date(a.data.date || a.date)
+		return new Date(b.data.date) - new Date(a.data.date)
 	},
 	/**
 	 * Checks if a page can be considered a reply.
