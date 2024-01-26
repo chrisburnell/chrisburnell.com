@@ -8,7 +8,6 @@ const pluginBrowserSupport = require("#plugins/browserSupport")
 const pluginImage = require("#plugins/image")
 const pluginPregenerateImages = require("#plugins/pregenerateImages")
 // const pluginCover = require("#plugins/cover")
-// const pluginInclusiveLanguage = require("@11ty/eleventy-plugin-inclusive-language")
 const pluginBundler = require("@11ty/eleventy-plugin-bundle")
 const pluginDirectoryOutput = require("@11ty/eleventy-plugin-directory-output")
 const pluginRSS = require("@11ty/eleventy-plugin-rss")
@@ -89,7 +88,12 @@ module.exports = (eleventyConfig) => {
 		]
 	})
 	if (process.env.DIRECTORY_OUTPUT) {
-		eleventyConfig.addPlugin(pluginDirectoryOutput)
+		eleventyConfig.addPlugin(pluginDirectoryOutput, {
+			columns: {
+				filesize: true,
+				benchmark: true,
+			}
+		})
 	}
 	eleventyConfig.addPlugin(pluginRSS)
 	eleventyConfig.addPlugin(pluginSyntaxHighlight)
@@ -102,10 +106,6 @@ module.exports = (eleventyConfig) => {
 	})
 	eleventyConfig.addPlugin(pluginWebmentions, configWebmentions)
 	// eleventyConfig.addPlugin(pluginCover)
-	// eleventyConfig.addPlugin(pluginInclusiveLanguage, {
-	//   // accepts an array or a comma-delimited string
-	//   words: "simply,obviously,basically,of course,clearly,just,everyone knows,easy"
-	// })
 
 	// Transforms
 	eleventyConfig.addTransform("parse", transformParse)

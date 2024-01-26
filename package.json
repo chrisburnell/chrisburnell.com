@@ -41,7 +41,6 @@
     "@11ty/eleventy-img": "^3.1.8",
     "@11ty/eleventy-plugin-bundle": "^1.0.5",
     "@11ty/eleventy-plugin-directory-output": "^1.0.1",
-    "@11ty/eleventy-plugin-inclusive-language": "^1.0.3",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "@11ty/eleventy-plugin-webc": "^0.11.2",
@@ -72,7 +71,8 @@
     "markdown-it": "^14.0.0",
     "markdown-it-abbr": "^2.0.0",
     "markdown-it-footnote": "^4.0.0",
-    "pagefind": "^1.0.4"
+    "pagefind": "^1.0.4",
+    "utopia-core-scss": "^1.0.0"
   },
   "scripts": {
     "clean": "npx rimraf .cache && npx rimraf _site",

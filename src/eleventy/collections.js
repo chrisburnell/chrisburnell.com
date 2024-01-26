@@ -129,7 +129,9 @@ module.exports = {
 			.filter((item) => item.data.rsvp)
 			.filter(isPublished)
 			.filter((item) => {
-				return daysUntil(item.data.rsvp.date) == 0
+				const startLead = epoch(item.data.rsvp.date) - durationDay
+				const end = epoch(item.data.rsvp.end || item.data.rsvp.date)
+				return startLead < epoch(now) && epoch(now) < end
 			})
 			.sort((a, b) => {
 				return new Date(a.data.rsvp) - new Date(b.data.rsvp)
@@ -141,14 +143,20 @@ module.exports = {
 			.filter((item) => item.data.rsvp)
 			.filter(isPublished)
 			.filter((item) => {
-				if (daysUntil(item.data.rsvp.date) == 0) {
+				// remove RSVPs that have passed the end datetime
+				if (item.data.rsvp.end && epoch(item.data.rsvp.end) < epoch(now)) {
+					return false
+				}
+			})
+			.filter((item) => {
+				const startLead = epoch(item.data.rsvp.date) - durationDay
+				const end = epoch(item.data.rsvp.end || item.data.rsvp.date)
+				// remove todayRSVPs
+				if (startLead < epoch(now) && epoch(now) < end) {
 					return false
 				}
 				const lead = (item.data.rsvp?.upcoming_days_lead || upcomingDaysLead) * durationDay
-				if (item.data.rsvp.show_upcoming_always || (epoch(item.data.rsvp.date) > now && epoch(item.data.rsvp.date) - epoch(now) < lead)) {
-					return true
-				}
-				return false
+				return item.data.rsvp.show_upcoming_always || (epoch(item.data.rsvp.date) > epoch(now) && epoch(item.data.rsvp.date) - epoch(now) < lead)
 			})
 			.sort((a, b) => {
 				return new Date(b.data.rsvp) - new Date(a.data.rsvp)
