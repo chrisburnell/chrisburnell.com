@@ -1,8 +1,0 @@
-{% if updated_text %}
-	<div id="updated" class=" [ updated ] [ box ] [ flow ] ">
-		{% if updated %}
-			<time datetime="{{ updated | rfc3339Date }}">Updated {{ updated | friendlyDateLong | safe }}:</time>
-		{% endif %}
-		{{ updated_text | markdownFormat | safe }}
-	</div>
-{% endif %}

@@ -1,5 +1,0 @@
-{% if banner -%}
-	{% set banner_url = banner.url | default(banner) -%}
-	{% set banner_alt = banner.alt | default('') -%}
-	{% image './images/banners/' + banner_url, banner_alt, ' [ banner ] [ u-photo ] ' %}
-{%- endif %}
