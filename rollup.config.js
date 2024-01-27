@@ -1,4 +1,3 @@
-require("dotenv").config()
 const commonjs = require("@rollup/plugin-commonjs")
 const { nodeResolve } = require("@rollup/plugin-node-resolve")
 const { terser } = require("rollup-plugin-terser")

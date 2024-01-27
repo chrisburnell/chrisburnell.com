@@ -1,6 +1,6 @@
-import site from "./src/data/site.js"
+import { url as siteURL } from "./src/data/site.js"
 
-import { getHost } from "./src/eleventy/filters/strings.js"
+import filters from "./src/eleventy/filters.js"
 
 export default async function(eleventyConfig) {
 	eleventyConfig.setServerPassthroughCopyBehavior("passthrough")
@@ -8,8 +8,14 @@ export default async function(eleventyConfig) {
 	eleventyConfig.setDataDeepMerge(true)
 	eleventyConfig.setQuietMode(true)
 
+	Object.keys(filters).forEach((filterTypes) => {
+		Object.keys(filters[filterTypes]).forEach((filterName) => {
+			eleventyConfig.addFilter(filterName, filterTypes[filterName])
+		})
+	})
+
 	eleventyConfig.on("beforeBuild", () => {
-		console.log(`[${getHost(site.url)}] Generating…`)
+		console.log(`[${filters.urls.getHost(siteURL)}] Generating...`)
 	})
 
 	return {

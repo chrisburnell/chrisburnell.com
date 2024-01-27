@@ -1,27 +1,26 @@
+import { locale } from "../../data/site.js"
+
+const conjunctionFormat = new Intl.ListFormat(locale, { style: "long", type: "conjunction" })
 
 /**
- * @param {string} url
- * @returns {object}
- */
-const getURLObject = (url) => {
-	return new URL(url)
-}
-
-/**
- * @param {string} url
+ * @param {object[]} strings
  * @returns {string}
  */
-export const getHost = (url) => {
-	return getURLObject(url).hostname
+export const conjunction = (strings) => {
+	return conjunctionFormat.format(strings)
 }
 
 /**
- * @param {string} url
- * @returns {string}
+ * @param {string} string
+ * @param {boolean=false} lower
+ * @return {string}
  */
-export const getPathname = (url) => {
-	return getURLObject(url).pathname
+export const capitalize = (string, lower = false) => {
+	return (lower ? string.toLowerCase() : string).replace(/(?:^|\s|["'([{])+\S/g, (match) => {
+		return match.toUpperCase()
+	})
 }
+
 /**
  * @param {string} string
  * @returns {string}
@@ -31,7 +30,7 @@ export const stripHTML = (string) => {
 }
 
 export default {
-	getHost,
-	getPathname,
+	capitalize,
+	conjunction,
 	stripHTML,
 }
