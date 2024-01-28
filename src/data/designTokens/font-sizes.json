@@ -1,0 +1,20 @@
+{
+  "alpha-min": "2.074rem",
+  "alpha": "clamp(2.074rem, 0.186rem + 4.314vi, 4.5rem)",
+  "alpha-max": "4.5rem",
+  "inbetween-min": "1.728rem",
+  "inbetween": "clamp(1.728rem, 0.998rem + 1.669vi, 2.667rem)",
+  "inbetween-max": "2.667rem",
+  "beta-min": "1.438rem",
+  "beta": "clamp(1.438rem, 1rem + 1vi, 2rem)",
+  "beta-max": "2rem",
+  "gamma-min": "1.2rem",
+  "gamma": "clamp(1.2rem, 0.967rem + 0.533vi, 1.5rem)",
+  "gamma-max": "1.5rem",
+  "default-min": "1rem",
+  "default": "clamp(1rem, 0.903rem + 0.222vi, 1.125rem)",
+  "default-max": "1.125rem",
+  "small-min": "0.875rem",
+  "small": "clamp(0.875rem, 0.778rem + 0.222vi, 1rem)",
+  "small-max": "1rem"
+}

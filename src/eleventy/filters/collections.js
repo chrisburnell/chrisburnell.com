@@ -1,5 +1,7 @@
 import { url as siteURL } from "../../data/site.js"
 
+import categories from "../../data/categories.js"
+import ignoredTags from "../../data/ignoredTags.js"
 import { friendlyDate } from "./dates.js"
 import { capitalize, conjunction, stripHTML } from "./strings.js"
 
@@ -12,11 +14,38 @@ export const getCategoryName = (data) => {
 }
 
 /**
+ * @param {object[]} array
+ * @param {object[]} filterList
+ * @returns {object[]}
+ */
+const filterOut = (array, filterList) => {
+	return array.filter((item) => {
+		return !filterList.includes(item)
+	})
+}
+
+/**
+ * @param {object[]} array
+ * @returns {object[]}
+ */
+export const categoryFilter = (array) => {
+	return filterOut(array, categories)
+}
+
+/**
+ * @param {object[]} array
+ * @returns {object[]}
+ */
+export const tagFilter = (array) => {
+	return filterOut(array, ignoredTags)
+}
+
+/**
  * @param {object} data
  * @returns {object|string}
  */
 export const getPropertyData = (data) => {
-	return data.bookmark_of || data.drink_of || data.like_of || data.listen_of || data.play_of || data.read_of || data.watch_of
+	return data.bookmark_of || data.drink_of || data.like_of || data.listen_of || data.play_of || data.read_of || data.watch_of || {}
 }
 
 /**
@@ -24,7 +53,7 @@ export const getPropertyData = (data) => {
  * @returns {string}
  */
 export const getPropertyTitle = (data) => {
-	return getPropertyData(data).title
+	return getPropertyData(data)?.title
 }
 
 /**
@@ -33,7 +62,7 @@ export const getPropertyTitle = (data) => {
  */
 export const getPropertyURL = (data) => {
 	const propertyData = getPropertyData(data)
-	return propertyData.url || propertyData
+	return propertyData?.url || propertyData
 }
 
 /**
@@ -45,13 +74,30 @@ export const getPropertyAuthors = (data) => {
 }
 
 /**
+ * @param {object|string} author
+ * @returns {object}
+ */
+const getPropertyAuthorData = (author) => {
+	return {
+		title: author?.title || author?.url || null,
+		url: author?.url || null,
+	}
+}
+
+/**
+ * @param {object} author
+ * @returns {string}
+ */
+const propertyAuthorString = (author) => {
+	return `<a href="${author.url}"${!author?.url.includes(siteURL) && ` rel="external"`}>${author.title}</a>`
+}
+
+/**
  * @param {object} data
  * @returns {string}
  */
 export const getPropertyAuthorsString = (data) => {
-	return conjunction([...getPropertyAuthors(data)].map((author) => {
-		return `<a href="${author.url}"${!author.url.includes(siteURL) ? ` rel="external"` : ``}>${author.title}</a>`
-	}))
+	return conjunction([...getPropertyAuthors(data)].map(getPropertyAuthorData).map(propertyAuthorString))
 }
 
 /**
@@ -75,4 +121,6 @@ export default {
 	getPropertyAuthors,
 	getPropertyAuthorsString,
 	getTitle,
+	categoryFilter,
+	tagFilter,
 }

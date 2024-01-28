@@ -12,6 +12,24 @@ export const established = `2008`
 export const favicon = `/images/favicon-512.png`
 export const logo = `/images/raven.svg`
 
+export const urls = {
+	license: "https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode",
+	indieauth_endpoint: "https://indieauth.com/auth",
+	indieauth_token: "https://tokens.indieauth.com/token",
+	micropub: "https://corvus.chrisburnell.com",
+	openid: "https://openid.indieauth.com/openid",
+	speedlify: "https://speedlify.chrisburnell.com",
+	superfeedr: "https://chrisburnell.superfeedr.com",
+	switchboard: "https://switchboard.p3k.io",
+}
+
+export const cacheDurations = {
+	hourly: "1h",
+	daily: "23h",
+	weekly: "167h",
+	monthly: "671h",
+}
+
 export default {
 	title,
 	tagline,
@@ -26,4 +44,6 @@ export default {
 	established,
 	favicon,
 	logo,
+	urls,
+	cacheDurations,
 }

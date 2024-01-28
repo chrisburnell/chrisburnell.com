@@ -14,11 +14,13 @@ export const keyValue = (object, key) => {
  * @returns {object[]}
  */
 export const arrayKeyValues = (array, key) => {
-	return array.filter((item) => {
-		return keyValue(item, key)
-	}).map((item) => {
-		return keyValue(item, key)
-	})
+	return array
+		.filter((item) => {
+			return keyValue(item, key)
+		})
+		.map((item) => {
+			return keyValue(item, key)
+		})
 }
 
 export default {

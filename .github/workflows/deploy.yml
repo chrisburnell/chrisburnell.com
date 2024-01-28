@@ -26,7 +26,7 @@ jobs:
       - name: Set the Node version
         uses: actions/setup-node@v3
         with:
-          node-version: "19.7.0"
+          node-version: "20.11.0"
       - name: Setup npm dependencies cache
         id: cache-npm
         uses: actions/cache@v3

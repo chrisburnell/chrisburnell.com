@@ -9,5 +9,5 @@ export default {
 	eleventyComputed: {
 		canonical: (data) => siteURL + data.page.url,
 		meta_title: (data) => stripHTML(data.title),
-	}
+	},
 }

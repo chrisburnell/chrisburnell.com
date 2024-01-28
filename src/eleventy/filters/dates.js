@@ -1,6 +1,8 @@
 import { DateTime } from "luxon"
 
-const ordinalPlurals = new Intl.PluralRules("en", {
+import { locale } from "../../data/site.js"
+
+const ordinalPlurals = new Intl.PluralRules(locale, {
 	type: "ordinal",
 })
 
@@ -12,7 +14,7 @@ const ordinalSuffixes = {
 }
 
 /**
- * @param {number} n
+ * @param {number} number
  * @returns {string}
  */
 export const ordinal = (number) => {
@@ -27,6 +29,7 @@ export const ordinal = (number) => {
 const formatDatetime = (dateString, format) => {
 	return DateTime.fromISO(dateString, { setZone: true }).toFormat(format)
 }
+
 /**
  * @param {string} dateString
  * @param {string} format
@@ -45,8 +48,14 @@ export const friendlyDateLong = (dateString) => {
 	return formatDatetime(dateString, `cccc, LLLL '${ordinal(day)}', yyyy`)
 }
 
+export const rfc3339Date = (dateString, showTimezone = true) => {
+	const format = "yyyy-MM-dd'T'HH:mm:ss" + (showTimezone && "ZZ")
+	return formatDatetime(dateString, format)
+}
+
 export default {
+	ordinal,
 	friendlyDate,
 	friendlyDateLong,
-	ordinal,
+	rfc3339Date,
 }
