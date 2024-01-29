@@ -1,0 +1,26 @@
+////
+/// Browse
+/// @group blocks
+////
+
+.browse__list {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-block-start: var(--size-large);
+	font-weight: var(--font-weight-semibold);
+
+	li {
+		flex: 0 1 50%;
+	}
+}
+
+.browse__previous,
+.browse__next {
+	display: block;
+}
+
+.browse__next {
+	text-align: end;
+	margin-inline-start: auto;
+}

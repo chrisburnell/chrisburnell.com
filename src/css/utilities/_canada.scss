@@ -1,0 +1,14 @@
+////
+/// Canada
+/// @group utilities
+////
+
+.canada {
+	&,
+	* {
+		&::selection,
+		&::target-text {
+			background-color: h(maple);
+		}
+	}
+}

@@ -9,8 +9,9 @@ tags:
   - motion
 syndicate_to:
   - https://twitter.com/iamchrisburnell/status/1583014193909096448
-js: article-moving-targets.js
 ---
+
+{% js -%}{% include '../../js/pages/article-moving-targets.js' %}{%- endjs -%}
 
 ## Choose your own adventure
 

@@ -1,0 +1,33 @@
+////
+/// Christmas
+/// @group themes
+////
+
+@mixin theme-christmas() {
+	--color-lynx: oklch(24.6% 0.0188 153.43);
+	--color-wolf: oklch(37.1% 0.0326 152.35);
+	--color-bowhead: oklch(53.7% 0.051 151.36);
+	--color-raven: oklch(72.3% 0.0735 152.51);
+	--color-highland: oklch(81.5% 0.0635 153.29);
+	--color-coyote: oklch(89.3% 0.0385 152.86);
+	--color-bear: oklch(96.8% 0.0131 151.92);
+
+	&:is(html) {
+		scrollbar-color: h(maple) h(snowy);
+	}
+
+	.logo,
+	.perch::after {
+		filter: hue-rotate(270deg) saturate(200%);
+	}
+
+	.navigation__list a::after {
+		background-color: h(maple);
+	}
+}
+
+:root:has([name="theme"] [value*="christmas"]:checked),
+[data-theme*="christmas"],
+.christmas {
+	@include theme-christmas;
+}

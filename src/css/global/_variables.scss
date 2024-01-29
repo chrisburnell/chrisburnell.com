@@ -1,0 +1,76 @@
+////
+/// Variables
+/// @group global
+////
+
+:root {
+	/* Build the Monochrome colors */
+	--monochrome-chroma: 0;
+	--monochrome-hue: 0;
+	--snowy-lightness: 98.2%;
+	--thunder-lightness: 15%;
+	@include setup-monochrome-colors;
+
+	/* Build the Raven colors */
+	--raven-lightness: 61.29%;
+	--raven-chroma: 0.064;
+	--raven-hue: 237.73;
+	@include setup-raven-colors;
+
+	@each $name, $value in map-merge($colors-secondary, $colors-tertiary) {
+		#{"--color-" + $name}: oklch(#{$value});
+	}
+
+	@each $name, $value in $opacities {
+		#{"--opacity-" + $name}: #{$value};
+	}
+
+	@each $name, $value in map-merge($sizes, $sizes-extra) {
+		#{"--size-" + $name}: #{$value};
+	}
+	@each $name, $value in $breakpoints {
+		#{"--size-breakpoint-" + $name}: #{$value};
+	}
+
+	@each $name, $value in $font-families {
+		#{"--font-family-" + $name}: #{$value};
+	}
+
+	@each $name, $value in $font-sizes {
+		#{"--font-size-" + $name}: #{$value};
+	}
+
+	@each $name, $value in $font-weights {
+		#{"--font-weight-" + $name}: #{$value};
+	}
+
+	@each $name, $value in $line-heights {
+		#{"--line-height-" + $name}: #{$value};
+	}
+
+	@each $name, $value in $z-indexes {
+		#{"--z-index-" + $name}: #{$value};
+	}
+
+	--animation-duration: 2s;
+
+	--rotation-default: 5deg;
+
+	--transition-duration: 0.2s;
+	--transition-duration-short: 120ms;
+	--transition-duration-long: 1s;
+	--transition-function: ease;
+
+	--line-clamp: 3;
+
+	--aspect-ratio: 16 / 9;
+
+	--contrast-list: #{h(yeti)}, #{h(snowy)}, #{h(mineshaft)}, #{h(thunder)};
+	--contrast-ratio: AA;
+
+	// Generated with: https://www.joshwcomeau.com/shadow-palette/
+	--shadow-color: var(--color-shadow-light);
+	--box-shadow-low: 0.3px 0.5px 0.7px color-mix(in oklab, var(--shadow-color), transparent 36%), 0.4px 0.8px 1px -1.2px color-mix(in oklab, var(--shadow-color), transparent 36%), 1px 2px 2.5px -2.5px color-mix(in oklab, var(--shadow-color), transparent 36%);
+	--box-shadow-medium: 0.3px 0.5px 0.7px color-mix(in oklab, var(--shadow-color), transparent 36%), 0.8px 1.6px 2px -0.8px color-mix(in oklab, var(--shadow-color), transparent 36%), 2.1px 4.1px 5.2px -1.7px color-mix(in oklab, var(--shadow-color), transparent 36%), 5px 10px 12.6px -2.5px color-mix(in oklab, var(--shadow-color), transparent 36%);
+	--box-shadow-high: 0.3px 0.5px 0.7px color-mix(in oklab, var(--shadow-color), transparent 36%), 1.5px 2.9px 3.7px -0.4px color-mix(in oklab, var(--shadow-color), transparent 36%), 2.7px 5.4px 6.8px -0.7px color-mix(in oklab, var(--shadow-color), transparent 36%), 4.5px 8.9px 11.2px -1.1px color-mix(in oklab, var(--shadow-color), transparent 36%), 7.1px 14.3px 18px -1.4px color-mix(in oklab, var(--shadow-color), transparent 36%), 11.2px 22.3px 28.1px -1.8px color-mix(in oklab, var(--shadow-color), transparent 36%), 17px 33.9px 42.7px -2.1px color-mix(in oklab, var(--shadow-color), transparent 36%), 25px 50px 62.9px -2.5px color-mix(in oklab, var(--shadow-color), transparent 36%);
+}

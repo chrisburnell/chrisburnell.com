@@ -9,7 +9,7 @@
 
 		<link rel="preload" href="/fonts/proxima-vara-subset.woff2" as="font" type="font/woff2" crossorigin>
 
-		{% if env.ELEVENTY_PRODUCTION -%}
+		{% if eleventy.env.runMode === "build" -%}
 		<link rel="icon" href="/images/favicon.ico">
 		<link rel="icon" href="/images/favicon-64.png">
 		<link rel="apple-touch-icon" href="/images/favicon-180.png">
@@ -49,16 +49,8 @@
 		<meta name="theme-color" content="{{ designTokens['colors-hex'] | keyValue("raven") }}">
 		<meta name="supported-color-schemes" content="light dark">
 
-		{% if not global.cssnakedday -%}
-		<!-- Inlined Critical CSS -->
-		<style>
-			{%- getBundle 'css', 'supercritical' -%}
-			{%- getBundle 'css', 'critical' -%}
-		</style>
-		<!-- Deferred CSS -->
-		<link rel="stylesheet" href="{% getBundleFileUrl 'css' %}" media="print" onload="this.media='all'">
-		<noscript><link rel="stylesheet" href="{% getBundleFileUrl 'css' %}"></noscript>
-		{%- endif %}
+		{% include 'css.njk' %}
+		{% include 'js.njk' %}
 
 		{% if (tags and 'httpstatus' in tags) or (noindex and nofollow) -%}
 		<meta name="robots" content="noindex,nofollow">
@@ -88,16 +80,16 @@
 		<meta property="og:type" content="website">
 		{%- endif %}
 		<meta property="og:url" content="{{ canonical }}">
-		<meta property="og:title" content="{{ meta_title | striptags(true) | safe }}">
-		<meta property="og:description" content="{{ meta_description | striptags(true) | safe }}">
+		<meta property="og:title" content="{{ meta_title | safe }}">
+		<meta property="og:description" content="{{ meta_description | safe }}">
 		<meta property="og:locale" content="{{ site.locale }}">
 		<meta property="og:site_name" content="{{ site.title }}">
 		<meta property="og:image" content="{{ meta_image }}">
 
 		{% if layout == 'post' -%}
-		<meta property="article:published_time" content="{{ date | friendlyDateLong | striptags(true) | safe }}">
+		<meta property="article:published_time" content="{{ date | friendlyDate | safe }}">
 		{% if updated or end -%}
-		<meta property="article:modified_time" content="{{ updated | default(end) | friendlyDateLong | safe }}">
+		<meta property="article:modified_time" content="{{ updated | default(end) | friendlyDate | safe }}">
 		{%- endif %}
 		<meta property="article:author" content="{{ author.name }}">
 		{% for tag in tags | categoryFilter | tagFilter %}
@@ -115,7 +107,7 @@
 		{%- endif %}{# end non-httpstatus #}
 
 		<!-- Inlined Critical JS -->
-		<script>{% getBundle 'js', 'critical' %}</script>
+		<script>{% include '../../js/critical.js' %}</script>
 	</head>
 	<body>
 		<header class=" [ header ] ">
@@ -141,5 +133,14 @@
 		</main>
 		<footer>
 		</footer>
+
+		{# SVG Sprites -#}
+		{% set svg %}{% include '../../../images/sprites.svg' %}{% endset -%}
+		{{ svg | replace('<?xml version="1.0" encoding="utf-8"?>', '') | replace('<svg', '<svg display="none" aria-hidden="true"') | safe }}
+
+		{% if eleventy.env.runMode === "build" -%}
+		{# ServiceWorker -#}
+		<script>{% include '../../js/navigator.js' %}</script>
+		{%- endif %}
 	</body>
 </html>

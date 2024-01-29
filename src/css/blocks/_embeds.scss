@@ -1,0 +1,30 @@
+////
+/// Embeds & Media
+/// @group blocks
+////
+
+// Client-side Web Component Renderer
+// a.k.a. "Partial Hydration" B-)
+is-land {
+	display: block;
+}
+
+// CodePen Embeds
+.cp_embed_wrapper {
+	--max-inline-size: auto;
+	--gutter: 0;
+
+	resize: both;
+	padding: 0;
+	overflow: auto;
+
+	iframe {
+		margin-block-end: 0;
+	}
+}
+
+// Speakerdeck Embeds
+.speakerdeck-embed-wrapper {
+	--max-inline-size: auto;
+	--gutter: 0;
+}

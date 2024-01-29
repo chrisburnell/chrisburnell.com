@@ -1,0 +1,344 @@
+////
+/// Functions
+/// @group abstracts
+////
+
+///
+/// Return an OKLCH color
+///
+/// @param {String} $value - key from `color` map
+/// @param {String} $opacity [null] - key from `opacity` map
+///
+/// @throw Error if no parameter is passed.
+///
+/// @return {Color}
+///
+@function h($value, $opacity: null) {
+	@if not $opacity {
+		@return var(--color-#{$value});
+	}
+	@return color-mix(in oklab, var(--color-#{$value}), transparent calc(100% - var(--opacity-#{$opacity})));
+}
+
+///
+/// Test if `$value` is a valid direction
+///
+/// @param {*} $value - Value to test
+///
+/// @throw Error if no parameter is passed.
+///
+/// @return {Bool}
+///
+@function is-direction($value) {
+	@if not $value {
+		@warn "`is-direction()` expects one parameter.";
+		@return false;
+	}
+
+	$is-keyword: index((to top, to top right, to right top, to right, to bottom right, to right bottom, to bottom, to bottom left, to left bottom, to left, to left top, to top left), $value);
+	$is-angle: type-of($value) == number and index("deg" "grad" "turn" "rad", unit($value));
+
+	@return $is-keyword or $is-angle;
+}
+
+///
+/// Test if `$value` is a valid corner or side
+///
+/// @param {*} $value - Value to test
+///
+/// @throw Error if no parameter is passed.
+///
+/// @return {Bool}
+///
+$sides: (top, bottom, left, right);
+$corners: (top-left, top-right, bottom-left, bottom-right);
+$centers: (center, top-center, bottom-center, center-left, center-right);
+@function is-edge($value) {
+	@if not $value {
+		@warn "`is-edge()` expects one parameter.";
+		@return false;
+	}
+
+	$is-side: index($sides, $value);
+	$is-corner: index($corners, $value);
+
+	@return $is-side or $is-corner;
+}
+
+///
+/// Test if `$value` is a valid length
+///
+/// @param {*} $value - Value to test
+///
+/// @throw Error if no parameter is passed.
+///
+/// @return {Bool}
+///
+@function is-length($value) {
+	@if not $value {
+		@warn "`is-length()` expects one parameter.";
+		@return false;
+	}
+
+	$is-length: type-of($value) == number and index("%" "ch" "cm" "em" "ex" "fr" "in" "mm" "pc" "pt" "px" "rem" "vmax" "vmin" "vh" "vw", unit($value));
+
+	@return $is-length;
+}
+
+///
+/// Combine 3+ Maps
+///
+/// @param {*} $maps... - List of Maps
+///
+/// @throw Error if no parameter is passed.
+///
+/// @return {Map}
+///
+@function map-multiple-merge($maps...) {
+	$merged: ();
+
+	@each $map in $maps {
+		$merged: map-merge($merged, $map);
+	}
+	@return $merged;
+}
+
+///
+/// Split `$string` into several parts using `$delimiter`.
+///
+/// @param {String} $string    - string to split
+/// @param {String} $delimiter ('') - string to use as a delimiter to split `$string`
+///
+/// @return {List}
+///
+@function str-split($string, $delimiter) {
+	$result: ();
+	$length: str-length($string);
+
+	@if str-length($delimiter) == 0 {
+		@for $i from 1 through $length {
+			$result: append($result, str-slice($string, $i, $i));
+		}
+
+		@return $result;
+	}
+
+	$running: true;
+	$remaining: $string;
+
+	@while $running {
+		$index: str-index($remaining, $delimiter);
+
+		@if $index {
+			$slice: str-slice($remaining, 1, $index - 1);
+			$result: append($result, $slice);
+			$remaining: str-slice($remaining, $index + str-length($delimiter));
+		} @else {
+			$running: false;
+		}
+	}
+
+	@return append($result, $remaining);
+}
+
+///
+/// Remap a number from one range to another
+///
+/// @param {Number} $number - Initial Value
+/// @param {Number} $ranges - 2/4 minimum/maximum values representing the ranges
+///
+/// @example scss
+///   $variable: range-map(2, 4, 100);
+///   // $variable: 50;
+///
+/// @example scss
+///   $variable: range-map(68, 30, 160, 0, 100);
+///   // $variable: 42.5;
+///
+/// @return {Number} Number re-mapped in new range
+///
+@function range-map($number, $ranges...) {
+	@if not $number or not $ranges or not (length($ranges) == 2 or length($ranges) == 4) {
+		@warn "`range-map()` requires three or five parameters: initial number, (old minimum), old maximum, (new minimum), and new maximum.";
+		@return false;
+	}
+
+	$old-minimum: if(length($ranges) == 2, 0, nth($ranges, 1));
+	$old-maximum: if(length($ranges) == 2, nth($ranges, 1), nth($ranges, 2));
+	$new-minimum: if(length($ranges) == 2, 0, nth($ranges, 3));
+	$new-maximum: if(length($ranges) == 2, nth($ranges, 2), nth($ranges, 4));
+
+	@if $old-minimum >= $old-maximum {
+		@warn "old maximum must be greater than old minimum";
+		@return false;
+	}
+	@if $new-minimum >= $new-maximum {
+		@warn "new maximum must be greater than new minimum";
+		@return false;
+	}
+	@if $number < $old-minimum {
+		@warn "initial number must be greater than old minimum";
+		@return false;
+	}
+	@if $number > $old-maximum {
+		@warn "initial number must be less than old maximum";
+		@return false;
+	}
+
+	@return math.div($number - $old-minimum, $old-maximum - $old-minimum) * ($new-maximum - $new-minimum) + $new-minimum;
+}
+
+///
+/// Unique Groups
+///
+/// @param {List|Map} $data - Data in List/Map format
+///
+/// @example scss
+///   $list:
+///     alpha,
+///     beta,
+///     gamma;
+///   @each $unique-group in unique-groups($list) {
+///     @each $item in $unique-group {
+///       .from-#{nth($item, 1)}-to-#{nth($item, 2)} {
+///         color: initial;
+///       }
+///     }
+///   }
+///   // .from-alpha-to-beta {
+///   //   color: initial;
+///   // }
+///   // .from-alpha-to-gamma {
+///   //   color: initial;
+///   // }
+///   // .from-beta-to-gamma {
+///   //   color: initial;
+///   // }
+///
+/// @throw Error if no parameter is passed.
+/// @throw Error if parameter passed is neither a List nor a Map.
+///
+/// @return {Map} Unique groups
+///
+@function unique-groups($data, $size: 2) {
+	@if not $data or not (type-of($data) == list or type-of($data) == map) {
+		@warn "`unique-groups()` expects either a single List or single Map for `$data`.";
+		@return false;
+	}
+
+	$unique-groups: ();
+
+	@if type-of($data) == list {
+		$seen-first: ();
+		@each $first in $data {
+			$seen-first: append($seen-first, $first);
+			$seen-second: ();
+			@each $second in $data {
+				$seen-second: append($seen-second, $second);
+				@if $first != $second and not index($seen-first, $second) {
+					@if $size >= 3 {
+						@each $third in $data {
+							@if $second != $third and not index($seen-second, $third) {
+								$unique-group: ($first, $second, $third);
+								$unique-groups: append($unique-groups, $unique-group);
+							}
+						}
+					} @else {
+						$unique-group: ($first, $second);
+						$unique-groups: append($unique-groups, $unique-group);
+					}
+				}
+			}
+		}
+	} @else if type-of($data) == map {
+		$seen-first: ();
+		@each $first-key, $first-value in $data {
+			$seen-first: append($seen-first, $first-key);
+			$seen-second: ();
+			@each $second-key, $second-value in $data {
+				$seen-second: append($seen-second, $second-key);
+				@if $first-key != $second-key and not index($seen-first, $second-key) {
+					@if $size >= 3 {
+						@each $third-key, $third-value in $data {
+							@if $second-key != $third-key and not index($seen-second, $third-key) {
+								$unique-group: (
+									(
+										$first-key: $first-value,
+									),
+									(
+										$second-key: $second-value,
+									),
+									(
+										$third-key: $third-value,
+									)
+								);
+								$unique-groups: append($unique-groups, $unique-group);
+							}
+						}
+					} @else {
+						$unique-group: (
+							(
+								$first-key: $first-value,
+							),
+							(
+								$second-key: $second-value,
+							)
+						);
+						$unique-groups: append($unique-groups, $unique-group);
+					}
+				}
+			}
+		}
+	} @else {
+		@warn "`unique-groups()` expects either a List or Map `$data` parameter.";
+		@return false;
+	}
+
+	@return $unique-groups;
+}
+
+///
+/// Walk through a List with a Function
+///
+/// @param {List} $list - List to walk through
+/// @param {String} $function - Function to apply to all members
+/// @param {ArgList} $args - Extra parameters to pass to the function
+///
+/// @example scss
+///   content: "#{walk(one two three, to-upper-case)}";
+///   // content: "ONE TWO THREE";
+///
+/// @throw Error if no parameters are passed.
+/// @throw Error if `$function parameter passed does not match an existing function.
+///
+/// @return {List} Updated list
+///
+@function walk($list, $function, $args...) {
+	@if not $list and $function {
+		@warn "`walk()` expects two or more parameters (`$list`, `$function`, `$args...`).";
+		@return false;
+	}
+
+	@if not function-exists($function) {
+		@warn "There is no function named `#{$function}`.";
+		@return false;
+	}
+
+	@for $i from 1 through length($list) {
+		$list: set-nth($list, $i, call($function, nth($list, $i), $args...));
+	}
+
+	@return $list;
+}
+
+// Strip unit from a number
+@function strip-unit($number) {
+	@if unitless($number) {
+		@return $number;
+	} @else {
+		@return $number / ($number * 0 + 1);
+	}
+}
+@function strip-units($number) {
+	@return strip-unit($number);
+}

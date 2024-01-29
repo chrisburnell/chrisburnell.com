@@ -1,6 +1,11 @@
 import { url as siteURL } from "../data/site.js"
 
-import { getCategoryName, getPropertyAuthors, getPropertyAuthorsString, getTitle } from "../eleventy/filters/collections.js"
+import {
+	getCategoryName,
+	getPropertyAuthors,
+	getPropertyAuthorsString,
+	getTitle
+} from "../eleventy/filters/collections.js"
 import { formatAsMarkdown } from "../eleventy/filters/strings.js"
 import { getHost } from "../eleventy/filters/urls.js"
 

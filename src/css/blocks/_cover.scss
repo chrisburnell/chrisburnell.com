@@ -1,0 +1,12 @@
+////
+/// Cover
+/// @group blocks
+////
+
+.cover {
+	&,
+	%image {
+		max-block-size: 100vh;
+		max-block-size: 100dvb;
+	}
+}

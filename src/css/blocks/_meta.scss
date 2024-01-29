@@ -1,0 +1,42 @@
+////
+/// Meta
+/// @group blocks
+////
+
+.meta {
+	--flow-space: var(--size-medium);
+	container: meta / inline-size;
+
+	@include cq(null, null, "medium") {
+		margin-block-start: var(--size-large);
+	}
+
+	@include cq(null, "medium") {
+		align-self: stretch;
+	}
+
+	h2 {
+		margin-block-end: var(--size-small);
+	}
+
+	%anchor,
+	data,
+	time {
+		font-weight: var(--font-weight-semibold);
+	}
+
+	.emoji {
+		inline-size: calc(var(--size-medium) + var(--size-tiny));
+		display: inline-block;
+	}
+
+	.rating {
+		margin-inline-start: var(--size-tiny);
+		vertical-align: text-bottom;
+	}
+}
+
+.meta__information {
+	--flow-space: var(--size-small);
+	line-height: var(--line-height-medium);
+}

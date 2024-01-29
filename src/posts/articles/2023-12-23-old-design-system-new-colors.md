@@ -10,8 +10,9 @@ tags:
   - writing
 syndicate_to:
   - https://fediverse.repc.co/@chrisburnell/111691333492575973
-css: styleguide.css
 ---
+
+{% css -%}{% renderFile 'src/css/pages/styleguide.scss' %}{%- endcss -%}
 
 ## Hexidecimal / RGB
 
@@ -545,7 +546,7 @@ Colour formats like HSL and OKLCH give us much more intuitive understanding of t
 I hope you found this useful, and I’d love to know how others are doing this sort of things or what kind of pitfalls I might run into using this technique!
 
 {% css %}
-@layer pages {
+@layer overrides {
     .palette li {
         flex-grow: 0;
         white-space: normal;

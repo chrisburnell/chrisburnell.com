@@ -1,0 +1,128 @@
+////
+/// Lists
+/// @group global
+////
+
+:is(ol, ul) {
+	padding: 0;
+	margin: 0;
+	list-style-type: ""; // preferred over list-style: none; as it preserves semantics
+}
+:is(dl, ol, ul):not([class]),
+.default-list {
+	// Space out lists nested in a list
+	& & {
+		margin-block-start: var(--size-small);
+	}
+}
+:is(ol, ul):not([class]),
+.default-list {
+	padding-inline-start: var(--size-medium);
+	list-style: initial;
+
+	li {
+		padding-inline-start: var(--size-medium);
+
+		&::marker {
+			color: h(bowhead);
+			font-family: var(--font-family-sans);
+			font-style: normal;
+			font-variation-settings: normal;
+			font-weight: var(--font-weight-semibold);
+		}
+	}
+
+	& > li + li {
+		margin-block-start: var(--size-small);
+	}
+}
+ol:not([class]),
+ol.default-list {
+	list-style: decimal;
+
+	// Investigate custom properties (i.e. setting specific "type" of value)
+	@for $i from 1 through 10 {
+		&[start="#{$i}"] {
+			counter-increment: ordered-list #{$i - 1} !important;
+		}
+	}
+
+	& > li {
+		counter-increment: ordered-list;
+
+		&::marker {
+			content: counter(ordered-list) ".";
+			font-family: var(--font-family-monospace);
+			font-size: var(--font-size-small);
+		}
+	}
+
+	& & > li {
+		&::marker {
+			content: counters(ordered-list, "-", var(--ordered-list-type, decimal)) ".";
+		}
+	}
+
+	&[type="a"],
+	&.lower-alpha {
+		--ordered-list-type: lower-alpha;
+	}
+
+	&[type="A"],
+	&.upper-alpha {
+		--ordered-list-type: upper-alpha;
+	}
+
+	&[type="i"],
+	&.lower-roman {
+		--ordered-list-type: lower-roman;
+	}
+
+	&[type="I"],
+	&.upper-roman {
+		--ordered-list-type: upper-roman;
+	}
+
+	&[reversed] {
+		display: flex;
+		flex-direction: column-reverse;
+
+		// fix spacing based on reverse ordering
+		& > li {
+			&:first-child {
+				margin-block-end: 0;
+			}
+
+			&:not(:first-child) {
+				margin-block-end: var(--size-small);
+			}
+		}
+	}
+}
+ol:not([class]),
+ol:not([class*="continued-list"]),
+[counter-reset] {
+	counter-reset: ordered-list;
+}
+dl {
+	display: grid;
+	grid-template-columns: 100%;
+	gap: var(--size-medium);
+	margin-block-start: 0;
+	overflow: hidden;
+
+	@include cq(null, "tiny") {
+		grid-template-columns: minmax(min-content, 33.33%) 1fr;
+	}
+}
+dt {
+	font-weight: var(--font-weight-semibold);
+}
+dd {
+	margin: 0;
+	vertical-align: top;
+}
+
+:is(li, dt, dd) {
+	break-inside: avoid;
+}

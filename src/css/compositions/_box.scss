@@ -1,0 +1,68 @@
+////
+/// Box
+/// @group compositions
+///
+/// --background-color (var(--color-bear))
+///     Defines the background color the box.
+/// --max-inline-size (100%)
+///     Defines how wide the box should be, as a maximum.
+/// --gutter (var(--size-gutter))
+///     Defines the space around the box.
+/// --border-color (h(raven, beta))
+///     Defines the background color the box.
+////
+
+.box,
+%box {
+	background-color: var(--box-background-color, color-mix(in oklab, h(bear), h(snowy)));
+	color: var(--box-color, inherit);
+	max-inline-size: var(--box-max-inline-size, 100%) !important;
+	padding: var(--box-padding, var(--size-gutter));
+	margin-inline: auto;
+	border-width: 0;
+	border-block-start: var(--size-border-thin) solid var(--box-border-color, h(raven));
+	border-radius: var(--border-radius, var(--size-border-thin));
+	box-shadow: var(--box-shadow, var(--box-shadow-low));
+	text-align: start;
+	font-family: var(--font-family-sans);
+	font-style: normal;
+	font-variation-settings: normal;
+
+	%heading {
+		font-size: var(--font-size-default);
+		font-weight: var(--font-weight-semibold);
+		line-height: var(--line-height-medium);
+		text-transform: none;
+		letter-spacing: 0;
+	}
+
+	%anchor {
+		color: h(bowhead);
+	}
+}
+
+.box {
+	.meta &:not(ul) > %heading + * {
+		--flow-space: 0;
+	}
+}
+
+.box--success {
+	--box-background-color: #{h(conifer, delta)};
+	--box-border-color: #{h(conifer)};
+}
+
+.box--warning {
+	--box-background-color: #{h(aspen, delta)};
+	--box-border-color: #{h(aspen)};
+}
+
+.box--error {
+	--box-background-color: #{h(maple, delta)};
+	--box-border-color: #{h(maple)};
+}
+
+.box.line-length,
+.box--line-length {
+	--box-max-inline-size: calc(var(--size-line-length) + var(--gutter, var(--size-gutter)) * 2);
+}

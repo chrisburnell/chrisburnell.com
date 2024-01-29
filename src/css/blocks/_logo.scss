@@ -1,0 +1,30 @@
+////
+/// Logo
+/// @group blocks
+////
+
+.logo {
+	block-size: var(--size-logo-small);
+	inline-size: var(--size-logo-small);
+	display: flex;
+	transition: all var(--transition-duration) var(--transition-function);
+
+	%image {
+		max-block-size: 100%;
+		object-fit: contain;
+		transition: transform var(--transition-duration) var(--transition-function);
+	}
+
+	&:is(:hover, :focus, :active) {
+		background: none !important;
+
+		&,
+		%image {
+			outline: none;
+		}
+
+		%image {
+			transform: scale(1.1) rotate(6deg);
+		}
+	}
+}

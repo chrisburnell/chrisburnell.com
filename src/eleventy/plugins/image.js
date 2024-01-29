@@ -9,7 +9,7 @@ export default function (eleventyConfig) {
 			formats = ["svg"]
 		} else {
 			const originalFormat = src.includes("png") ? "png" : "jpg"
-			formats = process.env.ELEVENTY_PRODUCTION ? ["avif", "webp", originalFormat] : ["webp", originalFormat]
+			formats = process.env.ELEVENTY_RUN_MODE === "build" ? ["avif", "webp", originalFormat] : ["webp", originalFormat]
 		}
 
 		let options = {

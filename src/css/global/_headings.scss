@@ -1,0 +1,66 @@
+////
+/// Headings
+/// @group global
+////
+
+%heading {
+	padding: 0;
+	margin: 0;
+	position: relative;
+	font-family: var(--font-family-sans);
+	text-wrap: balance;
+	clear: both;
+}
+
+%alpha {
+	font-size: var(--font-size-alpha);
+	font-weight: var(--font-weight-heavy);
+	line-height: var(--line-height-medium);
+}
+h1 {
+	z-index: var(--z-index-above);
+}
+
+%beta {
+	font-size: var(--font-size-beta);
+	font-weight: var(--font-weight-semibold);
+	line-height: var(--line-height-medium);
+}
+h2 {
+	inline-size: fit-content;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	gap: 1ex;
+	padding-block-end: var(--size-tiny);
+	padding-inline-end: var(--size-large-gigantic);
+	box-shadow: inset 0 calc(-1 * var(--size-border-thin)) 0 h(yeti);
+}
+
+%gamma {
+	font-size: var(--font-size-gamma);
+	font-weight: var(--font-weight-semibold);
+	line-height: var(--line-height-default);
+}
+
+%delta {
+	font-size: var(--font-size-default);
+	font-weight: var(--font-weight-semibold);
+	line-height: var(--line-height-default);
+}
+
+%epsilon {
+	font-size: var(--font-size-small);
+	font-weight: var(--font-weight-semibold);
+	line-height: var(--line-height-default);
+}
+
+%zeta {
+	font-size: var(--font-size-small);
+	font-weight: var(--font-weight-regular);
+	line-height: var(--line-height-default);
+}
+
+%riza {
+	font-size: var(--font-size-default);
+}

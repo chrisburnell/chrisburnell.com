@@ -1,0 +1,83 @@
+////
+/// Geocities, baby!
+/// @group themes
+////
+
+@mixin theme-nineties() {
+	--font-family-sans: var(--font-family-serious);
+	--font-family-serif: var(--font-family-sophisticated);
+
+	font-size: 125%;
+	cursor: url("/images/animated/dinosaur.gif"), auto;
+
+	&,
+	*,
+	*::before,
+	*::after {
+		border-radius: 0 !important;
+		box-shadow: none !important;
+		text-shadow: none !important;
+		text-decoration-color: currentColor !important;
+	}
+
+	main {
+		background-image: url("/images/animated/stars.gif");
+	}
+
+	hr {
+		background-image: url("/images/animated/hr.gif");
+		inline-size: 475px;
+		max-inline-size: 100%;
+		block-size: 10px;
+		border-width: 0;
+	}
+
+	%heading,
+	.navigation__list %anchor {
+		font-weight: var(--font-weight-semibold) !important;
+	}
+
+	.header,
+	.footer,
+	.author__image,
+	.table,
+	button:not(.anchor),
+	input,
+	select,
+	textarea {
+		border: var(--size-border-thin) outset;
+	}
+
+	.header {
+		position: relative;
+	}
+
+	h1 {
+		font-family: var(--font-family-silly);
+	}
+
+	.table {
+		padding-block: 1em;
+	}
+
+	figcaption {
+		inline-size: 100%;
+		margin-block-start: 1em;
+		font-family: inherit;
+	}
+
+	.responses {
+		font-family: var(--font-family-silly);
+	}
+
+	.response__avatar img,
+	.author__image {
+		filter: saturate(150%) contrast(110%);
+	}
+}
+
+:root:has([name="theme"] [value*="nineties"]:checked),
+[data-theme*="nineties"],
+.nineties {
+	@include theme-nineties;
+}

@@ -1,0 +1,23 @@
+////
+/// Code Red
+/// @group themes
+////
+
+@mixin theme-code-red() {
+	--raven-lightness: 54.3%;
+	--raven-chroma: 0.076;
+	--raven-hue: 26.565;
+
+	@include setup-raven-colors;
+
+	.logo,
+	.perch::after {
+		filter: hue-rotate(155deg) saturate(200%);
+	}
+}
+
+:root:has([name="theme"] [value*="code-red"]:checked),
+[data-theme*="code-red"],
+.code-red {
+	@include theme-code-red;
+}

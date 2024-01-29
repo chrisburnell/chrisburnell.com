@@ -1,0 +1,60 @@
+////
+/// Anchor
+/// @group blocks
+////
+
+h2 %anchor:not(:is(:hover, :focus, :active)) {
+	text-decoration: none;
+}
+
+// Skip to main content
+.skip-link {
+	--outline-color: #{h(bowhead)};
+
+	background-color: h(bowhead);
+	color: h(snowy);
+	display: block;
+	padding: 1em 1.5em;
+	position: absolute;
+	inset-block-start: var(--size-medium);
+	inset-inline-start: 50%;
+	transform: translateX(-50%);
+	font-weight: var(--font-weight-semibold);
+	text-align: center;
+	z-index: var(--z-index-notificaton);
+}
+
+// Fragment Anchors inside Headings
+.fragment-anchor {
+	color: h(nickel);
+	padding-inline: var(--size-small);
+	position: absolute;
+	inset-block-start: 50%;
+	inset-inline-end: 0;
+	transform: translateY(-50%);
+	font-family: var(--font-family-monospace);
+	font-size: 0.8em;
+	font-weight: var(--font-weight-semibold);
+	text-transform: lowercase;
+
+	%heading:not(:hover, :focus-within) > &:not(:hover, :focus, :active) {
+		@include hidden;
+	}
+}
+
+// Related Anchors
+.related-anchor::after {
+	// NO-BREAK SPACE, RIGHTWARDS ARROW
+	content: " →";
+}
+
+// Fancy gradient anchor text
+.colourful-anchor {
+	&:is(:hover, :focus, :active) {
+		background-color: transparent;
+		background-image: linear-gradient(to bottom right, h(raven), h(maple));
+		background-clip: text;
+		text-fill-color: transparent;
+		box-decoration-break: clone;
+	}
+}

@@ -1,0 +1,299 @@
+////
+/// Helpers
+/// @group utilities
+////
+
+// Full Bleed
+.full-bleed {
+	inline-size: 100vi;
+	margin-inline-start: 50%;
+	transform: translateX(-50%);
+}
+
+// Limit inline-size to line-length
+.line-length {
+	max-inline-size: var(--max-inline-size, var(--size-line-length)) !important;
+}
+
+// Space out elements with flex
+.space-between {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+}
+
+// Make anything top sticky
+.sticky {
+	position: sticky;
+	inset-block-start: var(--size-header);
+	z-index: var(--z-index-default);
+}
+
+// <abbr class="acronym" title="National Aeronautics and Space Administration">Nasa</abbr>
+// This allows screen readers to read aloud acronyms as they would be spoken, as
+// opposed to an initialism, for which each letter is spoken individually,
+// (e.g. HTML, CSS).
+.acronym {
+	text-transform: uppercase;
+}
+
+// Break text on any character
+.break-anywhere {
+	word-wrap: anywhere;
+}
+
+// Hyphenate any looooooooooooooooooooo-
+// oooooong text
+.hyphen,
+.hyphenate {
+	@include hyphenate;
+}
+
+// Make things non-selectable
+.non-selectable {
+	@include non-selectable;
+}
+
+// Make things non-interactive
+.non-interactive {
+	pointer-events: none;
+}
+
+// Turn off motion (for reduced-motion-like cases)
+.non-motion {
+	animation-play-state: paused !important;
+	transition: none !important;
+	scroll-behavior: auto !important;
+}
+
+// Disable things which require motion when reduced-motion is on
+.requires-motion {
+	@media (prefers-reduced-motion: reduce) {
+		display: none;
+	}
+	@media not (update: fast) {
+		display: none;
+	}
+}
+
+.sans {
+	font-family: var(--font-family-sans);
+}
+
+.serif {
+	font-family: var(--font-family-serif);
+}
+
+.monospace {
+	font-family: var(--font-family-monospace);
+}
+
+// Make text serifed and italicised
+.fancy {
+	font-family: var(--font-family-serif);
+	@include italic;
+}
+
+// For salty/silly remarks
+.salty,
+.silly {
+	font-family: var(--font-family-silly) !important;
+}
+
+.center {
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+
+	// just to be sure, and to override
+	& > * {
+		align-self: center;
+		justify-self: center;
+	}
+}
+
+.inline-center {
+	margin-inline: auto;
+}
+
+.sideways {
+	writing-mode: vertical-lr;
+}
+
+.overflow {
+	overflow: visible !important;
+}
+
+// Shadows
+.shadow,
+.shadow--medium {
+	box-shadow: var(--box-shadow, var(--box-shadow-medium));
+}
+.shadow--low {
+	--box-shadow: var(--box-shadow-low);
+}
+.shadow--high {
+	--box-shadow: var(--box-shadow-high);
+}
+
+// Emoji
+.emoji {
+	font-family: var(--font-family-sans);
+	font-style: normal;
+	font-variation-settings: normal;
+	font-variant-emoji: emoji;
+	vertical-align: middle;
+	margin-block-start: calc(1ex - 1cap);
+	text-shadow: none;
+}
+
+// Sorting labels
+[data-sort][aria-sort="ascending"]::after {
+	content: "​ ↑ ​";
+}
+[data-sort][aria-sort="descending"]::after {
+	content: "​ ↓ ​";
+}
+
+// Limit lines
+.line-clamp {
+	display: -webkit-box;
+	-webkit-line-clamp: var(--line-clamp);
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+// Animation for transitioning from user-select:all; to user-select:text;
+%selectall {
+	user-select: all;
+
+	&:focus {
+		animation: selectall var(--transition-duration-short) step-end forwards;
+	}
+}
+@keyframes selectall {
+	to {
+		user-select: text;
+	}
+}
+
+// Dangerous! Be careful how you use this!
+.contents-only {
+	display: contents;
+}
+
+// Speedlify
+.speedlify-anchor {
+	display: inline-block;
+	margin-block-start: var(--size-small);
+	text-decoration: none;
+}
+
+// Disable things which require JS when JS is not available
+.no-js .requires-js {
+	display: none;
+}
+
+// Turn things off for the feed page
+.feed .no-feed {
+	display: none;
+}
+
+%background--aspen,
+%background--bear,
+%background--coyote,
+%background--highland,
+%background--raven,
+%background--snowy,
+%background--yeti {
+	color: h(thunder);
+}
+%background--bowhead,
+%background--conifer,
+%background--nickel,
+%background--kaiser,
+%background--maple,
+%background--mineshaft,
+%background--lynx,
+%background--thunder,
+%background--wolf {
+	color: h(snowy);
+}
+@each $name, $color in $colors {
+	%background--#{$name} {
+		background-color: h(#{$name});
+
+		@supports (color: color-contrast(#5f8aa6 vs white, black)) {
+			color: color-contrast(#{$color} vs var(--contrast-list) to var(--contrast-ratio));
+		}
+	}
+}
+
+.size-example {
+	background-color: h(raven);
+	display: block;
+	box-shadow: inset 0 0 0 var(--size-border-thin) currentColor;
+}
+@each $name, $size in $sizes {
+	.size-example--#{$name} {
+		inline-size: var(--size-#{$name});
+		block-size: var(--size-#{$name});
+	}
+}
+
+// Scroll & Shadows
+
+.scroll-inline {
+	overflow-x: auto !important;
+}
+.scroll-inline-shadow {
+	animation: inline-shadow-inside linear;
+	animation-timeline: scroll(self inline);
+	scroll-timeline-name: --scrollInline;
+	scroll-timeline-axis: inline;
+}
+.scroll-block {
+	max-block-size: calc(100vh - (var(--size-header) * 2));
+	max-block-size: calc(100dvb - (var(--size-header) * 2));
+	overflow-y: auto !important;
+}
+.scroll-block-shadow {
+	animation: block-shadow-inside linear;
+	animation-timeline: scroll(self block);
+	scroll-timeline-name: --scrollBlock;
+	scroll-timeline-axis: block;
+}
+
+@keyframes block-shadow-inside {
+	from {
+		box-shadow: inset 0 -2em 2em -2em color-mix(in oklab, var(--shadow-color), transparent 60%);
+	}
+	to {
+		box-shadow: inset 0 2em 2em -2em color-mix(in oklab, var(--shadow-color), transparent 60%);
+	}
+}
+@keyframes inline-shadow-inside {
+	from {
+		box-shadow: inset -2em 0 2em -2em color-mix(in oklab, var(--shadow-color), transparent 60%);
+	}
+	to {
+		box-shadow: inset 2em 0 2em -2em color-mix(in oklab, var(--shadow-color), transparent 60%);
+	}
+}
+@keyframes block-shadow-outside {
+	from {
+		box-shadow: none;
+	}
+	to {
+		box-shadow: 0 2em 2em -2em color-mix(in oklab, var(--shadow-color), transparent 60%);
+	}
+}
+@keyframes inline-shadow-outside {
+	from {
+		box-shadow: none;
+	}
+	to {
+		box-shadow: 2em 0 2em -2em color-mix(in oklab, var(--shadow-color), transparent 60%);
+	}
+}

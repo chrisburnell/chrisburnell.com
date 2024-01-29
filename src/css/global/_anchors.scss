@@ -1,0 +1,50 @@
+////
+/// Anchors
+/// @group global
+/// @link https://chrisburnell.com/styleguide/#inline-elements
+////
+
+%anchor {
+	--outline-color: #{h(raven)};
+
+	background-color: transparent;
+	color: h(bowhead);
+	border-radius: 1px;
+	position: relative;
+	text-decoration: underline;
+	text-decoration-color: h(yeti);
+	text-decoration-thickness: var(--size-border-thin);
+	text-decoration-skip-ink: auto;
+	text-underline-offset: 0.125em;
+	// prettier-ignore
+	transition:
+		background-color var(--transition-duration) var(--transition-function),
+		color var(--transition-duration) var(--transition-function),
+		text-decoration-color var(--transition-duration) var(--transition-function);
+
+	&:is(:hover, :focus, :active) {
+		text-decoration-color: h(maple);
+	}
+
+	&:active {
+		--outline-offset: 0;
+
+		background-color: h(maple);
+		color: h(snowy);
+	}
+
+	&[disabled] {
+		@include non-interactive;
+		opacity: var(--opacity-beta);
+	}
+
+	@media print {
+		text-decoration: none !important;
+	}
+
+	// Force heading anchors to take the color of the heading
+	%heading &,
+	th & {
+		color: inherit !important;
+	}
+}

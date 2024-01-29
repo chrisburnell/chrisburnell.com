@@ -1,0 +1,75 @@
+////
+/// Images
+/// @group blocks
+////
+
+.banner {
+	border-radius: var(--border-radius, var(--size-border-thin));
+	box-shadow: var(--box-shadow, var(--box-shadow-medium));
+}
+
+.avatar {
+	box-sizing: content-box;
+	aspect-ratio: 1;
+	display: inline-block;
+	border-radius: 50%;
+	border: var(--size-border-thin) solid h(raven, beta);
+	box-shadow: var(--box-shadow, var(--box-shadow-low));
+	transition: border-color var(--transition-duration) var(--transition-function);
+
+	[href]:is(:hover, :focus, :active) & {
+		border-color: h(maple);
+	}
+
+	.grid article & {
+		float: left;
+		float: inline-start;
+		margin-inline-end: var(--size-small);
+
+		& + * {
+			margin-block-start: 0;
+		}
+	}
+}
+
+// Used inside h-resume / CV Page
+.brand-logo {
+	block-size: var(--size-logo-brand);
+	inline-size: var(--size-logo-brand);
+	display: inline-block;
+	vertical-align: middle;
+	margin-block-start: calc(1ex - 1cap);
+	object-fit: contain;
+}
+
+.pixelated {
+	image-rendering: pixelated;
+}
+
+.dreamy {
+	filter: url("/images/dreamy.svg#dreamy");
+}
+
+.fsociety {
+	filter: url("/images/fsociety.svg#fsociety");
+}
+
+[aria-labelledby="worked-with"] {
+	a {
+		inline-size: 128px;
+		block-size: 72px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	img {
+		object-fit: contain;
+		max-height: 100%;
+		transition: all var(--transition-duration-short) var(--transition-function);
+	}
+
+	:is(:hover, :focus, :active) > img {
+		transform: scale(1.1);
+	}
+}

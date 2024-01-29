@@ -1,0 +1,223 @@
+////
+/// Highlighted Code Blocks
+/// @group blocks
+////
+
+pre[class*="language-"] {
+	background-color: h(mineshaft);
+	border-block-start: var(--size-border-thin) solid var(--border-color, h(raven));
+	padding: var(--size-gap) var(--size-gutter) var(--size-small);
+	border-radius: var(--border-radius, var(--size-border-thin));
+	box-shadow: var(--box-shadow, var(--box-shadow-medium));
+
+	// Labels
+	&::before {
+		color: h(snowy);
+		position: absolute;
+		inset-block-start: var(--size-tiny);
+		inset-inline-start: var(--size-gutter);
+		font-family: var(--font-family-sans);
+		font-weight: var(--font-weight-semibold);
+	}
+
+	code {
+		color: h(snowy);
+		padding: 0 0 1em;
+		line-height: var(--line-height-code);
+	}
+
+	%flow > * + & {
+		margin-block: var(--flow-space, var(--size-large));
+	}
+}
+
+pre.language-none {
+	padding-block-start: var(--size-gutter);
+}
+
+pre.language-bash::before {
+	content: "Terminal";
+	color: h(yeti);
+}
+pre.language-css::before {
+	content: "CSS";
+	color: h(css);
+}
+pre.language-html::before {
+	content: "HTML";
+	color: h(html);
+}
+pre.language-javascript::before {
+	content: "JavaScript";
+	color: h(javascript);
+}
+pre.language-json::before {
+	content: "JSON";
+	color: h(json);
+}
+pre.language-jsx::before {
+	content: "JSX";
+	color: h(jsx);
+}
+pre.language-liquid::before {
+	content: "Liquid";
+	color: h(liquid);
+}
+pre.language-markdown::before {
+	content: "Markdown";
+	color: h(snowy);
+}
+pre.language-nunjucks::before,
+pre.language-twig::before {
+	content: "Nunjucks";
+	color: h(nunjucks);
+}
+pre.language-plaintext::before,
+pre.language-text::before {
+	content: "Plaintext";
+	color: h(yeti);
+}
+pre.language-scss::before {
+	content: "SCSS";
+	color: h(scss);
+}
+pre.language-webc::before {
+	content: "WebC";
+	color: h(webc);
+}
+pre.language-yaml::before {
+	content: "YAML";
+	color: h(yaml);
+}
+
+/**
+ * a11y-dark theme for JavaScript, CSS, and HTML
+ * Based on the okaidia theme: https://github.com/PrismJS/prism/blob/gh-pages/themes/prism-okaidia.css
+ * @author ericwbailey
+ */
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #d4d0ab;
+}
+
+.token.punctuation {
+	color: #fefefe;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #ffa07a;
+}
+
+.token.boolean,
+.token.number {
+	color: #00e0e0;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #abe338;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+pre.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #00e0e0;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function {
+	color: #ffd700;
+}
+
+.token.keyword {
+	color: #00e0e0;
+}
+
+.token.regex,
+.token.important {
+	color: #ffd700;
+}
+
+.token.deleted {
+	background-color: oklch(87.2% 0.1768 8.53 / 47%);
+}
+.token.inserted {
+	background-color: oklch(86.9% 0.3846 143.49 / 35%);
+}
+
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	user-select: none;
+}
+
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+}
+
+.token.important,
+.token.bold {
+	font-weight: var(--font-weight-semibold);
+}
+.token.italic {
+	@include italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+
+@media screen and (-ms-high-contrast: active) {
+	pre,
+	code {
+		color: windowText;
+		background: window;
+	}
+
+	.token.important {
+		background: highlight;
+		color: window;
+		font-weight: normal;
+	}
+
+	.token.atrule,
+	.token.attr-value,
+	.token.function,
+	.token.keyword,
+	.token.operator,
+	.token.selector {
+		font-weight: bold;
+	}
+
+	.token.attr-value,
+	.token.comment,
+	.token.doctype,
+	.token.function,
+	.token.keyword,
+	.token.operator,
+	.token.property,
+	.token.string {
+		color: highlight;
+	}
+
+	.token.attr-value,
+	.token.url {
+		font-weight: normal;
+	}
+}

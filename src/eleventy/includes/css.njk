@@ -1,0 +1,17 @@
+{% if not global.cssnakedday -%}
+	{# Critical CSS -#}
+	{%- if eleventy.env.runMode === "serve" %}
+		{# External files (local dev live reload will refresh without page reload) -#}
+		<link rel="stylesheet" href="{% getBundleFileUrl 'css', 'critical' %}">
+	{%- else  %}
+		{# Inlined CSS (fastest site performance in production) -#}
+		<style>{% getBundle 'css', 'critical' %}</style>
+	{%- endif %}
+
+	{# Deferred CSS -#}
+	<link rel="stylesheet" href="{% getBundleFileUrl 'css' %}" media="print" onload="this.media='all'">
+	<noscript><link rel="stylesheet" href="{% getBundleFileUrl 'css' %}"></noscript>
+
+	{%- css 'critical' -%}{% renderFile 'src/css/critical.scss' %}{%- endcss -%}
+	{%- css -%}{% renderFile 'src/css/defer.scss' %}{%- endcss -%}
+{%- endif %}

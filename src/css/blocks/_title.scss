@@ -1,0 +1,30 @@
+////
+/// Title
+/// @group blocks
+////
+
+.title {
+	display: block;
+	padding-block-start: var(--size-large-gigantic);
+	padding-block-end: var(--size-medium-large);
+	overflow: hidden;
+	position: relative;
+	contain: content; // helps painting with .perch inside
+
+	@include cq(null, "small") {
+		text-align: center;
+	}
+}
+
+.title--positive span,
+.title--negative span {
+	padding: var(--size-tiny) var(--size-small);
+}
+.title--positive > span {
+	background-color: h(conifer);
+	color: h(snowy);
+}
+.title--negative > span {
+	background-color: h(maple);
+	color: h(snowy);
+}

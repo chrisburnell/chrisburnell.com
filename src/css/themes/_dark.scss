@@ -1,0 +1,186 @@
+////
+/// Dark
+/// @group themes
+////
+
+@mixin theme-dark() {
+	--shadow-color: var(--color-shadow-dark);
+
+	&:is(html) {
+		scrollbar-color: h(raven) h(mineshaft);
+		color-scheme: dark;
+	}
+
+	// Target these if applied to html or body elements
+	&:is(body),
+	&:is(html) body,
+	.main {
+		background-color: h(mineshaft);
+		background-color: color-mix(in oklab, h(mineshaft), h(wolf) 40%);
+		color: h(yeti);
+	}
+
+	// Set some special dark backgrounds
+	:is(.header, .footer, %box, .table) {
+		background-color: h(thunder);
+		background-color: var(--background-color, color-mix(in oklab, h(thunder), h(mineshaft) 80%));
+	}
+
+	// Header Block
+	.header {
+		color: h(yeti);
+	}
+
+	// Footer Block
+	.footer {
+		color: h(yeti) !important;
+	}
+
+	// Anchor Global
+	%anchor {
+		color: h(highland);
+	}
+	// Anchor & Summary
+	%anchor,
+	summary {
+		&:not(:is(:hover, :focus, :active)) {
+			text-decoration-color: h(kaiser);
+		}
+	}
+
+	///
+	// Global Content Elements
+	///
+
+	h2 {
+		box-shadow: inset 0 calc(-1 * var(--size-border-thin)) 0 h(nickel);
+	}
+
+	:is(blockquote, code, samp, kbd) {
+		background-color: h(coyote, gamma);
+	}
+
+	pre[class*="language-"] {
+		background-color: h(thunder);
+	}
+
+	input,
+	select,
+	textarea {
+		background-color: h(thunder);
+		color: h(yeti);
+		border-color: h(kaiser);
+
+		&:hover {
+			border-color: h(bowhead);
+		}
+	}
+
+	var {
+		color: h(highland);
+	}
+
+	hr {
+		background-color: h(yeti, beta);
+	}
+
+	th:not(:empty) {
+		background-color: h(mineshaft);
+	}
+
+	///
+	// Global and Block Content Elements
+	///
+
+	:is(ol, ul):not([class]),
+	.breadcrumbs {
+		li {
+			&::marker {
+				color: h(yeti);
+			}
+		}
+	}
+
+	:is(abbr, dfn, span)[title],
+	figure > a figcaption,
+	blockquote cite,
+	.breadcrumbs,
+	.fragment-anchor {
+		color: h(yeti);
+	}
+
+	///
+	// Compositions
+	///
+
+	%box {
+		border-block-start-color: var(--box-border-color, h(raven, alpha));
+
+		%anchor {
+			color: h(highland);
+		}
+	}
+	.box--success {
+		background-color: color-mix(in oklab, h(mineshaft), h(conifer) 20%);
+		--box-border-color: #{h(conifer)};
+	}
+
+	.box--warning {
+		background-color: color-mix(in oklab, h(mineshaft), h(aspen) 20%);
+		--box-border-color: #{h(aspen)};
+	}
+
+	.box--error {
+		background-color: color-mix(in oklab, h(mineshaft), h(maple) 20%);
+		--box-border-color: #{h(maple)};
+	}
+
+	.rating {
+		--rating-background-color: #{h(kaiser)};
+	}
+
+	.browse__previous,
+	.browse__next {
+		&:not(:is(:hover, :focus, :active)) {
+			&::before {
+				color: h(yeti);
+			}
+		}
+	}
+
+	.table-of-contents {
+		li {
+			&::marker {
+				color: h(yeti);
+			}
+		}
+	}
+
+	.dark-invert-colors {
+		filter: invert(1) hue-rotate(180deg);
+	}
+
+	///
+	// Exceptions
+	///
+
+	[aria-labelledby="worked-with"] {
+		img {
+			filter: brightness(1.25);
+		}
+	}
+}
+
+// Apply the Dark color scheme when the media query matches
+@media (prefers-color-scheme: dark) {
+	:root:not(:has([name="theme"] [value*="light"]:checked)):not(.light) {
+		@include theme-dark;
+	}
+}
+
+// Apply the Dark color scheme when it has been set manually (visitor, author)
+:root:has([name="theme"] [value*="dark"]:checked):not(.light),
+[data-theme*="dark"],
+.dark:not(.light) {
+	@include theme-dark;
+}

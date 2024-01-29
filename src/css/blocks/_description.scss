@@ -1,0 +1,64 @@
+////
+/// Description
+/// @group blocks
+////
+
+.description {
+	padding-block-end: var(--size-large);
+	font-family: var(--font-family-serif);
+	font-size: var(--font-size-gamma);
+	font-weight: var(--font-weight-regular);
+
+	p {
+		:not(.content) > & {
+			max-inline-size: var(--size-line-length);
+
+			@include cq(null, "small") {
+				margin-inline: auto;
+				text-align: center;
+			}
+		}
+	}
+
+	%anchor {
+		color: inherit;
+	}
+
+	time {
+		@include italic;
+		white-space: nowrap;
+	}
+
+	.title[hidden] ~ &,
+	.title.hidden ~ & {
+		margin-block-start: var(--size-gigantic);
+
+		p {
+			margin-inline: 0;
+			text-align: start !important; // override the MQ above
+		}
+	}
+}
+
+// This is the description that appears as meta information on posts
+// Appears just below title above:medium, above title below:medium
+.description--published {
+	font-size: var(--font-size-default);
+	margin-block-end: var(--size-large);
+
+	@include cq(null, null, "tiny") {
+		font-size: var(--font-size-small);
+	}
+
+	.breadcrumbs ~ & {
+		@include cq(null, null, "medium") {
+			margin-block-start: var(--size-large);
+		}
+	}
+
+	.breadcrumbs ~ .title:not([hidden], .hidden) ~ & {
+		@include cq(null, null, "medium") {
+			margin-block-end: 0;
+		}
+	}
+}

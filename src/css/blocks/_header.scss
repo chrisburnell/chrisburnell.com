@@ -1,0 +1,38 @@
+////
+/// Header
+/// @group blocks
+////
+
+.header {
+	container: header / inline-size;
+	background-color: color-mix(in oklab, h(bear), h(snowy));
+	overflow-y: hidden;
+	box-shadow: var(--box-shadow-low);
+	z-index: var(--z-index-menu);
+
+	@media (height > #{map-get($breakpoints, "tiny")}) {
+		position: sticky;
+		inset-block-start: 0;
+	}
+
+	@media print {
+		display: none;
+	}
+
+	.wrap {
+		inline-size: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-block: var(--size-small);
+	}
+
+	.logo {
+		flex: 0 0 auto;
+	}
+
+	.navigation {
+		flex: 0 1 auto;
+		margin-inline-start: var(--size-gutter);
+	}
+}

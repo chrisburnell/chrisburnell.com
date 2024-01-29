@@ -1,0 +1,29 @@
+////
+/// Media
+/// @group compositions
+///
+/// Contains embedded media properly and allows them to be dynamically resized
+/// inside a set aspect ratio container.
+///
+/// --aspect-ratio (16 / 9)
+///     Set the aspect ratio according to the aspect-ratio property.
+////
+
+.media {
+	inline-size: 100%;
+
+	& > %image,
+	& > picture %image,
+	& > %media,
+	& > %media-child {
+		aspect-ratio: var(--aspect-ratio);
+		inline-size: 100% !important;
+		block-size: auto !important;
+		margin: 0 auto;
+		object-fit: cover;
+	}
+}
+
+.media--4-by-3 {
+	--aspect-ratio: 4 / 3;
+}

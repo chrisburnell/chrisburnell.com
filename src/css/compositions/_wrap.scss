@@ -1,0 +1,23 @@
+////
+/// Wrapper
+/// @group compositions
+///
+/// --max-inline-size (var(--size-breakpoint-gigantic))
+///     Defines how wide the wrapper should be.
+/// --gutter (var(--size-gutter))
+///     Defines the space along either side of the wrapper.
+////
+
+.wrap {
+	max-inline-size: var(--max-inline-size, var(--size-breakpoint-gigantic));
+	padding-inline-start: var(--gutter-start, var(--gutter, var(--size-gutter)));
+	padding-inline-end: var(--gutter-end, var(--gutter, var(--size-gutter)));
+	margin-inline: auto;
+	position: relative;
+
+	// This helps account for the "notch" on some mobile devices
+	@supports (padding: max(0px)) {
+		padding-inline-start: max(env(safe-area-inset-left), var(--gutter-start, var(--gutter, var(--size-gutter))));
+		padding-inline-end: max(env(safe-area-inset-right), var(--gutter-end, var(--gutter, var(--size-gutter))));
+	}
+}

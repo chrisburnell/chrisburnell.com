@@ -1,0 +1,214 @@
+////
+/// Prose
+/// @group global
+////
+
+%content {
+	@media print {
+		break-inside: avoid;
+	}
+}
+
+:is(p, li, dd) {
+	@include break-words;
+	max-inline-size: var(--size-character-limit);
+	text-wrap: pretty;
+}
+
+p {
+	margin: 0;
+}
+
+:is(abbr, dfn, span)[title] {
+	color: h(kaiser);
+	@include italic;
+	font-weight: var(--font-weight-regular);
+	text-decoration: underline;
+	text-decoration-color: h(nickel);
+	text-decoration-style: dotted;
+	text-decoration-thickness: var(--size-border-thin);
+	cursor: help;
+}
+
+ins {
+	background-color: h(conifer);
+	color: h(snowy);
+	padding: var(--size-border-default);
+	border-radius: var(--border-radius, var(--size-border-default));
+	font-size: var(--font-size-default);
+	text-decoration: none;
+}
+
+del {
+	text-decoration-color: h(maple);
+	text-decoration-thickness: var(--size-border-thin);
+}
+
+s {
+	text-decoration-thickness: var(--size-border-thin);
+}
+
+mark {
+	background-color: h(aspen);
+	color: h(mineshaft);
+}
+
+:is(em, i),
+.italic {
+	font-family: var(--font-family-serif) !important;
+	font-style: italic !important;
+	font-synthesis: none !important;
+	font-variation-settings: "ital" 125 !important;
+}
+
+:is(b, strong),
+.strong {
+	font-style: normal !important;
+	font-variation-settings: normal !important;
+	font-weight: var(--font-weight-semibold) !important;
+}
+
+u,
+.underline {
+	text-decoration: underline !important;
+}
+
+.light {
+	font-weight: var(--font-weight-light) !important;
+}
+.regular {
+	font-weight: var(--font-weight-regular) !important;
+}
+.medium {
+	font-weight: var(--font-weight-medium) !important;
+}
+.semibold {
+	font-weight: var(--font-weight-semibold) !important;
+}
+.bold {
+	font-weight: var(--font-weight-bold) !important;
+}
+.extrabold {
+	font-weight: var(--font-weight-extrabold) !important;
+}
+.heavy {
+	font-weight: var(--font-weight-heavy) !important;
+}
+
+small,
+.small {
+	font-size: var(--font-size-small);
+}
+
+:is(sub, sup) {
+	position: relative;
+	font-size: 0.8125em;
+	line-height: 0;
+	text-transform: initial;
+}
+sub {
+	inset-block-end: 0;
+}
+sup {
+	inset-block-start: 0;
+
+	time &::before {
+		content: " ";
+		font-size: 0.8125em;
+	}
+}
+
+hr {
+	background-color: h(thunder, gamma);
+	inline-size: 100%;
+	max-inline-size: 20ch;
+	block-size: var(--size-border-thin);
+	display: block;
+	border: 0;
+	margin: var(--size-large) auto !important;
+	position: relative;
+	// show the overflow in Edge and IE
+	overflow: visible;
+}
+
+dialog {
+	--box-shadow: var(--box-shadow-high);
+
+	background-color: h(bear) !important;
+	position: fixed;
+	inset: 0;
+	margin: auto !important;
+	z-index: var(--z-index-dialog);
+
+	&::backdrop {
+		backdrop-filter: grayscale(1) blur(2px);
+	}
+}
+
+meter,
+progress {
+	inline-size: var(--size-line-length);
+	max-inline-size: 100%;
+}
+
+meter {
+	&::-webkit-meter-bar {
+		background-color: h(nickel);
+	}
+
+	&::-webkit-meter-optimum-value {
+		background-color: h(conifer);
+	}
+
+	&::-webkit-meter-suboptimum-value {
+		background-color: h(aspen);
+	}
+
+	&::-webkit-meter-even-less-good-value {
+		background-color: h(maple);
+	}
+}
+
+progress {
+	&::-webkit-progress-bar {
+		background-color: h(nickel);
+	}
+
+	&::-webkit-progress-value {
+		background-color: h(raven);
+	}
+}
+
+// Target Animation
+:target {
+	animation: var(--animation-duration) ease target;
+
+	@at-root {
+		@keyframes target {
+			0%,
+			33% {
+				background-color: h(aspen);
+				color: h(mineshaft);
+			}
+		}
+	}
+}
+
+::selection {
+	background-color: h(wolf);
+	color: h(snowy);
+	text-shadow: none;
+}
+
+::spelling-error {
+	text-decoration: h(maple) wavy underline;
+}
+
+::grammar-error {
+	text-decoration: h(conifer) wavy underline;
+}
+
+.columns {
+	column-count: var(--columns, 2);
+	column-gap: var(--gap, 1em);
+}

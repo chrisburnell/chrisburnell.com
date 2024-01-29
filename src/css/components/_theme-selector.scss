@@ -1,0 +1,12 @@
+////
+/// Theme Selector
+/// @group components
+////
+
+storage-form:has([id="theme-selector"]) {
+	display: inline-block;
+
+	&:not(:defined) {
+		display: none;
+	}
+}
