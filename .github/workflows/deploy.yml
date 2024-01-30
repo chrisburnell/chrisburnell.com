@@ -6,12 +6,17 @@ on:
   pull_request:
     branches: [main]
   schedule:
-    - cron: "01 1 * * *"
-    - cron: "01 5 * * *"
-    - cron: "01 9 * * *"
-    - cron: "01 13 * * *"
-    - cron: "01 17 * * *"
-    - cron: "01 21 * * *"
+    # https://crontab.guru/#0_1_*_*_*
+    - cron: "0 1 * * *"
+    - cron: "0 5 * * *"
+    - cron: "0 9 * * *"
+    - cron: "0 13 * * *"
+    - cron: "0 17 * * *"
+    - cron: "0 21 * * *"
+
+concurrency:
+  group: deploy
+  cancel-in-progress: true
 
 jobs:
   deploy:
@@ -58,7 +63,7 @@ jobs:
       - name: Build with npm
         run: npm run build
         env:
-          NODE_OPTIONS: "--max_old_space_size=4096"
+          NODE_OPTIONS: "--max_old_space_size=8192"
           ELEVENTY_PRODUCTION: true
           ODESLI_URL: ${{ secrets.ODESLI_TOKEN }}
           PERSONAL_API_URL: ${{ secrets.PERSONAL_API_URL }}
