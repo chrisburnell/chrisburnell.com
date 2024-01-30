@@ -1,8 +1,10 @@
-import { url as siteURL } from "./src/eleventy/data/site.js"
+import dotenv from "dotenv"
+dotenv.config()
 
 import configWebmentions from "./src/data/config/webmentions.js"
 import builders from "./src/eleventy/builders.js"
 import collections from "./src/eleventy/collections.js"
+import { url as siteURL } from "./src/eleventy/data/site.js"
 import { filtersSync } from "./src/eleventy/filters.js"
 import plugins from "./src/eleventy/plugins.js"
 import shortcodes from "./src/eleventy/shortcodes.js"
@@ -41,17 +43,21 @@ export default async function(eleventyConfig) {
 	///
 	// Plugins
 	///
+	eleventyConfig.addPlugin(plugins.avatar)
 	eleventyConfig.addPlugin(plugins.browserSupport)
 	eleventyConfig.addPlugin(plugins.EleventyRenderPlugin)
 	eleventyConfig.addPlugin(plugins.bundler, {
 		hoistDuplicateBundlesFor: ["css", "js"]
 	})
-	eleventyConfig.addPlugin(plugins.syntaxHighlight)
 	eleventyConfig.addPlugin(plugins.image)
 	// eleventyConfig.addPlugin(plugins.javascript)
 	eleventyConfig.addPlugin(plugins.markdown)
 	eleventyConfig.addPlugin(plugins.sass)
+	eleventyConfig.addPlugin(plugins.syntaxHighlight)
 	eleventyConfig.addPlugin(plugins.webmentions, configWebmentions)
+	if (process.env.PREGENERATE_IMAGES) {
+		eleventyConfig.addPlugin(plugins.pregenerateImages)
+	}
 
 	///
 	// Filters

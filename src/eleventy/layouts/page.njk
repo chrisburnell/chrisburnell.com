@@ -14,7 +14,7 @@ layout: base
 	</h1>
 
 	<div class=" [ description ] [ flow ] [ p-summary ] ">
-		{{ descriptionLong | default(description) | markdownFormat | safe }}
+		{{ descriptionLong | default(description) | formatAsMarkdown | safe }}
 	</div>
 
 	<div class=" [ content ] [ flow ] ">

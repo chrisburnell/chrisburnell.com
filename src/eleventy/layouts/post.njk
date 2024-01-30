@@ -60,7 +60,7 @@ layout: base
 
 		{% if description %}
 			<div class=" [ description ] [ flow ] [ p-summary ] ">
-				{{ description | markdownFormat | safe }}
+				{{ description | formatAsMarkdown | safe }}
 			</div>
 		{% endif %}
 

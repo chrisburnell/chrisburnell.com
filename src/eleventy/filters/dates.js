@@ -120,6 +120,10 @@ export const dateSort = (a, b) => {
 	return new Date(b.data.date) - new Date(a.data.date)
 }
 
+export const dateSortFilter = (array) => {
+	return array.sort(dateSort)
+}
+
 export default {
 	ordinal,
 	friendlyDate,
@@ -132,4 +136,5 @@ export default {
 	epoch,
 	daysUntil,
 	dateSort,
+	dateSortFilter,
 }

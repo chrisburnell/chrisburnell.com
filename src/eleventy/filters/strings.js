@@ -174,18 +174,18 @@ export const spongebob = (string) => {
 }
 
 export default {
-	capitalize,
-	cleanTags,
 	conjunction,
-	formatAsMarkdown,
-	maxChars,
-	maxSentences,
-	maxWords,
-	numberNthFormat,
-	numberStringFormat,
-	spongebob,
+	capitalize,
 	specialCapitalize,
+	cleanTags,
 	stripHTML,
 	stripNewLines,
-	stripStrikethrough
+	stripStrikethrough,
+	maxSentences,
+	maxWords,
+	maxChars,
+	numberNthFormat,
+	numberStringFormat,
+	formatAsMarkdown,
+	spongebob,
 }

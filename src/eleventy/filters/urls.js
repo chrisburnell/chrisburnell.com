@@ -37,6 +37,7 @@ export const getPathname = (url) => {
 }
 
 export default {
+	tweetback,
 	getHost,
 	getPathname,
 }
