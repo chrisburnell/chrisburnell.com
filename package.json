@@ -49,7 +49,7 @@
     "@chrisburnell/theme-selector": "^1.0.1",
     "@daviddarnes/share-button": "^1.1.2",
     "@daviddarnes/storage-form": "^2.0.0",
-    "@mdn/browser-compat-data": "^5.5.7",
+    "@mdn/browser-compat-data": "^5.5.8",
     "@remy/webmention": "^1.5.0",
     "@tweetback/canonical": "^2.0.38",
     "@zachleat/details-utils": "^2.0.2",

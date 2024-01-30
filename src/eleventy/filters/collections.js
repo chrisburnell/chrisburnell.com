@@ -275,7 +275,6 @@ export const getRSVPString = (data) => {
  * @returns {string}
  */
 export const getMetaTitle = async (data) => {
-	console.log(data.page.inputPath, data.title)
 	if ("title" in data) {
 		return stripHTML(data.title)
 	} else if ("rsvp" in data) {

@@ -13,7 +13,6 @@ truncate: true
 ---
 {%- set collection = collections[tag] | arePublished | dateSort -%}
 {%- set count = collection.length -%}
-{{ collection[0].data.date | log }}
 {%- set latest_year = collection[0].data.date | friendlyDate('yyyy') -%}
 {%- set first_year = collection[count-1].data.date | friendlyDate('yyyy') -%}
 <div id="content" class=" [ pantheon ] [ wrap ] [ archive ] ">
