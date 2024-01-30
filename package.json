@@ -23,7 +23,9 @@
   "devDependencies": {
     "concurrently": "^8.2.2",
     "cross-env": "^7.0.3",
+    "dotenv": "^16.4.1",
     "esbuild": "^0.20.0",
+    "eslint": "^8.56.0",
     "json-to-scss": "^1.6.2",
     "prettier": "^3.2.4",
     "sass": "^1.70.0"
@@ -67,7 +69,7 @@
   },
   "scripts": {
     "clean": "npx rimraf .cache && npx rimraf _site",
-    "tokens": "npx json-to-scss './src/data/designTokens/*.json' ./src/css/abstracts/_generated.scss; npx prettier --write src/css/abstracts/_generated.scss",
+    "tokens": "npx json-to-scss './src/data/eleventy/designTokens/*.json' ./src/css/abstracts/_generated.scss; npx prettier --write src/css/abstracts/_generated.scss",
     "prettier": "npx prettier --write src",
     "start": "npx @11ty/eleventy --incremental --serve",
     "serve": "npm run start",

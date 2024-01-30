@@ -1,0 +1,22 @@
+---
+title: Advent 2021
+description: "Beer reviews from the 2021 <a href=\"http://corporate.honestbrew.co.uk/collections/christmas/products/beer-advent-calendar\">HonestBrew Beer Advent Calendar</a>."
+---
+{%- set collection = collections.advent2021 | arePublished | reverse -%}
+
+<c-librarian>
+	You can sort these beer reviews:
+	<br>
+	<ul class=" [ cluster ] ">
+		<li><c-librarian-button key="title">by title</c-librarian-button></li>
+		<li><c-librarian-button key="author">by author</c-librarian-button></li>
+		<li><c-librarian-button key="rating">by rating</c-librarian-button></li>
+		<li><c-librarian-button key="chronological" default="descending">by publish date</c-librarian-button></li>
+	</ul>
+</c-librarian>
+
+<div class=" [ grid ] [ shelf ] " aria-live="polite">
+	{% for item in collection %}
+		{% include 'items/shelf.njk' %}
+	{% endfor %}
+</div>

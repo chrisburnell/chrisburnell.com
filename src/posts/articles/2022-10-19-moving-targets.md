@@ -11,8 +11,6 @@ syndicate_to:
   - https://twitter.com/iamchrisburnell/status/1583014193909096448
 ---
 
-{% js -%}{% include '../../js/pages/article-moving-targets.js' %}{%- endjs -%}
-
 ## Choose your own adventure
 
 <div class=" [ box  box--line-length  box--ancient ] [ flow ] ">
@@ -165,3 +163,19 @@ And check out other selectors like [`::selection`](https://developer.mozilla.org
     }
 }
 {% endcss %}
+
+{% js -%}
+const endButton = document.querySelector(".js-end-adventure")
+
+if (endButton) {
+    endButton.addEventListener("click", (event) => {
+        event.preventDefault()
+
+        if (window.confirm("Are you sure you wish to end this chapter?")) {
+            window.open("", "_self", "")
+            window.close()
+            history.back(-1)
+        }
+    })
+}
+{%- endjs %}

@@ -1,0 +1,130 @@
+{%- set related_page = site.url + '/' + ('tag/' if tag_collection) + related_collection + '/' -%}
+{%- set related_page = related_page | replace('features/', '') | replace('writings', 'writing') -%}
+{%- set collection = collections[related_collection] | arePublished | dateSort -%}
+{%- set limit = limit | default(site.limits.feed) -%}
+<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet href="/feed.xsl" type="text/xsl" ?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ site.locale }}" xml:base="{{ site.url }}">
+	<title>{{ site.title | striptags(true) }} – {{ title | striptags(true) }}</title>
+	<subtitle>{{ description | stripnewlines | stripstrikethrough | striptags(true) }}</subtitle>
+	<id>{{ related_page }}</id>
+	<link href="{{ site.url + page.url }}" rel="self" />
+	<link href="{{ related_page }}" rel="alternate" />
+	<author>
+		<name>{{ author.name }}</name>
+		<uri>{{ site.url + '/' }}</uri>
+		<email>{{ author.email }}</email>
+	</author>
+	<logo>{{ site.url + site.logo }}</logo>
+	<image>{{ site.url + author.avatar }}</image>
+	<updated>{{ collection | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+	<generator>{{ eleventy.generator }}</generator>
+	{% for item in collection | limit(limit) -%}
+	{%- set item_of = item.data.bookmark_of | default(item.data.drink_of) | default(item.data.like_of) | default(item.data.listen_of) | default(item.data.play_of) | default(item.data.read_of) | default(item.data.watch_of) -%}
+	{%- set item_of_url = item_of -%}
+	{% if item_of.url -%}
+		{% set item_of_url = item_of.url %}
+	{%- endif %}
+	{%- set item_of_title = item_of_url -%}
+	{% if item_of.title -%}
+		{% set item_of_title = item_of.title %}
+	{%- endif %}
+	{% if item.data.title or item_of_title -%}
+		{% set item_title = item.data.title | default(item_of_title) %}
+	{%- else -%}
+		{% set item_date = item.data.date | friendlyDate | striptags(true) %}
+		{% set item_title = item.data.categoryProper | default(item.data.category) | title %}
+		{% if item.data.rsvp and item.data.in_reply_to %}
+			{% set item_reply = item.data.in_reply_to.title | default(item.data.in_reply_to.url) | default(item.data.in_reply_to) | getPerson | getInternalTarget(collections.all) | getMastodonHandle | getTwitterHandle %}
+			{% set item_title = "RSVP to " + item_reply %}
+		{% elif item.data.in_reply_to %}
+			{% set item_reply = item.data.in_reply_to.title | default(item.data.in_reply_to.url) | default(item.data.in_reply_to) | getPerson | getInternalTarget(collections.all) | getMastodonHandle | getTwitterHandle %}
+			{% set item_title = "Reply to " + item_reply %}
+		{% else %}
+			{% set item_title = item_title + " from " + item_date %}
+		{% endif %}
+	{%- endif %}
+	{%- set item_photos = item.data.photo | toArray -%}
+	<entry>
+		<id>{{ site.url + item.url }}</id>
+		<link href="{{ site.url + item.url }}" />
+		<title>{{ item_title }}</title>
+		<published>{{ item.data.date | rfc3339Date }}</published>
+		<updated>{{ item.data.updated | default(item.data.date) | default(global.now) | rfc3339Date }}</updated>
+		{% if item.data.category -%}
+		<category term="{{ item.data.category }}" scheme="{{ site.url + '/' + item.data.category + '/' }}" label="{{ item.data.categoryProper | default(item.data.category) | title }}" />
+		{%- endif %}
+		{% if item.data.description and item.content != '' -%}
+		<summary>{{ item.data.description | formatAsMarkdown | stripnewlines | stripstrikethrough | striptags(true) | safe }}</summary>
+		<content type="html">
+			{%- if item.data.photo %}
+				{%- for item_photo in item_photos %}
+					{% set item_photo_url = item_photo.url | default(item_photo) %}
+					{% set item_photo_alt = item_photo.alt | default('') %}
+					{%- if 'gif' in item_photo_url %}
+						&lt;img src="/images/animated/{{ item_photo_url }}" alt="{{ item_photo_alt }}"&gt;&lt;/img&gt;
+					{% else %}
+						&lt;img src="/images/built/{{ item_photo_url | replace('jpg', 'jpeg') }}" alt="{{ item_photo_alt }}"&gt;&lt;/img&gt;
+					{% endif -%}
+				{% endfor -%}
+			{%- endif -%}
+			{{ item.content | formatAsMarkdown }}
+		</content>
+		{% elif not item.data.description and item.content != '' -%}
+		<summary>{{ item.content | formatAsMarkdown | stripnewlines | stripstrikethrough | striptags(true) | maxSentences(2) }}</summary>
+		<content type="html">
+			{%- if item.data.photo %}
+				{%- for item_photo in item_photos %}
+					{% set item_photo_url = item_photo.url | default(item_photo) %}
+					{% set item_photo_alt = item_photo.alt | default('') %}
+					{%- if 'gif' in item_photo_url %}
+						&lt;img src="/images/animated/{{ item_photo_url }}" alt="{{ item_photo_alt }}"&gt;&lt;/img&gt;
+					{% else %}
+						&lt;img src="/images/built/{{ item_photo_url | replace('jpg', 'jpeg') }}" alt="{{ item_photo_alt }}"&gt;&lt;/img&gt;
+					{% endif -%}
+				{% endfor -%}
+			{%- endif -%}
+			{{ item.content | formatAsMarkdown }}{% if item_of_url %}<p>Original post can be found at: <a href="{{ item_of_url }}">{{ item_of_title }}</a></p>{% endif %}
+		</content>
+		{% elif item.data.description and not item.content -%}
+		<summary>{{ item.data.description | formatAsMarkdown | stripnewlines | stripstrikethrough | striptags(true) | safe }}</summary>
+		<content type="html">
+			{%- if item.data.photo %}
+				{%- for item_photo in item_photos %}
+					{% set item_photo_url = item_photo.url | default(item_photo) %}
+					{% set item_photo_alt = item_photo.alt | default('') %}
+					{%- if 'gif' in item_photo_url %}
+						&lt;img src="/images/animated/{{ item_photo_url }}" alt="{{ item_photo_alt }}"&gt;&lt;/img&gt;
+					{% else %}
+						&lt;img src="/images/built/{{ item_photo_url | replace('jpg', 'jpeg') }}" alt="{{ item_photo_alt }}"&gt;&lt;/img&gt;
+					{% endif -%}
+				{% endfor -%}
+			{%- endif -%}
+			{% if item_of_url %}<p>Original post can be found at: <a href="{{ item_of_url }}">{{ item_of_title }}</a></p>{% endif %}
+		</content>
+		{% else -%}
+		<summary>{{ item.data.categoryProperPlural | default(item.data.categoryPlural) | default(item.data.category) | title | safe }}</summary>
+		<content xml:lang="{{ site.locale }}" type="html">
+			{%- if item.data.photo %}
+				{%- for item_photo in item_photos %}
+					{% set item_photo_url = item_photo.url | default(item_photo) %}
+					{% set item_photo_alt = item_photo.alt | default('') %}
+					{%- if 'gif' in item_photo_url %}
+						&lt;img src="/images/animated/{{ item_photo_url }}" alt="{{ item_photo_alt }}"&gt;&lt;/img&gt;
+					{% else %}
+						&lt;img src="/images/built/{{ item_photo_url | replace('jpg', 'jpeg') }}" alt="{{ item_photo_alt }}"&gt;&lt;/img&gt;
+					{% endif -%}
+				{% endfor -%}
+			{%- endif -%}
+			{% if item_of_url %}<p>Original post can be found at: <a href="{{ item_of_url }}">{{ item_of_title }}</a></p>{% endif %}
+		</content>
+		{%- endif %}
+		{% if item_of_url -%}
+		<link rel="alternate" href="{{ item_of_url }}" />
+		{%- endif %}
+		{% if item.data.in_reply_to -%}
+		<link rel="related" href="{{ item.data.in_reply_to.url | default(item.data.in_reply_to) }}" />
+		{%- endif %}
+	</entry>
+	{%- endfor %}
+</feed>

@@ -1,5 +1,35 @@
 ---
 layout: base
 ---
+<article id="content" class=" [ pantheon{% if full %}  full{% elif wide %}  wide{% endif %} ] [ wrap ] [ page ] {% if perch %}[ perch ] {% endif %}">
 
-{{ content | safe }}
+	{% if 'project' in tags %}
+		<ul class=" [ cluster ] [ breadcrumbs ] ">
+			<li><a href="/projects/">← Projects</a></li>
+		</ul>
+	{% endif %}
+
+	<h1 id="title" class=" [ title{% if title_error %} title--negative{% elif title_success %} title--positive{% endif %} ] " style="view-transition-name: title-{{ page.fileSlug }};">
+		<span class=" [ p-name ] ">{{ tagline | default(title) | safe }}</span>
+	</h1>
+
+	<div class=" [ description ] [ flow ] [ p-summary ] ">
+		{{ descriptionLong | default(description) | markdownFormat | safe }}
+	</div>
+
+	<div class=" [ content ] [ flow ] ">
+		{% include 'css-naked-day.njk' %}
+
+		<div class=" [ e-content ] [ flow ] {% if contentClass %}[ {{ contentClass }} ] {% endif %}{% if toc %}generate-toc{% endif %}">
+			{{ content | safe }}
+		</div>
+
+		{% include 'responses.njk' %}
+	</div>
+
+	{% if not full and not toc %}
+		<aside class=" [ meta ] [ flow ] " role="complementary">
+			{% include 'meta/page.njk' %}
+		</aside>
+	{% endif %}
+</article>

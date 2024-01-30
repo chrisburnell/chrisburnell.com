@@ -1,3 +1,6 @@
+import dotenv from "dotenv"
+dotenv.config()
+
 import autoprefixer from "autoprefixer"
 import path from "node:path"
 import postcss from "postcss"

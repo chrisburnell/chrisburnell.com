@@ -1,5 +1,114 @@
 ---
 layout: base
 ---
+<article {% if not content.length %}id="content"{% endif %} class=" [ pantheon{% if full %}  full{% elif wide %}  wide{% endif %} ] [ wrap ] [ post h-{{ mf_root }} ] {% if perch %}[ perch ] {% endif %}">
 
-{{ content | safe }}
+	<ul class=" [ cluster ] [ breadcrumbs ] ">
+		<li><a href="/posts/">All Posts</a></li><li><a href="/{{ categoryPlural | default(category) }}/">{{ categoryProperPlural | default(categoryPlural) | default(category) | title }}</a></li>
+	</ul>
+
+	<h1 id="title" class=" [ title{% if title_error %} title--negative{% elif title_success %} title--positive{% endif %} ] {{ '[ hidden ] ' if not title and not of_title }}" style="view-transition-name: title-{{ page.fileSlug }};">
+		{% if of_title %}
+			<span>{{ title | default(of_title) | striptags(true) | safe }}</span>
+		{% elif title %}
+			<span>{{ title | safe }}</span>
+		{% else %}
+			<span>{{ categoryProper | default(category) | title }} from {{ date | friendlyDateLong | safe }}</span>
+		{% endif %}
+	</h1>
+
+	<div class=" [ description  description--published ] ">
+		<p>
+			{%- if rsvp %}
+				This <a class=" [ u-category ] " href="/rsvps/">RSVP</a>
+			{%- else %}
+				This <a class=" [ u-category ] " href="/{{ categoryPlural | default(category) }}/">{{ categoryProper | default(category) }}</a>{% if "writing" in tags %}, part of the <a href="/writing/">writing</a> collection{% if not in_reply_to %},{% endif %}{% endif %}
+			{%- endif -%}
+			{%- if draft %}
+				has not yet been published
+			{%- else -%}
+				{%- if in_reply_to and not rsvp -%}
+					{%- if "writing" in tags %} and{% else %},{% endif %} in reply to
+					<a class=" [ h-cite  u-in-reply-to ] " href="{{ in_reply_to_url | tweetback }}">{{ item.data.reply_title }}</a>
+					{%- if item.data.reply_authors %}
+						by {{ item.data.reply_authors_string }}
+					{%- endif %},
+				{%- endif %}
+				was published on <time class=" [ dt-published ] " datetime="{{ date | rfc3339Date }}">{{ date | friendlyDateLong | safe }}</time>
+				{%- if updated %}
+					and last updated on <time class=" [ dt-updated ] " datetime="{{ updated | rfc3339Date }}">{{ updated | friendlyDateLong | safe }}</time>
+				{%- endif -%}
+			{%- endif -%}.
+		</p>
+	</div>
+
+	<div class=" [ content ] [ flow ] {% if toc %}generate-toc{% endif %}">
+		{% include 'css-naked-day.njk' %}
+
+		{% if draft %}
+			<p class=" [ box  box--warning ] [ flow ] ">This is still a <em>draft</em>! The quality of this {{ categoryProper | default(category) | default('post') }} may not be up to snuff, and is probably far from being complete.</p>
+		{% endif %}
+
+		{% include 'banner.njk' %}
+
+		{% if cover %}
+			{% set alt = 'Art for ' + (title | default(of_title) | striptags(true) | safe) -%}
+			{% image './images/covers/' + cover, alt, ' [ cover ] [ u-photo ] ', [400] %}
+		{% endif %}
+
+		{% include 'photo.njk' %}
+
+		{% if description %}
+			<div class=" [ description ] [ flow ] [ p-summary ] ">
+				{{ description | markdownFormat | safe }}
+			</div>
+		{% endif %}
+
+		{% include 'updated.njk' %}
+
+		{% if of_url %}
+			{%- if listen_of -%}
+				{% set of_url = "https://album.link/s/" + listen_of %}
+			{%- elif read_of -%}
+				{% set of_url = "https://openlibrary.org/isbn/" + read_of %}
+			{%- endif -%}
+			{% set of_url_lookup = of_url | getSyndicationTarget %}
+			{% if of_url_lookup %}
+				{% if category == 'beer' and of_url_lookup %}
+					{% set of_label = 'See more on ' + of_url_lookup %}
+				{% elif category == 'music' and of_url_lookup %}
+					{% set of_label = 'Find out where to listen with ' + of_url_lookup %}
+				{% else %}
+					{% set of_label = 'Read more on ' + of_url_lookup %}
+				{% endif %}
+			{% else %}
+				{% set of_label = 'Read more on ' + of_title %}
+			{% endif %}
+			<nav class=" [ grid ] [ navigator ] ">
+				<a class=" [ button ] {% if mf_property %}[ u-{{ mf_property }} ] {% endif %}" href="{{ of_url }}">{{ of_label }} →</a>
+			</nav>
+		{% endif %}
+
+		{% if listen_of %}
+			<c-odesli id="{{ listen_of.url | default(listen_of) }}"></c-odesli>
+		{% endif %}
+
+		{% if category == 'recipe' %}
+			{% include 'post/recipe.njk' %}
+		{% endif %}
+
+		{% if content.length %}
+			<div id="content" class=" [ e-content ] [ flow ] ">
+				{{ content | safe }}
+			</div>
+		{% endif %}
+
+		{% include 'responses.njk' %}
+
+		{% include 'browse.njk' %}
+	</div>
+
+	<aside class=" [ meta ] [ flow ] " role="complementary">
+		{% include 'meta/post.njk' %}
+	</aside>
+</article>

@@ -660,7 +660,7 @@ I hope you found this useful, and I’d love to know how others are doing this s
 {% endcss %}
 
 <script>
-;(async () => {
+(async () => {
     "use strict"
 
     const inputRed = document.getElementById("input-hex-red")

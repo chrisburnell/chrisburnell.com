@@ -1,12 +1,99 @@
 ---
 permalink: "/index.html"
+layout: base
 title: The Homepage
+eleventyComputed:
+  tagline: "{{ site.tagline }}"
+  description: "{{ site.description | safe }}"
+sitemap:
+  changefreq: daily
+  priority: 1.0
+truncate: true
 ---
 
-<p>Hello world!</p>
+<article class=" [ pantheon ] [ wrap ] [ page ] [ perch ] ">
 
-<ol>
-	{% for post in collections.writing %}
-		<li><a href="{{ post.url }}">{{ post.data.meta_title }}</a>{% if post.data.meta_authors_string %} by {{ post.data.meta_authors_string | safe }}{% endif %}</li>
-	{% endfor %}
-</ol>
+	<h1 id="title" class=" [ title{% if title_error %}  title--negative{% elif title_success %}  title--positive{% endif %} ] ">
+		<span class=" [ p-name ] ">{% if global.cssnakedday %}{{ tagline | replace('CSS', '<s>CSS</s>') | safe }}{% else %}{{ tagline | safe }}{% endif %}</span>
+	</h1>
+
+	<div class=" [ description ] [ flow ] [ p-summary ] " aria-hidden="true">
+		{{ description | formatAsMarkdown | safe | replace('href=', 'tabindex="-1" href=') }}
+	</div>
+
+	<div class=" [ content ] [ flow ] ">
+		{% include 'lfw.njk' %}
+
+		{% include 'css-naked-day.njk' %}
+
+		<div id="content" class=" [ e-content ] [ flow ] ">
+
+			{% if collections.rsvpsToday.length %}
+				<div class=" [ box  box--line-length ] [ flow ] ">
+					<h2 id="today-rsvps">
+						<a href="/rsvps/">Events I’m Attending Today</a>
+					</h2>
+					<div class=" [ deck ] [ flow ] ">
+						{% for item in collections.rsvpsToday %}
+							{% include 'items/deck.njk' %}
+						{% endfor %}
+					</div>
+				</div>
+				<hr>
+			{% endif %}
+
+			{%- set hfeed = true -%}
+			<h2 id="latest">
+				<a href="/writing/">Latest Writing</a>
+			</h2>
+			<div class=" [ deck ] [ h-feed ] ">
+				{% for item in collections.writings | limit(site.limits.feature) %}
+					{% include 'items/deck.njk' %}
+				{% endfor %}
+			</div>
+			<nav class=" [ grid ] [ navigator ] " aria-label="Writing Navigation">
+				<a class=" [ button ] " href="/writing/">Browse Writing</a>
+			</nav>
+			{% set hfeed = false %}
+
+			{%- set truncate = false -%}
+			<h2 id="projects">
+				<a href="/projects/" tabindex="-1">Latest Projects</a>
+			</h2>
+			<div class=" [ deck ] ">
+				{% for item in collections.projects | limit(site.limits.feature) %}
+					{% include 'items/deck.njk' %}
+				{% endfor %}
+			</div>
+			<nav class=" [ grid ] [ navigator ] " aria-label="Projects Navigation">
+				<a class=" [ button ] " href="/projects/">Browse Projects</a>
+			</nav>
+			{%- set truncate = true -%}
+
+			<h2 id="popular">
+				<a href="/popular/">Popular Pages</a>
+			</h2>
+			<div class=" [ deck ] ">
+				{% for item in collections.popular | limit(site.limits.feature) %}
+					{% include 'items/deck.njk' %}
+				{% endfor %}
+			</div>
+
+			{% if collections.rsvpsUpcoming.length %}
+				<hr>
+				<h2 id="upcoming-rsvps">
+					<a href="/rsvps/">Upcoming Events</a>
+				</h2>
+				<div class=" [ deck ] [ flow ] ">
+					{% for item in collections.rsvpsUpcoming %}
+						{% include 'items/deck.njk' %}
+					{% endfor %}
+				</div>
+			{% endif %}
+		</div>
+	</div>
+
+	<div class=" [ meta ] [ flow ] ">
+		{% include 'meta/index.njk' %}
+	</div>
+</article>

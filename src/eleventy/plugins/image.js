@@ -1,6 +1,6 @@
 import Image from "@11ty/eleventy-img"
 import path from "path"
-import { cacheDurations } from "../../data/site.js"
+import { cacheDurations } from "../data/site.js"
 
 export default function (eleventyConfig) {
 	eleventyConfig.addNunjucksShortcode("image", (src, alt, classes = "", widths = [800], styles = "") => {

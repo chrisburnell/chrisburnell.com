@@ -2,16 +2,14 @@ import { AssetCache } from "@11ty/eleventy-fetch"
 import caniuse from "caniuse-api"
 import minifier from "html-minifier"
 import { DateTime } from "luxon"
+import fs from "node:fs"
+import browserFeatures from "../../data/browserFeatures.js"
+import browsersByType from "../../eleventy/data/browsersByType.js"
+import { nowISO } from "../data/global.js"
+import { cacheDurations } from "../data/site.js"
 // import mdnBrowserData from "@mdn/browser-compat-data"
-const mdnBrowserData = import("@mdn/browser-compat-data")
-
-import { nowISO } from "../../data/global.js"
-import { cacheDurations } from "../../data/site.js"
-
-// import browserFeatures from "../../data/browserFeatures.json" assert { type: "json" }
-const browserFeatures = JSON.parse(fs.readFileSync("../../data/browserFeatures.json"))
-// import browsersByType from "../../data/browsersByType.json" assert { type: "json" }
-const browsersByType = JSON.parse(fs.readFileSync("../../data/browsersByType.json"))
+const mdnBrowserData = JSON.parse(fs.readFileSync("node_modules/@mdn/browser-compat-data/data.json"))
+const pkg = JSON.parse(fs.readFileSync("package.json"))
 
 const getCaniuseSupport = async (feature) => {
 	let asset = new AssetCache(`caniuse_${feature}`, ".cache")

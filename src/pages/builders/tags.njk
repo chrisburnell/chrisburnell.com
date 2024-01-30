@@ -1,0 +1,73 @@
+---
+pagination:
+  data: collections.tags
+  size: 1
+  alias: tag
+permalink: /tag/{{ tag }}/
+eleventyComputed:
+  title: "{{ tag | specialCapitalize }}"
+  description: "All of my posts tagged with <q>{{ tag | specialCapitalize }}</q>."
+hfeed: true
+show_photos: true
+truncate: true
+---
+{%- set collection = collections[tag] | arePublished | dateSort -%}
+{%- set count = collection.length -%}
+{{ collection[0].data.date | log }}
+{%- set latest_year = collection[0].data.date | friendlyDate('yyyy') -%}
+{%- set first_year = collection[count-1].data.date | friendlyDate('yyyy') -%}
+<div id="content" class=" [ pantheon ] [ wrap ] [ archive ] ">
+
+	<ul class=" [ cluster ] [ breadcrumbs ] ">
+		<li>
+			<a href="/posts/">All Posts</a>
+		</li>
+		<li aria-hidden="true">
+			{{ tag | specialCapitalize }}
+		</li>
+	</ul>
+
+	<h1 id="title" class=" [ title ] ">
+		<span class=" [ p-name ] " aria-label="Tagged: {{ tag | specialCapitalize }}">{{ title | safe }}</span>
+	</h1>
+
+	<div class=" [ description ] [ flow ] ">
+		<p>
+			<span class=" [ p-summary ] ">{% if count > 1 %}All {{ count | numberStringFormat }}{% else %}Just the one{% endif %} of my posts tagged <q>{{ tag | specialCapitalize }}</q>{% if first_year != latest_year %}, dating from {% if collection[0].data.list == 'shelf' %}{{ first_year }}–{{ latest_year }}{% else %}<a href="#{{ first_year }}">{{ first_year }}</a>–<a href="#{{ latest_year }}">{{ latest_year }}</a>{% endif %}{% endif %}.</span>
+			<a href="{{ site.url }}/{{ tag }}.xml" title="Tagged: {{ tag | specialCapitalize | safe }} Feed"><svg width="20" height="20" aria-hidden="true" focusable="false" style="fill: #ff8c00; vertical-align: middle; margin-block-start: calc(1ex - 1cap);"><use href="#svg--rss"></use></svg></a>
+		</p>
+	</div>
+
+	{% if first_year != latest_year %}
+		{% sparkline collection, first_year, latest_year %}
+	{% endif %}
+
+	<div class=" [ content ] [ flow ] ">
+		{% include 'css-naked-day.njk' %}
+
+		{%- set year = latest_year -%}
+		<h2 id="{{ year }}">
+			{{ year }} <small>{{ collection | getCollectionCount(year) }} post{{ 's' if collection | getCollectionCount(year) > 1 }}</small>
+		</h2>
+		<div id="list-{{ year }}" class=" [ deck ] ">
+			{% for item in collection %}
+				{%- set check = item.data.date | friendlyDate('yyyy') -%}
+				{% if check != year %}
+					{%- set year = check -%}
+					{%- set count = collection | getCollectionCount(year) -%}
+					</div>
+					<h2 id="{{ year }}">
+						{{ year }} <small>{{ count }} post{{ 's' if count > 1 }}</small>
+					</h2>
+					<div id="list-{{ year }}" class=" [ deck ] ">
+				{% endif %}
+				{% include 'items/deck.njk' %}
+			{% endfor %}
+		</div>
+	</div>
+
+	<div class=" [ meta ] [ flow ] ">
+		{% include 'meta/archive.njk' %}
+	</div>
+
+</div>

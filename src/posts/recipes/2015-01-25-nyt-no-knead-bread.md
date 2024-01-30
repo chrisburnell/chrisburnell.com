@@ -22,7 +22,8 @@ ingredients:
     ml: 385
   - title: bran or cornmeal as desired
 authors:
-  - url: http://cooking.nytimes.com/recipes/11376-no-knead-bread
+  - title: NYT Cooking
+    url: http://cooking.nytimes.com/recipes/11376-no-knead-bread
 ---
 
 1. In a large bowl combine flour, salt, yeast, and water. Stir until blended; dough will be shaggy and sticky. Cover bowl with plastic wrap. Let dough rest *at least 12 hours, preferably about 18*, at warm room temperature, about *21°C/70°F*.

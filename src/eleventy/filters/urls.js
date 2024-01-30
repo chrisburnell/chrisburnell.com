@@ -1,3 +1,17 @@
+import { transform } from "@tweetback/canonical"
+
+/**
+ * @param {string} url
+ * @returns {string}
+ */
+export const tweetback = (url) => {
+	try {
+		return transform(url)
+	} catch (e) {
+		return url
+	}
+}
+
 /**
  * @param {string} url
  * @returns {object}

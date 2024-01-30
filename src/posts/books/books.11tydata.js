@@ -5,7 +5,7 @@ export default {
 	categoryProper: `book review`,
 	categoryProperPlural: `book reviews`,
 	categoryCode: `r`,
-	list: `review`,
+	list: `shelf`,
 	mf_root: `review`,
 	mf_property: `read-of`,
 	tags: ["book", "review"],

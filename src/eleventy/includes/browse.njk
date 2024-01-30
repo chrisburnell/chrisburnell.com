@@ -1,0 +1,41 @@
+{%- if category and not category.title -%}
+	{% set previous_post = collections[category] | arrayKeyIncludes('data.tags', 'post') | arePublished | getPreviousCollectionItem(page) %}
+	{% set next_post = collections[category] | arrayKeyIncludes('data.tags', 'post') | arePublished | getNextCollectionItem(page) %}
+
+	{% if previous_post or next_post %}
+		<nav class=" [ browse ] " aria-label="Browse to Previous and Next Posts">
+			<ol class=" [ browse__list ] ">
+				{% if previous_post %}
+					<li>
+						<a class=" [ browse__previous ] " href="{{ previous_post.url }}">
+							<strong>← Older</strong>
+							<br>
+							{% if previous_post.data.like_of.title %}
+								Liked: {{ previous_post.data.like_of.title }}
+							{% elif previous_post.data.title %}
+								{{ previous_post.data.title }}
+							{% else %}
+								{{ category | title }} from {{ previous_post.data.date | friendlyDate }}
+							{% endif %}
+						</a>
+					</li>
+				{% endif %}
+				{% if next_post %}
+					<li>
+						<a class=" [ browse__next ] " href="{{ next_post.url }}">
+							<strong>Newer →</strong>
+							<br>
+							{% if next_post.data.like_of.title %}
+								Liked: {{ next_post.data.like_of.title }}
+							{% elif next_post.data.title %}
+								{{ next_post.data.title }}
+							{% else %}
+								{{ category | title }} from {{ next_post.data.date | friendlyDate }}
+							{% endif %}
+						</a>
+					</li>
+				{% endif %}
+			</ol>
+		</nav>
+	{% endif %}
+{%- endif -%}

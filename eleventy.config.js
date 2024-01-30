@@ -1,8 +1,11 @@
-import { url as siteURL } from "./src/data/site.js"
+import { url as siteURL } from "./src/eleventy/data/site.js"
 
-import filters from "./src/eleventy/filters.js"
-
+import configWebmentions from "./src/data/config/webmentions.js"
+import builders from "./src/eleventy/builders.js"
+import collections from "./src/eleventy/collections.js"
+import { filtersSync } from "./src/eleventy/filters.js"
 import plugins from "./src/eleventy/plugins.js"
+import shortcodes from "./src/eleventy/shortcodes.js"
 
 export default async function(eleventyConfig) {
 	///
@@ -10,31 +13,59 @@ export default async function(eleventyConfig) {
 	///
 	eleventyConfig.addLayoutAlias("base", "base.njk")
 	eleventyConfig.addLayoutAlias("page", "page.njk")
+	eleventyConfig.addLayoutAlias("archive", "archive.njk")
+	eleventyConfig.addLayoutAlias("httpstatus", "httpstatus.njk")
 	eleventyConfig.addLayoutAlias("post", "post.njk")
+	eleventyConfig.addLayoutAlias("feed", "feed.njk")
+
+	///
+	// Collections
+	///
+	Object.keys(collections).forEach((collectionName) => {
+		eleventyConfig.addCollection(collectionName, collections[collectionName])
+	})
+
+	///
+	// Collection Builders
+	///
+	eleventyConfig.addCollection("categories", builders.categories)
+	eleventyConfig.addCollection("tags", builders.tags)
+
+	///
+	// Shortcodes
+	///
+	Object.keys(shortcodes).forEach((shortcodeName) => {
+		eleventyConfig.addShortcode(shortcodeName, shortcodes[shortcodeName])
+	})
 
 	///
 	// Plugins
 	///
-	// eleventyConfig.addPlugin(plugins.browserSupport)
-	eleventyConfig.addNunjucksShortcode("browserSupport", () => {
-		return "BROWSER SUPPORT"
-	})
+	eleventyConfig.addPlugin(plugins.browserSupport)
 	eleventyConfig.addPlugin(plugins.EleventyRenderPlugin)
-	eleventyConfig.addPlugin(plugins.bundler)
+	eleventyConfig.addPlugin(plugins.bundler, {
+		hoistDuplicateBundlesFor: ["css", "js"]
+	})
 	eleventyConfig.addPlugin(plugins.syntaxHighlight)
 	eleventyConfig.addPlugin(plugins.image)
 	// eleventyConfig.addPlugin(plugins.javascript)
 	eleventyConfig.addPlugin(plugins.markdown)
 	eleventyConfig.addPlugin(plugins.sass)
+	eleventyConfig.addPlugin(plugins.webmentions, configWebmentions)
 
 	///
 	// Filters
 	///
-	Object.keys(filters).forEach((filterType) => {
-		Object.keys(filters[filterType]).forEach((filterName) => {
-			eleventyConfig.addFilter(filterName, filters[filterType][filterName])
+	Object.keys(filtersSync).forEach((filterType) => {
+		Object.keys(filtersSync[filterType]).forEach((filterName) => {
+			eleventyConfig.addFilter(filterName, filtersSync[filterType][filterName])
 		})
 	})
+	// Object.keys(filtersAsync).forEach((filterType) => {
+	// 	Object.keys(filtersAsync[filterType]).forEach((filterName) => {
+	// 		eleventyConfig.addAsyncFilter(filterName, filtersAsync[filterType][filterName])
+	// 	})
+	// })
 
 	///
 	// Static Files Passthrough
@@ -57,7 +88,7 @@ export default async function(eleventyConfig) {
 	eleventyConfig.setServerPassthroughCopyBehavior("passthrough")
 	eleventyConfig.setQuietMode(true)
 	eleventyConfig.on("beforeBuild", () => {
-		console.log(`[${filters.urls.getHost(siteURL)}] Generating...`)
+		console.log(`[${filtersSync.urls.getHost(siteURL)}] Generating...`)
 	})
 	return {
 		htmlTemplateEngine: false,
@@ -65,7 +96,7 @@ export default async function(eleventyConfig) {
 		dir: {
 			input: "src",
 			output: "_site",
-			data: "data",
+			data: "eleventy/data",
 			includes: "eleventy/includes",
 			layouts: "eleventy/layouts",
 		}

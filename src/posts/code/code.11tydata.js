@@ -1,5 +1,4 @@
 export default {
-	list: "deck",
 	permalink: "code/{{ page.fileSlug }}/",
 	category: "code",
 	categoryProper: "code snippet",

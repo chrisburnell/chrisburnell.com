@@ -1,0 +1,9 @@
+{% if github %}
+<p class=" [ inline-center  center ] ">
+	{%- set github_user = github.split('/')[0] -%}
+	{%- set github_repo = github.split('/')[1] -%}
+	<a href="https://github.com/{{ github_user }}/{{ github_repo }}" title="Go to Repository: @{{ github_user }}/{{ github_repo }}"><img src="https://img.shields.io/static/v1?label={{ github_user }}&message={{ github_repo }}&color=5f8aa6&logo=github" alt="{{ github_repo }} on GitHub" loading="lazy" decoding="async"></a>
+	<a href="https://github.com/{{ github_user }}/{{ github_repo }}/releases" title="Go to Releases: @{{ github_user }}/{{ github_repo }}"><img src="https://img.shields.io/github/release/{{ github_user }}/{{ github_repo }}?include_prereleases=&sort=semver&color=5f8aa6" alt="{{ github_repo }} Releases" loading="lazy" decoding="async"></a>
+	<a href="https://github.com/{{ github_user }}/{{ github_repo }}/blob/{{ branch | default('main') }}/LICENSE" title="Go to License: @{{ github_user }}/{{ github_repo }}"><img src="https://img.shields.io/badge/License-{{ license }}-5f8aa6" alt="{{ github_repo }} License" loading="lazy" decoding="async"></a>
+</p>
+{% endif %}

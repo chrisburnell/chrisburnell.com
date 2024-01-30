@@ -1,0 +1,6 @@
+<h2>Browse by tag</h2>
+<ul class=" [ cluster ] [ small ] " style="--padding-inline: 0.5em;">
+	{% for lookup in collections.tags | sort -%}
+		{%- if page.url != '/tag/' + lookup + '/' %}<li><a href="/tag/{{ lookup }}/" {% if lookup in tags %}class=" [ button  button--text ] "{% endif %}>{{ lookup }}</a></li>{% endif -%}
+	{%- endfor %}
+</ul>
