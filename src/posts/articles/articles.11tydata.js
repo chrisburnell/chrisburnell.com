@@ -1,7 +1,7 @@
 export default {
-	permalink: `/article/{{ page.fileSlug }}/index.html`,
-	category: `article`,
-	categoryPlural: `articles`,
-	categoryCode: `a`,
+	permalink: "/article/{{ page.fileSlug }}/index.html",
+	category: "article",
+	categoryPlural: "articles",
+	categoryCode: "a",
 	tags: ["article", "blog", "feature", "writing"],
 }

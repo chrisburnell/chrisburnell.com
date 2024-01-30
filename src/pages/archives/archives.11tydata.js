@@ -1,6 +1,6 @@
 import { url as siteURL } from "../../eleventy/data/site.js"
 import { getMetaImage, getMetaTitle } from "../../eleventy/filters/collections.js"
-import { formatAsMarkdown } from "../../eleventy/filters/strings.js"
+import { formatAsMarkdown, stripHTML, stripNewLines } from "../../eleventy/filters/strings.js"
 import { getHost } from "../../eleventy/filters/urls.js"
 
 export default {
@@ -13,9 +13,7 @@ export default {
 		meta_title: (data) => getMetaTitle(data),
 		meta_description: (data) => {
 			if (data.description) {
-				return formatAsMarkdown(data.description)
-					.replace("\n", " ")
-					.replace(/(<([^>]+)>)/gi, "")
+				return stripNewLines(stripHTML(formatAsMarkdown(data.description)))
 			}
 			return `A page on ${getHost(siteURL)}`
 		},

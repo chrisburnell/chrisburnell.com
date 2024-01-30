@@ -1,6 +1,5 @@
 import { getWebmentions } from "@chrisburnell/eleventy-cache-webmentions"
 import webmentionsConfig from "../data/config/webmentions.js"
-import { untappd } from "../eleventy/data/author.js"
 import { url as siteURL } from "../eleventy/data/site.js"
 import {
 	getAuthors,
@@ -14,25 +13,23 @@ import {
 	getReplyAuthors,
 	getReplyAuthorsString,
 	getReplyTitle,
-	getReplyURL,
+	getReplyURL
 } from "../eleventy/filters/collections.js"
-import { formatAsMarkdown } from "../eleventy/filters/strings.js"
+import { formatAsMarkdown, stripHTML, stripNewLines } from "../eleventy/filters/strings.js"
 import { getHost } from "../eleventy/filters/urls.js"
 
 export default {
-	layout: `post`,
+	layout: "post",
 	tags: ["post"],
-	list: `deck`,
-	mf_root: `entry`,
+	list: "deck",
+	mf_root: "entry",
 	show_webmentions: true,
 	eleventyComputed: {
 		canonical: (data) => siteURL + data.page.url,
 		meta_title: (data) => getMetaTitle(data),
 		meta_description: (data) => {
 			if (data.description) {
-				return formatAsMarkdown(data.description)
-					.replace("\n", " ")
-					.replace(/(<([^>]+)>)/gi, "")
+				return stripNewLines(stripHTML(formatAsMarkdown(data.description)))
 			}
 			return `A ${getCategoryName(data)} on ${getHost(siteURL)}`
 		},
@@ -48,11 +45,11 @@ export default {
 		rsvp_string: (data) => getRSVPString(data),
 		syndicate_to: (data) => {
 			if (data.drink_of) {
-				return [`https://untappd.com/user/${untappd}/checkin/${data.page.fileSlug}`]
+				return ["https://untappd.com/user/${untappd}/checkin/${data.page.fileSlug}"]
 			} else if (data.listen_of) {
-				return [`https://album.link/s/${data.listen_of}`]
+				return ["https://album.link/s/${data.listen_of}"]
 			} else if (data.read_of) {
-				return [`https://openlibrary.org/isbn/${data.read_of}`]
+				return ["https://openlibrary.org/isbn/${data.read_of}"]
 			}
 			return data.syndicate_to || []
 		},
