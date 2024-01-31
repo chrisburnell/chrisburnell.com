@@ -6,7 +6,7 @@ import path from "node:path"
 import postcss from "postcss"
 import * as sass from "sass"
 
-export default function(eleventyConfig) {
+export default function (eleventyConfig) {
 	// Recognize Sass as a "template languages"
 	eleventyConfig.addTemplateFormats("scss")
 
@@ -32,9 +32,7 @@ export default function(eleventyConfig) {
 				})
 
 				if (process.env.ELEVENTY_RUN_MODE === "build") {
-					const postcssResult = await postcss([
-						autoprefixer,
-					]).process(sassResult.css, {
+					const postcssResult = await postcss([autoprefixer]).process(sassResult.css, {
 						from: inputPath,
 					})
 

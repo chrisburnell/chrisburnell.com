@@ -4,8 +4,8 @@
 	{%- endif %}
 	{% if in_reply_to and rsvp -%}
 		<li class=" [ rsvp ] ">
-			{{ item.data.rsvp_string }}
-			<a class=" [ h-cite  u-in-reply-to ] " href="{{ item.data.reply_url }}">{{ item.data.reply_title }}</a>
+			{{ rsvp_string | safe }}
+			<a class=" [ h-cite  u-in-reply-to ] " href="{{ reply_url }}">{{ reply_title | getInternalTarget(collections.all) }}</a>
 			<data class=" [ p-rsvp ] " value="{{ rsvp.value }}" hidden></data>
 		</li>
 	{% endif %}
@@ -48,7 +48,6 @@
 		</li>
 	{% endif %}
 	{% if authors.length %}
-		{%- set authors = authors | toArray -%}
 		<li class=" [ authors ] ">
 			{% if category == 'beer' %}
 				<c-emoji>{{ emojis.beer }}</c-emoji>
@@ -69,11 +68,7 @@
 				<c-emoji>{{ emojis.author }}</c-emoji>
 				<small>authored by</small>
 			{% endif %}
-			{% for author in authors -%}
-				{% set authorObject = author | getPerson('object') -%}
-				{% if authorObject.url %}<a href="{{ authorObject.url | toArray | first }}">{{ authorObject.title }}</a>{% else %}<strong>{{ author | safe }}</strong>{% endif %}
-				{%- if not loop.last %}, {% endif %}
-			{%- endfor %}
+			{{ meta_authors_string | safe }}
 			{% if console %}
 				<small>for</small>
 				<strong>{{ console | getConsole | safe }}</strong>

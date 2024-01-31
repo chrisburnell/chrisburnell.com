@@ -29,9 +29,9 @@ layout: base
 			{%- else -%}
 				{%- if in_reply_to and not rsvp -%}
 					{%- if "writing" in tags %} and{% else %},{% endif %} in reply to
-					<a class=" [ h-cite  u-in-reply-to ] " href="{{ in_reply_to_url | tweetback }}">{{ item.data.reply_title }}</a>
-					{%- if item.data.reply_authors %}
-						by {{ item.data.reply_authors_string }}
+					<a class=" [ h-cite  u-in-reply-to ] " href="{{ reply_url }}">{{ reply_title | getInternalTarget(collections.all) }}</a>
+					{%- if reply_author_string %}
+						by {{ reply_author_string | safe }}
 					{%- endif %},
 				{%- endif %}
 				was published on <time class=" [ dt-published ] " datetime="{{ date | rfc3339Date }}">{{ date | friendlyDateLong | safe }}</time>
@@ -67,11 +67,6 @@ layout: base
 		{% include 'updated.njk' %}
 
 		{% if of_url %}
-			{%- if listen_of -%}
-				{% set of_url = "https://album.link/s/" + listen_of %}
-			{%- elif read_of -%}
-				{% set of_url = "https://openlibrary.org/isbn/" + read_of %}
-			{%- endif -%}
 			{% set of_url_lookup = of_url | getSyndicationTarget %}
 			{% if of_url_lookup %}
 				{% if category == 'beer' and of_url_lookup %}

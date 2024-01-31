@@ -1,0 +1,8 @@
+- Figure out how to get JS building
+- Get OG Images plugin imported (conflict with v3 canary)
+- Review / Refactor author lookup from blogroll/person API
+- Compare replyTitle to replyAuthor if they're equal
+    - This may be the case if in_reply_to has no title attribute and there's only a URL to work with (Twitter, Mastodon, website)
+- Make sure to perform tweetback ONLY against URLs and not Titles
+- add parse transform (I think this can be done WITHOUT cheerio, although seems not to be a bottleneck)
+- figure out why it's SO SLOWWWWWW

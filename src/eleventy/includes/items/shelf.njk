@@ -41,10 +41,7 @@
 	{% if item.data.authors or item.data.release %}
 		<div>
 			{% if item.data.authors %}
-				{%- set authors = item.data.authors | toArray -%}
-				{% for author in authors -%}
-					{% if not loop.first %}{% if authors.length > 2 %}, {% endif %}{% if loop.last %} and {% endif %}{% endif %}{% set authorObject = author | getPerson('object') %}{% if authorObject.url %}<a class=" [ h-cite ] " href="{{ authorObject.url | toArray | first }}">{{ authorObject.title }}</a>{% else %}<span class=" [ h-cite ] ">{{ author.title | default(author) | safe }}</span>{% endif %}
-				{%- endfor %}
+				{{ item.data.meta_authors_string | safe }}
 			{% endif %}
 			{% if item.data.release %}
 				<small>(<time datetime="{{ item.data.release | rfc3339Date }}" class="release">{{ item.data.release | friendlyDate('yyyy') }}</time>)</small>

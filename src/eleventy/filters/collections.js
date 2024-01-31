@@ -8,7 +8,25 @@ import { favicon, url as siteURL } from "../data/site.js"
 import { epoch, friendlyDate } from "./dates.js"
 import { capitalize, conjunction, stripHTML } from "./strings.js"
 import { getHost, tweetback } from "./urls.js"
-import { toArray } from "./utils.js"
+import { getMastodonHandle, getTwitterHandle, toArray } from "./utils.js"
+
+const allPeople = [...blogroll, ...people]
+
+const getPerson = (title, url) => {
+	allPeople.forEach((person) => {
+		if (title && title === person.title) {
+			return person
+		}
+		if (url && person.url) {
+			toArray(person.url).forEach((personURL) => {
+				if (url.includes(personURL)) {
+					return person
+				}
+			})
+		}
+	})
+	return null
+}
 
 /**
  * @param {object} item
@@ -107,7 +125,7 @@ export const getCollectionCount = (items, year, blogOnly = false) => {
 				if ("published" in item.data && item.data.published === false) {
 					return false
 				}
-				if (!(("date") in item.data)) {
+				if (!("date" in item.data)) {
 					return false
 				}
 				if (item.data.tags.includes("ignore") || (blogOnly && !item.data.tags.includes("blog"))) {
@@ -169,12 +187,11 @@ export const getAuthorData = (author) => {
 	const authorTitle = author?.title || author
 	const authorURL = author?.url
 
-	if (!authorTitle && !authorURL) {
-		[...blogroll, ...people].forEach((person) => {
-			if (authorTitle === person.title || authorURL === person.url) {
-				return person
-			}
-		})
+	if (!authorTitle || !authorURL) {
+		const personLookup = getPerson(authorTitle, authorURL)
+		if (personLookup) {
+			return personLookup
+		}
 	}
 
 	return {
@@ -188,10 +205,11 @@ export const getAuthorData = (author) => {
  * @returns {string}
  */
 const authorString = (author) => {
+	author.title = getMastodonHandle(getTwitterHandle(author.title))
 	if (author.url) {
-		return `<a href="${author.url}"${!author.url.includes(siteURL) && ` rel="external"`}>${author.title}</a>`
+		return `<a href="${author.url}" class=" [ h-cite ] "${!author.url.includes(siteURL) && ` rel="external"`}>${author.title}</a>`
 	}
-	return author.title
+	return `<span class=" [ h-cite ] ">${author.title}</span>`
 }
 
 /**
@@ -211,30 +229,58 @@ const getReplyData = (data) => {
 
 export const getReplyTitle = (data) => {
 	const replyData = getReplyData(data)
-	return replyData?.title || replyData?.url
-}
-
-export const getReplyURL = (data) => {
-	const replyData = getReplyData(data)
-	const url = replyData?.url || replyData
-	return tweetback(url) || null
+	if (replyData) {
+		if (!replyData.title) {
+			const replyURL = getReplyURL(data)
+			const personLookup = getPerson(replyURL, replyURL)
+			if (personLookup) {
+				console.log(personLookup)
+				return personLookup
+			}
+		}
+		return replyData?.url || replyData
+	}
+	return null
 }
 
 /**
  * @param {object} data
- * @returns {object[]}
+ * @returns {string|null}
  */
-export const getReplyAuthors = (data) => {
-	return data?.authors
+export const getReplyURL = (data) => {
+	const replyData = getReplyData(data)
+	if (replyData) {
+		const replyURL = replyData?.url || replyData
+		if (replyURL) {
+			return tweetback(replyURL)
+		}
+	}
+	return null
+}
+
+/**
+ * @param {object} data
+ * @returns {string|null}
+ */
+export const getReplyAuthor = (data) => {
+	const replyURL = getReplyURL(data)
+	if (replyURL) {
+		const personLookup = getPerson(null, replyURL)
+		if (personLookup) {
+			return personLookup
+		}
+	}
+	return null
 }
 
 /**
  * @param {object} data
  * @returns {string}
  */
-export const getReplyAuthorsString = (data) => {
-	if (getReplyAuthors(data)) {
-		return conjunction([...getReplyAuthors(data)].map(getAuthorData).map(authorString))
+export const getReplyAuthorString = (data) => {
+	const replyAuthor = getReplyAuthor(data)
+	if (replyAuthor) {
+		return authorString(replyAuthor)
 	}
 	return null
 }
@@ -313,8 +359,8 @@ export default {
 	getAuthorsString,
 	getReplyTitle,
 	getReplyURL,
-	getReplyAuthors,
-	getReplyAuthorsString,
+	getReplyAuthor,
+	getReplyAuthorString,
 	getRSVPString,
 	getMetaTitle,
 	getMetaImage,

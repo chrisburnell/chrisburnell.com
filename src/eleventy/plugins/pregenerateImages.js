@@ -5,7 +5,7 @@ import Image from "@11ty/eleventy-img"
 import glob from "fast-glob"
 import path from "node:path"
 
-export default async function() {
+export default async function () {
 	const options = {
 		urlPath: "/images/",
 		outputDir: "./images/",

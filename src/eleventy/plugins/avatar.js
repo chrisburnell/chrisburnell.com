@@ -57,7 +57,7 @@ const storeAvatar = async (id, classes = "") => {
 	return markup
 }
 
-export default function(eleventyConfig) {
+export default function (eleventyConfig) {
 	let mastodonHandles, domains
 
 	eleventyConfig.on("beforeBuild", () => {

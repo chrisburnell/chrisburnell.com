@@ -24,10 +24,7 @@ const filterCollection = (collection, tag, limit = false) => {
 		return filteredCollectionsMemoization[tag]
 	}
 
-	let filteredCollection = collection
-		.getFilteredByTag(tag)
-		.filter(isPublished)
-		.sort(dateSort)
+	let filteredCollection = collection.getFilteredByTag(tag).filter(isPublished).sort(dateSort)
 
 	if (limit && process.env.ELEVENTY_RUN_MODE === "serve") {
 		// Keep only a few items per collection for performance
@@ -72,10 +69,7 @@ export default {
 			return filteredCollectionsMemoization["features"]
 		}
 
-		let filteredCollection = collection
-			.getFilteredByTag("feature")
-			.filter(notReply)
-			.sort(dateSort)
+		let filteredCollection = collection.getFilteredByTag("feature").filter(notReply).sort(dateSort)
 
 		filteredCollectionsMemoization["features"] = filteredCollection
 
@@ -137,11 +131,7 @@ export default {
 			return filteredCollectionsMemoization["notesWithoutReplies"]
 		}
 
-		let filteredCollection = collection
-			.getFilteredByTag("note")
-			.filter(isPublished)
-			.filter(notReply)
-			.sort(dateSort)
+		let filteredCollection = collection.getFilteredByTag("note").filter(isPublished).filter(notReply).sort(dateSort)
 
 		filteredCollectionsMemoization["notesWithoutReplies"] = filteredCollection
 

@@ -3,13 +3,13 @@
 		<div class=" [ deck__context ] ">
 			{% if item.data.rsvp %}
 				<data class=" [ p-rsvp ] " value="{{ item.data.rsvp.value }}" hidden></data>
-				{{ item.data.rsvp_string }}
+				{{ item.data.rsvp_string | safe }}
 			{% else %}
 				<small>in reply to</small>
 			{% endif %}
-			<a class=" [ h-cite  u-in-reply-to ] " href="{{ item.data.reply_url }}">{{ item.data.reply_title | default(item.data.reply_url) }}</a>
-			{% if item.data.reply_authors %}
-				<small>by</small> {{ item.data.reply_authors_string }}
+			<a class=" [ h-cite  u-in-reply-to ] " href="{{ item.data.reply_url }}">{{ item.data.reply_title | getInternalTarget(collections.all) }}</a>
+			{% if item.data.reply_author_string %}
+				<small>by</small> {{ item.data.reply_author_string | safe }}
 			{% endif %}
 			{% if item.data.rsvp.date | daysUntil == 0 %}
 				{# Today #}
@@ -52,7 +52,7 @@
 	{% if item.data.title or item.data.of_title %}
 		<h1 style="view-transition-name: title-{{ item.data.page.fileSlug }};">
 			<a class=" [ p-name ] " href="{% if item.data.tags and "clickthrough" in item.data.tags %}{{ item.data.of_url | default(item.url) | safe }}{% else %}{{ item.url | safe }}{% endif %}">
-				{% if item.data.emoji %}<c-emoji>{{ item.data.emoji }}</c-emoji>{% endif %}{{ item.data.title | default(item.data.of_title) | striptags(true) | safe }}
+				{% if item.data.emoji %}<c-emoji>{{ item.data.emoji }}</c-emoji> {% endif %}{{ item.data.title | default(item.data.of_title) | striptags(true) | safe }}
 			</a>
 		</h1>
 	{% endif %}
@@ -65,18 +65,12 @@
 		<p class=" [ p-summary ] {% if item.data.category == 'article' %}[ line-clamp ] {% endif %}">{{ item.data.description | formatAsMarkdown | safe }}</p>
 	{% elif item.data.description %}
 		<p class=" [ p-summary ] {% if item.data.category == 'article' %}[ line-clamp ] {% endif %}">{{ item.data.description | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
-	{% elif item.data.category == 'bookmark' %}
+	{% elif ['bookmark', 'like', 'note', 'talk'].includes(item.data.category) %}
 		<p class=" [ p-summary ] ">{{ item.content | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
 	{% elif item.data.category == 'code' %}
 		<p class=" [ p-summary ] ">One of my code snippets.</p>
-	{% elif item.data.category == 'like' %}
-		<p class=" [ p-summary ] ">{{ item.content | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
-	{% elif item.data.category == 'note' %}
-		<p class=" [ p-summary ] ">{{ item.content | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
 	{% elif item.data.category == 'recipe' %}
-		<p class=" [ p-summary ] ">A {{ item.data.categoryProper | default(item.data.category) }}{% if item.data.authors %} by {{ item.data.meta_authors_string }}{% endif %}</p>
-	{% elif item.data.category == 'talk' %}
-		<p class=" [ p-summary ] ">{{ item.content | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
+		<p class=" [ p-summary ] ">A {{ item.data.categoryProper | default(item.data.category) }}{% if item.data.authors %} by {{ item.data.meta_authors_string | safe }}{% endif %}</p>
 	{% endif %}
 	{% if item.data.date or item.data.updated or item.data.webmentions or item.data.stargazers %}
 		<ul class=" [ cluster ] [ deck__meta ] ">
@@ -90,12 +84,12 @@
 					<small>published</small> <a class=" [ u-url ] " href="{{ item.url }}"{% if item.data.title or item.data.of_title %} tabindex="-1"{% endif %}><time class=" [ dt-published ] " datetime="{{ item.data.date | rfc3339Date }}">{{ item.data.date | friendlyDateLong | safe }}</time></a>
 				</li>
 			{% endif %}
-			{% if (item.data.show_responses and item.data.webmentions.length) or item.data.stargazers %}
+			{% if (item.data.show_webmentions and item.data.webmentions.length) or item.data.stargazers %}
 				{%- set bookmarks = item.data.webmentions | getWebmentionsByTypes(['bookmark-of']) -%}
 				{%- set likes = item.data.webmentions | getWebmentionsByTypes(['like-of']) -%}
-				{%- set links = item.data.webmentions | getAllLinks -%}
 				{%- set reposts = item.data.webmentions | getWebmentionsByTypes(['repost-of']) -%}
-				{%- set reactions = bookmarks.concat(likes).concat(links).concat(reposts) -%}
+				{%- set links = item.data.webmentions | getAllLinks -%}
+				{%- set reactions = bookmarks.concat(likes).concat(reposts).concat(links) -%}
 				{%- set replies = item.data.webmentions | getAllReplies -%}
 				{%- set stargazers = item.data.stargazers | default(0) -%}
 				{%- set responsesLength = reactions.length + replies.length + stargazers -%}

@@ -1,6 +1,6 @@
 import esbuild from "esbuild"
 
-export default function(eleventyConfig) {
+export default function (eleventyConfig) {
 	// Recognize Sass as a "template languages"
 	eleventyConfig.addTemplateFormats("js")
 
@@ -18,12 +18,12 @@ export default function(eleventyConfig) {
 					entryPoints: [inputPath],
 					// nodePaths: ['.', 'src/assets/js'],
 					bundle: true,
-					format: 'esm',
-					target: 'es6',
-					minify: data.eleventy.env.runMode === 'build',
+					format: "esm",
+					target: "es6",
+					minify: data.eleventy.env.runMode === "build",
 					write: false,
-					external: ['fs'],
-				});
+					external: ["fs"],
+				})
 
 				return esbuildResult.outputFiles[0].text
 			}

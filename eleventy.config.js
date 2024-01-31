@@ -1,6 +1,7 @@
 import dotenv from "dotenv"
 dotenv.config()
 
+import fs from "node:fs"
 import configWebmentions from "./src/data/config/webmentions.js"
 import builders from "./src/eleventy/builders.js"
 import collections from "./src/eleventy/collections.js"
@@ -8,6 +9,8 @@ import { url as siteURL } from "./src/eleventy/data/site.js"
 import { filtersSync } from "./src/eleventy/filters.js"
 import plugins from "./src/eleventy/plugins.js"
 import shortcodes from "./src/eleventy/shortcodes.js"
+
+const pkg = JSON.parse(fs.readFileSync("package.json"))
 
 export default async function(eleventyConfig) {
 	///
@@ -47,14 +50,33 @@ export default async function(eleventyConfig) {
 	eleventyConfig.addPlugin(plugins.browserSupport)
 	eleventyConfig.addPlugin(plugins.EleventyRenderPlugin)
 	eleventyConfig.addPlugin(plugins.bundler, {
-		hoistDuplicateBundlesFor: ["css", "js"]
+		hoistDuplicateBundlesFor: ["css", "js"],
+		transforms: [
+
+		]
 	})
 	eleventyConfig.addPlugin(plugins.image)
 	// eleventyConfig.addPlugin(plugins.javascript)
 	eleventyConfig.addPlugin(plugins.markdown)
+	eleventyConfig.addPlugin(plugins.rss)
 	eleventyConfig.addPlugin(plugins.sass)
 	eleventyConfig.addPlugin(plugins.syntaxHighlight)
+	eleventyConfig.addPlugin(plugins.webc, {
+		components: "./src/components/**/*.webc",
+		useTransform: true,
+		transformData: {
+			pkg,
+		},
+	})
 	eleventyConfig.addPlugin(plugins.webmentions, configWebmentions)
+	if (process.env.DIRECTORY_OUTPUT) {
+		eleventyConfig.addPlugin(plugins.directoryOutput, {
+			columns: {
+				filesize: true,
+				benchmark: true,
+			}
+		})
+	}
 	if (process.env.PREGENERATE_IMAGES) {
 		eleventyConfig.addPlugin(plugins.pregenerateImages)
 	}
@@ -78,13 +100,14 @@ export default async function(eleventyConfig) {
 	///
 	eleventyConfig.addPassthroughCopy("audio")
 	eleventyConfig.addPassthroughCopy("fonts")
-	eleventyConfig.addPassthroughCopy("images/*")
-	eleventyConfig.addPassthroughCopy("images/animated")
+	eleventyConfig.addPassthroughCopy("images")
 	eleventyConfig.addPassthroughCopy("static")
 	eleventyConfig.addPassthroughCopy("video")
 	eleventyConfig.addPassthroughCopy({
-		"files/cv.pdf": "cv.pdf",
-		"files/qr.png": "qr.png",
+		"files": ".",
+		"src/js/components": "js/components",
+		"node_modules/@chrisburnell/spark-line/spark-line.js": "js/components",
+		"node_modules/@zachleat/details-utils/details-utils.js": "js/components",
 	})
 
 	///

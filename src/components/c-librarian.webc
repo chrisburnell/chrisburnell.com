@@ -1,0 +1,11 @@
+<is-land class=" [ librarian-island ] " on:idle on:visible>
+	<div webc:root="override" class=" [ box ] [ librarian ] [ flow ] ">
+		<div>
+			<slot></slot>
+		</div>
+	</div>
+
+	<template webc:raw data-island="once">
+		<script type="module" src="/js/components/librarian.js"></script>
+	</template>
+</is-land>

@@ -1,0 +1,14 @@
+---
+pagination:
+  data: collections.tags
+  size: 1
+  alias: tag
+permalink: /{{ tag }}.xml
+eleventyComputed:
+  title: "{{ tag | title | specialCapitalize }}"
+  description: "All of my posts tagged “{{ tag | specialCapitalize }}”."
+  related_collection: "{{ tag }}"
+  reverse_collection: true
+  tag_collection: true
+  limit: 9001
+---

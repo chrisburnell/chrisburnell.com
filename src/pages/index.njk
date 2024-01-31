@@ -3,7 +3,7 @@ permalink: "/index.html"
 layout: base
 title: The Homepage
 eleventyComputed:
-  tagline: "{{ site.tagline }}"
+  tagline: "{{ site.tagline | safe }}"
   description: "{{ site.description | safe }}"
 sitemap:
   changefreq: daily

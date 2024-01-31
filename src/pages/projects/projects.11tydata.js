@@ -2,7 +2,7 @@ import { githubData, npmData } from "../../eleventy/filters/fetch.js"
 
 export default {
 	tags: ["project"],
-	show_responses: true,
+	show_webmentions: true,
 	eleventyComputed: {
 		date: async (data) => {
 			if (data.github) {

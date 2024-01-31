@@ -8,7 +8,7 @@ const getGithubData = async (repository) => {
 	return github
 }
 
-export default async function() {
+export default async function () {
 	const information = await getGithubData(`${github}/${repository}`)
 		.then((information) => information)
 		.catch((error) => {

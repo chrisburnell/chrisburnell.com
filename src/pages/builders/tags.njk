@@ -33,7 +33,7 @@ truncate: true
 	<div class=" [ description ] [ flow ] ">
 		<p>
 			<span class=" [ p-summary ] ">{% if count > 1 %}All {{ count | numberStringFormat }}{% else %}Just the one{% endif %} of my posts tagged <q>{{ tag | specialCapitalize }}</q>{% if first_year != latest_year %}, dating from {% if collection[0].data.list == 'shelf' %}{{ first_year }}–{{ latest_year }}{% else %}<a href="#{{ first_year }}">{{ first_year }}</a>–<a href="#{{ latest_year }}">{{ latest_year }}</a>{% endif %}{% endif %}.</span>
-			<a href="{{ site.url }}/{{ tag }}.xml" title="Tagged: {{ tag | specialCapitalize | safe }} Feed"><svg width="20" height="20" aria-hidden="true" focusable="false" style="fill: #ff8c00; vertical-align: middle; margin-block-start: calc(1ex - 1cap);"><use href="#svg--rss"></use></svg></a>
+			<a href="{{ site.url }}/{{ tag }}.xml" title="Tagged: {{ tag | specialCapitalize }} Feed"><svg width="20" height="20" aria-hidden="true" focusable="false" style="fill: #ff8c00; vertical-align: middle; margin-block-start: calc(1ex - 1cap);"><use href="#svg--rss"></use></svg></a>
 		</p>
 	</div>
 
@@ -45,8 +45,9 @@ truncate: true
 		{% include 'css-naked-day.njk' %}
 
 		{%- set year = latest_year -%}
+		{%- set count = collection | getCollectionCount(year) -%}
 		<h2 id="{{ year }}">
-			{{ year }} <small>{{ collection | getCollectionCount(year) }} post{{ 's' if collection | getCollectionCount(year) > 1 }}</small>
+			{{ year }} <small>{{ count }} post{{ 's' if count > 1 }}</small>
 		</h2>
 		<div id="list-{{ year }}" class=" [ deck ] ">
 			{% for item in collection %}

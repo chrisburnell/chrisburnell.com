@@ -16,12 +16,12 @@ export const monetization = "$ilp.uphold.com/wDqKwewbX8by"
 export const upcomingDaysLead = 7
 
 export const limits = {
-    deck: 2,
-    shelf: 3,
-    feature: 2,
-    feed: 10,
-    sparkline: 15,
-    minimumResponsesRequired: 5,
+	deck: 2,
+	shelf: 3,
+	feature: 2,
+	feed: 10,
+	sparkline: 15,
+	minimumResponsesRequired: 5,
 }
 
 export const sitemap = {

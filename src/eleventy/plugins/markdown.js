@@ -2,7 +2,7 @@ import markdownParser from "markdown-it"
 import markdownAbbr from "markdown-it-abbr"
 import markdownFootnote from "markdown-it-footnote"
 
-export default function(eleventyConfig) {
+export default function (eleventyConfig) {
 	const md = markdownParser({
 		html: true,
 		breaks: true,

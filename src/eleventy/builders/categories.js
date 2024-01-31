@@ -1,4 +1,4 @@
-export default function(collection) {
+export default function (collection) {
 	return (
 		collection
 			.getAll()

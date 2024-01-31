@@ -29,7 +29,7 @@ const getBrowserslistSupport = async (feature) => {
 	return browserslistData["__compat"]["support"]
 }
 
-export default async function() {
+export default async function () {
 	let sorted = []
 
 	for (let feature of browserFeatures) {

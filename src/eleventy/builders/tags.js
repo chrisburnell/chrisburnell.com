@@ -1,7 +1,7 @@
 import ignoredTags from "../../data/ignoredTags.js"
 import categories from "./categories.js"
 
-export default function(collection) {
+export default function (collection) {
 	let categoriesCollection = categories(collection)
 
 	return (
@@ -24,7 +24,8 @@ export default function(collection) {
 			// Remove duplicates
 			.filter((tag, index, self) => {
 				return (
-					index === self.findIndex((t) => {
+					index ===
+					self.findIndex((t) => {
 						return t === tag
 					})
 				)

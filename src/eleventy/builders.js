@@ -3,5 +3,5 @@ import tags from "./builders/tags.js"
 
 export default {
 	categories,
-	tags
+	tags,
 }

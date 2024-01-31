@@ -1,0 +1,17 @@
+<is-land on:idle on:visible>
+	<seven-minute-tabs webc:root="override">
+		<ol webc:keep role="tablist" :aria-label="this.title">
+			<li><a :href="`#${this.id}-1`" role="tab">First tab</a></li>
+			<li><a :href="`#${this.id}-2`" role="tab">Second tab</a></li>
+			<li><a :href="`#${this.id}-3`" role="tab">Third tab</a></li>
+		</ol>
+
+		<div id="first-tab" role="tabpanel">First tab content</div>
+		<div id="second-tab" role="tabpanel">Second tab content</div>
+		<div id="third-tab" role="tabpanel">Third tab content</div>
+	</seven-minute-tabs>
+
+	<template webc:raw data-island="once">
+		<script src="/js/components/seven-minute-tabs.js"></script>
+	</template>
+</is-land>

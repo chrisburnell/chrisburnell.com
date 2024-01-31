@@ -1,0 +1,42 @@
+# humanstxt.org
+
+/* OWNER & DEVELOPER */
+
+    Name: {{ author.name }}
+    Email: {{ author.email }}
+    CodePen: https://codepen.io/{{ author.codepen }}
+    GitHub: https://github.com/{{ author.github }}
+    Mastodon: https://{{ author.mastodon_domain }}/users/{{ author.mastodon.split('@') | first }}
+    PGP: {{ author.pgp }}
+
+/* SITE */
+
+    Last updated:  {{ global.nowISO | friendlyDate }} {{ global.nowISO | friendlyTime }}
+    URL:           {{ site.url }}
+    Language:      {{ site.locale }}
+    Doctype:       HTML5
+    Fonts:         Proxima Vara
+    Compiled with: {{ eleventy.generator }}
+
+/* LANGUAGES */
+
+    HTML
+    WebC
+    Markdown
+    Nunjucks
+    CSS & SCSS
+    JavaScript
+    JSON
+    XML
+    YAML
+    WebC
+
+/* SERVICES */
+
+    Aperture:      https://aperture.p3k.io
+    Atlas:         https://atlas.p3k.io
+    CodePen:       https://codepen.io
+    IndieAuth:     https://indieauth.com
+    Switchboard:   https://switchboard.p3k.io
+    Telegraph:     https://telegraph.p3k.io
+    Webmention.io: https://webmention.io

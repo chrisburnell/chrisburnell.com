@@ -1,20 +1,7 @@
 import { getWebmentions } from "@chrisburnell/eleventy-cache-webmentions"
 import webmentionsConfig from "../data/config/webmentions.js"
 import { url as siteURL } from "../eleventy/data/site.js"
-import {
-	getAuthors,
-	getAuthorsString,
-	getCategoryName,
-	getMetaImage,
-	getMetaTitle,
-	getPropertyTitle,
-	getPropertyURL,
-	getRSVPString,
-	getReplyAuthors,
-	getReplyAuthorsString,
-	getReplyTitle,
-	getReplyURL
-} from "../eleventy/filters/collections.js"
+import { getAuthors, getAuthorsString, getCategoryName, getMetaImage, getMetaTitle, getPropertyTitle, getPropertyURL, getRSVPString, getReplyAuthor, getReplyAuthorString, getReplyTitle, getReplyURL } from "../eleventy/filters/collections.js"
 import { formatAsMarkdown, stripHTML, stripNewLines } from "../eleventy/filters/strings.js"
 import { getHost } from "../eleventy/filters/urls.js"
 
@@ -40,8 +27,8 @@ export default {
 		of_title: (data) => getPropertyTitle(data),
 		reply_title: (data) => getReplyTitle(data),
 		reply_url: (data) => getReplyURL(data),
-		reply_authors: (data) => getReplyAuthors(data),
-		reply_authors_string: (data) => getReplyAuthorsString(data),
+		reply_author: (data) => getReplyAuthor(data),
+		reply_author_string: (data) => getReplyAuthorString(data),
 		rsvp_string: (data) => getRSVPString(data),
 		syndicate_to: (data) => {
 			if (data.drink_of) {

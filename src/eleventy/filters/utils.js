@@ -1,6 +1,5 @@
 import { getContent, getPublished, getType } from "@chrisburnell/eleventy-cache-webmentions"
 import consoles from "../../data/consoles.js"
-import people from "../../data/people.js"
 import places from "../../data/places.js"
 import postingMethods from "../../data/postingMethods.js"
 import syndicationTargets from "../../data/syndicationTargets.js"
@@ -450,110 +449,6 @@ export const getTwitterHandle = (value) => {
 }
 
 /**
- * @param {any} value
- * @param {any} intent
- * @returns {any}
- */
-export const getPerson = (value, intent) => {
-	// Default metadata to the passed value (string/object)
-	let title, url, mastodon, twitter
-	// Extract bits of metadata if they exist
-	if (typeof value === "object") {
-		if ("title" in value) {
-			title = value.title
-		}
-		if ("url" in value) {
-			url = value.url
-		}
-		if ("mastodon" in value) {
-			mastodon = value.mastodon
-		}
-		if ("twitter" in value) {
-			twitter = value.twitter
-		}
-	} else {
-		title = value
-		url = value
-	}
-	// Loop through known people to make matches based on:
-	// - title
-	// - url
-	// - mastodon
-	// - twitter
-	for (let person of people) {
-		// Check title
-		if (person.title === title) {
-			title = person.title
-			value = person
-			break
-		}
-		// Check url
-		if (url && "url" in person) {
-			// Parse URL for Mastodon instance + username
-			for (let instance of mastodonInstances) {
-				if (url.includes(instance)) {
-					if (url.includes("/@")) {
-						mastodon = url.split("/@")[1].split("/")[0]
-					} else {
-						mastodon = url.split("/users/")[1].split("/")[0]
-					}
-					mastodon += `@${instance}`
-					break
-				}
-			}
-			// Parse URL for Twitter username
-			if (url.includes("https://twitter.com")) {
-				twitter = url.split("/status/")[0].split("twitter.com/")[1]
-			}
-			// Parse URL for person match
-			for (let person_url of toArray(person.url)) {
-				if (url.includes(person_url)) {
-					url = person_url
-					value = person
-					break
-				}
-			}
-		}
-		// Check mastodon
-		if (mastodon && "mastodon" in person) {
-			for (let person_mastodon of toArray(person.mastodon)) {
-				if (person_mastodon == mastodon) {
-					mastodon = person_mastodon
-					value = person
-					break
-				}
-			}
-		}
-		// Check twitter
-		if (twitter && "twitter" in person) {
-			for (let person_twitter of toArray(person.twitter)) {
-				if (person_twitter == twitter) {
-					twitter = person_twitter
-					value = person
-					break
-				}
-			}
-		}
-	}
-	// create titles from mastodon/twitter URLs
-	if (title == url) {
-		title = mastodon || twitter || title
-	}
-	// Spit out specific bits of metadata
-	if (intent == "object") {
-		return value
-	}
-	if (intent == "url") {
-		return value.url || value
-	} else if (intent == "mastodon") {
-		return value.mastodon || value
-	} else if (intent == "twitter") {
-		return value.twitter || value
-	}
-	return value.title || value
-}
-
-/**
  * @param {string} value
  * @returns {string}
  */
@@ -589,6 +484,5 @@ export default {
 	getPostingMethod,
 	getSyndicationTarget,
 	getTwitterHandle,
-	getPerson,
 	getConsole,
 }

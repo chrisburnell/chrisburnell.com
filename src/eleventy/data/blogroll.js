@@ -124,10 +124,6 @@ const blogroll = [
 		url: "https://keithjgrant.com",
 	},
 	{
-		title: "Binyamin Green",
-		url: "https://binyam.in",
-	},
-	{
 		title: "Christian Heilmann",
 		url: "https://christianheilmann.com",
 	},
@@ -407,8 +403,8 @@ const blogroll = [
 		title: "Juan Fernandes",
 		url: "https://www.juanfernandes.uk",
 	},
-]
-
-export default blogroll.sort((a, b) => {
+].sort((a, b) => {
 	return a.title.localeCompare(b.title)
 })
+
+export default blogroll
