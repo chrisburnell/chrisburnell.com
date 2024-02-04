@@ -102,7 +102,7 @@ Passionate about the open web, having published over 50 technical articles, and 
     <small><strong>2013 – present</strong></small>
 </div>
 
-Launched a web development blog and have published over [{{ collections.posts | length | toNearest(100) }} blog posts](https://chrisburnell.com/posts/), including [{{ collections.writingPosts | length }} longform articles](https://chrisburnell.com/writing/), [{{ collections.css | length }} articles about CSS](https://chrisburnell.com/tag/css/), and [{{ collections.code | length }} code demos](https://chrisburnell.com/tag/css/), some of which have been [featured on CodePen](https://codepen.io/collection/hfqlg).
+Launched a web development blog and have published over [{{ collections.blog | length | toNearest(5) }} blog posts](https://chrisburnell.com/posts/), including [{{ collections.writingPosts | length }} longform articles](https://chrisburnell.com/writing/), [{{ collections.css | length }} articles about CSS](https://chrisburnell.com/tag/css/), and [{{ collections.code | length }} code demos](https://chrisburnell.com/tag/css/), some of which have been [featured on CodePen](https://codepen.io/collection/hfqlg).
 
 <div class=" [ space-between ] ">
     <h3 class=" [ delta ] "><a href="https://chrisburnell.com/projects/">Open Source Author</a></h3>
