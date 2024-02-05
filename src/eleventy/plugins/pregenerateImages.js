@@ -48,8 +48,6 @@ export default async function () {
 						quality: 100,
 					},
 					filenameFormat: (id, src, width, format, options) => {
-						const extension = path.extname(src)
-						const name = path.basename(src, extension)
 						return `avatar${width > 100 ? `@${width / 100}x` : ``}.${format}`
 					},
 				},

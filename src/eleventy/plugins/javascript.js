@@ -1,10 +1,15 @@
 import esbuild from "esbuild"
 
 export default function (eleventyConfig) {
-	// Recognize Sass as a "template languages"
+	// Recognize JS as a "template language"
 	eleventyConfig.addTemplateFormats("js")
 
-	// Compile Sass
+	// Ignore non-asset JS files
+	eleventyConfig.ignores.add("./src/data")
+	eleventyConfig.ignores.add("./src/eleventy")
+	eleventyConfig.ignores.add("./src/**/*.11tydata.js")
+
+	// Compile JS
 	eleventyConfig.addExtension("js", {
 		outputFileExtension: "js",
 		read: false,
@@ -13,14 +18,14 @@ export default function (eleventyConfig) {
 				return
 			}
 
-			return async (data) => {
+			return async () => {
 				const esbuildResult = await esbuild.build({
 					entryPoints: [inputPath],
-					// nodePaths: ['.', 'src/assets/js'],
-					bundle: true,
+					nodePaths: ["src/js", "node_modules"],
 					format: "esm",
 					target: "es6",
-					minify: data.eleventy.env.runMode === "build",
+					bundle: true,
+					minify: true,
 					write: false,
 					external: ["fs"],
 				})

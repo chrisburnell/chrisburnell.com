@@ -6,7 +6,7 @@
     Email: {{ author.email }}
     CodePen: https://codepen.io/{{ author.codepen }}
     GitHub: https://github.com/{{ author.github }}
-    Mastodon: https://{{ author.mastodon_domain }}/users/{{ author.mastodon.split('@') | first }}
+    Mastodon: https://{{ author.mastodon_domain }}/{{ author.mastodon.split('@')[1] }}
     PGP: {{ author.pgp }}
 
 /* SITE */

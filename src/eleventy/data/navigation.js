@@ -6,7 +6,7 @@ const navigation = [
 		footer: true,
 	},
 	{
-		title: '<span class=" [ canada ] ">About</span>',
+		title: `<span class=" [ canada ] ">About</span>`,
 		url: "/about/",
 		header: true,
 		footer: true,

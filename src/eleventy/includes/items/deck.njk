@@ -68,7 +68,7 @@
 	{% elif ['bookmark', 'like', 'note', 'talk'].includes(item.data.category) %}
 		<p class=" [ p-summary ] ">{{ item.content | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
 	{% elif item.data.category == 'code' %}
-		<p class=" [ p-summary ] ">One of my code snippets.</p>
+		<p class=" [ p-summary ] ">One of my code demos.</p>
 	{% elif item.data.category == 'recipe' %}
 		<p class=" [ p-summary ] ">A {{ item.data.categoryProper | default(item.data.category) }}{% if item.data.authors %} by {{ item.data.meta_authors_string | safe }}{% endif %}</p>
 	{% endif %}

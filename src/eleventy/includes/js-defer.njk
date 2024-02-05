@@ -1,0 +1,6 @@
+{# Deferred JS -#}
+<script type="module" src="{% getBundleFileUrl 'js', 'module' %}"></script>
+<script src="{% getBundleFileUrl 'js' %}"></script>
+
+{%- js 'module' -%}{% include '../../../js/defer.js' %}{%- endjs -%}
+

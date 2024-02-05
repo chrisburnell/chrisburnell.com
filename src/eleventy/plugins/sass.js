@@ -7,10 +7,10 @@ import postcss from "postcss"
 import * as sass from "sass"
 
 export default function (eleventyConfig) {
-	// Recognize Sass as a "template languages"
+	// Recognize SCSS as a "template language"
 	eleventyConfig.addTemplateFormats("scss")
 
-	// Compile Sass
+	// Compile SCSS
 	eleventyConfig.addExtension("scss", {
 		outputFileExtension: "css",
 		compile: async function (inputContent, inputPath) {
@@ -23,7 +23,7 @@ export default function (eleventyConfig) {
 				return
 			}
 
-			return async (data) => {
+			return async () => {
 				const sassResult = sass.compileString(inputContent, {
 					loadPaths: [parsed.dir || ".", "src/css", "node_modules"],
 					// style: process.env.ELEVENTY_RUN_MODE === "build" ? "compressed" : "expanded",

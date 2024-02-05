@@ -7,7 +7,7 @@ class UrlInput {
 	 * @constructor
 	 */
 	constructor() {
-		this.inputs = document.querySelectorAll('input[type="url"]')
+		this.inputs = document.querySelectorAll(`input[type="url"]`)
 
 		this.inputs.forEach((input) => {
 			input.addEventListener("blur", (event) => {

@@ -28,9 +28,11 @@ wide: true
 	<article class=" [ flow ] ">
 		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://discord.com' | urlencode }}/" class=" [ avatar ] " width="30" height="30" loading="lazy" decoding="async">
 		<h1>
-			Discord
-			<br>
-			<small>@{{ author.discord }}</small>
+			<a href="https://discordapp.com/users/{{ author.discord_id }}">
+				Discord
+				<br>
+				<small>@{{ author.discord }}</small>
+			</a>
 		</h1>
 	</article>
 	<article class=" [ flow ] ">
@@ -86,10 +88,10 @@ wide: true
 	<article class=" [ flow ] ">
 		<img src="https://v1.indieweb-avatar.11ty.dev/{{ ('https://' + author.mastodon_domain) | urlencode }}/" class=" [ avatar ] " width="30" height="30" loading="lazy" decoding="async">
 		<h1>
-			<a href="https://{{ author.mastodon_domain }}/users/{{ author.mastodon.split('@') | first }}">
+			<a href="https://{{ author.mastodon_domain }}/{{ author.mastodon.split('@')[1] }}">
 				Mastodon
 				<br>
-				<small aria-hidden="true">@{{ author.mastodon }}</small>
+				<small aria-hidden="true">{{ author.mastodon }}</small>
 			</a>
 		</h1>
 	</article>

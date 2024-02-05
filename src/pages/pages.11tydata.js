@@ -1,5 +1,5 @@
 import { getWebmentions } from "@chrisburnell/eleventy-cache-webmentions"
-import webmentionsConfig from "../data/config/webmentions.js"
+import configWebmentions from "../eleventy/config/webmentions.js"
 import { url as siteURL } from "../eleventy/data/site.js"
 import { getMetaImage, getMetaTitle } from "../eleventy/filters/collections.js"
 import { formatAsMarkdown, stripHTML, stripNewLines } from "../eleventy/filters/strings.js"
@@ -19,6 +19,6 @@ export default {
 			return `A page on ${getHost(siteURL)}`
 		},
 		meta_image: (data) => getMetaImage(data),
-		webmentions: (data) => getWebmentions(webmentionsConfig, webmentionsConfig.domain + data.page.url),
+		webmentions: (data) => getWebmentions(configWebmentions, configWebmentions.domain + data.page.url),
 	},
 }

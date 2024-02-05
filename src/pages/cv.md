@@ -88,21 +88,21 @@ Passionate about the open web, having published over 50 technical articles, and 
 
 <div class=" [ space-between ] ">
     <h3 class=" [ delta ] ">Conference Organiser for <a href="https://stateofthebrowser.com" rel="external"><c-emoji><img class="brand-logo" alt="State of the Browser’s logo" loading="lazy" decoding="async" src="/images/built/sotb-logo.png"></c-emoji> State of the Browser</a></h3>
-    <small><strong>May 2018 – December 2023</strong></small>
+    <small><strong>May 2018 – February 2024</strong></small>
 </div>
 
-- Organised 5 annual, not-for-profit conferences, showcasing over 45 speakers with 150+ in-person attendees each year.
+- Organised 6 annual, not-for-profit conferences, showcasing over 45 speakers with 150+ in-person attendees each year.
 - Liaised with speakers, sponsors, and venues as well as handled the logistics of running an in-person and online conference.
-- Sourced event sponsorships to fund the events and enable under-represented groups to attend for free.
+- Sourced sponsorship to fund the events and enable under-represented groups to attend for free.
 - Built and maintained the conference websites, including a design refresh in 2018 and codebase refresh in 2021 as well as extensive work with APIs, to automate many organisational tasks for the conference.
-- Annual conference websites: [2018](https://2018.stateofthebrowser.com), [2019](https://2019.stateofthebrowser.com), [2021](https://2021.stateofthebrowser.com), [2022](https://2022.stateofthebrowser.com), [2023](https://2022.stateofthebrowser.com)
+- Annual conference websites: [2018](https://2018.stateofthebrowser.com), [2019](https://2019.stateofthebrowser.com), [2021](https://2021.stateofthebrowser.com), [2022](https://2022.stateofthebrowser.com), [2023](https://2022.stateofthebrowser.com), 2024 *(coming soon!)*
 
 <div class=" [ space-between ] ">
     <h3 class=" [ delta ] ">Technical Writer on <a href="https://chrisburnell.com/"><c-emoji><img class="brand-logo" alt="{{ site.title }}" loading="lazy" decoding="async" src="/images/raven.svg"></c-emoji> chrisburnell.com</a></h3>
     <small><strong>2013 – present</strong></small>
 </div>
 
-Launched a web development blog and have published over [{{ collections.posts | length | toNearest(100) }} blog posts](https://chrisburnell.com/posts/), including [{{ collections.writings | length }} longform articles](https://chrisburnell.com/writing/), [{{ collections.css | length }} articles about CSS](https://chrisburnell.com/tag/css/), and [{{ collections.code | length }} code demos](https://chrisburnell.com/tag/css/), some of which have been [featured on CodePen](https://codepen.io/collection/hfqlg).
+Launched a web development blog and have published over [{{ collections.blog | length | toNearest(5) }} blog posts](https://chrisburnell.com/posts/), including [{{ collections.writings | length }} longform articles](https://chrisburnell.com/writing/), [{{ collections.css | length }} articles about CSS](https://chrisburnell.com/tag/css/), and [{{ collections.code | length }} code demos](https://chrisburnell.com/code/), some of which have been [featured on CodePen](https://codepen.io/collection/hfqlg).
 
 <div class=" [ space-between ] ">
     <h3 class=" [ delta ] "><a href="https://chrisburnell.com/projects/">Open Source Author</a></h3>

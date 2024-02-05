@@ -1,5 +1,5 @@
 import { getWebmentions } from "@chrisburnell/eleventy-cache-webmentions"
-import webmentionsConfig from "../data/config/webmentions.js"
+import configWebmentions from "../eleventy/config/webmentions.js"
 import { url as siteURL } from "../eleventy/data/site.js"
 import { getAuthors, getAuthorsString, getCategoryName, getMetaImage, getMetaTitle, getPropertyTitle, getPropertyURL, getRSVPString, getReplyAuthor, getReplyAuthorString, getReplyTitle, getReplyURL } from "../eleventy/filters/collections.js"
 import { formatAsMarkdown, stripHTML, stripNewLines } from "../eleventy/filters/strings.js"
@@ -40,6 +40,6 @@ export default {
 			}
 			return data.syndicate_to || []
 		},
-		webmentions: (data) => getWebmentions(webmentionsConfig, webmentionsConfig.domain + data.page.url),
+		webmentions: (data) => getWebmentions(configWebmentions, configWebmentions.domain + data.page.url),
 	},
 }

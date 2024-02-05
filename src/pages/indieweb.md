@@ -13,11 +13,11 @@ I author posts of various *types* on this website, some of which I syndicate to 
 
 <dl>
     <dt><a href="/articles/">Articles</a></dt>
-    <dd><a href="https://indieweb.org/PESOS" rel="external"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> the description to <a href="https://{{ author.mastodon_domain }}/users/{{ author.mastodon.split('@') | first }}" rel="external">Mastodon</a> and then to this website.</dd>
+    <dd><a href="https://indieweb.org/PESOS" rel="external"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> the description to <a href="https://{{ author.mastodon_domain }}/{{ author.mastodon.split('@')[1] }}" rel="external">Mastodon</a> and then to this website.</dd>
     <dt><a href="/notes/">Notes</a></dt>
-    <dd><a href="https://indieweb.org/PESOS" rel="external"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> the content to <a href="https://{{ author.mastodon_domain }}/users/{{ author.mastodon.split('@') | first }}" rel="external">Mastodon</a> and then to this website.</dd>
+    <dd><a href="https://indieweb.org/PESOS" rel="external"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> the content to <a href="https://{{ author.mastodon_domain }}/{{ author.mastodon.split('@')[1] }}" rel="external">Mastodon</a> and then to this website.</dd>
     <dt><a href="/bookmarks/">Bookmarks</a></dt>
-    <dd><a href="https://indieweb.org/PESOS" rel="external"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> the URL and content to <a href="https://{{ author.mastodon_domain }}/users/{{ author.mastodon.split('@') | first }}" rel="external">Mastodon</a> and then to this website.</dd>
+    <dd><a href="https://indieweb.org/PESOS" rel="external"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> the URL and content to <a href="https://{{ author.mastodon_domain }}/{{ author.mastodon.split('@')[1] }}" rel="external">Mastodon</a> and then to this website.</dd>
     <dt><a href="/code/">Pens</a></dt>
     <dd>Ones that I’m especially proud of I will cross-post, manually, to this website.</dd>
     <dt><a href="/beer/">Beer</a></dt>

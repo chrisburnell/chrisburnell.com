@@ -5,7 +5,7 @@ export default {
 			data: {
 				date: "2021-04-26T12:00:00+0000",
 				title: "Fëonir’s Workshop",
-				description: 'Another <abbr title="Dungeons & Dragons">D&D</abbr>-related labour of love, this time a general site for all things D&D, including the draft of my new 12-chapter campaign for 5<sup>th</sup> Edition.',
+				description: `Another <abbr title="Dungeons & Dragons">D&D</abbr>-related labour of love, this time a general site for all things D&D, including the draft of my new 12-chapter campaign for 5<sup>th</sup> Edition.`,
 				description_markdown: true,
 				emoji: "🦎",
 			},
@@ -25,7 +25,7 @@ export default {
 			data: {
 				date: "2019-09-05T12:00:00+0000",
 				title: "Waterdeep, A Curated Guide",
-				description: 'I’m the Game Master for a <abbr title="Dungeons & Dragons">D&D</abbr> campaign of Waterdeep: Dragon Heist. This is a chronicle of my players’ time spent in Waterdeep.',
+				description: `I’m the Game Master for a <abbr title="Dungeons & Dragons">D&D</abbr> campaign of Waterdeep: Dragon Heist. This is a chronicle of my players’ time spent in Waterdeep.`,
 				description_markdown: true,
 				emoji: "🐉",
 			},

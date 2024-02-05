@@ -21,7 +21,7 @@ layout: base
 		{% include 'css-naked-day.njk' %}
 
 		<div class=" [ e-content ] [ flow ] {% if contentClass %}[ {{ contentClass }} ] {% endif %}{% if toc %}generate-toc{% endif %}">
-			{{ content | safe }}
+			{{- content | safe -}}
 		</div>
 
 		{% include 'responses.njk' %}

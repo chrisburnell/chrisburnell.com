@@ -1,16 +1,14 @@
 import dotenv from "dotenv"
 dotenv.config()
 
-import fs from "node:fs"
-import configWebmentions from "./src/data/config/webmentions.js"
 import builders from "./src/eleventy/builders.js"
 import collections from "./src/eleventy/collections.js"
+import config from "./src/eleventy/config.js"
 import { url as siteURL } from "./src/eleventy/data/site.js"
 import { filtersSync } from "./src/eleventy/filters.js"
 import plugins from "./src/eleventy/plugins.js"
 import shortcodes from "./src/eleventy/shortcodes.js"
-
-const pkg = JSON.parse(fs.readFileSync("package.json"))
+import transforms from "./src/eleventy/transforms.js"
 
 export default async function(eleventyConfig) {
 	///
@@ -49,33 +47,18 @@ export default async function(eleventyConfig) {
 	eleventyConfig.addPlugin(plugins.avatar)
 	eleventyConfig.addPlugin(plugins.browserSupport)
 	eleventyConfig.addPlugin(plugins.EleventyRenderPlugin)
-	eleventyConfig.addPlugin(plugins.bundler, {
-		hoistDuplicateBundlesFor: ["css", "js"],
-		transforms: [
-
-		]
-	})
+	eleventyConfig.addPlugin(plugins.bundler, config.bundler)
 	eleventyConfig.addPlugin(plugins.image)
-	// eleventyConfig.addPlugin(plugins.javascript)
+	eleventyConfig.addPlugin(plugins.javascript)
 	eleventyConfig.addPlugin(plugins.markdown)
+	// eleventyConfig.addPlugin(plugins.ogImage)
 	eleventyConfig.addPlugin(plugins.rss)
 	eleventyConfig.addPlugin(plugins.sass)
 	eleventyConfig.addPlugin(plugins.syntaxHighlight)
-	eleventyConfig.addPlugin(plugins.webc, {
-		components: "./src/components/**/*.webc",
-		useTransform: true,
-		transformData: {
-			pkg,
-		},
-	})
-	eleventyConfig.addPlugin(plugins.webmentions, configWebmentions)
+	eleventyConfig.addPlugin(plugins.webc, config.webc)
+	eleventyConfig.addPlugin(plugins.webmentions, config.webmentions)
 	if (process.env.DIRECTORY_OUTPUT) {
-		eleventyConfig.addPlugin(plugins.directoryOutput, {
-			columns: {
-				filesize: true,
-				benchmark: true,
-			}
-		})
+		eleventyConfig.addPlugin(plugins.directoryOutput, config.directoryOutput)
 	}
 	if (process.env.PREGENERATE_IMAGES) {
 		eleventyConfig.addPlugin(plugins.pregenerateImages)
@@ -96,6 +79,11 @@ export default async function(eleventyConfig) {
 	// })
 
 	///
+	// Transforms
+	///
+	eleventyConfig.addTransform("parse", transforms.parse)
+
+	///
 	// Static Files Passthrough
 	///
 	eleventyConfig.addPassthroughCopy("audio")
@@ -105,9 +93,9 @@ export default async function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("video")
 	eleventyConfig.addPassthroughCopy({
 		"files": ".",
-		"src/js/components": "js/components",
-		"node_modules/@chrisburnell/spark-line/spark-line.js": "js/components",
-		"node_modules/@zachleat/details-utils/details-utils.js": "js/components",
+		"src/js/components": "js/components/",
+		"node_modules/@chrisburnell/spark-line/spark-line.js": "js/components/",
+		"node_modules/@zachleat/details-utils/details-utils.js": "js/components/",
 	})
 
 	///

@@ -2,14 +2,16 @@ import { AssetCache } from "@11ty/eleventy-fetch"
 import caniuse from "caniuse-api"
 import minifier from "html-minifier"
 import { DateTime } from "luxon"
-import fs from "node:fs"
+import { createRequire } from "node:module"
 import browserFeatures from "../../data/browserFeatures.js"
 import browsersByType from "../../eleventy/data/browsersByType.js"
 import { nowISO } from "../data/global.js"
 import { cacheDurations } from "../data/site.js"
-// import mdnBrowserData from "@mdn/browser-compat-data"
-const mdnBrowserData = JSON.parse(fs.readFileSync("node_modules/@mdn/browser-compat-data/data.json"))
-const pkg = JSON.parse(fs.readFileSync("package.json"))
+const require = createRequire(import.meta.url)
+// import mdnBrowserData from "@mdn/browser-compat-data" with { type: "json" }
+const mdnBrowserData = require("../../../node_modules/@mdn/browser-compat-data/data.json")
+
+const pkg = require("../../../package.json")
 
 const getCaniuseSupport = async (feature) => {
 	let asset = new AssetCache(`caniuse_${feature}`, ".cache")
@@ -173,7 +175,7 @@ export default function (eleventyConfig) {
 				const browserList = browsersByType.reduce((output, browser) => {
 					const support = Array.isArray(browserslistSupport[browser.key]) ? browserslistSupport[browser.key][0] : browserslistSupport[browser.key]
 					const featureClass = (support.version_added && support.flags) || (support?.version_added + "").match(/preview/) ? "partial" : support.version_added ? "supported" : "unsupported"
-					const featureText = support.version_added ? support.version_added.replace("≤", "").replace("preview", '<abbr title="Preview" style="color: inherit">P</abbr>') : "No"
+					const featureText = support.version_added ? support.version_added.replace("≤", "").replace("preview", `<abbr title="Preview" style="color: inherit">P</abbr>`) : "No"
 					fullSupport = !fullSupport ? false : support.version_added ? true : false
 					zeroSupport = !zeroSupport ? false : support.version_added ? false : true
 					return output + `<td class=" [ center ] [ ${featureClass} ] ">${featureText}</td>`

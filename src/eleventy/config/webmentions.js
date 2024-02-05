@@ -1,8 +1,8 @@
 import dotenv from "dotenv"
 dotenv.config()
 
+import urlReplacements from "../../data/urlReplacements.js"
 import { cacheDurations, url as siteURL } from "../../eleventy/data/site.js"
-import urlReplacements from "../urlReplacements.js"
 
 import { defaults } from "@chrisburnell/eleventy-cache-webmentions"
 import blocklist from "./blocklist.js"

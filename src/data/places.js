@@ -11,7 +11,7 @@ export default [
 		url: "https://www.hwclondon.co.uk",
 		lat: 51.51,
 		long: -0.129,
-		address: "110 St Martin's Ln, Charing Cross, London WC2N 4BA",
+		address: "110 St Martin’s Ln, Charing Cross, London WC2N 4BA",
 	},
 	{
 		title: "Conway Hall",

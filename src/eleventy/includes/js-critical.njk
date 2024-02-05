@@ -1,0 +1,10 @@
+{# Critical JS -#}
+{%- if eleventy.env.runMode === "serve" %}
+	{# External files (local dev live reload will refresh without page reload) -#}
+	<script src="{% getBundleFileUrl 'js', 'critical' %}"></script>
+{%- else  %}
+	{# Inlined (fastest site performance in production) -#}
+	<script>{% getBundle 'js', 'critical' %}</script>
+{%- endif %}
+
+{%- js 'critical' -%}{% include '../../../js/critical.js' %}{%- endjs -%}

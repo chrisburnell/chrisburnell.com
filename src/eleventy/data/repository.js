@@ -4,8 +4,8 @@ import { repository } from "./site.js"
 import { githubData } from "../filters/fetch.js"
 
 const getGithubData = async (repository) => {
-	const github = await githubData(repository)
-	return github
+	const data = await githubData(repository)
+	return data
 }
 
 export default async function () {

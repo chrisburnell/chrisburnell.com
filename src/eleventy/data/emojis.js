@@ -24,4 +24,5 @@ export default {
 	syndication: "⤴️",
 	posting_method: "🖋️",
 	link: "🔗",
+	thumbsup: "👍",
 }

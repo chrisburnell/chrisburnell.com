@@ -1,11 +1,12 @@
 import { AssetCache } from "@11ty/eleventy-fetch"
 import caniuse from "caniuse-api"
-import fs from "node:fs"
+import { createRequire } from "node:module"
 import browserFeatures from "../../data/browserFeatures.js"
 import browsersByType from "./browsersByType.js"
 import { cacheDurations } from "./site.js"
+const require = createRequire(import.meta.url)
 // import mdnBrowserData from "@mdn/browser-compat-data" with { type: "json" }
-const mdnBrowserData = JSON.parse(fs.readFileSync("node_modules/@mdn/browser-compat-data/data.json"))
+const mdnBrowserData = require("../../../node_modules/@mdn/browser-compat-data/data.json")
 
 const getCaniuseSupport = async (feature) => {
 	let asset = new AssetCache(`caniuse_${feature}`, ".cache")

@@ -149,7 +149,7 @@ const helpers = {
 			array
 				.slice(0, maximum)
 				.join(" ")
-				.replace(/[\,\.\;]$/, "") + ellipsis
+				.replace(/[,.;]$/, "") + ellipsis
 		)
 	},
 

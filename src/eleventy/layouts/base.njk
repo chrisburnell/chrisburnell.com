@@ -47,7 +47,6 @@
 		<meta name="supported-color-schemes" content="light dark">
 
 		{% include 'css.njk' %}
-		{% include 'js.njk' %}
 
 		{% if (tags and 'httpstatus' in tags) or (noindex and nofollow) -%}
 		<meta name="robots" content="noindex,nofollow">
@@ -81,6 +80,7 @@
 		<meta property="og:description" content="{{ meta_description | safe }}">
 		<meta property="og:locale" content="{{ site.locale }}">
 		<meta property="og:site_name" content="{{ site.title }}">
+		{# <meta property="og:image" content="{% ogImage './og-image.njk', { title: meta_title } %}"> #}
 		<meta property="og:image" content="{{ meta_image }}">
 
 		{% if layout == 'post' -%}
@@ -103,8 +103,7 @@
 		{%- endif %}
 		{%- endif %}{# end non-httpstatus #}
 
-		<!-- Inlined Critical JS -->
-		<script>{% include '../../js/critical.js' %}</script>
+		{% include 'js-critical.njk' %}
 	</head>
 	<body>
 		<header class=" [ header ] ">
@@ -127,7 +126,7 @@
 		</header>
 
 		<main class=" [ main ] [ flow ] ">
-			{{ content | safe }}
+			{{- content | safe -}}
 		</main>
 
 		<footer class=" [ footer ] ">
@@ -173,5 +172,7 @@
 		{# ServiceWorker -#}
 		<script>{% include '../../js/navigator.js' %}</script>
 		{%- endif %}
+
+		{% include 'js-defer.njk' %}
 	</body>
 </html>
