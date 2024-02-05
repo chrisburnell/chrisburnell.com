@@ -6,13 +6,13 @@ on:
   pull_request:
     branches: [main]
   schedule:
-    # https://crontab.guru/#0_1_*_*_*
-    - cron: "0 1 * * *"
-    - cron: "0 5 * * *"
-    - cron: "0 9 * * *"
-    - cron: "0 13 * * *"
-    - cron: "0 17 * * *"
-    - cron: "0 21 * * *"
+    # https://crontab.guru/#33_1_*_*_*
+    - cron: "33 1 * * *"
+    - cron: "33 5 * * *"
+    - cron: "33 9 * * *"
+    - cron: "33 13 * * *"
+    - cron: "33 17 * * *"
+    - cron: "33 21 * * *"
 
 concurrency:
   group: deploy

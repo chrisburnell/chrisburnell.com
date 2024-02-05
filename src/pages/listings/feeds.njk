@@ -29,14 +29,24 @@ perch: true
 			Collections
 		</h2>
 
-		<ol>
-			<li><a href="{{ site.url + '/feed.xml' }}" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Latest Posts</a></li>
-			<li><a href="{{ site.url + '/writing.xml' }}" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Writing</a></li>
-			<li><a href="{{ site.url + '/replies.xml' }}" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Replies</a></li>
-			<li><a href="{{ site.url + '/rsvps.xml' }}" class=" [ strong ] " style="font-size: var(--font-size-gamma);">RSVPs</a></li>
-			<li><a href="{{ site.url + '/attendances.xml' }}" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Attendances</a></li>
-			<li><a href="{{ site.url + '/checkins.xml' }}" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Checkins</a></li>
-		</ol>
+		<ul class=" [ grid ] [ shelf ] ">
+			<li>
+				<a href="{{ site.url + '/feed.xml' }}" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Latest Posts</a>
+				<p>Latest posts on the blog.</p>
+			</li>
+			<li>
+				<a href="{{ site.url + '/writing.xml' }}" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Writing</a>
+				<p>A more serious collection of ideas and bits of prose.</p>
+			</li>
+			<li>
+				<a href="{{ site.url + '/replies.xml' }}" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Replies</a>
+				<p>Replies I’ve made to other people.</p>
+			</li>
+			<li>
+				<a href="{{ site.url + '/rsvps.xml' }}" class=" [ strong ] " style="font-size: var(--font-size-gamma);">RSVPs</a>
+				<p>A record of RSVPs to conferences and meetups.</p>
+			</li>
+		</ul>
 
 		<h2 id="categories">
 			<svg width="20" height="20" aria-hidden="true" focusable="false" style="fill: #ff8c00"><use href="#svg--rss"></use></svg>

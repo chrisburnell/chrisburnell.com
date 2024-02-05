@@ -10,7 +10,7 @@ description: Numbers, cause why not?
 
 {%- set blog_count = 0 -%}
 {%- for i in range(first_year, latest_year + 1) -%}
-	{% set blog_count = blog_count + collection | getCollectionCount(i, true) %}
+	{%- set blog_count = blog_count + collection | getCollectionCount(i, true) -%}
 {%- endfor -%}
 {%- set blog_count_average = blog_count / (latest_year - first_year + 1) -%}
 
@@ -18,12 +18,12 @@ description: Numbers, cause why not?
 {%- set wordiest_wordcount = 0 -%}
 {%- set blog_wordcount = 0 -%}
 {%- for item in collection -%}
-	{% set wordCount = item.content | cleantags | striptags | safe | wordcount %}
-	{% set blog_wordcount = blog_wordcount + wordCount %}
-	{% if wordCount > wordiest_wordcount %}
-		{% set wordiest_wordcount = wordCount %}
-		{% set wordiest_post_index = loop.index0 %}
-	{% endif %}
+	{%- set wordCount = item.content | cleantags | striptags | safe | wordcount -%}
+	{%- set blog_wordcount = blog_wordcount + wordCount -%}
+	{%- if wordCount > wordiest_wordcount -%}
+		{%- set wordiest_wordcount = wordCount -%}
+		{%- set wordiest_post_index = loop.index0 -%}
+	{%- endif -%}
 {%- endfor -%}
 
 {%- set first_commit = repository.information.created_at | epoch -%}

@@ -27,15 +27,31 @@ perch: true
 
 		<h2>Collections</h2>
 
-		<ul class=" [ grid ] [ shelf ] " data-layout="natural">
-			<li><a href="/latest/" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Latest Posts <sup>{{ site.limits.feed }}</sup></a></li>
-			<li><a href="/hot/" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Hot Pages <sup>{{ site.limits.feed }}</sup></a></li>
-			<li><a href="/popular/" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Popular Pages <sup>{{ site.limits.feed }}</sup></a></li>
-			<li><a href="/writing/" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Writing <sup>{{ collections.writingPosts | getCollectionCount }}</sup></a></li>
-			<li><a href="/replies/" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Replies <sup>{{ collections.replies | getCollectionCount }}</sup></a></li>
-			<li><a href="/rsvps/" class=" [ strong ] " style="font-size: var(--font-size-gamma);">RSVPs <sup>{{ collections.rsvps | getCollectionCount }}</sup></a></li>
-			<li><a href="/attendances/" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Attendances <sup>{{ collections.attendances | getCollectionCount }}</sup></a></li>
-			<li><a href="/checkins/" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Checkins <sup>{{ collections.checkins | getCollectionCount }}</sup></a></li>
+		<ul class=" [ grid ] [ shelf ] ">
+			<li>
+				<a href="/latest/" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Latest Posts <sup>{{ site.limits.feed }}</sup></a>
+				<p>Latest posts on the blog.</p>
+			</li>
+			<li>
+				<a href="/hot/" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Hot Pages <sup>{{ site.limits.feed }}</sup></a>
+				<p>Top blog posts, ordered by interactions across time.</p>
+			</li>
+			<li>
+				<a href="/popular/" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Popular Pages <sup>{{ site.limits.feed }}</sup></a>
+				<p>Top blog posts, ordered by total interactions.</p>
+			</li>
+			<li>
+				<a href="/writing/" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Writing <sup>{{ collections.writingPosts | getCollectionCount }}</sup></a>
+				<p>A more serious collection of ideas and bits of prose.</p>
+			</li>
+			<li>
+				<a href="/replies/" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Replies <sup>{{ collections.replies | getCollectionCount }}</sup></a>
+				<p>Replies I’ve made to other people.</p>
+			</li>
+			<li>
+				<a href="/rsvps/" class=" [ strong ] " style="font-size: var(--font-size-gamma);">RSVPs <sup>{{ collections.rsvps | getCollectionCount }}</sup></a>
+				<p>A record of RSVPs to conferences and meetups.</p>
+			</li>
 		</ul>
 
 		<h2>Categories</h2>

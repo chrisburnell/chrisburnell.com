@@ -63,7 +63,7 @@
     "@zachleat/table-saw": "^1.0.6",
     "caniuse-api": "^3.0.0",
     "cheerio": "^1.0.0-rc.12",
-    "chrisburnell": "^33.0.5",
+    "chrisburnell": "^33.0.6",
     "dotenv": "^16.4.1",
     "glob-promise": "^6.0.5",
     "html-minifier": "^4.0.0",
