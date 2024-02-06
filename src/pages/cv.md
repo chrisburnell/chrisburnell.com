@@ -115,3 +115,7 @@ Launched a web development blog and have published over [{{ collections.blog | l
 - **[<c-emoji>💬</c-emoji> eleventy-cache-webmentions](https://chrisburnell.com/eleventy-cache-webmentions/)** <small>([>7,200 downloads](https://www.npmjs.com/package/@chrisburnell/eleventy-cache-webmentions) · [15 ★](https://github.com/chrisburnell/eleventy-cache-webmentions))</small><br>A plugin for the popular static site generator, [Eleventy](https://11ty.dev/), that allows the caching of Webmentions and makes them available to use throughout one’s website.
 - **[<c-emoji>🎹</c-emoji> Pentatonic](https://chrisburnell.com/pentatonic/)** <small>([>4,400 downloads](https://www.npmjs.com/package/@chrisburnell/pentatonic) · [1 ★](https://github.com/chrisburnell/pentatonic))</small><br>A JavaScript library for turning any array of integers into a fun little melody using the Web Audio API.
 - **[<c-emoji>📈</c-emoji> spark-line](https://chrisburnell.com/spark-line/)** <small>([>3,700 downloads](https://www.npmjs.com/package/@chrisburnell/spark-line) · [6 ★](https://github.com/chrisburnell/spark-line))</small><br>A Web Component for generating sparkline graphs from a sequence of integers using the Canvas API.
+
+## Testimonials
+
+{% include 'testimonials.njk' %}

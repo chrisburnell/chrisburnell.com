@@ -1,4 +1,3 @@
-- Get OG Images plugin imported and working (issues installing with 11ty v3)
 - Review / Refactor author lookup from blogroll/person API
 - Compare replyTitle to replyAuthor if they're equal
     - This may be the case if in_reply_to has no title attribute and there's only a URL to work with (Twitter, Mastodon, website)
@@ -6,3 +5,5 @@
 - review meta_* fields
 - figure out why it's SO SLOWWWWWW
     - eleventy-plugin-bundle is taking ~50ms per page, with 1000+ pages already looking at 50s
+- use <pagefind-search> and PageFind
+- use utopia-core-scss to generate stuff
