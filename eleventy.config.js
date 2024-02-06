@@ -51,7 +51,7 @@ export default async function(eleventyConfig) {
 	eleventyConfig.addPlugin(plugins.image)
 	eleventyConfig.addPlugin(plugins.javascript)
 	eleventyConfig.addPlugin(plugins.markdown)
-	// eleventyConfig.addPlugin(plugins.ogImage)
+	eleventyConfig.addPlugin(plugins.ogImage, config.ogImage)
 	eleventyConfig.addPlugin(plugins.rss)
 	eleventyConfig.addPlugin(plugins.sass)
 	eleventyConfig.addPlugin(plugins.syntaxHighlight)
@@ -94,8 +94,8 @@ export default async function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy({
 		"files": ".",
 		"src/js/components": "js/components/",
-		"node_modules/@chrisburnell/spark-line/spark-line.js": "js/components/",
-		"node_modules/@zachleat/details-utils/details-utils.js": "js/components/",
+		"node_modules/@chrisburnell/spark-line/spark-line.{css,js}": "js/components/",
+		"node_modules/@zachleat/details-utils/details-utils.{css,js}": "js/components/",
 	})
 
 	///

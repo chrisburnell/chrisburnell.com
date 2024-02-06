@@ -1,3 +1,4 @@
+// prettier-ignore
 export default {
 	beer: [
 		`Connect with me on <a href="https://untappd.com/user/chrisburnell">Untappd</a> or check out my special collections of reviews:`,
@@ -20,6 +21,6 @@ export default {
 		`<c-details>
 			<summary>Rock</summary>
 			<dl><dt>Spotify</dt><dd><a href="https://open.spotify.com/playlist/1p2iCmISwWEdgK54iAPe9F">K-DST (GTA San Andreas Radio)</a></dd></dl>
-		</c-details>`
+		</c-details>`,
 	],
 }

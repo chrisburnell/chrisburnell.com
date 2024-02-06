@@ -1,6 +1,6 @@
 export const title = `Chris Burnell`
 export const tagline = `<span class=" [ canada ] ">Ravenous</span> for CSS`
-export const description = `I’m <span class=" [ canada ] ">Chris Burnell</span>, a <span class=" [ canada ] ">Canadian</span> <span class="p-job-title">Front End Developer</span> / Software Engineer, and this is where I think, write, and share my passion for the web.`
+export const description = `I’m <span class=" [ canada ] ">Chris Burnell</span>, a <span class=" [ canada ] ">Canadian</span> <span class="p-job-title">Front End Developer</span> / Software Engineer based in Singapore.<br>This is where I think, write, and share my passion for front end development and the web.`
 export const catchphrase = `We were riding the crest of a high and meaningless wave`
 export const url = `https://chrisburnell.com`
 export const repository = `chrisburnell.com`

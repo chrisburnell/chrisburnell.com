@@ -1,4 +1,3 @@
-
 export default {
-	hoistDuplicateBundlesFor: ["css", "js"],
+	// hoistDuplicateBundlesFor: ["css", "js"],
 }

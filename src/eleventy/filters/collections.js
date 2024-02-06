@@ -335,11 +335,12 @@ export const getMetaTitle = async (data) => {
 	return `A page on ${getHost(siteURL)}`
 }
 
-export const getMetaImage = (data) => {
+export const getMetaImage = async (data) => {
 	if (data.banner || data.cover || data.photo) {
 		const image = toArray(data.banner || data.cover || data.photo)[0]
 		return `${siteURL}/images/built/${(image.url || image).replace("jpg", "jpeg")}`
 	}
+
 	return siteURL + favicon
 }
 

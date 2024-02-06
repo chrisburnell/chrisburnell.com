@@ -1,0 +1,46 @@
+<style>
+	.root {
+		box-sizing: border-box;
+		background: linear-gradient(to bottom, #20323d, #3e5c6d);
+		color: #f9f9f9;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 32px;
+	}
+	.title {
+		font-size: 72px;
+		margin: auto 0;
+	}
+	.meta {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		font-size: 32px;
+	}
+	.meta div {
+		display: flex;
+	}
+	.meta img {
+		width: 57.82px; /* 48 × 1.20452721 */
+		height: 48px;
+		height: auto;
+		vertical-align: bottom;
+		margin-right: 16px;
+	}
+</style>
+<div class="root">
+	<h1 class="title">{{ title }}</h1>
+	<div class="meta">
+		<div>
+			<img src="https://chrisburnell.com/images/favicon-128.png">
+			<span>chrisburnell.com</span>
+		</div>
+		{% if date -%}
+			<div>{{ date | friendlyDate }}</div>
+		{%- endif %}
+	</div>
+</div>

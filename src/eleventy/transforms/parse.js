@@ -1,7 +1,7 @@
 import slugify from "@sindresorhus/slugify"
 import { load } from "cheerio"
 
-export default async function(value, outputPath) {
+export default async function (value, outputPath) {
 	if (outputPath && outputPath.endsWith(".html")) {
 		const $ = load(value)
 

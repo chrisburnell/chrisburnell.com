@@ -5,7 +5,7 @@ import rss from "@11ty/eleventy-plugin-rss"
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight"
 import webc from "@11ty/eleventy-plugin-webc"
 import webmentions from "@chrisburnell/eleventy-cache-webmentions"
-// import ogImage from "eleventy-plugin-og-image"
+import ogImage from "eleventy-plugin-og-image"
 import avatar from "./plugins/avatar.js"
 import browserSupport from "./plugins/browser-support.js"
 import image from "./plugins/image.js"
@@ -26,7 +26,7 @@ export default {
 	browserSupport,
 	image,
 	javascript,
-	// ogImage,
+	ogImage,
 	pregenerateImages,
 	markdown,
 	sass,
