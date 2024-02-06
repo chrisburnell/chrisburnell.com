@@ -69,7 +69,7 @@ eleventyComputed:
 
 I’m originally from [<span class=" [ canada ] ">Halifax, Nova Scotia</span>](https://www.openstreetmap.org/#map=13/44.6463/-63.6162), started my career in [London, England](https://www.openstreetmap.org/#map=10/51.4898/-0.0882) for 12 years, and now live in [Singapore](https://www.openstreetmap.org/#map=14/1.3156/103.9425) where I’m looking to transition from pure front end development work to a developer relations role.
 
-Although I’ve been building websites since 2006, I’ve had my personal website since 2009, and it’s definitely my favourite thing that I own. My passion for the web drives me to want a better web for tomorrow, and I pursue that through specialising in CSS, design systems, developer relations / education, and technical writing and speaking.
+Although I’ve been building websites since 2006, I’ve had my personal website since 2008, and it’s definitely my favourite thing that I own. My passion for the web drives me to want a better web for tomorrow, and I pursue that through specialising in CSS, design systems, developer relations / education, and technical writing and speaking.
 
 I also feed my passion for the web by continuously finding myself in <q>rabbit hole deep-dives</q>, which involve exhilirating research into something new and exciting to achieve some goal—more often than not, these deep-dives serve as inspiration for my [projects](https://chrisburnell.com/projects/).
 

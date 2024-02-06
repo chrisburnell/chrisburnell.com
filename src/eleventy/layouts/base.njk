@@ -170,7 +170,7 @@
 			</ul>
 			{% include 'webrings.njk' %}
 			{% if speedlify[canonical] -%}
-				<p class=" [ speedlify ] "><a class="[ speedlify-anchor ] " href="{{ author.urls.speedlify }}/{{ site.speedlify }}/{{ canonical | getHost(true) | slugify }}/" title="Link to this page's Speedlify Score"><c-speedlify-score hash="{{ speedlify[canonical].hash }}" score weight requests></c-speedlify-score></a></p>
+				<p class=" [ speedlify ] "><a class="[ speedlify-anchor ] " href="{{ author.urls.speedlify }}/{{ site.speedlify }}/#site-{{ speedlify[canonical].hash }}" title="Link to this page's Speedlify Score"><c-speedlify-score hash="{{ speedlify[canonical].hash }}" score weight requests></c-speedlify-score></a></p>
 			{%- endif %}
 			{%- for item in socials -%}
 				{%- if not item.hidden and not item.primary -%}

@@ -50,7 +50,7 @@
     "@chrisburnell/instant-photo": "^1.0.0",
     "@chrisburnell/pentatonic": "^1.1.4",
     "@chrisburnell/spark-line": "^1.2.6",
-    "@chrisburnell/svg-sparkline": "^1.0.4",
+    "@chrisburnell/svg-sparkline": "^1.0.5",
     "@chrisburnell/theme-selector": "^1.0.1",
     "@daviddarnes/share-button": "^1.1.2",
     "@daviddarnes/storage-form": "^2.0.0",
