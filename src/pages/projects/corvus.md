@@ -11,3 +11,7 @@ tags:
 sitemap:
   exclude: true
 ---
+
+<nav class="[ grid ] navigator">
+    <a href="{{ bookmark_of }}" class="[ button ] ">Check out Corvus →</a>
+</nav>
