@@ -2,7 +2,7 @@
 export default {
 	beer: [
 		`Connect with me on <a href="https://untappd.com/user/chrisburnell">Untappd</a> or check out my special collections of reviews:`,
-		`<ul class=" [ cluster ] "><li><a href="/pigsear2018/">Pig’s Ear 2018</a></li><li><a href="/pigsear2019/">Pig’s Ear 2019</a></li><li><a href="/pigsear2021/">Pig’s Ear 2021</a></li><li><a href="/pigsear2022/">Pig’s Ear 2022</a></li><li><a href="/pigsear2023/">Pig’s Ear 2023</a></li><li><a href="/advent2021/">Advent Calendar 2021</a></li></ul>`,
+		`<ul class=" [ cluster ] "><li><a href="/pigsear2018/">Pig’s Ear 2018</a></li><li><a href="/pigsear2019/">Pig’s Ear 2019</a></li><li><a href="/pigsear2021/">Pig’s Ear 2021</a></li><li><a href="/advent2021/">Advent Calendar 2021</a></li><li><a href="/pigsear2022/">Pig’s Ear 2022</a></li><li><a href="/pigsear2023/">Pig’s Ear 2023</a></li></ul>`,
 	],
 	code: [
 		`<dl class="full"><dt>What’s a <q>pen</q>?</dt><dd><q><a href="https://codepen.io"><em>CodePen</em></a> is an HTML, CSS, and JavaScript code editor in your browser with instant previews.</q></dd></dl>`,

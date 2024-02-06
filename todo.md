@@ -5,5 +5,5 @@
 - review meta_* fields
 - figure out why it's SO SLOWWWWWW
     - eleventy-plugin-bundle is taking ~50ms per page, with 1000+ pages already looking at 50s
-- use <pagefind-search> and PageFind
-- use utopia-core-scss to generate stuff
+- use <pagefind-search> and PageFind for search, get rid of url-input.js
+- use utopia-core-scss to generate fluid spaces, type, etc.
