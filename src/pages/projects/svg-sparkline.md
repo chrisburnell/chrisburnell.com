@@ -22,10 +22,10 @@ tags:
 
 <div class=" [ grid ] ">
 	<article style="display: grid; place-items: center;">
-		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" gradient-color="var(--color-raven)" fill="true" endpoint-color="var(--color-maple)" curve="true" animate="true" start-label="Start" end-label="End"></svg-sparkline>
+		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" fill="true" fill-color="var(--color-raven)" endpoint-color="var(--color-maple)" curve="true" animate="true" start-label="Start" end-label="End"></svg-sparkline>
 	</article>
 	<article class="sparkline-dark" style="display: grid; place-items: center;">
-		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" gradient-color="var(--color-raven)" fill="true" endpoint-color="var(--color-maple)" curve="true" animate="true" start-label="Start" end-label="End"></svg-sparkline>
+		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" fill="true" fill-color="var(--color-raven)" endpoint-color="var(--color-maple)" curve="true" animate="true" start-label="Start" end-label="End"></svg-sparkline>
 	</article>
 	<article style="display: grid; place-items: center;">
 		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" endpoint-color="var(--color-maple)"></svg-sparkline>
@@ -34,16 +34,16 @@ tags:
 		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" endpoint="false"></svg-sparkline>
 	</article>
 	<article style="display: grid; place-items: center;">
-		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" fill="true" endpoint-color="var(--color-maple)"></svg-sparkline>
+		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" gradient="true" gradient-color="var(--color-raven)" endpoint-color="var(--color-maple)"></svg-sparkline>
 	</article>
 	<article style="display: grid; place-items: center;" data-theme="matrix">
-		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" gradient-color="var(--color-raven)" fill="true" endpoint-color="var(--color-maple)" curve="true"></svg-sparkline>
+		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" fill="true" fill-color="var(--color-raven)" endpoint-color="var(--color-maple)" curve="true"></svg-sparkline>
 	</article>
 	<article style="display: grid; place-items: center;" data-theme="koala">
-		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" gradient-color="var(--color-raven)" fill="true" endpoint-color="var(--color-maple)" curve="true"></svg-sparkline>
+		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" fill="true" fill-color="var(--color-raven)" endpoint-color="var(--color-raven)" curve="true"></svg-sparkline>
 	</article>
 	<article style="display: grid; place-items: center;" data-theme="code-red">
-		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" gradient-color="var(--color-raven)" fill="true" endpoint-color="var(--color-maple)" curve="true"></svg-sparkline>
+		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" fill="true" fill-color="var(--color-raven)" endpoint-color="var(--color-maple)" curve="true"></svg-sparkline>
 	</article>
 </div>
 

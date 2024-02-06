@@ -75,7 +75,7 @@ module.exports = (eleventyConfig) => {
 				// 	})
 				// 	return result.css
 				// }
-				if (this.type === 'js') {
+				if (this.type === "js") {
 					let minified = UglifyJS.minify(code)
 					if (minified.error) {
 						console.log(`UglifyJS error: `, minified.error)
