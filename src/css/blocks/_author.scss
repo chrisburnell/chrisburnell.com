@@ -69,7 +69,7 @@
 		&::before {
 			opacity: 1;
 			transition: opacity var(--transition-duration) var(--transition-function);
-			animation: var(--animation-duration) linear infinite glitch;
+			animation: var(--animation-duration-long) linear infinite glitch;
 
 			@at-root {
 				@keyframes glitch {
