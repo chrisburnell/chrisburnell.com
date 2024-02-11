@@ -82,7 +82,7 @@
 		<meta property="og:description" content="{{ meta_description | safe }}">
 		<meta property="og:locale" content="{{ site.locale }}">
 		<meta property="og:site_name" content="{{ site.title }}">
-		{% if not env.ELEVENTY_PRODUCTION or banner or cover or photo or not "post" in tags -%}
+		{% if eleventy.env.runMode !== "build" or banner or cover or photo or not "post" in tags -%}
 			<meta property="og:image" content="{{ meta_image }}">
 		{%- else -%}
 			{% ogImage './eleventy/layouts/og-image.og.njk', { title: meta_title } %}
@@ -103,14 +103,14 @@
 		<meta property="profile:username" content="{{ author.shortname }}">
 		{%- endif %}
 
-		{% if env.ELEVENTY_PRODUCTION and site.monetization and monetization != false -%}
+		{% if eleventy.env.runMode === "build" and site.monetization and monetization != false -%}
 		<meta name="monetization" content="{{ site.monetization }}">
 		{%- endif %}
 		{%- endif %}{# end non-httpstatus #}
 
 		{% include 'js-critical.njk' %}
 	</head>
-	<body>
+	<body{% if not excludeFromSearch or sitemap.exclude %} data-pagefind-body{% endif %}>
 		<header class=" [ header ] ">
 			<div class=" [ wrap ] ">
 				<a rel="home" class=" [ logo ] [ canada ] " href="/" aria-label="{{ site.title }}">

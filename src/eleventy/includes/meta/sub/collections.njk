@@ -1,6 +1,6 @@
 <h2>Browse collections</h2>
 <ul class=" [ cluster ] ">
-	{%- if not env.ELEVENTY_PRODUCTION and page.url != '/drafts/' %}<li><a href="/drafts/">Drafts</a></li>{% endif -%}
+	{%- if eleventy.env.runMode !== "build" and page.url != '/drafts/' %}<li><a href="/drafts/">Drafts</a></li>{% endif -%}
 	{%- if page.url != '/posts/' %}<li><a href="/posts/">All Posts</a></li>{% endif -%}
 	{%- if page.url != '/latest/' %}<li><a href="/latest/">Latest Posts</a></li>{% endif -%}
 	{%- if page.url != '/posts/' %}<li><a href="/posts/#categories">Categories</a></li>{% endif -%}

@@ -51,17 +51,17 @@ toc: true
 <p>Please feel free to <a href="https://github.com/{{ author.github }}/{{ site.repository }}/tree/{{ site.branch }}/src/data/browserFeatures.js">suggest new features</a> or even <a href="https://github.com/{{ author.github }}/{{ site.repository }}/tree/{{ site.branch }}/src/eleventy/data/browsersByType.js">other browsers</a>.</p>
 
 {%- set utilities_css -%}
-	@layer utilities {
-		{%- for feature in browserFeaturesSorted -%}
-			{%- if feature.supports -%}
-				@supports ({{ feature.supports}}) {
-					[id="support-{{ feature.id }}"] {
-						display: inline;
-					}
+@layer utilities {
+	{%- for feature in browserFeaturesSorted -%}
+		{%- if feature.supports -%}
+			@supports ({{ feature.supports}}) {
+				[id="support-{{ feature.id }}"] {
+					display: inline;
 				}
-			{%- endif %}
-		{%- endfor -%}
-	}
+			}
+		{%- endif %}
+	{%- endfor -%}
+}
 {%- endset -%}
 {%- css %}{{ utilities_css }}{% endcss -%}
 

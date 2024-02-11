@@ -3,4 +3,5 @@ export default {
 	sitemap: {
 		exclude: true,
 	},
+	excludeFromSearch: true,
 }

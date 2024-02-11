@@ -20,7 +20,7 @@ const getURLObject = (url) => {
 	try {
 		const urlObject = new URL(url)
 		return urlObject
-	} catch(error) {
+	} catch (error) {
 		return url
 	}
 }

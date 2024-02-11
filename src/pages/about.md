@@ -26,7 +26,7 @@ eleventyComputed:
 <hr>
 
 <figure class=" [ overflow ] ">
-    <img alt="Chris Burnell" class=" [ shadow ] [ canada ] " src="/images/avatar@4x.jpeg" width="400" height="400">
+    <img src="/images/avatar@4x.jpeg" alt="Chris Burnell" class=" [ shadow ] [ canada ] " width="400" height="400">
 </figure>
 
 ## Bio
@@ -81,7 +81,7 @@ I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link
     {%- for client in clients | sort(false, false, "title") -%}
         <article>
             <a href="{{ client.url }}" title="{{ client.title | safe }}" rel="external">
-                <img class=" [ interaction-grow{% if client.darkInvert %}  dark-invert-colors{% endif %} ] " src="/images/built/{{ client.image }}" alt="" loading="lazy" decoding="async" style="max-height: 8rem">
+                <img src="/images/built/{{ client.image }}" class=" [ interaction-grow{% if client.darkInvert %}  dark-invert-colors{% endif %} ] " alt="" loading="lazy" decoding="async" style="max-height: 8rem">
             </a>
         </article>
     {%- endfor -%}
@@ -96,7 +96,7 @@ I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link
 <address>
     <dl>
         <dt>Email:</dt>
-        <dd><a class=" [ canada ] " href="mailto:{{ author.email }}"><img alt="{{ site.title }}" loading="lazy" decoding="async" src="/images/raven.svg" class="brand-logo" style="margin-inline-end: 1ex;">{{ author.email }}</a></dd>
+        <dd><a class=" [ canada ] " href="mailto:{{ author.email }}"><img src="/images/raven.svg" alt="{{ site.title }}" loading="lazy" decoding="async" class="brand-logo" style="margin-inline-end: 1ex;">{{ author.email }}</a></dd>
         <dt>Mastodon:</dt>
         <dd><a class=" [ canada ] " href="https://{{ author.mastodon_domain }}/{{ author.mastodon.split('@')[1] }}" title="{{ author.name }} on Mastodon"><svg width="20" height="20" aria-hidden="true" focusable="false" style="--fill: #595aff; margin-inline-end: 1ex; vertical-align: middle; margin-block-start: calc(1ex - 1cap);"><use href="#svg--mastodon"></use></svg>{{ author.mastodon }}</a></dd>
         <dt>LinkedIn:</dt>

@@ -76,7 +76,7 @@
 		<ul class=" [ cluster ] [ deck__meta ] ">
 			{% if item.data.updated %}
 				<li>
-					<small>updated</small> <a href="{{ item.url }}#updated" tabindex="-1"><time class=" [ dt-updated ] " datetime="{{ item.data.updated | rfc3339Date }}">{{ item.data.updated | friendlyDateLong | safe }}</time></a>
+					<small>updated</small> <a href="{{ item.url }}{{ "#updated" if item.data.updated_text }}" tabindex="-1"><time class=" [ dt-updated ] " datetime="{{ item.data.updated | rfc3339Date }}">{{ item.data.updated | friendlyDateLong | safe }}</time></a>
 				</li>
 			{% endif %}
 			{% if item.data.date %}

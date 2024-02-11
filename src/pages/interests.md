@@ -51,7 +51,7 @@ Huge fan of Tolkein and all his works. Deep world building is just totally my ja
 
 The Hobbit movies were pretty disappointing, though, and Rings of Power is downright *bad*.
 
-### Dungeons &amp; Dragons
+### Dungeons & Dragons
 
 Although I don’t get to play much these days, I’m an avid Dungeon Master (and sometimes player) of Dungeons &amp; Dragons (5<sup>th</sup> edition).
 

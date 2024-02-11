@@ -208,21 +208,23 @@ You can check out the full documentation, source code, demos, and provide feedba
 
 [https://github.com/chrisburnell/svg-sparkline](https://github.com/chrisburnell/svg-sparkline)
 
-{% css %}
-.sparkline-dark {
-    background-color: var(--color-kaiser);
-    color: var(--color-snowy);
-}
-@media (prefers-color-scheme: dark) {
-    :root:not(:has([name="theme"] [value*="light"]:checked)) .sparkline-dark {
+{%- css %}
+@layer overrides {
+    .sparkline-dark {
+        background-color: var(--color-kaiser);
+        color: var(--color-snowy);
+    }
+    @media (prefers-color-scheme: dark) {
+        :root:not(:has([name="theme"] [value*="light"]:checked)) .sparkline-dark {
+            background-color: var(--color-snowy);
+            color: var(--color-kaiser);
+        }
+    }
+    :root:has([name="theme"] [value*="dark"]:checked) .sparkline-dark,
+    [data-theme*="dark"] .sparkline-dark,
+    .dark .sparkline-dark {
         background-color: var(--color-snowy);
         color: var(--color-kaiser);
     }
-}
-:root:has([name="theme"] [value*="dark"]:checked) .sparkline-dark,
-[data-theme*="dark"] .sparkline-dark,
-.dark .sparkline-dark {
-    background-color: var(--color-snowy);
-    color: var(--color-kaiser);
 }
 {% endcss %}

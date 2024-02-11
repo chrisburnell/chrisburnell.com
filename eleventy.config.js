@@ -57,6 +57,22 @@ export default async function(eleventyConfig) {
 	eleventyConfig.addPlugin(plugins.syntaxHighlight)
 	eleventyConfig.addPlugin(plugins.webc, config.webc)
 	eleventyConfig.addPlugin(plugins.webmentions, config.webmentions)
+	// if (process.env.ELEVENTY_RUN_MODE === "build") {
+	// 	eleventyConfig.addPlugin(plugins.eleventyImageTransformPlugin, {
+	// 		// which file extensions to process
+	// 		extensions: "html",
+	// 		// optional, output image formats
+	// 		formats: ["avif", "webp", "auto"],
+	// 		// optional, output image widths
+	// 		// widths: ["auto"],
+
+	// 		// optional, attributes assigned on <img> override these values.
+	// 		defaultAttributes: {
+	// 			loading: "lazy",
+	// 			decoding: "async"
+	// 		}
+	// 	})
+	// }
 	if (process.env.DIRECTORY_OUTPUT) {
 		eleventyConfig.addPlugin(plugins.directoryOutput, config.directoryOutput)
 	}

@@ -10,4 +10,4 @@ syndicate_to:
 
 <c-codepen slug="{{ codepen_slug }}" tabfree="true" height="500px"></c-codepen>
 
-This pen is mostly for visual effect. Check out the [interactive version](/pen/transform-centering-interactive/).
+This pen is mostly for visual effect. Check out the [interactive version](/code/transform-centering-interactive/).

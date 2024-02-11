@@ -10,7 +10,7 @@ syndicate_to:
 
 <c-codepen slug="{{ codepen_slug }}" height="500px"></c-codepen>
 
-Check out the [demo version](/pen/transform-centering/).
+Check out the [demo version](/code/transform-centering/).
 
 ```html
 <textarea class="modal" disabled></textarea>

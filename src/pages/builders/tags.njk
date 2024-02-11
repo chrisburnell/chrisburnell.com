@@ -10,6 +10,7 @@ eleventyComputed:
 hfeed: true
 show_photos: true
 truncate: true
+excludeFromSearch: true
 ---
 {%- set collection = collections[tag] | arePublished | dateSortFilter -%}
 {%- set count = collection.length -%}

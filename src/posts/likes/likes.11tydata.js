@@ -5,4 +5,5 @@ export default {
 	categoryCode: "f",
 	tags: ["like", "clickthrough"],
 	emoji: "❤️",
+	excludeFromSearch: true,
 }

@@ -64,7 +64,7 @@ Passionate about the open web, having published over 50 technical articles, and 
 - Single-handedly developed the UK’s first design system which is now used by more than 10 enterprise-level projects, leading to more coherent codebases and a significant reduction in bugs and turnaround time for ad hoc work.
 
 <div class=" [ space-between ] ">
-    <h3><a href="https://city.ac.uk"><c-emoji><img class="brand-logo" alt="City, University of London’s logo" loading="lazy" decoding="async" src="/images/built/city-logo.png"></c-emoji> City, University of London</a></h3>
+    <h3><a href="https://city.ac.uk"><c-emoji><img src="/images/built/city-logo.png" class="brand-logo" alt="City, University of London’s logo" loading="lazy" decoding="async"></c-emoji> City, University of London</a></h3>
     <small><strong>June 2014 – February 2018</strong></small>
 </div>
 
@@ -87,7 +87,7 @@ Passionate about the open web, having published over 50 technical articles, and 
 <h2 style="break-before: page;">Community Experience</h2>
 
 <div class=" [ space-between ] ">
-    <h3 class=" [ delta ] ">Conference Organiser for <a href="https://stateofthebrowser.com" rel="external"><c-emoji><img class="brand-logo" alt="State of the Browser’s logo" loading="lazy" decoding="async" src="/images/built/sotb-logo.png"></c-emoji> State of the Browser</a></h3>
+    <h3 class=" [ delta ] ">Conference Organiser for <a href="https://stateofthebrowser.com" rel="external"><c-emoji><img src="/images/built/sotb-logo.png" class="brand-logo" alt="State of the Browser’s logo" loading="lazy" decoding="async"></c-emoji> State of the Browser</a></h3>
     <small><strong>May 2018 – February 2024</strong></small>
 </div>
 
@@ -98,7 +98,7 @@ Passionate about the open web, having published over 50 technical articles, and 
 - Annual conference websites: [2018](https://2018.stateofthebrowser.com), [2019](https://2019.stateofthebrowser.com), [2021](https://2021.stateofthebrowser.com), [2022](https://2022.stateofthebrowser.com), [2023](https://2022.stateofthebrowser.com), 2024 *(coming soon!)*
 
 <div class=" [ space-between ] ">
-    <h3 class=" [ delta ] ">Technical Writer on <a href="https://chrisburnell.com/"><c-emoji><img class="brand-logo" alt="{{ site.title }}" loading="lazy" decoding="async" src="/images/raven.svg"></c-emoji> chrisburnell.com</a></h3>
+    <h3 class=" [ delta ] ">Technical Writer on <a href="https://chrisburnell.com/"><c-emoji><img src="/images/raven.svg" class="brand-logo" alt="{{ site.title }}" loading="lazy" decoding="async"></c-emoji> chrisburnell.com</a></h3>
     <small><strong>2013 – present</strong></small>
 </div>
 

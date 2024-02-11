@@ -12,7 +12,7 @@ const size = 96 // 48 * 2
 const getImageOptions = (name) => {
 	return {
 		widths: [size],
-		formats: process.env.ELEVENTY_PRODUCTION ? ["avif", "webp", "jpg"] : ["webp", "jpg"],
+		formats: process.env.ELEVENTY_RUN_MODE === "build" ? ["avif", "webp", "jpg"] : ["webp", "jpg"],
 		urlPath: "/images/avatars/",
 		outputDir: "./_site/images/avatars/",
 		duration: cacheDurations.monthly,
@@ -65,7 +65,7 @@ export default function (eleventyConfig) {
 		domains = new Set()
 	})
 
-	if (process.env.ELEVENTY_PRODUCTION) {
+	if (process.env.ELEVENTY_RUN_MODE === "build") {
 		eleventyConfig.on("afterBuild", () => {
 			let array
 
@@ -85,7 +85,7 @@ export default function (eleventyConfig) {
 
 	eleventyConfig.addNunjucksAsyncShortcode("avatar", async (photo, url, authorUrl, classes = "") => {
 		if (authorUrl?.includes("chrisburnell.com") || authorUrl?.includes("repc.co/@chrisburnell") || authorUrl?.includes("twitter.com/iamchrisburnell")) {
-			return `<picture><source srcset="/images/avatar.avif 1x, /images/avatar@2x.avif 2x, /images/avatar@3x.avif 3x, /images/avatar@4x.avif 4x" type="image/avif"><source srcset="/images/avatar.webp 1x, /images/avatar@2x.webp 2x, /images/avatar@3x.webp 3x, /images/avatar@4x.webp 4x" type="image/webp"><img alt="Chris Burnell" src="/images/avatar.jpeg" srcset="/images/avatar.jpeg 1x, /images/avatar@2x.jpeg 2x, /images/avatar@3x.jpeg 3x, /images/avatar@4x.jpeg 4x" class="[ avatar ] [ canada ]" width="48" height="48"></picture>`
+			return `<picture><source srcset="/images/avatar.avif 1x, /images/avatar@2x.avif 2x, /images/avatar@3x.avif 3x, /images/avatar@4x.avif 4x" type="image/avif"><source srcset="/images/avatar.webp 1x, /images/avatar@2x.webp 2x, /images/avatar@3x.webp 3x, /images/avatar@4x.webp 4x" type="image/webp"><img src="/images/avatar.jpeg" srcset="/images/avatar.jpeg 1x, /images/avatar@2x.jpeg 2x, /images/avatar@3x.jpeg 3x, /images/avatar@4x.jpeg 4x" alt="Chris Burnell" class="[ avatar ] [ canada ]" width="48" height="48"></picture>`
 		}
 		const mastodonHandle = authorUrl ? getMastodonHandle(authorUrl) : null
 		if (photo && mastodonHandle && mastodonHandle != authorUrl) {
@@ -103,6 +103,6 @@ export default function (eleventyConfig) {
 			return storeAvatar(domain, classes)
 		}
 
-		return `<picture><source type="image/avif" srcset="/images/default-profile.avif 48w"><source type="image/webp" srcset="/images/default-profile.webp 48w"><img alt="default/anonymous avatar" class="[ avatar ]" loading="lazy" decoding="async" src="/images/default-profile.jpeg" width="48" height="48"></picture>`
+		return `<picture><source type="image/avif" srcset="/images/default-profile.avif 48w"><source type="image/webp" srcset="/images/default-profile.webp 48w"><img src="/images/default-profile.jpeg" alt="default/anonymous avatar" class="[ avatar ]" loading="lazy" decoding="async" width="48" height="48"></picture>`
 	})
 }

@@ -423,7 +423,7 @@ export const getPostingMethodTitle = (url) => {
 			return postingMethod.url.includes(getHost(url))
 		})
 		return knownPostingMethod.title
-	} catch(error) {
+	} catch (error) {
 		return url
 	}
 }
@@ -438,7 +438,7 @@ export const getSyndicationTitle = (url) => {
 			return syndicationTarget.url.includes(getHost(url))
 		})
 		return knownSyndication.title
-	} catch(error) {
+	} catch (error) {
 		return url
 	}
 }

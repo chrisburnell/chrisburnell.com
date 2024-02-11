@@ -26,7 +26,7 @@ const filterCollection = (collection, tag, limit = false) => {
 
 	let filteredCollection = collection.getFilteredByTag(tag).filter(isPublished).sort(dateSort)
 
-	if (limit && process.env.ELEVENTY_RUN_MODE === "serve") {
+	if (limit && process.env.ELEVENTY_RUN_MODE !== "build") {
 		// Keep only a few items per collection for performance
 		filteredCollection = filteredCollection.slice(0, limits.feed)
 	}

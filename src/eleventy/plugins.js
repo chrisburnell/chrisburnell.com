@@ -1,4 +1,5 @@
 import { EleventyRenderPlugin } from "@11ty/eleventy"
+import { eleventyImageTransformPlugin } from "@11ty/eleventy-img"
 import bundler from "@11ty/eleventy-plugin-bundle"
 import directoryOutput from "@11ty/eleventy-plugin-directory-output"
 import rss from "@11ty/eleventy-plugin-rss"
@@ -16,6 +17,7 @@ import sass from "./plugins/sass.js"
 
 export default {
 	EleventyRenderPlugin,
+	eleventyImageTransformPlugin,
 	bundler,
 	directoryOutput,
 	rss,

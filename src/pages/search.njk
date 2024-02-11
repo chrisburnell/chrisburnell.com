@@ -6,51 +6,41 @@ nofollow: true
 sitemap:
   exclude: true
 ---
+<link rel="stylesheet" href="/pagefind/pagefind-ui.css">
 
-<!-- </textarea> -->
-<!-- '"´ -->
-<form id="search" class=" [ responses__form ] " method="get" name="search" action="https://duckduckgo.com/">
-	<label class=" [ responses__label ] hidden" for="search-query">
-		Search:
-	</label>
-	<input id="search-query" class=" [ responses__input ] " type="search" name="q" value="site:chrisburnell.com ">
-	<button type="submit" enterkeyhint="submit">Submit</button>
-</form>
+<pagefind-search>
+	<form id="search" class=" [ responses__form ] " method="get" name="search" action="https://duckduckgo.com/">
+		<label class=" [ responses__label ] hidden" for="search-query">Search:</label>
+		<input id="search-query" class=" [ responses__input ] " type="search" name="q" autocomplete="off" autofocus>
+		<input type="hidden" name="sites" value="chrisburnell.com">
+		<button type="submit" enterkeyhint="submit">Submit</button>
+	</form>
+</pagefind-search>
 
-<p>Search provided by <a href="https://duckduckgo.com">DuckDuckGo</a>: <q>The Internet privacy company that empowers you to seamlessly take control of your personal information online, without any tradeoffs.</q></p>
+<is-land>
+	<p>Search provided by <a href="https://duckduckgo.com/">DuckDuckGo</a>.</p>
+	<template data-island="replace">
+		<p>Search provided by <a href="https://pagefind.app/">Pagefind</a> via the <a href="https://www.zachleat.com/web/pagefind-search/"><code>&lt;pagefind-search&gt;</code> Web Component</a>.</p>
+	</template>
+</is-land>
 
-{% js 'module' -%}
-/**
- * Search Input
- * @class
- */
-class SearchInput {
-	/**
-	 * @constructor
-	 */
-	constructor() {
-		this.form = document.getElementById("search")
-		this.input = this.form.querySelector("input")
+{%- css -%}
+@layer overrides {
+	pagefind-search {
+		--pagefind-ui-primary: var(--color-raven);
+		--pagefind-ui-text: currentColor;
+		--pagefind-ui-background: transparent;
+		--pagefind-ui-border: var(--color-nickel);
+		--pagefind-ui-tag: var(--color-nickel);
+		--pagefind-ui-border-width: var(--size-border);
+		--pagefind-ui-border-radius: var(--size-border-thin);
+		--pagefind-ui-image-border-radius: var(--size-border-thin);
+		--pagefind-ui-font: inherit;
+	}
 
-		this.input.value = ""
-
-		this.form.addEventListener("submit", (event) => {
-			event.preventDefault()
-			this.input.value = "site:chrisburnell.com " + this.input.value
-			this.form.submit()
-		})
+	.pagefind-ui__search-clear {
+		background-color: transparent;
 	}
 }
-
-if ("HTMLElement" in window) {
-	/**
-	 * @type {SearchInput}
-	 */
-	window.SearchInput = new SearchInput()
-}
-
-/**
- * @type {SearchInput}
- */
-export default SearchInput
-{%- endjs %}
+{%- endcss -%}
+{%- js 'module' -%}{% include '../../node_modules/@zachleat/pagefind-search/pagefind-search.js' %}{%- endjs -%}

@@ -1,5 +1,5 @@
 {# Critical JS -#}
-{%- if eleventy.env.runMode === "serve" %}
+{%- if eleventy.env.runMode !== "build" %}
 	{# External files (local dev live reload will refresh without page reload) -#}
 	<script src="{% getBundleFileUrl 'js', 'critical' %}"></script>
 {%- else  %}

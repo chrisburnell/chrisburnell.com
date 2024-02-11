@@ -15,7 +15,7 @@ import { getInternalTarget, getMastodonHandle, getSyndicationTitle, getTwitterHa
 const allPeopleUnfiltered = [...blogroll, ...people]
 // Merge duplicates by `title`
 const allPeople = allPeopleUnfiltered.reduce((output, person) => {
-	const allPeopleUnfiltered = output.find(item => item.title === person.title)
+	const allPeopleUnfiltered = output.find((item) => item.title === person.title)
 
 	if (allPeopleUnfiltered) {
 		Object.assign(allPeopleUnfiltered, person)
@@ -24,7 +24,7 @@ const allPeople = allPeopleUnfiltered.reduce((output, person) => {
 	}
 
 	return output
-}, []);
+}, [])
 
 /**
  *
@@ -306,7 +306,7 @@ export const getReplyTitle = (data) => {
 				return internalTarget
 			}
 		}
-		return replyData.title
+		return replyData?.title || replyData?.url || replyData
 	}
 	return null
 }

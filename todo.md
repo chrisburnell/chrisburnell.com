@@ -1,6 +1,5 @@
-- review meta_* fields
+- review meta_* fields → I *think* this is DONE!!?
 - Make sure to perform tweetback ONLY against URLs and not Titles
 - figure out why it's SO SLOWWWWWW
     - eleventy-plugin-bundle is taking ~50ms per page, with 1000+ pages already looking at 50s
-- use <pagefind-search> and PageFind for search, get rid of url-input.js
 - use utopia-core-scss to generate fluid spaces, type, etc.
