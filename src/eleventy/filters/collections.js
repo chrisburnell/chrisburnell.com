@@ -40,11 +40,15 @@ const getPerson = (title, url) => {
 		}
 		// Match by Mastodon handle
 		if (url && person.mastodon && mastodonInstances.includes(new URL(url).host)) {
-			return getMastodonHandle(url) === `@${person.mastodon}`
+			return toArray(person.mastodon).find((personMastodon) => {
+				return getMastodonHandle(url) === `@${personMastodon}`
+			})
 		}
 		// Match by Twitter handle
 		if (url && person.twitter && url.includes("https://twitter.com")) {
-			return getTwitterHandle(url) === `@${person.twitter}`
+			return toArray(person.twitter).find((personTwitter) => {
+				return getTwitterHandle(url) === `@${personTwitter}`
+			})
 		}
 		// Match by URL
 		if (url && person.url) {

@@ -4,6 +4,7 @@ description: Unused Assets
 tags: []
 sitemap:
   exclude: true
+excludeFromSearch: true
 monetization: false
 ---
 

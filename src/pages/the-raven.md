@@ -5,6 +5,7 @@ portal: true
 perch: true
 sitemap:
   exclude: true
+excludeFromSearch: true
 ---
 
 Once upon a midnight dreary, while I pondered, weak and weary,
