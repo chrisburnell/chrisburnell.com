@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 		<meta name="view-transition" content="same-origin">
 
-		<title>{% if page.url != '/' %}{{ meta_title | safe }} · {% endif %}{{ site.title }}</title>
+		<title>{% if page.url != '/' %}{{ title | default(meta_title) | striptags | safe }} · {% endif %}{{ site.title }}</title>
 
 		<link rel="preload" href="/fonts/proxima-vara-subset.woff2" as="font" type="font/woff2" crossorigin>
 
@@ -47,6 +47,7 @@
 		<meta name="theme-color" content="{{ designTokens['colors-hex'] | keyValue("raven") }}">
 		<meta name="supported-color-schemes" content="light dark">
 
+		{# All CSS -#}
 		{% include 'css.njk' %}
 
 		{% if (tags and 'httpstatus' in tags) or (noindex and nofollow) -%}
@@ -81,7 +82,7 @@
 		<meta property="og:description" content="{{ meta_description | safe }}">
 		<meta property="og:locale" content="{{ site.locale }}">
 		<meta property="og:site_name" content="{{ site.title }}">
-		{% if banner or cover or photo or not "post" in tags -%}
+		{% if not env.ELEVENTY_PRODUCTION or banner or cover or photo or not "post" in tags -%}
 			<meta property="og:image" content="{{ meta_image }}">
 		{%- else -%}
 			{% ogImage './eleventy/layouts/og-image.og.njk', { title: meta_title } %}
@@ -177,6 +178,7 @@
 		<script>{% include '../../js/navigator.js' %}</script>
 		{%- endif %}
 
+		{# Deferred JS -#}
 		{% include 'js-defer.njk' %}
 	</body>
 </html>

@@ -7,8 +7,8 @@
 			{% else %}
 				<small>in reply to</small>
 			{% endif %}
-			<a class=" [ h-cite  u-in-reply-to ] " href="{{ item.data.reply_url }}">{{ item.data.reply_title | getInternalTarget(collections.all) }}</a>
-			{% if item.data.reply_author_string %}
+			<a class=" [ h-cite  u-in-reply-to ] " href="{{ item.data.reply_url }}">{{ item.data.reply_title | safe }}</a>
+			{% if item.data.reply_author_string and (item.data.reply_author_string | striptags) != item.data.reply_title %}
 				<small>by</small> {{ item.data.reply_author_string | safe }}
 			{% endif %}
 			{% if item.data.rsvp.date | daysUntil == 0 %}
@@ -49,10 +49,10 @@
 			{% endif %}
 		</div>
 	{% endif %}
-	{% if item.data.title or item.data.of_title %}
+	{% if item.data.title or item.data.of_title or item.data.of_title_fallback %}
 		<h1 style="view-transition-name: title-{{ item.data.page.fileSlug }};">
 			<a class=" [ p-name ] " href="{% if item.data.tags and "clickthrough" in item.data.tags %}{{ item.data.of_url | default(item.url) | safe }}{% else %}{{ item.url | safe }}{% endif %}">
-				{% if item.data.emoji %}<c-emoji>{{ item.data.emoji }}</c-emoji> {% endif %}{{ item.data.title | default(item.data.of_title) | striptags(true) | safe }}
+				{% if item.data.emoji %}<c-emoji>{{ item.data.emoji }}</c-emoji> {% endif %}{{ item.data.title | default(item.data.of_title) | default(item.data.of_title_fallback) | striptags(true) | safe }}
 			</a>
 		</h1>
 	{% endif %}
@@ -65,7 +65,7 @@
 		<p class=" [ p-summary ] {% if item.data.category == 'article' %}[ line-clamp ] {% endif %}">{{ item.data.description | formatAsMarkdown | safe }}</p>
 	{% elif item.data.description %}
 		<p class=" [ p-summary ] {% if item.data.category == 'article' %}[ line-clamp ] {% endif %}">{{ item.data.description | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
-	{% elif ['bookmark', 'like', 'note', 'talk'].includes(item.data.category) %}
+	{% elif ['bookmark', 'like', 'note', 'talk'].includes(item.data.category) and item.content  %}
 		<p class=" [ p-summary ] ">{{ item.content | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
 	{% elif item.data.category == 'code' %}
 		<p class=" [ p-summary ] ">One of my code demos.</p>

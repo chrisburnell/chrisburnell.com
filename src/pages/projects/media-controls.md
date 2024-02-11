@@ -8,8 +8,6 @@ branch: master
 tags:
   - clickthrough
   - javascript
-sitemap:
-  exclude: true
 ---
 
 <nav class="[ grid ] navigator">

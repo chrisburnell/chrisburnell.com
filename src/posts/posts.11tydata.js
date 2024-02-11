@@ -1,7 +1,7 @@
 import { getWebmentions } from "@chrisburnell/eleventy-cache-webmentions"
 import configWebmentions from "../eleventy/config/webmentions.js"
 import { url as siteURL } from "../eleventy/data/site.js"
-import { getAuthors, getAuthorsString, getCategoryName, getMetaImage, getMetaTitle, getPropertyTitle, getPropertyURL, getRSVPString, getReplyAuthor, getReplyAuthorString, getReplyTitle, getReplyURL } from "../eleventy/filters/collections.js"
+import { getAuthors, getAuthorsString, getCategoryName, getMetaImage, getMetaTitle, getPropertyLabel, getPropertyTitle, getPropertyTitleFallback, getPropertyURL, getRSVPString, getReplyAuthor, getReplyAuthorString, getReplyTitle, getReplyURL } from "../eleventy/filters/collections.js"
 import { formatAsMarkdown, stripHTML, stripNewLines } from "../eleventy/filters/strings.js"
 import { getHost } from "../eleventy/filters/urls.js"
 
@@ -13,23 +13,25 @@ export default {
 	show_webmentions: true,
 	eleventyComputed: {
 		canonical: (data) => siteURL + data.page.url,
-		meta_title: (data) => getMetaTitle(data),
+		of_url: async (data) => getPropertyURL(data),
+		of_title: async (data) => getPropertyTitle(data),
+		of_title_fallback: async (data) => getPropertyTitleFallback(data),
+		of_label: async (data) => getPropertyLabel(data),
+		reply_url: async (data) => getReplyURL(data),
+		reply_title: async (data) => getReplyTitle(data),
+		reply_author: async (data) => getReplyAuthor(data),
+		reply_author_string: async (data) => getReplyAuthorString(data),
+		rsvp_string: async (data) => getRSVPString(data),
+		meta_title: async (data) => getMetaTitle(data),
 		meta_description: (data) => {
 			if (data.description) {
 				return stripNewLines(stripHTML(formatAsMarkdown(data.description)))
 			}
 			return `A ${getCategoryName(data)} on ${getHost(siteURL)}`
 		},
-		meta_authors: (data) => getAuthors(data),
-		meta_authors_string: (data) => getAuthorsString(data),
+		meta_authors: async (data) => getAuthors(data),
+		meta_authors_string: async (data) => getAuthorsString(data),
 		meta_image: (data) => getMetaImage(data),
-		of_url: (data) => getPropertyURL(data),
-		of_title: (data) => getPropertyTitle(data),
-		reply_title: (data) => getReplyTitle(data),
-		reply_url: (data) => getReplyURL(data),
-		reply_author: (data) => getReplyAuthor(data),
-		reply_author_string: (data) => getReplyAuthorString(data),
-		rsvp_string: (data) => getRSVPString(data),
 		syndicate_to: (data) => {
 			if (data.drink_of) {
 				return ["https://untappd.com/user/${untappd}/checkin/${data.page.fileSlug}"]

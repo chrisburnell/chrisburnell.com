@@ -31,4 +31,8 @@ export default [
 		title: "Quill",
 		url: "https://quill.p3k.io",
 	},
+	{
+		title: "Corvus",
+		url: "https://corvus.chrisburnell.com",
+	},
 ]

@@ -6,7 +6,7 @@ release: 2017-03-03T12:00:00+0000
 play_of: https://www.zelda.com/breath-of-the-wild
 rating: 4.5
 cover: breath-of-the-wild.jpg
-console: Switch
+console: Nintendo Switch
 authors:
   - Nintendo
 ---

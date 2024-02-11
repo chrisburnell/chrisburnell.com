@@ -7,7 +7,7 @@ authors:
     url: https://open.spotify.com/artist/6yJ6QQ3Y5l0s0tn7b0arrO
   - title: Danny Brown
     url: https://open.spotify.com/artist/7aA592KWirLsnfb5ulGWvU
-listen_of: 3u20OXh03DjCUzbf8XcGTq
+listen_of: https://album.link/s/3u20OXh03DjCUzbf8XcGTq
 cover: scaring-the-hoes.jpg
 rating: 4
 ---

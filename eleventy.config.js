@@ -87,6 +87,7 @@ export default async function(eleventyConfig) {
 	// Static Files Passthrough
 	///
 	eleventyConfig.addPassthroughCopy("audio")
+	eleventyConfig.addPassthroughCopy("css")
 	eleventyConfig.addPassthroughCopy("fonts")
 	eleventyConfig.addPassthroughCopy("images")
 	eleventyConfig.addPassthroughCopy("static")

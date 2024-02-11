@@ -5,7 +5,7 @@
 	{% if in_reply_to and rsvp -%}
 		<li class=" [ rsvp ] ">
 			{{ rsvp_string | safe }}
-			<a class=" [ h-cite  u-in-reply-to ] " href="{{ reply_url }}">{{ reply_title | getInternalTarget(collections.all) }}</a>
+			<a class=" [ h-cite  u-in-reply-to ] " href="{{ reply_url }}">{{ reply_title }}</a>
 			<data class=" [ p-rsvp ] " value="{{ rsvp.value }}" hidden></data>
 		</li>
 	{% endif %}
@@ -128,7 +128,7 @@
 			<c-emoji>{{ emojis.syndication }}</c-emoji>
 			<small>also on</small>
 			{% for syndication in syndicate_to -%}
-				<a href="{{ syndication | tweetback }}">{{ syndication | getSyndicationTarget }}</a>
+				<a href="{{ syndication | tweetback }}">{{ syndication | getSyndicationTitle }}</a>
 				{%- if not loop.last %}, {% endif %}
 			{%- endfor %}
 		</li>
@@ -137,11 +137,7 @@
 		<li class=" [ posting-method ] ">
 			<c-emoji>{{ emojis.posting_method }}</c-emoji>
 			<small>posted with</small>
-			{% if posting_method | getPostingMethod('url') %}
-				<a href="{{ posting_method }}">{{ posting_method | getPostingMethod }}</a>
-			{% else %}
-				<strong>{{ posting_method }}</strong>
-			{% endif %}
+			<a href="{{ posting_method }}">{{ posting_method | getPostingMethodTitle }}</a>
 		</li>
 	{% endif %}
 	{% if env.ELEVENTY_PRODUCTION and not draft and not "ignore" in tags %}

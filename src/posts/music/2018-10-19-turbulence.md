@@ -5,7 +5,7 @@ release: 2012-03-08T12:00:00+0000
 authors:
   - title: Miami Nights 1984
     url: https://open.spotify.com/artist/18iQQOuyGlHunPVzmoLY20
-listen_of: 1sjg3emGXcOFStmqIUvFeU
+listen_of: https://album.link/s/1sjg3emGXcOFStmqIUvFeU
 cover: turbulence.jpg
 rating: 4
 ---

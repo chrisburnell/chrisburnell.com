@@ -22,8 +22,8 @@ const getPeople = async () => {
 	let people = []
 
 	for (let type of TYPES) {
-		let lookup = await getPeopleByType(type)
-		people = [...people, ...lookup]
+		let peopleByType = await getPeopleByType(type)
+		people = [...people, ...peopleByType]
 	}
 
 	return people

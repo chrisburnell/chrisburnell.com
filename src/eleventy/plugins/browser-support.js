@@ -27,7 +27,7 @@ const getCaniuseSupport = async (feature) => {
 }
 
 const getBrowserslistSupport = async (feature) => {
-	const featureData = browserFeatures.filter((lookup) => feature === lookup.id)[0]
+	const featureData = browserFeatures.filter((browserFeature) => feature === browserFeature.id)[0]
 	const featureSet = mdnBrowserData[featureData.language][featureData.type]
 	const browserslistData = featureData["key"].split(".").reduce((object, key) => {
 		return object[key]

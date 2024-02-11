@@ -16,7 +16,7 @@ You can check out all my [CSS-tagged posts](/tag/css/), and if you share my love
 
 ### Content Ownership
 
-In building website, I’ve always espoused the importance of meeting people where they’re at, i.e. let’s not overcomplicate things and drive people away from participating at all. And ever since discovering the [IndieWeb] back in January 2018, content ownership on the web has only become all the more important to me.
+In building website, I’ve always espoused the importance of meeting people where they’re at, i.e. let’s not overcomplicate things and drive people away from participating at all. And ever since discovering the [IndieWeb](https://indieweb.org) back in January 2018, content ownership on the web has only become all the more important to me.
 
 There’s been quite a bit of discussion recently about how to better <q>onboard</q> people to the IndieWeb recently, and I think this is a good thing. The barrier to entry is pretty high at the moment, but it’s great to
 
@@ -24,11 +24,26 @@ There’s been quite a bit of discussion recently about how to better <q>onboard
 
 My musical tastes are pretty broad, and I find myself hopping from genre to genre as time ticks on; one month I might be on a bluegrass kick, the next I’ll be obsessed with hip hop, and then I’ll move on to drum and bass and jungle.
 
-[Listening](/listening/)
+In general, though, here are a handful of my favourite genres:
 
-[Music Reviews](/music/)
+<dl>
+    <dt>Electronic</dt>
+    <dd>Deep House, Drum and Bass, Jungle</dd>
+    <dt>Hip Hop</dt>
+    <dd>Gangsta Rap, Grime, Instrumental Hip Hop, Lo-fi, Old School Hip Hop, Southern Hip Hop, Underground Hip Hop</dd>
+    <dt>Metal</dt>
+    <dd>Heavy Metal, Industrial Metal, Nu Metal</dd>
+    <dt>Classical</dt>
+    <dd>Baroque, Classical Era, Romantic Era</dd>
+    <dt>Jazz</dt>
+    <dd>Bossa Nova, Jazz Fusion, Jazz Funk</dd>
+    <dt>Rock</dt>
+    <dd>Experimental Rock, Hard Rock, Indie Rock, Psychedelic Rock</dd>
+</dl>
 
-## Fantasy (genre)
+Feel free to also check out my [Music Reviews page](/music/), [Live Listening page](/listening/), or [Last.fm profile](https://last.fm/user/{{ author.lastfm }}).
+
+## Fantasy
 
 ### Lord of the Rings
 
@@ -45,6 +60,24 @@ I’ve been tinkering away on my own sprawling campaign for a number of years no
 ### Dragonlance
 
 What an amazing series. I haven’t given myself the opportunity to finish the main series (as of January 2024), but I really ought to carve out the time to get back into reading. And this is the series that’ll do it, I’m sure.
+
+## Sci-fi
+
+### Asimov
+
+TODO
+
+### Star Wars
+
+TODO
+
+### Star Trek
+
+TODO
+
+## Video Games
+
+Check out my [Game Reviews](/games/)!
 
 ## Food &amp; Drink
 

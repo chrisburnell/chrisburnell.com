@@ -1,4 +1,4 @@
-;(function () {
+(function () {
 	"use strict"
 
 	var loadingClassRegexp = /(^|\s)indieconfig-loading(\s|$)/

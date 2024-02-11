@@ -37,17 +37,17 @@
 		{% elif not item.data.description and item.content != '' -%}
 		<summary>{{ item.content | formatAsMarkdown | stripNewLines | stripStrikethrough | striptags(true) | maxSentences(2) }}</summary>
 		<content type="html">
-			{{ item.content | formatAsMarkdown }}{% if item.data.of_url %}<p>Original post can be found at: <a href="{{ item.data.of_url }}">{{ item.data.of_title }}</a></p>{% endif %}
+			{{ item.content | formatAsMarkdown }}{% if item.data.of_url %}<p>Original post can be found at: <a href="{{ item.data.of_url }}">{{ item.data.of_url }}</a></p>{% endif %}
 		</content>
 		{% elif item.data.description and not item.content -%}
 		<summary>{{ item.data.meta_description | stripStrikethrough | striptags(true) | safe }}</summary>
 		<content type="html">
-			{% if item.data.of_url %}<p>Original post can be found at: <a href="{{ item.data.of_url }}">{{ item.data.of_title }}</a></p>{% endif %}
+			{% if item.data.of_url %}<p>Original post can be found at: <a href="{{ item.data.of_url }}">{{ item.data.of_url }}</a></p>{% endif %}
 		</content>
 		{% else -%}
-		<summary>{{ item.data.categoryProperPlural | default(item.data.categoryPlural) | default(item.data.category) | title | safe }}</summary>
+		<summary>{{ item.data.of_title_fallback | safe }}</summary>
 		<content xml:lang="{{ site.locale }}" type="html">
-			{% if item.data.of_url %}<p>Original post can be found at: <a href="{{ item.data.of_url }}">{{ item.data.of_title }}</a></p>{% endif %}
+			{% if item.data.of_url %}<p>Original post can be found at: <a href="{{ item.data.of_url }}">{{ item.data.of_url }}</a></p>{% endif %}
 		</content>
 		{%- endif %}
 		{% if item.data.of_url -%}

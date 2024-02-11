@@ -22,10 +22,7 @@
 		{% elif item.url %}
 			<a href="{{ item.url | striptags(true) | safe }}">
 		{% endif %}
-			{{ item.data.title | default(item.data.of_title) | striptags(true) | safe }}
-			{% if item.data.listened %}
-				<c-emoji>{{ emojis.listen }}</c-emoji>
-			{% endif %}
+			{{ item.data.title | default(item.data.of_title) | default(item.data.of_title_fallback) | striptags(true) | safe }}
 		{% if item.url %}
 			</a>
 		{% endif %}

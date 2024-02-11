@@ -8,8 +8,6 @@ branch: master
 tags:
   - clickthrough
   - indieweb
-sitemap:
-  exclude: true
 ---
 
 <div class=" [ box  box--warning ] ">

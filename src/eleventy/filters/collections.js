@@ -4,28 +4,60 @@ import people from "../../data/people.js"
 import blogroll from "../data/blogroll.js"
 import emojis from "../data/emojis.js"
 import { now } from "../data/global.js"
+import mastodonInstances from "../data/mastodonInstances.js"
 import { favicon, url as siteURL } from "../data/site.js"
 import { epoch, friendlyDate } from "./dates.js"
 import { capitalize, conjunction, stripHTML } from "./strings.js"
 import { getHost, tweetback } from "./urls.js"
-import { getMastodonHandle, getTwitterHandle, toArray } from "./utils.js"
+import { getInternalTarget, getMastodonHandle, getSyndicationTitle, getTwitterHandle, toArray } from "./utils.js"
 
-const allPeople = [...blogroll, ...people]
+// Get a list of people
+const allPeopleUnfiltered = [...blogroll, ...people]
+// Merge duplicates by `title`
+const allPeople = allPeopleUnfiltered.reduce((output, person) => {
+	const allPeopleUnfiltered = output.find(item => item.title === person.title)
 
+	if (allPeopleUnfiltered) {
+		Object.assign(allPeopleUnfiltered, person)
+	} else {
+		output.push(person)
+	}
+
+	return output
+}, []);
+
+/**
+ *
+ * @param {string} [title]
+ * @param {string} [url]
+ * @returns {null|string}
+ */
 const getPerson = (title, url) => {
-	allPeople.forEach((person) => {
-		if (title && title === person.title) {
-			return person
+	return allPeople.find((person) => {
+		// Match by Title
+		if (title && title.localeCompare(person.title, undefined, { sensitivity: "accent" }) === 0) {
+			return true
 		}
+		// Match by Mastodon handle
+		if (url && person.mastodon && mastodonInstances.includes(new URL(url).host)) {
+			return getMastodonHandle(url) === `@${person.mastodon}`
+		}
+		// Match by Twitter handle
+		if (url && person.twitter && url.includes("https://twitter.com")) {
+			return getTwitterHandle(url) === `@${person.twitter}`
+		}
+		// Match by URL
 		if (url && person.url) {
-			toArray(person.url).forEach((personURL) => {
-				if (url.includes(personURL)) {
-					return person
+			return toArray(person.url).find((personURL) => {
+				if (new URL(url).host === new URL(personURL).host) {
+					return true
 				}
+
+				return false
 			})
 		}
+		return false
 	})
-	return null
 }
 
 /**
@@ -56,6 +88,15 @@ export const isPublished = (item) => {
  */
 export const arePublished = (array) => {
 	return array.filter(isPublished)
+}
+
+export const sitemapFilter = (array) => {
+	return array.filter((item) => {
+		if (item.data.sitemap && "exclude" in item.data.sitemap) {
+			return !item.data.sitemap.exclude
+		}
+		return true
+	})
 }
 
 /**
@@ -151,24 +192,46 @@ export const getPropertyData = (data) => {
  * @param {object} data
  * @returns {string}
  */
-export const getPropertyTitle = (data) => {
+export const getPropertyURL = (data) => {
 	const propertyData = getPropertyData(data)
-	return propertyData?.title || propertyData?.url
+	return propertyData?.url || propertyData
 }
 
 /**
  * @param {object} data
  * @returns {string}
  */
-export const getPropertyURL = (data) => {
-	if (data.listen_of) {
-		return `https://album.link/s/${data.listen_of}`
-	} else if (data.read_of) {
-		return `https://openlibrary.org/isbn/${data.read_of}`
-	}
+export const getPropertyTitle = (data) => {
 	const propertyData = getPropertyData(data)
-	const url = propertyData?.url || propertyData
-	return url ? tweetback(url) : null
+	return propertyData?.title || null
+}
+
+/**
+ * @param {object} data
+ * @returns {string}
+ */
+export const getPropertyTitleFallback = (data) => {
+	if (getPropertyData(data)) {
+		return `${getCategoryName(data)}: ${stripHTML(getPropertyURL(data))}`
+	}
+	return null
+}
+
+/**
+ * @param {object} data
+ * @returns {string}
+ */
+export const getPropertyLabel = (data) => {
+	if (getPropertyData(data)) {
+		let labelPrefix = getPropertyTitle(data) ? "Read" : "Read more on"
+		if (data.drink_of) {
+			labelPrefix = "My checkin on"
+		} else if (data.listen_of) {
+			labelPrefix = "Find out where to listen with"
+		}
+		return `${labelPrefix} ${getPropertyTitle(data) || getSyndicationTitle(getPropertyURL(data))}`
+	}
+	return null
 }
 
 /**
@@ -176,7 +239,7 @@ export const getPropertyURL = (data) => {
  * @returns {object[]}
  */
 export const getAuthors = (data) => {
-	return getPropertyData(data)?.authors || data?.authors
+	return data?.authors || getPropertyData(data)?.authors
 }
 
 /**
@@ -188,9 +251,9 @@ export const getAuthorData = (author) => {
 	const authorURL = author?.url
 
 	if (!authorTitle || !authorURL) {
-		const personLookup = getPerson(authorTitle, authorURL)
-		if (personLookup) {
-			return personLookup
+		const person = getPerson(authorTitle, authorURL)
+		if (person) {
+			return person
 		}
 	}
 
@@ -205,7 +268,9 @@ export const getAuthorData = (author) => {
  * @returns {string}
  */
 const authorString = (author) => {
-	author.title = getMastodonHandle(getTwitterHandle(author.title))
+	if (!author.title) {
+		author.title = getPerson(null, author.url) || author.url
+	}
 	if (author.url) {
 		return `<a href="${author.url}" class=" [ h-cite ] "${!author.url.includes(siteURL) && ` rel="external"`}>${author.title}</a>`
 	}
@@ -230,15 +295,18 @@ const getReplyData = (data) => {
 export const getReplyTitle = (data) => {
 	const replyData = getReplyData(data)
 	if (replyData) {
+		const replyURL = getReplyURL(data)
 		if (!replyData.title) {
-			const replyURL = getReplyURL(data)
-			const personLookup = getPerson(replyURL, replyURL)
-			if (personLookup) {
-				console.log(personLookup)
-				return personLookup
+			const person = getPerson(null, replyURL)
+			if (person) {
+				return person.title
+			}
+			const internalTarget = getInternalTarget(replyURL)
+			if (internalTarget) {
+				return internalTarget
 			}
 		}
-		return replyData?.url || replyData
+		return replyData.title
 	}
 	return null
 }
@@ -265,9 +333,9 @@ export const getReplyURL = (data) => {
 export const getReplyAuthor = (data) => {
 	const replyURL = getReplyURL(data)
 	if (replyURL) {
-		const personLookup = getPerson(null, replyURL)
-		if (personLookup) {
-			return personLookup
+		const person = getPerson(null, replyURL)
+		if (person) {
+			return person
 		}
 	}
 	return null
@@ -320,7 +388,7 @@ export const getRSVPString = (data) => {
  * @param {object} data
  * @returns {string}
  */
-export const getMetaTitle = async (data) => {
+export const getMetaTitle = (data) => {
 	if ("title" in data) {
 		return stripHTML(data.title)
 	} else if ("rsvp" in data) {
@@ -335,7 +403,7 @@ export const getMetaTitle = async (data) => {
 	return `A page on ${getHost(siteURL)}`
 }
 
-export const getMetaImage = async (data) => {
+export const getMetaImage = (data) => {
 	if (data.banner || data.cover || data.photo) {
 		const image = toArray(data.banner || data.cover || data.photo)[0]
 		return `${siteURL}/images/built/${(image.url || image).replace("jpg", "jpeg")}`
@@ -347,6 +415,7 @@ export const getMetaImage = async (data) => {
 export default {
 	isPublished,
 	arePublished,
+	sitemapFilter,
 	notReply,
 	getCategoryName,
 	categoryFilter,

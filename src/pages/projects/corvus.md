@@ -8,8 +8,6 @@ branch: master
 tags:
   - clickthrough
   - indieweb
-sitemap:
-  exclude: true
 ---
 
 <nav class="[ grid ] navigator">

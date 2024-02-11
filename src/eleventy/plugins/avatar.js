@@ -9,7 +9,7 @@ import { getMastodonHandle } from "../filters/utils.js"
 // Avatar Dimensions
 const size = 96 // 48 * 2
 
-const getImageOptions = (lookup) => {
+const getImageOptions = (name) => {
 	return {
 		widths: [size],
 		formats: process.env.ELEVENTY_PRODUCTION ? ["avif", "webp", "jpg"] : ["webp", "jpg"],
@@ -20,7 +20,7 @@ const getImageOptions = (lookup) => {
 			quality: 100,
 		},
 		filenameFormat: (id, src, width, format, options) => {
-			return `${String(lookup).toLowerCase()}.${format}`
+			return `${String(name).toLowerCase()}.${format}`
 		},
 	}
 }

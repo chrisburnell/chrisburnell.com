@@ -8,13 +8,7 @@ layout: base
 	</ul>
 
 	<h1 id="title" class=" [ title{% if title_error %} title--negative{% elif title_success %} title--positive{% endif %} ] {{ '[ hidden ] ' if not title and not of_title }}" style="view-transition-name: title-{{ page.fileSlug }};">
-		{% if of_title %}
-			<span>{{ title | default(of_title) | striptags(true) | safe }}</span>
-		{% elif title %}
-			<span>{{ title | safe }}</span>
-		{% else %}
-			<span>{{ categoryProper | default(category) | title }} from {{ date | friendlyDateLong | safe }}</span>
-		{% endif %}
+		{{ title | default(of_title) | default(of_title_fallback) | striptags(true) | safe }}
 	</h1>
 
 	<div class=" [ description  description--published ] ">
@@ -29,7 +23,7 @@ layout: base
 			{%- else -%}
 				{%- if in_reply_to and not rsvp -%}
 					{%- if "writing" in tags %} and{% else %},{% endif %} in reply to
-					<a class=" [ h-cite  u-in-reply-to ] " href="{{ reply_url }}">{{ reply_title | getInternalTarget(collections.all) }}</a>
+					<a class=" [ h-cite  u-in-reply-to ] " href="{{ reply_url }}">{{ reply_title }}</a>
 					{%- if reply_author_string %}
 						by {{ reply_author_string | safe }}
 					{%- endif %},
@@ -43,6 +37,15 @@ layout: base
 	</div>
 
 	<div class=" [ content ] [ flow ] {% if toc %}generate-toc{% endif %}">
+		<p>of_url: {{ of_url }}</p>
+		<p>of_title: {{ of_title }}</p>
+		<p>of_title_fallback: {{ of_title_fallback }}</p>
+		<p>of_label: {{ of_label }}</p>
+		<p>reply_url: {{ reply_url }}</p>
+		<p>reply_title: {{ reply_title }}</p>
+		<p>reply_author: {{ reply_author }}</p>
+		<p>reply_author_string: {{ reply_author_string }}</p>
+
 		{% include 'css-naked-day.njk' %}
 
 		{% if draft %}
@@ -66,26 +69,14 @@ layout: base
 
 		{% include 'updated.njk' %}
 
-		{% if of_url %}
-			{% set of_url_lookup = of_url | getSyndicationTarget %}
-			{% if of_url_lookup %}
-				{% if category == 'beer' and of_url_lookup %}
-					{% set of_label = 'See more on ' + of_url_lookup %}
-				{% elif category == 'music' and of_url_lookup %}
-					{% set of_label = 'Find out where to listen with ' + of_url_lookup %}
-				{% else %}
-					{% set of_label = 'Read more on ' + of_url_lookup %}
-				{% endif %}
-			{% else %}
-				{% set of_label = 'Read more on ' + of_title %}
-			{% endif %}
+		{% if of_label %}
 			<nav class=" [ grid ] [ navigator ] ">
 				<a class=" [ button ] {% if mf_property %}[ u-{{ mf_property }} ] {% endif %}" href="{{ of_url }}">{{ of_label }} →</a>
 			</nav>
 		{% endif %}
 
 		{% if listen_of %}
-			<c-odesli id="{{ listen_of.url | default(listen_of) }}"></c-odesli>
+			<c-odesli id="{{ listen_of.split('/') | last }}"></c-odesli>
 		{% endif %}
 
 		{% if category == 'recipe' %}

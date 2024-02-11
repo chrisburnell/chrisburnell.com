@@ -7,7 +7,7 @@ authors:
     url: https://open.spotify.com/artist/1VPmR4DJC1PlOtd0IADAO0
   - title: Ramirez
     url: https://open.spotify.com/artist/3H6CaRooDAoCeRCpYwOXj2
-listen_of: 45LzyxCAWTrRMn0NVmmKUA
+listen_of: https://album.link/s/45LzyxCAWTrRMn0NVmmKUA
 cover: grey-gods-ii.jpg
 rating: 3.5
 ---

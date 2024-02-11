@@ -1,3 +1,4 @@
+import EleventyFetch from "@11ty/eleventy-fetch"
 import { getContent, getPublished, getType } from "@chrisburnell/eleventy-cache-webmentions"
 import consoles from "../../data/consoles.js"
 import places from "../../data/places.js"
@@ -5,8 +6,17 @@ import postingMethods from "../../data/postingMethods.js"
 import syndicationTargets from "../../data/syndicationTargets.js"
 import blogroll from "../data/blogroll.js"
 import mastodonInstances from "../data/mastodonInstances.js"
-import { url as siteURL } from "../data/site.js"
-import { getPathname } from "./urls.js"
+import { cacheDurations, url as siteURL } from "../data/site.js"
+import { getCategoryName } from "./collections.js"
+import { getHost, getPathname } from "./urls.js"
+
+const pages = await EleventyFetch("https://chrisburnell.com/all.json", {
+	duration: cacheDurations.hourly,
+	type: "json",
+	fetchOptions: {
+		method: "GET",
+	},
+})
 
 /**
  * @param {number} number
@@ -170,8 +180,8 @@ export const getAllLinks = (array) => {
 			// if from Twitter
 			if (item["wm-source"].includes("/post/twitter")) {
 				// if a person's name is found, discard it
-				return !blogroll.find((lookup) => {
-					return lookup.title.localeCompare(item.author.name, undefined, { sensitivity: "accent" }) === 0
+				return !blogroll.find((website) => {
+					return website.title.localeCompare(item.author.name, undefined, { sensitivity: "accent" }) === 0
 				})
 			}
 			// if from Mastodon, discard it
@@ -203,8 +213,8 @@ export const getAllReplies = (array) => {
 				// if it's from Twitter
 				if (item["wm-source"].includes("/post/twitter")) {
 					// if a person's name is found, include it
-					return blogroll.find((lookup) => {
-						return lookup.title.localeCompare(item.author.name, undefined, { sensitivity: "accent" }) === 0
+					return blogroll.find((website) => {
+						return website.title.localeCompare(item.author.name, undefined, { sensitivity: "accent" }) === 0
 					})
 				}
 				// if it's from Mastodon, include it
@@ -275,45 +285,48 @@ export const exponentialMovingAverage = (value, current = 0, coefficient = 0.333
 
 /**
  * @param {string} value
- * @param {object[]} pages
  * @returns {string}
  */
-export const getInternalTarget = (value, pages) => {
+export const getInternalTarget = (url) => {
 	// Mastodon
-	if (value.includes("https://fediverse.repc.co") || value.includes("https://social.chrisburnell.com") || value.includes("https://mastodon.social/users/chrisburnell/statuses/")) {
+	if (url.includes("https://fediverse.repc.co") || url.includes("https://social.chrisburnell.com") || url.includes("https://mastodon.social/users/chrisburnell/statuses/")) {
 		return "a previous Mastodon post"
 	}
+	// Mastodon, external
+	else if (mastodonInstances.includes(new URL(url).host)) {
+		return getMastodonHandle(url)
+	}
 	// Twitter
-	else if (value.includes("https://twitter.com/iamchrisburnell/status/") || value.includes("https://twitter.chrisburnell.com/")) {
+	else if (url.includes("https://twitter.com/iamchrisburnell/status/") || url.includes("https://twitter.chrisburnell.com/")) {
 		return "a previous Twitter post"
 	}
+	// Twitter, external
+	else if (url.includes("https://twitter.com")) {
+		return getTwitterHandle(url)
+	}
 	// Internal URL
-	else if (value.includes(siteURL) || value.includes("localhost")) {
-		let page = pages.filter((item) => {
-			if (getPathname(value) == item.url) {
-				return true
-			}
-			return false
+	else if (url.includes(siteURL) || url.includes("localhost")) {
+		const matchingPage = pages.find((page) => {
+			return getPathname(url) === getPathname(page.url)
 		})
-		if (page.length > 0) {
-			page = page[0]
-			// posts with a `title` and `category`
-			if ("title" in page.data && "category" in page.data) {
-				return `${page.data.title}, a previous ${page.data.categoryProper || page.data.category}`
+		if (matchingPage) {
+			// Posts with a `title` and `category`
+			if ("title" in matchingPage && "category" in matchingPage) {
+				return `${matchingPage.title}, a previous ${getCategoryName(matchingPage)}`
 			}
-			// pages/posts with a `title`
-			else if ("title" in page.data) {
-				return `${page.data.title}`
+			// Pages/Posts with a `title`
+			else if ("title" in matchingPage) {
+				return `${matchingPage.title}`
 			}
-			// posts
-			else if ("category" in page.data) {
-				return `a previous ${page.data.categoryProper || page.data.category}`
+			// Posts with a `category`
+			else if ("category" in matchingPage) {
+				return `a previous ${getCategoryName(matchingPage)}`
 			}
 		}
 		// pages
 		return `a previous page`
 	}
-	return value
+	return null
 }
 
 /**
@@ -404,37 +417,30 @@ export const getPlace = (value, intent) => {
  * @param {string} url
  * @returns {string}
  */
-export const getPostingMethod = (url) => {
-	let target
-	if (url.includes("//")) {
-		let urlObject = new URL(url)
-		target = urlObject.hostname
-		for (let item of postingMethods) {
-			if (item.url.includes(target)) {
-				target = item.title
-				break
-			}
-		}
+export const getPostingMethodTitle = (url) => {
+	try {
+		const knownPostingMethod = postingMethods.find((postingMethod) => {
+			return postingMethod.url.includes(getHost(url))
+		})
+		return knownPostingMethod.title
+	} catch(error) {
+		return url
 	}
-	return target
 }
 
 /**
  * @param {string} value
  * @returns {string}
  */
-export const getSyndicationTarget = (value) => {
-	if (typeof value === "string" && value.includes("//")) {
-		let urlObject = new URL(value)
-		value = urlObject.hostname || value
-	}
-	return syndicationTargets
-		.filter((item) => {
-			return item.url.includes(value)
+export const getSyndicationTitle = (url) => {
+	try {
+		const knownSyndication = syndicationTargets.find((syndicationTarget) => {
+			return syndicationTarget.url.includes(getHost(url))
 		})
-		.map((item) => {
-			return item.title
-		})[0]
+		return knownSyndication.title
+	} catch(error) {
+		return url
+	}
 }
 
 /**
@@ -461,6 +467,15 @@ export const getConsole = (value) => {
 	return value
 }
 
+/**
+ *
+ * @param {any} value
+ * @returns {boolean}
+ */
+export const isString = (value) => {
+	return typeof value === "string"
+}
+
 export default {
 	maxDecimals,
 	keyValue,
@@ -481,8 +496,9 @@ export default {
 	getInternalTarget,
 	getMastodonHandle,
 	getPlace,
-	getPostingMethod,
-	getSyndicationTarget,
+	getPostingMethodTitle,
+	getSyndicationTitle,
 	getTwitterHandle,
 	getConsole,
+	isString,
 }

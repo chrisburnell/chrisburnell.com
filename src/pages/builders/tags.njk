@@ -5,7 +5,7 @@ pagination:
   alias: tag
 permalink: /tag/{{ tag }}/
 eleventyComputed:
-  title: "{{ tag | specialCapitalize }}"
+  title: "{{ tag | title | specialCapitalize }}"
   description: "All of my posts tagged with <q>{{ tag | specialCapitalize }}</q>."
 hfeed: true
 show_photos: true
@@ -27,7 +27,7 @@ truncate: true
 	</ul>
 
 	<h1 id="title" class=" [ title ] ">
-		<span class=" [ p-name ] " aria-label="Tagged: {{ tag | specialCapitalize }}">{{ title | safe }}</span>
+		<span class=" [ p-name ] ">{{ title | safe }}</span>
 	</h1>
 
 	<div class=" [ description ] [ flow ] ">
