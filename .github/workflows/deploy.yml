@@ -65,7 +65,6 @@ jobs:
         env:
           NODE_OPTIONS: "--max_old_space_size=8192"
           ELEVENTY_PRODUCTION: true
-          ODESLI_URL: ${{ secrets.ODESLI_TOKEN }}
           PERSONAL_API_URL: ${{ secrets.PERSONAL_API_URL }}
           PERSONAL_API_TOKEN: ${{ secrets.PERSONAL_API_TOKEN }}
           SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}

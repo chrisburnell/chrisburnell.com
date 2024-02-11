@@ -1,0 +1,10 @@
+[
+{% set allPages = collections.page.concat(collections.posts) | keySort("inputPath") | arePublished | sitemapFilter -%}
+{% for item in allPages -%}
+  {
+    "url": "{{ site.url + item.url }}"{% if item.data.title %},
+    "title": "{{ item.data.title | striptags | safe }}"{% endif %}{% if item.data.category and item.data.category | isString %},
+    "category": "{{ item.data.categoryProper | default(item.data.category) }}"{% endif %}
+  }{% if not loop.last %},{% endif %}
+{%- endfor %}
+]

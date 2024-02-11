@@ -253,4 +253,7 @@ module.exports = {
 				return new Date(a.published || a["wm-recevied"]) - new Date(b.published || b["wm-recevied"])
 			})
 	},
+	isString: (value) => {
+		return typeof value === "string"
+	},
 }

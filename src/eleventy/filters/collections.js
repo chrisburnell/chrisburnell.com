@@ -80,4 +80,12 @@ module.exports = {
 
 		return !isReply || (isReply.url && isReply.url.includes(siteUrl)) || (isReplyString && isReply.includes(siteUrl))
 	},
+	sitemapFilter: (array) => {
+		return array.filter((item) => {
+			if (item.data.sitemap && "exclude" in item.data.sitemap) {
+				return !item.data.sitemap.exclude
+			}
+			return true
+		})
+	},
 }
