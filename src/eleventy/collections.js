@@ -69,7 +69,7 @@ export default {
 			return filteredCollectionsMemoization["features"]
 		}
 
-		let filteredCollection = collection.getFilteredByTag("feature").filter(notReply).sort(dateSort)
+		let filteredCollection = collection.getFilteredByTag("feature").filter(isPublished).filter(notReply).sort(dateSort)
 
 		filteredCollectionsMemoization["features"] = filteredCollection
 
@@ -80,10 +80,9 @@ export default {
 			return filteredCollectionsMemoization["attendances"]
 		}
 
-		const conferences = collection.getFilteredByTag("conference")
-		const meetups = collection.getFilteredByTag("meetup")
+		const conferences = collection.getFilteredByTag("conference").filter(isPublished)
+		const meetups = collection.getFilteredByTag("meetup").filter(isPublished)
 		let filteredCollection = [...conferences, ...meetups]
-			.filter(isPublished)
 			.filter((item) => {
 				return "rsvp" in item.data && item.data.rsvp?.value === "yes"
 			})
@@ -165,8 +164,8 @@ export default {
 
 		let filteredCollection = collection
 			.getFilteredByTag("post")
-			.filter((item) => item.data.rsvp)
 			.filter(isPublished)
+			.filter((item) => item.data.rsvp)
 			.filter((item) => {
 				// remove RSVPs that have passed the end datetime
 				if (epoch(item.data.rsvp.end) < epoch(now)) {
@@ -194,8 +193,8 @@ export default {
 
 		let filteredCollection = collection
 			.getFilteredByTag("post")
-			.filter((item) => item.data.rsvp)
 			.filter(isPublished)
+			.filter((item) => item.data.rsvp)
 			.filter((item) => {
 				// remove RSVPs that have passed the end datetime
 				if (epoch(item.data.rsvp.end) < epoch(now)) {
