@@ -8,6 +8,7 @@ export default {
 	by_year: true,
 	hfeed: true,
 	show_photos: true,
+	excludeFromSearch: true,
 	eleventyComputed: {
 		canonical: (data) => siteURL + data.page.url,
 		meta_title: (data) => getMetaTitle(data),

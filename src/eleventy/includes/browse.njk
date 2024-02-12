@@ -10,13 +10,7 @@
 						<a class=" [ browse__previous ] " href="{{ previous_post.url }}">
 							<strong>← Older</strong>
 							<br>
-							{% if previous_post.data.like_of.title %}
-								Liked: {{ previous_post.data.like_of.title }}
-							{% elif previous_post.data.title %}
-								{{ previous_post.data.title }}
-							{% else %}
-								{{ category | title }} from {{ previous_post.data.date | friendlyDate }}
-							{% endif %}
+							{{ previous_post.data.title | default(previous_post.data.of_title) | default(previous_post.data.of_title_fallback) | striptags(true) | safe }}
 						</a>
 					</li>
 				{% endif %}
@@ -25,13 +19,7 @@
 						<a class=" [ browse__next ] " href="{{ next_post.url }}">
 							<strong>Newer →</strong>
 							<br>
-							{% if next_post.data.like_of.title %}
-								Liked: {{ next_post.data.like_of.title }}
-							{% elif next_post.data.title %}
-								{{ next_post.data.title }}
-							{% else %}
-								{{ category | title }} from {{ next_post.data.date | friendlyDate }}
-							{% endif %}
+							{{ next_post.data.title | default(next_post.data.of_title) | default(next_post.data.of_title_fallback) | striptags(true) | safe }}
 						</a>
 					</li>
 				{% endif %}

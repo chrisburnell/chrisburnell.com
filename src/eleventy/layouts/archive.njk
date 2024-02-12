@@ -13,7 +13,7 @@ truncate: true
 {%- endif -%}
 <div class=" [ pantheon{% if full %}  full{% elif wide %}  wide{% endif %} ] [ wrap ] [ archive ] {% if perch %}[ perch ] {% endif %}">
 
-	<ul class=" [ cluster ] [ breadcrumbs ] ">
+	<ul class=" [ cluster ] [ breadcrumbs ] " data-pagefind-ignore>
 		<li><a href="/posts/">← All Posts</a></li>
 	</ul>
 
@@ -85,7 +85,7 @@ truncate: true
 		{%- endif -%}
 	</div>
 
-	<aside class=" [ meta ] [ flow ] " role="complementary">
+	<aside class=" [ meta ] [ flow ] " role="complementary" data-pagefind-ignore>
 		{% include 'meta/collection.njk' %}
 	</aside>
 </div>

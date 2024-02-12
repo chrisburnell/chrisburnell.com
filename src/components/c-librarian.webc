@@ -1,8 +1,6 @@
 <is-land class=" [ librarian-island ] " on:idle on:visible>
-	<div webc:root="override" class=" [ box ] [ librarian ] [ flow ] ">
-		<div>
-			<slot></slot>
-		</div>
+	<div webc:root="override" class=" [ box ] [ librarian ] ">
+		<slot></slot>
 	</div>
 
 	<template webc:raw data-island="once">

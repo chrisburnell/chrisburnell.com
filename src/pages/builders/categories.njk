@@ -17,7 +17,7 @@ truncate: true
 {%- set first_year = collection[count-1].data.date | default(collection[count-1].date) | friendlyDate('yyyy') -%}
 <div class=" [ pantheon ] [ wrap ] [ archive ] ">
 
-	<ul class=" [ cluster ] [ breadcrumbs ] ">
+	<ul class=" [ cluster ] [ breadcrumbs ] " data-pagefind-ignore>
 		<li>
 			<a href="/posts/">All Posts</a>
 		</li>
@@ -50,8 +50,7 @@ truncate: true
 
 		{% if collection[0].data.list == 'shelf' %}
 			<c-librarian>
-				You can sort these {{ category.properPlural }}:
-				<br>
+				<p>You can sort these {{ category.properPlural }}:</p>
 				<ul class=" [ cluster ] ">
 					<li><c-librarian-button key="title">by title</c-librarian-button></li>{% if category.review %}
 					<li><c-librarian-button key="author">by author</c-librarian-button></li>
@@ -87,7 +86,7 @@ truncate: true
 		{% endif %}
 	</div>
 
-	<div class=" [ meta ] [ flow ] ">
+	<div class=" [ meta ] [ flow ] " data-pagefind-ignore>
 		{% include 'meta/archive.njk' %}
 	</div>
 

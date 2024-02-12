@@ -4,7 +4,7 @@ layout: base
 <article id="content" class=" [ pantheon{% if full %}  full{% elif wide %}  wide{% endif %} ] [ wrap ] [ page ] {% if perch %}[ perch ] {% endif %}">
 
 	{% if 'project' in tags %}
-		<ul class=" [ cluster ] [ breadcrumbs ] ">
+		<ul class=" [ cluster ] [ breadcrumbs ] " data-pagefind-ignore>
 			<li><a href="/projects/">← Projects</a></li>
 		</ul>
 	{% endif %}
@@ -28,7 +28,7 @@ layout: base
 	</div>
 
 	{% if not full and not toc %}
-		<aside class=" [ meta ] [ flow ] " role="complementary">
+		<aside class=" [ meta ] [ flow ] " role="complementary" data-pagefind-ignore>
 			{% include 'meta/page.njk' %}
 		</aside>
 	{% endif %}
