@@ -170,7 +170,7 @@ Because all my references to colours in my CSS now rely on the CSS Variables for
 
 ```scss
 @use "sass:color";
-$code-red-palette: (
+$red-alert-palette: (
 	lynx: #270a0a,
 	wolf: #4c1313,
 	bowhead: #822020,
@@ -179,8 +179,8 @@ $code-red-palette: (
 	coyote: #efadad,
 	bear: #fbe9e9,
 );
-.code-red {
-	@each $name, $color in $code-red-palette {
+.red-alert {
+	@each $name, $color in $red-alert-palette {
 		--hsl-#{$name}: #{color.hue($color)} #{color.saturation($color)} #{color.lightness($color)};
 	}
 }
@@ -189,12 +189,12 @@ $code-red-palette: (
 And by applying that class to an element, those new values are both applied to itself and its children, so to target the entire page is as quick as:
 
 ```html
-<html class="code-red">
+<html class="red-alert">
 ```
 
 Or inside a box like this:
 
-<blockquote class=" [ code-red ] ">
+<blockquote class=" [ red-alert ] ">
 	<p>I'm not sure why this is such a great thing, to be fair, though…</p>
 </blockquote>
 

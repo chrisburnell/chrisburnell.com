@@ -34,8 +34,8 @@ button {
 	--outline-color: #{h(raven)};
 
 	@include non-selectable;
-	background-color: h(bowhead) !important;
-	color: h(bear) !important;
+	background-color: h(bowhead);
+	color: h(bear);
 	min-inline-size: var(--min-inline-size, 8em);
 	display: inline-block;
 	padding: var(--padding-block, var(--padding, var(--size-small))) var(--padding-inline, var(--padding, var(--size-medium)));
@@ -49,7 +49,7 @@ button {
 	font-weight: var(--font-weight-semibold);
 	line-height: var(--line-height, var(--line-height-medium));
 	text-align: center;
-	text-decoration: none !important;
+	text-decoration: none;
 
 	&:is(:hover, :focus, :active) {
 		outline: var(--outline-width, var(--size-border-thin)) solid var(--outline-color, Highlight);
@@ -57,8 +57,8 @@ button {
 	}
 
 	&:active {
-		background-color: h(bowhead) !important;
-		color: h(bear) !important;
+		background-color: h(bowhead);
+		color: h(bear);
 		transform: translateY(var(--size-border-default));
 
 		&::before {
@@ -72,7 +72,7 @@ button {
 
 	// prevent inline elements like code from displaying their background
 	* {
-		background-color: transparent !important;
+		background-color: transparent;
 	}
 }
 

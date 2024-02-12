@@ -40,7 +40,7 @@ ol:not([class]),
 ol.default-list {
 	list-style: decimal;
 
-	// Investigate custom properties (i.e. setting specific "type" of value)
+	// TODO Investigate custom properties (i.e. setting specific "type" of value)
 	@for $i from 1 through 10 {
 		&[start="#{$i}"] {
 			counter-increment: ordered-list #{$i - 1} !important;

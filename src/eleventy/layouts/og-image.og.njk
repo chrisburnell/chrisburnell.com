@@ -27,20 +27,18 @@
 	.meta img {
 		width: 64px;
 		height: 64px;
-		height: auto;
-		vertical-align: bottom;
+		margin-top: -20px;
 		margin-right: 16px;
+		vertical-align: middle;
 	}
 </style>
 <div class="root">
-	<h1 class="title">{{ title }}</h1>
+	<h1 class="title">{{ title | safe }}</h1>
 	<div class="meta">
 		<div>
 			<img src="https://chrisburnell.com/images/favicon-128.png">
 			<span>chrisburnell.com</span>
 		</div>
-		{% if date -%}
-			<div>{{ date | friendlyDate }}</div>
-		{%- endif %}
+		{# <div>{{ date | friendlyDate | safe }}</div> #}
 	</div>
 </div>

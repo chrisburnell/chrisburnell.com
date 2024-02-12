@@ -1,24 +1,24 @@
 ---
 title: Curriculum Vitae
 eleventyComputed:
+  tagline: '<span class=" [ canada ] ">{{ author.name }}</span>'
   description: "{{ author.role | title }}{% if not author.employer %} and Software Engineer{% else %}, Software Engineer, and {{ author.employer.role | title }} at {{ author.employer.title }}{% endif %}"
-  tagline: "{{ author.name }}"
 contentClass: h-resume
 monetizaton: false
 toc: true
 ---
 
 <ul class=" [ cluster ] ">
-    <li><!--email_off--><a href="mailto:{{ author.email }}">{{ author.email }}</a><!--/email_off--></li><li><a href="https://chrisburnell.com/cv/">chrisburnell.com/cv</a></li><li><a href="https://chrisburnell.com/cv.pdf">Download PDF</a></li>
+    <li><!--email_off--><a href="mailto:{{ author.email }}">📧 {{ author.email }}</a><!--/email_off--></li><li><a href="https://chrisburnell.com/cv/">📄 chrisburnell.com/cv</a></li><li><a href="https://chrisburnell.com/cv.pdf">⬇️ Download PDF</a></li>
 </ul>
 
 ## Summary
 
-Front End Developer and Software Engineer with {{ global.nowISO | friendlyDate("yyyy") - site.established }} years of experience, specialising in CSS, design systems, developer relations / education, and technical writing and speaking.
+Front End Developer and Software Engineer with {{ global.nowISO | friendlyDate("yyyy") - site.established }} years of experience, specialising in CSS, design systems, developer relations and education, and technical writing and speaking.
 
-Work roles involved in creating design systems and tools to enable teams to build maintainable and performant websites, with an uncompromising focus on user experience.
+Work roles involved creating design systems and tools to enable teams to build maintainable and performant websites, with an uncompromising focus on accessibility and user experience. These also included lead roles in building the front end and CMS architecture for small to enterprise clients, chiefly in the higher education and government sectors, as I oversaw the project lifecycle and acted as their primary technical contact.
 
-Passionate about the open web, having published over 50 technical articles, and author of several open-source projects. Actively involved in the web community with many years of experience in organising conferences and meetups, most notably, [State of the Browser](https://stateofthebrowser.com).
+Passionate about the open web, having published over 50 technical articles, and author of several open-source projects used by thousands of developers worldwide and on production client websites. Actively involved in the web community with many years of experience in organising conferences and meetups, most notably, [State of the Browser](https://stateofthebrowser.com).
 
 <h2 style="break-before: page;">Professional Experience</h2>
 
@@ -33,7 +33,7 @@ Passionate about the open web, having published over 50 technical articles, and 
 </div>
 
 - Built, maintained, and published a library of React components to enable developers to build accessible and customised client websites quickly that have been fully-tested and are production-ready.
-- Responsible for keeping track of web standards and introducing my team to how we can leverage stable, new technologies to simplify/enhance the library of components.
+- Responsible for keeping track of web standards and keeping my team up-to-date on how we can leverage stable, new technologies to simplify and enhance the library of components.
 
 <div class=" [ space-between ] ">
     <h4>Lead Developer & Chapter Lead</h4>
@@ -102,19 +102,19 @@ Passionate about the open web, having published over 50 technical articles, and 
     <small><strong>2013 – present</strong></small>
 </div>
 
-Launched a web development blog and have published over [{{ collections.blog | length | toNearest(5) }} blog posts](https://chrisburnell.com/posts/), including [{{ collections.writings | length }} longform articles](https://chrisburnell.com/writing/), [{{ collections.css | length }} articles about CSS](https://chrisburnell.com/tag/css/), and [{{ collections.code | length }} code demos](https://chrisburnell.com/code/), some of which have been [featured on CodePen](https://codepen.io/collection/hfqlg).
+Launched a web development blog and have published over [{{ collections.blog | length | toNearest(5, true) }} blog posts](https://chrisburnell.com/posts/), including [{{ collections.writings | length }} longform articles](https://chrisburnell.com/writing/), [{{ collections.css | length }} articles about CSS](https://chrisburnell.com/tag/css/), and [{{ collections.code | length }} code demos](https://chrisburnell.com/code/), some of which have been [featured on CodePen](https://codepen.io/collection/hfqlg).
 
 <div class=" [ space-between ] ">
     <h3 class=" [ delta ] "><a href="https://chrisburnell.com/projects/">Open Source Author</a></h3>
     <small><strong>2019 – present</strong></small>
 </div>
 
-- **[<c-emoji>🗜<c-emoji> clamp() Calculator](https://chrisburnell.com/clamp-calculator/)** <br>Handy little tool for calculating viewport-based clamped values for use in CSS.
-- **[<c-emoji>🏄<c-emoji> Browser Feature Watch](https://chrisburnell.com/clamp-calculator/)** <br>This page serves as an one-stop shop to keep track of feature support across the major, modern browsers, ordered by level of support. Updated automatically daily.
-- **[<c-emoji>🐋</c-emoji> Bowhead](https://chrisburnell.com/bowhead/)** <small>([>5,600 downloads](https://www.npmjs.com/package/@chrisburnell/bowhead) · [4 ★](https://github.com/chrisburnell/bowhead))</small><br>A SCSS framework for integrating design tokens into a CSS codebase with support for CSS Variables. This project has been a key component for 6 client websites during my time at Squiz.
-- **[<c-emoji>💬</c-emoji> eleventy-cache-webmentions](https://chrisburnell.com/eleventy-cache-webmentions/)** <small>([>7,200 downloads](https://www.npmjs.com/package/@chrisburnell/eleventy-cache-webmentions) · [15 ★](https://github.com/chrisburnell/eleventy-cache-webmentions))</small><br>A plugin for the popular static site generator, [Eleventy](https://11ty.dev/), that allows the caching of Webmentions and makes them available to use throughout one’s website.
-- **[<c-emoji>🎹</c-emoji> Pentatonic](https://chrisburnell.com/pentatonic/)** <small>([>4,400 downloads](https://www.npmjs.com/package/@chrisburnell/pentatonic) · [1 ★](https://github.com/chrisburnell/pentatonic))</small><br>A JavaScript library for turning any array of integers into a fun little melody using the Web Audio API.
-- **[<c-emoji>📈</c-emoji> spark-line](https://chrisburnell.com/spark-line/)** <small>([>3,700 downloads](https://www.npmjs.com/package/@chrisburnell/spark-line) · [6 ★](https://github.com/chrisburnell/spark-line))</small><br>A Web Component for generating sparkline graphs from a sequence of integers using the Canvas API.
+- **[<c-emoji>🗜</c-emoji> clamp() Calculator](https://chrisburnell.com/clamp-calculator/)** <br>Handy little tool for calculating viewport-based clamped values for use in CSS.
+- **[<c-emoji>🏄</c-emoji> Browser Feature Watch](https://chrisburnell.com/feature-watch/)** <br>This page serves as an one-stop shop to keep track of feature support across the major, modern browsers, ordered by level of support. Updated automatically daily.
+- **[<c-emoji>💬</c-emoji> eleventy-cache-webmentions](https://chrisburnell.com/eleventy-cache-webmentions/)** <small>([>{{ '@chrisburnell/eleventy-cache-webmentions' | npmDownloads('2021-12-05') | toNearest(50, true) | numberStringFormat }} npm downloads](https://www.npmjs.com/package/@chrisburnell/eleventy-cache-webmentions) · [{{ 'chrisburnell/eleventy-cache-webmentions' | stargazers }} ★ on GitHub](https://github.com/chrisburnell/eleventy-cache-webmentions))</small><br>A plugin for the popular static site generator, [Eleventy](https://11ty.dev/), that allows the caching of Webmentions and makes them available to use throughout one’s website.
+- **[<c-emoji>🐋</c-emoji> Bowhead](https://chrisburnell.com/bowhead/)** <small>([>{{ '@chrisburnell/bowhead' | npmDownloads('2020-08-10') | toNearest(50, true) | numberStringFormat }} npm downloads](https://www.npmjs.com/package/@chrisburnell/bowhead) · [{{ 'chrisburnell/bowhead' | stargazers }} ★ on GitHub](https://github.com/chrisburnell/bowhead))</small><br>A SCSS framework for integrating design tokens into a CSS codebase with support for CSS Variables. This project has been a key component for 6 client websites during my time at Squiz.
+- **[<c-emoji>🎹</c-emoji> Pentatonic](https://chrisburnell.com/pentatonic/)** <small>([>{{ '@chrisburnell/pentatonic' | npmDownloads('2020-09-25') | toNearest(50, true) | numberStringFormat }} npm downloads](https://www.npmjs.com/package/@chrisburnell/pentatonic) · [{{ 'chrisburnell/pentatonic' | stargazers }} ★ on GitHub](https://github.com/chrisburnell/pentatonic))</small><br>A JavaScript library for turning any array of integers into a fun little melody using the Web Audio API.
+- **[<c-emoji>📈</c-emoji> &lt;spark-line&gt;](https://chrisburnell.com/spark-line/)** <small>([>{{ '@chrisburnell/spark-line' | npmDownloads('2021-10-21') | toNearest(50, true) | numberStringFormat }} npm downloads](https://www.npmjs.com/package/@chrisburnell/spark-line) · [{{ 'chrisburnell/spark-line' | stargazers }} ★ on GitHub](https://github.com/chrisburnell/spark-line))</small><br>A Web Component to turn an array of integers into a fun little chart.
 
 ## Testimonials
 

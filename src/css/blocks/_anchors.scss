@@ -48,6 +48,16 @@ h2 %anchor:not(:is(:hover, :focus, :active)) {
 	content: " →";
 }
 
+// Anchors around Icons
+.icon-anchor {
+	inline-size: var(--size-tap);
+	block-size: var(--size-tap);
+	display: inline-grid;
+	align-content: center;
+	margin-block-start: calc(1ex - 1cap);
+	vertical-align: middle;
+}
+
 // Fancy gradient anchor text
 .colourful-anchor {
 	&:is(:hover, :focus, :active) {

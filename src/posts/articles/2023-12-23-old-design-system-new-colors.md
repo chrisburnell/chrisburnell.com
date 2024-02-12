@@ -669,7 +669,6 @@ I hope you found this useful, and I’d love to know how others are doing this s
     const outputHex = document.getElementById("output-hex")
 
     const setHex = () => {
-        console.log("hex")
         outputHex.setAttribute("style", `background-color: rgb(${inputRed.value}, ${inputGreen.value}, ${inputBlue.value});`)
     }
 

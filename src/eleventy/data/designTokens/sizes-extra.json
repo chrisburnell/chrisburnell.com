@@ -12,5 +12,6 @@
   "character-limit": "60ch",
   "line-length": "clamp(21em, 100vi, 30em)",
   "border-default": "4px",
-  "border-thin": "2px"
+  "border-thin": "2px",
+  "tap": "44px"
 }

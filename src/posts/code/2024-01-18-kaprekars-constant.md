@@ -64,8 +64,6 @@ class KaprekarConstantCalculator {
 		const ascending = this.arrayToNumber(array)
 		const total = descending - ascending
 
-		console.log(`${descending} - ${ascending} = ${total}`)
-
 		const dString = String(descending).padStart(4, "0")
 		const aString = String(ascending).padStart(4, "0")
 		const tString = String(total).padStart(4, "0")

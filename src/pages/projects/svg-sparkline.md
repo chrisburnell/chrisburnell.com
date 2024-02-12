@@ -34,7 +34,7 @@ tags:
 		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" endpoint="false"></svg-sparkline>
 	</article>
 	<article style="display: grid; place-items: center;">
-		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" fill="true" fill-color="rebeccapurple" endpoint-color="var(--color-maple)"></svg-sparkline>
+		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" gradient="true" gradient-color="var(--color-raven)" endpoint-color="var(--color-maple)"></svg-sparkline>
 	</article>
 	<article style="display: grid; place-items: center;" data-theme="matrix">
 		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" gradient-color="var(--color-raven)" fill="true" endpoint-color="var(--color-maple)" curve="true"></svg-sparkline>
@@ -42,7 +42,7 @@ tags:
 	<article style="display: grid; place-items: center;" data-theme="koala">
 		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" gradient-color="var(--color-raven)" fill="true" endpoint-color="var(--color-maple)" curve="true"></svg-sparkline>
 	</article>
-	<article style="display: grid; place-items: center;" data-theme="code-red">
+	<article style="display: grid; place-items: center;" data-theme="red-alert">
 		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" gradient-color="var(--color-raven)" fill="true" endpoint-color="var(--color-maple)" curve="true"></svg-sparkline>
 	</article>
 </div>

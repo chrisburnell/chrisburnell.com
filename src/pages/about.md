@@ -1,7 +1,7 @@
 ---
 title: About
 tagline: "<span class=\" [ canada ] \">About me</span>"
-bio: "<span class=\" [ canada ] \">Chris Burnell</span> is a <span class=\" [ canada ] \">Canadian</span> Front End Developer / Software Engineer. He was a passionate volunteer Organiser for the [State of the Browser](https://stateofthebrowser.com) conference from 2018 to 2024, having brought together over 50 leading speakers to the delight of 150+ attendees each year. He’s [“Ravenous for CSS”](https://chrisburnell.com/tag/css/), often found [rabbit-hole deep-diving](https://chrisburnell.com/projects/), and his [Webmention Plugin](https://chrisburnell.com/eleventy-cache-webmentions/) for [Eleventy](https://11ty.dev) helps people connect across the [Fediverse](https://en.wikipedia.org/wiki/Fediverse) and [IndieWeb](https://indieweb.org)."
+bio: "<span class=\" [ canada ] \">Chris Burnell</span> is a <span class=\" [ canada ] \">Canadian</span> Front End Developer / Software Engineer. He was a dedicated volunteer Organiser for the [State of the Browser](https://stateofthebrowser.com) conference from 2018 to 2024, having brought together over 50 leading speakers to the delight of 150+ attendees each year. He’s [“Ravenous for CSS”](https://chrisburnell.com/tag/css/), often found [rabbit-hole deep-diving](https://chrisburnell.com/projects/), and his [Webmention Plugin](https://chrisburnell.com/eleventy-cache-webmentions/) for [Eleventy](https://11ty.dev) helps people connect across the [Fediverse](https://en.wikipedia.org/wiki/Fediverse) and [IndieWeb](https://indieweb.org)."
 perch: true
 eleventyComputed:
   description: "{{ site.description | safe }}"
@@ -18,7 +18,7 @@ eleventyComputed:
             {%- if item.key -%}
                 {%- set url = url + author[item.key] -%}
             {%- endif -%}
-            <li><a href="{{ url }}"><svg width="20" height="20" aria-hidden="true" focusable="false" style="{% if item.fillHover %}--fill: {{ item.fillHover }}; {% endif %}margin-inline-end: 1ex; vertical-align: middle; margin-block-start: calc(1ex - 1cap);">{% if item.defs %}{{ item.defs | safe }}{% endif %}<use href="#svg--{{ item.title | lower }}"></use></svg>{{ item.title }}</a></li>
+            <li><a href="{{ url }}"><svg width="24" height="24" aria-hidden="true" focusable="false" style="{% if item.fillHover %}--fill: {{ item.fillHover }}; {% endif %}margin-inline-end: 1ex; vertical-align: middle; margin-block-start: calc(1ex - 1cap);">{% if item.defs %}{{ item.defs | safe }}{% endif %}<use href="#svg--{{ item.title | lower }}"></use></svg>{{ item.title }}</a></li>
         {%- endif -%}
     {%- endfor -%}
 </ul>
@@ -98,9 +98,9 @@ I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link
         <dt>Email:</dt>
         <dd><a class=" [ canada ] " href="mailto:{{ author.email }}"><img src="/images/raven.svg" alt="{{ site.title }}" loading="lazy" decoding="async" class="brand-logo" style="margin-inline-end: 1ex;">{{ author.email }}</a></dd>
         <dt>Mastodon:</dt>
-        <dd><a class=" [ canada ] " href="https://{{ author.mastodon_domain }}/{{ author.mastodon.split('@')[1] }}" title="{{ author.name }} on Mastodon"><svg width="20" height="20" aria-hidden="true" focusable="false" style="--fill: #595aff; margin-inline-end: 1ex; vertical-align: middle; margin-block-start: calc(1ex - 1cap);"><use href="#svg--mastodon"></use></svg>{{ author.mastodon }}</a></dd>
+        <dd><a class=" [ canada ] " href="https://{{ author.mastodon_domain }}/{{ author.mastodon.split('@')[1] }}" title="{{ author.name }} on Mastodon"><svg width="24" height="24" aria-hidden="true" focusable="false" style="--fill: #595aff; margin-inline-end: 1ex; vertical-align: middle; margin-block-start: calc(1ex - 1cap);"><use href="#svg--mastodon"></use></svg>{{ author.mastodon }}</a></dd>
         <dt>LinkedIn:</dt>
-        <dd><a class=" [ canada ] " href="https://www.linkedin.com/in/{{ author.linkedin }}" title="{{ author.name }} on LinkedIn"><svg width="20" height="20" aria-hidden="true" focusable="false" style="--fill: #0a66c2; margin-inline-end: 1ex; vertical-align: middle; margin-block-start: calc(1ex - 1cap);"><use href="#svg--linkedin"></use></svg>{{ '@' + author.linkedin }}</a></dd>
+        <dd><a class=" [ canada ] " href="https://www.linkedin.com/in/{{ author.linkedin }}" title="{{ author.name }} on LinkedIn"><svg width="24" height="24" aria-hidden="true" focusable="false" style="--fill: #0a66c2; margin-inline-end: 1ex; vertical-align: middle; margin-block-start: calc(1ex - 1cap);"><use href="#svg--linkedin"></use></svg>{{ '@' + author.linkedin }}</a></dd>
     </dl>
 </address>
 

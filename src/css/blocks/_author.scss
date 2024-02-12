@@ -125,16 +125,13 @@
 
 		.anchor {
 			--outline-offset: 0;
-
-			background-color: h(maple);
-			color: h(snowy);
 		}
 	}
 }
 
 .author__image {
 	position: relative;
-	text-decoration: none !important;
+	text-decoration: none;
 	transition: opacity var(--transition-duration) var(--transition-function);
 }
 
@@ -157,7 +154,7 @@
 }
 
 .author__name {
-	background-color: transparent !important;
+	background-color: transparent;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;

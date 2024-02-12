@@ -1,3 +1,5 @@
+- get dates working in OG Images
+    - https://github.com/KiwiKilian/eleventy-plugin-og-image
 - review meta_* fields → I *think* this is DONE!!?
 - Make sure to perform tweetback ONLY against URLs and not Titles
 - figure out why it's SO SLOWWWWWW

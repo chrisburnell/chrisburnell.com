@@ -6,7 +6,7 @@ tags:
   - css
   - css-variables
 bookmark_of:
-  title: "Some simple ways to make content look good - Set …"
+  title: "Some simple ways to make content look good"
   url: https://set.studio/some-simple-ways-to-make-content-look-good/
 posting_method: https://quill.p3k.io/
 ---

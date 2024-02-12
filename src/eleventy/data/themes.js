@@ -16,12 +16,12 @@ export default [
 		title: "Sepia Dark",
 	},
 	{
-		id: "light  code-red",
-		title: "Code Red",
+		id: "light  red-alert",
+		title: "Red Alert",
 	},
 	{
-		id: "dark  code-red",
-		title: "Code Red Dark",
+		id: "dark  red-alert",
+		title: "Red Alert Dark",
 	},
 	{
 		id: "light  koala",

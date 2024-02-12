@@ -18,8 +18,6 @@
 
 	&,
 	%anchor {
-		color: h(snowy) !important;
-
 		&:not(:is(:hover, :focus, :active)) {
 			text-decoration-color: h(kaiser);
 		}
@@ -76,12 +74,6 @@
 	.author {
 		grid-column: right;
 		grid-row: 1/4;
-	}
-
-	.author__name {
-		.anchor {
-			background-color: transparent !important;
-		}
 	}
 
 	.speedlify {

@@ -19,11 +19,17 @@ export default async function (value, outputPath) {
 								<nav class=" [ box ] " aria-label="Table of Contents">
 									<ol>`
 			tocHeadings.each((i, element) => {
-				const headingText = $(element)
+				const headingHTML = $(element)
 					.html()
 					.replace(/\s+<small>.*<\/small>$/g, "")
-				const headingID = $(element).attr("id") || slugify(headingText.toLowerCase())
-				tocHtml += `<li><a href="#${headingID}">${headingText}</a></li>`
+				const headingID =
+					$(element).attr("id") ||
+					slugify(
+						$(element)
+							.text()
+							.replace(/([.‘’“”])/g, ""),
+					)
+				tocHtml += `<li><a href="#${headingID}">${headingHTML}</a></li>`
 			})
 			tocHtml += `			</ol>
 								</nav>
@@ -44,7 +50,6 @@ export default async function (value, outputPath) {
 				slugify(
 					$(element)
 						.text()
-						.toLowerCase()
 						.replace(/([.‘’“”])/g, ""),
 				)
 			$(element).html(`

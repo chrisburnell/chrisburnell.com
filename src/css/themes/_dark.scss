@@ -31,11 +31,6 @@
 		color: h(yeti);
 	}
 
-	// Footer Block
-	.footer {
-		color: h(yeti) !important;
-	}
-
 	// Anchor Global
 	%anchor {
 		color: h(highland);
@@ -46,6 +41,10 @@
 		&:not(:is(:hover, :focus, :active)) {
 			text-decoration-color: h(kaiser);
 		}
+	}
+
+	.button {
+		color: h(bear); // maintain color for styled anchors
 	}
 
 	///
@@ -118,6 +117,10 @@
 
 		%anchor {
 			color: h(highland);
+
+			&:active {
+				color: h(snowy); // maintain contrast
+			}
 		}
 	}
 	.box--success {

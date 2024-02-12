@@ -153,7 +153,7 @@
 					{%- for item in socials -%}
 						{%- if not item.hidden and item.primary -%}
 							{%- set url = item.url -%}
-							<li>{% if item.key %}{% set url = url + author[item.key] %}{% endif %}<a{% if item.mf_property %} class=" [ p-{{ item.mf_property }} ] "{% endif %} href="{{ url }}" rel="me"><svg width="20" height="20" aria-hidden="true" focusable="false"{% if item.fill or item.fillHover %} style="{% if item.fill %}--fill: {{ item.fill }}; {% endif %}{% if item.fillHover %}--fill-hover: {{ item.fillHover }}; {% endif %}"{% endif %}>{% if item.defs %}{{ item.defs | safe }}{% endif %}<use href="#svg--{{ item.title | lower }}"></use></svg>{{ item.title }}</a></li>
+							<li>{% if item.key %}{% set url = url + author[item.key] %}{% endif %}<a{% if item.mf_property %} class=" [ p-{{ item.mf_property }} ] "{% endif %} href="{{ url }}" rel="me"><svg width="24" height="24" aria-hidden="true" focusable="false"{% if item.fill or item.fillHover %} style="{% if item.fill %}--fill: {{ item.fill }}; {% endif %}{% if item.fillHover %}--fill-hover: {{ item.fillHover }}; {% endif %}"{% endif %}>{% if item.defs %}{{ item.defs | safe }}{% endif %}<use href="#svg--{{ item.title | lower }}"></use></svg>{{ item.title }}</a></li>
 						{%- endif -%}
 					{%- endfor -%}
 				</ul>

@@ -1,4 +1,5 @@
 import EleventyFetch from "@11ty/eleventy-fetch"
+import stats from "download-stats"
 import { cacheDurations } from "../data/site.js"
 
 /**
@@ -15,21 +16,37 @@ export const githubData = async (repository) => {
 	return json
 }
 
+export const stargazers = async (repository) => {
+	const github = await githubData(repository)
+	return parseFloat(github["stargazers_count"])
+}
+
 /**
- * Return data from the npm Downloads API.
  * @param {string} npmPackage
- * @returns {object}
+ * @returns {number}
  */
-export const npmData = async (npmPackage) => {
-	let url = `https://api.npmjs.org/downloads/point/last-month/${npmPackage}`
-	let json = await EleventyFetch(url, {
-		duration: cacheDurations.weekly,
-		type: "json",
+export const npmDownloads = async (npmPackage, published) => {
+	const start = new Date(published)
+	return new Promise((resolve, reject) => {
+		try {
+			let downloads = 0
+			stats
+				.get(start, new Date(), npmPackage)
+				.on("data", (data) => {
+					downloads += data.downloads
+				})
+				.on("end", () => {
+					resolve(downloads)
+				})
+		} catch (error) {
+			console.error(error)
+			reject(error)
+		}
 	})
-	return json
 }
 
 export default {
 	githubData,
-	npmData,
+	stargazers,
+	npmDownloads,
 }

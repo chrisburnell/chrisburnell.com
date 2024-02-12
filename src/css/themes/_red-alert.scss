@@ -1,9 +1,9 @@
 ////
-/// Code Red
+/// Red Alert
 /// @group themes
 ////
 
-@mixin theme-code-red() {
+@mixin theme-red-alert() {
 	--raven-lightness: 54.3%;
 	--raven-chroma: 0.076;
 	--raven-hue: 26.565;
@@ -16,8 +16,8 @@
 	}
 }
 
-:root:has([name="theme"] [value*="code-red"]:checked),
-[data-theme*="code-red"],
-.code-red {
-	@include theme-code-red;
+:root:has([name="theme"] [value*="red-alert"]:checked),
+[data-theme*="red-alert"],
+.red-alert {
+	@include theme-red-alert;
 }

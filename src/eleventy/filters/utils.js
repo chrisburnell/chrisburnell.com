@@ -86,7 +86,10 @@ export const toArray = (value) => {
  * @param {number} multiple
  * @returns {number}
  */
-export const toNearest = (value, multiple) => {
+export const toNearest = (value, multiple, floor = false) => {
+	if (floor) {
+		return Math.floor(value / multiple) * multiple
+	}
 	return Math.round(value / multiple) * multiple
 }
 
