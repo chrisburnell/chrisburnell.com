@@ -112,7 +112,7 @@
 	{% if badges %}
 		<li class=" [ badges ] ">
 			<c-emoji>{{ emojis.trophy }}</c-emoji>
-			<small><span class=" [ hidden ] ">earning</span> badges</small>
+			<small><span class=" [ visually-hidden ] ">earning</span> badges</small>
 			{% for badge in badges -%}
 				{%- if badge.id -%}
 					<a href="https://untappd.com/user/{{ author.untappd }}/badges/{{ badge.id }}">{{ badge.title | default(badge) }}</a>

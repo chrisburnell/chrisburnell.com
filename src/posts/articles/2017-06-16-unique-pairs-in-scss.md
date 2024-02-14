@@ -59,12 +59,12 @@ The single breakpoint <q>below <var>A</var></q> and <q>above <var>B</var></q> va
 @each $breakpoint-name, $breakpoint-value in $breakpoints {
 	.hide--below-#{$breakpoint-name} {
 		@media (max-width: #{$breakpoint-value}) {
-			@include hidden;
+			@include visually-hidden;
 		}
 	}
 	.hide--above-#{$breakpoint-name} {
 		@media (min-width: #{$breakpoint-value}) {
-			@include hidden;
+			@include visually-hidden;
 		}
 	}
 }

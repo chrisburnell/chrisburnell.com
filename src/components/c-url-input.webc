@@ -1,6 +1,6 @@
 <input webc:root="override" type="url" inputmode="url" enterkeyhint="send" />
 
-<is-land class="hidden" on:idle on:visible>
+<is-land class=" [ visually-hidden ] " on:idle on:visible>
 	<template webc:raw data-island="once">
 		<script type="module" src="/js/components/url-input.js"></script>
 	</template>

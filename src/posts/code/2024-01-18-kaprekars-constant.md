@@ -21,7 +21,7 @@ Following the above steps always leads you to the same number: 6174.
 <!-- </textarea> -->
 <!-- '"´ -->
 <form id="calculator">
-	<legend class=" [ hidden ] ">
+	<legend class=" [ visually-hidden ] ">
 		<h2>{{ title }}</h2>
 	</legend>
 	<fieldset>

@@ -94,7 +94,7 @@
 				{%- set stargazers = item.data.stargazers | default(0) -%}
 				{%- set responsesLength = reactions.length + replies.length + stargazers -%}
 				<li>
-					<a href="{{ item.url }}#respond" title="Jump to responses for this {{ item.data.categoryProper }}">{{ responsesLength }} {% if stargazers == responsesLength %}stargazer{% else %}response{% endif %}{{ 's' if responsesLength > 1 }} <span class="hidden">to this {{ item.data.categoryProper | default(item.data.category) | default('page') }}</span></a>
+					<a href="{{ item.url }}#respond" title="Jump to responses for this {{ item.data.categoryProper }}">{{ responsesLength }} {% if stargazers == responsesLength %}stargazer{% else %}response{% endif %}{{ 's' if responsesLength > 1 }} <span class=" [ visually-hidden ] ">to this {{ item.data.categoryProper | default(item.data.category) | default('page') }}</span></a>
 				</li>
 			{% endif %}
 		</ul>

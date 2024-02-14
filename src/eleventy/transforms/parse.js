@@ -54,7 +54,7 @@ export default async function (value, outputPath) {
 				)
 			$(element).html(`
 				${$(element).html()}
-				<a class=" [ fragment-anchor ] " href="#${headingID}" title="Permalink for ${$(element).text().trim()}"><span class="hidden">Permalink </span>¶</a>
+				<a class=" [ fragment-anchor ] " href="#${headingID}" title="Permalink for ${$(element).text().trim()}"><span class="visually-hidden">Permalink </span>¶</a>
 			`)
 			$(element).attr("id", headingID)
 		})

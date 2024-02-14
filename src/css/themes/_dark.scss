@@ -38,7 +38,7 @@
 	// Anchor & Summary
 	%anchor,
 	summary {
-		&:not(:is(:hover, :focus, :active)) {
+		&:not(:hover, :focus, :active) {
 			text-decoration-color: h(kaiser);
 		}
 	}
@@ -144,7 +144,7 @@
 
 	.browse__previous,
 	.browse__next {
-		&:not(:is(:hover, :focus, :active)) {
+		&:not(:hover, :focus, :active) {
 			&::before {
 				color: h(yeti);
 			}

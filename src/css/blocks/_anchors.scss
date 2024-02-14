@@ -3,7 +3,7 @@
 /// @group blocks
 ////
 
-h2 %anchor:not(:is(:hover, :focus, :active)) {
+h2 %anchor:not(:hover, :focus, :active) {
 	text-decoration: none;
 }
 
@@ -38,7 +38,7 @@ h2 %anchor:not(:is(:hover, :focus, :active)) {
 	text-transform: lowercase;
 
 	%heading:not(:hover, :focus-within) > &:not(:hover, :focus, :active) {
-		@include hidden;
+		@include visually-hidden;
 	}
 }
 

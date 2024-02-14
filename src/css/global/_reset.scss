@@ -1,8 +1,9 @@
 ////
 /// Reset
 /// @group global
-// Inspired by Andy Bell's Modern CSS Reset
+// Inspired by:
 // https://github.com/hankchizljaw/modern-css-reset
+// https://github.com/mayank99/reset.css/blob/main/package/index.css
 ////
 
 *,
@@ -16,6 +17,12 @@
 	scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+	:where(html:focus-within) {
+		scroll-behavior: smooth;
+	}
+}
+
 @supports not (min-block-size: 100dvb) {
 	:where(html) {
 		block-size: 100%;
@@ -27,6 +34,7 @@
 	min-block-size: 100vh;
 	min-block-size: 100dvb;
 	margin: 0;
+	-webkit-font-smoothing: antialiased;
 }
 
 :where(:focus-visible) {
@@ -81,7 +89,7 @@
 	cursor: not-allowed;
 }
 
-:where(.hidden:not(:is(:focus, :focus-within, :active))) {
+:where(.visually-hidden:not(:focus, :focus-within, :active)) {
 	inline-size: 1px !important;
 	block-size: 1px !important;
 	padding: 0 !important;

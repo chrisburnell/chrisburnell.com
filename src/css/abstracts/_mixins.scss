@@ -6,7 +6,7 @@
 ///
 /// Visually hide an element properly.
 ///
-@mixin hidden() {
+@mixin visually-hidden() {
 	inline-size: 1px !important;
 	block-size: 1px !important;
 	padding: 0 !important;

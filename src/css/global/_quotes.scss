@@ -25,7 +25,7 @@ blockquote {
 		}
 
 		&:not(:last-of-type)::after {
-			@include hidden;
+			@include visually-hidden;
 		}
 	}
 
