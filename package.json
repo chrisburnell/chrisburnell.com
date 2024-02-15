@@ -27,6 +27,9 @@
     "esbuild": "^0.20.0",
     "eslint": "^8.56.0",
     "json-to-scss": "^1.6.2",
+    "postcss": "^8.4.35",
+    "postcss-cli": "^11.0.0",
+    "postcss-scss": "^4.0.9",
     "prettier": "^3.2.5",
     "sass": "^1.70.0"
   },
@@ -69,19 +72,20 @@
     "markdown-it-abbr": "^2.0.0",
     "markdown-it-footnote": "^4.0.0",
     "pagefind": "^1.0.4",
-    "postcss": "^8.4.35",
     "utopia-core-scss": "^1.0.0"
   },
   "scripts": {
     "clean": "npx rimraf .cache && npx rimraf _site",
     "tokens": "npx json-to-scss './src/eleventy/data/designTokens/*.json' ./src/css/abstracts/_generated.scss; npx prettier --write src/css/abstracts/_generated.scss",
+    "css": "npx sass src/css:_site/css --style=compressed --no-source-map --color",
+    "postcss": "npx postcss _site/css/**/*.css --replace --no-map",
     "prettier": "npx prettier --write src",
     "check-links": "npx check-html-links _site",
     "create-search-index": "npx pagefind --site \"_site\" --glob \"**/*.html\"",
     "start": "NODE_OPTIONS=--max-old-space-size=8192 npx @11ty/eleventy --incremental --serve",
     "serve": "npm run start",
     "now": "NODE_OPTIONS=--max-old-space-size=8192 npx @11ty/eleventy --incremental --ignore-initial --serve",
-    "setup": "npm run tokens; npm run prettier; npx browserslist@latest --update-db",
+    "setup": "npm run tokens; npm run prettier; npx browserslist@latest --update-db; npm run css",
     "build": "npm run setup; cross-env NODE_OPTIONS=--max-old-space-size=8192 npx @11ty/eleventy; npm run create-search-index",
     "pregenerate": "npm run setup; cross-env NODE_OPTIONS=--max-old-space-size=8192 PREGENERATE_IMAGES=true npx @11ty/eleventy",
     "debug": "cross-env NODE_OPTIONS=--max-old-space-size=8192 DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"

@@ -7,4 +7,4 @@
 	<script>{% getBundle 'js', 'critical' %}</script>
 {%- endif %}
 
-{%- js 'critical' -%}{% include '../../../js/critical.js' %}{%- endjs -%}
+{%- js 'critical' -%}{% renderFile 'src/js/critical.js' %}{%- endjs -%}

@@ -6,7 +6,6 @@
 
 %monospace {
 	font-family: var(--font-family-monospace);
-	font-size: var(--font-size-small);
 	line-height: var(--line-height-medium);
 	font-variant: no-common-ligatures tabular-nums;
 }
@@ -18,6 +17,7 @@
 
 :is(code, samp, kbd) {
 	background-color: h(bear);
+	font-weight: var(--font-weight-regular);
 }
 
 kbd {

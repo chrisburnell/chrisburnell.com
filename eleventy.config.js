@@ -53,7 +53,7 @@ export default async function(eleventyConfig) {
 	eleventyConfig.addPlugin(plugins.markdown)
 	eleventyConfig.addPlugin(plugins.ogImage, config.ogImage)
 	eleventyConfig.addPlugin(plugins.rss)
-	eleventyConfig.addPlugin(plugins.sass)
+	eleventyConfig.addPlugin(plugins.scss)
 	eleventyConfig.addPlugin(plugins.syntaxHighlight)
 	eleventyConfig.addPlugin(plugins.webc, config.webc)
 	eleventyConfig.addPlugin(plugins.webmentions, config.webmentions)
@@ -103,7 +103,6 @@ export default async function(eleventyConfig) {
 	// Static Files Passthrough
 	///
 	eleventyConfig.addPassthroughCopy("audio")
-	eleventyConfig.addPassthroughCopy("css")
 	eleventyConfig.addPassthroughCopy("fonts")
 	eleventyConfig.addPassthroughCopy("images")
 	eleventyConfig.addPassthroughCopy("static")
