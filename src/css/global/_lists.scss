@@ -4,8 +4,6 @@
 ////
 
 :is(ol, ul) {
-	padding: 0;
-	margin: 0;
 	list-style-type: ""; // preferred over list-style: none; as it preserves semantics
 }
 :is(dl, ol, ul):not([class]),
@@ -119,7 +117,6 @@ dt {
 	font-weight: var(--font-weight-semibold);
 }
 dd {
-	margin: 0;
 	vertical-align: top;
 }
 

@@ -32,7 +32,6 @@
 	}
 
 	.cover {
-		margin: 0;
 		object-fit: cover;
 		object-position: center;
 		transition: transform var(--transition-duration) var(--transition-function);

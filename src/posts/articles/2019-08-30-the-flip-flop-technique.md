@@ -37,7 +37,7 @@ Eventually, I realised that with a handful of `filter` values, we can come up wi
 <figure class="figure--dragon">
 	<h4>Figure 1</h4>
 	<div>
-		<c-emoji aria-label="Dragon Face">🐲</c-emoji>
+		<c-emoji title="Dragon Face">🐲</c-emoji>
 	</div>
 	<p>
 		<strong>Theme:</strong> <code>unaltered</code>
@@ -47,7 +47,7 @@ Eventually, I realised that with a handful of `filter` values, we can come up wi
 <figure class="figure--dragon">
 	<h4>Figure 2</h4>
 	<div style="filter: invert(1);">
-		<c-emoji aria-label="Dragon Face">🐲</c-emoji>
+		<c-emoji title="Dragon Face">🐲</c-emoji>
 	</div>
 	<p>
 		<strong>Theme:</strong> <code>invert(1)</code>
@@ -59,7 +59,7 @@ Inversion complete. We’ve gone from a light background to a dark one. Now we n
 <figure class="figure--dragon">
 	<h4>Figure 3</h4>
 	<div style="filter: invert(1) hue-rotate(180deg);">
-		<c-emoji aria-label="Dragon Face">🐲</c-emoji>
+		<c-emoji title="Dragon Face">🐲</c-emoji>
 	</div>
 	<p>
 		<strong>Theme:</strong> <code>invert(1) hue-rotate(180deg)</code>
@@ -71,7 +71,7 @@ Now we’ve managed to get our blue back, but the Dragon emoji looks completely 
 <figure class="figure--dragon">
 	<h4>Figure 4</h4>
 	<div style="filter: invert(1) hue-rotate(180deg);">
-		<c-emoji aria-label="Dragon Face" style="filter: invert(1) hue-rotate(180deg);">🐲</c-emoji>
+		<c-emoji title="Dragon Face" style="filter: invert(1) hue-rotate(180deg);">🐲</c-emoji>
 	</div>
 	<p>
 		<strong>Theme:</strong> <code>invert(1) hue-rotate(180deg)</code>
@@ -88,10 +88,10 @@ But something’s *off*. The colours of the emoji in the final example seem less
 
 <figure class="figure--dragon  figure--dragon--animate" tabindex="0">
 	<div>
-		<c-emoji aria-label="Dragon Face">🐲</c-emoji>
+		<c-emoji title="Dragon Face">🐲</c-emoji>
 	</div>
 	<div style="filter: invert(1) hue-rotate(180deg);">
-		<c-emoji aria-label="Dragon Face" style="filter: invert(1) hue-rotate(180deg);">🐲</c-emoji>
+		<c-emoji title="Dragon Face" style="filter: invert(1) hue-rotate(180deg);">🐲</c-emoji>
 	</div>
 </figure>
 

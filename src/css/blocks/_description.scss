@@ -56,7 +56,7 @@
 		}
 	}
 
-	.breadcrumbs ~ .title:not([hidden]:not([hidden='until-found']), .visually-hidden) ~ & {
+	.breadcrumbs ~ .title:not([hidden]:not([hidden="until-found"]), .visually-hidden) ~ & {
 		@include cq(null, null, "medium") {
 			margin-block-end: 0;
 		}

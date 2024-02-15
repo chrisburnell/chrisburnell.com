@@ -10,6 +10,8 @@
 *::before,
 *::after {
 	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
 }
 
 :where(html) {
@@ -33,7 +35,6 @@
 	inline-size: 100%;
 	min-block-size: 100vh;
 	min-block-size: 100dvb;
-	margin: 0;
 	-webkit-font-smoothing: antialiased;
 }
 

@@ -15,10 +15,6 @@
 	text-wrap: pretty;
 }
 
-p {
-	margin: 0;
-}
-
 :is(abbr, dfn, span)[title] {
 	color: h(kaiser);
 	@include italic;

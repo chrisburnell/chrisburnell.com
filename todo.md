@@ -1,9 +1,11 @@
+- review and refactor CSS and make tasty usage of layers, revert-layer, :where, :is, :has, etc.
+- figure out how to resize <code> elements with `font-size-adjust: from-font;"
 - get dates working in OG Images
     - https://github.com/KiwiKilian/eleventy-plugin-og-image
 - something wrong with image shortcode + SVGs (Indieweb logo)
-- figure out how to resize <code> elements with `font-size-adjust: from-font;"
 - review meta_* fields → I *think* this is DONE!!?
 - Make sure to perform tweetback ONLY against URLs and not Titles
+    - done I think?
 - figure out why it's SO SLOWWWWWW
     - eleventy-plugin-bundle is taking ~50ms per page, with 1000+ pages already looking at 50s
 - use utopia-core-scss to generate fluid spaces, type, etc.

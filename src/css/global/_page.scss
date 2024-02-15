@@ -17,11 +17,11 @@ html {
 	font-size: 100%;
 	font-variant: common-ligatures proportional-nums;
 	hanging-punctuation: first allow-end last;
-	scroll-padding-block: 1rem;
+	scroll-margin-block: 1rem;
 
 	@media (height > #{map-get($breakpoints, "tiny")}) {
 		// more than block-size of header when navigation spans two rows
-		scroll-padding-block-start: calc(var(--size-header) + 1rem);
+		scroll-margin-block-start: calc(var(--size-header) + 1rem);
 	}
 }
 
