@@ -24,7 +24,7 @@ layout: base
 				{%- if in_reply_to and not rsvp -%}
 					{%- if "writing" in tags %} and{% else %},{% endif %} in reply to
 					<a class=" [ h-cite  u-in-reply-to ] " href="{{ reply_url }}">{{ reply_title }}</a>
-					{%- if reply_author_string %}
+					{%- if reply_author_string and (reply_author_string | striptags) != reply_title %}
 						by {{ reply_author_string | safe }}
 					{%- endif %},
 				{%- endif %}

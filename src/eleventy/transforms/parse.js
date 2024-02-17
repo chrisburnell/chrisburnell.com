@@ -21,13 +21,11 @@ export default async function (value, outputPath) {
 									<ol>`
 			tocHeadings.each((i, element) => {
 				const headingHTML = striptags(
-					$(element).html().replace(/\s+<small>.*<\/small>$/g, "")
+					$(element)
+						.html()
+						.replace(/\s+<small>.*<\/small>$/g, ""),
 				)
-				const headingID =
-					$(element).attr("id") ||
-					slugify(
-						headingHTML.replace(/([.‘’“”])/g, "")
-					)
+				const headingID = $(element).attr("id") || slugify(headingHTML.replace(/([.‘’“”])/g, ""))
 				tocHtml += `<li><a href="#${headingID}">${headingHTML}</a></li>`
 			})
 			tocHtml += `			</ol>
