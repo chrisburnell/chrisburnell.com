@@ -566,10 +566,7 @@ const blogroll = [
 	},
 	{
 		title: "Clearleft",
-		url: [
-			"https://clearleft.com",
-			"https://podcast.clearleft.com",
-		],
+		url: ["https://clearleft.com", "https://podcast.clearleft.com"],
 		rss: [
 			{
 				title: "Clearleft",
@@ -586,7 +583,7 @@ const blogroll = [
 		title: "Eleventy",
 		url: "https://11ty.dev",
 		rss: [
-				{
+			{
 				title: "Eleventy Blog",
 				url: "https://11ty.dev/blog/feed.xml",
 			},
