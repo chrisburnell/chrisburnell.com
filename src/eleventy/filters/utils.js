@@ -296,7 +296,7 @@ export const getInternalTarget = (url) => {
 		return "a previous Mastodon post"
 	}
 	// Mastodon, external
-	else if (mastodonInstances.includes(new URL(url).host)) {
+	else if (mastodonInstances.includes(getHost(url))) {
 		return getMastodonHandle(url)
 	}
 	// Twitter

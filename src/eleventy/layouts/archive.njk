@@ -18,14 +18,7 @@ truncate: true
 	</ul>
 
 	<h1 id="title" class=" [ title ] ">
-		{%- if perch %}
-			<span class=" [ perch ] [ p-name ] ">
-				{{ tagline | default(title) | safe }}
-				<img src="{{ site.logo }}" alt="" width="324" height="324" loading="lazy" decoding="async" hidden>
-			</span>
-		{%- else -%}
-			<span class=" [ p-name ] ">{{ title | safe }}</span>
-		{%- endif %}
+		<span class=" [ p-name ] ">{{ title | safe }}</span>
 	</h1>
 
 	<div class=" [ description ] [ flow ] ">

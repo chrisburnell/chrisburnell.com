@@ -2,7 +2,6 @@ const navigation = [
 	{
 		title: "Home",
 		url: "/",
-		header: true,
 		footer: true,
 	},
 	{
@@ -14,6 +13,12 @@ const navigation = [
 	{
 		title: "CV",
 		url: "/cv/",
+		footer: true,
+	},
+	{
+		title: "Explore",
+		url: "/explore/",
+		header: true,
 		footer: true,
 	},
 	{

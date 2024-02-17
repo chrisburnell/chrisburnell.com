@@ -1,5 +1,5 @@
 ---
-title: Privacy
+title: Privacy Policy
 description: Your right to privacy on this website.
 monetization: false
 ---

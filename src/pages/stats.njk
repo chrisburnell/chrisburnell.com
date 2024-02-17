@@ -94,7 +94,7 @@ excludeFromSearch: true
 <ul class=" [ grid ] [ shelf ] " data-layout="natural">
 	{%- for item in collections.categories -%}
 		{%- set count = collections[item.title] | arePublished | getCollectionCount -%}
-		<li><a href="/{{ item.plural }}/" class=" [ strong ] " style="font-size: var(--font-size-gamma);"><c-emoji>{{ item.emoji | default('📄') }}</c-emoji> {{ item.properPlural | title }} <sup>{{ count }}</sup></a></li>
+		<li><a href="/{{ item.plural }}/" class=" [ strong ] " style="font-size: var(--font-size-gamma);"><c-emoji>{{ item.emoji | default('📄') }}</c-emoji>{{ item.properPlural | title }} <sup>{{ count }}</sup></a></li>
 	{%- endfor -%}
 </ul>
 

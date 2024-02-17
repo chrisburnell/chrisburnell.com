@@ -40,7 +40,7 @@ layout: base
 		{% include 'css-naked-day.njk' %}
 
 		{% if draft %}
-			<p class=" [ box  box--warning ] [ flow ] ">This is still a <em>draft</em>! The quality of this {{ categoryProper | default(category) | default('post') }} may not be up to snuff, and is probably far from being complete.</p>
+			<p class=" [ box  box--warning ] [ flow ] [ line-length ] ">This is still a <em>draft</em>! The quality of this {{ categoryProper | default(category) | default('post') }} may not be up to snuff, and is probably far from being complete.</p>
 		{% endif %}
 
 		{% include 'banner.njk' %}

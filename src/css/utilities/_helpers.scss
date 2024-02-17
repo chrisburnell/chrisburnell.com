@@ -146,6 +146,11 @@
 	vertical-align: middle;
 	margin-block-start: calc(1ex - 1cap);
 	text-shadow: none;
+
+	%anchor &:first-child {
+		display: inline-block;
+		padding-inline-end: var(--size-small);
+	}
 }
 
 // Sorting labels

@@ -41,8 +41,26 @@ export const getPathname = (url) => {
 	return getURLObject(url).pathname || url
 }
 
+/**
+ * @param {string} url
+ * @returns {string}
+ */
+export const getOrigin = (url) => {
+	return getURLObject(url).origin || url
+}
+
+/**
+ * @param {string} url
+ * @returns {string}
+ */
+export const getProtocol = (url) => {
+	return getURLObject(url).protocol || url
+}
+
 export default {
 	tweetback,
 	getHost,
 	getPathname,
+	getOrigin,
+	getProtocol,
 }

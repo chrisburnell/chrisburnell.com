@@ -23,7 +23,7 @@
   "devDependencies": {
     "concurrently": "^8.2.2",
     "cross-env": "^7.0.3",
-    "dotenv": "^16.4.2",
+    "dotenv": "^16.4.4",
     "esbuild": "^0.20.0",
     "eslint": "^8.56.0",
     "json-to-scss": "^1.6.2",
@@ -31,12 +31,12 @@
     "postcss-cli": "^11.0.0",
     "postcss-scss": "^4.0.9",
     "prettier": "^3.2.5",
-    "sass": "^1.70.0"
+    "sass": "^1.71.0"
   },
   "dependencies": {
-    "@11ty/eleventy": "^3.0.0-alpha.4",
+    "@11ty/eleventy": "^3.0.0-alpha.5",
     "@11ty/eleventy-fetch": "^4.0.0",
-    "@11ty/eleventy-img": "^4.0.1",
+    "@11ty/eleventy-img": "^4.0.2",
     "@11ty/eleventy-plugin-bundle": "^1.0.5",
     "@11ty/eleventy-plugin-directory-output": "^1.0.1",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
@@ -72,6 +72,7 @@
     "markdown-it-abbr": "^2.0.0",
     "markdown-it-footnote": "^4.0.0",
     "pagefind": "^1.0.4",
+    "striptags": "^3.2.0",
     "utopia-core-scss": "^1.0.0"
   },
   "scripts": {

@@ -32,12 +32,8 @@ export default [
 		title: "Koala Dark",
 	},
 	{
-		id: "light  nineties",
+		id: "nineties",
 		title: "90s",
-	},
-	{
-		id: "dark  nineties",
-		title: "90s Dark",
 	},
 	{
 		id: "matrix",

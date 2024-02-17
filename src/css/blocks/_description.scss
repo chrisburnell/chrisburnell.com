@@ -5,9 +5,8 @@
 
 .description {
 	padding-block-end: var(--size-large);
-	font-family: var(--font-family-serif);
 	font-size: var(--font-size-gamma);
-	font-weight: var(--font-weight-regular);
+	font-weight: var(--font-weight-medium);
 
 	p {
 		:not(.content) > & {

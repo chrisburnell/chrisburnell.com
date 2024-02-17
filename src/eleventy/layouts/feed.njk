@@ -49,13 +49,13 @@
 		<content xml:lang="{{ site.locale }}" type="html">
 			{% if item.data.of_url %}<p>Original post can be found at: <a href="{{ item.data.of_url }}">{{ item.data.of_url }}</a></p>{% endif %}
 		</content>
-		{%- endif %}
+		{% endif -%}
 		{% if item.data.of_url -%}
 		<link rel="alternate" href="{{ item.data.of_url }}" />
-		{%- endif %}
+		{% endif -%}
 		{% if item.data.reply_url -%}
 		<link rel="related" href="{{ item.data.reply_url }}" />
-		{%- endif %}
+		{% endif -%}
 	</entry>
-	{%- endfor %}
+	{% endfor %}
 </feed>

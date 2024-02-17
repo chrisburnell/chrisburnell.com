@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<opml version="2.0">
+	<head>
+		<title>{{ site.title }} Blogroll</title>
+		<dateCreated>{{ global.nowISO | w3cDate }}</dateCreated>
+	</head>
+	<body>
+		{% for blog in blogroll -%}
+			{%- set blogURL = blog.url | toArray | first -%}
+			{%- set blogRSS = blog.rss | toArray -%}
+			{% for feed in blogRSS -%}
+				{%- set htmlURL = blogURL -%}
+				{%- if feed.url -%}
+					{%- set htmlURL = feed.url | getOrigin -%}
+				{%- endif -%}
+				<outline text="{{ feed.title | default(blog.title) | safe }}" type="rss" xmlUrl="{{ feed.url | default(feed) | safe }}" htmlUrl="{{ htmlURL | safe }}"{% if blog.description %} description="{{ blog.description | striptags | safe }}"{% endif %} />
+			{% endfor -%}
+		{% endfor -%}
+	</body>
+</opml>

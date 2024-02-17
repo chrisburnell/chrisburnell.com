@@ -51,8 +51,8 @@
 	{% endif %}
 	{% if item.data.title or item.data.of_title or item.data.of_title_fallback %}
 		<h1 style="view-transition-name: title-{{ item.data.page.fileSlug }};">
-			<a class=" [ p-name ] " href="{% if item.data.tags and "clickthrough" in item.data.tags %}{{ item.data.of_url | default(item.url) | safe }}{% else %}{{ item.url | safe }}{% endif %}">
-				{% if item.data.emoji %}<c-emoji>{{ item.data.emoji }}</c-emoji> {% endif %}{{ item.data.title | default(item.data.of_title) | default(item.data.of_title_fallback) | striptags(true) | safe }}
+			<a class=" [ p-name ] " href="{% if item.data.tags and "clickthrough" in item.data.tags %}{{ item.data.of_url | default(item.url) | safe }}{% else %}{{ item.url | safe }}{% endif %}"{% if item.data.tags and "clickthrough" in item.data.tags %} rel="external noopener"{% endif %}>
+				{% if item.data.emoji %}<c-emoji>{{ item.data.emoji }}</c-emoji>{% endif %}{{ item.data.title | default(item.data.of_title) | default(item.data.of_title_fallback) | striptags(true) | safe }}
 			</a>
 		</h1>
 	{% endif %}

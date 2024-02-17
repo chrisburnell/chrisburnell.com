@@ -1,5 +1,6 @@
 import slugify from "@sindresorhus/slugify"
 import { load } from "cheerio"
+import striptags from "striptags"
 
 export default async function (value, outputPath) {
 	if (outputPath && outputPath.endsWith(".html")) {
@@ -19,15 +20,13 @@ export default async function (value, outputPath) {
 								<nav class=" [ box ] " aria-label="Table of Contents">
 									<ol>`
 			tocHeadings.each((i, element) => {
-				const headingHTML = $(element)
-					.html()
-					.replace(/\s+<small>.*<\/small>$/g, "")
+				const headingHTML = striptags(
+					$(element).html().replace(/\s+<small>.*<\/small>$/g, "")
+				)
 				const headingID =
 					$(element).attr("id") ||
 					slugify(
-						$(element)
-							.text()
-							.replace(/([.‘’“”])/g, ""),
+						headingHTML.replace(/([.‘’“”])/g, "")
 					)
 				tocHtml += `<li><a href="#${headingID}">${headingHTML}</a></li>`
 			})

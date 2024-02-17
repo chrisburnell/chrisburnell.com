@@ -90,6 +90,10 @@
 	cursor: not-allowed;
 }
 
+:where(:focus-visible, :target) {
+	scroll-margin-block: max(8vh, calc(var(--size-header) + 1rem));
+}
+
 :where(.visually-hidden:not(:focus, :focus-within, :active)) {
 	inline-size: 1px !important;
 	block-size: 1px !important;

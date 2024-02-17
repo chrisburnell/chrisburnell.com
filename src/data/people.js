@@ -2,7 +2,7 @@ import dotenv from "dotenv"
 dotenv.config()
 
 import EleventyFetch from "@11ty/eleventy-fetch"
-import { cacheDurations } from "../eleventy/data//site.js"
+import { cacheDurations } from "../eleventy/data/site.js"
 
 const API_ORIGIN = process.env.PERSONAL_API_URL
 const TOKEN = process.env.PERSONAL_API_TOKEN

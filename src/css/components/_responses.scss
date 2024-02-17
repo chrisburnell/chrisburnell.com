@@ -58,7 +58,7 @@
 	--flow-space: var(--size-medium);
 }
 
-.response {
+.person {
 	display: grid;
 	grid-template-columns: min-content 1fr;
 	grid-template-rows: auto auto;
@@ -70,7 +70,7 @@
 	}
 }
 
-.response__avatar {
+.person__avatar {
 	grid-row: 1 / 3;
 
 	&,
@@ -88,12 +88,12 @@
 	}
 }
 
-.response__meta {
+.person__meta {
 	a {
 		color: inherit;
 	}
 
-	.response__permalink {
+	.person__permalink {
 		line-height: 0;
 	}
 

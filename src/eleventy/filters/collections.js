@@ -1,6 +1,10 @@
+import breweries from "../../data/breweries.js"
 import categories from "../../data/categories.js"
+import gamePublishers from "../../data/gamePublishers.js"
 import ignoredTags from "../../data/ignoredTags.js"
-import people from "../../data/people.js"
+import meetups from "../../data/meetups.js"
+import musicalArtists from "../../data/musicalArtists.js"
+import publications from "../../data/publications.js"
 import blogroll from "../data/blogroll.js"
 import emojis from "../data/emojis.js"
 import { now } from "../data/global.js"
@@ -11,20 +15,8 @@ import { capitalize, conjunction, stripHTML } from "./strings.js"
 import { getHost, tweetback } from "./urls.js"
 import { getInternalTarget, getMastodonHandle, getSyndicationTitle, getTwitterHandle, toArray } from "./utils.js"
 
-// Get a list of people
-const allPeopleUnfiltered = [...blogroll, ...people]
-// Merge duplicates by `title`
-const allPeople = allPeopleUnfiltered.reduce((output, person) => {
-	const allPeopleUnfiltered = output.find((item) => item.title === person.title)
-
-	if (allPeopleUnfiltered) {
-		Object.assign(allPeopleUnfiltered, person)
-	} else {
-		output.push(person)
-	}
-
-	return output
-}, [])
+// Create an array of references
+const allPeople = [...blogroll, ...breweries, ...publications, ...musicalArtists, ...gamePublishers, ...meetups]
 
 /**
  *
@@ -39,7 +31,7 @@ const getPerson = (title, url) => {
 			return true
 		}
 		// Match by Mastodon handle
-		if (url && person.mastodon && mastodonInstances.includes(new URL(url).host)) {
+		if (url && person.mastodon && mastodonInstances.includes(getHost(url))) {
 			return toArray(person.mastodon).find((personMastodon) => {
 				return getMastodonHandle(url) === `@${personMastodon}`
 			})
@@ -53,7 +45,7 @@ const getPerson = (title, url) => {
 		// Match by URL
 		if (url && person.url) {
 			return toArray(person.url).find((personURL) => {
-				if (new URL(url).host === new URL(personURL).host) {
+				if (getHost(url) === getHost(personURL)) {
 					return true
 				}
 
@@ -273,7 +265,11 @@ export const getAuthorData = (author) => {
  */
 const authorString = (author) => {
 	if (!author.title) {
-		author.title = getPerson(null, author.url) || author.url
+		const person = getPerson(null, author.url)
+		if (person) {
+			author.title = person.title
+		}
+		author.title = author.url
 	}
 	if (author.url) {
 		return `<a href="${author.url}" class=" [ h-cite ] "${!author.url.includes(siteURL) && ` rel="external"`}>${author.title}</a>`
@@ -408,7 +404,9 @@ export const getMetaTitle = (data) => {
 }
 
 export const getMetaImage = (data) => {
-	if (data.banner || data.cover || data.photo) {
+	if (data.og_image) {
+		return `${siteURL}${data.og_image}`
+	} else if (data.banner || data.cover || data.photo) {
 		const image = toArray(data.banner || data.cover || data.photo)[0]
 		return `${siteURL}/images/built/${(image.url || image).replace("jpg", "jpeg")}`
 	}

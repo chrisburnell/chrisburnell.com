@@ -1,0 +1,228 @@
+---
+layout: base
+title: Explore
+description: TODO
+---
+
+<div class=" [ pantheon ] [ wrap ] [ perch ] ">
+
+	<h1 id="title" class=" [ title ] ">
+		<span class=" [ p-name ] ">{{ title | safe }}</span>
+	</h1>
+
+	<div class=" [ description ] [ flow ] [ p-summary ] ">
+		{{ descriptionLong | default(description) | formatAsMarkdown | safe }}
+	</div>
+
+	<div id="content" class=" [ content ] [ flow ] [ generate-toc ] ">
+		{% include 'lfw.njk' %}
+
+		{% include 'css-naked-day.njk' %}
+
+		<div class=" [ e-content ] [ flow ] generate-toc">
+			<h2>Pages</h2>
+
+			<ul class=" [ grid ] [ shelf ] ">
+				<li>
+					<a href="/about/" class=" [ strong ] " style="font-size: var(--font-size-gamma);">About me</a>
+					<p>Learn more about me.</p>
+				</li>
+				<li>
+					<a href="/cv/" class=" [ strong ] " style="font-size: var(--font-size-gamma);">CV</a>
+					<p>My curriculum vitae / résumé.</p>
+				</li>
+				<li>
+					<a href="/search/" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Search</a>
+					<p>Find something on my website!</p>
+				</li>
+				<li>
+					<a href="/blogroll/" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Blogroll</a>
+					<p>I've had the pleasure of meeting, knowing of, knowing personally, and spending great time with a lot of amazing people that have inspired me in different ways.</p>
+				</li>
+				<li>
+					<a href="/feeds/" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Feeds</a>
+					<p>You can follow my posts from different web feeds, depending on what content you'd like to see.</p>
+				</li>
+				<li>
+					<a href="/guestbook/" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Guestbook</a>
+					<p>My guestbook, powered by Webmentions!</p>
+				</li>
+				<li>
+					<a href="/indieweb/" class=" [ strong ] " style="font-size: var(--font-size-gamma);">IndieWeb</a>
+					<p>How I've implemented and interact with the IndieWeb.</p>
+				</li>
+				<li>
+					<a href="/links/" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Links</a>
+					<p>Find me all over the web (mostly)!</p>
+				</li>
+				<li>
+					<a href="/listening/" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Listening</a>
+					<p>What have I been listening to? Powered by Last.fm.</p>
+				</li>
+				<li>
+					<a href="/stats/" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Stats</a>
+					<p>Numbers, cause why not?</p>
+				</li>
+				<li>
+					<a href="/styleguide/" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Style Guide</a>
+					<p>The style guide for this website.</p>
+				</li>
+				<li>
+					<a href="/license/" class=" [ strong ] " style="font-size: var(--font-size-gamma);">License</a>
+					<p>CC BY-NC-SA 4.0</p>
+				</li>
+				<li>
+					<a href="/privacy/" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Privacy Policy</a>
+					<p>Your right to privacy on this website.</p>
+				</li>
+				<li>
+					<a href="/ghoti/" class=" [ strong ] " style="font-size: var(--font-size-gamma);">The Absurdity of English</a>
+					<p>A list of things about the language that I find weird.</p>
+				</li>
+			</ul>
+
+			<h2><a href="/projects/">Projects</a></h2>
+
+			<ul class=" [ grid ] [ shelf ] ">
+				<li>
+					<a href="/projects/#web" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Web Projects</a>
+					<p>Projects made for the web.</p>
+				</li>
+				<li>
+					<a href="/projects/#personal" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Web Projects</a>
+					<p>Projects that I only really made for myself.</p>
+				</li>
+				<li>
+					<a href="/projects/#past-versions" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Past Versions</a>
+					<p>Previous versions of this website.</p>
+				</li>
+			</ul>
+
+			<h2><a href="/posts/">Posts</a></h2>
+
+			<h3>Collections</h3>
+
+			<ul class=" [ grid ] [ shelf ] ">
+				<li>
+					<a href="/latest/" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Latest Posts <sup>{{ site.limits.feed }}</sup></a>
+					<p>Latest posts on the blog.</p>
+				</li>
+				<li>
+					<a href="/hot/" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Hot Pages <sup>{{ site.limits.feed }}</sup></a>
+					<p>Top blog posts, ordered by interactions across time.</p>
+				</li>
+				<li>
+					<a href="/popular/" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Popular Pages <sup>{{ site.limits.feed }}</sup></a>
+					<p>Top blog posts, ordered by total interactions.</p>
+				</li>
+				<li>
+					<a href="/writing/" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Writing <sup>{{ collections.writings | getCollectionCount }}</sup></a>
+					<p>A more serious collection of ideas and bits of prose.</p>
+				</li>
+				<li>
+					<a href="/replies/" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Replies <sup>{{ collections.replies | getCollectionCount }}</sup></a>
+					<p>Replies I’ve made to other people.</p>
+				</li>
+				<li>
+					<a href="/rsvps/" class=" [ strong ] " style="font-size: var(--font-size-gamma);">RSVPs <sup>{{ collections.rsvps | getCollectionCount }}</sup></a>
+					<p>A record of RSVPs to conferences and meetups.</p>
+				</li>
+			</ul>
+
+			<h3>Categories</h3>
+
+			<ul class=" [ grid ] [ shelf ] " data-layout="natural">
+				{%- for item in collections.categories -%}
+					{%- set count = collections[item.title] | arePublished | getCollectionCount -%}
+					<li>
+						<a href="/{{ item.plural }}/" class=" [ strong ] " style="font-size: var(--font-size-gamma);"><c-emoji>{{ item.emoji | default('📄') }}</c-emoji>{{ item.properPlural | title }} <sup>{{ count }}</sup></a>
+						<p>
+					</li>
+				{%- endfor -%}
+			</ul>
+
+			<h3>Tags</h3>
+
+			<ul class=" [ grid ] [ shelf ] " data-layout="natural">
+				{%- set lowest = 9001 -%}
+				{%- set highest = 0 -%}
+				{%- for item in collections.tags | sort -%}
+					{%- set count = collections[item] | arePublished | getCollectionCount -%}
+					{%- if count < lowest -%}
+						{%- set lowest = count -%}
+					{%- elif count > highest -%}
+						{%- set highest = count -%}
+					{%- endif -%}
+				{%- endfor -%}
+				{%- for item in collections.tags | sort -%}
+					{%- set count = collections[item] | arePublished | getCollectionCount -%}
+					{# map range from lowest–highest to 1–1.5, 3 decimal places #}
+					{%- set fontSize = count | rangeMap(lowest, highest, 1, 1.5, 3) -%}
+					<li><a href="/tag/{{ item }}/" class=" [ strong ] " style="font-size: {{ fontSize }}em;">{{ item }} <sup>{{ count }}</sup></a></li>
+				{%- endfor -%}
+			</ul>
+
+			<h2><a href="/feeds/">Feeds</a></h2>
+
+			<h3>
+				<svg width="24" height="24" aria-hidden="true" focusable="false" style="fill: var(--color-rss); margin-block-start: calc(1ex - 1cap); vertical-align: middle;"><use href="#svg--rss"></use></svg>
+				Collections
+			</h3>
+
+			<ul class=" [ grid ] [ shelf ] " style="--min-inline-size: 12em;">
+				<li>
+					<a href="{{ site.url + '/feed.xml' }}" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Latest Posts</a>
+					<p>Latest posts on the blog.</p>
+				</li>
+				<li>
+					<a href="{{ site.url + '/writing.xml' }}" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Writing</a>
+					<p>A more serious collection of ideas and bits of prose.</p>
+				</li>
+				<li>
+					<a href="{{ site.url + '/replies.xml' }}" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Replies</a>
+					<p>Replies I’ve made to other people.</p>
+				</li>
+				<li>
+					<a href="{{ site.url + '/rsvps.xml' }}" class=" [ strong ] " style="font-size: var(--font-size-gamma);">RSVPs</a>
+					<p>A record of RSVPs to conferences and meetups.</p>
+				</li>
+			</ul>
+
+			<h3>
+				<svg width="24" height="24" aria-hidden="true" focusable="false" style="fill: var(--color-rss); margin-block-start: calc(1ex - 1cap); vertical-align: middle;"><use href="#svg--rss"></use></svg>
+				Categories
+			</h3>
+
+			<ul class=" [ grid ] [ shelf ] " data-layout="natural">
+			{% for item in collections.categories -%}
+				{%- set count = collections[item.title] | arePublished | getCollectionCount -%}
+				<li><a href="{{ site.url }}/{{ item.plural }}.xml" class=" [ strong ] " style="font-size: var(--font-size-gamma);"><c-emoji>{{ item.emoji | default('📄') }}</c-emoji>{{ item.properPlural | title }} <sup>{{ count }}</sup></a></li>
+			{%- endfor %}
+			</ul>
+
+			<h3>
+				<svg width="24" height="24" aria-hidden="true" focusable="false" style="fill: var(--color-rss); margin-block-start: calc(1ex - 1cap); vertical-align: middle;"><use href="#svg--rss"></use></svg>
+				Tags
+			</h3>
+
+			<ul class=" [ grid ] [ shelf ] " data-layout="natural">
+			{%- set lowest = 9001 -%}
+			{%- set highest = 0 -%}
+			{%- for item in collections.tags | sort -%}
+				{%- set count = collections[item] | arePublished | getCollectionCount -%}
+				{%- if count < lowest -%}
+					{%- set lowest = count -%}
+				{%- elif count > highest -%}
+					{%- set highest = count -%}
+				{%- endif -%}
+			{%- endfor -%}
+			{% for item in collections.tags | sort -%}
+				{%- set count = collections[item] | arePublished | getCollectionCount -%}
+				{%- set fontSize = count | rangeMap(lowest, highest, 1, 1.375, 3) -%}
+				<li><a href="{{ site.url }}/{{ item }}.xml" class=" [ strong ] " style="font-size: {{ fontSize }}em;">{{ item }} <sup>{{ count }}</sup></a></li>
+			{%- endfor %}
+			</ul>
+		</div>
+	</div>
+
+</div>

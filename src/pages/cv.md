@@ -23,7 +23,7 @@ Passionate about the open web, having published over 50 technical articles, and 
 <h2 style="break-before: page;">Professional Experience</h2>
 
 <div class=" [ space-between ] ">
-    <h3><a href="https://squiz.net"><c-emoji>{% image './images/content/squiz-logo.svg', 'Squiz’s logo', 'brand-logo' %}</c-emoji> Squiz</a></h3>
+    <h3><a href="https://squiz.net"><c-emoji>{% image './images/content/squiz-logo.svg', 'Squiz’s logo', 'brand-logo' %}</c-emoji>Squiz</a></h3>
     <small><strong>February 2018 – December 2023</strong></small>
 </div>
 
@@ -64,7 +64,7 @@ Passionate about the open web, having published over 50 technical articles, and 
 - Single-handedly developed the UK’s first design system which is now used by more than 10 enterprise-level projects, leading to more coherent codebases and a significant reduction in bugs and turnaround time for ad hoc work.
 
 <div class=" [ space-between ] ">
-    <h3><a href="https://city.ac.uk"><c-emoji><img src="/images/built/city-logo.png" class="brand-logo" alt="City, University of London’s logo" loading="lazy" decoding="async"></c-emoji> City, University of London</a></h3>
+    <h3><a href="https://city.ac.uk"><c-emoji><img src="/images/built/city-logo.png" class="brand-logo" alt="City, University of London’s logo" loading="lazy" decoding="async"></c-emoji>City, University of London</a></h3>
     <small><strong>June 2014 – February 2018</strong></small>
 </div>
 
@@ -75,7 +75,7 @@ Passionate about the open web, having published over 50 technical articles, and 
 - Overhauled the University’s [Clearing Website](https://clearing.city.ac.uk/) to simplify the user journey and automate backend processes required for incoming applications, reducing processing times and dependence on staff. This led to significant cost and time savings for the University, and continues to be used to this day.
 
 <div class=" [ space-between ] ">
-    <h3><a href="https://squiz.net"><c-emoji>{% image './images/content/squiz-logo.svg', 'Squiz’s logo', 'brand-logo' %}</c-emoji> Squiz</a></h3>
+    <h3><a href="https://squiz.net"><c-emoji>{% image './images/content/squiz-logo.svg', 'Squiz’s logo', 'brand-logo' %}</c-emoji>Squiz</a></h3>
     <small><strong>April 2012 – January 2014</strong></small>
 </div>
 
@@ -87,7 +87,7 @@ Passionate about the open web, having published over 50 technical articles, and 
 <h2 style="break-before: page;">Community Experience</h2>
 
 <div class=" [ space-between ] ">
-    <h3 class=" [ delta ] ">Conference Organiser for <a href="https://stateofthebrowser.com" rel="external"><c-emoji><img src="/images/built/sotb-logo.png" class="brand-logo" alt="State of the Browser’s logo" loading="lazy" decoding="async"></c-emoji> State of the Browser</a></h3>
+    <h3 class=" [ delta ] ">Conference Organiser for <a href="https://stateofthebrowser.com" rel="external"><c-emoji><img src="/images/built/sotb-logo.png" class="brand-logo" alt="State of the Browser’s logo" loading="lazy" decoding="async"></c-emoji>State of the Browser</a></h3>
     <small><strong>May 2018 – February 2024</strong></small>
 </div>
 
@@ -98,7 +98,7 @@ Passionate about the open web, having published over 50 technical articles, and 
 - Annual conference websites: [2018](https://2018.stateofthebrowser.com), [2019](https://2019.stateofthebrowser.com), [2021](https://2021.stateofthebrowser.com), [2022](https://2022.stateofthebrowser.com), [2023](https://2022.stateofthebrowser.com), 2024 *(coming soon!)*
 
 <div class=" [ space-between ] ">
-    <h3 class=" [ delta ] ">Technical Writer on <a href="https://chrisburnell.com/"><c-emoji><img src="/images/raven.svg" class="brand-logo" alt="{{ site.title }}" loading="lazy" decoding="async"></c-emoji> chrisburnell.com</a></h3>
+    <h3 class=" [ delta ] ">Technical Writer on <a href="https://chrisburnell.com/"><c-emoji><img src="/images/raven.svg" class="brand-logo" alt="{{ site.title }}" loading="lazy" decoding="async"></c-emoji>chrisburnell.com</a></h3>
     <small><strong>2013 – present</strong></small>
 </div>
 
@@ -109,12 +109,12 @@ Launched a web development blog and have published over [{{ collections.blog | l
     <small><strong>2019 – present</strong></small>
 </div>
 
-- **[<c-emoji>🗜</c-emoji> clamp() Calculator](https://chrisburnell.com/clamp-calculator/)** <br>Handy little tool for calculating viewport-based clamped values for use in CSS.
-- **[<c-emoji>🏄</c-emoji> Browser Feature Watch](https://chrisburnell.com/feature-watch/)** <br>This page serves as an one-stop shop to keep track of feature support across the major, modern browsers, ordered by level of support. Updated automatically daily.
-- **[<c-emoji>💬</c-emoji> eleventy-cache-webmentions](https://chrisburnell.com/eleventy-cache-webmentions/)** <small>([>{{ '@chrisburnell/eleventy-cache-webmentions' | npmDownloads('2021-12-05') | toNearest(50, true) | numberStringFormat }} npm downloads](https://www.npmjs.com/package/@chrisburnell/eleventy-cache-webmentions) · [{{ 'chrisburnell/eleventy-cache-webmentions' | stargazers }} ★ on GitHub](https://github.com/chrisburnell/eleventy-cache-webmentions))</small><br>A plugin for the popular static site generator, [Eleventy](https://11ty.dev/), that allows the caching of Webmentions and makes them available to use throughout one’s website.
-- **[<c-emoji>🐋</c-emoji> Bowhead](https://chrisburnell.com/bowhead/)** <small>([>{{ '@chrisburnell/bowhead' | npmDownloads('2020-08-10') | toNearest(50, true) | numberStringFormat }} npm downloads](https://www.npmjs.com/package/@chrisburnell/bowhead) · [{{ 'chrisburnell/bowhead' | stargazers }} ★ on GitHub](https://github.com/chrisburnell/bowhead))</small><br>A SCSS framework for integrating design tokens into a CSS codebase with support for CSS Variables. This project has been a key component for 6 client websites during my time at Squiz.
-- **[<c-emoji>🎹</c-emoji> Pentatonic](https://chrisburnell.com/pentatonic/)** <small>([>{{ '@chrisburnell/pentatonic' | npmDownloads('2020-09-25') | toNearest(50, true) | numberStringFormat }} npm downloads](https://www.npmjs.com/package/@chrisburnell/pentatonic) · [{{ 'chrisburnell/pentatonic' | stargazers }} ★ on GitHub](https://github.com/chrisburnell/pentatonic))</small><br>A JavaScript library for turning any array of integers into a fun little melody using the Web Audio API.
-- **[<c-emoji>📈</c-emoji> &lt;spark-line&gt;](https://chrisburnell.com/spark-line/)** <small>([>{{ '@chrisburnell/spark-line' | npmDownloads('2021-10-21') | toNearest(50, true) | numberStringFormat }} npm downloads](https://www.npmjs.com/package/@chrisburnell/spark-line) · [{{ 'chrisburnell/spark-line' | stargazers }} ★ on GitHub](https://github.com/chrisburnell/spark-line))</small><br>A Web Component to turn an array of integers into a fun little chart.
+- **[<c-emoji>🗜</c-emoji>clamp() Calculator](https://chrisburnell.com/clamp-calculator/)** <br>Handy little tool for calculating viewport-based clamped values for use in CSS.
+- **[<c-emoji>🏄</c-emoji>Browser Feature Watch](https://chrisburnell.com/feature-watch/)** <br>This page serves as an one-stop shop to keep track of feature support across the major, modern browsers, ordered by level of support. Updated automatically daily.
+- **[<c-emoji>💬</c-emoji>eleventy-cache-webmentions](https://chrisburnell.com/eleventy-cache-webmentions/)** <small>([>{{ '@chrisburnell/eleventy-cache-webmentions' | npmDownloads('2021-12-05') | toNearest(50, true) | numberStringFormat }} npm downloads](https://www.npmjs.com/package/@chrisburnell/eleventy-cache-webmentions) · [{{ 'chrisburnell/eleventy-cache-webmentions' | stargazers }} ★ on GitHub](https://github.com/chrisburnell/eleventy-cache-webmentions))</small><br>A plugin for the popular static site generator, [Eleventy](https://11ty.dev/), that allows the caching of Webmentions and makes them available to use throughout one’s website.
+- **[<c-emoji>🐋</c-emoji>Bowhead](https://chrisburnell.com/bowhead/)** <small>([>{{ '@chrisburnell/bowhead' | npmDownloads('2020-08-10') | toNearest(50, true) | numberStringFormat }} npm downloads](https://www.npmjs.com/package/@chrisburnell/bowhead) · [{{ 'chrisburnell/bowhead' | stargazers }} ★ on GitHub](https://github.com/chrisburnell/bowhead))</small><br>A SCSS framework for integrating design tokens into a CSS codebase with support for CSS Variables. This project has been a key component for 6 client websites during my time at Squiz.
+- **[<c-emoji>🎹</c-emoji>Pentatonic](https://chrisburnell.com/pentatonic/)** <small>([>{{ '@chrisburnell/pentatonic' | npmDownloads('2020-09-25') | toNearest(50, true) | numberStringFormat }} npm downloads](https://www.npmjs.com/package/@chrisburnell/pentatonic) · [{{ 'chrisburnell/pentatonic' | stargazers }} ★ on GitHub](https://github.com/chrisburnell/pentatonic))</small><br>A JavaScript library for turning any array of integers into a fun little melody using the Web Audio API.
+- **[<c-emoji>📈</c-emoji>&lt;spark-line&gt;](https://chrisburnell.com/spark-line/)** <small>([>{{ '@chrisburnell/spark-line' | npmDownloads('2021-10-21') | toNearest(50, true) | numberStringFormat }} npm downloads](https://www.npmjs.com/package/@chrisburnell/spark-line) · [{{ 'chrisburnell/spark-line' | stargazers }} ★ on GitHub](https://github.com/chrisburnell/spark-line))</small><br>A Web Component to turn an array of integers into a fun little chart.
 
 ## Testimonials
 

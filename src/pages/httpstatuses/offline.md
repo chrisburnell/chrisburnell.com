@@ -9,7 +9,7 @@ theme: null
   <button onclick="window.location.reload()" aria-label="Refresh">Refresh!</button>
 </nav>
 
-{% js -%}
+<script>
 (async () => {
 	const browsingHistory = []
 	const parser = new DOMParser()
@@ -64,4 +64,4 @@ theme: null
 		document.querySelector(".content").insertAdjacentHTML("beforeend", markup)
 	}
 })()
-{%- endjs %}
+</script>

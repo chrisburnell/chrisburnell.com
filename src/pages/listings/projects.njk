@@ -8,7 +8,7 @@ truncate: false
 
 {% include 'lfw.njk' %}
 
-<h2>Web Projects</h2>
+<h2 id="web">Web Projects</h2>
 
 <div class=" [ deck ] ">
 	{% for item in collections.projects %}
@@ -19,7 +19,7 @@ truncate: false
 	{% endfor %}
 </div>
 
-<h2>Personal Projects</h2>
+<h2 id="personal">Personal Projects</h2>
 
 <div class=" [ deck ] ">
 	{% for item in projects.personal %}
@@ -27,7 +27,7 @@ truncate: false
 	{% endfor %}
 </div>
 
-<h2>{{ site.url | getHost }} in the past</h2>
+<h2 id="past-versions">{{ site.url | getHost }} in the past</h2>
 
 <div class=" [ deck ] ">
 	{% for item in projects.previousVersions %}

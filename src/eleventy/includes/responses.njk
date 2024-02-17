@@ -54,14 +54,14 @@
 							{%- set authorUrl = webmention.author.url | default(wmSource) | tweetback -%}
 							{%- set authorName = webmention.author.name | default('Anonymous') -%}
 							{%- if authorName == '' -%}{% set authorName = 'Anonymous' %}{%- endif -%}
-							<li id="response-{{ wmId }}" class=" [ response ] [ h-cite  p-comment ] " data-type="{{ wmType }}">
-								<div class=" [ response__avatar ] ">
+							<li id="response-{{ wmId }}" class=" [ person ] [ h-cite  p-comment ] " data-type="{{ wmType }}">
+								<div class=" [ person__avatar ] ">
 									<a href="{{ authorUrl }}" rel="external nofollow" tabindex="-1">
 										{% avatar authorPhoto, wmSource, authorUrl %}
 									</a>
 								</div>
-								<div class=" [ response__meta ] ">
-									<a href="#response-{{ wmId }}" class=" [ responses__permalink ] [ gamma  extrabold ] " title="Permalink to this response" tabindex="-1">#</a>
+								<div class=" [ person__meta ] ">
+									<a href="#response-{{ wmId }}" class=" [ person__permalink ] [ gamma  extrabold ] " title="Permalink to this response" tabindex="-1">#</a>
 									<a href="{{ authorUrl }}" class=" [ p-author  h-card  u-url ] " rel="external nofollow"><span class=" [ p-name ] ">{{ authorName }}</span></a>
 									<small>wrote on</small>
 									<a href="{{ wmSource }}" class=" [ u-url  u-{{ wmType }} ] " rel="external nofollow" title="Read externally"><time class=" [ dt-published ] " datetime="{{ wmDate | rfc3339Date }}">{{ wmDate | friendlyDate | safe }}</time></a>

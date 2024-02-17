@@ -56,19 +56,19 @@ perch: true
 
 		<h2>Categories</h2>
 
-		<ol class=" [ grid ] [ shelf ] " data-layout="natural">
+		<ul class=" [ grid ] [ shelf ] " data-layout="natural">
 			{%- for item in collections.categories -%}
 				{%- set count = collections[item.title] | arePublished | getCollectionCount -%}
 				<li>
-					<a href="/{{ item.plural }}/" class=" [ strong ] " style="font-size: 1.25em;"><c-emoji>{{ item.emoji | default('📄') }}</c-emoji> {{ item.properPlural | title }} <sup>{{ count }}</sup></a>
+					<a href="/{{ item.plural }}/" class=" [ strong ] " style="font-size: var(--font-size-gamma);"><c-emoji>{{ item.emoji | default('📄') }}</c-emoji>{{ item.properPlural | title }} <sup>{{ count }}</sup></a>
 					<p>
 				</li>
 			{%- endfor -%}
-		</ol>
+		</ul>
 
 		<h2>Tags</h2>
 
-		<ol class=" [ grid ] [ shelf ] " data-layout="natural">
+		<ul class=" [ grid ] [ shelf ] " data-layout="natural">
 			{%- set lowest = 9001 -%}
 			{%- set highest = 0 -%}
 			{%- for item in collections.tags | sort -%}
@@ -85,7 +85,7 @@ perch: true
 				{%- set fontSize = count | rangeMap(lowest, highest, 1, 1.5, 3) -%}
 				<li><a href="/tag/{{ item }}/" class=" [ strong ] " style="font-size: {{ fontSize }}em;">{{ item }} <sup>{{ count }}</sup></a></li>
 			{%- endfor -%}
-		</ol>
+		</ul>
 
 		<div class=" [ grid ] [ navigator ] ">
 			<a class=" [ button ] " href="/feeds/">

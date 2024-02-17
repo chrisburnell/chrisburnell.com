@@ -3,6 +3,7 @@ export default {
 	category: "code",
 	categoryProper: "code demo",
 	categoryProperPlural: "code demos",
+	emoji: "💾",
 	categoryCode: "c",
 	tags: ["code", "blog"],
 	on_this_day: true,

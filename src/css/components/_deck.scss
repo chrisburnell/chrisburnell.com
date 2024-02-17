@@ -32,11 +32,6 @@
 	h1 {
 		font-weight: var(--font-weight-semibold);
 		line-height: var(--line-height-medium);
-
-		.emoji {
-			display: inline-block;
-			padding-inline-end: var(--size-small);
-		}
 	}
 
 	%anchor {

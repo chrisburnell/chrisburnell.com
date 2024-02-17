@@ -82,7 +82,7 @@
 		<meta property="og:description" content="{{ meta_description | safe }}">
 		<meta property="og:locale" content="{{ site.locale }}">
 		<meta property="og:site_name" content="{{ site.title }}">
-		{% if eleventy.env.runMode !== "build" or banner or cover or photo or not "post" in tags -%}
+		{% if eleventy.env.runMode !== "build" or og_image or banner or cover or photo or not "post" in tags -%}
 			<meta property="og:image" content="{{ meta_image }}">
 		{%- else -%}
 			{% ogImage './eleventy/layouts/og-image.og.njk', { title: meta_title } %}
