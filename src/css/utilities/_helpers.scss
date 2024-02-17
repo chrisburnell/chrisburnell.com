@@ -149,7 +149,7 @@
 
 	%anchor &:first-child {
 		display: inline-block;
-		padding-inline-end: var(--size-small);
+		padding-inline-end: 0.625ch;
 	}
 }
 
