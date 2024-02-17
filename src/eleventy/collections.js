@@ -10,7 +10,7 @@ import { exponentialMovingAverage } from "./filters/utils.js"
 
 const durationDay = 24 * 60 * 60 * 1000
 
-let filteredCollectionsMemoization = {}
+let cachedCollections = {}
 
 /**
  * @param {object[]} collection
@@ -19,9 +19,9 @@ let filteredCollectionsMemoization = {}
  * @returns
  */
 const filterCollection = (collection, tag, limit = false) => {
-	if (tag in filteredCollectionsMemoization) {
-		// This collection already exists in memoization
-		return filteredCollectionsMemoization[tag]
+	if (tag in cachedCollections) {
+		// This collection already exists in memoized cache
+		return cachedCollections[tag]
 	}
 
 	let filteredCollection = collection.getFilteredByTag(tag).filter(isPublished).sort(dateSort)
@@ -31,8 +31,8 @@ const filterCollection = (collection, tag, limit = false) => {
 		filteredCollection = filteredCollection.slice(0, limits.feed)
 	}
 
-	// Keep a copy of this collection in memoization for later reuse
-	filteredCollectionsMemoization[tag] = filteredCollection
+	// Keep a copy of this collection in memoized cache for later reuse
+	cachedCollections[tag] = filteredCollection
 
 	return filteredCollection
 }
@@ -48,8 +48,8 @@ export default {
 		return filterCollection(collection, "project")
 	},
 	drafts: (collection) => {
-		if ("drafts" in filteredCollectionsMemoization) {
-			return filteredCollectionsMemoization["drafts"]
+		if ("drafts" in cachedCollections) {
+			return cachedCollections["drafts"]
 		}
 
 		let filteredCollection = collection
@@ -57,7 +57,7 @@ export default {
 			.filter((item) => item.data.draft === true || item.data.published === false)
 			.sort(dateSort)
 
-		filteredCollectionsMemoization["drafts"] = filteredCollection
+		cachedCollections["drafts"] = filteredCollection
 
 		return filteredCollection
 	},
@@ -65,19 +65,19 @@ export default {
 		return filterCollection(collection, "writing")
 	},
 	features: (collection) => {
-		if ("features" in filteredCollectionsMemoization) {
-			return filteredCollectionsMemoization["features"]
+		if ("features" in cachedCollections) {
+			return cachedCollections["features"]
 		}
 
 		let filteredCollection = collection.getFilteredByTag("feature").filter(isPublished).filter(notReply).sort(dateSort)
 
-		filteredCollectionsMemoization["features"] = filteredCollection
+		cachedCollections["features"] = filteredCollection
 
 		return filteredCollection
 	},
 	attendances: (collection) => {
-		if ("attendances" in filteredCollectionsMemoization) {
-			return filteredCollectionsMemoization["attendances"]
+		if ("attendances" in cachedCollections) {
+			return cachedCollections["attendances"]
 		}
 
 		const conferences = collection.getFilteredByTag("conference").filter(isPublished)
@@ -88,13 +88,13 @@ export default {
 			})
 			.sort(dateSort)
 
-		filteredCollectionsMemoization["attendances"] = filteredCollection
+		cachedCollections["attendances"] = filteredCollection
 
 		return filteredCollection
 	},
 	checkins: (collection) => {
-		if ("checkins" in filteredCollectionsMemoization) {
-			return filteredCollectionsMemoization["checkins"]
+		if ("checkins" in cachedCollections) {
+			return cachedCollections["checkins"]
 		}
 
 		let filteredCollection = collection
@@ -105,13 +105,13 @@ export default {
 			})
 			.sort(dateSort)
 
-		filteredCollectionsMemoization["checkins"] = filteredCollection
+		cachedCollections["checkins"] = filteredCollection
 
 		return filteredCollection
 	},
 	replies: (collection) => {
-		if ("replies" in filteredCollectionsMemoization) {
-			return filteredCollectionsMemoization["replies"]
+		if ("replies" in cachedCollections) {
+			return cachedCollections["replies"]
 		}
 
 		let filteredCollection = collection
@@ -121,24 +121,24 @@ export default {
 			.filter((item) => !("rsvp" in item.data))
 			.sort(dateSort)
 
-		filteredCollectionsMemoization["replies"] = filteredCollection
+		cachedCollections["replies"] = filteredCollection
 
 		return filteredCollection
 	},
 	notesWithoutReplies: (collection) => {
-		if ("notesWithoutReplies" in filteredCollectionsMemoization) {
-			return filteredCollectionsMemoization["notesWithoutReplies"]
+		if ("notesWithoutReplies" in cachedCollections) {
+			return cachedCollections["notesWithoutReplies"]
 		}
 
 		let filteredCollection = collection.getFilteredByTag("note").filter(isPublished).filter(notReply).sort(dateSort)
 
-		filteredCollectionsMemoization["notesWithoutReplies"] = filteredCollection
+		cachedCollections["notesWithoutReplies"] = filteredCollection
 
 		return filteredCollection
 	},
 	rsvps: (collection) => {
-		if ("rsvps" in filteredCollectionsMemoization) {
-			return filteredCollectionsMemoization["rsvps"]
+		if ("rsvps" in cachedCollections) {
+			return cachedCollections["rsvps"]
 		}
 
 		let filteredCollection = collection
@@ -153,13 +153,13 @@ export default {
 				return 0
 			})
 
-		filteredCollectionsMemoization["rsvps"] = filteredCollection
+		cachedCollections["rsvps"] = filteredCollection
 
 		return filteredCollection
 	},
 	rsvpsToday: (collection) => {
-		if ("rsvpsToday" in filteredCollectionsMemoization) {
-			return filteredCollectionsMemoization["rsvpsToday"]
+		if ("rsvpsToday" in cachedCollections) {
+			return cachedCollections["rsvpsToday"]
 		}
 
 		let filteredCollection = collection
@@ -182,13 +182,13 @@ export default {
 				return new Date(a.data.rsvp.end) - new Date(b.data.rsvp.end)
 			})
 
-		filteredCollectionsMemoization["rsvpsToday"] = filteredCollection
+		cachedCollections["rsvpsToday"] = filteredCollection
 
 		return filteredCollection
 	},
 	rsvpsUpcoming: (collection) => {
-		if ("rsvpsUpcoming" in filteredCollectionsMemoization) {
-			return filteredCollectionsMemoization["rsvpsUpcoming"]
+		if ("rsvpsUpcoming" in cachedCollections) {
+			return cachedCollections["rsvpsUpcoming"]
 		}
 
 		let filteredCollection = collection
@@ -216,7 +216,7 @@ export default {
 				return new Date(b.data.rsvp.end) - new Date(a.data.rsvp.end)
 			})
 
-		filteredCollectionsMemoization["rsvpsUpcoming"] = filteredCollection
+		cachedCollections["rsvpsUpcoming"] = filteredCollection
 
 		return filteredCollection
 	},
@@ -224,8 +224,8 @@ export default {
 		// "Popular" sorting is done by totalling webmentions, external likes,
 		// and stargazers as a sorting method.
 
-		if ("popular" in filteredCollectionsMemoization) {
-			return filteredCollectionsMemoization["popular"]
+		if ("popular" in cachedCollections) {
+			return cachedCollections["popular"]
 		}
 
 		const features = collection.getFilteredByTag("feature")
@@ -245,7 +245,7 @@ export default {
 			})
 			.slice(0, limits.feed)
 
-		filteredCollectionsMemoization["popular"] = filteredCollection
+		cachedCollections["popular"] = filteredCollection
 
 		return filteredCollection
 	},
@@ -253,8 +253,8 @@ export default {
 		// "Hot" sorting is done by determining the exponential moving average
 		// as a function of Webmentions across time
 
-		if ("hot" in filteredCollectionsMemoization) {
-			return filteredCollectionsMemoization["hot"]
+		if ("hot" in cachedCollections) {
+			return cachedCollections["hot"]
 		}
 
 		const features = collection.getFilteredByTag("feature")
@@ -278,7 +278,7 @@ export default {
 			})
 			.slice(0, limits.feed)
 
-		filteredCollectionsMemoization["hot"] = filteredCollection
+		cachedCollections["hot"] = filteredCollection
 
 		return filteredCollection
 	},

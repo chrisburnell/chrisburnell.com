@@ -10,7 +10,7 @@ wide: true
 ---
 
 <div class=" [ box ] [ line-length ] " style="margin-block-end: var(--size-large);">
-    <p>Jump to the code: <a href="#memoizating-assets">Memoizing Assets</a></p>
+    <p>Jump to the code: <a href="#memoizing-assets">Memoizing Assets</a></p>
 </div>
 
 I recently had the pleasure of watching [Zach Leatherman’s](https://zachleat.com) amazing talk, [<q>Lessons learned moving Eleventy from CommonJS to ESM in 2024</q>](https://www.youtube.com/watch?v=LsN6TBx9Hxo), at [TheJam.dev 2024](https://cfe.dev/events/the-jam-2024/). As with all of Zach’s work, it was truly inspiring and stoked the embers of motivation into a roaring flame.
@@ -21,27 +21,82 @@ Naturally, I was chomping at the bit to convert my CommonJS over to ESM, so with
 
 <q>If it ain’t broke, don’t fix it.</q>
 
-Well, I felt like breaking things. If it meant the end result would be more maintainable than what I started with, I tore it apart and put it back together with the knowledge I’d accumulated in the many years since I first built it. It was a slow and sometimes tedious process but also a cathartic one, and I’m glad I took the time to do it. I’m even more proud of my website, my favourite thing that I own, as a result. Good vibes all around. <c-emoji>☺️</c-emoji>
+Well, I felt like breaking things. If it meant the end result would be more maintainable than what I started with, I tore it apart and put it back together with the knowledge I’d accumulated in the many years since I first built it.
 
-But after a *tonne* of refactoring, I found my build times getting bigger and bigger. It’s worth mentioning that there are over 1,200 files being written by Eleventy on my website, so I don’t expect everything to be built *instantly*, but when the initial build started taking **2–3 minutes**, I knew something was wrong. Or *I* was doing something wrong.
+It was a slow and sometimes tedious process but also a cathartic one, and I’m glad I took the time to do it. I’m even more proud of my website, my favourite thing that I own, as a result. Good vibes all around. <c-emoji>☺️</c-emoji>
 
-## Lightning Strikes
+But after a *tonne* of refactoring, I found my build times getting bigger and bigger.
 
-I battled against these excruciating build times for a couple of weeks as I tinkered on the rebuild here and there, when suddenly lightning struck me earlier this evening.
+## Trudging Along
 
-I had picked up and started using a technique from [Nicolas Hoizey’s](https://nicolas-hoizey.com) superbly-built Eleventy template, [Pack11ty](https://pack11ty.dev/), called [Memoization](https://en.wikipedia.org/wiki/Memoization). The gist of the technique is that instead of making repeated calls to Eleventy to return a custom [Collection](https://www.11ty.dev/docs/collections/), the collection’s contents are generated *once* and cached, so subsequent references are pulled from the cache, reducing the load. This is useful for things like my [Replies](/replies/) collection, which is populated by pages containing an `in_reply_to` key, rather than having a specific tag (which Eleventy would automatically build a collection for) or being in a specific location in the file system.
+It’s definitely worth mentioning that there are over 1,200 files being written by Eleventy for my website, so I don’t expect everything to be built *instantly*! However, when the initial build started taking **2–3 minutes**, I knew something was wrong.
 
-I had noticed, through using [Eleventy’s Debug Mode](https://www.11ty.dev/docs/debugging/), that the [Bundler Plugin](https://github.com/11ty/eleventy-plugin-bundle) was taking huge chunk of the 2–3 minute build time. Though probably not an issue coming just from using the Bundle plugin, and much more likely to be a result calling the `renderFile` shortcode from the [Render Plugin](https://www.11ty.dev/docs/plugins/render/) inside the `css` and `js` shortcodes from the Bundler plugin on every page, Eleventy was taking around 50 milliseconds to process the asset bundling for each page. With ~1,100 pages, this meant that ~55 seconds of the initial build was spent preparing asset bundles for all the pages.
+Or, more likely, *I* was doing something wrong.
+
+I battled against these excruciating build times for a couple of weeks as I tinkered on the rebuild here and there, and the mental and waiting around was *more* than getting to me.
+
+**Enough is enough!**
+
+It was time to get to the bottom of things.
+
+I had noticed, through using [Eleventy’s Debug Mode](https://www.11ty.dev/docs/debugging/), that the [Bundler Plugin](https://github.com/11ty/eleventy-plugin-bundle) was taking huge chunk of the 2–3 minute build time. This probably wasn’t an issue coming just from using the Bundle plugin, and much more likely to be a result calling the `renderFile` shortcode from the [Render Plugin](https://www.11ty.dev/docs/plugins/render/) inside the `css` and `js` shortcodes from the Bundler plugin on every page:
+
+{% raw %}
+```twig
+{% css -%}
+  {% renderFile 'src/css/main.scss' %}
+{%- endcss %}
+
+{% js -%}
+  {% renderFile 'src/js/main.js' %}
+{%- endjs %}
+```
+{% endraw %}
+
+Painfully, Eleventy was taking around **50 milliseconds** to process the asset bundling for each page. With **~1,100 pages**, this meant that **~55 seconds** of the initial build was spent preparing asset bundles for all the pages.
 
 **Not great.**
 
-But a perfect opportunity to introduce memoization to asset bundles!
+## Lightning Strikes
+
+I had picked up and been using a technique from [Nicolas Hoizey’s](https://nicolas-hoizey.com) superbly-built Eleventy template, [Pack11ty](https://pack11ty.dev/), called [Memoization](https://en.wikipedia.org/wiki/Memoization).
+
+The gist of memoization is that instead of making repeated (possibly expensive) calls to files, functions, etc., the request is made once and saved to a cache. That way, future calls that would return the same information simply come from the cache, bypassing computing work that can be a performance hog.
+
+Here’s an example:
+
+```javascript
+// Set up an object to store cached data
+const cachedResults = {}
+
+const myFunction = (value) => {
+  // Check if the cached data exists
+  if (value in cachedResults) {
+    // And if it does, return it
+    return cachedResults[value]
+  }
+
+  // Otherwise, perform some operations with `value`
+  const result = someExpensiveFunction(value)
+
+  // Then cache the result
+  cachedResults[value] = result
+  // And return it
+  return result
+}
+```
+
+I was already doing this for bits and pieces in my Eleventy build like caching custom [Collections](https://www.11ty.dev/docs/collections/). For example, my [Replies](/replies/) collection was a good spot for memoization to happen. The collection is populated by pages containing an `in_reply_to` key, rather than having a specific tag (for which Eleventy would automatically build a collection) or being in a specific location in the file system, so by generating the contents of this collection once and serving future `collections.replies` calls from the cache, I was seeing some not insignificant performance gains.
+
+<p style="font-size: 1.125em; font-weight: var(--font-weight-bold);"><c-emoji>⚡</c-emoji> Hold on…</p>
+
+Something finally clicked in my brain and I realised this would be a perfect opportunity to introduce memoization to asset bundling!
 
 By caching the result of the `renderFile` shortcodes pointing to CSS and JavaScript assets, I found that my initial build times were sliced down to just 30 seconds! Between all the cobwebs and (admittedly) spaghetti code in the previous iteration of my website, I hadn’t seen build times this short in *years*, not since I had many hundreds fewer pages and bottlenecks like this weren’t as obvious and painful so as to initiate an major refactoring project!
 
-## Memoizating Assets
+## Memoizing Build Assets
 
-
+Part of my build already included a plugin that added JavaScript as a templating language, pumps rendered JS files through [esbuild](https://esbuild.github.io/), and spits out the result. This allowed me to
 
 So here it is, the contents of my plugin that adds JavaScript as a templating language, pumps rendered JS files through [esbuild](https://esbuild.github.io/), and adds memoization so that repeated calls are pulled from a cached object.
 

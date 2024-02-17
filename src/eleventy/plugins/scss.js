@@ -1,10 +1,10 @@
 import dotenv from "dotenv"
 dotenv.config()
 
-import autoprefixer from "autoprefixer"
 import path from "node:path"
 import postcss from "postcss"
 import * as sass from "sass"
+import postcssConfig from "../../../postcss.config.js"
 
 let cachedCSS = {}
 
@@ -43,7 +43,7 @@ export default function (eleventyConfig) {
 
 				// For builds, pass CSS through PostCSS and plugins
 				if (process.env.ELEVENTY_RUN_MODE === "build") {
-					const postcssResult = await postcss([autoprefixer]).process(sassResult.css, {
+					const postcssResult = await postcss(postcssConfig.plugins).process(sassResult.css, {
 						from: inputPath,
 					})
 

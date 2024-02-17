@@ -5,10 +5,12 @@ const blogroll = [
 		rss: [
 			{
 				title: "Jeremy Keith: Articles",
+				shorttitle: "Articles",
 				url: "https://adactio.com/articles/rss",
 			},
 			{
-				title: "Jeremy Keith: Journals",
+				title: "Jeremy Keith: Journal",
+				shorttitle: "Journal",
 				url: "https://adactio.com/journal/rss",
 			},
 		],
@@ -76,7 +78,7 @@ const blogroll = [
 		url: ["https://css-irl.info", "https://michellebarker.co.uk"],
 		rss: [
 			{
-				title: "CSS { In Real Life }",
+				title: "CSS { IRL }",
 				url: "https://css-irl.info/rss.xml",
 			},
 		],
@@ -397,10 +399,12 @@ const blogroll = [
 		rss: [
 			{
 				title: "Nicolas Hoizey: Articles",
+				shorttitle: "Articles",
 				url: "https://nicolas-hoizey.com/feeds/articles.xml",
 			},
 			{
 				title: "Nicolas Hoizey: Notes",
+				shorttitle: "Notes",
 				url: "https://nicolas-hoizey.com/feeds/notes.xml",
 			},
 		],
@@ -541,7 +545,12 @@ const blogroll = [
 	{
 		title: "fLaMEd",
 		url: "https://flamedfury.com",
-		rss: "https://flamedfury.com/feed.xml",
+		rss: [
+			{
+				title: "Flamed Fury",
+				url: "https://flamedfury.com/feed.xml",
+			},
+		],
 		mastodon: "flamed@social.lol",
 	},
 	{
@@ -557,14 +566,31 @@ const blogroll = [
 	},
 	{
 		title: "Clearleft",
-		url: "https://clearleft.com",
-		rss: "https://clearleft.com/thinking/rss",
+		url: [
+			"https://clearleft.com",
+			"https://podcast.clearleft.com",
+		],
+		rss: [
+			{
+				title: "Clearleft",
+				url: "https://clearleft.com/thinking/rss",
+			},
+			{
+				title: "Clearleft Podcast",
+				url: "https://podcast.clearleft.com/podcast.xml",
+			},
+		],
 		mastodon: "clearleft@mastodon.social",
 	},
 	{
-		title: "Eleventy Blog",
+		title: "Eleventy",
 		url: "https://11ty.dev",
-		rss: "https://11ty.dev/blog/feed.xml",
+		rss: [
+				{
+				title: "Eleventy Blog",
+				url: "https://11ty.dev/blog/feed.xml",
+			},
+		],
 		mastodon: "eleventy@fosstodon.org",
 	},
 	{
@@ -619,6 +645,57 @@ const blogroll = [
 		url: "https://ryanmulligan.dev",
 		rss: "https://ryanmulligan.dev/feed.xml",
 		mastodon: "hexagoncircle@fosstodon.org",
+	},
+	{
+		title: "Blake Watson",
+		url: "https://blakewatson.com",
+		rss: "https://blakewatson.com/feed/",
+		mastodon: "bw@social.lol",
+	},
+	{
+		title: "Alexandra",
+		url: "https://xandra.cc",
+		rss: [
+			{
+				title: "the museum of alexandra",
+				url: "https://neocities.org/site/xandra.rss",
+			},
+		],
+		mastodon: "xandra@tilde.zone",
+	},
+	{
+		title: "ShopTalk",
+		url: "https://shoptalkshow.com",
+		rss: "https://shoptalkshow.com/feed/podcast/",
+		mastodon: "shoptalkshow@front-end.social",
+	},
+	{
+		title: "Josh Comeau",
+		url: "https://joshwcomeau.com",
+		rss: "https://joshwcomeau.com/feed.xml",
+	},
+	{
+		title: "Matthew Howell",
+		url: "https://www.matthewhowell.net",
+		rss: "https://www.matthewhowell.net/atom.xml",
+		mastodon: "matthewhowell@indieweb.social",
+	},
+	{
+		title: "Thomas Michael Semmler",
+		url: "https://helloyes.dev",
+		rss: "https://helloyes.dev/feeds/blog/feed.xml",
+		mastodon: "nachtfunke@indieweb.social",
+	},
+	{
+		title: "CodePen",
+		url: "https://codepen.io",
+		rss: [
+			{
+				title: "CodePen Spark",
+				url: "https://codepen.io/spark/feed/",
+			},
+		],
+		mastodon: "codepen@fosstodon.org",
 	},
 ].sort((a, b) => {
 	return a.title.localeCompare(b.title)

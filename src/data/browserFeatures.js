@@ -425,4 +425,14 @@ export default [
 		description: "Allows specifying a timeline to control the progress of a CSS animation.",
 		links: ["[Page on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timeline)"],
 	},
+	{
+		id: "font-size-adjust",
+		language: "css",
+		supports: "font-size-adjust: 0.5",
+		type: "properties",
+		key: "font-size-adjust",
+		title: "font-size-adjust",
+		description: "Provides the ability to modify the size of a font as a numeric mulitplier of the font size.",
+		links: ["[Official Specification](https://www.w3.org/TR/css-fonts-3/#font-size-adjust-prop)", "[Page on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/font-size-adjust)"],
+	},
 ]

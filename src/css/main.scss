@@ -16,80 +16,100 @@
 // Fonts
 @import "global/fonts";
 
+@layer reset, global, compositions, blocks, utilities, themes, components, pages, thirdparty, overrides;
+
 // Reset
-@import "global/reset";
-@import "global/variables";
+@layer reset {
+	@import "global/reset";
+	@import "global/variables";
+}
 
 // Global
-@import "global/page";
-@import "global/anchors";
-@import "global/buttons";
-@import "global/headings";
-@import "global/prose";
-@import "global/lists";
-@import "global/images";
-@import "global/figure";
-@import "global/embeds";
-@import "global/quotes";
-@import "global/code";
-@import "global/form";
-@import "global/table";
-@import "global/details";
+@layer global {
+	@import "global/page";
+	@import "global/anchors";
+	@import "global/buttons";
+	@import "global/headings";
+	@import "global/prose";
+	@import "global/lists";
+	@import "global/images";
+	@import "global/figure";
+	@import "global/embeds";
+	@import "global/quotes";
+	@import "global/code";
+	@import "global/form";
+	@import "global/table";
+	@import "global/details";
+}
 
 // Compositions
-@import "compositions/wrap";
-@import "compositions/pantheon";
-@import "compositions/portal";
-@import "compositions/grid";
-@import "compositions/box";
-@import "compositions/cluster";
-@import "compositions/inline-aside";
-@import "compositions/media";
+@layer compositions {
+	@import "compositions/wrap";
+	@import "compositions/pantheon";
+	@import "compositions/grid";
+	@import "compositions/box";
+	@import "compositions/cluster";
+	@import "compositions/media";
+	// @import "compositions/inline-aside";
+	// @import "compositions/portal";
+}
 
 // Blocks
-@import "blocks/logo";
-@import "blocks/perch";
-@import "blocks/anchors";
-@import "blocks/header";
-@import "blocks/navigation";
-@import "blocks/main";
-@import "blocks/content";
-@import "blocks/breadcrumbs";
-@import "blocks/title";
-@import "blocks/description";
-@import "blocks/meta";
-@import "blocks/table-of-contents";
-@import "blocks/cover";
-@import "blocks/rating";
-@import "blocks/navigator";
-@import "blocks/footer";
-@import "blocks/author";
-@import "blocks/code-blocks";
-@import "blocks/images";
-@import "blocks/embeds";
-@import "blocks/browse";
+@layer blocks {
+	@import "blocks/logo";
+	@import "blocks/perch";
+	@import "blocks/anchors";
+	@import "blocks/header";
+	@import "blocks/navigation";
+	@import "blocks/main";
+	@import "blocks/content";
+	@import "blocks/breadcrumbs";
+	@import "blocks/title";
+	@import "blocks/description";
+	@import "blocks/navigator";
+	@import "blocks/meta";
+	@import "blocks/table-of-contents";
+	@import "blocks/cover";
+	@import "blocks/rating";
+	@import "blocks/footer";
+	@import "blocks/author";
+	@import "blocks/code-blocks";
+	@import "blocks/images";
+	@import "blocks/embeds";
+	@import "blocks/browse";
+}
 
 // Utilities
-@import "utilities/flow";
-@import "utilities/helpers";
-@import "utilities/canada";
+@layer utilities {
+	@import "utilities/flow";
+	@import "utilities/helpers";
+	@import "utilities/canada";
+}
 
 // Components
-@import "components/deck";
-@import "components/shelf";
-@import "components/updated";
-@import "components/browser-support";
-@import "components/librarian";
-@import "components/responses";
-@import "components/spark-line";
+@layer components {
+	@import "components/spark-line";
+	@import "components/deck";
+	@import "components/shelf";
+	@import "components/theme-selector";
+	@import "components/updated";
+	@import "components/librarian";
+	@import "components/responses";
+	@import "components/browser-support";
+}
 
 // Themes
-@import "themes/dark";
-@import "themes/sepia";
-@import "themes/christmas";
-@import "themes/red-alert";
-@import "themes/koala";
-@import "themes/matrix";
-@import "themes/nineties";
+@layer themes {
+	@import "themes/dark";
+	@import "themes/sepia";
+	@import "themes/christmas";
+	@import "themes/red-alert";
+	@import "themes/koala";
+	@import "themes/matrix";
+	@import "themes/nineties";
+}
 
-// Exceptions
+// Overrides
+@layer overrides {
+	@import "overrides/footer";
+}

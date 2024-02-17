@@ -8,8 +8,6 @@
 @use "sass:color";
 @use "sass:math";
 
-@layer reset, global, compositions, blocks, utilities, themes, components, pages, thirdparty, overrides;
-
 // Abstracts
 @import "abstracts/functions";
 @import "abstracts/mixins";
@@ -18,6 +16,8 @@
 
 // Fonts
 @import "global/fonts";
+
+@layer reset, global, compositions, blocks, utilities, themes, components, pages, thirdparty, overrides;
 
 // Reset
 @layer reset {
@@ -41,10 +41,10 @@
 @layer compositions {
 	@import "compositions/wrap";
 	@import "compositions/pantheon";
-	@import "compositions/portal";
 	@import "compositions/grid";
 	@import "compositions/box";
 	@import "compositions/cluster";
+	// @import "compositions/portal";
 }
 
 // Blocks

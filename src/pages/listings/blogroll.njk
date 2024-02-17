@@ -1,18 +1,18 @@
 ---
 title: Blogroll
-description: I've had the pleasure of meeting, knowing of, knowing personally, and spending great time with a lot of amazing people that have inspired me in different ways.
+description: "I've had the pleasure of meeting, knowing of, knowing personally, and spending great time with a lot of amazing people that have inspired me in different ways."
 wide: true
 ---
 
 <div class=" [ box ] [ line-length  center ] " style="margin-block-end: var(--size-large); font-size: var(--font-size-beta-min);">
-	<p>Also available as an <a href="/blogroll.opml">OPML file</a>.</p>
+	<p>This list is also available as an <a href="/blogroll.opml">OPML file</a>.</p>
 </div>
 
 <div class=" [ grid ] [ shelf ] " style="--min-inline-size: 12em;">
 {% for blog in blogroll %}
 	{%- set blogURL = blog.url | toArray | first -%}
 	{%- set blogRSS = blog.rss | toArray -%}
-	<article class=" [ person ] ">
+	<article id="{{ blog.title | slugify }}" class=" [ person ] ">
 		<div class=" [ person__avatar ] ">
 			<a href="{{ blogURL | getOrigin }}" rel="external nofollow">
 				<img src="https://v1.indieweb-avatar.11ty.dev/{{ blogURL | getOrigin | urlencode }}/" class=" [ avatar ] " width="60" height="60" alt="{{ blog.title | safe }}’s avatar" loading="lazy" decoding="async">
@@ -29,7 +29,7 @@ wide: true
 			</h1>
 			{% for feed in blogRSS -%}
 				<div>
-					<a href="{{ feed.url | default(feed) }}" rel="external noopener"><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false" style="fill: var(--color-rss); margin-block-start: calc(1ex - 1cap); vertical-align: middle;"><use href="#svg--rss"></use></svg></c-emoji>{{ feed.title | default('RSS') }}</a>
+					<a href="{{ feed.url | default(feed) }}" rel="external noopener"><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false" style="fill: var(--color-rss); margin-block-start: calc(1ex - 1cap); vertical-align: middle;"><use href="#svg--rss"></use></svg></c-emoji>{{ feed.shorttitle | default(feed.title) | default('RSS') }}</a>
 				</div>
 			{% endfor -%}
 		</div>
