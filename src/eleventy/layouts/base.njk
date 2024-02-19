@@ -112,6 +112,8 @@
 		{% include 'js-critical.njk' %}
 	</head>
 	<body{% if not excludeFromSearch and not sitemap.exclude and not draft and published !== false and not 'ignore' in tags %} data-pagefind-body{% endif %}>
+		<a href="#content" class=" [ skip-link ] [ hidden ] ">Skip to main content</a>
+
 		<header class=" [ header ] ">
 			<div class=" [ wrap ] ">
 				<a href="/" rel="home" class=" [ logo ] [ canada ] " aria-label="{{ site.title }}">
