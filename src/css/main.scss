@@ -16,13 +16,11 @@
 // Fonts
 @import "global/fonts";
 
-// Variables
-@import "global/variables";
-
 @layer reset, global, compositions, blocks, utilities, themes, components, pages, thirdparty, overrides;
 
 // Reset
 @layer reset {
+	@import "global/variables";
 	@import "global/reset";
 }
 
