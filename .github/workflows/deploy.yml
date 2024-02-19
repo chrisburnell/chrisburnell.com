@@ -50,9 +50,8 @@ jobs:
         with:
           path: |
             .cache
-            _site/audio
             _site/images
-            _site/video
+            _site/og-images
           key: ${{ runner.OS }}-site-cache-${{ hashFiles('**/package-lock.json') }}
       - name: Install Node Modules
         run: npm ci
@@ -63,7 +62,7 @@ jobs:
       - name: Build with npm
         run: npm run build
         env:
-          NODE_OPTIONS: "--max_old_space_size=4096"
+          NODE_OPTIONS: "--max_old_space_size=8192"
           PERSONAL_API_URL: ${{ secrets.PERSONAL_API_URL }}
           PERSONAL_API_TOKEN: ${{ secrets.PERSONAL_API_TOKEN }}
           SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
