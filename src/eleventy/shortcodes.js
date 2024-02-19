@@ -1,12 +1,14 @@
+import { nowISO } from "./data/global.js"
 import { friendlyDate } from "./filters/dates.js"
-import { simpleMovingAverage } from "./filters/utils.js"
+
+const currentYear = friendlyDate(nowISO, "yyyy")
 
 export default {
-	sparkline: (collection, start, end, animate = true, curve = true) => {
+	sparkline: (collection, start, animate = true, curve = true) => {
 		let values = []
 		let count = 0
 		// Loop through years
-		for (let i = parseFloat(start); i <= parseFloat(end); i++) {
+		for (let i = parseFloat(start); i <= parseFloat(currentYear); i++) {
 			// Loop through collection comparing Year
 			for (let item of collection) {
 				if (i === parseFloat(friendlyDate(item.data.date, "yyyy"))) {
@@ -16,13 +18,20 @@ export default {
 			values.push(count)
 			count = 0
 		}
-		// Calculate simple moving average of each value, preserve head and tail
-		let normalized = simpleMovingAverage(values, 3, true)
+		const valuesMean = Math.round(
+			values.reduce((total, value) => {
+				return total + value
+			}, 0) / values.length,
+		)
+		const normalized = values.map((value) => {
+			return Math.min(value, valuesMean)
+		})
 		// Sparklines in A minor
-		return `<svg-sparkline values="${normalized.join(",")}"
+		return `<svg-sparkline values="${values.join(",")}"
+							normalized=${normalized.join(",")}
 							fill="true"
-							${start ? `start-label="${start}"` : ""}
-							${end ? `end-label="${end}"` : ""}
+							start-label="${start}"
+							end-label="${currentYear}"
 							${animate ? `animate="${animate}"` : ""}
 							${curve ? `curve="${curve}"` : ""}
 							class=" [ pentatonic ] "

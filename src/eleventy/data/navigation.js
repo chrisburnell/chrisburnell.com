@@ -5,11 +5,6 @@ const navigation = [
 		footer: true,
 	},
 	{
-		title: "Search",
-		url: "/search/",
-		footer: true,
-	},
-	{
 		title: `<span class=" [ canada ] ">About</span>`,
 		url: "/about/",
 		header: true,
@@ -24,6 +19,11 @@ const navigation = [
 		title: "Explore",
 		url: "/explore/",
 		header: true,
+		footer: true,
+	},
+	{
+		title: "Search",
+		url: "/search/",
 		footer: true,
 	},
 	{

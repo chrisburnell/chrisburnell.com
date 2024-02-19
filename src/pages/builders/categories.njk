@@ -37,8 +37,9 @@ truncate: true
 		</p>
 	</div>
 
+	{# Only show sparkline if there is more than 1 year of data #}
 	{% if first_year != latest_year %}
-		{% sparkline collection, first_year, latest_year %}
+		{% sparkline collection, first_year %}
 	{% endif %}
 
 	<div id="content" class=" [ content{% if collection[0].data.list == 'shelf' %}  full{% endif %} ] [ flow ] [ h-feed ] ">

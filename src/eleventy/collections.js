@@ -44,6 +44,9 @@ export default {
 	posts: (collection) => {
 		return filterCollection(collection, "post")
 	},
+	blogPosts: (collection) => {
+		return filterCollection(collection, "blog")
+	},
 	projects: (collection) => {
 		return filterCollection(collection, "project")
 	},

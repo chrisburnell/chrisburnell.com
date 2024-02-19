@@ -152,28 +152,10 @@ export const tagFilter = (array) => {
  * @param {boolean} [blogOnly]
  * @returns {number}
  */
-export const getCollectionCount = (items, year, blogOnly = false) => {
-	return items
-		.filter((item) => {
-			if ("data" in item) {
-				if ("draft" in item.data && item.data.draft === true) {
-					return false
-				}
-				if ("published" in item.data && item.data.published === false) {
-					return false
-				}
-				if (!("date" in item.data)) {
-					return false
-				}
-				if (item.data.tags.includes("ignore") || (blogOnly && !item.data.tags.includes("blog"))) {
-					return false
-				}
-			}
-			return !!item.url
-		})
-		.filter((item) => {
-			return !year || item.date.getFullYear() === parseInt(year, 10)
-		}).length
+export const getCollectionCount = (items, year) => {
+	return items.filter(isPublished).filter((item) => {
+		return !year || item.date.getFullYear() === parseInt(year, 10)
+	}).length
 }
 
 /**

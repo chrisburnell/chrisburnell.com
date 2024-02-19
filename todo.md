@@ -5,3 +5,4 @@
 - use new eleventy-img transform instead of image shortcode
 - use utopia-core-scss to generate fluid spaces, type, etc.
 - review github actions to streamline stuff a bit more
+- review filters and split them into (JS-only) and (JS + NJK) so less needs to be pumped through Eleventy

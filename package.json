@@ -43,7 +43,7 @@
     "@chrisburnell/instant-photo": "^1.0.0",
     "@chrisburnell/pentatonic": "^1.1.4",
     "@chrisburnell/spark-line": "^1.2.6",
-    "@chrisburnell/svg-sparkline": "^1.0.6",
+    "@chrisburnell/svg-sparkline": "^1.0.9",
     "@chrisburnell/theme-selector": "^1.0.1",
     "@daviddarnes/share-button": "^1.1.2",
     "@daviddarnes/storage-form": "^2.0.0",
@@ -58,8 +58,8 @@
     "caniuse-api": "^3.0.0",
     "cheerio": "^1.0.0-rc.12",
     "chrisburnell": "^33.0.6",
-    "download-stats": "^0.3.4",
     "dotenv": "^16.4.4",
+    "download-stats": "^0.3.4",
     "eleventy-plugin-og-image": "^3.2.0-beta.4",
     "esbuild": "^0.20.0",
     "fast-glob": "^3.3.2",
@@ -74,8 +74,8 @@
     "postcss": "^8.4.35",
     "postcss-cli": "^11.0.0",
     "postcss-scss": "^4.0.9",
-    "striptags": "^3.2.0",
     "sass": "^1.71.0",
+    "striptags": "^3.2.0",
     "utopia-core-scss": "^1.0.0"
   },
   "scripts": {
