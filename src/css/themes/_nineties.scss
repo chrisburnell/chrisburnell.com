@@ -52,6 +52,8 @@
 	th:not(:empty),
 	.sticky {
 		position: relative;
+		inset-block: initial;
+		inset-inline: initial;
 	}
 
 	h1 {
