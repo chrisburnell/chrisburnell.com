@@ -87,9 +87,9 @@ I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link
     {%- endfor -%}
 </div>
 
-## Testimonials
+<!-- ## Testimonials -->
 
-{% include 'testimonials.njk' %}
+<!-- {% include 'testimonials.njk' %} -->
 
 ## Contact
 

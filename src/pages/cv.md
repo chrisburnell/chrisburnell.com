@@ -116,6 +116,6 @@ Launched a web development blog and have published over [{{ collections.blog | l
 - **[<c-emoji>🎹</c-emoji>Pentatonic](https://chrisburnell.com/pentatonic/)** <small>([>{{ '@chrisburnell/pentatonic' | npmDownloads('2020-09-25') | toNearest(50, true) | numberStringFormat }} npm downloads](https://www.npmjs.com/package/@chrisburnell/pentatonic) · [{{ 'chrisburnell/pentatonic' | stargazers }} ★ on GitHub](https://github.com/chrisburnell/pentatonic))</small><br>A JavaScript library for turning any array of integers into a fun little melody using the Web Audio API.
 - **[<c-emoji>📈</c-emoji>&lt;spark-line&gt;](https://chrisburnell.com/spark-line/)** <small>([>{{ '@chrisburnell/spark-line' | npmDownloads('2021-10-21') | toNearest(50, true) | numberStringFormat }} npm downloads](https://www.npmjs.com/package/@chrisburnell/spark-line) · [{{ 'chrisburnell/spark-line' | stargazers }} ★ on GitHub](https://github.com/chrisburnell/spark-line))</small><br>A Web Component to turn an array of integers into a fun little chart.
 
-## Testimonials
+<!-- ## Testimonials -->
 
-{% include 'testimonials.njk' %}
+<!-- {% include 'testimonials.njk' %} -->
