@@ -1,24 +1,24 @@
 ---
 title: The Absurdity of English
-description: A list of things about the language that I find weird.
+description: A list of things about the English language that I find weird.
 sitemap:
   exclude: true
 ---
 
 ## ghoti
 
-fish
+**Pronounced like:** fish
 
-touGH, wOmen, moTIon
+**Because:** tou<u>GH</u>, w<u>O</u>men, mo<u>TI</u>on
 
 ## ghoughphtheightteeau
 
-potato
+**Pronounced like:** potato
 
-hiccouGH, dOUGH, PHTHisis, nEIGHbour, gazeTTE, platEAU
+**Because:** hiccou<u>GH</u>, d<u>OUGH</u>, <u>PHTH</u>isis, n<u>EIGH</u>bour, gaze<u>TTE</u>, plat<u>EAU</u>
 
 ## ceougholo
 
-shower
+**Pronounced like:** shower
 
-oCEan, bOUGH, cOLOnel
+**Because:** o<u>CE</u>an, b<u>OUGH</u>, c<u>OLO</u>nel

@@ -48,6 +48,11 @@ const navigation = [
 		url: "/styleguide/",
 		footer: true,
 	},
+	{
+		title: "Guestbook",
+		url: "/guestbook/",
+		footer: true,
+	},
 ]
 
 export default navigation

@@ -7,7 +7,7 @@
 		<changefreq>{{ item.data.sitemap.changefreq | default(site.sitemap.changefreq) }}</changefreq>
 		<priority>{{ item.data.sitemap.priority | default(site.sitemap.priority) }}</priority>
 	</url>
-	{%- endfor %}
+	{% endfor -%}
 	{% for category in collections.categories -%}
 	<url>
 		<loc>{{ site.url + '/' + category.plural + '/' }}</loc>

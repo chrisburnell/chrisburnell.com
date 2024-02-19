@@ -7,23 +7,6 @@ sitemap:
   exclude: true
 ---
 <link rel="stylesheet" href="/pagefind/pagefind-ui.css">
-
-<pagefind-search _page_size="10" pagefind-autofocus>
-	<form id="search" class=" [ responses__form ] " method="get" name="search" action="https://duckduckgo.com/">
-		<label class=" [ responses__label ] [ visually-hidden ] " for="search-query">Search:</label>
-		<input id="search-query" class=" [ responses__input ] " type="search" name="q" autocomplete="off" autofocus>
-		<input type="hidden" name="sites" value="chrisburnell.com">
-		<button type="submit" enterkeyhint="submit">Submit</button>
-	</form>
-</pagefind-search>
-
-<is-land>
-	<p>Search provided by <a href="https://duckduckgo.com/">DuckDuckGo</a>.</p>
-	<template data-island="replace">
-		<p>Search provided by <a href="https://pagefind.app/">Pagefind</a> via the <a href="https://www.zachleat.com/web/pagefind-search/"><code>&lt;pagefind-search&gt;</code> Web Component</a>.</p>
-	</template>
-</is-land>
-
 <style>
 pagefind-search {
 	--pagefind-ui-primary: var(--color-raven);
@@ -37,4 +20,21 @@ pagefind-search {
 	--pagefind-ui-font: inherit;
 }
 </style>
+
+<pagefind-search _page_size="10" pagefind-autofocus>
+	<form id="search" class=" [ responses__form ] " method="get" name="search" action="https://duckduckgo.com/">
+		<label class=" [ responses__label ] [ visually-hidden ] " for="search-query">Search:</label>
+		<input id="search-query" class=" [ responses__input ] " type="search" name="q" autocomplete="off" value="css" autofocus>
+		<input type="hidden" name="sites" value="chrisburnell.com">
+		<button type="submit" enterkeyhint="submit">Submit</button>
+	</form>
+</pagefind-search>
+
+<is-land>
+	<p>Search provided by <a href="https://duckduckgo.com/">DuckDuckGo</a>.</p>
+	<template data-island="replace">
+		<p>Search provided by <a href="https://pagefind.app/">Pagefind</a> via the <a href="https://www.zachleat.com/web/pagefind-search/"><code>&lt;pagefind-search&gt;</code> Web Component</a>.</p>
+	</template>
+</is-land>
+
 {%- js 'module' -%}{% include '../../node_modules/@zachleat/pagefind-search/pagefind-search.js' %}{%- endjs -%}
