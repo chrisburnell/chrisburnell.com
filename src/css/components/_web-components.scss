@@ -1,0 +1,14 @@
+////
+/// Web Components
+/// @group components
+////
+
+lastfm-listening {
+	display: block;
+	margin-block-start: var(--size-medium);
+}
+
+share-button:not(:defined) button,
+share-button:defined a {
+	display: none;
+}

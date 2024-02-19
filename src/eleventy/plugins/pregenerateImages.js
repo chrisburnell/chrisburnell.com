@@ -58,7 +58,8 @@ export default async function () {
 
 	const pixelated = await glob("./images/avatar-pixelated.png")
 	const defaultProfile = await glob("./images/default-profile.jpg")
-	for (const g of [...pixelated, ...defaultProfile]) {
+	const defaultAlbumCover = await glob("./images/default-album-cover.jpg")
+	for (const g of [...pixelated, ...defaultProfile, ...defaultAlbumCover]) {
 		console.log(`Generating image varieties from: ${g}}`)
 		await Image(
 			g,

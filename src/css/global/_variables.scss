@@ -31,6 +31,9 @@
 	@each $name, $value in $breakpoints {
 		#{"--size-breakpoint-" + $name}: #{$value};
 	}
+	@media (height > #{map-get($breakpoints, "tiny")}) {
+		--size-header: calc(var(--size-logo-small) + var(--size-small) * 2);
+	}
 
 	@each $name, $value in $font-families {
 		#{"--font-family-" + $name}: #{$value};

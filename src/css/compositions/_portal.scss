@@ -35,7 +35,7 @@
 	.title {
 		background-color: h(wolf);
 		color: h(snowy);
-		min-block-size: calc(100vh - var(--size-large));
+		min-block-size: calc(100vb - var(--size-large));
 		min-block-size: calc(100dvb - var(--size-large));
 		display: flex;
 		align-items: center;

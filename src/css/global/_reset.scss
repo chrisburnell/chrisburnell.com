@@ -33,7 +33,7 @@
 
 :where(body) {
 	inline-size: 100%;
-	min-block-size: 100vh;
+	min-block-size: 100vb;
 	min-block-size: 100dvb;
 	-webkit-font-smoothing: antialiased;
 }
@@ -91,7 +91,7 @@
 }
 
 :where(:focus-visible, :target) {
-	scroll-margin-block: max(8vh, calc(var(--size-header) + 1rem));
+	scroll-margin-block: max(8vb, calc(var(--size-header, 0) + 1rem));
 }
 
 :where(.visually-hidden:not(:focus, :focus-within, :active)) {

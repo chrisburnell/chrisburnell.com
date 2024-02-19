@@ -17,12 +17,14 @@
 // Fonts
 @import "global/fonts";
 
+// Variables
+@import "global/variables";
+
 @layer reset, global, compositions, blocks, utilities, themes, components, pages, thirdparty, overrides;
 
 // Reset
 @layer reset {
 	@import "global/reset";
-	@import "global/variables";
 }
 
 // Global
@@ -76,6 +78,7 @@
 	@import "components/spark-line";
 	@import "components/deck";
 	@import "components/shelf";
+	@import "components/web-components";
 }
 
 // Themes

@@ -91,9 +91,4 @@
 	summary ~ * {
 		line-height: var(--line-height-code);
 	}
-
-	share-button:not(:defined) button,
-	share-button:defined a {
-		display: none;
-	}
 }

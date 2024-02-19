@@ -16,7 +16,7 @@
 		block-size: calc(var(--size-logo) / 1.205);
 		position: absolute;
 		inset-inline-end: var(--size-gutter);
-		inset-block-start: calc(var(--size-header) / -2);
+		inset-block-start: calc(var(--size-header, 0) / -2);
 		transform: scaleX(-1);
 		pointer-events: none;
 	}

@@ -11,7 +11,7 @@
 
 	@include cq("main", "medium") {
 		position: sticky;
-		inset-block-start: calc(var(--size-header) + 1rem);
+		inset-block-start: calc(var(--size-header, 0) + 1rem);
 	}
 
 	details {
@@ -23,7 +23,7 @@
 	}
 
 	nav {
-		max-block-size: 40vh;
+		max-block-size: 40vb;
 		max-block-size: 40dvb;
 		box-shadow: var(--box-shadow, var(--box-shadow-medium));
 		overflow-x: hidden;
@@ -34,13 +34,13 @@
 		animation-timeline: scroll(self block);
 
 		@include cq("main", "small") {
-			max-block-size: 60vh;
+			max-block-size: 60vb;
 			max-block-size: 60dvb;
 		}
 
 		@include cq("main", "medium") {
-			max-block-size: calc(100vh - (var(--size-header) * 2));
-			max-block-size: calc(100dvb - (var(--size-header) * 2));
+			max-block-size: calc(100vb - (var(--size-header, 0) * 2));
+			max-block-size: calc(100dvb - (var(--size-header, 0) * 2));
 		}
 	}
 }
