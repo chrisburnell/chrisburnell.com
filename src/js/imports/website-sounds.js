@@ -47,7 +47,7 @@ class WebsiteSounds {
 
 	/**
 	 * Applies a specific setting.
-	 * @param {String} passedSetting
+	 * @param {string} passedSetting
 	 */
 	applySetting(passedSetting) {
 		const currentSetting = passedSetting || localStorage.getItem(this.STORAGE_KEY)
@@ -63,7 +63,7 @@ class WebsiteSounds {
 
 	/**
 	 * Enables/Disables website sounds.
-	 * @returns {String} The opposite setting to the current one.
+	 * @returns {string} The opposite setting to the current one.
 	 */
 	toggleSetting() {
 		const currentSetting = localStorage.getItem(this.STORAGE_KEY) === "true" ? "false" : "true"

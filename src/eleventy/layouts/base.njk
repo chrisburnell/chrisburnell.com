@@ -9,7 +9,7 @@
 
 		<link rel="preload" href="/fonts/proxima-vara-subset.woff2" as="font" type="font/woff2" crossorigin>
 
-		{% if eleventy.env.runMode === "build" -%}
+		{% if eleventy.env.runMode === 'build' -%}
 		<link rel="icon" href="/images/favicon.ico" sizes="16x16 32x32 48x48 64x64">
 		<link rel="icon" href="/images/raven.svg" type="image/svg+xml">
 		<link rel="icon" href="/images/favicon-64.png">
@@ -44,7 +44,7 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<meta name="format-detection" content="telephone=no">
 
-		<meta name="theme-color" content="{{ designTokens['colors-hex'] | keyValue("raven") }}">
+		<meta name="theme-color" content="{{ designTokens['colors-hex'] | keyValue('raven') }}">
 		<meta name="supported-color-schemes" content="light dark">
 
 		{# All CSS -#}
@@ -82,7 +82,7 @@
 		<meta property="og:description" content="{{ meta_description | safe }}">
 		<meta property="og:locale" content="{{ site.locale }}">
 		<meta property="og:site_name" content="{{ site.title }}">
-		{% if eleventy.env.runMode !== "build" or og_image or banner or cover or photo or not "post" in tags -%}
+		{% if eleventy.env.runMode !== 'build' or og_image or banner or cover or photo or not 'post' in tags -%}
 			<meta property="og:image" content="{{ meta_image }}">
 		{%- else -%}
 			{% ogImage './eleventy/layouts/og-image.og.njk', { title: meta_title } %}
@@ -103,17 +103,17 @@
 		<meta property="profile:username" content="{{ author.shortname }}">
 		{%- endif %}
 
-		{% if eleventy.env.runMode === "build" and site.monetization and monetization != false -%}
+		{% if eleventy.env.runMode === 'build' and site.monetization and monetization != false -%}
 		<meta name="monetization" content="{{ site.monetization }}">
 		{%- endif %}
 		{%- endif %}{# end non-httpstatus #}
 
 		{% include 'js-critical.njk' %}
 	</head>
-	<body{% if not excludeFromSearch and not sitemap.exclude and not draft and published !== false and not "ignore" in tags %} data-pagefind-body{% endif %}>
+	<body{% if not excludeFromSearch and not sitemap.exclude and not draft and published !== false and not 'ignore' in tags %} data-pagefind-body{% endif %}>
 		<header class=" [ header ] ">
 			<div class=" [ wrap ] ">
-				<a rel="home" class=" [ logo ] [ canada ] " href="/" aria-label="{{ site.title }}">
+				<a href="/" rel="home" class=" [ logo ] [ canada ] " aria-label="{{ site.title }}">
 					<img src="{{ site.logo }}" alt="" title="Go to Home" width="120" height="120" aria-hidden="true">
 				</a>
 				<nav class=" [ navigation ] " aria-label="Website">
@@ -146,10 +146,10 @@
 				</ul>
 				<ul class=" [ cluster ] [ footer__navigation ] ">
 					<li class=" [ requires-js ] ">{%- include 'theme-selector.njk' -%}</li><li class=" [ requires-js ] "><button id="sounds-toggle" class=" [ anchor ] [ js-sounds-toggle ] "><svg width="16" height="16" aria-hidden="true" focusable="false" style="--fill-hover: var(--color-highland);"><use href="#svg--sound-off"></use></svg><span class=" [ js-sounds-status ] ">Enable sounds</span></button>
-					</li><li><a id="edit" href="https://github.com/{{ author.github }}/{{ site.repository }}/tree/{{ site.branch }}/{{ page.inputPath }}" aria-label="Edit this page"><svg width="16" height="16" aria-hidden="true" focusable="false" style="--fill-hover: var(--color-highland);"><use href="#svg--edit"></use></svg>Edit this page</a></li><li>{% include 'share-button.njk' %}</li>
+					</li><li><a href="https://github.com/{{ author.github }}/{{ site.repository }}/tree/{{ site.branch }}/{{ page.inputPath }}" id="edit"><svg width="16" height="16" aria-hidden="true" focusable="false" style="--fill-hover: var(--color-highland);"><use href="#svg--edit"></use></svg>Edit this page</a></li><li>{% include 'share-button.njk' %}</li>
 				</ul>
 				<ul class=" [ cluster ] [ footer__navigation ] ">
-					<li><a id="copyright" rel="license" href="/license/">© {{ site.established }}–{{ global.nowISO | friendlyDate("yyyy") }} <span class=" [ canada ] ">{{ author.name }}</span></a></li>
+					<li><a href="/license/" id="copyright" rel="license">© {{ site.established }}–{{ global.nowISO | friendlyDate('yyyy') }} <span class=" [ canada ] ">{{ author.name }}</span></a></li>
 					{%- for item in socials -%}
 						{%- if not item.hidden and item.primary -%}
 							{%- set url = item.url -%}
@@ -159,7 +159,7 @@
 				</ul>
 				{% include 'webrings.njk' %}
 				{% if speedlify[canonical] -%}
-					<p class=" [ speedlify ] "><a class="[ speedlify-anchor ] " href="{{ site.urls.speedlify }}/{{ site.speedlify }}/#site-{{ speedlify[canonical].hash }}" title="Link to this page's Speedlify Score"><c-speedlify-score hash="{{ speedlify[canonical].hash }}" score weight requests></c-speedlify-score></a></p>
+					<p class=" [ speedlify ] "><a href="{{ site.urls.speedlify }}/{{ site.speedlify }}/#site-{{ speedlify[canonical].hash }}" class="[ speedlify-anchor ] " title="Link to this page's Speedlify Score"><c-speedlify-score hash="{{ speedlify[canonical].hash }}" score weight requests></c-speedlify-score></a></p>
 				{%- endif %}
 				{%- for item in socials -%}
 					{%- if not item.hidden and not item.primary -%}
@@ -173,7 +173,7 @@
 		{% set svg %}{% include '../../../images/sprites.svg' %}{% endset -%}
 		{{ svg | replace('<?xml version="1.0" encoding="utf-8"?>', '') | replace('<svg', '<svg display="none" aria-hidden="true"') | safe }}
 
-		{% if eleventy.env.runMode === "build" -%}
+		{% if eleventy.env.runMode === 'build' -%}
 		{# ServiceWorker -#}
 		<script>{% include '../../js/navigator.js' %}</script>
 		{%- endif %}

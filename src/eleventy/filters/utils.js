@@ -5,7 +5,6 @@ import mastodonInstances from "../../data/mastodonInstances.js"
 import places from "../../data/places.js"
 import postingMethods from "../../data/postingMethods.js"
 import syndicationTargets from "../../data/syndicationTargets.js"
-import blogroll from "../data/blogroll.js"
 import { cacheDurations, url as siteURL } from "../data/site.js"
 import { getCategoryName } from "./collections.js"
 import { getHost, getPathname } from "./urls.js"
@@ -109,7 +108,7 @@ export const getResponsesLength = (webmentions, other) => {
  * @param {number} outMin
  * @param {number} outMax
  * @param {number} decimals
- * @returns {Number}
+ * @returns {number}
  */
 export const rangeMap = (number, inMin, inMax, outMin, outMax, decimals) => {
 	return (((number - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin).toFixed(decimals || 0)
@@ -172,77 +171,47 @@ export const arrayKeyIncludes = (array, key, value) => {
 	})
 }
 
-/**
- * @param {object[]} array
- * @returns {object[]}
- */
-export const getAllLinks = (array) => {
-	return array.filter((item) => {
-		// if it's a link type
-		if (getType(item) === "mention-of") {
-			// if from Twitter
-			if (item["wm-source"].includes("/post/twitter")) {
-				// if a person's name is found, discard it
-				return !blogroll.find((website) => {
-					return website.title.localeCompare(item.author.name, undefined, { sensitivity: "accent" }) === 0
-				})
-			}
-			// if from Mastodon, discard it
-			if (item["wm-source"].includes("/post/mastodon")) {
-				return false
-			}
-			// if it's a webmention (i.e. not a pingback)
-			if (item["wm-protocol"] === "webmention") {
-				// if it has valid content, discard it
-				return !getContent(item)
-			}
-			// otherwise, include it
-			return true
-		}
-		// otherwise discard it
-		return false
-	})
+const isBackfeed = (item) => {
+	return item["wm-source"].includes("https://brid-gy.appspot.com") || item["wm-source"].includes("https://brid.gy")
 }
 
 /**
  * @param {object[]} array
  * @returns {object[]}
  */
-export const getAllReplies = (array) => {
-	return array
-		.filter((item) => {
-			// if it's a link type
-			if (getType(item) === "mention-of") {
-				// if it's from Twitter
-				if (item["wm-source"].includes("/post/twitter")) {
-					// if a person's name is found, include it
-					return blogroll.find((website) => {
-						return website.title.localeCompare(item.author.name, undefined, { sensitivity: "accent" }) === 0
-					})
-				}
-				// if it's from Mastodon, include it
-				if (item["wm-source"].includes("/post/mastodon")) {
-					return true
-				}
-				// if it's a webmention
-				if (item["wm-protocol"] === "webmention") {
-					// if it has valid content, include it
-					return !!getContent(item)
-				}
-				// otherwise, discard it
-				return false
-			}
-			// if it's a reply type
-			if (getType(item) === "in-reply-to") {
-				// if it has valid content, include it
-				return !!getContent(item)
-			}
-			// otherwise, discard it
-			return false
-		})
-		.sort((a, b) => {
-			return new Date(getPublished(a)) - new Date(getPublished(b))
-		})
+export const getSocialReplies = (array) => {
+	return (
+		array
+			// Only "in-reply-to" types
+			.filter((item) => {
+				return getType(item) === "in-reply-to"
+			})
+			// Only Backfeed or without content
+			.filter((item) => {
+				return isBackfeed(item) || !getContent(item)
+			})
+	)
+}
+
+/**
+ * @param {object[]} array
+ * @returns {object[]}
+ */
+export const getDirectReplies = (array) => {
+	return (
+		array
+			// Only "in-reply-to" types
+			.filter((item) => {
+				return getType(item) === "in-reply-to"
+			})
+			// Only non-Backfeed and with content
+			.filter((item) => {
+				return !isBackfeed(item) && !!getContent(item)
+			})
+			.sort((a, b) => {
+				return new Date(getPublished(a)) - new Date(getPublished(b))
+			})
+	)
 }
 
 /**
@@ -492,8 +461,8 @@ export default {
 	limit,
 	arrayKeyEquals,
 	arrayKeyIncludes,
-	getAllLinks,
-	getAllReplies,
+	getSocialReplies,
+	getDirectReplies,
 	simpleMovingAverage,
 	exponentialMovingAverage,
 	getInternalTarget,

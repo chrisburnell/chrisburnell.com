@@ -1,5 +1,5 @@
 [
-{% set allPages = collections.pages.concat(collections.posts) | keySort("inputPath") | arePublished | sitemapFilter -%}
+{% set allPages = collections.pages.concat(collections.posts) | keySort('inputPath') | arePublished | sitemapFilter -%}
 {% for item in allPages -%}
   {
     "url": "{{ site.url + item.url }}"{% if item.data.title %},

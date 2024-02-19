@@ -43,6 +43,7 @@
 // Appears just below title above:medium, above title below:medium
 .description--published {
 	font-size: var(--font-size-default);
+	font-family: var(--font-family-serif);
 	margin-block-end: var(--size-large);
 
 	@include cq(null, null, "tiny") {

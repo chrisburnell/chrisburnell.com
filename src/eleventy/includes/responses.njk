@@ -15,12 +15,13 @@
 		{% if webmentions.length or stargazers > 0 %}
 			{%- set bookmarks = webmentions | getWebmentionsByTypes(['bookmark-of']) -%}
 			{%- set likes = webmentions | getWebmentionsByTypes(['like-of']) -%}
-			{%- set links = webmentions | getAllLinks -%}
 			{%- set reposts = webmentions | getWebmentionsByTypes(['repost-of']) -%}
-			{%- set reactions = bookmarks.concat(likes).concat(links).concat(reposts) -%}
-			{%- set replies = webmentions | getAllReplies -%}
+			{%- set links = webmentions | getWebmentionsByTypes(['mention-of']) -%}
+			{%- set socialReplies = webmentions | getSocialReplies -%}
+			{%- set reactions = bookmarks.concat(likes).concat(reposts).concat(socialReplies).concat(links) -%}
+			{%- set directReplies = webmentions | getDirectReplies -%}
 			{%- set stargazers = stargazers | default(0) -%}
-			{%- set responsesLength = reactions.length + replies.length + stargazers -%}
+			{%- set responsesLength = reactions.length + directReplies.length + stargazers -%}
 			<div id="responses" class=" [ responses__thread ] [ flow ] ">
 				<h2 class=" [ no-fragment ] [ sticky ] ">{{ responsesLength }} Response{{ 's' if responsesLength > 1 }}</h2>
 				{% if reactions.length or stargazers %}
@@ -34,17 +35,20 @@
 						{% if likes.length -%}
 							<li><c-emoji>{{ emojis.thumbsup }}</c-emoji> {{ likes.length }} Like{{ 's' if likes.length > 1 }}</li>
 						{%- endif %}
-						{% if links.length -%}
-							<li><c-emoji>{{ emojis.link }}</c-emoji> {{ links.length }} Link{{ 's' if links.length > 1 }}</li>
-						{%- endif %}
 						{% if reposts.length -%}
 							<li><c-emoji>{{ emojis.repost }}</c-emoji> {{ reposts.length }} Repost{{ 's' if reposts.length > 1 }}</li>
 						{%- endif %}
+						{% if socialReplies.length -%}
+							<li><c-emoji>{{ emojis.syndication }}</c-emoji> {{ socialReplies.length }} Social {% if socialReplies.length > 1 %}Replies{% else %}Reply{% endif %}</li>
+						{%- endif %}
+						{% if links.length -%}
+							<li><c-emoji>{{ emojis.link }}</c-emoji> {{ links.length }} Link{{ 's' if links.length > 1 }}</li>
+						{%- endif %}
 					</ol>
 				{% endif %}
-				{% if replies.length %}
+				{% if directReplies.length %}
 					<ol id="replies" class=" [ replies ] [ flow ] ">
-						{% for webmention in replies %}
+						{% for webmention in directReplies %}
 							{%- set wmId = webmention['wm-id'] -%}
 							{%- set wmType = webmention | getWebmentionType -%}
 							{%- set wmDate = webmention | getWebmentionPublished -%}
@@ -64,7 +68,7 @@
 									<a href="#response-{{ wmId }}" class=" [ person__permalink ] [ gamma  extrabold ] " title="Permalink to this response" tabindex="-1">#</a>
 									<a href="{{ authorUrl }}" class=" [ p-author  h-card  u-url ] " rel="external nofollow"><span class=" [ p-name ] ">{{ authorName }}</span></a>
 									<small>wrote on</small>
-									<a href="{{ wmSource }}" class=" [ u-url  u-{{ wmType }} ] " rel="external nofollow" title="Read externally"><time class=" [ dt-published ] " datetime="{{ wmDate | rfc3339Date }}">{{ wmDate | friendlyDate | safe }}</time></a>
+									<a href="{{ wmSource }}" class=" [ u-url  u-{{ wmType }} ] " rel="external nofollow" title="Read externally"><time datetime="{{ wmDate | rfc3339Date }}" class=" [ dt-published ] ">{{ wmDate | friendlyDate | safe }}</time></a>
 								</div>
 								<div class=" [ e-content ] [ flow ] ">
 									{{ wmContent | safe }}

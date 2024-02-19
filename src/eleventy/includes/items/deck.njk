@@ -7,51 +7,51 @@
 			{% else %}
 				<small>in reply to</small>
 			{% endif %}
-			<a class=" [ h-cite  u-in-reply-to ] " href="{{ item.data.reply_url }}">{{ item.data.reply_title | safe }}</a>
+			<a href="{{ item.data.reply_url }}" class=" [ h-cite  u-in-reply-to ] ">{{ item.data.reply_title | safe }}</a>
 			{% if item.data.reply_author_string and (item.data.reply_author_string | striptags) != item.data.reply_title %}
 				<small>by</small> {{ item.data.reply_author_string | safe }}
 			{% endif %}
 			{% if item.data.rsvp.date | daysUntil == 0 %}
 				{# Today #}
 				<small>today, from</small>
-				<time class=" [ dt-start ] " datetime="{{ item.data.rsvp.date | rfc3339Date }}">{{ item.data.rsvp.date | friendlyTime(false) }}</time>
+				<time datetime="{{ item.data.rsvp.date | rfc3339Date }}" class=" [ dt-start ] ">{{ item.data.rsvp.date | friendlyTime(false) }}</time>
 				–
-				<time class=" [ dt-end ] " datetime="{{ item.data.rsvp.end | rfc3339Date }}">{{ item.data.rsvp.end | friendlyTime(true) }}</time>
+				<time datetime="{{ item.data.rsvp.end | rfc3339Date }}" class=" [ dt-end ] ">{{ item.data.rsvp.end | friendlyTime(true) }}</time>
 			{% elif item.data.rsvp.date | epoch > global.now %}
 				{# Future #}
 				<small>in</small>
 				{{ item.data.rsvp.date | daysUntil }} day{{ 's' if (item.data.rsvp.date | daysUntil) > 1 }}
 				<small>on</small>
 				{% if item.data.rsvp.date | friendlyDate != item.data.rsvp.end | friendlyDate %}
-					<time class=" [ dt-start ] " datetime="{{ item.data.rsvp.date | rfc3339Date }}">{{ item.data.rsvp.date | friendlyDate }}</time>
+					<time datetime="{{ item.data.rsvp.date | rfc3339Date }}" class=" [ dt-start ] ">{{ item.data.rsvp.date | friendlyDate }}</time>
 					–
-					<time class=" [ dt-end ] " datetime="{{ item.data.rsvp.end | rfc3339Date }}">{{ item.data.rsvp.end | friendlyDate }}</time>
+					<time datetime="{{ item.data.rsvp.end | rfc3339Date }}" class=" [ dt-end ] ">{{ item.data.rsvp.end | friendlyDate }}</time>
 				{% else %}
-					<time class=" [ dt-start ] " datetime="{{ item.data.rsvp.date | rfc3339Date }}">{{ item.data.rsvp.date | friendlyDate }}</time>
-					<time class=" [ dt-end ] " datetime="{{ item.data.rsvp.end | rfc3339Date }}" hidden></time>
+					<time datetime="{{ item.data.rsvp.date | rfc3339Date }}" class=" [ dt-start ] ">{{ item.data.rsvp.date | friendlyDate }}</time>
+					<time datetime="{{ item.data.rsvp.end | rfc3339Date }}" class=" [ dt-end ] " hidden></time>
 				{% endif %}
 			{% elif item.data.rsvp.date | epoch < global.now and item.data.rsvp.end | epoch > global.now %}
 				{# Current #}
 				<small>from</small>
-				<time class=" [ dt-start ] " datetime="{{ item.data.rsvp.date | rfc3339Date }}">{{ item.data.rsvp.date | friendlyTime(false) }}</time>
+				<time datetime="{{ item.data.rsvp.date | rfc3339Date }}" class=" [ dt-start ] ">{{ item.data.rsvp.date | friendlyTime(false) }}</time>
 				–
-				<time class=" [ dt-end ] " datetime="{{ item.data.rsvp.end | rfc3339Date }}">{{ item.data.rsvp.end | friendlyTime(true) }}</time>
+				<time datetime="{{ item.data.rsvp.end | rfc3339Date }}" class=" [ dt-end ] ">{{ item.data.rsvp.end | friendlyTime(true) }}</time>
 			{% elif item.data.rsvp.date %}
 				{# Past #}
 				<small>on</small>
-				<time class=" [ dt-start ] " datetime="{{ item.data.rsvp.date | rfc3339Date }}">{{ item.data.rsvp.date | friendlyDate }}</time>
+				<time datetime="{{ item.data.rsvp.date | rfc3339Date }}" class=" [ dt-start ] ">{{ item.data.rsvp.date | friendlyDate }}</time>
 				{% if item.data.rsvp.date | friendlyDate != item.data.rsvp.end | friendlyDate %}
 					–
-					<time class=" [ dt-end ] " datetime="{{ item.data.rsvp.end | rfc3339Date }}">{{ item.data.rsvp.end | friendlyDate }}</time>
+					<time datetime="{{ item.data.rsvp.end | rfc3339Date }}" class=" [ dt-end ] ">{{ item.data.rsvp.end | friendlyDate }}</time>
 				{% else %}
-					<time class=" [ dt-end ] " datetime="{{ item.data.rsvp.end | rfc3339Date }}" hidden></time>
+					<time datetime="{{ item.data.rsvp.end | rfc3339Date }}" class=" [ dt-end ] " hidden></time>
 				{% endif %}
 			{% endif %}
 		</div>
 	{% endif %}
 	{% if item.data.title or item.data.of_title or item.data.of_title_fallback %}
 		<h1 style="view-transition-name: title-{{ item.data.page.fileSlug }};">
-			<a class=" [ p-name ] " href="{% if item.data.tags and "clickthrough" in item.data.tags %}{{ item.data.of_url | default(item.url) | safe }}{% else %}{{ item.url | safe }}{% endif %}"{% if item.data.tags and "clickthrough" in item.data.tags %} rel="external noopener"{% endif %}>
+			<a href="{% if item.data.tags and 'clickthrough' in item.data.tags %}{{ item.data.of_url | default(item.url) | safe }}{% else %}{{ item.url | safe }}{% endif %}" class=" [ p-name ] "{% if item.data.tags and 'clickthrough' in item.data.tags %} rel="external noopener"{% endif %}>
 				{% if item.data.emoji %}<c-emoji>{{ item.data.emoji }}</c-emoji>{% endif %}{{ item.data.title | default(item.data.of_title) | default(item.data.of_title_fallback) | striptags(true) | safe }}
 			</a>
 		</h1>
@@ -59,7 +59,7 @@
 	{% if show_photos %}
 		{% include 'photo.njk' %}
 	{% endif %}
-	{% if item.data.description and item.data.tags and ("page" in item.data.tags or "writing" in item.data.tags) %}
+	{% if item.data.description and item.data.tags and ('page' in item.data.tags or 'writing' in item.data.tags) %}
 		<p class=" [ p-summary ] {% if item.data.category == 'article' %}[ line-clamp ] {% endif %}">{{ item.data.description | striptags(true) | urlize | safe }}</p>
 	{% elif item.data.description and item.data.description_markdown %}
 		<p class=" [ p-summary ] {% if item.data.category == 'article' %}[ line-clamp ] {% endif %}">{{ item.data.description | formatAsMarkdown | safe }}</p>
@@ -76,23 +76,24 @@
 		<ul class=" [ cluster ] [ deck__meta ] ">
 			{% if item.data.updated %}
 				<li>
-					<small>updated</small> <a href="{{ item.url }}{{ "#updated" if item.data.updated_text }}" tabindex="-1"><time class=" [ dt-updated ] " datetime="{{ item.data.updated | rfc3339Date }}">{{ item.data.updated | friendlyDateLong | safe }}</time></a>
+					<small>updated</small> <a href="{{ item.url }}{{ '#updated' if item.data.updated_text }}" tabindex="-1"><time datetime="{{ item.data.updated | rfc3339Date }}" class=" [ dt-updated ] ">{{ item.data.updated | friendlyDateLong | safe }}</time></a>
 				</li>
 			{% endif %}
 			{% if item.data.date %}
 				<li>
-					<small>published</small> <a class=" [ u-url ] " href="{{ item.url }}"{% if item.data.title or item.data.of_title %} tabindex="-1"{% endif %}><time class=" [ dt-published ] " datetime="{{ item.data.date | rfc3339Date }}">{{ item.data.date | friendlyDateLong | safe }}</time></a>
+					<small>published</small> <a href="{{ item.url }}" class=" [ u-url ] "{% if item.data.title or item.data.of_title %} tabindex="-1"{% endif %}><time datetime="{{ item.data.date | rfc3339Date }}" class=" [ dt-published ] ">{{ item.data.date | friendlyDateLong | safe }}</time></a>
 				</li>
 			{% endif %}
 			{% if (item.data.show_webmentions and item.data.webmentions.length) or item.data.stargazers %}
 				{%- set bookmarks = item.data.webmentions | getWebmentionsByTypes(['bookmark-of']) -%}
 				{%- set likes = item.data.webmentions | getWebmentionsByTypes(['like-of']) -%}
 				{%- set reposts = item.data.webmentions | getWebmentionsByTypes(['repost-of']) -%}
-				{%- set links = item.data.webmentions | getAllLinks -%}
-				{%- set reactions = bookmarks.concat(likes).concat(reposts).concat(links) -%}
-				{%- set replies = item.data.webmentions | getAllReplies -%}
+				{%- set links = item.data.webmentions | getWebmentionsByTypes(['mention-of']) -%}
+				{%- set socialReplies = webmentions | getSocialReplies -%}
+				{%- set reactions = bookmarks.concat(likes).concat(reposts).concat(socialReplies).concat(links) -%}
+				{%- set directReplies = item.data.webmentions | getDirectReplies -%}
 				{%- set stargazers = item.data.stargazers | default(0) -%}
-				{%- set responsesLength = reactions.length + replies.length + stargazers -%}
+				{%- set responsesLength = reactions.length + directReplies.length + stargazers -%}
 				<li>
 					<a href="{{ item.url }}#respond" title="Jump to responses for this {{ item.data.categoryProper }}">{{ responsesLength }} {% if stargazers == responsesLength %}stargazer{% else %}response{% endif %}{{ 's' if responsesLength > 1 }} <span class=" [ visually-hidden ] ">to this {{ item.data.categoryProper | default(item.data.category) | default('page') }}</span></a>
 				</li>

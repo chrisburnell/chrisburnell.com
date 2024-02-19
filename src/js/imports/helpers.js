@@ -5,11 +5,11 @@
 const helpers = {
 	/**
 	 * Inject content into some string based on finding a provided placeholder.
-	 * @param {String} originalContent
-	 * @param {String} placeholder
-	 * @param {String} injection
-	 * @param {String} [flags]
-	 * @returns {String}
+	 * @param {string} originalContent
+	 * @param {string} placeholder
+	 * @param {string} injection
+	 * @param {string} [flags]
+	 * @returns {string}
 	 */
 	injectContent: (originalContent, placeholder, injection, flags = "g") => {
 		const PATTERN = new RegExp(placeholder, flags)
@@ -19,8 +19,8 @@ const helpers = {
 	/**
 	 * Grab query string values by name.
 	 * @see {@link http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript}
-	 * @param {String} name
-	 * @returns {String}
+	 * @param {string} name
+	 * @returns {string}
 	 */
 	getParameterByName: (name) => {
 		const regex = RegExp(`[?&]${name}=([^&]*)`).exec(window.location.search)
@@ -45,9 +45,9 @@ const helpers = {
 
 	/**
 	 * Format a Date.
-	 * @param {Datetime} date
-	 * @param {Boolean} [includeWeekday]
-	 * @returns {String}
+	 * @param {datetime} date
+	 * @param {boolean} [includeWeekday]
+	 * @returns {string}
 	 */
 	formatDate: (date, includeWeekday = false) => {
 		const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
@@ -67,10 +67,10 @@ const helpers = {
 
 	/**
 	 * Format a Time.
-	 * @param {Datetime} date
-	 * @param {Boolean} [includeSeconds]
-	 * @param {Boolean} [includeMerdiem]
-	 * @returns {String}
+	 * @param {datetime} date
+	 * @param {boolean} [includeSeconds]
+	 * @param {boolean} [includeMerdiem]
+	 * @returns {string}
 	 */
 	formatTime: (date, includeSeconds = false, includeMeridiem = true) => {
 		let hours = date.getHours()
@@ -86,7 +86,7 @@ const helpers = {
 
 	/**
 	 * Perform an action based on the hash in the URL.
-	 * @param {Array} hashes
+	 * @param {string[]} hashes
 	 * @param {Function} action
 	 * @returns false
 	 */
@@ -100,8 +100,8 @@ const helpers = {
 
 	/**
 	 * Ensure fetch response is OK.
-	 * @param {Object} response
-	 * @returns {Object}
+	 * @param {object} response
+	 * @returns {object}
 	 * @throws Response must return correctly.
 	 */
 	getFetchResponse: (response) => {
@@ -116,9 +116,9 @@ const helpers = {
 
 	/**
 	 * Format a number by padding with zeroes.
-	 * @param {Number} number
-	 * @param {Number} [integersMax]
-	 * @returns {String}
+	 * @param {number} number
+	 * @param {number} [integersMax]
+	 * @returns {string}
 	 */
 	padWithZeroes: (number, integersMax = 2) => {
 		const [integers, decimals] = number.toString().split(".")
@@ -127,8 +127,8 @@ const helpers = {
 
 	/**
 	 * Extract text from a string of HTML.
-	 * @param {String} html
-	 * @returns {String}
+	 * @param {string} html
+	 * @returns {string}
 	 */
 	decodeHTML: (html) => {
 		let text = document.createElement("textarea")
@@ -138,9 +138,9 @@ const helpers = {
 
 	/**
 	 * Truncate text to n words.
-	 * @param {String} string
-	 * @param {Number} [maximum]
-	 * @returns {String}
+	 * @param {string} string
+	 * @param {number} [maximum]
+	 * @returns {string}
 	 */
 	truncate: (string, maximum = 10) => {
 		let array = string.trim().split(" ")
@@ -155,8 +155,8 @@ const helpers = {
 
 	/**
 	 * Return a string based on the recency of a Datetime.
-	 * @param {Datetime} datetime
-	 * @returns {String}
+	 * @param {datetime} datetime
+	 * @returns {string}
 	 */
 	since: (datetime) => {
 		const today = Math.floor(Date.now() / 1000)
@@ -194,10 +194,10 @@ const helpers = {
 
 	/**
 	 * Search for a value within all nodes of an Object.
-	 * @param {Object} object
+	 * @param {object} object
 	 * @param {any} searchValue
-	 * @param {Boolean} [caseSensitive]
-	 * @returns {Boolean}
+	 * @param {boolean} [caseSensitive]
+	 * @returns {boolean}
 	 */
 	includesDeep: (object, searchValue, caseSensitive = true) => {
 		const normalizeValue = (value) => (caseSensitive && typeof value === "string" ? value : value.toString().toLowerCase())
@@ -216,19 +216,6 @@ const helpers = {
 		}
 
 		return Object.values(object).some(checkValue)
-	},
-
-	/**
-	 * Loop through an array to set a variable.
-	 * @param {Object} object
-	 * @param {Object[]} array
-	 * @param {any} value
-	 */
-	setByArray(object, array, value) {
-		const last = array.pop()
-		array.reduce(function (v, k) {
-			return (v || {})[k]
-		}, object)[last] = value
 	},
 }
 

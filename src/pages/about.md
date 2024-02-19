@@ -78,7 +78,7 @@ I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link
 <h2 id="worked-with">Companies and Organisations I’ve worked with</h2>
 
 <div class=" [ grid ] [ shelf ] [ center ] " style="--min-inline-size: 6em; --gap: var(--size-gap);">
-    {%- for client in clients | sort(false, false, "title") -%}
+    {%- for client in clients | sort(false, false, 'title') -%}
         <article>
             <a href="{{ client.url }}" title="{{ client.title | safe }}" rel="external">
                 <img src="/images/built/{{ client.image }}" class=" [ interaction-grow{% if client.darkInvert %}  dark-invert-colors{% endif %} ] " alt="" loading="lazy" decoding="async" style="max-height: 8rem">
@@ -96,11 +96,11 @@ I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link
 <address>
     <dl>
         <dt>Email:</dt>
-        <dd><a class=" [ canada ] " href="mailto:{{ author.email }}"><img src="/images/raven.svg" alt="{{ site.title }}" loading="lazy" decoding="async" class="brand-logo" style="margin-inline-end: 1ex;">{{ author.email }}</a></dd>
+        <dd><a href="mailto:{{ author.email }}" class=" [ canada ] "><img src="/images/raven.svg" alt="{{ site.title }}" loading="lazy" decoding="async" class="brand-logo" style="margin-inline-end: 1ex;">{{ author.email }}</a></dd>
         <dt>Mastodon:</dt>
-        <dd><a class=" [ canada ] " href="https://{{ author.mastodon_domain }}/{{ author.mastodon.split('@')[1] }}" title="{{ author.name }} on Mastodon"><svg width="24" height="24" aria-hidden="true" focusable="false" style="--fill: #595aff; margin-inline-end: 1ex; vertical-align: middle; margin-block-start: calc(1ex - 1cap);"><use href="#svg--mastodon"></use></svg>{{ author.mastodon }}</a></dd>
+        <dd><a href="https://{{ author.mastodon_domain }}/{{ author.mastodon.split('@')[1] }}" class=" [ canada ] " title="{{ author.name }} on Mastodon"><svg width="24" height="24" aria-hidden="true" focusable="false" style="--fill: #595aff; margin-inline-end: 1ex; vertical-align: middle; margin-block-start: calc(1ex - 1cap);"><use href="#svg--mastodon"></use></svg>{{ author.mastodon }}</a></dd>
         <dt>LinkedIn:</dt>
-        <dd><a class=" [ canada ] " href="https://www.linkedin.com/in/{{ author.linkedin }}" title="{{ author.name }} on LinkedIn"><svg width="24" height="24" aria-hidden="true" focusable="false" style="--fill: #0a66c2; margin-inline-end: 1ex; vertical-align: middle; margin-block-start: calc(1ex - 1cap);"><use href="#svg--linkedin"></use></svg>{{ '@' + author.linkedin }}</a></dd>
+        <dd><a href="https://www.linkedin.com/in/{{ author.linkedin }}" class=" [ canada ] " title="{{ author.name }} on LinkedIn"><svg width="24" height="24" aria-hidden="true" focusable="false" style="--fill: #0a66c2; margin-inline-end: 1ex; vertical-align: middle; margin-block-start: calc(1ex - 1cap);"><use href="#svg--linkedin"></use></svg>{{ '@' + author.linkedin }}</a></dd>
     </dl>
 </address>
 

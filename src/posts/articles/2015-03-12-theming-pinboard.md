@@ -39,7 +39,7 @@ Suddenly annoyed by this fact, I decided I’d once-and-for-all tackle the less-
 
 ## The First Step
 
-<aside><p>What do I mean when I say <em>theming</em> or <em>skinning</em>? In essense, this the practice of applying a secondary or tertiary design or colour palette to a website or application. You can see this in action on <a rel="external" href="http://www.csszengarden.com">CSS Zen Garden</a> or <a rel="external" href="https://adactio.com/about/site/#skins">Adactio</a>.</p></aside>To begin with, I wanted to find the pain points of *Pinboard’s* default design and address them in my theme. Most of the problems I have with the design have to do with white-space and poorly distinguished categorisation.
+<aside><p>What do I mean when I say <em>theming</em> or <em>skinning</em>? In essense, this the practice of applying a secondary or tertiary design or colour palette to a website or application. You can see this in action on <a href="http://www.csszengarden.com" rel="external">CSS Zen Garden</a> or <a href="https://adactio.com/about/site/#skins" rel="external">Adactio</a>.</p></aside>To begin with, I wanted to find the pain points of *Pinboard’s* default design and address them in my theme. Most of the problems I have with the design have to do with white-space and poorly distinguished categorisation.
 
 <figure>
     {% image './images/content/pinboard-before.png', 'A screenshot of Pinboard’s default dashboard design' %}
@@ -79,7 +79,7 @@ The gist of the plugin is that you can define CSS styles and apply them to pages
 </style>
 ```
 
-<aside><p>I actually wish that the way in which styles are saved and stored could be improved—after switching to <a rel="external" href="https://git-scm.com">git</a>, I have a tendency to want to add versioning to all of my projects. If there was some sort of <a rel="external" href="https://gist.github.com">GitHub Gist</a> hook or something—Let me know <a href="#respond">in the comments</a> if you know of anything like what I’m looking for!</p></aside>The injected CSS actually refreshes as well, à la [LiveReload](http://livereload.com), so you don’t need to refresh your browser when saving changes. The in-browser code editor isn’t terrible either; it’s running on [CodeMirror](http://codemirror.net).
+<aside><p>I actually wish that the way in which styles are saved and stored could be improved—after switching to <a href="https://git-scm.com" rel="external">git</a>, I have a tendency to want to add versioning to all of my projects. If there was some sort of <a href="https://gist.github.com" rel="external">GitHub Gist</a> hook or something—Let me know <a href="#respond">in the comments</a> if you know of anything like what I’m looking for!</p></aside>The injected CSS actually refreshes as well, à la [LiveReload](http://livereload.com), so you don’t need to refresh your browser when saving changes. The in-browser code editor isn’t terrible either; it’s running on [CodeMirror](http://codemirror.net).
 
 <h2 id="brass-tacks">Good old Brass Tacks</h2>
 
@@ -217,7 +217,7 @@ html {
 **You can view the final stylesheet that I’m using on Github Gist:**
 
 <nav class=" [ grid ] [ navigator ] ">
-    <a class="button" href="https://gist.github.com/{{ author.github }}/ef5367e7dd263356c48a">gist.github.com →</a>
+    <a href="https://gist.github.com/{{ author.github }}/ef5367e7dd263356c48a" class="button">gist.github.com →</a>
 </nav>
 
 ## Conclusion

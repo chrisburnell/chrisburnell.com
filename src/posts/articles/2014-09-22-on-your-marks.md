@@ -46,7 +46,7 @@ First, let’s look at some statistics for loading *Disqus* comments on page loa
 
 By and large, this isn’t a massive hit. But we can *almost* always make things faster. I think it comes down what content is important—most people don’t comment on my articles, which begs the question: do most people care about the comments? That’s a difficult question to answer, but I think the point to drive home is that most people seem not to need the comments section—they’re here to read the articles. Maybe that will change over time, but with a mobile first approach, it’s important to consider what constraints mobile users could be under; namely, poor Internet connection speed and low processing power. The number of users browsing on mobile phones and tablets has only escalated in recent years, and we should be able to cater to their needs in ways other than building responsively.
 
-<blockquote><p>You shouldn’t impede your users access to your content by requiring them to download things that do not support it. Related articles, comments etc, these are secondary to the content itself, so if the user wants to see that they’ll be happy to exchange a single click over more DB queries at run time, or additional HTTP requests and JavaScript interpretation. Essentially, build it progressively enhanced.</p><cite class="h-cite"><a rel="external" href="https://surfthedream.com.au">Justin Avery</a> of <a rel="external" href="http://responsivedesign.is">Responsive Web Design</a></cite></blockquote>
+<blockquote><p>You shouldn’t impede your users access to your content by requiring them to download things that do not support it. Related articles, comments etc, these are secondary to the content itself, so if the user wants to see that they’ll be happy to exchange a single click over more DB queries at run time, or additional HTTP requests and JavaScript interpretation. Essentially, build it progressively enhanced.</p><cite class="h-cite"><a href="https://surfthedream.com.au" rel="external">Justin Avery</a> of <a href="http://responsivedesign.is" rel="external">Responsive Web Design</a></cite></blockquote>
 
 So what can we do to reduce the page weight and load time for a majority of users? We can *conditionally load comments* as and when a user wants them.
 
@@ -122,7 +122,7 @@ What we’re doing here is:
 
 Everything’s looking sweet so far, so let’s tackle the {{ 2 | ordinal | safe }} and {{ 3 | ordinal | safe }} conditions from above: watching for a hash change in the URL (pointing to `#comment`) or catching it when the page is loaded.
 
-<aside><p>Check out the support for <a rel="external" href="http://caniuse.com/#feat=hashchange">onhashchange on Can I Use.</a> before jumping in too deep!</p></aside>
+<aside><p>Check out the support for <a href="http://caniuse.com/#feat=hashchange" rel="external">onhashchange on Can I Use.</a> before jumping in too deep!</p></aside>
 
 {% browserSupport 'hashchange' %}
 

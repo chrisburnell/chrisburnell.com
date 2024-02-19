@@ -36,7 +36,7 @@ Place the dough ingredients into the bread pan in the order listed: egg + water;
 
 When the cycle is completed, remove from the dough from the bread pan and tip onto lightly-floured work surface. Punch down dough and divide dough into 18 equal pieces. Shape each peice into a smooth ball. Place balls, 2 inches apart, onto greased baking sheets or into baking trays.
 
-Cover, let rise in warm, draft-free place, 30–60 minutes or until double in size. After some time (you’ll have to do some guessing), <a id="preheat-step">begin heating the oven to 190°C/375°F.</a>
+Cover, let rise in warm, draft-free place, 30–60 minutes or until double in size. After some time (you’ll have to do some guessing), <span id="preheat-step">begin heating the oven to 190°C/375°F.</span>
 
 When doubled in size, beat together egg wash ingredients and brush over rolls.
 

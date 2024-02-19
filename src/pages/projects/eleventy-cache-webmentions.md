@@ -222,7 +222,7 @@ webmentions.forEach((webmention) => {
 {% raw %}
 ```twig
 {# get Array of Webmentions for a given URL #}
-{% set webmentions = ("https://example.com" + page.url) | getWebmentions %}
+{% set webmentions = ('https://example.com' + page.url) | getWebmentions %}
 
 {# filter Webmentions by their response type #}
 {{ set responses = webmentions | getWebmentionsByTypes(['mention-of', 'in-reply-to']) }}
@@ -306,7 +306,7 @@ If you would rather get Webmentions for a given page directly from a Layout/Incl
 
 {% raw %}
 ```twig
-{% set webmentions = ("https://example.com" + page.url) | getWebmentions %}
+{% set webmentions = ('https://example.com' + page.url) | getWebmentions %}
 {% for webmention in webmentions %}
     ...
 {% endfor %}

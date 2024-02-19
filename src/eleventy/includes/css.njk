@@ -1,6 +1,6 @@
 {% if not global.cssnakedday -%}
 	{# Critical CSS -#}
-	{%- if eleventy.env.runMode !== "build" %}
+	{%- if eleventy.env.runMode !== 'build' %}
 		{# External files (local dev live reload will refresh without page reload) -#}
 		<link rel="stylesheet" href="{% getBundleFileUrl 'css', 'critical' %}">
 	{%- else  %}

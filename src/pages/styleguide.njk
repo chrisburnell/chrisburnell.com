@@ -75,9 +75,9 @@ truncate: true
 <h2>Font Families</h2>
 
 <div class=" [ flow ] " style="--flow-space: 1rem">
-	<div style="font-family: var(--font-family-sans);">{{ designTokens['font-families']['sans'] | replace('"', '') | replace("'", "") }}</div>
-	<div style="font-family: var(--font-family-serif);">{{ designTokens['font-families']['serif'] | replace('"', '') | replace("'", "") }}</div>
-	<div style="font-family: var(--font-family-monospace);">{{ designTokens['font-families']['monospace'] | replace('"', '') | replace("'", "") }}</div>
+	<div style="font-family: var(--font-family-sans);">{{ designTokens['font-families']['sans'] | replace('"', '') | replace("'", '') }}</div>
+	<div style="font-family: var(--font-family-serif);">{{ designTokens['font-families']['serif'] | replace('"', '') | replace("'", '') }}</div>
+	<div style="font-family: var(--font-family-monospace);">{{ designTokens['font-families']['monospace'] | replace('"', '') | replace("'", '') }}</div>
 </div>
 
 <h2>Headings</h2>
@@ -519,7 +519,7 @@ p q r s t u v w x y z { | } ~</pre>
 <div class=" [ grid ] [ navigator ] ">
 	<button>Button</button>
 	<button disabled>Disabled</button>
-	<a class=" [ button ] " href="#buttons">Styled Anchor</a>
+	<a href="#buttons" class=" [ button ] ">Styled Anchor</a>
 </div>
 
 <h2>Details</h2>
@@ -585,7 +585,7 @@ p q r s t u v w x y z { | } ~</pre>
 
 <h2>Sparklines</h2>
 
-<div class=" [ grid ] ">
+<div class=" [ grid ] " style="--min-inline-size: 212px;">
 	<article style="display: grid; place-items: center;">
 		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" gradient-color="var(--color-raven)" fill="true" endpoint-color="var(--color-maple)" curve="true" animate="true" start-label="Start" end-label="End"></svg-sparkline>
 	</article>

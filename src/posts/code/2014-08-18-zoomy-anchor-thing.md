@@ -15,7 +15,7 @@ syndicate_to:
 <a href="#" class="article-link">
 	<img src="/images/banners/lets-look-back_mobile.png" alt="A photograph of a line hiker on a path in the forest with steep cliffs reaching upwards on either side">
 	<span class="article-title">Let’s Look Back</span>
-	<time class="article-date" datetime="2014-02-09T02:19:00+00:00">Feb 09, 2014</time>
+	<time datetime="2014-02-09T02:19:00+00:00" class="article-date">Feb 09, 2014</time>
 </a>
 ```
 

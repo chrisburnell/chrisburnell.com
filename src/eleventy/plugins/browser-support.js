@@ -8,8 +8,8 @@ import browsersByType from "../../eleventy/data/browsersByType.js"
 import { nowISO } from "../data/global.js"
 import { cacheDurations } from "../data/site.js"
 const require = createRequire(import.meta.url)
-// import mdnBrowserData from "@mdn/browser-compat-data" with { type: "json" }
 const mdnBrowserData = require("../../../node_modules/@mdn/browser-compat-data/data.json")
+// import mdnBrowserData from "@mdn/browser-compat-data" assert { type: "json" }
 
 const pkg = require("../../../package.json")
 

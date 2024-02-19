@@ -5,7 +5,7 @@
 	{% if in_reply_to and rsvp -%}
 		<li class=" [ rsvp ] ">
 			{{ rsvp_string | safe }}
-			<a class=" [ h-cite  u-in-reply-to ] " href="{{ reply_url }}">{{ reply_title }}</a>
+			<a href="{{ reply_url }}" class=" [ h-cite  u-in-reply-to ] ">{{ reply_title }}</a>
 			<data class=" [ p-rsvp ] " value="{{ rsvp.value }}" hidden></data>
 		</li>
 	{% endif %}
@@ -17,9 +17,9 @@
 			{% else %}
 				<small>took place</small>
 			{% endif %}
-			<time class=" [ dt-start ] " datetime="{{ rsvp.date | rfc3339Date }}">{{ rsvp.date | friendlyDate }} {{ rsvp.date | friendlyTime(false) }}</time>
+			<time datetime="{{ rsvp.date | rfc3339Date }}" class=" [ dt-start ] ">{{ rsvp.date | friendlyDate }} {{ rsvp.date | friendlyTime(false) }}</time>
 			–
-			<time class=" [ dt-end ] " datetime="{{ rsvp.end | rfc3339Date }}">{% if rsvp.date | friendlyDate != rsvp.end | friendlyDate %}{{ rsvp.end | friendlyDate }} {% endif %}{{ rsvp.end | friendlyTime(true) }}</time>
+			<time datetime="{{ rsvp.end | rfc3339Date }}" class=" [ dt-end ] ">{% if rsvp.date | friendlyDate != rsvp.end | friendlyDate %}{{ rsvp.end | friendlyDate }} {% endif %}{{ rsvp.end | friendlyTime(true) }}</time>
 		</li>
 	{% endif %}
 	{% if show_reading_length %}
@@ -35,7 +35,7 @@
 			<c-emoji>{{ emojis.tag }}</c-emoji>
 			<small>tagged</small>
 			{% for tag in tags_filtered -%}
-				<a class=" [ p-tag ] " href="/tag/{{ tag }}/">{{ tag }}</a>
+				<a href="/tag/{{ tag }}/" class=" [ p-tag ] ">{{ tag }}</a>
 				{%- if not loop.last %}, {% endif %}
 			{%- endfor %}
 		</li>
@@ -79,7 +79,7 @@
 		<li class=" [ date-released ] ">
 			<c-emoji>{{ emojis.calendar }}</c-emoji>
 			<small>released</small>
-			<time class=" [ dt-released ] " datetime="{{ release | rfc3339Date }}">{{ release | friendlyDate }}</time>
+			<time datetime="{{ release | rfc3339Date }}" class=" [ dt-released ] ">{{ release | friendlyDate }}</time>
 		</li>
 	{% endif %}
 	{% if rating %}
@@ -101,9 +101,9 @@
 			<small>check-in</small>
 			{% set checkin = checkin | getPlace('object') %}
 			{% if checkin.url %}
-				<a class=" [ u-location ] " href="{{ checkin.url }}">{{ checkin.title }}</a>
+				<a href="{{ checkin.url }}" class=" [ u-location ] ">{{ checkin.title }}</a>
 			{% elif checkin.lat and checkin.long %}
-				<a class=" [ u-location ] " href="http://www.openstreetmap.org/#map=13/{{ checkin.lat }}/{{ checkin.long }}">{{ checkin.title }}</a>
+				<a href="http://www.openstreetmap.org/#map=13/{{ checkin.lat }}/{{ checkin.long }}" class=" [ u-location ] ">{{ checkin.title }}</a>
 			{% else %}
 				<strong class=" [ p-location ] ">{{ checkin.title | default(checkin) }}</strong>
 			{% endif %}
@@ -140,7 +140,7 @@
 			<a href="{{ posting_method }}">{{ posting_method | getPostingMethodTitle }}</a>
 		</li>
 	{% endif %}
-	{% if eleventy.env.runMode === "build" and not draft and published !== false and not "ignore" in tags %}
+	{% if eleventy.env.runMode === 'build' and not draft and published !== false and not 'ignore' in tags %}
 		<li class=" [ shorturl ] ">
 			{% set shorturl_id = date | NewBase60(categoryCode, collections[category]) -%}
 			<c-emoji>{{ emojis.link }}</c-emoji>

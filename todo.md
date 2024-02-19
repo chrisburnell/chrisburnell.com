@@ -2,5 +2,6 @@
 - figure out how to resize <code> elements with `font-size-adjust: from-font;"
 - get dates working in OG Images
     - https://github.com/KiwiKilian/eleventy-plugin-og-image
-- something wrong with image shortcode + SVGs (Indieweb logo)
+- use new eleventy-img transform instead of image shortcode
 - use utopia-core-scss to generate fluid spaces, type, etc.
+- review github actions to streamline stuff a bit more

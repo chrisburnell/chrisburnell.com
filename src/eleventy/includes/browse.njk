@@ -7,7 +7,7 @@
 			<ol class=" [ browse__list ] ">
 				{% if previous_post %}
 					<li>
-						<a class=" [ browse__previous ] " href="{{ previous_post.url }}">
+						<a href="{{ previous_post.url }}" class=" [ browse__previous ] ">
 							<strong>← Older</strong>
 							<br>
 							{{ previous_post.data.title | default(previous_post.data.of_title) | default(previous_post.data.of_title_fallback) | striptags(true) | safe }}
@@ -16,7 +16,7 @@
 				{% endif %}
 				{% if next_post %}
 					<li>
-						<a class=" [ browse__next ] " href="{{ next_post.url }}">
+						<a href="{{ next_post.url }}" class=" [ browse__next ] ">
 							<strong>Newer →</strong>
 							<br>
 							{{ next_post.data.title | default(next_post.data.of_title) | default(next_post.data.of_title_fallback) | striptags(true) | safe }}

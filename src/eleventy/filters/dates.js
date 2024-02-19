@@ -49,7 +49,7 @@ export const friendlyDateLong = (dateString) => {
 }
 
 /**
- * @param {satetime} value
+ * @param {datetime} value
  * @param {boolean} [showTimezone]
  * @returns {string}
  */
@@ -102,8 +102,8 @@ export const epoch = (dateString) => {
 
 /**
  * Calculate number of days between now and a given date.
- * @param {Datetime} date
- * @returns {String}
+ * @param {datetime} date
+ * @returns {string}
  */
 export const daysUntil = (date) => {
 	const future = new Date(date)
@@ -120,6 +120,10 @@ export const dateSort = (a, b) => {
 	return new Date(b.data.date) - new Date(a.data.date)
 }
 
+/**
+ * @param {object[]} array
+ * @returns {object[]}
+ */
 export const dateSortFilter = (array) => {
 	return array.sort(dateSort)
 }

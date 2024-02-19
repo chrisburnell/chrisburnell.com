@@ -23,7 +23,8 @@ export default async function (value, outputPath) {
 				const headingHTML = striptags(
 					$(element)
 						.html()
-						.replace(/\s+<small>.*<\/small>$/g, ""),
+						.replace(/\s+<small>.*<\/small>$/g, "")
+						.replace("&amp;", "and"),
 				)
 				const headingID = $(element).attr("id") || slugify(headingHTML.replace(/([.‘’“”])/g, ""))
 				tocHtml += `<li><a href="#${headingID}">${headingHTML}</a></li>`
@@ -42,16 +43,16 @@ export default async function (value, outputPath) {
 		// Process and generate fragment anchors for content headings
 		const articleHeadings = $(".content h2:not(.no-fragment)")
 		articleHeadings.each((i, element) => {
-			const headingID =
-				$(element).attr("id") ||
-				slugify(
-					$(element)
-						.text()
-						.replace(/([.‘’“”])/g, ""),
-				)
+			const headingHTML = striptags(
+				$(element)
+					.html()
+					.replace(/\s+<small>.*<\/small>$/g, "")
+					.replace("&amp;", "and"),
+			)
+			const headingID = $(element).attr("id") || slugify(headingHTML.replace(/([.‘’“”])/g, ""))
 			$(element).html(`
 				${$(element).html()}
-				<a class=" [ fragment-anchor ] " href="#${headingID}" title="Permalink for ${$(element).text().trim()}"><span class="visually-hidden">Permalink </span>¶</a>
+				<a href="#${headingID}" class=" [ fragment-anchor ] " title="Permalink for ${$(element).text().trim()}"><span class="visually-hidden">Permalink </span>¶</a>
 			`)
 			$(element).attr("id", headingID)
 		})

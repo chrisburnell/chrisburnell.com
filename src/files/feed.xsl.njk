@@ -60,7 +60,7 @@ sitemap:
               {%- endfor -%}
             </ol>
             <ol class=" [ cluster ] [ footer__navigation ] ">
-              <li><a id="copyright" rel="license" href="/license/">© {{ site.established }}–{{ global.nowISO | friendlyDate("yyyy") }} <span class=" [ canada ] ">{{ author.name }}</span></a></li>
+              <li><a href="/license/" id="copyright" rel="license">© {{ site.established }}–{{ global.nowISO | friendlyDate('yyyy') }} <span class=" [ canada ] ">{{ author.name }}</span></a></li>
               {%- for item in socials -%}
                 {%- if not item.hidden and item.primary -%}
                   <li>
@@ -68,13 +68,13 @@ sitemap:
                     {%- if item.key -%}
                       {%- set url = url + author[item.key] -%}
                     {%- endif -%}
-                    <a tabindex="-1"{% if item.mf_property %} class=" [ p-{{ item.mf_property }} ] "{% endif %} href="{{ url }}" rel="me">{{ item.title }}</a>
+                    <a href="{{ url }}" tabindex="-1"{% if item.mf_property %} class=" [ p-{{ item.mf_property }} ] "{% endif %} rel="me">{{ item.title }}</a>
                   </li>
                 {%- endif -%}
               {%- endfor -%}
             </ol>
             <div class=" [ author ] ">
-              <a class=" [ author__information ] [ flow ] " href="/about/" rel="author  me">
+              <a href="/about/" class=" [ author__information ] [ flow ] " rel="author  me">
                 <img src="/images/avatar.jpeg"
                   srcset="/images/avatar.jpeg 1x,
                       /images/avatar@2x.jpeg 2x,

@@ -2,13 +2,13 @@ BEGIN:VCALENDAR
 VERSION:2.0
 CALSCALE:GREGORIAN
 {% for item in collections.rsvps %}
-{%- if item.data.rsvp.value != "no" -%}
-{%- set location = item.data.in_reply_to.url | default(item.data.in_reply_to) | getPlace | replace(",", "\\,") -%}
+{%- if item.data.rsvp.value != 'no' -%}
+{%- set location = item.data.in_reply_to.url | default(item.data.in_reply_to) | getPlace | replace(',', '\\,') -%}
 BEGIN:VEVENT
 SUMMARY:{{ item.data.in_reply_to.title | default(item.data.in_reply_to.url) | default(item.data.in_reply_to) | replace(',', '\\,') }}
 DESCRIPTION:Details:\n{{ item.data.in_reply_to.url | default(item.data.in_reply_to) }}
-DTSTART;TZID="{{ item.data.rsvp.date | friendlyTimezone }}":{{ item.data.rsvp.date | rfc3339Date(false) | replace("-", "") | replace(":", "") }}
-DTEND;TZID="{{ item.data.rsvp.end | friendlyTimezone }}":{{ item.data.rsvp.end | rfc3339Date(false) | replace("-", "") | replace(":", "") }}{% if location %}
+DTSTART;TZID="{{ item.data.rsvp.date | friendlyTimezone }}":{{ item.data.rsvp.date | rfc3339Date(false) | replace('-', '') | replace(':', '') }}
+DTEND;TZID="{{ item.data.rsvp.end | friendlyTimezone }}":{{ item.data.rsvp.end | rfc3339Date(false) | replace('-', '') | replace(':', '') }}{% if location %}
 LOCATION:{{ location }}{% endif %}
 BEGIN:VALARM
 ACTION:DISPLAY

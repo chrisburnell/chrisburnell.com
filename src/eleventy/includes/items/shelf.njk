@@ -1,12 +1,12 @@
 <article class=" [ flow ] {% if hfeed and item.data.mf_root %}[ h-{{ item.data.mf_root }} ] {% endif %}">
 	{% if item.data.cover %}
-		{% if item.url and item.data.tags and "clickthrough" in item.data.tags %}
-			<a class=" [ cover-anchor ] " href="{{ item.data.of_url | default(item.url) | striptags(true) | safe }}" aria-hidden="true" tabindex="-1">
+		{% if item.url and item.data.tags and 'clickthrough' in item.data.tags %}
+			<a href="{{ item.data.of_url | default(item.url) | striptags(true) | safe }}" class=" [ cover-anchor ] " aria-hidden="true" tabindex="-1">
 		{% elif item.url %}
-			<a class=" [ cover-anchor ] " href="{{ item.url | striptags(true) | safe }}" aria-hidden="true" tabindex="-1">
+			<a href="{{ item.url | striptags(true) | safe }}" class=" [ cover-anchor ] " aria-hidden="true" tabindex="-1">
 		{% endif %}
 		<picture>
-			{% if eleventy.env.runMode === "build" %}
+			{% if eleventy.env.runMode === 'build' %}
 				<source type="image/avif" srcset="/images/built/{{ item.data.cover | replace('jpg', 'avif') | replace('png', 'avif') }}">
 			{% endif %}
 			<source type="image/webp" srcset="/images/built/{{ item.data.cover | replace('jpg', 'webp') | replace('png', 'webp') }}">
@@ -17,7 +17,7 @@
 		{% endif %}
 	{% endif %}
 	<h1>
-		{% if item.url and item.data.tags and "clickthrough" in item.data.tags %}
+		{% if item.url and item.data.tags and 'clickthrough' in item.data.tags %}
 			<a href="{{ item.data.of_url | default(item.url) | striptags(true) | safe }}">
 		{% elif item.url %}
 			<a href="{{ item.url | striptags(true) | safe }}">
@@ -45,7 +45,7 @@
 			{% endif %}
 		</div>
 	{% endif %}
-	{% if item.data.mf_root == "review" %}
+	{% if item.data.mf_root == 'review' %}
 		<div>
 			{% if item.data.rating == 'Parti Pris' %}
 				<data class=" [ p-rating ] " value="Parti Pris">Parti Pris</data>
@@ -66,9 +66,9 @@
 		</div>
 	{% endif %}
 	{% if item.data.date %}
-		<time class=" [ dt-published ] " datetime="{{ item.data.date | rfc3339Date }}" hidden>{{ item.data.date | friendlyDateLong | safe }}</time>
+		<time datetime="{{ item.data.date | rfc3339Date }}" class=" [ dt-published ] " hidden>{{ item.data.date | friendlyDateLong | safe }}</time>
 		{% if item.data.updated %}
-			<time class=" [ dt-updated ] " datetime="{{ item.data.updated | rfc3339Date }}" hidden>{{ item.data.updated | friendlyDateLong | safe }}</time>
+			<time datetime="{{ item.data.updated | rfc3339Date }}" class=" [ dt-updated ] " hidden>{{ item.data.updated | friendlyDateLong | safe }}</time>
 		{% endif %}
 	{% endif %}
 	{% if item.data.mf_property and item.data.of_url %}

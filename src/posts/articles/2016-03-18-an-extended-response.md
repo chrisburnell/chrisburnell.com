@@ -37,7 +37,7 @@ The gist of Harry’s article is that using `@extend` to repeat styles is not wo
 While using `@mixin` means repeated code in the compiled CSS output (remember: **D**on’t **R**epeat **Y**ourself), *gzipping* our CSS will actually make the impact of this repeated code almost negligible; however, it’s important to ensure that any and all static output from a `@mixin` is in the same order in each instance it is used. This is because *gzip* casts repeated strings to a variable and substitutes in the variable (instead of the full string) wherever the string is repeated in the CSS. By ensuring the same (or as close to the same) order of selectors, properties, values, etc. in the output of a `@mixin`, you set the maximum-possible-length-string of characters to a variable and thereby reduce the size of your *gzipped output CSS*.
 
 <div class="edit">
-    <p>If you want a clearer explanation or more information on the above, check out <a rel="external" href="http://csswizardry.com/2016/02/mixins-better-for-performance">Harry Roberts’ article</a>.</p>
+    <p>If you want a clearer explanation or more information on the above, check out <a href="http://csswizardry.com/2016/02/mixins-better-for-performance" rel="external">Harry Roberts’ article</a>.</p>
 </div>
 
 Harry ran some benchmarking tests on both `@extend` and `@mixin`, and determined that `@mixin` were as performant as, if not more than, `@extend`. This spurred me on to refactor my Sass and make sure I was using `@extend` properly…

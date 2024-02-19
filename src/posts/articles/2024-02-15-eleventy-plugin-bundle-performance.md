@@ -94,7 +94,7 @@ Something finally clicked in my brain and I realised this would be a perfect opp
 
 By caching the result of the `renderFile` shortcodes pointing to CSS and JavaScript assets, I found that my initial build times were sliced down to just 30 seconds! Between all the cobwebs and (admittedly) spaghetti code in the previous iteration of my website, I hadn’t seen build times this short in *years*, not since I had many hundreds fewer pages and bottlenecks like this weren’t as obvious and painful so as to initiate an major refactoring project!
 
-## Memoizing Build Assets
+<h2 id="memoizing-assets">Memoizing Build Assets</h2>
 
 Part of my build already included a plugin that added JavaScript as a templating language, pumps rendered JS files through [esbuild](https://esbuild.github.io/), and spits out the result. This allowed me to
 

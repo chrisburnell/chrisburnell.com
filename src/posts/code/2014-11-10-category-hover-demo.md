@@ -13,27 +13,27 @@ syndicate_to:
 ```html
 <div class="modal">
 	<div class="card  archipelago">
-		<a class="card-category" href="#">
+		<a href="#" class="card-category">
 			<span>Archipelago</span>
 		</a>
 	</div>
 	<div class="card  butte">
-		<a class="card-category" href="#">
+		<a href="#" class="card-category">
 			<span>Butte</span>
 		</a>
 	</div>
 	<div class="card  canyon">
-		<a class="card-category" href="#">
+		<a href="#" class="card-category">
 			<span>Canyon</span>
 		</a>
 	</div>
 	<div class="card  dune">
-		<a class="card-category" href="#">
+		<a href="#" class="card-category">
 			<span>Dune</span>
 		</a>
 	</div>
 	<div class="card  estuary">
-		<a class="card-category" href="#">
+		<a href="#" class="card-category">
 			<span>Estuary</span>
 		</a>
 	</div>

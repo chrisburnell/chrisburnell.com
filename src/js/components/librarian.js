@@ -5,8 +5,8 @@
 class Librarian {
 	/**
 	 * @constructor
-	 * @param {String} buttonsSelector - The selector for sorting buttons.
-	 * @param {String} shelfSelector - The selector for the shelf.
+	 * @param {string} buttonsSelector - The selector for sorting buttons.
+	 * @param {string} shelfSelector - The selector for the shelf.
 	 */
 	constructor(buttonsSelector, shelfSelector) {
 		this.buttonsSelector = buttonsSelector || "[data-sort]"
@@ -45,9 +45,9 @@ class Librarian {
 	/**
 	 * Grabs the appropriate value from a given shelf item.
 	 * @param {HTMLElement} element - A given shelf item.
-	 * @param {String} selector - A selector to query a subElement of the shelf item.
-	 * @param {String} property - A property of the subElement.
-	 * @returns {String | null} The value obtained from the subElement.
+	 * @param {string} selector - A selector to query a subElement of the shelf item.
+	 * @param {string} property - A property of the subElement.
+	 * @returns {string | null} The value obtained from the subElement.
 	 */
 	getValue(element, selector, property) {
 		const subElement = element.querySelector(selector)
@@ -58,9 +58,9 @@ class Librarian {
 	 * Compares specific values between items on the shelf.
 	 * @param {HTMLElement} a
 	 * @param {HTMLElement} b
-	 * @param {String} selector - A selector to query a subElement of the shelf item.
-	 * @param {String} property - A property of the subElement.
-	 * @returns {Number} The comparison result.
+	 * @param {string} selector - A selector to query a subElement of the shelf item.
+	 * @param {string} property - A property of the subElement.
+	 * @returns {number} The comparison result.
 	 */
 	compareBy(a, b, selector, property) {
 		const valueA = this.getValue(a, selector, property) || ""

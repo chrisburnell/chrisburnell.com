@@ -21,7 +21,7 @@ const decaNumbers = ["twent", "thirt", "fort", "fift", "sixt", "sevent", "eight"
 const conjunctionFormat = new Intl.ListFormat(locale, { style: "long", type: "conjunction" })
 
 /**
- * @param {object[]} strings
+ * @param {string[]} strings
  * @returns {string}
  */
 export const conjunction = (strings) => {
@@ -76,8 +76,8 @@ export const stripHTML = (string) => {
 
 /**
  * Remove newlines from a string.
- * @param {String} input
- * @returns {String}
+ * @param {string} input
+ * @returns {string}
  */
 export const stripNewLines = (string) => {
 	return string.replace("\n", "")
