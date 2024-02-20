@@ -1,6 +1,6 @@
 ---
 title: "&lt;spark-line&gt;"
-emoji: 📈
+emoji: 📉
 github: chrisburnell/spark-line
 branch: main
 npm: "@chrisburnell/spark-line"

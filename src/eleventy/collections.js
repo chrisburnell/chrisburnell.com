@@ -2,11 +2,11 @@ import dotenv from "dotenv"
 dotenv.config()
 
 import { getPublished } from "@chrisburnell/eleventy-cache-webmentions"
+import { isPublished, notReply } from "../functions/collections.js"
+import { exponentialMovingAverage } from "../functions/utils.js"
 import { now } from "./data/global.js"
 import { limits, upcomingDaysLead } from "./data/site.js"
-import { isPublished, notReply } from "./filters/collections.js"
 import { dateSort, epoch } from "./filters/dates.js"
-import { exponentialMovingAverage } from "./filters/utils.js"
 
 const durationDay = 24 * 60 * 60 * 1000
 
@@ -46,6 +46,9 @@ export default {
 	},
 	blogPosts: (collection) => {
 		return filterCollection(collection, "blog")
+	},
+	pinnedPosts: (collection) => {
+		return filterCollection(collection, "pinned")
 	},
 	projects: (collection) => {
 		return filterCollection(collection, "project")

@@ -1,3 +1,5 @@
+import emojis from "../../eleventy/data/emojis.js"
+
 export default {
 	list: "shelf",
 	mf_root: "review",
@@ -8,5 +10,5 @@ export default {
 	categoryProperPlural: "beer reviews",
 	categoryCode: "b",
 	tags: ["beer", "review"],
-	emoji: "🍺",
+	emoji: emojis.beer,
 }

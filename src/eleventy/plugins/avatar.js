@@ -2,9 +2,9 @@ import dotenv from "dotenv"
 dotenv.config()
 
 import Image from "@11ty/eleventy-img"
+import { getMastodonHandle } from "../../functions/utils.js"
 import { cacheDurations, url as siteURL } from "../data/site.js"
 import { getHost } from "../filters/urls.js"
-import { getMastodonHandle } from "../filters/utils.js"
 
 // Avatar Dimensions
 const size = 96 // 48 * 2

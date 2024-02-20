@@ -30,6 +30,8 @@ I author posts of various *types* on this website, some of which I syndicate to 
 
 I still need to do some work to change my syndication model from <abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr> to <abbr title="Publish on Own Site, Syndicate Elsewhere">POSSE</abbr>. At the moment, because my Micropub endpoint doesn’t have the ability to modify an existing post, I first post to *Mastodon* and grab the permalinks from the responses which are then pumped into the front matter as syndication targets of the post when it gets posted to *GitHub*.
 
+--------
+
 ## Tools Used
 
 To handle *incoming* Webmentions, I use *[Webmention.io](https://webmention.io)*, which takes care of parsing microformats and all sorts of filtering to ensure I’m not printing spam or advertisements on my website.
@@ -43,6 +45,8 @@ I use *[Aperture](https://aperture.p3k.io/)* and *[Monocle](https://monocle.p3k.
 *Outgoing* Webmentions are handled for me by *[Telegraph](https://telegraph.p3k.io)*, which also takes care of microformats parsing and endpoint discovery for each link in my content.
 
 Lastly, I use *[OwnYourBeer](https://ownyourbeer.chrisburnell.com)* to syndicate check-ins from *[Untappd](https://untappd.com)* to my [beer](/beer/) category</a>.
+
+--------
 
 ## Thanks
 

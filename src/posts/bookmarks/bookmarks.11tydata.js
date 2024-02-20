@@ -1,3 +1,5 @@
+import emojis from "../../eleventy/data/emojis.js"
+
 export default {
 	mf_property: "bookmark-of",
 	permalink: "bookmark/{{ page.fileSlug }}/",
@@ -5,6 +7,6 @@ export default {
 	categoryPlural: "bookmarks",
 	categoryCode: "h",
 	tags: ["bookmark", "clickthrough"],
-	emoji: "🔖",
 	excludeFromSearch: true,
+	emoji: emojis.bookmark,
 }

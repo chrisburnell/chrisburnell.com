@@ -60,6 +60,8 @@ eleventyComputed:
 
 </c-details>
 
+<hr>
+
 ## The Long Version
 
 <figure>
@@ -75,6 +77,8 @@ I also feed my passion for the web by continuously finding myself in <q>rabbit h
 
 I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link is a joke">playing the piano</a>, [baking bread](https://chrisburnell.com/note/1574856597/) from time to time, and [playing/DMing Dungeons & Dragons](https://chrisburnell.com/projects/#personal-projects) here and there. Check out my [Uses](/uses/) page too!
 
+<hr>
+
 <h2 id="worked-with">Companies and Organisations I’ve worked with</h2>
 
 <div class=" [ grid ] [ shelf ] [ center ] " style="--min-inline-size: 6em; --gap: var(--size-gap);">
@@ -87,9 +91,13 @@ I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link
     {%- endfor -%}
 </div>
 
+<!-- <hr> -->
+
 <!-- ## Testimonials -->
 
 <!-- {% include 'testimonials.njk' %} -->
+
+<hr>
 
 ## Contact
 
@@ -104,9 +112,11 @@ I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link
     </dl>
 </address>
 
+<hr>
+
 ## Colophon
 
-This website was built with [Eleventy](https://11ty.dev) and the following languages:
+This website was built with [{{ eleventy.generator }}](https://11ty.dev) and the following languages:
 
 <ul style="column-count: 2;">
     <li>HTML</li>

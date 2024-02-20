@@ -1,3 +1,5 @@
+import emojis from "../../eleventy/data/emojis.js";
+
 export default {
 	permalink: "/book/{{ page.fileSlug }}/index.html",
 	category: "book",
@@ -9,5 +11,5 @@ export default {
 	mf_root: "review",
 	mf_property: "read-of",
 	tags: ["book", "review"],
-	emoji: "📖",
+	emoji: emojis.book,
 }

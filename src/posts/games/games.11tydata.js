@@ -1,3 +1,5 @@
+import emojis from "../../eleventy/data/emojis.js";
+
 export default {
 	list: "shelf",
 	mf_root: "review",
@@ -9,5 +11,5 @@ export default {
 	categoryProperPlural: "game reviews",
 	categoryCode: "g",
 	tags: ["game", "review"],
-	emoji: "🕹️",
+	emoji: emojis.game,
 }

@@ -1,9 +1,10 @@
 import { getWebmentions } from "@chrisburnell/eleventy-cache-webmentions"
 import configWebmentions from "../eleventy/config/webmentions.js"
 import { url as siteURL } from "../eleventy/data/site.js"
-import { getMetaImage, getMetaTitle } from "../eleventy/filters/collections.js"
-import { formatAsMarkdown, stripHTML, stripNewLines } from "../eleventy/filters/strings.js"
+import { formatAsMarkdown, stripNewLines } from "../eleventy/filters/strings.js"
 import { getHost } from "../eleventy/filters/urls.js"
+import { getMetaImage, getMetaTitle } from "../functions/collections.js"
+import { stripHTML } from "../functions/strings.js"
 
 export default {
 	layout: "page",

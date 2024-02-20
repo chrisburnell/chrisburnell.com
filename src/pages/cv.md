@@ -20,6 +20,8 @@ Work roles involved creating design systems and tools to enable teams to build m
 
 Passionate about the open web, having published over 50 technical articles, and author of several open-source projects used by thousands of developers worldwide and on production client websites. Actively involved in the web community with many years of experience in organising conferences and meetups, most notably, [State of the Browser](https://stateofthebrowser.com).
 
+<hr>
+
 <h2 style="break-before: page;">Professional Experience</h2>
 
 <div class=" [ space-between ] ">
@@ -83,6 +85,8 @@ Passionate about the open web, having published over 50 technical articles, and 
 
 - Built both the front end and content management implementations for client work, specialising particularly in cross-browser compatibility.
 - Set up and organised learning initiatives for developers, including *Implementor Scrum*, an opportunity for developers to explore best practices and emerging web technologies in a casual group setting.
+
+<hr>
 
 <h2 style="break-before: page;">Community Experience</h2>
 

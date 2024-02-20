@@ -1,3 +1,5 @@
+import emojis from "../../eleventy/data/emojis.js";
+
 export default {
 	list: "shelf",
 	mf_root: "review",
@@ -8,5 +10,5 @@ export default {
 	categoryProperPlural: "music reviews",
 	categoryCode: "m",
 	tags: ["music", "review"],
-	emoji: "🎶",
+	emoji: emojis.music,
 }

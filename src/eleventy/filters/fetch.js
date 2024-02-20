@@ -3,7 +3,6 @@ import stats from "download-stats"
 import { cacheDurations } from "../data/site.js"
 
 /**
- * Return data from the GitHub Repository API.
  * @param {string} repository
  * @returns {object}
  */
@@ -16,6 +15,10 @@ export const githubData = async (repository) => {
 	return json
 }
 
+/**
+ * @param {string} repository
+ * @returns {number}
+ */
 export const stargazers = async (repository) => {
 	const github = await githubData(repository)
 	return parseFloat(github["stargazers_count"])

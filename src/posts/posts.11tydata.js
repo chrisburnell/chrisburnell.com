@@ -1,9 +1,11 @@
 import { getWebmentions } from "@chrisburnell/eleventy-cache-webmentions"
 import configWebmentions from "../eleventy/config/webmentions.js"
 import { url as siteURL } from "../eleventy/data/site.js"
-import { getAuthors, getAuthorsString, getCategoryName, getMetaImage, getMetaTitle, getPropertyLabel, getPropertyTitle, getPropertyTitleFallback, getPropertyURL, getRSVPString, getReplyAuthor, getReplyAuthorString, getReplyTitle, getReplyURL } from "../eleventy/filters/collections.js"
-import { formatAsMarkdown, stripHTML, stripNewLines } from "../eleventy/filters/strings.js"
+import { getCategoryName } from "../eleventy/filters/collections.js"
+import { formatAsMarkdown, stripNewLines } from "../eleventy/filters/strings.js"
 import { getHost } from "../eleventy/filters/urls.js"
+import { getAuthors, getAuthorsString, getMetaImage, getMetaTitle, getPropertyLabel, getPropertyTitle, getPropertyTitleFallback, getPropertyURL, getRSVPString, getReplyAuthor, getReplyAuthorString, getReplyTitle, getReplyURL } from "../functions/collections.js"
+import { stripHTML } from "../functions/strings.js"
 
 export default {
 	layout: "post",

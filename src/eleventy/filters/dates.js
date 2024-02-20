@@ -1,5 +1,4 @@
 import { DateTime } from "luxon"
-
 import { locale } from "../data/site.js"
 
 const ordinalPlurals = new Intl.PluralRules(locale, {
@@ -14,20 +13,20 @@ const ordinalSuffixes = {
 }
 
 /**
- * @param {number} number
- * @returns {string}
- */
-export const ordinal = (number) => {
-	return `${number}<sup>${ordinalSuffixes[ordinalPlurals.select(number)]}</sup>`
-}
-
-/**
  * @param {string} dateString
  * @param {string} format
  * @return {string}
  */
 const formatDatetime = (dateString, format) => {
 	return DateTime.fromISO(dateString, { setZone: true }).toFormat(format)
+}
+
+/**
+ * @param {number} number
+ * @returns {string}
+ */
+export const ordinal = (number) => {
+	return `${number}<sup>${ordinalSuffixes[ordinalPlurals.select(number)]}</sup>`
 }
 
 /**
@@ -67,14 +66,6 @@ export const friendlyTimezone = (value) => {
 }
 
 /**
- * @param {datetime} value
- * @returns {string}
- */
-export const httpDate = (value) => {
-	return DateTime.fromISO(value, { setZone: true }).toHTTP()
-}
-
-/**
  * @param {string} dateString
  * @param {boolean} showTimezone
  * @returns {string}
@@ -101,7 +92,6 @@ export const epoch = (dateString) => {
 }
 
 /**
- * Calculate number of days between now and a given date.
  * @param {datetime} date
  * @returns {string}
  */
@@ -134,7 +124,6 @@ export default {
 	friendlyDateLong,
 	friendlyTime,
 	friendlyTimezone,
-	httpDate,
 	rfc3339Date,
 	w3cDate,
 	epoch,

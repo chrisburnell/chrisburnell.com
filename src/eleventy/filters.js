@@ -13,6 +13,7 @@ export const filtersSync = {
 	strings,
 	urls,
 	utils,
+
 }
 
 export const filtersAsync = {

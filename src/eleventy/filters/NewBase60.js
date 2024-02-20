@@ -1,7 +1,11 @@
 // 60 characters that make up the Sexagesimal numeral system
 const SEQUENCE = "0123456789ABCDEFGHJKLMNPQRSTUVWXYZ_abcdefghijkmnopqrstuvwxyz"
 
-// Converts a Decimal (Base 10) Integer to a Sexagesimal (Base 60) String
+/**
+ * Converts a Decimal (Base 10) Integer to a Sexagesimal (Base 60) String
+ * @param {number} value
+ * @returns {string}
+ */
 const DecimalToSexagesimal = (value) => {
 	if (value === undefined || value === 0) {
 		return 0
@@ -15,7 +19,11 @@ const DecimalToSexagesimal = (value) => {
 	return sexagesimalValue
 }
 
-// Converts a JS Date Object to a Sexageismal (Base 60) String
+/**
+ * Converts a JS Date Object to a Sexagesimal (Base 60) String
+ * @param {datetime} repository
+ * @returns {string}
+ */
 const DateToSexagesimal = (dateObject) => {
 	let sinceEpoch = new Date(dateObject).getTime()
 	let epochDays = Math.floor(sinceEpoch / (1000 * 60 * 60 * 24))
@@ -23,7 +31,7 @@ const DateToSexagesimal = (dateObject) => {
 }
 
 /**
- * @param {string} date
+ * @param {datetime} date
  * @param {string} categoryCode
  * @param {object[]} collection
  * @returns {string}

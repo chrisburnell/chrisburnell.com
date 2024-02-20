@@ -12,6 +12,8 @@ toc: true
 - [Ducky One 2  Keyboard](https://www.duckychannel.com.tw/en/Ducky-One2-RGB-TKL)
 - [Logitech G502 Mouse](https://www.logitechg.com/en-hk/products/gaming-mice/g502-proteus-spectrum-rgb-gaming-mouse.910-004633.html)
 
+--------
+
 ## Software
 
 - [1Password](https://1password.com/) — My preferred password manager.
@@ -23,6 +25,8 @@ toc: true
 - [NetNewsWire](https://netnewswire.com/) — A free and open source RSS reader that I use for MacOS and iOS.
 - [Unclack](https://unclack.app/) — Mutes my microphone when I type on my *(noisy)* keyboard.
 
+--------
+
 ## Development
 
 - [Visual Studio Code](https://code.visualstudio.com/) — My *current* preferred text editor.
@@ -31,11 +35,15 @@ toc: true
 - [Cobalt 2 Colour Theme](https://marketplace.visualstudio.com/items?itemName=wesbos.theme-cobalt2) — A dark theme for text editors by [Wes Bos](https://wesbos.com).
 - [Menlo](https://en.wikipedia.org/wiki/Menlo_(typeface)) / [Menlo for Powerline](https://github.com/abertsch/Menlo-for-Powerline) — I’ve been using this font for like a decade. Text doesn’t look right without it anymore! 😅
 
+--------
+
 ## Services
 
 - [Corvus](https://corvus.chrisburnell.com) — My personal [Micropub](https://indieweb.org/Micropub) server which allows me to create posts on my website from external services (authenticated through [IndieAuth](https://indieweb.org/indieauth)) across all [categories](/posts/#categories) and syndicate them out to social networks if I choose.
 - [FreshRSS](https://www.freshrss.org/) — A self-hosted RSS aggregator. Helps me keep track of many RSS feeds, and I mostly enjoy its built-in reader; although, it still makes it easy to jump into a browser to read a post.
 - [Quill](https://quill.p3k.io/) — My preferred web app for posting to my website through my Micropub server.
+
+--------
 
 ## Coffee
 

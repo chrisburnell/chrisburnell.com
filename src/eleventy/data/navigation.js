@@ -16,14 +16,14 @@ const navigation = [
 		footer: true,
 	},
 	{
-		title: "Explore",
-		url: "/explore/",
-		header: true,
+		title: "Search",
+		url: "/search/",
 		footer: true,
 	},
 	{
-		title: "Search",
-		url: "/search/",
+		title: "Explore",
+		url: "/explore/",
+		header: true,
 		footer: true,
 	},
 	{

@@ -1,3 +1,5 @@
+import emojis from "../../eleventy/data/emojis.js";
+
 export default {
 	list: "shelf",
 	permalink: "video/{{ page.fileSlug }}/",
@@ -5,5 +7,5 @@ export default {
 	categoryPlural: "videos",
 	categoryCode: "v",
 	tags: ["video", "blog", "feature"],
-	emoji: "🎥",
+	emoji: emojis.video,
 }

@@ -1,3 +1,5 @@
+import emojis from "../../eleventy/data/emojis.js";
+
 export default {
 	mf_root: "recipe",
 	mf_property: "recipe-of",
@@ -6,5 +8,5 @@ export default {
 	categoryPlural: "recipes",
 	categoryCode: "d",
 	tags: ["recipe", "blog", "feature"],
-	emoji: "📝",
+	emoji: emojis.recipe,
 }

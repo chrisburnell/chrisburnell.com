@@ -56,7 +56,7 @@ perch: true
 		<ul class=" [ grid ] [ shelf ] " data-layout="natural">
 		{% for item in collections.categories -%}
 			{%- set count = collections[item.title] | arePublished | getCollectionCount -%}
-			<li><a href="{{ site.url }}/{{ item.plural }}.xml" class=" [ strong ] " style="font-size: var(--font-size-gamma);"><c-emoji>{{ item.emoji | default('📄') }}</c-emoji>{{ item.properPlural | title }} <sup>{{ count }}</sup></a></li>
+			<li><a href="{{ site.url }}/{{ item.plural }}.xml" class=" [ strong ] " style="font-size: var(--font-size-gamma);"><c-emoji>{{ item.emoji | default(emojis.paper) }}</c-emoji>{{ item.properPlural | title }} <sup>{{ count }}</sup></a></li>
 		{%- endfor %}
 		</ul>
 
@@ -89,6 +89,8 @@ perch: true
 		<h2>Learn more</h2>
 
 		<p>Visit <a href="https://aboutfeeds.com/">About Feeds</a> to get started with newsreaders and subscribing.</p>
+
+		<hr>
 
 		<div class=" [ grid ] [ navigator ] ">
 			<a href="/posts/" class=" [ button ] ">Browse All Posts</a>

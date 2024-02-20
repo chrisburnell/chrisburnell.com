@@ -15,8 +15,6 @@ const truncate = (() => {
 })()
 
 const stringNumbers = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
-const specialNumbers = ["zeroth", "first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth", "eleventh", "twelfth", "thirteenth", "fourteenth", "fifteenth", "sixteenth", "seventeenth", "eighteenth", "nineteenth"]
-const decaNumbers = ["twent", "thirt", "fort", "fift", "sixt", "sevent", "eight", "ninet"]
 
 const conjunctionFormat = new Intl.ListFormat(locale, { style: "long", type: "conjunction" })
 
@@ -26,17 +24,6 @@ const conjunctionFormat = new Intl.ListFormat(locale, { style: "long", type: "co
  */
 export const conjunction = (strings) => {
 	return conjunctionFormat.format(strings)
-}
-
-/**
- * @param {string} string
- * @param {boolean} [lower]
- * @return {string}
- */
-export const capitalize = (string, lower = false) => {
-	return (lower ? string.toLowerCase() : string).replace(/(?:^|\s|["'([{])+\S/g, (match) => {
-		return match.toUpperCase()
-	})
 }
 
 /**
@@ -67,15 +54,6 @@ export const cleanTags = (string) => {
 }
 
 /**
- * @param {string} string
- * @returns {string}
- */
-export const stripHTML = (string) => {
-	return string.replace(/<\/?[^>]+(>|$)/g, "")
-}
-
-/**
- * Remove newlines from a string.
  * @param {string} input
  * @returns {string}
  */
@@ -125,20 +103,6 @@ export const maxChars = (string, count, condition = true) => {
  * @param {number} number
  * @returns {string}
  */
-export const numberNthFormat = (number) => {
-	if (number < 20) {
-		return specialNumbers[number]
-	}
-	if (number % 10 === 0) {
-		return decaNumbers[Math.floor(number / 10) - 2] + "ieth"
-	}
-	return decaNumbers[Math.floor(number / 10) - 2] + "y-" + specialNumbers[number % 10]
-}
-
-/**
- * @param {number} number
- * @returns {string}
- */
 export const numberStringFormat = (number) => {
 	if (number < stringNumbers.length) {
 		return stringNumbers[number]
@@ -175,16 +139,13 @@ export const spongebob = (string) => {
 
 export default {
 	conjunction,
-	capitalize,
 	specialCapitalize,
 	cleanTags,
-	stripHTML,
 	stripNewLines,
 	stripStrikethrough,
 	maxSentences,
 	maxWords,
 	maxChars,
-	numberNthFormat,
 	numberStringFormat,
 	formatAsMarkdown,
 	spongebob,
