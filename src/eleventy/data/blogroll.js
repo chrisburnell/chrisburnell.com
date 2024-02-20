@@ -350,7 +350,6 @@ const blogroll = [
 		title: "Luke Harris",
 		url: "https://www.lkhrs.com",
 		rss: "https://www.lkhrs.com/blog/index.xml",
-		mastodon: "lkhrs@fosstodon.org",
 	},
 	{
 		title: "Miriam Eric Suzanne",
@@ -693,6 +692,12 @@ const blogroll = [
 			},
 		],
 		mastodon: "codepen@fosstodon.org",
+	},
+	{
+		title: "Juhis Hamatti",
+		url: "https://hamatti.org",
+		rss: "https://hamatti.org/feed/feed.xml",
+		mastodon: "hamatti@mastodon.world",
 	},
 ].sort((a, b) => {
 	return a.title.localeCompare(b.title)

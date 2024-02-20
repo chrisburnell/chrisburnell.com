@@ -8,11 +8,9 @@ on:
   schedule:
     # https://crontab.guru/#33_1_*_*_*
     - cron: "33 1 * * *"
-    - cron: "33 5 * * *"
-    - cron: "33 9 * * *"
+    - cron: "33 7 * * *"
     - cron: "33 13 * * *"
-    - cron: "33 17 * * *"
-    - cron: "33 21 * * *"
+    - cron: "33 19 * * *"
 
 concurrency:
   group: deploy
