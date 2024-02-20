@@ -32,7 +32,7 @@ excludeFromSearch: true
 			{% if collections.rsvpsToday.length %}
 				<div class=" [ box  box--line-length ] [ flow ] ">
 					<h2 id="today-rsvps">
-						<a href="/rsvps/">Events I’m Attending Today</a>
+						<a href="/rsvps/">Events I’m attending soon</a>
 					</h2>
 					<div class=" [ deck ] [ flow ] ">
 						{% for item in collections.rsvpsToday %}
@@ -40,6 +40,7 @@ excludeFromSearch: true
 						{% endfor %}
 					</div>
 				</div>
+
 				<hr>
 			{% endif %}
 
@@ -87,13 +88,15 @@ excludeFromSearch: true
 			{% if collections.rsvpsUpcoming.length %}
 				<hr>
 
-				<h2 id="upcoming-rsvps">
-					<a href="/rsvps/">Upcoming Events</a>
-				</h2>
-				<div class=" [ deck ] [ flow ] ">
-					{% for item in collections.rsvpsUpcoming %}
-						{% include 'items/deck.njk' %}
-					{% endfor %}
+				<div class=" [ box  box--line-length ] [ flow ] ">
+					<h2 id="upcoming-rsvps">
+						<a href="/rsvps/">Upcoming events I’m attending</a>
+					</h2>
+					<div class=" [ deck ] [ flow ] ">
+						{% for item in collections.rsvpsUpcoming %}
+							{% include 'items/deck.njk' %}
+						{% endfor %}
+					</div>
 				</div>
 			{% endif %}
 		</div>

@@ -12,6 +12,7 @@
 
 ## Eleventy Build
 
+- work out logic for pinned posts
 - get dates working in OG Images
     - https://github.com/KiwiKilian/eleventy-plugin-og-image
 - use new eleventy-img transform instead of image shortcode
@@ -21,3 +22,6 @@
 - review github actions to streamline stuff a bit more
 - rework testimonials
 - rework clients logo list
+- build a /now page that shows:
+    - near-upcoming events
+    - reviews (books, games, etc?) that don't yet have a review (i.e. are currently being read/played/etc.)

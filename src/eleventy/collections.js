@@ -173,15 +173,14 @@ export default {
 			.filter(isPublished)
 			.filter((item) => item.data.rsvp)
 			.filter((item) => {
-				// remove RSVPs that have passed the end datetime
-				if (epoch(item.data.rsvp.end) < epoch(now)) {
-					return false
-				}
+				// Check that the end isn't in the past
+				return epoch(now) < epoch(item.data.rsvp.end)
 			})
 			.filter((item) => {
-				const startLead = epoch(item.data.rsvp.date) - durationDay
-				const end = epoch(item.data.rsvp.end)
-				return startLead < epoch(now) && epoch(now) < end
+				// Lead the start by 24 hours
+				const startLeaded = epoch(item.data.rsvp.date) - durationDay
+				// Check that we've passed the leaded start
+				return startLeaded < epoch(now)
 			})
 			.sort(dateSort)
 			.sort((a, b) => {
@@ -202,20 +201,26 @@ export default {
 			.filter(isPublished)
 			.filter((item) => item.data.rsvp)
 			.filter((item) => {
-				// remove RSVPs that have passed the end datetime
-				if (epoch(item.data.rsvp.end) < epoch(now)) {
-					return false
-				}
+				// Check that the end isn't in the past
+				return epoch(now) < epoch(item.data.rsvp.end)
 			})
 			.filter((item) => {
-				const startLead = epoch(item.data.rsvp.date) - durationDay
-				const end = epoch(item.data.rsvp.end)
-				// remove rsvpsToday
-				if (startLead < epoch(now) && epoch(now) < end) {
+				// Remove posts that would be in the rsvpsToday collection
+				const todayStartLeaded = epoch(item.data.rsvp.date) - durationDay
+				if (todayStartLeaded < epoch(now)) {
 					return false
 				}
-				const lead = (item.data.rsvp?.upcoming_days_lead || upcomingDaysLead) * durationDay
-				return item.data.rsvp.show_upcoming_always || (epoch(item.data.rsvp.date) > epoch(now) && epoch(item.data.rsvp.date) - epoch(now) < lead)
+
+				// Check if upcoming RSVPs should ignore the upcoming lead
+				if (item.data.rsvp.show_upcoming_always) {
+					return true
+				}
+
+				// Lead the start by the defined or default lead
+				const upcomingLead = (item.data.rsvp?.upcoming_days_lead || upcomingDaysLead) * durationDay
+				const startLeaded = epoch(item.data.rsvp.date) - upcomingLead
+				// Check that we've passed the leaded start
+				return startLeaded < epoch(now)
 			})
 			.sort(dateSort)
 			.sort((a, b) => {
