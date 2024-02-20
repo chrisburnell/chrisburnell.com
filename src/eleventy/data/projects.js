@@ -64,6 +64,17 @@ export default {
 
 	previousVersions: [
 		{
+			url: "https://v3.chrisburnell.com",
+			data: {
+				date: "2020-08-02T12:00:00+0000",
+				updated: "2024-02-19T20:36:55.000+0800",
+				title: "Version 3",
+				description: "The third version of my personal site where I switched over to using Eleventy and got me addicted to working on my website!",
+				description_markdown: true,
+				emoji: "🐓",
+			},
+		},
+		{
 			url: "https://v2.chrisburnell.com",
 			data: {
 				date: "2013-05-30T12:00:00+0000",
@@ -71,7 +82,7 @@ export default {
 				title: "Version 2",
 				description: "The second version of my personal site that I used for over six years and laid the groundwork and mentality for the next version.",
 				description_markdown: true,
-				emoji: "🐓",
+				emoji: "🐥",
 			},
 		},
 		{

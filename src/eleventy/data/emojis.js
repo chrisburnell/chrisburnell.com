@@ -43,4 +43,5 @@ export default {
 	scroll: "📜",
 	web: "🕸️",
 	hot: "🔥",
+	computer: "💻",
 }
