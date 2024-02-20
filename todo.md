@@ -1,5 +1,10 @@
 # TODO
 
+## Posts
+
+- How I shaved 1.5 minutes off my Eleventy build time
+- Version 4.0.0
+
 ## CSS
 
 - review and refactor CSS and make tasty usage of layers, revert-layer, :where, :is, :has, etc.
