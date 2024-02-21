@@ -44,4 +44,7 @@ export default {
 	web: "🕸️",
 	hot: "🔥",
 	computer: "💻",
+	tools: "🛠️",
+	star: "⭐",
+	now: "⏲️",
 }
