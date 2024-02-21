@@ -11,14 +11,14 @@
 	row-gap: var(--size-tiny);
 	text-align: center;
 
-	%anchor {
+	a {
 		background-color: transparent !important;
 		color: inherit !important;
 		display: block;
-		font-size: var(--font-size-default);
-		font-weight: var(--font-weight-bold);
 		padding: var(--size-tiny) var(--size-tiny-small);
 		position: relative;
+		font-size: var(--font-size-default);
+		font-weight: var(--font-weight-bold);
 		text-align: center;
 		text-decoration: none;
 		transition: all var(--transition-duration) var(--transition-function);

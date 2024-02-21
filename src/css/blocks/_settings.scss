@@ -1,0 +1,52 @@
+////
+/// Settings Popover
+/// @group blocks
+////
+
+.settings-popover {
+	--flow-space: var(--size-medium-large);
+
+	background-color: color-mix(in oklab, h(bear), h(snowy));
+	max-inline-size: 100vi;
+	padding: var(--size-large);
+	border: var(--size-border-thin) solid h(raven);
+	border-radius: var(--border-radius, var(--size-border-thin));
+	box-shadow: var(--box-shadow, var(--box-shadow-medium));
+	position: fixed;
+	inset-block-start: 50%;
+	inset-inline-start: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	text-align: center;
+
+	button {
+		color: inherit !important; // override themes
+	}
+}
+
+::backdrop {
+	background-color: h(thunder, beta);
+}
+
+.settings-popover-button {
+	background-color: h(raven);
+	display: grid;
+	place-items: center;
+	padding: var(--size-tiny);
+	margin-inline-start: 1ex;
+	border-radius: 50%;
+	box-shadow: 0 0 var(--size-border-thin) currentColor;
+
+	svg {
+		fill: color-mix(in oklab, h(thunder), h(mineshaft) 80%);
+		inline-size: calc(var(--font-size-default) * var(--line-height-default));
+		block-size: calc(var(--font-size-default) * var(--line-height-default));
+		transform: scale(0.8) rotate(60deg);
+		transition: transform var(--transition-duration) var(--transition-function);
+	}
+
+	&:is(:hover, :focus, :active) {
+		svg {
+			transform: scale(1)
+		}
+	}
+}

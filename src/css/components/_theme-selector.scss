@@ -4,7 +4,7 @@
 ////
 
 storage-form:has([id="theme-selector"]) {
-	display: inline-block;
+	display: block;
 
 	&:not(:defined) {
 		display: none;

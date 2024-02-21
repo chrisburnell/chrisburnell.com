@@ -36,11 +36,6 @@
 		transition: fill var(--transition-duration) var(--transition-function);
 	}
 
-	select {
-		background-color: h(thunder);
-		color: inherit;
-	}
-
 	span[title] {
 		color: inherit;
 	}

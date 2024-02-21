@@ -128,8 +128,19 @@
 								</li>
 							{% endif %}
 						{% endfor %}
+						<li class=" [ requires-js ] ">
+							<button class=" [ anchor ] [ settings-popover-button ] " popovertarget="settings-popover" title="Toggle Settings Panel">
+								<svg width="24" height="24" aria-hidden="true" focusable="false"><use href="#svg--cog"></use></svg>
+							</button>
+						</li>
 					</ol>
 				</nav>
+				<div id="settings-popover" class=" [ settings-popover ] [ flow ] [ gamma ] [ requires-js ] " popover>
+					{%- include 'theme-selector.njk' -%}
+					<button id="sounds-toggle" class=" [ anchor ] [ js-sounds-toggle ] ">
+						<c-emoji><svg width="16" height="16" aria-hidden="true" focusable="false" style="--fill-hover: var(--color-highland);"><use href="#svg--sound-off"></use></svg></c-emoji><span class=" [ js-sounds-status ] ">Enable sounds</span>
+					</button>
+				</div>
 			</div>
 		</header>
 
@@ -148,7 +159,8 @@
 					{%- endfor -%}
 				</ul>
 				<ul class=" [ cluster ] [ footer__navigation ] ">
-					<li class=" [ requires-js ] ">{%- include 'theme-selector.njk' -%}</li><li class=" [ requires-js ] "><button id="sounds-toggle" class=" [ anchor ] [ js-sounds-toggle ] "><svg width="16" height="16" aria-hidden="true" focusable="false" style="--fill-hover: var(--color-highland);"><use href="#svg--sound-off"></use></svg><span class=" [ js-sounds-status ] ">Enable sounds</span></button>
+					<li>
+						<button class=" [ anchor ] " popovertarget="settings-popover"><svg width="16" height="16" aria-hidden="true" focusable="false" style="--fill-hover: var(--color-highland);"><use href="#svg--cog"></use></svg>Open Settings</button>
 					</li><li><a href="https://github.com/{{ author.github }}/{{ site.repository }}/tree/{{ site.branch }}/{{ page.inputPath }}" id="edit"><svg width="16" height="16" aria-hidden="true" focusable="false" style="--fill-hover: var(--color-highland);"><use href="#svg--edit"></use></svg>Edit this page</a></li><li>{% include 'share-button.njk' %}</li>
 				</ul>
 				<ul class=" [ cluster ] [ footer__navigation ] ">

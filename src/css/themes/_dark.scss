@@ -21,7 +21,7 @@
 	}
 
 	// Set some special dark backgrounds
-	:is(.header, .footer, %box, .table) {
+	:is(.header, .settings-popover, .footer, %box, .table) {
 		background-color: h(thunder);
 		background-color: var(--background-color, color-mix(in oklab, h(thunder), h(mineshaft) 80%));
 	}
@@ -73,6 +73,10 @@
 		&:hover {
 			border-color: h(bowhead);
 		}
+	}
+
+	select {
+		background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='50' fill='%23dddddd'><polygon points='0,0 100,0 50,50'/></svg>");
 	}
 
 	var {
