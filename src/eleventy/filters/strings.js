@@ -1,4 +1,6 @@
+import { encode } from "html-entities"
 import markdownParser from "markdown-it"
+import randomCase from "random-case"
 import capitalizers from "../../data/capitalizers.js"
 import { locale } from "../data/site.js"
 
@@ -51,6 +53,10 @@ export const cleanTags = (string) => {
 		.replace(/\<style(.|\n)*?\<\/style\>/g, "")
 		.replace(/\<(\w+).*?class="\s*\[ support(.|\n)*?\<\/\1\>/g, "")
 		.replace(/\<(\w+).*?class="\s*\[ palette(.|\n)*?\<\/\1\>/g, "")
+}
+
+export const htmlEntities = (string) => {
+	return encode(string)
 }
 
 /**
@@ -129,12 +135,7 @@ export const formatAsMarkdown = (string) => {
  * @returns {string}
  */
 export const spongebob = (string) => {
-	let modifier = 0
-	return string.split("").reduce((string, character) => {
-		const random = Math.max(0, Math.min(1, Math.round(Math.random() + modifier)))
-		modifier = random ? Math.max(modifier - 0.333, -1) : Math.min(modifier + 0.333, 1)
-		return string + (random > 0 ? character.toUpperCase() : character.toLowerCase())
-	}, "")
+	return randomCase(string)
 }
 
 export default {

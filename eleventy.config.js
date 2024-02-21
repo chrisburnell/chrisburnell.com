@@ -110,6 +110,8 @@ export default async function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy({
 		"files": ".",
 		"src/js/components": "js/components/",
+		"node_modules/@chrisburnell/cow-pen/cow-pen.{css,js}": "js/components/",
+		"node_modules/@chrisburnell/instant-photo/instant-photo.{css,js}": "js/components/",
 		"node_modules/@chrisburnell/spark-line/spark-line.{css,js}": "js/components/",
 		"node_modules/@zachleat/details-utils/details-utils.{css,js}": "js/components/",
 	})

@@ -12,6 +12,8 @@ tags:
   - web-component
 ---
 
+<script type="module" src="/js/components/instant-photo.js"></script>
+
 <figure>
     <instant-photo develop>
         <img src="/images/avatar@4x.jpeg" alt="Chris Burnell" class=" [ shadow ] [ canada ] " width="400" height="400">

@@ -2,8 +2,9 @@
 
 ## Posts
 
-- How I shaved 1.5 minutes off my Eleventy build time
 - Version 4.0.0
+- How I shaved 1.5 minutes off my Eleventy build time
+    - Edit this to remove some bits about the refactor/rebuild
 
 ## CSS
 
