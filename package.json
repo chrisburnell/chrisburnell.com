@@ -39,7 +39,7 @@
     "@11ty/eleventy-plugin-webc": "^0.11.2",
     "@11ty/is-land": "^4.0.0",
     "@chrisburnell/bowhead": "^0.3.4",
-    "@chrisburnell/cow-pen": "^0.0.2",
+    "@chrisburnell/cow-pen": "^0.0.3",
     "@chrisburnell/eleventy-cache-webmentions": "^2.0.1",
     "@chrisburnell/instant-photo": "^1.0.0",
     "@chrisburnell/pentatonic": "^1.1.4",
