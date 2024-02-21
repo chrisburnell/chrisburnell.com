@@ -8,7 +8,7 @@ layout: base
 	</ul>
 
 	<h1 id="title" class=" [ title{% if title_error %} title--negative{% elif title_success %} title--positive{% endif %} ] {{ '[ visually-hidden ] ' if not title and not of_title }}" style="view-transition-name: title-{{ page.fileSlug }};">
-		{{ title | default(of_title) | default(of_title_fallback) | striptags(true) | safe }}
+		{{ title | default(of_title) | default(of_title_fallback) | default(meta_title) | striptags(true) | safe }}
 	</h1>
 
 	<div class=" [ description  description--published ] ">
