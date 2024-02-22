@@ -17,7 +17,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  setup:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Set the timezone
@@ -55,10 +55,6 @@ jobs:
         name: List the state of node modules
         continue-on-error: true
         run: npm list
-  build:
-    runs-on: ubuntu-latest
-    needs: setup
-    steps:
       - name: Build with npm
         run: npm run build
         env:
@@ -66,7 +62,7 @@ jobs:
           WEBMENTION_IO_TOKEN: ${{ secrets.WEBMENTION_IO_TOKEN }}
   deploy:
     runs-on: ubuntu-latest
-    needs: [setup, build]
+    needs: build
     steps:
       - name: Copy files to server
         uses: appleboy/scp-action@master
