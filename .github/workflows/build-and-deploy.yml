@@ -46,9 +46,9 @@ jobs:
             .cache
             _site/images
             _site/og-images
-          key: ${{ runner.OS }}-site-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.OS }}-site
           restore-keys: |
-            ${{ runner.os }}-site-
+            ${{ runner.os }}-site
       - name: Install Node Modules
         run: npm ci
       - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
