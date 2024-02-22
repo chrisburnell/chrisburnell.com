@@ -30,15 +30,15 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "20.11.0"
-      - name: Setup npm dependencies cache
+      - name: Setup packages cache
         id: cache-npm
         uses: actions/cache@v3
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-packages-${{ hashFiles('**/package-lock.json') }}
+          key: packages-cache-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-packages-
-      - name: Setup site assets cache
+            packages-cache-
+      - name: Setup site cache
         id: cache-site
         uses: actions/cache@v3
         with:
@@ -46,9 +46,9 @@ jobs:
             .cache
             _site/images
             _site/og-images
-          key: ${{ runner.OS }}-site
+          key: site-cache
           restore-keys: |
-            ${{ runner.os }}-site
+            site-cache
       - name: Install Node Modules
         run: npm ci
       - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
@@ -58,6 +58,7 @@ jobs:
       - name: Build with npm
         run: npm run build-production
         env:
+          NODE_OPTIONS: "--max_old_space_size=8192"
           WEBMENTION_IO_TOKEN: ${{ secrets.WEBMENTION_IO_TOKEN }}
       - name: Copy files to server
         uses: appleboy/scp-action@master

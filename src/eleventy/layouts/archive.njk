@@ -26,14 +26,14 @@ truncate: true
 			<p class=" [ p-summary ] ">
 				{{ description | replace('.', '') | safe }}{% if first_year != latest_year %}, dating from <a href="#{{ first_year }}">{{ first_year }}</a>–<a href="#{{ latest_year }}">{{ latest_year }}</a>{% endif %}.
 				{% if 'archive' in tags -%}
-					<a href="{{ site.url }}/{{ feed_name | default(related_collection) }}.xml" title="{{ title | safe }} Feed" class=" [ icon-anchor ] "><svg width="24" height="24" aria-hidden="true" focusable="false" style="fill: var(--color-rss);"><use href="#svg--rss"></use></svg></a>
+					<a href="{{ site.url }}/{{ feed_name | default(related_collection) }}.xml" title="{{ title | safe }} Feed" class=" [ icon-anchor ] "><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false"><use href="#svg--rss"></use></svg></c-emoji></a>
 				{%- endif %}
 			</p>
 		{% else %}
 			<p class=" [ p-summary ] ">
 				{{ description.split('<br>') | first | safe }}
 				{% if 'archive' in tags -%}
-					<a href="{{ site.url }}/{{ feed_name | default(related_collection) }}.xml" title="{{ title | safe }} Feed" class=" [ icon-anchor ] "><svg width="24" height="24" aria-hidden="true" focusable="false" style="fill: var(--color-rss);"><use href="#svg--rss"></use></svg></a>
+					<a href="{{ site.url }}/{{ feed_name | default(related_collection) }}.xml" title="{{ title | safe }} Feed" class=" [ icon-anchor ] "><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false"><use href="#svg--rss"></use></svg></c-emoji></a>
 				{%- endif %}
 				{% if description.includes('<br>') -%}
 					<br>
@@ -77,6 +77,14 @@ truncate: true
 				{% endfor %}
 			</div>
 		{%- endif -%}
+
+		<hr>
+
+		<div class=" [ grid ] [ navigator ] ">
+			<a href="/{{ related_collection }}.xml" class=" [ button ] ">
+				<c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false"><use href="#svg--rss"></use></svg></c-emoji>{{ title | safe }} Feed
+			</a>
+		</div>
 	</div>
 
 	<aside class=" [ meta ] [ flow ] " role="complementary" data-pagefind-ignore>

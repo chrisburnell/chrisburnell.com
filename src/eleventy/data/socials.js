@@ -3,7 +3,6 @@ export default [
 		title: "RSS",
 		url: "/feed.xml",
 		primary: true,
-		fillHover: "#ff8c00",
 	},
 	{
 		title: "CodePen",
@@ -22,19 +21,19 @@ export default [
 		url: "https://www.linkedin.com/in/",
 		key: "linkedin",
 		primary: true,
-		fillHover: "#0a66c2",
+		fill: "#0a66c2",
 	},
 	{
 		title: "Mastodon",
 		url: "https://fediverse.repc.co/@chrisburnell",
 		primary: true,
-		fillHover: "#595aff",
+		fill: "#595aff",
 	},
 	{
 		title: "Bluesky",
 		url: "https://bsky.app/profile/",
 		key: "bluesky",
-		fillHover: "url(#bluesky)",
+		fill: "url(#bluesky)",
 	},
 	{
 		title: "Discord",

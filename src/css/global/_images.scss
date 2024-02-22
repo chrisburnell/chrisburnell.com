@@ -16,7 +16,9 @@ svg {
 	fill: var(--fill, currentColor);
 
 	%anchor:is(:hover, :focus, :active) > &,
-	%button:is(:hover, :focus, :active) > & {
+	%anchor:is(:hover, :focus, :active) .emoji &,
+	%button:is(:hover, :focus, :active) > &,
+	%button:is(:hover, :focus, :active) .emoji & {
 		fill: var(--fill-hover, var(--fill, currentColor));
 	}
 }

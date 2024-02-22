@@ -29,7 +29,7 @@ wide: true
 			</h1>
 			{% for feed in blogRSS -%}
 				<div>
-					<a href="{{ feed.url | default(feed) }}" rel="external noopener"><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false" style="fill: var(--color-rss); margin-block-start: calc(1ex - 1cap); vertical-align: middle;"><use href="#svg--rss"></use></svg></c-emoji>{{ feed.shorttitle | default(feed.title) | default('RSS') }}</a>
+					<a href="{{ feed.url | default(feed) }}" rel="external noopener"><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false"><use href="#svg--rss"></use></svg></c-emoji>{{ feed.shorttitle | default(feed.title) | default('RSS') }}</a>
 				</div>
 			{% endfor -%}
 		</div>

@@ -1,7 +1,7 @@
 ---
 layout: base
 title: Feeds
-tagline: '<c-emoji><svg width="60" height="60" aria-hidden="true" focusable="false" style="fill: var(--color-rss); margin-inline-end: 0.5ch;"><use href="#svg--rss"></use></svg></c-emoji>Feeds'
+tagline: '<c-emoji><svg width="60" height="60" aria-hidden="true" focusable="false" style="margin-inline-end: 0.5ch; vertical-align: baseline;"><use href="#svg--rss"></use></svg></c-emoji>Feeds'
 description: You can follow my posts from different web feeds, depending on what content you'd like to see.
 perch: true
 ---
@@ -25,24 +25,24 @@ perch: true
 		{% include 'css-naked-day.njk' %}
 
 		<h2>
-			<c-emoji><svg width="32" height="32" aria-hidden="true" focusable="false" style="fill: var(--color-rss); vertical-align: middle; margin-block-start: calc(1ex - 1cap);"><use href="#svg--rss"></use></svg></c-emoji> Collections
+			<c-emoji><svg width="32" height="32" aria-hidden="true" focusable="false"><use href="#svg--rss"></use></svg></c-emoji> Collections
 		</h2>
 
 		<ul class=" [ grid ] [ shelf ] " style="--min-inline-size: 12em;">
 			<li>
-				<a href="{{ site.url + '/feed.xml' }}" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Latest Posts <sup>{{ site.limits.feed }}</sup></a>
+				<a href="{{ site.url + '/feed.xml' }}" class=" [ strong ] " style="font-size: var(--font-size-gamma);"><c-emoji>{{ emojis.new }}</c-emoji>Latest Posts <sup>{{ site.limits.feed }}</sup></a>
 				<p>Latest posts on the blog.</p>
 			</li>
 			<li>
-				<a href="{{ site.url + '/writing.xml' }}" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Writing <sup>{{ site.limits.feed }}</sup></a>
+				<a href="{{ site.url + '/writing.xml' }}" class=" [ strong ] " style="font-size: var(--font-size-gamma);"><c-emoji>{{ emojis.author }}</c-emoji>Writing <sup>{{ site.limits.feed }}</sup></a>
 				<p>A more serious collection of ideas and bits of prose.</p>
 			</li>
 			<li>
-				<a href="{{ site.url + '/replies.xml' }}" class=" [ strong ] " style="font-size: var(--font-size-gamma);">Replies <sup>{{ site.limits.feed }}</sup></a>
+				<a href="{{ site.url + '/replies.xml' }}" class=" [ strong ] " style="font-size: var(--font-size-gamma);"><c-emoji>{{ emojis.reply }}</c-emoji>Replies <sup>{{ site.limits.feed }}</sup></a>
 				<p>Replies I’ve made to other people.</p>
 			</li>
 			<li>
-				<a href="{{ site.url + '/rsvps.xml' }}" class=" [ strong ] " style="font-size: var(--font-size-gamma);">RSVPs <sup>{{ site.limits.feed }}</sup></a>
+				<a href="{{ site.url + '/rsvps.xml' }}" class=" [ strong ] " style="font-size: var(--font-size-gamma);"><c-emoji>{{ emojis.rsvp }}</c-emoji>RSVPs <sup>{{ site.limits.feed }}</sup></a>
 				<p>A record of RSVPs to conferences and meetups.</p>
 			</li>
 		</ul>
@@ -50,7 +50,7 @@ perch: true
 		<hr>
 
 		<h2 id="categories">
-			<c-emoji><svg width="32" height="32" aria-hidden="true" focusable="false" style="fill: var(--color-rss); vertical-align: middle; margin-block-start: calc(1ex - 1cap);"><use href="#svg--rss"></use></svg></c-emoji> Categories
+			<c-emoji><svg width="32" height="32" aria-hidden="true" focusable="false"><use href="#svg--rss"></use></svg></c-emoji> Categories
 		</h2>
 
 		<ul class=" [ grid ] [ shelf ] " data-layout="natural">
@@ -63,7 +63,7 @@ perch: true
 		<hr>
 
 		<h2 id="tags">
-			<c-emoji><svg width="32" height="32" aria-hidden="true" focusable="false" style="fill: var(--color-rss); vertical-align: middle; margin-block-start: calc(1ex - 1cap);"><use href="#svg--rss"></use></svg></c-emoji> Tags
+			<c-emoji><svg width="32" height="32" aria-hidden="true" focusable="false"><use href="#svg--rss"></use></svg></c-emoji>Tags
 		</h2>
 
 		<ul class=" [ grid ] [ shelf ] " data-layout="natural">

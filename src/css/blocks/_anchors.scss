@@ -53,9 +53,7 @@ h2 %anchor:not(:hover, :focus, :active) {
 	inline-size: var(--size-tap);
 	block-size: var(--size-tap);
 	display: inline-grid;
-	align-content: center;
-	margin-block-start: calc(1ex - 1cap);
-	vertical-align: middle;
+	place-items: center;
 }
 
 // Fancy gradient anchor text

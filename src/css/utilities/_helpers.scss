@@ -147,9 +147,23 @@
 	margin-block-start: calc(1ex - 1cap);
 	text-shadow: none;
 
-	%anchor &:first-child {
+	%anchor:not(.icon-anchor) &:first-child {
 		display: inline-block;
 		padding-inline-end: 0.625ch;
+	}
+
+	svg {
+		vertical-align: middle;
+		margin-block-start: calc(1ex - 1cap);
+
+		&:not([width], [height]) {
+			max-inline-size: 1em;
+			max-block-size: 1em;
+		}
+
+		&:has([href="#svg--rss"]) {
+			fill: var(--color-rss);
+		}
 	}
 }
 

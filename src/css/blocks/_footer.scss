@@ -31,8 +31,6 @@
 		inline-size: calc(1lh - 1.25cap);
 		block-size: calc(1lh - 1.25cap);
 		margin-inline-end: 0.5em;
-		margin-block-start: calc(1ex - 1cap);
-		vertical-align: middle;
 		transition: fill var(--transition-duration) var(--transition-function);
 	}
 
