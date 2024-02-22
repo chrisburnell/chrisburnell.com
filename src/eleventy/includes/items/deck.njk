@@ -68,7 +68,7 @@
 	{% elif item.data.category == 'recipe' %}
 		<p class=" [ p-summary ] ">A {{ item.data.categoryProper | default(item.data.category) }}{% if item.data.authors %} by {{ item.data.meta_authors_string | safe }}{% endif %}</p>
 	{% endif %}
-	{% if item.data.date or item.data.updated or item.data.webmentions or item.data.stargazers %}
+	{% if item.data.date or item.data.updated or item.data.webmentions.length %}
 		<ul class=" [ cluster ] [ deck__meta ] ">
 			{% if item.data.updated %}
 				<li>
@@ -80,7 +80,7 @@
 					<small>published</small> <a href="{{ item.url }}" class=" [ u-url ] "{% if item.data.title or item.data.of_title %} tabindex="-1"{% endif %}><time datetime="{{ item.data.date | rfc3339Date }}" class=" [ dt-published ] ">{{ item.data.date | friendlyDateLong | safe }}</time></a>
 				</li>
 			{% endif %}
-			{% if (item.data.show_webmentions and item.data.webmentions.length) or item.data.stargazers %}
+			{% if item.data.show_webmentions and item.data.webmentions.length %}
 				{%- set bookmarks = item.data.webmentions | getWebmentionsByTypes(['bookmark-of']) -%}
 				{%- set likes = item.data.webmentions | getWebmentionsByTypes(['like-of']) -%}
 				{%- set reposts = item.data.webmentions | getWebmentionsByTypes(['repost-of']) -%}
@@ -88,10 +88,9 @@
 				{%- set socialReplies = webmentions | getSocialReplies -%}
 				{%- set reactions = bookmarks.concat(likes).concat(reposts).concat(socialReplies).concat(links) -%}
 				{%- set directReplies = item.data.webmentions | getDirectReplies -%}
-				{%- set stargazers = item.data.stargazers | default(0) -%}
-				{%- set responsesLength = reactions.length + directReplies.length + stargazers -%}
+				{%- set responsesLength = reactions.length + directReplies.length -%}
 				<li>
-					<a href="{{ item.url }}#respond" title="Jump to responses for this {{ item.data.categoryProper }}">{{ responsesLength }} {% if stargazers == responsesLength %}stargazer{% else %}response{% endif %}{{ 's' if responsesLength > 1 }} <span class=" [ visually-hidden ] ">to this {{ item.data.categoryProper | default(item.data.category) | default('page') }}</span></a>
+					<a href="{{ item.url }}#respond" title="Jump to responses for this {{ item.data.categoryProper }}">{{ responsesLength }} response{{ 's' if responsesLength > 1 }} <span class=" [ visually-hidden ] ">to this {{ item.data.categoryProper | default(item.data.category) | default('page') }}</span></a>
 				</li>
 			{% endif %}
 		</ul>
