@@ -23,7 +23,13 @@
 	}
 
 	main {
-		background-image: url("/images/animated/stars.gif");
+		@media (prefers-reduced-motion: no-preference) {
+			background-image: url("/images/animated/stars.gif");
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			background-image: url("/images/animated/stars.png");
+		}
 	}
 
 	hr {
