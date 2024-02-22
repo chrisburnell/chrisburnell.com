@@ -1,4 +1,4 @@
-name: Deploy
+name: Build and Deploy
 
 on:
   push:
@@ -13,11 +13,11 @@ on:
     - cron: "33 19 * * *"
 
 concurrency:
-  group: deploy
+  group: build-and-deploy
   cancel-in-progress: true
 
 jobs:
-  deploy:
+  setup:
     runs-on: ubuntu-latest
     steps:
       - name: Set the timezone
@@ -33,40 +33,42 @@ jobs:
       - name: Setup npm dependencies cache
         id: cache-npm
         uses: actions/cache@v3
-        env:
-          cache-name: cache-node-modules
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-packages-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
-      - name: Setup Eleventy assets cache
-        id: cache-eleventy
+            ${{ runner.os }}-packages-
+      - name: Setup site assets cache
+        id: cache-site
         uses: actions/cache@v3
         with:
           path: |
             .cache
             _site/images
             _site/og-images
-          key: ${{ runner.OS }}-site-cache-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.OS }}-site-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-site-
       - name: Install Node Modules
         run: npm ci
       - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
         name: List the state of node modules
         continue-on-error: true
         run: npm list
+  build:
+    runs-on: ubuntu-latest
+    needs: setup
+    steps:
       - name: Build with npm
         run: npm run build
         env:
           NODE_OPTIONS: "--max_old_space_size=8192"
-          PERSONAL_API_URL: ${{ secrets.PERSONAL_API_URL }}
-          PERSONAL_API_TOKEN: ${{ secrets.PERSONAL_API_TOKEN }}
-          SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
-          SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
           WEBMENTION_IO_TOKEN: ${{ secrets.WEBMENTION_IO_TOKEN }}
-      - name: Copy to server
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [setup, build]
+    steps:
+      - name: Copy files to server
         uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.DEPLOY_HOST }}
@@ -77,7 +79,7 @@ jobs:
           source: "_site/*"
           target: "${{ secrets.DEPLOY_PATH }}build"
           strip_components: 1
-      - name: Deploy to server
+      - name: Process on server
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.DEPLOY_HOST }}

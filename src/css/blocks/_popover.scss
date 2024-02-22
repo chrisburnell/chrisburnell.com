@@ -14,8 +14,8 @@
 	background-color: color-mix(in oklab, h(bear), h(snowy));
 	max-inline-size: 100vi;
 	border: var(--size-border-thin) solid h(raven);
-	border-radius: var(--border-radius, var(--size-border-thin));
-	box-shadow: var(--box-shadow, var(--box-shadow-medium));
+	border-radius: var(--size-border-default);
+	box-shadow: var(--box-shadow-medium);
 	position: fixed;
 	inset-block-start: 50%;
 	inset-inline-start: 50%;
