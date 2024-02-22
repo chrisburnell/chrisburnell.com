@@ -1,4 +1,4 @@
-import emojis from "../../eleventy/data/emojis.js";
+import emojis from "../../eleventy/data/emojis.js"
 
 export default {
 	permalink: "/like/{{ page.fileSlug }}/index.html",

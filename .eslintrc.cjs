@@ -22,6 +22,6 @@ module.exports = {
 		"sourceType": "module"
 	},
 	"rules": {
-		"no-process-env": false,
+		"no-process-env": 0,
 	}
 }

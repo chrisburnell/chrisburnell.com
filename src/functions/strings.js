@@ -34,7 +34,6 @@ export const numberNthFormat = (number) => {
 	return decaNumbers[Math.floor(number / 10) - 2] + "y-" + specialNumbers[number % 10]
 }
 
-
 export default {
 	capitalize,
 	stripHTML,

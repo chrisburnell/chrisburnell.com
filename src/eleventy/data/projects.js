@@ -1,4 +1,4 @@
-import emojis from "./emojis.js";
+import emojis from "./emojis.js"
 
 export default {
 	personal: [

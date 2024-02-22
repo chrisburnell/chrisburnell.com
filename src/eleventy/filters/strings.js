@@ -45,14 +45,14 @@ export const specialCapitalize = (string) => {
  */
 export const cleanTags = (string) => {
 	return string
-		.replace(/\<pre(.|\n)*?\<\/pre\>/g, "")
-		.replace(/\<form(.|\n)*?\<\/form\>/g, "")
-		.replace(/\<link(.|\n)*?\<\/link\>/g, "")
-		.replace(/\<s(.|\n)*?\<\/s\>/g, "")
-		.replace(/\<script(.|\n)*?\<\/script\>/g, "")
-		.replace(/\<style(.|\n)*?\<\/style\>/g, "")
-		.replace(/\<(\w+).*?class="\s*\[ support(.|\n)*?\<\/\1\>/g, "")
-		.replace(/\<(\w+).*?class="\s*\[ palette(.|\n)*?\<\/\1\>/g, "")
+		.replace(/<pre(.|\n)*?<\/pre>/g, "")
+		.replace(/<form(.|\n)*?<\/form>/g, "")
+		.replace(/<link(.|\n)*?<\/link>/g, "")
+		.replace(/<s(.|\n)*?<\/s>/g, "")
+		.replace(/<script(.|\n)*?<\/script>/g, "")
+		.replace(/<style(.|\n)*?<\/style>/g, "")
+		.replace(/<(\w+).*?class="\s*\[ support(.|\n)*?<\/\1>/g, "")
+		.replace(/<(\w+).*?class="\s*\[ palette(.|\n)*?<\/\1>/g, "")
 }
 
 export const htmlEntities = (string) => {
@@ -72,7 +72,7 @@ export const stripNewLines = (string) => {
  * @returns {string}
  */
 export const stripStrikethrough = (string) => {
-	return string.replace(/\<s(.|\n)*?\<\/s\>/g, "")
+	return string.replace(/<s(.|\n)*?<\/s>/g, "")
 }
 
 /**

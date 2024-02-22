@@ -36,7 +36,7 @@ export default async function () {
 	for (let feature of browserFeatures) {
 		const caniuseSupport = await getCaniuseSupport(feature.id)
 			.then((caniuseSupport) => caniuseSupport)
-			.catch((error) => {
+			.catch(() => {
 				// console.error("No CanIUse Support", error)
 				return false
 			})
@@ -56,7 +56,7 @@ export default async function () {
 		} else {
 			const browserslistSupport = await getBrowserslistSupport(feature.id)
 				.then((browserslistSupport) => browserslistSupport)
-				.catch((error) => {
+				.catch(() => {
 					// console.error("No Browserslist Support", error)
 					return false
 				})

@@ -30,7 +30,6 @@
 
 ## Admin
 
-- review github actions to streamline stuff a bit more
 - testimonials for /about and /cv
 - rework clients logo list into <marquee>
 - build a /now page that shows:

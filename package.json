@@ -90,12 +90,12 @@
     "prettier": "npx prettier --write src",
     "check-links": "npx check-html-links _site",
     "create-search-index": "npx pagefind --site \"_site\" --glob \"**/*.html\"",
-    "start": "NODE_OPTIONS=--max-old-space-size=8192 npx @11ty/eleventy --incremental --serve",
-    "serve": "npm run start",
-    "now": "NODE_OPTIONS=--max-old-space-size=8192 npx @11ty/eleventy --incremental --ignore-initial --serve",
+    "start": "npx @11ty/eleventy --incremental --serve",
+    "now": "npx @11ty/eleventy --ignore-initial --incremental --serve",
+    "build": "npx @11ty/eleventy",
     "setup": "npm run tokens; npm run prettier; npx browserslist@latest --update-db; npm run css",
-    "build": "npm run setup; cross-env NODE_OPTIONS=--max-old-space-size=8192 npx @11ty/eleventy; npm run create-search-index",
-    "pregenerate": "npm run setup; cross-env NODE_OPTIONS=--max-old-space-size=8192 PREGENERATE_IMAGES=true npx @11ty/eleventy",
-    "debug": "cross-env NODE_OPTIONS=--max-old-space-size=8192 DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
+    "build-production": "npm run setup; npx @11ty/eleventy; npm run create-search-index",
+    "pregenerate": "npm run setup; cross-env PREGENERATE_IMAGES=true npx @11ty/eleventy",
+    "debug": "cross-env DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
   }
 }
