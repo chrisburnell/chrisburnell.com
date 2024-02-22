@@ -145,7 +145,7 @@ description: A great big list of all the pages, projects, posts on my website.
 
 			<hr>
 
-			<h2><a href="/posts/#categories">Post Categories</a></h2>
+			<h2 id="categories"><a href="/posts/#categories">Post Categories</a></h2>
 
 			<ul class=" [ grid ] [ shelf ] " data-layout="natural">
 				{%- for item in collections.categories -%}
@@ -159,7 +159,7 @@ description: A great big list of all the pages, projects, posts on my website.
 
 			<hr>
 
-			<h2><a href="/posts/#tags">Post Tags</a></h2>
+			<h2 id="tags"><a href="/posts/#tags">Post Tags</a></h2>
 
 			<ul class=" [ grid ] [ shelf ] " data-layout="natural">
 				{%- set lowest = 9001 -%}
