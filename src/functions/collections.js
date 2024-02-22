@@ -332,7 +332,7 @@ export const getRSVPString = (data) => {
  */
 export const getInternalTarget = (url) => {
 	// Mastodon
-	if (url.includes("https://fediverse.repc.co") || url.includes("https://social.chrisburnell.com") || url.includes("https://mastodon.social/users/chrisburnell/statuses/")) {
+	if (url.includes("https://fediverse.repc.co") || url.includes("https://mastodon.social/users/chrisburnell/statuses/")) {
 		return "a previous Mastodon post"
 	}
 	// Mastodon, external

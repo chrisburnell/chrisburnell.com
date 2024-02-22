@@ -28,6 +28,10 @@ export default {
 		meta_description: (data) => {
 			if (data.description) {
 				return stripNewLines(stripHTML(formatAsMarkdown(data.description)))
+			} else if (data.rsvp) {
+				return `A ${getCategoryName(data)} on ${getHost(siteURL)}`
+			} else if (data.in_reply_to) {
+				return `A Reply on ${getHost(siteURL)}`
 			}
 			return `A ${getCategoryName(data)} on ${getHost(siteURL)}`
 		},

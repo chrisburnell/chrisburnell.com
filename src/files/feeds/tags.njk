@@ -6,7 +6,7 @@ pagination:
 permalink: /{{ tag }}.xml
 eleventyComputed:
   title: "{{ tag | title | specialCapitalize }}"
-  description: "All of my posts tagged “{{ tag | specialCapitalize }}”."
+  description: "All of my posts tagged “{{ tag }}”."
   related_collection: "{{ tag }}"
 reverse_collection: true
 tag_collection: true

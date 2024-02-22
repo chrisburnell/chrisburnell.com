@@ -21,10 +21,6 @@ export default [
 	},
 	{
 		title: "Mastodon",
-		url: "https://social.chrisburnell.com",
-	},
-	{
-		title: "Mastodon",
 		url: "https://mastodon.social/users/chrisburnell",
 	},
 	{

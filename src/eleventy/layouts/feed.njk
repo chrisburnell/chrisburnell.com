@@ -29,7 +29,12 @@
 		{% if item.data.category -%}
 		<category term="{{ item.data.category }}" scheme="{{ site.url + '/' + item.data.category + '/' }}" label="{{ item.data | getCategoryName }}" />
 		{%- endif %}
-		{% if item.data.description and item.content != '' -%}
+		{% if item.data.excerpt and item.content != '' -%}
+		<summary>{{ item.data.excerpt | striptags | safe }}</summary>
+		<content type="html">
+			{{ item.content | formatAsMarkdown }}
+		</content>
+		{% elif item.data.description and item.content != '' -%}
 		<summary>{{ item.data.meta_description | stripStrikethrough | safe }}</summary>
 		<content type="html">
 			{{ item.content | formatAsMarkdown }}

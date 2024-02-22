@@ -59,14 +59,10 @@
 	{% if show_photos %}
 		{% include 'photo.njk' %}
 	{% endif %}
-	{% if item.data.description and item.data.tags and ('page' in item.data.tags or 'writing' in item.data.tags) %}
-		<p class=" [ p-summary ] {% if item.data.category == 'article' %}[ line-clamp ] {% endif %}">{{ item.data.description | striptags(true) | urlize | safe }}</p>
-	{% elif item.data.description and item.data.description_markdown %}
-		<p class=" [ p-summary ] {% if item.data.category == 'article' %}[ line-clamp ] {% endif %}">{{ item.data.description | formatAsMarkdown | safe }}</p>
-	{% elif item.data.description %}
-		<p class=" [ p-summary ] {% if item.data.category == 'article' %}[ line-clamp ] {% endif %}">{{ item.data.description | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
+	{% if item.data.excerpt or item.data.description %}
+		<p class=" [ p-summary ] [ line-clamp ] ">{{ item.data.excerpt | default(item.data.description) | formatAsMarkdown | excerptize | safe }}</p>
 	{% elif ['bookmark', 'like', 'note', 'talk'].includes(item.data.category) and item.content  %}
-		<p class=" [ p-summary ] ">{{ item.content | striptags(true) | maxWords(40, truncate) | urlize | safe }}</p>
+		<p class=" [ p-summary ] [ line-clamp ] ">{{ item.content | formatAsMarkdown | excerptize | maxWords(40, truncate) | safe }}</p>
 	{% elif item.data.category == 'code' %}
 		<p class=" [ p-summary ] ">One of my code demos.</p>
 	{% elif item.data.category == 'recipe' %}

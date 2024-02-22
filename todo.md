@@ -31,9 +31,10 @@
 ## Admin
 
 - review github actions to streamline stuff a bit more
-- rework testimonials
-- rework clients logo list
+- testimonials for /about and /cv
+- rework clients logo list into <marquee>
 - build a /now page that shows:
     - near-upcoming events
     - reviews (books, games, etc?) that don't yet have a review (i.e. are currently being read/played/etc.)
 - finish transcript for "Middle Out in CSS"
+- figure out how to manage "RSS-only" posts (that become visible on the site after site.upcomingDaysLead)

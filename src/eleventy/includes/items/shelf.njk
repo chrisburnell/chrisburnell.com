@@ -32,8 +32,8 @@
 	{% elif item.data.style %}
 		<p class=" [ small ] ">{{ item.data.style | replace(' - Other', '') | safe }}</p>
 	{% endif %}
-	{% if item.description or item.data.description %}
-		{{ item.description | default(item.data.description) | formatAsMarkdown | safe }}
+	{% if item.data.excerpt or item.data.description %}
+		{{ item.data.excerpt | default(item.data.description) | formatAsMarkdown | safe }}
 	{% endif %}
 	{% if item.data.authors or item.data.release %}
 		<div>

@@ -130,6 +130,15 @@ export const formatAsMarkdown = (string) => {
 		.render(string)
 }
 
+export const excerptize = (string) => {
+	return string
+		.replace(/<\/(p|blockquote)>(\s+)?<(p|blockquote)>/, "<br>")
+		.replace("<p>", "")
+		.replace("</p>", "")
+		.replace("<blockquote>", "<q>")
+		.replace("</blockquote>", "</q>")
+}
+
 /**
  * @param {string} string
  * @returns {string}
@@ -142,6 +151,7 @@ export default {
 	conjunction,
 	specialCapitalize,
 	cleanTags,
+	htmlEntities,
 	stripNewLines,
 	stripStrikethrough,
 	maxSentences,
@@ -149,5 +159,6 @@ export default {
 	maxChars,
 	numberStringFormat,
 	formatAsMarkdown,
+	excerptize,
 	spongebob,
 }
