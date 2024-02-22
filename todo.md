@@ -15,6 +15,7 @@
 - use utopia-core-scss to generate fluid spaces, type, etc.
 - figure out how to resize <code> elements with `font-size-adjust: from-font;"
 - size SVGs inside <c-emoji> appropriately based on 1em
+- figure out how to de-dupe navigation__list for the popover
 
 ## JS
 

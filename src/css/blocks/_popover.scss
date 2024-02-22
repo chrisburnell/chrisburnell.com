@@ -1,0 +1,94 @@
+////
+/// Settings Popover
+/// @group blocks
+////
+
+::backdrop {
+	background-color: h(thunder, beta);
+}
+
+:is(.popover-settings, .popover-navigation) {
+	--flow-space: var(--size-medium-large);
+
+	background-color: color-mix(in oklab, h(bear), h(snowy));
+	max-inline-size: 100vi;
+	border: var(--size-border-thin) solid h(raven);
+	border-radius: var(--border-radius, var(--size-border-thin));
+	box-shadow: var(--box-shadow, var(--box-shadow-medium));
+	position: fixed;
+	inset-block-start: 50%;
+	inset-inline-start: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	text-align: center;
+}
+
+.popover-settings {
+	padding: var(--size-medium-large);
+
+	[id="sounds-toggle"] {
+		color: inherit !important; // override themes
+	}
+}
+
+.popover-navigation {
+	padding: var(--size-medium-large) var(--size-large);
+
+	@media (width > #{map-get($breakpoints, "tiny")}) {
+		display: none;
+	}
+
+	.navigation__list {
+		flex-direction: column;
+
+		a {
+			font-size: var(--font-size-gamma);
+			padding-inline: var(--size-small-medium);
+		}
+	}
+}
+
+:is(.popover-settings-button, .popover-navigation-button) {
+	background-color: h(wolf);
+	background-image: linear-gradient(160deg, var(--color-bowhead), var(--color-wolf));
+	display: grid;
+	place-items: center;
+	padding: var(--size-tiny);
+	margin-inline-start: 1ex;
+	border-radius: 50%;
+
+	svg {
+		fill: h(snowy);
+		min-inline-size: calc(var(--font-size-default) * var(--line-height-default));
+		min-block-size: calc(var(--font-size-default) * var(--line-height-default));
+		transition: transform var(--transition-duration) var(--transition-function);
+		pointer-events: none;
+	}
+}
+
+.popover-settings-button {
+	svg {
+		transform: scale(0.8);
+	}
+
+	&:is(:hover, :focus, :active) {
+		svg {
+			transform: scale(1) rotate(60deg);
+		}
+	}
+}
+
+.popover-navigation-button {
+	@media (width > #{map-get($breakpoints, "tiny")}) {
+		display: none;
+	}
+
+	svg {
+		transform: scale(0.6);
+	}
+
+	&:is(:hover, :focus, :active) {
+		svg {
+			transform: scale(0.8);
+		}
+	}
+}

@@ -3,12 +3,24 @@
 /// @group blocks
 ////
 
+.navigation {
+	display: flex;
+	align-content: start;
+	column-gap: var(--size-medium);
+
+	.navigation__list {
+		@media (width <= #{map-get($breakpoints, "tiny")}) {
+			display: none;
+		}
+	}
+}
+
 .navigation__list {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: flex-end;
 	column-gap: var(--size-tiny-small);
-	row-gap: var(--size-tiny);
+	row-gap: var(--size-medium);
 	text-align: center;
 
 	a {
