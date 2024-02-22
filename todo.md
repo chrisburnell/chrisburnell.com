@@ -36,3 +36,4 @@
 - build a /now page that shows:
     - near-upcoming events
     - reviews (books, games, etc?) that don't yet have a review (i.e. are currently being read/played/etc.)
+- finish transcript for "Middle Out in CSS"

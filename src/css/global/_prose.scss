@@ -134,10 +134,6 @@ dialog {
 	inset: 0;
 	margin: auto !important;
 	z-index: var(--z-index-dialog);
-
-	&::backdrop {
-		backdrop-filter: grayscale(1) blur(2px);
-	}
 }
 
 meter,

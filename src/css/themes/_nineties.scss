@@ -18,6 +18,10 @@
 		text-decoration-color: currentColor !important;
 	}
 
+	::backdrop {
+		backdrop-filter: none;
+	}
+
 	main {
 		background-image: url("/images/animated/stars.gif");
 	}

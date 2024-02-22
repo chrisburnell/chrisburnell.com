@@ -5,6 +5,7 @@
 
 ::backdrop {
 	background-color: h(thunder, beta);
+	backdrop-filter: blur(1px);
 }
 
 :is(.popover-settings, .popover-navigation) {
