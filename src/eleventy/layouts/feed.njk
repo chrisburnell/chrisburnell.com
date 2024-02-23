@@ -40,7 +40,7 @@
 			{{ item.content | formatAsMarkdown }}
 		</content>
 		{% elif not item.data.description and item.content != '' -%}
-		<summary>{{ item.content | formatAsMarkdown | stripNewLines | stripStrikethrough | striptags(true) | maxSentences(2) }}</summary>
+		<summary>{{ item.content | formatAsMarkdown | stripNewLines | stripStrikethrough | striptags(true) | maxWords(40) }}</summary>
 		<content type="html">
 			{{ item.content | formatAsMarkdown }}{% if item.data.of_url %}<p>Original post can be found at: <a href="{{ item.data.of_url }}">{{ item.data.of_url }}</a></p>{% endif %}
 		</content>

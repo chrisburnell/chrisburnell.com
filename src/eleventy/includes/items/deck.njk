@@ -85,7 +85,7 @@
 				{%- set likes = item.data.webmentions | getWebmentionsByTypes(['like-of']) -%}
 				{%- set reposts = item.data.webmentions | getWebmentionsByTypes(['repost-of']) -%}
 				{%- set links = item.data.webmentions | getWebmentionsByTypes(['mention-of']) -%}
-				{%- set socialReplies = webmentions | getSocialReplies -%}
+				{%- set socialReplies = item.data.webmentions | getSocialReplies -%}
 				{%- set reactions = bookmarks.concat(likes).concat(reposts).concat(socialReplies).concat(links) -%}
 				{%- set directReplies = item.data.webmentions | getDirectReplies -%}
 				{%- set responsesLength = reactions.length + directReplies.length -%}

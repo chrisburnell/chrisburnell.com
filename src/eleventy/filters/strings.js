@@ -1,20 +1,9 @@
 import { encode } from "html-entities"
 import markdownParser from "markdown-it"
 import randomCase from "random-case"
+import truncate from "truncate-html"
 import capitalizers from "../../data/capitalizers.js"
 import { locale } from "../data/site.js"
-
-/**
- * @return {string}
- */
-const truncate = (() => {
-	const truncate = (at, str = "", count = 1, end = "…") => (at === "" ? str.substring(0, count) : str.split(at).splice(0, count).join(at)) + (str.split(at).length > count ? end : "")
-	return Object.freeze({
-		sentences: (...args) => truncate(".", ...args),
-		words: (...args) => truncate(" ", ...args),
-		characters: (...args) => truncate("", ...args),
-	})
-})()
 
 const stringNumbers = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
 
@@ -81,18 +70,8 @@ export const stripStrikethrough = (string) => {
  * @param {boolean} [condition]
  * @returns {string}
  */
-export const maxSentences = (string, count, condition = true) => {
-	return condition ? truncate.sentences(string, count) : string
-}
-
-/**
- * @param {string} string
- * @param {number} count
- * @param {boolean} [condition]
- * @returns {string}
- */
 export const maxWords = (string, count, condition = true) => {
-	return condition ? truncate.words(string, count) : string
+	return condition ? truncate(string, count, { byWords: true }) : string
 }
 
 /**
@@ -102,7 +81,7 @@ export const maxWords = (string, count, condition = true) => {
  * @returns {string}
  */
 export const maxChars = (string, count, condition = true) => {
-	return condition ? truncate.characters(string, count) : string
+	return condition ? truncate(string, count) : string
 }
 
 /**
@@ -154,7 +133,6 @@ export default {
 	htmlEntities,
 	stripNewLines,
 	stripStrikethrough,
-	maxSentences,
 	maxWords,
 	maxChars,
 	numberStringFormat,
