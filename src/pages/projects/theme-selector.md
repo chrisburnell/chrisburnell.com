@@ -9,7 +9,7 @@ tags:
   - html
   - javascript
   - package
-  - web-component
+  - web-components
 ---
 
 <div id="updated" class=" [ updated ] [ box ] [ flow ] ">

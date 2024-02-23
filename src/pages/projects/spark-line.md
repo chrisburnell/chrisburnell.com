@@ -10,7 +10,7 @@ tags:
   - html
   - javascript
   - package
-  - web-component
+  - web-components
 toc: true
 ---
 

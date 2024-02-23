@@ -6,7 +6,7 @@
 - How I shaved 1.5 minutes off my Eleventy build time
     - Edit this to remove some bits about the refactor/rebuild
 - Post about /interests page
-- Short guestbook post
+- Short post about my guestbook
 - Review drafts
 
 ## CSS

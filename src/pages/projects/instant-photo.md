@@ -9,7 +9,7 @@ tags:
   - html
   - javascript
   - package
-  - web-component
+  - web-components
 ---
 
 <script type="module" src="/js/components/instant-photo.js"></script>
