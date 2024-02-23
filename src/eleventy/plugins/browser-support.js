@@ -39,7 +39,7 @@ export default function (eleventyConfig) {
 	eleventyConfig.addNunjucksAsyncShortcode("browserSupport", async (featureID) => {
 		const caniuseSupport = await getCaniuseSupport(featureID)
 			.then((caniuseSupport) => caniuseSupport)
-			.catch((error) => {
+			.catch(() => {
 				// console.error("No CanIUse Support", error)
 				return false
 			})
@@ -83,7 +83,7 @@ export default function (eleventyConfig) {
 		} else {
 			const browserslistSupport = await getBrowserslistSupport(featureID)
 				.then((browserslistSupport) => browserslistSupport)
-				.catch((error) => {
+				.catch(() => {
 					// console.error("No Browserslist Support", error)
 					return false
 				})
@@ -133,7 +133,7 @@ export default function (eleventyConfig) {
 	eleventyConfig.addNunjucksAsyncShortcode("browserSupportRow", async (feature) => {
 		const caniuseSupport = await getCaniuseSupport(feature.id)
 			.then((caniuseSupport) => caniuseSupport)
-			.catch((error) => {
+			.catch(() => {
 				// console.error("No CanIUse Support", error)
 				return false
 			})
@@ -162,7 +162,7 @@ export default function (eleventyConfig) {
 		} else {
 			const browserslistSupport = await getBrowserslistSupport(feature.id)
 				.then((browserslistSupport) => browserslistSupport)
-				.catch((error) => {
+				.catch(() => {
 					// console.error("No Browserslist Support", error)
 					return false
 				})

@@ -14,12 +14,13 @@
 - review and refactor CSS and make tasty usage of layers, revert-layer, :where, :is, :has, etc.
 - use utopia-core-scss to generate fluid spaces, type, etc.
 - figure out how to resize <code> elements with `font-size-adjust: from-font;"
-- size SVGs inside <c-emoji> appropriately based on 1em
 - figure out how to de-dupe navigation__list for the popover
 
 ## JS
 
 - review comments in JS
+- move svg-sparkline.js to inline?
+- use fast-xml-parser to pull in latest posts from blogroll
 
 ## Eleventy Build
 

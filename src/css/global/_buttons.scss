@@ -73,6 +73,10 @@ button {
 	* {
 		background-color: transparent;
 	}
+
+	svg {
+		pointer-events: none;
+	}
 }
 
 .button--small {

@@ -6,6 +6,6 @@ import "@chrisburnell/svg-sparkline/svg-sparkline"
 
 import "./imports/website-sounds"
 
-import "@daviddarnes/share-button/share-button"
+import "@zachleat/webcare-webshare/webcare-webshare"
 
 import "./imports/welcome"

@@ -1,1 +1,3 @@
-<share-button id="share"><button class="anchor"><c-emoji><svg width="16" height="16" aria-hidden="true" focusable="false" style="fill: var(--color-raven);"><use href="#svg--share"></use></svg></c-emoji>Share</button><a href="mailto:?subject={{ meta_title | striptags(true) | safe }}&body={{ canonical }}"><c-emoji><svg width="16" height="16" aria-hidden="true" focusable="false" style="fill: var(--color-raven);"><use href="#svg--share"></use></svg></c-emoji>Share</a></share-button>
+<webcare-webshare id="share" share-text="{% if page.url != '/' %}{{ title | default(meta_title) | striptags | safe }} · {% endif %}{{ site.title }}" share-url="{{ canonical }}" label-copy="📋 Copy URL" label-after-copy="✅ Copied to Clipboard">
+	<button class=" [ anchor ] " disabled><c-emoji><svg width="16" height="16" aria-hidden="true" focusable="false" style="fill: var(--color-raven);"><use href="#svg--share"></use></svg></c-emoji>Share</button>
+</webcare-webshare>
