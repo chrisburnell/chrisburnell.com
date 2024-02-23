@@ -42,9 +42,9 @@ excludeFromSearch: true
 	<dd><a href="{{ collection[wordiest_post_index].url }}">{{ collection[wordiest_post_index].data.title }}</a> <small>with</small> {{ wordiest_wordcount | numberStringFormat }} words</dd>
 	<dt>№ Projects</dt>
 	<dd><a href="/projects/">{{ (projects.web.length + projects.personal.length + collections.projects.length) | numberStringFormat }}</a></dd>
-	<dt>№ Following</dt>
+	<dt>№ Blogs in my Blogroll</dt>
 	<dd><a href="/blogroll/">{{ blogroll | length | numberStringFormat }}</a></dd>
-	<dt>№ Webmentions</dt>
+	<dt>№ Webmentions Received</dt>
 	<dd>{{ webmentionsAll | length | numberStringFormat }}</dd>
 	<dt>Commits <small>per</small> Day</dt>
 	<dd><a href="https://github.com/{{ author.github }}/{{ site.repository }}/commits/{{ site.branch }}">{{ commits_per_day | maxDecimals(2) }}</a> <small>({{ repository.contributors[0].contributions | numberStringFormat }} commits over <span title="since {{ repository.information.created_at | friendlyDate }}">{{ (days_since_first_commit / 365.2422) | maxDecimals(2) }} years</span>)</small></dd>
