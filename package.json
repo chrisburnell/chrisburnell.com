@@ -86,18 +86,18 @@
   },
   "scripts": {
     "clean": "npx rimraf .cache && npx rimraf _site",
+    "check-links": "npx check-html-links _site",
+    "prettier": "npx prettier --write src",
     "tokens": "npx json-to-scss './src/eleventy/data/designTokens/*.json' ./src/css/abstracts/_generated.scss; npx prettier --write src/css/abstracts/_generated.scss",
     "css": "npx sass src/css:_site/css --style=compressed --no-source-map --color",
     "postcss": "npx postcss _site/css/**/*.css --replace --no-map",
-    "prettier": "npx prettier --write src",
-    "check-links": "npx check-html-links _site",
     "create-search-index": "npx pagefind --site \"_site\" --glob \"**/*.html\"",
+    "debug": "cross-env DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
     "start": "cross-env NODE_OPTIONS=--max-old-space-size=8192 npx @11ty/eleventy --incremental --serve",
     "now": "cross-env NODE_OPTIONS=--max-old-space-size=8192 npx @11ty/eleventy --ignore-initial --incremental --serve",
     "build": "cross-env NODE_OPTIONS=--max-old-space-size=8192 npx @11ty/eleventy",
     "setup": "npm run tokens; npm run prettier; npx browserslist@latest --update-db; npm run css",
     "build-production": "npm run setup; cross-env NODE_OPTIONS=--max-old-space-size=8192 npx @11ty/eleventy; npm run create-search-index",
-    "pregenerate": "npm run setup; cross-env NODE_OPTIONS=--max-old-space-size=8192 PREGENERATE_IMAGES=true npx @11ty/eleventy",
-    "debug": "cross-env DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
+    "pregenerate": "npm run setup; cross-env NODE_OPTIONS=--max-old-space-size=8192 PREGENERATE_IMAGES=true npx @11ty/eleventy"
   }
 }
