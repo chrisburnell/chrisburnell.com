@@ -139,7 +139,7 @@
 				<div id="popover-settings" class=" [ popover-settings ] [ flow ] [ gamma ] " popover>
 					{%- include 'theme-selector.njk' -%}
 					<button id="sounds-toggle" class=" [ anchor ] [ js-sounds-toggle ] ">
-						<c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false" style="fill: var(--color-highland); vertical-align: baseline;"><use href="#svg--sound-off"></use></svg></c-emoji><span class=" [ js-sounds-status ] ">Enable sounds</span>
+						<c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false" style="fill: var(--color-raven);"><use href="#svg--sound-off"></use></svg></c-emoji><span class=" [ js-sounds-status ] ">Enable sounds</span>
 					</button>
 				</div>
 				<div id="popover-navigation" class=" [ popover-navigation ] [ flow ] [ gamma ] " popover>
@@ -172,8 +172,8 @@
 				</ul>
 				<ul class=" [ cluster ] [ footer__navigation ] ">
 					<li class=" [ requires-js ] ">
-						<button class=" [ anchor ] " popovertarget="popover-settings"><c-emoji><svg width="16" height="16" aria-hidden="true" focusable="false" style="fill: var(--color-highland);"><use href="#svg--cog"></use></svg></c-emoji>Open Settings</button>
-					</li><li><a href="https://github.com/{{ author.github }}/{{ site.repository }}/tree/{{ site.branch }}/{{ page.inputPath }}" id="edit"><c-emoji><svg width="16" height="16" aria-hidden="true" focusable="false" style="fill: var(--color-highland);"><use href="#svg--edit"></use></svg></c-emoji>Edit this page</a></li><li>{% include 'share-button.njk' %}</li>
+						<button class=" [ anchor ] " popovertarget="popover-settings"><c-emoji><svg width="16" height="16" aria-hidden="true" focusable="false" style="fill: var(--color-raven);"><use href="#svg--cog"></use></svg></c-emoji>Open Settings</button>
+					</li><li><a href="https://github.com/{{ author.github }}/{{ site.repository }}/tree/{{ site.branch }}/{{ page.inputPath }}" id="edit"><c-emoji><svg width="16" height="16" aria-hidden="true" focusable="false" style="fill: var(--color-raven);"><use href="#svg--edit"></use></svg></c-emoji>Edit this page</a></li><li>{% include 'share-button.njk' %}</li>
 				</ul>
 				<ul class=" [ cluster ] [ footer__navigation ] ">
 					<li><a href="/license/" id="copyright" rel="license">© {{ site.established }}–{{ global.nowISO | friendlyDate('yyyy') }} <span class=" [ canada ] ">{{ author.name }}</span></a></li>
