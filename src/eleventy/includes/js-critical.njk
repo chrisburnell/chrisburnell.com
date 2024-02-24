@@ -2,7 +2,7 @@
 {%- if eleventy.env.runMode !== 'build' %}
 	{# External files (local dev live reload will refresh without page reload) -#}
 	<script src="{% getBundleFileUrl 'js', 'critical' %}"></script>
-{%- else  %}
+{%- else %}
 	{# Inlined (fastest site performance in production) -#}
 	<script>{% getBundle 'js', 'critical' %}</script>
 {%- endif %}

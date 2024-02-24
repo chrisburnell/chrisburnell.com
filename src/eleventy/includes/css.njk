@@ -3,7 +3,7 @@
 	{%- if eleventy.env.runMode !== 'build' %}
 		{# External files (local dev live reload will refresh without page reload) -#}
 		<link rel="stylesheet" href="{% getBundleFileUrl 'css', 'critical' %}">
-	{%- else  %}
+	{%- else %}
 		{# Inlined CSS (fastest site performance in production) -#}
 		<style>{% getBundle 'css', 'critical' %}</style>
 	{%- endif %}

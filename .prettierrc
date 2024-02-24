@@ -10,13 +10,13 @@
 			}
 		},
 		{
-			"files": "*.toml",
+			"files": "*.njk",
 			"options": {
-				"tabWidth": 2
+				"parser": "jinja-template"
 			}
 		},
 		{
-			"files": "*.yaml",
+			"files": "*.toml",
 			"options": {
 				"tabWidth": 2
 			}
@@ -27,5 +27,8 @@
 				"tabWidth": 2
 			}
 		}
+	],
+	"plugins": [
+		"prettier-plugin-jinja-template"
 	]
 }
