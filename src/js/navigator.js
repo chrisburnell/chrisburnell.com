@@ -2,17 +2,16 @@ if (navigator.serviceWorker) {
 	navigator.serviceWorker
 		.register("/serviceworker.js")
 		.then((registration) => {
-			let serviceWorker
 			if (registration.installing) {
-				serviceWorker = registration.installing
+				console.log("Service Worker installing with scope", registration.scope)
 			} else if (registration.waiting) {
-				serviceWorker = registration.waiting
+				console.log("Service Worker installed with scope", registration.scope)
 			} else if (registration.active) {
-				serviceWorker = registration.active
+				console.log("Service Worker active with scope", registration.scope)
 			}
 		})
 		.catch((error) => {
-			console.log("ServiceWorker Registration failed", error)
+			console.error("Service Worker Registration failed", error)
 		})
 	window.addEventListener("load", () => {
 		if (navigator.serviceWorker.controller) {
@@ -22,5 +21,5 @@ if (navigator.serviceWorker) {
 		}
 	})
 } else {
-	console.log("ServiceWorkers are not supported in your browser.")
+	console.log("Service Workers are not supported in your browser.")
 }

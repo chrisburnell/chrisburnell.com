@@ -48,7 +48,7 @@ export const friendlyDateLong = (dateString) => {
 }
 
 /**
- * @param {datetime} value
+ * @param {DateTime} value
  * @param {boolean} [showTimezone]
  * @returns {string}
  */
@@ -58,7 +58,7 @@ export const friendlyTime = (value, showTimezone = true) => {
 }
 
 /**
- * @param {datetime} value
+ * @param {DateTime} value
  * @returns {string}
  */
 export const friendlyTimezone = (value) => {
@@ -76,7 +76,7 @@ export const rfc3339Date = (dateString, showTimezone = true) => {
 }
 
 /**
- * @param {datetime} value
+ * @param {DateTime} value
  * @returns {string}
  */
 export const w3cDate = (value) => {

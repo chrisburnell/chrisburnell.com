@@ -21,6 +21,7 @@
 - review comments in JS
 - move svg-sparkline.js to inline?
 - use fast-xml-parser to pull in latest posts from blogroll
+- refactor getPlace()
 
 ## Eleventy Build
 

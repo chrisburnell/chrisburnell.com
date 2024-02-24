@@ -45,7 +45,7 @@ const helpers = {
 
 	/**
 	 * Format a Date.
-	 * @param {datetime} date
+	 * @param {DateTime} date
 	 * @param {boolean} [includeWeekday]
 	 * @returns {string}
 	 */
@@ -67,7 +67,7 @@ const helpers = {
 
 	/**
 	 * Format a Time.
-	 * @param {datetime} date
+	 * @param {DateTime} date
 	 * @param {boolean} [includeSeconds]
 	 * @param {boolean} [includeMerdiem]
 	 * @returns {string}
@@ -155,7 +155,7 @@ const helpers = {
 
 	/**
 	 * Return a string based on the recency of a Datetime.
-	 * @param {datetime} datetime
+	 * @param {DateTime} datetime
 	 * @returns {string}
 	 */
 	since: (datetime) => {

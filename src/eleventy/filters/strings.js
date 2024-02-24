@@ -1,8 +1,8 @@
 import { encode } from "html-entities"
-import markdownParser from "markdown-it"
 import randomCase from "random-case"
 import truncate from "truncate-html"
 import capitalizers from "../../data/capitalizers.js"
+import markdown from "../config/markdown.js"
 import { locale } from "../data/site.js"
 
 const stringNumbers = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
@@ -100,13 +100,7 @@ export const numberStringFormat = (number) => {
  * @returns {string}
  */
 export const formatAsMarkdown = (string) => {
-	return markdownParser({
-		html: true,
-		breaks: true,
-		linkify: true,
-	})
-		.disable("code")
-		.render(string)
+	return markdown.render(string)
 }
 
 export const excerptize = (string) => {

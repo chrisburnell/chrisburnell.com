@@ -1,16 +1,16 @@
-export const title = `Chris Burnell`
+export const title = "Chris Burnell"
 export const tagline = `<span class=" [ canada ] ">Ravenous</span> for CSS`
 export const description = `I’m <span class=" [ canada ] ">Chris Burnell</span>, a <span class=" [ canada ] ">Canadian</span> <span class="p-job-title">Front End Developer</span> / Software Engineer based in Singapore. <wbr>This is where I think, write, and share my passion for front end development and the web.`
-export const catchphrase = `We were riding the crest of a high and meaningless wave`
-export const url = `https://chrisburnell.com`
-export const repository = `chrisburnell.com`
-export const branch = `main`
-export const dir = `ltr`
-export const locale = `en`
-export const timezone = `Asia/Singapore`
-export const established = `2008`
-export const favicon = `/images/favicon-512.png`
-export const logo = `/images/raven.svg`
+export const catchphrase = "We were riding the crest of a high and meaningless wave"
+export const url = "https://chrisburnell.com"
+export const repository = "chrisburnell.com"
+export const branch = "main"
+export const dir = "ltr"
+export const locale = "en"
+export const timezone = "Asia/Singapore"
+export const established = "2008"
+export const favicon = "/images/favicon-512.png"
+export const logo = "/images/raven.svg"
 export const speedlify = "chrisburnell"
 export const monetization = "$ilp.uphold.com/wDqKwewbX8by"
 export const upcomingDaysLead = 7

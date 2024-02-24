@@ -70,7 +70,7 @@ class LastFMListening extends HTMLElement {
 	static monthInDays = this.yearInDays
 
 	/**
-	 * @param {datetime} datetime
+	 * @param {DateTime} datetime
 	 * @returns {string}
 	 */
 	pastDateString(datetime) {
