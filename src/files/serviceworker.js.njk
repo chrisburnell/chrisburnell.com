@@ -8,10 +8,12 @@
 // Set up the caches
 const ASSETS_CACHE = "assets::{{ pkg.version }}"
 const IMAGES_CACHE = "images"
+const CORE_PAGES_CACHE = "core-pages"
 const PAGES_CACHE = "pages"
 const CACHES = [
 	ASSETS_CACHE,
 	IMAGES_CACHE,
+	CORE_PAGES_CACHE,
 	PAGES_CACHE,
 ]
 
@@ -38,12 +40,13 @@ const OPTIONAL_IMAGES = [
 	"/images/raven.svg",
 ]
 
-// Pages to cache
-const OFFLINE_PAGES = [
+// Pages that are always cached
+const CORE_PAGES = [
 	"/offline/",
 	"/",
 	"/about/",
 	"/cv/",
+	"/explore/",
 	"/posts/",
 	"/latest/",
 	"/hot/",
@@ -56,14 +59,13 @@ const OFFLINE_PAGES = [
 
 // Pages to ignore
 const IGNORE_PAGES = [
-	"/201.html",
+	"/search/",
 	"/audio/mononoke-hime.mp3",
-	"/checkins.xml",
 	"/feed.xml",
-	"/projects.xml",
+	"/writing.xml",
 	"/replies.xml",
 	"/rsvps.xml",
-	"/writing.xml",
+	"/projects.xml",
 ]
 
 let updateAssetsCache = () => {
@@ -79,16 +81,16 @@ let updateAssetsCache = () => {
 let updateImagesCache = () => {
 	return caches.open(IMAGES_CACHE)
 		.then(cache => {
-			// These items won"t block the installation of the Service Worker
+			// These items won't block the installation of the Service Worker
 			cache.addAll(OPTIONAL_IMAGES)
 		})
 }
 
-let updatePagesCache = () => {
-	return caches.open(PAGES_CACHE)
+let updateCorePagesCache = () => {
+	return caches.open(CORE_PAGES_CACHE)
 		.then(cache => {
 			// These items must be cached for the Service Worker to complete installation
-			return cache.addAll(OFFLINE_PAGES)
+			return cache.addAll(CORE_PAGES)
 		})
 }
 
@@ -127,7 +129,7 @@ let clearOldCaches = () => {
 self.addEventListener("install", event => {
 	event.waitUntil(updateAssetsCache()
 		.then(updateImagesCache())
-		.then(updatePagesCache())
+		.then(updateCorePagesCache())
 		.then(() => self.skipWaiting())
 	)
 })
@@ -203,7 +205,7 @@ self.addEventListener("fetch", event => {
 					else if (copy.headers.get("Content-Type").includes("text/html")) {
 						try {
 							event.waitUntil(
-								stashInCache(PAGES_CACHE, request, copy)
+								stashInCache(CORE_PAGES.includes(url.pathname) ? CORE_PAGES_CACHE : PAGES_CACHE, request, copy)
 							)
 						}
 						catch(error) {

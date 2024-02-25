@@ -7,4 +7,5 @@ export default {
 		exclude: true,
 	},
 	excludeFromSearch: true,
+	noServiceWorker: true,
 }

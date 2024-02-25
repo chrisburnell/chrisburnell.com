@@ -13,28 +13,32 @@ theme: null
 (async () => {
 	const browsingHistory = []
 	const parser = new DOMParser()
-	const cache = await caches.open("pages")
-	const keys = await cache.keys()
-	for (const request of keys) {
-		if (!request.url.includes("/offline/")) {
-			const response = await cache.match(request)
-			const html = await response.text()
-			const dom = parser.parseFromString(html, "text/html")
-			const data = new Object()
-			data.url = request.url
-			data.timestamp = new Date(response.headers.get("Date"))
-			if (dom.querySelector(".description .dt-published")) {
-				data.published = new Date(dom.querySelector(".description .dt-published").getAttribute("datetime")).toISOString()
-				data.publishedString = dom.querySelector(".description .dt-published").innerText
+	const cacheCorePages = await caches.open("core-pages")
+    console.log(cacheCorePages)
+	const cachePages = await caches.open("pages")
+	const keysCorePages = await cacheCorePages.keys()
+	const keysPages = await cachePages.keys()
+	for (const keys of [keysCorePages, keysPages]) {
+		for (const request of keys) {
+			if (!request.url.includes("/offline/")) {
+				const response = await cacheCorePages.match(request) || await cachePages.match(request)
+				const html = await response.text()
+				const dom = parser.parseFromString(html, "text/html")
+				const data = new Object()
+				data.url = request.url
+				data.timestamp = new Date(response.headers.get("Date"))
+				if (dom.querySelector(".description .dt-published")) {
+					data.published = new Date(dom.querySelector(".description .dt-published").getAttribute("datetime")).toISOString()
+					data.publishedString = dom.querySelector(".description .dt-published").innerText
+				}
+				if (dom.querySelector("h1")) {
+					data.title = dom.querySelector("h1").innerText.replace("{{ site.tagline | striptags | safe }}", "The Homepage")
+				} else {
+					data.title = dom.querySelector('meta[name="twitter:title"]').getAttribute("content").replace(" · Chris Burnell", "")
+				}
+				data.description = dom.querySelector('meta[name="description"]').getAttribute("content")
+				browsingHistory.push(data)
 			}
-			if (dom.querySelector("h1")) {
-				data.title = dom.querySelector("h1").innerText
-			} else {
-				data.title = dom.querySelector('meta[name="twitter:title"]').getAttribute("content").replace(" · Chris Burnell", "")
-			}
-			data.description = dom.querySelector('meta[name="description"]').getAttribute("content")
-
-			browsingHistory.push(data)
 		}
 	}
 	if (browsingHistory) {

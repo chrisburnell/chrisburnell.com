@@ -202,7 +202,7 @@
 		{% set svg %}{% include '../../../images/sprites.svg' %}{% endset -%}
 		{{ svg | replace('<?xml version="1.0" encoding="utf-8"?>', '') | replace('<svg', '<svg display="none" aria-hidden="true"') | safe }}
 
-		{% if eleventy.env.runMode === 'build' -%}
+		{% if eleventy.env.runMode === 'build' and not noServiceWorker -%}
 		{# ServiceWorker -#}
 		<script>{% include '../../js/navigator.js' %}</script>
 		{%- endif %}
