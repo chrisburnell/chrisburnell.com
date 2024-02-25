@@ -136,25 +136,27 @@
 						<svg width="24" height="24" aria-hidden="true" focusable="false"><use href="#svg--hamburger"></use></svg>
 					</button>
 				</nav>
-				<div id="popover-settings" class=" [ popover-settings ] [ flow ] [ gamma ] " popover>
-					{%- include 'theme-selector.njk' -%}
-					<button id="sounds-toggle" class=" [ anchor ] [ js-sounds-toggle ] ">
-						<c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false" style="fill: var(--color-raven);"><use href="#svg--sound-off"></use></svg></c-emoji><span class=" [ js-sounds-status ] ">Enable sounds</span>
-					</button>
-				</div>
-				<div id="popover-navigation" class=" [ popover-navigation ] [ flow ] [ gamma ] " popover>
-					<ol class=" [ navigation__list ] ">
-						{% for link in navigation %}
-							{% if link.header %}
-								<li>
-									<a href="{{ link.url }}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title | safe }}</a>
-								</li>
-							{% endif %}
-						{% endfor %}
-					</ol>
-				</div>
 			</div>
 		</header>
+
+		<div id="popover-settings" class=" [ popover-settings ] [ flow ] [ gamma ] " popover>
+			{%- include 'theme-selector.njk' -%}
+			<button id="sounds-toggle" class=" [ anchor ] [ js-sounds-toggle ] ">
+				<c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false" style="fill: var(--color-raven);"><use href="#svg--sound-off"></use></svg></c-emoji><span class=" [ js-sounds-status ] ">Enable sounds</span>
+			</button>
+		</div>
+
+		<div id="popover-navigation" class=" [ popover-navigation ] [ flow ] [ gamma ] " popover>
+			<ol class=" [ navigation__list ] ">
+				{% for link in navigation %}
+					{% if link.header %}
+						<li>
+							<a href="{{ link.url }}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title | safe }}</a>
+						</li>
+					{% endif %}
+				{% endfor %}
+			</ol>
+		</div>
 
 		<main class=" [ main ] [ flow ] ">
 			{{- content | safe -}}
