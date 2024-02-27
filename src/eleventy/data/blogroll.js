@@ -532,7 +532,7 @@ const blogroll = [
 	{
 		title: "Pablo Morales",
 		url: "https://lifeofpablo.com",
-		rss: "https://lifeofpablo.com/feed/page:feed.xml",
+		rss: "https://lifeofpablo.com/feed/folder:blog/page:feed.xml",
 		mastodon: "pablo@lifeofpablo.com",
 	},
 	{

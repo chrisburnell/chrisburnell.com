@@ -3,7 +3,7 @@ import path from "path"
 import { cacheDurations } from "../data/site.js"
 
 export default function (eleventyConfig) {
-	eleventyConfig.addNunjucksShortcode("image", (src, alt, classes = "", widths = [800], styles = "") => {
+	eleventyConfig.addNunjucksShortcode("image", (src, alt, classes = "", widths = [800, 500], styles = "") => {
 		let formats
 		if (src.includes(".svg")) {
 			formats = ["svg"]

@@ -1,6 +1,7 @@
 import fs from "fs-extra"
 
 export default {
+	generateHTML: (outputURL) => outputURL,
 	satoriOptions: {
 		fonts: [
 			{

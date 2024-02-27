@@ -79,14 +79,16 @@
 		<meta property="og:type" content="website">
 		{%- endif %}
 		<meta property="og:url" content="{{ canonical }}">
-		<meta property="og:title" content="{{ meta_title | safe }}">
+		<meta property="og:title" content="{{ meta_title | safe }}" data-pagefind-meta="image_alt[content]">
 		<meta property="og:description" content="{{ meta_description | safe }}">
 		<meta property="og:locale" content="{{ site.locale }}">
 		<meta property="og:site_name" content="{{ site.title }}">
 		{% if eleventy.env.runMode !== 'build' or og_image or banner or cover or photo or not 'post' in tags -%}
-			<meta property="og:image" content="{{ meta_image }}">
+			<meta property="og:image" content="{{ meta_image }}" data-pagefind-default-meta="image[content]">
+		{%- elif title -%}
+			<meta property="og:image" content="{{ meta_image }}" data-pagefind-default-meta="image[content]">
 		{%- else -%}
-			{% ogImage './eleventy/layouts/og-image.og.njk', { title: meta_title } %}
+			<meta property="og:image" content="{% ogImage './eleventy/layouts/og-image.og.njk', { title: meta_title } %}" data-pagefind-default-meta="image[content]">
 		{%- endif %}
 
 		{% if layout == 'post' -%}
@@ -111,7 +113,7 @@
 
 		{% include 'js-critical.njk' %}
 	</head>
-	<body{% if not excludeFromSearch and not sitemap.exclude and not draft and published !== false and not 'ignore' in tags %} data-pagefind-body{% endif %}>
+	<body>
 		<a href="#content" class=" [ skip-link  button ] [ visually-hidden ] ">Skip to main content</a>
 
 		<header class=" [ header ] ">
@@ -158,7 +160,7 @@
 			</ol>
 		</div>
 
-		<main class=" [ main ] [ flow ] ">
+		<main class=" [ main ] [ flow ] "{% if not excludeFromSearch and not sitemap.exclude and not draft and published !== false and not 'ignore' in tags %} data-pagefind-body{% endif %}>
 			{{- content | safe -}}
 		</main>
 

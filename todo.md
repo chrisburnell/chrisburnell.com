@@ -20,12 +20,13 @@
 
 - review comments in JS
 - move svg-sparkline.js to inline?
-- use fast-xml-parser to pull in latest posts from blogroll
+- use fast-xml-parser to pull in latest posts for blogroll items
 - refactor getPlace()
 
 ## Eleventy Build
 
-- work out logic for pinned posts
+- figure out logic for pinned posts
+- figure out how to manage "RSS-only" posts (that become visible on the site after site.upcomingDaysLead)
 - get dates working in OG Images
     - https://github.com/KiwiKilian/eleventy-plugin-og-image
 - use new eleventy-img transform instead of image shortcode
@@ -38,4 +39,3 @@
     - near-upcoming events
     - reviews (books, games, etc?) that don't yet have a review (i.e. are currently being read/played/etc.)
 - finish transcript for "Middle Out in CSS"
-- figure out how to manage "RSS-only" posts (that become visible on the site after site.upcomingDaysLead)

@@ -9,6 +9,7 @@ tags:
 banner:
   url: emperors-new-clothes.jpg
   alt: "The Emperor’s New Clothes, by Vilhelm Pedersen. The illustration depicts a royal parade where the emperor is wearing just his undergarments, and the onlooking spectators display shocked expressions on their faces."
+  caption: "Illustration by [Vilhelm Pedersen](https://en.wikipedia.org/wiki/Vilhelm_Pedersen). Taken from [Wikipedia](https://en.wikipedia.org/wiki/The_Emperor%27s_New_Clothes)."
 ---
 
 An annual event falling on April {{ 9 | ordinal | safe }} of every year since 2006, the <dfn title="the reason for existing">raison d’être</dfn> of [CSS Naked Day](https://css-naked-day.github.io/) is to promote <q id="cssnakedday-quote">proper use of HTML, semantic markup, [and] a good hierarchy structure</q> by completely stripping CSS from our websites.

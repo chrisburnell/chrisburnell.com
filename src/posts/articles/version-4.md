@@ -6,6 +6,10 @@ description: With the introduction of ESM to Eleventy in the canary versions, I 
 tags:
   - eleventy
   - javascript
+banner:
+  url: version-4.png
+  alt: "TODO"
+  caption: "Illustration by [Edmond Morin](https://www.oldbookillustrations.com/artists/morin-edmond/). Taken from [Old Book Illustrations](https://www.oldbookillustrations.com/illustrations/polisher/)."
 ---
 
 Placeholder for article about how I refactored my website.
