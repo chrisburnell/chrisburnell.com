@@ -84,11 +84,11 @@
 		<meta property="og:locale" content="{{ site.locale }}">
 		<meta property="og:site_name" content="{{ site.title }}">
 		{% if eleventy.env.runMode !== 'build' or og_image or banner or cover or photo or not 'post' in tags -%}
-			<meta property="og:image" content="{{ meta_image }}" data-pagefind-default-meta="image[content]">
+			<meta property="og:image" content="{{ meta_image }}" data-pagefind-meta="image[content]">
 		{%- elif title -%}
-			<meta property="og:image" content="{{ meta_image }}" data-pagefind-default-meta="image[content]">
+			<meta property="og:image" content="{{ meta_image }}" data-pagefind-meta="image[content]">
 		{%- else -%}
-			<meta property="og:image" content="{% ogImage './eleventy/layouts/og-image.og.njk', { title: meta_title } %}" data-pagefind-default-meta="image[content]">
+			<meta property="og:image" content="{% ogImage './eleventy/layouts/og-image.og.njk', { title: meta_title } %}" data-pagefind-meta="image[content]">
 		{%- endif %}
 
 		{% if layout == 'post' -%}
