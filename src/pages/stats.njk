@@ -5,13 +5,18 @@ excludeFromSearch: true
 ---
 
 {%- set collection = collections.posts -%}
-{%- set count = collection.length -%}
 {%- set latest_year = collection[0].date.getFullYear() -%}
-{%- set first_year = collection[count-1].date.getFullYear() -%}
+{%- set first_year = collection[collection.length-1].date.getFullYear() -%}
+{%- set diff_years = latest_year - first_year -%}
 
 {%- set blog_count = 0 -%}
+{%- set blog_count_highest = 0 -%}
 {%- for i in range(first_year, latest_year + 1) -%}
-	{%- set blog_count = blog_count + collections.blogPosts | getCollectionCount(i) -%}
+	{%- set count = collections.blogPosts | getCollectionCount(i) -%}
+	{%- set blog_count = blog_count + count -%}
+	{%- if count > blog_count_highest -%}
+		{%- set blog_count_highest = count -%}
+	{%- endif -%}
 {%- endfor -%}
 {%- set blog_count_average = blog_count / (latest_year - first_year + 1) -%}
 
@@ -54,27 +59,20 @@ excludeFromSearch: true
 
 <div class=" [ grid  center ] " style="--min-inline-size: 100%;">{% sparkline collections.blogPosts, first_year, false %}</div>
 
-{%- set collection = collection | reverse -%}
-{%- set year = first_year -%}
-<figure class=" [ scroll-inline  scroll-inline-shadow ] ">
-	<table>
-		<tbody>
+<table>
+	<tbody>
+		{% for i in range(0, diff_years+1) -%}
+			{% set count = collections.blogPosts | getCollectionCount(latest_year-i) -%}
 			<tr>
-				<th><div class="shadow-child" style="white-space: nowrap;">Year</div></th>
-				{% for i in range(first_year, latest_year + 1) %}
-					<td><strong>{{ i }}</strong></td>
-				{% endfor %}
+				<th class=" [ numeral ] ">{{ latest_year-i }}</th>
+				<td class=" [ numeral  strong ] " style="padding-inline-start: 1lh; padding-inline-end: var(--size-medium);">{{ count }}</td>
+				<td style="inline-size: 100%; padding-inline: 0;">
+					<div class=" [ background--raven ] " style="inline-size: {{ count / blog_count_highest * 100 | maxDecimals }}%; block-size: 1lh;"></div>
+				</td>
 			</tr>
-			<tr>
-				<th><div class="shadow-child" style="white-space: nowrap;">Blog Posts</div></th>
-				{% for i in range(first_year, latest_year + 1) -%}
-					{% set count = collections.blogPosts | getCollectionCount(i) -%}
-					<td class=" [ numeral{% if count > blog_count_average %} strong {% endif %} ] ">{{ count }}</td>
-				{%- endfor %}
-			</tr>
-		</tbody>
-	</table>
-</figure>
+		{%- endfor %}
+	</tbody>
+</table>
 
 <hr>
 
