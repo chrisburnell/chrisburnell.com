@@ -20,10 +20,12 @@
 	transition:
 		background-color var(--transition-duration) var(--transition-function),
 		color var(--transition-duration) var(--transition-function),
-		text-decoration-color var(--transition-duration) var(--transition-function);
+		text-decoration-color var(--transition-duration) var(--transition-function),
+		text-underline-offset var(--transition-duration-short) var(--transition-function);
 
 	&:is(:hover, :focus, :active) {
 		text-decoration-color: h(maple);
+		text-underline-offset: 0.1875em;
 	}
 
 	&:active {
