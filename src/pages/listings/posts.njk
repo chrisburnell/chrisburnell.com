@@ -29,27 +29,27 @@ perch: true
 
 		<ul class=" [ grid ] [ shelf ] ">
 			<li>
-				<a href="/latest/" class=" [ strong ] " style="font-size: var(--font-size-gamma);"><c-emoji>{{ emojis.new }}</c-emoji>Latest Posts <sup>{{ site.limits.feed }}</sup></a>
+				<a href="/latest/" class=" [ gamma ] "><c-emoji>{{ emojis.new }}</c-emoji>Latest Posts <sup>{{ site.limits.feed }}</sup></a>
 				<p>Latest posts on the blog.</p>
 			</li>
 			<li>
-				<a href="/writing/" class=" [ strong ] " style="font-size: var(--font-size-gamma);"><c-emoji>{{ emojis.author }}</c-emoji>Writing <sup>{{ collections.writings | getCollectionCount }}</sup></a>
+				<a href="/writing/" class=" [ gamma ] "><c-emoji>{{ emojis.author }}</c-emoji>Writing <sup>{{ collections.writings | getCollectionCount }}</sup></a>
 				<p>A more serious collection of ideas and bits of prose.</p>
 			</li>
 			<li>
-				<a href="/replies/" class=" [ strong ] " style="font-size: var(--font-size-gamma);"><c-emoji>{{ emojis.reply }}</c-emoji>Replies <sup>{{ collections.replies | getCollectionCount }}</sup></a>
+				<a href="/replies/" class=" [ gamma ] "><c-emoji>{{ emojis.reply }}</c-emoji>Replies <sup>{{ collections.replies | getCollectionCount }}</sup></a>
 				<p>Replies I’ve made to other people.</p>
 			</li>
 			<li>
-				<a href="/rsvps/" class=" [ strong ] " style="font-size: var(--font-size-gamma);"><c-emoji>{{ emojis.rsvp }}</c-emoji>RSVPs <sup>{{ collections.rsvps | getCollectionCount }}</sup></a>
+				<a href="/rsvps/" class=" [ gamma ] "><c-emoji>{{ emojis.rsvp }}</c-emoji>RSVPs <sup>{{ collections.rsvps | getCollectionCount }}</sup></a>
 				<p>A record of RSVPs to conferences and meetups.</p>
 			</li>
 			<li>
-				<a href="/hot/" class=" [ strong ] " style="font-size: var(--font-size-gamma);"><c-emoji>{{ emojis.hot }}</c-emoji>Hot Pages <sup>{{ site.limits.feed }}</sup></a>
+				<a href="/hot/" class=" [ gamma ] "><c-emoji>{{ emojis.hot }}</c-emoji>Hot Pages <sup>{{ site.limits.feed }}</sup></a>
 				<p>Top blog posts, ordered by interactions across time.</p>
 			</li>
 			<li>
-				<a href="/popular/" class=" [ strong ] " style="font-size: var(--font-size-gamma);"><c-emoji>{{ emojis.chart }}</c-emoji>Popular Pages <sup>{{ site.limits.feed }}</sup></a>
+				<a href="/popular/" class=" [ gamma ] "><c-emoji>{{ emojis.chart }}</c-emoji>Popular Pages <sup>{{ site.limits.feed }}</sup></a>
 				<p>Top blog posts, ordered by total interactions.</p>
 			</li>
 		</ul>
@@ -62,7 +62,7 @@ perch: true
 			{%- for item in collections.categories -%}
 				{%- set count = collections[item.title] | arePublished | getCollectionCount -%}
 				<li>
-					<a href="/{{ item.plural }}/" class=" [ strong ] " style="font-size: var(--font-size-gamma);"><c-emoji>{{ item.emoji | default(emojis.paper) }}</c-emoji>{{ item.properPlural | title }} <sup>{{ count }}</sup></a>
+					<a href="/{{ item.plural }}/" class=" [ gamma ] "><c-emoji>{{ item.emoji | default(emojis.paper) }}</c-emoji>{{ item.properPlural | title }} <sup>{{ count }}</sup></a>
 					<p>
 				</li>
 			{%- endfor -%}

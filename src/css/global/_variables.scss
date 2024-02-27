@@ -31,7 +31,7 @@
 	@each $name, $value in $breakpoints {
 		#{"--size-breakpoint-" + $name}: #{$value};
 	}
-	@media (height > #{map-get($breakpoints, "tiny")}) {
+	@media (height > #{map-get($breakpoints, "small")}) {
 		--size-header: calc(var(--size-logo-small) + var(--size-small) * 2);
 	}
 
