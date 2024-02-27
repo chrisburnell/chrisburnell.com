@@ -9,9 +9,9 @@
 		display: none;
 	}
 
-	@include cq("main", "medium") {
+	@include cqi("main", "medium") {
 		position: sticky;
-		inset-block-start: calc(var(--size-header, 0) + 1rem);
+		inset-block-start: calc(var(--size-header, 0px) + 1rem);
 	}
 
 	details {
@@ -33,14 +33,9 @@
 		animation: toc-shadow-inside linear;
 		animation-timeline: scroll(self block);
 
-		@include cq("main", "small") {
-			max-block-size: 60vb;
-			max-block-size: 60dvb;
-		}
-
-		@include cq("main", "medium") {
-			max-block-size: calc(100vb - (var(--size-header, 0) * 2));
-			max-block-size: calc(100dvb - (var(--size-header, 0) * 2));
+		@include cqi("main", "medium") {
+			max-block-size: calc(100vb - (1em * var(--line-height-default)) - var(--size-small) - var(--size-header, 0px) - (2 * var(--size-medium)));
+			max-block-size: calc(100dvb - (1em * var(--line-height-default)) - var(--size-small) - var(--size-header, 0px) - (2 * var(--size-medium)));
 		}
 	}
 }

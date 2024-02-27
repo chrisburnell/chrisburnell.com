@@ -91,7 +91,7 @@
 }
 
 :where(:focus-visible, :target) {
-	scroll-margin-block: max(8vb, calc(var(--size-header, 0) + 1rem));
+	scroll-margin-block: max(8vb, calc(var(--size-header, 0px) + 1rem));
 }
 
 :where(.visually-hidden:not(:focus, :focus-within, :active)) {

@@ -47,7 +47,7 @@ pre {
 	overflow: hidden;
 	position: relative;
 
-	@include cq(null, "tiny") {
+	@include cqi(null, "tiny") {
 		tab-size: 4;
 	}
 

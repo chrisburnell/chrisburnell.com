@@ -40,13 +40,13 @@
 }
 
 .footer__grid {
-	@include cq(null, null, "medium") {
+	@include cqi(null, null, "medium") {
 		display: flex;
 		flex-direction: column;
 		gap: var(--size-gutter);
 	}
 
-	@include cq(null, "medium") {
+	@include cqi(null, "medium") {
 		display: grid;
 		grid-template-columns:
 			[left-start]
@@ -72,7 +72,7 @@
 	.speedlify {
 		grid-column: right;
 
-		@include cq(null, "medium") {
+		@include cqi(null, "medium") {
 			text-align: end;
 		}
 	}

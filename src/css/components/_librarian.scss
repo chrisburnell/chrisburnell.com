@@ -14,7 +14,7 @@
 .librarian {
 	margin-block-start: var(--flow-space, 1em);
 	position: sticky;
-	inset-block-start: var(--size-header, 0);
+	inset-block-start: var(--size-header, 0px);
 	z-index: var(--z-index-modal);
 
 	.no-js & {

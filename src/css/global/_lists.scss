@@ -109,7 +109,7 @@ dl {
 	margin-block-start: 0;
 	overflow: hidden;
 
-	@include cq(null, "tiny") {
+	@include cqi(null, "tiny") {
 		grid-template-columns: minmax(min-content, 33.33%) 1fr;
 	}
 }

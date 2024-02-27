@@ -18,7 +18,7 @@
 		display: flex;
 		flex-wrap: wrap;
 
-		@include cq(null, null, "tiny") {
+		@include cqi(null, null, "tiny") {
 			flex-direction: column;
 		}
 
@@ -31,11 +31,11 @@
 			white-space: nowrap;
 			font-variant-numeric: tabular-nums;
 
-			@include cq(null, null, "tiny") {
+			@include cqi(null, null, "tiny") {
 				flex: 1 0 100%;
 			}
 
-			@include cq(null, "tiny") {
+			@include cqi(null, "tiny") {
 				flex: 1 0 50%;
 			}
 
@@ -46,7 +46,7 @@
 
 		&.thirds li,
 		& .third {
-			@include cq(null, "tiny") {
+			@include cqi(null, "tiny") {
 				flex: 1 0 33.333%;
 			}
 		}

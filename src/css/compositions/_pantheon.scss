@@ -45,7 +45,7 @@
 		--aside-size: var(--size-aside); // 15–18rem between 850px–1200px
 		--margin-gap: var(--size-gap);
 
-		@include cq(null, "medium") {
+		@include cqi(null, "medium") {
 			grid-template-rows:
 				[breadcrumbs-start]
 				auto
@@ -74,7 +74,7 @@
 	}
 
 	&:not(.full, .wide) {
-		@include cq(null, "gigantic") {
+		@include cqi(null, "gigantic") {
 			// only show outdent above gigantic on non-wide/non-full pages
 			--outdent-gap: var(--size-gap);
 			--outdent-size: 1fr;
@@ -122,11 +122,11 @@
 	grid-row: sparkline;
 	margin-block-end: var(--size-large);
 
-	@include cq(null, null, "small") {
+	@include cqi(null, null, "small") {
 		justify-self: start;
 	}
 
-	@include cq(null, "small") {
+	@include cqi(null, "small") {
 		justify-self: center;
 	}
 }
@@ -136,7 +136,7 @@
 	grid-row: meta;
 
 	&:has(.table-of-contents) {
-		@include cq(null, null, "medium") {
+		@include cqi(null, null, "medium") {
 			grid-row: toc;
 			margin-block-start: 0;
 			margin-block-end: var(--size-gigantic);

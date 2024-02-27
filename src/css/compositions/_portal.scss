@@ -21,7 +21,7 @@
 		auto
 		[outdent-end content-end marginalia-end];
 
-	@include cq(null, "medium") {
+	@include cqi(null, "medium") {
 		grid-template-columns:
 			[marginalia-start]
 			1fr

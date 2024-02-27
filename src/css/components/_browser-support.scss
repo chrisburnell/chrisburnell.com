@@ -16,7 +16,7 @@
 	display: flex;
 	gap: var(--size-gutter);
 
-	@include cq(null, "small") {
+	@include cqi(null, "small") {
 		gap: var(--size-large);
 	}
 }
@@ -24,7 +24,7 @@
 .support {
 	flex-direction: column-reverse;
 
-	@include cq(null, "small") {
+	@include cqi(null, "small") {
 		flex-direction: row-reverse;
 	}
 }

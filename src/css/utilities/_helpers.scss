@@ -26,7 +26,7 @@
 // Make anything top sticky
 .sticky {
 	position: sticky;
-	inset-block-start: var(--size-header, 0);
+	inset-block-start: var(--size-header, 0px);
 	z-index: var(--z-index-default);
 }
 
@@ -273,8 +273,8 @@
 	scroll-timeline-axis: inline;
 }
 .scroll-block {
-	max-block-size: calc(100vb - (var(--size-header, 0) * 2));
-	max-block-size: calc(100dvb - (var(--size-header, 0) * 2));
+	max-block-size: calc(100vb - (var(--size-header, 0px) * 2));
+	max-block-size: calc(100dvb - (var(--size-header, 0px) * 2));
 	overflow-y: auto !important;
 }
 .scroll-block-shadow {

@@ -11,7 +11,7 @@
 	position: relative;
 	contain: content; // helps painting with .perch inside
 
-	@include cq(null, "small") {
+	@include cqi(null, "small") {
 		text-align: center;
 	}
 }
