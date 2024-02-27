@@ -1,7 +1,7 @@
 ---
 title: Curriculum Vitae
 eleventyComputed:
-  tagline: '<span class=" [ canada ] ">{{ author.name }}</span>'
+  tagline: '<span class=" [ canada ] " data-pagefind-title="CV / Résumé">{{ author.name }}</span>'
   description: "{{ author.role | title }}{% if not author.employer %} and Software Engineer{% else %}, Software Engineer, and {{ author.employer.role | title }} at {{ author.employer.title }}{% endif %}"
 content_class: h-resume
 og_image: /images/avatar@2x.jpeg

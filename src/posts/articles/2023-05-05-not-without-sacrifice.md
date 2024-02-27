@@ -11,7 +11,7 @@ I recently had the pleasure of watching [Jack Franklin’s](https://www.jackfran
 
 ----
 
-In recent years, there has been a growing emphasis on the importance of Developer Experience (*DX*) in front end development. This has lead to the creation of powerful tools that assist developers in building and organising more feature-rich websites. With the introduction of new web technologies and seeing the maturity of beloved tools that have become essential to many in the field, suffice to say it has been an exciting time for web development.
+In recent years, there has been a growing emphasis on the importance of Developer Experience (*DX*) in front end development. This has led to the creation of powerful tools that assist developers in building and organising more feature-rich websites. With the introduction of new web technologies and seeing the maturity of beloved tools that have become essential to many in the field, suffice to say it has been an exciting time for web development.
 
 <figure>
     <div id="bars-2" class="flow" title="Now">
