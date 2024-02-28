@@ -80,11 +80,13 @@ truncate: true
 
 		<hr>
 
-		<div class=" [ grid ] [ navigator ] ">
-			<a href="/{{ related_collection }}.xml" class=" [ button ] ">
-				<c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false"><use href="#svg--rss"></use></svg></c-emoji>{{ title | safe }} Feed
-			</a>
-		</div>
+		{% if not no_feed %}
+			<div class=" [ grid ] [ navigator ] ">
+				<a href="/{{ feed_name | default(related_collection) }}.xml" class=" [ button ] ">
+					<c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false"><use href="#svg--rss"></use></svg></c-emoji>{{ title | safe }} Feed
+				</a>
+			</div>
+		{% endif %}
 	</div>
 
 	<aside class=" [ meta ] [ flow ] " role="complementary" data-pagefind-ignore>

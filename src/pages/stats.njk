@@ -38,7 +38,7 @@ excludeFromSearch: true
 
 <dl>
 	<dt>№ Posts</dt>
-	<dd>{{ count | numberStringFormat }}</dd>
+	<dd>{{ collection.length | numberStringFormat }}</dd>
 	<dt>№ Blog Posts</dt>
 	<dd>{{ blog_count | numberStringFormat }}</dd>
 	<dt>Blog Word Count</dt>
@@ -67,7 +67,7 @@ excludeFromSearch: true
 				<th class=" [ numeral ] ">{{ latest_year-i }}</th>
 				<td class=" [ numeral  strong ] " style="padding-inline-start: 1lh; padding-inline-end: var(--size-medium);">{{ count }}</td>
 				<td style="inline-size: 100%; padding-inline: 0;">
-					<div class=" [ background--raven ] " style="inline-size: {{ count / blog_count_highest * 100 | maxDecimals }}%; block-size: 1lh;"></div>
+					<div class=" [ background--raven ] " style="background-image: linear-gradient(to bottom, transparent, color-mix(in oklab, var(--color-mineshaft), transparent calc(100% - var(--opacity-beta)))); inline-size: {{ (count / blog_count_highest * 100) | maxDecimals }}%; block-size: 1lh; border-radius: var(--size-border-thin);"></div>
 				</td>
 			</tr>
 		{%- endfor %}
