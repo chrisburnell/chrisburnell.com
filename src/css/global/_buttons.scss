@@ -34,7 +34,7 @@ button {
 
 	@include non-selectable;
 	background-color: h(bowhead);
-	color: h(bear);
+	color: h(bear) !important;
 	min-inline-size: var(--min-inline-size, 8em);
 	display: inline-block;
 	padding: var(--padding-block, var(--padding, var(--size-small))) var(--padding-inline, var(--padding, var(--size-medium)));

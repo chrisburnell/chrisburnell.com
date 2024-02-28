@@ -4,6 +4,9 @@
 ////
 
 .title {
+	background-image: linear-gradient(to bottom, var(--color-kaiser), var(--color-wolf));
+	background-clip: text;
+	color: transparent;
 	display: block;
 	padding-block-start: var(--size-large-gigantic);
 	padding-block-end: var(--size-medium-large);
@@ -16,10 +19,15 @@
 	}
 }
 
-.title--positive span,
-.title--negative span {
-	padding: var(--size-tiny) var(--size-small);
+:is(.title--positive, .title--negative) {
+	background-image: none;
+	background-clip: initial;
+
+	& > span {
+		padding: var(--size-tiny) var(--size-small);
+	}
 }
+
 .title--positive > span {
 	background-color: h(conifer);
 	color: h(snowy);

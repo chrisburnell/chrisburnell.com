@@ -43,10 +43,6 @@
 		}
 	}
 
-	.button {
-		color: h(bear) !important; // maintain color for styled anchors
-	}
-
 	///
 	// Global Content Elements
 	///
@@ -110,6 +106,10 @@
 	.breadcrumbs,
 	.fragment-anchor {
 		color: h(yeti);
+	}
+
+	.title:not(.title--positive, .title--negative) {
+		background-image: linear-gradient(to bottom, var(--color-snowy), var(--color-coyote));
 	}
 
 	///

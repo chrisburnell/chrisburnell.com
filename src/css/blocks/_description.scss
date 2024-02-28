@@ -5,8 +5,11 @@
 
 .description {
 	padding-block-end: var(--size-large);
-	font-size: var(--font-size-gamma);
-	font-weight: var(--font-weight-medium);
+
+	&:not(.description--published) {
+		font-size: var(--font-size-gamma);
+		font-weight: var(--font-weight-semibold);
+	}
 
 	p {
 		:not(.content) > & {
