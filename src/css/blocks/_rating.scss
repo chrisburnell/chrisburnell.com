@@ -25,7 +25,9 @@
 		background-color: inherit;
 		color: var(--rating-color, h(aspen));
 		inline-size: 0;
-		text-shadow: 0 1px 1px var(--rating-border, h(nickel));
+		text-shadow:
+			0 0 1px var(--rating-border, h(nickel)),
+			0 1px 1px var(--rating-border, h(nickel));
 		overflow: hidden;
 		position: absolute;
 		inset-block-start: 0;
