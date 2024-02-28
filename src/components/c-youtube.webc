@@ -1,1 +1,8 @@
-<iframe webc:root="override" :src="`https://www.youtube-nocookie.com/embed/${this.id}`" :title="this.title" frameborder="0" allow="encrypted-media; picture-in-picture" allowfullscreen><span class="canada">Sorry</span>, this video embed requires JavaScript, but you can still watch it <a :href="`https://www.youtube.com/watch?v=${this.id}`">over on YouTube</a>!</iframe>
+<is-land on:visible class=" [ media  media--16-by-9 ]">
+	<lite-youtube :videoid="slug" :js-api="jsapi !== 'undefined' ? '' : false" :params="start ? `start=${start}` : false" :playlabel="`Play${label ? `: ${label}` : ''}`" :style="`background-image: url('https://i.ytimg.com/vi/${slug}/hqdefault.jpg');`">
+	</lite-youtube>
+	<template webc:raw data-island="once">
+		<link rel="stylesheet" href="/css/components/lite-yt-embed.css" />
+		<script src="/js/components/lite-yt-embed.js"></script>
+	</template>
+</is-land>

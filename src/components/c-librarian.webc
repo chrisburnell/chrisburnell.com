@@ -2,7 +2,6 @@
 	<div webc:root="override" class=" [ box ] [ librarian ] ">
 		<slot></slot>
 	</div>
-
 	<template webc:raw data-island="once">
 		<script type="module" src="/js/components/librarian.js"></script>
 	</template>

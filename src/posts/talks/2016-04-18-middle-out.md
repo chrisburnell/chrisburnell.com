@@ -7,7 +7,7 @@ checkin:
   url: http://londonwebstandards.org/2016/04/lws-18-april-2016-animation-chats-lwsaniquery/
 ---
 
-I wrote about this talk in another article, [April LWS Talk](/article/april-lws-talk/), if you’re interested in more detail or want to read about what I learned from giving my first public talk.
+I wrote about this talk in the article, [April LWS Talk](/article/april-lws-talk/), if you’re interested in more detail or want to read about what I learned from giving my first public talk.
 
 ## Slides
 
@@ -16,18 +16,15 @@ I wrote about this talk in another article, [April LWS Talk](/article/april-lws-
         <c-speakerdeck id="b933d8a3500240b8b7d2b879f075329b"></c-speakerdeck>
     </div>
     <figcaption>
-        <a href="https://speakerdeck.com/chrisburnell/supporting-middle-out-in-css" rel="syndication" title="Supporting Middle-Out in CSS on Speaker Deck" class="u-syndication">View this Talk on <em>Speaker Deck</em></a>
+        <p><a href="https://speakerdeck.com/chrisburnell/supporting-middle-out-in-css" rel="syndication" class="u-syndication">View the slides on <em>Speaker Deck</em></a></p>
     </figcaption>
 </figure>
 
 ## Video
 
 <figure>
-    <video autopictureinpicture controls controlslist="nodownload" poster="/video/Supporting Middle-Out in CSS.png">
-        <source src="/video/Supporting Middle-Out in CSS 640x360.mp4" type="video/mp4" media="all and (max-width: 640px)">
-        <source src="/video/Supporting Middle-Out in CSS 960x540.mp4" type="video/mp4" media="all and (max-width: 960px)">
-        <source src="/video/Supporting Middle-Out in CSS 1024x768.mp4" type="video/mp4">
-        <track kind="captions" label="English captions" src="/video/Supporting Middle-Out in CSS.vtt" srclang="en" default="">
-        Sorry, your browser doesn't support embedded videos.
-    </video>
+    <c-youtube slug="YbHMBW1UK5w" label="{{ title }}"></c-youtube>
+    <figcaption>
+        <p><a href="https://www.youtube.com/watch?v=YbHMBW1UK5w" rel="syndication" class="u-syndication">Watch the video on <em>YouTube</em></a>.</p>
+    </figcaption>
 </figure>

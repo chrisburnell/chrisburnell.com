@@ -113,6 +113,8 @@ export default async function(eleventyConfig) {
 		"node_modules/@chrisburnell/instant-photo/instant-photo.js": "js/components/instant-photo.js",
 		"node_modules/@chrisburnell/spark-line/spark-line.js": "js/components/spark-line.js",
 		"node_modules/@zachleat/details-utils/details-utils.js": "js/components/details-utils.js",
+		"node_modules/lite-youtube-embed/src/lite-yt-embed.css": "css/components/lite-yt-embed.css",
+		"node_modules/lite-youtube-embed/src/lite-yt-embed.js": "js/components/lite-yt-embed.js",
 	})
 
 	///

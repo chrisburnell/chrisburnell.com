@@ -32,9 +32,7 @@ In a time where the waters of front-end development were churning with the curre
 
 I’ve said it before, but I’ll say it again. Andy Bell’s talk, named above, is one of my **all-time favourites**. In it, Andy walks through building a website from scratch, and if you haven’t seen the talk, I urge you to do so:
 
-<figure class=" [ media ] ">
-    <c-youtube id="5uhIiI9Ld5M" title="Andy Bell – Be the browser’s mentor, not its micromanager"></c-youtube>
-</figure>
+<c-youtube slug="5uhIiI9Ld5M" label="Andy Bell – Be the browser’s mentor, not its micromanager"></c-youtube>
 
 <aside class="inline-aside" style="--inset-block-start: -5em">
     <div class=" [ box ] ">

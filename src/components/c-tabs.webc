@@ -10,7 +10,6 @@
 		<div id="second-tab" role="tabpanel">Second tab content</div>
 		<div id="third-tab" role="tabpanel">Third tab content</div>
 	</seven-minute-tabs>
-
 	<template webc:raw data-island="once">
 		<script src="/js/components/seven-minute-tabs.js"></script>
 	</template>

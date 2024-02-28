@@ -1,6 +1,5 @@
 <is-land on:idle on:visible>
 	<speedlify-score webc:raw webc:root @attributes speedlify-url="https://speedlify.chrisburnell.com"></speedlify-score>
-
 	<template webc:raw data-island="once">
 		<script src="/js/components/speedlify-score.js"></script>
 	</template>
