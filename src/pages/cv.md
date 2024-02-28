@@ -10,7 +10,7 @@ toc: true
 ---
 
 <ul class=" [ cluster ] ">
-    <li><!--email_off--><a href="mailto:{{ author.email }}">📧 {{ author.email }}</a><!--/email_off--></li><li><a href="https://chrisburnell.com/cv/">📄 chrisburnell.com/cv</a></li><li><a href="https://chrisburnell.com/cv.pdf">⬇️ Download PDF</a></li>
+    <li><!--email_off--><a href="mailto:{{ author.email }}">📧 {{ author.email }}</a><!--/email_off--></li><li><a href="https://chrisburnell.com/cv/">📄 chrisburnell.com/cv</a></li><li><a href="https://chrisburnell.com/CV.pdf">⬇️ Download PDF</a></li>
 </ul>
 
 ## Summary
@@ -19,7 +19,7 @@ Front End Developer and Software Engineer with {{ global.nowISO | friendlyDate('
 
 Work roles involved creating design systems and tools to enable teams to build maintainable and performant websites, with an uncompromising focus on accessibility and user experience. These also included lead roles in building the front end and CMS architecture for small to enterprise clients, chiefly in the higher education and government sectors, as I oversaw the project lifecycle and acted as their primary technical contact.
 
-Passionate about the open web, having published over 50 technical articles, and author of several open-source projects used by thousands of developers worldwide and on production client websites. Actively involved in the web community with many years of experience in organising conferences and meetups, most notably, [State of the Browser](https://stateofthebrowser.com).
+Passionate about the open web, having published over 50 technical articles, and author of open-source software used by thousands of developers worldwide and on production client websites. Actively involved in the web community with many years of experience in organising conferences and meet-ups, most notably, [State of the Browser](https://stateofthebrowser.com).
 
 <hr>
 
@@ -100,14 +100,14 @@ Passionate about the open web, having published over 50 technical articles, and 
 - Liaised with speakers, sponsors, and venues as well as handled the logistics of running an in-person and online conference.
 - Sourced sponsorship to fund the events and enable under-represented groups to attend for free.
 - Built and maintained the conference websites, including a design refresh in 2018 and codebase refresh in 2021 as well as extensive work with APIs, to automate many organisational tasks for the conference.
-- Annual conference websites: [2018](https://2018.stateofthebrowser.com), [2019](https://2019.stateofthebrowser.com), [2021](https://2021.stateofthebrowser.com), [2022](https://2022.stateofthebrowser.com), [2023](https://2022.stateofthebrowser.com), 2024 *(coming soon!)*
+- Annual conference websites: [2018](https://2018.stateofthebrowser.com), [2019](https://2019.stateofthebrowser.com), [2021](https://2021.stateofthebrowser.com), [2022](https://2022.stateofthebrowser.com), [2023](https://2023.stateofthebrowser.com), [2024](https://2024.stateofthebrowser.com)*
 
 <div class=" [ space-between ] ">
     <h3 class=" [ delta ] ">Technical Writer on <a href="https://chrisburnell.com/"><c-emoji><img src="/images/raven.svg" class="brand-logo" alt="{{ site.title }}" loading="lazy" decoding="async"></c-emoji>chrisburnell.com</a></h3>
     <small><strong>2013 – present</strong></small>
 </div>
 
-Launched a web development blog and have published over [{{ collections.blog | length | toNearest(5, true) }} blog posts](https://chrisburnell.com/posts/), including [{{ collections.writings | length }} longform articles](https://chrisburnell.com/writing/), [{{ collections.css | length }} articles about CSS](https://chrisburnell.com/tag/css/), and [{{ collections.code | length }} code demos](https://chrisburnell.com/code/), some of which have been [featured on CodePen](https://codepen.io/collection/hfqlg).
+Launched a web development blog and have published over [{{ collections.blogPosts | length | toNearest(5, true) }} blog posts](https://chrisburnell.com/posts/), including [{{ collections.writings | length }} longform articles](https://chrisburnell.com/writing/), [{{ collections.css | length }} articles about CSS](https://chrisburnell.com/tag/css/), and [{{ collections.code | length }} code demos](https://chrisburnell.com/code/), some of which have been [featured on CodePen](https://codepen.io/collection/hfqlg).
 
 <div class=" [ space-between ] ">
     <h3 class=" [ delta ] "><a href="https://chrisburnell.com/projects/">Open Source Author</a></h3>
