@@ -51,6 +51,9 @@
 		{# All CSS -#}
 		{% include 'css.njk' %}
 
+		{# Critical JS -#}
+		{% include 'js-critical.njk' %}
+
 		{% if (tags and 'httpstatus' in tags) or (noindex and nofollow) -%}
 		<meta name="robots" content="noindex,nofollow">
 		{%- else -%}
@@ -110,8 +113,6 @@
 		<meta name="monetization" content="{{ site.monetization }}">
 		{%- endif %}
 		{%- endif %}{# end non-httpstatus #}
-
-		{% include 'js-critical.njk' %}
 	</head>
 	<body>
 		<a href="#content" class=" [ skip-link  button ] [ visually-hidden ] ">Skip to main content</a>

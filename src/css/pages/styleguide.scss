@@ -68,12 +68,12 @@
 		color: h(snowy);
 
 		@media (prefers-color-scheme: dark) {
-			:root:not(:has([name="theme"] [value*="light"]:checked)) & {
+			:root:not(:has([name="theme"] [value*="light"]:checked), .light, [data-theme*="light"]) & {
 				background-color: h(snowy);
 				color: h(kaiser);
 			}
 		}
-		:root:has([name="theme"] [value*="dark"]:checked) &,
+		:root:has([name="theme"] [value*="dark"]:checked):not(.light, [data-theme*="light"]) &,
 		[data-theme*="dark"] &,
 		.dark & {
 			background-color: h(snowy);
