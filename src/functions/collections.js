@@ -151,7 +151,7 @@ export const getPropertyLabel = (data) => {
 	if (getPropertyData(data)) {
 		let labelPrefix = getPropertyTitle(data) ? "Read" : "Read more on"
 		if (data.drink_of) {
-			labelPrefix = "My checkin on"
+			labelPrefix = "Also on"
 		} else if (data.listen_of) {
 			labelPrefix = "Find out where to listen with"
 		}
