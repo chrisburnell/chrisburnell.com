@@ -3,7 +3,7 @@
 /// @group abstracts
 ////
 
-a,
+a:not(.button),
 .anchor {
 	@extend %anchor !optional;
 }

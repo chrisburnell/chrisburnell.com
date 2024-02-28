@@ -32,7 +32,7 @@
 		--outline-offset: 0;
 
 		background-color: h(maple);
-		color: h(snowy);
+		color: h(snowy) !important;
 	}
 
 	&[disabled] {
