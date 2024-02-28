@@ -26,9 +26,6 @@
 				<h2 class=" [ no-fragment ] [ sticky ] ">{{ responsesLength }} Response{{ 's' if responsesLength > 1 }}</h2>
 				{% if reactions.length or stargazers %}
 					<ol id="reactions" class=" [ reactions ] [ cluster ] [ strong ] ">
-						{% if stargazers -%}
-							<li><c-emoji>{{ emojis.stars }}</c-emoji> <a href="https://github.com/{{ github }}">{{ stargazers }} Stargazer{{ 's' if stargazers > 1 }}</a></li>
-						{%- endif %}
 						{% if bookmarks.length -%}
 							<li><c-emoji>{{ emojis.bookmark }}</c-emoji> {{ bookmarks.length }} Bookmark{{ 's' if bookmarks.length > 1 }}</li>
 						{%- endif %}
@@ -43,6 +40,9 @@
 						{%- endif %}
 						{% if links.length -%}
 							<li><c-emoji>{{ emojis.link }}</c-emoji> {{ links.length }} Link{{ 's' if links.length > 1 }}</li>
+						{%- endif %}
+						{% if stargazers -%}
+							<li><c-emoji>{{ emojis.stars }}</c-emoji> <a href="https://github.com/{{ github }}">{{ stargazers }} Stargazer{{ 's' if stargazers > 1 }}</a></li>
 						{%- endif %}
 					</ol>
 				{% endif %}

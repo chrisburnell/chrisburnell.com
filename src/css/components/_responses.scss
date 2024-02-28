@@ -24,6 +24,10 @@
 	grid-gap: var(--size-small);
 	grid-template-columns: 1fr min-content;
 	margin-inline: auto;
+
+	@media print {
+		display; none;
+	}
 }
 
 .responses__label {

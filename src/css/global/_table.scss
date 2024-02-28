@@ -50,7 +50,7 @@ table {
 th {
 	font-weight: var(--font-weight-semibold);
 	line-height: var(--line-height-medium);
-	break-inside: avoid;
+	white-space: nowrap;
 
 	&:not(:empty) {
 		background-color: color-mix(in oklab, h(yeti), h(snowy) 40%);
@@ -92,7 +92,7 @@ th {
 td {
 	.numeral &,
 	&.numeral {
-		break-inside: avoid;
+		white-space: nowrap;
 	}
 
 	.scroll-inline-shadow & {

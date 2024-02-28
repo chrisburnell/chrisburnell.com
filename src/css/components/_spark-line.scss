@@ -13,6 +13,10 @@
 
 :is(spark-line, .spark-line, svg-sparkline) {
 	opacity: 1;
+
+	@media print {
+		display: none;
+	}
 }
 
 :is(spark-line, svg-sparkline) {

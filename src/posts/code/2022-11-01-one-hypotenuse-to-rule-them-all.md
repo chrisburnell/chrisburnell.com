@@ -90,7 +90,7 @@ Interesting! 🤔
     .opposite,
     .adjacent {
         position: absolute;
-        break-inside: avoid;
+        white-space: nowrap;
     }
 
     .right-triangle::before {

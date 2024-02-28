@@ -28,7 +28,6 @@
 
 	time {
 		@include italic;
-		break-inside: avoid;
 	}
 
 	.title[hidden]:not([hidden="until-found"]) ~ &,

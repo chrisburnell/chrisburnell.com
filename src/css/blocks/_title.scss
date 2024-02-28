@@ -14,6 +14,12 @@
 	position: relative;
 	contain: content; // helps painting with .perch inside
 
+	@media print {
+		background-image: none;
+		background-clip: initial;
+		color: inherit;
+	}
+
 	@include cqi(null, "small") {
 		text-align: center;
 	}
@@ -22,6 +28,7 @@
 :is(.title--positive, .title--negative) {
 	background-image: none;
 	background-clip: initial;
+	color: h(snowy);
 
 	& > span {
 		padding: var(--size-tiny) var(--size-small);
@@ -30,9 +37,8 @@
 
 .title--positive > span {
 	background-color: h(conifer);
-	color: h(snowy);
 }
+
 .title--negative > span {
 	background-color: h(maple);
-	color: h(snowy);
 }

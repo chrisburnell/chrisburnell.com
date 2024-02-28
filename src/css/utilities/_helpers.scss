@@ -45,7 +45,7 @@
 
 // Prevent text wrapping
 .no-wrap {
-	break-inside: avoid;
+	white-space: nowrap;
 }
 
 // Hyphenate any looooooooooooooooooooo-
