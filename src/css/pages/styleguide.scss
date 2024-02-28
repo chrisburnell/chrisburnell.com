@@ -28,7 +28,7 @@
 			padding: var(--size-small-medium) var(--size-small);
 			font-size: var(--font-size-small);
 			text-align: center;
-			white-space: nowrap;
+			break-inside: avoid;
 			font-variant-numeric: tabular-nums;
 
 			@include cqi(null, null, "tiny") {

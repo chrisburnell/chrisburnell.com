@@ -32,7 +32,7 @@ truncate: true
 
 	<div class=" [ description ] [ flow ] ">
 		<p>
-			<span class=" [ p-summary ] ">{% if count > 1 %}All {{ count | numberStringFormat }}{% else %}Just the one{% endif %} of my {{ category.properPlural }}{% if first_year != latest_year %}, dating from {% if collection[0].data.list == 'shelf' %}<span class=" [ nowrap ] ">{{ first_year }}–{{ latest_year }}</span>{% else %}<span class=" [ nowrap ] "><a href="#{{ first_year }}">{{ first_year }}</a>–<a href="#{{ latest_year }}">{{ latest_year }}</a></span>{% endif %}{% endif %}.</span>
+			<span class=" [ p-summary ] ">{% if count > 1 %}All {{ count | numberStringFormat }}{% else %}Just the one{% endif %} of my {{ category.properPlural }}{% if first_year != latest_year %}, dating from {% if collection[0].data.list == 'shelf' %}<span class=" [ no-wrap ] ">{{ first_year }}–{{ latest_year }}</span>{% else %}<span class=" [ no-wrap ] "><a href="#{{ first_year }}">{{ first_year }}</a>–<a href="#{{ latest_year }}">{{ latest_year }}</a></span>{% endif %}{% endif %}.</span>
 			<a href="{{ site.url }}/{{ category.plural }}.xml" title="{{ title | safe }} Feed" class=" [ icon-anchor ] "><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false"><use href="#svg--rss"></use></svg></c-emoji></a>
 		</p>
 	</div>

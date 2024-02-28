@@ -69,35 +69,35 @@ The function takes six parameters:
         </tr>
         <tr>
             <th><code>duration</code></th>
-            <td style="white-space:nowrap">
+            <td class=" [ no-wrap ] ">
                 4000 <em>(default)</em>
             </td>
             <td>the length of time to play the audio for, represented in milliseconds</td>
         </tr>
         <tr>
             <th><code>volume</code></th>
-            <td style="white-space:nowrap">
+            <td class=" [ no-wrap ] ">
                 0.5 <em>(default)</em>
             </td>
             <td>controls the *gain* of the audio, represented by a 0–1 range</td>
         </tr>
         <tr>
             <th><code>keyStart</code></th>
-            <td style="white-space:nowrap">
+            <td class=" [ no-wrap ] ">
                 29 <em>(default: C♯3 / D♭3)</em>
             </td>
             <td>the zero-index of the key on a standard keyboard from which the scale should start</td>
         </tr>
         <tr>
             <th><code>keyIntervals</code></th>
-            <td style="white-space:nowrap">
+            <td class=" [ no-wrap ] ">
                 [2, 2, 3, 2, 3] <em>(default)</em>
             </td>
             <td>an array of integers which represent half-steps in a loop which composes the desired scale</td>
         </tr>
         <tr>
             <th><code>keyLimit</code></th>
-            <td style="white-space:nowrap">
+            <td class=" [ no-wrap ] ">
                 12 <em>(default)</em>
             </td>
             <td>represents the highest index in the desired scale by which notes are bound by</td>

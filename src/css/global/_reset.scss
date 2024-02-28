@@ -95,16 +95,7 @@
 }
 
 :where(.visually-hidden:not(:focus, :focus-within, :active)) {
-	inline-size: 1px !important;
-	block-size: 1px !important;
-	padding: 0 !important;
-	margin: -1px !important;
-	border: 0 !important;
-	overflow: hidden !important;
-	position: absolute !important;
-	white-space: nowrap !important;
-	clip: rect(0 0 0 0) !important;
-	clip-path: inset(100%) !important;
+	@include visually-hidden;
 }
 
 @media (prefers-reduced-motion: reduce) {

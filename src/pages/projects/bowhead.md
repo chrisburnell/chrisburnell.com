@@ -161,7 +161,7 @@ With this knowledge under our belt, we can begin to define the design tokens for
 	<tbody>
 		<tr>
 			<th><code>$bowhead-variable-as-default</code><br><em>(optional)</em></th>
-			<td style="white-space:nowrap">
+			<td class=" [ no-wrap ] ">
 				<strong>true</strong> <em>(default)</em><br>
 				<strong>false</strong>
 			</td>
@@ -169,7 +169,7 @@ With this knowledge under our belt, we can begin to define the design tokens for
 		</tr>
 		<tr>
 			<th><code>$bowhead-show-fallback</code><br><em>(optional)</em></th>
-			<td style="white-space:nowrap">
+			<td class=" [ no-wrap ] ">
 				<strong>true</strong> <em>(default)</em><br>
 				<strong>false</strong>
 			</td>
@@ -177,7 +177,7 @@ With this knowledge under our belt, we can begin to define the design tokens for
 		</tr>
 		<tr>
 			<th><code>$bowhead-generate</code><br><em>(optional)</em></th>
-			<td style="white-space:nowrap">
+			<td class=" [ no-wrap ] ">
 				<strong>true</strong> <em>(default)</em><br>
 				<strong>false</strong>
 			</td>

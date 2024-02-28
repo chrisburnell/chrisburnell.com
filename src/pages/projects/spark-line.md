@@ -76,35 +76,35 @@ The element takes a number of attributes:
         </tr>
         <tr>
             <th><code>stroke-width</code></th>
-            <td style="white-space:nowrap">
+            <td class=" [ no-wrap ] ">
                 2 <em>(default)</em>
             </td>
             <td>defines the width/thickness of the line as an integer</td>
         </tr>
         <tr>
             <th><code>curve</code></th>
-            <td style="white-space:nowrap">
+            <td class=" [ no-wrap ] ">
                 true <em>(default)</em>
             </td>
             <td>toggles applying curves (cardinal splines) to the line</td>
         </tr>
         <tr>
             <th><code>endpoint</code></th>
-            <td style="white-space:nowrap">
+            <td class=" [ no-wrap ] ">
                 true <em>(default)</em>
             </td>
             <td>toggles the display of a point at the end of the line</td>
         </tr>
         <tr>
             <th><code>color</code></th>
-            <td style="white-space:nowrap">
+            <td class=" [ no-wrap ] ">
                 currentColor <em>(default)</em>
             </td>
             <td>defines the color of the line</td>
         </tr>
         <tr>
             <th><code>endpoint-color</code></th>
-            <td style="white-space:nowrap">
+            <td class=" [ no-wrap ] ">
                 <code>color</code> <em>(default)</em>
             </td>
             <td>defines the color of the endpoint</td>

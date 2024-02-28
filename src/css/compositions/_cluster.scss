@@ -13,7 +13,7 @@
 .cluster {
 	& > * {
 		display: inline-block;
-		white-space: nowrap;
+		break-inside: avoid;
 
 		&:not(:last-child) {
 			&::after {

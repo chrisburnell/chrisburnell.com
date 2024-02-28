@@ -59,6 +59,6 @@
 
 	time {
 		@include italic;
-		white-space: nowrap;
+		break-inside: avoid;
 	}
 }

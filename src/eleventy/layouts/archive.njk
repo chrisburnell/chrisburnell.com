@@ -24,7 +24,7 @@ truncate: true
 	<div class=" [ description ] [ flow ] ">
 		{% if by_year %}
 			<p class=" [ p-summary ] ">
-				{{ description | replace('.', '') | safe }}{% if first_year != latest_year %}, dating from <span class=" [ nowrap ] "><a href="#{{ first_year }}">{{ first_year }}</a>–<a href="#{{ latest_year }}">{{ latest_year }}</a></a>{% endif %}.
+				{{ description | replace('.', '') | safe }}{% if first_year != latest_year %}, dating from <span class=" [ no-wrap ] "><a href="#{{ first_year }}">{{ first_year }}</a>–<a href="#{{ latest_year }}">{{ latest_year }}</a></a>{% endif %}.
 				{% if 'archive' in tags -%}
 					<a href="{{ site.url }}/{{ feed_name | default(related_collection) }}.xml" title="{{ title | safe }} Feed" class=" [ icon-anchor ] "><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false"><use href="#svg--rss"></use></svg></c-emoji></a>
 				{%- endif %}
