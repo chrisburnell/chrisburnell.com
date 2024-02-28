@@ -43,6 +43,11 @@
 	word-wrap: anywhere;
 }
 
+// Prevent text wrapping
+.nowrap {
+	white-space: nowrap;
+}
+
 // Hyphenate any looooooooooooooooooooo-
 // oooooong text
 .hyphen,
