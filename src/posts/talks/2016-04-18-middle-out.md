@@ -9,6 +9,15 @@ checkin:
 
 I wrote about this talk in the article, [April LWS Talk](/article/april-lws-talk/), if you’re interested in more detail or want to read about what I learned from giving my first public talk.
 
+## Video
+
+<figure>
+    <c-youtube slug="YbHMBW1UK5w" label="{{ title }}"></c-youtube>
+    <figcaption>
+        <p><a href="https://www.youtube.com/watch?v=YbHMBW1UK5w" rel="syndication" class="u-syndication">Watch the video on <em>YouTube</em></a>.</p>
+    </figcaption>
+</figure>
+
 ## Slides
 
 <figure>
@@ -17,14 +26,5 @@ I wrote about this talk in the article, [April LWS Talk](/article/april-lws-talk
     </div>
     <figcaption>
         <p><a href="https://speakerdeck.com/chrisburnell/supporting-middle-out-in-css" rel="syndication" class="u-syndication">View the slides on <em>Speaker Deck</em></a></p>
-    </figcaption>
-</figure>
-
-## Video
-
-<figure>
-    <c-youtube slug="YbHMBW1UK5w" label="{{ title }}"></c-youtube>
-    <figcaption>
-        <p><a href="https://www.youtube.com/watch?v=YbHMBW1UK5w" rel="syndication" class="u-syndication">Watch the video on <em>YouTube</em></a>.</p>
     </figcaption>
 </figure>

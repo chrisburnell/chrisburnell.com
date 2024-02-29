@@ -67,7 +67,6 @@ class LastFMListening extends HTMLElement {
 	})
 
 	static yearInDays = 365.2422
-	static monthInDays = this.yearInDays
 
 	/**
 	 * @param {DateTime} datetime

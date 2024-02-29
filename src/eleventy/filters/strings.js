@@ -44,8 +44,23 @@ export const cleanTags = (string) => {
 		.replace(/<(\w+).*?class="\s*\[ palette(.|\n)*?<\/\1>/g, "")
 }
 
+/**
+ *
+ * @param {string} string
+ * @returns {string}
+ */
 export const htmlEntities = (string) => {
 	return encode(string)
+}
+
+/**
+ * @param {string} string
+ * @returns {string}
+ */
+export const stripImages = (string) => {
+	return string
+		.replace(/<picture.*?>(.*?)<\/picture>/g, "")
+		.replace(/<img[^<>]+>/g, "")
 }
 
 /**
@@ -103,8 +118,12 @@ export const formatAsMarkdown = (string) => {
 	return markdown.render(string)
 }
 
+/**
+ * @param string} string
+ * @returns {string}
+ */
 export const excerptize = (string) => {
-	return string
+	return stripImages(string)
 		.replace(/<\/(p|blockquote)>(\s+)?<(p|blockquote)>/, "<br>")
 		.replace("<p>", "")
 		.replace("</p>", "")
