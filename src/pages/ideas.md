@@ -46,3 +46,11 @@ toc: true
     - near-upcoming events
     - reviews (books, games, etc?) that don't yet have a rating (i.e. are currently being read/played/etc.)
 - finish transcript for "Middle Out in CSS"
+
+## A11y
+
+- on npm: @govtechsg/purple-hats
+- whitespace exploration - what is this?
+- look into manual testing
+- functional tests for functions, filters, etc.
+- https://github.com/younglim/purple-a11y-cicd-demo
