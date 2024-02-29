@@ -181,7 +181,9 @@
 // Apply the Dark color scheme when the media query matches
 @media (prefers-color-scheme: dark) {
 	:root:not(:has([name="theme"] [value*="light"]:checked), .light, [data-theme*="light"]) {
-		@include theme-dark;
+		@media not print {
+			@include theme-dark;
+		}
 	}
 }
 
@@ -189,5 +191,7 @@
 :root:has([name="theme"] [value*="dark"]:checked):not(.light, [data-theme*="light"]),
 [data-theme*="dark"],
 .dark {
-	@include theme-dark;
+	@media not print {
+		@include theme-dark;
+	}
 }

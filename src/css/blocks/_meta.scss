@@ -7,6 +7,10 @@
 	--flow-space: var(--size-medium);
 	container: meta / inline-size;
 
+	@media print {
+		display: none;
+	}
+
 	@include cqi(null, null, "medium") {
 		margin-block-start: var(--size-large);
 	}

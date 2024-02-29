@@ -10,6 +10,10 @@
 	margin-block-start: var(--size-large);
 	font-weight: var(--font-weight-semibold);
 
+	@media print {
+		display: none;
+	}
+
 	li {
 		flex: 0 1 50%;
 	}

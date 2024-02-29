@@ -122,6 +122,10 @@
 	grid-row: sparkline;
 	margin-block-end: var(--size-large);
 
+	@media print {
+		display: none;
+	}
+
 	@include cqi(null, null, "small") {
 		justify-self: start;
 	}

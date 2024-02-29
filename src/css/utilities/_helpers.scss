@@ -224,6 +224,13 @@
 	display: none;
 }
 
+// Remove things from the print layout
+.no-print {
+	@media print {
+		display: none;
+	}
+}
+
 %background--aspen,
 %background--bear,
 %background--coyote,

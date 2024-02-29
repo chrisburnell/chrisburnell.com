@@ -17,6 +17,10 @@
 	inset-block-start: var(--size-header, 0px);
 	z-index: var(--z-index-modal);
 
+	@media print {
+		display: none;
+	}
+
 	.no-js & {
 		display: none;
 	}
