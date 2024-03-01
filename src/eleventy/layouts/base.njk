@@ -3,11 +3,18 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-		<meta name="view-transition" content="same-origin">
 
 		<title>{% if page.url != '/' %}{{ title | default(meta_title) | striptags | safe }} · {% endif %}{{ site.title }}</title>
 
+		{# Critical JS -#}
+		{% include 'js-critical.njk' %}
+
+		{# All CSS -#}
+		{% include 'css.njk' %}
+
 		<link rel="preload" href="/fonts/proxima-vara-subset.woff2" as="font" type="font/woff2" crossorigin>
+
+		<meta name="view-transition" content="same-origin">
 
 		{% if eleventy.env.runMode === 'build' -%}
 		<link rel="icon" href="/images/favicon.ico" sizes="16x16 32x32 48x48 64x64">
@@ -47,12 +54,6 @@
 
 		<meta name="theme-color" content="{{ designTokens['colors-hex'] | keyValue('raven') }}">
 		<meta name="supported-color-schemes" content="light dark">
-
-		{# All CSS -#}
-		{% include 'css.njk' %}
-
-		{# Critical JS -#}
-		{% include 'js-critical.njk' %}
 
 		{% if (tags and 'httpstatus' in tags) or (noindex and nofollow) -%}
 		<meta name="robots" content="noindex,nofollow">
