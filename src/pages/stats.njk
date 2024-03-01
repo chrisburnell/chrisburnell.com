@@ -9,26 +9,33 @@ excludeFromSearch: true
 {%- set first_year = collection[collection.length-1].date.getFullYear() -%}
 {%- set diff_years = latest_year - first_year -%}
 
-{%- set blog_count = 0 -%}
-{%- set blog_count_highest = 0 -%}
-{%- for i in range(first_year, latest_year + 1) -%}
-	{%- set count = collections.blogPosts | getCollectionCount(i) -%}
-	{%- set blog_count = blog_count + count -%}
-	{%- if count > blog_count_highest -%}
-		{%- set blog_count_highest = count -%}
-	{%- endif -%}
-{%- endfor -%}
-{%- set blog_count_average = blog_count / (latest_year - first_year + 1) -%}
-
 {%- set wordiest_post_index = 0 -%}
-{%- set wordiest_wordcount = 0 -%}
+{%- set wordiest_blogPost = 0 -%}
 {%- set blog_wordcount = 0 -%}
-{%- for item in collection -%}
+{%- for item in collections.blogPosts -%}
 	{%- set wordCount = item.content | cleanTags | striptags | safe | wordcount -%}
 	{%- set blog_wordcount = blog_wordcount + wordCount -%}
-	{%- if wordCount > wordiest_wordcount -%}
-		{%- set wordiest_wordcount = wordCount -%}
+	{%- if wordCount > wordiest_blogPost -%}
+		{%- set wordiest_blogPost = wordCount -%}
 		{%- set wordiest_post_index = loop.index0 -%}
+	{%- endif -%}
+{%- endfor -%}
+
+{%- set blog_count = 0 -%}
+{%- set blog_count_highest_per_year = 0 -%}
+{%- for i in range(first_year, latest_year + 1) -%}
+	{%- set count = collections.blogPosts | getCollectionCountByYear(i) -%}
+	{%- set blog_count = blog_count + count -%}
+	{%- if count > blog_count_highest_per_year -%}
+		{%- set blog_count_highest_per_year = count -%}
+	{%- endif -%}
+{%- endfor -%}
+
+{%- set blog_count_highest_per_weekday = 0 -%}
+{%- for weekday in ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] -%}
+	{%- set count = collections.blogPosts | getCollectionCountByWeekday(weekday) -%}
+	{%- if count > blog_count_highest_per_weekday -%}
+		{%- set blog_count_highest_per_weekday = count -%}
 	{%- endif -%}
 {%- endfor -%}
 
@@ -41,10 +48,14 @@ excludeFromSearch: true
 	<dd>{{ collection.length | numberStringFormat }}</dd>
 	<dt>№ Blog Posts</dt>
 	<dd>{{ blog_count | numberStringFormat }}</dd>
+	<dt>First Blog Post</dt>
+	<dd>{{ collections.blogPosts | last | keyValue("data.date") | friendlyDateLong | safe }}</dd>
+	<dt>Latest Blog Post</dt>
+	<dd>{{ collections.blogPosts | first | keyValue("data.date") | friendlyDateLong | safe }}</dd>
 	<dt>Blog Word Count</dt>
 	<dd>{{ blog_wordcount | numberStringFormat }}</dd>
 	<dt>Most Verbose</dt>
-	<dd><a href="{{ collection[wordiest_post_index].url }}">{{ collection[wordiest_post_index].data.title }}</a> <small>with</small> {{ wordiest_wordcount | numberStringFormat }} words</dd>
+	<dd><a href="{{ collections.blogPosts[wordiest_post_index].url }}">{{ collections.blogPosts[wordiest_post_index].data.title }}</a> <small>with</small> {{ wordiest_blogPost | numberStringFormat }} words</dd>
 	<dt>№ Projects</dt>
 	<dd><a href="/projects/">{{ (projects.web.length + projects.personal.length + collections.projects.length) | numberStringFormat }}</a></dd>
 	<dt>№ Blogs in my Blogroll</dt>
@@ -57,22 +68,55 @@ excludeFromSearch: true
 
 <hr>
 
+<h2>Blog Posts</h2>
+
 <div class=" [ grid  center ] " style="--min-inline-size: 100%;">{% sparkline collections.blogPosts, first_year, false %}</div>
 
-<table>
-	<tbody>
-		{% for i in range(0, diff_years+1) -%}
-			{% set count = collections.blogPosts | getCollectionCount(latest_year-i) -%}
-			<tr>
-				<th class=" [ numeral ] ">{{ latest_year-i }}</th>
-				<td class=" [ numeral  strong ] " style="padding-inline-start: 1lh; padding-inline-end: var(--size-medium);">{{ count }}</td>
-				<td style="inline-size: 100%; padding-inline: 0;">
-					<div class=" [ background--raven ] " style="background-image: linear-gradient(to bottom, transparent, color-mix(in oklab, var(--color-mineshaft), transparent calc(100% - var(--opacity-beta)))); inline-size: {{ (count / blog_count_highest * 100) | maxDecimals }}%; block-size: 1lh; border-radius: var(--size-border-thin);"></div>
-				</td>
-			</tr>
-		{%- endfor %}
-	</tbody>
-</table>
+<is-land on:idle on:visible>
+	<details-utils force-close="(max-width: 850px)" force-restore>
+		<details open>
+			<summary>Blog Posts by year</summary>
+			<table style="border-block-start: 0;">
+				<tbody>
+					{% for i in range(0, diff_years+1) -%}
+						{% set count = collections.blogPosts | getCollectionCountByYear(latest_year-i) -%}
+						<tr>
+							<th class=" [ numeral ] ">{{ latest_year-i }}</th>
+							<td class=" [ numeral  strong ] " style="padding-inline-start: 1lh; padding-inline-end: var(--size-medium);">{{ count }}</td>
+							<td style="inline-size: 100%; padding-inline: 0;">
+								<div class=" [ background--raven ] " style="background-image: linear-gradient(to bottom, transparent, color-mix(in oklab, var(--color-mineshaft), transparent calc(100% - var(--opacity-beta)))); inline-size: {{ (count / blog_count_highest_per_year * 100) | maxDecimals }}%; block-size: 1lh; border-radius: var(--size-border-default);"></div>
+							</td>
+						</tr>
+					{%- endfor %}
+				</tbody>
+			</table>
+		</details>
+	</details-utils>
+	<template data-island="once"><script src="/js/components/details-utils.js"></script></template>
+</is-land>
+
+<is-land on:idle on:visible>
+	<details-utils force-close="(max-width: 850px)" force-restore>
+		<details open>
+			<summary>Blog Posts by weekday</summary>
+			<table style="border-block-start: 0;">
+				<tbody>
+					{% for weekday in ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] -%}
+						{% set count = collections.blogPosts | getCollectionCountByWeekday(weekday) -%}
+						<tr>
+							<th>{{ weekday }}</th>
+							<td class=" [ numeral  strong ] " style="padding-inline-start: 1lh; padding-inline-end: var(--size-medium);">{{ count }}</td>
+							<td style="inline-size: 100%; padding-inline: 0;">
+								<div class=" [ background--raven ] " style="background-image: linear-gradient(to bottom, transparent, color-mix(in oklab, var(--color-mineshaft), transparent calc(100% - var(--opacity-beta)))); inline-size: {{ (count / blog_count_highest_per_weekday * 100) | maxDecimals }}%; block-size: 1lh; border-radius: var(--size-border-default);"></div>
+							</td>
+						</tr>
+					{%- endfor %}
+				</tbody>
+			</table>
+		</details>
+	</details-utils>
+	<template data-island="once"><script src="/js/components/details-utils.js"></script></template>
+</is-land>
 
 <hr>
 

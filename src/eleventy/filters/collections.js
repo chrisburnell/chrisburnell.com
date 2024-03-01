@@ -52,12 +52,33 @@ export const tagFilter = (array) => {
 
 /**
  * @param {object[]} items
+ * @returns {number}
+ */
+export const getCollectionCount = (items) => {
+	return items.filter(isPublished).length
+}
+
+/**
+ * @param {object[]} items
  * @param {string} year
  * @returns {number}
  */
-export const getCollectionCount = (items, year) => {
+export const getCollectionCountByYear = (items, year) => {
 	return items.filter(isPublished).filter((item) => {
-		return !year || item.date.getFullYear() === parseInt(year, 10)
+		return item.date.getFullYear() === Number(year)
+	}).length
+}
+
+const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+
+/**
+ * @param {object[]} items
+ * @param {string} weekday
+ * @returns {number}
+ */
+export const getCollectionCountByWeekday = (items, weekday) => {
+	return items.filter(isPublished).filter((item) => {
+		return weekdays[item.date.getDay()] === weekday
 	}).length
 }
 
@@ -68,4 +89,6 @@ export default {
 	categoryFilter,
 	tagFilter,
 	getCollectionCount,
+	getCollectionCountByYear,
+	getCollectionCountByWeekday,
 }

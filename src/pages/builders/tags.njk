@@ -46,7 +46,7 @@ truncate: true
 		{% include 'css-naked-day.njk' %}
 
 		{%- set year = latest_year -%}
-		{%- set count = collection | getCollectionCount(year) -%}
+		{%- set count = collection | getCollectionCountByYear(year) -%}
 		<h2 id="{{ year }}">
 			{{ year }} <small>{{ count }} post{{ 's' if count > 1 }}</small>
 		</h2>
@@ -55,7 +55,7 @@ truncate: true
 				{%- set check = item.data.date | friendlyDate('yyyy') -%}
 				{% if check != year %}
 					{%- set year = check -%}
-					{%- set count = collection | getCollectionCount(year) -%}
+					{%- set count = collection | getCollectionCountByYear(year) -%}
 					</div>
 					<h2 id="{{ year }}">
 						{{ year }} <small>{{ count }} post{{ 's' if count > 1 }}</small>

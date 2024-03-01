@@ -20,7 +20,10 @@ export const maxDecimals = (number, decimals = 3) => {
  * @returns {any}
  */
 export const keyValue = (object, key) => {
-	return object[key]
+	const keys = key.split(".")
+	return keys.reduce((o, k) => {
+		return o[k]
+	}, object)
 }
 
 /**

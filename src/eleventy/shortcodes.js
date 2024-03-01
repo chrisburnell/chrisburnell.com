@@ -1,4 +1,5 @@
 import { nowISO } from "./data/global.js"
+import { getCollectionCountByYear } from "./filters/collections.js"
 import { friendlyDate } from "./filters/dates.js"
 
 const currentYear = friendlyDate(nowISO, "yyyy")
@@ -12,29 +13,12 @@ const currentYear = friendlyDate(nowISO, "yyyy")
  */
 const sparkline = (collection, start, animate = true, curve = true) => {
 	let values = []
-	let count = 0
 	// Loop through years
-	for (let i = parseFloat(start); i <= parseFloat(currentYear); i++) {
-		// Loop through collection comparing Year
-		for (let item of collection) {
-			if (i === parseFloat(friendlyDate(item.data.date, "yyyy"))) {
-				count++
-			}
-		}
-		values.push(count)
-		count = 0
+	for (let year = parseFloat(start); year <= parseFloat(currentYear); year++) {
+		values.push(getCollectionCountByYear(collection, year))
 	}
-	const valuesMean = Math.round(
-		values.reduce((total, value) => {
-			return total + value
-		}, 0) / values.length,
-	)
-	const normalized = values.map((value) => {
-		return Math.min(value, valuesMean)
-	})
 	// Sparklines in A minor
 	return `<svg-sparkline values="${values.join(",")}"
-						normalized=${normalized.join(",")}
 						fill="true"
 						start-label="${start}"
 						end-label="${currentYear}"
