@@ -1,5 +1,5 @@
 <h2>Browse by category</h2>
-<ul class=" [ grid ] " style="--min-inline-size: 100%;">
+<ul class=" [ grid ] " style="--min-inline-size: 100%; --row-gap: 0;">
 	{% for lookup in collections.categories -%}
 	<li>
 		{% if page.url != '/' + lookup.plural + '/' -%}
