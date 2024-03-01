@@ -17,12 +17,10 @@
 		&:not(:last-child) {
 			&::after {
 				content: var(--delineator, "·");
-				display: inline-block;
 				padding-inline: var(--padding-inline, var(--size-tiny-small));
 				font-size: var(--font-size, 1em);
 				font-weight: var(--font-weight, var(--font-weight-bold));
 				line-height: 0;
-				vertical-align: baseline;
 			}
 		}
 	}
