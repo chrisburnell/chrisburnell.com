@@ -16,11 +16,12 @@ class LastFMListening extends HTMLElement {
 
 	init() {
 		this.username = this.getAttribute("username")
+		this.limit = this.hasAttribute("limit") ? Math.min(Math.max(Number(this.getAttribute("limit")), 1), 10) : 10
 
 		this.fetchLatestTracks().then((data) => {
 			this.innerHTML = `
 					<ol class=" [ grid  shelf ] ">
-						${data.reduce((string, track) => {
+						${data.slice(0, this.limit).reduce((string, track) => {
 							return string + this.getTrackMarkup(track)
 						}, "")}
 					</ol>

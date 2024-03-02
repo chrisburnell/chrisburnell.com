@@ -11,7 +11,7 @@ hfeed: true
 show_photos: true
 truncate: true
 ---
-{%- set collection = collections[tag] | arePublished | dateSortFilter -%}
+{%- set collection = collections[tag] | arePublished | sortByDate -%}
 {%- set count = collection.length -%}
 {%- set latest_year = collection[0].data.date | friendlyDate('yyyy') -%}
 {%- set first_year = collection[count-1].data.date | friendlyDate('yyyy') -%}

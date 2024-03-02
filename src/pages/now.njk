@@ -6,5 +6,55 @@ description: Stuff that I’m doing now (or at least recently)!
 toc: true
 ---
 
-- near-upcoming events
-- reviews (books, games, etc?) that don't yet have a review (i.e. are currently being read/played/etc.)
+<div class=" [ box ] [ center ] " style="inline-size: var(--size-line-length); inline-size: fit-content; margin-block-end: var(--size-large); font-size: var(--font-size-beta-min);">
+	<p>This page is a work-in-progress!</p>
+</div>
+
+{% if collections.rsvpsToday.length or collections.rsvpsUpcoming.length %}
+	<h2>
+		<a href="/rsvps/">Events</a>
+	</h2>
+	<div class=" [ deck ] [ flow ] ">
+		{% for item in collections.rsvpsToday %}
+			{% include 'items/deck.njk' %}
+		{% endfor %}
+		{% for item in collections.rsvpsUpcoming %}
+			{% include 'items/deck.njk' %}
+		{% endfor %}
+	</div>
+{% endif %}
+
+{% set currentlyReading = collections.book | arePublished | arrayKeyNotSet('data.rating') | sortByDate | limit(site.limits.shelf) -%}
+{% if currentlyReading.length -%}
+	<h2>
+		<a href="/books/">Books</a>
+	</h2>
+
+	<div class=" [ grid ] [ shelf  shelf--books ] ">
+		{% for item in currentlyReading %}
+			{% include 'items/shelf.njk' %}
+		{% endfor %}
+	</div>
+{%- endif %}
+
+{% set currentlyPlaying = collections.game | arePublished | arrayKeyNotSet('data.rating') | sortByDate | limit(site.limits.shelf) -%}
+{% if currentlyPlaying.length -%}
+	<h2>
+		<a href="/games/">Games</a>
+	</h2>
+
+	<div class=" [ grid ] [ shelf  shelf--books ] ">
+		{% for item in currentlyPlaying %}
+			{% include 'items/shelf.njk' %}
+		{% endfor %}
+	</div>
+{%- endif %}
+
+<h2>
+	<a href="/listening/">Latest Tracks</a>
+</h2>
+
+<script type="module" src="/js/components/lastfm-listening.js"></script>
+<lastfm-listening username="{{ author.lastfm }}" limit="3">
+	<p>Unfortunately, this component requires JavaScript to function.</p>
+</lastfm-listening>

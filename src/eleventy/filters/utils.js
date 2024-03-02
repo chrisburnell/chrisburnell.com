@@ -27,6 +27,61 @@ export const keyValue = (object, key) => {
 }
 
 /**
+ * @param {object} object
+ * @param {string} key
+ * @param {any} check
+ * @returns {boolean}
+ */
+export const keyValueEquals = (object, key, check) => {
+	const value = key.split(".").reduce((o, k) => {
+		return o[k]
+	}, object)
+	return value === check
+}
+
+/**
+ * @param {object[]} array
+ * @param {string} key
+ * @param {any} check
+ * @returns {object[]}
+ */
+export const arrayKeyValueEquals = (array, key, check) => {
+	return array.filter((item) => {
+		return keyValueEquals(item, key, check)
+	})
+}
+
+/**
+ * @param {object[]} array
+ * @param {string} key
+ * @param {any} value
+ * @returns {boolean}
+ */
+export const arrayKeyIncludes = (array, key, value) => {
+	return array.filter((item) => {
+		const keys = key.split(".")
+		const itemValue = keys.reduce((object, key) => {
+			return object[key]
+		}, item)
+		return itemValue.includes(value)
+	})
+}
+
+/**
+ * @param {object[]} array
+ * @param {string} key
+ * @returns {object[]}
+ */
+export const arrayKeyNotSet = (array, key) => {
+	return array.filter((item) => {
+		const value = key.split(".").reduce((o, k) => {
+			return o[k]
+		}, item)
+		return !value
+	})
+}
+
+/**
  * @param {object[]} array
  * @param {string} key
  * @returns {object[]}
@@ -98,22 +153,6 @@ export const getRGB = (hex) => {
  */
 export const limit = (array, limit) => {
 	return array.slice(0, limit)
-}
-
-/**
- * @param {object[]} array
- * @param {string} key
- * @param {any} value
- * @returns {boolean}
- */
-export const arrayKeyIncludes = (array, key, value) => {
-	return array.filter((item) => {
-		const keys = key.split(".")
-		const itemValue = keys.reduce((object, key) => {
-			return object[key]
-		}, item)
-		return itemValue.includes(value)
-	})
 }
 
 /**
@@ -285,13 +324,16 @@ export const isString = (value) => {
 export default {
 	maxDecimals,
 	keyValue,
+	keyValueEquals,
+	arrayKeyValueEquals,
+	arrayKeyIncludes,
+	arrayKeyNotSet,
 	keySort,
 	toArray,
 	toNearest,
 	rangeMap,
 	getRGB,
 	limit,
-	arrayKeyIncludes,
 	getSocialReplies,
 	getDirectReplies,
 	getPlace,

@@ -114,7 +114,7 @@ export const dateSort = (a, b) => {
  * @param {object[]} array
  * @returns {object[]}
  */
-export const dateSortFilter = (array) => {
+export const sortByDate = (array) => {
 	return array.sort(dateSort)
 }
 
@@ -129,5 +129,5 @@ export default {
 	epoch,
 	daysUntil,
 	dateSort,
-	dateSortFilter,
+	sortByDate,
 }

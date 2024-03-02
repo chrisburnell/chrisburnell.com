@@ -29,6 +29,13 @@ toc: true
 - move svg-sparkline.js to inline?
 - use fast-xml-parser to pull in latest posts for blogroll items
 - refactor getPlace()
+- functional tests for functions, filters, etc.
+
+## A11y
+
+- https://www.npmjs.com/package/@govtechsg/purple-hats
+- look into manual testing
+- https://github.com/younglim/purple-a11y-cicd-demo
 
 ## Eleventy Build
 
@@ -37,20 +44,13 @@ toc: true
 - get dates (and descriptions?) working in OG Images
     - https://github.com/KiwiKilian/eleventy-plugin-og-image
 - use new eleventy-img transform instead of image shortcode
+- use client-side Intl.RelativeTimeFormat for RSVP datetimes (i.e. don’t rely purely on builds to keep them accurate to <q>now</q>)
 
 ## Admin
 
 - testimonials for /about and /cv
 - rework clients logo list into marquee
-- build a /now page that shows:
+- build a [/now](/now/) page that shows:
     - near-upcoming events
     - reviews (books, games, etc?) that don't yet have a rating (i.e. are currently being read/played/etc.)
-- finish transcript for "Middle Out in CSS"
-
-## A11y
-
-- on npm: @govtechsg/purple-hats
-- whitespace exploration - what is this?
-- look into manual testing
-- functional tests for functions, filters, etc.
-- https://github.com/younglim/purple-a11y-cicd-demo
+- finish transcript for "Middle Out in CSS" on YouTube

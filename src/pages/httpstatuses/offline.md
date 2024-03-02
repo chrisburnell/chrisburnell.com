@@ -14,7 +14,6 @@ theme: null
 	const browsingHistory = []
 	const parser = new DOMParser()
 	const cacheCorePages = await caches.open("core-pages")
-    console.log(cacheCorePages)
 	const cachePages = await caches.open("pages")
 	const keysCorePages = await cacheCorePages.keys()
 	const keysPages = await cachePages.keys()

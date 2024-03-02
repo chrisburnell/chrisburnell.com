@@ -40,6 +40,16 @@ export const getTwitterHandle = (value) => {
 }
 
 /**
+ * @param {number} min
+ * @param {number} value
+ * @param {number} max
+ * @returns {number}
+ */
+export const clamp = (min, value, max) => {
+	return Math.min(Math.max(value, min), max)
+}
+
+/**
  * @param {number} values
  * @param {number} period
  * @param {boolean} [preserveEnds]
@@ -84,6 +94,7 @@ export default {
 	filterOut,
 	getMastodonHandle,
 	getTwitterHandle,
+	clamp,
 	simpleMovingAverage,
 	exponentialMovingAverage,
 }
