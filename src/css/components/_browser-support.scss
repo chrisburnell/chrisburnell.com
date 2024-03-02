@@ -45,3 +45,15 @@
 		font-weight: var(--font-weight-semibold);
 	}
 }
+
+.supported {
+	@extend %background--conifer !optional;
+}
+
+.partial {
+	@extend %background--aspen !optional;
+}
+
+.unsupported {
+	@extend %background--maple !optional;
+}

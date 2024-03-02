@@ -62,7 +62,7 @@
 
 // Make things non-interactive
 .non-interactive {
-	pointer-events: none;
+	@include non-interactive;
 }
 
 // Turn off motion (for reduced-motion-like cases)

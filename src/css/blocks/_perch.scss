@@ -7,6 +7,7 @@
 	position: relative;
 
 	&::after {
+		@include non-interactive;
 		content: "";
 		background-image: url("/images/raven.svg");
 		background-repeat: no-repeat;
@@ -18,7 +19,6 @@
 		inset-inline-end: var(--size-gutter);
 		inset-block-start: 0;
 		transform: scaleX(-1) translateY(-20%);
-		pointer-events: none;
 	}
 
 	&.title::after {

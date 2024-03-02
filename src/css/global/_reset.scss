@@ -14,11 +14,6 @@
 	margin: 0;
 }
 
-:where(html) {
-	-webkit-text-size-adjust: none;
-	scroll-behavior: smooth;
-}
-
 @media (prefers-reduced-motion: no-preference) {
 	:where(html:focus-within) {
 		scroll-behavior: smooth;

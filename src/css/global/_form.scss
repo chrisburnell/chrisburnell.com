@@ -48,8 +48,8 @@ textarea {
 	}
 
 	&[disabled] {
+		@include non-interactive;
 		opacity: var(--opacity-beta);
-		pointer-events: none;
 	}
 
 	&::-moz-focus-inner {

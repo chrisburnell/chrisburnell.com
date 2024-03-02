@@ -6,8 +6,8 @@ import "@11ty/is-land/is-land"
 
 import "@chrisburnell/svg-sparkline"
 
-import "./imports/website-sounds"
-
 import "@zachleat/webcare-webshare/webcare-webshare"
+
+import "./imports/website-sounds"
 
 import "./imports/welcome"

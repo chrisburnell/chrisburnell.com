@@ -163,7 +163,7 @@ pre.language-css .token.string,
 .token.prefix.unchanged,
 .token.prefix.inserted,
 .token.prefix.deleted {
-	user-select: none;
+	@include non-selectable;
 }
 
 .token.inserted:not(.prefix),

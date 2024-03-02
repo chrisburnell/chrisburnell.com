@@ -75,7 +75,7 @@ button {
 	}
 
 	svg {
-		pointer-events: none;
+		@include non-interactive;
 	}
 }
 

@@ -15,14 +15,12 @@
 	&:is(body),
 	&:is(html) body,
 	.main {
-		background-color: h(mineshaft);
 		background-color: color-mix(in oklab, h(mineshaft), h(wolf) 40%);
 		color: h(yeti);
 	}
 
 	// Set some special dark backgrounds
 	:is(.header, [popover], .footer, %box, .table) {
-		background-color: h(thunder);
 		background-color: var(--background-color, color-mix(in oklab, h(thunder), h(mineshaft) 80%));
 	}
 

@@ -3,55 +3,39 @@
 /// @group abstracts
 ////
 
-a:not(.button),
-.anchor {
+:is(a:not(.button), .anchor) {
 	@extend %anchor !optional;
 }
 
-button:not(.anchor),
-.button,
-[type="button"] {
+:is(button:not(.anchor), .button, [type="button"]) {
 	@extend %button !optional;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+:is(h1, h2, h3, h4, h5, h6) {
 	@extend %heading !optional;
 }
 
-h1,
-.alpha {
+:is(h1, .alpha)  {
 	@extend %alpha !optional;
 }
 
-h2,
-.beta {
+:is(h2, .beta) {
 	@extend %beta !optional;
 }
 
-h3,
-.gamma,
-.deck h1 {
+:is(h3, .gamma, .deck h1) {
 	@extend %gamma !optional;
 }
 
-h4,
-.delta,
-.shelf h1 {
+:is(h4, .delta, .shelf h1) {
 	@extend %delta !optional;
 }
 
-h5,
-.epsilon {
+:is(h5, .epsilon) {
 	@extend %epsilon !optional;
 }
 
-h6,
-.zeta {
+:is(h6, .zeta) {
 	@extend %zeta !optional;
 }
 
@@ -59,59 +43,31 @@ h6,
 	@extend %riza !optional;
 }
 
-p,
-blockquote,
-details,
-table,
-dl,
-ol,
-ul,
-figure:not([class]) {
+:is(p, blockquote, details, table, dl, ol, ul, figure:not([class])) {
 	@extend %content !optional;
 }
 
-img,
-input[type="image"],
-svg {
+:is(img, input[type="image"], svg) {
 	@extend %image !optional;
 }
 
-audio,
-canvas,
-embed,
-iframe,
-lite-youtube,
-marquee,
-math,
-object,
-video {
+:is(audio, canvas, embed, iframe, lite-youtube, marquee, math, object, video) {
 	@extend %media !optional;
 }
 
-input,
-optgroup,
-select,
-textarea {
+:is(input, optgroup, select, textarea) {
 	@extend %input !optional;
 }
 
-code,
-kbd,
-samp,
-var,
-.monospace {
+:is(code, kbd, samp, var, .monospace) {
 	@extend %monospace !optional;
 }
 
-.box,
-.cp_embed_wrapper,
-.speakerdeck-embed-wrapper,
-dialog {
+:is(.box, .cp_embed_wrapper, .speakerdeck-embed-wrapper, dialog) {
 	@extend %box !optional;
 }
 
-.flow,
-blockquote {
+:is(.flow, blockquote) {
 	@extend %flow !optional;
 }
 
@@ -119,9 +75,7 @@ blockquote {
 	@extend %media-child !optional;
 }
 
-pre[class*="language-"] code[tabindex="0"],
-pre:not(:has(code)),
-.clamp-calculator__result {
+:is(pre[class*="language-"] code[tabindex="0"], pre:not(:has(code)), .clamp-calculator__result) {
 	@extend %selectall !optional;
 }
 
@@ -129,16 +83,4 @@ pre:not(:has(code)),
 	.background--#{$name} {
 		@extend %background--#{$name} !optional;
 	}
-}
-
-.supported {
-	@extend %background--conifer !optional;
-}
-
-.partial {
-	@extend %background--aspen !optional;
-}
-
-.unsupported {
-	@extend %background--maple !optional;
 }
