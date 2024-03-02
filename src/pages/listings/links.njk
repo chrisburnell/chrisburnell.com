@@ -6,12 +6,32 @@ wide: true
 
 <div class=" [ grid ] [ shelf ] ">
 	<article class=" [ flow ] ">
+		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://32bit.cafe' | urlencode }}/" class=" [ avatar ] " width="30" height="30" loading="lazy" decoding="async">
+		<h1>
+			<a href="https://discourse.32bit.cafe/u/{{ author.thirtytwobitcafe }}/summary">
+				32-Bit Café
+				<br>
+				<small aria-hidden="true">{{ author.thirtytwobitcafe }}</small>
+			</a>
+		</h1>
+	</article>
+	<article class=" [ flow ] " hidden>
 		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://bsky.app' | urlencode }}/" class=" [ avatar ] " width="30" height="30" loading="lazy" decoding="async">
 		<h1>
 			<a href="https://bsky.app/profile/{{ author.bluesky }}">
 				Bluesky
 				<br>
 				<small aria-hidden="true">@{{ author.bluesky }}</small>
+			</a>
+		</h1>
+	</article>
+	<article class=" [ flow ] ">
+		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://www.buymeacoffee.com' | urlencode }}/" class=" [ avatar ] " width="30" height="30" loading="lazy" decoding="async">
+		<h1>
+			<a href="https://www.buymeacoffee.com/{{ author.buymeacoffee }}">
+				Buy Me a Coffee
+				<br>
+				<small aria-hidden="true">{{ author.buymeacoffee }}</small>
 			</a>
 		</h1>
 	</article>
@@ -115,7 +135,7 @@ wide: true
 			</a>
 		</h1>
 	</article>
-	<article class=" [ flow ] ">
+	<article class=" [ flow ] " hidden>
 		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://spotify.com' | urlencode }}/" class=" [ avatar ] " width="30" height="30" loading="lazy" decoding="async">
 		<h1>
 			<a href="https://open.spotify.com/user/{{ author.spotify }}">

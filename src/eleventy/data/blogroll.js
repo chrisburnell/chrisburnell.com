@@ -649,7 +649,7 @@ const blogroll = [
 		mastodon: "bw@social.lol",
 	},
 	{
-		title: "Alexandra",
+		title: "Xandra",
 		url: "https://xandra.cc",
 		rss: [
 			{

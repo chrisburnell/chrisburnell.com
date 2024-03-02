@@ -60,7 +60,7 @@
     "browserslist": "^4.23.0",
     "caniuse-api": "^3.0.0",
     "cheerio": "^1.0.0-rc.12",
-    "chrisburnell": "^33.0.6",
+    "chrisburnell": "^33.0.8",
     "dotenv": "^16.4.5",
     "download-stats": "^0.3.4",
     "eleventy-plugin-og-image": "^3.2.0-beta.4",

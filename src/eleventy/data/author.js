@@ -3,6 +3,7 @@ import { metadata } from "chrisburnell"
 export const name = metadata.name
 export const location = metadata.location
 export const website = metadata.website
+export const thirtytwobitcafe = metadata.thirtytwobitcafe
 export const bluesky = metadata.bluesky
 export const buymeacoffee = metadata.buymeacoffee
 export const codepen = metadata.codepen
