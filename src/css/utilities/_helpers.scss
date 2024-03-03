@@ -152,7 +152,8 @@
 	margin-block-start: calc(1ex - 1cap);
 	text-shadow: none;
 
-	%anchor:not(.icon-anchor) &:first-child {
+	%anchor:not(.icon-anchor) &:first-child,
+	%button:not(.icon-anchor) &:first-child {
 		display: inline-block;
 		padding-inline-end: 0.625ch;
 	}

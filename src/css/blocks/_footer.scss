@@ -61,7 +61,14 @@
 
 	.footer__navigation {
 		grid-column: left;
+		display: flex;
+		flex-wrap: wrap;
+		row-gap: 0.5em;
 		line-height: var(--line-height-code);
+
+		li {
+			white-space: nowrap;
+		}
 	}
 
 	.author {

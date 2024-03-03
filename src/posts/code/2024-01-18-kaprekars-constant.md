@@ -16,7 +16,7 @@ tags:
     <cite><a href="https://en.wikipedia.org/wiki/6174">Wikipedia</a></cite>
 </blockquote>
 
-Following the above steps always leads you to the same number: 6174.
+Following the above steps always leads you to the same number, Kaprekar’s Constant: 6174.
 
 <!-- </textarea> -->
 <!-- '"´ -->
