@@ -45,8 +45,12 @@ s {
 }
 
 mark {
-	background-color: h(aspen);
-	color: h(mineshaft);
+	background-color: h(aspen) !important;
+	background-image: none;
+	background-clip: initial;
+	color: h(mineshaft) !important;
+	-webkit-text-fill-color: initial;
+	text-shadow: none;
 }
 
 :is(em, i),
@@ -185,9 +189,13 @@ progress {
 	}
 }
 
-::selection {
+::selection,
+::target-text {
 	background-color: h(wolf);
+	background-image: none;
+	background-clip: initial;
 	color: h(snowy);
+	-webkit-text-fill-color: initial;
 	text-shadow: none;
 }
 
