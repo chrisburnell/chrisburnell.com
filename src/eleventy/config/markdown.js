@@ -27,7 +27,7 @@ markdown.renderer.rules.footnote_caption = (tokens, idx) => {
 	if (tokens[idx].meta.subId > 0) {
 		n += ":" + tokens[idx].meta.subId
 	}
-	return `${n}`
+	return n
 }
 
 markdown.renderer.rules.footnote_open = (tokens, idx, options, env, slf) => {
@@ -35,7 +35,26 @@ markdown.renderer.rules.footnote_open = (tokens, idx, options, env, slf) => {
 	if (tokens[idx].meta.subId > 0) {
 		id += ":" + tokens[idx].meta.subId
 	}
-	return `<li id="fn${id}">`
+	return `<li id="fn${id}" class=" [ flow ] ">`
+}
+
+markdown.renderer.rules.footnote_ref = (tokens, idx, options, env, slf) => {
+	const id = slf.rules.footnote_anchor_name(tokens, idx, options, env, slf)
+	const caption = slf.rules.footnote_caption(tokens, idx, options, env, slf)
+	let refid = id
+
+	if (tokens[idx].meta.subId > 0) refid += `:${tokens[idx].meta.subId}`
+
+	return `<a href="#fn${id}" id="fnref${refid}"><sup>${caption}</sup></a>`
+}
+
+markdown.renderer.rules.footnote_anchor = (tokens, idx, options, env, slf) => {
+  let id = slf.rules.footnote_anchor_name(tokens, idx, options, env, slf)
+
+  if (tokens[idx].meta.subId > 0) id += `:${tokens[idx].meta.subId}`
+
+  // ↩ with escape code to prevent display as Apple Emoji on iOS
+  return ` <a href="#fnref${id}">\u21a9\uFE0E</a>`
 }
 
 export default markdown

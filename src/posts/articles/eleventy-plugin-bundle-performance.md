@@ -44,11 +44,11 @@ I had noticed, through using [Eleventy’s Debug Mode](https://www.11ty.dev/docs
 {% raw %}
 ```twig
 {% css -%}
-  {% renderFile 'src/css/main.scss' %}
+	{% renderFile 'src/css/main.scss' %}
 {%- endcss %}
 
 {% js -%}
-  {% renderFile 'src/js/main.js' %}
+	{% renderFile 'src/js/main.js' %}
 {%- endjs %}
 ```
 {% endraw %}
@@ -70,25 +70,25 @@ Here’s an example:
 const cachedResults = {}
 
 const myFunction = (value) => {
-  // Check if the cached data exists
-  if (value in cachedResults) {
-    // And if it does, return it
-    return cachedResults[value]
-  }
+	// Check if the cached data exists
+	if (value in cachedResults) {
+		// And if it does, return it
+		return cachedResults[value]
+	}
 
-  // Otherwise, perform some operations with `value`
-  const result = someExpensiveFunction(value)
+	// Otherwise, perform some operations with `value`
+	const result = someExpensiveFunction(value)
 
-  // Then cache the result
-  cachedResults[value] = result
-  // And return it
-  return result
+	// Then cache the result
+	cachedResults[value] = result
+	// And return it
+	return result
 }
 ```
 
 I was already doing this for bits and pieces in my Eleventy build like caching custom [Collections](https://www.11ty.dev/docs/collections/). For example, my [Replies](/replies/) collection was a good spot for memoization to happen. The collection is populated by pages containing an `in_reply_to` key, rather than having a specific tag (for which Eleventy would automatically build a collection) or being in a specific location in the file system, so by generating the contents of this collection once and serving future `collections.replies` calls from the cache, I was seeing some not insignificant performance gains.
 
-<p style="font-size: 1.125em; font-weight: var(--font-weight-bold);"><c-emoji>⚡</c-emoji> Hold on…</p>
+<p style="font-size: var(--font-size-gamma-min); font-weight: var(--font-weight-bold);"><c-emoji style="font-size: var(--font-size-beta-max);">⚡</c-emoji> Hold on…</p>
 
 Something finally clicked in my brain and I realised this would be a perfect opportunity to introduce memoization to asset bundling!
 
@@ -106,45 +106,45 @@ import esbuild from "esbuild"
 let cachedJS = {}
 
 export default function (eleventyConfig) {
-  // Recognise JS as a "template language"
-  eleventyConfig.addTemplateFormats("js")
+	// Recognise JS as a "template language"
+	eleventyConfig.addTemplateFormats("js")
 
-  // Compile JS
-  eleventyConfig.addExtension("js", {
-    outputFileExtension: "js",
-    read: false,
-    compile: async function (inputContent, inputPath) {
-      // Ignore anything outside the front end JS folder
-      if (!inputPath.includes("src/js/")) {
-        return
-      }
+	// Compile JS
+	eleventyConfig.addExtension("js", {
+		outputFileExtension: "js",
+		read: false,
+		compile: async function (inputContent, inputPath) {
+			// Ignore anything outside the front end JS folder
+			if (!inputPath.includes("src/js/")) {
+				return
+			}
 
-      return async () => {
-        const inputPathNormalized = inputPath.replace(/^\.\//, "")
-        // Skip processing and grab from the memoized cache
-        if (inputPathNormalized in cachedJS) {
-          return cachedJS[inputPathNormalized]
-        }
+			return async () => {
+				const inputPathNormalized = inputPath.replace(/^\.\//, "")
+				// Skip processing and grab from the memoized cache
+				if (inputPathNormalized in cachedJS) {
+					return cachedJS[inputPathNormalized]
+				}
 
-        // Pass JS through esbuild to resolve imports and minify
-        const esbuildResult = await esbuild.build({
-          entryPoints: [inputPath],
-          nodePaths: ["src/js", "node_modules"],
-          external: ["fs"],
-          format: "esm",
-          target: "es6",
-          bundle: true,
-          minify: true,
-          write: false,
-        })
+				// Pass JS through esbuild to resolve imports and minify
+				const esbuildResult = await esbuild.build({
+					entryPoints: [inputPath],
+					nodePaths: ["src/js", "node_modules"],
+					external: ["fs"],
+					format: "esm",
+					target: "es6",
+					bundle: true,
+					minify: true,
+					write: false,
+				})
 
-        // Cache the result
-        cachedJS[inputPathNormalized] = esbuildResult.outputFiles[0].text
+				// Cache the result
+				cachedJS[inputPathNormalized] = esbuildResult.outputFiles[0].text
 
-        return esbuildResult.outputFiles[0].text
-      }
-    },
-  })
+				return esbuildResult.outputFiles[0].text
+			}
+		},
+	})
 }
 ```
 
@@ -163,57 +163,57 @@ import * as sass from "sass"
 let cachedCSS = {}
 
 export default function (eleventyConfig) {
-  // Recognise SCSS as a "template language"
-  eleventyConfig.addTemplateFormats("scss")
+	// Recognise SCSS as a "template language"
+	eleventyConfig.addTemplateFormats("scss")
 
-  // Compile SCSS
-  eleventyConfig.addExtension("scss", {
-    outputFileExtension: "css",
-    compile: async function (inputContent, inputPath) {
-      // Ignore anything outside the front end CSS folder
-      if (!inputPath.includes("src/css/")) {
-        return
-      }
+	// Compile SCSS
+	eleventyConfig.addExtension("scss", {
+		outputFileExtension: "css",
+		compile: async function (inputContent, inputPath) {
+			// Ignore anything outside the front end CSS folder
+			if (!inputPath.includes("src/css/")) {
+				return
+			}
 
-      // Ignore partials
-      let parsed = path.parse(inputPath)
-      if (parsed.name.startsWith("_")) {
-        return
-      }
+			// Ignore partials
+			let parsed = path.parse(inputPath)
+			if (parsed.name.startsWith("_")) {
+				return
+			}
 
-      return async () => {
-        const inputPathNormalized = inputPath.replace(/^\.\//, "")
-        // Skip processing and grab from the memoized cache
-        if (inputPathNormalized in cachedCSS) {
-          return cachedCSS[inputPathNormalized]
-        }
+			return async () => {
+				const inputPathNormalized = inputPath.replace(/^\.\//, "")
+				// Skip processing and grab from the memoized cache
+				if (inputPathNormalized in cachedCSS) {
+					return cachedCSS[inputPathNormalized]
+				}
 
-        // Pass SCSS through sass to resolve imports and minify
-        const sassResult = sass.compileString(inputContent, {
-          loadPaths: [parsed.dir || ".", "src/css", "node_modules"],
-          style: "compressed",
-          sourceMap: false,
-        })
+				// Pass SCSS through sass to resolve imports and minify
+				const sassResult = sass.compileString(inputContent, {
+					loadPaths: [parsed.dir || ".", "src/css", "node_modules"],
+					style: "compressed",
+					sourceMap: false,
+				})
 
-        // For builds, pass CSS through PostCSS and plugins
-        if (process.env.ELEVENTY_RUN_MODE === "build") {
-          const postcssResult = await postcss([autoprefixer]).process(sassResult.css, {
-            from: inputPath,
-          })
+				// For builds, pass CSS through PostCSS and plugins
+				if (process.env.ELEVENTY_RUN_MODE === "build") {
+					const postcssResult = await postcss([autoprefixer]).process(sassResult.css, {
+						from: inputPath,
+					})
 
-          // Cache the result
-          cachedCSS[inputPathNormalized] = postcssResult.css
+					// Cache the result
+					cachedCSS[inputPathNormalized] = postcssResult.css
 
-          return postcssResult.css
-        }
+					return postcssResult.css
+				}
 
-        // Cache the result
-        cachedCSS[inputPathNormalized] = sassResult.css
+				// Cache the result
+				cachedCSS[inputPathNormalized] = sassResult.css
 
-        return sassResult.css
-      }
-    },
-  })
+				return sassResult.css
+			}
+		},
+	})
 }
 ```
 

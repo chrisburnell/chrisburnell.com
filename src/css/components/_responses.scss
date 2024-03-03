@@ -17,6 +17,12 @@
 	inline-size: 100%;
 	margin-block-start: var(--size-large);
 
+	.full & {
+		@include cqi("main", "medium") {
+			margin-block-end: var(--size-large);
+		}
+	}
+
 	&:not(:has(.responses__thread)) {
 		@media print {
 			display: none;

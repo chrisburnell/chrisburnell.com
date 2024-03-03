@@ -106,8 +106,8 @@
 		color: h(yeti);
 	}
 
-	.title:not(.title--positive, .title--negative) {
-		background-image: linear-gradient(to bottom, var(--color-snowy), var(--color-coyote));
+	.title:not(.title--positive, .title--negative) .p-name {
+		background-image: linear-gradient(to bottom, var(--color-snowy), var(--color-highland));
 	}
 
 	///

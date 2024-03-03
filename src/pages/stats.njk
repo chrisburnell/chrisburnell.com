@@ -46,7 +46,7 @@ excludeFromSearch: true
 <dl>
 	<dt>№ Posts</dt>
 	<dd>{{ collection.length | numberStringFormat }}</dd>
-	<dt>№ Blog Posts</dt>
+	<dt>№ Blog Posts <a href="#fn1" id="fnref1"><sup class="footnote-ref">1</sup></a></dt>
 	<dd>{{ blog_count | numberStringFormat }}</dd>
 	<dt>First Blog Post</dt>
 	<dd>{{ collections.blogPosts | last | keyValue("data.date") | friendlyDateLong | safe }}</dd>
@@ -182,3 +182,14 @@ excludeFromSearch: true
 		<li><a href="/tag/{{ item }}/" class=" [ strong ] " style="font-size: {{ fontSize }}em;">{{ item }} <sup>{{ count }}</sup></a></li>
 	{%- endfor -%}
 </ul>
+
+<hr>
+
+<nav aria-label="Footnotes">
+	<ol>
+		<li id="fn1" class=" [ flow ] ">
+			<p>What’s the difference between a <q>post</q> and <q>blog post</q>? </p>
+			<p>Well, there are a number of <a href="/posts/#categories">post categories</a> (e.g. <a href="/music/">music reviews</a>) that aren’t very <q>bloggy</q> per se, so I make the distinction that <strong>blog posts</strong> specifically have a decent heft of written content to them. <a href="#fnref1">↩︎</a></p>
+		</li>
+	</ol>
+</nav>

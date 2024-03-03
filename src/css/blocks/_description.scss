@@ -11,6 +11,10 @@
 		font-weight: var(--font-weight-semibold);
 	}
 
+	figure + & {
+		padding-block-start: var(--size-large);
+	}
+
 	p {
 		:not(.content) > & {
 			max-inline-size: var(--size-line-length);

@@ -8,7 +8,7 @@ layout: base
 	</ul>
 
 	<h1 id="title" class=" [ title{% if title_error %} title--negative{% elif title_success %} title--positive{% endif %} ] {{ '[ visually-hidden ] ' if not title and not of_title }}" style="view-transition-name: title-{{ page.fileSlug }};">
-		{{ title | default(of_title) | default(of_title_fallback) | default(meta_title) | striptags(true) | safe }}
+		<span class=" [ p-name ] ">{{ title | default(of_title) | default(of_title_fallback) | default(meta_title) | striptags(true) | safe }}</span>
 	</h1>
 
 	<div class=" [ description  description--published ] ">
@@ -60,16 +60,6 @@ layout: base
 
 		{% include 'updated.njk' %}
 
-		{% if of_label %}
-			<nav class=" [ grid ] [ navigator ] ">
-				<a href="{{ of_url }}" class=" [ button ] {% if mf_property %}[ u-{{ mf_property }} ] {% endif %}">{{ of_label }} →</a>
-			</nav>
-		{% endif %}
-
-		{% if listen_of %}
-			<c-odesli id="{{ listen_of.split('/') | last }}"></c-odesli>
-		{% endif %}
-
 		{% if category == 'recipe' %}
 			{% include 'post/recipe.njk' %}
 		{% endif %}
@@ -78,6 +68,16 @@ layout: base
 			<div id="content" class=" [ e-content ] [ flow ] ">
 				{{- content | safe -}}
 			</div>
+		{% endif %}
+
+		{% if of_label %}
+			<nav class=" [ grid ] [ navigator ] ">
+				<a href="{{ of_url }}" class=" [ button ] {% if mf_property %}[ u-{{ mf_property }} ] {% endif %}">{{ of_label }} →</a>
+			</nav>
+		{% endif %}
+
+		{% if listen_of %}
+			<c-odesli id="{{ listen_of.split('/') | last }}"></c-odesli>
 		{% endif %}
 
 		{% include 'responses.njk' %}

@@ -4,9 +4,6 @@
 ////
 
 .title {
-	background-image: linear-gradient(to bottom, var(--color-kaiser), var(--color-wolf));
-	background-clip: text;
-	color: transparent;
 	display: block;
 	padding-block-start: var(--size-large-gigantic);
 	padding-block-end: var(--size-medium-large);
@@ -22,6 +19,12 @@
 
 	@include cqi(null, "small") {
 		text-align: center;
+	}
+
+	.p-name {
+		background-image: linear-gradient(to bottom, var(--color-kaiser), var(--color-bowhead));
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
 	}
 }
 

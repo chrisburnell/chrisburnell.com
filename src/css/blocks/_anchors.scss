@@ -62,7 +62,15 @@ h2 %anchor:not(:hover, :focus, :active) {
 		background-color: transparent;
 		background-image: linear-gradient(to bottom right, h(raven), h(maple));
 		background-clip: text;
-		text-fill-color: transparent;
+		-webkit-text-fill-color: transparent;
 		box-decoration-break: clone;
+	}
+}
+
+// Give footnote anchors more space
+:is([id^="fnref"], [href^="#fnref"]) {
+	&::before,
+	&::after {
+		content: "\00a0";
 	}
 }
