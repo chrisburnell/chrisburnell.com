@@ -232,8 +232,7 @@ export default {
 		return filteredCollection
 	},
 	popular: (collection) => {
-		// "Popular" sorting is done by totalling webmentions, external likes,
-		// and stargazers as a sorting method.
+		// "Popular" sorting is done by totalling Webmentions.
 
 		if ("popular" in cachedCollections) {
 			return cachedCollections["popular"]
@@ -245,14 +244,11 @@ export default {
 			.filter(isPublished)
 			.filter(notReply)
 			.filter((item) => {
-				const interactions = item.data.webmentions.length + (item.data.stargazers || 0)
-				return interactions >= limits.minimumResponsesRequired
+				return item.data.webmentions.length >= limits.minimumResponsesRequired
 			})
 			.sort(dateSort)
 			.sort((a, b) => {
-				const interactionsA = a.data.webmentions.length + (a.data.stargazers || 0)
-				const interactionsB = b.data.webmentions.length + (b.data.stargazers || 0)
-				return interactionsB - interactionsA
+				return b.data.webmentions.length - a.data.webmentions.length
 			})
 			.slice(0, limits.feed)
 
@@ -262,7 +258,7 @@ export default {
 	},
 	hot: (collection) => {
 		// "Hot" sorting is done by determining the exponential moving average
-		// as a function of Webmentions across time
+		// as a function of Webmentions across time.
 
 		if ("hot" in cachedCollections) {
 			return cachedCollections["hot"]
