@@ -25,7 +25,10 @@
 
 	a {
 		background-color: transparent !important;
+		background-image: linear-gradient(to bottom, var(--color-kaiser), var(--color-bowhead));
+		background-clip: text;
 		color: inherit !important;
+		-webkit-text-fill-color: transparent;
 		display: block;
 		padding: var(--size-tiny) var(--size-tiny-small);
 		position: relative;

@@ -12,9 +12,6 @@
 	// apply slight yellow-filter to raven-based colours
 	--raven-chroma: 0.034;
 	--raven-hue: 180;
-
-	@include setup-monochrome-colors;
-	@include setup-raven-colors;
 }
 
 :root:has([name="theme"] [value*="sepia"]:checked),
