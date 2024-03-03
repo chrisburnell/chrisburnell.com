@@ -189,7 +189,15 @@ progress {
 	}
 }
 
-::selection,
+// For some reason, these two selectors don't play well together
+::selection {
+	background-color: h(wolf);
+	background-image: none;
+	background-clip: initial;
+	color: h(snowy);
+	-webkit-text-fill-color: initial;
+	text-shadow: none;
+}
 ::target-text {
 	background-color: h(wolf);
 	background-image: none;

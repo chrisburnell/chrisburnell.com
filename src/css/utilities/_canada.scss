@@ -6,7 +6,10 @@
 .canada {
 	&,
 	* {
-		&::selection,
+		// For some reason, these two selectors don't play well together
+		&::selection {
+			background-color: h(maple);
+		}
 		&::target-text {
 			background-color: h(maple);
 		}
