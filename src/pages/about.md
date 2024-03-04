@@ -10,10 +10,6 @@ eleventyComputed:
 
 {% include 'lfw.njk' %}
 
-{% sparkline collections.blogPosts, 2020 %}
-
-{% sparkline collections.blogPosts, 2016 %}
-
 <p hidden><strong>I’ve got a <a href="https://chrisburnell.com/cv/">CV / resumé</a>, if that’s what you’re looking for.</strong></p>
 
 <ul class=" [ cluster  center ] ">
