@@ -4,6 +4,6 @@
 
 {%- js 'module' -%}{% renderFile 'src/js/defer.js' %}{%- endjs -%}
 {%- if eleventy.env.runMode === 'build' -%}
-	{%- js -%}{% renderFile 'src/js/analytics.js' %}{%- endjs -%}
+	{%- js -%}{% renderFile 'src/js/vendor/fathom-analytics.js' %}{%- endjs -%}
 {%- endif -%}
 
