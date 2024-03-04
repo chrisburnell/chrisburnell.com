@@ -4,14 +4,6 @@
 /// @group components
 ////
 
-@use "sass:color";
-@use "sass:math";
-
-@import "../abstracts/functions";
-@import "../abstracts/mixins";
-@import "../abstracts/generated";
-@import "../abstracts/collections";
-
 .shelf {
 	--row-gap: var(--size-gap);
 	--min-inline-size: 10em;
