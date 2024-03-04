@@ -60,7 +60,6 @@
 	@import "blocks/breadcrumbs";
 	@import "blocks/title";
 	@import "blocks/description";
-	@import "blocks/navigator";
 	@import "blocks/meta";
 	@import "blocks/table-of-contents";
 }
@@ -89,9 +88,4 @@
 	@import "themes/koala";
 	@import "themes/matrix";
 	@import "themes/nineties";
-}
-
-// Overrides
-@layer overrides {
-	@import "overrides/footer";
 }

@@ -33,6 +33,7 @@
 // Blocks
 @layer blocks {
 	@import "blocks/cover";
+	@import "blocks/navigator";
 	@import "blocks/rating";
 	@import "blocks/footer";
 	@import "blocks/author";
@@ -50,4 +51,9 @@
 	@import "components/responses";
 	@import "components/browser-support";
 	@import "components/theme-selector";
+}
+
+// Overrides
+@layer overrides {
+	@import "overrides/footer";
 }
