@@ -51,7 +51,7 @@ theme: null
 		  <h3>
 			  <a href="${data.url}">${data.title}</a>
 		  </h3>
-		  <p>${data.description}</div>
+		  <p class=" [ line-clamp ] ">${data.description}</div>
   `
 			if (data.published) {
 				markup += `

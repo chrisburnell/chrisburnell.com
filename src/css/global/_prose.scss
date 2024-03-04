@@ -4,9 +4,7 @@
 ////
 
 %content {
-	@media print {
-		break-inside: avoid;
-	}
+	break-inside: avoid;
 }
 
 :is(p, li, dd) {
