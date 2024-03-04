@@ -38,8 +38,8 @@
 	outline-offset: var(--outline-offset, var(--size-border-thin));
 }
 
-:where(p, h1, h2, h3, h4, h5, h6) {
-	overflow-wrap: break-word;
+:where(h1, h2, h3, h4, h5, h6, p, li, dd) {
+	@include hyphenate;
 }
 
 :where(img, picture, svg, input[type="image"]) {

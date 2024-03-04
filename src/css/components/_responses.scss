@@ -70,12 +70,8 @@
 	}
 
 	a {
-		@include break-words;
-
-
-		@include cqi(null, null, "small") {
-			@include hyphenate;
-		}
+		@include hyphenate;
+		overflow-wrap: break-word;
 	}
 }
 

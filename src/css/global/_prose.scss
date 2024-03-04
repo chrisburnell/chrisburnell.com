@@ -10,7 +10,6 @@
 }
 
 :is(p, li, dd) {
-	@include break-words;
 	max-inline-size: var(--size-character-limit);
 	text-wrap: pretty;
 }

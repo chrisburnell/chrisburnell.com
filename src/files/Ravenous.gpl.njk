@@ -1,7 +1,7 @@
 GIMP Palette
-#Palette Name: Ravenous
-#Description: Ravenous about 5f8aa6
-#Colors: {{ designTokens['colors-hex'] | length }}
-{% for name, color in designTokens['colors-hex'] -%}
-{{ color | getRGB | join('\t') | safe }}{{ '\t' | safe }}{{ color | replace('#', '') }}
-{% endfor %}
+# Ravenous by Chris Burnell
+# https://chrisburnell.com
+# Colors: {{ designTokens['colors-hex'] | length }}
+{%- for name, color in designTokens['colors-hex'] %}
+{% for component in (color | getRGB) %}{% if component.toString().length == 1 %}  {% elif component.toString().length == 2 %} {% endif %}{{ component }} {% endfor %}{{ name | title }}
+{%- endfor %}

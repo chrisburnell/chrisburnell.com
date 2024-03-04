@@ -1,5 +1,5 @@
 <h2>Browse by category</h2>
-<ul class=" [ grid ] " style="--min-inline-size: 100%; --row-gap: 0;">
+<ul class=" [ cluster ] " style="--padding-inline: 0.5em; line-height: var(--line-height-code);">
 	{% for lookup in collections.categories -%}
 	<li>
 		{% if page.url != '/' + lookup.plural + '/' -%}
@@ -7,7 +7,7 @@
 		{%- else -%}
 		<strong>
 		{%- endif %}
-			<c-emoji>{{ lookup.emoji | default(emojis.paper) }}</c-emoji>{{ lookup.properPlural | title }}
+			{% if category != lookup.title %}<c-emoji>{{ lookup.emoji | default(emojis.paper) }}</c-emoji>{% endif %}{{ lookup.properPlural | title }}
 		{% if page.url != '/' + lookup.plural + '/' -%}
 		</a>
 		{%- else -%}

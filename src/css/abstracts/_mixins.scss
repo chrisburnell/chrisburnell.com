@@ -78,14 +78,6 @@
 }
 
 ///
-/// Break words.
-///
-@mixin break-words() {
-	overflow-wrap: break-word;
-	word-break: break-word;
-}
-
-///
 /// Make something non-selectable.
 ///
 @mixin non-selectable() {
