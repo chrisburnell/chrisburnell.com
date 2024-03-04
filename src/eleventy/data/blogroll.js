@@ -699,6 +699,18 @@ const blogroll = [
 		rss: "https://hamatti.org/feed/feed.xml",
 		mastodon: "hamatti@mastodon.world",
 	},
+	{
+		title: "yequari",
+		url: "https://yequari.com",
+		rss: "https://yequari.com/blog/index.xml",
+		mastodon: "yequari@retro.pizza",
+	},
+	{
+		title: "The Frugal Gamer",
+		url: "https://www.thefrugalgamer.net",
+		rss: "https://www.thefrugalgamer.net/rss.xml",
+		mastodon: "frugalgamer@snug.moe"
+	}
 ].sort((a, b) => {
 	return a.title.localeCompare(b.title)
 })

@@ -20,8 +20,9 @@ toc: true
 - review and refactor CSS and make tasty usage of layers, revert-layer, :where, :is, :has, etc.
 - use utopia-core-scss to generate fluid spaces, type, etc.
 - figure out how to resize code elements with `font-size-adjust: from-font;"
-- figure out how to de-dupe navigation__list for the popover
+- figure out how to de-dupe `navigation__list` for the popover
 - why do shelf items on /explore /posts /feeds etc. not show any of the content when printing? dev tools print mode shows them correctly… is it an OS thing?
+- review showing the URL after anchors in print stylesheet
 
 ## JS
 
@@ -30,12 +31,6 @@ toc: true
 - use fast-xml-parser to pull in latest posts for blogroll items
 - refactor getPlace()
 - functional tests for functions, filters, etc.
-
-## A11y
-
-- https://www.npmjs.com/package/@govtechsg/purple-hats
-- look into manual testing
-- https://github.com/younglim/purple-a11y-cicd-demo
 
 ## Eleventy Build
 
