@@ -10,9 +10,13 @@ I use a handful of services, most often in the form of Webmentions, to keep trac
 
 --------
 
-## Browse Freely
+## Tracking
 
-I no longer serve **any** analytics or tracking of any kind. This is because I value privacy on the web, to smoothen the performance out and take fuller control of this website, and to promote [IndieWeb](https://indieweb.org) technologies.
+I’m currently trialling [Fathom Lite](https://usefathom.com/) (self-hosted) as a means of keeping track of popular pages, mostly to make sure pages that people visit often are functioning as-intended.
+
+--------
+
+## Offline Support
 
 I make use of Service Workers, so if you’re using a relatively modern browser, you’ll be able to enjoy the benefits of this technology. In short, it’s a form of client-side caching. This means that your device will cache certain parts of this website in order to provide you a faster experience, and even enable you to take this website offline! I do not (and cannot) collect any information about you or your browsing experience from Service Workers.
 
