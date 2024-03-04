@@ -1,5 +1,5 @@
 <h2>Browse by category</h2>
-<ul class=" [ cluster ] " style="--padding-inline: 0.5em; line-height: var(--line-height-code);">
+<ul class=" [ cluster ] [ no-wrap ] " style="--padding-inline: 0.5em; line-height: var(--line-height-code);">
 	{% for lookup in collections.categories -%}
 	<li>
 		{% if page.url != '/' + lookup.plural + '/' -%}
