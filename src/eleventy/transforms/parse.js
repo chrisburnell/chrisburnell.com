@@ -13,7 +13,7 @@ export default async function (value, outputPath) {
 		if (tocHeadings.length) {
 			let tocHtml = `
 				<aside class=" [ meta ] " role="complementary" data-pagefind-ignore>
-					<is-land class=" [ table-of-contents ] " on:idle on:visible>
+					<is-land class=" [ table-of-contents ] ">
 						<details-utils force-close="(max-width: 850px)" force-restore>
 							<details open>
 								<summary>Table of Contents</summary>
