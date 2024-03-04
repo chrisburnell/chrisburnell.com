@@ -62,6 +62,7 @@ function getHighestY(values) {
 	return Math.max(...values) + 2
 }
 </script>
+<script webc:keep type="module" src="/js/components/svg-sparkline.js"></script>
 <svg-sparkline webc:keep :values="this.values" :key-start="this['key-start'] || 25" :key-intervals="this['key-intervals'] || `2,1,2,2,1,2,2`" :key-limit="this['key-limit'] || 15" :animate="this.animate" :id="this.id" class=" [ pentatonic ] " title="Click to hear me!">
 	<span webc:if="this['start-label']" @text="this['start-label']"></span>
 	<svg width="160px" height="28px" :viewBox="getViewBox(this.values)" preserveAspectRatio="none">

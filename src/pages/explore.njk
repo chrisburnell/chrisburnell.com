@@ -17,7 +17,9 @@ description: A great big list of all the pages, projects, posts on my website.
 	<div id="content" class=" [ content ] [ flow ] [ generate-toc ] ">
 		{% include 'lfw.njk' %}
 
-		{% include 'css-naked-day.njk' %}
+		{% if global.cssnakedday -%}
+			{% include 'css-naked-day.njk' %}
+		{%- endif %}
 
 		<div class=" [ e-content ] [ flow ] generate-toc">
 			<h2>Pages</h2>

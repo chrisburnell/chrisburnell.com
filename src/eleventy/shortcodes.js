@@ -28,7 +28,8 @@ const sparkline = (collection, start, animate = true, curve = true) => {
 						key-start="25"
 						key-intervals="2,1,2,2,1,2,2"
 						key-limit="15"
-						title="Click to hear me!"></svg-sparkline>`
+						title="Click to hear me!"></svg-sparkline>
+			<is-land class=" [ visually-hidden ] "><template webc:raw data-island="once"><script type="module" src="/js/components/svg-sparkline.js"></script></template></is-land>`
 }
 
 export default {

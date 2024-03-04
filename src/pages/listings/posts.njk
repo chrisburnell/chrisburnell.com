@@ -23,7 +23,9 @@ perch: true
 	<div id="content" class=" [ content ] [ flow ] ">
 		{% include 'lfw.njk' %}
 
-		{% include 'css-naked-day.njk' %}
+		{% if global.cssnakedday -%}
+			{% include 'css-naked-day.njk' %}
+		{%- endif %}
 
 		<h2>Collections</h2>
 

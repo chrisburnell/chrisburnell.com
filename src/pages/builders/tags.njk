@@ -43,7 +43,9 @@ truncate: true
 	{% endif %}
 
 	<div class=" [ content ] [ flow ] ">
-		{% include 'css-naked-day.njk' %}
+		{% if global.cssnakedday -%}
+			{% include 'css-naked-day.njk' %}
+		{%- endif %}
 
 		{%- set year = latest_year -%}
 		{%- set count = collection | getCollectionCountByYear(year) -%}

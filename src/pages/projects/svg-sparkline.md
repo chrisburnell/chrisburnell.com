@@ -12,6 +12,8 @@ tags:
   - web-components
 ---
 
+<script type="module" src="/js/components/svg-sparkline.js"></script>
+
 <figure>
     <svg-sparkline values="8,3,2,7,9,1,5,6,4,10,3,8,2,7,1,9" fill="true" curve="true"></svg-sparkline>
 </figure>
