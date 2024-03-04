@@ -1,7 +1,7 @@
 <h2>Browse by category</h2>
-<ul class=" [ cluster ] [ no-wrap ] " style="--padding-inline: 0.5em; line-height: var(--line-height-code);">
+<ul class=" [ cluster ] " style="--padding-inline: 0.5em; line-height: var(--line-height-code);">
 	{% for lookup in collections.categories -%}
-	<li>
+	<li class=" [ no-wrap ] ">
 		{% if page.url != '/' + lookup.plural + '/' -%}
 		<a href="/{{ lookup.plural }}/" {% if category == lookup.title %}class=" [ button  button--text ] "{% endif %}>
 		{%- else -%}
