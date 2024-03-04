@@ -9,6 +9,7 @@
 	&:not(.description--published) {
 		font-size: var(--font-size-gamma);
 		font-weight: var(--font-weight-semibold);
+		text-wrap: balance;
 	}
 
 	figure + & {

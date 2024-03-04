@@ -13,6 +13,7 @@ toc: true
     - Edit this to remove some bits about the refactor/rebuild
 - Post about /interests page
 - Short post about my guestbook
+- How I'm handling dates in 11ty now that I've moved timezones
 - Review drafts
 
 ## CSS
