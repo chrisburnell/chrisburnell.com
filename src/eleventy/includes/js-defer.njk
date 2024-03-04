@@ -2,6 +2,8 @@
 <script type="module" src="{% getBundleFileUrl 'js', 'module' %}"></script>
 <script src="{% getBundleFileUrl 'js' %}"></script>
 
-{%- js 'module' -%}{% renderFile 'src/js/defer-module.js' %}{%- endjs -%}
-{%- js -%}{% renderFile 'src/js/defer.js' %}{%- endjs -%}
+{%- js 'module' -%}{% renderFile 'src/js/defer.js' %}{%- endjs -%}
+{%- if eleventy.env.runMode === 'build' -%}
+	{%- js -%}{% renderFile 'src/js/analytics.js' %}{%- endjs -%}
+{%- endif -%}
 
