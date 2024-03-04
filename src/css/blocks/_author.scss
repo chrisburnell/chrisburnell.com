@@ -150,6 +150,10 @@
 	@include cqi(null, "medium") {
 		text-align: end;
 	}
+
+	p {
+		hyphens: manual;
+	}
 }
 
 .author__name {
