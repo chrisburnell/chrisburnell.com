@@ -11,12 +11,6 @@
 	position: relative;
 	contain: content; // helps painting with .perch inside
 
-	@media print {
-		background-image: none;
-		background-clip: initial;
-		color: inherit;
-	}
-
 	@include cqi(null, "small") {
 		text-align: center;
 	}
@@ -24,7 +18,12 @@
 	.p-name {
 		background-image: linear-gradient(to bottom, var(--color-kaiser), var(--color-bowhead));
 		background-clip: text;
-		-webkit-text-fill-color: transparent;
+
+		@media print {
+			background-image: none;
+			background-clip: initial;
+			-webkit-text-fill-color: initial;
+		}
 	}
 }
 

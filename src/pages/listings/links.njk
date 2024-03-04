@@ -8,7 +8,7 @@ wide: true
 	<article class=" [ flow ] ">
 		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://32bit.cafe' | urlencode }}/" class=" [ avatar ] " width="30" height="30" loading="lazy" decoding="async">
 		<h1>
-			<a href="https://discourse.32bit.cafe/u/{{ author.thirtytwobitcafe }}/summary">
+			<a href="https://discourse.32bit.cafe/u/{{ author.thirtytwobitcafe }}/summary" rel="external noopener">
 				32-Bit Café
 				<br>
 				<small aria-hidden="true">{{ author.thirtytwobitcafe }}</small>
@@ -18,7 +18,7 @@ wide: true
 	<article class=" [ flow ] " hidden>
 		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://bsky.app' | urlencode }}/" class=" [ avatar ] " width="30" height="30" loading="lazy" decoding="async">
 		<h1>
-			<a href="https://bsky.app/profile/{{ author.bluesky }}">
+			<a href="https://bsky.app/profile/{{ author.bluesky }}" rel="external noopener">
 				Bluesky
 				<br>
 				<small aria-hidden="true">@{{ author.bluesky }}</small>
@@ -28,7 +28,7 @@ wide: true
 	<article class=" [ flow ] ">
 		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://www.buymeacoffee.com' | urlencode }}/" class=" [ avatar ] " width="30" height="30" loading="lazy" decoding="async">
 		<h1>
-			<a href="https://www.buymeacoffee.com/{{ author.buymeacoffee }}">
+			<a href="https://www.buymeacoffee.com/{{ author.buymeacoffee }}" rel="external noopener">
 				Buy Me a Coffee
 				<br>
 				<small aria-hidden="true">{{ author.buymeacoffee }}</small>
@@ -38,17 +38,17 @@ wide: true
 	<article class=" [ flow ] ">
 		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://codepen.io' | urlencode }}/" class=" [ avatar ] " width="30" height="30" loading="lazy" decoding="async">
 		<h1>
-			<a href="https://codepen.io/{{ author.codepen }}">
+			<a href="https://codepen.io/{{ author.codepen }}" rel="external noopener">
 				CodePen
 				<br>
-				<small aria-hidden="true">@{{ author.codepen }}</small>
+				<small aria-hidden="true">{{ author.codepen }}</small>
 			</a>
 		</h1>
 	</article>
 	<article class=" [ flow ] ">
 		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://discord.com' | urlencode }}/" class=" [ avatar ] " width="30" height="30" loading="lazy" decoding="async">
 		<h1>
-			<a href="https://discordapp.com/users/{{ author.discord_id }}">
+			<a href="https://discordapp.com/users/{{ author.discord_id }}" rel="external noopener">
 				Discord
 				<br>
 				<small>@{{ author.discord }}</small>
@@ -58,17 +58,17 @@ wide: true
 	<article class=" [ flow ] ">
 		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://11ty.dev' | urlencode }}/" class=" [ avatar ] " width="30" height="30" loading="lazy" decoding="async">
 		<h1>
-			<a href="https://11ty.dev/authors/{{ author.eleventy }}">
+			<a href="https://11ty.dev/authors/{{ author.eleventy }}" rel="external noopener">
 				Eleventy
 				<br>
-				<small aria-hidden="true">@{{ author.eleventy }}</small>
+				<small aria-hidden="true">{{ author.eleventy }}</small>
 			</a>
 		</h1>
 	</article>
 	<article class=" [ flow ] ">
 		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://github.com' | urlencode }}/" class=" [ avatar ] " width="30" height="30" loading="lazy" decoding="async">
 		<h1>
-			<a href="https://github.com/{{ author.github }}">
+			<a href="https://github.com/{{ author.github }}" rel="external noopener">
 				GitHub
 				<br>
 				<small aria-hidden="true">@{{ author.github }}</small>
@@ -78,7 +78,7 @@ wide: true
 	<article class=" [ flow ] ">
 		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://indieweb.org' | urlencode }}/" class=" [ avatar ] " width="30" height="30" loading="lazy" decoding="async">
 		<h1>
-			<a href="https://indieweb.org/User:{{ author.indieweb }}">
+			<a href="https://indieweb.org/User:{{ author.indieweb }}" rel="external noopener">
 				IndieWeb
 				<br>
 				<small aria-hidden="true">{{ author.indieweb }}</small>
@@ -88,17 +88,17 @@ wide: true
 	<article class=" [ flow ] ">
 		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://last.fm' | urlencode }}/" class=" [ avatar ] " width="30" height="30" loading="lazy" decoding="async">
 		<h1>
-			<a href="https://last.fm/user/{{ author.lastfm }}">
+			<a href="https://last.fm/user/{{ author.lastfm }}" rel="external noopener">
 				Last.fm
 				<br>
-				<small aria-hidden="true">@{{ author.lastfm }}</small>
+				<small aria-hidden="true">{{ author.lastfm }}</small>
 			</a>
 		</h1>
 	</article>
 	<article class=" [ flow ] ">
 		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://linkedin.com' | urlencode }}/" class=" [ avatar ] " width="30" height="30" loading="lazy" decoding="async">
 		<h1>
-			<a href="https://www.linkedin.com/in/{{ author.linkedin }}">
+			<a href="https://www.linkedin.com/in/{{ author.linkedin }}" rel="external noopener">
 				LinkedIn
 				<br>
 				<small aria-hidden="true">@{{ author.linkedin }}</small>
@@ -108,7 +108,7 @@ wide: true
 	<article class=" [ flow ] ">
 		<img src="https://v1.indieweb-avatar.11ty.dev/{{ ('https://' + author.mastodon_domain) | urlencode }}/" class=" [ avatar ] " width="30" height="30" loading="lazy" decoding="async">
 		<h1>
-			<a href="https://{{ author.mastodon_domain }}/{{ author.mastodon.split('@')[1] }}">
+			<a href="https://{{ author.mastodon_domain }}/{{ author.mastodon.split('@')[1] }}" rel="external noopener">
 				Mastodon
 				<br>
 				<small aria-hidden="true">{{ author.mastodon }}</small>
@@ -118,27 +118,27 @@ wide: true
 	<article class=" [ flow ] ">
 		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://npmjs.com' | urlencode }}/" class=" [ avatar ] " width="30" height="30" loading="lazy" decoding="async">
 		<h1>
-			<a href="https://npmjs.com/~{{ author.npm }}">
+			<a href="https://npmjs.com/~{{ author.npm }}" rel="external noopener">
 				npm
 				<br>
-				<small aria-hidden="true">@{{ author.npm }}</small>
+				<small aria-hidden="true">{{ author.npm }}</small>
 			</a>
 		</h1>
 	</article>
 	<article class=" [ flow ] ">
 		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://speakerdeck.com' | urlencode }}/" class=" [ avatar ] " width="30" height="30" loading="lazy" decoding="async">
 		<h1>
-			<a href="https://speakerdeck.com/{{ author.speakerdeck }}">
+			<a href="https://speakerdeck.com/{{ author.speakerdeck }}" rel="external noopener">
 				Speakerdeck
 				<br>
-				<small aria-hidden="true">@{{ author.speakerdeck }}</small>
+				<small aria-hidden="true">{{ author.speakerdeck }}</small>
 			</a>
 		</h1>
 	</article>
 	<article class=" [ flow ] " hidden>
 		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://spotify.com' | urlencode }}/" class=" [ avatar ] " width="30" height="30" loading="lazy" decoding="async">
 		<h1>
-			<a href="https://open.spotify.com/user/{{ author.spotify }}">
+			<a href="https://open.spotify.com/user/{{ author.spotify }}" rel="external noopener">
 				Spotify
 				<br>
 				<small aria-hidden="true">{{ author.name }}</small>
@@ -148,10 +148,10 @@ wide: true
 	<article class=" [ flow ] ">
 		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://untappd.com' | urlencode }}/" class=" [ avatar ] " width="30" height="30" loading="lazy" decoding="async">
 		<h1>
-			<a href="https://untappd.com/user/{{ author.untappd }}">
+			<a href="https://untappd.com/user/{{ author.untappd }}" rel="external noopener">
 				Untappd
 				<br>
-				<small aria-hidden="true">@{{ author.untappd }}</small>
+				<small aria-hidden="true">{{ author.untappd }}</small>
 			</a>
 		</h1>
 	</article>

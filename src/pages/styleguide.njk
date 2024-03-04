@@ -12,29 +12,28 @@ truncate: true
 
 <h2>Colours</h2>
 
-<figure>
-	<ul id="colors" class=" [ palette ] ">
-		{%- for name, color in designTokens.colors -%}
-			<li class=" [ background--{{ name }} ] {% if name == 'aspen' or name == 'conifer' or name == 'maple' %}[ third ] {% endif %}"{% if name == 'raven' or name == 'thunder' or name == 'snowy' %} style="flex: 1 0 100%;"{% endif %}>
-				<h3>{{ name | title }}</h3>
-				<pre style="font-size: var(--font-size-small-min);">{{ color }}</pre>
-				{% if name == 'raven' -%}
-					<pre  style="display: none;">color-mix(in oklab, goldenrod 15.33%, steelblue)</pre>
-					<pre  style="display: none;">#5f8aa6</pre>
-				{% elif name == 'thunder' -%}
-					<pre  style="display: none;">color-mix(in oklab, black 69.77%, darkgray)</pre>
-					<pre  style="display: none;">#1b1b1b</pre>
-				{% elif name == 'snowy' -%}
-					<pre  style="display: none;">color-mix(in oklab, black 1.79%, white)</pre>
-					<pre  style="display: none;">#f9f9f9</pre>
-				{%- endif %}
-			</li>
-		{%- endfor -%}
-	</ul>
-	<figcaption>
-		<p>Available as a <a href="/Ravenous.gpl">palette file</a> for your favourite image/pixel editor!</p>
-	</figcaption>
-</figure>
+<ul id="colors" class=" [ palette ] ">
+	{%- for name, color in designTokens.colors -%}
+		<li class=" [ background--{{ name }} ] {% if name == 'aspen' or name == 'conifer' or name == 'maple' %}[ third ] {% endif %}"{% if name == 'raven' or name == 'thunder' or name == 'snowy' %} style="flex: 1 0 100%;"{% endif %}>
+			<h3>{{ name | title }}</h3>
+			<pre style="font-size: var(--font-size-small-min);">{{ color }}</pre>
+			{% if name == 'raven' -%}
+				<pre  style="display: none;">color-mix(in oklab, goldenrod 15.33%, steelblue)</pre>
+				<pre  style="display: none;">#5f8aa6</pre>
+			{% elif name == 'thunder' -%}
+				<pre  style="display: none;">color-mix(in oklab, black 69.77%, darkgray)</pre>
+				<pre  style="display: none;">#1b1b1b</pre>
+			{% elif name == 'snowy' -%}
+				<pre  style="display: none;">color-mix(in oklab, black 1.79%, white)</pre>
+				<pre  style="display: none;">#f9f9f9</pre>
+			{%- endif %}
+		</li>
+	{%- endfor -%}
+</ul>
+
+<div class=" [ box ] [ center ] " style="inline-size: var(--size-line-length); inline-size: fit-content; text-wrap: balance;">
+	<p>Also available as a <a href="/Ravenous.gpl">palette file</a> for your favourite image/pixel editor!</p>
+</div>
 
 <h2>Sizes</h2>
 

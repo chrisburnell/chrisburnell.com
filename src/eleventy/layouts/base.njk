@@ -39,8 +39,8 @@
 		<link rel="authorization_endpoint" href="{{ site.urls.indieauth_endpoint }}">
 		<link rel="token_endpoint" href="{{ site.urls.indieauth_token }}">
 		<link rel="micropub" href="{{ site.urls.micropub }}">
-		<link rel="openid.delegate" href="{{ site.url }}" />
-		<link rel="openid.server" href="{{ site.urls.openid }}" />
+		<link rel="openid.delegate" href="{{ site.url }}">
+		<link rel="openid.server" href="{{ site.urls.openid }}">
 
 		<link rel="author" href="/humans.txt">
 		<link rel="manifest" href="/manifest.json">
@@ -190,15 +190,11 @@
 						{%- endif -%}
 					{%- endfor -%}
 				</ul>
+				{% include 'badges.njk' %}
 				{% include 'webrings.njk' %}
 				{% if speedlify[canonical] -%}
 					<p class=" [ speedlify ] "><a href="{{ site.urls.speedlify }}/{{ site.speedlify }}/#site-{{ speedlify[canonical].hash }}" class="[ speedlify-anchor ] " title="Link to this page's Speedlify Score"><c-speedlify-score hash="{{ speedlify[canonical].hash }}" score weight requests></c-speedlify-score></a></p>
 				{%- endif %}
-				{%- for item in socials -%}
-					{%- if not item.hidden and not item.primary -%}
-						<data{% if item.mf_property %} class=" [ p-{{ item.mf_property }} ] "{% endif %} value="{{ author[item.key] | default(item.value) | default(item.url) }}" hidden>{{ item.title }}</data>
-					{%- endif -%}
-				{%- endfor -%}
 			</div>
 		</footer>
 

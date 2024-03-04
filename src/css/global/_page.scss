@@ -55,3 +55,8 @@ body {
 .footer {
 	grid-row: footer;
 }
+
+@page {
+	size: Letter portrait;
+	margin: 0;
+}

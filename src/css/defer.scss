@@ -44,6 +44,7 @@
 
 // Components
 @layer components {
+	@import "components/badges";
 	@import "components/updated";
 	@import "components/librarian";
 	@import "components/responses";

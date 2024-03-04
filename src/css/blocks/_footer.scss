@@ -30,7 +30,6 @@
 	svg {
 		inline-size: calc(1lh - 1.25cap);
 		block-size: calc(1lh - 1.25cap);
-		margin-inline-end: 0.5em;
 		transition: fill var(--transition-duration) var(--transition-function);
 	}
 
@@ -60,6 +59,7 @@
 	}
 
 	.footer__navigation {
+		--padding-inline: 0.625em;
 		grid-column: left;
 		display: flex;
 		flex-wrap: wrap;
@@ -76,9 +76,28 @@
 		grid-row: 1/4;
 	}
 
-	.speedlify {
-		grid-column: right;
+	.webrings {
+		grid-column: left;
+		grid-row: 4;
+	}
 
+	:is(.badges, .speedlify) {
+		grid-column: right;
+	}
+
+	.badges {
+		column-gap: var(--size-small);
+
+		@include cqi(null, "medium") {
+			justify-content: end;
+		}
+
+		@include cqi(null, null, "medium") {
+			margin-block-start: var(--size-small-medium);
+		}
+	}
+
+	.speedlify {
 		@include cqi(null, "medium") {
 			text-align: end;
 		}

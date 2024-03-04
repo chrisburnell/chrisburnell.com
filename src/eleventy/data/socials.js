@@ -34,6 +34,7 @@ export default [
 		url: "https://bsky.app/profile/",
 		key: "bluesky",
 		fill: "url(#bluesky)",
+		hidden: true,
 	},
 	{
 		title: "Discord",

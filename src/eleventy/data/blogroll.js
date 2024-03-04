@@ -57,7 +57,7 @@ const blogroll = [
 		title: "Dave Letorey",
 		url: "https://letorey.co.uk",
 		rss: "https://letorey.co.uk/feed.xml",
-		mastodon: "dletorey@mastodon.social",
+		mastodon: "dletorey@front-end.social",
 		twitter: "dletorey",
 	},
 	{

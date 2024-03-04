@@ -1,0 +1,39 @@
+////
+/// Badges
+/// @group components
+////
+
+.badge {
+	min-inline-size: 88px;
+	block-size: 49px;
+	display: grid;
+	display: inline-grid;
+	grid-template-columns: 45px 1fr;
+	grid-template-columns: 1lh 1fr;
+	place-items: center;
+	gap: 0.25lh;
+	padding: var(--size-tiny-min) var(--size-tiny-max);
+	border: var(--size-border-thin) solid h(kaiser);
+	border-block-start-color: h(nickel);
+	border-inline-start-color: h(nickel);
+	font-size: var(--font-size-small-min);
+	font-weight: var(--font-weight-medium);
+	text-decoration: none;
+
+	& > :first-child {
+		display: grid;
+		place-items: center;
+		text-align: center;
+	}
+
+	& > :last-child {
+		line-height: var(--line-height-small);
+		text-align: end;
+	}
+
+	.emoji {
+		font-size: var(--font-size-gamma-max);
+		line-height: 0;
+		padding-inline-end: 0;
+	}
+}
