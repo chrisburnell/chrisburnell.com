@@ -11,7 +11,7 @@ import shortcodes from "./src/eleventy/shortcodes.js"
 import transforms from "./src/eleventy/transforms.js"
 
 /**
- * @param {import("@11ty/eleventy/src/UserConfig")} eleventyConfig
+ * @param {import("@11ty/eleventy/src/UserConfig").default} eleventyConfig
  */
 export default async function(eleventyConfig) {
 	///
