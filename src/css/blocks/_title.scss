@@ -16,13 +16,11 @@
 	}
 
 	.p-name {
-		background-image: linear-gradient(to bottom, var(--color-kaiser), var(--color-bowhead));
-		background-clip: text;
-
-		@media print {
-			background-image: none;
-			background-clip: initial;
-			-webkit-text-fill-color: initial;
+		@media not print {
+			background-image: linear-gradient(to bottom, var(--color-kaiser), var(--color-bowhead));
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+			box-decoration-break: clone;
 		}
 	}
 }

@@ -59,11 +59,13 @@ h2 %anchor:not(:hover, :focus, :active) {
 // Fancy gradient anchor text
 .colourful-anchor {
 	&:is(:hover, :focus, :active) {
-		background-color: transparent;
-		background-image: linear-gradient(to bottom right, h(raven), h(maple));
-		background-clip: text;
-		-webkit-text-fill-color: transparent;
-		box-decoration-break: clone;
+		@media not print {
+			background-color: transparent;
+			background-image: linear-gradient(to bottom, h(raven), h(maple));
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+			box-decoration-break: clone;
+		}
 	}
 }
 

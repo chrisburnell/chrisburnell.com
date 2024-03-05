@@ -108,7 +108,9 @@
 
 	.title:not(.title--positive, .title--negative) .p-name,
 	.navigation__list a {
-		background-image: linear-gradient(to bottom, var(--color-snowy), var(--color-highland));
+		@media not print {
+			background-image: linear-gradient(to bottom, var(--color-snowy), var(--color-highland));
+		}
 	}
 
 	///
