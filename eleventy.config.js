@@ -10,6 +10,9 @@ import plugins from "./src/eleventy/plugins.js"
 import shortcodes from "./src/eleventy/shortcodes.js"
 import transforms from "./src/eleventy/transforms.js"
 
+/**
+ * @param {import("@11ty/eleventy/src/UserConfig")} eleventyConfig
+ */
 export default async function(eleventyConfig) {
 	///
 	// Layouts
@@ -121,6 +124,8 @@ export default async function(eleventyConfig) {
 	///
 	// Build Settings
 	///
+	eleventyConfig.addWatchTarget('./src/css')
+	eleventyConfig.addWatchTarget('./src/js')
 	eleventyConfig.setDataDeepMerge(true)
 	eleventyConfig.setServerPassthroughCopyBehavior("passthrough")
 	eleventyConfig.setQuietMode(true)

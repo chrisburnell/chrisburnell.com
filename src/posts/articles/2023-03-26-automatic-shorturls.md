@@ -39,10 +39,10 @@ In this article, I’ll walk through how I implemented this in the latest iterat
 Let’s refresh by taking a look at an example ShortURL and what each of its constituent parts represents:
 
 <figure>
-    <samp class=" [ beta ] " style="font-weight: var(--font-weight-regular);"><a href="https://repc.co/a4zK2" title="Permalink: LiquidBase60, a previous article on NewBase60">repc.co/<strong style="color: var(--color-bowhead);">a</strong><strong style="color: var(--color-maple);">4zK</strong><strong style="color: var(--color-liquid);">2</strong></a></samp>
+    <samp class=" [ beta ] " style="font-weight: var(--font-weight-regular);"><a href="https://repc.co/a4zK2" title="Permalink: LiquidBase60, a previous article on NewBase60">repc.co/<strong style="color: var(--color-raven);">a</strong><strong style="color: var(--color-maple);">4zK</strong><strong style="color: var(--color-liquid);">2</strong></a></samp>
 </figure>
 
-1. <samp class="strong" style="color: var(--color-bowhead);">a</samp> — <a href="#category-code">**Category Code**</a> *(required, 1 character)*
+1. <samp class="strong" style="color: var(--color-raven);">a</samp> — <a href="#category-code">**Category Code**</a> *(required, 1 character)*
 2. <samp class="strong" style="color: var(--color-maple);">4zK</samp> — **[Sexagesimal Epoch Days](#sexagesimal-epoch-days)** *(required, 3 characters)*
 3. <samp class="strong" style="color: var(--color-liquid);">2</samp> — <a href="#post-index-for-the-day">**Post Index for the Day**</a> *(optional, 1 character, default = 1)*
 
@@ -55,7 +55,7 @@ These three segments allow us to uniquely identify any given post by referencing
 ## Category Code
 
 <figure>
-    <p class=" [ beta  center ] " style="font-weight: var(--font-weight-default);"><a href="#refresh" style="color: var(--color-nickel);" title="Jump to Refresh section">repc.co/<strong style="color: var(--color-bowhead);">a</strong>4zK2</a></p>
+    <p class=" [ beta  center ] " style="font-weight: var(--font-weight-default);"><a href="#refresh" style="color: inherit;" title="Jump to Refresh section">repc.co/<strong style="color: var(--color-raven);">a</strong>4zK2</a></p>
 </figure>
 
 One way to attach the category code to each post is to use Front Matter:
@@ -123,7 +123,7 @@ module.exports = {
 ## Sexagesimal Epoch Days
 
 <figure>
-    <p class=" [ beta  center ] " style="font-weight: var(--font-weight-default);"><a href="#refresh" style="color: var(--color-nickel);" title="Jump to Refresh section">repc.co/a<strong style="color: var(--color-maple);">4zK</strong>2</a></p>
+    <p class=" [ beta  center ] " style="font-weight: var(--font-weight-default);"><a href="#refresh" style="color: inherit;" title="Jump to Refresh section">repc.co/a<strong style="color: var(--color-maple);">4zK</strong>2</a></p>
 </figure>
 
 Compared to the previous Liquid solution, things are quite a bit more terse in Eleventy where we can essentially implement NewBase60 [as provided by Tantek Çelik](http://tantek.pbworks.com/w/page/19402946/NewBase60).
@@ -256,7 +256,7 @@ const DateToSexagesimal = (dateObject) => {
 ## Post Index for the Day
 
 <figure>
-    <p class=" [ beta  center ] " style="font-weight: var(--font-weight-default);"><a href="#refresh" style="color: var(--color-nickel);" title="Jump to Refresh section">repc.co/a4zK<strong style="color: var(--color-liquid);">2</strong></a></p>
+    <p class=" [ beta  center ] " style="font-weight: var(--font-weight-default);"><a href="#refresh" style="color: inherit;" title="Jump to Refresh section">repc.co/a4zK<strong style="color: var(--color-liquid);">2</strong></a></p>
 </figure>
 
 The last step in building the ShortURL is to pull everything together into a function that we can pass to Eleventy to use as a Filter:

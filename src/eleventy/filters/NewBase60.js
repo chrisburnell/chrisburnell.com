@@ -1,3 +1,5 @@
+import { epoch } from "./dates.js"
+
 // 60 characters that make up the Sexagesimal numeral system
 const SEQUENCE = "0123456789ABCDEFGHJKLMNPQRSTUVWXYZ_abcdefghijkmnopqrstuvwxyz"
 
@@ -25,10 +27,12 @@ const DecimalToSexagesimal = (value) => {
  * @returns {string}
  */
 const DateToSexagesimal = (dateObject) => {
-	let sinceEpoch = new Date(dateObject).getTime()
+	let sinceEpoch = epoch(dateObject)
 	let epochDays = Math.floor(sinceEpoch / (1000 * 60 * 60 * 24))
 	return DecimalToSexagesimal(epochDays)
 }
+
+let cachedCodes = {}
 
 /**
  * @param {DateTime} date
@@ -37,6 +41,12 @@ const DateToSexagesimal = (dateObject) => {
  * @returns {string}
  */
 export const NewBase60 = (date, categoryCode, collection) => {
+	// Skip processing and grab from the memoized cache
+	const cacheKey = `${epoch(date)}-${categoryCode}`
+	if (cacheKey in cachedCodes) {
+		return cachedCodes[cacheKey]
+	}
+
 	// Get all posts where DATE matches in UTC
 	const postsToday = collection.filter((post) => {
 		if ("date" in post.data) {
@@ -50,11 +60,16 @@ export const NewBase60 = (date, categoryCode, collection) => {
 	const postIndex =
 		1 +
 		postsToday.findIndex((post) => {
-			return new Date(post.data.date).getTime() === new Date(date).getTime()
+			return epoch(post.data.date) === epoch(date)
 		})
 
-	// Build the string
-	return categoryCode + DateToSexagesimal(date) + postIndex
+	// Build the code string
+	const code = categoryCode + DateToSexagesimal(date) + postIndex
+
+	// Cache the result
+	cachedCodes[cacheKey] = code
+
+	return code
 }
 
 export default {
