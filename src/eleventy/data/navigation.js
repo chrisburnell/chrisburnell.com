@@ -27,11 +27,6 @@ const navigation = [
 		footer: true,
 	},
 	{
-		title: "Guestbook",
-		url: "/guestbook/",
-		footer: true,
-	},
-	{
 		title: "Posts",
 		url: "/posts/",
 		header: true,
@@ -44,13 +39,18 @@ const navigation = [
 		footer: true,
 	},
 	{
-		title: "Privacy",
-		url: "/privacy/",
+		title: "Style Guide",
+		url: "/styleguide/",
 		footer: true,
 	},
 	{
-		title: "Style Guide",
-		url: "/styleguide/",
+		title: "License",
+		url: "/license/",
+		footer: true,
+	},
+	{
+		title: "Privacy",
+		url: "/privacy/",
 		footer: true,
 	},
 ]
