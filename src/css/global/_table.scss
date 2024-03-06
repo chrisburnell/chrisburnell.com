@@ -50,7 +50,6 @@ table {
 th {
 	font-weight: var(--font-weight-semibold);
 	line-height: var(--line-height-medium);
-	white-space: nowrap;
 
 	&:not(:empty) {
 		background-color: color-mix(in oklab, h(yeti), h(snowy) 40%);
