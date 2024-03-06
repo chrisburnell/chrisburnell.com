@@ -717,6 +717,12 @@ const blogroll = [
 		rss: "https://scumsuckart.tumblr.com/rss",
 		mastodon: "scumsuck@blorbo.social",
 	},
+	{
+		title: "Lars-Christian Simonsen",
+		url: "https://lars-christian.com",
+		rss: "https://lars-christian.com/feed/",
+		mastodon: "lars@mastodon.social",
+	},
 ].sort((a, b) => {
 	return a.title.localeCompare(b.title)
 })
