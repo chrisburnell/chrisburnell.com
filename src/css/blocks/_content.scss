@@ -7,10 +7,4 @@
 	container: content / inline-size;
 	// required: works like overflow for this .pantheon grid item
 	min-inline-size: 0;
-
-	:is(p, li, dd) {
-		@include cqi(null, null, "small") {
-			@include hyphenate;
-		}
-	}
 }

@@ -18,7 +18,6 @@ toc: true
 
 ## CSS
 
-- get rid of hyphens, i can't stand to see them on my pages
 - review and refactor CSS and make tasty usage of layers, revert-layer, :where, :is, :has, etc.
 - use utopia-core-scss to generate fluid spaces, type, etc.
 - figure out how to resize code elements with `font-size-adjust: from-font;"
