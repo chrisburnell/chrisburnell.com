@@ -34,7 +34,7 @@ photo:
     alt: Warm and fluffy bread rolls, made by yours truly
 ---
 
-*You can prepare the dough in a bread machine if it has a dough setting, but doing it by hand works too!*
+*You can prepare the dough in a bread machine if yours has a dough setting, but mixing it by hand or in a stand mixer works too!*
 
 1.
     Place the dough ingredients into the bread machine pan / a bowl in the following order:
