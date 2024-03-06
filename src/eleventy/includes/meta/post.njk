@@ -144,6 +144,7 @@
 		<li class=" [ shorturl ] ">
 			{% set shorturl_id = date | NewBase60(categoryCode, collections[category]) -%}
 			<c-emoji>{{ emojis.link }}</c-emoji>
+			<small>shorturl</small>
 			<a href="https://repc.co/{{ shorturl_id }}">repc.co/{{ shorturl_id }}</a>
 		</li>
 	{% endif %}
