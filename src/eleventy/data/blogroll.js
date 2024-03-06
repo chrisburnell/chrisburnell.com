@@ -709,13 +709,13 @@ const blogroll = [
 		title: "The Frugal Gamer",
 		url: "https://www.thefrugalgamer.net",
 		rss: "https://www.thefrugalgamer.net/rss.xml",
-		mastodon: "frugalgamer@snug.moe"
+		mastodon: "frugalgamer@snug.moe",
 	},
 	{
 		title: "SCUMSUCK",
 		url: "https://scumsuck.com",
 		rss: "https://scumsuckart.tumblr.com/rss",
-		mastodon: "scumsuck@blorbo.social"
+		mastodon: "scumsuck@blorbo.social",
 	},
 ].sort((a, b) => {
 	return a.title.localeCompare(b.title)

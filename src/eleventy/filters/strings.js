@@ -58,9 +58,7 @@ export const htmlEntities = (string) => {
  * @returns {string}
  */
 export const stripImages = (string) => {
-	return string
-		.replace(/<picture.*?>(.*?)<\/picture>/g, "")
-		.replace(/<img[^<>]+>/g, "")
+	return string.replace(/<picture.*?>(.*?)<\/picture>/g, "").replace(/<img[^<>]+>/g, "")
 }
 
 /**

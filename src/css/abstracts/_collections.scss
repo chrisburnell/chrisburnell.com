@@ -15,7 +15,7 @@
 	@extend %heading !optional;
 }
 
-:is(h1, .alpha)  {
+:is(h1, .alpha) {
 	@extend %alpha !optional;
 }
 

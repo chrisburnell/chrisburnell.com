@@ -49,12 +49,12 @@ markdown.renderer.rules.footnote_ref = (tokens, idx, options, env, slf) => {
 }
 
 markdown.renderer.rules.footnote_anchor = (tokens, idx, options, env, slf) => {
-  let id = slf.rules.footnote_anchor_name(tokens, idx, options, env, slf)
+	let id = slf.rules.footnote_anchor_name(tokens, idx, options, env, slf)
 
-  if (tokens[idx].meta.subId > 0) id += `:${tokens[idx].meta.subId}`
+	if (tokens[idx].meta.subId > 0) id += `:${tokens[idx].meta.subId}`
 
-  // ↩ with escape code to prevent display as Apple Emoji on iOS
-  return ` <a href="#fnref${id}">\u21a9\uFE0E</a>`
+	// ↩ with escape code to prevent display as Apple Emoji on iOS
+	return ` <a href="#fnref${id}">\u21a9\uFE0E</a>`
 }
 
 export default markdown
