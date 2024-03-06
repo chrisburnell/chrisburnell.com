@@ -1,12 +1,9 @@
-{% if makes or serves or preheat %}
-	<p>
-		{% if makes or serves %}
-			<strong id="serves">{% if makes %}Makes{% else %}Serves{% endif %} {{ makes | default(serves) }}.</strong>
-		{% endif %}
-		{% if preheat %}
-			<strong id="preheat">There is a <a href="#preheat-step">preheat</a> step in this recipe.</strong>
-		{% endif %}
-	</p>
+{% if makes or serves %}
+	<p id="serves" class=" [ strong ] ">{% if makes %}Makes{% else %}Serves{% endif %} {{ makes | default(serves) }}.</p>
+{% endif %}
+
+{% if preheat %}
+	<p id="preheat" class=" [ strong ] ">There is a <a href="#preheat-step">preheat</a> step in this recipe!</p>
 {% endif %}
 
 {% if prep_time or cooking_time %}
@@ -22,12 +19,21 @@
 	</dl>
 {% endif %}
 
+{% if equipment %}
+	<h2 id="equipment">Equipment</h2>
+
+	<ul>
+		{% for item in equipment %}
+			<li>{{ item | formatAsMarkdown | safe }}</li>
+		{% endfor %}
+	</ul>
+{% endif %}
+
+<h2 id="ingredients">Ingredients</h2>
+
 <table>
 	<thead>
 		<tr>
-			<th colspan="3">Ingredients</th>
-		</tr>
-		<tr hidden>
 			<th>Name</th>
 			<th>Amount</th>
 			<td></td>
@@ -127,21 +133,21 @@
 				{% set us = metric %}
 			{% endif %}
 			<tr>
-				<td>{{ item.title }}</td>
+				<td>{{ item.title | safe }}</td>
 				<td>
 					{% if item.g %}
-						{{ item.g }} g
+						{{ item.g | safe }} g
 					{% elif item.ml %}
-						{{ item.ml }} mL
+						{{ item.ml | safe }} mL
 					{% elif item.amount %}
-						{{ item.amount }}
+						{{ item.amount | safe }}
 					{% endif %}
 				</td>
 				<td>
 					{% if item.notes %}
 						<ul class>
 							{% for note in item.notes %}
-								<li>{{ note }}</li>
+								<li>{{ note | safe }}</li>
 							{% endfor %}
 						</ul>
 					{% endif %}
@@ -150,3 +156,5 @@
 		{% endfor %}
 	</tbody>
 </table>
+
+<h2 id="directions">Directions</h2>

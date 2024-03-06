@@ -33,6 +33,10 @@
 	& > li + li {
 		margin-block-start: var(--size-small);
 	}
+
+	li > * + * {
+		margin-block-start: var(--flow-space, 1em);
+	}
 }
 ol:not([class]),
 ol.default-list {
