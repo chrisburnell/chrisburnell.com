@@ -1,4 +1,5 @@
 import { DateTime } from "luxon"
+import emojis from "../data/emojis.js"
 import { locale } from "../data/site.js"
 
 const ordinalPlurals = new Intl.PluralRules(locale, {
@@ -11,6 +12,53 @@ const ordinalSuffixes = {
 	few: "rd",
 	other: "th",
 }
+
+let userLocale = "en"
+if (typeof document !== "undefined") {
+	userLocale = document.querySelector("html").getAttribute("lang") || navigator.languages ? navigator.languages[0] : userLocale
+}
+
+const rtf = new Intl.RelativeTimeFormat(userLocale, {
+	localeMatcher: "best fit",
+	numeric: "always",
+	style: "long",
+})
+
+const rtfDivisions = [
+	{
+		amount: 60,
+		name: "second"
+	},
+	{
+		amount: 60,
+		name: "minute"
+	},
+	{
+		amount: 24,
+		name: "hour"
+	},
+	{
+		amount: 7,
+		name: "day"
+	},
+	{
+		amount: 4.34524,
+		name: "week"
+	},
+	{
+		amount: 12,
+		name: "month"
+	},
+	{
+		amount: Number.POSITIVE_INFINITY,
+		name: "year"
+	},
+]
+
+const emojiFuture = `<span class=" [ emoji ] " aria-hidden="true">${emojis.future}</span>`
+const emojiGoing = `<span class=" [ emoji ] " aria-hidden="true">${emojis.going}</span>`
+const emojiHopefully = `<span class=" [ emoji ] " aria-hidden="true">${emojis.hopefully}</span>`
+const emojiNotGoing = `<span class=" [ emoji ] " aria-hidden="true">${emojis.not_going}</span>`
 
 /**
  * @param {string} dateString
@@ -92,16 +140,6 @@ export const epoch = (dateString) => {
 }
 
 /**
- * @param {datetime} date
- * @returns {string}
- */
-export const daysUntil = (date) => {
-	const future = new Date(date)
-	const timeDifference = future - new Date()
-	return Math.round(timeDifference / (1000 * 60 * 60 * 24))
-}
-
-/**
  * @param {object} a
  * @param {object} b
  * @returns {number}
@@ -118,6 +156,89 @@ export const sortByDate = (array) => {
 	return array.sort(dateSort)
 }
 
+/**
+ * @param {Datetime} datetime
+ * @returns {string}
+ */
+export const getRelativeTime = (datetime, division) => {
+	if (typeof datetime === "string") {
+		datetime = new Date(datetime)
+	}
+
+	let difference = (datetime.getTime() - Date.now()) / 1000
+
+	if (division) {
+		return rtf.format(Math.round(difference), division)
+	}
+
+	for (const division of rtfDivisions) {
+		if (Math.floor(Math.abs(difference)) < division.amount) {
+			return rtf.format(Math.round(difference), division.name)
+		}
+		difference /= division.amount
+	}
+}
+
+/**
+ * @param {string} start
+ * @param {string} end
+ * @param {string} value
+ * @returns {string}
+ */
+export const getRSVPValueString = (start, end, value) => {
+	const now = Date.now()
+
+	if (value === "yes") {
+		if (epoch(start) > now) {
+			return `${emojiFuture} <small>attending</small>`
+		}
+		if (epoch(start) <= now && now <= epoch(end)) {
+			return `${emojiGoing} <small>currently attending</small>`
+		}
+		return `${emojiGoing} <small>attended</small>`
+	}
+	if (value === "maybe" || value === "interested") {
+		if (epoch(start) > now) {
+			return `${emojiHopefully} <small>hoping to attend</small>`
+		}
+		return `${emojiHopefully} <small>was hoping to attend</small>`
+	}
+	if (epoch(start) > now) {
+		return `${emojiNotGoing} <small>unable to attend</small>`
+	}
+	return `${emojiNotGoing} <small>was unable to attend</small>`
+}
+
+/**
+ * @param {string} start
+ * @param {string} end
+ * @param {string} value
+ * @returns {string}
+ */
+export const getRSVPValueHTML = (start, end, value) => {
+	const now = Date.now()
+
+	if (value === "yes") {
+		if (epoch(start) > now) {
+			return `<span data-start="${rfc3339Date(start)}" data-end="${rfc3339Date(end)}" data-value="${value}" data-relative-rsvp>${getRSVPValueString(start, end, value)}</span>`
+		}
+		if (epoch(start) <= now && now <= epoch(end)) {
+			return `<span data-start="${rfc3339Date(start)}" data-end="${rfc3339Date(end)}" data-value="${value}" data-relative-rsvp>${getRSVPValueString(start, end, value)}</span>`
+		}
+		return `<span data-start="${rfc3339Date(start)}" data-end="${rfc3339Date(end)}" data-value="${value}" data-relative-rsvp>${getRSVPValueString(start, end, value)}</span>`
+	}
+	if (value === "maybe" || value === "interested") {
+		if (epoch(start) > now) {
+			return `<span data-start="${rfc3339Date(start)}" data-end="${rfc3339Date(end)}" data-value="${value}" data-relative-rsvp>${getRSVPValueString(start, end, value)}</span>`
+		}
+		return `<span data-start="${rfc3339Date(start)}" data-end="${rfc3339Date(end)}" data-value="${value}" data-relative-rsvp>${getRSVPValueString(start, end, value)}</span>`
+	}
+	if (epoch(start) > now) {
+		return `<span data-start="${rfc3339Date(start)}" data-end="${rfc3339Date(end)}" data-value="${value}" data-relative-rsvp>${getRSVPValueString(start, end, value)}</span>`
+	}
+	return `<span data-start="${rfc3339Date(start)}" data-end="${rfc3339Date(end)}" data-value="${value}" data-relative-rsvp>${getRSVPValueString(start, end, value)}</span>`
+}
+
 export default {
 	ordinal,
 	friendlyDate,
@@ -127,7 +248,9 @@ export default {
 	rfc3339Date,
 	w3cDate,
 	epoch,
-	daysUntil,
 	dateSort,
 	sortByDate,
+	getRelativeTime,
+	getRSVPValueString,
+	getRSVPValueHTML,
 }

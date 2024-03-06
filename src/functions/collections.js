@@ -6,11 +6,10 @@ import meetups from "../data/meetups.js"
 import musicalArtists from "../data/musicalArtists.js"
 import publications from "../data/publications.js"
 import blogroll from "../eleventy/data/blogroll.js"
-import emojis from "../eleventy/data/emojis.js"
 import { now } from "../eleventy/data/global.js"
 import { cacheDurations, favicon, url as siteURL } from "../eleventy/data/site.js"
 import { getCategoryName } from "../eleventy/filters/collections.js"
-import { epoch, friendlyDate } from "../eleventy/filters/dates.js"
+import { epoch, friendlyDate, getRSVPValueHTML } from "../eleventy/filters/dates.js"
 import { conjunction } from "../eleventy/filters/strings.js"
 import { getHost, tweetback } from "../eleventy/filters/urls.js"
 import { getSyndicationTitle, toArray } from "../eleventy/filters/utils.js"
@@ -291,11 +290,6 @@ export const getReplyAuthorString = (data) => {
 	return null
 }
 
-const emojiFuture = `<c-emoji>${emojis.future}</c-emoji>`
-const emojiGoing = `<c-emoji>${emojis.going}</c-emoji>`
-const emojiHopefully = `<c-emoji>${emojis.hopefully}</c-emoji>`
-const emojiNotGoing = `<c-emoji>${emojis.not_going}</c-emoji>`
-
 /**
  * @param {object} data
  * @returns {string|null}
@@ -303,25 +297,7 @@ const emojiNotGoing = `<c-emoji>${emojis.not_going}</c-emoji>`
 export const getRSVPString = (data) => {
 	const rsvp = data.rsvp
 	if (rsvp) {
-		if (rsvp.value === "yes") {
-			if (epoch(rsvp.date) > now) {
-				return `${emojiFuture} <small>going to</small>`
-			}
-			if (epoch(rsvp.date) <= now && now <= epoch(rsvp.end)) {
-				return `${emojiGoing} <small>currently attending</small>`
-			}
-			return `${emojiGoing} <small>went to</small>`
-		}
-		if (rsvp.value === "maybe" || rsvp.value === "interested") {
-			if (epoch(rsvp.date) > now) {
-				return `${emojiHopefully} <small>hoping to go to</small>`
-			}
-			return `${emojiHopefully} <small>was hoping to go to</small>`
-		}
-		if (epoch(rsvp.date) > now) {
-			return `${emojiNotGoing} <small>unable to go to</small>`
-		}
-		return `${emojiNotGoing} <small>was unable to go to</small>`
+		return getRSVPValueHTML(rsvp.date, rsvp.end, rsvp.value)
 	}
 	return null
 }

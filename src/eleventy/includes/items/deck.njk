@@ -2,50 +2,18 @@
 	{% if item.data.reply_url %}
 		<div class=" [ deck__context ] ">
 			{% if item.data.rsvp %}
-				<data class=" [ p-rsvp ] " value="{{ item.data.rsvp.value }}" hidden></data>
 				{{ item.data.rsvp_string | safe }}
+				<data class=" [ p-rsvp ] " value="{{ item.data.rsvp.value }}" hidden></data>
 			{% else %}
 				<small>in reply to</small>
 			{% endif %}
 			<a href="{{ item.data.reply_url }}" class=" [ h-cite  u-in-reply-to ] ">{{ item.data.reply_title | safe }}</a>
+			{# Author #}
 			{% if item.data.reply_author_string and (item.data.reply_author_string | striptags) != item.data.reply_title %}
 				<small>by</small> {{ item.data.reply_author_string | safe }}
 			{% endif %}
-			{% if item.data.rsvp.date | daysUntil == 0 %}
-				{# Today #}
-				<small>today, from</small>
-				<time datetime="{{ item.data.rsvp.date | rfc3339Date }}" class=" [ dt-start ] ">{{ item.data.rsvp.date | friendlyTime(false) }}</time>
-				–
-				<time datetime="{{ item.data.rsvp.end | rfc3339Date }}" class=" [ dt-end ] ">{{ item.data.rsvp.end | friendlyTime(true) }}</time>
-			{% elif item.data.rsvp.date | epoch > global.now %}
-				{# Future #}
-				<small>in</small>
-				{{ item.data.rsvp.date | daysUntil }} day{{ 's' if (item.data.rsvp.date | daysUntil) > 1 }}
-				<small>on</small>
-				{% if item.data.rsvp.date | friendlyDate != item.data.rsvp.end | friendlyDate %}
-					<time datetime="{{ item.data.rsvp.date | rfc3339Date }}" class=" [ dt-start ] ">{{ item.data.rsvp.date | friendlyDate }}</time>
-					–
-					<time datetime="{{ item.data.rsvp.end | rfc3339Date }}" class=" [ dt-end ] ">{{ item.data.rsvp.end | friendlyDate }}</time>
-				{% else %}
-					<time datetime="{{ item.data.rsvp.date | rfc3339Date }}" class=" [ dt-start ] ">{{ item.data.rsvp.date | friendlyDate }}</time>
-					<time datetime="{{ item.data.rsvp.end | rfc3339Date }}" class=" [ dt-end ] " hidden></time>
-				{% endif %}
-			{% elif item.data.rsvp.date | epoch < global.now and item.data.rsvp.end | epoch > global.now %}
-				{# Current #}
-				<small>from</small>
-				<time datetime="{{ item.data.rsvp.date | rfc3339Date }}" class=" [ dt-start ] ">{{ item.data.rsvp.date | friendlyTime(false) }}</time>
-				–
-				<time datetime="{{ item.data.rsvp.end | rfc3339Date }}" class=" [ dt-end ] ">{{ item.data.rsvp.end | friendlyTime(true) }}</time>
-			{% elif item.data.rsvp.date %}
-				{# Past #}
-				<small>on</small>
-				<time datetime="{{ item.data.rsvp.date | rfc3339Date }}" class=" [ dt-start ] ">{{ item.data.rsvp.date | friendlyDate }}</time>
-				{% if item.data.rsvp.date | friendlyDate != item.data.rsvp.end | friendlyDate %}
-					–
-					<time datetime="{{ item.data.rsvp.end | rfc3339Date }}" class=" [ dt-end ] ">{{ item.data.rsvp.end | friendlyDate }}</time>
-				{% else %}
-					<time datetime="{{ item.data.rsvp.end | rfc3339Date }}" class=" [ dt-end ] " hidden></time>
-				{% endif %}
+			{% if item.data.rsvp.date %}
+				<small><time datetime="{{ item.data.rsvp.date | rfc3339Date }}" data-relative title="{{ item.data.rsvp.date | friendlyDate }} {{ item.data.rsvp.date | friendlyTime(false) }}" class=" [ dt-start ] ">{{ item.data.rsvp.date | getRelativeTime }}</time></small>
 			{% endif %}
 		</div>
 	{% endif %}

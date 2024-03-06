@@ -15,7 +15,7 @@
 		text-align: center;
 	}
 
-	.p-name {
+	&:not(.title--positive, .title--negative) .p-name {
 		@media not print {
 			background-image: linear-gradient(to bottom, var(--color-kaiser), var(--color-bowhead));
 			background-clip: text;

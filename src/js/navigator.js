@@ -1,4 +1,4 @@
-if (navigator.serviceWorker) {
+if (navigator.serviceWorker && !(/Headless/.test(navigator.userAgent))) {
 	navigator.serviceWorker
 		.register("/serviceworker.js")
 		.then((registration) => {

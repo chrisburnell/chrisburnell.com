@@ -27,9 +27,7 @@ toc: true
 
 ## JS
 
-- review comments in JS
 - move svg-sparkline.js to inline?
-- use fast-xml-parser to pull in latest posts for blogroll items
 - refactor getPlace()
 - functional tests for functions, filters, etc.
 
@@ -40,7 +38,10 @@ toc: true
 - get dates (and descriptions?) working in OG Images
     - https://github.com/KiwiKilian/eleventy-plugin-og-image
 - use new eleventy-img transform instead of image shortcode
-- use client-side Intl.RelativeTimeFormat for RSVP datetimes (i.e. don’t rely purely on builds to keep them accurate to <q>now</q>)
+    - keep an eye on performance here
+- refactor "taking place" / "took place" strings in post meta for RSVPs to follow same pattern as relative times on /rsvps
+- get it working for lastfm-listening too!
+    - `Uncaught SyntaxError: redeclaration of function TtUy5lCF-hiK.js:21:217 note: Previously declared at line 1, column 51494`
 
 ## Admin
 
