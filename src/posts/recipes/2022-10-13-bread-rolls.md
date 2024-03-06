@@ -16,15 +16,15 @@ ingredients:
   - title: eggs
     amount: 2
   - title: butter or margarine
-    amount: 3 <abbr title="tablespoon">tbsp</abbr>
+    amount: 3 <abbr title="tablespoon">Tbsp</abbr>
   - title: salt
     amount: 1 <abbr title="teaspoon">tsp</abbr>
   - title: bread flour
     amount: 3¼ cups
   - title: non/low-fat evaporated milk
-    amount: 2 <abbr title="tablespoon">tbsp</abbr>
+    amount: 2 <abbr title="tablespoon">Tbsp</abbr>
   - title: sugar
-    amount: 3 <abbr title="tablespoon">tbsp</abbr>
+    amount: 3 <abbr title="tablespoon">Tbsp</abbr>
   - title: active dry yeast
     amount: 2 <abbr title="teaspoon">tsp</abbr>
 authors:
@@ -39,11 +39,11 @@ photo:
 1.
     Place the dough ingredients into the bread machine pan / a bowl in the following order:
     - 1 egg + enough water to equal 1 cup
-    - 3 <abbr title="tablespoon">tbsp</abbr> butter/margarine
+    - 3 <abbr title="tablespoon">Tbsp</abbr> butter/margarine
     - 1 <abbr title="teaspoon">tsp</abbr> salt
     - 3¼ cups bread flour
-    - 2 <abbr title="tablespoon">tbsp</abbr> non/low-fat evaporated milk
-    - 3 <abbr title="tablespoon">tbsp</abbr> sugar
+    - 2 <abbr title="tablespoon">Tbsp</abbr> non/low-fat evaporated milk
+    - 3 <abbr title="tablespoon">Tbsp</abbr> sugar
     - 2 <abbr title="teaspoon">tsp</abbr> active dry yeast
 
 2.
@@ -67,7 +67,7 @@ photo:
     After some time (you’ll have to do some guessing), <span id="preheat-step">begin heating the oven to 190°C/375°F.</span>
 
 6.
-    When the dough balls have doubled in size, beat together egg wash ingredients (1 egg + 1 <abbr title="tablespoon">tbsp</abbr> water) and brush over the tops.
+    When the dough balls have doubled in size, beat together egg wash ingredients (1 egg + 1 <abbr title="tablespoon">Tbsp</abbr> water) and brush over the tops.
 
 7.
     Bake at 190°C/375°F for 14–17 minutes or until the tops of the bread rolls are golden.

@@ -68,7 +68,7 @@
 						{% set canada = canada + 's' %}
 					{% endif %}
 				{% elif canada >= cooking_units.volume.tbsp %}
-					{% set canada = canada / cooking_units.volume.tbsp | round(2) + ' tbsp' %}
+					{% set canada = canada / cooking_units.volume.tbsp | round(2) + ' Tbsp' %}
 				{% else %}
 					{% set canada = canada / cooking_units.volume.tsp | round(2) + ' tsp' %}
 				{% endif %}
@@ -94,7 +94,7 @@
 						{% set uk = uk + 's' %}
 					{% endif %}
 				{% elif uk >= cooking_units.volume.tbsp %}
-					{% set uk = uk / cooking_units.volume.tbsp | round(2) + ' tbsp' %}
+					{% set uk = uk / cooking_units.volume.tbsp | round(2) + ' Tbsp' %}
 				{% else %}
 					{% set uk = uk / cooking_units.volume.tsp | round(2) + ' tsp' %}
 				{% endif %}
@@ -122,7 +122,7 @@
 				{% elif us >= cooking_units.volume.floz_us %}
 					{% set us = us / cooking_units.volume.floz_us | round(2) + ' fl. oz' %}
 				{% elif us >= cooking_units.volume.tbsp %}
-					{% set us = us / cooking_units.volume.tbsp | round(2) + ' tbsp' %}
+					{% set us = us / cooking_units.volume.tbsp | round(2) + ' Tbsp' %}
 				{% else %}
 					{% set us = us / cooking_units.volume.tsp | round(2) + ' tsp' %}
 				{% endif %}
