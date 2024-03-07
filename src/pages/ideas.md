@@ -14,6 +14,7 @@ toc: true
 - Post about /interests page
 - Short post about my guestbook
 - How I'm handling dates in 11ty now that I've moved timezones
+- Post about RelativeTimeFormats as both an 11ty filter and front-end
 - Review drafts
 
 ## CSS
@@ -39,15 +40,9 @@ toc: true
     - https://github.com/KiwiKilian/eleventy-plugin-og-image
 - use new eleventy-img transform instead of image shortcode
     - keep an eye on performance here
-- refactor "taking place" / "took place" strings in post meta for RSVPs to follow same pattern as relative times on /rsvps
-- get it working for lastfm-listening too!
-    - `Uncaught SyntaxError: redeclaration of function TtUy5lCF-hiK.js:21:217 note: Previously declared at line 1, column 51494`
 
 ## Admin
 
 - testimonials for /about and /cv
 - rework clients logo list into marquee
-- build a [/now](/now/) page that shows:
-    - near-upcoming events
-    - reviews (books, games, etc?) that don't yet have a rating (i.e. are currently being read/played/etc.)
 - finish transcript for "Middle Out in CSS" on YouTube

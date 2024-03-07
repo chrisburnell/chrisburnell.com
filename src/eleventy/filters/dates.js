@@ -27,31 +27,31 @@ const rtf = new Intl.RelativeTimeFormat(userLocale, {
 const rtfDivisions = [
 	{
 		amount: 60,
-		name: "second"
+		name: "second",
 	},
 	{
 		amount: 60,
-		name: "minute"
+		name: "minute",
 	},
 	{
 		amount: 24,
-		name: "hour"
+		name: "hour",
 	},
 	{
 		amount: 7,
-		name: "day"
+		name: "day",
 	},
 	{
 		amount: 4.34524,
-		name: "week"
+		name: "week",
 	},
 	{
 		amount: 12,
-		name: "month"
+		name: "month",
 	},
 	{
 		amount: Number.POSITIVE_INFINITY,
-		name: "year"
+		name: "year",
 	},
 ]
 
@@ -220,23 +220,36 @@ export const getRSVPValueHTML = (start, end, value) => {
 
 	if (value === "yes") {
 		if (epoch(start) > now) {
-			return `<span data-start="${rfc3339Date(start)}" data-end="${rfc3339Date(end)}" data-value="${value}" data-relative-rsvp>${getRSVPValueString(start, end, value)}</span>`
+			return `<span data-start="${rfc3339Date(start)}" data-end="${rfc3339Date(end)}" data-value="${value}" data-relative-rsvp-value>${getRSVPValueString(start, end, value)}</span>`
 		}
 		if (epoch(start) <= now && now <= epoch(end)) {
-			return `<span data-start="${rfc3339Date(start)}" data-end="${rfc3339Date(end)}" data-value="${value}" data-relative-rsvp>${getRSVPValueString(start, end, value)}</span>`
+			return `<span data-start="${rfc3339Date(start)}" data-end="${rfc3339Date(end)}" data-value="${value}" data-relative-rsvp-value>${getRSVPValueString(start, end, value)}</span>`
 		}
-		return `<span data-start="${rfc3339Date(start)}" data-end="${rfc3339Date(end)}" data-value="${value}" data-relative-rsvp>${getRSVPValueString(start, end, value)}</span>`
+		return `<span data-start="${rfc3339Date(start)}" data-end="${rfc3339Date(end)}" data-value="${value}" data-relative-rsvp-value>${getRSVPValueString(start, end, value)}</span>`
 	}
 	if (value === "maybe" || value === "interested") {
 		if (epoch(start) > now) {
-			return `<span data-start="${rfc3339Date(start)}" data-end="${rfc3339Date(end)}" data-value="${value}" data-relative-rsvp>${getRSVPValueString(start, end, value)}</span>`
+			return `<span data-start="${rfc3339Date(start)}" data-end="${rfc3339Date(end)}" data-value="${value}" data-relative-rsvp-value>${getRSVPValueString(start, end, value)}</span>`
 		}
-		return `<span data-start="${rfc3339Date(start)}" data-end="${rfc3339Date(end)}" data-value="${value}" data-relative-rsvp>${getRSVPValueString(start, end, value)}</span>`
+		return `<span data-start="${rfc3339Date(start)}" data-end="${rfc3339Date(end)}" data-value="${value}" data-relative-rsvp-value>${getRSVPValueString(start, end, value)}</span>`
 	}
 	if (epoch(start) > now) {
-		return `<span data-start="${rfc3339Date(start)}" data-end="${rfc3339Date(end)}" data-value="${value}" data-relative-rsvp>${getRSVPValueString(start, end, value)}</span>`
+		return `<span data-start="${rfc3339Date(start)}" data-end="${rfc3339Date(end)}" data-value="${value}" data-relative-rsvp-value>${getRSVPValueString(start, end, value)}</span>`
 	}
-	return `<span data-start="${rfc3339Date(start)}" data-end="${rfc3339Date(end)}" data-value="${value}" data-relative-rsvp>${getRSVPValueString(start, end, value)}</span>`
+	return `<span data-start="${rfc3339Date(start)}" data-end="${rfc3339Date(end)}" data-value="${value}" data-relative-rsvp-value>${getRSVPValueString(start, end, value)}</span>`
+}
+
+/**
+ * @param {string} start
+ * @param {string} end
+ * @param {string} value
+ * @returns {string}
+ */
+export const getRSVPDateString = (end) => {
+	if (Date.now() <= epoch(end)) {
+		return "taking place"
+	}
+	return "took place"
 }
 
 export default {
@@ -253,4 +266,5 @@ export default {
 	getRelativeTime,
 	getRSVPValueString,
 	getRSVPValueHTML,
+	getRSVPDateString,
 }

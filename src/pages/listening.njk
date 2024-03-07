@@ -1,14 +1,14 @@
 ---
 title: Listening
 description: What have I been listening to?
-wide: true
 ---
 
 <p>Powered by <a href="https://last.fm">Last.fm</a>. Check out my <a href="/music/">Music Reviews</a> for more musical data.</p>
 
 <p>To see (almost) my entire listening history, checkout my <a href="https://last.fm/user/{{ author.lastfm }}">Last.fm profile</a>.</p>
 
-<script type="module" src="/js/components/lastfm-listening.js"></script>
+<script type="module">{% renderFile 'src/js/components/lastfm-listening.js' %}</script>
 <lastfm-listening username="{{ author.lastfm }}">
 	<p>The functionality of this page unfortunately requires JavaScript to work.</p>
 </lastfm-listening>
+

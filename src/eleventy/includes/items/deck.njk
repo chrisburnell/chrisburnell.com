@@ -13,7 +13,7 @@
 				<small>by</small> {{ item.data.reply_author_string | safe }}
 			{% endif %}
 			{% if item.data.rsvp.date %}
-				<small><time datetime="{{ item.data.rsvp.date | rfc3339Date }}" data-relative title="{{ item.data.rsvp.date | friendlyDate }} {{ item.data.rsvp.date | friendlyTime(false) }}" class=" [ dt-start ] ">{{ item.data.rsvp.date | getRelativeTime }}</time></small>
+				<small><time datetime="{{ item.data.rsvp.date | rfc3339Date }}" data-relative class=" [ dt-start ] ">on {{ item.data.rsvp.date | friendlyDate }} {{ item.data.rsvp.date | friendlyTime(false) }}</time></small>
 			{% endif %}
 		</div>
 	{% endif %}

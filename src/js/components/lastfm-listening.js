@@ -1,3 +1,5 @@
+import { getRelativeTime } from "../../eleventy/filters/dates.js"
+
 class LastFMListening extends HTMLElement {
 	static register(tagName) {
 		if ("customElements" in window) {
@@ -20,12 +22,12 @@ class LastFMListening extends HTMLElement {
 
 		this.fetchLatestTracks().then((data) => {
 			this.innerHTML = `
-					<ol class=" [ grid  shelf ] ">
-						${data.slice(0, this.limit).reduce((string, track) => {
-							return string + this.getTrackMarkup(track)
-						}, "")}
-					</ol>
-				`
+				<ol class=" [ grid  shelf ] ">
+					${data.slice(0, this.limit).reduce((string, track) => {
+						return string + this.getTrackMarkup(track)
+					}, "")}
+				</ol>
+			`
 		})
 	}
 
@@ -54,56 +56,10 @@ class LastFMListening extends HTMLElement {
 					<a href="${track.artist.url}" class=" [ h-cite ] " rel="external">${track.artist.name}</a>
 				</div>
 				<div>
-					<time datetime="${datetime.toISOString()}" class=" [ dt-published ] ">${this.pastDateString(datetime)}</time>
+					<time datetime="${datetime.toISOString()}" class=" [ dt-published ] ">${datetime.getTime() === Date.now() ? "listening now" : getRelativeTime(datetime)}</time>
 				</div>
 			</article>
 		`
-	}
-
-	static locale = document.querySelector("html").getAttribute("lang") || (navigator.languages ? navigator.languages[0] : "en")
-	static rtf = new Intl.RelativeTimeFormat(this.locale, {
-		localeMatcher: "best fit",
-		numeric: "always",
-		style: "long",
-	})
-
-	static yearInDays = 365.2422
-
-	/**
-	 * @param {DateTime} datetime
-	 * @returns {string}
-	 */
-	pastDateString(datetime) {
-		// Calculate time diffs
-		const difference = Date.now() - datetime.getTime()
-		const secondsAgo = Math.floor(difference / 1000)
-		const minutesAgo = Math.floor(secondsAgo / 60)
-		const hoursAgo = Math.floor(minutesAgo / 60)
-		const daysAgo = Math.floor(hoursAgo / 24)
-		const weeksAgo = Math.floor(daysAgo / 7)
-		const monthsAgo = Math.floor(daysAgo / (LastFMListening.yearInDays / 12))
-		const yearsAgo = Math.floor(daysAgo / LastFMListening.yearInDays)
-
-		// Normalise
-		const remainingDays = daysAgo % 7
-		const remainingMonths = monthsAgo % 12
-
-		if (difference === 0) {
-			return "listening now"
-		} else if (yearsAgo > 0) {
-			return LastFMListening.rtf.format(-yearsAgo, "year")
-		} else if (remainingMonths > 0) {
-			return LastFMListening.rtf.format(-remainingMonths, "month")
-		} else if (weeksAgo > 0) {
-			return LastFMListening.rtf.format(-weeksAgo, "week")
-		} else if (remainingDays > 0) {
-			return LastFMListening.rtf.format(-remainingDays, "day")
-		} else if (hoursAgo > 0) {
-			return LastFMListening.rtf.format(-hoursAgo, "hour")
-		} else if (minutesAgo > 0) {
-			return LastFMListening.rtf.format(-minutesAgo, "minute")
-		}
-		return LastFMListening.rtf.format(-secondsAgo, "second")
 	}
 }
 

@@ -12,11 +12,7 @@
 	{% if rsvp %}
 		<li class=" [ rsvp ] ">
 			<c-emoji>{{ emojis.calendar }}</c-emoji>
-			{% if rsvp.end | epoch > global.now %}
-				<small>taking place</small>
-			{% else %}
-				<small>took place</small>
-			{% endif %}
+			<small data-end="{{ rsvp.end | rfc3339Date }}" data-relative-rsvp-date>{{ rsvp.end | getRSVPDateString }}</small>
 			<time datetime="{{ rsvp.date | rfc3339Date }}" class=" [ dt-start ] ">{{ rsvp.date | friendlyDate }} {{ rsvp.date | friendlyTime(false) }}</time>
 			–
 			<time datetime="{{ rsvp.end | rfc3339Date }}" class=" [ dt-end ] ">{% if rsvp.date | friendlyDate != rsvp.end | friendlyDate %}{{ rsvp.end | friendlyDate }} {% endif %}{{ rsvp.end | friendlyTime(true) }}</time>

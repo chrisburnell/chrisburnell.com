@@ -1,9 +1,10 @@
-import { getRelativeTime, getRSVPValueString } from "../../eleventy/filters/dates.js"
+import { getRSVPDateString, getRSVPValueString, getRelativeTime } from "../../eleventy/filters/dates.js"
 
 class RelativeTime {
 	constructor() {
 		this.relativeTimeElements = document.querySelectorAll("[data-relative][datetime]")
-		this.relativeRSVPElements = document.querySelectorAll("[data-relative-rsvp][data-start][data-end][data-value]")
+		this.relativeRSVPValueElements = document.querySelectorAll("[data-relative-rsvp-value][data-start][data-end][data-value]")
+		this.relativeRSVPDateElements = document.querySelectorAll("[data-relative-rsvp-date][data-end]")
 		this.interval
 
 		if (!this.initialized) {
@@ -21,21 +22,27 @@ class RelativeTime {
 			element.innerHTML = getRelativeTime(datetime)
 		})
 
-
-		this.relativeRSVPElements.forEach((element) => {
+		this.relativeRSVPValueElements.forEach((element) => {
 			const start = new Date(element.getAttribute("data-start"))
 			const end = new Date(element.getAttribute("data-end"))
 			const value = element.getAttribute("data-value")
-
 			element.innerHTML = getRSVPValueString(start, end, value)
+		})
+
+		this.relativeRSVPDateElements.forEach((element) => {
+			const end = new Date(element.getAttribute("data-end"))
+			element.innerHTML = getRSVPDateString(end)
 		})
 	}
 
 	startInterval() {
-		this.interval = setInterval(() => {
-			this.setRelativeTimes()
-			this.startInterval()
-		}, 60 * 1000) // runs every 60 seconds
+		this.interval = setInterval(
+			() => {
+				this.setRelativeTimes()
+				this.startInterval()
+			},
+			10 * 60 * 1000, // every 10 minutes
+		)
 	}
 
 	stopInterval() {
@@ -51,7 +58,7 @@ class RelativeTime {
 	init() {
 		this.initialized = true
 
-		if (this.relativeTimeElements.length || this.relativeRSVPElements.length) {
+		if (this.relativeTimeElements.length || this.relativeRSVPValueElements.length || this.relativeRSVPDateElements.length) {
 			this.setRelativeTimes()
 			this.startInterval()
 
