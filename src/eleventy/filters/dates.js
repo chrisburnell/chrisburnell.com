@@ -153,6 +153,7 @@ const rtfDivisions = [
 
 /**
  * @param {Datetime} datetime
+ * @param {string} [division]
  * @returns {string}
  */
 export const getRelativeTime = (datetime, division) => {
