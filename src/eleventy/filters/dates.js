@@ -2,6 +2,15 @@ import { DateTime } from "luxon"
 import emojis from "../data/emojis.js"
 import { locale } from "../data/site.js"
 
+/**
+ * @param {string} dateString
+ * @param {string} format
+ * @return {string}
+ */
+const formatDatetime = (dateString, format) => {
+	return DateTime.fromISO(dateString, { setZone: true }).toFormat(format)
+}
+
 const ordinalPlurals = new Intl.PluralRules(locale, {
 	type: "ordinal",
 })
@@ -11,62 +20,6 @@ const ordinalSuffixes = {
 	two: "nd",
 	few: "rd",
 	other: "th",
-}
-
-let userLocale = "en"
-if (typeof document !== "undefined") {
-	userLocale = document.querySelector("html").getAttribute("lang") || navigator.languages ? navigator.languages[0] : userLocale
-}
-
-const rtf = new Intl.RelativeTimeFormat(userLocale, {
-	localeMatcher: "best fit",
-	numeric: "always",
-	style: "long",
-})
-
-const rtfDivisions = [
-	{
-		amount: 60,
-		name: "second",
-	},
-	{
-		amount: 60,
-		name: "minute",
-	},
-	{
-		amount: 24,
-		name: "hour",
-	},
-	{
-		amount: 7,
-		name: "day",
-	},
-	{
-		amount: 4.34524,
-		name: "week",
-	},
-	{
-		amount: 12,
-		name: "month",
-	},
-	{
-		amount: Number.POSITIVE_INFINITY,
-		name: "year",
-	},
-]
-
-const emojiFuture = `<span class=" [ emoji ] " aria-hidden="true">${emojis.future}</span>`
-const emojiGoing = `<span class=" [ emoji ] " aria-hidden="true">${emojis.going}</span>`
-const emojiHopefully = `<span class=" [ emoji ] " aria-hidden="true">${emojis.hopefully}</span>`
-const emojiNotGoing = `<span class=" [ emoji ] " aria-hidden="true">${emojis.not_going}</span>`
-
-/**
- * @param {string} dateString
- * @param {string} format
- * @return {string}
- */
-const formatDatetime = (dateString, format) => {
-	return DateTime.fromISO(dateString, { setZone: true }).toFormat(format)
 }
 
 /**
@@ -156,6 +109,48 @@ export const sortByDate = (array) => {
 	return array.sort(dateSort)
 }
 
+let userLocale = locale
+if (typeof document !== "undefined") {
+	userLocale = document.querySelector("html").getAttribute("lang") || navigator.languages ? navigator.languages[0] : userLocale
+}
+
+const rtf = new Intl.RelativeTimeFormat(userLocale, {
+	localeMatcher: "best fit",
+	numeric: "always",
+	style: "long",
+})
+
+const rtfDivisions = [
+	{
+		amount: 60,
+		name: "second",
+	},
+	{
+		amount: 60,
+		name: "minute",
+	},
+	{
+		amount: 24,
+		name: "hour",
+	},
+	{
+		amount: 7,
+		name: "day",
+	},
+	{
+		amount: 4.34524,
+		name: "week",
+	},
+	{
+		amount: 12,
+		name: "month",
+	},
+	{
+		amount: Number.POSITIVE_INFINITY,
+		name: "year",
+	},
+]
+
 /**
  * @param {Datetime} datetime
  * @returns {string}
@@ -178,6 +173,11 @@ export const getRelativeTime = (datetime, division) => {
 		difference /= division.amount
 	}
 }
+
+const emojiFuture = `<span class=" [ emoji ] " aria-hidden="true">${emojis.future}</span>`
+const emojiGoing = `<span class=" [ emoji ] " aria-hidden="true">${emojis.going}</span>`
+const emojiHopefully = `<span class=" [ emoji ] " aria-hidden="true">${emojis.hopefully}</span>`
+const emojiNotGoing = `<span class=" [ emoji ] " aria-hidden="true">${emojis.not_going}</span>`
 
 /**
  * @param {string} start
