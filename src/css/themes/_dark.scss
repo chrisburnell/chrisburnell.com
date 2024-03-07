@@ -129,17 +129,17 @@
 		}
 	}
 	.box--success {
-		background-color: color-mix(in oklab, h(mineshaft), h(conifer) 20%);
+		background-color: color-mix(in oklab, h(mineshaft), h(conifer) 10%);
 		--box-border-color: #{h(conifer)};
 	}
 
 	.box--warning {
-		background-color: color-mix(in oklab, h(mineshaft), h(aspen) 20%);
+		background-color: color-mix(in oklab, h(mineshaft), h(aspen) 10%);
 		--box-border-color: #{h(aspen)};
 	}
 
 	.box--error {
-		background-color: color-mix(in oklab, h(mineshaft), h(maple) 20%);
+		background-color: color-mix(in oklab, h(mineshaft), h(maple) 10%);
 		--box-border-color: #{h(maple)};
 	}
 
