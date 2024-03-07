@@ -27,7 +27,7 @@ eleventyComputed:
 <hr>
 
 <figure class=" [ overflow ] ">
-    <img src="/images/avatar@4x.jpeg" alt="Chris Burnell" class=" [ shadow ] [ canada ] " width="400" height="400">
+    <img src="/images/avatar@4x.jpeg" alt="Chris Burnell" class=" [ shadow ] [ canada ] " width="400" height="400" loading="lazy" decoding="async">
 </figure>
 
 ## Bio
