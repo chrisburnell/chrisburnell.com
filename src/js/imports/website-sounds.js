@@ -121,16 +121,16 @@ class WebsiteSounds {
 				}
 				let values = target.getAttribute("values") || target.dataset.values
 				if (values) {
-					let duration = target.getAttribute("duration") ? parseFloat(target.getAttribute("duration")) : target.dataset.duration ? parseFloat(target.dataset.duration) : this.defaults.duration
-					let keyStart = target.getAttribute("key-start") ? parseFloat(target.getAttribute("key-start")) : target.dataset.keyStart ? parseFloat(target.dataset.keyStart) : this.defaults.keyStart
-					let keyLimit = target.getAttribute("key-limit") ? parseFloat(target.getAttribute("key-limit")) : target.dataset.keyLimit ? parseFloat(target.dataset.keyLimit) : this.defaults.keyLimit
+					let duration = target.getAttribute("duration") ? Number(target.getAttribute("duration")) : target.dataset.duration ? Number(target.dataset.duration) : this.defaults.duration
+					let keyStart = target.getAttribute("key-start") ? Number(target.getAttribute("key-start")) : target.dataset.keyStart ? Number(target.dataset.keyStart) : this.defaults.keyStart
+					let keyLimit = target.getAttribute("key-limit") ? Number(target.getAttribute("key-limit")) : target.dataset.keyLimit ? Number(target.dataset.keyLimit) : this.defaults.keyLimit
 					let keyIntervals = target.getAttribute("key-intervals")
 						? target
 								.getAttribute("key-intervals")
 								.split(",")
-								.map((interval) => parseFloat(interval))
+								.map((interval) => Number(interval))
 						: target.dataset.keyIntervals
-							? target.dataset.keyIntervals.split(",").map((interval) => parseFloat(interval))
+							? target.dataset.keyIntervals.split(",").map((interval) => Number(interval))
 							: this.defaults.keyIntervals
 					pentatonic(values.split(","), duration, this.defaults.volume, keyStart, keyIntervals, keyLimit, this.waveform)
 				}

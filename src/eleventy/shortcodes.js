@@ -14,7 +14,7 @@ const currentYear = friendlyDate(nowISO, "yyyy")
 const sparkline = (collection, start, animate = true, curve = true) => {
 	let values = []
 	// Loop through years
-	for (let year = parseFloat(start); year <= parseFloat(currentYear); year++) {
+	for (let year = Number(start); year <= Number(currentYear); year++) {
 		values.push(getCollectionCountByYear(collection, year))
 	}
 	// Sparklines in A minor

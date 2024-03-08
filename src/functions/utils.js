@@ -46,7 +46,7 @@ export const getTwitterHandle = (value) => {
  * @returns {number}
  */
 export const clamp = (min, value, max) => {
-	return Math.min(Math.max(value, min), max)
+	return Math.min(Math.max(Number(value), Number(min)), Number(max))
 }
 
 /**
@@ -62,7 +62,7 @@ export const simpleMovingAverage = (values, period, preserveEnds = false) => {
 
 	for (let i in values) {
 		let min = Math.max(0, i - step)
-		let max = Math.min(end, parseFloat(i) + step)
+		let max = Math.min(end, Number(i) + step)
 		let count = Math.abs(max - min) + 1
 		let sum = 0
 

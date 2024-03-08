@@ -1,4 +1,5 @@
 import { getRelativeTime } from "../../eleventy/filters/dates.js"
+import { clamp } from "../../functions/utils.js"
 
 class LastFMListening extends HTMLElement {
 	static register(tagName) {
@@ -18,7 +19,7 @@ class LastFMListening extends HTMLElement {
 
 	init() {
 		this.username = this.getAttribute("username")
-		this.limit = this.hasAttribute("limit") ? Math.min(Math.max(Number(this.getAttribute("limit")), 1), 10) : 10
+		this.limit = this.hasAttribute("limit") ? clamp(this.getAttribute("limit"), 1, 10) : 10
 
 		this.fetchLatestTracks().then((data) => {
 			this.innerHTML = `

@@ -21,7 +21,7 @@ export const githubData = async (repository) => {
  */
 export const stargazers = async (repository) => {
 	const github = await githubData(repository)
-	return parseFloat(github["stargazers_count"])
+	return Number(github["stargazers_count"])
 }
 
 /**

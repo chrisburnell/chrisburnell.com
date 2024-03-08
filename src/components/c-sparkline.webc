@@ -1,6 +1,6 @@
 <script webc:setup>
-function maxDecimals(value, decimals = 2) {
-	return +value.toFixed(decimals)
+function maxDecimals(number, decimals = 2) {
+	return +number.toFixed(decimals)
 }
 function getViewBox(string) {
 	const values = string.split(",")

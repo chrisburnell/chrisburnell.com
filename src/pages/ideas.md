@@ -28,7 +28,6 @@ toc: true
 
 ## JS
 
-- move svg-sparkline.js to inline?
 - refactor getPlace()
 - functional tests for functions, filters, etc.
 

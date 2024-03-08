@@ -179,8 +179,8 @@ class ClampCalculator {
 	 * @param {Number} decimals
 	 * @returns {Number}
 	 */
-	limitDecimals(value, decimals = 3) {
-		return parseFloat(value.toFixed(decimals))
+	maxDecimals(number, decimals = 3) {
+		return +number.toFixed(decimals)
 	}
 
 	/**
@@ -190,7 +190,7 @@ class ClampCalculator {
 	 * @returns {Number}
 	 */
 	toRem(px, base = 16) {
-		return this.limitDecimals(px / base)
+		return this.maxDecimals(px / base)
 	}
 
 	/**
@@ -200,9 +200,9 @@ class ClampCalculator {
 		const viewportUnits = this.inputs["viewport-units"].value
 		const change = (this.inputs["size-max"].value - this.inputs["size-min"].value) / (this.inputs["viewport-max"].value - this.inputs["viewport-min"].value)
 
-		const preferredSizePixels = this.limitDecimals(this.inputs["size-max"].value - this.inputs["viewport-max"].value * change)
+		const preferredSizePixels = this.maxDecimals(this.inputs["size-max"].value - this.inputs["viewport-max"].value * change)
 		const preferredSize = this.toRem(this.inputs["size-max"].value - this.inputs["viewport-max"].value * change, this.inputs["font-size-root"].value)
-		const variableSize = this.limitDecimals(change * 100)
+		const variableSize = this.maxDecimals(change * 100)
 
 		this.output.value = `clamp(${this.toRem(this.inputs["size-min"].value, this.inputs["font-size-root"].value)}rem, ${preferredSize}rem + ${variableSize}${viewportUnits}, ${this.toRem(this.inputs["size-max"].value, this.inputs["font-size-root"].value)}rem)`
 
@@ -216,14 +216,14 @@ class ClampCalculator {
 
 		this.howX.innerHTML = `Change = (sizeMax - sizeMin) / (viewportMax - viewportMin)
 Change = (${this.inputs["size-max"].value}px - ${this.inputs["size-min"].value}px) / (${this.inputs["viewport-max"].value}px - ${this.inputs["viewport-min"].value}px)
-Change = ${this.limitDecimals(change, 5)}`
+Change = ${this.maxDecimals(change, 5)}`
 
 		this.howA.innerHTML = `A = sizeMax - viewportMax * Change
-A = ${this.inputs["size-max"].value}px - ${this.inputs["viewport-max"].value}px * ${this.limitDecimals(change, 5)}
+A = ${this.inputs["size-max"].value}px - ${this.inputs["viewport-max"].value}px * ${this.maxDecimals(change, 5)}
 A = ${preferredSizePixels}px = ${preferredSize}rem`
 
 		this.howB.innerHTML = `B = 100${viewportUnits} * Change
-B = 100${viewportUnits} * ${this.limitDecimals(change, 5)}
+B = 100${viewportUnits} * ${this.maxDecimals(change, 5)}
 B = ${variableSize}${viewportUnits}`
 
 		this.howResult.innerHTML = `Result = clamp(sizeMin, A + B, sizeMax)
@@ -232,13 +232,13 @@ Result = clamp(${this.toRem(this.inputs["size-min"].value, this.inputs["font-siz
 		this.howCheck.innerHTML = `A + B = ${preferredSize}rem + ${variableSize}${viewportUnits}
 A + B = ${preferredSizePixels}px + ${variableSize}${viewportUnits}
 
-Minimum Size ≈ ${preferredSizePixels}px + (${this.limitDecimals(change, 5)} * ${this.inputs["viewport-min"].value}px)
-Minimum Size ≈ ${preferredSizePixels}px + ${this.limitDecimals(change, 5) * this.inputs["viewport-min"].value}px
-Minimum Size ≈ ${this.limitDecimals(this.inputs["size-max"].value - this.inputs["viewport-max"].value * change + change * this.inputs["viewport-min"].value)}px
+Minimum Size ≈ ${preferredSizePixels}px + (${this.maxDecimals(change, 5)} * ${this.inputs["viewport-min"].value}px)
+Minimum Size ≈ ${preferredSizePixels}px + ${this.maxDecimals(change, 5) * this.inputs["viewport-min"].value}px
+Minimum Size ≈ ${this.maxDecimals(this.inputs["size-max"].value - this.inputs["viewport-max"].value * change + change * this.inputs["viewport-min"].value)}px
 
-Maximum Size ≈ ${preferredSizePixels}px + (${this.limitDecimals(change, 5)} * ${this.inputs["viewport-max"].value}px)
-Maximum Size ≈ ${preferredSizePixels}px + ${this.limitDecimals(change, 5) * this.inputs["viewport-max"].value}px
-Maximum Size ≈ ${this.limitDecimals(this.inputs["size-max"].value - this.inputs["viewport-max"].value * change + change * this.inputs["viewport-max"].value)}px`
+Maximum Size ≈ ${preferredSizePixels}px + (${this.maxDecimals(change, 5)} * ${this.inputs["viewport-max"].value}px)
+Maximum Size ≈ ${preferredSizePixels}px + ${this.maxDecimals(change, 5) * this.inputs["viewport-max"].value}px
+Maximum Size ≈ ${this.maxDecimals(this.inputs["size-max"].value - this.inputs["viewport-max"].value * change + change * this.inputs["viewport-max"].value)}px`
 
 		this.measureViewport()
 	}
@@ -247,7 +247,7 @@ Maximum Size ≈ ${this.limitDecimals(this.inputs["size-max"].value - this.input
 	 * Calculate and inject the measure of the viewport.
 	 */
 	measureViewport() {
-		this.visualCalculated.querySelector("span").innerText = `Current Size: ${this.limitDecimals(this.visualOutput.querySelector(".size-example").getBoundingClientRect().width, 3)}px`
+		this.visualCalculated.querySelector("span").innerText = `Current Size: ${this.maxDecimals(this.visualOutput.querySelector(".size-example").getBoundingClientRect().width, 3)}px`
 		this.visualViewport.querySelector("span").innerText = `Viewport Size: ${window.innerWidth}px × ${window.innerHeight}px`
 	}
 
