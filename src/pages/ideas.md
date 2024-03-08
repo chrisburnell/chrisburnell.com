@@ -13,8 +13,8 @@ toc: true
     - Edit this to remove some bits about the refactor/rebuild
 - Post about /interests page
 - Short post about my guestbook
-- How I'm handling dates in 11ty now that I've moved timezones
-- Post about RelativeTimeFormats as both an 11ty filter and front-end
+- How I'm handling dates in Eleventy now that I've moved timezones
+- Post about using RelativeTimeFormat as both an Eleventy filter and front-end
 - Review drafts
 
 ## CSS

@@ -6,7 +6,38 @@ description: Stuff that I’m doing now (or at least recently)!
 toc: true
 ---
 
-<p>This is a <a href="https://nownownow.com/about" rel="external noopener">now page</a>, and if you have your own website, you should make one, too!</p>
+<div class=" [ box ] [ center ] " style="inline-size: var(--size-line-length); inline-size: fit-content; margin-block-end: var(--size-large);">
+	<p>This is a <a href="https://nownownow.com/about" rel="external noopener">now page</a>, and if you have your own website, you should make one, too!</p>
+</div>
+
+<h2>Website Tinkering</h2>
+
+{% set last_updated = "2024-03-08T1905:00+0800" -%}
+<p><strong>Last updated:</strong> <time datetime="{{ last_updated | rfc3339Date }}">{{ last_updated | friendlyDate }} {{ last_updated | friendlyTime }}</time></p>
+
+<p>You can read more things I’d like to work on <a href="/ideas/">my /ideas page</a>, which is kind of like my TODO list for this website.</p>
+
+<h3>Writing</h3>
+
+<ul>
+	<li>writing a post about version 4 of this website</li>
+	<li>editing and proofreading a post about some performance gains I’ve made in the build of my Eleventy website</li>
+	<li>brainstorming for a post about the <q>concept</q> of an /interests page</li>
+	<li>brainstorming for a post about how I’m handling dates in Eleventy</li>
+</ul>
+
+<h3>Website Admin</h3>
+
+<ul>
+	<li>figure out how I want to denote and present pinned posts in Eleventy</li>
+	<li>as above, but for RSS-only posts (which become visible on the site <code>site.upcomingDaysLead</code> days after publishing)</li>
+	<li>get dates (and descriptions?) working for OG images</li>
+	<li>explore using the new <code>eleventy-img</code> transform function instead of my image shortcode</li>
+	<li>rework clients logo list into <code>&lt;marquee&gt;</code>-style presentation</li>
+	<li>finish transcription cleanup for <q>Middle Out in CSS</q></li>
+</ul>
+
+<hr>
 
 {% if collections.rsvpsToday.length or collections.rsvpsUpcoming.length %}
 	<h2>

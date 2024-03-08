@@ -5,8 +5,8 @@ in_reply_to:
   url: https://nldesignsystem.nl/events/design-systems-week-2023/en/overview
 rsvp:
   value: "yes"
-  date: 2023-10-02T16:30:00+0200
-  end: 2023-10-02T17:00:00+0200
+  date: 2023-10-02T15:30:00+0100
+  end: 2023-10-02T16:00:00+0100
 tags:
   - conference
 ---

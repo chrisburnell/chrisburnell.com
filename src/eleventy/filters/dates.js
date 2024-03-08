@@ -7,7 +7,7 @@ import { locale } from "../data/site.js"
  * @param {string} format
  * @return {string}
  */
-const formatDatetime = (dateString, format) => {
+export const formatDatetime = (dateString, format) => {
 	return DateTime.fromISO(dateString, { setZone: true }).toFormat(format)
 }
 
@@ -54,8 +54,11 @@ export const friendlyDateLong = (dateString) => {
  * @returns {string}
  */
 export const friendlyTime = (value, showTimezone = true) => {
-	const timeFormat = showTimezone ? "HH:mm ZZZZ" : "HH:mm"
-	return formatDatetime(value, timeFormat).replace("GMT+1", "BST")
+	const format = "HH:mm" + (showTimezone ? " ZZZZ" : "")
+	return formatDatetime(value, format)
+		.replace("UTC+8", "SGT")
+		.replace("UTC+1", "BST")
+		.replace("UTC", "GMT")
 }
 
 /**
@@ -63,7 +66,10 @@ export const friendlyTime = (value, showTimezone = true) => {
  * @returns {string}
  */
 export const friendlyTimezone = (value) => {
-	return DateTime.fromISO(value, { setZone: true }).zoneName
+	return formatDatetime(value, "z")
+		.replace("UTC+8", "Asia/Singapore")
+		.replace("UTC+1", "Europe/London")
+		.replace("UTC", "Europe/London")
 }
 
 /**
@@ -72,7 +78,7 @@ export const friendlyTimezone = (value) => {
  * @returns {string}
  */
 export const rfc3339Date = (dateString, showTimezone = true) => {
-	const format = "yyyy-MM-dd'T'HH:mm:ss" + (showTimezone && "ZZ")
+	const format = "yyyy-MM-dd'T'HH:mm:ss" + (showTimezone ? "ZZ" : "")
 	return formatDatetime(dateString, format)
 }
 
@@ -254,6 +260,7 @@ export const getRSVPDateString = (end) => {
 }
 
 export default {
+	formatDatetime,
 	ordinal,
 	friendlyDate,
 	friendlyDateLong,
