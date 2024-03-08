@@ -43,11 +43,15 @@ class LastFMListening extends HTMLElement {
 
 	getTrackMarkup(track) {
 		const datetime = track.date ? new Date(Number(track.date.uts) * 1000) : new Date()
+		let image = track.image[3]?.["#text"]
+		if (!image || image.includes("2a96cbd8b46e442fc41c2b86b821562f.png")) {
+			image = "/images/default-album-cover.png"
+		}
 
 		return `
 			<article class=" [ flow ] ">
 				<a href="${track.url}" aria-hidden="true" tabindex="-1" class=" [ cover-anchor ] ">
-					<img src="${track.image[3]?.["#text"] || "/images/default-album-cover.png"}" alt="Cover art for ${track.name}" loading="lazy" decoding="async" class=" [ cover ] [ u-photo ] ">
+					<img src="${image}" alt="Cover art for ${track.name}" loading="lazy" decoding="async" class=" [ cover ] [ u-photo ] ">
 				</a>
 				<h1>
 					<a href="${track.url}">${track.name}</a>
