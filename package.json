@@ -41,6 +41,7 @@
     "@chrisburnell/bowhead": "^0.3.4",
     "@chrisburnell/cow-pen": "^0.0.4",
     "@chrisburnell/eleventy-cache-webmentions": "^2.0.1",
+    "@chrisburnell/inline-expand": "^0.0.1",
     "@chrisburnell/instant-photo": "^1.0.0",
     "@chrisburnell/pentatonic": "^1.1.4",
     "@chrisburnell/spark-line": "^1.2.6",

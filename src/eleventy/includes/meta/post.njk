@@ -13,9 +13,9 @@
 		<li class=" [ rsvp ] ">
 			<c-emoji>{{ emojis.calendar }}</c-emoji>
 			<small data-end="{{ rsvp.end | rfc3339Date }}" data-relative-rsvp-date>{{ rsvp.end | getRSVPDateString }}</small>
-			<time datetime="{{ rsvp.date | rfc3339Date }}" class=" [ dt-start ] ">{{ rsvp.date | friendlyDate }} {{ rsvp.date | friendlyTime(false) }}</time>
+			<time datetime="{{ rsvp.date | rfc3339Date }}" class=" [ dt-start ] ">{{ rsvp.date | friendlyDate | safe }} {{ rsvp.date | friendlyTime(false) | safe }}</time>
 			–
-			<time datetime="{{ rsvp.end | rfc3339Date }}" class=" [ dt-end ] ">{% if rsvp.date | friendlyDate != rsvp.end | friendlyDate %}{{ rsvp.end | friendlyDate }} {% endif %}{{ rsvp.end | friendlyTime(true) }}</time>
+			<time datetime="{{ rsvp.end | rfc3339Date }}" class=" [ dt-end ] ">{% if rsvp.date | friendlyDate != rsvp.end | friendlyDate %}{{ rsvp.end | friendlyDate | safe }} {% endif %}{{ rsvp.end | friendlyTime | safe }}</time>
 		</li>
 	{% endif %}
 	{% if show_reading_length %}
