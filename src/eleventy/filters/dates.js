@@ -65,7 +65,7 @@ export const friendlyTime = (value, showTimezone = true) => {
  * @param {DateTime} value
  * @returns {string}
  */
-export const friendlyTimezone = (value) => {
+export const ianaTimezone = (value) => {
 	return formatDatetime(value, "z")
 		.replace("UTC+8", "Asia/Singapore")
 		.replace("UTC+1", "Europe/London")
@@ -265,7 +265,7 @@ export default {
 	friendlyDate,
 	friendlyDateLong,
 	friendlyTime,
-	friendlyTimezone,
+	ianaTimezone,
 	rfc3339Date,
 	w3cDate,
 	epoch,
