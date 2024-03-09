@@ -56,9 +56,9 @@ export const friendlyDateLong = (dateString) => {
 export const friendlyTime = (value, showTimezone = true) => {
 	const format = "HH:mm" + (showTimezone ? " ZZZZ" : "")
 	return formatDatetime(value, format)
-		.replace("UTC+8", "SGT")
-		.replace("UTC+1", "BST")
-		.replace("UTC", "GMT")
+		.replace("UTC+8", `<abbr title="Singapore Time">SGT <span class=" [ emoji ] " aria-hidden="true">🇸🇬</span></abbr>`)
+		.replace("UTC+1", `<abbr title="British Summer Time">BST</abbr> <span class=" [ emoji ] " aria-hidden="true">🇬🇧</span>`)
+		.replace("UTC", `<abbr title="Greenwich Mean Time">GMT</abbr> <span class=" [ emoji ] " aria-hidden="true">🇬🇧</span>`)
 }
 
 /**

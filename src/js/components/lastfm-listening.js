@@ -9,7 +9,7 @@ class LastFMListening extends HTMLElement {
 	}
 
 	connectedCallback() {
-		if (!this.getAttribute("username")) {
+		if (!this.hasAttribute("username")) {
 			console.error(`Missing \`username\` attribute!`, this)
 			return
 		}
