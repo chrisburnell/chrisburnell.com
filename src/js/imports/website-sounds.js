@@ -148,7 +148,7 @@ class WebsiteSounds {
 		})
 
 		// Primary Navigation
-		this.primaryNavigation = document.querySelectorAll(".navigation__list a")
+		this.primaryNavigation = document.querySelectorAll(".navigation a, .navigation button")
 		this.primaryNavigation.forEach((element) => {
 			element.addEventListener("mouseenter", () => {
 				if (localStorage.getItem(this.STORAGE_KEY) === "true") {
