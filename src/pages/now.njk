@@ -6,7 +6,7 @@ description: Stuff that I’m doing now (or at least recently)!
 toc: true
 ---
 
-<div class=" [ box ] [ center ] " style="inline-size: var(--size-line-length); inline-size: fit-content; margin-block-end: var(--size-large);">
+<div class=" [ box ] [ center ] " style="inline-size: var(--size-line-length); inline-size: fit-content; margin-block-end: var(--size-large); text-wrap: balance;">
 	<p>This is a <a href="https://nownownow.com/about" rel="external noopener">now page</a>, and if you have your own website, you should make one, too!</p>
 </div>
 
@@ -37,9 +37,9 @@ toc: true
 	<li>finish transcription cleanup for <q>Middle Out in CSS</q></li>
 </ul>
 
-<hr>
-
 {% if collections.rsvpsToday.length or collections.rsvpsUpcoming.length %}
+	<hr>
+
 	<h2>
 		<a href="/rsvps/">Events</a>
 	</h2>
@@ -55,11 +55,13 @@ toc: true
 
 {% set currentlyReading = collections.book | arePublished | arrayKeyNotSet('data.rating') | sortByDate | limit(site.limits.shelf) -%}
 {% if currentlyReading.length -%}
+	<hr>
+
 	<h2>
 		<a href="/books/">Books</a>
 	</h2>
 
-	<div class=" [ grid ] [ shelf  shelf--books ] ">
+	<div class=" [ grid ] [ shelf  shelf--portrait ] ">
 		{% for item in currentlyReading %}
 			{% include 'items/shelf.njk' %}
 		{% endfor %}
@@ -68,22 +70,43 @@ toc: true
 
 {% set currentlyPlaying = collections.game | arePublished | arrayKeyNotSet('data.rating') | sortByDate | limit(site.limits.shelf) -%}
 {% if currentlyPlaying.length -%}
+	<hr>
+
 	<h2>
 		<a href="/games/">Games</a>
 	</h2>
 
-	<div class=" [ grid ] [ shelf  shelf--books ] ">
+	<div class=" [ grid ] [ shelf  shelf--square ] ">
 		{% for item in currentlyPlaying %}
 			{% include 'items/shelf.njk' %}
 		{% endfor %}
 	</div>
 {%- endif %}
 
+{% set currentlyListening = collections.music | arePublished | arrayKeyNotSet('data.rating') | sortByDate | limit(site.limits.shelf) -%}
+{% if currentlyListening.length -%}
+	<hr>
+
+	<h2>
+		<a href="/music/">Music Albums</a>
+	</h2>
+
+	<div class=" [ grid ] [ shelf  shelf--square ] ">
+		{% for item in currentlyListening %}
+			{% include 'items/shelf.njk' %}
+		{% endfor %}
+	</div>
+{%- endif %}
+
+<hr>
+
 <h2>
 	<a href="/listening/">Latest Tracks</a>
 </h2>
 
-<script type="module" src="/js/components/lastfm-listening.js"></script>
+<is-land on:idle on:visible>
+</is-land>
+<script type="module">{% renderFile 'src/js/components/lastfm-listening.js' %}</script>
 <lastfm-listening username="{{ author.lastfm }}" limit="3">
 	<p>Unfortunately, this component requires JavaScript to function.</p>
 </lastfm-listening>

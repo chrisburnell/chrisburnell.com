@@ -1,8 +1,9 @@
 import emojis from "../../eleventy/data/emojis.js"
 
 export default {
-	mf_property: "bookmark-of",
 	permalink: "bookmark/{{ page.fileSlug }}/",
+	list: "deck",
+	mf_property: "bookmark-of",
 	category: "bookmark",
 	categoryPlural: "bookmarks",
 	categoryCode: "h",

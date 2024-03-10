@@ -62,7 +62,7 @@ truncate: true
 					<li><c-librarian-button key="chronological" default="descending">by publish date</c-librarian-button></li>
 				</ul>
 			</c-librarian>
-			<div class=" [ grid ] [ shelf {% if collection[0].data.read_of %}shelf--books {% endif %}] " aria-live="polite">
+			<div class=" [ grid ] [ shelf {% if collection[0].data.shelfAlignment %} shelf--{{ collection[0].data.shelfAlignment }} {% endif %}] " aria-live="polite">
 				{% for item in collection %}
 					{% include 'items/shelf.njk' %}
 				{% endfor %}

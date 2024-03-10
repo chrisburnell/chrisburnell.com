@@ -23,7 +23,7 @@ class LastFMListening extends HTMLElement {
 
 		this.fetchLatestTracks().then((data) => {
 			this.innerHTML = `
-				<ol class=" [ grid  shelf ] ">
+				<ol class=" [ grid ] [ shelf  shelf--square ] ">
 					${data.slice(0, this.limit).reduce((string, track) => {
 						return string + this.getTrackMarkup(track)
 					}, "")}
@@ -61,7 +61,7 @@ class LastFMListening extends HTMLElement {
 					<a href="${track.artist.url}" class=" [ h-cite ] " rel="external">${track.artist.name}</a>
 				</div>
 				<div>
-					<time datetime="${datetime.toISOString()}" class=" [ dt-published ] ">${datetime.getTime() === Date.now() ? "listening now" : getRelativeTime(datetime)}</time>
+					<time datetime="${datetime.toISOString()}" class=" [ dt-published ] ">${datetime.getTime() === Date.now() ? "<em>listening now</em>" : getRelativeTime(datetime)}</time>
 				</div>
 			</article>
 		`

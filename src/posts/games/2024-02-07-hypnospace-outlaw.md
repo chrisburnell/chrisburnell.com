@@ -5,6 +5,7 @@ release: 2019-05-12T12:00:00+0000
 play_of: https://www.hypnospace.net/
 # rating:
 cover: hypnospace-outlaw.png
+cover_position: left 30% top 0
 console: PC
 authors:
   - title: No More Robots

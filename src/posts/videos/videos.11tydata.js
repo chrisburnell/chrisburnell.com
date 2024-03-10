@@ -1,8 +1,8 @@
 import emojis from "../../eleventy/data/emojis.js"
 
 export default {
-	list: "shelf",
 	permalink: "video/{{ page.fileSlug }}/",
+	list: "shelf",
 	category: "video",
 	categoryPlural: "videos",
 	categoryCode: "v",

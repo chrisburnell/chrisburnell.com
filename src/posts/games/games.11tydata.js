@@ -1,10 +1,11 @@
 import emojis from "../../eleventy/data/emojis.js"
 
 export default {
+	permalink: "game/{{ page.fileSlug }}/",
 	list: "shelf",
+	shelfAlignment: "square",
 	mf_root: "review",
 	mf_property: "play-of",
-	permalink: "game/{{ page.fileSlug }}/",
 	category: "game",
 	categoryProper: "game review",
 	categoryPlural: "games",

@@ -10,7 +10,7 @@
 				<source type="image/avif" srcset="/images/built/{{ item.data.cover | replace('jpg', 'avif') | replace('png', 'avif') }}">
 			{% endif %}
 			<source type="image/webp" srcset="/images/built/{{ item.data.cover | replace('jpg', 'webp') | replace('png', 'webp') }}">
-			<img src="/images/built/{{ item.data.cover | replace('jpg', 'jpeg') }}" alt="Art for {{ item.data.title }}" class=" [ cover ] [ u-photo ] " loading="lazy" decoding="async" height="400">
+			<img src="/images/built/{{ item.data.cover | replace('jpg', 'jpeg') }}" alt="Art for {{ item.data.title }}" class=" [ cover ] [ u-photo ] " {% if item.data.cover_position %}style="object-position: {{ item.data.cover_position }};"{% endif %} loading="lazy" decoding="async">
 		</picture>
 		{% if item.url %}
 			</a>

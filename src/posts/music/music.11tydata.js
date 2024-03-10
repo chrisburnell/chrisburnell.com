@@ -1,10 +1,11 @@
 import emojis from "../../eleventy/data/emojis.js"
 
 export default {
+	permalink: "music/{{ page.fileSlug }}/",
 	list: "shelf",
+	shelfAlignment: "square",
 	mf_root: "review",
 	mf_property: "listen-of",
-	permalink: "music/{{ page.fileSlug }}/",
 	category: "music",
 	categoryProper: "music review",
 	categoryProperPlural: "music reviews",

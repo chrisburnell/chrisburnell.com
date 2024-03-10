@@ -15,6 +15,8 @@ toc: true
 - Short post about my guestbook
 - How I'm handling dates in Eleventy now that I've moved timezones
 - Post about using RelativeTimeFormat as both an Eleventy filter and front-end
+- Post about how I'm displaying external interactions (likes, reposts, replies)
+    - in short, anything but replies specifically sent as a webmention (not backfed) are displayed, everything else is summarised
 - Review drafts
 
 ## CSS
