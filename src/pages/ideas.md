@@ -8,6 +8,7 @@ toc: true
 
 ## Posts
 
+- Why I write on my website, and why it's for me
 - Version 4.0.0
 - How I shaved 1.5 minutes off my Eleventy build time
     - Edit this to remove some bits about the refactor/rebuild

@@ -754,4 +754,4 @@ I hope you found this useful, and I’d love to know how others are doing this s
 
 ## Further Reading
 
-- [Creating color palettes with the CSS color-mix() function](https://developer.mozilla.org/en-US/blog/color-palettes-css-color-mix/)
+- [Creating color palettes with the CSS color-mix() function](https://developer.mozilla.org/en-US/blog/color-palettes-css-color-mix/) by [Michelle Barker](https://css-irl.info)
