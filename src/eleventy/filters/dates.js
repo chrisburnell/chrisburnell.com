@@ -55,6 +55,7 @@ export const friendlyDateLong = (dateString) => {
  */
 export const friendlyTime = (value, showTimezone = true) => {
 	const format = "HH:mm" + (showTimezone ? " ZZZZ" : "")
+	// prettier-ignore
 	return formatDatetime(value, format)
 		.replace("UTC+8", `<abbr title="Singapore Time">SGT <span aria-hidden="true">🇸🇬</span></abbr>`)
 		.replace("UTC+1", `<abbr title="British Summer Time">BST</abbr> <span aria-hidden="true">🇬🇧</span>`)
@@ -66,6 +67,7 @@ export const friendlyTime = (value, showTimezone = true) => {
  * @returns {string}
  */
 export const ianaTimezone = (value) => {
+	// prettier-ignore
 	return formatDatetime(value, "z")
 		.replace("UTC+8", "Asia/Singapore")
 		.replace("UTC+1", "Europe/London")

@@ -13,6 +13,7 @@ export const favicon = "/images/favicon-256.png"
 export const logo = "/images/raven.svg"
 export const speedlify = "chrisburnell"
 export const monetization = "$ilp.uphold.com/wDqKwewbX8by"
+export const fathom_siteid = "NMGWH"
 export const upcomingDaysLead = 7
 
 export const limits = {
@@ -42,6 +43,7 @@ export const cacheDurations = {
 }
 
 export const urls = {
+	fathom: "https://logs.chrisburnell.com",
 	license: "https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode",
 	indieauth_endpoint: "https://indieauth.com/auth",
 	indieauth_token: "https://tokens.indieauth.com/token",
