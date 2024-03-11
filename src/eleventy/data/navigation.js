@@ -49,7 +49,7 @@ const navigation = [
 		footer: true,
 	},
 	{
-		title: "Privacy",
+		title: "Privacy Policy",
 		url: "/privacy/",
 		footer: true,
 	},

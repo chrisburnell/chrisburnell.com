@@ -4,27 +4,37 @@ description: Your right to privacy on this website.
 monetization: false
 ---
 
-## Activity and Interaction
+## Tracking
 
-I use a handful of services, most often in the form of Webmentions, to keep track of how people interact with the content I make. If you have responded to, liked, reposted, quoted, commented on my activity on Mastodon, Twitter, or this website, it may be stored and displayed on this website. If you would like your interaction(s) removed, blocked, or even corrected, please [get in touch](/about/#contact), and I would be happy to oblige your request.
+I’m currently using [Fathom Lite](https://usefathom.com/) [(self-hosted)](https://logs.chrisburnell.com) as a means of keeping track of popular pages and referrals, mostly to make sure that frequently-visited pages are functioning as intended and to see where my referral traffic is coming from. It presents the following metrics: page views, unique visitors, average time spent on the website, bounce rate, and referrals.
+
+*Fathom Lite* sets a (first-party) cookie in your browser in order to keep track of page visits and distinguish unique visitors. I welcome you to disable cookies and/or requests to `logs.chrisburnell.com` if you do not want to be tracked in this way.
+
+You can read more about what Fathom has to say about the [data that they track](https://github.com/usefathom/fathom/blob/master/docs/FAQ.md#what-data-does-fathom-track).
 
 --------
 
-## Tracking
+## Activity and Backfeed
 
-I’m currently trialling [Fathom Lite](https://usefathom.com/) (self-hosted) as a means of keeping track of popular pages, mostly to make sure pages that people visit often are functioning as-intended. Here’s what Fathom has to say about the [data that they track](https://github.com/usefathom/fathom/blob/master/docs/FAQ.md#what-data-does-fathom-track):
+I pull Webmentions (hosted on [Webmention.io](https://webmention.io)) into relevant pages, but only Webmentions sent deliberately in reply to one of my pages are displayed. Likes, reposts, bookmarks, replies made on social media, etc. (i.e. backfeed from [Bridgy](https://brid.gy)) are anonymised and are only shown as part of a count in the responses section of relevant pages.
 
-> Fathom tracks no personally identifiable information on your visitors.
->
-> When Fathom tracks a pageview, your visitor is assigned a random string which is used to determine whether it's a unique pageview. If your visitor visits another page on your site, the previous pageview is processed & deleted within 1 minute. If the visitor leaves your site, the pageview is processed & deleted when the session ends (in 30 minutes).
->
-> If <q>Do Not Track</q> is enabled in the browser settings, Fathom respects that.
+If you have responded to, liked, reposted, quoted, or commented on my activity on Mastodon, Twitter, or this website, it may be stored and displayed on this website. If you would like your interaction(s) removed, blocked, or even corrected, please [get in touch](/about/#contact), and I would be happy to oblige your request as quickly as possible.
+
+--------
+
+## Third-party calls
+
+I have made every attempt to limit calls to third-party resources. Where possible, I am using self-hosted endpoints to prevent calls from your browser to third parties.
+
+This is *not* possible for certain resources hosted by third parties, like YouTube video embeds.
 
 --------
 
 ## Offline Support
 
-I make use of Service Workers, so if you’re using a relatively modern browser, you’ll be able to enjoy the benefits of this technology. In short, it’s a form of client-side caching. This means that your device will cache certain parts of this website in order to provide you a faster experience, and even enable you to take this website offline! I do not (and cannot) collect any information about you or your browsing experience from Service Workers.
+My website will install a Service Worker in supported browsers to make my website function when an internet connection is not available. In essence, it’s a form of client-side caching. This means that core assets will be cached by your browser to speed up subsequent usage of those files, in addition to caching the core top-level pages and any pages you’ve visited while online, making them available when you are offline!
+
+I do not (and cannot) collect any information about you or your browsing experience from Service Workers.
 
 --------
 
