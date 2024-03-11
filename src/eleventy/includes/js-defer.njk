@@ -6,8 +6,8 @@
 {%- if eleventy.env.runMode === 'build' -%}
 	{%- js -%}
 		;(function () {
-			window["fathom"] = window["fathom"] || function () {
-				(window["fathom"].q = window["fathom"].q || []).push(arguments)
+			window.fathom = window.fathom || function () {
+				(window.fathom.q = window.fathom.q || []).push(arguments)
 			}
 			const fathomScript = document.createElement("script")
 			fathomScript.async = true
