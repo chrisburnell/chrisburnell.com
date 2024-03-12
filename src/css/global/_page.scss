@@ -7,13 +7,13 @@ html {
 	color-scheme: light;
 	background-color: h(kaiser);
 	position: relative;
+	overscroll-behavior: contain;
 	overflow-x: hidden;
 	// prevent horizontal jump when navigating short page ←→ tall page
 	overflow-y: scroll;
-	overscroll-behavior: contain;
 	scrollbar-gutter: stable;
-	accent-color: h(raven);
 	scrollbar-color: h(raven) h(snowy);
+	accent-color: h(raven);
 	font-size: 100%;
 	font-variant: common-ligatures proportional-nums;
 	hanging-punctuation: first allow-end last;
