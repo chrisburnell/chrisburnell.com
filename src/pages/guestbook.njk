@@ -79,3 +79,15 @@ wide: true
 	<img src="/images/animated/guestbook-text.gif" alt="an animated image of the word Guestbook" loading="lazy" style="margin-inline: 0;">
 	<img src="/images/animated/guestbook.gif" alt="an animated pixel-art image of a quill writing in an open book" loading="lazy" style="margin-inline: 0;">
 </div>
+
+{%- css -%}
+body > canvas {
+	z-index: var(--z-index-modal);
+}
+@media (prefers-reduced-motion: reduce) or (update: none) or (update: slow) {
+	body > canvas {
+		display: none;
+	}
+}
+{%- endcss -%}
+{%- js 'module' -%}{% renderFile 'src/js/pages/guestbook.js' %}{%- endjs -%}

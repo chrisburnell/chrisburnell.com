@@ -48,7 +48,7 @@
     "@chrisburnell/svg-sparkline": "^1.0.9",
     "@chrisburnell/theme-selector": "^1.0.1",
     "@daviddarnes/storage-form": "^2.0.0",
-    "@mdn/browser-compat-data": "^5.5.13",
+    "@mdn/browser-compat-data": "^5.5.15",
     "@oddbird/popover-polyfill": "^0.4.0",
     "@remy/webmention": "^1.5.0",
     "@sindresorhus/slugify": "^2.2.1",
@@ -61,6 +61,7 @@
     "caniuse-api": "^3.0.0",
     "cheerio": "^1.0.0-rc.12",
     "chrisburnell": "^33.0.9",
+    "cursor-effects": "^1.0.15",
     "dotenv": "^16.4.5",
     "download-stats": "^0.3.4",
     "eleventy-plugin-og-image": "^3.2.0-beta.4",
@@ -80,10 +81,10 @@
     "postcss-cli": "^11.0.0",
     "postcss-scss": "^4.0.9",
     "random-case": "^1.0.0",
-    "sass": "^1.71.1",
+    "sass": "^1.72.0",
     "striptags": "^3.2.0",
     "truncate-html": "^1.1.1",
-    "utopia-core-scss": "^1.0.0"
+    "utopia-core-scss": "^1.0.1"
   },
   "scripts": {
     "clean": "npx rimraf .cache && npx rimraf _site",

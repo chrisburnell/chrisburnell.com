@@ -14,7 +14,7 @@
 	margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
+@include allowed-motion {
 	:where(html:focus-within) {
 		scroll-behavior: smooth;
 	}
@@ -89,9 +89,6 @@
 	@include visually-hidden;
 }
 
-@media (prefers-reduced-motion: reduce) {
-	@include nullify-animations;
-}
-@media not (update: fast) {
+@include reduced-motion {
 	@include nullify-animations;
 }

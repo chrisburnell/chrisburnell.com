@@ -25,11 +25,11 @@
 	}
 
 	main {
-		@media (prefers-reduced-motion: no-preference) {
+		@include allowed-motion {
 			background-image: url("/images/animated/stars.gif");
 		}
 
-		@media (prefers-reduced-motion: reduce) {
+		@include reduced-motion {
 			background-image: url("/images/animated/stars.png");
 		}
 	}

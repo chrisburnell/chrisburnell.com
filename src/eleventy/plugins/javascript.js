@@ -37,6 +37,7 @@ export default function (eleventyConfig) {
 					target: "es6",
 					bundle: true,
 					minify: true,
+					keepNames: true,
 					write: false,
 				})
 

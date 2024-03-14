@@ -58,6 +58,24 @@
 }
 
 ///
+/// Target Media Queries which should nullify animations/transitions/etc.
+///
+@mixin reduced-motion {
+	@media (prefers-reduced-motion: reduce) or (update: none) or (update: slow) {
+		@content;
+	}
+}
+
+///
+/// Target Media Queries which allow animations/transitions/etc.
+///
+@mixin allowed-motion {
+	@media (prefers-reduced-motion: no-preference) or (update: fast) {
+		@content;
+	}
+}
+
+///
 /// Iralicise words..
 ///
 @mixin italic() {

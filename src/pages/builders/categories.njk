@@ -56,7 +56,7 @@ truncate: true
 				<p>You can sort these {{ category.properPlural }}:</p>
 				<ul class=" [ cluster ] ">
 					<li><c-librarian-button key="title">by title</c-librarian-button></li>{% if category.review %}
-					<li><c-librarian-button key="author">by author</c-librarian-button></li>
+					<li><c-librarian-button key="author">by {% if category == 'beer' %}brewery{% elif category == 'game' %}publisher{% elif category == 'music' %}artist{% else %}author{% endif %}</c-librarian-button></li>
 					<li><c-librarian-button key="rating">by rating</c-librarian-button></li>{% endif %}{% if category.title != 'beer' and category.title != 'video' %}
 					<li><c-librarian-button key="release">by release date</c-librarian-button></li>{% endif %}
 					<li><c-librarian-button key="chronological" default="descending">by publish date</c-librarian-button></li>

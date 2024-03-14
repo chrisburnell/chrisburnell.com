@@ -16,7 +16,7 @@
 	}
 
 	main {
-		@media (prefers-reduced-motion: no-preference) {
+		@include allowed-motion {
 			// This makes the GIF appear 30% transparent through the background
 			--matrix-overlay: color-mix(in oklab, color-mix(in oklab, var(--color-mineshaft), var(--color-wolf) 40%), transparent 30%);
 			background-image: linear-gradient(to bottom, var(--matrix-overlay), var(--matrix-overlay)), url("/images/animated/matrix.gif");
