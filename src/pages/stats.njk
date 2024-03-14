@@ -47,7 +47,7 @@ excludeFromSearch: true
 <dl>
 	<dt>№ Posts</dt>
 	<dd>{{ collection.length | numberStringFormat }}</dd>
-	<dt>№ Blog Posts <a href="#fn1" id="fnref1"><sup class="footnote-ref">1</sup></a></dt>
+	<dt>№ Blog Posts <a href="#fn1" id="fnref1"><sup class="footnote-ref">[1]</sup></a></dt>
 	<dd>{{ blog_count | numberStringFormat }}</dd>
 	<dt>First Blog Post</dt>
 	<dd>{{ collections.blogPosts | last | keyValue("data.date") | friendlyDateLong | safe }}</dd>

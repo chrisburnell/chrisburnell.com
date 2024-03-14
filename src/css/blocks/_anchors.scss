@@ -71,6 +71,8 @@ h2 %anchor:not(:hover, :focus, :active) {
 
 // Give footnote anchors more space
 :is([id^="fnref"], [href^="#fnref"]) {
+	letter-spacing: 1px;
+
 	&::before,
 	&::after {
 		content: "\00a0";

@@ -45,7 +45,7 @@ markdown.renderer.rules.footnote_ref = (tokens, idx, options, env, slf) => {
 
 	if (tokens[idx].meta.subId > 0) refid += `:${tokens[idx].meta.subId}`
 
-	return `<a href="#fn${id}" id="fnref${refid}"><sup>${caption}</sup></a>`
+	return `<a href="#fn${id}" id="fnref${refid}"><sup>[${caption}]</sup></a>`
 }
 
 markdown.renderer.rules.footnote_anchor = (tokens, idx, options, env, slf) => {
