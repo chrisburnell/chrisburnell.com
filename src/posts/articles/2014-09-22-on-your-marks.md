@@ -5,6 +5,7 @@ date: 2014-09-22T10:00:00+0100
 title: On Your Marks, Get Set, Wait
 description: What's really important when reading an article online? Content should always come first, and give users the option for more later.
 tags:
+  - accessibility
   - javascript
 banner:
   url: on-your-marks.png
