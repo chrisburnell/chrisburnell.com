@@ -6,8 +6,8 @@ truncate: true
 ---
 {%- set collection = collections[related_collection] -%}
 {%- set count = collection.length -%}
-{%- set latest_year = collection[0].data.date | default(collection[0].date) | friendlyDate('yyyy') -%}
-{%- set first_year = collection[count-1].data.date | default(collection[count-1].date) | friendlyDate('yyyy') -%}
+{%- set latest_year = collection[0].data.year | default(collection[0].year) -%}
+{%- set first_year = collection[count-1].data.year | default(collection[count-1].year) -%}
 {%- if limit -%}
 	{% set collection = collection | limit(limit) %}
 {%- endif -%}
@@ -54,24 +54,16 @@ truncate: true
 		{%- endif %}
 
 		{%- if by_year -%}
-			{%- set year = latest_year -%}
-			<h2 id="{{ year }}">
-				{{ year }} <small>{{ collection | getCollectionCountByYear(year) }} post{{ 's' if collection | getCollectionCountByYear(year) > 1 }}</small>
-			</h2>
-			<div id="list-{{ year }}" class=" [ deck ] ">
-				{% for item in collection %}
-					{%- set check = item.data.date | friendlyDate('yyyy') -%}
-					{% if check != year %}
-						{%- set year = check -%}
-						</div>
-						<h2 id="{{ year }}">
-							{{ year }} <small>{{ collection | getCollectionCountByYear(year) }} post{{ 's' if collection | getCollectionCountByYear(year) > 1 }}</small>
-						</h2>
-						<div id="list-{{ year }}" class=" [ deck ] ">
-					{% endif %}
-					{% include 'items/deck.njk' %}
-				{% endfor %}
-			</div>
+			{% for year, posts in collection | groupby('data.year') | dictsort | reverse %}
+				<h2 id="{{ year }}">
+					{{ year }} <small>{{ posts | length }} post{{ 's' if posts | length > 1 }}</small>
+				</h2>
+				<div id="list-{{ year }}" class=" [ deck ] ">
+					{% for item in posts %}
+						{% include 'items/deck.njk' %}
+					{% endfor %}
+				</div>
+			{% endfor %}
 		{%- else -%}
 			<div class=" [ deck ] ">
 				{% for item in collection %}

@@ -13,6 +13,13 @@ export default {
 			}
 			return data.date || null
 		},
+		year: async (data) => {
+			if (data.github) {
+				const github = await githubData(data.github)
+				return github["created_at"] ? new Date(github["created_at"]).getFullYear() : null
+			}
+			return data.date ? new Date(data.date).getFullYear() : null
+		},
 		updated: async (data) => {
 			if (data.github) {
 				const github = await githubData(data.github)

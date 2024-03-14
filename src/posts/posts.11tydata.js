@@ -15,6 +15,7 @@ export default {
 	show_webmentions: true,
 	eleventyComputed: {
 		canonical: (data) => siteURL + data.page.url,
+		year: (data) => new Date(data.date).getFullYear(),
 		of_url: async (data) => getPropertyURL(data),
 		of_title: async (data) => getPropertyTitle(data),
 		of_title_fallback: async (data) => getPropertyTitleFallback(data),

@@ -5,18 +5,19 @@ excludeFromSearch: true
 ---
 
 {%- set collection = collections.posts -%}
-{%- set latest_year = collection[0].date.getFullYear() -%}
-{%- set first_year = collection[collection.length-1].date.getFullYear() -%}
+{%- set count = collection.length -%}
+{%- set latest_year = collection[0].data.year | default(collection[0].year) -%}
+{%- set first_year = collection[count-1].data.year | default(collection[count-1].year) -%}
 {%- set diff_years = latest_year - first_year -%}
 
 {%- set wordiest_post_index = 0 -%}
-{%- set wordiest_blogPost = 0 -%}
+{%- set wordiest_blog_post = 0 -%}
 {%- set blog_wordcount = 0 -%}
 {%- for item in collections.blogPosts -%}
 	{%- set wordCount = item.content | cleanTags | striptags | safe | wordcount -%}
 	{%- set blog_wordcount = blog_wordcount + wordCount -%}
-	{%- if wordCount > wordiest_blogPost -%}
-		{%- set wordiest_blogPost = wordCount -%}
+	{%- if wordCount > wordiest_blog_post -%}
+		{%- set wordiest_blog_post = wordCount -%}
 		{%- set wordiest_post_index = loop.index0 -%}
 	{%- endif -%}
 {%- endfor -%}
@@ -55,7 +56,7 @@ excludeFromSearch: true
 	<dt>Blog Word Count</dt>
 	<dd>{{ blog_wordcount | numberStringFormat }}</dd>
 	<dt>Most Verbose</dt>
-	<dd><a href="{{ collections.blogPosts[wordiest_post_index].url }}">{{ collections.blogPosts[wordiest_post_index].data.title }}</a> <small>with</small> {{ wordiest_blogPost | numberStringFormat }} words</dd>
+	<dd><a href="{{ collections.blogPosts[wordiest_post_index].url }}">{{ collections.blogPosts[wordiest_post_index].data.title }}</a> <small>with</small> {{ wordiest_blog_post | numberStringFormat }} words</dd>
 	<dt>№ Projects</dt>
 	<dd><a href="/projects/">{{ (projects.web.length + projects.personal.length + collections.projects.length) | numberStringFormat }}</a></dd>
 	<dt>№ Blogs in my Blogroll</dt>
