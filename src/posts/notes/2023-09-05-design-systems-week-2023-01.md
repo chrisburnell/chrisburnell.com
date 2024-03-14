@@ -9,6 +9,7 @@ rsvp:
   end: 2023-10-02T16:00:00+0100
 tags:
   - conference
+  - virtual
 ---
 
 Looking forward to attending *Design Systems Week* this year and learning more about how to utilise design systems in my work and opening my eyes to inspiration from successful design systems already live on the world wide web.

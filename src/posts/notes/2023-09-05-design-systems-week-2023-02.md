@@ -10,6 +10,7 @@ rsvp:
   upcoming_days_lead: 1.75
 tags:
   - conference
+  - virtual
 sitemap:
   exclude: true
 ---
