@@ -45,7 +45,7 @@
     "@chrisburnell/instant-photo": "^1.0.0",
     "@chrisburnell/pentatonic": "^1.1.4",
     "@chrisburnell/spark-line": "^1.2.6",
-    "@chrisburnell/svg-sparkline": "^1.0.9",
+    "@chrisburnell/svg-sparkline": "^1.0.10",
     "@chrisburnell/theme-selector": "^1.0.1",
     "@daviddarnes/storage-form": "^2.0.0",
     "@mdn/browser-compat-data": "^5.5.15",

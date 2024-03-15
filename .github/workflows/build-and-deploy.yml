@@ -25,41 +25,37 @@ jobs:
         with:
           timezone: Asia/Singapore
       - name: Checkout from git
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Set the Node version
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: "20.11.0"
-      - name: Setup packages cache
-        id: cache-npm
-        uses: actions/cache@v3
+          cache: npm
+      - name: Install Node Modules
+        run: npm ci
+      - name: Restore site cache
+        id: cache-site-restore
+        uses: actions/cache/restore@v4
         with:
-          path: ~/.npm
-          key: packages-cache-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            packages-cache-
-      - name: Setup site cache
-        id: cache-site
-        uses: actions/cache@v3
-        with:
+          key: site-cache
           path: |
             .cache
             _site/images
             _site/og-images
-          key: site-cache
-          restore-keys: |
-            site-cache
-      - name: Install Node Modules
-        run: npm ci
-      - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
-        name: List the state of node modules
-        continue-on-error: true
-        run: npm list
       - name: Build with npm
         run: npm run build-production
         env:
           NODE_OPTIONS: "--max_old_space_size=8192"
           WEBMENTION_IO_TOKEN: ${{ secrets.WEBMENTION_IO_TOKEN }}
+      - name: Save site cache
+        id: cache-site-save
+        uses: actions/cache/save@v4
+        with:
+          key: ${{ steps.cache-site-restore.outputs.cache-primary-key }}
+          path: |
+            .cache
+            _site/images
+            _site/og-images
       - name: Copy files to server
         uses: appleboy/scp-action@master
         with:
