@@ -87,7 +87,7 @@
 		<meta property="og:description" content="{{ meta_description | safe }}">
 		<meta property="og:locale" content="{{ site.locale }}">
 		<meta property="og:site_name" content="{{ site.title }}">
-		{% if not process.env.GENERATE_OG_IMAGES or og_image or title or banner or cover or photo or not 'post' in tags -%}
+		{% if not env.GENERATE_OG_IMAGES or og_image or title or banner or cover or photo or not 'post' in tags -%}
 			<meta property="og:image" content="{{ meta_image }}" data-pagefind-meta="image[content]">
 		{%- else -%}
 			<meta property="og:image" content="{% ogImage './eleventy/layouts/og-image.og.njk', { title: meta_title } %}" data-pagefind-meta="image[content]">
