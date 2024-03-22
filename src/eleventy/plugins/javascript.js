@@ -6,7 +6,7 @@ export default function (eleventyConfig) {
 	// Recognise JS as a "template language"
 	eleventyConfig.addTemplateFormats("js")
 
-	// Ignore non-front-end JS files
+	// Ignore non front end JS files
 	eleventyConfig.ignores.add("./src/data")
 	eleventyConfig.ignores.add("./src/eleventy")
 	eleventyConfig.ignores.add("./src/**/*.11tydata.js")

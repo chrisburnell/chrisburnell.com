@@ -26,7 +26,7 @@ This leaves us with a 50-hour period during which time participants’ websites 
 
 ## What’s the point?
 
-In a time where the waters of front-end development were churning with the currents of strong opinions and a swiftly-changing development landscape, an individual strode forth to bear the storm’s fury. Suddenly, the currents dissapated and the churning waters relaxed until they were calmed, as the individual spoke clearly forth:
+In a time where the waters of front end development were churning with the currents of strong opinions and a swiftly-changing development landscape, an individual strode forth to bear the storm’s fury. Suddenly, the currents dissapated and the churning waters relaxed until they were calmed, as the individual spoke clearly forth:
 
 > Be the browser’s mentor, not its micromanager
 

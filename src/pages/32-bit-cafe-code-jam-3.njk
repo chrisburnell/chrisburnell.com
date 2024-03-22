@@ -9,47 +9,63 @@ theme: light
 <main>
 	<article id="content" class=" [ page ] ">
 		<div class=" [ full-space ] [ themed-section ] " data-theme="dark" style="background-image: linear-gradient(160deg, var(--color-bowhead), var(--color-wolf));">
-			<h1>{{ title | safe }}</h1>
-			<p class=" [ gamma ] " style="margin-inline: auto; margin-block-start: var(--size-gigantic);">{{ description | safe }}</p>
+			<h1 style="max-inline-size: 30ch; text-wrap: balance;">{{ title | safe }}</h1>
+			<p class=" [ gamma ] " style="max-inline-size: 45ch; margin-inline: auto; margin-block-start: var(--size-gigantic); text-wrap: balance;">{{ description | safe }}</p>
 		</div>
 		<div class=" [ full-space  image-split ] [ themed-section ] ">
 			<figure>
-				{% image './images/content/carbonated-water-device.png', 'TODO', undefined, [400] %}
+				{% image './images/content/carbonated-water-device.png', 'Savaresse’s machine with oscillating cylinder by P. Broux.', undefined, [400] %}
 			</figure>
 			<div class=" [ flow ] ">
-				<p class=" [ gamma ] ">My website is, <em>without question</em>, my favourite thing that I own.</p>
-				<p>Ever since building my first Neopets profile page back in </p>
+				<p class=" [ gamma ] " style="max-inline-size: 45ch; text-wrap: balance;">My website is, <em>without question</em>, my favourite thing that I own.</p>
+				<p>Ever since the late 90’s when I got my first taste of building for the web, there was something about the web that <em>spoke to me</em>: customising the HTML of my first Neopets profile page and building a Geocities website all about a cow-themed trading card game I made with a friend was so fun.</p>
+				<p>I remember spending hours playing with <code>&lt;FONT&gt;</code>, <code>&lt;BGSOUND&gt;</code>,<code>&lt;IMG&gt;</code>, and <code>&lt;TABLE&gt;</code> tags to make pages feel like my own.</p>
+				<p>Not much has changed about how I feel about building for the web in the ~25 years since then. Today, my website gives me the same freedom to express myself, share stuff I like and have learned, and connect with other people across the world wide web.</p>
+				<p class="strong">My website has been my passion project for over 16 years, and I can’t imagine that changing any time soon.</p>
 			</div>
 		</div>
 		<div class=" [ full-space  image-split  image-split--alternate ] [ themed-section ] " style="--image-split-min: 180px; --image-split-max: 273px;" data-theme="koala">
 			<figure>
-				{% image './images/content/diving-machine.png', 'TODO', undefined, [273] %}
+				{% image './images/content/diving-machine.png', 'Klingert’s diving machine P. Broux.', undefined, [273] %}
 			</figure>
 			<div class=" [ flow ] ">
-				<p class=" [ gamma ] ">Deep-diving, research, experimentation</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum suscipit id nulla vitae maximus. In bibendum risus in commodo fermentum. Vestibulum elementum turpis ac aliquam pulvinar. Nulla vitae varius lorem. Pellentesque elit leo, elementum sit amet posuere a, malesuada non velit. Maecenas blandit rutrum enim eu sodales. Nullam mi lectus, vehicula sed arcu vel, volutpat dignissim mauris. Maecenas ultricies, lacus ut cursus molestie, dui nunc efficitur metus, vel pulvinar eros diam id mi. Phasellus convallis accumsan enim ac tempor. Quisque porta velit quis maximus ullamcorper. Mauris dictum ultrices nisi molestie aliquet. Donec dictum iaculis ante eget semper. In sit amet enim ac risus tempus feugiat non eu augue.</p>
+				<p class=" [ gamma ] " style="max-inline-size: 45ch; text-wrap: balance;">My website is a place to experiment, lay out research, and deep-dive.</p>
+				<p>Besides breathing (and <em>sometimes</em> sleeping), I spend more time developing and immersing myself in the web than anything else.</p>
+				<p>Whether it’s writing about web development, reviewing music and video games, creating tabletop RPG campaigns, or building little tools and libraries to simplify mundane tasks or help me learn something new, I feel most at home and unhindered when I do it here, on my website.</p>
+				<p>My website is in a constant state of change as I learn more about the web and front end development. I have a deep passion for keeping on the pulse of the latest technologies and features for front end development, and because my website is <em>my own</em>, I’m free to experiment and try out new things, <q>live</q> and <q>in production</q>.</p>
+				<p class="strong">On my website, there are no stakeholders but me.</p>
 			</div>
 		</div>
 		<div class=" [ full-space  image-split  image-split ] [ themed-section ] " data-theme="red-alert">
 			<figure>
-				{% image './images/content/dancing-master.png', 'TODO', undefined, [400] %}
+				{% image './images/content/dancing-master.png', 'The dancing master by Christophe Huet.', undefined, [400] %}
 			</figure>
 			<div class=" [ flow ] ">
-				<p class=" [ gamma ] ">Sharing and learning</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum suscipit id nulla vitae maximus. In bibendum risus in commodo fermentum. Vestibulum elementum turpis ac aliquam pulvinar. Nulla vitae varius lorem. Pellentesque elit leo, elementum sit amet posuere a, malesuada non velit. Maecenas blandit rutrum enim eu sodales. Nullam mi lectus, vehicula sed arcu vel, volutpat dignissim mauris. Maecenas ultricies, lacus ut cursus molestie, dui nunc efficitur metus, vel pulvinar eros diam id mi. Phasellus convallis accumsan enim ac tempor. Quisque porta velit quis maximus ullamcorper. Mauris dictum ultrices nisi molestie aliquet. Donec dictum iaculis ante eget semper. In sit amet enim ac risus tempus feugiat non eu augue.</p>
+				<p class=" [ gamma ] " style="max-inline-size: 45ch; text-wrap: balance;">My website is an extension of <em>me</em>, and the place I feel most comfortable sharing <em>who I am</em>.</p>
+				<p>Through owning my website and the passion that comes from making it feel like my own, I’ve found other amazing websites and made even more incredible friends. People I would never have been so lucky as to know if I hadn’t made a home on the web.</p>
+				<p>As someone who’s quite reserved and quiet in-person, I don’t feel half the anxiety about sharing myself and my thoughts here. In a way, it’s one of the best ways to get to know me. In fact, I’ve managed to get past a lot of my real-life social anxieties through my wesbite: each time I hit publish on a new article or release some new software, I get a massive dopamine hit that makes me feel connected.</p>
+				<p>To date, the highest compliments I’ve ever received were from people letting me know that they’ve enjoyed reading something on my website, used something I built, or found me in-person just to tell me they found me through my online presence.</p>
+				<p>In a strange way, having a website also gives me a sense of immortality. The idea that even when I’m gone, the physical me, my website will continue on as a digital archive of <em>who Chris Burnell was</em>.</p>
+				<p class="strong">Nothing makes me feel so <em>seen and understood</em> as the connections to other people I’ve made through my website.</p>
 			</div>
 		</div>
 		<div class=" [ full-space ] [ flow ] [ themed-section ] " data-theme="dark  nineties">
-			<p class=" [ gamma ] ">Nostalgia</p>
+			<p class=" [ gamma ] " style="max-inline-size: 45ch; text-wrap: balance;">Stay awhile and listen.</p>
 			<p style="margin-inline: auto">
-				<img src="/images/animated/wizard.gif" alt="an animated pixel-art image of a wizard wielding a staff and shooting electricity from his hand" loading="lazy">
-				<img src="/images/animated/cow.gif" alt="an animated image of a white cow with black spots" loading="lazy">
+				<img src="/images/animated/deckard-cain.gif" alt="an idly-standing Deckard Cain from the video game, Diablo" width="72" height="130" loading="lazy">
 			</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum suscipit id nulla vitae maximus. In bibendum risus in commodo fermentum. Vestibulum elementum turpis ac aliquam pulvinar. Nulla vitae varius lorem. Pellentesque elit leo, elementum sit amet posuere a, malesuada non velit. Maecenas blandit rutrum enim eu sodales. Nullam mi lectus, vehicula sed arcu vel, volutpat dignissim mauris. Maecenas ultricies, lacus ut cursus molestie, dui nunc efficitur metus, vel pulvinar eros diam id mi. Phasellus convallis accumsan enim ac tempor. Quisque porta velit quis maximus ullamcorper. Mauris dictum ultrices nisi molestie aliquet. Donec dictum iaculis ante eget semper. In sit amet enim ac risus tempus feugiat non eu augue.</p>
+			<p>The rose-tinted glasses of nostalgia are difficult to take off.</p>
+			<p>In the past year, I’ve been deep-diving into the teeming soup of nostalgia for <q>the old web</q>. The web that I remember first immersing myself in the late ’90s and early 2000s. And what better place to chase those feelings I had first building websites than here, in 2024.</p>
+			<p>Sadly, I haven’t been able to find any archives of my old Neopets profile page or Geocities website, but if I do, they’ll live here for as long as I live (or longer).</p>
+			<p class="strong">On my website.</p>
+			<p style="margin-inline: auto">
+				<a href="{{ site.url }}"><img src="/images/animated/88x31.gif" alt="chrisburnell.com 88x31 badge" loading="lazy"></a>
+			</p>
 		</div>
 	</article>
 </main>
 
+{% if not global.cssnakedday -%}
 <style>
 html {
 	background-color: #adaeb0;
@@ -101,12 +117,11 @@ h1 + p {
 	@media (width > 700px) {
 		grid-column: image;
 		grid-row: 1;
-		align-self: start;
+		{# align-self: start; #}
 	}
 }
 
 .image-split .flow {
-	{# background-color: var(--color-raven); #}
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -116,20 +131,5 @@ h1 + p {
 		grid-row: 1;
 	}
 }
-
-.image-split img {
-	{# filter: brightness(65%) sepia(100%) hue-rotate(var(--hue-rotation)); #}
-}
-
-.image-split:not([data-theme]) {
-	--hue-rotation: 170deg;
-}
-
-.image-split[data-theme*="koala"] {
-	--hue-rotation: 205deg;
-}
-
-.image-split[data-theme*="red-alert"] {
-	--hue-rotation: 315deg;
-}
 </style>
+{%- endif %}

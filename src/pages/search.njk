@@ -6,20 +6,6 @@ nofollow: true
 sitemap:
   exclude: true
 ---
-<link rel="stylesheet" href="/pagefind/pagefind-ui.css">
-<style>
-pagefind-search {
-	--pagefind-ui-primary: var(--color-raven);
-	--pagefind-ui-text: currentColor;
-	--pagefind-ui-background: transparent;
-	--pagefind-ui-border: var(--color-nickel);
-	--pagefind-ui-tag: var(--color-nickel);
-	--pagefind-ui-border-width: var(--size-border-thin);
-	--pagefind-ui-border-radius: var(--size-border-thin);
-	--pagefind-ui-image-border-radius: var(--size-border-thin);
-	--pagefind-ui-font: inherit;
-}
-</style>
 
 <pagefind-search _page_size="10" pagefind-autofocus>
 	<form id="search" class=" [ responses__form ] " method="get" name="search" action="https://duckduckgo.com/">
@@ -37,4 +23,24 @@ pagefind-search {
 	</template>
 </is-land>
 
-{%- js 'module' -%}{% include '../../node_modules/@zachleat/pagefind-search/pagefind-search.js' %}{%- endjs -%}
+{% if not global.cssnakedday -%}
+<style>
+pagefind-search {
+	--pagefind-ui-primary: var(--color-raven);
+	--pagefind-ui-text: currentColor;
+	--pagefind-ui-background: transparent;
+	--pagefind-ui-border: var(--color-nickel);
+	--pagefind-ui-tag: var(--color-nickel);
+	--pagefind-ui-border-width: var(--size-border-thin);
+	--pagefind-ui-border-radius: var(--size-border-thin);
+	--pagefind-ui-image-border-radius: var(--size-border-thin);
+	--pagefind-ui-font: inherit;
+}
+</style>
+{%- endif %}
+
+{% if not global.cssnakedday -%}
+	{%- js 'module' -%}{% include '../../node_modules/@zachleat/pagefind-search/pagefind-search.js' %}{%- endjs -%}
+{%- else -%}
+	{%- js 'module' -%}{% renderFile 'src/js/imports/pagefind-search.js' %}{%- endjs -%}
+{%- endif %}
