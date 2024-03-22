@@ -297,18 +297,18 @@
 
 @keyframes block-shadow-inside {
 	from {
-		box-shadow: inset 0 -2em 2em -2em color-mix(in oklab, var(--shadow-color), transparent 60%);
+		box-shadow: inset 0 -2em 2em -2em color-mix(in oklab, var(--color-shadow), transparent 60%);
 	}
 	to {
-		box-shadow: inset 0 2em 2em -2em color-mix(in oklab, var(--shadow-color), transparent 60%);
+		box-shadow: inset 0 2em 2em -2em color-mix(in oklab, var(--color-shadow), transparent 60%);
 	}
 }
 @keyframes inline-shadow-inside {
 	from {
-		box-shadow: inset -2em 0 2em -2em color-mix(in oklab, var(--shadow-color), transparent 60%);
+		box-shadow: inset -2em 0 2em -2em color-mix(in oklab, var(--color-shadow), transparent 60%);
 	}
 	to {
-		box-shadow: inset 2em 0 2em -2em color-mix(in oklab, var(--shadow-color), transparent 60%);
+		box-shadow: inset 2em 0 2em -2em color-mix(in oklab, var(--color-shadow), transparent 60%);
 	}
 }
 @keyframes block-shadow-outside {
@@ -316,7 +316,7 @@
 		box-shadow: none;
 	}
 	to {
-		box-shadow: 0 2em 2em -2em color-mix(in oklab, var(--shadow-color), transparent 60%);
+		box-shadow: 0 2em 2em -2em color-mix(in oklab, var(--color-shadow), transparent 60%);
 	}
 }
 @keyframes inline-shadow-outside {
@@ -324,6 +324,23 @@
 		box-shadow: none;
 	}
 	to {
-		box-shadow: 2em 0 2em -2em color-mix(in oklab, var(--shadow-color), transparent 60%);
+		box-shadow: 2em 0 2em -2em color-mix(in oklab, var(--color-shadow), transparent 60%);
+	}
+}
+
+// Scroll Snapping
+html:has(.full-space) {
+	@media (prefers-reduced-motion: no-preference) and (width > 700px) {
+		scroll-snap-type: y mandatory;
+	}
+}
+.full-space {
+	min-block-size: 100dvh;
+	display: grid;
+	place-content: center;
+	padding: var(--size-large-gigantic);
+
+	@media (prefers-reduced-motion: no-preference) and (width > 700px) {
+		scroll-snap-align: start;
 	}
 }

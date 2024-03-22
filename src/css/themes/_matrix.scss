@@ -15,7 +15,8 @@
 		filter: hue-rotate(270deg) saturate(300%);
 	}
 
-	main {
+	main,
+	&.themed-section {
 		@include allowed-motion {
 			// This makes the GIF appear 30% transparent through the background
 			--matrix-overlay: color-mix(in oklab, color-mix(in oklab, var(--color-mineshaft), var(--color-wolf) 40%), transparent 30%);

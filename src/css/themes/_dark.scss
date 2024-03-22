@@ -4,17 +4,13 @@
 ////
 
 @mixin theme-dark() {
-	--shadow-color: var(--color-shadow-dark);
+	scrollbar-color: h(raven) h(mineshaft);
+	color-scheme: dark;
 
-	&:is(html) {
-		scrollbar-color: h(raven) h(mineshaft);
-		color-scheme: dark;
-	}
-
-	// Target these if applied to html or body elements
 	&:is(body),
 	&:is(html) body,
-	.main {
+	&.themed-section,
+	main {
 		background-color: color-mix(in oklab, h(mineshaft), h(wolf) 40%);
 		color: h(yeti);
 	}
@@ -117,7 +113,7 @@
 	// Compositions
 	///
 
-	%box {
+	%box, &.box {
 		border-block-start-color: var(--box-border-color, h(raven, alpha));
 
 		%anchor {

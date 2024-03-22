@@ -14,6 +14,7 @@
 			<p style="grid-column: 1 / span 2;">You can also <a href="https://quill.p3k.io/?dontask=1&me=https://commentpara.de&reply={{ canonical }}" class=" [ button  button--small ] " rel="external noopener">make an anonymonous reply</a> <small>(using <a href="https://quill.p3k.io" rel="external noopener">Quill</a> and <a href="https://commentpara.de" rel="external noopener">Comment Parade</a>)</small>.</p>
 		</form>
 		{% if webmentions.length or stargazers > 0 %}
+			{%- set webmentions = webmentions | replaceWebmentions -%}
 			{%- set bookmarks = webmentions | getWebmentionsByTypes(['bookmark-of']) -%}
 			{%- set likes = webmentions | getWebmentionsByTypes(['like-of']) -%}
 			{%- set reposts = webmentions | getWebmentionsByTypes(['repost-of']) -%}

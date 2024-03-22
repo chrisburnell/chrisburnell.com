@@ -95,6 +95,12 @@ class WebsiteSounds {
 	init() {
 		// In-page Sounds
 		this.soundsToggleButton = document.querySelector(".js-sounds-toggle")
+
+		// Make sure the button exists, or end the init here
+		if (!this.soundsToggleButton) {
+			return
+		}
+
 		this.soundsStatusIcon = this.soundsToggleButton.querySelector(".js-sounds-toggle svg use")
 		this.soundsStatusText = this.soundsToggleButton.querySelector(".js-sounds-status")
 		this.soundsToggleButton.addEventListener("click", (event) => {

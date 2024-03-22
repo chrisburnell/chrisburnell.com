@@ -30,8 +30,7 @@ $colors-secondary: (
 	maple: 57.6% 0.2268 27.77,
 );
 $colors-tertiary-hex: (
-	shadow-light: #9c9c9c,
-	shadow-dark: #0f0f0f,
+	shadow: #0f0f0f,
 	css: #0181d9,
 	html: #e54d26,
 	javascript: #f1c54c,
@@ -44,8 +43,7 @@ $colors-tertiary-hex: (
 	yaml: #ee2b34,
 );
 $colors-tertiary: (
-	shadow-light: 69.3% 0 0,
-	shadow-dark: 16.8% 0 0,
+	shadow: 16.8% 0 0,
 	css: 59.1% 0.1627 248.29,
 	html: 62.6% 0.1981 29.54,
 	javascript: 84.1% 0.144 88.57,
@@ -84,24 +82,24 @@ $font-families: (
 	silly: "Comic Sans MS, Chalkboard SE, fantasy, serif",
 );
 $font-sizes: (
-	alpha-min: 2.074rem,
-	alpha: clamp(2.074rem, 0.186rem + 4.314vi, 4.5rem),
 	alpha-max: 4.5rem,
-	inbetween-min: 1.728rem,
-	inbetween: clamp(1.728rem, 0.998rem + 1.669vi, 2.667rem),
+	alpha: clamp(2.074rem, 0.186rem + 4.314vi, 4.5rem),
+	alpha-min: 2.074rem,
 	inbetween-max: 2.667rem,
-	beta-min: 1.438rem,
-	beta: clamp(1.438rem, 1rem + 1vi, 2rem),
+	inbetween: clamp(1.728rem, 0.998rem + 1.669vi, 2.667rem),
+	inbetween-min: 1.728rem,
 	beta-max: 2rem,
-	gamma-min: 1.2rem,
-	gamma: clamp(1.2rem, 0.967rem + 0.533vi, 1.5rem),
+	beta: clamp(1.438rem, 1rem + 1vi, 2rem),
+	beta-min: 1.438rem,
 	gamma-max: 1.5rem,
-	default-min: 1rem,
-	default: clamp(1rem, 0.903rem + 0.222vi, 1.125rem),
+	gamma: clamp(1.2rem, 0.967rem + 0.533vi, 1.5rem),
+	gamma-min: 1.2rem,
 	default-max: 1.125rem,
-	small-min: 0.875rem,
-	small: clamp(0.875rem, 0.778rem + 0.222vi, 1rem),
+	default: clamp(1rem, 0.903rem + 0.222vi, 1.125rem),
+	default-min: 1rem,
 	small-max: 1rem,
+	small: clamp(0.875rem, 0.778rem + 0.222vi, 1rem),
+	small-min: 0.875rem,
 );
 $font-weights: (
 	light: 300,

@@ -186,7 +186,7 @@ progress {
 	}
 }
 
-// For some reason, these two selectors don't play well together
+// For some reason, ::selection and ::target-text don't play well together
 ::selection {
 	background-color: h(wolf);
 	background-image: none;

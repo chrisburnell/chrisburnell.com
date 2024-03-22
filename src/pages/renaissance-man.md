@@ -13,13 +13,13 @@ I had a wonderfully-fortunate upbringing, and I attribute a great deal of who I 
 
 <div class=" [ grid ] [ shelf ] ">
     <figure>
-        {% image './images/content/opa.jpg', 'Reinhold Kaiser, my maternal grandfather, or as I called him: Opa', '', [400] %}
+        {% image './images/content/opa.jpg', 'Reinhold Kaiser, my maternal grandfather, or as I called him: Opa', undefined, [400] %}
     </figure>
     <figure>
-        {% image './images/content/opa-portrait-2.jpg', 'Opa posing with Canada’s first Nuclear Magnetic Resonance instrument', '', [400] %}
+        {% image './images/content/opa-portrait-2.jpg', 'Opa posing with Canada’s first Nuclear Magnetic Resonance instrument', undefined, [400] %}
     </figure>
     <figure>
-        {% image './images/content/opa-portrait-3.jpg', 'Continuing to look good with the NMR', '', [400] %}
+        {% image './images/content/opa-portrait-3.jpg', 'Continuing to look good with the NMR', undefined, [400] %}
     </figure>
 </div>
 

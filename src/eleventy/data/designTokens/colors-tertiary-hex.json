@@ -1,6 +1,5 @@
 {
-  "shadow-light": "#9c9c9c",
-  "shadow-dark": "#0f0f0f",
+  "shadow": "#0f0f0f",
   "css": "#0181d9",
   "html": "#e54d26",
   "javascript": "#f1c54c",

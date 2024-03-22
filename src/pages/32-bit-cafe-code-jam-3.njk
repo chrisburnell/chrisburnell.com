@@ -1,0 +1,135 @@
+---
+layout: root
+title: What has creating a website done for me?
+description: "My submission for the <a href=\"https://tilde.32bit.cafe/~hermit/community_jam_3/\">32bit.cafe Community Code Jam #3</a>, celebrating its one-year anniversary!"
+show_webmentions: true
+theme: light
+---
+
+<main>
+	<article id="content" class=" [ page ] ">
+		<div class=" [ full-space ] [ themed-section ] " data-theme="dark" style="background-image: linear-gradient(160deg, var(--color-bowhead), var(--color-wolf));">
+			<h1>{{ title | safe }}</h1>
+			<p class=" [ gamma ] " style="margin-inline: auto; margin-block-start: var(--size-gigantic);">{{ description | safe }}</p>
+		</div>
+		<div class=" [ full-space  image-split ] [ themed-section ] ">
+			<figure>
+				{% image './images/content/carbonated-water-device.png', 'TODO', undefined, [400] %}
+			</figure>
+			<div class=" [ flow ] ">
+				<p class=" [ gamma ] ">My website is, <em>without question</em>, my favourite thing that I own.</p>
+				<p>Ever since building my first Neopets profile page back in </p>
+			</div>
+		</div>
+		<div class=" [ full-space  image-split  image-split--alternate ] [ themed-section ] " style="--image-split-min: 180px; --image-split-max: 273px;" data-theme="koala">
+			<figure>
+				{% image './images/content/diving-machine.png', 'TODO', undefined, [273] %}
+			</figure>
+			<div class=" [ flow ] ">
+				<p class=" [ gamma ] ">Deep-diving, research, experimentation</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum suscipit id nulla vitae maximus. In bibendum risus in commodo fermentum. Vestibulum elementum turpis ac aliquam pulvinar. Nulla vitae varius lorem. Pellentesque elit leo, elementum sit amet posuere a, malesuada non velit. Maecenas blandit rutrum enim eu sodales. Nullam mi lectus, vehicula sed arcu vel, volutpat dignissim mauris. Maecenas ultricies, lacus ut cursus molestie, dui nunc efficitur metus, vel pulvinar eros diam id mi. Phasellus convallis accumsan enim ac tempor. Quisque porta velit quis maximus ullamcorper. Mauris dictum ultrices nisi molestie aliquet. Donec dictum iaculis ante eget semper. In sit amet enim ac risus tempus feugiat non eu augue.</p>
+			</div>
+		</div>
+		<div class=" [ full-space  image-split  image-split ] [ themed-section ] " data-theme="red-alert">
+			<figure>
+				{% image './images/content/dancing-master.png', 'TODO', undefined, [400] %}
+			</figure>
+			<div class=" [ flow ] ">
+				<p class=" [ gamma ] ">Sharing and learning</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum suscipit id nulla vitae maximus. In bibendum risus in commodo fermentum. Vestibulum elementum turpis ac aliquam pulvinar. Nulla vitae varius lorem. Pellentesque elit leo, elementum sit amet posuere a, malesuada non velit. Maecenas blandit rutrum enim eu sodales. Nullam mi lectus, vehicula sed arcu vel, volutpat dignissim mauris. Maecenas ultricies, lacus ut cursus molestie, dui nunc efficitur metus, vel pulvinar eros diam id mi. Phasellus convallis accumsan enim ac tempor. Quisque porta velit quis maximus ullamcorper. Mauris dictum ultrices nisi molestie aliquet. Donec dictum iaculis ante eget semper. In sit amet enim ac risus tempus feugiat non eu augue.</p>
+			</div>
+		</div>
+		<div class=" [ full-space ] [ flow ] [ themed-section ] " data-theme="dark  nineties">
+			<p class=" [ gamma ] ">Nostalgia</p>
+			<p style="margin-inline: auto">
+				<img src="/images/animated/wizard.gif" alt="an animated pixel-art image of a wizard wielding a staff and shooting electricity from his hand" loading="lazy">
+				<img src="/images/animated/cow.gif" alt="an animated image of a white cow with black spots" loading="lazy">
+			</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum suscipit id nulla vitae maximus. In bibendum risus in commodo fermentum. Vestibulum elementum turpis ac aliquam pulvinar. Nulla vitae varius lorem. Pellentesque elit leo, elementum sit amet posuere a, malesuada non velit. Maecenas blandit rutrum enim eu sodales. Nullam mi lectus, vehicula sed arcu vel, volutpat dignissim mauris. Maecenas ultricies, lacus ut cursus molestie, dui nunc efficitur metus, vel pulvinar eros diam id mi. Phasellus convallis accumsan enim ac tempor. Quisque porta velit quis maximus ullamcorper. Mauris dictum ultrices nisi molestie aliquet. Donec dictum iaculis ante eget semper. In sit amet enim ac risus tempus feugiat non eu augue.</p>
+		</div>
+	</article>
+</main>
+
+<style>
+html {
+	background-color: #adaeb0;
+	scrollbar-color: var(--color-bowhead) transparent;
+}
+
+h1,
+h1 + p {
+	max-inline-size: 80vi;
+	text-align: center;
+	text-wrap: balance;
+}
+
+.full-space {
+	box-shadow: inset 0 0 0 calc(var(--size-medium-large) / 3) #adaeb0;
+}
+.full-space:not([data-theme*="nineties"]) {
+	background-image: linear-gradient(var(--degree, 200deg), transparent, var(--color-highland));
+}
+
+.image-split {
+	gap: var(--size-gutter);
+
+	@media (width > 700px) {
+		grid-template-columns:
+			[image-start]
+			clamp(var(--image-split-min, 250px), 40%, var(--image-split-max, 400px))
+			[image-end content-start]
+			auto
+			[content-end];
+		grid-template-rows: auto;
+	}
+}
+
+.image-split--alternate {
+	--degree: 160deg;
+
+	@media (width > 700px) {
+		grid-template-columns:
+			[content-start]
+			auto
+			[content-end image-start]
+			clamp(var(--image-split-min, 150px), 40%, var(--image-split-max, 300px))
+			[image-end];
+	}
+}
+
+.image-split figure {
+	@media (width > 700px) {
+		grid-column: image;
+		grid-row: 1;
+		align-self: start;
+	}
+}
+
+.image-split .flow {
+	{# background-color: var(--color-raven); #}
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	@media (width > 700px) {
+		grid-column: content;
+		grid-row: 1;
+	}
+}
+
+.image-split img {
+	{# filter: brightness(65%) sepia(100%) hue-rotate(var(--hue-rotation)); #}
+}
+
+.image-split:not([data-theme]) {
+	--hue-rotation: 170deg;
+}
+
+.image-split[data-theme*="koala"] {
+	--hue-rotation: 205deg;
+}
+
+.image-split[data-theme*="red-alert"] {
+	--hue-rotation: 315deg;
+}
+</style>

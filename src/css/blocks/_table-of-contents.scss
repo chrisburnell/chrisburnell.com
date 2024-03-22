@@ -44,11 +44,11 @@
 	from {
 		box-shadow:
 			var(--box-shadow, var(--box-shadow-medium)),
-			inset 0 -1em 1.5em 0 color-mix(in oklab, var(--shadow-color), transparent 60%);
+			inset 0 -1em 1.5em 0 color-mix(in oklab, var(--color-shadow), transparent 60%);
 	}
 	to {
 		box-shadow:
 			var(--box-shadow, var(--box-shadow-medium)),
-			inset 0 1em 1.5em 0 color-mix(in oklab, var(--shadow-color), transparent 60%);
+			inset 0 1em 1.5em 0 color-mix(in oklab, var(--color-shadow), transparent 60%);
 	}
 }

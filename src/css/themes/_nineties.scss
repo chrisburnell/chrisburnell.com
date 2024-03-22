@@ -24,13 +24,25 @@
 		backdrop-filter: none;
 	}
 
-	main {
+	main,
+	&.themed-section {
+		font-family: var(--font-family-sans);
+
 		@include allowed-motion {
 			background-image: url("/images/animated/stars.gif");
 		}
 
 		@include reduced-motion {
 			background-image: url("/images/animated/stars.png");
+		}
+	}
+
+	.title:not(.title--positive, .title--negative) .p-name,
+	.navigation__list a {
+		@media not print {
+			background-image: none !important; // override dark theme
+			background-clip: initial;
+			-webkit-text-fill-color: initial;
 		}
 	}
 

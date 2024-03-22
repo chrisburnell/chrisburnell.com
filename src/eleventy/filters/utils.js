@@ -1,8 +1,10 @@
-import { getContent, getPublished, getType } from "@chrisburnell/eleventy-cache-webmentions"
+import { getContent, getPublished, getSource, getType } from "@chrisburnell/eleventy-cache-webmentions"
+import merge from "deepmerge"
 import consoles from "../../data/consoles.js"
 import places from "../../data/places.js"
 import postingMethods from "../../data/postingMethods.js"
 import syndicationTargets from "../../data/syndicationTargets.js"
+import webmentionReplacements from "../config/webmentionReplacements.js"
 import { getHost } from "../filters/urls.js"
 
 /**
@@ -321,6 +323,21 @@ export const isString = (value) => {
 	return typeof value === "string"
 }
 
+/**
+ *
+ * @param {object[]} webmentions
+ * @returns {object[]}
+ */
+export const replaceWebmentions = (webmentions) => {
+	return webmentions.map((webmention) => {
+		const replacement = webmentionReplacements[getSource(webmention)]
+		if (replacement) {
+			return merge(webmention, replacement)
+		}
+		return webmention
+	})
+}
+
 export default {
 	maxDecimals,
 	keyValue,
@@ -341,4 +358,5 @@ export default {
 	getSyndicationTitle,
 	getConsole,
 	isString,
+	replaceWebmentions,
 }
