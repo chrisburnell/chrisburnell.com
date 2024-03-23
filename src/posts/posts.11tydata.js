@@ -1,5 +1,6 @@
 import { getWebmentions } from "@chrisburnell/eleventy-cache-webmentions"
 import configWebmentions from "../eleventy/config/webmentions.js"
+import { untappd } from "../eleventy/data/author.js"
 import { url as siteURL } from "../eleventy/data/site.js"
 import { getCategoryName } from "../eleventy/filters/collections.js"
 import { formatAsMarkdown, stripNewLines } from "../eleventy/filters/strings.js"
@@ -41,11 +42,11 @@ export default {
 		meta_image: (data) => getMetaImage(data),
 		syndicate_to: (data) => {
 			if (data.drink_of) {
-				return ["https://untappd.com/user/${untappd}/checkin/${data.page.fileSlug}"]
+				return [`https://untappd.com/user/${untappd}/checkin/${data.page.fileSlug}`]
 			} else if (data.listen_of) {
-				return ["https://album.link/s/${data.listen_of}"]
+				return [data.listen_of]
 			} else if (data.read_of) {
-				return ["https://openlibrary.org/isbn/${data.read_of}"]
+				return [data.read_of]
 			}
 			return data.syndicate_to || []
 		},

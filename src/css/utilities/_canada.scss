@@ -6,12 +6,14 @@
 .canada {
 	&,
 	* {
-		// For some reason, these two selectors don't play well together
+		// For some reason, ::selection and ::target-text don't play well together
 		&::selection {
-			background-color: h(maple);
+			background-color: h(maple) !important;
+			color: h(snowy) !important;
 		}
 		&::target-text {
-			background-color: h(maple);
+			background-color: h(maple) !important;
+			color: h(snowy) !important;
 		}
 	}
 }

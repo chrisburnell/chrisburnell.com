@@ -164,6 +164,16 @@
 		filter: invert(1) hue-rotate(180deg);
 	}
 
+	// For some reason, ::selection and ::target-text don't play well together
+	::selection {
+		background-color: h(highland);
+		color: h(mineshaft);
+	}
+	::target-text {
+		background-color: h(highland);
+		color: h(mineshaft);
+	}
+
 	///
 	// Exceptions
 	///
