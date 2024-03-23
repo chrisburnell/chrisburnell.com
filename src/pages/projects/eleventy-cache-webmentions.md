@@ -357,7 +357,7 @@ WEBMENTION_IO_TOKEN=njJql0lKXnotreal4x3Wmd
 
 The example below requests the [JF2](https://www.w3.org/TR/jf2/) file format, which I highly recommend using; although, there is a JSON format available from [Webmention.io](https://webmention.io) as well. The [official documentation](https://github.com/aaronpk/webmention.io) has more information on how to use these two formats.
 
-The key difference between the two feed formats is in the *naming* of the keys: the JF2 format holds the array of Webmentions in the `children` key, whereas the JSON format holds them in the `links` key. The JF2 format, however, provides keys and values that more tightly-align with [microformats](https://indieweb.org/microformats), the method I recommend the most for marking up HTML such that it can be consumed and understood by <q>search engines, aggregators, and other tools</q> across the Indieweb.
+The key difference between the two feed formats is in the *naming* of the keys: the JF2 format holds the array of Webmentions in the `children` key, whereas the JSON format holds them in the `links` key. The JF2 format, however, provides keys and values that more tightly-align with [microformats](https://indieweb.org/microformats), the method I recommend the most for marking up HTML such that it can be consumed and understood by <q>search engines, aggregators, and other tools</q> across the IndieWeb.
 
 ```javascript
 const pluginWebmentions = require("@chrisburnell/eleventy-cache-webmentions")
