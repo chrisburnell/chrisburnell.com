@@ -10,10 +10,11 @@
 	box-shadow: var(--box-shadow-low);
 	z-index: var(--z-index-menu);
 
-	@media (height > #{map-get($breakpoints, "small")}) {
-		position: sticky;
-		inset-block-start: 0;
-	}
+	// disable sticky header
+	// @media (height > #{map-get($breakpoints, "small")}) {
+	// 	position: sticky;
+	// 	inset-block-start: 0;
+	// }
 
 	@media print {
 		display: none;

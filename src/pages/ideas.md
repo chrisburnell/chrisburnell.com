@@ -42,6 +42,7 @@ toc: true
     - https://github.com/KiwiKilian/eleventy-plugin-og-image
 - use new eleventy-img transform instead of image shortcode
     - keep an eye on performance here
+- pull data out of fathom analytics for page popularity
 
 ## Admin
 
