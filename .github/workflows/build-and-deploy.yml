@@ -24,38 +24,35 @@ jobs:
         uses: zcong1993/setup-timezone@master
         with:
           timezone: Asia/Singapore
+
       - name: Checkout from git
         uses: actions/checkout@v4
+
       - name: Set the Node version
         uses: actions/setup-node@v4
         with:
           node-version: "20.11.0"
           cache: npm
+
       - name: Install Node Modules
         run: npm ci
-      - name: Restore site cache
-        id: cache-site-restore
-        uses: actions/cache/restore@v4
+
+      - name: Set up site cache
+        id: cache-site
+        uses: actions/cache@v4
         with:
           key: site-cache
           path: |
             .cache
             _site/images
             _site/og-images
+
       - name: Build with npm
         run: npm run build-production
         env:
           NODE_OPTIONS: "--max_old_space_size=8192"
           WEBMENTION_IO_TOKEN: ${{ secrets.WEBMENTION_IO_TOKEN }}
-      - name: Save site cache
-        id: cache-site-save
-        uses: actions/cache/save@v4
-        with:
-          key: ${{ steps.cache-site-restore.outputs.cache-primary-key }}
-          path: |
-            .cache
-            _site/images
-            _site/og-images
+
       - name: Copy files to server
         uses: appleboy/scp-action@master
         with:
@@ -67,6 +64,7 @@ jobs:
           source: "_site/*"
           target: "${{ secrets.DEPLOY_PATH }}build"
           strip_components: 1
+
       - name: Process on server
         uses: appleboy/ssh-action@master
         with:
