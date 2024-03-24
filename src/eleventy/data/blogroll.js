@@ -723,6 +723,11 @@ const blogroll = [
 		rss: "https://lars-christian.com/feed/",
 		mastodon: "lars@mastodon.social",
 	},
+	{
+		title: "starbreaker",
+		url: "https://starbreaker.org",
+		rss: "https://starbreaker.org/feeds/recent.xml",
+	},
 ].sort((a, b) => {
 	return a.title.localeCompare(b.title)
 })

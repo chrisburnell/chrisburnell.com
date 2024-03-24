@@ -56,7 +56,7 @@ By stripping our websites of CSS, and even building our websites *without CSS fi
 
 We’re doing ourselves innumerable favours by building in this way, too. By making sure that buttons are represented by `<button>` elements, headings and menus follow a natural hierarchy, what is part of the page’s content is not tucked into a pseudo element, etc. we have baked functionality, styles, and even critical accessibility hooks into our webpages.
 
-By removing veils between us and the browser, we get a much clearer picture of what the browser is doing when it interprets and represents out HTML, and making drastically more apparent when there are issues. Just by preparing my website for this year, I was able to quickly find and rectify a number of problems with relatively-trivial fixes. To name a few:
+By removing veils between us and the browser, we get a much clearer picture of what the browser is doing when it interprets and represents our HTML, and making drastically more apparent when there are issues. Just by preparing my website for this year, I was able to quickly find and rectify a number of problems with relatively-trivial fixes. To name a few:
 
 - a more-complete understanding of the `hidden`/`disabled`/`inert`/`aria-hidden` attributes, and finding ways to better use them alongside <q>visually-hidden</q> classes, etc.
 - a number of semantic HTML fixes, not limited to:

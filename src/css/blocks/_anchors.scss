@@ -31,7 +31,7 @@ h2 %anchor:not(:hover, :focus, :active) {
 	position: absolute;
 	inset-block-start: 50%;
 	inset-inline-end: 0;
-	transform: translateY(-50%);
+	transform: translateY(calc(-50% - 0.2cap));
 	font-family: var(--font-family-monospace);
 	font-size: 0.8em;
 	font-weight: var(--font-weight-semibold);

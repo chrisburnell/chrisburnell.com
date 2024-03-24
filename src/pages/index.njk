@@ -15,7 +15,7 @@ excludeFromSearch: true
 <article class=" [ pantheon ] [ wrap ] [ page ] [ perch ] ">
 
 	<h1 id="title" class=" [ title{% if title_error %}  title--negative{% elif title_success %}  title--positive{% endif %} ] ">
-		<span class=" [ p-name ] ">{% if global.cssnakedday %}{{ tagline | replace('CSS', '<s>CSS</s>') | safe }}{% else %}{{ tagline | safe }}{% endif %}</span>
+		<span class=" [ p-name ] ">{% if global.isCSSNakedDay %}{{ tagline | replace('CSS', '<s>CSS</s>') | safe }}{% else %}{{ tagline | safe }}{% endif %}</span>
 	</h1>
 
 	<div class=" [ description ] [ flow ] [ p-summary ] " aria-hidden="true">
@@ -25,7 +25,7 @@ excludeFromSearch: true
 	<div class=" [ content ] [ flow ] ">
 		{% include 'lfw.njk' %}
 
-		{% if global.cssnakedday -%}
+		{% if global.isCSSNakedDay -%}
 			{% include 'css-naked-day.njk' %}
 		{%- endif %}
 

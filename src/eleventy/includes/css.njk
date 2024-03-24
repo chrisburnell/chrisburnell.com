@@ -1,4 +1,4 @@
-{% if not global.cssnakedday -%}
+{% if not global.isCSSNakedDay -%}
 	{# Critical CSS -#}
 	{%- if eleventy.env.runMode !== 'build' %}
 		{# External files (local dev live reload will refresh without page reload) -#}

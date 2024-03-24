@@ -16,7 +16,7 @@ Recently, I wrote *[Why I participated in CSS Naked Day](/article/why-css-naked-
 <summary>TL;DR: The JavaScript function</summary>
 
 ```javascript
-const cssnakedday = () => {
+const isCSSNakedDay = () => {
 	const now = Date.now()
 	const thisYear = new Date().getFullYear()
 	const startEpoch = new Date(`${thisYear}-04-09T00:00:00+1400`).getTime()
@@ -43,7 +43,7 @@ In our case, the question that we're concerned with is: <q>Is it CSS Naked Day?<
 
 When **both** of those conditions hold true, we know that it is currently CSS Naked Day.
 
-Now let’s put our function into a Global Data File, e.g. `_data/cssnakedday.js`:
+Now let’s put our function into a Global Data File, e.g. `_data/isCSSNakedDay.js`:
 
 ```javascript
 module.exports = () => {
@@ -60,7 +60,7 @@ The returned value of this function, a boolean `true`/`false`, can then be used 
 
 {% raw %}
 ```twig
-{% if not cssnakedday %}
+{% if not isCSSNakedDay %}
 	<link rel="stylesheet" href="/css/global.css">
 {% endif %}
 ```

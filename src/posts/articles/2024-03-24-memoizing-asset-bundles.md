@@ -1,6 +1,5 @@
 ---
-draft: true
-date: 2024-02-15T22:17:00+0800
+date: 2024-03-24T19:26:00+0800
 title: How I shaved 1.5 minutes off my Eleventy build time
 description: I had a revelation earlier today that solved a long-standing performance issue I’ve been having with the initial build of my Eleventy website, and here’s how it saved me a bunch of time!
 tags:
@@ -10,36 +9,39 @@ wide: true
 ---
 
 <div class=" [ box ] [ line-length ] " style="margin-block-end: var(--size-large);">
+    <p>Just want to learn how to speed up your build?</p>
     <p>Jump to the code: <a href="#memoizing-assets">Memoizing Assets</a></p>
 </div>
 
-I recently had the pleasure of watching [Zach Leatherman’s](https://zachleat.com) amazing talk, [<q>Lessons learned moving Eleventy from CommonJS to ESM in 2024</q>](https://www.youtube.com/watch?v=LsN6TBx9Hxo), at [TheJam.dev 2024](https://cfe.dev/events/the-jam-2024/). As with all of Zach’s work, it was truly inspiring and stoked the embers of motivation into a roaring flame.
+Back in January, I had the pleasure of watching [Zach Leatherman’s](https://zachleat.com) amazing talk, [<q>Lessons learned moving Eleventy from CommonJS to ESM in 2024</q>](https://www.youtube.com/watch?v=LsN6TBx9Hxo), at [TheJam.dev 2024](https://cfe.dev/events/the-jam-2024/). As with so much of Zach’s work, it was truly inspiring and helped stoke the embers of motivation into a roaring flame.
 
-He spoke—*unsurprisingly*—about all the work that went into getting ESM support into [Eleventy](https://11ty.dev) (available on [version 3’s alpha releases](https://www.npmjs.com/package/@11ty/eleventy?activeTab=versions)); some behind-the-scenes stuff that makes Eleventy so forgiving and easy for developers to work with, mixing both CommonJS and ESM, in particular; and some tips, tricks, and how-tos to get started using ESM in Eleventy today.
+He spoke (*unsurprisingly*) about all the work that went into getting ESM support into [Eleventy](https://11ty.dev) (available on [version 3’s alpha releases](https://www.npmjs.com/package/@11ty/eleventy?activeTab=versions)); some behind-the-scenes work that makes Eleventy so forgiving and easy for developers to work with, in particular, the ability to mix both CommonJS and ESM JavaScript; and some tips, tricks, and how-tos to get started using ESM in Eleventy today.
 
-Naturally, I was chomping at the bit to convert my CommonJS over to ESM, so with the alpha releases being available, I decided to take the opportunity to start a *big old refactor* of my website. It wasn’t much of a chore at all to convert things over to the ESM syntax, so a majority of the work ahead of me had more to do with brushing aside cobwebs and picking apart code that had been left untouched for a long time.
+Naturally, I was chomping at the bit to convert my CommonJS over to ESM, so with the alpha releases being available, I decided to take the opportunity to start a **complete website refactor**.
 
-<q>If it ain’t broke, don’t fix it.</q>
+## <q>If it ain’t broke, don’t fix it.</q>
 
 Well, I felt like breaking things. If it meant the end result would be more maintainable than what I started with, I tore it apart and put it back together with the knowledge I’d accumulated in the many years since I first built it.
 
-It was a slow and sometimes tedious process but also a cathartic one, and I’m glad I took the time to do it. I’m even more proud of my website, my favourite thing that I own, as a result. Good vibes all around. <c-emoji>☺️</c-emoji>
+It wasn’t much of a chore at all to convert things over to the ESM syntax, so a majority of the work ahead of me had more to do with brushing aside cobwebs and picking apart code that had been left untouched for a long time.
+
+Reviewing all the code that makes up my Eleventy build *was* a slow and sometimes tedious process but also a cathartic one, and I’m glad I took the time to do it. I’m even more proud of my website, my favourite thing that I own, as a result. Good vibes all around. <c-emoji>☺️</c-emoji>
 
 But after a *tonne* of refactoring, I found my build times getting bigger and bigger.
 
 ## Trudging Along
 
-It’s definitely worth mentioning that there are over 1,200 files being written by Eleventy for my website, so I don’t expect everything to be built *instantly*! However, when the initial build started taking **2–3 minutes**, I knew something was wrong.
+It’s definitely worth mentioning that there are nearly 1,300 files being written by Eleventy for my website, so I don’t expect everything to be built *instantly*! However, when my local build times started climbing to **2–3 minutes** and **~10 minutes** for my GitHub Action that builds and deploys my website… I knew something was wrong.
 
 Or, more likely, *I* was doing something wrong.
 
-I battled against these excruciating build times for a couple of weeks as I tinkered on the rebuild here and there, and the mental and waiting around was *more* than getting to me.
+I battled against these excruciating build times for a couple of weeks as I tinkered on the rebuild here and there, and the mental overhead and waiting around was *more* than getting to me.
 
 **Enough is enough!**
 
 It was time to get to the bottom of things.
 
-I had noticed, through using [Eleventy’s Debug Mode](https://www.11ty.dev/docs/debugging/), that the [Bundler Plugin](https://github.com/11ty/eleventy-plugin-bundle) was taking huge chunk of the 2–3 minute build time. This probably wasn’t an issue coming just from using the Bundle plugin, and much more likely to be a result calling the `renderFile` shortcode from the [Render Plugin](https://www.11ty.dev/docs/plugins/render/) inside the `css` and `js` shortcodes from the Bundler plugin on every page:
+I had noticed, through using [Eleventy’s Debug Mode](https://www.11ty.dev/docs/debugging/), that the [Bundler Plugin](https://github.com/11ty/eleventy-plugin-bundle) was taking huge chunk of the build time. This probably wasn’t an issue coming just from using the Bundle plugin, and much more likely to be a result calling the `renderFile` shortcode from the [Render Plugin](https://www.11ty.dev/docs/plugins/render/) inside the `css` and `js` shortcodes from the Bundler plugin on every page:
 
 {% raw %}
 ```twig
@@ -53,9 +55,9 @@ I had noticed, through using [Eleventy’s Debug Mode](https://www.11ty.dev/docs
 ```
 {% endraw %}
 
-Painfully, Eleventy was taking around **50 milliseconds** to process the asset bundling for each page. With **~1,100 pages**, this meant that **~55 seconds** of the initial build was spent preparing asset bundles for all the pages.
+Painfully, Eleventy was taking around **50 milliseconds** to process the asset bundling for *every single page*. With ~1,200 pages, this meant that **~60 seconds** of the initial build was spent just preparing asset bundles on each page.
 
-**Not great.**
+**Not great. Not great at all.**
 
 ## Lightning Strikes
 
@@ -96,9 +98,7 @@ By caching the result of the `renderFile` shortcodes pointing to CSS and JavaScr
 
 <h2 id="memoizing-assets">Memoizing Build Assets</h2>
 
-Part of my build already included a plugin that added JavaScript as a templating language, pumps rendered JS files through [esbuild](https://esbuild.github.io/), and spits out the result. This allowed me to
-
-So here it is, the contents of my plugin that adds JavaScript as a templating language, pumps rendered JS files through [esbuild](https://esbuild.github.io/), and adds memoization so that repeated calls are pulled from a cached object.
+Part of my build already included a plugin that adds JavaScript as a templating language, pumps rendered JS files through [esbuild](https://esbuild.github.io/), and spits out the result. Slotting memoization into this build process was quite straightforward, and instantly cut down my build times significantly!
 
 ```javascript
 import esbuild from "esbuild"
@@ -135,6 +135,7 @@ export default function (eleventyConfig) {
 					target: "es6",
 					bundle: true,
 					minify: true,
+					keepNames: true,
 					write: false,
 				})
 
@@ -219,4 +220,8 @@ export default function (eleventyConfig) {
 
 </c-details>
 
-And with that small addition, the initial build time of my website was zapped down to just 30 seconds. Monumental savings, if you ask me!
+And with that relatively small addition, the initial build time of my website was zapped down from 2–3 minutes to just 30 seconds! Monumental savings, if you ask me!
+
+I’m still searching for more places to apply memoization to see if I can reduce the amount of computation required by my build and squeeze my build times even further. Please get in touch if you have any ideas or insights!
+
+If you want to explore adding memoization to your asset bundling, you can check out my [JavaScript build process](https://github.com/chrisburnell/chrisburnell.com/blob/e435e0c9bda73557ec0ec4e00b67d3a6c9c81e73/src/eleventy/plugins/javascript.js) and [SCSS build process](https://github.com/chrisburnell/chrisburnell.com/blob/e435e0c9bda73557ec0ec4e00b67d3a6c9c81e73/src/eleventy/plugins/scss.js) in my [git repository on GitHub](https://github.com/chrisburnell/chrisburnell.com).

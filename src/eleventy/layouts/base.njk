@@ -19,7 +19,7 @@ layout: root
 			<button class=" [ anchor ] [ popover-settings-button ] [ requires-js ] " popovertarget="popover-settings" title="Open Settings">
 				<svg width="24" height="24" aria-hidden="true" focusable="false"><use href="#svg--cog"></use></svg>
 			</button>
-			{% if not global.cssnakedday -%}
+			{% if not global.isCSSNakedDay -%}
 				<button class=" [ anchor ] [ popover-navigation-button ] [ requires-js ] " popovertarget="popover-navigation" title="Open Navigation">
 					<svg width="24" height="24" aria-hidden="true" focusable="false"><use href="#svg--hamburger"></use></svg>
 				</button>
@@ -29,7 +29,7 @@ layout: root
 </header>
 
 <div id="popover-settings" class=" [ popover-settings ] [ flow ] [ gamma ] " popover>
-	{% if not global.cssnakedday -%}
+	{% if not global.isCSSNakedDay -%}
 		{%- include 'theme-selector.njk' -%}
 	{%- endif %}
 	<button id="sounds-toggle" class=" [ anchor ] [ no-wrap ] [ js-sounds-toggle ] ">
@@ -37,7 +37,7 @@ layout: root
 	</button>
 </div>
 
-{% if not global.cssnakedday -%}
+{% if not global.isCSSNakedDay -%}
 	<div id="popover-navigation" class=" [ popover-navigation ] [ flow ] [ gamma ] " popover>
 		<ol class=" [ navigation__list ] ">
 			{% for link in navigation %}

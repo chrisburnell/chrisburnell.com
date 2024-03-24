@@ -43,7 +43,7 @@ truncate: true
 	{% endif %}
 
 	<div id="content" class=" [ content{% if collection[0].data.list == 'shelf' %}  full{% endif %} ] [ flow ] [ h-feed ] ">
-		{% if global.cssnakedday -%}
+		{% if global.isCSSNakedDay -%}
 			{% include 'css-naked-day.njk' %}
 		{%- endif %}
 
