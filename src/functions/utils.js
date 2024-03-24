@@ -86,7 +86,7 @@ export const simpleMovingAverage = (values, period, preserveEnds = false) => {
  * @param {number} [coefficient]
  * @returns {number}
  */
-export const exponentialMovingAverage = (value, current = 0, coefficient = 0.333) => {
+export const exponentialMovingAverage = (value, current = 0, coefficient = 0.5) => {
 	return coefficient * value + (1 - coefficient) * current
 }
 
