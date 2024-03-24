@@ -9,22 +9,20 @@ is-land {
 	display: block;
 }
 
-// CodePen Embeds
-.cp_embed_wrapper {
+// Codepen Embed, Speaker Deck Embed
+:is(.cp_embed_wrapper, .speakerdeck-embed-wrapper) {
 	--max-inline-size: auto;
 	--gutter: 0;
 
-	resize: both;
 	padding: 0;
-	overflow: auto;
 
 	iframe {
 		margin-block-end: 0;
 	}
 }
 
-// Speakerdeck Embeds
-.speakerdeck-embed-wrapper {
-	--max-inline-size: auto;
-	--gutter: 0;
+// CodePen Embeds
+.cp_embed_wrapper {
+	resize: both;
+	overflow: auto;
 }
