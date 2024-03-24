@@ -231,3 +231,8 @@ Monumental savings, if you ask me!
 I’m still searching for more places to apply memoization to see if I can reduce the amount of computation required by my build and squeeze my build times even further. Please get in touch if you have any ideas or insights!
 
 If you want to explore adding memoization to your asset bundling, you can check out my [JavaScript build process](https://github.com/chrisburnell/chrisburnell.com/blob/e435e0c9bda73557ec0ec4e00b67d3a6c9c81e73/src/eleventy/plugins/javascript.js) and [SCSS build process](https://github.com/chrisburnell/chrisburnell.com/blob/e435e0c9bda73557ec0ec4e00b67d3a6c9c81e73/src/eleventy/plugins/scss.js) in my [git repository on GitHub](https://github.com/chrisburnell/chrisburnell.com).
+
+There are also a couple of issues about memoization being part of Eleventy core on GitHub that you might want to check out:
+
+- [Would it make sense to memoize some functions in Eleventy core?](https://github.com/11ty/eleventy/issues/2861)
+- [Can Eleventy cache filters or template includes?](https://github.com/11ty/eleventy/issues/840)
