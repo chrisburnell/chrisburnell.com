@@ -74,7 +74,7 @@
 
 // Disable things which require motion when reduced-motion is on
 .requires-motion {
-	@include reduced-motion {
+	@media (prefers-reduced-motion: reduce) {
 		display: none;
 	}
 }

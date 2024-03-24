@@ -28,11 +28,11 @@
 	&.themed-section {
 		font-family: var(--font-family-sans);
 
-		@include allowed-motion {
+		@media (prefers-reduced-motion: no-preference) {
 			background-image: url("/images/animated/stars.gif");
 		}
 
-		@include reduced-motion {
+		@media (prefers-reduced-motion: reduce) {
 			background-image: url("/images/animated/stars.png");
 		}
 	}

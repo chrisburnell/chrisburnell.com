@@ -8,10 +8,7 @@ toc: true
 
 ## Posts
 
-- Why I write on my website, and why it's for me
-- Version 4.0.0
-- How I shaved 1.5 minutes off my Eleventy build time
-    - Edit this to remove some bits about the refactor/rebuild
+- Version 4.0.0… maybe…
 - Post about /interests page
 - Short post about my guestbook
 - How I'm handling dates in Eleventy now that I've moved timezones
