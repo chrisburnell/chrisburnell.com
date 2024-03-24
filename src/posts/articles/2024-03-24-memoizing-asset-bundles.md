@@ -6,6 +6,8 @@ tags:
   - eleventy
   - javascript
 wide: true
+syndicate_to:
+  - https://fediverse.repc.co/@chrisburnell/112150957494199196
 ---
 
 <div class=" [ box ] [ line-length ] " style="margin-block-end: var(--size-large);">
