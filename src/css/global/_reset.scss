@@ -15,7 +15,7 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-	:where(html:focus-within) {
+	:where(html:focus-within:has([name="smooth-scroll"]:checked)) {
 		scroll-behavior: smooth;
 	}
 }

@@ -29,12 +29,7 @@ layout: root
 </header>
 
 <div id="popover-settings" class=" [ popover-settings ] [ flow ] [ gamma ] " popover>
-	{% if not global.isCSSNakedDay -%}
-		{%- include 'theme-selector.njk' -%}
-	{%- endif %}
-	<button id="sounds-toggle" class=" [ anchor ] [ no-wrap ] [ js-sounds-toggle ] ">
-		<c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false" style="fill: var(--color-raven);"><use href="#svg--sound-off"></use></svg></c-emoji><span class=" [ js-sounds-status ] ">Enable sounds</span>
-	</button>
+	{%- include 'settings.njk' -%}
 </div>
 
 {% if not global.isCSSNakedDay -%}

@@ -90,6 +90,13 @@ input {
 	}
 }
 
+:is([type="checkbox"], [type="radio"]) {
+	inline-size: 1.5em;
+	block-size: 1.5em;
+	vertical-align: middle;
+	margin-block-start: calc(1ex - 1cap);
+}
+
 textarea {
 	overflow: auto;
 	scrollbar-gutter: stable;
