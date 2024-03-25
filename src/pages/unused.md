@@ -5,7 +5,6 @@ tags: []
 sitemap:
   exclude: true
 excludeFromSearch: true
-monetization: false
 ---
 
 {% image './images/content/feature-watch.png', 'A screenshot of my component which displays browser support for given HTML/CSS/JavaScript/Web features' %}

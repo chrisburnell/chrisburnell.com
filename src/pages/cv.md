@@ -5,7 +5,6 @@ eleventyComputed:
   description: "{{ author.role | title }}{% if not author.employer %} and Software Engineer{% else %}, Software Engineer, and {{ author.employer.role | title }} at {{ author.employer.title }}{% endif %}"
 content_class: h-resume
 og_image: /images/avatar@2x.jpeg
-monetizaton: false
 toc: true
 ---
 

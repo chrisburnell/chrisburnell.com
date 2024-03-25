@@ -5,7 +5,7 @@ description: Unused Shorturls Page
 tags: []
 sitemap:
   exclude: true
-monetization: false
+excludeFromSearch: true
 ---
 
 {% raw %}

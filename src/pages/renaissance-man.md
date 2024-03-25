@@ -4,7 +4,6 @@ title: Renaissance Man
 description: test
 sitemap:
   exclude: true
-monetization: false
 ---
 
 ## Renaissance Man

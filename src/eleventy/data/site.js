@@ -11,10 +11,9 @@ export const timezone = "Asia/Singapore"
 export const established = "2008"
 export const favicon = "/images/favicon-256.png"
 export const logo = "/images/raven.svg"
-export const speedlify = "chrisburnell"
-export const monetization = "$ilp.uphold.com/wDqKwewbX8by"
-export const fathom_siteid = "NMGWH"
 export const upcomingDaysLead = 7
+export const speedlify = "chrisburnell"
+export const fathom_siteid = "NMGWH"
 
 export const limits = {
 	deck: 2,
@@ -69,7 +68,6 @@ export default {
 	favicon,
 	logo,
 	speedlify,
-	monetization,
 	upcomingDaysLead,
 	limits,
 	sitemap,

@@ -21,8 +21,6 @@ perch: true
 	{% sparkline collection, first_year %}
 
 	<div id="content" class=" [ content ] [ flow ] ">
-		{% include 'lfw.njk' %}
-
 		{% if global.isCSSNakedDay -%}
 			{% include 'css-naked-day.njk' %}
 		{%- endif %}

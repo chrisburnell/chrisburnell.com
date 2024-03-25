@@ -108,9 +108,6 @@
 		<meta property="profile:username" content="{{ author.shortname }}">
 		{%- endif %}
 
-		{% if eleventy.env.runMode === 'build' and site.monetization and monetization != false -%}
-		<meta name="monetization" content="{{ site.monetization }}">
-		{%- endif %}
 		{%- endif %}{# end non-httpstatus #}
 	</head>
 	<body>
