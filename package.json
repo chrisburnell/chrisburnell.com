@@ -43,6 +43,7 @@
     "@chrisburnell/eleventy-cache-webmentions": "^2.0.1",
     "@chrisburnell/inline-expand": "^0.0.1",
     "@chrisburnell/instant-photo": "^1.0.0",
+    "@chrisburnell/paper-stamp": "^0.0.1",
     "@chrisburnell/pentatonic": "^1.1.4",
     "@chrisburnell/spark-line": "^1.2.6",
     "@chrisburnell/svg-sparkline": "^1.0.10",

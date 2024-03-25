@@ -1,29 +1,33 @@
-<storage-form>
-	<form class=" [ flow ] " style="--flow-space: 1em;">
-		{% if not global.isCSSNakedDay -%}
-			<fieldset>
-				<label for="theme-selector">Select a theme:</label>
-				<select id="theme-selector" name="theme" autocomplete="off">
-					<optgroup label="Select a theme">
-						<option value="" selected>Browser Default</option>
-						{% for theme in themes %}
-							<option value="{{ theme.id }}">
-								{{ theme.title }}
-							</option>
-						{% endfor %}
-					</optgroup>
-				</select>
-			</fieldset>
+<storage-form class=" [ flow ] " style="--flow-space: 1em;">
+	{% if not global.isCSSNakedDay -%}
+		<form>
+			<label for="theme-selector">Select a theme:</label>
+			<select id="theme-selector" name="theme" autocomplete="off">
+				<optgroup label="Select a theme">
+					<option value="" selected>Browser Default</option>
+					{% for theme in themes %}
+						<option value="{{ theme.id }}">
+							{{ theme.title }}
+						</option>
+					{% endfor %}
+				</optgroup>
+			</select>
+		</form>
+		<form>
+			<label for="high-contrast-toggler">High Contrast</label>
+			<input type="hidden" name="high-contrast" value />
+			<input type="checkbox" id="high-contrast-toggler" name="high-contrast" value="true" />
+		</form>
 		{%- endif %}
-		<fieldset>
+		<form>
 			<label for="smooth-scroll-toggler">Smooth Scroll</label>
-			<input type="hidden" name="smooth-scroll" value />
-			<input type="checkbox" checked id="smooth-scroll-toggler" name="smooth-scroll" value="true" autocomplete="off" />
-		</fieldset>
-		<fieldset>
+			<input type="hidden" name="smooth-scroll" value="false" />
+			<input checked type="checkbox" id="smooth-scroll-toggler" name="smooth-scroll" value="true" />
+		</form>
+		<form>
 			<label for="user-sounds-toggler">Website Sounds</label>
 			<input type="hidden" name="user-sounds" value />
-			<input type="checkbox" id="user-sounds-toggler" name="user-sounds" value="true" autocomplete="off" />
-		</fieldset>
+			<input type="checkbox" id="user-sounds-toggler" name="user-sounds" value="true" />
+		</form>
 	</form>
 </storage-form>
