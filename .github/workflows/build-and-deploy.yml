@@ -11,6 +11,9 @@ on:
     - cron: "33 7 * * *"
     - cron: "33 13 * * *"
     - cron: "33 19 * * *"
+    # CSS Naked Day switches
+    - cron: "0 10 8 4 *"
+    - cron: "0 12 10 4 *"
 
 concurrency:
   group: build-and-deploy
