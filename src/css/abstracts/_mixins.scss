@@ -61,8 +61,7 @@
 /// Target Media Queries which should nullify animations/transitions/etc.
 ///
 @mixin reduced-motion {
-	// @media (prefers-reduced-motion: reduce) or (update: none) or (update: slow) {
-	@media (prefers-reduced-motion: reduce) {
+	@media (prefers-reduced-motion: reduce) or (update: none) or (update: slow) {
 		@content;
 	}
 }
@@ -71,8 +70,7 @@
 /// Target Media Queries which allow animations/transitions/etc.
 ///
 @mixin allowed-motion {
-	// @media (prefers-reduced-motion: no-preference) and (update: fast) {
-	@media (prefers-reduced-motion: no-preference) {
+	@media (prefers-reduced-motion: no-preference) and (update: fast) {
 		@content;
 	}
 }
