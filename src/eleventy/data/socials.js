@@ -30,13 +30,6 @@ export default [
 		fill: "#595aff",
 	},
 	{
-		title: "Bluesky",
-		url: "https://bsky.app/profile/",
-		key: "bluesky",
-		fill: "url(#bluesky)",
-		hidden: true,
-	},
-	{
 		title: "Discord",
 		key: "discord",
 	},
