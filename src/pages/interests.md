@@ -6,10 +6,6 @@ description: A list of things I like in no particular order; maybe we have some 
 toc: true
 ---
 
-<div class=" [ box ] [ center ] " style="inline-size: var(--size-line-length); inline-size: fit-content; margin-block-end: var(--size-large); font-size: var(--font-size-beta-min);">
-	<p>This page is a work-in-progress!</p>
-</div>
-
 ## Tech Stuff
 
 ### CSS
