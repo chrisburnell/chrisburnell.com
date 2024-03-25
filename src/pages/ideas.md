@@ -1,5 +1,4 @@
 ---
-draft: true
 title: "/ideas"
 tagline: Ideas
 description: Things I’d like to work on.
