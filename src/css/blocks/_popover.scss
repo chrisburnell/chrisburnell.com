@@ -101,3 +101,9 @@
 		}
 	}
 }
+
+@media (prefers-reduced-motion: reduce) {
+	fieldset:has([name="smooth-scroll"]) {
+		display: none;
+	}
+}
