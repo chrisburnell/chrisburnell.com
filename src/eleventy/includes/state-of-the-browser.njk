@@ -1,0 +1,32 @@
+<div class=" [ state-of-the-browser ] [ box  box--line-length ] [ flow ] [ no-print ] " data-pagefind-ignore>
+	<a href="https://2024.stateofthebrowser.com" rel="external" style="display: block;" tabindex="-1">{% image './images/content/sotb-banner.svg', 'State of the Browser logo', '', [400] %}</a>
+	<p class=" [ small ] "><a href="https://2024.stateofthebrowser.com" class=" [ delta ] " rel="external">State of the Browser</a>, a yearly one-day, single-track conference with widely-varying talks about the modern web, accessibility, web standards, and more, is back for its <em>twelfth</em> year! <br>Join in-person in London or online <time datetime="2024-09-14T09:30+01:00" data-relative aria-hidden="true"></time> <strong><time datetime="2024-09-14T09:30+01:00">Saturday, September 14<sup>th</sup>, 2024</time></strong>!</p>
+	<div class=" [ grid  navigator  center ] [ small ] " style="--flow-space: 1rem;">
+		<a class=" [ button ] " href="https://2024.stateofthebrowser.com/tickets/"><c-emoji>{{ emojis.ticket }}</c-emoji> Get yourself a ticket!</a>
+	</div>
+	<storage-form class="requires-js">
+		<form>
+			<label for="hide-sotb-toggler" class=" [ strong ] ">Hide this banner</label>
+			<input type="hidden" name="hide-sotb" value />
+			<input type="checkbox" id="hide-sotb-toggler" name="hide-sotb" value="true" />
+		</form>
+	</storage-form>
+</div>
+{%- css 'critical' -%}
+.state-of-the-browser:has(:checked) {
+	display: none;
+}
+.state-of-the-browser {
+	--raven-lightness: 53.42%;
+	--raven-chroma: 0.155;
+	--raven-hue: 337.82;
+	--color-raven: oklch(var(--raven-lightness) var(--raven-chroma) var(--raven-hue));
+	--color-bowhead: color-mix(in oklab, var(--color-raven), var(--color-thunder) 33%);
+	--color-highland: color-mix(in oklab, var(--color-raven), var(--color-snowy) 33%);
+	margin-block-end: var(--size-large-gigantic);
+}
+.state-of-the-browser form {
+	margin-block-start: 1em;
+	text-align: center;
+}
+{%- endcss %}

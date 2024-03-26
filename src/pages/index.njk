@@ -23,7 +23,13 @@ excludeFromSearch: true
 	</div>
 
 	<div class=" [ content ] [ flow ] ">
-		{% include 'lfw.njk' %}
+		{% if author.employer.title != '' -%}
+			{% include 'lfw.njk' %}
+		{%- endif %}
+
+		{% if ((('2024-09-14T09:30:00+0100' | epoch) - global.now) / 1000 / 60 / 60 / 24) < 14 -%}
+			{% include 'state-of-the-browser.njk' %}
+		{%- endif %}
 
 		{% if global.isCSSNakedDay -%}
 			{% include 'css-naked-day.njk' %}

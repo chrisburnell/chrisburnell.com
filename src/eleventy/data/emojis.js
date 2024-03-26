@@ -47,4 +47,5 @@ export default {
 	tools: "🛠️",
 	star: "⭐",
 	now: "⏲️",
+	ticket: "🎟️",
 }

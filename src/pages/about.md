@@ -8,7 +8,9 @@ eleventyComputed:
   description: "{{ site.description | safe }}"
 ---
 
-{% include 'lfw.njk' %}
+{% if author.employer.title != '' -%}
+    {% include 'lfw.njk' %}
+{%- endif %}
 
 <p hidden><strong>I’ve got a <a href="https://chrisburnell.com/cv/">CV / resumé</a>, if that’s what you’re looking for.</strong></p>
 
