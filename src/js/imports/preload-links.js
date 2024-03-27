@@ -10,7 +10,8 @@ class PreloadLinks {
 		}
 
 		const origin = new URL(location).origin
-		this.anchors = document.querySelectorAll(`[href^="/"], [href^="${origin}"])`)
+		const pathname = new URL(location).pathname
+		this.anchors = document.querySelectorAll(`a:is([href^="/"], [href^="${origin}"]):not([href="${location}"]):not([href="${pathname}"])`)
 		this.head = document.querySelector("head")
 		this.preloadedLinks = []
 		this.preloadTimeout
