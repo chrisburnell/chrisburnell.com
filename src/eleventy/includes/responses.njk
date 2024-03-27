@@ -20,7 +20,7 @@
 			{%- set reposts = webmentions | getWebmentionsByTypes(['repost-of']) -%}
 			{%- set links = webmentions | getWebmentionsByTypes(['mention-of']) -%}
 			{%- set socialReplies = webmentions | getSocialReplies -%}
-			{%- set reactions = bookmarks.concat(likes).concat(reposts).concat(socialReplies).concat(links) -%}
+			{%- set reactions = bookmarks.concat(likes).concat(reposts).concat(links).concat(socialReplies) -%}
 			{%- set directReplies = webmentions | getDirectReplies -%}
 			{%- set stargazers = stargazers | default(0) -%}
 			{%- set responsesLength = reactions.length + directReplies.length + stargazers -%}
@@ -37,11 +37,11 @@
 						{% if reposts.length -%}
 							<li><c-emoji>{{ emojis.repost }}</c-emoji> {{ reposts.length }} Repost{{ 's' if reposts.length > 1 }}</li>
 						{%- endif %}
-						{% if socialReplies.length -%}
-							<li><c-emoji>{{ emojis.syndication }}</c-emoji> {{ socialReplies.length }} Social {% if socialReplies.length > 1 %}Replies{% else %}Reply{% endif %} (on {% for syndication in syndicate_to -%}<a href="{{ syndication | tweetback }}">{{ syndication | getSyndicationTitle }}</a>{%- if not loop.last %}, {% endif %}{%- endfor %})</li>
-						{%- endif %}
 						{% if links.length -%}
 							<li><c-emoji>{{ emojis.link }}</c-emoji> {{ links.length }} Link{{ 's' if links.length > 1 }}</li>
+						{%- endif %}
+						{% if socialReplies.length -%}
+							<li><c-emoji>{{ emojis.syndication }}</c-emoji> {{ socialReplies.length }} Social {% if socialReplies.length > 1 %}Replies{% else %}Reply{% endif %} (on {% for syndication in syndicate_to -%}<a href="{{ syndication | tweetback }}">{{ syndication | getSyndicationTitle }}</a>{%- if not loop.last %}, {% endif %}{%- endfor %})</li>
 						{%- endif %}
 						{% if stargazers -%}
 							<li><c-emoji>{{ emojis.stars }}</c-emoji> <a href="https://github.com/{{ github }}">{{ stargazers }} Stargazer{{ 's' if stargazers > 1 }}</a></li>
