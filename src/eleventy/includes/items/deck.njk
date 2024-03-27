@@ -58,7 +58,7 @@
 				{%- set directReplies = item.data.webmentions | getDirectReplies -%}
 				{%- set responsesLength = reactions.length + directReplies.length -%}
 				<li>
-					<a href="{{ item.url }}#respond" title="Jump to responses for this {{ item.data.categoryProper }}">{{ responsesLength }} response{{ 's' if responsesLength > 1 }} <span class=" [ visually-hidden ] ">to this {{ item.data.categoryProper | default(item.data.category) | default('page') }}</span></a>
+					<a href="{{ item.url }}#respond" title="Jump to responses for this {{ item.data.categoryProper | default(item.data.category) | title }}">{{ responsesLength }} response{{ 's' if responsesLength > 1 }} <span class=" [ visually-hidden ] ">to this {{ item.data.categoryProper | default(item.data.category) | default('page') }}</span></a>
 				</li>
 			{% endif %}
 		</ul>
