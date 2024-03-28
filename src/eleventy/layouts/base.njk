@@ -74,7 +74,7 @@ layout: root
 				{%- endif -%}
 			{%- endfor -%}
 		</ul>
-		{% include 'badges.njk' %}
+		{% include 'badges-88x31.njk' %}
 		{% include 'webrings.njk' %}
 		{% if speedlify[canonical] -%}
 			<p class=" [ speedlify ] "><a href="{{ site.urls.speedlify }}/{{ site.speedlify }}/#site-{{ speedlify[canonical].hash }}" class="[ speedlify-anchor ] " title="Link to this page's Speedlify Score"><c-speedlify-score hash="{{ speedlify[canonical].hash }}" score weight requests></c-speedlify-score></a></p>

@@ -72,9 +72,16 @@
 	scroll-behavior: auto !important;
 }
 
-// Disable things which require motion when reduced-motion is on
+// Hide things which require motion when prefers-reduced-motion is on
 .requires-motion {
 	@media (prefers-reduced-motion: reduce) {
+		display: none;
+	}
+}
+
+// Hide things when prefers-reduced-motion is off
+.requires-static {
+	@media (prefers-reduced-motion: no-preference) {
 		display: none;
 	}
 }
