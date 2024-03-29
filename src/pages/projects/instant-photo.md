@@ -16,7 +16,7 @@ tags:
 
 <figure>
     <instant-photo develop>
-        <img src="/images/avatar@4x.jpeg" alt="Chris Burnell" class=" [ shadow ] [ canada ] " width="400" height="400">
+        <img src="/images/avatar-2011.jpg" alt="Chris Burnell" class=" [ shadow ] [ canada ] " width="400" height="400">
     </instant-photo>
 </figure>
 
@@ -32,7 +32,7 @@ You can begin using the <code>&lt;instant-photo&gt;</code> Web Component by incl
 <script type="module" src="instant-photo.js"></script>
 
 <instant-photo>
-  <img src="/images/avatar@4x.jpeg" alt="my face">
+	<img src="/image.jpg" alt="...">
 </instant-photo>
 ```
 
@@ -40,17 +40,17 @@ There are also a handful of CSS variables that you can set which will override t
 
 ```css
 :root {
-  /* override the color of the color behind the image (for develop) */
-  --instant-photo-background-color: rebeccapurple;
+	/* override the color of the color behind the image (for develop) */
+	--instant-photo-background-color: rebeccapurple;
 
-  /* override the color of the border */
-  --instant-photo-border-color: red;
+	/* override the color of the border */
+	--instant-photo-border-color: red;
 
-  /* override the duration of the developing photo animation */
-  --instant-photo-develop-duration: 5s;
+	/* override the duration of the developing photo animation */
+	--instant-photo-develop-duration: 5s;
 
-  /* override the delay before the developing photo animation */
-  --instant-photo-develop-delay: 5s;
+	/* override the delay before the developing photo animation */
+	--instant-photo-develop-delay: 5s;
 }
 ```
 

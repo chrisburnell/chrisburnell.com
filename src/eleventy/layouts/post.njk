@@ -18,7 +18,7 @@ layout: base
 			{%- else %}
 				This <a href="/{{ categoryPlural | default(category) }}/" class=" [ u-category ] ">{{ categoryProper | default(category) }}</a>{% if 'writing' in tags %}, part of the <a href="/writing/">writing</a> collection{% if not in_reply_to %},{% endif %}{% endif %}
 			{%- endif -%}
-			{%- if draft %}
+			{%- if draft -%}
 				has not yet been published
 			{%- else -%}
 				{%- if in_reply_to and not rsvp -%}
@@ -41,9 +41,9 @@ layout: base
 			{% include 'css-naked-day.njk' %}
 		{%- endif %}
 
-		{% if draft %}
+		{% if draft -%}
 			<p class=" [ box  box--warning ] [ flow ] [ line-length ] ">This is still a <em>draft</em>! The quality of this {{ categoryProper | default(category) | default('post') }} may not be up to snuff, and is probably far from being complete.</p>
-		{% endif %}
+		{%- endif %}
 
 		{% include 'banner.njk' %}
 

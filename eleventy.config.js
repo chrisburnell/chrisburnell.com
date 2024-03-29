@@ -114,6 +114,7 @@ export default async function(eleventyConfig) {
 		"src/js/components": "js/components/",
 		"node_modules/@chrisburnell/cow-pen/cow-pen.js": "js/components/cow-pen.js",
 		"node_modules/@chrisburnell/instant-photo/instant-photo.js": "js/components/instant-photo.js",
+		"node_modules/@chrisburnell/paper-stamp/paper-stamp.js": "js/components/paper-stamp.js",
 		"node_modules/@chrisburnell/spark-line/spark-line.js": "js/components/spark-line.js",
 		"node_modules/@chrisburnell/svg-sparkline/svg-sparkline.js": "js/components/svg-sparkline.js",
 		"node_modules/@zachleat/details-utils/details-utils.js": "js/components/details-utils.js",
