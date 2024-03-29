@@ -3,7 +3,7 @@
 /// @group themes
 ////
 
-html:has([type="checkbox"][name="high-contrast"]:checked), {
+html:has([type="checkbox"][name="high-contrast"]:checked) {
 	--raven-chroma: 0.2 !important;
 }
 
