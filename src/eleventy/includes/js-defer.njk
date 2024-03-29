@@ -9,6 +9,11 @@
 		highContrastInput.indeterminate = true
 	}
 
+	const smoothScrollInput = document.querySelector(`[type="checkbox"][name="smooth-scroll"]`)
+	if (smoothScrollInput && !localStorage.getItem("smooth-scroll")) {
+		smoothScrollInput.indeterminate = true
+	}
+
 	{%- if eleventy.env.runMode === 'build' -%}
 		;(function () {
 			window.fathom = window.fathom || function () {

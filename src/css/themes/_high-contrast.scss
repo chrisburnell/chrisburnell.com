@@ -8,7 +8,8 @@ html:has([type="checkbox"][name="high-contrast"]:checked) {
 }
 
 @media (prefers-contrast: more) {
-	html:has([type="checkbox"][name="high-contrast"]:is(:indeterminate)) {
+	html:has([type="checkbox"][name="high-contrast"]:indeterminate),
+	html:not(:has([type="checkbox"][name="high-contrast"])) {
 		--raven-chroma: 0.2 !important;
 	}
 }

@@ -14,8 +14,16 @@
 	margin: 0;
 }
 
+:where(html:focus-within:has([type="checkbox"][name="smooth-scroll"]:checked)) {
+	scroll-behavior: smooth;
+}
+
 @media (prefers-reduced-motion: no-preference) {
-	:where(html:focus-within:has([name="smooth-scroll"]:checked)) {
+	// prettier-ignore
+	:where(
+		html:focus-within:has([type="checkbox"][name="smooth-scroll"]:indeterminate),
+		html:focus-within:not(:has([type="checkbox"][name="smooth-scroll"]))
+	) {
 		scroll-behavior: smooth;
 	}
 }
@@ -98,7 +106,6 @@
 		animation-duration: 0s !important;
 		animation-iteration-count: 1 !important;
 		transition: none !important;
-		scroll-behavior: auto !important;
 	}
 	::view-transition-old(*),
 	::view-transition-new(*) {
@@ -107,6 +114,5 @@
 		animation-duration: 0s !important;
 		animation-iteration-count: 1 !important;
 		transition: none !important;
-		scroll-behavior: auto !important;
 	}
 }
