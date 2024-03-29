@@ -26,16 +26,16 @@ class PreloadLinks {
 			const href = anchor.getAttribute("href").split("#")[0]
 			anchor.addEventListener("mouseover", () => {
 				if (!this.preloadedLinks.includes(href)) {
-				this.preloadTimeout = setTimeout(() => {
-					this.preloadedLinks.push(href)
+					this.preloadTimeout = setTimeout(() => {
+						this.preloadedLinks.push(href)
 
-					const preloadedLink = document.createElement("link")
-					preloadedLink.href = href
-					preloadedLink.rel = "preload"
-					preloadedLink.as = "fetch"
+						const preloadedLink = document.createElement("link")
+						preloadedLink.href = href
+						preloadedLink.rel = "preload"
+						preloadedLink.as = "fetch"
 
-					this.head.appendChild(preloadedLink)
-				}, PreloadLinks.preloadWait)
+						this.head.appendChild(preloadedLink)
+					}, PreloadLinks.preloadWait)
 				}
 			})
 

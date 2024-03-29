@@ -32,7 +32,7 @@ export const ordinal = (number) => {
 
 /**
  * @param {string} dateString
- * @param {string} format
+ * @param {string} [format]
  * @return {string}
  */
 export const friendlyDate = (dateString, format = "LLLL d, yyyy") => {
@@ -76,7 +76,7 @@ export const ianaTimezone = (value) => {
 
 /**
  * @param {string} dateString
- * @param {boolean} showTimezone
+ * @param {boolean} [showTimezone]
  * @returns {string}
  */
 export const rfc3339Date = (dateString, showTimezone = true) => {

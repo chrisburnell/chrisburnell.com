@@ -113,7 +113,8 @@
 	// Compositions
 	///
 
-	%box, &.box {
+	%box,
+	&.box {
 		border-block-start-color: var(--box-border-color, h(raven, alpha));
 
 		%anchor {
