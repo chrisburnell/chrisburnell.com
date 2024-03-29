@@ -3,8 +3,13 @@
 <script src="{% getBundleFileUrl 'js' %}"></script>
 
 {%- js 'module' -%}{% renderFile 'src/js/defer.js' %}{%- endjs -%}
-{%- if eleventy.env.runMode === 'build' -%}
-	{%- js -%}
+{%- js -%}
+	const highContrastInput = document.querySelector(`[type="checkbox"][name="high-contrast"]`)
+	if (highContrastInput && !localStorage.getItem("high-contrast")) {
+		highContrastInput.indeterminate = true
+	}
+
+	{%- if eleventy.env.runMode === 'build' -%}
 		;(function () {
 			window.fathom = window.fathom || function () {
 				(window.fathom.q = window.fathom.q || []).push(arguments)
@@ -17,6 +22,6 @@
 		})()
 		fathom("set", "siteId", "{{ site.fathom_siteid }}")
 		fathom("trackPageview")
-	{%- endjs -%}
-{%- endif -%}
+	{%- endif -%}
+{%- endjs -%}
 

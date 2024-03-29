@@ -19,10 +19,6 @@ html {
 	hanging-punctuation: first allow-end last;
 }
 
-html:has([name="high-contrast"]:checked) {
-	--raven-chroma: 0.2 !important;
-}
-
 body {
 	background-color: color-mix(in oklab, h(bear), h(snowy) 80%);
 	color: h(kaiser);

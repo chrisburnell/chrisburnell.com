@@ -20,7 +20,7 @@ layout: root
 				<svg width="24" height="24" aria-hidden="true" focusable="false"><use href="#svg--cog"></use></svg>
 			</button>
 			{% if not global.isCSSNakedDay -%}
-				<button class=" [ anchor ] [ popover-navigation-button ] [ requires-js ] " popovertarget="popover-navigation" title="Open Navigation">
+				<button class=" [ anchor ] [ popover-navigation-button ] " popovertarget="popover-navigation" title="Open Navigation">
 					<svg width="24" height="24" aria-hidden="true" focusable="false"><use href="#svg--hamburger"></use></svg>
 				</button>
 			{%- endif %}
@@ -28,7 +28,7 @@ layout: root
 	</div>
 </header>
 
-<div id="popover-settings" class=" [ popover-settings ] [ flow ] [ gamma ] " popover>
+<div id="popover-settings" class=" [ popover-settings ] [ flow ] [ gamma ] [ requires-js ] " popover>
 	{%- include 'settings.njk' -%}
 </div>
 

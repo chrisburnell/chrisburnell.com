@@ -81,6 +81,7 @@
 
 // Themes
 @layer themes {
+	@import "themes/high-contrast";
 	@import "themes/dark";
 	@import "themes/sepia";
 	@import "themes/christmas";

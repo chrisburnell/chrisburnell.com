@@ -1,0 +1,14 @@
+////
+/// High Contrast
+/// @group themes
+////
+
+html:has([type="checkbox"][name="high-contrast"]:checked), {
+	--raven-chroma: 0.2 !important;
+}
+
+@media (prefers-contrast: more) {
+	html:has([type="checkbox"][name="high-contrast"]:is(:indeterminate)) {
+		--raven-chroma: 0.2 !important;
+	}
+}
