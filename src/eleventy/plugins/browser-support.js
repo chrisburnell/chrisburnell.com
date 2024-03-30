@@ -75,7 +75,7 @@ export default function (eleventyConfig) {
 					</div>
 					<div class=" [ support__meta ] ">
 						<p class=" [ monospace  strong ] " style="font-size: var(--font-size-gamma-min);">${featureID}</p>
-						<p class="small">Browser support data for <code>${featureID}</code> comes from <a href="https://caniuse.com/#feat=${featureID}" rel="external nofollow">caniuse.com</a> and is up-to-date as of <time datetime="${DateTime.fromISO(nowISO).toFormat("yyyy-MM-dd")}">${DateTime.fromISO(nowISO).toFormat("dd LLLL yyyy")}</time>.</p>
+						<p class="small">Browser support data for <code>${featureID}</code> comes from <a href="https://caniuse.com/#feat=${featureID}" rel="external nofollow">caniuse.com</a> and is up-to-date as of <time datetime="${DateTime.fromISO(nowISO).toFormat("yyyy-MM-dd")}">${DateTime.fromISO(nowISO).toFormat("d LLLL yyyy")}</time>.</p>
 					</div>
 				</div>`,
 				{ collapseWhitespace: true },

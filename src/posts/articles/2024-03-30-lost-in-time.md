@@ -126,7 +126,7 @@ Similarly, for the text *inside* a `<time>` element, I like to print a <q>friend
  * @return {string}
  */
 export const friendlyDate = (dateString) => {
-	return formatDatetime(dateString, "LLLL d, yyyy")
+	return formatDatetime(dateString, "d LLLL yyyy")
 }
 ```
 

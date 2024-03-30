@@ -1,7 +1,11 @@
+import slugify from "@sindresorhus/slugify"
 import fs from "fs-extra"
 
 export default {
 	generateHTML: (outputURL) => outputURL,
+	getOutputFileSlug: ({ context }) => {
+		return slugify(context.page.url)
+	},
 	satoriOptions: {
 		fonts: [
 			{

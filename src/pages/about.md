@@ -27,7 +27,7 @@ eleventyComputed:
 </ul>
 
 {% set last_updated = "2024-03-30T17:50:00+0800" -%}
-<p><strong>Last updated:</strong> <time datetime="{{ last_updated | rfc3339Date }}">{{ last_updated | friendlyDate | safe }} {{ last_updated | friendlyTime | safe }}</time></p>
+<p class=" [ center ] "><strong>Last updated:</strong> <time datetime="{{ last_updated | rfc3339Date }}">{{ last_updated | friendlyDate | safe }} {{ last_updated | friendlyTime | safe }}</time></p>
 
 <hr>
 

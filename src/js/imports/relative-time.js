@@ -16,7 +16,7 @@ class RelativeTime {
 		this.relativeTimeElements.forEach((element) => {
 			if (!element.hasAttribute("title")) {
 				// Set the title attribute to the date string (stripped of HTML)
-				element.title = element.innerHTML.replace(/<\/?[^>]+(>|$)/g, "")
+				element.title = element.innerHTML.replace(/<\/?[^>]+(>|$)/g, "").replace("on ", "")
 			}
 			const datetime = new Date(element.getAttribute("datetime"))
 			element.innerHTML = getRelativeTime(datetime)

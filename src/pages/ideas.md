@@ -5,7 +5,7 @@ description: Things I’d like to work on.
 toc: true
 ---
 
-{% set last_updated = "2024-03-30T17:50:00+0800" -%}
+{% set last_updated = "2024-03-30T20:23:00+0800" -%}
 <p><strong>Last updated:</strong> <time datetime="{{ last_updated | rfc3339Date }}">{{ last_updated | friendlyDate | safe }} {{ last_updated | friendlyTime | safe }}</time></p>
 
 ## Posts
@@ -34,8 +34,6 @@ toc: true
 
 - figure out logic for pinned posts
 - figure out how to manage "RSS-only" posts (that become visible on the site after site.upcomingDaysLead)
-- get dates (and descriptions?) working in OG Images
-    - https://github.com/KiwiKilian/eleventy-plugin-og-image
 - use new eleventy-img transform instead of image shortcode
     - keep an eye on performance here
 - pull data out of fathom analytics for page popularity

@@ -35,7 +35,7 @@ export const ordinal = (number) => {
  * @param {string} [format]
  * @return {string}
  */
-export const friendlyDate = (dateString, format = "LLLL d, yyyy") => {
+export const friendlyDate = (dateString, format = "d LLLL yyyy") => {
 	return formatDatetime(dateString, format)
 }
 
@@ -44,8 +44,7 @@ export const friendlyDate = (dateString, format = "LLLL d, yyyy") => {
  * @return {string}
  */
 export const friendlyDateLong = (dateString) => {
-	const day = formatDatetime(dateString, "d")
-	return formatDatetime(dateString, `cccc, LLLL '${ordinal(day)}', yyyy`)
+	return formatDatetime(dateString, `cccc, d LLLL yyyy`)
 }
 
 /**
