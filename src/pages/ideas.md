@@ -5,6 +5,9 @@ description: Things I’d like to work on.
 toc: true
 ---
 
+{% set last_updated = "2024-03-30T17:50:00+0800" -%}
+<p><strong>Last updated:</strong> <time datetime="{{ last_updated | rfc3339Date }}">{{ last_updated | friendlyDate | safe }} {{ last_updated | friendlyTime | safe }}</time></p>
+
 ## Posts
 
 - Version 4.0.0… maybe…
