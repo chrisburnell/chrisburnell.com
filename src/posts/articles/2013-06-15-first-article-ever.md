@@ -47,7 +47,7 @@ This is what it looks like when you’re writing it:
         Tabbed content becomes a code block like this one.
     This is some paragraph, and [this](http://foo.com) is a link.
 
-<aside><p>Again, if you have any suggestions as far as the source code or post content goes, please fork <a href="https://github.com/{{ author.github }}/{{ site.repository }}" rel="external">the <em>GitHub</em> repository</a> and send me a push request with your changes!</p></aside>
+<aside><p>Again, if you have any suggestions as far as the source code or post content goes, please fork <a href="https://github.com/{{ author.github }}/{{ site.repository }}" rel="external noopener">the <em>GitHub</em> repository</a> and send me a push request with your changes!</p></aside>
 
 The CSS for this latest iteration of chrisburnell.com was also a labour of love. Really being fed up with the older version of my site and having grown immensely since I pushed that update in February 2011, I started working on this design a few months ago and tinkered away at it here and there when my spare time allowed it. I did, in fact, rewrite the bulk of it twice before I got to the current state it is in.
 
@@ -65,7 +65,7 @@ I can’t take all the credit for this website, really. It’s the culmination o
 
 <aside>
     <figure>
-        <a href="https://stateofthebrowser.com" rel="external">
+        <a href="https://stateofthebrowser.com" rel="external noopener">
             {% image './images/content/sotb-2013.jpg', 'Photo of SOTB 2013' %}
         </a>
         <figcaption>Image courtesy of State of the Browser</figcaption>

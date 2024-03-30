@@ -201,7 +201,7 @@ const authorString = (author) => {
 		author.title = author.url
 	}
 	if (author.url) {
-		return `<a href="${author.url}" class=" [ h-cite ] "${!author.url.includes(siteURL) && ` rel="external"`}>${author.title}</a>`
+		return `<a href="${author.url}" class=" [ h-cite ] "${!author.url.includes(siteURL) && ` rel="external noopener"`}>${author.title}</a>`
 	}
 	return `<strong class=" [ h-cite ] ">${author.title}</strong>`
 }

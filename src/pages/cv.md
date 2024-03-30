@@ -95,7 +95,7 @@ Passionate about the open web, having published over 50 technical articles, and 
 <h2 style="break-before: page;">Community Experience</h2>
 
 <div class=" [ space-between ] ">
-    <h3 class=" [ delta ] ">Conference Organiser for <a href="https://stateofthebrowser.com" rel="external"><c-emoji><img src="/images/built/sotb-logo.png" class="brand-logo" alt="State of the Browser’s logo" loading="lazy" decoding="async"></c-emoji>State of the Browser</a></h3>
+    <h3 class=" [ delta ] ">Conference Organiser for <a href="https://stateofthebrowser.com" rel="external noopener"><c-emoji><img src="/images/built/sotb-logo.png" class="brand-logo" alt="State of the Browser’s logo" loading="lazy" decoding="async"></c-emoji>State of the Browser</a></h3>
     <small><strong>May 2018 – February 2024</strong></small>
 </div>
 

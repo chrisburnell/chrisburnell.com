@@ -13,15 +13,15 @@ I author posts of various *types* on this website, some of which I syndicate to 
 
 <dl>
     <dt><a href="/articles/">Articles</a></dt>
-    <dd><a href="https://indieweb.org/PESOS" rel="external"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> the description to <a href="https://{{ author.mastodon_domain }}/{{ author.mastodon.split('@')[1] }}" rel="external">Mastodon</a> and then to this website.</dd>
+    <dd><a href="https://indieweb.org/PESOS" rel="external noopener"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> the description to <a href="https://{{ author.mastodon_domain }}/{{ author.mastodon.split('@')[1] }}" rel="external noopener">Mastodon</a> and then to this website.</dd>
     <dt><a href="/notes/">Notes</a></dt>
-    <dd><a href="https://indieweb.org/PESOS" rel="external"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> the content to <a href="https://{{ author.mastodon_domain }}/{{ author.mastodon.split('@')[1] }}" rel="external">Mastodon</a> and then to this website.</dd>
+    <dd><a href="https://indieweb.org/PESOS" rel="external noopener"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> the content to <a href="https://{{ author.mastodon_domain }}/{{ author.mastodon.split('@')[1] }}" rel="external noopener">Mastodon</a> and then to this website.</dd>
     <dt><a href="/bookmarks/">Bookmarks</a></dt>
-    <dd><a href="https://indieweb.org/PESOS" rel="external"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> the URL and content to <a href="https://{{ author.mastodon_domain }}/{{ author.mastodon.split('@')[1] }}" rel="external">Mastodon</a> and then to this website.</dd>
+    <dd><a href="https://indieweb.org/PESOS" rel="external noopener"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> the URL and content to <a href="https://{{ author.mastodon_domain }}/{{ author.mastodon.split('@')[1] }}" rel="external noopener">Mastodon</a> and then to this website.</dd>
     <dt><a href="/code/">Pens</a></dt>
     <dd>Ones that I’m especially proud of I will cross-post, manually, to this website.</dd>
     <dt><a href="/beer/">Beer</a></dt>
-    <dd><a href="https://indieweb.org/PESOS" rel="external"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> the check-in data from <a href="https://untappd.com" rel="external">Untappd</a> using my project, <a href="https://ownyourbeer.chrisburnell.com" rel="external">OwnYourBeer</a>, to this website.</dd>
+    <dd><a href="https://indieweb.org/PESOS" rel="external noopener"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> the check-in data from <a href="https://untappd.com" rel="external noopener">Untappd</a> using my project, <a href="https://ownyourbeer.chrisburnell.com" rel="external noopener">OwnYourBeer</a>, to this website.</dd>
     <dt><a href="/books/">Books</a></dt>
     <dd>Typically posted only on this website.</dd>
     <dt><a href="/music/">Music</a></dt>
@@ -53,16 +53,16 @@ Lastly, I use *[OwnYourBeer](https://ownyourbeer.chrisburnell.com)* to syndicate
 As much work as I’ve put into my sections of code, I have to give a massive thanks to a handful of people that helped to make all of this happen, as there’s no way I could have done all this myself.
 
 <dl>
-    <dt><a href="https://adactio.com" rel="external">Jeremy Keith</a></dt>
-    <dd>for <a href="https://gist.github.com/adactio/8168e6b78da7b16a4644" rel="external">Minimum micropub endpoint</a></dd>
-    <dt><a href="https://aaronparecki.com" rel="external">Aaron Parecki</a></dt>
-    <dd>for <a href="https://switchboard.p3k.io" rel="external">Switchboard</a>, <a href="https://telegraph.p3k.io" rel="external">Telegraph</a>, and <a href="https://webmention.io" rel="external">Webmention.io</a></dd>
-    <dt><a href="https://snarfed.org" rel="external">Ryan Barrett</a></dt>
-    <dd>for <a href="https://brid.gy" rel="external">Bridgy</a> and <a href="https://fed.brid.gy" rel="external">Bridgy Fed</a></dd>
-    <dt><a href="https://keithjgrant.com/" rel="external">Keith J. Grant</a></dt>
-    <dd>for <a href="https://omnibear.com/" rel="external">Omnibear</a></dd>
-    <dt><a href="https://rusingh.com" rel="external">Ru Singh</a></dt>
-    <dd>for <a href="https://gocelestial.herokuapp.com" rel="external">Celestial</a></dd>
-    <dt><a href="https://brainbaking.com" rel="external">Wouter Groeneveld</a></dt>
-    <dd>for <a href="https://git.brainbaking.com/wgroeneveld/go-jamming" rel="external">go-jamming</a></dd>
+    <dt><a href="https://adactio.com" rel="external noopener">Jeremy Keith</a></dt>
+    <dd>for <a href="https://gist.github.com/adactio/8168e6b78da7b16a4644" rel="external noopener">Minimum micropub endpoint</a></dd>
+    <dt><a href="https://aaronparecki.com" rel="external noopener">Aaron Parecki</a></dt>
+    <dd>for <a href="https://switchboard.p3k.io" rel="external noopener">Switchboard</a>, <a href="https://telegraph.p3k.io" rel="external noopener">Telegraph</a>, and <a href="https://webmention.io" rel="external noopener">Webmention.io</a></dd>
+    <dt><a href="https://snarfed.org" rel="external noopener">Ryan Barrett</a></dt>
+    <dd>for <a href="https://brid.gy" rel="external noopener">Bridgy</a> and <a href="https://fed.brid.gy" rel="external noopener">Bridgy Fed</a></dd>
+    <dt><a href="https://keithjgrant.com/" rel="external noopener">Keith J. Grant</a></dt>
+    <dd>for <a href="https://omnibear.com/" rel="external noopener">Omnibear</a></dd>
+    <dt><a href="https://rusingh.com" rel="external noopener">Ru Singh</a></dt>
+    <dd>for <a href="https://gocelestial.herokuapp.com" rel="external noopener">Celestial</a></dd>
+    <dt><a href="https://brainbaking.com" rel="external noopener">Wouter Groeneveld</a></dt>
+    <dd>for <a href="https://git.brainbaking.com/wgroeneveld/go-jamming" rel="external noopener">go-jamming</a></dd>
 </dl>

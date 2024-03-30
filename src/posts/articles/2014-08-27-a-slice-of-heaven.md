@@ -24,7 +24,7 @@ Hover the slice to see how this one works.
 In this Pen, I’m taking advantage of `border-radius` and `overflow` on an element affecting its children—in this case pseudo elements—to create a one-third slice of a circle without images and a transparent background.
 
 <div class="edit">
-    updated_text: There is a <a href="https://code.google.com/p/chromium/issues/detail?id=157218" rel="external">Chrome bug</a> with <code>border-radius</code> and <code>overflow</code> not masking child elements property when modified with a <code>transform</code>. Hopefully this is fixed soon, but in the meantime, I’ve added a <code>border-radius</code> and an associated <code>transform</code> on the <code>:before</code> and <code>:after</code> elements.
+    updated_text: There is a <a href="https://code.google.com/p/chromium/issues/detail?id=157218" rel="external noopener">Chrome bug</a> with <code>border-radius</code> and <code>overflow</code> not masking child elements property when modified with a <code>transform</code>. Hopefully this is fixed soon, but in the meantime, I’ve added a <code>border-radius</code> and an associated <code>transform</code> on the <code>:before</code> and <code>:after</code> elements.
 </div>
 
 ## Zoomy Anchor Thing
@@ -34,7 +34,7 @@ This pen was inspired by an neat effect I saw on [Square](https://squareup.com#v
 <c-codepen slug="lcEvB" height="350px"></c-codepen>
 
 <div class="edit">
-    updated_text: This pen was featured on <a href="https://ss.chrisburnell.com/2014-08-28_1411.png" title="ego boost manifested in PNG format" rel="me  external"><em>CodePen’s</em> front page</a>, netting me some <a href="https://codepen.io/chrisburnell/details/lcEvB/#stats" title="Stats for this pen" rel="external">sweet internet points</a>! Achievement Unlocked.
+    updated_text: This pen was featured on <a href="https://ss.chrisburnell.com/2014-08-28_1411.png" title="ego boost manifested in PNG format" rel="me  external"><em>CodePen’s</em> front page</a>, netting me some <a href="https://codepen.io/chrisburnell/details/lcEvB/#stats" title="Stats for this pen" rel="external noopener">sweet internet points</a>! Achievement Unlocked.
 </div>
 
 ## Modal Container without JavaScript

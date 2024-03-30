@@ -15,7 +15,7 @@ syndicate_to:
   - https://twitter.com/iamchrisburnell/status/1220678282590531584
 ---
 
-The <a href="https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/" rel="external">lobotomised owl</a> technique, given graciously to us by the incredibly talented <a href="https://heydonworks.com" rel="external">Heydon Pickering</a>, takes away a great deal of pain that comes with setting up sensible spacing between elements and components on your page. Instead of specifically defining `margin-bottom`/`margin-top` for each component, we’ll make use of the <samp>* + *</samp> selector in CSS to perform the following:
+The <a href="https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/" rel="external noopener">lobotomised owl</a> technique, given graciously to us by the incredibly talented <a href="https://heydonworks.com" rel="external noopener">Heydon Pickering</a>, takes away a great deal of pain that comes with setting up sensible spacing between elements and components on your page. Instead of specifically defining `margin-bottom`/`margin-top` for each component, we’ll make use of the <samp>* + *</samp> selector in CSS to perform the following:
 
 > For every direct child element of X which is not the first direct child of X, apply a `margin-top`.
 

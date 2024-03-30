@@ -17,7 +17,7 @@ further_reading:
 
 <blockquote>
 	<p>Life moves pretty fast. If you don't stop and look around once in a while, you could miss it.</p>
-	<cite class="h-cite"><a href="http://www.imdb.com/title/tt0091042/quotes/qt0441210" rel="external">Ferris Bueller</a></cite>
+	<cite class="h-cite"><a href="http://www.imdb.com/title/tt0091042/quotes/qt0441210" rel="external noopener">Ferris Bueller</a></cite>
 </blockquote>
 
 There’s no questioning that [technology moves pretty fast](https://en.wikipedia.org/wiki/Moore%27s_law). Ferris is too right, if we don’t pause to take stock and count our blessings, we might miss out in being able to appreciate them. It’s all too easy to get caught up in the speed and momentum of web development that we become engrossed on *the goal*—nailing the code review, delivering on time, etc.—that we forget to make sure we’re treading on solid ground in pursuit of our goals.

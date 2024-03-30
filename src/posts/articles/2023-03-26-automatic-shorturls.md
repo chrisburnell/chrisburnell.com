@@ -1,7 +1,7 @@
 ---
 date: 2023-03-26T10:00:00+0100
 title: Generating Automatic ShortURLs with NewBase60
-description: I’m still auto-generating ShortURLs for each of my posts using Tantek Çelik’s <a href="http://tantek.pbworks.com/w/page/19402946/NewBase60" rel="external">NewBase60</a>, but in a much more organised fashion and leaning into the JavaScript-based ecosystem of Eleventy.
+description: I’m still auto-generating ShortURLs for each of my posts using Tantek Çelik’s <a href="http://tantek.pbworks.com/w/page/19402946/NewBase60" rel="external noopener">NewBase60</a>, but in a much more organised fashion and leaning into the JavaScript-based ecosystem of Eleventy.
 tags:
   - eleventy
   - javascript

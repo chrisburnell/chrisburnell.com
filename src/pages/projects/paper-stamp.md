@@ -17,7 +17,7 @@ tags:
 
 <figure>
     <paper-stamp>
-        <img src="/images/rolbie-stamp.png" alt="Rolbie stamp" loading="lazy" decoding="async" width="200" height="300" style="image-rendering: pixelated;">
+        <img src="/images/rolbie-stamp.png" alt="Rolbie stamp" loading="lazy" decoding="async" width="100" height="150" style="image-rendering: pixelated;">
     </paper-stamp>
 </figure>
 
@@ -43,7 +43,7 @@ There are also a handful of attributes you can set which will override the appea
 
 <figure>
     <paper-stamp color="cyan">
-        <img src="/images/rolbie-stamp.png" alt="Rolbie stamp" loading="lazy" decoding="async" style="image-rendering: pixelated;">
+        <img src="/images/rolbie-stamp.png" alt="Rolbie stamp" loading="lazy" decoding="async" width="100" height="150" style="image-rendering: pixelated;">
     </paper-stamp>
 </figure>
 
@@ -57,7 +57,7 @@ There are also a handful of attributes you can set which will override the appea
 
 <figure>
     <paper-stamp padding="50px">
-        <img src="/images/rolbie-stamp.png" alt="Rolbie stamp" loading="lazy" decoding="async" style="image-rendering: pixelated;">
+        <img src="/images/rolbie-stamp.png" alt="Rolbie stamp" loading="lazy" decoding="async" width="100" height="150" style="image-rendering: pixelated;">
     </paper-stamp>
 </figure>
 
@@ -71,7 +71,7 @@ There are also a handful of attributes you can set which will override the appea
 
 <figure>
     <paper-stamp spacing="6">
-        <img src="/images/rolbie-stamp.png" alt="Rolbie stamp" loading="lazy" decoding="async" style="image-rendering: pixelated;">
+        <img src="/images/rolbie-stamp.png" alt="Rolbie stamp" loading="lazy" decoding="async" width="100" height="150" style="image-rendering: pixelated;">
     </paper-stamp>
 </figure>
 
@@ -85,7 +85,7 @@ There are also a handful of attributes you can set which will override the appea
 
 <figure>
     <paper-stamp perforation="15px">
-        <img src="/images/rolbie-stamp.png" alt="Rolbie stamp" loading="lazy" decoding="async" style="image-rendering: pixelated;">
+        <img src="/images/rolbie-stamp.png" alt="Rolbie stamp" loading="lazy" decoding="async" width="100" height="150" style="image-rendering: pixelated;">
     </paper-stamp>
 </figure>
 

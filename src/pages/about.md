@@ -87,7 +87,7 @@ I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link
 <div class=" [ grid ] [ shelf ] [ center ] " style="--min-inline-size: 6em; --gap: var(--size-gap);">
     {%- for client in clients | sort(false, false, 'title') -%}
         <article>
-            <a href="{{ client.url }}" title="{{ client.title | safe }}" rel="external">
+            <a href="{{ client.url }}" title="{{ client.title | safe }}" rel="external noopener">
                 <img src="/images/built/{{ client.image }}" class=" [ interaction-grow{% if client.darkInvert %}  dark-invert-colors{% endif %} ] " alt="" loading="lazy" decoding="async" style="max-height: 8rem">
             </a>
         </article>

@@ -52,14 +52,14 @@ Given that the [refresh rate](https://en.wikipedia.org/wiki/Refresh_rate) of mos
 
 <blockquote>
 	<p>In reality, however, the browser has housekeeping work to do, so all of your work needs to be completed inside 10ms.</p>
-	<cite class="h-cite"><a href="https://developers.google.com/web/fundamentals/performance/rendering" rel="external">Google Web Fundamentals</a></cite>
+	<cite class="h-cite"><a href="https://developers.google.com/web/fundamentals/performance/rendering" rel="external noopener">Google Web Fundamentals</a></cite>
 </blockquote>
 
 This might seem like an impossible amount of time to do **anything** with, but for a computer, this isn’t so much of a stretch. That’s not to say that it’s **easy** for the browser, nor that the browser is even doing it in the most efficient manner, in the most efficient circumstances, so we should do what we can to offer the browser any help!
 
 This short, **16ms** portion of our performance budget is a critical one. It can mean the difference between a smooth website, promoting a positive user experience, and a janky website, a wholly negative user experience.
 
-<aside><p>Check out some <a href="https://www.youtube.com/watch?v=Z4I15-7L0ss" title="It's A Bird (1930)" rel="external">old-school stop motion animation</a> to see what 24 frames per second looks like.</p></aside>
+<aside><p>Check out some <a href="https://www.youtube.com/watch?v=Z4I15-7L0ss" title="It's A Bird (1930)" rel="external noopener">old-school stop motion animation</a> to see what 24 frames per second looks like.</p></aside>
 
 If the <q>action</q> we need to perform involves checking the visibility of an element as we move around the page, we need to make sure that any <q>checks</q> we’re making happen in under **16ms**, or we’ll fail to build each <q>frame</q> of the 60 FPS animation in time. Failing to do so results in frames being painted late or not being painted at all, and the delaying **or** removal of any frames will naturally result in a lower FPS. Too low and your users will start to notice.
 

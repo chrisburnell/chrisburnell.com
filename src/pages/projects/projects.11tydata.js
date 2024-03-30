@@ -41,7 +41,14 @@ export default {
 			if (data.github && data.npm) {
 				const github = await githubData(data.github)
 				const downloads = await npmDownloads(data.npm, github["created_at"])
-				return `${github["description"]}<br>There are ${numberStringFormat(github["stargazers_count"])} stargazers <a href="https://github.com/${data.github}" rel="external">on GitHub</a> and it has over ${numberStringFormat(toNearest(downloads, 50, true))} downloads <a href="https://www.npmjs.com/package/${data.npm}" rel="external">on npm</a>.`
+				let description = `${github["description"]}<br>`
+				if (github["stargazers_count"] > 0) {
+					description += `There ${github["stargazers_count"] > 1 ? "are" : "is"} ${numberStringFormat(github["stargazers_count"])} stargazer${github["stargazers_count"] > 1 ? "s" : ""} <a href="https://github.com/${data.github}" rel="external noopener">on GitHub</a> and it`
+				} else {
+					description += `It`
+				}
+				description += ` has over ${numberStringFormat(toNearest(downloads, 50, true))} downloads <a href="https://www.npmjs.com/package/${data.npm}" rel="external noopener">on npm</a>.`
+				return description
 			}
 			return data.description || ""
 		},
