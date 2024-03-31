@@ -64,9 +64,11 @@ export const friendlyTime = (value, showTimezone = true) => {
 	const format = "HH:mm" + (showTimezone ? " ZZZZ" : "")
 	// prettier-ignore
 	return formatDatetime(value, format)
-		.replace("UTC+8", `<abbr title="Singapore Time">SGT <span aria-hidden="true">🇸🇬</span></abbr>`)
-		.replace("UTC+1", `<abbr title="British Summer Time">BST</abbr> <span aria-hidden="true">🇬🇧</span>`)
-		.replace("UTC", `<abbr title="Greenwich Mean Time">GMT</abbr> <span aria-hidden="true">🇬🇧</span>`)
+		.replace(/(GMT|UTC)\+8/g, `<abbr title="Singapore Time">SGT <span aria-hidden="true">🇸🇬</span></abbr>`)
+		.replace(/(GMT|UTC)\+1/g, `<abbr title="British Summer Time">BST <span aria-hidden="true">🇬🇧</span></abbr>`)
+		.replace(/(GMT|UTC)/g, `<abbr title="Greenwich Mean Time">GMT <span aria-hidden="true">🇬🇧</span></abbr>`)
+		.replace(/(GMT|UTC)-3/g, `<abbr title="Atlantic Daylight Time">ADT <span aria-hidden="true">🇨🇦</span></abbr>`)
+		.replace(/(GMT|UTC)-4/g, `<abbr title="Atlantic Standard Time">AST <span aria-hidden="true">🇨🇦</span></abbr>`)
 }
 
 /**
