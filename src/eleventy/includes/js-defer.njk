@@ -5,13 +5,37 @@
 {%- js 'module' -%}{% renderFile 'src/js/defer.js' %}{%- endjs -%}
 {%- js -%}
 	const highContrastInput = document.querySelector(`[type="checkbox"][name="high-contrast"]`)
-	if (highContrastInput && !localStorage.getItem("high-contrast")) {
-		highContrastInput.indeterminate = true
+	if (highContrastInput) {
+		if (!localStorage.getItem("high-contrast")) {
+			highContrastInput.indeterminate = true
+		}
+		let highContrastEnabled = highContrastInput.indeterminate ? "indeterminate" : highContrastInput.checked ? true : false
+		highContrastInput.addEventListener("change", function() {
+			if (highContrastEnabled === false) {
+				this.indeterminate = true
+				localStorage.removeItem("high-contast")
+			} else if (highContrastEnabled === "indeterminate") {
+				this.checked = true
+			}
+			highContrastEnabled = this.indeterminate ? "indeterminate" : this.checked ? true : false
+		})
 	}
 
 	const smoothScrollInput = document.querySelector(`[type="checkbox"][name="smooth-scroll"]`)
-	if (smoothScrollInput && !localStorage.getItem("smooth-scroll")) {
-		smoothScrollInput.indeterminate = true
+	if (smoothScrollInput) {
+		if (!localStorage.getItem("smooth-scroll")) {
+			smoothScrollInput.indeterminate = true
+		}
+		let smoothScrollEnabled = smoothScrollInput.indeterminate ? "indeterminate" : smoothScrollInput.checked ? true : false
+		smoothScrollInput.addEventListener("change", function() {
+			if (smoothScrollEnabled === false) {
+				this.indeterminate = true
+				localStorage.removeItem("smooth-scroll")
+			} else if (smoothScrollEnabled === "indeterminate") {
+				this.checked = true
+			}
+			smoothScrollEnabled = this.indeterminate ? "indeterminate" : this.checked ? true : false
+		})
 	}
 
 	{%- if eleventy.env.runMode === 'build' -%}

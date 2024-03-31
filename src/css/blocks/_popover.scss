@@ -101,3 +101,11 @@
 		}
 	}
 }
+
+.indeterminate {
+	font-size: var(--font-size-default);
+
+	:not(:indeterminate) + & {
+		display: none;
+	}
+}
