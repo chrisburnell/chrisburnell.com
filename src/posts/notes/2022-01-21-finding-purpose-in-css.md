@@ -1,6 +1,6 @@
 ---
 published: false
-date: 2022-01-21T22:43:00+00:00
+date: 2022-01-21T22:43:00+0000
 title: Finding Purpose in CSS
 tags:
   - css

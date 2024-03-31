@@ -1,7 +1,7 @@
 ---
 title: "World of Warcraft: Wrath of the Lich King Soundtrack"
-date: 2019-08-01T12:20:00+01:00
-release: 2008-11-08T12:00:00+01:00
+date: 2019-08-01T12:20:00+0100
+release: 2008-11-08T12:00:00+0100
 authors:
   - Russell Brower
   - Derek Duke

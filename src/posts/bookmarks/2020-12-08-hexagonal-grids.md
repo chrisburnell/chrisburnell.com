@@ -1,5 +1,5 @@
 ---
-date: 2020-12-08T19:17:07+00:00
+date: 2020-12-08T19:17:07+0000
 title: "Hexagonal Grids"
 description: "This incredible post covers just about everything you'd want to know about implementing a hexagonal grid. Chock-full of useful info!"
 bookmark_of:

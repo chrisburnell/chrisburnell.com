@@ -1,6 +1,6 @@
 ---
 draft: true
-date: 2020-12-12T09:30:00+00:00
+date: 2020-12-12T09:30:00+0000
 title: "Let me check my calendar"
 description: "Following in my trend of writing IndieWeb-related articles about building for Eleventy, today I’ll show you how to create your own, self-updating ICS calendar feed using microformats."
 # syndicate_to:
@@ -26,6 +26,6 @@ Before I dive into some terminology, I recommend briefly reading about how [even
 in_reply_to: https://www.hwclondon.co.uk/meetups/20190626
 rsvp:
   value: "yes"
-  date: 2019-06-26T19:00:00+01:00
-  end: 2019-06-26T20:30:00+01:00
+  date: 2019-06-26T19:00:00+0100
+  end: 2019-06-26T20:30:00+0100
 ```

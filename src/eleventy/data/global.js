@@ -1,6 +1,5 @@
 export const nowEpoch = Date.now()
-export const nowJS = new Date()
-export const nowISO = nowJS.toISOString()
+export const nowISO = new Date().toISOString()
 
 const thisYear = new Date().getFullYear()
 const startEpoch = new Date(`${thisYear}-04-09T00:00:00+1400`).getTime()
@@ -15,7 +14,6 @@ export const random = `${segment()}-${segment()}-${segment()}`
 
 export default {
 	nowEpoch,
-	nowJS,
 	nowISO,
 	isCSSNakedDay,
 	random,

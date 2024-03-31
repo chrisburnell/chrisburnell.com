@@ -1,7 +1,7 @@
 ---
 title: CrasH Talk
-date: 2019-04-30T10:45:00+01:00
-release: 2019-04-26T12:00:00+01:00
+date: 2019-04-30T10:45:00+0100
+release: 2019-04-26T12:00:00+0100
 authors:
   - title: ScHoolboy Q
     url: https://open.spotify.com/artist/5IcR3N7QB1j6KBL8eImZ8m

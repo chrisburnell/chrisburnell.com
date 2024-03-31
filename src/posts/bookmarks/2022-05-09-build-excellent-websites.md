@@ -1,5 +1,5 @@
 ---
-date: 2022-05-09T09:00:00+01:00
+date: 2022-05-09T09:00:00+0100
 title: "Build Excellent Websites"
 description: "“Be the browser’s mentor, not its micromanager.”"
 bookmark_of:

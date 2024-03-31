@@ -1,5 +1,5 @@
 ---
-date: 2019-10-03T12:06:12+01:00
+date: 2019-10-03T12:06:12+0100
 title: "Keep a Changelog"
 description: "Everything you need to know about changelogs, and presented beautifully as well."
 bookmark_of:

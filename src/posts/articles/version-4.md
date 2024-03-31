@@ -1,6 +1,6 @@
 ---
 draft: true
-date: 2024-02-21T01:53:00+08:00
+date: 2024-02-21T01:53:00+0800
 title: Version 4.0.0
 description: With the introduction of ESM to Eleventy in the canary versions, I took it upon myself to do some major refactoring of my website
 tags:

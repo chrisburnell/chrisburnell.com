@@ -1,7 +1,7 @@
 ---
 title: NOT ALL HEROES WEAR CAPES
-date: 2019-01-15T12:00:00+00:00
-release: 2018-11-01T12:00:00+00:00
+date: 2019-01-15T12:00:00+0000
+release: 2018-11-01T12:00:00+0000
 authors:
   - title: Metro Boomin
     url: https://open.spotify.com/artist/0iEtIxbK0KxaSlF7G42ZOp

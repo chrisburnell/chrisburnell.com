@@ -4,19 +4,11 @@ import { locale } from "../data/site.js"
 
 /**
  * @param {string} dateString
- * @return {string}
- */
-export const toJSDate = (dateString) => {
-	return new Date(dateString)
-}
-
-/**
- * @param {DateTime} datetime
  * @param {string} format
  * @return {string}
  */
-export const formatDatetime = (datetime, format) => {
-	return DateTime.fromJSDate(datetime, { setZone: true }).toFormat(format)
+export const formatDatetime = (dateString, format) => {
+	return DateTime.fromISO(dateString, { setZone: true }).toFormat(format)
 }
 
 const ordinalPlurals = new Intl.PluralRules(locale, {
@@ -78,9 +70,11 @@ export const friendlyTime = (value, showTimezone = true) => {
 export const ianaTimezone = (value) => {
 	// prettier-ignore
 	return formatDatetime(value, "z")
-		.replace("UTC+8", "Asia/Singapore")
-		.replace("UTC+1", "Europe/London")
-		.replace("UTC", "Europe/London")
+		.replace(/(GMT|UTC)\+8/g, "Asia/Singapore")
+		.replace(/(GMT|UTC)\+1/g, "Europe/London")
+		.replace(/(GMT|UTC)/g, "Europe/London")
+		.replace(/(GMT|UTC)-3/g, "America/Halifax")
+		.replace(/(GMT|UTC)-4/g, "America/Halifax")
 }
 
 /**
@@ -94,11 +88,11 @@ export const rfc3339Date = (dateString, showTimezone = true) => {
 }
 
 /**
- * @param {DateTime} value
+ * @param {string} dateString
  * @returns {string}
  */
-export const w3cDate = (value) => {
-	return DateTime.fromJSDate(value, { setZone: true }).toFormat("yyyy-MM-dd'T'HH:mm:ssZZ")
+export const w3cDate = (dateString) => {
+	return formatDatetime(dateString, "yyyy-MM-dd'T'HH:mm:ssZZ")
 }
 
 /**
@@ -271,7 +265,6 @@ export const getRSVPDateString = (end) => {
 }
 
 export default {
-	toJSDate,
 	formatDatetime,
 	ordinal,
 	friendlyDate,

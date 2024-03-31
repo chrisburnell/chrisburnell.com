@@ -1,5 +1,5 @@
 ---
-date: 2015-01-25T12:00:00+00:00
+date: 2015-01-25T12:00:00+0000
 title: NYT No Knead Bread
 prep_time: 14–20 hours
 cooking_time: 45–60 minutes

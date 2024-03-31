@@ -41,7 +41,7 @@ excludeFromSearch: true
 {%- endfor -%}
 
 {%- set first_commit = repository.information.created_at | epoch -%}
-{%- set days_since_first_commit = (global.now - first_commit) / 86400002 -%}
+{%- set days_since_first_commit = (global.nowEpoch - first_commit) / 86400002 -%}
 {%- set commits_per_day = repository.contributors[0].contributions / days_since_first_commit -%}
 
 <dl>
@@ -64,7 +64,7 @@ excludeFromSearch: true
 	<dt>№ Webmentions Received</dt>
 	<dd>{{ webmentionsAll | length | numberStringFormat }}</dd>
 	<dt>Commits <small>per</small> Day</dt>
-	<dd><a href="https://github.com/{{ author.github }}/{{ site.repository }}/commits/{{ site.branch }}">{{ commits_per_day | maxDecimals(2) }}</a> <small>({{ repository.contributors[0].contributions | numberStringFormat }} commits over <span title="since {{ repository.information.created_at | toJSDate | friendlyDate }}">{{ (days_since_first_commit / 365.2422) | maxDecimals(2) }} years</span>)</small></dd>
+	<dd><a href="https://github.com/{{ author.github }}/{{ site.repository }}/commits/{{ site.branch }}">{{ commits_per_day | maxDecimals(2) }}</a> <small>({{ repository.contributors[0].contributions | numberStringFormat }} commits over <span title="since {{ repository.information.created_at | friendlyDate }}">{{ (days_since_first_commit / 365.2422) | maxDecimals(2) }} years</span>)</small></dd>
 </dl>
 
 <hr>

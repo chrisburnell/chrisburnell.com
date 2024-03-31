@@ -1,5 +1,5 @@
 ---
-date: 2016-04-18T19:45:00+01:00
+date: 2016-04-18T19:45:00+0100
 title: Supporting Middle-Out in CSS
 description: My first ever talk, given at London Web Standards.
 checkin:

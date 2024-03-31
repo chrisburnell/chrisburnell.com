@@ -1,5 +1,5 @@
 ---
-date: 2019-12-21T12:00:00+00:00
+date: 2019-12-21T12:00:00+0000
 title: Tourtière
 makes: 2
 preheat: true

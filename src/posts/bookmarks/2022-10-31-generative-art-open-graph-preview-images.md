@@ -1,5 +1,5 @@
 ---
-date: 2022-10-31T13:57:26+00:00
+date: 2022-10-31T13:57:26+0000
 title: "Generative art Open Graph preview images"
 description: "“What if each preview image was a piece of generative art?”"
 bookmark_of:

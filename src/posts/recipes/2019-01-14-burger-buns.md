@@ -1,5 +1,5 @@
 ---
-date: 2019-01-14T12:00:00+00:00
+date: 2019-01-14T12:00:00+0000
 title: Burger Buns
 prep_time: 20 minutes
 cooking_time: 10 minutes

@@ -1,5 +1,5 @@
 ---
-date: 2016-01-23T16:04:00+00:00
+date: 2016-01-23T16:04:00+0000
 title: Regex Golf
 description: Test your regex skills. So much fun. Brainmelting, but fun.
 bookmark_of: http://regex.alf.nu

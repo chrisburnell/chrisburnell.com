@@ -1,6 +1,6 @@
 ---
-updated: 2024-01-14T03:45:00+08:00
-date: 2022-08-25T16:31:04+01:00
+updated: 2024-01-14T03:45:00+0800
+date: 2022-08-25T16:31:04+0100
 title: Webmention Setup for Eleventy
 description: Here’s a quick run-through of how I retrieve and utilise Webmentions with my Eleventy website.
 tags:

@@ -1,7 +1,7 @@
 ---
 title: "Hoodies All Summer"
-date: 2019-10-09T12:23:00+01:00
-release: 2019-08-30T12:00:00+01:00
+date: 2019-10-09T12:23:00+0100
+release: 2019-08-30T12:00:00+0100
 authors:
   - title: Kano
     url: https://open.spotify.com/artist/50nN8IFD4xA67fI4jYbLV4

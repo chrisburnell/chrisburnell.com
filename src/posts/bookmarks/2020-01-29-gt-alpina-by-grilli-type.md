@@ -1,5 +1,5 @@
 ---
-date: 2020-01-29T11:39:03+00:00
+date: 2020-01-29T11:39:03+0000
 title: "GT Alpina by Grilli Type"
 description: "Amazing demo for this variable font."
 bookmark_of:

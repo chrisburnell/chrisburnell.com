@@ -1,5 +1,5 @@
 ---
-date: 2020-09-07T10:27:13+01:00
+date: 2020-09-07T10:27:13+0100
 title: "The True Story of Lee Kuan Yew's Singapore"
 description: "“Early Singapore’s authoritarian competency is a model invoked by leaders from China to Rwanda. But its rise was complex, messy, and the result of long factional battles. There are hard limits to how far it can be exported.”"
 bookmark_of:

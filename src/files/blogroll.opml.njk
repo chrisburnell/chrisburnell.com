@@ -2,7 +2,7 @@
 <opml version="2.0">
 	<head>
 		<title>{{ site.title }} Blogroll</title>
-		<dateCreated>{{ global.nowJS | w3cDate }}</dateCreated>
+		<dateCreated>{{ global.nowISO | w3cDate }}</dateCreated>
 	</head>
 	<body>
 		{% for blog in blogroll -%}

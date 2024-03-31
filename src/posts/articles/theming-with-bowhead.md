@@ -1,6 +1,6 @@
 ---
 draft: true
-date: 2021-06-17T09:30:00+01:00
+date: 2021-06-17T09:30:00+0100
 title: "Theming with Bowhead"
 description: "Bowhead, a small design token framework for SCSS and open source project of mine, works beautifully at its job. In this article, I'll explain how I extrapolated its capabilities to develop a robust way for applying colour-schemes across a website."
 # tags:

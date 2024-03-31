@@ -1,6 +1,6 @@
 ---
 draft: true
-date: 2020-02-20T10:42:00+00:00
+date: 2020-02-20T10:42:00+0000
 title: "Share and Back Again"
 description: "On a website on the Internet there lived a webpage. Not a table-laden soup of divs, filled with JavaScript and a dozen half-used frameworks, nor yet a portion of the page that could be read by a human that a robot could not: it was written for all, and that means microformats."
 ---

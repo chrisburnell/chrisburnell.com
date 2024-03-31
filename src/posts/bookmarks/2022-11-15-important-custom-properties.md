@@ -1,5 +1,5 @@
 ---
-date: 2022-11-15T13:34:40+00:00
+date: 2022-11-15T13:34:40+0000
 title: "!important custom properties"
 description: "“Using !important with custom properties might not work as you expect.”"
 tags:

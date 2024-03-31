@@ -1,5 +1,5 @@
 ---
-date: 2021-11-24T17:46:39+00:00
+date: 2021-11-24T17:46:39+0000
 title: "Passing arguments into a vanilla JS function"
 description: "I need to remember smart things like this, so I'm saving it for future me, who won't have an excuse not to have remembered."
 bookmark_of:

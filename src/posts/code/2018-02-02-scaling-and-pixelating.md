@@ -1,5 +1,5 @@
 ---
-date: 2018-02-02T16:48:00+00:00
+date: 2018-02-02T16:48:00+0000
 title: Scaling and Pixelating
 tags:
   - css

@@ -1,5 +1,5 @@
 ---
-date: 2024-02-22T16:29:00+08:00
+date: 2024-02-22T16:29:00+0800
 title: "How does a changed market affect Developer Relations?"
 description: "An excellent rundown of the role of Developer Relations, how things have changed given—*gestures broadly*—the state of things right now, and how Developer Advocates can change focus to be more applicable and bring more benefits to the careers of developers around us."
 tags:

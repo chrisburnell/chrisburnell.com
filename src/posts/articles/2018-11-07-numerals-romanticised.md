@@ -1,5 +1,5 @@
 ---
-date: 2018-11-07T12:13:00+00:00
+date: 2018-11-07T12:13:00+0000
 title: Numerals, Romanticised
 description: For a better part of the year, I've been working on a Jekyll-based Progressive Web App, <a href="https://dnd.chrisburnell.com/feonir/" rel="me  external">BloodBuilder</a>, for managing my Sorcerer in a game of Pathfinder I've been playing with some friends. One of the many intricate parts of logic involves the ability to convert Arabic numerals to and from Roman numerals, so I wrote a simple Liquid include to handle this.
 tags:

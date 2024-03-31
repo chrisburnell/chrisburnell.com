@@ -1,5 +1,5 @@
 ---
-date: 2023-04-17T23:47:02+01:00
+date: 2023-04-17T23:47:02+0100
 title: Dynamic Heading Borders
 description: I found a useful trick for achieving the long-standing design of Level 2 Headings across my website.
 tags:

@@ -1,5 +1,5 @@
 ---
-date: 2019-11-13T10:34:57+00:00
+date: 2019-11-13T10:34:57+0000
 title: "The Web Almanac"
 description: "HTTP Archive's annual state of the web report. This is *super-comprehensive* and is jam-packed with useful information."
 bookmark_of:

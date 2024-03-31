@@ -1,5 +1,5 @@
 ---
-date: 2019-12-12T00:38:00+00:00
+date: 2019-12-12T00:38:00+0000
 title: Moon Phases
 tags:
   - css

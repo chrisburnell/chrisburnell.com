@@ -1,12 +1,12 @@
 ---
-date: 2023-10-04T14:30:00+01:00
+date: 2023-10-04T14:30:00+0100
 in_reply_to:
   title: "Design Systems Week 2023 Thursday"
   url: https://nldesignsystem.nl/events/design-systems-week-2023/en/overview
 rsvp:
   value: "yes"
-  date: 2023-10-05T12:00:00+01:00
-  end: 2023-10-05T16:00:00+01:00
+  date: 2023-10-05T12:00:00+0100
+  end: 2023-10-05T16:00:00+0100
   upcoming_days_lead: 0.89
 tags:
   - conference

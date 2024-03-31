@@ -1,5 +1,5 @@
 ---
-date: 2024-03-30T00:30:00+08:00
+date: 2024-03-30T00:30:00+0800
 title: Lost in Time
 description: A list of reasons to include the time and timezone in Date strings and some JavaScript functions I use to consume and format them.
 tags:
@@ -58,7 +58,7 @@ Fri Mar 29 2024 21:00:00 GMT-0300 (Atlantic Daylight Time)
 I haven’t done much testing, but I suspect there are similar issues with how the browser will interpret the `<time>` element’s `DateTime` attribute:
 
 ```html
-<time DateTime="2024-03-30">30 March 2024</time>
+<time datetime="2024-03-30">30 March 2024</time>
 ```
 
 While the element’s text reads <q>30 March 2024</q>, there’s really no telling how a visitor’s browser will interpret the `DateTime` of the element because we cannot know where our visitors will be (and should not make assumptions, either).
@@ -74,7 +74,7 @@ With all that being said, let’s take a look at how you could capture dates and
 On my website, which is built with Eleventy ^[Understanding how <a href="https://www.11ty.dev/docs/dates/">Eleventy handles DateTimes</a> is worth a read.], I use an ISO 8601 string to capture DateTimes:
 
 ```yaml
-date: 2024-03-25T12:30:00+08:00
+date: 2024-03-25T12:30:00+0800
 ```
 
 I also use a library that helps with working with dates and times called [luxon](https://moment.github.io/luxon).
@@ -98,7 +98,7 @@ import { DateTime } from "luxon"
  * @return {string}
  */
 export const formatDatetime = (dateString, format) => {
-	return DateTime.fromJSDate(dateString, { setZone: true }).toFormat(format)
+	return DateTime.fromISO(dateString, { setZone: true }).toFormat(format)
 }
 ```
 

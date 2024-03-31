@@ -1,7 +1,7 @@
 ---
-updated: 2021-11-29T15:30:00+00:00
+updated: 2021-11-29T15:30:00+0000
 updated_text: This post expands on concepts and a mixin from a previous post, <a href="/article/variables-for-both/">Variables for Both</a>, and a more recent project, <a href="/bowhead/">Bowhead</a>, which I recommend you to read if you’re interested in the context around how the <samp>v</samp> mixin is used.<br><br><a href="#the-solution"><em>Skip to the full <samp>owl</samp> mixin solution.</em></a>
-date: 2020-01-14T12:20:00+00:00
+date: 2020-01-14T12:20:00+0000
 title: "Sassy Lobotomised Owl"
 description: "Managing spacing between elements and components on your page can be a tiring task if undertaken manually. This is where the lobotomised owl comes in: a short, simple snippet of CSS that simplifies this whole process for you. In this article I’ll explain how I make use of it in a more dynamic way using a SCSS mixin."
 banner:

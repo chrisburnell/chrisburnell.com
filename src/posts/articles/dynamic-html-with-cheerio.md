@@ -1,6 +1,6 @@
 ---
 draft: true
-date: 2022-08-26T8:54:00+00:00
+date: 2022-08-26T08:54:00+0000
 title: Dynamically mutating HTML with cheerio
 description: Description
 tags:

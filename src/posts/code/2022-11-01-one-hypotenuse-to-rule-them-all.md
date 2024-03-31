@@ -1,5 +1,5 @@
 ---
-date: 2022-11-01T15:27:00+00:00
+date: 2022-11-01T15:27:00+0000
 title: One Hypotenuse to rule them all
 description: Here’s a fun little demo of some math I found interesting.
 tags:

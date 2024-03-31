@@ -1,5 +1,5 @@
 ---
-date: 2019-08-20T10:12:23+01:00
+date: 2019-08-20T10:12:23+0100
 title: "vi is a language"
 description: "Until reading this, I’ve been stumbling around feeling frustrated that I can't seem to find any efficiency in my use of the language. This is exactly what I needed to read to get into and grok vi."
 tags:

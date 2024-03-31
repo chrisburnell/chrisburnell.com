@@ -1,5 +1,5 @@
 ---
-date: 2020-03-17T12:32:10+00:00
+date: 2020-03-17T12:32:10+0000
 title: "Why outbreaks like coronavirus spread exponentially"
 description: "Incredible visualisations and information from Washington Post."
 bookmark_of:

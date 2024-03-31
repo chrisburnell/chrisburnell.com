@@ -1,5 +1,5 @@
 ---
-date: 2023-03-01T15:36:42+00:00
+date: 2023-03-01T15:36:42+0000
 title: "GameDev Journal №1: Otis’s Zelda-like"
 description: "I think this might just be the inspirational kick-in-the-pants I’ve needed to re-explore this hobby myself! 🐰🕳️"
 tags:

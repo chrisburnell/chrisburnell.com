@@ -1,5 +1,5 @@
 ---
-date: 2022-01-11T20:06:35+00:00
+date: 2022-01-11T20:06:35+0000
 title: "Is it worth the time?"
 description: "How long can you work on making a routine task more efficient before you’re spending more time than you save? (Across five years)
 A handy chart from XKCD"

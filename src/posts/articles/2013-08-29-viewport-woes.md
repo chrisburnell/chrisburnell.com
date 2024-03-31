@@ -1,5 +1,5 @@
 ---
-date: 2013-08-29T12:02:00+01:00
+date: 2013-08-29T12:02:00+0100
 title: Viewport Woes
 description: I've been around the block and seen many variations of variables and syntax in viewport meta tags. What's the correct way to go about it? And maybe I'll comment on the state of browsers today as well.
 tags:

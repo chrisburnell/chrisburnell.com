@@ -1,5 +1,5 @@
 ---
-date: 2013-06-17T12:00:00+01:00
+date: 2013-06-17T12:00:00+0100
 title: Persistent Light Source Transform
 tags:
   - css

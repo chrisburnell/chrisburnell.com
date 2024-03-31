@@ -1,5 +1,5 @@
 ---
-date: 2022-12-07T10:40:00+00:00
+date: 2022-12-07T10:40:00+0000
 title: Copilot me if you can
 description: A short tale about how GitHub Copilot generated some “real” data about my website.
 tags:

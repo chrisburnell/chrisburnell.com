@@ -1,5 +1,5 @@
 ---
-date: 2019-12-16T13:52:52+00:00
+date: 2019-12-16T13:52:52+0000
 title: "Dynamic, Date-Based Color with JavaScript, HSL, and CSS Variables"
 description: "“A rational system for generating thousands of possible color schemes.”"
 bookmark_of:

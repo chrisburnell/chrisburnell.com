@@ -9,7 +9,7 @@ export default {
 		date: async (data) => {
 			if (data.github) {
 				const github = await githubData(data.github)
-				return github["created_at"] ? new Date(github["created_at"]) : null
+				return github["created_at"] || null
 			}
 			return data.date || null
 		},
@@ -23,7 +23,7 @@ export default {
 		updated: async (data) => {
 			if (data.github) {
 				const github = await githubData(data.github)
-				return github["pushed_at"] ? new Date(github["pushed_at"]) : null
+				return github["pushed_at"] || null
 			}
 			return data.updated || null
 		},

@@ -1,5 +1,5 @@
 ---
-date: 2021-12-12T21:58:28+00:00
+date: 2021-12-12T21:58:28+0000
 title: "Old CSS, new CSS"
 description: "What an incredibly-detailed and interesting read on the history of CSS and web design!"
 bookmark_of:

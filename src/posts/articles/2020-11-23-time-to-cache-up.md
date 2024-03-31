@@ -1,7 +1,7 @@
 ---
-updated: 2022-01-24T12:30:00+00:00
+updated: 2022-01-24T12:30:00+0000
 updated_text: "I’ve since extrapolated on the ideas in this article and built <a href=\"/eleventy-cache-webmentions/\">eleventy-cache-webmentions</a> as a simplified method of retrieving and accessing Webmentions in <a href=\"https://11ty.dev/\" rel=\"external\">Eleventy</a>."
-date: 2020-11-23T14:45:00+00:00
+date: 2020-11-23T14:45:00+0000
 title: "Time to Cache Up"
 description: "For a long time I’ve been searching for a sound solution to storing the entire Webmention history of my blog, as packaging it up with the rest of the repository was not cutting it for me. Enter the world of async."
 tags:

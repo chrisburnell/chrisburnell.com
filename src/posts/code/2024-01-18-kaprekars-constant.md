@@ -1,5 +1,5 @@
 ---
-date: 2024-01-18T17:00:00+08:00
+date: 2024-01-18T17:00:00+0800
 title: Kaprekar’s Constant
 description: I came across an interesting mathematical observation today called Kaprekar’s constant, named after the mathematician, Dattatreya Ramchandra Kaprekar, and built an interactive tool to demonstrate it.
 tags:

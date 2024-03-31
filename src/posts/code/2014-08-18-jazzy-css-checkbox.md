@@ -1,5 +1,5 @@
 ---
-date: 2014-08-18T11:00:00+01:00
+date: 2014-08-18T11:00:00+0100
 title: Jazzy CSS Checkbox
 tags:
   - css

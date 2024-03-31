@@ -1,5 +1,5 @@
 ---
-date: 2020-05-23T13:34:33+01:00
+date: 2020-05-23T13:34:33+0100
 title: "The samsui women of Singapore"
 description: "An interesting read about the history of my girlfriend's paternal grandmother, detailing the lives of women who immigrated to Singapore."
 bookmark_of:

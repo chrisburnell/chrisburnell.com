@@ -1,5 +1,5 @@
 ---
-date: 2019-10-09T12:03:03+01:00
+date: 2019-10-09T12:03:03+0100
 title: "Advanced Lesson of the Firefox Font Editor"
 description: "In this YouTube video, Jen Simmons gives a thorough run-through of Firefox's Font Editor in its Dev Tools."
 bookmark_of:

@@ -1,5 +1,5 @@
 ---
-date: 2023-12-23T13:00:00+08:00
+date: 2023-12-23T13:00:00+0800
 title: Can you teach an old design system new colours?
 description: Over the years, I’ve changed the colours used across my website a number of times, and I’m happy with what I have now, but what I’m going to talk about today are <em>formats</em> for defining colours and some recent <q>behind-the-scenes</q> changes I made to how I define colours on my website, making theming my website easier.
 tags:

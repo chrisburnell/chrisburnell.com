@@ -1,6 +1,6 @@
 ---
-updated: 2022-05-11T17:10:00+01:00
-date: 2021-11-28T10:00:00+00:00
+updated: 2022-05-11T17:10:00+0100
+date: 2021-11-28T10:00:00+0000
 title: Deep Dive into Colour
 description: How to make powerful use of CSS Variables, colour spaces, and the cascade using Bowhead.
 tags:

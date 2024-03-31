@@ -1,5 +1,5 @@
 ---
-date: 2024-01-04T11:40:00+08:00
+date: 2024-01-04T11:40:00+0800
 title: Batching Life Changes
 description: I’ve never really done a “year in review” post before, but 2023 and, in particular, the last few months, have brought tides of change that I feel the need to share.
 tags:

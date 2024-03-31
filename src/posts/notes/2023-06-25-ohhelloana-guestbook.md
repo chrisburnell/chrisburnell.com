@@ -1,5 +1,5 @@
 ---
-date: 2023-06-25T19:06:02+01:00
+date: 2023-06-25T19:06:02+0100
 in_reply_to:
   title: "Ana Rodrigues’ Guestbook"
   url: https://ohhelloana.blog/guestbook/

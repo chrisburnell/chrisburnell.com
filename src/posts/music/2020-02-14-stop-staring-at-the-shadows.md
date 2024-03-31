@@ -1,7 +1,7 @@
 ---
 title: "STOP STARING AT THE SHADOWS"
-date: 2020-02-14T10:52:00+00:00
-release: 2020-02-14T12:00:00+00:00
+date: 2020-02-14T10:52:00+0000
+release: 2020-02-14T12:00:00+0000
 authors:
   - title: $uicideBoy$
     url: https://open.spotify.com/artist/1VPmR4DJC1PlOtd0IADAO0

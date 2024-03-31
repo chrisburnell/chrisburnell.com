@@ -1,5 +1,5 @@
 ---
-date: 2017-06-15T17:55:00+01:00
+date: 2017-06-15T17:55:00+0100
 title: Remapping Ranges in Sass
 description: Great inspiration can sometimes be found in exploring available opportunities and embracing new ideas. In this article, I'll try to replicate a foreign concept in a familiar way, and explain why I decided to even do it.
 tags:

@@ -3,7 +3,7 @@
 	{% for item in collections.all | keySort('inputPath') | arePublished | sitemapFilter -%}
 	<url>
 		<loc>{{ site.url + item.url }}</loc>
-		<lastmod>{{ item.data.updated | default(item.data.date) | default(global.nowJS) | w3cDate }}</lastmod>
+		<lastmod>{{ item.data.updated | default(item.data.date) | default(global.nowISO) | w3cDate }}</lastmod>
 		<changefreq>{{ item.data.sitemap.changefreq | default(site.sitemap.changefreq) }}</changefreq>
 		<priority>{{ item.data.sitemap.priority | default(site.sitemap.priority) }}</priority>
 	</url>
@@ -11,7 +11,7 @@
 	{% for category in collections.categories -%}
 	<url>
 		<loc>{{ site.url + '/' + category.plural + '/' }}</loc>
-		<lastmod>{{ global.nowJS | w3cDate }}</lastmod>
+		<lastmod>{{ global.nowISO | w3cDate }}</lastmod>
 		<changefreq>{{ site.sitemap.changefreq }}</changefreq>
 		<priority>{{ site.sitemap.priority }}</priority>
 	</url>
@@ -19,7 +19,7 @@
 	{% for tag in collections.tags -%}
 	<url>
 		<loc>{{ site.url + '/tag/' + tag + '/' }}</loc>
-		<lastmod>{{ global.nowJS | w3cDate }}</lastmod>
+		<lastmod>{{ global.nowISO | w3cDate }}</lastmod>
 		<changefreq>{{ site.sitemap.changefreq }}</changefreq>
 		<priority>{{ site.sitemap.priority }}</priority>
 	</url>

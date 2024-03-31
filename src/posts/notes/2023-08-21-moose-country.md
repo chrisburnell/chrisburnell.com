@@ -1,5 +1,5 @@
 ---
-date: 2023-08-21T18:53:44+01:00
+date: 2023-08-21T18:53:44+0100
 title: Moose Country
 tags:
   - photo

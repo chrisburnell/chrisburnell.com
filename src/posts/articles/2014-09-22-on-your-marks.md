@@ -1,7 +1,7 @@
 ---
-updated: 2016-01-25T12:45:00+00:00
+updated: 2016-01-25T12:45:00+0000
 updated_text: I’ve modified the JavaScript for this section of my site over time, but have reflected the changes in the code snippets below.
-date: 2014-09-22T10:00:00+01:00
+date: 2014-09-22T10:00:00+0100
 title: On Your Marks, Get Set, Wait
 description: What's really important when reading an article online? Content should always come first, and give users the option for more later.
 tags:

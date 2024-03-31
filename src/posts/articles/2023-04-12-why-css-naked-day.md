@@ -1,5 +1,5 @@
 ---
-date: 2023-04-14T00:30:00+01:00
+date: 2023-04-14T00:30:00+0100
 title: Why I participated in CSS Naked Day
 description: "CSS Naked Day has come and gone for this year, but I’ll be making it a point to participate for many years to come."
 tags:
@@ -22,7 +22,7 @@ For example, someone living in the <abbr title="Coordinated Universal Time">UTC<
 
 Likewise, someone in the <abbr title="Coordinated Universal Time">UTC</abbr>-12 timezone will be in the last timezone to tick over from the {{ 9 | ordinal | safe }} to the {{ 10 | ordinal | safe }}, so we need to make sure CSS is disabled *until then*.
 
-This leaves us with a 50-hour period during which time participants’ websites will be served without CSS, stretching from <time datetime="2023-04-08T10:00:00Z">April {{ 8 | ordinal | safe }} @ 10:00:00 UTC</time> until <time datetime="2023-04-10T12:00:00Z">April {{ 10 | ordinal | safe }} @ 12:00:00 UTC</time>.
+This leaves us with a 50-hour period during which time participants’ websites will be served without CSS, stretching from <time datetime="2023-04-08T10:00:00+00:00">April {{ 8 | ordinal | safe }} @ 10:00:00 UTC</time> until <time datetime="2023-04-10T12:00:00+00:00">April {{ 10 | ordinal | safe }} @ 12:00:00 UTC</time>.
 
 ## What’s the point?
 

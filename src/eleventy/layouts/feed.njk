@@ -17,7 +17,7 @@
 	</author>
 	<logo>{{ site.url + site.logo }}</logo>
 	<image>{{ site.url + author.avatar }}</image>
-	<updated>{{ collection | getNewestCollectionItemDate | rfc3339Date }}</updated>
+	<updated>{{ (collection | getNewestCollectionItemDate).toISOString() | rfc3339Date }}</updated>
 	<generator>{{ eleventy.generator }}</generator>
 	{% for item in collection | limit(limit) -%}
 	<entry>
@@ -25,7 +25,7 @@
 		<link href="{{ site.url + item.url }}" />
 		<title>{{ item.data.meta_title }}</title>
 		<published>{{ item.data.date | rfc3339Date }}</published>
-		<updated>{{ item.data.updated | default(item.data.date) | default(global.now) | rfc3339Date }}</updated>
+		<updated>{{ item.data.updated | default(item.data.date) | default(global.nowISO) | rfc3339Date }}</updated>
 		{% if item.data.category -%}
 		<category term="{{ item.data.category }}" scheme="{{ site.url + '/' + item.data.category + '/' }}" label="{{ item.data | getCategoryName }}" />
 		{%- endif %}

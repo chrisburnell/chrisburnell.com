@@ -1,7 +1,7 @@
 ---
 title: Everybody’s Talking, Nobody’s Listening!
-date: 2019-03-17T04:07:00+00:00
-release: 2009-05-04T12:00:00+01:00
+date: 2019-03-17T04:07:00+0000
+release: 2009-05-04T12:00:00+0100
 authors:
   - title: Caspa
     url: https://www.youtube.com/channel/UCxG3fmvy78Uc8lXVxFFq4Vw
