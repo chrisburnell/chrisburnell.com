@@ -1,7 +1,7 @@
 ---
 title: Everythangs Corrupt
-date: 2018-12-12T12:00:00+0000
-release: 2018-12-07T12:00:00+0000
+date: 2018-12-12T12:00:00+00:00
+release: 2018-12-07T12:00:00+00:00
 authors:
   - title: Ice Cube
     url: https://icecube.com/

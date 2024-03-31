@@ -1,5 +1,5 @@
 ---
-date: 2013-10-09T10:40:00+0100
+date: 2013-10-09T10:40:00+01:00
 title: Clock Face Idea
 tags:
   - css

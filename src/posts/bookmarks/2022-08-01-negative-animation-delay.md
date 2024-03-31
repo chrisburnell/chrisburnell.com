@@ -1,5 +1,5 @@
 ---
-date: 2022-08-01T12:41:27+0100
+date: 2022-08-01T12:41:27+01:00
 title: "Negative Animation Delay"
 description: "Awesome little trick for building better \"initial\" animation states where multiple elements are staggered."
 tags:

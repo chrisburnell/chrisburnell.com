@@ -1,5 +1,5 @@
 ---
-date: 2024-01-19T12:28:58+0000
+date: 2024-01-19T12:28:58+00:00
 title: "The what, why, how formula of technical writing"
 description: "I’d really like to improve my technical writing skills, and this article by James has tonnes of practical and sage wisdom for answering three important questions when writing technical content."
 bookmark_of:

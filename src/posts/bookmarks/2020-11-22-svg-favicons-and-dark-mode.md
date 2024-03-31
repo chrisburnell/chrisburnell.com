@@ -1,5 +1,5 @@
 ---
-date: 2020-11-22T11:29:29+0000
+date: 2020-11-22T11:29:29+00:00
 title: "SVG Favicons and Dark Mode"
 description: "My good friend, Dave, has written this excellent overview of SVG favicons and using prefers-color-scheme to toggle a dark-mode version."
 bookmark_of:

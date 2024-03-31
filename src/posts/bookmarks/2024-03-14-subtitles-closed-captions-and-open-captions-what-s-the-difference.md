@@ -1,5 +1,5 @@
 ---
-date: 2024-03-14T12:57:35+0800
+date: 2024-03-14T12:57:35+08:00
 title: "Subtitles, Closed Captions, and Open Captions: What's the Difference?"
 description: "Such an excellent article by Ben Myers on subtitles, captions, and transcription. Lots to learn!"
 tags:

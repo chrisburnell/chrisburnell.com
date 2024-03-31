@@ -1,5 +1,5 @@
 ---
-date: 2022-08-17T11:29:55+0100
+date: 2022-08-17T11:29:55+01:00
 title: "Color & Contrast"
 description: "<q>A comprehensive guide for exploring and learning about the theory, science, and perception of color and contrast.</q>"
 bookmark_of:

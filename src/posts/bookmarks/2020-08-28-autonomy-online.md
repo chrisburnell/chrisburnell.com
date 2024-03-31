@@ -1,5 +1,5 @@
 ---
-date: 2020-08-27T22:31:00+0100
+date: 2020-08-27T22:31:00+01:00
 title: "Autonomy Online: A Case For The IndieWeb"
 description: "Ana Rodrigues perfectly lays out what the IndieWeb is all about, along with the why’s and how’s of getting involved!"
 bookmark_of:

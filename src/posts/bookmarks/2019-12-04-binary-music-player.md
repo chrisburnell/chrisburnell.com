@@ -1,5 +1,5 @@
 ---
-date: 2019-12-04T10:54:37+0000
+date: 2019-12-04T10:54:37+00:00
 title: "Binary Music Player"
 description: "Another bit of clever fun from Tim Holman—this time building some fun musical melodies by counting in binary, and you can customise the notes too!"
 bookmark_of:

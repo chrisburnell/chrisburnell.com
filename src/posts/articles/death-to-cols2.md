@@ -1,6 +1,6 @@
 ---
 draft: true
-date: 2020-02-09T09:31:00+0100
+date: 2020-02-09T09:31:00+01:00
 title: Let me show you the door, <code>col-md-4</code>
 description: For over a decade now, it’s been the norm to layout our websites with a system in CSS that divides the page into columns and defines the size of components on the page based on the number of columns it should take up. I’m proposing we move away from using arbitrary column counts and write CSS that expresses what we actually want, shedding the limitations imposed by a column-based layout.
 # tags:

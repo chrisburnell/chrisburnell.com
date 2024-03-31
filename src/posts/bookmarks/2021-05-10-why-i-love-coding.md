@@ -1,5 +1,5 @@
 ---
-date: 2021-05-10T13:25:55+0100
+date: 2021-05-10T13:25:55+01:00
 title: "Why I Love Coding"
 description: "I think I need to read *The Mythical Man-Month*!"
 bookmark_of:

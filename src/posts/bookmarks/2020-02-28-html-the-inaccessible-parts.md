@@ -1,5 +1,5 @@
 ---
-date: 2020-02-28T17:45:08+0000
+date: 2020-02-28T17:45:08+00:00
 title: "HTML: The Inaccessible Parts"
 description: "Dave Rupert gives an extremely thorough run-through of numerous gotchas to do with writing HTML you might think is accessible, but isn't quite what it seems."
 bookmark_of:

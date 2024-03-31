@@ -1,5 +1,5 @@
 ---
-date: 2020-04-22T19:21:35+0100
+date: 2020-04-22T19:21:35+01:00
 title: "The World-Wide Work"
 description: "This resonates with me time and time again. Such a powerful talk."
 bookmark_of:

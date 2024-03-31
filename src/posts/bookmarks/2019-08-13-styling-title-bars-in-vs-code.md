@@ -1,5 +1,5 @@
 ---
-date: 2019-08-13T09:58:14+0100
+date: 2019-08-13T09:58:14+01:00
 title: "Styling title bars in VS Code"
 description: "I find this useful when switching between multiple windows. Written by my good friend, Arek."
 bookmark_of:

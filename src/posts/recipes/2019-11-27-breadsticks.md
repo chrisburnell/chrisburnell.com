@@ -1,5 +1,5 @@
 ---
-date: 2019-11-27T12:00:00+0000
+date: 2019-11-27T12:00:00+00:00
 title: Breadsticks
 preheat: true
 prep_time: 2 hours 40 minutes

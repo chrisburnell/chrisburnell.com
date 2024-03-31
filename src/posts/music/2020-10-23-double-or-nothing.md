@@ -1,7 +1,7 @@
 ---
 title: "Double Or Nothing"
-date: 2020-10-23T11:56:32+0100
-release: 2020-10-23T11:28:00+0100
+date: 2020-10-23T11:56:32+01:00
+release: 2020-10-23T11:28:00+01:00
 authors:
   - title: D Double E
     url: https://open.spotify.com/artist/6bwkMlweHsBCpI2a0C5nnN

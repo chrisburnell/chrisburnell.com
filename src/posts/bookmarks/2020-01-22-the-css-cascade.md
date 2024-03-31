@@ -1,5 +1,5 @@
 ---
-date: 2020-01-22T14:05:02+0000
+date: 2020-01-22T14:05:02+00:00
 title: "The CSS Cascade"
 description: "Not only is this beautiful and a joy to read, it's chock-full of of useful info about how CSS' cascading."
 bookmark_of:

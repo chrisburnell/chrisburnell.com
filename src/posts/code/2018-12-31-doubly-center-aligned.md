@@ -1,5 +1,5 @@
 ---
-date: 2018-12-31T18:08:00+0000
+date: 2018-12-31T18:08:00+00:00
 title: Doubly-Center-Aligned Text
 tags:
   - css

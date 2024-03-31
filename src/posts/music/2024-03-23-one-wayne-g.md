@@ -1,7 +1,7 @@
 ---
 title: "One Wayne G"
-date: 2024-03-23T23:00:00+0800
-release: 2023-05-21T12:00:00+0000
+date: 2024-03-23T23:00:00+08:00
+release: 2023-05-21T12:00:00+00:00
 authors:
   - title: Mac DeMarco
     url: https://music.youtube.com/channel/UCs95LJSHhdVhYQLvqsZqp_A

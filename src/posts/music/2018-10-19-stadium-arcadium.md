@@ -1,7 +1,7 @@
 ---
 title: Stadium Arcadium
-date: 2018-10-19T14:00:00+0100
-release: 2006-05-09T12:00:00+0100
+date: 2018-10-19T14:00:00+01:00
+release: 2006-05-09T12:00:00+01:00
 authors:
   - title: Red Hot Chili Peppers
     url: https://open.spotify.com/artist/0L8ExT028jH3ddEcZwqJJ5

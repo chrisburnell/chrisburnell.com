@@ -1,5 +1,5 @@
 ---
-date: 2020-01-10T11:01:57+0000
+date: 2020-01-10T11:01:57+00:00
 title: "The Accessibility of Styled Form Controls"
 description: "A repository of styled and <q>styled</q> form control elements and markup patterns, and how they are announced by screen readers."
 bookmark_of:

@@ -1,5 +1,5 @@
 ---
-date: 2019-12-09T18:41:00+0000
+date: 2019-12-09T18:41:00+00:00
 title: Color Transition Demo
 tags:
   - color

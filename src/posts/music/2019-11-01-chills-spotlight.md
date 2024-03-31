@@ -1,7 +1,7 @@
 ---
 title: "Chill’s Spotlight"
-date: 2019-11-01T11:30:00+0000
-release: 2019-11-01T12:00:00+0000
+date: 2019-11-01T11:30:00+00:00
+release: 2019-11-01T12:00:00+00:00
 authors:
   - title: Lupe Fiasco
     url: https://open.spotify.com/artist/01QTIT5P1pFP3QnnFSdsJf

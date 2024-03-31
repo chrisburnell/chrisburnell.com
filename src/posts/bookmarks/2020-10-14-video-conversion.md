@@ -1,5 +1,5 @@
 ---
-date: 2020-10-14T22:33:26+0100
+date: 2020-10-14T22:33:26+01:00
 title: "Video Conversion"
 description: "This is definitely something that I may or may not do often… fantastic little guide to doing it right!"
 bookmark_of:

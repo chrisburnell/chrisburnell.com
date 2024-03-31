@@ -1,5 +1,5 @@
 ---
-date: 2020-03-12T12:27:09+0000
+date: 2020-03-12T12:27:09+00:00
 title: "Fraidycat"
 description: "This is so freaking cool. “Fraidycat is a desktop app or browser extension for Firefox or Chrome [you can] use to follow people (hundreds) on whatever platform they choose”. Warm, fuzzy, IndieWeb vibes from this one!"
 bookmark_of:

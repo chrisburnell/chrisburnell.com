@@ -1,5 +1,5 @@
 ---
-date: 2013-06-18T02:45:00+0100
+date: 2013-06-18T02:45:00+01:00
 title: Persistent Shadows
 description: How easy is it to keep a shadow's direction consistent whilst rotating an element?
 tags:

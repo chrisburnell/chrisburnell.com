@@ -1,5 +1,5 @@
 ---
-date: 2015-02-01T12:00:00+0000
+date: 2015-02-01T12:00:00+00:00
 title: Caramel Popcorn
 cooking_time: 75 minutes
 preheat: true

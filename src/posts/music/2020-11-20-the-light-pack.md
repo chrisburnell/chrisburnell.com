@@ -1,7 +1,7 @@
 ---
 title: "The Light Pack"
-date: 2020-11-20T21:15:28+0000
-release: 2020-07-17T12:00:00+0000
+date: 2020-11-20T21:15:28+00:00
+release: 2020-07-17T12:00:00+00:00
 authors:
   - title: Joey Bada$$
     url: https://open.spotify.com/artist/2P5sC9cVZDToPxyomzF1UH

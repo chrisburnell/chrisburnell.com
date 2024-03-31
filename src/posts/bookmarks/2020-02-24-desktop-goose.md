@@ -1,5 +1,5 @@
 ---
-date: 2020-02-24T10:31:57+0000
+date: 2020-02-24T10:31:57+00:00
 title: "Desktop Goose"
 description: "“A downloadable goose-sperience for Windows and macOS”"
 bookmark_of:

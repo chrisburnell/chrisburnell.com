@@ -1,5 +1,5 @@
 ---
-date: 2016-07-22T16:12:00+0100
+date: 2016-07-22T16:12:00+01:00
 
 title: Atom Multiline Select
 description: "An Atom Editor package to support multiline selection which I forked and modified to mimic Sublime Text's multiline selection technique."

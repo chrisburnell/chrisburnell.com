@@ -1,5 +1,5 @@
 ---
-date: 2014-10-21T12:00:00+0100
+date: 2014-10-21T12:00:00+01:00
 title: content-box vs. border-box
 tags:
   - css

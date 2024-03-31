@@ -1,5 +1,5 @@
 ---
-date: 2023-08-18T10:47:00+0100
+date: 2023-08-18T10:47:00+01:00
 title: Yahaha! in Halifax
 tags:
   - photo

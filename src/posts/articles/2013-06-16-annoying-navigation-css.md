@@ -1,5 +1,5 @@
 ---
-date: 2013-06-16T03:58:00+0100
+date: 2013-06-16T03:58:00+01:00
 title: Annoying Navigation CSS
 description: Navigation is crucial to a functional website. It is how your users find the information they're after; get it right, and your users are happy—get it wrong, and they go insane!
 tags:

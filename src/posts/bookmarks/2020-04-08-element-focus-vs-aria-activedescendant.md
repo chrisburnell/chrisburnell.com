@@ -1,5 +1,5 @@
 ---
-date: 2020-04-08T11:43:56+0100
+date: 2020-04-08T11:43:56+01:00
 title: "Element.focus vs aria-activedescendant"
 description: "When you build JavaScript components, you need to manage focus for both keyboard users and screen readers. The WAI-ARIA specs say there are two ways to manage focus"
 bookmark_of:

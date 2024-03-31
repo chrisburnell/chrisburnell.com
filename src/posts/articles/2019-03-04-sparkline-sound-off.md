@@ -1,7 +1,7 @@
 ---
-updated: 2021-10-21T12:29:00+0100
+updated: 2021-10-21T12:29:00+01:00
 updated_text: Added an <a href="#interactive-demo">interactive demo</a> at the bottom!
-date: 2019-03-04T13:10:40+0000
+date: 2019-03-04T13:10:40+00:00
 title: Sparkline Sound-Off
 description: I have been following in the footsteps of Jeremy Keith for a few months now. Dotted around my website, now, are sparklines, representing my activity over time. As an added bonus, a little tune based on the sparkline's values plays when you click on it. With a moderate amount of musical theory under my belt, here's how I accomplished that audio delight.
 tags:

@@ -1,5 +1,5 @@
 ---
-date: 2022-05-11T19:07:00+0100
+date: 2022-05-11T19:07:00+01:00
 title: Changing with the times
 description: Lessons learned, pieces of wisdom (and folly), and other things I have to say after running a website blog for a while.
 tags:

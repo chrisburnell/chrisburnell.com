@@ -1,5 +1,5 @@
 ---
-date: 2022-08-15T17:34:30+0100
+date: 2022-08-15T17:34:30+01:00
 title: It’s all relative!
 description: What’s the deal with relative units? Let’s find out.
 tags:

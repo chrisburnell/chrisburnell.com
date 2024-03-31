@@ -1,5 +1,5 @@
 ---
-date: 2014-11-19T12:00:00+0000
+date: 2014-11-19T12:00:00+00:00
 title: Interaction Jazz
 tags:
   - css

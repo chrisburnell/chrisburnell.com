@@ -1,5 +1,5 @@
 ---
-date: 2022-05-11T17:20:00+0100
+date: 2022-05-11T17:20:00+01:00
 title: The Beloved Refactor
 description: Following the incredible high from a great conference, I just finished an extremely refreshing refactor of the CSS on my site. Here’s what I did.
 tags:

@@ -1,5 +1,5 @@
 ---
-date: 2020-03-11T15:48:51+0000
+date: 2020-03-11T15:48:51+00:00
 title: "Getting the easy stuff right ･ Robin Rendle"
 description: "It me."
 bookmark_of:

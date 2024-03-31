@@ -1,5 +1,5 @@
 ---
-date: 2016-04-29T12:00:00+0100
+date: 2016-04-29T12:00:00+01:00
 title: April LWS Talk
 description: I gave a talk at London Web Standards and asked the question, <q>So how can we write media queries that are both consistent and succinct?</q>
 tags:

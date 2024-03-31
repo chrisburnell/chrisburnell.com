@@ -1,5 +1,5 @@
 ---
-date: 2017-11-09T17:00:00+0000
+date: 2017-11-09T17:00:00+00:00
 title: Crossing Guards
 description: Throttle back on your scroll events and watch out for the IntersectionObserver!
 tags:

@@ -1,5 +1,5 @@
 ---
-date: 2023-06-12T15:00:00+0100
+date: 2023-06-12T15:00:00+01:00
 title: Double-Double
 description: Today I’m introducing a little dash of CSS syntactic sugar I’ve been using a lot when building components recently that I’m calling the <em>Double-Double</em> technique.
 photo:

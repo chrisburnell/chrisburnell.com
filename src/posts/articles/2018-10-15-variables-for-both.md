@@ -1,7 +1,7 @@
 ---
-updated: 2021-05-06T12:00:00+0100
+updated: 2021-05-06T12:00:00+01:00
 updated_text: I’ve since turned this into a full-blown package of its own called <a href="/bowhead/">Bowhead</a>!
-date: 2018-10-15T10:34:00+0100
+date: 2018-10-15T10:34:00+01:00
 title: Variables for Both
 description: Now that CSS Custom Properties, or CSS Variables, are becoming a solid standard, I'm using a method to map their values to CSS Variables whilst providing a value-as-is fallback using a straightforward syntax in a SCSS function and mixin.
 tags:

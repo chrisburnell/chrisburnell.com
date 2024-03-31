@@ -1,5 +1,5 @@
 ---
-date: 2024-01-18T19:45:00+0800
+date: 2024-01-18T19:45:00+08:00
 title: Prometheus
 description: Reflecting on what striving for success has meant to me over the years until today.
 tags:

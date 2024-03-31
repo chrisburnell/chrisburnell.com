@@ -1,5 +1,5 @@
 ---
-date: 2014-11-05T13:00:00+0000
+date: 2014-11-05T13:00:00+00:00
 title: Power of Transform Centering - Interactive
 tags:
   - css

@@ -1,5 +1,5 @@
 ---
-date: 2023-05-02T13:20:38+0100
+date: 2023-05-02T13:20:38+01:00
 title: "Functional documentation"
 description: "“Some collected thoughts and ideas around applying a functional approach to writing and maintaining documentation, especially for design systems.”"
 tags:

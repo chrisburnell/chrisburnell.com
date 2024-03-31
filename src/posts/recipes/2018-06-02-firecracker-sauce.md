@@ -1,5 +1,5 @@
 ---
-date: 2018-06-02T12:00:00+0000
+date: 2018-06-02T12:00:00+00:00
 title: Firecracker Sauce
 prep_time: 5 minutes
 cooking_time: 5–10 minutes

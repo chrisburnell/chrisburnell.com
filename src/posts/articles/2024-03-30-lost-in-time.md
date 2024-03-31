@@ -1,5 +1,5 @@
 ---
-date: 2024-03-30T00:30:00+0800
+date: 2024-03-30T00:30:00+08:00
 title: Lost in Time
 description: A list of reasons to include the time and timezone in Date strings and some JavaScript functions I use to consume and format them.
 tags:
@@ -74,7 +74,7 @@ With all that being said, let’s take a look at how you could capture dates and
 On my website, which is built with Eleventy ^[Understanding how <a href="https://www.11ty.dev/docs/dates/">Eleventy handles DateTimes</a> is worth a read.], I use an ISO 8601 string to capture DateTimes:
 
 ```yaml
-date: 2024-03-25T12:30:00+0800
+date: 2024-03-25T12:30:00+08:00
 ```
 
 I also use a library that helps with working with dates and times called [luxon](https://moment.github.io/luxon).

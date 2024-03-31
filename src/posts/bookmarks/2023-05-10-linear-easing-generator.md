@@ -1,5 +1,5 @@
 ---
-date: 2023-05-10T16:01:20+0100
+date: 2023-05-10T16:01:20+01:00
 title: "Linear easing generator"
 description: "“Generate linear() easings from JavaScript and SVG”"
 tags:
