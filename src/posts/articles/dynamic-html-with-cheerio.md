@@ -1,5 +1,6 @@
 ---
 draft: true
+date: 2022-08-26T8:54:00+00:00
 title: Dynamically mutating HTML with cheerio
 description: Description
 tags:

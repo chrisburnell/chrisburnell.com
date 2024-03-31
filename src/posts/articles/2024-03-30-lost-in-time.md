@@ -98,7 +98,7 @@ import { DateTime } from "luxon"
  * @return {string}
  */
 export const formatDatetime = (dateString, format) => {
-	return DateTime.fromISO(dateString, { setZone: true }).toFormat(format)
+	return DateTime.fromJSDate(dateString, { setZone: true }).toFormat(format)
 }
 ```
 

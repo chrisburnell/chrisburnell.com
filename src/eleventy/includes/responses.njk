@@ -53,7 +53,7 @@
 						{% for webmention in directReplies %}
 							{%- set wmId = webmention['wm-id'] -%}
 							{%- set wmType = webmention | getWebmentionType -%}
-							{%- set wmDate = webmention | getWebmentionPublished -%}
+							{%- set wmDate = webmention | getWebmentionPublished | toJSDate -%}
 							{%- set wmSource = webmention | getWebmentionSource | tweetback -%}
 							{%- set wmContent = webmention | getWebmentionContent -%}
 							{%- set authorPhoto = webmention.author.photo -%}

@@ -4,7 +4,7 @@ dotenv.config()
 import { getPublished } from "@chrisburnell/eleventy-cache-webmentions"
 import { isPublished, notReply } from "../functions/collections.js"
 import { exponentialMovingAverage } from "../functions/utils.js"
-import { now } from "./data/global.js"
+import { nowEpoch } from "./data/global.js"
 import { limits, upcomingDaysLead } from "./data/site.js"
 import { dateSort, epoch } from "./filters/dates.js"
 
@@ -174,13 +174,13 @@ export default {
 			.filter((item) => item.data.rsvp)
 			.filter((item) => {
 				// Check that the end isn't in the past
-				return epoch(now) < epoch(item.data.rsvp.end)
+				return nowEpoch < epoch(item.data.rsvp.end)
 			})
 			.filter((item) => {
 				// Lead the start by 24 hours
 				const startLeaded = epoch(item.data.rsvp.date) - durationDay
 				// Check that we've passed the leaded start
-				return startLeaded < epoch(now)
+				return startLeaded < nowEpoch
 			})
 			.sort(dateSort)
 			.sort((a, b) => {
@@ -202,12 +202,12 @@ export default {
 			.filter((item) => item.data.rsvp)
 			.filter((item) => {
 				// Check that the end isn't in the past
-				return epoch(now) < epoch(item.data.rsvp.end)
+				return nowEpoch < epoch(item.data.rsvp.end)
 			})
 			.filter((item) => {
 				// Remove posts that would be in the rsvpsToday collection
 				const todayStartLeaded = epoch(item.data.rsvp.date) - durationDay
-				if (todayStartLeaded < epoch(now)) {
+				if (todayStartLeaded < nowEpoch) {
 					return false
 				}
 
@@ -220,7 +220,7 @@ export default {
 				const upcomingLead = (item.data.rsvp?.upcoming_days_lead || upcomingDaysLead) * durationDay
 				const startLeaded = epoch(item.data.rsvp.date) - upcomingLead
 				// Check that we've passed the leaded start
-				return startLeaded < epoch(now)
+				return startLeaded < nowEpoch
 			})
 			.sort(dateSort)
 			.sort((a, b) => {

@@ -4,11 +4,19 @@ import { locale } from "../data/site.js"
 
 /**
  * @param {string} dateString
+ * @return {string}
+ */
+export const toJSDate = (dateString) => {
+	return new Date(dateString)
+}
+
+/**
+ * @param {DateTime} datetime
  * @param {string} format
  * @return {string}
  */
-export const formatDatetime = (dateString, format) => {
-	return DateTime.fromISO(dateString, { setZone: true }).toFormat(format)
+export const formatDatetime = (datetime, format) => {
+	return DateTime.fromJSDate(datetime, { setZone: true }).toFormat(format)
 }
 
 const ordinalPlurals = new Intl.PluralRules(locale, {
@@ -88,7 +96,7 @@ export const rfc3339Date = (dateString, showTimezone = true) => {
  * @returns {string}
  */
 export const w3cDate = (value) => {
-	return DateTime.fromISO(value, { setZone: true }).toFormat("yyyy-MM-dd'T'HH:mm:ssZZ")
+	return DateTime.fromJSDate(value, { setZone: true }).toFormat("yyyy-MM-dd'T'HH:mm:ssZZ")
 }
 
 /**
@@ -261,6 +269,7 @@ export const getRSVPDateString = (end) => {
 }
 
 export default {
+	toJSDate,
 	formatDatetime,
 	ordinal,
 	friendlyDate,

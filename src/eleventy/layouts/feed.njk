@@ -17,7 +17,7 @@
 	</author>
 	<logo>{{ site.url + site.logo }}</logo>
 	<image>{{ site.url + author.avatar }}</image>
-	<updated>{{ collection | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+	<updated>{{ collection | getNewestCollectionItemDate | rfc3339Date }}</updated>
 	<generator>{{ eleventy.generator }}</generator>
 	{% for item in collection | limit(limit) -%}
 	<entry>

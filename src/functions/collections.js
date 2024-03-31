@@ -6,7 +6,7 @@ import meetups from "../data/meetups.js"
 import musicalArtists from "../data/musicalArtists.js"
 import publications from "../data/publications.js"
 import blogroll from "../eleventy/data/blogroll.js"
-import { now } from "../eleventy/data/global.js"
+import { nowEpoch } from "../eleventy/data/global.js"
 import { cacheDurations, favicon, url as siteURL } from "../eleventy/data/site.js"
 import { getCategoryName } from "../eleventy/filters/collections.js"
 import { epoch, friendlyDate, getRSVPValueHTML } from "../eleventy/filters/dates.js"
@@ -82,7 +82,7 @@ export const isPublished = (item) => {
 		if ("tags" in item.data && item.data.tags.includes("ignore")) {
 			return false
 		}
-		if ("date" in item.data && epoch(item.data.date) > now) {
+		if ("date" in item.data && epoch(item.data.date) > nowEpoch) {
 			return false
 		}
 	}
