@@ -30,12 +30,12 @@
 		<category term="{{ item.data.category }}" scheme="{{ site.url + '/' + item.data.category + '/' }}" label="{{ item.data | getCategoryName }}" />
 		{%- endif %}
 		{% if item.data.excerpt and item.content != '' -%}
-		<summary>{{ item.data.excerpt | striptags | safe }}</summary>
+		<summary>{{ item.data.excerpt | striptags }}</summary>
 		<content type="html">
 			{{ item.content | formatAsMarkdown }}
 		</content>
 		{% elif item.data.description and item.content != '' -%}
-		<summary>{{ item.data.meta_description | stripStrikethrough | safe }}</summary>
+		<summary>{{ item.data.meta_description | stripStrikethrough }}</summary>
 		<content type="html">
 			{{ item.content | formatAsMarkdown }}
 		</content>
@@ -45,12 +45,12 @@
 			{{ item.content | formatAsMarkdown }}{% if item.data.of_url %}<p>Original post can be found at: <a href="{{ item.data.of_url }}">{{ item.data.of_url }}</a></p>{% endif %}
 		</content>
 		{% elif item.data.description and not item.content -%}
-		<summary>{{ item.data.meta_description | stripStrikethrough | striptags(true) | safe }}</summary>
+		<summary>{{ item.data.meta_description | stripStrikethrough | striptags(true) }}</summary>
 		<content type="html">
 			{% if item.data.of_url %}<p>Original post can be found at: <a href="{{ item.data.of_url }}">{{ item.data.of_url }}</a></p>{% endif %}
 		</content>
 		{% else -%}
-		<summary>{{ item.data.of_title_fallback | safe }}</summary>
+		<summary>{{ item.data.of_title_fallback }}</summary>
 		<content xml:lang="{{ site.locale }}" type="html">
 			{% if item.data.of_url %}<p>Original post can be found at: <a href="{{ item.data.of_url }}">{{ item.data.of_url }}</a></p>{% endif %}
 		</content>
