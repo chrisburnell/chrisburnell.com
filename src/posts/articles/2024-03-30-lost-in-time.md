@@ -1,4 +1,5 @@
 ---
+updated: 2024-04-01T15:25:50+0800
 date: 2024-03-30T00:30:00+0800
 title: Lost in Time
 description: A list of reasons to include the time and timezone in Date strings and some JavaScript functions I use to consume and format them.
@@ -77,11 +78,18 @@ On my website, which is built with Eleventy ^[Understanding how <a href="https:/
 date: 2024-03-25T12:30:00+0800
 ```
 
+<aside class=" [ box  box--warning ] [ flow ] " title="Why format without a colon in the timezone?">
+    <p><strong>Why format the timezone without a colon?<br>(e.g. as <samp>+0800</samp> instead of <samp>+08:00</samp>)</strong></p>
+    <p>On my Eleventy website, where post metadata is stored in <a href="https://www.11ty.dev/docs/data-frontmatter/" rel="external noopener">YAML-based front matter</a>, if the colon is included in the timezone, Eleventy will interpret the date as a JavaScript DateTime.</p>
+    <p>Unfortunately, when stored in this way, the returned value of <samp>date</samp> will be formatted relative to the local timezone, i.e. wherever the website is built.</p>
+    <p>Because I want to <em>preserve</em> the timezone stored in each Date string, I have chosen to format my Date strings as <em>strings</em> rather than <em>JavaScript DateTimes</em>.</p>
+</aside>
+
 I also use a library that helps with working with dates and times called [luxon](https://moment.github.io/luxon).
 
 luxon makes it easier to *consume* DateTimes, *manipulate* them if need be (e.g. to add `x` hours to a DateTime), and *convert* them to various formats: [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) and [RFC 3339](https://en.wikipedia.org/wiki/ISO_8601#RFCs) to name a couple ^[Check out this <a href="https://ijmacd.github.io/rfc3339-iso8601/">fantastic chart</a> to see the differences and similarities between ISO 8601 and RFC 3339.].
 
-It also allows me to *preserve timezone offsets* dictated in DateTime strings, which is a feature I need when there are DateTimes across *different timezones* to consider, as `new Date("...").toISOString()` will always format the given date to be in the UTC timezone.
+It also allows me to *preserve timezone offsets* dictated in Date strings, which is a feature I need when there are DateTimes across *different timezones* to consider, as `new Date("...").toISOString()` will always format the given date to be in the UTC timezone.
 
 ### Consuming DateTimes
 
