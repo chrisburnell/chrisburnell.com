@@ -9,6 +9,7 @@
 	font-weight: 100 900;
 	// prettier-ignore
 	src:
+		local("Proxima Vara"),
 		url("/fonts/proxima-vara-subset.woff2") format("woff2-variations"),
 		url("/fonts/proxima-vara-subset.woff2") format("woff2"),
 		url("/fonts/proxima-vara-subset.woff") format("woff");
