@@ -16,7 +16,7 @@ tags:
 
 <figure>
     <instant-photo develop>
-        <img src="/images/avatar-2011.jpg" alt="Chris Burnell" class=" [ shadow ] [ canada ] " width="400" height="400">
+        <img src="/images/avatar@4x.jpeg" alt="Chris Burnell" class=" [ canada ] " width="400" height="400">
     </instant-photo>
 </figure>
 
