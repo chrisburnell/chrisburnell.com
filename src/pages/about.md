@@ -85,17 +85,85 @@ I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link
 
 <hr>
 
-<h2 id="worked-with">Companies and Organisations I’ve worked with</h2>
+<h2 id="clients">Companies and Organisations I’ve worked with</h2>
 
-<div class=" [ grid ] [ shelf ] [ center ] " style="--min-inline-size: 6em; --gap: var(--size-gap);">
-    {%- for client in clients | sort(false, false, 'title') -%}
-        <article>
-            <a href="{{ client.url }}" title="{{ client.title | safe }}" rel="external noopener">
-                <img src="/images/built/{{ client.image }}" class=" [ interaction-grow{% if client.darkInvert %}  dark-invert-colors{% endif %} ] " alt="" loading="lazy" decoding="async" style="max-height: 8rem">
-            </a>
-        </article>
-    {%- endfor -%}
+<div class=" [ marquee ] ">
+    <div class=" [ marquee__content ] ">
+        {%- for client in clients | sort(false, false, 'title') -%}
+            <article>
+                <a href="{{ client.url }}" title="{{ client.title | safe }}" rel="external noopener">
+                    <img src="/images/content/{{ client.image }}"{% if client.darkInvert %} class="dark-invert-colors"{% endif %} alt="">
+                </a>
+            </article>
+        {%- endfor -%}
+    </div>
+    <div class=" [ marquee__content ] " aria-hidden="true">
+        {%- for client in clients | sort(false, false, 'title') -%}
+            <article>
+                <a href="{{ client.url }}" title="{{ client.title | safe }}" rel="external noopener" tabindex="-1">
+                    <img src="/images/content/{{ client.image }}"{% if client.darkInvert %} class="dark-invert-colors"{% endif %} alt="">
+                </a>
+            </article>
+        {%- endfor -%}
+    </div>
 </div>
+
+<style>
+.marquee {
+  inline-size: 100%;
+  display: flex;
+  gap: var(--size-large);
+  margin-block: var(--size-medium);
+  position: relative;
+  user-select: none;
+}
+.marquee__content {
+  flex-shrink: 0;
+  min-inline-size: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: var(--size-large);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .marquee {
+    overflow-x: hidden;
+  }
+  .marquee__content {
+    animation: scroll {{ clients.length }}s linear infinite;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee[aria-hidden="true"] {
+    display: none;
+  }
+
+  .marquee__content {
+    max-inline-size: 100%;
+    flex-wrap: wrap;
+  }
+}
+.marquee:hover .marquee__content,
+.marquee:has(a:is(:focus, :active)) .marquee__content  {
+  animation-play-state: paused;
+}
+.marquee__content a {
+  display: block;
+}
+.marquee__content img {
+  max-inline-size: 7rem;
+  max-block-size: 5rem;
+  margin: var(--size-medium) 0;
+}
+@keyframes scroll {
+  0% {
+    transform:translateX(0)
+  }
+  to {
+    transform:translateX(calc(-100% - var(--size-large)))
+  }
+}
+</style>
 
 <!-- <hr> -->
 

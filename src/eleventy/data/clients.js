@@ -29,7 +29,7 @@ export default [
 		darkInvert: true,
 	},
 	{
-		title: "National Federation of Women's Institutes",
+		title: "National Federation of Women’s Institutes",
 		url: "https://www.thewi.org.uk",
 		image: "nfwi-logo.png",
 		darkInvert: true,

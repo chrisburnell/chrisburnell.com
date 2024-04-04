@@ -5,7 +5,7 @@ description: Things I’d like to work on.
 toc: true
 ---
 
-{% set last_updated = "2024-03-30T20:23:00+0800" -%}
+{% set last_updated = "2024-0405T02:45:00+0800" -%}
 <p><strong>Last updated:</strong> <time datetime="{{ last_updated | rfc3339Date }}">{{ last_updated | friendlyDate | safe }} {{ last_updated | friendlyTime | safe }}</time></p>
 
 ## Posts
@@ -41,5 +41,4 @@ toc: true
 ## Admin
 
 - testimonials for /about and /cv
-- rework clients logo list into marquee
 - finish transcript for "Middle Out in CSS" on YouTube

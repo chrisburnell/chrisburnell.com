@@ -712,12 +712,6 @@ const blogroll = [
 		mastodon: "frugalgamer@snug.moe",
 	},
 	{
-		title: "SCUMSUCK",
-		url: "https://scumsuck.com",
-		rss: "https://scumsuckart.tumblr.com/rss",
-		mastodon: "scumsuck@blorbo.social",
-	},
-	{
 		title: "Lars-Christian Simonsen",
 		url: "https://lars-christian.com",
 		rss: "https://lars-christian.com/feed/",

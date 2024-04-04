@@ -174,16 +174,6 @@
 		background-color: h(highland);
 		color: h(mineshaft);
 	}
-
-	///
-	// Exceptions
-	///
-
-	[aria-labelledby="worked-with"] {
-		img {
-			filter: brightness(1.25);
-		}
-	}
 }
 
 // Apply the Dark color scheme when the media query matches
