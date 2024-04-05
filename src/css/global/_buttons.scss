@@ -49,6 +49,7 @@ button {
 	line-height: var(--line-height, var(--line-height-medium));
 	text-align: center;
 	text-decoration: none;
+	touch-action: manipulation;
 
 	&:is(:hover, :focus, :active) {
 		outline: var(--outline-width, var(--size-border-thin)) solid var(--outline-color, Highlight);
