@@ -11,7 +11,6 @@ export const timezone = "Asia/Singapore"
 export const established = "2008"
 export const favicon = "/images/favicon-256.png"
 export const logo = "/images/raven.svg"
-export const upcomingDaysLead = 7
 export const speedlify = "chrisburnell"
 export const fathom_siteid = "NMGWH"
 
@@ -21,6 +20,8 @@ export const limits = {
 	feature: 2,
 	feed: 10,
 	sparkline: 15,
+	recentDays: 14,
+	upcomingDays: 7,
 	minimumResponsesRequired: 5,
 }
 
@@ -68,7 +69,6 @@ export default {
 	favicon,
 	logo,
 	speedlify,
-	upcomingDaysLead,
 	limits,
 	sitemap,
 	weights,

@@ -13,7 +13,7 @@ fieldset {
 	border-width: 0;
 }
 
-%input {
+:is(input, optgroup, select, textarea) {
 	font-size: var(--font-size-small);
 	line-height: var(--line-height-default);
 

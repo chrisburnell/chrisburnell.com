@@ -1,6 +1,7 @@
 import { DateTime } from "luxon"
 import emojis from "../data/emojis.js"
-import { locale } from "../data/site.js"
+import { nowEpoch } from "../data/global.js"
+import { limits, locale } from "../data/site.js"
 
 /**
  * @param {string} dateString
@@ -118,6 +119,22 @@ export const dateSort = (a, b) => {
  */
 export const sortByDate = (array) => {
 	return array.sort(dateSort)
+}
+
+/**
+ * @param {object[]} array
+ * @param {string} key
+ * @returns {object[]}
+ */
+export const recentFilter = (array, key, recentDays = limits.recentDays) => {
+	return array.filter((item) => {
+		const keys = key.split(".")
+		const value = keys.reduce((o, k) => {
+			return o[k]
+		}, item)
+		const differenceDays = (nowEpoch - epoch(value)) / 1000 / 60 / 60 / 24
+		return differenceDays < recentDays
+	})
 }
 
 let userLocale = locale
@@ -276,6 +293,7 @@ export default {
 	epoch,
 	dateSort,
 	sortByDate,
+	recentFilter,
 	getRelativeTime,
 	getRSVPValueString,
 	getRSVPValueHTML,

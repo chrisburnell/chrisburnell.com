@@ -15,7 +15,7 @@
 	& > %image,
 	& > picture %image,
 	& > %media,
-	& > %media-child {
+	& > .speakerdeck-embed-wrapper iframe {
 		aspect-ratio: var(--aspect-ratio);
 		inline-size: 100% !important;
 		block-size: auto !important;

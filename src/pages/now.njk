@@ -3,6 +3,7 @@ title: "/now"
 tagline: Now
 description: Stuff that I’m doing now (or at least recently)!
 toc: true
+heed: false
 ---
 
 <div class=" [ box ] [ center ] " style="inline-size: var(--size-line-length); inline-size: fit-content; margin-block-end: var(--size-large); text-wrap: balance;">
@@ -11,24 +12,24 @@ toc: true
 
 <h2>Website Tinkering</h2>
 
-{% set last_updated = "2024-0405T02:45:00+0800" -%}
+{% set last_updated = "2024-04-06T17:18:04+0800" -%}
 <p><strong>Last updated:</strong> <time datetime="{{ last_updated | rfc3339Date }}">{{ last_updated | friendlyDate | safe }} {{ last_updated | friendlyTime | safe }}</time></p>
 
 <p>You can read more things I’d like to work on <a href="/ideas/">my /ideas page</a>, which is kind of like my TODO list for this website.</p>
 
-<h3>Writing</h3>
+<h3 id="writing">Writing</h3>
 
 <ul>
 	<li>brainstorming for a post about the <q>concept</q> of an /interests page</li>
 </ul>
 
-<h3>Website Admin</h3>
+<h3 id="website-admin">Website Admin</h3>
 
 <ul>
 	<li>figure out how I want to denote and present pinned posts in Eleventy</li>
-	<li>as above, but for RSS-only posts (which become visible on the site <code>site.upcomingDaysLead</code> days after publishing)</li>
+	<li>as above, but for RSS-only posts (which become visible on the site <code>site.limits.recentDays</code> days after publishing)</li>
 	<li>explore using the new <code>eleventy-img</code> transform function instead of my image shortcode</li>
-	<li>finish transcription cleanup for <q>Middle Out in CSS</q></li>
+	<li>finish transcript for <q>Middle Out in CSS</q></li>
 </ul>
 
 {% if collections.rsvpsToday.length or collections.rsvpsUpcoming.length %}
@@ -37,70 +38,156 @@ toc: true
 	<h2>
 		<a href="/rsvps/">Events</a>
 	</h2>
-	<div class=" [ deck ] [ flow ] ">
-		{% for item in collections.rsvpsToday %}
+	<ol class=" [ deck ] [ flow ] ">
+		{% for item in collections.rsvpsToday -%}
 			{% include 'items/deck.njk' %}
-		{% endfor %}
-		{% for item in collections.rsvpsUpcoming %}
+		{%- endfor %}
+		{% for item in collections.rsvpsUpcoming -%}
 			{% include 'items/deck.njk' %}
-		{% endfor %}
-	</div>
+		{%- endfor %}
+	</ol>
 {% endif %}
 
-{% set currentlyReading = collections.book | arePublished | arrayKeyNotSet('data.rating') | sortByDate | limit(site.limits.shelf) -%}
-{% if currentlyReading.length -%}
+{% set currentlyReading = collections.book | arePublished | arrayKeyNotSet('data.end') | sortByDate -%}
+{% set recentlyRead = collections.book | arePublished | arrayKeySet('data.end') | recentFilter('data.end') | sortByDate -%}
+{% if currentlyReading.length or recentlyRead.length -%}
 	<hr>
 
 	<h2>
 		<a href="/books/">Books</a>
 	</h2>
 
-	<div class=" [ grid ] [ shelf  shelf--portrait ] ">
-		{% for item in currentlyReading %}
-			{% include 'items/shelf.njk' %}
-		{% endfor %}
-	</div>
+	{% if currentlyReading.length %}
+		<h3 id="currently-reading">Currently reading</h3>
+		<ol class=" [ grid ] [ shelf  shelf--portrait ] ">
+			{% for item in currentlyReading -%}
+				{% include 'items/shelf.njk' %}
+			{%- endfor %}
+		</ol>
+	{% endif %}
+
+	{% if recentlyRead.length %}
+		<h3 id="recently-read">Recently finished reading</h3>
+		<ol class=" [ grid ] [ shelf  shelf--portrait ] ">
+			{% for item in recentlyRead -%}
+				{% include 'items/shelf.njk' %}
+			{%- endfor %}
+		</ol>
+	{% endif %}
 {%- endif %}
 
-{% set currentlyPlaying = collections.game | arePublished | arrayKeyNotSet('data.rating') | sortByDate | limit(site.limits.shelf) -%}
-{% if currentlyPlaying.length -%}
+{% set currentlyPlaying = collections.game | arePublished | arrayKeyNotSet('data.rating') | sortByDate -%}
+{% set recentlyPlayed = collections.game | arePublished | arrayKeySet('data.rating') | recentFilter('data.date') | sortByDate -%}
+{% if currentlyPlaying.length or recentlyPlayed.length -%}
 	<hr>
 
 	<h2>
 		<a href="/games/">Games</a>
 	</h2>
 
-	<div class=" [ grid ] [ shelf  shelf--square ] ">
-		{% for item in currentlyPlaying %}
-			{% include 'items/shelf.njk' %}
-		{% endfor %}
-	</div>
-{%- endif %}
+	{% if currentlyPlaying.length %}
+		<h3 id="currently-playing">Currently playing</h3>
+		<ol class=" [ grid ] [ shelf  shelf--square ] ">
+			{% for item in currentlyPlaying -%}
+				{% include 'items/shelf.njk' %}
+			{%- endfor %}
+		</ol>
+	{% endif %}
 
-{% set currentlyListening = collections.music | arePublished | arrayKeyNotSet('data.rating') | sortByDate | limit(site.limits.shelf) -%}
-{% if currentlyListening.length -%}
-	<hr>
-
-	<h2>
-		<a href="/music/">Music Albums</a>
-	</h2>
-
-	<div class=" [ grid ] [ shelf  shelf--square ] ">
-		{% for item in currentlyListening %}
-			{% include 'items/shelf.njk' %}
-		{% endfor %}
-	</div>
+	{% if recentlyPlayed.length %}
+		<h3 id="recently-played">Recently finished playing</h3>
+		<ol class=" [ grid ] [ shelf  shelf--square ] ">
+			{% for item in recentlyPlayed -%}
+				{% include 'items/shelf.njk' %}
+			{%- endfor %}
+		</ol>
+	{% endif %}
 {%- endif %}
 
 <hr>
 
 <h2>
-	<a href="/listening/">Latest Tracks</a>
+	<a href="/music/">Music</a>
 </h2>
 
-<is-land on:visible>
-</is-land>
+{% set currentlyListening = collections.music | arePublished | arrayKeyNotSet('data.rating') | sortByDate -%}
+{% if currentlyListening.length -%}
+	<h3 id="currently-listening">Currently reviewing</h3>
+	<ol class=" [ grid ] [ shelf  shelf--square ] ">
+		{% for item in currentlyListening -%}
+			{% include 'items/shelf.njk' %}
+		{%- endfor %}
+	</ol>
+{%- endif %}
+
+{% set recentlyListened = collections.music | arePublished | arrayKeySet('data.rating') | recentFilter('data.date') | sortByDate -%}
+{% if recentlyListened.length -%}
+	<h3 id="recently-listened">Recently reviewed</h3>
+	<ol class=" [ grid ] [ shelf  shelf--square ] ">
+		{% for item in recentlyListened -%}
+			{% include 'items/shelf.njk' %}
+		{%- endfor %}
+	</ol>
+{%- endif %}
+
+<h3 id="listening"><a href="/listening/">Latest listens</a></h3>
+
 <script type="module">{% renderFile 'src/js/components/lastfm-listening.js' %}</script>
-<lastfm-listening username="{{ author.lastfm }}" limit="3">
-	<p>Unfortunately, this component requires JavaScript to function.</p>
+<lastfm-listening username="{{ author.lastfm }}" limit="3" aria-live="true">
+	<ol class=" [ grid ] [ shelf  shelf--square ] ">
+		{% for track in (lastfm.recentTracks | limit(3)) -%}
+			<article class=" [ flow ] ">
+				<a href="{{ track.url }}" aria-hidden="true" tabindex="-1" class=" [ cover-anchor ] ">
+					<img src="{{ track.imageUrl }}" alt="Cover art for {{ track.name | safe }}" loading="lazy" decoding="async" class=" [ cover ] [ u-photo ] ">
+				</a>
+				<h1>
+					<a href="{{ track.url }}">{{ track.name | safe }}</a>
+				</h1>
+				<div>
+					<a href="{{ track.artist.url }}" class=" [ h-cite ] " rel="external noopener">{{ track.artist.name }}</a>
+				</div>
+				<div>
+					<time datetime="{{ track.datetime | rfc3339Date }}" class=" [ dt-published ] " data-relative>{{ track.datetime | friendlyDate }}</time>
+				</div>
+			</article>
+		{%- endfor %}
+	</ol>
 </lastfm-listening>
+
+<h3 id="top-albums">Top Albums <small>of the last 7 days</small></h3>
+
+<ol class=" [ grid ] [ shelf  shelf--square ] ">
+	{% for album in (lastfm.topAlbums | limit(3)) -%}
+		{%- set item = collections.music | arePublished | arrayKeyValueEquals('data.title', album.name) | first -%}
+		{% if item -%}
+			{% include 'items/shelf.njk' %}
+		{%- else -%}
+			<article class=" [ flow ] ">
+				<a href="{{ albumUrl }}" aria-hidden="true" tabindex="-1" class=" [ cover-anchor ] ">
+					<img src="{{ album.imageUrl }}" alt="Cover art for {{ album.name | safe }}" loading="lazy" decoding="async" class=" [ cover ] [ u-photo ] ">
+				</a>
+				<h1>
+					<a href="{{ albumUrl }}">{{ album.name | safe }}</a>
+				</h1>
+				<div>
+					<a href="{{ album.artist.url }}" class=" [ h-cite ] " rel="external noopener">{{ album.artist.name }}</a>
+				</div>
+			</article>
+		{%- endif %}
+	{%- endfor %}
+</ol>
+
+<h3 id="top-artists">Top Artists <small>of the last 7 days</small></h3>
+
+<ol class=" [ grid ] [ shelf  shelf--square ] ">
+	{% for artist in (lastfm.topArtists | limit(3)) -%}
+		<article class=" [ flow ] ">
+			<a href="{{ artist.url }}" aria-hidden="true" tabindex="-1" class=" [ cover-anchor ] ">
+				<img src="{{ artist.imageUrl }}" alt="Artist picture for {{ artist.name | safe }}" loading="lazy" decoding="async" class=" [ cover ] [ u-photo ] ">
+			</a>
+			<h1>
+				<a href="{{ artist.url }}">{{ artist.name | safe }}</a>
+			</h1>
+		</article>
+	{%- endfor %}
+</ol>

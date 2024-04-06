@@ -5,7 +5,7 @@ import { getPublished } from "@chrisburnell/eleventy-cache-webmentions"
 import { isPublished, notReply } from "../functions/collections.js"
 import { exponentialMovingAverage } from "../functions/utils.js"
 import { nowEpoch } from "./data/global.js"
-import { limits, upcomingDaysLead } from "./data/site.js"
+import { limits } from "./data/site.js"
 import { dateSort, epoch } from "./filters/dates.js"
 
 const durationDay = 24 * 60 * 60 * 1000
@@ -217,7 +217,7 @@ export default {
 				}
 
 				// Lead the start by the defined or default lead
-				const upcomingLead = (item.data.rsvp?.upcoming_days_lead || upcomingDaysLead) * durationDay
+				const upcomingLead = (item.data.rsvp?.upcoming_days_lead || limits.upcomingDays) * durationDay
 				const startLeaded = epoch(item.data.rsvp.date) - upcomingLead
 				// Check that we've passed the leaded start
 				return startLeaded < nowEpoch

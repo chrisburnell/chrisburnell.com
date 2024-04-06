@@ -194,7 +194,7 @@
 }
 
 // Animation for transitioning from user-select:all; to user-select:text;
-%selectall {
+:is(pre[class*="language-"] code[tabindex="0"], pre:not(:has(code)), .clamp-calculator__result) {
 	user-select: all;
 
 	&:focus {

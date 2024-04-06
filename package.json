@@ -23,7 +23,7 @@
   "devDependencies": {
     "check-html-links": "^0.2.4",
     "cross-env": "^7.0.3",
-    "eslint": "^8.57.0",
+    "eslint": "^9.0.0",
     "json-to-scss": "^1.6.2",
     "prettier": "^3.2.5",
     "rimraf": "^5.0.5"
@@ -49,7 +49,7 @@
     "@chrisburnell/svg-sparkline": "^1.0.10",
     "@chrisburnell/theme-selector": "^1.0.1",
     "@daviddarnes/storage-form": "^2.0.0",
-    "@mdn/browser-compat-data": "^5.5.18",
+    "@mdn/browser-compat-data": "^5.5.19",
     "@oddbird/popover-polyfill": "^0.4.1",
     "@remy/webmention": "^1.5.0",
     "@sindresorhus/slugify": "^2.2.1",
@@ -78,12 +78,12 @@
     "markdown-it": "^14.1.0",
     "markdown-it-abbr": "^2.0.0",
     "markdown-it-footnote": "^4.0.0",
-    "pagefind": "^1.0.4",
+    "pagefind": "^1.1.0",
     "postcss": "^8.4.38",
     "postcss-cli": "^11.0.0",
     "postcss-scss": "^4.0.9",
     "random-case": "^1.0.0",
-    "sass": "^1.72.0",
+    "sass": "^1.74.1",
     "striptags": "^3.2.0",
     "truncate-html": "^1.1.1",
     "utopia-core-scss": "^1.0.1"

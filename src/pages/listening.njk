@@ -9,7 +9,24 @@ wide: true
 <p>To see (almost) my entire listening history, checkout my <a href="https://last.fm/user/{{ author.lastfm }}">Last.fm profile</a>.</p>
 
 <script type="module">{% renderFile 'src/js/components/lastfm-listening.js' %}</script>
-<lastfm-listening username="{{ author.lastfm }}">
-	<p>The functionality of this page unfortunately requires JavaScript to work.</p>
+<lastfm-listening username="{{ author.lastfm }}" aria-live="true">
+	<ol class=" [ grid ] [ shelf  shelf--square ] ">
+		{% for track in (lastfm.recentTracks | limit(10)) %}
+			<article class=" [ flow ] ">
+				<a href="{{ track.url }}" aria-hidden="true" tabindex="-1" class=" [ cover-anchor ] ">
+					<img src="{{ track.imageUrl }}" alt="Cover art for {{ track.name | safe }}" loading="lazy" decoding="async" class=" [ cover ] [ u-photo ] ">
+				</a>
+				<h1>
+					<a href="{{ track.url }}">{{ track.name | safe }}</a>
+				</h1>
+				<div>
+					<a href="{{ track.artist.url }}" class=" [ h-cite ] " rel="external noopener">{{ track.artist.name }}</a>
+				</div>
+				<div>
+					<time datetime="{{ track.datetime | rfc3339Date }}" class=" [ dt-published ] " data-relative>{{ track.datetime | friendlyDate }}</time>
+				</div>
+			</article>
+		{% endfor %}
+	</ol>
 </lastfm-listening>
 

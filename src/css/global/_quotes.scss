@@ -12,6 +12,10 @@ blockquote {
 	margin: 0 auto var(--size-medium);
 	hanging-punctuation: first;
 
+	& > * + * {
+		margin-block-start: var(--flow-space, 1em);
+	}
+
 	p:not(.no-quotes) {
 		font-family: var(--font-family-serif);
 		@include italic;

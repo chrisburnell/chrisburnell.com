@@ -74,6 +74,20 @@ export const arrayKeyIncludes = (array, key, value) => {
  * @param {string} key
  * @returns {object[]}
  */
+export const arrayKeySet = (array, key) => {
+	return array.filter((item) => {
+		const value = key.split(".").reduce((o, k) => {
+			return o[k]
+		}, item)
+		return !!value
+	})
+}
+
+/**
+ * @param {object[]} array
+ * @param {string} key
+ * @returns {object[]}
+ */
 export const arrayKeyNotSet = (array, key) => {
 	return array.filter((item) => {
 		const value = key.split(".").reduce((o, k) => {
@@ -344,6 +358,7 @@ export default {
 	keyValueEquals,
 	arrayKeyValueEquals,
 	arrayKeyIncludes,
+	arrayKeySet,
 	arrayKeyNotSet,
 	keySort,
 	toArray,

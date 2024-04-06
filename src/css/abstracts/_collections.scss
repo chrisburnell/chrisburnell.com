@@ -55,28 +55,8 @@
 	@extend %media !optional;
 }
 
-:is(input, optgroup, select, textarea) {
-	@extend %input !optional;
-}
-
-:is(code, kbd, samp, var, .monospace) {
-	@extend %monospace !optional;
-}
-
 :is(.box, .cp_embed_wrapper, .speakerdeck-embed-wrapper, dialog) {
 	@extend %box !optional;
-}
-
-:is(.flow, blockquote) {
-	@extend %flow !optional;
-}
-
-.speakerdeck-embed-wrapper iframe {
-	@extend %media-child !optional;
-}
-
-:is(pre[class*="language-"] code[tabindex="0"], pre:not(:has(code)), .clamp-calculator__result) {
-	@extend %selectall !optional;
 }
 
 @each $name, $_ in $colors {

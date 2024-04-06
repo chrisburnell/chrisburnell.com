@@ -8,7 +8,7 @@ if (inputHighContrast) {
 	}
 
 	stateHighContrast = inputHighContrast.indeterminate ? null : inputHighContrast.checked ? true : false
-	inputHighContrast.addEventListener("change", function() {
+	inputHighContrast.addEventListener("change", function () {
 		if (stateHighContrast === null) {
 			this.indeterminate = false
 			this.checked = true
@@ -29,7 +29,7 @@ if (inputSmoothScroll) {
 	}
 
 	stateSmoothScroll = inputSmoothScroll.indeterminate ? null : inputSmoothScroll.checked ? true : false
-	inputSmoothScroll.addEventListener("change", function() {
+	inputSmoothScroll.addEventListener("change", function () {
 		if (stateSmoothScroll === null) {
 			this.indeterminate = false
 			this.checked = true
