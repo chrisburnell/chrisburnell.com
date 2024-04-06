@@ -3,7 +3,6 @@ import breweries from "../data/breweries.js"
 import gamePublishers from "../data/gamePublishers.js"
 import mastodonInstances from "../data/mastodonInstances.js"
 import meetups from "../data/meetups.js"
-import musicalArtists from "../data/musicalArtists.js"
 import publications from "../data/publications.js"
 import blogroll from "../eleventy/data/blogroll.js"
 import { nowEpoch } from "../eleventy/data/global.js"
@@ -18,7 +17,7 @@ import { getPathname } from "./urls.js"
 import { getMastodonHandle, getTwitterHandle } from "./utils.js"
 
 // Create an array of references
-const allPeople = [...blogroll, ...breweries, ...publications, ...musicalArtists, ...gamePublishers, ...meetups]
+const allPeople = [...blogroll, ...breweries, ...publications, ...gamePublishers, ...meetups]
 
 // Get data about all pages
 const pages = await EleventyFetch("https://chrisburnell.com/all.json", {

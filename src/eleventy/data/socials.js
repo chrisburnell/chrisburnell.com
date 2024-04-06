@@ -55,7 +55,8 @@ export default [
 	},
 	{
 		title: "Spotify",
-		url: "https://open.spotify.com/user/bcsc0akutj85l9p565n57u58z",
+		url: "https://open.spotify.com/user/",
+		key: "spotify",
 	},
 	{
 		title: "Untappd",

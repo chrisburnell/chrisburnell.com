@@ -4,9 +4,9 @@ date: 2020-01-13T13:21:00+0000
 release: 2016-01-10T12:00:00+0000
 authors:
   - title: $uicideBoy$
-    url: https://open.spotify.com/artist/1VPmR4DJC1PlOtd0IADAO0
+    url: https://last.fm/music/$uicideBoy$
   - title: Ramirez
-    url: https://open.spotify.com/artist/3H6CaRooDAoCeRCpYwOXj2
+    url: https://last.fm/music/Ramirez
 listen_of: https://album.link/s/45LzyxCAWTrRMn0NVmmKUA
 cover: grey-gods-ii.jpg
 rating: 3.5

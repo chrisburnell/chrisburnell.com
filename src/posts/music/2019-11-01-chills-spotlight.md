@@ -4,9 +4,9 @@ date: 2019-11-01T11:30:00+0000
 release: 2019-11-01T12:00:00+0000
 authors:
   - title: Lupe Fiasco
-    url: https://open.spotify.com/artist/01QTIT5P1pFP3QnnFSdsJf
+    url: https://last.fm/music/Lupe+Fiasco
   - title: Wildstyle
-    url: https://open.spotify.com/artist/5Gcwu8k019sVsmNoEOiFvd
+    url: https://last.fm/music/Wildstyle
 listen_of: https://album.link/s/72LglewDl2LULJv40Ow7fh
 cover: chills-spotlight.jpg
 rating: 4.25
