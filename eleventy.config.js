@@ -112,6 +112,7 @@ export default async function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy({
 		"files": ".",
 		"src/js/components": "js/components/",
+		"node_modules/@chrisburnell/cssnakedday-countdown/cssnakedday-countdown.js": "js/components/cssnakedday-countdown.js",
 		"node_modules/@chrisburnell/cow-pen/cow-pen.js": "js/components/cow-pen.js",
 		"node_modules/@chrisburnell/instant-photo/instant-photo.js": "js/components/instant-photo.js",
 		"node_modules/@chrisburnell/paper-stamp/paper-stamp.js": "js/components/paper-stamp.js",

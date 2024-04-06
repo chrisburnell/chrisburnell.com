@@ -3,6 +3,10 @@
 /// @group components
 ////
 
+cssnakedday-countdown:not(:defined) {
+	display: none;
+}
+
 lastfm-listening {
 	display: block;
 	margin-block-start: var(--size-medium);
