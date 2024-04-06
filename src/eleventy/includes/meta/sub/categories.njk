@@ -1,18 +1,18 @@
 <h2>Browse by category</h2>
 <ul class=" [ cluster ] " style="--padding-inline: 0.5em; line-height: var(--line-height-code);">
 	{% for lookup in collections.categories -%}
-	<li class=" [ no-wrap ] ">
-		{% if page.url != '/' + lookup.plural + '/' -%}
-		<a href="/{{ lookup.plural }}/" {% if category == lookup.title %}class=" [ button  button--text ] "{% endif %}>
-		{%- else -%}
-		<strong>
-		{%- endif %}
-			<c-emoji>{{ lookup.emoji | default(emojis.paper) }}</c-emoji>{{ lookup.properPlural | title }}
-		{% if page.url != '/' + lookup.plural + '/' -%}
-		</a>
-		{%- else -%}
-		</strong>
-		{%- endif %}
-	</li>
+		<li class=" [ no-wrap ] ">
+			{% if page.url != '/' + lookup.plural + '/' -%}
+				<a href="/{{ lookup.plural }}/" {% if category == lookup.title %}class=" [ button  button--text ] "{% endif %}>
+			{%- else -%}
+				<strong>
+			{%- endif %}
+				<c-emoji>{{ lookup.emoji | default(emojis.paper) }}</c-emoji>{{ lookup.properPlural | title }}
+			{% if page.url != '/' + lookup.plural + '/' -%}
+				</a>
+			{%- else -%}
+				</strong>
+			{%- endif %}
+		</li>
 	{%- endfor %}
 </ul>

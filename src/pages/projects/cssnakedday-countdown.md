@@ -16,7 +16,7 @@ tags:
 <script type="module" src="/js/components/cssnakedday-countdown.js"></script>
 
 <figure class=" [ box ] [ gamma ] ">
-    <cssnakedday-countdown></cssnakedday-countdown>
+    <cssnakedday-countdown>Unfortunately, this Web Component needs JavaScript to function correctly.</cssnakedday-countdown>
 </figure>
 
 {% include 'package.njk' %}
