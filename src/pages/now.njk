@@ -158,7 +158,7 @@ heed: false
 
 <ol class=" [ grid ] [ shelf  shelf--square ] ">
 	{% for album in (lastfm.topAlbums | limit(3)) -%}
-		{%- set item = collections.music | arePublished | arrayKeyValueEquals('data.title', album.name) | first -%}
+		{%- set item = collections.music | arePublished | arrayKeyValueEquals('data.title', album.name, false) | first -%}
 		{% if item -%}
 			{% include 'items/shelf.njk' %}
 		{%- else -%}

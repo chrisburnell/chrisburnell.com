@@ -34,10 +34,13 @@ export const keyValue = (object, key) => {
  * @param {any} check
  * @returns {boolean}
  */
-export const keyValueEquals = (object, key, check) => {
+export const keyValueEquals = (object, key, check, caseSensitive = true) => {
 	const value = key.split(".").reduce((o, k) => {
 		return o[k]
 	}, object)
+	if (!caseSensitive) {
+		return value.toLowerCase() === check.toLowerCase()
+	}
 	return value === check
 }
 
@@ -47,9 +50,9 @@ export const keyValueEquals = (object, key, check) => {
  * @param {any} check
  * @returns {object[]}
  */
-export const arrayKeyValueEquals = (array, key, check) => {
+export const arrayKeyValueEquals = (array, key, check, caseSensitive) => {
 	return array.filter((item) => {
-		return keyValueEquals(item, key, check)
+		return keyValueEquals(item, key, check, caseSensitive)
 	})
 }
 
