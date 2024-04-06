@@ -36,9 +36,9 @@
 	{% elif item.data.category == 'recipe' %}
 		<p class=" [ p-summary ] ">A {{ item.data.categoryProper | default(item.data.category) }}{% if item.data.authors %} by {{ item.data.meta_authors_string | safe }}{% endif %}</p>
 	{% endif %}
-	{% if item.data.date or item.data.updated or item.data.webmentions.length %}
+	{% if item.data.date or (item.data.updated and (item.data.updated | friendlyDate) !== (item.data.date | friendlyDate)) or item.data.webmentions.length %}
 		<ul class=" [ cluster ] [ deck__meta ] ">
-			{% if item.data.updated %}
+			{% if item.data.updated and (item.data.updated | friendlyDate) !== (item.data.date | friendlyDate) %}
 				<li>
 					<small>updated</small> <a href="{{ item.url }}{{ '#updated' if item.data.updated_text }}" tabindex="-1"><time datetime="{{ item.data.updated | rfc3339Date }}" class=" [ dt-updated ] ">{{ item.data.updated | friendlyDateLong | safe }}</time></a>
 				</li>
