@@ -2,6 +2,7 @@ import { getRSVPDateString, getRSVPValueString, getRelativeTime } from "../../el
 
 class RelativeTime {
 	constructor() {
+		this.timeElements = document.querySelectorAll("[datetime]")
 		this.relativeTimeElements = document.querySelectorAll("[data-relative][datetime]")
 		this.relativeRSVPValueElements = document.querySelectorAll("[data-relative-rsvp-value][data-start][data-end][data-value]")
 		this.relativeRSVPDateElements = document.querySelectorAll("[data-relative-rsvp-date][data-end]")
@@ -12,12 +13,18 @@ class RelativeTime {
 		}
 	}
 
+	setTimeTitles() {
+		this.timeElements.forEach((element) => {
+			if (!element.hasAttribute("title")) {
+				const datetime = new Date(element.getAttribute("datetime"))
+				// Set the title attribute to the localized time
+				element.title = `${datetime.toLocaleString()} (local time)`
+			}
+		})
+	}
+
 	setRelativeTimes() {
 		this.relativeTimeElements.forEach((element) => {
-			if (!element.hasAttribute("title")) {
-				// Set the title attribute to the date string (stripped of HTML)
-				element.title = element.innerHTML.replace(/<\/?[^>]+(>|$)/g, "").replace("on ", "")
-			}
 			const datetime = new Date(element.getAttribute("datetime"))
 			element.innerHTML = getRelativeTime(datetime)
 		})
@@ -58,10 +65,14 @@ class RelativeTime {
 	init() {
 		this.initialized = true
 
+		if (this.timeElements.length) {
+			this.setTimeTitles()
+		}
+
 		if (this.relativeTimeElements.length || this.relativeRSVPValueElements.length || this.relativeRSVPDateElements.length) {
 			this.setRelativeTimes()
-			this.startInterval()
 
+			this.startInterval()
 			window.addEventListener("focus", () => {
 				this.windowFocusHandler()
 			})
