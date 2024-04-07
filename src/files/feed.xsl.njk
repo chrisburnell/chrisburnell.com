@@ -60,7 +60,7 @@ sitemap:
               {%- endfor -%}
             </ol>
             <ol class=" [ cluster ] [ footer__navigation ] ">
-              <li><a href="/license/" id="copyright" rel="license">© {{ site.established }}–{{ global.nowISO | friendlyDate('yyyy') }} <span class=" [ canada ] ">{{ author.name }}</span></a></li>
+              <li><a href="/license/" id="copyright" rel="license">© {{ site.established }}–{{ global.thisYear }} <span class=" [ canada ] ">{{ author.name }}</span></a></li>
               {%- for item in socials -%}
                 {%- if not item.hidden and item.primary -%}
                   <li>

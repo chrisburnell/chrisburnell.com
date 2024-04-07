@@ -20,7 +20,7 @@ const recentTracks = async function () {
 		}
 		return Object.assign({}, track, {
 			datetime: datetime,
-			imageUrl: image
+			imageUrl: image,
 		})
 	})
 }
@@ -37,7 +37,7 @@ const topAlbums = async function () {
 			image = "/images/default-album-cover.png"
 		}
 		return Object.assign({}, album, {
-			imageUrl: image
+			imageUrl: image,
 		})
 	})
 }
@@ -54,7 +54,7 @@ const topArtists = async function () {
 			image = "/images/default-album-cover.png"
 		}
 		return Object.assign({}, artist, {
-			imageUrl: image
+			imageUrl: image,
 		})
 	})
 }
