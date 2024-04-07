@@ -11,7 +11,7 @@ layout: base
 		<span class=" [ p-name ] ">{{ title | default(of_title) | default(of_title_fallback) | default(meta_title) | striptags(true) | safe }}</span>
 	</h1>
 
-	<div class=" [ description  description--published ] ">
+	<div class=" [ description  description--published ] " data-pagefind-ignore>
 		<p>
 			{%- if rsvp %}
 				This <a href="/rsvps/" class=" [ u-category ] ">RSVP</a>

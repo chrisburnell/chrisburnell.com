@@ -17,7 +17,7 @@ tags:
 
 <figure>
     <paper-stamp>
-        <img src="/images/rolbie-stamp.png" alt="Rolbie stamp" loading="lazy" decoding="async" width="100" height="150" style="image-rendering: pixelated;">
+        <img src="/images/rolbie-stamp.png" alt="A monochrome pixel-art image of a stamp featuring an adorable little cow’s head" loading="lazy" decoding="async" width="100" height="150">
     </paper-stamp>
 </figure>
 
@@ -26,6 +26,8 @@ tags:
 <code>&lt;paper-stamp&gt;</code> is a native Web Component that displays an <code>&lt;img&gt;</code> as a paper stamp.
 
 ## Usage
+
+### General usage example
 
 You can begin using the <code>&lt;paper-stamp&gt;</code> Web Component by including a <code>&lt;script&gt;</code> tag in your HTML, with the component itself wrapping a <code>&lt;img&gt;</code>:
 
@@ -43,12 +45,12 @@ There are also a handful of attributes you can set which will override the appea
 
 <figure>
     <paper-stamp color="cyan">
-        <img src="/images/rolbie-stamp.png" alt="Rolbie stamp" loading="lazy" decoding="async" width="100" height="150" style="image-rendering: pixelated;">
+        <img src="/images/rolbie-stamp.png" alt="A monochrome pixel-art image of a stamp featuring an adorable little cow’s head" loading="lazy" decoding="async" width="100" height="150">
     </paper-stamp>
 </figure>
 
 ```html
-<paper-stamp color="red">
+<paper-stamp color="cyan">
 	<img src="/image.png" alt="...">
 </paper-stamp>
 ```
@@ -57,7 +59,7 @@ There are also a handful of attributes you can set which will override the appea
 
 <figure>
     <paper-stamp padding="50px">
-        <img src="/images/rolbie-stamp.png" alt="Rolbie stamp" loading="lazy" decoding="async" width="100" height="150" style="image-rendering: pixelated;">
+        <img src="/images/rolbie-stamp.png" alt="A monochrome pixel-art image of a stamp featuring an adorable little cow’s head" loading="lazy" decoding="async" width="100" height="150">
     </paper-stamp>
 </figure>
 
@@ -67,25 +69,11 @@ There are also a handful of attributes you can set which will override the appea
 </paper-stamp>
 ```
 
-### Custom stamp perforation spacing
-
-<figure>
-    <paper-stamp spacing="6">
-        <img src="/images/rolbie-stamp.png" alt="Rolbie stamp" loading="lazy" decoding="async" width="100" height="150" style="image-rendering: pixelated;">
-    </paper-stamp>
-</figure>
-
-```html
-<paper-stamp spacing="6">
-	<img src="/image.png" alt="...">
-</paper-stamp>
-```
-
 ### Custom stamp perforation size
 
 <figure>
     <paper-stamp perforation="15px">
-        <img src="/images/rolbie-stamp.png" alt="Rolbie stamp" loading="lazy" decoding="async" width="100" height="150" style="image-rendering: pixelated;">
+        <img src="/images/rolbie-stamp.png" alt="A monochrome pixel-art image of a stamp featuring an adorable little cow’s head" loading="lazy" decoding="async" width="100" height="150">
     </paper-stamp>
 </figure>
 
@@ -95,11 +83,30 @@ There are also a handful of attributes you can set which will override the appea
 </paper-stamp>
 ```
 
+### Custom stamp perforation spacing
+
+<figure>
+    <paper-stamp spacing="6">
+        <img src="/images/rolbie-stamp.png" alt="A monochrome pixel-art image of a stamp featuring an adorable little cow’s head" loading="lazy" decoding="async" width="100" height="150">
+    </paper-stamp>
+</figure>
+
+```html
+<paper-stamp spacing="6">
+	<img src="/image.png" alt="...">
+</paper-stamp>
+```
+
 <style>
     @layer components {
         paper-stamp:not(:defined) {
-            background-color: whitesmoke;
+            background-color: antiquewhite;
+            display: inline-block;
             padding: 15px;
+        }
+
+        paper-stamp:not(:defined) img {
+            display: block;
         }
     }
 </style>

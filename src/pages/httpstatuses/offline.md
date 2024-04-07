@@ -1,7 +1,7 @@
 ---
 permalink: "/{{ page.fileSlug }}/index.html"
 title: Network Offline
-description: <span class="canada">Sorry</span>, it looks like there's a problem with your Internet connection.
+description: <span class="canada">Sorry</span>, it looks like there’s a problem with your Internet connection.
 theme: null
 ---
 
@@ -33,9 +33,11 @@ theme: null
 				if (dom.querySelector("h1")) {
 					data.title = dom.querySelector("h1").innerText.replace("{{ site.tagline | striptags | safe }}", "The Homepage")
 				} else {
-					data.title = dom.querySelector('meta[name="twitter:title"]').getAttribute("content").replace(" · Chris Burnell", "")
+					data.title = dom.querySelector("title").getAttribute("content").replace(" · Chris Burnell", "")
 				}
-				data.description = dom.querySelector('meta[name="description"]').getAttribute("content")
+				if (dom.querySelector(`meta[name="description"]`)) {
+					data.description = dom.querySelector(`meta[name="description"]`).getAttribute("content")
+				}
 				browsingHistory.push(data)
 			}
 		}
@@ -44,7 +46,7 @@ theme: null
 		browsingHistory.sort((a, b) => {
 			return b.timestamp - a.timestamp
 		})
-		let markup = '<h2>Here are some cached pages</h2><nav class=" [ deck ] ">'
+		let markup = `<h2>Here are some cached pages</h2><nav class=" [ deck ] ">`
 		browsingHistory.forEach((data) => {
 			markup += `
 	  <article>
