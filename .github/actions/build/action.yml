@@ -15,3 +15,4 @@ runs:
 
     - name: Build with npm
       run: npm run build-production
+      shell: bash
