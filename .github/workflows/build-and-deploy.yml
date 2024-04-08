@@ -47,8 +47,7 @@ jobs:
           key: site-cache
           path: |
             .cache
-            _site/images
-            _site/og-images
+            _site
 
       - name: Build with npm
         run: npm run build-production
