@@ -15,8 +15,3 @@ runs:
 
     - name: Build with npm
       run: npm run build-production
-      env:
-        NODE_OPTIONS: "--max_old_space_size=8192"
-        DARK_VISITORS_API_TOKEN: ${{ secrets.DARK_VISITORS_API_TOKEN }}
-        LASTFM_API_TOKEN: ${{ secrets.LASTFM_API_TOKEN }}
-        WEBMENTION_IO_TOKEN: ${{ secrets.WEBMENTION_IO_TOKEN }}
