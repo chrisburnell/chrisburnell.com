@@ -90,5 +90,5 @@ You can override this by providing a `division` attribute to force the time show
 You can also override the maximum unit of time used by providing a `max-division` attribute. The countdown will only go as high as provided unit of time when displaying the countdown.
 
 ```html
-<event-countdown name="CSS Naked Day" start="2024-04-09T00:00:00+14:00" end="2024-04-09T23:59:59-12:00" division="second"></event-countdown>
+<event-countdown name="CSS Naked Day" start="2024-04-09T00:00:00+14:00" end="2024-04-09T23:59:59-12:00" max-division="minute"></event-countdown>
 ```
