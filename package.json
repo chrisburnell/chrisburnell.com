@@ -1,6 +1,6 @@
 {
   "name": "chrisburnell",
-  "version": "4.0.5",
+  "version": "4.0.6",
   "type": "module",
   "description": "Some real sweet codestuffs.",
   "author": "Chris Burnell <me@chrisburnell.com>",
@@ -40,8 +40,8 @@
     "@11ty/is-land": "^4.0.0",
     "@chrisburnell/bowhead": "^0.3.4",
     "@chrisburnell/cow-pen": "^0.0.4",
-    "@chrisburnell/event-countdown": "^0.0.3",
     "@chrisburnell/eleventy-cache-webmentions": "^2.0.1",
+    "@chrisburnell/event-countdown": "^0.0.4",
     "@chrisburnell/inline-expand": "^0.0.1",
     "@chrisburnell/instant-photo": "^1.0.0",
     "@chrisburnell/paper-stamp": "^0.0.5",
