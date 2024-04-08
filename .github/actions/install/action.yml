@@ -6,3 +6,4 @@ runs:
   steps:
     - name: Install Node Modules
       run: npm ci
+      shell: bash
