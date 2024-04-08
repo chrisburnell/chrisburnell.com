@@ -14,9 +14,9 @@ import transforms from "./src/eleventy/transforms.js"
  * @param {import("@11ty/eleventy/src/UserConfig").default} eleventyConfig
  */
 export default async function(eleventyConfig) {
-	///
-	// Layouts
-	///
+	/**
+	 * Layouts
+	 */
 	eleventyConfig.addLayoutAlias("base", "base.njk")
 	eleventyConfig.addLayoutAlias("page", "page.njk")
 	eleventyConfig.addLayoutAlias("archive", "archive.njk")
@@ -24,29 +24,29 @@ export default async function(eleventyConfig) {
 	eleventyConfig.addLayoutAlias("post", "post.njk")
 	eleventyConfig.addLayoutAlias("feed", "feed.njk")
 
-	///
-	// Collections
-	///
+	/**
+	 * Collections
+	 */
 	Object.keys(collections).forEach((collectionName) => {
 		eleventyConfig.addCollection(collectionName, collections[collectionName])
 	})
 
-	///
-	// Collection Builders
-	///
+	/**
+	 * Collection Builders
+	 */
 	eleventyConfig.addCollection("categories", builders.categories)
 	eleventyConfig.addCollection("tags", builders.tags)
 
-	///
-	// Shortcodes
-	///
+	/**
+	 * Shortcodes
+	 */
 	Object.keys(shortcodes).forEach((shortcodeName) => {
 		eleventyConfig.addShortcode(shortcodeName, shortcodes[shortcodeName])
 	})
 
-	///
-	// Plugins
-	///
+	/**
+	 * Plugins
+	 */
 	eleventyConfig.addPlugin(plugins.avatar)
 	eleventyConfig.addPlugin(plugins.browserSupport)
 	eleventyConfig.addPlugin(plugins.EleventyRenderPlugin)
@@ -82,9 +82,9 @@ export default async function(eleventyConfig) {
 		eleventyConfig.addPlugin(plugins.pregenerateImages)
 	}
 
-	///
-	// Filters
-	///
+	/**
+	 * Filters
+	 */
 	Object.keys(filtersSync).forEach((filterType) => {
 		Object.keys(filtersSync[filterType]).forEach((filterName) => {
 			eleventyConfig.addFilter(filterName, filtersSync[filterType][filterName])
@@ -96,14 +96,14 @@ export default async function(eleventyConfig) {
 		})
 	})
 
-	///
-	// Transforms
-	///
+	/**
+	 * Transforms
+	 */
 	eleventyConfig.addTransform("parse", transforms.parse)
 
-	///
-	// Static Files Passthrough
-	///
+	/**
+	 * Static Files
+	 */
 	eleventyConfig.addPassthroughCopy("audio")
 	eleventyConfig.addPassthroughCopy("fonts")
 	eleventyConfig.addPassthroughCopy("images")
@@ -123,9 +123,9 @@ export default async function(eleventyConfig) {
 		"node_modules/lite-youtube-embed/src/lite-yt-embed.js": "js/components/lite-yt-embed.js",
 	})
 
-	///
-	// Build Settings
-	///
+	/**
+	 * Build Settings
+	 */
 	eleventyConfig.addWatchTarget('./src/css')
 	eleventyConfig.addWatchTarget('./src/js')
 	eleventyConfig.setDataDeepMerge(true)

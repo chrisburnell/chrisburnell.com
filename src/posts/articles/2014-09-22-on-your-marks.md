@@ -205,18 +205,12 @@ var disqusShortname = 'chrisburnell';
 
 	'use strict';
 
-	////
-	/// Initialisation
-	////
-
+	// Initialisation
 	var commentsSection = document.querySelector('#comments');
 	var commentsButton  = document.querySelector('#js-show-comments');
 	var commentsHash	= ['#comment', '#disqus_thread'];
 
-	////
-	/// Conditions to initiate `showComments()`
-	////
-
+	// Conditions to initiate `showComments()`
 	// if Comments Button exists, enable it and attach Event Listener
 	if( commentsButton !== null ) {
 		commentsButton.disabled = false;
@@ -229,13 +223,13 @@ var disqusShortname = 'chrisburnell';
 	window.addEventListener('load', function() {
 		updateFromHash();
 	});
+
 	// run `updateFromHash()` on window hashchange
 	window.addEventListener('hashchange', function() {
 		updateFromHash();
 	});
-	////
-	/// If URL contains a hash from `commentsHash`, initiate `showComments()`
-	////
+
+	// If URL contains a hash from `commentsHash`, initiate `showComments()`
 	function updateFromHash() {
 		commentsHash.forEach( function(hash) {
 			if( window.location.hash.indexOf(hash) !== -1 ) {
@@ -244,9 +238,7 @@ var disqusShortname = 'chrisburnell';
 		});
 	}
 
-	////
-	/// Load in Disqus comments and remove the comments button
-	////
+	// Load in Disqus comments and remove the comments button
 	function showComments() {
 		if( commentsSection !== null ) {
 			window.scrollTo(0, commentsSection.offsetTop);
