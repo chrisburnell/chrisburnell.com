@@ -20,7 +20,7 @@ concurrency:
 
 jobs:
   build:
-    name: Build
+    name: Build and Deploy
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -39,23 +39,6 @@ jobs:
           DARK_VISITORS_API_TOKEN: ${{ secrets.DARK_VISITORS_API_TOKEN }}
           LASTFM_API_TOKEN: ${{ secrets.LASTFM_API_TOKEN }}
           WEBMENTION_IO_TOKEN: ${{ secrets.WEBMENTION_IO_TOKEN }}
-
-      - name: Create artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: site
-          path: _site
-
-  deploy:
-    name: Deploy
-    needs:
-      - build
-    runs-on: ubuntu-latest
-    steps:
-      - name:
-        uses: actions/download-artifact@v4
-        with:
-          name: site
 
       - name: Copy files to server
         uses: appleboy/scp-action@master
