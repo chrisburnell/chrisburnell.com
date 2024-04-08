@@ -1,0 +1,8 @@
+name: Install
+description: Install dependencies
+
+runs:
+  using: composite
+  steps:
+    - name: Install Node Modules
+      run: npm ci

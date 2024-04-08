@@ -1,0 +1,22 @@
+name: Review
+
+on:
+  push:
+    branches-ignore:
+      - main
+  pull_request:
+    branches:
+      - main
+
+concurrency:
+  group: review
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ./.github/actions/setup
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/install
+      - uses: ./.github/actions/build

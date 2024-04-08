@@ -1,0 +1,29 @@
+name: Production Deploy
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    # https://crontab.guru/#33_1_*_*_*
+    - cron: "33 1 * * *"
+    - cron: "33 7 * * *"
+    - cron: "33 13 * * *"
+    - cron: "33 19 * * *"
+    # CSS Naked Day switches
+    - cron: "0 10 8 4 *"
+    - cron: "0 12 10 4 *"
+
+concurrency:
+  group: production-deploy
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ./.github/actions/setup
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/install
+      - uses: ./.github/actions/build
+      - uses: ./.github/actions/deploy
