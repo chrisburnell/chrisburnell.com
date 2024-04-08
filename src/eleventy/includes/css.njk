@@ -14,4 +14,10 @@
 
 	{%- css 'critical' -%}{% renderFile 'src/css/critical.scss' %}{%- endcss -%}
 	{%- css -%}{% renderFile 'src/css/defer.scss' %}{%- endcss -%}
+{%- else -%}
+	<style>
+		:root {
+			color-scheme: light dark;
+		}
+	</style>
 {%- endif %}
