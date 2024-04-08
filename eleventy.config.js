@@ -10,6 +10,20 @@ import plugins from "./src/eleventy/plugins.js"
 import shortcodes from "./src/eleventy/shortcodes.js"
 import transforms from "./src/eleventy/transforms.js"
 
+import slugify from "@sindresorhus/slugify"
+import { OgImage } from "eleventy-plugin-og-image/og-image"
+import fs from "fs-extra"
+
+class CustomOgImage extends OgImage {
+	async generateHTML() {
+		return this.outputUrl()
+	}
+
+	async getOutputFileSlug() {
+		return slugify(this.data.page.url)
+	}
+}
+
 /**
  * @param {import("@11ty/eleventy/src/UserConfig").default} eleventyConfig
  */
@@ -54,12 +68,47 @@ export default async function(eleventyConfig) {
 	eleventyConfig.addPlugin(plugins.image)
 	eleventyConfig.addPlugin(plugins.javascript)
 	eleventyConfig.addPlugin(plugins.markdown)
-	eleventyConfig.addPlugin(plugins.ogImage, config.ogImage)
+	// eleventyConfig.addPlugin(plugins.ogImage, {
+	// 	async generateHTML() {
+	// 		console.log(this)
+	// 		return this.outputURL()
+	// 	},
+	// 	async getOutputFileSlug() {
+	// 		return slugify(this.data.page.url)
+	// 	},
+	// 	satoriOptions: {
+	// 		width: 1200,
+	// 		height: 675,
+	// 		fonts: [
+	// 			{
+	// 				name: "Proxima Nova",
+	// 				data: fs.readFileSync("./files/proxima-nova-semibold.woff"),
+	// 				weight: 600,
+	// 				style: "normal",
+	// 			},
+	// 		],
+	// 	},
+	// })
+	eleventyConfig.addPlugin(plugins.ogImage, {
+		OgImage: CustomOgImage,
+		satoriOptions: {
+			width: 1200,
+			height: 675,
+			fonts: [
+				{
+					name: "Proxima Nova",
+					data: fs.readFileSync("./files/proxima-nova-semibold.woff"),
+					weight: 600,
+					style: "normal",
+				},
+			],
+		},
+	})
 	eleventyConfig.addPlugin(plugins.rss)
 	eleventyConfig.addPlugin(plugins.scss)
 	eleventyConfig.addPlugin(plugins.syntaxHighlight)
 	eleventyConfig.addPlugin(plugins.webc, config.webc)
-	eleventyConfig.addPlugin(plugins.webmentions, config.webmentions)
+	// eleventyConfig.addPlugin(plugins.webmentions, config.webmentions)
 	// if (process.env.ELEVENTY_RUN_MODE === "build") {
 	// 	eleventyConfig.addPlugin(plugins.eleventyImageTransformPlugin, {
 	// 		// which file extensions to process

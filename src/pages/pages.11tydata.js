@@ -6,6 +6,9 @@ import { getHost } from "../eleventy/filters/urls.js"
 import { getMetaImage, getMetaTitle } from "../functions/collections.js"
 import { stripHTML } from "../functions/strings.js"
 
+import dotenv from "dotenv"
+dotenv.config()
+
 export default {
 	layout: "page",
 	tags: ["page"],
@@ -20,6 +23,6 @@ export default {
 			return `A page on ${getHost(siteURL)}`
 		},
 		meta_image: (data) => getMetaImage(data),
-		webmentions: (data) => getWebmentions(configWebmentions, configWebmentions.domain + data.page.url),
+		webmentions: (data) => (process.env.WEBMENTION_IO_TOKEN ? getWebmentions(configWebmentions, configWebmentions.domain + data.page.url) : []),
 	},
 }

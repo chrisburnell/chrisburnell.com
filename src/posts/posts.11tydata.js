@@ -8,6 +8,9 @@ import { getHost } from "../eleventy/filters/urls.js"
 import { getAuthors, getAuthorsString, getMetaImage, getMetaTitle, getPropertyLabel, getPropertyTitle, getPropertyTitleFallback, getPropertyURL, getRSVPString, getReplyAuthor, getReplyAuthorString, getReplyTitle, getReplyURL } from "../functions/collections.js"
 import { stripHTML } from "../functions/strings.js"
 
+import dotenv from "dotenv"
+dotenv.config()
+
 export default {
 	layout: "post",
 	tags: ["post"],
@@ -50,6 +53,6 @@ export default {
 			}
 			return data.syndicate_to || []
 		},
-		webmentions: (data) => getWebmentions(configWebmentions, configWebmentions.domain + data.page.url),
+		webmentions: (data) => (process.env.WEBMENTION_IO_TOKEN ? getWebmentions(configWebmentions, configWebmentions.domain + data.page.url) : []),
 	},
 }
