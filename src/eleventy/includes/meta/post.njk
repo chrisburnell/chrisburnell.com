@@ -1,162 +1,165 @@
-<ul class=" [ meta__information ] [ box ] [ flow ] ">
-	{% if subtitle -%}
-		<li class=" [ small ] ">{{ subtitle | safe }}</li>
-	{%- endif %}
-	{% if in_reply_to and rsvp -%}
-		<li class=" [ rsvp ] ">
-			{{ rsvp_string | safe }}
-			<a href="{{ reply_url }}" class=" [ h-cite  u-in-reply-to ] ">{{ reply_title }}</a>
-			<data class=" [ p-rsvp ] " value="{{ rsvp.value }}" hidden></data>
+<div class=" [ box ] ">
+	<h2 class=" [ visually-hidden ] ">Post Metadata</h2>
+	<ul class=" [ meta__information ] [ flow ] ">
+		{% if subtitle -%}
+			<li class=" [ small ] ">{{ subtitle | safe }}</li>
+		{%- endif %}
+		{% if in_reply_to and rsvp -%}
+			<li class=" [ rsvp ] ">
+				{{ rsvp_string | safe }}
+				<a href="{{ reply_url }}" class=" [ h-cite  u-in-reply-to ] ">{{ reply_title }}</a>
+				<data class=" [ p-rsvp ] " value="{{ rsvp.value }}" hidden></data>
+			</li>
+		{% endif %}
+		{% if rsvp %}
+			<li class=" [ rsvp ] ">
+				<c-emoji>{{ emojis.calendar }}</c-emoji>
+				<small data-end="{{ rsvp.end | rfc3339Date }}" data-relative-rsvp-date>{{ rsvp.end | getRSVPDateString }}</small>
+				<time datetime="{{ rsvp.date | rfc3339Date }}" class=" [ dt-start ] ">{{ rsvp.date | friendlyDate | safe }} {{ rsvp.date | friendlyTime(false) | safe }}</time>
+				–
+				<time datetime="{{ rsvp.end | rfc3339Date }}" class=" [ dt-end ] ">{% if rsvp.date | friendlyDate != rsvp.end | friendlyDate %}{{ rsvp.end | friendlyDate | safe }} {% endif %}{{ rsvp.end | friendlyTime | safe }}</time>
+			</li>
+		{% endif %}
+		{% if show_reading_length %}
+			<li class=" [ reading-length ] ">
+				<c-emoji>{{ emojis.reading_length }}</c-emoji>
+				<strong>~{{ content | cleanTags | striptags | safe | wordcount | toNearest(25) | numberStringFormat }}</strong>
+				<small>words</small>
+			</li>
+		{% endif %}
+		{%- set tags_filtered = tags | categoryFilter | tagFilter | sort -%}
+		{% if tags_filtered.length %}
+			<li class=" [ tags ] ">
+				<c-emoji>{{ emojis.tag }}</c-emoji>
+				<small>tagged</small>
+				{% for tag in tags_filtered -%}
+					<a href="/tag/{{ tag }}/" class=" [ p-tag ] ">{{ tag }}</a>
+					{%- if not loop.last %}, {% endif %}
+				{%- endfor %}
+			</li>
+		{% endif %}
+		{% if style %}
+			<li class=" [ style ] ">
+				<c-emoji>{{ emojis.style }}</c-emoji>
+				<small>style</small>
+				<strong>{{ style | replace(' - Other', '') | safe }}</strong>
+			</li>
+		{% endif %}
+		{% if authors.length %}
+			<li class=" [ authors ] ">
+				{% if category == 'beer' %}
+					<c-emoji>{{ emojis.beer }}</c-emoji>
+					<small>brewed by</small>
+				{% elif category == 'book' %}
+					<c-emoji>{{ emojis.author }}</c-emoji>
+					<small>written by</small>
+				{% elif category == 'game' %}
+					<c-emoji>{{ emojis.game }}</c-emoji>
+					<small>produced by</small>
+				{% elif category == 'music' %}
+					<c-emoji>{{ emojis.music_staff }}</c-emoji>
+					<small>created by</small>
+				{% elif category == 'recipe' %}
+					<c-emoji>{{ emojis.recipe }}</c-emoji>
+					<small>sourced from</small>
+				{% else %}
+					<c-emoji>{{ emojis.author }}</c-emoji>
+					<small>authored by</small>
+				{% endif %}
+				{{ meta_authors_string | safe }}
+				{% if console %}
+					<small>for</small>
+					<strong>{{ console | getConsole | safe }}</strong>
+				{% endif %}
+			</li>
+		{% endif %}
+		{% if release %}
+			<li class=" [ date-released ] ">
+				<c-emoji>{{ emojis.calendar }}</c-emoji>
+				<small>released</small>
+				<time datetime="{{ release | rfc3339Date }}" class=" [ dt-released ] ">{{ release | friendlyDate }}</time>
+			</li>
+		{% endif %}
+		{% if rating %}
+			<li class=" [ review-rating ] ">
+				<c-emoji>{{ emojis.stars }}</c-emoji>
+				<small>my rating</small>
+				{% if rating == 'Parti Pris' %}
+					<data class=" [ p-rating ] " value="Parti Pris">Parti Pris</data>
+				{% else %}
+					<data class=" [ rating ] [ p-rating ] " value="{{ rating }}" title="{{ rating }} out of 5"> </data>
+					<data class=" [ p-worst ] " value="0" hidden>0</data>
+					<data class=" [ p-best ] " value="5" hidden>5</data>
+				{% endif %}
+			</li>
+		{% endif %}
+		{% if checkin %}
+			<li class=" [ checkin ] ">
+				<c-emoji>{{ emojis.checkin }}</c-emoji>
+				<small>check-in</small>
+				{% set checkin = checkin | getPlace('object') %}
+				{% if checkin.url %}
+					<a href="{{ checkin.url }}" class=" [ u-location ] ">{{ checkin.title }}</a>
+				{% elif checkin.lat and checkin.long %}
+					<a href="http://www.openstreetmap.org/#map=13/{{ checkin.lat }}/{{ checkin.long }}" class=" [ u-location ] ">{{ checkin.title }}</a>
+				{% else %}
+					<strong class=" [ p-location ] ">{{ checkin.title | default(checkin) }}</strong>
+				{% endif %}
+			</li>
+		{% endif %}
+		{% if badges %}
+			<li class=" [ badges ] ">
+				<c-emoji>{{ emojis.trophy }}</c-emoji>
+				<small><span class=" [ visually-hidden ] ">earning</span> badges</small>
+				{% for badge in badges -%}
+					{%- if badge.id -%}
+						<a href="https://untappd.com/user/{{ author.untappd }}/badges/{{ badge.id }}">{{ badge.title | default(badge) }}</a>
+					{%- else -%}
+						<strong>{{ badge.title | default(badge) }}</strong>
+					{%- endif -%}
+					{% if not loop.last %}, {% endif %}
+				{%- endfor -%}
+			</li>
+		{% endif %}
+		{% if syndicate_to.length %}
+			<li class=" [ syndicate-to ] ">
+				<c-emoji>{{ emojis.syndication }}</c-emoji>
+				<small>also on</small>
+				{% for syndication in syndicate_to -%}
+					<a href="{{ syndication | tweetback }}">{{ syndication | getSyndicationTitle }}</a>
+					{%- if not loop.last %}, {% endif %}
+				{%- endfor %}
+			</li>
+		{% endif %}
+		{% if posting_method %}
+			<li class=" [ posting-method ] ">
+				<c-emoji>{{ emojis.posting_method }}</c-emoji>
+				<small>posted with</small>
+				<a href="{{ posting_method }}">{{ posting_method | getPostingMethodTitle }}</a>
+			</li>
+		{% endif %}
+		{% if eleventy.env.runMode === 'build' and not draft and published !== false and not 'ignore' in tags %}
+			<li class=" [ shorturl ] ">
+				{% set shorturl_id = date | NewBase60(categoryCode, collections[category]) -%}
+				<c-emoji>{{ emojis.link }}</c-emoji>
+				<small>shorturl</small>
+				<a href="https://repc.co/{{ shorturl_id }}">repc.co/{{ shorturl_id }}</a>
+			</li>
+		{% endif %}
+		<li hidden>
+			<a href="https://fed.brid.gy"></a>
 		</li>
+	</ul>
+	{% if title or of.title %}
+		<data class=" [ p-name ] " value="{{ title | default(of.title) | safe }}" hidden></data>
 	{% endif %}
-	{% if rsvp %}
-		<li class=" [ rsvp ] ">
-			<c-emoji>{{ emojis.calendar }}</c-emoji>
-			<small data-end="{{ rsvp.end | rfc3339Date }}" data-relative-rsvp-date>{{ rsvp.end | getRSVPDateString }}</small>
-			<time datetime="{{ rsvp.date | rfc3339Date }}" class=" [ dt-start ] ">{{ rsvp.date | friendlyDate | safe }} {{ rsvp.date | friendlyTime(false) | safe }}</time>
-			–
-			<time datetime="{{ rsvp.end | rfc3339Date }}" class=" [ dt-end ] ">{% if rsvp.date | friendlyDate != rsvp.end | friendlyDate %}{{ rsvp.end | friendlyDate | safe }} {% endif %}{{ rsvp.end | friendlyTime | safe }}</time>
-		</li>
-	{% endif %}
-	{% if show_reading_length %}
-		<li class=" [ reading-length ] ">
-			<c-emoji>{{ emojis.reading_length }}</c-emoji>
-			<strong>~{{ content | cleanTags | striptags | safe | wordcount | toNearest(25) | numberStringFormat }}</strong>
-			<small>words</small>
-		</li>
-	{% endif %}
-	{%- set tags_filtered = tags | categoryFilter | tagFilter | sort -%}
-	{% if tags_filtered.length %}
-		<li class=" [ tags ] ">
-			<c-emoji>{{ emojis.tag }}</c-emoji>
-			<small>tagged</small>
-			{% for tag in tags_filtered -%}
-				<a href="/tag/{{ tag }}/" class=" [ p-tag ] ">{{ tag }}</a>
-				{%- if not loop.last %}, {% endif %}
-			{%- endfor %}
-		</li>
-	{% endif %}
-	{% if style %}
-		<li class=" [ style ] ">
-			<c-emoji>{{ emojis.style }}</c-emoji>
-			<small>style</small>
-			<strong>{{ style | replace(' - Other', '') | safe }}</strong>
-		</li>
-	{% endif %}
-	{% if authors.length %}
-		<li class=" [ authors ] ">
-			{% if category == 'beer' %}
-				<c-emoji>{{ emojis.beer }}</c-emoji>
-				<small>brewed by</small>
-			{% elif category == 'book' %}
-				<c-emoji>{{ emojis.author }}</c-emoji>
-				<small>written by</small>
-			{% elif category == 'game' %}
-				<c-emoji>{{ emojis.game }}</c-emoji>
-				<small>produced by</small>
-			{% elif category == 'music' %}
-				<c-emoji>{{ emojis.music_staff }}</c-emoji>
-				<small>created by</small>
-			{% elif category == 'recipe' %}
-				<c-emoji>{{ emojis.recipe }}</c-emoji>
-				<small>sourced from</small>
-			{% else %}
-				<c-emoji>{{ emojis.author }}</c-emoji>
-				<small>authored by</small>
-			{% endif %}
-			{{ meta_authors_string | safe }}
-			{% if console %}
-				<small>for</small>
-				<strong>{{ console | getConsole | safe }}</strong>
-			{% endif %}
-		</li>
-	{% endif %}
-	{% if release %}
-		<li class=" [ date-released ] ">
-			<c-emoji>{{ emojis.calendar }}</c-emoji>
-			<small>released</small>
-			<time datetime="{{ release | rfc3339Date }}" class=" [ dt-released ] ">{{ release | friendlyDate }}</time>
-		</li>
-	{% endif %}
-	{% if rating %}
-		<li class=" [ review-rating ] ">
-			<c-emoji>{{ emojis.stars }}</c-emoji>
-			<small>my rating</small>
-			{% if rating == 'Parti Pris' %}
-				<data class=" [ p-rating ] " value="Parti Pris">Parti Pris</data>
-			{% else %}
-				<data class=" [ rating ] [ p-rating ] " value="{{ rating }}" title="{{ rating }} out of 5"> </data>
-				<data class=" [ p-worst ] " value="0" hidden>0</data>
-				<data class=" [ p-best ] " value="5" hidden>5</data>
-			{% endif %}
-		</li>
-	{% endif %}
-	{% if checkin %}
-		<li class=" [ checkin ] ">
-			<c-emoji>{{ emojis.checkin }}</c-emoji>
-			<small>check-in</small>
-			{% set checkin = checkin | getPlace('object') %}
-			{% if checkin.url %}
-				<a href="{{ checkin.url }}" class=" [ u-location ] ">{{ checkin.title }}</a>
-			{% elif checkin.lat and checkin.long %}
-				<a href="http://www.openstreetmap.org/#map=13/{{ checkin.lat }}/{{ checkin.long }}" class=" [ u-location ] ">{{ checkin.title }}</a>
-			{% else %}
-				<strong class=" [ p-location ] ">{{ checkin.title | default(checkin) }}</strong>
-			{% endif %}
-		</li>
-	{% endif %}
-	{% if badges %}
-		<li class=" [ badges ] ">
-			<c-emoji>{{ emojis.trophy }}</c-emoji>
-			<small><span class=" [ visually-hidden ] ">earning</span> badges</small>
-			{% for badge in badges -%}
-				{%- if badge.id -%}
-					<a href="https://untappd.com/user/{{ author.untappd }}/badges/{{ badge.id }}">{{ badge.title | default(badge) }}</a>
-				{%- else -%}
-					<strong>{{ badge.title | default(badge) }}</strong>
-				{%- endif -%}
-				{% if not loop.last %}, {% endif %}
-			{%- endfor -%}
-		</li>
-	{% endif %}
-	{% if syndicate_to.length %}
-		<li class=" [ syndicate-to ] ">
-			<c-emoji>{{ emojis.syndication }}</c-emoji>
-			<small>also on</small>
-			{% for syndication in syndicate_to -%}
-				<a href="{{ syndication | tweetback }}">{{ syndication | getSyndicationTitle }}</a>
-				{%- if not loop.last %}, {% endif %}
-			{%- endfor %}
-		</li>
-	{% endif %}
-	{% if posting_method %}
-		<li class=" [ posting-method ] ">
-			<c-emoji>{{ emojis.posting_method }}</c-emoji>
-			<small>posted with</small>
-			<a href="{{ posting_method }}">{{ posting_method | getPostingMethodTitle }}</a>
-		</li>
-	{% endif %}
-	{% if eleventy.env.runMode === 'build' and not draft and published !== false and not 'ignore' in tags %}
-		<li class=" [ shorturl ] ">
-			{% set shorturl_id = date | NewBase60(categoryCode, collections[category]) -%}
-			<c-emoji>{{ emojis.link }}</c-emoji>
-			<small>shorturl</small>
-			<a href="https://repc.co/{{ shorturl_id }}">repc.co/{{ shorturl_id }}</a>
-		</li>
-	{% endif %}
-	<li hidden>
-		<a href="https://fed.brid.gy"></a>
-	</li>
-</ul>
-{% if title or of.title %}
-	<data class=" [ p-name ] " value="{{ title | default(of.title) | safe }}" hidden></data>
-{% endif %}
-<data class=" [ u-url ] " value="{{ page.url }}" hidden></data>
-<div class=" [ h-card  p-author ] " hidden>
-	<data class=" [ p-name ] " value="{{ author.name }}"></data>
-	<data class=" [ u-url  u-uid ] " value="/"></data>
-	<data class=" [ u-url ] " value="/about"></data>
-	<data class=" [ u-photo ] " value="{{ author.avatar }}"></data>
+	<data class=" [ u-url ] " value="{{ page.url }}" hidden></data>
+	<div class=" [ h-card  p-author ] " hidden>
+		<data class=" [ p-name ] " value="{{ author.name }}"></data>
+		<data class=" [ u-url  u-uid ] " value="/"></data>
+		<data class=" [ u-url ] " value="/about"></data>
+		<data class=" [ u-photo ] " value="{{ author.avatar }}"></data>
+	</div>
 </div>
 
 <div class=" [ box ] [ flow ] ">
