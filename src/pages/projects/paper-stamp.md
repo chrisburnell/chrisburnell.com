@@ -97,7 +97,7 @@ There are also a handful of attributes you can set which will override the appea
 </paper-stamp>
 ```
 
-<style>
+{% css -%}
     @layer components {
         paper-stamp:not(:defined) {
             background-color: antiquewhite;
@@ -109,4 +109,4 @@ There are also a handful of attributes you can set which will override the appea
             display: block;
         }
     }
-</style>
+{%- endcss %}

@@ -3,6 +3,22 @@
 	.looking-for-work:has(:checked) {
 		display: none;
 	}
+}
+</style>
+<div id="lfw" class=" [ looking-for-work ] [ box  box--line-length ] [ flow ] [ no-print ] " data-pagefind-ignore>
+	<p class=" [ gamma ] ">I’m looking for work!</p>
+	<p>After 12 years in London, I made the decision to move to <span style="white-space: nowrap;">Singapore <span aria-hidden="true">🇸🇬</span></span>, and I’m now looking for new work opportunities, and hoping to transition from a Software Engineer into a Developer Relations role (but open to both)!</p>
+	<p>If you’d like to get in touch, you can <a href="/about/#contact">contact me</a>, connect with me on <a href="https://www.linkedin.com/in/{{ author.linkedin }}">LinkedIn</a>, or check out my <a href="/cv/">CV / resumé</a>.</p>
+	<storage-form class="requires-js">
+		<form>
+			<label for="hide-lfw-toggler" class=" [ strong ] ">Hide this message</label>
+			<input type="hidden" name="hide-lfw" value />
+			<input type="checkbox" id="hide-lfw-toggler" name="hide-lfw" value="true" />
+		</form>
+	</storage-form>
+</div>
+{% css -%}
+@layer blocks {
 	.looking-for-work {
 		--raven-lightness: 59.5%;
 		--raven-chroma: 0.196;
@@ -17,16 +33,4 @@
 		text-align: center;
 	}
 }
-</style>
-<div id="lfw" class=" [ looking-for-work ] [ box  box--line-length ] [ flow ] [ no-print ] " data-pagefind-ignore>
-	<p class=" [ gamma ] ">I’m looking for work!</p>
-	<p>After 12 years in London, I made the decision to move to <span style="white-space: nowrap;">Singapore <span aria-hidden="true">🇸🇬</span></span>, and I’m now looking for new work opportunities, and hoping to transition from a Software Engineer into a Developer Relations role (but open to both)!</p>
-	<p>If you’d like to get in touch, you can <a href="/about/#contact">contact me</a>, connect with me on <a href="https://www.linkedin.com/in/{{ author.linkedin }}">LinkedIn</a>, or check out my <a href="/cv/">CV / resumé</a>.</p>
-	<storage-form class="requires-js">
-		<form>
-			<label for="hide-lfw-toggler" class=" [ strong ] ">Hide this banner</label>
-			<input type="hidden" name="hide-lfw" value />
-			<input type="checkbox" id="hide-lfw-toggler" name="hide-lfw" value="true" />
-		</form>
-	</storage-form>
-</div>
+{%- endcss %}

@@ -1,6 +1,7 @@
 import slugify from "@sindresorhus/slugify"
 import { load } from "cheerio"
 import striptags from "striptags"
+import { isCSSNakedDay } from "../data/global.js"
 
 export default async function (value, outputPath) {
 	if (outputPath && outputPath.endsWith(".html")) {
@@ -68,6 +69,14 @@ export default async function (value, outputPath) {
 		preformatted.each((i, element) => {
 			$(element).attr("tabindex", 0)
 		})
+
+		// Strip style attributes during CSS Naked Day
+		if (isCSSNakedDay) {
+			const styled = $("[style]")
+			styled.each((i, element) => {
+				$(element).removeAttr("style")
+			})
+		}
 
 		return $.root().html()
 	}

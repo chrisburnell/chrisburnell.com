@@ -108,7 +108,7 @@ I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link
     </div>
 </div>
 
-<style>
+{% css -%}
 .marquee {
   inline-size: 100%;
   display: flex;
@@ -163,7 +163,7 @@ I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link
     transform:translateX(calc(-100% - var(--size-large)))
   }
 }
-</style>
+{%- endcss %}
 
 <!-- <hr> -->
 

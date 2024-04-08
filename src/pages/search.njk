@@ -23,8 +23,7 @@ sitemap:
 	</template>
 </is-land>
 
-{% if not global.isCSSNakedDay -%}
-<style>
+{% css -%}
 pagefind-search {
 	--pagefind-ui-primary: var(--color-raven);
 	--pagefind-ui-text: currentColor;
@@ -36,8 +35,7 @@ pagefind-search {
 	--pagefind-ui-image-border-radius: var(--size-border-thin);
 	--pagefind-ui-font: inherit;
 }
-</style>
-{%- endif %}
+{%- endcss %}
 
 {% if not global.isCSSNakedDay -%}
 	{%- js 'module' -%}{% include '../../node_modules/@zachleat/pagefind-search/pagefind-search.js' %}{%- endjs -%}

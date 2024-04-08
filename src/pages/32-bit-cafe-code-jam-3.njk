@@ -65,8 +65,7 @@ theme: light
 	</article>
 </main>
 
-{% if not global.isCSSNakedDay -%}
-<style>
+{% css -%}
 html {
 	background-color: #adaeb0;
 	scrollbar-color: var(--color-bowhead) transparent;
@@ -131,5 +130,4 @@ h1 + p {
 		grid-row: 1;
 	}
 }
-</style>
-{%- endif %}
+{%- endcss %}

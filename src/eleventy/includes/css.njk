@@ -19,8 +19,11 @@
 		:root {
 			color-scheme: light dark;
 		}
-		.popover-settings-button svg {
+		svg:not([fill], [stroke]) {
 			fill: currentColor;
+		}
+		.pixelated {
+			image-rendering: pixelated;
 		}
 	</style>
 {%- endif %}
