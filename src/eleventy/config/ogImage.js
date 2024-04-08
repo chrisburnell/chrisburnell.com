@@ -2,11 +2,15 @@ import slugify from "@sindresorhus/slugify"
 import fs from "fs-extra"
 
 export default {
-	generateHTML: (outputURL) => outputURL,
-	getOutputFileSlug: ({ context }) => {
-		return slugify(context.page.url)
+	async generateHTML() {
+		return this.outputURL()
+	},
+	async getOutputFileSlug() {
+		return slugify(this.data.page.url)
 	},
 	satoriOptions: {
+		width: 1200,
+		height: 675,
 		fonts: [
 			{
 				name: "Proxima Nova",
