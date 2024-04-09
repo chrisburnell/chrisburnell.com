@@ -53,7 +53,7 @@ export default async function (value, outputPath) {
 			const headingID = $(element).attr("id") || slugify(headingHTML.replace(/([.‘’“”])/g, ""))
 			$(element).html(`
 				${$(element).html()}
-				<a href="#${headingID}" class=" [ fragment-anchor ] " title="Permalink for ${$(element).text().trim()}" data-pagefind-ignore><span class="visually-hidden">Permalink </span>¶</a>
+				<a href="#${headingID}" class=" [ fragment-anchor ] " title="Permalink for ${$(element).text().trim()}" data-pagefind-ignore><small class="visually-hidden">Permalink </small>¶</a>
 			`)
 			$(element).attr("id", headingID)
 		})
