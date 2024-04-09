@@ -47,6 +47,10 @@ layout: root
 {%- endif %}
 
 <main class=" [ main ] [ flow ] "{% if not excludeFromSearch and not sitemap.exclude and not draft and published !== false and not 'ignore' in tags %} data-pagefind-body{% endif %}>
+	{% if global.isCSSNakedDay -%}
+		{% include 'css-naked-day.njk' %}
+	{%- endif %}
+
 	{{- content | safe -}}
 </main>
 

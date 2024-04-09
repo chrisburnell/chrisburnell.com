@@ -43,10 +43,6 @@ truncate: true
 	{% endif %}
 
 	<div class=" [ content ] [ flow ] ">
-		{% if global.isCSSNakedDay -%}
-			{% include 'css-naked-day.njk' %}
-		{%- endif %}
-
 		{% for year, posts in collection | groupby('data.year') | dictsort | reverse %}
 			<h2 id="{{ year }}">
 				{{ year }} <small>{{ posts | length }} post{{ 's' if posts | length > 1 }}</small>

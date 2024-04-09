@@ -106,7 +106,7 @@ Passionate about the open web, having published over 50 technical articles, and 
 - Annual conference websites: [2018](https://2018.stateofthebrowser.com), [2019](https://2019.stateofthebrowser.com), [2021](https://2021.stateofthebrowser.com), [2022](https://2022.stateofthebrowser.com), [2023](https://2023.stateofthebrowser.com), [2024](https://2024.stateofthebrowser.com)*
 
 <div class=" [ space-between ] ">
-    <h3 class=" [ delta ] ">Technical Writer on <a href="https://chrisburnell.com/"><c-emoji><img src="/images/raven.svg" class="brand-logo" alt="{{ site.title }}" loading="lazy" decoding="async"></c-emoji>chrisburnell.com</a></h3>
+    <h3 class=" [ delta ] ">Technical Writer on <a href="https://chrisburnell.com/"><c-emoji><img src="{{ site.logo }}" class="brand-logo" width="24" height="24" alt="{{ site.title }}" loading="lazy" decoding="async"></c-emoji>chrisburnell.com</a></h3>
     <small><strong>2013 – present</strong></small>
 </div>
 

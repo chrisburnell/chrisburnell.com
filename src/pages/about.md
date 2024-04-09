@@ -92,16 +92,16 @@ I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link
         {%- for client in clients | sort(false, false, 'title') -%}
             <article>
                 <a href="{{ client.url }}" title="{{ client.title | safe }}" rel="external noopener">
-                    <img src="/images/content/{{ client.image }}"{% if client.darkInvert %} class="dark-invert-colors"{% endif %} alt="">
+                    <img src="/images/content/{{ client.image }}"{% if client.darkInvert %} class="dark-invert-colors"{% endif %} alt="" height="80">
                 </a>
             </article>
         {%- endfor -%}
     </div>
-    <div class=" [ marquee__content ] " aria-hidden="true">
+    <div class=" [ marquee__content ] " aria-hidden="true" hidden>
         {%- for client in clients | sort(false, false, 'title') -%}
             <article>
                 <a href="{{ client.url }}" title="{{ client.title | safe }}" rel="external noopener" tabindex="-1">
-                    <img src="/images/content/{{ client.image }}"{% if client.darkInvert %} class="dark-invert-colors"{% endif %} alt="">
+                    <img src="/images/content/{{ client.image }}"{% if client.darkInvert %} class="dark-invert-colors"{% endif %} alt="" height="80">
                 </a>
             </article>
         {%- endfor -%}
@@ -134,7 +134,7 @@ I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .marquee[aria-hidden="true"] {
+  .marquee__content[aria-hidden="true"] {
     display: none;
   }
 
@@ -178,7 +178,7 @@ I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link
 <address>
     <dl>
         <dt>Email:</dt>
-        <dd><a href="mailto:{{ author.email }}" class=" [ canada ] "><img src="/images/raven.svg" alt="{{ site.title }}" loading="lazy" decoding="async" class="brand-logo" style="margin-inline-end: 1ex;">{{ author.email }}</a></dd>
+        <dd><a href="mailto:{{ author.email }}" class=" [ canada ] "><img src="{{ site.logo }}" alt="{{ site.title }}" loading="lazy" decoding="async" class="brand-logo" width="24" height="24" style="margin-inline-end: 1ex;">{{ author.email }}</a></dd>
         <dt>Mastodon:</dt>
         <dd><a href="https://{{ author.mastodon_domain }}/{{ author.mastodon.split('@')[1] }}" class=" [ canada ] " title="{{ author.name }} on Mastodon"><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false" style="fill: #595aff; margin-inline-end: 1ex;"><use href="#svg--mastodon"></use></svg></c-emoji>{{ author.mastodon }}</a></dd>
         <dt>LinkedIn:</dt>
