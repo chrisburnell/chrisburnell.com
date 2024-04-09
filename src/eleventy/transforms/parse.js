@@ -42,8 +42,7 @@ export default async function (value, outputPath) {
 		}
 
 		// Process and generate fragment anchors for content headings
-		const articleHeadings = $(".content h2:not(.no-fragment)")
-		articleHeadings.each((i, element) => {
+		$(".content h2:not(.no-fragment)").each((i, element) => {
 			const headingHTML = striptags(
 				$(element)
 					.html()
@@ -59,24 +58,29 @@ export default async function (value, outputPath) {
 		})
 
 		// Make sure <ul> elements are accessible even with `list-style: none` in Safari
-		const unordered = $("ul")
-		unordered.each((i, element) => {
+		$("ul").each((i, element) => {
 			$(element).attr("role", "list")
 		})
 
 		// Make <pre> code blocks keyboard-accessible by adding `tabindex="0"`
-		const preformatted = $("pre > code")
-		preformatted.each((i, element) => {
+		$("pre > code").each((i, element) => {
 			$(element).attr("tabindex", 0)
 		})
 
-		// Strip style attributes during CSS Naked Day
+		// Remove CSS during CSS Naked Day
 		if (isCSSNakedDay) {
-			const styled = $("[style]")
-			styled.each((i, element) => {
+			$(`link[rel="stylesheet"]`).remove()
+
+			$(`style:not([data-keep="css-naked-day"])`).remove()
+
+			$("[style]").each((i, element) => {
 				$(element).removeAttr("style")
 			})
 		}
+
+		$(`style:not([data-keep="css-naked-day"])`).each((i, element) => {
+			$(element).removeAttr("data-keep")
+		})
 
 		return $.root().html()
 	}
