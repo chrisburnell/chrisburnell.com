@@ -70,7 +70,7 @@ Passionate about the open web, having published over 50 technical articles, and 
 - Single-handedly developed the UK’s first design system which is now used by more than 10 enterprise-level projects, leading to more coherent codebases and a significant reduction in bugs and turnaround time for ad hoc work.
 
 <div class=" [ space-between ] ">
-    <h3><a href="https://city.ac.uk"><c-emoji><img src="/images/built/city-logo.png" class="brand-logo" alt="City, University of London’s logo" loading="lazy" decoding="async"></c-emoji>City, University of London</a></h3>
+    <h3><a href="https://city.ac.uk"><c-emoji>{% image './images/content/city-logo.png', 'City, University of London’s logo', 'brand-logo', ['auto'] %}</c-emoji>City, University of London</a></h3>
     <small><strong>June 2014 – February 2018</strong></small>
 </div>
 
