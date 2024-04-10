@@ -4,7 +4,7 @@ description: How I've implemented and interact with the <a href="https://indiewe
 ---
 
 <figure>
-    {% image './images/content/indiewebcamp.svg', 'IndieWebCamp logo' %}
+    {% image './images/content/indiewebcamp.svg', 'IndieWebCamp logo', '', ['auto'] %}
 </figure>
 
 ## My Setup

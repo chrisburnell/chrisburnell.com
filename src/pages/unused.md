@@ -12,9 +12,3 @@ excludeFromSearch: true
 {% image './images/content/city-logo.png', 'City, University of London’s logo' %}
 
 {% image './images/content/lws-logo.png', 'London Web Standards’ logo' %}
-
-{% image './images/content/sotb-logo.png', 'State of the Browser’s logo' %}
-
-{% for client in clients %}
-    {% image './images/content/' + client.image, client.title + '’s logo' %}
-{% endfor %}
