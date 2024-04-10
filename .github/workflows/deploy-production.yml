@@ -5,11 +5,8 @@ on:
     branches:
       - main
   schedule:
-    # https://crontab.guru/#33_1_*_*_*
-    - cron: "33 1 * * *"
-    - cron: "33 7 * * *"
-    - cron: "33 13 * * *"
-    - cron: "33 19 * * *"
+    # https://crontab.guru/#33_1/6_*_*_*
+    - cron: "33 1/6 * * *"
     # CSS Naked Day switches
     - cron: "0 10 8 4 *"
     - cron: "0 12 10 4 *"
