@@ -1,23 +1,17 @@
-name: Production Deploy
+name: Push Deploy
 
 on:
   push:
     branches:
       - main
-  schedule:
-    # https://crontab.guru/#33_1/6_*_*_*
-    - cron: "33 1/6 * * *"
-    # CSS Naked Day switches
-    - cron: "0 10 8 4 *"
-    - cron: "0 12 10 4 *"
 
 concurrency:
-  group: production-deploy
+  group: deploy
   cancel-in-progress: true
 
 jobs:
   build:
-    name: Build and Deploy
+    name: Push Deploy
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
