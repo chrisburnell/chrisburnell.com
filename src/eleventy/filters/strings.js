@@ -1,4 +1,4 @@
-import { encode } from "html-entities"
+import he from "he"
 import randomCase from "random-case"
 import truncate from "truncate-html"
 import capitalizers from "../../data/capitalizers.js"
@@ -49,8 +49,17 @@ export const cleanTags = (string) => {
  * @param {string} string
  * @returns {string}
  */
-export const htmlEntities = (string) => {
-	return encode(string)
+export const encodeHTML = (string) => {
+	return he.encode(string)
+}
+
+/**
+ *
+ * @param {string} string
+ * @returns {string}
+ */
+export const decodeHTML = (string) => {
+	return he.decode(string)
 }
 
 /**
@@ -141,7 +150,8 @@ export default {
 	conjunction,
 	specialCapitalize,
 	cleanTags,
-	htmlEntities,
+	encodeHTML,
+	decodeHTML,
 	stripNewLines,
 	stripStrikethrough,
 	maxWords,
