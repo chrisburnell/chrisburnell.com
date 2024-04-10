@@ -69,9 +69,13 @@ export default async function (value, outputPath) {
 
 		// Remove CSS during CSS Naked Day
 		if (isCSSNakedDay) {
-			$(`link[rel="stylesheet"]`).remove()
+			$(`link[rel="stylesheet"]`).each((i, element) => {
+				$(element).remove()
+			})
 
-			$(`style:not([data-keep="css-naked-day"])`).remove()
+			$(`style:not([data-keep="css-naked-day"])`).each((i, element) => {
+				$(element).remove()
+			})
 
 			$("[style]").each((i, element) => {
 				$(element).removeAttr("style")
