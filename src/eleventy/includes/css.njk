@@ -13,17 +13,3 @@
 
 {%- css 'critical' -%}{% renderFile 'src/css/critical.scss' %}{%- endcss -%}
 {%- css -%}{% renderFile 'src/css/defer.scss' %}{%- endcss -%}
-
-{% if global.isCSSNakedDay -%}
-	<style data-keep="css-naked-day">
-		:root {
-			color-scheme: light dark;
-		}
-		svg:not([fill], [stroke]) {
-			fill: currentColor;
-		}
-		.pixelated {
-			image-rendering: pixelated;
-		}
-	</style>
-{%- endif %}
