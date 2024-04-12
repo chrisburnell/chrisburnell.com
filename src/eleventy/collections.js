@@ -90,7 +90,7 @@ export default {
 		const meetups = collection.getFilteredByTag("meetup").filter(isPublished)
 		let filteredCollection = [...conferences, ...meetups]
 			.filter((item) => {
-				return "rsvp" in item.data && item.data.rsvp?.value === "yes"
+				return "rsvp" in item.data && item.data.rsvp.value === "yes"
 			})
 			.sort(dateSort)
 

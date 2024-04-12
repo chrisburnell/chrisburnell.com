@@ -20,6 +20,7 @@ import { getMastodonHandle, getTwitterHandle } from "./utils.js"
 const allPeople = [...blogroll, ...breweries, ...publications, ...gamePublishers, ...meetups]
 
 // Get data about all pages
+// eslint-disable-next-line
 const pages = await EleventyFetch("https://chrisburnell.com/all.json", {
 	duration: cacheDurations.hourly,
 	type: "json",

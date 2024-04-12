@@ -7,6 +7,7 @@ export const getURLObject = (url) => {
 		const urlObject = new URL(url)
 		return urlObject
 	} catch (error) {
+		console.error(error)
 		return url
 	}
 }
