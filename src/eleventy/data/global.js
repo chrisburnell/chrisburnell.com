@@ -3,8 +3,8 @@ export const nowISO = new Date().toISOString()
 
 export const thisYear = new Date().getFullYear()
 
-const cssNakedDayStartEpoch = new Date(`${thisYear}-04-09T00:00:00+1400`).getTime()
-const cssNakedDayEndEpoch = new Date(`${thisYear}-04-09T23:59:59-1200`).getTime()
+export const cssNakedDayStartEpoch = new Date(`${thisYear}-04-09T00:00:00+1400`).getTime()
+export const cssNakedDayEndEpoch = new Date(`${thisYear}-04-09T23:59:59-1200`).getTime()
 
 export const isCSSNakedDay = cssNakedDayStartEpoch <= nowEpoch && nowEpoch <= cssNakedDayEndEpoch
 
@@ -17,6 +17,8 @@ export default {
 	thisYear,
 	nowEpoch,
 	nowISO,
+	cssNakedDayStartEpoch,
+	cssNakedDayEndEpoch,
 	isCSSNakedDay,
 	random,
 }

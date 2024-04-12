@@ -122,8 +122,45 @@ export const sortByDate = (array) => {
 }
 
 /**
+ * @param {string} value
+ * @returns {boolean}
+ */
+export const isPast = (value) => {
+	return epoch(value) <= nowEpoch
+}
+
+/**
+ * @param {string} value
+ * @returns {boolean}
+ */
+export const isFuture = (value) => {
+	return nowEpoch < epoch(value)
+}
+
+/**
+ * @param {string} value
+ * @param {number} upcomingDays
+ * @returns {boolean}
+ */
+export const isUpcoming = (value, upcomingDays = limits.upcomingDays) => {
+	const differenceDays = (epoch(value) - nowEpoch) / 1000 / 60 / 60 / 24
+	return 0 < differenceDays && differenceDays < upcomingDays
+}
+
+/**
+ * @param {string} value
+ * @param {number} recentDays
+ * @returns {boolean}
+ */
+export const isRecent = (value, recentDays = limits.recentDays) => {
+	const differenceDays = (nowEpoch - epoch(value)) / 1000 / 60 / 60 / 24
+	return differenceDays < recentDays
+}
+
+/**
  * @param {object[]} array
  * @param {string} key
+ * @param {number} recentDays
  * @returns {object[]}
  */
 export const recentFilter = (array, key, recentDays = limits.recentDays) => {
@@ -132,8 +169,7 @@ export const recentFilter = (array, key, recentDays = limits.recentDays) => {
 		const value = keys.reduce((o, k) => {
 			return o[k]
 		}, item)
-		const differenceDays = (nowEpoch - epoch(value)) / 1000 / 60 / 60 / 24
-		return differenceDays < recentDays
+		return isRecent(value, recentDays)
 	})
 }
 
@@ -293,6 +329,10 @@ export default {
 	epoch,
 	dateSort,
 	sortByDate,
+	isPast,
+	isFuture,
+	isUpcoming,
+	isRecent,
 	recentFilter,
 	getRelativeTime,
 	getRSVPValueString,

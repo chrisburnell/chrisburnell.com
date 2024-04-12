@@ -4,7 +4,9 @@ import "@oddbird/popover-polyfill"
 
 import "@11ty/is-land/is-land"
 
-import "./imports/relative-time"
+import "@chrisburnell/relative-time"
+
+import "./imports/relative-times"
 
 import "@zachleat/webcare-webshare/webcare-webshare"
 

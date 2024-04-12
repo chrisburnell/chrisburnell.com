@@ -14,6 +14,11 @@ tags:
 toc: true
 ---
 
+<div id="updated" class=" [ updated ] [ box  box--warning ] [ flow ] ">
+    <p>I’ve stopped development on this Web Component, but I have made an newer (and better, I think) Sparkline Web Component that I welcome you to check out instead:</p>
+    <p><a href="/svg-sparkline/"><code>&lt;svg-sparkline&gt;</code></a></p>
+</div>
+
 <script type="module" src="/js/components/spark-line.js"></script>
 
 <noscript><p>Unfortunately, this page requires JavaScript to display sparklines and use the interactive example.</p></noscript>

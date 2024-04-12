@@ -1,4 +1,4 @@
-import { getRelativeTime } from "../../eleventy/filters/dates.js"
+import { friendlyDate, friendlyTime } from "../../eleventy/filters/dates.js"
 import { clamp } from "../../functions/utils.js"
 
 class LastFMListening extends HTMLElement {
@@ -61,7 +61,7 @@ class LastFMListening extends HTMLElement {
 					<a href="${track.artist.url}" class=" [ h-cite ] " rel="external noopener">${track.artist.name}</a>
 				</div>
 				<div>
-					<time datetime="${datetime.toISOString()}" class=" [ dt-published ] ">${datetime.getTime() === Date.now() ? "<em>listening now</em>" : getRelativeTime(datetime)}</time>
+					<relative-time><time datetime="${datetime.toISOString()}" class=" [ dt-published ] ">${datetime.getTime() === Date.now() ? "<em>listening now</em>" : `${friendlyDate(datetime)} ${friendlyTime(datetime)}`}</time></relative-time>
 				</div>
 			</article>
 		`

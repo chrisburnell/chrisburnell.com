@@ -4,9 +4,8 @@ dotenv.config()
 import { getPublished } from "@chrisburnell/eleventy-cache-webmentions"
 import { isPublished, notReply } from "../functions/collections.js"
 import { exponentialMovingAverage } from "../functions/utils.js"
-import { nowEpoch } from "./data/global.js"
 import { limits } from "./data/site.js"
-import { dateSort, epoch } from "./filters/dates.js"
+import { dateSort, epoch, isFuture, isUpcoming } from "./filters/dates.js"
 
 const durationDay = 24 * 60 * 60 * 1000
 
@@ -174,13 +173,11 @@ export default {
 			.filter((item) => item.data.rsvp)
 			.filter((item) => {
 				// Check that the end isn't in the past
-				return nowEpoch < epoch(item.data.rsvp.end)
+				return isFuture(item.data.rsvp.end)
 			})
 			.filter((item) => {
-				// Lead the start by 24 hours
-				const startLeaded = epoch(item.data.rsvp.date) - durationDay
-				// Check that we've passed the leaded start
-				return startLeaded < nowEpoch
+				// Check that the RSVP is within next 1 days
+				return isUpcoming(item.data.rsvp.date, 1)
 			})
 			.sort(dateSort)
 			.sort((a, b) => {
@@ -202,12 +199,11 @@ export default {
 			.filter((item) => item.data.rsvp)
 			.filter((item) => {
 				// Check that the end isn't in the past
-				return nowEpoch < epoch(item.data.rsvp.end)
+				return isFuture(item.data.rsvp.end)
 			})
 			.filter((item) => {
 				// Remove posts that would be in the rsvpsToday collection
-				const todayStartLeaded = epoch(item.data.rsvp.date) - durationDay
-				if (todayStartLeaded < nowEpoch) {
+				if (isUpcoming(item.data.rsvp.date, 1)) {
 					return false
 				}
 
@@ -216,11 +212,8 @@ export default {
 					return true
 				}
 
-				// Lead the start by the defined or default lead
-				const upcomingLead = (item.data.rsvp?.upcoming_days_lead || limits.upcomingDays) * durationDay
-				const startLeaded = epoch(item.data.rsvp.date) - upcomingLead
-				// Check that we've passed the leaded start
-				return startLeaded < nowEpoch
+				// Check that post is upcoming
+				return isUpcoming(item.data.rsvp.date, item.data.rsvp.upcoming_days_lead)
 			})
 			.sort(dateSort)
 			.sort((a, b) => {

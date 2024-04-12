@@ -23,7 +23,7 @@ wide: true
 					<a href="{{ track.artist.url }}" class=" [ h-cite ] " rel="external noopener">{{ track.artist.name }}</a>
 				</div>
 				<div>
-					<time datetime="{{ track.datetime | rfc3339Date }}" class=" [ dt-published ] " data-relative>{{ track.datetime | friendlyDate }}</time>
+					<relative-time><time datetime="{{ track.datetime | rfc3339Date }}" class=" [ dt-published ] ">{{ track.datetime | friendlyDate }}</time></relative-time>
 				</div>
 			</article>
 		{% endfor %}

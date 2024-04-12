@@ -12,7 +12,7 @@ tags:
   - web-components
 ---
 
-<div id="updated" class=" [ updated ] [ box ] [ flow ] ">
+<div id="updated" class=" [ updated ] [ box  box--warning ] [ flow ] ">
     <p>Even though I had a great time building out and testing this Web Component, I’m currently using <a href="https://darn.es/storage-form-web-component/"><code>&lt;storage-form&gt;</code></a> by <a href="https://darn.es">David Darnes</a> to handle toggling of themes for its simplicity and ability to be used in a much wider array of situations!</p>
 </div>
 

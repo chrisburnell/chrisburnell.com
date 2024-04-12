@@ -12,6 +12,8 @@ emoji: 🗜
 
 {% css -%}{% renderFile 'src/css/pages/styleguide.scss' %}{%- endcss -%}
 
+<noscript><p class=" [ box  box--error ] ">Unfortunately, the calculator requires JavaScript to function correctly!</p></noscript>
+
 <!-- </textarea> -->
 <!-- '"´ -->
 <form id="clamp-calculator" class=" [ grid ] [ clamp-calculator ] " data-layout="50-50">
@@ -82,8 +84,6 @@ emoji: 🗜
 		<input id="output" class=" [ clamp-calculator__result ] [ center  monospace ] " style="inline-size: 100%; margin-inline: auto; line-height: 3;" type="text" value="clamp(1rem, 0.875rem + 0.4vw, 1.125rem)" readonly></input>
 	</fieldset>
 </form>
-
-<noscript><p class=" [ box  box--error ] ">Unfortunately, the calculator requires JavaScript to function correctly!</p></noscript>
 
 <div id="examples" class="gamma">Visual Example</div>
 
