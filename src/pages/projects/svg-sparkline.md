@@ -16,7 +16,7 @@ tags:
 
 <figure>
     <svg-sparkline class=" [ requires-js ] " values="8,3,2,7,9,1,5,6,4,10,3,8,2,7,1,9" fill="true" curve="true"></svg-sparkline>
-    <noscript><p>Unfortunately, this Web Component requires JavaScript to function correctly!</p></noscript>
+    <noscript><p class=" [ box  box--error ] ">Unfortunately, this Web Component requires JavaScript to function correctly!</p></noscript>
 </figure>
 
 {% include 'package.njk' %}

@@ -1,7 +1,7 @@
 import slugify from "@sindresorhus/slugify"
 import { load } from "cheerio"
 import striptags from "striptags"
-import { isCSSNakedDay } from "../data/global.js"
+import { isCSSNakedDay, isJSNakedDay } from "../data/global.js"
 
 export default async function (value, outputPath) {
 	if (outputPath && outputPath.endsWith(".html")) {
@@ -57,6 +57,11 @@ export default async function (value, outputPath) {
 			$(element).attr("id", headingID)
 		})
 
+		// Strip .no-fragment classes
+		$(".no-fragment").each((i, element) => {
+			$(element).removeClass("no-fragment")
+		})
+
 		// Make sure <ul> elements are accessible even with `list-style: none` in Safari
 		$("ul").each((i, element) => {
 			$(element).attr("role", "list")
@@ -69,18 +74,30 @@ export default async function (value, outputPath) {
 
 		// Remove CSS during CSS Naked Day
 		if (isCSSNakedDay) {
-			$(`link[rel="stylesheet"]`).remove()
-
-			$(`style:not([data-keep="css-naked-day"])`).remove()
+			$(`link[rel="stylesheet"], style:not([data-keep])`).remove()
 
 			$("[style]").each((i, element) => {
 				$(element).removeAttr("style")
 			})
 		}
 
-		$(`style:not([data-keep="css-naked-day"])`).each((i, element) => {
+		// Tidy up <style> tags that are kept
+		$("style[data-keep]").each((i, element) => {
 			$(element).removeAttr("data-keep")
 		})
+
+		// Remove JS during JS Naked Day
+		if (isJSNakedDay) {
+			$("script").remove()
+
+			$("[onload]").each((i, element) => {
+				$(element).removeAttr("onload")
+			})
+
+			$("noscript").each((i, element) => {
+				$(element).replaceWith($(element).html())
+			})
+		}
 
 		return $.root().html()
 	}

@@ -13,9 +13,7 @@
 }
 
 :is(abbr, dfn, span)[title] {
-	color: h(kaiser);
 	@include italic;
-	font-weight: var(--font-weight-regular);
 	text-decoration: underline;
 	text-decoration-color: h(nickel);
 	text-decoration-style: dotted;

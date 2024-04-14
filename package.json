@@ -30,7 +30,7 @@
     "rimraf": "^5.0.5"
   },
   "dependencies": {
-    "@11ty/eleventy": "^3.0.0-alpha.5",
+    "@11ty/eleventy": "^3.0.0-alpha.6",
     "@11ty/eleventy-fetch": "^4.0.1",
     "@11ty/eleventy-img": "^4.0.2",
     "@11ty/eleventy-plugin-bundle": "^1.0.5",

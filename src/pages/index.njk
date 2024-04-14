@@ -23,6 +23,10 @@ excludeFromSearch: true
 	</div>
 
 	<div class=" [ content ] [ flow ] ">
+		{% if global.isJSNakedDay -%}
+			{% include 'js-naked-day.njk' %}
+		{%- endif %}
+
 		{% if author.employer.title != '' -%}
 			{% include 'lfw.njk' %}
 		{%- endif %}

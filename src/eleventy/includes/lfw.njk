@@ -1,9 +1,26 @@
-<style data-keep="css-naked-day">
-	.looking-for-work:has(:checked) {
-		display: none;
-	}
-</style>
 <div id="lfw" class=" [ looking-for-work ] [ box  box--line-length ] [ flow ] [ no-print ] " data-pagefind-ignore>
+	<style data-keep>
+		.looking-for-work:has(:checked) {
+			display: none;
+		}
+	</style>
+	<style>
+		@layer blocks {
+			.looking-for-work {
+				--raven-lightness: 59.5%;
+				--raven-chroma: 0.196;
+				--raven-hue: 24.53;
+				--color-raven: oklch(var(--raven-lightness) var(--raven-chroma) var(--raven-hue));
+				--color-bowhead: color-mix(in oklab, var(--color-raven), var(--color-thunder) 33%);
+				--color-highland: color-mix(in oklab, var(--color-raven), var(--color-snowy) 33%);
+				margin-block-end: var(--size-large-gigantic);
+			}
+			.looking-for-work form {
+				margin-block-start: 1em;
+				text-align: center;
+			}
+		}
+	</style>
 	<hr class="[ visually-hidden ] ">
 	<p class=" [ gamma ] ">I’m looking for work!</p>
 	<p>After 12 years in London, I made the decision to move to <span style="white-space: nowrap;">Singapore <span aria-hidden="true">🇸🇬</span></span>, and I’m now looking for new work opportunities, and hoping to transition from a Software Engineer into a Developer Relations role (but open to both)!</p>
@@ -17,22 +34,3 @@
 	</storage-form>
 	<hr class="[ visually-hidden ] ">
 </div>
-{% if not global.isCSSNakedDay -%}
-<style>
-	@layer blocks {
-		.looking-for-work {
-			--raven-lightness: 59.5%;
-			--raven-chroma: 0.196;
-			--raven-hue: 24.53;
-			--color-raven: oklch(var(--raven-lightness) var(--raven-chroma) var(--raven-hue));
-			--color-bowhead: color-mix(in oklab, var(--color-raven), var(--color-thunder) 33%);
-			--color-highland: color-mix(in oklab, var(--color-raven), var(--color-snowy) 33%);
-			margin-block-end: var(--size-large-gigantic);
-		}
-		.looking-for-work form {
-			margin-block-start: 1em;
-			text-align: center;
-		}
-	}
-</style>
-{%- endif %}

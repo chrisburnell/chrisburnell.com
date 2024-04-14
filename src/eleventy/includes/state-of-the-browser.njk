@@ -1,9 +1,26 @@
-<style data-keep="css-naked-day">
-	.state-of-the-browser:has(:checked) {
-		display: none;
-	}
-</style>
 <div class=" [ state-of-the-browser ] [ box  box--line-length ] [ flow ] [ no-print ] " data-pagefind-ignore>
+	<style data-keep>
+		.state-of-the-browser:has(:checked) {
+			display: none;
+		}
+	</style>
+	<style>
+		@layer blocks {
+			.state-of-the-browser {
+				--raven-lightness: 53.42%;
+				--raven-chroma: 0.155;
+				--raven-hue: 337.82;
+				--color-raven: oklch(var(--raven-lightness) var(--raven-chroma) var(--raven-hue));
+				--color-bowhead: color-mix(in oklab, var(--color-raven), var(--color-thunder) 33%);
+				--color-highland: color-mix(in oklab, var(--color-raven), var(--color-snowy) 33%);
+				margin-block-end: var(--size-large-gigantic);
+			}
+			.state-of-the-browser form {
+				margin-block-start: 1em;
+				text-align: center;
+			}
+		}
+	</style>
 	<a href="https://2024.stateofthebrowser.com" rel="external noopener" style="display: block;" tabindex="-1">{% image './images/content/sotb-banner.svg', 'State of the Browser logo', '', [400] %}</a>
 	<p class=" [ small ] "><a href="https://2024.stateofthebrowser.com" class=" [ delta ] " rel="external noopener">State of the Browser</a>, a yearly one-day, single-track conference with widely-varying talks about the modern web, accessibility, web standards, and more, is back for its <em>twelfth</em> year! <br>Join in-person in London or online <strong><relative-time><time datetime="2024-09-14T09:30+01:00">Saturday, September 14<sup>th</sup>, 2024</time></relative-time></strong>!</p>
 	<div class=" [ grid  navigator  center ] [ small ] " style="--flow-space: 1rem;">
@@ -17,22 +34,3 @@
 		</form>
 	</storage-form>
 </div>
-{% if not global.isCSSNakedDay -%}
-<style>
-	@layer blocks {
-		.state-of-the-browser {
-			--raven-lightness: 53.42%;
-			--raven-chroma: 0.155;
-			--raven-hue: 337.82;
-			--color-raven: oklch(var(--raven-lightness) var(--raven-chroma) var(--raven-hue));
-			--color-bowhead: color-mix(in oklab, var(--color-raven), var(--color-thunder) 33%);
-			--color-highland: color-mix(in oklab, var(--color-raven), var(--color-snowy) 33%);
-			margin-block-end: var(--size-large-gigantic);
-		}
-		.state-of-the-browser form {
-			margin-block-start: 1em;
-			text-align: center;
-		}
-	}
-</style>
-{%- endif %}

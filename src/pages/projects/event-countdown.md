@@ -15,11 +15,12 @@ tags:
 
 <script type="module" src="/js/components/event-countdown.js"></script>
 
-<figure class=" [ box ] [ gamma ] ">
-    <p><event-countdown name="CSS Naked Day" annual="true" start="{{ global.thisYear }}-04-09T00:00:00+14:00" end="{{ global.thisYear }}-04-09T23:59:59-12:00">CSS Naked Day starts on 9 April {{ global.thisYear }} 00:00:00 UTC+14 and ends on 9 April {{ global.thisYear }} 23:59:59 UTC-12.</event-countdown></p>
-    <p class=" [ requires-js ] " aria-hidden="true">↓</p>
-    <p class=" [ requires-js ] ">CSS Naked Day starts on 9 April {% if global.cssNakedDayEndEpoch < global.nowEpoch %}{{ global.thisYear + 1 }}{% else %}{{ global.thisYear }}{% endif %} 00:00:00 UTC+14 and ends on 9 April {% if global.cssNakedDayEndEpoch < global.nowEpoch %}{{ global.thisYear + 1 }}{% else %}{{ global.thisYear }}{% endif %} 23:59:59 UTC-12.</p>
-    <noscript><p>Unfortunately, this Web Component requires JavaScript to function correctly!</p></noscript>
+<noscript><p class=" [ box  box--error ] ">Unfortunately, this Web Component requires JavaScript to function correctly!</p></noscript>
+
+<figure class=" [ box ] [ gamma ] [ requires-js ] ">
+    <p><event-countdown name="CSS Naked Day" annual="true" start="{{ global.thisYear }}-04-09T00:00:00+14:00" end="{{ global.thisYear }}-04-09T23:59:59-12:00">CSS Naked Day starts on 9 April 00:00:00 UTC+14 and ends on 9 April 23:59:59 UTC-12.</event-countdown></p>
+    <p aria-hidden="true">↓</p>
+    <p>CSS Naked Day starts on 9 April @ 00:00:00 UTC+14 and ends on 9 April @ 23:59:59 UTC-12.</p>
 </figure>
 
 {% include 'package.njk' %}
