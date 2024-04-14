@@ -1,0 +1,33 @@
+<div class=" [ box ] [ flow ] ">
+	<h2>Collection Feeds</h2>
+	<ul role="list" class=" [ cluster ] ">
+		<li>
+			<a href="{{ site.url + '/feed.xml' }}">Latest Posts</a>
+		</li>
+		<li>
+			<a href="{{ site.url + '/writing.xml' }}">Writing</a>
+		</li>
+		<li>
+			<a href="{{ site.url + '/replies.xml' }}">Replies</a>
+		</li>
+		<li>
+			<a href="{{ site.url + '/rsvps.xml' }}">RSVPs</a>
+		</li>
+	</ul>
+	<h2>Category Feeds</h2>
+	<ul role="list" class=" [ cluster ] ">
+		{% for item in collections.categories -%}
+			<li>
+				<a href="{{ site.url }}/{{ item.plural }}.xml">{{ item.properPlural | title }}</a>
+			</li>
+		{%- endfor %}
+	</ul>
+	<h2>Tag Feeds</h2>
+	<ul role="list" class=" [ cluster ] [ small ] ">
+		{% for item in collections.tags | sort -%}
+			<li>
+				<a href="{{ site.url }}/{{ item }}.xml">{{ item }}</a>
+			</li>
+		{%- endfor %}
+	</ul>
+</div>

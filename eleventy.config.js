@@ -76,6 +76,9 @@ export default async function(eleventyConfig) {
 	// 	})
 	// }
 	if (process.env.DIRECTORY_OUTPUT) {
+		eleventyConfig.addPlugin(plugins.inclusiveLanguage)
+	}
+	if (process.env.DIRECTORY_OUTPUT) {
 		eleventyConfig.addPlugin(plugins.directoryOutput, config.directoryOutput)
 	}
 	if (process.env.PREGENERATE_IMAGES) {

@@ -7,8 +7,6 @@ import { stripHTML } from "../../functions/strings.js"
 export default {
 	layout: "archive",
 	by_year: true,
-	hfeed: true,
-	show_photos: true,
 	excludeFromSearch: true,
 	eleventyComputed: {
 		canonical: (data) => siteURL + data.page.url,

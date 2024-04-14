@@ -3,10 +3,9 @@ title: Style Guide
 description: The style guide for <span class="canada">this website</span>.
 wide: true
 toc: true
-hfeed: false
-show_photos: true
-truncate: true
 ---
+{%- from 'macros/deckItem.njk' import deckItem -%}
+{%- from "macros/shelfItem.njk" import shelfItem -%}
 
 {% css -%}{% renderFile 'src/css/pages/styleguide.scss' %}{%- endcss -%}
 
@@ -595,7 +594,7 @@ p q r s t u v w x y z { | } ~</pre>
 
 <div id="list-deck" class=" [ deck ] ">
 {% for item in collections.hot | limit(site.limits.deck) %}
-	{% include 'items/deck.njk' %}
+	{{ deckItem(item, { show_photos: true, truncate: true }) }}
 {% endfor %}
 </div>
 
@@ -603,13 +602,13 @@ p q r s t u v w x y z { | } ~</pre>
 
 <ol id="list-shelf-beer" class=" [ grid ] [ shelf ] ">
 {% for item in collections.beer | arePublished | keySort('data.rating') | reverse | limit(site.limits.shelf) %}
-	{% include 'items/shelf.njk' %}
+	{{ shelfItem(item, { show_photos: true, truncate: true }) }}
 {% endfor %}
 </ol>
 
 <ol id="list-shelf-music" class=" [ grid ] [ shelf  shelf--square ] ">
 {% for item in collections.music | arePublished | keySort('data.rating') | reverse | limit(site.limits.shelf) %}
-	{% include 'items/shelf.njk' %}
+	{{ shelfItem(item, { show_photos: true, truncate: true }) }}
 {% endfor %}
 </ol>
 

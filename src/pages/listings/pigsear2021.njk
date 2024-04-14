@@ -2,6 +2,7 @@
 title: Pig's Ear 2021
 description: Beer reviews from Pig's Ear CAMRA Beer & Cider Festival in 2021
 ---
+{%- from "macros/shelfItem.njk" import shelfItem -%}
 {%- set collection = collections.pigsear2021 | arePublished | keySort('data.rating') | reverse -%}
 
 <p>{{ categoryIntroductions.beer | safe }}</p>
@@ -18,6 +19,6 @@ description: Beer reviews from Pig's Ear CAMRA Beer & Cider Festival in 2021
 
 <div class=" [ grid ] [ shelf ] " aria-live="polite">
 	{% for item in collection %}
-		{% include 'items/shelf.njk' %}
+		{{ shelfItem(item) }}
 	{% endfor %}
 </div>

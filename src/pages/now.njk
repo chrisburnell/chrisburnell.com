@@ -3,9 +3,9 @@ title: "/now"
 tagline: Now
 description: Stuff that I’m doing now (or at least recently)!
 toc: true
-heed: false
 ---
-
+{%- from 'macros/deckItem.njk' import deckItem -%}
+{%- from "macros/shelfItem.njk" import shelfItem -%}
 <div class=" [ box ] [ center ] " style="inline-size: var(--size-line-length); inline-size: fit-content; margin-block-end: var(--size-large); text-wrap: balance;">
 	<p>This is a <a href="https://nownownow.com/about" rel="external noopener">now page</a>, and if you have your own website, you should make one, too!</p>
 </div>
@@ -40,10 +40,10 @@ heed: false
 	</h2>
 	<ol class=" [ deck ] [ flow ] ">
 		{% for item in collections.rsvpsToday -%}
-			{% include 'items/deck.njk' %}
+			{{ deckItem(item) }}
 		{%- endfor %}
 		{% for item in collections.rsvpsUpcoming -%}
-			{% include 'items/deck.njk' %}
+			{{ deckItem(item) }}
 		{%- endfor %}
 	</ol>
 {% endif %}
@@ -61,7 +61,7 @@ heed: false
 		<h3 id="currently-reading">Currently reading</h3>
 		<ol class=" [ grid ] [ shelf  shelf--portrait ] ">
 			{% for item in currentlyReading -%}
-				{% include 'items/shelf.njk' %}
+				{{ shelfItem(item) }}
 			{%- endfor %}
 		</ol>
 	{% endif %}
@@ -70,7 +70,7 @@ heed: false
 		<h3 id="recently-read">Recently finished reading</h3>
 		<ol class=" [ grid ] [ shelf  shelf--portrait ] ">
 			{% for item in recentlyRead -%}
-				{% include 'items/shelf.njk' %}
+				{{ shelfItem(item) }}
 			{%- endfor %}
 		</ol>
 	{% endif %}
@@ -89,7 +89,7 @@ heed: false
 		<h3 id="currently-playing">Currently playing</h3>
 		<ol class=" [ grid ] [ shelf  shelf--square ] ">
 			{% for item in currentlyPlaying -%}
-				{% include 'items/shelf.njk' %}
+				{{ shelfItem(item) }}
 			{%- endfor %}
 		</ol>
 	{% endif %}
@@ -98,7 +98,7 @@ heed: false
 		<h3 id="recently-played">Recently finished playing</h3>
 		<ol class=" [ grid ] [ shelf  shelf--square ] ">
 			{% for item in recentlyPlayed -%}
-				{% include 'items/shelf.njk' %}
+				{{ shelfItem(item) }}
 			{%- endfor %}
 		</ol>
 	{% endif %}
@@ -115,7 +115,7 @@ heed: false
 	<h3 id="currently-listening">Currently reviewing</h3>
 	<ol class=" [ grid ] [ shelf  shelf--square ] ">
 		{% for item in currentlyListening -%}
-			{% include 'items/shelf.njk' %}
+			{{ shelfItem(item) }}
 		{%- endfor %}
 	</ol>
 {%- endif %}
@@ -125,7 +125,7 @@ heed: false
 	<h3 id="recently-listened">Recently reviewed</h3>
 	<ol class=" [ grid ] [ shelf  shelf--square ] ">
 		{% for item in recentlyListened -%}
-			{% include 'items/shelf.njk' %}
+			{{ shelfItem(item) }}
 		{%- endfor %}
 	</ol>
 {%- endif %}
@@ -160,7 +160,7 @@ heed: false
 	{% for album in (lastfm.topAlbums | limit(3)) -%}
 		{%- set item = collections.music | arePublished | arrayKeyValueEquals('data.title', album.name, false) | first -%}
 		{% if item -%}
-			{% include 'items/shelf.njk' %}
+			{{ shelfItem(item) }}
 		{%- else -%}
 			<article class=" [ flow ] ">
 				<a href="{{ album.url }}" aria-hidden="true" tabindex="-1" class=" [ cover-anchor ] ">

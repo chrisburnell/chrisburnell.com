@@ -7,10 +7,8 @@ permalink: /tag/{{ tag }}/
 eleventyComputed:
   title: "{{ tag | title | specialCapitalize | replace('-', ' ') }}"
   description: "All of my posts tagged with <q>{{ tag }}</q>."
-hfeed: true
-show_photos: true
-truncate: true
 ---
+{%- from 'macros/deckItem.njk' import deckItem -%}
 {%- set collection = collections[tag] | arePublished | sortByDate -%}
 {%- set count = collection.length -%}
 {%- set latest_year = collection[0].data.year | default(collection[0].year) -%}
@@ -49,7 +47,7 @@ truncate: true
 			</h2>
 			<div id="list-{{ year }}" class=" [ deck ] ">
 				{% for item in posts %}
-					{% include 'items/deck.njk' %}
+					{{ deckItem(item, { hfeed: true, show_photos: true, truncate: true }) }}
 				{% endfor %}
 			</div>
 		{% endfor %}

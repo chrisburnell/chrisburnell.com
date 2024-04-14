@@ -1,9 +1,7 @@
 ---
 layout: base
-hfeed: true
-show_photos: true
-truncate: true
 ---
+{%- from 'macros/deckItem.njk' import deckItem -%}
 {%- set collection = collections[related_collection] -%}
 {%- set count = collection.length -%}
 {%- set latest_year = collection[0].data.year | default(collection[0].year) -%}
@@ -60,14 +58,14 @@ truncate: true
 				</h2>
 				<div id="list-{{ year }}" class=" [ deck ] ">
 					{% for item in posts %}
-						{% include 'items/deck.njk' %}
+						{{ deckItem(item, { hfeed: true, show_photos: true, truncate: true }) }}
 					{% endfor %}
 				</div>
 			{% endfor %}
 		{%- else -%}
 			<div class=" [ deck ] ">
 				{% for item in collection %}
-					{% include 'items/deck.njk' %}
+					{{ deckItem(item, { hfeed: true, show_photos: true, truncate: true }) }}
 				{% endfor %}
 			</div>
 		{%- endif -%}

@@ -7,10 +7,9 @@ permalink: /{{ category.plural }}/
 eleventyComputed:
   title: "{{ category.properPlural | title }}"
   description: "All of my {{ category.properPlural }}."
-hfeed: true
-show_photos: true
-truncate: true
 ---
+{%- from 'macros/deckItem.njk' import deckItem -%}
+{%- from "macros/shelfItem.njk" import shelfItem -%}
 {%- set collection = collections[category.title] | arePublished | reverse -%}
 {%- set count = collection.length -%}
 {%- set latest_year = collection[0].data.year | default(collection[0].year) -%}
@@ -60,7 +59,7 @@ truncate: true
 			</c-librarian>
 			<div class=" [ grid ] [ shelf {% if collection[0].data.shelfAlignment %} shelf--{{ collection[0].data.shelfAlignment }} {% endif %}] " aria-live="polite">
 				{% for item in collection %}
-					{% include 'items/shelf.njk' %}
+					{{ shelfItem(item, { hfeed: true, show_photos: true, truncate: true }) }}
 				{% endfor %}
 			</div>
 		{% else %}
@@ -70,7 +69,7 @@ truncate: true
 				</h2>
 				<div id="list-{{ year }}" class=" [ deck ] ">
 					{% for item in posts %}
-						{% include 'items/deck.njk' %}
+						{{ deckItem(item, { hfeed: true, show_photos: true, truncate: true }) }}
 					{% endfor %}
 				</div>
 			{% endfor %}

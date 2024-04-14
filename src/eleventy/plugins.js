@@ -2,6 +2,7 @@ import { EleventyRenderPlugin } from "@11ty/eleventy"
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img"
 import bundler from "@11ty/eleventy-plugin-bundle"
 import directoryOutput from "@11ty/eleventy-plugin-directory-output"
+import inclusiveLanguage from "@11ty/eleventy-plugin-inclusive-language"
 import rss from "@11ty/eleventy-plugin-rss"
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight"
 import webc from "@11ty/eleventy-plugin-webc"
@@ -20,6 +21,7 @@ export default {
 	eleventyImageTransformPlugin,
 	bundler,
 	directoryOutput,
+	inclusiveLanguage,
 	rss,
 	syntaxHighlight,
 	webc,

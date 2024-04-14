@@ -8,10 +8,10 @@ eleventyComputed:
 sitemap:
   changefreq: daily
   priority: 1.0
-truncate: true
 excludeFromSearch: true
 ---
-
+{%- from 'macros/deckItem.njk' import deckItem -%}
+{%- from "macros/shelfItem.njk" import shelfItem -%}
 <article class=" [ pantheon ] [ wrap ] [ page ] [ perch ] ">
 
 	<h1 id="title" class=" [ title{% if title_error %}  title--negative{% elif title_success %}  title--positive{% endif %} ] ">
@@ -44,7 +44,7 @@ excludeFromSearch: true
 					</h2>
 					<div class=" [ deck ] [ flow ] ">
 						{% for item in collections.rsvpsToday %}
-							{% include 'items/deck.njk' %}
+							{{ deckItem(item, { truncate: true }) }}
 						{% endfor %}
 					</div>
 				</div>
@@ -52,35 +52,31 @@ excludeFromSearch: true
 				<hr>
 			{% endif %}
 
-			{%- set hfeed = true -%}
 			<h2 id="latest">
 				<a href="/writing/">Latest Writing</a>
 			</h2>
 			<div class=" [ deck ] [ h-feed ] ">
 				{% for item in collections.writings | limit(site.limits.feature) %}
-					{% include 'items/deck.njk' %}
+					{{ deckItem(item, { hfeed: true, truncate: true }) }}
 				{% endfor %}
 			</div>
 			<nav class=" [ grid ] [ navigator ] " aria-label="Writing Navigation">
 				<a href="/writing/" class=" [ button ] ">Browse Writing</a>
 			</nav>
-			{% set hfeed = false %}
 
 			<hr>
 
-			{%- set truncate = false -%}
 			<h2 id="projects">
 				<a href="/projects/" tabindex="-1">Latest Projects</a>
 			</h2>
 			<div class=" [ deck ] ">
 				{% for item in collections.projects | limit(site.limits.feature) %}
-					{% include 'items/deck.njk' %}
+					{{ deckItem(item) }}
 				{% endfor %}
 			</div>
 			<nav class=" [ grid ] [ navigator ] " aria-label="Projects Navigation">
 				<a href="/projects/" class=" [ button ] ">Browse Projects</a>
 			</nav>
-			{%- set truncate = true -%}
 
 			<hr>
 
@@ -89,7 +85,7 @@ excludeFromSearch: true
 			</h2>
 			<div class=" [ deck ] ">
 				{% for item in collections.popular | limit(site.limits.feature) %}
-					{% include 'items/deck.njk' %}
+					{{ deckItem(item, { truncate: true }) }}
 				{% endfor %}
 			</div>
 
@@ -102,7 +98,7 @@ excludeFromSearch: true
 					</h2>
 					<div class=" [ deck ] [ flow ] ">
 						{% for item in collections.rsvpsUpcoming %}
-							{% include 'items/deck.njk' %}
+							{{ deckItem(item, { truncate: true }) }}
 						{% endfor %}
 					</div>
 				</div>

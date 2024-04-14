@@ -2,6 +2,7 @@
 title: Advent 2021
 description: "Beer reviews from the 2021 <a href=\"http://corporate.honestbrew.co.uk/collections/christmas/products/beer-advent-calendar\">HonestBrew Beer Advent Calendar</a>."
 ---
+{%- from "macros/shelfItem.njk" import shelfItem -%}
 {%- set collection = collections.advent2021 | arePublished | reverse -%}
 
 <c-librarian>
@@ -16,6 +17,6 @@ description: "Beer reviews from the 2021 <a href=\"http://corporate.honestbrew.c
 
 <div class=" [ grid ] [ shelf ] " aria-live="polite">
 	{% for item in collection %}
-		{% include 'items/shelf.njk' %}
+		{{ shelfItem(item) }}
 	{% endfor %}
 </div>
