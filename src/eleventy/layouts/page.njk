@@ -23,7 +23,7 @@ layout: base
 		{%- endif %}
 
 		{% if draft %}
-			<p class=" [ box  box--warning ] [ flow ] [ line-length ] ">This is still a <em>draft</em>! The quality of this page may not be up to snuff, and is probably far from being complete.</p>
+			{% include 'draft.njk' %}
 		{% endif %}
 
 		<div class=" [ e-content ] [ flow ] {% if content_class %}[ {{ content_class }} ] {% endif %}{% if toc %}generate-toc{% endif %}">

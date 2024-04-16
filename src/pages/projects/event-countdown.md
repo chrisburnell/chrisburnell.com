@@ -18,9 +18,9 @@ tags:
 <noscript><p class=" [ box  box--error ] ">Unfortunately, this Web Component requires JavaScript to function correctly!</p></noscript>
 
 <figure class=" [ box ] [ gamma ] [ requires-js ] ">
-    <p><event-countdown name="CSS Naked Day" annual="true" start="{{ global.thisYear }}-04-09T00:00:00+14:00" end="{{ global.thisYear }}-04-09T23:59:59-12:00">CSS Naked Day starts on 9 April 00:00:00 UTC+14 and ends on 9 April 23:59:59 UTC-12.</event-countdown></p>
-    <p aria-hidden="true">↓</p>
     <p>CSS Naked Day starts on 9 April @ 00:00:00 UTC+14 and ends on 9 April @ 23:59:59 UTC-12.</p>
+    <p aria-hidden="true">↓</p>
+    <p><event-countdown name="CSS Naked Day" annual="true" start="{{ global.thisYear }}-04-09T00:00:00+14:00" end="{{ global.thisYear }}-04-09T23:59:59-12:00">CSS Naked Day starts on 9 April 00:00:00 UTC+14 and ends on 9 April 23:59:59 UTC-12.</event-countdown></p>
 </figure>
 
 {% include 'package.njk' %}
