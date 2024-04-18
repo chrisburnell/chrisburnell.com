@@ -102,8 +102,8 @@
 	}
 }
 
-// Align site settings forms
-storage-form {
+// Align settings
+.popover-settings storage-form {
 	display: grid;
 	grid-template-columns: max-content auto;
 	place-items: center;

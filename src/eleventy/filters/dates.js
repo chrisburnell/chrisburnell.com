@@ -138,23 +138,31 @@ export const isFuture = (value) => {
 }
 
 /**
+ * @param {number} value
+ * @returns {number}
+ */
+const msToDays = (value) => {
+	return value / 1000 / 60 / 60 / 24
+}
+
+/**
  * @param {string} value
- * @param {number} upcomingDays
+ * @param {number} [upcomingDays]
  * @returns {boolean}
  */
 export const isUpcoming = (value, upcomingDays = limits.upcomingDays) => {
-	const differenceDays = (epoch(value) - nowEpoch) / 1000 / 60 / 60 / 24
+	const differenceDays = msToDays(epoch(value) - nowEpoch)
 	return 0 < differenceDays && differenceDays < upcomingDays
 }
 
 /**
  * @param {string} value
- * @param {number} recentDays
+ * @param {number} [recentDays]
  * @returns {boolean}
  */
 export const isRecent = (value, recentDays = limits.recentDays) => {
-	const differenceDays = (nowEpoch - epoch(value)) / 1000 / 60 / 60 / 24
-	return differenceDays < recentDays
+	const differenceDays = msToDays(nowEpoch - epoch(value))
+	return 0 < differenceDays && differenceDays < recentDays
 }
 
 /**
