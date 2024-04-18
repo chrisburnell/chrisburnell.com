@@ -40,11 +40,11 @@ new Date("2024-03-30")
 Mon Mar 30 2024 08:00:00 GMT+0800 (Singapore Standard Time)
 ```
 
-That it’s formatted to my local timezone (GMT+8 in Singapore) is expected and makes some sense, but it also sets the time to the same number of hours from GMT as my timezone offset, resulting in 8 AM.
+That it’s formatted to my local timezone (GMT/UTC+8 in Singapore) is expected and makes some sense, but it also sets the time to the same number of hours from UTC as my timezone offset, resulting in 8 AM.
 
 --------
 
-Now let’s assume that I’m in Halifax, Canada (in the GMT-3 timezone). If I create a new Date with the exact same input, I get back **the wrong day**!
+Now let’s assume that I’m in Halifax, Canada (in the GMT/UTC-3 timezone). If I create a new Date with the exact same input, I get back **the wrong day**!
 
 ```javascript
 new Date("2024-03-30")
