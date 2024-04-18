@@ -218,13 +218,13 @@ You can check out the full documentation, source code, demos, and provide feedba
         color: var(--color-snowy);
     }
     @media (prefers-color-scheme: dark) {
-        :root:not(:has([name="theme"] [value*="light"]:checked), .light, [data-theme*="light"]) .sparkline-dark {
+        :root:not(:has([name="color-scheme"] [value*="light"]:checked), .light, [data-color-scheme*="light"]) .sparkline-dark {
             background-color: var(--color-snowy);
             color: var(--color-kaiser);
         }
     }
-    :root:has([name="theme"] [value*="dark"]:checked):not(.light, [data-theme*="light"]) .sparkline-dark,
-    [data-theme*="dark"] .sparkline-dark,
+    :root:has([name="color-scheme"] [value*="dark"]:checked):not(.light, [data-color-scheme*="light"]) .sparkline-dark,
+    [data-color-scheme*="dark"] .sparkline-dark,
     .dark .sparkline-dark {
         background-color: var(--color-snowy);
         color: var(--color-kaiser);

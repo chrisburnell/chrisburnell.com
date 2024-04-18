@@ -3,13 +3,12 @@
 /// @group themes
 ////
 
-html:has([type="checkbox"][name="high-contrast"]:checked) {
+html:has([name="high-contrast"] [value="true"]:checked) {
 	--raven-chroma: 0.2 !important;
 }
 
 @media (prefers-contrast: more) {
-	html:has([type="checkbox"][name="high-contrast"]:indeterminate),
-	html:not(:has([type="checkbox"][name="high-contrast"])) {
+	html:has([name="high-contrast"] [value=""]:checked) {
 		--raven-chroma: 0.2 !important;
 	}
 }

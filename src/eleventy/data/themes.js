@@ -1,35 +1,23 @@
 export default [
 	{
-		id: "light",
+		id: "",
 		title: "Ravenous",
 	},
 	{
-		id: "dark",
-		title: "Ravenous Dark",
-	},
-	{
-		id: "light  sepia",
+		id: "sepia",
 		title: "Sepia",
 	},
 	{
-		id: "dark  sepia",
-		title: "Sepia Dark",
-	},
-	{
-		id: "light  koala",
+		id: "koala",
 		title: "Koala",
 	},
 	{
-		id: "dark  koala",
-		title: "Koala Dark",
-	},
-	{
-		id: "light  red-alert",
+		id: "red-alert",
 		title: "Red Alert",
 	},
 	{
-		id: "dark  red-alert",
-		title: "Red Alert Dark",
+		id: "custom",
+		title: "Custom Hue",
 	},
 	{
 		id: "nineties",

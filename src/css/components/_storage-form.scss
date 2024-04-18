@@ -1,0 +1,10 @@
+////
+/// Storage Form
+/// @group components
+////
+
+storage-form {
+	&:not(:defined) {
+		display: none;
+	}
+}

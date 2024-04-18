@@ -1,67 +1,50 @@
 const selectTheme = document.querySelector(`select[name="theme"]`)
-
-const inputHighContrast = document.querySelector(`[type="checkbox"][name="high-contrast"]`)
-let stateHighContrast
-if (inputHighContrast) {
-	if (!localStorage.getItem("high-contrast")) {
-		inputHighContrast.indeterminate = true
-	}
-
-	stateHighContrast = inputHighContrast.indeterminate ? null : inputHighContrast.checked ? true : false
-	inputHighContrast.addEventListener("change", function () {
-		if (stateHighContrast === null) {
-			this.indeterminate = false
-			this.checked = true
-		} else if (stateHighContrast === false) {
-			this.checked = false
-			this.indeterminate = true
-			localStorage.removeItem("high-contrast")
-		}
-		stateHighContrast = this.indeterminate ? null : this.checked ? true : false
-	})
-}
-
-const inputSmoothScroll = document.querySelector(`[type="checkbox"][name="smooth-scroll"]`)
-let stateSmoothScroll
-if (inputSmoothScroll) {
-	if (!localStorage.getItem("smooth-scroll")) {
-		inputSmoothScroll.indeterminate = true
-	}
-
-	stateSmoothScroll = inputSmoothScroll.indeterminate ? null : inputSmoothScroll.checked ? true : false
-	inputSmoothScroll.addEventListener("change", function () {
-		if (stateSmoothScroll === null) {
-			this.indeterminate = false
-			this.checked = true
-		} else if (stateSmoothScroll === false) {
-			this.checked = false
-			this.indeterminate = true
-			localStorage.removeItem("smooth-scroll")
-		}
-		stateSmoothScroll = this.indeterminate ? null : this.checked ? true : false
-	})
-}
-
+const selectColorScheme = document.querySelector(`select[name="color-scheme"]`)
+const inputCustomHue = document.querySelector(`[type="range"][name="custom-hue"]`)
+const selectHighContrast = document.querySelector(`select[name="high-contrast"]`)
+const selectSmoothScroll = document.querySelector(`select[name="smooth-scroll"]`)
 const inputUserSounds = document.querySelector(`[type="checkbox"][name="user-sounds"]`)
-
 const buttonSettingsReset = document.querySelector(".settings-reset")
+
+if (selectTheme && inputCustomHue) {
+	selectTheme.addEventListener("change", (event) => {
+		if (event.target.value === "custom") {
+			document.documentElement.style.setProperty("--raven-hue", inputCustomHue.value)
+		} else {
+			document.documentElement.style.removeProperty("--raven-hue")
+		}
+	})
+
+	inputCustomHue.addEventListener("change", (event) => {
+		if (selectTheme.value === "custom") {
+			document.documentElement.style.setProperty("--raven-hue", event.target.value)
+		}
+	})
+}
+
 if (buttonSettingsReset) {
 	buttonSettingsReset.addEventListener("click", () => {
 		localStorage.removeItem("theme")
+		localStorage.removeItem("color-scheme")
+		localStorage.removeItem("custom-hue")
 		localStorage.removeItem("high-contrast")
 		localStorage.removeItem("smooth-scroll")
 		localStorage.removeItem("user-sounds")
+		document.documentElement.style.removeProperty("--raven-hue")
 		if (selectTheme) {
 			selectTheme.value = ""
 		}
-		if (inputHighContrast) {
-			inputHighContrast.checked = false
-			inputHighContrast.indeterminate = true
-			stateSmoothScroll = inputSmoothScroll.indeterminate ? null : inputSmoothScroll.checked ? true : false
+		if (selectColorScheme) {
+			selectColorScheme.value = ""
 		}
-		if (inputSmoothScroll) {
-			inputSmoothScroll.checked = false
-			inputSmoothScroll.indeterminate = true
+		if (inputCustomHue) {
+			inputCustomHue.value = 237.73
+		}
+		if (selectHighContrast) {
+			selectHighContrast.value = ""
+		}
+		if (selectSmoothScroll) {
+			selectSmoothScroll.value = ""
 		}
 		if (inputUserSounds) {
 			inputUserSounds.checked = false

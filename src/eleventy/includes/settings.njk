@@ -1,10 +1,9 @@
 <storage-form class=" [ flow ] " style="--flow-space: 1em;">
 	{% if not global.isCSSNakedDay -%}
-		<form>
+		<form autocomplete="off">
 			<label for="theme-selector">Select a theme:</label>
-			<select id="theme-selector" name="theme" autocomplete="off">
+			<select id="theme-selector" name="theme">
 				<optgroup label="Select a theme">
-					<option value="" selected>Browser Default</option>
 					{% for theme in themes %}
 						<option value="{{ theme.id }}">
 							{{ theme.title }}
@@ -13,25 +12,47 @@
 				</optgroup>
 			</select>
 		</form>
-		<form>
-			<label for="high-contrast-toggler">High Contrast</label>
-			<input type="hidden" name="high-contrast" value="false" />
-			<input type="checkbox" id="high-contrast-toggler" name="high-contrast" value="true" />
-			<p class=" [ indeterminate ] ">Using operating system default.</p>
+		<form autocomplete="off">
+			<label for="custom-hue-selector">Choose a hue:</label>
+			<input type="range" id="custom-hue-selector" name="custom-hue" min="0" max="359.99" step="0.01" value="237.73" />
 		</form>
-		<form>
-			<label for="smooth-scroll-toggler">Smooth Scroll</label>
-			<input type="hidden" name="smooth-scroll" value="false" />
-			<input type="checkbox" id="smooth-scroll-toggler" name="smooth-scroll" value="true" />
-			<p class=" [ indeterminate ] ">Using operating system default.</p>
+		<form autocomplete="off">
+			<label for="color-scheme-selector">Select light/dark:</label>
+			<select id="color-scheme-selector" name="color-scheme">
+				<optgroup label="Select a colour scheme">
+					<option value="" selected>OS Default</option>
+					<option value="light">Light</option>
+					<option value="dark">Dark</option>
+				</optgroup>
+			</select>
+		</form>
+		<form autocomplete="off">
+			<label for="high-contrast-selector">High contrast:</label>
+			<select id="high-contrast-selector" name="high-contrast">
+				<optgroup label="Select a high contrast setting">
+					<option value="" selected>OS Default</option>
+					<option value="true">Enabled</option>
+					<option value="false">Disabled</option>
+				</optgroup>
+			</select>
+		</form>
+		<form autocomplete="off">
+			<label for="smooth-scroll-selector">Smooth scroll:</label>
+			<select id="smooth-scroll-selector" name="smooth-scroll">
+				<optgroup label="Select a smooth scroll setting">
+					<option value="" selected>OS Default</option>
+					<option value="true">Enabled</option>
+					<option value="false">Disabled</option>
+				</optgroup>
+			</select>
 		</form>
 	{%- endif %}
-	<form>
-		<label for="user-sounds-toggler">Website Sounds</label>
+	<form autocomplete="off">
+		<label for="user-sounds-toggler">Website sounds:</label>
 		<input type="hidden" name="user-sounds" value />
 		<input type="checkbox" id="user-sounds-toggler" name="user-sounds" value="true" />
 	</form>
-	<div>
-		<button class=" [ button--small ] [ settings-reset ] " style="font-size: inherit;">Reset</button>
-	</div>
 </storage-form>
+<div>
+	<button class=" [ button--small ] [ settings-reset ] " style="font-size: inherit;">Reset All</button>
+</div>

@@ -14,16 +14,12 @@
 	margin: 0;
 }
 
-:where(html:focus-within:has([type="checkbox"][name="smooth-scroll"]:checked)) {
+:where(html:has([name="smooth-scroll"] [value="true"]:checked):focus-within) {
 	scroll-behavior: smooth;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-	// prettier-ignore
-	:where(
-		html:focus-within:has([type="checkbox"][name="smooth-scroll"]:indeterminate),
-		html:focus-within:not(:has([type="checkbox"][name="smooth-scroll"]))
-	) {
+	:where(html:has([name="smooth-scroll"] [value=""]:checked):focus-within) {
 		scroll-behavior: smooth;
 	}
 }
