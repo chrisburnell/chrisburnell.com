@@ -1,5 +1,3 @@
-import { getRSVPDateString, getRSVPValueString } from "../../eleventy/filters/dates.js"
-
 class RelativeTime {
 	constructor() {
 		this.nonRelativeTimeElements = document.querySelectorAll(":not(relative-time) > [datetime]")
@@ -10,6 +8,54 @@ class RelativeTime {
 		if (!this.initialized) {
 			this.init()
 		}
+	}
+
+	static emojiFuture = `<span class=" [ emoji ] " aria-hidden="true">➡️</span>`
+	static emojiGoing = `<span class=" [ emoji ] " aria-hidden="true">✅</span>`
+	static emojiHopefully = `<span class=" [ emoji ] " aria-hidden="true">🤞</span>`
+	static emojiNotGoing = `<span class=" [ emoji ] " aria-hidden="true">😔</span>`
+
+	/**
+	* @param {string} start
+	* @param {string} end
+	* @param {string} value
+	* @returns {string}
+	*/
+	getRSVPValueString (start, end, value) {
+		const now = Date.now()
+
+		if (value === "yes") {
+			if (new Date(start).getTime() > now) {
+				return `${RelativeTime.emojiFuture} <small>attending</small>`
+			}
+			if (new Date(start).getTime() <= now && now <= new Date(end).getTime()) {
+				return `${RelativeTime.emojiGoing} <small>currently attending</small>`
+			}
+			return `${RelativeTime.emojiGoing} <small>attended</small>`
+		}
+		if (value === "maybe" || value === "interested") {
+			if (new Date(start).getTime() > now) {
+				return `${RelativeTime.emojiHopefully} <small>hoping to attend</small>`
+			}
+			return `${RelativeTime.emojiHopefully} <small>was hoping to attend</small>`
+		}
+		if (new Date(start).getTime() > now) {
+			return `${RelativeTime.emojiNotGoing} <small>unable to attend</small>`
+		}
+		return `${RelativeTime.emojiNotGoing} <small>was unable to attend</small>`
+	}
+
+	/**
+	* @param {string} start
+	* @param {string} end
+	* @param {string} value
+	* @returns {string}
+	*/
+	getRSVPDateString (end) {
+		if (Date.now() <= new Date(end).getTime()) {
+			return "taking place"
+		}
+		return "took place"
 	}
 
 	setTimeTitles() {
@@ -27,12 +73,12 @@ class RelativeTime {
 			const start = new Date(element.getAttribute("data-start"))
 			const end = new Date(element.getAttribute("data-end"))
 			const value = element.getAttribute("data-value")
-			element.innerHTML = getRSVPValueString(start, end, value)
+			element.innerHTML = this.getRSVPValueString(start, end, value)
 		})
 
 		this.relativeRSVPDateElements.forEach((element) => {
 			const end = new Date(element.getAttribute("data-end"))
-			element.innerHTML = getRSVPDateString(end)
+			element.innerHTML = this.getRSVPDateString(end)
 		})
 	}
 
