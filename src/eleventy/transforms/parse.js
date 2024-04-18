@@ -58,46 +58,36 @@ export default async function (value, outputPath) {
 		})
 
 		// Strip .no-fragment classes
-		$(".no-fragment").each((i, element) => {
-			$(element).removeClass("no-fragment")
-		})
+		$(".no-fragment").removeClass("no-fragment")
 
-		// Make sure <ul> elements are accessible even with `list-style: none` in Safari
-		$("ul").each((i, element) => {
-			$(element).attr("role", "list")
-		})
+		// Make sure <ul> elements are accessible even with `list-style: none`
+		$("ul").attr("role", "list")
 
 		// Make <pre> code blocks keyboard-accessible by adding `tabindex="0"`
-		$("pre > code").each((i, element) => {
-			$(element).attr("tabindex", 0)
-		})
+		$("pre > code").attr("tabindex", 0)
 
 		// Remove CSS during CSS Naked Day
 		if (isCSSNakedDay) {
 			$(`link[rel="stylesheet"], style:not([data-keep])`).remove()
 
-			$("[style]").each((i, element) => {
-				$(element).removeAttr("style")
-			})
+			$("[style]:not([data-keep-styles])").removeAttr("style")
 		}
-
-		// Tidy up <style> tags that are kept
-		$("style[data-keep]").each((i, element) => {
-			$(element).removeAttr("data-keep")
-		})
 
 		// Remove JS during JS Naked Day
 		if (isJSNakedDay) {
-			$("script").remove()
+			$("script:not([data-keep]").remove()
 
-			$("[onload]").each((i, element) => {
-				$(element).removeAttr("onload")
-			})
+			$("[onload]:not([data-keep-script])").removeAttr("onload")
 
 			$("noscript").each((i, element) => {
 				$(element).replaceWith($(element).html())
 			})
 		}
+
+		// Tidy up tags that should be kept for special events
+		$("[data-keep]").removeAttr("data-keep")
+		$("[data-keep-style]").removeAttr("data-keep-style")
+		$("[data-keep-script]").removeAttr("data-keep-script")
 
 		return $.root().html()
 	}
