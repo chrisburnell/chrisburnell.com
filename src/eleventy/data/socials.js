@@ -1,71 +1,67 @@
+import { codepen, discord_id, eleventy, github, lastfm, linkedin, mastodon, mastodon_domain, nintendo, npm, speakerdeck, spotify, untappd, xmpp } from "./author.js"
+
 export default [
 	{
 		title: "RSS",
 		url: "/feed.xml",
-		primary: true,
+		show: true,
 	},
 	{
 		title: "CodePen",
-		url: "https://codepen.io/",
-		key: "codepen",
-		primary: true,
+		url: `https://codepen.io/${codepen}`,
+		show: true,
 	},
 	{
 		title: "GitHub",
-		url: "https://github.com/",
-		key: "github",
-		primary: true,
+		url: `https://github.com/${github}`,
+		show: true,
 	},
 	{
 		title: "LinkedIn",
-		url: "https://www.linkedin.com/in/",
-		key: "linkedin",
-		primary: true,
+		url: `https://www.linkedin.com/in/${linkedin}`,
+		show: true,
 		fill: "#0a66c2",
 	},
 	{
 		title: "Mastodon",
-		url: "https://fediverse.repc.co/@chrisburnell",
-		primary: true,
+		url: `https://${mastodon_domain}/@${mastodon.split("@")[1]}`,
+		show: true,
 		fill: "#595aff",
 	},
 	{
 		title: "Discord",
-		key: "discord",
+		url: `https://discordapp.com/users/${discord_id}`,
 	},
 	{
 		title: "Eleventy Community",
-		url: "https://11ty.dev/authors/",
-		key: "eleventy",
+		url: `https://11ty.dev/authors/${eleventy}`,
 	},
 	{
 		title: "Last.fm",
-		url: "https://last.fm/user/",
-		key: "lastfm",
+		url: `https://last.fm/user/${lastfm}`,
 	},
 	{
 		title: "npm",
-		url: "https://npmjs.com/~",
-		key: "npm",
+		url: `https://npmjs.com/~${npm}`,
 	},
 	{
 		title: "Speakerdeck",
-		url: "https://speakerdeck.com/",
-		key: "speakerdeck",
+		url: `https://speakerdeck.com/${speakerdeck}`,
 	},
 	{
 		title: "Spotify",
-		url: "https://open.spotify.com/user/",
-		key: "spotify",
+		url: `https://open.spotify.com/user/${spotify}`,
 	},
 	{
 		title: "Untappd",
-		url: "https://untappd.com/user/",
-		key: "untappd",
+		url: `https://untappd.com/user/${untappd}`,
+	},
+	{
+		title: "XMPP",
+		value: xmpp,
 	},
 	{
 		title: "Nintendo Switch ID",
-		value: "SW-5773-6068-9986",
-		mf_property: "nintendo-friend-id",
+		value: nintendo,
 	},
 ]

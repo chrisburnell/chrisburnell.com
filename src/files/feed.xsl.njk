@@ -65,13 +65,9 @@ sitemap:
             <ol class=" [ cluster ] [ footer__navigation ] ">
               <li><a href="/license/" id="copyright" rel="license">© {{ site.established }}–{{ global.thisYear }} <span class=" [ canada ] ">{{ author.name }}</span></a></li>
               {%- for item in socials -%}
-                {%- if not item.hidden and item.primary -%}
+                {%- if item.show -%}
                   <li>
-                    {%- set url = item.url -%}
-                    {%- if item.key -%}
-                      {%- set url = url + author[item.key] -%}
-                    {%- endif -%}
-                    <a href="{{ url }}" tabindex="-1"{% if item.mf_property %} class=" [ p-{{ item.mf_property }} ] "{% endif %} rel="me">{{ item.title }}</a>
+                    <a href="{{ item.url }}" tabindex="-1" rel="me">{{ item.title }}</a>
                   </li>
                 {%- endif -%}
               {%- endfor -%}

@@ -72,9 +72,8 @@ layout: root
 		<ul class=" [ cluster ] [ footer__navigation ] ">
 			<li><a href="/license/" id="copyright" rel="license">© {{ site.established }}–{{ global.thisYear }} <span class=" [ canada ] ">{{ author.name }}</span></a></li>
 			{%- for item in socials -%}
-				{%- if not item.hidden and item.primary -%}
-					{%- set url = item.url -%}
-					<li>{% if item.key %}{% set url = url + author[item.key] %}{% endif %}<a{% if item.mf_property %} class=" [ p-{{ item.mf_property }} ] "{% endif %} href="{{ url }}" rel="me"><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false"{% if item.fill %} style="{% if item.fill %}fill: {{ item.fill }};{% endif %}"{% endif %}>{% if item.defs %}{{ item.defs | safe }}{% endif %}<use href="#svg--{{ item.title | lower }}"></use></svg></c-emoji>{{ item.title }}</a></li>
+				{%- if item.show -%}
+					<li><a href="{{ item.url }}" rel="me"><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false"{% if item.fill %} style="fill: {{ item.fill }};"{% endif %}><use href="#svg--{{ item.title | lower }}"></use></svg></c-emoji>{{ item.title }}</a></li>
 				{%- endif -%}
 			{%- endfor -%}
 		</ul>

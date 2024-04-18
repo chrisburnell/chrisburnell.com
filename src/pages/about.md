@@ -16,12 +16,8 @@ eleventyComputed:
 
 <ul class=" [ cluster  center ] ">
     {%- for item in socials -%}
-        {%- if not item.hidden and item.primary -%}
-            {%- set url = item.url -%}
-            {%- if item.key -%}
-                {%- set url = url + author[item.key] -%}
-            {%- endif -%}
-            <li><a href="{{ url }}"><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false" style="{% if item.fill %}fill: {{ item.fill }}; {% endif %}margin-inline-end: 1ex;">{% if item.defs %}{{ item.defs | safe }}{% endif %}<use href="#svg--{{ item.title | lower }}"></use></svg></c-emoji>{{ item.title }}</a></li>
+        {%- if item.show -%}
+            <li><a href="{{ item.url }}"><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false" style="{% if item.fill %}fill: {{ item.fill }}; {% endif %}margin-inline-end: 1ex;"><use href="#svg--{{ item.title | lower }}"></use></svg></c-emoji>{{ item.title }}</a></li>
         {%- endif -%}
     {%- endfor -%}
 </ul>

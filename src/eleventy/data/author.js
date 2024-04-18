@@ -29,6 +29,7 @@ export const spotify = metadata.spotify
 export const twitter = metadata.twitter
 export const untappd = metadata.untappd
 export const websub = metadata.websub
+export const xmpp = metadata.xmpp
 
 export const firstname = "Chris"
 export const lastname = "Burnell"
