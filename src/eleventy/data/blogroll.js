@@ -544,12 +544,7 @@ const blogroll = [
 	{
 		title: "fLaMEd",
 		url: "https://flamedfury.com",
-		rss: [
-			{
-				title: "Flamed Fury",
-				url: "https://flamedfury.com/feed.xml",
-			},
-		],
+		rss: "https://flamedfury.com/feed.xml",
 		mastodon: "flamed@social.lol",
 	},
 	{
