@@ -178,6 +178,8 @@ I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link
     </dl>
 </address>
 
+You can find me elsewhere on the web through [my links page](/links/).
+
 <hr>
 
 ## Colophon
