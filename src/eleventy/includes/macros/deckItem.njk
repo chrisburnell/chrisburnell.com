@@ -14,7 +14,7 @@
 					<small>by</small> {{ item.data.reply_author_string | safe }}
 				{% endif %}
 				{% if item.data.rsvp.date %}
-					<small><relative-time{% if item.data.rsvp.date | isUpcoming(2) %} max-division="hour"{% elif item.data.rsvp.date | isUpcoming(item.data.rsvp.upcoming_days_lead) %} max-division="day"{% endif %}><time datetime="{{ item.data.rsvp.date | rfc3339Date }}" class=" [ dt-start ] ">on {{ item.data.rsvp.date | friendlyDate | safe }} {{ item.data.rsvp.date | friendlyTime | safe }}</time></relative-time></small>
+					<small><relative-time{% if item.data.rsvp.date | isUpcoming(2) %} max-division="hour"{% elif item.data.rsvp.date | isUpcoming(item.data.rsvp.upcoming_days_lead) %} max-division="day"{% endif %}><time datetime="{{ item.data.rsvp.date | rfc3339Date }}" class=" [ dt-start ] ">on {{ item.data.rsvp.date | friendlyDate | safe }} @ {{ item.data.rsvp.date | friendlyTime | safe }}</time></relative-time></small>
 				{% endif %}
 			</div>
 		{% endif %}

@@ -73,7 +73,7 @@ layout: root
 			<li><a href="/license/" id="copyright" rel="license">© {{ site.established }}–{{ global.thisYear }} <span class=" [ canada ] ">{{ author.name }}</span></a></li>
 			{%- for item in socials -%}
 				{%- if item.show -%}
-					<li><a href="{{ item.url }}" rel="me"><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false"{% if item.fill %} style="fill: {{ item.fill }};"{% endif %}><use href="#svg--{{ item.title | lower }}"></use></svg></c-emoji>{{ item.title }}</a></li>
+					<li><a href="{{ item.url }}" rel="me"><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false"><use href="#svg--{{ item.title | lower }}"></use></svg></c-emoji>{{ item.title }}</a></li>
 				{%- endif -%}
 			{%- endfor -%}
 		</ul>

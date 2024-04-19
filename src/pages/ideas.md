@@ -6,7 +6,7 @@ toc: true
 ---
 
 {% set last_updated = "2024-04-05T02:45:00+0800" -%}
-<p><strong>Last updated:</strong> <time datetime="{{ last_updated | rfc3339Date }}">{{ last_updated | friendlyDate | safe }} {{ last_updated | friendlyTime | safe }}</time></p>
+<p><strong>Last updated:</strong> <time datetime="{{ last_updated | rfc3339Date }}">{{ last_updated | friendlyDate | safe }} @ {{ last_updated | friendlyTime | safe }}</time></p>
 
 ## Posts
 

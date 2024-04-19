@@ -14,14 +14,6 @@ eleventyComputed:
 
 <p hidden><strong>I’ve got a <a href="https://chrisburnell.com/cv/">CV / resumé</a>, if that’s what you’re looking for.</strong></p>
 
-<ul class=" [ cluster  center ] ">
-    {%- for item in socials -%}
-        {%- if item.show -%}
-            <li><a href="{{ item.url }}"><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false" style="{% if item.fill %}fill: {{ item.fill }}; {% endif %}margin-inline-end: 1ex;"><use href="#svg--{{ item.title | lower }}"></use></svg></c-emoji>{{ item.title }}</a></li>
-        {%- endif -%}
-    {%- endfor -%}
-</ul>
-
 {% set last_updated = "2024-03-30T17:50:00+0800" -%}
 <p class=" [ center ] "><strong>Last updated:</strong> <time datetime="{{ last_updated | rfc3339Date }}">{{ last_updated | friendlyDate | safe }}</time></p>
 
@@ -175,10 +167,14 @@ I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link
     <dl>
         <dt>Email:</dt>
         <dd><a href="mailto:{{ author.email }}" class=" [ canada ] "><img src="{{ site.logo }}" alt="{{ site.title }}" loading="lazy" decoding="async" class="brand-logo" width="24" height="24" style="margin-inline-end: 1ex;">{{ author.email }}</a></dd>
+        <dt>Discord:</dt>
+        <dd><a href="https://discordapp.com/users/{{ author.discord_id }}" class=" [ canada ] " title="{{ author.name }} on Discord"><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false" style="margin-inline-end: 1ex;"><use href="#svg--discord"></use></svg></c-emoji>@{{ author.discord }}</a></dd>
         <dt>Mastodon:</dt>
-        <dd><a href="https://{{ author.mastodon_domain }}/{{ author.mastodon.split('@')[1] }}" class=" [ canada ] " title="{{ author.name }} on Mastodon"><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false" style="fill: #595aff; margin-inline-end: 1ex;"><use href="#svg--mastodon"></use></svg></c-emoji>{{ author.mastodon }}</a></dd>
+        <dd><a href="https://{{ author.mastodon_domain }}/{{ author.mastodon.split('@')[1] }}" class=" [ canada ] " title="{{ author.name }} on Mastodon"><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false" style="margin-inline-end: 1ex;"><use href="#svg--mastodon"></use></svg></c-emoji>{{ author.mastodon }}</a></dd>
         <dt>LinkedIn:</dt>
-        <dd><a href="https://www.linkedin.com/in/{{ author.linkedin }}" class=" [ canada ] " title="{{ author.name }} on LinkedIn"><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false" style="fill: #0a66c2; margin-inline-end: 1ex;"><use href="#svg--linkedin"></use></svg></c-emoji>{{ '@' + author.linkedin }}</a></dd>
+        <dd><a href="https://www.linkedin.com/in/{{ author.linkedin }}" class=" [ canada ] " title="{{ author.name }} on LinkedIn"><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false" style="margin-inline-end: 1ex;"><use href="#svg--linkedin"></use></svg></c-emoji>{{ '@' + author.linkedin }}</a></dd>
+        <dt>XMPP:</dt>
+        <dd><a href="xmpp:{{ author.xmpp }}" class=" [ canada ] " title="{{ author.name }} on XMPP"><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false" style="margin-inline-end: 1ex;"><use href="#svg--xmpp"></use></svg></c-emoji>{{ author.xmpp }}</a></dd>
     </dl>
 </address>
 
@@ -206,5 +202,7 @@ The source code is available for your perusal on [GitHub](https://github.com/{{ 
 
 No large language models were used in any of the writing on this website.
 
-<div id="wcb" class="carbonbadge wcb-d"></div>
-<script src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" defer></script>
+{% if eleventy.env.runMode === 'build' -%}
+    <div id="wcb" class="carbonbadge wcb-d"></div>
+    <script src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" defer></script>
+{%- endif %}

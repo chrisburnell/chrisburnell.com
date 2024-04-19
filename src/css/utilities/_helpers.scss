@@ -170,10 +170,6 @@
 			max-inline-size: 1em;
 			max-block-size: 1em;
 		}
-
-		&:has([href="#svg--rss"]) {
-			fill: var(--color-rss);
-		}
 	}
 }
 

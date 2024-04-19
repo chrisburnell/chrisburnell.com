@@ -158,9 +158,11 @@ wide: true
 	<article class=" [ flow ] ">
 		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://xmpp.org' | urlencode }}/" class=" [ avatar ] " width="30" height="30" loading="lazy" decoding="async">
 		<h1>
-			XMPP
-			<br>
-			<small>{{ author.xmpp }}</small>
+			<a href="xmpp:{{ author.xmpp }}">
+				XMPP
+				<br>
+				<small>{{ author.xmpp }}</small>
+			</a>
 		</h1>
 	</article>
 </div>

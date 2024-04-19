@@ -20,13 +20,11 @@ export default [
 		title: "LinkedIn",
 		url: `https://www.linkedin.com/in/${linkedin}`,
 		show: true,
-		fill: "#0a66c2",
 	},
 	{
 		title: "Mastodon",
 		url: `https://${mastodon_domain}/@${mastodon.split("@")[1]}`,
 		show: true,
-		fill: "#595aff",
 	},
 	{
 		title: "Discord",
