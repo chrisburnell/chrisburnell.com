@@ -63,7 +63,7 @@ export default {
 				date: "2020-08-02T12:00:00+0000",
 				updated: "2024-02-19T20:36:55.000+0800",
 				title: "Version 3",
-				description: "The third version of my personal site where I switched over to using Eleventy and got me addicted to working on my website!",
+				description: "The third version of my personal site where I switched over to using Eleventy and got hooked on working on my website!",
 				emoji: "🐓",
 			},
 		},

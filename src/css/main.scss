@@ -16,7 +16,7 @@
 // Fonts
 @import "global/fonts";
 
-@layer reset, popover-polyfill, global, compositions, blocks, utilities, themes, components, pages, thirdparty, overrides;
+@layer reset, global, compositions, blocks, utilities, themes, components, pages, thirdparty, overrides;
 
 // Reset
 @layer reset {

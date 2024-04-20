@@ -1,7 +1,5 @@
 import "@daviddarnes/storage-form/storage-form"
 
-import "@oddbird/popover-polyfill"
-
 import "@11ty/is-land/is-land"
 
 import "@chrisburnell/relative-time"
