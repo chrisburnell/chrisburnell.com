@@ -1,0 +1,5 @@
+{
+	"latest_blog_date": "{{ collections.blogPosts | first | keyValue("data.date") | friendlyDate | safe }}",
+	"blog_count": "{{ collections.blogPosts.length | numberStringFormat }}",
+	"projects_count": "{{ (projects.web.length + projects.personal.length + collections.projects.length) | numberStringFormat }}"
+}
