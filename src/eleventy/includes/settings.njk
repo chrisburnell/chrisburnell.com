@@ -1,7 +1,7 @@
 <storage-form class=" [ flow ] " style="--flow-space: 1em;">
 	{% if not global.isCSSNakedDay -%}
 		<form autocomplete="off">
-			<label for="theme-selector">Select a theme:</label>
+			<label for="theme-selector">Theme:</label>
 			<select id="theme-selector" name="theme">
 				<optgroup label="Select a theme">
 					{% for theme in themes %}
@@ -13,11 +13,11 @@
 			</select>
 		</form>
 		<form autocomplete="off">
-			<label for="custom-hue-selector">Choose a hue:</label>
+			<label for="custom-hue-selector">Hue:</label>
 			<input type="range" id="custom-hue-selector" name="custom-hue" min="0" max="359.99" step="0.01" value="237.73" />
 		</form>
 		<form autocomplete="off">
-			<label for="color-scheme-selector">Select light/dark:</label>
+			<label for="color-scheme-selector">Light/Dark:</label>
 			<select id="color-scheme-selector" name="color-scheme">
 				<optgroup label="Select a colour scheme">
 					<option value="" selected>OS Default</option>
@@ -27,7 +27,7 @@
 			</select>
 		</form>
 		<form autocomplete="off">
-			<label for="high-contrast-selector">High contrast:</label>
+			<label for="high-contrast-selector">High Contrast:</label>
 			<select id="high-contrast-selector" name="high-contrast">
 				<optgroup label="Select a high contrast setting">
 					<option value="" selected>OS Default</option>
@@ -37,7 +37,7 @@
 			</select>
 		</form>
 		<form autocomplete="off">
-			<label for="smooth-scroll-selector">Smooth scroll:</label>
+			<label for="smooth-scroll-selector">Smooth Scroll:</label>
 			<select id="smooth-scroll-selector" name="smooth-scroll">
 				<optgroup label="Select a smooth scroll setting">
 					<option value="" selected>OS Default</option>
@@ -48,7 +48,7 @@
 		</form>
 	{%- endif %}
 	<form autocomplete="off">
-		<label for="user-sounds-toggler">Website sounds:</label>
+		<label for="user-sounds-toggler">Website Sounds:</label>
 		<input type="hidden" name="user-sounds" value />
 		<input type="checkbox" id="user-sounds-toggler" name="user-sounds" value="true" />
 	</form>
