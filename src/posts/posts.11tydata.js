@@ -1,4 +1,5 @@
 import { getWebmentions } from "@chrisburnell/eleventy-cache-webmentions"
+import dotenv from "dotenv"
 import configWebmentions from "../eleventy/config/webmentions.js"
 import { untappd } from "../eleventy/data/author.js"
 import { url as siteURL } from "../eleventy/data/site.js"
@@ -7,6 +8,7 @@ import { formatAsMarkdown, stripNewLines } from "../eleventy/filters/strings.js"
 import { getHost } from "../eleventy/filters/urls.js"
 import { getAuthors, getAuthorsString, getMetaImage, getMetaTitle, getPropertyLabel, getPropertyTitle, getPropertyTitleFallback, getPropertyURL, getRSVPString, getReplyAuthor, getReplyAuthorString, getReplyTitle, getReplyURL } from "../functions/collections.js"
 import { stripHTML } from "../functions/strings.js"
+dotenv.config()
 
 export default {
 	layout: "post",
@@ -50,6 +52,6 @@ export default {
 			}
 			return data.syndicate_to || []
 		},
-		webmentions: (data) => getWebmentions(configWebmentions, configWebmentions.domain + data.page.url),
+		webmentions: (data) => process.env.WEBMENTION_IO_TOKEN ? getWebmentions(configWebmentions, configWebmentions.domain + data.page.url) : [],
 	},
 }

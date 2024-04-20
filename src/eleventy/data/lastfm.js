@@ -60,9 +60,16 @@ const topArtists = async function () {
 }
 
 export default async function () {
+	if (process.env.LASTFM_API_TOKEN) {
+		return {
+			recentTracks: await recentTracks(),
+			topAlbums: await topAlbums(),
+			topArtists: await topArtists(),
+		}
+	}
 	return {
-		recentTracks: await recentTracks(),
-		topAlbums: await topAlbums(),
-		topArtists: await topArtists(),
+		recentTracks: [],
+		topAlbums: [],
+		topArtists: [],
 	}
 }

@@ -3,6 +3,6 @@
 /// @group utilities
 ////
 
-.flow > *:not(link, script, style) + * {
+.flow > *:not(link, script, style, .visually-hidden) + * {
 	margin-block-start: var(--flow-space, 1em);
 }
