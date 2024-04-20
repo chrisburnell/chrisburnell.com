@@ -3,7 +3,7 @@ import randomCase from "random-case"
 import truncate from "truncate-html"
 import capitalizers from "../../data/capitalizers.js"
 import markdown from "../config/markdown.js"
-import { locale } from "../data/site.js"
+import { limits, locale } from "../data/site.js"
 
 const stringNumbers = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
 
@@ -67,7 +67,7 @@ export const decodeHTML = (string) => {
  * @returns {string}
  */
 export const stripImages = (string) => {
-	return string.replace(/<picture.*?>(.*?)<\/picture>/g, "").replace(/<img[^<>]+>/g, "")
+	return string.replace(/<picture.*?>(.*?)<\/picture>/g, "").replace(/<img[^<>]+>/g, "").replace(/<a.*?><\/a>/g, "")
 }
 
 /**
@@ -92,7 +92,7 @@ export const stripStrikethrough = (string) => {
  * @param {boolean} [condition]
  * @returns {string}
  */
-export const maxWords = (string, count, condition = true) => {
+export const maxWords = (string, count = limits.maxWords, condition = true) => {
 	return condition ? truncate(string, count, { byWords: true }) : string
 }
 

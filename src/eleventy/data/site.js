@@ -20,6 +20,7 @@ export const limits = {
 	feature: 2,
 	feed: 10,
 	sparkline: 15,
+	maxWords: 40,
 	recentDays: 14,
 	upcomingDays: 7,
 	minimumResponsesRequired: 5,

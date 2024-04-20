@@ -13,7 +13,6 @@ toc: true
 - Version 4.0.0… maybe…
 - Post about /interests page
 - Short post about my guestbook
-- Post about using RelativeTimeFormat as both an Eleventy filter and front end
 - Review drafts
 
 ## CSS
