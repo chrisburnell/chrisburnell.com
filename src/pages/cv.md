@@ -12,9 +12,11 @@ toc: true
     {% include 'lfw.njk' %}
 {%- endif %}
 
-<ul class=" [ cluster ] ">
-    <li><!--email_off--><a href="mailto:{{ author.email }}">📧 {{ author.email }}</a><!--/email_off--></li><li><a href="https://chrisburnell.com/cv/">📄 chrisburnell.com/cv</a></li><li><a href="https://chrisburnell.com/cv.pdf">⬇️ Download PDF</a></li>
+<ul class=" [ cluster ] [ center ] ">
+    <li><a href="https://chrisburnell.com/cv.pdf"><c-emoji style="margin-inline-end: 1ex;">⬇️</c-emoji>Download PDF</a></li><li><!--email_off--><a href="mailto:{{ author.email }}"><c-emoji style="margin-inline-end: 1ex;">📧</c-emoji>Email</a><!--/email_off--></li><li><a href="https://github.com/{{ author.github }}"><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false" style="margin-inline-end: 1ex;"><use href="#svg--github"></use></svg></c-emoji>GitHub</a></li><li><a href="https://www.linkedin.com/in/{{ author.linkedin }}"><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false" style="margin-inline-end: 1ex;"><use href="#svg--linkedin"></use></svg></c-emoji>LinkedIn</a></li>
 </ul>
+
+<hr>
 
 ## Summary
 
