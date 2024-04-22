@@ -131,7 +131,9 @@ export const formatAsMarkdown = (string) => {
  */
 export const excerptize = (string) => {
 	return stripImages(string)
+		.replace(/<(figure|script|style).*?>((.|\n)*?)<\/(figure|script|style)>/g, "")
 		.replace(/<\/(p|blockquote)>(\s+)?<(p|blockquote)>/, "<br>")
+		.replace("<p></p>", "")
 		.replace("<p>", "")
 		.replace("</p>", "")
 		.replace("<blockquote>", "<q>")
