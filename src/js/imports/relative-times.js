@@ -3,7 +3,8 @@ class RelativeTime {
 		this.nonRelativeTimeElements = document.querySelectorAll(":not(relative-time) > [datetime]")
 		this.relativeRSVPValueElements = document.querySelectorAll("[data-relative-rsvp-value][data-start][data-end][data-value]")
 		this.relativeRSVPDateElements = document.querySelectorAll("[data-relative-rsvp-date][data-end]")
-		this.interval
+		this.lastUpdate = 0
+		this.updateLoop
 
 		if (!this.initialized) {
 			this.init()
@@ -15,12 +16,6 @@ class RelativeTime {
 	static emojiHopefully = `<span class=" [ emoji ] " aria-hidden="true">🤞</span>`
 	static emojiNotGoing = `<span class=" [ emoji ] " aria-hidden="true">😔</span>`
 
-	/**
-	* @param {string} start
-	* @param {string} end
-	* @param {string} value
-	* @returns {string}
-	*/
 	getRSVPValueString (start, end, value) {
 		const now = Date.now()
 
@@ -45,12 +40,6 @@ class RelativeTime {
 		return `${RelativeTime.emojiNotGoing} <small>was unable to attend</small>`
 	}
 
-	/**
-	* @param {string} start
-	* @param {string} end
-	* @param {string} value
-	* @returns {string}
-	*/
 	getRSVPDateString (end) {
 		if (Date.now() <= new Date(end).getTime()) {
 			return "taking place"
@@ -82,24 +71,29 @@ class RelativeTime {
 		})
 	}
 
-	startInterval() {
-		this.interval = setInterval(
-			() => {
+	beginUpdateLoop() {
+		const updateLoop = (currentTime) => {
+			this.updateLoop = requestAnimationFrame(updateLoop)
+			if (currentTime - this.lastUpdate >= 10 * 60 * 1000) {
 				this.setRelativeTimes()
-				this.startInterval()
-			},
-			10 * 60 * 1000, // every 10 minutes
-		)
+				this.lastUpdate = currentTime
+			}
+		}
+		this.updateLoop = requestAnimationFrame(updateLoop)
 	}
 
-	stopInterval() {
-		clearInterval(this.interval)
+	stopUpdateLoop() {
+		this.lastUpdate = 0
+		cancelAnimationFrame(this.updateLoop)
 	}
 
 	windowFocusHandler() {
-		this.stopInterval()
 		this.setRelativeTimes()
-		this.startInterval()
+		this.beginUpdateLoop()
+	}
+
+	windowBlurHandler() {
+		this.stopUpdateLoop()
 	}
 
 	init() {
@@ -112,12 +106,12 @@ class RelativeTime {
 		if (this.relativeRSVPValueElements.length || this.relativeRSVPDateElements.length) {
 			this.setRelativeTimes()
 
-			this.startInterval()
+			this.beginUpdateLoop()
+			window.addEventListener("blur", () => {
+				this.windowBlurHandler()
+			})
 			window.addEventListener("focus", () => {
 				this.windowFocusHandler()
-			})
-			window.addEventListener("blur", () => {
-				this.stopInterval()
 			})
 		}
 	}
