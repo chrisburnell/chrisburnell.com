@@ -2,6 +2,7 @@ import dotenv from "dotenv"
 dotenv.config()
 
 import { getPublished } from "@chrisburnell/eleventy-cache-webmentions"
+import { nowEpoch } from "../eleventy/data/global.js"
 import { isPublished, notReply } from "../functions/collections.js"
 import { exponentialMovingAverage } from "../functions/utils.js"
 import { limits } from "./data/site.js"
@@ -177,7 +178,7 @@ export default {
 			})
 			.filter((item) => {
 				// Check that the RSVP is within next 1 days
-				return isUpcoming(item.data.rsvp.date, 1)
+				return isUpcoming(item.data.rsvp.date, 1) || epoch(item.data.rsvp.date) < nowEpoch
 			})
 			.sort(dateSort)
 			.sort((a, b) => {
