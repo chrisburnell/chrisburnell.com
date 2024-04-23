@@ -75,7 +75,7 @@ export default async function (value, outputPath) {
 
 		// Remove JS during JS Naked Day
 		if (isJSNakedDay) {
-			$("script:not([data-keep]").remove()
+			$("script:not([data-keep])").remove()
 
 			$("[onload]:not([data-keep-script])").removeAttr("onload")
 
