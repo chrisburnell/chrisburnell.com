@@ -10,7 +10,7 @@ class Welcome {
 		const osString = `OS:              ${navigator.oscpu}`
 		const languageString = `Language:        ${navigator.language}`
 		const networkString = `Network:         ${navigator.onLine === true ? "Online" : "Offline"}`
-		const swStatus = (navigator?.serviceWorker?.controller?.state || "pending")
+		const swStatus = navigator?.serviceWorker?.controller?.state || "pending"
 		const swString = `Service Worker:  ${swStatus.charAt(0).toUpperCase() + swStatus.slice(1)}`
 
 		console.log(`%c                        ░█░█      %cchrisburnell.com`, "color: #507791", "color: inherit")

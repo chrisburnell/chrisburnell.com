@@ -67,7 +67,10 @@ export const decodeHTML = (string) => {
  * @returns {string}
  */
 export const stripImages = (string) => {
-	return string.replace(/<picture.*?>(.*?)<\/picture>/g, "").replace(/<img[^<>]+>/g, "").replace(/<a.*?><\/a>/g, "")
+	return string
+		.replace(/<picture.*?>(.*?)<\/picture>/g, "")
+		.replace(/<img[^<>]+>/g, "")
+		.replace(/<a.*?><\/a>/g, "")
 }
 
 /**

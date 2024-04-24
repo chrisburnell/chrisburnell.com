@@ -22,6 +22,6 @@ export default {
 			return `A page on ${getHost(siteURL)}`
 		},
 		meta_image: (data) => getMetaImage(data),
-		webmentions: (data) => process.env.WEBMENTION_IO_TOKEN ? getWebmentions(configWebmentions, configWebmentions.domain + data.page.url) : [],
+		webmentions: (data) => (process.env.WEBMENTION_IO_TOKEN ? getWebmentions(configWebmentions, configWebmentions.domain + data.page.url) : []),
 	},
 }

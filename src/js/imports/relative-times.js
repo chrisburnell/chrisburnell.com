@@ -16,7 +16,7 @@ class RelativeTime {
 	static emojiHopefully = `<span class=" [ emoji ] " aria-hidden="true">🤞</span>`
 	static emojiNotGoing = `<span class=" [ emoji ] " aria-hidden="true">😔</span>`
 
-	getRSVPValueString (start, end, value) {
+	getRSVPValueString(start, end, value) {
 		const now = Date.now()
 
 		if (value === "yes") {
@@ -40,7 +40,7 @@ class RelativeTime {
 		return `${RelativeTime.emojiNotGoing} <small>was unable to attend</small>`
 	}
 
-	getRSVPDateString (end) {
+	getRSVPDateString(end) {
 		if (Date.now() <= new Date(end).getTime()) {
 			return "taking place"
 		}

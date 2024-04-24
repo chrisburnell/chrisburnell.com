@@ -52,6 +52,6 @@ export default {
 			}
 			return data.syndicate_to || []
 		},
-		webmentions: (data) => process.env.WEBMENTION_IO_TOKEN ? getWebmentions(configWebmentions, configWebmentions.domain + data.page.url) : [],
+		webmentions: (data) => (process.env.WEBMENTION_IO_TOKEN ? getWebmentions(configWebmentions, configWebmentions.domain + data.page.url) : []),
 	},
 }
