@@ -51,7 +51,7 @@ wide: true
 			<a href="https://discordapp.com/users/{{ author.discord_id }}" rel="external noopener">
 				Discord
 				<br>
-				<small>@{{ author.discord }}</small>
+				<small>{{ author.discord }}</small>
 			</a>
 		</h1>
 	</article>
@@ -79,9 +79,19 @@ wide: true
 		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://indieweb.org' | urlencode }}/" class=" [ avatar ] " width="30" height="30" loading="lazy" decoding="async">
 		<h1>
 			<a href="https://indieweb.org/User:{{ author.indieweb }}" rel="external noopener">
-				IndieWeb
+				IndieWeb Wiki
 				<br>
 				<small>{{ author.indieweb }}</small>
+			</a>
+		</h1>
+	</article>
+	<article class=" [ flow ] ">
+		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://indiewebforum.eu' | urlencode }}/" class=" [ avatar ] " width="30" height="30" loading="lazy" decoding="async">
+		<h1>
+			<a href="https://indiewebforum.eu/u/{{ author.shortname }}" rel="external noopener">
+				IndieWebForum
+				<br>
+				<small>{{ author.shortname }}</small>
 			</a>
 		</h1>
 	</article>
@@ -101,7 +111,7 @@ wide: true
 			<a href="https://www.linkedin.com/in/{{ author.linkedin }}" rel="external noopener">
 				LinkedIn
 				<br>
-				<small>@{{ author.linkedin }}</small>
+				<small>{{ author.linkedin }}</small>
 			</a>
 		</h1>
 	</article>

@@ -1,6 +1,6 @@
 ---
 title: "&lt;relative-time&gt;"
-description: A Web Component to display a relative time.
+description: A Web Component to display a relative time. There are many like it, but this one is mine.
 github: chrisburnell/relative-time
 branch: main
 npm: "@chrisburnell/relative-time"

@@ -32,21 +32,31 @@ toc: true
 	<li>finish transcript for <q>Middle Out in CSS</q></li>
 </ul>
 
-{% if collections.rsvpsToday.length or collections.rsvpsUpcoming.length %}
+{% if collections.rsvpsToday.length or collections.rsvpsUpcoming.length -%}
 	<hr>
 
 	<h2>
 		<a href="/rsvps/">Events</a>
 	</h2>
-	<ol class=" [ deck ] [ flow ] ">
-		{% for item in collections.rsvpsToday -%}
-			{{ deckItem(item) }}
-		{%- endfor %}
-		{% for item in collections.rsvpsUpcoming -%}
-			{{ deckItem(item) }}
-		{%- endfor %}
-	</ol>
-{% endif %}
+
+	{% if collections.rsvpsToday.length -%}
+		<h3>Events I’m attending today</h3>
+		<ol class=" [ deck ] [ flow ] ">
+			{% for item in collections.rsvpsToday -%}
+				{{ deckItem(item) }}
+			{%- endfor %}
+		</ol>
+	{%- endif %}
+
+	{% if collections.rsvpsUpcoming.length -%}
+		<h3>Upcoming Events</h3>
+		<ol class=" [ deck ] [ flow ] ">
+			{% for item in collections.rsvpsUpcoming -%}
+				{{ deckItem(item) }}
+			{%- endfor %}
+		</ol>
+	{%- endif %}
+{%- endif %}
 
 {% set currentlyReading = collections.book | arePublished | arrayKeyNotSet('data.end') | sortByDate -%}
 {% set recentlyRead = collections.book | arePublished | arrayKeySet('data.end') | recentFilter('data.end') | sortByDate -%}
