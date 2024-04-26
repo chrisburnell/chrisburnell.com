@@ -10,15 +10,15 @@ export default {
 	],
 	music: [
 		`Check out my **[Listening page](/listening/)** to see what I’ve been on recently or browse through some of my favourite stuff yourself:`,
-		`<c-details>
+		`<c-details class="no-border no-padding">
 			<summary>Hip Hop</summary>
 			<dl><dt>Spotify</dt><dd><a href="https://open.spotify.com/playlist/75emnP49rQPR8D95pMIa3u">Hippity Hop and Whatnot Through the Ages</a><br><a href="https://open.spotify.com/playlist/0Xd9a6zJMMYLURcINKVkQd">Cheat Sheet: J Dilla</a></dd></dl><dl><dt>YouTube</dt><dd><a href="https://www.youtube.com/@DontFlop/playlists">Don’t Flop (2010s-era)</a><br><a href="https://www.youtube.com/@GTNBattles/playlists">Grind Time Now (2010s-era)</a><br><a href="https://www.youtube.com/@KingOfTheDot/playlists">King of the Dot (2010s-era)</a></dd></dl>
 		</c-details>`,
-		`<c-details>
+		`<c-details class="no-border no-padding">
 			<summary>Electronic</summary>
 			<dl><dt>Spotify</dt><dd><a href="https://open.spotify.com/playlist/3H8w4bXd8Kwz70Z1cFNdc0">OutRetroSynthVapourRunWave</a><br><a href="https://open.spotify.com/playlist/09hBhlkVJbtlFIXufoW4tC">DDnnBB</a></dd><dt>YouTube</dt><dd><a href="https://www.youtube.com/playlist?list=PLVzmSFSdbdQZmyS4pU2CYx3qzedRDfqZT">New Retro Wave [Electronic 80’s Synth Music]</a></dd></dl>
 		</c-details>`,
-		`<c-details>
+		`<c-details class="no-border no-padding">
 			<summary>Rock</summary>
 			<dl><dt>Spotify</dt><dd><a href="https://open.spotify.com/playlist/1p2iCmISwWEdgK54iAPe9F">K-DST (GTA San Andreas Radio)</a></dd></dl>
 		</c-details>`,

@@ -1,6 +1,7 @@
-<is-land on:visible class=" [ media  media--16-by-9 ]">
-	<lite-youtube :videoid="slug" :js-api="jsapi !== 'undefined' ? '' : false" :params="start ? `start=${start}` : false" :playlabel="`Play${label ? `: ${label}` : ''}`" :style="`background-image: url('https://i.ytimg.com/vi/${slug}/hqdefault.jpg');`">
-	</lite-youtube>
+<is-land on:visible>
+	<div class=" [ media  media--16-by-9 ] ">
+		<lite-youtube :videoid="slug" :js-api="jsapi !== 'undefined' ? '' : false" :params="start ? `start=${start}` : false" :playlabel="`Play${label ? `: ${label}` : ''}`" :style="`background-image: url('https://i.ytimg.com/vi/${slug}/hqdefault.jpg');`"></lite-youtube>
+	</div>
 	<template webc:raw data-island="once">
 		<link rel="stylesheet" href="/css/components/lite-yt-embed.css">
 		<script src="/js/components/lite-yt-embed.js"></script>

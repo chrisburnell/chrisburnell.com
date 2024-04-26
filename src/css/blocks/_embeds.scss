@@ -3,12 +3,6 @@
 /// @group blocks
 ////
 
-// Client-side Web Component Renderer
-// a.k.a. "Partial Hydration" B-)
-is-land {
-	display: block;
-}
-
 // Codepen Embed, Speaker Deck Embed
 :is(.cp_embed_wrapper, .speakerdeck-embed-wrapper) {
 	--max-inline-size: auto;

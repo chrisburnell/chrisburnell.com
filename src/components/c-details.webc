@@ -1,6 +1,6 @@
 <is-land>
-	<details-utils webc:root="override" @attributes>
-		<details :open="this.open">
+	<details-utils webc:root="override">
+		<details @attributes :open="this.open">
 			<slot></slot>
 		</details>
 	</details-utils>

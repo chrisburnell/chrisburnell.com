@@ -1,4 +1,4 @@
-<is-land class=" [ librarian-island ] ">
+<is-land>
 	<div webc:root="override" class=" [ box ] [ librarian ] ">
 		<slot></slot>
 	</div>

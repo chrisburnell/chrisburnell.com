@@ -14,9 +14,9 @@ export default async function (value, outputPath) {
 		if (tocHeadings.length) {
 			let tocHtml = `
 				<aside class=" [ meta ] " role="complementary" data-pagefind-ignore>
-					<is-land class=" [ table-of-contents ] ">
+					<is-land>
 						<details-utils force-close="(max-width: 850px)" force-restore>
-							<details open>
+							<details open class=" [ table-of-contents ] ">
 								<summary>Table of Contents</summary>
 								<nav class=" [ box ] " aria-label="Table of Contents">
 									<ol>`
@@ -57,14 +57,14 @@ export default async function (value, outputPath) {
 			$(element).attr("id", headingID)
 		})
 
-		// Strip .no-fragment classes
-		$(".no-fragment").removeClass("no-fragment")
-
 		// Make sure <ul> elements are accessible even with `list-style: none`
 		$("ul").attr("role", "list")
 
 		// Make <pre> code blocks keyboard-accessible by adding `tabindex="0"`
 		$("pre > code").attr("tabindex", 0)
+
+		// Strip .no-fragment classes
+		$(".no-fragment").removeClass("no-fragment")
 
 		// Remove CSS during CSS Naked Day
 		if (isCSSNakedDay) {

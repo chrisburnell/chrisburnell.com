@@ -3,6 +3,12 @@
 /// @group components
 ////
 
+event-countdown,
+is-land,
+relative-time {
+	display: contents;
+}
+
 lastfm-listening {
 	display: block;
 	margin-block-start: var(--size-medium);
