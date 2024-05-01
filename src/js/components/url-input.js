@@ -7,8 +7,6 @@ class UrlInput {
 	 * @constructor
 	 */
 	constructor() {
-		this.inputs = document.querySelectorAll(`input[type="url"]`)
-
 		this.inputs.forEach((input) => {
 			input.addEventListener("blur", (event) => {
 				this.addDefaultScheme(event.target)
@@ -19,6 +17,10 @@ class UrlInput {
 				}
 			})
 		})
+	}
+
+	get inputs() {
+		return document.querySelectorAll(`input[type="url"]`)
 	}
 
 	/**
