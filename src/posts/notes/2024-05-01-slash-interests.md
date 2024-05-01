@@ -5,6 +5,7 @@ description: In the world of online self-expression, there’s been a fascinatin
 tags:
   - weblogpomo
   - WeblogPoMo2024
+  - writing
 ---
 
 You may or may not be aware of the `/about`, `/ideas`, `/now`, and `/uses` page initiatives<a href="#fn1" id="fnref1"><sup class="footnote-ref">[1]</sup></a> <a href="#fn2" id="fnref2"><sup class="footnote-ref">[2]</sup></a>, where website authors are encouraged to create pages on their websites at discoverable URLs for expressing who they are, concepts they’re thinking about, what they’re doing presently, and what hardware/software/things they are using (respectively).
