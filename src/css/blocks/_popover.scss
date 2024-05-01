@@ -125,11 +125,11 @@
 }
 
 // Hide custom hue input unless Custom theme is selected
-:root:has([name="theme"] [value*="custom"]:not(:checked)) form:has([name="custom-hue"]) {
+:root:has([name="theme"] [value*="custom"]:not(:checked)) :is([for*="custom-hue"], [name="custom-hue"]) {
 	display: none;
 }
 
 // Hide colour scheme input when 90s or Matrix theme is selected
-:root:has([name="theme"] :is([value*="nineties"], [value*="matrix"]):checked) form:has([name="color-scheme"]) {
+:root:has([name="theme"] :is([value*="nineties"], [value*="matrix"]):checked) :is([for*="color-scheme"], [name="color-scheme"]) {
 	display: none;
 }
