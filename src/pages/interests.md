@@ -1,5 +1,4 @@
 ---
-draft: true
 title: "/interests"
 tagline: Interests
 description: A list of things I like in no particular order; maybe we have some interests in common!
