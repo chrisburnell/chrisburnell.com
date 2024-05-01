@@ -717,6 +717,12 @@ const blogroll = [
 		url: "https://starbreaker.org",
 		rss: "https://starbreaker.org/feeds/recent.xml",
 	},
+	{
+		title: "Lou Plummer",
+		url: "https://amerpie.lol",
+		rss: "https://amerpie.lol/feed.xml",
+		mastodon: "amerpie@social.lol",
+	},
 ].sort((a, b) => {
 	return a.title.localeCompare(b.title)
 })
