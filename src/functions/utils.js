@@ -7,7 +7,7 @@ import mastodonInstances from "../data/mastodonInstances.js"
  */
 export const filterOut = (array, filterList) => {
 	return array.filter((item) => {
-		return !filterList.includes(item)
+		return !filterList.includes(typeof item === "string" ? item.toLowerCase() : item)
 	})
 }
 

@@ -10,9 +10,6 @@ toc: true
 
 ## Posts
 
-- Version 4.0.0… maybe…
-- Post about /interests page
-- Short post about my guestbook
 - Review drafts
 
 ## CSS

@@ -1,8 +1,8 @@
-import categories from "../../data/categories.js"
-import ignoredTags from "../../data/ignoredTags.js"
 import { isPublished } from "../../functions/collections.js"
 import { capitalize } from "../../functions/strings.js"
 import { filterOut } from "../../functions/utils.js"
+import categories from "../data/categories.js"
+import ignoredTags from "../data/ignoredTags.js"
 
 /**
  * @param {object[]} array
@@ -35,19 +35,19 @@ export const getCategoryName = (data) => {
 }
 
 /**
- * @param {object[]} array
+ * @param {object[]} tags
  * @returns {object[]}
  */
-export const categoryFilter = (array) => {
-	return filterOut(array, categories)
+export const categoryFilter = (tags) => {
+	return filterOut(tags, categories)
 }
 
 /**
- * @param {object[]} array
+ * @param {object[]} tags
  * @returns {object[]}
  */
-export const tagFilter = (array) => {
-	return filterOut(array, ignoredTags)
+export const tagFilter = (tags) => {
+	return filterOut(tags, ignoredTags)
 }
 
 /**

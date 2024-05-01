@@ -42,7 +42,7 @@ const readingtime = (numberOfWords, wordsPerMinute = 200) => {
 
 This means that we can use the `readingtime` function with *or* without providing a `wordsPerMinute` value—without one, the function will use our default value of `200`.
 
-----
+--------
 
 We can do something similar in our CSS. For example, we might want a component to have a default `font-size`, but still give ourselves a uniform means of changing the `font-size` for a variation of the component.
 
@@ -80,7 +80,7 @@ With this line of CSS, we’ve given our component a set of ordered instructions
 2. Use the `--second` CSS Variable if it has been defined
 3. Otherwise, use the default `1em` value
 
-----
+--------
 
 This is handy in all sorts of ways. Take the `fill` colour of an SVG, for example:
 
@@ -166,7 +166,7 @@ This new <q>line</q> of CSS (broken into three for readability) gives us a bunch
 
 And let’s not forget that CSS Variables will cascade and can be set to different values by multiple conditions. This means that once a variable has been set, or a component variation created, we’re still free to make variations by further overriding of the CSS Variables, based on different selectors or browser conditions!
 
-----
+--------
 
 When you extrapolate this idea across multiple properties for a component, you can start to see how much flexibility it affords you.
 

@@ -2,10 +2,10 @@ import slugify from "@sindresorhus/slugify"
 import fs from "fs-extra"
 
 export default {
-	async generateHTML() {
-		return this.outputURL()
+	async shortcodeOutput() {
+		return this.outputUrl()
 	},
-	async getOutputFileSlug() {
+	async outputFileSlug() {
 		return slugify(this.data.page.url)
 	},
 	satoriOptions: {

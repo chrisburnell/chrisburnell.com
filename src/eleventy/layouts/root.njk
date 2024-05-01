@@ -83,7 +83,7 @@
 		<meta property="og:type" content="website">
 		{%- endif %}
 		<meta property="og:url" content="{{ canonical }}">
-		<meta property="og:title" content="{{ meta_title | safe }}" data-pagefind-meta="image_alt[content]">
+		<meta property="og:title" content="{{ meta_title | safe }}">
 		<meta property="og:description" content="{{ meta_description | safe }}">
 		<meta property="og:locale" content="{{ site.locale }}">
 		<meta property="og:site_name" content="{{ site.title }}">
@@ -92,6 +92,7 @@
 		{%- else -%}
 			<meta property="og:image" content="{{ site.url }}{% ogImage './eleventy/layouts/og-image.og.njk', { title: meta_title, description: description, date: date } %}" data-pagefind-meta="image[content]">
 		{%- endif %}
+		<meta property="og:image:alt" content="{{ meta_title | safe }}" data-pagefind-meta="image_alt[content]">
 
 		{% if layout == 'post' -%}
 		<meta property="article:published_time" content="{{ date | friendlyDate | safe }}">

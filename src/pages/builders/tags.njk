@@ -5,7 +5,7 @@ pagination:
   alias: tag
 permalink: /tag/{{ tag }}/
 eleventyComputed:
-  title: "{{ tag | title | specialCapitalize | replace('-', ' ') }}"
+  title: "{{ tag | specialCapitalize | replace('-', ' ') }}"
   description: "All of my posts tagged with <q>{{ tag }}</q>."
 ---
 {%- from 'macros/deckItem.njk' import deckItem -%}

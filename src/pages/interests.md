@@ -6,6 +6,10 @@ description: A list of things I like in no particular order; maybe we have some 
 toc: true
 ---
 
+<div class=" [ box  box--line-length ] [ flow ] [ no-print ] " data-pagefind-ignore>
+	<p>This page is a constant work-in-progress as more things I’m interested in strike me to list out here!</p>
+</div>
+
 ## Tech Stuff
 
 ### CSS
@@ -71,15 +75,15 @@ What an amazing series. I haven’t given myself the opportunity to finish the m
 
 ### Asimov
 
-TODO
+<!-- TODO -->
 
 ### Star Wars
 
-TODO
+<!-- TODO -->
 
 ### Star Trek
 
-TODO
+<!-- TODO -->
 
 --------
 
@@ -94,10 +98,16 @@ Check out my [Game Reviews](/games/)!
 - Yangzhou fried rice
 - Beer
 - Root beer
-- TODO
+<!-- - TODO -->
 
 ### Coffee
 
 I love coffee, and I drink a lot of it. You can check out my coffee setup over on my [/uses](/uses/#coffee) page.
 
+--------
 
+## Contact me
+
+Do we share any common interests? I’d love to talk about them with you!
+
+You can find a way to get in touch with me [on my about page](/about/#contact)!
