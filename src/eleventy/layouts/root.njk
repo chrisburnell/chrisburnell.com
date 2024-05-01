@@ -95,9 +95,9 @@
 		<meta property="og:image:alt" content="{{ meta_title | safe }}" data-pagefind-meta="image_alt[content]">
 
 		{% if layout == 'post' -%}
-		<meta property="article:published_time" content="{{ date | friendlyDate | safe }}">
+		<meta property="article:published_time" content="{{ date | rfc3339Date | safe }}">
 		{% if updated or end -%}
-		<meta property="article:modified_time" content="{{ updated | default(end) | friendlyDate | safe }}">
+		<meta property="article:modified_time" content="{{ updated | default(end) | rfc3339Date | safe }}">
 		{%- endif %}
 		<meta property="article:author" content="{{ author.name }}">
 		{% for tag in tags | categoryFilter | tagFilter %}
