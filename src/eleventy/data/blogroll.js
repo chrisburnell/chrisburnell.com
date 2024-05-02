@@ -723,6 +723,12 @@ const blogroll = [
 		rss: "https://amerpie.lol/feed.xml",
 		mastodon: "amerpie@social.lol",
 	},
+	{
+		title: "Ric Wood",
+		url: "https://grislyeye.com",
+		rss: "https://grislyeye.com/rss.xml",
+		mastodon: "grislyeye@indieweb.social",
+	},
 ].sort((a, b) => {
 	return a.title.localeCompare(b.title)
 })
