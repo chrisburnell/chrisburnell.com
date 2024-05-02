@@ -181,6 +181,19 @@ export const recentFilter = (array, key, recentDays = limits.recentDays) => {
 	})
 }
 
+/**
+ * @param {object[]} array
+ * @returns {object[]}
+ */
+export const rssOnlyFilter = (array) => {
+	return array.filter((item) => {
+		if (item.data.tags && item.data.tags.includes("rss-only")) {
+			return !isRecent(item.data.date)
+		}
+		return true
+	})
+}
+
 let userLocale = locale
 if (typeof document !== "undefined") {
 	userLocale = document.querySelector("html").getAttribute("lang") || navigator.languages ? navigator.languages[0] : userLocale
@@ -342,6 +355,7 @@ export default {
 	isUpcoming,
 	isRecent,
 	recentFilter,
+	rssOnlyFilter,
 	getRelativeTime,
 	getRSVPValueString,
 	getRSVPValueHTML,

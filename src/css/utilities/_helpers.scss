@@ -34,7 +34,8 @@
 // This allows screen readers to read aloud acronyms as they would be spoken, as
 // opposed to an initialism, for which each letter is spoken individually,
 // (e.g. HTML, CSS).
-.acronym {
+.acronym,
+.uppercase {
 	text-transform: uppercase;
 }
 

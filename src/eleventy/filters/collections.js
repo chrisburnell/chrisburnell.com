@@ -46,8 +46,29 @@ export const categoryFilter = (tags) => {
  * @param {object[]} tags
  * @returns {object[]}
  */
-export const tagFilter = (tags) => {
-	return filterOut(tags, ignoredTags)
+export const tagFilter = (tags, filterList = ignoredTags) => {
+	return filterOut(tags, filterList)
+}
+
+/**
+ * @param {object[]} array
+ * @returns {object[]}
+ */
+export const noPinnedFilter = (array) => {
+	return array.filter((item) => {
+		return item.data.tags && !item.data.tags.includes("pinned")
+	})
+}
+
+/**
+ * @param {object} a
+ * @param {object} b
+ * @returns {boolean}
+ */
+export const pinnedSort = (a, b) => {
+	const aPinned = (a.data.tags && a.data.tags.includes("pinned")) ? 1 : 0
+	const bPinned = (b.data.tags && b.data.tags.includes("pinned")) ? 1 : 0
+	return bPinned - aPinned
 }
 
 /**
@@ -88,6 +109,8 @@ export default {
 	getCategoryName,
 	categoryFilter,
 	tagFilter,
+	noPinnedFilter,
+	pinnedSort,
 	getCollectionCount,
 	getCollectionCountByYear,
 	getCollectionCountByWeekday,

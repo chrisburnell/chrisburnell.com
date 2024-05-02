@@ -42,6 +42,13 @@
 	}
 }
 
+.deck__pinned {
+	margin-inline-end: 1ex;
+	font-size: var(--font-size-small);
+	font-weight: var(--font-weight-bold);
+	text-transform: uppercase;
+}
+
 .deck__context {
 	font-family: var(--font-family-serif);
 	@include italic;

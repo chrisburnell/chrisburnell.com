@@ -4,7 +4,7 @@ description: Numbers, cause why not?
 excludeFromSearch: true
 ---
 
-{%- set collection = collections.posts -%}
+{%- set collection = collections.posts | rssOnlyFilter -%}
 {%- set count = collection.length -%}
 {%- set latest_year = collection[0].data.year | default(collection[0].year) -%}
 {%- set first_year = collection[count-1].data.year | default(collection[count-1].year) -%}
@@ -13,7 +13,7 @@ excludeFromSearch: true
 {%- set wordiest_post_index = 0 -%}
 {%- set wordiest_blog_post = 0 -%}
 {%- set blog_wordcount = 0 -%}
-{%- for item in collections.blogPosts -%}
+{%- for item in collections.blogPosts | rssOnlyFilter -%}
 	{%- set wordCount = item.content | cleanTags | striptags | safe | wordcount -%}
 	{%- set blog_wordcount = blog_wordcount + wordCount -%}
 	{%- if wordCount > wordiest_blog_post -%}
