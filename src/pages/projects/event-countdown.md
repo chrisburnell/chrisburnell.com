@@ -20,7 +20,7 @@ tags:
 <figure class=" [ box ] [ gamma ] [ requires-js ] ">
     <p>CSS Naked Day starts on 9 April @ 00:00:00 UTC+14 and ends on 9 April @ 23:59:59 UTC-12.</p>
     <p aria-hidden="true">↓</p>
-    <p><event-countdown name="CSS Naked Day" annual="true" start="{{ global.thisYear }}-04-09T00:00:00+14:00" end="{{ global.thisYear }}-04-09T23:59:59-12:00">CSS Naked Day starts on 9 April 00:00:00 UTC+14 and ends on 9 April 23:59:59 UTC-12.</event-countdown></p>
+    <p><event-countdown name="CSS Naked Day" annual="true">CSS Naked Day starts on <time start datetime="{{ global.thisYear }}-04-09T00:00:00+14:00">9 April 00:00:00 UTC+14</time> and ends on <time end datetime="{{ global.thisYear }}-04-09T23:59:59-12:00">9 April 23:59:59 UTC-12</time>.</event-countdown></p>
 </figure>
 
 {% include 'package.njk' %}
@@ -28,6 +28,8 @@ tags:
 ## Features
 
 <code>&lt;event-countdown&gt;</code> is a native Web Component that displays a countdown to an event with a start/end time.
+
+[Check out the demo page.](https://chrisburnell.github.io/event-countdown/demo.html)
 
 ## Usage
 
@@ -39,20 +41,30 @@ You start using the <code>&lt;event-countdown&gt;</code> Web Component by includ
 
 ### General usage example
 
-All `<event-countdown>` elements must include both a `name` and `start` attribute.
+All `<event-countdown>` elements must include a `name` that represents the name of a given event.
 
-The `name` attribute represents the name of a given event, and the `start` attribute is a valid date string (which is fed into `new Date()`) that represents the start of the event.
+They must also nest one or two `<time>` elements that have a valid `datetime` attribute and a `start`/`end` attribute, denoting the DateTime at which an event starts/ends.
 
 ```html
-<event-countdown name="CSS Naked Day" start="2024-04-09T00:00:00+14:00"></event-countdown>
+<event-countdown name="CSS Naked Day">
+    CSS Naked Day starts on <time start datetime="2024-04-09T00:00:00+14:00">9 April 2024 00:00:00 UTC+14</time>.
+</event-countdown>
 ```
 
-### With end point
+```html
+<event-countdown name="CSS Naked Day">
+    CSS Naked Day ends on <time end datetime="2024-04-09T23:59:59-12:00">9 April 2024 23:59:59 UTC-12</time>.
+</event-countdown>
+```
 
-By providing an `end` attribute (also a valid date string), you can represent a period that the event lasts for.
+### With both start and end points
+
+By nesting two `<time>` elements, one with a `start` attribute and the other with an `end` attribute, you can represent a period that the event lasts for.
 
 ```html
-<event-countdown name="CSS Naked Day" start="2024-04-09T00:00:00+14:00" end="2024-04-09T23:59:59-12:00"></event-countdown>
+<event-countdown name="CSS Naked Day">
+    CSS Naked Day starts on <time start datetime="2024-04-09T00:00:00+14:00">9 April 2024 00:00:00 UTC+14</time> and ends on <time end datetime="2024-04-09T23:59:59-12:00">9 April 2024 23:59:59 UTC-12</time>.
+</event-countdown>
 ```
 
 ### Annual events
@@ -60,7 +72,9 @@ By providing an `end` attribute (also a valid date string), you can represent a 
 For events that happen on a specific day and time each year, you can provide an `annual` attribute. This will force the provided date to the current year, and if the event has already passed, increment the year to display next year’s event countdown.
 
 ```html
-<event-countdown annual="true" name="CSS Naked Day" start="2024-04-09T00:00:00+14:00"></event-countdown>
+<event-countdown annual="true" name="CSS Naked Day">
+    CSS Naked Day starts on <time start datetime="2024-04-09T00:00:00+14:00">9 April 00:00:00 UTC+14</time>.
+</event-countdown>
 ```
 
 ### Update frequency
@@ -68,13 +82,17 @@ For events that happen on a specific day and time each year, you can provide an 
 By default, `<event-countdown>` elements will update their time every 10 minutes or whenever the window/tab loses and gains focus. You can override this by providing an `update` attribute, which represents the number of seconds between each update.
 
 ```html
-<event-countdown update="1" name="CSS Naked Day" start="2024-04-09T00:00:00+14:00"></event-countdown>
+<event-countdown update="1" name="CSS Naked Day">
+    CSS Naked Day starts on <time start datetime="2024-04-09T00:00:00+14:00">9 April 2024 00:00:00 UTC+14</time>.
+</event-countdown>
 ```
 
 You can also disable these updates by setting the `update` attribute to `false`.
 
 ```html
-<event-countdown update="false" name="CSS Naked Day" start="2024-04-09T00:00:00+14:00"></event-countdown>
+<event-countdown update="false" name="CSS Naked Day">
+    CSS Naked Day starts on <time start datetime="2024-04-09T00:00:00+14:00">9 April 2024 00:00:00 UTC+14</time>.
+</event-countdown>
 ```
 
 ### Specific division
@@ -84,7 +102,9 @@ By default, the time shown in the countdown will cycle through seconds, minutes,
 You can override this by providing a `division` attribute to force the time shown to be formatted in the given units of time.
 
 ```html
-<event-countdown division="second" name="CSS Naked Day" start="2024-04-09T00:00:00+14:00"></event-countdown>
+<event-countdown division="second" name="CSS Naked Day">
+    CSS Naked Day starts on <time start datetime="2024-04-09T00:00:00+14:00">9 April 2024 00:00:00 UTC+14</time>.
+</event-countdown>
 ```
 
 ### Maximum division
@@ -92,5 +112,7 @@ You can override this by providing a `division` attribute to force the time show
 You can also override the maximum unit of time used by providing a `max-division` attribute. The countdown will only go as high as provided unit of time when displaying the countdown.
 
 ```html
-<event-countdown max-division="minute" name="CSS Naked Day" start="2024-04-09T00:00:00+14:00"></event-countdown>
+<event-countdown max-division="minute" name="CSS Naked Day">
+    CSS Naked Day starts on <time start datetime="2024-04-09T00:00:00+14:00">9 April 2024 00:00:00 UTC+14</time>.
+</event-countdown>
 ```

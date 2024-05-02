@@ -27,6 +27,8 @@ tags:
 
 <code>&lt;relative-time&gt;</code> is a native Web Component that displays a relative time based on a nested `<time>` element.
 
+[Check out the demo page.](https://chrisburnell.github.io/relative-time/demo.html)
+
 ## Usage
 
 You start using the <code>&lt;relative-time&gt;</code> Web Component by including a <code>&lt;script&gt;</code> tag in your HTML:

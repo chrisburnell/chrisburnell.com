@@ -23,7 +23,11 @@ tags:
 
 {% include 'package.njk' %}
 
+## Features
+
 <code>&lt;paper-stamp&gt;</code> is a native Web Component that displays an <code>&lt;img&gt;</code> as a paper stamp.
+
+[Check out the demo page.](https://chrisburnell.github.io/paper-stamp/demo.html)
 
 ## Usage
 

@@ -41,7 +41,7 @@
 							<li><c-emoji>{{ emojis.link }}</c-emoji> {{ links.length }} Link{{ 's' if links.length > 1 }}</li>
 						{%- endif %}
 						{% if socialReplies.length -%}
-							<li><c-emoji>{{ emojis.syndication }}</c-emoji> {{ socialReplies.length }} Social {% if socialReplies.length > 1 %}Replies{% else %}Reply{% endif %}{% if syndicate_to %} (on {% for syndication in syndicate_to -%}<a href="{{ syndication | tweetback }}">{{ syndication | getSyndicationTitle }}</a>{%- if not loop.last %}, {% endif %}{%- endfor %}){% endif %}</li>
+							<li><c-emoji>{{ emojis.syndication }}</c-emoji> {{ socialReplies.length }} Social {% if socialReplies.length > 1 %}Replies{% else %}Reply{% endif %}{% if syndicate_to.length %} (on {% for syndication in syndicate_to -%}<a href="{{ syndication | tweetback }}">{{ syndication | getSyndicationTitle }}</a>{%- if not loop.last %}, {% endif %}{%- endfor %}){% endif %}</li>
 						{%- endif %}
 						{% if stargazers -%}
 							<li><c-emoji>{{ emojis.stars }}</c-emoji> <a href="https://github.com/{{ github }}">{{ stargazers }} Stargazer{{ 's' if stargazers > 1 }}</a></li>

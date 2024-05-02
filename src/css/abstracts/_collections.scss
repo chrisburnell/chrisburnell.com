@@ -15,27 +15,27 @@
 	@extend %heading !optional;
 }
 
-:is(h1, .alpha) {
+h1, .alpha {
 	@extend %alpha !optional;
 }
 
-:is(h2, .beta) {
+h2, .beta {
 	@extend %beta !optional;
 }
 
-:is(h3, .gamma, .deck h1) {
+h3, .gamma, .deck h1 {
 	@extend %gamma !optional;
 }
 
-:is(h4, .delta, .shelf h1) {
+h4, .delta, .shelf h1 {
 	@extend %delta !optional;
 }
 
-:is(h5, .epsilon) {
+h5, .epsilon {
 	@extend %epsilon !optional;
 }
 
-:is(h6, .zeta) {
+h6, .zeta {
 	@extend %zeta !optional;
 }
 
