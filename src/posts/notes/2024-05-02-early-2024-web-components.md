@@ -13,7 +13,8 @@ tags:
 <h2 id="relative-time"><span class=" [ gamma  monospace ] ">&lt;relative-time&gt;</span></h2>
 
 <ul class=" [ cluster ] [ center ] ">
-    <li><a href="/relative-time/">Project page</a></li>
+    <li><a href="/relative-time/">Project Page</a></li>
+    <li><a href="https://chrisburnell.github.io/relative-time/demo.html">Demo</a></li>
     <li><a href="https://github.com/chrisburnell/relative-time/" rel="external noopener">GitHub</a></li>
     <li><a href="https://www.npmjs.com/package/@chrisburnell/relative-time" rel="external noopener">npm</a></li>
 </ul>
@@ -49,7 +50,8 @@ There are also a number of other attributes that can be applied to the Web Compo
 <h2 id="event-countdown"><span class=" [ gamma  monospace ] ">&lt;event-countdown&gt;</span></h2>
 
 <ul class=" [ cluster ] [ center ] ">
-    <li><a href="/event-countdown/">Project page</a></li>
+    <li><a href="/event-countdown/">Project pPage</a></li>
+    <li><a href="https://chrisburnell.github.io/event-countdown/demo.html">Demo</a></li>
     <li><a href="https://github.com/chrisburnell/event-countdown/" rel="external noopener">GitHub</a></li>
     <li><a href="https://www.npmjs.com/package/@chrisburnell/event-countdown" rel="external noopener">npm</a></li>
 </ul>
@@ -83,7 +85,8 @@ There are a number of other attributes here as well that, like the `<relative-ti
 <h2 id="paper-stamp"><span class=" [ gamma  monospace ] ">&lt;paper-stamp&gt;</span></h2>
 
 <ul class=" [ cluster ] [ center ] ">
-    <li><a href="/paper-stamp/">Project page</a></li>
+    <li><a href="/paper-stamp/">Project Page</a></li>
+    <li><a href="https://chrisburnell.github.io/paper-stamp/demo.html">Demo</a></li>
     <li><a href="https://github.com/chrisburnell/paper-stamp/" rel="external noopener">GitHub</a></li>
     <li><a href="https://www.npmjs.com/package/@chrisburnell/paper-stamp" rel="external noopener">npm</a></li>
 </ul>
