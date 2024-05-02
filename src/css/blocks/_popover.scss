@@ -103,15 +103,11 @@
 }
 
 // Align settings
-.popover-settings storage-form {
+.popover-settings form {
 	display: grid;
 	grid-template-columns: max-content auto;
 	place-items: center;
 	gap: 1em;
-
-	form {
-		display: contents;
-	}
 
 	label {
 		inline-size: 100%;
