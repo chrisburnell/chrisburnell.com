@@ -10,7 +10,7 @@ tags:
 
 Recently, there’s been a bit of a discussion online about recommending folks add times and timezones to dates on their websites. Since I started keeping a record of my RSVPs to meetups and conferences on my website, and even moreso now that I’ve moved from the UK to Singapore (which is 7–8 timezone hours away), accurately capturing the date *and time* of things has been important to me.
 
-Particularly where I have [an automatically-generated calendar file for my RSVPs](/index.ics), the exact date and time that events take place needs to be accurately described, or I’ll end up with events in my calendar on the wrong day and time. And I definitely don’t want to have to miss any meetups or conferences because I didn’t take the time (pun intended) to correctly capture when events start!
+Particularly where I have [an automatically-generated calendar file for my RSVPs](/rsvps.ics), the exact date and time that events take place needs to be accurately described, or I’ll end up with events in my calendar on the wrong day and time. And I definitely don’t want to have to miss any meetups or conferences because I didn’t take the time (pun intended) to correctly capture when events start!
 
 Accurately describing DateTimes is important for other things too. When the time and timezone are omitted from the date of a blog post, there are assumptions that are made on your behalf that you may not even be aware of.
 

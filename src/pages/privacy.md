@@ -3,7 +3,7 @@ title: Privacy Policy
 description: Your right to privacy on this website.
 ---
 
-## Tracking
+<h2 id="tracking">Tracking</h2>
 
 I’m currently using [Fathom Lite](https://usefathom.com/) [(self-hosted)](https://logs.chrisburnell.com) as a means of keeping track of popular pages and referrals, mostly to make sure that frequently-visited pages are functioning as intended and to see where my referral traffic is coming from. It presents the following metrics: page views, unique visitors, average time spent on the website, bounce rate, and referrals.
 
@@ -13,7 +13,7 @@ You can read more about what Fathom has to say about the [data that they track](
 
 --------
 
-## Activity and Backfeed
+<h2 id="activity">Activity and Backfeed</h2>
 
 I pull Webmentions (hosted on [Webmention.io](https://webmention.io)) into relevant pages, but only Webmentions sent deliberately in reply to one of my pages are displayed. Likes, reposts, bookmarks, replies made on social media, etc. (i.e. backfeed from [Bridgy](https://brid.gy)) are anonymised and are only shown as part of a count in the responses section of relevant pages.
 
@@ -21,7 +21,7 @@ If you have responded to, liked, reposted, quoted, or commented on my activity o
 
 --------
 
-## Third-party calls
+<h2 id="third-party">Third-party calls</h2>
 
 I have made every attempt to limit calls to third-party resources. Where possible, I am using self-hosted endpoints to prevent calls from your browser to third parties.
 
@@ -29,7 +29,7 @@ This is *not* possible for certain resources hosted by third parties, like YouTu
 
 --------
 
-## Offline Support
+<h2 id="offline">Offline Support</h2>
 
 My website will install a Service Worker in supported browsers to make my website function when an internet connection is not available. In essence, it’s a form of client-side caching. This means that core assets will be cached by your browser to speed up subsequent usage of those files, in addition to caching the core top-level pages and any pages you’ve visited while online, making them available when you are offline!
 
@@ -37,6 +37,6 @@ I do not (and cannot) collect any information about you or your browsing experie
 
 --------
 
-## Further
+<h2 id="contact">Contact me</h2>
 
 If you have any further questions or concerns regarding your privacy on this website, please [contact me](/about/#contact) so that I can address it as soon as possible.
