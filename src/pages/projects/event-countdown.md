@@ -20,7 +20,7 @@ tags:
 <figure class=" [ box ] [ gamma ] [ requires-js ] ">
     <p>CSS Naked Day starts on 9 April @ 00:00:00 UTC+14 and ends on 9 April @ 23:59:59 UTC-12.</p>
     <p aria-hidden="true">↓</p>
-    <p><event-countdown name="CSS Naked Day" annual="true">CSS Naked Day starts on <time start datetime="{{ global.thisYear }}-04-09T00:00:00+14:00">9 April 00:00:00 UTC+14</time> and ends on <time end datetime="{{ global.thisYear }}-04-09T23:59:59-12:00">9 April 23:59:59 UTC-12</time>.</event-countdown></p>
+    <p><event-countdown name="CSS Naked Day" annual="true">CSS Naked Day starts on <time start datetime="{{ global.currentYear }}-04-09T00:00:00+14:00">9 April 00:00:00 UTC+14</time> and ends on <time end datetime="{{ global.currentYear }}-04-09T23:59:59-12:00">9 April 23:59:59 UTC-12</time>.</event-countdown></p>
 </figure>
 
 {% include 'package.njk' %}

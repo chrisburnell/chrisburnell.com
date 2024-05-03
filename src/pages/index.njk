@@ -106,6 +106,19 @@ excludeFromSearch: true
 					</div>
 				</div>
 			{% endif %}
+
+			{# {% if collections.onThisDay.length %}
+				<hr>
+
+				<div class=" [ box  box--line-length ] [ flow ] ">
+					<h2 id="on-this-day">On this day</h2>
+					<div class=" [ deck ] [ flow ] ">
+						{% for item in collections.onThisDay %}
+							{{ deckItem(item, { truncate: true }) }}
+						{% endfor %}
+					</div>
+				</div>
+			{% endif %} #}
 		</div>
 	</div>
 

@@ -66,8 +66,8 @@ export const noPinnedFilter = (array) => {
  * @returns {boolean}
  */
 export const pinnedSort = (a, b) => {
-	const aPinned = (a.data.tags && a.data.tags.includes("pinned")) ? 1 : 0
-	const bPinned = (b.data.tags && b.data.tags.includes("pinned")) ? 1 : 0
+	const aPinned = a.data.tags && a.data.tags.includes("pinned") ? 1 : 0
+	const bPinned = b.data.tags && b.data.tags.includes("pinned") ? 1 : 0
 	return bPinned - aPinned
 }
 

@@ -22,10 +22,13 @@ export const conjunction = (strings) => {
  * @return {string}
  */
 export const specialCapitalize = (string) => {
-	return capitalizers.reduce((output, capitalizer) => {
-		const regex = new RegExp(capitalizer, "gi")
-		return output.replace(regex, capitalizer)
-	}, string.charAt(0).toUpperCase() + string.slice(1))
+	return capitalizers.reduce(
+		(output, capitalizer) => {
+			const regex = new RegExp(capitalizer, "gi")
+			return output.replace(regex, capitalizer)
+		},
+		string.charAt(0).toUpperCase() + string.slice(1),
+	)
 }
 
 /**

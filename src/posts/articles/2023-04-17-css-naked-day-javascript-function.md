@@ -18,9 +18,9 @@ Recently, I wrote *[Why I participated in CSS Naked Day](/article/why-css-naked-
 ```javascript
 const isCSSNakedDay = () => {
 	const now = Date.now()
-	const thisYear = new Date().getFullYear()
-	const startEpoch = new Date(`${thisYear}-04-09T00:00:00+14:00`).getTime()
-	const endEpoch = new Date(`${thisYear}-04-09T23:59:59-12:00`).getTime()
+	const currentYear = new Date().getFullYear()
+	const startEpoch = new Date(`${currentYear}-04-09T00:00:00+14:00`).getTime()
+	const endEpoch = new Date(`${currentYear}-04-09T23:59:59-12:00`).getTime()
 
 	return startEpoch <= now && now <= endEpoch
 }
@@ -48,9 +48,9 @@ Now let’s put our function into a Global Data File, e.g. `_data/isCSSNakedDay.
 ```javascript
 module.exports = () => {
 	const now = Date.now()
-	const thisYear = new Date().getFullYear()
-	const startEpoch = new Date(`${thisYear}-04-09T00:00:00+1400`).getTime()
-	const endEpoch = new Date(`${thisYear}-04-09T23:59:59-1200`).getTime()
+	const currentYear = new Date().getFullYear()
+	const startEpoch = new Date(`${currentYear}-04-09T00:00:00+1400`).getTime()
+	const endEpoch = new Date(`${currentYear}-04-09T23:59:59-1200`).getTime()
 
 	return startEpoch <= now && now <= endEpoch
 }
