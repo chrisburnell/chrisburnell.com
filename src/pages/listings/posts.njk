@@ -4,6 +4,7 @@ title: All Posts
 description: Browse all of my posts by a variety of metrics.
 perch: true
 ---
+{%- from 'macros/deckItem.njk' import deckItem -%}
 {%- set collection = collections.posts -%}
 {%- set count = collection.length -%}
 {%- set latest_year = collection[0].data.year | default(collection[0].year) -%}
@@ -25,13 +26,17 @@ perch: true
 			{% include 'js-naked-day.njk' %}
 		{%- endif %}
 
+		<h2 id="latest">Latest Posts</h2>
+
+		<div class=" [ deck ] ">
+			{% for item in collections.features | rssOnlyFilter | limit(10) %}
+				{{ deckItem(item, { hfeed: true, show_photos: true, truncate: true }) }}
+			{% endfor %}
+		</div>
+
 		<h2>Collections</h2>
 
 		<ul class=" [ grid ] [ shelf ] ">
-			<li>
-				<a href="/latest/" class=" [ gamma ] "><c-emoji>{{ emojis.new }}</c-emoji>Latest Posts <sup>{{ site.limits.feed }}</sup></a>
-				<p>Latest posts on the blog.</p>
-			</li>
 			<li>
 				<a href="/writing/" class=" [ gamma ] "><c-emoji>{{ emojis.author }}</c-emoji>Writing <sup>{{ collections.writings | getCollectionCount }}</sup></a>
 				<p>A more serious collection of ideas and bits of prose.</p>

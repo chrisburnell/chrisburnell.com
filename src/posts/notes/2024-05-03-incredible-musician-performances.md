@@ -5,7 +5,6 @@ description: Today I’m sharing a small handful of videos from YouTube that hav
 tags:
   - weblogpomo
   - WeblogPoMo2024
-  - writing
 ---
 
 <h2 id="王石展" class=" [ gamma ] "> 【260bpm】I played one shot of my original metal song</h2>

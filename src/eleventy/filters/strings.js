@@ -70,7 +70,7 @@ export const stripImages = (string) => {
 	return string
 		.replace(/<picture.*?>(.*?)<\/picture>/g, "")
 		.replace(/<img[^<>]+>/g, "")
-		.replace(/<a.*?><\/a>/g, "")
+		.replace(/<a[^<>]+><\/a>/g, "")
 }
 
 /**

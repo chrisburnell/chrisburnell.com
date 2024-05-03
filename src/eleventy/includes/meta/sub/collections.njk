@@ -2,7 +2,7 @@
 <ul class=" [ cluster ] ">
 	{%- if eleventy.env.runMode !== 'build' and page.url != '/drafts/' %}<li><a href="/drafts/">Drafts</a></li>{% endif -%}
 	{%- if page.url != '/posts/' %}<li><a href="/posts/">All Posts</a></li>{% endif -%}
-	{%- if page.url != '/latest/' %}<li><a href="/latest/">Latest Posts</a></li>{% endif -%}
+	{%- if page.url != '/posts/' %}<li><a href="/posts/#latest">Latest Posts</a></li>{% endif -%}
 	{%- if page.url != '/posts/' %}<li><a href="/posts/#categories">Categories</a></li>{% endif -%}
 	{%- if page.url != '/posts/' %}<li><a href="/posts/#tags">Tags</a></li>{% endif -%}
 	{%- if page.url != '/writing/' %}<li><a href="/writing/">Writing</a></li>{% endif -%}
