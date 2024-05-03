@@ -3,14 +3,14 @@
 /// @group components
 ////
 
-is-land,
-relative-time {
-	display: contents;
-}
-
 lastfm-listening {
 	display: block;
 	margin-block-start: var(--size-medium);
+}
+
+lite-youtube {
+	background-position: center;
+	background-size: cover;
 }
 
 share-button:not(:defined) button,
