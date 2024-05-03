@@ -71,7 +71,7 @@ wide: true
 			<a href="https://github.com/{{ author.github }}" rel="external noopener">
 				GitHub
 				<br>
-				<small>@{{ author.github }}</small>
+				<small>{{ author.github }}</small>
 			</a>
 		</h1>
 	</article>
@@ -176,3 +176,10 @@ wide: true
 		</h1>
 	</article>
 </div>
+
+<hr>
+
+<dl>
+	<dt>My public PGP key</dt>
+	<dd class=" [ monospace ] ">{{ author.pgp_styled | safe }}</dd>
+</dl>
