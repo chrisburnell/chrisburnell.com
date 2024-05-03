@@ -21,6 +21,10 @@ I love how precise the playing is here, and the genre switching in the breakdown
     <dd>Metal and more (drumming)</dd>
 </dl>
 
+<noscript>
+    <p><a href="https://www.youtube.com/watch?v=SXLCmQATnog" rel="external noopener">YouTube link</a></p>
+</noscript>
+
 <c-youtube slug="SXLCmQATnog" label="【260bpm】I played one shot of my original metal song"></c-youtube>
 
 --------
@@ -37,6 +41,10 @@ This video, like Sharay Reed, is absolutely legendary. The riff just after the 2
     <dt>Genre</dt>
     <dd>Gospel / Funk (bass guitar)</dd>
 </dl>
+
+<noscript>
+    <p><a href="https://www.youtube.com/watch?v=pATcvr3zAhg" rel="external noopener">YouTube link</a></p>
+</noscript>
 
 <c-youtube slug="pATcvr3zAhg" label="Sharay Reed @ Chicago Gospel Musician Jam"></c-youtube>
 
@@ -55,6 +63,10 @@ If you like this one, I highly recommend you jump into the rabbit hole of incred
     <dd>Pop-punk (vocals, guitar, bass guitar, drums)</dd>
 </dl>
 
+<noscript>
+    <p><a href="https://www.youtube.com/watch?v=uVrpPAjqDZQ" rel="external noopener">YouTube link</a></p>
+</noscript>
+
 <c-youtube slug="uVrpPAjqDZQ" label="‘I'm Not Okay’ can be mashed up with anything"></c-youtube>
 
 --------
@@ -71,6 +83,10 @@ I listen to this *all the time*, and I think it’s my favourite drum and bass m
     <dt>Genre</dt>
     <dd>Drum & Bass (production / DJing)</dd>
 </dl>
+
+<noscript>
+    <p><a href="https://www.youtube.com/watch?v=ZwPXM_uL5Pc" rel="external noopener">YouTube link</a></p>
+</noscript>
 
 <c-youtube slug="ZwPXM_uL5Pc" label="Sub Focus & Wilkinson BBC Radio 1 Essential Mix 10.10.20"></c-youtube>
 
