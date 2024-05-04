@@ -4,6 +4,7 @@
 ////
 
 pre[class*="language-"] {
+	--flow-space: var(--size-large);
 	background-color: h(mineshaft);
 	border-block-start: var(--size-border-thin) solid var(--border-color, h(raven));
 	padding: var(--size-gap) var(--size-gutter) var(--size-small);
@@ -55,10 +56,6 @@ pre.language-json::before {
 	content: "JSON";
 	color: h(json);
 }
-pre.language-jsx::before {
-	content: "JSX";
-	color: h(jsx);
-}
 pre.language-liquid::before {
 	content: "Liquid";
 	color: h(liquid);
@@ -71,6 +68,10 @@ pre.language-nunjucks::before,
 pre.language-twig::before {
 	content: "Nunjucks";
 	color: h(nunjucks);
+}
+pre.language-php::before {
+	content: "PHP";
+	color: h(php);
 }
 pre.language-plaintext::before,
 pre.language-text::before {

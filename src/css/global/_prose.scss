@@ -125,6 +125,12 @@ hr {
 	overflow: visible;
 }
 
+aside:not([class]) {
+	background-color: color-mix(in oklab, transparent, var(--color-mineshaft) 20%);
+	padding: var(--size-medium);
+	border-radius: var(--size-border-thin);
+}
+
 dialog {
 	--box-shadow: var(--box-shadow-high);
 

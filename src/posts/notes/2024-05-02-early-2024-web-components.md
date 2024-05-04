@@ -8,6 +8,8 @@ tags:
   - writing
   - web-components
   - javascript
+syndicate_to:
+  - https://fediverse.repc.co/@chrisburnell/112371549706920942
 ---
 
 <h2 id="relative-time"><span class=" [ gamma  monospace ] ">&lt;relative-time&gt;</span></h2>
