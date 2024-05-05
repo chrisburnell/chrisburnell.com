@@ -4,15 +4,26 @@ description: Build the site
 runs:
   using: composite
   steps:
-    - name: Set up site cache
-      id: cache-site
-      uses: actions/cache@v4
+    - name: Restore the site cache
+      id: restore-cache-site
+      uses: actions/cache/restore@v4
       with:
-        key: site-cache
         path: |
           .cache
           _site
+        key: site-cache-${{ runner.os }}-${{ github.run_id }}
+        restore-keys: |
+          site-cache-${{ runner.os }}
 
     - name: Build with npm
       run: npm run build-production
       shell: bash
+
+    - name: Save the site cache
+      id: restore-cache-site
+      uses: actions/cache/save@v4
+      with:
+        path: |
+          .cache
+          _site
+        key: site-cache-${{ runner.os }}-${{ github.run_id }}
