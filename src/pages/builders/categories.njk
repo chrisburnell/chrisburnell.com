@@ -59,7 +59,7 @@ eleventyComputed:
 			</c-librarian>
 			<div class=" [ grid ] [ shelf {% if collection[0].data.shelfAlignment %} shelf--{{ collection[0].data.shelfAlignment }} {% endif %}] " aria-live="polite">
 				{% for item in collection %}
-					{{ shelfItem(item, { hfeed: true, show_photos: true, truncate: true }) }}
+					{{ shelfItem(item, { hfeed: true, show_images: true, truncate: true }) }}
 				{% endfor %}
 			</div>
 		{% else %}
@@ -69,7 +69,7 @@ eleventyComputed:
 				</h2>
 				<div id="list-{{ year }}" class=" [ deck ] ">
 					{% for item in posts %}
-						{{ deckItem(item, { hfeed: true, show_photos: true, truncate: true }) }}
+						{{ deckItem(item, { hfeed: true, show_images: true, truncate: true }) }}
 					{% endfor %}
 				</div>
 			{% endfor %}
