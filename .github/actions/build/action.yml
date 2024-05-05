@@ -5,7 +5,7 @@ runs:
   using: composite
   steps:
     - name: Restore the site cache
-      id: restore-cache-site
+      id: restore-site-cache
       uses: actions/cache/restore@v4
       with:
         path: |
@@ -20,7 +20,7 @@ runs:
       shell: bash
 
     - name: Save the site cache
-      id: restore-cache-site
+      id: save-site-cache
       uses: actions/cache/save@v4
       with:
         path: |
