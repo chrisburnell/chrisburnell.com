@@ -4,7 +4,7 @@ title: Revisiting PHP-Generated Images
 description: Generating images using PHP was a bit like magic to me back in 2007. In this post, I’m going to revisit the technique to create an image that shows dynamically-updating information about my website content.
 tags:
   - weblogpomo
-  - WeblogPoMo2024
+  - weblogpomo2024
   - php
 ---
 
@@ -38,7 +38,7 @@ So that’s exactly what I did! Using my website’s content as an example, I’
     <img src="https://api.chrisburnell.com/dynamic-banner.php" alt="a small banner showing statistical information about content on chrisburnell.com" width="300" height="80" loading="lazy" decoding="async" style="image-rendering: pixelated;">
 </figure>
 
-Before we start, it’s important to know that we’ll be working with a coordinate system as we build our image, where `0, 0` is at the top-left, and `X` increases to the right and `Y` increases downwards.
+Before we start, it’s important to know that we’ll be working with a coordinate system as we build our image, where `0, 0` is at the top-left, so `X` increases to the right and `Y` increases downwards.
 
 Now let’s write some code.
 

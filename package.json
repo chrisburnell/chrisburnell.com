@@ -44,7 +44,7 @@
     "@chrisburnell/cow-pen": "^0.0.4",
     "@chrisburnell/eleventy-cache-webmentions": "^2.0.1",
     "@chrisburnell/event-countdown": "^0.0.9",
-    "@chrisburnell/inline-expand": "^0.0.1",
+    "@chrisburnell/inline-expand": "^0.0.2",
     "@chrisburnell/instant-photo": "^1.0.0",
     "@chrisburnell/paper-stamp": "^0.0.5",
     "@chrisburnell/pentatonic": "^1.1.4",

@@ -12,8 +12,6 @@ tags:
   - web-components
 ---
 
-<script type="module" src="/js/components/svg-sparkline.js"></script>
-
 <figure>
     <svg-sparkline class=" [ requires-js ] " values="8,3,2,7,9,1,5,6,4,10,3,8,2,7,1,9" fill="true" curve="true"></svg-sparkline>
     <noscript><p class=" [ box  box--error ] ">Unfortunately, this Web Component requires JavaScript to function correctly!</p></noscript>
@@ -231,3 +229,4 @@ You can check out the full documentation, source code, demos, and provide feedba
     }
 }
 {% endcss %}
+{%- js 'module' -%}{% include '../../../node_modules/@chrisburnell/svg-sparkline/svg-sparkline.js' %}{%- endjs -%}

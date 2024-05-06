@@ -13,8 +13,6 @@ tags:
   - web-components
 ---
 
-<script type="module" src="/js/components/paper-stamp.js"></script>
-
 <figure>
     <paper-stamp>
         <img src="/images/rolbie-stamp.png" alt="A monochrome pixel-art image of a stamp featuring an adorable little cow’s head" loading="lazy" decoding="async" width="100" height="150">
@@ -114,3 +112,4 @@ There are also a handful of attributes you can set which will override the appea
         }
     }
 {%- endcss %}
+{%- js 'module' -%}{% include '../../../node_modules/@chrisburnell/paper-stamp/paper-stamp.js' %}{%- endjs -%}

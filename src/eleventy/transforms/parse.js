@@ -60,6 +60,9 @@ export default async function (value, outputPath) {
 		// Make sure <ul> elements are accessible even with `list-style: none`
 		$("ul").attr("role", "list")
 
+		// Make sure <aside> elements have a `complementary` role
+		$("aside").attr("role", "complementary")
+
 		// Make <pre> code blocks keyboard-accessible by adding `tabindex="0"`
 		$("pre > code").attr("tabindex", 0)
 

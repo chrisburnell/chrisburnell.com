@@ -136,24 +136,20 @@ export const formatAsMarkdown = (string) => {
  * @returns {string}
  */
 export const excerptize = (string, keepImages = false) => {
-	if (keepImages) {
-		return string
-			.replace(/<(script|style).*?>((.|\n)*?)<\/(script|style)>/g, "")
-			.replace(/<\/(p|blockquote)>(\s+)?<(p|blockquote)>/, "<br>")
-			.replace("<p></p>", "")
-			.replace("<p>", "")
-			.replace("</p>", "")
-			.replace("<blockquote>", "<q>")
-			.replace("</blockquote>", "</q>")
-	}
-	return stripImages(string)
-		.replace(/<(figure|script|style).*?>((.|\n)*?)<\/(figure|script|style)>/g, "")
+	let filteredString = string
+		.split("<!-- end excerpt -->")[0]
+		.replace(/<(script|style).*?>((.|\n)*?)<\/(script|style)>/g, "")
 		.replace(/<\/(p|blockquote)>(\s+)?<(p|blockquote)>/, "<br>")
 		.replace("<p></p>", "")
 		.replace("<p>", "")
 		.replace("</p>", "")
 		.replace("<blockquote>", "<q>")
 		.replace("</blockquote>", "</q>")
+
+	if (keepImages) {
+		return filteredString
+	}
+	return stripImages(filteredString).replace(/<(figure|script|style).*?>((.|\n)*?)<\/(figure|script|style)>/g, "")
 }
 
 /**

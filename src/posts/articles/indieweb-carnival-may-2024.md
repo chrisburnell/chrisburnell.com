@@ -5,7 +5,7 @@ title: IndieWeb Carnival May 2024 Submission
 description: DESCRIPTION TODO
 tags:
   - weblogpomo
-  - WeblogPoMo2024
+  - weblogpomo2024
 ---
 
 https://hamatti.org/posts/indie-web-carnival-may-2024-creative-environments/

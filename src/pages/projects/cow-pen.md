@@ -15,8 +15,6 @@ tags:
   - web-components
 ---
 
-<script type="module" src="/js/components/cow-pen.js"></script>
-
 <figure>
     <cow-pen datetime="2024-02-17T22:00:00+08:00"></cow-pen>
 </figure>
@@ -24,3 +22,5 @@ tags:
 {% include 'package.njk' %}
 
 <code>&lt;cow-pen&gt;</code> is a native Web Component that gives you a 90s-era adopted pet cow for your web pages.
+
+{%- js 'module' -%}{% include '../../../node_modules/@chrisburnell/cow-pen/cow-pen.js' %}{%- endjs -%}

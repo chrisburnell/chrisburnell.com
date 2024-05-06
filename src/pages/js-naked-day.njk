@@ -3,8 +3,6 @@ title: JS Naked Day
 description: A countdown to JS Naked Day.
 ---
 
-<script type="module" src="/js/components/event-countdown.js"></script>
-
 <figure class=" [ box ] [ gamma ] ">
 	<event-countdown name="JS Naked Day" annual="true">JS Naked Day starts on <time start datetime="{{ global.currentYear }}-04-24T00:00:00+14:00">24 April 00:00:00 UTC+14</time> and ends on <time end datetime="{{ global.currentYear }}-04-24T23:59:59-12:00">24 April 23:59:59 UTC-12</time>.</event-countdown>
 </figure>
@@ -22,3 +20,5 @@ description: A countdown to JS Naked Day.
 <hr>
 
 <p>See also: <a href="/css-naked-day/">CSS Naked Day</a></p>
+
+{%- js 'module' -%}{% include '../../node_modules/@chrisburnell/event-countdown/event-countdown.js' %}{%- endjs -%}

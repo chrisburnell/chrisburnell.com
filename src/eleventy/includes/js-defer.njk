@@ -1,8 +1,9 @@
 {# Deferred JS -#}
+<script type="module" src="{% getBundleFileUrl 'js', 'deferred' %}"></script>
 <script type="module" src="{% getBundleFileUrl 'js', 'module' %}"></script>
 <script src="{% getBundleFileUrl 'js' %}"></script>
 
-{%- js 'module' -%}{% renderFile 'src/js/defer.js' %}{%- endjs -%}
+{%- js 'deferred' -%}{% renderFile 'src/js/defer.js' %}{%- endjs -%}
 {%- js -%}{% renderFile 'src/js/imports/settings.js' %}{%- endjs -%}
 {%- if eleventy.env.runMode === 'build' -%}
 {%- js -%}

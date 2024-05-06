@@ -8,7 +8,8 @@
 				<br>
 				<a href="https://indieweb.org/reply#How_To" rel="external noopener" target="_blank">Learn how to send a Webmention</a> or let me know the <abbr title="Uniform Resource Locator">URL</abbr>:
 			</label>
-			<c-url-input id="responses-source" class=" [ responses__input ] " name="source" size="20" aria-required="true" required></c-url-input>
+			<input   />
+			<input type="url" inputmode="url" enterkeyhint="send" id="responses-source" class=" [ responses__input ] " name="source" size="20" aria-required="true" required />
 			<input type="hidden" name="target" value="{{ canonical }}">
 			<button class=" [ responses__submit ] " type="submit">Send</button>
 			<p style="grid-column: 1 / span 2;">You can also <a href="https://quill.p3k.io/?dontask=1&me=https://commentpara.de&reply={{ canonical }}" class=" [ button  button--small ] " rel="external noopener">send an anonymous reply</a> <small>(using <a href="https://quill.p3k.io" rel="external noopener">Quill</a> and <a href="https://commentpara.de" rel="external noopener">Comment Parade</a>)</small>.</p>
@@ -82,4 +83,5 @@
 			</div>
 		{% endif %}
 	</div>
+	{%- js 'module' -%}{% renderFile 'src/js/components/url-input.js' %}{%- endjs -%}
 {% endif %}

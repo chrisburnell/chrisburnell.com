@@ -4,7 +4,7 @@ title: What are you interested in?
 description: In the world of online self-expression, there’s been a fascinating trend of website authors creating discoverable pages to help others learn about who they are, what they’re thinking about, and more. I’m proposing an addition to these initiatives that helps us discover what people are passionate about.
 tags:
   - weblogpomo
-  - WeblogPoMo2024
+  - weblogpomo2024
   - writing
 syndicate_to:
   - https://fediverse.repc.co/@chrisburnell/112365680485181016

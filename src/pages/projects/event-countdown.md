@@ -13,8 +13,6 @@ tags:
   - web-components
 ---
 
-<script type="module" src="/js/components/event-countdown.js"></script>
-
 <noscript><p class=" [ box  box--error ] ">Unfortunately, this Web Component requires JavaScript to function correctly!</p></noscript>
 
 <figure class=" [ box ] [ gamma ] [ requires-js ] ">
@@ -116,3 +114,5 @@ You can also override the maximum unit of time used by providing a `max-division
     CSS Naked Day starts on <time start datetime="2024-04-09T00:00:00+14:00">9 April 2024 00:00:00 UTC+14</time>.
 </event-countdown>
 ```
+
+{%- js 'module' -%}{% include '../../../node_modules/@chrisburnell/event-countdown/event-countdown.js' %}{%- endjs -%}

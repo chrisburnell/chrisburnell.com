@@ -545,7 +545,11 @@ Colour formats like HSL and OKLCH give us much more intuitive understanding of t
 
 I hope you found this useful, and I’d love to know how others are doing this sort of things or what kind of pitfalls I might run into using this technique!
 
-{% css %}
+## Further Reading
+
+- [Creating color palettes with the CSS color-mix() function](https://developer.mozilla.org/en-US/blog/color-palettes-css-color-mix/) by [Michelle Barker](https://css-irl.info)
+
+{% css -%}
 @layer overrides {
     .palette li {
         flex-grow: 0;
@@ -657,9 +661,8 @@ I hope you found this useful, and I’d love to know how others are doing this s
         --color-bear: color-mix(in oklab, var(--color-raven), var(--color-snowy) 75%);
     }
 }
-{% endcss %}
-
-<script>
+{%- endcss %}
+{% js -%}
 (async () => {
     "use strict"
 
@@ -750,8 +753,4 @@ I hope you found this useful, and I’d love to know how others are doing this s
         input.addEventListener("touchend", setPalette)
     })
 })()
-</script>
-
-## Further Reading
-
-- [Creating color palettes with the CSS color-mix() function](https://developer.mozilla.org/en-US/blog/color-palettes-css-color-mix/) by [Michelle Barker](https://css-irl.info)
+{%- endjs %}

@@ -7,8 +7,6 @@ toc: true
 {%- from 'macros/deckItem.njk' import deckItem -%}
 {%- from "macros/shelfItem.njk" import shelfItem -%}
 
-{% css -%}{% renderFile 'src/css/pages/styleguide.scss' %}{%- endcss -%}
-
 <h2>Colours</h2>
 
 <ul id="colors" class=" [ palette ] ">
@@ -614,7 +612,6 @@ p q r s t u v w x y z { | } ~</pre>
 
 <h2>Sparklines</h2>
 
-<script type="module" src="/js/components/svg-sparkline.js"></script>
 <div class=" [ grid ] " style="--min-inline-size: 212px;">
 	<article style="display: grid; place-items: center;">
 		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" gradient-color="var(--color-raven)" fill="true" endpoint-color="var(--color-maple)" curve="true" animate="true" start-label="Start" end-label="End"></svg-sparkline>
@@ -651,3 +648,6 @@ p q r s t u v w x y z { | } ~</pre>
 {% browserSupport 'css-has' %}
 
 <p class="italic">I keep track of a whole bunch of different browser features over on my <a href="/feature-watch/">Browser Feature Watch</a> project.</p>
+
+{% css -%}{% renderFile 'src/css/pages/styleguide.scss' %}{%- endcss -%}
+{%- js 'module' -%}{% include '../../node_modules/@chrisburnell/svg-sparkline/svg-sparkline.js' %}{%- endjs -%}

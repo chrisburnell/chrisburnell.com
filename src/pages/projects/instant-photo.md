@@ -12,8 +12,6 @@ tags:
   - web-components
 ---
 
-<script type="module" src="/js/components/instant-photo.js"></script>
-
 <figure>
     <instant-photo develop>
         <img src="/images/avatar@4x.jpeg" alt="Chris Burnell" class=" [ canada ] " width="400" height="400">
@@ -59,3 +57,5 @@ There are also a handful of CSS variables that you can set which will override t
 You can check out the full documentation, source code, and demos on GitHub, as well as provide feedback and report bugs on GitHub:
 
 [https://github.com/chrisburnell/instant-photo](https://github.com/chrisburnell/instant-photo)
+
+{%- js 'module' -%}{% include '../../../node_modules/@chrisburnell/instant-photo/instant-photo.js' %}{%- endjs -%}

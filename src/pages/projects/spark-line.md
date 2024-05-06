@@ -19,8 +19,6 @@ toc: true
     <p><a href="/svg-sparkline/"><code>&lt;svg-sparkline&gt;</code></a></p>
 </div>
 
-<script type="module" src="/js/components/spark-line.js"></script>
-
 <noscript><p>Unfortunately, this page requires JavaScript to display sparklines and use the interactive example.</p></noscript>
 
 <figure>
@@ -249,6 +247,7 @@ If you wanted to use `<is-land>` as well, I recommend something like the followi
 	</fieldset>
 </form>
 
+{%- js 'module' -%}{% include '../../../node_modules/@chrisburnell/spark-line/spark-line.js' %}{%- endjs -%}
 {% js 'module' -%}
 /**
  * Interactive Sparkline

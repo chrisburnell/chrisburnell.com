@@ -38,7 +38,6 @@ show_links_as_replies: true
 <hr>
 
 <figure style="margin-block-start: var(--size-medium);">
-	<script type="module" src="/js/components/cow-pen.js"></script>
 	<cow-pen name="Cornelius" type="highland" datetime="2024-02-21T15:03:36+08:00" style="margin-inline: auto; font-size: 14px;"></cow-pen>
 	<figcaption>
 		<p><strong>Adopt your own cow!</strong> Coming soon…</p>
@@ -94,3 +93,4 @@ body > canvas {
 }
 {%- endcss -%}
 {%- js 'module' -%}{% renderFile 'src/js/pages/guestbook.js' %}{%- endjs -%}
+{%- js 'module' -%}{% include '../../node_modules/@chrisburnell/cow-pen/cow-pen.js' %}{%- endjs -%}

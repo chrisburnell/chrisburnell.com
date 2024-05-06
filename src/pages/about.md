@@ -98,66 +98,66 @@ I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link
 
 {% css -%}
 .marquee {
-  inline-size: 100%;
-  display: flex;
-  gap: var(--size-large);
-  margin-block: var(--size-medium);
-  position: relative;
-  user-select: none;
+    inline-size: 100%;
+    display: flex;
+    gap: var(--size-large);
+    margin-block: var(--size-medium);
+    position: relative;
+    user-select: none;
 }
 .marquee__content {
-  flex-shrink: 0;
-  min-inline-size: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  gap: var(--size-large);
+    flex-shrink: 0;
+    min-inline-size: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: var(--size-large);
 }
 @media (prefers-reduced-motion: no-preference) {
-  .marquee {
-    overflow-x: hidden;
-  }
-  .marquee__content {
-    animation: scroll {{ clients.length }}s linear infinite;
-  }
+    .marquee {
+        overflow-x: hidden;
+    }
+    .marquee__content {
+        animation: scroll {{ clients.length }}s linear infinite;
+    }
 }
 @media (prefers-reduced-motion: reduce) {
-  .marquee__content[aria-hidden="true"] {
-    display: none;
-  }
+    .marquee__content[aria-hidden="true"] {
+        display: none;
+    }
 
-  .marquee__content {
-    max-inline-size: 100%;
-    flex-wrap: wrap;
-  }
+    .marquee__content {
+        max-inline-size: 100%;
+        flex-wrap: wrap;
+    }
 }
 .marquee:hover .marquee__content,
 .marquee:has(a:is(:focus, :active)) .marquee__content  {
-  animation-play-state: paused;
+    animation-play-state: paused;
 }
 .marquee__content a {
-  display: block;
+    display: block;
 }
 .marquee__content img {
-  max-inline-size: 7rem;
-  max-block-size: 5rem;
-  margin: var(--size-medium) 0;
+    max-inline-size: 7rem;
+    max-block-size: 5rem;
+    margin: var(--size-medium) 0;
 }
 @keyframes scroll {
-  0% {
-    transform:translateX(0)
-  }
-  to {
-    transform:translateX(calc(-100% - var(--size-large)))
-  }
+    0% {
+        transform:translateX(0)
+    }
+    to {
+        transform:translateX(calc(-100% - var(--size-large)))
+    }
 }
 {%- endcss %}
 
-<!-- <hr> -->
+{# <hr> #}
 
-<!-- ## Testimonials -->
+{# ## Testimonials #}
 
-<!-- {% include 'testimonials.njk' %} -->
+{# {% include 'testimonials.njk' %} #}
 
 <hr>
 

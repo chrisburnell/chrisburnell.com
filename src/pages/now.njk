@@ -142,7 +142,6 @@ toc: true
 
 <h3 id="listening"><a href="/listening/">Latest listens</a></h3>
 
-<script type="module">{% renderFile 'src/js/components/lastfm-listening.js' %}</script>
 <lastfm-listening username="{{ author.lastfm }}" limit="3" aria-live="true">
 	<ol class=" [ grid ] [ shelf  shelf--square ] ">
 		{% for track in (lastfm.recentTracks | limit(3)) -%}
@@ -206,3 +205,5 @@ toc: true
 		{%- endfor %}
 	</ol>
 {%- endif %}
+
+{%- js 'module' -%}{% renderFile 'src/js/components/lastfm-listening.js' %}{%- endjs -%}

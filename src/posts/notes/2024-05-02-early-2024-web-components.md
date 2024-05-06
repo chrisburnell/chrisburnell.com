@@ -4,7 +4,7 @@ title: Web Components from early 2024
 description: I’ve been having a lot of fun creating reusable Web Components, so here are three that I’ve built and been using this so far this year.
 tags:
   - weblogpomo
-  - WeblogPoMo2024
+  - weblogpomo2024
   - writing
   - web-components
   - javascript
