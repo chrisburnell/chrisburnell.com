@@ -6,6 +6,7 @@ tags:
   - weblogpomo
   - weblogpomo2024
   - writing
+  - pinned
 syndicate_to:
   - https://fediverse.repc.co/@chrisburnell/112365680485181016
 ---
