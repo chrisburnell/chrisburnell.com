@@ -12,7 +12,7 @@ const markdown = markdownParser({
 	.disable("code")
 
 markdown.renderer.rules.footnote_block_open = () => {
-	return `<hr>
+	return `<hr style="--rule-space: var(--size-medium);">
 	<nav aria-label="Footnotes">
 		<ol>`
 }

@@ -27,7 +27,7 @@ I think it’s also important to let people know how to get in touch with you on
 
 I’m excited to learn what you’re passionate and interested in! I’d love if you joined me in creating your own `/interests` page so we can start kindling the flames of impassioned conversation with like-minded folks across the web!
 
---------
+<hr style="--rule-space: var(--size-medium);">
 
 <nav aria-label="Footnotes">
 	<ol>

@@ -84,7 +84,7 @@ Compositions are a seriously powerful concept that I’ve enjoyed using ever sin
 
 What methodologies do *you* use when authoring CSS? Do you have any compositions that you find yourself using all over the place? I’d love to learn more about what gives *you* a sense of control over your styles too!
 
---------
+<hr style="--rule-space: var(--size-medium);">
 
 <nav aria-label="Footnotes">
 	<ol>
