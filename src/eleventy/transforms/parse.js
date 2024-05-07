@@ -57,6 +57,9 @@ export default async function (value, outputPath) {
 			$(element).attr("id", headingID)
 		})
 
+		// Remove content that is intended for RSS only
+		$(".rss-only").remove()
+
 		// Make sure <ul> elements are accessible even with `list-style: none`
 		$("ul").attr("role", "list")
 

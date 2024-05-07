@@ -31,10 +31,10 @@ I’m excited to learn what you’re passionate and interested in! I’d love if
 <nav aria-label="Footnotes">
 	<ol>
 		<li id="fn1">
-			<p><a href="https://aboutideasnow.com/about" rel="external noopener">About Ideas Now</a></p>
+			<p><a href="https://aboutideasnow.com/about" rel="external noopener">About Ideas Now</a> <a href="#fnref1">↩︎</a></p>
 		</li>
 		<li id="fn2">
-			<p><a href="https://nownownow.com/about" rel="external noopener">nownownow.com</a></p>
+			<p><a href="https://nownownow.com/about" rel="external noopener">nownownow.com</a> <a href="#fnref2">↩︎</a></p>
 		</li>
 	</ol>
 </nav>

@@ -1,9 +1,12 @@
 <script webc:setup>
+function getValues(string) {
+	return string.split(",")
+}
 function maxDecimals(number, decimals = 2) {
 	return +number.toFixed(decimals)
 }
 function getViewBox(string) {
-	const values = string.split(",")
+	const values = getValues(string)
 	return `0 0 ${values.length - 1} ${Math.max(...values) + 2}`
 }
 function lineCommand(point, i) {
@@ -44,7 +47,7 @@ function bezierCommand(point, i, a) {
 	return `C ${maxDecimals(csx)},${maxDecimals(csy)} ${maxDecimals(cex)},${maxDecimals(cey)} ${i},${point}`
 }
 function getPath(values, command = lineCommand) {
-	return values
+	return getValues(values)
 		// flips each point in the vertical range
 		.map((point) => Math.max(...values) - point + 1)
 		// generate a string

@@ -125,7 +125,7 @@ This Web Component comes with a number of attributes to control the `background-
 
 {% include 'weblogpomo2024.njk' %}
 
-<style>
+{% css -%}
 paper-stamp {
     background-image:
         radial-gradient(
@@ -159,4 +159,4 @@ paper-stamp-nojs {
 paper-stamp-nojs img {
     display: block;
 }
-</style>
+{%- endcss %}

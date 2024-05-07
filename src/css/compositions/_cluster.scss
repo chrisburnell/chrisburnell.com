@@ -24,4 +24,10 @@
 			}
 		}
 	}
+
+	// TODO Not working
+	// Can also try using `var(--delineator, attr(data-delineator, "·"))` above
+	&[data-delineator] {
+		--delineator: attr(data-delineator);
+	}
 }
