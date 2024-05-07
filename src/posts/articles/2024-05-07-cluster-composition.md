@@ -1,7 +1,7 @@
 ---
 date: 2024-05-07T18:39:29+0800
 title: The Cluster
-description: In this post, I’m going to cover how I use a snippet of CSS that I’m calling a <q>Cluster</q> for laying out list items.
+description: In this post, I’m going to cover how I use a snippet of CSS for laying out list items that I’m calling a <q>Cluster</q>.
 tags:
   - weblogpomo
   - weblogpomo2024
