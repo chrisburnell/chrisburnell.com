@@ -11,23 +11,26 @@ wide: true
 toc: true
 ---
 
-<div class=" [ scroll-inline  scroll-inline-shadow ] ">
-	<table>
-		<thead>
-			<tr>
-				<th style="inset-block-start: 0;"> </th>
-				{% for browser in browsersByType %}
-					<th class=" [ sideways ] " style="padding-block: var(--size-small-medium); vertical-align: bottom;">{{ browser.name }}</th>
+<c-details class=" [ no-border  no-padding ] ">
+	<summary>Table of Features</summary>
+	<div class=" [ scroll-inline  scroll-inline-shadow ] ">
+		<table>
+			<thead>
+				<tr>
+					<th style="inset-block-start: 0;"> </th>
+					{% for browser in browsersByType %}
+						<th class=" [ sideways ] " style="padding-block: var(--size-small-medium); vertical-align: bottom;">{{ browser.name }}</th>
+					{% endfor %}
+				</tr>
+			</thead>
+			<tbody>
+				{% for feature in browserFeaturesSorted %}
+					{% browserSupportRow feature %}
 				{% endfor %}
-			</tr>
-		</thead>
-		<tbody>
-			{% for feature in browserFeaturesSorted %}
-				{% browserSupportRow feature %}
-			{% endfor %}
-		</tbody>
-	</table>
-</div>
+			</tbody>
+		</table>
+	</div>
+</c-details>
 
 <hr>
 
