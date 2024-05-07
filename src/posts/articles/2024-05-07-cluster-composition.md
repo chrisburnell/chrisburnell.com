@@ -9,7 +9,7 @@ tags:
   - css-variables
 ---
 
-<p class=" [ rss-only ] "><em>The contents of this post require my website’s CSS to appear properly.<br>See the web version: <a href="{{ canonical }}"></a>.</em></p>
+<p class=" [ rss-only ] "><em>The contents of this post require my website’s CSS to appear properly.<br>See the web version: <a href="{{ canonical }}">{{ canonical }}</a>.</em></p>
 
 In the [*CUBE CSS* methodology](https://cube.fyi), there is the concept of a <q>composition</q>. In short, a composition is a piece of CSS that creates <q>flexible, component-agnostic layout systems that support as many variants of content as possible</q><a href="#fn1" id="fnref1"><sup class="footnote-ref">[1]</sup></a>.
 
