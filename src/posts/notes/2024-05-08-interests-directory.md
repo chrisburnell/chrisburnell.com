@@ -9,7 +9,7 @@ syndicate_to:
   - https://fediverse.repc.co/@chrisburnell/112406774449181233
 ---
 
-Just over a week ago, I published [<q>What are you interested in?</q>](/article/slash-interests/), and I’ve been really pleased with the responses from around the web!
+Just over a week ago, I published [<q>What are you interested in?</q>](/note/slash-interests/), and I’ve been really pleased with the responses from around the web!
 
 Because people seem to be quite interested in the idea—with some folks having already published fully-fledged `/interests` pages of their own—I decided to create a directory for these pages to help with discoverability.
 
