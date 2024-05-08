@@ -5,6 +5,8 @@ description: I made a directory for /interests pages! If you’ve built your own
 tags:
   - weblogpomo
   - weblogpomo2024
+syndicate_to:
+  - https://fediverse.repc.co/@chrisburnell/112406774449181233
 ---
 
 Just over a week ago, I published [<q>What are you interested in?</q>](/article/slash-interests/), and I’ve been really pleased with the responses from around the web!
