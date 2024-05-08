@@ -53,13 +53,13 @@ excludeFromSearch: true
 			{% endif %}
 
 			<h2 id="latest">
-				<a href="/writing/">Latest Writing</a>
+				<a href="/posts/#latest">Latest Posts</a>
 			</h2>
 			<div class=" [ deck ] [ h-feed ] ">
 				{% for item in collections.pinned %}
 					{{ deckItem(item, { hfeed: true, truncate: true, show_pinned: true }) }}
 				{% endfor %}
-				{% for item in collections.writings | noPinnedFilter | rssOnlyFilter | limit(site.limits.feature) %}
+				{% for item in collections.features | noPinnedFilter | rssOnlyFilter | limit(site.limits.homepage) %}
 					{{ deckItem(item, { hfeed: true, truncate: true }) }}
 				{% endfor %}
 			</div>

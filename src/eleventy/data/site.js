@@ -18,6 +18,7 @@ export const limits = {
 	deck: 2,
 	shelf: 3,
 	feature: 2,
+	homepage: 4,
 	feed: 10,
 	sparkline: 15,
 	maxWords: 40,
