@@ -61,7 +61,7 @@ class LastFMListening extends HTMLElement {
 					<a href="${track.artist.url}" class=" [ h-cite ] " rel="external noopener">${track.artist.name}</a>
 				</div>
 				<div>
-					<relative-time><time datetime="${datetime.toISOString()}" class=" [ dt-published ] ">${datetime.getTime() === Date.now() ? "<em>listening now</em>" : `${friendlyDate(datetime)} ${friendlyTime(datetime)}`}</time></relative-time>
+					${datetime.getTime() === Date.now() ? "<em>listening now</em>" : `<relative-time><time datetime="${datetime.toISOString()}" class=" [ dt-published ] ">${friendlyDate(datetime)} ${friendlyTime(datetime)}</time></relative-time>`}
 				</div>
 			</article>
 		`
