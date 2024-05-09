@@ -4,7 +4,7 @@ description: A list of my projects and rabbit hole deep-dives.
 perch: true
 ---
 {%- from 'macros/deckItem.njk' import deckItem -%}
-<h2 id="web"><c-emoji>{{ emojis.computer }}</c-emoji>Web Projects</h2>
+<h2 id="web"><c-emoji>{{ emojis.computer }}</c-emoji>Web Projects <small>({{ collections.projects.length + projects.web.length }})</small></h2>
 
 <div class=" [ deck ] ">
 	{% for item in collections.projects %}
@@ -17,7 +17,7 @@ perch: true
 
 <hr>
 
-<h2 id="personal"><c-emoji>{{ emojis.wave }}</c-emoji>Personal Projects</h2>
+<h2 id="personal"><c-emoji>{{ emojis.wave }}</c-emoji>Personal Projects <small>({{ projects.personal.length }})</small></h2>
 
 <div class=" [ deck ] ">
 	{% for item in projects.personal %}
@@ -27,7 +27,7 @@ perch: true
 
 <hr>
 
-<h2 id="past-versions"><c-emoji>{{ emojis.scroll }}</c-emoji>{{ site.url | getHost }} in the past</h2>
+<h2 id="past-versions"><c-emoji>{{ emojis.scroll }}</c-emoji>{{ site.url | getHost }} in the past <small>({{ projects.previousVersions.length }})</small></h2>
 
 <div class=" [ deck ] ">
 	{% for item in projects.previousVersions %}

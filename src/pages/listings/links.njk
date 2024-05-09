@@ -118,7 +118,7 @@ wide: true
 	<article class=" [ flow ] ">
 		<img src="https://v1.indieweb-avatar.11ty.dev/{{ ('https://' + author.mastodon_domain) | urlencode }}/" class=" [ avatar ] " width="30" height="30" loading="lazy" decoding="async">
 		<h1>
-			<a href="https://{{ author.mastodon_domain }}/{{ author.mastodon.split('@')[1] }}" rel="external noopener">
+			<a href="https://{{ author.mastodon_domain }}/@{{ author.mastodon.split('@')[1] }}" rel="external noopener">
 				Mastodon
 				<br>
 				<small>{{ author.mastodon }}</small>

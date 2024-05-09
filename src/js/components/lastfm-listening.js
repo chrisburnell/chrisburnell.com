@@ -33,7 +33,7 @@ class LastFMListening extends HTMLElement {
 	}
 
 	fetchLatestTracks() {
-		return fetch(`https://api.chrisburnell.com/lastfm/${this.username}`)
+		return fetch(`https://api.chrisburnell.com/lastfm-recenttracks/?username=${this.username}`)
 			.then((response) => {
 				return response.json()
 			})

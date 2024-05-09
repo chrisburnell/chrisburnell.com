@@ -94,4 +94,4 @@ I also have to mention a few blogs run by some clever folks because they’re wh
 
 <h2 id="thats-it">And that’s it!</h2>
 
-Like I said before, I hope to be able to write about a number of topics in front end web development and CSS in the coming months, and hopefully years! You can [subscribe](/feed.xml "All Posts Feed") if you’re interested in what I have to say. If you have any feedback on this post or the design or the code, hit me up on [Mastodon](https://{{ author.mastodon_domain }}/{{ author.mastodon.split('@')[1] }}) or [send me an email](mailto:{{ author.email }})!
+Like I said before, I hope to be able to write about a number of topics in front end web development and CSS in the coming months, and hopefully years! You can [subscribe](/feed.xml "All Posts Feed") if you’re interested in what I have to say. If you have any feedback on this post or the design or the code, hit me up on [Mastodon](https://{{ author.mastodon_domain }}/@{{ author.mastodon.split('@')[1] }}) or [send me an email](mailto:{{ author.email }})!
