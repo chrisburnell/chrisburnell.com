@@ -4,15 +4,13 @@ import { lastfm } from "./author.js"
 import { cacheDurations } from "./site.js"
 dotenv.config()
 
-const lastfmApiUrl = `https://ws.audioscrobbler.com/2.0/?user=${lastfm}&api_key=${process.env.LASTFM_API_TOKEN}&format=json`
-
 const recentTracks = async function () {
-	let url = `${lastfmApiUrl}&method=user.getrecenttracks&limit=10&extended=1`
+	let url = `https://api.chrisburnell.com/lastfm-recenttracks?username=${lastfm}&limit=10&secret=${process.env.PERSONAL_API_KEY}`
 	let json = await EleventyFetch(url, {
 		duration: cacheDurations.hourly,
 		type: "json",
 	})
-	return json.recenttracks.track.map((track) => {
+	return json.map((track) => {
 		const datetime = track.date ? new Date(Number(track.date.uts) * 1000).toISOString() : new Date().toISOString()
 		let image = track.image[3]?.["#text"]
 		if (!image || image.includes("2a96cbd8b46e442fc41c2b86b821562f.png")) {
@@ -26,12 +24,12 @@ const recentTracks = async function () {
 }
 
 const topAlbums = async function () {
-	let url = `${lastfmApiUrl}&method=user.gettopalbums&limit=5&period=7day`
+	let url = `https://api.chrisburnell.com/lastfm-topalbums?username=${lastfm}&limit=5&period=7day&secret=${process.env.PERSONAL_API_KEY}`
 	let json = await EleventyFetch(url, {
 		duration: cacheDurations.hourly,
 		type: "json",
 	})
-	return json.topalbums.album.map((album) => {
+	return json.map((album) => {
 		let image = album.image[3]?.["#text"]
 		if (!image || image.includes("2a96cbd8b46e442fc41c2b86b821562f.png")) {
 			image = "/images/default-album-cover.png"
@@ -43,12 +41,12 @@ const topAlbums = async function () {
 }
 
 const topArtists = async function () {
-	let url = `${lastfmApiUrl}&method=user.gettopartists&limit=5&period=7day`
+	let url = `https://api.chrisburnell.com/lastfm-topartists?username=${lastfm}&limit=5&period=7day&secret=${process.env.PERSONAL_API_KEY}`
 	let json = await EleventyFetch(url, {
 		duration: cacheDurations.hourly,
 		type: "json",
 	})
-	return json.topartists.artist.map((artist) => {
+	return json.map((artist) => {
 		let image = artist.image[3]?.["#text"]
 		if (!image || image.includes("2a96cbd8b46e442fc41c2b86b821562f.png")) {
 			image = "/images/default-album-cover.png"

@@ -1,7 +1,7 @@
 import dotenv from "dotenv"
 dotenv.config()
 
-export const personalApiKey = process.env.PERSONAL_API_KEY || ""
+export const personalApiKeyForLocal = process.env.PERSONAL_API_KEY_FOR_LOCAL
 
 export const nowEpoch = Date.now()
 export const nowISO = new Date().toISOString()
@@ -26,7 +26,7 @@ const segment = () => {
 export const random = `${segment()}-${segment()}-${segment()}`
 
 export default {
-	personalApiKey,
+	personalApiKeyForLocal,
 	currentYear,
 	nowEpoch,
 	nowISO,

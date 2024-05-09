@@ -8,7 +8,7 @@ wide: true
 
 <p>To see (almost) my entire listening history, checkout my <a href="https://last.fm/user/{{ author.lastfm }}">Last.fm profile</a>.</p>
 
-<lastfm-listening url="https://api.chrisburnell.com/lastfm-recenttracks?username={{ author.lastfm }}&secret={{ global.personalApiKey }}" aria-live="true">
+<lastfm-listening url="https://api.chrisburnell.com/lastfm-recenttracks?username={{ author.lastfm }}{% if global.personalApiKeyForLocal %}&secret={{ global.personalApiKeyForLocal }}{% endif %}" aria-live="true">
 	<ol class=" [ grid ] [ shelf  shelf--square ] ">
 		{% for track in (lastfm.recentTracks | limit(10)) %}
 			<article class=" [ flow ] ">
