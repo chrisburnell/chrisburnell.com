@@ -61,6 +61,7 @@ $referer_host = parse_url($_SERVER['HTTP_REFERER'], PHP_URL_HOST);
 
 if(substr($referer_host, 0 - strlen($allowed_host)) == $allowed_host) {
 	$response = file_get_contents("https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&api_key=" . $api_key . "&format=json&user=" . $_GET["username"]);
+
 	echo $response;
 }
 ```
