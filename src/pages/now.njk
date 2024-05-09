@@ -143,7 +143,7 @@ toc: true
 
 <h3 id="listening"><a href="/listening/">Latest listens</a></h3>
 
-<lastfm-listening username="{{ author.lastfm }}" limit="3" aria-live="true">
+<lastfm-listening url="https://api.chrisburnell.com/lastfm-recenttracks?username={{ author.lastfm }}&secret={{ global.personalApiKey }}" limit="3" aria-live="true">
 	<ol class=" [ grid ] [ shelf  shelf--square ] ">
 		{% for track in (lastfm.recentTracks | limit(3)) -%}
 			<article class=" [ flow ] ">
@@ -207,4 +207,4 @@ toc: true
 	</ol>
 {%- endif %}
 
-{%- js 'module' -%}{% renderFile 'src/js/components/lastfm-listening.js' %}{%- endjs -%}
+{%- js 'module' -%}{% include '../js/components/lastfm-listening.js' %}{%- endjs -%}

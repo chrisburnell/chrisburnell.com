@@ -1,6 +1,3 @@
-import { friendlyDate, friendlyTime } from "../../eleventy/filters/dates.js"
-import { clamp } from "../../functions/utils.js"
-
 class LastFMListening extends HTMLElement {
 	static register(tagName) {
 		if ("customElements" in window) {
@@ -9,8 +6,8 @@ class LastFMListening extends HTMLElement {
 	}
 
 	connectedCallback() {
-		if (!this.hasAttribute("username")) {
-			console.error(`Missing \`username\` attribute!`, this)
+		if (!this.hasAttribute("url")) {
+			console.error(`Missing \`url\` attribute!`, this)
 			return
 		}
 
@@ -18,8 +15,7 @@ class LastFMListening extends HTMLElement {
 	}
 
 	init() {
-		this.username = this.getAttribute("username")
-		this.limit = this.hasAttribute("limit") ? clamp(this.getAttribute("limit"), 1, 10) : 10
+		this.limit = this.hasAttribute("limit") ? this.clamp(this.getAttribute("limit"), 1, 10) : 10
 
 		this.fetchLatestTracks().then((data) => {
 			this.innerHTML = `
@@ -33,7 +29,7 @@ class LastFMListening extends HTMLElement {
 	}
 
 	fetchLatestTracks() {
-		return fetch(`https://api.chrisburnell.com/lastfm-recenttracks/?username=${this.username}`)
+		return fetch(this.getAttribute("url"))
 			.then((response) => {
 				return response.json()
 			})
@@ -61,10 +57,14 @@ class LastFMListening extends HTMLElement {
 					<a href="${track.artist.url}" class=" [ h-cite ] " rel="external noopener">${track.artist.name}</a>
 				</div>
 				<div>
-					${datetime.getTime() === Date.now() ? "<em>listening now</em>" : `<relative-time><time datetime="${datetime.toISOString()}" class=" [ dt-published ] ">${friendlyDate(datetime)} ${friendlyTime(datetime)}</time></relative-time>`}
+					${datetime.getTime() === Date.now() ? "<em>listening now</em>" : `<relative-time><time datetime="${datetime.toISOString()}" class=" [ dt-published ] ">${datetime.toLocaleString()}</time></relative-time>`}
 				</div>
 			</article>
 		`
+	}
+
+	clamp(min, value, max) {
+		return Math.min(Math.max(Number(value), Number(min)), Number(max))
 	}
 }
 

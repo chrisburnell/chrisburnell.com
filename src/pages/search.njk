@@ -40,5 +40,5 @@ pagefind-search {
 {% if not global.isCSSNakedDay -%}
 	{%- js 'module' -%}{% include '../../node_modules/@zachleat/pagefind-search/pagefind-search.js' %}{%- endjs -%}
 {%- else -%}
-	{%- js 'module' -%}{% renderFile 'src/js/imports/pagefind-search.js' %}{%- endjs -%}
+	{%- js 'module' -%}{% include '../js/imports/pagefind-search.js' %}{%- endjs -%}
 {%- endif %}
