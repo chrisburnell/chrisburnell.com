@@ -1,7 +1,8 @@
 ---
 date: 2024-05-07T18:39:29+0800
-title: The Cluster
-description: In this post, I’m going to cover how I use a snippet of CSS for laying out list items that I’m calling a <q>Cluster</q>.
+updated: 2024-05-09T17:34:01+0800
+title: The Cluster Composition
+description: In this post, I’m going to cover how I use a snippet of CSS for laying out list items that called the <q>Cluster</q>.
 tags:
   - weblogpomo
   - weblogpomo2024
@@ -13,7 +14,7 @@ tags:
 
 In the [*CUBE CSS* methodology](https://cube.fyi), there is the concept of a <q>composition</q>. In short, a composition is a piece of CSS that creates <q>flexible, component-agnostic layout systems that support as many variants of content as possible</q><a href="#fn1" id="fnref1"><sup class="footnote-ref">[1]</sup></a>.
 
-I use my <q>Cluster</q> composition for a number of lists around my website: breadcrumbs, the category/tag lists on post pages, links in the footer, and [response types](https://chrisburnell.com/note/slash-interests/#responses), to name a few.
+While there *is* a layout in [Every Layout](https://every-layout.dev) *also* called [The Cluster](https://every-layout.dev/layouts/cluster/), I’ve built my own version that serves a very similar purpose but achieves it with slightly-different CSS. I’m using my version of the <q>Cluster</q> composition for a number of lists around my website: breadcrumbs, the category/tag lists on post pages, links in the footer, and [response types](https://chrisburnell.com/note/slash-interests/#responses), to name a few.
 
 This composition uses CSS variables with fallback values as a means of creating variants. This means that when the composition’s CSS variables are *not* set, the fallback value is applied, creating the <q>default</q> version of the composition, so by *setting* the CSS variables, we can modify the behaviour of the composition.
 
