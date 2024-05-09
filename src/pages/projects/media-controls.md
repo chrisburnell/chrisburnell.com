@@ -10,6 +10,6 @@ tags:
   - javascript
 ---
 
-<nav class="[ grid ] navigator">
+<nav class=" [ grid ] [ navigator ] ">
     <a href="{{ bookmark_of }}" class="[ button ] ">Check out Media Controls →</a>
 </nav>
