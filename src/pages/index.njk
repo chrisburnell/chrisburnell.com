@@ -59,7 +59,7 @@ excludeFromSearch: true
 				{% for item in collections.pinned %}
 					{{ deckItem(item, { hfeed: true, truncate: true, show_pinned: true }) }}
 				{% endfor %}
-				{% for item in collections.features | noPinnedFilter | rssOnlyFilter | limit(site.limits.homepage) %}
+				{% for item in collections.features | noPinnedFilter | rssOnlyFilter | limit(site.limits.homepage - collections.pinned.length) %}
 					{{ deckItem(item, { hfeed: true, truncate: true }) }}
 				{% endfor %}
 			</div>
