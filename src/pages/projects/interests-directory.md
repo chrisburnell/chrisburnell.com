@@ -1,5 +1,5 @@
 ---
-date: 2024-05-09T16:17:09+0800
+date: 2024-05-08T23:57:11+0800
 title: "The /interests Directory"
 description: "A directory of <code style=\"white-space: nowrap;\">/interests</code> pages from around the web."
 emoji: ⭐
