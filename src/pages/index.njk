@@ -52,9 +52,7 @@ excludeFromSearch: true
 				<hr>
 			{% endif %}
 
-			<h2 id="latest">
-				<a href="/posts/#latest">Latest Posts</a>
-			</h2>
+			<h2 id="latest">Latest Posts</h2>
 			<div class=" [ deck ] [ h-feed ] ">
 				{% for item in collections.pinned %}
 					{{ deckItem(item, { hfeed: true, truncate: true, show_pinned: true }) }}
@@ -69,9 +67,7 @@ excludeFromSearch: true
 
 			<hr>
 
-			<h2 id="projects">
-				<a href="/projects/" tabindex="-1">Latest Projects</a>
-			</h2>
+			<h2 id="projects">Latest Projects</h2>
 			<div class=" [ deck ] ">
 				{% for item in collections.projects | limit(site.limits.feature) %}
 					{{ deckItem(item) }}
