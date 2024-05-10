@@ -48,7 +48,7 @@ class LastFMListening extends HTMLElement {
 		return `
 			<article class=" [ flow ] ">
 				<a href="${track.url}" aria-hidden="true" tabindex="-1" class=" [ cover-anchor ] ">
-					<img src="${image}" alt="Cover art for ${track.name}" loading="lazy" decoding="async" class=" [ cover ] [ u-photo ] ">
+					<img src="${image}" alt="" role="presentation" loading="lazy" decoding="async" class=" [ cover ] [ u-photo ] ">
 				</a>
 				<h1>
 					<a href="${track.url}">${track.name}</a>
