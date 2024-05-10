@@ -14,12 +14,13 @@
 	backdrop-filter: blur(1px);
 }
 
-:is(.popover-settings, .popover-navigation) {
+[popover] {
 	--flow-space: var(--size-medium-large);
 
 	background-color: color-mix(in oklab, h(bear), h(snowy));
 	color: inherit;
 	max-inline-size: 100vi;
+	padding: var(--size-medium-large) var(--size-small-medium);
 	border: var(--size-border-thin) solid h(raven);
 	border-radius: var(--size-border-default);
 	box-shadow: var(--box-shadow-medium);
@@ -32,7 +33,6 @@
 }
 
 .popover-settings {
-	padding: var(--size-medium-large) var(--size-small-medium);
 
 	[id="sounds-toggle"] {
 		color: inherit !important; // override themes
@@ -40,7 +40,7 @@
 }
 
 .popover-navigation {
-	padding: var(--size-medium-large) var(--size-large);
+	padding-inline: var(--size-large);
 
 	@media (width > #{map-get($breakpoints, "tiny")}) {
 		display: none;
