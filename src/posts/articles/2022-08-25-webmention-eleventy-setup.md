@@ -72,6 +72,8 @@ module.exports = Object.assign({}, defaults, {
 
 Add both to Eleventy by adding them to your [Eleventy Config](https://www.11ty.dev/docs/config/):
 
+*Note: The path to your Webmentions config depends on where your Data files live, e.g. `./src/data/configWebmentions.js`.*
+
 ```javascript
 const pluginWebmentions = require("@chrisburnell/eleventy-cache-webmentions")
 const configWebmentions = require("../path_to_your_config/configWebmentions.js")
