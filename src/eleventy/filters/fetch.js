@@ -9,7 +9,7 @@ import { cacheDurations } from "../data/site.js"
 export const githubData = async (repository) => {
 	let url = `https://api.github.com/repos/${repository}`
 	let json = await EleventyFetch(url, {
-		duration: cacheDurations.weekly,
+		duration: cacheDurations.daily,
 		type: "json",
 	})
 	return json

@@ -15,7 +15,7 @@ While still riding the high of the fantastic [11ty Conference](https://conf.11ty
 
 While there’s certainly a lot to look forward to in the [Web Preferences API](https://wicg.github.io/web-preferences-api/), it hasn’t yet become a fully-fledged web standard and become available in browsers. Until that time comes, I’m using a combination of relatively-modern but stable browser features to serve up a series of settings/preferences that website visitors can use to control and modify their browsing experience.
 
-<aside><p>If you’re not familiar, the settings window can be opened from the top-right corner of any of my pages<span class="rss-only">; although, you’ll have to visit my website to see it in action: <a href="{{ canonical }}">{{ canonical }}</a></em></span>!</p></aside>
+<aside><p>If you’re not familiar, the settings window can be opened from the top-right corner of any of my pages<span class="rss-only">; although, you’ll have to visit my website to see it in action: <a href="{{ canonical }}">{{ canonical }}</a></span>!</p></aside>
 
 ## Popovers
 
@@ -123,7 +123,7 @@ I’m using this same pattern for all of my website’s settings, and I couldn�
 
 The last piece of the puzzle here is a critical one. Being able to open and close the settings popover and make some choices to control how to experience my website is one thing, but if those choices don’t persist when navigating between pages, then the settings could be more of a headache than the lovely feature that I’d like them to be!
 
-That’s where [`<storage-form>`](https://darn.es/storage-form-web-component/), a Web Component that allows form elements to persist and be saved, comes in. It uses the browser’s [Local Storage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) to save what the visitor has typed/checked/selected in form elements, and reads those saved values from Local Storage so they can be reapplied whenever the visitor navigates between pages and even when completely leaving the site and returning later.
+That’s where [`<storage-form>`](https://darn.es/storage-form-web-component/), a Web Component by [David Darnes](https://darn.es) that allows form elements to persist and be saved, comes in. It uses the browser’s [Local Storage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) to save what the visitor has typed/checked/selected in form elements, and reads those saved values from Local Storage so they can be reapplied whenever the visitor navigates between pages and even when completely leaving the site and returning later.
 
 Usage is very straightforward and done by wrapping `<form>` elements with the Web Component:
 

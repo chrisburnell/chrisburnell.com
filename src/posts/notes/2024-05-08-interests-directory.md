@@ -18,3 +18,7 @@ I put a decent chunk of work into trying to make the wording as clear as possibl
 <nav class=" [ grid ] [ navigator ] ">
     <a href="https://chrisburnell.github.io/interests-directory/" class=" [ button ] " rel="external noopener">The /interests Directory</a>
 </nav>
+
+--------
+
+{% include 'weblogpomo2024.njk' %}
