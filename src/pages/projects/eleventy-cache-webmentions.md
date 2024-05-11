@@ -187,12 +187,12 @@ const {
 ```javascript
 const {
 	getWebmentions, // get Array of Webmentions for a given URL
-	getByTypes, // filter Webmentions by their response type
-	getPublished, // get received/published time of a Webmention
-	getContent, // get content of a Webmention
-	getSource, // get source URL of a Webmention (where it's from)
-	getTarget, // get target URL of a Webmention (where it's sent to)
-	getType, // get response type of a Webmention
+	getWebmentionsByTypes, // filter Webmentions by their response type
+	getWebmentionPublished, // get received/published time of a Webmention
+	getWebmentionContent, // get content of a Webmention
+	getWebmentionSource, // get source URL of a Webmention (where it's from)
+	getWebmentionTarget, // get target URL of a Webmention (where it's sent to)
+	getWebmentionType, // get response type of a Webmention
 } = require("@chrisburnell/eleventy-cache-webmentions")
 
 // This is NOT the best way to get Webmentions!
@@ -203,7 +203,7 @@ const webmentions = getWebmentions({
 	key: "array_of_webmentions"
 }, "https://example.com/specific-page/")
 
-const responsesOnly = getByTypes(webmentions, ['mention-of', 'in-reply-to'])
+const responsesOnly = getWebmentionsByTypes(webmentions, ['mention-of', 'in-reply-to'])
 
 webmentions.forEach((webmention) => {
 	const published = getPublished(webmention)
@@ -319,11 +319,11 @@ Instead of getting all the Webmentions for a given page, you may want to grab on
 
 {% raw %}
 ```twig
-{% set bookmarks = webmentions | getTypes(['bookmark-of']) %}
-{% set likes = webmentions | getTypes(['like-of']) %}
-{% set reposts = webmentions | getTypes(['repost-of']) %}
+{% set bookmarks = webmentions | getWebmentionsByTypes(['bookmark-of']) %}
+{% set likes = webmentions | getWebmentionsByTypes(['like-of']) %}
+{% set reposts = webmentions | getWebmentionsByTypes(['repost-of']) %}
 
-{% set replies = webmentions | getTypes(['mention-of', 'in-reply-to']) %}
+{% set replies = webmentions | getWebmentionsByTypes(['mention-of', 'in-reply-to']) %}
 ```
 {% endraw %}
 

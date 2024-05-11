@@ -125,13 +125,13 @@ And even when looping through something like a collection:
 ```
 {% endraw %}
 
-How you want to filter the array of Webmentions attached to each page is up to you, but I recommend using the `getTypes` Filter to split Webmentions into groups categorised by type—this will make it easier to figure out which Webmentions are binary interactions (e.g. likes, reposts) and which have richer content you might want to display (e.g. mentions, replies).
+How you want to filter the array of Webmentions attached to each page is up to you, but I recommend using the `getWebmentionsByTypes` Filter to split Webmentions into groups categorised by type—this will make it easier to figure out which Webmentions are binary interactions (e.g. likes, reposts) and which have richer content you might want to display (e.g. mentions, replies).
 
 {% raw %}
 ```twig
-{% set reactions = webmentions | getTypes(['like-of', 'repost-of', 'bookmark-of']) %}
+{% set reactions = webmentions | getWebmentionsByTypes(['like-of', 'repost-of', 'bookmark-of']) %}
 
-{% set replies = webmentions | getTypes(['mention-of', 'in-reply-to']) %}
+{% set replies = webmentions | getWebmentionsByTypes(['mention-of', 'in-reply-to']) %}
 ```
 {% endraw %}
 
