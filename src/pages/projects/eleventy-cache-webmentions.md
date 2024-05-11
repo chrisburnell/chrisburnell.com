@@ -206,11 +206,11 @@ const webmentions = getWebmentions({
 const responsesOnly = getWebmentionsByTypes(webmentions, ['mention-of', 'in-reply-to'])
 
 webmentions.forEach((webmention) => {
-	const published = getPublished(webmention)
-	const content = getContent(webmention)
-	const source = getSource(webmention)
-	const target = getTarget(webmention)
-	const type = getType(webmention)
+	const published = getWebmentionPublished(webmention)
+	const content = getWebmentionContent(webmention)
+	const source = getWebmentionSource(webmention)
+	const target = getWebmentionTarget(webmention)
+	const type = getWebmentionType(webmention)
 })
 ```
 
