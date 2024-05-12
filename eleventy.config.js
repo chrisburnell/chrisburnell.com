@@ -102,7 +102,7 @@ export default async function(eleventyConfig) {
 	/**
 	 * Transforms
 	 */
-	eleventyConfig.addTransform("parse", transforms.parse)
+	eleventyConfig.addTransform("html", transforms.html)
 
 	/**
 	 * Static Files

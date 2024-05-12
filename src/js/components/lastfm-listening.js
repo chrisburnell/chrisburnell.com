@@ -19,11 +19,11 @@ class LastFMListening extends HTMLElement {
 
 		this.fetchLatestTracks().then((data) => {
 			this.innerHTML = `
-				<ol class=" [ grid ] [ shelf  shelf--square ] ">
+				<div class=" [ grid ] [ shelf  shelf--square ] ">
 					${data.slice(0, this.limit).reduce((string, track) => {
 						return string + this.getTrackMarkup(track)
 					}, "")}
-				</ol>
+				</div>
 			`
 		})
 	}

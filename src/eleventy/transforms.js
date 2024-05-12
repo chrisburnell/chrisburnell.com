@@ -1,5 +1,5 @@
-import parse from "./transforms/parse.js"
+import html from "./transforms/html.js"
 
 export default {
-	parse,
+	html,
 }

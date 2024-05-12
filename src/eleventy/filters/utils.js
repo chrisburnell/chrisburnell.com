@@ -17,6 +17,15 @@ export const maxDecimals = (number, decimals = 3) => {
 }
 
 /**
+ * @param {number} value
+ * @param {number} operand
+ * @returns {number}
+ */
+export const modulo = (value, operand) => {
+	return value % operand
+}
+
+/**
  * @param {object} object
  * @param {string} key
  * @returns {any}
@@ -357,6 +366,7 @@ export const replaceWebmentions = (webmentions) => {
 
 export default {
 	maxDecimals,
+	modulo,
 	keyValue,
 	keyValueEquals,
 	arrayKeyValueEquals,

@@ -42,20 +42,20 @@ toc: true
 
 	{% if collections.rsvpsToday.length -%}
 		<h3>Events I’m attending today</h3>
-		<ol class=" [ deck ] [ flow ] ">
+		<div class=" [ deck ] [ flow ] ">
 			{% for item in collections.rsvpsToday -%}
 				{{ deckItem(item) }}
 			{%- endfor %}
-		</ol>
+		</div>
 	{%- endif %}
 
 	{% if collections.rsvpsUpcoming.length -%}
 		<h3>Upcoming Events</h3>
-		<ol class=" [ deck ] [ flow ] ">
+		<div class=" [ deck ] [ flow ] ">
 			{% for item in collections.rsvpsUpcoming -%}
 				{{ deckItem(item) }}
 			{%- endfor %}
-		</ol>
+		</div>
 	{%- endif %}
 {%- endif %}
 
@@ -70,20 +70,20 @@ toc: true
 
 	{% if currentlyReading.length %}
 		<h3 id="currently-reading">Currently reading</h3>
-		<ol class=" [ grid ] [ shelf  shelf--portrait ] ">
+		<div class=" [ grid ] [ shelf  shelf--portrait ] ">
 			{% for item in currentlyReading -%}
 				{{ shelfItem(item) }}
 			{%- endfor %}
-		</ol>
+		</div>
 	{% endif %}
 
 	{% if recentlyRead.length %}
 		<h3 id="recently-read">Recently finished reading</h3>
-		<ol class=" [ grid ] [ shelf  shelf--portrait ] ">
+		<div class=" [ grid ] [ shelf  shelf--portrait ] ">
 			{% for item in recentlyRead -%}
 				{{ shelfItem(item) }}
 			{%- endfor %}
-		</ol>
+		</div>
 	{% endif %}
 {%- endif %}
 
@@ -98,20 +98,20 @@ toc: true
 
 	{% if currentlyPlaying.length %}
 		<h3 id="currently-playing">Currently playing</h3>
-		<ol class=" [ grid ] [ shelf  shelf--square ] ">
+		<div class=" [ grid ] [ shelf  shelf--square ] ">
 			{% for item in currentlyPlaying -%}
 				{{ shelfItem(item) }}
 			{%- endfor %}
-		</ol>
+		</div>
 	{% endif %}
 
 	{% if recentlyPlayed.length %}
 		<h3 id="recently-played">Recently finished playing</h3>
-		<ol class=" [ grid ] [ shelf  shelf--square ] ">
+		<div class=" [ grid ] [ shelf  shelf--square ] ">
 			{% for item in recentlyPlayed -%}
 				{{ shelfItem(item) }}
 			{%- endfor %}
-		</ol>
+		</div>
 	{% endif %}
 {%- endif %}
 
@@ -124,27 +124,27 @@ toc: true
 {% set currentlyListening = collections.music | arePublished | arrayKeyNotSet('data.rating') | sortByDate -%}
 {% if currentlyListening.length -%}
 	<h3 id="currently-listening">Currently reviewing</h3>
-	<ol class=" [ grid ] [ shelf  shelf--square ] ">
+	<div class=" [ grid ] [ shelf  shelf--square ] ">
 		{% for item in currentlyListening -%}
 			{{ shelfItem(item) }}
 		{%- endfor %}
-	</ol>
+	</div>
 {%- endif %}
 
 {% set recentlyListened = collections.music | arePublished | arrayKeySet('data.rating') | recentFilter('data.date') | sortByDate -%}
 {% if recentlyListened.length -%}
 	<h3 id="recently-listened">Recently reviewed</h3>
-	<ol class=" [ grid ] [ shelf  shelf--square ] ">
+	<div class=" [ grid ] [ shelf  shelf--square ] ">
 		{% for item in recentlyListened -%}
 			{{ shelfItem(item) }}
 		{%- endfor %}
-	</ol>
+	</div>
 {%- endif %}
 
 <h3 id="listening"><a href="/listening/">Latest listens</a></h3>
 
 <lastfm-listening url="https://api.chrisburnell.com/lastfm-recenttracks?username={{ author.lastfm }}{% if global.personalApiKeyForLocal %}&secret={{ global.personalApiKeyForLocal }}{% endif %}" limit="3" aria-live="true">
-	<ol class=" [ grid ] [ shelf  shelf--square ] ">
+	<div class=" [ grid ] [ shelf  shelf--square ] ">
 		{% for track in (lastfm.recentTracks | limit(3)) -%}
 			<article class=" [ flow ] ">
 				<a href="{{ track.url }}" aria-hidden="true" tabindex="-1" class=" [ cover-anchor ] ">
@@ -161,14 +161,14 @@ toc: true
 				</div>
 			</article>
 		{%- endfor %}
-	</ol>
+	</div>
 </lastfm-listening>
 <noscript><p>Unfortunately, this Web Component requires JavaScript to function correctly!</p></noscript>
 
 {% if lastfm.topAlbums.length -%}
 	<h3 id="top-albums">Top Albums <small>of the last 7 days</small></h3>
 
-	<ol class=" [ grid ] [ shelf  shelf--square ] ">
+	<div class=" [ grid ] [ shelf  shelf--square ] ">
 		{% for album in (lastfm.topAlbums | limit(3)) -%}
 			{%- set item = collections.music | arePublished | arrayKeyValueEquals('data.title', album.name, false) | first -%}
 			{% if item -%}
@@ -187,22 +187,17 @@ toc: true
 				</article>
 			{%- endif %}
 		{%- endfor %}
-	</ol>
+	</div>
 {%- endif %}
 
 {% if lastfm.topAlbums.length -%}
 	<h3 id="top-artists">Top Artists <small>of the last 7 days</small></h3>
 
-	<ol class=" [ grid ] [ shelf  shelf--square ] ">
-		{% for artist in (lastfm.topArtists | limit(3)) -%}
-			<article class=" [ flow ] ">
-				<a href="{{ artist.url }}" aria-hidden="true" tabindex="-1" class=" [ cover-anchor ] ">
-					<img src="{{ artist.imageUrl }}" alt="Artist picture for {{ artist.name | safe }}" loading="lazy" decoding="async" class=" [ cover ] [ u-photo ] ">
-				</a>
-				<h1>
-					<a href="{{ artist.url }}">{{ artist.name | safe }}</a>
-				</h1>
-			</article>
+	<ol class=" [ cluster ] ">
+		{% for artist in (lastfm.topArtists | limit(12)) -%}
+			<li>
+				<a href="{{ artist.url }}">{{ artist.name | safe }}</a>
+			</li>
 		{%- endfor %}
 	</ol>
 {%- endif %}

@@ -5,7 +5,7 @@ import { cacheDurations } from "./site.js"
 dotenv.config()
 
 const recentTracks = async function () {
-	let url = `https://api.chrisburnell.com/lastfm-recenttracks?username=${lastfm}&limit=10&secret=${process.env.PERSONAL_API_KEY}`
+	let url = `https://api.chrisburnell.com/lastfm-recenttracks?username=${lastfm}&secret=${process.env.PERSONAL_API_KEY}`
 	let json = await EleventyFetch(url, {
 		duration: cacheDurations.hourly,
 		type: "json",
@@ -24,7 +24,7 @@ const recentTracks = async function () {
 }
 
 const topAlbums = async function () {
-	let url = `https://api.chrisburnell.com/lastfm-topalbums?username=${lastfm}&limit=5&period=7day&secret=${process.env.PERSONAL_API_KEY}`
+	let url = `https://api.chrisburnell.com/lastfm-topalbums?username=${lastfm}&period=7day&secret=${process.env.PERSONAL_API_KEY}`
 	let json = await EleventyFetch(url, {
 		duration: cacheDurations.hourly,
 		type: "json",
@@ -41,7 +41,7 @@ const topAlbums = async function () {
 }
 
 const topArtists = async function () {
-	let url = `https://api.chrisburnell.com/lastfm-topartists?username=${lastfm}&limit=5&period=7day&secret=${process.env.PERSONAL_API_KEY}`
+	let url = `https://api.chrisburnell.com/lastfm-topartists?username=${lastfm}&period=7day&secret=${process.env.PERSONAL_API_KEY}`
 	let json = await EleventyFetch(url, {
 		duration: cacheDurations.hourly,
 		type: "json",

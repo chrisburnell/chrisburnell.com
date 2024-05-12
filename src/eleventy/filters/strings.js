@@ -1,9 +1,13 @@
+import dotenv from "dotenv"
 import he from "he"
 import randomCase from "random-case"
 import truncate from "truncate-html"
 import capitalizers from "../../data/capitalizers.js"
 import markdown from "../config/markdown.js"
 import { limits, locale } from "../data/site.js"
+dotenv.config()
+
+const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 const stringNumbers = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
 
@@ -160,6 +164,47 @@ export const spongebob = (string) => {
 	return randomCase(string)
 }
 
+/**
+ * @param {string} content
+ * @param {string} keyword
+ * @param {string} secret
+ * @returns {string}
+ */
+export const vigenere = (content, keyword = "RAVENOUS", secret = process.env.VIGENERE_SECRET) => {
+	content = content.toUpperCase().replace(/[^A-Z]/g, "")
+	keyword = keyword.toUpperCase().replace(/[^A-Z]/g, "")
+	secret = secret.toUpperCase().replace(/[^A-Z]/g, "")
+
+	let caesarCipher = alphabet
+	keyword
+		.split("")
+		.reverse()
+		.forEach((letter) => {
+			caesarCipher = letter + caesarCipher.replace(letter, "")
+		})
+
+	let vigenereTableRow = caesarCipher
+	const vigenereTable = []
+	caesarCipher.split("").forEach((letter) => {
+		vigenereTable.push(vigenereTableRow)
+		vigenereTableRow = vigenereTableRow.replace(letter, "") + letter
+	})
+
+	let secretRepeated = ""
+	content.split("").forEach((_, index) => {
+		secretRepeated += secret.split("")[index % secret.length]
+	})
+
+	let encrypted = ""
+	secretRepeated.split("").forEach((_, index) => {
+		const row = caesarCipher.indexOf(secretRepeated[index])
+		const column = caesarCipher.indexOf(content[index])
+		encrypted += vigenereTable[row][column]
+	})
+
+	return encrypted
+}
+
 export default {
 	conjunction,
 	specialCapitalize,
@@ -174,4 +219,5 @@ export default {
 	formatAsMarkdown,
 	excerptize,
 	spongebob,
+	vigenere,
 }
