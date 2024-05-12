@@ -82,21 +82,21 @@ Without the secret keyword (or, to be fair, modern computing power), it can be *
 	</legend>
 	<fieldset>
 		<label for="key" class=" [ delta ] ">Key</label>
-		<input id="key" class=" [ center  monospace  uppercase ] " style="inline-size: 100%; line-height: 3; letter-spacing: 0.125em;" type="text" pattern="^[A-Za-z]*$" value="KEYWORD"></input>
+		<input id="key" class=" [ center  monospace  uppercase ] " style="inline-size: 100%; line-height: 3; letter-spacing: 0.125em;" type="text" pattern="^[A-Za-z]{1,40}$" value="KEYWORD"></input>
 	</fieldset>
 	<fieldset>
 		<label for="secret" class=" [ delta ] ">Secret</label>
-		<input id="secret" class=" [ center  monospace  uppercase ] " style="inline-size: 100%; line-height: 3; letter-spacing: 0.125em;" type="text" pattern="^[A-Za-z]*$" value="SECRET"></input>
+		<input id="secret" class=" [ center  monospace  uppercase ] " style="inline-size: 100%; line-height: 3; letter-spacing: 0.125em;" type="text" pattern="^[A-Za-z]{1,40}$" value="SECRET"></input>
 	</fieldset>
 	<fieldset style="grid-column: span 2;">
 		<label for="phrase" class=" [ delta ] ">Phrase</label>
-		<input id="phrase" style="inline-size: 100%; font-size: inherit; line-height: 3;" type="text" value="This is just a test"></input>
+		<input id="phrase" style="inline-size: 100%; font-size: inherit; line-height: 3;" type="text" pattern="^.{1,40}$" value="This is just a test"></input>
 	</fieldset>
 </form>
 
 <p class=" [ gamma ] ">Output</p>
 
-<div id="output" class=" [ box ] [ center  monospace  uppercase ] " style="line-height: 3; letter-spacing: 0.125em;" aria-live="polite">
+<div id="output" class=" [ box ] [ center  monospace  uppercase ] " style="letter-spacing: 0.125em;" aria-live="polite">
 	<span tabindex="0" row="21" column="22">L</span><span tabindex="0" row="2" column="13">I</span><span tabindex="0" row="10" column="14">U</span><span tabindex="0" row="6" column="21">Z</span><span tabindex="0" row="2" column="14">J</span><span tabindex="0" row="22" column="21">L</span><span tabindex="0" row="21" column="15">B</span><span tabindex="0" row="2" column="23">V</span><span tabindex="0" row="10" column="21">W</span><span tabindex="0" row="6" column="22">K</span><span tabindex="0" row="2" column="8">B</span><span tabindex="0" row="22" column="22">M</span><span tabindex="0" row="21" column="2">T</span><span tabindex="0" row="2" column="21">T</span><span tabindex="0" row="10" column="22">O</span>
 </div>
 
@@ -210,9 +210,8 @@ Which gives us our encrypted string: `LIUZJLBVWKBMTTO`.
 	position: relative;
 	z-index: var(--z-index-root);
 }
-td {
-	padding: 0.125em 0.25em;
-	line-height: 1;
+[id="output"] {
+	word-break: break-all;
 }
 [id="output"] span:is(:hover, :focus) {
 	color: red;
@@ -220,6 +219,10 @@ td {
 	text-decoration: underline;
 	text-decoration-color: red;
 	text-decoration-thickness: 2px;
+}
+td {
+	padding: 0.125em 0.25em;
+	line-height: 1;
 }
 </style>
 <style id="output-styles">
@@ -345,40 +348,40 @@ const translate = () => {
 	const secretValue = secretInput.value.toUpperCase().replace(/[^A-Z]/g, "")
 	const phraseValue = phraseInput.value.toUpperCase().replace(/[^A-Z]/g, "")
 
-	if (keyValue === "" || secretValue === "" || phraseValue === "") {
+	if (keyValue === "" || keyInput.value.length > 40 || secretValue === "" || secretInput.value.length > 40 || phraseValue === "" || phraseInput.value.length > 40) {
 		return
 	}
 
-	let alphabet_keyed = alphabet
+	let caesarCipher = alphabet
 	keyValue.split("").reverse().forEach((letter) => {
-		alphabet_keyed = letter + alphabet_keyed.replace(letter, "")
+		caesarCipher = letter + caesarCipher.replace(letter, "")
 	})
 
-	let magic_row = alphabet_keyed
-	const magic = []
-	alphabet_keyed.split("").forEach((letter) => {
-		magic.push(magic_row)
-		magic_row = magic_row.replace(letter, "") + letter
+	let vigenereTableRow = caesarCipher
+	const vigenereTable = []
+	caesarCipher.split("").forEach((letter) => {
+		vigenereTable.push(vigenereTableRow)
+		vigenereTableRow = vigenereTableRow.replace(letter, "") + letter
 	})
 
 	square.innerHTML = ""
-	magic.forEach((magic_row) => {
-		const magic_row_string = magic_row.split("").reduce((acc, letter) => `${acc}<td>${letter}</td>`, "")
+	vigenereTable.forEach((vigenereTableRow) => {
+		const vigenereTableRow_string = vigenereTableRow.split("").reduce((acc, letter) => `${acc}<td>${letter}</td>`, "")
 		square.innerHTML = square.innerHTML + `
-            <tr>${magic_row_string}</tr>`
+            <tr>${vigenereTableRow_string}</tr>`
 	})
 
-	let secret_keyed = ""
+	let secretRepeated = ""
 	phraseValue.split("").forEach((_, index) => {
-		secret_keyed += secretValue.split("")[index % secretValue.length]
+		secretRepeated += secretValue.split("")[index % secretValue.length]
 	})
 
-	let translated = ""
+	let encrypted = ""
 	let styles = ""
-	secret_keyed.split("").forEach((_, index) => {
-		const row = alphabet_keyed.indexOf(secret_keyed[index])
-		const column = alphabet_keyed.indexOf(phraseValue[index])
-		translated += `<span tabindex="0" row="${row + 1}" column="${column + 1}">${magic[row][column]}</span>`
+	secretRepeated.split("").forEach((_, index) => {
+		const row = caesarCipher.indexOf(secretRepeated[index])
+		const column = caesarCipher.indexOf(phraseValue[index])
+		encrypted += `<span tabindex="0" row="${row + 1}" column="${column + 1}">${vigenereTable[row][column]}</span>`
 		styles += `
 :root:has([row="${row + 1}"][column="${column + 1}"]:is(:hover, :focus)) tbody tr:nth-of-type(${row + 1}),
 :root:has([row="${row + 1}"][column="${column + 1}"]:is(:hover, :focus)) tbody tr td:nth-of-type(${column + 1}) {
@@ -389,7 +392,7 @@ const translate = () => {
 }`
 	})
 
-	output.innerHTML = translated
+	output.innerHTML = encrypted
 	outputStyles.textContent = styles
 }
 
