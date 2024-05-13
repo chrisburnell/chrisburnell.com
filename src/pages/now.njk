@@ -153,7 +153,7 @@ toc: true
 						<img src="" alt="" role="presentation" loading="lazy" decoding="async" class=" [ cover ] [ u-photo ] ">
 					</a> #}
 					<h1>
-						<a href="#_">{{ item.show.title | safe }} {% if item.episode.season %}S{{ item.episode.season }}{% endif %}{% if item.episode.number %} E{{ item.episode.number }}{% endif %}</a>
+						<a href="#_">{{ item.show.title | safe }} {{ item.episode.season }}{% if item.episode.season and item.episode.number %}x{% elif item.episode.number %}E {% endif %}{% if item.episode.number %}{{ item.episode.number | padZeroes }}{% endif %}</a>
 					</h1>
 					{% if item.episode.title %}
 						<div>

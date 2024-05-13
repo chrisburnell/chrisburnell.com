@@ -17,6 +17,15 @@ export const maxDecimals = (number, decimals = 3) => {
 }
 
 /**
+ * @param {number} number
+ * @param {number} [decimals]
+ * @returns {number}
+ */
+export const padZeroes = (number, zeroes = 2) => {
+	return String(number).padStart(zeroes, "0")
+}
+
+/**
  * @param {number} value
  * @param {number} operand
  * @returns {number}
@@ -375,6 +384,7 @@ export const replaceWebmentions = (webmentions) => {
 
 export default {
 	maxDecimals,
+	padZeroes,
 	modulo,
 	keyValue,
 	keyValueEquals,
