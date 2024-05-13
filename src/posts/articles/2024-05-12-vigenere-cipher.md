@@ -216,9 +216,11 @@ Which gives us our encrypted string: `LIUZJLBVWKBMTTO`.
 [id="output"] span:is(:hover, :focus) {
 	color: red;
 	outline: none;
+	font-weight: var(--font-weight-bold);
 	text-decoration: underline;
-	text-decoration-color: red;
+	text-decoration-color: currentColor;
 	text-decoration-thickness: 2px;
+	cursor: pointer;
 }
 td {
 	padding: 0.125em 0.25em;
@@ -226,110 +228,14 @@ td {
 }
 </style>
 <style id="output-styles">
-:root:has([row="21"][column="22"]:is(:hover, :focus)) tbody tr:nth-of-type(21),
-:root:has([row="21"][column="22"]:is(:hover, :focus)) tbody tr td:nth-of-type(22) {
-	color: lime;
+:root:has([row="21"][column="22"]:is(:hover, :focus)) [id="square"] tr:nth-of-type(21), :root:has([row="21"][column="22"]:is(:hover, :focus)) [id="square"] tr td:nth-of-type(22), :root:has([row="2"][column="13"]:is(:hover, :focus)) [id="square"] tr:nth-of-type(2), :root:has([row="2"][column="13"]:is(:hover, :focus)) [id="square"] tr td:nth-of-type(13), :root:has([row="10"][column="14"]:is(:hover, :focus)) [id="square"] tr:nth-of-type(10), :root:has([row="10"][column="14"]:is(:hover, :focus)) [id="square"] tr td:nth-of-type(14), :root:has([row="6"][column="21"]:is(:hover, :focus)) [id="square"] tr:nth-of-type(6), :root:has([row="6"][column="21"]:is(:hover, :focus)) [id="square"] tr td:nth-of-type(21), :root:has([row="2"][column="14"]:is(:hover, :focus)) [id="square"] tr:nth-of-type(2), :root:has([row="2"][column="14"]:is(:hover, :focus)) [id="square"] tr td:nth-of-type(14), :root:has([row="22"][column="21"]:is(:hover, :focus)) [id="square"] tr:nth-of-type(22), :root:has([row="22"][column="21"]:is(:hover, :focus)) [id="square"] tr td:nth-of-type(21), :root:has([row="21"][column="15"]:is(:hover, :focus)) [id="square"] tr:nth-of-type(21), :root:has([row="21"][column="15"]:is(:hover, :focus)) [id="square"] tr td:nth-of-type(15), :root:has([row="2"][column="23"]:is(:hover, :focus)) [id="square"] tr:nth-of-type(2), :root:has([row="2"][column="23"]:is(:hover, :focus)) [id="square"] tr td:nth-of-type(23), :root:has([row="10"][column="21"]:is(:hover, :focus)) [id="square"] tr:nth-of-type(10), :root:has([row="10"][column="21"]:is(:hover, :focus)) [id="square"] tr td:nth-of-type(21), :root:has([row="6"][column="22"]:is(:hover, :focus)) [id="square"] tr:nth-of-type(6), :root:has([row="6"][column="22"]:is(:hover, :focus)) [id="square"] tr td:nth-of-type(22), :root:has([row="2"][column="8"]:is(:hover, :focus)) [id="square"] tr:nth-of-type(2), :root:has([row="2"][column="8"]:is(:hover, :focus)) [id="square"] tr td:nth-of-type(8), :root:has([row="22"][column="22"]:is(:hover, :focus)) [id="square"] tr:nth-of-type(22), :root:has([row="22"][column="22"]:is(:hover, :focus)) [id="square"] tr td:nth-of-type(22), :root:has([row="21"][column="2"]:is(:hover, :focus)) [id="square"] tr:nth-of-type(21), :root:has([row="21"][column="2"]:is(:hover, :focus)) [id="square"] tr td:nth-of-type(2), :root:has([row="2"][column="21"]:is(:hover, :focus)) [id="square"] tr:nth-of-type(2), :root:has([row="2"][column="21"]:is(:hover, :focus)) [id="square"] tr td:nth-of-type(21), :root:has([row="10"][column="22"]:is(:hover, :focus)) [id="square"] tr:nth-of-type(10), :root:has([row="10"][column="22"]:is(:hover, :focus)) [id="square"] tr td:nth-of-type(22) {
+	color: var(--color-maple);
+	font-weight: var(--font-weight-bold);
 }
-:root:has([row="21"][column="22"]:is(:hover, :focus)) tbody tr:nth-of-type(21) td:nth-of-type(22) {
-	color: red;
-}
-:root:has([row="2"][column="13"]:is(:hover, :focus)) tbody tr:nth-of-type(2),
-:root:has([row="2"][column="13"]:is(:hover, :focus)) tbody tr td:nth-of-type(13) {
-	color: lime;
-}
-:root:has([row="2"][column="13"]:is(:hover, :focus)) tbody tr:nth-of-type(2) td:nth-of-type(13) {
-	color: red;
-}
-:root:has([row="10"][column="14"]:is(:hover, :focus)) tbody tr:nth-of-type(10),
-:root:has([row="10"][column="14"]:is(:hover, :focus)) tbody tr td:nth-of-type(14) {
-	color: lime;
-}
-:root:has([row="10"][column="14"]:is(:hover, :focus)) tbody tr:nth-of-type(10) td:nth-of-type(14) {
-	color: red;
-}
-:root:has([row="6"][column="21"]:is(:hover, :focus)) tbody tr:nth-of-type(6),
-:root:has([row="6"][column="21"]:is(:hover, :focus)) tbody tr td:nth-of-type(21) {
-	color: lime;
-}
-:root:has([row="6"][column="21"]:is(:hover, :focus)) tbody tr:nth-of-type(6) td:nth-of-type(21) {
-	color: red;
-}
-:root:has([row="2"][column="14"]:is(:hover, :focus)) tbody tr:nth-of-type(2),
-:root:has([row="2"][column="14"]:is(:hover, :focus)) tbody tr td:nth-of-type(14) {
-	color: lime;
-}
-:root:has([row="2"][column="14"]:is(:hover, :focus)) tbody tr:nth-of-type(2) td:nth-of-type(14) {
-	color: red;
-}
-:root:has([row="22"][column="21"]:is(:hover, :focus)) tbody tr:nth-of-type(22),
-:root:has([row="22"][column="21"]:is(:hover, :focus)) tbody tr td:nth-of-type(21) {
-	color: lime;
-}
-:root:has([row="22"][column="21"]:is(:hover, :focus)) tbody tr:nth-of-type(22) td:nth-of-type(21) {
-	color: red;
-}
-:root:has([row="21"][column="15"]:is(:hover, :focus)) tbody tr:nth-of-type(21),
-:root:has([row="21"][column="15"]:is(:hover, :focus)) tbody tr td:nth-of-type(15) {
-	color: lime;
-}
-:root:has([row="21"][column="15"]:is(:hover, :focus)) tbody tr:nth-of-type(21) td:nth-of-type(15) {
-	color: red;
-}
-:root:has([row="2"][column="23"]:is(:hover, :focus)) tbody tr:nth-of-type(2),
-:root:has([row="2"][column="23"]:is(:hover, :focus)) tbody tr td:nth-of-type(23) {
-	color: lime;
-}
-:root:has([row="2"][column="23"]:is(:hover, :focus)) tbody tr:nth-of-type(2) td:nth-of-type(23) {
-	color: red;
-}
-:root:has([row="10"][column="21"]:is(:hover, :focus)) tbody tr:nth-of-type(10),
-:root:has([row="10"][column="21"]:is(:hover, :focus)) tbody tr td:nth-of-type(21) {
-	color: lime;
-}
-:root:has([row="10"][column="21"]:is(:hover, :focus)) tbody tr:nth-of-type(10) td:nth-of-type(21) {
-	color: red;
-}
-:root:has([row="6"][column="22"]:is(:hover, :focus)) tbody tr:nth-of-type(6),
-:root:has([row="6"][column="22"]:is(:hover, :focus)) tbody tr td:nth-of-type(22) {
-	color: lime;
-}
-:root:has([row="6"][column="22"]:is(:hover, :focus)) tbody tr:nth-of-type(6) td:nth-of-type(22) {
-	color: red;
-}
-:root:has([row="2"][column="8"]:is(:hover, :focus)) tbody tr:nth-of-type(2),
-:root:has([row="2"][column="8"]:is(:hover, :focus)) tbody tr td:nth-of-type(8) {
-	color: lime;
-}
-:root:has([row="2"][column="8"]:is(:hover, :focus)) tbody tr:nth-of-type(2) td:nth-of-type(8) {
-	color: red;
-}
-:root:has([row="22"][column="22"]:is(:hover, :focus)) tbody tr:nth-of-type(22),
-:root:has([row="22"][column="22"]:is(:hover, :focus)) tbody tr td:nth-of-type(22) {
-	color: lime;
-}
-:root:has([row="22"][column="22"]:is(:hover, :focus)) tbody tr:nth-of-type(22) td:nth-of-type(22) {
-	color: red;
-}
-:root:has([row="21"][column="2"]:is(:hover, :focus)) tbody tr:nth-of-type(21),
-:root:has([row="21"][column="2"]:is(:hover, :focus)) tbody tr td:nth-of-type(2) {
-	color: lime;
-}
-:root:has([row="21"][column="2"]:is(:hover, :focus)) tbody tr:nth-of-type(21) td:nth-of-type(2) {
-	color: red;
-}
-:root:has([row="2"][column="21"]:is(:hover, :focus)) tbody tr:nth-of-type(2),
-:root:has([row="2"][column="21"]:is(:hover, :focus)) tbody tr td:nth-of-type(21) {
-	color: lime;
-}
-:root:has([row="2"][column="21"]:is(:hover, :focus)) tbody tr:nth-of-type(2) td:nth-of-type(21) {
-	color: red;
-}
-:root:has([row="10"][column="22"]:is(:hover, :focus)) tbody tr:nth-of-type(10),
-:root:has([row="10"][column="22"]:is(:hover, :focus)) tbody tr td:nth-of-type(22) {
-	color: lime;
-}
-:root:has([row="10"][column="22"]:is(:hover, :focus)) tbody tr:nth-of-type(10) td:nth-of-type(22) {
-	color: red;
+:root:has([row="21"][column="22"]:is(:hover, :focus)) [id="square"] tr:nth-of-type(21) td:nth-of-type(22), :root:has([row="2"][column="13"]:is(:hover, :focus)) [id="square"] tr:nth-of-type(2) td:nth-of-type(13), :root:has([row="10"][column="14"]:is(:hover, :focus)) [id="square"] tr:nth-of-type(10) td:nth-of-type(14), :root:has([row="6"][column="21"]:is(:hover, :focus)) [id="square"] tr:nth-of-type(6) td:nth-of-type(21), :root:has([row="2"][column="14"]:is(:hover, :focus)) [id="square"] tr:nth-of-type(2) td:nth-of-type(14), :root:has([row="22"][column="21"]:is(:hover, :focus)) [id="square"] tr:nth-of-type(22) td:nth-of-type(21), :root:has([row="21"][column="15"]:is(:hover, :focus)) [id="square"] tr:nth-of-type(21) td:nth-of-type(15), :root:has([row="2"][column="23"]:is(:hover, :focus)) [id="square"] tr:nth-of-type(2) td:nth-of-type(23), :root:has([row="10"][column="21"]:is(:hover, :focus)) [id="square"] tr:nth-of-type(10) td:nth-of-type(21), :root:has([row="6"][column="22"]:is(:hover, :focus)) [id="square"] tr:nth-of-type(6) td:nth-of-type(22), :root:has([row="2"][column="8"]:is(:hover, :focus)) [id="square"] tr:nth-of-type(2) td:nth-of-type(8), :root:has([row="22"][column="22"]:is(:hover, :focus)) [id="square"] tr:nth-of-type(22) td:nth-of-type(22), :root:has([row="21"][column="2"]:is(:hover, :focus)) [id="square"] tr:nth-of-type(21) td:nth-of-type(2), :root:has([row="2"][column="21"]:is(:hover, :focus)) [id="square"] tr:nth-of-type(2) td:nth-of-type(21), :root:has([row="10"][column="22"]:is(:hover, :focus)) [id="square"] tr:nth-of-type(10) td:nth-of-type(22) {
+	background-color: var(--color-maple);
+	color: var(--color-snowy);
+	transform: scale(1.1);
 }
 </style>
 
@@ -367,8 +273,7 @@ const translate = () => {
 	square.innerHTML = ""
 	vigenereTable.forEach((vigenereTableRow) => {
 		const vigenereTableRow_string = vigenereTableRow.split("").reduce((acc, letter) => `${acc}<td>${letter}</td>`, "")
-		square.innerHTML = square.innerHTML + `
-            <tr>${vigenereTableRow_string}</tr>`
+		square.innerHTML = square.innerHTML + `<tr>${vigenereTableRow_string}</tr>`
 	})
 
 	let secretRepeated = ""
@@ -377,23 +282,27 @@ const translate = () => {
 	})
 
 	let encrypted = ""
-	let styles = ""
+	let lineStyles = []
+	let intersectionStyles = []
 	secretRepeated.split("").forEach((_, index) => {
 		const row = caesarCipher.indexOf(secretRepeated[index])
 		const column = caesarCipher.indexOf(phraseValue[index])
 		encrypted += `<span tabindex="0" row="${row + 1}" column="${column + 1}">${vigenereTable[row][column]}</span>`
-		styles += `
-:root:has([row="${row + 1}"][column="${column + 1}"]:is(:hover, :focus)) tbody tr:nth-of-type(${row + 1}),
-:root:has([row="${row + 1}"][column="${column + 1}"]:is(:hover, :focus)) tbody tr td:nth-of-type(${column + 1}) {
-	color: lime;
-}
-:root:has([row="${row + 1}"][column="${column + 1}"]:is(:hover, :focus)) tbody tr:nth-of-type(${row + 1}) td:nth-of-type(${column + 1}) {
-	color: red;
-}`
+		lineStyles.push(`:root:has([row="${row + 1}"][column="${column + 1}"]:is(:hover, :focus)) [id="square"] tr:nth-of-type(${row + 1})`)
+		lineStyles.push(`:root:has([row="${row + 1}"][column="${column + 1}"]:is(:hover, :focus)) [id="square"] tr td:nth-of-type(${column + 1})`)
+		intersectionStyles.push(`:root:has([row="${row + 1}"][column="${column + 1}"]:is(:hover, :focus)) [id="square"] tr:nth-of-type(${row + 1}) td:nth-of-type(${column + 1})`)
 	})
 
 	output.innerHTML = encrypted
-	outputStyles.textContent = styles
+	outputStyles.textContent = `${lineStyles.join(", ")} {
+	color: var(--color-maple);
+	font-weight: var(--font-weight-bold);
+}
+${intersectionStyles.join(", ")} {
+	background-color: var(--color-maple);
+	color: var(--color-snowy);
+	transform: scale(1.1);
+}`
 }
 
 [keyInput, secretInput, phraseInput].forEach((input) => {
