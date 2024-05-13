@@ -48,4 +48,5 @@ export default {
 	star: "⭐",
 	now: "⏲️",
 	ticket: "🎟️",
+	progress: "🌱",
 }

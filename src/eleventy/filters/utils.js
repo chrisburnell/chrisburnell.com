@@ -164,6 +164,15 @@ export const rangeMap = (number, inMin, inMax, outMin, outMax, decimals) => {
 }
 
 /**
+ * @param {*} string
+ * @returns {number}
+ */
+export const stringToPercent = (string, decimals = 1) => {
+	const [numerator, denominator] = string.split("/").map(Number)
+	return maxDecimals(numerator / denominator * 100, decimals)
+}
+
+/**
  * @param {string} hex
  * @returns {number}
  */
@@ -377,6 +386,7 @@ export default {
 	toArray,
 	toNearest,
 	rangeMap,
+	stringToPercent,
 	getRGB,
 	limit,
 	getSocialReplies,

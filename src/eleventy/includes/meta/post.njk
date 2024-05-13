@@ -39,7 +39,7 @@
 			</li>
 		{% endif %}
 		{% if style %}
-			<li class=" [ style ] ">
+			<li>
 				<c-emoji>{{ emojis.style }}</c-emoji>
 				<small>style</small>
 				<strong>{{ style | replace(' - Other', '') | safe }}</strong>
@@ -81,10 +81,17 @@
 			</li>
 		{% endif %}
 		{% if 'audiobook' in tags %}
-			<li class=" [ style ] ">
+			<li>
 				<c-emoji>{{ emojis.listen }}</c-emoji>
-				<small>listened as</small>
+				<small>listen{% if rating %}ed{% else %}ing{% endif %} as an</small>
 				<strong>audiobook</strong>
+			</li>
+		{% endif %}
+		{% if not rating and progress %}
+			<li>
+				<c-emoji>{{ emojis.progress }}</c-emoji>
+				<small>progress</small>
+				<strong>{{ progress | stringToPercent }}%</strong>
 			</li>
 		{% endif %}
 		{% if rating %}
