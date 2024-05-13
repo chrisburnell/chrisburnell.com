@@ -23,7 +23,7 @@
 			{% elif item.url %}
 				<a href="{{ item.url | striptags(true) | safe }}">
 			{% endif %}
-				{% if item.data.audiobook %}<c-emoji title="Audiobook">{{ emojis.listen }}</c-emoji>{% endif %}{{ item.data.title | default(item.data.of_title) | default(item.data.of_title_fallback) | striptags(true) | safe }}
+				{% if 'audiobook' in item.data.tags %}<c-emoji title="Audiobook">🎧</c-emoji>{% endif %}{{ item.data.title | default(item.data.of_title) | default(item.data.of_title_fallback) | striptags(true) | safe }}
 			{% if item.url %}
 				</a>
 			{% endif %}

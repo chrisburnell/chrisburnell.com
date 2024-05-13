@@ -80,6 +80,13 @@
 				<time datetime="{{ release | rfc3339Date }}" class=" [ dt-released ] ">{{ release | friendlyDate }}</time>
 			</li>
 		{% endif %}
+		{% if 'audiobook' in tags %}
+			<li class=" [ style ] ">
+				<c-emoji>{{ emojis.listen }}</c-emoji>
+				<small>listened as</small>
+				<strong>audiobook</strong>
+			</li>
+		{% endif %}
 		{% if rating %}
 			<li class=" [ review-rating ] ">
 				<c-emoji>{{ emojis.stars }}</c-emoji>
