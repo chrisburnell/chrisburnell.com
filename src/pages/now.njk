@@ -115,6 +115,60 @@ toc: true
 	{% endif %}
 {%- endif %}
 
+{% if trakt.shows.length or trakt.movies.length -%}
+	<hr>
+
+	<h2 id="movies-tv">Movies & TV</h2>
+
+	{% if trakt.movies.length %}
+		<h3 id="movies">Movies</h3>
+		<div class=" [ grid ] [ shelf  shelf--portait ] ">
+			{% for item in (trakt.movies | limit(3)) -%}
+				<article class=" [ flow ] ">
+					{# <a href="#_" aria-hidden="true" tabindex="-1" class=" [ cover-anchor ] ">
+						<img src="" alt="" role="presentation" loading="lazy" decoding="async" class=" [ cover ] [ u-photo ] ">
+					</a> #}
+					<h1>
+						<a href="#_">{{ item.movie.title | safe }}</a>
+					</h1>
+					{% if item.movie.year %}
+						<div>
+							<small>({{ item.movie.year }})</small>
+						</div>
+					{% endif %}
+					<div>
+						<relative-time><time datetime="{{ item.watched_at | rfc3339Date }}" class=" [ dt-published ] ">{{ item.watched_at | friendlyDate }}</time></relative-time>
+					</div>
+				</article>
+			{% endfor %}
+		</div>
+	{% endif %}
+
+	{% if trakt.shows.length %}
+		<h3 id="tv">TV Shows</h3>
+		<div class=" [ grid ] [ shelf  shelf--portait ] ">
+			{% for item in (trakt.shows | limit(6)) -%}
+				<article class=" [ flow ] ">
+					{# <a href="#_" aria-hidden="true" tabindex="-1" class=" [ cover-anchor ] ">
+						<img src="" alt="" role="presentation" loading="lazy" decoding="async" class=" [ cover ] [ u-photo ] ">
+					</a> #}
+					<h1>
+						<a href="#_">{{ item.show.title | safe }} {% if item.episode.season %}S{{ item.episode.season }}{% endif %}{% if item.episode.number %} E{{ item.episode.number }}{% endif %}</a>
+					</h1>
+					{% if item.episode.title %}
+						<div>
+							<em>{{ item.episode.title }}</em>
+						</div>
+					{% endif %}
+					<div>
+						<relative-time><time datetime="{{ item.watched_at | rfc3339Date }}" class=" [ dt-published ] ">{{ item.watched_at | friendlyDate }}</time></relative-time>
+					</div>
+				</article>
+			{% endfor %}
+		</div>
+	{% endif %}
+{%- endif %}
+
 <hr>
 
 <h2>

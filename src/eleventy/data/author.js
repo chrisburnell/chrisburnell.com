@@ -26,6 +26,7 @@ export const pronouns_page = metadata.pronouns_page
 export const pgp = metadata.pgp
 export const speakerdeck = metadata.speakerdeck
 export const spotify = metadata.spotify
+export const trakt = metadata.trakt
 export const twitter = metadata.twitter
 export const untappd = metadata.untappd
 export const websub = metadata.websub
