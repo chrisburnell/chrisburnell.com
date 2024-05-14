@@ -40,8 +40,42 @@ const topAlbums = async function () {
 	})
 }
 
+const topAlbumsAll = async function () {
+	let url = `https://api.chrisburnell.com/lastfm-topalbums?username=${lastfm}&period=overall&limit=100&secret=${process.env.PERSONAL_API_KEY}`
+	let json = await EleventyFetch(url, {
+		duration: cacheDurations.weekly,
+		type: "json",
+	})
+	return json.map((album) => {
+		let image = album.image[3]?.["#text"]
+		if (!image || image.includes("2a96cbd8b46e442fc41c2b86b821562f.png")) {
+			image = "/images/default-album-cover.png"
+		}
+		return Object.assign({}, album, {
+			imageUrl: image,
+		})
+	})
+}
+
 const topArtists = async function () {
 	let url = `https://api.chrisburnell.com/lastfm-topartists?username=${lastfm}&period=7day&secret=${process.env.PERSONAL_API_KEY}`
+	let json = await EleventyFetch(url, {
+		duration: cacheDurations.hourly,
+		type: "json",
+	})
+	return json.map((artist) => {
+		let image = artist.image[3]?.["#text"]
+		if (!image || image.includes("2a96cbd8b46e442fc41c2b86b821562f.png")) {
+			image = "/images/default-album-cover.png"
+		}
+		return Object.assign({}, artist, {
+			imageUrl: image,
+		})
+	})
+}
+
+const topArtistsAll = async function () {
+	let url = `https://api.chrisburnell.com/lastfm-topartists?username=${lastfm}&period=overall&limit=100&secret=${process.env.PERSONAL_API_KEY}`
 	let json = await EleventyFetch(url, {
 		duration: cacheDurations.hourly,
 		type: "json",
@@ -62,12 +96,16 @@ export default async function () {
 		return {
 			recentTracks: await recentTracks(),
 			topAlbums: await topAlbums(),
+			topAlbumsAll: await topAlbumsAll(),
 			topArtists: await topArtists(),
+			topArtistsAll: await topArtistsAll(),
 		}
 	}
 	return {
 		recentTracks: [],
 		topAlbums: [],
+		topAlbumsAll: [],
 		topArtists: [],
+		topArtistsAll: [],
 	}
 }

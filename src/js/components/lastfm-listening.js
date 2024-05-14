@@ -15,12 +15,10 @@ class LastFMListening extends HTMLElement {
 	}
 
 	init() {
-		this.limit = this.hasAttribute("limit") ? this.clamp(this.getAttribute("limit"), 1, 10) : 10
-
 		this.fetchLatestTracks().then((data) => {
 			this.innerHTML = `
 				<div class=" [ grid ] [ shelf  shelf--square ] ">
-					${data.slice(0, this.limit).reduce((string, track) => {
+					${data.reduce((string, track) => {
 						return string + this.getTrackMarkup(track)
 					}, "")}
 				</div>

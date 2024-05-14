@@ -28,8 +28,11 @@ perch: true
 
 		<h2 id="latest">Latest Posts</h2>
 
-		<div class=" [ deck ] ">
-			{% for item in collections.features | rssOnlyFilter | limit(10) %}
+		<div class=" [ deck ] [ h-feed ] ">
+			{% for item in collections.pinned %}
+				{{ deckItem(item, { hfeed: true, truncate: true, show_pinned: true }) }}
+			{% endfor %}
+			{% for item in collections.features | noPinnedFilter | rssOnlyFilter | limit(site.limits.feed - collections.pinned.length) %}
 				{{ deckItem(item, { hfeed: true, show_images: true, truncate: true }) }}
 			{% endfor %}
 		</div>

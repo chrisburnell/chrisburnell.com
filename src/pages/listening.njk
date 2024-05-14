@@ -3,14 +3,17 @@ title: Listening
 description: What have I been listening to?
 wide: true
 ---
+{%- from "macros/shelfItem.njk" import shelfItem -%}
 
 <p>Powered by <a href="https://last.fm">Last.fm</a>. Check out my <a href="/music/">Music Reviews</a> for more musical data.</p>
 
 <p>To see (almost) my entire listening history, checkout my <a href="https://last.fm/user/{{ author.lastfm }}">Last.fm profile</a>.</p>
 
-<lastfm-listening url="https://api.chrisburnell.com/lastfm-recenttracks?username={{ author.lastfm }}{% if global.personalApiKeyForLocal %}&secret={{ global.personalApiKeyForLocal }}{% endif %}" aria-live="true">
+<h2 id="latest">Latest listens</h2>
+
+<lastfm-listening url="https://api.chrisburnell.com/lastfm-recenttracks?username={{ author.lastfm }}&limit=12{% if global.personalApiKeyForLocal %}&secret={{ global.personalApiKeyForLocal }}{% endif %}" aria-live="true">
 	<ol class=" [ grid ] [ shelf  shelf--square ] ">
-		{% for track in (lastfm.recentTracks | limit(10)) %}
+		{% for track in (lastfm.recentTracks | limit(12)) %}
 			<article class=" [ flow ] ">
 				<a href="{{ track.url }}" aria-hidden="true" tabindex="-1" class=" [ cover-anchor ] ">
 					<img src="{{ track.imageUrl }}" alt="" role="presentation" loading="lazy" decoding="async" class=" [ cover ] [ u-photo ] ">
@@ -28,5 +31,87 @@ wide: true
 		{% endfor %}
 	</ol>
 </lastfm-listening>
+
+{% if lastfm.topAlbums.length -%}
+	<hr>
+
+	<h2 id="top-albums">Top Albums <small>of the last 7 days</small></h2>
+
+	<div class=" [ grid ] [ shelf  shelf--square ] ">
+		{% for album in (lastfm.topAlbums | limit(8)) -%}
+			{%- set item = collections.music | arePublished | arrayKeyValueEquals('data.title', album.name, false) | first -%}
+			{% if item -%}
+				{{ shelfItem(item) }}
+			{%- else -%}
+				<article class=" [ flow ] ">
+					<a href="{{ album.url }}" aria-hidden="true" tabindex="-1" class=" [ cover-anchor ] ">
+						<img src="{{ album.imageUrl }}" alt="Cover art for {{ album.name | safe }}" loading="lazy" decoding="async" class=" [ cover ] [ u-photo ] ">
+					</a>
+					<h1>
+						<a href="{{ album.url }}">{{ album.name | safe }}</a>
+					</h1>
+					<div>
+						<a href="{{ album.artist.url }}" class=" [ h-cite ] " rel="external noopener">{{ album.artist.name }}</a>
+					</div>
+				</article>
+			{%- endif %}
+		{%- endfor %}
+	</div>
+{%- endif %}
+
+{% if lastfm.topAlbumsAll.length -%}
+	<hr>
+
+	<h2 id="top-albums">Top Albums <small>of all time</small></h2>
+
+	<div class=" [ grid ] [ shelf  shelf--square ] ">
+		{% for album in (lastfm.topAlbumsAll | limit(8)) -%}
+			{%- set item = collections.music | arePublished | arrayKeyValueEquals('data.title', album.name, false) | first -%}
+			{% if item -%}
+				{{ shelfItem(item) }}
+			{%- else -%}
+				<article class=" [ flow ] ">
+					<a href="{{ album.url }}" aria-hidden="true" tabindex="-1" class=" [ cover-anchor ] ">
+						<img src="{{ album.imageUrl }}" alt="Cover art for {{ album.name | safe }}" loading="lazy" decoding="async" class=" [ cover ] [ u-photo ] ">
+					</a>
+					<h1>
+						<a href="{{ album.url }}">{{ album.name | safe }}</a>
+					</h1>
+					<div>
+						<a href="{{ album.artist.url }}" class=" [ h-cite ] " rel="external noopener">{{ album.artist.name }}</a>
+					</div>
+				</article>
+			{%- endif %}
+		{%- endfor %}
+	</div>
+{%- endif %}
+
+{% if lastfm.topArtists.length -%}
+	<hr>
+
+	<h2 id="top-artists">Top Artists <small>of the last 7 days</small></h2>
+
+	<ol class=" [ cluster ] ">
+		{% for artist in (lastfm.topArtists | limit(10)) -%}
+			<li>
+				<a href="{{ artist.url }}">{{ artist.name | safe }}</a>
+			</li>
+		{%- endfor %}
+	</ol>
+{%- endif %}
+
+{% if lastfm.topArtistsAll.length -%}
+	<hr>
+
+	<h2 id="top-artists">Top Artists <small>of all time</small></h2>
+
+	<ol class=" [ cluster ] ">
+		{% for artist in (lastfm.topArtistsAll | limit(50)) -%}
+			<li>
+				<a href="{{ artist.url }}">{{ artist.name | safe }}</a>
+			</li>
+		{%- endfor %}
+	</ol>
+{%- endif %}
 
 <script type="module">{% include '../js/components/lastfm-listening.js' %}</script>
