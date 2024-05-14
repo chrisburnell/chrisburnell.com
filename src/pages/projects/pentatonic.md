@@ -113,4 +113,4 @@ The function takes six parameters:
 
 <button id="treasure" class="pentatonic" data-values="0,2,4,6,0,2,4,6,1,3,5,7,1,3,5,7,2,4,6,8,2,4,6,8,3,5,7,9,3,5,7,9,4,6,8,10,4,6,8,10,10,10,3,3,4,4,5,5,6,6,6,6,6,6" data-duration="8000" data-key-start="36" data-key-intervals="1" data-key-limit="20">🔑</button>
 
-{%- js 'module' -%}{% include '../../../node_modules/@chrisburnell/svg-sparkline/svg-sparkline.js' %}{%- endjs -%}
+<script type="module">{% include '../../../node_modules/@chrisburnell/svg-sparkline/svg-sparkline.js' %}</script>

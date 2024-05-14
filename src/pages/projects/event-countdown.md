@@ -115,4 +115,4 @@ You can also override the maximum unit of time used by providing a `max-division
 </event-countdown>
 ```
 
-{%- js 'module' -%}{% include '../../../node_modules/@chrisburnell/event-countdown/event-countdown.js' %}{%- endjs -%}
+<script type="module">{% include '../../../node_modules/@chrisburnell/event-countdown/event-countdown.js' %}</script>

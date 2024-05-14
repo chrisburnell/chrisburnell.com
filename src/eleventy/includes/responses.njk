@@ -82,5 +82,5 @@
 			</div>
 		{% endif %}
 	</div>
-	{%- js 'module' -%}{% renderFile 'src/js/components/url-input.js' %}{%- endjs -%}
+	<script type="module">{% include '../../js/components/url-input.js' %}</script>
 {% endif %}

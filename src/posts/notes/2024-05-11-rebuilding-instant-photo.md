@@ -187,4 +187,4 @@ for (let instantPhoto of instantPhotos) {
 	observer.observe(instantPhoto)
 }
 </script>
-{%- js 'module' -%}{% include '../../../node_modules/@chrisburnell/instant-photo/instant-photo.js' %}{%- endjs -%}
+<script type="module">{% include '../../../node_modules/@chrisburnell/instant-photo/instant-photo.js' %}</script>

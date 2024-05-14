@@ -112,4 +112,4 @@ There are also a handful of attributes you can set which will override the appea
         }
     }
 {%- endcss %}
-{%- js 'module' -%}{% include '../../../node_modules/@chrisburnell/paper-stamp/paper-stamp.js' %}{%- endjs -%}
+<script type="module">{% include '../../../node_modules/@chrisburnell/paper-stamp/paper-stamp.js' %}</script>>

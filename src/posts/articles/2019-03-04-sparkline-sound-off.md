@@ -121,4 +121,4 @@ We can pump these values into the [Web Audio API](https://developer.mozilla.org/
 
 Check out my new interactive demo at [spark-line](/spark-line/)!
 
-{%- js 'module' -%}{% include '../../../node_modules/@chrisburnell/svg-sparkline/svg-sparkline.js' %}{%- endjs -%}
+<script type="module">{% include '../../../node_modules/@chrisburnell/svg-sparkline/svg-sparkline.js' %}</script>
