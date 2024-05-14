@@ -11,9 +11,9 @@ runs:
         path: |
           .cache
           _site
-        key: site-cache-${{ runner.os }}-${{ github.run_id }}
+        key: site-cache
         restore-keys: |
-          site-cache-${{ runner.os }}
+          site-cache
 
     - name: Build with npm
       run: npm run build-production
@@ -26,4 +26,4 @@ runs:
         path: |
           .cache
           _site
-        key: site-cache-${{ runner.os }}-${{ github.run_id }}
+        key: site-cache
