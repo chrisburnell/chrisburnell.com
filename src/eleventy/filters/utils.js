@@ -178,7 +178,7 @@ export const rangeMap = (number, inMin, inMax, outMin, outMax, decimals) => {
  */
 export const stringToPercent = (string, decimals = 1) => {
 	const [numerator, denominator] = string.split("/").map(Number)
-	return maxDecimals(numerator / denominator * 100, decimals)
+	return maxDecimals((numerator / denominator) * 100, decimals)
 }
 
 /**
