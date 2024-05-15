@@ -7,7 +7,10 @@ import { program } from "commander"
 import path from "path"
 import { fileURLToPath } from "url"
 
-import createPost from "./commands/createPost.js"
+import createArticle from "./commands/createArticle.js"
+import createBookmark from "./commands/createBookmark.js"
+import createLike from "./commands/createLike.js"
+import createNote from "./commands/createNote.js"
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -34,16 +37,40 @@ const runWizard = async () => {
 		message: "What do you want to do?",
 		choices: [
 			{
-				name: "Create a new post",
-				value: "post",
-				description: "Create a new post",
+				name: "Create: Article",
+				value: "article",
+				description: "Create a new Article",
+			},
+			{
+				name: "Create: Bookmark",
+				value: "bookmark",
+				description: "Create a new Bookmark",
+			},
+			{
+				name: "Create: Like",
+				value: "like",
+				description: "Create a new Like",
+			},
+			{
+				name: "Create: Note",
+				value: "note",
+				description: "Create a new Note",
 			},
 		],
 	})
 
 	switch (type) {
-		case "post":
-			createPost(__siteroot)
+		case "article":
+			createArticle(__siteroot)
+			break
+		case "bookmark":
+			createBookmark(__siteroot)
+			break
+		case "like":
+			createLike(__siteroot)
+			break
+		case "note":
+			createNote(__siteroot)
 			break
 	}
 }
@@ -54,8 +81,8 @@ program
 	.action(() => runWizard())
 
 program
-	.command("post")
-	.description("📝 Create a new post")
-	.action(() => createPost())
+	.command("article")
+	.description("📝 Create a new Article")
+	.action(() => createArticle())
 
 program.parse()
