@@ -12,6 +12,10 @@ syndicate_to:
   - https://fediverse.repc.co/@chrisburnell/112365680485181016
 ---
 
+<div class=" [ box  box--success  box--line-length ] [ flow ] " >
+    <p>I’ve added a directory for <code style="white-space: nowrap;">/interests</code> pages! <a href="/note/interests-directory/">Read the blog post</a> or <a href="https://chrisburnell.github.io/interests-directory/" rel="external noopener">visit the directory</a>.</p>
+</div>
+
 You may or may not be aware of the `/about`, `/ideas`, `/now`, and `/uses` page initiatives<a href="#fn1" id="fnref1"><sup class="footnote-ref">[1]</sup></a> <a href="#fn2" id="fnref2"><sup class="footnote-ref">[2]</sup></a>, where website authors are encouraged to create pages on their websites at discoverable URLs for expressing who they are, concepts they’re thinking about, what they’re doing presently, and what hardware/software/things they are using (respectively).
 
 Recently, I’ve been ruminating on an additional way to aid in the discoverability of like-minded folks across the web: the <code class="delta">/interests</code> page.
@@ -27,10 +31,6 @@ I imagine these pages will exist as an ever-evolving document; after all, people
 I think it’s also important to let people know how to get in touch with you on this page—the whole point is to put a spotlight on what interests *you* and create the spark for electrifying conversations with others. It’s no secret that people speak the most passionately about things that they’re passionate about, and I find these conversations the most interesting.
 
 I’m excited to learn what you’re passionate and interested in! I’d love if you joined me in creating your own <code style="white-space: nowrap;">/interests</code> page so we can start kindling the flames of impassioned conversation with like-minded folks across the web!
-
-<div class=" [ box  box--success  box--line-length ] [ flow ] " >
-    <p>I’ve added a directory for <code style="white-space: nowrap;">/interests</code> pages! <a href="/note/interests-directory/">Read the blog post</a> or <a href="https://chrisburnell.github.io/interests-directory/" rel="external noopener">visit the directory</a>.</p>
-</div>
 
 <hr style="--rule-space: var(--size-medium);">
 

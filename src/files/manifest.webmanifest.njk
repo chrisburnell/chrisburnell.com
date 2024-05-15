@@ -1,0 +1,28 @@
+{
+  "dir": "ltr",
+  "lang": "{{ site.locale }}",
+  "default_locale": "{{ site.locale }}",
+  "name": "{{ site.title | striptags(true) | safe }}",
+  "short_name": "{{ site.url | getHost }}",
+  "description": "{{ site.description | striptags(true) | safe }}",
+  "display": "standalone",
+  "orientation": "any",
+  "start_url": "{{ site.url }}",
+  "homepage_url": "{{ site.url }}",
+  "theme_color": "{{ designTokens['colors-hex'] | keyValue('raven') }}",
+  "background_color": "{{ designTokens['colors-hex'] | keyValue('mineshaft') }}",
+  "background": {
+    "persistent": false
+  },
+  "icons": [
+    {
+      "src": "/images/raven.svg",
+      "sizes": "any"
+    },
+    {
+      "src": "/images/favicon.ico",
+      "type": "image/ico",
+      "sizes": "16x16 32x32 48x48 64x64"
+    }
+  ]
+}
