@@ -7,7 +7,3 @@ runs:
     - name: Install Node Modules
       run: npm ci
       shell: bash
-
-    - name: Install Sharp
-      run: npm install --include=optional sharp
-      shell: bash
