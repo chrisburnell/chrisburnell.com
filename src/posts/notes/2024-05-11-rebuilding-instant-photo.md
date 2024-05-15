@@ -10,7 +10,7 @@ tags:
 
 <aside class="rss-only"><p>I think the styles and scripts that come with this article are pretty important to the reading experience, so if you want to see the Web Component and its CSS replacement in action, go to the web version: <a href="{{ canonical }}">{{ canonical }}</a>.</p></aside>
 
-I built the [*Instant Photo* Web Component](/instant-photo) some time ago, but never really wrote about or promoted it, mostly because it was just a fun little experiment. In this post, I’m going to come at the concept from a different angle and see how much of *what* the Web Component does really needs to come from JavaScript, and convert as much of it as I can to use CSS only.
+I built the [*Instant Photo* Web Component](/instant-photo/) some time ago, but never really wrote about or promoted it, mostly because it was just a fun little experiment. In this post, I’m going to come at the concept from a different angle and see how much of *what* the Web Component does really needs to come from JavaScript, and convert as much of it as I can to use CSS only.
 
 In short, it gives `<img>` tags the appearance of an instant photo (like a Polaroid picture) and provides some controls over its appearance.
 
