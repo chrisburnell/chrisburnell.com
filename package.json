@@ -107,7 +107,7 @@
     "tokens": "npx json-to-scss './src/eleventy/data/designTokens/*.json' ./src/css/abstracts/_generated.scss; npx prettier --write src/css/abstracts/_generated.scss",
     "css": "npx sass src/css:_site/css --style=compressed --no-source-map --color",
     "postcss": "npx postcss _site/css/**/*.css --replace --no-map",
-    "create-search-index": "pagefind --site \"_site\" --glob \"**/*.html\"",
+    "create-search-index": "npx pagefind --site \"_site\" --glob \"**/*.html\"",
     "debug": "cross-env NODE_OPTIONS=--max-old-space-size=8192 DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
     "start": "cross-env NODE_OPTIONS=--max-old-space-size=8192 npx @11ty/eleventy --incremental --serve",
     "now": "cross-env NODE_OPTIONS=--max-old-space-size=8192 npx @11ty/eleventy --ignore-initial --incremental --serve",
