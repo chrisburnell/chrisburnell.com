@@ -729,6 +729,12 @@ const blogroll = [
 		rss: "https://grislyeye.com/rss.xml",
 		mastodon: "grislyeye@indieweb.social",
 	},
+	{
+		title: "Mayank",
+		url: "https://www.mayank.co",
+		rss: "https://www.mayank.co/blog/rss.xml",
+		mastodon: "hi_mayank@hachyderm.io",
+	},
 ].sort((a, b) => {
 	return a.title.localeCompare(b.title)
 })
