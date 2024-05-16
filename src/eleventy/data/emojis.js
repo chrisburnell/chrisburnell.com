@@ -49,4 +49,5 @@ export default {
 	now: "⏲️",
 	ticket: "🎟️",
 	progress: "🌱",
+	question: "❓",
 }

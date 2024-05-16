@@ -26,25 +26,25 @@ layout: root
 			{%- endif %}
 		</nav>
 	</div>
-</header>
 
-<div id="popover-settings" class=" [ popover-settings ] [ flow ] [ gamma ] [ requires-js ] " popover>
-	{%- include 'settings.njk' -%}
-</div>
-
-{% if not global.isCSSNakedDay -%}
-	<div id="popover-navigation" class=" [ popover-navigation ] [ flow ] [ gamma ] " popover>
-		<ol class=" [ navigation__list ] ">
-			{% for link in navigation %}
-				{% if link.header %}
-					<li>
-						<a href="{{ link.url }}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title | safe }}</a>
-					</li>
-				{% endif %}
-			{% endfor %}
-		</ol>
+	<div id="popover-settings" class=" [ popover-settings ] [ flow ] [ gamma ] [ requires-js ] " popover>
+		{%- include 'settings.njk' -%}
 	</div>
-{%- endif %}
+
+	{% if not global.isCSSNakedDay -%}
+		<div id="popover-navigation" class=" [ popover-navigation ] [ flow ] [ gamma ] " popover>
+			<ol class=" [ navigation__list ] ">
+				{% for link in navigation %}
+					{% if link.header %}
+						<li>
+							<a href="{{ link.url }}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title | safe }}</a>
+						</li>
+					{% endif %}
+				{% endfor %}
+			</ol>
+		</div>
+	{%- endif %}
+</header>
 
 <main class=" [ main ] [ flow ] "{% if not excludeFromSearch and not sitemap.exclude and not draft and published !== false and not 'ignore' in tags %} data-pagefind-body{% endif %}>
 	{% if global.isCSSNakedDay -%}

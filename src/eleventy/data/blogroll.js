@@ -689,7 +689,7 @@ const blogroll = [
 		mastodon: "codepen@fosstodon.org",
 	},
 	{
-		title: "Juhis Hamatti",
+		title: "Juha-Matti Santala",
 		url: "https://hamatti.org",
 		rss: "https://hamatti.org/feed/feed.xml",
 		mastodon: "hamatti@mastodon.world",

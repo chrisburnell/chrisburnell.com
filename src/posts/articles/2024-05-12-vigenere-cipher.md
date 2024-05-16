@@ -100,7 +100,7 @@ Without the secret keyword (or, to be fair, modern computing power), it can be *
 	<span tabindex="0" row="21" column="22">L</span><span tabindex="0" row="2" column="13">I</span><span tabindex="0" row="10" column="14">U</span><span tabindex="0" row="6" column="21">Z</span><span tabindex="0" row="2" column="14">J</span><span tabindex="0" row="22" column="21">L</span><span tabindex="0" row="21" column="15">B</span><span tabindex="0" row="2" column="23">V</span><span tabindex="0" row="10" column="21">W</span><span tabindex="0" row="6" column="22">K</span><span tabindex="0" row="2" column="8">B</span><span tabindex="0" row="22" column="22">M</span><span tabindex="0" row="21" column="2">T</span><span tabindex="0" row="2" column="21">T</span><span tabindex="0" row="10" column="22">O</span>
 </div>
 
-<c-details class=" [ no-border  no-padding ] [ flow ] " style="margin-block-start: 1em;">
+<c-details class=" [ no-border  no-padding ] [ flow ] ">
     <summary class=" [ delta ] ">Vigenère Table</summary>
     <div class=" [ scroll-inline  scroll-inline-shadow ] ">
         <table class=" [ monospace ] " style="font-size: var(--font-size-small);">

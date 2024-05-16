@@ -154,7 +154,7 @@ And that’s it! We can now reference our PHP image in our front end code and tr
 
 Keep in mind that the server serving the PHP image *does* have to do some computational work in order to output the PNG, and there are some caching considerations that have to be made if the data being presented in the image should be fresh.
 
-<c-details style="margin-block-start: var(--size-medium);">
+<c-details>
     <summary>The full code</summary>
 
 ```php

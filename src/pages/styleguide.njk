@@ -591,7 +591,7 @@ p q r s t u v w x y z { | } ~</pre>
 <h2>Deck</h2>
 
 <div id="list-deck" class=" [ deck ] ">
-{% for item in collections.hot | rssOnlyFilter | limit(site.limits.deck) %}
+{% for item in collections.features | rssOnlyFilter | limit(site.limits.deck) %}
 	{{ deckItem(item, { show_images: true, truncate: true }) }}
 {% endfor %}
 </div>
