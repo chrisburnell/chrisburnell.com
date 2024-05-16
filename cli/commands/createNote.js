@@ -11,7 +11,7 @@ export default async (__siteroot) => {
 date: ${postDate}`
 
 	if (title) {
-		meta += `\title: "${title}"`
+		meta += `\ntitle: "${title}"`
 	}
 
 	if (description) {
