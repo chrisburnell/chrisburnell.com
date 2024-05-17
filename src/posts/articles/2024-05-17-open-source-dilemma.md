@@ -1,7 +1,7 @@
 ---
 date: 2024-05-17T23:58:16+0800
 title: The Open Source Dilemma
-description: In this short post, I discuss some thoughts I’ve been mulling over about the open source nature of my website, particularly after a great discussion I had with [fLaMEd](https://flamedfury.com) that galvanised some of my recent feelings about ownership on the web.
+description: In this post, I discuss some thoughts I’ve been mulling over about the open source nature of my website, particularly after a great discussion I had with [fLaMEd](https://flamedfury.com) that galvanised some of my recent feelings about ownership on the web.
 tags:
   - weblogpomo
   - weblogpomo2024
