@@ -5,8 +5,11 @@ description: In this short post, I discuss some thoughts I’ve been mulling ove
 tags:
   - weblogpomo
   - weblogpomo2024
+  - ai
+  - github
   - jekyll
   - eleventy
+  - personal
   - state-of-the-web
 ---
 
