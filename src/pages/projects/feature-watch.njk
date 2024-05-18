@@ -36,11 +36,11 @@ toc: true
 
 {% for feature in browserFeaturesSorted -%}
 	<section class=" [ flow ] " style="margin-block-start: var(--size-large-gigantic);">
-		<h2 id="{{ feature.id }}">{{ feature.title | safe }}{% if feature.language %} <small>{{ feature.language | specialCapitalize }}</small>{% endif %}{% if feature.supports or feature.supportsJS %} <small id="support-{{ feature.id }}" title="Supported by your browser" hidden>✅</small>{% endif %}</h2>
-		{{ feature.description | formatAsMarkdown | safe }}
+		<h2 id="{{ feature.id }}">{{ feature.title | safe }}{% if feature.language %} <small>{{ feature.language | supertitle }}</small>{% endif %}{% if feature.supports or feature.supportsJS %} <small id="support-{{ feature.id }}" title="Supported by your browser" hidden>✅</small>{% endif %}</h2>
+		{{ feature.description | markdownFormat | safe }}
 		<ul>
 			{% for link in feature.links -%}
-				<li>{{ link | formatAsMarkdown | safe }}</li>
+				<li>{{ link | markdownFormat | safe }}</li>
 			{%- endfor %}
 		</ul>
 		{% browserSupport feature.id %}

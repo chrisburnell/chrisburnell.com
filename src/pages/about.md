@@ -25,13 +25,13 @@ eleventyComputed:
 
 ## Bio
 
-{{ bio | formatAsMarkdown | safe }}
+{{ bio | markdownFormat | safe }}
 
 <c-details>
 <summary>Plaintext</summary>
 
 ```text
-{{ bio | formatAsMarkdown | striptags(true) | safe }}
+{{ bio | markdownFormat | striptags(true) | safe }}
 ```
 
 </c-details>
@@ -49,7 +49,7 @@ eleventyComputed:
 <summary>HTML</summary>
 
 ```html
-{{ bio | striptags(true) | formatAsMarkdown | replace('<p>', '') | replace('</p>', '') | safe }}
+{{ bio | striptags(true) | markdownFormat | replace('<p>', '') | replace('</p>', '') | safe }}
 ```
 
 </c-details>

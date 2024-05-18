@@ -4,7 +4,7 @@
 	<figure>
 		{% image './images/banners/' + banner_url, banner_alt, ' [ banner ] [ u-photo ] ' %}
 		{% if banner.caption -%}
-			<figcaption>{{ banner.caption | formatAsMarkdown | safe }}</figcaption>
+			<figcaption>{{ banner.caption | markdownFormat | safe }}</figcaption>
 		{%- endif %}
 	</figure>
 {%- endif %}

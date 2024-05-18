@@ -8,7 +8,6 @@ excludeFromSearch: true
 {%- set count = collection.length -%}
 {%- set latest_year = collection[0].data.year | default(collection[0].year) -%}
 {%- set first_year = collection[count-1].data.year | default(collection[count-1].year) -%}
-{%- set diff_years = latest_year - first_year -%}
 
 {%- set wordiest_post_index = 0 -%}
 {%- set wordiest_blog_post = 0 -%}
@@ -132,7 +131,7 @@ excludeFromSearch: true
 			{% for item in collections.categories -%}
 				{%- set count = collections[item.title] | arePublished | getCollectionCount -%}
 				<tr>
-					<th>{{ item.properPlural | title | specialCapitalize }}</th>
+					<th>{{ item.properPlural | supertitle }}</th>
 					<td class=" [ numeral  strong ] " style="padding-inline-start: 1lh; padding-inline-end: var(--size-medium);">{{ count }}</td>
 					<td style="inline-size: 100%; padding-inline: 0;">
 						<div class=" [ background--raven ] " style="background-image: linear-gradient(to bottom, transparent, color-mix(in oklab, var(--color-mineshaft), transparent calc(100% - var(--opacity-beta)))); inline-size: {{ (count / blog_count_highest_per_category * 100) | maxDecimals }}%; block-size: 1lh; border-radius: var(--size-border-default);"></div>

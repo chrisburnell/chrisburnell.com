@@ -5,7 +5,7 @@ pagination:
   alias: tag
 permalink: /tag/{{ tag }}/
 eleventyComputed:
-  title: "{{ tag | specialCapitalize | replace('-', ' ') }}"
+  title: "{{ tag | supertitle | replace('-', ' ') }}"
   description: "All of my posts tagged with <q>{{ tag }}</q>."
 ---
 {%- from 'macros/deckItem.njk' import deckItem -%}
@@ -31,7 +31,7 @@ eleventyComputed:
 	<div class=" [ description ] [ flow ] ">
 		<p>
 			<span class=" [ p-summary ] ">{% if count > 1 %}All {{ count | numberStringFormat }}{% else %}Just the one{% endif %} of my posts tagged <q>{{ tag }}</q>{% if first_year != latest_year %}, dating from {% if collection[0].data.list == 'shelf' %}<span class=" [ no-wrap ] ">{{ first_year }}–{{ latest_year }}</span>{% else %}<span class=" [ no-wrap ] "><a href="#{{ first_year }}">{{ first_year }}</a>–<a href="#{{ latest_year }}">{{ latest_year }}</a></span>{% endif %}{% endif %}.</span>
-			<a href="{{ site.url }}/{{ tag }}.xml" title="{{ tag | specialCapitalize }} Tag Feed" class=" [ icon-anchor ] "><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false"><use href="#svg--rss"></use></svg></c-emoji></a>
+			<a href="{{ site.url }}/{{ tag }}.xml" title="{{ tag | supertitle }} Tag Feed" class=" [ icon-anchor ] "><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false"><use href="#svg--rss"></use></svg></c-emoji></a>
 		</p>
 	</div>
 

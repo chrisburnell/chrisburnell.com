@@ -2,7 +2,7 @@ import { getWebmentions } from "@chrisburnell/eleventy-cache-webmentions"
 import dotenv from "dotenv"
 import configWebmentions from "../eleventy/config/webmentions.js"
 import { url as siteURL } from "../eleventy/data/site.js"
-import { formatAsMarkdown, stripNewLines } from "../eleventy/filters/strings.js"
+import { markdownFormat, stripNewLines } from "../eleventy/filters/strings.js"
 import { getHost } from "../eleventy/filters/urls.js"
 import { getMetaImage, getMetaTitle } from "../functions/collections.js"
 import { stripHTML } from "../functions/strings.js"
@@ -17,7 +17,7 @@ export default {
 		meta_title: (data) => getMetaTitle(data),
 		meta_description: (data) => {
 			if (data.description) {
-				return stripNewLines(stripHTML(formatAsMarkdown(data.description)))
+				return stripNewLines(stripHTML(markdownFormat(data.description)))
 			}
 			return `A page on ${getHost(siteURL)}`
 		},

@@ -11,17 +11,17 @@
 		{% if item.data.excerpt and item.content != '' -%}
 		<summary>{{ item.data.excerpt | striptags }}</summary>
 		<content type="html">
-			{{ item.content | formatAsMarkdown }}
+			{{ item.content | markdownFormat }}
 		</content>
 		{% elif item.data.description and item.content != '' -%}
 		<summary>{{ item.data.meta_description | stripStrikethrough }}</summary>
 		<content type="html">
-			{{ item.content | formatAsMarkdown }}
+			{{ item.content | markdownFormat }}
 		</content>
 		{% elif not item.data.description and item.content != '' -%}
-		<summary>{{ item.content | formatAsMarkdown | stripNewLines | stripStrikethrough | striptags(true) | maxWords }}</summary>
+		<summary>{{ item.content | markdownFormat | stripNewLines | stripStrikethrough | striptags(true) | maxWords }}</summary>
 		<content type="html">
-			{{ item.content | formatAsMarkdown }}{% if item.data.of_url %}<p>Original post can be found at: <a href="{{ item.data.of_url }}">{{ item.data.of_url }}</a></p>{% endif %}
+			{{ item.content | markdownFormat }}{% if item.data.of_url %}<p>Original post can be found at: <a href="{{ item.data.of_url }}">{{ item.data.of_url }}</a></p>{% endif %}
 		</content>
 		{% elif item.data.description and not item.content -%}
 		<summary>{{ item.data.meta_description | stripStrikethrough | striptags(true) }}</summary>

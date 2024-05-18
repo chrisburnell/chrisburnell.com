@@ -4,7 +4,7 @@ import configWebmentions from "../eleventy/config/webmentions.js"
 import { untappd } from "../eleventy/data/author.js"
 import { url as siteURL } from "../eleventy/data/site.js"
 import { getCategoryName } from "../eleventy/filters/collections.js"
-import { formatAsMarkdown, stripNewLines } from "../eleventy/filters/strings.js"
+import { markdownFormat, stripNewLines } from "../eleventy/filters/strings.js"
 import { getHost } from "../eleventy/filters/urls.js"
 import { getAuthors, getAuthorsString, getMetaImage, getMetaTitle, getPropertyLabel, getPropertyTitle, getPropertyTitleFallback, getPropertyURL, getRSVPString, getReplyAuthor, getReplyAuthorString, getReplyTitle, getReplyURL } from "../functions/collections.js"
 import { stripHTML } from "../functions/strings.js"
@@ -31,7 +31,7 @@ export default {
 		meta_title: async (data) => getMetaTitle(data),
 		meta_description: (data) => {
 			if (data.description) {
-				return stripNewLines(stripHTML(formatAsMarkdown(data.description)))
+				return stripNewLines(stripHTML(markdownFormat(data.description)))
 			} else if (data.rsvp) {
 				return `A ${getCategoryName(data)} on ${getHost(siteURL)}`
 			} else if (data.in_reply_to) {

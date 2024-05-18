@@ -5,7 +5,7 @@
 	{% if page.url != lookup.url and count < site.limits.feature %}
 	<li>
 		<a href="{{ lookup.url }}" class=" [ riza ] "><c-emoji>{{ lookup.data.emoji }}</c-emoji>{{ lookup.data.title | striptags(true) | safe }}</a>
-		{{ lookup.data.description | formatAsMarkdown | safe }}
+		{{ lookup.data.description | markdownFormat | safe }}
 	</li>
 	{%- set count = count + 1 -%}
 	{% endif %}

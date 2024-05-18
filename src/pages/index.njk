@@ -19,7 +19,7 @@ excludeFromSearch: true
 	</h1>
 
 	<div class=" [ description ] [ flow ] [ p-summary ] " aria-hidden="true">
-		{{ description | formatAsMarkdown | safe | replace('href=', 'tabindex="-1" href=') }}
+		{{ description | markdownFormat | safe | replace('href=', 'tabindex="-1" href=') }}
 	</div>
 
 	<div class=" [ content ] [ flow ] ">

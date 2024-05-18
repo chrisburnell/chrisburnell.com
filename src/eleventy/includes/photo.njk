@@ -17,7 +17,7 @@
 				{% image './images/content/' + lookup_url, lookup_alt, lookup_classes, lookup_widths %}
 			{% endif %}
 			{% if lookup.caption %}
-				<figcaption>{{ lookup.caption | formatAsMarkdown | safe }}</figcaption>
+				<figcaption>{{ lookup.caption | markdownFormat | safe }}</figcaption>
 			{% endif %}
 		</figure>
 	{% endfor %}

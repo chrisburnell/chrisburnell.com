@@ -11,7 +11,7 @@ description: A great big list of all the pages, projects, posts on my website.
 	</h1>
 
 	<div class=" [ description ] [ flow ] [ p-summary ] ">
-		{{ descriptionLong | default(description) | formatAsMarkdown | safe }}
+		{{ descriptionLong | default(description) | markdownFormat | safe }}
 	</div>
 
 	<div id="content" class=" [ content ] [ flow ] [ generate-toc ] ">

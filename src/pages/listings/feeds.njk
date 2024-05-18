@@ -16,7 +16,7 @@ perch: true
 	</h1>
 
 	<div class=" [ description ] [ flow ] [ p-summary ] ">
-		{{ descriptionLong | default(description) | formatAsMarkdown | safe }}
+		{{ descriptionLong | default(description) | markdownFormat | safe }}
 	</div>
 
 	{% sparkline collection, first_year %}

@@ -32,9 +32,9 @@
 			{% include 'photo.njk' %}
 		{%- endif %}
 		{% if item.data.excerpt or item.data.description -%}
-			<p class=" [ p-summary ] [ line-clamp ] ">{{ item.data.excerpt | default(item.data.description) | formatAsMarkdown | excerptize(params.show_images) | safe }}</p>
+			<p class=" [ p-summary ] [ line-clamp ] ">{{ item.data.excerpt | default(item.data.description) | markdownFormat | excerptize(params.show_images) | safe }}</p>
 		{%- elif ['bookmark', 'like', 'note', 'talk'].includes(item.data.category) and item.content -%}
-			<p class=" [ p-summary ] [ line-clamp ] ">{{ item.content | formatAsMarkdown | excerptize(params.show_images) | maxWords(undefined, params.truncate) | safe }}</p>
+			<p class=" [ p-summary ] [ line-clamp ] ">{{ item.content | markdownFormat | excerptize(params.show_images) | maxWords(undefined, params.truncate) | safe }}</p>
 		{%- elif item.data.category == 'code' -%}
 			<p class=" [ p-summary ] ">One of my code demos.</p>
 		{%- elif item.data.category == 'recipe' -%}

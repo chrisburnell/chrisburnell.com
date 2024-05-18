@@ -48,7 +48,7 @@
 <div class="root">
 	<div class="header">
 		<h1 class="title">{{ title | safe }}</h1>
-		{% if description %}<p>{{ description | formatAsMarkdown | striptags(true) | safe }}</p>{% endif %}
+		{% if description %}<p>{{ description | markdownFormat | striptags(true) | safe }}</p>{% endif %}
 	</div>
 	<div class="meta">
 		<div>

@@ -3,6 +3,6 @@
 		{% if updated %}
 			<time datetime="{{ updated | rfc3339Date }}">Updated {{ updated | friendlyDateLong | safe }}:</time>
 		{% endif %}
-		{{ updated_text | formatAsMarkdown | safe }}
+		{{ updated_text | markdownFormat | safe }}
 	</div>
 {% endif %}

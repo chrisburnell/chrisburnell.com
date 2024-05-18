@@ -25,14 +25,20 @@ export const conjunction = (strings) => {
  * @param {string} string
  * @return {string}
  */
-export const specialCapitalize = (string) => {
-	return capitalizers.reduce(
-		(output, capitalizer) => {
-			const regex = new RegExp(capitalizer, "gi")
-			return output.replace(regex, capitalizer)
-		},
-		string.charAt(0).toUpperCase() + string.slice(1),
-	)
+export const supertitle = (string) => {
+	let formatted = string
+		.split(" ")
+		.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+		.join(" ")
+
+	capitalizers.forEach((word) => {
+		const regex = new RegExp(word, "gi")
+		if (formatted.match(regex)) {
+			formatted = formatted.replace(regex, word)
+		}
+	})
+
+	return formatted
 }
 
 /**
@@ -131,7 +137,7 @@ export const numberStringFormat = (number) => {
  * @param {string} string
  * @returns {string}
  */
-export const formatAsMarkdown = (string) => {
+export const markdownFormat = (string) => {
 	return markdown.render(string)
 }
 
@@ -207,7 +213,7 @@ export const vigenere = (content, keyword = "RAVENOUS", secret = process.env.VIG
 
 export default {
 	conjunction,
-	specialCapitalize,
+	supertitle,
 	cleanTags,
 	encodeHTML,
 	decodeHTML,
@@ -216,7 +222,7 @@ export default {
 	maxWords,
 	maxChars,
 	numberStringFormat,
-	formatAsMarkdown,
+	markdownFormat,
 	excerptize,
 	spongebob,
 	vigenere,

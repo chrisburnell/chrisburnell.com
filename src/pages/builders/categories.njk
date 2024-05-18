@@ -43,7 +43,7 @@ eleventyComputed:
 
 	<div id="content" class=" [ content{% if collection[0].data.list == 'shelf' %}  full{% endif %} ] [ flow ] [ h-feed ] ">
 		{% if categoryIntroductions[category.title] %}
-			{{ categoryIntroductions[category.title] | join('\n\n') | formatAsMarkdown | safe }}
+			{{ categoryIntroductions[category.title] | join('\n\n') | markdownFormat | safe }}
 		{% endif %}
 
 		{% if collection[0].data.list == 'shelf' %}

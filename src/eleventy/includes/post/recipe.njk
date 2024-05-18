@@ -24,7 +24,7 @@
 
 	<ul>
 		{% for item in equipment %}
-			<li>{{ item | formatAsMarkdown | safe }}</li>
+			<li>{{ item | markdownFormat | safe }}</li>
 		{% endfor %}
 	</ul>
 {% endif %}
