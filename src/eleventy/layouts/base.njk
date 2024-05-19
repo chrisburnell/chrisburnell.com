@@ -17,7 +17,7 @@ layout: root
 				{% endfor %}
 			</ol>
 			<button class=" [ anchor ] [ popover-settings-button ] [ requires-js ] " popovertarget="popover-settings" title="Open Settings">
-				<svg width="24" height="24" aria-hidden="true" focusable="false"><use href="#svg--cog"></use></svg>
+				<svg width="24" height="24" aria-hidden="true" focusable="false"><use href="#svg--settings"></use></svg>
 			</button>
 			{% if not global.isCSSNakedDay -%}
 				<button class=" [ anchor ] [ popover-navigation-button ] " popovertarget="popover-navigation" title="Open Navigation">
@@ -66,7 +66,7 @@ layout: root
 		</ul>
 		<ul class=" [ cluster ] [ footer__navigation ] ">
 			<li class=" [ requires-js ] ">
-				<button class=" [ anchor ] " popovertarget="popover-settings"><c-emoji><svg width="16" height="16" aria-hidden="true" focusable="false" style="fill: var(--color-raven);"><use href="#svg--cog"></use></svg></c-emoji>Open Settings</button>
+				<button class=" [ anchor ] " popovertarget="popover-settings"><c-emoji><svg width="16" height="16" aria-hidden="true" focusable="false" style="fill: var(--color-raven);"><use href="#svg--settings"></use></svg></c-emoji>Open Settings</button>
 			</li><li><a href="https://github.com/{{ author.github }}/{{ site.repository }}/tree/{{ site.branch }}/{{ page.inputPath }}" id="edit"><c-emoji><svg width="16" height="16" aria-hidden="true" focusable="false" style="fill: var(--color-raven);"><use href="#svg--edit"></use></svg></c-emoji>Edit this page</a></li><li class=" [ requires-js ] ">{% include 'share.njk' %}</li>
 		</ul>
 		<ul class=" [ cluster ] [ footer__navigation ] ">

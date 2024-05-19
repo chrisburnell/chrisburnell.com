@@ -114,7 +114,7 @@ On my Stats page, I print out how many commits I have made to my website’s git
 
 I got this filter from [Zach Leatherman](https://github.com/zachleat/zachleat.com/blob/50a7550d05f6b953154fb767b63a439ce931f53b/eleventy.config.js#L159-L165), and its purpose (for me, at least) is to satisfy a grammar rule that I learned in high school and has stuck with me: when describing a numerical amount of something, numbers less than 10 should be spelled out.
 
-This filter takes in a given number, and if it’s less than 10, replaces it with its spelled-out equivalent.
+This filter takes in a given number, and if it’s less than 10, replaces it with its spelled-out equivalent; otherwise, it returns a localised version of the number (i.e. adds commas every three digits from the right for numbers with four or greater digits).
 
 ```javascript
 const stringNumbers = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
