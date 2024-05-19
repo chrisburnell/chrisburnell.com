@@ -37,7 +37,7 @@ toc: true
 <dl>
 	{%- for name, size in designTokens.sizes -%}
 		{%- if not '-' in name -%}
-			<dt>{{ name | replace('-', ' ') | title | replace(' ', '–') }}</dt>
+			<dt>{{ name | replace('-', ' ') | supertitle | replace(' ', '–') }}</dt>
 			<dd><div class=" [ size-example  size-example--{{ name }} ] " title="{{ size }}"></div></dd>
 		{%- endif -%}
 	{%- endfor -%}
@@ -48,7 +48,7 @@ toc: true
 	<dl>
 		{%- for name, size in designTokens.sizes -%}
 			{%- if '-' in name and not '-min' in name and not '-max' in name -%}
-				<dt>{{ name | replace('-', ' ') | title | replace(' ', '–') }}</dt>
+				<dt>{{ name | replace('-', ' ') | supertitle | replace(' ', '–') }}</dt>
 				<dd><div class=" [ size-example  size-example--{{ name }} ] " title="{{ size }}"></div></dd>
 			{%- endif -%}
 		{%- endfor -%}
