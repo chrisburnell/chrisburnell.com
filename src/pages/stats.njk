@@ -24,7 +24,7 @@ excludeFromSearch: true
 {%- set blog_count = 0 -%}
 {%- set blog_count_highest_per_year = 0 -%}
 {%- for i in range(first_year, latest_year + 1) -%}
-	{%- set count = collections.blogPosts | getCollectionCountByYear(i) -%}
+	{%- set count = collections.blogPosts | rssOnlyFilter | getCollectionCountByYear(i) -%}
 	{%- set blog_count = blog_count + count -%}
 	{%- if count > blog_count_highest_per_year -%}
 		{%- set blog_count_highest_per_year = count -%}
@@ -33,7 +33,7 @@ excludeFromSearch: true
 
 {%- set blog_count_highest_per_weekday = 0 -%}
 {%- for weekday in ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] -%}
-	{%- set count = collections.blogPosts | getCollectionCountByWeekday(weekday) -%}
+	{%- set count = collections.blogPosts | rssOnlyFilter | getCollectionCountByWeekday(weekday) -%}
 	{%- if count > blog_count_highest_per_weekday -%}
 		{%- set blog_count_highest_per_weekday = count -%}
 	{%- endif -%}
@@ -41,7 +41,7 @@ excludeFromSearch: true
 
 {%- set blog_count_highest_per_category = 0 -%}
 {%- for item in collections.categories -%}
-	{%- set count = collections[item.title] | arePublished | getCollectionCount -%}
+	{%- set count = collections[item.title] | arePublished | rssOnlyFilter | getCollectionCount -%}
 	{%- if count > blog_count_highest_per_category -%}
 		{%- set blog_count_highest_per_category = count -%}
 	{%- endif -%}
@@ -49,7 +49,7 @@ excludeFromSearch: true
 
 {%- set blog_count_highest_per_tag = 0 -%}
 {%- for item in collections.tags -%}
-	{%- set count = collections[item] | arePublished | getCollectionCount -%}
+	{%- set count = collections[item] | arePublished | rssOnlyFilter | getCollectionCount -%}
 	{%- if count > blog_count_highest_per_tag -%}
 		{%- set blog_count_highest_per_tag = count -%}
 	{%- endif -%}
@@ -93,7 +93,7 @@ excludeFromSearch: true
 	<table style="border-block-start: 0;">
 		<tbody>
 			{% for i in range(first_year, global.currentYear + 1) -%}
-				{% set count = collections.blogPosts | getCollectionCountByYear(i) -%}
+				{% set count = collections.blogPosts | rssOnlyFilter | getCollectionCountByYear(i) -%}
 				<tr>
 					<th class=" [ numeral ] ">{{ i }}</th>
 					<td class=" [ numeral  strong ] " style="padding-inline-start: 1lh; padding-inline-end: var(--size-medium);">{{ count }}</td>
@@ -111,7 +111,7 @@ excludeFromSearch: true
 	<table style="border-block-start: 0;">
 		<tbody>
 			{% for weekday in ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] -%}
-				{% set count = collections.blogPosts | getCollectionCountByWeekday(weekday) -%}
+				{% set count = collections.blogPosts | rssOnlyFilter | getCollectionCountByWeekday(weekday) -%}
 				<tr>
 					<th>{{ weekday }}</th>
 					<td class=" [ numeral  strong ] " style="padding-inline-start: 1lh; padding-inline-end: var(--size-medium);">{{ count }}</td>
@@ -129,7 +129,7 @@ excludeFromSearch: true
 	<table style="border-block-start: 0;">
 		<tbody>
 			{% for item in collections.categories -%}
-				{%- set count = collections[item.title] | arePublished | getCollectionCount -%}
+				{%- set count = collections[item.title] | arePublished | rssOnlyFilter | getCollectionCount -%}
 				<tr>
 					<th>{{ item.properPlural | supertitle }}</th>
 					<td class=" [ numeral  strong ] " style="padding-inline-start: 1lh; padding-inline-end: var(--size-medium);">{{ count }}</td>
@@ -147,7 +147,7 @@ excludeFromSearch: true
 	<table style="border-block-start: 0;">
 		<tbody>
 			{% for item in collections.tags | sort -%}
-				{%- set count = collections[item] | arePublished | getCollectionCount -%}
+				{%- set count = collections[item] | arePublished | rssOnlyFilter | getCollectionCount -%}
 				<tr>
 					<th>{{ item }}</th>
 					<td class=" [ numeral  strong ] " style="padding-inline-start: 1lh; padding-inline-end: var(--size-medium);">{{ count }}</td>

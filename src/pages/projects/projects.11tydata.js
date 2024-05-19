@@ -52,6 +52,14 @@ export default {
 			}
 			return data.description || ""
 		},
+		downloads: async (data) => {
+			if (data.github && data.npm) {
+				const github = await githubData(data.github)
+				const downloads = await npmDownloads(data.npm, github["created_at"])
+				return downloads
+			}
+			return 0
+		},
 		stargazers: async (data) => {
 			if (data.github) {
 				return await stargazers(data.github)

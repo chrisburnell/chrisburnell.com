@@ -59,14 +59,14 @@ layout: base
 				</h2>
 				<div id="list-{{ year }}" class=" [ deck ] ">
 					{% for item in posts %}
-						{{ deckItem(item, { hfeed: true, show_images: true, truncate: true }) }}
+						{{ deckItem(item, { hfeed: true, show_images: show_images, truncate: true }) }}
 					{% endfor %}
 				</div>
 			{% endfor %}
 		{%- else -%}
 			<div class=" [ deck ] ">
 				{% for item in collection | rssOnlyFilter %}
-					{{ deckItem(item, { hfeed: true, show_images: true, truncate: true }) }}
+					{{ deckItem(item, { hfeed: true, show_images: show_images, truncate: true }) }}
 				{% endfor %}
 			</div>
 		{%- endif -%}

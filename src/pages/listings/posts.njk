@@ -41,15 +41,19 @@ perch: true
 
 		<ul class=" [ grid ] [ shelf ] ">
 			<li>
-				<a href="/writing/" class=" [ gamma ] "><c-emoji>{{ emojis.author }}</c-emoji>Writing <sup>{{ collections.writings | getCollectionCount }}</sup></a>
+				<a href="/writing/" class=" [ gamma ] "><c-emoji>{{ emojis.author }}</c-emoji>Writing <sup>{{ collections.writings | rssOnlyFilter | getCollectionCount }}</sup></a>
 				<p>A more serious collection of ideas and bits of prose.</p>
 			</li>
 			<li>
-				<a href="/replies/" class=" [ gamma ] "><c-emoji>{{ emojis.reply }}</c-emoji>Replies <sup>{{ collections.replies | getCollectionCount }}</sup></a>
+				<a href="/blog/" class=" [ gamma ] "><c-emoji>{{ emojis.paper }}</c-emoji>Blog <sup>{{ collections.blogPosts | rssOnlyFilter | getCollectionCount }}</sup></a>
+				<p>A broader collection of blog posts.</p>
+			</li>
+			<li>
+				<a href="/replies/" class=" [ gamma ] "><c-emoji>{{ emojis.reply }}</c-emoji>Replies <sup>{{ collections.replies | rssOnlyFilter | getCollectionCount }}</sup></a>
 				<p>Replies I’ve made to other people.</p>
 			</li>
 			<li>
-				<a href="/rsvps/" class=" [ gamma ] "><c-emoji>{{ emojis.rsvp }}</c-emoji>RSVPs <sup>{{ collections.rsvps | getCollectionCount }}</sup></a>
+				<a href="/rsvps/" class=" [ gamma ] "><c-emoji>{{ emojis.rsvp }}</c-emoji>RSVPs <sup>{{ collections.rsvps | rssOnlyFilter | getCollectionCount }}</sup></a>
 				<p>A record of RSVPs to conferences and meet-ups.</p>
 			</li>
 			<li>
@@ -68,7 +72,7 @@ perch: true
 
 		<ul class=" [ grid ] [ shelf ] " data-layout="natural">
 			{%- for item in collections.categories -%}
-				{%- set count = collections[item.title] | arePublished | getCollectionCount -%}
+				{%- set count = collections[item.title] | arePublished | rssOnlyFilter | getCollectionCount -%}
 				<li>
 					<a href="/{{ item.plural }}/" class=" [ gamma ] "><c-emoji>{{ item.emoji | default(emojis.paper) }}</c-emoji>{{ item.properPlural | title }} <sup>{{ count }}</sup></a>
 					<p>
@@ -84,7 +88,7 @@ perch: true
 			{%- set lowest = 9001 -%}
 			{%- set highest = 0 -%}
 			{%- for item in collections.tags | sort -%}
-				{%- set count = collections[item] | arePublished | getCollectionCount -%}
+				{%- set count = collections[item] | arePublished | rssOnlyFilter | getCollectionCount -%}
 				{%- if count < lowest -%}
 					{%- set lowest = count -%}
 				{%- elif count > highest -%}
@@ -92,7 +96,7 @@ perch: true
 				{%- endif -%}
 			{%- endfor -%}
 			{%- for item in collections.tags | sort -%}
-				{%- set count = collections[item] | arePublished | getCollectionCount -%}
+				{%- set count = collections[item] | arePublished | rssOnlyFilter | getCollectionCount -%}
 				{# map range from lowest–highest to 1–1.5, 3 decimal places #}
 				{%- set fontSize = count | rangeMap(lowest, highest, 1, 1.5, 3) -%}
 				<li><a href="/tag/{{ item }}/" class=" [ strong ] " style="font-size: {{ fontSize }}em;">{{ item }} <sup>{{ count }}</sup></a></li>

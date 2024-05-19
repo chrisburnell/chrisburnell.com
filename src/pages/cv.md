@@ -31,7 +31,7 @@ Front End Developer and Software Engineer with {{ global.currentYear - site.esta
 
 Work roles involved creating design systems and tools to enable teams to build maintainable and performant websites, with an uncompromising focus on accessibility and user experience. These also included lead roles in building the front end and CMS architecture for small to enterprise clients, chiefly in the higher education and government sectors, as I oversaw the project lifecycle and acted as their primary technical contact.
 
-Passionate about the open web, having published over {{ technical_articles_count }} technical articles, and author of open-source software used by thousands of developers worldwide and on production client websites. Actively involved in the web community with many years of experience in organising conferences and meet-ups, most notably, [State of the Browser](https://stateofthebrowser.com).
+Passionate about the open web, having published over {{ technical_articles_count | toNearest(5, true) }} technical articles, and author of open-source software used by thousands of developers worldwide and on production client websites. Actively involved in the web community with many years of experience in organising conferences and meet-ups, most notably, [State of the Browser](https://stateofthebrowser.com).
 
 <hr>
 
@@ -148,7 +148,7 @@ Passionate about the open web, having published over {{ technical_articles_count
     <small><strong>London, UK</strong></small>
 </div>
 
-- Organised 6 annual, not-for-profit conferences, showcasing over 50 speakers with 150+ in-person attendees each year.
+- Organised 6 annual, not-for-profit conferences, showcasing over {{ (10 + 9 + 7 + 8 + 8 + 8) | toNearest(5, true) }} speakers with 150+ in-person attendees each year.
 
 - Liaised with speakers, sponsors, and venues; handled the logistics of running an in-person and online conference.
 
@@ -168,7 +168,7 @@ Passionate about the open web, having published over {{ technical_articles_count
     <p class="delta"><a href="https://chrisburnell.com/"><c-emoji><img src="{{ site.logo }}" class="brand-logo" width="24" height="24" alt="{{ site.title }}" loading="lazy" decoding="async"></c-emoji>chrisburnell.com</a></p>
 </div>
 
-Launched a web development blog and have published [{{ collections.projects.length + projects.web.length }} web projects](https://chrisburnell.com/projects/) and over [{{ collections.blogPosts | length | toNearest(5, true) }} blog posts](https://chrisburnell.com/posts/), including [{{ collections.writings | length }} longform articles](https://chrisburnell.com/writing/), [{{ collections.css | length }} articles about CSS](https://chrisburnell.com/tag/css/), [{{ collections.javascript | length }} articles about JavaScript](https://chrisburnell.com/tag/javascript/), and [{{ collections.code | length }} code demos](https://chrisburnell.com/code/).
+Launched a web development blog and have published [{{ collections.projects.length + projects.web.length }} web projects](https://chrisburnell.com/projects/) and over [{{ collections.blogPosts | length | toNearest(5, true) }} blog posts](https://chrisburnell.com/blog/), which includes {{ technical_articles_count }} technical articles, {{ collections.css | length }} articles about CSS, {{ collections.javascript | length }} articles about JavaScript, and {{ collections.code | length }} code demos.
 
 <c-details class="no-border" force-restore>
     <summary>Popular Pages & Posts</summary>
@@ -178,8 +178,6 @@ Launched a web development blog and have published [{{ collections.projects.leng
 - **[Sassy Lobotomised Owl](https://chrisburnell.com/article/sassy-lobotomised-owl/)**<br>Managing spacing between elements and components on your page can be a tiring task if undertaken manually. This is where the lobotomised owl comes in: a short, simple snippet of CSS that simplifies this whole process for you. In this article I’ll explain how I make use of it in a more dynamic way using a SCSS mixin.
 
 - **[Web Components from early 2024](https://chrisburnell.com/note/early-2024-web-components/)**<br>I’ve been having a lot of fun creating reusable Web Components, so here are three that I’ve built and been using this so far this year.
-
-- **[What are you interested in?](https://chrisburnell.com/note/slash-interests/)**<br>In the world of online self-expression, there’s been a fascinating trend of website authors creating discoverable pages to help others learn about who they are, what they’re thinking about, and more. I’m proposing an addition to these initiatives that helps us discover what people are passionate about.
 
 - **[How I shaved 1.5 minutes off my Eleventy build time](https://chrisburnell.com/article/memoizing-asset-bundles/)**<br>I had a revelation earlier today that solved a long-standing performance issue I’ve been having with the initial build of my Eleventy website, and here’s how it saved me a bunch of time!
 
