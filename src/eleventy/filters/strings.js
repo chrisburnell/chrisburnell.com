@@ -1,3 +1,4 @@
+import { load } from "cheerio"
 import dotenv from "dotenv"
 import he from "he"
 import randomCase from "random-case"
@@ -46,15 +47,9 @@ export const supertitle = (string) => {
  * @returns {string}
  */
 export const cleanTags = (string) => {
-	return string
-		.replace(/<pre(.|\n)*?<\/pre>/g, "")
-		.replace(/<form(.|\n)*?<\/form>/g, "")
-		.replace(/<link(.|\n)*?<\/link>/g, "")
-		.replace(/<s(.|\n)*?<\/s>/g, "")
-		.replace(/<script(.|\n)*?<\/script>/g, "")
-		.replace(/<style(.|\n)*?<\/style>/g, "")
-		.replace(/<(\w+).*?class="\s*\[ support(.|\n)*?<\/\1>/g, "")
-		.replace(/<(\w+).*?class="\s*\[ palette(.|\n)*?<\/\1>/g, "")
+	const $ = load(string)
+	$("pre, form, link, s, script, style, .support, .palette").remove()
+	return $.html()
 }
 
 /**
@@ -80,10 +75,10 @@ export const decodeHTML = (string) => {
  * @returns {string}
  */
 export const stripImages = (string) => {
-	return string
-		.replace(/<picture.*?>(.*?)<\/picture>/g, "")
-		.replace(/<img[^<>]+>/g, "")
-		.replace(/<a[^<>]+><\/a>/g, "")
+	const $ = load(string)
+	$("picture, img").remove()
+	$("a:empty").remove()
+	return $.html()
 }
 
 /**
@@ -91,7 +86,7 @@ export const stripImages = (string) => {
  * @returns {string}
  */
 export const stripNewLines = (string) => {
-	return string.replace("\n", "")
+	return string.replace("\n", " ")
 }
 
 /**
@@ -99,7 +94,9 @@ export const stripNewLines = (string) => {
  * @returns {string}
  */
 export const stripStrikethrough = (string) => {
-	return string.replace(/<s(.|\n)*?<\/s>/g, "")
+	const $ = load(string)
+	$("s").remove()
+	return $.html()
 }
 
 /**
@@ -146,20 +143,20 @@ export const markdownFormat = (string) => {
  * @returns {string}
  */
 export const excerptize = (string, keepImages = false) => {
-	let filteredString = string
-		.split("<!-- end excerpt -->")[0]
-		.replace(/<(script|style).*?>((.|\n)*?)<\/(script|style)>/g, "")
+	let $ = load(string.split("<!-- end excerpt -->")[0])
+	$("iframe, script, style").remove()
+	if (!keepImages) {
+		const withoutImages = stripImages($.html())
+		$ = load(withoutImages)
+		$("figure").remove()
+	}
+	return $.html()
 		.replace(/<\/(p|blockquote)>(\s+)?<(p|blockquote)>/, "<br>")
 		.replace("<p></p>", "")
 		.replace("<p>", "")
 		.replace("</p>", "")
 		.replace("<blockquote>", "<q>")
 		.replace("</blockquote>", "</q>")
-
-	if (keepImages) {
-		return filteredString
-	}
-	return stripImages(filteredString).replace(/<(figure|script|style).*?>((.|\n)*?)<\/(figure|script|style)>/g, "")
 }
 
 /**

@@ -15,15 +15,6 @@
 	max-inline-size: var(--max-inline-size, var(--size-line-length)) !important;
 }
 
-// Space out elements with flex
-.space-between {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: space-between;
-	gap: 1em;
-}
-
 // Make anything top sticky
 .sticky {
 	position: sticky;

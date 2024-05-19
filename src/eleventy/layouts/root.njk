@@ -114,11 +114,11 @@
 	<body>
 		<a href="#content" class=" [ skip-link  button ] [ visually-hidden ] ">Skip to main content</a>
 
-		{{- content | safe -}}
-
 		{# SVG Sprites -#}
 		{% set svg %}{% include '../../../images/sprites.svg' %}{% endset -%}
 		{{ svg | replace('<?xml version="1.0" encoding="utf-8"?>', '') | replace('<svg', '<svg display="none" aria-hidden="true"') | safe }}
+
+		{{- content | safe -}}
 
 		{% if eleventy.env.runMode === 'build' and not noServiceWorker -%}
 		{# ServiceWorker -#}
