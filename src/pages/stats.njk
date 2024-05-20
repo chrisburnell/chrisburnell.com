@@ -9,6 +9,9 @@ excludeFromSearch: true
 {%- set latest_year = collection[0].data.year | default(collection[0].year) -%}
 {%- set first_year = collection[count-1].data.year | default(collection[count-1].year) -%}
 
+{%- set latest_post = collections.blogPosts | first -%}
+{%- set first_post = collections.blogPosts | last -%}
+
 {%- set wordiest_post_index = 0 -%}
 {%- set wordiest_blog_post = 0 -%}
 {%- set blog_wordcount = 0 -%}
@@ -65,9 +68,9 @@ excludeFromSearch: true
 	<dt>№ Blog Posts <a href="#fn1" id="fnref1"><sup class="footnote-ref">[1]</sup></a></dt>
 	<dd>{{ blog_count | numberStringFormat }}</dd>
 	<dt>First Blog Post</dt>
-	<dd><a href="{{ collections.blogPosts | last | keyValue('url') }}">{{ collections.blogPosts | last | keyValue('data.date') | friendlyDateLong | safe }}</a></dd>
+	<dd><a href="{{ first_post | keyValue('url') }}">{{ first_post | keyValue('data.title') | safe }}</a><br><time datetime="{{ first_post | keyValue('data.date') | rfc3339Date | safe }}">{{ first_post | keyValue('data.date') | friendlyDateLong | safe }}</time></dd>
 	<dt>Latest Blog Post</dt>
-	<dd><a href="{{ collections.blogPosts | first | keyValue('url') }}">{{ collections.blogPosts | first | keyValue('data.date') | friendlyDateLong | safe }}</a></dd>
+	<dd><a href="{{ latest_post | keyValue('url') }}">{{ latest_post | keyValue('data.title') | safe }}</a><br><time datetime="{{ latest_post | keyValue('data.date') | rfc3339Date | safe }}">{{ latest_post | keyValue('data.date') | friendlyDateLong | safe }}</time></dd>
 	<dt>Blog Word Count</dt>
 	<dd>{{ blog_wordcount | numberStringFormat }}</dd>
 	<dt>Most Verbose</dt>
