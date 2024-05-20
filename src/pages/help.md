@@ -1,6 +1,6 @@
 ---
-title: Help
-description: How can I help you today?
+title: Help!
+description: How may I help you today?
 ---
 
 I get a lot pride and joy out of knowing my work has helped people. Whether it be tutorials, open-source projects, or even voicing my opinions on a given topic, there’s a real sense of satisfaction that comes from helping others.

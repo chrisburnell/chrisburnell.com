@@ -27,6 +27,11 @@ export default [
 		show: true,
 	},
 	{
+		title: "npm",
+		url: `https://npmjs.com/~${npm}`,
+		show: true,
+	},
+	{
 		title: "Discord",
 		url: `https://discordapp.com/users/${discord_id}`,
 	},
@@ -37,10 +42,6 @@ export default [
 	{
 		title: "Last.fm",
 		url: `https://last.fm/user/${lastfm}`,
-	},
-	{
-		title: "npm",
-		url: `https://npmjs.com/~${npm}`,
 	},
 	{
 		title: "Speakerdeck",
