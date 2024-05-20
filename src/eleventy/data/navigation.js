@@ -49,13 +49,13 @@ const navigation = [
 		footer: true,
 	},
 	{
-		title: "Want my help?",
-		url: "/help/",
+		title: "Privacy Policy",
+		url: "/privacy/",
 		footer: true,
 	},
 	{
-		title: "Privacy Policy",
-		url: "/privacy/",
+		title: "Want my help?",
+		url: "/help/",
 		footer: true,
 	},
 ]
