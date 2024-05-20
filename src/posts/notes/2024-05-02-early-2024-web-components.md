@@ -147,16 +147,12 @@ paper-stamp {
     display: inline-block;
     image-rendering: pixelated;
 }
-paper-stamp img {
+:is(paper-stamp, paper-stamp-nojs) img {
     display: block;
     margin: 15px;
 }
 paper-stamp-nojs {
     background-color: antiquewhite;
     display: inline-block;
-    padding: 15px;
-}
-paper-stamp-nojs img {
-    display: block;
 }
 {%- endcss %}
