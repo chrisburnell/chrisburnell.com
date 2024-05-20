@@ -65,9 +65,9 @@ excludeFromSearch: true
 	<dt>№ Blog Posts <a href="#fn1" id="fnref1"><sup class="footnote-ref">[1]</sup></a></dt>
 	<dd>{{ blog_count | numberStringFormat }}</dd>
 	<dt>First Blog Post</dt>
-	<dd>{{ collections.blogPosts | last | keyValue("data.date") | friendlyDateLong | safe }}</dd>
+	<dd><a href="{{ collections.blogPosts | last | keyValue('url') }}">{{ collections.blogPosts | last | keyValue('data.date') | friendlyDateLong | safe }}</a></dd>
 	<dt>Latest Blog Post</dt>
-	<dd>{{ collections.blogPosts | first | keyValue("data.date") | friendlyDateLong | safe }}</dd>
+	<dd><a href="{{ collections.blogPosts | first | keyValue('url') }}">{{ collections.blogPosts | first | keyValue('data.date') | friendlyDateLong | safe }}</a></dd>
 	<dt>Blog Word Count</dt>
 	<dd>{{ blog_wordcount | numberStringFormat }}</dd>
 	<dt>Most Verbose</dt>
