@@ -740,6 +740,12 @@ const blogroll = [
 		url: "https://11tybundle.dev",
 		rss: "https://11tybundle.dev/feed.xml",
 	},
+	{
+		title: "Bob Monsour",
+		url: "https://www.bobmonsour.com",
+		rss: "https://www.bobmonsour.com/feed.xml",
+		mastodon: "bobmonsour@indieweb.social",
+	},
 ].sort((a, b) => {
 	return a.title.localeCompare(b.title)
 })
