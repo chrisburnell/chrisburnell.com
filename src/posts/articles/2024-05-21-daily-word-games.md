@@ -38,10 +38,10 @@ In a standard crossword, for example, you might have the clue, <q>from the bibli
 
 With cryptic crosswords, however, clues are usually far less obvious, but often fall into at least one of a handful of different categories of clues. For the most part, the construction of a clue has three/four parts:
 
-1. The length of the answer, often in parentheses at the end of the clue
-2. Wording that indicates the type of clue
-3. A word or phrase that you operate on, given the type of clue
-4. A word or phrase that is the definition or synonym of the answer
+1. Wording that indicates the type of clue
+2. A word or phrase that you operate on, given the type of clue
+3. A word or phrase that is the definition or synonym of the answer
+4. The length of the answer, often in parentheses at the end of the clue (but not all cryptic crosswords provide this, sadly)
 
 Here are some examples of the types of clues you’ll find.
 
@@ -49,21 +49,21 @@ Here are some examples of the types of clues you’ll find.
 
 An anagram is a word or phrase that is formed by rearranging the letters of a different word or phrase. With these types of clues, you’ll normally find part of the clue’s wording tells you to transform a word or phrase to form the [anagram](https://en.wikipedia.org/wiki/Anagram) to be solved, e.g. <q>becomes</q>, <q>turns into</q>, or <q>wildly</q>. For example, given the following clue:
 
-<q>The mutating corona virus seems like a flesh-eater (11)</q>
+**The mutating corona virus seems like a flesh-eater (11)**
 
 We know that we’re looking for an 11-letter word, and the word <q>mutating</q> is a pretty good indicator that this is an anagram-type clue. In this case, the synonym of the answer is <q>flesh-eater</q>, and if we rearrange <q>corona virus</q>, we get:
 
-**CARNIVOROUS**
+<p class="center"><strong>CARNIVOROUS</strong></p>
 
 ### Sound Clues
 
 With these types of clues, like with anagrams, you’ll often find some wording in the clue that tells you’re looking for a word or phrase that sounds like part of the clue, e.g. <q>we hear</q>, <q>aloud</q>, etc. I find it best to slowly read these aloud to try to find the answer. For example, given the following clue:
 
-<q>Pray out loud for victim (4)</q>
+**Pray out loud for victim (4)**
 
 The words <q>out loud</q> jump out and tell us that this is a sound clue, so the definition/synonym of the answer is either <q>pray</q> or <q>victim</q>. In this case, the sound of the word <q>pray</q> could also make the word:
 
-**PREY**
+<p class="center"><strong>PREY</strong></p>
 
 Which is a synonym of <q>victim</q>!
 
@@ -75,11 +75,11 @@ I can hear you asking, <q>Okay, but what in the world is a Spooner?!</q>
 
 This type of clue is similar to a sound clue, but instead of hearing a particular word amongst other words, you have to swap sounds between two parts of a phrase. For example, given the following clue:
 
-<q>Dead end for a dull cossack, according to Spooner (8)</q>
+**Dead end for a dull cossack, according to Spooner (8)**
 
 The last part of the clue is telling us that this is a Spoonerism, so the other parts of the clue are likely to be <q>dead end</q> and <q>dull cossack</q>. I’ll spare you a lengthy exercise in swapping around sounds here, but if we take the phrase <q>dull cossack</q> and swap the consonants at the beginning of each word, we get <q>cull dossack</q>. Try saying that out loud, and you’ll find a rough synonym of <q>dead end</q>:
 
-**CUL-DE-SAC**
+<p class="center"><strong>CUL-DE-SAC</strong></p>
 
 <hr style="--rule-space: var(--size-medium);">
 
