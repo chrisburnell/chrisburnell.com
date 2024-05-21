@@ -735,6 +735,11 @@ const blogroll = [
 		rss: "https://www.mayank.co/blog/rss.xml",
 		mastodon: "hi_mayank@hachyderm.io",
 	},
+	{
+		title: "11ty Bundle",
+		url: "https://11tybundle.dev",
+		rss: "https://11tybundle.dev/feed.xml",
+	},
 ].sort((a, b) => {
 	return a.title.localeCompare(b.title)
 })
