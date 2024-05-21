@@ -95,6 +95,7 @@
 		<meta property="og:image:alt" content="{{ meta_title | safe }}" data-pagefind-meta="image_alt[content]">
 
 		{% if date -%}
+			<meta property="og:publish_date" content="{{ date | rfc3339Date | safe }}">
 			<meta property="article:published_time" content="{{ date | rfc3339Date | safe }}">
 		{%- endif %}
 		{% if updated or end -%}
