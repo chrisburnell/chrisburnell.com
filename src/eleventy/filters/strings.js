@@ -123,8 +123,8 @@ export const maxChars = (string, count, condition = true) => {
  * @param {number} number
  * @returns {string}
  */
-export const numberStringFormat = (number) => {
-	if (number < stringNumbers.length) {
+export const numberStringFormat = (number, forceNumeral = false) => {
+	if (!forceNumeral && number < stringNumbers.length) {
 		return stringNumbers[number]
 	}
 	return Math.floor(Number(number)).toLocaleString()
