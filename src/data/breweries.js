@@ -1,4 +1,4 @@
-const breweries = [
+export default [
 	{
 		title: "2 Crows Brewing",
 		url: "https://www.2crowsbrewing.com",
@@ -161,5 +161,3 @@ const breweries = [
 ].sort((a, b) => {
 	return a.title.localeCompare(b.title)
 })
-
-export default breweries

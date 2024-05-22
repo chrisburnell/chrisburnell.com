@@ -1,4 +1,4 @@
-const publications = [
+export default [
 	{
 		title: "NYT Cooking",
 		url: "http://cooking.nytimes.com",
@@ -6,5 +6,3 @@ const publications = [
 ].sort((a, b) => {
 	return a.title.localeCompare(b.title)
 })
-
-export default publications

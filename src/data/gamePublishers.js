@@ -1,4 +1,4 @@
-const gamePublishers = [
+export default [
 	{
 		title: "Nintendo",
 		url: ["https://nintendo.com", "https://nintendo.co.uk"],
@@ -17,5 +17,3 @@ const gamePublishers = [
 ].sort((a, b) => {
 	return a.title.localeCompare(b.title)
 })
-
-export default gamePublishers

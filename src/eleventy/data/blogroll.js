@@ -1,4 +1,4 @@
-const blogroll = [
+export default [
 	{
 		title: "Jeremy Keith",
 		url: "https://adactio.com",
@@ -749,5 +749,3 @@ const blogroll = [
 ].sort((a, b) => {
 	return a.title.localeCompare(b.title)
 })
-
-export default blogroll

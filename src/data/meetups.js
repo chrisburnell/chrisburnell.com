@@ -1,4 +1,4 @@
-const meetups = [
+export default [
 	{
 		title: "Homebrew Website Club London",
 		url: "https://hwclondon.co.uk",
@@ -7,5 +7,3 @@ const meetups = [
 ].sort((a, b) => {
 	return a.title.localeCompare(b.title)
 })
-
-export default meetups
