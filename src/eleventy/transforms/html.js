@@ -57,6 +57,9 @@ export default async function (value, outputPath) {
 			$(element).attr("id", headingID)
 		})
 
+		// Strip .no-fragment classes
+		$(".no-fragment").removeClass("no-fragment")
+
 		// Remove content that is intended for RSS only
 		$(".rss-only").remove()
 
@@ -68,9 +71,6 @@ export default async function (value, outputPath) {
 
 		// Make <pre> code blocks keyboard-accessible by adding `tabindex="0"`
 		$("pre > code").attr("tabindex", 0)
-
-		// Strip .no-fragment classes
-		$(".no-fragment").removeClass("no-fragment")
 
 		// Remove CSS during CSS Naked Day
 		if (isCSSNakedDay) {

@@ -3,4 +3,6 @@ export default {
 	sitemap: {
 		exclude: true,
 	},
+	eleventyExcludeFromCollections: true,
+	excludeFromSearch: true,
 }

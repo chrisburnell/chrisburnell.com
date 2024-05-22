@@ -104,7 +104,7 @@
     "check-links": "npx check-html-links _site",
     "lint": "npx eslint src/**/*.js",
     "prettier": "npx prettier --write src",
-    "tokens": "npx json-to-scss './src/eleventy/data/designTokens/*.json' ./src/css/abstracts/_generated.scss; npx prettier --write src/css/abstracts/_generated.scss",
+    "tokens": "npx json-to-scss './src/eleventy/data/designTokens/*.json' ./src/css/generated/_design-tokens.scss; npx prettier --write src/css/generated/_design-tokens.scss",
     "css": "npx sass src/css:_site/css --style=compressed --no-source-map --color",
     "postcss": "npx postcss _site/css/**/*.css --replace --no-map",
     "create-search-index": "npx pagefind --site \"_site\" --glob \"**/*.html\"",

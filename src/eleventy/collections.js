@@ -1,7 +1,7 @@
 import dotenv from "dotenv"
 dotenv.config()
 
-import { getPublished } from "@chrisburnell/eleventy-cache-webmentions"
+import { getWebmentionPublished } from "@chrisburnell/eleventy-cache-webmentions"
 import { currentYear, nowEpoch } from "../eleventy/data/global.js"
 import { isPublished, notReply } from "../functions/collections.js"
 import { exponentialMovingAverage } from "../functions/utils.js"
@@ -310,7 +310,7 @@ export const hot = (collection) => {
 		.sort(dateSort)
 		.map((item) => {
 			item.hotness = item.data.webmentions.reduce((accumulator, webmention) => {
-				return exponentialMovingAverage(epoch(getPublished(webmention)) / durationDay, accumulator)
+				return exponentialMovingAverage(epoch(getWebmentionPublished(webmention)) / durationDay, accumulator)
 			}, 0)
 
 			return item
