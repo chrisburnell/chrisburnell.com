@@ -8,9 +8,19 @@ export default async (__siteroot) => {
 	const tags = await postTags()
 
 	let meta = `---
-date: ${postDate}
-title: "${title}"
-description: ${description || "TODO"}`
+date: ${postDate}`
+
+	if (title.includes(`"`)) {
+		meta += `\ntitle: "${title.replace(/"/g, `\\"`)}"`
+	} else {
+		meta += `\ntitle: ${(title || "TODO")}`
+	}
+
+	if (description.includes(`"`)) {
+		meta += `\ndescription: "${description.replace(/"/g, `\\"`)}"`
+	} else {
+		meta += `\ndescription: ${(description || "TODO")}`
+	}
 
 	if (tags.length > 0) {
 		meta = `${meta}\ntags:\n${tags.map(tag => `  - ${tag}`).join("\n")}`

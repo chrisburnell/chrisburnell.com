@@ -11,11 +11,19 @@ export default async (__siteroot) => {
 date: ${postDate}`
 
 	if (title) {
-		meta += `\ntitle: "${title}"`
+		if (title.includes(`"`)) {
+			meta += `\ntitle: "${title.replace(/"/g, `\\"`)}"`
+		} else {
+			meta += `\ntitle: ${title}`
+		}
 	}
 
 	if (description) {
-		meta += `\ndescription: "${description}"`
+		if (description.includes(`"`)) {
+			meta += `\ndescription: "${description.replace(/"/g, `\\"`)}"`
+		} else {
+			meta += `\ndescription: ${description}`
+		}
 	}
 
 	if (tags.length > 0) {
