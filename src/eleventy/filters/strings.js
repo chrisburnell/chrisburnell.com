@@ -47,8 +47,18 @@ export const supertitle = (string) => {
  * @returns {string}
  */
 export const cleanTags = (string) => {
-	const $ = load(string)
+	const $ = load(string, null, false)
 	$("pre, form, link, s, script, style, .support, .palette").remove()
+	return $.html()
+}
+
+/**
+ * @param {string} string
+ * @returns {string}
+ */
+export const cleanTagsForRSS = (string) => {
+	const $ = load(string, null, false)
+	$("link, script, style").remove()
 	return $.html()
 }
 
@@ -75,7 +85,7 @@ export const decodeHTML = (string) => {
  * @returns {string}
  */
 export const stripImages = (string) => {
-	const $ = load(string)
+	const $ = load(string, null, false)
 	$("picture, img").remove()
 	$("a:empty").remove()
 	return $.html()
@@ -85,16 +95,16 @@ export const stripImages = (string) => {
  * @param {string} input
  * @returns {string}
  */
-export const stripNewLines = (string) => {
-	return string.replace("\n", " ")
+export const replaceLineBreaks = (string, replacement = " ") => {
+	return string.replace("\n", replacement)
 }
 
 /**
  * @param {string} string
  * @returns {string}
  */
-export const stripStrikethrough = (string) => {
-	const $ = load(string)
+export const removeStrikethrough = (string) => {
+	const $ = load(string, null, false)
 	$("s").remove()
 	return $.html()
 }
@@ -143,11 +153,11 @@ export const markdownFormat = (string) => {
  * @returns {string}
  */
 export const excerptize = (string, keepImages = false) => {
-	let $ = load(string.split("<!-- end excerpt -->")[0])
+	let $ = load(string.split("<!-- end excerpt -->")[0], null, false)
 	$("iframe, script, style").remove()
 	if (!keepImages) {
 		const withoutImages = stripImages($.html())
-		$ = load(withoutImages)
+		$ = load(withoutImages, null, false)
 		$("figure").remove()
 	}
 	return $.html()
@@ -212,10 +222,11 @@ export default {
 	conjunction,
 	supertitle,
 	cleanTags,
+	cleanTagsForRSS,
 	encodeHTML,
 	decodeHTML,
-	stripNewLines,
-	stripStrikethrough,
+	replaceLineBreaks,
+	removeStrikethrough,
 	maxWords,
 	maxChars,
 	numberStringFormat,

@@ -7,7 +7,7 @@
 <?xml-stylesheet href="/feed.xsl" type="text/xsl" ?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ site.locale }}" xml:base="{{ site.url }}">
 	<title>{{ site.title | striptags(true) }} · {{ title | striptags(true) }}</title>
-	<subtitle>{{ description | stripNewLines | stripStrikethrough | striptags(true) }}</subtitle>
+	<subtitle>{{ description | removeStrikethrough | striptags(false) }}</subtitle>
 	<id>{{ related_page }}</id>
 	<link href="{{ site.url + page.url }}" rel="self" />
 	<link href="{{ related_page }}" rel="alternate" />
