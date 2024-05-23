@@ -113,7 +113,7 @@ excludeFromSearch: true
 	<summary>Blog Posts by weekday</summary>
 	<table style="border-block-start: 0;">
 		<tbody>
-			{% for weekday in ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] -%}
+			{% for weekday in ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] -%}
 				{% set count = collections.blogPosts | rssOnlyFilter | getCollectionCountByWeekday(weekday) -%}
 				<tr>
 					<th>{{ weekday }}</th>
