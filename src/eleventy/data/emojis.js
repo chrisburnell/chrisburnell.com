@@ -6,6 +6,7 @@ export default {
 	checkin: "📍",
 	reply: "↪️",
 	rsvp: "📩",
+	inbox: "📥",
 	explore: "🔭",
 	calendar: "🗓️",
 	reading_length: "📚",
@@ -50,4 +51,7 @@ export default {
 	ticket: "🎟️",
 	progress: "🌱",
 	question: "❓",
+	paintbrush: "🖌️",
+	lightbulb: "💡",
+	email: "📧",
 }
