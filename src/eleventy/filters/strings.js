@@ -58,7 +58,9 @@ export const cleanTags = (string) => {
  */
 export const cleanTagsForRSS = (string) => {
 	const $ = load(string, null, false)
-	$("link, script, style").remove()
+	$("link, script, style, .no-rss").remove()
+	$("[class]").removeAttr("class")
+	$("[style]").removeAttr("style")
 	return $.html()
 }
 
