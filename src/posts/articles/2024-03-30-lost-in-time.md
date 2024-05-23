@@ -100,11 +100,6 @@ For starters, here’s the function that my DateTimes are pumped through:
 ```javascript
 import { DateTime } from "luxon"
 
-/**
- * @param {string} dateString
- * @param {string} format
- * @return {string}
- */
 export const formatDatetime = (dateString, format) => {
 	return DateTime.fromISO(dateString, { setZone: true }).toFormat(format)
 }
@@ -117,10 +112,6 @@ This function allows me to pass in any given ISO 8601 string and a specified for
 If I want to output an RFC 3339 string (e.g. for a `<time>` element’s `datetime` attribute), I can then use this function:
 
 ```javascript
-/**
- * @param {string} dateString
- * @returns {string}
- */
 export const rfc3339Date = (dateString) => {
 	return formatDatetime(dateString, "yyyy-MM-dd'T'HH:mm:ssZZ")
 }
@@ -129,10 +120,6 @@ export const rfc3339Date = (dateString) => {
 Similarly, for the text *inside* a `<time>` element, I like to print a <q>friendly date</q>, for which I use this function:
 
 ```javascript
-/**
- * @param {string} dateString
- * @return {string}
- */
 export const friendlyDate = (dateString) => {
 	return formatDatetime(dateString, "d LLLL yyyy")
 }
@@ -151,10 +138,6 @@ Combining these two in Nunjucks helps keep my markup relatively clean and unclut
 Because I have both the time and timezone associated with every ISO 8601 string, it means I can print the exact start and end times that events I’ve RSVPed to:
 
 ```javascript
-/**
- * @param {DateTime} value
- * @returns {string}
- */
 export const friendlyTime = (value) => {
 	return formatDatetime(value, "HH:mm ZZZZ")
 }

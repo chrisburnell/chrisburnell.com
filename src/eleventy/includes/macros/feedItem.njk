@@ -29,23 +29,29 @@
 					{% set to_escape %}{% include pre_include %}{% endset %}{{ to_escape | escape }}
 				{%- endfor %}
 			{%- endif %}
+			{% if item.data.cover -%}
+				{% set alt = 'Art for ' + (item.data.title | default(item.data.of_title) | striptags(false) | safe) -%}
+				{% set to_escape %}{% image './images/covers/' + item.data.cover, alt, ' [ cover ] [ u-photo ] ', [400] %}{% endset %}{{ to_escape | escape }}
+			{%- endif %}
 			{% if item.content and item.content != '' -%}
-			{{ item.content | markdownFormat | cleanTagsForRSS }}
+				{{ item.content | markdownFormat | cleanTagsForRSS }}
 			{%- endif %}
 			{% if item.data.listen_of -%}
 				{% set to_escape %}<iframe width="100%" height="150" src="https://odesli.co/embed/?url={{ item.data.listen_of }}&theme=dark" frameborder="0" allowtransparency sandbox="allow-same-origin allow-scripts allow-presentation allow-popups allow-popups-to-escape-sandbox">Sorry, this widget requires JavaScript, but you can still check it out <a href="{{ item.data.listen_of }}">over on Odesli</a>!</iframe>{% endset %}{{ to_escape | escape }}
 			{%- endif %}
 			{% if item.data.of_url -%}
-				&lt;p&gt;Reference: &lt;a href=&quot;{{ item.data.of_url }}&quot;&gt;{{ item.data.of_url }}&lt;/a&gt;&lt;/p&gt;
+				{% set to_escape %}<p>Reference: <a href="{{ item.data.of_url }}">{{ item.data.of_url }}</a></p>{% endset %}{{ to_escape | escape }}
 			{%- endif %}
 			{% if item.data.post_includes -%}
 				{% for post_include in (item.data.post_includes | toArray) -%}
 					{% set to_escape %}{% include post_include %}{% endset %}{{ to_escape | escape }}
 				{%- endfor %}
 			{%- endif %}
-			&lt;hr&gt;
-			&lt;p&gt;Thanks for subscribing and reading this post via RSS! {% if item.data.tags and 'rss-only' in item.data.tags %}This post is part of RSS Club, which means it appears only in my RSS feeds for a certain period of time.{% endif %}&lt;/p&gt;
-			&lt;p&gt;You can read more of my posts &lt;a href=&quot;https://chrisburnell.com/posts/&quot;&gt;on my website&lt;/a&gt;.&lt;/p&gt;
+			{% set to_escape -%}
+				<hr>
+				<p>Thanks for subscribing and reading this post via RSS! {% if item.data.tags and 'rss-only' in item.data.tags %}This post is part of RSS Club, which means it appears only in my RSS feeds for a certain period of time.{% endif %}</p>
+				<p>You can read more of my posts <a href="https://chrisburnell.com/posts/">on my website</a>.</p>
+			{%- endset %}{{ to_escape | escape }}
 		</content>
 		{% if item.data.of_url -%}
 		<link rel="alternate" href="{{ item.data.of_url }}" />

@@ -31,7 +31,7 @@ For today, I figured I’d start off by looking at my top genres of movies and T
             <tr>
                 <th class=" [ numeral ] ">{{ movie_data.genre }}</th>
                 <td class=" [ numeral  strong ] " style="padding-inline-start: 1lh; padding-inline-end: var(--size-medium);">{{ movie_data.count | numberStringFormat(true) }}</td>
-                <td style="inline-size: 100%; padding-inline: 0;">
+                <td class="no-rss" style="inline-size: 100%; padding-inline: 0;">
                     <div class=" [ background--raven ] " style="background-image: linear-gradient(to bottom, transparent, color-mix(in oklab, var(--color-mineshaft), transparent calc(100% - var(--opacity-beta)))); inline-size: {{ (movie_data.count / highest_movie_genre * 100) | maxDecimals }}%; block-size: 1lh; border-radius: var(--size-border-default);"></div>
                 </td>
             </tr>
@@ -49,7 +49,7 @@ For today, I figured I’d start off by looking at my top genres of movies and T
             <tr>
                 <th class=" [ numeral ] ">{{ tv_data.genre }}</th>
                 <td class=" [ numeral  strong ] " style="padding-inline-start: 1lh; padding-inline-end: var(--size-medium);">{{ tv_data.count | numberStringFormat(true) }}</td>
-                <td style="inline-size: 100%; padding-inline: 0;">
+                <td class="no-rss" style="inline-size: 100%; padding-inline: 0;">
                     <div class=" [ background--raven ] " style="background-image: linear-gradient(to bottom, transparent, color-mix(in oklab, var(--color-mineshaft), transparent calc(100% - var(--opacity-beta)))); inline-size: {{ (tv_data.count / highest_tv_genre * 100) | maxDecimals }}%; block-size: 1lh; border-radius: var(--size-border-default);"></div>
                 </td>
             </tr>
@@ -71,7 +71,7 @@ As mentioned, I’ve been <q>scrobbling</q> my music listening to [Last.fm](http
             <tr>
                 <th class=" [ numeral ] ">{{ scrobble_data.year }}</th>
                 <td class=" [ numeral  strong ] " style="padding-inline-start: 1lh; padding-inline-end: var(--size-medium);">{{ scrobble_data.count | numberStringFormat(true) }}</td>
-                <td style="inline-size: 100%; padding-inline: 0;">
+                <td class="no-rss" style="inline-size: 100%; padding-inline: 0;">
                     <div class=" [ background--raven ] " style="background-image: linear-gradient(to bottom, transparent, color-mix(in oklab, var(--color-mineshaft), transparent calc(100% - var(--opacity-beta)))); inline-size: {{ (scrobble_data.count / most_scrobbles_per_year * 100) | maxDecimals }}%; block-size: 1lh; border-radius: var(--size-border-default);"></div>
                 </td>
             </tr>

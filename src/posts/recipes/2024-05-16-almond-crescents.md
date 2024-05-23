@@ -32,7 +32,7 @@ post_includes: weblogpomo2024.njk
 ---
 
 1.
-    In the large mixing bowl, combine the ingredients with hands until reaching an even consistency:
+    In the large mixing bowl, mix the ingredients by hand until it reaches an even consistency:
     - 1 cup unsalted butter
     - 1¾ cups flour
     - 3 <abbr title="tablespoon">Tbsp</abbr> white sugar

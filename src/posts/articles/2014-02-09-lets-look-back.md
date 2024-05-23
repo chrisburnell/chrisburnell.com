@@ -253,9 +253,8 @@ Here’s an example of what the CSS for my logo looked like prior to these chang
 		}
 	}
 
-	/**
-	 * Located separately in the file:
-	 */
+	/* Located separately in the file: */
+
 	@media (max-width: 768px) {
 		.logo {
 			height: 1.74em;
@@ -333,9 +332,8 @@ Firstly, let’s remove the vendor prefixes to take advantage of *Autoprefixer* 
 		87.5% { transform: translate3d(-0.0625em, -0.5625em, 0); }
 	}
 
-	/**
-	 * Located separately in the file:
-	 */
+	/* Located separately in the file: */
+
 	@media (max-width: 768px) {
 		.logo {
 			height: 1.74em;
@@ -442,9 +440,7 @@ Next, let’s turn this CSS into SCSS.
 	&:after {
 		...
 	}
-	/**
-	 * Only animate when the user hovers the logo.
-	 */
+	/* Only animate when the user hovers the logo. */
 	&:hover:after,
 	&:focus:after,
 	&:active:after {

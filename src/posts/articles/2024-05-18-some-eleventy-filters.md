@@ -29,10 +29,6 @@ The first filter, `isPublished`, checks a page or post for five conditions, and 
 This creates a gate through which *only* a page or post that should be published can get through.
 
 ```javascript
-/**
- * @param {object} item
- * @returns {boolean}
- */
 const isPublished = (item) => {
 	if ("data" in item) {
 		if ("draft" in item.data && item.data.draft === true) {
@@ -67,10 +63,6 @@ I can then use this filter when I’m looping through a collection, e.g.
 The second filter, `arePublished`, aims to improve/add to the usability of the previous `isPublished` filter and is used against collections of pages and posts.
 
 ```javascript
-/**
- * @param {object[]} array
- * @returns {object[]}
- */
 const arePublished = (array) => {
 	return array.filter(isPublished)
 }
@@ -93,11 +85,6 @@ To be fair, I don’t use this filter particularly often, but it’s extremely u
 This filter takes two arguments: a given number and the desired number of decimals in the output (optional).
 
 ```javascript
-/**
- * @param {number} number
- * @param {number} [decimals]
- * @returns {number}
- */
 const maxDecimals = (number, decimals = 3) => {
 	return +number.toFixed(decimals)
 }
@@ -120,10 +107,6 @@ This filter takes in a given number, and if it’s less than 10, replaces it wit
 ```javascript
 const stringNumbers = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
 
-/**
- * @param {number} number
- * @returns {string}
- */
 export const numberStringFormat = (number) => {
 	if (number < stringNumbers.length) {
 		return stringNumbers[number]
@@ -151,10 +134,6 @@ import markdownParser from "markdown-it"
 
 const markdown = markdownParser()
 
-/**
- * @param {string} string
- * @returns {string}
- */
 const markdownFormat = (string) => {
 	return markdown.render(string)
 }
@@ -177,10 +156,6 @@ This filter depends on having a pre-defined array of words that you want to be c
 ```javascript
 const capitalizers = ["HTML", "CSS", "JavaScript"]
 
-/**
- * @param {string} string
- * @return {string}
- */
 const supertitle = (string) => {
 	let formatted = string
 		.split(" ")
