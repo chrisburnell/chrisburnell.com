@@ -6,6 +6,7 @@ tags:
   - weblogpomo
   - weblogpomo2024
   - crossword
+post_includes: weblogpomo2024.njk
 ---
 
 ## Jumblie
@@ -92,7 +93,3 @@ We haven’t been on our best game lately, so have been getting times around 8 m
 I hope you enjoyed this little journey through online word games! Why not try them out yourself?
 
 I’d love if you could get in touch if you play any word games you think I might like!
-
---------
-
-{% include 'weblogpomo2024.njk' %}

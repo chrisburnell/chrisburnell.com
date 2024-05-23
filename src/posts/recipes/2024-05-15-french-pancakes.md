@@ -35,6 +35,7 @@ authors:
 tags:
   - weblogpomo
   - weblogpomo2024
+post_includes: weblogpomo2024.njk
 ---
 
 1.
@@ -67,7 +68,3 @@ tags:
     Serve hot and fresh out of the pan, and don’t forget *plenty* of maple syrup!
 
 *Use a few drops of oil to grease the skillet at least once every two pancakes. Once you’ve got a good idea of the ideal heat and cooking time, don’t be afraid to cook more than one at a time!*
-
---------
-
-{% include 'weblogpomo2024.njk' %}

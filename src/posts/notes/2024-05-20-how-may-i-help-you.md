@@ -5,6 +5,7 @@ excerpt: Want my help? Head over to my new Help page to book some of my time!
 tags:
   - weblogpomo
   - weblogpomo2024
+post_includes: weblogpomo2024.njk
 ---
 
 Just a short update today, as I’ve been pretty busy in the last few days with my nose to the grindstone, continuing my job search.
@@ -24,7 +25,3 @@ For this reason, I’ve created a new page on my website:
 It’s an open call for folks to book some of my time, however valuable that may be, for us to have some back-and-forth (on a voice call, over instant messages, etc.) where I can try to be of some assistance in overcoming whatever challenges might be thrown my way.
 
 If this sounds like something you might like to do, please don’t hesitate to get in touch; there’s no rabbit-hole too deep for me to dive into!
-
---------
-
-{% include 'weblogpomo2024.njk' %}

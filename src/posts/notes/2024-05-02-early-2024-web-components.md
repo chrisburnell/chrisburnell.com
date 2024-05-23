@@ -8,6 +8,7 @@ tags:
   - writing
   - web-components
   - javascript
+post_includes: weblogpomo2024.njk
 syndicate_to:
   - https://fediverse.repc.co/@chrisburnell/112371549706920942
 ---
@@ -120,10 +121,6 @@ Now, this web component is *probably* better suited to be composed using only HT
 </figure>
 
 This Web Component comes with a number of attributes to control the `background-color` of the stamp, the padding between the image and the edge of the stamp, and the size and spacing of the perforations along the stamp’s edge.
-
---------
-
-{% include 'weblogpomo2024.njk' %}
 
 {% css -%}
 paper-stamp {

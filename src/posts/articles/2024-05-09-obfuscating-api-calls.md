@@ -7,6 +7,7 @@ tags:
   - weblogpomo2024
   - php
   - javascript
+post_includes: weblogpomo2024.njk
 ---
 
 On my [Listening](/listening/) and [/now](/now/) pages, I’m displaying data from the [LastFM API](https://www.last.fm/api): recently-listened tracks, top artists of the week, and top albums of week. I’m pulling in that information as part of my Eleventy build using [eleventy-fetch](https://github.com/11ty/eleventy-fetch), so the contents of those pages are refreshed whenever my site builds and an hour has elapsed since the previous build. This means, for visitors without JavaScript enabled (or where it fails), those pages aren’t completely empty.
@@ -67,7 +68,3 @@ if(substr($referer_host, 0 - strlen($allowed_host)) == $allowed_host) {
 ```
 
 I’ve seen quite a bit of chatter online about pulling data like this into our websites recently, and I’ve had some great conversations with friends about it too. I hope you find this useful if you’re inclined to progressively enhance your website with fresh data from APIs you love!
-
---------
-
-{% include 'weblogpomo2024.njk' %}

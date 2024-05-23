@@ -7,6 +7,7 @@ tags:
   - weblogpomo2024
   - javascript
   - eleventy
+post_includes: weblogpomo2024.njk
 ---
 
 Before diving in, I think it’s helpful here to note that these filters are defined using JavaScript and made available to use as Nunjucks filters in my [Eleventy config file](https://www.11ty.dev/docs/config/). Because they’re defined in JavaScript, this means that I’m also able to reference them in JavaScript files used in the build my website. So the filters I review in this article may be useful when authoring content, others more useful in the build of my website (e.g. setting up [Collections](https://www.11ty.dev/docs/collections/)), and some are useful in both cases.
@@ -202,7 +203,3 @@ Check out the title on my [CSS tag page](/tag/css/) for an example.
 <hr style="--rule-space: var(--size-medium);">
 
 What useful filters do you use on your website? I’d love to hear from you!
-
---------
-
-{% include 'weblogpomo2024.njk' %}

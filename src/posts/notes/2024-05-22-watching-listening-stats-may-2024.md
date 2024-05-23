@@ -6,6 +6,7 @@ tags:
   - weblogpomo
   - weblogpomo2024
   - personal
+post_includes: weblogpomo2024.njk
 ---
 
 <p class="rss-only"><em>I published <a href="/article/daily-word-games/">yesterday’s article, <q>Daily Word Games</q></a> under the wrong category and tried to amend it quickly, but if you got a duplicate in your feed reader, please accept my apologies!</em></p>
@@ -217,7 +218,3 @@ I do, however, know that I tend to jump between a handful of broad genres, liste
 <hr style="--rule-space: var(--size-medium);">
 
 If you want to see an up-to-date version of this data, check out [my Listening page](/listening/).
-
---------
-
-{% include 'weblogpomo2024.njk' %}

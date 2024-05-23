@@ -28,6 +28,7 @@ authors:
 tags:
   - weblogpomo
   - weblogpomo2024
+post_includes: weblogpomo2024.njk
 ---
 
 1.
@@ -52,7 +53,3 @@ tags:
 
 6.
     Place on a cooling rack once done. Once cooled, store in an airtight container or as long as they’ll last before being eaten!
-
---------
-
-{% include 'weblogpomo2024.njk' %}

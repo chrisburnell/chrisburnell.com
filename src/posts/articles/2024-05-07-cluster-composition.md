@@ -8,6 +8,7 @@ tags:
   - weblogpomo2024
   - css
   - css-variables
+post_includes: weblogpomo2024.njk
 ---
 
 <p class=" [ rss-only ] "><em>The contents of this post require my website’s CSS to appear properly.<br>See the web version: <a href="{{ canonical }}">{{ canonical }}</a>.</em></p>
@@ -94,10 +95,6 @@ What methodologies do *you* use when authoring CSS? Do you have any compositions
 		</li>
 	</ol>
 </nav>
-
---------
-
-{% include 'weblogpomo2024.njk' %}
 
 {% css -%}
 [class="language-html"] {

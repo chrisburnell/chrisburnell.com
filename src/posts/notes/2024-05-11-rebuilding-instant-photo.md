@@ -6,6 +6,7 @@ tags:
   - weblogpomo
   - weblogpomo2024
   - web-components
+post_includes: weblogpomo2024.njk
 ---
 
 <aside class="rss-only"><p>I think the styles and scripts that come with this article are pretty important to the reading experience, so if you want to see the Web Component and its CSS replacement in action, go to the web version: <a href="{{ canonical }}">{{ canonical }}</a>.</p></aside>
@@ -133,10 +134,6 @@ Now we can add both the `develop` and `should-develop` classes, and browsers tha
 </figure>
 
 For all intents and purposes, I’m going to call that complete. I’m taking away from this exercise the lesson that I should probably only reach for Web Components when the core of the functionality I’m looking for can *only* come from JavaScript.
-
---------
-
-{% include 'weblogpomo2024.njk' %}
 
 <style>
 .instant-photo {

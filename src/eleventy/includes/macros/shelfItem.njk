@@ -33,7 +33,7 @@
 		{% elif item.data.style %}
 			<p class=" [ small ] ">{{ item.data.style | replace(' - Other', '') | safe }}</p>
 		{% endif %}
-		{% if item.data.excerpt or item.data.description %}
+		{% if (item.data.tags and not 'review' in item.data.tags) and (item.data.excerpt or item.data.description) %}
 			{{ item.data.excerpt | default(item.data.description) | markdownFormat | safe }}
 		{% endif %}
 		{% if item.data.authors or item.data.release %}

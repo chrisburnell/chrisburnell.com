@@ -5,6 +5,7 @@ description: I made a directory for /interests pages! If you’ve built your own
 tags:
   - weblogpomo
   - weblogpomo2024
+post_includes: weblogpomo2024.njk
 syndicate_to:
   - https://fediverse.repc.co/@chrisburnell/112406774449181233
 ---
@@ -18,7 +19,3 @@ I put a decent chunk of work into trying to make the wording as clear as possibl
 <nav class=" [ grid ] [ navigator ] ">
     <a href="https://chrisburnell.github.io/interests-directory/" class=" [ button ] " rel="external noopener">The /interests Directory</a>
 </nav>
-
---------
-
-{% include 'weblogpomo2024.njk' %}

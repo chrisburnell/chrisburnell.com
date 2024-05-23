@@ -6,6 +6,7 @@ tags:
   - weblogpomo
   - weblogpomo2024
   - javascript
+post_includes: weblogpomo2024.njk
 ---
 
 <p class="rss-only"><em>This article relies heavily on JavaScript for its interactive portions, so I recommend reading the web version: <a href="{{ canonical }}">{{ canonical }}</a></em></p>
@@ -200,10 +201,6 @@ Now we can encrypt content with the `vigenere` keyword throughout our project:
 {% endraw %}
 
 Which gives us our encrypted string: `LIUZJLBVWKBMTTO`.
-
---------
-
-{% include 'weblogpomo2024.njk' %}
 
 <style>
 .scroll-inline {

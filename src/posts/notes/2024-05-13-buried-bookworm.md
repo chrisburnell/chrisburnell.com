@@ -6,6 +6,7 @@ tags:
   - personal
   - weblogpomo
   - weblogpomo2024
+post_includes: weblogpomo2024.njk
 ---
 
 I’ve been [tracking books that I read](/music/) since 2015, and, frankly, I’m pretty embarassed at how little I read these days. To be fair, there were periods of time where I was pretty burnt out from life and work that I just didn’t log them. But that number of missing books is still pretty miniscule.
@@ -23,7 +24,3 @@ It’s a web that I can’t help but get caught in.
 (Sorry, that was bad, but it was *right there*.)
 
 Going forth, I think I’m going to set aside at least one hour each day to completely unplug and read. It’s all too easy for me to find some new rabbit hole to dive into when I’ve got an internet connection, so I think forcefully removing it from my reach, if only for an hour a day, will be the kick in the pants I need to expand my horizons with reading once again.
-
---------
-
-{% include 'weblogpomo2024.njk' %}

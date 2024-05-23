@@ -8,6 +8,7 @@ tags:
   - weblogpomo2024
   - writing
   - pinned
+post_includes: weblogpomo2024.njk
 syndicate_to:
   - https://fediverse.repc.co/@chrisburnell/112365680485181016
 ---
@@ -44,7 +45,3 @@ I’m excited to learn what you’re passionate and interested in! I’d love if
 		</li>
 	</ol>
 </nav>
-
---------
-
-{% include 'weblogpomo2024.njk' %}

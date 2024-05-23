@@ -11,6 +11,7 @@ tags:
   - eleventy
   - personal
   - state-of-the-web
+post_includes: weblogpomo2024.njk
 ---
 
 If you don’t know, the source code of this website (well, *most* of it) is freely-available to browse through [on GitHub](https://github.com/chrisburnell/chrisburnell.com). This has been the case for nearly 11 years now, ever since my <q>Initial commit</q> on <time datetime="2013-05-30T03:48:54-0700">the 30<sup>th</sup> of May, 2013</time>.
@@ -76,7 +77,3 @@ This is a *really* intriguing concept. Rather than completely shut down the cont
 I am almost-suredly going to explore this idea. While it certainly won’t stop bad actors from scraping my website or grabbing my content in other ways, it definitely makes it harder to do, and, at the very least, means the original and exact source code for my *content* would be unknown. You can bet I’ll continue doing what I can to [block AI crawlers](https://coryd.dev/posts/2024/go-ahead-and-block-ai-web-crawlers/) in that case; although, I feel like it’s a game of cat-and-mouse that we’ve all been subjected to now, just by being citizens of the web.
 
 A lot to think about. I’d love to hear your thoughts and ideas.
-
---------
-
-{% include 'weblogpomo2024.njk' %}

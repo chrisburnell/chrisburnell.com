@@ -5,6 +5,7 @@ description: Today I’m sharing a small handful of videos from YouTube that hav
 tags:
   - weblogpomo
   - weblogpomo2024
+post_includes: weblogpomo2024.njk
 ---
 
 <h2 id="王石展" class=" [ gamma ] "> 【260bpm】I played one shot of my original metal song</h2>
@@ -88,7 +89,3 @@ I listen to this *all the time*, and I think it’s my favourite drum and bass m
 </noscript>
 
 <c-youtube slug="ZwPXM_uL5Pc" label="Sub Focus & Wilkinson BBC Radio 1 Essential Mix 10.10.20"></c-youtube>
-
---------
-
-{% include 'weblogpomo2024.njk' %}

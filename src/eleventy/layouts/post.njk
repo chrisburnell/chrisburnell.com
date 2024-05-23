@@ -62,6 +62,12 @@ layout: base
 
 		{% include 'updated.njk' %}
 
+		{% if pre_includes -%}
+			{% for pre_include in (pre_includes | toArray) -%}
+				{% include pre_include %}
+			{%- endfor %}
+		{%- endif %}
+
 		{% if category == 'recipe' %}
 			{% include 'post/recipe.njk' %}
 		{% endif %}
@@ -72,15 +78,21 @@ layout: base
 			</div>
 		{% endif %}
 
-		{% if of_label %}
+		{% if of_label -%}
 			<nav class=" [ grid ] [ navigator ] ">
 				<a href="{{ of_url }}" class=" [ button ] {% if mf_property %}[ u-{{ mf_property }} ] {% endif %}" rel="external noopener">{{ of_label }} →</a>
 			</nav>
-		{% endif %}
+		{%- endif %}
 
-		{% if listen_of %}
+		{% if listen_of -%}
 			<c-odesli id="{{ listen_of }}"></c-odesli>
-		{% endif %}
+		{%- endif %}
+
+		{% if post_includes -%}
+			{% for post_include in (post_includes | toArray) -%}
+				{% include post_include %}
+			{%- endfor %}
+		{%- endif %}
 
 		{% include 'responses.njk' %}
 

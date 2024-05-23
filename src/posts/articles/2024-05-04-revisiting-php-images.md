@@ -6,6 +6,7 @@ tags:
   - weblogpomo
   - weblogpomo2024
   - php
+post_includes: weblogpomo2024.njk
 ---
 
 <div class=" [ box ] [ line-length ] " style="margin-block-end: var(--size-large);">
@@ -220,7 +221,3 @@ imagedestroy($backgroundImage);
 ```
 
 </c-details>
-
---------
-
-{% include 'weblogpomo2024.njk' %}
