@@ -10,7 +10,7 @@ const recentTracks = async function () {
 		duration: cacheDurations.hourly,
 		type: "json",
 	})
-	return json.map((track) => {
+	return json.recenttracks.track.map((track) => {
 		const datetime = track.date ? new Date(Number(track.date.uts) * 1000).toISOString() : new Date().toISOString()
 		let image = track.image[3]?.["#text"]
 		if (!image || image.includes("2a96cbd8b46e442fc41c2b86b821562f.png")) {
@@ -29,7 +29,7 @@ const topAlbums = async function () {
 		duration: cacheDurations.hourly,
 		type: "json",
 	})
-	return json.map((album) => {
+	return json.topalbums.album.map((album) => {
 		let image = album.image[3]?.["#text"]
 		if (!image || image.includes("2a96cbd8b46e442fc41c2b86b821562f.png")) {
 			image = "/images/default-album-cover.png"
@@ -46,7 +46,7 @@ const topAlbumsAll = async function () {
 		duration: cacheDurations.weekly,
 		type: "json",
 	})
-	return json.map((album) => {
+	return json.topalbums.album.map((album) => {
 		let image = album.image[3]?.["#text"]
 		if (!image || image.includes("2a96cbd8b46e442fc41c2b86b821562f.png")) {
 			image = "/images/default-album-cover.png"
@@ -63,7 +63,7 @@ const topArtists = async function () {
 		duration: cacheDurations.hourly,
 		type: "json",
 	})
-	return json.map((artist) => {
+	return json.topartists.artist.map((artist) => {
 		let image = artist.image[3]?.["#text"]
 		if (!image || image.includes("2a96cbd8b46e442fc41c2b86b821562f.png")) {
 			image = "/images/default-album-cover.png"
@@ -80,7 +80,7 @@ const topArtistsAll = async function () {
 		duration: cacheDurations.hourly,
 		type: "json",
 	})
-	return json.map((artist) => {
+	return json.topartists.artist.map((artist) => {
 		let image = artist.image[3]?.["#text"]
 		if (!image || image.includes("2a96cbd8b46e442fc41c2b86b821562f.png")) {
 			image = "/images/default-album-cover.png"
