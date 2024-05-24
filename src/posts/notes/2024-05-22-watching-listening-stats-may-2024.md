@@ -85,7 +85,7 @@ Unfortunately, Last.fm doesn’t provide any data about the genres of songs that
 
 I do, however, know that I tend to jump between a handful of broad genres, listening mostly to a particular genre for long periods of time before leaping to the next, so by my reckoning. If I take a look at my top albums and artists of all time, it probably paints a picture that closely resembles reality, so here we go:
 
-### Top 20 Artists of All Time
+### Top 20 Albums of All Time
 
 <ol class="[ grid ] [ shelf ] " style="--row-gap: 1rem">
     <li>
