@@ -7,7 +7,8 @@ tags:
   - weblogpomo2024
   - php
   - javascript
-post_includes: weblogpomo2024.njk
+post_includes:
+  - weblogpomo2024.njk
 ---
 
 On my [Listening](/listening/) and [/now](/now/) pages, I’m displaying data from the [LastFM API](https://www.last.fm/api): recently-listened tracks, top artists of the week, and top albums of week. I’m pulling in that information as part of my Eleventy build using [eleventy-fetch](https://github.com/11ty/eleventy-fetch), so the contents of those pages are refreshed whenever my site builds and an hour has elapsed since the previous build. This means, for visitors without JavaScript enabled (or where it fails), those pages aren’t completely empty.

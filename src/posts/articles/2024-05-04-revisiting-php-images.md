@@ -6,7 +6,8 @@ tags:
   - weblogpomo
   - weblogpomo2024
   - php
-post_includes: weblogpomo2024.njk
+post_includes:
+  - weblogpomo2024.njk
 ---
 
 <div class=" [ box ] [ line-length ] " style="margin-block-end: var(--size-large);">

@@ -6,7 +6,8 @@ tags:
   - personal
   - weblogpomo
   - weblogpomo2024
-post_includes: weblogpomo2024.njk
+post_includes:
+  - weblogpomo2024.njk
 ---
 
 I’ve been [tracking books that I read](/music/) since 2015, and, frankly, I’m pretty embarassed at how little I read these days. To be fair, there were periods of time where I was pretty burnt out from life and work that I just didn’t log them. But that number of missing books is still pretty miniscule.

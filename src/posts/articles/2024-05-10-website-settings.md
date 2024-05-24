@@ -9,7 +9,8 @@ tags:
   - javascript
   - css
   - web-components
-post_includes: weblogpomo2024.njk
+post_includes:
+  - weblogpomo2024.njk
 ---
 
 While still riding the high of the fantastic [11ty Conference](https://conf.11ty.dev/) yesterday (which ended at <time datetime="{{ '2024-05-10T05:00:00+0800' | rfc3339Date }}">5 in the morning</time> here in Singapore…), I was inspired to write this post off the back of two talks in particular: [Don't Fear the Cascade](https://conf.11ty.dev/2024/dont-fear-the-cascade/) by [Mayank](https://www.mayank.co/) and [](https://conf.11ty.dev/2024/light-mode-versus-dark-mode/) by [Light mode versus Dark mode](https://conf.11ty.dev/2024/light-mode-versus-dark-mode/) by [Sara Joy](https://sarajoy.dev/).

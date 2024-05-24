@@ -5,7 +5,8 @@ description: I made a directory for /interests pages! If you’ve built your own
 tags:
   - weblogpomo
   - weblogpomo2024
-post_includes: weblogpomo2024.njk
+post_includes:
+  - weblogpomo2024.njk
 syndicate_to:
   - https://fediverse.repc.co/@chrisburnell/112406774449181233
 ---

@@ -6,7 +6,8 @@ tags:
   - weblogpomo
   - weblogpomo2024
   - personal
-post_includes: weblogpomo2024.njk
+post_includes:
+  - weblogpomo2024.njk
 ---
 
 <p class="rss-only"><em>I published <a href="/article/daily-word-games/">yesterday’s article, <q>Daily Word Games</q></a> under the wrong category and tried to amend it quickly, but if you got a duplicate in your feed reader, please accept my apologies!</em></p>

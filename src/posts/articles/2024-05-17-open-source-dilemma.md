@@ -11,7 +11,8 @@ tags:
   - eleventy
   - personal
   - state-of-the-web
-post_includes: weblogpomo2024.njk
+post_includes:
+  - weblogpomo2024.njk
 ---
 
 If you don’t know, the source code of this website (well, *most* of it) is freely-available to browse through [on GitHub](https://github.com/chrisburnell/chrisburnell.com). This has been the case for nearly 11 years now, ever since my <q>Initial commit</q> on <time datetime="2013-05-30T03:48:54-0700">the 30<sup>th</sup> of May, 2013</time>.

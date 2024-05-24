@@ -8,7 +8,8 @@ tags:
   - writing
   - web-components
   - javascript
-post_includes: weblogpomo2024.njk
+post_includes:
+  - weblogpomo2024.njk
 syndicate_to:
   - https://fediverse.repc.co/@chrisburnell/112371549706920942
 ---

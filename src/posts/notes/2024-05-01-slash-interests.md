@@ -8,7 +8,8 @@ tags:
   - weblogpomo2024
   - writing
   - pinned
-post_includes: weblogpomo2024.njk
+post_includes:
+  - weblogpomo2024.njk
 syndicate_to:
   - https://fediverse.repc.co/@chrisburnell/112365680485181016
 ---

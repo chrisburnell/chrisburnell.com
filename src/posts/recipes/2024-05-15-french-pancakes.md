@@ -35,7 +35,8 @@ authors:
 tags:
   - weblogpomo
   - weblogpomo2024
-post_includes: weblogpomo2024.njk
+post_includes:
+  - weblogpomo2024.njk
 ---
 
 1.

@@ -5,7 +5,8 @@ excerpt: Want my help? Head over to my new Help page to book some of my time!
 tags:
   - weblogpomo
   - weblogpomo2024
-post_includes: weblogpomo2024.njk
+post_includes:
+  - weblogpomo2024.njk
 ---
 
 Just a short update today, as I’ve been pretty busy in the last few days with my nose to the grindstone, continuing my job search.

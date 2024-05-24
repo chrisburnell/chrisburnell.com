@@ -6,7 +6,8 @@ tags:
   - weblogpomo
   - weblogpomo2024
   - javascript
-post_includes: weblogpomo2024.njk
+post_includes:
+  - weblogpomo2024.njk
 ---
 
 <p class="rss-only"><em>This article relies heavily on JavaScript for its interactive portions, so I recommend reading the web version: <a href="{{ canonical }}">{{ canonical }}</a></em></p>

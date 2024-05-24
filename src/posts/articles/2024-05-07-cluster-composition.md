@@ -8,7 +8,8 @@ tags:
   - weblogpomo2024
   - css
   - css-variables
-post_includes: weblogpomo2024.njk
+post_includes:
+  - weblogpomo2024.njk
 ---
 
 <p class=" [ rss-only ] "><em>The contents of this post require my website’s CSS to appear properly.<br>See the web version: <a href="{{ canonical }}">{{ canonical }}</a>.</em></p>

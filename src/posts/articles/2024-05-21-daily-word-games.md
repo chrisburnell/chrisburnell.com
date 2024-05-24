@@ -6,7 +6,8 @@ tags:
   - weblogpomo
   - weblogpomo2024
   - crossword
-post_includes: weblogpomo2024.njk
+post_includes:
+  - weblogpomo2024.njk
 ---
 
 ## Jumblie

@@ -6,7 +6,8 @@ tags:
   - weblogpomo
   - weblogpomo2024
   - web-components
-post_includes: weblogpomo2024.njk
+post_includes:
+  - weblogpomo2024.njk
 ---
 
 <aside class="rss-only"><p>I think the styles and scripts that come with this article are pretty important to the reading experience, so if you want to see the Web Component and its CSS replacement in action, go to the web version: <a href="{{ canonical }}">{{ canonical }}</a>.</p></aside>
