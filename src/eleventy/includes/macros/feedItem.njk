@@ -61,7 +61,7 @@
 		<link rel="related" href="{{ item.data.of_url }}" />
 		{%- endif %}
 		{% if item.data.reply_url -%}
-		<link rel="related" href="{{ item.data.reply_url }}" />
+		<link rel="related" type="reply" href="{{ item.data.reply_url }}" />
 		{%- endif %}
 	</entry>
 {%- endmacro %}
