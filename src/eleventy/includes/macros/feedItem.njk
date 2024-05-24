@@ -30,7 +30,7 @@
 			{%- endif %}
 			{% if item.data.pre_includes -%}
 				{% for pre_include in (item.data.pre_includes | toArray) -%}
-					{% set to_escape %}{% include pre_include %}{% endset %}{{ to_escape | escape }}
+					{% set to_escape %}{% include pre_include %}{% endset %}{{ to_escape | cleanTagsForRSS | escape }}
 				{%- endfor %}
 			{%- endif %}
 			{% if item.data.cover -%}
@@ -48,7 +48,7 @@
 			{%- endif %}
 			{% if item.data.post_includes -%}
 				{% for post_include in (item.data.post_includes | toArray) -%}
-					{% set to_escape %}{% include post_include %}{% endset %}{{ to_escape | escape }}
+					{% set to_escape %}{% include post_include %}{% endset %}{{ to_escape | cleanTagsForRSS | escape }}
 				{%- endfor %}
 			{%- endif %}
 			{% set to_escape -%}
