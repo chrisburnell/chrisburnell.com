@@ -1,7 +1,7 @@
 export default {
 	permalink: "{{ page.fileSlug }}.html",
 	tags: ["httpstatus"],
-	theme: "red-alert",
+	theme: "dark  nineties  red-alert",
 	sitemap: {
 		exclude: true,
 	},
