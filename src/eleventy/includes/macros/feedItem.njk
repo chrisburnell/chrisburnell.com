@@ -24,6 +24,10 @@
 		{%- endif %}
 		{# Content #}
 		<content xml:lang="{{ site.locale }}" type="html">
+			{% if item.data.description -%}
+				{{ item.data.description | markdownFormat | cleanTagsForRSS | escape }}
+				{{ '<hr>' | escape }}
+			{%- endif %}
 			{% if item.data.pre_includes -%}
 				{% for pre_include in (item.data.pre_includes | toArray) -%}
 					{% set to_escape %}{% include pre_include %}{% endset %}{{ to_escape | escape }}

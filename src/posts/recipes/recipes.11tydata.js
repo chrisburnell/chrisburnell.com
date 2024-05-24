@@ -10,4 +10,5 @@ export default {
 	categoryCode: "d",
 	tags: ["recipe", "blog", "feature"],
 	emoji: emojis.recipe,
+	pre_includes: ["post/recipe.njk"],
 }

@@ -13,4 +13,5 @@ export default {
 	categoryCode: "m",
 	tags: ["music", "review"],
 	emoji: emojis.music,
+	post_includes: ["post/listen-of.njk"],
 }

@@ -12,6 +12,8 @@ export default {
 	layout: "page",
 	tags: ["page"],
 	permalink: "/{{ page.fileSlug }}/index.html",
+	pre_includes: [],
+	post_includes: [],
 	eleventyComputed: {
 		canonical: (data) => siteURL + data.page.url,
 		meta_title: (data) => getMetaTitle(data),

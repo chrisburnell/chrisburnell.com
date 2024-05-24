@@ -113,7 +113,7 @@
     "now": "cross-env NODE_OPTIONS=--max-old-space-size=8192 npx @11ty/eleventy --ignore-initial --incremental --serve",
     "build": "cross-env NODE_OPTIONS=--max-old-space-size=8192 npx @11ty/eleventy",
     "setup": "npm run tokens; npm run prettier; npx browserslist@latest --update-db; npm run css",
-    "build-production": "npm run setup; cross-env NODE_OPTIONS=--max-old-space-size=8192 GENERATE_OG_IMAGES=true npx @11ty/eleventy; npm run create-search-index",
+    "build-production": "npm run setup; cross-env NODE_OPTIONS=--max-old-space-size=8192 GENERATE_OG_IMAGES=true npx @11ty/eleventy",
     "pregenerate": "npm run setup; cross-env NODE_OPTIONS=--max-old-space-size=8192 PREGENERATE_IMAGES=true npx @11ty/eleventy",
     "cli": "node cli/index.js run"
   }

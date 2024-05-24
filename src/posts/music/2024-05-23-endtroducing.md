@@ -14,7 +14,9 @@ tags:
   - feature
   - weblogpomo
   - weblogpomo2024
-post_includes: weblogpomo2024.njk
+post_includes:
+  - post/listen-of.njk
+  - weblogpomo2024.njk
 ---
 
 I cannot believe that I hadn’t graced my website with this prodigious album until now. Words fail to capture how massive and game-changing this album was. It’s composed *almost* entirely of samples, which is a feat in and of itself.

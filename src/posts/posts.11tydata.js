@@ -16,6 +16,8 @@ export default {
 	list: "deck",
 	mf_root: "entry",
 	show_webmentions: true,
+	pre_includes: [],
+	post_includes: [],
 	eleventyComputed: {
 		canonical: (data) => siteURL + data.page.url,
 		year: (data) => new Date(data.date).getFullYear(),

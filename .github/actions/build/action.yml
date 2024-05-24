@@ -13,6 +13,10 @@ runs:
           _site
         key: site-cache
 
-    - name: Build with npm
+    - name: Build website
       run: npm run build-production
+      shell: bash
+
+    - name: Build search index
+      run: npm run create-search-index
       shell: bash

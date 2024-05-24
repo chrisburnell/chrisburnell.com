@@ -27,7 +27,15 @@ layout: base
 		{% endif %}
 
 		<div class=" [ e-content ] [ flow ] {% if content_class %}[ {{ content_class }} ] {% endif %}{% if toc %}generate-toc{% endif %}">
+			{% for pre_include in (pre_includes | toArray) -%}
+				{% include pre_include %}
+			{%- endfor %}
+
 			{{- content | safe -}}
+
+			{% for post_include in (post_includes | toArray) -%}
+				{% include post_include %}
+			{%- endfor %}
 		</div>
 
 		{% include 'responses.njk' %}
