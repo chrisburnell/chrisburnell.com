@@ -15,7 +15,6 @@ tags:
   - weblogpomo
   - weblogpomo2024
 post_includes:
-  - post/listen-of.njk
   - weblogpomo2024.njk
 ---
 
