@@ -733,7 +733,7 @@ export default [
 		title: "Mayank",
 		url: "https://www.mayank.co",
 		rss: "https://www.mayank.co/blog/rss.xml",
-		mastodon: "hi_mayank@hachyderm.io",
+		mastodon: "mayank@front-end.social",
 	},
 	{
 		title: "11ty Bundle",
@@ -745,6 +745,12 @@ export default [
 		url: "https://www.bobmonsour.com",
 		rss: "https://www.bobmonsour.com/feed.xml",
 		mastodon: "bobmonsour@indieweb.social",
+	},
+	{
+		title: "Rach Smith",
+		url: "https://rachsmith.com",
+		rss: "https://rachsmith.com/rss/",
+		mastodon: "rachsmith@mastodon.social",
 	},
 ].sort((a, b) => {
 	return a.title.localeCompare(b.title)
