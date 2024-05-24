@@ -12,7 +12,7 @@ toc: true
 
 <h2>Website Tinkering</h2>
 
-{% set last_updated = "2024-05-09T02:10:55+0800" -%}
+{% set last_updated = '2024-05-24T16:51:44+0800' -%}
 <p><strong>Last updated:</strong> <time datetime="{{ last_updated | rfc3339Date }}">{{ last_updated | friendlyDate | safe }} @ {{ last_updated | friendlyTime | safe }}</time></p>
 
 <p>You can read more things I’d like to work on <a href="/ideas/">my /ideas page</a>, which is kind of like my To-do list for this website.</p>
@@ -27,10 +27,18 @@ toc: true
 <h3 id="website-admin">Website Admin</h3>
 
 <ul>
-	<li>as above, but for RSS-only posts (which become visible on the site <code>site.limits.recentDays</code> days after publishing)</li>
+	<li><em>[WIP — to be finished]</em> figure out how to manage "RSS-only" posts (that become visible on the site after <code>site.limits.recentDays</code>)</li>
 	<li>work out how to feature more tags/collections in the post meta description (alongside `writing`-tagged posts)</li>
 	<li>explore using the new <code>eleventy-img</code> transform function instead of my image shortcode</li>
 	<li>finish transcript for <q>Middle Out in CSS</q></li>
+	<li>pull data out of fathom analytics for page popularity instead of WMs</li>
+	<li>pull in cover images for:
+		<ul>
+			<li>books</li>
+			<li>music albums</li>
+			<li>movies & TV shows</li>
+		</ul>
+	</li>
 </ul>
 
 {% if collections.rsvpsToday.length or collections.rsvpsUpcoming.length -%}

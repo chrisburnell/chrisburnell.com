@@ -211,13 +211,6 @@ Author of numerous open-source software packages, accumulating over {{ total_dow
 #}
 
 <style>
-/* .role {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: role;
-	gap: 1em;
-} */
 .role {
 	display: grid;
 	grid-template-columns: auto auto;

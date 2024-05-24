@@ -5,7 +5,7 @@ description: Things I’d like to work on.
 toc: true
 ---
 
-{% set last_updated = '2024-05-09T02:11:06+0800' -%}
+{% set last_updated = '2024-05-24T16:51:44+0800' -%}
 <p><strong>Last updated:</strong> <time datetime="{{ last_updated | rfc3339Date }}">{{ last_updated | friendlyDate | safe }} @ {{ last_updated | friendlyTime | safe }}</time></p>
 
 ## Posts
@@ -29,11 +29,15 @@ toc: true
 
 ## Eleventy Build
 
-- [WIP — to be finished] figure out how to manage "RSS-only" posts (that become visible on the site after site.limits.recentDays)
+- *[WIP — to be finished]* figure out how to manage "RSS-only" posts (that become visible on the site after `site.limits.recentDays`)
 - work out how to feature more tags/collections in the post meta description (alongside `writing`-tagged posts)
 - use new eleventy-img transform instead of image shortcode
     - keep an eye on performance here
 - pull data out of fathom analytics for page popularity
+- pull in cover images for:
+    - books
+    - music albums
+    - movies & TV shows
 
 ## Admin
 
