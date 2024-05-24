@@ -58,7 +58,7 @@
 			{%- endset %}{{ to_escape | escape }}
 		</content>
 		{% if item.data.of_url -%}
-		<link rel="alternate" href="{{ item.data.of_url }}" />
+		<link rel="related" href="{{ item.data.of_url }}" />
 		{%- endif %}
 		{% if item.data.reply_url -%}
 		<link rel="related" href="{{ item.data.reply_url }}" />
