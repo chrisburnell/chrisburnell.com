@@ -152,6 +152,7 @@
 				<a href="{{ posting_method }}">{{ posting_method | getPostingMethodTitle }}</a>
 			</li>
 		{% endif %}
+		{# Removed shorturls for now
 		{% if eleventy.env.runMode === 'build' and not draft and published !== false and not 'ignore' in tags %}
 			<li class=" [ shorturl ] ">
 				{% set shorturl_id = date | NewBase60(categoryCode, collections[category]) -%}
@@ -160,6 +161,7 @@
 				<a href="https://repc.co/{{ shorturl_id }}">repc.co/{{ shorturl_id }}</a>
 			</li>
 		{% endif %}
+		#}
 		<li hidden>
 			<a href="https://fed.brid.gy"></a>
 		</li>
