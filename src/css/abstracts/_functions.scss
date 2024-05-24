@@ -13,11 +13,11 @@
 ///
 /// @return {Color}
 ///
-@function h($value, $opacity: null) {
+@function h($name, $opacity: null) {
 	@if not $opacity {
-		@return var(--color-#{$value});
+		@return var(--color-#{$name});
 	}
-	@return color-mix(in oklab, var(--color-#{$value}), transparent calc(100% - var(--opacity-#{$opacity})));
+	@return color-mix(in oklab, var(--color-#{$name}), transparent calc(100% - var(--opacity-#{$opacity})));
 }
 
 ///
