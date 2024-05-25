@@ -1,6 +1,7 @@
 import { load } from "cheerio"
 import dotenv from "dotenv"
 import he from "he"
+import Natural from "natural"
 import randomCase from "random-case"
 import truncate from "truncate-html"
 import capitalizers from "../../data/capitalizers.js"
@@ -13,6 +14,8 @@ const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 const stringNumbers = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
 
 const conjunctionFormat = new Intl.ListFormat(locale, { style: "long", type: "conjunction" })
+
+const sentimentAnalyzer = new Natural.SentimentAnalyzer("English", Natural.PorterStemmer, "afinn")
 
 /**
  * @param {string[]} strings
@@ -180,6 +183,19 @@ export const spongebob = (string) => {
 }
 
 /**
+ *
+ * @param {string} string
+ * @returns {string}
+ */
+export const sentimentCheck = (string, threshold = -0.3) => {
+	const words = string.match(/\b(\w+)\b/g)
+	if (sentimentAnalyzer.getSentiment(words) <= threshold) {
+		return randomCase(string)
+	}
+	return string
+}
+
+/**
  * @param {string} content
  * @param {string} keyword
  * @param {string} secret
@@ -235,5 +251,6 @@ export default {
 	markdownFormat,
 	excerptize,
 	spongebob,
+	sentimentCheck,
 	vigenere,
 }
