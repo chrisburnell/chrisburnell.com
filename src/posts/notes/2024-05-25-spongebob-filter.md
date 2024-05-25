@@ -53,8 +53,8 @@ This might be a good Filter to run against comments or Webmentions to spite anyo
 {% raw %}
 ```twig
 {% for reply in replies %}
-    <h4>{{ reply.name }}</h4>
-    <p>{{ reply.content | sentimentCheck }}</p>
+	<h4>{{ reply.name }}</h4>
+	<p>{{ reply.content | sentimentCheck }}</p>
 {% endfor %}
 ```
 {% endraw %}
