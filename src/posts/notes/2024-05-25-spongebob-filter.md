@@ -17,7 +17,7 @@ In today’s quick post, I’m going to show how to use a couple of npm packages
     {% image './images/content/spongebob-meme.jpg', "Mocking Spongebob Meme that reads 'This is the dumbest idea I’ve ever seen'" %}
 </figure>
 
---------
+<hr style="--rule-space: var(--size-medium);">
 
 I built this filter using ESM JavaScript:
 

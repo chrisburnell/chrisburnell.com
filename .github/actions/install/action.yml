@@ -8,5 +8,6 @@ runs:
       run: npm ci --include=optional
       shell: bash
 
-    - run: npm install --include=optional pagefind @pagefind/linux-x64 sharp @resvg/resvg-js
+    - name: Install optional dependencies
+      run: npm install --include=optional pagefind @pagefind/linux-x64 sharp @resvg/resvg-js
       shell: bash

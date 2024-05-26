@@ -16,7 +16,7 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const __siteroot = __dirname.replace("/cli", "")
 
-const runWizard = async () => {
+const wizard = async () => {
 	console.log(chalk.hex("#5f8aa6") `
                         ░█░█
   ██░░░░░█░             █████
@@ -76,13 +76,28 @@ const runWizard = async () => {
 }
 
 program
-	.command("run")
-	.description("🧙‍♂️ run the site wizard")
-	.action(() => runWizard())
+	.command("wizard")
+	.description("🧙 Speak, friend, and enter")
+	.action(() => wizard())
 
 program
 	.command("article")
 	.description("📝 Create a new Article")
-	.action(() => createArticle())
+	.action(() => createArticle(__siteroot))
+
+program
+	.command("bookmark")
+	.description("🔖 Create a new Bookmark")
+	.action(() => createBookmark(__siteroot))
+
+program
+	.command("like")
+	.description("♥️ Create a new Like")
+	.action(() => createLike(__siteroot))
+
+program
+	.command("note")
+	.description("📝 Create a new Note")
+	.action(() => createNote(__siteroot))
 
 program.parse()

@@ -36,6 +36,7 @@ jobs:
           LASTFM_API_TOKEN: ${{ secrets.LASTFM_API_TOKEN }}
           MUSICTHREAD_API_KEY: ${{ secrets.MUSICTHREAD_API_KEY }}
           PERSONAL_API_KEY: ${{ secrets.PERSONAL_API_KEY }}
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
           TRAKT_CLIENT_ID: ${{ secrets.TRAKT_CLIENT_ID }}
           VIGENERE_SECRET: ${{ secrets.VIGENERE_SECRET }}
           WEBMENTION_IO_TOKEN: ${{ secrets.WEBMENTION_IO_TOKEN }}

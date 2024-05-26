@@ -78,7 +78,7 @@
     "dotenv": "^16.4.5",
     "download-stats": "^0.3.4",
     "eleventy-plugin-og-image": "^4.0.0-beta.6",
-    "esbuild": "^0.21.3",
+    "esbuild": "^0.21.4",
     "fast-glob": "^3.3.2",
     "fast-xml-parser": "^4.4.0",
     "fs-extra": "^11.2.0",
@@ -116,6 +116,6 @@
     "setup": "npm run tokens; npm run prettier; npx browserslist@latest --update-db; npm run css",
     "build-production": "npm run setup; cross-env NODE_OPTIONS=--max-old-space-size=8192 GENERATE_OG_IMAGES=true npx @11ty/eleventy",
     "pregenerate": "npm run setup; cross-env NODE_OPTIONS=--max-old-space-size=8192 PREGENERATE_IMAGES=true npx @11ty/eleventy",
-    "cli": "node cli/index.js run"
+    "cli": "node cli/index.js wizard"
   }
 }
