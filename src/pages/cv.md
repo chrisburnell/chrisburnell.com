@@ -100,7 +100,7 @@ Passionate about the open web, having published over {{ technical_articles_count
 <div class=" [ role ] ">
     <h3>Web Developer</h3>
     <small><strong>June 2014 – Feb. 2018</strong></small>
-    <p class="delta"><a href="https://city.ac.uk"><c-emoji>{% image './images/content/city-logo.png', 'City, University of London’s logo', 'brand-logo', ['auto'] %}</c-emoji>City, University of London</a></p>
+    <p class="delta"><a href="https://city.ac.uk"><c-emoji>{% image './images/content/city-logo.svg', 'City, University of London’s logo', 'brand-logo' %}</c-emoji>City, University of London</a></p>
     <small><strong>London, UK</strong></small>
 </div>
 
