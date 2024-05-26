@@ -5,8 +5,5 @@ runs:
   using: composite
   steps:
     - name: Install Node Modules
-      run: npm ci --include=optional
-      shell: bash
-
-    - run: npm install --include=optional pagefind @pagefind/linux-x64 sharp @resvg/resvg-js
+      run: npm ci
       shell: bash
