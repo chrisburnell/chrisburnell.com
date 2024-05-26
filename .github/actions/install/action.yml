@@ -5,5 +5,5 @@ runs:
   using: composite
   steps:
     - name: Install Node Modules
-      run: npm ci --include=optional
+      run: npm install --include=optional
       shell: bash
