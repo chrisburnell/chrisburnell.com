@@ -155,7 +155,7 @@ The other values (`shorter hue`, `decreasing hue`, and `increasing hue`) are oth
 
 ## Demo
 
-<p class="rss-only">Check out this post <a href="/article/interpolating-colours/">on my website</a> to play with the demo.</p>
+<p class="rss-only">Check out this post <a href="/article/interpolating-colours/#demo">on my website</a> to play with the demo.</p>
 
 <div class="demo  no-rss">
     <form autocomplete="off">
@@ -196,7 +196,7 @@ The other values (`shorter hue`, `decreasing hue`, and `increasing hue`) are oth
     <div class="gradient"></div>
 </div>
 
-<noscript><p>Unfortunately, this demo requires JavaScript to function fully.</p></noscript>
+<noscript class="no-rss"><p>Unfortunately, this demo requires JavaScript to function fully.</p></noscript>
 
 <style>
 :is(.demo, .demo form, .demo form div) {
