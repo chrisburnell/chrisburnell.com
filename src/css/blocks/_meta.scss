@@ -4,19 +4,22 @@
 ////
 
 .meta {
-	--flow-space: var(--size-medium);
+	--multiplier: calc(40rem - 100%);
 	container: meta / inline-size;
+	display: grid;
+	// prettier-ignore
+	grid-template-columns: repeat(auto-fill, minmax(16em, 1fr));
+	grid-template-rows: masonry;
+	align-items: start;
+	gap: var(--size-gap);
+	margin-block-start: var(--size-gap);
+
+	& > *{
+		inline-size: 100%;
+	}
 
 	@media print {
 		display: none;
-	}
-
-	@include cqi(null, null, "medium") {
-		margin-block-start: var(--size-large);
-	}
-
-	@include cqi(null, "medium") {
-		align-self: stretch;
 	}
 
 	h2 {
@@ -37,6 +40,10 @@
 	.rating {
 		margin-inline-start: var(--size-tiny);
 		vertical-align: text-bottom;
+	}
+
+	svg-sparkline {
+		margin-inline: auto;
 	}
 }
 

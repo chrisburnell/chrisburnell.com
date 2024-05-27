@@ -51,7 +51,6 @@
 	@import "compositions/cluster";
 	@import "compositions/media";
 	// @import "compositions/inline-aside";
-	// @import "compositions/portal";
 }
 
 // Blocks
@@ -65,6 +64,7 @@
 	@import "blocks/main";
 	@import "blocks/content";
 	@import "blocks/breadcrumbs";
+	@import "blocks/context";
 	@import "blocks/title";
 	@import "blocks/description";
 	@import "blocks/navigator";

@@ -1,7 +1,10 @@
-<div class=" [ box ] [ flow ] ">
-	{% if page.url != '/posts/' and page.url != '/feeds/' -%}
+{% if page.url != '/posts/' and page.url != '/feeds/' -%}
+	<div class=" [ box ] [ flow ] ">
 		{% include 'meta/sub/collections.njk' %}
-	{%- endif %}
+	</div>
+{%- endif %}
+
+<div class=" [ box ] [ flow ] ">
 	{% include 'meta/sub/pages.njk' %}
 </div>
 

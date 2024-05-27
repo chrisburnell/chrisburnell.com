@@ -11,8 +11,7 @@
 	max-inline-size: 100%;
 	color: h(kaiser);
 	display: block;
-	padding-block-start: var(--size-large);
-	padding-block-end: var(--size-medium);
+	margin-block-start: var(--size-gap);
 	font-weight: var(--font-weight-semibold);
 
 	@media print {

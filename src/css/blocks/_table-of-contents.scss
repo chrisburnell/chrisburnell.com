@@ -5,6 +5,8 @@
 ////
 
 .table-of-contents {
+	margin-block-start: var(--size-gap);
+
 	@media print {
 		display: none;
 	}

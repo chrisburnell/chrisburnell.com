@@ -3,7 +3,7 @@ import emojis from "../../eleventy/data/emojis.js"
 export default {
 	permalink: "/book/{{ page.fileSlug }}/index.html",
 	list: "shelf",
-	wide: true,
+	full: true,
 	shelfAlignment: "portrait",
 	mf_root: "review",
 	mf_property: "read-of",

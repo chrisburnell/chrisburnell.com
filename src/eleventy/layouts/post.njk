@@ -1,17 +1,13 @@
 ---
 layout: base
 ---
-<article {% if not content.length %}id="content"{% endif %} class=" [ pantheon{% if full %}  full{% elif wide %}  wide{% endif %} ] [ wrap ] [ post h-{{ mf_root }} ] {% if perch %}[ perch ] {% endif %}">
+<article {% if not content.length %}id="content"{% endif %} class=" [ pantheon{% if full %}  full{% endif %} ] [ wrap ] [ post h-{{ mf_root }} ] {% if perch %}[ perch ] {% endif %}">
 
 	<ul class=" [ cluster ] [ breadcrumbs ] " data-pagefind-ignore>
 		<li><a href="/posts/">All Posts</a></li><li><a href="/{{ categoryPlural | default(category) }}/">{{ categoryProperPlural | default(categoryPlural) | default(category) | title }}</a></li>
 	</ul>
 
-	<h1 id="title" class=" [ title{% if title_error %} title--negative{% elif title_success %} title--positive{% endif %} ] {{ '[ visually-hidden ] ' if not title and not of_title }}" style="view-transition-name: title-{{ page.fileSlug }};">
-		<span class=" [ p-name ] ">{{ title | default(of_title) | default(of_title_fallback) | default(meta_title) | striptags(true) | safe }}</span>
-	</h1>
-
-	<div class=" [ description  description--published ] " data-pagefind-ignore>
+	<div class=" [ context ] " data-pagefind-ignore>
 		<p>
 			{%- if rsvp %}
 				This <a href="/rsvps/" class=" [ u-category ] ">RSVP</a>
@@ -35,6 +31,10 @@ layout: base
 			{%- endif -%}.
 		</p>
 	</div>
+
+	<h1 id="title" class=" [ title{% if title_error %} title--negative{% elif title_success %} title--positive{% endif %} ] {{ '[ visually-hidden ] ' if not title and not of_title }}" style="view-transition-name: title-{{ page.fileSlug }};">
+		<span class=" [ p-name ] ">{{ title | default(of_title) | default(of_title_fallback) | default(meta_title) | striptags(true) | safe }}</span>
+	</h1>
 
 	<div class=" [ content ] [ flow ] {% if toc %}generate-toc{% endif %}">
 		{% if global.isJSNakedDay -%}
@@ -81,13 +81,13 @@ layout: base
 					{% include post_include %}
 				{%- endfor %}
 			</div>
-
-		{% include 'responses.njk' %}
-
-		{% include 'browse.njk' %}
 	</div>
 
-	<aside class=" [ meta ] [ flow ] " role="complementary" data-pagefind-ignore>
+	{% include 'responses.njk' %}
+
+	<aside class=" [ meta ] " role="complementary" data-pagefind-ignore>
 		{% include 'meta/post.njk' %}
 	</aside>
+
+	{% include 'browse.njk' %}
 </article>

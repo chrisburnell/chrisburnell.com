@@ -14,7 +14,7 @@ eleventyComputed:
 {%- set count = collection.length -%}
 {%- set latest_year = collection[0].data.year | default(collection[0].year) -%}
 {%- set first_year = collection[count-1].data.year | default(collection[count-1].year) -%}
-<div class=" [ pantheon{% if category.wide %}  wide{% endif %} ] [ wrap ] [ archive ] ">
+<div class=" [ pantheon{% if category.full %}  full{% endif %} ] [ wrap ] [ archive ] ">
 
 	<ul class=" [ cluster ] [ breadcrumbs ] " data-pagefind-ignore>
 		<li>
@@ -35,11 +35,6 @@ eleventyComputed:
 			<a href="{{ site.url }}/{{ category.plural }}.xml" title="{{ title | safe }} Feed" class=" [ icon-anchor ] "><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false"><use href="#svg--rss"></use></svg></c-emoji></a>
 		</p>
 	</div>
-
-	{# Only show sparkline if there is more than 1 year of data #}
-	{% if first_year != latest_year %}
-		{% sparkline collection, first_year %}
-	{% endif %}
 
 	<div id="content" class=" [ content{% if collection[0].data.list == 'shelf' %}  full{% endif %} ] [ flow ] [ h-feed ] ">
 		{% if categoryIntroductions[category.title] %}
@@ -84,7 +79,7 @@ eleventyComputed:
 		</div>
 	</div>
 
-	<div class=" [ meta ] [ flow ] " data-pagefind-ignore>
+	<div class=" [ meta ] " data-pagefind-ignore>
 		{% include 'meta/archive.njk' %}
 	</div>
 

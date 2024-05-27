@@ -19,8 +19,6 @@ perch: true
 		{{ descriptionLong | default(description) | markdownFormat | safe }}
 	</div>
 
-	{% sparkline collection, first_year %}
-
 	<div id="content" class=" [ content ] [ flow ] ">
 		{% if global.isJSNakedDay -%}
 			{% include 'js-naked-day.njk' %}
@@ -99,7 +97,9 @@ perch: true
 		</div>
 	</div>
 
-	<div class=" [ meta ] [ flow ] " data-pagefind-ignore>
+	<div class=" [ meta ] " data-pagefind-ignore>
+		{% sparkline collection, first_year %}
+
 		{% include 'meta/page.njk' %}
 	</div>
 </div>

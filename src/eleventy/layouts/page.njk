@@ -1,7 +1,7 @@
 ---
 layout: base
 ---
-<article id="content" class=" [ pantheon{% if full %}  full{% elif wide %}  wide{% endif %} ] [ wrap ] [ page ] {% if perch %}[ perch ] {% endif %}">
+<article id="content" class=" [ pantheon{% if full %}  full{% endif %} ] [ wrap ] [ page ] {% if perch %}[ perch ] {% endif %}">
 
 	{% if 'project' in tags %}
 		<ul class=" [ cluster ] [ breadcrumbs ] " data-pagefind-ignore>
@@ -37,13 +37,11 @@ layout: base
 				{% include post_include %}
 			{%- endfor %}
 		</div>
-
-		{% include 'responses.njk' %}
 	</div>
 
-	{% if not full and not toc %}
-		<aside class=" [ meta ] [ flow ] " role="complementary" data-pagefind-ignore>
-			{% include 'meta/page.njk' %}
-		</aside>
-	{% endif %}
+	{% include 'responses.njk' %}
+
+	<aside class=" [ meta ] " role="complementary" data-pagefind-ignore>
+		{% include 'meta/page.njk' %}
+	</aside>
 </article>

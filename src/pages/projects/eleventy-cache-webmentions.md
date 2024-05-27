@@ -18,7 +18,7 @@ syndicate_to:
   - https://mastodon.social/users/chrisburnell/statuses/107399910372983580
   - https://twitter.com/iamchrisburnell/status/1467811195981860867
   - https://fediverse.repc.co/@chrisburnell/111754580552087852
-wide: true
+full: true
 toc: true
 ---
 

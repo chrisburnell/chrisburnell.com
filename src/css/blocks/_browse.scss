@@ -7,7 +7,7 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	margin-block-start: var(--size-large);
+	margin-block-start: var(--size-gap);
 	font-weight: var(--font-weight-semibold);
 
 	@media print {

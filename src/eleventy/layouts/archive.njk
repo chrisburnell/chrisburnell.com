@@ -9,7 +9,7 @@ layout: base
 {%- if limit -%}
 	{% set collection = collection | limit(limit) %}
 {%- endif -%}
-<div class=" [ pantheon{% if full %}  full{% elif wide %}  wide{% endif %} ] [ wrap ] [ archive ] {% if perch %}[ perch ] {% endif %}">
+<div class=" [ pantheon{% if full %}  full{% endif %} ] [ wrap ] [ archive ] {% if perch %}[ perch ] {% endif %}">
 
 	<ul class=" [ cluster ] [ breadcrumbs ] " data-pagefind-ignore>
 		<li><a href="/posts/">← All Posts</a></li>
@@ -40,11 +40,6 @@ layout: base
 			</p>
 		{% endif %}
 	</div>
-
-	{# Only show sparkline if displaying by year and there is more than 1 year of data #}
-	{% if by_year and first_year != latest_year %}
-		{% sparkline collection, first_year %}
-	{% endif %}
 
 	<div id="content" class=" [ content ] [ flow ] [ h-feed ] ">
 		{% if global.isJSNakedDay -%}
@@ -82,7 +77,7 @@ layout: base
 		{% endif %}
 	</div>
 
-	<aside class=" [ meta ] [ flow ] " role="complementary" data-pagefind-ignore>
+	<aside class=" [ meta ] " role="complementary" data-pagefind-ignore>
 		{% include 'meta/collection.njk' %}
 	</aside>
 </div>

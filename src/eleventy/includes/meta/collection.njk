@@ -1,9 +1,20 @@
+{# Only show sparkline if displaying by year and there is more than 1 year of data #}
+{% if by_year and first_year != latest_year %}
+	{% sparkline collection, first_year %}
+{% endif %}
+
 <div class=" [ box ] [ flow ] ">
 	{% include 'meta/sub/collections.njk' %}
+</div>
+
+<div class=" [ box ] [ flow ] ">
 	{% include 'meta/sub/pages.njk' %}
 </div>
 
 <div class=" [ box ] [ flow ] ">
 	{% include 'meta/sub/categories.njk' %}
+</div>
+
+<div class=" [ box ] [ flow ] ">
 	{% include 'meta/sub/tags.njk' %}
 </div>

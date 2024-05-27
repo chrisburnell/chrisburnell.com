@@ -19,8 +19,6 @@ perch: true
 		<p>Browse all {{ collections.posts.length | numberStringFormat }} of my posts by a variety of metrics, dating from <span class=" [ no-wrap ] ">{{ first_year }}–{{ latest_year }}</span>.</p>
 	</div>
 
-	{% sparkline collection, first_year %}
-
 	<div id="content" class=" [ content ] [ flow ] ">
 		{% if global.isJSNakedDay -%}
 			{% include 'js-naked-day.njk' %}
@@ -112,7 +110,9 @@ perch: true
 		</div>
 	</div>
 
-	<div class=" [ meta ] [ flow ] " data-pagefind-ignore>
+	<div class=" [ meta ] " data-pagefind-ignore>
+		{% sparkline collection, first_year %}
+
 		{% include 'meta/page.njk' %}
 	</div>
 </div>

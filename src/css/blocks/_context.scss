@@ -1,0 +1,27 @@
+////
+/// Context
+/// @group blocks
+////
+
+.context {
+	font-size: var(--font-size-default);
+	font-family: var(--font-family-serif);
+	margin-block-start: var(--size-gap);
+
+	@include cqi(null, null, "tiny") {
+		font-size: var(--font-size-small);
+	}
+
+	@include cqi(null, "small") {
+		text-align: center;
+	}
+
+	%content {
+		max-inline-size: var(--size-line-length);
+		margin-inline: auto;
+	}
+
+	time {
+		@include italic;
+	}
+}

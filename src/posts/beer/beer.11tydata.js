@@ -3,7 +3,7 @@ import emojis from "../../eleventy/data/emojis.js"
 export default {
 	permalink: "beer/{{ page.fileSlug }}/",
 	list: "shelf",
-	wide: true,
+	full: true,
 	mf_root: "review",
 	mf_property: "pk-drank",
 	category: "beer",

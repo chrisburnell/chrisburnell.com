@@ -7,13 +7,7 @@
 	--flow-space: var(--size-medium);
 
 	inline-size: 100%;
-	margin-block-start: var(--size-large);
-
-	.full & {
-		@include cqi("main", "medium") {
-			margin-block-end: var(--size-large);
-		}
-	}
+	margin-block-start: var(--size-gap);
 
 	&:not(:has(.responses__thread)) {
 		@media print {
