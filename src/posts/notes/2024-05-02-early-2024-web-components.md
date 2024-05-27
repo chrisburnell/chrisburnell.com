@@ -54,7 +54,7 @@ There are also a number of other attributes that can be applied to the Web Compo
 <h2 id="event-countdown"><span class=" [ gamma  monospace ] ">&lt;event-countdown&gt;</span></h2>
 
 <ul class=" [ cluster ] [ center ] ">
-    <li><a href="/event-countdown/">Project pPage</a></li>
+    <li><a href="/event-countdown/">Project Page</a></li>
     <li><a href="https://chrisburnell.github.io/event-countdown/demo.html">Demo</a></li>
     <li><a href="https://github.com/chrisburnell/event-countdown/" rel="external noopener">GitHub</a></li>
     <li><a href="https://www.npmjs.com/package/@chrisburnell/event-countdown" rel="external noopener">npm</a></li>

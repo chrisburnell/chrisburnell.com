@@ -16,4 +16,4 @@ checkin:
 
 I took this photo at the [<q>Bog</q>](https://parks.canada.ca/pn-np/ns/cbreton/activ/randonnee-hiking/tourbiere_bog) along the *Cabot Trail* in [*Cape Breton Highlands National Park*](https://parks.canada.ca/pn-np/ns/cbreton).
 
-<p class=" [ box ] [ center ] [ gamma ] ">This is the <a href="/stats/">{{ 1000 | ordinal | safe }} post</a> on my website!</p>
+<p class=" [ box ] [ center  inline-center ] [ gamma ] ">This is the <a href="/stats/">{{ 1000 | ordinal | safe }} post</a> on my website!</p>
