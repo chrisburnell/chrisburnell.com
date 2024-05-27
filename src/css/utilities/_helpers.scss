@@ -210,18 +210,18 @@
 
 // Disable things which require JS when JS is not available
 .no-js .requires-js {
-	display: none;
+	display: none !important;
 }
 
 // Turn things off for the feed page
 .feed .no-feed {
-	display: none;
+	display: none !important;
 }
 
 // Remove things from the print layout
 .no-print {
 	@media print {
-		display: none;
+		display: none !important;
 	}
 }
 
