@@ -5,7 +5,6 @@ description: I had a revelation earlier today that solved a long-standing perfor
 tags:
   - eleventy
   - javascript
-full: true
 syndicate_to:
   - https://fediverse.repc.co/@chrisburnell/112150957494199196
 ---

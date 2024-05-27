@@ -15,6 +15,7 @@ export default function (collection) {
 					plural: "categoryPlural" in item.data ? item.data.categoryPlural : item.data.category,
 					properPlural: "categoryProperPlural" in item.data ? item.data.categoryProperPlural : "categoryPlural" in item.data ? item.data.categoryPlural : item.data.category,
 					review: item.data.mf_root === "review",
+					full: "full" in item.data,
 				}
 			})
 			// Remove duplicates based on `title`

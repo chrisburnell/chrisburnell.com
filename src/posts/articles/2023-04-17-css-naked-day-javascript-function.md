@@ -7,7 +7,6 @@ tags:
   - css
   - eleventy
   - javascript
-full: true
 ---
 
 Recently, I wrote *[Why I participated in CSS Naked Day](/article/why-css-naked-day/)*, discussing my experience preparing for CSS Naked Day and why it was so productive. Today I’ll explain how I turned off CSS across my website.

@@ -4,6 +4,10 @@
 /// @group blocks
 ////
 
+.toc {
+	overflow-y: hidden;
+}
+
 .table-of-contents {
 	margin-block-start: var(--size-gap);
 
