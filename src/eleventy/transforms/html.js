@@ -16,7 +16,7 @@ export default async function (value, outputPath) {
 				<aside class=" [ toc ] " role="complementary" data-pagefind-ignore>
 					<is-land>
 						<details-utils force-close="(max-width: 850px)" force-restore>
-							<details class=" [ table-of-contents ] ">
+							<details open class=" [ table-of-contents ] ">
 								<summary>Table of Contents</summary>
 								<nav class=" [ box ] " aria-label="Table of Contents">
 									<ol>`

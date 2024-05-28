@@ -59,7 +59,7 @@
 	}
 
 	&:not(.full) {
-		// Only show indent & outdent above gigantic on non-full-inline-size
+		// Only show indent & outdent above large on non-full-inline-size
 		// pages. This effeectively shortens the inline-size of the content.
 		@include cqi(null, "large") {
 			--indent-size: 1fr;
@@ -69,16 +69,17 @@
 		}
 	}
 
+	&:has(.toc) {
+		@include cqi(null, "large") {
+			--indent-size: 20em;
+			--outdent-gap: 0;
+			--outdent-size: 0;
+		}
+	}
+
 	@media print {
 		display: block;
 	}
-}
-
-.description,
-.toc,
-.content,
-.responses {
-	grid-column: content;
 }
 
 .breadcrumbs,
@@ -87,6 +88,12 @@
 .meta,
 .browse {
 	grid-column: indent / outdent;
+}
+
+.description,
+.content,
+.responses {
+	grid-column: content;
 }
 
 .breadcrumbs {
@@ -105,10 +112,6 @@
 	grid-row: description;
 }
 
-.toc {
-	grid-row: toc;
-}
-
 .content {
 	grid-row: content;
 }
@@ -123,4 +126,14 @@
 
 .browse {
 	grid-row: browse;
+}
+
+.toc {
+	grid-column: content;
+	grid-row: toc;
+
+	@include cqi(null, "large") {
+		grid-column: indent;
+		grid-row: content;
+	}
 }

@@ -4,13 +4,17 @@
 /// @group blocks
 ////
 
+// TODO get sticky working
+
 .toc {
 	overflow-y: hidden;
+
+	@include cqi(null, null, "medium") {
+		margin-block-start: var(--size-gap);
+	}
 }
 
 .table-of-contents {
-	margin-block-start: var(--size-gap);
-
 	@media print {
 		display: none;
 	}
