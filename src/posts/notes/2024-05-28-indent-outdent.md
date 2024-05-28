@@ -122,6 +122,6 @@ At or below `500px`, the `indent` and `outdent` columns will have a size of `0`,
 
 And that’s all there is to it!
 
-I built a demo on CodePen so you can play with the container to see how the indent and outdent appear at different sizes. Use the handle on the bottom-right of the grid to resize the `<main>` element to see the indent and outdent appear and disappear.
+I built a [demo on CodePen](https://codepen.io/chrisburnell/pen/bGyBvyK) so you can play with the container to see how the indent and outdent appear at different sizes. Use the handle on the bottom-right of the grid to resize the `<main>` element to see the indent and outdent appear and disappear.
 
 <c-codepen slug="bGyBvyK" height="450px"></c-codepen>
