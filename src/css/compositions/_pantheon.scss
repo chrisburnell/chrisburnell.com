@@ -76,50 +76,24 @@
 	}
 }
 
-.breadcrumbs,
-.context,
-.title,
-.meta,
-.browse {
-	grid-column: indent / outdent;
-}
-
-.description,
-.content,
-.responses {
-	grid-column: content;
-}
-
 .breadcrumbs {
 	grid-row: breadcrumbs;
+	grid-column: indent / outdent;
 }
 
 .context {
 	grid-row: context;
+	grid-column: indent / outdent;
 }
 
 .title {
 	grid-row: title;
+	grid-column: indent / outdent;
 }
 
 .description {
 	grid-row: description;
-}
-
-.content {
-	grid-row: content;
-}
-
-.responses {
-	grid-row: responses;
-}
-
-.meta {
-	grid-row: meta;
-}
-
-.browse {
-	grid-row: browse;
+	grid-column: indent / outdent;
 }
 
 .toc {
@@ -128,6 +102,26 @@
 
 	@include cqi(null, "large") {
 		grid-column: indent;
-		grid-row: content / responses;
+		grid-row: content;
 	}
+}
+
+.content {
+	grid-row: content;
+	grid-column: content;
+}
+
+.responses {
+	grid-row: responses;
+	grid-column: indent / outdent;
+}
+
+.meta {
+	grid-row: meta;
+	grid-column: indent / outdent;
+}
+
+.browse {
+	grid-row: browse;
+	grid-column: indent / outdent;
 }

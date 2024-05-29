@@ -5,8 +5,8 @@ import { cacheDurations } from "./site.js"
 dotenv.config()
 
 const recentTracks = async function () {
-	let url = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&username=${lastfm}&api_key=${process.env.LASTFM_API_TOKEN}&format=json&extended=1&limit=50`
-	let json = await EleventyFetch(url, {
+	const url = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&username=${lastfm}&api_key=${process.env.LASTFM_API_TOKEN}&format=json&extended=1&limit=50`
+	const json = await EleventyFetch(url, {
 		duration: cacheDurations.hourly,
 		type: "json",
 	})
@@ -24,8 +24,8 @@ const recentTracks = async function () {
 }
 
 const topAlbums = async function () {
-	let url = `https://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&username=${lastfm}&api_key=${process.env.LASTFM_API_TOKEN}&format=json&limit=50&period=7day`
-	let json = await EleventyFetch(url, {
+	const url = `https://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&username=${lastfm}&api_key=${process.env.LASTFM_API_TOKEN}&format=json&limit=50&period=7day`
+	const json = await EleventyFetch(url, {
 		duration: cacheDurations.hourly,
 		type: "json",
 	})
@@ -41,8 +41,8 @@ const topAlbums = async function () {
 }
 
 const topAlbumsAll = async function () {
-	let url = `https://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&username=${lastfm}&api_key=${process.env.LASTFM_API_TOKEN}&format=json&limit=50&period=overall`
-	let json = await EleventyFetch(url, {
+	const url = `https://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&username=${lastfm}&api_key=${process.env.LASTFM_API_TOKEN}&format=json&limit=50&period=overall`
+	const json = await EleventyFetch(url, {
 		duration: cacheDurations.weekly,
 		type: "json",
 	})
@@ -58,8 +58,8 @@ const topAlbumsAll = async function () {
 }
 
 const topArtists = async function () {
-	let url = `https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&username=${lastfm}&api_key=${process.env.LASTFM_API_TOKEN}&format=json&limit=50&period=7day`
-	let json = await EleventyFetch(url, {
+	const url = `https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&username=${lastfm}&api_key=${process.env.LASTFM_API_TOKEN}&format=json&limit=50&period=7day`
+	const json = await EleventyFetch(url, {
 		duration: cacheDurations.hourly,
 		type: "json",
 	})
@@ -75,8 +75,8 @@ const topArtists = async function () {
 }
 
 const topArtistsAll = async function () {
-	let url = `https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&username=${lastfm}&api_key=${process.env.LASTFM_API_TOKEN}&format=json&limit=50&period=overall`
-	let json = await EleventyFetch(url, {
+	const url = `https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&username=${lastfm}&api_key=${process.env.LASTFM_API_TOKEN}&format=json&limit=50&period=overall`
+	const json = await EleventyFetch(url, {
 		duration: cacheDurations.hourly,
 		type: "json",
 	})

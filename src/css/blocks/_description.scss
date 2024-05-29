@@ -8,6 +8,13 @@
 	font-weight: var(--font-weight-semibold);
 	text-wrap: balance;
 
+	p {
+		@include cqi(null, "small") {
+			text-align: center;
+			margin-inline: auto;
+		}
+	}
+
 	%anchor {
 		color: inherit;
 	}

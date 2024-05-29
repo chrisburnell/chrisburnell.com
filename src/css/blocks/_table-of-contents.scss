@@ -7,12 +7,10 @@
 // TODO get sticky working
 
 .toc {
+	margin-block-start: var(--size-gap);
+
 	@media print {
 		display: none;
-	}
-
-	@include cqi("main", null, "large") {
-		margin-block-start: var(--size-gap);
 	}
 
 	@include cqi("main", "large") {

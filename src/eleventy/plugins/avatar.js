@@ -1,10 +1,9 @@
-import dotenv from "dotenv"
-dotenv.config()
-
 import Image from "@11ty/eleventy-img"
+import dotenv from "dotenv"
 import { getMastodonHandle } from "../../functions/utils.js"
 import { cacheDurations, url as siteURL } from "../data/site.js"
 import { getHost } from "../filters/urls.js"
+dotenv.config()
 
 // Avatar Dimensions
 const size = 96 // 48 * 2
@@ -27,7 +26,7 @@ const getImageOptions = (name) => {
 
 const fetchImageData = (options, src) => {
 	if (!src) {
-		throw new Error("src property required in `img` shortcode.")
+		throw new Error("src property required in `image` shortcode.")
 	}
 
 	Image(src, getImageOptions(options)).then(() => {
@@ -37,9 +36,9 @@ const fetchImageData = (options, src) => {
 
 const storeAvatar = async (id, classes = "") => {
 	// We know where the images will be
-	let fakeUrl = `/images/avatars/${id}.jpg`
-	let metadata = Image.statsByDimensionsSync(fakeUrl, size, size, getImageOptions(id))
-	let markup = Image.generateHTML(
+	const fakeUrl = `/images/avatars/${id}.jpg`
+	const metadata = Image.statsByDimensionsSync(fakeUrl, size, size, getImageOptions(id))
+	const markup = Image.generateHTML(
 		metadata,
 		{
 			alt: `${id}’s avatar`,
