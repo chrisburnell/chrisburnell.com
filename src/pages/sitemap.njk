@@ -1,7 +1,7 @@
 ---
 title: "/sitemap"
 tagline: Sitemap
-description: "<em>All</em> the pages on this website."
+description: "All the pages on this website."
 excludeFromSearch: true
 ---
 
@@ -21,51 +21,26 @@ excludeFromSearch: true
 {% for item in collections.categories -%}
 │&nbsp;&nbsp;&nbsp;{% if loop.last %}└{% else %}├{% endif %}── <a href="{{ item.plural }}">{{ item.properPlural | title | safe }} <sup>({{ collections[item.title] | arePublished | rssOnlyFilter | getCollectionCount | numberStringFormat(true) }})</sup></a><br>
 {% endfor -%}
-├── <a href="/projects/#web">Web Projects <sup>({{ collections.projects | getCollectionCount | numberStringFormat(true) }})</sup></a><br>
+├── <a href="/projects/">Projects <sup>({{ ((collections.projects | getCollectionCount) + projects.personal.length + projects.previousVersions.length) | numberStringFormat(true) }})</sup></a><br>
+│&nbsp;&nbsp;&nbsp;├── <a href="/projects/#web">Web Projects <sup>({{ collections.projects | getCollectionCount | numberStringFormat(true) }})</sup></a><br>
 {% for item in collections.projects -%}
-│&nbsp;&nbsp;&nbsp;{% if loop.last %}└{% else %}├{% endif %}── <a href="{{ item.url }}">{{ item.data.title | safe }}</a><br>
+│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;{% if loop.last %}└{% else %}├{% endif %}── <a href="{{ item.url }}">{{ item.data.title | safe }}</a><br>
 {% endfor -%}
-├── <a href="/projects/#personal">Personal Projects <sup>({{ projects.personal.length | numberStringFormat(true) }})</sup></a><br>
+│&nbsp;&nbsp;&nbsp;├── <a href="/projects/#personal">Personal Projects <sup>({{ projects.personal.length | numberStringFormat(true) }})</sup></a><br>
 {% for item in projects.personal -%}
-│&nbsp;&nbsp;&nbsp;{% if loop.last %}└{% else %}├{% endif %}── <a href="{{ item.url }}">{{ item.data.title | safe }}</a><br>
+│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;{% if loop.last %}└{% else %}├{% endif %}── <a href="{{ item.url }}">{{ item.data.title | safe }}</a><br>
 {% endfor -%}
-├── <a href="/projects/#personal">Previous Website Versions <sup>({{ projects.previousVersions.length | numberStringFormat(true) }})</sup></a><br>
+│&nbsp;&nbsp;&nbsp;└── <a href="/projects/#personal">Previous Website Versions <sup>({{ projects.previousVersions.length | numberStringFormat(true) }})</sup></a><br>
 {% for item in projects.previousVersions -%}
-│&nbsp;&nbsp;&nbsp;{% if loop.last %}└{% else %}├{% endif %}── <a href="{{ item.url }}">{{ item.data.title | safe }}</a><br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{% if loop.last %}└{% else %}├{% endif %}── <a href="{{ item.url }}">{{ item.data.title | safe }}</a><br>
 {% endfor -%}
-├── <a href="/slashes/">Slash Pages <sup>({{ 12 | numberStringFormat(true) }})</sup></a><br>
-│&nbsp;&nbsp;&nbsp;├── <a href="/about/">/about</a><br>
-│&nbsp;&nbsp;&nbsp;├── <a href="/blogroll/">/blogroll</a><br>
-│&nbsp;&nbsp;&nbsp;├── <a href="/about/#colophon">/colophon</a><br>
-│&nbsp;&nbsp;&nbsp;├── <a href="/about/#contact">/about</a><br>
-│&nbsp;&nbsp;&nbsp;├── <a href="/feeds/">/feeds</a><br>
-│&nbsp;&nbsp;&nbsp;├── <a href="/ideas/">/ideas</a><br>
-│&nbsp;&nbsp;&nbsp;├── <a href="/interests/">/interests</a><br>
-│&nbsp;&nbsp;&nbsp;├── <a href="/links/">/links</a><br>
-│&nbsp;&nbsp;&nbsp;├── <a href="/now/">/now</a><br>
-│&nbsp;&nbsp;&nbsp;├── <a href="#content">/sitemap</a><br>
-│&nbsp;&nbsp;&nbsp;├── <a href="/tip/">/tip</a><br>
-│&nbsp;&nbsp;&nbsp;└── <a href="/uses/">/uses</a><br>
-├── <a href="/88x31/">88x31</a><br>
-├── <a href="/ghoti/">The Absurdity of English</a><br>
-├── <a href="/css-naked-day/">CSS Naked Day</a><br>
-├── <a href="/cv/">Curriculum Vitae</a><br>
-├── <a href="/guestbook/">Guestbook</a><br>
-├── <a href="/helloworld/">Hello world!</a><br>
-├── <a href="/help/">Help!</a><br>
-├── <a href="/indieweb/">IndieWeb</a><br>
-├── <a href="/js-naked-day/">JS Naked Day</a><br>
-├── <a href="/license/">License</a><br>
-├── <a href="/listening/">Listening</a><br>
-├── <a href="/privacy/">Privacy Policy</a><br>
-├── <a href="/the-raven/">The Raven</a><br>
-├── <a href="/stats/">Stats</a><br>
-├── <a href="/styleguide/">Style Guide</a><br>
-├── <a href="/32-bit-cafe-code-jam-3/">What has creating a website done for me?</a><br>
-├── <a href="/blogroll.opml">blogroll.opml</a><br>
-├── <a href="/humans.txt">humans.txt</a><br>
-├── <a href="/Ravenous.gpl">Ravenous.gpl</a><br>
-├── <a href="/robots.txt">robots.txt</a><br>
-└── <a href="/sitemap.xml">sitemap.xml</a><br>
-├── <a href="/blank/">This page intentionally left blank.</a>
+{% set slash_pages = [{ url: '/about/', label: '/about' }, { url: '/blogroll/', label: '/blogroll' }, { url: '/about/#colophon', label: '/colophon' }, { url: '/about/#contact', label: '/about' }, { url: '/feeds/', label: '/feeds' }, { url: '/ideas/', label: '/ideas' }, { url: '/interests/', label: '/interests' }, { url: '/links/', label: '/links' }, { url: '/now/', label: '/now' }, { url: '#content', label: '/sitemap' }, { url: '/tip/', label: '/tip' }, { url: '/uses/', label: '/uses' }] -%}
+├── <a href="/slashes/">Slash Pages <sup>({{ slash_pages.length | numberStringFormat(true) }})</sup></a><br>
+{% for item in slash_pages -%}
+│&nbsp;&nbsp;&nbsp;{% if loop.last %}└{% else %}├{% endif %}── <a href="{{ item.url }}">{{ item.label }}</a><br>
+{% endfor -%}
+{% set other_pages = [{ url: '/88x31/', label: '88x31' }, { url: '/ghoti/', label: 'The Absurdity of English' }, { url: '/css-naked-day/', label: 'CSS Naked Day' }, { url: '/cv/', label: 'Curriculum Vitae' }, { url: '/guestbook/', label: 'Guestbook' }, { url: '/helloworld/', label: 'Hello world!' }, { url: '/help/', label: 'Help!' }, { url: '/indieweb/', label: 'IndieWeb' }, { url: '/js-naked-day/', label: 'JS Naked Day' }, { url: '/license/', label: 'License' }, { url: '/listening/', label: 'Listening' }, { url: '/privacy/', label: 'Privacy Policy' }, { url: '/the-raven/', label: 'The Raven' }, { url: '/stats/', label: 'Stats' }, { url: '/styleguide/', label: 'Style Guide' }, { url: '/32-bit-cafe-code-jam-3/', label: 'What has creating a website done for me?' }, { url: '/blogroll.opml', label: 'blogroll.opml' }, { url: '/humans.txt', label: 'humans.txt' }, { url: '/Ravenous.gpl', label: 'Ravenous.gpl' }, { url: '/robots.txt', label: 'robots.txt' }, { url: '/sitemap.xml', label: 'sitemap.xml' }, { url: '/blank/', label: 'This page intentionally left blank.' }] -%}
+{% for item in other_pages -%}
+{% if loop.last %}└{% else %}├{% endif %}── <a href="{{ item.url }}">{{ item.label }}</a><br>
+{% endfor -%}
 </div>
