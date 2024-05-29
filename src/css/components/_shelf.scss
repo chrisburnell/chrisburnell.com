@@ -8,6 +8,8 @@
 	--row-gap: var(--size-gap);
 	--min-inline-size: 10em;
 
+	margin-block-start: var(--size-gap);
+
 	article {
 		--flow-space: var(--size-small);
 		line-height: var(--line-height-medium);
