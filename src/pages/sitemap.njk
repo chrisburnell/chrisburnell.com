@@ -10,8 +10,8 @@ excludeFromSearch: true
 ├── <a href="/search/">Search</a><br>
 ├── <a href="/explore/">Explore</a><br>
 ├── <a href="/posts/">Posts <sup>({{ collections.posts | arePublished | rssOnlyFilter | getCollectionCount | numberStringFormat(true) }})</sup></a><br>
-│&nbsp;&nbsp;&nbsp;├── <a href="/posts/#categories">Categories</a><br>
-│&nbsp;&nbsp;&nbsp;├── <a href="/posts/#tags">Tags</a><br>
+│&nbsp;&nbsp;&nbsp;├── <a href="/posts/#categories">Categories <sup>({{ collections.categories.length | numberStringFormat(true) }})</sup></a><br>
+│&nbsp;&nbsp;&nbsp;├── <a href="/posts/#tags">Tags <sup>({{ collections.tags.length | numberStringFormat(true) }})</sup></a><br>
 │&nbsp;&nbsp;&nbsp;├── <a href="/writing/">Writing <sup>({{ collections.writings | arePublished | rssOnlyFilter | getCollectionCount | numberStringFormat(true) }})</sup></a><br>
 │&nbsp;&nbsp;&nbsp;├── <a href="/blog/">Blog <sup>({{ collections.blogPosts | arePublished | rssOnlyFilter | getCollectionCount | numberStringFormat(true) }})</sup></a><br>
 │&nbsp;&nbsp;&nbsp;├── <a href="/replies/">Replies <sup>({{ collections.replies | arePublished | rssOnlyFilter | getCollectionCount | numberStringFormat(true) }})</sup></a><br>
@@ -62,10 +62,10 @@ excludeFromSearch: true
 ├── <a href="/stats/">Stats</a><br>
 ├── <a href="/styleguide/">Style Guide</a><br>
 ├── <a href="/32-bit-cafe-code-jam-3/">What has creating a website done for me?</a><br>
-├── <a href="/blank/">This page intentionally left blank.</a><br>
 ├── <a href="/blogroll.opml">blogroll.opml</a><br>
 ├── <a href="/humans.txt">humans.txt</a><br>
 ├── <a href="/Ravenous.gpl">Ravenous.gpl</a><br>
 ├── <a href="/robots.txt">robots.txt</a><br>
 └── <a href="/sitemap.xml">sitemap.xml</a>
+├── <a href="/blank/">This page intentionally left blank.</a><br>
 </div>
