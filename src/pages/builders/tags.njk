@@ -48,6 +48,13 @@ eleventyComputed:
 
 		<hr>
 
+		{# Only show sparkline if there is more than 1 year of data #}
+		{% if first_year != latest_year %}
+			<div class=" [ center  inline-center ] ">
+				{% sparkline collection, first_year %}
+			</div>
+		{% endif %}
+
 		<div class=" [ grid ] [ navigator ] ">
 			<a href="/{{ tag }}.xml" class=" [ button ] ">
 				<c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false"><use href="#svg--rss"></use></svg></c-emoji>{{ title | safe }} Feed

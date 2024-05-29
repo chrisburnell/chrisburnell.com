@@ -102,6 +102,10 @@ perch: true
 
 		<hr>
 
+		<div class=" [ center  inline-center ] ">
+			{% sparkline collection, first_year %}
+		</div>
+
 		<div class=" [ grid ] [ navigator ] ">
 			<a href="/feeds/" class=" [ button ] ">
 				<c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false"><use href="#svg--rss"></use></svg></c-emoji>Browse Feeds
@@ -110,8 +114,6 @@ perch: true
 	</div>
 
 	<div class=" [ meta ] " data-pagefind-ignore>
-		{% sparkline collection, first_year %}
-
 		{% include 'meta/page.njk' %}
 	</div>
 </div>

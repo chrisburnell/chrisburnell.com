@@ -67,6 +67,13 @@ layout: base
 
 		<hr>
 
+		{# Only show sparkline if displaying by year and there is more than 1 year of data #}
+		{% if by_year and first_year != latest_year %}
+			<div class=" [ center  inline-center ] ">
+				{% sparkline collection, first_year %}
+			</div>
+		{% endif %}
+
 		{% if not no_feed %}
 			<div class=" [ grid ] [ navigator ] ">
 				<a href="/{{ feed_name | default(related_collection) }}.xml" class=" [ button ] ">
