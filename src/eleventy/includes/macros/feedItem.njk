@@ -1,28 +1,28 @@
 {% macro feedItem(item, site, params) -%}
 	<entry>
-		<id>{{ site.url + item.url }}</id>
-		<link href="{{ site.url + item.url }}" />
+		<id>{{ item.data.canonical }}</id>
+		<link href="{{ item.data.canonical }}" />
 		<title>{{ item.data.meta_title }}</title>
 		<published>{{ item.data.date | rfc3339Date }}</published>
 		<updated>{{ item.data.updated | default(item.data.date) | default(global.nowISO) | rfc3339Date }}</updated>
 		{% if item.data.category -%}
-		{# Category #}
+		{# Category -#}
 		<category term="{{ item.data.category }}" scheme="{{ site.url + '/' + item.data.category + '/' }}" label="{{ item.data | getCategoryName }}" />
 		{%- endif %}
 		{% if item.data.excerpt or item.data.description -%}
-		{# Summary: Has excerpt or description #}
+		{# Summary: Has excerpt or description -#}
 		<summary>{{ item.data.excerpt | default(item.data.meta_description) | striptags(false) }}</summary>
 		{%- elif item.content and item.content != '' -%}
-		{# Summary: Has content #}
+		{# Summary: Has content -#}
 		<summary>{{ item.content | markdownFormat | removeStrikethrough | cleanTagsForRSS | striptags(false) | maxWords }}</summary>
 		{%- elif item.data.of_title_fallback -%}
-		{# Summary: of-type #}
+		{# Summary: of-type -#}
 		<summary>{{ item.data.of_title_fallback | removeStrikethrough | striptags(false) }}</summary>
 		{%- else -%}
-		{# Summary: Fallback #}
+		{# Summary: Fallback -#}
 		<summary>{{ item.data.meta_description | removeStrikethrough | striptags(false) }}</summary>
 		{%- endif %}
-		{# Content #}
+		{# Content -#}
 		<content xml:lang="{{ site.locale }}" type="html">
 			{% if item.data.description -%}
 				{{ item.data.description | markdownFormat | cleanTagsForRSS | escape }}
@@ -54,7 +54,7 @@
 			{% set to_escape -%}
 				<hr>
 				<p>Thanks for subscribing and reading this post via RSS! {% if item.data.tags and 'rss-only' in item.data.tags %}This post is part of RSS Club, which means it appears only in my RSS feeds for a certain period of time.{% endif %}</p>
-				<p>You can read more of my posts <a href="https://chrisburnell.com/posts/">on my website</a>.</p>
+				<p>You can read <a href="{{ item.data.canonical }}">this post</a> and others <a href="https://chrisburnell.com/posts/">on my website</a>.</p>
 			{%- endset %}{{ to_escape | escape }}
 		</content>
 		{% if item.data.of_url -%}

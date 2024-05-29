@@ -6,7 +6,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <?xml-stylesheet href="/feed.xsl" type="text/xsl" ?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ site.locale }}" xml:base="{{ site.url }}">
-	<title>{{ site.title | striptags(true) }} · {{ title | striptags(true) }}</title>
+	<title>{{ site.title | striptags(true) }}{% if related_collection != 'features' %} · {{ title | striptags(true) }}{% endif %}</title>
 	<subtitle>{{ description | removeStrikethrough | striptags(false) }}</subtitle>
 	<id>{{ related_page }}</id>
 	<link href="{{ site.url + page.url }}" rel="self" />

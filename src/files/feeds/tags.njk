@@ -8,9 +8,6 @@ eleventyComputed:
   title: "{{ tag | supertitle | replace('-', ' ') }}"
   description: "All of my posts tagged “{{ tag }}”."
   related_collection: "{{ tag }}"
-reverse_collection: true
 tag_collection: true
 limit: 9001
-sitemap:
-  exclude: true
 ---
