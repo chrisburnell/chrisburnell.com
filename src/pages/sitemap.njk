@@ -1,0 +1,71 @@
+---
+title: "/sitemap"
+tagline: Sitemap
+description: "<em>All</em> the pages on this website."
+excludeFromSearch: true
+---
+
+<div class="monospace">
+<a href="/">Homepage</a><br>
+├── <a href="/search/">Search</a><br>
+├── <a href="/explore/">Explore</a><br>
+├── <a href="/posts/">Posts <sup>({{ collections.posts | arePublished | rssOnlyFilter | getCollectionCount | numberStringFormat(true) }})</sup></a><br>
+│&nbsp;&nbsp;&nbsp;├── <a href="/posts/#categories">Categories</a><br>
+│&nbsp;&nbsp;&nbsp;├── <a href="/posts/#tags">Tags</a><br>
+│&nbsp;&nbsp;&nbsp;├── <a href="/writing/">Writing <sup>({{ collections.writings | arePublished | rssOnlyFilter | getCollectionCount | numberStringFormat(true) }})</sup></a><br>
+│&nbsp;&nbsp;&nbsp;├── <a href="/blog/">Blog <sup>({{ collections.blogPosts | arePublished | rssOnlyFilter | getCollectionCount | numberStringFormat(true) }})</sup></a><br>
+│&nbsp;&nbsp;&nbsp;├── <a href="/replies/">Replies <sup>({{ collections.replies | arePublished | rssOnlyFilter | getCollectionCount | numberStringFormat(true) }})</sup></a><br>
+│&nbsp;&nbsp;&nbsp;├── <a href="/rsvps/">RSVPs <sup>({{ collections.rsvps | arePublished | rssOnlyFilter | getCollectionCount | numberStringFormat(true) }})</sup></a><br>
+│&nbsp;&nbsp;&nbsp;├── <a href="/hot/">Hot Pages <sup>({{ site.limits.feed | numberStringFormat(true) }})</sup></a><br>
+│&nbsp;&nbsp;&nbsp;├── <a href="/popular/">Popular Pages <sup>({{ site.limits.feed | numberStringFormat(true) }})</sup></a><br>
+{% for item in collections.categories -%}
+│&nbsp;&nbsp;&nbsp;{% if loop.last %}└{% else %}├{% endif %}── <a href="{{ item.plural }}">{{ item.properPlural | title | safe }} <sup>({{ collections[item.title] | arePublished | rssOnlyFilter | getCollectionCount | numberStringFormat(true) }})</sup></a><br>
+{% endfor -%}
+├── <a href="/projects/#web">Web Projects <sup>({{ collections.projects | getCollectionCount | numberStringFormat(true) }})</sup></a><br>
+{% for item in collections.projects -%}
+│&nbsp;&nbsp;&nbsp;{% if loop.last %}└{% else %}├{% endif %}── <a href="{{ item.url }}">{{ item.data.title | safe }}</a><br>
+{% endfor -%}
+├── <a href="/projects/#personal">Personal Projects <sup>({{ projects.personal.length | numberStringFormat(true) }})</sup></a><br>
+{% for item in projects.personal -%}
+│&nbsp;&nbsp;&nbsp;{% if loop.last %}└{% else %}├{% endif %}── <a href="{{ item.url }}">{{ item.data.title | safe }}</a><br>
+{% endfor -%}
+├── <a href="/projects/#personal">Previous Website Versions <sup>({{ projects.previousVersions.length | numberStringFormat(true) }})</sup></a><br>
+{% for item in projects.previousVersions -%}
+│&nbsp;&nbsp;&nbsp;{% if loop.last %}└{% else %}├{% endif %}── <a href="{{ item.url }}">{{ item.data.title | safe }}</a><br>
+{% endfor -%}
+├── <a href="/slashes/">Slash Pages <sup>({{ 12 | numberStringFormat(true) }})</sup></a><br>
+│&nbsp;&nbsp;&nbsp;├── <a href="/about/">/about</a><br>
+│&nbsp;&nbsp;&nbsp;├── <a href="/blogroll/">/blogroll</a><br>
+│&nbsp;&nbsp;&nbsp;├── <a href="/about/#colophon">/colophon</a><br>
+│&nbsp;&nbsp;&nbsp;├── <a href="/about/#contact">/about</a><br>
+│&nbsp;&nbsp;&nbsp;├── <a href="/feeds/">/feeds</a><br>
+│&nbsp;&nbsp;&nbsp;├── <a href="/ideas/">/ideas</a><br>
+│&nbsp;&nbsp;&nbsp;├── <a href="/interests/">/interests</a><br>
+│&nbsp;&nbsp;&nbsp;├── <a href="/links/">/links</a><br>
+│&nbsp;&nbsp;&nbsp;├── <a href="/now/">/now</a><br>
+│&nbsp;&nbsp;&nbsp;├── <a href="#content">/sitemap</a><br>
+│&nbsp;&nbsp;&nbsp;├── <a href="/tip/">/tip</a><br>
+│&nbsp;&nbsp;&nbsp;└── <a href="/uses/">/uses</a><br>
+├── <a href="/88x31/">88x31</a><br>
+├── <a href="/ghoti/">The Absurdity of English</a><br>
+├── <a href="/css-naked-day/">CSS Naked Day</a><br>
+├── <a href="/cv/">Curriculum Vitae</a><br>
+├── <a href="/guestbook/">Guestbook</a><br>
+├── <a href="/helloworld/">Hello world!</a><br>
+├── <a href="/help/">Help!</a><br>
+├── <a href="/indieweb/">IndieWeb</a><br>
+├── <a href="/js-naked-day/">JS Naked Day</a><br>
+├── <a href="/license/">License</a><br>
+├── <a href="/listening/">Listening</a><br>
+├── <a href="/privacy/">Privacy Policy</a><br>
+├── <a href="/the-raven/">The Raven</a><br>
+├── <a href="/stats/">Stats</a><br>
+├── <a href="/styleguide/">Style Guide</a><br>
+├── <a href="/32-bit-cafe-code-jam-3/">What has creating a website done for me?</a><br>
+├── <a href="/blank/">This page intentionally left blank.</a><br>
+├── <a href="/blogroll.opml">blogroll.opml</a><br>
+├── <a href="/humans.txt">humans.txt</a><br>
+├── <a href="/Ravenous.gpl">Ravenous.gpl</a><br>
+├── <a href="/robots.txt">robots.txt</a><br>
+└── <a href="/sitemap.xml">sitemap.xml</a>
+</div>

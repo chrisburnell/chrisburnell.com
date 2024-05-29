@@ -67,7 +67,7 @@ description: A great big list of all the pages, projects, posts on my website.
 					<p>My guestbook, powered by Webmentions!</p>
 				</li>
 				<li>
-					<a href="/help/" class=" [ gamma ] "><c-emoji>{{ emojis.question }}</c-emoji>Help</a>
+					<a href="/help/" class=" [ gamma ] "><c-emoji>{{ emojis.question }}</c-emoji>Help!</a>
 					<p>Get in touch if you want my help!</p>
 				</li>
 				<li>
@@ -164,7 +164,7 @@ description: A great big list of all the pages, projects, posts on my website.
 
 			<ul class=" [ grid ] [ shelf ] " data-layout="natural">
 				{%- for item in collections.categories -%}
-					{%- set count = collections[item.title] | arePublished | getCollectionCount -%}
+					{%- set count = collections[item.title] | arePublished | rssOnlyFilter | getCollectionCount -%}
 					<li>
 						<a href="/{{ item.plural }}/" class=" [ gamma ] "><c-emoji>{{ item.emoji | default(emojis.paper) }}</c-emoji>{{ item.properPlural | title }} <sup>{{ count }}</sup></a>
 						<p>
