@@ -16,7 +16,7 @@ Accurately describing DateTimes is important for other things too. When the time
 
 ## An example of the pitfalls
 
-Let’s assume that, here in Singapore, it’s the 30<sup>th</sup> of March, and I publish a blog post at 12:30 AM, but only capture the date of the post:
+Let’s assume that, here in Singapore, it’s the {{ 30 | ordinal | safe }} of March, and I publish a blog post at 12:30 AM, but only capture the date of the post:
 
 ```yaml
 date: 2023-03-30
@@ -24,7 +24,7 @@ date: 2023-03-30
 
 This could have some adverse effects not limited to:
 
-- RSS Feed Readers may not show people the post until it’s the 30<sup>th</sup> of March in *their* timezone, which, for people in the furthest timezone, UTC-12, is **20 hours away**.
+- RSS Feed Readers may not show people the post until it’s the {{ 30 | ordinal | safe }} of March in *their* timezone, which, for people in the furthest timezone, UTC-12, is **20 hours away**.
 - Folks who live in timezones earlier than mine (from UTC-12 to UTC+7) would see a post that was published *in the future*, at a time that hasn’t happened yet.
 - Displaying the *relative time* of the post (using JavaScript’s `Intl.RelativeTimeFormat`, for example) might display something like <q>This post was published in 20 hours</q>, which is both confusing *and incorrect*, considering the post was just published.
 

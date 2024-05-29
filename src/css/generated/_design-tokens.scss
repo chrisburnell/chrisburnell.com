@@ -122,23 +122,23 @@ $font-families: (
   silly: "Comic Sans MS, Chalkboard SE, fantasy, serif"
 );
 $font-sizes: (
-  alpha-max: 4.5rem,
-  alpha: clamp(2.074rem, 0.186rem + 4.314vi, 4.5rem),
-  alpha-min: 2.074rem,
+  alpha-max: 5rem,
+  alpha: clamp(2rem, -0.143rem + 6.857vi, 5rem),
+  alpha-min: 2rem,
   inbetween-max: 2.667rem,
   inbetween: clamp(1.728rem, 0.998rem + 1.669vi, 2.667rem),
   inbetween-min: 1.728rem,
   beta-max: 2rem,
   beta: clamp(1.438rem, 1rem + 1vi, 2rem),
   beta-min: 1.438rem,
-  gamma-max: 1.5rem,
-  gamma: clamp(1.2rem, 0.967rem + 0.533vi, 1.5rem),
-  gamma-min: 1.2rem,
-  default-max: 1.125rem,
-  default: clamp(1rem, 0.903rem + 0.222vi, 1.125rem),
+  gamma-max: 1.625rem,
+  gamma: clamp(1.25rem, 0.982rem + 0.857vi, 1.625rem),
+  gamma-min: 1.25rem,
+  default-max: 1.25rem,
+  default: clamp(1rem, 0.821rem + 0.571vi, 1.25rem),
   default-min: 1rem,
   small-max: 1rem,
-  small: clamp(0.875rem, 0.778rem + 0.222vi, 1rem),
+  small: clamp(0.875rem, 0.786rem + 0.286vi, 1rem),
   small-min: 0.875rem
 );
 $font-weights: (

@@ -9,25 +9,21 @@
 .toc {
 	overflow-y: hidden;
 
-	@include cqi(null, null, "medium") {
-		margin-block-start: var(--size-gap);
-	}
-}
-
-.table-of-contents {
 	@media print {
 		display: none;
 	}
 
-	@include cqi("main", "medium") {
+	@include cqi("main", null, "large") {
+		margin-block-start: var(--size-gap);
+	}
+
+	@include cqi("main", "large") {
 		position: sticky;
 		inset-block-start: calc(var(--size-header, 0px) + 1rem);
 	}
+}
 
-	details {
-		overflow: visible;
-	}
-
+.table-of-contents {
 	summary {
 		font-size: var(--font-size-gamma);
 	}

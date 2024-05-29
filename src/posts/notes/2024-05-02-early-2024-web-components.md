@@ -41,7 +41,7 @@ This post was published <relative-time><time datetime="2024-04-25T12:00:00+00:00
     <p>This post was published <time datetime="2024-04-25T12:00:00+00:00">25 April 2024</time>.</p>
 </figure>
 
-*With* JavaScript, the user will instead see this (assuming it’s presently the 2<sup>nd</sup> of May, 2024):
+*With* JavaScript, the user will instead see this (assuming it’s presently the {{ 2 | ordinal | safe }} of May, 2024):
 
 <figure class=" [ box ] ">
     <p>This post was published <time datetime="2024-04-25T12:00:00+00:00" title="25/04/2024, 12:00:00 (local time)">1 week ago</time>.</p>
@@ -76,7 +76,7 @@ Very much like my `<relative-time>` web component, its functionality hinges on o
     <p>My event starts on <time start datetime="2024-04-25T12:00:00+00:00">25 April 2024</time> and ends on <time end datetime="2024-05-07T12:00:00+00:00">7 May 2024</time>.</p>
 </figure>
 
-*With* JavaScript, the user will instead see this (assuming it’s presently the 2<sup>nd</sup> of May, 2024):
+*With* JavaScript, the user will instead see this (assuming it’s presently the {{ 2 | ordinal | safe }} of May, 2024):
 
 <figure class=" [ box ] ">
     <p>My event started <time start datetime="2024-04-25T12:00:00+00:00" title="25/04/2024, 12:00:00 (local time)">1 week ago</time> and ends <time end datetime="2024-05-07T12:00:00+00:00" title="07/05/2024, 12:00:00 (local time)">in 5 days</time>.</p>

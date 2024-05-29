@@ -4,10 +4,8 @@
 ////
 
 .meta {
-	--multiplier: calc(40rem - 100%);
 	container: meta / inline-size;
 	display: grid;
-	// prettier-ignore
 	grid-template-columns: repeat(auto-fill, minmax(16em, 1fr));
 	grid-template-rows: masonry;
 	align-items: start;

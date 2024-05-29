@@ -2,7 +2,6 @@
 layout: base
 ---
 <article {% if not content.length %}id="content"{% endif %} class=" [ pantheon{% if full %}  full{% endif %} ] [ wrap ] [ post h-{{ mf_root }} ] {% if perch %}[ perch ] {% endif %}">
-
 	<ul class=" [ cluster ] [ breadcrumbs ] " data-pagefind-ignore>
 		<li><a href="/posts/">All Posts</a></li><li><a href="/{{ categoryPlural | default(category) }}/">{{ categoryProperPlural | default(categoryPlural) | default(category) | title }}</a></li>
 	</ul>

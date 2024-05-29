@@ -38,30 +38,22 @@
 		auto
 		[browse-end];
 	grid-template-columns:
-		[indent-start content-start outdent-start]
-		auto
-		[indent-end content-end outdent-end];
-	transition: all var(--transition-duration) var(--transition-function);
-
-	@include cqi(null, "medium") {
-		grid-template-columns:
-			[indent-start]
-			var(--indent-size, 0)
-			[indent-end]
-			var(--indent-gap, 0)
-			[content-start]
-			repeat(var(--columns, 6), 1fr)
-			[content-end]
-			var(--outdent-gap, 0)
-			[outdent-start]
-			var(--outdent-size, 0)
-			[outdent-end];
-	}
+		[indent-start]
+		var(--indent-size, 0)
+		[indent-end]
+		var(--indent-gap, 0)
+		[content-start]
+		repeat(var(--columns, 6), 1fr)
+		[content-end]
+		var(--outdent-gap, 0)
+		[outdent-start]
+		var(--outdent-size, 0)
+		[outdent-end];
 
 	&:not(.full) {
-		// Only show indent & outdent above large on non-full-inline-size
+		// Only show indent & outdent above medium on non-full-inline-size
 		// pages. This effeectively shortens the inline-size of the content.
-		@include cqi(null, "large") {
+		@include cqi(null, "medium") {
 			--indent-size: 1fr;
 			--indent-gap: var(--size-gap);
 			--outdent-gap: var(--size-gap);
@@ -71,9 +63,11 @@
 
 	&:has(.toc) {
 		@include cqi(null, "large") {
-			--indent-size: 20em;
-			--outdent-gap: 0;
-			--outdent-size: 0;
+			@media screen {
+				--indent-size: 18rem;
+				--outdent-gap: 0;
+				--outdent-size: 0;
+			}
 		}
 	}
 

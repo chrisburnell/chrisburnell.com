@@ -10,7 +10,6 @@ perch: true
 {%- set latest_year = collection[0].data.year | default(collection[0].year) -%}
 {%- set first_year = collection[count-1].data.year | default(collection[count-1].year) -%}
 <div class=" [ pantheon ] [ wrap ] [ archive ] [ perch ] ">
-
 	<h1 id="title" class=" [ title ] ">
 		<span class=" [ p-name ] ">{{ tagline | default(title) | safe }}</span>
 	</h1>

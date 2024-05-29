@@ -15,7 +15,7 @@ post_includes:
   - weblogpomo2024.njk
 ---
 
-If you don’t know, the source code of this website (well, *most* of it) is freely-available to browse through [on GitHub](https://github.com/chrisburnell/chrisburnell.com). This has been the case for nearly 11 years now, ever since my <q>Initial commit</q> on <time datetime="2013-05-30T03:48:54-0700">the 30<sup>th</sup> of May, 2013</time>.
+If you don’t know, the source code of this website (well, *most* of it) is freely-available to browse through [on GitHub](https://github.com/chrisburnell/chrisburnell.com). This has been the case for nearly 11 years now, ever since my <q>Initial commit</q> on <time datetime="2013-05-30T03:48:54-0700">the {{ 30 | ordinal | safe }} of May, 2013</time>.
 
 For a good seven years, my website was built using [Jekyll](https://jekyllrb.com), a static site generator, and was hosted on [GitHub Pages](https://pages.github.com) (which was and is still free). I was pretty enamoured with how much fluff and complication was taken out of the picture by that setup; chiefly, what I really liked about it was how many barriers it broke down for less technical folks to build and publish their own websites. (It’s no wonder I was later drawn to the [IndieWeb](https://indieweb.org) so quickly!)
 
@@ -32,7 +32,7 @@ I put a tremendous amount of work into my website, not just for me, but for anyo
 
 During this time, I had also dipped my toes into running my own server, getting my head around [nginx](https://nginx.org), poked and patched enough holes in the back-end of a website or two, and finally had enough knowledge under my belt to host my website myself.
 
-On <time datetime="2020-08-06T15:33:03+0000">the 6<sup>th</sup> of August, 2020</time>, after discovering [Eleventy](https://www.11ty.dev), I pushed the first commit to my repository for the next big iteration of my website. From then on, my website has been built with [GitHub Workflows](https://docs.github.com/en/actions/using-workflows) and deployed to my server.
+On <time datetime="2020-08-06T15:33:03+0000">the {{ 6 | ordinal | safe }} of August, 2020</time>, after discovering [Eleventy](https://www.11ty.dev), I pushed the first commit to my repository for the next big iteration of my website. From then on, my website has been built with [GitHub Workflows](https://docs.github.com/en/actions/using-workflows) and deployed to my server.
 
 Despite this major change to the construction of my website, I still keep the source code of my website open and public. Because the landscape of publishing websites is a lot more forgiving nowadays—you don’t *need* your own server to deploy websites of many different kinds as you once *did need*—I’m able to make full use of the wide and wonderful ecosystem of plugins (and more) that are freely-available for Eleventy.
 

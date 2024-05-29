@@ -13,7 +13,6 @@ excludeFromSearch: true
 {%- from 'macros/deckItem.njk' import deckItem -%}
 {%- from "macros/shelfItem.njk" import shelfItem -%}
 <article class=" [ pantheon ] [ wrap ] [ page ] [ perch ] ">
-
 	<h1 id="title" class=" [ title{% if title_error %}  title--negative{% elif title_success %}  title--positive{% endif %} ] ">
 		<span class=" [ p-name ] ">{% if global.isCSSNakedDay %}{{ tagline | replace('CSS', '<s>CSS</s>') | safe }}{% else %}{{ tagline | safe }}{% endif %}</span>
 	</h1>

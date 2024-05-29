@@ -14,7 +14,7 @@ post_includes:
 
 We typically start with [Jumblie](https://jumblie.com) by [Cassidy Williams](https://cassidoo.co), a game where you are given a theme and a smattering of letters, and you have to find four 4–9 letter words composed of those letters.
 
-Once you’ve found a word, the corresponding letters are removed from the list and the word is shown below with a background colour (red, orange, green, blue). Red indicates it is the shortest word in the group, and blue indicates the longest. Orange is the 2<sup>nd</sup>-shortest word, and green the 2<sup>nd</sup> longest, but sometimes words will be the same length.
+Once you’ve found a word, the corresponding letters are removed from the list and the word is shown below with a background colour (red, orange, green, blue). Red indicates it is the shortest word in the group, and blue indicates the longest. Orange is the {{ 2 | ordinal | safe }} shortest word, and green the {{ 2 | ordinal | safe }} longest, but sometimes words will be the same length.
 
 It’s a lot of fun! Our best time is 7 seconds; although, we usually come in somewhere around the 1-minute mark, and have had games so badly as to take more than 10 minutes. Those are a real blow to the ego!
 
@@ -24,9 +24,9 @@ From there, we move onto [PlusWord](https://www.telegraph.co.uk/news/plusword/) 
 
 After doing that, you move below the 5×5 grid where there’s a row of 5 squares that aligns with the grid above. Of those 25 letters in the 5×5 grid, some will be highlighted either yellow or green.
 
-Letters highlighted *green* indicate that that letter appears in the word in the row at the bottom in the same position, e.g. if a letter in the 2<sup>nd</sup> column of the grid is highlighted green, the same letter is the 2<sup>nd</sup> letter of the word at the bottom.
+Letters highlighted *green* indicate that that letter appears in the word in the row at the bottom in the same position, e.g. if a letter in the {{ 2 | ordinal | safe }} column of the grid is highlighted green, the same letter is the {{ 2 | ordinal | safe }} letter of the word at the bottom.
 
-Letters highlighted *yellow* indicate that that letter appears in the word in the row at the bottom *but not in the same position*, e.g. if a letter in the 2<sup>nd</sup> column of the grid is highlighted yellow, the same letter appears in the word at the bottom, but will *not* be the 2<sup>nd</sup> letter (i.e. it will be 1<sup>st</sup>, 3<sup>rd</sup>, 4<sup>th</sup>, or 5<sup>th</sup>).
+Letters highlighted *yellow* indicate that that letter appears in the word in the row at the bottom *but not in the same position*, e.g. if a letter in the {{ 2 | ordinal | safe }} column of the grid is highlighted yellow, the same letter appears in the word at the bottom, but will *not* be the {{ 2 | ordinal | safe }} letter (i.e. it will be {{ 1 | ordinal | safe }}, {{ 3 | ordinal | safe }}, {{ 4 | ordinal | safe }}, or {{ 5 | ordinal | safe }}).
 
 This one can be a bit tricky, as it will sometimes have references to pop culture or media that we’re not familiar with. Fortunately, because the words in the grid intersect with each other, it’s still possible to solve those unknowns, but it just takes extra time. Our best time on *PlusWord* is 12 seconds, but we usually come closer to 1 minute.
 

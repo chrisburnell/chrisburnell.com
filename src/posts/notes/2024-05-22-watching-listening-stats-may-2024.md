@@ -24,39 +24,15 @@ For today, I figured I’d start off by looking at my top genres of movies and T
 
 ### Movies by genre
 
-{% set movie_genres = [{genre: 'Action', count: 103 }, {genre: 'Adventure', count: 111 }, {genre: 'Animation', count: 10 }, {genre: 'Anime', count: 18 }, {genre: 'Comedy', count: 59 }, {genre: 'Crime', count: 43 }, {genre: 'Documentary', count: 1 }, {genre: 'Drama', count: 99 }, {genre: 'Family', count: 22 }, {genre: 'Fantasy', count: 47 }, {genre: 'History', count: 11 }, {genre: 'Holiday', count: 3 }, {genre: 'Horror', count: 5 }, {genre: 'Music', count: 3 }, {genre: 'Musical', count: 5 }, {genre: 'Mystery', count: 13 }, {genre: 'Romance', count: 15 }, {genre: 'Science Fiction', count: 54 }, {genre: 'Superhero', count: 8 }, {genre: 'Thriller', count: 70 }, {genre: 'War', count: 11 }, {genre: 'Western', count: 6 }] -%}
-{% set highest_movie_genre = 111 -%}
-<table style="border-block-start: 0;">
-    <tbody>
-        {% for movie_data in movie_genres -%}
-            <tr>
-                <th class=" [ numeral ] ">{{ movie_data.genre }}</th>
-                <td class=" [ numeral  strong ] " style="padding-inline-start: 1lh; padding-inline-end: var(--size-medium);">{{ movie_data.count | numberStringFormat(true) }}</td>
-                <td class="no-rss" style="inline-size: 100%; padding-inline: 0;">
-                    <div class=" [ background--raven ] " style="background-image: linear-gradient(to bottom, transparent, color-mix(in oklab, var(--color-mineshaft), transparent calc(100% - var(--opacity-beta)))); inline-size: {{ (movie_data.count / highest_movie_genre * 100) | maxDecimals }}%; block-size: 1lh; border-radius: var(--size-border-default);"></div>
-                </td>
-            </tr>
-        {%- endfor %}
-    </tbody>
-</table>
+{% renderTemplate 'webc' %}
+<c-stats-table :@items="[{label: 'Action', count: 103 }, {label: 'Adventure', count: 111 }, {label: 'Animation', count: 10 }, {label: 'Anime', count: 18 }, {label: 'Comedy', count: 59 }, {label: 'Crime', count: 43 }, {label: 'Documentary', count: 1 }, {label: 'Drama', count: 99 }, {label: 'Family', count: 22 }, {label: 'Fantasy', count: 47 }, {label: 'History', count: 11 }, {label: 'Holiday', count: 3 }, {label: 'Horror', count: 5 }, {label: 'Music', count: 3 }, {label: 'Musical', count: 5 }, {label: 'Mystery', count: 13 }, {label: 'Romance', count: 15 }, {label: 'Science Fiction', count: 54 }, {label: 'Superhero', count: 8 }, {label: 'Thriller', count: 70 }, {label: 'War', count: 11 }, {label: 'Western', count: 6 }]"></c-stats-table>
+{% endrenderTemplate %}
 
 ### TV Shows by genre
 
-{% set tv_genres = [{ genre: 'Action', count: 19 }, { genre: 'Adventure', count: 118 }, { genre: 'Animation', count: 3 }, { genre: 'Anime', count: 5 }, { genre: 'Comedy', count: 14 }, { genre: 'Crime', count: 4 }, { genre: 'Documentary', count: 8 }, { genre: 'Drama', count: 21 }, { genre: 'Family', count: 3 }, { genre: 'Fantasy', count: 17 }, { genre: 'History', count: 11 }, { genre: 'Horror', count: 3 }, { genre: 'Mystery', count: 7 }, { genre: 'Reality', count: 1 }, { genre: 'Science Fiction', count: 16 }, { genre: 'Superhero', count: 2 }, { genre: 'Suspense', count: 3 }, { genre: 'Thriller', count: 2 }, { genre: 'Western', count: 1 }] -%}
-{% set highest_tv_genre = 118 -%}
-<table style="border-block-start: 0;">
-    <tbody>
-        {% for tv_data in tv_genres -%}
-            <tr>
-                <th class=" [ numeral ] ">{{ tv_data.genre }}</th>
-                <td class=" [ numeral  strong ] " style="padding-inline-start: 1lh; padding-inline-end: var(--size-medium);">{{ tv_data.count | numberStringFormat(true) }}</td>
-                <td class="no-rss" style="inline-size: 100%; padding-inline: 0;">
-                    <div class=" [ background--raven ] " style="background-image: linear-gradient(to bottom, transparent, color-mix(in oklab, var(--color-mineshaft), transparent calc(100% - var(--opacity-beta)))); inline-size: {{ (tv_data.count / highest_tv_genre * 100) | maxDecimals }}%; block-size: 1lh; border-radius: var(--size-border-default);"></div>
-                </td>
-            </tr>
-        {%- endfor %}
-    </tbody>
-</table>
+{% renderTemplate 'webc' %}
+<c-stats-table :@items="[{ label: 'Action', count: 19 }, { label: 'Adventure', count: 118 }, { label: 'Animation', count: 3 }, { label: 'Anime', count: 5 }, { label: 'Comedy', count: 14 }, { label: 'Crime', count: 4 }, { label: 'Documentary', count: 8 }, { label: 'Drama', count: 21 }, { label: 'Family', count: 3 }, { label: 'Fantasy', count: 17 }, { label: 'History', count: 11 }, { label: 'Horror', count: 3 }, { label: 'Mystery', count: 7 }, { label: 'Reality', count: 1 }, { label: 'Science Fiction', count: 16 }, { label: 'Superhero', count: 2 }, { label: 'Suspense', count: 3 }, { label: 'Thriller', count: 2 }, { label: 'Western', count: 1 }]"></c-stats-table>
+{% endrenderTemplate %}
 
 ## Music
 
@@ -64,21 +40,9 @@ As mentioned, I’ve been <q>scrobbling</q> my music listening to [Last.fm](http
 
 ### Scrobbles per year
 
-{% set yearly_scrobbles = [{ year: 2010, count: 5135 }, { year: 2011, count: 13932 }, { year: 2012, count: 13204 }, { year: 2013, count: 10967 }, { year: 2014, count: 4310 }, { year: 2015, count: 4876 }, { year: 2016, count: 6334 }, { year: 2017, count: 8710 }, { year: 2018, count: 11290 }, { year: 2019, count: 11666 }, { year: 2020, count: 7311 }, { year: 2021, count: 5314 }, { year: 2022, count: 2982 }, { year: 2023, count: 2603 }, { year: 2024, count: 499 }] -%}
-{% set most_scrobbles_per_year = 13932 -%}
-<table style="border-block-start: 0;">
-    <tbody>
-        {% for scrobble_data in yearly_scrobbles -%}
-            <tr>
-                <th class=" [ numeral ] ">{{ scrobble_data.year }}</th>
-                <td class=" [ numeral  strong ] " style="padding-inline-start: 1lh; padding-inline-end: var(--size-medium);">{{ scrobble_data.count | numberStringFormat(true) }}</td>
-                <td class="no-rss" style="inline-size: 100%; padding-inline: 0;">
-                    <div class=" [ background--raven ] " style="background-image: linear-gradient(to bottom, transparent, color-mix(in oklab, var(--color-mineshaft), transparent calc(100% - var(--opacity-beta)))); inline-size: {{ (scrobble_data.count / most_scrobbles_per_year * 100) | maxDecimals }}%; block-size: 1lh; border-radius: var(--size-border-default);"></div>
-                </td>
-            </tr>
-        {%- endfor %}
-    </tbody>
-</table>
+{% renderTemplate 'webc' %}
+<c-stats-table :@items="[{ label: 2010, count: 5135 }, { label: 2011, count: 13932 }, { label: 2012, count: 13204 }, { label: 2013, count: 10967 }, { label: 2014, count: 4310 }, { label: 2015, count: 4876 }, { label: 2016, count: 6334 }, { label: 2017, count: 8710 }, { label: 2018, count: 11290 }, { label: 2019, count: 11666 }, { label: 2020, count: 7311 }, { label: 2021, count: 5314 }, { label: 2022, count: 2982 }, { label: 2023, count: 2603 }, { label: 2024, count: 499 }]"></c-stats-table>
+{% endrenderTemplate %}
 
 <hr style="--rule-space: var(--size-medium);">
 

@@ -23,3 +23,5 @@ I cannot believe that I hadn’t graced my website with this prodigious album un
 DJ Shadow displays a complete mastery of the [Akai MPC60 sampler](https://en.wikipedia.org/wiki/Akai_MPC) with his meticulous layering of funk, jazz, rock, and soul elements to create a rich atmosphere of loops and beats.
 
 Although it took some time for his sound to gain worldwide traction, there’s absolutely no question that *Endtroducing.....* is a certified classic, engraving DJ Shadow’s name in the stonework of hip-hop and sampling as one of the best to ever do it.
+
+<p class=" [ box ] [ center  inline-center ] [ gamma ] ">This is the <a href="/stats/">{{ 1100 | numberStringFormat | ordinal | safe }} post</a> on my website!</p>

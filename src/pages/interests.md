@@ -60,7 +60,7 @@ The Hobbit movies were pretty disappointing, though, and Rings of Power is downr
 
 ### Dungeons & Dragons
 
-Although I don’t get to play much these days, I’m an avid Dungeon Master (and sometimes player) of Dungeons & Dragons (5<sup>th</sup> edition).
+Although I don’t get to play much these days, I’m an avid Dungeon Master (and sometimes player) of Dungeons & Dragons ({{ 5 | ordinal | safe }} edition).
 
 I’ve been tinkering away on my own sprawling campaign for a number of years now, and have written a handful of one-shots along the way.
 
