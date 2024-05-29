@@ -1,4 +1,4 @@
-name: Review
+name: Branch Build Test
 
 on:
   push:
@@ -14,7 +14,7 @@ concurrency:
 
 jobs:
   build:
-    name: Review Build
+    name: Branch Build Test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
