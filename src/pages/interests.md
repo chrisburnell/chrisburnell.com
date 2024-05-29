@@ -7,6 +7,7 @@ toc: true
 
 <div class=" [ box  box--line-length ] [ flow ] [ no-print ] " data-pagefind-ignore>
 	<p>This page is a constant work-in-progress as more things I’m interested in strike me to list out here!</p>
+	<p>Check out <a href="https://chrisburnell.github.io/interests-directory">the /interests directory</a> for more pages like this!</p>
 </div>
 
 ## Tech Stuff

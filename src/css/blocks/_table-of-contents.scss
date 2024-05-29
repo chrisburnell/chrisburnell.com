@@ -7,8 +7,6 @@
 // TODO get sticky working
 
 .toc {
-	overflow-y: hidden;
-
 	@media print {
 		display: none;
 	}
@@ -18,12 +16,19 @@
 	}
 
 	@include cqi("main", "large") {
-		position: sticky;
-		inset-block-start: calc(var(--size-header, 0px) + 1rem);
+		block-size: 100%;
+	}
+
+	is-land {
+		@include cqi("main", "large") {
+			position: sticky;
+			inset-block-start: calc(var(--size-header, 0px) + 1rem);
+		}
 	}
 }
 
 .table-of-contents {
+
 	summary {
 		font-size: var(--font-size-gamma);
 	}

@@ -10,7 +10,7 @@
 	grid-template-rows: masonry;
 	align-items: start;
 	gap: var(--size-gap);
-	margin-block-start: var(--size-gap);
+	margin-block-start: var(--size-gigantic);
 
 	& > *{
 		inline-size: 100%;
