@@ -3,6 +3,10 @@ date: 2024-05-30T23:50:26+0800
 title: Generating a Palette File from Site Colours
 description: In this post, I explain how I dynamically-generate a GIMP palette file based on the design tokens for my website’s colours.
 tags:
+  - art
+  - color
+  - eleventy
+  - nunjucks
   - weblogpomo
   - weblogpomo2024
 post_includes:
