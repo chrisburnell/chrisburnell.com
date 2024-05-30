@@ -15,7 +15,7 @@ toc: true
 ---
 
 <figure>
-	{% image './images/content/pentatonic.png', 'A simple pixel-art graphic of some piano keys where the keys of the C Major Pentatonic scale are highlighted', 'pixelated' %}
+	{% image './images/content/pentatonic.png', 'A pixel-art graphic of some piano keys where the keys of the C Major Pentatonic scale are highlighted', 'pixelated' %}
 	<figcaption><p>A snippet of a <a href="https://en.wikipedia.org/wiki/Pentatonic_scale">C Major Pentatonic scale</a>.</p></figcaption>
 </figure>
 

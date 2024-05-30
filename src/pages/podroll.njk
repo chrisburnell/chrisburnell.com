@@ -4,4 +4,27 @@ tagline: Podroll
 description: A list of podcasts that I enjoy.
 ---
 
-This page is a work-in-progress!
+<div class=" [ grid ] [ shelf ] " style="--min-inline-size: 12em;">
+{% for podcast in podroll %}
+	<article id="{{ podcast.title | slugify }}" class=" [ person ] ">
+		<div class=" [ person__avatar ] ">
+			<a href="{{ podcast.url | getOrigin }}" rel="external nofollow">
+				<img src="https://v1.indieweb-avatar.11ty.dev/{{ podcast.url | getOrigin | urlencode }}/" class=" [ avatar ] " width="60" height="60" alt="{{ podcast.title | safe }}’s avatar" loading="lazy" decoding="async">
+			</a>
+		</div>
+		<div class=" [ person__meta ] [ flow ] ">
+			<h1>
+				<a href="{{ podcast.url }}" rel="external noopener">
+					{{ podcast.title | safe }}
+					<br>
+					{%- set protocol = podcast.url | getProtocol -%}
+					<small aria-hidden="true" style="word-break: break-all;">{{ podcast.url | replace(protocol, '') | replace('//', '') }}</small>
+				</a>
+			</h1>
+			<div>
+				<a href="{{ podcast.rss }}" rel="external noopener"><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false"><use href="#svg--rss"></use></svg></c-emoji>RSS</a>
+			</div>
+		</div>
+	</article>
+{% endfor %}
+</div>

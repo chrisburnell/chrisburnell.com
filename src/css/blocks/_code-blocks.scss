@@ -73,11 +73,11 @@ pre.language-php::before {
 	content: "PHP";
 	color: h(php);
 }
-pre.language-plaintext::before,
-pre.language-text::before {
-	content: "Plaintext";
-	color: h(yeti);
-}
+// pre.language-plaintext::before,
+// pre.language-text::before {
+// 	content: "Plaintext";
+// 	color: h(yeti);
+// }
 pre.language-scss::before {
 	content: "SCSS";
 	color: h(scss);
@@ -89,6 +89,12 @@ pre.language-webc::before {
 pre.language-yaml::before {
 	content: "YAML";
 	color: h(yaml);
+}
+
+/* Exceptions */
+pre.language-plaintext,
+pre.language-text {
+	padding-block-start: var(--size-gutter);
 }
 
 /**

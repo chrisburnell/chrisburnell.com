@@ -34,7 +34,7 @@ excludeFromSearch: true
 {% for item in projects.previousVersions -%}
 │&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{% if loop.last %}└{% else %}├{% endif %}── <a href="{{ item.url }}">{{ item.data.title | safe }}</a><br>
 {% endfor -%}
-{% set slash_pages = [{ url: '/about/', label: '/about' }, { url: '/blogroll/', label: '/blogroll' }, { url: '/about/#colophon', label: '/colophon' }, { url: '/about/#contact', label: '/about' }, { url: '/feeds/', label: '/feeds' }, { url: '/ideas/', label: '/ideas' }, { url: '/interests/', label: '/interests' }, { url: '/links/', label: '/links' }, { url: '/now/', label: '/now' }, { url: '#content', label: '/sitemap' }, { url: '/tip/', label: '/tip' }, { url: '/uses/', label: '/uses' }] -%}
+{% set slash_pages = [{ url: '/about/', label: '/about' }, { url: '/blogroll/', label: '/blogroll' }, { url: '/about/#colophon', label: '/colophon' }, { url: '/about/#contact', label: '/about' }, { url: '/feeds/', label: '/feeds' }, { url: '/ideas/', label: '/ideas' }, { url: '/interests/', label: '/interests' }, { url: '/links/', label: '/links' }, { url: '/now/', label: '/now' }, { url: '/podroll/', label: '/podroll' }, { url: '#content', label: '/sitemap' }, { url: '/tip/', label: '/tip' }, { url: '/uses/', label: '/uses' }] -%}
 ├── <a href="/slashes/">Slash Pages <sup>({{ slash_pages.length | numberStringFormat(true) }})</sup></a><br>
 {% for item in slash_pages -%}
 │&nbsp;&nbsp;&nbsp;{% if loop.last %}└{% else %}├{% endif %}── <a href="{{ item.url }}">{{ item.label }}</a><br>
