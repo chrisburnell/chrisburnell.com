@@ -6,6 +6,8 @@ description: A list of reasons to include the time and timezone in Date strings 
 tags:
   - eleventy
   - javascript
+syndicate_to:
+  - https://fediverse.repc.co/@chrisburnell/112184974314684426
 ---
 
 Recently, there’s been a bit of a discussion online about recommending folks add times and timezones to dates on their websites. Since I started keeping a record of my RSVPs to meetups and conferences on my website, and even moreso now that I’ve moved from the UK to Singapore (which is 7–8 timezone hours away), accurately capturing the date *and time* of things has been important to me.

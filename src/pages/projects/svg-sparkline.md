@@ -10,6 +10,8 @@ tags:
   - javascript
   - package
   - web-components
+syndicate_to:
+  - https://fediverse.repc.co/@chrisburnell/111812123566491440
 ---
 
 <figure>
