@@ -10,6 +10,8 @@ tags:
   - weblogpomo2024
 post_includes:
   - weblogpomo2024.njk
+syndicate_to:
+  - https://fediverse.repc.co/@chrisburnell/112536533756380019
 ---
 
 Ever since my first taste of web development, I eagerly threw myself down the rabbit hole. Here was something I loved doing so much that I forsake sleep and rest and a very many other things to pursue this new-found passion. It was not uncommon for me to stay up late and into the early morning hours tinkering on one thing or another.
