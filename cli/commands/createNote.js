@@ -11,7 +11,7 @@ export default async (__siteroot) => {
 date: ${postDate}`
 
 	if (title) {
-		if (title.includes(`"`)) {
+		if (title.match(/[:"#]/g)) {
 			meta += `\ntitle: "${title.replace(/"/g, `\\"`)}"`
 		} else {
 			meta += `\ntitle: ${title}`
@@ -19,7 +19,7 @@ date: ${postDate}`
 	}
 
 	if (description) {
-		if (description.includes(`"`)) {
+		if (description.match(/[:"#]/g)) {
 			meta += `\ndescription: "${description.replace(/"/g, `\\"`)}"`
 		} else {
 			meta += `\ndescription: ${description}`

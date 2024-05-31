@@ -64,6 +64,7 @@ export const cleanTagsForRSS = (string) => {
 	$("link, script, style, .no-rss").remove()
 	$("[class]").removeAttr("class")
 	$("[style]").removeAttr("style")
+	$("[data-pagefind-ignore]").removeAttr("data-pagefind-ignore")
 	return $.html()
 }
 

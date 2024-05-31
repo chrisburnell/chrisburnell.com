@@ -4,11 +4,7 @@ date: 2024-05-08T02:20:00+0800
 title: The &lt;api-listing&gt; web component
 description: TODO
 tags:
-  - weblogpomo
-  - weblogpomo2024
   - javascript
-post_includes:
-  - weblogpomo2024.njk
 ---
 
 Idea:

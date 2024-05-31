@@ -116,7 +116,7 @@ GIMP Palette
 # Colors: {{ colors | length }}
 {% for name, color in colors -%}
 {% for component in (color | getRGB) %}{% if component.toString().length == 1 %}  {% elif component.toString().length == 2 %} {% endif %}{{ component }} {% endfor %}{{ name | title }}
-{%- endfor %}
+{% endfor -%}
 ```
 {% endraw %}
 
