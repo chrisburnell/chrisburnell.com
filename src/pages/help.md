@@ -9,7 +9,7 @@ That’s why I’ve decided to make available some of my free time to help *you*
 
 <h2 id="how">How it works</h2>
 
-First, get in touch with me and briefly describe what you want me to help with.
+You get in touch with me and briefly describe what you want me to help with. *(Alternatively, you can [book my time directly](#calendar).)*
 
 <address>
     <dl>
@@ -39,3 +39,12 @@ I’ll read through your brief, and if I think I’d be a good fit, I’ll get b
 - Writing
 - Running a conference
 - [Something else? Why not ask!](#how)
+
+<h2 id="calendar">Book my time</h2>
+
+Feel free to book my time <a href="https://cal.com/chrisburnell" rel="external noopener">using Cal.com</a>.
+
+<is-land on:visible>
+    <div id="cal-embed" style="overflow: scroll;"></div>
+    <script>{% include '../js/imports/cal-embed.js' %}</script>
+</is-land>
