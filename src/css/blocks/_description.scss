@@ -10,7 +10,6 @@
 
 	p {
 		@include cqi(null, "small") {
-			text-align: center;
 			margin-inline: auto;
 		}
 	}

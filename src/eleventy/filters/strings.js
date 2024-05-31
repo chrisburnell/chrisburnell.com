@@ -59,12 +59,23 @@ export const cleanTags = (string) => {
  * @param {string} string
  * @returns {string}
  */
+export const cleanTagsForWordcount = (string) => {
+	const $ = load(cleanTags(string), null, false)
+	$("[data-skip-wordcount]").remove()
+	return $.html()
+}
+
+/**
+ * @param {string} string
+ * @returns {string}
+ */
 export const cleanTagsForRSS = (string) => {
 	const $ = load(string, null, false)
 	$("link, script, style, .no-rss").remove()
-	$("[class]").removeAttr("class")
-	$("[style]").removeAttr("style")
-	$("[data-pagefind-ignore]").removeAttr("data-pagefind-ignore")
+	const attributes = ["class", "style", "data-ignore-wordcount", "data-pagefind-ignore"]
+	attributes.forEach((attribute) => {
+		$(`[${attribute}]`).removeAttr(attribute)
+	})
 	return $.html()
 }
 
@@ -241,6 +252,7 @@ export default {
 	conjunction,
 	supertitle,
 	cleanTags,
+	cleanTagsForWordcount,
 	cleanTagsForRSS,
 	encodeHTML,
 	decodeHTML,

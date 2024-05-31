@@ -50,7 +50,7 @@ toc: true
 
 	{% if collections.rsvpsToday.length -%}
 		<h3>Events I’m attending today</h3>
-		<div class=" [ deck ] [ flow ] ">
+		<div class=" [ deck ] ">
 			{% for item in collections.rsvpsToday -%}
 				{{ deckItem(item) }}
 			{%- endfor %}
@@ -59,7 +59,7 @@ toc: true
 
 	{% if collections.rsvpsUpcoming.length -%}
 		<h3>Upcoming Events</h3>
-		<div class=" [ deck ] [ flow ] ">
+		<div class=" [ deck ] ">
 			{% for item in collections.rsvpsUpcoming -%}
 				{{ deckItem(item) }}
 			{%- endfor %}

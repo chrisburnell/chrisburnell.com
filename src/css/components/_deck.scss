@@ -13,11 +13,11 @@
 		break-inside: avoid;
 
 		&:not(:first-child) {
-			padding-block-start: var(--size-gap);
+			padding-block-start: var(--size-medium);
 		}
 
 		&:not(:last-child) {
-			padding-block-end: var(--size-gap);
+			padding-block-end: var(--size-medium);
 		}
 	}
 	article + article {

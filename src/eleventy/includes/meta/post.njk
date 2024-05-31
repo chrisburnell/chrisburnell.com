@@ -23,7 +23,7 @@
 		{% if show_reading_length %}
 			<li class=" [ reading-length ] ">
 				<c-emoji>{{ emojis.reading_length }}</c-emoji>
-				<strong>~{{ content | cleanTags | striptags | safe | wordcount | toNearest(25) | numberStringFormat }}</strong>
+				<strong>~{{ content | cleanTagsForWordcount | striptags | safe | wordcount | toNearest(25, true) | numberStringFormat }}</strong>
 				<small>words</small>
 			</li>
 		{% endif %}

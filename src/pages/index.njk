@@ -41,7 +41,7 @@ excludeFromSearch: true
 					<h2 id="today-rsvps">
 						<a href="/rsvps/">Events I’m attending</a>
 					</h2>
-					<div class=" [ deck ] [ flow ] ">
+					<div class=" [ deck ] ">
 						{% for item in collections.rsvpsToday %}
 							{{ deckItem(item, { truncate: true }) }}
 						{% endfor %}
@@ -94,7 +94,7 @@ excludeFromSearch: true
 					<h2 id="upcoming-rsvps">
 						<a href="/rsvps/">Upcoming events I’m attending</a>
 					</h2>
-					<div class=" [ deck ] [ flow ] ">
+					<div class=" [ deck ] ">
 						{% for item in collections.rsvpsUpcoming %}
 							{{ deckItem(item, { truncate: true }) }}
 						{% endfor %}
@@ -107,7 +107,7 @@ excludeFromSearch: true
 
 				<div class=" [ box  box--line-length ] [ flow ] ">
 					<h2 id="on-this-day">On this day</h2>
-					<div class=" [ deck ] [ flow ] ">
+					<div class=" [ deck ] ">
 						{% for item in collections.onThisDay %}
 							{{ deckItem(item, { truncate: true }) }}
 						{% endfor %}

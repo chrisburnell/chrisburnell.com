@@ -96,6 +96,7 @@ export default async function (value, outputPath) {
 		$("[data-keep]").removeAttr("data-keep")
 		$("[data-keep-style]").removeAttr("data-keep-style")
 		$("[data-keep-script]").removeAttr("data-keep-script")
+		$("[data-skip-wordcount]").removeAttr("data-skip-wordcount")
 
 		return $.root().html()
 	}
