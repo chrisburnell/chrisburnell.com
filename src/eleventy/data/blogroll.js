@@ -764,10 +764,39 @@ export default [
 		rss: "https://tracydurnell.com/feed/",
 	},
 	{
-		title: "Tracy Durnell",
+		title: "Joel",
 		url: "https://joelchrono.xyz",
 		rss: "https://joelchrono.xyz/feed.xml",
 		mastodon: "joel@fosstodon.org",
+	},
+	{
+		title: "Jack Clayton",
+		url: "https://skyhold.org",
+		rss: "https://notes.skyhold.org/feed.xml",
+		mastodon: "jackdaw@bookstodon.com",
+	},
+	{
+		title: "Daryl Sun",
+		url: "https://darylsun.page",
+		rss: "https://blog.darylsun.page/atom.xml",
+		mastodon: "darylsun@social.lol",
+	},
+	{
+		title: "Manuel Moreale",
+		url: "https://manuelmoreale.com",
+		rss: "https://manuelmoreale.com/feed/rss",
+	},
+	{
+		title: "Anh",
+		url: "https://anhvn.com",
+		rss: "https://anhvn.com/feed.xml",
+		mastodon: "latte@mastodon.online",
+	},
+	{
+		title: "Frills",
+		url: "https://frills.dev",
+		rss: "https://frills.dev/rss.xml",
+		mastodon: "frills@indieweb.social",
 	},
 ].sort((a, b) => {
 	return a.title.localeCompare(b.title)
