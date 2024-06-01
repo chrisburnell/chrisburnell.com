@@ -752,6 +752,23 @@ export default [
 		rss: "https://rachsmith.com/rss/",
 		mastodon: "rachsmith@mastodon.social",
 	},
+	{
+		title: "Robert Birming",
+		url: "https://birming.com",
+		rss: "https://birming.com/feed/",
+		mastodon: "birming@mastodon.world",
+	},
+	{
+		title: "Tracy Durnell",
+		url: "https://tracydurnell.com",
+		rss: "https://tracydurnell.com/feed/",
+	},
+	{
+		title: "Tracy Durnell",
+		url: "https://joelchrono.xyz",
+		rss: "https://joelchrono.xyz/feed.xml",
+		mastodon: "joel@fosstodon.org",
+	},
 ].sort((a, b) => {
 	return a.title.localeCompare(b.title)
 })
