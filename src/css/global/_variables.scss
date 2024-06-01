@@ -73,6 +73,7 @@
 	--contrast-list: #{h(yeti)}, #{h(snowy)}, #{h(mineshaft)}, #{h(thunder)};
 	--contrast-ratio: AA;
 
+	--color-shadow: var(--color-shadow-light);
 	// Generated with: https://www.joshwcomeau.com/shadow-palette/
 	--box-shadow-low: 0.3px 0.5px 0.7px color-mix(in oklab, var(--color-shadow), transparent 36%), 0.4px 0.8px 1px -1.2px color-mix(in oklab, var(--color-shadow), transparent 36%), 1px 2px 2.5px -2.5px color-mix(in oklab, var(--color-shadow), transparent 36%);
 	--box-shadow-medium: 0.3px 0.5px 0.7px color-mix(in oklab, var(--color-shadow), transparent 36%), 0.8px 1.6px 2px -0.8px color-mix(in oklab, var(--color-shadow), transparent 36%), 2.1px 4.1px 5.2px -1.7px color-mix(in oklab, var(--color-shadow), transparent 36%), 5px 10px 12.6px -2.5px color-mix(in oklab, var(--color-shadow), transparent 36%);

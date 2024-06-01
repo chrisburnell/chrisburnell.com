@@ -798,6 +798,12 @@ export default [
 		rss: "https://frills.dev/rss.xml",
 		mastodon: "frills@indieweb.social",
 	},
+	{
+		title: "Katy Decorah",
+		url: "https://katydecorah.com",
+		rss: "https://katydecorah.com/feed.xml",
+		mastodon: "katydecorah@front-end.social",
+	},
 ].sort((a, b) => {
 	return a.title.localeCompare(b.title)
 })
