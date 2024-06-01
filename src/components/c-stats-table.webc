@@ -7,7 +7,7 @@ function formatCount(count) {
 	return Number(count).toLocaleString()
 }
 </script>
-<table @attributes>
+<table @attributes data-ignore-wordcount>
 	<tbody>
 		<tr webc:for="item of this.items">
 			<th class=" [ numeral ] " @text="item.label"></th>

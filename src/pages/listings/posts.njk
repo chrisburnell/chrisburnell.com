@@ -10,6 +10,8 @@ perch: true
 {%- set latest_year = collection[0].data.year | default(collection[0].year) -%}
 {%- set first_year = collection[count-1].data.year | default(collection[count-1].year) -%}
 <div class=" [ pantheon ] [ wrap ] [ archive ] [ perch ] ">
+	{% sparkline collection, first_year %}
+
 	<h1 id="title" class=" [ title ] ">
 		<span class=" [ p-name ] ">{{ title | safe }}</span>
 	</h1>
@@ -101,10 +103,6 @@ perch: true
 		</ul>
 
 		<hr>
-
-		<div class=" [ center  inline-center ] ">
-			{% sparkline collection, first_year %}
-		</div>
 
 		<div class=" [ grid ] [ navigator ] ">
 			<a href="/feeds/" class=" [ button ] ">

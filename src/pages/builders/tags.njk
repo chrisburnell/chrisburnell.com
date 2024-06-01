@@ -23,6 +23,11 @@ eleventyComputed:
 		</li>
 	</ul>
 
+	{# Only show sparkline if there is more than 1 year of data #}
+	{% if first_year != latest_year %}
+		{% sparkline collection, first_year %}
+	{% endif %}
+
 	<h1 id="title" class=" [ title ] ">
 		<span class=" [ p-name ] ">{{ title | safe }}</span>
 	</h1>
@@ -47,13 +52,6 @@ eleventyComputed:
 		{% endfor %}
 
 		<hr>
-
-		{# Only show sparkline if there is more than 1 year of data #}
-		{% if first_year != latest_year %}
-			<div class=" [ center  inline-center ] ">
-				{% sparkline collection, first_year %}
-			</div>
-		{% endif %}
 
 		<div class=" [ grid ] [ navigator ] ">
 			<a href="/{{ tag }}.xml" class=" [ button ] ">

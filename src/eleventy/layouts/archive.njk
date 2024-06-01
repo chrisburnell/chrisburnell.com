@@ -9,10 +9,15 @@ layout: base
 {%- if limit -%}
 	{% set collection = collection | limit(limit) %}
 {%- endif -%}
-<div class=" [ pantheon{% if full %}  full{% endif %} ] [ wrap ] [ archive ] {% if perch %}[ perch ] {% endif %}">
+<div class=" [ pantheon{% if full %}  full{% endif %} ] [ wrap ] [ archive ] ">
 	<ul class=" [ cluster ] [ breadcrumbs ] " data-pagefind-ignore>
 		<li><a href="/posts/">← All Posts</a></li>
 	</ul>
+
+	{# Only show sparkline if displaying by year and there is more than 1 year of data #}
+	{% if by_year and first_year != latest_year %}
+		{% sparkline collection, first_year %}
+	{% endif %}
 
 	<h1 id="title" class=" [ title ] ">
 		<span class=" [ p-name ] ">{{ title | safe }}</span>
@@ -66,13 +71,6 @@ layout: base
 		{%- endif -%}
 
 		<hr>
-
-		{# Only show sparkline if displaying by year and there is more than 1 year of data #}
-		{% if by_year and first_year != latest_year %}
-			<div class=" [ center  inline-center ] ">
-				{% sparkline collection, first_year %}
-			</div>
-		{% endif %}
 
 		{% if not no_feed %}
 			<div class=" [ grid ] [ navigator ] ">

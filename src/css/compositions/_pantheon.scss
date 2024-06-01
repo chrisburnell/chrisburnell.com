@@ -24,7 +24,9 @@
 		auto
 		[context-end title-start]
 		auto
-		[title-end description-start]
+		[title-end sparkline-start]
+		auto
+		[sparkline-end description-start]
 		auto
 		[description-end toc-start]
 		auto
@@ -42,9 +44,11 @@
 		var(--indent-size, 0)
 		[indent-end]
 		var(--indent-gap, 0)
-		[content-start]
-		repeat(var(--columns, 6), 1fr)
-		[content-end]
+		[content-start content-left-start]
+		repeat(var(--columns, 3), 1fr)
+		[content-left-end content-right-start]
+		repeat(var(--columns, 3), 1fr)
+		[content-right-end content-end]
 		var(--outdent-gap, 0)
 		[outdent-start]
 		var(--outdent-size, 0)
@@ -80,10 +84,38 @@
 	grid-row: breadcrumbs;
 	grid-column: indent / outdent;
 }
+@include cqi(null, "medium") {
+	.pantheon:has(> svg-sparkline) {
+		.breadcrumbs {
+			grid-column: indent / content-left;
+			align-self: center;
+		}
+	}
+}
+
+.pantheon > svg-sparkline {
+	grid-row: sparkline;
+	grid-column: indent / outdent;
+	margin-block-start: var(--size-small);
+
+	@include cqi(null, "small") {
+		justify-self: center;
+	}
+}
+@include cqi(null, "medium") {
+	.pantheon:has(> .breadcrumbs) {
+		& > svg-sparkline {
+			grid-row: breadcrumbs;
+			grid-column: content-right / outdent;
+			justify-self: end;
+			margin-block-start: var(--size-gap);
+		}
+	}
+}
 
 .context {
 	grid-row: context;
-	grid-column: indent / outdent;
+	grid-column: content;
 }
 
 .title {
@@ -93,7 +125,7 @@
 
 .description {
 	grid-row: description;
-	grid-column: indent / outdent;
+	grid-column: content;
 }
 
 .toc {

@@ -11,7 +11,7 @@ const currentYear = friendlyDate(nowISO, "yyyy")
  * @param {boolean} [curve=true]
  * @returns {string}
  */
-const sparkline = (collection, start, animate = true, curve = true) => {
+const sparkline = (collection, start, animate = false, curve = true) => {
 	let values = []
 	// Loop through years
 	for (let year = Number(start); year <= Number(currentYear); year++) {
