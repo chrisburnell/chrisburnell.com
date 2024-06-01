@@ -160,13 +160,13 @@ In the example, I’ve instructed the browser to create a gradient between red a
             <div class=" [ delta ] ">Raven</div>
             <pre style="font-size: var(--font-size-small-min)">oklch(61.29% 0.064 237.73)</pre>
         </li>
-        <li style="background-color: oklch(15% 0 0); color: oklch(98.2% 0 0);">
+        <li style="background-color: oklch(15% 0 0); color: oklch(92% 0 0);">
             <div class=" [ delta ] ">Thunder</div>
             <pre style="font-size: var(--font-size-small-min)">oklch(15% 0 0)</pre>
         </li>
-        <li style="background-color: oklch(98.2% 0 0); color: oklch(15% 0 0);">
+        <li style="background-color: oklch(92% 0 0); color: oklch(15% 0 0);">
             <div class=" [ delta ] ">Snowy</div>
-            <pre style="font-size: var(--font-size-small-min)">oklch(98.2% 0 0)</pre>
+            <pre style="font-size: var(--font-size-small-min)">oklch(92% 0 0)</pre>
         </li>
     </ul>
 </figure>
@@ -234,7 +234,7 @@ Until recently, I had defined my colours manually, like this:
 ```css
 --color-raven: oklch(61.29% -0.034 -0.054);
 --color-thunder: oklch(12.2% 0 0);
---color-snowy: oklch(98.2% 0 0);
+--color-snowy: oklch(92% 0 0);
 --color-mineshaft: oklch(28.9% 0 0);
 --color-yeti: oklch(89.8% 0 0);
 --color-lynx: oklch(17.6% -0.01 -0.014);
@@ -253,7 +253,7 @@ That’s where the incredible new CSS function, `color-mix()`, comes in! Using i
 The first step is to set up some initial CSS variables to use for building out the `--color-*` variables. These are the variables that we’ll later use to change themes, including our desired **Sepia** theme.
 
 ```css
---snowy-lightness: 98.2%;
+--snowy-lightness: 92%;
 --thunder-lightness: 15%;
 --monochrome-chroma: 0;
 --monochrome-hue: 0;
@@ -271,51 +271,51 @@ Next, we’ll build out the 3 base colours in the palette using the above variab
             <div class=" [ delta ] ">Raven</div>
             <pre style="font-size: var(--font-size-small-min)">oklch(<br>&#9;var(--raven-lightness)<br>&#9;var(--raven-chroma)<br>&#9;var(--raven-hue)<br>)</pre>
         </li>
-        <li style="background-color: oklch(15% 0 0); color: oklch(98.2% 0 0); flex: 1 0 100%;">
+        <li style="background-color: oklch(15% 0 0); color: oklch(92% 0 0); flex: 1 0 100%;">
             <div class=" [ delta ] ">Thunder</div>
             <pre style="font-size: var(--font-size-small-min)">oklch(<br>&#9;var(--thunder-lightness)<br>&#9;var(--monochrome-chroma)<br>&#9;var(--monochrome-hue)<br>)</pre>
         </li>
-        <li style="background-color: oklch(98.2% 0 0); color: oklch(15% 0 0); flex: 1 0 100%;">
+        <li style="background-color: oklch(92% 0 0); color: oklch(15% 0 0); flex: 1 0 100%;">
             <div class=" [ delta ] ">Snowy</div>
             <pre style="font-size: var(--font-size-small-min)">oklch(<br>&#9;var(--snowy-lightness)<br>&#9;var(--monochrome-chroma)<br>&#9;var(--monochrome-hue)<br>)</pre>
         </li>
-        <li style="background-color: color-mix(in oklab, oklch(98.2% 0 0), oklch(15% 0 0) 83.6%); color: oklch(98.2% 0 0);">
+        <li style="background-color: color-mix(in oklab, oklch(92% 0 0), oklch(15% 0 0) 83.6%); color: oklch(92% 0 0);">
             <div class=" [ delta ] ">Mineshaft</div>
             <pre style="font-size: var(--font-size-small-min); text-align: start;">color-mix(<br>&#9;in oklab,<br>&#9;var(--color-snowy),<br>&#9;var(--color-thunder) 83.6%<br>)</pre>
         </li>
-        <li style="background-color: color-mix(in oklab, oklch(98.2% 0 0), oklch(15% 0 0) 66.6%); color: oklch(98.2% 0 0);">
+        <li style="background-color: color-mix(in oklab, oklch(92% 0 0), oklch(15% 0 0) 66.6%); color: oklch(92% 0 0);">
             <div class=" [ delta ] ">Kaiser</div>
             <pre style="font-size: var(--font-size-small-min); text-align: start;">color-mix(<br>&#9;in oklab,<br>&#9;var(--color-snowy),<br>&#9;var(--color-thunder) 66.6%<br>)</pre>
         </li>
-        <li style="background-color: color-mix(in oklab, oklch(98.2% 0 0), oklch(15% 0 0) 51.8%); color: oklch(98.2% 0 0);">
+        <li style="background-color: color-mix(in oklab, oklch(92% 0 0), oklch(15% 0 0) 51.8%); color: oklch(92% 0 0);">
             <div class=" [ delta ] ">Nickel</div>
             <pre style="font-size: var(--font-size-small-min); text-align: start;">color-mix(<br>&#9;in oklab,<br>&#9;var(--color-snowy),<br>&#9;var(--color-thunder) 51.8%<br>)</pre>
         </li>
-        <li style="background-color: color-mix(in oklab, oklch(98.2% 0 0), oklch(15% 0 0) 10.2%); color: oklch(15% 0 0);">
+        <li style="background-color: color-mix(in oklab, oklch(92% 0 0), oklch(15% 0 0) 10.2%); color: oklch(15% 0 0);">
             <div class=" [ delta ] ">Yeti</div>
             <pre style="font-size: var(--font-size-small-min); text-align: start;">color-mix(<br>&#9;in oklab,<br>&#9;var(--color-snowy),<br>&#9;var(--color-thunder) 10.2%<br>)</pre>
         </li>
-        <li style="background-color: color-mix(in oklab, oklch(61.29% 0.064 237.73), oklch(15% 0 0) 75%); color: oklch(98.2% 0 0);">
+        <li style="background-color: color-mix(in oklab, oklch(61.29% 0.064 237.73), oklch(15% 0 0) 75%); color: oklch(92% 0 0);">
             <div class=" [ delta ] ">Lynx</div>
             <pre style="font-size: var(--font-size-small-min); text-align: start;">color-mix(<br>&#9;in oklab,<br>&#9;var(--color-raven),<br>&#9;var(--color-thunder) 75%<br>)</pre>
         </li>
-        <li style="background-color: color-mix(in oklab, oklch(61.29% 0.064 237.73), oklch(15% 0 0) 54%); color: oklch(98.2% 0 0);">
+        <li style="background-color: color-mix(in oklab, oklch(61.29% 0.064 237.73), oklch(15% 0 0) 54%); color: oklch(92% 0 0);">
             <div class=" [ delta ] ">Wolf</div>
             <pre style="font-size: var(--font-size-small-min); text-align: start;">color-mix(<br>&#9;in oklab,<br>&#9;var(--color-raven),<br>&#9;var(--color-thunder) 54%<br>)</pre>
         </li>
-        <li style="background-color: color-mix(in oklab, oklch(61.29% 0.064 237.73), oklch(15% 0 0) 33%); color: oklch(98.2% 0 0);">
+        <li style="background-color: color-mix(in oklab, oklch(61.29% 0.064 237.73), oklch(15% 0 0) 33%); color: oklch(92% 0 0);">
             <div class=" [ delta ] ">Bowhead</div>
             <pre style="font-size: var(--font-size-small-min); text-align: start;">color-mix(<br>&#9;in oklab,<br>&#9;var(--color-raven),<br>&#9;var(--color-thunder) 33%<br>)</pre>
         </li>
-        <li style="background-color: color-mix(in oklab, oklch(61.29% 0.064 237.73), oklch(98.2% 0 0) 33%); color: oklch(15% 0 0);">
+        <li style="background-color: color-mix(in oklab, oklch(61.29% 0.064 237.73), oklch(92% 0 0) 33%); color: oklch(15% 0 0);">
             <div class=" [ delta ] ">Highland</div>
             <pre style="font-size: var(--font-size-small-min); text-align: start;">color-mix(<br>&#9;in oklab,<br>&#9;var(--color-raven),<br>&#9;var(--color-snowy) 33%<br>)</pre>
         </li>
-        <li style="background-color: color-mix(in oklab, oklch(61.29% 0.064 237.73), oklch(98.2% 0 0) 54%); color: oklch(15% 0 0);">
+        <li style="background-color: color-mix(in oklab, oklch(61.29% 0.064 237.73), oklch(92% 0 0) 54%); color: oklch(15% 0 0);">
             <div class=" [ delta ] ">Coyote</div>
             <pre style="font-size: var(--font-size-small-min); text-align: start;">color-mix(<br>&#9;in oklab,<br>&#9;var(--color-raven),<br>&#9;var(--color-snowy) 54%<br>)</pre>
         </li>
-        <li style="background-color: color-mix(in oklab, oklch(61.29% 0.064 237.73), oklch(98.2% 0 0) 75%); color: oklch(15% 0 0);">
+        <li style="background-color: color-mix(in oklab, oklch(61.29% 0.064 237.73), oklch(92% 0 0) 75%); color: oklch(15% 0 0);">
             <div class=" [ delta ] ">Bear</div>
             <pre style="font-size: var(--font-size-small-min); text-align: start;">color-mix(<br>&#9;in oklab,<br>&#9;var(--color-raven),<br>&#9;var(--color-snowy) 75%<br>)</pre>
         </li>
