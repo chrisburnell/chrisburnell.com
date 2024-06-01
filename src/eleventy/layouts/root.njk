@@ -32,7 +32,8 @@
 		{%- endif %}
 
 		<link rel="self" href="{{ site.url + '/feed.xml' }}">
-		<link rel="alternate" type="application/rss+xml" title="Chris Burnell’s Blog Feed" href="{{ site.url + '/feed.xml' }}">
+		<link rel="alternate" type="application/atom+xml" title="Chris Burnell RSS Feed" href="{{ site.url + '/feed.xml' }}">
+		<link rel="blogroll" type="text/xml" title="Chris Burnell Blogroll" href="{{ site.url + '/blogroll.opml' }}">
 		<link rel="pingback" href="https://webmention.io/{{ site.url | getHost }}/xmlrpc">
 		<link rel="webmention" href="https://webmention.io/{{ site.url | getHost }}/webmention">
 		<link rel="authorization_endpoint" href="{{ site.urls.indieauth_endpoint }}">
