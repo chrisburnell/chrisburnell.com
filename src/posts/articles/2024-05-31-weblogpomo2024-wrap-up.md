@@ -4,7 +4,6 @@ title: WeblogPoMo 2024 Wrap Up
 description: It’s officially June now, which means <a href="/tag/weblogpomo2024/">#WeblogPoMo2024</a> has come to a close! Let’s review what I wrote about and what I’m taking away from participating in this event.
 tags:
   - weblogpomo
-  - weblogpomo2024
 ---
 
 *Somehow* I managed to post every single day this month. It was oftentimes tiring and some days a real struggle to get things done and published, but I’m really happy that I managed to stay committed and see it through to the end.
@@ -68,7 +67,7 @@ Based on [my stats page](/stats/), this month’s posts account for a whopping *
     {% for index in favourite_indices -%}
         {% set item = (collections.weblogpomo2024 | arePublished)[index - 1] -%}
         <li>
-            <div class="cluster"><span><a href="{{ item.url }}" class=" [ cluster ] "><strong>{{ item.data.title }}</strong></span></a><span>{{ item.data.categoryProper | default(item.data.category) | supertitle }}</span><time datetime="{{ item.data.date | rfc3339Date }}"><em>{{ item.data.date | friendlyDate('d') | ordinal | safe }} {{ item.data.date | friendlyDate('LLLL') }}</em></time></div>
+            <div class="cluster"><span><a href="{{ item.url }}" class=" [ cluster ] "><strong>{{ item.data.title }}</strong></a></span> <span>{{ item.data.categoryProper | default(item.data.category) | supertitle }}</span> <time datetime="{{ item.data.date | rfc3339Date }}"><em>{{ item.data.date | friendlyDate('d') | ordinal | safe }} {{ item.data.date | friendlyDate('LLLL') }}</em></time></div>
             {% if item.data.excerpt or item.data.description -%}
                 <p>{{ item.data.excerpt | default(item.data.description) | markdownFormat | excerptize | safe }}</p>
             {%- elif ['bookmark', 'like', 'note', 'talk'].includes(item.data.category) and item.content -%}
@@ -89,7 +88,7 @@ Based on [my stats page](/stats/), this month’s posts account for a whopping *
     {% for index in other_indices -%}
         {% set item = (collections.weblogpomo2024 | arePublished)[index - 1] -%}
         <li>
-            <div class="cluster"><span><a href="{{ item.url }}" class=" [ cluster ] "><strong>{{ item.data.title }}</strong></span></a><span>{{ item.data.categoryProper | default(item.data.category) | supertitle }}</span><time datetime="{{ item.data.date | rfc3339Date }}"><em>{{ item.data.date | friendlyDate('d') | ordinal | safe }} {{ item.data.date | friendlyDate('LLLL') }}</em></time></div>
+            <div class="cluster"><span><a href="{{ item.url }}" class=" [ cluster ] "><strong>{{ item.data.title }}</strong></a></span> <span>{{ item.data.categoryProper | default(item.data.category) | supertitle }}</span> <time datetime="{{ item.data.date | rfc3339Date }}"><em>{{ item.data.date | friendlyDate('d') | ordinal | safe }} {{ item.data.date | friendlyDate('LLLL') }}</em></time></div>
             {% if item.data.excerpt or item.data.description -%}
                 <p>{{ item.data.excerpt | default(item.data.description) | markdownFormat | excerptize | safe }}</p>
             {%- elif ['bookmark', 'like', 'note', 'talk'].includes(item.data.category) and item.content -%}
