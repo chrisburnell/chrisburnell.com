@@ -1,7 +1,7 @@
 ---
 date: 2024-05-25T23:10:30+0800
 title: Spongebob Sentiment
-description: I’ve got a bit of a sIllY PoSt for you today.
+description: I’ve got a bit of a SiLLy POsT for you today.
 tags:
   - weblogpomo
   - weblogpomo2024
