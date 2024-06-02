@@ -103,6 +103,8 @@ Based on [my stats page](/stats/), this month’s posts account for a whopping *
     {%- endfor %}
 </ul>
 
+--------
+
 Huge thanks for [Anne Studivant](https://weblog.anniegreens.lol) for organising this event.
 
 Whether you read all my Weblog Posting Month posts or only a few, thank you for reading, and I’ll see you again next year!
