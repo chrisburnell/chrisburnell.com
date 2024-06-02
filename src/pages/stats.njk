@@ -109,6 +109,14 @@ excludeFromSearch: true
 	</table>
 </c-details>
 
+{#
+<c-details open="true" force-close="(max-width: 850px)" force-restore>
+	<summary>Blog Posts by weekday</summary>
+	{% set blog_posts_by_weekday = [{ label: 'Monday', count: (collections.blogPosts | rssOnlyFilter | getCollectionCountByWeekday('Monday')) }, { label: 'Tuesday', count: (collections.blogPosts | rssOnlyFilter | getCollectionCountByWeekday('Tuesday')) }, { label: 'Wednesday', count: (collections.blogPosts | rssOnlyFilter | getCollectionCountByWeekday('Wednesday')) }, { label: 'Thursday', count: (collections.blogPosts | rssOnlyFilter | getCollectionCountByWeekday('Thursday')) }, { label: 'Friday', count: (collections.blogPosts | rssOnlyFilter | getCollectionCountByWeekday('Friday')) }, { label: 'Saturday', count: (collections.blogPosts | rssOnlyFilter | getCollectionCountByWeekday('Saturday')) }, { label: 'Sunday', count: (collections.blogPosts | rssOnlyFilter | getCollectionCountByWeekday('Sunday')) }] -%}
+	<c-stats-table items="{{ blog_posts_by_weekday | dump }}" style="border-block-start: 0;"></c-stats-table>
+</c-details>
+#}
+
 <c-details open="true" force-close="(max-width: 850px)" force-restore>
 	<summary>Blog Posts by weekday</summary>
 	<table style="border-block-start: 0;">

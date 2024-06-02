@@ -20,6 +20,11 @@
 
 	time {
 		@include italic;
+
+		sup::before {
+			content: " ";
+			font-size: 0.5em;
+		}
 	}
 
 	.title ~ & {

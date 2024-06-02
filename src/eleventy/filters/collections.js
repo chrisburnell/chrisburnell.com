@@ -99,7 +99,7 @@ const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Frida
  */
 export const getCollectionCountByWeekday = (items, weekday) => {
 	return items.filter(isPublished).filter((item) => {
-		return weekdays[item.date.getDay()] === weekday
+		return weekdays[item.date.getDay()].toLowerCase() === weekday.toLowerCase()
 	}).length
 }
 

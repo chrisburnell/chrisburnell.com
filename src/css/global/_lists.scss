@@ -10,7 +10,7 @@
 .default-list {
 	// Space out lists nested in a list
 	& & {
-		margin-block-start: var(--size-small);
+		margin-block-start: var(--list-space, var(--size-small));
 	}
 }
 :is(ol, ul):not([class]),
@@ -31,7 +31,7 @@
 	}
 
 	& > li + li {
-		margin-block-start: var(--size-small);
+		margin-block-start: var(--list-space, var(--size-small));
 	}
 
 	li > * + * {

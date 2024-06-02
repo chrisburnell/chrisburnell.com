@@ -106,7 +106,7 @@ sub {
 sup {
 	inset-block-start: 0;
 
-	time &::before {
+	em &::before {
 		content: " ";
 		font-size: 0.5em;
 	}

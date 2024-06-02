@@ -804,6 +804,12 @@ export default [
 		rss: "https://katydecorah.com/feed.xml",
 		mastodon: "katydecorah@front-end.social",
 	},
+	{
+		title: "Dan Leatherman",
+		url: "https://danleatherman.com",
+		rss: "https://danleatherman.com/feed.xml",
+		mastodon: "danleatherman@mastodon.design",
+	},
 ].sort((a, b) => {
 	return a.title.localeCompare(b.title)
 })
