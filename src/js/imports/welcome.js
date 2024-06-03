@@ -32,10 +32,10 @@ class Welcome {
 			`%c             ░▒█▓░░▓█░`,
 			`%c              ░▒▓░░▒░░░\n`,
 			`%cChecking out the source code, %ceh%c?\n`,
-			`%cGet in touch with me if you want to know more! %chttps://chrisburnell.com/about/#contact`,
+			`%cGet in touch with me if you want to know more! https://chrisburnell.com/about/#contact`,
 		]
 
-		console.log(raven.join("\n"), "color: #5f8aa6", "color: inherit", "color: #5f8aa6", "color: inherit", "color: #5f8aa6", "color: inherit", "color: #5f8aa6", "color: inherit", "color: #5f8aa6", "color: inherit", "color: #5f8aa6", "color: inherit", "color: #5f8aa6", "color: #5f8aa6", "color: #5f8aa6", "color: #5f8aa6", "color: #5f8aa6", "color: #5f8aa6", "color: #5f8aa6", "color: inherit", "color: #e0151f", "color: inherit", "color: inherit", "color: #e0151f")
+		console.log(raven.join("\n"), "color: #5f8aa6", "color: inherit", "color: #5f8aa6", "color: inherit", "color: #5f8aa6", "color: inherit", "color: #5f8aa6", "color: inherit", "color: #5f8aa6", "color: inherit", "color: #5f8aa6", "color: inherit", "color: #5f8aa6", "color: #5f8aa6", "color: #5f8aa6", "color: #5f8aa6", "color: #5f8aa6", "color: #5f8aa6", "color: #5f8aa6", "color: inherit", "color: #e0151f", "color: inherit", "color: inherit")
 	}
 }
 
