@@ -15,11 +15,13 @@ if (selectTheme && inputCustomHue) {
 		}
 	})
 
-	inputCustomHue.addEventListener("change", (event) => {
+	const inputCustomHueFunction = (event) => {
 		if (selectTheme.value === "custom") {
 			document.documentElement.style.setProperty("--raven-hue", event.target.value)
 		}
-	})
+	}
+	inputCustomHue.addEventListener("change", inputCustomHueFunction)
+	inputCustomHue.addEventListener("input", inputCustomHueFunction)
 }
 
 if (buttonSettingsReset) {

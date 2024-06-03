@@ -16,15 +16,15 @@ export default [
 		title: "Red Alert",
 	},
 	{
-		id: "custom",
-		title: "Custom Hue",
-	},
-	{
 		id: "nineties",
 		title: "90s",
 	},
 	{
 		id: "matrix",
 		title: "Rabbit Hole",
+	},
+	{
+		id: "custom",
+		title: "Custom Hue",
 	},
 ]
