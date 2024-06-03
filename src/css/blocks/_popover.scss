@@ -117,6 +117,11 @@
 	[type="checkbox"] {
 		margin-inline-end: auto;
 	}
+
+	select,
+	[type="range"] {
+		inline-size: 100%;
+	}
 }
 
 // Hide custom hue input unless Custom theme is selected
