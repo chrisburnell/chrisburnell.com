@@ -2,11 +2,11 @@ import slugify from "@sindresorhus/slugify"
 import fs from "fs-extra"
 
 export default {
-	async shortcodeOutput() {
-		return this.outputUrl()
+	async shortcodeOutput(ogImage) {
+		return ogImage.outputUrl()
 	},
-	async outputFileSlug() {
-		return slugify(this.data.page.url)
+	async outputFileSlug(ogImage) {
+		return slugify(ogImage.data.page.url)
 	},
 	satoriOptions: {
 		width: 1200,
