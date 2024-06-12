@@ -7,7 +7,6 @@ tags:
   - weblogpomo
   - weblogpomo2024
   - writing
-  - pinned
 post_includes:
   - weblogpomo2024.njk
 syndicate_to:

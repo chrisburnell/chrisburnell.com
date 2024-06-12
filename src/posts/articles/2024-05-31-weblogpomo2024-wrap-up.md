@@ -4,6 +4,7 @@ title: WeblogPoMo 2024 Wrap Up
 description: It’s officially June now, which means <a href="/tag/weblogpomo2024/">#WeblogPoMo2024</a> has come to a close! Let’s review what I wrote about and what I’m taking away from participating in this event.
 tags:
   - weblogpomo
+  - pinned
 ---
 
 *Somehow* I managed to post every single day this month. It was oftentimes tiring and some days a real struggle to get things done and published, but I’m really happy that I managed to stay committed and see it through to the end.
