@@ -134,7 +134,7 @@
 
 	@include cqi(null, "large") {
 		grid-column: indent;
-		grid-row: content;
+		grid-row: description / content;
 	}
 }
 

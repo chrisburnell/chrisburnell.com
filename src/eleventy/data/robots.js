@@ -8,8 +8,8 @@ export default async function () {
 }
 
 // export default async function () {
-// 	let url = "https://api.darkvisitors.com/robots-txts"
-// 	let text = await EleventyFetch(url, {
+// 	const url = "https://api.darkvisitors.com/robots-txts"
+// 	const text = await EleventyFetch(url, {
 // 		duration: cacheDurations.daily,
 // 		type: "text",
 // 		fetchOptions: {
