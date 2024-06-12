@@ -28,6 +28,7 @@
 // Global
 @layer global {
 	@import "global/page";
+	@import "global/modals";
 	@import "global/anchors";
 	@import "global/buttons";
 	@import "global/headings";
@@ -53,7 +54,7 @@
 	@import "blocks/anchors";
 	@import "blocks/header";
 	@import "blocks/navigation";
-	@import "blocks/popover";
+	@import "blocks/settings";
 	@import "blocks/main";
 	@import "blocks/content";
 	@import "blocks/breadcrumbs";

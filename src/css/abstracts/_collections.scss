@@ -63,7 +63,7 @@ h6,
 	@extend %media !optional;
 }
 
-:is(.box, .cp_embed_wrapper, .speakerdeck-embed-wrapper, dialog) {
+:is(.box, .cp_embed_wrapper, .speakerdeck-embed-wrapper) {
 	@extend %box !optional;
 }
 

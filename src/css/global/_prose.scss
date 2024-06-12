@@ -131,16 +131,6 @@ aside:not([class]) {
 	border-radius: var(--size-border-thin);
 }
 
-dialog {
-	--box-shadow: var(--box-shadow-high);
-
-	background-color: h(bear) !important;
-	position: fixed;
-	inset: 0;
-	margin: auto !important;
-	z-index: var(--z-index-dialog);
-}
-
 meter,
 progress {
 	inline-size: var(--size-line-length);

@@ -27,12 +27,12 @@ layout: root
 		</nav>
 	</div>
 
-	<div id="popover-settings" class=" [ popover-settings ] [ flow ] [ gamma ] [ requires-js ] " popover>
+	<dialog popover id="popover-settings" class=" [ popover-settings ] [ flow ] [ gamma ] [ requires-js ] ">
 		{%- include 'settings.njk' -%}
-	</div>
+	</dialog>
 
 	{% if not global.isCSSNakedDay -%}
-		<div id="popover-navigation" class=" [ popover-navigation ] [ flow ] [ gamma ] " popover>
+		<dialog popover id="popover-navigation" class=" [ popover-navigation ] [ flow ] [ gamma ] ">
 			<ol class=" [ navigation__list ] ">
 				{% for link in navigation %}
 					{% if link.header %}
@@ -42,7 +42,7 @@ layout: root
 					{% endif %}
 				{% endfor %}
 			</ol>
-		</div>
+		</dialog>
 	{%- endif %}
 </header>
 

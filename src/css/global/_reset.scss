@@ -14,6 +14,15 @@
 	margin: 0;
 }
 
+:where(html) {
+	overscroll-behavior: contain;
+	scrollbar-gutter: stable;
+}
+
+:where(html:has(dialog:modal[open])) {
+	overflow: clip;
+}
+
 :where(html:has([name="smooth-scroll"] [value="true"]:checked):focus-within) {
 	scroll-behavior: smooth;
 }
@@ -91,6 +100,18 @@
 
 :where(.visually-hidden:not(:focus, :focus-within, :active)) {
 	@include visually-hidden;
+}
+
+:where(dialog, [popover]) {
+	border: none;
+	background: none;
+	color: inherit;
+	inset: unset;
+	max-width: unset;
+	max-height: unset;
+}
+:where(dialog:not([open], [popover]), [popover]:not(:popover-open)) {
+	display: none !important;
 }
 
 @media (prefers-reduced-motion: reduce) {

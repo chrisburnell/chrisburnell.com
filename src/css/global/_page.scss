@@ -6,12 +6,6 @@
 html {
 	color-scheme: light;
 	background-color: h(kaiser);
-	position: relative;
-	overscroll-behavior: contain;
-	overflow-x: hidden;
-	// prevent horizontal jump when navigating short page ←→ tall page
-	overflow-y: scroll;
-	scrollbar-gutter: stable;
 	scrollbar-color: h(raven) h(snowy);
 	accent-color: h(raven);
 	font-size: 100%;

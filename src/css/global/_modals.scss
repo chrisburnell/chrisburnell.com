@@ -1,0 +1,27 @@
+////
+/// <dialog> and [popover]
+/// @group global
+////
+
+::backdrop {
+	background-color: h(thunder, beta);
+	backdrop-filter: blur(1px);
+}
+
+:is(dialog, [popover]) {
+	--flow-space: var(--size-medium-large);
+
+	background-color: color-mix(in oklab, h(bear), h(snowy));
+	color: inherit;
+	max-inline-size: 100vi;
+	padding: var(--size-medium-large) var(--size-small-medium);
+	border: var(--size-border-thin) solid h(raven);
+	border-radius: var(--size-border-default);
+	box-shadow: var(--box-shadow-medium);
+	position: fixed;
+	inset: initial;
+	inset-block-start: 50%;
+	inset-inline-start: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	text-align: center;
+}

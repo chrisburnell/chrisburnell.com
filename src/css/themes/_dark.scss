@@ -18,7 +18,7 @@
 	}
 
 	// Set some special dark backgrounds
-	:is(.header, [popover], .footer, %box, .table) {
+	:is(.header, dialog, [popover], .footer, %box, .table) {
 		background-color: var(--background-color, color-mix(in oklab, h(thunder), h(mineshaft) 80%));
 	}
 
