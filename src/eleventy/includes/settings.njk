@@ -1,46 +1,49 @@
-<storage-form class=" [ flow ] " style="--flow-space: 1em;">
-	<form autocomplete="off">
-		{% if not global.isCSSNakedDay -%}
-			<label for="theme-selector">Theme:</label>
-			<select id="theme-selector" name="theme">
-				<optgroup label="Select a theme">
-					{% for theme in themes -%}
-						<option value="{{ theme.id }}">{{ theme.title }}</option>
-					{% endfor -%}
-				</optgroup>
-			</select>
-			<label for="custom-hue-selector">Hue:</label>
-			<input type="range" id="custom-hue-selector" name="custom-hue" min="0" max="359.99" step="0.01" value="237.73" />
-			<label for="color-scheme-selector">Light/Dark:</label>
-			<select id="color-scheme-selector" name="color-scheme">
-				<optgroup label="Select a colour scheme">
-					<option value="" selected>OS Default</option>
-					<option value="light">Light</option>
-					<option value="dark">Dark</option>
-				</optgroup>
-			</select>
-			<label for="high-contrast-selector">High Contrast:</label>
-			<select id="high-contrast-selector" name="high-contrast">
-				<optgroup label="Select a high contrast setting">
-					<option value="" selected>OS Default</option>
-					<option value="true">Enabled</option>
-					<option value="false">Disabled</option>
-				</optgroup>
-			</select>
-			<label for="smooth-scroll-selector">Smooth Scroll:</label>
-			<select id="smooth-scroll-selector" name="smooth-scroll">
-				<optgroup label="Select a smooth scroll setting">
-					<option value="" selected>OS Default</option>
-					<option value="true">Enabled</option>
-					<option value="false">Disabled</option>
-				</optgroup>
-			</select>
-		{%- endif %}
-		<label for="user-sounds-toggler">Website Sounds:</label>
-		<input type="hidden" name="user-sounds" value />
-		<input type="checkbox" id="user-sounds-toggler" name="user-sounds" value="true" />
-	</form>
-</storage-form>
-<div>
-	<button class=" [ button--small ] [ settings-reset ] " style="font-size: inherit;">Reset All</button>
-</div>
+<tab-guard class=" [ flow ] ">
+	<storage-form class=" [ flow ] " style="--flow-space: 1em;">
+		<form autocomplete="off">
+			{% if not global.isCSSNakedDay -%}
+				<label for="theme-selector">Theme:</label>
+				<select id="theme-selector" name="theme" autofocus>
+					<optgroup label="Select a theme">
+						{% for theme in themes -%}
+							<option value="{{ theme.id }}">{{ theme.title }}</option>
+						{% endfor -%}
+					</optgroup>
+				</select>
+				<label for="custom-hue-selector">Hue:</label>
+				<input type="range" id="custom-hue-selector" name="custom-hue" min="0" max="359.99" step="0.01" value="237.73" />
+				<label for="color-scheme-selector">Light/Dark:</label>
+				<select id="color-scheme-selector" name="color-scheme">
+					<optgroup label="Select a colour scheme">
+						<option value="" selected>OS Default</option>
+						<option value="light">Light</option>
+						<option value="dark">Dark</option>
+					</optgroup>
+				</select>
+				<label for="high-contrast-selector">High Contrast:</label>
+				<select id="high-contrast-selector" name="high-contrast">
+					<optgroup label="Select a high contrast setting">
+						<option value="" selected>OS Default</option>
+						<option value="true">Enabled</option>
+						<option value="false">Disabled</option>
+					</optgroup>
+				</select>
+				<label for="smooth-scroll-selector">Smooth Scroll:</label>
+				<select id="smooth-scroll-selector" name="smooth-scroll">
+					<optgroup label="Select a smooth scroll setting">
+						<option value="" selected>OS Default</option>
+						<option value="true">Enabled</option>
+						<option value="false">Disabled</option>
+					</optgroup>
+				</select>
+			{%- endif %}
+			<label for="user-sounds-toggler">Website Sounds:</label>
+			<input type="hidden" name="user-sounds" value />
+			<input type="checkbox" id="user-sounds-toggler" name="user-sounds" value="true" />
+		</form>
+	</storage-form>
+	<div class=" [ navigator ] ">
+		<button popovertarget="popover-settings" class=" [ button--small ] " style="font-size: inherit;">Close</button>
+		<button class=" [ button--small ] [ settings-reset ] " style="font-size: inherit;">Reset All</button>
+	</div>
+</tab-guard>

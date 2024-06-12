@@ -19,10 +19,6 @@
 	scrollbar-gutter: stable;
 }
 
-:where(html:has(dialog:modal[open])) {
-	overflow: clip;
-}
-
 :where(html:has([name="smooth-scroll"] [value="true"]:checked):focus-within) {
 	scroll-behavior: smooth;
 }
@@ -103,15 +99,20 @@
 }
 
 :where(dialog, [popover]) {
-	border: none;
+	max-inline-size: unset;
+	max-block-size: unset;
 	background: none;
 	color: inherit;
+	border: none;
 	inset: unset;
-	max-width: unset;
-	max-height: unset;
 }
+
 :where(dialog:not([open], [popover]), [popover]:not(:popover-open)) {
 	display: none !important;
+}
+
+:where(html:has(dialog:modal[open])) {
+	overflow: clip;
 }
 
 @media (prefers-reduced-motion: reduce) {
