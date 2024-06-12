@@ -30,7 +30,6 @@ const pages = await EleventyFetch("https://chrisburnell.com/all.json", {
 })
 
 /**
- *
  * @param {string} [title]
  * @param {string} [url]
  * @returns {null|string}

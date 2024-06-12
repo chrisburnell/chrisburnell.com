@@ -13,7 +13,6 @@ export const arePublished = (array) => {
 }
 
 /**
- *
  * @param {object[]} array
  * @returns {object[]}
  */

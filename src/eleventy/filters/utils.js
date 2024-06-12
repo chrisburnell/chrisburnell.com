@@ -359,7 +359,6 @@ export const getConsole = (value) => {
 }
 
 /**
- *
  * @param {any} value
  * @returns {boolean}
  */
@@ -368,7 +367,6 @@ export const isString = (value) => {
 }
 
 /**
- *
  * @param {object[]} webmentions
  * @returns {object[]}
  */

@@ -80,7 +80,6 @@ export const cleanTagsForRSS = (string) => {
 }
 
 /**
- *
  * @param {string} string
  * @returns {string}
  */
@@ -89,7 +88,6 @@ export const encodeHTML = (string) => {
 }
 
 /**
- *
  * @param {string} string
  * @returns {string}
  */
@@ -195,7 +193,6 @@ export const spongebob = (string) => {
 }
 
 /**
- *
  * @param {string} string
  * @returns {string}
  */
