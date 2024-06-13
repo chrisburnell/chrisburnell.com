@@ -4,12 +4,13 @@
 ////
 
 .meta {
+	@extend %grid;
+
+	--placement: auto-fit;
+	--min-inline-size: 16em;
+	--gap: var(--size-gap);
+
 	container: meta / inline-size;
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
-	grid-template-rows: masonry;
-	align-items: start;
-	gap: var(--size-gap);
 	margin-block-start: var(--size-gigantic);
 
 	& > * {
