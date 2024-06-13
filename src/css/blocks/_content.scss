@@ -8,4 +8,8 @@
 	// required: works like overflow for this .pantheon grid item
 	min-inline-size: 0;
 	margin-block-start: var(--size-gap);
+
+	:is(%content, pre, is-land:has(details)) + p:not(.no-indent) {
+		text-indent: 1em;
+	}
 }
