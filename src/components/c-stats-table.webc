@@ -10,7 +10,7 @@ function formatCount(count) {
 <table @attributes data-ignore-wordcount>
 	<tbody>
 		<tr webc:for="item of this.items">
-			<th class=" [ numeral ] " style="white-space: nowrap;" @text="item.label"></th>
+			<th style="white-space: nowrap;" @text="item.label"></th>
 			<td class=" [ numeral  strong ] " style="padding-inline-start: 1lh; padding-inline-end: var(--size-medium);" @text="formatCount(item.count)"></td>
 			<td class=" [ no-rss ] " style="inline-size: 100%; padding-inline: 0;">
 				<div class=" [ background--raven ] " :style="`background-image: linear-gradient(to bottom, transparent, color-mix(in oklab, var(--color-mineshaft), transparent calc(100% - var(--opacity-beta)))); inline-size: ${getInlineSize(item.count, this.items)}%; block-size: 1lh; border-radius: var(--size-border-default);`"></div>

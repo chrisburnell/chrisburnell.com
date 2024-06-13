@@ -25,13 +25,13 @@ For today, I figured I’d start off by looking at my top genres of movies and T
 ### Movies by genre
 
 {% renderTemplate 'webc' %}
-<c-stats-table :@items="[{label: 'Action', count: 103 }, {label: 'Adventure', count: 111 }, {label: 'Animation', count: 10 }, {label: 'Anime', count: 18 }, {label: 'Comedy', count: 59 }, {label: 'Crime', count: 43 }, {label: 'Documentary', count: 1 }, {label: 'Drama', count: 99 }, {label: 'Family', count: 22 }, {label: 'Fantasy', count: 47 }, {label: 'History', count: 11 }, {label: 'Holiday', count: 3 }, {label: 'Horror', count: 5 }, {label: 'Music', count: 3 }, {label: 'Musical', count: 5 }, {label: 'Mystery', count: 13 }, {label: 'Romance', count: 15 }, {label: 'Science Fiction', count: 54 }, {label: 'Superhero', count: 8 }, {label: 'Thriller', count: 70 }, {label: 'War', count: 11 }, {label: 'Western', count: 6 }]"></c-stats-table>
+<c-stats-table :@items="[{label: 'Action', count: 103 }, {label: 'Adventure', count: 111 }, {label: 'Animation', count: 10 }, {label: 'Anime', count: 18 }, {label: 'Comedy', count: 59 }, {label: 'Crime', count: 43 }, {label: 'Documentary', count: 1 }, {label: 'Drama', count: 99 }, {label: 'Family', count: 22 }, {label: 'Fantasy', count: 47 }, {label: 'History', count: 11 }, {label: 'Holiday', count: 3 }, {label: 'Horror', count: 5 }, {label: 'Music', count: 3 }, {label: 'Musical', count: 5 }, {label: 'Mystery', count: 13 }, {label: 'Romance', count: 15 }, {label: 'Science Fiction', count: 54 }, {label: 'Superhero', count: 8 }, {label: 'Thriller', count: 70 }, {label: 'War', count: 11 }, {label: 'Western', count: 6 }]" style="font-size: var(--font-size-small);"></c-stats-table>
 {% endrenderTemplate %}
 
 ### TV Shows by genre
 
 {% renderTemplate 'webc' %}
-<c-stats-table :@items="[{ label: 'Action', count: 19 }, { label: 'Adventure', count: 118 }, { label: 'Animation', count: 3 }, { label: 'Anime', count: 5 }, { label: 'Comedy', count: 14 }, { label: 'Crime', count: 4 }, { label: 'Documentary', count: 8 }, { label: 'Drama', count: 21 }, { label: 'Family', count: 3 }, { label: 'Fantasy', count: 17 }, { label: 'History', count: 11 }, { label: 'Horror', count: 3 }, { label: 'Mystery', count: 7 }, { label: 'Reality', count: 1 }, { label: 'Science Fiction', count: 16 }, { label: 'Superhero', count: 2 }, { label: 'Suspense', count: 3 }, { label: 'Thriller', count: 2 }, { label: 'Western', count: 1 }]"></c-stats-table>
+<c-stats-table :@items="[{ label: 'Action', count: 19 }, { label: 'Adventure', count: 118 }, { label: 'Animation', count: 3 }, { label: 'Anime', count: 5 }, { label: 'Comedy', count: 14 }, { label: 'Crime', count: 4 }, { label: 'Documentary', count: 8 }, { label: 'Drama', count: 21 }, { label: 'Family', count: 3 }, { label: 'Fantasy', count: 17 }, { label: 'History', count: 11 }, { label: 'Horror', count: 3 }, { label: 'Mystery', count: 7 }, { label: 'Reality', count: 1 }, { label: 'Science Fiction', count: 16 }, { label: 'Superhero', count: 2 }, { label: 'Suspense', count: 3 }, { label: 'Thriller', count: 2 }, { label: 'Western', count: 1 }]" style="font-size: var(--font-size-small);"></c-stats-table>
 {% endrenderTemplate %}
 
 ## Music
@@ -41,7 +41,7 @@ As mentioned, I’ve been <q>scrobbling</q> my music listening to [Last.fm](http
 ### Scrobbles per year
 
 {% renderTemplate 'webc' %}
-<c-stats-table :@items="[{ label: 2010, count: 5135 }, { label: 2011, count: 13932 }, { label: 2012, count: 13204 }, { label: 2013, count: 10967 }, { label: 2014, count: 4310 }, { label: 2015, count: 4876 }, { label: 2016, count: 6334 }, { label: 2017, count: 8710 }, { label: 2018, count: 11290 }, { label: 2019, count: 11666 }, { label: 2020, count: 7311 }, { label: 2021, count: 5314 }, { label: 2022, count: 2982 }, { label: 2023, count: 2603 }, { label: 2024, count: 499 }]"></c-stats-table>
+<c-stats-table :@items="[{ label: 2010, count: 5135 }, { label: 2011, count: 13932 }, { label: 2012, count: 13204 }, { label: 2013, count: 10967 }, { label: 2014, count: 4310 }, { label: 2015, count: 4876 }, { label: 2016, count: 6334 }, { label: 2017, count: 8710 }, { label: 2018, count: 11290 }, { label: 2019, count: 11666 }, { label: 2020, count: 7311 }, { label: 2021, count: 5314 }, { label: 2022, count: 2982 }, { label: 2023, count: 2603 }, { label: 2024, count: 499 }]" style="font-size: var(--font-size-small);"></c-stats-table>
 {% endrenderTemplate %}
 
 <hr style="--rule-space: var(--size-medium);">
