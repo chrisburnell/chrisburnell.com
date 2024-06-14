@@ -1,8 +1,14 @@
-# Category Redirects
+# Dynamic Category Redirects
 {% for category in collections.categories %}{% if category.title != category.plural -%}
 rewrite ^/{{ category.title }}/?$ /{{ category.plural }}/ permanent;
 rewrite ^/{{ category.plural }}/([a-z0-9]+(?:-[a-z0-9]+)*)/?$ /{{ category.title }}/$1/ permanent;
 {% endif %}{% endfor %}
+
+# Category Redirects
+rewrite ^/bookshelf/?$ /books/ redirect;
+
+# Tag Redirects
+rewrite ^/tag/a11y/?$ /tag/accessibility/ permanent;
 
 # Page Redirects
 {% for item in collections.pages %}{% if item.url and item.data.redirect_from %}{% for request in item.data.redirect_from -%}
