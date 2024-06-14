@@ -9,7 +9,7 @@ const mdnBrowserData = require("../../../node_modules/@mdn/browser-compat-data/d
 // import mdnBrowserData from "@mdn/browser-compat-data" assert { type: "json" }
 
 const getCaniuseSupport = async (feature) => {
-	let asset = new AssetCache(`caniuse_${feature}`, ".cache")
+	const asset = new AssetCache(`caniuse_${feature}`, ".cache")
 	asset.ensureDir()
 
 	if (asset.isCacheValid(cacheDurations.daily)) {
@@ -33,7 +33,7 @@ const getBrowserslistSupport = async (feature) => {
 export default async function () {
 	let sorted = []
 
-	for (let feature of browserFeatures) {
+	for (const feature of browserFeatures) {
 		const caniuseSupport = await getCaniuseSupport(feature.id)
 			.then((caniuseSupport) => caniuseSupport)
 			.catch(() => {

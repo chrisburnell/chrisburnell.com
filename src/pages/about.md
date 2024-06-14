@@ -6,6 +6,11 @@ og_image: /images/avatar@2x.jpeg
 perch: true
 eleventyComputed:
   description: "{{ site.description | safe }}"
+redirect_from:
+  - from: /colophon
+    to: /about/\#colophon
+  - from: /contact
+    to: /about/\#contact
 ---
 
 {% if author.employer.title != '' -%}

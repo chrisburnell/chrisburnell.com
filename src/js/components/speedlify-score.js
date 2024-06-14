@@ -6,7 +6,7 @@ class SpeedlifyUrlStore {
 	}
 
 	static normalizeUrl(speedlifyUrl, path) {
-		let host = `${speedlifyUrl}${speedlifyUrl.endsWith("/") ? "" : "/"}`
+		const host = `${speedlifyUrl}${speedlifyUrl.endsWith("/") ? "" : "/"}`
 		return host + (path.startsWith("/") ? path.substr(1) : path)
 	}
 
@@ -19,7 +19,7 @@ class SpeedlifyUrlStore {
 		if (!this.responses[apiUrl]) {
 			this.responses[apiUrl] = response.json()
 		}
-		let json = await this.responses[apiUrl]
+		const json = await this.responses[apiUrl]
 		return json
 	}
 
@@ -28,14 +28,15 @@ class SpeedlifyUrlStore {
 			return this.urls[speedlifyUrl][url] ? this.urls[speedlifyUrl][url].hash : false
 		}
 
-		let apiUrl = SpeedlifyUrlStore.normalizeUrl(speedlifyUrl, "api/urls.json")
-		let json = await this.fetchFromApi(apiUrl)
+		const apiUrl = SpeedlifyUrlStore.normalizeUrl(speedlifyUrl, "api/urls.json")
+		const json = await this.fetchFromApi(apiUrl)
 
 		return json[url] ? json[url].hash : false
 	}
 
 	async fetchData(speedlifyUrl, hash) {
-		let apiUrl = SpeedlifyUrlStore.normalizeUrl(speedlifyUrl, `api/${hash}.json`)
+		const apiUrl = SpeedlifyUrlStore.normalizeUrl(speedlifyUrl, `api/${hash}.json`)
+
 		return this.fetchFromApi(apiUrl)
 	}
 }

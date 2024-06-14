@@ -3,6 +3,8 @@ title: "/uses"
 tagline: Uses
 description: A list of stuff I use day-to-day.
 toc: true
+redirect_from:
+  - /defaults
 ---
 
 ## Hardware

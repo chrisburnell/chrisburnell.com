@@ -100,7 +100,7 @@ The next step in this implementation is to make some replacements in `post.njk` 
 
 *Here’s where the real magic happens.*
 
-Now I can instruct entire swathes of posts to use a particular set of includes.
+<p class="no-indent">Now I can instruct entire swathes of posts to use a particular set of includes.</p>
 
 For example, instead of the previous `category == 'recipe'` check in my post layout, I can again use Eleventy Computed Data by adding a value to the  `pre_includes` array inside my `recipes.11tydata.js` file.
 

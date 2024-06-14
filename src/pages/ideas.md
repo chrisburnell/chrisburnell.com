@@ -3,6 +3,8 @@ title: "/ideas"
 tagline: Ideas
 description: Things I’d like to work on.
 toc: true
+redirect_from:
+  - /todo
 ---
 
 {% set last_updated = '2024-05-24T16:51:44+0800' -%}

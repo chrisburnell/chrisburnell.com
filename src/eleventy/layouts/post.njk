@@ -23,13 +23,10 @@ layout: base
 						by {{ reply_author_string | safe }}
 					{%- endif %},
 				{%- endif %}
-				was published on <time datetime="{{ date | rfc3339Date }}" class=" [ dt-published ] ">{{ date | friendlyDateLong | safe }}</time>
-				{%- if updated %}
-					and last updated on <time datetime="{{ updated | rfc3339Date }}" class=" [ dt-updated ] ">{{ updated | friendlyDateLong | safe }}</time>
-				{%- endif -%}
+				was published on <time datetime="{{ date | rfc3339Date }}" class=" [ dt-published ] ">{{ date | friendlyDateLong | safe }}</time>{% if updated %}, last updated on <time datetime="{{ updated | rfc3339Date }}" class=" [ dt-updated ] ">{{ updated | friendlyDateLong | safe }}</time>{% endif %}
 			{%- endif %}
-			{% if show_reading_length %}
-				and has ~{{ content | cleanTagsForWordcount | striptags | safe | wordcount | toNearest(25, true) | numberStringFormat }} words
+			{%- if show_reading_length -%}
+				{{ ',' if updated }} and has ~{{ content | cleanTagsForWordcount | striptags | safe | wordcount | toNearest(25, true) | numberStringFormat }} words
 			{%- endif -%}.
 		</p>
 	</div>

@@ -5,8 +5,8 @@ import { cacheDurations } from "./site.js"
 dotenv.config()
 
 const shows = async function () {
-	let url = `https://api.trakt.tv/users/${trakt}/history/shows?page=1&limit=20`
-	let json = await EleventyFetch(url, {
+	const url = `https://api.trakt.tv/users/${trakt}/history/shows?page=1&limit=20`
+	const json = await EleventyFetch(url, {
 		duration: cacheDurations.hourly,
 		type: "json",
 		fetchOptions: {
@@ -21,8 +21,8 @@ const shows = async function () {
 }
 
 const movies = async function () {
-	let url = `https://api.trakt.tv/users/${trakt}/history/movies?page=1&limit=20`
-	let json = await EleventyFetch(url, {
+	const url = `https://api.trakt.tv/users/${trakt}/history/movies?page=1&limit=20`
+	const json = await EleventyFetch(url, {
 		duration: cacheDurations.hourly,
 		type: "json",
 		fetchOptions: {

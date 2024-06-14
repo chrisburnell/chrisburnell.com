@@ -4,6 +4,8 @@ title: Kaprekar’s Constant
 description: I came across an interesting mathematical observation today called Kaprekar’s constant, named after the mathematician, Dattatreya Ramchandra Kaprekar, and built an interactive tool to demonstrate it.
 tags:
   - calculator
+redirect_from:
+  - /article/kaprekars-constant
 ---
 
 <blockquote>

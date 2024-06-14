@@ -9,7 +9,7 @@
 	min-inline-size: 0;
 	margin-block-start: var(--size-gap);
 
-	:is(%content, pre, is-land:has(details)) + p:not(.no-indent) {
+	:is(%content, pre, is-land:has(details)):not(.skip-next-indent) + p:not(.no-indent) {
 		text-indent: 1em;
 	}
 }

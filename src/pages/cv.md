@@ -6,6 +6,8 @@ eleventyComputed:
 content_class: h-resume
 og_image: /images/avatar@2x.jpeg
 toc: true
+redirect_from:
+  - /resume
 ---
 
 {% if author.employer.title != '' -%}

@@ -8,6 +8,8 @@ tags:
   - crossword
 post_includes:
   - weblogpomo2024.njk
+redirect_from:
+  - /note/daily-word-games
 ---
 
 ## Jumblie

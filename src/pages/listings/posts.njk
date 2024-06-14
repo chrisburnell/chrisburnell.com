@@ -3,6 +3,16 @@ layout: base
 title: All Posts
 description: Browse all of my posts by a variety of metrics.
 perch: true
+redirect_from:
+  - /archive
+  - /all
+  - /all-posts
+  - from: /categories
+    to: /posts/\#categories
+  - from: /tags
+    to: /posts/\#tags
+  - from: /latest
+    to: /posts/\#latest
 ---
 {%- from 'macros/deckItem.njk' import deckItem -%}
 {%- set collection = collections.posts -%}

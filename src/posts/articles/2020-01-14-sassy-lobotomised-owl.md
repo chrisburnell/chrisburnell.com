@@ -13,6 +13,8 @@ tags:
 syndicate_to:
   - https://dev.to/chrisburnell/sassy-lobotomised-owl-pfl
   - https://twitter.com/iamchrisburnell/status/1220678282590531584
+redirect_from:
+  - /article/sassy-lobotomized-owl
 ---
 
 The <a href="https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/" rel="external noopener">lobotomised owl</a> technique, given graciously to us by the incredibly talented <a href="https://heydonworks.com" rel="external noopener">Heydon Pickering</a>, takes away a great deal of pain that comes with setting up sensible spacing between elements and components on your page. Instead of specifically defining `margin-bottom`/`margin-top` for each component, we’ll make use of the <samp>* + *</samp> selector in CSS to perform the following:

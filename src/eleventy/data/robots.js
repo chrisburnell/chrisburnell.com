@@ -1,28 +1,27 @@
-// import EleventyFetch from "@11ty/eleventy-fetch"
-import dotenv from "dotenv"
-// import { cacheDurations } from "./site.js"
-dotenv.config()
+// by Robb Knight: https://rknight.me/blog/blocking-bots-with-nginx/
 
-export default async function () {
-	return true
+import EleventyFetch from "@11ty/eleventy-fetch"
+import { cacheDurations } from "./site.js"
+
+export default async function() {
+	const url = "https://raw.githubusercontent.com/ai-robots-txt/ai.robots.txt/main/robots.txt"
+	let txt = await EleventyFetch(url, {
+		duration: cacheDurations.weekly,
+		type: "text",
+	})
+
+	txt = txt.split("\n")
+		.filter(line => line !== "User-agent: Applebot")
+		.join("\n")
+
+	const bots = txt.split("\n")
+		.filter(line => {
+			return line.startsWith("User-agent:") && line !== "User-agent: Applebot"
+		})
+		.map(line => line.split(":")[1].trim())
+
+	return {
+		txt: txt,
+		nginx: bots.join('|'),
+	}
 }
-
-// export default async function () {
-// 	const url = "https://api.darkvisitors.com/robots-txts"
-// 	const text = await EleventyFetch(url, {
-// 		duration: cacheDurations.daily,
-// 		type: "text",
-// 		fetchOptions: {
-// 			method: "POST",
-// 			headers: {
-// 				Authorization: "Bearer " + process.env.DARK_VISITORS_API_TOKEN,
-// 			},
-// 			body: {
-// 				agent_types: ["AI Data Scraper", "AI Search Crawler"],
-// 				disallow: "/",
-// 			},
-// 		},
-// 	})
-// 	console.log(text)
-// 	return text
-// }

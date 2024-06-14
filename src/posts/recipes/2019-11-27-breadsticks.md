@@ -33,6 +33,8 @@ authors:
 photo:
   - url: breadsticks.jpg
     alt: Warm and fluffy breadsticks, made by yours truly
+redirect_from:
+  - /recipe/breaksticks
 ---
 
 1.

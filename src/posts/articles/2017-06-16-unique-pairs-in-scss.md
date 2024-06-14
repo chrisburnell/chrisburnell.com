@@ -9,6 +9,8 @@ banner:
   alt: a photograph looking upwards at many umbrellas of varying colours, arranged in columns and rows
 syndicate_to:
   - https://twitter.com/iamchrisburnell/status/877492210241032192
+redirect_from:
+  - /article/unique-pairs-in-sass
 ---
 
 <blockquote>
