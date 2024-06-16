@@ -108,30 +108,30 @@ emoji: 🗜
 
 <p>This calculator uses <code>rem</code> units which require knowing the font size at the document’s root. In most cases, that refers to the <code>html</code> element and this calculator is currently operating with a root font size of <code id="how-root">16px</code>.</p>
 
-<p class="no-indent"><strong aria-hidden="true">1.</strong> We need to figure out the rate of change: how much the size needs to change across a distance across the viewport. In other words, for every pixel of change across the viewport, how many pixels of change should there be in size? We can calculate this by dividing the difference in size by the difference in viewport.</p>
+<p><strong aria-hidden="true">1.</strong> We need to figure out the rate of change: how much the size needs to change across a distance across the viewport. In other words, for every pixel of change across the viewport, how many pixels of change should there be in size? We can calculate this by dividing the difference in size by the difference in viewport.</p>
 
 <pre class="language-none"><code id="how-x">Change = (sizeMax - sizeMin) / (viewportMax - viewportMin)
 Change = (18px - 16px) / (1000px - 500px)
 Change = 0.004</code></pre>
 
-<p class="no-indent"><strong aria-hidden="true">2.</strong> Next, let’s figure out what our <em>preferred</em> size should be (this is different from our <em>minimum</em> font size). We do this by asking how much change is applied to the size when the viewport is at its maximum size, and subtracting that from our desired size at the maximum viewport size.</p>
+<p><strong aria-hidden="true">2.</strong> Next, let’s figure out what our <em>preferred</em> size should be (this is different from our <em>minimum</em> font size). We do this by asking how much change is applied to the size when the viewport is at its maximum size, and subtracting that from our desired size at the maximum viewport size.</p>
 
 <pre class="language-none"><code id="how-a">A = sizeMax - viewportMax * Change
 A = 18px - 1000px * 0.004
 A = 14px = 0.875rem</code></pre>
 
-<p class="no-indent"><strong aria-hidden="true">3.</strong> The last piece of the puzzle is the most straightforward: we need to represent the rate of change as a value relative to the viewport, and we do so by multiplying the rate of change with <code>100vw</code>.</p>
+<p><strong aria-hidden="true">3.</strong> The last piece of the puzzle is the most straightforward: we need to represent the rate of change as a value relative to the viewport, and we do so by multiplying the rate of change with <code>100vw</code>.</p>
 
 <pre class="language-none"><code id="how-b">B = 100vw * Change
 B = 100vw * 0.004
 B = 0.4vw</code></pre>
 
-<p class="no-indent"><strong aria-hidden="true">4.</strong> Let’s put everything together with the <code>clamp()</code> function, otherwise our calculated value will be incorrect above and below our designated viewport bounds.</p>
+<p><strong aria-hidden="true">4.</strong> Let’s put everything together with the <code>clamp()</code> function, otherwise our calculated value will be incorrect above and below our designated viewport bounds.</p>
 
 <pre class="language-none"><code id="how-result">Result = clamp(sizeMin, A + B, sizeMax)
 Result = clamp(1rem, 0.875rem + 0.4vw, 1.125rem)</code></pre>
 
-<p class="no-indent"><strong aria-hidden="true">Optional.</strong> We can perform a simple check that our calculations are correct by plugging in our minimum and maximum viewport values and seeing if they result in our desired minimum and maximum sizes.</p>
+<p><strong aria-hidden="true">Optional.</strong> We can perform a simple check that our calculations are correct by plugging in our minimum and maximum viewport values and seeing if they result in our desired minimum and maximum sizes.</p>
 
 <p>Let’s not forget that viewport-based units (<code>vw</code>, <code>vh</code>, etc.) are kind of like a percentage, which we can factor into our calculations by dividing <code>B</code> by 100 when figuring out the true pixel-value result.</p>
 
