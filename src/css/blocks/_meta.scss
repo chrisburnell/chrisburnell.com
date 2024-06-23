@@ -7,7 +7,7 @@
 	@extend %grid;
 
 	--placement: auto-fit;
-	--min-inline-size: 16em;
+	--grid-min-inline-size: 16em;
 	--gap: var(--size-gap);
 
 	container: meta / inline-size;

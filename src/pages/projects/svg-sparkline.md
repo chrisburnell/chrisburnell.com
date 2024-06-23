@@ -23,7 +23,7 @@ syndicate_to:
 
 <code>&lt;svg-sparkline&gt;</code> is a native Web Component that builds a sparkline using SVGs in the element’s shadow root and includes a base set of styles to give it a decent appearance out of the box.
 
-<div class=" [ grid ] [ requires-js ] " style="--min-inline-size: 212px;">
+<div class=" [ grid ] [ requires-js ] " style="--grid-min-inline-size: 212px;">
 	<article style="display: grid; place-items: center;">
 		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" gradient-color="var(--color-raven)" fill="true" endpoint-color="var(--color-maple)" curve="true" animate="true" start-label="Start" end-label="End"></svg-sparkline>
 	</article>

@@ -523,7 +523,7 @@ p q r s t u v w x y z { | } ~</pre>
 	<span class="token property">grid-template-columns</span><span class="token punctuation">:</span> <span class="token function">repeat</span><span class="token punctuation">(</span>
 		<span class="token function">var</span><span class="token punctuation">(</span>--placement<span class="token punctuation">,</span> auto-fill<span class="token punctuation">)</span><span class="token punctuation">,</span>
 		<span class="token function">minmax</span><span class="token punctuation">(</span>
-			<span class="token function">var</span><span class="token punctuation">(</span>--min-inline-size<span class="token punctuation">,</span> 12em<span class="token punctuation">)</span><span class="token punctuation">,</span>
+			<span class="token function">var</span><span class="token punctuation">(</span>--grid-min-inline-size<span class="token punctuation">,</span> 12em<span class="token punctuation">)</span><span class="token punctuation">,</span>
 			<span class="token function">var</span><span class="token punctuation">(</span>--max-inline-size<span class="token punctuation">,</span> 1fr<span class="token punctuation">)</span>
 		<span class="token punctuation">)</span>
 	<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -611,7 +611,7 @@ p q r s t u v w x y z { | } ~</pre>
 
 <h2>Sparklines</h2>
 
-<div class=" [ grid ] " style="--min-inline-size: 212px;">
+<div class=" [ grid ] " style="--grid-min-inline-size: 212px;">
 	<article style="display: grid; place-items: center;">
 		<svg-sparkline values="0,0,0,0,0,0,0,0,4,0,0,4,9,1,4,5,2,4,2,6,4,6,4,6,5,4" gradient-color="var(--color-raven)" fill="true" endpoint-color="var(--color-maple)" curve="true" animate="true" start-label="Start" end-label="End"></svg-sparkline>
 	</article>

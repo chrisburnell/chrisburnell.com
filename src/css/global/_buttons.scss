@@ -3,7 +3,7 @@
 /// @group global
 /// @link https://chrisburnell.com/styleguide/#buttons
 ///
-/// --min-inline-size (8em)
+/// --button-min-inline-size (8em)
 ///     Defines how wide the button should be as a minimum.
 /// --padding (var(--size-small)
 ///     Defines the padding of the button.
@@ -35,7 +35,7 @@ button {
 	@include non-selectable;
 	background-color: h(bowhead);
 	color: h(snowy) !important;
-	min-inline-size: var(--min-inline-size, 8em);
+	min-inline-size: var(--button-min-inline-size, 8em);
 	display: inline-block;
 	padding: var(--padding-block, var(--padding, var(--size-small))) var(--padding-inline, var(--padding, var(--size-medium)));
 	// accounts for outline-width + outline-offset
@@ -81,14 +81,14 @@ button {
 }
 
 .button--small {
-	--min-inline-size: 5em;
+	--button-min-inline-size: 5em;
 	--padding: var(--size-tiny);
 	--font-size: var(--font-size-small);
 	--line-height: 1;
 }
 
 .button--text {
-	--min-inline-size: auto;
+	--button-min-inline-size: auto;
 	--padding-block: 0;
 	--padding-inline: var(--size-tiny);
 	--margin: 0;

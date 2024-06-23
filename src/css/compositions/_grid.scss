@@ -11,9 +11,9 @@
 ///     Defines the space between each row.
 /// --gap (var(--size-gutter))
 ///     Defines the space between each column and row if the above are not set.
-/// --min-inline-size (10rem)
+/// --grid-min-inline-size (10rem)
 ///     Defines how wide each item should be, ideally, as a minimum.
-/// --max-inline-size (1fr)
+/// --grid-max-inline-size (1fr)
 ///     Defines how wide each item should be, ideally, as a maximum.
 ////
 
@@ -24,8 +24,8 @@
 	grid-template-columns: repeat(
 		var(--placement, auto-fill),
 		minmax(
-			var(--min-inline-size, 12em),
-			var(--max-inline-size, 1fr)
+			var(--grid-min-inline-size, 12em),
+			var(--grid-max-inline-size, 1fr)
 		)
 	);
 	column-gap: var(--column-gap, var(--gap, var(--size-gutter)));
@@ -38,7 +38,7 @@
 
 	&[data-layout="50-50"] {
 		--placement: auto-fit;
-		--min-inline-size: clamp(8rem, 50% - var(--column-gap, var(--gap, var(--size-gutter))), 16rem);
+		--grid-min-inline-size: clamp(8rem, 50% - var(--column-gap, var(--gap, var(--size-gutter))), 16rem);
 	}
 
 	&[data-layout="natural"] {
