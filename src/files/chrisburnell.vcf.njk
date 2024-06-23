@@ -1,0 +1,8 @@
+BEGIN:VCARD
+FN:{{ author.firstname }} {{ author.lastname }}
+N:{{ author.lastname }};{{ author.firstname }};;;
+TITLE:{{ author.role }}
+EMAIL:{{ author.email }}
+URL:{{ site.url }}
+PHOTO:TYPE=JPEG;{{ site.url + author.avatar }}
+END:VCARD
