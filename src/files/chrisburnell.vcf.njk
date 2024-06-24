@@ -2,7 +2,9 @@ BEGIN:VCARD
 FN:{{ author.firstname }} {{ author.lastname }}
 N:{{ author.lastname }};{{ author.firstname }};;;
 TITLE:{{ author.role }}
+ORG:{{ site.url | getHost }}
 EMAIL:{{ author.email }}
 URL:{{ site.url }}
 PHOTO:TYPE=JPEG;{{ site.url + author.avatar }}
+NOTE:Chris Burnell is a Canadian Front End Developer / Software Engineer based in Singapore.
 END:VCARD

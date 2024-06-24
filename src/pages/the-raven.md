@@ -132,3 +132,9 @@ On the pallid bust of Pallas just above my chamber door;
 &emsp;And the lamp-light o’er him streaming throws his shadow on the floor;
 And my soul from out that shadow that lies floating on the floor
 &emsp;&emsp;&emsp;Shall be lifted—nevermore!
+
+<style>
+p {
+	margin-inline: auto;
+}
+</style>
