@@ -60,7 +60,7 @@
 				{% elif item.data.play_of and not item.data.complete and not item.data.end %}
 					<em>Currently playing</em>
 				{% elif item.data.read_of and not item.data.complete and not item.data.end %}
-					<em>Currently reading</em>{% if not item.data.rating and item.data.progress %} ({{ item.data.progress | stringToPercent }}%){% endif %}
+					<em>Currently {% if 'audiobook' in item.data.tags %}listening{% else %}reading{% endif %}</em>{% if not item.data.rating and item.data.progress %} ({{ item.data.progress | stringToPercent }}%){% endif %}
 				{% else %}
 					<data class=" [ p-rating ] " value="Unrated">Unrated</data>
 				{% endif %}

@@ -2,7 +2,7 @@
 	<h2 class=" [ visually-hidden ] ">Post Metadata</h2>
 	<ul class=" [ meta__information ] [ flow ] ">
 		{% if subtitle -%}
-			<li class=" [ small ] ">{{ subtitle | safe }}</li>
+			<li>{{ subtitle | safe }}</li>
 		{%- endif %}
 		{% if in_reply_to and rsvp -%}
 			<li class=" [ rsvp ] ">
