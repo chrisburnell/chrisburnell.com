@@ -19,7 +19,7 @@ excludeFromSearch: true
 │&nbsp;&nbsp;&nbsp;├── <a href="/hot/">Hot Pages <sup>({{ site.limits.feed | numberStringFormat(true) }})</sup></a><br>
 │&nbsp;&nbsp;&nbsp;├── <a href="/popular/">Popular Pages <sup>({{ site.limits.feed | numberStringFormat(true) }})</sup></a><br>
 {% for item in collections.categories -%}
-│&nbsp;&nbsp;&nbsp;{% if loop.last %}└{% else %}├{% endif %}── <a href="/{{ item.plural }}">{{ item.properPlural | title | safe }} <sup>({{ collections[item.title] | arePublished | rssOnlyFilter | getCollectionCount | numberStringFormat(true) }})</sup></a><br>
+│&nbsp;&nbsp;&nbsp;{% if loop.last %}└{% else %}├{% endif %}── <a href="/{{ item.plural }}/">{{ item.properPlural | title | safe }} <sup>({{ collections[item.title] | arePublished | rssOnlyFilter | getCollectionCount | numberStringFormat(true) }})</sup></a><br>
 {% endfor -%}
 ├── <a href="/projects/">Projects <sup>({{ ((collections.projects | getCollectionCount) + projects.personal.length + projects.previousVersions.length) | numberStringFormat(true) }})</sup></a><br>
 │&nbsp;&nbsp;&nbsp;├── <a href="/projects/#web">Web Projects <sup>({{ collections.projects | getCollectionCount | numberStringFormat(true) }})</sup></a><br>
