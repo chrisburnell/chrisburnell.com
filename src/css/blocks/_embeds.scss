@@ -5,7 +5,7 @@
 
 // Codepen Embed, Speaker Deck Embed
 :is(.cp_embed_wrapper, .speakerdeck-embed-wrapper) {
-	--max-inline-size: auto;
+	--box-max-inline-size: auto;
 	--gutter: 0;
 
 	padding: 0;

@@ -11,8 +11,8 @@ document.addEventListener("DOMContentLoaded", function () {
 		const masonryGrids = [...document.querySelectorAll(`[data-rows="masonry"]`)]
 
 		function layoutMasonry() {
-			masonryGrids.forEach(grid => {
-				const items = [...grid.children].filter(child => child.nodeType === 1)
+			masonryGrids.forEach((grid) => {
+				const items = [...grid.children].filter((child) => child.nodeType === 1)
 
 				const columnCount = getComputedStyle(grid).gridTemplateColumns.split(" ").length
 
@@ -24,8 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
 						const previousIndex = index - columnCount
 						const previousItem = items[previousIndex]
 
-						const previousItemBottom =
-							previousItem.getBoundingClientRect().bottom + parseFloat(getComputedStyle(grid).rowGap)
+						const previousItemBottom = previousItem.getBoundingClientRect().bottom + parseFloat(getComputedStyle(grid).rowGap)
 
 						const currentItemTop = item.getBoundingClientRect().top
 

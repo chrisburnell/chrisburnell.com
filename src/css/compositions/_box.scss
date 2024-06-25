@@ -2,14 +2,18 @@
 /// Box
 /// @group compositions
 ///
-/// --background-color (var(--color-bear))
+/// --box-background-color (color-mix(in oklab, h(bear), h(snowy)))
 ///     Defines the background color the box.
-/// --max-inline-size (100%)
+/// --box-color (inherit)
+///     Defines the text color for box.
+/// --box-max-inline-size (100%)
 ///     Defines how wide the box should be, as a maximum.
-/// --gutter (var(--size-gutter))
+/// --box-padding (var(--size-gutter))
 ///     Defines the space around the box.
-/// --border-color (h(raven, beta))
-///     Defines the background color the box.
+/// --box-border-color (h(raven))
+///     Defines the border color the box.
+/// --box-shadow (h(raven, beta))
+///     Defines the box shadow.
 ////
 
 .box,
