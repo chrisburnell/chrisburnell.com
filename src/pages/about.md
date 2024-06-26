@@ -180,7 +180,7 @@ I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link
         <dd><a href="https://www.linkedin.com/in/{{ author.linkedin }}" class=" [ canada ] " title="{{ author.name }} on LinkedIn">{{ author.linkedin }}</a></dd>
         <dt><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false" style="margin-inline-end: 1ex;"><use href="#svg--xmpp"></use></svg></c-emoji>XMPP:</dt>
         <dd><a href="xmpp:{{ author.xmpp }}" class=" [ canada ] " title="{{ author.name }} on XMPP">{{ author.xmpp }}</a></dd>
-        <dt><c-emoji style="margin-inline-end: 1ex;">{{ emojis.id }}</c-emoji>vCard:</dt>
+        <dt><c-emoji style="margin-inline-end: 1ex;">🪪</c-emoji>vCard:</dt>
         <dd><a href="/chrisburnell.vcf" class=" [ canada ] ">chrisburnell.vcf</a></dd>
     </dl>
 </address>

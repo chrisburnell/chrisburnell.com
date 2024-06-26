@@ -1,4 +1,3 @@
-import emojis from "../../eleventy/data/emojis.js"
 
 export default {
 	permalink: "beer/{{ page.fileSlug }}/",
@@ -10,5 +9,5 @@ export default {
 	categoryProperPlural: "beer reviews",
 	categoryCode: "b",
 	tags: ["beer", "review"],
-	emoji: emojis.beer,
+	emoji: "🍺",
 }

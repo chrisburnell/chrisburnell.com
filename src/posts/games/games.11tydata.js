@@ -1,4 +1,3 @@
-import emojis from "../../eleventy/data/emojis.js"
 
 export default {
 	permalink: "game/{{ page.fileSlug }}/",
@@ -12,5 +11,5 @@ export default {
 	categoryProperPlural: "game reviews",
 	categoryCode: "g",
 	tags: ["game", "review"],
-	emoji: emojis.game,
+	emoji: "🕹️",
 }

@@ -50,27 +50,27 @@ redirect_from:
 
 		<ul class=" [ grid ] [ shelf ] ">
 			<li>
-				<a href="/writing/" class=" [ gamma ] "><c-emoji>{{ emojis.author }}</c-emoji>Writing <sup>{{ collections.writings | rssOnlyFilter | getCollectionCount }}</sup></a>
+				<a href="/writing/" class=" [ gamma ] "><c-emoji>✍️</c-emoji>Writing <sup>{{ collections.writings | rssOnlyFilter | getCollectionCount }}</sup></a>
 				<p>A more serious collection of ideas and bits of prose.</p>
 			</li>
 			<li>
-				<a href="/blog/" class=" [ gamma ] "><c-emoji>{{ emojis.paper }}</c-emoji>Blog <sup>{{ collections.blogPosts | rssOnlyFilter | getCollectionCount }}</sup></a>
+				<a href="/blog/" class=" [ gamma ] "><c-emoji>📄</c-emoji>Blog <sup>{{ collections.blogPosts | rssOnlyFilter | getCollectionCount }}</sup></a>
 				<p>A broader collection of blog posts.</p>
 			</li>
 			<li>
-				<a href="/replies/" class=" [ gamma ] "><c-emoji>{{ emojis.reply }}</c-emoji>Replies <sup>{{ collections.replies | rssOnlyFilter | getCollectionCount }}</sup></a>
+				<a href="/replies/" class=" [ gamma ] "><c-emoji>↪️</c-emoji>Replies <sup>{{ collections.replies | rssOnlyFilter | getCollectionCount }}</sup></a>
 				<p>Replies I’ve made to other people.</p>
 			</li>
 			<li>
-				<a href="/rsvps/" class=" [ gamma ] "><c-emoji>{{ emojis.rsvp }}</c-emoji>RSVPs <sup>{{ collections.rsvps | rssOnlyFilter | getCollectionCount }}</sup></a>
+				<a href="/rsvps/" class=" [ gamma ] "><c-emoji>📩</c-emoji>RSVPs <sup>{{ collections.rsvps | rssOnlyFilter | getCollectionCount }}</sup></a>
 				<p>A record of RSVPs to conferences and meet-ups.</p>
 			</li>
 			<li>
-				<a href="/hot/" class=" [ gamma ] "><c-emoji>{{ emojis.hot }}</c-emoji>Hot Pages <sup>{{ site.limits.feed }}</sup></a>
+				<a href="/hot/" class=" [ gamma ] "><c-emoji>🔥</c-emoji>Hot Pages <sup>{{ site.limits.feed }}</sup></a>
 				<p>Top pages, ordered by responses across time.</p>
 			</li>
 			<li>
-				<a href="/popular/" class=" [ gamma ] "><c-emoji>{{ emojis.chart }}</c-emoji>Popular Pages <sup>{{ site.limits.feed }}</sup></a>
+				<a href="/popular/" class=" [ gamma ] "><c-emoji>📈</c-emoji>Popular Pages <sup>{{ site.limits.feed }}</sup></a>
 				<p>Top pages, ordered by number of responses.</p>
 			</li>
 		</ul>
@@ -83,7 +83,7 @@ redirect_from:
 			{%- for item in collections.categories -%}
 				{%- set count = collections[item.title] | arePublished | rssOnlyFilter | getCollectionCount -%}
 				<li>
-					<a href="/{{ item.plural }}/" class=" [ gamma ] "><c-emoji>{{ item.emoji | default(emojis.paper) }}</c-emoji>{{ item.properPlural | title }} <sup>{{ count }}</sup></a>
+					<a href="/{{ item.plural }}/" class=" [ gamma ] "><c-emoji>{{ item.emoji | default('📄') }}</c-emoji>{{ item.properPlural | title }} <sup>{{ count }}</sup></a>
 					<p>
 				</li>
 			{%- endfor -%}

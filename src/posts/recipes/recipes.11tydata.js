@@ -1,4 +1,3 @@
-import emojis from "../../eleventy/data/emojis.js"
 
 export default {
 	permalink: "recipe/{{ page.fileSlug }}/",
@@ -9,6 +8,6 @@ export default {
 	categoryPlural: "recipes",
 	categoryCode: "d",
 	tags: ["recipe", "blog", "feature"],
-	emoji: emojis.recipe,
+	emoji: "📝",
 	pre_includes: ["post/recipe.njk"],
 }

@@ -1,4 +1,3 @@
-import emojis from "../../eleventy/data/emojis.js"
 
 export default {
 	permalink: "music/{{ page.fileSlug }}/",
@@ -11,6 +10,6 @@ export default {
 	categoryProperPlural: "music reviews",
 	categoryCode: "m",
 	tags: ["music", "review"],
-	emoji: emojis.music,
+	emoji: "🎶",
 	post_includes: ["post/listen-of.njk"],
 }

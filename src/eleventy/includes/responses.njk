@@ -29,22 +29,22 @@
 				{% if reactions.length or stargazers %}
 					<ol id="reactions" class=" [ reactions ] [ cluster ] [ strong ] ">
 						{% if bookmarks.length -%}
-							<li><c-emoji>{{ emojis.bookmark }}</c-emoji> {{ bookmarks.length }} Bookmark{{ 's' if bookmarks.length > 1 }}</li>
+							<li><c-emoji>🔖</c-emoji> {{ bookmarks.length }} Bookmark{{ 's' if bookmarks.length > 1 }}</li>
 						{%- endif %}
 						{% if likes.length -%}
-							<li><c-emoji>{{ emojis.thumbsup }}</c-emoji> {{ likes.length }} Like{{ 's' if likes.length > 1 }}</li>
+							<li><c-emoji>👍</c-emoji> {{ likes.length }} Like{{ 's' if likes.length > 1 }}</li>
 						{%- endif %}
 						{% if reposts.length -%}
-							<li><c-emoji>{{ emojis.repost }}</c-emoji> {{ reposts.length }} Repost{{ 's' if reposts.length > 1 }}</li>
+							<li><c-emoji>🔄️</c-emoji> {{ reposts.length }} Repost{{ 's' if reposts.length > 1 }}</li>
 						{%- endif %}
 						{% if links.length -%}
-							<li><c-emoji>{{ emojis.link }}</c-emoji> {{ links.length }} Link{{ 's' if links.length > 1 }}</li>
+							<li><c-emoji>🔗</c-emoji> {{ links.length }} Link{{ 's' if links.length > 1 }}</li>
 						{%- endif %}
 						{% if socialReplies.length -%}
-							<li><c-emoji>{{ emojis.syndication }}</c-emoji> {{ socialReplies.length }} Social {% if socialReplies.length > 1 %}Replies{% else %}Reply{% endif %}{% if syndicate_to.length %} <small>(on {% for syndication in syndicate_to -%}<a href="{{ syndication | tweetback }}" rel="external noopener">{{ syndication | getSyndicationTitle }}</a>{%- if not loop.last %}, {% endif %}{%- endfor %})</small>{% endif %}</li>
+							<li><c-emoji>⤴️</c-emoji> {{ socialReplies.length }} Social {% if socialReplies.length > 1 %}Replies{% else %}Reply{% endif %}{% if syndicate_to.length %} <small>(on {% for syndication in syndicate_to -%}<a href="{{ syndication | tweetback }}" rel="external noopener">{{ syndication | getSyndicationTitle }}</a>{%- if not loop.last %}, {% endif %}{%- endfor %})</small>{% endif %}</li>
 						{%- endif %}
 						{% if stargazers -%}
-							<li><c-emoji>{{ emojis.stars }}</c-emoji> <a href="https://github.com/{{ github }}">{{ stargazers }} Stargazer{{ 's' if stargazers > 1 }}</a></li>
+							<li><c-emoji>✨</c-emoji> <a href="https://github.com/{{ github }}">{{ stargazers }} Stargazer{{ 's' if stargazers > 1 }}</a></li>
 						{%- endif %}
 					</ol>
 				{% endif %}

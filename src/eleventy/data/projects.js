@@ -1,4 +1,3 @@
-import emojis from "./emojis.js"
 
 export default {
 	personal: [
@@ -105,7 +104,7 @@ export default {
 				date: "2019-03-04T12:00:00+0000",
 				title: "Reptile C",
 				description: "My personal (and automatic) URL-shortening service based on Tantek Çelik’s base-60 numbering system, NewBase60. <em>Note: the homepage just redirects to this website, but you can read about how it works here: [Generating Automatic ShortURLs with NewBase60](https://chrisburnell.com/article/automatic-shorturls/)</em>.",
-				emoji: emojis.link,
+				emoji: "🔗",
 			},
 		},
 		{

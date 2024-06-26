@@ -1,4 +1,3 @@
-import emojis from "../../eleventy/data/emojis.js"
 
 export default {
 	permalink: "code/{{ page.fileSlug }}/",
@@ -8,5 +7,5 @@ export default {
 	categoryProperPlural: "code demos",
 	categoryCode: "c",
 	tags: ["code", "blog"],
-	emoji: emojis.code,
+	emoji: "💾",
 }

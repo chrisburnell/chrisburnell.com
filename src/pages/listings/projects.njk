@@ -7,7 +7,7 @@ redirect_from:
   - /work
 ---
 {%- from 'macros/deckItem.njk' import deckItem -%}
-<h2 id="web"><c-emoji>{{ emojis.computer }}</c-emoji>Web Projects <small>({{ collections.projects.length + projects.web.length }})</small></h2>
+<h2 id="web"><c-emoji>💻</c-emoji>Web Projects <small>({{ collections.projects.length + projects.web.length }})</small></h2>
 
 <div class=" [ deck ] ">
 	{% for item in collections.projects %}
@@ -20,7 +20,7 @@ redirect_from:
 
 <hr>
 
-<h2 id="personal"><c-emoji>{{ emojis.wave }}</c-emoji>Personal Projects <small>({{ projects.personal.length }})</small></h2>
+<h2 id="personal"><c-emoji>🙋</c-emoji>Personal Projects <small>({{ projects.personal.length }})</small></h2>
 
 <div class=" [ deck ] ">
 	{% for item in projects.personal %}
@@ -30,7 +30,7 @@ redirect_from:
 
 <hr>
 
-<h2 id="past-versions"><c-emoji>{{ emojis.scroll }}</c-emoji>{{ site.url | getHost }} in the past <small>({{ projects.previousVersions.length }})</small></h2>
+<h2 id="past-versions"><c-emoji>📜</c-emoji>{{ site.url | getHost }} in the past <small>({{ projects.previousVersions.length }})</small></h2>
 
 <div class=" [ deck ] ">
 	{% for item in projects.previousVersions %}

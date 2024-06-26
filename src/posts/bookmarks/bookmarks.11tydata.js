@@ -1,4 +1,3 @@
-import emojis from "../../eleventy/data/emojis.js"
 
 export default {
 	permalink: "bookmark/{{ page.fileSlug }}/",
@@ -9,5 +8,5 @@ export default {
 	categoryCode: "h",
 	tags: ["bookmark", "clickthrough"],
 	excludeFromSearch: true,
-	emoji: emojis.bookmark,
+	emoji: "🔖",
 }

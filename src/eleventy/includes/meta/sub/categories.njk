@@ -7,7 +7,7 @@
 			{%- else -%}
 				<strong>
 			{%- endif %}
-				<c-emoji>{{ lookup.emoji | default(emojis.paper) }}</c-emoji>{{ lookup.properPlural | title }}
+				<c-emoji>{{ lookup.emoji | default('📄') }}</c-emoji>{{ lookup.properPlural | title }}
 			{% if page.url != '/' + lookup.plural + '/' -%}
 				</a>
 			{%- else -%}

@@ -1,5 +1,4 @@
 import { DateTime } from "luxon"
-import emojis from "../data/emojis.js"
 import { nowEpoch } from "../data/global.js"
 import { limits, locale } from "../data/site.js"
 
@@ -260,10 +259,10 @@ export const getRelativeTime = (datetime, division) => {
 	}
 }
 
-const emojiFuture = `<span class=" [ emoji ] " aria-hidden="true">${emojis.future}</span>`
-const emojiGoing = `<span class=" [ emoji ] " aria-hidden="true">${emojis.going}</span>`
-const emojiHopefully = `<span class=" [ emoji ] " aria-hidden="true">${emojis.hopefully}</span>`
-const emojiNotGoing = `<span class=" [ emoji ] " aria-hidden="true">${emojis.not_going}</span>`
+const emojiFuture = `<span class=" [ emoji ] " aria-hidden="true">➡️</span>`
+const emojiGoing = `<span class=" [ emoji ] " aria-hidden="true">✅</span>`
+const emojiHopefully = `<span class=" [ emoji ] " aria-hidden="true">😔</span>`
+const emojiNotGoing = `<span class=" [ emoji ] " aria-hidden="true">🤞</span>`
 
 /**
  * @param {string} start
