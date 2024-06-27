@@ -9,8 +9,6 @@ import markdown from "../config/markdown.js"
 import { limits, locale } from "../data/site.js"
 dotenv.config()
 
-const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-
 const stringNumbers = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
 
 const conjunctionFormat = new Intl.ListFormat(locale, { style: "long", type: "conjunction" })
@@ -215,7 +213,7 @@ export const vigenere = (content, keyword = "RAVENOUS", secret = process.env.VIG
 	keyword = keyword.toUpperCase().replace(/[^A-Z]/g, "")
 	secret = secret.toUpperCase().replace(/[^A-Z]/g, "")
 
-	let caesarCipher = alphabet
+	let caesarCipher = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 	keyword
 		.split("")
 		.reverse()
