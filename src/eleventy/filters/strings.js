@@ -13,6 +13,8 @@ const stringNumbers = ["zero", "one", "two", "three", "four", "five", "six", "se
 
 const conjunctionFormat = new Intl.ListFormat(locale, { style: "long", type: "conjunction" })
 
+const disjunctionFormat = new Intl.ListFormat(locale, { style: "long", type: "disjunction" })
+
 const sentimentAnalyzer = new Natural.SentimentAnalyzer("English", Natural.PorterStemmer, "afinn")
 
 /**
@@ -21,6 +23,14 @@ const sentimentAnalyzer = new Natural.SentimentAnalyzer("English", Natural.Porte
  */
 export const conjunction = (strings) => {
 	return conjunctionFormat.format(strings)
+}
+
+/**
+ * @param {string[]} strings
+ * @returns {string}
+ */
+export const disjunction = (strings) => {
+	return disjunctionFormat.format(strings)
 }
 
 /**
