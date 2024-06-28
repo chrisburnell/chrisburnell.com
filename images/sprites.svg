@@ -43,6 +43,7 @@
   </symbol>
   <symbol id="svg--npm" viewbox="0 0 32 32">
     <title>npm</title>
+    <path fill="#f9f9f9" d="m0 0H32V32H0" />
     <path fill="#ba271a" d="M0 0v32h32v-32h-32zM26 26h-4v-16h-6v16h-10v-20h20v20z" />
   </symbol>
   <symbol id="svg--rss" viewbox="0 0 31 40">
