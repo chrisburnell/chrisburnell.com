@@ -36,7 +36,7 @@
     "rimraf": "^5.0.7"
   },
   "dependencies": {
-    "@11ty/eleventy": "^3.0.0-alpha.13",
+    "@11ty/eleventy": "^3.0.0-alpha.14",
     "@11ty/eleventy-fetch": "^4.0.1",
     "@11ty/eleventy-img": "^4.0.2",
     "@11ty/eleventy-plugin-bundle": "^2.0.2",
@@ -60,6 +60,7 @@
     "@chrisburnell/theme-selector": "^1.0.1",
     "@daviddarnes/link-peek": "^1.1.0",
     "@daviddarnes/storage-form": "^2.0.1",
+    "@dotenvx/dotenvx": "^1.0.0",
     "@mdn/browser-compat-data": "^5.5.34",
     "@remy/webmention": "^1.5.0",
     "@sindresorhus/slugify": "^2.2.1",

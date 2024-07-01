@@ -53,11 +53,10 @@ excludeFromSearch: true
 
 			<h2 id="latest">Latest Posts</h2>
 			<div class=" [ deck ] [ h-feed ] ">
-				{% set pinned_count = collections.pinned.length | default(0) -%}
 				{% for item in collections.pinned %}
 					{{ deckItem(item, { hfeed: true, truncate: true, show_pinned: true }) }}
 				{% endfor %}
-				{% for item in collections.features | noPinnedFilter | rssOnlyFilter | limit(site.limits.homepage - pinned_count) %}
+				{% for item in collections.features | noPinnedFilter | rssOnlyFilter | limit(site.limits.homepage - (collections.pinned.length | default(0))) %}
 					{{ deckItem(item, { hfeed: true, truncate: true }) }}
 				{% endfor %}
 			</div>
