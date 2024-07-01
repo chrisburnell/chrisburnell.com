@@ -6,7 +6,8 @@
 .meta {
 	@extend %grid;
 
-	--placement: auto-fit;
+	// Broken in Safari 🤔
+	// --placement: auto-fit;
 	--grid-min-inline-size: 16em;
 	--gap: var(--size-gap);
 

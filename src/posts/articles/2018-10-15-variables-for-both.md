@@ -70,7 +70,7 @@ Now we need to prepare our CSS Variables. In order to make them available for th
 }
 ```
 
-Additionally, because we’re using SCSS, and to keep our code DRY, we’ll utilise the SCSS Map that we set earlier and iterate over it to create a CSS Variable for each of our SCSS Variables and Map values.
+Additionally, because we’re using SCSS, and to keep our code DRY, we’ll use the SCSS Map that we set earlier and iterate over it to create a CSS Variable for each of our SCSS Variables and Map values.
 
 ```css
 :root {
@@ -243,7 +243,7 @@ Let’s tie it all together with this SCSS function and mixin.
 
 ```scss
 @mixin v($property, $value: default, $fallback: true) {
-	// leverage the v() function and output the CSS Variable(s) and optionally
+	// use the v() function and output the CSS Variable(s) and optionally
 	// the respective SCSS value(s) as well as the property
 	@if $fallback {
 		#{$property}: v($property, $value, true);

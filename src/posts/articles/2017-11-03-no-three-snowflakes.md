@@ -11,7 +11,7 @@ syndicate_to:
   - https://twitter.com/iamchrisburnell/status/926496715213033472
 ---
 
-In [Unique Pairs in SCSS](/article/unique-pairs-in-scss/) I outlined a Sass function I developed in pursuit of generating a list of unique pairs from a given list of data. While this technique certainly isn’t so powerful or far-reaching as to cause you to refactor all of your Sass, once you find yourself needing to dynamically generate unique pairs, the Sass function shoulders the weight of any complexity. Things like <q>between <var>X</var> and <var>Y</var></q> are perfectly suited to leverage this function.
+In [Unique Pairs in SCSS](/article/unique-pairs-in-scss/) I outlined a Sass function I developed in pursuit of generating a list of unique pairs from a given list of data. While this technique certainly isn’t so powerful or far-reaching as to cause you to refactor all of your Sass, once you find yourself needing to dynamically generate unique pairs, the Sass function shoulders the weight of any complexity. Things like <q>between <var>X</var> and <var>Y</var></q> are perfectly suited to use this function.
 
 But what about when you want to generate unique groups of more than <var>2</var> items? Multiples of <var>3</var>, <var>4</var>, <var>n</var>?
 

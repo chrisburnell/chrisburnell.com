@@ -10,7 +10,7 @@
   </symbol>
   <symbol id="svg--discord" viewbox="71.87 112 368.27 282">
     <title>Discord</title>
-    <path d="M 145 220 H 367 V 316 H 145" fill="#f9f9f9"></path>
+    <path d="M145 220 H367 V316 H145" fill="#f9f9f9"></path>
     <path id="discord-path" fill="#5865f2" d="M257 129q-26 0-42 3l-10-20q-39 6-77 24-67 102-54 211 41 31 93 47 12-16 20-32-24-10-31-16l7-5q49 21 95 21zm-62 175a34 37 0 111 0" />
     <use href="#discord-path" transform="matrix(-1 0 0 1 512 0)"></use>
   </symbol>

@@ -84,7 +84,7 @@ Let’s look at an example where we’re setting a *percentage*-based value that
 - `.child` `width` is set to `60.029%`, as our target `width` is `803px`
 - `1337px ÷ 100 &times; 60.029 = 802.58773px`
 
-Modern browsers will utilise *sub-pixel rendering* to render a *pixel* value containing decimals; however, older browsers, like *IE8*, will **truncate** the *percentage*-based value to only **two** decimal places! This spells trouble in our particular case:
+Modern browsers will use *sub-pixel rendering* to render a *pixel* value containing decimals; however, older browsers, like *IE8*, will **truncate** the *percentage*-based value to only **two** decimal places! This spells trouble in our particular case:
 
 `1337px ÷ 100 &times; 60.02 = 802.4674px`
 

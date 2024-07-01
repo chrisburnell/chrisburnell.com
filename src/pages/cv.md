@@ -46,7 +46,7 @@ Passionate about the open web, having published over {{ technical_articles_count
 
 - Built, maintained, and published a library of React components to enable developers to build accessible and customised client websites quickly that have been fully-tested and are production-ready.
 
-- Responsible for keeping track of web standards and keeping my team up-to-date on how we can leverage stable, new technologies to simplify and enhance the library of components.
+- Responsible for keeping track of web standards and keeping my team up-to-date on how we can use stable, new technologies to simplify and enhance the library of components.
 
 <hr style="--rule-space: var(--size-large);">
 

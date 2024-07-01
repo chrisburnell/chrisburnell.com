@@ -17,7 +17,7 @@ One of the great advantages I’ve found in using Eleventy since switching from 
 
 It took some time for the pieces to fall into place—first-of-all was watching [Sia Karamalegos’](https://sia.codes/) talk at [Jamstack Toronto: 11ties](/note/1603756300/) a couple of weeks ago, where she gave an incredible overview of the IndieWeb and how to embrace it without sacrificing connecting with others on social networks. In the talk, she briefly described her solution for fetching fresh Webmentions and caching them for build and even included some fantastic code examples too; how lucky that this would be during a conference about Eleventy!
 
-It was during a pair programming exercise recently that I had a moment of enlightenment as to how I could leverage this advantage even further by using it to not just generate a list of popular pages based on their Webmention count, but also to off-load and privately cache other parts of the source code too, like small directories of breweries and music artists. I’ll be exploring how I can use this more effectively as time goes on, but I found this to be a useful way to pull private information into your build without it appearing in your public repository.
+It was during a pair programming exercise recently that I had a moment of enlightenment as to how I could use this advantage even further by using it to not just generate a list of popular pages based on their Webmention count, but also to off-load and privately cache other parts of the source code too, like small directories of breweries and music artists. I’ll be exploring how I can use this more effectively as time goes on, but I found this to be a useful way to pull private information into your build without it appearing in your public repository.
 
 ## The Set-up
 
@@ -80,7 +80,7 @@ module.exports = function(eleventyConfig) {
     - *This step is optional if pages don’t have a *`date`*.*
 6. Sort pages by their number of Webmentions.
 7. Limit the collection to `10` items or less; otherwise, we could be generating an enormous set of data that we probably don’t need all of.
-    - Once again, this step is optional if you do want to utilise the full ordered collection.
+    - Once again, this step is optional if you do want to use the full ordered collection.
 
 ## Using the collection
 

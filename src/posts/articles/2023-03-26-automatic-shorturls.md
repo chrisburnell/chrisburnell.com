@@ -9,7 +9,8 @@ tags:
   - nunjucks
 ---
 
-<nav class=" [ box ] [ flow ] " style="margin-block-end: var(--size-large);">
+{#
+<nav class=" [ box ] [ flow ] " style="margin-block-end: var(--size-large);" hidden>
     <h2>Table of Contents</h2>
     <ol>
         <li>
@@ -27,6 +28,7 @@ tags:
         <li>Using RSS for ShortURL Redirection <small><em>(Coming soon…)</em></small></li>
     </ol>
 </nav>
+#}
 
 In 2019, I wrote about generating unique ShortURLs for each of my blog posts [using just Liquid templating](/article/liquid-base-60/). Back when we were beholden to just 140 characters to express ourselves, and before big silos took it upon themselves to generate their own ShortURLs, including a link on a social media post meant less room for your own thoughts. This catalysed an eruption of URL-shortening services, often putting an ad between visitors and their destination. Since I had discovered the IndieWeb, felt at home in its ecosystem, and despised the idea of putting barriers around my content—let alone someone else’s barriers—this motivated me to build my own.
 
@@ -447,8 +449,10 @@ I think the real heavy-lifting in this solution is in its use of the Sexagesimal
 
 That’s some longevity I can live with! <small>… and, presumably, die with!</small>
 
+{#
 ### What comes next?
 
 The next major step is to complement what we’ve built here with a website to handle redirecting ShortURLs to their respective blog posts.
 
 In an upcoming **Part Two**, we’ll dive deeper into how I built that for myself and how we can maintain a feeling of control over what we build by removing barriers to publishing through catering our code to our precise, personal needs.
+#}
