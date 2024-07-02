@@ -8,9 +8,9 @@ eleventyComputed:
   description: "{{ site.description | safe }}"
 redirect_from:
   - from: /colophon
-    to: /about/\#colophon
+    hash: colophon
   - from: /contact
-    to: /about/\#contact
+    hash: contact
 ---
 
 {% if author.employer.title != '' -%}

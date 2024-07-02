@@ -8,11 +8,11 @@ redirect_from:
   - /all
   - /all-posts
   - from: /categories
-    to: /posts/\#categories
+    hash: categories
   - from: /tags
-    to: /posts/\#tags
+    hash: tags
   - from: /latest
-    to: /posts/\#latest
+    hash: latest
 ---
 {%- from 'macros/deckItem.njk' import deckItem -%}
 {%- set collection = collections.posts -%}
