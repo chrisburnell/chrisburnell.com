@@ -134,6 +134,14 @@ export const removeStrikethrough = (string) => {
 
 /**
  * @param {string} string
+ * @returns {string}
+ */
+export const removeTrailingSlash = (string) => {
+	return string.replace(/\/$/g, "")
+}
+
+/**
+ * @param {string} string
  * @param {number} count
  * @param {boolean} [condition]
  * @returns {string}
@@ -263,6 +271,7 @@ export default {
 	decodeHTML,
 	replaceLineBreaks,
 	removeStrikethrough,
+	removeTrailingSlash,
 	maxWords,
 	maxChars,
 	numberStringFormat,
