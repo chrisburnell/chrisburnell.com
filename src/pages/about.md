@@ -12,14 +12,13 @@ redirect_from:
   - from: /contact
     hash: contact
 ---
-
+{% set last_updated = "2024-03-30T17:50:00+0800" -%}
 {% if author.employer.title != '' -%}
     {% include 'lfw.njk' %}
 {%- endif %}
 
 <p hidden><strong>I’ve got a <a href="https://chrisburnell.com/cv/">CV / resumé</a>, if that’s what you’re looking for.</strong></p>
 
-{% set last_updated = "2024-03-30T17:50:00+0800" -%}
 <p class=" [ center  inline-center ] "><strong>Last updated:</strong> <time datetime="{{ last_updated | rfc3339Date }}">{{ last_updated | friendlyDate | safe }}</time></p>
 
 <hr>

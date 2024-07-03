@@ -3,7 +3,13 @@ title: "/now"
 tagline: Now
 description: Stuff that I’m doing now (or at least recently)!
 toc: true
+redirect_from:
+  - from: /movies
+    hash: movies
+  - from: /tv
+    hash: tv
 ---
+{% set last_updated = '2024-05-24T16:51:44+0800' -%}
 {%- from 'macros/deckItem.njk' import deckItem -%}
 {%- from "macros/shelfItem.njk" import shelfItem -%}
 <div class=" [ box ] [ center ] " style="inline-size: var(--size-line-length); inline-size: fit-content; margin-block-end: var(--size-large); text-wrap: balance;">
@@ -12,7 +18,6 @@ toc: true
 
 <h2>Website Tinkering</h2>
 
-{% set last_updated = '2024-05-24T16:51:44+0800' -%}
 <p><strong>Last updated:</strong> <time datetime="{{ last_updated | rfc3339Date }}">{{ last_updated | friendlyDate | safe }} @ {{ last_updated | friendlyTime | safe }}</time></p>
 
 <p>You can read more things I’d like to work on <a href="/ideas/">my /ideas page</a>, which is kind of like my To-do list for this website.</p>

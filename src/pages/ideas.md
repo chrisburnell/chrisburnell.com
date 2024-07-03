@@ -6,8 +6,8 @@ toc: true
 redirect_from:
   - /todo
 ---
-
 {% set last_updated = '2024-05-24T16:51:44+0800' -%}
+
 <p><strong>Last updated:</strong> <time datetime="{{ last_updated | rfc3339Date }}">{{ last_updated | friendlyDate | safe }} @ {{ last_updated | friendlyTime | safe }}</time></p>
 
 ## Posts
