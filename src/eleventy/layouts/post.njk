@@ -1,13 +1,16 @@
 ---
 layout: base
 ---
+{% if show_reading_length -%}
+	{% set content_wordcount = content | cleanTagsForWordcount | striptags | safe | wordcount | toNearest(25, true) | numberStringFormat %}
+{%- endif -%}
 <article {% if not content.length %}id="content"{% endif %} class=" [ pantheon{% if full %}  full{% endif %} ] [ wrap ] [ post h-{{ mf_root }} ] {% if perch %}[ perch ] {% endif %}">
 	<ul class=" [ cluster ] [ breadcrumbs ] " data-pagefind-ignore>
 		<li><a href="/posts/">All Posts</a></li><li><a href="/{{ categoryPlural | default(category) }}/">{{ categoryProperPlural | default(categoryPlural) | default(category) | title }}</a></li>
 	</ul>
 
-	<div class=" [ context ] " data-pagefind-ignore>
-		<p>
+	<div class=" [ context ] [ flow ] ">
+		<p data-pagefind-ignore>
 			{%- if rsvp %}
 				This <a href="/rsvps/" class=" [ u-category ] ">RSVP</a>
 			{%- else %}
@@ -25,10 +28,13 @@ layout: base
 				{%- endif %}
 				was published on <time datetime="{{ date | rfc3339Date }}" class=" [ dt-published ] ">{{ date | friendlyDateLong | safe }}</time>{% if updated %}, last updated on <time datetime="{{ updated | rfc3339Date }}" class=" [ dt-updated ] ">{{ updated | friendlyDateLong | safe }}</time>{% endif %}
 			{%- endif %}
-			{%- if show_reading_length -%}
-				{{ ',' if updated }} and has ~{{ content | cleanTagsForWordcount | striptags | safe | wordcount | toNearest(25, true) | numberStringFormat }} words
+			{%- if content_wordcount -%}
+				{{ ',' if updated }} and has ~{{ content_wordcount }} words
 			{%- endif -%}.
 		</p>
+		{% if 'rss-only' in tags -%}
+			<p>It’s also part of <a href="https://daverupert.com/rss-club/" rel="external noopener">RSS Club</a>, rewarding folks who use RSS to consume content! These posts are hidden from my regular post feed and appear only in my RSS feed for a period of time.</p>
+		{%- endif %}
 	</div>
 
 	<h1 id="title" class=" [ title{% if title_error %} title--negative{% elif title_success %} title--positive{% endif %} ] {{ '[ visually-hidden ] ' if not title and not of_title }}" style="view-transition-name: title-{{ page.fileSlug }};">

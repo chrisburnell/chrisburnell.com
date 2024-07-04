@@ -20,10 +20,10 @@
 				<time datetime="{{ rsvp.end | rfc3339Date }}" class=" [ dt-end ] ">{% if rsvp.date | friendlyDate != rsvp.end | friendlyDate %}{{ rsvp.end | friendlyDate | safe }} @ {% endif %}{{ rsvp.end | friendlyTime | safe }}</time>
 			</li>
 		{% endif %}
-		{% if show_reading_length %}
+		{% if content_wordcount %}
 			<li class=" [ reading-length ] ">
 				<c-emoji>📚</c-emoji>
-				<strong>~{{ content | cleanTagsForWordcount | striptags | safe | wordcount | toNearest(25, true) | numberStringFormat }}</strong>
+				<strong>~{{ content_wordcount }}</strong>
 				<small>words</small>
 			</li>
 		{% endif %}
