@@ -1,4 +1,3 @@
-
 export default {
 	permalink: "/like/{{ page.fileSlug }}/index.html",
 	list: "deck",

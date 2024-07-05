@@ -1,4 +1,3 @@
-
 export default {
 	permalink: "video/{{ page.fileSlug }}/",
 	list: "shelf",

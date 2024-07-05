@@ -1,4 +1,3 @@
-
 export default {
 	permalink: "/book/{{ page.fileSlug }}/index.html",
 	list: "shelf",

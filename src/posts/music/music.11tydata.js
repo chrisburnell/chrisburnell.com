@@ -1,4 +1,3 @@
-
 export default {
 	permalink: "music/{{ page.fileSlug }}/",
 	list: "shelf",

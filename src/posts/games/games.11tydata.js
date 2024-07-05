@@ -1,4 +1,3 @@
-
 export default {
 	permalink: "game/{{ page.fileSlug }}/",
 	list: "shelf",

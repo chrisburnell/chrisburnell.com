@@ -1,4 +1,3 @@
-
 export default {
 	permalink: "recipe/{{ page.fileSlug }}/",
 	list: "deck",

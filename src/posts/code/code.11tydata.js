@@ -1,4 +1,3 @@
-
 export default {
 	permalink: "code/{{ page.fileSlug }}/",
 	list: "deck",

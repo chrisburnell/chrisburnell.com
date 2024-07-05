@@ -1,8 +1,16 @@
 {
   "name": "chrisburnell",
   "version": "4.0.8",
-  "type": "module",
   "description": "Some real sweet codestuffs.",
+  "license": "CC-BY-NC-SA-4.0",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:chrisburnell/chrisburnell.com.git"
+  },
+  "homepage": "https://chrisburnell.com",
+  "bugs": {
+    "url": "https://github.com/chrisburnell/chrisburnell.com/issues"
+  },
   "author": "Chris Burnell <me@chrisburnell.com>",
   "contributors": [
     {
@@ -12,29 +20,28 @@
       "mastodon": "@chrisburnell@repc.co"
     }
   ],
-  "license": "CC-BY-NC-SA-4.0",
-  "homepage": "https://chrisburnell.com",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:chrisburnell/chrisburnell.com.git"
+  "private": true,
+  "main": "index.html",
+  "scripts": {
+    "build": "cross-env NODE_OPTIONS=--max-old-space-size=8192 npx @11ty/eleventy",
+    "build-production": "npm run setup; cross-env NODE_OPTIONS=--max-old-space-size=8192 GENERATE_OG_IMAGES=true npx @11ty/eleventy",
+    "check-datetimes": "npx @chrisburnell/check-invalid-datetimes _site",
+    "check-links": "npx check-html-links _site",
+    "clean": "npx rimraf .cache && npx rimraf _site",
+    "cli": "node cli/index.js wizard",
+    "create-search-index": "npx pagefind --site \"_site\" --glob \"**/*.html\"",
+    "css": "npx sass src/css:_site/css --style=compressed --no-source-map --color",
+    "debug": "cross-env NODE_OPTIONS=--max-old-space-size=8192 DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
+    "lint": "npx eslint src/**/*.js",
+    "now": "cross-env NODE_OPTIONS=--max-old-space-size=8192 npx @11ty/eleventy --ignore-initial --incremental --serve",
+    "postcss": "npx postcss _site/css/**/*.css --replace --no-map",
+    "pregenerate": "npm run setup; cross-env NODE_OPTIONS=--max-old-space-size=8192 PREGENERATE_IMAGES=true npx @11ty/eleventy",
+    "prettier": "npx prettier --write src",
+    "setup": "npm run tokens; npm run prettier; npx browserslist@latest --update-db; npm run css",
+    "start": "cross-env NODE_OPTIONS=--max-old-space-size=8192 npx @11ty/eleventy --incremental --serve",
+    "tokens": "npx json-to-scss './src/eleventy/data/designTokens/*.json' ./src/css/generated/_design-tokens.scss; npx prettier --write src/css/generated/_design-tokens.scss"
   },
-  "bugs": {
-    "url": "https://github.com/chrisburnell/chrisburnell.com/issues"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.5.0",
-    "@inquirer/checkbox": "^2.3.6",
-    "@inquirer/prompts": "^5.0.6",
-    "@inquirer/select": "^2.3.6",
-    "check-html-links": "^0.2.4",
-    "commander": "^12.1.0",
-    "cross-env": "^7.0.3",
-    "eslint": "^9.5.0",
-    "json-to-scss": "^1.6.2",
-    "pagefind": "^1.1.0",
-    "prettier": "^3.3.2",
-    "rimraf": "^5.0.7"
-  },
+  "keywords": [],
   "dependencies": {
     "@11ty/eleventy": "^3.0.0-alpha.14",
     "@11ty/eleventy-fetch": "^4.0.1",
@@ -47,6 +54,7 @@
     "@11ty/eleventy-plugin-webc": "^0.11.2",
     "@11ty/is-land": "^4.0.0",
     "@chrisburnell/bowhead": "^0.3.4",
+    "@chrisburnell/check-invalid-datetimes": "^0.0.4",
     "@chrisburnell/cow-pen": "^0.0.4",
     "@chrisburnell/eleventy-cache-webmentions": "^2.0.6",
     "@chrisburnell/event-countdown": "^1.0.0",
@@ -60,8 +68,8 @@
     "@chrisburnell/theme-selector": "^1.0.1",
     "@daviddarnes/link-peek": "^1.1.0",
     "@daviddarnes/storage-form": "^2.0.1",
-    "@dotenvx/dotenvx": "^1.0.0",
-    "@mdn/browser-compat-data": "^5.5.34",
+    "@dotenvx/dotenvx": "^1.5.0",
+    "@mdn/browser-compat-data": "^5.5.36",
     "@remy/webmention": "^1.5.0",
     "@sindresorhus/slugify": "^2.2.1",
     "@tweetback/canonical": "^2.0.41",
@@ -79,11 +87,11 @@
     "dotenv": "^16.4.5",
     "download-stats": "^0.3.4",
     "eleventy-plugin-og-image": "^4.0.0-beta.7",
-    "esbuild": "^0.21.5",
+    "esbuild": "^0.23.0",
     "fast-glob": "^3.3.2",
     "fast-xml-parser": "^4.4.0",
     "fs-extra": "^11.2.0",
-    "globals": "^15.6.0",
+    "globals": "^15.8.0",
     "he": "^1.2.0",
     "html-minifier": "^4.0.0",
     "lite-youtube-embed": "^0.3.2",
@@ -91,8 +99,8 @@
     "markdown-it": "^14.1.0",
     "markdown-it-abbr": "^2.0.0",
     "markdown-it-footnote": "^4.0.0",
-    "natural": "^7.0.6",
-    "postcss": "^8.4.38",
+    "natural": "^7.0.7",
+    "postcss": "^8.4.39",
     "postcss-cli": "^11.0.0",
     "postcss-scss": "^4.0.9",
     "random-case": "^1.0.0",
@@ -102,22 +110,19 @@
     "truncate-html": "^1.1.1",
     "utopia-core-scss": "^1.0.1"
   },
-  "scripts": {
-    "clean": "npx rimraf .cache && npx rimraf _site",
-    "check-links": "npx check-html-links _site",
-    "lint": "npx eslint src/**/*.js",
-    "prettier": "npx prettier --write src",
-    "tokens": "npx json-to-scss './src/eleventy/data/designTokens/*.json' ./src/css/generated/_design-tokens.scss; npx prettier --write src/css/generated/_design-tokens.scss",
-    "css": "npx sass src/css:_site/css --style=compressed --no-source-map --color",
-    "postcss": "npx postcss _site/css/**/*.css --replace --no-map",
-    "create-search-index": "npx pagefind --site \"_site\" --glob \"**/*.html\"",
-    "debug": "cross-env NODE_OPTIONS=--max-old-space-size=8192 DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
-    "start": "cross-env NODE_OPTIONS=--max-old-space-size=8192 npx @11ty/eleventy --incremental --serve",
-    "now": "cross-env NODE_OPTIONS=--max-old-space-size=8192 npx @11ty/eleventy --ignore-initial --incremental --serve",
-    "build": "cross-env NODE_OPTIONS=--max-old-space-size=8192 npx @11ty/eleventy",
-    "setup": "npm run tokens; npm run prettier; npx browserslist@latest --update-db; npm run css",
-    "build-production": "npm run setup; cross-env NODE_OPTIONS=--max-old-space-size=8192 GENERATE_OG_IMAGES=true npx @11ty/eleventy",
-    "pregenerate": "npm run setup; cross-env NODE_OPTIONS=--max-old-space-size=8192 PREGENERATE_IMAGES=true npx @11ty/eleventy",
-    "cli": "node cli/index.js wizard"
-  }
+  "devDependencies": {
+    "@eslint/js": "^9.6.0",
+    "@inquirer/checkbox": "^2.3.10",
+    "@inquirer/prompts": "^5.1.2",
+    "@inquirer/select": "^2.3.10",
+    "check-html-links": "^0.2.4",
+    "commander": "^12.1.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^9.6.0",
+    "json-to-scss": "^1.6.2",
+    "pagefind": "^1.1.0",
+    "prettier": "^3.3.2",
+    "rimraf": "^5.0.7"
+  },
+  "type": "module"
 }

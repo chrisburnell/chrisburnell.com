@@ -1,4 +1,3 @@
-
 export default {
 	permalink: "beer/{{ page.fileSlug }}/",
 	list: "shelf",

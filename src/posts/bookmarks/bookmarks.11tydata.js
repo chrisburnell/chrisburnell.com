@@ -1,4 +1,3 @@
-
 export default {
 	permalink: "bookmark/{{ page.fileSlug }}/",
 	list: "deck",

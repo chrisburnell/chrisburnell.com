@@ -152,6 +152,8 @@ export const getPropertyLabel = (data) => {
 			labelPrefix = "Also on"
 		} else if (data.listen_of) {
 			labelPrefix = "Find out where to listen with"
+		} else if (data.play_of) {
+			labelPrefix = "See more on"
 		}
 		return `${labelPrefix} ${getPropertyTitle(data) || getSyndicationTitle(getPropertyURL(data))}`
 	}
