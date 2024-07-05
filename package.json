@@ -54,7 +54,7 @@
     "@11ty/eleventy-plugin-webc": "^0.11.2",
     "@11ty/is-land": "^4.0.0",
     "@chrisburnell/bowhead": "^0.3.4",
-    "@chrisburnell/check-invalid-datetimes": "^0.0.5",
+    "@chrisburnell/check-invalid-datetimes": "^0.0.7",
     "@chrisburnell/cow-pen": "^0.0.4",
     "@chrisburnell/eleventy-cache-webmentions": "^2.0.6",
     "@chrisburnell/event-countdown": "^1.0.0",
