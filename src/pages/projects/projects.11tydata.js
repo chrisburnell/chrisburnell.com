@@ -58,6 +58,8 @@ export default {
 					} else if (stargazers > 0) {
 						description += "."
 					}
+				} else {
+					description += "."
 				}
 			}
 			return description
