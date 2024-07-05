@@ -22,6 +22,10 @@ tags:
 
 <code>&lt;instant-photo&gt;</code> is a native Web Component that presents an image as if it’s a developing/developed instant photograph, and includes a set of styles to give it a decent appearance out of the box.
 
+## Installation
+
+{% include 'installation.njk' %}
+
 ## Usage
 
 You can begin using the <code>&lt;instant-photo&gt;</code> Web Component by including a <code>&lt;script&gt;</code> tag in your HTML, with the component itself wrapping a <code>&lt;img&gt;</code>:

@@ -20,6 +20,10 @@ tags:
 
 <code>&lt;theme-selector&gt;</code> is a native Web Component that adds functionality on top of the native HTML <code>&lt;select&gt;</code> element that adds the ability for to set a user-preferred theme across your website that persists between pages and visits by saving the choice in local storage.
 
+## Installation
+
+{% include 'installation.njk' %}
+
 ## Usage
 
 You can begin using the <code>&lt;theme-selector&gt;</code> Web Component by including a <code>&lt;script&gt;</code> tag in your HTML, with the component itself wrapping a <code>&lt;select&gt;</code> element containing an <code>&lt;option&gt;</code> for each of the themes you want to provide to the user:

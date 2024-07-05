@@ -29,6 +29,10 @@ tags:
 
 [Check out the demo page.](https://chrisburnell.github.io/relative-time/demo.html)
 
+## Installation
+
+{% include 'installation.njk' %}
+
 ## Usage
 
 You start using the <code>&lt;relative-time&gt;</code> Web Component by including a <code>&lt;script&gt;</code> tag in your HTML:

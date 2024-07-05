@@ -6,6 +6,7 @@ photo:
 emoji: 💬
 github: chrisburnell/eleventy-cache-webmentions
 branch: main
+dev: true
 npm: "@chrisburnell/eleventy-cache-webmentions"
 license: MIT
 tags:

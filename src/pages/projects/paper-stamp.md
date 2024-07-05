@@ -27,6 +27,10 @@ tags:
 
 [Check out the demo page.](https://chrisburnell.github.io/paper-stamp/demo.html)
 
+## Installation
+
+{% include 'installation.njk' %}
+
 ## Usage
 
 ### General usage example

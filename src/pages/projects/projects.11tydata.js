@@ -38,16 +38,50 @@ export default {
 			return data.description || ""
 		},
 		descriptionLong: async (data) => {
+			let description = data.description || ""
+			if (data.github) {
+				const github = await githubData(data.github)
+				const stargazers = github["stargazers_count"]
+				description = github["description"]
+				if (stargazers > 0) {
+					description += `<br>There ${stargazers > 1 ? "are" : "is"} ${numberStringFormat(stargazers)} stargazer${stargazers > 1 ? "s" : ""} <a href="https://github.com/${data.github}" rel="external noopener">on GitHub</a>`
+				}
+				if (data.npm) {
+					const downloads = await npmDownloads(data.npm, github["created_at"])
+					if (downloads >= 50) {
+						if (stargazers > 0) {
+							description += " and it "
+						} else {
+							description += "<br>It "
+						}
+						description += `has over ${numberStringFormat(toNearest(downloads, 50, true))} downloads <a href="https://www.npmjs.com/package/${data.npm}" rel="external noopener">on npm</a>.`
+					} else if (stargazers > 0) {
+						description += "."
+					}
+				}
+			}
+			return description
+
+
+
+			if (data.npm) {
+
+
+			} else {
+				description += "."
+			}
+
+
 			if (data.github && data.npm) {
 				const github = await githubData(data.github)
 				const downloads = await npmDownloads(data.npm, github["created_at"])
 				let description = `${github["description"]}<br>`
 				if (github["stargazers_count"] > 0) {
-					description += `There ${github["stargazers_count"] > 1 ? "are" : "is"} ${numberStringFormat(github["stargazers_count"])} stargazer${github["stargazers_count"] > 1 ? "s" : ""} <a href="https://github.com/${data.github}" rel="external noopener">on GitHub</a> and it`
-				} else {
-					description += `It`
+					description += `There ${github["stargazers_count"] > 1 ? "are" : "is"} ${numberStringFormat(github["stargazers_count"])} stargazer${github["stargazers_count"] > 1 ? "s" : ""} <a href="https://github.com/${data.github}" rel="external noopener">on GitHub</a>${downloads >= 50 ? " and " : "."}`
 				}
-				description += ` has over ${numberStringFormat(toNearest(downloads, 50, true))} downloads <a href="https://www.npmjs.com/package/${data.npm}" rel="external noopener">on npm</a>.`
+				if (downloads >= 50) {
+					description += `${github["stargazers_count"] > 0 ? "" : "It "}has over ${numberStringFormat(toNearest(downloads, 50, true))} downloads <a href="https://www.npmjs.com/package/${data.npm}" rel="external noopener">on npm</a>.`
+				}
 				return description
 			}
 			return data.description || ""

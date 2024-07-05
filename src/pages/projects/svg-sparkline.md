@@ -50,6 +50,10 @@ syndicate_to:
 	</article>
 </div>
 
+## Installation
+
+{% include 'installation.njk' %}
+
 ## Usage
 
 You can begin using the <code>&lt;svg-sparkline&gt;</code> Web Component by including a <code>&lt;script&gt;</code> tag in your HTML and setting a <code>values</code> attribute containing comma-separated numbers to build into a sparkline:
