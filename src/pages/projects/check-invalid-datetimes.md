@@ -7,7 +7,6 @@ dev: true
 npm: "@chrisburnell/check-invalid-datetimes"
 license: MIT
 tags:
-  - eleventy
   - javascript
   - package
 ---
