@@ -9,8 +9,7 @@ cover: hypnospace-outlaw.png
 cover_position: left 30% top 0
 console: PC
 authors:
-  - title: No More Robots
-    url: https://nomorerobots.io
+  - title: Tendershoot
 ---
 
 As someone who grew up on the internet and loved exploring the web from as early as ~1998, *Hypnospace Outlaw* was an absolute trip, and I enjoyed the game deeply. Since the beginning of 2024 or so, I’ve been diving down rabbit holes chasing the nostalgia of the early web, and this game scratches that itch so damn well.
