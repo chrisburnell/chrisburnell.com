@@ -8,6 +8,7 @@ og_image: /images/avatar@2x.jpeg
 toc: true
 redirect_from:
   - /resume
+  - /work
 ---
 
 {% if author.employer.title != '' -%}

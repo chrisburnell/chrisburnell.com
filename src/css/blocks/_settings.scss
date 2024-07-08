@@ -4,6 +4,9 @@
 ////
 
 .popover-settings {
+	max-block-size: 100vb;
+	max-block-size: 100dvb;
+
 	[id="sounds-toggle"] {
 		color: inherit !important; // override themes
 	}
@@ -75,13 +78,23 @@
 // Align settings
 .popover-settings form {
 	display: grid;
-	grid-template-columns: max-content auto;
 	place-items: center;
 	gap: 1em;
 
+	@include cqi(null, "small") {
+		grid-template-columns: max-content auto;
+	}
+
 	label {
 		inline-size: 100%;
-		text-align: end;
+
+		@include cqi(null, null, "small") {
+			text-align: start;
+		}
+
+		@include cqi(null, "small") {
+			text-align: end;
+		}
 	}
 
 	select,
