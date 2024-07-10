@@ -3,19 +3,20 @@ title: Stats
 description: Numbers, cause why not?
 excludeFromSearch: true
 ---
+{%- set all_posts = collections.posts | rssOnlyFilter -%}
+{%- set blog_posts = collections.blogPosts | rssOnlyFilter -%}
 
-{%- set collection = collections.posts | rssOnlyFilter -%}
-{%- set count = collection.length -%}
-{%- set latest_year = collection[0].data.year | default(collection[0].year) -%}
-{%- set first_year = collection[count-1].data.year | default(collection[count-1].year) -%}
+{%- set count = all_posts.length -%}
+{%- set latest_year = all_posts[0].data.year | default(all_posts[0].year) -%}
+{%- set first_year = all_posts[count-1].data.year | default(all_posts[count-1].year) -%}
 
-{%- set latest_post = collections.blogPosts | first -%}
-{%- set first_post = collections.blogPosts | last -%}
+{%- set latest_post = blog_posts | first -%}
+{%- set first_post = blog_posts | last -%}
 
 {%- set wordiest_post_index = 0 -%}
 {%- set wordiest_blog_post = 0 -%}
 {%- set blog_wordcount = 0 -%}
-{%- for item in collections.blogPosts | rssOnlyFilter -%}
+{%- for item in blog_posts -%}
 	{%- set wordCount = item.content | cleanTagsForWordcount | striptags | safe | wordcount -%}
 	{%- set blog_wordcount = blog_wordcount + wordCount -%}
 	{%- if wordCount > wordiest_blog_post -%}
@@ -27,7 +28,7 @@ excludeFromSearch: true
 {%- set blog_count = 0 -%}
 {%- set blog_count_highest_per_year = 0 -%}
 {%- for i in range(first_year, latest_year + 1) -%}
-	{%- set count = collections.blogPosts | rssOnlyFilter | getCollectionCountByYear(i) -%}
+	{%- set count = blog_posts | getCollectionCountByYear(i) -%}
 	{%- set blog_count = blog_count + count -%}
 	{%- if count > blog_count_highest_per_year -%}
 		{%- set blog_count_highest_per_year = count -%}
@@ -36,7 +37,7 @@ excludeFromSearch: true
 
 {%- set blog_count_highest_per_weekday = 0 -%}
 {%- for weekday in ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] -%}
-	{%- set count = collections.blogPosts | rssOnlyFilter | getCollectionCountByWeekday(weekday) -%}
+	{%- set count = blog_posts | getCollectionCountByWeekday(weekday) -%}
 	{%- if count > blog_count_highest_per_weekday -%}
 		{%- set blog_count_highest_per_weekday = count -%}
 	{%- endif -%}
@@ -59,12 +60,12 @@ excludeFromSearch: true
 {%- endfor -%}
 
 {%- set first_commit = repository.information.created_at | epoch -%}
-{%- set days_since_first_commit = (global.nowEpoch - first_commit) / 86400002 -%}
+{%- set days_since_first_commit = (global.nowEpoch - first_commit) | msToDays -%}
 {%- set commits_per_day = repository.contributors[0].contributions / days_since_first_commit -%}
 
 <dl>
 	<dt>№ Posts</dt>
-	<dd>{{ collection.length | numberStringFormat }}</dd>
+	<dd>{{ all_posts.length | numberStringFormat }}</dd>
 	<dt>№ Blog Posts <a href="#fn1" id="fnref1"><sup class="footnote-ref">[1]</sup></a></dt>
 	<dd>{{ blog_count | numberStringFormat }}</dd>
 	<dt>First Blog Post</dt>
@@ -74,7 +75,7 @@ excludeFromSearch: true
 	<dt>Blog Word Count</dt>
 	<dd>{{ blog_wordcount | numberStringFormat }}</dd>
 	<dt>Most Verbose</dt>
-	<dd><a href="{{ collections.blogPosts[wordiest_post_index].url }}">{{ collections.blogPosts[wordiest_post_index].data.title }}</a> <small>with</small> {{ wordiest_blog_post | numberStringFormat }} words</dd>
+	<dd><a href="{{ blog_posts[wordiest_post_index].url }}">{{ blog_posts[wordiest_post_index].data.title }}</a> <small>with</small> {{ wordiest_blog_post | numberStringFormat }} words</dd>
 	<dt>№ Projects</dt>
 	<dd><a href="/projects/">{{ (projects.web.length + projects.personal.length + collections.projects.length) | numberStringFormat }}</a></dd>
 	<dt>№ Blogs in my Blogroll</dt>
@@ -89,14 +90,14 @@ excludeFromSearch: true
 
 <h2>Blog Posts</h2>
 
-<div class=" [ grid  center ] " style="--grid-min-inline-size: 100%;">{% sparkline collections.blogPosts, first_year, false %}</div>
+<div class=" [ grid  center ] " style="--grid-min-inline-size: 100%;">{% sparkline blog_posts, first_year, false %}</div>
 
 <c-details open="true" force-close="(max-width: 850px)" force-restore>
 	<summary>Blog Posts by year</summary>
 	<table style="border-block-start: 0; font-size: var(--font-size-small);">
 		<tbody>
 			{% for i in range(first_year, global.currentYear + 1) -%}
-				{% set count = collections.blogPosts | rssOnlyFilter | getCollectionCountByYear(i) -%}
+				{% set count = blog_posts | getCollectionCountByYear(i) -%}
 				<tr>
 					<th style="white-space: nowrap;">{{ i }}</th>
 					<td class=" [ numeral  strong ] " style="padding-inline-start: 1lh; padding-inline-end: var(--size-medium);">{{ count }}</td>
@@ -112,7 +113,7 @@ excludeFromSearch: true
 {#
 <c-details open="true" force-close="(max-width: 850px)" force-restore>
 	<summary>Blog Posts by weekday</summary>
-	{% set blog_posts_by_weekday = [{ label: 'Monday', count: (collections.blogPosts | rssOnlyFilter | getCollectionCountByWeekday('Monday')) }, { label: 'Tuesday', count: (collections.blogPosts | rssOnlyFilter | getCollectionCountByWeekday('Tuesday')) }, { label: 'Wednesday', count: (collections.blogPosts | rssOnlyFilter | getCollectionCountByWeekday('Wednesday')) }, { label: 'Thursday', count: (collections.blogPosts | rssOnlyFilter | getCollectionCountByWeekday('Thursday')) }, { label: 'Friday', count: (collections.blogPosts | rssOnlyFilter | getCollectionCountByWeekday('Friday')) }, { label: 'Saturday', count: (collections.blogPosts | rssOnlyFilter | getCollectionCountByWeekday('Saturday')) }, { label: 'Sunday', count: (collections.blogPosts | rssOnlyFilter | getCollectionCountByWeekday('Sunday')) }] -%}
+	{% set blog_posts_by_weekday = [{ label: 'Monday', count: (blog_posts | getCollectionCountByWeekday('Monday')) }, { label: 'Tuesday', count: (blog_posts | getCollectionCountByWeekday('Tuesday')) }, { label: 'Wednesday', count: (blog_posts | getCollectionCountByWeekday('Wednesday')) }, { label: 'Thursday', count: (blog_posts | getCollectionCountByWeekday('Thursday')) }, { label: 'Friday', count: (blog_posts | getCollectionCountByWeekday('Friday')) }, { label: 'Saturday', count: (blog_posts | getCollectionCountByWeekday('Saturday')) }, { label: 'Sunday', count: (blog_posts | getCollectionCountByWeekday('Sunday')) }] -%}
 	<c-stats-table items="{{ blog_posts_by_weekday | dump }}" style="border-block-start: 0;"></c-stats-table>
 </c-details>
 #}
@@ -122,7 +123,7 @@ excludeFromSearch: true
 	<table style="border-block-start: 0; font-size: var(--font-size-small);">
 		<tbody>
 			{% for weekday in ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] -%}
-				{% set count = collections.blogPosts | rssOnlyFilter | getCollectionCountByWeekday(weekday) -%}
+				{% set count = blog_posts | getCollectionCountByWeekday(weekday) -%}
 				<tr>
 					<th style="white-space: nowrap;">{{ weekday }}</th>
 					<td class=" [ numeral  strong ] " style="padding-inline-start: 1lh; padding-inline-end: var(--size-medium);">{{ count }}</td>

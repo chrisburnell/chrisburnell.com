@@ -121,6 +121,14 @@ export const sortByDate = (array) => {
 }
 
 /**
+ * @param {number} value
+ * @returns {number}
+ */
+export const msToDays = (value) => {
+	return value / 1000 / 60 / 60 / 24
+}
+
+/**
  * @param {string} value
  * @returns {boolean}
  */
@@ -134,14 +142,6 @@ export const isPast = (value) => {
  */
 export const isFuture = (value) => {
 	return nowEpoch < epoch(value)
-}
-
-/**
- * @param {number} value
- * @returns {number}
- */
-const msToDays = (value) => {
-	return value / 1000 / 60 / 60 / 24
 }
 
 /**
@@ -349,6 +349,7 @@ export default {
 	epoch,
 	dateSort,
 	sortByDate,
+	msToDays,
 	isPast,
 	isFuture,
 	isUpcoming,
