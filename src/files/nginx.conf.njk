@@ -6,6 +6,7 @@ rewrite ^/{{ category.plural }}/([a-z0-9]+(?:-[a-z0-9]+)*)/?$ /{{ category.title
 
 # Category Redirects
 rewrite ^/bookshelf/?$ /books/ redirect;
+rewrite ^/code-demos/?$ /code/ redirect;
 
 # Tag Redirects
 rewrite ^/tag/a11y/?$ /tag/accessibility/ permanent;

@@ -20,10 +20,16 @@
       "mastodon": "@chrisburnell@repc.co"
     }
   ],
-  "funding": {
-    "type": "buymeacoffee",
-    "url": "https://buymeacoffee.com/chrisburnell"
-  },
+  "funding": [
+    {
+      "type": "buymeacoffee",
+      "url": "https://buymeacoffee.com/chrisburnell"
+    },
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/chrisburnell"
+    }
+  ],
   "private": true,
   "main": "index.html",
   "scripts": {
