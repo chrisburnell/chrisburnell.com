@@ -810,6 +810,12 @@ export default [
 		rss: "https://danleatherman.com/feed.xml",
 		mastodon: "danleatherman@mastodon.design",
 	},
+	{
+		title: "11ty Blog",
+		url: "https://www.11ty.dev/blog",
+		rss: "https://www.11ty.dev/blog/feed.xml",
+		mastodon: "eleventy@fosstodon.org",
+	},
 ].sort((a, b) => {
 	return a.title.localeCompare(b.title)
 })
