@@ -1,6 +1,5 @@
 ---
 title: "&lt;event-countdown&gt;"
-description: A Web Component to display an event countdown.
 github: chrisburnell/event-countdown
 branch: main
 npm: "@chrisburnell/event-countdown"

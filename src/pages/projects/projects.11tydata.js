@@ -31,18 +31,20 @@ export default {
 			return data.tagline || data.title || ""
 		},
 		description: async (data) => {
-			if (data.github) {
+			if (data.description) {
+				return data.description
+			} else if (data.github) {
 				const github = await githubData(data.github)
 				return github["description"]
 			}
-			return data.description || ""
+			return ""
 		},
 		descriptionLong: async (data) => {
 			let description = data.description || ""
 			if (data.github) {
 				const github = await githubData(data.github)
 				const stargazers = github["stargazers_count"]
-				description = github["description"]
+				description = data.description || github["description"]
 				if (stargazers > 0) {
 					description += `<br>There ${stargazers > 1 ? "are" : "is"} ${numberStringFormat(stargazers)} stargazer${stargazers > 1 ? "s" : ""} <a href="https://github.com/${data.github}" rel="external noopener">on GitHub</a>`
 				}

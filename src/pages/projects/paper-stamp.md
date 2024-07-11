@@ -1,6 +1,5 @@
 ---
 title: "&lt;paper-stamp&gt;"
-description: A Web Component to display an img as a paper stamp.
 github: chrisburnell/paper-stamp
 branch: main
 npm: "@chrisburnell/paper-stamp"
