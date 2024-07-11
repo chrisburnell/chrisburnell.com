@@ -77,7 +77,7 @@ const wizard = async () => {
 
 program
 	.command("wizard")
-	.description("🧙 Speak, friend, and enter")
+	.description("🧙 Speak friend and enter")
 	.action(() => wizard())
 
 program
