@@ -53,7 +53,7 @@
 			{%- endif %}
 			{% set to_escape -%}
 				<hr>
-				<p>Thanks for subscribing and reading this post via RSS! {% if item.data.tags and 'rss-only' in item.data.tags %}This post is part of RSS Club, which means it appears only in my RSS feeds for a certain period of time.{% endif %}</p>
+				<p>Thanks for subscribing and reading this post via RSS!{% if item.data.tags and 'rss-only' in item.data.tags %} This post is part of <a href="https://daverupert.com/rss-club/">RSS Club</a>, which means it appears only in my RSS feeds for a certain period of time.{% endif %}</p>
 				<p>You can read <a href="{{ item.data.canonical }}">this post</a> and others <a href="https://chrisburnell.com/posts/">on my website</a>.</p>
 			{%- endset %}{{ to_escape | escape }}
 		</content>
