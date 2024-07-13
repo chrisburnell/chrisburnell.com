@@ -6,7 +6,7 @@ toc: true
 redirect_from:
   - /todo
 ---
-{% set last_updated = '2024-05-24T16:51:44+0800' -%}
+{% set last_updated = '2024-07-13T14:00:53+0800' -%}
 
 <p><strong>Last updated:</strong> <time datetime="{{ last_updated | rfc3339Date }}">{{ last_updated | friendlyDate | safe }} @ {{ last_updated | friendlyTime | safe }}</time></p>
 
@@ -31,12 +31,10 @@ redirect_from:
 
 ## Eleventy Build
 
-- *[WIP — to be finished]* figure out how to manage "RSS-only" posts (that become visible on the site after `site.limits.recentDays`)
 - work out how to feature more tags/collections in the post meta description (alongside `writing`-tagged posts)
 - use new eleventy-img transform instead of image shortcode
     - keep an eye on performance here
-- pull data out of fathom analytics for page popularity
-- pull in cover images for:
+- use APIs to pull in cover images for:
     - books
     - music albums
     - movies & TV shows

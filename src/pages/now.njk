@@ -9,7 +9,7 @@ redirect_from:
   - from: /tv
     hash: tv
 ---
-{% set last_updated = '2024-05-24T16:51:44+0800' -%}
+{% set last_updated = '2024-07-13T14:01:13+0800' -%}
 {%- from 'macros/deckItem.njk' import deckItem -%}
 {%- from "macros/shelfItem.njk" import shelfItem -%}
 <div class=" [ box ] [ center ] " style="inline-size: var(--size-line-length); inline-size: fit-content; margin-block-end: var(--size-large); text-wrap: balance;">
@@ -32,12 +32,10 @@ redirect_from:
 <h3 id="website-admin">Website Admin</h3>
 
 <ul>
-	<li><em>[WIP — to be finished]</em> figure out how to manage "RSS-only" posts (that become visible on the site after <code>site.limits.recentDays</code>)</li>
 	<li>work out how to feature more tags/collections in the post meta description (alongside `writing`-tagged posts)</li>
 	<li>explore using the new <code>eleventy-img</code> transform function instead of my image shortcode</li>
 	<li>finish transcript for <q>Middle Out in CSS</q></li>
-	<li>pull data out of fathom analytics for page popularity instead of WMs</li>
-	<li>pull in cover images for:
+	<li>use APIs to pull in cover images for:
 		<ul>
 			<li>books</li>
 			<li>music albums</li>
