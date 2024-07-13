@@ -61,7 +61,7 @@
 		{% elif nofollow -%}
 		<meta name="robots" content="nofollow">
 		{% endif -%}
-		<!-- The URL -->
+
 		<link rel="canonical" href="{{ canonical }}">
 		{% if previous_post -%}
 		<link rel="prev" href="{{ site.url + previous_post.url }}">
@@ -70,7 +70,10 @@
 		<link rel="next" href="{{ site.url + next_post.url }}">
 		{%- endif %}
 
-		<!-- OpenGraph Microdata -->
+		{# Fediverse -#}
+		<meta property="fediverse:creator" content="@chrisburnell@repc.co">
+
+		{# OpenGraph Microdata -#}
 		{% if mf_root == 'review' -%}
 		<meta property="og:type" content="review">
 		{%- elif layout == 'post' -%}
