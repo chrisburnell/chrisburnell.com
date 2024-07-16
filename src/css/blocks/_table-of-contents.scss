@@ -5,7 +5,7 @@
 ////
 
 .toc {
-	margin-block-start: var(--size-gap);
+	padding-block: var(--size-gap);
 
 	@media print {
 		display: none;
