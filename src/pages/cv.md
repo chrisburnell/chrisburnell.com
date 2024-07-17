@@ -171,7 +171,7 @@ Launched a web development blog and have published [{{ collections.projects.leng
 </c-details>
 
 <nav class=" [ grid ] [ navigator ] " style="margin-block-start: 1em;">
-    <a href="https://chrisburnell.com/posts/" class=" [ button  button--small ] ">Read more of my posts</a>
+    <a href="https://chrisburnell.com/posts/" class=" [ button ] " style="font-size: 1rem;">Read more of my posts</a>
 </nav>
 
 <hr style="--rule-space: var(--size-large);">
@@ -202,7 +202,7 @@ Author of numerous open-source software packages, accumulating over {{ total_dow
 </c-details>
 
 <nav class=" [ grid ] [ navigator ] " style="margin-block-start: 1em;">
-    <a href="https://chrisburnell.com/projects/" class=" [ button  button--small ] ">See more of my projects</a>
+    <a href="https://chrisburnell.com/projects/" class=" [ button ] " style="font-size: 1rem;">See more of my projects</a>
 </nav>
 
 {#
