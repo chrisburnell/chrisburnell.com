@@ -63,6 +63,10 @@
 		{% endif -%}
 
 		<link rel="canonical" href="{{ canonical }}">
+		{% if category and not category.title -%}
+			{%- set previous_post = collections[category] | arrayKeyIncludes('data.tags', 'post') | arePublished | rssOnlyFilter | getPreviousCollectionItem(page) -%}
+			{%- set next_post = collections[category] | arrayKeyIncludes('data.tags', 'post') | arePublished | rssOnlyFilter | getNextCollectionItem(page) -%}
+		{%- endif -%}
 		{% if previous_post -%}
 		<link rel="prev" href="{{ site.url + previous_post.url }}">
 		{%- endif %}
