@@ -73,6 +73,25 @@ emoji: 🗜
 			<option value="cqmax">Container Maximum (cqmax)</opton>
 		</select>
 	</fieldset>
+	<details id="optional-rounding" class=" [ no-border  no-padding ] " style="grid-column: span 2;">
+		<summary>Optional: Rounding</summary>
+		<div class=" [ grid ] " data-layout="50-50">
+			<fieldset class=" [ clamp-calculator__fieldset ] ">
+				<label for="rounding-strategy" class=" [ center  delta ] ">Rounding Strategy</label>
+				<select id="rounding-strategy" class=" [ center  monospace ] " style="inline-size: 100%; padding-block: 0.86rem;" lang="en">
+					<option value="none" selected data-default="true">None</opton>
+					<option value="up">Up</opton>
+					<option value="down">Down</opton>
+					<option value="nearest">Nearest</opton>
+					<option value="to-zero">To Zero</opton>
+				</select>
+			</fieldset>
+			<fieldset class=" [ clamp-calculator__fieldset ] ">
+				<label for="rounding-value" class=" [ center  delta ] ">Rounding Value</label>
+				<input id="rounding-value" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="text" lang="en" value="0.5em" data-default="0.5em" disabled></input>
+			</fieldset>
+		</div>
+	</details>
 	<fieldset class=" [ grid  navigator ] " style="grid-column: span 2;">
 		<button style="--button-min-inline-size: 10em;" type="submit">Calculate</button>
 		<button style="--button-min-inline-size: 10em; background-color: color-mix(in oklab, var(--color-maple), var(--color-mineshaft) 40%);" type="reset">Reset</button>
@@ -95,7 +114,7 @@ emoji: 🗜
 			<span>Clamped Size: 16–18px</span>
 			<div class="size-example" style="margin-block-start: 0.5rem; inline-size: 1em; block-size: 1em;"></div>
 		</li>
-		<li id="visual-calculated">
+		<li id="visual-calculated" class="requires-js">
 			<span>Current Size: 16px<span>
 		</li>
 		<li id="visual-viewport" class="requires-js">

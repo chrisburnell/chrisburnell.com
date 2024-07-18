@@ -11,6 +11,8 @@ class ClampCalculator {
 			"viewport-max": null,
 			"viewport-units": null,
 			"font-size-root": null,
+			"rounding-strategy": null,
+			"rounding-value": null,
 		}
 
 		this.init()
@@ -40,29 +42,45 @@ class ClampCalculator {
 	 * Perform the necessary calculations and pump the results into the DOM.
 	 */
 	calculate() {
+		const sizeMin = this.inputs["size-min"].value
+		const sizeMax = this.inputs["size-max"].value
+		const viewportMin = this.inputs["viewport-min"].value
+		const viewportMax = this.inputs["viewport-max"].value
+		const fontSizeRoot = this.inputs["font-size-root"].value
 		const viewportUnits = this.inputs["viewport-units"].value
-		const change = (this.inputs["size-max"].value - this.inputs["size-min"].value) / (this.inputs["viewport-max"].value - this.inputs["viewport-min"].value)
+		const roundingStrategy = this.inputs["rounding-strategy"].value
+		const roundingValue = this.inputs["rounding-value"].value
 
-		const preferredSizePixels = this.maxDecimals(this.inputs["size-max"].value - this.inputs["viewport-max"].value * change)
-		const preferredSize = this.toRem(this.inputs["size-max"].value - this.inputs["viewport-max"].value * change, this.inputs["font-size-root"].value)
+		const change = (sizeMax - sizeMin) / (viewportMax - viewportMin)
+
+		const preferredSizePixels = this.maxDecimals(sizeMax - viewportMax * change)
+		const preferredSize = this.toRem(sizeMax - viewportMax * change, fontSizeRoot)
 		const variableSize = this.maxDecimals(change * 100)
 
-		this.output.value = `clamp(${this.toRem(this.inputs["size-min"].value, this.inputs["font-size-root"].value)}rem, ${preferredSize}rem + ${variableSize}${viewportUnits}, ${this.toRem(this.inputs["size-max"].value, this.inputs["font-size-root"].value)}rem)`
+		const computedMin = this.toRem(sizeMin, fontSizeRoot)
+		const computedMax = this.toRem(sizeMax, fontSizeRoot)
 
-		this.visual.style.fontSize = `${this.inputs["font-size-root"].value}px`
-		this.visualOutput.style.fontSize = `clamp(${this.toRem(this.inputs["size-min"].value, this.inputs["font-size-root"].value)}em, ${preferredSize}em + ${variableSize}${viewportUnits}, ${this.toRem(this.inputs["size-max"].value, this.inputs["font-size-root"].value)}em)`
+		let computedValue = `clamp(${computedMin}rem, ${preferredSize}rem + ${variableSize}${viewportUnits}, ${computedMax}rem)`
+		if (roundingStrategy !== "none") {
+			computedValue = `clamp(${computedMin}rem, round(${roundingStrategy !== "nearest" ? `${roundingStrategy}, ` : ""}${preferredSize}rem + ${variableSize}${viewportUnits}, ${roundingValue}), ${computedMax}rem)`
+		}
 
-		this.visualRoot.querySelector("span").innerText = `Root Size: ${this.inputs["font-size-root"].value}px`
-		this.visualOutput.querySelector("span").innerText = `Clamped Size: ${this.inputs["size-min"].value}–${this.inputs["size-max"].value}px`
+		this.output.value = computedValue
+		this.visualOutput.style.fontSize = computedValue
 
-		this.howRoot.innerHTML = `${this.inputs["font-size-root"].value}px`
+		this.visual.style.fontSize = `${fontSizeRoot}px`
+
+		this.visualRoot.querySelector("span").innerText = `Root Size: ${fontSizeRoot}px`
+		this.visualOutput.querySelector("span").innerText = `Clamped Size: ${sizeMin}–${sizeMax}px`
+
+		this.howRoot.innerHTML = `${fontSizeRoot}px`
 
 		this.howX.innerHTML = `Change = (sizeMax - sizeMin) / (viewportMax - viewportMin)
-Change = (${this.inputs["size-max"].value}px - ${this.inputs["size-min"].value}px) / (${this.inputs["viewport-max"].value}px - ${this.inputs["viewport-min"].value}px)
+Change = (${sizeMax}px - ${sizeMin}px) / (${viewportMax}px - ${viewportMin}px)
 Change = ${this.maxDecimals(change, 5)}`
 
 		this.howA.innerHTML = `A = sizeMax - viewportMax * Change
-A = ${this.inputs["size-max"].value}px - ${this.inputs["viewport-max"].value}px * ${this.maxDecimals(change, 5)}
+A = ${sizeMax}px - ${viewportMax}px * ${this.maxDecimals(change, 5)}
 A = ${preferredSizePixels}px = ${preferredSize}rem`
 
 		this.howB.innerHTML = `B = 100${viewportUnits} * Change
@@ -70,18 +88,18 @@ B = 100${viewportUnits} * ${this.maxDecimals(change, 5)}
 B = ${variableSize}${viewportUnits}`
 
 		this.howResult.innerHTML = `Result = clamp(sizeMin, A + B, sizeMax)
-Result = clamp(${this.toRem(this.inputs["size-min"].value, this.inputs["font-size-root"].value)}rem, ${preferredSize}rem + ${variableSize}${viewportUnits}, ${this.toRem(this.inputs["size-max"].value, this.inputs["font-size-root"].value)}rem)`
+Result = ${computedValue}`
 
 		this.howCheck.innerHTML = `A + B = ${preferredSize}rem + ${variableSize}${viewportUnits}
 A + B = ${preferredSizePixels}px + ${variableSize}${viewportUnits}
 
-Minimum Size ≈ ${preferredSizePixels}px + (${this.maxDecimals(change, 5)} * ${this.inputs["viewport-min"].value}px)
-Minimum Size ≈ ${preferredSizePixels}px + ${this.maxDecimals(change, 5) * this.inputs["viewport-min"].value}px
-Minimum Size ≈ ${this.maxDecimals(this.inputs["size-max"].value - this.inputs["viewport-max"].value * change + change * this.inputs["viewport-min"].value)}px
+Minimum Size ≈ ${preferredSizePixels}px + (${this.maxDecimals(change, 5)} * ${viewportMin}px)
+Minimum Size ≈ ${preferredSizePixels}px + ${this.maxDecimals(change, 5) * viewportMin}px
+Minimum Size ≈ ${this.maxDecimals(sizeMax - viewportMax * change + viewportMin * change)}px
 
-Maximum Size ≈ ${preferredSizePixels}px + (${this.maxDecimals(change, 5)} * ${this.inputs["viewport-max"].value}px)
-Maximum Size ≈ ${preferredSizePixels}px + ${this.maxDecimals(change, 5) * this.inputs["viewport-max"].value}px
-Maximum Size ≈ ${this.maxDecimals(this.inputs["size-max"].value - this.inputs["viewport-max"].value * change + change * this.inputs["viewport-max"].value)}px`
+Maximum Size ≈ ${preferredSizePixels}px + (${this.maxDecimals(change, 5)} * ${viewportMax}px)
+Maximum Size ≈ ${preferredSizePixels}px + ${this.maxDecimals(change, 5) * viewportMax}px
+Maximum Size ≈ ${this.maxDecimals(sizeMax - viewportMax * change + viewportMax * change)}px`
 
 		this.measureViewport()
 	}
@@ -92,6 +110,19 @@ Maximum Size ≈ ${this.maxDecimals(this.inputs["size-max"].value - this.inputs[
 	measureViewport() {
 		this.visualCalculated.querySelector("span").innerText = `Current Size: ${this.maxDecimals(this.visualOutput.querySelector(".size-example").getBoundingClientRect().width, 3)}px`
 		this.visualViewport.querySelector("span").innerText = `Viewport Size: ${window.innerWidth}px × ${window.innerHeight}px`
+	}
+
+	/**
+	 * Update the location history based on form values.
+	 */
+	updateHistory() {
+		if (this.inputs["rounding-strategy"].value !== "none") {
+			this.inputs["rounding-value"].removeAttribute("disabled")
+			history.replaceState({}, document.title, `${location.protocol}//${location.host}${location.pathname}?font-size-root=${this.inputs["font-size-root"].value}&size-min=${this.inputs["size-min"].value}&size-max=${this.inputs["size-max"].value}&viewport-min=${this.inputs["viewport-min"].value}&viewport-max=${this.inputs["viewport-max"].value}&viewport-units=${this.inputs["viewport-units"].value}&rounding-strategy=${this.inputs["rounding-strategy"].value}&rounding-value=${this.inputs["rounding-value"].value}`)
+		} else {
+			this.inputs["rounding-value"].disabled = true
+			history.replaceState({}, document.title, `${location.protocol}//${location.host}${location.pathname}?font-size-root=${this.inputs["font-size-root"].value}&size-min=${this.inputs["size-min"].value}&size-max=${this.inputs["size-max"].value}&viewport-min=${this.inputs["viewport-min"].value}&viewport-max=${this.inputs["viewport-max"].value}&viewport-units=${this.inputs["viewport-units"].value}`)
+		}
 	}
 
 	/**
@@ -107,10 +138,21 @@ Maximum Size ≈ ${this.maxDecimals(this.inputs["size-max"].value - this.inputs[
 			}
 		})
 
+		if (this.inputs["rounding-strategy"].value !== "none") {
+			this.inputs["rounding-value"].removeAttribute("disabled")
+			document.getElementById("optional-rounding").open = true
+		}
+
 		this.inputs["viewport-units"].addEventListener("change", (event) => {
 			event.preventDefault()
 			this.calculate()
-			history.replaceState({}, document.title, `${location.protocol}//${location.host}${location.pathname}?font-size-root=${this.inputs["font-size-root"].value}&size-min=${this.inputs["size-min"].value}&size-max=${this.inputs["size-max"].value}&viewport-min=${this.inputs["viewport-min"].value}&viewport-max=${this.inputs["viewport-max"].value}&viewport-units=${this.inputs["viewport-units"].value}`)
+			this.updateHistory()
+		})
+
+		this.inputs["rounding-strategy"].addEventListener("change", (event) => {
+			event.preventDefault()
+			this.calculate()
+			this.updateHistory()
 		})
 
 		this.form = document.getElementById("clamp-calculator")
@@ -118,11 +160,12 @@ Maximum Size ≈ ${this.maxDecimals(this.inputs["size-max"].value - this.inputs[
 			event.preventDefault()
 			this.calculate()
 			this.output.focus()
-			history.replaceState({}, document.title, `${location.protocol}//${location.host}${location.pathname}?font-size-root=${this.inputs["font-size-root"].value}&size-min=${this.inputs["size-min"].value}&size-max=${this.inputs["size-max"].value}&viewport-min=${this.inputs["viewport-min"].value}&viewport-max=${this.inputs["viewport-max"].value}&viewport-units=${this.inputs["viewport-units"].value}`)
+			this.updateHistory()
 		})
 		this.form.addEventListener("reset", (event) => {
 			event.preventDefault()
 			this.inputs["viewport-units"].querySelector("[data-default]").selected = true
+			this.inputs["rounding-strategy"].querySelector("[data-default]").selected = true
 			Object.values(this.inputs)
 				.filter((element) => {
 					return element.localName === "input"
