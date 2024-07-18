@@ -11,6 +11,7 @@ import createArticle from "./commands/createArticle.js"
 import createBookmark from "./commands/createBookmark.js"
 import createLike from "./commands/createLike.js"
 import createNote from "./commands/createNote.js"
+import performChecks from "./commands/performChecks.js"
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -37,6 +38,11 @@ const wizard = async () => {
 		message: "What do you want to do?",
 		choices: [
 			{
+				name: "Perform Checks",
+				value: "checks",
+				description: "Check output for errors.",
+			},
+			{
 				name: "Create: Article",
 				value: "article",
 				description: "Create a new Article",
@@ -60,6 +66,9 @@ const wizard = async () => {
 	})
 
 	switch (type) {
+		case "checks":
+			performChecks()
+			break
 		case "article":
 			createArticle(__siteroot)
 			break
@@ -79,6 +88,11 @@ program
 	.command("wizard")
 	.description("🧙 Speak friend and enter")
 	.action(() => wizard())
+
+program
+	.command("checks")
+	.description("⚠️ Perform Checks")
+	.action(() => performChecks())
 
 program
 	.command("article")

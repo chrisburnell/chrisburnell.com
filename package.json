@@ -37,6 +37,7 @@
     "build-production": "npm run setup; cross-env NODE_OPTIONS=--max-old-space-size=8192 GENERATE_OG_IMAGES=true npx @11ty/eleventy",
     "check-datetimes": "npx @chrisburnell/check-invalid-datetimes _site",
     "check-links": "npx check-html-links _site",
+    "check": "node cli/index.js checks",
     "clean": "npx rimraf .cache && npx rimraf _site",
     "cli": "node cli/index.js wizard",
     "create-search-index": "npx pagefind --site \"_site\" --glob \"**/*.html\"",
