@@ -17,6 +17,9 @@
 		&:not(:last-child) {
 			&::after {
 				content: var(--delineator, "·");
+				// TODO Revisit when support for fallbacks is better.
+				// https://caniuse.com/mdn-css_types_attr_fallback
+				// content: var(--delineator, attr(data-delineator, "·"));
 				padding-inline: var(--padding-inline, var(--size-tiny-small));
 				font-size: var(--font-size, 1em);
 				font-weight: var(--font-weight, var(--font-weight-bold));
@@ -26,7 +29,6 @@
 	}
 
 	// TODO Not working
-	// Can also try using `var(--delineator, attr(data-delineator, "·"))` above
 	&[data-delineator] {
 		--delineator: attr(data-delineator);
 	}

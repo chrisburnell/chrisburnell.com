@@ -43,6 +43,8 @@ ol.default-list {
 	list-style: decimal;
 
 	// TODO Investigate custom properties (i.e. setting specific "type" of value)
+	// This is now possible with @property!
+	// https://developer.mozilla.org/en-US/docs/Web/CSS/@property
 	@for $i from 1 through 10 {
 		&[start="#{$i}"] {
 			counter-increment: ordered-list #{$i - 1} !important;
