@@ -67,7 +67,7 @@
     "@chrisburnell/bowhead": "^0.3.4",
     "@chrisburnell/check-invalid-datetimes": "^0.0.7",
     "@chrisburnell/cow-pen": "^0.0.4",
-    "@chrisburnell/eleventy-cache-webmentions": "^2.1.0-beta.1",
+    "@chrisburnell/eleventy-cache-webmentions": "^2.1.0-beta.2",
     "@chrisburnell/event-countdown": "^1.0.0",
     "@chrisburnell/inline-expand": "^0.0.2",
     "@chrisburnell/instant-photo": "^1.0.0",

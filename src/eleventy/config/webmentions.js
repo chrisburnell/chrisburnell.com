@@ -9,7 +9,7 @@ import blocklist from "./blocklist.js"
 
 export default Object.assign({}, defaults, {
 	domain: siteURL,
-	feed: `https://webmention.io/api/mentions.jf2?domain=${getHost(siteURL)}&token=${process.env.WEBMENTION_IO_TOKEN}&per-page=1000`,
+	feed: `https://webmention.io/api/mentions.jf2?domain=${getHost(siteURL)}&token=${process.env.WEBMENTION_IO_TOKEN}`,
 	key: "children",
 	// feed: `https://jam.chrisburnell.com/webmention/chrisburnell.com/${process.env.GO_JAMMING_TOKEN}`,
 	// key: "json",

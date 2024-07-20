@@ -7,11 +7,12 @@ import { program } from "commander"
 import path from "path"
 import { fileURLToPath } from "url"
 
+import checkDates from "./commands/checkDates.js"
+import checkLinks from "./commands/checkLinks.js"
 import createArticle from "./commands/createArticle.js"
 import createBookmark from "./commands/createBookmark.js"
 import createLike from "./commands/createLike.js"
 import createNote from "./commands/createNote.js"
-import performChecks from "./commands/performChecks.js"
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -38,9 +39,14 @@ const wizard = async () => {
 		message: "What do you want to do?",
 		choices: [
 			{
-				name: "Perform Checks",
-				value: "checks",
-				description: "Check output for errors.",
+				name: "Check: Dates",
+				value: "checkDates",
+				description: "Check for instances of `Invalid DateTime`.",
+			},
+			{
+				name: "Check: Links",
+				value: "checkLinks",
+				description: "Check for broken links/references.",
 			},
 			{
 				name: "Create: Article",
@@ -66,8 +72,11 @@ const wizard = async () => {
 	})
 
 	switch (type) {
-		case "checks":
-			performChecks()
+		case "checkDates":
+			checkDates()
+			break
+		case "checkLinks":
+			checkLinks()
 			break
 		case "article":
 			createArticle(__siteroot)
@@ -92,7 +101,12 @@ program
 program
 	.command("checks")
 	.description("⚠️ Perform Checks")
-	.action(() => performChecks())
+	.action(async () => {
+		await checkLinks()
+		// eslint-disable-next-line no-undef
+		console.log("")
+		await checkDates()
+	})
 
 program
 	.command("article")
