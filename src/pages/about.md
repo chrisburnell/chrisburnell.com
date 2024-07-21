@@ -17,7 +17,7 @@ redirect_from:
     {% include 'lfw.njk' %}
 {%- endif %}
 
-<p hidden><strong>I’ve got a <a href="https://chrisburnell.com/cv/">CV / resumé</a>, if that’s what you’re looking for.</strong></p>
+<p class=" [ center  inline-center ] "><a href="https://chrisburnell.com/cv/">CV / resumé</a></p>
 
 <p class=" [ center  inline-center ] "><strong>Last updated:</strong> <time datetime="{{ last_updated | rfc3339Date }}">{{ last_updated | friendlyDate | safe }}</time></p>
 
@@ -171,6 +171,8 @@ I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link
     <dl>
         <dt><c-emoji style="margin-inline-end: 1ex;">📧</c-emoji>Email:</dt>
         <dd><a href="mailto:{{ author.email }}" class=" [ canada ] ">{{ author.email }}</a></dd>
+        <dt><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false" style="margin-inline-end: 1ex;"><use href="#svg--bluesky"></use></svg></c-emoji>Bluesky:</dt>
+        <dd><a href="https://bsky.app/profile/{{ author.bluesky }}" class=" [ canada ] " title="{{ author.name }} on Bluesky">{{ author.bluesky }}</a></dd>
         <dt><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false" style="margin-inline-end: 1ex;"><use href="#svg--discord"></use></svg></c-emoji>Discord:</dt>
         <dd><a href="https://discordapp.com/users/{{ author.discord_id }}" class=" [ canada ] " title="{{ author.name }} on Discord">{{ author.discord }}</a></dd>
         <dt><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false" style="margin-inline-end: 1ex;"><use href="#svg--mastodon"></use></svg></c-emoji>Mastodon:</dt>

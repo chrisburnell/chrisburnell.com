@@ -14,7 +14,7 @@ description: Find me all over the web (mostly)!
 			</a>
 		</h1>
 	</article>
-	<article class=" [ flow ] " hidden>
+	<article class=" [ flow ] ">
 		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://bsky.app' | urlencode }}/" class=" [ avatar ] " width="30" height="30" loading="lazy" decoding="async">
 		<h1>
 			<a href="https://bsky.app/profile/{{ author.bluesky }}" rel="external noopener">
@@ -144,16 +144,18 @@ description: Find me all over the web (mostly)!
 			</a>
 		</h1>
 	</article>
-	<article class=" [ flow ] " hidden>
-		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://spotify.com' | urlencode }}/" class=" [ avatar ] " width="30" height="30" loading="lazy" decoding="async">
-		<h1>
-			<a href="https://open.spotify.com/user/{{ author.spotify }}" rel="external noopener">
-				Spotify
-				<br>
-				<small>{{ author.name }}</small>
-			</a>
-		</h1>
-	</article>
+	{#
+		<article class=" [ flow ] ">
+			<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://spotify.com' | urlencode }}/" class=" [ avatar ] " width="30" height="30" loading="lazy" decoding="async">
+			<h1>
+				<a href="https://open.spotify.com/user/{{ author.spotify }}" rel="external noopener">
+					Spotify
+					<br>
+					<small>{{ author.name }}</small>
+				</a>
+			</h1>
+		</article>
+	#}
 	<article class=" [ flow ] ">
 		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://untappd.com' | urlencode }}/" class=" [ avatar ] " width="30" height="30" loading="lazy" decoding="async">
 		<h1>

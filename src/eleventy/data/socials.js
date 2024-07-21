@@ -1,10 +1,14 @@
-import { codepen, discord_id, eleventy, github, lastfm, linkedin, mastodon, mastodon_domain, nintendo, npm, speakerdeck, spotify, untappd, xmpp } from "./author.js"
+import { bluesky, codepen, discord_id, eleventy, github, lastfm, linkedin, mastodon, mastodon_domain, nintendo, npm, speakerdeck, spotify, untappd, xmpp } from "./author.js"
 
 export default [
 	{
 		title: "RSS",
 		url: "/feed.xml",
 		show: true,
+	},
+	{
+		title: "Bluesky",
+		url: `https://bsky.app/profile/${bluesky}`,
 	},
 	{
 		title: "CodePen",
