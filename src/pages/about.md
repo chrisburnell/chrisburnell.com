@@ -17,7 +17,7 @@ redirect_from:
     {% include 'lfw.njk' %}
 {%- endif %}
 
-<p class=" [ center  inline-center ] "><a href="https://chrisburnell.com/cv/">CV / resumé</a></p>
+<p class=" [ center  inline-center ] "><a href="https://chrisburnell.com/cv/" class=" [ button ] ">CV / Resumé</a></p>
 
 <p class=" [ center  inline-center ] "><strong>Last updated:</strong> <time datetime="{{ last_updated | rfc3339Date }}">{{ last_updated | friendlyDate | safe }}</time></p>
 
