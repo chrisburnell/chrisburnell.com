@@ -1,4 +1,4 @@
-import { bluesky, codepen, discord_id, eleventy, github, lastfm, linkedin, mastodon, mastodon_domain, nintendo, npm, speakerdeck, spotify, untappd, xmpp } from "./author.js"
+import { bluesky, boardgamegeek, codepen, discord_id, eleventy, github, lastfm, linkedin, mastodon, mastodon_domain, nintendo, npm, speakerdeck, spotify, untappd, xmpp } from "./author.js"
 
 export default [
 	{
@@ -9,6 +9,10 @@ export default [
 	{
 		title: "Bluesky",
 		url: `https://bsky.app/profile/${bluesky}`,
+	},
+	{
+		title: "BoardGameGeek",
+		url: `https://boardgamegeek.com/user/${boardgamegeek}`,
 	},
 	{
 		title: "CodePen",
