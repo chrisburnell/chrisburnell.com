@@ -816,6 +816,12 @@ export default [
 		rss: "https://www.11ty.dev/blog/feed.xml",
 		mastodon: "eleventy@fosstodon.org",
 	},
+	{
+		title: "Lindsay Wardell",
+		url: "https://www.lindsaykwardell.com",
+		rss: "https://www.lindsaykwardell.com/rss.xml",
+		mastodon: "lindsaykwardell@mastodon.social",
+	},
 ].sort((a, b) => {
 	return a.title.localeCompare(b.title)
 })
