@@ -114,6 +114,7 @@
     "postcss": "^8.4.39",
     "postcss-cli": "^11.0.0",
     "postcss-scss": "^4.0.9",
+    "prettier-plugin-jinja-template": "^1.4.1",
     "random-case": "^1.0.0",
     "sass": "^1.77.8",
     "striptags": "^3.2.0",

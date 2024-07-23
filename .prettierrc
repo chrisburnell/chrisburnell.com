@@ -2,6 +2,9 @@
 	"semi": false,
 	"printWidth": 9999,
 	"tabWidth": 4,
+	"plugins": [
+		"prettier-plugin-jinja-template"
+	],
 	"overrides": [
 		{
 			"files": "*.json",
