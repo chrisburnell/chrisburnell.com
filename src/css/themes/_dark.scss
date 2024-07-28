@@ -4,10 +4,12 @@
 ////
 
 @mixin theme-dark() {
-	--color-shadow: var(--color-shadow-dark);
+	& {
+		--color-shadow: var(--color-shadow-dark);
 
-	scrollbar-color: h(raven) h(mineshaft);
-	color-scheme: dark;
+		scrollbar-color: h(raven) h(mineshaft);
+		color-scheme: dark;
+	}
 
 	&:is(body),
 	&:is(html) body,

@@ -4,11 +4,13 @@
 ////
 
 @mixin theme-matrix() {
-	--raven-lightness: 60.6%;
-	--raven-chroma: 0.082;
-	--raven-hue: 142.62;
+	& {
+		--raven-lightness: 60.6%;
+		--raven-chroma: 0.082;
+		--raven-hue: 142.62;
 
-	@include setup-raven-colors;
+		@include setup-raven-colors;
+	}
 
 	.logo,
 	.perch::after {

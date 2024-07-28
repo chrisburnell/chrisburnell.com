@@ -822,6 +822,12 @@ export default [
 		rss: "https://www.lindsaykwardell.com/rss.xml",
 		mastodon: "lindsaykwardell@mastodon.social",
 	},
+	{
+		title: "Leilukin's Hub",
+		url: "https://leilukin.com",
+		rss: "https://leilukin.com/feed.xml",
+		mastodon: "leilukin@mstdn.social",
+	},
 ].sort((a, b) => {
 	return a.title.localeCompare(b.title)
 })

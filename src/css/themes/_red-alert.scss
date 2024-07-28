@@ -4,11 +4,13 @@
 ////
 
 @mixin theme-red-alert() {
-	--raven-lightness: 54.3%;
-	--raven-chroma: 0.076;
-	--raven-hue: 26.565;
+	& {
+		--raven-lightness: 54.3%;
+		--raven-chroma: 0.076;
+		--raven-hue: 26.565;
 
-	@include setup-raven-colors;
+		@include setup-raven-colors;
+	}
 
 	.logo,
 	.perch::after {

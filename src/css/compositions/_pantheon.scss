@@ -68,7 +68,7 @@
 	&:has(.toc) {
 		@include cqi(null, "large") {
 			@media screen {
-				--indent-size: 18rem;
+				--indent-size: var(--size-aside);
 				--outdent-gap: 0;
 				--outdent-size: 0;
 			}
