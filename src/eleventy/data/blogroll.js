@@ -95,7 +95,7 @@ export default [
 		title: "Alistair Shepherd",
 		url: "https://alistairshepherd.uk",
 		rss: "https://alistairshepherd.uk/feed.xml",
-		mastodon: "accudio@mastodon.scot",
+		mastodon: "accudio@front-end.social",
 	},
 	{
 		title: "Ben Myers",
