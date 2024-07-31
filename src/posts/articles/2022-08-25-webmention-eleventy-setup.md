@@ -1,5 +1,5 @@
 ---
-updated: 2024-01-14T03:45:00+0800
+updated: 2024-07-20T16:36:12+0800
 date: 2022-08-25T16:31:04+0100
 title: Webmention Setup for Eleventy
 description: Here’s a quick run-through of how I retrieve and use Webmentions with my Eleventy website.
@@ -48,7 +48,7 @@ require("dotenv").config()
 
 module.exports = Object.assign({}, defaults, {
 	domain: "https://EXAMPLE.COM",
-	feed: `https://webmention.io/api/mentions.jf2?domain=EXAMPLE.COM&token=${process.env.WEBMENTION_IO_TOKEN}&per-page=9001`,
+	feed: `https://webmention.io/api/mentions.jf2?domain=EXAMPLE.COM&token=${process.env.WEBMENTION_IO_TOKEN}`,
 	key: "children",
 })
 ```

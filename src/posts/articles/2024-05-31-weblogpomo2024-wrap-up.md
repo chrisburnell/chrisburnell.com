@@ -24,7 +24,7 @@ Even though I feel like I’ve broken the shackles of heavily-editing my posts b
 
 I feel really accomplished. *Really* accomplished and proud of the work that I put into this. As tired as I am now, I’m pretty confident that I’ll be participating again next year, although with perhaps a bit more planning ahead of time. Participating did a lot more for me than just add 31 new posts to the archives.
 
-- Got over my obsession with perfection and endless editing before publishing.
+- Got over my obsession with perfection and endless editing before publishing
 - Found myself looking forward to reading again every day
 - Made and documented numerous technical changes and improvements to my website
 - Finally got the idea for <code style="white-space: nowrap;">/interests</code> pages out into the wild and [made a directory](https://chrisburnell.github.io/interests-directory/) for folks to join

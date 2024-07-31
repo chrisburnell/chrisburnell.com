@@ -365,13 +365,37 @@ const pluginWebmentions = require("@chrisburnell/eleventy-cache-webmentions")
 module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(pluginWebmentions, {
 		domain: "https://example.com",
-		feed: `https://webmention.io/api/mentions.jf2?domain=example.com&per-page=9001&token=${process.env.WEBMENTION_IO_TOKEN}`,
-		key: "children"
+		feed: `https://webmention.io/api/mentions.jf2?domain=example.com&token=${process.env.WEBMENTION_IO_TOKEN}`,
+		key: "children",
 	})
 }
 ```
 
 If you want to use the JSON format instead, make sure that you replace `mentions.jf2` in the URL with `mentions.json` and change the value of the key from `children` to `links`.
+
+<h3 id="config-generator" class=" [ requires-js ] ">Config Generator</h3>
+
+<form id="config-form" class=" [ grid ] [ requires-js ] " data-layout="50-50" autocomplete="off">
+    <fieldset>
+        <label for="domain" class=" [ delta ] ">Domain</label>
+        <input id="domain" name="domain" type="url" value="https://example.com" class=" [ monospace ] " pattern="\S+\.\S+" required style="inline-size: 100%; line-height: 3;">
+    </fieldset>
+    <fieldset>
+        <label for="type" class=" [ delta ] ">JS Flavour</label>
+        <select id="type" name="type" style="inline-size: 100%; padding-block: 0.7rem;" lang="en">
+            <option selected>ESM</option>
+            <option>CommonJS</option>
+        </select>
+    </fieldset>
+</form>
+
+<pre class="language-javascript  requires-js"><code id="config-output" class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> defaults <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@chrisburnell/eleventy-cache-webmentions"</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> defaults<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+	<span class="token literal-property property">domain</span><span class="token operator">:</span> <span class="token string">"https://example.com"</span><span class="token punctuation">,</span>
+	<span class="token literal-property property">feed</span><span class="token operator">:</span> <span class="token string">"https://webmention.io/api/mentions.jf2?domain=example.com&amp;token=${process.env.WEBMENTION_IO_TOKEN}"</span><span class="token punctuation">,</span>
+	<span class="token literal-property property">key</span><span class="token operator">:</span> <span class="token string">"children"</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
 
 ## go-jamming
 
@@ -398,3 +422,48 @@ module.exports = function(eleventyConfig) {
 	})
 }
 ```
+
+<script>
+const addDefaultScheme = (input) => {
+	if (input.match(/^(?!https?:).+\..+/)) {
+		return `https://${input.replace(/\/$/, "")}`
+	}
+	return input.replace(/\/$/, "")
+}
+
+const getConfig = (outputElement, domainInput, type = "ESM") => {
+	if (!/\S+\.\S+/.test(domainInput)) {
+		return
+	}
+
+	const importStatement = type === "ESM"
+		? `<span class="token keyword">import</span> <span class="token punctuation">{</span> defaults <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@chrisburnell/eleventy-cache-webmentions"</span>`
+		: `<span class="token keyword">const</span> <span class="token punctuation">{</span> defaults <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"@chrisburnell/eleventy-cache-webmentions"</span><span class="token punctuation">)</span>`
+
+	const exportStatement = type === "ESM"
+		? `<span class="token keyword">export</span> <span class="token keyword">default</span>`
+		: `module<span class="token punctuation">.</span>exports <span class="token operator">=</span>`
+
+	const domain = addDefaultScheme(domainInput)
+
+	const hostname = new URL(domain).hostname
+
+	outputElement.innerHTML = `${importStatement}\n\n${exportStatement} Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> defaults<span class="token punctuation">,</span> <span class="token punctuation">{</span>\n\t<span class="token literal-property property">domain</span><span class="token operator">:</span> <span class="token string">"${domain}"</span><span class="token punctuation">,</span>\n\t<span class="token literal-property property">feed</span><span class="token operator">:</span> <span class="token string">"https://webmention.io/api/mentions.jf2?domain=${hostname}&amp;token=\${process.env.WEBMENTION_IO_TOKEN}"</span><span class="token punctuation">,</span>\n\t<span class="token literal-property property">key</span><span class="token operator">:</span> <span class="token string">"children"</span><span class="token punctuation">,</span>\n<span class="token punctuation">}</span><span class="token punctuation">)</span>`
+}
+
+const configForm = document.querySelector("#config-form")
+const inputDomain = document.querySelector("#domain")
+const selectType = document.querySelector("#type")
+const output = document.querySelector("#config-output")
+
+configForm.addEventListener("submit", (event) => {
+	event.preventDefault()
+	getConfig(output, inputDomain.value, selectType.value)
+})
+inputDomain.addEventListener("change", () => {
+	getConfig(output, inputDomain.value, selectType.value)
+})
+selectType.addEventListener("change", () => {
+	getConfig(output, inputDomain.value, selectType.value)
+})
+</script>
