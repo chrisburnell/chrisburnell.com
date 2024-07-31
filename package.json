@@ -54,7 +54,7 @@
   },
   "keywords": [],
   "dependencies": {
-    "@11ty/eleventy": "3.0.0-alpha.17",
+    "@11ty/eleventy": "^3.0.0-alpha.18",
     "@11ty/eleventy-fetch": "^4.0.1",
     "@11ty/eleventy-img": "^4.0.2",
     "@11ty/eleventy-plugin-bundle": "^2.0.2",
@@ -97,7 +97,7 @@
     "deepmerge": "^4.3.1",
     "dotenv": "^16.4.5",
     "download-stats": "^0.3.4",
-    "eleventy-plugin-og-image": "^4.0.0-beta.7",
+    "eleventy-plugin-og-image": "^4.0.0-beta.8",
     "esbuild": "^0.23.0",
     "fast-glob": "^3.3.2",
     "fast-xml-parser": "^4.4.1",
