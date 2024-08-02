@@ -181,23 +181,23 @@ Launched a web development blog and have published [{{ collections.projects.leng
     <small><strong>2013 – present</strong></small>
 </div>
 
-{% set total_downloads = 0 -%}
+{% set package_downloads = 0 -%}
 {% for project in collections.projects -%}
-    {% set total_downloads = total_downloads + (project.data.downloads | default(0)) -%}
+    {% set package_downloads = package_downloads + (project.data.downloads | default(0)) -%}
 {%- endfor -%}
 
-Author of numerous open-source software packages, accumulating over {{ total_downloads | toNearest(1000, true) | numberStringFormat }} downloads and having been used on many enterprise client websites across my professional career, including CSS libraries, design system tools, and native web components.
+Author of numerous open-source software packages, accumulating over {{ package_downloads | toNearest(1000, true) | numberStringFormat }} downloads and having been used on many enterprise client websites across my professional career, including CSS libraries, design system tools, and native web components.
 
 <c-details class="no-border" force-restore>
     <summary>Popular Projects</summary>
 
-- **[<c-emoji>💬</c-emoji>eleventy-cache-webmentions](https://chrisburnell.com/eleventy-cache-webmentions/)** <small>([>{{ '@chrisburnell/eleventy-cache-webmentions' | npmDownloads('2021-12-05') | toNearest(50, true) | numberStringFormat }} npm downloads](https://www.npmjs.com/package/@chrisburnell/eleventy-cache-webmentions) · [{{ 'chrisburnell/eleventy-cache-webmentions' | stargazers }} ★ on GitHub](https://github.com/chrisburnell/eleventy-cache-webmentions))</small><br>A plugin for the popular static site generator, [Eleventy](https://11ty.dev/), that allows the caching of Webmentions and makes them available to use throughout one’s website.
+- **[<c-emoji>💬</c-emoji>eleventy-cache-webmentions](https://chrisburnell.com/eleventy-cache-webmentions/)** <small>([>{{ '@chrisburnell/eleventy-cache-webmentions' | npmDownloads('2021-12-05') | toNearest(100, true) | numberStringFormat }} npm downloads](https://www.npmjs.com/package/@chrisburnell/eleventy-cache-webmentions) · [{{ 'chrisburnell/eleventy-cache-webmentions' | stargazers }} ★ on GitHub](https://github.com/chrisburnell/eleventy-cache-webmentions))</small><br>A plugin for the popular static site generator, [Eleventy](https://11ty.dev/), that allows the caching of Webmentions and makes them available to use throughout one’s website.
 
-- **[<c-emoji>🐋</c-emoji>Bowhead](https://chrisburnell.com/bowhead/)** <small>([>{{ '@chrisburnell/bowhead' | npmDownloads('2020-08-10') | toNearest(50, true) | numberStringFormat }} npm downloads](https://www.npmjs.com/package/@chrisburnell/bowhead) · [{{ 'chrisburnell/bowhead' | stargazers }} ★ on GitHub](https://github.com/chrisburnell/bowhead))</small><br>A SCSS framework for integrating design tokens into a CSS codebase with support for CSS Variables. This project has been a key component for 6 client websites during my time at Squiz.
+- **[<c-emoji>🐋</c-emoji>Bowhead](https://chrisburnell.com/bowhead/)** <small>([>{{ '@chrisburnell/bowhead' | npmDownloads('2020-08-10') | toNearest(100, true) | numberStringFormat }} npm downloads](https://www.npmjs.com/package/@chrisburnell/bowhead) · [{{ 'chrisburnell/bowhead' | stargazers }} ★ on GitHub](https://github.com/chrisburnell/bowhead))</small><br>A SCSS framework for integrating design tokens into a CSS codebase with support for CSS Variables. This project has been a key component for 6 client websites during my time at Squiz.
 
-- **[<c-emoji>📈</c-emoji>&lt;svg-sparkline&gt;](https://chrisburnell.com/svg-sparkline/)** <small>([>{{ '@chrisburnell/svg-sparkline' | npmDownloads('2024-01-21') | toNearest(50, true) | numberStringFormat }} npm downloads](https://www.npmjs.com/package/@chrisburnell/svg-sparkline) · [{{ 'chrisburnell/svg-sparkline' | stargazers }} ★ on GitHub](https://github.com/chrisburnell/svg-sparkline))</small><br>A Web Component for building an SVG Sparkline.
+- **[<c-emoji>📈</c-emoji>&lt;svg-sparkline&gt;](https://chrisburnell.com/svg-sparkline/)** <small>([>{{ '@chrisburnell/svg-sparkline' | npmDownloads('2024-01-21') | toNearest(100, true) | numberStringFormat }} npm downloads](https://www.npmjs.com/package/@chrisburnell/svg-sparkline) · [{{ 'chrisburnell/svg-sparkline' | stargazers }} ★ on GitHub](https://github.com/chrisburnell/svg-sparkline))</small><br>A Web Component for building an SVG Sparkline.
 
-- **[<c-emoji>🕦</c-emoji>&lt;relative-time&gt;](https://chrisburnell.com/relative-time/)** <small>([>{{ '@chrisburnell/relative-time' | npmDownloads('2024-04-12') | toNearest(50, true) | numberStringFormat }} npm downloads](https://www.npmjs.com/package/@chrisburnell/relative-time) · [{{ 'chrisburnell/relative-time' | stargazers }} ★ on GitHub](https://github.com/chrisburnell/relative-time))</small><br>A Web Component to display a relative time.
+- **[<c-emoji>🕦</c-emoji>&lt;relative-time&gt;](https://chrisburnell.com/relative-time/)** <small>([>{{ '@chrisburnell/relative-time' | npmDownloads('2024-04-12') | toNearest(100, true) | numberStringFormat }} npm downloads](https://www.npmjs.com/package/@chrisburnell/relative-time) · [{{ 'chrisburnell/relative-time' | stargazers }} ★ on GitHub](https://github.com/chrisburnell/relative-time))</small><br>A Web Component to display a relative time.
 
 </c-details>
 

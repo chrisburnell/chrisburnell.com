@@ -59,6 +59,11 @@ excludeFromSearch: true
 	{%- endif -%}
 {%- endfor -%}
 
+{% set package_downloads = 0 -%}
+{% for project in collections.projects -%}
+	{% set package_downloads = package_downloads + (project.data.downloads | default(0)) -%}
+{%- endfor -%}
+
 {%- set first_commit = repository.information.created_at | epoch -%}
 {%- set days_since_first_commit = (global.nowEpoch - first_commit) | msToDays -%}
 {%- set commits_per_day = repository.contributors[0].contributions / days_since_first_commit -%}
@@ -74,10 +79,12 @@ excludeFromSearch: true
 	<dd><a href="{{ latest_post | keyValue('url') }}">{{ latest_post | keyValue('data.title') | safe }}</a><br><time datetime="{{ latest_post | keyValue('data.date') | rfc3339Date | safe }}">{{ latest_post | keyValue('data.date') | friendlyDateLong | safe }}</time></dd>
 	<dt>Blog Word Count</dt>
 	<dd>{{ blog_wordcount | numberStringFormat }}</dd>
-	<dt>Most Verbose</dt>
+	<dt>Most Verbose Post</dt>
 	<dd><a href="{{ blog_posts[wordiest_post_index].url }}">{{ blog_posts[wordiest_post_index].data.title }}</a> <small>with</small> {{ wordiest_blog_post | numberStringFormat }} words</dd>
 	<dt>№ Projects</dt>
 	<dd><a href="/projects/">{{ (projects.web.length + projects.personal.length + collections.projects.length) | numberStringFormat }}</a></dd>
+	<dt>Total Project Downloads</dt>
+	<dd>{{ package_downloads | numberStringFormat }}</dd>
 	<dt>№ Blogs in my Blogroll</dt>
 	<dd><a href="/blogroll/">{{ blogroll | length | numberStringFormat }}</a></dd>
 	<dt>№ Webmentions Received</dt>
