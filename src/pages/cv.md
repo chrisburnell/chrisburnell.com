@@ -153,7 +153,7 @@ Passionate about the open web, having published over {{ technical_articles_count
     <p class="delta"><a href="https://chrisburnell.com/"><c-emoji><img src="{{ site.logo }}" class="brand-logo" width="24" height="24" alt="{{ site.title }}" loading="lazy" decoding="async"></c-emoji>chrisburnell.com</a></p>
 </div>
 
-Launched a web development blog and have published [{{ collections.projects.length + projects.web.length }} web projects](https://chrisburnell.com/projects/) and over [{{ collections.blogPosts | length | toNearest(5, true) }} blog posts](https://chrisburnell.com/blog/), which includes {{ technical_articles_count }} technical articles, {{ collections.css | length }} articles about CSS, {{ collections.javascript | length }} articles about JavaScript, and {{ collections.code | length }} code demos.
+Launched a web development blog and have published [{{ collections.projects.length + projects.web.length }} web projects](https://chrisburnell.com/projects/) and over [{{ collections.blogPosts | length | toNearest(5, true) }} blog posts](https://chrisburnell.com/blog/), including {{ technical_articles_count }} technical articles, {{ collections.css | length }} articles about CSS, {{ collections.javascript | length }} articles about JavaScript, and {{ collections.code | length }} code demos.
 
 <c-details class="no-border" force-restore>
     <summary>Popular Pages & Posts</summary>
