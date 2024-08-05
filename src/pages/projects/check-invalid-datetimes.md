@@ -23,6 +23,20 @@ Adapted from the [check-html-links package](https://www.npmjs.com/package/check-
 
 ## Usage
 
+### General
+
 ```bash
 npx @chrisburnell/check-invalid-datetimes _site
+```
+
+### Specific file types
+
+```bash
+npx @chrisburnell/check-invalid-datetimes --directory=_site --file-types=html,json
+```
+
+### Quiet mode
+
+```bash
+npx @chrisburnell/check-invalid-datetimes --directory=_site --quiet
 ```
