@@ -435,4 +435,14 @@ export default [
 		description: "Provides the ability to modify the size of a font as a numeric mulitplier of the font size.",
 		links: ["[Official Specification](https://www.w3.org/TR/css-fonts-3/#font-size-adjust-prop)", "[Page on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/font-size-adjust)"],
 	},
+	{
+		id: "css-anchor-positioning",
+		language: "css",
+		supports: "position-anchor: auto",
+		type: "properties",
+		key: "css-anchor-positioning",
+		title: "Anchor Positioning",
+		description: "Provides the ability to place elements anywhere on the page relative to an “anchor element”.",
+		links: ["[Official Specification](https://www.w3.org/TR/css-anchor-position-1/", "[Page on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/position-anchor)"],
+	},
 ]
