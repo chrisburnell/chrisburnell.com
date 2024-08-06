@@ -1,6 +1,7 @@
 ---
 date: 2024-07-10T15:04:01+0800
 title: Once Again Asking
+excerpt: I am once again asking for you to add times and timezones to your RSS feeds.
 tags:
   - rss-only
 og_image: /images/content/i-am-once-again-asking.jpg
