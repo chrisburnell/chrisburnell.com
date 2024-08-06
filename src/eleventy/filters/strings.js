@@ -211,19 +211,34 @@ export const markdownFormat = (string) => {
  */
 export const excerptize = (string, keepImages = false) => {
 	let $ = load(string.split("<!-- end excerpt -->")[0], null, false);
+	// Remove empty <p> elements
+	$("p").each(function () {
+		if ($(this).text().trim() === "") {
+			$(this).remove();
+		}
+	});
+	// Remove <iframe>, <script>, and <style> elements completely
 	$("iframe, script, style").remove();
+	// Optionally remove images and <figure> elements
 	if (!keepImages) {
 		const withoutImages = stripImages($.html());
 		$ = load(withoutImages, null, false);
 		$("figure").remove();
 	}
-	return $.html()
-		.replace(/<\/(p|blockquote)>(\s+)?<(p|blockquote)>/, "<br>")
-		.replace("<p></p>", "")
-		.replace("<p>", "")
-		.replace("</p>", "")
-		.replace("<blockquote>", "<q>")
-		.replace("</blockquote>", "</q>");
+	// Insert line breaks in between <p> and <blockquote> elements
+	$("p, blockquote").each(function () {
+		if (
+			$(this).next("p").length > 0 ||
+			$(this).next("blockquote").length > 0
+		) {
+			$(this).after("<br>");
+		}
+	});
+	// Remove <p> and <blockquote> elements but preserve the content
+	$("p, blockquote").each(function () {
+		$(this).replaceWith($(this).html());
+	});
+	return $.html();
 };
 
 /**
