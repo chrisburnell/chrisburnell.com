@@ -7,6 +7,7 @@ export default async (directory = "_site") => {
 	const siteDateTimesCheck = new checkInvalidDateTimes();
 	siteDateTimesCheck.setOptions({
 		directory: directory,
+		continueOnError: false,
 	});
 	await siteDateTimesCheck.run();
 };

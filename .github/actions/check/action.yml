@@ -1,0 +1,9 @@
+name: Check
+description: Perform checks
+
+runs:
+  using: composite
+  steps:
+    - name: Check DateTimes
+      run: npm run check-datetimes
+      shell: bash

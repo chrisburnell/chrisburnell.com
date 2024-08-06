@@ -118,6 +118,20 @@ program
 	});
 
 program
+	.command("checkDates")
+	.description("⚠️ Check DateTimes")
+	.action(async () => {
+		await checkDates();
+	});
+
+program
+	.command("checkLinks")
+	.description("⚠️ Check links for errors")
+	.action(async () => {
+		await checkLinks();
+	});
+
+program
 	.command("article")
 	.description("📝 Create a new Article")
 	.action(() => createArticle(__siteroot));

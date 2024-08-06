@@ -7,6 +7,7 @@ export default async (directory = "_site") => {
 	const siteLinksCheck = new CheckHtmlLinksCli();
 	siteLinksCheck.setOptions({
 		rootDir: directory,
+		continueOnError: false,
 	});
 	await siteLinksCheck.run();
 };
