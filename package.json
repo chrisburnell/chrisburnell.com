@@ -53,6 +53,7 @@
     "prettier": "npx prettier --write src",
     "setup": "npm run tokens; npm run prettier; npx browserslist@latest --update-db; npm run css",
     "start": "cross-env NODE_OPTIONS=--max-old-space-size=8192 npx @11ty/eleventy --incremental --serve",
+    "test": "node cli/index.js test",
     "tokens": "npx json-to-scss './src/eleventy/data/designTokens/*.json' ./src/css/generated/_design-tokens.scss; npx prettier --write src/css/generated/_design-tokens.scss"
   },
   "keywords": [],
@@ -68,7 +69,7 @@
     "@11ty/eleventy-plugin-webc": "^0.11.2",
     "@11ty/is-land": "^4.0.0",
     "@chrisburnell/bowhead": "^0.3.4",
-    "@chrisburnell/check-invalid-datetimes": "^0.0.12",
+    "@chrisburnell/check-invalid-datetimes": "^0.0.13",
     "@chrisburnell/cow-pen": "^0.0.4",
     "@chrisburnell/eleventy-cache-webmentions": "^2.1.2",
     "@chrisburnell/event-countdown": "^1.0.2",

@@ -13,6 +13,7 @@ import createArticle from "./commands/createArticle.js";
 import createBookmark from "./commands/createBookmark.js";
 import createLike from "./commands/createLike.js";
 import createNote from "./commands/createNote.js";
+import runTests from "./commands/runTests.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -68,6 +69,11 @@ const wizard = async () => {
 				value: "note",
 				description: "Create a new Note",
 			},
+			{
+				name: "Run Tests",
+				value: "test",
+				description: "Run tests against functionality",
+			},
 		],
 	});
 
@@ -89,6 +95,9 @@ const wizard = async () => {
 			break;
 		case "note":
 			createNote(__siteroot);
+			break;
+		case "test":
+			runTests();
 			break;
 	}
 };
@@ -127,5 +136,10 @@ program
 	.command("note")
 	.description("📝 Create a new Note")
 	.action(() => createNote(__siteroot));
+
+program
+	.command("test")
+	.description("🔨Run tests against functionality")
+	.action(() => runTests());
 
 program.parse();

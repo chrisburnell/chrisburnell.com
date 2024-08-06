@@ -81,7 +81,7 @@ export const supertitle = (string) => {
 export const cleanTags = (string) => {
 	const $ = load(string, null, false);
 	$("pre, form, link, s, script, style, .support, .palette").remove();
-	return $.html();
+	return $.html().trim();
 };
 
 /**
@@ -91,7 +91,7 @@ export const cleanTags = (string) => {
 export const cleanTagsForWordcount = (string) => {
 	const $ = load(cleanTags(string), null, false);
 	$("[data-skip-wordcount]").remove();
-	return $.html();
+	return $.html().trim();
 };
 
 /**
@@ -110,7 +110,7 @@ export const cleanTagsForRSS = (string) => {
 	attributes.forEach((attribute) => {
 		$(`[${attribute}]`).removeAttr(attribute);
 	});
-	return $.html();
+	return $.html().trim();
 };
 
 /**
@@ -137,7 +137,7 @@ export const stripImages = (string) => {
 	const $ = load(string, null, false);
 	$("picture, img").remove();
 	$("a:empty").remove();
-	return $.html();
+	return $.html().trim();
 };
 
 /**
@@ -155,7 +155,7 @@ export const replaceLineBreaks = (string, replacement = " ") => {
 export const removeStrikethrough = (string) => {
 	const $ = load(string, null, false);
 	$("s").remove();
-	return $.html();
+	return $.html().trim();
 };
 
 /**
@@ -308,12 +308,14 @@ export const vigenere = (
 
 export default {
 	conjunction,
+	disjunction,
 	supertitle,
 	cleanTags,
 	cleanTagsForWordcount,
 	cleanTagsForRSS,
 	encodeHTML,
 	decodeHTML,
+	stripImages,
 	replaceLineBreaks,
 	removeStrikethrough,
 	removeTrailingSlash,
