@@ -245,23 +245,4 @@ The other values (`shorter hue`, `decreasing hue`, and `increasing hue`) are oth
 }
 </style>
 
-<script>
-const demo = document.querySelector(".demo")
-const inputs = document.querySelectorAll(".demo input")
-const colorMethodSelect = document.getElementById("color-method")
-const hueMethodSelect = document.getElementById("hue-method")
-
-inputs.forEach((input) => {
-    input.addEventListener("change", () => {
-        demo.style.setProperty(`--${input.id}`, input.value)
-    })
-})
-
-colorMethodSelect.addEventListener("change", () => {
-    if (colorMethodSelect.value === "srgb") {
-        hueMethodSelect.disabled = true
-    } else {
-        hueMethodSelect.removeAttribute("disabled")
-    }
-})
-</script>
+<script>{% include '../../js/pages/interpolating-colors.js' %}</script>

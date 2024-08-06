@@ -75,8 +75,8 @@ module.exports = function(eleventyConfig) {
 		domain: "https://example.com",
 		feed: "https://webmentions.example.com?token=S3cr3tT0k3n",
 		key: "array_of_webmentions"
-	})
-}
+	});
+};
 ```
 
 <div class=" [ box  box--warning ] [ flow ] ">
@@ -87,7 +87,7 @@ module.exports = function(eleventyConfig) {
     <summary>Full options list</summary>
 
 ```javascript
-const pluginWebmentions = require("@chrisburnell/eleventy-cache-webmentions")
+const pluginWebmentions = require("@chrisburnell/eleventy-cache-webmentions");
 
 module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(pluginWebmentions, {
@@ -141,8 +141,8 @@ module.exports = function(eleventyConfig) {
 		// The glue-y part of the message displayed when a Webmention content’s
 		// character count exceeds `maximumHtmlLength`.
 		maximumHtmlText: "mentioned this in",
-	})
-}
+	});
+};
 ```
 
 </c-details>
@@ -160,7 +160,7 @@ module.exports = function(eleventyConfig) {
 const {
 	defaults, // default options for the plugin
 	webmentionsByUrl, // Object containing Arrays of Webmentions by URL
-} = require("@chrisburnell/eleventy-cache-webmentions")
+} = require("@chrisburnell/eleventy-cache-webmentions");
 ```
 
 </c-details>
@@ -193,7 +193,7 @@ const {
 	getWebmentionSource, // get source URL of a Webmention (where it's from)
 	getWebmentionTarget, // get target URL of a Webmention (where it's sent to)
 	getWebmentionType, // get response type of a Webmention
-} = require("@chrisburnell/eleventy-cache-webmentions")
+} = require("@chrisburnell/eleventy-cache-webmentions");
 
 // This is NOT the best way to get Webmentions!
 // See "Attach Webmentions to Pages using Directory Data" below.
@@ -201,17 +201,17 @@ const webmentions = getWebmentions({
 	domain: "https://example.com",
 	feed: "https://webmentions.example.com?token=S3cr3tT0k3n",
 	key: "array_of_webmentions"
-}, "https://example.com/specific-page/")
+}, "https://example.com/specific-page/");
 
-const responsesOnly = getWebmentionsByTypes(webmentions, ['mention-of', 'in-reply-to'])
+const responsesOnly = getWebmentionsByTypes(webmentions, ['mention-of', 'in-reply-to']);
 
 webmentions.forEach((webmention) => {
-	const published = getWebmentionPublished(webmention)
-	const content = getWebmentionContent(webmention)
-	const source = getWebmentionSource(webmention)
-	const target = getWebmentionTarget(webmention)
-	const type = getWebmentionType(webmention)
-})
+	const published = getWebmentionPublished(webmention);
+	const content = getWebmentionContent(webmention);
+	const source = getWebmentionSource(webmention);
+	const target = getWebmentionTarget(webmention);
+	const type = getWebmentionType(webmention);
+});
 ```
 
 </c-details>
@@ -251,7 +251,7 @@ Using [Eleventy’s Data Cascade](https://www.11ty.dev/docs/data-cascade/), you 
 For example, if you have a folder, `/pages/`, and want to attach Webmentions to each page, create or add the following to a `pages.11tydata.js` file within the folder:
 
 ```javascript
-const { getWebmentions, getPublished } = require("@chrisburnell/eleventy-cache-webmentions")
+const { getWebmentions, getPublished } = require("@chrisburnell/eleventy-cache-webmentions");
 
 module.exports = {
 	eleventyComputed: {
@@ -261,20 +261,20 @@ module.exports = {
 				domain: "https://example.com",
 				feed: "https://webmentions.example.com?token=S3cr3tT0k3n",
 				key: "array_of_webmentions"
-			}, "https://example.com" + data.page.url)
+			}, "https://example.com" + data.page.url);
 
 			// If there are Webmentions for this page
 			if (webmentionsForUrl.length) {
 				// Sort them (based on when they were received/published)
 				return webmentionsForUrl.sort((a, b) => {
-					return getPublished(b) - getPublished(a)
+					return getPublished(b) - getPublished(a);
 				})
 			}
 			// Otherwise, return an empty Array
-			return []
+			return [];
 		},
 	},
-}
+};
 ```
 
 This attaches an Array containing Webmentions to each page (based on its URL). You can then access this Array of Webmentions with the variable, <samp>webmentions</samp>, within a [Layout](https://www.11ty.dev/docs/layouts/), [Include](https://www.11ty.dev/docs/includes/), or from the page itself:
@@ -295,9 +295,9 @@ module.exports = (eleventyConfig) => {
 		return collection
 			.sort((a, b) => {
 				return b.data.webmentions.length - a.data.webmentions.length
-			})
-	})
-}
+			});
+	});
+};
 ```
 
 <h2 id="without-directory-data">Without Directory Data</h2>
@@ -367,8 +367,8 @@ module.exports = function(eleventyConfig) {
 		domain: "https://example.com",
 		feed: `https://webmention.io/api/mentions.jf2?domain=example.com&token=${process.env.WEBMENTION_IO_TOKEN}`,
 		key: "children",
-	})
-}
+	});
+};
 ```
 
 If you want to use the JSON format instead, make sure that you replace `mentions.jf2` in the URL with `mentions.json` and change the value of the key from `children` to `links`.
@@ -412,58 +412,15 @@ GO_JAMMING_TOKEN=njJql0lKXnotreal4x3Wmd
 ### Set your feed and key config options
 
 ```javascript
-const pluginWebmentions = require("@chrisburnell/eleventy-cache-webmentions")
+const pluginWebmentions = require("@chrisburnell/eleventy-cache-webmentions");
 
 module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(pluginWebmentions, {
 		domain: "https://example.com",
 		feed: `https://jam.example.com/webmention/example.com/${process.env.GO_JAMMING_TOKEN}`,
 		key: "json"
-	})
-}
+	});
+};
 ```
 
-<script>
-const addDefaultScheme = (input) => {
-	if (input.match(/^(?!https?:).+\..+/)) {
-		return `https://${input.replace(/\/$/, "")}`
-	}
-	return input.replace(/\/$/, "")
-}
-
-const getConfig = (outputElement, domainInput, type = "ESM") => {
-	if (!/\S+\.\S+/.test(domainInput)) {
-		return
-	}
-
-	const importStatement = type === "ESM"
-		? `<span class="token keyword">import</span> <span class="token punctuation">{</span> defaults <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@chrisburnell/eleventy-cache-webmentions"</span>`
-		: `<span class="token keyword">const</span> <span class="token punctuation">{</span> defaults <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"@chrisburnell/eleventy-cache-webmentions"</span><span class="token punctuation">)</span>`
-
-	const exportStatement = type === "ESM"
-		? `<span class="token keyword">export</span> <span class="token keyword">default</span>`
-		: `module<span class="token punctuation">.</span>exports <span class="token operator">=</span>`
-
-	const domain = addDefaultScheme(domainInput)
-
-	const hostname = new URL(domain).hostname
-
-	outputElement.innerHTML = `${importStatement}\n\n${exportStatement} Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> defaults<span class="token punctuation">,</span> <span class="token punctuation">{</span>\n\t<span class="token literal-property property">domain</span><span class="token operator">:</span> <span class="token string">"${domain}"</span><span class="token punctuation">,</span>\n\t<span class="token literal-property property">feed</span><span class="token operator">:</span> <span class="token string">"https://webmention.io/api/mentions.jf2?domain=${hostname}&amp;token=\${process.env.WEBMENTION_IO_TOKEN}"</span><span class="token punctuation">,</span>\n\t<span class="token literal-property property">key</span><span class="token operator">:</span> <span class="token string">"children"</span><span class="token punctuation">,</span>\n<span class="token punctuation">}</span><span class="token punctuation">)</span>`
-}
-
-const configForm = document.querySelector("#config-form")
-const inputDomain = document.querySelector("#domain")
-const selectType = document.querySelector("#type")
-const output = document.querySelector("#config-output")
-
-configForm.addEventListener("submit", (event) => {
-	event.preventDefault()
-	getConfig(output, inputDomain.value, selectType.value)
-})
-inputDomain.addEventListener("change", () => {
-	getConfig(output, inputDomain.value, selectType.value)
-})
-selectType.addEventListener("change", () => {
-	getConfig(output, inputDomain.value, selectType.value)
-})
-</script>
+<script>{% include '../../js/pages/eleventy-cache-webmentions.js' %}</script>

@@ -169,20 +169,5 @@ For all intents and purposes, I’m going to call that complete. I’m taking aw
 	}
 }
 </style>
-<script>
-const threshold = 0.333;
-const observer = new IntersectionObserver((entries, observer) => {
-	if (entries[0].intersectionRatio > threshold) {
-		entries[0].target.classList.add("visible")
-		observer.unobserve(entries[0].target)
-	}
-	}, { threshold: threshold }
-)
-const instantPhotos = document.querySelectorAll(".instant-photo.should-develop")
-for (let instantPhoto of instantPhotos) {
-	instantPhoto.classList.add("will-develop")
-	instantPhoto.classList.remove("should-develop")
-	observer.observe(instantPhoto)
-}
-</script>
+<script>{% include '../../js/pages/rebuilding-instant-photo.js' %}</script>
 <script type="module">{% include '../../../node_modules/@chrisburnell/instant-photo/instant-photo.js' %}</script>

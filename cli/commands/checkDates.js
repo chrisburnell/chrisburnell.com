@@ -1,12 +1,12 @@
-import { checkInvalidDateTimes } from "@chrisburnell/check-invalid-datetimes"
+import { checkInvalidDateTimes } from "@chrisburnell/check-invalid-datetimes";
 
 /**
  * Check for instances of "Invalid DateTime"
  */
 export default async (directory = "_site") => {
-	const siteDateTimesCheck = new checkInvalidDateTimes()
+	const siteDateTimesCheck = new checkInvalidDateTimes();
 	siteDateTimesCheck.setOptions({
 		directory: directory,
-	})
-	await siteDateTimesCheck.run()
-}
+	});
+	await siteDateTimesCheck.run();
+};

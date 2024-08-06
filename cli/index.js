@@ -1,25 +1,25 @@
 // Adapted from Robb Knight’s work:
 // https://github.com/rknightuk/rknight.me
 
-import select from "@inquirer/select"
-import chalk from "chalk"
-import { program } from "commander"
-import path from "path"
-import { fileURLToPath } from "url"
+import select from "@inquirer/select";
+import chalk from "chalk";
+import { program } from "commander";
+import path from "path";
+import { fileURLToPath } from "url";
 
-import checkDates from "./commands/checkDates.js"
-import checkLinks from "./commands/checkLinks.js"
-import createArticle from "./commands/createArticle.js"
-import createBookmark from "./commands/createBookmark.js"
-import createLike from "./commands/createLike.js"
-import createNote from "./commands/createNote.js"
+import checkDates from "./commands/checkDates.js";
+import checkLinks from "./commands/checkLinks.js";
+import createArticle from "./commands/createArticle.js";
+import createBookmark from "./commands/createBookmark.js";
+import createLike from "./commands/createLike.js";
+import createNote from "./commands/createNote.js";
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
-const __siteroot = __dirname.replace("/cli", "")
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const __siteroot = __dirname.replace("/cli", "");
 
 const wizard = async () => {
-	console.log(chalk.hex("#5f8aa6") `
+	console.log(chalk.hex("#5f8aa6")`
                        ░█░█
  ██░░░░░█░             █████
   ░▓▓██▓███▓█░       ██▒░▓███
@@ -33,7 +33,7 @@ const wizard = async () => {
      ░██▒░░░██░▒▓█░       ░
              ░▒█▓░░▓█░
               ░▒▓░░▒░░░
-`)
+`);
 
 	const type = await select({
 		message: "What do you want to do?",
@@ -69,63 +69,63 @@ const wizard = async () => {
 				description: "Create a new Note",
 			},
 		],
-	})
+	});
 
 	switch (type) {
 		case "checkDates":
-			checkDates()
-			break
+			checkDates();
+			break;
 		case "checkLinks":
-			checkLinks()
-			break
+			checkLinks();
+			break;
 		case "article":
-			createArticle(__siteroot)
-			break
+			createArticle(__siteroot);
+			break;
 		case "bookmark":
-			createBookmark(__siteroot)
-			break
+			createBookmark(__siteroot);
+			break;
 		case "like":
-			createLike(__siteroot)
-			break
+			createLike(__siteroot);
+			break;
 		case "note":
-			createNote(__siteroot)
-			break
+			createNote(__siteroot);
+			break;
 	}
-}
+};
 
 program
 	.command("wizard")
 	.description("🧙 Speak friend and enter")
-	.action(() => wizard())
+	.action(() => wizard());
 
 program
 	.command("checks")
 	.description("⚠️ Perform Checks")
 	.action(async () => {
-		await checkLinks()
+		await checkLinks();
 		// eslint-disable-next-line no-undef
-		console.log("")
-		await checkDates()
-	})
+		console.log("");
+		await checkDates();
+	});
 
 program
 	.command("article")
 	.description("📝 Create a new Article")
-	.action(() => createArticle(__siteroot))
+	.action(() => createArticle(__siteroot));
 
 program
 	.command("bookmark")
 	.description("🔖 Create a new Bookmark")
-	.action(() => createBookmark(__siteroot))
+	.action(() => createBookmark(__siteroot));
 
 program
 	.command("like")
 	.description("♥️ Create a new Like")
-	.action(() => createLike(__siteroot))
+	.action(() => createLike(__siteroot));
 
 program
 	.command("note")
 	.description("📝 Create a new Note")
-	.action(() => createNote(__siteroot))
+	.action(() => createNote(__siteroot));
 
-program.parse()
+program.parse();

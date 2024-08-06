@@ -1,20 +1,20 @@
-import { checkbox, input } from "@inquirer/prompts"
-import slugify from "@sindresorhus/slugify"
-import { DateTime } from "luxon"
+import { checkbox, input } from "@inquirer/prompts";
+import slugify from "@sindresorhus/slugify";
+import { DateTime } from "luxon";
 
-export const now = DateTime.now()
+export const now = DateTime.now();
 
 export const postTitle = async () => {
-	return await input({ message: "Title" })
-}
+	return await input({ message: "Title" });
+};
 
 export const postSlug = async (title) => {
-	return await input({ message: "Slug", default: slugify(title) })
-}
+	return await input({ message: "Slug", default: slugify(title) });
+};
 
 export const postDescription = async () => {
-	return await input({ message: "Description" })
-}
+	return await input({ message: "Description" });
+};
 
 export const postTags = async () => {
 	return await checkbox({
@@ -64,12 +64,14 @@ export const postTags = async () => {
 			{ value: "weblogpomo2024" },
 			{ value: "writing" },
 		],
-	})
-}
+	});
+};
 
-export const postSlugDate = now.toISO().split("T")[0]
+export const postSlugDate = now.toISO().split("T")[0];
 
-export const postDate = now.toFormat("yyyy-MM-dd'T'HH:mm:ssZZ").replace(/(-|\+)(\d{2}):(\d{2})/g, "$1$2$3")
+export const postDate = now
+	.toFormat("yyyy-MM-dd'T'HH:mm:ssZZ")
+	.replace(/(-|\+)(\d{2}):(\d{2})/g, "$1$2$3");
 
 export default {
 	now,
@@ -79,4 +81,4 @@ export default {
 	postTags,
 	postSlugDate,
 	postDate,
-}
+};
