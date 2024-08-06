@@ -26,6 +26,9 @@ jobs:
       - name: Install
         uses: ./.github/actions/install
 
+      - name: Test
+        uses: ./.github/actions/test
+
       - name: Build
         uses: ./.github/actions/build
         env:
