@@ -4,5 +4,5 @@ export default [
 		url: "http://cooking.nytimes.com",
 	},
 ].sort((a, b) => {
-	return a.title.localeCompare(b.title)
-})
+	return a.title.localeCompare(b.title);
+});

@@ -58,6 +58,6 @@ const navigation = [
 		url: "/help/",
 		footer: true,
 	},
-]
+];
 
-export default navigation
+export default navigation;

@@ -8,4 +8,4 @@ export default {
 	tags: ["like", "clickthrough"],
 	excludeFromSearch: true,
 	emoji: "♥️",
-}
+};

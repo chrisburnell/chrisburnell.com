@@ -3,4 +3,4 @@ export default {
 		filesize: true,
 		benchmark: true,
 	},
-}
+};

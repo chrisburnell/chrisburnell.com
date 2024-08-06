@@ -829,5 +829,5 @@ export default [
 		mastodon: "leilukin@mstdn.social",
 	},
 ].sort((a, b) => {
-	return a.title.localeCompare(b.title)
-})
+	return a.title.localeCompare(b.title);
+});

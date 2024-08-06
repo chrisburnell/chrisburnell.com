@@ -11,4 +11,4 @@ export default {
 	tags: ["music", "review"],
 	emoji: "🎶",
 	post_includes: ["post/listen-of.njk"],
-}
+};

@@ -3,6 +3,8 @@
 **/vendors
 
 # Ignore specific filetypes
+*.css
 *.html
 *.md
 *.njk
+*.scss

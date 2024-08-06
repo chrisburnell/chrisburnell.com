@@ -9,4 +9,4 @@ export default {
 	categoryCode: "b",
 	tags: ["beer", "review"],
 	emoji: "🍺",
-}
+};

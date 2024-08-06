@@ -59,4 +59,4 @@ export default [
 		title: "Open Library",
 		url: "https://openlibrary.org",
 	},
-]
+];

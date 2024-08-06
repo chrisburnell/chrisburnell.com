@@ -27,4 +27,4 @@ export default [
 		id: "custom",
 		title: "Custom Hue",
 	},
-]
+];

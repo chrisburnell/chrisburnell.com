@@ -7,4 +7,4 @@ export default {
 	},
 	excludeFromSearch: true,
 	noServiceWorker: true,
-}
+};

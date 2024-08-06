@@ -7,19 +7,19 @@ class GetYouTubeFeed {
 	 * @constructor
 	 */
 	constructor() {
-		this.form = document.querySelector(".get-youtube-feed")
-		this.input = this.form.querySelector("input")
+		this.form = document.querySelector(".get-youtube-feed");
+		this.input = this.form.querySelector("input");
 
 		this.form.addEventListener("submit", (event) => {
-			event.preventDefault()
-			this.convertURL()
-			this.input.focus()
-		})
+			event.preventDefault();
+			this.convertURL();
+			this.input.focus();
+		});
 
 		this.input.addEventListener("blur", (event) => {
-			event.preventDefault()
-			this.convertURL()
-		})
+			event.preventDefault();
+			this.convertURL();
+		});
 	}
 
 	/**
@@ -27,11 +27,11 @@ class GetYouTubeFeed {
 	 * injects the input to hold the URL of the respective feed.
 	 */
 	convertURL() {
-		const url = this.input.value
+		const url = this.input.value;
 
 		if (url.includes("/channel/")) {
-			const channel = url.split("/channel/")[1].replace(/\/$/, "")
-			this.input.value = `https://www.youtube.com/feeds/videos.xml?channel_id=${channel}`
+			const channel = url.split("/channel/")[1].replace(/\/$/, "");
+			this.input.value = `https://www.youtube.com/feeds/videos.xml?channel_id=${channel}`;
 		}
 	}
 }
@@ -40,10 +40,10 @@ if ("HTMLElement" in window) {
 	/**
 	 * @type {GetYouTubeFeed}
 	 */
-	window.GetYouTubeFeed = new GetYouTubeFeed()
+	window.GetYouTubeFeed = new GetYouTubeFeed();
 }
 
 /**
  * @type {GetYouTubeFeed}
  */
-export default GetYouTubeFeed
+export default GetYouTubeFeed;

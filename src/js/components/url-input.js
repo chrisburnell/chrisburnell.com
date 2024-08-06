@@ -9,18 +9,18 @@ class UrlInput {
 	constructor() {
 		this.inputs.forEach((input) => {
 			input.addEventListener("blur", (event) => {
-				this.addDefaultScheme(event.target)
-			})
+				this.addDefaultScheme(event.target);
+			});
 			input.addEventListener("keypress", (event) => {
 				if (event.key === "Enter") {
-					this.addDefaultScheme(event.target)
+					this.addDefaultScheme(event.target);
 				}
-			})
-		})
+			});
+		});
 	}
 
 	get inputs() {
-		return document.querySelectorAll(`input[type="url"]`)
+		return document.querySelectorAll(`input[type="url"]`);
 	}
 
 	/**
@@ -29,7 +29,7 @@ class UrlInput {
 	 */
 	addDefaultScheme(input) {
 		if (input.value.match(/^(?!https?:).+\..+/)) {
-			input.value = `https://${input.value}`
+			input.value = `https://${input.value}`;
 		}
 	}
 }
@@ -38,10 +38,10 @@ if ("HTMLElement" in window) {
 	/**
 	 * @type {UrlInput}
 	 */
-	window.UrlInput = new UrlInput()
+	window.UrlInput = new UrlInput();
 }
 
 /**
  * @type {UrlInput}
  */
-export default UrlInput
+export default UrlInput;

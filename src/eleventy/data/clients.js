@@ -84,4 +84,4 @@ export default [
 		image: "squiz-logo-text.svg",
 		darkInvert: true,
 	},
-]
+];

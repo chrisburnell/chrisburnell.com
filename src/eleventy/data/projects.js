@@ -14,7 +14,8 @@ export default {
 			data: {
 				date: "2020-03-31T12:00:00+0000",
 				title: "Micrathene",
-				description: "Super Simple PWA for building [Microlite20](https://micro.bloodbuilder.online/docs/Microlite20.pdf) characters.",
+				description:
+					"Super Simple PWA for building [Microlite20](https://micro.bloodbuilder.online/docs/Microlite20.pdf) characters.",
 				emoji: "🔬",
 			},
 		},
@@ -32,7 +33,8 @@ export default {
 			data: {
 				date: "2018-03-12T12:00:00+0000",
 				title: "BloodBuilder",
-				description: "Super Simple PWA for [1e Pathfinder](https://paizo.com/pathfinder) Pure Core Classes.",
+				description:
+					"Super Simple PWA for [1e Pathfinder](https://paizo.com/pathfinder) Pure Core Classes.",
 				emoji: "🗡️",
 			},
 		},
@@ -48,7 +50,8 @@ export default {
 			url: "https://dizzy.chrisburnell.com",
 			data: {
 				title: "Feelin’ Dizzy",
-				description: "Feelin’ dizzy or blue? This should sort you right out.",
+				description:
+					"Feelin’ dizzy or blue? This should sort you right out.",
 				emoji: "🌪️",
 			},
 		},
@@ -61,7 +64,8 @@ export default {
 				date: "2020-08-02T12:00:00+0000",
 				updated: "2024-02-19T20:36:55.000+0800",
 				title: "Version 3",
-				description: "The third version of my personal site where I switched over to using Eleventy and got hooked on working on my website!",
+				description:
+					"The third version of my personal site where I switched over to using Eleventy and got hooked on working on my website!",
 				emoji: "🐓",
 			},
 		},
@@ -71,7 +75,8 @@ export default {
 				date: "2013-05-30T12:00:00+0000",
 				updated: "2020-08-02T12:00:00+0000",
 				title: "Version 2",
-				description: "The second version of my personal site that I used for over six years and laid the groundwork and mentality for the next version.",
+				description:
+					"The second version of my personal site that I used for over six years and laid the groundwork and mentality for the next version.",
 				emoji: "🐣",
 			},
 		},
@@ -81,7 +86,8 @@ export default {
 				date: "2008-04-21T12:00:00+0000",
 				updated: "2013-05-30T12:00:00+0000",
 				title: "Version 1",
-				description: "The first-ever version of my personal site. Things have changed slightly since 2008.",
+				description:
+					"The first-ever version of my personal site. Things have changed slightly since 2008.",
 				emoji: "🥚",
 			},
 		},
@@ -93,7 +99,8 @@ export default {
 			data: {
 				date: "2020-02-20T12:00:00+0000",
 				title: "Weather",
-				description: "Not the most interesting of project titles, this is a personalised weather web app.",
+				description:
+					"Not the most interesting of project titles, this is a personalised weather web app.",
 				emoji: "⛈️",
 			},
 		},
@@ -102,7 +109,8 @@ export default {
 			data: {
 				date: "2019-03-04T12:00:00+0000",
 				title: "Reptile C",
-				description: "My personal (and automatic) URL-shortening service based on Tantek Çelik’s base-60 numbering system, NewBase60. <em>Note: the homepage just redirects to this website, but you can read about how it works here: [Generating Automatic ShortURLs with NewBase60](https://chrisburnell.com/article/automatic-shorturls/)</em>.",
+				description:
+					"My personal (and automatic) URL-shortening service based on Tantek Çelik’s base-60 numbering system, NewBase60. <em>Note: the homepage just redirects to this website, but you can read about how it works here: [Generating Automatic ShortURLs with NewBase60](https://chrisburnell.com/article/automatic-shorturls/)</em>.",
 				emoji: "🔗",
 			},
 		},
@@ -111,7 +119,8 @@ export default {
 			data: {
 				date: "2017-11-08T12:00:00+0000",
 				title: "Viewport Dimensions",
-				description: "A very simple tool to measure your viewport dimensions.",
+				description:
+					"A very simple tool to measure your viewport dimensions.",
 				emoji: "📐",
 			},
 		},
@@ -126,4 +135,4 @@ export default {
 			},
 		},
 	],
-}
+};

@@ -104,4 +104,4 @@ export default [
 		long: -0.0956,
 		address: "Silk Street, London, EC2Y 8DS",
 	},
-]
+];

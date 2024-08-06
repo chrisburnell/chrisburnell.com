@@ -1,6 +1,6 @@
-import markdownParser from "markdown-it"
-import markdownAbbr from "markdown-it-abbr"
-import markdownFootnote from "markdown-it-footnote"
+import markdownParser from "markdown-it";
+import markdownAbbr from "markdown-it-abbr";
+import markdownFootnote from "markdown-it-footnote";
 
 const markdown = markdownParser({
 	html: true,
@@ -9,52 +9,52 @@ const markdown = markdownParser({
 })
 	.use(markdownAbbr)
 	.use(markdownFootnote)
-	.disable("code")
+	.disable("code");
 
 markdown.renderer.rules.footnote_block_open = () => {
 	return `<hr style="--rule-space: var(--size-medium);">
 	<nav aria-label="Footnotes">
-		<ol>`
-}
+		<ol>`;
+};
 
 markdown.renderer.rules.footnote_block_close = () => {
 	return `</ol>
-	</nav>`
-}
+	</nav>`;
+};
 
 markdown.renderer.rules.footnote_caption = (tokens, idx) => {
-	let n = Number(tokens[idx].meta.id + 1).toString()
+	let n = Number(tokens[idx].meta.id + 1).toString();
 	if (tokens[idx].meta.subId > 0) {
-		n += ":" + tokens[idx].meta.subId
+		n += ":" + tokens[idx].meta.subId;
 	}
-	return n
-}
+	return n;
+};
 
 markdown.renderer.rules.footnote_open = (tokens, idx, options, env, slf) => {
-	var id = slf.rules.footnote_anchor_name(tokens, idx, options, env, slf)
+	var id = slf.rules.footnote_anchor_name(tokens, idx, options, env, slf);
 	if (tokens[idx].meta.subId > 0) {
-		id += ":" + tokens[idx].meta.subId
+		id += ":" + tokens[idx].meta.subId;
 	}
-	return `<li id="fn${id}" class=" [ flow ] ">`
-}
+	return `<li id="fn${id}" class=" [ flow ] ">`;
+};
 
 markdown.renderer.rules.footnote_ref = (tokens, idx, options, env, slf) => {
-	const id = slf.rules.footnote_anchor_name(tokens, idx, options, env, slf)
-	const caption = slf.rules.footnote_caption(tokens, idx, options, env, slf)
-	let refid = id
+	const id = slf.rules.footnote_anchor_name(tokens, idx, options, env, slf);
+	const caption = slf.rules.footnote_caption(tokens, idx, options, env, slf);
+	let refid = id;
 
-	if (tokens[idx].meta.subId > 0) refid += `:${tokens[idx].meta.subId}`
+	if (tokens[idx].meta.subId > 0) refid += `:${tokens[idx].meta.subId}`;
 
-	return `<a href="#fn${id}" id="fnref${refid}"><sup>[${caption}]</sup></a>`
-}
+	return `<a href="#fn${id}" id="fnref${refid}"><sup>[${caption}]</sup></a>`;
+};
 
 markdown.renderer.rules.footnote_anchor = (tokens, idx, options, env, slf) => {
-	let id = slf.rules.footnote_anchor_name(tokens, idx, options, env, slf)
+	let id = slf.rules.footnote_anchor_name(tokens, idx, options, env, slf);
 
-	if (tokens[idx].meta.subId > 0) id += `:${tokens[idx].meta.subId}`
+	if (tokens[idx].meta.subId > 0) id += `:${tokens[idx].meta.subId}`;
 
 	// ↩ with escape code to prevent display as Apple Emoji on iOS
-	return ` <a href="#fnref${id}">\u21a9\uFE0E</a>`
-}
+	return ` <a href="#fnref${id}">\u21a9\uFE0E</a>`;
+};
 
-export default markdown
+export default markdown;

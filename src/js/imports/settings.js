@@ -1,55 +1,69 @@
-const selectTheme = document.querySelector(`select[name="theme"]`)
-const selectColorScheme = document.querySelector(`select[name="color-scheme"]`)
-const inputCustomHue = document.querySelector(`[type="range"][name="custom-hue"]`)
-const selectHighContrast = document.querySelector(`select[name="high-contrast"]`)
-const selectSmoothScroll = document.querySelector(`select[name="smooth-scroll"]`)
-const inputUserSounds = document.querySelector(`[type="checkbox"][name="user-sounds"]`)
-const buttonSettingsReset = document.querySelector(".settings-reset")
+const selectTheme = document.querySelector(`select[name="theme"]`);
+const selectColorScheme = document.querySelector(`select[name="color-scheme"]`);
+const inputCustomHue = document.querySelector(
+	`[type="range"][name="custom-hue"]`,
+);
+const selectHighContrast = document.querySelector(
+	`select[name="high-contrast"]`,
+);
+const selectSmoothScroll = document.querySelector(
+	`select[name="smooth-scroll"]`,
+);
+const inputUserSounds = document.querySelector(
+	`[type="checkbox"][name="user-sounds"]`,
+);
+const buttonSettingsReset = document.querySelector(".settings-reset");
 
 if (selectTheme && inputCustomHue) {
 	selectTheme.addEventListener("change", (event) => {
 		if (event.target.value === "custom") {
-			document.documentElement.style.setProperty("--raven-hue", inputCustomHue.value)
+			document.documentElement.style.setProperty(
+				"--raven-hue",
+				inputCustomHue.value,
+			);
 		} else {
-			document.documentElement.style.removeProperty("--raven-hue")
+			document.documentElement.style.removeProperty("--raven-hue");
 		}
-	})
+	});
 
 	const inputCustomHueFunction = (event) => {
 		if (selectTheme.value === "custom") {
-			document.documentElement.style.setProperty("--raven-hue", event.target.value)
+			document.documentElement.style.setProperty(
+				"--raven-hue",
+				event.target.value,
+			);
 		}
-	}
-	inputCustomHue.addEventListener("change", inputCustomHueFunction)
-	inputCustomHue.addEventListener("input", inputCustomHueFunction)
+	};
+	inputCustomHue.addEventListener("change", inputCustomHueFunction);
+	inputCustomHue.addEventListener("input", inputCustomHueFunction);
 }
 
 if (buttonSettingsReset) {
 	buttonSettingsReset.addEventListener("click", () => {
-		localStorage.removeItem("theme")
-		localStorage.removeItem("color-scheme")
-		localStorage.removeItem("custom-hue")
-		localStorage.removeItem("high-contrast")
-		localStorage.removeItem("smooth-scroll")
-		localStorage.removeItem("user-sounds")
-		document.documentElement.style.removeProperty("--raven-hue")
+		localStorage.removeItem("theme");
+		localStorage.removeItem("color-scheme");
+		localStorage.removeItem("custom-hue");
+		localStorage.removeItem("high-contrast");
+		localStorage.removeItem("smooth-scroll");
+		localStorage.removeItem("user-sounds");
+		document.documentElement.style.removeProperty("--raven-hue");
 		if (selectTheme) {
-			selectTheme.value = ""
+			selectTheme.value = "";
 		}
 		if (selectColorScheme) {
-			selectColorScheme.value = ""
+			selectColorScheme.value = "";
 		}
 		if (inputCustomHue) {
-			inputCustomHue.value = 237.73
+			inputCustomHue.value = 237.73;
 		}
 		if (selectHighContrast) {
-			selectHighContrast.value = ""
+			selectHighContrast.value = "";
 		}
 		if (selectSmoothScroll) {
-			selectSmoothScroll.value = ""
+			selectSmoothScroll.value = "";
 		}
 		if (inputUserSounds) {
-			inputUserSounds.checked = false
+			inputUserSounds.checked = false;
 		}
-	})
+	});
 }

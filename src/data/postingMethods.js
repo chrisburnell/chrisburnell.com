@@ -35,4 +35,4 @@ export default [
 		title: "Corvus",
 		url: "https://corvus.chrisburnell.com",
 	},
-]
+];

@@ -1,17 +1,20 @@
 class LastFMListening extends HTMLElement {
 	static register(tagName) {
 		if ("customElements" in window) {
-			customElements.define(tagName || "lastfm-listening", LastFMListening)
+			customElements.define(
+				tagName || "lastfm-listening",
+				LastFMListening,
+			);
 		}
 	}
 
 	connectedCallback() {
 		if (!this.hasAttribute("url")) {
-			console.error(`Missing \`url\` attribute!`, this)
-			return
+			console.error(`Missing \`url\` attribute!`, this);
+			return;
 		}
 
-		this.init()
+		this.init();
 	}
 
 	init() {
@@ -19,28 +22,30 @@ class LastFMListening extends HTMLElement {
 			this.innerHTML = `
 				<div class=" [ grid ] [ shelf  shelf--square ] ">
 					${data.reduce((string, track) => {
-						return string + this.getTrackMarkup(track)
+						return string + this.getTrackMarkup(track);
 					}, "")}
 				</div>
-			`
-		})
+			`;
+		});
 	}
 
 	fetchLatestTracks() {
 		return fetch(this.getAttribute("url"))
 			.then((response) => {
-				return response.json()
+				return response.json();
 			})
 			.catch((error) => {
-				console.error(error)
-			})
+				console.error(error);
+			});
 	}
 
 	getTrackMarkup(track) {
-		const datetime = track.date ? new Date(Number(track.date.uts) * 1000) : new Date()
-		let image = track.image[3]?.["#text"]
+		const datetime = track.date
+			? new Date(Number(track.date.uts) * 1000)
+			: new Date();
+		let image = track.image[3]?.["#text"];
 		if (!image || image.includes("2a96cbd8b46e442fc41c2b86b821562f.png")) {
-			image = "/images/default-album-cover.png"
+			image = "/images/default-album-cover.png";
 		}
 
 		return `
@@ -58,12 +63,12 @@ class LastFMListening extends HTMLElement {
 					${datetime.getTime() === Date.now() ? "<em>listening now</em>" : `<relative-time><time datetime="${datetime.toISOString()}" class=" [ dt-published ] ">${datetime.toLocaleString()}</time></relative-time>`}
 				</div>
 			</article>
-		`
+		`;
 	}
 
 	clamp(min, value, max) {
-		return Math.min(Math.max(Number(value), Number(min)), Number(max))
+		return Math.min(Math.max(Number(value), Number(min)), Number(max));
 	}
 }
 
-LastFMListening.register()
+LastFMListening.register();

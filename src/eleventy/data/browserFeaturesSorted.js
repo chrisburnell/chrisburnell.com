@@ -1,94 +1,117 @@
-import { AssetCache } from "@11ty/eleventy-fetch"
-import caniuse from "caniuse-api"
-import { createRequire } from "node:module"
-import browserFeatures from "../../data/browserFeatures.js"
-import browsersByType from "./browsersByType.js"
-import { cacheDurations } from "./site.js"
-const require = createRequire(import.meta.url)
-const mdnBrowserData = require("../../../node_modules/@mdn/browser-compat-data/data.json")
+import { AssetCache } from "@11ty/eleventy-fetch";
+import caniuse from "caniuse-api";
+import { createRequire } from "node:module";
+import browserFeatures from "../../data/browserFeatures.js";
+import browsersByType from "./browsersByType.js";
+import { cacheDurations } from "./site.js";
+const require = createRequire(import.meta.url);
+const mdnBrowserData = require("../../../node_modules/@mdn/browser-compat-data/data.json");
 // import mdnBrowserData from "@mdn/browser-compat-data" assert { type: "json" }
 
 const getCaniuseSupport = async (feature) => {
-	const asset = new AssetCache(`caniuse_${feature}`, ".cache")
-	asset.ensureDir()
+	const asset = new AssetCache(`caniuse_${feature}`, ".cache");
+	asset.ensureDir();
 
 	if (asset.isCacheValid(cacheDurations.daily)) {
-		return await asset.getCachedValue()
+		return await asset.getCachedValue();
 	}
 
-	const caniuseSupport = caniuse.getSupport(feature, true)
-	await asset.save(caniuseSupport, "json")
-	return caniuseSupport
-}
+	const caniuseSupport = caniuse.getSupport(feature, true);
+	await asset.save(caniuseSupport, "json");
+	return caniuseSupport;
+};
 
 const getBrowserslistSupport = async (feature) => {
-	const featureData = browserFeatures.filter((browserFeature) => feature === browserFeature.id)[0]
-	const featureSet = mdnBrowserData[featureData.language][featureData.type]
-	const browserslistData = featureData["key"].split(".").reduce((object, key) => {
-		return object[key]
-	}, featureSet)
-	return browserslistData["__compat"]["support"]
-}
+	const featureData = browserFeatures.filter(
+		(browserFeature) => feature === browserFeature.id,
+	)[0];
+	const featureSet = mdnBrowserData[featureData.language][featureData.type];
+	const browserslistData = featureData["key"]
+		.split(".")
+		.reduce((object, key) => {
+			return object[key];
+		}, featureSet);
+	return browserslistData["__compat"]["support"];
+};
 
 export default async function () {
-	let sorted = []
+	let sorted = [];
 
 	for (const feature of browserFeatures) {
 		const caniuseSupport = await getCaniuseSupport(feature.id)
 			.then((caniuseSupport) => caniuseSupport)
 			.catch(() => {
 				// console.error("No CanIUse Support", error)
-				return false
-			})
+				return false;
+			});
 
 		if (caniuseSupport) {
-			feature.full = 0
-			feature.partial = 0
+			feature.full = 0;
+			feature.partial = 0;
 
 			browsersByType.forEach((browser) => {
-				const support = caniuseSupport[browser.id]
+				const support = caniuseSupport[browser.id];
 				if (support?.y) {
-					feature.full += 1
+					feature.full += 1;
 				} else if (support?.a) {
-					feature.partial += 1
+					feature.partial += 1;
 				}
-			})
+			});
 		} else {
 			const browserslistSupport = await getBrowserslistSupport(feature.id)
 				.then((browserslistSupport) => browserslistSupport)
 				.catch(() => {
 					// console.error("No Browserslist Support", error)
-					return false
-				})
+					return false;
+				});
 
 			if (browserslistSupport) {
-				feature.full = 0
-				feature.partial = 0
+				feature.full = 0;
+				feature.partial = 0;
 
 				browsersByType.forEach((browser) => {
-					const support = Array.isArray(browserslistSupport[browser.key]) ? browserslistSupport[browser.key][0] : browserslistSupport[browser.key]
-					if ((support?.version_added && support?.flags) || (support?.version_added + "").match(/preview/)) {
-						feature.partial += 1
+					const support = Array.isArray(
+						browserslistSupport[browser.key],
+					)
+						? browserslistSupport[browser.key][0]
+						: browserslistSupport[browser.key];
+					if (
+						(support?.version_added && support?.flags) ||
+						(support?.version_added + "").match(/preview/)
+					) {
+						feature.partial += 1;
 					} else if (support?.version_added) {
-						feature.full += 1
+						feature.full += 1;
 					}
-				})
+				});
 			}
 		}
 
-		sorted.push(feature)
+		sorted.push(feature);
 	}
 
 	sorted = sorted.sort((a, b) => {
 		if (typeof a.full !== "undefined" && typeof b.full !== "undefined") {
-			return b.full > a.full || (b.full == a.full && b.partial > a.partial) ? 1 : a?.full > b.full || (a.full == b.full && a.partial > b.partial) ? -1 : 0
-		} else if (typeof a.full !== "undefined" && typeof b.full === "undefined") {
-			return -1
-		} else if (typeof a.full === "undefined" && typeof b.full !== "undefined") {
-			return 1
+			return b.full > a.full ||
+				(b.full == a.full && b.partial > a.partial)
+				? 1
+				: a?.full > b.full ||
+					  (a.full == b.full && a.partial > b.partial)
+					? -1
+					: 0;
+		} else if (
+			typeof a.full !== "undefined" &&
+			typeof b.full === "undefined"
+		) {
+			return -1;
+		} else if (
+			typeof a.full === "undefined" &&
+			typeof b.full !== "undefined"
+		) {
+			return 1;
 		}
-		return a["id"].localeCompare(b["id"])
-	})
+		return a["id"].localeCompare(b["id"]);
+	});
 
-	return sorted
+	return sorted;
 }

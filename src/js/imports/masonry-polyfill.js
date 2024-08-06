@@ -5,43 +5,52 @@
  * Andy Barefoot: https://codepen.io/andybarefoot/pen/QMeZda
  */
 document.addEventListener("DOMContentLoaded", function () {
-	const isMasonrySupported = CSS.supports("grid-template-rows", "masonry")
+	const isMasonrySupported = CSS.supports("grid-template-rows", "masonry");
 
 	if (!isMasonrySupported) {
-		const masonryGrids = [...document.querySelectorAll(`[data-rows="masonry"]`)]
+		const masonryGrids = [
+			...document.querySelectorAll(`[data-rows="masonry"]`),
+		];
 
 		function layoutMasonry() {
 			masonryGrids.forEach((grid) => {
-				const items = [...grid.children].filter((child) => child.nodeType === 1)
+				const items = [...grid.children].filter(
+					(child) => child.nodeType === 1,
+				);
 
-				const columnCount = getComputedStyle(grid).gridTemplateColumns.split(" ").length
+				const columnCount =
+					getComputedStyle(grid).gridTemplateColumns.split(
+						" ",
+					).length;
 
 				items.forEach((item, index) => {
-					item.style.removeProperty("margin-block-start") // Clear previous adjustments
+					item.style.removeProperty("margin-block-start"); // Clear previous adjustments
 
 					// Only adjust items that are not in the first row
 					if (index >= columnCount) {
-						const previousIndex = index - columnCount
-						const previousItem = items[previousIndex]
+						const previousIndex = index - columnCount;
+						const previousItem = items[previousIndex];
 
-						const previousItemBottom = previousItem.getBoundingClientRect().bottom + parseFloat(getComputedStyle(grid).rowGap)
+						const previousItemBottom =
+							previousItem.getBoundingClientRect().bottom +
+							parseFloat(getComputedStyle(grid).rowGap);
 
-						const currentItemTop = item.getBoundingClientRect().top
+						const currentItemTop = item.getBoundingClientRect().top;
 
-						item.style.marginBlockStart = `${previousItemBottom - currentItemTop}px`
+						item.style.marginBlockStart = `${previousItemBottom - currentItemTop}px`;
 					}
-				})
-			})
+				});
+			});
 		}
 
 		// Initial layout setup
-		layoutMasonry()
+		layoutMasonry();
 
 		// Resize handling with debounce to optimize performance
-		let resizeTimeout
+		let resizeTimeout;
 		window.addEventListener("resize", () => {
-			clearTimeout(resizeTimeout)
-			resizeTimeout = setTimeout(layoutMasonry, 100)
-		})
+			clearTimeout(resizeTimeout);
+			resizeTimeout = setTimeout(layoutMasonry, 100);
+		});
 	}
-})
+});

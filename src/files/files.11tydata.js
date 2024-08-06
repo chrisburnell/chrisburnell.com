@@ -5,4 +5,4 @@ export default {
 	},
 	eleventyExcludeFromCollections: true,
 	excludeFromSearch: true,
-}
+};

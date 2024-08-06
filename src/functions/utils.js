@@ -1,4 +1,4 @@
-import mastodonInstances from "../data/mastodonInstances.js"
+import mastodonInstances from "../data/mastodonInstances.js";
 
 /**
  * @param {object[]} array
@@ -7,9 +7,11 @@ import mastodonInstances from "../data/mastodonInstances.js"
  */
 export const filterOut = (array, filterList) => {
 	return array.filter((item) => {
-		return !filterList.includes(typeof item === "string" ? item.toLowerCase() : item)
-	})
-}
+		return !filterList.includes(
+			typeof item === "string" ? item.toLowerCase() : item,
+		);
+	});
+};
 
 /**
  * @param {string} value
@@ -19,14 +21,21 @@ export const getMastodonHandle = (value) => {
 	for (let instance of mastodonInstances) {
 		if (value.includes(instance)) {
 			if (value.includes("/@")) {
-				return "@" + value.split("/@")[1].split("/")[0] + "@" + instance
+				return (
+					"@" + value.split("/@")[1].split("/")[0] + "@" + instance
+				);
 			} else {
-				return "@" + value.split("/users/")[1].split("/")[0] + "@" + instance
+				return (
+					"@" +
+					value.split("/users/")[1].split("/")[0] +
+					"@" +
+					instance
+				);
 			}
 		}
 	}
-	return value
-}
+	return value;
+};
 
 /**
  * @param {string} value
@@ -34,10 +43,10 @@ export const getMastodonHandle = (value) => {
  */
 export const getTwitterHandle = (value) => {
 	if (value.includes("https://twitter.com")) {
-		return "@" + value.split("/status/")[0].split("twitter.com/")[1]
+		return "@" + value.split("/status/")[0].split("twitter.com/")[1];
 	}
-	return value
-}
+	return value;
+};
 
 /**
  * @param {number} min
@@ -46,8 +55,8 @@ export const getTwitterHandle = (value) => {
  * @returns {number}
  */
 export const clamp = (min, value, max) => {
-	return Math.min(Math.max(Number(value), Number(min)), Number(max))
-}
+	return Math.min(Math.max(Number(value), Number(min)), Number(max));
+};
 
 /**
  * @param {number} values
@@ -56,28 +65,28 @@ export const clamp = (min, value, max) => {
  * @returns {number}
  */
 export const simpleMovingAverage = (values, period, preserveEnds = false) => {
-	let step = (period - 1) / 2
-	let end = values.length - 1
-	let normalized = []
+	let step = (period - 1) / 2;
+	let end = values.length - 1;
+	let normalized = [];
 
 	for (let i in values) {
-		let min = Math.max(0, i - step)
-		let max = Math.min(end, Number(i) + step)
-		let count = Math.abs(max - min) + 1
-		let sum = 0
+		let min = Math.max(0, i - step);
+		let max = Math.min(end, Number(i) + step);
+		let count = Math.abs(max - min) + 1;
+		let sum = 0;
 
 		for (let j = min; j <= max; j++) {
-			sum += values[j]
+			sum += values[j];
 		}
 
-		normalized[i] = Math.floor(sum / count)
+		normalized[i] = Math.floor(sum / count);
 	}
 	if (preserveEnds) {
-		normalized[0] = values[0]
-		normalized[end] = values[end]
+		normalized[0] = values[0];
+		normalized[end] = values[end];
 	}
-	return normalized
-}
+	return normalized;
+};
 
 /**
  * @see {@link https://en.wikipedia.org/wiki/Moving_average#Exponential_moving_average}
@@ -86,9 +95,13 @@ export const simpleMovingAverage = (values, period, preserveEnds = false) => {
  * @param {number} [coefficient]
  * @returns {number}
  */
-export const exponentialMovingAverage = (value, current = 0, coefficient = 0.5) => {
-	return coefficient * value + (1 - coefficient) * current
-}
+export const exponentialMovingAverage = (
+	value,
+	current = 0,
+	coefficient = 0.5,
+) => {
+	return coefficient * value + (1 - coefficient) * current;
+};
 
 export default {
 	filterOut,
@@ -97,4 +110,4 @@ export default {
 	clamp,
 	simpleMovingAverage,
 	exponentialMovingAverage,
-}
+};

@@ -7,4 +7,4 @@ export default {
 	categoryCode: "c",
 	tags: ["code", "blog"],
 	emoji: "💾",
-}
+};

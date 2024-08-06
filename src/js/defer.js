@@ -1,17 +1,17 @@
-import "@daviddarnes/storage-form"
+import "@daviddarnes/storage-form";
 
-import "@11ty/is-land"
+import "@11ty/is-land";
 
-import "@chrisburnell/relative-time"
+import "@chrisburnell/relative-time";
 
-import "./imports/relative-times"
+import "./imports/relative-times";
 
-import "tab-guard"
+import "tab-guard";
 
-import "@zachleat/webcare-webshare"
+import "@zachleat/webcare-webshare";
 
-import "./imports/website-sounds"
+import "./imports/website-sounds";
 
-import "./imports/welcome"
+import "./imports/welcome";
 
-import "./imports/preload-links"
+import "./imports/preload-links";

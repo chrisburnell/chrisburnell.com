@@ -1,1 +1,13 @@
-export default ["article", "beer", "book", "bookmark", "code", "game", "like", "music", "note", "recipe", "talk"]
+export default [
+	"article",
+	"beer",
+	"book",
+	"bookmark",
+	"code",
+	"game",
+	"like",
+	"music",
+	"note",
+	"recipe",
+	"talk",
+];

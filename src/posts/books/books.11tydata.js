@@ -11,4 +11,4 @@ export default {
 	categoryCode: "r",
 	tags: ["book", "review"],
 	emoji: "📖",
-}
+};

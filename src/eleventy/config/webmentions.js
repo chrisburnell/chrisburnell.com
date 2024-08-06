@@ -1,11 +1,11 @@
-import dotenv from "dotenv"
-dotenv.config()
+import dotenv from "dotenv";
+dotenv.config();
 
-import { defaults } from "@chrisburnell/eleventy-cache-webmentions"
-import urlReplacements from "../../data/urlReplacements.js"
-import { cacheDurations, url as siteURL } from "../../eleventy/data/site.js"
-import { getHost } from "../filters/urls.js"
-import blocklist from "./blocklist.js"
+import { defaults } from "@chrisburnell/eleventy-cache-webmentions";
+import urlReplacements from "../../data/urlReplacements.js";
+import { cacheDurations, url as siteURL } from "../../eleventy/data/site.js";
+import { getHost } from "../filters/urls.js";
+import blocklist from "./blocklist.js";
 
 export default Object.assign({}, defaults, {
 	domain: siteURL,
@@ -15,15 +15,36 @@ export default Object.assign({}, defaults, {
 	// key: "json",
 	duration: cacheDurations.hourly,
 	allowedHTML: {
-		allowedTags: ["p", "b", "i", "em", "strong", "a", "code", "s", "ins", "del", "mark", "samp", "var"],
+		allowedTags: [
+			"p",
+			"b",
+			"i",
+			"em",
+			"strong",
+			"a",
+			"code",
+			"s",
+			"ins",
+			"del",
+			"mark",
+			"samp",
+			"var",
+		],
 		allowedAttributes: {
 			a: ["href"],
 		},
 		allowedSchemes: ["https"],
-		nonTextTags: ["style", "script", "textarea", "option", "noscript", "pre"],
+		nonTextTags: [
+			"style",
+			"script",
+			"textarea",
+			"option",
+			"noscript",
+			"pre",
+		],
 	},
 	urlReplacements: urlReplacements,
 	maximumHtmlText: "Mentioned this:",
 	allowlist: [],
 	blocklist: blocklist,
-})
+});

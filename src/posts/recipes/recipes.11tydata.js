@@ -9,4 +9,4 @@ export default {
 	tags: ["recipe", "blog", "feature"],
 	emoji: "📝",
 	pre_includes: ["post/recipe.njk"],
-}
+};

@@ -1,12 +1,12 @@
-import slugify from "@sindresorhus/slugify"
-import fs from "fs-extra"
+import slugify from "@sindresorhus/slugify";
+import fs from "fs-extra";
 
 export default {
 	async shortcodeOutput(ogImage) {
-		return ogImage.outputUrl()
+		return ogImage.outputUrl();
 	},
 	async outputFileSlug(ogImage) {
-		return slugify(ogImage.data.page.url)
+		return slugify(ogImage.data.page.url);
 	},
 	satoriOptions: {
 		width: 1200,
@@ -20,4 +20,4 @@ export default {
 			},
 		],
 	},
-}
+};

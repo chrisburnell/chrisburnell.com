@@ -59,4 +59,4 @@ export default [
 		name: "Samsung Internet",
 		type: "Mobile",
 	},
-]
+];

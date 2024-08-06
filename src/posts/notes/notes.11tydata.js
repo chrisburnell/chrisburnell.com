@@ -5,4 +5,4 @@ export default {
 	categoryPlural: "notes",
 	categoryCode: "n",
 	tags: ["note", "blog", "feature"],
-}
+};

@@ -1,10 +1,10 @@
-import NewBase60 from "./filters/NewBase60.js"
-import collections from "./filters/collections.js"
-import dates from "./filters/dates.js"
-import fetch from "./filters/fetch.js"
-import strings from "./filters/strings.js"
-import urls from "./filters/urls.js"
-import utils from "./filters/utils.js"
+import NewBase60 from "./filters/NewBase60.js";
+import collections from "./filters/collections.js";
+import dates from "./filters/dates.js";
+import fetch from "./filters/fetch.js";
+import strings from "./filters/strings.js";
+import urls from "./filters/urls.js";
+import utils from "./filters/utils.js";
 
 export const filtersSync = {
 	collections,
@@ -13,11 +13,11 @@ export const filtersSync = {
 	strings,
 	urls,
 	utils,
-}
+};
 
 export const filtersAsync = {
 	fetch,
-}
+};
 
 export default {
 	collections,
@@ -27,4 +27,4 @@ export default {
 	strings,
 	urls,
 	utils,
-}
+};

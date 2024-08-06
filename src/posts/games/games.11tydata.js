@@ -11,4 +11,4 @@ export default {
 	categoryCode: "g",
 	tags: ["game", "review"],
 	emoji: "🕹️",
-}
+};

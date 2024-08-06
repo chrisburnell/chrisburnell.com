@@ -1,4 +1,21 @@
-import { bluesky, boardgamegeek, codepen, discord_id, eleventy, github, lastfm, linkedin, mastodon, mastodon_domain, nintendo, npm, speakerdeck, spotify, untappd, xmpp } from "./author.js"
+import {
+	bluesky,
+	boardgamegeek,
+	codepen,
+	discord_id,
+	eleventy,
+	github,
+	lastfm,
+	linkedin,
+	mastodon,
+	mastodon_domain,
+	nintendo,
+	npm,
+	speakerdeck,
+	spotify,
+	untappd,
+	xmpp,
+} from "./author.js";
 
 export default [
 	{
@@ -71,4 +88,4 @@ export default [
 		title: "Nintendo Switch ID",
 		value: nintendo,
 	},
-]
+];

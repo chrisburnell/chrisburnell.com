@@ -1,5 +1,5 @@
 window.loadIndieConfig = (function () {
-	"use strict"
+	"use strict";
 
 	// Indie-Config Loading script
 	// by Pelle Wessman, voxpelli.com
@@ -11,66 +11,67 @@ window.loadIndieConfig = (function () {
 		configTimeout,
 		callbacks = [],
 		handleConfig,
-		parseConfig
+		parseConfig;
 
 	// When the configuration has been loaded – deregister all loading mechanics and call all callbacks
 	handleConfig = function () {
-		config = config || {}
+		config = config || {};
 
-		configFrame.parentNode.removeChild(configFrame)
-		configFrame = undefined
+		configFrame.parentNode.removeChild(configFrame);
+		configFrame = undefined;
 
-		window.removeEventListener("message", parseConfig)
+		window.removeEventListener("message", parseConfig);
 
-		clearTimeout(configTimeout)
+		clearTimeout(configTimeout);
 
 		while (callbacks[0]) {
-			callbacks.shift()(config)
+			callbacks.shift()(config);
 		}
-	}
+	};
 
 	// When we receive a message, check if the source is right and try to parse it
 	parseConfig = function (message) {
-		var correctSource = configFrame && message.source === configFrame.contentWindow
+		var correctSource =
+			configFrame && message.source === configFrame.contentWindow;
 
 		if (correctSource && config === undefined) {
 			try {
-				config = JSON.parse(message.data)
+				config = JSON.parse(message.data);
 			} catch (ignore) {}
 
-			handleConfig()
+			handleConfig();
 		}
-	}
+	};
 
 	if (!window.navigator.registerProtocolHandler) {
-		config = {}
+		config = {};
 	}
 
 	return function (callback) {
 		// If the config is already loaded, call callback right away
 		if (config) {
-			callback(config)
-			return
+			callback(config);
+			return;
 		}
 
 		// Otherwise add the callback to the queue
-		callbacks.push(callback)
+		callbacks.push(callback);
 
 		// Are we already trying to load the Indie-Config, then wait
 		if (configFrame) {
-			return
+			return;
 		}
 
 		// Create the iframe that will load the Indie-Config
-		configFrame = document.createElement("iframe")
-		configFrame.src = "web+action:load"
-		document.getElementsByTagName("body")[0].appendChild(configFrame)
-		configFrame.style.display = "none"
+		configFrame = document.createElement("iframe");
+		configFrame.src = "web+action:load";
+		document.getElementsByTagName("body")[0].appendChild(configFrame);
+		configFrame.style.display = "none";
 
 		// Listen for messages so we will catch the Indie-Config message
-		window.addEventListener("message", parseConfig)
+		window.addEventListener("message", parseConfig);
 
 		// And if no such Indie-Config message has been loaded in a while, abort the loading
-		configTimeout = setTimeout(handleConfig, 3000)
-	}
-})()
+		configTimeout = setTimeout(handleConfig, 3000);
+	};
+})();

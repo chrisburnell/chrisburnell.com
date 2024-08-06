@@ -1,5 +1,5 @@
-import markdown from "../config/markdown.js"
+import markdown from "../config/markdown.js";
 
 export default function (eleventyConfig) {
-	eleventyConfig.setLibrary("md", markdown)
+	eleventyConfig.setLibrary("md", markdown);
 }

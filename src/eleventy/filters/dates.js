@@ -1,6 +1,6 @@
-import { DateTime } from "luxon"
-import { nowEpoch } from "../data/global.js"
-import { limits, locale } from "../data/site.js"
+import { DateTime } from "luxon";
+import { nowEpoch } from "../data/global.js";
+import { limits, locale } from "../data/site.js";
 
 /**
  * @param {string} dateString
@@ -8,27 +8,27 @@ import { limits, locale } from "../data/site.js"
  * @return {string}
  */
 export const formatDatetime = (dateString, format) => {
-	return DateTime.fromISO(dateString, { setZone: true }).toFormat(format)
-}
+	return DateTime.fromISO(dateString, { setZone: true }).toFormat(format);
+};
 
 const ordinalPlurals = new Intl.PluralRules(locale, {
 	type: "ordinal",
-})
+});
 
 const ordinalSuffixes = {
 	one: "st",
 	two: "nd",
 	few: "rd",
 	other: "th",
-}
+};
 
 /**
  * @param {number} number
  * @returns {string}
  */
 export const ordinal = (number) => {
-	return `${number}<sup>${ordinalSuffixes[ordinalPlurals.select(number)]}</sup>`
-}
+	return `${number}<sup>${ordinalSuffixes[ordinalPlurals.select(number)]}</sup>`;
+};
 
 /**
  * @param {string} dateString
@@ -36,16 +36,16 @@ export const ordinal = (number) => {
  * @return {string}
  */
 export const friendlyDate = (dateString, format = "d LLLL yyyy") => {
-	return formatDatetime(dateString, format)
-}
+	return formatDatetime(dateString, format);
+};
 
 /**
  * @param {string} dateString
  * @return {string}
  */
 export const friendlyDateLong = (dateString) => {
-	return formatDatetime(dateString, `cccc, d LLLL yyyy`)
-}
+	return formatDatetime(dateString, `cccc, d LLLL yyyy`);
+};
 
 /**
  * @param {DateTime} value
@@ -53,7 +53,7 @@ export const friendlyDateLong = (dateString) => {
  * @returns {string}
  */
 export const friendlyTime = (value, showTimezone = true) => {
-	const format = "HH:mm" + (showTimezone ? " ZZZZ" : "")
+	const format = "HH:mm" + (showTimezone ? " ZZZZ" : "");
 	// prettier-ignore
 	return formatDatetime(value, format)
 		.replace(/(GMT|UTC)\+8/g, `<abbr title="Singapore Time">SGT <span aria-hidden="true">🇸🇬</span></abbr>`)
@@ -61,7 +61,7 @@ export const friendlyTime = (value, showTimezone = true) => {
 		.replace(/(GMT|UTC)/g, `<abbr title="Greenwich Mean Time">GMT <span aria-hidden="true">🇬🇧</span></abbr>`)
 		.replace(/(GMT|UTC)-3/g, `<abbr title="Atlantic Daylight Time">ADT <span aria-hidden="true">🇨🇦</span></abbr>`)
 		.replace(/(GMT|UTC)-4/g, `<abbr title="Atlantic Standard Time">AST <span aria-hidden="true">🇨🇦</span></abbr>`)
-}
+};
 
 /**
  * @param {DateTime} value
@@ -75,7 +75,7 @@ export const ianaTimezone = (value) => {
 		.replace(/(GMT|UTC)/g, "Europe/London")
 		.replace(/(GMT|UTC)-3/g, "America/Halifax")
 		.replace(/(GMT|UTC)-4/g, "America/Halifax")
-}
+};
 
 /**
  * @param {string} dateString
@@ -83,25 +83,25 @@ export const ianaTimezone = (value) => {
  * @returns {string}
  */
 export const rfc3339Date = (dateString, showTimezone = true) => {
-	const format = "yyyy-MM-dd'T'HH:mm:ss" + (showTimezone ? "ZZ" : "")
-	return formatDatetime(dateString, format)
-}
+	const format = "yyyy-MM-dd'T'HH:mm:ss" + (showTimezone ? "ZZ" : "");
+	return formatDatetime(dateString, format);
+};
 
 /**
  * @param {string} dateString
  * @returns {string}
  */
 export const w3cDate = (dateString) => {
-	return formatDatetime(dateString, "yyyy-MM-dd'T'HH:mm:ssZZ")
-}
+	return formatDatetime(dateString, "yyyy-MM-dd'T'HH:mm:ssZZ");
+};
 
 /**
  * @param {string} dateString
  * @returns {string}
  */
 export const epoch = (dateString) => {
-	return new Date(dateString).getTime()
-}
+	return new Date(dateString).getTime();
+};
 
 /**
  * @param {object} a
@@ -109,40 +109,40 @@ export const epoch = (dateString) => {
  * @returns {number}
  */
 export const dateSort = (a, b) => {
-	return new Date(b.data.date) - new Date(a.data.date)
-}
+	return new Date(b.data.date) - new Date(a.data.date);
+};
 
 /**
  * @param {object[]} array
  * @returns {object[]}
  */
 export const sortByDate = (array) => {
-	return array.sort(dateSort)
-}
+	return array.sort(dateSort);
+};
 
 /**
  * @param {number} value
  * @returns {number}
  */
 export const msToDays = (value) => {
-	return value / 1000 / 60 / 60 / 24
-}
+	return value / 1000 / 60 / 60 / 24;
+};
 
 /**
  * @param {string} value
  * @returns {boolean}
  */
 export const isPast = (value) => {
-	return epoch(value) <= nowEpoch
-}
+	return epoch(value) <= nowEpoch;
+};
 
 /**
  * @param {string} value
  * @returns {boolean}
  */
 export const isFuture = (value) => {
-	return nowEpoch < epoch(value)
-}
+	return nowEpoch < epoch(value);
+};
 
 /**
  * @param {string} value
@@ -150,9 +150,9 @@ export const isFuture = (value) => {
  * @returns {boolean}
  */
 export const isUpcoming = (value, upcomingDays = limits.upcomingDays) => {
-	const differenceDays = msToDays(epoch(value) - nowEpoch)
-	return 0 < differenceDays && differenceDays < upcomingDays
-}
+	const differenceDays = msToDays(epoch(value) - nowEpoch);
+	return 0 < differenceDays && differenceDays < upcomingDays;
+};
 
 /**
  * @param {string} value
@@ -160,9 +160,9 @@ export const isUpcoming = (value, upcomingDays = limits.upcomingDays) => {
  * @returns {boolean}
  */
 export const isRecent = (value, recentDays = limits.recentDays) => {
-	const differenceDays = msToDays(nowEpoch - epoch(value))
-	return 0 < differenceDays && differenceDays < recentDays
-}
+	const differenceDays = msToDays(nowEpoch - epoch(value));
+	return 0 < differenceDays && differenceDays < recentDays;
+};
 
 /**
  * @param {object[]} array
@@ -172,13 +172,13 @@ export const isRecent = (value, recentDays = limits.recentDays) => {
  */
 export const recentFilter = (array, key, recentDays = limits.recentDays) => {
 	return array.filter((item) => {
-		const keys = key.split(".")
+		const keys = key.split(".");
 		const value = keys.reduce((o, k) => {
-			return o[k]
-		}, item)
-		return isRecent(value, recentDays)
-	})
-}
+			return o[k];
+		}, item);
+		return isRecent(value, recentDays);
+	});
+};
 
 /**
  * @param {object[]} array
@@ -187,22 +187,26 @@ export const recentFilter = (array, key, recentDays = limits.recentDays) => {
 export const rssOnlyFilter = (array) => {
 	return array.filter((item) => {
 		if (item.data.tags && item.data.tags.includes("rss-only")) {
-			return !isRecent(item.data.date)
+			return !isRecent(item.data.date);
 		}
-		return true
-	})
-}
+		return true;
+	});
+};
 
-let userLocale = locale
+let userLocale = locale;
 if (typeof document !== "undefined") {
-	userLocale = document.querySelector("html").getAttribute("lang") || navigator.languages ? navigator.languages[0] : userLocale
+	userLocale =
+		document.querySelector("html").getAttribute("lang") ||
+		navigator.languages
+			? navigator.languages[0]
+			: userLocale;
 }
 
 const rtf = new Intl.RelativeTimeFormat(userLocale, {
 	localeMatcher: "best fit",
 	numeric: "always",
 	style: "long",
-})
+});
 
 const rtfDivisions = [
 	{
@@ -233,7 +237,7 @@ const rtfDivisions = [
 		amount: Number.POSITIVE_INFINITY,
 		name: "year",
 	},
-]
+];
 
 /**
  * @param {Datetime} datetime
@@ -242,27 +246,27 @@ const rtfDivisions = [
  */
 export const getRelativeTime = (datetime, division) => {
 	if (typeof datetime === "string") {
-		datetime = new Date(datetime)
+		datetime = new Date(datetime);
 	}
 
-	let difference = (datetime.getTime() - Date.now()) / 1000
+	let difference = (datetime.getTime() - Date.now()) / 1000;
 
 	if (division) {
-		return rtf.format(Math.round(difference), division)
+		return rtf.format(Math.round(difference), division);
 	}
 
 	for (const division of rtfDivisions) {
 		if (Math.floor(Math.abs(difference)) < division.amount) {
-			return rtf.format(Math.round(difference), division.name)
+			return rtf.format(Math.round(difference), division.name);
 		}
-		difference /= division.amount
+		difference /= division.amount;
 	}
-}
+};
 
-const emojiFuture = `<span class=" [ emoji ] " aria-hidden="true">➡️</span>`
-const emojiGoing = `<span class=" [ emoji ] " aria-hidden="true">✅</span>`
-const emojiHopefully = `<span class=" [ emoji ] " aria-hidden="true">😔</span>`
-const emojiNotGoing = `<span class=" [ emoji ] " aria-hidden="true">🤞</span>`
+const emojiFuture = `<span class=" [ emoji ] " aria-hidden="true">➡️</span>`;
+const emojiGoing = `<span class=" [ emoji ] " aria-hidden="true">✅</span>`;
+const emojiHopefully = `<span class=" [ emoji ] " aria-hidden="true">😔</span>`;
+const emojiNotGoing = `<span class=" [ emoji ] " aria-hidden="true">🤞</span>`;
 
 /**
  * @param {string} start
@@ -271,28 +275,28 @@ const emojiNotGoing = `<span class=" [ emoji ] " aria-hidden="true">🤞</span>`
  * @returns {string}
  */
 export const getRSVPValueString = (start, end, value) => {
-	const now = Date.now()
+	const now = Date.now();
 
 	if (value === "yes") {
 		if (epoch(start) > now) {
-			return `${emojiFuture} <small>attending</small>`
+			return `${emojiFuture} <small>attending</small>`;
 		}
 		if (epoch(start) <= now && now <= epoch(end)) {
-			return `${emojiGoing} <small>currently attending</small>`
+			return `${emojiGoing} <small>currently attending</small>`;
 		}
-		return `${emojiGoing} <small>attended</small>`
+		return `${emojiGoing} <small>attended</small>`;
 	}
 	if (value === "maybe" || value === "interested") {
 		if (epoch(start) > now) {
-			return `${emojiHopefully} <small>hoping to attend</small>`
+			return `${emojiHopefully} <small>hoping to attend</small>`;
 		}
-		return `${emojiHopefully} <small>was hoping to attend</small>`
+		return `${emojiHopefully} <small>was hoping to attend</small>`;
 	}
 	if (epoch(start) > now) {
-		return `${emojiNotGoing} <small>unable to attend</small>`
+		return `${emojiNotGoing} <small>unable to attend</small>`;
 	}
-	return `${emojiNotGoing} <small>was unable to attend</small>`
-}
+	return `${emojiNotGoing} <small>was unable to attend</small>`;
+};
 
 /**
  * @param {string} start
@@ -301,28 +305,28 @@ export const getRSVPValueString = (start, end, value) => {
  * @returns {string}
  */
 export const getRSVPValueHTML = (start, end, value) => {
-	const now = Date.now()
+	const now = Date.now();
 
 	if (value === "yes") {
 		if (epoch(start) > now) {
-			return `<span data-start="${rfc3339Date(start)}" data-end="${rfc3339Date(end)}" data-value="${value}" data-relative-rsvp-value>${getRSVPValueString(start, end, value)}</span>`
+			return `<span data-start="${rfc3339Date(start)}" data-end="${rfc3339Date(end)}" data-value="${value}" data-relative-rsvp-value>${getRSVPValueString(start, end, value)}</span>`;
 		}
 		if (epoch(start) <= now && now <= epoch(end)) {
-			return `<span data-start="${rfc3339Date(start)}" data-end="${rfc3339Date(end)}" data-value="${value}" data-relative-rsvp-value>${getRSVPValueString(start, end, value)}</span>`
+			return `<span data-start="${rfc3339Date(start)}" data-end="${rfc3339Date(end)}" data-value="${value}" data-relative-rsvp-value>${getRSVPValueString(start, end, value)}</span>`;
 		}
-		return `<span data-start="${rfc3339Date(start)}" data-end="${rfc3339Date(end)}" data-value="${value}" data-relative-rsvp-value>${getRSVPValueString(start, end, value)}</span>`
+		return `<span data-start="${rfc3339Date(start)}" data-end="${rfc3339Date(end)}" data-value="${value}" data-relative-rsvp-value>${getRSVPValueString(start, end, value)}</span>`;
 	}
 	if (value === "maybe" || value === "interested") {
 		if (epoch(start) > now) {
-			return `<span data-start="${rfc3339Date(start)}" data-end="${rfc3339Date(end)}" data-value="${value}" data-relative-rsvp-value>${getRSVPValueString(start, end, value)}</span>`
+			return `<span data-start="${rfc3339Date(start)}" data-end="${rfc3339Date(end)}" data-value="${value}" data-relative-rsvp-value>${getRSVPValueString(start, end, value)}</span>`;
 		}
-		return `<span data-start="${rfc3339Date(start)}" data-end="${rfc3339Date(end)}" data-value="${value}" data-relative-rsvp-value>${getRSVPValueString(start, end, value)}</span>`
+		return `<span data-start="${rfc3339Date(start)}" data-end="${rfc3339Date(end)}" data-value="${value}" data-relative-rsvp-value>${getRSVPValueString(start, end, value)}</span>`;
 	}
 	if (epoch(start) > now) {
-		return `<span data-start="${rfc3339Date(start)}" data-end="${rfc3339Date(end)}" data-value="${value}" data-relative-rsvp-value>${getRSVPValueString(start, end, value)}</span>`
+		return `<span data-start="${rfc3339Date(start)}" data-end="${rfc3339Date(end)}" data-value="${value}" data-relative-rsvp-value>${getRSVPValueString(start, end, value)}</span>`;
 	}
-	return `<span data-start="${rfc3339Date(start)}" data-end="${rfc3339Date(end)}" data-value="${value}" data-relative-rsvp-value>${getRSVPValueString(start, end, value)}</span>`
-}
+	return `<span data-start="${rfc3339Date(start)}" data-end="${rfc3339Date(end)}" data-value="${value}" data-relative-rsvp-value>${getRSVPValueString(start, end, value)}</span>`;
+};
 
 /**
  * @param {string} start
@@ -332,10 +336,10 @@ export const getRSVPValueHTML = (start, end, value) => {
  */
 export const getRSVPDateString = (end) => {
 	if (Date.now() <= epoch(end)) {
-		return "taking place"
+		return "taking place";
 	}
-	return "took place"
-}
+	return "took place";
+};
 
 export default {
 	formatDatetime,
@@ -360,4 +364,4 @@ export default {
 	getRSVPValueString,
 	getRSVPValueHTML,
 	getRSVPDateString,
-}
+};

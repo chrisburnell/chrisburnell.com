@@ -15,5 +15,5 @@ export default [
 		twitter: "ConcernedApe",
 	},
 ].sort((a, b) => {
-	return a.title.localeCompare(b.title)
-})
+	return a.title.localeCompare(b.title);
+});

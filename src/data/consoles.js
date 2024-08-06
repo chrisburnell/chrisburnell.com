@@ -11,4 +11,4 @@ export default [
 		title: "PC",
 		abbreviation: "Personal Computer",
 	},
-]
+];
