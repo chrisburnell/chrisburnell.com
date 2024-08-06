@@ -38,7 +38,7 @@ jobs:
           VIGENERE_SECRET: ${{ secrets.VIGENERE_SECRET }}
           WEBMENTION_IO_TOKEN: ${{ secrets.WEBMENTION_IO_TOKEN }}
 
-      - name: Perform checks
+      - name: Check Build
         uses: ./.github/actions/check
 
       - name: Copy files to server

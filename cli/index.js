@@ -109,7 +109,7 @@ program
 
 program
 	.command("checks")
-	.description("⚠️ Perform Checks")
+	.description("⚠️ Check Build")
 	.action(async () => {
 		await checkLinks();
 		// eslint-disable-next-line no-undef
