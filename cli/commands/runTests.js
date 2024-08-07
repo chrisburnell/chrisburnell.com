@@ -1,7 +1,7 @@
-import stringFilters from "../../tests/filters/strings.js";
-import urlFilters from "../../tests/filters/urls.js";
-import stringFunctions from "../../tests/functions/strings.js";
-import urlFunctions from "../../tests/functions/urls.js";
+import stringFilters from "../../tests/filters/strings.test.js";
+import urlFilters from "../../tests/filters/urls.test.js";
+import stringFunctions from "../../tests/functions/strings.test.js";
+import urlFunctions from "../../tests/functions/urls.test.js";
 
 export default async () => {
 	await stringFilters();
