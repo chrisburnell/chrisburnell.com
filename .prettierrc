@@ -1,5 +1,6 @@
 {
 	"tabWidth": 4,
+	"trailingComma": "all",
 	"plugins": ["prettier-plugin-jinja-template"],
 	"overrides": [
 		{
