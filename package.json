@@ -81,6 +81,7 @@
     "@chrisburnell/spark-line": "^1.2.6",
     "@chrisburnell/svg-sparkline": "^1.0.13",
     "@chrisburnell/theme-selector": "^1.0.1",
+    "@chrisburnell/url-input": "^0.0.1",
     "@daviddarnes/link-peek": "^1.1.0",
     "@daviddarnes/storage-form": "^2.0.1",
     "@dotenvx/dotenvx": "^1.6.4",

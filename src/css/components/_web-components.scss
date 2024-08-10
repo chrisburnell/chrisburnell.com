@@ -21,3 +21,7 @@ share-button:not(:defined) button,
 share-button:defined a {
 	display: none;
 }
+
+url-input {
+	display: contents;
+}
