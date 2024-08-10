@@ -1,7 +1,7 @@
-import stringFilters from "../../tests/filters/strings.test.js";
-import urlFilters from "../../tests/filters/urls.test.js";
-import stringFunctions from "../../tests/functions/strings.test.js";
-import urlFunctions from "../../tests/functions/urls.test.js";
+import stringFilters from "../../src/eleventy/filters/strings.test.js";
+import urlFilters from "../../src/eleventy/filters/urls.test.js";
+import stringFunctions from "../../src/functions/strings.test.js";
+import urlFunctions from "../../src/functions/urls.test.js";
 
 export default async () => {
 	await stringFilters();

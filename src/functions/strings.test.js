@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import strings from "../../src/functions/strings.js";
+import strings from "./strings.js";
 
 export default async () => {
 	describe("Functions: Strings", () => {
