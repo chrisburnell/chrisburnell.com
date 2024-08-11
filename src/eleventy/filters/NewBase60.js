@@ -8,7 +8,7 @@ const SEQUENCE = "0123456789ABCDEFGHJKLMNPQRSTUVWXYZ_abcdefghijkmnopqrstuvwxyz";
  * @param {number} value
  * @returns {string}
  */
-const DecimalToSexagesimal = (value) => {
+export const DecimalToSexagesimal = (value) => {
 	if (value === undefined || value === 0) {
 		return 0;
 	}
@@ -26,7 +26,7 @@ const DecimalToSexagesimal = (value) => {
  * @param {DateTime} repository
  * @returns {string}
  */
-const DateToSexagesimal = (dateObject) => {
+export const DateToSexagesimal = (dateObject) => {
 	let sinceEpoch = epoch(dateObject);
 	let epochDays = Math.floor(sinceEpoch / (1000 * 60 * 60 * 24));
 	return DecimalToSexagesimal(epochDays);

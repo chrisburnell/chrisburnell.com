@@ -116,7 +116,7 @@ export const isPublished = (item) => {
  * @returns {boolean}
  */
 export const notReply = (item) => {
-	const isReply = item.data.in_reply_to;
+	const isReply = item?.data?.in_reply_to;
 	if (!isReply) {
 		return true;
 	}
