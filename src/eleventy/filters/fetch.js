@@ -20,8 +20,30 @@ export const githubData = async (repository) => {
  * @returns {number}
  */
 export const stargazers = async (repository) => {
-	const github = await githubData(repository);
-	return Number(github["stargazers_count"]);
+	const repositoryData = await githubData(repository);
+	return Number(repositoryData["stargazers_count"]);
+};
+
+/**
+ * @param {string} repository
+ * @returns {object}
+ */
+export const githubTagData = async (repository) => {
+	const url = `https://api.github.com/repos/${repository}/tags`;
+	const json = await EleventyFetch(url, {
+		duration: cacheDurations.daily,
+		type: "json",
+	});
+	return json;
+};
+
+/**
+ * @param {string} repository
+ * @returns {number}
+ */
+export const latestTag = async (repository) => {
+	const tagData = await githubTagData(repository);
+	return tagData.length ? tagData[0].name : null;
 };
 
 /**
@@ -51,5 +73,7 @@ export const npmDownloads = async (npmPackage, published) => {
 export default {
 	githubData,
 	stargazers,
+	githubTagData,
+	latestTag,
 	npmDownloads,
 };

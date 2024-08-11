@@ -18,6 +18,20 @@ export default async () => {
 			assert.strictEqual(typeof stargazers, "number");
 		});
 
+		it("githubTagData() returns repository tag data from the GitHub API", async () => {
+			const tagData = await fetch.githubTagData(
+				"chrisburnell/svg-sparkline",
+			);
+			assert.strictEqual(tagData[tagData.length - 1].name, "v0.0.1");
+		});
+
+		it("latestTag() returns repository tag data from the GitHub API", async () => {
+			const latestTag = await fetch.latestTag(
+				"chrisburnell/svg-sparkline",
+			);
+			assert.strictEqual(/v\d+\.\d+\.\d+/.test(latestTag), true);
+		});
+
 		it("npmDownloads() returns a download count based on an npm package", async () => {
 			const downloads = await fetch.npmDownloads(
 				"@chrisburnell/svg-sparkline",

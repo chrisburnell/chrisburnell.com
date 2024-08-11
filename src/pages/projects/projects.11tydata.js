@@ -1,5 +1,6 @@
 import {
 	githubData,
+	latestTag,
 	npmDownloads,
 	stargazers,
 } from "../../eleventy/filters/fetch.js";
@@ -91,6 +92,12 @@ export default {
 				return await stargazers(data.github);
 			}
 			return 0;
+		},
+		latest_tag: async (data) => {
+			if (data.github) {
+				return await latestTag(data.github);
+			}
+			return null;
 		},
 	},
 };

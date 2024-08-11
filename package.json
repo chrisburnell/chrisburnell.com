@@ -77,7 +77,7 @@
     "@chrisburnell/instant-photo": "^1.0.1",
     "@chrisburnell/paper-stamp": "^0.0.5",
     "@chrisburnell/pentatonic": "^1.1.4",
-    "@chrisburnell/relative-time": "^1.0.5",
+    "@chrisburnell/relative-time": "^1.0.6",
     "@chrisburnell/spark-line": "^1.2.6",
     "@chrisburnell/svg-sparkline": "^1.0.13",
     "@chrisburnell/theme-selector": "^1.0.1",
