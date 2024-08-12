@@ -29,7 +29,6 @@ const setConfig = (outputElement, domainInput, type) => {
 
 const configForm = document.querySelector("#config-form");
 const inputDomain = document.querySelector("#domain");
-const selectType = document.querySelector("#type");
 const outputCommonJS = document.querySelector("#config-commonjs-output");
 const outputESM = document.querySelector("#config-esm-output");
 
@@ -39,10 +38,6 @@ configForm.addEventListener("submit", (event) => {
 	setConfig(outputESM, inputDomain.value, "ESM");
 });
 inputDomain.addEventListener("change", () => {
-	setConfig(outputCommonJS, inputDomain.value, "CommonJS");
-	setConfig(outputESM, inputDomain.value, "ESM");
-});
-selectType.addEventListener("change", () => {
 	setConfig(outputCommonJS, inputDomain.value, "CommonJS");
 	setConfig(outputESM, inputDomain.value, "ESM");
 });

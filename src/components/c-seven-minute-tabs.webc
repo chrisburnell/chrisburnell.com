@@ -1,0 +1,8 @@
+<is-land on:idle on:visible>
+	<seven-minute-tabs @attributes webc:root="override">
+		<slot></slot>
+	</seven-minute-tabs>
+	<template webc:raw data-island="once">
+		<script src="/js/components/seven-minute-tabs.js"></script>
+	</template>
+</is-land>

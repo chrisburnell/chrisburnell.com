@@ -6,8 +6,6 @@ import "@chrisburnell/relative-time";
 
 import "./imports/relative-times";
 
-import "@zachleat/seven-minute-tabs";
-
 import "@zachleat/webcare-webshare";
 
 import "./imports/website-sounds";

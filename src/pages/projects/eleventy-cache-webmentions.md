@@ -69,10 +69,10 @@ Check it out: [Webmention Setup for Eleventy](/article/webmention-eleventy-setup
 
 Create a configuration file in your project (e.g. `configWebmentions.js`):
 
-<seven-minute-tabs>
+<c-seven-minute-tabs persist sync>
     <ol role="tablist" aria-label="Choose a configuration flavour">
-        <li><a href="#config-commonjs" role="tab">CommonJS</a></li>
-        <li><a href="#config-esm" role="tab">ESM</a></li>
+        <li><a href="#config-commonjs" role="tab" data-tabs-persist="js-flavour:commonjs">CommonJS</a></li>
+        <li><a href="#config-esm" role="tab" data-tabs-persist="js-flavour:esm">ESM</a></li>
     </ol>
     <div id="config-commonjs" role="tabpanel">
 
@@ -102,7 +102,7 @@ export default Object.assign({}, defaults, {
 ```
 
 </div>
-</seven-minute-tabs>
+</c-seven-minute-tabs>
 
 <div class=" [ box  box--warning ] [ flow ] ">
 	<p>Make sure you get the correct values for this configuration. Check below for both <a href="#webmention-io">Webmention.io configuration</a> and <a href="#go-jamming">go-jamming configuration</a>.</p>
@@ -172,10 +172,10 @@ export default Object.assign({}, defaults, {
 
 Inside your Eleventy config file, use the `addPlugin()` function to attach the plugin and your configuration to your project:
 
-<seven-minute-tabs>
+<c-seven-minute-tabs persist sync>
     <ol role="tablist" aria-label="Choose a plugin flavour">
-        <li><a href="#addplugin-commonjs" role="tab">CommonJS</a></li>
-        <li><a href="#addplugin-esm" role="tab">ESM</a></li>
+        <li><a href="#addplugin-commonjs" role="tab" data-tabs-persist="js-flavour:commonjs">CommonJS</a></li>
+        <li><a href="#addplugin-esm" role="tab" data-tabs-persist="js-flavour:esm">ESM</a></li>
     </ol>
     <div id="addplugin-commonjs" role="tabpanel">
 
@@ -201,7 +201,7 @@ export default function (eleventyConfig) {
 ```
 
 </div>
-</seven-minute-tabs>
+</c-seven-minute-tabs>
 
 ### Step 4:
 
@@ -209,10 +209,10 @@ Using [Eleventy’s Data Cascade](https://www.11ty.dev/docs/data-cascade/), you 
 
 For example, if you have a folder, `/pages/`, and want to attach Webmentions to each page, create or add the following to a `pages.11tydata.js` file within the folder:
 
-<seven-minute-tabs>
+<c-seven-minute-tabs persist sync>
     <ol role="tablist" aria-label="Choose a directory data flavour">
-        <li><a href="#directory-data-commonjs" role="tab">CommonJS</a></li>
-        <li><a href="#directory-data-esm" role="tab">ESM</a></li>
+        <li><a href="#directory-data-commonjs" role="tab" data-tabs-persist="js-flavour:commonjs">CommonJS</a></li>
+        <li><a href="#directory-data-esm" role="tab" data-tabs-persist="js-flavour:esm">ESM</a></li>
     </ol>
     <div id="directory-data-commonjs" role="tabpanel">
 
@@ -246,7 +246,7 @@ export default {
 ```
 
 </div>
-</seven-minute-tabs>
+</c-seven-minute-tabs>
 
 This attaches an Array containing Webmentions to each page (based on its URL).
 
@@ -257,7 +257,7 @@ You can access the array of per-page Webmentions with the variable, <samp>webmen
 {% raw %}
 ```twig
 {% for webmention in webmentions %}
-    {# Do something with each Webmention #}
+	{# Do something with each Webmention #}
 {% endfor %}
 ```
 {% endraw %}
@@ -280,10 +280,10 @@ eleventyConfig.addCollection("popular", (collection) => {
 <c-details>
     <summary>JavaScript</summary>
 
-<seven-minute-tabs>
+<c-seven-minute-tabs persist sync>
     <ol role="tablist" aria-label="Choose a global data flavour">
-        <li><a href="#global-data-commonjs" role="tab">CommonJS</a></li>
-        <li><a href="#global-data-esm" role="tab">ESM</a></li>
+        <li><a href="#global-data-commonjs" role="tab" data-tabs-persist="js-flavour:commonjs">CommonJS</a></li>
+        <li><a href="#global-data-esm" role="tab" data-tabs-persist="js-flavour:esm">ESM</a></li>
     </ol>
     <div id="global-data-commonjs" role="tabpanel">
 
@@ -305,7 +305,7 @@ import {
 ```
 
 </div>
-</seven-minute-tabs>
+</c-seven-minute-tabs>
 
 </c-details>
 
@@ -328,10 +328,10 @@ import {
 <c-details>
     <summary>JavaScript</summary>
 
-<seven-minute-tabs>
+<c-seven-minute-tabs persist sync>
     <ol role="tablist" aria-label="Choose a filters flavour">
-        <li><a href="#filters-commonjs" role="tab">CommonJS</a></li>
-        <li><a href="#filters-esm" role="tab">ESM</a></li>
+        <li><a href="#filters-commonjs" role="tab" data-tabs-persist="js-flavour:commonjs">CommonJS</a></li>
+        <li><a href="#filters-esm" role="tab" data-tabs-persist="js-flavour:esm">ESM</a></li>
     </ol>
     <div id="filters-commonjs" role="tabpanel">
 
@@ -399,7 +399,7 @@ webmentions.forEach((webmention) => {
 ```
 
 </div>
-</seven-minute-tabs>
+</c-seven-minute-tabs>
 
 </c-details>
 
@@ -408,24 +408,21 @@ webmentions.forEach((webmention) => {
 
 {% raw %}
 ```twig
-{# get Array of Webmentions for a given URL #}
-{% set webmentions = ('https://example.com' + page.url) | getWebmentions %}
+{% for webmention in webmentions %}
+	{# get received/published time of a Webmention #}
+	{{ webmentions | getWebmentionPublished }}
+	{# get content of a Webmention #}
+	{{ webmentions | getWebmentionContent }}
+	{# get source URL of a Webmention (where it's from) #}
+	{{ webmentions | getWebmentionSource }}
+	{# get target URL of a Webmention (where it's sent to) #}
+	{{ webmentions | getWebmentionTarget }}
+	{# get response type of a Webmention #}
+	{{ webmentions | getWebmentionType }}
+{% endfor %}
 
 {# filter Webmentions by their response type #}
 {{ set responses = webmentions | getWebmentionsByTypes(['mention-of', 'in-reply-to']) }}
-
-{% for webmention in webmentions %}
-    {# get received/published time of a Webmention #}
-    {{ webmentions | getWebmentionPublished }}
-    {# get content of a Webmention #}
-    {{ webmentions | getWebmentionContent }}
-    {# get source URL of a Webmention (where it's from) #}
-    {{ webmentions | getWebmentionSource }}
-    {# get target URL of a Webmention (where it's sent to) #}
-    {{ webmentions | getWebmentionTarget }}
-    {# get response type of a Webmention #}
-    {{ webmentions | getWebmentionType }}
-{% endfor %}
 ```
 {% endraw %}
 
@@ -477,21 +474,21 @@ The example below requests the [JF2](https://www.w3.org/TR/jf2/) file format, wh
 
 The key difference between the two feed formats is in the *naming* of the keys: the JF2 format holds the array of Webmentions in the `children` key, whereas the JSON format holds them in the `links` key. The JF2 format, however, provides keys and values that more tightly-align with [microformats](https://indieweb.org/microformats), the method I recommend the most for marking up HTML such that it can be consumed and understood by <q>search engines, aggregators, and other tools</q> across the IndieWeb.
 
-<form id="config-form" class=" [ grid ] [ requires-js ] " autocomplete="off">
+<form id="config-form" class=" [ requires-js ] " autocomplete="off">
     <fieldset>
         <label for="domain" class=" [ delta ] ">Your Domain</label>
         <url-input force-https><input id="domain" name="domain" type="url" value="https://example.com" class=" [ monospace ] " pattern="\S+\.\S+" required style="inline-size: 100%; line-height: 3;"></url-input>
     </fieldset>
 </form>
 
-<seven-minute-tabs>
+<c-seven-minute-tabs persist sync>
     <ol class=" [ requires-js ] " role="tablist" aria-label="Choose a configuration flavour">
-        <li><a href="#config-generator-commonjs" role="tab">CommonJS</a></li>
-        <li><a href="#config-generator-esm" role="tab">ESM</a></li>
+        <li><a href="#config-generator-commonjs" role="tab" data-tabs-persist="js-flavour:commonjs">CommonJS</a></li>
+        <li><a href="#config-generator-esm" role="tab" data-tabs-persist="js-flavour:esm">ESM</a></li>
     </ol>
     <div id="config-generator-commonjs" role="tabpanel">
 
-<pre class="language-javascript requires-js"><code id="config-commonjs-output" tabindex="0" class="language-javascript"><span class="token keyword">const</span> <span class="token punctuation">{</span> defaults <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"@chrisburnell/eleventy-cache-webmentions"</span><span class="token punctuation">)</span>
+<pre class="language-javascript"><code id="config-commonjs-output" tabindex="0" class="language-javascript"><span class="token keyword">const</span> <span class="token punctuation">{</span> defaults <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"@chrisburnell/eleventy-cache-webmentions"</span><span class="token punctuation">)</span>
 
 module<span class="token punctuation">.</span>exports <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> defaults<span class="token punctuation">,</span> <span class="token punctuation">{</span>
 	<span class="token literal-property property">domain</span><span class="token operator">:</span> <span class="token string">"https://example.com"</span><span class="token punctuation">,</span>
@@ -511,7 +508,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
 
 </div>
-</seven-minute-tabs>
+</c-seven-minute-tabs>
 
 If you want to use the JSON format instead, make sure that you replace `mentions.jf2` in the URL with `mentions.json` and change the value of the key from `children` to `links`.
 
@@ -529,6 +526,13 @@ GO_JAMMING_TOKEN=njJql0lKXnotreal4x3Wmd
 
 ### Set your feed and key config options
 
+<c-seven-minute-tabs persist sync>
+    <ol class=" [ requires-js ] " role="tablist" aria-label="Choose a configuration flavour">
+        <li><a href="#gojamming-config-commonjs" role="tab" data-tabs-persist="js-flavour:commonjs">CommonJS</a></li>
+        <li><a href="#gojamming-config-esm" role="tab" data-tabs-persist="js-flavour:esm">ESM</a></li>
+    </ol>
+    <div id="gojamming-config-commonjs" role="tabpanel">
+
 ```javascript
 const pluginWebmentions = require("@chrisburnell/eleventy-cache-webmentions");
 
@@ -536,10 +540,28 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPlugin(pluginWebmentions, {
 		domain: "https://example.com",
 		feed: `https://jam.example.com/webmention/example.com/${process.env.GO_JAMMING_TOKEN}`,
-		key: "json"
+		key: "json",
 	});
 };
 ```
+
+</div>
+<div id="gojamming-config-esm" role="tabpanel">
+
+```javascript
+import pluginWebmentions from"@chrisburnell/eleventy-cache-webmentions";
+
+export default function (eleventyConfig) {
+	eleventyConfig.addPlugin(pluginWebmentions, {
+		domain: "https://example.com",
+		feed: `https://jam.example.com/webmention/example.com/${process.env.GO_JAMMING_TOKEN}`,
+		key: "json",
+	});
+};
+```
+
+</div>
+</c-seven-minute-tabs>
 
 <script type="module" src="/js/components/url-input.js"></script>
 <script>{% include '../../js/pages/eleventy-cache-webmentions.js' %}</script>
