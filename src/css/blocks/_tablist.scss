@@ -1,0 +1,21 @@
+////
+/// Tablist
+/// @group blocks
+////
+
+[role="tablist"] {
+	display: flex;
+	padding: 0;
+
+	li {
+		display: inline-block;
+		padding: 0;
+		margin: 0;
+	}
+
+	a {
+		border-radius: var(--border-radius, var(--size-border-default)) var(--border-radius, var(--size-border-default)) 0 0;
+		margin-block-end: 0;
+		outline-offset: 0;
+	}
+}

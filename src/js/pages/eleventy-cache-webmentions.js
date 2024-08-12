@@ -5,7 +5,7 @@ const addDefaultScheme = (input) => {
 	return input.replace(/\/$/, "");
 };
 
-const getConfig = (outputElement, domainInput, type = "ESM") => {
+const setConfig = (outputElement, domainInput, type) => {
 	if (!/\S+\.\S+/.test(domainInput)) {
 		return;
 	}
@@ -30,15 +30,19 @@ const getConfig = (outputElement, domainInput, type = "ESM") => {
 const configForm = document.querySelector("#config-form");
 const inputDomain = document.querySelector("#domain");
 const selectType = document.querySelector("#type");
-const output = document.querySelector("#config-output");
+const outputCommonJS = document.querySelector("#config-commonjs-output");
+const outputESM = document.querySelector("#config-esm-output");
 
 configForm.addEventListener("submit", (event) => {
 	event.preventDefault();
-	getConfig(output, inputDomain.value, selectType.value);
+	setConfig(outputCommonJS, inputDomain.value, "CommonJS");
+	setConfig(outputESM, inputDomain.value, "ESM");
 });
 inputDomain.addEventListener("change", () => {
-	getConfig(output, inputDomain.value, selectType.value);
+	setConfig(outputCommonJS, inputDomain.value, "CommonJS");
+	setConfig(outputESM, inputDomain.value, "ESM");
 });
 selectType.addEventListener("change", () => {
-	getConfig(output, inputDomain.value, selectType.value);
+	setConfig(outputCommonJS, inputDomain.value, "CommonJS");
+	setConfig(outputESM, inputDomain.value, "ESM");
 });

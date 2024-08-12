@@ -7,7 +7,7 @@
 	@extend %anchor !optional;
 }
 
-:is(button:not(.anchor), .button, [type="button"]) {
+:is(button:not(.anchor), .button, [type="button"], [role="tab"]) {
 	@extend %button !optional;
 }
 

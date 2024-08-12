@@ -91,6 +91,7 @@
     "@tweetback/canonical": "^2.0.41",
     "@zachleat/details-utils": "^2.0.2",
     "@zachleat/pagefind-search": "^1.0.3",
+    "@zachleat/seven-minute-tabs": "^3.0.2",
     "@zachleat/webcare-webshare": "^1.0.3",
     "autoprefixer": "^10.4.20",
     "browserslist": "^4.23.3",

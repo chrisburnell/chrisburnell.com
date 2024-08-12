@@ -147,6 +147,8 @@ export default async function (eleventyConfig) {
 			"js/components/link-peek.js",
 		"node_modules/@zachleat/details-utils/details-utils.js":
 			"js/components/details-utils.js",
+		"node_modules/@zachleat/seven-minute-tabs/seven-minute-tabs.js":
+			"js/components/seven-minute-tabs.js",
 		"node_modules/lite-youtube-embed/src/lite-yt-embed.css":
 			"css/components/lite-yt-embed.css",
 		"node_modules/lite-youtube-embed/src/lite-yt-embed.js":

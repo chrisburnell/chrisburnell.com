@@ -51,7 +51,7 @@ button {
 	text-decoration: none;
 	touch-action: manipulation;
 
-	&:is(:hover, :focus, :active) {
+	&:is(:hover, :focus, :active, [aria-selected="true"]) {
 		outline: var(--outline-width, var(--size-border-thin)) solid var(--outline-color, Highlight);
 		outline-offset: var(--outline-offset, var(--size-border-thin));
 	}

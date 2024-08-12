@@ -6,7 +6,7 @@ import "@chrisburnell/relative-time";
 
 import "./imports/relative-times";
 
-import "tab-guard";
+import "@zachleat/seven-minute-tabs";
 
 import "@zachleat/webcare-webshare";
 
