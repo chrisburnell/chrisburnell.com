@@ -127,6 +127,10 @@ export default Object.assign({}, defaults, {
 	// See: https://www.11ty.dev/docs/plugins/cache/#cache-directory
 	directory: ".cache",
 
+	// Force a refresh of data of your Webmention endpoint (and bypass
+	// `duration` below).
+	refresh: "1d",
+
 	// The length of time to wait between fetching fresh Webmentions.
 	// See: https://www.11ty.dev/docs/plugins/cache/#change-the-cache-duration
 	duration: "1d",

@@ -68,7 +68,7 @@ input {
 
 	&[type="search"],
 	&[type="url"] {
-		margin-block: calc(var(--size-border-thin) * 2);
+		margin-block-end: calc(var(--size-border-thin) * 2);
 		// correct odd appearance in Chrome and Safari
 		-webkit-appearance: textfield;
 		// correct the outline style in Safari
