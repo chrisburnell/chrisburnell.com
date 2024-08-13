@@ -438,9 +438,9 @@ Instead of getting all the Webmentions for a given page, you may want to grab on
 
 {% raw %}
 ```twig
-{% set bookmarks = webmentions | getWebmentionsByTypes(['bookmark-of']) %}
-{% set likes = webmentions | getWebmentionsByTypes(['like-of']) %}
-{% set reposts = webmentions | getWebmentionsByTypes(['repost-of']) %}
+{% set bookmarks = webmentions | getWebmentionsByType('bookmark-of') %}
+{% set likes = webmentions | getWebmentionsByType('like-of') %}
+{% set reposts = webmentions | getWebmentionsByType('repost-of') %}
 
 {% set replies = webmentions | getWebmentionsByTypes(['mention-of', 'in-reply-to']) %}
 ```
