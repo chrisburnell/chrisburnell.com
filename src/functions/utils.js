@@ -18,18 +18,21 @@ export const filterOut = (array, filterList) => {
  * @returns {string}
  */
 export const getMastodonHandle = (value) => {
-	for (let instance of mastodonInstances) {
+	for (let [instance, data] of Object.entries(mastodonInstances)) {
 		if (value.includes(instance)) {
 			if (value.includes("/@")) {
 				return (
-					"@" + value.split("/@")[1].split("/")[0] + "@" + instance
+					"@" +
+					value.split("/@")[1].split("/")[0] +
+					"@" +
+					(data.replacement || instance)
 				);
 			} else {
 				return (
 					"@" +
 					value.split("/users/")[1].split("/")[0] +
 					"@" +
-					instance
+					(data.replacement || instance)
 				);
 			}
 		}

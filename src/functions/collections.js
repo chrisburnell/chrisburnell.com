@@ -63,7 +63,7 @@ const getPerson = (title, url) => {
 		if (
 			url &&
 			person.mastodon &&
-			mastodonInstances.includes(getHost(url))
+			Object.keys(mastodonInstances).includes(getHost(url))
 		) {
 			return toArray(person.mastodon).find((personMastodon) => {
 				return getMastodonHandle(url) === `@${personMastodon}`;
@@ -350,7 +350,7 @@ export const getInternalTarget = (url) => {
 		return "a previous Mastodon post";
 	}
 	// Mastodon, external
-	else if (mastodonInstances.includes(getHost(url))) {
+	else if (Object.keys(mastodonInstances).includes(getHost(url))) {
 		return getMastodonHandle(url);
 	}
 	// Twitter

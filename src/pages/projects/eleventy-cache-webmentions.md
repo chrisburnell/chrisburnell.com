@@ -113,6 +113,10 @@ export default Object.assign({}, defaults, {
 
 ```javascript
 {
+	// Force a refresh of data of your Webmention endpoint (and bypass
+	// `duration` below).
+	refresh: "1d",
+
 	// The website you’re fetching Webmentions for.
 	domain: "https://example.com",
 
@@ -126,10 +130,6 @@ export default Object.assign({}, defaults, {
 	// Where the cached file containing your Webmentions is stored.
 	// See: https://www.11ty.dev/docs/plugins/cache/#cache-directory
 	directory: ".cache",
-
-	// Force a refresh of data of your Webmention endpoint (and bypass
-	// `duration` below).
-	refresh: "1d",
 
 	// The length of time to wait between fetching fresh Webmentions.
 	// See: https://www.11ty.dev/docs/plugins/cache/#change-the-cache-duration
@@ -478,7 +478,7 @@ The example below requests the [JF2](https://www.w3.org/TR/jf2/) file format, wh
 
 The key difference between the two feed formats is in the *naming* of the keys: the JF2 format holds the array of Webmentions in the `children` key, whereas the JSON format holds them in the `links` key. The JF2 format, however, provides keys and values that more tightly-align with [microformats](https://indieweb.org/microformats), the method I recommend the most for marking up HTML such that it can be consumed and understood by <q>search engines, aggregators, and other tools</q> across the IndieWeb.
 
-<form id="config-form" class=" [ requires-js ] " autocomplete="off">
+<form id="webmentionio-config-form" class=" [ requires-js ] " autocomplete="off">
     <fieldset>
         <label for="domain" class=" [ delta ] ">Your Domain</label>
         <url-input force-https><input id="domain" name="domain" type="url" value="https://example.com" class=" [ monospace ] " pattern="\S+\.\S+" required style="inline-size: 100%; line-height: 3;"></url-input>
@@ -487,12 +487,12 @@ The key difference between the two feed formats is in the *naming* of the keys: 
 
 <c-seven-minute-tabs persist sync>
     <ol class=" [ requires-js ] " role="tablist" aria-label="Choose a configuration flavour">
-        <li><a href="#config-generator-commonjs" role="tab" data-tabs-persist="js-flavour:commonjs">CommonJS</a></li>
-        <li><a href="#config-generator-esm" role="tab" data-tabs-persist="js-flavour:esm">ESM</a></li>
+        <li><a href="#webmentionio-config-commonjs" role="tab" data-tabs-persist="js-flavour:commonjs">CommonJS</a></li>
+        <li><a href="#webmentionio-config-esm" role="tab" data-tabs-persist="js-flavour:esm">ESM</a></li>
     </ol>
-    <div id="config-generator-commonjs" role="tabpanel">
+    <div id="webmentionio-config-commonjs" role="tabpanel">
 
-<pre class="language-javascript"><code id="config-commonjs-output" tabindex="0" class="language-javascript"><span class="token keyword">const</span> <span class="token punctuation">{</span> defaults <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"@chrisburnell/eleventy-cache-webmentions"</span><span class="token punctuation">)</span>
+<pre class="language-javascript"><code id="webmentionio-config-commonjs-output" tabindex="0" class="language-javascript"><span class="token keyword">const</span> <span class="token punctuation">{</span> defaults <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"@chrisburnell/eleventy-cache-webmentions"</span><span class="token punctuation">)</span>
 
 module<span class="token punctuation">.</span>exports <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> defaults<span class="token punctuation">,</span> <span class="token punctuation">{</span>
 	<span class="token literal-property property">domain</span><span class="token operator">:</span> <span class="token string">"https://example.com"</span><span class="token punctuation">,</span>
@@ -501,9 +501,9 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
 
 </div>
-<div id="config-generator-esm" role="tabpanel">
+<div id="webmentionio-config-esm" role="tabpanel">
 
-<pre class="language-javascript"><code id="config-esm-output" class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> defaults <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@chrisburnell/eleventy-cache-webmentions"</span>
+<pre class="language-javascript"><code id="webmentionio-config-esm-output" class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> defaults <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@chrisburnell/eleventy-cache-webmentions"</span>
 
 <span class="token keyword">export</span> <span class="token keyword">default</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> defaults<span class="token punctuation">,</span> <span class="token punctuation">{</span>
 	<span class="token literal-property property">domain</span><span class="token operator">:</span> <span class="token string">"https://example.com"</span><span class="token punctuation">,</span>
@@ -530,6 +530,17 @@ GO_JAMMING_TOKEN=njJql0lKXnotreal4x3Wmd
 
 ### Set your feed and key config options
 
+<form id="gojamming-config-form" class=" [ requires-js ] " autocomplete="off">
+    <fieldset>
+        <label for="domain" class=" [ delta ] ">Your Domain</label>
+        <url-input force-https><input id="domain" name="domain" type="url" value="https://example.com" class=" [ monospace ] " pattern="\S+\.\S+" required style="inline-size: 100%; line-height: 3;"></url-input>
+    </fieldset>
+    <fieldset>
+        <label for="server" class=" [ delta ] ">Your go-jamming Server</label>
+        <url-input force-https><input id="server" name="server" type="url" value="https://jam.example.com" class=" [ monospace ] " pattern="\S+\.\S+" required style="inline-size: 100%; line-height: 3;"></url-input>
+    </fieldset>
+</form>
+
 <c-seven-minute-tabs persist sync>
     <ol class=" [ requires-js ] " role="tablist" aria-label="Choose a configuration flavour">
         <li><a href="#gojamming-config-commonjs" role="tab" data-tabs-persist="js-flavour:commonjs">CommonJS</a></li>
@@ -537,32 +548,28 @@ GO_JAMMING_TOKEN=njJql0lKXnotreal4x3Wmd
     </ol>
     <div id="gojamming-config-commonjs" role="tabpanel">
 
-```javascript
-const pluginWebmentions = require("@chrisburnell/eleventy-cache-webmentions");
+<pre class="language-javascript"><code id="gojamming-config-commonjs-output" tabindex="0" class="language-javascript"><span class="token keyword">const</span> pluginWebmentions <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"@chrisburnell/eleventy-cache-webmentions"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-module.exports = function (eleventyConfig) {
-	eleventyConfig.addPlugin(pluginWebmentions, {
-		domain: "https://example.com",
-		feed: `https://jam.example.com/webmention/example.com/${process.env.GO_JAMMING_TOKEN}`,
-		key: "json",
-	});
-};
-```
+module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">eleventyConfig</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	eleventyConfig<span class="token punctuation">.</span><span class="token function">addPlugin</span><span class="token punctuation">(</span>pluginWebmentions<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+		<span class="token literal-property property">domain</span><span class="token operator">:</span> <span class="token string">"https://example.com"</span><span class="token punctuation">,</span>
+		<span class="token literal-property property">feed</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">https://jam.example.com/webmention/example.com/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">GO_JAMMING_TOKEN</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+		<span class="token literal-property property">key</span><span class="token operator">:</span> <span class="token string">"json"</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 
 </div>
 <div id="gojamming-config-esm" role="tabpanel">
 
-```javascript
-import pluginWebmentions from"@chrisburnell/eleventy-cache-webmentions";
+<pre class="language-javascript"><code id="gojamming-config-esm-output" tabindex="0" class="language-javascript"><span class="token keyword">import</span> pluginWebmentions <span class="token keyword">from</span><span class="token string">"@chrisburnell/eleventy-cache-webmentions"</span><span class="token punctuation">;</span>
 
-export default function (eleventyConfig) {
-	eleventyConfig.addPlugin(pluginWebmentions, {
-		domain: "https://example.com",
-		feed: `https://jam.example.com/webmention/example.com/${process.env.GO_JAMMING_TOKEN}`,
-		key: "json",
-	});
-};
-```
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">eleventyConfig</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	eleventyConfig<span class="token punctuation">.</span><span class="token function">addPlugin</span><span class="token punctuation">(</span>pluginWebmentions<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+		<span class="token literal-property property">domain</span><span class="token operator">:</span> <span class="token string">"https://example.com"</span><span class="token punctuation">,</span>
+		<span class="token literal-property property">feed</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">https://jam.example.com/webmention/example.com/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">GO_JAMMING_TOKEN</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+		<span class="token literal-property property">key</span><span class="token operator">:</span> <span class="token string">"json"</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 
 </div>
 </c-seven-minute-tabs>
