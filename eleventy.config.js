@@ -1,6 +1,5 @@
+import chalk from "chalk";
 import dotenv from "dotenv";
-dotenv.config();
-
 import builders from "./src/eleventy/builders.js";
 import collections from "./src/eleventy/collections.js";
 import config from "./src/eleventy/config.js";
@@ -9,6 +8,7 @@ import { filtersAsync, filtersSync } from "./src/eleventy/filters.js";
 import plugins from "./src/eleventy/plugins.js";
 import shortcodes from "./src/eleventy/shortcodes.js";
 import transforms from "./src/eleventy/transforms.js";
+dotenv.config();
 
 /**
  * @param {import("@11ty/eleventy/src/UserConfig").default} eleventyConfig
@@ -164,7 +164,9 @@ export default async function (eleventyConfig) {
 	eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
 	eleventyConfig.setQuietMode(true);
 	eleventyConfig.on("beforeBuild", () => {
-		console.log(`[${filtersSync.urls.getHost(siteURL)}] Generating...`);
+		console.log(
+			`${chalk.grey(`[${filtersSync.urls.getHost(siteURL)}]`)} Building...`,
+		);
 	});
 	return {
 		htmlTemplateEngine: false,
