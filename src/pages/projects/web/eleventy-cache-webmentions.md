@@ -575,4 +575,4 @@ module<span class="token punctuation">.</span><span class="token function-variab
 </c-seven-minute-tabs>
 
 <script type="module" src="/js/components/url-input.js"></script>
-<script>{% include '../../js/pages/eleventy-cache-webmentions.js' %}</script>
+<script>{% include '../../../js/pages/eleventy-cache-webmentions.js' %}</script>

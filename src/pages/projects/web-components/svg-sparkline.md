@@ -235,4 +235,4 @@ You can check out the full documentation, source code, demos, and provide feedba
     }
 }
 {% endcss %}
-<script type="module">{% include '../../../node_modules/@chrisburnell/svg-sparkline/svg-sparkline.js' %}</script>
+<script type="module">{% include '../../../../node_modules/@chrisburnell/svg-sparkline/svg-sparkline.js' %}</script>

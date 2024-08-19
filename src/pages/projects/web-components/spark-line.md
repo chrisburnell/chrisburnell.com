@@ -247,5 +247,5 @@ If you wanted to use `<is-land>` as well, I recommend something like the followi
 	</fieldset>
 </form>
 
-<script type="module">{% include '../../../node_modules/@chrisburnell/spark-line/spark-line.js' %}</script>
-<script type="module">{% include '../../js/pages/interactive-spark-line.js' %}</script>
+<script type="module">{% include '../../../../node_modules/@chrisburnell/spark-line/spark-line.js' %}</script>
+<script type="module">{% include '../../../js/pages/interactive-spark-line.js' %}</script>

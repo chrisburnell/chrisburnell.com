@@ -23,7 +23,7 @@ tags:
 
 <code>&lt;cow-pen&gt;</code> is a native Web Component that gives you a 90s-era adopted pet cow for your web pages.
 
-<script type="module">{% include '../../../node_modules/@chrisburnell/cow-pen/cow-pen.js' %}</script>
+<script type="module">{% include '../../../../node_modules/@chrisburnell/cow-pen/cow-pen.js' %}</script>
 
 ## Installation
 
