@@ -7,7 +7,7 @@ is-land:has(details-utils, seven-minute-tabs) {
 	display: block;
 }
 
-lastfm-listening {
+:where(lastfm-listening) {
 	display: block;
 	margin-block-start: var(--size-medium);
 }
@@ -17,7 +17,7 @@ lite-youtube {
 	background-size: cover;
 }
 
-seven-minute-tabs {
+:where(seven-minute-tabs, .content storage-form) {
 	display: block;
 }
 
@@ -26,6 +26,6 @@ share-button:defined a {
 	display: none;
 }
 
-url-input {
+:where(url-input) {
 	display: contents;
 }

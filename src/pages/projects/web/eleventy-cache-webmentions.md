@@ -478,12 +478,14 @@ The example below requests the [JF2](https://www.w3.org/TR/jf2/) file format, wh
 
 The key difference between the two feed formats is in the *naming* of the keys: the JF2 format holds the array of Webmentions in the `children` key, whereas the JSON format holds them in the `links` key. The JF2 format, however, provides keys and values that more tightly-align with [microformats](https://indieweb.org/microformats), the method I recommend the most for marking up HTML such that it can be consumed and understood by <q>search engines, aggregators, and other tools</q> across the IndieWeb.
 
-<form id="webmentionio-config-form" class=" [ requires-js ] " autocomplete="off">
-    <fieldset>
-        <label for="domain" class=" [ delta ] ">Your Domain</label>
-        <url-input force-https><input id="domain" name="domain" type="url" value="https://example.com" class=" [ monospace ] " pattern="\S+\.\S+" required style="inline-size: 100%; line-height: 3;"></url-input>
-    </fieldset>
-</form>
+<storage-form>
+    <form id="webmentionio-config-form" class=" [ requires-js ] " autocomplete="off">
+        <fieldset>
+            <label for="ecw-config-domain" class=" [ delta ] ">Your Domain</label>
+            <url-input force-https><input id="domain" name="ecw-config-domain" type="url" value="https://example.com" class=" [ monospace ] " pattern="\S+\.\S+" required style="inline-size: 100%; line-height: 3;"></url-input>
+        </fieldset>
+    </form>
+</storage-form>
 
 <c-seven-minute-tabs persist sync>
     <ol class=" [ requires-js ] " role="tablist" aria-label="Choose a configuration flavour">
@@ -530,16 +532,18 @@ GO_JAMMING_TOKEN=njJql0lKXnotreal4x3Wmd
 
 ### Set your feed and key config options
 
-<form id="gojamming-config-form" class=" [ requires-js ] " autocomplete="off">
-    <fieldset>
-        <label for="domain" class=" [ delta ] ">Your Domain</label>
-        <url-input force-https><input id="domain" name="domain" type="url" value="https://example.com" class=" [ monospace ] " pattern="\S+\.\S+" required style="inline-size: 100%; line-height: 3;"></url-input>
-    </fieldset>
-    <fieldset>
-        <label for="server" class=" [ delta ] ">Your go-jamming Server</label>
-        <url-input force-https><input id="server" name="server" type="url" value="https://jam.example.com" class=" [ monospace ] " pattern="\S+\.\S+" required style="inline-size: 100%; line-height: 3;"></url-input>
-    </fieldset>
-</form>
+<storage-form>
+    <form id="gojamming-config-form" class=" [ requires-js ] " autocomplete="off">
+        <fieldset>
+            <label for="ecw-config-domain" class=" [ delta ] ">Your Domain</label>
+            <url-input force-https><input id="domain" name="ecw-config-domain" type="url" value="https://example.com" class=" [ monospace ] " pattern="\S+\.\S+" required style="inline-size: 100%; line-height: 3;"></url-input>
+        </fieldset>
+        <fieldset>
+            <label for="ecw-config-server" class=" [ delta ] ">Your go-jamming Server</label>
+            <url-input force-https><input id="server" name="ecw-config-server" type="url" value="https://jam.example.com" class=" [ monospace ] " pattern="\S+\.\S+" required style="inline-size: 100%; line-height: 3;"></url-input>
+        </fieldset>
+    </form>
+</storage-form>
 
 <c-seven-minute-tabs persist sync>
     <ol class=" [ requires-js ] " role="tablist" aria-label="Choose a configuration flavour">
