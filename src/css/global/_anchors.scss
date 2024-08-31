@@ -24,22 +24,23 @@
 		text-decoration-color var(--transition-duration) var(--transition-function),
 		text-underline-offset var(--transition-duration-short) var(--transition-function);
 
-	&:is(:hover, :focus, :active) {
+	&[disabled] {
+		@include non-selectable;
+		opacity: var(--opacity-beta);
+		cursor: not-allowed;
+	}
+
+	&:not([disabled]):is(:hover, :focus, :active) {
 		text-decoration-color: h(maple);
 		text-underline-offset: 0.1875em;
 	}
 
-	&:active {
+	&:not([disabled]):active {
 		--outline-offset: 0;
 
 		background-color: h(maple);
 		color: h(snowy) !important;
 		text-decoration-color: transparent;
-	}
-
-	&[disabled] {
-		@include non-interactive;
-		opacity: var(--opacity-beta);
 	}
 
 	@media print {

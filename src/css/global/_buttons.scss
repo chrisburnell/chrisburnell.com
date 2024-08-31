@@ -24,8 +24,9 @@ button {
 	user-select: text;
 
 	&[disabled] {
-		@include non-interactive;
+		@include non-selectable;
 		opacity: var(--opacity-beta);
+		cursor: not-allowed;
 	}
 }
 
@@ -51,12 +52,12 @@ button {
 	text-decoration: none;
 	touch-action: manipulation;
 
-	&:is(:hover, :focus, :active, [aria-selected="true"]) {
+	&:not([disabled]):is(:hover, :focus, :active, [aria-selected="true"]) {
 		outline: var(--outline-width, var(--size-border-thin)) solid var(--outline-color, Highlight);
 		outline-offset: var(--outline-offset, var(--size-border-thin));
 	}
 
-	&:active {
+	&:not([disabled]):active {
 		background-color: h(bowhead);
 		color: h(bear);
 		transform: translateY(var(--size-border-default));

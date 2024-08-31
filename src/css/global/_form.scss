@@ -39,17 +39,17 @@ textarea {
 	border-radius: var(--border-radius, var(--size-border-default));
 	transition: border-color var(--transition-duration) var(--transition-function);
 
-	&:hover {
-		border-color: h(coyote);
-	}
-
-	&:focus {
-		border-color: h(raven);
-	}
-
 	&[disabled] {
 		@include non-interactive;
 		opacity: var(--opacity-beta);
+	}
+
+	&:not([disabled]):hover {
+		border-color: h(coyote);
+	}
+
+	&:not([disabled]):focus {
+		border-color: h(raven);
 	}
 
 	&::-moz-focus-inner {
