@@ -18,7 +18,7 @@ lite-youtube {
 }
 
 relative-time {
-	.deck__context:has(.currently-attending) ~ & {
+	.deck__context:has(.currently-attending) & {
 		display: none;
 	}
 }
