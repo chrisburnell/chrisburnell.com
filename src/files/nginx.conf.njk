@@ -10,6 +10,8 @@ rewrite ^/code-demos/?$ /code/ redirect;
 
 # Tag Redirects
 rewrite ^/tag/a11y/?$ /tag/accessibility/ permanent;
+rewrite ^/tag/conferences/?$ /tag/conference/ permanent;
+rewrite ^/tag/meetups/?$ /tag/meetup/ permanent;
 
 # Page Redirects
 {% for item in collections.pages %}{% if item.url and item.data.redirect_from %}{% for request in item.data.redirect_from -%}
