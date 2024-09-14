@@ -33,7 +33,7 @@ class RelativeTime {
 				new Date(start).getTime() <= now &&
 				now <= new Date(end).getTime()
 			) {
-				return `${RelativeTime.emojiGoing} <small>currently attending</small>`;
+				return `${RelativeTime.emojiGoing} <small class=" [ currently-attending ] ">currently attending</small>`;
 			}
 			return `${RelativeTime.emojiGoing} <small>attended</small>`;
 		}

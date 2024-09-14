@@ -282,7 +282,7 @@ export const getRSVPValueString = (start, end, value) => {
 			return `${emojiFuture} <small>attending</small>`;
 		}
 		if (epoch(start) <= now && now <= epoch(end)) {
-			return `${emojiGoing} <small>currently attending</small>`;
+			return `${emojiGoing} <small class=" [ currently-attending ] ">currently attending</small>`;
 		}
 		return `${emojiGoing} <small>attended</small>`;
 	}

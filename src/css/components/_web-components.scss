@@ -17,6 +17,12 @@ lite-youtube {
 	background-size: cover;
 }
 
+relative-time {
+	.deck__context:has(.currently-attending) ~ & {
+		display: none;
+	}
+}
+
 :where(seven-minute-tabs, .content storage-form) {
 	display: block;
 }
