@@ -4,7 +4,9 @@
 ////
 
 .deck {
-	margin-block-start: var(--size-gap);
+	:not(.box) > .deck {
+		margin-block-start: var(--size-gap);
+	}
 
 	article {
 		--flow-space: var(--size-tiny);

@@ -1,5 +1,5 @@
 ---
-title: Curriculum Vitae
+title: Curriculum Vitae / Résumé
 eleventyComputed:
   tagline: '<span class=" [ canada ] " data-pagefind-meta="title:CV / Résumé">{{ author.name }}</span>'
   description: "{{ author.role | title }}{% if not author.employer %} and Software Engineer{% else %}, Software Engineer, and {{ author.employer.role | title }} at {{ author.employer.title }}{% endif %}"
