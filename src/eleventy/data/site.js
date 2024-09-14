@@ -57,6 +57,13 @@ export const urls = {
 	switchboard: "https://switchboard.p3k.io",
 };
 
+export const conferences = {
+	sotb: {
+		date: "2024-09-14T09:30:00+0100",
+		end: "2024-09-14T16:30:00+0100",
+	},
+};
+
 export default {
 	title,
 	tagline,
@@ -77,4 +84,5 @@ export default {
 	weights,
 	cacheDurations,
 	urls,
+	conferences,
 };

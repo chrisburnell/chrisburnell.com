@@ -30,7 +30,7 @@ excludeFromSearch: true
 			{% include 'lfw.njk' %}
 		{%- endif %}
 
-		{% if '2024-09-14T09:30:00+0100' | isUpcoming(14) -%}
+		{% if site.conferences.sotb.date | isUpcoming(14) -%}
 			{% include 'state-of-the-browser.njk' %}
 		{%- endif %}
 

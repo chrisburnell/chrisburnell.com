@@ -1,3 +1,4 @@
+{% set sotb_year = site.conferences.sotb.date | slice(0, 4) -%}
 <div class=" [ state-of-the-browser ] [ box  box--line-length ] [ flow ] [ no-print ] " data-pagefind-ignore>
 	<style data-keep>
 		.hide-sotb .state-of-the-browser,
@@ -22,10 +23,10 @@
 			}
 		}
 	</style>
-	<a href="https://2024.stateofthebrowser.com" rel="external noopener" style="display: block;" tabindex="-1">{% image './images/content/sotb-banner.svg', 'State of the Browser logo', '', [400] %}</a>
-	<p class=" [ small ] "><a href="https://2024.stateofthebrowser.com" class=" [ delta ] " rel="external noopener">State of the Browser</a>, a yearly one-day, single-track conference with widely-varying talks about the modern web, accessibility, web standards, and more, is back for its <em>twelfth</em> year! <br>Join in-person in London or online <strong><relative-time aria-hidden="true"><time datetime="2024-09-14T09:30:00+01:00"></time></relative-time> <time datetime="2024-09-14T09:30:00+01:00">on Saturday, September {{ 14 | ordinal | safe }} 2024</time></strong>!</p>
+	<a href="https://{{ sotb_year }}.stateofthebrowser.com" rel="external noopener" style="display: block;" tabindex="-1">{% image './images/content/sotb-banner.svg', 'State of the Browser logo', '', [400] %}</a>
+	<p class=" [ small ] "><a href="https://{{ sotb_year }}.stateofthebrowser.com" class=" [ delta ] " rel="external noopener">State of the Browser</a>, a yearly one-day, single-track conference with widely-varying talks about the modern web, accessibility, web standards, and more, is back for its <em>another</em> year! <br>Join in-person in London or online <strong><relative-time aria-hidden="true"><time datetime="{{ site.conferences.sotb.date }}"></time></relative-time> <time datetime="{{ site.conferences.sotb.date }}">on {{ site.conferences.sotb.date | friendlyDate("cccc, d LLLL yyyy") }}</time></strong>!</p>
 	<div class=" [ grid  navigator  center ] [ small ] " style="--flow-space: 1rem;">
-		<a class=" [ button ] " href="https://2024.stateofthebrowser.com/tickets/"><c-emoji>🎟️</c-emoji> Get yourself a ticket!</a>
+		<a class=" [ button ] " href="https://{{ sotb_year }}.stateofthebrowser.com/tickets/"><c-emoji>🎟️</c-emoji> Get yourself a ticket!</a>
 	</div>
 	<storage-form class="requires-js">
 		<form>
