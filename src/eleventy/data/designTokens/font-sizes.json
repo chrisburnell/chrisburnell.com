@@ -1,20 +1,38 @@
 {
-  "alpha-max": "5rem",
-  "alpha": "clamp(2rem, -0.143rem + 6.857vi, 5rem)",
-  "alpha-min": "2rem",
-  "inbetween-max": "2.667rem",
-  "inbetween": "clamp(1.728rem, 0.998rem + 1.669vi, 2.667rem)",
-  "inbetween-min": "1.728rem",
-  "beta-max": "2rem",
-  "beta": "clamp(1.438rem, 1rem + 1vi, 2rem)",
-  "beta-min": "1.438rem",
-  "gamma-max": "1.625rem",
-  "gamma": "clamp(1.25rem, 0.982rem + 0.857vi, 1.625rem)",
-  "gamma-min": "1.25rem",
-  "default-max": "1.25rem",
-  "default": "clamp(1rem, 0.821rem + 0.571vi, 1.25rem)",
-  "default-min": "1rem",
-  "small-max": "1rem",
-  "small": "clamp(0.875rem, 0.786rem + 0.286vi, 1rem)",
-  "small-min": "0.875rem"
+  "small": {
+    "minWidth": 500,
+    "maxWidth": 1200,
+    "minSize": 14,
+    "maxSize": 16
+  },
+  "default": {
+    "minWidth": 500,
+    "maxWidth": 1200,
+    "minSize": 16,
+    "maxSize": 20
+  },
+  "gamma": {
+    "minWidth": 500,
+    "maxWidth": 1200,
+    "minSize": 20,
+    "maxSize": 26
+  },
+  "beta": {
+    "minWidth": 500,
+    "maxWidth": 1200,
+    "minSize": 23,
+    "maxSize": 32
+  },
+  "inbetween": {
+    "minWidth": 500,
+    "maxWidth": 1200,
+    "minSize": 28,
+    "maxSize": 42
+  },
+  "alpha": {
+    "minWidth": 500,
+    "maxWidth": 1200,
+    "minSize": 32,
+    "maxSize": 80
+  }
 }

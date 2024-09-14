@@ -3,6 +3,8 @@
 /// @group blocks
 ////
 
+@use "sass:map";
+
 .popover-settings {
 	max-block-size: 100vb;
 	max-block-size: 100dvb;
@@ -15,7 +17,7 @@
 .popover-navigation {
 	padding-inline: var(--size-large);
 
-	@media (width > #{map-get($breakpoints, "tiny")}) {
+	@media (width > #{map.get($breakpoints, "tiny")}) {
 		display: none;
 	}
 
@@ -60,7 +62,7 @@
 }
 
 .popover-navigation-button {
-	@media (width > #{map-get($breakpoints, "tiny")}) {
+	@media (width > #{map.get($breakpoints, "tiny")}) {
 		display: none;
 	}
 

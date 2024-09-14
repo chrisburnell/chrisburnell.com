@@ -35,47 +35,10 @@ toc: true
 
 <dl>
 	{%- for name, size in designTokens.sizes -%}
-		{%- if not '-' in name -%}
-			<dt>{{ name | replace('-', ' ') | supertitle | replace(' ', '–') }}</dt>
-			<dd><div class=" [ size-example  size-example--{{ name }} ] " title="{{ size }}"></div></dd>
-		{%- endif -%}
+		<dt>{{ name | supertitle }}</dt>
+		<dd><div class=" [ size-example  size-example--{{ name }} ] " title="{{ size.minWidth }}–{{ size.maxWidth }}"></div></dd>
 	{%- endfor -%}
 </dl>
-
-<c-details>
-	<summary class=" [ gamma ] ">Multi-Steps</summary>
-	<dl>
-		{%- for name, size in designTokens.sizes -%}
-			{%- if '-' in name and not '-min' in name and not '-max' in name -%}
-				<dt>{{ name | replace('-', ' ') | supertitle | replace(' ', '–') }}</dt>
-				<dd><div class=" [ size-example  size-example--{{ name }} ] " title="{{ size }}"></div></dd>
-			{%- endif -%}
-		{%- endfor -%}
-	</dl>
-</c-details>
-
-<c-details>
-	<summary class=" [ gamma ] ">Fluid Size Scale values</summary>
-	<p>Values generated using <strong><a href="/clamp-calculator/">clamp() Calculator</a></strong> with the following values:</p>
-	<dl>
-		<dt>Root Font Size</dt>
-		<dd>
-			<pre>16px</pre>
-		</dd>
-		<dt>Viewport Widths</dt>
-		<dd>
-			<pre>700px – 1600px</pre>
-		</dd>
-		<dt>Sizes <small>(px)</small></dt>
-		<dd>
-			<pre>64 – 72
-36 – 42
-20 – 24
-10 – 12
- 5 –  6</pre>
-		</dd>
-	</dl>
-</c-details>
 
 <h2>Font Families</h2>
 
@@ -95,38 +58,6 @@ toc: true
 	<div class="epsilon">Heading Level 5</div>
 	<div class="zeta">Heading Level 6</div>
 </div>
-
-<c-details>
-	<summary class=" [ gamma ] ">Fluid Type Scale values</summary>
-	<p>Values generated using <strong><a href="/clamp-calculator/">clamp() Calculator</a></strong> with the following values:</p>
-	<dl>
-		<dt>Root Font Size</dt>
-		<dd>
-			<pre>16px</pre>
-		</dd>
-		<dt>Viewport Widths</dt>
-		<dd>
-			<pre>700px – 1600px</pre>
-		</dd>
-		<dt>Type Scales</dt>
-		<dd>
-			<strong>Min:</strong> Minor Third <span class="monospace">1.2</span>
-			<br>
-			<strong>Max:</strong> Perfect Fourth <span class="monospace">1.333</span>
-			<br>
-			<strong>*:</strong> Augmented Fourth <span class="monospace">1.414</span>
-		</dd>
-		<dt>Font Sizes <small>(px)</small></dt>
-		<dd>
-			<pre>33.178 – 72.000 (*)
-27.648 – 42.666
-23.040 – 32.000
-19.200 – 24.000
-16.000 – 18.000
-14.000 – 16.000 (Custom)</pre>
-		</dd>
-	</dl>
-</c-details>
 
 <h2>Paragraph</h2>
 

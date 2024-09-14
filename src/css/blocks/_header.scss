@@ -3,6 +3,8 @@
 /// @group blocks
 ////
 
+@use "sass:map";
+
 .header {
 	container: header / inline-size;
 	background-color: color-mix(in oklab, h(bear), h(snowy));
@@ -11,7 +13,7 @@
 	z-index: var(--z-index-menu);
 
 	// disable sticky header
-	// @media (height > #{map-get($breakpoints, "small")}) {
+	// @media (height > #{map.get($breakpoints, "small")}) {
 	// 	position: sticky;
 	// 	inset-block-start: 0;
 	// }

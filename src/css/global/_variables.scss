@@ -3,6 +3,10 @@
 /// @group global
 ////
 
+@use "../../../node_modules/utopia-core-scss/src/utopia" as utopia;
+@use "sass:map";
+@use "sass:math";
+
 :root {
 	/* Build the Monochrome colors */
 	--monochrome-chroma: 0;
@@ -25,14 +29,36 @@
 		#{"--opacity-" + $name}: #{$value};
 	}
 
-	@each $name, $value in map-merge($sizes, $sizes-extra) {
+	@each $name, $data in $sizes {
+		#{"--size-" + $name + "-min"}: #{math.div(map.get($data, "minSize"), 16) * 1rem};
+		#{"--size-" + $name}: #{utopia.calculateClamp((
+			"minWidth": map.get($data, "minWidth"),
+			"maxWidth": map.get($data, "maxWidth"),
+			"minSize": map.get($data, "minSize"),
+			"maxSize": map.get($data, "maxSize"),
+		))};
+		#{"--size-" + $name + "-max"}: #{math.div(map.get($data, "maxSize"), 16) * 1rem};
+	}
+	$sizes-seen: ();
+	@each $name, $data in $sizes {
+		@each $other-name, $other-data in $sizes-seen {
+			#{"--size-" + $other-name + "-" + $name}: #{utopia.calculateClamp((
+				"minWidth": map.get($data, "minWidth"),
+				"maxWidth": map.get($data, "maxWidth"),
+				"minSize": map.get($other-data, "minSize"),
+				"maxSize": map.get($data, "maxSize"),
+			))};
+		}
+		$sizes-seen: map.set($sizes-seen, $name, $data);
+	}
+	@each $name, $value in $sizes-extra {
 		#{"--size-" + $name}: #{$value};
 	}
 	@each $name, $value in $breakpoints {
 		#{"--size-breakpoint-" + $name}: #{$value};
 	}
 	// disable sticky header
-	// @media (height > #{map-get($breakpoints, "small")}) {
+	// @media (height > #{map.get($breakpoints, "small")}) {
 	// 	--size-header: calc(var(--size-logo-small) + var(--size-small) * 2);
 	// }
 
@@ -40,9 +66,28 @@
 		#{"--font-family-" + $name}: #{$value};
 	}
 
-	@each $name, $value in $font-sizes {
-		#{"--font-size-" + $name}: #{$value};
+	@each $name, $data in $font-sizes {
+		#{"--font-size-" + $name + "-min"}: #{math.div(map.get($data, "minSize"), 16) * 1rem};
+		#{"--font-size-" + $name}: #{utopia.calculateClamp((
+			"minWidth": map.get($data, "minWidth"),
+			"maxWidth": map.get($data, "maxWidth"),
+			"minSize": map.get($data, "minSize"),
+			"maxSize": map.get($data, "maxSize"),
+		))};
+		#{"--font-size-" + $name + "-max"}: #{math.div(map.get($data, "maxSize"), 16) * 1rem};
 	}
+	// $font-sizes-seen: ();
+	// @each $name, $data in $sizes {
+	// 	@each $other-name, $other-data in $font-sizes {
+	// 		#{"--size-" + $other-name + "-" + $name}: #{utopia.calculateClamp((
+	// 			"minWidth": map.get($data, "minWidth"),
+	// 			"maxWidth": map.get($data, "maxWidth"),
+	// 			"minSize": map.get($other-data, "minSize"),
+	// 			"maxSize": map.get($data, "maxSize"),
+	// 		))};
+	// 	}
+	// 	$font-sizes-seen: map.set($font-sizes-seen, $name, $data);
+	// }
 
 	@each $name, $value in $font-weights {
 		#{"--font-weight-" + $name}: #{$value};

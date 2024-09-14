@@ -3,6 +3,8 @@
 /// @group abstracts
 ////
 
+@use "sass:map";
+
 ///
 /// Visually hide an element properly.
 ///
@@ -24,15 +26,15 @@
 ///
 @mixin cqi($name, $min: null, $max: null) {
 	@if $min and $max {
-		@container #{$name} (#{map-get($breakpoints, $min)} < inline-size <= #{map-get($breakpoints, $max)}) {
+		@container #{$name} (#{map.get($breakpoints, $min)} < inline-size <= #{map.get($breakpoints, $max)}) {
 			@content;
 		}
 	} @else if $max {
-		@container #{$name} (inline-size <= #{map-get($breakpoints, $max)}) {
+		@container #{$name} (inline-size <= #{map.get($breakpoints, $max)}) {
 			@content;
 		}
 	} @else {
-		@container #{$name} (inline-size > #{map-get($breakpoints, $min)}) {
+		@container #{$name} (inline-size > #{map.get($breakpoints, $min)}) {
 			@content;
 		}
 	}
@@ -43,15 +45,15 @@
 ///
 @mixin cqb($name, $min: null, $max: null) {
 	@if $min and $max {
-		@container #{$name} (#{map-get($breakpoints, $min)} < block-size <= #{map-get($breakpoints, $max)}) {
+		@container #{$name} (#{map.get($breakpoints, $min)} < block-size <= #{map.get($breakpoints, $max)}) {
 			@content;
 		}
 	} @else if $max {
-		@container #{$name} (block-size <= #{map-get($breakpoints, $max)}) {
+		@container #{$name} (block-size <= #{map.get($breakpoints, $max)}) {
 			@content;
 		}
 	} @else {
-		@container #{$name} (block-size > #{map-get($breakpoints, $min)}) {
+		@container #{$name} (block-size > #{map.get($breakpoints, $min)}) {
 			@content;
 		}
 	}

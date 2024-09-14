@@ -261,7 +261,7 @@
 	display: block;
 	box-shadow: inset 0 0 0 var(--size-border-thin) currentColor;
 }
-@each $name, $size in $sizes {
+@each $name, $_ in $sizes {
 	.size-example--#{$name} {
 		inline-size: var(--size-#{$name});
 		block-size: var(--size-#{$name});
