@@ -15,6 +15,7 @@
 }
 
 :where(html) {
+	interpolate-size: allow-keywords;
 	overscroll-behavior: contain;
 	scrollbar-gutter: stable;
 }
