@@ -32,7 +32,7 @@
   "alpha": {
     "minWidth": 500,
     "maxWidth": 1200,
-    "minSize": 32,
+    "minSize": 36,
     "maxSize": 80
   }
 }
