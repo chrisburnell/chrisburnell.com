@@ -49,7 +49,7 @@
 		{% if item.data.mf_root == 'review' %}
 			<div>
 				{% if item.data.rating == 'Parti Pris' %}
-					<data class=" [ p-rating ] " value="Parti Pris">Parti Pris</data>
+					<data class=" [ small ] [ p-rating ] " value="Parti Pris">Parti Pris</data>
 				{% elif item.data.rating %}
 					<data class=" [ rating ] [ p-rating ] " value="{{ item.data.rating }}" title="{{ item.data.rating }} out of 5"> </data>
 					<strong>{{ item.data.rating }}/5</strong>
