@@ -1,6 +1,5 @@
 import { EleventyRenderPlugin } from "@11ty/eleventy";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
-import bundler from "@11ty/eleventy-plugin-bundle";
 import directoryOutput from "@11ty/eleventy-plugin-directory-output";
 import inclusiveLanguage from "@11ty/eleventy-plugin-inclusive-language";
 import rss from "@11ty/eleventy-plugin-rss";
@@ -19,7 +18,6 @@ import scss from "./plugins/scss.js";
 export default {
 	EleventyRenderPlugin,
 	eleventyImageTransformPlugin,
-	bundler,
 	directoryOutput,
 	inclusiveLanguage,
 	rss,
