@@ -1,4 +1,4 @@
-{% set sotb_year = site.conferences.sotb.date | slice(0, 4) -%}
+{% set sotb_year = site.conferences.sotb.date | friendlyDate("yyyy") -%}
 <div class=" [ state-of-the-browser ] [ box  box--line-length ] [ flow ] [ no-print ] " data-pagefind-ignore>
 	<style data-keep>
 		.hide-sotb .state-of-the-browser,
