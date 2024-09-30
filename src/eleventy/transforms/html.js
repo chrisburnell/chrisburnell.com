@@ -13,7 +13,7 @@ export default async function (value, outputPath) {
 		const tocHeadings = $(".generate-toc h2:not(.no-fragment)");
 		if (tocHeadings.length) {
 			let tocHtml = `
-				<aside class=" [ toc ] " role="complementary" data-pagefind-ignore>
+				<aside class=" [ toc ] "" data-pagefind-ignore>
 					<is-land>
 						<details-utils force-close="(max-width: 850px)" force-restore>
 							<details open class=" [ table-of-contents ] ">

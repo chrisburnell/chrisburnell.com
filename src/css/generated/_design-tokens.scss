@@ -25,9 +25,9 @@ $colors-hex: (
   maple: #e0151f
 );
 $colors-secondary: (
-  aspen: 88.7% 0.1818 92.07,
-  conifer: 54.1% 0.1282 142.13,
-  maple: 57.6% 0.2268 27.77
+  aspen: oklch(88.7% 0.1818 92.07),
+  conifer: oklch(54.1% 0.1282 142.13),
+  maple: oklch(57.6% 0.2268 27.77)
 );
 $colors-tertiary-hex: (
   shadow: #0f0f0f,
@@ -43,19 +43,19 @@ $colors-tertiary-hex: (
   yaml: #ee2b34
 );
 $colors-tertiary: (
-  shadow-light: 66.2% 0 0,
-  shadow-dark: 16.8% 0 0,
-  css: 59.1% 0.1627 248.29,
-  html: 62.6% 0.1981 29.54,
-  javascript: 84.1% 0.144 88.57,
-  json: 73.5% 0 0,
-  liquid: 71.2% 0.136 132.27,
-  nunjucks: 58.3% 0.14 141.86,
-  php: 62.81% 0.071 276.67,
-  scss: 60.6% 0.1586 7.66,
-  webc: 72.9% 0.13 119.53,
-  yaml: 61.4% 0.2304 18.49,
-  rss: 75.05% 0.179 58.28
+  shadow-light: oklch(66.2% 0 0),
+  shadow-dark: oklch(16.8% 0 0),
+  css: oklch(59.1% 0.1627 248.29),
+  html: oklch(62.6% 0.1981 29.54),
+  javascript: oklch(84.1% 0.144 88.57),
+  json: oklch(73.5% 0 0),
+  liquid: oklch(71.2% 0.136 132.27),
+  nunjucks: oklch(58.3% 0.14 141.86),
+  php: oklch(62.81% 0.071 276.67),
+  scss: oklch(60.6% 0.1586 7.66),
+  webc: oklch(72.9% 0.13 119.53),
+  yaml: oklch(61.4% 0.2304 18.49),
+  rss: oklch(75.05% 0.179 58.28)
 );
 $colors: (
   raven: oklch(61.29% 0.064 237.73),
