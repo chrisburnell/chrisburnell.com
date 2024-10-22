@@ -81,7 +81,9 @@ layout: base
 		{% endif %}
 	</div>
 
-	<aside class=" [ meta ] " data-rows="masonry"" data-pagefind-ignore>
-		{% include 'meta/collection.njk' %}
+	<aside class=" [ meta ] " data-pagefind-ignore>
+		<div class=" [ grid ] " data-rows="masonry">
+			{% include 'meta/collection.njk' %}
+		</div>
 	</aside>
 </div>

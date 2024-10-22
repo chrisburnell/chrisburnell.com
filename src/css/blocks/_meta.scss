@@ -4,18 +4,20 @@
 ////
 
 .meta {
-	@extend %grid;
-
-	// TODO Broken in Safari 🤔 https://bugs.webkit.org/show_bug.cgi?id=256047
-	// --placement: auto-fit;
-	--grid-min-inline-size: 16em;
-	--gap: var(--size-gap);
 
 	container: meta / inline-size;
 	margin-block-start: var(--size-gigantic);
 
-	& > * {
-		inline-size: 100%;
+	& > div {
+		// TODO Broken in Safari 🤔 https://bugs.webkit.org/show_bug.cgi?id=256047
+		// Hotfix in place at the moment with nested, unnecessary div
+		--placement: auto-fit;
+		--grid-min-inline-size: 16em;
+		--gap: var(--size-gap);
+
+		& > * {
+			inline-size: 100%;
+		}
 	}
 
 	@media print {

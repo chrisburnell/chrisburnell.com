@@ -90,8 +90,10 @@ layout: base
 
 	{% include 'responses.njk' %}
 
-	<aside class=" [ meta ] " data-rows="masonry"" data-pagefind-ignore>
-		{% include 'meta/post.njk' %}
+	<aside class=" [ meta ] " data-pagefind-ignore>
+		<div class=" [ grid ] " data-rows="masonry">
+			{% include 'meta/post.njk' %}
+		</div>
 	</aside>
 
 	{% include 'browse.njk' %}
