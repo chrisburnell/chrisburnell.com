@@ -7,5 +7,6 @@ export default {
 	categoryCode: "f",
 	tags: ["like", "clickthrough"],
 	excludeFromSearch: true,
+	noindex: true,
 	emoji: "♥️",
 };

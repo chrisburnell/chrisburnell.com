@@ -7,5 +7,6 @@ export default {
 	categoryCode: "h",
 	tags: ["bookmark", "clickthrough"],
 	excludeFromSearch: true,
+	noindex: true,
 	emoji: "🔖",
 };
