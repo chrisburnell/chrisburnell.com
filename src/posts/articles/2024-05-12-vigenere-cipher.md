@@ -104,6 +104,7 @@ Without the secret keyword (or, to be fair, modern computing power), it can be *
 
 <c-details class=" [ no-border  no-padding ] [ flow ] ">
     <summary class=" [ delta ] ">Vigenère Table</summary>
+    <p><em>You can hover/focus the letters in the output above to see the row and column intersections in the table below.</em></p>
     <div class=" [ scroll-inline  scroll-inline-shadow ] ">
         <table class=" [ monospace ] " style="font-size: var(--font-size-small);">
             <tbody id="square" aria-live="polite">
@@ -137,8 +138,6 @@ Without the secret keyword (or, to be fair, modern computing power), it can be *
         </table>
     </div>
 </c-details>
-
-*You can hover/focus the letters in the output above to see the row and column intersections in the table below.*
 
 <h2 id="eleventy-filter">Building an Eleventy filter</h2>
 
