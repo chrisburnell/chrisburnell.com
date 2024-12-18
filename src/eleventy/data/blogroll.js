@@ -338,7 +338,7 @@ export default [
 		title: "Cory Dransfeldt",
 		url: "https://coryd.dev",
 		rss: "https://feedpress.me/coryd",
-		mastodon: "cory@social.lol",
+		mastodon: "cory@follow.cory.dev",
 	},
 	{
 		title: "Yoav Weiss",
@@ -827,6 +827,12 @@ export default [
 		url: "https://leilukin.com",
 		rss: "https://leilukin.com/feed.xml",
 		mastodon: "leilukin@mstdn.social",
+	},
+	{
+		title: "Charlie O'Hara",
+		url: "https://awfulwoman.com",
+		rss: "https://awfulwoman.com/index.xml",
+		mastodon: "awfulwoman@indieweb.social",
 	},
 ].sort((a, b) => {
 	return a.title.localeCompare(b.title);
