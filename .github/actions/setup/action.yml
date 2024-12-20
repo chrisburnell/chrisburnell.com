@@ -7,7 +7,7 @@ runs:
     - name: Set the timezone
       uses: zcong1993/setup-timezone@master
       with:
-        timezone: Asia/Singapore
+        timezone: America/Halifax
 
     - name: Set the Node version
       uses: actions/setup-node@v4

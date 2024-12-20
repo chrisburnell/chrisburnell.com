@@ -49,8 +49,6 @@ redirect_from:
 
 ## Coffee
 
-*Currently missing the hell out of my coffee gear, currently on a shipping container on its way to Singapore…* 😢
-
 - **Machine:** [Rancilio Silvia PRO X](https://www.ranciliogroup.com/rancilio/silvia-pro-x/silvia-pro-x/) — This thing is an (expensive!) beast but makes beautiful coffee.
 - **Grinder:** [Niche Zero](https://www.nichecoffee.co.uk/products/niche-zero) — Another expensive purchase but a total workhorse. The easily-adjustable and readable dial has made it easy to switch between methods of brewing and the beans I’m using, and it's easy to transfer into my portafilter.
 - **Other bits and bobs:**

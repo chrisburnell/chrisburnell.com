@@ -6,5 +6,5 @@ authors:
   - Kendrick Lamar
 listen_of: https://album.link/s/7ycBtnsMtyVbbwTfJwRjSP
 cover: to-pimp-a-butterfly.jpg
-rating: 5
+rating: 4.75
 ---
