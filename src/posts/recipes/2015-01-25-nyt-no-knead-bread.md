@@ -9,17 +9,17 @@ banner:
   alt: an up-close photograph of the “crumb” of this bread, showing it to be spongy and soft, while the crust is hard and darkened
 ingredients:
   - title: flour
-    g: 400
+    amount: 3⅓ cups / 430 g
     notes:
       - all-purpose, white, whole wheat flour
       - typically do 2:1–4:1 ratio of white to whole wheat flour
       - more flour for dusting
   - title: salt
-    ml: 6.25
+    amount: 2 <abbr title="teaspoon">tsp</abbr> / 8 g
   - title: yeast
-    ml: 1.25
+    amount: ¼ <abbr title="teaspoon">tsp</abbr> / 1 g
   - title: water
-    ml: 385
+    amount: 1½ cups / 345 g
   - title: bran or cornmeal as desired
 authors:
   - title: NYT Cooking
