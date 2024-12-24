@@ -26,5 +26,7 @@
 
 .browse__next {
 	text-align: end;
+}
+:has(> .browse__next) {
 	margin-inline-start: auto;
 }
