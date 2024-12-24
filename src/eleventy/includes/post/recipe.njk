@@ -133,7 +133,7 @@
 					{% set uk = metric %}
 					{% set us = metric %}
 				{% endif %}
-				<tr>
+				<tr id="ingredient-{{ item.title | slugify | safe }}">
 					<td>{{ item.title | safe }}</td>
 					<td>
 						{% if item.g %}
