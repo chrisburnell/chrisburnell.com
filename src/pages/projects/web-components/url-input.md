@@ -15,7 +15,7 @@ tags:
 <noscript><p class=" [ box  box--error ] ">Unfortunately, this Web Component requires JavaScript to function correctly!</p></noscript>
 
 <figure class=" [ box ] [ gamma ] [ requires-js ] ">
-    <h2>Try it out!</h2>
+    <p>Try it out by entering a URL without a protocol (<code>http://</code> or <code>https://</code>) in this input box!</p>
     <url-input><input type="url" style="font-size: 1em;"></url-input>
 </figure>
 
