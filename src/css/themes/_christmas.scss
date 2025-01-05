@@ -3,6 +3,8 @@
 /// @group themes
 ////
 
+@use "../abstracts/functions";
+
 @mixin theme-christmas() {
 	& {
 		--color-lynx: oklch(24.6% 0.0188 153.43);
@@ -15,7 +17,7 @@
 	}
 
 	&:is(html) {
-		scrollbar-color: h(maple) h(snowy);
+		scrollbar-color: functions.h(maple) functions.h(snowy);
 	}
 
 	.logo,
@@ -24,7 +26,7 @@
 	}
 
 	.navigation__list a::after {
-		background-color: h(maple);
+		background-color: functions.h(maple);
 	}
 }
 

@@ -1,8 +1,11 @@
 ////
 /// Shelf
-/// extends %grid
 /// @group components
+/// Extends %grid
 ////
+
+@use "../abstracts/collections";
+@use "../abstracts/functions";
 
 .shelf {
 	--row-gap: var(--size-gap);
@@ -19,7 +22,7 @@
 		line-height: var(--line-height-medium);
 	}
 
-	%anchor {
+	#{collections.$anchor} {
 		&:not(:hover, :focus, :active) {
 			color: inherit;
 		}
@@ -44,7 +47,7 @@
 		}
 	}
 	.cover-anchor:is(:hover, :focus, :active) + h1 > a {
-		text-decoration-color: h(maple) !important;
+		text-decoration-color: functions.h(maple) !important;
 	}
 
 	// Mimic an outline on .cover-anchor when h1 > a is viisbly focussed

@@ -3,6 +3,9 @@
 /// @group blocks
 ////
 
+@use "../abstracts/functions";
+@use "../abstracts/mixins";
+
 .title {
 	display: block;
 	margin-block-start: var(--size-large-gigantic);
@@ -11,7 +14,7 @@
 	position: relative;
 	contain: content; // helps painting with .perch inside
 
-	@include cqi(null, "small") {
+	@include mixins.cqi(null, "small") {
 		text-align: center;
 	}
 
@@ -28,7 +31,7 @@
 :is(.title--positive, .title--negative) {
 	background-image: none;
 	background-clip: initial;
-	color: h(snowy);
+	color: functions.h(snowy);
 
 	& > span {
 		padding: var(--size-tiny) var(--size-small);
@@ -36,9 +39,9 @@
 }
 
 .title--positive > span {
-	background-color: h(conifer);
+	background-color: functions.h(conifer);
 }
 
 .title--negative > span {
-	background-color: h(maple);
+	background-color: functions.h(maple);
 }

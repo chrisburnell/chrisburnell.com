@@ -3,7 +3,9 @@
 /// @group global
 ////
 
-%media {
+@use "../abstracts/collections";
+
+#{collections.$media} {
 	inline-size: 100%;
 	display: block;
 	border: 0;

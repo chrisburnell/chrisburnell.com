@@ -3,19 +3,21 @@
 /// @group global
 ////
 
+@use "../abstracts/functions";
+
 ::backdrop {
-	background-color: h(thunder, beta);
+	background-color: functions.h(thunder, beta);
 	backdrop-filter: blur(1px);
 }
 
 :is(dialog, [popover]) {
 	--flow-space: var(--size-medium-large);
 
-	background-color: color-mix(in oklab, h(bear), h(snowy));
+	background-color: color-mix(in oklab, functions.h(bear), functions.h(snowy));
 	color: inherit;
 	max-inline-size: 100vi;
 	padding: var(--size-medium-large) var(--size-small-medium);
-	border: var(--size-border-thin) solid h(raven);
+	border: var(--size-border-thin) solid functions.h(raven);
 	border-radius: var(--size-border-default);
 	box-shadow: var(--box-shadow-medium);
 	position: fixed;

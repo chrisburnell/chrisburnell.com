@@ -4,6 +4,9 @@
 ////
 
 @use "sass:map";
+@use "../abstracts/functions";
+@use "../abstracts/mixins";
+@use "../generated/tokens";
 
 .popover-settings {
 	max-block-size: 100vb;
@@ -17,7 +20,7 @@
 .popover-navigation {
 	padding-inline: var(--size-large);
 
-	@media (width > #{map.get($breakpoints, "tiny")}) {
+	@media (width > #{map.get(tokens.$breakpoints, "tiny")}) {
 		display: none;
 	}
 
@@ -32,7 +35,7 @@
 }
 
 :is(.popover-settings-button, .popover-navigation-button) {
-	background-color: h(wolf);
+	background-color: functions.h(wolf);
 	background-image: linear-gradient(160deg, var(--color-bowhead), var(--color-wolf));
 	display: grid;
 	place-items: center;
@@ -41,8 +44,8 @@
 	border-radius: 50%;
 
 	svg {
-		@include non-interactive;
-		fill: h(snowy);
+		@include mixins.non-interactive;
+		fill: functions.h(snowy);
 		min-inline-size: calc(var(--font-size-default) * var(--line-height-default));
 		min-block-size: calc(var(--font-size-default) * var(--line-height-default));
 		transition: transform var(--transition-duration) var(--transition-function);
@@ -62,7 +65,7 @@
 }
 
 .popover-navigation-button {
-	@media (width > #{map.get($breakpoints, "tiny")}) {
+	@media (width > #{map.get(tokens.$breakpoints, "tiny")}) {
 		display: none;
 	}
 
@@ -83,18 +86,18 @@
 	place-items: center;
 	gap: 1em;
 
-	@include cqi(null, "small") {
+	@include mixins.cqi(null, "small") {
 		grid-template-columns: max-content auto;
 	}
 
 	label {
 		inline-size: 100%;
 
-		@include cqi(null, null, "small") {
+		@include mixins.cqi(null, null, "small") {
 			text-align: start;
 		}
 
-		@include cqi(null, "small") {
+		@include mixins.cqi(null, "small") {
 			text-align: end;
 		}
 	}

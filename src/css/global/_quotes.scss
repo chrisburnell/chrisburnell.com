@@ -3,8 +3,11 @@
 /// @group global
 ////
 
+@use "../abstracts/functions";
+@use "../abstracts/mixins";
+
 blockquote {
-	background-color: h(bear);
+	background-color: functions.h(bear);
 	inline-size: 100%;
 	max-inline-size: var(--size-line-length);
 	padding: var(--size-medium);
@@ -18,7 +21,7 @@ blockquote {
 
 	p:not(.no-quotes) {
 		font-family: var(--font-family-serif);
-		@include italic;
+		@include mixins.italic;
 
 		&::before {
 			content: open-quote;
@@ -29,12 +32,12 @@ blockquote {
 		}
 
 		&:not(:last-of-type)::after {
-			@include visually-hidden;
+			@include mixins.visually-hidden;
 		}
 	}
 
 	cite {
-		color: h(kaiser);
+		color: functions.h(kaiser);
 		display: block;
 		margin-block-start: var(--size-medium);
 		text-align: end;

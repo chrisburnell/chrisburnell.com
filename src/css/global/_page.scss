@@ -3,19 +3,21 @@
 /// @group global
 ////
 
+@use "../abstracts/functions";
+
 html {
 	color-scheme: light;
-	background-color: h(kaiser);
-	scrollbar-color: h(raven) h(snowy);
-	accent-color: h(raven);
+	background-color: functions.h(kaiser);
+	scrollbar-color: functions.h(raven) functions.h(snowy);
+	accent-color: functions.h(raven);
 	font-size: 100%;
 	font-variant: common-ligatures proportional-nums;
 	hanging-punctuation: first allow-end last;
 }
 
 body {
-	background-color: color-mix(in oklab, h(bear), h(snowy) 90%);
-	color: h(kaiser);
+	background-color: color-mix(in oklab, functions.h(bear), functions.h(snowy) 90%);
+	color: functions.h(kaiser);
 	display: grid;
 	grid-template-rows:
 		[header-start]

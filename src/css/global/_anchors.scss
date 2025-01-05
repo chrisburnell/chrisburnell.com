@@ -4,16 +4,20 @@
 /// @link https://chrisburnell.com/styleguide/#inline-elements
 ////
 
-%anchor {
-	--outline-color: #{h(raven)};
+@use "../abstracts/collections";
+@use "../abstracts/functions";
+@use "../abstracts/mixins";
+
+#{collections.$anchor} {
+	--outline-color: #{functions.h(raven)};
 
 	background-color: transparent;
-	color: h(bowhead);
+	color: functions.h(bowhead);
 	border-radius: 1px;
 	overflow-wrap: break-word;
 	position: relative;
 	text-decoration: underline;
-	text-decoration-color: h(yeti);
+	text-decoration-color: functions.h(yeti);
 	text-decoration-thickness: var(--size-border-thin);
 	text-decoration-skip-ink: auto;
 	text-underline-offset: 0.125em;
@@ -25,21 +29,21 @@
 		text-underline-offset var(--transition-duration-short) var(--transition-function);
 
 	&[disabled] {
-		@include non-selectable;
+		@include mixins.non-selectable;
 		opacity: var(--opacity-beta);
 		cursor: not-allowed;
 	}
 
 	&:not([disabled]):is(:hover, :focus, :active) {
-		text-decoration-color: h(maple);
+		text-decoration-color: functions.h(maple);
 		text-underline-offset: 0.1875em;
 	}
 
 	&:not([disabled]):active {
 		--outline-offset: 0;
 
-		background-color: h(maple);
-		color: h(snowy) !important;
+		background-color: functions.h(maple);
+		color: functions.h(snowy) !important;
 		text-decoration-color: transparent;
 	}
 
@@ -48,7 +52,7 @@
 	}
 
 	// Force heading anchors to take the color of the heading
-	%heading &,
+	#{collections.$heading} &,
 	th & {
 		color: inherit !important;
 	}

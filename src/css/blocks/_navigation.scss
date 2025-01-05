@@ -4,6 +4,9 @@
 ////
 
 @use "sass:map";
+@use "../abstracts/functions";
+@use "../abstracts/mixins";
+@use "../generated/tokens";
 
 .navigation {
 	display: flex;
@@ -11,7 +14,7 @@
 	column-gap: var(--size-medium);
 
 	.navigation__list {
-		@media (width <= #{map.get($breakpoints, "tiny")}) {
+		@media (width <= #{map.get(tokens.$breakpoints, "tiny")}) {
 			display: none;
 		}
 	}
@@ -47,9 +50,9 @@
 
 		// Solid Colour
 		&::before {
-			@include non-interactive;
+			@include mixins.non-interactive;
 			content: "";
-			background-color: h(raven);
+			background-color: functions.h(raven);
 			opacity: 0;
 			inline-size: 100%;
 			block-size: 0.375em;

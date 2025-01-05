@@ -3,23 +3,26 @@
 /// @group blocks
 ////
 
+@use "../abstracts/collections";
+@use "../abstracts/mixins";
+
 .description {
 	font-size: var(--font-size-gamma);
 	font-weight: var(--font-weight-semibold);
 	text-wrap: balance;
 
 	p {
-		@include cqi(null, "small") {
+		@include mixins.cqi(null, "small") {
 			margin-inline: auto;
 		}
 	}
 
-	%anchor {
+	#{collections.$anchor} {
 		color: inherit;
 	}
 
 	time {
-		@include italic;
+		@include mixins.italic;
 
 		sup::before {
 			content: " ";

@@ -3,6 +3,8 @@
 /// @group blocks
 ////
 
+@use "../abstracts/collections";
+
 .meta {
 
 	container: meta / inline-size;
@@ -28,7 +30,7 @@
 		margin-block-end: var(--size-small);
 	}
 
-	%anchor,
+	#{collections.$anchor},
 	data,
 	time {
 		font-weight: var(--font-weight-semibold);

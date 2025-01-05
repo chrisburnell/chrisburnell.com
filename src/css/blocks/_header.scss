@@ -4,10 +4,11 @@
 ////
 
 @use "sass:map";
+@use "../abstracts/functions";
 
 .header {
 	container: header / inline-size;
-	background-color: color-mix(in oklab, h(bear), h(snowy));
+	background-color: color-mix(in oklab, functions.h(bear), functions.h(snowy));
 	overflow-y: hidden;
 	box-shadow: var(--box-shadow-low);
 	z-index: var(--z-index-menu);

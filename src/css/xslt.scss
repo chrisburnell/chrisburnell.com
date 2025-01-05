@@ -7,70 +7,71 @@
 
 @use "sass:color";
 @use "sass:math";
+@use "sass:meta";
 
 // Abstracts
-@import "abstracts/functions";
-@import "abstracts/mixins";
-@import "generated/design-tokens";
-@import "abstracts/collections";
+@use "abstracts/functions";
+@use "abstracts/mixins";
+@use "generated/tokens";
+@use "abstracts/collections";
 
 // Fonts
-@import "global/fonts";
+@include meta.load-css("global/fonts");
 
 // Reset
-@import "global/reset";
-@import "global/variables";
+@include meta.load-css("global/reset");
+@include meta.load-css("global/variables");
 
 // Global
-@import "global/page";
-@import "global/anchors";
-@import "global/buttons";
-@import "global/headings";
-@import "global/prose";
-@import "global/lists";
-@import "global/images";
-@import "global/figure";
-@import "global/embeds";
-@import "global/quotes";
+@include meta.load-css("global/page");
+@include meta.load-css("global/anchors");
+@include meta.load-css("global/buttons");
+@include meta.load-css("global/headings");
+@include meta.load-css("global/prose");
+@include meta.load-css("global/lists");
+@include meta.load-css("global/images");
+@include meta.load-css("global/figure");
+@include meta.load-css("global/embeds");
+@include meta.load-css("global/quotes");
 
 // Compositions
-@import "compositions/wrap";
-@import "compositions/pantheon";
-@import "compositions/grid";
-@import "compositions/box";
-@import "compositions/cluster";
-@import "compositions/media";
-// @import "compositions/inline-aside";
+@include meta.load-css("compositions/wrap");
+@include meta.load-css("compositions/pantheon");
+@include meta.load-css("compositions/grid");
+@include meta.load-css("compositions/box");
+@include meta.load-css("compositions/cluster");
+@include meta.load-css("compositions/media");
+// @include meta.load-css("compositions/inline-aside");
 
 // Blocks
-@import "blocks/anchors";
-@import "blocks/header";
-@import "blocks/main";
-@import "blocks/content";
-@import "blocks/title";
-@import "blocks/description";
-@import "blocks/meta";
-@import "blocks/images";
-@import "blocks/embeds";
-@import "blocks/navigator";
-@import "blocks/footer";
-@import "blocks/author";
+@include meta.load-css("blocks/anchors");
+@include meta.load-css("blocks/header");
+@include meta.load-css("blocks/main");
+@include meta.load-css("blocks/content");
+@include meta.load-css("blocks/title");
+@include meta.load-css("blocks/description");
+@include meta.load-css("blocks/meta");
+@include meta.load-css("blocks/images");
+@include meta.load-css("blocks/embeds");
+@include meta.load-css("blocks/navigator");
+@include meta.load-css("blocks/footer");
+@include meta.load-css("blocks/author");
 
 // Components
-@import "components/deck";
-@import "components/updated";
+@include meta.load-css("components/deck");
+@include meta.load-css("components/updated");
 
 // Utilities
-@import "utilities/flow";
-@import "utilities/canada";
-@import "utilities/helpers";
+@include meta.load-css("utilities/flow");
+@include meta.load-css("utilities/canada");
+@include meta.load-css("utilities/helpers");
 
 // Themes
-@import "themes/high-contrast";
-@import "themes/dark";
-@import "themes/sepia";
-@import "themes/christmas";
-@import "themes/red-alert";
-@import "themes/koala";
-@import "themes/matrix";
-@import "themes/nineties";
+@include meta.load-css("themes/high-contrast");
+@include meta.load-css("themes/dark");
+@include meta.load-css("themes/sepia");
+@include meta.load-css("themes/christmas");
+@include meta.load-css("themes/red-alert");
+@include meta.load-css("themes/koala");
+@include meta.load-css("themes/matrix");
+@include meta.load-css("themes/nineties");

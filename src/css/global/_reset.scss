@@ -6,6 +6,8 @@
 // https://github.com/mayank99/reset.css/blob/main/package/index.css
 ////
 
+@use "../abstracts/mixins";
+
 *,
 *::before,
 *::after {
@@ -96,7 +98,7 @@
 }
 
 :where(.visually-hidden:not(:focus, :focus-within, :active)) {
-	@include visually-hidden;
+	@include mixins.visually-hidden;
 }
 
 :where(dialog, [popover]) {

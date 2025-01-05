@@ -4,6 +4,9 @@
 /// @link https://chrisburnell.com/styleguide/#code-block
 ////
 
+@use "../abstracts/functions";
+@use "../abstracts/mixins";
+
 :is(code, kbd, samp, var, .monospace) {
 	font-family: var(--font-family-monospace);
 	font-variant: no-common-ligatures tabular-nums;
@@ -20,7 +23,7 @@
 }
 
 :is(code, samp, kbd) {
-	background-color: h(bear);
+	background-color: functions.h(bear);
 	font-weight: var(--font-weight-regular);
 }
 
@@ -33,7 +36,7 @@ kbd {
 }
 
 var {
-	color: h(bowhead);
+	color: functions.h(bowhead);
 	font-size: inherit;
 	font-style: normal;
 	font-variation-settings: normal;
@@ -49,7 +52,7 @@ pre {
 	overflow: hidden;
 	position: relative;
 
-	@include cqi(null, "small") {
+	@include mixins.cqi(null, "small") {
 		tab-size: 4;
 	}
 
@@ -70,6 +73,6 @@ pre {
 		padding: 0;
 		border-radius: 0;
 		overflow: auto;
-		scrollbar-color: h(raven) h(mineshaft);
+		scrollbar-color: functions.h(raven) functions.h(mineshaft);
 	}
 }

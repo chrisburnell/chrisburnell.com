@@ -3,6 +3,8 @@
 /// @group components
 ////
 
+@use "../abstracts/functions";
+
 .badge {
 	min-inline-size: 88px;
 	block-size: 49px;
@@ -14,9 +16,9 @@
 	gap: 0.25lh;
 	padding-block: var(--size-tiny-min);
 	padding-inline: var(--size-tiny-max) var(--size-small-min);
-	border: var(--size-border-thin) solid h(kaiser);
-	border-block-start-color: h(nickel);
-	border-inline-start-color: h(nickel);
+	border: var(--size-border-thin) solid functions.h(kaiser);
+	border-block-start-color: functions.h(nickel);
+	border-inline-start-color: functions.h(nickel);
 	border-radius: var(--size-border-thin);
 	font-size: var(--font-size-small-min);
 	font-weight: var(--font-weight-medium);
@@ -24,7 +26,7 @@
 	transition: border-color var(--transition-duration) var(--transition-function);
 
 	&:is(:hover, :focus, :active) {
-		border-color: h(maple);
+		border-color: functions.h(maple);
 	}
 
 	& > :first-child {

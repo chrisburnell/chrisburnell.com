@@ -6,116 +6,121 @@
 
 @use "sass:color";
 @use "sass:math";
+@use "sass:meta";
 
 // Abstracts
-@import "abstracts/functions";
-@import "abstracts/mixins";
-@import "generated/design-tokens";
-@import "abstracts/collections";
+@use "abstracts/functions";
+@use "abstracts/mixins";
+@use "generated/tokens";
+@use "abstracts/collections";
+
+.test #{collections.$anchor} {
+	content: "";
+}
 
 // Fonts
-@import "global/fonts";
+@include meta.load-css("global/fonts");
 
 @layer reset, global, compositions, blocks, utilities, themes, components, pages, thirdparty, overrides;
 
 // Reset
 @layer reset {
-	@import "global/variables";
-	@import "global/reset";
+	@include meta.load-css("global/variables");
+	@include meta.load-css("global/reset");
 }
 
 // Global
 @layer global {
-	@import "global/page";
-	@import "global/modals";
-	@import "global/anchors";
-	@import "global/buttons";
-	@import "global/headings";
-	@import "global/prose";
-	@import "global/lists";
-	@import "global/images";
-	@import "global/figure";
-	@import "global/embeds";
-	@import "global/quotes";
-	@import "global/code";
-	@import "global/form";
-	@import "global/table";
-	@import "global/details";
+	@include meta.load-css("global/page");
+	@include meta.load-css("global/modals");
+	@include meta.load-css("global/anchors");
+	@include meta.load-css("global/buttons");
+	@include meta.load-css("global/headings");
+	@include meta.load-css("global/prose");
+	@include meta.load-css("global/lists");
+	@include meta.load-css("global/images");
+	@include meta.load-css("global/figure");
+	@include meta.load-css("global/embeds");
+	@include meta.load-css("global/quotes");
+	@include meta.load-css("global/code");
+	@include meta.load-css("global/form");
+	@include meta.load-css("global/table");
+	@include meta.load-css("global/details");
 }
 
 // Compositions
 @layer compositions {
-	@import "compositions/wrap";
-	@import "compositions/pantheon";
-	@import "compositions/grid";
-	@import "compositions/box";
-	@import "compositions/cluster";
-	@import "compositions/media";
-	// @import "compositions/inline-aside";
+	@include meta.load-css("compositions/wrap");
+	@include meta.load-css("compositions/pantheon");
+	@include meta.load-css("compositions/grid");
+	@include meta.load-css("compositions/box");
+	@include meta.load-css("compositions/cluster");
+	@include meta.load-css("compositions/media");
+	// @include meta.load-css("compositions/inline-aside");
 }
 
 // Blocks
 @layer blocks {
-	@import "blocks/logo";
-	@import "blocks/perch";
-	@import "blocks/anchors";
-	@import "blocks/header";
-	@import "blocks/navigation";
-	@import "blocks/settings";
-	@import "blocks/main";
-	@import "blocks/content";
-	@import "blocks/breadcrumbs";
-	@import "blocks/context";
-	@import "blocks/title";
-	@import "blocks/description";
-	@import "blocks/navigator";
-	@import "blocks/meta";
-	@import "blocks/table-of-contents";
-	@import "blocks/cover";
-	@import "blocks/rating";
-	@import "blocks/footer";
-	@import "blocks/author";
-	@import "blocks/tablist";
-	@import "blocks/code-blocks";
-	@import "blocks/images";
-	@import "blocks/embeds";
-	@import "blocks/browse";
+	@include meta.load-css("blocks/logo");
+	@include meta.load-css("blocks/perch");
+	@include meta.load-css("blocks/anchors");
+	@include meta.load-css("blocks/header");
+	@include meta.load-css("blocks/navigation");
+	@include meta.load-css("blocks/settings");
+	@include meta.load-css("blocks/main");
+	@include meta.load-css("blocks/content");
+	@include meta.load-css("blocks/breadcrumbs");
+	@include meta.load-css("blocks/context");
+	@include meta.load-css("blocks/title");
+	@include meta.load-css("blocks/description");
+	@include meta.load-css("blocks/navigator");
+	@include meta.load-css("blocks/meta");
+	@include meta.load-css("blocks/table-of-contents");
+	@include meta.load-css("blocks/cover");
+	@include meta.load-css("blocks/rating");
+	@include meta.load-css("blocks/footer");
+	@include meta.load-css("blocks/author");
+	@include meta.load-css("blocks/tablist");
+	@include meta.load-css("blocks/code-blocks");
+	@include meta.load-css("blocks/images");
+	@include meta.load-css("blocks/embeds");
+	@include meta.load-css("blocks/browse");
 }
 
 // Utilities
 @layer utilities {
-	@import "utilities/flow";
-	@import "utilities/helpers";
-	@import "utilities/canada";
+	@include meta.load-css("utilities/flow");
+	@include meta.load-css("utilities/helpers");
+	@include meta.load-css("utilities/canada");
 }
 
 // Components
 @layer components {
-	@import "components/sparklines";
-	@import "components/deck";
-	@import "components/shelf";
-	@import "components/storage-form";
-	@import "components/badges";
-	@import "components/updated";
-	@import "components/librarian";
-	@import "components/responses";
-	@import "components/browser-support";
-	@import "components/web-components";
+	@include meta.load-css("components/sparklines");
+	@include meta.load-css("components/deck");
+	@include meta.load-css("components/shelf");
+	@include meta.load-css("components/storage-form");
+	@include meta.load-css("components/badges");
+	@include meta.load-css("components/updated");
+	@include meta.load-css("components/librarian");
+	@include meta.load-css("components/responses");
+	@include meta.load-css("components/browser-support");
+	@include meta.load-css("components/web-components");
 }
 
 // Themes
 @layer themes {
-	@import "themes/high-contrast";
-	@import "themes/dark";
-	@import "themes/sepia";
-	@import "themes/christmas";
-	@import "themes/red-alert";
-	@import "themes/koala";
-	@import "themes/matrix";
-	@import "themes/nineties";
+	@include meta.load-css("themes/high-contrast");
+	@include meta.load-css("themes/dark");
+	@include meta.load-css("themes/sepia");
+	@include meta.load-css("themes/christmas");
+	@include meta.load-css("themes/red-alert");
+	@include meta.load-css("themes/koala");
+	@include meta.load-css("themes/matrix");
+	@include meta.load-css("themes/nineties");
 }
 
 // Overrides
 @layer overrides {
-	@import "overrides/footer";
+	@include meta.load-css("overrides/footer");
 }

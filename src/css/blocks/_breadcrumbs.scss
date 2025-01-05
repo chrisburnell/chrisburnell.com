@@ -4,12 +4,15 @@
 /// Extends Cluster
 ////
 
+@use "../abstracts/collections";
+@use "../abstracts/functions";
+
 .breadcrumbs {
 	--delineator: "→";
 	--padding-inline: var(--size-small);
 
 	max-inline-size: 100%;
-	color: h(kaiser);
+	color: functions.h(kaiser);
 	display: block;
 	margin-block-start: var(--size-gap);
 	font-weight: var(--font-weight-semibold);
@@ -18,7 +21,7 @@
 		display: none;
 	}
 
-	%anchor {
+	#{collections.$anchor} {
 		color: inherit;
 	}
 }

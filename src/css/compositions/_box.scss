@@ -16,15 +16,18 @@
 ///     Defines the box shadow.
 ////
 
+@use "../abstracts/collections";
+@use "../abstracts/functions";
+
 .box,
-%box {
-	background-color: var(--box-background-color, color-mix(in oklab, h(bear), h(snowy)));
+#{collections.$box} {
+	background-color: var(--box-background-color, color-mix(in oklab, functions.h(bear), functions.h(snowy)));
 	color: var(--box-color, inherit);
 	max-inline-size: var(--box-max-inline-size, 100%) !important;
 	padding: var(--box-padding, var(--size-gutter));
 	margin-inline: auto;
 	border-width: 0;
-	border-block-start: var(--size-border-thin) solid var(--box-border-color, h(raven));
+	border-block-start: var(--size-border-thin) solid var(--box-border-color, functions.h(raven));
 	border-radius: var(--border-radius, var(--size-border-thin));
 	box-shadow: var(--box-shadow, var(--box-shadow-low));
 	text-align: start;
@@ -32,7 +35,7 @@
 	font-style: normal;
 	font-variation-settings: normal;
 
-	%heading {
+	#{collections.$heading} {
 		font-size: var(--font-size-default);
 		font-weight: var(--font-weight-semibold);
 		line-height: var(--line-height-medium);
@@ -40,30 +43,30 @@
 		letter-spacing: 0;
 	}
 
-	%anchor {
-		color: h(bowhead);
+	#{collections.$anchor} {
+		color: functions.h(bowhead);
 	}
 }
 
 .box {
-	.meta &:not(ul) > %heading + * {
+	.meta &:not(ul) > #{collections.$heading} + * {
 		--flow-space: 0;
 	}
 }
 
 .box--success {
-	--box-background-color: #{h(conifer, delta)};
-	--box-border-color: #{h(conifer)};
+	--box-background-color: #{functions.h(conifer, delta)};
+	--box-border-color: #{functions.h(conifer)};
 }
 
 .box--warning {
-	--box-background-color: #{h(aspen, delta)};
-	--box-border-color: #{h(aspen)};
+	--box-background-color: #{functions.h(aspen, delta)};
+	--box-border-color: #{functions.h(aspen)};
 }
 
 .box--error {
-	--box-background-color: #{h(maple, delta)};
-	--box-border-color: #{h(maple)};
+	--box-background-color: #{functions.h(maple, delta)};
+	--box-border-color: #{functions.h(maple)};
 }
 
 .box.line-length,

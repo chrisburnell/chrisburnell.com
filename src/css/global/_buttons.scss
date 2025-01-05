@@ -13,6 +13,10 @@
 ///     Defines the line height of the button.
 ////
 
+@use "../abstracts/collections";
+@use "../abstracts/functions";
+@use "../abstracts/mixins";
+
 button {
 	appearance: none;
 	background: none;
@@ -24,18 +28,18 @@ button {
 	user-select: text;
 
 	&[disabled] {
-		@include non-selectable;
+		@include mixins.non-selectable;
 		opacity: var(--opacity-beta);
 		cursor: not-allowed;
 	}
 }
 
-%button {
-	--outline-color: #{h(raven)};
+#{collections.$button} {
+	--outline-color: #{functions.h(raven)};
 
-	@include non-selectable;
-	background-color: h(bowhead);
-	color: h(snowy) !important;
+	@include mixins.non-selectable;
+	background-color: functions.h(bowhead);
+	color: functions.h(snowy) !important;
 	min-inline-size: var(--button-min-inline-size, 8em);
 	display: inline-block;
 	padding: var(--padding-block, var(--padding, var(--size-small))) var(--padding-inline, var(--padding, var(--size-medium)));
@@ -58,8 +62,8 @@ button {
 	}
 
 	&:not([disabled]):active {
-		background-color: h(bowhead);
-		color: h(bear);
+		background-color: functions.h(bowhead);
+		color: functions.h(bear);
 		transform: translateY(var(--size-border-default));
 
 		&::before {
@@ -77,7 +81,7 @@ button {
 	}
 
 	svg {
-		@include non-interactive;
+		@include mixins.non-interactive;
 	}
 }
 

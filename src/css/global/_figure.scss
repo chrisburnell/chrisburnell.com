@@ -3,6 +3,10 @@
 /// @group global
 ////
 
+@use "../abstracts/collections";
+@use "../abstracts/functions";
+@use "../abstracts/mixins";
+
 figure {
 	max-inline-size: 100%;
 	display: flex;
@@ -26,14 +30,14 @@ figure {
 		line-height: var(--line-height-small);
 	}
 
-	%image,
-	%media {
+	#{collections.$image},
+	#{collections.$media} {
 		display: block;
 		max-block-size: 100vb;
 		max-block-size: 100dvb;
 	}
 
-	%image {
+	#{collections.$image} {
 		border-radius: var(--border-radius, var(--size-border-thin));
 	}
 
@@ -43,7 +47,7 @@ figure {
 	}
 
 	& > a figcaption {
-		color: h(nickel);
-		@include italic;
+		color: functions.h(nickel);
+		@include mixins.italic;
 	}
 }

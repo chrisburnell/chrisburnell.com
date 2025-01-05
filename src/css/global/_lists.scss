@@ -3,6 +3,9 @@
 /// @group global
 ////
 
+@use "../abstracts/functions";
+@use "../abstracts/mixins";
+
 :is(ol, ul) {
 	list-style-type: ""; // preferred over list-style: none; as it preserves semantics
 }
@@ -22,7 +25,7 @@
 		padding-inline-start: var(--size-medium);
 
 		&::marker {
-			color: h(bowhead);
+			color: functions.h(bowhead);
 			font-family: var(--font-family-sans);
 			font-style: normal;
 			font-variation-settings: normal;
@@ -115,7 +118,7 @@ dl {
 	margin-block-start: 0;
 	overflow: hidden;
 
-	@include cqi(null, "tiny") {
+	@include mixins.cqi(null, "tiny") {
 		grid-template-columns: minmax(min-content, 33.33%) 1fr;
 	}
 }

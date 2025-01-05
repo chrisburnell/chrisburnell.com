@@ -54,7 +54,7 @@
     "setup": "npm run tokens; npm run prettier; npx browserslist@latest --update-db; npm run css",
     "start": "cross-env NODE_OPTIONS=--max-old-space-size=8192 npx @11ty/eleventy --incremental --serve",
     "test": "node cli/index.js test",
-    "tokens": "npx json-to-scss './src/eleventy/data/designTokens/*.json' ./src/css/generated/_design-tokens.scss; npx prettier --write src/css/generated/_design-tokens.scss"
+    "tokens": "npx json-to-scss './src/eleventy/data/designTokens/*.json' ./src/css/generated/_tokens.scss; npx prettier --write src/css/generated/_tokens.scss"
   },
   "keywords": [],
   "dependencies": {

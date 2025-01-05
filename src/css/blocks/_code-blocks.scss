@@ -3,17 +3,20 @@
 /// @group blocks
 ////
 
+@use "../abstracts/functions";
+@use "../abstracts/mixins";
+
 pre[class*="language-"] {
 	--flow-space: var(--size-large);
-	background-color: h(mineshaft);
-	border-block-start: var(--size-border-thin) solid var(--border-color, h(raven));
+	background-color: functions.h(mineshaft);
+	border-block-start: var(--size-border-thin) solid var(--border-color, functions.h(raven));
 	padding: var(--size-gap) var(--size-gutter) 1em;
 	border-radius: var(--border-radius, var(--size-border-thin));
 	box-shadow: var(--box-shadow, var(--box-shadow-medium));
 
 	// Labels
 	&::before {
-		color: h(snowy);
+		color: functions.h(snowy);
 		position: absolute;
 		inset-block-start: var(--size-tiny);
 		inset-inline-start: var(--size-gutter);
@@ -22,7 +25,7 @@ pre[class*="language-"] {
 	}
 
 	code {
-		color: h(snowy);
+		color: functions.h(snowy);
 		padding: 0;
 		line-height: var(--line-height-code);
 	}
@@ -38,40 +41,40 @@ pre.language-none {
 
 pre.language-bash::before {
 	content: "Terminal";
-	color: h(yeti);
+	color: functions.h(yeti);
 }
 pre.language-css::before {
 	content: "CSS";
-	color: h(css);
+	color: functions.h(css);
 }
 pre.language-html::before {
 	content: "HTML";
-	color: h(html);
+	color: functions.h(html);
 }
 pre.language-javascript::before {
 	content: "JavaScript";
-	color: h(javascript);
+	color: functions.h(javascript);
 }
 pre.language-json::before {
 	content: "JSON";
-	color: h(json);
+	color: functions.h(json);
 }
 pre.language-liquid::before {
 	content: "Liquid";
-	color: h(liquid);
+	color: functions.h(liquid);
 }
 pre.language-markdown::before {
 	content: "Markdown";
-	color: h(snowy);
+	color: functions.h(snowy);
 }
 pre.language-nunjucks::before,
 pre.language-twig::before {
 	content: "Nunjucks";
-	color: h(nunjucks);
+	color: functions.h(nunjucks);
 }
 pre.language-php::before {
 	content: "PHP";
-	color: h(php);
+	color: functions.h(php);
 }
 // pre.language-plaintext::before,
 // pre.language-text::before {
@@ -80,15 +83,15 @@ pre.language-php::before {
 // }
 pre.language-scss::before {
 	content: "SCSS";
-	color: h(scss);
+	color: functions.h(scss);
 }
 pre.language-webc::before {
 	content: "WebC";
-	color: h(webc);
+	color: functions.h(webc);
 }
 pre.language-yaml::before {
 	content: "YAML";
-	color: h(yaml);
+	color: functions.h(yaml);
 }
 
 /* Exceptions */
@@ -170,7 +173,7 @@ pre.language-css .token.string,
 .token.prefix.unchanged,
 .token.prefix.inserted,
 .token.prefix.deleted {
-	@include non-selectable;
+	@include mixins.non-selectable;
 }
 
 .token.inserted:not(.prefix),
@@ -183,7 +186,7 @@ pre.language-css .token.string,
 	font-weight: var(--font-weight-semibold);
 }
 .token.italic {
-	@include italic;
+	@include mixins.italic;
 }
 
 .token.entity {

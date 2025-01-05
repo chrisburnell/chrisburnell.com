@@ -3,9 +3,11 @@
 /// @group blocks
 ////
 
+@use "../abstracts/collections";
+
 .cover {
 	&,
-	%image {
+	#{collections.$image} {
 		max-block-size: 100vb;
 		max-block-size: 100dvb;
 	}

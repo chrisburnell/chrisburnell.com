@@ -4,6 +4,9 @@
 ////
 
 @use "sass:map";
+@use "../generated/tokens";
+@use "collections";
+@use "functions";
 
 ///
 /// Visually hide an element properly.
@@ -26,15 +29,15 @@
 ///
 @mixin cqi($name, $min: null, $max: null) {
 	@if $min and $max {
-		@container #{$name} (#{map.get($breakpoints, $min)} < inline-size <= #{map.get($breakpoints, $max)}) {
+		@container #{$name} (#{map.get(tokens.$breakpoints, $min)} < inline-size <= #{map.get(tokens.$breakpoints, $max)}) {
 			@content;
 		}
 	} @else if $max {
-		@container #{$name} (inline-size <= #{map.get($breakpoints, $max)}) {
+		@container #{$name} (inline-size <= #{map.get(tokens.$breakpoints, $max)}) {
 			@content;
 		}
 	} @else {
-		@container #{$name} (inline-size > #{map.get($breakpoints, $min)}) {
+		@container #{$name} (inline-size > #{map.get(tokens.$breakpoints, $min)}) {
 			@content;
 		}
 	}
@@ -45,15 +48,15 @@
 ///
 @mixin cqb($name, $min: null, $max: null) {
 	@if $min and $max {
-		@container #{$name} (#{map.get($breakpoints, $min)} < block-size <= #{map.get($breakpoints, $max)}) {
+		@container #{$name} (#{map.get(tokens.$breakpoints, $min)} < block-size <= #{map.get(tokens.$breakpoints, $max)}) {
 			@content;
 		}
 	} @else if $max {
-		@container #{$name} (block-size <= #{map.get($breakpoints, $max)}) {
+		@container #{$name} (block-size <= #{map.get(tokens.$breakpoints, $max)}) {
 			@content;
 		}
 	} @else {
-		@container #{$name} (block-size > #{map.get($breakpoints, $min)}) {
+		@container #{$name} (block-size > #{map.get(tokens.$breakpoints, $min)}) {
 			@content;
 		}
 	}
@@ -137,4 +140,183 @@
 	--color-highland: color-mix(in oklab, var(--color-raven), var(--color-snowy) 33%);
 	--color-coyote: color-mix(in oklab, var(--color-raven), var(--color-snowy) 54%);
 	--color-bear: color-mix(in oklab, var(--color-raven), var(--color-snowy) 75%);
+}
+
+///
+/// Dark Theme
+///
+@mixin theme-dark() {
+	& {
+		--color-shadow: var(--color-shadow-dark);
+
+		scrollbar-color: functions.h(raven) functions.h(mineshaft);
+		color-scheme: dark;
+	}
+
+	&:is(body),
+	&:is(html) body,
+	&.themed-section,
+	main {
+		background-color: color-mix(in oklab, functions.h(mineshaft), functions.h(wolf) 40%);
+		color: functions.h(yeti);
+	}
+
+	// Set some special dark backgrounds
+	:is(.header, dialog, [popover], .footer, #{collections.$box}, .table) {
+		background-color: var(--background-color, color-mix(in oklab, functions.h(thunder), functions.h(mineshaft) 80%));
+	}
+
+	// Header Block
+	.header {
+		color: functions.h(yeti);
+	}
+
+	// Anchor Global
+	#{collections.$anchor} {
+		color: functions.h(highland);
+	}
+	// Anchor & Summary
+	#{collections.$anchor},
+	summary {
+		&:not(:hover, :focus, :active) {
+			text-decoration-color: functions.h(kaiser);
+		}
+	}
+
+	///
+	// Global Content Elements
+	///
+
+	h2 {
+		box-shadow: inset 0 calc(-1 * var(--size-border-thin)) 0 functions.h(nickel);
+	}
+
+	:is(blockquote, code, samp, kbd) {
+		background-color: functions.h(raven, gamma);
+	}
+
+	pre[class*="language-"] {
+		background-color: functions.h(thunder);
+	}
+
+	input,
+	select,
+	textarea {
+		background-color: functions.h(thunder);
+		color: functions.h(yeti);
+		border-color: functions.h(kaiser);
+
+		&:hover {
+			border-color: functions.h(bowhead);
+		}
+	}
+
+	select {
+		background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='50' fill='%23dddddd'><polygon points='0,0 100,0 50,50'/></svg>");
+	}
+
+	var {
+		color: functions.h(highland);
+	}
+
+	hr {
+		background-color: functions.h(yeti, beta);
+	}
+
+	th:not(:empty) {
+		background-color: functions.h(mineshaft);
+	}
+
+	///
+	// Global and Block Content Elements
+	///
+
+	:is(ol, ul):not([class]),
+	.breadcrumbs {
+		li {
+			&::marker {
+				color: functions.h(yeti);
+			}
+		}
+	}
+
+	figure > a figcaption,
+	blockquote cite,
+	.breadcrumbs,
+	.fragment-anchor {
+		color: functions.h(yeti);
+	}
+
+	.title:not(.title--positive, .title--negative) .p-name,
+	.navigation__list a {
+		@media not print {
+			background-image: linear-gradient(to bottom, var(--color-snowy), var(--color-highland));
+		}
+	}
+
+	///
+	// Compositions
+	///
+
+	#{collections.$box},
+	&.box {
+		border-block-start-color: var(--box-border-color, functions.h(raven, alpha));
+
+		#{collections.$anchor} {
+			color: functions.h(highland);
+
+			&:active {
+				color: functions.h(snowy); // maintain contrast
+			}
+		}
+	}
+	.box--success {
+		background-color: color-mix(in oklab, functions.h(mineshaft), functions.h(conifer) 10%);
+		--box-border-color: #{functions.h(conifer)};
+	}
+
+	.box--warning {
+		background-color: color-mix(in oklab, functions.h(mineshaft), functions.h(aspen) 10%);
+		--box-border-color: #{functions.h(aspen)};
+	}
+
+	.box--error {
+		background-color: color-mix(in oklab, functions.h(mineshaft), functions.h(maple) 10%);
+		--box-border-color: #{functions.h(maple)};
+	}
+
+	.rating {
+		--rating-background-color: #{functions.h(kaiser)};
+	}
+
+	.browse__previous,
+	.browse__next {
+		&:not(:hover, :focus, :active) {
+			&::before {
+				color: functions.h(yeti);
+			}
+		}
+	}
+
+	.table-of-contents {
+		li {
+			&::marker {
+				color: functions.h(yeti);
+			}
+		}
+	}
+
+	.dark-invert-colors {
+		filter: invert(1) hue-rotate(180deg);
+	}
+
+	// For some reason, ::selection and ::target-text don't play well together
+	::selection {
+		background-color: functions.h(highland);
+		color: functions.h(mineshaft);
+	}
+	::target-text {
+		background-color: functions.h(highland);
+		color: functions.h(mineshaft);
+	}
 }

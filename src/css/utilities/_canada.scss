@@ -3,17 +3,19 @@
 /// @group utilities
 ////
 
+@use "../abstracts/functions";
+
 .canada {
 	&,
 	* {
 		// For some reason, ::selection and ::target-text don't play well together
 		&::selection {
-			background-color: h(maple) !important;
-			color: h(snowy) !important;
+			background-color: functions.h(maple) !important;
+			color: functions.h(snowy) !important;
 		}
 		&::target-text {
-			background-color: h(maple) !important;
-			color: h(snowy) !important;
+			background-color: functions.h(maple) !important;
+			color: functions.h(snowy) !important;
 		}
 	}
 }

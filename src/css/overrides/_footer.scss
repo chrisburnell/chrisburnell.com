@@ -3,9 +3,12 @@
 /// @group overrides
 ////
 
+@use "../abstracts/collections";
+@use "../abstracts/functions";
+
 .footer {
 	&,
-	%anchor {
-		color: h(snowy);
+	#{collections.$anchor} {
+		color: functions.h(snowy);
 	}
 }

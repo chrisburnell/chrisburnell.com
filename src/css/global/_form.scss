@@ -4,6 +4,9 @@
 /// @link https://chrisburnell.com/styleguide/#forms
 ////
 
+@use "../abstracts/functions";
+@use "../abstracts/mixins";
+
 form {
 	inline-size: 100%;
 	position: relative;
@@ -18,38 +21,38 @@ fieldset {
 	line-height: var(--line-height-default);
 
 	&[pattern]:invalid {
-		border-color: h(maple) !important; // break through layers
+		border-color: functions.h(maple) !important; // break through layers
 	}
 }
 
 input,
 textarea,
 [contenteditable] {
-	caret-color: h(raven);
+	caret-color: functions.h(raven);
 }
 
 input,
 select,
 textarea {
 	box-sizing: inherit !important;
-	background-color: h(snowy);
-	color: h(thunder);
+	background-color: functions.h(snowy);
+	color: functions.h(thunder);
 	padding: 0 0.4em;
-	border: var(--size-border-thin) solid h(yeti);
+	border: var(--size-border-thin) solid functions.h(yeti);
 	border-radius: var(--border-radius, var(--size-border-default));
 	transition: border-color var(--transition-duration) var(--transition-function);
 
 	&[disabled] {
-		@include non-interactive;
+		@include mixins.non-interactive;
 		opacity: var(--opacity-beta);
 	}
 
 	&:not([disabled]):hover {
-		border-color: h(coyote);
+		border-color: functions.h(coyote);
 	}
 
 	&:not([disabled]):focus {
-		border-color: h(raven);
+		border-color: functions.h(raven);
 	}
 
 	&::-moz-focus-inner {

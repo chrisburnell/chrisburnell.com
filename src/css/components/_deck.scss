@@ -3,6 +3,10 @@
 /// @group components
 ////
 
+@use "../abstracts/collections";
+@use "../abstracts/functions";
+@use "../abstracts/mixins";
+
 .deck {
 	:not(.box) > .deck {
 		margin-block-start: var(--size-gap);
@@ -23,7 +27,7 @@
 		}
 	}
 	article + article {
-		border-block-start: var(--size-border-thin) solid h(mineshaft, delta);
+		border-block-start: var(--size-border-thin) solid functions.h(mineshaft, delta);
 	}
 
 	h1 {
@@ -31,7 +35,7 @@
 		line-height: var(--line-height-medium);
 	}
 
-	%anchor {
+	#{collections.$anchor} {
 		&:not(:hover, :focus, :active) {
 			color: inherit;
 		}
@@ -55,14 +59,14 @@
 
 .deck__context {
 	font-family: var(--font-family-serif);
-	@include italic;
+	@include mixins.italic;
 }
 
 .deck__meta {
 	--flow-space: var(--size-small);
 
 	time {
-		@include italic;
+		@include mixins.italic;
 
 		sup::before {
 			content: " ";

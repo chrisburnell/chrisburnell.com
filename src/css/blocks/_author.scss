@@ -3,6 +3,9 @@
 /// @group blocks
 ////
 
+@use "../abstracts/functions";
+@use "../abstracts/mixins";
+
 .author {
 	display: flex;
 	flex-direction: row;
@@ -20,17 +23,17 @@
 	margin-block-end: var(--size-small);
 	font-family: var(--font-family-serif);
 	font-size: var(--font-size-small);
-	@include italic;
+	@include mixins.italic;
 	line-height: var(--line-height-medium);
 	text-align: center;
 	text-decoration: none;
 
-	@include cqi(null, "medium") {
+	@include mixins.cqi(null, "medium") {
 		order: 2;
 	}
 
 	&::before {
-		@include non-interactive;
+		@include mixins.non-interactive;
 		content: "";
 		opacity: 0;
 		background-image: url("/images/avatar-pixelated.png");
@@ -62,7 +65,7 @@
 		&,
 		.anchor {
 			background-color: transparent;
-			text-decoration-color: h(maple);
+			text-decoration-color: functions.h(maple);
 		}
 
 		&::before {
@@ -147,7 +150,7 @@
 
 	font-size: var(--font-size-small);
 
-	@include cqi(null, "medium") {
+	@include mixins.cqi(null, "medium") {
 		text-align: end;
 	}
 }

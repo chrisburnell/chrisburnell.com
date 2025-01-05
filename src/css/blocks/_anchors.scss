@@ -3,16 +3,20 @@
 /// @group blocks
 ////
 
-h2 %anchor:not(:hover, :focus, :active) {
+@use "../abstracts/collections";
+@use "../abstracts/functions";
+@use "../abstracts/mixins";
+
+h2 #{collections.$anchor}:not(:hover, :focus, :active) {
 	text-decoration: none;
 }
 
 // Skip to main content
 .skip-link {
-	--outline-color: #{h(bowhead)};
+	--outline-color: #{functions.h(bowhead)};
 
-	background-color: h(bowhead);
-	color: h(snowy);
+	background-color: functions.h(bowhead);
+	color: functions.h(snowy);
 	display: block;
 	padding: 1em 1.5em;
 	position: absolute;
@@ -26,7 +30,7 @@ h2 %anchor:not(:hover, :focus, :active) {
 
 // Fragment Anchors inside Headings
 .fragment-anchor {
-	color: h(nickel);
+	color: functions.h(nickel);
 	padding-inline: var(--size-small);
 	position: absolute;
 	inset-block-start: 50%;
@@ -37,8 +41,8 @@ h2 %anchor:not(:hover, :focus, :active) {
 	font-weight: var(--font-weight-semibold);
 	text-transform: lowercase;
 
-	%heading:not(:hover, :focus-within) > &:not(:hover, :focus, :active) {
-		@include visually-hidden;
+	#{collections.$heading}:not(:hover, :focus-within) > &:not(:hover, :focus, :active) {
+		@include mixins.visually-hidden;
 	}
 }
 
@@ -61,7 +65,7 @@ h2 %anchor:not(:hover, :focus, :active) {
 	&:is(:hover, :focus, :active) {
 		@media not print {
 			background-color: transparent;
-			background-image: linear-gradient(to bottom, h(raven), h(maple));
+			background-image: linear-gradient(to bottom, functions.h(raven), functions.h(maple));
 			background-clip: text;
 			-webkit-text-fill-color: transparent;
 			box-decoration-break: clone;

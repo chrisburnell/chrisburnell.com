@@ -3,6 +3,8 @@
 /// @group global
 ////
 
+@use "../abstracts/functions";
+
 table {
 	flex: 1 0 auto;
 	align-self: flex-start;
@@ -20,13 +22,13 @@ table {
 	&.zebra,
 	&.zebra--horizontal {
 		tbody tr:nth-child(even) td {
-			background-color: h(thunder, delta);
+			background-color: functions.h(thunder, delta);
 		}
 	}
 	&.zebra,
 	&.zebra--vertical {
 		tbody td:nth-child(odd) {
-			background-color: h(thunder, delta);
+			background-color: functions.h(thunder, delta);
 		}
 	}
 }
@@ -52,7 +54,7 @@ th {
 	line-height: var(--line-height-medium);
 
 	&:not(:empty) {
-		background-color: color-mix(in oklab, h(yeti), h(snowy) 40%);
+		background-color: color-mix(in oklab, functions.h(yeti), functions.h(snowy) 40%);
 		position: sticky;
 		z-index: var(--z-index-above);
 

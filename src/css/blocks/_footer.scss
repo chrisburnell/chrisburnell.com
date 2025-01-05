@@ -3,13 +3,17 @@
 /// @group blocks
 ////
 
+@use "../abstracts/collections";
+@use "../abstracts/functions";
+@use "../abstracts/mixins";
+
 .footer {
-	--background-color: #{h(mineshaft)};
+	--background-color: #{functions.h(mineshaft)};
 
 	container: footer / inline-size;
 	background-color: var(--background-color);
 	padding-block: var(--size-large);
-	border-block-start: var(--size-border-thin) solid var(--border-color, h(raven));
+	border-block-start: var(--size-border-thin) solid var(--border-color, functions.h(raven));
 	z-index: var(--z-index-menu);
 
 	@media print {
@@ -17,9 +21,9 @@
 	}
 
 	&,
-	%anchor {
+	#{collections.$anchor} {
 		&:not(:hover, :focus, :active) {
-			text-decoration-color: h(kaiser);
+			text-decoration-color: functions.h(kaiser);
 		}
 	}
 
@@ -39,13 +43,13 @@
 }
 
 .footer__grid {
-	@include cqi(null, null, "medium") {
+	@include mixins.cqi(null, null, "medium") {
 		display: flex;
 		flex-direction: column;
 		gap: var(--size-gutter);
 	}
 
-	@include cqi(null, "medium") {
+	@include mixins.cqi(null, "medium") {
 		display: grid;
 		grid-template-columns:
 			[left-start]
@@ -88,23 +92,23 @@
 	.badges {
 		column-gap: var(--size-small);
 
-		@include cqi(null, "medium") {
+		@include mixins.cqi(null, "medium") {
 			justify-content: end;
 		}
 
-		@include cqi(null, null, "medium") {
+		@include mixins.cqi(null, null, "medium") {
 			margin-block-start: var(--size-small-medium);
 		}
 	}
 
 	.speedlify {
-		@include cqi(null, "medium") {
+		@include mixins.cqi(null, "medium") {
 			text-align: end;
 		}
 	}
 
 	summary:not(:hover, :focus, :active) {
-		text-decoration-color: h(kaiser);
+		text-decoration-color: functions.h(kaiser);
 	}
 
 	summary ~ * {

@@ -3,7 +3,11 @@
 /// @group global
 ////
 
-%content {
+@use "../abstracts/collections";
+@use "../abstracts/functions";
+@use "../abstracts/mixins";
+
+#{collections.$content} {
 	break-inside: avoid;
 }
 
@@ -13,17 +17,17 @@
 }
 
 :is(abbr, dfn, span)[title] {
-	@include italic;
+	@include mixins.italic;
 	text-decoration: underline;
-	text-decoration-color: h(nickel);
+	text-decoration-color: functions.h(nickel);
 	text-decoration-style: dotted;
 	text-decoration-thickness: var(--size-border-thin);
 	cursor: help;
 }
 
 ins {
-	background-color: h(conifer);
-	color: h(snowy);
+	background-color: functions.h(conifer);
+	color: functions.h(snowy);
 	padding: var(--size-border-default);
 	border-radius: var(--border-radius, var(--size-border-default));
 	font-size: var(--font-size-default);
@@ -31,7 +35,7 @@ ins {
 }
 
 del {
-	text-decoration-color: h(maple);
+	text-decoration-color: functions.h(maple);
 	text-decoration-thickness: var(--size-border-thin);
 }
 
@@ -40,10 +44,10 @@ s {
 }
 
 mark {
-	background-color: h(aspen) !important;
+	background-color: functions.h(aspen) !important;
 	background-image: none;
 	background-clip: initial;
-	color: h(mineshaft) !important;
+	color: functions.h(mineshaft) !important;
 	-webkit-text-fill-color: initial;
 	text-shadow: none;
 }
@@ -113,7 +117,7 @@ sup {
 }
 
 hr {
-	background-color: h(thunder, gamma);
+	background-color: functions.h(thunder, gamma);
 	inline-size: 100%;
 	max-inline-size: 20ch;
 	block-size: var(--size-border-thin);
@@ -139,29 +143,29 @@ progress {
 
 meter {
 	&::-webkit-meter-bar {
-		background-color: h(nickel);
+		background-color: functions.h(nickel);
 	}
 
 	&::-webkit-meter-optimum-value {
-		background-color: h(conifer);
+		background-color: functions.h(conifer);
 	}
 
 	&::-webkit-meter-suboptimum-value {
-		background-color: h(aspen);
+		background-color: functions.h(aspen);
 	}
 
 	&::-webkit-meter-even-less-good-value {
-		background-color: h(maple);
+		background-color: functions.h(maple);
 	}
 }
 
 progress {
 	&::-webkit-progress-bar {
-		background-color: h(nickel);
+		background-color: functions.h(nickel);
 	}
 
 	&::-webkit-progress-value {
-		background-color: h(raven);
+		background-color: functions.h(raven);
 	}
 }
 
@@ -173,8 +177,8 @@ progress {
 		@keyframes target {
 			0%,
 			33% {
-				background-color: h(aspen);
-				color: h(mineshaft);
+				background-color: functions.h(aspen);
+				color: functions.h(mineshaft);
 			}
 		}
 	}
@@ -182,28 +186,28 @@ progress {
 
 // For some reason, ::selection and ::target-text don't play well together
 ::selection {
-	background-color: h(wolf);
+	background-color: functions.h(wolf);
 	background-image: none;
 	background-clip: initial;
-	color: h(snowy);
+	color: functions.h(snowy);
 	-webkit-text-fill-color: initial;
 	text-shadow: none;
 }
 ::target-text {
-	background-color: h(wolf);
+	background-color: functions.h(wolf);
 	background-image: none;
 	background-clip: initial;
-	color: h(snowy);
+	color: functions.h(snowy);
 	-webkit-text-fill-color: initial;
 	text-shadow: none;
 }
 
 ::spelling-error {
-	text-decoration: h(maple) wavy underline;
+	text-decoration: functions.h(maple) wavy underline;
 }
 
 ::grammar-error {
-	text-decoration: h(conifer) wavy underline;
+	text-decoration: functions.h(conifer) wavy underline;
 }
 
 .columns {

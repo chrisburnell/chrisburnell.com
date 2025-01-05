@@ -3,6 +3,9 @@
 /// @group themes
 ////
 
+@use "../abstracts/collections";
+@use "../abstracts/mixins";
+
 @mixin theme-nineties() {
 	& {
 		--font-family-sans: var(--font-family-nineties);
@@ -56,8 +59,8 @@
 		border-width: 0;
 	}
 
-	%heading,
-	.navigation__list %anchor {
+	#{collections.$heading},
+	.navigation__list #{collections.$anchor} {
 		font-weight: var(--font-weight-semibold) !important;
 	}
 
@@ -109,6 +112,6 @@
 :root:has([name="theme"] [value*="nineties"]:checked),
 [data-theme*="nineties"],
 .nineties {
-	@include theme-dark;
+	@include mixins.theme-dark;
 	@include theme-nineties;
 }

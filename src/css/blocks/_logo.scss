@@ -3,13 +3,15 @@
 /// @group blocks
 ////
 
+@use "../abstracts/collections";
+
 .logo {
 	block-size: var(--size-logo-small);
 	inline-size: var(--size-logo-small);
 	display: flex;
 	transition: all var(--transition-duration) var(--transition-function);
 
-	%image {
+	#{collections.$image} {
 		max-block-size: 100%;
 		object-fit: contain;
 		transition: transform var(--transition-duration) var(--transition-function);
@@ -19,11 +21,11 @@
 		background: none !important;
 
 		&,
-		%image {
+		#{collections.$image} {
 			outline: none;
 		}
 
-		%image {
+		#{collections.$image} {
 			transform: scale(1.5) rotate(6deg);
 		}
 	}

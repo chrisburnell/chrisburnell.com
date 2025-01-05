@@ -3,13 +3,15 @@
 /// @group themes
 ////
 
+@use "../abstracts/mixins";
+
 @mixin theme-matrix() {
 	& {
 		--raven-lightness: 60.6%;
 		--raven-chroma: 0.082;
 		--raven-hue: 142.62;
 
-		@include setup-raven-colors;
+		@include mixins.setup-raven-colors;
 	}
 
 	.logo,
@@ -35,6 +37,6 @@
 :root:has([name="theme"] [value*="matrix"]:checked),
 [data-theme*="matrix"],
 .matrix {
-	@include theme-dark;
+	@include mixins.theme-dark;
 	@include theme-matrix;
 }

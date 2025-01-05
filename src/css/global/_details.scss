@@ -3,6 +3,9 @@
 /// @group global
 ////
 
+@use "../abstracts/functions";
+@use "../abstracts/mixins";
+
 details {
 	inline-size: 100%;
 	overflow-x: auto;
@@ -15,7 +18,7 @@ details {
 	// add a border above the first non-summary child
 	&:not(.no-border) summary + * {
 		margin-block-start: var(--size-small);
-		border-block-start: var(--size-border-thin) solid h(yeti);
+		border-block-start: var(--size-border-thin) solid functions.h(yeti);
 		padding-block-start: var(--size-medium);
 	}
 }
@@ -23,11 +26,11 @@ details {
 summary {
 	--outline-offset: calc(var(--size-border-thin) * -1);
 
-	@include non-selectable;
+	@include mixins.non-selectable;
 	display: list-item;
 	font-weight: var(--font-weight-semibold);
 	text-decoration: underline;
-	text-decoration-color: h(yeti);
+	text-decoration-color: functions.h(yeti);
 	text-decoration-thickness: var(--size-border-thin);
 	text-decoration-skip-ink: auto;
 	text-underline-offset: 0.125em;
@@ -41,7 +44,7 @@ summary {
 	}
 
 	&:is(:hover, :focus, :active) {
-		text-decoration-color: h(maple);
+		text-decoration-color: functions.h(maple);
 	}
 
 	[open] > & {

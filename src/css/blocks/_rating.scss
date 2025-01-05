@@ -3,6 +3,9 @@
 /// @group blocks
 ////
 
+@use "sass:math";
+@use "../abstracts/functions";
+
 .rating {
 	display: inline-block;
 	position: relative;
@@ -18,16 +21,16 @@
 	}
 
 	&::before {
-		color: var(--rating-background-color, h(yeti));
+		color: var(--rating-background-color, functions.h(yeti));
 	}
 
 	&::after {
 		background-color: inherit;
-		color: var(--rating-color, h(aspen));
+		color: var(--rating-color, functions.h(aspen));
 		inline-size: 0;
 		text-shadow:
-			0 0 1px var(--rating-border, h(nickel)),
-			0 1px 1px var(--rating-border, h(nickel));
+			0 0 1px var(--rating-border, functions.h(nickel)),
+			0 1px 1px var(--rating-border, functions.h(nickel));
 		overflow: hidden;
 		position: absolute;
 		inset-block-start: 0;
@@ -40,7 +43,7 @@
 
 	@for $i from 1 through 19 {
 		&[value="#{math.div($i, 4)}"]::after {
-			inline-size: range-map($i, 0, 20, 0%, 100%);
+			inline-size: functions.range-map($i, 0, 20, 0%, 100%);
 		}
 	}
 	&[value="5"]::after {

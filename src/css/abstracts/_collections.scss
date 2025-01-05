@@ -3,72 +3,82 @@
 /// @group abstracts
 ////
 
+@use "../generated/tokens";
+
+$anchor: ":is(a:not(.button), .anchor)";
 :is(a:not(.button), .anchor) {
 	@extend %anchor !optional;
 }
 
+$button: ":is(button:not(.anchor), .button, [type=button], [role=tab])";
 :is(button:not(.anchor), .button, [type="button"], [role="tab"]) {
 	@extend %button !optional;
 }
 
+$heading: ":is(h1, h2, h3, h4, h5, h6)";
 :is(h1, h2, h3, h4, h5, h6) {
 	@extend %heading !optional;
 }
 
+$alpha: "h1, .alpha";
 h1,
 .alpha {
 	@extend %alpha !optional;
 }
 
+$beta: "h2, .beta";
 h2,
 .beta {
 	@extend %beta !optional;
 }
 
+$gamma: "h3, .gamma, .deck h1";
 h3,
 .gamma,
 .deck h1 {
 	@extend %gamma !optional;
 }
 
+$delta: "h4, .delta, .shelf h1";
 h4,
 .delta,
 .shelf h1 {
 	@extend %delta !optional;
 }
 
+$epsilon: "h5, .epsilon";
 h5,
 .epsilon {
 	@extend %epsilon !optional;
 }
 
+$zeta: "h6, .zeta";
 h6,
 .zeta {
 	@extend %zeta !optional;
 }
 
+$riza: ".riza";
 .riza {
 	@extend %riza !optional;
 }
 
+$content: ":is(p, blockquote, details, table, dl, ol, ul, figure:not([class]))";
 :is(p, blockquote, details, table, dl, ol, ul, figure:not([class])) {
 	@extend %content !optional;
 }
 
+$image: ":is(img, input[type=image], svg)";
 :is(img, input[type="image"], svg) {
 	@extend %image !optional;
 }
 
+$media: ":is(audio, canvas, embed, iframe, lite-youtube, marquee, math, object, video)";
 :is(audio, canvas, embed, iframe, lite-youtube, marquee, math, object, video) {
 	@extend %media !optional;
 }
 
+$box: ":is(.box, .cp_embed_wrapper, .speakerdeck-embed-wrapper)";
 :is(.box, .cp_embed_wrapper, .speakerdeck-embed-wrapper) {
 	@extend %box !optional;
-}
-
-@each $name, $_ in $colors {
-	.background--#{$name} {
-		@extend %background--#{$name} !optional;
-	}
 }
