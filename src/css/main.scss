@@ -14,10 +14,6 @@
 @use "generated/tokens";
 @use "abstracts/collections";
 
-.test #{collections.$anchor} {
-	content: "";
-}
-
 // Fonts
 @include meta.load-css("global/fonts");
 

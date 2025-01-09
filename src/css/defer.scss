@@ -13,7 +13,7 @@
 @use "abstracts/functions";
 @use "abstracts/mixins";
 @use "generated/tokens";
-@include meta.load-css("abstracts/collections");
+@use "abstracts/collections";
 
 // Global
 @layer global {
