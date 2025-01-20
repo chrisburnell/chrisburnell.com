@@ -117,7 +117,7 @@ sup {
 }
 
 hr {
-	background-color: functions.h(thunder, gamma);
+	background-color: color-mix(in oklab, currentColor, transparent 85%);
 	inline-size: 100%;
 	max-inline-size: 20ch;
 	block-size: var(--size-border-thin);

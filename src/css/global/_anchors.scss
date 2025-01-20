@@ -17,7 +17,7 @@
 	overflow-wrap: break-word;
 	position: relative;
 	text-decoration: underline;
-	text-decoration-color: functions.h(yeti);
+	text-decoration-color: color-mix(in oklab, currentColor, transparent 85%);
 	text-decoration-thickness: var(--size-border-thin);
 	text-decoration-skip-ink: auto;
 	text-underline-offset: 0.125em;

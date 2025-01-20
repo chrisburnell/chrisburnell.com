@@ -49,9 +49,7 @@ Passionate about the open web, having published over {{ technical_articles_count
 
 - Responsible for keeping track of web standards and keeping my team up-to-date on how we can use stable, new technologies to simplify and enhance the library of components.
 
-<hr style="--rule-space: var(--size-large);">
-
-<div class=" [ role ] ">
+<div class=" [ role ] " style="margin-block-start: var(--size-large);">
     <h3>Lead Developer & Chapter Lead</h3>
     <small><strong>May 2022 – Jan. 2023</strong></small>
     <p class="delta"><a href="https://squiz.net"><c-emoji>{% image './images/content/squiz-logo.svg', 'Squiz’s logo', 'brand-logo' %}</c-emoji>Squiz</a></p>
@@ -66,9 +64,7 @@ Passionate about the open web, having published over {{ technical_articles_count
 
 - Established a robust design system for projects which *reduced development times by over 50%* and enabled both technical and non-technical stakeholders to understand and participate in dialogue about the complex intersection between design and development.
 
-<hr style="--rule-space: var(--size-large);">
-
-<div class=" [ role ] ">
+<div class=" [ role ] " style="margin-block-start: var(--size-large);">
     <h3>Lead Developer</h3>
     <small><strong>Feb. 2021 – May 2022</strong></small>
     <p class="delta"><a href="https://squiz.net"><c-emoji>{% image './images/content/squiz-logo.svg', 'Squiz’s logo', 'brand-logo' %}</c-emoji>Squiz</a></p>
@@ -81,9 +77,7 @@ Passionate about the open web, having published over {{ technical_articles_count
 
 - Mentored a Junior Developer for 20 hours a week over the course of a 6-week project and was able to deliver the project in *50% of the estimated time* and achieved *perfect Lighthouse and WCAG AA scores*.
 
-<hr style="--rule-space: var(--size-large);">
-
-<div class=" [ role ] ">
+<div class=" [ role ] " style="margin-block-start: var(--size-large);">
     <h3>Front End Developer</h3>
     <small><strong>Feb. 2018 – July 2020</strong></small>
     <p class="delta"><a href="https://squiz.net"><c-emoji>{% image './images/content/squiz-logo.svg', 'Squiz’s logo', 'brand-logo' %}</c-emoji>Squiz</a></p>
@@ -96,9 +90,7 @@ Passionate about the open web, having published over {{ technical_articles_count
 
 - Single-handedly developed the UK’s first design system which is now used by more than 10 enterprise-level projects, leading to more coherent codebases and a significant reduction in bugs and turnaround time for ad hoc work.
 
-<hr style="--rule-space: var(--size-large);">
-
-<div class=" [ role ] ">
+<div class=" [ role ] " style="margin-block-start: var(--size-large);">
     <h3>Web Developer</h3>
     <small><strong>June 2014 – Feb. 2018</strong></small>
     <p class="delta"><a href="https://city.ac.uk"><c-emoji>{% image './images/content/city-logo.svg', 'City, University of London’s logo', 'brand-logo' %}</c-emoji>City, University of London</a></p>
@@ -111,9 +103,7 @@ Passionate about the open web, having published over {{ technical_articles_count
 
 - Overhauled the University’s [Clearing Website](https://clearing.city.ac.uk/) to simplify the user journey and automate backend processes required for incoming applications, reducing processing times and dependence on staff. This led to significant cost and time savings for the University, and continues to be used to this day.
 
-<hr style="--rule-space: var(--size-large);">
-
-<div class=" [ role ] ">
+<div class=" [ role ] " style="margin-block-start: var(--size-large);">
     <h3>Front End Web & UI Developer</h3>
     <small><strong>Apr. 2012 – Jan. 2014</strong></small>
     <p class="delta"><a href="https://squiz.net"><c-emoji>{% image './images/content/squiz-logo.svg', 'Squiz’s logo', 'brand-logo' %}</c-emoji>Squiz</a></p>
@@ -145,9 +135,7 @@ Passionate about the open web, having published over {{ technical_articles_count
 
 **Annual conference websites:** [2018](https://2018.stateofthebrowser.com), [2019](https://2019.stateofthebrowser.com), [2021](https://2021.stateofthebrowser.com), [2022](https://2022.stateofthebrowser.com), [2023](https://2023.stateofthebrowser.com), [2024](https://2024.stateofthebrowser.com)
 
-<hr style="--rule-space: var(--size-large);">
-
-<div class=" [ role ] ">
+<div class=" [ role ] " style="margin-block-start: var(--size-large);">
     <h3>Technical Writer</h3>
     <small><strong>2013 – present</strong></small>
     <p class="delta"><a href="https://chrisburnell.com/"><c-emoji><img src="{{ site.logo }}" class="brand-logo" width="24" height="24" alt="{{ site.title }}" loading="lazy" decoding="async"></c-emoji>chrisburnell.com</a></p>
@@ -174,9 +162,7 @@ Launched a web development blog and have published [{{ collections.projects.leng
     <a href="https://chrisburnell.com/posts/" class=" [ button ] " style="font-size: 1rem;">Read more of my posts</a>
 </nav>
 
-<hr style="--rule-space: var(--size-large);">
-
-<div class=" [ role ] ">
+<div class=" [ role ] " style="margin-block-start: var(--size-large);">
     <h3>Open Source Author</h3>
     <small><strong>2013 – present</strong></small>
 </div>
