@@ -40,7 +40,7 @@ button {
 	@include mixins.non-selectable;
 	background-color: functions.h(bowhead);
 	color: functions.h(snowy) !important;
-	min-inline-size: var(--button-min-inline-size, 8em);
+	min-inline-size: max(fit-content, var(--button-min-inline-size, 8em));
 	display: inline-block;
 	padding: var(--padding-block, var(--padding, var(--size-small))) var(--padding-inline, var(--padding, var(--size-medium)));
 	// accounts for outline-width + outline-offset

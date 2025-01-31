@@ -125,7 +125,7 @@ Passionate about the open web, having published over {{ technical_articles_count
     <small><strong>London, UK</strong></small>
 </div>
 
-- Organised 6 annual, not-for-profit conferences, showcasing over {{ (10 + 9 + 7 + 8 + 8 + 8) | toNearest(5, true) }} speakers with 150+ in-person attendees each year.
+- Organised 7 annual, not-for-profit conferences, showcasing over {{ (10 + 9 + 7 + 8 + 8 + 8 + 7) | toNearest(5, true) }} speakers with 150+ in-person attendees each year.
 
 - Liaised with speakers, sponsors, and venues; handled the logistics of running an in-person and online conference.
 
@@ -133,7 +133,7 @@ Passionate about the open web, having published over {{ technical_articles_count
 
 - Built and maintained the conference websites, including a design refresh in 2018 and codebase refresh in 2021, as well as extensive work with APIs to automate many organisational tasks for the conference.
 
-**Annual conference websites:** [2018](https://2018.stateofthebrowser.com), [2019](https://2019.stateofthebrowser.com), [2021](https://2021.stateofthebrowser.com), [2022](https://2022.stateofthebrowser.com), [2023](https://2023.stateofthebrowser.com), [2024](https://2024.stateofthebrowser.com)
+**Annual conference websites:** [2018](https://2018.stateofthebrowser.com), [2019](https://2019.stateofthebrowser.com), [2021](https://2021.stateofthebrowser.com), [2022](https://2022.stateofthebrowser.com), [2023](https://2023.stateofthebrowser.com), [2024](https://2024.stateofthebrowser.com), [2025](https://2025.stateofthebrowser.com)
 
 <div class=" [ role ] " style="margin-block-start: var(--size-large);">
     <h3>Technical Writer</h3>
@@ -141,7 +141,7 @@ Passionate about the open web, having published over {{ technical_articles_count
     <p class="delta"><a href="https://chrisburnell.com/"><c-emoji><img src="{{ site.logo }}" class="brand-logo" width="24" height="24" alt="{{ site.title }}" loading="lazy" decoding="async"></c-emoji>chrisburnell.com</a></p>
 </div>
 
-Launched a web development blog and have published [{{ collections.projects.length + projects.web.length }} web projects](https://chrisburnell.com/projects/) and over [{{ collections.blogPosts | length | toNearest(5, true) }} blog posts](https://chrisburnell.com/blog/), including {{ technical_articles_count }} technical articles, {{ collections.css | length }} articles about CSS, {{ collections.javascript | length }} articles about JavaScript, and {{ collections.code | length }} code demos.
+Launched a web development blog and have published [{{ collections.projects.length + projects.web.length }} web projects](https://chrisburnell.com/projects/) and over [{{ collections.blogPosts | length | toNearest(5, true) }} blog posts](https://chrisburnell.com/blog/), including {{ technical_articles_count }} technical articles about CSS, JavaScript, and thoughts on the web.
 
 <c-details class="no-border" force-restore>
     <summary>Popular Pages & Posts</summary>

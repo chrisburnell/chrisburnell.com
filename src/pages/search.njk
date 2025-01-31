@@ -9,21 +9,22 @@ sitemap:
   exclude: true
 ---
 
-<pagefind-search _page_size="10" _show_images="false" pagefind-autofocus>
-	<form id="search" class=" [ responses__form ] " method="get" name="search" action="https://duckduckgo.com/" autocomplete="off">
-		<label class=" [ responses__label ] [ visually-hidden ] " for="search-query">Search:</label>
-		<input id="search-query" class=" [ responses__input ] " type="search" name="q" autofocus>
-		<input type="hidden" name="sites" value="chrisburnell.com">
-		<button type="submit" enterkeyhint="submit">Submit</button>
-	</form>
-</pagefind-search>
-
-<is-land>
-	<p>Search provided by <a href="https://duckduckgo.com/">DuckDuckGo</a>.</p>
-	<template data-island="replace">
-		<p>Search provided by <a href="https://pagefind.app/">Pagefind</a> via the <a href="https://www.zachleat.com/web/pagefind-search/"><code>&lt;pagefind-search&gt;</code> Web Component</a>.</p>
-	</template>
-</is-land>
+<search>
+	<pagefind-search _page_size="10" _show_images="false" pagefind-autofocus>
+		<form id="search" class=" [ responses__form ] " method="get" name="search" action="https://duckduckgo.com/" autocomplete="off">
+			<label class=" [ responses__label ] [ visually-hidden ] " for="search-query">Search:</label>
+			<input id="search-query" class=" [ responses__input ] " type="search" name="q" autofocus>
+			<input type="hidden" name="sites" value="chrisburnell.com">
+			<button type="submit" enterkeyhint="submit">Submit</button>
+		</form>
+	</pagefind-search>
+	<is-land>
+		<p>Search provided by <a href="https://duckduckgo.com/">DuckDuckGo</a>.</p>
+		<template data-island="replace">
+			<p>Search provided by <a href="https://pagefind.app/">Pagefind</a> via the <a href="https://www.zachleat.com/web/pagefind-search/"><code>&lt;pagefind-search&gt;</code> Web Component</a>.</p>
+		</template>
+	</is-land>
+</search>
 
 {% css -%}
 pagefind-search {

@@ -53,6 +53,7 @@ textarea {
 
 	&:not([disabled]):focus {
 		border-color: functions.h(raven);
+		z-index: var(--z-index-above);
 	}
 
 	&::-moz-focus-inner {
