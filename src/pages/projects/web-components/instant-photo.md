@@ -62,4 +62,4 @@ You can check out the full documentation, source code, and demos on GitHub, as w
 
 [https://github.com/chrisburnell/instant-photo](https://github.com/chrisburnell/instant-photo)
 
-<script type="module">{% include '../../../../node_modules/@chrisburnell/instant-photo/instant-photo.js' %}</script>>
+<script type="module">{% include '../../../../node_modules/@chrisburnell/instant-photo/instant-photo.js' %}</script>
