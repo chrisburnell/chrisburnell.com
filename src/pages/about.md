@@ -157,11 +157,13 @@ I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link
 }
 {%- endcss %}
 
-{# <hr> #}
+{#
+<hr>
 
-{# ## Testimonials #}
+## Testimonials
 
-{# {% include 'testimonials.njk' %} #}
+{% include 'testimonials.njk' %}
+#}
 
 <hr>
 
