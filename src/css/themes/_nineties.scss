@@ -86,6 +86,17 @@
 		inset-inline: initial;
 	}
 
+	#{collections.$button},
+	#{collections.$box} {
+		border: var(--size-border-thin) outset;
+	}
+
+	#{collections.$button} {
+		&:not([disabled]):active {
+			border: var(--size-border-thin) inset;
+		}
+	}
+
 	h1 {
 		font-family: var(--font-family-silly);
 	}
