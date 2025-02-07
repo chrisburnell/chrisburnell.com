@@ -87,7 +87,7 @@ I already store the design tokens for my website’s CSS in a series of JSON fil
   "nickel": "#737373",
   "yeti": "#dddddd",
   "snowy": "#f9f9f9",
-  "aspen": "#ffd700",
+  "aspen": "#eab538",
   "conifer": "#3d8137",
   "maple": "#e0151f"
 }

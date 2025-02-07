@@ -14,37 +14,37 @@
 @layer pages {
 	.currency-converter {
 		& fieldset  > * + * {
-			margin-block-start: 0.375em;
+			margin-block-start: var(--size-small);
 		}
 
 		& label {
 			display: grid;
 			grid-template-columns: min-content min-content 1fr;
 			align-items: center;
-			gap: 1em;
-			font-family: monospace;
+			gap: var(--size-medium);
 			line-height: 1;
-			text-transform: uppercase;
 			user-select: none;
 
-			& > * {
-				font-family: sans-serif;
-				text-transform: initial;
+			& :is(span, small) {
+				text-transform: uppercase;
 			}
 
-			& > var {
-				background-color: goldenrod;
-				color: black;
+			& span {
+				font-family: var(--font-family-monospace);
+			}
+
+			& var {
+				background-color: var(--color-aspen);
+				color: var(--color-thunder);
 				aspect-ratio: 1;
-				inline-size: 3rem;
+				inline-size: var(--size-tap);
 				display: grid;
 				place-items: center;
 				font-size: var(--font-size-beta);
-				font-style: normal;
 			}
 
-			& > small {
-				font-size: 0.8em;
+			& small {
+				font-size: var(--font-size-default);
 				font-variant-caps: all-small-caps;
 			}
 		}
@@ -52,7 +52,7 @@
 		& input {
 			max-inline-size: 100%;
 			font: inherit;
-			font-family: monospace;
+			font-family: var(--font-family-monospace);
 		}
 	}
 }
