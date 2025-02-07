@@ -17,8 +17,10 @@ import { getHost } from "../filters/urls.js";
  * @param {number} [decimals]
  * @returns {number}
  */
-export const maxDecimals = (number, decimals = 3) => {
-	return +number.toFixed(decimals);
+export const maxDecimals = (number, decimals = 3, stripWholeNumbers = true) => {
+	return stripWholeNumbers
+		? +number.toFixed(decimals)
+		: number.toFixed(decimals);
 };
 
 /**

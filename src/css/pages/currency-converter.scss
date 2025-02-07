@@ -1,0 +1,63 @@
+////
+/// Currency Converter
+/// @group pages
+/// @link https://chrisburnell.com/currency-converter/
+////
+
+@use "sass:color";
+@use "sass:math";
+@use "../abstracts/functions";
+@use "../abstracts/mixins";
+@use "../generated/tokens";
+@use "../abstracts/collections";
+
+@layer pages {
+	.currency-converter {
+		& fieldset {
+			& > * + * {
+				margin-block-start: 0.375em;
+			}
+		}
+
+		& fieldset + fieldset {
+			margin-block-start: 1.5em;
+		}
+
+		& label {
+			display: grid;
+			grid-template-columns: min-content min-content 1fr;
+			align-items: center;
+			gap: 1em;
+			font-family: monospace;
+			line-height: 1;
+			text-transform: uppercase;
+			user-select: none;
+
+			& > * {
+				font-family: sans-serif;
+				text-transform: initial;
+			}
+
+			& var {
+				background-color: goldenrod;
+				color: black;
+				aspect-ratio: 1;
+				inline-size: 1.5em;
+				display: grid;
+				place-items: center;
+				font-size: var(--font-size-beta);
+				font-style: normal;
+			}
+
+			& small {
+				font-variant-caps: all-small-caps;
+			}
+		}
+
+		& input {
+			max-inline-size: 100%;
+			font: inherit;
+			font-family: monospace;
+		}
+	}
+}

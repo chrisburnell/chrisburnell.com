@@ -1,0 +1,59 @@
+---
+date: 2025-02-07T11:32:16-0400
+title: "Currency Converter"
+description: "Simple utility to convert between a couple of different currencies."
+tags:
+  - calculator
+emoji: 💸
+---
+
+<noscript><p class=" [ box  box--error ] ">Unfortunately, the converter requires JavaScript to function correctly!</p></noscript>
+
+<!-- </textarea> -->
+<!-- '"´ -->
+<form id="currency-converter" class=" [ currency-converter ] " autocomplete="off">
+	<legend class=" [ visually-hidden ] ">
+		<h2>{{ title }}</h2>
+	</legend>
+	<fieldset>
+		<label class=" [ gamma ] " for="CAD">CAD <var>$</var> <small>Canadian Dollars</small></label>
+		<input id="CAD" class=" [ monospace ] " style="inline-size: 100%; line-height: 3;" type="number" min="0" step="0.01" inputmode="decimal" placeholder="1.00">
+	</fieldset>
+	<fieldset>
+		<label class=" [ gamma ] " for="DKK">DKK <var>kr</var> <small>Danish Kroner</small></label>
+		<input id="DKK" class=" [ monospace ] " style="inline-size: 100%; line-height: 3;" type="number" min="0" step="0.01" inputmode="decimal" placeholder="{{ (1 / currencies.rates.CAD * currencies.rates.DKK) | maxDecimals(2, false) }}">
+	</fieldset>
+	<fieldset>
+		<label class=" [ gamma ] " for="EUR">EUR <var>€</var> <small>Euros</small></label>
+		<input id="EUR" class=" [ monospace ] " style="inline-size: 100%; line-height: 3;" type="number" min="0" step="0.01" inputmode="decimal" placeholder="{{ (1 / currencies.rates.CAD * currencies.amount) | maxDecimals(2, false) }}">
+	</fieldset>
+	<fieldset>
+		<label class=" [ gamma ] " for="GBP">GBP <var>£</var> <small>British Pounds</small></label>
+		<input id="GBP" class=" [ monospace ] " style="inline-size: 100%; line-height: 3;" type="number" min="0" step="0.01" inputmode="decimal" placeholder="{{ (1 / currencies.rates.CAD * currencies.rates.GBP) | maxDecimals(2, false) }}">
+	</fieldset>
+	<fieldset>
+		<label class=" [ gamma ] " for="JPY">JPY <var>¥</var> <small>Japanese Yen</small></label>
+		<input id="JPY" class=" [ monospace ] " style="inline-size: 100%; line-height: 3;" type="number" min="0" step="1" inputmode="number" placeholder="{{ (1 / currencies.rates.CAD * currencies.rates.JPY) | maxDecimals(0) }}" data-decimals="0">
+	</fieldset>
+	<fieldset>
+		<label class=" [ gamma ] " for="SGD">SGD <var>$</var> <small>Singaporean Dollars</small></label>
+		<input id="SGD" class=" [ monospace ] " style="inline-size: 100%; line-height: 3;" type="number" min="0" step="0.01" inputmode="decimal" placeholder="{{ (1 / currencies.rates.CAD * currencies.rates.SGD) | maxDecimals(2, false) }}">
+	</fieldset>
+	<fieldset>
+		<label class=" [ gamma ] " for="USD">USD <var>$</var> <small>US Dollars</small></label>
+		<input id="USD" class=" [ monospace ] " style="inline-size: 100%; line-height: 3;" type="number" min="0" step="0.01" inputmode="decimal" placeholder="{{ (1 / currencies.rates.CAD * currencies.rates.USD) | maxDecimals(2, false) }}">
+	</fieldset>
+</form>
+
+<hr>
+
+<p class=" [ center  italic ] ">Currency data last updated on <time datetime="{{ (currencies.date + 'T12:00:00+0000') | rfc3339Date }}">{{ (currencies.date + 'T12:00:00+0000') | friendlyDateLong | safe }}</time>.</p>
+
+{% css -%}{% renderFile 'src/css/pages/currency-converter.scss' %}{%- endcss -%}
+<script>
+const currencies = {
+	{{ currencies.base }}: {{ currencies.amount }},{% for code, value in currencies.rates %}
+	{{ code }}: {{ value }},{% endfor %}
+};
+</script>
+<script type="module" defer>{% include '../../../js/pages/currency-converter.js' %}</script>
