@@ -1,7 +1,7 @@
 ---
 date: 2025-02-07T11:32:16-0400
 title: "Currency Converter"
-description: "Simple utility to convert between a couple of different currencies."
+description: "Simple utility to convert between a couple of different currencies"
 tags:
   - calculator
 emoji: 💸
@@ -18,44 +18,68 @@ eleventyComputed:
 		<h2>{{ title }}</h2>
 	</legend>
 	<fieldset>
-		<label class=" [ gamma ] " for="CAD">
-			<span>CAD</span>
-			<var>$</var>
-			<small>Canadian Dollars</small>
-		</label>
-		<input id="CAD" class=" [ monospace ] " style="inline-size: 100%; line-height: 3;" type="number" min="0" step="0.01" inputmode="decimal" placeholder="1.00">
-	</fieldset>
-	<fieldset>
 		<label class=" [ gamma ] " for="AUD">
 			<span>AUD</span>
 			<var>$</var>
-			<small>Australian Dollars</small>
+			<small>Australian Dollar</small>
 		</label>
-		<input id="AUD" class=" [ monospace ] " style="inline-size: 100%; line-height: 3;" type="number" min="0" step="0.01" inputmode="decimal" placeholder="{{ (1 / currencies.rates.CAD * currencies.rates.AUD) | maxDecimals(2, false) }}">
+		<input id="AUD" class=" [ monospace ] " type="number" min="0" step="0.01" inputmode="decimal" placeholder="{{ (1 / currencies.rates.CAD * currencies.rates.AUD) | maxDecimals(2, false) }}">
+	</fieldset>
+	<fieldset>
+		<label class=" [ gamma ] " for="CAD">
+			<span>CAD</span>
+			<var>$</var>
+			<small>Canadian Dollar</small>
+		</label>
+		<input id="CAD" class=" [ monospace ] " type="number" min="0" step="0.01" inputmode="decimal" placeholder="{{ (1 / currencies.rates.CAD * currencies.rates.CAD) | maxDecimals(2, false) }}">
+	</fieldset>
+	<fieldset>
+		<label class=" [ gamma ] " for="CHF">
+			<span>CHF</span>
+			<var style="font-size: calc(var(--font-size-beta) * 0.8);">Fr</var>
+			<small>Swiss Franc</small>
+		</label>
+		<input id="CHF" class=" [ monospace ] " type="number" min="0" step="0.01" inputmode="decimal" placeholder="{{ (1 / currencies.rates.CAD * currencies.rates.CHF) | maxDecimals(2, false) }}">
+	</fieldset>
+	<fieldset>
+		<label class=" [ gamma ] " for="CNY">
+			<span>CNY</span>
+			<var>¥</var>
+			<small>Chinese Yuan</small>
+		</label>
+		<input id="CNY" class=" [ monospace ] " type="number" min="0" step="0.01" inputmode="decimal" placeholder="{{ (1 / currencies.rates.CAD * currencies.rates.CNY) | maxDecimals(2, false) }}">
 	</fieldset>
 	<fieldset>
 		<label class=" [ gamma ] " for="DKK">
 			<span>DKK</span>
 			<var style="font-size: calc(var(--font-size-beta) * 0.8);">kr</var>
-			<small>Danish Kroner</small>
+			<small>Danish Krone</small>
 		</label>
-		<input id="DKK" class=" [ monospace ] " style="inline-size: 100%; line-height: 3;" type="number" min="0" step="0.01" inputmode="decimal" placeholder="{{ (1 / currencies.rates.CAD * currencies.rates.DKK) | maxDecimals(2, false) }}">
+		<input id="DKK" class=" [ monospace ] " type="number" min="0" step="0.01" inputmode="decimal" placeholder="{{ (1 / currencies.rates.CAD * currencies.rates.DKK) | maxDecimals(2, false) }}">
 	</fieldset>
 	<fieldset>
 		<label class=" [ gamma ] " for="EUR">
 			<span>EUR</span>
 			<var>€</var>
-			<small>Euros</small>
+			<small>Euro</small>
 		</label>
-		<input id="EUR" class=" [ monospace ] " style="inline-size: 100%; line-height: 3;" type="number" min="0" step="0.01" inputmode="decimal" placeholder="{{ (1 / currencies.rates.CAD * currencies.amount) | maxDecimals(2, false) }}">
+		<input id="EUR" class=" [ monospace ] " type="number" min="0" step="0.01" inputmode="decimal" placeholder="{{ (1 / currencies.rates.CAD * currencies.amount) | maxDecimals(2, false) }}">
 	</fieldset>
 	<fieldset>
 		<label class=" [ gamma ] " for="GBP">
 			<span>GBP</span>
 			<var>£</var>
-			<small>British Pounds</small>
+			<small>Pounds Sterling</small>
 		</label>
-		<input id="GBP" class=" [ monospace ] " style="inline-size: 100%; line-height: 3;" type="number" min="0" step="0.01" inputmode="decimal" placeholder="{{ (1 / currencies.rates.CAD * currencies.rates.GBP) | maxDecimals(2, false) }}">
+		<input id="GBP" class=" [ monospace ] " type="number" min="0" step="0.01" inputmode="decimal" placeholder="{{ (1 / currencies.rates.CAD * currencies.rates.GBP) | maxDecimals(2, false) }}">
+	</fieldset>
+	<fieldset>
+		<label class=" [ gamma ] " for="HKD">
+			<span>HKD</span>
+			<var>$</var>
+			<small>Hong Kong Dollar</small>
+		</label>
+		<input id="HKD" class=" [ monospace ] " type="number" min="0" step="0.01" inputmode="decimal" placeholder="{{ (1 / currencies.rates.CAD * currencies.rates.HKD) | maxDecimals(2, false) }}">
 	</fieldset>
 	<fieldset>
 		<label class=" [ gamma ] " for="IDR">
@@ -63,15 +87,15 @@ eleventyComputed:
 			<var style="font-size: calc(var(--font-size-beta) * 0.8);">Rp</var>
 			<small>Indonesian Rupiah</small>
 		</label>
-		<input id="IDR" class=" [ monospace ] " style="inline-size: 100%; line-height: 3;" type="number" min="0" step="1" inputmode="numeric" placeholder="{{ (1 / currencies.rates.CAD * currencies.rates.IDR) | maxDecimals(0) }}" data-decimals="0">
+		<input id="IDR" class=" [ monospace ] " type="number" min="0" step="1" inputmode="numeric" placeholder="{{ (1 / currencies.rates.CAD * currencies.rates.IDR) | maxDecimals(0) }}" data-decimals="0">
 	</fieldset>
 	<fieldset>
 		<label class=" [ gamma ] " for="INR">
 			<span>INR</span>
 			<var>₹</var>
-			<small>Indian Rupees</small>
+			<small>Indian Rupee</small>
 		</label>
-		<input id="INR" class=" [ monospace ] " style="inline-size: 100%; line-height: 3;" type="number" min="0" step="1" inputmode="numeric" placeholder="{{ (1 / currencies.rates.CAD * currencies.rates.INR) | maxDecimals(0) }}" data-decimals="0">
+		<input id="INR" class=" [ monospace ] " type="number" min="0" step="1" inputmode="numeric" placeholder="{{ (1 / currencies.rates.CAD * currencies.rates.INR) | maxDecimals(0) }}" data-decimals="0">
 	</fieldset>
 	<fieldset>
 		<label class=" [ gamma ] " for="JPY">
@@ -79,15 +103,15 @@ eleventyComputed:
 			<var>¥</var>
 			<small>Japanese Yen</small>
 		</label>
-		<input id="JPY" class=" [ monospace ] " style="inline-size: 100%; line-height: 3;" type="number" min="0" step="1" inputmode="numeric" placeholder="{{ (1 / currencies.rates.CAD * currencies.rates.JPY) | maxDecimals(0) }}" data-decimals="0">
+		<input id="JPY" class=" [ monospace ] " type="number" min="0" step="1" inputmode="numeric" placeholder="{{ (1 / currencies.rates.CAD * currencies.rates.JPY) | maxDecimals(0) }}" data-decimals="0">
 	</fieldset>
 	<fieldset>
 		<label class=" [ gamma ] " for="MXN">
 			<span>MXN</span>
 			<var>$</var>
-			<small>Mexican Pesos</small>
+			<small>Mexican Peso</small>
 		</label>
-		<input id="MXN" class=" [ monospace ] " style="inline-size: 100%; line-height: 3;" type="number" min="0" step="1" inputmode="decimal" placeholder="{{ (1 / currencies.rates.CAD * currencies.rates.MXN) | maxDecimals(2, false) }}">
+		<input id="MXN" class=" [ monospace ] " type="number" min="0" step="1" inputmode="decimal" placeholder="{{ (1 / currencies.rates.CAD * currencies.rates.MXN) | maxDecimals(2, false) }}">
 	</fieldset>
 	<fieldset>
 		<label class=" [ gamma ] " for="MYR">
@@ -95,23 +119,31 @@ eleventyComputed:
 			<var style="font-size: calc(var(--font-size-beta) * 0.8);">RM</var>
 			<small>Malaysian Ringgit</small>
 		</label>
-		<input id="MYR" class=" [ monospace ] " style="inline-size: 100%; line-height: 3;" type="number" min="0" step="1" inputmode="decimal" placeholder="{{ (1 / currencies.rates.CAD * currencies.rates.MYR) | maxDecimals(2, false) }}">
+		<input id="MYR" class=" [ monospace ] " type="number" min="0" step="1" inputmode="decimal" placeholder="{{ (1 / currencies.rates.CAD * currencies.rates.MYR) | maxDecimals(2, false) }}">
 	</fieldset>
 	<fieldset>
 		<label class=" [ gamma ] " for="NZD">
 			<span>NZD</span>
 			<var>$</var>
-			<small>New Zealand Dollars</small>
+			<small>New Zealand Dollar</small>
 		</label>
-		<input id="NZD" class=" [ monospace ] " style="inline-size: 100%; line-height: 3;" type="number" min="0" step="1" inputmode="decimal" placeholder="{{ (1 / currencies.rates.CAD * currencies.rates.NZD) | maxDecimals(2, false) }}">
+		<input id="NZD" class=" [ monospace ] " type="number" min="0" step="1" inputmode="decimal" placeholder="{{ (1 / currencies.rates.CAD * currencies.rates.NZD) | maxDecimals(2, false) }}">
+	</fieldset>
+	<fieldset>
+		<label class=" [ gamma ] " for="PLN">
+			<span>PLN</span>
+			<var style="font-size: calc(var(--font-size-beta) * 0.8);">zł</var>
+			<small>Polish Złoty</small>
+		</label>
+		<input id="PLN" class=" [ monospace ] " type="number" min="0" step="1" inputmode="decimal" placeholder="{{ (1 / currencies.rates.CAD * currencies.rates.PLN) | maxDecimals(2, false) }}">
 	</fieldset>
 	<fieldset>
 		<label class=" [ gamma ] " for="SGD">
 			<span>SGD</span>
 			<var>$</var>
-			<small>Singaporean Dollars</small>
+			<small>Singaporean Dollar</small>
 		</label>
-		<input id="SGD" class=" [ monospace ] " style="inline-size: 100%; line-height: 3;" type="number" min="0" step="0.01" inputmode="decimal" placeholder="{{ (1 / currencies.rates.CAD * currencies.rates.SGD) | maxDecimals(2, false) }}">
+		<input id="SGD" class=" [ monospace ] " type="number" min="0" step="0.01" inputmode="decimal" placeholder="{{ (1 / currencies.rates.CAD * currencies.rates.SGD) | maxDecimals(2, false) }}">
 	</fieldset>
 	<fieldset>
 		<label class=" [ gamma ] " for="THB">
@@ -119,15 +151,23 @@ eleventyComputed:
 			<var>฿</var>
 			<small>Thai Baht</small>
 		</label>
-		<input id="THB" class=" [ monospace ] " style="inline-size: 100%; line-height: 3;" type="number" min="0" step="0.01" inputmode="decimal" placeholder="{{ (1 / currencies.rates.CAD * currencies.rates.THB) | maxDecimals(2, false) }}">
+		<input id="THB" class=" [ monospace ] " type="number" min="0" step="0.01" inputmode="decimal" placeholder="{{ (1 / currencies.rates.CAD * currencies.rates.THB) | maxDecimals(2, false) }}">
 	</fieldset>
 	<fieldset>
 		<label class=" [ gamma ] " for="USD">
 			<span>USD</span>
 			<var>$</var>
-			<small>US Dollars</small>
+			<small>U.S. Dollar</small>
 		</label>
-		<input id="USD" class=" [ monospace ] " style="inline-size: 100%; line-height: 3;" type="number" min="0" step="0.01" inputmode="decimal" placeholder="{{ (1 / currencies.rates.CAD * currencies.rates.USD) | maxDecimals(2, false) }}">
+		<input id="USD" class=" [ monospace ] " type="number" min="0" step="0.01" inputmode="decimal" placeholder="{{ (1 / currencies.rates.CAD * currencies.rates.USD) | maxDecimals(2, false) }}">
+	</fieldset>
+	<fieldset>
+		<label class=" [ gamma ] " for="ZAR">
+			<span>ZAR</span>
+			<var>R</var>
+			<small>South African Rand</small>
+		</label>
+		<input id="ZAR" class=" [ monospace ] " type="number" min="0" step="0.01" inputmode="decimal" placeholder="{{ (1 / currencies.rates.CAD * currencies.rates.ZAR) | maxDecimals(2, false) }}">
 	</fieldset>
 </form>
 
