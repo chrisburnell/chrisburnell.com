@@ -13,14 +13,8 @@
 
 @layer pages {
 	.currency-converter {
-		& fieldset {
-			& > * + * {
-				margin-block-start: 0.375em;
-			}
-		}
-
-		& fieldset + fieldset {
-			margin-block-start: 1.5em;
+		& fieldset  > * + * {
+			margin-block-start: 0.375em;
 		}
 
 		& label {
@@ -38,18 +32,19 @@
 				text-transform: initial;
 			}
 
-			& var {
+			& > var {
 				background-color: goldenrod;
 				color: black;
 				aspect-ratio: 1;
-				inline-size: 1.5em;
+				inline-size: 3rem;
 				display: grid;
 				place-items: center;
 				font-size: var(--font-size-beta);
 				font-style: normal;
 			}
 
-			& small {
+			& > small {
+				font-size: 0.8em;
 				font-variant-caps: all-small-caps;
 			}
 		}
