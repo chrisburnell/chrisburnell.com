@@ -11,9 +11,33 @@ eleventyComputed:
 
 <noscript><p class=" [ box  box--error ] ">Unfortunately, the converter requires JavaScript to function correctly!</p></noscript>
 
+<div id="currency-controls" class=" [ grid  currency-controls ] " data-layout="natural">
+	<button class=" [ button--small ] " data-controls="AUD">AUD</button>
+	<button class=" [ button--small ] " data-controls="CAD">CAD</button>
+	<button class=" [ button--small ] " data-controls="CHF">CHF</button>
+	<button class=" [ button--small ] " data-controls="CNY">CNY</button>
+	<button class=" [ button--small ] " data-controls="DKK">DKK</button>
+	<button class=" [ button--small ] " data-controls="EUR">EUR</button>
+	<button class=" [ button--small ] " data-controls="GBP">GBP</button>
+	<button class=" [ button--small ] " data-controls="HKD">HKD</button>
+	<button class=" [ button--small ] " data-controls="IDR">IDR</button>
+	<button class=" [ button--small ] " data-controls="INR">INR</button>
+	<button class=" [ button--small ] " data-controls="JPY">JPY</button>
+	<button class=" [ button--small ] " data-controls="MXN">MXN</button>
+	<button class=" [ button--small ] " data-controls="MYR">MYR</button>
+	<button class=" [ button--small ] " data-controls="NZD">NZD</button>
+	<button class=" [ button--small ] " data-controls="PLN">PLN</button>
+	<button class=" [ button--small ] " data-controls="SGD">SGD</button>
+	<button class=" [ button--small ] " data-controls="THB">THB</button>
+	<button class=" [ button--small ] " data-controls="USD">USD</button>
+	<button class=" [ button--small ] " data-controls="ZAR">ZAR</button>
+</div>
+
+<hr>
+
 <!-- </textarea> -->
 <!-- '"´ -->
-<form id="currency-converter" class=" [ grid  currency-converter ] " data-layout="50-50-small" autocomplete="off">
+<form id="currency-converter" class=" [ grid  currency-converter ] " data-layout="50-50-small" autocomplete="off" style="--row-gap: var(--size-medium-large);">
 	<legend class=" [ visually-hidden ] ">
 		<h2>{{ title }}</h2>
 	</legend>

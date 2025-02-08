@@ -12,6 +12,16 @@
 @use "../abstracts/collections";
 
 @layer pages {
+	.currency-controls {
+		--column-gap: 0.5em;
+		--row-gap: 1em;
+
+		& button {
+			min-inline-size: var(--size-tap);
+			aspect-ratio: 1;
+		}
+	}
+
 	.currency-converter {
 		& fieldset  > * + * {
 			margin-block-start: var(--size-small);
@@ -42,6 +52,7 @@
 				place-items: center;
 				font-family: inherit;
 				font-size: var(--font-size-beta);
+				line-height: 1;
 			}
 
 			& small {

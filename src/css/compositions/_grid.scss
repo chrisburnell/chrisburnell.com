@@ -61,7 +61,6 @@
 		display: flex;
 		flex-wrap: wrap;
 		align-items: first baseline;
-		gap: var(--gap, var(--size-gutter));
 
 		& > * {
 			flex: 0 1 var(--inline-size, auto);
