@@ -6,11 +6,14 @@ class CurrencyConverter {
 	constructor() {
 		this.STORAGE_KEY = "currencies";
 		this.inputs = [
-			...document.querySelectorAll("#currency-converter input"),
+			...document.querySelectorAll("#currency-converter [type=number]"),
 		];
 		this.buttons = [
 			...document.querySelectorAll("#currency-controls button"),
 		];
+		this.dateInput = document.querySelector(
+			"#currency-converter [type=date]",
+		);
 
 		this.init();
 	}
@@ -41,14 +44,45 @@ class CurrencyConverter {
 
 	handleEvent(event, others, input) {
 		event.preventDefault();
-		if (document.activeElement !== input) {
+		if (
+			document.activeElement !== input ||
+			!input.value ||
+			input.value === ""
+		) {
 			return;
 		}
 		this.convertOthers(others, input);
+		const url = new URL(window.location.href);
+		Object.keys(currencies).forEach((currency) => {
+			url.searchParams.delete(currency);
+		});
+		url.searchParams.append(input.id, input.value);
+		window.history.replaceState({}, "", url);
 	}
 
-	init() {
+	async fetchRatesFromDate(date = "latest") {
+		if (datedCurrencies[date]) {
+			return datedCurrencies[date];
+		}
+
+		const response = await fetch(
+			`https://api.frankfurter.dev/v1/${date}?base=EUR`,
+		);
+		const json = await response.json();
+		json.rates[json.base] = json.amount;
+		datedCurrencies[date] = json.rates;
+		return json.rates;
+	}
+
+	async init() {
 		const params = new URLSearchParams(window.location.search);
+
+		const dateParam = params.get("date");
+		if (dateParam) {
+			this.dateInput.value = dateParam;
+			currencies = await this.fetchRatesFromDate(dateParam);
+			console.log(dateParam, currencies);
+		}
 
 		const ids = this.inputs.map((input) => input.id);
 		let saved = localStorage.getItem(this.STORAGE_KEY);
@@ -65,6 +99,8 @@ class CurrencyConverter {
 			const others = this.inputs.filter((check) => {
 				return check.id !== input.id;
 			});
+
+			input.placeholder = this.maxDecimals(currencies[input.id]);
 
 			input.addEventListener("change", (event) => {
 				this.handleEvent(event, others, input);
@@ -115,6 +151,40 @@ class CurrencyConverter {
 					fieldset.removeAttribute("hidden");
 				}
 			});
+		});
+
+		this.dateInput.addEventListener("change", async (event) => {
+			const url = new URL(window.location.href);
+			if (!this.dateInput.value || this.dateInput.value === "") {
+				url.searchParams.delete("date");
+				window.history.replaceState({}, "", url);
+				currencies = datedCurrencies["latest"];
+				this.inputs.forEach((input) => {
+					const others = this.inputs.filter((check) => {
+						return check.id !== input.id;
+					});
+					if (url.searchParams.get(input.id)) {
+						this.convertOthers(others, input);
+					}
+					input.placeholder = this.maxDecimals(currencies[input.id]);
+				});
+				return;
+			}
+
+			url.searchParams.delete("date");
+			url.searchParams.append("date", this.dateInput.value);
+			window.history.replaceState({}, "", url);
+			currencies = await this.fetchRatesFromDate(this.dateInput.value);
+			this.inputs.forEach((input) => {
+				const others = this.inputs.filter((check) => {
+					return check.id !== input.id;
+				});
+				if (url.searchParams.get(input.id)) {
+					this.convertOthers(others, input);
+				}
+				input.placeholder = this.maxDecimals(currencies[input.id]);
+			});
+			datedCurrencies[this.dateInput.value] = currencies;
 		});
 	}
 }

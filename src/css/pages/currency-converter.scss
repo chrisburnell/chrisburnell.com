@@ -35,10 +35,6 @@
 			line-height: 1;
 			user-select: none;
 
-			& :is(span, small) {
-				text-transform: uppercase;
-			}
-
 			& span {
 				font-family: var(--font-family-monospace);
 			}
@@ -58,6 +54,7 @@
 			& small {
 				font-size: var(--font-size-default);
 				font-variant-caps: all-small-caps;
+				text-transform: uppercase;
 			}
 		}
 

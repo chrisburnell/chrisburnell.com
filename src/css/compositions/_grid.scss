@@ -66,4 +66,8 @@
 			flex: 0 1 var(--inline-size, auto);
 		}
 	}
+
+	.full-span {
+		grid-column: 1 / -1;
+	}
 }

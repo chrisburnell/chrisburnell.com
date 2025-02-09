@@ -11,7 +11,7 @@ eleventyComputed:
 
 <noscript><p class=" [ box  box--error ] ">Unfortunately, the converter requires JavaScript to function correctly!</p></noscript>
 
-<div id="currency-controls" class=" [ grid  currency-controls ] " data-layout="natural">
+<div id="currency-controls" class=" [ grid  currency-controls ] [ requires-js ] " data-layout="natural">
 	<button class=" [ button--small ] " data-controls="AUD">AUD</button>
 	<button class=" [ button--small ] " data-controls="CAD">CAD</button>
 	<button class=" [ button--small ] " data-controls="CHF">CHF</button>
@@ -33,11 +33,11 @@ eleventyComputed:
 	<button class=" [ button--small ] " data-controls="ZAR">ZAR</button>
 </div>
 
-<hr>
+<hr class=" [ requires-js ] ">
 
 <!-- </textarea> -->
 <!-- '"´ -->
-<form id="currency-converter" class=" [ grid  currency-converter ] " data-layout="50-50-small" autocomplete="off" style="--row-gap: var(--size-medium-large);">
+<form action="/currency-converter/" method="get" id="currency-converter" class=" [ grid  currency-converter ] " data-layout="50-50-small" autocomplete="off" style="--row-gap: var(--size-medium-large);">
 	<legend class=" [ visually-hidden ] ">
 		<h2>{{ title }}</h2>
 	</legend>
@@ -193,16 +193,23 @@ eleventyComputed:
 		</label>
 		<input id="ZAR" class=" [ monospace ] " type="number" min="0" step="0.01" inputmode="decimal" placeholder="{{ (1 / currencies.rates.CAD * currencies.rates.ZAR) | maxDecimals(2, false) }}">
 	</fieldset>
+	<hr class=" [ full-span ] " style="margin-block: 1em !important;">
+	<fieldset class=" [ full-span ] ">
+		<label class=" [ gamma ] " for="date">
+			<span>Date</span>
+		</label>
+		<input type="date" name="date" id="date" min="2023-01-01" max="{{ currencies.date }}" value="{{ currencies.date }}">
+	</fieldset>
+	<p class=" [ full-span ] [ center  italic ] ">Currency data last updated on <time datetime="{{ (currencies.date + 'T00:00:00+0000') | rfc3339Date }}">{{ (currencies.date + 'T00:00:00+0000') | friendlyDateLong | safe }}</time>.</p>
 </form>
-
-<hr>
-
-<p class=" [ center  italic ] ">Currency data last updated on <time datetime="{{ (currencies.date + 'T00:00:00+0000') | rfc3339Date }}">{{ (currencies.date + 'T00:00:00+0000') | friendlyDateLong | safe }}</time>.</p>
 
 {% css -%}{% renderFile 'src/css/pages/currency-converter.scss' %}{%- endcss -%}
 <script>
-const currencies = { {%- for code, value in currencies.rates %}
+const datedCurrencies = {};
+let currencies = { {%- for code, value in currencies.rates %}
 	{{ code }}: {{ value }},{% endfor %}
 };
+console.log("latest", currencies);
+datedCurrencies["latest"] = currencies;
 </script>
 <script type="module" defer>{% include '../../../js/pages/currency-converter.js' %}</script>
