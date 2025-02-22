@@ -6,6 +6,6 @@ authors:
   - title: Denzel Curry
     url: https://last.fm/music/Denzel+Curry
 listen_of: https://album.link/s/7KtyUeiJidoZO0ybxBXw0Q
-cover: melt-my-eyez-see-your-future.jpg
+cover: melt-my-eyez-see-your-future.jpeg
 rating: 3.25
 ---

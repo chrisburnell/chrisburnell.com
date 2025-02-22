@@ -8,6 +8,6 @@ authors:
   - title: Wildstyle
     url: https://last.fm/music/Wildstyle
 listen_of: https://album.link/s/72LglewDl2LULJv40Ow7fh
-cover: chills-spotlight.jpg
+cover: chills-spotlight.jpeg
 rating: 4.25
 ---

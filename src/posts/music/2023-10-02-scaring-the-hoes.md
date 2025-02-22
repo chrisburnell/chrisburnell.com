@@ -8,6 +8,6 @@ authors:
   - title: Danny Brown
     url: https://last.fm/music/Danny+Brown
 listen_of: https://album.link/s/3u20OXh03DjCUzbf8XcGTq
-cover: scaring-the-hoes.jpg
+cover: scaring-the-hoes.jpeg
 rating: 4
 ---

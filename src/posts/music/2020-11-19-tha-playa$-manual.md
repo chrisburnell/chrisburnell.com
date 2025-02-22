@@ -8,6 +8,6 @@ authors:
   - title: Rocci
     url: https://last.fm/music/Rocci
 listen_of: https://album.link/s/0sl62xHit6SvrH7tkMVeKU
-cover: tha-playa$-manual.jpg
+cover: tha-playa$-manual.jpeg
 rating: 4.5
 ---

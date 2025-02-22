@@ -6,6 +6,6 @@ authors:
   - title: Danny Brown
     url: https://last.fm/music/Danny+Brown
 listen_of: https://album.link/s/4G3BRVsGEpWzUdplFJ1VBl
-cover: uknowhatimsayin.jpg
+cover: uknowhatimsayin.jpeg
 rating: 3.75
 ---

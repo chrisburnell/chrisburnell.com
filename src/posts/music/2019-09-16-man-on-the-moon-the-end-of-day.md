@@ -6,6 +6,6 @@ authors:
   - title: Kid Cudi
     url: https://last.fm/music/Kid+Cudi
 listen_of: https://album.link/s/1OnCqi7IuzjnrOh2ZNvJHd
-cover: man-on-the-moon-the-end-of-day.jpg
+cover: man-on-the-moon-the-end-of-day.jpeg
 rating: 4.75
 ---

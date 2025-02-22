@@ -50,5 +50,5 @@ Feel free to book my time <a href="https://cal.com/chrisburnell" rel="external n
 
 <is-land on:visible>
     <div id="cal-embed" style="overflow: scroll;"></div>
-    <script>{% include '../js/imports/cal-embed.js' %}</script>
+    <script>{% include '../../js/imports/cal-embed.js' %}</script>
 </is-land>

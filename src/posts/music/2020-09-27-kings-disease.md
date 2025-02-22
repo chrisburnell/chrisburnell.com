@@ -6,6 +6,6 @@ authors:
   - title: Nas
     url: https://last.fm/music/Nas
 listen_of: https://album.link/s/5ZQjqg9obFzyGuxGj0mjSi
-cover: kings-disease.jpg
+cover: kings-disease.jpeg
 rating: 3.75
 ---

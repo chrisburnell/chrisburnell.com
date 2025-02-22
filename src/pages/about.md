@@ -63,7 +63,7 @@ redirect_from:
 ## The Long Version
 
 <figure>
-    {% image './images/content/rachel-and-i.jpg', 'a photo of my partner, Rachel, and myself', ' [ shadow ] [ canada ] ', [500, 672, 1000] %}
+    {% image './images/content/rachel-and-i.jpeg', 'a photo of my partner, Rachel, and myself', ' [ shadow ] [ canada ] ', [500, 672, 1000] %}
     <figcaption>a photo of my partner, Rachel, and myself</figcaption>
 </figure>
 

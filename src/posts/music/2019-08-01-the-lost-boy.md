@@ -6,6 +6,6 @@ authors:
   - title: Cordae
     url: https://last.fm/music/Cordae
 listen_of: https://album.link/s/6Pb7PMZtW0fuEM1lCGvCDu
-cover: the-lost-boy.jpg
+cover: the-lost-boy.jpeg
 rating: 4
 ---

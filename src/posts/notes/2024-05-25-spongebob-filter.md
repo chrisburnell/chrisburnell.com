@@ -14,7 +14,7 @@ post_includes:
 In today’s quick post, I’m going to show how to use a couple of npm packages—[natural](https://www.npmjs.com/package/natural) and [random-case](https://www.npmjs.com/package/random-case)—to build a rudimentary sentiment analyser that transforms the case of programmatically-determined *unsavoury* text to read like a <q>moCkING SPOnGEBOB MEme</q>.
 
 <figure>
-    {% image './images/content/spongebob-meme.jpg', "Mocking Spongebob Meme that reads 'This is the dumbest idea I’ve ever seen'" %}
+    {% image './images/content/spongebob-meme.jpeg', "Mocking Spongebob Meme that reads 'This is the dumbest idea I’ve ever seen'" %}
 </figure>
 
 <hr style="--rule-space: var(--size-medium);">

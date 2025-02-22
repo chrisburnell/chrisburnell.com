@@ -9,7 +9,7 @@ authors:
   - Neal Acree
   - Glenn Stafford
 listen_of: https://album.link/s/36Dk0lgHLB8nfpaC8EvGiy
-cover: wrath-of-the-lich-king.jpg
+cover: wrath-of-the-lich-king.jpeg
 rating: 5
 ---
 

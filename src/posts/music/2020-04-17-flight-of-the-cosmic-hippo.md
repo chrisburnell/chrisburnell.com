@@ -6,6 +6,6 @@ authors:
   - title: Béla Fleck and the Flecktones
     url: https://last.fm/music/Béla+Fleck+and+the+Flecktones
 listen_of: https://album.link/s/5AjD7hY9hMWVC5ZWGerBv4
-cover: flight-of-the-cosmic-hippo.jpg
+cover: flight-of-the-cosmic-hippo.jpeg
 rating: 4.25
 ---

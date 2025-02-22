@@ -6,6 +6,6 @@ authors:
   - title: Souls of Mischief
     url: https://last.fm/music/Souls+of+Mischief
 listen_of: https://album.link/s/7aSjaEi3OQ2aZemcJDhMb1
-cover: 93-til-infinity.jpg
+cover: 93-til-infinity.jpeg
 rating: 5
 ---

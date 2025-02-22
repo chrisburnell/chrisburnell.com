@@ -6,7 +6,7 @@ tags:
   - jekyll
   - liquid
 banner:
-  url: numerals-romanticised.jpg
+  url: numerals-romanticised.jpeg
   alt: a photograph of the Trevi Fountain, up-close on Neptune in the middle of the sculpture
 further_reading:
   - title: Roman numerals on Wikipedia

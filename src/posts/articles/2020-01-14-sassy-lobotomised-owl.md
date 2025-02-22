@@ -5,7 +5,7 @@ date: 2020-01-14T12:20:00+0000
 title: "Sassy Lobotomised Owl"
 description: "Managing spacing between elements and components on your page can be a tiring task if undertaken manually. This is where the lobotomised owl comes in: a short, simple snippet of CSS that simplifies this whole process for you. In this article I’ll explain how I make use of it in a more dynamic way using a SCSS mixin."
 banner:
-  url: sassy-lobotomised-owl.jpg
+  url: sassy-lobotomised-owl.jpeg
   alt: an up-close photo of an owl's face with darkness behind it
 tags:
   - css

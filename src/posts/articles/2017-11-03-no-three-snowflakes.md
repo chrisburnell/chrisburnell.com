@@ -5,7 +5,7 @@ description: I developed a Sass function to generate a list of unique pairs give
 tags:
   - scss
 banner:
-  url: no-three-snowflakes.jpg
+  url: no-three-snowflakes.jpeg
   alt: a microscopic photo of a large clump of mostly-unbroken snowflakes
 syndicate_to:
   - https://twitter.com/iamchrisburnell/status/926496715213033472

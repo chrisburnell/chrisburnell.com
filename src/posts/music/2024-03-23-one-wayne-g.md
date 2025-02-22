@@ -6,6 +6,6 @@ authors:
   - title: Mac DeMarco
     url: https://www.last.fm/music/Mac+DeMarco
 listen_of: https://album.link/y/OLAK5uy_lNdQ0ay1BXtrOPy2ar7Z6uIRmgoFTnehw
-cover: one-wayne-g.jpg
+cover: one-wayne-g.jpeg
 rating: 4.5
 ---

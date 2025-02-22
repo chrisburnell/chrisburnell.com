@@ -6,6 +6,6 @@ authors:
   - title: Kano
     url: https://last.fm/music/Kano
 listen_of: https://album.link/s/0N6HQ1sWJTf4QJxipeEazS
-cover: hoodies-all-summer.jpg
+cover: hoodies-all-summer.jpeg
 rating: 3.5
 ---

@@ -6,7 +6,7 @@ tags:
   - ai
   - state-of-the-web
 banner:
-  url: copilot-me-if-you-can.jpg
+  url: copilot-me-if-you-can.jpeg
   alt: a horrific, twisted, generated image depicting some transmogrified airplane flying through nonsensical space
 ---
 

@@ -35,14 +35,14 @@ export default async function () {
 		);
 	}
 
-	const avatar = await glob("./images/avatar-full.jpg");
+	const avatar = await glob("./images/avatar-full.jpeg");
 	for (const a of avatar) {
 		console.log(`Generating image varieties from: ${a}`);
 		await Image(
 			a,
 			Object.assign(
 				{
-					formats: ["avif", "webp", "jpg"],
+					formats: ["avif", "webp", "jpeg"],
 					widths: [100, 200, 300, 400],
 					sharpOptions: {
 						quality: 100,
@@ -57,15 +57,15 @@ export default async function () {
 	}
 
 	const pixelated = await glob("./images/avatar-pixelated.png");
-	const defaultProfile = await glob("./images/default-profile.jpg");
-	const defaultAlbumCover = await glob("./images/default-album-cover.jpg");
+	const defaultProfile = await glob("./images/default-profile.jpeg");
+	const defaultAlbumCover = await glob("./images/default-album-cover.jpeg");
 	for (const g of [...pixelated, ...defaultProfile, ...defaultAlbumCover]) {
 		console.log(`Generating image varieties from: ${g}}`);
 		await Image(
 			g,
 			Object.assign(
 				{
-					formats: ["avif", "webp", "jpg", "png"],
+					formats: ["avif", "webp", "jpeg", "png"],
 					sharpOptions: {
 						quality: 100,
 					},

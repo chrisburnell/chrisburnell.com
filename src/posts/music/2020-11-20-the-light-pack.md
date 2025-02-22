@@ -6,6 +6,6 @@ authors:
   - title: Joey Bada$$
     url: https://last.fm/music/Joey+Bada$$
 listen_of: https://album.link/s/14EzA7MWoKYPjzjeT4gtj3
-cover: the-light-pack.jpg
+cover: the-light-pack.jpeg
 rating: 4
 ---

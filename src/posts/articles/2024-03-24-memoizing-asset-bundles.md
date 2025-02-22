@@ -137,11 +137,13 @@ export default function (eleventyConfig) {
 					nodePaths: ["src/js", "node_modules"],
 					external: ["fs"],
 					format: "esm",
-					target: "es6",
 					bundle: true,
 					minify: true,
 					keepNames: true,
 					write: false,
+					define: {
+						"import.meta.url": "import.meta.url",
+					},
 				})
 
 				// Cache the result

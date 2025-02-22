@@ -4,11 +4,11 @@ title: Once Again Asking
 excerpt: I am once again asking for you to add times and timezones to your RSS feeds.
 tags:
   - rss-only
-og_image: /images/content/i-am-once-again-asking.jpg
+og_image: /images/content/i-am-once-again-asking.jpeg
 ---
 
 <figure>
-    {% image './images/content/i-am-once-again-asking.jpg', 'A photo of Bernie Sanders with the text, “I am once again asking for you to add times and timezones to your RSS feeds.”', undefined, [504] %}
+    {% image './images/content/i-am-once-again-asking.jpeg', 'A photo of Bernie Sanders with the text, “I am once again asking for you to add times and timezones to your RSS feeds.”', undefined, [504] %}
 </figure>
 
 I am once again asking for you to add times and timezones to your RSS feeds.

@@ -6,6 +6,6 @@ authors:
   - title: Masta Ace
     url: https://last.fm/music/Masta+Ace
 listen_of: https://album.link/s/7qvw3MPdulHThAPqaM9ynF
-cover: a-long-hot-summer.jpg
+cover: a-long-hot-summer.jpeg
 rating: 4.25
 ---

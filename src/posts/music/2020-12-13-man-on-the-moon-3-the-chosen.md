@@ -6,6 +6,6 @@ authors:
   - title: Kid Cudi
     url: https://last.fm/music/Kid+Cudi
 listen_of: https://album.link/s/64nbgEEIcY4g1ElVLONJ0w
-cover: man-on-the-moon-3-the-chosen.jpg
+cover: man-on-the-moon-3-the-chosen.jpeg
 rating: 4.5
 ---

@@ -6,6 +6,6 @@ authors:
   - title: Earl Sweatshirt
     url: https://last.fm/music/Earl+Sweatshirt
 listen_of: https://album.link/s/0N0EFoE8csbKxl5lxT1ylm
-cover: feet-of-clay.jpg
+cover: feet-of-clay.jpeg
 rating: 2.25
 ---

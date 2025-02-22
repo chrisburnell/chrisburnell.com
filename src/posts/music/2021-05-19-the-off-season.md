@@ -6,6 +6,6 @@ authors:
   - title: J. Cole
     url: https://last.fm/music/J.+Cole
 listen_of: https://album.link/s/4JAvwK4APPArjIsOdGoJXX
-cover: the-off-season.jpg
+cover: the-off-season.jpeg
 rating: 3.25
 ---

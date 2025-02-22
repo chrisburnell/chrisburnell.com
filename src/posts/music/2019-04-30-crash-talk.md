@@ -6,6 +6,6 @@ authors:
   - title: ScHoolboy Q
     url: https://last.fm/music/ScHoolboy+Q
 listen_of: https://album.link/s/3UTp6spxkyTdvsmJDPfb7n
-cover: crash-talk.jpg
+cover: crash-talk.jpeg
 rating: 4.5
 ---

@@ -8,6 +8,6 @@ authors:
   - title: Ramirez
     url: https://last.fm/music/Ramirez
 listen_of: https://album.link/s/45LzyxCAWTrRMn0NVmmKUA
-cover: grey-gods-ii.jpg
+cover: grey-gods-ii.jpeg
 rating: 3.5
 ---

@@ -293,9 +293,9 @@ export default async () => {
 		it("getMetaImage() should return a string containing the meta image URL for a page", () => {
 			assert.strictEqual(
 				collections.getMetaImage({
-					og_image: "/example.jpg",
+					og_image: "/example.jpeg",
 				}),
-				"https://chrisburnell.com/example.jpg",
+				"https://chrisburnell.com/example.jpeg",
 			);
 			assert.strictEqual(
 				collections.getMetaImage({}),

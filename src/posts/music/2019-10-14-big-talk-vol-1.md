@@ -5,6 +5,6 @@ release: 2019-10-11T12:00:00+0100
 authors:
   - Ocean Wisdom
 listen_of: https://album.link/s/1sZtB2VSS5sZewLUqFOxi8
-cover: big-talk-vol-1.jpg
+cover: big-talk-vol-1.jpeg
 rating: 4
 ---

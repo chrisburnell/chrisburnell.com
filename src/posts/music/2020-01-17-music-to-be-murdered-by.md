@@ -6,6 +6,6 @@ authors:
   - title: Eminem
     url: https://last.fm/music/Eminem
 listen_of: https://album.link/s/4otkd9As6YaxxEkIjXPiZ6
-cover: music-to-be-murdered-by.jpg
+cover: music-to-be-murdered-by.jpeg
 rating: 2.25
 ---

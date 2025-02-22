@@ -6,6 +6,6 @@ authors:
   - title: Beast Coast
     url: https://last.fm/music/Beast+Coast
 listen_of: https://album.link/s/1NPxBmG3k3UzybcaxxSVuB
-cover: escape-from-new-york.jpg
+cover: escape-from-new-york.jpeg
 rating: 3.25
 ---

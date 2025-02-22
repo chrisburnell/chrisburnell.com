@@ -17,4 +17,4 @@ Expects a URL in the following format:
     <button type="submit">Submit</button>
 </form>
 
-<script type="module">{% include '../js/pages/get-youtube-feed.js' %}</script>
+<script type="module">{% include '../../../js/pages/get-youtube-feed.js' %}</script>

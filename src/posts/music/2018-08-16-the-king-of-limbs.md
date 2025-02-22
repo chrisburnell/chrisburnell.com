@@ -6,6 +6,6 @@ authors:
   - title: Radiohead
     url: https://last.fm/music/Radiohead
 listen_of: https://album.link/s/1DBkJIEoeHrTX4WCBQGcCi
-cover: the-king-of-limbs.jpg
+cover: the-king-of-limbs.jpeg
 rating: 4.5
 ---

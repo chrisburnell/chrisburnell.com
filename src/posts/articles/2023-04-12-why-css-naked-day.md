@@ -7,7 +7,7 @@ tags:
   - css
   - ux
 banner:
-  url: emperors-new-clothes.jpg
+  url: emperors-new-clothes.jpeg
   alt: "The Emperor’s New Clothes, by Vilhelm Pedersen. The illustration depicts a royal parade where the emperor is wearing just his undergarments, and the onlooking spectators display shocked expressions on their faces."
   caption: "Illustration by [Vilhelm Pedersen](https://en.wikipedia.org/wiki/Vilhelm_Pedersen). Taken from [Wikipedia](https://en.wikipedia.org/wiki/The_Emperor%27s_New_Clothes)."
 ---

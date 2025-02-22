@@ -6,6 +6,6 @@ authors:
   - title: $uicideBoy$
     url: https://last.fm/music/$uicideBoy$
 listen_of: https://album.link/s/3dgsCZMswt6TWbsKcMgoO2
-cover: long-term-effects-of-suffering.jpg
+cover: long-term-effects-of-suffering.jpeg
 rating: 4.5
 ---

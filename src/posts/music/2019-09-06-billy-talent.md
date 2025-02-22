@@ -6,6 +6,6 @@ authors:
   - title: Billy Talent
     url: https://last.fm/music/Billy+Talent
 listen_of: https://album.link/s/4Z4FErymthnN4ctJdKRgko
-cover: billy-talent.jpg
+cover: billy-talent.jpeg
 rating: 5
 ---

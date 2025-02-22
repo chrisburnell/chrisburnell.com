@@ -5,6 +5,6 @@ release: 2018-05-01T12:00:00+0100
 authors:
   - Mitch Murder
 listen_of: https://album.link/s/0GQnYAt2BXnHsIsVNPBu9t
-cover: impact-winter.jpg
+cover: impact-winter.jpeg
 rating: 4.5
 ---

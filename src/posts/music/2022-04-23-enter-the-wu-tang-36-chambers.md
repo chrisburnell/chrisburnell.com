@@ -6,6 +6,6 @@ authors:
   - title: Wu-Tang Clan
     url: https://last.fm/music/Wu-Tang+Clan
 listen_of: https://album.link/s/6acGx168JViE5LLFR1rGRE
-cover: enter-the-wu-tang-36-chambers.jpg
+cover: enter-the-wu-tang-36-chambers.jpeg
 rating: 5
 ---

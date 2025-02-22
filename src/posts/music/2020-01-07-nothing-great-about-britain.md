@@ -6,6 +6,6 @@ authors:
   - title: slowthai
     url: https://last.fm/music/slowthai
 listen_of: https://album.link/s/5Ki4YFQrUx7hCcQx1LJUQb
-cover: nothing-great-about-britain.jpg
+cover: nothing-great-about-britain.jpeg
 rating: 3.75
 ---

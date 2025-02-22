@@ -6,6 +6,6 @@ authors:
   - title: KIDS SEE GHOSTS
     url: https://last.fm/music/KIDS+SEE+GHOSTS
 listen_of: https://album.link/s/1v9d39PxNmtRvYWw2ztydx
-cover: kids-see-ghosts.jpg
+cover: kids-see-ghosts.jpeg
 rating: 3.5
 ---

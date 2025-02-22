@@ -6,6 +6,6 @@ authors:
   - title: Lime Cordiale
     url: https://last.fm/music/Lime+Cordiale
 listen_of: https://album.link/s/537M91OtVxaFAgF4HYcQKY
-cover: 14-steps-to-a-better-you.jpg
+cover: 14-steps-to-a-better-you.jpeg
 rating: 3.75
 ---

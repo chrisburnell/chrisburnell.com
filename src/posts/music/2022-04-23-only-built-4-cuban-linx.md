@@ -6,6 +6,6 @@ authors:
   - title: Raekwon
     url: https://last.fm/music/Raekwon
 listen_of: https://album.link/s/7btiyhWzUfzxN3ijSiBpC8
-cover: only-built-4-cuban-linx.jpg
+cover: only-built-4-cuban-linx.jpeg
 rating: 4.75
 ---

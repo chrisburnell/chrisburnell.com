@@ -6,6 +6,6 @@ authors:
   - title: Gorillaz
     url: https://last.fm/music/Gorillaz
 listen_of: https://album.link/s/0bUTHlWbkSQysoM3VsWldT
-cover: demon-days.jpg
+cover: demon-days.jpeg
 rating: 5
 ---

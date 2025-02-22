@@ -8,6 +8,6 @@ authors:
   - title: Nas
     url: https://last.fm/music/Nas
 listen_of: https://album.link/s/63bs3omFkaEXjzTfTFOEPj
-cover: distant-relatives.jpg
+cover: distant-relatives.jpeg
 rating: 5
 ---

@@ -6,6 +6,6 @@ authors:
   - title: The Midnight
     url: https://last.fm/music/The+Midnight
 listen_of: https://album.link/s/5MDQfxmG16gD34X0gUZW6A
-cover: nocturnal.jpg
+cover: nocturnal.jpeg
 rating: 4
 ---

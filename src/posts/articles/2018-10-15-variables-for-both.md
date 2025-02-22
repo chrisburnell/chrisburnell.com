@@ -10,7 +10,7 @@ tags:
   - design-systems
   - scss
 banner:
-  url: variables-for-both.jpg
+  url: variables-for-both.jpeg
   alt: a photograph of two giraffes, up-close on their heads and upper necks, each looking away from each other
 further_reading:
   - title: W3 CSS Custom Properties Specification

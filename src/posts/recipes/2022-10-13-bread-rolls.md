@@ -30,7 +30,7 @@ ingredients:
 authors:
   - my mother, Stephanie
 photo:
-  - url: bread-rolls.jpg
+  - url: bread-rolls.jpeg
     alt: Warm and fluffy bread rolls, made by yours truly
 ---
 

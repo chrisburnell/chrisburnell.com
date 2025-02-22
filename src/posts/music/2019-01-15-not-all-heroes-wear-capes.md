@@ -10,6 +10,6 @@ authors:
   - title: 21 Savage
     url: https://last.fm/music/21+Savage
 listen_of: https://album.link/s/3IO8IPjwXuzPJnoaqkwYrj
-cover: not-all-heroes-wear-capes.jpg
+cover: not-all-heroes-wear-capes.jpeg
 rating: 3.5
 ---

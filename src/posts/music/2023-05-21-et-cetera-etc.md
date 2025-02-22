@@ -6,6 +6,6 @@ authors:
   - title: dust
     url: https://www.last.fm/music/dust
 listen_of: https://album.link/s/1dRWAkab1djrZj9x8Xcnif
-cover: et-cetera-etc.jpg
+cover: et-cetera-etc.jpeg
 rating: 4.25
 ---

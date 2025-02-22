@@ -6,6 +6,6 @@ authors:
   - title: Dizzee Rascal
     url: https://last.fm/music/Dizzee+Rascal
 listen_of: https://album.link/s/40s9ebO3BAEye8KqbIM8tU
-cover: dont-gas-me.jpg
+cover: dont-gas-me.jpeg
 rating: 4
 ---

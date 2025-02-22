@@ -6,6 +6,6 @@ authors:
   - title: Ghostface Killah
     url: https://last.fm/music/Ghostface+Killah
 listen_of: https://album.link/s/7EYx33pYJKBfjCaDsfIjp4
-cover: ghostface-killahs.jpg
+cover: ghostface-killahs.jpeg
 rating: 4
 ---

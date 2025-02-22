@@ -34,7 +34,7 @@ You can begin using the <code>&lt;instant-photo&gt;</code> Web Component by incl
 <script type="module" src="instant-photo.js"></script>
 
 <instant-photo>
-	<img src="/image.jpg" alt="...">
+	<img src="/image.jpeg" alt="...">
 </instant-photo>
 ```
 

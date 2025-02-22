@@ -6,6 +6,6 @@ authors:
   - title: Gang Starr
     url: https://last.fm/music/Gang+Starr
 listen_of: https://album.link/s/4VxyKgulAGSpJwhIJjgiJr
-cover: one-of-the-best-yet.jpg
+cover: one-of-the-best-yet.jpeg
 rating: 4.5
 ---

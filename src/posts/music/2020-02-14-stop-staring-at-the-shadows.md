@@ -6,6 +6,6 @@ authors:
   - title: $uicideBoy$
     url: https://last.fm/music/$uicideBoy$
 listen_of: https://album.link/s/2yopGJJSiA6ZDpw9IsGXTA
-cover: stop-staring-at-the-shadows.jpg
+cover: stop-staring-at-the-shadows.jpeg
 rating: 4.25
 ---

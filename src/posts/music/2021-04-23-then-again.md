@@ -5,6 +5,6 @@ release: 2021-04-23T12:00:00+0000
 authors:
   - title: Mitch Murder
 listen_of: https://album.link/s/48u42pkXw9wIIp3LZyfjk3
-cover: then-again.jpg
+cover: then-again.jpeg
 rating: 5
 ---

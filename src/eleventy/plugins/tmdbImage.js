@@ -8,8 +8,8 @@ const getImageOptions = () => {
 		width: [400],
 		formats:
 			process.env.ELEVENTY_RUN_MODE === "build"
-				? ["avif", "webp", "jpg"]
-				: ["webp", "jpg"],
+				? ["avif", "webp", "jpeg"]
+				: ["webp", "jpeg"],
 		urlPath: "/images/covers/",
 		outputDir: "./_site/images/covers",
 		duration: "*",
@@ -31,7 +31,7 @@ const fetchImageData = (options, src) => {
 
 const storePoster = async (id) => {
 	// We know where the images will be
-	const fakeUrl = `/images/covers/${id}.jpg`;
+	const fakeUrl = `/images/covers/${id}.jpeg`;
 	const metadata = Image.statsByDimensionsSync(
 		fakeUrl,
 		size,

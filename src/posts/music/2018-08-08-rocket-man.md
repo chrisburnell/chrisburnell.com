@@ -6,6 +6,6 @@ authors:
   - title: Dumbfoundead
     url: https://www.dumbfoundead.com/
 listen_of: https://album.link/s/6HdeItk32sBZ0FLJTU5V53
-cover: rocket-man.jpg
+cover: rocket-man.jpeg
 rating: 4
 ---

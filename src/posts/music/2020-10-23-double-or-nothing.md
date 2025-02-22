@@ -6,7 +6,7 @@ authors:
   - title: D Double E
     url: https://last.fm/music/D+Double+E
 listen_of: https://album.link/s/4evENpyS3oZUc9dk3MBcHj
-cover: double-or-nothing.jpg
+cover: double-or-nothing.jpeg
 rating: 4
 ---
 

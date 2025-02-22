@@ -5,7 +5,7 @@ end: 2024-06-26T17:41:19+0800
 release: 2024-05-09T12:00:00+0000
 play_of: https://www.animalwell.net/
 rating: 4.75
-cover: animal-well.jpg
+cover: animal-well.jpeg
 console: Nintendo Switch
 authors:
   - title: Shared Memory

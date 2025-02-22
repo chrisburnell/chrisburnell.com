@@ -5,7 +5,7 @@ description: In creating a from-scratch grid for a redevelopment project, I was 
 tags:
   - scss
 banner:
-  url: unique-pairs-in-scss.jpg
+  url: unique-pairs-in-scss.jpeg
   alt: a photograph looking upwards at many umbrellas of varying colours, arranged in columns and rows
 syndicate_to:
   - https://twitter.com/iamchrisburnell/status/877492210241032192

@@ -6,7 +6,7 @@ authors:
   - title: Red Hot Chili Peppers
     url: https://last.fm/music/Red+Hot+Chilli+Peppers
 listen_of: https://album.link/s/7xl50xr9NDkd3i2kBbzsNZ
-cover: stadium-arcadium.jpg
+cover: stadium-arcadium.jpeg
 rating: 5
 ---
 

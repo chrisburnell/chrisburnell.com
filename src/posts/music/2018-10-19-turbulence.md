@@ -6,6 +6,6 @@ authors:
   - title: Miami Nights 1984
     url: https://last.fm/music/Miami+Nights+1984
 listen_of: https://album.link/s/1sjg3emGXcOFStmqIUvFeU
-cover: turbulence.jpg
+cover: turbulence.jpeg
 rating: 4
 ---

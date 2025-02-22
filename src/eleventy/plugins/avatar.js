@@ -13,8 +13,8 @@ const getImageOptions = (name) => {
 		widths: [size],
 		formats:
 			process.env.ELEVENTY_RUN_MODE === "build"
-				? ["avif", "webp", "jpg"]
-				: ["webp", "jpg"],
+				? ["avif", "webp", "jpeg"]
+				: ["webp", "jpeg"],
 		urlPath: "/images/avatars/",
 		outputDir: "./_site/images/avatars/",
 		duration: cacheDurations.monthly,
@@ -39,7 +39,7 @@ const fetchImageData = (options, src) => {
 
 const storeAvatar = async (id, classes = "") => {
 	// We know where the images will be
-	const fakeUrl = `/images/avatars/${id}.jpg`;
+	const fakeUrl = `/images/avatars/${id}.jpeg`;
 	const metadata = Image.statsByDimensionsSync(
 		fakeUrl,
 		size,

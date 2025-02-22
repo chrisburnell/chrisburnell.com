@@ -5,6 +5,6 @@ release: 2017-10-17T12:00:00+0100
 authors:
   - Skepta
 listen_of: https://album.link/s/1dSvdsbgLtbSd7vUckHvKS
-cover: vicious-ep.jpg
+cover: vicious-ep.jpeg
 rating: 4
 ---
