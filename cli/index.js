@@ -2,8 +2,8 @@
 // https://github.com/rknightuk/rknight.me
 
 import select from "@inquirer/select";
-import chalk from "chalk";
 import { program } from "commander";
+import { styleText } from "node:util";
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -20,7 +20,10 @@ const __dirname = path.dirname(__filename);
 const __siteroot = __dirname.replace("/cli", "");
 
 const wizard = async () => {
-	console.log(chalk.hex("#5f8aa6")`
+	console.log(
+		styleText(
+			"blue",
+			`
                        ░█░█
  ██░░░░░█░             █████
   ░▓▓██▓███▓█░       ██▒░▓███
@@ -34,7 +37,9 @@ const wizard = async () => {
      ░██▒░░░██░▒▓█░       ░
              ░▒█▓░░▓█░
               ░▒▓░░▒░░░
-`);
+`,
+		),
+	);
 
 	const type = await select({
 		message: "What do you want to do?",

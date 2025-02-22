@@ -1,5 +1,5 @@
-import chalk from "chalk";
 import dotenv from "dotenv";
+import { styleText } from "node:util";
 import builders from "./src/eleventy/builders.js";
 import collections from "./src/eleventy/collections.js";
 import config from "./src/eleventy/config.js";
@@ -164,7 +164,7 @@ export default async function (eleventyConfig) {
 	eleventyConfig.setQuietMode(true);
 	eleventyConfig.on("beforeBuild", () => {
 		console.log(
-			`${chalk.grey(`[${filtersSync.urls.getHost(siteURL)}]`)} Building...`,
+			`${styleText("grey", `[${filtersSync.urls.getHost(siteURL)}]`)} Building...`,
 		);
 	});
 	return {
