@@ -178,7 +178,9 @@ The other values (`shorter hue`, `decreasing hue`, and `increasing hue`) are oth
                     <option value="srgb">sRGB</option>
                     <option value="hsl" selected>HSL</option>
                     <option value="lch">LCH</option>
+                    <option value="lab">LAB</option>
                     <option value="oklch">OKLCH</option>
+                    <option value="oklab">OKLAB</option>
                 </optgroup>
             </select>
         </label>

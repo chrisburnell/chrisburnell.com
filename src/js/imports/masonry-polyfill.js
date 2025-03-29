@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 						const previousItemBottom =
 							previousItem.getBoundingClientRect().bottom +
-							parseFloat(getComputedStyle(grid).rowGap);
+							Number(getComputedStyle(grid).rowGap);
 
 						const currentItemTop = item.getBoundingClientRect().top;
 
