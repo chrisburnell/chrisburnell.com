@@ -60,6 +60,10 @@
 		border-width: 0;
 	}
 
+	.wrap {
+		margin-inline-start: 0;
+	}
+
 	#{collections.$heading},
 	.navigation__list #{collections.$anchor} {
 		font-weight: var(--font-weight-semibold) !important;

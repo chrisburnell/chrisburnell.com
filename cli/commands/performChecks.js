@@ -1,21 +1,9 @@
-import { checkInvalidDateTimes } from "@chrisburnell/check-invalid-datetimes";
-import { CheckHtmlLinksCli } from "check-html-links";
+import checkDates from "./checkDates.js";
+import checkLinks from "./checkLinks.js";
 
-export default async (directory = "_site") => {
-	// Check for broken links/references
-	const siteLinksCheck = new CheckHtmlLinksCli();
-	siteLinksCheck.setOptions({
-		rootDir: directory,
-	});
-	await siteLinksCheck.run();
-
+export default async () => {
+	await checkLinks();
 	// eslint-disable-next-line no-undef
-	console.log("\n");
-
-	// Check for instances of "Invalid DateTime"
-	const siteDateTimesCheck = new checkInvalidDateTimes();
-	siteDateTimesCheck.setOptions({
-		directory: directory,
-	});
-	await siteDateTimesCheck.run();
+	console.log("");
+	await checkDates();
 };

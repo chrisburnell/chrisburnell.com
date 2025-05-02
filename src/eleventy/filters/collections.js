@@ -18,10 +18,9 @@ export const arePublished = (array) => {
  */
 export const sitemapFilter = (array) => {
 	return array.filter((item) => {
-		if (item.data.sitemap && "exclude" in item.data.sitemap) {
-			return !item.data.sitemap.exclude;
-		}
-		return true;
+		return (
+			item.data?.sitemap?.exclude !== true && item.data?.noindex !== true
+		);
 	});
 };
 

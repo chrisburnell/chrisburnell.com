@@ -18,16 +18,28 @@ let cachedCollections = {};
  * @param {boolean} limit
  * @returns
  */
-const filterCollection = (collection, tag, limit = false) => {
-	if (tag in cachedCollections) {
+const filterCollection = (
+	collection,
+	tag,
+	fn,
+	collectionName,
+	limit = false,
+) => {
+	if ((collectionName || tag) in cachedCollections) {
 		// This collection already exists in memoized cache
-		return cachedCollections[tag];
+		return cachedCollections[collectionName || tag];
 	}
 
 	let filteredCollection = collection
 		.getFilteredByTag(tag)
 		.filter(isPublished)
 		.sort(dateSort);
+
+	if (fn !== undefined) {
+		// If additional manipulation is required, it is passed in so it too can
+		// be cached
+		filteredCollection = fn(filteredCollection);
+	}
 
 	if (limit && process.env.ELEVENTY_RUN_MODE !== "build") {
 		// Keep only a few items per collection for performance
@@ -82,19 +94,14 @@ export const writings = (collection) => {
 };
 
 export const features = (collection) => {
-	if ("features" in cachedCollections) {
-		return cachedCollections["features"];
-	}
-
-	const filteredCollection = collection
-		.getFilteredByTag("feature")
-		.filter(isPublished)
-		.filter(notReply)
-		.sort(dateSort);
-
-	cachedCollections["features"] = filteredCollection;
-
-	return filteredCollection;
+	return filterCollection(
+		collection,
+		"feature",
+		(filtered) => {
+			return filtered.filter(notReply);
+		},
+		"features",
+	);
 };
 
 export const attendances = (collection) => {
@@ -102,10 +109,9 @@ export const attendances = (collection) => {
 		return cachedCollections["attendances"];
 	}
 
-	const conferences = collection
-		.getFilteredByTag("conference")
-		.filter(isPublished);
-	const meetups = collection.getFilteredByTag("meetup").filter(isPublished);
+	const conferences = filterCollection(collection, "conference");
+	const meetups = filterCollection(collection, "meetup");
+
 	const filteredCollection = [...conferences, ...meetups]
 		.filter((item) => {
 			return "rsvp" in item.data && item.data.rsvp.value === "yes";
@@ -118,146 +124,127 @@ export const attendances = (collection) => {
 };
 
 export const checkins = (collection) => {
-	if ("checkins" in cachedCollections) {
-		return cachedCollections["checkins"];
-	}
-
-	const filteredCollection = collection
-		.getFilteredByTag("post")
-		.filter(isPublished)
-		.filter((item) => {
-			return "checkin" in item.data;
-		})
-		.sort(dateSort);
-
-	cachedCollections["checkins"] = filteredCollection;
-
-	return filteredCollection;
+	return filterCollection(
+		collection,
+		"post",
+		(filtered) => {
+			return filtered.filter((item) => {
+				return "checkin" in item.data;
+			});
+		},
+		"checkins",
+	);
 };
 
 export const replies = (collection) => {
-	if ("replies" in cachedCollections) {
-		return cachedCollections["replies"];
-	}
-
-	const filteredCollection = collection
-		.getFilteredByTag("note")
-		.filter(isPublished)
-		.filter((item) => "in_reply_to" in item.data)
-		.filter((item) => !("rsvp" in item.data))
-		.sort(dateSort);
-
-	cachedCollections["replies"] = filteredCollection;
-
-	return filteredCollection;
+	return filterCollection(
+		collection,
+		"note",
+		(filtered) => {
+			return filtered
+				.filter((item) => "in_reply_to" in item.data)
+				.filter((item) => !("rsvp" in item.data));
+		},
+		"replies",
+	);
 };
 
 export const notesWithoutReplies = (collection) => {
-	if ("notesWithoutReplies" in cachedCollections) {
-		return cachedCollections["notesWithoutReplies"];
-	}
-
-	const filteredCollection = collection
-		.getFilteredByTag("note")
-		.filter(isPublished)
-		.filter(notReply)
-		.sort(dateSort);
-
-	cachedCollections["notesWithoutReplies"] = filteredCollection;
-
-	return filteredCollection;
+	return filterCollection(
+		collection,
+		"note",
+		(filtered) => {
+			return filtered.filter(notReply);
+		},
+		"notesWithoutReplies",
+	);
 };
 
 export const rsvps = (collection) => {
-	if ("rsvps" in cachedCollections) {
-		return cachedCollections["rsvps"];
-	}
-
-	const filteredCollection = collection
-		.getFilteredByTag("post")
-		.filter(isPublished)
-		.filter((item) => "rsvp" in item.data)
-		.sort(dateSort)
-		.sort((a, b) => {
-			if (a.data.rsvp.end && b.data.rsvp.end) {
-				return new Date(b.data.rsvp.end) - new Date(a.data.rsvp.end);
-			}
-			return 0;
-		});
-
-	cachedCollections["rsvps"] = filteredCollection;
-
-	return filteredCollection;
+	return filterCollection(
+		collection,
+		"post",
+		(filtered) => {
+			return filtered
+				.filter((item) => "rsvp" in item.data)
+				.sort((a, b) => {
+					if (a.data.rsvp.end && b.data.rsvp.end) {
+						return (
+							new Date(b.data.rsvp.end) -
+							new Date(a.data.rsvp.end)
+						);
+					}
+					return 0;
+				});
+		},
+		"rsvps",
+	);
 };
 
 export const rsvpsToday = (collection) => {
-	if ("rsvpsToday" in cachedCollections) {
-		return cachedCollections["rsvpsToday"];
-	}
-
-	const filteredCollection = collection
-		.getFilteredByTag("post")
-		.filter(isPublished)
-		.filter((item) => item.data.rsvp)
-		.filter((item) => {
-			// Check that the end isn't in the past
-			return isFuture(item.data.rsvp.end);
-		})
-		.filter((item) => {
-			// Check that the RSVP is within next 1 days
-			return (
-				isUpcoming(item.data.rsvp.date, 1) ||
-				epoch(item.data.rsvp.date) < nowEpoch
-			);
-		})
-		.sort(dateSort)
-		.sort((a, b) => {
-			return new Date(a.data.rsvp.end) - new Date(b.data.rsvp.end);
-		});
-
-	cachedCollections["rsvpsToday"] = filteredCollection;
-
-	return filteredCollection;
+	return filterCollection(
+		collection,
+		"post",
+		(filtered) => {
+			return filtered
+				.filter((item) => item.data.rsvp)
+				.filter((item) => {
+					// Check that the end isn't in the past
+					return isFuture(item.data.rsvp.end);
+				})
+				.filter((item) => {
+					// Check that the RSVP is within next 1 days
+					return (
+						isUpcoming(item.data.rsvp.date, 1) ||
+						epoch(item.data.rsvp.date) < nowEpoch
+					);
+				})
+				.sort((a, b) => {
+					return (
+						new Date(a.data.rsvp.end) - new Date(b.data.rsvp.end)
+					);
+				});
+		},
+		"rsvpsToday",
+	);
 };
 
 export const rsvpsUpcoming = (collection) => {
-	if ("rsvpsUpcoming" in cachedCollections) {
-		return cachedCollections["rsvpsUpcoming"];
-	}
+	return filterCollection(
+		collection,
+		"post",
+		(filtered) => {
+			return filtered
+				.filter((item) => item.data.rsvp)
+				.filter((item) => {
+					// Check that the end isn't in the past
+					return isFuture(item.data.rsvp.end);
+				})
+				.filter((item) => {
+					// Remove posts that would be in the rsvpsToday collection
+					if (isUpcoming(item.data.rsvp.date, 1)) {
+						return false;
+					}
 
-	const filteredCollection = collection
-		.getFilteredByTag("post")
-		.filter(isPublished)
-		.filter((item) => item.data.rsvp)
-		.filter((item) => {
-			// Check that the end isn't in the past
-			return isFuture(item.data.rsvp.end);
-		})
-		.filter((item) => {
-			// Remove posts that would be in the rsvpsToday collection
-			if (isUpcoming(item.data.rsvp.date, 1)) {
-				return false;
-			}
+					// Check if upcoming RSVPs should ignore the upcoming lead
+					if (item.data.rsvp.show_upcoming_always) {
+						return true;
+					}
 
-			// Check if upcoming RSVPs should ignore the upcoming lead
-			if (item.data.rsvp.show_upcoming_always) {
-				return true;
-			}
-
-			// Check that post is upcoming
-			return isUpcoming(
-				item.data.rsvp.date,
-				item.data.rsvp.upcoming_days_lead,
-			);
-		})
-		.sort(dateSort)
-		.sort((a, b) => {
-			return new Date(b.data.rsvp.end) - new Date(a.data.rsvp.end);
-		});
-
-	cachedCollections["rsvpsUpcoming"] = filteredCollection;
-
-	return filteredCollection;
+					// Check that post is upcoming
+					return isUpcoming(
+						item.data.rsvp.date,
+						item.data.rsvp.upcoming_days_lead,
+					);
+				})
+				.sort((a, b) => {
+					return (
+						new Date(b.data.rsvp.end) - new Date(a.data.rsvp.end)
+					);
+				});
+		},
+		"rsvpsUpcoming",
+	);
 };
 
 export const onThisDay = (collection) => {

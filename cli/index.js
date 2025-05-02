@@ -7,12 +7,14 @@ import { styleText } from "node:util";
 import path from "path";
 import { fileURLToPath } from "url";
 
+import calculateCSSComplexity from "./commands/calculateCSSComplexity.js";
 import checkDates from "./commands/checkDates.js";
 import checkLinks from "./commands/checkLinks.js";
 import createArticle from "./commands/createArticle.js";
 import createBookmark from "./commands/createBookmark.js";
 import createLike from "./commands/createLike.js";
 import createNote from "./commands/createNote.js";
+import performChecks from "./commands/performChecks.js";
 import runTests from "./commands/runTests.js";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -44,6 +46,11 @@ const wizard = async () => {
 	const type = await select({
 		message: "What do you want to do?",
 		choices: [
+			{
+				name: "Calculate: CSS Complexity",
+				value: "calculateCSSComplexity",
+				description: "Calculate the complexity of CSS.",
+			},
 			{
 				name: "Check: Dates",
 				value: "checkDates",
@@ -83,6 +90,9 @@ const wizard = async () => {
 	});
 
 	switch (type) {
+		case "calculateCSSComplexity":
+			calculateCSSComplexity();
+			break;
 		case "checkDates":
 			checkDates();
 			break;
@@ -113,25 +123,29 @@ program
 	.action(() => wizard());
 
 program
-	.command("checks")
-	.description("⚠️ Check Build")
-	.action(async () => {
-		await checkLinks();
-		// eslint-disable-next-line no-undef
-		console.log("");
-		await checkDates();
+	.command("calculateCSSComplexity")
+	.description("⚠️  Calculate CSS Complexity")
+	.action(() => {
+		calculateCSSComplexity();
+	});
+
+program
+	.command("check")
+	.description("⚠️  Check Build")
+	.action(() => {
+		performChecks();
 	});
 
 program
 	.command("checkDates")
-	.description("⚠️ Check DateTimes")
+	.description("⚠️  Check DateTimes")
 	.action(async () => {
 		await checkDates();
 	});
 
 program
 	.command("checkLinks")
-	.description("⚠️ Check links for errors")
+	.description("⚠️  Check links for errors")
 	.action(async () => {
 		await checkLinks();
 	});
@@ -148,7 +162,7 @@ program
 
 program
 	.command("like")
-	.description("♥️ Create a new Like")
+	.description("♥️  Create a new Like")
 	.action(() => createLike(__siteroot));
 
 program
@@ -158,7 +172,7 @@ program
 
 program
 	.command("test")
-	.description("🔨Run tests against functionality")
+	.description("🔨 Run tests against functionality")
 	.action(() => runTests());
 
 program.parse();
