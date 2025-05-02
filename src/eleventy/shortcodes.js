@@ -1,8 +1,5 @@
-import { nowISO } from "./data/global.js";
+import { currentYear } from "./data/global.js";
 import { getCollectionCountByYear } from "./filters/collections.js";
-import { friendlyDate } from "./filters/dates.js";
-
-const currentYear = friendlyDate(nowISO, "yyyy");
 
 /**
  * @param {object[]} collection

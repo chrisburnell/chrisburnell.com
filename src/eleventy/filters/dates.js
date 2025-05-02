@@ -1,14 +1,41 @@
-import { DateTime } from "luxon";
+import { Temporal } from "@js-temporal/polyfill";
 import { nowEpoch } from "../data/global.js";
 import { limits, locale } from "../data/site.js";
 
-/**
- * @param {string} dateString
- * @param {string} format
- * @return {string}
- */
-export const formatDatetime = (dateString, format) => {
-	return DateTime.fromISO(dateString, { setZone: true }).toFormat(format);
+export const zonedDatetime = (dateString) => {
+	// Tidy up date string
+	try {
+		dateString = dateString
+			.replace(/(\.\d+)/g, "")
+			.replace(/([+-]\d{2})(\d{2})$/, (match, h, m) => `${h}:${m}`)
+			.replace(/(Z)$/, "+00:00");
+	} catch (error) {
+		console.log("shit", typeof dateString, dateString);
+	}
+	const hasOffset = /([+-]\d{2}):(\d{2})$/.test(dateString);
+	dateString = hasOffset ? dateString : `${dateString}+00:00`;
+
+	let instant = Temporal.Instant.from(dateString);
+	const offset = dateString.match(/([+-]\d{2}:\d{2})/)?.[1] || "UTC";
+
+	return instant.toZonedDateTimeISO(offset);
+};
+
+export const formatDatetime = (
+	dateString,
+	options = {
+		year: "numeric",
+		month: "long",
+		day: "numeric",
+	},
+) => {
+	const zoned = zonedDatetime(dateString);
+	const dateObject = new Date(zoned.epochMilliseconds);
+
+	return new Intl.DateTimeFormat(undefined, {
+		...options,
+		timeZone: zoned.timeZoneId,
+	}).format(dateObject);
 };
 
 const ordinalPlurals = new Intl.PluralRules(locale, {
@@ -35,46 +62,84 @@ export const ordinal = (number) => {
  * @param {string} [format]
  * @return {string}
  */
-export const friendlyDate = (dateString, format = "d LLLL yyyy") => {
-	return formatDatetime(dateString, format);
-};
+export const friendlyDate = (dateString, format) =>
+	formatDatetime(dateString, format);
 
 /**
  * @param {string} dateString
  * @return {string}
  */
 export const friendlyDateLong = (dateString) => {
-	return formatDatetime(dateString, `cccc, d LLLL yyyy`);
+	return `${formatDatetime(dateString, {
+		weekday: "long",
+	})}, ${formatDatetime(dateString, {
+		year: "numeric",
+		month: "long",
+		day: "numeric",
+	})}`;
 };
 
 /**
- * @param {DateTime} value
+ * @param {string} dateString
  * @param {boolean} [showTimezone]
  * @returns {string}
  */
-export const friendlyTime = (value, showTimezone = true) => {
-	const format = "HH:mm" + (showTimezone ? " ZZZZ" : "");
-	// prettier-ignore
-	return formatDatetime(value, format)
-		.replace(/(GMT|UTC)\+8/g, `<abbr title="Singapore Time">SGT <span aria-hidden="true">🇸🇬</span></abbr>`)
-		.replace(/(GMT|UTC)\+1/g, `<abbr title="British Summer Time">BST <span aria-hidden="true">🇬🇧</span></abbr>`)
-		.replace(/(GMT|UTC)-3/g, `<abbr title="Atlantic Daylight Time">ADT <span aria-hidden="true">🇨🇦</span></abbr>`)
-		.replace(/(GMT|UTC)-4/g, `<abbr title="Atlantic Standard Time">AST <span aria-hidden="true">🇨🇦</span></abbr>`)
-		.replace(/(GMT|UTC)/g, `<abbr title="Greenwich Mean Time">GMT <span aria-hidden="true">🇬🇧</span></abbr>`)
+export const friendlyTime = (dateString, showTimezone = true) => {
+	return formatDatetime(dateString, {
+		hour: "2-digit",
+		minute: "2-digit",
+		timeZoneName: showTimezone ? "shortOffset" : undefined,
+	})
+		.replace(
+			/(GMT|UTC)\+8/g,
+			`<abbr title="Singapore Time">SGT <span aria-hidden="true">🇸🇬</span></abbr>`,
+		)
+		.replace(
+			/(GMT|UTC)\+1/g,
+			`<abbr title="British Summer Time">BST <span aria-hidden="true">🇬🇧</span></abbr>`,
+		)
+		.replace(
+			/(GMT|UTC)$/g,
+			`<abbr title="Greenwich Mean Time">GMT <span aria-hidden="true">🇬🇧</span></abbr>`,
+		)
+		.replace(
+			/(GMT|UTC)-3/g,
+			`<abbr title="Atlantic Daylight Time">ADT <span aria-hidden="true">🇨🇦</span></abbr>`,
+		)
+		.replace(
+			/(GMT|UTC)-4/g,
+			`<abbr title="Atlantic Standard Time">AST <span aria-hidden="true">🇨🇦</span></abbr>`,
+		);
 };
 
 /**
- * @param {DateTime} value
+ * @param {string} dateString
  * @returns {string}
  */
-export const ianaTimezone = (value) => {
-	// prettier-ignore
-	return formatDatetime(value, "z")
-		.replace(/(GMT|UTC)\+8/g, "Asia/Singapore")
-		.replace(/(GMT|UTC)\+1/g, "Europe/London")
-		.replace(/(GMT|UTC)/g, "Europe/London")
-		.replace(/(GMT|UTC)-3/g, "America/Halifax")
-		.replace(/(GMT|UTC)-4/g, "America/Halifax")
+export const formattedDate = (dateString) => {
+	const zoned = zonedDatetime(dateString);
+	const { year, month, day } = zoned;
+	return `${year.toString().padStart(4, "0")}-${month.toString().padStart(2, "0")}-${day.toString().padStart(2, "0")}`;
+};
+
+/**
+ * @param {string} dateString
+ * @returns {string}
+ */
+export const formattedTime = (dateString) => {
+	const zoned = zonedDatetime(dateString);
+	const { hour, minute, second } = zoned;
+	return `${hour.toString().padStart(2, "0")}:${minute.toString().padStart(2, "0")}:${second.toString().padStart(2, "0")}`;
+};
+
+/**
+ * @param {string} dateString
+ * @returns {string}
+ */
+export const formattedTimezone = (dateString) => {
+	const zoned = zonedDatetime(dateString);
+	const { offset } = zoned;
+	return offset;
 };
 
 /**
@@ -83,16 +148,29 @@ export const ianaTimezone = (value) => {
  * @returns {string}
  */
 export const rfc3339Date = (dateString, showTimezone = true) => {
-	const format = "yyyy-MM-dd'T'HH:mm:ss" + (showTimezone ? "ZZ" : "");
-	return formatDatetime(dateString, format);
+	return `${formattedDate(dateString)}T${formattedTime(dateString)}${showTimezone ? formattedTimezone(dateString) : ""}`;
 };
 
 /**
  * @param {string} dateString
  * @returns {string}
  */
-export const w3cDate = (dateString) => {
-	return formatDatetime(dateString, "yyyy-MM-dd'T'HH:mm:ssZZ");
+export const w3cDate = (dateString) => rfc3339Date(dateString);
+
+/**
+ * @param {string} dateString
+ * @returns {string}
+ */
+export const ianaTimezone = (dateString) => {
+	// prettier-ignore
+	return formatDatetime(dateString, {
+		timeZoneName: "shortOffset",
+	}).split(" ")[1]
+		.replace(/(GMT|UTC)\+8/g, "Asia/Singapore")
+		.replace(/(GMT|UTC)\+1/g, "Europe/London")
+		.replace(/(GMT|UTC)$/g, "Europe/London")
+		.replace(/(GMT|UTC)-3/g, "America/Halifax")
+		.replace(/(GMT|UTC)-4/g, "America/Halifax")
 };
 
 /**
@@ -342,12 +420,16 @@ export const getRSVPDateString = (end) => {
 };
 
 export default {
+	zonedDatetime,
 	formatDatetime,
 	ordinal,
 	friendlyDate,
 	friendlyDateLong,
 	friendlyTime,
 	ianaTimezone,
+	formattedDate,
+	formattedTime,
+	formattedTimezone,
 	rfc3339Date,
 	w3cDate,
 	epoch,

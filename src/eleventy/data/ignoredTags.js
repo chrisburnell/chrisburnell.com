@@ -25,4 +25,5 @@ export default [
 	"pigsear2023",
 	"advent2021",
 	"weblogpomo",
+	"work",
 ];

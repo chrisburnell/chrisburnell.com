@@ -118,7 +118,6 @@
     "he": "^1.2.0",
     "html-minifier": "^4.0.0",
     "lite-youtube-embed": "^0.3.3",
-    "luxon": "^3.6.1",
     "markdown-it": "^14.1.0",
     "markdown-it-abbr": "^2.0.0",
     "markdown-it-footnote": "^4.0.0",

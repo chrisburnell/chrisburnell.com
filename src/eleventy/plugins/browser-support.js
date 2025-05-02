@@ -1,12 +1,12 @@
 import { AssetCache } from "@11ty/eleventy-fetch";
 import caniuse from "caniuse-api";
 import minifier from "html-minifier";
-import { DateTime } from "luxon";
 import { createRequire } from "node:module";
 import browserFeatures from "../../data/browserFeatures.js";
 import browsersByType from "../../eleventy/data/browsersByType.js";
 import { nowISO } from "../data/global.js";
 import { cacheDurations } from "../data/site.js";
+import { formattedDate, friendlyDate } from "../filters/dates.js";
 const require = createRequire(import.meta.url);
 const mdnBrowserData = require("../../../node_modules/@mdn/browser-compat-data/data.json");
 // import mdnBrowserData from "@mdn/browser-compat-data" assert { type: "json" }
@@ -103,7 +103,7 @@ export default function (eleventyConfig) {
 					</div>
 					<div class=" [ support__meta ] ">
 						<p class=" [ monospace  strong ] " style="font-size: var(--font-size-gamma-min);">${featureID}</p>
-						<p class="small">Browser support data for <code>${featureID}</code> comes from <a href="https://caniuse.com/#feat=${featureID}" rel="external nofollow">caniuse.com</a> and is up-to-date as of <time datetime="${DateTime.fromISO(nowISO).toFormat("yyyy-MM-dd")}">${DateTime.fromISO(nowISO).toFormat("d LLLL yyyy")}</time>.</p>
+						<p class="small">Browser support data for <code>${featureID}</code> comes from <a href="https://caniuse.com/#feat=${featureID}" rel="external nofollow">caniuse.com</a> and is up-to-date as of <time datetime="${formattedDate(nowISO)}">${friendlyDate(nowISO)}</time>.</p>
 					</div>
 				</div>`,
 					{ collapseWhitespace: true },

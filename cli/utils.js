@@ -1,8 +1,10 @@
 import { checkbox, input } from "@inquirer/prompts";
+import { Temporal } from "@js-temporal/polyfill";
 import slugify from "@sindresorhus/slugify";
-import { DateTime } from "luxon";
 
-export const now = DateTime.now();
+const { year, month, day, hour, minute, second, offset } =
+	Temporal.Now.zonedDateTimeISO();
+export const now = `${year.toString().padStart(4, "0")}-${month.toString().padStart(2, "0")}-${day.toString().padStart(2, "0")}T${hour.toString().padStart(2, "0")}:${minute.toString().padStart(2, "0")}:${second.toString().padStart(2, "0")}${offset}`;
 
 export const postTitle = async () => {
 	return await input({ message: "Title" });
@@ -67,11 +69,9 @@ export const postTags = async () => {
 	});
 };
 
-export const postSlugDate = now.toISO().split("T")[0];
+export const postSlugDate = now.split("T")[0];
 
-export const postDate = now
-	.toFormat("yyyy-MM-dd'T'HH:mm:ssZZ")
-	.replace(/(-|\+)(\d{2}):(\d{2})/g, "$1$2$3");
+export const postDate = now.replace(/(-|\+)(\d{2}):(\d{2})/g, "$1$2$3");
 
 export default {
 	now,
