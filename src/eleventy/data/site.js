@@ -8,6 +8,7 @@ export const repository = "chrisburnell.com";
 export const branch = "main";
 export const dir = "ltr";
 export const locale = "en";
+export const localeSpecific = "en-GB";
 export const timezone = "America/Halifax";
 export const established = "2008";
 export const favicon = "/images/favicon-256.png";
@@ -74,6 +75,7 @@ export default {
 	branch,
 	dir,
 	locale,
+	localeSpecific,
 	timezone,
 	established,
 	favicon,

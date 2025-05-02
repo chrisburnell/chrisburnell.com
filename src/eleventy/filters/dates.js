@@ -1,19 +1,16 @@
 import { Temporal } from "@js-temporal/polyfill";
 import { nowEpoch } from "../data/global.js";
-import { limits, locale } from "../data/site.js";
+import { limits, localeSpecific } from "../data/site.js";
 
 export const zonedDatetime = (dateString) => {
 	// Tidy up date string
-	try {
-		dateString = dateString
-			.replace(/(\.\d+)/g, "")
-			.replace(/([+-]\d{2})(\d{2})$/, (match, h, m) => `${h}:${m}`)
-			.replace(/(Z)$/, "+00:00");
-	} catch (error) {
-		console.log("shit", typeof dateString, dateString);
-	}
-	const hasOffset = /([+-]\d{2}):(\d{2})$/.test(dateString);
-	dateString = hasOffset ? dateString : `${dateString}+00:00`;
+	dateString = dateString
+		.replace(/(\.\d+)/g, "")
+		.replace(/([+-]\d{2})(\d{2})$/, (match, h, m) => `${h}:${m}`)
+		.replace(/(Z)$/, "+00:00");
+	dateString = /([+-]\d{2}):(\d{2})$/.test(dateString)
+		? dateString
+		: `${dateString}+00:00`;
 
 	let instant = Temporal.Instant.from(dateString);
 	const offset = dateString.match(/([+-]\d{2}:\d{2})/)?.[1] || "UTC";
@@ -32,13 +29,13 @@ export const formatDatetime = (
 	const zoned = zonedDatetime(dateString);
 	const dateObject = new Date(zoned.epochMilliseconds);
 
-	return new Intl.DateTimeFormat(undefined, {
+	return new Intl.DateTimeFormat("en-GB", {
 		...options,
 		timeZone: zoned.timeZoneId,
 	}).format(dateObject);
 };
 
-const ordinalPlurals = new Intl.PluralRules(locale, {
+const ordinalPlurals = new Intl.PluralRules(localeSpecific, {
 	type: "ordinal",
 });
 
@@ -271,7 +268,7 @@ export const rssOnlyFilter = (array) => {
 	});
 };
 
-let userLocale = locale;
+let userLocale = localeSpecific;
 if (typeof document !== "undefined") {
 	userLocale =
 		document.querySelector("html").getAttribute("lang") ||
