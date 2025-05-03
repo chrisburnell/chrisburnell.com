@@ -67,7 +67,7 @@ Based on [my stats page](/stats/), this month’s posts account for a whopping *
     {% for index in favourite_indices -%}
         {% set item = (collections.weblogpomo2024 | arePublished)[index - 1] -%}
         <li>
-            <div class="cluster"><span><a href="{{ item.url }}" class=" [ cluster ] "><strong>{{ item.data.title }}</strong></a></span> <span>{{ item.data.categoryProper | default(item.data.category) | supertitle }}</span> <time datetime="{{ item.data.date | rfc3339Date }}"><em>{{ item.data.date | friendlyDate('d') | ordinal | safe }} {{ item.data.date | friendlyDate('LLLL') }}</em></time></div>
+            <div class="cluster"><span><a href="{{ item.url }}" class=" [ cluster ] "><strong>{{ item.data.title }}</strong></a></span> <span>{{ item.data.categoryProper | default(item.data.category) | supertitle }}</span> <time datetime="{{ item.data.date | rfc3339Date }}"><em>{{ item.data.date | friendlyDate({ day: 'numeric' }) | ordinal | safe }} {{ item.data.date | friendlyDate({ month: 'long' }) }}</em></time></div>
             {% if item.data.excerpt or item.data.description -%}
                 <p>{{ item.data.excerpt | default(item.data.description) | markdownFormat | excerptize | safe }}</p>
             {%- elif ['bookmark', 'like', 'note', 'talk'].includes(item.data.category) and item.content -%}
@@ -88,7 +88,7 @@ Based on [my stats page](/stats/), this month’s posts account for a whopping *
     {% for index in other_indices -%}
         {% set item = (collections.weblogpomo2024 | arePublished)[index - 1] -%}
         <li>
-            <div class="cluster"><span><a href="{{ item.url }}" class=" [ cluster ] "><strong>{{ item.data.title }}</strong></a></span> <span>{{ item.data.categoryProper | default(item.data.category) | supertitle }}</span> <time datetime="{{ item.data.date | rfc3339Date }}"><em>{{ item.data.date | friendlyDate('d') | ordinal | safe }} {{ item.data.date | friendlyDate('LLLL') }}</em></time></div>
+            <div class="cluster"><span><a href="{{ item.url }}" class=" [ cluster ] "><strong>{{ item.data.title }}</strong></a></span> <span>{{ item.data.categoryProper | default(item.data.category) | supertitle }}</span> <time datetime="{{ item.data.date | rfc3339Date }}"><em>{{ item.data.date | friendlyDate({ day: 'numeric' }) | ordinal | safe }} {{ item.data.date | friendlyDate({ month: 'long' }) }}</em></time></div>
             {% if item.data.excerpt or item.data.description -%}
                 <p>{{ item.data.excerpt | default(item.data.description) | markdownFormat | excerptize | safe }}</p>
             {%- elif ['bookmark', 'like', 'note', 'talk'].includes(item.data.category) and item.content -%}

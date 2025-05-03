@@ -42,7 +42,7 @@
 					{{ item.data.meta_authors_string | safe }}
 				{% endif %}
 				{% if item.data.release %}
-					<small>(<time datetime="{{ item.data.release | rfc3339Date }}" class="release">{{ item.data.release | friendlyDate('yyyy') }}</time>)</small>
+					<small>(<time datetime="{{ item.data.release | rfc3339Date }}" class="release">{{ item.data.release | friendlyDate({ year: 'numeric' }) }}</time>)</small>
 				{% endif %}
 			</div>
 		{% endif %}

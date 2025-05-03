@@ -11,6 +11,7 @@ import calculateCSSComplexity from "./commands/calculateCSSComplexity.js";
 import checkDates from "./commands/checkDates.js";
 import checkLinks from "./commands/checkLinks.js";
 import createArticle from "./commands/createArticle.js";
+import createBeer from "./commands/createBeer.js";
 import createBookmark from "./commands/createBookmark.js";
 import createLike from "./commands/createLike.js";
 import createNote from "./commands/createNote.js";
@@ -67,6 +68,11 @@ const wizard = async () => {
 				description: "Create a new Article",
 			},
 			{
+				name: "Create: Beer",
+				value: "beer",
+				description: "Checkin a Beer",
+			},
+			{
 				name: "Create: Bookmark",
 				value: "bookmark",
 				description: "Create a new Bookmark",
@@ -101,6 +107,9 @@ const wizard = async () => {
 			break;
 		case "article":
 			createArticle(__siteroot);
+			break;
+		case "beer":
+			createBeer(__siteroot);
 			break;
 		case "bookmark":
 			createBookmark(__siteroot);
@@ -154,6 +163,11 @@ program
 	.command("article")
 	.description("📝 Create a new Article")
 	.action(() => createArticle(__siteroot));
+
+program
+	.command("beer")
+	.description("🍺 Checkin a Beer")
+	.action(() => createBookmark(__siteroot));
 
 program
 	.command("bookmark")
