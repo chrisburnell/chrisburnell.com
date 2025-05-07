@@ -32,7 +32,7 @@ Front End Developer and Software Engineer with {{ global.currentYear - site.esta
 
 Work roles involved creating design systems and tools to enable teams to build maintainable and performant websites, with an uncompromising focus on accessibility and user experience. These also included lead roles in building the front end and CMS architecture for small to enterprise clients, chiefly in the higher education and government sectors, as I oversaw the project lifecycle and acted as their primary technical contact.
 
-Passionate about the open web, having published over {{ technical_articles_count | toNearest(5, true) }} technical articles, and author of open-source software used by thousands of developers worldwide and on production client websites. Actively involved in the web community with many years of experience in organising conferences and meet-ups, most notably, [State of the Browser](https://stateofthebrowser.com).
+Passionate about the open web, having published over {{ technical_articles_count | toNearest(5, true) }} technical articles, and author of open-source software used by thousands of developers worldwide. Actively involved in the web community with many years of experience in organising conferences and meet-ups, most notably, [State of the Browser](https://stateofthebrowser.com).
 
 <hr>
 
@@ -141,7 +141,7 @@ Passionate about the open web, having published over {{ technical_articles_count
     <p class="delta"><a href="https://chrisburnell.com/"><c-emoji><img src="{{ site.logo }}" class="brand-logo" width="24" height="24" alt="{{ site.title }}" loading="lazy" decoding="async"></c-emoji>chrisburnell.com</a></p>
 </div>
 
-Launched a web development blog and have published [{{ collections.projects.length + projects.web.length }} web projects](https://chrisburnell.com/projects/) and over [{{ collections.blogPosts | length | toNearest(5, true) }} blog posts](https://chrisburnell.com/blog/), including {{ technical_articles_count }} technical articles about CSS, JavaScript, and thoughts on the web.
+Launched a web development blog and have created [{{ collections.projects.length + projects.web.length }} web projects](https://chrisburnell.com/projects/) and published over [{{ collections.blogPosts | length | toNearest(5, true) }} blog posts](https://chrisburnell.com/blog/), including {{ technical_articles_count }} technical articles about CSS, JavaScript, and thoughts on the web.
 
 <c-details class="no-border" force-restore>
     <summary>Popular Pages & Posts</summary>
@@ -176,6 +176,8 @@ Author of numerous open-source software packages, accumulating over {{ package_d
 
 <c-details class="no-border" force-restore>
     <summary>Popular Projects</summary>
+
+- **[<c-emoji>🗜</c-emoji>clamp() Calculator](https://chrisburnell.com/clamp-calculator/)**<br>A simple online tool for calculating viewport/container-based clamped values for use in CSS.
 
 - **[<c-emoji>💬</c-emoji>eleventy-cache-webmentions](https://chrisburnell.com/eleventy-cache-webmentions/)** <small>([>{{ '@chrisburnell/eleventy-cache-webmentions' | npmDownloads('2021-12-05') | toNearest(100, true) | numberStringFormat }} npm downloads](https://www.npmjs.com/package/@chrisburnell/eleventy-cache-webmentions) · [{{ 'chrisburnell/eleventy-cache-webmentions' | stargazers }} ★ on GitHub](https://github.com/chrisburnell/eleventy-cache-webmentions))</small><br>A plugin for the popular static site generator, [Eleventy](https://11ty.dev/), that allows the caching of Webmentions and makes them available to use throughout one’s website.
 
