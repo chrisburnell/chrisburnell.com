@@ -70,7 +70,7 @@ layout: root
 		<ul class=" [ cluster ] [ footer__navigation ] ">
 			<li class=" [ requires-js ] ">
 				<button class=" [ anchor ] " popovertarget="popover-settings"><c-emoji><svg width="16" height="16" aria-hidden="true" focusable="false" style="fill: var(--color-raven);"><use href="#svg--settings"></use></svg></c-emoji>Open Settings</button>
-			</li><li><a href="https://github.com/{{ author.github }}/{{ site.repository }}/tree/{{ site.branch }}/{{ page.inputPath }}" id="edit"><c-emoji><svg width="16" height="16" aria-hidden="true" focusable="false" style="fill: var(--color-raven);"><use href="#svg--edit"></use></svg></c-emoji>Edit this page</a></li><li class=" [ requires-js ] ">{% include 'share.njk' %}</li>
+			</li><li><a href="https://github.com/{{ author.github }}/{{ site.repository }}/tree/{{ site.branch }}/{{ page.inputPath }}" id="edit" rel="edit"><c-emoji><svg width="16" height="16" aria-hidden="true" focusable="false" style="fill: var(--color-raven);"><use href="#svg--edit"></use></svg></c-emoji>Edit this page</a></li><li class=" [ requires-js ] ">{% include 'share.njk' %}</li>
 		</ul>
 		<ul class=" [ cluster ] [ footer__navigation ] ">
 			<li><a href="/license/" id="copyright" rel="license"><strong>©</strong> {{ site.established }}–{{ global.currentYear }} <span class=" [ canada ] ">{{ author.name }}</span></a></li>
