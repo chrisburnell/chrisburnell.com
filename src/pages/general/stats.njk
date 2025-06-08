@@ -76,7 +76,7 @@ excludeFromSearch: true
 	<dt>First Blog Post</dt>
 	<dd><a href="{{ first_post | keyValue('url') }}">{{ first_post | keyValue('data.title') | safe }}</a><br><time datetime="{{ first_post | keyValue('data.date') | rfc3339Date | safe }}">{{ first_post | keyValue('data.date') | friendlyDateLong | safe }}</time></dd>
 	<dt>Latest Blog Post</dt>
-	<dd><a href="{{ latest_post | keyValue('url') }}">{{ latest_post | keyValue('data.title') | safe }}</a><br><time datetime="{{ latest_post | keyValue('data.date') | rfc3339Date | safe }}">{{ latest_post | keyValue('data.date') | friendlyDateLong | safe }}</time></dd>
+	<dd><a href="{{ latest_post | keyValue('url') }}">{{ latest_post | keyValue('data.meta_title') | safe }}</a><br><time datetime="{{ latest_post | keyValue('data.date') | rfc3339Date | safe }}">{{ latest_post | keyValue('data.date') | friendlyDateLong | safe }}</time></dd>
 	<dt>Blog Word Count</dt>
 	<dd>{{ blog_wordcount | numberStringFormat }}</dd>
 	<dt>Most Verbose Post</dt>
