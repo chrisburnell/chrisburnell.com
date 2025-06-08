@@ -64,7 +64,7 @@
     "node": ">=18"
   },
   "dependencies": {
-    "@11ty/eleventy": "3.1.0-alpha.1",
+    "@11ty/eleventy": "3.1.0",
     "@11ty/eleventy-fetch": "^5.1.0",
     "@11ty/eleventy-img": "5.0.0",
     "@11ty/eleventy-plugin-directory-output": "^1.0.1",
