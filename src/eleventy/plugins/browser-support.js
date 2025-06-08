@@ -15,7 +15,6 @@ const pkg = require("../../../package.json");
 
 const getCaniuseSupport = async (feature) => {
 	let asset = new AssetCache(`caniuse_${feature}`, ".cache");
-	asset.ensureDir();
 
 	if (asset.isCacheValid(cacheDurations.daily)) {
 		return await asset.getCachedValue();

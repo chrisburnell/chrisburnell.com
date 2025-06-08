@@ -10,7 +10,6 @@ const mdnBrowserData = require("../../../node_modules/@mdn/browser-compat-data/d
 
 const getCaniuseSupport = async (feature) => {
 	const asset = new AssetCache(`caniuse_${feature}`, ".cache");
-	asset.ensureDir();
 
 	if (asset.isCacheValid(cacheDurations.daily)) {
 		return await asset.getCachedValue();
