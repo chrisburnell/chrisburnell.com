@@ -11,8 +11,6 @@ authors:
   - title: Nintendo
 ---
 
-TODO
-
 This title was quite surprising for me. What an exciting thought, that we’d finally get a Zelda game where the protagonist is actually Zelda! *Insert joke about people calling Link <q>Zelda</q> for the longest time…*
 
 I ended up 100% completing the game (as is my tradition with *most* Zelda games) and had a great time doing it.
