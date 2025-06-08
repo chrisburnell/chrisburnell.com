@@ -7,8 +7,8 @@ excludeFromSearch: true
 {%- set blog_posts = collections.blogPosts | rssOnlyFilter -%}
 
 {%- set count = all_posts.length -%}
+{%- set first_year = 2013 -%}
 {%- set latest_year = all_posts[0].data.year | default(all_posts[0].year) -%}
-{%- set first_year = all_posts[count-1].data.year | default(all_posts[count-1].year) -%}
 
 {%- set latest_post = blog_posts | first -%}
 {%- set first_post = blog_posts | last -%}
