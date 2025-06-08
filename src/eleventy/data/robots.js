@@ -6,7 +6,7 @@ import { cacheDurations } from "./site.js";
 export default async function () {
 	let asset = new AssetCache("robots.txt");
 
-	if (asset.isCacheValid(cacheDurations.weekly)) {
+	if (asset.isCacheValid(cacheDurations.daily)) {
 		return await asset.getCachedValue();
 	}
 
