@@ -11,13 +11,13 @@ I was [tagged](https://linh.social/@qlp/114586765878511923) several days ago on 
 
 <figure>
 	<img src="/images/built-with-eleventy.gif" alt="Built with Eleventy badge" width="352" height="124" loading="lazy" decoding="async" class=" [ pixelated ] " style="border-radius: 0;">
+    <figcaption><em>Shown at 4× original size so that the detail is a bit easier to see.</em></figcaption>
 </figure>
 
 I had a lot of fun creating a handful of [88x31 badges](https://en.wikipedia.org/wiki/Web_badge), and the post on Mastodon reinvigorated my desire to play with pixels. So this evening, I once again fired up [Aseprite](https://www.aseprite.org/) and gave animating the badge a shot!
 
 <figure>
 	<img src="/images/animated/built-with-eleventy.gif" alt="Built with Eleventy animated badge" width="352" height="124" loading="lazy" decoding="async" class=" [ pixelated ] " style="border-radius: 0;">
-    <figcaption><em>Shown at 4× original size so that the detail is a bit easier to see.</em></figcaption>
 </figure>
 
 It may not be the most flashy 88x31 badge you’ve ever seen, but I think it’s pretty fun in its simplicity, and it’s only 3.5 <abbr title="kilobytes">kB</abbr>.
