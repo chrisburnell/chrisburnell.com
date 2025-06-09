@@ -16,7 +16,7 @@ I had a lot of fun creating a handful of [88x31 badges](https://en.wikipedia.org
     <figcaption><em>Shown at 4× original size so that the detail is a bit easier to see.</em></figcaption>
 </figure>
 
-It may not be the most flashy 88x31 badge you’ve ever seen, but I think it’s pretty fun in its simplicity.
+It may not be the most flashy 88x31 badge you’ve ever seen, but I think it’s pretty fun in its simplicity, and it’s only 3 <abbr title="kilobytes">kB</abbr>.
 
 You’ve got my **full permission**<sup>*</sup> to take it and use it on your own “Built with Eleventy” websites!
 
