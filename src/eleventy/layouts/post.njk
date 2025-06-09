@@ -59,6 +59,19 @@ layout: base
 
 		{% include 'photo.njk' %}
 
+		{% if rating %}
+			<div class=" [ center ] " style="display: flex; gap: 1em; font-size: var(--font-size-beta-min);">
+				{% if rating == 'Parti Pris' %}
+					<data class=" [ small ] [ p-rating ] " value="Parti Pris">Parti Pris</data>
+				{% else %}
+					<data class=" [ rating ] [ p-rating ] " value="{{ rating }}" title="{{ rating }} out of 5" style="--rating-font-size: var(--font-size-beta);"> </data>
+					<strong>{{ rating }}/5</strong>
+					<data class=" [ p-worst ] " value="0" hidden>0</data>
+					<data class=" [ p-best ] " value="5" hidden>5</data>
+				{% endif %}
+			</div>
+		{% endif %}
+
 		{% if description %}
 			<div class=" [ description ] [ flow ] [ p-summary ] ">
 				{{ description | markdownFormat | safe }}

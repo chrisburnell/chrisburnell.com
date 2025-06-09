@@ -9,7 +9,7 @@
 .rating {
 	display: inline-block;
 	position: relative;
-	font-size: var(--font-size-gamma);
+	font-size: var(--rating-font-size, var(--font-size-gamma));
 	font-weight: var(--font-weight-semibold);
 	overflow: hidden;
 	line-height: 1;
