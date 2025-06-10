@@ -43,6 +43,4 @@ I also built some longer versions that include call-outs to the [11ty.dev](https
 	<figcaption><em>And this one’s a bit bigger than the previous at 9.5 kB.</em></figcaption>
 </figure>
 
-----
-
 [^1]: If you’re using them as-is, attribution would be cool, but it’s totally not a necessity. If you want to share them on, adapt them in any way, etc., I’d just ask that you respect the [Creative Commons license](/license/) that they fall under.
