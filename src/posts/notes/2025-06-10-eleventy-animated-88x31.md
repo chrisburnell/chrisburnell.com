@@ -25,7 +25,11 @@ It may not be the most flashy 88x31 badge you’ve ever seen, but I think it’s
 
 You’ve got my **full permission**<sup>*</sup> to take these badges and use them on your own “Built with Eleventy” websites!
 
-<sup>*</sup> If you’re using them as-is, attribution would be cool, but it’s totally not a necessity. If you want to share them on, adapt them in any way, etc., I’d just ask that you respect the [Creative Commons license](/license/) that they fall under.
+**Important to note**, if you are displaying these on the web, I **highly** recommend that you apply the following CSS to the image to ensure it displays nice and crispy:
+
+```css
+image-rendering: pixelated;
+```
 
 ----
 
@@ -40,3 +44,7 @@ I also built some longer versions that include call-outs to the [11ty.dev](https
 	<img src="/images/animated/built-with-eleventy-long-alternate.gif" alt="Built with Eleventy alternate longer animated badge" width="352" height="124" loading="lazy" decoding="async" class=" [ pixelated ] " style="border-radius: 0;">
 	<figcaption><em>And this one’s a bit bigger than the previous at 9.5 kB.</em></figcaption>
 </figure>
+
+----
+
+<sup>*</sup> If you’re using them as-is, attribution would be cool, but it’s totally not a necessity. If you want to share them on, adapt them in any way, etc., I’d just ask that you respect the [Creative Commons license](/license/) that they fall under.
