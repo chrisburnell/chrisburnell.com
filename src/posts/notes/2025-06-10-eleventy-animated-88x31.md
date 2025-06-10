@@ -31,8 +31,6 @@ You’ve got my **full permission**<sup>*</sup> to take these badges and use the
 image-rendering: pixelated;
 ```
 
-----
-
 I also built some longer versions that include call-outs to the [11ty.dev](https://11ty.dev) website.
 
 <figure>
