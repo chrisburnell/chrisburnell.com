@@ -21,9 +21,9 @@ export default {
 		canonical: (data) => siteURL + data.page.url,
 		meta_title: (data) => getMetaTitle(data),
 		meta_description: (data) => {
-			if (data.description) {
+			if (data.excerpt || data.description) {
 				return replaceLineBreaks(
-					stripHTML(markdownFormat(data.description)),
+					stripHTML(markdownFormat(data.excerpt || data.description)),
 				);
 			}
 			return `A page on ${getHost(siteURL)}`;
