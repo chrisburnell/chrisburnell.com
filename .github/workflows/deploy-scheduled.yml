@@ -13,7 +13,6 @@ on:
 
 concurrency:
   group: deploy
-  cancel-in-progress: true
 
 jobs:
   build:
