@@ -834,6 +834,12 @@ export default [
 		rss: "https://awfulwoman.com/index.xml",
 		mastodon: "awfulwoman@indieweb.social",
 	},
+	{
+		title: "Cybercultural",
+		url: "https://cybercultural.com",
+		rss: "https://cybercultural.com/feed.xml",
+		mastodon: "ricmac@mastodon.social",
+	},
 ].sort((a, b) => {
 	return a.title.localeCompare(b.title);
 });

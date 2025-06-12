@@ -21,7 +21,7 @@ In other words, the *Vigenère Cipher* is way of combining 26 [Caesar Ciphers](h
 
 Unlike a traditional Caesar Cipher, where the letters of the alphabet are shifted by a given number (e.g. `XYZABCDEFGHIJKLMNOPQRSTUVWXYZ`), the Caesar Ciphers used in the *Vigenère Cipher* are shifted by a particular keyword instead (e.g. `KEYWORDABCFGHIJLMNPQSTUVXZ`). This Caesar Cipher is then sequentially shifted by one letter 25 times to produce a table of 26 Caesar Ciphers:
 
-<div class=" [ scroll-inline  scroll-inline-shadow ] ">
+<div class=" [ scroll-inline ] ">
     <table class=" [ monospace ] " style="font-size: var(--font-size-small);">
         <tbody>
             <tr><td>K</td><td>E</td><td>Y</td><td>W</td><td>O</td><td>R</td><td>D</td><td>A</td><td>B</td><td>C</td><td>F</td><td>G</td><td>H</td><td>I</td><td>J</td><td>L</td><td>M</td><td>N</td><td>P</td><td>Q</td><td>S</td><td>T</td><td>U</td><td>V</td><td>X</td><td>Z</td></tr>
@@ -105,7 +105,7 @@ Without the secret keyword (or, to be fair, modern computing power), it can be *
 <c-details class=" [ no-border  no-padding ] [ flow ] ">
     <summary class=" [ delta ] ">Vigenère Table</summary>
     <p><em>You can hover/focus the letters in the output above to see the row and column intersections in the table below.</em></p>
-    <div class=" [ scroll-inline  scroll-inline-shadow ] ">
+    <div class=" [ scroll-inline ] ">
         <table class=" [ monospace ] " style="font-size: var(--font-size-small);">
             <tbody id="square" aria-live="polite">
                 <tr><td>K</td><td>E</td><td>Y</td><td>W</td><td>O</td><td>R</td><td>D</td><td>A</td><td>B</td><td>C</td><td>F</td><td>G</td><td>H</td><td>I</td><td>J</td><td>L</td><td>M</td><td>N</td><td>P</td><td>Q</td><td>S</td><td>T</td><td>U</td><td>V</td><td>X</td><td>Z</td></tr>
