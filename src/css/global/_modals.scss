@@ -24,6 +24,15 @@
 	inset: initial;
 	inset-block-start: 50%;
 	inset-inline-start: 50%;
+	transition: opacity var(--transition-duration);
 	transform: translateX(-50%) translateY(-50%);
 	text-align: center;
+}
+
+[popover]:popover-open {
+	opacity: 1;
+
+	@starting-style {
+		opacity: 0;
+	}
 }

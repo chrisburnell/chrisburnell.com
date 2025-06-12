@@ -39,11 +39,13 @@ redirect_from:
 	<section class=" [ flow ] " style="margin-block-start: var(--size-large-gigantic);">
 		<h2 id="{{ feature.id }}">{{ feature.title | safe }}{% if feature.language %} <small>{{ feature.language | supertitle }}</small>{% endif %}{% if feature.supports or feature.supportsJS %} <small id="support-{{ feature.id }}" title="Supported by your browser" hidden>✅</small>{% endif %}</h2>
 		{{ feature.description | markdownFormat | safe }}
+		{% if feature.links -%}
 		<ul>
 			{% for link in feature.links -%}
 				<li>{{ link | markdownFormat | safe }}</li>
 			{%- endfor %}
 		</ul>
+		{%- endif %}
 		{% browserSupport feature.id %}
 	</section>
 {%- endfor %}

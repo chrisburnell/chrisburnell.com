@@ -614,4 +614,14 @@ export default [
 			"[Page on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/position-anchor)",
 		],
 	},
+	{
+		id: "mdn-css_properties_appearance_base-select",
+		language: "css",
+		supports: "appearance: base-select",
+		type: "properties",
+		key: "css-base-select",
+		title: "Custom Selects",
+		description:
+			"Provides greater (read: basically, any) control over the styling of select elements.",
+	},
 ];
