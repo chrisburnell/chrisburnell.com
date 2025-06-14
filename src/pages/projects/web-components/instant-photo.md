@@ -13,8 +13,8 @@ tags:
 ---
 
 <figure>
-    <instant-photo develop>
-        <img src="/images/avatar@4x.jpeg" alt="Chris Burnell" class=" [ canada ] " width="400" height="400">
+    <instant-photo develop notext>
+        <img src="/images/avatar@4x.jpeg" alt="A photograph of Chris Burnell’s face from 2018 (times flies…)" class=" [ canada ] " width="400" height="400">
     </instant-photo>
 </figure>
 
