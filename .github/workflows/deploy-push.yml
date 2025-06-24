@@ -50,7 +50,7 @@ jobs:
       - name: Copy files to server
         run: |
           ssh-keyscan -p ${{ secrets.DEPLOY_PORT }} -H ${{ secrets.DEPLOY_HOST }} >> ~/.ssh/known_hosts
-          rsync -avz -e "ssh -p ${{ secrets.DEPLOY_PORT }}" --delete --exclude="audio" --exclude="fonts" --exclude="static" --size-only ./_site/ ${{ secrets.DEPLOY_USERNAME }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_PATH }}build
+          rsync -avz -e "ssh -p ${{ secrets.DEPLOY_PORT }}" --delete --exclude="audio" --exclude="fonts" --exclude="static" --size-only ./_site/ ${{ secrets.DEPLOY_USERNAME }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_PATH }}html
 
       - name: Process on server
         uses: appleboy/ssh-action@master
