@@ -45,11 +45,12 @@ jobs:
         uses: shimataro/ssh-key-action@v2
         with:
           key: ${{ secrets.DEPLOY_KEY }}
+          known_hosts: "unnecessary"
 
       - name: Copy files to server
         run: |
           ssh-keyscan -p ${{ secrets.DEPLOY_PORT }} -H ${{ secrets.DEPLOY_HOST }} >> ~/.ssh/known_hosts
-          rsync -avz -e 'ssh -p ${{ secrets.DEPLOY_PORT }}' ./_site/ ${{ secrets.DEPLOY_USERNAME }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_PATH }}rsynctest
+          rsync -avz -e "ssh -p ${{ secrets.DEPLOY_PORT }}" ./_site/ ${{ secrets.DEPLOY_USERNAME }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_PATH }}rsynctest
 
       - name: Copy files to server
         uses: appleboy/scp-action@master
