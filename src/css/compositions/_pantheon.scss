@@ -22,11 +22,11 @@
 	grid-template-rows:
 		[breadcrumbs-start]
 		auto
-		[breadcrumbs-end context-start]
+		[breadcrumbs-end title-start]
 		auto
-		[context-end title-start]
+		[title-end context-start]
 		auto
-		[title-end sparkline-start]
+		[context-end sparkline-start]
 		auto
 		[sparkline-end description-start]
 		auto
