@@ -24,6 +24,10 @@
 		display: none;
 	}
 
+	h2 {
+		padding-inline: 1em;
+	}
+
 	.navigation__list {
 		flex-direction: column;
 
@@ -80,6 +84,10 @@
 	}
 }
 
+.popover-settings {
+
+}
+
 // Align settings
 .popover-settings form {
 	display: grid;
@@ -88,6 +96,10 @@
 
 	@include mixins.cqi(null, "small") {
 		grid-template-columns: max-content auto;
+	}
+
+	@include mixins.cqi(null, null, "small") {
+		min-inline-size: 66vi;
 	}
 
 	label {
@@ -110,6 +122,7 @@
 	select,
 	[type="range"] {
 		inline-size: 100%;
+		min-inline-size: min-content;
 	}
 }
 
