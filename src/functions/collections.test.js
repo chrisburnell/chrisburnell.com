@@ -1,306 +1,275 @@
-import assert from "node:assert/strict";
-import { describe, it } from "node:test";
+import { describe, expect, it } from "vitest";
 import { nowEpoch } from "../eleventy/data/global.js";
 import collections from "./collections.js";
 
-export default async () => {
-	describe("Functions: Collections", () => {
-		it("isPublished() should return a boolean", () => {
-			assert.strictEqual(collections.isPublished({}), false);
-			assert.strictEqual(
-				collections.isPublished({
-					url: "/example",
-				}),
-				true,
-			);
-			assert.strictEqual(
-				collections.isPublished({
-					url: "/example",
-					data: {
-						draft: true,
-					},
-				}),
-				false,
-			);
-			assert.strictEqual(
-				collections.isPublished({
-					url: "/example",
-					data: {
-						published: false,
-					},
-				}),
-				false,
-			);
-			assert.strictEqual(
-				collections.isPublished({
-					url: "/example",
-					data: {
-						tags: ["ignore"],
-					},
-				}),
-				false,
-			);
-			assert.strictEqual(
-				collections.isPublished({
-					url: "/example",
-					data: {
-						date: new Date(nowEpoch + 1).toISOString(),
-					},
-				}),
-				false,
-			);
-		});
-
-		it("notReply() should return a boolean based on reply data", () => {
-			assert.strictEqual(collections.notReply({}), true);
-			assert.strictEqual(
-				collections.notReply({
-					data: {
-						in_reply_to: "https://chrisburnell.com",
-					},
-				}),
-				true,
-			);
-			assert.strictEqual(
-				collections.notReply({
-					data: {
-						in_reply_to: "https://example.com",
-					},
-				}),
-				false,
-			);
-		});
-
-		it("getPropertyData() should return *_of data", () => {
-			assert.notStrictEqual(
-				collections.getPropertyData({
-					bookmark_of: {},
-				}),
-				null,
-			);
-			assert.strictEqual(collections.getPropertyData({}), null);
-		});
-
-		it("getPropertyTitle() should return a *_of title", () => {
-			assert.strictEqual(
-				collections.getPropertyTitle({
-					bookmark_of: {
-						title: "Title",
-					},
-				}),
-				"Title",
-			);
-			assert.strictEqual(
-				collections.getPropertyTitle({
-					bookmark_of: {},
-				}),
-				null,
-			);
-		});
-
-		it("getPropertyURL() should return a *_of URL or data object", () => {
-			assert.strictEqual(
-				collections.getPropertyURL({
-					bookmark_of: {
-						url: "https://example.com",
-					},
-				}),
-				"https://example.com",
-			);
-			const data = {
-				title: "Title",
-			};
-			assert.strictEqual(
-				collections.getPropertyURL({
-					bookmark_of: data,
-				}),
-				data,
-			);
-		});
-
-		it("getAuthors() should return an array of authors", () => {
-			const data = ["Author A", "Author B"];
-			assert.strictEqual(
-				collections.getAuthors({
-					authors: data,
-				}),
-				data,
-			);
-		});
-
-		it("getAuthorData() should return an author data object", () => {
-			assert.strictEqual(
-				collections.getAuthorData({
-					title: "Author A",
-					url: "https://example.com",
-				}).title,
-				"Author A",
-			);
-			assert.strictEqual(
-				collections.getAuthorData({
-					title: "Author A",
-					url: "https://example.com",
-				}).url,
-				"https://example.com",
-			);
-		});
-
-		it("getAuthorsString() should return a string of comma-delimited author titles and URLs", () => {
-			assert.strictEqual(
-				collections.getAuthorsString({
-					authors: [
-						{
-							title: "Author A",
-							url: "https://example.com/a/",
-						},
-						{
-							title: "Author B",
-						},
-						{
-							title: "Author C",
-						},
-					],
-				}),
-				`<a href="https://example.com/a/" class=" [ h-cite ] " rel="external noopener">Author A</a>, <strong class=" [ h-cite ] ">Author B</strong>, and <strong class=" [ h-cite ] ">Author C</strong>`,
-			);
-		});
-
-		it("getReplyTitle() should return an in_reply_to title", () => {
-			assert.strictEqual(
-				collections.getReplyTitle({
-					in_reply_to: {
-						title: "Example",
-					},
-				}),
-				"Example",
-			);
-		});
-
-		it("getReplyURL() should return an in_reply_to URL", () => {
-			assert.strictEqual(
-				collections.getReplyTitle({
-					in_reply_to: {
-						url: "https://example.com",
-					},
-				}),
-				"https://example.com",
-			);
-		});
-
-		it("getReplyAuthor() should return an in_reply_to author data object", () => {
-			assert.strictEqual(
-				collections.getReplyAuthor({
-					in_reply_to: "https://flamedfury.com",
-				}).title,
-				"fLaMEd",
-			);
-		});
-
-		it("getReplyAuthorString() should return a formatted string based on reply author data", () => {
-			assert.strictEqual(
-				collections.getReplyAuthorString({
-					in_reply_to: "https://flamedfury.com",
-				}),
-				`<a href="https://flamedfury.com" class=" [ h-cite ] " rel="external noopener">fLaMEd</a>`,
-			);
-		});
-
-		it("getRSVPString() should return", () => {
-			assert.strictEqual(
-				collections.getRSVPString({
-					rsvp: {
-						value: "yes",
-						date: "2024-05-09T23:00:00+0800",
-						end: "2024-05-10T05:00:00+0800",
-					},
-				}),
-				`<span data-start="2024-05-09T23:00:00+08:00" data-end="2024-05-10T05:00:00+08:00" data-value="yes" data-relative-rsvp-value><span class=" [ emoji ] " aria-hidden="true">✅</span> <small>attended</small></span>`,
-			);
-		});
-
-		it("getMetaTitle() should return a string based on property data", () => {
-			assert.strictEqual(
-				collections.getMetaTitle({
-					title: "Example",
-				}),
-				"Example",
-			);
-			assert.strictEqual(
-				collections.getMetaTitle({
-					rsvp: {},
-					in_reply_to: {
-						title: "Example",
-					},
-				}),
-				"RSVP to Example",
-			);
-			assert.strictEqual(
-				collections.getMetaTitle({
-					rsvp: {},
-					in_reply_to: {
-						url: "https://example.com",
-					},
-				}),
-				"RSVP to https://example.com",
-			);
-			assert.strictEqual(
-				collections.getMetaTitle({
-					in_reply_to: {
-						title: "Example",
-					},
-				}),
-				"Reply to Example",
-			);
-			assert.strictEqual(
-				collections.getMetaTitle({
-					in_reply_to: {
-						url: "https://example.com",
-					},
-				}),
-				"Reply to https://example.com",
-			);
-			assert.strictEqual(
-				collections.getMetaTitle({
-					category: "bookmark",
-					date: "2024-05-09T23:00:00+0800",
-					bookmark_of: {
-						title: "Example",
-					},
-				}),
-				"Bookmark: Example",
-			);
-			assert.strictEqual(
-				collections.getMetaTitle({
-					category: "bookmark",
-					date: "2024-05-09T23:00:00+0800",
-					bookmark_of: "https://example.com",
-				}),
-				"Bookmark: https://example.com",
-			);
-			assert.strictEqual(
-				collections.getMetaTitle({
-					category: "article",
-					date: "2024-05-09T23:00:00+0800",
-				}),
-				"Article from 9 May 2024",
-			);
-			assert.strictEqual(
-				collections.getMetaTitle({}),
-				"A page on chrisburnell.com",
-			);
-		});
-
-		it("getMetaImage() should return a string containing the meta image URL for a page", () => {
-			assert.strictEqual(
-				collections.getMetaImage({
-					og_image: "/example.jpeg",
-				}),
-				"https://chrisburnell.com/example.jpeg",
-			);
-			assert.strictEqual(
-				collections.getMetaImage({}),
-				"https://chrisburnell.com/images/favicon-256.png",
-			);
-		});
+describe("Functions: Collections", () => {
+	it("isPublished() should return a boolean", () => {
+		expect(collections.isPublished({})).toBe(false);
+		expect(
+			collections.isPublished({
+				url: "/example",
+			}),
+		).toBe(true);
+		expect(
+			collections.isPublished({
+				url: "/example",
+				data: {
+					draft: true,
+				},
+			}),
+		).toBe(false);
+		expect(
+			collections.isPublished({
+				url: "/example",
+				data: {
+					published: false,
+				},
+			}),
+		).toBe(false);
+		expect(
+			collections.isPublished({
+				url: "/example",
+				data: {
+					tags: ["ignore"],
+				},
+			}),
+		).toBe(false);
+		expect(
+			collections.isPublished({
+				url: "/example",
+				data: {
+					date: new Date(nowEpoch + 1).toISOString(),
+				},
+			}),
+		).toBe(false);
 	});
-};
+
+	it("notReply() should return a boolean based on reply data", () => {
+		expect(collections.notReply({})).toBe(true);
+		expect(
+			collections.notReply({
+				data: {
+					in_reply_to: "https://chrisburnell.com",
+				},
+			}),
+		).toBe(true);
+		expect(
+			collections.notReply({
+				data: {
+					in_reply_to: "https://example.com",
+				},
+			}),
+		).toBe(false);
+	});
+
+	it("getPropertyData() should return *_of data", () => {
+		expect(
+			collections.getPropertyData({
+				bookmark_of: {},
+			}),
+		).not.toBe(null);
+		expect(collections.getPropertyData({})).toBe(null);
+	});
+
+	it("getPropertyTitle() should return a *_of title", () => {
+		expect(
+			collections.getPropertyTitle({
+				bookmark_of: {
+					title: "Title",
+				},
+			}),
+		).toBe("Title");
+		expect(
+			collections.getPropertyTitle({
+				bookmark_of: {},
+			}),
+		).toBe(null);
+	});
+
+	it("getPropertyURL() should return a *_of URL or data object", () => {
+		expect(
+			collections.getPropertyURL({
+				bookmark_of: {
+					url: "https://example.com",
+				},
+			}),
+		).toBe("https://example.com");
+		const data = {
+			title: "Title",
+		};
+		expect(
+			collections.getPropertyURL({
+				bookmark_of: data,
+			}),
+		).toBe(data);
+	});
+
+	it("getAuthors() should return an array of authors", () => {
+		const data = ["Author A", "Author B"];
+		expect(
+			collections.getAuthors({
+				authors: data,
+			}),
+		).toBe(data);
+	});
+
+	it("getAuthorData() should return an author data object", () => {
+		expect(
+			collections.getAuthorData({
+				title: "Author A",
+				url: "https://example.com",
+			}).title,
+		).toBe("Author A");
+		expect(
+			collections.getAuthorData({
+				title: "Author A",
+				url: "https://example.com",
+			}).url,
+		).toBe("https://example.com");
+	});
+
+	it("getAuthorsString() should return a string of comma-delimited author titles and URLs", () => {
+		expect(
+			collections.getAuthorsString({
+				authors: [
+					{
+						title: "Author A",
+						url: "https://example.com/a/",
+					},
+					{
+						title: "Author B",
+					},
+					{
+						title: "Author C",
+					},
+				],
+			}),
+		).toBe(
+			`<a href="https://example.com/a/" class=" [ h-cite ] " rel="external noopener">Author A</a>, <strong class=" [ h-cite ] ">Author B</strong>, and <strong class=" [ h-cite ] ">Author C</strong>`,
+		);
+	});
+
+	it("getReplyTitle() should return an in_reply_to title", () => {
+		expect(
+			collections.getReplyTitle({
+				in_reply_to: {
+					title: "Example",
+				},
+			}),
+		).toBe("Example");
+	});
+
+	it("getReplyURL() should return an in_reply_to URL", () => {
+		expect(
+			collections.getReplyTitle({
+				in_reply_to: {
+					url: "https://example.com",
+				},
+			}),
+		).toBe("https://example.com");
+	});
+
+	it("getReplyAuthor() should return an in_reply_to author data object", () => {
+		expect(
+			collections.getReplyAuthor({
+				in_reply_to: "https://flamedfury.com",
+			}).title,
+		).toBe("fLaMEd");
+	});
+
+	it("getReplyAuthorString() should return a formatted string based on reply author data", () => {
+		expect(
+			collections.getReplyAuthorString({
+				in_reply_to: "https://flamedfury.com",
+			}),
+		).toBe(
+			`<a href="https://flamedfury.com" class=" [ h-cite ] " rel="external noopener">fLaMEd</a>`,
+		);
+	});
+
+	it("getRSVPString() should return", () => {
+		expect(
+			collections.getRSVPString({
+				rsvp: {
+					value: "yes",
+					date: "2024-05-09T23:00:00+0800",
+					end: "2024-05-10T05:00:00+0800",
+				},
+			}),
+		).toBe(
+			`<span data-start="2024-05-09T23:00:00+08:00" data-end="2024-05-10T05:00:00+08:00" data-value="yes" data-relative-rsvp-value><span class=" [ emoji ] " aria-hidden="true">✅</span> <small>attended</small></span>`,
+		);
+	});
+
+	it("getMetaTitle() should return a string based on property data", () => {
+		expect(
+			collections.getMetaTitle({
+				title: "Example",
+			}),
+		).toBe("Example");
+		expect(
+			collections.getMetaTitle({
+				rsvp: {},
+				in_reply_to: {
+					title: "Example",
+				},
+			}),
+		).toBe("RSVP to Example");
+		expect(
+			collections.getMetaTitle({
+				rsvp: {},
+				in_reply_to: {
+					url: "https://example.com",
+				},
+			}),
+		).toBe("RSVP to https://example.com");
+		expect(
+			collections.getMetaTitle({
+				in_reply_to: {
+					title: "Example",
+				},
+			}),
+		).toBe("Reply to Example");
+		expect(
+			collections.getMetaTitle({
+				in_reply_to: {
+					url: "https://example.com",
+				},
+			}),
+		).toBe("Reply to https://example.com");
+		expect(
+			collections.getMetaTitle({
+				category: "bookmark",
+				date: "2024-05-09T23:00:00+0800",
+				bookmark_of: {
+					title: "Example",
+				},
+			}),
+		).toBe("Bookmark: Example");
+		expect(
+			collections.getMetaTitle({
+				category: "bookmark",
+				date: "2024-05-09T23:00:00+0800",
+				bookmark_of: "https://example.com",
+			}),
+		).toBe("Bookmark: https://example.com");
+		expect(
+			collections.getMetaTitle({
+				category: "article",
+				date: "2024-05-09T23:00:00+0800",
+			}),
+		).toBe("Article from 9 May 2024");
+		expect(collections.getMetaTitle({})).toBe("A page on chrisburnell.com");
+	});
+
+	it("getMetaImage() should return a string containing the meta image URL for a page", () => {
+		expect(
+			collections.getMetaImage({
+				og_image: "/example.jpeg",
+			}),
+		).toBe("https://chrisburnell.com/example.jpeg");
+		expect(collections.getMetaImage({})).toBe(
+			"https://chrisburnell.com/images/favicon-256.png",
+		);
+	});
+});

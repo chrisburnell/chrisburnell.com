@@ -1,73 +1,60 @@
-import assert from "node:assert/strict";
-import { describe, it } from "node:test";
+import { describe, expect, it } from "vitest";
 import collections from "./collections.js";
 
-export default async () => {
-	describe("Filters: Collections", () => {
-		it("arePublished() should return an array of items passing the `isPublished()` check", () => {
-			assert.strictEqual(
-				collections.arePublished([
-					{
-						url: "https://example.com/a/",
+describe("Filters: Collections", () => {
+	it("arePublished() should return an array of items passing the `isPublished()` check", () => {
+		expect(
+			collections.arePublished([
+				{
+					url: "https://example.com/a/",
+				},
+				{
+					url: "https://example.com/b/",
+					data: {
+						draft: true,
 					},
-					{
-						url: "https://example.com/b/",
-						data: {
-							draft: true,
-						},
-					},
-				]).length,
-				1,
-			);
-		});
-
-		///
-		// TODO
-		///
-
-		it("sitemapFilter() should return TODO", () => {
-			assert.strictEqual(typeof collections.sitemapFilter, "function");
-		});
-
-		it("getCategoryName() should return TODO", () => {
-			assert.strictEqual(typeof collections.getCategoryName, "function");
-		});
-
-		it("categoryFilter() should return TODO", () => {
-			assert.strictEqual(typeof collections.categoryFilter, "function");
-		});
-
-		it("tagFilter() should return TODO", () => {
-			assert.strictEqual(typeof collections.tagFilter, "function");
-		});
-
-		it("noPinnedFilter() should return TODO", () => {
-			assert.strictEqual(typeof collections.noPinnedFilter, "function");
-		});
-
-		it("pinnedSort() should return TODO", () => {
-			assert.strictEqual(typeof collections.pinnedSort, "function");
-		});
-
-		it("getCollectionCount() should return TODO", () => {
-			assert.strictEqual(
-				typeof collections.getCollectionCount,
-				"function",
-			);
-		});
-
-		it("getCollectionCountByYear() should return TODO", () => {
-			assert.strictEqual(
-				typeof collections.getCollectionCountByYear,
-				"function",
-			);
-		});
-
-		it("getCollectionCountByWeekday() should return TODO", () => {
-			assert.strictEqual(
-				typeof collections.getCollectionCountByWeekday,
-				"function",
-			);
-		});
+				},
+			]).length,
+		).toBe(1);
 	});
-};
+
+	///
+	// TODO
+	///
+
+	it("sitemapFilter() should return TODO", () => {
+		expect(typeof collections.sitemapFilter).toBe("function");
+	});
+
+	it("getCategoryName() should return TODO", () => {
+		expect(typeof collections.getCategoryName).toBe("function");
+	});
+
+	it("categoryFilter() should return TODO", () => {
+		expect(typeof collections.categoryFilter).toBe("function");
+	});
+
+	it("tagFilter() should return TODO", () => {
+		expect(typeof collections.tagFilter).toBe("function");
+	});
+
+	it("noPinnedFilter() should return TODO", () => {
+		expect(typeof collections.noPinnedFilter).toBe("function");
+	});
+
+	it("pinnedSort() should return TODO", () => {
+		expect(typeof collections.pinnedSort).toBe("function");
+	});
+
+	it("getCollectionCount() should return TODO", () => {
+		expect(typeof collections.getCollectionCount).toBe("function");
+	});
+
+	it("getCollectionCountByYear() should return TODO", () => {
+		expect(typeof collections.getCollectionCountByYear).toBe("function");
+	});
+
+	it("getCollectionCountByWeekday() should return TODO", () => {
+		expect(typeof collections.getCollectionCountByWeekday).toBe("function");
+	});
+});

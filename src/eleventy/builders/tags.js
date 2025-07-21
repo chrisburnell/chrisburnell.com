@@ -1,7 +1,7 @@
 import { categoryFilter, tagFilter } from "../filters/collections.js";
 
-export default function (collection) {
-	const allTags = collection
+export default async function (collection) {
+	const allTags = await collection
 		.getAll()
 		// Only select pages with tags
 		.filter((item) => {

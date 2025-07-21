@@ -6,7 +6,7 @@ export default [
 	{
 		files: ["src/**/*.js"],
 		languageOptions: {
-			ecmaVersion: 6,
+			ecmaVersion: "latest",
 			globals: {
 				...globals.browser,
 				...globals.node,
