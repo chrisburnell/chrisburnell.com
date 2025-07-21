@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import { getMastodonHandle } from "../../functions/utils.js";
 import { cacheDurations, url as siteURL } from "../data/site.js";
 import { getHost } from "../filters/urls.js";
-dotenv.config();
+dotenv.config({ quiet: true });
 
 // Avatar Dimensions
 const size = 96; // 48 * 2

@@ -2,7 +2,7 @@ import EleventyFetch from "@11ty/eleventy-fetch";
 import dotenv from "dotenv";
 import { trakt } from "./author.js";
 import { cacheDurations } from "./site.js";
-dotenv.config();
+dotenv.config({ quiet: true });
 
 const movies = async function () {
 	const url = `https://api.trakt.tv/users/${trakt}/history/movies?page=1&limit=20`;

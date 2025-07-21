@@ -1,7 +1,7 @@
 import EleventyFetch from "@11ty/eleventy-fetch";
 import dotenv from "dotenv";
 import { cacheDurations } from "./site.js";
-dotenv.config();
+dotenv.config({ quiet: true });
 
 const interestsDirectoryData = async function () {
 	const url =

@@ -25,7 +25,7 @@ import {
 	getReplyURL,
 } from "../functions/collections.js";
 import { stripHTML } from "../functions/strings.js";
-dotenv.config();
+dotenv.config({ quiet: true });
 
 export default {
 	layout: "post",

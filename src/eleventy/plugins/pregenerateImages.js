@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-dotenv.config();
+dotenv.config({ quiet: true });
 
 import Image from "@11ty/eleventy-img";
 import glob from "fast-glob";

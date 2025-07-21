@@ -2,7 +2,7 @@ import EleventyFetch from "@11ty/eleventy-fetch";
 import dotenv from "dotenv";
 import { lastfm } from "./author.js";
 import { cacheDurations } from "./site.js";
-dotenv.config();
+dotenv.config({ quiet: true });
 
 const recentTracks = async function () {
 	const url = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&username=${lastfm}&api_key=${process.env.LASTFM_API_TOKEN}&format=json&extended=1&limit=50`;

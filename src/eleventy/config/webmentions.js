@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-dotenv.config();
+dotenv.config({ quiet: true });
 
 import { defaults } from "@chrisburnell/eleventy-cache-webmentions";
 import urlReplacements from "../../data/urlReplacements.js";

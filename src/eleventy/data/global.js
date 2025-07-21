@@ -1,6 +1,6 @@
 import { Temporal } from "@js-temporal/polyfill";
 import dotenv from "dotenv";
-dotenv.config();
+dotenv.config({ quiet: true });
 
 export const personalApiKeyForLocal = process.env.PERSONAL_API_KEY_FOR_LOCAL;
 

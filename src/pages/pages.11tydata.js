@@ -9,7 +9,7 @@ import {
 import { getHost } from "../eleventy/filters/urls.js";
 import { getMetaImage, getMetaTitle } from "../functions/collections.js";
 import { stripHTML } from "../functions/strings.js";
-dotenv.config();
+dotenv.config({ quiet: true });
 
 export default {
 	layout: "page",

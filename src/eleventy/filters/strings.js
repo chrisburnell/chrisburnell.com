@@ -7,7 +7,7 @@ import truncate from "truncate-html";
 import capitalizers from "../../data/capitalizers.js";
 import markdown from "../config/markdown.js";
 import { limits, locale } from "../data/site.js";
-dotenv.config();
+dotenv.config({ quiet: true });
 
 const stringNumbers = [
 	"zero",

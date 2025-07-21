@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-dotenv.config();
+dotenv.config({ quiet: true });
 
 import { getWebmentionPublished } from "@chrisburnell/eleventy-cache-webmentions";
 import { currentYear, nowEpoch } from "../eleventy/data/global.js";

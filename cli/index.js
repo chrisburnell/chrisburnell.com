@@ -16,7 +16,6 @@ import createBookmark from "./commands/createBookmark.js";
 import createLike from "./commands/createLike.js";
 import createNote from "./commands/createNote.js";
 import performChecks from "./commands/performChecks.js";
-import runTests from "./commands/runTests.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -119,9 +118,6 @@ const wizard = async () => {
 			break;
 		case "note":
 			createNote(__siteroot);
-			break;
-		case "test":
-			runTests();
 			break;
 	}
 };
