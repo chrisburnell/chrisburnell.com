@@ -60,8 +60,8 @@ export const urls = {
 
 export const conferences = {
 	sotb: {
-		date: "2025-03-29T09:30:00+0000",
-		end: "2025-03-29T16:30:00+0000",
+		date: "2026-02-28T09:30:00+0000",
+		end: "2026-02-28T16:30:00+0000",
 	},
 };
 

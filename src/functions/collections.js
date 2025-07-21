@@ -34,7 +34,6 @@ const allPeople = [
 ];
 
 // Get data about all pages
-// eslint-disable-next-line
 const pages = await EleventyFetch("https://chrisburnell.com/all.json", {
 	duration: cacheDurations.hourly,
 	type: "json",
