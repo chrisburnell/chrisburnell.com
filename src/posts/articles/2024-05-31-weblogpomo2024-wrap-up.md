@@ -29,7 +29,7 @@ I feel really accomplished. *Really* accomplished and proud of the work that I p
 - Made and documented numerous technical changes and improvements to my website
 - Finally got the idea for <code style="white-space: nowrap;">/interests</code> pages out into the wild and [made a directory](https://chrisburnell.github.io/interests-directory/) for folks to join
 - Extremely thankful to have had a lot of fun conversations with friends as we supported each other in ideating and writing (and coping!) over the month
-- Discovered more than a handful of excellent blogs and the wonderful people behind them that I’ve since added to [my blogroll](/blogroll/)—check out a [list of participators on Anne Studivant’s website](https://weblog.anniegreens.lol/weblog-posting-month-2024/participators)
+- Discovered more than a handful of excellent blogs and the wonderful people behind them that I’ve since added to [my blogroll](/blogroll/)—check out a [list of participators on Anne Studivant’s website](https://web.archive.org/web/20241109010318/https://weblog.anniegreens.lol/weblog-posting-month-2024/participators)
 
 <h2 id="stats">Some stats</h2>
 
@@ -104,6 +104,6 @@ Based on [my stats page](/stats/), this month’s posts account for a whopping *
 
 --------
 
-Huge thanks for [Anne Studivant](https://weblog.anniegreens.lol) for organising this event.
+Huge thanks for [Anne Studivant](https://web.archive.org/web/20250709024810/https://weblog.anniegreens.lol/) for organising this event.
 
 Whether you read all my Weblog Posting Month posts or only a few, thank you for reading, and I’ll see you again next year!
