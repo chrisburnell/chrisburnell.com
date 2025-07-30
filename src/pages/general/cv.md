@@ -133,7 +133,7 @@ Passionate about the open web, having published over {{ technical_articles_count
 
 - Built and maintained the conference websites, including a design refresh in 2018 and codebase refresh in 2021, as well as extensive work with APIs to automate many organisational tasks for the conference.
 
-**Annual conference websites:** [2018](https://2018.stateofthebrowser.com), [2019](https://2019.stateofthebrowser.com), [2021](https://2021.stateofthebrowser.com), [2022](https://2022.stateofthebrowser.com), [2023](https://2023.stateofthebrowser.com), [2024](https://2024.stateofthebrowser.com), [2025](https://2025.stateofthebrowser.com), <a disabled>2026 (TBA)</a>
+**Annual conference websites:** [2018](https://2018.stateofthebrowser.com), [2019](https://2019.stateofthebrowser.com), [2021](https://2021.stateofthebrowser.com), [2022](https://2022.stateofthebrowser.com), [2023](https://2023.stateofthebrowser.com), [2024](https://2024.stateofthebrowser.com), [2025](https://2025.stateofthebrowser.com), [2026](https://2026.stateofthebrowser.com)
 
 <div class=" [ role ] " style="margin-block-start: var(--size-large);">
     <h3>Technical Writer</h3>
