@@ -7,18 +7,24 @@
 
 // Apply the Dark color scheme when the media query matches
 @media (prefers-color-scheme: dark) {
-	:root:not(:has([name="color-scheme"] [value*="light"]:checked), .light, [data-color-scheme*="light"]) {
-		@media not print {
-			@include mixins.theme-dark;
+	@media not print {
+		:root:not(
+			:has([name="color-scheme"] [value*="light"]:checked),
+			[data-color-scheme*="light"],
+			.light
+		) {
+			color-scheme: dark;
+			@include mixins.dark-styles;
 		}
 	}
 }
 
 // Apply the Dark color scheme when it has been set manually (visitor, author)
-:root:has([name="color-scheme"] [value*="dark"]:checked):not(.light, [data-color-scheme*="light"]),
-[data-color-scheme*="dark"],
-.dark {
-	@media not print {
-		@include mixins.theme-dark;
+@media not print {
+	:root:has([name="color-scheme"] [value*="dark"]:checked):not(.light, [data-color-scheme*="light"]),
+	[data-color-scheme*="dark"],
+	.dark {
+		color-scheme: dark;
+		@include mixins.dark-styles;
 	}
 }

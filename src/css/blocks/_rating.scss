@@ -21,7 +21,7 @@
 	}
 
 	&::before {
-		color: var(--rating-background-color, functions.h(yeti));
+		color: var(--rating-background-color, light-dark(var(--color-yeti), var(--color-kaiser)));
 	}
 
 	&::after {

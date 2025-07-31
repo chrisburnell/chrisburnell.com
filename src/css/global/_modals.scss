@@ -13,7 +13,7 @@
 :is(dialog, [popover]) {
 	--flow-space: var(--size-medium-large);
 
-	background-color: color-mix(in oklab, functions.h(bear), functions.h(snowy));
+	background-color: var(--background-color, light-dark(color-mix(in oklab, var(--color-bear), var(--color-snowy)), color-mix(in oklab, var(--color-thunder), var(--color-mineshaft) 80%)));
 	color: inherit;
 	max-inline-size: 100vi;
 	padding: var(--size-medium-large) var(--size-small-medium);

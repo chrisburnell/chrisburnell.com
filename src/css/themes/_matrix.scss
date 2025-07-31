@@ -37,6 +37,7 @@
 :root:has([name="theme"] [value*="matrix"]:checked),
 [data-theme*="matrix"],
 .matrix {
-	@include mixins.theme-dark;
+	color-scheme: dark;
+	@include mixins.dark-styles;
 	@include theme-matrix;
 }

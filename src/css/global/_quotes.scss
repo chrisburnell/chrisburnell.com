@@ -37,7 +37,7 @@ blockquote {
 	}
 
 	cite {
-		color: functions.h(kaiser);
+		color: light-dark(var(--color-kaiser), var(--color-yeti));
 		display: block;
 		margin-block-start: var(--size-medium);
 		text-align: end;

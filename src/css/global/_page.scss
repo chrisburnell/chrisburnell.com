@@ -7,17 +7,17 @@
 
 html {
 	color-scheme: light;
-	background-color: functions.h(kaiser);
-	scrollbar-color: functions.h(raven) functions.h(snowy);
-	accent-color: functions.h(raven);
+	background-color: var(--color-kaiser);
+	scrollbar-color: var(--color-raven) light-dark(var(--color-snowy), var(--color-mineshaft));
+	accent-color: var(--color-raven);
 	font-size: 100%;
 	font-variant: common-ligatures proportional-nums;
 	hanging-punctuation: first allow-end last;
 }
 
 body {
-	background-color: color-mix(in oklab, functions.h(bear), functions.h(snowy) 90%);
-	color: functions.h(kaiser);
+	background-color: light-dark(color-mix(in oklab, var(--color-bear), var(--color-snowy) 90%), color-mix(in oklab, var(--color-mineshaft), var(--color-wolf) 40%));
+	color: light-dark(var(--color-kaiser), var(--color-yeti));
 	display: grid;
 	grid-template-rows:
 		[header-start]

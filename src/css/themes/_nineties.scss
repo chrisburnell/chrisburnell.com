@@ -106,6 +106,7 @@
 	}
 
 	.table {
+		background-color: color-mix(in oklab, var(--color-thunder), var(--color-mineshaft) 80%);
 		padding-block: 1em;
 	}
 
@@ -128,6 +129,7 @@
 :root:has([name="theme"] [value*="nineties"]:checked),
 [data-theme*="nineties"],
 .nineties {
-	@include mixins.theme-dark;
+	color-scheme: dark;
+	@include mixins.dark-styles;
 	@include theme-nineties;
 }

@@ -21,13 +21,13 @@
 
 .box,
 #{collections.$box} {
-	background-color: var(--box-background-color, color-mix(in oklab, functions.h(bear), functions.h(snowy)));
+	background-color: var(--box-background-color, light-dark(color-mix(in oklab, functions.h(bear), functions.h(snowy)), color-mix(in oklab, functions.h(thunder), functions.h(mineshaft) 80%)));
 	color: var(--box-color, inherit);
 	max-inline-size: var(--box-max-inline-size, 100%) !important;
 	padding: var(--box-padding, var(--size-gutter));
 	margin-inline: auto;
 	border-width: 0;
-	border-block-start: var(--size-border-thin) solid var(--box-border-color, functions.h(raven));
+	border-block-start: var(--size-border-thin) solid var(--box-border-color, light-dark(var(--color-raven), functions.h(raven, alpha)));
 	border-radius: var(--border-radius, var(--size-border-thin));
 	box-shadow: var(--box-shadow, var(--box-shadow-low));
 	text-align: start;
@@ -44,7 +44,7 @@
 	}
 
 	#{collections.$anchor} {
-		color: functions.h(bowhead);
+		color: light-dark(var(--color-bowhead), var(--color-highland));
 	}
 }
 
@@ -55,18 +55,18 @@
 }
 
 .box--success {
-	--box-background-color: #{functions.h(conifer, delta)};
-	--box-border-color: #{functions.h(conifer)};
+	--box-background-color: light-dark(#{functions.h(conifer, delta)}, color-mix(in oklab, var(--color-mineshaft), var(--color-conifer) 10%));
+	--box-border-color: var(--color-conifer);
 }
 
 .box--warning {
-	--box-background-color: #{functions.h(aspen, delta)};
-	--box-border-color: #{functions.h(aspen)};
+	--box-background-color: light-dark(#{functions.h(aspen, delta)}, color-mix(in oklab, var(--color-mineshaft), var(--color-aspen) 10%));
+	--box-border-color: var(--color-aspen);
 }
 
 .box--error {
-	--box-background-color: #{functions.h(maple, delta)};
-	--box-border-color: #{functions.h(maple)};
+	--box-background-color: light-dark(#{functions.h(maple, delta)}, color-mix(in oklab, var(--color-mineshaft), var(--color-maple) 10%));
+	--box-border-color: var(--color-maple);
 }
 
 .box.line-length,

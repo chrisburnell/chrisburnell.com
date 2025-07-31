@@ -8,7 +8,7 @@
 
 pre[class*="language-"] {
 	--flow-space: var(--size-large);
-	background-color: functions.h(mineshaft);
+	background-color: light-dark(var(--color-mineshaft), var(--color-thunder));
 	border-block-start: var(--size-border-thin) solid var(--border-color, functions.h(raven));
 	padding: var(--size-gap) var(--size-gutter) 1em;
 	border-radius: var(--border-radius, var(--size-border-thin));

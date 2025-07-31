@@ -47,7 +47,7 @@ figure {
 	}
 
 	& > a figcaption {
-		color: functions.h(nickel);
+		color: light-dark(var(--color-nickel), var(--color-yeti));
 		@include mixins.italic;
 	}
 }

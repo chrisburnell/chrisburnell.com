@@ -12,13 +12,17 @@
 	--padding-inline: var(--size-small);
 
 	max-inline-size: 100%;
-	color: functions.h(kaiser);
+	color: light-dark(var(--color-kaiser), var(--color-yeti));
 	display: block;
 	margin-block-start: var(--size-gap);
 	font-weight: var(--font-weight-semibold);
 
 	@media print {
 		display: none;
+	}
+
+	li::marker {
+		color: light-dark(var(--color-bowhead), var(--color-yeti));
 	}
 
 	#{collections.$anchor} {

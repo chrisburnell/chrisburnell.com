@@ -186,18 +186,18 @@ progress {
 
 // For some reason, ::selection and ::target-text don't play well together
 ::selection {
-	background-color: functions.h(wolf);
+	background-color: light-dark(var(--color-wolf), var(--color-highland));
 	background-image: none;
 	background-clip: initial;
-	color: functions.h(snowy);
+	color: light-dark(var(--color-snowy), var(--color-mineshaft));
 	-webkit-text-fill-color: initial;
 	text-shadow: none;
 }
 ::target-text {
-	background-color: functions.h(wolf);
+	background-color: light-dark(var(--color-wolf), var(--color-highland));
 	background-image: none;
 	background-clip: initial;
-	color: functions.h(snowy);
+	color: light-dark(var(--color-snowy), var(--color-mineshaft));
 	-webkit-text-fill-color: initial;
 	text-shadow: none;
 }

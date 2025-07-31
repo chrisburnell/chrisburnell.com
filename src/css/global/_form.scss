@@ -35,10 +35,10 @@ input,
 select,
 textarea {
 	box-sizing: inherit !important;
-	background-color: functions.h(snowy);
-	color: functions.h(thunder);
+	background-color: light-dark(var(--color-snowy), var(--color-thunder));
+	color: light-dark(var(--color-thunder), var(--color-yeti));
 	padding: 0 0.4em;
-	border: var(--size-border-thin) solid functions.h(yeti);
+	border: var(--size-border-thin) solid light-dark(var(--color-yeti), var(--color-kaiser));
 	border-radius: var(--border-radius, var(--size-border-default));
 	transition: border-color var(--transition-duration) var(--transition-function);
 
@@ -48,7 +48,7 @@ textarea {
 	}
 
 	&:not([disabled]):hover {
-		border-color: functions.h(coyote);
+		border-color: light-dark(var(--color-coyote), var(--color-bowhead));
 	}
 
 	&:not([disabled]):focus {
@@ -109,7 +109,7 @@ textarea {
 
 select {
 	appearance: none;
-	background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='50' fill='%232b2b2b'><polygon points='0,0 100,0 50,50'/></svg>");
+	background-image: light-dark(url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='50' fill='%232b2b2b'><polygon points='0,0 100,0 50,50'/></svg>"), url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='50' fill='%23dddddd'><polygon points='0,0 100,0 50,50'/></svg>"));
 	background-position: right var(--size-tiny) center;
 	background-repeat: no-repeat;
 	background-size: var(--size-small);

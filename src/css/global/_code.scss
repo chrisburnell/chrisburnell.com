@@ -27,6 +27,10 @@
 	font-weight: var(--font-weight-regular);
 }
 
+:is(blockquote, code, samp, kbd) {
+	background-color: light-dark(inherit, functions.h(raven, gamma));
+}
+
 kbd {
 	border: 1px solid currentColor;
 	font-size: 0.8em;
@@ -36,7 +40,7 @@ kbd {
 }
 
 var {
-	color: functions.h(bowhead);
+	color: light-dark(var(--color-bowhead), var(--color-highland));
 	font-size: inherit;
 	font-style: normal;
 	font-variation-settings: normal;

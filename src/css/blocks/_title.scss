@@ -20,7 +20,7 @@
 
 	&:not(.title--positive, .title--negative) .p-name {
 		@media not print {
-			background-image: linear-gradient(to bottom, var(--color-kaiser), var(--color-bowhead));
+			background-image: linear-gradient(to bottom, light-dark(var(--color-kaiser), var(--color-snowy)), light-dark(var(--color-bowhead), var(--color-highland)));
 			background-clip: text;
 			-webkit-text-fill-color: transparent;
 			box-decoration-break: clone;

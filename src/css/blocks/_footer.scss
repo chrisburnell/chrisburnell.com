@@ -8,10 +8,8 @@
 @use "../abstracts/mixins";
 
 .footer {
-	--background-color: #{functions.h(mineshaft)};
-
 	container: footer / inline-size;
-	background-color: var(--background-color);
+	background-color: var(--background-color, light-dark(var(--color-mineshaft), color-mix(in oklab, var(--color-thunder), var(--color-mineshaft) 80%)));
 	padding-block: var(--size-large);
 	border-block-start: var(--size-border-thin) solid var(--border-color, functions.h(raven));
 	z-index: var(--z-index-menu);

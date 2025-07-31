@@ -17,7 +17,7 @@
 		transition: transform var(--transition-duration) var(--transition-function);
 	}
 
-	&:is(:hover, :focus, :active) {
+	&[href]:is(:hover, :focus, :active) {
 		background: none !important;
 
 		&,

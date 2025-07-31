@@ -30,7 +30,7 @@ h2 #{collections.$anchor}:not(:hover, :focus, :active) {
 
 // Fragment Anchors inside Headings
 .fragment-anchor {
-	color: functions.h(nickel);
+	color: light-dark(var(--color-nickel), var(--color-yeti));
 	padding-inline: var(--size-small);
 	position: absolute;
 	inset-block-start: 50%;

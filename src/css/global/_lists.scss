@@ -25,7 +25,7 @@
 		padding-inline-start: var(--size-medium);
 
 		&::marker {
-			color: functions.h(bowhead);
+			color: light-dark(var(--color-bowhead), var(--color-yeti));
 			font-family: var(--font-family-sans);
 			font-style: normal;
 			font-variation-settings: normal;
