@@ -1,0 +1,28 @@
+{
+  "dir": "ltr",
+  "lang": "{{ site.locale }}",
+  "default_locale": "{{ site.locale }}",
+  "name": "clamp() Calculator",
+  "short_name": "clamp() Calculator",
+  "description": "Handy little tool for calculating viewport/container-based clamped values for use in CSS",
+  "display": "standalone",
+  "orientation": "any",
+  "start_url": "{{ site.url + '/clamp-calculator/' }}",
+  "homepage_url": "{{ site.url }}",
+  "theme_color": "{{ designTokens['colors-hex'] | keyValue('raven') }}",
+  "background_color": "{{ designTokens['colors-hex'] | keyValue('mineshaft') }}",
+  "background": {
+    "persistent": false
+  },
+  "icons": [
+    {
+      "src": "/images/raven.svg",
+      "sizes": "any"
+    },
+    {
+      "src": "/images/favicon.ico",
+      "type": "image/ico",
+      "sizes": "16x16 32x32 48x48 64x64"
+    }
+  ]
+}
