@@ -98,6 +98,7 @@ export default {
 			url: "https://weather.chrisburnell.com",
 			data: {
 				date: "2020-02-20T12:00:00+0000",
+				updated: "2025-07-30T14:43:54-0300",
 				title: "Weather",
 				description:
 					"Not the most interesting of project titles, this is a personalised weather web app.",

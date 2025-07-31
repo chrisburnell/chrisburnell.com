@@ -42,7 +42,7 @@
 		<link rel="me" href="https://github.com/{{ author.github }}">{% endif %}
 
 		<link rel="author" href="/humans.txt">
-		<link rel="manifest" href="/site.webmanifest">
+		<link rel="manifest" href="{{ webmanifest | default('/site.webmanifest') }}">
 
 		<meta name="author" content="{{ author.name }}">
 		<meta name="description" content="{{ meta_description | safe }}">

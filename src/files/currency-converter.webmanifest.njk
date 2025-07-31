@@ -1,0 +1,28 @@
+{
+  "dir": "ltr",
+  "lang": "{{ site.locale }}",
+  "default_locale": "{{ site.locale }}",
+  "name": "Currency Converter",
+  "short_name": "Currency Converter",
+  "description": "Simple utility to convert between a couple of different currencies",
+  "display": "standalone",
+  "orientation": "any",
+  "start_url": "{{ site.url + '/currency-converter/' }}",
+  "homepage_url": "{{ site.url }}",
+  "theme_color": "{{ designTokens['colors-hex'] | keyValue('raven') }}",
+  "background_color": "{{ designTokens['colors-hex'] | keyValue('mineshaft') }}",
+  "background": {
+    "persistent": false
+  },
+  "icons": [
+    {
+      "src": "/images/raven.svg",
+      "sizes": "any"
+    },
+    {
+      "src": "/images/favicon.ico",
+      "type": "image/ico",
+      "sizes": "16x16 32x32 48x48 64x64"
+    }
+  ]
+}
