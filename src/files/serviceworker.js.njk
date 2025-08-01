@@ -3,42 +3,33 @@
  * @author {{ author.name }} <{{ author.email }}>
  */
 
-"use strict"
+"use strict";
 
 // Set up the caches
-const ASSETS_CACHE = "assets::{{ pkg.version }}"
-const IMAGES_CACHE = "images"
-const CORE_PAGES_CACHE = "core-pages"
-const PAGES_CACHE = "pages"
-const CACHES = [
-	ASSETS_CACHE,
-	IMAGES_CACHE,
-	CORE_PAGES_CACHE,
-	PAGES_CACHE,
-]
+const ASSETS_CACHE = "assets::{{ pkg.version }}";
+const IMAGES_CACHE = "images";
+const CORE_PAGES_CACHE = "core-pages";
+const PAGES_CACHE = "pages";
+const CACHES = [ASSETS_CACHE, IMAGES_CACHE, CORE_PAGES_CACHE, PAGES_CACHE];
 
 // Represents the maximum number of items in each cache (except ASSETS_CACHE)
-const CACHE_SIZE = 30
+const CACHE_SIZE = 30;
 
 // Represents the maximum amount of time to wait for the network
-const TIMEOUT = 5000
+const TIMEOUT = 5000;
 
 // Define some reusable Regex patterns
-const ASSETS_REGEX = /\.(css|ics|js|json|pdf|txt|ttf|woff|woff2|xml|xsl)/
-const IMAGES_REGEX = /\.(avif|gif|ico|jpe?g|png|svg|webp)/
+const ASSETS_REGEX = /\.(css|ics|js|json|pdf|txt|ttf|woff|woff2|xml|xsl)/;
+const IMAGES_REGEX = /\.(avif|gif|ico|jpe?g|png|svg|webp)/;
 
 // Assets that *must* be cached
-const REQUIRED_ASSETS = []
+const REQUIRED_ASSETS = [];
 
 // Assets that are cached but non-blocking
-const OPTIONAL_ASSETS = [
-	"/fonts/proxima-vara-subset.woff2",
-]
+const OPTIONAL_ASSETS = ["/fonts/proxima-vara-subset.woff2"];
 
 // Images that are cached but non-blocking
-const OPTIONAL_IMAGES = [
-	"/images/raven.svg",
-]
+const OPTIONAL_IMAGES = ["/images/raven.svg"];
 
 // Pages that are always cached
 const CORE_PAGES = [
@@ -52,7 +43,7 @@ const CORE_PAGES = [
 	"/privacy/",
 	"/projects/",
 	"/styleguide/",
-]
+];
 
 // Pages to ignore
 const IGNORE_PAGES = [
@@ -63,120 +54,112 @@ const IGNORE_PAGES = [
 	"/replies.xml",
 	"/rsvps.xml",
 	"/projects.xml",
-]
+];
 
 let updateAssetsCache = () => {
-	return caches.open(ASSETS_CACHE)
-		.then(cache => {
-			// These items won"t block the installation of the Service Worker
-			cache.addAll(OPTIONAL_ASSETS)
-			// These items must be cached for the Service Worker to complete installation
-			return cache.addAll(REQUIRED_ASSETS)
-		})
-}
+	return caches.open(ASSETS_CACHE).then((cache) => {
+		// These items won"t block the installation of the Service Worker
+		cache.addAll(OPTIONAL_ASSETS);
+		// These items must be cached for the Service Worker to complete installation
+		return cache.addAll(REQUIRED_ASSETS);
+	});
+};
 
 let updateImagesCache = () => {
-	return caches.open(IMAGES_CACHE)
-		.then(cache => {
-			// These items won't block the installation of the Service Worker
-			cache.addAll(OPTIONAL_IMAGES)
-		})
-}
+	return caches.open(IMAGES_CACHE).then((cache) => {
+		// These items won't block the installation of the Service Worker
+		cache.addAll(OPTIONAL_IMAGES);
+	});
+};
 
 let updateCorePagesCache = () => {
-	return caches.open(CORE_PAGES_CACHE)
-		.then(cache => {
-			// These items must be cached for the Service Worker to complete installation
-			return cache.addAll(CORE_PAGES)
-		})
-}
+	return caches.open(CORE_PAGES_CACHE).then((cache) => {
+		// These items must be cached for the Service Worker to complete installation
+		return cache.addAll(CORE_PAGES);
+	});
+};
 
 let stashInCache = (cacheName, request, response) => {
-	caches.open(cacheName)
-		.then(cache => cache.put(request, response))
-}
+	caches.open(cacheName).then((cache) => cache.put(request, response));
+};
 
 // Limit the number of items in a specified cache.
 let trimCache = (cacheName, maxItems) => {
-	caches.open(cacheName)
-		.then(cache => {
-			cache.keys()
-				.then(keys => {
-					if (keys.length > maxItems) {
-						cache.delete(keys[0])
-							.then(() => {
-								trimCache(cacheName, maxItems)
-							})
-					}
-				})
-		})
-}
+	caches.open(cacheName).then((cache) => {
+		cache.keys().then((keys) => {
+			if (keys.length > maxItems) {
+				cache.delete(keys[0]).then(() => {
+					trimCache(cacheName, maxItems);
+				});
+			}
+		});
+	});
+};
 
 // Remove caches whose name is no longer valid
 let clearOldCaches = () => {
-	return caches.keys()
-		.then(keys => {
-			return Promise.all(keys
-				.filter(key => !CACHES.includes(key))
-				.map(key => caches.delete(key))
-			)
-		})
-}
+	return caches.keys().then((keys) => {
+		return Promise.all(
+			keys
+				.filter((key) => !CACHES.includes(key))
+				.map((key) => caches.delete(key))
+		);
+	});
+};
 
-self.addEventListener("install", event => {
-	event.waitUntil(updateAssetsCache()
-		.then(updateImagesCache())
-		.then(updateCorePagesCache())
-		.then(() => self.skipWaiting())
-	)
-})
+self.addEventListener("install", (event) => {
+	event.waitUntil(
+		updateAssetsCache()
+			.then(updateImagesCache())
+			.then(updateCorePagesCache())
+			.then(() => self.skipWaiting())
+	);
+});
 
-self.addEventListener("activate", event => {
-	event.waitUntil(clearOldCaches()
-		.then(() => self.clients.claim())
-	)
-})
+self.addEventListener("activate", (event) => {
+	event.waitUntil(clearOldCaches().then(() => self.clients.claim()));
+});
 
 if (self.registration.navigationPreload) {
-	self.addEventListener("activate", event => {
-		event.waitUntil(self.registration.navigationPreload.enable())
-	})
+	self.addEventListener("activate", (event) => {
+		event.waitUntil(self.registration.navigationPreload.enable());
+	});
 }
 
-self.addEventListener("fetch", event => {
-	let request = event.request
-	let url = new URL(request.url)
+self.addEventListener("fetch", (event) => {
+	let request = event.request;
+	let url = new URL(request.url);
 
 	// Ignore requests which aren't to my own server
 	if (url.origin !== location.origin) {
-		return
+		return;
 	}
 
 	// Ignore non-GET requests
 	if (request.method !== "GET") {
-		return
+		return;
 	}
 
 	// Ignore particular URLs
 	if (IGNORE_PAGES.includes(url.pathname)) {
-		return
+		return;
 	}
 
-	const retrieveFromCache = caches.match(request)
+	const retrieveFromCache = caches.match(request);
 
 	// For HTML requests, try the network first, fall back to the cache, finally the offline page
 	// Warning: This can also match when the user navigates directly to an asset
 	if (request.headers.get("Accept").includes("text/html")) {
 		event.respondWith(
-			new Promise(resolveWithResponse => {
+			new Promise((resolveWithResponse) => {
 				const timer = setTimeout(() => {
 					// Timeout: CACHE
-					retrieveFromCache.then(responseFromCache => {
+					retrieveFromCache.then((responseFromCache) => {
 						if (responseFromCache) {
-							resolveWithResponse(responseFromCache)
+							resolveWithResponse(responseFromCache);
 						}
-					})
-				}, TIMEOUT)
+					});
+				}, TIMEOUT);
 
 				const formattedRequest = new Request(request.url, {
 					method: "GET",
@@ -185,70 +168,73 @@ self.addEventListener("fetch", event => {
 					cache: request.cache,
 					credentials: request.credentials,
 					redirect: request.redirect,
-					type: request.type
-				})
-				const retrieveFromFetch = event.preloadResponse || fetch(formattedRequest)
+					type: request.type,
+				});
+				const retrieveFromFetch =
+					event.preloadResponse || fetch(formattedRequest);
 
-				retrieveFromFetch.then(responseFromFetch => {
-					// NETWORK
-					clearTimeout(timer)
-					let copy = responseFromFetch.clone()
-					// If the response contains a redirect, ignore the URL
-					if (responseFromFetch.type === "opaqueredirect") {
-						resolveWithResponse(responseFromFetch)
-					}
-					// Stash a copy of this page in the PAGES cache if the
-					// Content-Type that comes back from the response matches
-					else if (copy.headers.get("Content-Type").includes("text/html")) {
-						try {
-							event.waitUntil(
-								stashInCache(CORE_PAGES.includes(url.pathname) ? CORE_PAGES_CACHE : PAGES_CACHE, request, copy)
-							)
+				retrieveFromFetch
+					.then((responseFromFetch) => {
+						// NETWORK
+						clearTimeout(timer);
+						let copy = responseFromFetch.clone();
+						// If the response contains a redirect, ignore the URL
+						if (responseFromFetch.type === "opaqueredirect") {
+							resolveWithResponse(responseFromFetch);
 						}
-						catch(error) {
-							console.error(error)
+						// Stash a copy of this page in the PAGES cache if the
+						// Content-Type that comes back from the response matches
+						else if (copy.headers.get("Content-Type").includes("text/html")) {
+							try {
+								event.waitUntil(
+									stashInCache(
+										CORE_PAGES.includes(url.pathname)
+											? CORE_PAGES_CACHE
+											: PAGES_CACHE,
+										request,
+										copy
+									)
+								);
+							} catch (error) {
+								console.error(error);
+							}
 						}
-					}
-					// Stash a copy of this page in the ASSETS cache
-					else if (request.url.match(ASSETS_REGEX)) {
-						try {
-							event.waitUntil(
-								stashInCache(ASSETS_CACHE, request, copy)
-							)
+						// Stash a copy of this page in the ASSETS cache
+						else if (request.url.match(ASSETS_REGEX)) {
+							try {
+								event.waitUntil(stashInCache(ASSETS_CACHE, request, copy));
+							} catch (error) {
+								console.error(error);
+							}
 						}
-						catch (error) {
-							console.error(error)
+						// Stash a copy of this asset in the IMAGES cache
+						else if (request.url.match(IMAGES_REGEX)) {
+							try {
+								event.waitUntil(stashInCache(IMAGES_CACHE, request, copy));
+							} catch (error) {
+								console.error(error);
+							}
 						}
-					}
-					// Stash a copy of this asset in the IMAGES cache
-					else if (request.url.match(IMAGES_REGEX)) {
-						try {
-							event.waitUntil(
-								stashInCache(IMAGES_CACHE, request, copy)
-							)
-						}
-						catch (error) {
-							console.error(error)
-						}
-					}
-					resolveWithResponse(responseFromFetch)
-				})
-				.catch((error) => {
-					clearTimeout(timer)
-					console.error(error)
-					// CACHE or OFFLINE PAGE FALLBACK
-					retrieveFromCache.then(responseFromCache => {
-						resolveWithResponse(responseFromCache || caches.match("/offline/"))
+						resolveWithResponse(responseFromFetch);
 					})
-				})
+					.catch((error) => {
+						clearTimeout(timer);
+						console.error(error);
+						// CACHE or OFFLINE PAGE FALLBACK
+						retrieveFromCache.then((responseFromCache) => {
+							resolveWithResponse(
+								responseFromCache || caches.match("/offline/")
+							);
+						});
+					});
 			})
-		)
-		return
+		);
+		return;
 	}
 
 	// For all other requests, look in the cache first, fall back to the network
 	event.respondWith(
-		retrieveFromCache.then(responseFromCache => {
+		retrieveFromCache.then((responseFromCache) => {
 			// CACHE
 			const formattedRequest = new Request(request.url, {
 				method: "GET",
@@ -257,55 +243,60 @@ self.addEventListener("fetch", event => {
 				cache: request.cache,
 				credentials: request.credentials,
 				redirect: request.redirect,
-				type: request.type
-			})
-			return responseFromCache || fetch(formattedRequest)
-			.then(responseFromFetch => {
-				// NETWORK
-				const copy = responseFromFetch.clone()
-				// If the response contains a redirect, ignore the URL
-				if (responseFromFetch.type === "opaqueredirect") {
-					return responseFromFetch
-				}
-				// Stash a copy of this asset in the ASSETS cache
-				else if (request.url.match(ASSETS_REGEX)) {
-					try {
-						event.waitUntil(
-							stashInCache(ASSETS_CACHE, request, copy)
-						)
-					}
-					catch (error) {
-						console.error(error)
-					}
-				}
-				// Stash a copy of this asset in the IMAGES cache
-				else if (request.url.match(IMAGES_REGEX)) {
-					try {
-						event.waitUntil(
-							stashInCache(IMAGES_CACHE, request, copy)
-						)
-					}
-					catch (error) {
-						console.error(error)
-					}
-				}
-				return responseFromFetch
-			})
-			.catch((error) => {
-				console.error(error)
-				// FALLBACK
-				// show an offline placeholder image
-				if (request.url.match(IMAGES_REGEX)) {
-					return new Response('<svg role="img" aria-labelledby="offline-title" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><title id="offline-title">Offline</title><g fill="none" fill-rule="evenodd"><path fill="#D8D8D8" d="M0 0h400v300H0z" /><text fill="#9B9B9B" font-family="Helvetica Neue,Arial,Helvetica,sans-serif" font-size="72" font-weight="bold"><tspan x="93" y="172">offline</tspan></text></g></svg>', {headers: {'Content-Type': 'image/svg+xml', 'Cache-Control': 'no-store'}})
-				}
-			})
+				type: request.type,
+			});
+			return (
+				responseFromCache ||
+				fetch(formattedRequest)
+					.then((responseFromFetch) => {
+						// NETWORK
+						const copy = responseFromFetch.clone();
+						// If the response contains a redirect, ignore the URL
+						if (responseFromFetch.type === "opaqueredirect") {
+							return responseFromFetch;
+						}
+						// Stash a copy of this asset in the ASSETS cache
+						else if (request.url.match(ASSETS_REGEX)) {
+							try {
+								event.waitUntil(stashInCache(ASSETS_CACHE, request, copy));
+							} catch (error) {
+								console.error(error);
+							}
+						}
+						// Stash a copy of this asset in the IMAGES cache
+						else if (request.url.match(IMAGES_REGEX)) {
+							try {
+								event.waitUntil(stashInCache(IMAGES_CACHE, request, copy));
+							} catch (error) {
+								console.error(error);
+							}
+						}
+						return responseFromFetch;
+					})
+					.catch((error) => {
+						console.error(error);
+						// FALLBACK
+						// show an offline placeholder image
+						if (request.url.match(IMAGES_REGEX)) {
+							return new Response(
+								'<svg role="img" aria-labelledby="offline-title" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><title id="offline-title">Offline</title><g fill="none" fill-rule="evenodd"><path fill="#D8D8D8" d="M0 0h400v300H0z" /><text fill="#9B9B9B" font-family="Helvetica Neue,Arial,Helvetica,sans-serif" font-size="72" font-weight="bold"><tspan x="93" y="172">offline</tspan></text></g></svg>',
+								{
+									headers: {
+										"Content-Type": "image/svg+xml",
+										"Cache-Control": "no-store",
+									},
+								}
+							);
+						}
+					})
+			);
 		})
-	)
-})
+	);
+});
 
-self.addEventListener("message", event => {
+self.addEventListener("message", (event) => {
 	if (event.data.command === "trimCaches") {
-		trimCache(IMAGES_CACHE, CACHE_SIZE)
-		trimCache(PAGES_CACHE, CACHE_SIZE)
+		trimCache(IMAGES_CACHE, CACHE_SIZE);
+		trimCache(PAGES_CACHE, CACHE_SIZE);
 	}
-})
+});
