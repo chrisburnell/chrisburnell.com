@@ -45,6 +45,8 @@ button {
 	padding: var(--padding-block, var(--padding, var(--size-small))) var(--padding-inline, var(--padding, var(--size-medium)));
 	// accounts for outline-width + outline-offset
 	margin: var(--margin-block, var(--margin, calc(var(--size-border-thin) * 2))) var(--margin-inline, var(--margin, calc(var(--size-border-thin) * 2)));
+	outline: var(--outline-width, var(--size-border-thin)) solid transparent;
+	outline-offset: var(--outline-offset, var(--size-border-thin));
 	border-radius: var(--border-radius, var(--size-border-default));
 	box-shadow: var(--box-shadow, var(--box-shadow-low));
 	overflow: visible;
@@ -55,10 +57,10 @@ button {
 	text-align: center;
 	text-decoration: none;
 	touch-action: manipulation;
+	transition: outline-color var(--transition-duration) var(--transition-function);
 
 	&:not([disabled]):is(:hover, :focus, :active, [aria-selected="true"]) {
-		outline: var(--outline-width, var(--size-border-thin)) solid var(--outline-color, Highlight);
-		outline-offset: var(--outline-offset, var(--size-border-thin));
+		outline-color: var(--outline-color, Highlight);
 	}
 
 	&:not([disabled]):active {

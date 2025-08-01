@@ -34,25 +34,30 @@ textarea,
 input,
 select,
 textarea {
+	--outline-color: var(--color-raven);
 	box-sizing: inherit !important;
 	background-color: light-dark(var(--color-snowy), var(--color-thunder));
 	color: light-dark(var(--color-thunder), var(--color-yeti));
 	padding: 0 0.4em;
 	border: var(--size-border-thin) solid light-dark(var(--color-yeti), var(--color-kaiser));
 	border-radius: var(--border-radius, var(--size-border-default));
-	transition: border-color var(--transition-duration) var(--transition-function);
+	outline: var(--outline-width, var(--size-border-thin)) solid transparent;
+	outline-offset: var(--outline-offset, var(--size-border-thin));
+	transition:
+		border-color var(--transition-duration) var(--transition-function),
+		outline-color var(--transition-duration) var(--transition-function);
 
 	&[disabled] {
 		@include mixins.non-interactive;
 		opacity: var(--opacity-beta);
 	}
 
-	&:not([disabled]):hover {
-		border-color: light-dark(var(--color-coyote), var(--color-bowhead));
+	&:not([disabled], :focus):hover {
+		border-color: var(--outline-color, Highlight);
 	}
 
 	&:not([disabled]):focus {
-		border-color: functions.h(raven);
+		outline-color: var(--outline-color, Highlight);
 		z-index: var(--z-index-above);
 	}
 
@@ -75,8 +80,6 @@ input {
 		margin-block-end: calc(var(--size-border-thin) * 2);
 		// correct odd appearance in Chrome and Safari
 		-webkit-appearance: textfield;
-		// correct the outline style in Safari
-		outline-offset: -2px;
 
 		&::-webkit-search-cancel-button,
 		&::-webkit-search-decoration {
