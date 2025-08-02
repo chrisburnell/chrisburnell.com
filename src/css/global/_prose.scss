@@ -122,6 +122,7 @@ hr {
 	max-inline-size: 20ch;
 	block-size: var(--size-border-thin);
 	display: block;
+	padding: 0 !important;
 	border: 0;
 	margin: var(--rule-space, var(--size-gigantic)) auto !important;
 	position: relative;
