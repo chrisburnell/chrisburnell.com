@@ -6,10 +6,10 @@ export const description = `I’m <span class=" [ canada ] ">Chris Burnell</span
 export const catchphrase =
 	"We were riding the crest of a high and meaningless wave";
 export const url = DEV_MODE
-	? "https://chrisburnell.com"
-	: "https://dev.chrisburnell.com";
+	? "https://dev.chrisburnell.com"
+	: "https://chrisburnell.com";
 export const repository = "chrisburnell.com";
-export const branch = DEV_MODE ? "main" : "development";
+export const branch = DEV_MODE ? "development" : "main";
 export const dir = "ltr";
 export const locale = "en";
 export const localeSpecific = "en-GB";
