@@ -1,4 +1,4 @@
-import { DEV_MODE } from "env.js";
+import { DEV_MODE } from "./env.js";
 
 export const title = "Chris Burnell";
 export const tagline = `<span class=" [ canada ] ">Ravenous</span> for CSS`;
