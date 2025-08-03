@@ -9,7 +9,7 @@ on:
       - main
 
 concurrency:
-  group: review
+  group: review-live
   cancel-in-progress: true
 
 jobs:
