@@ -11,7 +11,7 @@ runs:
         path: |
           .cache
           _site
-        key: dev-site-cache
+        key: site-cache-dev
 
     - name: Build website
       run: npm run build-development
