@@ -3,7 +3,7 @@
 	{# External files (local dev live reload will refresh without page reload) -#}
 	<link rel="stylesheet" href="{% getBundleFileUrl 'css', 'critical' %}">
 {%- else %}
-	{# Inlined CSS (fastest site performance in production) -#}
+	{# Inlined CSS (fastest site performance on live) -#}
 	<style>{% getBundle 'css', 'critical' %}</style>
 {%- endif %}
 

@@ -1,11 +1,15 @@
+import { DEV_MODE } from "env.js";
+
 export const title = "Chris Burnell";
 export const tagline = `<span class=" [ canada ] ">Ravenous</span> for CSS`;
 export const description = `I’m <span class=" [ canada ] ">Chris Burnell</span>, a <span class="p-job-title">Front End Developer</span> / Software Engineer based in <span class=" [ canada ] [ p-locality ] ">Halifax, Canada</span>. <wbr>This is where I think, write, and share my passion for front end development and the web.`;
 export const catchphrase =
 	"We were riding the crest of a high and meaningless wave";
-export const url = "https://chrisburnell.com";
+export const url = DEV_MODE
+	? "https://chrisburnell.com"
+	: "https://dev.chrisburnell.com";
 export const repository = "chrisburnell.com";
-export const branch = "main";
+export const branch = DEV_MODE ? "main" : "development";
 export const dir = "ltr";
 export const locale = "en";
 export const localeSpecific = "en-GB";

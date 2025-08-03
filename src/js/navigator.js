@@ -1,4 +1,8 @@
-if (navigator.serviceWorker && !/Headless/.test(navigator.userAgent)) {
+if (
+	navigator.serviceWorker &&
+	!/Headless/.test(navigator.userAgent) &&
+	!new URLSearchParams(window.location.search).has("nosw")
+) {
 	navigator.serviceWorker
 		.register("/serviceworker.js")
 		.then((registration) => {
@@ -29,6 +33,4 @@ if (navigator.serviceWorker && !/Headless/.test(navigator.userAgent)) {
 			});
 		}
 	});
-} else {
-	console.log("Service Workers are not supported in your browser.");
 }

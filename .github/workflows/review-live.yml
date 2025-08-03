@@ -1,17 +1,20 @@
-name: Push Deploy
+name: Branch Review
 
 on:
   push:
+    branches-ignore:
+      - main
+  pull_request:
     branches:
       - main
 
 concurrency:
-  group: deploy
+  group: review
   cancel-in-progress: true
 
 jobs:
   build:
-    name: Push Deploy
+    name: Branch Build Test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -40,23 +43,3 @@ jobs:
 
       - name: Check Build
         uses: ./.github/actions/check
-
-      - name: Install SSH Key
-        uses: shimataro/ssh-key-action@v2
-        with:
-          key: ${{ secrets.DEPLOY_KEY }}
-          known_hosts: "unnecessary"
-
-      - name: Copy files to server
-        run: |
-          ssh-keyscan -p ${{ secrets.DEPLOY_PORT }} -H ${{ secrets.DEPLOY_HOST }} >> ~/.ssh/known_hosts
-          rsync -az -e "ssh -p ${{ secrets.DEPLOY_PORT }}" --delete --exclude="audio" --exclude="fonts" --exclude="static" --size-only ./_site/ ${{ secrets.DEPLOY_USERNAME }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_PATH }}html
-
-      - name: Process on server
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.DEPLOY_HOST }}
-          port: ${{ secrets.DEPLOY_PORT }}
-          username: ${{ secrets.DEPLOY_USERNAME }}
-          key: ${{ secrets.DEPLOY_KEY }}
-          script: "${{ secrets.DEPLOY_PATH }}${{ secrets.DEPLOY_FILE }}"

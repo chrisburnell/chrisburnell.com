@@ -3,7 +3,7 @@
 	{# External files (local dev live reload will refresh without page reload) -#}
 	<script src="{% getBundleFileUrl 'js', 'critical' %}"></script>
 {%- else %}
-	{# Inlined (fastest site performance in production) -#}
+	{# Inlined (fastest site performance on live) -#}
 	<script>{% getBundle 'js', 'critical' %}</script>
 {%- endif %}
 

@@ -37,7 +37,8 @@
   "main": "index.html",
   "scripts": {
     "build": "cross-env NODE_OPTIONS=--max-old-space-size=8192 npx @11ty/eleventy",
-    "build-production": "npm run setup; cross-env NODE_OPTIONS=--max-old-space-size=8192 GENERATE_OG_IMAGES=true npx @11ty/eleventy",
+    "build-live": "npm run setup; cross-env NODE_OPTIONS=--max-old-space-size=8192 GENERATE_OG_IMAGES=true npx @11ty/eleventy",
+    "build-development": "npm run setup; cross-env NODE_OPTIONS=--max-old-space-size=8192 DEV_MODE=true GENERATE_OG_IMAGES=true npx @11ty/eleventy",
     "cli": "node cli/index.js wizard",
     "wizard": "npm run cli",
     "calculate-css-complexity": "node cli/index.js calculateCSSComplexity",
