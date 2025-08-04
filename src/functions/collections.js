@@ -337,7 +337,7 @@ export const getRSVPString = (data) => {
 };
 
 /**
- * @param {string} value
+ * @param {string} url
  * @returns {string}
  */
 export const getInternalTarget = (url) => {

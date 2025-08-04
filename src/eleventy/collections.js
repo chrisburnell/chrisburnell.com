@@ -15,8 +15,10 @@ let cachedCollections = {};
 /**
  * @param {object[]} collection
  * @param {string} tag
+ * @param {function} fn
+ * @param {string} collectionName
  * @param {boolean} limit
- * @returns
+ * @returns {object[]}
  */
 const filterCollection = (
 	collection,

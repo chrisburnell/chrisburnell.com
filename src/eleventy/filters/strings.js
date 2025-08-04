@@ -56,7 +56,7 @@ export const disjunction = (strings) => {
 
 /**
  * @param {string} string
- * @return {string}
+ * @returns {string}
  */
 export const supertitle = (string) => {
 	let formatted = string

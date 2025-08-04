@@ -34,7 +34,7 @@ const decaNumbers = [
 /**
  * @param {string} string
  * @param {boolean} [lower]
- * @return {string}
+ * @returns {string}
  */
 export const capitalize = (string, lower = false) => {
 	return (lower ? string.toLowerCase() : string).replace(

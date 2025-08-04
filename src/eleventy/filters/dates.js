@@ -57,14 +57,14 @@ export const ordinal = (number) => {
 /**
  * @param {string} dateString
  * @param {string} [format]
- * @return {string}
+ * @returns {string}
  */
 export const friendlyDate = (dateString, format) =>
 	formatDatetime(dateString, format);
 
 /**
  * @param {string} dateString
- * @return {string}
+ * @returns {string}
  */
 export const friendlyDateLong = (dateString) => {
 	return `${formatDatetime(dateString, {
