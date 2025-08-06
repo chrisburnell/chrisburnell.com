@@ -32,7 +32,7 @@ jobs:
         uses: ./.github/actions/test
 
       - name: Build
-        uses: ./.github/actions/build
+        uses: ./.github/actions/build-live
         env:
           NODE_OPTIONS: "--max_old_space_size=8192"
           LASTFM_API_TOKEN: ${{ secrets.LASTFM_API_TOKEN }}
