@@ -18,7 +18,7 @@ post_includes:
 
 In my teenage years, forums were *all the jam*. It’s a bit of a shame that their popularity has waned since social media entered the scene because forums foster slower and more thoughtful conversations, in *my* opinion, at least. I was a member of many forums dedicated to many topics, including Nintendo games, The Legend of Zelda, Star Wars, and pixel-art. I made some of my first online friends through these forums.
 
-<aside role="complementary"><p>Despite their not being as popular nowadays, forums aren’t dead! I’m a member of some wonderful forums that I’m happy to say are not just alive and kicking but buzzing with activity and growing. The <a href="https://discourse.32bit.cafe" rel="external noopener">32-Bit Café forum</a>, in particular, is full of great people, and I visit so often that it’s one of the very few tabs that are pinned in my browser!</p></aside>
+<aside><p>Despite their not being as popular nowadays, forums aren’t dead! I’m a member of some wonderful forums that I’m happy to say are not just alive and kicking but buzzing with activity and growing. The <a href="https://discourse.32bit.cafe" rel="external noopener">32-Bit Café forum</a>, in particular, is full of great people, and I visit so often that it’s one of the very few tabs that are pinned in my browser!</p></aside>
 
 Back in 2007, around the beginning of my journey into web development, I co-founded a small community of folks passionate about video games and creating media about them, and I was in charge of our website that hosted all of our community’s content, a completely-bespoke and hand-written mish-mash of HTML, CSS, MySQL databases, and PHP.
 

@@ -1,7 +1,7 @@
 import { AssetCache } from "@11ty/eleventy-fetch";
 import caniuse from "caniuse-api";
 import { createRequire } from "node:module";
-import browserFeatures from "../../data/browserFeatures.js";
+import browserFeatures from "./browserFeatures.js";
 import browsersByType from "./browsersByType.js";
 import { cacheDurations } from "./site.js";
 const require = createRequire(import.meta.url);

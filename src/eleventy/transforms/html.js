@@ -13,7 +13,7 @@ export default async function (value, outputPath) {
 		const tocHeadings = $(".generate-toc h2:not(.no-fragment)");
 		if (tocHeadings.length) {
 			let tocHtml = `
-				<aside class=" [ toc ] "" data-pagefind-ignore>
+				<div class=" [ toc ] "" data-pagefind-ignore>
 					<is-land>
 						<details-utils force-close="(max-width: 850px)" force-restore>
 							<details open class=" [ table-of-contents ] ">
@@ -38,7 +38,7 @@ export default async function (value, outputPath) {
 						</details-utils>
 						<template data-island="once"><script src="/js/components/details-utils.js"></script></template>
 					</is-land>
-				</aside>`;
+				</div>`;
 			$(tocHtml).insertBefore(".content");
 			$(".generate-toc").removeClass("generate-toc");
 		}
@@ -72,9 +72,6 @@ export default async function (value, outputPath) {
 
 		// Make sure <ul> elements are accessible even with `list-style: none`
 		$("ul").attr("role", "list");
-
-		// Make sure <aside> elements have a `complementary` role
-		$("aside").attr("role", "complementary");
 
 		// Make <pre> code blocks keyboard-accessible by adding `tabindex="0"`
 		$("pre > code").attr("tabindex", 0);

@@ -17,7 +17,7 @@ window.loadIndieConfig = (function () {
 	handleConfig = function () {
 		config = config || {};
 
-		configFrame.parentNode.removeChild(configFrame);
+		configFrame.remove();
 		configFrame = undefined;
 
 		window.removeEventListener("message", parseConfig);

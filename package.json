@@ -35,35 +35,35 @@
   ],
   "private": true,
   "main": "index.html",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "build": "cross-env NODE_OPTIONS=--max-old-space-size=8192 npx @11ty/eleventy",
-    "build-live": "npm run setup; cross-env NODE_OPTIONS=--max-old-space-size=8192 GENERATE_OG_IMAGES=true npx @11ty/eleventy",
     "build-development": "npm run setup; cross-env NODE_OPTIONS=--max-old-space-size=8192 DEV_MODE=true GENERATE_OG_IMAGES=true npx @11ty/eleventy",
-    "cli": "node cli/index.js wizard",
-    "wizard": "npm run cli",
+    "build-live": "npm run setup; cross-env NODE_OPTIONS=--max-old-space-size=8192 GENERATE_OG_IMAGES=true npx @11ty/eleventy",
     "calculate-css-complexity": "node cli/index.js calculateCSSComplexity",
     "check": "node cli/index.js check",
-    "checks": "npm run check",
     "check-datetimes": "node cli/index.js checkDates",
     "check-links": "node cli/index.js checkLinks",
+    "checks": "npm run check",
     "clean": "npx rimraf .cache && npx rimraf _site",
+    "cli": "node cli/index.js wizard",
     "create-search-index": "npx pagefind --site \"_site\" --glob \"**/*.html\"",
     "css": "npx sass src/css:_site/css --style=expanded --no-source-map --color",
-    "postcss": "npx postcss _site/css/**/*.css --replace --no-map",
     "debug": "cross-env NODE_OPTIONS=--max-old-space-size=8192 DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
     "lint": "npx eslint src/**/*.js",
     "now": "cross-env NODE_OPTIONS=--max-old-space-size=8192 npx @11ty/eleventy --ignore-initial --incremental --serve",
+    "postcss": "npx postcss _site/css/**/*.css --replace --no-map",
     "pregenerate": "npm run setup; cross-env NODE_OPTIONS=--max-old-space-size=8192 PREGENERATE_IMAGES=true npx @11ty/eleventy",
     "prettier": "npx prettier --write src",
     "setup": "npm run tokens; npm run prettier; npx browserslist@latest --update-db; npm run css",
     "start": "cross-env NODE_OPTIONS=--max-old-space-size=8192 npx @11ty/eleventy --incremental --serve",
     "test": "npx vitest run",
-    "tokens": "npx json-to-scss './src/eleventy/data/designTokens/*.json' ./src/css/generated/_tokens.scss; npx prettier --write src/css/generated/_tokens.scss"
+    "tokens": "npx json-to-scss './src/eleventy/data/designTokens/*.json' ./src/css/generated/_tokens.scss; npx prettier --write src/css/generated/_tokens.scss",
+    "wizard": "npm run cli"
   },
   "keywords": [],
-  "engines": {
-    "node": ">=18"
-  },
   "dependencies": {
     "@11ty/eleventy": "3.1.0",
     "@11ty/eleventy-fetch": "^5.1.0",
@@ -148,6 +148,11 @@
     "release-it": "^19.0.4",
     "rimraf": "^6.0.1",
     "vitest": "^3.2.4"
+  },
+  "imports": {
+    "#data": "./src/eleventy/data/*.js",
+    "#filters": "./src/eleventy/filters/*.js",
+    "#functions": "./src/functions/*.js"
   },
   "type": "module"
 }

@@ -54,26 +54,50 @@ const filterCollection = (
 	return filteredCollection;
 };
 
+/**
+ * @param {object[]} collection
+ * @returns {object[]}
+ */
 export const pages = (collection) => {
 	return filterCollection(collection, "page");
 };
 
+/**
+ * @param {object[]} collection
+ * @returns {object[]}
+ */
 export const posts = (collection) => {
 	return filterCollection(collection, "post");
 };
 
+/**
+ * @param {object[]} collection
+ * @returns {object[]}
+ */
 export const blogPosts = (collection) => {
 	return filterCollection(collection, "blog");
 };
 
+/**
+ * @param {object[]} collection
+ * @returns {object[]}
+ */
 export const pinnedPosts = (collection) => {
 	return filterCollection(collection, "pinned");
 };
 
+/**
+ * @param {object[]} collection
+ * @returns {object[]}
+ */
 export const projects = (collection) => {
 	return filterCollection(collection, "project");
 };
 
+/**
+ * @param {object[]} collection
+ * @returns {object[]}
+ */
 export const drafts = (collection) => {
 	if ("drafts" in cachedCollections) {
 		return cachedCollections["drafts"];
@@ -91,10 +115,18 @@ export const drafts = (collection) => {
 	return filteredCollection;
 };
 
+/**
+ * @param {object[]} collection
+ * @returns {object[]}
+ */
 export const writings = (collection) => {
 	return filterCollection(collection, "writing");
 };
 
+/**
+ * @param {object[]} collection
+ * @returns {object[]}
+ */
 export const features = (collection) => {
 	return filterCollection(
 		collection,
@@ -106,6 +138,10 @@ export const features = (collection) => {
 	);
 };
 
+/**
+ * @param {object[]} collection
+ * @returns {object[]}
+ */
 export const attendances = (collection) => {
 	if ("attendances" in cachedCollections) {
 		return cachedCollections["attendances"];
@@ -125,6 +161,10 @@ export const attendances = (collection) => {
 	return filteredCollection;
 };
 
+/**
+ * @param {object[]} collection
+ * @returns {object[]}
+ */
 export const checkins = (collection) => {
 	return filterCollection(
 		collection,
@@ -138,6 +178,10 @@ export const checkins = (collection) => {
 	);
 };
 
+/**
+ * @param {object[]} collection
+ * @returns {object[]}
+ */
 export const replies = (collection) => {
 	return filterCollection(
 		collection,
@@ -151,6 +195,10 @@ export const replies = (collection) => {
 	);
 };
 
+/**
+ * @param {object[]} collection
+ * @returns {object[]}
+ */
 export const notesWithoutReplies = (collection) => {
 	return filterCollection(
 		collection,
@@ -162,6 +210,10 @@ export const notesWithoutReplies = (collection) => {
 	);
 };
 
+/**
+ * @param {object[]} collection
+ * @returns {object[]}
+ */
 export const rsvps = (collection) => {
 	return filterCollection(
 		collection,
@@ -183,6 +235,10 @@ export const rsvps = (collection) => {
 	);
 };
 
+/**
+ * @param {object[]} collection
+ * @returns {object[]}
+ */
 export const rsvpsToday = (collection) => {
 	return filterCollection(
 		collection,
@@ -211,6 +267,10 @@ export const rsvpsToday = (collection) => {
 	);
 };
 
+/**
+ * @param {object[]} collection
+ * @returns {object[]}
+ */
 export const rsvpsUpcoming = (collection) => {
 	return filterCollection(
 		collection,
@@ -249,6 +309,10 @@ export const rsvpsUpcoming = (collection) => {
 	);
 };
 
+/**
+ * @param {object[]} collection
+ * @returns {object[]}
+ */
 export const onThisDay = (collection) => {
 	// Blog posts made on this day and month in previous years.
 
@@ -279,6 +343,10 @@ export const onThisDay = (collection) => {
 	return filteredCollection;
 };
 
+/**
+ * @param {object[]} collection
+ * @returns {object[]}
+ */
 export const popular = (collection) => {
 	// "Popular" sorting is done by totalling Webmentions.
 
@@ -307,6 +375,10 @@ export const popular = (collection) => {
 	return filteredCollection;
 };
 
+/**
+ * @param {object[]} collection
+ * @returns {object[]}
+ */
 export const hot = (collection) => {
 	// "Hot" sorting is done by determining the exponential moving average
 	// as a function of Webmentions across time.

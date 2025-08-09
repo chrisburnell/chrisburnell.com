@@ -11,12 +11,9 @@
 
 ///
 /// Return an OKLCH color
-///
 /// @param {String} $value - key from `color` map
 /// @param {String} $opacity [null] - key from `opacity` map
-///
 /// @throw Error if no parameter is passed.
-///
 /// @return {Color}
 ///
 @function h($name, $opacity: null) {
@@ -28,11 +25,8 @@
 
 ///
 /// Test if `$value` is a valid direction
-///
-/// @param {*} $value - Value to test
-///
+/// @param {String} $value - Value to test
 /// @throw Error if no parameter is passed.
-///
 /// @return {Bool}
 ///
 @function is-direction($value) {
@@ -49,11 +43,8 @@
 
 ///
 /// Test if `$value` is a valid corner or side
-///
-/// @param {*} $value - Value to test
-///
+/// @param {String} $value - Value to test
 /// @throw Error if no parameter is passed.
-///
 /// @return {Bool}
 ///
 $sides: (top, bottom, left, right);
@@ -73,11 +64,8 @@ $centers: (center, top-center, bottom-center, center-left, center-right);
 
 ///
 /// Test if `$value` is a valid length
-///
-/// @param {*} $value - Value to test
-///
+/// @param {String} $value - Value to test
 /// @throw Error if no parameter is passed.
-///
 /// @return {Bool}
 ///
 @function is-length($value) {
@@ -93,11 +81,8 @@ $centers: (center, top-center, bottom-center, center-left, center-right);
 
 ///
 /// Combine 3+ Maps
-///
-/// @param {*} $maps... - List of Maps
-///
+/// @param {Map[]} $maps... - List of Maps
 /// @throw Error if no parameter is passed.
-///
 /// @return {Map}
 ///
 @function map-multiple-merge($maps...) {
@@ -111,10 +96,8 @@ $centers: (center, top-center, bottom-center, center-left, center-right);
 
 ///
 /// Split `$string` into several parts using `$delimiter`.
-///
 /// @param {String} $string    - string to split
 /// @param {String} $delimiter ('') - string to use as a delimiter to split `$string`
-///
 /// @return {List}
 ///
 @function str-split($string, $delimiter) {
@@ -149,18 +132,14 @@ $centers: (center, top-center, bottom-center, center-left, center-right);
 
 ///
 /// Remap a number from one range to another
-///
 /// @param {Number} $number - Initial Value
 /// @param {Number} $ranges - 2/4 minimum/maximum values representing the ranges
-///
 /// @example scss
 ///   $variable: range-map(2, 4, 100);
 ///   // $variable: 50;
-///
 /// @example scss
 ///   $variable: range-map(68, 30, 160, 0, 100);
 ///   // $variable: 42.5;
-///
 /// @return {Number} Number re-mapped in new range
 ///
 @function range-map($number, $ranges...) {
@@ -196,9 +175,7 @@ $centers: (center, top-center, bottom-center, center-left, center-right);
 
 ///
 /// Unique Groups
-///
 /// @param {List|Map} $data - Data in List/Map format
-///
 /// @example scss
 ///   $list:
 ///     alpha,
@@ -220,10 +197,8 @@ $centers: (center, top-center, bottom-center, center-left, center-right);
 ///   // .from-beta-to-gamma {
 ///   //   color: initial;
 ///   // }
-///
 /// @throw Error if no parameter is passed.
 /// @throw Error if parameter passed is neither a List nor a Map.
-///
 /// @return {Map} Unique groups
 ///
 @function unique-groups($data, $size: 2) {
@@ -305,18 +280,14 @@ $centers: (center, top-center, bottom-center, center-left, center-right);
 
 ///
 /// Walk through a List with a Function
-///
 /// @param {List} $list - List to walk through
 /// @param {String} $function - Function to apply to all members
 /// @param {ArgList} $args - Extra parameters to pass to the function
-///
 /// @example scss
 ///   content: "#{walk(one two three, to-upper-case)}";
 ///   // content: "ONE TWO THREE";
-///
 /// @throw Error if no parameters are passed.
 /// @throw Error if `$function parameter passed does not match an existing function.
-///
 /// @return {List} Updated list
 ///
 @function walk($list, $function, $args...) {
@@ -337,7 +308,10 @@ $centers: (center, top-center, bottom-center, center-left, center-right);
 	@return $list;
 }
 
-// Strip unit from a number
+///
+/// @param {String} $number
+/// @return {Number}
+///
 @function strip-unit($number) {
 	@if math.is-unitless($number) {
 		@return $number;
@@ -345,6 +319,11 @@ $centers: (center, top-center, bottom-center, center-left, center-right);
 		@return $number / ($number * 0 + 1);
 	}
 }
+
+///
+/// @param {String} $number
+/// @return {Number}
+///
 @function strip-units($number) {
 	@return strip-unit($number);
 }

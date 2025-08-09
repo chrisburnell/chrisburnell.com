@@ -5,16 +5,17 @@ import {
 	getType,
 } from "@chrisburnell/eleventy-cache-webmentions";
 import merge from "deepmerge";
-import consoles from "../../data/consoles.js";
-import places from "../../data/places.js";
-import postingMethods from "../../data/postingMethods.js";
-import syndicationTargets from "../../data/syndicationTargets.js";
 import webmentionReplacements from "../config/webmentionReplacements.js";
+import consoles from "../data/consoles.js";
+import places from "../data/places.js";
+import postingMethods from "../data/postingMethods.js";
+import syndicationTargets from "../data/syndicationTargets.js";
 import { getHost } from "../filters/urls.js";
 
 /**
  * @param {number} number
  * @param {number} [decimals]
+ * @param {boolean} [stripWholeNumbers]
  * @returns {number}
  */
 export const maxDecimals = (number, decimals = 3, stripWholeNumbers = true) => {
@@ -25,7 +26,7 @@ export const maxDecimals = (number, decimals = 3, stripWholeNumbers = true) => {
 
 /**
  * @param {number} number
- * @param {number} [decimals]
+ * @param {number} [zeroes]
  * @returns {number}
  */
 export const padZeroes = (number, zeroes = 2) => {
@@ -57,6 +58,7 @@ export const keyValue = (object, key) => {
  * @param {object} object
  * @param {string} key
  * @param {any} check
+ * @param {boolean} [caseSensitive]
  * @returns {boolean}
  */
 export const keyValueEquals = (object, key, check, caseSensitive = true) => {
@@ -73,6 +75,7 @@ export const keyValueEquals = (object, key, check, caseSensitive = true) => {
  * @param {object[]} array
  * @param {string} key
  * @param {any} check
+ * @param {boolean} caseSensitive
  * @returns {object[]}
  */
 export const arrayKeyValueEquals = (array, key, check, caseSensitive) => {
@@ -157,6 +160,7 @@ export const toArray = (value) => {
 /**
  * @param {number} value
  * @param {number} multiple
+ * @param {boolean} [floor]
  * @returns {number}
  */
 export const toNearest = (value, multiple, floor = false) => {
@@ -183,7 +187,8 @@ export const rangeMap = (number, inMin, inMax, outMin, outMax, decimals) => {
 };
 
 /**
- * @param {*} string
+ * @param {string} string
+ * @param {number} decimals
  * @returns {number}
  */
 export const stringToPercent = (string, decimals = 1) => {
@@ -344,7 +349,7 @@ export const getPostingMethodTitle = (url) => {
 };
 
 /**
- * @param {string} value
+ * @param {string} url
  * @returns {string}
  */
 export const getSyndicationTitle = (url) => {

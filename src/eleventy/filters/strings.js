@@ -4,8 +4,8 @@ import he from "he";
 import Natural from "natural";
 import randomCase from "random-case";
 import truncate from "truncate-html";
-import capitalizers from "../../data/capitalizers.js";
 import markdown from "../config/markdown.js";
+import capitalizers from "../data/capitalizers.js";
 import { limits, locale } from "../data/site.js";
 dotenv.config({ quiet: true });
 

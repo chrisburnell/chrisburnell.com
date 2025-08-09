@@ -42,6 +42,7 @@ export const categoryFilter = (tags) => {
 
 /**
  * @param {object[]} tags
+ * @param {string[]} [filterList]
  * @returns {object[]}
  */
 export const tagFilter = (tags, filterList = ignoredTags) => {

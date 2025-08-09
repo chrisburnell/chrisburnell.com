@@ -1,4 +1,4 @@
-import mastodonInstances from "../data/mastodonInstances.js";
+import mastodonInstances from "../eleventy/data/mastodonInstances.js";
 
 /**
  * @param {object[]} array

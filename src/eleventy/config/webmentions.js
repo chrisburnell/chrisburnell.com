@@ -2,8 +2,8 @@ import dotenv from "dotenv";
 dotenv.config({ quiet: true });
 
 import { defaults } from "@chrisburnell/eleventy-cache-webmentions";
-import urlReplacements from "../../data/urlReplacements.js";
-import { cacheDurations, url as siteURL } from "../../eleventy/data/site.js";
+import { cacheDurations, url as siteURL } from "../data/site.js";
+import urlReplacements from "../data/urlReplacements.js";
 import { getHost } from "../filters/urls.js";
 import blocklist from "./blocklist.js";
 

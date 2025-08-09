@@ -1,11 +1,11 @@
 import EleventyFetch from "@11ty/eleventy-fetch";
-import breweries from "../data/breweries.js";
-import gamePublishers from "../data/gamePublishers.js";
-import mastodonInstances from "../data/mastodonInstances.js";
-import meetups from "../data/meetups.js";
-import publications from "../data/publications.js";
 import blogroll from "../eleventy/data/blogroll.js";
+import breweries from "../eleventy/data/breweries.js";
+import gamePublishers from "../eleventy/data/gamePublishers.js";
 import { nowEpoch } from "../eleventy/data/global.js";
+import mastodonInstances from "../eleventy/data/mastodonInstances.js";
+import meetups from "../eleventy/data/meetups.js";
+import publications from "../eleventy/data/publications.js";
 import {
 	cacheDurations,
 	favicon,
