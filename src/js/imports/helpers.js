@@ -90,7 +90,7 @@ export const formatDate = (date, includeWeekday = false) => {
  * Format a Time.
  * @param {DateTime} date
  * @param {boolean} [includeSeconds]
- * @param {boolean} [includeMerdiem]
+ * @param {boolean} [includeMeridiem]
  * @returns {string}
  */
 export const formatTime = (
@@ -115,7 +115,7 @@ export const formatTime = (
  * Perform an action based on the hash in the URL.
  * @param {string[]} hashes
  * @param {function} action
- * @returns false
+ * @returns {void}
  */
 export const actionFromHash = (hashes, action) => {
 	for (let hash of hashes) {

@@ -1,20 +1,20 @@
 name: Build
-description: Build the site for development
+description: Build the site for main
 
 runs:
   using: composite
   steps:
-    - name: Use the dev site cache
+    - name: Use the site cache
       id: site-cache
       uses: actions/cache@v4
       with:
         path: |
           .cache
           _site
-        key: site-cache-dev
+        key: site-cache
 
     - name: Build website
-      run: npm run build-development
+      run: npm run build-for-live
       shell: bash
 
     - name: Build search index

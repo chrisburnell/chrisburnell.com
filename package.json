@@ -40,8 +40,8 @@
   },
   "scripts": {
     "build": "cross-env NODE_OPTIONS=--max-old-space-size=8192 npx @11ty/eleventy",
-    "build-development": "npm run setup; cross-env NODE_OPTIONS=--max-old-space-size=8192 DEV_MODE=true GENERATE_OG_IMAGES=true npx @11ty/eleventy",
-    "build-live": "npm run setup; cross-env NODE_OPTIONS=--max-old-space-size=8192 GENERATE_OG_IMAGES=true npx @11ty/eleventy",
+    "build-for-dev": "npm run setup; cross-env NODE_OPTIONS=--max-old-space-size=8192 DEV_MODE=true GENERATE_OG_IMAGES=true npx @11ty/eleventy",
+    "build-for-live": "npm run setup; cross-env NODE_OPTIONS=--max-old-space-size=8192 GENERATE_OG_IMAGES=true npx @11ty/eleventy",
     "calculate-css-complexity": "node cli/index.js calculateCSSComplexity",
     "check": "node cli/index.js check",
     "check-datetimes": "node cli/index.js checkDates",
