@@ -29,7 +29,7 @@
 		backdrop-filter: none;
 	}
 
-	main,
+	body,
 	&.themed-section {
 		font-family: var(--font-family-sans);
 
@@ -58,6 +58,10 @@
 		max-inline-size: 100%;
 		block-size: 10px;
 		border-width: 0;
+	}
+
+	:is(.header, .footer) {
+		max-inline-size: var(--size-breakpoint-gigantic);
 	}
 
 	.wrap {
