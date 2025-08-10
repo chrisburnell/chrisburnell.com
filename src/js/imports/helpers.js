@@ -31,7 +31,7 @@ export const getParameterByName = (name) => {
  * Remove disabled attributes from an element and optionally attach a click
  * event callback function.
  * @param {HTMLElement} element
- * @param {function} [action]
+ * @param {Function} [action]
  */
 export const enableElement = (element, action) => {
 	if (element !== null) {
@@ -114,7 +114,7 @@ export const formatTime = (
 /**
  * Perform an action based on the hash in the URL.
  * @param {string[]} hashes
- * @param {function} action
+ * @param {Function} action
  * @returns {void}
  */
 export const actionFromHash = (hashes, action) => {

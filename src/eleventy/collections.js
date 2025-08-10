@@ -15,7 +15,7 @@ let cachedCollections = {};
 /**
  * @param {object[]} collection
  * @param {string} tag
- * @param {function} fn
+ * @param {Function} fn
  * @param {string} collectionName
  * @param {boolean} limit
  * @returns {object[]}
