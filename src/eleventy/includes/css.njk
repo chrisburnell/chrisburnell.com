@@ -4,7 +4,7 @@
 	<link rel="stylesheet" href="{% getBundleFileUrl 'css', 'critical' %}">
 {%- else %}
 	{# Inlined CSS (fastest site performance on live) -#}
-	<style>{% getBundle 'css', 'critical' %}</style>
+	<style>{% getBundle 'css', 'critical' %} /*# sourceURL=inline:critical.css */</style>
 {%- endif %}
 
 {# Deferred CSS -#}
