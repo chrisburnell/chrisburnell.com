@@ -28,6 +28,44 @@ export default [
 		],
 	},
 	{
+		id: "css-if",
+		language: "css",
+		supports: "selector(if(media(print): black;))",
+		type: "selectors",
+		key: "if",
+		title: ":if()",
+		description: "Returns different values based on a conditional checks.",
+		links: [
+			"[Official Specification](https://drafts.csswg.org/css-values-5/#if-notation)",
+		],
+	},
+	// {
+	// 	id: "css-function",
+	// 	language: "css",
+	// 	supports: "selector(if(media(print): black;))", // TODO
+	// 	type: "selectors", // TODO
+	// 	key: "css-function",
+	// 	title: "@function",
+	// 	description:
+	// 		"Returns different values based on a conditional checks.",
+	// 	links: [
+	// 		"[Official Specification](https://drafts.csswg.org/css-mixins-1/#function-rule)",
+	// 	],
+	// },
+	// {
+	// 	id: "css-mixin",
+	// 	language: "css",
+	// 	supports: "selector(if(media(print): black;))", // TODO
+	// 	type: "selectors", // TODO
+	// 	key: "css-mixin",
+	// 	title: "@mixin",
+	// 	description:
+	// 		"“Import” properties and even whole selectors, by applying them within selectors.",
+	// 	links: [
+	// 		"[Official Specification](https://drafts.csswg.org/css-mixins-1/#function-rule)",
+	// 	],
+	// },
+	{
 		id: "css-nesting",
 		language: "css",
 		supports: "selector(& span)",
