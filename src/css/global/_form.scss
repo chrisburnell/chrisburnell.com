@@ -21,14 +21,14 @@ fieldset {
 	line-height: var(--line-height-default);
 
 	&[pattern]:invalid {
-		border-color: functions.h(maple) !important; // break through layers
+		border-color: var(--color-maple) !important; // break through layers
 	}
 }
 
 input,
 textarea,
 [contenteditable] {
-	caret-color: functions.h(raven);
+	caret-color: var(--color-raven);
 }
 
 input,

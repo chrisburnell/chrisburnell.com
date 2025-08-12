@@ -26,11 +26,11 @@
 
 	&::after {
 		background-color: inherit;
-		color: var(--rating-color, functions.h(aspen));
+		color: var(--rating-color, var(--color-aspen));
 		inline-size: 0;
 		text-shadow:
-			0 0 1px var(--rating-border, functions.h(nickel)),
-			0 1px 1px var(--rating-border, functions.h(nickel));
+			0 0 1px var(--rating-border, var(--color-nickel)),
+			0 1px 1px var(--rating-border, var(--color-nickel));
 		overflow: hidden;
 		position: absolute;
 		inset-block-start: 0;

@@ -52,7 +52,7 @@
 		&::before {
 			@include mixins.non-interactive;
 			content: "";
-			background-color: functions.h(raven);
+			background-color: var(--color-raven);
 			opacity: 0;
 			inline-size: 100%;
 			block-size: 0.375em;

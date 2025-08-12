@@ -18,7 +18,7 @@ details {
 	// add a border above the first non-summary child
 	&:not(.no-border) summary + * {
 		margin-block-start: var(--size-small);
-		border-block-start: var(--size-border-thin) solid color-mix(in oklab, currentColor, transparent 85%);
+		border-block-start: var(--size-border-thin) solid oklch(from currentColor l c h / 15%);
 		padding-block-start: var(--size-medium);
 	}
 }
@@ -30,7 +30,7 @@ summary {
 	display: list-item;
 	font-weight: var(--font-weight-semibold);
 	text-decoration: underline;
-	text-decoration-color: color-mix(in oklab, currentColor, transparent 85%);
+	text-decoration-color: oklch(from currentColor l c h / 15%);
 	text-decoration-thickness: var(--size-border-thin);
 	text-decoration-skip-ink: auto;
 	text-underline-offset: 0.125em;
@@ -44,7 +44,7 @@ summary {
 	}
 
 	&:is(:hover, :focus, :active) {
-		text-decoration-color: functions.h(maple);
+		text-decoration-color: var(--color-maple);
 	}
 
 	[open] > & {

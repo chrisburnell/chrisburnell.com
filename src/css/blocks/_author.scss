@@ -65,7 +65,7 @@
 		&,
 		.anchor {
 			background-color: transparent;
-			text-decoration-color: functions.h(maple);
+			text-decoration-color: var(--color-maple);
 		}
 
 		&::before {

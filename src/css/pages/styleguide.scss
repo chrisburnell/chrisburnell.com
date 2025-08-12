@@ -4,11 +4,7 @@
 /// @link https://chrisburnell.com/styleguide/
 ////
 
-@use "sass:color";
-@use "sass:math";
-@use "../abstracts/functions";
 @use "../abstracts/mixins";
-@use "../generated/tokens";
 @use "../abstracts/collections";
 
 @layer pages {

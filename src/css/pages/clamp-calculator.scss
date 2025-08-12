@@ -4,10 +4,6 @@
 /// @link https://chrisburnell.com/clamp-calculator/
 ////
 
-@use "sass:color";
-@use "sass:math";
-@use "../generated/tokens";
-
 @layer pages {
 	.clamp-calculator__fieldset {
 		display: flex;

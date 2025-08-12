@@ -19,7 +19,7 @@
 	transition: border-color var(--transition-duration) var(--transition-function);
 
 	[href]:is(:hover, :focus, :active) & {
-		border-color: functions.h(maple);
+		border-color: var(--color-maple);
 	}
 
 	.grid article & {

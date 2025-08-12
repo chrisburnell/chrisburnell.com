@@ -9,7 +9,7 @@
 @use "../abstracts/mixins";
 
 #{collections.$anchor} {
-	--outline-color: #{functions.h(raven)};
+	--outline-color: var(--color-raven);
 
 	background-color: transparent;
 	color: light-dark(var(--color-bowhead), var(--color-highland));
@@ -17,7 +17,7 @@
 	overflow-wrap: break-word;
 	position: relative;
 	text-decoration: underline;
-	text-decoration-color: color-mix(in oklab, currentColor, transparent 85%);
+	text-decoration-color: oklch(from currentColor l c h / 15%);
 	text-decoration-thickness: var(--size-border-thin);
 	text-decoration-skip-ink: auto;
 	text-underline-offset: 0.125em;
@@ -35,15 +35,15 @@
 	}
 
 	&:not([disabled]):is(:hover, :focus, :active) {
-		text-decoration-color: functions.h(maple);
+		text-decoration-color: var(--color-maple);
 		text-underline-offset: 0.1875em;
 	}
 
 	&:not([disabled]):active {
 		--outline-offset: 0;
 
-		background-color: functions.h(maple);
-		color: functions.h(snowy) !important;
+		background-color: var(--color-maple);
+		color: var(--color-snowy) !important;
 		text-decoration-color: transparent;
 	}
 

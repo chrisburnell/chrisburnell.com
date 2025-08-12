@@ -8,6 +8,7 @@
 @use "sass:math";
 @use "sass:meta";
 @use "sass:string";
+@use "../generated/tokens";
 
 ///
 /// Return an OKLCH color
@@ -17,10 +18,20 @@
 /// @return {Color}
 ///
 @function h($name, $opacity: null) {
-	@if not $opacity {
-		@return var(--color-#{$name});
+	@if not $name {
+		@warn "`h()` expects one parameter.";
+		@return false;
 	}
-	@return color-mix(in oklab, var(--color-#{$name}), transparent calc(100% - var(--opacity-#{$opacity})));
+	$color: var(--color-#{$name});
+	@if not $opacity {
+		@return $color;
+	}
+	$type: meta.type-of($opacity);
+	@if $type == "number" {
+		@return oklch(from $color l c h / $opacity);
+	}
+	$opacity: map.get(tokens.$opacities, $opacity);
+	@return oklch(from $color l c h / $opacity);
 }
 
 ///

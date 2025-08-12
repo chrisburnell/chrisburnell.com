@@ -54,7 +54,7 @@ th {
 	line-height: var(--line-height-medium);
 
 	&:not(:empty) {
-		background-color: light-dark(color-mix(in oklab, functions.h(yeti), functions.h(snowy) 40%), var(--color-mineshaft));
+		background-color: light-dark(color-mix(in oklab, var(--color-yeti), var(--color-snowy) 40%), var(--color-mineshaft));
 		position: sticky;
 		z-index: var(--z-index-above);
 

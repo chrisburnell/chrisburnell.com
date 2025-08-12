@@ -60,7 +60,7 @@ export default {
 }
 ```
 
-<aside class=" [ flow ] " style="background-color: color-mix(in oklab, currentColor, transparent 95%); padding: var(--size-medium);">
+<aside class=" [ flow ] " style="background-color: oklch(from currentColor l c h / 95%); padding: var(--size-medium);">
 
 **Aside:** Let’s take a quick look at the folder structure for my posts:
 

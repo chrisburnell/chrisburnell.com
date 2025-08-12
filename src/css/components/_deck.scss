@@ -27,7 +27,7 @@
 		}
 	}
 	article + article {
-		border-block-start: var(--size-border-thin) solid functions.h(mineshaft, delta);
+		border-block-start: var(--size-border-thin) solid light-dark(functions.h(mineshaft, gamma), functions.h(yeti, delta));
 	}
 
 	h1 {

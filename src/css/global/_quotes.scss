@@ -7,7 +7,7 @@
 @use "../abstracts/mixins";
 
 blockquote {
-	background-color: functions.h(bear);
+	background-color: var(--color-bear);
 	inline-size: 100%;
 	max-inline-size: var(--size-line-length);
 	padding: var(--size-medium);

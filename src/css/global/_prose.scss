@@ -19,15 +19,15 @@
 :is(abbr, dfn, span)[title] {
 	@include mixins.italic;
 	text-decoration: underline;
-	text-decoration-color: functions.h(nickel);
+	text-decoration-color: var(--color-nickel);
 	text-decoration-style: dotted;
 	text-decoration-thickness: var(--size-border-thin);
 	cursor: help;
 }
 
 ins {
-	background-color: functions.h(conifer);
-	color: functions.h(snowy);
+	background-color: var(--color-conifer);
+	color: var(--color-snowy);
 	padding: var(--size-border-default);
 	border-radius: var(--border-radius, var(--size-border-default));
 	font-size: var(--font-size-default);
@@ -35,7 +35,7 @@ ins {
 }
 
 del {
-	text-decoration-color: functions.h(maple);
+	text-decoration-color: var(--color-maple);
 	text-decoration-thickness: var(--size-border-thin);
 }
 
@@ -44,10 +44,10 @@ s {
 }
 
 mark {
-	background-color: functions.h(aspen) !important;
+	background-color: var(--color-aspen) !important;
 	background-image: none;
 	background-clip: initial;
-	color: functions.h(mineshaft) !important;
+	color: var(--color-mineshaft) !important;
 	-webkit-text-fill-color: initial;
 	text-shadow: none;
 }
@@ -117,7 +117,7 @@ sup {
 }
 
 hr {
-	background-color: color-mix(in oklab, currentColor, transparent 85%);
+	background-color: oklch(from currentColor l c h / 15%);
 	inline-size: 100%;
 	max-inline-size: 20ch;
 	block-size: var(--size-border-thin);
@@ -131,7 +131,7 @@ hr {
 }
 
 aside:not([class]) {
-	background-color: color-mix(in oklab, transparent, var(--color-mineshaft) 20%);
+	background-color: oklch(from var(--color-mineshaft) l c h / 20%);
 	padding: var(--size-medium);
 	border-radius: var(--size-border-thin);
 }
@@ -144,29 +144,29 @@ progress {
 
 meter {
 	&::-webkit-meter-bar {
-		background-color: functions.h(nickel);
+		background-color: var(--color-nickel);
 	}
 
 	&::-webkit-meter-optimum-value {
-		background-color: functions.h(conifer);
+		background-color: var(--color-conifer);
 	}
 
 	&::-webkit-meter-suboptimum-value {
-		background-color: functions.h(aspen);
+		background-color: var(--color-aspen);
 	}
 
 	&::-webkit-meter-even-less-good-value {
-		background-color: functions.h(maple);
+		background-color: var(--color-maple);
 	}
 }
 
 progress {
 	&::-webkit-progress-bar {
-		background-color: functions.h(nickel);
+		background-color: var(--color-nickel);
 	}
 
 	&::-webkit-progress-value {
-		background-color: functions.h(raven);
+		background-color: var(--color-raven);
 	}
 }
 
@@ -178,8 +178,8 @@ progress {
 		@keyframes target {
 			0%,
 			33% {
-				background-color: functions.h(aspen);
-				color: functions.h(mineshaft);
+				background-color: var(--color-aspen);
+				color: var(--color-mineshaft);
 			}
 		}
 	}
@@ -204,11 +204,11 @@ progress {
 }
 
 ::spelling-error {
-	text-decoration: functions.h(maple) wavy underline;
+	text-decoration: var(--color-maple) wavy underline;
 }
 
 ::grammar-error {
-	text-decoration: functions.h(conifer) wavy underline;
+	text-decoration: var(--color-conifer) wavy underline;
 }
 
 .columns {

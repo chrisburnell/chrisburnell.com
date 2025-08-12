@@ -17,7 +17,7 @@
 	color: inherit;
 	max-inline-size: 100vi;
 	padding: var(--size-medium-large) var(--size-small-medium);
-	border: var(--size-border-default) solid functions.h(raven);
+	border: var(--size-border-default) solid var(--color-raven);
 	border-radius: var(--size-border-default);
 	box-shadow: var(--box-shadow-medium);
 	position: fixed;

@@ -11,7 +11,7 @@
 	container: footer / inline-size;
 	background-color: var(--background-color, light-dark(var(--color-mineshaft), color-mix(in oklab, var(--color-thunder), var(--color-mineshaft) 80%)));
 	padding-block: var(--size-large);
-	border-block-start: var(--size-border-thin) solid var(--border-color, functions.h(raven));
+	border-block-start: var(--size-border-thin) solid var(--border-color, var(--color-raven));
 	z-index: var(--z-index-menu);
 
 	@media print {
@@ -21,7 +21,7 @@
 	&,
 	#{collections.$anchor} {
 		&:not(:hover, :focus, :active) {
-			text-decoration-color: functions.h(kaiser);
+			text-decoration-color: var(--color-kaiser);
 		}
 	}
 
@@ -106,7 +106,7 @@
 	}
 
 	summary:not(:hover, :focus, :active) {
-		text-decoration-color: functions.h(kaiser);
+		text-decoration-color: var(--color-kaiser);
 	}
 
 	summary ~ * {

@@ -10,12 +10,12 @@
 	* {
 		// For some reason, ::selection and ::target-text don't play well together
 		&::selection {
-			background-color: functions.h(maple) !important;
-			color: functions.h(snowy) !important;
+			background-color: var(--color-maple) !important;
+			color: var(--color-snowy) !important;
 		}
 		&::target-text {
-			background-color: functions.h(maple) !important;
-			color: functions.h(snowy) !important;
+			background-color: var(--color-maple) !important;
+			color: var(--color-snowy) !important;
 		}
 	}
 }

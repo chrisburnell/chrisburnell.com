@@ -42,16 +42,16 @@
 }
 
 .supported {
-	background-color: functions.h(conifer);
-	color: functions.h(snowy);
+	background-color: var(--color-conifer);
+	color: var(--color-snowy);
 }
 
 .partial {
-	background-color: functions.h(aspen);
-	color: functions.h(thunder);
+	background-color: var(--color-aspen);
+	color: var(--color-thunder);
 }
 
 .unsupported {
-	background-color: functions.h(maple);
-	color: functions.h(snowy);
+	background-color: var(--color-maple);
+	color: var(--color-snowy);
 }

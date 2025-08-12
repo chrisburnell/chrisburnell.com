@@ -35,11 +35,11 @@ button {
 }
 
 #{collections.$button} {
-	--outline-color: #{functions.h(raven)};
+	--outline-color: var(--color-raven);
 
 	@include mixins.non-selectable;
-	background-color: functions.h(bowhead);
-	color: functions.h(snowy) !important;
+	background-color: var(--color-bowhead);
+	color: var(--color-snowy) !important;
 	min-inline-size: max(fit-content, var(--button-min-inline-size, 8em));
 	display: inline-block;
 	padding: var(--padding-block, var(--padding, var(--size-small))) var(--padding-inline, var(--padding, var(--size-medium)));
@@ -64,8 +64,8 @@ button {
 	}
 
 	&:not([disabled]):active {
-		background-color: functions.h(bowhead);
-		color: functions.h(bear);
+		background-color: var(--color-bowhead);
+		color: var(--color-bear);
 		transform: translateY(var(--size-border-default));
 
 		&::before {

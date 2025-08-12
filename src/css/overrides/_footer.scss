@@ -9,6 +9,6 @@
 .footer {
 	&,
 	#{collections.$anchor} {
-		color: functions.h(snowy);
+		color: var(--color-snowy);
 	}
 }

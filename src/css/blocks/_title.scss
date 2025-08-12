@@ -31,7 +31,7 @@
 :is(.title--positive, .title--negative) {
 	background-image: none;
 	background-clip: initial;
-	color: functions.h(snowy);
+	color: var(--color-snowy);
 
 	& > span {
 		padding: var(--size-tiny) var(--size-small);
@@ -39,9 +39,9 @@
 }
 
 .title--positive > span {
-	background-color: functions.h(conifer);
+	background-color: var(--color-conifer);
 }
 
 .title--negative > span {
-	background-color: functions.h(maple);
+	background-color: var(--color-maple);
 }

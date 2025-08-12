@@ -39,7 +39,7 @@
 }
 
 :is(.popover-settings-button, .popover-navigation-button) {
-	background-color: functions.h(wolf);
+	background-color: var(--color-wolf);
 	background-image: linear-gradient(160deg, var(--color-bowhead), var(--color-wolf));
 	display: grid;
 	place-items: center;
@@ -49,7 +49,7 @@
 
 	svg {
 		@include mixins.non-interactive;
-		fill: functions.h(snowy);
+		fill: var(--color-snowy);
 		min-inline-size: calc(var(--font-size-default) * var(--line-height-default));
 		min-block-size: calc(var(--font-size-default) * var(--line-height-default));
 		transition: transform var(--transition-duration) var(--transition-function);

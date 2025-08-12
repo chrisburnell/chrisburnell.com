@@ -9,14 +9,14 @@
 pre[class*="language-"] {
 	--flow-space: var(--size-large);
 	background-color: light-dark(var(--color-mineshaft), var(--color-thunder));
-	border-block-start: var(--size-border-thin) solid var(--border-color, functions.h(raven));
+	border-block-start: var(--size-border-thin) solid var(--border-color, var(--color-raven));
 	padding: var(--size-gap) var(--size-gutter) 1em;
 	border-radius: var(--border-radius, var(--size-border-thin));
 	box-shadow: var(--box-shadow, var(--box-shadow-medium));
 
 	// Labels
 	&::before {
-		color: functions.h(snowy);
+		color: var(--color-snowy);
 		position: absolute;
 		inset-block-start: var(--size-tiny);
 		inset-inline-start: var(--size-gutter);
@@ -25,7 +25,7 @@ pre[class*="language-"] {
 	}
 
 	code {
-		color: functions.h(snowy);
+		color: var(--color-snowy);
 		padding: 0;
 		line-height: var(--line-height-code);
 	}
@@ -41,40 +41,40 @@ pre.language-none {
 
 pre.language-bash::before {
 	content: "Terminal";
-	color: functions.h(yeti);
+	color: var(--color-yeti);
 }
 pre.language-css::before {
 	content: "CSS";
-	color: functions.h(css);
+	color: var(--color-css);
 }
 pre.language-html::before {
 	content: "HTML";
-	color: functions.h(html);
+	color: var(--color-html);
 }
 pre.language-javascript::before {
 	content: "JavaScript";
-	color: functions.h(javascript);
+	color: var(--color-javascript);
 }
 pre.language-json::before {
 	content: "JSON";
-	color: functions.h(json);
+	color: var(--color-json);
 }
 pre.language-liquid::before {
 	content: "Liquid";
-	color: functions.h(liquid);
+	color: var(--color-liquid);
 }
 pre.language-markdown::before {
 	content: "Markdown";
-	color: functions.h(snowy);
+	color: var(--color-snowy);
 }
 pre.language-nunjucks::before,
 pre.language-twig::before {
 	content: "Nunjucks";
-	color: functions.h(nunjucks);
+	color: var(--color-nunjucks);
 }
 pre.language-php::before {
 	content: "PHP";
-	color: functions.h(php);
+	color: var(--color-php);
 }
 // pre.language-plaintext::before,
 // pre.language-text::before {
@@ -83,15 +83,15 @@ pre.language-php::before {
 // }
 pre.language-scss::before {
 	content: "SCSS";
-	color: functions.h(scss);
+	color: var(--color-scss);
 }
 pre.language-webc::before {
 	content: "WebC";
-	color: functions.h(webc);
+	color: var(--color-webc);
 }
 pre.language-yaml::before {
 	content: "YAML";
-	color: functions.h(yaml);
+	color: var(--color-yaml);
 }
 
 /* Exceptions */

@@ -16,9 +16,9 @@
 	gap: 0.25lh;
 	padding-block: var(--size-tiny-min);
 	padding-inline: var(--size-tiny-max) var(--size-small-min);
-	border: var(--size-border-thin) solid functions.h(kaiser);
-	border-block-start-color: functions.h(nickel);
-	border-inline-start-color: functions.h(nickel);
+	border: var(--size-border-thin) solid var(--color-kaiser);
+	border-block-start-color: var(--color-nickel);
+	border-inline-start-color: var(--color-nickel);
 	border-radius: var(--size-border-thin);
 	font-size: var(--font-size-small-min);
 	font-weight: var(--font-weight-medium);
@@ -26,7 +26,7 @@
 	transition: border-color var(--transition-duration) var(--transition-function);
 
 	&:is(:hover, :focus, :active) {
-		border-color: functions.h(maple);
+		border-color: var(--color-maple);
 	}
 
 	& > :first-child {

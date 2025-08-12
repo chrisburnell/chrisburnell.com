@@ -17,7 +17,7 @@
 	}
 
 	&:is(html) {
-		scrollbar-color: functions.h(maple) functions.h(snowy);
+		scrollbar-color: var(--color-maple) var(--color-snowy);
 	}
 
 	.logo,
@@ -26,7 +26,7 @@
 	}
 
 	.navigation__list a::after {
-		background-color: functions.h(maple);
+		background-color: var(--color-maple);
 	}
 }
 

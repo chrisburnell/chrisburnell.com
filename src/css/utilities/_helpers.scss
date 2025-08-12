@@ -243,7 +243,7 @@
 .background--raven,
 .background--snowy,
 .background--yeti {
-	color: functions.h(thunder);
+	color: var(--color-thunder);
 }
 .background--bowhead,
 .background--conifer,
@@ -254,7 +254,7 @@
 .background--lynx,
 .background--thunder,
 .background--wolf {
-	color: functions.h(snowy);
+	color: var(--color-snowy);
 }
 @each $name, $color in tokens.$colors {
 	.background--#{$name} {
@@ -267,7 +267,7 @@
 }
 
 .size-example {
-	background-color: functions.h(raven);
+	background-color: var(--color-raven);
 	display: block;
 	box-shadow: inset 0 0 0 var(--size-border-thin) currentColor;
 }
@@ -303,18 +303,18 @@
 
 @keyframes block-shadow-inside {
 	from {
-		box-shadow: inset 0 -2em 2em -2em color-mix(in oklab, var(--color-shadow), transparent 60%);
+		box-shadow: inset 0 -2em 2em -2em oklch(from var(--color-shadow) l c h / 40%);
 	}
 	to {
-		box-shadow: inset 0 2em 2em -2em color-mix(in oklab, var(--color-shadow), transparent 60%);
+		box-shadow: inset 0 2em 2em -2em oklch(from var(--color-shadow) l c h / 40%);
 	}
 }
 @keyframes inline-shadow-inside {
 	from {
-		box-shadow: inset -2em 0 2em -2em color-mix(in oklab, var(--color-shadow), transparent 60%);
+		box-shadow: inset -2em 0 2em -2em oklch(from var(--color-shadow) l c h / 40%);
 	}
 	to {
-		box-shadow: inset 2em 0 2em -2em color-mix(in oklab, var(--color-shadow), transparent 60%);
+		box-shadow: inset 2em 0 2em -2em oklch(from var(--color-shadow) l c h / 40%);
 	}
 }
 @keyframes block-shadow-outside {
@@ -322,7 +322,7 @@
 		box-shadow: none;
 	}
 	to {
-		box-shadow: 0 2em 2em -2em color-mix(in oklab, var(--color-shadow), transparent 60%);
+		box-shadow: 0 2em 2em -2em oklch(from var(--color-shadow) l c h / 40%);
 	}
 }
 @keyframes inline-shadow-outside {
@@ -330,7 +330,7 @@
 		box-shadow: none;
 	}
 	to {
-		box-shadow: 2em 0 2em -2em color-mix(in oklab, var(--color-shadow), transparent 60%);
+		box-shadow: 2em 0 2em -2em oklch(from var(--color-shadow) l c h / 40%);
 	}
 }
 

@@ -13,10 +13,10 @@ h2 #{collections.$anchor}:not(:hover, :focus, :active) {
 
 // Skip to main content
 .skip-link {
-	--outline-color: #{functions.h(bowhead)};
+	--outline-color: var(--color-bowhead);
 
-	background-color: functions.h(bowhead);
-	color: functions.h(snowy);
+	background-color: var(--color-bowhead);
+	color: var(--color-snowy);
 	display: block;
 	padding: 1em 1.5em;
 	position: absolute;
@@ -65,7 +65,7 @@ h2 #{collections.$anchor}:not(:hover, :focus, :active) {
 	&:is(:hover, :focus, :active) {
 		@media not print {
 			background-color: transparent;
-			background-image: linear-gradient(to bottom, functions.h(raven), functions.h(maple));
+			background-image: linear-gradient(to bottom, var(--color-raven), var(--color-maple));
 			background-clip: text;
 			-webkit-text-fill-color: transparent;
 			box-decoration-break: clone;

@@ -11,7 +11,7 @@ post_includes:
 
 Just a short update today, as I’ve been pretty busy in the last few days with my nose to the grindstone, continuing my job search.
 
-<aside style="background-color: color-mix(in oklab, currentColor, transparent 95%); padding: var(--size-medium);">
+<aside style="background-color: oklch(from currentColor l c h / 95%); padding: var(--size-medium);">
     <p>I’m looking for roles in the Front End and/or Developer Relations space. If you think you might be able to help or have any leads, I’d love if you’d be so kind as to <a href="/about/#contact">get in touch with me</a>!</p>
 </aside>
 

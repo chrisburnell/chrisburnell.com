@@ -21,7 +21,7 @@
 
 .box,
 #{collections.$box} {
-	background-color: var(--box-background-color, light-dark(color-mix(in oklab, functions.h(bear), functions.h(snowy)), color-mix(in oklab, functions.h(thunder), functions.h(mineshaft) 80%)));
+	background-color: var(--box-background-color, light-dark(color-mix(in oklab, var(--color-bear), var(--color-snowy)), color-mix(in oklab, var(--color-thunder), var(--color-mineshaft) 80%)));
 	color: var(--box-color, inherit);
 	max-inline-size: var(--box-max-inline-size, 100%) !important;
 	padding: var(--box-padding, var(--size-gutter));

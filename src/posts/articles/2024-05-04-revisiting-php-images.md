@@ -130,7 +130,7 @@ $y = $y + $spacing + $blogCountSpace[1];
 imagettftext($image, $fontSize, $angle, $x, $y, $textColor, $fontFile, $blogCountText);
 ```
 
-The last step is to set the [`header`](https://www.php.net/manual/en/function.header.php) of our PHP file so it can be interpreted as a PNG image when requested in the browser and output the image we’ve created with the [`imagepng`](https://www.php.net/manual/en/function.imagepng.php) function.
+The last step is to set the [`header`](https://www.php.net/manual/en/functions.header.php) of our PHP file so it can be interpreted as a PNG image when requested in the browser and output the image we’ve created with the [`imagepng`](https://www.php.net/manual/en/function.imagepng.php) function.
 
 We’ll also use the ['imagedestroy'](https://www.php.net/manual/en/function.imagedestroy.php) function to free up any memory used by referencing and creating the two images we’ve dealt with in our code. *Note: this function is not required in PHP 8.0.0 and above.*
 

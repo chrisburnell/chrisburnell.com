@@ -47,7 +47,7 @@
 		}
 	}
 	.cover-anchor:is(:hover, :focus, :active) + h1 > a {
-		text-decoration-color: functions.h(maple) !important;
+		text-decoration-color: var(--color-maple) !important;
 	}
 
 	// Mimic an outline on .cover-anchor when h1 > a is viisbly focussed
