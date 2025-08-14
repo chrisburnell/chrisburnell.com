@@ -60,6 +60,7 @@ export const urls = {
 	speedlify: "https://speedlify.chrisburnell.com",
 	superfeedr: "https://chrisburnell.superfeedr.com",
 	switchboard: "https://switchboard.p3k.io",
+	treo: "https://treo.sh/sitespeed/chrisburnell.com",
 };
 
 export const conferences = {

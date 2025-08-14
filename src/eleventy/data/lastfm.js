@@ -18,10 +18,7 @@ const recentTracks = async function () {
 		if (!image || image.includes("2a96cbd8b46e442fc41c2b86b821562f.png")) {
 			image = "/images/default-album-cover.png";
 		}
-		return Object.assign({}, track, {
-			datetime: datetime,
-			imageUrl: image,
-		});
+		return { ...track, datetime: datetime, imageUrl: image };
 	});
 };
 
@@ -36,9 +33,7 @@ const topAlbums = async function () {
 		if (!image || image.includes("2a96cbd8b46e442fc41c2b86b821562f.png")) {
 			image = "/images/default-album-cover.png";
 		}
-		return Object.assign({}, album, {
-			imageUrl: image,
-		});
+		return { ...album, imageUrl: image };
 	});
 };
 
@@ -53,9 +48,7 @@ const topAlbumsAll = async function () {
 		if (!image || image.includes("2a96cbd8b46e442fc41c2b86b821562f.png")) {
 			image = "/images/default-album-cover.png";
 		}
-		return Object.assign({}, album, {
-			imageUrl: image,
-		});
+		return { ...album, imageUrl: image };
 	});
 };
 
@@ -70,9 +63,7 @@ const topArtists = async function () {
 		if (!image || image.includes("2a96cbd8b46e442fc41c2b86b821562f.png")) {
 			image = "/images/default-album-cover.png";
 		}
-		return Object.assign({}, artist, {
-			imageUrl: image,
-		});
+		return { ...artist, imageUrl: image };
 	});
 };
 
@@ -87,9 +78,7 @@ const topArtistsAll = async function () {
 		if (!image || image.includes("2a96cbd8b46e442fc41c2b86b821562f.png")) {
 			image = "/images/default-album-cover.png";
 		}
-		return Object.assign({}, artist, {
-			imageUrl: image,
-		});
+		return { ...artist, imageUrl: image };
 	});
 };
 

@@ -70,8 +70,8 @@
 								<div class=" [ person__meta ] ">
 									<a href="#response-{{ wmId }}" class=" [ person__permalink ] [ gamma  extrabold ] " title="Permalink to this response" tabindex="-1">#</a>
 									<a href="{{ authorUrl }}" class=" [ p-author  h-card  u-url ] " rel="external nofollow"><span class=" [ p-name ] ">{{ authorName }}</span></a>
-									<small>wrote on</small>
-									<a href="{{ wmURL }}" class=" [ u-url  u-{{ wmType }} ] " rel="external nofollow" title="Read externally"><time datetime="{{ wmDate | rfc3339Date }}" class=" [ dt-published ] ">{{ wmDate | friendlyDate | safe }}</time></a>
+									<small>wrote</small>
+									<a href="{{ wmURL }}" class=" [ u-url  u-{{ wmType }} ] " rel="external nofollow" title="Read externally"><relative-time><time datetime="{{ wmDate | rfc3339Date }}" class=" [ dt-published ] "><small>on</small> {{ wmDate | friendlyDate | safe }}</time></relative-time></a>
 								</div>
 								<div class=" [ e-content ] [ flow ] ">
 									{{ wmContent | safe }}

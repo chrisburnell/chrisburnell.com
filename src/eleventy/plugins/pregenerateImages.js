@@ -15,45 +15,35 @@ export default async function () {
 	const favicon_bw = await glob("./images/raven-bw.svg");
 	for (const f of [...favicon_colour, ...favicon_bw]) {
 		console.log(`Generating image varieties from: ${f}`);
-		await Image(
-			f,
-			Object.assign(
-				{
-					formats: ["avif", "webp", "png"],
-					widths: [16, 32, 48, 64, 128, 180, 192, 256, 310, 512],
-					sharpOptions: {
-						quality: 100,
-					},
-					filenameFormat: (id, src, width, format, options) => {
-						const extension = path.extname(src);
-						const name = path.basename(src, extension);
-						return `${name.replace(`raven`, `favicon-${width}`)}.${format}`;
-					},
-				},
-				options,
-			),
-		);
+		await Image(f, {
+			formats: ["avif", "webp", "png"],
+			widths: [16, 32, 48, 64, 128, 180, 192, 256, 310, 512],
+			sharpOptions: {
+				quality: 100,
+			},
+			filenameFormat: (id, src, width, format, options) => {
+				const extension = path.extname(src);
+				const name = path.basename(src, extension);
+				return `${name.replace(`raven`, `favicon-${width}`)}.${format}`;
+			},
+			...options,
+		});
 	}
 
 	const avatar = await glob("./images/avatar-full.jpeg");
 	for (const a of avatar) {
 		console.log(`Generating image varieties from: ${a}`);
-		await Image(
-			a,
-			Object.assign(
-				{
-					formats: ["avif", "webp", "jpeg"],
-					widths: [100, 200, 300, 400],
-					sharpOptions: {
-						quality: 100,
-					},
-					filenameFormat: (id, src, width, format, options) => {
-						return `avatar${width > 100 ? `@${width / 100}x` : ``}.${format}`;
-					},
-				},
-				options,
-			),
-		);
+		await Image(a, {
+			formats: ["avif", "webp", "jpeg"],
+			widths: [100, 200, 300, 400],
+			sharpOptions: {
+				quality: 100,
+			},
+			filenameFormat: (id, src, width, format, options) => {
+				return `avatar${width > 100 ? `@${width / 100}x` : ``}.${format}`;
+			},
+			...options,
+		});
 	}
 
 	const pixelated = await glob("./images/avatar-pixelated.png");
@@ -61,22 +51,17 @@ export default async function () {
 	const defaultAlbumCover = await glob("./images/default-album-cover.jpeg");
 	for (const g of [...pixelated, ...defaultProfile, ...defaultAlbumCover]) {
 		console.log(`Generating image varieties from: ${g}}`);
-		await Image(
-			g,
-			Object.assign(
-				{
-					formats: ["avif", "webp", "jpeg", "png"],
-					sharpOptions: {
-						quality: 100,
-					},
-					filenameFormat: (id, src, width, format, options) => {
-						const extension = path.extname(src);
-						const name = path.basename(src, extension);
-						return `${name}.${format}`;
-					},
-				},
-				options,
-			),
-		);
+		await Image(g, {
+			formats: ["avif", "webp", "jpeg", "png"],
+			sharpOptions: {
+				quality: 100,
+			},
+			filenameFormat: (id, src, width, format, options) => {
+				const extension = path.extname(src);
+				const name = path.basename(src, extension);
+				return `${name}.${format}`;
+			},
+			...options,
+		});
 	}
 }

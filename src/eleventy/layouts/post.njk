@@ -91,7 +91,7 @@ layout: base
 
 				{% if of_label -%}
 					<nav class=" [ grid ] [ navigator ] ">
-						<a href="{{ of_url }}" class=" [ button ] {% if mf_property %}[ u-{{ mf_property }} ] {% endif %}" rel="external noopener">{{ of_label }} →</a>
+						<a href="{{ of_url }}" class=" [ button ] {% if mf_property %}[ u-{{ mf_property }} ] {% endif %}" rel="external noopener">{{ of_label | safe }} →</a>
 					</nav>
 				{%- endif %}
 

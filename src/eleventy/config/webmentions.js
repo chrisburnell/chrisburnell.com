@@ -7,7 +7,7 @@ import urlReplacements from "../data/urlReplacements.js";
 import { getHost } from "../filters/urls.js";
 import blocklist from "./blocklist.js";
 
-export default Object.assign({}, defaults, {
+const config = {
 	domain: siteURL,
 	feed: `https://webmention.io/api/mentions.jf2?domain=${getHost(siteURL)}&token=${process.env.WEBMENTION_IO_TOKEN}`,
 	key: "children",
@@ -47,4 +47,6 @@ export default Object.assign({}, defaults, {
 	maximumHtmlText: "Mentioned this:",
 	allowlist: [],
 	blocklist: blocklist,
-});
+};
+
+export default { ...defaults, ...config };

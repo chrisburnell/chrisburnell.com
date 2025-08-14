@@ -21,7 +21,8 @@ export const _employer = {
 	url: "",
 };
 
-export default Object.assign({}, metadata, {
+export default {
+	...metadata,
 	firstname,
 	lastname,
 	shortname,
@@ -32,4 +33,4 @@ export default Object.assign({}, metadata, {
 	description,
 	pgp_styled,
 	_employer,
-});
+};
