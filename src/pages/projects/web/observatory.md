@@ -32,10 +32,10 @@ const container = document.getElementById("container");
 // Create a new Observatory instance
 const watcher = new Observatory({
     element: container,
-    onMutation: (mutations, observer) => {
+    onMutation: (mutations, observer, instance) => {
         console.log("DOM changed inside container", mutations);
     },
-    onStart: () => {
+    onStart: (instance) => {
         console.log("Observation started!");
     },
 });
