@@ -28,6 +28,7 @@ pre[class*="language-"] {
 		color: var(--color-snowy);
 		padding: 0;
 		line-height: var(--line-height-code);
+		white-space: pre;
 	}
 
 	.flow > * + & {

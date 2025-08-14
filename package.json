@@ -82,6 +82,7 @@
     "@chrisburnell/event-countdown": "^1.0.2",
     "@chrisburnell/inline-expand": "^0.0.2",
     "@chrisburnell/instant-photo": "^1.1.0",
+    "@chrisburnell/observatory": "^0.0.3",
     "@chrisburnell/paper-stamp": "^0.0.5",
     "@chrisburnell/pentatonic": "^1.1.4",
     "@chrisburnell/relative-time": "^1.0.6",

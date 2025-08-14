@@ -4,7 +4,7 @@
 	"plugins": ["prettier-plugin-jinja-template"],
 	"overrides": [
 		{
-			"files": "*.json",
+			"files": "*.{json,svg,yaml,yml}",
 			"options": {
 				"tabWidth": 2
 			}
@@ -13,12 +13,6 @@
 			"files": "*.njk",
 			"options": {
 				"parser": "jinja-template"
-			}
-		},
-		{
-			"files": "*.yml",
-			"options": {
-				"tabWidth": 2
 			}
 		}
 	]
