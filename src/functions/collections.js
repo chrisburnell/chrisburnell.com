@@ -45,7 +45,7 @@ const pages = await EleventyFetch("https://chrisburnell.com/all.json", {
 /**
  * @param {string} [title]
  * @param {string} [url]
- * @returns {null|string}
+ * @returns {null | string}
  */
 const getPerson = (title, url) => {
 	return allPeople.find((person) => {
@@ -128,7 +128,7 @@ export const notReply = (item) => {
 
 /**
  * @param {object} data
- * @returns {object|string}
+ * @returns {object | string}
  */
 export const getPropertyData = (data) => {
 	return (
@@ -154,7 +154,7 @@ export const getPropertyURL = (data) => {
 
 /**
  * @param {object} data
- * @returns {string|null}
+ * @returns {string | null}
  */
 export const getPropertyTitle = (data) => {
 	const propertyData = getPropertyData(data);
@@ -200,7 +200,7 @@ export const getAuthors = (data) => {
 };
 
 /**
- * @param {object|string} author
+ * @param {object | string} author
  * @returns {object}
  */
 export const getAuthorData = (author) => {
@@ -253,7 +253,7 @@ export const getAuthorsString = (data) => {
 
 /**
  * @param {object} data
- * @returns {object|string}
+ * @returns {object | string}
  */
 const getReplyData = (data) => {
 	return data?.in_reply_to;
@@ -261,7 +261,7 @@ const getReplyData = (data) => {
 
 /**
  * @param {object} data
- * @returns {string|null}
+ * @returns {string | null}
  */
 export const getReplyTitle = (data) => {
 	const replyData = getReplyData(data);
@@ -284,7 +284,7 @@ export const getReplyTitle = (data) => {
 
 /**
  * @param {object} data
- * @returns {string|null}
+ * @returns {string | null}
  */
 export const getReplyURL = (data) => {
 	const replyData = getReplyData(data);
@@ -299,7 +299,7 @@ export const getReplyURL = (data) => {
 
 /**
  * @param {object} data
- * @returns {string|null}
+ * @returns {string | null}
  */
 export const getReplyAuthor = (data) => {
 	const replyURL = getReplyURL(data);
@@ -314,7 +314,7 @@ export const getReplyAuthor = (data) => {
 
 /**
  * @param {object} data
- * @returns {string|null}
+ * @returns {string | null}
  */
 export const getReplyAuthorString = (data) => {
 	const replyAuthor = getReplyAuthor(data);
@@ -326,7 +326,7 @@ export const getReplyAuthorString = (data) => {
 
 /**
  * @param {object} data
- * @returns {string|null}
+ * @returns {string | null}
  */
 export const getRSVPString = (data) => {
 	const rsvp = data.rsvp;
