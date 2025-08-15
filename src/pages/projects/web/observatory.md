@@ -24,7 +24,7 @@ tags:
 ## Usage
 
 ```javascript
-import Observatory from "./observatory.js";
+import Observatory from "@chrisburnell/observatory";
 
 // Target element
 const container = document.getElementById("container");
@@ -81,7 +81,7 @@ console.log(records);
         </tr>
         <tr>
             <th><code>onStart</code></th>
-            <td><code>() => void</code></td>
+            <td><code>(instance) => void</code></td>
             <td>Optional callback function when observation begins.</td>
         </tr>
         <tr>
@@ -104,8 +104,9 @@ console.log(records);
 
 ### Properties & Methods
 
-- `observer.options`
-- `observer.useDefaultOptions`
+- `observer.defaultOptions` (*getter*)
+- `observer.options` (*getter / setter*)
+- `observer.useDefaultOptions` (*getter / setter*)
 - `observe()`
 - `disconnect()`
 - `takeRecords()`
@@ -138,6 +139,28 @@ const watcher = new Observatory({
 	useDefaultOptions: false,
 });
 watcher.observe();
+```
+
+### Extend/Augment into own Class
+
+```javascript
+import Observatory from "@chrisburnell/observatory";
+
+export default class MyOwnObservatory {
+	constructor() {
+		super({
+			element: container,
+			options: {
+				characterData: true,
+				attributes: true,
+			}
+		});
+	}
+	this.mySpecialVariable;
+	this.onMutation = (mutations, observer, instance) => {
+		this.mySpecialVariable = instance.element.innerText;
+	};
+}
 ```
 
 ## Notes
