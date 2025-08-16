@@ -26,6 +26,10 @@
 			box-decoration-break: clone;
 		}
 	}
+
+	& > .emoji {
+		font-size: 0.8125em;
+	}
 }
 
 :is(.title--positive, .title--negative) {

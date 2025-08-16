@@ -9,6 +9,9 @@ layout: base
 	{% endif %}
 
 	<h1 id="title" class=" [ title{% if title_error %} title--negative{% elif title_success %} title--positive{% endif %} ] " style="view-transition-name: title-{{ page.fileSlug }};">
+		{% if 'project' in tags and emoji -%}
+			<c-emoji>{{ emoji | safe }}</c-emoji>
+		{% endif -%}
 		<span class=" [ p-name ] ">{{ tagline | default(title) | safe }}</span>
 	</h1>
 
