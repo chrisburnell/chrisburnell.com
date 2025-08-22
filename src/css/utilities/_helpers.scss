@@ -50,17 +50,17 @@
 // oooooong text
 .hyphen,
 .hyphenate {
-	@include mixins.hyphenate;
+	@apply --hyphenate;
 }
 
 // Make things non-selectable
 .non-selectable {
-	@include mixins.non-selectable;
+	@apply --non-selectable;
 }
 
 // Make things non-interactive
 .non-interactive {
-	@include mixins.non-interactive;
+	@apply --non-interactive;
 }
 
 // Turn off motion (for reduced-motion-like cases)
@@ -99,7 +99,7 @@
 // Make text serifed and italicised
 .fancy {
 	font-family: var(--font-family-serif);
-	@include mixins.italic;
+	@apply --italic;
 }
 
 // For salty/silly remarks
@@ -258,7 +258,7 @@
 }
 @each $name, $color in tokens.$colors {
 	.background--#{$name} {
-		background-color: functions.h(#{$name});
+		background-color: var(--color-#{$name});
 
 		@supports (color: color-contrast(#5f8aa6 vs white, black)) {
 			color: color-contrast(#{$color} vs var(--contrast-list) to var(--contrast-ratio));

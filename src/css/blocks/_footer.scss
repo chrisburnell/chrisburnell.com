@@ -41,13 +41,13 @@
 }
 
 .footer__grid {
-	@include mixins.cqi(null, null, "medium") {
+	@apply --inline-below(null, var(--size-breakpoint-medium)) {
 		display: flex;
 		flex-direction: column;
 		gap: var(--size-gutter);
 	}
 
-	@include mixins.cqi(null, "medium") {
+	@apply --inline-above(null, var(--size-breakpoint-medium)) {
 		display: grid;
 		grid-template-columns:
 			[left-start]
@@ -90,17 +90,17 @@
 	.badges {
 		column-gap: var(--size-small);
 
-		@include mixins.cqi(null, "medium") {
+		@apply --inline-above(null, var(--size-breakpoint-medium)) {
 			justify-content: end;
 		}
 
-		@include mixins.cqi(null, null, "medium") {
+		@apply --inline-below(null, var(--size-breakpoint-medium)) {
 			margin-block-start: var(--size-small-medium);
 		}
 	}
 
 	.speedlify {
-		@include mixins.cqi(null, "medium") {
+		@apply --inline-above(null, var(--size-breakpoint-medium)) {
 			text-align: end;
 		}
 	}

@@ -22,13 +22,13 @@ table {
 	&.zebra,
 	&.zebra--horizontal {
 		tbody tr:nth-child(even) td {
-			background-color: functions.h(thunder, delta);
+			background-color: --transparent(var(--color-thunder), var(--opacity-delta));
 		}
 	}
 	&.zebra,
 	&.zebra--vertical {
 		tbody td:nth-child(odd) {
-			background-color: functions.h(thunder, delta);
+			background-color: --transparent(var(--color-thunder), var(--opacity-delta));
 		}
 	}
 }

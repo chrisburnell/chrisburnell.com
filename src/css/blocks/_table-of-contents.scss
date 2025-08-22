@@ -14,12 +14,12 @@
 		display: none;
 	}
 
-	@include mixins.cqi("main", "large") {
+	@apply cqi-above(main, var(--size-breakpoint-large)) {
 		block-size: 100%;
 	}
 
 	is-land {
-		@include mixins.cqi("main", "large") {
+		@apply cqi-above(main, var(--size-breakpoint-large)) {
 			position: sticky;
 			inset-block-start: calc(var(--size-header, 0px) + 1rem);
 		}
@@ -38,7 +38,7 @@
 		animation: toc-shadow-inside linear;
 		animation-timeline: scroll(self block);
 
-		@include mixins.cqi("main", "medium") {
+		@apply cqi-above(main, var(--size-breakpoint-medium)) {
 			max-block-size: calc(100vb - (1em * var(--line-height-default)) - var(--size-small) - var(--size-header, 0px) - (2 * var(--size-medium)));
 			max-block-size: calc(100dvb - (1em * var(--line-height-default)) - var(--size-small) - var(--size-header, 0px) - (2 * var(--size-medium)));
 		}
@@ -49,11 +49,11 @@
 	from {
 		box-shadow:
 			var(--box-shadow, var(--box-shadow-medium)),
-			inset 0 -1em 1.5em 0 functions.h(shadow, 40%);
+			inset 0 -1em 1.5em 0 --transparent(var(--color-shadow), 40%);
 	}
 	to {
 		box-shadow:
 			var(--box-shadow, var(--box-shadow-medium)),
-			inset 0 1em 1.5em 0 functions.h(shadow, 40%);
+			inset 0 1em 1.5em 0 --transparent(var(--color-shadow), 40%);
 	}
 }

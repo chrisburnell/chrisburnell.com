@@ -42,7 +42,7 @@ h2 #{collections.$anchor}:not(:hover, :focus, :active) {
 	text-transform: lowercase;
 
 	#{collections.$heading}:not(:hover, :focus-within) > &:not(:hover, :focus, :active) {
-		@include mixins.visually-hidden;
+		@apply --visually-hidden;
 	}
 }
 

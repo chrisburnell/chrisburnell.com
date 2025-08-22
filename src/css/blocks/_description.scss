@@ -12,7 +12,7 @@
 	text-wrap: balance;
 
 	p {
-		@include mixins.cqi(null, "small") {
+		@apply --inline-above(null, var(--size-breakpoint-small)) {
 			margin-inline: auto;
 		}
 	}
@@ -22,7 +22,7 @@
 	}
 
 	time {
-		@include mixins.italic;
+		@apply --italic;
 
 		sup::before {
 			content: " ";

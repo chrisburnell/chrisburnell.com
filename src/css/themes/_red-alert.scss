@@ -11,7 +11,7 @@
 		--raven-chroma: 0.076;
 		--raven-hue: 26.565;
 
-		@include mixins.setup-raven-colors;
+		@apply --setup-raven-colors;
 	}
 
 	.logo,

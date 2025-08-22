@@ -9,8 +9,8 @@
 @use "sass:meta";
 
 // Abstracts
-@use "abstracts/functions";
-@use "abstracts/mixins";
+@include meta.load-css("abstracts/functions");
+@include meta.load-css("abstracts/mixins");
 @use "generated/tokens";
 @use "abstracts/collections";
 

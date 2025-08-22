@@ -14,7 +14,7 @@
 			.light
 		) {
 			color-scheme: dark;
-			@include mixins.dark-styles;
+			@apply --dark-styles;
 		}
 	}
 }
@@ -25,6 +25,6 @@
 	[data-color-scheme*="dark"],
 	.dark {
 		color-scheme: dark;
-		@include mixins.dark-styles;
+		@apply --dark-styles;
 	}
 }

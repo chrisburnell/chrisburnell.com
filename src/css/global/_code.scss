@@ -28,7 +28,7 @@
 }
 
 :is(blockquote, code, samp, kbd) {
-	background-color: light-dark(inherit, functions.h(raven, gamma));
+	background-color: light-dark(inherit, --transparent(var(--color-raven), var(--opacity-gamma)));
 }
 
 kbd {
@@ -56,7 +56,7 @@ pre {
 	overflow: hidden;
 	position: relative;
 
-	@include mixins.cqi(null, "small") {
+	@apply --inline-above(null, var(--size-breakpoint-small)) {
 		tab-size: 4;
 	}
 

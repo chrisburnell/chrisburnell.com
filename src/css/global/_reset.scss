@@ -98,7 +98,7 @@
 }
 
 :where(.visually-hidden:not(:focus, :focus-within, :active)) {
-	@include mixins.visually-hidden;
+	@apply --visually-hidden;
 }
 
 :where(dialog, [popover]) {

@@ -174,7 +174,7 @@ pre.language-css .token.string,
 .token.prefix.unchanged,
 .token.prefix.inserted,
 .token.prefix.deleted {
-	@include mixins.non-selectable;
+	@apply --non-selectable;
 }
 
 .token.inserted:not(.prefix),
@@ -187,7 +187,7 @@ pre.language-css .token.string,
 	font-weight: var(--font-weight-semibold);
 }
 .token.italic {
-	@include mixins.italic;
+	@apply --italic;
 }
 
 .token.entity {

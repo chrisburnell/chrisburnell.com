@@ -16,13 +16,13 @@
 	--thunder-lightness: 15%;
 	--monochrome-chroma: 0;
 	--monochrome-hue: 0;
-	@include mixins.setup-monochrome-colors;
+	@apply --setup-monochrome-colors;
 
 	/* Build the Raven colors */
 	--raven-lightness: 61.29%;
 	--raven-chroma: 0.064;
 	--raven-hue: 237.73;
-	@include mixins.setup-raven-colors;
+	@apply --setup-raven-colors;
 
 	@each $name, $value in map.merge(tokens.$colors-secondary, tokens.$colors-tertiary) {
 		#{"--color-" + $name}: #{$value};

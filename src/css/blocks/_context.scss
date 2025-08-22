@@ -11,11 +11,11 @@
 	font-family: var(--font-family-serif);
 	margin-block-start: var(--size-gap);
 
-	@include mixins.cqi(null, null, "tiny") {
+	@apply --inline-below(null, var(--size-breakpoint-tiny)) {
 		font-size: var(--font-size-small);
 	}
 
-	@include mixins.cqi(null, "small") {
+	@apply --inline-above(null, var(--size-breakpoint-small)) {
 		text-align: center;
 	}
 
@@ -25,7 +25,7 @@
 	}
 
 	time {
-		@include mixins.italic;
+		@apply --italic;
 
 		sup::before {
 			content: " ";

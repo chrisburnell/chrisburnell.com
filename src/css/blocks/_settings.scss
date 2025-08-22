@@ -48,7 +48,7 @@
 	border-radius: 50%;
 
 	svg {
-		@include mixins.non-interactive;
+		@apply --non-interactive;
 		fill: var(--color-snowy);
 		min-inline-size: calc(var(--font-size-default) * var(--line-height-default));
 		min-block-size: calc(var(--font-size-default) * var(--line-height-default));
@@ -95,22 +95,22 @@
 	place-items: center;
 	gap: 1em;
 
-	@include mixins.cqi(null, "small") {
+	@apply --inline-above(null, var(--size-breakpoint-small)) {
 		grid-template-columns: max-content auto;
 	}
 
-	@include mixins.cqi(null, null, "small") {
+	@apply --inline-below(null, var(--size-breakpoint-small)) {
 		min-inline-size: 66vi;
 	}
 
 	label {
 		inline-size: 100%;
 
-		@include mixins.cqi(null, null, "small") {
+		@apply --inline-below(null, var(--size-breakpoint-small)) {
 			text-align: start;
 		}
 
-		@include mixins.cqi(null, "small") {
+		@apply --inline-above(null, var(--size-breakpoint-small)) {
 			text-align: end;
 		}
 	}

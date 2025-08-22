@@ -23,17 +23,17 @@
 	margin-block-end: var(--size-small);
 	font-family: var(--font-family-serif);
 	font-size: var(--font-size-small);
-	@include mixins.italic;
+	@apply --italic;
 	line-height: var(--line-height-medium);
 	text-align: center;
 	text-decoration: none;
 
-	@include mixins.cqi(null, "medium") {
+	@apply --inline-above(null, var(--size-breakpoint-medium)) {
 		order: 2;
 	}
 
 	&::before {
-		@include mixins.non-interactive;
+		@apply --non-interactive;
 		content: "";
 		opacity: 0;
 		background-image: url("/images/avatar-pixelated.png");
@@ -150,7 +150,7 @@
 
 	font-size: var(--font-size-small);
 
-	@include mixins.cqi(null, "medium") {
+	@apply --inline-above(null, var(--size-breakpoint-medium)) {
 		text-align: end;
 	}
 }

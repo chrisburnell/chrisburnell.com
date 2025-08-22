@@ -27,7 +27,7 @@
 		}
 	}
 	article + article {
-		border-block-start: var(--size-border-thin) solid light-dark(functions.h(mineshaft, gamma), functions.h(yeti, delta));
+		border-block-start: var(--size-border-thin) solid light-dark(--transparent(var(--color-mineshaft), var(--opacity-gamma)), --transparent(var(--color-yeti), var(--opacity-delta)));
 	}
 
 	h1 {
@@ -59,14 +59,14 @@
 
 .deck__context {
 	font-family: var(--font-family-serif);
-	@include mixins.italic;
+	@apply --italic;
 }
 
 .deck__meta {
 	--flow-space: var(--size-small);
 
 	time {
-		@include mixins.italic;
+		@apply --italic;
 
 		sup::before {
 			content: " ";

@@ -48,10 +48,10 @@
 
 	@each $name, $value in tokens.$breakpoints {
 		&[data-layout="50-50-#{$name}"] {
-			@include mixins.cqi(null, null, $name) {
+			@apply cqi-below(null, #{$name}) {
 				--grid-min-inline-size: 100%;
 			}
-			@include mixins.cqi(null, $name) {
+			@apply cqi-above(null, #{$name}) {
 				--grid-min-inline-size: clamp(8rem, 50% - var(--column-gap, var(--gap, var(--size-gutter))), 16rem);
 			}
 		}

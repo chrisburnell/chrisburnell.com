@@ -26,7 +26,7 @@ details {
 summary {
 	--outline-offset: calc(var(--size-border-thin) * -1);
 
-	@include mixins.non-selectable;
+	@apply --non-selectable;
 	display: list-item;
 	font-weight: var(--font-weight-semibold);
 	text-decoration: underline;

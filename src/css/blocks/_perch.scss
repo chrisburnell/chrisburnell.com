@@ -9,7 +9,7 @@
 	position: relative;
 
 	&::after {
-		@include mixins.non-interactive;
+		@apply --non-interactive;
 		content: "";
 		background-image: url("/images/raven.svg");
 		background-repeat: no-repeat;

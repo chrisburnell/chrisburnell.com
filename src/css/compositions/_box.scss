@@ -27,7 +27,7 @@
 	padding: var(--box-padding, var(--size-gutter));
 	margin-inline: auto;
 	border-width: 0;
-	border-block-start: var(--size-border-thin) solid var(--box-border-color, light-dark(var(--color-raven), functions.h(raven, alpha)));
+	border-block-start: var(--size-border-thin) solid var(--box-border-color, light-dark(var(--color-raven), --transparent(var(--color-raven), var(--opacity-alpha))));
 	border-radius: var(--border-radius, var(--size-border-thin));
 	box-shadow: var(--box-shadow, var(--box-shadow-low));
 	text-align: start;
@@ -55,17 +55,17 @@
 }
 
 .box--success {
-	--box-background-color: light-dark(#{functions.h(conifer, delta)}, color-mix(in oklab, var(--color-mineshaft), var(--color-conifer) 10%));
+	--box-background-color: light-dark(--transparent(var(--color-conifer), var(--opacity-delta)), color-mix(in oklab, var(--color-mineshaft), var(--color-conifer) 10%));
 	--box-border-color: var(--color-conifer);
 }
 
 .box--warning {
-	--box-background-color: light-dark(#{functions.h(aspen, delta)}, color-mix(in oklab, var(--color-mineshaft), var(--color-aspen) 10%));
+	--box-background-color: light-dark(--transparent(var(--color-aspen), var(--opacity-delta)), color-mix(in oklab, var(--color-mineshaft), var(--color-aspen) 10%));
 	--box-border-color: var(--color-aspen);
 }
 
 .box--error {
-	--box-background-color: light-dark(#{functions.h(maple, delta)}, color-mix(in oklab, var(--color-mineshaft), var(--color-maple) 10%));
+	--box-background-color: light-dark(--transparent(var(--color-maple), var(--opacity-delta)), color-mix(in oklab, var(--color-mineshaft), var(--color-maple) 10%));
 	--box-border-color: var(--color-maple);
 }
 

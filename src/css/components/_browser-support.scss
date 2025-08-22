@@ -11,7 +11,7 @@
 	display: flex;
 	gap: var(--size-gutter);
 
-	@include mixins.cqi(null, "small") {
+	@apply --inline-above(null, var(--size-breakpoint-small)) {
 		gap: var(--size-large);
 	}
 }
@@ -19,7 +19,7 @@
 .support {
 	flex-direction: column-reverse;
 
-	@include mixins.cqi(null, "small") {
+	@apply --inline-above(null, var(--size-breakpoint-small)) {
 		flex-direction: row-reverse;
 	}
 }

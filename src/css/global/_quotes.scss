@@ -21,7 +21,7 @@ blockquote {
 
 	p:not(.no-quotes) {
 		font-family: var(--font-family-serif);
-		@include mixins.italic;
+		@apply --italic;
 
 		&::before {
 			content: open-quote;
@@ -32,7 +32,7 @@ blockquote {
 		}
 
 		&:not(:last-of-type)::after {
-			@include mixins.visually-hidden;
+			@apply --visually-hidden;
 		}
 	}
 

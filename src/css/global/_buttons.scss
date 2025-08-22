@@ -28,7 +28,7 @@ button {
 	user-select: text;
 
 	&[disabled] {
-		@include mixins.non-selectable;
+		@apply --non-selectable;
 		opacity: var(--opacity-beta);
 		cursor: not-allowed;
 	}
@@ -37,7 +37,7 @@ button {
 #{collections.$button} {
 	--outline-color: var(--color-raven);
 
-	@include mixins.non-selectable;
+	@apply --non-selectable;
 	background-color: var(--color-bowhead);
 	color: var(--color-snowy) !important;
 	min-inline-size: max(fit-content, var(--button-min-inline-size, 8em));
@@ -83,7 +83,7 @@ button {
 	}
 
 	svg {
-		@include mixins.non-interactive;
+		@apply --non-interactive;
 	}
 }
 

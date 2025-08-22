@@ -118,7 +118,7 @@ dl {
 	margin-block-start: 0;
 	overflow: hidden;
 
-	@include mixins.cqi(null, "tiny") {
+	@apply --inline-above(null, var(--size-breakpoint-tiny)) {
 		grid-template-columns: minmax(min-content, 33.33%) 1fr;
 	}
 }

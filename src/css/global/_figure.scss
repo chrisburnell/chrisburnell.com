@@ -48,6 +48,6 @@ figure {
 
 	& > a figcaption {
 		color: light-dark(var(--color-nickel), var(--color-yeti));
-		@include mixins.italic;
+		@apply --italic;
 	}
 }

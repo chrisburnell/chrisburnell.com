@@ -50,7 +50,7 @@
 
 		// Solid Colour
 		&::before {
-			@include mixins.non-interactive;
+			@apply --non-interactive;
 			content: "";
 			background-color: var(--color-raven);
 			opacity: 0;

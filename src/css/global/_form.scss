@@ -48,7 +48,7 @@ textarea {
 		outline-color var(--transition-duration) var(--transition-function);
 
 	&[disabled] {
-		@include mixins.non-interactive;
+		@apply --non-interactive;
 		opacity: var(--opacity-beta);
 	}
 

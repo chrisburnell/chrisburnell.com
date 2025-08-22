@@ -29,7 +29,7 @@
 		text-underline-offset var(--transition-duration-short) var(--transition-function);
 
 	&[disabled] {
-		@include mixins.non-selectable;
+		@apply --non-selectable;
 		opacity: var(--opacity-beta);
 		cursor: not-allowed;
 	}
