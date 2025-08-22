@@ -3,8 +3,6 @@
 /// @group themes
 ////
 
-@use "../abstracts/mixins";
-
 // Apply the Dark color scheme when the media query matches
 @media (prefers-color-scheme: dark) {
 	@media not print {

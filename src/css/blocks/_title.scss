@@ -3,9 +3,6 @@
 /// @group blocks
 ////
 
-@use "../abstracts/functions";
-@use "../abstracts/mixins";
-
 .title {
 	display: block;
 	margin-block-start: var(--size-large-gigantic);

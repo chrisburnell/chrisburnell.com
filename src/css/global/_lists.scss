@@ -3,9 +3,6 @@
 /// @group global
 ////
 
-@use "../abstracts/functions";
-@use "../abstracts/mixins";
-
 :is(ol, ul) {
 	list-style-type: ""; // preferred over list-style: none; as it preserves semantics
 }

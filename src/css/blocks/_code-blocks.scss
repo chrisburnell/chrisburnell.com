@@ -3,9 +3,6 @@
 /// @group blocks
 ////
 
-@use "../abstracts/functions";
-@use "../abstracts/mixins";
-
 pre[class*="language-"] {
 	--flow-space: var(--size-large);
 	background-color: light-dark(var(--color-mineshaft), var(--color-thunder));

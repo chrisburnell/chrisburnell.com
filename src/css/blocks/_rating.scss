@@ -4,7 +4,6 @@
 ////
 
 @use "sass:math";
-@use "../abstracts/functions";
 
 .rating {
 	display: inline-block;
@@ -43,7 +42,7 @@
 
 	@for $i from 1 through 19 {
 		&[value="#{math.div($i, 4)}"]::after {
-			inline-size: functions.range-map($i, 0, 20, 0%, 100%);
+			inline-size: --range-map($i, 0, 20, 0%, 100%);
 		}
 	}
 	&[value="5"]::after {

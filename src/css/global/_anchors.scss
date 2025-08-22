@@ -5,8 +5,6 @@
 ////
 
 @use "../abstracts/collections";
-@use "../abstracts/functions";
-@use "../abstracts/mixins";
 
 #{collections.$anchor} {
 	--outline-color: var(--color-raven);

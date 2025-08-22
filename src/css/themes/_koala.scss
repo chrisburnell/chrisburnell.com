@@ -3,8 +3,6 @@
 /// @group themes
 ////
 
-@use "../abstracts/mixins";
-
 @mixin theme-koala() {
 	& {
 		--raven-lightness: 58.5%;

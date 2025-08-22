@@ -3,9 +3,6 @@
 /// @group global
 ////
 
-@use "../abstracts/functions";
-@use "../abstracts/mixins";
-
 blockquote {
 	background-color: var(--color-bear);
 	inline-size: 100%;

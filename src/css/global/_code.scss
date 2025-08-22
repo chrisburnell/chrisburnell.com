@@ -4,9 +4,6 @@
 /// @link https://chrisburnell.com/styleguide/#code-block
 ////
 
-@use "../abstracts/functions";
-@use "../abstracts/mixins";
-
 :is(code, kbd, samp, var, .monospace) {
 	font-family: var(--font-family-monospace);
 	font-variant: no-common-ligatures tabular-nums;

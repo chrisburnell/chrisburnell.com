@@ -4,8 +4,6 @@
 ////
 
 @use "../abstracts/collections";
-@use "../abstracts/functions";
-@use "../abstracts/mixins";
 
 h2 #{collections.$anchor}:not(:hover, :focus, :active) {
 	text-decoration: none;

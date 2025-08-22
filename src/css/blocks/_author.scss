@@ -3,9 +3,6 @@
 /// @group blocks
 ////
 
-@use "../abstracts/functions";
-@use "../abstracts/mixins";
-
 .author {
 	display: flex;
 	flex-direction: row;

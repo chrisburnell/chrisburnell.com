@@ -3,8 +3,6 @@
 /// @group themes
 ////
 
-@use "../abstracts/functions";
-
 @mixin theme-christmas() {
 	& {
 		--color-lynx: oklch(24.6% 0.0188 153.43);

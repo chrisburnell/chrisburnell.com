@@ -5,7 +5,6 @@
 ////
 
 @use "../abstracts/collections";
-@use "../abstracts/functions";
 
 .shelf {
 	--row-gap: var(--size-gap);

@@ -6,8 +6,6 @@
 @use "sass:map";
 @use "sass:math";
 @use "../../../node_modules/utopia-core-scss/src/utopia" as utopia;
-@use "../abstracts/functions";
-@use "../abstracts/mixins";
 @use "../generated/tokens";
 
 :root {

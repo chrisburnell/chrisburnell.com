@@ -3,8 +3,6 @@
 /// @group global
 ////
 
-@use "../abstracts/functions";
-
 ::backdrop {
 	background-color: --transparent(var(--color-thunder), var(--opacity-beta));
 	backdrop-filter: blur(1px);

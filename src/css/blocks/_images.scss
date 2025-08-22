@@ -3,8 +3,6 @@
 /// @group blocks
 ////
 
-@use "../abstracts/functions";
-
 .banner {
 	border-radius: var(--border-radius, var(--size-border-thin));
 }
@@ -14,7 +12,7 @@
 	aspect-ratio: 1;
 	display: inline-block;
 	border-radius: 50%;
-	border: var(--size-border-thin) solid functions.h(raven, beta);
+	border: var(--size-border-thin) solid --transparent(var(--color-raven), var(--opacity-beta));
 	box-shadow: var(--box-shadow, var(--box-shadow-low));
 	transition: border-color var(--transition-duration) var(--transition-function);
 
