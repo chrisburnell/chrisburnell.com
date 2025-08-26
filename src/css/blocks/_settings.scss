@@ -50,7 +50,7 @@
 		fill: var(--color-snowy);
 		min-inline-size: calc(var(--font-size-default) * var(--line-height-default));
 		min-block-size: calc(var(--font-size-default) * var(--line-height-default));
-		transition: transform var(--transition-duration) var(--transition-function);
+		transition: --transition(transform);
 		filter: drop-shadow(0 1px 1px var(--color-mineshaft));
 	}
 }

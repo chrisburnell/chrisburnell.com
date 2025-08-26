@@ -282,7 +282,7 @@
 	overflow-x: auto !important;
 }
 .scroll-inline-shadow {
-	animation: inline-shadow-inside linear;
+	animation: --animation(inline-shadow-inside);
 	animation-timeline: scroll(self inline);
 	scroll-timeline-name: --scrollInline;
 	scroll-timeline-axis: inline;
@@ -293,7 +293,7 @@
 	overflow-y: auto !important;
 }
 .scroll-block-shadow {
-	animation: block-shadow-inside linear;
+	animation: --animation(block-shadow-inside);
 	animation-timeline: scroll(self block);
 	scroll-timeline-name: --scrollBlock;
 	scroll-timeline-axis: block;

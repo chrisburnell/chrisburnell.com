@@ -36,7 +36,7 @@
 		font-weight: var(--font-weight-bold);
 		text-align: center;
 		text-decoration: none;
-		transition: all var(--transition-duration) var(--transition-function);
+		transition: --transition(all);
 		z-index: var(--z-index-root);
 
 		@media not print {

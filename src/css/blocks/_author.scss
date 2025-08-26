@@ -67,7 +67,7 @@
 
 		&::before {
 			opacity: 1;
-			transition: opacity var(--transition-duration) var(--transition-function);
+			transition: --transition(opacity);
 			animation: var(--animation-duration-long) linear infinite glitch;
 
 			@at-root {
@@ -131,7 +131,7 @@
 .author__image {
 	position: relative;
 	text-decoration: none;
-	transition: opacity var(--transition-duration) var(--transition-function);
+	transition: --transition(opacity);
 }
 
 .author__image,

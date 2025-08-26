@@ -58,7 +58,7 @@ th {
 
 		thead & {
 			inset-block-start: 0;
-			animation: block-shadow-outside linear;
+			animation: --animation(block-shadow-outside);
 			animation-timeline: scroll(nearest block);
 		}
 
@@ -67,7 +67,7 @@ th {
 		}
 		tbody &,
 		.shadow-child {
-			animation: inline-shadow-outside linear;
+			animation: --animation(inline-shadow-outside);
 			animation-timeline: --scrollInline;
 		}
 		tbody &:has(.shadow-child) {

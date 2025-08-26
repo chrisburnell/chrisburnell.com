@@ -32,7 +32,7 @@
 		overflow-y: auto;
 		overscroll-behavior: contain;
 		scrollbar-gutter: stable;
-		animation: toc-shadow-inside linear;
+		animation: --animation(toc-shadow-inside);
 		animation-timeline: scroll(self block);
 
 		@apply cqi-above(main, var(--size-breakpoint-medium)) {

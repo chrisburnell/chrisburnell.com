@@ -31,7 +31,7 @@ summary {
 	text-decoration-thickness: var(--size-border-thin);
 	text-decoration-skip-ink: auto;
 	text-underline-offset: 0.125em;
-	transition: all var(--transition-duration) var(--transition-function);
+	transition: --transition(all);
 	list-style: "+ " inside;
 
 	&::marker {

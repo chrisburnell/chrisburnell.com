@@ -9,12 +9,12 @@
 	block-size: var(--size-logo-small);
 	inline-size: var(--size-logo-small);
 	display: flex;
-	transition: all var(--transition-duration) var(--transition-function);
+	transition: --transition(all);
 
 	#{collections.$image} {
 		max-block-size: 100%;
 		object-fit: contain;
-		transition: transform var(--transition-duration) var(--transition-function);
+		transition: --transition(transform);
 	}
 
 	&[href]:is(:hover, :focus, :active) {
