@@ -4,8 +4,6 @@
 /// Extends %grid
 ////
 
-@use "../abstracts/collections";
-
 .shelf {
 	--row-gap: var(--size-gap);
 	--grid-min-inline-size: 10em;
@@ -21,7 +19,7 @@
 		line-height: var(--line-height-medium);
 	}
 
-	& #{collections.$anchor} {
+	& :is(a:not(.button), .anchor) {
 		&:not(:hover, :focus, :active) {
 			color: inherit;
 		}

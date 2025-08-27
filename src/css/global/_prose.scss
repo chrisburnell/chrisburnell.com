@@ -3,9 +3,7 @@
 /// @group global
 ////
 
-@use "../abstracts/collections";
-
-#{collections.$content} {
+:is(p, blockquote, details, table, dl, ol, ul, figure:not([class])) {
 	break-inside: avoid;
 }
 

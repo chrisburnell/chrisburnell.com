@@ -3,8 +3,6 @@
 /// @group global
 ////
 
-@use "../abstracts/collections";
-
 figure {
 	max-inline-size: 100%;
 	display: flex;
@@ -28,14 +26,14 @@ figure {
 		line-height: var(--line-height-small);
 	}
 
-	& #{collections.$image},
-	& #{collections.$media} {
+	& :is(img, input[type="image"], svg),
+	& :is(audio, canvas, embed, iframe, lite-youtube, marquee, math, object, video) {
 		display: block;
 		max-block-size: 100vb;
 		max-block-size: 100dvb;
 	}
 
-	& #{collections.$image} {
+	& :is(img, input[type="image"], svg) {
 		border-radius: var(--border-radius, var(--size-border-thin));
 	}
 

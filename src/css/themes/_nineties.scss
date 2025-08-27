@@ -3,8 +3,6 @@
 /// @group themes
 ////
 
-@use "../abstracts/collections";
-
 :root:has([name="theme"] [value*="nineties"]:checked),
 [data-theme*="nineties"],
 .nineties {
@@ -68,8 +66,8 @@
 		margin-inline-start: 0;
 	}
 
-	& #{collections.$heading},
-	& .navigation__list #{collections.$anchor} {
+	& :is(h1, h2, h3, h4, h5, h6),
+	& .navigation__list :is(a:not(.button), .anchor) {
 		font-weight: var(--font-weight-semibold) !important;
 	}
 
@@ -94,12 +92,12 @@
 		inset-inline: initial;
 	}
 
-	& #{collections.$button},
-	& #{collections.$box} {
+	& :is(button:not(.anchor), .button, [type="button"], [role="tab"]),
+	& :is(.box, .cp_embed_wrapper, .speakerdeck-embed-wrapper) {
 		border: var(--size-border-thin) outset;
 	}
 
-	& #{collections.$button} {
+	& :is(button:not(.anchor), .button, [type="button"], [role="tab"]) {
 		&:not([disabled]):active {
 			border: var(--size-border-thin) inset;
 		}

@@ -3,7 +3,6 @@
 /// @group utilities
 ////
 
-@use "../abstracts/collections";
 @use "../generated/tokens";
 
 // Full Bleed
@@ -157,8 +156,8 @@
 	margin-block-start: calc(1ex - 1cap);
 	text-shadow: none;
 
-	#{collections.$anchor}:not(.icon-anchor) > &:first-child,
-	#{collections.$button}:not(.icon-anchor) > &:first-child {
+	:is(a:not(.button), .anchor):not(.icon-anchor) > &:first-child,
+	:is(button:not(.anchor), .button, [type="button"], [role="tab"]):not(.icon-anchor) > &:first-child {
 		display: inline-block;
 		padding-inline-end: 0.625ch;
 	}

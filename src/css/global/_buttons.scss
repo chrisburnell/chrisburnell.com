@@ -13,8 +13,6 @@
 ///     Defines the line height of the button.
 ////
 
-@use "../abstracts/collections";
-
 button {
 	appearance: none;
 	background: none;
@@ -32,7 +30,7 @@ button {
 	}
 }
 
-#{collections.$button} {
+:is(button:not(.anchor), .button, [type="button"], [role="tab"]) {
 	--outline-color: var(--color-raven);
 
 	@apply --non-selectable;

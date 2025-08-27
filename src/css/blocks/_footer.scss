@@ -3,8 +3,6 @@
 /// @group blocks
 ////
 
-@use "../abstracts/collections";
-
 .footer {
 	container: footer / inline-size;
 	background-color: var(--background-color, light-dark(var(--color-mineshaft), color-mix(in oklab, var(--color-thunder), var(--color-mineshaft) 80%)));
@@ -17,7 +15,7 @@
 	}
 
 	&,
-	& #{collections.$anchor} {
+	& :is(a:not(.button), .anchor) {
 		&:not(:hover, :focus, :active) {
 			text-decoration-color: var(--color-kaiser);
 		}

@@ -3,11 +3,9 @@
 /// @group overrides
 ////
 
-@use "../abstracts/collections";
-
 .footer {
 	&,
-	& #{collections.$anchor} {
+	& :is(a:not(.button), .anchor) {
 		color: var(--color-snowy);
 	}
 }

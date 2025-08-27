@@ -3,9 +3,7 @@
 /// @group blocks
 ////
 
-@use "../abstracts/collections";
-
-h2 #{collections.$anchor}:not(:hover, :focus, :active) {
+h2 :is(a:not(.button), .anchor):not(:hover, :focus, :active) {
 	text-decoration: none;
 }
 
@@ -39,7 +37,7 @@ h2 #{collections.$anchor}:not(:hover, :focus, :active) {
 	font-weight: var(--font-weight-semibold);
 	text-transform: lowercase;
 
-	& #{collections.$heading}:not(:hover, :focus-within) > &:not(:hover, :focus, :active) {
+	:is(h1, h2, h3, h4, h5, h6):not(:hover, :focus-within) > &:not(:hover, :focus, :active) {
 		@apply --visually-hidden;
 	}
 }

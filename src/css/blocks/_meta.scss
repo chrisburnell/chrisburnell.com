@@ -3,8 +3,6 @@
 /// @group blocks
 ////
 
-@use "../abstracts/collections";
-
 .meta {
 	container: meta / inline-size;
 	margin-block-start: var(--size-gigantic);
@@ -29,7 +27,7 @@
 		margin-block-end: var(--size-small);
 	}
 
-	& #{collections.$anchor},
+	& :is(a:not(.button), .anchor),
 	& data,
 	& time {
 		font-weight: var(--font-weight-semibold);

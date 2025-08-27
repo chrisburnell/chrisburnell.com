@@ -3,8 +3,6 @@
 /// @group blocks
 ////
 
-@use "../abstracts/collections";
-
 .context {
 	font-size: var(--font-size-default);
 	font-family: var(--font-family-serif);
@@ -18,7 +16,7 @@
 		text-align: center;
 	}
 
-	& #{collections.$content} {
+	& :is(p, blockquote, details, table, dl, ol, ul, figure:not([class])) {
 		max-inline-size: var(--size-line-length);
 		margin-inline: auto;
 	}

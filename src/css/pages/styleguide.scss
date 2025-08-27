@@ -4,8 +4,6 @@
 /// @link https://chrisburnell.com/styleguide/
 ////
 
-@use "../abstracts/collections";
-
 @layer pages {
 	.palette {
 		inline-size: 100%;
@@ -45,7 +43,7 @@
 			}
 		}
 
-		& #{collections.$heading} {
+		& :is(h1, h2, h3, h4, h5, h6) {
 			margin-block-end: 0;
 			font-size: var(--font-size-default);
 		}

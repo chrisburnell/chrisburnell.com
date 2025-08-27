@@ -3,8 +3,6 @@
 /// @group components
 ////
 
-@use "../abstracts/collections";
-
 .deck {
 	& :not(.box) > .deck {
 		margin-block-start: var(--size-gap);
@@ -33,7 +31,7 @@
 		line-height: var(--line-height-medium);
 	}
 
-	& #{collections.$anchor} {
+	& :is(a:not(.button), .anchor) {
 		&:not(:hover, :focus, :active) {
 			color: inherit;
 		}
