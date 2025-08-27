@@ -17,35 +17,35 @@
 	}
 
 	&,
-	#{collections.$anchor} {
+	& #{collections.$anchor} {
 		&:not(:hover, :focus, :active) {
 			text-decoration-color: var(--color-kaiser);
 		}
 	}
 
-	button {
+	& button {
 		font-size: inherit;
 	}
 
-	svg {
+	& svg {
 		inline-size: calc(1lh - 1.25cap);
 		block-size: calc(1lh - 1.25cap);
-		transition: --transition(fill);
+		@apply --transition(fill);
 	}
 
-	span[title] {
+	& span[title] {
 		color: inherit;
 	}
 }
 
 .footer__grid {
-	@apply --inline-below(null, var(--size-breakpoint-medium)) {
+	@apply --inline-below(var(--size-breakpoint-medium)) {
 		display: flex;
 		flex-direction: column;
 		gap: var(--size-gutter);
 	}
 
-	@apply --inline-above(null, var(--size-breakpoint-medium)) {
+	@apply --inline-above(var(--size-breakpoint-medium)) {
 		display: grid;
 		grid-template-columns:
 			[left-start]
@@ -58,7 +58,7 @@
 		row-gap: var(--size-gutter);
 	}
 
-	.footer__navigation {
+	& .footer__navigation {
 		--padding-inline: 0.625em;
 		grid-column: left;
 		display: flex;
@@ -66,48 +66,48 @@
 		row-gap: 0.5em;
 		line-height: var(--line-height-code);
 
-		li {
+		& li {
 			white-space: nowrap;
 		}
 	}
 
-	.author {
+	& .author {
 		grid-column: right;
 		grid-row: 1/4;
 	}
 
-	.webrings {
+	& .webrings {
 		grid-column: left;
 		grid-row: 4;
 	}
 
-	:is(.badges, .speedlify) {
+	& :is(.badges, .speedlify) {
 		grid-column: right;
 	}
 
-	.badges {
+	& .badges {
 		column-gap: var(--size-small);
 
-		@apply --inline-above(null, var(--size-breakpoint-medium)) {
+		@apply --inline-above(var(--size-breakpoint-medium)) {
 			justify-content: end;
 		}
 
-		@apply --inline-below(null, var(--size-breakpoint-medium)) {
+		@apply --inline-below(var(--size-breakpoint-medium)) {
 			margin-block-start: var(--size-small-medium);
 		}
 	}
 
-	.speedlify {
-		@apply --inline-above(null, var(--size-breakpoint-medium)) {
+	& .speedlify {
+		@apply --inline-above(var(--size-breakpoint-medium)) {
 			text-align: end;
 		}
 	}
 
-	summary:not(:hover, :focus, :active) {
+	& summary:not(:hover, :focus, :active) {
 		text-decoration-color: var(--color-kaiser);
 	}
 
-	summary ~ * {
+	& summary ~ * {
 		line-height: var(--line-height-code);
 	}
 }

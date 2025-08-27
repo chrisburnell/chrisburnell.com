@@ -19,13 +19,13 @@ table {
 
 	&.zebra,
 	&.zebra--horizontal {
-		tbody tr:nth-child(even) td {
+		& tbody tr:nth-child(even) td {
 			background-color: --transparent(var(--color-thunder), var(--opacity-delta));
 		}
 	}
 	&.zebra,
 	&.zebra--vertical {
-		tbody td:nth-child(odd) {
+		& tbody td:nth-child(odd) {
 			background-color: --transparent(var(--color-thunder), var(--opacity-delta));
 		}
 	}
@@ -58,7 +58,7 @@ th {
 
 		thead & {
 			inset-block-start: 0;
-			animation: --animation(block-shadow-outside);
+			@apply --animation(block-shadow-outside);
 			animation-timeline: scroll(nearest block);
 		}
 
@@ -66,14 +66,14 @@ th {
 			inset-inline-start: 0;
 		}
 		tbody &,
-		.shadow-child {
-			animation: --animation(inline-shadow-outside);
+		& .shadow-child {
+			@apply --animation(inline-shadow-outside);
 			animation-timeline: --scrollInline;
 		}
 		tbody &:has(.shadow-child) {
 			padding: 0;
 		}
-		.shadow-child {
+		& .shadow-child {
 			padding: var(--size-small);
 		}
 

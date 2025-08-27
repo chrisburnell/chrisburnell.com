@@ -4,7 +4,7 @@
 ////
 
 .inline-aside {
-	@include cqi(null, "medium") {
+	@apply --inline-above(var(--size-breakpoint-medium)) {
 		inline-size: 100% !important;
 		block-size: 0 !important;
 		margin: 0 !important;
@@ -12,7 +12,7 @@
 	}
 
 	& > * {
-		@include cqi(null, "medium") {
+		@apply --inline-above(var(--size-breakpoint-medium)) {
 			inline-size: var(--size-aside) !important;
 			position: absolute;
 			inset-block-start: var(--inset-block-start, 0);

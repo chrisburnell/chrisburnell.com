@@ -78,8 +78,8 @@
 		#{"--font-size-" + $name + "-max"}: #{math.div(map.get($data, "maxSize"), 16) * 1rem};
 	}
 	// $font-sizes-seen: ();
-	// @each $name, $data in $sizes {
-	// 	@each $other-name, $other-data in $font-sizes {
+	// @each $name, $data in tokens.$sizes {
+	// 	@each $other-name, $other-data in tokens.$font-sizes {
 	// 		#{"--size-" + $other-name + "-" + $name}: #{utopia.calculateClamp((
 	// 			"minWidth": map.get($data, "minWidth"),
 	// 			"maxWidth": map.get($data, "maxWidth"),

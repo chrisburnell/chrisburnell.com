@@ -7,7 +7,7 @@
 
 .footer {
 	&,
-	#{collections.$anchor} {
+	& #{collections.$anchor} {
 		color: var(--color-snowy);
 	}
 }

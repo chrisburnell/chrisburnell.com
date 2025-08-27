@@ -10,23 +10,23 @@
 	font-family: var(--font-family-serif);
 	margin-block-start: var(--size-gap);
 
-	@apply --inline-below(null, var(--size-breakpoint-tiny)) {
+	@apply --inline-below(var(--size-breakpoint-tiny)) {
 		font-size: var(--font-size-small);
 	}
 
-	@apply --inline-above(null, var(--size-breakpoint-small)) {
+	@apply --inline-above(var(--size-breakpoint-small)) {
 		text-align: center;
 	}
 
-	#{collections.$content} {
+	& #{collections.$content} {
 		max-inline-size: var(--size-line-length);
 		margin-inline: auto;
 	}
 
-	time {
+	& time {
 		@apply --italic;
 
-		sup::before {
+		& sup::before {
 			content: " ";
 			font-size: 0.5em;
 		}

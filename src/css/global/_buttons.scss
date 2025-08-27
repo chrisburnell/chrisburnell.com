@@ -76,11 +76,11 @@ button {
 	}
 
 	// prevent inline elements like code from displaying their background
-	* {
+	& * {
 		background-color: transparent;
 	}
 
-	svg {
+	& svg {
 		@apply --non-interactive;
 	}
 }

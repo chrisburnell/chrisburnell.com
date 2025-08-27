@@ -38,13 +38,13 @@
 		text-align: end;
 	}
 
-	.emoji {
+	& .emoji {
 		font-size: var(--font-size-gamma-max);
 		line-height: 0;
 		padding-inline-end: 0;
 	}
 
-	strong {
+	& strong {
 		font-weight: var(--font-weight-bold);
 	}
 }

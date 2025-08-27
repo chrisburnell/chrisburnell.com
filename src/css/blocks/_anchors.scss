@@ -39,7 +39,7 @@ h2 #{collections.$anchor}:not(:hover, :focus, :active) {
 	font-weight: var(--font-weight-semibold);
 	text-transform: lowercase;
 
-	#{collections.$heading}:not(:hover, :focus-within) > &:not(:hover, :focus, :active) {
+	& #{collections.$heading}:not(:hover, :focus-within) > &:not(:hover, :focus, :active) {
 		@apply --visually-hidden;
 	}
 }

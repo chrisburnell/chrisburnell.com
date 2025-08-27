@@ -25,7 +25,7 @@
 	text-align: center;
 	text-decoration: none;
 
-	@apply --inline-above(null, var(--size-breakpoint-medium)) {
+	@apply --inline-above(var(--size-breakpoint-medium)) {
 		order: 2;
 	}
 
@@ -49,7 +49,7 @@
 		z-index: var(--z-index-default);
 	}
 
-	.anchor {
+	& .anchor {
 		color: inherit;
 		font-family: var(--font-family-sans);
 		font-size: var(--font-size-default);
@@ -60,14 +60,14 @@
 
 	&:is(:hover, :focus, :active) {
 		&,
-		.anchor {
+		& .anchor {
 			background-color: transparent;
 			text-decoration-color: var(--color-maple);
 		}
 
 		&::before {
 			opacity: 1;
-			transition: --transition(opacity);
+			@apply --transition(opacity);
 			animation: var(--animation-duration-long) linear infinite glitch;
 
 			@at-root {
@@ -122,7 +122,7 @@
 			}
 		}
 
-		.anchor {
+		& .anchor {
 			--outline-offset: 0;
 		}
 	}
@@ -131,7 +131,7 @@
 .author__image {
 	position: relative;
 	text-decoration: none;
-	transition: --transition(opacity);
+	@apply --transition(opacity);
 }
 
 .author__image,
@@ -144,10 +144,9 @@
 
 .author__biography {
 	--flow-space: var(--size-small);
-
 	font-size: var(--font-size-small);
 
-	@apply --inline-above(null, var(--size-breakpoint-medium)) {
+	@apply --inline-above(var(--size-breakpoint-medium)) {
 		text-align: end;
 	}
 }

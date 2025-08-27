@@ -11,12 +11,12 @@
 		display: none;
 	}
 
-	@apply cqi-above(main, var(--size-breakpoint-large)) {
+	@apply --inline-above(var(--size-breakpoint-large), main) {
 		block-size: 100%;
 	}
 
-	is-land {
-		@apply cqi-above(main, var(--size-breakpoint-large)) {
+	& is-land {
+		@apply --inline-above(var(--size-breakpoint-large), main) {
 			position: sticky;
 			inset-block-start: calc(var(--size-header, 0px) + 1rem);
 		}
@@ -24,7 +24,7 @@
 }
 
 .table-of-contents {
-	nav {
+	& nav {
 		max-block-size: 40vb;
 		max-block-size: 40dvb;
 		box-shadow: var(--box-shadow, var(--box-shadow-medium));
@@ -32,10 +32,10 @@
 		overflow-y: auto;
 		overscroll-behavior: contain;
 		scrollbar-gutter: stable;
-		animation: --animation(toc-shadow-inside);
+		@apply --animation(toc-shadow-inside);
 		animation-timeline: scroll(self block);
 
-		@apply cqi-above(main, var(--size-breakpoint-medium)) {
+		@apply --inline-above(var(--size-breakpoint-medium), main) {
 			max-block-size: calc(100vb - (1em * var(--line-height-default)) - var(--size-small) - var(--size-header, 0px) - (2 * var(--size-medium)));
 			max-block-size: calc(100dvb - (1em * var(--line-height-default)) - var(--size-small) - var(--size-header, 0px) - (2 * var(--size-medium)));
 		}

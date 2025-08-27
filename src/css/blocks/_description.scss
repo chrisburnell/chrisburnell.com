@@ -10,20 +10,20 @@
 	font-weight: var(--font-weight-semibold);
 	text-wrap: balance;
 
-	p {
-		@apply --inline-above(null, var(--size-breakpoint-small)) {
+	& p {
+		@apply --inline-above(var(--size-breakpoint-small)) {
 			margin-inline: auto;
 		}
 	}
 
-	#{collections.$anchor} {
+	& #{collections.$anchor} {
 		color: inherit;
 	}
 
-	time {
+	& time {
 		@apply --italic;
 
-		sup::before {
+		& sup::before {
 			content: " ";
 			font-size: 0.5em;
 		}

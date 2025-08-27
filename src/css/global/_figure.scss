@@ -19,7 +19,7 @@ figure {
 		counter-increment: figureNumber;
 	}
 
-	figcaption {
+	& figcaption {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -28,14 +28,14 @@ figure {
 		line-height: var(--line-height-small);
 	}
 
-	#{collections.$image},
-	#{collections.$media} {
+	& #{collections.$image},
+	& #{collections.$media} {
 		display: block;
 		max-block-size: 100vb;
 		max-block-size: 100dvb;
 	}
 
-	#{collections.$image} {
+	& #{collections.$image} {
 		border-radius: var(--border-radius, var(--size-border-thin));
 	}
 

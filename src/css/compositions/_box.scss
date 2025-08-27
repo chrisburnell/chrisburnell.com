@@ -2,7 +2,7 @@
 /// Box
 /// @group compositions
 ///
-/// --box-background-color (color-mix(in oklab, h(bear), h(snowy)))
+/// --box-background-color (color-mix(in oklab, var(--color-bear), var(--color-snowy)))
 ///     Defines the background color the box.
 /// --box-color (inherit)
 ///     Defines the text color for box.
@@ -34,7 +34,7 @@
 	font-style: normal;
 	font-variation-settings: normal;
 
-	#{collections.$heading} {
+	& #{collections.$heading} {
 		font-size: var(--font-size-default);
 		font-weight: var(--font-weight-semibold);
 		line-height: var(--line-height-medium);
@@ -42,13 +42,13 @@
 		letter-spacing: 0;
 	}
 
-	#{collections.$anchor} {
+	& #{collections.$anchor} {
 		color: light-dark(var(--color-bowhead), var(--color-highland));
 	}
 }
 
 .box {
-	.meta &:not(ul) > #{collections.$heading} + * {
+	& .meta &:not(ul) > #{collections.$heading} + * {
 		--flow-space: 0;
 	}
 }

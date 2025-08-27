@@ -22,7 +22,7 @@
 		display: none;
 	}
 
-	.wrap {
+	& .wrap {
 		inline-size: 100%;
 		display: flex;
 		align-items: center;
@@ -30,11 +30,11 @@
 		padding-block: var(--size-small);
 	}
 
-	.logo {
+	& .logo {
 		flex: 0 0 auto;
 	}
 
-	.navigation {
+	& .navigation {
 		flex: 0 1 auto;
 		margin-inline-start: var(--size-gutter);
 	}

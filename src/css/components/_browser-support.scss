@@ -8,7 +8,7 @@
 	display: flex;
 	gap: var(--size-gutter);
 
-	@apply --inline-above(null, var(--size-breakpoint-small)) {
+	@apply --inline-above(var(--size-breakpoint-small)) {
 		gap: var(--size-large);
 	}
 }
@@ -16,7 +16,7 @@
 .support {
 	flex-direction: column-reverse;
 
-	@apply --inline-above(null, var(--size-breakpoint-small)) {
+	@apply --inline-above(var(--size-breakpoint-small)) {
 		flex-direction: row-reverse;
 	}
 }
@@ -31,7 +31,7 @@
 	flex-wrap: wrap;
 	gap: var(--size-small);
 
-	li {
+	& li {
 		border-radius: var(--border-radius, var(--size-border-thin));
 		padding-inline: var(--size-small);
 		font-weight: var(--font-weight-semibold);

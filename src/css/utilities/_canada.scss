@@ -5,7 +5,7 @@
 
 .canada {
 	&,
-	* {
+	& * {
 		// For some reason, ::selection and ::target-text don't play well together
 		&::selection {
 			background-color: var(--color-maple) !important;

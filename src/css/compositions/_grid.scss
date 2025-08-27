@@ -47,10 +47,10 @@
 
 	@each $name, $value in tokens.$breakpoints {
 		&[data-layout="50-50-#{$name}"] {
-			@apply cqi-below(null, #{$name}) {
+			@apply --inline-below(var(--size-breakpoint-#{$name})) {
 				--grid-min-inline-size: 100%;
 			}
-			@apply cqi-above(null, #{$name}) {
+			@apply --inline-above(var(--size-breakpoint-#{$name})) {
 				--grid-min-inline-size: clamp(8rem, 50% - var(--column-gap, var(--gap, var(--size-gutter))), 16rem);
 			}
 		}
@@ -66,7 +66,7 @@
 		}
 	}
 
-	.full-span {
+	& .full-span {
 		grid-column: 1 / -1;
 	}
 }

@@ -163,7 +163,7 @@
 		padding-inline-end: 0.625ch;
 	}
 
-	svg {
+	& svg {
 		vertical-align: middle;
 		margin-block-start: calc(1ex - 1cap);
 
@@ -282,7 +282,7 @@
 	overflow-x: auto !important;
 }
 .scroll-inline-shadow {
-	animation: --animation(inline-shadow-inside);
+	@apply --animation(inline-shadow-inside);
 	animation-timeline: scroll(self inline);
 	scroll-timeline-name: --scrollInline;
 	scroll-timeline-axis: inline;
@@ -293,7 +293,7 @@
 	overflow-y: auto !important;
 }
 .scroll-block-shadow {
-	animation: --animation(block-shadow-inside);
+	@apply --animation(block-shadow-inside);
 	animation-timeline: scroll(self block);
 	scroll-timeline-name: --scrollBlock;
 	scroll-timeline-axis: block;

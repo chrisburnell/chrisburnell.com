@@ -20,11 +20,11 @@
 		display: none;
 	}
 
-	li::marker {
+	& li::marker {
 		color: light-dark(var(--color-bowhead), var(--color-yeti));
 	}
 
-	#{collections.$anchor} {
+	& #{collections.$anchor} {
 		color: inherit;
 	}
 }

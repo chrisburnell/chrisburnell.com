@@ -10,7 +10,7 @@
 	max-block-size: 100vb;
 	max-block-size: 100dvb;
 
-	[id="sounds-toggle"] {
+	& [id="sounds-toggle"] {
 		color: inherit !important; // override themes
 	}
 }
@@ -22,14 +22,14 @@
 		display: none;
 	}
 
-	h2 {
+	& h2 {
 		padding-inline: 1em;
 	}
 
-	.navigation__list {
+	& .navigation__list {
 		flex-direction: column;
 
-		a {
+		& a {
 			font-size: var(--font-size-gamma);
 			padding-inline: var(--size-small-medium);
 		}
@@ -45,23 +45,23 @@
 	margin-inline-start: 1ex;
 	border-radius: 50%;
 
-	svg {
+	& svg {
 		@apply --non-interactive;
 		fill: var(--color-snowy);
 		min-inline-size: calc(var(--font-size-default) * var(--line-height-default));
 		min-block-size: calc(var(--font-size-default) * var(--line-height-default));
-		transition: --transition(transform);
+		@apply --transition(transform);
 		filter: drop-shadow(0 1px 1px var(--color-mineshaft));
 	}
 }
 
 .popover-settings-button {
-	svg {
+	& svg {
 		transform: scale(0.8);
 	}
 
 	&:is(:hover, :focus, :active) {
-		svg {
+		& svg {
 			transform: scale(1) rotate(60deg);
 		}
 	}
@@ -72,19 +72,18 @@
 		display: none;
 	}
 
-	svg {
+	& svg {
 		transform: scale(0.6);
 	}
 
 	&:is(:hover, :focus, :active) {
-		svg {
+		& svg {
 			transform: scale(0.8);
 		}
 	}
 }
 
 .popover-settings {
-
 }
 
 // Align settings
@@ -93,33 +92,33 @@
 	place-items: center;
 	gap: 1em;
 
-	@apply --inline-above(null, var(--size-breakpoint-small)) {
+	@apply --inline-above(var(--size-breakpoint-small)) {
 		grid-template-columns: max-content auto;
 	}
 
-	@apply --inline-below(null, var(--size-breakpoint-small)) {
+	@apply --inline-below(var(--size-breakpoint-small)) {
 		min-inline-size: 66vi;
 	}
 
-	label {
+	& label {
 		inline-size: 100%;
 
-		@apply --inline-below(null, var(--size-breakpoint-small)) {
+		@apply --inline-below(var(--size-breakpoint-small)) {
 			text-align: start;
 		}
 
-		@apply --inline-above(null, var(--size-breakpoint-small)) {
+		@apply --inline-above(var(--size-breakpoint-small)) {
 			text-align: end;
 		}
 	}
 
-	select,
-	[type="checkbox"] {
+	& select,
+	& [type="checkbox"] {
 		margin-inline-end: auto;
 	}
 
-	select,
-	[type="range"] {
+	& select,
+	& [type="range"] {
 		inline-size: 100%;
 		min-inline-size: min-content;
 	}

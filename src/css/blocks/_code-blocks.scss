@@ -21,7 +21,7 @@ pre[class*="language-"] {
 		font-weight: var(--font-weight-semibold);
 	}
 
-	code {
+	& code {
 		color: var(--color-snowy);
 		padding: 0;
 		line-height: var(--line-height-code);
@@ -77,7 +77,7 @@ pre.language-php::before {
 // pre.language-plaintext::before,
 // pre.language-text::before {
 // 	content: "Plaintext";
-// 	color: h(yeti);
+// 	color: var(--color-yeti);
 // }
 pre.language-scss::before {
 	content: "SCSS";

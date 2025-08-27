@@ -12,62 +12,62 @@
 
 	margin-block-start: var(--size-gap);
 
-	article {
+	& article {
 		--flow-space: var(--size-small);
 		line-height: var(--line-height-medium);
 	}
 
-	h1 {
+	& h1 {
 		line-height: var(--line-height-medium);
 	}
 
-	#{collections.$anchor} {
+	& #{collections.$anchor} {
 		&:not(:hover, :focus, :active) {
 			color: inherit;
 		}
 	}
 
-	.cover {
+	& .cover {
 		object-fit: cover;
 		object-position: center;
-		transition: --transition(transform);
+		@apply --transition(transform);
 	}
 
-	.cover-anchor {
+	& .cover-anchor {
 		display: block;
 		overflow: hidden;
 	}
 
 	// Two-way interactivity between .cover-anchor / h1 > a
-	.cover-anchor:is(:hover, :focus, :active),
-	article:has(h1 > a:is(:hover, :focus, :active)) {
-		.cover {
+	& .cover-anchor:is(:hover, :focus, :active),
+	& article:has(h1 > a:is(:hover, :focus, :active)) {
+		& .cover {
 			transform: scale(1.1);
 		}
 	}
-	.cover-anchor:is(:hover, :focus, :active) + h1 > a {
+	& .cover-anchor:is(:hover, :focus, :active) + h1 > a {
 		text-decoration-color: var(--color-maple) !important;
 	}
 
 	// Mimic an outline on .cover-anchor when h1 > a is viisbly focussed
-	.cover-anchor:has(+ h1 > a:focus-visible) {
+	& .cover-anchor:has(+ h1 > a:focus-visible) {
 		outline: var(--outline-width, var(--size-border-thin)) solid var(--outline-color, Highlight);
 		outline-offset: var(--outline-offset, var(--size-border-thin));
 	}
 }
 
 .shelf--portrait {
-	.cover {
+	& .cover {
 		block-size: 240px;
 	}
 }
 
 .shelf--square {
-	:is(.cover-anchor, .cover) {
+	& :is(.cover-anchor, .cover) {
 		aspect-ratio: 1 / 1;
 	}
 
-	.cover {
+	& .cover {
 		block-size: 100%;
 	}
 }

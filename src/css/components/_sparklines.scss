@@ -21,7 +21,7 @@ spark-line {
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 1fr auto;
 
-	:is(canvas, svg) {
+	& :is(canvas, svg) {
 		inline-size: auto;
 		grid-column: 1 / 3;
 		grid-row: 1 / 2;
@@ -29,21 +29,21 @@ spark-line {
 		overflow: visible;
 	}
 
-	span {
+	& span {
 		padding-inline: var(--size-tiny-max);
 	}
-	span:nth-of-type(1) {
+	& span:nth-of-type(1) {
 		grid-column: 1 / 2;
 		text-align: start;
 	}
-	span:nth-of-type(2) {
+	& span:nth-of-type(2) {
 		grid-column: 2 / 3;
 		text-align: end;
 	}
 
 	// Animate the pieces
 	&.animate {
-		svg:first-of-type {
+		& svg:first-of-type {
 			clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
 			transition: transform var(--transition-override, var(--transition-duration)) var(--transition-function);
 			animation: swipe var(--transition-override, var(--transition-duration-long)) linear var(--transition-override, var(--transition-duration)) forwards;
@@ -57,8 +57,8 @@ spark-line {
 			}
 		}
 
-		svg:last-of-type,
-		span {
+		& svg:last-of-type,
+		& span {
 			opacity: 0;
 			animation: fadein var(--transition-override, var(--transition-duration)) linear calc(var(--transition-override, var(--transition-duration-long)) + var(--transition-override, var(--transition-duration))) forwards;
 
@@ -84,7 +84,7 @@ svg-sparkline {
 		block-size: 78px;
 	}
 
-	svg {
+	& svg {
 		overflow: hidden;
 	}
 }

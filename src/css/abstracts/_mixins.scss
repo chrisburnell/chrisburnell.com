@@ -52,7 +52,7 @@
 /// Make something non-interactive.
 ///
 @mixin --non-interactive() {
-	@apply non-selectable;
+	@apply --non-selectable;
 	pointer-events: none;
 }
 
@@ -111,17 +111,17 @@
 ///
 /// Nest an inline-size-based container query.
 ///
-@mixin --inline-above(--name <custom-ident>, --min <length>, @contents) {
+@mixin --inline-above(--min <length>, --name <custom-ident>, @contents) {
 	@container env(--name) (inline-size > env(--min)) {
 		@contents;
 	}
 }
-@mixin --inline-below(--name <custom-ident>, --max <length>, @contents) {
+@mixin --inline-below(--max <length>, --name <custom-ident>, @contents) {
 	@container env(--name) (inline-size <= env(--max)) {
 		@contents;
 	}
 }
-@mixin --inline-between(--name <custom-ident>, --min <length>, --max <length>, @contents) {
+@mixin --inline-between(--min <length>, --max <length>, --name <custom-ident>, @contents) {
 	@container env(--name) (env(--min) < inline-size <= env(--max)) {
 		@contents;
 	}
@@ -130,18 +130,26 @@
 ///
 /// Nest an block-size-based container query.
 ///
-@mixin --block-above(--name <custom-ident>, --min <length>, @contents) {
+@mixin --block-above(--min <length>, --name <custom-ident>, @contents) {
 	@container env(--name) (block-size > env(--min)) {
 		@contents;
 	}
 }
-@mixin --block-below(--name <custom-ident>, --max <length>, @contents) {
+@mixin --block-below(--max <length>, --name <custom-ident>, @contents) {
 	@container env(--name) (block-size <= env(--max)) {
 		@contents;
 	}
 }
-@mixin --block-between(--name <custom-ident>, --min <length>, --max <length>, @contents) {
+@mixin --block-between(--min <length>, --max <length>, --name <custom-ident>, @contents) {
 	@container env(--name) (env(--min) < block-size <= env(--max)) {
 		@contents;
 	}
+}
+
+@mixin --animation(--name <custom-ident>, --function <easing-function>: var(--animation-function)) {
+	animation: --animation(var(--name), var(--function));
+}
+
+@mixin --transition(--name <single-transition-property>, --duration <time>: var(--transition-duration), --function <easing-function>: var(--transition-function), --delay <time>: 0) {
+	transition: --transition(var(--name), var(--duration), var(--function), var(--delay));
 }

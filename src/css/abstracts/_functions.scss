@@ -4,17 +4,17 @@
 ////
 
 @function --transparent(--color <color>, --alpha <number>) returns <color> {
-	result: oklch(from env(--color) l c h / env(--alpha));
+	result: oklch(from var(--color) l c h / var(--alpha));
 }
 
 @function --range-map(--number <number>, --oldMin <number>, --oldMax <number>, --newMin <number>, --newMax <number>) returns <number> {
-	result: calc(env(--newMin) + (env(--number) - env(--oldMin)) * (env(--newMax) - env(--newMin)) / (env(--oldMax) - env(--oldMin)));
+	result: calc(var(--newMin) + (var(--number) - var(--oldMin)) * (var(--newMax) - var(--newMin)) / (var(--oldMax) - var(--oldMin)));
 }
 
 @function --animation(--name <custom-ident>, --function <easing-function>: var(--animation-function)) returns <string> {
-	result: env(--name) env(--function);
+	result: var(--name) var(--function);
 }
 
 @function --transition(--name <single-transition-property>, --duration <time>: var(--transition-duration), --function <easing-function>: var(--transition-function), --delay <time>: 0) returns <string> {
-	result: env(--name) env(--duration) env(--function) env(--delay);
+	result: var(--name) var(--duration) var(--function) var(--delay);
 }

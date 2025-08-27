@@ -57,7 +57,7 @@
 		padding-block: var(--size-small);
 	}
 
-	a {
+	& a {
 		overflow-wrap: break-word;
 	}
 }
@@ -73,7 +73,7 @@
 	column-gap: var(--size-medium);
 	row-gap: var(--size-tiny);
 
-	.e-content {
+	& .e-content {
 		--flow-space: 0.5em;
 	}
 }
@@ -82,30 +82,30 @@
 	grid-row: 1 / 3;
 
 	&,
-	#{collections.$anchor} {
+	& #{collections.$anchor} {
 		inline-size: var(--size-avatar-small);
 	}
 
-	#{collections.$anchor} {
+	& #{collections.$anchor} {
 		aspect-ratio: 1 / 1;
 		border-radius: 50%;
 	}
 
-	#{collections.$image} {
+	& #{collections.$image} {
 		display: block;
 	}
 }
 
 .person__meta {
-	a {
+	& a {
 		color: inherit;
 	}
 
-	.person__permalink {
+	& .person__permalink {
 		line-height: 0;
 	}
 
-	.p-author .p-name {
+	& .p-author .p-name {
 		font-weight: var(--font-weight-semibold);
 	}
 }

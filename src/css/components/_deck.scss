@@ -6,11 +6,11 @@
 @use "../abstracts/collections";
 
 .deck {
-	:not(.box) > .deck {
+	& :not(.box) > .deck {
 		margin-block-start: var(--size-gap);
 	}
 
-	article {
+	& article {
 		--flow-space: var(--size-tiny);
 
 		max-inline-size: var(--size-line-length);
@@ -24,22 +24,22 @@
 			padding-block-end: var(--size-medium);
 		}
 	}
-	article + article {
+	& article + article {
 		border-block-start: var(--size-border-thin) solid light-dark(--transparent(var(--color-mineshaft), var(--opacity-gamma)), --transparent(var(--color-yeti), var(--opacity-delta)));
 	}
 
-	h1 {
+	& h1 {
 		font-weight: var(--font-weight-semibold);
 		line-height: var(--line-height-medium);
 	}
 
-	#{collections.$anchor} {
+	& #{collections.$anchor} {
 		&:not(:hover, :focus, :active) {
 			color: inherit;
 		}
 	}
 
-	figure {
+	& figure {
 		align-items: start;
 
 		& + * {
@@ -63,10 +63,10 @@
 .deck__meta {
 	--flow-space: var(--size-small);
 
-	time {
+	& time {
 		@apply --italic;
 
-		sup::before {
+		& sup::before {
 			content: " ";
 			font-size: 0.5em;
 		}

@@ -25,27 +25,27 @@
 		display: none;
 	}
 
-	h2 {
+	& h2 {
 		margin-block-end: var(--size-small);
 	}
 
-	#{collections.$anchor},
-	data,
-	time {
+	& #{collections.$anchor},
+	& data,
+	& time {
 		font-weight: var(--font-weight-semibold);
 	}
 
-	.emoji {
+	& .emoji {
 		inline-size: calc(var(--size-medium) + var(--size-tiny));
 		display: inline-block;
 	}
 
-	.rating {
+	& .rating {
 		margin-inline-start: var(--size-tiny);
 		vertical-align: text-bottom;
 	}
 
-	svg-sparkline {
+	& svg-sparkline {
 		margin-inline: auto;
 	}
 }

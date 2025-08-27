@@ -3,21 +3,22 @@
 /// @group themes
 ////
 
-@mixin theme-matrix() {
-	& {
-		--raven-lightness: 60.6%;
-		--raven-chroma: 0.082;
-		--raven-hue: 142.62;
+:root:has([name="theme"] [value*="matrix"]:checked),
+[data-theme*="matrix"],
+.matrix {
+	color-scheme: dark;
+	@apply --dark-styles;
+	--raven-lightness: 60.6%;
+	--raven-chroma: 0.082;
+	--raven-hue: 142.62;
+	@apply --setup-raven-colors;
 
-		@apply --setup-raven-colors;
-	}
-
-	.logo,
-	.perch::after {
+	& .logo,
+	& .perch::after {
 		filter: hue-rotate(270deg) saturate(300%);
 	}
 
-	main,
+	& main,
 	&.themed-section {
 		@media (prefers-reduced-motion: no-preference) {
 			// This makes the GIF appear 30% transparent through the background
@@ -26,16 +27,8 @@
 		}
 	}
 
-	.avatar,
-	.author__image {
+	& .avatar,
+	& .author__image {
 		filter: url("/images/fsociety.svg#fsociety");
 	}
-}
-
-:root:has([name="theme"] [value*="matrix"]:checked),
-[data-theme*="matrix"],
-.matrix {
-	color-scheme: dark;
-	@apply --dark-styles;
-	@include theme-matrix;
 }
