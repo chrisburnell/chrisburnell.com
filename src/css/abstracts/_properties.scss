@@ -2,3 +2,21 @@
 /// Properties
 /// @group abstracts
 ////
+
+@property --rating {
+	syntax: "<number>";
+	inherits: false;
+	initial-value: 0;
+}
+
+@property --fit-text {
+	syntax: "<length>";
+	initial-value: 0px;
+	inherits: true;
+}
+
+@property --fit-text2 {
+	syntax: "<length>";
+	initial-value: 0px;
+	inherits: true;
+}

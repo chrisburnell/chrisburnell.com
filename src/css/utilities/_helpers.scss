@@ -157,7 +157,10 @@
 	text-shadow: none;
 
 	:is(a:not(.button), .anchor):not(.icon-anchor) > &:first-child,
-	:is(button:not(.anchor), .button, [type="button"], [role="tab"]):not(.icon-anchor) > &:first-child {
+	:is(button:not(.anchor), .button, [type="button"], [role="tab"]):not(
+			.icon-anchor
+		)
+		> &:first-child {
 		display: inline-block;
 		padding-inline-end: 0.625ch;
 	}
@@ -190,7 +193,11 @@
 }
 
 // Animation for transitioning from user-select:all; to user-select:text;
-:is(pre[class*="language-"] code[tabindex="0"], pre:not(:has(code)), .clamp-calculator__result) {
+:is(
+	pre[class*="language-"] code[tabindex="0"],
+	pre:not(:has(code)),
+	.clamp-calculator__result
+) {
 	user-select: all;
 
 	&:focus {
@@ -258,7 +265,9 @@
 		background-color: var(--color-#{$name});
 
 		@supports (color: color-contrast(#5f8aa6 vs white, black)) {
-			color: color-contrast(#{$color} vs var(--contrast-list) to var(--contrast-ratio));
+			color: color-contrast(
+				#{$color} vs var(--contrast-list) to var(--contrast-ratio)
+			);
 		}
 	}
 }
@@ -300,18 +309,22 @@
 
 @keyframes block-shadow-inside {
 	from {
-		box-shadow: inset 0 -2em 2em -2em oklch(from var(--color-shadow) l c h / 40%);
+		box-shadow: inset 0 -2em 2em -2em
+			oklch(from var(--color-shadow) l c h / 40%);
 	}
 	to {
-		box-shadow: inset 0 2em 2em -2em oklch(from var(--color-shadow) l c h / 40%);
+		box-shadow: inset 0 2em 2em -2em
+			oklch(from var(--color-shadow) l c h / 40%);
 	}
 }
 @keyframes inline-shadow-inside {
 	from {
-		box-shadow: inset -2em 0 2em -2em oklch(from var(--color-shadow) l c h / 40%);
+		box-shadow: inset -2em 0 2em -2em
+			oklch(from var(--color-shadow) l c h / 40%);
 	}
 	to {
-		box-shadow: inset 2em 0 2em -2em oklch(from var(--color-shadow) l c h / 40%);
+		box-shadow: inset 2em 0 2em -2em
+			oklch(from var(--color-shadow) l c h / 40%);
 	}
 }
 @keyframes block-shadow-outside {
@@ -345,5 +358,62 @@ html:has(.full-space) {
 
 	@media (prefers-reduced-motion: no-preference) and (width > 700px) {
 		scroll-snap-align: start;
+	}
+}
+
+// Fit Text to Width (Inline)
+//// <span class="fit-text">
+////   <span><span>TEXT</span></span>
+////   <span aria-hidden="true">TEXT</span>
+//// </span>
+.fit-text {
+	display: flex;
+	container-type: inline-size;
+
+	--fit-text: initial;
+	--support-sentinel: var(--fit-text, 9999px);
+
+	& > [aria-hidden] {
+		visibility: hidden;
+	}
+
+	& > :not([aria-hidden]) {
+		flex-grow: 1;
+		container-type: inline-size;
+
+		--fit-text: 100cqi;
+		--available-space: var(--fit-text);
+
+		& > * {
+			--support-sentinel: inherit;
+			--fit-text: 100cqi;
+			--ratio: tan(
+				atan2(
+					var(--available-space),
+					var(--available-space) - var(--fit-text)
+				)
+			);
+			--font-size: clamp(
+				1em,
+				1em * var(--ratio),
+				var(--max-font-size, infinity * 1px) - var(--support-sentinel)
+			);
+			inline-size: var(--available-space);
+
+			&:not(.fit-text) {
+				display: block;
+				font-size: var(--font-size);
+
+				@container (inline-size > 0) {
+					white-space: nowrap;
+				}
+			}
+
+			&.fit-text {
+				--fit-text2: var(--font-size);
+				font-variation-settings: "opsz"
+					tan(atan2(var(--fit-text2), 1px));
+			}
+		}
 	}
 }

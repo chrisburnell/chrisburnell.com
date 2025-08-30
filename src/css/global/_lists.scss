@@ -1,6 +1,8 @@
 ////
 /// Lists
 /// @group global
+/// TODO: Refactor to use browser default counter `list-item` and remove
+/// redundant resets, etc.
 ////
 
 :is(ol, ul) {
