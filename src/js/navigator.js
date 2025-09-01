@@ -26,11 +26,9 @@ if (
 		.catch((error) => {
 			console.error("Service Worker Registration failed", error);
 		});
-	window.addEventListener("load", () => {
-		if (navigator.serviceWorker.controller) {
-			navigator.serviceWorker.controller.postMessage({
-				command: "trimCaches",
-			});
-		}
+	navigator.serviceWorker.ready.then((registration) => {
+		registration.active.postMessage({
+			command: "trimCaches",
+		});
 	});
 }
