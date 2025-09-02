@@ -3,7 +3,6 @@
 /// @group blocks
 ////
 
-@use "../abstracts/collections";
 @use "../abstracts/functions";
 @use "../abstracts/mixins";
 
@@ -19,7 +18,7 @@
 	}
 
 	&,
-	#{collections.$anchor} {
+	:is(a:not(.button), .anchor) {
 		&:not(:hover, :focus, :active) {
 			text-decoration-color: var(--color-kaiser);
 		}

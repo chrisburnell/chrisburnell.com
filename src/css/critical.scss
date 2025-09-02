@@ -9,14 +9,19 @@
 @use "sass:math";
 @use "sass:meta";
 
-// Abstracts
 @use "abstracts/functions";
 @use "abstracts/mixins";
+
+// Design Tokens
 @use "generated/tokens";
-@use "abstracts/collections";
 
 // Fonts
 @include meta.load-css("global/fonts");
+
+// Abstracts
+@include meta.load-css("abstracts/properties");
+// @include meta.load-css("abstracts/functions");
+// @include meta.load-css("abstracts/mixins");
 
 @layer reset, global, compositions, blocks, utilities, themes, components, pages, thirdparty, overrides;
 

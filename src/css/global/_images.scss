@@ -3,9 +3,8 @@
 /// @group global
 ////
 
-@use "../abstracts/collections";
 
-#{collections.$image} {
+:is(img, input[type=image], svg) {
 	margin-inline: auto;
 	position: relative;
 	break-inside: avoid;
@@ -18,10 +17,10 @@ img {
 svg {
 	fill: var(--fill, currentColor);
 
-	#{collections.$anchor}:is(:hover, :focus, :active) > &,
-	#{collections.$anchor}:is(:hover, :focus, :active) .emoji &,
-	#{collections.$button}:is(:hover, :focus, :active) > &,
-	#{collections.$button}:is(:hover, :focus, :active) .emoji & {
+	:is(a:not(.button), .anchor):is(:hover, :focus, :active) > &,
+	:is(a:not(.button), .anchor):is(:hover, :focus, :active) .emoji &,
+	:is(button:not(.anchor), .button, [type=button], [role=tab]):is(:hover, :focus, :active) > &,
+	:is(button:not(.anchor), .button, [type=button], [role=tab]):is(:hover, :focus, :active) .emoji & {
 		fill: var(--fill-hover, var(--fill, currentColor));
 	}
 }

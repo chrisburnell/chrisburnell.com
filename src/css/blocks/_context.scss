@@ -3,7 +3,6 @@
 /// @group blocks
 ////
 
-@use "../abstracts/collections";
 @use "../abstracts/mixins";
 
 .context {
@@ -19,7 +18,7 @@
 		text-align: center;
 	}
 
-	#{collections.$content} {
+	:is(p, blockquote, details, table, dl, ol, ul, figure:not([class])) {
 		max-inline-size: var(--size-line-length);
 		margin-inline: auto;
 	}

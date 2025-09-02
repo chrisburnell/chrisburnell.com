@@ -4,7 +4,6 @@
 /// Extends %grid
 ////
 
-@use "../abstracts/collections";
 @use "../abstracts/functions";
 
 .shelf {
@@ -22,7 +21,7 @@
 		line-height: var(--line-height-medium);
 	}
 
-	#{collections.$anchor} {
+	:is(a:not(.button), .anchor) {
 		&:not(:hover, :focus, :active) {
 			color: inherit;
 		}

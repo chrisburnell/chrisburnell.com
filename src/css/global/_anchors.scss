@@ -4,11 +4,10 @@
 /// @link https://chrisburnell.com/styleguide/#inline-elements
 ////
 
-@use "../abstracts/collections";
 @use "../abstracts/functions";
 @use "../abstracts/mixins";
 
-#{collections.$anchor} {
+:is(a:not(.button), .anchor) {
 	--outline-color: var(--color-raven);
 
 	background-color: transparent;
@@ -52,7 +51,7 @@
 	}
 
 	// Force heading anchors to take the color of the heading
-	#{collections.$heading} &,
+	:is(h1, h2, h3, h4, h5, h6) &,
 	th & {
 		color: inherit !important;
 	}

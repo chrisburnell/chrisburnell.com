@@ -3,11 +3,10 @@
 /// @group blocks
 ////
 
-@use "../abstracts/collections";
 
 .cover {
 	&,
-	#{collections.$image} {
+	:is(img, input[type=image], svg) {
 		max-block-size: 100vb;
 		max-block-size: 100dvb;
 	}

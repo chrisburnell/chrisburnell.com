@@ -3,7 +3,6 @@
 /// @group blocks
 ////
 
-@use "../abstracts/collections";
 @use "../abstracts/mixins";
 
 .description {
@@ -17,7 +16,7 @@
 		}
 	}
 
-	#{collections.$anchor} {
+	:is(a:not(.button), .anchor) {
 		color: inherit;
 	}
 

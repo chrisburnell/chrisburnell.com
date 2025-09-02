@@ -3,11 +3,10 @@
 /// @group global
 ////
 
-@use "../abstracts/collections";
 @use "../abstracts/functions";
 @use "../abstracts/mixins";
 
-#{collections.$content} {
+:is(p, blockquote, details, table, dl, ol, ul, figure:not([class])) {
 	break-inside: avoid;
 }
 

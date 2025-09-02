@@ -3,17 +3,16 @@
 /// @group global
 ////
 
-@use "../abstracts/collections";
 @use "../abstracts/functions";
 
-#{collections.$heading} {
+:is(h1, h2, h3, h4, h5, h6) {
 	position: relative;
 	font-family: var(--font-family-sans);
 	text-wrap: balance;
 	clear: both;
 }
 
-#{collections.$alpha} {
+h1, .alpha {
 	font-size: var(--font-size-alpha);
 	font-weight: var(--font-weight-heavy);
 	line-height: var(--line-height-medium);
@@ -22,7 +21,7 @@ h1 {
 	z-index: var(--z-index-above);
 }
 
-#{collections.$beta} {
+h2, .beta {
 	font-size: var(--font-size-beta);
 	font-weight: var(--font-weight-semibold);
 	line-height: var(--line-height-medium);
@@ -39,30 +38,36 @@ h2 {
 	box-shadow: inset 0 calc(-1 * var(--size-border-thin)) 0 oklch(from currentColor l c h / 15%);
 }
 
-#{collections.$gamma} {
+h3,
+.gamma,
+.deck h1 {
 	font-size: var(--font-size-gamma);
 	font-weight: var(--font-weight-semibold);
 	line-height: var(--line-height-medium);
 }
 
-#{collections.$delta} {
+h4,
+.delta,
+.shelf h1 {
 	font-size: var(--font-size-default);
 	font-weight: var(--font-weight-semibold);
 	line-height: var(--line-height-default);
 }
 
-#{collections.$epsilon} {
+h5,
+.epsilon {
 	font-size: var(--font-size-small);
 	font-weight: var(--font-weight-semibold);
 	line-height: var(--line-height-default);
 }
 
-#{collections.$zeta} {
+h6,
+.zeta {
 	font-size: var(--font-size-small);
 	font-weight: var(--font-weight-regular);
 	line-height: var(--line-height-default);
 }
 
-#{collections.$riza} {
+.riza {
 	font-size: var(--font-size-default);
 }

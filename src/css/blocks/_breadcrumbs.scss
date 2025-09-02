@@ -4,7 +4,6 @@
 /// Extends Cluster
 ////
 
-@use "../abstracts/collections";
 @use "../abstracts/functions";
 
 .breadcrumbs {
@@ -25,7 +24,7 @@
 		color: light-dark(var(--color-bowhead), var(--color-yeti));
 	}
 
-	#{collections.$anchor} {
+	:is(a:not(.button), .anchor) {
 		color: inherit;
 	}
 }

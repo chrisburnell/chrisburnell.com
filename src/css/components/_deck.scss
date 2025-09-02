@@ -3,7 +3,6 @@
 /// @group components
 ////
 
-@use "../abstracts/collections";
 @use "../abstracts/functions";
 @use "../abstracts/mixins";
 
@@ -35,7 +34,7 @@
 		line-height: var(--line-height-medium);
 	}
 
-	#{collections.$anchor} {
+	:is(a:not(.button), .anchor) {
 		&:not(:hover, :focus, :active) {
 			color: inherit;
 		}
