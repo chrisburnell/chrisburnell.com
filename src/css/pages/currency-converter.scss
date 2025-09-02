@@ -16,7 +16,7 @@
 	}
 
 	.currency-converter {
-		& fieldset  > * + * {
+		& fieldset > * + * {
 			margin-block-start: var(--size-small);
 		}
 
