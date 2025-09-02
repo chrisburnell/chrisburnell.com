@@ -4,9 +4,6 @@
 /// @link https://chrisburnell.com/styleguide/#code-block
 ////
 
-@use "../abstracts/functions";
-@use "../abstracts/mixins";
-
 :is(code, kbd, samp, var, .monospace) {
 	font-family: var(--font-family-monospace);
 	font-variant: no-common-ligatures tabular-nums;
@@ -28,7 +25,7 @@
 }
 
 :is(blockquote, code, samp, kbd) {
-	background-color: light-dark(inherit, functions.h(raven, gamma));
+	background-color: light-dark(inherit, --transparent(var(--color-raven), var(--opacity-gamma)));
 }
 
 kbd {
@@ -56,12 +53,12 @@ pre {
 	overflow: hidden;
 	position: relative;
 
-	@include mixins.cqi(null, "small") {
+	@apply --inline-above(var(--size-breakpoint-small)) {
 		tab-size: 4;
 	}
 
 	&,
-	code {
+	& code {
 		display: block;
 		font-family: var(--font-family-monospace);
 		line-height: var(--line-height-code);
@@ -72,7 +69,7 @@ pre {
 		word-wrap: normal;
 	}
 
-	code {
+	& code {
 		background-color: transparent !important; // break through layers
 		padding: 0;
 		border-radius: 0;

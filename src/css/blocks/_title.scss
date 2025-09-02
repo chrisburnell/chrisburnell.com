@@ -3,9 +3,6 @@
 /// @group blocks
 ////
 
-@use "../abstracts/functions";
-@use "../abstracts/mixins";
-
 .title {
 	display: block;
 	margin-block-start: var(--size-large-gigantic);
@@ -14,7 +11,7 @@
 	position: relative;
 	contain: content; // helps painting with .perch inside
 
-	@include mixins.cqi(null, "small") {
+	@apply --inline-above(var(--size-breakpoint-small)) {
 		text-align: center;
 	}
 

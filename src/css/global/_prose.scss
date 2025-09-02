@@ -3,11 +3,7 @@
 /// @group global
 ////
 
-@use "../abstracts/collections";
-@use "../abstracts/functions";
-@use "../abstracts/mixins";
-
-#{collections.$content} {
+:is(p, blockquote, details, table, dl, ol, ul, figure:not([class])) {
 	break-inside: avoid;
 }
 
@@ -17,7 +13,7 @@
 }
 
 :is(abbr, dfn, span)[title] {
-	@include mixins.italic;
+	@apply --italic;
 	text-decoration: underline;
 	text-decoration-color: var(--color-nickel);
 	text-decoration-style: dotted;

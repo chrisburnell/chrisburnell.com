@@ -3,15 +3,12 @@
 /// @group components
 ////
 
-@use "../abstracts/functions";
-@use "../abstracts/mixins";
-
 .support,
 .support__meta {
 	display: flex;
 	gap: var(--size-gutter);
 
-	@include mixins.cqi(null, "small") {
+	@apply --inline-above(var(--size-breakpoint-small)) {
 		gap: var(--size-large);
 	}
 }
@@ -19,7 +16,7 @@
 .support {
 	flex-direction: column-reverse;
 
-	@include mixins.cqi(null, "small") {
+	@apply --inline-above(var(--size-breakpoint-small)) {
 		flex-direction: row-reverse;
 	}
 }
@@ -34,7 +31,7 @@
 	flex-wrap: wrap;
 	gap: var(--size-small);
 
-	li {
+	& li {
 		border-radius: var(--border-radius, var(--size-border-thin));
 		padding-inline: var(--size-small);
 		font-weight: var(--font-weight-semibold);

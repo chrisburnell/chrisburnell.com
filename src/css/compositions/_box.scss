@@ -2,7 +2,7 @@
 /// Box
 /// @group compositions
 ///
-/// --box-background-color (color-mix(in oklab, h(bear), h(snowy)))
+/// --box-background-color (color-mix(in oklab, var(--color-bear), var(--color-snowy)))
 ///     Defines the background color the box.
 /// --box-color (inherit)
 ///     Defines the text color for box.
@@ -16,18 +16,16 @@
 ///     Defines the box shadow.
 ////
 
-@use "../abstracts/collections";
-@use "../abstracts/functions";
-
 .box,
-#{collections.$box} {
+.cp_embed_wrapper,
+.speakerdeck-embed-wrapper {
 	background-color: var(--box-background-color, light-dark(color-mix(in oklab, var(--color-bear), var(--color-snowy)), color-mix(in oklab, var(--color-thunder), var(--color-mineshaft) 80%)));
 	color: var(--box-color, inherit);
 	max-inline-size: var(--box-max-inline-size, 100%) !important;
 	padding: var(--box-padding, var(--size-gutter));
 	margin-inline: auto;
 	border-width: 0;
-	border-block-start: var(--size-border-thin) solid var(--box-border-color, light-dark(var(--color-raven), functions.h(raven, alpha)));
+	border-block-start: var(--size-border-thin) solid var(--box-border-color, light-dark(var(--color-raven), --transparent(var(--color-raven), var(--opacity-alpha))));
 	border-radius: var(--border-radius, var(--size-border-thin));
 	box-shadow: var(--box-shadow, var(--box-shadow-low));
 	text-align: start;
@@ -35,7 +33,7 @@
 	font-style: normal;
 	font-variation-settings: normal;
 
-	#{collections.$heading} {
+	& :is(h1, h2, h3, h4, h5, h6) {
 		font-size: var(--font-size-default);
 		font-weight: var(--font-weight-semibold);
 		line-height: var(--line-height-medium);
@@ -43,29 +41,29 @@
 		letter-spacing: 0;
 	}
 
-	#{collections.$anchor} {
+	& :is(a:not(.button), .anchor) {
 		color: light-dark(var(--color-bowhead), var(--color-highland));
 	}
 }
 
 .box {
-	.meta &:not(ul) > #{collections.$heading} + * {
+	.meta &:not(ul) > :is(h1, h2, h3, h4, h5, h6) + * {
 		--flow-space: 0;
 	}
 }
 
 .box--success {
-	--box-background-color: light-dark(#{functions.h(conifer, delta)}, color-mix(in oklab, var(--color-mineshaft), var(--color-conifer) 10%));
+	--box-background-color: light-dark(--transparent(var(--color-conifer), var(--opacity-delta)), color-mix(in oklab, var(--color-mineshaft), var(--color-conifer) 10%));
 	--box-border-color: var(--color-conifer);
 }
 
 .box--warning {
-	--box-background-color: light-dark(#{functions.h(aspen, delta)}, color-mix(in oklab, var(--color-mineshaft), var(--color-aspen) 10%));
+	--box-background-color: light-dark(--transparent(var(--color-aspen), var(--opacity-delta)), color-mix(in oklab, var(--color-mineshaft), var(--color-aspen) 10%));
 	--box-border-color: var(--color-aspen);
 }
 
 .box--error {
-	--box-background-color: light-dark(#{functions.h(maple, delta)}, color-mix(in oklab, var(--color-mineshaft), var(--color-maple) 10%));
+	--box-background-color: light-dark(--transparent(var(--color-maple), var(--opacity-delta)), color-mix(in oklab, var(--color-mineshaft), var(--color-maple) 10%));
 	--box-border-color: var(--color-maple);
 }
 

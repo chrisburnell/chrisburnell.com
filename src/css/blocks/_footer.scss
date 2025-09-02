@@ -3,10 +3,6 @@
 /// @group blocks
 ////
 
-@use "../abstracts/collections";
-@use "../abstracts/functions";
-@use "../abstracts/mixins";
-
 .footer {
 	container: footer / inline-size;
 	background-color: var(--background-color, light-dark(var(--color-mineshaft), color-mix(in oklab, var(--color-thunder), var(--color-mineshaft) 80%)));
@@ -19,35 +15,35 @@
 	}
 
 	&,
-	#{collections.$anchor} {
+	& :is(a:not(.button), .anchor) {
 		&:not(:hover, :focus, :active) {
 			text-decoration-color: var(--color-kaiser);
 		}
 	}
 
-	button {
+	& button {
 		font-size: inherit;
 	}
 
-	svg {
+	& svg {
 		inline-size: calc(1lh - 1.25cap);
 		block-size: calc(1lh - 1.25cap);
-		transition: fill var(--transition-duration) var(--transition-function);
+		@apply --transition(fill);
 	}
 
-	span[title] {
+	& span[title] {
 		color: inherit;
 	}
 }
 
 .footer__grid {
-	@include mixins.cqi(null, null, "medium") {
+	@apply --inline-below(var(--size-breakpoint-medium)) {
 		display: flex;
 		flex-direction: column;
 		gap: var(--size-gutter);
 	}
 
-	@include mixins.cqi(null, "medium") {
+	@apply --inline-above(var(--size-breakpoint-medium)) {
 		display: grid;
 		grid-template-columns:
 			[left-start]
@@ -60,7 +56,7 @@
 		row-gap: var(--size-gutter);
 	}
 
-	.footer__navigation {
+	& .footer__navigation {
 		--padding-inline: 0.625em;
 		grid-column: left;
 		display: flex;
@@ -68,48 +64,48 @@
 		row-gap: 0.5em;
 		line-height: var(--line-height-code);
 
-		li {
+		& li {
 			white-space: nowrap;
 		}
 	}
 
-	.author {
+	& .author {
 		grid-column: right;
 		grid-row: 1/4;
 	}
 
-	.webrings {
+	& .webrings {
 		grid-column: left;
 		grid-row: 4;
 	}
 
-	:is(.badges, .speedlify) {
+	& :is(.badges, .speedlify) {
 		grid-column: right;
 	}
 
-	.badges {
+	& .badges {
 		column-gap: var(--size-small);
 
-		@include mixins.cqi(null, "medium") {
+		@apply --inline-above(var(--size-breakpoint-medium)) {
 			justify-content: end;
 		}
 
-		@include mixins.cqi(null, null, "medium") {
+		@apply --inline-below(var(--size-breakpoint-medium)) {
 			margin-block-start: var(--size-small-medium);
 		}
 	}
 
-	.speedlify {
-		@include mixins.cqi(null, "medium") {
+	& .speedlify {
+		@apply --inline-above(var(--size-breakpoint-medium)) {
 			text-align: end;
 		}
 	}
 
-	summary:not(:hover, :focus, :active) {
+	& summary:not(:hover, :focus, :active) {
 		text-decoration-color: var(--color-kaiser);
 	}
 
-	summary ~ * {
+	& summary ~ * {
 		line-height: var(--line-height-code);
 	}
 }

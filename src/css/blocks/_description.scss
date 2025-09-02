@@ -3,28 +3,25 @@
 /// @group blocks
 ////
 
-@use "../abstracts/collections";
-@use "../abstracts/mixins";
-
 .description {
 	font-size: var(--font-size-gamma);
 	font-weight: var(--font-weight-semibold);
 	text-wrap: balance;
 
-	p {
-		@include mixins.cqi(null, "small") {
+	& p {
+		@apply --inline-above(var(--size-breakpoint-small)) {
 			margin-inline: auto;
 		}
 	}
 
-	#{collections.$anchor} {
+	& :is(a:not(.button), .anchor) {
 		color: inherit;
 	}
 
-	time {
-		@include mixins.italic;
+	& time {
+		@apply --italic;
 
-		sup::before {
+		& sup::before {
 			content: " ";
 			font-size: 0.5em;
 		}

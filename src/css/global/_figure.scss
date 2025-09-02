@@ -3,10 +3,6 @@
 /// @group global
 ////
 
-@use "../abstracts/collections";
-@use "../abstracts/functions";
-@use "../abstracts/mixins";
-
 figure {
 	max-inline-size: 100%;
 	display: flex;
@@ -21,7 +17,7 @@ figure {
 		counter-increment: figureNumber;
 	}
 
-	figcaption {
+	& figcaption {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -30,14 +26,14 @@ figure {
 		line-height: var(--line-height-small);
 	}
 
-	#{collections.$image},
-	#{collections.$media} {
+	& :is(img, input[type="image"], svg),
+	& :is(audio, canvas, embed, iframe, lite-youtube, marquee, math, object, video) {
 		display: block;
 		max-block-size: 100vb;
 		max-block-size: 100dvb;
 	}
 
-	#{collections.$image} {
+	& :is(img, input[type="image"], svg) {
 		border-radius: var(--border-radius, var(--size-border-thin));
 	}
 
@@ -48,6 +44,6 @@ figure {
 
 	& > a figcaption {
 		color: light-dark(var(--color-nickel), var(--color-yeti));
-		@include mixins.italic;
+		@apply --italic;
 	}
 }

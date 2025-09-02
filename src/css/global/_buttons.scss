@@ -13,10 +13,6 @@
 ///     Defines the line height of the button.
 ////
 
-@use "../abstracts/collections";
-@use "../abstracts/functions";
-@use "../abstracts/mixins";
-
 button {
 	appearance: none;
 	background: none;
@@ -28,16 +24,16 @@ button {
 	user-select: text;
 
 	&[disabled] {
-		@include mixins.non-selectable;
+		@apply --non-selectable;
 		opacity: var(--opacity-beta);
 		cursor: not-allowed;
 	}
 }
 
-#{collections.$button} {
+:is(button:not(.anchor), .button, [type="button"], [role="tab"]) {
 	--outline-color: var(--color-raven);
 
-	@include mixins.non-selectable;
+	@apply --non-selectable;
 	background-color: var(--color-bowhead);
 	color: var(--color-snowy) !important;
 	min-inline-size: max(fit-content, var(--button-min-inline-size, 8em));
@@ -78,12 +74,12 @@ button {
 	}
 
 	// prevent inline elements like code from displaying their background
-	* {
+	& * {
 		background-color: transparent;
 	}
 
-	svg {
-		@include mixins.non-interactive;
+	& svg {
+		@apply --non-interactive;
 	}
 }
 

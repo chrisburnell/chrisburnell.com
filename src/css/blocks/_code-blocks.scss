@@ -3,9 +3,6 @@
 /// @group blocks
 ////
 
-@use "../abstracts/functions";
-@use "../abstracts/mixins";
-
 pre[class*="language-"] {
 	--flow-space: var(--size-large);
 	background-color: light-dark(var(--color-mineshaft), var(--color-thunder));
@@ -24,7 +21,7 @@ pre[class*="language-"] {
 		font-weight: var(--font-weight-semibold);
 	}
 
-	code {
+	& code {
 		color: var(--color-snowy);
 		padding: 0;
 		line-height: var(--line-height-code);
@@ -80,7 +77,7 @@ pre.language-php::before {
 // pre.language-plaintext::before,
 // pre.language-text::before {
 // 	content: "Plaintext";
-// 	color: h(yeti);
+// 	color: var(--color-yeti);
 // }
 pre.language-scss::before {
 	content: "SCSS";
@@ -174,7 +171,7 @@ pre.language-css .token.string,
 .token.prefix.unchanged,
 .token.prefix.inserted,
 .token.prefix.deleted {
-	@include mixins.non-selectable;
+	@apply --non-selectable;
 }
 
 .token.inserted:not(.prefix),
@@ -187,7 +184,7 @@ pre.language-css .token.string,
 	font-weight: var(--font-weight-semibold);
 }
 .token.italic {
-	@include mixins.italic;
+	@apply --italic;
 }
 
 .token.entity {

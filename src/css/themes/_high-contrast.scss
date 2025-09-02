@@ -7,8 +7,8 @@ html:has([name="high-contrast"] [value="true"]:checked) {
 	--raven-chroma: 0.2 !important;
 }
 
-@media (prefers-contrast: more) {
-	html:has([name="high-contrast"] [value=""]:checked) {
+html:has([name="high-contrast"] [value=""]:checked) {
+	@media (prefers-contrast: more) {
 		--raven-chroma: 0.2 !important;
 	}
 }

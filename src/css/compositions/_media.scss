@@ -9,14 +9,12 @@
 ///     Set the aspect ratio according to the aspect-ratio property.
 ////
 
-@use "../abstracts/collections";
-
 .media {
 	inline-size: 100%;
 
-	& > #{collections.$image},
-	& > picture #{collections.$image},
-	& > #{collections.$media},
+	& > :is(img, input[type="image"], svg),
+	& > picture :is(img, input[type="image"], svg),
+	& > :is(audio, canvas, embed, iframe, lite-youtube, marquee, math, object, video),
 	& > .speakerdeck-embed-wrapper iframe {
 		aspect-ratio: var(--aspect-ratio);
 		inline-size: 100% !important;

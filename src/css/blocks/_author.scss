@@ -3,9 +3,6 @@
 /// @group blocks
 ////
 
-@use "../abstracts/functions";
-@use "../abstracts/mixins";
-
 .author {
 	display: flex;
 	flex-direction: row;
@@ -23,17 +20,17 @@
 	margin-block-end: var(--size-small);
 	font-family: var(--font-family-serif);
 	font-size: var(--font-size-small);
-	@include mixins.italic;
+	@apply --italic;
 	line-height: var(--line-height-medium);
 	text-align: center;
 	text-decoration: none;
 
-	@include mixins.cqi(null, "medium") {
+	@apply --inline-above(var(--size-breakpoint-medium)) {
 		order: 2;
 	}
 
 	&::before {
-		@include mixins.non-interactive;
+		@apply --non-interactive;
 		content: "";
 		opacity: 0;
 		background-image: url("/images/avatar-pixelated.png");
@@ -52,7 +49,7 @@
 		z-index: var(--z-index-default);
 	}
 
-	.anchor {
+	& .anchor {
 		color: inherit;
 		font-family: var(--font-family-sans);
 		font-size: var(--font-size-default);
@@ -63,14 +60,14 @@
 
 	&:is(:hover, :focus, :active) {
 		&,
-		.anchor {
+		& .anchor {
 			background-color: transparent;
 			text-decoration-color: var(--color-maple);
 		}
 
 		&::before {
 			opacity: 1;
-			transition: opacity var(--transition-duration) var(--transition-function);
+			@apply --transition(opacity);
 			animation: var(--animation-duration-long) linear infinite glitch;
 
 			@at-root {
@@ -125,7 +122,7 @@
 			}
 		}
 
-		.anchor {
+		& .anchor {
 			--outline-offset: 0;
 		}
 	}
@@ -134,7 +131,7 @@
 .author__image {
 	position: relative;
 	text-decoration: none;
-	transition: opacity var(--transition-duration) var(--transition-function);
+	@apply --transition(opacity);
 }
 
 .author__image,
@@ -147,10 +144,9 @@
 
 .author__biography {
 	--flow-space: var(--size-small);
-
 	font-size: var(--font-size-small);
 
-	@include mixins.cqi(null, "medium") {
+	@apply --inline-above(var(--size-breakpoint-medium)) {
 		text-align: end;
 	}
 }

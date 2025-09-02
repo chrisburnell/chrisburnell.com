@@ -1,10 +1,9 @@
 ////
 /// Lists
 /// @group global
+/// TODO: Refactor to use browser default counter `list-item` and remove
+/// redundant resets, etc.
 ////
-
-@use "../abstracts/functions";
-@use "../abstracts/mixins";
 
 :is(ol, ul) {
 	list-style-type: ""; // preferred over list-style: none; as it preserves semantics
@@ -21,7 +20,7 @@
 	padding-inline-start: var(--size-medium);
 	list-style: initial;
 
-	li {
+	& li {
 		padding-inline-start: var(--size-medium);
 
 		&::marker {
@@ -37,7 +36,7 @@
 		margin-block-start: var(--list-space, var(--size-small));
 	}
 
-	li > * + * {
+	& li > * + * {
 		margin-block-start: var(--flow-space, 1em);
 	}
 }
@@ -118,7 +117,7 @@ dl {
 	margin-block-start: 0;
 	overflow: hidden;
 
-	@include mixins.cqi(null, "tiny") {
+	@apply --inline-above(var(--size-breakpoint-tiny)) {
 		grid-template-columns: minmax(min-content, 33.33%) 1fr;
 	}
 }

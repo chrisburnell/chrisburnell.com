@@ -3,31 +3,28 @@
 /// @group blocks
 ////
 
-@use "../abstracts/collections";
-@use "../abstracts/mixins";
-
 .context {
 	font-size: var(--font-size-default);
 	font-family: var(--font-family-serif);
 	margin-block-start: var(--size-gap);
 
-	@include mixins.cqi(null, null, "tiny") {
+	@apply --inline-below(var(--size-breakpoint-tiny)) {
 		font-size: var(--font-size-small);
 	}
 
-	@include mixins.cqi(null, "small") {
+	@apply --inline-above(var(--size-breakpoint-small)) {
 		text-align: center;
 	}
 
-	#{collections.$content} {
+	& :is(p, blockquote, details, table, dl, ol, ul, figure:not([class])) {
 		max-inline-size: var(--size-line-length);
 		margin-inline: auto;
 	}
 
-	time {
-		@include mixins.italic;
+	& time {
+		@apply --italic;
 
-		sup::before {
+		& sup::before {
 			content: " ";
 			font-size: 0.5em;
 		}

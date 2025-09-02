@@ -3,8 +3,6 @@
 /// @group global
 ////
 
-@use "../abstracts/functions";
-
 table {
 	flex: 1 0 auto;
 	align-self: flex-start;
@@ -21,14 +19,14 @@ table {
 
 	&.zebra,
 	&.zebra--horizontal {
-		tbody tr:nth-child(even) td {
-			background-color: functions.h(thunder, delta);
+		& tbody tr:nth-child(even) td {
+			background-color: --transparent(var(--color-thunder), var(--opacity-delta));
 		}
 	}
 	&.zebra,
 	&.zebra--vertical {
-		tbody td:nth-child(odd) {
-			background-color: functions.h(thunder, delta);
+		& tbody td:nth-child(odd) {
+			background-color: --transparent(var(--color-thunder), var(--opacity-delta));
 		}
 	}
 }
@@ -60,7 +58,7 @@ th {
 
 		thead & {
 			inset-block-start: 0;
-			animation: block-shadow-outside linear;
+			@apply --animation(block-shadow-outside);
 			animation-timeline: scroll(nearest block);
 		}
 
@@ -68,14 +66,14 @@ th {
 			inset-inline-start: 0;
 		}
 		tbody &,
-		.shadow-child {
-			animation: inline-shadow-outside linear;
+		& .shadow-child {
+			@apply --animation(inline-shadow-outside);
 			animation-timeline: --scrollInline;
 		}
 		tbody &:has(.shadow-child) {
 			padding: 0;
 		}
-		.shadow-child {
+		& .shadow-child {
 			padding: var(--size-small);
 		}
 

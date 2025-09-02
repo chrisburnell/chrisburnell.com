@@ -4,20 +4,17 @@
 /// @link https://chrisburnell.com/styleguide/
 ////
 
-@use "../abstracts/mixins";
-@use "../abstracts/collections";
-
 @layer pages {
 	.palette {
 		inline-size: 100%;
 		display: flex;
 		flex-wrap: wrap;
 
-		@include mixins.cqi(null, null, "tiny") {
+		@apply --inline-below(var(--size-breakpoint-tiny)) {
 			flex-direction: column;
 		}
 
-		li {
+		& li {
 			--flow-space: var(--size-tiny);
 			max-inline-size: 100%;
 			padding: var(--size-small-medium) var(--size-small);
@@ -26,11 +23,11 @@
 			break-inside: avoid;
 			font-variant-numeric: tabular-nums;
 
-			@include mixins.cqi(null, null, "tiny") {
+			@apply --inline-below(var(--size-breakpoint-tiny)) {
 				flex: 1 0 100%;
 			}
 
-			@include mixins.cqi(null, "tiny") {
+			@apply --inline-above(var(--size-breakpoint-tiny)) {
 				flex: 1 0 50%;
 			}
 
@@ -41,17 +38,17 @@
 
 		&.thirds li,
 		& .third {
-			@include mixins.cqi(null, "tiny") {
+			@apply --inline-above(var(--size-breakpoint-tiny)) {
 				flex: 1 0 33.333%;
 			}
 		}
 
-		#{collections.$heading} {
+		& :is(h1, h2, h3, h4, h5, h6) {
 			margin-block-end: 0;
 			font-size: var(--font-size-default);
 		}
 
-		pre {
+		& pre {
 			inline-size: fit-content;
 			line-height: var(--line-height-medium);
 			margin-inline: auto;
@@ -59,20 +56,20 @@
 	}
 
 	.sparkline-dark {
-		background-color: h(kaiser);
-		color: h(snowy);
+		background-color: var(--color-kaiser);
+		color: var(--color-snowy);
 
 		@media (prefers-color-scheme: dark) {
 			:root:not(:has([name="color-scheme"] [value*="light"]:checked), .light, [data-color-scheme*="light"]) & {
-				background-color: h(snowy);
-				color: h(kaiser);
+				background-color: var(--color-snowy);
+				color: var(--color-kaiser);
 			}
 		}
 		:root:has([name="theme"] [value*="dark"]:checked):not(.light, [data-color-scheme*="light"]) &,
 		[data-color-scheme*="dark"] &,
 		.dark & {
-			background-color: h(snowy);
-			color: h(kaiser);
+			background-color: var(--color-snowy);
+			color: var(--color-kaiser);
 		}
 	}
 }

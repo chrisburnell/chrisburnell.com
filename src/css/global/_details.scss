@@ -3,9 +3,6 @@
 /// @group global
 ////
 
-@use "../abstracts/functions";
-@use "../abstracts/mixins";
-
 details {
 	inline-size: 100%;
 	overflow-x: auto;
@@ -26,7 +23,7 @@ details {
 summary {
 	--outline-offset: calc(var(--size-border-thin) * -1);
 
-	@include mixins.non-selectable;
+	@apply --non-selectable;
 	display: list-item;
 	font-weight: var(--font-weight-semibold);
 	text-decoration: underline;
@@ -34,7 +31,7 @@ summary {
 	text-decoration-thickness: var(--size-border-thin);
 	text-decoration-skip-ink: auto;
 	text-underline-offset: 0.125em;
-	transition: all var(--transition-duration) var(--transition-function);
+	@apply --transition(all);
 	list-style: "+ " inside;
 
 	&::marker {
