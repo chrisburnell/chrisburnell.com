@@ -81,3 +81,8 @@ h2 :is(a:not(.button), .anchor):not(:hover, :focus, :active) {
 		content: "\00a0";
 	}
 }
+
+// Bookmarklets
+[href^="javascript:"]::after {
+	content: "Drag me to your bookmarks toolbar!";
+}
