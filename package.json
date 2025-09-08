@@ -76,7 +76,7 @@
     "@11ty/image-color": "^1.0.7",
     "@11ty/is-land": "^5.0.0",
     "@chrisburnell/bowhead": "^0.3.4",
-    "@chrisburnell/check-invalid-datetimes": "^1.0.0",
+    "@chrisburnell/check-invalid-datetimes": "^1.0.1",
     "@chrisburnell/cow-pen": "^0.0.4",
     "@chrisburnell/eleventy-cache-webmentions": "^2.1.11",
     "@chrisburnell/event-countdown": "^1.0.2",
