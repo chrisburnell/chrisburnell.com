@@ -14,14 +14,14 @@ toc: true
 			<h3>{{ name | title }}</h3>
 			<pre style="font-size: var(--font-size-small-min);">{{ color }}</pre>
 			{% if name == 'raven' -%}
-				<pre  style="display: none;">color-mix(in oklab, goldenrod 15.33%, steelblue)</pre>
-				<pre  style="display: none;">#5f8aa6</pre>
+				<pre style="display: none;">color-mix(in oklab, goldenrod 15.33%, steelblue)</pre>
+				<pre style="font-size: var(--font-size-small-min);">#5f8aa6</pre>
 			{% elif name == 'thunder' -%}
-				<pre  style="display: none;">color-mix(in oklab, black 69.77%, darkgray)</pre>
-				<pre  style="display: none;">#1b1b1b</pre>
+				<pre style="display: none;">color-mix(in oklab, black 69.77%, darkgray)</pre>
+				<pre style="font-size: var(--font-size-small-min);">#1b1b1b</pre>
 			{% elif name == 'snowy' -%}
-				<pre  style="display: none;">color-mix(in oklab, black 1.79%, white)</pre>
-				<pre  style="display: none;">#f9f9f9</pre>
+				<pre style="display: none;">color-mix(in oklab, black 1.79%, white)</pre>
+				<pre style="font-size: var(--font-size-small-min);">#f9f9f9</pre>
 			{%- endif %}
 		</li>
 	{%- endfor -%}
