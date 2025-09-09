@@ -65,7 +65,7 @@
 					<li>
 						{% set responses_array = [] -%}
 						{% if item.data.show_webmentions and item.data.webmentions.length -%}
-							{% set responses_item -%}<a href="{{ item.url }}#respond" title="Jump to responses for this {{ item.data.categoryProper | default(item.data.category) | default('page') }}">{{ responsesLength }} response{{ 's' if responsesLength > 1 }}<span class=" [ visually-hidden ] "> to this {{ item.data.categoryProper | default(item.data.category) | default('page') }}</span></a>{%- endset -%}
+							{% set responses_item -%}<a href="{{ item.url }}#respond" title="Jump to responses for this {{ item.data.categoryProper | default(item.data.category) | default('page') }}">{{ responsesLength }} response{{ 's' if responsesLength > 1 }}</a>{%- endset -%}
 							{% set responses_array = (responses_array.push(responses_item), responses_array) -%}
 						{% endif -%}
 						{% if stargazers > 0 -%}

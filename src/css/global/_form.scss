@@ -136,7 +136,7 @@ textarea {
 }
 
 :is([type="checkbox"]:indeterminate, [type="radio"]) {
-	background-image: linear-gradient(currentColor);
+	background-image: linear-gradient(to bottom, currentColor, currentColor);
 	background-repeat: no-repeat;
 	background-position: center;
 }
