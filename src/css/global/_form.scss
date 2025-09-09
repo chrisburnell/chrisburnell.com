@@ -109,6 +109,7 @@ textarea {
 :is([type="checkbox"], [type="radio"]) {
 	aspect-ratio: 1;
 	inline-size: 2em;
+	block-size: 2em;
 	color: transparent;
 	vertical-align: middle;
 	border-width: var(--size-border-thin);
