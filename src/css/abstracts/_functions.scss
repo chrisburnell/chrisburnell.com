@@ -8,31 +8,6 @@
 @use "sass:math";
 @use "sass:meta";
 @use "sass:string";
-@use "../generated/tokens";
-
-///
-/// Return an OKLCH color
-/// @param {String} $value - key from `color` map
-/// @param {String} $opacity [null] - key from `opacity` map
-/// @throw Error if no parameter is passed.
-/// @return {Color}
-///
-@function h($name, $opacity: null) {
-	@if not $name {
-		@warn "`h()` expects one parameter.";
-		@return false;
-	}
-	$color: var(--color-#{$name});
-	@if not $opacity {
-		@return $color;
-	}
-	$type: meta.type-of($opacity);
-	@if $type == "number" {
-		@return oklch(from $color l c h / $opacity);
-	}
-	$opacity: map.get(tokens.$opacities, $opacity);
-	@return oklch(from $color l c h / $opacity);
-}
 
 ///
 /// Test if `$value` is a valid direction

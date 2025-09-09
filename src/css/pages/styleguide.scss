@@ -58,20 +58,7 @@
 	}
 
 	.sparkline-dark {
-		background-color: h(kaiser);
-		color: h(snowy);
-
-		@media (prefers-color-scheme: dark) {
-			:root:not(:has([name="color-scheme"] [value*="light"]:checked), .light, [data-color-scheme*="light"]) & {
-				background-color: h(snowy);
-				color: h(kaiser);
-			}
-		}
-		:root:has([name="theme"] [value*="dark"]:checked):not(.light, [data-color-scheme*="light"]) &,
-		[data-color-scheme*="dark"] &,
-		.dark & {
-			background-color: h(snowy);
-			color: h(kaiser);
-		}
+		background-color: light-dark(var(--color-kaiser), var(--color-snowy));
+		color: light-dark(var(--color-snowy), var(--color-kaiser));
 	}
 }

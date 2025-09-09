@@ -10,8 +10,11 @@
 		--raven-lightness: 60.6%;
 		--raven-chroma: 0.082;
 		--raven-hue: 142.62;
-
 		@include mixins.setup-raven-colors;
+
+		@media not print {
+			color-scheme: dark;
+		}
 	}
 
 	.logo,
@@ -37,7 +40,6 @@
 :root:has([name="theme"] [value*="matrix"]:checked),
 [data-theme*="matrix"],
 .matrix {
-	color-scheme: dark;
 	@include mixins.dark-styles;
 	@include theme-matrix;
 }

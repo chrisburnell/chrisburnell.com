@@ -63,52 +63,52 @@ $colors: (
   snowy: oklch(92% 0 0),
   mineshaft: color-mix(
 	in oklab,
-	var(--color-snowy)
+	var(--color-snowy),
 	var(--color-thunder) 83.6%
 ),
   kaiser: color-mix(
 	in oklab,
-	var(--color-snowy)
+	var(--color-snowy),
 	var(--color-thunder) 66.6%
 ),
   nickel: color-mix(
 	in oklab,
-	var(--color-snowy)
+	var(--color-snowy),
 	var(--color-thunder) 51.8%
 ),
   yeti: color-mix(
 	in oklab,
-	var(--color-snowy)
+	var(--color-snowy),
 	var(--color-thunder) 10.2%
 ),
   lynx: color-mix(
 	in oklab,
-	var(--color-raven)
+	var(--color-raven),
 	var(--color-thunder) 75%
 ),
   wolf: color-mix(
 	in oklab,
-	var(--color-raven)
+	var(--color-raven),
 	var(--color-thunder) 54%
 ),
   bowhead: color-mix(
 	in oklab,
-	var(--color-raven)
+	var(--color-raven),
 	var(--color-thunder) 33%
 ),
   highland: color-mix(
 	in oklab,
-	var(--color-raven)
+	var(--color-raven),
 	var(--color-snowy) 33%
 ),
   coyote: color-mix(
 	in oklab,
-	var(--color-raven)
+	var(--color-raven),
 	var(--color-snowy) 54%
 ),
   bear: color-mix(
 	in oklab,
-	var(--color-raven)
+	var(--color-raven),
 	var(--color-snowy) 75%
 ),
   aspen: oklch(80.1% 0.1469 83.99),

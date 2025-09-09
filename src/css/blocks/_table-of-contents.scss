@@ -49,11 +49,11 @@
 	from {
 		box-shadow:
 			var(--box-shadow, var(--box-shadow-medium)),
-			inset 0 -1em 1.5em 0 functions.h(shadow, 40%);
+			inset 0 -1em 1.5em 0 oklch(from var(--color-shadow) l c h / 40%);
 	}
 	to {
 		box-shadow:
 			var(--box-shadow, var(--box-shadow-medium)),
-			inset 0 1em 1.5em 0 functions.h(shadow, 40%);
+			inset 0 1em 1.5em 0 oklch(from var(--color-shadow) l c h / 40%);
 	}
 }

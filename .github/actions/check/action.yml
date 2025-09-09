@@ -5,5 +5,5 @@ runs:
   using: composite
   steps:
     - name: Check DateTimes
-      run: npm run check-datetimes
+      run: npm run check:datetimes
       shell: bash

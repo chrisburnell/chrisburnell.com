@@ -28,7 +28,7 @@
 }
 
 :is(blockquote, code, samp, kbd) {
-	background-color: light-dark(inherit, functions.h(raven, gamma));
+	background-color: light-dark(inherit, oklch(from var(--color-raven) l c h / var(--opacity-gamma)));
 }
 
 kbd {

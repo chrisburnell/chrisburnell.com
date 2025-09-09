@@ -14,7 +14,7 @@ runs:
         key: site-cache-dev
 
     - name: Build website
-      run: npm run build-for-dev
+      run: npm run build:dev
       shell: bash
 
     - name: Build search index

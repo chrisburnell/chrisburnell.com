@@ -97,22 +97,59 @@ input {
 	}
 }
 
-:is([type="checkbox"], [type="radio"]) {
-	inline-size: 1.5em;
-	block-size: 1.5em;
-	vertical-align: middle;
-	margin-block-start: calc(1ex - 1cap);
-	cursor: pointer;
-}
-
 textarea {
 	overflow: auto;
 	scrollbar-gutter: stable;
 }
 
-select {
+:is([type="checkbox"], [type="radio"], select) {
 	appearance: none;
-	background-image: light-dark(url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='50' fill='%232b2b2b'><polygon points='0,0 100,0 50,50'/></svg>"), url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='50' fill='%23dddddd'><polygon points='0,0 100,0 50,50'/></svg>"));
+}
+
+:is([type="checkbox"], [type="radio"]) {
+	aspect-ratio: 1;
+	inline-size: 2em;
+	color: transparent;
+	vertical-align: middle;
+	border-width: var(--size-border-thin);
+	margin-block-start: calc(1ex - 1cap);
+	position: relative;
+	cursor: pointer;
+	transition: all var(--transition-duration) var(--transition-function);
+
+	&:checked {
+		color: var(--color-raven);
+	}
+}
+
+[type="checkbox"]:not(:indeterminate) {
+	&::after {
+		content: "✓";
+		position: absolute;
+		inset-block-start: 50%;
+		inset-inline-start: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		font-size: 1.25em;
+		font-weight: var(--font-weight-heavy);
+	}
+}
+
+:is([type="checkbox"]:indeterminate, [type="radio"]) {
+	background-image: linear-gradient(currentColor);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+[type="checkbox"]:indeterminate {
+	background-size: 1.125em 0.25em;
+}
+
+[type="radio"] {
+	background-size: 0.875em 0.875em;
+}
+
+select {
+	background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='50' fill='%232b2b2b'><polygon points='0,0 100,0 50,50'/></svg>");
 	background-position: right var(--size-tiny) center;
 	background-repeat: no-repeat;
 	background-size: var(--size-small);

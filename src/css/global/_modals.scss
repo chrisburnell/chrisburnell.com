@@ -6,7 +6,7 @@
 @use "../abstracts/functions";
 
 ::backdrop {
-	background-color: functions.h(thunder, beta);
+	background-color: oklch(from var(--color-thunder) l c h / var(--opacity-beta));
 	backdrop-filter: blur(1px);
 }
 

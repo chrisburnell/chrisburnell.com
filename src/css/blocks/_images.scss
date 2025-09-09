@@ -14,7 +14,7 @@
 	aspect-ratio: 1;
 	display: inline-block;
 	border-radius: 50%;
-	border: var(--size-border-thin) solid functions.h(raven, beta);
+	border: var(--size-border-thin) solid oklch(from var(--color-raven) l c h / var(--opacity-beta));
 	box-shadow: var(--box-shadow, var(--box-shadow-low));
 	transition: border-color var(--transition-duration) var(--transition-function);
 

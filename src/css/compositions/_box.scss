@@ -1,19 +1,6 @@
 ////
 /// Box
 /// @group compositions
-///
-/// --box-background-color (color-mix(in oklab, h(bear), h(snowy)))
-///     Defines the background color the box.
-/// --box-color (inherit)
-///     Defines the text color for box.
-/// --box-max-inline-size (100%)
-///     Defines how wide the box should be, as a maximum.
-/// --box-padding (var(--size-gutter))
-///     Defines the space around the box.
-/// --box-border-color (h(raven))
-///     Defines the border color the box.
-/// --box-shadow (h(raven, beta))
-///     Defines the box shadow.
 ////
 
 @use "../abstracts/functions";
@@ -26,7 +13,7 @@
 	padding: var(--box-padding, var(--size-gutter));
 	margin-inline: auto;
 	border-width: 0;
-	border-block-start: var(--size-border-thin) solid var(--box-border-color, light-dark(var(--color-raven), functions.h(raven, alpha)));
+	border-block-start: var(--size-border-thin) solid var(--box-border-color, light-dark(var(--color-raven), oklch(from var(--color-raven) l c h / var(--opacity-alpha))));
 	border-radius: var(--border-radius, var(--size-border-thin));
 	box-shadow: var(--box-shadow, var(--box-shadow-low));
 	text-align: start;
@@ -54,17 +41,17 @@
 }
 
 .box--success {
-	--box-background-color: light-dark(#{functions.h(conifer, delta)}, color-mix(in oklab, var(--color-mineshaft), var(--color-conifer) 10%));
+	--box-background-color: light-dark(oklch(from var(--color-conifer) l c h / var(--opacity-delta)), color-mix(in oklab, var(--color-mineshaft), var(--color-conifer) 10%));
 	--box-border-color: var(--color-conifer);
 }
 
 .box--warning {
-	--box-background-color: light-dark(#{functions.h(aspen, delta)}, color-mix(in oklab, var(--color-mineshaft), var(--color-aspen) 10%));
+	--box-background-color: light-dark(oklch(from var(--color-aspen) l c h / var(--opacity-delta)), color-mix(in oklab, var(--color-mineshaft), var(--color-aspen) 10%));
 	--box-border-color: var(--color-aspen);
 }
 
 .box--error {
-	--box-background-color: light-dark(#{functions.h(maple, delta)}, color-mix(in oklab, var(--color-mineshaft), var(--color-maple) 10%));
+	--box-background-color: light-dark(oklch(from var(--color-maple) l c h / var(--opacity-delta)), color-mix(in oklab, var(--color-mineshaft), var(--color-maple) 10%));
 	--box-border-color: var(--color-maple);
 }
 

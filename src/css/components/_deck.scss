@@ -26,7 +26,7 @@
 		}
 	}
 	article + article {
-		border-block-start: var(--size-border-thin) solid light-dark(functions.h(mineshaft, gamma), functions.h(yeti, delta));
+		border-block-start: var(--size-border-thin) solid light-dark(oklch(from var(--color-mineshaft) l c h / var(--opacity-gamma)), oklch(from var(--color-yeti) l c h / var(--opacity-delta)));
 	}
 
 	h1 {

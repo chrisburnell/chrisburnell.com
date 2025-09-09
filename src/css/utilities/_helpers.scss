@@ -255,13 +255,10 @@
 .background--wolf {
 	color: var(--color-snowy);
 }
-@each $name, $color in tokens.$colors {
+@each $name, $_ in tokens.$colors {
 	.background--#{$name} {
 		background-color: var(--color-#{$name});
-
-		@supports (color: color-contrast(#5f8aa6 vs white, black)) {
-			color: color-contrast(#{$color} vs var(--contrast-list) to var(--contrast-ratio));
-		}
+		color: color-contrast(var(--color-#{$name}) vs var(--contrast-list) to var(--contrast-ratio));
 	}
 }
 

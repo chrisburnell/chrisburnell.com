@@ -8,10 +8,11 @@
 @mixin theme-nineties() {
 	& {
 		--font-family-sans: var(--font-family-nineties);
+		cursor: url("/images/animated/dinosaur.gif") 3 8, auto;
 
-		cursor:
-			url("/images/animated/dinosaur.gif") 3 8,
-			auto;
+		@media not print {
+			color-scheme: dark;
+		}
 	}
 
 	&,
@@ -132,7 +133,6 @@
 :root:has([name="theme"] [value*="nineties"]:checked),
 [data-theme*="nineties"],
 .nineties {
-	color-scheme: dark;
 	@include mixins.dark-styles;
 	@include theme-nineties;
 }
