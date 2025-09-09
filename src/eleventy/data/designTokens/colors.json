@@ -1,11 +1,11 @@
 {
-  "raven": "oklch(61.29% 0.064 237.73)",
   "thunder": "oklch(15% 0 0)",
   "snowy": "oklch(92% 0 0)",
   "mineshaft": "color-mix(\n\tin oklab,\n\tvar(--color-snowy),\n\tvar(--color-thunder) 83.6%\n)",
   "kaiser": "color-mix(\n\tin oklab,\n\tvar(--color-snowy),\n\tvar(--color-thunder) 66.6%\n)",
   "nickel": "color-mix(\n\tin oklab,\n\tvar(--color-snowy),\n\tvar(--color-thunder) 51.8%\n)",
   "yeti": "color-mix(\n\tin oklab,\n\tvar(--color-snowy),\n\tvar(--color-thunder) 10.2%\n)",
+  "raven": "oklch(61.29% 0.064 237.73)",
   "lynx": "color-mix(\n\tin oklab,\n\tvar(--color-raven),\n\tvar(--color-thunder) 75%\n)",
   "wolf": "color-mix(\n\tin oklab,\n\tvar(--color-raven),\n\tvar(--color-thunder) 54%\n)",
   "bowhead": "color-mix(\n\tin oklab,\n\tvar(--color-raven),\n\tvar(--color-thunder) 33%\n)",

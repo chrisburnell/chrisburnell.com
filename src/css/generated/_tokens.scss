@@ -7,22 +7,22 @@ $breakpoints: (
   behemoth: 1600px
 );
 $colors-hex: (
-  lynx: #091217,
-  wolf: #20323d,
-  bowhead: #3e5c6d,
+  lynx: #1e272c,
+  wolf: #2f404c,
+  bowhead: #415c6d,
   raven: #5f8aa6,
-  highland: #8db4d7,
-  coyote: #c0dbed,
-  bear: #ebf3f9,
+  highland: #8aa7bb,
+  coyote: #a6bac8,
+  bear: #c2cdd5,
   thunder: #060606,
-  mineshaft: #2b2b2b,
-  kaiser: #4f4f4f,
-  nickel: #737373,
-  yeti: #dddddd,
-  snowy: #f9f9f9,
+  mineshaft: #282828,
+  kaiser: #494949,
+  nickel: #696969,
+  yeti: #cbcbcb,
+  snowy: #e4e4e4,
   aspen: #eab538,
   conifer: #3d8137,
-  maple: #e0151f
+  maple: #e0161b
 );
 $colors-secondary: (
   aspen: oklch(80.1% 0.1469 83.99),
@@ -58,7 +58,6 @@ $colors-tertiary: (
   rss: oklch(75.05% 0.179 58.28)
 );
 $colors: (
-  raven: oklch(61.29% 0.064 237.73),
   thunder: oklch(15% 0 0),
   snowy: oklch(92% 0 0),
   mineshaft: color-mix(
@@ -81,6 +80,7 @@ $colors: (
 	var(--color-snowy),
 	var(--color-thunder) 10.2%
 ),
+  raven: oklch(61.29% 0.064 237.73),
   lynx: color-mix(
 	in oklab,
 	var(--color-raven),
