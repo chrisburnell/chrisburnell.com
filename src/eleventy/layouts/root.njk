@@ -131,7 +131,7 @@
 
 		{% if eleventy.env.runMode === 'build' and not noServiceWorker -%}
 		{# ServiceWorker -#}
-		<script>{% include '../../js/navigator.js' %} //# sourceURL=inline:navigator.js</script>
+		<script>{% include '../../js/navigator.js' %}</script>
 		{%- endif %}
 
 		{# Deferred JS -#}

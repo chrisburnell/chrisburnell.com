@@ -2,14 +2,16 @@
 {%- if eleventy.env.runMode !== 'build' %}
 	{# External files (local dev live reload will refresh without page reload) -#}
 	<link rel="stylesheet" href="{% getBundleFileUrl 'css', 'critical' %}">
+	<link rel="stylesheet" href="{% getBundleFileUrl 'css' %}">
 {%- else %}
 	{# Inlined CSS (fastest site performance on live) -#}
-	<style>{% getBundle 'css', 'critical' %} /*# sourceURL=inline:critical.css */</style>
+	<style>{% getBundle 'css', 'critical' %}{% getBundle 'css' %}</style>
 {%- endif %}
 
 {# Deferred CSS -#}
-<link rel="stylesheet" href="{% getBundleFileUrl 'css' %}" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="{% getBundleFileUrl 'css' %}"></noscript>
+<link rel="stylesheet" href="{% getBundleFileUrl 'css', 'defer' %}" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="{% getBundleFileUrl 'css', 'defer' %}"></noscript>
 
 {%- css 'critical' -%}{% renderFile 'src/css/critical.scss' %}{%- endcss -%}
+{%- css 'defer' -%}{% renderFile 'src/css/defer.scss' %}{%- endcss -%}
 {%- css -%}{% renderFile 'src/css/defer.scss' %}{%- endcss -%}

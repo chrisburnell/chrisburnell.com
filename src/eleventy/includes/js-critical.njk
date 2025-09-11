@@ -4,7 +4,7 @@
 	<script src="{% getBundleFileUrl 'js', 'critical' %}"></script>
 {%- else %}
 	{# Inlined (fastest site performance on live) -#}
-	<script>{% getBundle 'js', 'critical' %} //# sourceURL=inline:critical.js</script>
+	<script>{% getBundle 'js', 'critical' %}</script>
 {%- endif %}
 
 {%- js 'critical' -%}{% renderFile 'src/js/critical.js' %}{%- endjs -%}
