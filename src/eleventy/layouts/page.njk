@@ -19,7 +19,7 @@ layout: base
 		{{ descriptionLong | default(description) | markdownFormat | safe }}
 	</div>
 
-	<div class=" [ content ] [ flow ] ">
+	<div class=" [ content ] [ flow ] {% if toc %}generate-toc{% endif %}">
 		{% if global.isJSNakedDay -%}
 			{% include 'js-naked-day.njk' %}
 		{%- endif %}
@@ -28,7 +28,7 @@ layout: base
 			{% include 'draft.njk' %}
 		{% endif %}
 
-		<div class=" [ e-content ] [ flow ] {% if content_class %}[ {{ content_class }} ] {% endif %}{% if toc %}generate-toc{% endif %}">
+		<div class=" [ flow ] {% if content_class %}[ {{ content_class }} ] {% endif %}[ e-content ] ">
 			{% for pre_include in (pre_includes | toArray) -%}
 				{% include pre_include %}
 			{%- endfor %}

@@ -13,12 +13,12 @@ description: A great big list of all the pages, projects, posts on my website.
 		{{ descriptionLong | default(description) | markdownFormat | safe }}
 	</div>
 
-	<div id="content" class=" [ content ] [ flow ] [ generate-toc ] ">
+	<div id="content" class=" [ content ] [ flow ] generate-toc">
 		{% if global.isJSNakedDay -%}
 			{% include 'js-naked-day.njk' %}
 		{%- endif %}
 
-		<div class=" [ e-content ] [ flow ] generate-toc">
+		<div class=" [ flow ] [ e-content ] ">
 			<h2>Pages</h2>
 
 			<ul class=" [ grid ] [ shelf ] ">

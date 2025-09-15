@@ -10,6 +10,7 @@
 :is(code, kbd, samp, var, .monospace) {
 	font-family: var(--font-family-monospace);
 	font-variant: no-common-ligatures tabular-nums;
+	white-space: nowrap;
 }
 
 :is(code, kbd, samp, var) {

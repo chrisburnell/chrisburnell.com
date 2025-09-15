@@ -73,7 +73,7 @@
 									<small>wrote</small>
 									<a href="{{ wmURL }}" class=" [ u-url  u-{{ wmType }} ] " rel="external nofollow" title="Read externally"><relative-time><time datetime="{{ wmDate | rfc3339Date }}" class=" [ dt-published ] "><small>on</small> {{ wmDate | friendlyDate | safe }}</time></relative-time></a>
 								</div>
-								<div class=" [ e-content ] [ flow ] ">
+								<div class=" [ flow ] [ e-content ] ">
 									{{ wmContent | safe }}
 								</div>
 							</li>
