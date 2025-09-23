@@ -3,7 +3,6 @@
 /// @group global
 ////
 
-@use "../abstracts/functions";
 @use "../abstracts/mixins";
 
 blockquote {
@@ -19,7 +18,7 @@ blockquote {
 		margin-block-start: var(--flow-space, 1em);
 	}
 
-	p:not(.no-quotes) {
+	& p:not(.no-quotes) {
 		font-family: var(--font-family-serif);
 		@include mixins.italic;
 
@@ -36,7 +35,7 @@ blockquote {
 		}
 	}
 
-	cite {
+	& cite {
 		color: light-dark(var(--color-kaiser), var(--color-yeti));
 		display: block;
 		margin-block-start: var(--size-medium);

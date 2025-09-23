@@ -3,15 +3,14 @@
 /// @group components
 ////
 
-@use "../abstracts/functions";
 @use "../abstracts/mixins";
 
 .deck {
-	:not(.box) > .deck {
+	& :not(.box) > .deck {
 		margin-block-start: var(--size-gap);
 	}
 
-	article {
+	& article {
 		--flow-space: var(--size-tiny);
 
 		max-inline-size: var(--size-line-length);
@@ -25,22 +24,22 @@
 			padding-block-end: var(--size-medium);
 		}
 	}
-	article + article {
+	& article + article {
 		border-block-start: var(--size-border-thin) solid light-dark(oklch(from var(--color-mineshaft) l c h / var(--opacity-gamma)), oklch(from var(--color-yeti) l c h / var(--opacity-delta)));
 	}
 
-	h1 {
+	& h1 {
 		font-weight: var(--font-weight-semibold);
 		line-height: var(--line-height-medium);
 	}
 
-	:is(a:not(.button), .anchor) {
+	& :is(a:not(.button), .anchor) {
 		&:not(:hover, :focus, :active) {
 			color: inherit;
 		}
 	}
 
-	figure {
+	& figure {
 		align-items: start;
 
 		& + * {
@@ -64,10 +63,10 @@
 .deck__meta {
 	--flow-space: var(--size-small);
 
-	time {
+	& time {
 		@include mixins.italic;
 
-		sup::before {
+		& sup::before {
 			content: " ";
 			font-size: 0.5em;
 		}

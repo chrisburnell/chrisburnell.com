@@ -16,7 +16,7 @@
 			flex-direction: column;
 		}
 
-		li {
+		& li {
 			--flow-space: var(--size-tiny);
 			max-inline-size: 100%;
 			padding: var(--size-small-medium) var(--size-small);
@@ -45,12 +45,12 @@
 			}
 		}
 
-		:is(h1, h2, h3, h4, h5, h6) {
+		& :is(h1, h2, h3, h4, h5, h6) {
 			margin-block-end: 0;
 			font-size: var(--font-size-default);
 		}
 
-		pre {
+		& pre {
 			inline-size: fit-content;
 			line-height: var(--line-height-medium);
 			margin-inline: auto;

@@ -3,9 +3,6 @@
 /// @group blocks
 ////
 
-@use "sass:map";
-@use "../abstracts/functions";
-
 .header {
 	container: header / inline-size;
 	background-color: var(--background-color, light-dark(color-mix(in oklab, var(--color-bear), var(--color-snowy)), color-mix(in oklab, var(--color-thunder), var(--color-mineshaft) 80%)));
@@ -13,17 +10,11 @@
 	box-shadow: var(--box-shadow-low);
 	z-index: var(--z-index-menu);
 
-	// disable sticky header
-	// @media (height > #{map.get($breakpoints, "small")}) {
-	// 	position: sticky;
-	// 	inset-block-start: 0;
-	// }
-
 	@media print {
 		display: none;
 	}
 
-	.wrap {
+	& .wrap {
 		inline-size: 100%;
 		display: flex;
 		align-items: center;
@@ -31,11 +22,11 @@
 		padding-block: var(--size-small);
 	}
 
-	.logo {
+	& .logo {
 		flex: 0 0 auto;
 	}
 
-	.navigation {
+	& .navigation {
 		flex: 0 1 auto;
 		margin-inline-start: var(--size-gutter);
 	}

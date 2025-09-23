@@ -5,31 +5,33 @@
 
 @use "../abstracts/mixins";
 
-@mixin theme-nineties() {
-	& {
-		--font-family-sans: var(--font-family-nineties);
-		cursor: url("/images/animated/dinosaur.gif") 3 8, auto;
+:root:has([name="theme"] [value*="nineties"]:checked),
+[data-theme*="nineties"],
+.nineties {
+	@include mixins.dark-styles;
 
-		@media not print {
-			color-scheme: dark;
-		}
+	--font-family-sans: var(--font-family-nineties);
+	cursor: url("/images/animated/dinosaur.gif") 3 8, auto;
+
+	@media not print {
+		color-scheme: dark;
 	}
 
 	&,
-	*,
-	*::before,
-	*::after {
+	& *,
+	& *::before,
+	& *::after {
 		border-radius: 0 !important;
 		box-shadow: none !important;
 		text-shadow: none !important;
 		text-decoration-color: currentColor !important;
 	}
 
-	::backdrop {
+	& ::backdrop {
 		backdrop-filter: none;
 	}
 
-	body,
+	& body,
 	&.themed-section {
 		font-family: var(--font-family-sans);
 
@@ -42,8 +44,8 @@
 		}
 	}
 
-	.title:not(.title--positive, .title--negative) .p-name,
-	.navigation__list a {
+	& .title:not(.title--positive, .title--negative) .p-name,
+	& .navigation__list a {
 		@media not print {
 			background-image: none !important; // override dark theme
 			background-clip: initial;
@@ -51,7 +53,7 @@
 		}
 	}
 
-	hr {
+	& hr {
 		background-color: transparent;
 		background-image: url("/images/animated/hr.gif");
 		inline-size: 475px;
@@ -60,79 +62,72 @@
 		border-width: 0;
 	}
 
-	:is(.header, .footer) {
+	& :is(.header, .footer) {
 		max-inline-size: var(--size-breakpoint-gigantic);
 	}
 
-	.wrap {
+	& .wrap {
 		margin-inline-start: 0;
 	}
 
-	:is(h1, h2, h3, h4, h5, h6),
-	.navigation__list :is(a:not(.button), .anchor) {
+	& :is(h1, h2, h3, h4, h5, h6),
+	& .navigation__list :is(a:not(.button), .anchor) {
 		font-weight: var(--font-weight-semibold) !important;
 	}
 
-	.header,
-	.footer,
-	.author__image,
-	.table,
-	button:not(.anchor),
-	input,
-	select,
-	textarea {
+	& .header,
+	& .footer,
+	& .author__image,
+	& .table,
+	& button:not(.anchor),
+	& input,
+	& select,
+	& textarea {
 		border: var(--size-border-thin) outset;
 	}
 
-	.header,
-	.table-of-contents,
-	.librarian,
-	th:not(:empty),
-	.sticky {
+	& .header,
+	& .table-of-contents,
+	& .librarian,
+	& th:not(:empty),
+	& .sticky {
 		position: relative;
 		inset-block: initial;
 		inset-inline: initial;
 	}
 
-	:is(button:not(.anchor), .button, [type=button], [role=tab]),
-	:is(.box, .cp_embed_wrapper, .speakerdeck-embed-wrapper) {
+	& :is(button:not(.anchor), .button, [type=button], [role=tab]),
+	& :is(.box, .cp_embed_wrapper, .speakerdeck-embed-wrapper) {
 		border: var(--size-border-thin) outset;
 	}
 
-	:is(button:not(.anchor), .button, [type=button], [role=tab]) {
+	& :is(button:not(.anchor), .button, [type=button], [role=tab]) {
 		&:not([disabled]):active {
 			border: var(--size-border-thin) inset;
 		}
 	}
 
-	h1 {
+	& h1 {
 		font-family: var(--font-family-silly);
 	}
 
-	.table {
+	& .table {
 		background-color: color-mix(in oklab, var(--color-thunder), var(--color-mineshaft) 80%);
 		padding-block: 1em;
 	}
 
-	figcaption {
+	& figcaption {
 		inline-size: 100%;
 		margin-block-start: 1em;
 		font-family: inherit;
 	}
 
-	.responses {
+	& .responses {
 		font-family: var(--font-family-silly);
 	}
 
-	.person__avatar img,
-	.author__image {
+	& .person__avatar img,
+	& .author__image {
 		filter: saturate(150%) contrast(110%);
 	}
-}
-
-:root:has([name="theme"] [value*="nineties"]:checked),
-[data-theme*="nineties"],
-.nineties {
-	@include mixins.dark-styles;
-	@include theme-nineties;
 }

@@ -4,7 +4,6 @@
 ////
 
 @use "sass:map";
-@use "../abstracts/functions";
 @use "../abstracts/mixins";
 @use "../generated/tokens";
 
@@ -13,7 +12,7 @@
 	align-content: start;
 	column-gap: var(--size-medium);
 
-	.navigation__list:not(.navigation__list--keep) {
+	& .navigation__list:not(.navigation__list--keep) {
 		@media (width <= #{map.get(tokens.$breakpoints, "tiny")}) {
 			display: none;
 		}
@@ -28,7 +27,7 @@
 	row-gap: var(--size-medium);
 	text-align: center;
 
-	a {
+	& a {
 		background-color: transparent !important;
 		color: inherit !important;
 		display: block;

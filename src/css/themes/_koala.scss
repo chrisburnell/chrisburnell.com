@@ -5,23 +5,16 @@
 
 @use "../abstracts/mixins";
 
-@mixin theme-koala() {
-	& {
-		--raven-lightness: 58.5%;
-		--raven-chroma: 0.0725;
-		--raven-hue: 294.53;
-
-		@include mixins.setup-raven-colors;
-	}
-
-	.logo,
-	.perch::after {
-		filter: hue-rotate(62deg) saturate(150%);
-	}
-}
-
 :root:has([name="theme"] [value*="koala"]:checked),
 [data-theme*="koala"],
 .koala {
-	@include theme-koala;
+	--raven-lightness: 58.5%;
+	--raven-chroma: 0.0725;
+	--raven-hue: 294.53;
+	@include mixins.setup-raven-colors;
+
+	& .logo,
+	& .perch::after {
+		filter: hue-rotate(62deg) saturate(150%);
+	}
 }

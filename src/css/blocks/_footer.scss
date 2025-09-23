@@ -3,7 +3,6 @@
 /// @group blocks
 ////
 
-@use "../abstracts/functions";
 @use "../abstracts/mixins";
 
 .footer {
@@ -18,23 +17,23 @@
 	}
 
 	&,
-	:is(a:not(.button), .anchor) {
+	& :is(a:not(.button), .anchor) {
 		&:not(:hover, :focus, :active) {
 			text-decoration-color: var(--color-kaiser);
 		}
 	}
 
-	button {
+	& button {
 		font-size: inherit;
 	}
 
-	svg {
+	& svg {
 		inline-size: calc(1lh - 1.25cap);
 		block-size: calc(1lh - 1.25cap);
 		transition: fill var(--transition-duration) var(--transition-function);
 	}
 
-	span[title] {
+	& span[title] {
 		color: inherit;
 	}
 }
@@ -59,7 +58,7 @@
 		row-gap: var(--size-gutter);
 	}
 
-	.footer__navigation {
+	& .footer__navigation {
 		--padding-inline: 0.625em;
 		grid-column: left;
 		display: flex;
@@ -67,26 +66,26 @@
 		row-gap: 0.5em;
 		line-height: var(--line-height-code);
 
-		li {
+		& li {
 			white-space: nowrap;
 		}
 	}
 
-	.author {
+	& .author {
 		grid-column: right;
 		grid-row: 1/4;
 	}
 
-	.webrings {
+	& .webrings {
 		grid-column: left;
 		grid-row: 4;
 	}
 
-	:is(.badges, .speedlify) {
+	& :is(.badges, .speedlify) {
 		grid-column: right;
 	}
 
-	.badges {
+	& .badges {
 		column-gap: var(--size-small);
 
 		@include mixins.cqi(null, "medium") {
@@ -98,17 +97,17 @@
 		}
 	}
 
-	.speedlify {
+	& .speedlify {
 		@include mixins.cqi(null, "medium") {
 			text-align: end;
 		}
 	}
 
-	summary:not(:hover, :focus, :active) {
+	& summary:not(:hover, :focus, :active) {
 		text-decoration-color: var(--color-kaiser);
 	}
 
-	summary ~ * {
+	& summary ~ * {
 		line-height: var(--line-height-code);
 	}
 }

@@ -3,21 +3,15 @@
 /// @group themes
 ////
 
-@mixin theme-sepia() {
-	& {
-		// bring down the brightness
-		--snowy-lightness: 88%;
-		// apply slight yellow-filter to monochrome colours
-		--monochrome-chroma: 0.06;
-		--monochrome-hue: 90;
-		// apply slight yellow-filter to raven-based colours
-		--raven-chroma: 0.034;
-		--raven-hue: 180;
-	}
-}
-
 :root:has([name="theme"] [value*="sepia"]:checked),
 [data-theme*="sepia"],
 .sepia {
-	@include theme-sepia;
+	// bring down the brightness
+	--snowy-lightness: 88%;
+	// apply slight yellow-filter to monochrome colours
+	--monochrome-chroma: 0.06;
+	--monochrome-hue: 90;
+	// apply slight yellow-filter to raven-based colours
+	--raven-chroma: 0.034;
+	--raven-hue: 180;
 }

@@ -3,8 +3,6 @@
 /// @group global
 ////
 
-@use "../abstracts/functions";
-
 ::backdrop {
 	background-color: oklch(from var(--color-thunder) l c h / var(--opacity-beta));
 	backdrop-filter: blur(1px);

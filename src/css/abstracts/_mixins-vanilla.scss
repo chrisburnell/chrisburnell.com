@@ -3,13 +3,10 @@
 /// @group abstracts
 ////
 
-@use "sass:map";
-@use "../generated/tokens";
-
 ///
 /// Visually hide an element properly.
 ///
-@mixin visually-hidden() {
+@mixin --visually-hidden() {
 	inline-size: 1px !important;
 	block-size: 1px !important;
 	padding: 0 !important;
@@ -23,47 +20,9 @@
 }
 
 ///
-/// Nest an inline-size-based container query.
-///
-@mixin cqi($name, $min: null, $max: null) {
-	@if $min and $max {
-		@container #{$name} (#{map.get(tokens.$breakpoints, $min)} < inline-size <= #{map.get(tokens.$breakpoints, $max)}) {
-			@content;
-		}
-	} @else if $max {
-		@container #{$name} (inline-size <= #{map.get(tokens.$breakpoints, $max)}) {
-			@content;
-		}
-	} @else {
-		@container #{$name} (inline-size > #{map.get(tokens.$breakpoints, $min)}) {
-			@content;
-		}
-	}
-}
-
-///
-/// Nest an block-size-based container query.
-///
-@mixin cqb($name, $min: null, $max: null) {
-	@if $min and $max {
-		@container #{$name} (#{map.get(tokens.$breakpoints, $min)} < block-size <= #{map.get(tokens.$breakpoints, $max)}) {
-			@content;
-		}
-	} @else if $max {
-		@container #{$name} (block-size <= #{map.get(tokens.$breakpoints, $max)}) {
-			@content;
-		}
-	} @else {
-		@container #{$name} (block-size > #{map.get(tokens.$breakpoints, $min)}) {
-			@content;
-		}
-	}
-}
-
-///
 /// Iralicise words..
 ///
-@mixin italic() {
+@mixin --italic() {
 	font-style: italic;
 	font-synthesis: none;
 	font-variation-settings: "ital" 125;
@@ -72,7 +31,7 @@
 ///
 /// Hyphenate words.
 ///
-@mixin hyphenate() {
+@mixin --hyphenate() {
 	hyphens: auto;
 	hyphenate-limit-chars: 6 3 3;
 	hyphenate-limit-lines: 2;
@@ -83,7 +42,7 @@
 ///
 /// Make something non-selectable.
 ///
-@mixin non-selectable() {
+@mixin --non-selectable() {
 	user-select: none;
 	-webkit-touch-callout: default;
 	-webkit-touch-callout: none;
@@ -92,15 +51,15 @@
 ///
 /// Make something non-interactive.
 ///
-@mixin non-interactive() {
-	@include non-selectable;
+@mixin --non-interactive() {
+	@apply --non-selectable;
 	pointer-events: none;
 }
 
 ///
 /// Setup Monochrome Color CSS Variables
 ///
-@mixin setup-monochrome-colors() {
+@mixin --setup-monochrome-colors() {
 	--color-snowy: oklch(var(--snowy-lightness) var(--monochrome-chroma) var(--monochrome-hue));
 	--color-thunder: oklch(var(--thunder-lightness) var(--monochrome-chroma) var(--monochrome-hue));
 	--color-mineshaft: color-mix(in oklab, var(--color-snowy), var(--color-thunder) 83.6%);
@@ -112,7 +71,7 @@
 ///
 /// Setup Raven Color CSS Variables
 ///
-@mixin setup-raven-colors() {
+@mixin --setup-raven-colors() {
 	--color-raven: oklch(var(--raven-lightness) var(--raven-chroma) var(--raven-hue));
 	--color-lynx: color-mix(in oklab, var(--color-raven), var(--color-thunder) 75%);
 	--color-wolf: color-mix(in oklab, var(--color-raven), var(--color-thunder) 54%);
@@ -125,8 +84,72 @@
 ///
 // Styles for Dark Color Scheme
 ///
-@mixin dark-styles() {
+@mixin --dark-styles() {
 	& select {
 		background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='50' fill='%23dddddd'><polygon points='0,0 100,0 50,50'/></svg>");
 	}
+}
+
+///
+/// Target Media Queries which should nullify animations/transitions/etc.
+///
+@mixin --reduced-motion {
+	@media (prefers-reduced-motion: reduce) or (update: none) or (update: slow) {
+		@contents;
+	}
+}
+
+///
+/// Target Media Queries which allow animations/transitions/etc.
+///
+@mixin --allowed-motion {
+	@media (prefers-reduced-motion: no-preference) and (update: fast) {
+		@contents;
+	}
+}
+
+///
+/// Nest an inline-size-based container query.
+///
+@mixin --inline-above(--min <length>, --name <custom-ident>, @contents) {
+	@container env(--name) (inline-size > env(--min)) {
+		@contents;
+	}
+}
+@mixin --inline-below(--max <length>, --name <custom-ident>, @contents) {
+	@container env(--name) (inline-size <= env(--max)) {
+		@contents;
+	}
+}
+@mixin --inline-between(--min <length>, --max <length>, --name <custom-ident>, @contents) {
+	@container env(--name) (env(--min) < inline-size <= env(--max)) {
+		@contents;
+	}
+}
+
+///
+/// Nest an block-size-based container query.
+///
+@mixin --block-above(--min <length>, --name <custom-ident>, @contents) {
+	@container env(--name) (block-size > env(--min)) {
+		@contents;
+	}
+}
+@mixin --block-below(--max <length>, --name <custom-ident>, @contents) {
+	@container env(--name) (block-size <= env(--max)) {
+		@contents;
+	}
+}
+@mixin --block-between(--min <length>, --max <length>, --name <custom-ident>, @contents) {
+	@container env(--name) (env(--min) < block-size <= env(--max)) {
+		@contents;
+	}
+}
+
+@mixin --animation(--name <custom-ident>, --function <easing-function>: var(--animation-function)) {
+	animation: --animation(var(--name), var(--function));
+}
+
+@mixin --transition(--name <single-transition-property>, --duration <time>: var(--transition-duration), --function <easing-function>: var(--transition-function), --delay <time>: 0) {
+	transition: --transition(var(--name), var(--duration), var(--function), var(--delay));
 }

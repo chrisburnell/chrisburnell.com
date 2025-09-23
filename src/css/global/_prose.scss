@@ -3,7 +3,6 @@
 /// @group global
 ////
 
-@use "../abstracts/functions";
 @use "../abstracts/mixins";
 
 :is(p, blockquote, details, table, dl, ol, ul, figure:not([class])) {
@@ -172,15 +171,12 @@ progress {
 // Target Animation
 :target {
 	animation: var(--animation-duration) ease target;
-
-	@at-root {
-		@keyframes target {
-			0%,
-			33% {
-				background-color: var(--color-aspen);
-				color: var(--color-mineshaft);
-			}
-		}
+}
+@keyframes target {
+	0%,
+	33% {
+		background-color: var(--color-aspen);
+		color: var(--color-mineshaft);
 	}
 }
 

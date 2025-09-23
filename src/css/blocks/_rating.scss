@@ -3,9 +3,6 @@
 /// @group blocks
 ////
 
-@use "sass:math";
-@use "../abstracts/functions";
-
 .rating {
 	display: inline-block;
 	position: relative;
@@ -13,6 +10,10 @@
 	font-weight: var(--font-weight-semibold);
 	overflow: hidden;
 	line-height: 1;
+
+	&:not([value], [style*="--rating:"]) {
+		display: none;
+	}
 
 	&::before,
 	&::after {
@@ -27,7 +28,7 @@
 	&::after {
 		background-color: inherit;
 		color: var(--rating-color, var(--color-aspen));
-		inline-size: 0;
+		inline-size: calc(var(--rating, 0) * 20%);
 		text-shadow:
 			0 0 1px var(--rating-border, var(--color-nickel)),
 			0 1px 1px var(--rating-border, var(--color-nickel));
@@ -35,19 +36,6 @@
 		position: absolute;
 		inset-block-start: 0;
 		inset-inline-start: 0;
-	}
-
-	&:not([value]) {
-		display: none;
-	}
-
-	@for $i from 1 through 19 {
-		&[value="#{math.div($i, 4)}"]::after {
-			inline-size: functions.range-map($i, 0, 20, 0%, 100%);
-		}
-	}
-	&[value="5"]::after {
-		inline-size: 100%;
 	}
 
 	& + strong {

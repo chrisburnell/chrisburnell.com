@@ -10,7 +10,7 @@
 	display: flex;
 	transition: all var(--transition-duration) var(--transition-function);
 
-	:is(img, input[type=image], svg) {
+	& :is(img, input[type=image], svg) {
 		max-block-size: 100%;
 		object-fit: contain;
 		transition: transform var(--transition-duration) var(--transition-function);
@@ -20,11 +20,11 @@
 		background: none !important;
 
 		&,
-		:is(img, input[type=image], svg) {
+		& :is(img, input[type=image], svg) {
 			outline: none;
 		}
 
-		:is(img, input[type=image], svg) {
+		& :is(img, input[type=image], svg) {
 			transform: scale(1.5) rotate(6deg);
 		}
 	}

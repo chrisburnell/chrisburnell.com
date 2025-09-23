@@ -4,7 +4,6 @@
 /// @link https://chrisburnell.com/styleguide/#inline-elements
 ////
 
-@use "../abstracts/functions";
 @use "../abstracts/mixins";
 
 :is(a:not(.button), .anchor) {

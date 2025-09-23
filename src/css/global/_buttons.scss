@@ -13,7 +13,6 @@
 ///     Defines the line height of the button.
 ////
 
-@use "../abstracts/functions";
 @use "../abstracts/mixins";
 
 button {
@@ -77,11 +76,11 @@ button {
 	}
 
 	// prevent inline elements like code from displaying their background
-	* {
+	& * {
 		background-color: transparent;
 	}
 
-	svg {
+	& svg {
 		@include mixins.non-interactive;
 	}
 }

@@ -3,7 +3,6 @@
 /// @group global
 ////
 
-@use "../abstracts/functions";
 @use "../abstracts/mixins";
 
 :is(ol, ul) {
@@ -21,7 +20,7 @@
 	padding-inline-start: var(--size-medium);
 	list-style: initial;
 
-	li {
+	& li {
 		padding-inline-start: var(--size-medium);
 
 		&::marker {
@@ -37,7 +36,7 @@
 		margin-block-start: var(--list-space, var(--size-small));
 	}
 
-	li > * + * {
+	& li > * + * {
 		margin-block-start: var(--flow-space, 1em);
 	}
 }
@@ -45,13 +44,10 @@ ol:not([class]),
 ol.default-list {
 	list-style: decimal;
 
-	// TODO Investigate custom properties (i.e. setting specific "type" of value)
-	// This is now possible with @property!
+	// TODO Investigate:
 	// https://developer.mozilla.org/en-US/docs/Web/CSS/@property
-	@for $i from 1 through 10 {
-		&[start="#{$i}"] {
-			counter-increment: ordered-list #{$i - 1} !important;
-		}
+	&[style*="--start:"] {
+		counter-increment: ordered-list var(--start);
 	}
 
 	& > li {

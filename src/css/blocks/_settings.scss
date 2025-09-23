@@ -4,7 +4,6 @@
 ////
 
 @use "sass:map";
-@use "../abstracts/functions";
 @use "../abstracts/mixins";
 @use "../generated/tokens";
 
@@ -12,7 +11,7 @@
 	max-block-size: 100vb;
 	max-block-size: 100dvb;
 
-	[id="sounds-toggle"] {
+	& [id="sounds-toggle"] {
 		color: inherit !important; // override themes
 	}
 }
@@ -24,14 +23,14 @@
 		display: none;
 	}
 
-	h2 {
+	& h2 {
 		padding-inline: 1em;
 	}
 
-	.navigation__list {
+	& .navigation__list {
 		flex-direction: column;
 
-		a {
+		& a {
 			font-size: var(--font-size-gamma);
 			padding-inline: var(--size-small-medium);
 		}

@@ -3,8 +3,6 @@
 /// @group compositions
 ////
 
-@use "../abstracts/functions";
-
 .box,
 :is(.box, .cp_embed_wrapper, .speakerdeck-embed-wrapper) {
 	background-color: var(--box-background-color, light-dark(color-mix(in oklab, var(--color-bear), var(--color-snowy)), color-mix(in oklab, var(--color-thunder), var(--color-mineshaft) 80%)));
@@ -21,7 +19,7 @@
 	font-style: normal;
 	font-variation-settings: normal;
 
-	:is(h1, h2, h3, h4, h5, h6) {
+	& :is(h1, h2, h3, h4, h5, h6) {
 		font-size: var(--font-size-default);
 		font-weight: var(--font-weight-semibold);
 		line-height: var(--line-height-medium);
@@ -29,7 +27,7 @@
 		letter-spacing: 0;
 	}
 
-	:is(a:not(.button), .anchor) {
+	& :is(a:not(.button), .anchor) {
 		color: light-dark(var(--color-bowhead), var(--color-highland));
 	}
 }

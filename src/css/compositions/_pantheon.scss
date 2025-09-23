@@ -85,10 +85,9 @@
 .breadcrumbs {
 	grid-row: breadcrumbs;
 	grid-column: indent / outdent;
-}
-@include mixins.cqi(null, "medium") {
-	.pantheon:has(> svg-sparkline) {
-		.breadcrumbs {
+
+	.pantheon:has(> svg-sparkline) & {
+		@include mixins.cqi(null, "medium") {
 			grid-column: indent / content-left;
 			align-self: center;
 		}

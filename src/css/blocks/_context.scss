@@ -18,15 +18,15 @@
 		text-align: center;
 	}
 
-	:is(p, blockquote, details, table, dl, ol, ul, figure:not([class])) {
+	& :is(p, blockquote, details, table, dl, ol, ul, figure:not([class])) {
 		max-inline-size: var(--size-line-length);
 		margin-inline: auto;
 	}
 
-	time {
+	& time {
 		@include mixins.italic;
 
-		sup::before {
+		& sup::before {
 			content: " ";
 			font-size: 0.5em;
 		}

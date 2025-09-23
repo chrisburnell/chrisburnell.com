@@ -4,8 +4,6 @@
 /// Extends Cluster
 ////
 
-@use "../abstracts/functions";
-
 .breadcrumbs {
 	--delineator: "→";
 	--padding-inline: var(--size-small);
@@ -20,11 +18,11 @@
 		display: none;
 	}
 
-	li::marker {
+	& li::marker {
 		color: light-dark(var(--color-bowhead), var(--color-yeti));
 	}
 
-	:is(a:not(.button), .anchor) {
+	& :is(a:not(.button), .anchor) {
 		color: inherit;
 	}
 }

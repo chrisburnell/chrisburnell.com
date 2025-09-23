@@ -3,7 +3,6 @@
 /// @group blocks
 ////
 
-@use "../abstracts/functions";
 @use "../abstracts/mixins";
 
 h2 :is(a:not(.button), .anchor):not(:hover, :focus, :active) {

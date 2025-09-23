@@ -6,7 +6,7 @@
 
 .cover {
 	&,
-	:is(img, input[type=image], svg) {
+	& :is(img, input[type=image], svg) {
 		max-block-size: 100vb;
 		max-block-size: 100dvb;
 	}

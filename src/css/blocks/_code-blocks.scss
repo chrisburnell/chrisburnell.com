@@ -3,7 +3,6 @@
 /// @group blocks
 ////
 
-@use "../abstracts/functions";
 @use "../abstracts/mixins";
 
 pre[class*="language-"] {
@@ -24,7 +23,7 @@ pre[class*="language-"] {
 		font-weight: var(--font-weight-semibold);
 	}
 
-	code {
+	& code {
 		color: var(--color-snowy);
 		padding: 0;
 		line-height: var(--line-height-code);

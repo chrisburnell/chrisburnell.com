@@ -51,7 +51,7 @@
 				{% if item.data.rating == 'Parti Pris' %}
 					<data class=" [ small ] [ p-rating ] " value="Parti Pris">Parti Pris</data>
 				{% elif item.data.rating %}
-					<data class=" [ rating ] [ p-rating ] " value="{{ item.data.rating }}" title="{{ item.data.rating }} out of 5"> </data>
+					<data class=" [ rating ] [ p-rating ] " value="{{ item.data.rating }}" style="--rating: {{ item.data.rating }};" title="{{ item.data.rating }} out of 5"> </data>
 					<strong>{{ item.data.rating }}/5</strong>
 					<data class=" [ p-worst ] " value="0" hidden>0</data>
 					<data class=" [ p-best ] " value="5" hidden>5</data>

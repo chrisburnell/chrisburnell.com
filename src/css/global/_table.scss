@@ -3,8 +3,6 @@
 /// @group global
 ////
 
-@use "../abstracts/functions";
-
 table {
 	flex: 1 0 auto;
 	align-self: flex-start;
@@ -75,7 +73,7 @@ th {
 		tbody &:has(.shadow-child) {
 			padding: 0;
 		}
-		.shadow-child {
+		& .shadow-child {
 			padding: var(--size-small);
 		}
 

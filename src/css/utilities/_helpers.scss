@@ -3,7 +3,6 @@
 /// @group utilities
 ////
 
-@use "../abstracts/functions";
 @use "../abstracts/mixins";
 @use "../generated/tokens";
 
@@ -164,7 +163,7 @@
 		padding-inline-end: 0.625ch;
 	}
 
-	svg {
+	& svg {
 		vertical-align: middle;
 		margin-block-start: calc(1ex - 1cap);
 
@@ -243,6 +242,9 @@
 		color: oklch(from var(--color-#{$name}) calc((1 - round(l)) * var(--snowy-lightness) + round(l) * var(--thunder-lightness)) var(--monochrome-chroma) var(--monochrome-hue));
 		// color: color-contrast(var(--color-#{$name}) vs var(--contrast-list) to var(--contrast-ratio));
 	}
+}
+:is(.background--conifer, .background--maple, .background--nickel) {
+	color: var(--color-snowy);
 }
 
 .size-example {

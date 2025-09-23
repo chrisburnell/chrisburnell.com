@@ -10,20 +10,20 @@
 	font-weight: var(--font-weight-semibold);
 	text-wrap: balance;
 
-	p {
+	& p {
 		@include mixins.cqi(null, "small") {
 			margin-inline: auto;
 		}
 	}
 
-	:is(a:not(.button), .anchor) {
+	& :is(a:not(.button), .anchor) {
 		color: inherit;
 	}
 
-	time {
+	& time {
 		@include mixins.italic;
 
-		sup::before {
+		& sup::before {
 			content: " ";
 			font-size: 0.5em;
 		}

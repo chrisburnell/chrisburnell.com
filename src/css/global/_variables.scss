@@ -6,14 +6,13 @@
 @use "sass:map";
 @use "sass:math";
 @use "../../../node_modules/utopia-core-scss/src/utopia" as utopia;
-@use "../abstracts/functions";
 @use "../abstracts/mixins";
 @use "../generated/tokens";
 
 :root {
 	/* Build the Monochrome colors */
-	--snowy-lightness: 92%;
-	--thunder-lightness: 15%;
+	--snowy-lightness: 98.21%;
+	--thunder-lightness: 14.96%;
 	--monochrome-chroma: 0;
 	--monochrome-hue: 0;
 	@include mixins.setup-monochrome-colors;
