@@ -3,6 +3,12 @@
 /// @group blocks
 ////
 
+@property --rating {
+	syntax: "<number>";
+	inherits: false;
+	initial-value: 0;
+}
+
 .rating {
 	display: inline-block;
 	position: relative;

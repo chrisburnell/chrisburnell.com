@@ -18,7 +18,6 @@
 @include meta.load-css("global/fonts");
 
 // Abstracts
-@include meta.load-css("abstracts/properties");
 // @include meta.load-css("abstracts/functions");
 // @include meta.load-css("abstracts/mixins");
 
@@ -67,8 +66,9 @@
 
 // Utilities
 @include meta.load-css("utilities/flow");
-@include meta.load-css("utilities/canada");
 @include meta.load-css("utilities/helpers");
+@include meta.load-css("utilities/fit-text");
+@include meta.load-css("utilities/canada");
 
 // Themes
 @include meta.load-css("themes/high-contrast");

@@ -18,7 +18,6 @@
 @include meta.load-css("global/fonts");
 
 // Abstracts
-@include meta.load-css("abstracts/properties");
 // @include meta.load-css("abstracts/functions");
 // @include meta.load-css("abstracts/mixins");
 
@@ -74,6 +73,7 @@
 @layer utilities {
 	@include meta.load-css("utilities/flow");
 	@include meta.load-css("utilities/helpers");
+	@include meta.load-css("utilities/fit-text");
 	@include meta.load-css("utilities/canada");
 }
 
