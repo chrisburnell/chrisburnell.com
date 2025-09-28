@@ -137,3 +137,7 @@
 		transition: none !important;
 	}
 }
+
+::view-transition {
+	pointer-events: none;
+}
