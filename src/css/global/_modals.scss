@@ -22,15 +22,19 @@
 	inset: initial;
 	inset-block-start: 50%;
 	inset-inline-start: 50%;
-	transition: opacity var(--transition-duration);
+	transition:
+		opacity var(--transition-duration),
+		transform var(--transition-duration);
 	transform: translateX(-50%) translateY(-50%);
 	text-align: center;
 }
 
 [popover]:popover-open {
 	opacity: 1;
+	transform: translateX(-50%) translateY(-50%);
 
 	@starting-style {
 		opacity: 0;
+		transform: translateX(-50%) translateY(calc(-50% + var(--size-medium)));
 	}
 }

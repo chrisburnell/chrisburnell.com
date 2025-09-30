@@ -14,7 +14,7 @@ let cachedCollections = {};
 
 /**
  * @param {object[]} collection
- * @param {string} tag
+ * @param {string|string[]} tags
  * @param {Function} fn
  * @param {string} collectionName
  * @param {boolean} limit
@@ -22,20 +22,37 @@ let cachedCollections = {};
  */
 const filterCollection = (
 	collection,
-	tag,
+	tags,
 	fn,
 	collectionName,
 	limit = false,
 ) => {
-	if ((collectionName || tag) in cachedCollections) {
+	const cacheKey =
+		collectionName || (Array.isArray(tags) ? tags.join(",") : tags);
+
+	if (cacheKey in cachedCollections) {
 		// This collection already exists in memoized cache
-		return cachedCollections[collectionName || tag];
+		return cachedCollections[cacheKey];
 	}
 
-	let filteredCollection = collection
-		.getFilteredByTag(tag)
-		.filter(isPublished)
-		.sort(dateSort);
+	let filteredCollection;
+
+	if (Array.isArray(tags)) {
+		const seen = new Set();
+		filteredCollection = tags
+			.flatMap((tag) => collection.getFilteredByTag(tag))
+			.filter((item) => {
+				if (seen.has(item.inputPath)) {
+					return false;
+				}
+				seen.add(item.inputPath);
+				return true;
+			});
+	} else {
+		filteredCollection = collection.getFilteredByTag(tags);
+	}
+
+	filteredCollection = filteredCollection.filter(isPublished).sort(dateSort);
 
 	if (fn !== undefined) {
 		// If additional manipulation is required, it is passed in so it too can
@@ -49,7 +66,7 @@ const filterCollection = (
 	}
 
 	// Keep a copy of this collection in memoized cache for later reuse
-	cachedCollections[tag] = filteredCollection;
+	cachedCollections[cacheKey] = filteredCollection;
 
 	return filteredCollection;
 };
