@@ -10,6 +10,12 @@ import shortcodes from "./src/eleventy/shortcodes.js";
 import transforms from "./src/eleventy/transforms.js";
 dotenv.config({ quiet: true });
 
+process.on("warning", (warning) => {
+	if (warning.name === "MaxListenersExceededWarning") {
+		console.error("Listener Leak Stack:\n", warning.stack);
+	}
+});
+
 /**
  * @param {import("@11ty/eleventy/src/UserConfig").default} eleventyConfig
  */
@@ -167,6 +173,7 @@ export default async function (eleventyConfig) {
 			`${styleText("grey", `[${filtersSync.urls.getHost(siteURL)}]`)} Building...`,
 		);
 	});
+
 	return {
 		htmlTemplateEngine: false,
 		markdownTemplateEngine: "njk",
