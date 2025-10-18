@@ -1,0 +1,37 @@
+////
+/// Deck
+/// @group components
+////
+
+@use "../abstracts/mixins";
+
+.stack {
+	& article {
+		--flow-space: var(--size-tiny);
+
+		max-inline-size: var(--size-line-length);
+		break-inside: avoid;
+
+		&:not(:first-child) {
+			padding-block-start: var(--size-medium);
+		}
+	}
+
+	& h1 {
+		font-weight: var(--font-weight-semibold);
+		line-height: var(--line-height-medium);
+	}
+
+	& :is(a:not(.button), .anchor) {
+		&:not(:hover, :focus, :active) {
+			color: inherit;
+		}
+	}
+}
+
+.stack__pinned {
+	margin-inline-end: 1ex;
+	font-size: var(--font-size-small);
+	font-weight: var(--font-weight-bold);
+	text-transform: uppercase;
+}
