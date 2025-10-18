@@ -164,7 +164,7 @@ redirect_from:
 						<img src="" alt="" role="presentation" loading="lazy" decoding="async" class=" [ cover ] [ u-photo ] ">
 					</a> #}
 					<h1>
-						<a href="https://trakt.tv/shows/{{ item.show.ids.slug }}/seasons/{{ item.episode.season }}/episodes/{{ item.episode.number }}">{{ item.show.title | safe }} {{ item.episode.season }}{% if item.episode.season and item.episode.number %}x{% elif item.episode.number %}E {% endif %}{% if item.episode.number %}{{ item.episode.number | padZeroes }}{% endif %}</a>
+						<a href="https://trakt.tv/shows/{{ item.show.ids.slug }}/seasons/{{ item.episode.season }}/episodes/{{ item.episode.number }}">{{ item.show.title | safe }} {{ item.episode.season }}{% if item.episode.season and item.episode.number %}x{% elif item.episode.number %}E {% endif %}{% if item.episode.number %}{{ item.episode.number | padWithZeroes }}{% endif %}</a>
 					</h1>
 					{% if item.episode.title %}
 						<div>
