@@ -127,7 +127,7 @@
 }
 
 // Hide custom hue input unless Custom theme is selected
-:root:has([name="theme"] [value*="custom"]:not(:checked)) :is([for*="custom-hue"], [name="custom-hue"]) {
+:root:has([name="theme"] [value*="custom"]:not(:checked)) :is([for*="custom-hue"], [name="custom-hue"], [for*="custom-chroma"], [name="custom-chroma"]) {
 	display: none;
 }
 

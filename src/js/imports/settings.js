@@ -3,6 +3,9 @@ const selectColorScheme = document.querySelector(`select[name="color-scheme"]`);
 const inputCustomHue = document.querySelector(
 	`[type="range"][name="custom-hue"]`,
 );
+const inputCustomChroma = document.querySelector(
+	`[type="range"][name="custom-chroma"]`,
+);
 const selectHighContrast = document.querySelector(
 	`select[name="high-contrast"]`,
 );
@@ -14,15 +17,20 @@ const inputUserSounds = document.querySelector(
 );
 const buttonSettingsReset = document.querySelector(".settings-reset");
 
-if (selectTheme && inputCustomHue) {
+if (selectTheme && inputCustomHue && inputCustomChroma) {
 	selectTheme.addEventListener("change", (event) => {
 		if (event.target.value === "custom") {
 			document.documentElement.style.setProperty(
 				"--raven-hue",
 				inputCustomHue.value,
 			);
+			document.documentElement.style.setProperty(
+				"--raven-chroma",
+				inputCustomChroma.value,
+			);
 		} else {
 			document.documentElement.style.removeProperty("--raven-hue");
+			document.documentElement.style.removeProperty("--raven-chroma");
 		}
 	});
 
@@ -36,6 +44,17 @@ if (selectTheme && inputCustomHue) {
 	};
 	inputCustomHue.addEventListener("change", inputCustomHueFunction);
 	inputCustomHue.addEventListener("input", inputCustomHueFunction);
+
+	const inputCustomChromaFunction = (event) => {
+		if (selectTheme.value === "custom") {
+			document.documentElement.style.setProperty(
+				"--raven-chroma",
+				event.target.value,
+			);
+		}
+	};
+	inputCustomChroma.addEventListener("change", inputCustomChromaFunction);
+	inputCustomChroma.addEventListener("input", inputCustomChromaFunction);
 }
 
 if (buttonSettingsReset) {
