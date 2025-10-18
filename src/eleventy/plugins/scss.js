@@ -6,7 +6,7 @@ import postcss from "postcss";
 import * as sass from "sass";
 import postcssConfig from "../../../postcss.config.js";
 
-let cachedCSS = {};
+let cachedCSS = new Map();
 
 export default function (eleventyConfig) {
 	// Recognise SCSS as a "template language"
@@ -30,8 +30,8 @@ export default function (eleventyConfig) {
 			return async () => {
 				const inputPathNormalized = inputPath.replace(/^\.\//, "");
 				// Skip processing and grab from the memoized cache
-				if (inputPathNormalized in cachedCSS) {
-					return cachedCSS[inputPathNormalized];
+				if (cachedCSS.has(inputPathNormalized)) {
+					return cachedCSS.get(inputPathNormalized);
 				}
 
 				// Pass SCSS through sass to resolve imports and minify
@@ -50,13 +50,13 @@ export default function (eleventyConfig) {
 					});
 
 					// Cache the result
-					cachedCSS[inputPathNormalized] = postcssResult.css;
+					cachedCSS.set(inputPathNormalized, postcssResult.css);
 
 					return postcssResult.css;
 				}
 
 				// Cache the result
-				cachedCSS[inputPathNormalized] = sassResult.css;
+				cachedCSS.set(inputPathNormalized, sassResult.css);
 
 				return sassResult.css;
 			};

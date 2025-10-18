@@ -3,9 +3,18 @@
 /// @group abstracts
 ////
 
-///
-/// Visually hide an element properly.
-///
+/**
+ * Applies a background color and a text color that contrasts legibly.
+ * @param {color} --color
+ */
+@mixin --background-readable(--color <color>) {
+	background-color: env(--color);
+	color: --contrasting-color(env(--color));
+}
+
+/**
+ * Visually hide an element properly.
+ */
 @mixin --visually-hidden() {
 	inline-size: 1px !important;
 	block-size: 1px !important;
@@ -19,18 +28,18 @@
 	clip-path: inset(100%) !important;
 }
 
-///
-/// Iralicise words..
-///
+/**
+ * Italicise words.
+ */
 @mixin --italic() {
 	font-style: italic;
 	font-synthesis: none;
 	font-variation-settings: "ital" 125;
 }
 
-///
-/// Hyphenate words.
-///
+/**
+ * Hyphenate words.
+ */
 @mixin --hyphenate() {
 	hyphens: auto;
 	hyphenate-limit-chars: 6 3 3;
@@ -39,26 +48,25 @@
 	hyphenate-limit-zone: 8%;
 }
 
-///
-/// Make something non-selectable.
-///
+/**
+ * Make something non-selectable.
+ */
 @mixin --non-selectable() {
 	user-select: none;
 	-webkit-touch-callout: default;
 	-webkit-touch-callout: none;
 }
 
-///
-/// Make something non-interactive.
-///
+/**
+ * Make something non-interactive.
+ */
 @mixin --non-interactive() {
-	@apply --non-selectable;
 	pointer-events: none;
 }
 
-///
-/// Setup Monochrome Color CSS Variables
-///
+/**
+ * Setup Monochrome Color CSS Variables
+ */
 @mixin --setup-monochrome-colors() {
 	--color-snowy: oklch(var(--snowy-lightness) var(--monochrome-chroma) var(--monochrome-hue));
 	--color-thunder: oklch(var(--thunder-lightness) var(--monochrome-chroma) var(--monochrome-hue));
@@ -68,9 +76,9 @@
 	--color-yeti: color-mix(in oklab, var(--color-snowy), var(--color-thunder) 10.2%);
 }
 
-///
-/// Setup Raven Color CSS Variables
-///
+/**
+ * Setup Raven Color CSS Variables
+ */
 @mixin --setup-raven-colors() {
 	--color-raven: oklch(var(--raven-lightness) var(--raven-chroma) var(--raven-hue));
 	--color-lynx: color-mix(in oklab, var(--color-raven), var(--color-thunder) 75%);
@@ -81,75 +89,122 @@
 	--color-bear: color-mix(in oklab, var(--color-raven), var(--color-snowy) 75%);
 }
 
-///
-// Styles for Dark Color Scheme
-///
-@mixin --dark-styles() {
-	& select {
-		background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='50' fill='%23dddddd'><polygon points='0,0 100,0 50,50'/></svg>");
-	}
-}
-
-///
-/// Target Media Queries which should nullify animations/transitions/etc.
-///
-@mixin --reduced-motion {
+/**
+ * Target Media Queries which should nullify animations/transitions/etc.
+ * @param @contents
+ */
+@mixin --reduced-motion(@contents) {
 	@media (prefers-reduced-motion: reduce) or (update: none) or (update: slow) {
 		@contents;
 	}
 }
 
-///
-/// Target Media Queries which allow animations/transitions/etc.
-///
-@mixin --allowed-motion {
+/**
+ * Target Media Queries which allow animations/transitions/etc.
+ * @param @contents
+ */
+@mixin --allowed-motion(@contents) {
 	@media (prefers-reduced-motion: no-preference) and (update: fast) {
 		@contents;
 	}
 }
 
-///
-/// Nest an inline-size-based container query.
-///
+/**
+ * Nest styles within an inline-size-based container query that triggers above
+ * a given value.
+ * @param {length} --min
+ * @param {custom-ident} [--name]
+ * @param @contents
+ */
 @mixin --inline-above(--min <length>, --name <custom-ident>, @contents) {
 	@container env(--name) (inline-size > env(--min)) {
 		@contents;
 	}
 }
+
+/**
+ * Nest styles within an inline-size-based container query that triggers below
+ * a given value.
+ * @param {length} --max
+ * @param {custom-ident} [--name]
+ * @param @contents
+ */
 @mixin --inline-below(--max <length>, --name <custom-ident>, @contents) {
 	@container env(--name) (inline-size <= env(--max)) {
 		@contents;
 	}
 }
+
+/**
+ * Nest styles within an inline-size-based container query that triggers between
+ * given values.
+ * @param {length} --min
+ * @param {length} --max
+ * @param {custom-ident} [--name]
+ * @param @contents
+ */
 @mixin --inline-between(--min <length>, --max <length>, --name <custom-ident>, @contents) {
 	@container env(--name) (env(--min) < inline-size <= env(--max)) {
 		@contents;
 	}
 }
 
-///
-/// Nest an block-size-based container query.
-///
+/**
+ * Nest styles within a block-size-based container query that triggers above
+ * a given value.
+ * @param {length} --min
+ * @param {custom-ident} [--name]
+ * @param @contents
+ */
 @mixin --block-above(--min <length>, --name <custom-ident>, @contents) {
 	@container env(--name) (block-size > env(--min)) {
 		@contents;
 	}
 }
+
+/**
+ * Nest styles within a block-size-based container query that triggers below
+ * a given value.
+ * @param {length} --max
+ * @param {custom-ident} [--name]
+ * @param @contents
+ */
 @mixin --block-below(--max <length>, --name <custom-ident>, @contents) {
 	@container env(--name) (block-size <= env(--max)) {
 		@contents;
 	}
 }
+
+/**
+ * Nest styles within a block-size-based container query that triggers between
+ * given values.
+ * @param {length} --min
+ * @param {length} --max
+ * @param {custom-ident} [--name]
+ * @param @contents
+ */
 @mixin --block-between(--min <length>, --max <length>, --name <custom-ident>, @contents) {
 	@container env(--name) (env(--min) < block-size <= env(--max)) {
 		@contents;
 	}
 }
 
+/**
+ * Applies an animation using the respective @function.
+ * @param {custom-ident} --name
+ * @param {easing-function} [--function]
+ */
 @mixin --animation(--name <custom-ident>, --function <easing-function>: var(--animation-function)) {
 	animation: --animation(var(--name), var(--function));
 }
 
-@mixin --transition(--name <single-transition-property>, --duration <time>: var(--transition-duration), --function <easing-function>: var(--transition-function), --delay <time>: 0) {
-	transition: --transition(var(--name), var(--duration), var(--function), var(--delay));
+/**
+ * Applies a transition using the respective @function.
+ * @param {single-transition-property} --property
+ * @param {time} [--duration]
+ * @param {easing-function} [--function]
+ * @param {time} [--delay]
+ */
+@mixin --transition(--property <single-transition-property>, --duration <time>: var(--transition-duration), --function <easing-function>: var(--transition-function), --delay <time>: 0) {
+	transition: --transition(var(--property), var(--duration), var(--function), var(--delay));
 }

@@ -3,18 +3,212 @@
 /// @group abstracts
 ////
 
+/**
+ * @param {any} --light
+ * @param {any} --dark
+ * @returns {any}
+ * @example background-image: --light-dark(url("light.svg"), url("dark.svg"));
+ */
+@function --light-dark(--light, --dark) {
+	result: if(color-scheme(dark): var(--dark); else: var(--light));
+}
+
+/**
+ * @param {number} --value
+ * @returns {number}
+ * @example margin-inline: --negate(1em);
+ */
+@function --negate(--value type(<length> | <number>)) returns type(<length> | <number>) {
+	result: calc(-1 * var(--value));
+}
+
+/**
+ * @param {length|number} --from
+ * @param {length|number} --to
+ * @param {number} --progress
+ * @returns {number}
+ * @example inline-size: --lerp(100px, 600px, 0.5);
+ */
+@function --lerp(--from type(<length> | <number>), --to type(<length> | <number>), --progress <number>) returns type(<length> | <number>) {
+	result: calc(var(--from) + (var(--to) - var(--from)) * var(--progress));
+}
+
+/**
+ * @param {calc-sum} --value
+ * @param {calc-sum} --to-value
+ * @returns {number}
+ * @example inline-size: --ratio(3rem, 2em);
+ */
+@function --ratio(--value <calc-sum>, --to-value <calc-sum>) returns <number> {
+	result: tan(atan2(var(--value), var(--to-value)));
+}
+
+/**
+ * @param {length-percentage|number} --alpha
+ * @param {color} [--alternative]
+ * @returns {color}
+ * @example color: --white(0.5);
+ * @example color: --white(0.5, seashell);
+ */
+@function --white(--alpha type(<length-percentage> | <number>), --alternative <color>: white) returns <color> {
+	result: oklch(from var(--white, var(--alternative)) l c h / var(--alpha));
+}
+
+/**
+ * @param {length-percetnage} --alpha
+ * @param {color} [--alternative]
+ * @returns {color}
+ * @example color: --white(0.5);
+ * @example color: --white(0.5, dimgray);
+ */
+@function --black(--alpha <length-percentage>, --alternative <color>: black) returns <color> {
+	result: oklch(from var(--black, var(--alternative)) l c h / var(--alpha));
+}
+
+/**
+ * @param {color} --color
+ * @param {length-percentage} --amount
+ * @param {color} [--alternative]
+ * @example color: --tint(rebeccapurple, 0.5);
+ * @example color: --tint(rebeccapurple, 0.5, seashell);
+ */
+@function --tint(--color <color>, --amount <length-percentage>, --alternative <color>: white) returns <color> {
+	result: color-mix(in oklab, var(--color), var(--white, var(--alternative)) var(--amount));
+}
+
+/**
+ * @param {color} --color
+ * @param {length-percentage} --amount
+ * @param {color} [--alternative]
+ * @example color: --shade(rebeccapurple, 0.5);
+ * @example color: --shade(rebeccapurple, 0.5, dimgray);
+ */
+@function --shade(--color <color>, --amount <length-percentage>, --alternative <color>: black) returns <color> {
+	result: color-mix(in oklab, var(--color), var(--black, var(--alternative)) var(--amount));
+}
+
+/**
+ * @param {color} --color
+ * @param {string} [--level]
+ * @returns {color}
+ * @example color: --contrasting-color(rebeccapurple);
+ * @example color: --contrasting-color(rebeccapurple, aaa);
+ */
+@function --contrasting-color(--color <color>, --level <string>: aa) returns <color> {
+	result: contrast-color(var(--color) tbd-bg wcag(var(--level)),
+		oklch(from var(--color) 0   c h / alpha),
+		oklch(from var(--color) 0.2 c h / alpha),
+		oklch(from var(--color) 0.4 c h / alpha),
+		oklch(from var(--color) 0.6 c h / alpha),
+		oklch(from var(--color) 0.8 c h / alpha),
+		oklch(from var(--color) 1   c h / alpha)
+	);
+}
+
+/**
+ * @param {color} --color
+ * @param {number} --alpha
+ * @returns {color}
+ * @example color: --transparent(rebeccapurple, 0.5);
+ */
 @function --transparent(--color <color>, --alpha <number>) returns <color> {
 	result: oklch(from var(--color) l c h / var(--alpha));
 }
 
-@function --range-map(--number <number>, --oldMin <number>, --oldMax <number>, --newMin <number>, --newMax <number>) returns <number> {
-	result: calc(var(--newMin) + (var(--number) - var(--oldMin)) * (var(--newMax) - var(--newMin)) / (var(--oldMax) - var(--oldMin)));
+/**
+ * @param {color} --color
+ * @param {number} --lightness
+ * @returns {color}
+ * @example color: --set-lightness(rebeccapurple, 0.9);
+ */
+@function --set-lightness(--color <color>, --lightness <number>) returns <color> {
+	result: oklch(from var(--color) var(--lightness) c h / alpha);
 }
 
+/**
+ * @param {color} --color
+ * @param {number} --chroma
+ * @returns {color}
+ * @example color: --set-chroma(rebeccapurple, 0.4);
+ */
+@function --set-chroma(--color <color>, --chroma <number>) returns <color> {
+	result: oklch(from var(--color) l var(--chroma) h / alpha);
+}
+
+/**
+ * @param {color} --color
+ * @param {number} --hue
+ * @returns {color}
+ * @example color: --set-hue(rebeccapurple, 123);
+ */
+@function --set-hue(--color <color>, --hue <number>) returns <color> {
+	result: oklch(from var(--color) l c var(--hue) / alpha);
+}
+
+/**
+ * @param {color} --color
+ * @param {number} --multiplier
+ * @returns {color}
+ * @example color: --multiply-lightness(rebeccapurple, 2);
+ */
+@function --multiply-lightness(--color <color>, --multiplier <number>) returns <color> {
+	result: oklch(from var(--color) calc(var(--multiplier) * l) c h / alpha);
+}
+
+/**
+ * @param {color} --color
+ * @param {number} --multiplier
+ * @returns {color}
+ * @example color: --multiply-chroma(rebeccapurple, 0.5);
+ */
+@function --multiply-chroma(--color <color>, --multiplier <number>) returns <color> {
+	result: oklch(from var(--color) l calc(var(--multiplier) * c) h / alpha);
+}
+
+/**
+ * @param {color} --color
+ * @returns {color}
+ * @example color: --strip-chroma(rebeccapurple);
+ */
+@function --strip-chroma(--color <color>) returns <color> {
+	result: --multiply-chroma(var(--color), 0);
+}
+
+/**
+ * @param {length|number} --value
+ * @param {length|number} --oldMin
+ * @param {length|number} --oldMax
+ * @param {length|number} --newMin
+ * @param {length|number} --newMax
+ * @returns {number}
+ * @example inline-size: --range-map(100px, 0px, 250px, 0px, 1000px);
+ */
+@function --range-map(--value type(<length> | <number>), --oldMin type(<length> | <number>), --oldMax type(<length> | <number>), --newMin type(<length> | <number>), --newMax type(<length> | <number>)) returns type(<length> | <number>) {
+	result: calc(var(--newMin) + (var(--value) - var(--oldMin)) * (var(--newMax) - var(--newMin)) / (var(--oldMax) - var(--oldMin)));
+}
+
+/**
+ * @param {custom-ident} --name
+ * @param {easing-function} [--function]
+ * @returns {string}
+ * @example animation: --animation(spin);
+ * @example animation: --animation(spin, ease-in-out);
+ */
 @function --animation(--name <custom-ident>, --function <easing-function>: var(--animation-function)) returns <string> {
 	result: var(--name) var(--function);
 }
 
-@function --transition(--name <single-transition-property>, --duration <time>: var(--transition-duration), --function <easing-function>: var(--transition-function), --delay <time>: 0) returns <string> {
-	result: var(--name) var(--duration) var(--function) var(--delay);
+/**
+ * @param {single-transition-property} --name
+ * @param {time} [--duration]
+ * @param {easing-function} [--function]
+ * @param {time} [--delay]
+ * @returns {string}
+ * @example transition: --transition(opacity);
+ * @example transition: --transition(opacity, 2s);
+ * @example transition: --transition(opacity, 2s, ease-in-out);
+ * @example transition: --transition(opacity, 2s, ease-in-out, 1s);
+ */
+@function --transition(--property <single-transition-property>, --duration <time>: var(--transition-duration), --function <easing-function>: var(--transition-function), --delay <time>: 0s) returns <string> {
+	result: var(--property) var(--duration) var(--function) var(--delay);
 }

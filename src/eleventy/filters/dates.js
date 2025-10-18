@@ -29,7 +29,7 @@ export const formatDatetime = (
 	const zoned = zonedDatetime(dateString);
 	const dateObject = new Date(zoned.epochMilliseconds);
 
-	return new Intl.DateTimeFormat("en-GB", {
+	return new Intl.DateTimeFormat(localeSpecific, {
 		...options,
 		timeZone: zoned.timeZoneId,
 	}).format(dateObject);

@@ -61,7 +61,7 @@
 }
 
 ///
-/// Iralicise words..
+/// Italicise words
 ///
 @mixin italic() {
 	font-style: italic;
@@ -120,13 +120,4 @@
 	--color-highland: color-mix(in oklab, var(--color-raven), var(--color-snowy) 33%);
 	--color-coyote: color-mix(in oklab, var(--color-raven), var(--color-snowy) 54%);
 	--color-bear: color-mix(in oklab, var(--color-raven), var(--color-snowy) 75%);
-}
-
-///
-// Styles for Dark Color Scheme
-///
-@mixin dark-styles() {
-	& select {
-		background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='50' fill='%23dddddd'><polygon points='0,0 100,0 50,50'/></svg>");
-	}
 }

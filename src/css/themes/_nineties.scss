@@ -8,8 +8,6 @@
 :root:has([name="theme"] [value*="nineties"]:checked),
 [data-theme*="nineties"],
 .nineties {
-	@include mixins.dark-styles;
-
 	--font-family-sans: var(--font-family-nineties);
 	cursor: url("/images/animated/dinosaur.gif") 3 8, auto;
 

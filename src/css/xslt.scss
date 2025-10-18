@@ -27,6 +27,7 @@
 
 // Global
 @include meta.load-css("global/page");
+@include meta.load-css("global/color-schemes");
 @include meta.load-css("global/anchors");
 @include meta.load-css("global/buttons");
 @include meta.load-css("global/headings");
@@ -61,6 +62,7 @@
 @include meta.load-css("blocks/author");
 
 // Components
+@include meta.load-css("components/stack");
 @include meta.load-css("components/deck");
 @include meta.load-css("components/updated");
 
@@ -72,7 +74,6 @@
 
 // Themes
 @include meta.load-css("themes/high-contrast");
-@include meta.load-css("themes/dark");
 @include meta.load-css("themes/sepia");
 @include meta.load-css("themes/christmas");
 @include meta.load-css("themes/red-alert");

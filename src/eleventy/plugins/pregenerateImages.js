@@ -2,7 +2,7 @@ import dotenv from "dotenv";
 dotenv.config({ quiet: true });
 
 import Image from "@11ty/eleventy-img";
-import glob from "fast-glob";
+import { glob } from "node:fs/promises";
 import path from "node:path";
 
 export default async function () {

@@ -32,7 +32,7 @@ export const DateToSexagesimal = (dateObject) => {
 	return DecimalToSexagesimal(epochDays);
 };
 
-let cachedCodes = {};
+let cachedCodes = new Map();
 
 /**
  * @param {DateTime} date
@@ -43,8 +43,8 @@ let cachedCodes = {};
 export const NewBase60 = (date, categoryCode, collection) => {
 	// Skip processing and grab from the memoized cache
 	const cacheKey = `${epoch(date)}-${categoryCode}`;
-	if (cacheKey in cachedCodes) {
-		return cachedCodes[cacheKey];
+	if (cachedCodes.has(cacheKey)) {
+		return cachedCodes.get(cacheKey);
 	}
 
 	// Get all posts where DATE matches in UTC
@@ -72,7 +72,7 @@ export const NewBase60 = (date, categoryCode, collection) => {
 	const code = categoryCode + DateToSexagesimal(date) + postIndex;
 
 	// Cache the result
-	cachedCodes[cacheKey] = code;
+	cachedCodes.set(cacheKey, code);
 
 	return code;
 };

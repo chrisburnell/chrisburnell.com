@@ -9,28 +9,59 @@ import webmentionReplacements from "../config/webmentionReplacements.js";
 import consoles from "../data/consoles.js";
 import places from "../data/places.js";
 import postingMethods from "../data/postingMethods.js";
+import { localeSpecific } from "../data/site.js";
 import syndicationTargets from "../data/syndicationTargets.js";
 import { getHost } from "../filters/urls.js";
 
 /**
  * @param {number} number
  * @param {number} [decimals]
- * @param {boolean} [stripWholeNumbers]
- * @returns {number}
+ * @param {boolean} [stripPadding]
+ * @returns {number|string}
  */
-export const maxDecimals = (number, decimals = 3, stripWholeNumbers = true) => {
-	return stripWholeNumbers
-		? +number.toFixed(decimals)
-		: number.toFixed(decimals);
+export const minDecimals = (number, decimals = 3, stripPadding = true) => {
+	const result = Intl.NumberFormat(localeSpecific, {
+		minimumFractionDigits: decimals,
+	}).format(number);
+	return stripPadding ? Number(result) : result;
+};
+
+/**
+ * @param {number} number
+ * @param {number} [decimals]
+ * @param {boolean} [stripPadding]
+ * @returns {number|string}
+ */
+export const maxDecimals = (number, decimals = 3, stripPadding = true) => {
+	const result = Intl.NumberFormat(localeSpecific, {
+		maximumFractionDigits: decimals,
+	}).format(number);
+	return stripPadding ? Number(result) : result;
+};
+
+/**
+ * @param {number} number
+ * @param {number} [decimals]
+ * @param {boolean} [stripPadding]
+ * @returns {number|string}
+ */
+export const setDecimals = (number, decimals = 3, stripPadding = true) => {
+	const result = Intl.NumberFormat(localeSpecific, {
+		minimumFractionDigits: decimals,
+		maximumFractionDigits: decimals,
+	}).format(number);
+	return stripPadding ? Number(result) : result;
 };
 
 /**
  * @param {number} number
  * @param {number} [zeroes]
- * @returns {number}
+ * @returns {string}
  */
-export const padZeroes = (number, zeroes = 2) => {
-	return String(number).padStart(zeroes, "0");
+export const padWithZeroes = (number, zeroes = 2) => {
+	return Intl.NumberFormat(localeSpecific, {
+		minimumIntegerDigits: zeroes,
+	}).format(number);
 };
 
 /**
@@ -401,8 +432,10 @@ export const replaceWebmentions = (webmentions) => {
 };
 
 export default {
+	minDecimals,
 	maxDecimals,
-	padZeroes,
+	setDecimals,
+	padWithZeroes,
 	modulo,
 	keyValue,
 	keyValueEquals,

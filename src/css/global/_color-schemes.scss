@@ -1,0 +1,39 @@
+////
+/// Dark
+/// @group themes
+////
+
+@use "../abstracts/mixins";
+
+:root {
+	// Force light color scheme for print stylesheet
+	@media print {
+		color-scheme: light !important;
+	}
+
+	// When the document is unmarked for a specific color scheme, allow media
+	// preference to take effect
+	&:has([name="color-scheme"] [value=""]:checked):not(
+		.light,
+		[data-color-scheme="light"],
+		.dark,
+		[data-color-scheme="dark"]
+	) {
+		@media (prefers-color-scheme: light) {
+			color-scheme: light;
+		}
+		@media (prefers-color-scheme: dark) {
+			color-scheme: dark;
+		}
+	}
+
+	&:where(:has([name="color-scheme"] [value="light"]:checked)),
+	&:is(.light, [data-color-scheme="light"]) {
+		color-scheme: light;
+	}
+
+	&:where(:has([name="color-scheme"] [value="dark"]:checked)),
+	&:is(.dark, [data-color-scheme="dark"]) {
+		color-scheme: dark;
+	}
+}

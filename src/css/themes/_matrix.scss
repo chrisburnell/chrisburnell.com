@@ -8,8 +8,6 @@
 :root:has([name="theme"] [value*="matrix"]:checked),
 [data-theme*="matrix"],
 .matrix {
-	@include mixins.dark-styles;
-
 	--raven-lightness: 60.6%;
 	--raven-chroma: 0.082;
 	--raven-hue: 142.62;

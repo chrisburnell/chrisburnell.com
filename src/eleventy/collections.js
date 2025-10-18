@@ -10,7 +10,7 @@ import { dateSort, epoch, isFuture, isUpcoming } from "./filters/dates.js";
 
 const durationDay = 24 * 60 * 60 * 1000;
 
-let cachedCollections = {};
+let cachedCollections = new Map();
 
 /**
  * @param {object[]} collection
@@ -30,9 +30,8 @@ const filterCollection = (
 	const cacheKey =
 		collectionName || (Array.isArray(tags) ? tags.join(",") : tags);
 
-	if (cacheKey in cachedCollections) {
-		// This collection already exists in memoized cache
-		return cachedCollections[cacheKey];
+	if (cachedCollections.has(cacheKey)) {
+		return cachedCollections.get(cacheKey);
 	}
 
 	let filteredCollection;
@@ -66,7 +65,7 @@ const filterCollection = (
 	}
 
 	// Keep a copy of this collection in memoized cache for later reuse
-	cachedCollections[cacheKey] = filteredCollection;
+	cachedCollections.set(cacheKey, filteredCollection);
 
 	return filteredCollection;
 };
@@ -116,8 +115,8 @@ export const projects = (collection) => {
  * @returns {object[]}
  */
 export const drafts = (collection) => {
-	if ("drafts" in cachedCollections) {
-		return cachedCollections["drafts"];
+	if (cachedCollections.has("drafts")) {
+		return cachedCollections.get("drafts");
 	}
 
 	const filteredCollection = collection
@@ -127,7 +126,7 @@ export const drafts = (collection) => {
 		)
 		.sort(dateSort);
 
-	cachedCollections["drafts"] = filteredCollection;
+	cachedCollections.set("drafts", filteredCollection);
 
 	return filteredCollection;
 };
@@ -160,8 +159,8 @@ export const features = (collection) => {
  * @returns {object[]}
  */
 export const attendances = (collection) => {
-	if ("attendances" in cachedCollections) {
-		return cachedCollections["attendances"];
+	if (cachedCollections.has("attendances")) {
+		return cachedCollections.get("attendances");
 	}
 
 	const conferences = filterCollection(collection, "conference");
@@ -173,7 +172,7 @@ export const attendances = (collection) => {
 		})
 		.sort(dateSort);
 
-	cachedCollections["attendances"] = filteredCollection;
+	cachedCollections.set("attendances", filteredCollection);
 
 	return filteredCollection;
 };
@@ -333,8 +332,8 @@ export const rsvpsUpcoming = (collection) => {
 export const onThisDay = (collection) => {
 	// Blog posts made on this day and month in previous years.
 
-	if ("onThisDay" in cachedCollections) {
-		return cachedCollections["onThisDay"];
+	if (cachedCollections.has("onThisDay")) {
+		return cachedCollections.get("onThisDay");
 	}
 
 	const currentDay = new Date().getDate();
@@ -355,7 +354,7 @@ export const onThisDay = (collection) => {
 			);
 		});
 
-	cachedCollections["onThisDay"] = filteredCollection;
+	cachedCollections.set("onThisDay", filteredCollection);
 
 	return filteredCollection;
 };
@@ -367,8 +366,8 @@ export const onThisDay = (collection) => {
 export const popular = (collection) => {
 	// "Popular" sorting is done by totalling Webmentions.
 
-	if ("popular" in cachedCollections) {
-		return cachedCollections["popular"];
+	if (cachedCollections.has("popular")) {
+		return cachedCollections.get("popular");
 	}
 
 	const features = collection.getFilteredByTag("feature");
@@ -387,7 +386,7 @@ export const popular = (collection) => {
 		})
 		.slice(0, limits.feed);
 
-	cachedCollections["popular"] = filteredCollection;
+	cachedCollections.set("popular", filteredCollection);
 
 	return filteredCollection;
 };
@@ -400,8 +399,8 @@ export const hot = (collection) => {
 	// "Hot" sorting is done by determining the exponential moving average
 	// as a function of Webmentions across time.
 
-	if ("hot" in cachedCollections) {
-		return cachedCollections["hot"];
+	if (cachedCollections.has("hot")) {
+		return cachedCollections.get("hot");
 	}
 
 	const features = collection.getFilteredByTag("feature");
@@ -433,7 +432,7 @@ export const hot = (collection) => {
 		})
 		.slice(0, limits.feed);
 
-	cachedCollections["hot"] = filteredCollection;
+	cachedCollections.set("hot", filteredCollection);
 
 	return filteredCollection;
 };

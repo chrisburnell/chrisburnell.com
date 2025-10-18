@@ -8,6 +8,11 @@
 details {
 	inline-size: 100%;
 	overflow-x: auto;
+	transition: height var(--transition-duration) var(--transition-function);
+
+	&[open] {
+		height: calc-size(auto, size);
+	}
 
 	// add spacing around non-summary children
 	&:not(.no-padding) > :not(summary) {

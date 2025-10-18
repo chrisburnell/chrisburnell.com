@@ -32,6 +32,7 @@
 // Global
 @layer global {
 	@include meta.load-css("global/page");
+	@include meta.load-css("global/color-schemes");
 	@include meta.load-css("global/modals");
 	@include meta.load-css("global/anchors");
 	@include meta.load-css("global/buttons");
@@ -80,6 +81,7 @@
 // Components
 @layer components {
 	@include meta.load-css("components/sparklines");
+	@include meta.load-css("components/stack");
 	@include meta.load-css("components/deck");
 	@include meta.load-css("components/shelf");
 	@include meta.load-css("components/web-components");
@@ -88,7 +90,6 @@
 // Themes
 @layer themes {
 	@include meta.load-css("themes/high-contrast");
-	@include meta.load-css("themes/dark");
 	@include meta.load-css("themes/sepia");
 	@include meta.load-css("themes/christmas");
 	@include meta.load-css("themes/red-alert");
