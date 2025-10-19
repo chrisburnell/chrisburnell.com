@@ -9,10 +9,12 @@ eleventyComputed:
   description: "All of my posts tagged with <q>{{ tag }}</q>."
 ---
 {%- from 'macros/deckItem.njk' import deckItem -%}
+{%- from 'macros/stackItem.njk' import stackItem -%}
 {%- set collection = collections[tag] | arePublished | rssOnlyFilter | sortByDate -%}
 {%- set count = collection.length -%}
 {%- set latest_year = collection[0].data.year | default(collection[0].year) -%}
 {%- set first_year = collection[count-1].data.year | default(collection[count-1].year) -%}
+{%- set list_type = collection[0].data.list -%}
 <div id="content" class=" [ pantheon ] [ wrap ] [ archive ] ">
 	<ul class=" [ cluster ] [ breadcrumbs ] " data-pagefind-ignore>
 		<li>
@@ -34,7 +36,7 @@ eleventyComputed:
 
 	<div class=" [ description ] [ flow ] ">
 		<p>
-			<span class=" [ p-summary ] ">{% if count > 1 %}All {{ count | numberStringFormat }}{% else %}Just the one{% endif %} of my posts tagged <q>{{ tag }}</q>{% if first_year != latest_year %}, dating from {% if collection[0].data.list == 'shelf' %}<span class=" [ no-wrap ] ">{{ first_year }}–{{ latest_year }}</span>{% else %}<span class=" [ no-wrap ] "><a href="#{{ first_year }}">{{ first_year }}</a>–<a href="#{{ latest_year }}">{{ latest_year }}</a></span>{% endif %}{% endif %}.</span>
+			<span class=" [ p-summary ] ">{% if count > 1 %}All {{ count | numberStringFormat }}{% else %}Just the one{% endif %} of my posts tagged <q>{{ tag }}</q>{% if first_year != latest_year %}, dating from {% if list_type == 'shelf' %}<span class=" [ no-wrap ] ">{{ first_year }}–{{ latest_year }}</span>{% else %}<span class=" [ no-wrap ] "><a href="#{{ first_year }}">{{ first_year }}</a>–<a href="#{{ latest_year }}">{{ latest_year }}</a></span>{% endif %}{% endif %}.</span>
 			<a href="{{ site.url }}/{{ tag }}.xml" title="{{ tag | supertitle }} Tag Feed" class=" [ icon-anchor ] "><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false"><use href="#svg--rss"></use></svg></c-emoji></a>
 		</p>
 	</div>
@@ -44,9 +46,13 @@ eleventyComputed:
 			<h2 id="{{ year }}">
 				{{ year }} <small>{{ posts | length }} post{{ 's' if posts | length > 1 }}</small>
 			</h2>
-			<div id="list-{{ year }}" class=" [ deck ] ">
+			<div id="list-{{ year }}" class=" [ {{ list_type }} ] ">
 				{% for item in posts %}
-					{{ deckItem(item, { hfeed: true, show_images: true, truncate: true }) }}
+					{% if list_type == 'deck' -%}
+						{{ deckItem(item, { hfeed: true, show_images: true, truncate: true }) }}
+					{%- else -%}
+						{{ stackItem(item, { hfeed: true, show_category: true }) }}
+					{%- endif %}
 				{% endfor %}
 			</div>
 		{% endfor %}

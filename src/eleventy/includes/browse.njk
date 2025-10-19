@@ -10,7 +10,13 @@
 						<a href="{{ previous_post.url }}" class=" [ browse__previous ] ">
 							<strong>← Older</strong>
 							<br>
-							{{ previous_post.data.title | default(previous_post.data.of_title) | default(previous_post.data.of_title_fallback) | striptags(true) | safe }}
+							{% if item.data.title or item.data.of_title or item.data.of_title_fallback -%}
+								{{ previous_post.data.title | default(previous_post.data.of_title) | default(previous_post.data.of_title_fallback) | default(previous_post.data.meta_title) | default('Untitled') | striptags(true) | safe }}
+							{%- elif item.data.rsvp -%}
+								RSVP: {{ item.data.reply_title }}
+							{%- else -%}
+								Untitled
+							{%- endif %}
 						</a>
 					</li>
 				{% endif %}
@@ -19,7 +25,13 @@
 						<a href="{{ next_post.url }}" class=" [ browse__next ] ">
 							<strong>Newer →</strong>
 							<br>
-							{{ next_post.data.title | default(next_post.data.of_title) | default(next_post.data.of_title_fallback) | striptags(true) | safe }}
+							{% if item.data.title or item.data.of_title or item.data.of_title_fallback -%}
+								{{ next_post.data.title | default(next_post.data.of_title) | default(next_post.data.of_title_fallback) | default(next_post.data.meta_title) | default('Untitled') | striptags(true) | safe }}
+							{%- elif item.data.rsvp -%}
+								RSVP: {{ item.data.reply_title }}
+							{%- else -%}
+								Untitled
+							{%- endif %}
 						</a>
 					</li>
 				{% endif %}

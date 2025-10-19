@@ -142,11 +142,6 @@
 	--box-shadow: var(--box-shadow-high);
 }
 
-// Rotates brightness 180 degrees
-.dark-invert-colors {
-	filter: invert(1) hue-rotate(180deg);
-}
-
 // Emoji
 .emoji {
 	font-family: var(--font-family-sans);

@@ -9,8 +9,17 @@
 	& article {
 		--flow-space: var(--size-tiny);
 
-		max-inline-size: var(--size-line-length);
+		display: grid;
+		grid-template-columns: [title-start] minmax(40%, 1fr) [title-end pills-start] auto [pills-end time-start] auto [time-end];
+		grid-template-rows: [top-start bottom-start] auto [bottom-end top-end];
+		align-items: baseline;
+		column-gap: var(--size-medium);
 		break-inside: avoid;
+
+		@include mixins.cqi(null, null, "tiny") {
+			grid-template-columns: [title-start] 1fr [title-end pills-start time-start] auto [time-end pills-end];
+			grid-template-rows: [top-start] auto [top-end bottom-start] auto [bottom-end];
+		}
 
 		&:not(:first-child) {
 			padding-block-start: var(--size-medium);
@@ -18,8 +27,54 @@
 	}
 
 	& h1 {
-		font-weight: var(--font-weight-semibold);
-		line-height: var(--line-height-medium);
+		grid-column: title;
+		grid-row: top / bottom;
+		font-size: inherit;
+		text-wrap: initial;
+	}
+
+	& .pills {
+		grid-column: pills;
+		grid-row: bottom;
+		display: flex;
+		flex-wrap: wrap-reverse;
+		justify-content: end;
+		gap: 0.5em;
+
+		@include mixins.cqi(null, null, "tiny") {
+			padding-block-start: 0.5em;
+		}
+	}
+
+	& .pill {
+		background-color: oklch(from currentColor calc(1 - round(l)) c h / 0.1);
+		padding: 0.25em 0.5em;
+		border: 1px solid oklch(from currentColor l c h / 0.5);
+		border-radius: 1rem;
+		font-size: var(--font-size-small);
+		line-height: 1;
+		text-decoration: none;
+		white-space: nowrap;
+		transition: border-color var(--transition-duration) var(--transition-function);
+
+		&:is(:hover, :focus, :active) {
+			color: inherit;
+			border-color: var(--color-maple);
+		}
+	}
+
+	& a:has(time) {
+		grid-column: time;
+		grid-row: top;
+		font-style: italic;
+		font-synthesis: none;
+		font-variation-settings: "ital" 125;
+		text-align: end;
+		white-space: nowrap;
+
+		&:not(:hover, :focus, :active) {
+			text-decoration-color: transparent;
+		}
 	}
 
 	& :is(a:not(.button), .anchor) {
@@ -27,11 +82,4 @@
 			color: inherit;
 		}
 	}
-}
-
-.stack__pinned {
-	margin-inline-end: 1ex;
-	font-size: var(--font-size-small);
-	font-weight: var(--font-weight-bold);
-	text-transform: uppercase;
 }

@@ -5,6 +5,7 @@ description: Browse all of my posts by a variety of metrics.
 perch: true
 redirect_from:
   - /archive
+  - /archives
   - /all
   - /all-posts
   - from: /categories
@@ -15,6 +16,7 @@ redirect_from:
     hash: latest
 ---
 {%- from 'macros/deckItem.njk' import deckItem -%}
+{%- from 'macros/stackItem.njk' import stackItem -%}
 {%- set collection = collections.posts -%}
 {%- set count = collection.length -%}
 {%- set latest_year = collection[0].data.year | default(collection[0].year) -%}
@@ -35,16 +37,23 @@ redirect_from:
 			{% include 'js-naked-day.njk' %}
 		{%- endif %}
 
-		<h2 id="latest">Latest Posts</h2>
-
-		<div class=" [ deck ] [ h-feed ] ">
-			{% for item in collections.pinned %}
-				{{ deckItem(item, { hfeed: true, truncate: true, show_pinned: true }) }}
-			{% endfor %}
-			{% for item in collections.features | noPinnedFilter | rssOnlyFilter | limit(site.limits.feed - (collections.pinned.length | default(0))) %}
-				{{ deckItem(item, { hfeed: true, show_images: true, truncate: true }) }}
-			{% endfor %}
+		{% set posts = collections.features | noPinnedFilter | rssOnlyFilter | limit(2 * site.limits.feed - (collections.pinned.length | default(0))) -%}
+		{% set firstpost = posts | first -%}
+		<div id="latest" class=" [ h-feed ] [ flow ] ">
+			<div class=" [ deck ] ">
+				{% for item in collections.pinned %}
+					{{ deckItem(item, { hfeed: true, truncate: true, show_pinned: true }) }}
+				{% endfor %}
+				{{ deckItem(firstpost, { hfeed: true, show_images: true, truncate: true }) }}
+			</div>
+			<div class=" [ stack ] ">
+				{% for i in range(1, posts | length) %}
+					{{ stackItem(posts[i], { hfeed: true, show_category: true }) }}
+				{% endfor %}
+			</div>
 		</div>
+
+		<hr>
 
 		<h2>Collections</h2>
 
@@ -79,7 +88,7 @@ redirect_from:
 
 		<h2>Categories</h2>
 
-		<ul class=" [ grid ] [ shelf ] " data-layout="natural">
+		<ul class=" [ grid ] [ shelf ] " data-layout="natural" style="--row-gap: var(--size-medium);">
 			{%- for item in collections.categories -%}
 				{%- set count = collections[item.title] | arePublished | rssOnlyFilter | getCollectionCount -%}
 				<li>
@@ -93,7 +102,7 @@ redirect_from:
 
 		<h2>Tags</h2>
 
-		<ul class=" [ grid ] [ shelf ] " data-layout="natural">
+		<ul class=" [ grid ] [ shelf ] " data-layout="natural" style="--row-gap: var(--size-small);">
 			{%- set lowest = 9001 -%}
 			{%- set highest = 0 -%}
 			{%- for item in collections.tags | sort -%}

@@ -30,7 +30,7 @@ dotenv.config({ quiet: true });
 export default {
 	layout: "post",
 	tags: ["post"],
-	list: "deck",
+	list: "stack",
 	mf_root: "entry",
 	show_webmentions: true,
 	pre_includes: [],

@@ -1,6 +1,5 @@
 export default {
 	permalink: "recipe/{{ page.fileSlug }}/",
-	list: "deck",
 	mf_root: "recipe",
 	mf_property: "recipe-of",
 	category: "recipe",

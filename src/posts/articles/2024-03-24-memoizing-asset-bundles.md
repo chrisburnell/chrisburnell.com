@@ -1,4 +1,5 @@
 ---
+updated: 2025-10-19T14:03:50-0300
 date: 2024-03-24T19:26:00+0800
 title: How I shaved 1.5 minutes off my Eleventy build time
 description: I had a revelation earlier today that solved a long-standing performance issue I’ve been having with the initial build of my Eleventy website, and here’s how it saved me a bunch of time!
@@ -108,7 +109,7 @@ Part of my build already included a plugin that adds JavaScript as a templating 
 ```javascript
 import esbuild from "esbuild"
 
-let cachedJS = {}
+let cachedJS = new Map();
 
 export default function (eleventyConfig) {
 	// Recognise JS as a "template language"
@@ -127,8 +128,8 @@ export default function (eleventyConfig) {
 			return async () => {
 				const inputPathNormalized = inputPath.replace(/^\.\//, "")
 				// Skip processing and grab from the memoized cache
-				if (inputPathNormalized in cachedJS) {
-					return cachedJS[inputPathNormalized]
+				if (cachedJS.has(inputPathNormalized)) {
+					return cachedJS.get(inputPathNormalized)
 				}
 
 				// Pass JS through esbuild to resolve imports and minify
@@ -147,7 +148,10 @@ export default function (eleventyConfig) {
 				})
 
 				// Cache the result
-				cachedJS[inputPathNormalized] = esbuildResult.outputFiles[0].text
+				cachedJS.set(
+					inputPathNormalized,
+					esbuildResult.outputFiles[0].text,
+				);
 
 				return esbuildResult.outputFiles[0].text
 			}

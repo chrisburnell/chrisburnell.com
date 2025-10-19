@@ -91,7 +91,11 @@ export const posts = (collection) => {
  * @returns {object[]}
  */
 export const blogPosts = (collection) => {
-	return filterCollection(collection, "blog");
+	return filterCollection(collection, "blog", (items) => {
+		return items.filter((item) => {
+			return !item.data.rsvp;
+		});
+	});
 };
 
 /**

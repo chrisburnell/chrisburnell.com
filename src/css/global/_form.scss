@@ -150,7 +150,7 @@ textarea {
 
 select {
 	background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='50' fill='%232b2b2b'><polygon points='0,0 100,0 50,50'/></svg>");
-	background-image: #{"if(color-scheme(dark): url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='50' fill='%23dddddd'><polygon points='0,0 100,0 50,50'/></svg>\"); else: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='50' fill='%232b2b2b'><polygon points='0,0 100,0 50,50'/></svg>\"))"};
+	// background-image: #{"if(color-scheme(dark): url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='50' fill='%23dddddd'><polygon points='0,0 100,0 50,50'/></svg>\"); else: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='50' fill='%232b2b2b'><polygon points='0,0 100,0 50,50'/></svg>\"))"};
 	background-position: right var(--size-tiny) center;
 	background-repeat: no-repeat;
 	background-size: var(--size-small);

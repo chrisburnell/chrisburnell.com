@@ -1,6 +1,5 @@
 export default {
 	permalink: "/article/{{ page.fileSlug }}/index.html",
-	list: "deck",
 	category: "article",
 	categoryPlural: "articles",
 	categoryCode: "a",

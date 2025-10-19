@@ -17,7 +17,7 @@ redirect_from:
     {% include 'lfw.njk' %}
 {%- endif %}
 
-<p class=" [ center  inline-center ] "><a href="https://chrisburnell.com/cv/" class=" [ button ] ">CV / Resumé</a></p>
+<p class=" [ center  inline-center ] "><a href="https://chrisburnell.com/cv/" class=" [ button ] ">CV / Résumé</a></p>
 
 <hr>
 
@@ -71,7 +71,21 @@ Although I’ve been building websites since 2006, I’ve had my personal websit
 
 I also feed my passion for the web by continuously finding myself in <q>rabbit hole deep-dives</q>, which involve exhilirating research into something new and exciting to achieve some goal—more often than not, these deep-dives serve as inspiration for my [projects](https://chrisburnell.com/projects/).
 
-I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link is a joke">playing the piano</a>, [baking bread](https://chrisburnell.com/note/1574856597/) from time to time, and [playing/DMing Dungeons & Dragons](https://chrisburnell.com/projects/#personal-projects) here and there. Check out my [Uses](/uses/) page too!
+I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link is a joke">playing music</a>, [hiking and camping](https://chrisburnell.com/note/1538387073/), [cooking](https://chrisburnell.com/recipes) and [baking bread](https://chrisburnell.com/note/1574856597/), [drinking craft beer](https://chrisburnell.com/beer/), and [playing video games](https://chrisburnell.com/games/) and [tabletop games](https://chrisburnell.com/projects/#personal-projects) here and there. Check out my [Uses](/uses/) page too!
+
+<hr>
+
+<h2 id="clients">Companies and Organisations I’ve worked with</h2>
+
+<div style="display: flex; flex-wrap: wrap; gap: var(--size-gutter); justify-content: center; align-items: center;">
+{% for client in clients | sort(false, false, 'title') -%}
+    <article style="max-inline-size: 150px; max-block-size: 80px;">
+        <a href="{{ client.url }}" title="{{ client.title | safe }}" rel="external noopener" style="display: block;">
+            <img src="/images/content/{{ client.image }}"{% if client.darkInvert %} class="dark-invert-colors"{% endif %} alt="" height="80" style="max-block-size: 80px; margin: auto;">
+        </a>
+    </article>
+{%- endfor %}
+</div>
 
 <hr>
 

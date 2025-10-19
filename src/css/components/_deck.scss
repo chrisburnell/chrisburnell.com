@@ -13,7 +13,6 @@
 	& article {
 		--flow-space: var(--size-tiny);
 
-		max-inline-size: var(--size-line-length);
 		break-inside: avoid;
 
 		&:not(:first-child) {

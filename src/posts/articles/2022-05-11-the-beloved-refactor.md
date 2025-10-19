@@ -42,7 +42,7 @@ For example, I have defined a palette of colours I’d like to reuse:
 }
 
 .box {
-	background-color: hsla(var(--hsl-raven) / 0.5);
+	background-color: hsl(var(--hsl-raven) / 0.5);
 	color: hsl(var(--hsl-maple));
 }
 ```

@@ -15,6 +15,11 @@ if (THEME === "custom" && CUSTOM_HUE) {
 	document.documentElement.style.setProperty("--raven-hue", CUSTOM_HUE);
 }
 
+const CUSTOM_CHROMA = localStorage.getItem("custom-chroma");
+if (THEME === "custom" && CUSTOM_CHROMA) {
+	document.documentElement.style.setProperty("--raven-chroma", CUSTOM_CHROMA);
+}
+
 const HIDE_LFW = localStorage.getItem("hide-lfw");
 if (HIDE_LFW) {
 	document.documentElement.classList.add("hide-lfw");

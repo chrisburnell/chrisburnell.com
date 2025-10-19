@@ -50,6 +50,16 @@ export const tagFilter = (tags, filterList = ignoredTags) => {
 };
 
 /**
+ * @param {object[]} tags
+ * @returns {object[]}
+ */
+export const noYearTagFilter = (tags) => {
+	return tags.filter((item) => {
+		return !/\d{4}$/.test(item);
+	});
+};
+
+/**
  * @param {object[]} array
  * @returns {object[]}
  */
@@ -118,6 +128,7 @@ export default {
 	getCategoryName,
 	categoryFilter,
 	tagFilter,
+	noYearTagFilter,
 	noPinnedFilter,
 	pinnedSort,
 	getCollectionCount,

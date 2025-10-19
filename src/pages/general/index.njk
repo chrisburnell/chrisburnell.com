@@ -12,6 +12,7 @@ excludeFromSearch: true
 ---
 {%- from 'macros/deckItem.njk' import deckItem -%}
 {%- from "macros/shelfItem.njk" import shelfItem -%}
+{%- from 'macros/stackItem.njk' import stackItem -%}
 <article class=" [ pantheon ] [ wrap ] [ page ] [ perch ] ">
 	<h1 id="title" class=" [ title{% if title_error %}  title--negative{% elif title_success %}  title--positive{% endif %} ] ">
 		<span class=" [ p-name ] ">{% if global.isCSSNakedDay %}{{ tagline | replace('CSS', '<s>CSS</s>') | safe }}{% else %}{{ tagline | safe }}{% endif %}</span>
@@ -52,13 +53,24 @@ excludeFromSearch: true
 			{% endif %}
 
 			<h2 id="latest">Latest Posts</h2>
-			<div class=" [ deck ] [ h-feed ] ">
-				{% for item in collections.pinned %}
-					{{ deckItem(item, { hfeed: true, truncate: true, show_pinned: true }) }}
-				{% endfor %}
-				{% for item in collections.features | noPinnedFilter | rssOnlyFilter | limit(site.limits.homepage - (collections.pinned.length | default(0))) %}
-					{{ deckItem(item, { hfeed: true, truncate: true }) }}
-				{% endfor %}
+			{% set posts = collections.features | noPinnedFilter | rssOnlyFilter | limit(site.limits.homepage - (collections.pinned.length | default(0))) -%}
+			{# {% set firstpost = posts | first -%} #}
+			<div class=" [ flow ] [ h-feed ] ">
+				<div class=" [ deck ] ">
+					{% for item in collections.pinned %}
+						{{ deckItem(item, { hfeed: true, truncate: true, show_pinned: true }) }}
+					{% endfor %}
+					{% for item in posts %}
+						{{ deckItem(item, { hfeed: true, truncate: true }) }}
+					{% endfor %}
+				</div>
+				{#
+				<div class=" [ stack ] ">
+					{% for i in range(1, posts | length) %}
+						{{ stackItem(posts[i], { hfeed: true, show_category: true }) }}
+					{% endfor %}
+				</div>
+				#}
 			</div>
 			<nav class=" [ grid ] [ navigator ] " aria-label="Writing Navigation">
 				<a href="/posts/#latest" class=" [ button ] ">Browse Posts</a>

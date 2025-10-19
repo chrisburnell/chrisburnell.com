@@ -1,14 +1,64 @@
 {% macro stackItem(item, params) -%}
-	<article class=" [ flow ]{% if params.hfeed and item.data.mf_root %} [ h-{{ item.data.mf_root }} ] {% endif %}">
+	<article class="{% if params.hfeed and item.data.mf_root %} [ h-{{ item.data.mf_root }} ] {% endif %}">
 		{% if params.show_pinned and item.data.tags and 'pinned' in item.data.tags -%}
-			<p class=" [ stack__pinned ] [ ignore-flow ] " aria-hidden="true" data-pagefind-ignore><c-emoji style="margin-inline-end: 1ex;">📌</c-emoji> Pinned</p>
+			<span class=" [ pill ] " aria-hidden="true" data-pagefind-ignore><c-emoji style="margin-inline-end: 1ex;">📌</c-emoji> Pinned</span>
 		{%- endif %}
-		{% if item.data.title or item.data.of_title or item.data.of_title_fallback -%}
-			<h1 style="view-transition-name: title-{{ item.data.page.fileSlug }};">
+		<h1 style="view-transition-name: title-{{ item.data.page.fileSlug }};">
+			{% if item.data.title or item.data.of_title or item.data.of_title_fallback -%}
 				<a href="{% if item.data.tags and 'clickthrough' in item.data.tags %}{{ item.data.of_url | default(item.url) | safe }}{% else %}{{ item.url | safe }}{% endif %}" class=" [ p-name ] "{% if item.data.tags and 'clickthrough' in item.data.tags %} rel="external noopener"{% endif %}>
-					{% if item.data.emoji %}<c-emoji>{{ item.data.emoji }}</c-emoji>{% endif %}{{ item.data.title | default(item.data.of_title) | default(item.data.of_title_fallback) | striptags(true) | safe }}
+					{{ item.data.title | default(item.data.of_title) | default(item.data.of_title_fallback) | default(item.data.meta_title) | striptags(true) | safe }}
 				</a>
-			</h1>
+			{% elif item.data.reply_url -%}
+				{% if item.data.rsvp %}
+					<a href="{{ item.url }}">RSVP</a> {{ item.data.rsvp_string | safe }}
+					<data class=" [ p-rsvp ] " value="{{ item.data.rsvp.value }}" hidden></data>
+				{% else %}
+					<a href="{{ item.url }}">Reply</a> <small>to</small>
+				{% endif %}
+				<a href="{{ item.data.reply_url }}" class=" [ h-cite  u-in-reply-to ] " tabindex="-1">{{ item.data.reply_title | safe }}</a>
+				{% if item.data.reply_author_string and (item.data.reply_author_string | striptags) != item.data.reply_title %}
+					<small>by</small> {{ item.data.reply_author_string | replace('<a ', '<a tabindex="-1"') | safe }}
+				{% endif %}
+			{% else -%}
+				<a href="{{ item.url }}">Untitled{# {{ item.data.categoryProper | default(item.data.category) | default('page') | supertitle }}#}</a>
+			{%- endif %}
+		</h1>
+		{% set show_webmentions = item.data.show_webmentions and item.data.webmentions.length -%}
+		{% if show_webmentions or (params.show_category and (item.data.category or item.data.rsvp)) -%}
+			<div class=" [ pills ] ">
+				{% if show_webmentions -%}
+					{% set bookmarks = item.data.webmentions | getWebmentionsByTypes(['bookmark-of']) -%}
+					{% set likes = item.data.webmentions | getWebmentionsByTypes(['like-of']) -%}
+					{% set reposts = item.data.webmentions | getWebmentionsByTypes(['repost-of']) -%}
+					{% set links = item.data.webmentions | getWebmentionsByTypes(['mention-of']) -%}
+					{% set socialReplies = item.data.webmentions | getSocialReplies -%}
+					{% set reactions = bookmarks.concat(likes).concat(reposts).concat(socialReplies).concat(links) -%}
+					{% set directReplies = item.data.webmentions | getDirectReplies -%}
+					{% set responsesLength = reactions.length + directReplies.length -%}
+					<a href="{{ item.url }}#respond" title="Jump to responses for this {{ item.data.categoryProper | default(item.data.category) }}" class=" [ pill ] ">{{ responsesLength }} response{{ 's' if responsesLength > 1 }}</a>
+				{%- endif %}
+				{% if params.show_category and (item.data.category or item.data.rsvp) -%}
+					{% if item.data.rsvp -%}
+						<a href="/rsvps/" class=" [ pill ] "><strong>RSVP</strong></a>
+					{%- else -%}
+						<a href="/{{ item.data.categoryPlural | default(item.data.category) }}/" class=" [ pill ] "><strong>{{ item.data.categoryProper | default(item.data.category) | supertitle }}</strong></a>
+					{%- endif -%}
+					{#
+					{%- set tags_filtered = item.data.tags | categoryFilter | tagFilter | noYearTagFilter | sort -%}
+					{% if tags_filtered.length %}
+						{% for tag in tags_filtered -%}
+							<a href="/tag/{{ tag }}/" class=" [ pill ] [ p-tag ] ">#{{ tag }}</a>
+						{%- endfor %}
+					{% endif %}
+					#}
+				{%- endif %}
+			</div>
+		{%- endif %}
+		{% if item.data.rsvp.date -%}
+			<a href="{{ item.url }}" tabindex="-1"><relative-time{% if item.data.rsvp.date | isUpcoming(2) %} max-division="hour"{% elif item.data.rsvp.date | isUpcoming(item.data.rsvp.upcoming_days_lead) %} max-division="day"{% endif %}><time datetime="{{ item.data.rsvp.date | rfc3339Date }}" class=" [ dt-start ] ">{{ item.data.rsvp.date | formattedDate | safe }} @ {{ item.data.rsvp.date | friendlyTime | safe }}</time></relative-time></a>
+			<data class=" [ dt-published ] " value="{{ item.data.date | rfc3339Date }}" hidden></data>
+		{%- else -%}
+			<a href="{{ item.url }}" tabindex="-1" style="font-variant-numeric: ordinal;"><time datetime="{{ item.data.date | rfc3339Date }}" class=" [ dt-published ] ">{{ item.data.date | formattedDate | safe }}</time></a>
 		{%- endif %}
 		{% if item.data.mf_property and item.data.of_url -%}
 			<data class=" [ u-{{ item.data.mf_property }} ] " value="{{ item.data.of_url }}" hidden></data>

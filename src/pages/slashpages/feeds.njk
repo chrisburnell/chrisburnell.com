@@ -54,7 +54,7 @@ redirect_from:
 			<c-emoji><svg width="32" height="32" aria-hidden="true" focusable="false"><use href="#svg--rss"></use></svg></c-emoji> Categories
 		</h2>
 
-		<ul class=" [ grid ] [ shelf ] " data-layout="natural">
+		<ul class=" [ grid ] [ shelf ] " data-layout="natural" style="--row-gap: var(--size-medium);">
 		{% for item in collections.categories -%}
 			{%- set count = collections[item.title] | arePublished | getCollectionCount -%}
 			<li><a href="{{ site.url }}/{{ item.plural }}.xml" class=" [ gamma ] "><c-emoji>{{ item.emoji | default('📄') }}</c-emoji>{{ item.properPlural | title }} <sup>{{ count }}</sup></a></li>
@@ -67,7 +67,7 @@ redirect_from:
 			<c-emoji><svg width="32" height="32" aria-hidden="true" focusable="false"><use href="#svg--rss"></use></svg></c-emoji>Tags
 		</h2>
 
-		<ul class=" [ grid ] [ shelf ] " data-layout="natural">
+		<ul class=" [ grid ] [ shelf ] " data-layout="natural" style="--row-gap: var(--size-small);">
 		{%- set lowest = 9001 -%}
 		{%- set highest = 0 -%}
 		{%- for item in collections.tags | sort -%}

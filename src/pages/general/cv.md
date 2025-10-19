@@ -16,7 +16,7 @@ redirect_from:
 {%- endif %}
 
 <ul class=" [ cluster ] ">
-    <li class="no-print"><a href="https://chrisburnell.com/cv.pdf"><c-emoji style="margin-inline-end: 1ex;">⬇️</c-emoji>Download PDF</a></li><li><!--email_off--><a href="mailto:{{ author.email }}"><c-emoji style="margin-inline-end: 1ex;">📧</c-emoji>Email</a><!--/email_off--></li><li><a href="https://github.com/{{ author.github }}"><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false" style="margin-inline-end: 1ex;"><use href="#svg--github"></use></svg></c-emoji>GitHub</a></li><li><a href="https://www.linkedin.com/in/{{ author.linkedin }}"><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false" style="margin-inline-end: 1ex;"><use href="#svg--linkedin"></use></svg></c-emoji>LinkedIn</a></li><li><a href="https://npmjs.com/~{{ author.npm }}"><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false" style="margin-inline-end: 1ex;"><use href="#svg--npm"></use></svg></c-emoji>npm</a></li>
+    <li class="no-print"><a href="https://chrisburnell.com/cv.pdf"><c-emoji>⬇️</c-emoji>Download PDF</a></li><li><!--email_off--><a href="mailto:{{ author.email }}"><c-emoji>📧</c-emoji>Email</a><!--/email_off--></li><li><a href="https://github.com/{{ author.github }}"><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false"><use href="#svg--github"></use></svg></c-emoji>GitHub</a></li><li><a href="https://www.linkedin.com/in/{{ author.linkedin }}"><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false"><use href="#svg--linkedin"></use></svg></c-emoji>LinkedIn</a></li><li><a href="https://npmjs.com/~{{ author.npm }}"><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false"><use href="#svg--npm"></use></svg></c-emoji>npm</a></li>
 </ul>
 
 {% set technical_articles_count = 0 -%}
@@ -32,7 +32,7 @@ Front End Developer and Software Engineer with {{ global.currentYear - site.esta
 
 Work roles involved creating design systems and tools to enable teams to build maintainable and performant websites, with an uncompromising focus on accessibility and user experience. These also included lead roles in building the front end and CMS architecture for small to enterprise clients, chiefly in the higher education and government sectors, as I oversaw the project lifecycle and acted as their primary technical contact.
 
-Passionate about the open web, having published over {{ technical_articles_count | toNearest(5, true) }} technical articles, and author of open-source software used by thousands of developers worldwide. Actively involved in the web community with many years of experience in organising conferences and meet-ups, most notably, [State of the Browser](https://stateofthebrowser.com).
+Passionate about the open web, having published over {{ technical_articles_count | toNearest(5, true) }} technical articles, and author of open-source software used by thousands of developers worldwide. Actively involved in the web community with many years of experience in organising conferences and meet-ups.
 
 <hr>
 
@@ -125,7 +125,7 @@ Passionate about the open web, having published over {{ technical_articles_count
     <small><strong>London, UK</strong></small>
 </div>
 
-- Organised 7 annual, not-for-profit conferences, showcasing over {{ (10 + 9 + 7 + 8 + 8 + 8 + 7) | toNearest(5, true) }} speakers with 150+ in-person attendees each year.
+- Organised 8 annual, not-for-profit conferences, showcasing over {{ (10 + 9 + 7 + 8 + 8 + 8 + 7 + 7) | toNearest(5, true) }} speakers with 150+ in-person attendees each year.
 
 - Liaised with speakers, sponsors, and venues; handled the logistics of running an in-person and online conference.
 
@@ -141,7 +141,7 @@ Passionate about the open web, having published over {{ technical_articles_count
     <p class="delta"><a href="https://chrisburnell.com/"><c-emoji><img src="{{ site.logo }}" class="brand-logo" width="24" height="24" alt="{{ site.title }}" loading="lazy" decoding="async"></c-emoji>chrisburnell.com</a></p>
 </div>
 
-Launched a web development blog and have created [{{ collections.projects.length + projects.web.length }} web projects](https://chrisburnell.com/projects/) and published over [{{ collections.blogPosts | length | toNearest(5, true) }} blog posts](https://chrisburnell.com/blog/), including {{ technical_articles_count }} technical articles about CSS, JavaScript, and thoughts on the web.
+Launched a web development blog and have since created [{{ collections.projects.length + projects.web.length }} web projects](https://chrisburnell.com/projects/) and published over [{{ technical_articles_count | toNearest(5, true) }} technical articles](https://chrisburnell.com/blog/) about accessibility, design systems, CSS, JavaScript, and thoughts on the web.
 
 <c-details class="no-border" force-restore>
     <summary>Popular Pages & Posts</summary>
@@ -191,7 +191,7 @@ Author of numerous open-source software packages, accumulating over {{ package_d
     <a href="https://chrisburnell.com/projects/" class=" [ button ] " style="font-size: 1rem;">See more of my projects</a>
 </nav>
 
-{#
+{#-
 ## Testimonials
 
 {% include 'testimonials.njk' %}

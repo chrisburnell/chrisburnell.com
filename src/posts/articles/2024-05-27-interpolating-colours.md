@@ -11,7 +11,7 @@ post_includes:
   - weblogpomo2024.njk
 ---
 
-Although not completely stable across all modern browsers, there are two data types that we can apply to colour-related CSS functions like `color-mix() and `linear-gradient()` and give us the ability to traverse through different colour spaces in new ways. I’m going to work through these two data types by using them with some linear gradients and seeing how they affect the outcome.
+Although not completely stable across all modern browsers, there are two data types that we can apply to colour-related CSS functions like `color-mix()` and `linear-gradient()` and give us the ability to traverse through different colour spaces in new ways. I’m going to work through these two data types by using them with some linear gradients and seeing how they affect the outcome.
 
 ## Color Interpolation Method
 

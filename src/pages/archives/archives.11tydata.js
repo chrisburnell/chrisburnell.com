@@ -9,7 +9,9 @@ import { stripHTML } from "../../functions/strings.js";
 
 export default {
 	layout: "archive",
+	list: "stack",
 	by_year: true,
+	show_categories: true,
 	show_images: true,
 	excludeFromSearch: true,
 	eleventyComputed: {

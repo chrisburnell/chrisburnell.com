@@ -185,17 +185,18 @@ export default [
 		],
 	},
 	{
-		id: "css-color-contrast",
+		id: "mdn-css_types_color_contrast-color",
 		language: "css",
-		supports: "color: color-contrast(black vs white, snow)",
+		supports: "color: contrast-color(snow)",
 		type: "types",
 		key: "color.color-contrast",
 		title: "color-contrast()",
 		description:
-			"Given one color, chooses from a list of other colors to output the one with the highest contrast.",
+			"Given a color, returns either black or white, whichever has a greater contrast versus the given color. Will be able to control color output and method of choosing a color as part of CSS Color Module Level 6.",
 		links: [
 			"[Official Specification (CSS Color Module Level 4)](https://www.w3.org/TR/css-color-4/)",
 			"[Official Specification (CSS Color Module Level 5)](https://www.w3.org/TR/css-color-5/)",
+			"[Official Specification (CSS Color Module Level 6)](https://www.w3.org/TR/css-color-6/)",
 			"[Article by Michelle Barker](https://www.smashingmagazine.com/2021/11/guide-modern-css-colors/)",
 		],
 	},

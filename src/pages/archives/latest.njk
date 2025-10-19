@@ -9,5 +9,5 @@ tags:
 sitemap:
   exclude: true
 eleventyComputed:
-  description: "Latest {{ site.limits.feed | numberStringFormat }} posts on the blog."
+  description: "Latest {{ (2 * site.limits.feed) | numberStringFormat }} posts on the blog."
 ---
