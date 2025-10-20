@@ -5,6 +5,22 @@
 
 @use "../abstracts/mixins";
 
+.code-block {
+	position: relative;
+
+	button {
+		color: var(--color-yeti);
+		position: absolute;
+		inset-block-start: var(--size-tiny);
+		inset-inline-end: var(--size-gutter);
+		z-index: var(--z-index-default);
+
+		&:not(:is(:hover, :focus, :active)) {
+			text-decoration-color: transparent;
+		}
+	}
+}
+
 pre[class*="language-"] {
 	--flow-space: var(--size-large);
 	background-color: light-dark(var(--color-mineshaft), var(--color-thunder));
@@ -88,11 +104,9 @@ pre.language-yaml::before {
 	content: "YAML";
 	color: var(--color-yaml);
 }
-
-/* Exceptions */
-pre.language-plaintext,
-pre.language-text {
-	padding-block-start: var(--size-gutter);
+pre:is(.language-plaintext, .language-text)::before {
+	content: "Plaintext";
+	color: var(--color-yeti);
 }
 
 /**

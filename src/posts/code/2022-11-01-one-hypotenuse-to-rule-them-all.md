@@ -117,7 +117,7 @@ Interesting! 🤔
     }
 
     .adjacent {
-        inset-block-start: calc(100% + 0.5rem);
+        inset-block-start: 100%;
         inset-inline-start: 50%;
         transform: translateX(-50%);
     }

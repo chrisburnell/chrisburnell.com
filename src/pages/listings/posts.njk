@@ -37,9 +37,11 @@ redirect_from:
 			{% include 'js-naked-day.njk' %}
 		{%- endif %}
 
+		<h2 id="latest">Latest Posts</h2>
+
 		{% set posts = collections.features | noPinnedFilter | rssOnlyFilter | limit(2 * site.limits.feed - (collections.pinned.length | default(0))) -%}
 		{% set firstpost = posts | first -%}
-		<div id="latest" class=" [ h-feed ] [ flow ] ">
+		<div class=" [ h-feed ] [ flow ] ">
 			<div class=" [ deck ] ">
 				{% for item in collections.pinned %}
 					{{ deckItem(item, { hfeed: true, truncate: true, show_pinned: true }) }}

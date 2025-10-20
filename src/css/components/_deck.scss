@@ -60,8 +60,6 @@
 }
 
 .deck__meta {
-	--flow-space: var(--size-small);
-
 	& time {
 		@include mixins.italic;
 

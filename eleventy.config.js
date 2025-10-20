@@ -59,7 +59,7 @@ export default async function (eleventyConfig) {
 	eleventyConfig.addPlugin(plugins.ogImage, config.ogImage);
 	eleventyConfig.addPlugin(plugins.rss);
 	eleventyConfig.addPlugin(plugins.scss);
-	eleventyConfig.addPlugin(plugins.syntaxHighlight);
+	eleventyConfig.addPlugin(plugins.syntaxHighlight, config.syntaxHighlight);
 	eleventyConfig.addPlugin(plugins.webc, config.webc);
 	eleventyConfig.addPlugin(plugins.webmentions, config.webmentions);
 	// if (process.env.ELEVENTY_RUN_MODE === "build") {

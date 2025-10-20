@@ -73,6 +73,16 @@ export default async function (value, outputPath) {
 		// Make sure <ul> elements are accessible even with `list-style: none`
 		$("ul").attr("role", "list");
 
+		// Add markup around fenced code blocks
+		$(`pre[class*="language-"]`).each((i, element) => {
+			$(element).wrap(
+				`<div class=" [ code-block ] " style="position: relative;"></div>`,
+			);
+			$(element).before(
+				`<button class=" [ anchor ] " onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText); this.textContent = 'Copied!'; setTimeout(() => this.textContent = 'Copy', 2500);" tabindex="-1">Copy</button>`,
+			);
+		});
+
 		// Make <pre> code blocks keyboard-accessible by adding `tabindex="0"`
 		$("pre > code").attr("tabindex", 0);
 

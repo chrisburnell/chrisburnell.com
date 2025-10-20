@@ -29,7 +29,7 @@ redirect_from:
 
 {{ bio | markdownFormat | safe }}
 
-<c-details>
+<c-details class="no-border no-padding">
 <summary>Plaintext</summary>
 
 ```text
@@ -38,7 +38,7 @@ redirect_from:
 
 </c-details>
 
-<c-details>
+<c-details class="no-border no-padding">
 <summary>Markdown</summary>
 
 ```markdown
@@ -47,7 +47,7 @@ redirect_from:
 
 </c-details>
 
-<c-details>
+<c-details class="no-border no-padding">
 <summary>HTML</summary>
 
 ```html
