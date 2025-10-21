@@ -57,11 +57,11 @@
 }
 
 @media print {
-	.e-content a::after {
+	.e-content a:not([aria-hidden="true"], [tabindex="-1"])::after {
 		content: " (" attr(href) ") ";
 	}
 
-	.e-content a[href^="/"]::after {
+	.e-content a[href^="/"]:not([aria-hidden="true"], [tabindex="-1"])::after {
 		content: " (https://chrisburnell.com" attr(href) ") ";
 	}
 }

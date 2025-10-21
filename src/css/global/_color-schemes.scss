@@ -22,9 +22,6 @@
 	}
 
 	@media (prefers-color-scheme: dark) {
-		color-scheme: dark light;
-
-		// Rotates brightness 180 degrees
 		&:where(:has([name="color-scheme"] [value=""]:checked)):not(
 			.light,
 			[data-color-scheme="light"]

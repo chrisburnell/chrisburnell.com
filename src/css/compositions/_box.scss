@@ -11,8 +11,8 @@
 	padding: var(--box-padding, var(--size-gutter));
 	margin-inline: auto;
 	border-width: 0;
-	border-block-start: var(--size-border-thin) solid var(--box-border-color, light-dark(var(--color-raven), oklch(from var(--color-raven) l c h / var(--opacity-alpha))));
-	border-radius: var(--border-radius, var(--size-border-thin));
+	border-block-start: var(--size-border-thin) solid var(--box-border-color, var(--color-raven));
+	border-radius: 0 0 var(--border-radius, var(--size-border-thin)) var(--border-radius, var(--size-border-thin));
 	box-shadow: var(--box-shadow, var(--box-shadow-low));
 	text-align: start;
 	font-family: var(--font-family-sans);

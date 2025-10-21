@@ -11,12 +11,12 @@
 :is(dialog, [popover]) {
 	--flow-space: var(--size-medium-large);
 
-	background-color: var(--background-color, light-dark(color-mix(in oklab, var(--color-bear), var(--color-snowy)), color-mix(in oklab, var(--color-thunder), var(--color-mineshaft) 80%)));
+	background-color: var(--background-color, light-dark(color-mix(in oklab, var(--color-snowy), var(--color-yeti) 80%), color-mix(in oklab, var(--color-thunder), var(--color-mineshaft) 80%)));
 	color: inherit;
 	max-inline-size: 100vi;
 	padding: var(--size-medium-large) var(--size-small-medium);
-	border: var(--size-border-default) solid var(--color-raven);
-	border-radius: var(--size-border-default);
+	border-block-start: var(--size-border-thin) solid var(--color-raven);
+	border-radius: 0 0 var(--border-radius, var(--size-border-thin)) var(--border-radius, var(--size-border-thin));
 	box-shadow: var(--box-shadow-medium);
 	position: fixed;
 	inset: initial;

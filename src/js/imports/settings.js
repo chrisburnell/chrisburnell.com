@@ -62,10 +62,12 @@ if (buttonSettingsReset) {
 		localStorage.removeItem("theme");
 		localStorage.removeItem("color-scheme");
 		localStorage.removeItem("custom-hue");
+		localStorage.removeItem("custom-chroma");
 		localStorage.removeItem("high-contrast");
 		localStorage.removeItem("smooth-scroll");
 		localStorage.removeItem("user-sounds");
 		document.documentElement.style.removeProperty("--raven-hue");
+		document.documentElement.style.removeProperty("--raven-chroma");
 		if (selectTheme) {
 			selectTheme.value = "";
 		}
@@ -74,6 +76,9 @@ if (buttonSettingsReset) {
 		}
 		if (inputCustomHue) {
 			inputCustomHue.value = 237.73;
+		}
+		if (inputCustomChroma) {
+			inputCustomChroma.value = 0.0636;
 		}
 		if (selectHighContrast) {
 			selectHighContrast.value = "";

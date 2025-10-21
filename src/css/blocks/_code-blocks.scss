@@ -13,6 +13,7 @@
 		position: absolute;
 		inset-block-start: var(--size-tiny);
 		inset-inline-end: var(--size-gutter);
+		font-weight: var(--font-weight-medium);
 		z-index: var(--z-index-default);
 
 		&:not(:is(:hover, :focus, :active)) {
@@ -26,7 +27,7 @@ pre[class*="language-"] {
 	background-color: light-dark(var(--color-mineshaft), var(--color-thunder));
 	border-block-start: var(--size-border-thin) solid var(--border-color, var(--color-raven));
 	padding: var(--size-gap) var(--size-gutter) 1em;
-	border-radius: var(--border-radius, var(--size-border-thin));
+	border-radius: 0 0 var(--border-radius, var(--size-border-thin)) var(--border-radius, var(--size-border-thin));
 	box-shadow: var(--box-shadow, var(--box-shadow-medium));
 
 	// Labels
