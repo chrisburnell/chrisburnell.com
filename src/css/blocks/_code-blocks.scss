@@ -56,56 +56,55 @@ pre.language-none {
 	padding-block-start: var(--size-gutter);
 }
 
-pre.language-bash::before {
+pre[class*="-bash"]::before {
 	content: "Terminal";
 	color: var(--color-yeti);
 }
-pre.language-css::before {
+pre[class*="-css"]::before {
 	content: "CSS";
 	color: var(--color-css);
 }
-pre.language-html::before {
+pre[class*="-html"]::before {
 	content: "HTML";
 	color: var(--color-html);
 }
-pre.language-javascript::before {
+pre[class*="-javascript"]::before {
 	content: "JavaScript";
 	color: var(--color-javascript);
 }
-pre.language-json::before {
+pre[class*="-json"]::before {
 	content: "JSON";
 	color: var(--color-json);
 }
-pre.language-liquid::before {
+pre[class*="-liquid"]::before {
 	content: "Liquid";
 	color: var(--color-liquid);
 }
-pre.language-markdown::before {
+pre[class*="-markdown"]::before {
 	content: "Markdown";
 	color: var(--color-snowy);
 }
-pre.language-nunjucks::before,
-pre.language-twig::before {
+pre:is([class*="-nunjucks"], [class*="-twig"])::before {
 	content: "Nunjucks";
 	color: var(--color-nunjucks);
 }
-pre.language-php::before {
+pre[class*="-php"]::before {
 	content: "PHP";
 	color: var(--color-php);
 }
-pre.language-scss::before {
+pre[class*="-scss"]::before {
 	content: "SCSS";
 	color: var(--color-scss);
 }
-pre.language-webc::before {
+pre[class*="-webc"]::before {
 	content: "WebC";
 	color: var(--color-webc);
 }
-pre.language-yaml::before {
+pre[class*="-yaml"]::before {
 	content: "YAML";
 	color: var(--color-yaml);
 }
-pre:is(.language-plaintext, .language-text)::before {
+pre:is([class*="-plaintext"], [class*="-text"])::before {
 	content: "Plaintext";
 	color: var(--color-yeti);
 }
@@ -173,22 +172,32 @@ pre.language-css .token.string,
 	color: #eab538;
 }
 
-.token.deleted {
-	background-color: oklch(87.2% 0.1768 8.53 / 47%);
-}
-.token.inserted {
-	background-color: oklch(86.9% 0.3846 143.49 / 35%);
-}
-
-.token.prefix.unchanged,
-.token.prefix.inserted,
-.token.prefix.deleted {
-	@include mixins.non-selectable;
+pre[class*="language-diff-"] code {
+	padding-inline-start: 3ch;
 }
 
 .token.inserted:not(.prefix),
 .token.deleted:not(.prefix) {
 	display: block;
+	padding-inline-start: 3ch;
+	margin-inline-start: -3ch;
+	position: relative;
+}
+.token.inserted:not(.prefix) {
+	background-color: oklch(from var(--color-conifer) l c h / 0.333);
+}
+.token.deleted:not(.prefix) {
+	background-color: oklch(from var(--color-maple) l c h / 0.333);
+	@include mixins.non-selectable;
+}
+
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	position: absolute;
+	left: 0;
+	padding-inline: 1ch;
+	@include mixins.non-selectable;
 }
 
 .token.important,

@@ -257,6 +257,36 @@ export const includesDeep = (object, searchValue, caseSensitive = true) => {
 	return Object.values(object).some(checkValue);
 };
 
+export const noteToFrequency = (value) => {
+	const match = value.match(/^([A-Ga-g])(#|b)?(\d)?$/);
+	if (!match) {
+		throw new Error("Invalid note format:", value);
+	}
+
+	let [, note, accidental, octave] = match;
+	note = note.toUpperCase();
+
+	const semitonesFromC = {
+		C: 0,
+		D: 2,
+		E: 4,
+		F: 5,
+		G: 7,
+		A: 9,
+		B: 11,
+	};
+	let n = semitonesFromC[note];
+	if (accidental === "#") {
+		n += 1;
+	} else if (accidental === "b") {
+		n -= 1;
+	}
+
+	const midi = (Number(octave || 4) + 1) * 12 + n;
+
+	return 440 * Math.pow(2, (midi - 69) / 12);
+};
+
 export default {
 	injectContent,
 	getParameterByName,
@@ -270,4 +300,5 @@ export default {
 	truncate,
 	since,
 	includesDeep,
+	noteToFrequency,
 };

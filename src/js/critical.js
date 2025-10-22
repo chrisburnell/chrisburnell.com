@@ -30,7 +30,7 @@ if (HIDE_SOTB) {
 	document.documentElement.classList.add("hide-sotb");
 }
 
-window.addEventListener("load", function () {
+window.addEventListener("load", () => {
 	document.documentElement.removeAttribute("data-theme");
 	document.documentElement.removeAttribute("data-color-scheme");
 	document.documentElement.classList.remove("hide-lfw");

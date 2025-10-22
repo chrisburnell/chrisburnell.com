@@ -69,9 +69,10 @@ u,
 	text-decoration: underline !important;
 }
 
-.light {
-	font-weight: var(--font-weight-light) !important;
-}
+// Conflicts with .light class for color scheme
+// .light {
+// 	font-weight: var(--font-weight-light) !important;
+// }
 .regular {
 	font-weight: var(--font-weight-regular) !important;
 }

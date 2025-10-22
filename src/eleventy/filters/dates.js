@@ -231,38 +231,39 @@ export const isUpcoming = (value, upcomingDays = limits.upcomingDays) => {
 
 /**
  * @param {string} value
- * @param {number} [recentDays]
+ * @param {number} [days]
  * @returns {boolean}
  */
-export const isRecent = (value, recentDays = limits.recentDays) => {
+export const isRecent = (value, days = limits.recentDays) => {
 	const differenceDays = msToDays(nowEpoch - epoch(value));
-	return 0 < differenceDays && differenceDays < recentDays;
+	return 0 < differenceDays && differenceDays < days;
 };
 
 /**
  * @param {object[]} array
  * @param {string} key
- * @param {number} recentDays
+ * @param {number} [days]
  * @returns {object[]}
  */
-export const recentFilter = (array, key, recentDays = limits.recentDays) => {
+export const recentFilter = (array, key, days = limits.recentDays) => {
 	return array.filter((item) => {
 		const keys = key.split(".");
 		const value = keys.reduce((o, k) => {
 			return o[k];
 		}, item);
-		return isRecent(value, recentDays);
+		return isRecent(value, days);
 	});
 };
 
 /**
  * @param {object[]} array
+ * @param {number} [days]
  * @returns {object[]}
  */
-export const rssOnlyFilter = (array) => {
+export const rssOnlyFilter = (array, days = limits.rssOnlyDays) => {
 	return array.filter((item) => {
 		if (item.data.tags && item.data.tags.includes("rss-only")) {
-			return !isRecent(item.data.date);
+			return !isRecent(item.data.date, days);
 		}
 		return true;
 	});

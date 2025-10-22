@@ -30,6 +30,7 @@ export const limits = {
 	maxWords: 40,
 	recentDays: 14,
 	upcomingDays: 7,
+	rssOnlyDays: 3,
 	minimumResponsesRequired: 5,
 };
 

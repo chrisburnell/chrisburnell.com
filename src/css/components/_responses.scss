@@ -8,7 +8,7 @@
 	--flow-space: var(--size-medium);
 
 	inline-size: 100%;
-	margin-block-start: var(--size-gap);
+	margin-block-start: var(--size-gigantic);
 
 	&:not(:has(.responses__thread)) {
 		@media print {

@@ -14,31 +14,47 @@
 	}
 }
 
-:root {
+:where(:root) {
 	color-scheme: light dark;
 
 	@media print {
 		color-scheme: light !important;
 	}
+}
 
+:where(:root:has([name="color-scheme"] [value=""]:checked):not([data-color-scheme], .light, .dark)) {
 	@media (prefers-color-scheme: dark) {
-		&:where(:has([name="color-scheme"] [value=""]:checked)):not(
-			.light,
-			[data-color-scheme="light"]
-		) {
-			@include dark-styles;
-		}
+		@include dark-styles;
+	}
+
+	&:where(.suggested-light),
+	& :where(.suggested-light) {
+		color-scheme: light;
+		color: light-dark(var(--color-kaiser), var(--color-yeti));
+	}
+	&:where(.suggested-dark),
+	& :where(.suggested-dark) {
+		color-scheme: dark;
+		color: light-dark(var(--color-kaiser), var(--color-yeti));
+		@include dark-styles;
 	}
 }
 
-:root:where(:has([name="color-scheme"] [value="light"]:checked)),
-:is(.light, [data-color-scheme="light"]) {
-	color-scheme: light;
-}
+// Order of selector specificities below:
+// 0,0,0
+// 0,0,0
+// 0,1,0
 
-:root:where(:has([name="color-scheme"] [value="dark"]:checked)),
-:is(.dark, [data-color-scheme="dark"]) {
+:where(:root:has([name="color-scheme"] [value="light"]:checked)),
+:where([data-color-scheme="light"]),
+.light {
+	color-scheme: light;
+	color: light-dark(var(--color-kaiser), var(--color-yeti));
+}
+:where(:root:has([name="color-scheme"] [value="dark"]:checked)),
+:where([data-color-scheme="dark"]),
+.dark {
 	color-scheme: dark;
+	color: light-dark(var(--color-kaiser), var(--color-yeti));
 	@include dark-styles;
 }
-

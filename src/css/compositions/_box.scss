@@ -6,7 +6,7 @@
 .box,
 :is(.box, .cp_embed_wrapper, .speakerdeck-embed-wrapper) {
 	background-color: var(--box-background-color, light-dark(color-mix(in oklab, var(--color-bear), var(--color-snowy)), color-mix(in oklab, var(--color-thunder), var(--color-mineshaft) 80%)));
-	color: var(--box-color, inherit);
+	color: var(--box-color, light-dark(var(--color-kaiser), var(--color-yeti)));
 	max-inline-size: var(--box-max-inline-size, 100%) !important;
 	padding: var(--box-padding, var(--size-gutter));
 	margin-inline: auto;

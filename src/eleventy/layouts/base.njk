@@ -2,6 +2,7 @@
 layout: root
 ---
 <header class=" [ header ] ">
+	<div id="top" aria-hidden="true" class="visually-hidden"></div>
 	<div class=" [ wrap ] ">
 		<a href="/" rel="home" class=" [ logo ] [ canada ] ">
 			<img src="{{ site.logo }}" alt="chrisburnell.com logo, to the homepage" width="120" height="120">
@@ -33,7 +34,7 @@ layout: root
 
 	{% if not global.isCSSNakedDay -%}
 		<div popover id="popover-navigation" class=" [ popover-navigation ] [ flow ] [ gamma ] ">
-			<h2>Navigation</h2>
+			<h2 id="navigation">Navigation</h2>
 			<ol class=" [ navigation__list ] ">
 				{% for link in navigation %}
 					{% if link.header %}

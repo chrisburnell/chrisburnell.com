@@ -1,7 +1,7 @@
 export default {
 	preAttributes: {
 		"data-language": function ({ language }) {
-			return language;
+			return language.replace("diff-", "");
 		},
 	},
 };

@@ -79,7 +79,7 @@ export default async function (value, outputPath) {
 				`<div class=" [ code-block ] " style="position: relative;"></div>`,
 			);
 			$(element).before(
-				`<button class=" [ anchor ] " onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText); this.textContent = 'Copied!'; setTimeout(() => this.textContent = 'Copy', 2500);" tabindex="-1">Copy</button>`,
+				`<button class=" [ anchor ] [ requires-js  copy-code ] " tabindex="-1">Copy</button>`,
 			);
 		});
 
