@@ -19,7 +19,9 @@
 
 .responses__form {
 	display: grid;
+	align-items: center;
 	grid-gap: var(--size-small-medium);
+	line-height: var(--line-height-medium);
 
 	@include mixins.cqi(null, null, "small") {
 		grid-template-columns: 1fr min-content;
@@ -52,6 +54,11 @@
 		grid-row: span 2;
 		padding-inline-end: var(--size-small-medium);
 	}
+}
+
+.responses__input {
+	font-size: var(--font-size-default);
+	line-height: calc(var(--line-height-medium) * 1em + var(--size-small) * 2);
 }
 
 .responses__submit {

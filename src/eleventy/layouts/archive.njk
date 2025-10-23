@@ -53,28 +53,30 @@ layout: base
 		{%- endif %}
 
 		{%- if by_year -%}
-			{% for year, posts in collection | groupby('data.year') | dictsort | reverse %}
-				{%- set posts = posts | rssOnlyFilter -%}
-				<h2 id="{{ year }}">
-					{{ year }} <small>{{ posts | length }} post{{ 's' if posts | length > 1 }}</small>
-				</h2>
-				<div id="list-{{ year }}" class=" [ {{ list_type }} ] ">
-					{% for item in posts %}
-						{% if list_type == 'deck' -%}
-							{{ deckItem(item, { hfeed: true, show_images: show_images, truncate: true }) }}
-						{%- else -%}
-						{{ stackItem(item, { hfeed: true, show_category: show_category, show_collections: show_collections, show_tags: show_tags }) }}
-						{%- endif %}
-					{% endfor %}
-				</div>
-			{% endfor %}
+			{% for year, posts in collection | groupby('data.year') | dictsort | reverse -%}
+				{% set posts = posts | rssOnlyFilter -%}
+				{% if posts | length -%}
+					<h2 id="{{ year }}">
+						{{ year }} <small>{{ posts | length }} post{{ 's' if posts | length > 1 }}</small>
+					</h2>
+					<div id="list-{{ year }}" class=" [ {{ list_type }} ] ">
+						{% for item in posts -%}
+							{% if list_type == 'deck' -%}
+								{{ deckItem(item, { hfeed: true, show_images: show_images, truncate: true }) }}
+							{%- else -%}
+								{{ stackItem(item, { hfeed: true, show_category: show_category, show_collections: show_collections, show_tags: show_tags }) }}
+							{%- endif %}
+						{%- endfor %}
+					</div>
+				{%- endif %}
+			{%- endfor %}
 		{%- else -%}
 			<div class=" [ {{ list_type }} ] ">
 				{% for item in collection | rssOnlyFilter %}
 					{% if list_type == 'deck' -%}
 						{{ deckItem(item, { hfeed: true, show_images: show_images, truncate: true }) }}
 					{%- else -%}
-					{{ stackItem(item, { hfeed: true, show_category: show_category, show_collections: show_collections, show_tags: show_tags }) }}
+						{{ stackItem(item, { hfeed: true, show_category: show_category, show_collections: show_collections, show_tags: show_tags }) }}
 					{%- endif %}
 				{% endfor %}
 			</div>
