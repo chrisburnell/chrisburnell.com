@@ -34,9 +34,7 @@
 		auto
 		[toc-end content-start]
 		auto
-		[content-end responses-start]
-		auto
-		[responses-end meta-start]
+		[content-end meta-start]
 		auto
 		[meta-end browse-start]
 		auto
@@ -142,11 +140,6 @@
 .content {
 	grid-row: content;
 	grid-column: content;
-}
-
-.responses {
-	grid-row: responses;
-	grid-column: indent / outdent;
 }
 
 .meta {

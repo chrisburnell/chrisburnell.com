@@ -26,10 +26,10 @@
 	// prettier-ignore
 	grid-template-columns: repeat(
 		var(--placement, auto-fill),
-		minmax(
+		var(--grid-inline-size, minmax(
 			var(--grid-min-inline-size, 12em),
 			var(--grid-max-inline-size, 1fr)
-		)
+		))
 	);
 	column-gap: var(--column-gap, var(--gap, var(--size-gutter)));
 	row-gap: var(--row-gap, var(--gap, var(--size-gutter)));

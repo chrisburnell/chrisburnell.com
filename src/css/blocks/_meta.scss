@@ -3,20 +3,52 @@
 /// @group blocks
 ////
 
+@use "../abstracts/mixins";
 
 .meta {
 	container: meta / inline-size;
 	margin-block-start: var(--size-gigantic);
 
-	& > div {
-		// TODO Broken in Safari 🤔 https://bugs.webkit.org/show_bug.cgi?id=256047
-		// Hotfix in place at the moment with nested, unnecessary div
+	// TODO Broken in Safari 🤔 https://bugs.webkit.org/show_bug.cgi?id=256047
+	// Hotfix in place at the moment with nested, unnecessary div
+	.grid {
 		--placement: auto-fit;
 		--grid-min-inline-size: 16em;
 		--gap: var(--size-gap);
 
-		& > * {
+		& > div {
 			inline-size: 100%;
+		}
+
+		&:has(.meta__information):has(.responses) {
+			@include mixins.cqi(null, "medium") {
+				grid-template-columns: repeat(6, 1fr);
+				grid-template-rows: auto;
+
+				& > div {
+					grid-column: span 3;
+				}
+			}
+		}
+
+		&:has(.responses) :has(> .meta__information) {
+			@include mixins.cqi(null, "medium") {
+				grid-row: 1;
+				grid-column: 1 / 3 !important;
+			}
+		}
+
+		& .responses {
+			grid-row: 1;
+			grid-column: 1 / -1;
+		}
+		&:has(.meta__information) .responses {
+			@include mixins.cqi(null, null, "medium") {
+				grid-row: 2;
+			}
+			@include mixins.cqi(null, "medium") {
+				grid-column: 3 / -1 !important;
+			}
 		}
 	}
 

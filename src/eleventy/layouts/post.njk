@@ -38,7 +38,7 @@ layout: base
 		{%- endif %}
 	</div>
 
-	<h1 id="title" class=" [ title{% if title_error %} title--negative{% elif title_success %} title--positive{% endif %} ] {{ '[ visually-hidden ] ' if not title and not of_title }}" style="view-transition-name: title-{{ page.fileSlug }};">
+	<h1 id="title" class=" [ title{% if title_error %} title--negative{% elif title_success %} title--positive{% endif %} ] {{ '[ visually-hidden ] ' if not title and not of_title }}" style="view-transition-name: title-{{ page.fileSlug }};"{% if not title and not of_title %} aria-hidden="true"{% endif %}>
 		<span class=" [ p-name ] ">{{ title | default(of_title) | default(of_title_fallback) | default(meta_title) | striptags(true) | safe }}</span>
 	</h1>
 
@@ -101,8 +101,6 @@ layout: base
 				{%- endfor %}
 			</div>
 	</div>
-
-	{% include 'responses.njk' %}
 
 	<div class=" [ meta ] " data-pagefind-ignore>
 		<div class=" [ grid ] " data-rows="masonry">

@@ -3,12 +3,12 @@
 /// @group components
 ////
 
+@use "../abstracts/mixins";
 
 .responses {
 	--flow-space: var(--size-medium);
 
-	inline-size: 100%;
-	margin-block-start: var(--size-gigantic);
+	container-type: inline-size;
 
 	&:not(:has(.responses__thread)) {
 		@media print {
@@ -18,20 +18,41 @@
 }
 
 .responses__form {
-	max-inline-size: var(--size-line-length);
 	display: grid;
-	grid-gap: var(--size-small);
-	grid-template-columns: 1fr min-content;
-	margin-inline: auto;
+	align-items: center;
+	grid-gap: var(--size-small-medium);
+
+	@include mixins.cqi(null, null, "small") {
+		grid-template-columns: 1fr min-content;
+	}
+
+	@include mixins.cqi(null, "small") {
+		grid-template-columns: minmax(40cqi, auto) 1fr min-content;
+	}
 
 	@media print {
 		display: none;
 	}
+
+	& p {
+		grid-column: 1 / -1;
+		max-inline-size: 100%;
+
+		@include mixins.cqi(null, "small") {
+			grid-column: 2 / -1;
+		}
+	}
 }
 
 .responses__label {
-	grid-column: 1 / span 2;
-	margin-block-end: var(--size-small);
+	@include mixins.cqi(null, null, "small") {
+		grid-column: 1 / -1;
+	}
+
+	@include mixins.cqi(null, "small") {
+		grid-row: span 2;
+		padding-inline-end: var(--size-small-medium);
+	}
 }
 
 .responses__submit {
