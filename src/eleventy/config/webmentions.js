@@ -1,13 +1,12 @@
 import dotenv from "dotenv";
 dotenv.config({ quiet: true });
 
-import { defaults } from "@chrisburnell/eleventy-cache-webmentions";
 import { cacheDurations, url as siteURL } from "../data/site.js";
 import urlReplacements from "../data/urlReplacements.js";
 import { getHost } from "../filters/urls.js";
 import blocklist from "./blocklist.js";
 
-const config = {
+export default {
 	domain: siteURL,
 	feed: `https://webmention.io/api/mentions.jf2?domain=${getHost(siteURL)}&token=${process.env.WEBMENTION_IO_TOKEN}`,
 	key: "children",
@@ -34,19 +33,9 @@ const config = {
 			a: ["href"],
 		},
 		allowedSchemes: ["https"],
-		nonTextTags: [
-			"style",
-			"script",
-			"textarea",
-			"option",
-			"noscript",
-			"pre",
-		],
 	},
 	urlReplacements: urlReplacements,
 	maximumHtmlText: "Mentioned this:",
 	allowlist: [],
 	blocklist: blocklist,
 };
-
-export default { ...defaults, ...config };

@@ -3,8 +3,41 @@
 /// @group components
 ////
 
+@use "../abstracts/mixins";
+
 is-land:has(details-utils, seven-minute-tabs) {
 	display: block;
+}
+
+:is(details-utils, seven-minute-tabs) {
+	height: calc-size(auto);
+	display: block;
+	transition: height var(--transition-duration) var(--transition-function);
+}
+
+seven-minute-tabs {
+	display: grid;
+	grid-template-rows: auto [tabs-start] auto [tabs-end];
+
+	& [role="tabpanel"] {
+		grid-column: 1 / -1;
+		grid-row: tabs;
+		display: block;
+
+		&[hidden] {
+			opacity: 0;
+			visibility: hidden;
+			@include mixins.non-interactive;
+		}
+	}
+
+	&:not(:has([hidden])) {
+		& [role="tabpanel"]:first-of-type {
+			opacity: 0;
+			visibility: hidden;
+			@include mixins.non-interactive;
+		}
+	}
 }
 
 :where(lastfm-listening) {

@@ -11,8 +11,8 @@ sitemap:
 excludeFromSearch: true
 ---
 {%- from 'macros/deckItem.njk' import deckItem -%}
-{%- from "macros/shelfItem.njk" import shelfItem -%}
-{%- from 'macros/stackItem.njk' import stackItem -%}
+{# {%- from "macros/shelfItem.njk" import shelfItem -%} #}
+{# {%- from 'macros/stackItem.njk' import stackItem -%} #}
 <article class=" [ pantheon ] [ wrap ] [ page ] [ perch ] ">
 	<h1 id="title" class=" [ title{% if title_error %}  title--negative{% elif title_success %}  title--positive{% endif %} ] ">
 		<span class=" [ p-name ] ">{% if global.isCSSNakedDay %}{{ tagline | replace('CSS', '<s>CSS</s>') | safe }}{% else %}{{ tagline | safe }}{% endif %}</span>
@@ -67,7 +67,7 @@ excludeFromSearch: true
 				{#
 				<div class=" [ stack ] ">
 					{% for i in range(1, posts | length) %}
-						{{ stackItem(posts[i], { hfeed: true, show_category: true }) }}
+						{{ stackItem(posts[i], { hfeed: true, show_category: true, show_collections: true, show_tags: false }) }}
 					{% endfor %}
 				</div>
 				#}

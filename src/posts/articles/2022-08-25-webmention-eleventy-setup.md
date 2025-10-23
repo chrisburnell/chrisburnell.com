@@ -1,5 +1,5 @@
 ---
-updated: 2024-07-20T16:36:12+0800
+updated: 2025-10-23T01:55:02-0300
 date: 2022-08-25T16:31:04+0100
 title: Webmention Setup for Eleventy
 description: Here’s a quick run-through of how I retrieve and use Webmentions with my Eleventy website.
@@ -41,31 +41,27 @@ Create a config file. You may wish to put this file in your [Global Data Folder]
 If you’re using **[Webmention.io](https://webmention.io/)**:
 
 ```javascript
-const { defaults } = require("@chrisburnell/eleventy-cache-webmentions")
-
 // Load .env variables with dotenv
-require("dotenv").config()
+require("dotenv").config();
 
-module.exports = Object.assign({}, defaults, {
+module.exports = {
 	domain: "https://EXAMPLE.COM",
 	feed: `https://webmention.io/api/mentions.jf2?domain=EXAMPLE.COM&token=${process.env.WEBMENTION_IO_TOKEN}`,
 	key: "children",
-})
+};
 ```
 
 If you’re using **[go-jamming](https://git.brainbaking.com/wgroeneveld/go-jamming)**:
 
 ```javascript
-const { defaults } = require("@chrisburnell/eleventy-cache-webmentions")
-
 // Load .env variables with dotenv
 require("dotenv").config()
 
-module.exports = Object.assign({}, defaults, {
+module.exports = {
 	domain: "https://EXAMPLE.COM",
 	feed: `https://JAM.EXAMPLE.COM/webmention/EXAMPLE.COM/${process.env.GO_JAMMING_TOKEN}`,
 	key: "json",
-})
+}
 ```
 
 <h2 id="4">4. Integrate with Eleventy</h2>

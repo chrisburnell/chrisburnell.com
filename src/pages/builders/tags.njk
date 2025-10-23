@@ -51,7 +51,7 @@ eleventyComputed:
 					{% if list_type == 'deck' -%}
 						{{ deckItem(item, { hfeed: true, show_images: true, truncate: true }) }}
 					{%- else -%}
-						{{ stackItem(item, { hfeed: true, show_category: true }) }}
+						{{ stackItem(item, { hfeed: true, show_category: true, show_collections: true, show_tags: false }) }}
 					{%- endif %}
 				{% endfor %}
 			</div>

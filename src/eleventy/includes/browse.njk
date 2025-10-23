@@ -15,7 +15,7 @@
 							{%- elif previous_post.data.rsvp -%}
 								RSVP: {{ previous_post.data.reply_title }}
 							{%- else -%}
-								Untitled
+								Untitled {{ (previous_post.data.rsvp and 'RSVP' or previous_post.data.in_reply_to and 'Reply' or previous_post.data.category and (previous_post.data.categoryProper | default(previous_post.data.category) | supertitle) or 'Page') }}
 							{%- endif %}
 						</a>
 					</li>
@@ -26,11 +26,11 @@
 							<strong>Newer →</strong>
 							<br>
 							{% if next_post.data.title or next_post.data.of_title or next_post.data.of_title_fallback -%}
-								{{ next_post.data.title | default(next_post.data.of_title) | default(next_post.data.of_title_fallback) | default(next_post.data.meta_title) | default('Untitled') | striptags(true) | safe }}
+								{{ next_post.data.title | default(next_post.data.of_title) | default(next_post.data.of_title_fallback) | default(next_post.data.meta_title) | striptags(true) | safe }}
 							{%- elif next_post.data.rsvp -%}
 								RSVP: {{ next_post.data.reply_title }}
 							{%- else -%}
-								Untitled
+								Untitled {{ next_post.data.rsvp and 'RSVP' or next_post.data.in_reply_to and 'Reply' or next_post.data.category and (next_post.data.categoryProper | default(next_post.data.category) | supertitle) or 'Page' }}
 							{%- endif %}
 						</a>
 					</li>

@@ -77,28 +77,24 @@ Create a configuration file in your project (e.g. `configWebmentions.js`):
     <div id="config-commonjs" role="tabpanel">
 
 ```javascript
-const { defaults } = require("@chrisburnell/eleventy-cache-webmentions");
-
-module.exports = Object.assign({}, defaults, {
+module.exports = {
 	// These 3 fields are all required!
 	domain: "https://example.com",
 	feed: "https://webmentions.example.com?token=S3cr3tT0k3n",
 	key: "array_of_webmentions",
-});
+};
 ```
 
 </div>
 <div id="config-esm" role="tabpanel">
 
 ```javascript
-import { defaults } from "@chrisburnell/eleventy-cache-webmentions";
-
-export default Object.assign({}, defaults, {
+export default {
 	// These 3 fields are all required!
 	domain: "https://example.com",
 	feed: "https://webmentions.example.com?token=S3cr3tT0k3n",
 	key: "array_of_webmentions",
-});
+};
 ```
 
 </div>

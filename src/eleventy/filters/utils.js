@@ -1,8 +1,9 @@
 import {
-	getContent,
-	getPublished,
-	getSource,
-	getType,
+	getWebmentionContent,
+	getWebmentionPublished,
+	getWebmentionSource,
+	getWebmentionType,
+	getWebmentionsByType,
 } from "@chrisburnell/eleventy-cache-webmentions";
 import merge from "deepmerge";
 import webmentionReplacements from "../config/webmentionReplacements.js";
@@ -15,8 +16,8 @@ import { getHost } from "../filters/urls.js";
 
 /**
  * @param {number} number
- * @param {number} [decimals]
- * @param {boolean} [stripPadding]
+ * @param {number} [decimals=3]
+ * @param {boolean} [stripPadding=true]
  * @returns {number|string}
  */
 export const minDecimals = (number, decimals = 3, stripPadding = true) => {
@@ -28,8 +29,8 @@ export const minDecimals = (number, decimals = 3, stripPadding = true) => {
 
 /**
  * @param {number} number
- * @param {number} [decimals]
- * @param {boolean} [stripPadding]
+ * @param {number} [decimals=3]
+ * @param {boolean} [stripPadding=true]
  * @returns {number|string}
  */
 export const maxDecimals = (number, decimals = 3, stripPadding = true) => {
@@ -41,8 +42,8 @@ export const maxDecimals = (number, decimals = 3, stripPadding = true) => {
 
 /**
  * @param {number} number
- * @param {number} [decimals]
- * @param {boolean} [stripPadding]
+ * @param {number} [decimals=3]
+ * @param {boolean} [stripPadding=true]
  * @returns {number|string}
  */
 export const setDecimals = (number, decimals = 3, stripPadding = true) => {
@@ -55,7 +56,7 @@ export const setDecimals = (number, decimals = 3, stripPadding = true) => {
 
 /**
  * @param {number} number
- * @param {number} [zeroes]
+ * @param {number} [zeroes=2]
  * @returns {string}
  */
 export const padWithZeroes = (number, zeroes = 2) => {
@@ -89,7 +90,7 @@ export const keyValue = (object, key) => {
  * @param {object} object
  * @param {string} key
  * @param {any} check
- * @param {boolean} [caseSensitive]
+ * @param {boolean} [caseSensitive=true]
  * @returns {boolean}
  */
 export const keyValueEquals = (object, key, check, caseSensitive = true) => {
@@ -106,7 +107,7 @@ export const keyValueEquals = (object, key, check, caseSensitive = true) => {
  * @param {object[]} array
  * @param {string} key
  * @param {any} check
- * @param {boolean} caseSensitive
+ * @param {boolean} [caseSensitive]
  * @returns {object[]}
  */
 export const arrayKeyValueEquals = (array, key, check, caseSensitive) => {
@@ -191,7 +192,7 @@ export const toArray = (value) => {
 /**
  * @param {number} value
  * @param {number} multiple
- * @param {boolean} [floor]
+ * @param {boolean} [floor=false]
  * @returns {number}
  */
 export const toNearest = (value, multiple, floor = false) => {
@@ -219,7 +220,7 @@ export const rangeMap = (number, inMin, inMax, outMin, outMax, decimals) => {
 
 /**
  * @param {string} string
- * @param {number} decimals
+ * @param {number} [decimals=1]
  * @returns {number}
  */
 export const stringToPercent = (string, decimals = 1) => {
@@ -267,11 +268,11 @@ export const getSocialReplies = (array) => {
 		array
 			// Only "in-reply-to" types
 			.filter((item) => {
-				return getType(item) === "in-reply-to";
+				return getWebmentionType(item) === "in-reply-to";
 			})
 			// Only Backfeed or without content
 			.filter((item) => {
-				return isBackfeed(item) || !getContent(item);
+				return isBackfeed(item) || !getWebmentionContent(item);
 			})
 	);
 };
@@ -285,16 +286,32 @@ export const getDirectReplies = (array) => {
 		array
 			// Only "in-reply-to" types
 			.filter((item) => {
-				return getType(item) === "in-reply-to";
+				return getWebmentionType(item) === "in-reply-to";
 			})
 			// Only non-Backfeed and with content
 			.filter((item) => {
-				return !isBackfeed(item) && !!getContent(item);
+				return !isBackfeed(item) && !!getWebmentionContent(item);
 			})
 			.sort((a, b) => {
-				return new Date(getPublished(a)) - new Date(getPublished(b));
+				return (
+					new Date(getWebmentionPublished(a)) -
+					new Date(getWebmentionPublished(b))
+				);
 			})
 	);
+};
+
+export const getWebmentionsSize = (webmentions) => {
+	const interactions = getWebmentionsByType(webmentions, [
+		"bookmark-of",
+		"like-of",
+		"repost-of",
+		"mention-of",
+	]);
+	const socialReplies = getSocialReplies(webmentions);
+	const directReplies = getDirectReplies(webmentions);
+
+	return interactions.length + socialReplies.length + directReplies.length;
 };
 
 /**
@@ -423,7 +440,8 @@ export const isString = (value) => {
  */
 export const replaceWebmentions = (webmentions) => {
 	return webmentions.map((webmention) => {
-		const replacement = webmentionReplacements[getSource(webmention)];
+		const replacement =
+			webmentionReplacements[getWebmentionSource(webmention)];
 		if (replacement) {
 			return merge(webmention, replacement);
 		}
@@ -452,6 +470,7 @@ export default {
 	limit,
 	getSocialReplies,
 	getDirectReplies,
+	getWebmentionsSize,
 	getPlace,
 	getPostingMethodTitle,
 	getSyndicationTitle,

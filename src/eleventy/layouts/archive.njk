@@ -63,7 +63,7 @@ layout: base
 						{% if list_type == 'deck' -%}
 							{{ deckItem(item, { hfeed: true, show_images: show_images, truncate: true }) }}
 						{%- else -%}
-							{{ stackItem(item, { hfeed: true, show_category: show_categories }) }}
+						{{ stackItem(item, { hfeed: true, show_category: show_category, show_collections: show_collections, show_tags: show_tags }) }}
 						{%- endif %}
 					{% endfor %}
 				</div>
@@ -74,7 +74,7 @@ layout: base
 					{% if list_type == 'deck' -%}
 						{{ deckItem(item, { hfeed: true, show_images: show_images, truncate: true }) }}
 					{%- else -%}
-						{{ stackItem(item, { hfeed: true, show_category: show_categories }) }}
+					{{ stackItem(item, { hfeed: true, show_category: show_category, show_collections: show_collections, show_tags: show_tags }) }}
 					{%- endif %}
 				{% endfor %}
 			</div>
