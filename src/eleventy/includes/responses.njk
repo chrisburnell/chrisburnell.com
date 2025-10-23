@@ -1,18 +1,5 @@
 {% if show_webmentions %}
 	<div id="respond" class=" [ box ] [ flow ] [ responses ] " data-pagefind-ignore>
-		<!-- </textarea> -->
-		<!-- '"´ -->
-		<form id="form" class=" [ responses__form ] " method="post" action="https://webmention.io/{{ site.url | getHost }}/webmention">
-			<label class=" [ responses__label ] " for="responses-source">
-				Have you published a <a href="https://indieweb.org/responses" rel="external noopener" target="_blank">response</a> to this {{ categoryProper | default(category) | default('page') }}? <small><a href="/privacy/#activity" class="">(Privacy)</a></small>
-				<br>
-				<a href="https://indieweb.org/reply#How_To" rel="external noopener" target="_blank">Learn how to send a Webmention</a> or let me know the <abbr title="Uniform Resource Locator">URL</abbr>:
-			</label>
-			<url-input><input type="url" inputmode="url" enterkeyhint="send" id="responses-source" class=" [ responses__input ] " name="source" size="20" aria-required="true" required style="font-size: 1em;" /></url-input>
-			<input type="hidden" name="target" value="{{ canonical }}">
-			<button class=" [ responses__submit ] " type="submit">Send</button>
-			<p>You can also <a href="https://quill.p3k.io/?dontask=1&me=https://commentpara.de&reply={{ canonical }}" class=" [ button  button--small ] " rel="external noopener">send an anonymous reply</a> <small>(using <a href="https://quill.p3k.io" rel="external noopener">Quill</a> and <a href="https://commentpara.de" rel="external noopener">Comment Parade</a>)</small>.</p>
-		</form>
 		{% if webmentions.length or stargazers > 0 %}
 			{%- set webmentions = webmentions | replaceWebmentions -%}
 			{%- set bookmarks = webmentions | getWebmentionsByTypes(['bookmark-of']) -%}
@@ -82,6 +69,21 @@
 				{% endif %}
 			</div>
 		{% endif %}
-		<script type="module" src="/js/components/url-input.js"></script>
+		{% if show_webmentions_form != false %}
+			<!-- </textarea> -->
+			<!-- '"´ -->
+			<form id="form" class=" [ responses__form ] " method="post" action="https://webmention.io/{{ site.url | getHost }}/webmention">
+				<label class=" [ responses__label ] " for="responses-source">
+					Have you published a <a href="https://indieweb.org/responses" rel="external noopener" target="_blank">response</a> to this {{ categoryProper | default(category) | default('page') }}? <small><a href="/privacy/#activity" class="">(Privacy)</a></small>
+					<br>
+					<a href="https://indieweb.org/reply#How_To" rel="external noopener" target="_blank">Learn how to send a Webmention</a> or let me know the <abbr title="Uniform Resource Locator">URL</abbr>:
+				</label>
+				<url-input><input type="url" inputmode="url" enterkeyhint="send" id="responses-source" class=" [ responses__input ] " name="source" size="20" aria-required="true" required style="font-size: 1em;" /></url-input>
+				<input type="hidden" name="target" value="{{ canonical }}">
+				<button class=" [ responses__submit ] " type="submit">Send</button>
+				<p>You can also <a href="https://quill.p3k.io/?dontask=1&me=https://commentpara.de&reply={{ canonical }}" class=" [ button  button--small ] " rel="external noopener">send an anonymous reply</a> <small>(using <a href="https://quill.p3k.io" rel="external noopener">Quill</a> and <a href="https://commentpara.de" rel="external noopener">Comment Parade</a>)</small>.</p>
+			</form>
+			<script type="module" src="/js/components/url-input.js"></script>
+		{% endif %}
 	</div>
 {% endif %}
