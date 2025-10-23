@@ -1,8 +1,11 @@
 {%- from 'macros/feedItem.njk' import feedItem -%}
+{%- set limit = limit | default(site.limits.feed) -%}
 {%- set related_page = site.url + '/' + ('tag/' if tag_collection) + related_collection + '/' -%}
 {%- set related_page = related_page | replace('features/', '') | replace('writings', 'writing') -%}
 {%- set collection = collections[related_collection] | arePublished | sortByDate -%}
-{%- set limit = limit | default(site.limits.feed) -%}
+{%- if limit > 0 -%}
+	{%- set collection = collection | limit(limit) -%}
+{%- endif -%}
 <?xml version="1.0" encoding="utf-8" ?>
 <?xml-stylesheet href="/feed.xsl" type="text/xsl" ?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ site.locale }}" xml:base="{{ site.url }}">
@@ -20,7 +23,7 @@
 	<image>{{ site.url + author.avatar }}</image>
 	<updated>{{ (collection | getNewestCollectionItemDate).toISOString() | rfc3339Date }}</updated>
 	<generator>{{ eleventy.generator }}</generator>
-	{% for item in collection | limit(limit) -%}
+	{% for item in collection -%}
 		{{ feedItem(item, site) }}
 	{% endfor %}
 </feed>

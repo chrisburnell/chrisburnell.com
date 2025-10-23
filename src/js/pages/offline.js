@@ -56,18 +56,12 @@
 		browsingHistory.forEach((data) => {
 			markup += `
 	  <article>
-		  <h3>
+		  <h1>
 			  <a href="${data.url}">${data.title}</a>
-		  </h3>
-		  <p class=" [ line-clamp ] ">${data.description}</div>
+		  </h1>
   `;
 			if (data.published) {
-				markup += `
-<ul class=" [ cluster ] [ deck__meta ] ">
-	<li>
-		<small>published</small> <a href="${data.url}" tabindex="-1"><time datetime="${data.published}">${data.publishedString}</time></a>
-	</li>
-</ul>`;
+				markup += `<a href="${data.url}" tabindex="-1"><time datetime="${data.published}">${data.publishedString}</time></a>`;
 			}
 			markup += `</article>`;
 		});

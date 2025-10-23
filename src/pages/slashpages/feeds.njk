@@ -68,7 +68,7 @@ redirect_from:
 		</h2>
 
 		<ul class=" [ grid ] [ shelf ] " data-layout="natural" style="--row-gap: var(--size-small);">
-		{%- set lowest = 9001 -%}
+		{%- set lowest = Infinity -%}
 		{%- set highest = 0 -%}
 		{%- for item in collections.tags | sort -%}
 			{%- set count = collections[item] | arePublished | getCollectionCount -%}

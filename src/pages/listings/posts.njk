@@ -39,7 +39,7 @@ redirect_from:
 
 		<h2 id="latest">Latest Posts</h2>
 
-		{% set posts = collections.features | noPinnedFilter | rssOnlyFilter | limit(2 * site.limits.feed - (collections.pinned.length | default(0))) -%}
+		{% set posts = collections.features | noPinnedFilter | rssOnlyFilter | limit(site.limits.latest - (collections.pinned.length | default(0))) -%}
 		{% set firstpost = posts | first -%}
 		<div class=" [ h-feed ] [ flow ] ">
 			<div class=" [ deck ] ">
@@ -105,7 +105,7 @@ redirect_from:
 		<h2>Tags</h2>
 
 		<ul class=" [ grid ] [ shelf ] " data-layout="natural" style="--row-gap: var(--size-small);">
-			{%- set lowest = 9001 -%}
+			{%- set lowest = Infinity -%}
 			{%- set highest = 0 -%}
 			{%- for item in collections.tags | sort -%}
 				{%- set count = collections[item] | arePublished | rssOnlyFilter | getCollectionCount -%}

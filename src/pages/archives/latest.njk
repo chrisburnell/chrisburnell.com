@@ -3,11 +3,11 @@ title: Latest Posts
 related_collection: features
 feed_name: feed
 by_year: false
-limit: 10
 tags:
   - archive
 sitemap:
   exclude: true
 eleventyComputed:
-  description: "Latest {{ (2 * site.limits.feed) | numberStringFormat }} posts on the blog."
+  description: "Latest {{ site.limits.latest | numberStringFormat }} posts on the blog."
+  limit: "{{ site.limits.latest }}"
 ---

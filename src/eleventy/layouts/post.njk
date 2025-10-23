@@ -32,8 +32,9 @@ layout: base
 				{{ ',' if updated }} and has ~{{ content_wordcount }} words
 			{%- endif -%}.
 		</p>
-		{% if ('rss-only' in tags) and (date | isRecent(site.limits.rssOnlyDays)) -%}
-			<p>It’s also part of <a href="https://daverupert.com/rss-club/" rel="external noopener">RSS Club</a>, rewarding folks who use RSS to consume content! These posts are hidden from my regular post feed and, for a period of time, only appear in my RSS feed.</p>
+		{% set rssOnlyDays = rss_only_days | default(site.limits.rssOnlyDays) -%}
+		{% if ('rss-only' in tags) and (date | isRecent(rssOnlyDays)) -%}
+			<p>This {{ item.data.categoryProper | default(item.data.category) }} is also part of <a href="https://daverupert.com/rss-club/" rel="external noopener">RSS Club</a>, which means it appears <em>only</em> in my RSS feeds for {{ rssOnlyDays }} days (until <time datetime="{{ date | adjustDatetime({ days: rssOnlyDays }) | rfc3339Date }}">{{ date | adjustDatetime({ days: rssOnlyDays }) | friendlyDateLong }}</time>), rewarding folks who use RSS with knowing about this post early!</p>
 		{%- endif %}
 	</div>
 

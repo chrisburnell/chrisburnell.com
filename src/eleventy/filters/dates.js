@@ -2,8 +2,7 @@ import { Temporal } from "@js-temporal/polyfill";
 import { nowEpoch } from "../data/global.js";
 import { limits, localeSpecific } from "../data/site.js";
 
-export const zonedDatetime = (dateString) => {
-	// Tidy up date string
+const tidyDateString = (dateString) => {
 	dateString = dateString
 		.replace(/(\.\d+)/g, "")
 		.replace(/([+-]\d{2})(\d{2})$/, (match, h, m) => `${h}:${m}`)
@@ -11,28 +10,40 @@ export const zonedDatetime = (dateString) => {
 	dateString = /([+-]\d{2}):(\d{2})$/.test(dateString)
 		? dateString
 		: `${dateString}+00:00`;
+	return dateString;
+};
 
-	let instant = Temporal.Instant.from(dateString);
+export const zonedDatetime = (dateString) => {
+	dateString = tidyDateString(dateString);
+
 	const offset = dateString.match(/([+-]\d{2}:\d{2})/)?.[1] || "UTC";
+	let instant = Temporal.Instant.from(dateString);
 
 	return instant.toZonedDateTimeISO(offset);
 };
 
-export const formatDatetime = (
-	dateString,
-	options = {
-		year: "numeric",
-		month: "long",
-		day: "numeric",
-	},
-) => {
-	const zoned = zonedDatetime(dateString);
-	const dateObject = new Date(zoned.epochMilliseconds);
+const optionsDefault = {
+	year: "numeric",
+	month: "long",
+	day: "numeric",
+};
+
+export const formatDatetime = (dateString, options = optionsDefault) => {
+	const { epochMilliseconds, timeZoneId } = zonedDatetime(dateString);
+	const dateObject = new Date(epochMilliseconds);
 
 	return new Intl.DateTimeFormat(localeSpecific, {
 		...options,
-		timeZone: zoned.timeZoneId,
+		timeZone: timeZoneId,
 	}).format(dateObject);
+};
+
+export const adjustDatetime = (dateString, duration) => {
+	const original = zonedDatetime(dateString);
+	return original
+		.add(duration)
+		.toString()
+		.replace(/\[.*\]$/, "");
 };
 
 const ordinalPlurals = new Intl.PluralRules(localeSpecific, {
@@ -263,7 +274,7 @@ export const recentFilter = (array, key, days = limits.recentDays) => {
 export const rssOnlyFilter = (array, days = limits.rssOnlyDays) => {
 	return array.filter((item) => {
 		if (item.data.tags && item.data.tags.includes("rss-only")) {
-			return !isRecent(item.data.date, days);
+			return !isRecent(item.data.date, item.data.rss_only_days || days);
 		}
 		return true;
 	});
@@ -420,6 +431,7 @@ export const getRSVPDateString = (end) => {
 export default {
 	zonedDatetime,
 	formatDatetime,
+	adjustDatetime,
 	ordinal,
 	friendlyDate,
 	friendlyDateLong,

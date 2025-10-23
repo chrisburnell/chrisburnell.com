@@ -2,10 +2,11 @@
 pagination:
   data: collections.archive
   size: 1
-  alias: lookup
-permalink: /{{ lookup.data.feed_name | default(lookup.data.related_collection) }}.xml
+  alias: collection
+permalink: /{{ collection.data.feed_name | default(collection.data.related_collection) }}.xml
 eleventyComputed:
-  title: "{{ lookup.data.title | safe }}"
-  description: "{{ lookup.data.description | safe }}"
-  related_collection: "{{ lookup.data.related_collection }}"
+  title: "{{ collection.data.title | safe }}"
+  description: "{{ collection.data.description | safe }}"
+  related_collection: "{{ collection.data.related_collection }}"
+  limit: "{{ collection.data.limit | default(site.limits.feed) }}"
 ---

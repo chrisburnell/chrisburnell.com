@@ -12,6 +12,7 @@ sitemap:
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <link rel="stylesheet" href="/css/xslt.css" />
+        <link rel="icon" href="/images/favicon.ico" sizes="16x16 32x32 48x48 64x64" />
       </head>
       <body class=" [ feed ] ">
         <header class=" [ header ] ">
@@ -36,7 +37,7 @@ sitemap:
               <p><xsl:value-of select="atom:feed/atom:subtitle" /></p>
             </div>
             <div class=" [ content ] [ flow ] ">
-              <nav class=" [ deck ] ">
+              <nav class=" [ stack ] ">
                 <xsl:apply-templates select="atom:feed/atom:entry" />
               </nav>
               <nav class=" [ grid ] [ navigator ] ">
@@ -109,6 +110,7 @@ sitemap:
           <xsl:value-of select="atom:title" />
         </a>
       </h1>
+      {#
       <p class=" [ line-clamp ] "><xsl:value-of select="atom:summary" /></p>
       <ul class=" [ cluster ] [ deck__meta ] ">
         <li>
@@ -121,8 +123,16 @@ sitemap:
           </time>
         </li>
       </ul>
+      #}
+      <time>
+        <xsl:attribute name="datetime">
+          <xsl:value-of select="atom:published" />
+        </xsl:attribute>
+        <xsl:value-of select="atom:link[@type='publishedFriendly']/@href" />
+      </time>
     </article>
   </xsl:template>
+  {#
   <xsl:template match="atom:link[@type='reply']">
     <div class="[ deck__context ]">
       <small>in reply to </small>
@@ -134,4 +144,5 @@ sitemap:
       </a>
     </div>
   </xsl:template>
+  #}
 </xsl:stylesheet>

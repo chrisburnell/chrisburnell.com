@@ -137,7 +137,7 @@ description: A great big list of all the pages, projects, posts on my website.
 
 			<ul class=" [ grid ] [ shelf ] ">
 				<li>
-					<a href="/posts/#latest" class=" [ gamma ] "><c-emoji>🆕</c-emoji>Latest Posts <sup>{{ 2 * site.limits.feed }}</sup></a>
+					<a href="/posts/#latest" class=" [ gamma ] "><c-emoji>🆕</c-emoji>Latest Posts <sup>{{ site.limits.latest }}</sup></a>
 					<p>Latest posts on the blog.</p>
 				</li>
 				<li>
@@ -185,7 +185,7 @@ description: A great big list of all the pages, projects, posts on my website.
 			<h2 id="tags"><a href="/posts/#tags">Post Tags</a></h2>
 
 			<ul class=" [ grid ] [ shelf ] " data-layout="natural" style="--row-gap: var(--size-small);">
-				{%- set lowest = 9001 -%}
+				{%- set lowest = Infinity -%}
 				{%- set highest = 0 -%}
 				{%- for item in collections.tags | sort -%}
 					{%- set count = collections[item] | arePublished | rssOnlyFilter | getCollectionCount -%}
@@ -254,7 +254,7 @@ description: A great big list of all the pages, projects, posts on my website.
 			</h2>
 
 			<ul class=" [ grid ] [ shelf ] " data-layout="natural" style="--row-gap: var(--size-small);">
-			{%- set lowest = 9001 -%}
+			{%- set lowest = Infinity -%}
 			{%- set highest = 0 -%}
 			{%- for item in collections.tags | sort -%}
 				{%- set count = collections[item] | arePublished | rssOnlyFilter | getCollectionCount -%}

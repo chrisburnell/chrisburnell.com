@@ -63,7 +63,8 @@
 		}
 	}
 
-	& a:has(time) {
+	& a:has(time),
+	& time {
 		grid-column: time;
 		grid-row: top;
 		font-style: italic;
