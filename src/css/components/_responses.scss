@@ -19,7 +19,6 @@
 
 .responses__form {
 	display: grid;
-	align-items: center;
 	grid-gap: var(--size-small-medium);
 
 	@include mixins.cqi(null, null, "small") {
