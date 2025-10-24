@@ -17,7 +17,7 @@ excludeFromSearch: true
 {%- set wordiest_blog_post = 0 -%}
 {%- set blog_wordcount = 0 -%}
 {%- for item in blog_posts -%}
-	{%- set wordCount = item.content | cleanTagsForWordcount | striptags | safe | wordcount -%}
+	{%- set wordCount = item.content | removeTagsForWordcount | striptags | safe | wordcount -%}
 	{%- set blog_wordcount = blog_wordcount + wordCount -%}
 	{%- if wordCount > wordiest_blog_post -%}
 		{%- set wordiest_blog_post = wordCount -%}

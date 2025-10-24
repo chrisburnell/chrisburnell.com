@@ -67,8 +67,16 @@ export default async function (value, outputPath) {
 		// Strip .no-fragment classes
 		$(".no-fragment").removeClass("no-fragment");
 
+		// Strip wordcount attributes
+		$(".skip-wordcount").removeClass("skip-wordcount");
+		$("[data-skip-wordcount]").removeAttr("data-skip-wordcount");
+
+		// Strip RSS-excluding attributes
+		$(".no-rss").removeClass("no-rss");
+		$("[data-no-rss]").removeAttr("data-no-rss");
+
 		// Remove content that is intended for RSS only
-		$(".rss-only").remove();
+		$(".rss-only, [data-rss-only]").remove();
 
 		// Make sure <ul> elements are accessible even with `list-style: none`
 		$("ul").attr("role", "list");

@@ -28,9 +28,9 @@ redirect_from:
 
 ## Summary
 
-Front End Developer and Software Engineer with {{ global.currentYear - site.established }} years of experience, specialising in CSS, design systems, developer relations and education, and technical writing and speaking.
+Front End Developer and Software Engineer with {{ global.currentYear - site.established }} years of experience, specialising in web &amp; front end development (CSS in particular), design systems, learning and mentorship, technical writing and speaking, and conference/event organisation.
 
-Work roles involved creating design systems and tools to enable teams to build maintainable and performant websites, with an uncompromising focus on accessibility and user experience. These also included lead roles in building the front end and CMS architecture for small to enterprise clients, chiefly in the higher education and government sectors, as I oversaw the project lifecycle and acted as their primary technical contact.
+Work roles have involved creating design systems and tools to enable teams to build maintainable and performant websites, with an uncompromising focus on accessibility and user experience. These also included lead roles in building the front end and CMS architecture for small to enterprise clients, chiefly in the higher education and government sectors, as I oversaw the project lifecycle and acted as their primary technical contact.
 
 Passionate about the open web, having published over {{ technical_articles_count | toNearest(5, true) }} technical articles, and author of open-source software used by thousands of developers worldwide. Actively involved in the web community with many years of experience in organising conferences and meet-ups.
 

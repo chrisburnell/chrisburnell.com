@@ -65,9 +65,9 @@ redirect_from:
     <figcaption>a photo of my partner, Rachel, and myself</figcaption>
 </figure>
 
-I’m originally from [<span class=" [ canada ] ">Halifax, Nova Scotia</span>](https://www.openstreetmap.org/#map=13/44.6463/-63.6162), started my career and lived in [London, England](https://www.openstreetmap.org/#map=10/51.4898/-0.0882) for 12 years, spent a year in [Singapore](https://www.openstreetmap.org/#map=14/1.3156/103.9425), and now live in Halifax again where I’m looking to transition from pure front end development work to a developer relations role.
+I’m originally from [<span class=" [ canada ] ">Halifax, Nova Scotia</span>](https://www.openstreetmap.org/#map=13/44.6463/-63.6162), started my career and lived in [London, England](https://www.openstreetmap.org/#map=10/51.4898/-0.0882) for 12 years, spent a year and change in [Singapore](https://www.openstreetmap.org/#map=14/1.3156/103.9425), and now I live in Halifax again!
 
-Although I’ve been building websites since 2006, I’ve had my personal website since 2008, and it’s definitely my favourite thing that I own. My passion for the web drives me to want a better web for tomorrow, and I pursue that through specialising in CSS, design systems, developer relations / education, and technical writing and speaking.
+Although I’ve been building websites since 2006, I’ve had my personal website since 2008, and it’s definitely my favourite thing that I own. My passion for the web drives me to help build a better web for tomorrow, and I pursue that through specialising in web &amp; front end development (CSS in particular), design systems, learning and mentorship, technical writing and speaking, and conference/event organisation.
 
 I also feed my passion for the web by continuously finding myself in <q>rabbit hole deep-dives</q>, which involve exhilirating research into something new and exciting to achieve some goal—more often than not, these deep-dives serve as inspiration for my [projects](https://chrisburnell.com/projects/).
 

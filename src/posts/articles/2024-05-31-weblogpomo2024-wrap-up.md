@@ -43,7 +43,7 @@ I feel really accomplished. *Really* accomplished and proud of the work that I p
 Based on [my stats page](/stats/), this month’s posts account for a whopping **26%** of the words published on this website to date!
 
 <figure class="requires-js">
-    <svg-sparkline values="{% for item in (collections.weblogpomo2024 | arePublished) %}{% if page.url != item.url %}{% if not loop.first %},{% endif %}{{ item.content | cleanTagsForWordcount | striptags | safe | wordcount }}{% endif %}{% endfor %}" fill="true" start-label="Word Count"></svg-sparkline>
+    <svg-sparkline values="{% for item in (collections.weblogpomo2024 | arePublished) %}{% if page.url != item.url %}{% if not loop.first %},{% endif %}{{ item.content | removeTagsForWordcount | striptags | safe | wordcount }}{% endif %}{% endfor %}" fill="true" start-label="Word Count"></svg-sparkline>
     <is-land class=" [ visually-hidden ] "><template webc:raw data-island="once"><script type="module" src="/js/components/svg-sparkline.js"></script></template></is-land>
 </figure>
 

@@ -2,7 +2,7 @@
 layout: base
 ---
 {% if show_reading_length -%}
-	{% set content_wordcount = content | cleanTagsForWordcount | striptags | safe | wordcount | toNearest(25, true) | numberStringFormat %}
+	{% set content_wordcount = content | removeTagsForWordcount | striptags | safe | wordcount | toNearest(25, true) | numberStringFormat %}
 {%- endif -%}
 <article {% if not content.length %}id="content"{% endif %} class=" [ pantheon{% if full %}  full{% endif %} ] [ wrap ] [ post h-{{ mf_root }} ] {% if perch %}[ perch ] {% endif %}">
 	<ul class=" [ cluster ] [ breadcrumbs ] " data-pagefind-ignore>

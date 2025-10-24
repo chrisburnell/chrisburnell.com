@@ -88,9 +88,9 @@ export const cleanTags = (string) => {
  * @param {string} string
  * @returns {string}
  */
-export const cleanTagsForWordcount = (string) => {
+export const removeTagsForWordcount = (string) => {
 	const $ = load(cleanTags(string), null, false);
-	$("[data-skip-wordcount]").remove();
+	$(".skip-wordcount, [data-skip-wordcount], pre, .demo").remove();
 	return $.html().trim();
 };
 
@@ -100,7 +100,7 @@ export const cleanTagsForWordcount = (string) => {
  */
 export const cleanTagsForRSS = (string) => {
 	const $ = load(string, null, false);
-	$("link, script, style, .no-rss").remove();
+	$("link, script, style, .no-rss, [data-no-rss]").remove();
 	const attributes = [
 		"class",
 		"style",
@@ -311,7 +311,7 @@ export default {
 	disjunction,
 	supertitle,
 	cleanTags,
-	cleanTagsForWordcount,
+	removeTagsForWordcount,
 	cleanTagsForRSS,
 	encodeHTML,
 	decodeHTML,

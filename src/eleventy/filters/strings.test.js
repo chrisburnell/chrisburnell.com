@@ -22,9 +22,9 @@ describe("Filters: Strings", () => {
 		expect(strings.cleanTags(`lorem <s>ipsum</s>`)).toBe("lorem");
 	});
 
-	it("cleanTagsForWordcount() should return a string with certain selectors stripped", () => {
+	it("removeTagsForWordcount() should return a string with certain selectors stripped", () => {
 		expect(
-			strings.cleanTagsForWordcount(
+			strings.removeTagsForWordcount(
 				`lorem <s>ipsum</s> <span data-skip-wordcount>dolor</span>`,
 			),
 		).toBe("lorem");
