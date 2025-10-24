@@ -3,6 +3,9 @@
 {%- set related_page = site.url + '/' + ('tag/' if tag_collection) + related_collection + '/' -%}
 {%- set related_page = related_page | replace('features/', '') | replace('writings', 'writing') -%}
 {%- set collection = collections[related_collection] | arePublished | sortByDate -%}
+{%- if limit == site.limits.latest -%}
+	{%- set limit = site.limits.feed -%}
+{%- endif -%}
 {%- if limit > 0 -%}
 	{%- set collection = collection | limit(limit) -%}
 {%- endif -%}
@@ -10,7 +13,7 @@
 <?xml-stylesheet href="/feed.xsl" type="text/xsl" ?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ site.locale }}" xml:base="{{ site.url }}">
 	<title>{{ site.title | striptags(true) }}{% if related_collection != 'features' %} · {{ title | striptags(true) }}{% endif %}</title>
-	<subtitle>{{ description | removeStrikethrough | striptags(false) }}</subtitle>
+	<subtitle>{{ description | replace(' ' + site.limits.latest + ' ', ' ' + site.limits.feed + ' ') | removeStrikethrough | striptags(false) }}</subtitle>
 	<id>{{ related_page }}</id>
 	<link href="{{ site.url + page.url }}" rel="self" />
 	<link href="{{ related_page }}" rel="alternate" />

@@ -124,7 +124,7 @@ From then on, whenever the web component’s JavaScript finds the same `<select>
 
 This takes care of persistence of *Site-level Preferences*. I cannot overstate how amazingly powerful this little web component is! I use it every time I need to manage some sort of <q>state</q> on my website.
 
-What’s great about this approach is that we can leave `<storage-form>` alone from here and continue using CSS to control and manage how we respond to different colour schemes. We can build selectors that match when a particular `<option>` is selected (i.e., `checked`), and using the `:has()` selector, we can then apply a specific colour scheme based on what that selection:
+What’s great about this approach is that we can leave `<storage-form>` alone from here and continue using CSS to control and manage how we respond to different colour schemes. We can build selectors that match when a particular `<option>` is selected (i.e., `checked`), and using the `:has()` selector, we can then apply a specific colour scheme based on that selection:
 
 ```css
 :root:has([name="color-scheme"] [value="light"]:checked) {
