@@ -1,14 +1,14 @@
 import dotenv from "dotenv";
 dotenv.config({ quiet: true });
 
-import { getWebmentionPublished } from "@chrisburnell/eleventy-cache-webmentions";
+// import { getWebmentionPublished } from "@chrisburnell/eleventy-cache-webmentions";
 import { currentYear, nowEpoch } from "../eleventy/data/global.js";
 import { isPublished, notReply } from "../functions/collections.js";
-import { exponentialMovingAverage } from "../functions/utils.js";
+// import { exponentialMovingAverage } from "../functions/utils.js";
 import { limits } from "./data/site.js";
 import { dateSort, epoch, isFuture, isUpcoming } from "./filters/dates.js";
 
-const durationDay = 24 * 60 * 60 * 1000;
+// const durationDay = 24 * 60 * 60 * 1000;
 
 let cachedCollections = new Map();
 
@@ -368,7 +368,7 @@ export const onThisDay = (collection) => {
  * @returns {object[]}
  */
 export const popular = (collection) => {
-	// "Popular" sorting is done by totalling Webmentions.
+	// "Popular" sorting is done by totalling pageviews.
 
 	if (cachedCollections.has("popular")) {
 		return cachedCollections.get("popular");
@@ -379,14 +379,17 @@ export const popular = (collection) => {
 	const filteredCollection = [...features, ...projects]
 		.filter(isPublished)
 		.filter(notReply)
-		.filter((item) => {
-			return (
-				item.data.webmentions.length >= limits.minimumResponsesRequired
-			);
-		})
+		// .filter((item) => {
+		// 	return (
+		// 		item.data.webmentions.length >= limits.minimumResponsesRequired
+		// 	);
+		// })
 		.sort(dateSort)
+		// .sort((a, b) => {
+		// 	return b.data.webmentions.length - a.data.webmentions.length;
+		// })
 		.sort((a, b) => {
-			return b.data.webmentions.length - a.data.webmentions.length;
+			return b.data.pageviews.total - a.data.pageviews.total;
 		})
 		.slice(0, limits.feed);
 
@@ -401,7 +404,7 @@ export const popular = (collection) => {
  */
 export const hot = (collection) => {
 	// "Hot" sorting is done by determining the exponential moving average
-	// as a function of Webmentions across time.
+	// as a function of pageviews over time.
 
 	if (cachedCollections.has("hot")) {
 		return cachedCollections.get("hot");
@@ -412,27 +415,29 @@ export const hot = (collection) => {
 	const filteredCollection = [...features, ...projects]
 		.filter(isPublished)
 		.filter(notReply)
-		.filter((item) => {
-			return (
-				item.data.webmentions.length >= limits.minimumResponsesRequired
-			);
-		})
+		// .filter((item) => {
+		// 	return (
+		// 		item.data.webmentions.length >= limits.minimumResponsesRequired
+		// 	);
+		// })
 		.sort(dateSort)
-		.map((item) => {
-			item.hotness = item.data.webmentions.reduce(
-				(accumulator, webmention) => {
-					return exponentialMovingAverage(
-						epoch(getWebmentionPublished(webmention)) / durationDay,
-						accumulator,
-					);
-				},
-				0,
-			);
-
-			return item;
-		})
+		// .map((item) => {
+		// 	item.hotness = item.data.webmentions.reduce(
+		// 		(accumulator, webmention) => {
+		// 			return exponentialMovingAverage(
+		// 				epoch(getWebmentionPublished(webmention)) / durationDay,
+		// 				accumulator,
+		// 			);
+		// 		},
+		// 		0,
+		// 	);
+		// 	return item;
+		// })
+		// .sort((a, b) => {
+		// 	return b.hotness - a.hotness;
+		// })
 		.sort((a, b) => {
-			return b.hotness - a.hotness;
+			return b.data.pageviews.hotness - a.data.pageviews.hotness;
 		})
 		.slice(0, limits.feed);
 

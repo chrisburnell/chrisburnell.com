@@ -1,6 +1,7 @@
 import { getWebmentions } from "@chrisburnell/eleventy-cache-webmentions";
 import dotenv from "dotenv";
 import configWebmentions from "../eleventy/config/webmentions.js";
+import analytics from "../eleventy/data/analytics.js";
 import { untappd } from "../eleventy/data/author.js";
 import { url as siteURL } from "../eleventy/data/site.js";
 import { getCategoryName } from "../eleventy/filters/collections.js";
@@ -82,5 +83,9 @@ export default {
 						configWebmentions.domain + data.page.url,
 					)
 				: [],
+		pageviews: async (data) => {
+			const summary = await analytics();
+			return data.page.url in summary ? summary[data.page.url] : {};
+		},
 	},
 };

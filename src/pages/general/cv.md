@@ -22,7 +22,7 @@ redirect_from:
 {% set technical_articles_count = 0 -%}
 {% for item in collections.posts -%}
     {% if 'writing' in item.data.tags or 'accessibility' in item.data.tags or 'css' in item.data.tags or 'css-variables' in item.data.tags or 'javascript' in item.data.tags or 'eleventy' in item.data.tags or 'html' in item.data.tags or 'indieweb' in item.data.tags or 'performance' in item.data.tags or 'php' in item.data.tags or 'scss' in item.data.tags or 'svg' in item.data.tags or 'ux' in item.data.tags or 'web-components' in item.data.tags -%}
-        {% set technical_articles_count = technical_articles_count + 1 -%}
+        {%- set technical_articles_count = technical_articles_count + 1 -%}
     {%- endif -%}
 {%- endfor -%}
 
