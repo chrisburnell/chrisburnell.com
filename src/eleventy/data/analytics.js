@@ -1,3 +1,6 @@
+import dotenv from "dotenv";
+dotenv.config({ quiet: true });
+
 import EleventyFetch from "@11ty/eleventy-fetch";
 import { cacheDurations, urls } from "./site.js";
 
