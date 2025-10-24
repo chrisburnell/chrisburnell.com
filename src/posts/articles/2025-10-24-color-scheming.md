@@ -1,6 +1,6 @@
 ---
 date: 2025-10-24T12:01:00-0300
-title: Colour Scheming
+title: Color Scheming
 description: "It’s been about a year and a half since I changed how colour schemes (i.e., light and dark themes) work on my website, and after reviewing and refactoring things again recently, I thought I would share how everything ties together and allows for different levels of control over colour schemes."
 tags:
   - color
