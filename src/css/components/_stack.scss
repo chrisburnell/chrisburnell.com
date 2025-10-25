@@ -62,6 +62,10 @@
 			border-color: var(--color-maple);
 		}
 
+		&[title]:not([href]) {
+			cursor: help;
+		}
+
 		& .emoji {
 			vertical-align: initial;
 		}
