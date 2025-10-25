@@ -36,7 +36,7 @@ export default {
 	tags: ["post"],
 	list: "stack",
 	mf_root: "entry",
-	show_webmentions: true,
+	show_responses: true,
 	rank: {},
 	pre_includes: [],
 	post_includes: [],

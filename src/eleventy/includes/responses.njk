@@ -1,4 +1,4 @@
-{% if show_webmentions %}
+{% if show_responses %}
 	<div id="respond" class=" [ box ] [ flow ] [ responses ] " data-pagefind-ignore>
 		{% if webmentions.length or stargazers > 0 %}
 			{%- set webmentions = webmentions | replaceWebmentions -%}
@@ -69,7 +69,7 @@
 				{% endif %}
 			</div>
 		{% endif %}
-		{% if show_webmentions_form != false %}
+		{% if show_responses_form != false %}
 			<!-- </textarea> -->
 			<!-- '"´ -->
 			<form id="form" class=" [ responses__form ] " method="post" action="https://webmention.io/{{ site.url | getHost }}/webmention">

@@ -1,19 +1,22 @@
 {% macro stackItem(item, params) -%}
+	{% set title = item.data.title | default(item.data.of_title) | default(item.data.of_title_fallback) -%}
+	{% set show_updated = item.data.updated and (item.data.updated | friendlyDate) !== (item.data.date | friendlyDate) -%}
+	{% set show_responses = item.data.show_responses and item.data.webmentions.length -%}
+
 	{% set show_pinned = params.show_pinned !== false and item.data.tags and 'pinned' in item.data.tags -%}
 	{% set show_rss_only = params.show_rss_only !== false and item.data.tags and 'rss-only' in item.data.tags -%}
-	{% set show_pageviews = params.show_pageviews and item.data.pageviews.total >= 1000 -%}
-	{% set show_hotness = params.show_hotness !== false and item.data.rank.hot and item.data.rank.hot <= 10 -%}
 	{% set show_popularity = params.show_popularity !== false and item.data.rank.popular and item.data.rank.popular <= 10 -%}
-	{% set show_webmentions = item.data.show_webmentions and item.data.webmentions.length -%}
+	{% set show_hotness = params.show_hotness !== false and item.data.rank.hot and item.data.rank.hot <= 10 -%}
+	{% set show_pageviews = params.show_pageviews and item.data.pageviews.total >= 1000 -%}
 	{% set show_category = params.show_category and item.data.category -%}
 	{% set show_collections = params.show_collections and ('writing' in item.data.tags) -%}
 	{% set show_tags = params.show_tags -%}
 
 	<article class="{% if params.hfeed and item.data.mf_root %} [ h-{{ item.data.mf_root }} ] {% endif %}">
 		<h1 style="view-transition-name: title-{{ item.data.page.fileSlug }};">
-			{% if item.data.title or item.data.of_title or item.data.of_title_fallback -%}
+			{% if title -%}
 				<a href="{% if item.data.tags and 'clickthrough' in item.data.tags %}{{ item.data.of_url | default(item.url) | safe }}{% else %}{{ item.url | safe }}{% endif %}" class=" [ p-name ] "{% if item.data.tags and 'clickthrough' in item.data.tags %} rel="external noopener"{% endif %}>
-					{{ item.data.title | default(item.data.of_title) | default(item.data.of_title_fallback) | default(item.data.meta_title) | striptags(true) | safe }}
+					{{ title | default(item.data.meta_title) | striptags(true) | safe }}
 				</a>
 			{%- elif item.data.reply_url -%}
 				{% if item.data.rsvp %}
@@ -30,7 +33,7 @@
 				<a href="{{ item.url }}">Untitled {{ item.data.category and (item.data.categoryProper | default(item.data.category) | supertitle) or 'Page' }}{# {{ item.data.categoryProper | default(item.data.category) | default('page') | supertitle }}#}</a>
 			{%- endif %}
 		</h1>
-		{% if show_pinned or show_pageviews or show_hotness or show_popularity or show_webmentions or show_rss_only or show_category or show_collections or show_tags -%}
+		{% if show_pinned or show_category or show_collections or show_tags or show_responses or show_rss_only or show_popularity or show_hotness or show_pageviews -%}
 			<div class=" [ pills ] " data-pagefind-ignore>
 				{% if show_pinned -%}
 					<span class=" [ pill ] "><c-emoji>📌</c-emoji> Pinned</span>
@@ -60,7 +63,7 @@
 					{% endif %}
 				{%- endif %}
 				-#}
-				{% if show_webmentions -%}
+				{% if show_responses -%}
 					{% set webmentions_size = item.data.webmentions | getWebmentionsSize -%}
 					<a href="{{ item.url }}#respond" title="Jump to responses for this {{ item.data.categoryProper | default(item.data.category) }}" class=" [ pill ] ">{{ webmentions_size }} response{{ 's' if webmentions_size > 1 }}</a>
 				{%- endif %}
@@ -68,10 +71,10 @@
 					<span class=" [ pill ] "><c-emoji><svg width="14" height="14" aria-hidden="true" focusable="false" style="vertical-align: baseline;"><use href="#svg--rss"></use></svg></c-emoji> RSS Club</span>
 				{%- endif %}
 				{% if show_popularity -%}
-					<span class=" [ pill ] " title="#{{ item.data.rank.popular }} Most Popular Page"><c-emoji>📈</c-emoji> <span class=" [ ordinal ] "{% if item.data.rank.popular == 1 %} style="color: var(--color-maple); font-weight: var(--font-weight-bold); text-shadow: 0 0 1px var(--body-color);"{% endif %}>#{{ item.data.rank.popular }}</span></span>
+					<span class=" [ pill ] " title="#{{ item.data.rank.popular }} Most Popular Page"><c-emoji>📈</c-emoji> <span class=" [ ordinal ] "{% if item.data.rank.popular <= 3 %} style="color: color-mix(in oklab, currentColor, {% if item.data.rank.popular == 1 %}gold{% elif item.data.rank.popular == 2 %}silver{% else %}darkorange{% endif %}); font-weight: var(--font-weight-semibold);"{% endif %}>#{{ item.data.rank.popular }}</span></span>
 				{%- endif %}
 				{% if show_hotness -%}
-					<span class=" [ pill ] " title="#{{ item.data.rank.hot }} Hottest Page"><c-emoji>🔥</c-emoji> <span class=" [ ordinal ] "{% if item.data.rank.hot == 1 %} style="color: var(--color-maple); font-weight: var(--font-weight-bold); text-shadow: 0 0 1px var(--body-color);"{% endif %}>#{{ item.data.rank.hot }}</span></span>
+					<span class=" [ pill ] " title="#{{ item.data.rank.hot }} Hottest Page"><c-emoji>🔥</c-emoji> <span class=" [ ordinal ] "{% if item.data.rank.hot <= 3 %} style="color: color-mix(in oklab, currentColor, {% if item.data.rank.hot == 1 %}gold{% elif item.data.rank.hot == 2 %}silver{% else %}darkorange{% endif %}); font-weight: var(--font-weight-semibold);"{% endif %}>#{{ item.data.rank.hot }}</span></span>
 				{%- endif %}
 				{% if show_pageviews -%}
 					{% set pageviews = item.data.pageviews.total | toNearest(1000, true) -%}
@@ -83,7 +86,10 @@
 			<a href="{{ item.url }}" tabindex="-1"><relative-time{% if item.data.rsvp.date | isUpcoming(2) %} max-division="hour"{% elif item.data.rsvp.date | isUpcoming(item.data.rsvp.upcoming_days_lead) %} max-division="day"{% endif %}><time datetime="{{ item.data.rsvp.date | rfc3339Date }}" class=" [ dt-start ] ">{{ item.data.rsvp.date | formattedDate | safe }} @ {{ item.data.rsvp.date | friendlyTime | safe }}</time></relative-time></a>
 			<data class=" [ dt-published ] " value="{{ item.data.date | rfc3339Date }}" hidden></data>
 		{%- else -%}
-			<a href="{{ item.url }}" tabindex="-1"><time datetime="{{ item.data.date | rfc3339Date }}" class=" [ dt-published ] ">{{ item.data.date | formattedDate | safe }}</time></a>
+			<a href="{{ item.url }}" tabindex="-1"><time datetime="{{ item.data.date | rfc3339Date }}" class=" [ dt-published ] "><span class="visually-hidden">published </span>{{ item.data.date | formattedDate | safe }}</time></a>
+		{%- endif %}
+		{% if show_updated -%}
+			<data class=" [ dt-updated ] " value="{{ item.data.updated | rfc3339Date }}" hidden></data>
 		{%- endif %}
 		{% if item.data.mf_property and item.data.of_url -%}
 			<data class=" [ u-{{ item.data.mf_property }} ] " value="{{ item.data.of_url }}" hidden></data>

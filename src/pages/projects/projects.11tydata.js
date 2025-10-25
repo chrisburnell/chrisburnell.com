@@ -9,7 +9,7 @@ import { toNearest } from "../../eleventy/filters/utils.js";
 
 export default {
 	tags: ["project"],
-	show_webmentions: true,
+	show_responses: true,
 	eleventyComputed: {
 		date: async (data) => {
 			if (data.github) {
