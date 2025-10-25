@@ -61,11 +61,11 @@
 					{% set webmentions_size = item.data.webmentions | getWebmentionsSize -%}
 					<a href="{{ item.url }}#respond" title="Jump to responses for this {{ item.data.categoryProper | default(item.data.category) }}" class=" [ pill ] ">{{ webmentions_size }} response{{ 's' if webmentions_size > 1 }}</a>
 				{%- endif %}
-				{% if show_hotness -%}
-					<span class=" [ pill ] " title="#{{ item.data.rank.hot }} Hottest Page"><c-emoji>🔥</c-emoji> #{{ item.data.rank.hot }}</span>
-				{%- endif %}
 				{% if show_popularity -%}
 					<span class=" [ pill ] " title="#{{ item.data.rank.popular }} Most Popular Page"><c-emoji>📈</c-emoji> #{{ item.data.rank.popular }}</span>
+				{%- endif %}
+				{% if show_hotness -%}
+					<span class=" [ pill ] " title="#{{ item.data.rank.hot }} Hottest Page"><c-emoji>🔥</c-emoji> #{{ item.data.rank.hot }}</span>
 				{%- endif %}
 				{% if show_pageviews -%}
 					{% set pageviews = item.data.pageviews.total | toNearest(1000, true) -%}
