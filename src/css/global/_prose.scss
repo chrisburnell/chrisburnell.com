@@ -14,7 +14,7 @@
 	text-wrap: pretty;
 }
 
-:is(abbr, dfn, span)[title] {
+:is(abbr, dfn)[title] {
 	@include mixins.italic;
 	text-decoration: underline;
 	text-decoration-color: var(--color-nickel);
