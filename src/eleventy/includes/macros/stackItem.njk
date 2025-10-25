@@ -35,7 +35,7 @@
 					<span class=" [ pill ] " title="#{{ item.data.pageviews.popular }} Most Popular Page"><c-emoji>📈</c-emoji> #{{ item.data.pageviews.popular }}</span>
 				{%- endif %}
 				{% if show_hotness -%}
-					<span class=" [ pill ] " title="#{{ item.data.pageviews.popular }} Hottest Page"><c-emoji>🔥</c-emoji> #{{ item.data.pageviews.hot }}</span>
+					<span class=" [ pill ] " title="#{{ item.data.pageviews.hot }} Hottest Page"><c-emoji>🔥</c-emoji> #{{ item.data.pageviews.hot }}</span>
 				{%- endif %}
 				{% if show_webmentions -%}
 					{% set webmentions_size = item.data.webmentions | getWebmentionsSize -%}
