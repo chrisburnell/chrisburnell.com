@@ -91,7 +91,7 @@ excludeFromSearch: true
 			</h2>
 			<div class=" [ deck ] ">
 				{% for item in collections.popular | limit(site.limits.feature) %}
-					{{ deckItem(item, { show_pageviews: false, truncate: true }) }}
+					{{ deckItem(item, { show_pageviews: false, show_popularity: fase, show_hotness: false, truncate: true }) }}
 				{% endfor %}
 			</div>
 

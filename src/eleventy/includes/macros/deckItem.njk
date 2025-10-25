@@ -40,7 +40,7 @@
 		{%- elif item.data.category == 'recipe' -%}
 			<p class=" [ p-summary ] ">A {{ item.data.categoryProper | default(item.data.category) }}{% if item.data.authors %} by {{ item.data.meta_authors_string | safe }}{% endif %}</p>
 		{%- endif %}
-		{% if item.data.date or (item.data.updated and (item.data.updated | friendlyDate) !== (item.data.date | friendlyDate)) or item.data.webmentions.length or (item.data.rank.popular and item.data.rank.popular <= 10) -%}
+		{% if (item.data.tags and 'rss-only' in item.data.tags) or item.data.date or (item.data.updated and (item.data.updated | friendlyDate) !== (item.data.date | friendlyDate)) or item.data.webmentions.length or (item.data.rank.popular and item.data.rank.popular <= 10) -%}
 			<ul class=" [ cluster ] [ deck__meta ] ">
 				{% if item.data.date %}
 					<li>
@@ -77,14 +77,17 @@
 						{{ responses_array | join(' &amp; ') | safe }}
 					</li>
 				{% endif %}
+				{% if item.data.tags and 'rss-only' and item.data.tags -%}
+					<li><c-emoji style="vertical-align: baseline;"><svg width="18" height="18" aria-hidden="true" focusable="false" style="vertical-align: middle;"><use href="#svg--rss"></use></svg></c-emoji> <a href="https://daverupert.com/rss-club/" target="_blank">RSS Club</a></li>
+				{%- endif %}
 				{% if params.show_popularity !== false and item.data.rank.popular and item.data.rank.popular <= 10 -%}
-					<li title="#{{ item.data.rank.popular }} Most Popular Page" style="font-variant-numeric: tabular-nums;"><c-emoji>📈</c-emoji> #{{ item.data.rank.popular }}</li>
+					<li title="#{{ item.data.rank.popular }} Most Popular Page"><c-emoji>📈</c-emoji> <span class=" [ ordinal ] "{% if item.data.rank.popular == 1 %} style="color: var(--color-maple); font-weight: var(--font-weight-bold); text-shadow: 0 0 1px var(--body-color);"{% endif %}>#{{ item.data.rank.popular }}</span></li>
 				{%- endif %}
 				{% if params.show_hotness !== false and item.data.rank.hot and item.data.rank.hot <= 10 -%}
-					<li title="#{{ item.data.rank.hot }} Hottest Page" style="font-variant-numeric: tabular-nums;"><c-emoji>🔥</c-emoji> #{{ item.data.rank.hot }}</li>
+					<li title="#{{ item.data.rank.hot }} Hottest Page"><c-emoji>🔥</c-emoji> <span class=" [ ordinal ] "{% if item.data.rank.hot == 1 %} style="color: var(--color-maple); font-weight: var(--font-weight-bold); text-shadow: 0 0 1px var(--body-color);"{% endif %}>#{{ item.data.rank.hot }}</span></li>
 				{%- endif %}
 				{% if params.show_pageviews and item.data.pageviews.total >= 1000 -%}
-					<li title="{{ (item.data.pageviews.total | toNearest(1000, true)) / 1000 }}k Pageviews" style="font-variant-numeric: tabular-nums;"><c-emoji>👀</c-emoji> {{ (item.data.pageviews.total | toNearest(1000, true)) / 1000 }}k</li>
+					<li title="{{ (item.data.pageviews.total | toNearest(1000, true)) / 1000 }}k Pageviews"><c-emoji>👀</c-emoji> <span class=" [ ordinal ] ">{{ (item.data.pageviews.total | toNearest(1000, true)) / 1000 }}k</span></li>
 				{%- endif %}
 			</ul>
 		{%- endif %}

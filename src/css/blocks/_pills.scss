@@ -1,0 +1,57 @@
+////
+/// Pills
+/// @group blocks
+////
+
+@use "../abstracts/mixins";
+
+.pills {
+	text-wrap: balance;
+}
+
+.pill {
+	background-color: var(--body-background-color);
+	color: var(--body-color);
+	padding: 0.25em 0.5em;
+	border: calc(var(--size-border-thin) / 2) solid oklch(from currentColor l c h / 0.5);
+	border-radius: 1rem;
+	box-shadow:
+		0.25em 0 0 var(--body-background-color),
+		-0.25em 0 0 var(--body-background-color);
+	font-size: var(--font-size-small);
+	line-height: 1;
+	text-decoration: none;
+	white-space: nowrap;
+
+	&[href]:is(:hover, :focus, :active) {
+		color: inherit;
+		border-color: var(--color-maple);
+		z-index: var(--z-index-above);
+	}
+	&[href]:active {
+		outline: calc(var(--size-border-thin) / 2) solid var(--color-maple);
+	}
+
+	&[title]:not([href]) {
+		@include mixins.soft-italic;
+		cursor: help;
+	}
+
+	& .emoji {
+		vertical-align: initial;
+	}
+
+	:target & {
+		animation: var(--animation-duration) var(--transition-function) var(--transition-duration-short) target-pill;
+	}
+}
+
+@keyframes target-pill {
+	0%, 33.333% {
+		background-color: var(--color-aspen);
+		color: var(--color-thunder);
+		box-shadow:
+			0.25em 0 0 var(--color-aspen),
+			-0.25em 0 0 var(--color-aspen);
+	}
+}

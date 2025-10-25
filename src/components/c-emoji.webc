@@ -1,1 +1,3 @@
-<span webc:root="override" @attributes class="[ emoji ]" :title="this.title" aria-hidden="true"><slot></slot></span>
+<span webc:root="override" @attributes class="[ emoji ]" :title="this.title"
+	><slot></slot
+></span>

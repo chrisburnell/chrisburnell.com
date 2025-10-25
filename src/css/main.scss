@@ -70,9 +70,11 @@
 	@include meta.load-css("blocks/main");
 	@include meta.load-css("blocks/content");
 	@include meta.load-css("blocks/breadcrumbs");
+	@include meta.load-css("blocks/pills");
 	@include meta.load-css("blocks/context");
 	@include meta.load-css("blocks/title");
 	@include meta.load-css("blocks/description");
+	@include meta.load-css("blocks/pills");
 	@include meta.load-css("blocks/navigator");
 	@include meta.load-css("blocks/meta");
 	@include meta.load-css("blocks/table-of-contents");

@@ -8,6 +8,7 @@
 .stack {
 	display: grid;
 	row-gap: var(--size-medium-large);
+	overflow-x: hidden;
 
 	& article {
 		background-image: linear-gradient(to bottom, oklch(from currentColor l c h / var(--opacity-gamma)), oklch(from currentColor l c h / var(--opacity-gamma)));
@@ -34,73 +35,66 @@
 		font-size: var(--font-size-delta);
 		text-wrap: initial;
 
-		& a {
+		& > * {
 			background-color: var(--body-background-color);
 			box-shadow: var(--size-medium) 0 0 var(--body-background-color);
+			position: relative;
 
 			:target & {
 				animation: var(--animation-duration) var(--transition-function) var(--transition-duration-short) target-stack-title;
 			}
+
+			&:last-of-type::after {
+				content: "";
+				background-color: var(--body-background-color);
+				inline-size: var(--size-medium);
+				block-size: 1lh;
+				position: absolute;
+				inset-block-start: 0;
+				inset-inline-start: 100%;
+
+				:target & {
+					animation: var(--animation-duration) var(--transition-function) var(--transition-duration-short) target;
+				}
+			}
+		}
+
+		& span {
+			position: relative;
 		}
 	}
 
 	& .pills {
 		grid-column: pills;
 		grid-row: bottom;
-		text-wrap: balance;
 		text-align: end;
-	}
 
-	& .pill {
-		background-color: var(--body-background-color);
-		padding: 0.25em 0.5em;
-		border: calc(var(--size-border-thin) / 2) solid oklch(from currentColor l c h / 0.5);
-		border-radius: 1rem;
-		box-shadow:
-			0.25em 0 0 var(--body-background-color),
-			-0.25em 0 0 var(--body-background-color);
-		font-size: var(--font-size-small);
-		line-height: 1;
-		text-decoration: none;
-		white-space: nowrap;
+		&::before {
+			content: "";
+			background-color: var(--body-background-color);
+			inline-size: var(--size-medium);
+			block-size: 1lh;
+			display: inline-block;
+			vertical-align: middle;
 
-		:target & {
-			animation: var(--animation-duration) var(--transition-function) var(--transition-duration-short) target-stack-pill;
-		}
-
-		&:first-child {
-			@include mixins.cqi(null, "small") {
-				box-shadow:
-					0.25em 0 0 var(--body-background-color),
-					calc(var(--size-medium) * -1) 0 0 var(--body-background-color);
-
-				:target & {
-					animation: var(--animation-duration) var(--transition-function) var(--transition-duration-short) target-stack-pill-first-small;
-				}
+			:target & {
+				animation: var(--animation-duration) var(--transition-function) var(--transition-duration-short) target;
 			}
-		}
-
-		&[href]:is(:hover, :focus, :active) {
-			color: inherit;
-			border-color: var(--color-maple);
-			z-index: var(--z-index-above);
-		}
-		&[href]:active {
-			outline: calc(var(--size-border-thin) / 2) solid var(--color-maple);
-		}
-
-		&[title]:not([href]) {
-			cursor: help;
-		}
-
-		& .emoji {
-			vertical-align: initial;
 		}
 	}
 
 	& a:has(time) {
 		grid-column: time;
 		grid-row: top;
+		text-align: end;
+
+		&:not(:hover, :focus, :active) {
+			text-decoration-color: transparent;
+		}
+	}
+
+	& time {
+		@include mixins.italic;
 		background-color: var(--body-background-color);
 		box-shadow: calc(var(--size-medium) * -1) 0 0 var(--body-background-color);
 		text-align: end;
@@ -109,18 +103,6 @@
 		:target & {
 			animation: var(--animation-duration) var(--transition-function) var(--transition-duration-short) target-stack-time;
 		}
-
-		&:not(:hover, :focus, :active) {
-			text-decoration-color: transparent;
-		}
-
-		&:has(relative-time) {
-			font-variant-numeric: ordinal;
-		}
-	}
-
-	& time {
-		@include mixins.italic;
 	}
 
 	& :is(a:not(.button), .anchor) {
@@ -137,24 +119,7 @@
 		box-shadow: var(--size-medium) 0 0 var(--color-aspen);
 	}
 }
-@keyframes target-stack-pill {
-	0%, 33.333% {
-		background-color: var(--color-aspen);
-		color: var(--color-thunder);
-		box-shadow:
-			0.25em 0 0 var(--color-aspen),
-			-0.25em 0 0 var(--color-aspen);
-	}
-}
-@keyframes target-stack-pill-first-small {
-	0%, 33.333% {
-		background-color: var(--color-aspen);
-		color: var(--color-thunder);
-		box-shadow:
-			0.25em 0 0 var(--color-aspen),
-			calc(var(--size-medium) * -1) 0 0 var(--color-aspen);
-	}
-}
+
 @keyframes target-stack-time {
 	0%, 33.333% {
 		background-color: var(--color-aspen);

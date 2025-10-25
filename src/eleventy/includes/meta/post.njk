@@ -144,11 +144,27 @@
 				{%- endfor -%}
 			</li>
 		{% endif %}
+		{#
 		{% if pageviews.total > 1000 %}
 			<li class=" [ pageviews ] ">
 				<c-emoji>👀</c-emoji>
-				<strong>{{ (pageviews.total | toNearest(1000, true)) / 1000 }}k</strong>
 				<small>pageviews</small>
+				<strong><span class=" [ ordinal ] ">{{ (pageviews.total | toNearest(1000, true)) / 1000 }}k</span></strong>
+			</li>
+		{% endif %}
+		-#}
+		{% if rank.popular and rank.popular <= 10%}
+			<li class=" [ popularity ] ">
+				<c-emoji>📈</c-emoji>
+				<small>most popular page</small>
+				<a href="/popular/" class=" [ ordinal ] ">#{{ rank.popular }}</a>
+			</li>
+		{% endif %}
+		{% if rank.hot and rank.hot <= 10%}
+			<li class=" [ hotness ] ">
+				<c-emoji>🔥</c-emoji>
+				<small>hottest page</small>
+				<a href="/hot/" class=" [ ordinal ] ">#{{ rank.hot }}</a>
 			</li>
 		{% endif %}
 		{% if syndicate_to.length %}

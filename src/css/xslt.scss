@@ -54,6 +54,7 @@
 @include meta.load-css("blocks/content");
 @include meta.load-css("blocks/title");
 @include meta.load-css("blocks/description");
+@include meta.load-css("blocks/pills");
 @include meta.load-css("blocks/meta");
 @include meta.load-css("blocks/images");
 @include meta.load-css("blocks/embeds");

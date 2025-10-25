@@ -56,6 +56,9 @@ mark {
 	font-synthesis: none !important;
 	font-variation-settings: "ital" 125 !important;
 }
+.soft-italic {
+	@include mixins.soft-italic;
+}
 
 :is(b, strong),
 .strong {
@@ -177,6 +180,7 @@ progress {
 	0%, 33.333% {
 		background-color: var(--color-aspen);
 		color: var(--color-mineshaft);
+		--fill: var(--color-mineshaft);
 	}
 }
 

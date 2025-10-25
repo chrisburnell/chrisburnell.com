@@ -68,6 +68,11 @@
 	font-synthesis: none;
 	font-variation-settings: "ital" 125;
 }
+@mixin soft-italic() {
+	font-style: italic;
+	font-synthesis: none;
+	font-variation-settings: "ital" 83;
+}
 
 ///
 /// Hyphenate words.

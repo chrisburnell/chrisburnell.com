@@ -64,6 +64,9 @@ export default async function (value, outputPath) {
 			$(element).attr("id", headingID);
 		});
 
+		// Skip presentational emojis
+		$(".emoji").attr("aria-hidden", true);
+
 		// Strip .no-fragment classes
 		$(".no-fragment").removeClass("no-fragment");
 
