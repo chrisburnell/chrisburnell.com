@@ -1,14 +1,15 @@
 import dotenv from "dotenv";
 dotenv.config({ quiet: true });
 
-// import { getWebmentionPublished } from "@chrisburnell/eleventy-cache-webmentions";
+import { getWebmentionPublished } from "@chrisburnell/eleventy-cache-webmentions";
 import { currentYear, nowEpoch } from "../eleventy/data/global.js";
 import { isPublished, notReply } from "../functions/collections.js";
-// import { exponentialMovingAverage } from "../functions/utils.js";
+import { exponentialMovingAverage } from "../functions/utils.js";
 import { limits } from "./data/site.js";
 import { dateSort, epoch, isFuture, isUpcoming } from "./filters/dates.js";
 
-// const durationDay = 24 * 60 * 60 * 1000;
+const durationDay = 24 * 60 * 60 * 1000;
+const pageviewsCoefficient = 0.6;
 
 let cachedCollections = new Map();
 
@@ -379,24 +380,25 @@ export const popular = (collection) => {
 	let filteredCollection = [...features, ...projects]
 		.filter(isPublished)
 		.filter(notReply)
-		// .filter((item) => {
-		// 	return (
-		// 		item.data.webmentions.length >= limits.minimumResponsesRequired
-		// 	);
-		// })
+		.filter((item) => {
+			return item.data.pageviews.total >= limits.minimumPageviewsRequired;
+		})
 		.sort(dateSort)
-		// .sort((a, b) => {
-		// 	return b.data.webmentions.length - a.data.webmentions.length;
-		// })
+		.map((item) => {
+			item.data.rank.popularScore =
+				Math.log1p(item.data.webmentions.length) +
+				pageviewsCoefficient * Math.log1p(item.data.pageviews.total);
+			return item;
+		})
 		.sort((a, b) => {
-			return b.data.pageviews.total - a.data.pageviews.total;
-		});
-
-	filteredCollection.forEach((item, i) => {
-		item.data.pageviews.popular = i + 1;
-	});
-
-	filteredCollection = filteredCollection.slice(0, limits.feed);
+			return b.data.rank.popularScore - a.data.rank.popularScore;
+		})
+		.map((item, i) => {
+			delete item.data.rank.popularScore;
+			item.data.rank.popular = i + 1;
+			return item;
+		})
+		.slice(0, limits.feed);
 
 	cachedCollections.set("popular", filteredCollection);
 
@@ -407,10 +409,73 @@ export const popular = (collection) => {
  * @param {object[]} collection
  * @returns {object[]}
  */
-export const hot = (collection) => {
-	// "Hot" sorting is done by determining the exponential moving average
-	// as a function of pageviews over time.
+export const popularByResponses = (collection) => {
+	if (cachedCollections.has("popularByResponses")) {
+		return cachedCollections.get("popularByResponses");
+	}
 
+	const features = collection.getFilteredByTag("feature");
+	const projects = collection.getFilteredByTag("project");
+	let filteredCollection = [...features, ...projects]
+		.filter(isPublished)
+		.filter(notReply)
+		.filter((item) => {
+			return (
+				item.data.webmentions.length >= limits.minimumResponsesRequired
+			);
+		})
+		.sort(dateSort)
+		.sort((a, b) => {
+			return b.data.webmentions.length - a.data.webmentions.length;
+		})
+		.map((item, i) => {
+			item.data.rank.popularByResponses = i + 1;
+			return item;
+		})
+		.slice(0, limits.feed);
+
+	cachedCollections.set("popularByResponses", filteredCollection);
+
+	return filteredCollection;
+};
+
+/**
+ * @param {object[]} collection
+ * @returns {object[]}
+ */
+export const popularByPageviews = (collection) => {
+	if (cachedCollections.has("popularByPageviews")) {
+		return cachedCollections.get("popularByPageviews");
+	}
+
+	const features = collection.getFilteredByTag("feature");
+	const projects = collection.getFilteredByTag("project");
+	let filteredCollection = [...features, ...projects]
+		.filter(isPublished)
+		.filter(notReply)
+		.filter((item) => {
+			return item.data.pageviews.total >= limits.minimumPageviewsRequired;
+		})
+		.sort(dateSort)
+		.sort((a, b) => {
+			return b.data.pageviews.total - a.data.pageviews.total;
+		})
+		.map((item, i) => {
+			item.data.rank.popularByPageviews = i + 1;
+			return item;
+		})
+		.slice(0, limits.feed);
+
+	cachedCollections.set("popularByPageviews", filteredCollection);
+
+	return filteredCollection;
+};
+
+/**
+ * @param {object[]} collection
+ * @returns {object[]}
+ */
+export const hot = (collection) => {
 	if (cachedCollections.has("hot")) {
 		return cachedCollections.get("hot");
 	}
@@ -420,36 +485,35 @@ export const hot = (collection) => {
 	let filteredCollection = [...features, ...projects]
 		.filter(isPublished)
 		.filter(notReply)
-		// .filter((item) => {
-		// 	return (
-		// 		item.data.webmentions.length >= limits.minimumResponsesRequired
-		// 	);
-		// })
+		.filter((item) => {
+			return item.data.pageviews.total >= limits.minimumPageviewsRequired;
+		})
 		.sort(dateSort)
-		// .map((item) => {
-		// 	item.hotness = item.data.webmentions.reduce(
-		// 		(accumulator, webmention) => {
-		// 			return exponentialMovingAverage(
-		// 				epoch(getWebmentionPublished(webmention)) / durationDay,
-		// 				accumulator,
-		// 			);
-		// 		},
-		// 		0,
-		// 	);
-		// 	return item;
-		// })
-		// .sort((a, b) => {
-		// 	return b.hotness - a.hotness;
-		// })
+		.map((item) => {
+			const emaWebmentions = item.data.webmentions.reduce(
+				(accumulator, webmention) => {
+					return exponentialMovingAverage(
+						epoch(getWebmentionPublished(webmention)) / durationDay,
+						accumulator,
+						pageviewsCoefficient,
+					);
+				},
+				0,
+			);
+			item.data.rank.hotScore =
+				Math.log1p(emaWebmentions) +
+				pageviewsCoefficient * Math.log1p(item.data.pageviews.hotness);
+			return item;
+		})
 		.sort((a, b) => {
-			return b.data.pageviews.hotness - a.data.pageviews.hotness;
-		});
-
-	filteredCollection.forEach((item, i) => {
-		item.data.pageviews.hot = i + 1;
-	});
-
-	filteredCollection = filteredCollection.slice(0, limits.feed);
+			return b.data.rank.hotScore - a.data.rank.hotScore;
+		})
+		.map((item, i) => {
+			delete item.data.rank.hotScore;
+			item.data.rank.hot = i + 1;
+			return item;
+		})
+		.slice(0, limits.feed);
 
 	cachedCollections.set("hot", filteredCollection);
 
@@ -474,5 +538,7 @@ export default {
 	rsvpsUpcoming,
 	onThisDay,
 	popular,
+	popularByResponses,
+	popularByPageviews,
 	hot,
 };

@@ -16,6 +16,7 @@ export default {
 	layout: "page",
 	tags: ["page"],
 	permalink: "/{{ page.fileSlug }}/index.html",
+	rank: {},
 	pre_includes: [],
 	post_includes: [],
 	eleventyComputed: {

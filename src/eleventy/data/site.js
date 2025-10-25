@@ -32,6 +32,7 @@ export const limits = {
 	upcomingDays: 7,
 	rssOnlyDays: 3,
 	minimumResponsesRequired: 5,
+	minimumPageviewsRequired: 100,
 };
 
 export const sitemap = {

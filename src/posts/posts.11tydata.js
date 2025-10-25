@@ -34,6 +34,7 @@ export default {
 	list: "stack",
 	mf_root: "entry",
 	show_webmentions: true,
+	rank: {},
 	pre_includes: [],
 	post_includes: [],
 	eleventyComputed: {
