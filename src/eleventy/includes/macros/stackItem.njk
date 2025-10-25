@@ -1,4 +1,14 @@
 {% macro stackItem(item, params) -%}
+	{% set show_pinned = params.show_pinned !== false and item.data.tags and 'pinned' in item.data.tags -%}
+	{% set show_rss_only = params.show_rss_only !== false and item.data.tags and 'rss-only' in item.data.tags -%}
+	{% set show_pageviews = params.show_pageviews and item.data.pageviews.total >= 1000 -%}
+	{% set show_hotness = params.show_hotness !== false and item.data.rank.hot and item.data.rank.hot <= 10 -%}
+	{% set show_popularity = params.show_popularity !== false and item.data.rank.popular and item.data.rank.popular <= 10 -%}
+	{% set show_webmentions = item.data.show_webmentions and item.data.webmentions.length -%}
+	{% set show_category = params.show_category and item.data.category -%}
+	{% set show_collections = params.show_collections and ('writing' in item.data.tags) -%}
+	{% set show_tags = params.show_tags -%}
+
 	<article class="{% if params.hfeed and item.data.mf_root %} [ h-{{ item.data.mf_root }} ] {% endif %}">
 		<h1 style="view-transition-name: title-{{ item.data.page.fileSlug }};">
 			{% if item.data.title or item.data.of_title or item.data.of_title_fallback -%}
@@ -20,15 +30,6 @@
 				<a href="{{ item.url }}">Untitled {{ item.data.category and (item.data.categoryProper | default(item.data.category) | supertitle) or 'Page' }}{# {{ item.data.categoryProper | default(item.data.category) | default('page') | supertitle }}#}</a>
 			{%- endif %}
 		</h1>
-		{% set show_pinned = params.show_pinned !== false and item.data.tags and 'pinned' in item.data.tags -%}
-		{% set show_rss_only = params.show_rss_only !== false and item.data.tags and 'rss-only' in item.data.tags -%}
-		{% set show_pageviews = params.show_pageviews and item.data.pageviews.total >= 1000 -%}
-		{% set show_hotness = params.show_hotness !== false and item.data.rank.hot and item.data.rank.hot <= 10 -%}
-		{% set show_popularity = params.show_popularity !== false and item.data.rank.popular and item.data.rank.popular <= 10 -%}
-		{% set show_webmentions = item.data.show_webmentions and item.data.webmentions.length -%}
-		{% set show_category = params.show_category and item.data.category -%}
-		{% set show_collections = params.show_collections and ('writing' in item.data.tags) -%}
-		{% set show_tags = params.show_tags -%}
 		{% if show_pinned or show_pageviews or show_hotness or show_popularity or show_webmentions or show_rss_only or show_category or show_collections or show_tags -%}
 			<div class=" [ pills ] " data-pagefind-ignore>
 				{% if show_pinned -%}
