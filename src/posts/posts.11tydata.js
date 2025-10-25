@@ -85,7 +85,7 @@ export default {
 				: [],
 		pageviews: async (data) => {
 			const summary = await analytics();
-			return data.page.url in summary ? summary[data.page.url] : {};
+			return summary[data.page.url] || {};
 		},
 	},
 };

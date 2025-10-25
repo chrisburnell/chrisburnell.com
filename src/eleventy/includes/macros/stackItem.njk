@@ -23,12 +23,20 @@
 				<a href="{{ item.url }}">Untitled {{ item.data.category and (item.data.categoryProper | default(item.data.category) | supertitle) or 'Page' }}{# {{ item.data.categoryProper | default(item.data.category) | default('page') | supertitle }}#}</a>
 			{%- endif %}
 		</h1>
+		{% set show_popularity = params.show_popularity !== false and item.data.pageviews.popular and item.data.pageviews.popular <= 10 -%}
+		{% set show_hotness = params.show_hotness !== false and item.data.pageviews.hot and item.data.pageviews.hot <= 10 -%}
 		{% set show_webmentions = item.data.show_webmentions and item.data.webmentions.length -%}
 		{% set show_category = params.show_category and item.data.category -%}
 		{% set show_collections = params.show_collections and ('writing' in item.data.tags) -%}
 		{% set show_tags = params.show_tags -%}
 		{% if show_webmentions or show_category or show_collections or show_tags -%}
 			<div class=" [ pills ] ">
+				{% if show_popularity -%}
+					<span class=" [ pill ] " title="#{{ item.data.pageviews.popular }} Most Popular Page"><c-emoji>📈</c-emoji> #{{ item.data.pageviews.popular }}</span>
+				{%- endif %}
+				{% if show_hotness -%}
+					<span class=" [ pill ] " title="#{{ item.data.pageviews.popular }} Hottest Page"><c-emoji>🔥</c-emoji> #{{ item.data.pageviews.hot }}</span>
+				{%- endif %}
 				{% if show_webmentions -%}
 					{% set webmentions_size = item.data.webmentions | getWebmentionsSize -%}
 					<a href="{{ item.url }}#respond" title="Jump to responses for this {{ item.data.categoryProper | default(item.data.category) }}" class=" [ pill ] ">{{ webmentions_size }} response{{ 's' if webmentions_size > 1 }}</a>

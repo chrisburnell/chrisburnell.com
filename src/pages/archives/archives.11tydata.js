@@ -11,10 +11,11 @@ export default {
 	layout: "archive",
 	list: "stack",
 	by_year: true,
+	show_images: true,
 	show_category: true,
 	show_collections: true,
 	show_tags: false,
-	show_images: true,
+	show_popularity: true,
 	excludeFromSearch: true,
 	eleventyComputed: {
 		canonical: (data) => siteURL + data.page.url,

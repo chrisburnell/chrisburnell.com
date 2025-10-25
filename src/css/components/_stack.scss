@@ -57,9 +57,13 @@
 		white-space: nowrap;
 		transition: border-color var(--transition-duration) var(--transition-function);
 
-		&:is(:hover, :focus, :active) {
+		&[href]:is(:hover, :focus, :active) {
 			color: inherit;
 			border-color: var(--color-maple);
+		}
+
+		& .emoji {
+			vertical-align: initial;
 		}
 	}
 

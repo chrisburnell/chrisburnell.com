@@ -40,7 +40,7 @@
 		{%- elif item.data.category == 'recipe' -%}
 			<p class=" [ p-summary ] ">A {{ item.data.categoryProper | default(item.data.category) }}{% if item.data.authors %} by {{ item.data.meta_authors_string | safe }}{% endif %}</p>
 		{%- endif %}
-		{% if item.data.date or (item.data.updated and (item.data.updated | friendlyDate) !== (item.data.date | friendlyDate)) or item.data.webmentions.length -%}
+		{% if item.data.date or (item.data.updated and (item.data.updated | friendlyDate) !== (item.data.date | friendlyDate)) or item.data.webmentions.length or (item.data.pageviews.popular and item.data.pageviews.popular <= 10) -%}
 			<ul class=" [ cluster ] [ deck__meta ] ">
 				{% if item.data.date %}
 					<li>
@@ -77,6 +77,12 @@
 						{{ responses_array | join(' &amp; ') | safe }}
 					</li>
 				{% endif %}
+				{% if params.show_popularity !== false and item.data.pageviews.popular and item.data.pageviews.popular <= 10 -%}
+					<li title="#{{ item.data.pageviews.popular }} Most Popular Page" style="font-variant-numeric: tabular-nums;"><c-emoji>📈</c-emoji> #{{ item.data.pageviews.popular }}</li>
+				{%- endif %}
+				{% if params.show_hotness !== false and item.data.pageviews.hot and item.data.pageviews.hot <= 10 -%}
+					<li title="#{{ item.data.pageviews.hot }} Hottest Page" style="font-variant-numeric: tabular-nums;"><c-emoji>🔥</c-emoji> #{{ item.data.pageviews.hot }}</li>
+				{%- endif %}
 			</ul>
 		{%- endif %}
 		{% if item.data.mf_property and item.data.of_url -%}

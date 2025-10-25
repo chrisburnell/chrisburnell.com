@@ -376,7 +376,7 @@ export const popular = (collection) => {
 
 	const features = collection.getFilteredByTag("feature");
 	const projects = collection.getFilteredByTag("project");
-	const filteredCollection = [...features, ...projects]
+	let filteredCollection = [...features, ...projects]
 		.filter(isPublished)
 		.filter(notReply)
 		// .filter((item) => {
@@ -390,8 +390,13 @@ export const popular = (collection) => {
 		// })
 		.sort((a, b) => {
 			return b.data.pageviews.total - a.data.pageviews.total;
-		})
-		.slice(0, limits.feed);
+		});
+
+	filteredCollection.forEach((item, i) => {
+		item.data.pageviews.popular = i + 1;
+	});
+
+	filteredCollection = filteredCollection.slice(0, limits.feed);
 
 	cachedCollections.set("popular", filteredCollection);
 
@@ -412,7 +417,7 @@ export const hot = (collection) => {
 
 	const features = collection.getFilteredByTag("feature");
 	const projects = collection.getFilteredByTag("project");
-	const filteredCollection = [...features, ...projects]
+	let filteredCollection = [...features, ...projects]
 		.filter(isPublished)
 		.filter(notReply)
 		// .filter((item) => {
@@ -438,8 +443,13 @@ export const hot = (collection) => {
 		// })
 		.sort((a, b) => {
 			return b.data.pageviews.hotness - a.data.pageviews.hotness;
-		})
-		.slice(0, limits.feed);
+		});
+
+	filteredCollection.forEach((item, i) => {
+		item.data.pageviews.hot = i + 1;
+	});
+
+	filteredCollection = filteredCollection.slice(0, limits.feed);
 
 	cachedCollections.set("hot", filteredCollection);
 

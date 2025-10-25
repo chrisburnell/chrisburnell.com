@@ -62,9 +62,9 @@ layout: base
 					<div id="list-{{ year }}" class=" [ {{ list_type }} ] ">
 						{% for item in posts -%}
 							{% if list_type == 'deck' -%}
-								{{ deckItem(item, { hfeed: true, show_images: show_images, truncate: true }) }}
+								{{ deckItem(item, { hfeed: true, show_images: show_images, show_popularity: show_popularity, show_hotness: show_hotness, truncate: true }) }}
 							{%- else -%}
-								{{ stackItem(item, { hfeed: true, show_category: show_category, show_collections: show_collections, show_tags: show_tags }) }}
+								{{ stackItem(item, { hfeed: true, show_popularity: show_popularity, show_hotness: show_hotness, show_category: show_category, show_collections: show_collections, show_tags: show_tags }) }}
 							{%- endif %}
 						{%- endfor %}
 					</div>
@@ -74,9 +74,9 @@ layout: base
 			<div class=" [ {{ list_type }} ] ">
 				{% for item in collection | rssOnlyFilter %}
 					{% if list_type == 'deck' -%}
-						{{ deckItem(item, { hfeed: true, show_images: show_images, truncate: true }) }}
+						{{ deckItem(item, { hfeed: true, show_images: show_images, show_popularity: show_popularity, show_hotness: show_hotness, truncate: true }) }}
 					{%- else -%}
-						{{ stackItem(item, { hfeed: true, show_category: show_category, show_collections: show_collections, show_tags: show_tags }) }}
+						{{ stackItem(item, { hfeed: true, show_popularity: show_popularity, show_hotness: show_hotness, show_category: show_category, show_collections: show_collections, show_tags: show_tags }) }}
 					{%- endif %}
 				{% endfor %}
 			</div>
