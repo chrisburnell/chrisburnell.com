@@ -11,6 +11,12 @@
     "minSize": 16,
     "maxSize": 20
   },
+  "delta": {
+    "minWidth": 500,
+    "maxWidth": 1200,
+    "minSize": 16,
+    "maxSize": 22
+  },
   "gamma": {
     "minWidth": 500,
     "maxWidth": 1200,

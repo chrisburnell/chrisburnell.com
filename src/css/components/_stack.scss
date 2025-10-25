@@ -6,60 +6,87 @@
 @use "../abstracts/mixins";
 
 .stack {
-	& article {
-		--flow-space: var(--size-tiny);
+	display: grid;
+	row-gap: var(--size-medium-large);
 
+	& article {
+		background-image: linear-gradient(to bottom, oklch(from currentColor l c h / var(--opacity-gamma)), oklch(from currentColor l c h / var(--opacity-gamma)));
+		background-size: 100% 1px;
+		background-repeat: no-repeat;
+		background-position: top 0.5lh left;
 		display: grid;
-		grid-template-columns: [title-start] minmax(40%, 1fr) [title-end pills-start] auto [pills-end time-start] auto [time-end];
+		grid-template-columns: [title-start] minmax(40cqi, 1fr) [title-end pills-start] auto [pills-end time-start] auto [time-end];
 		grid-template-rows: [top-start bottom-start] auto [bottom-end top-end];
 		align-items: baseline;
 		column-gap: var(--size-medium);
+		position: relative;
 		break-inside: avoid;
 
-		@include mixins.cqi(null, null, "tiny") {
-			grid-template-columns: [title-start] 1fr [title-end pills-start time-start] auto [time-end pills-end];
+		@include mixins.cqi(null, null, "small") {
+			grid-template-columns: [title-start] minmax(40cqi, 1fr) [title-end pills-start time-start] auto [time-end pills-end];
 			grid-template-rows: [top-start] auto [top-end bottom-start] auto [bottom-end];
-		}
-
-		&:not(:first-child) {
-			padding-block-start: var(--size-medium);
 		}
 	}
 
 	& h1 {
 		grid-column: title;
 		grid-row: top / bottom;
-		font-size: inherit;
+		font-size: var(--font-size-delta);
 		text-wrap: initial;
+
+		& a {
+			background-color: var(--body-background-color);
+			box-shadow: var(--size-medium) 0 0 var(--body-background-color);
+
+			:target & {
+				animation: var(--animation-duration) var(--transition-function) var(--transition-duration-short) target-stack-title;
+			}
+		}
 	}
 
 	& .pills {
 		grid-column: pills;
 		grid-row: bottom;
-		display: flex;
-		flex-wrap: wrap-reverse;
-		justify-content: end;
-		gap: 0.5em;
-
-		@include mixins.cqi(null, null, "tiny") {
-			padding-block-start: 0.5em;
-		}
+		text-wrap: balance;
+		text-align: end;
 	}
 
 	& .pill {
-		background-color: oklch(from currentColor calc(1 - round(l)) c h / 0.1);
+		background-color: var(--body-background-color);
 		padding: 0.25em 0.5em;
-		border: 1px solid oklch(from currentColor l c h / 0.5);
+		border: calc(var(--size-border-thin) / 2) solid oklch(from currentColor l c h / 0.5);
 		border-radius: 1rem;
+		box-shadow:
+			0.25em 0 0 var(--body-background-color),
+			-0.25em 0 0 var(--body-background-color);
 		font-size: var(--font-size-small);
 		line-height: 1;
 		text-decoration: none;
 		white-space: nowrap;
-		transition: border-color var(--transition-duration) var(--transition-function);
+
+		:target & {
+			animation: var(--animation-duration) var(--transition-function) var(--transition-duration-short) target-stack-pill;
+		}
+
+		&:first-child {
+			@include mixins.cqi(null, "small") {
+				box-shadow:
+					0.25em 0 0 var(--body-background-color),
+					calc(var(--size-medium) * -1) 0 0 var(--body-background-color);
+
+				:target & {
+					animation: var(--animation-duration) var(--transition-function) var(--transition-duration-short) target-stack-pill-first-small;
+				}
+			}
+		}
 
 		&[href]:is(:hover, :focus, :active) {
 			color: inherit;
 			border-color: var(--color-maple);
+			z-index: var(--z-index-above);
+		}
+		&[href]:active {
+			outline: calc(var(--size-border-thin) / 2) solid var(--color-maple);
 		}
 
 		&[title]:not([href]) {
@@ -71,24 +98,67 @@
 		}
 	}
 
-	& a:has(time),
-	& time {
+	& a:has(time) {
 		grid-column: time;
 		grid-row: top;
-		font-style: italic;
-		font-synthesis: none;
-		font-variation-settings: "ital" 125;
+		background-color: var(--body-background-color);
+		box-shadow: calc(var(--size-medium) * -1) 0 0 var(--body-background-color);
 		text-align: end;
 		white-space: nowrap;
+
+		:target & {
+			animation: var(--animation-duration) var(--transition-function) var(--transition-duration-short) target-stack-time;
+		}
 
 		&:not(:hover, :focus, :active) {
 			text-decoration-color: transparent;
 		}
+
+		&:has(relative-time) {
+			font-variant-numeric: ordinal;
+		}
+	}
+
+	& time {
+		@include mixins.italic;
 	}
 
 	& :is(a:not(.button), .anchor) {
 		&:not(:hover, :focus, :active) {
 			color: inherit;
 		}
+	}
+}
+
+@keyframes target-stack-title {
+	0%, 33.333% {
+		background-color: var(--color-aspen);
+		color: var(--color-thunder);
+		box-shadow: var(--size-medium) 0 0 var(--color-aspen);
+	}
+}
+@keyframes target-stack-pill {
+	0%, 33.333% {
+		background-color: var(--color-aspen);
+		color: var(--color-thunder);
+		box-shadow:
+			0.25em 0 0 var(--color-aspen),
+			-0.25em 0 0 var(--color-aspen);
+	}
+}
+@keyframes target-stack-pill-first-small {
+	0%, 33.333% {
+		background-color: var(--color-aspen);
+		color: var(--color-thunder);
+		box-shadow:
+			0.25em 0 0 var(--color-aspen),
+			calc(var(--size-medium) * -1) 0 0 var(--color-aspen);
+	}
+}
+@keyframes target-stack-time {
+	0%, 33.333% {
+		background-color: var(--color-aspen);
+		color: var(--color-thunder);
+		box-shadow: calc(var(--size-medium) * -1) 0 0 var(--color-aspen);
 	}
 }

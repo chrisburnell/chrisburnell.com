@@ -12,6 +12,7 @@ export default {
 	list: "stack",
 	by_year: true,
 	show_images: true,
+	show_pageviews: false,
 	show_category: true,
 	show_collections: true,
 	show_tags: false,

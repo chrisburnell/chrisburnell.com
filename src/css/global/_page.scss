@@ -13,8 +13,8 @@ html {
 }
 
 body {
-	background-color: light-dark(color-mix(in oklab, var(--color-bear), var(--color-snowy) 90%), color-mix(in oklab, var(--color-mineshaft), var(--color-wolf) 40%));
-	color: light-dark(var(--color-kaiser), var(--color-yeti));
+	background-color: var(--body-background-color);
+	color: var(--body-color);
 	display: grid;
 	grid-template-rows:
 		[header-start]

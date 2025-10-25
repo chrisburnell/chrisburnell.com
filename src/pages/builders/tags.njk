@@ -49,9 +49,9 @@ eleventyComputed:
 			<div id="list-{{ year }}" class=" [ {{ list_type }} ] ">
 				{% for item in posts %}
 					{% if list_type == 'deck' -%}
-						{{ deckItem(item, { hfeed: true, show_images: true, truncate: true }) }}
+						{{ deckItem(item, { hfeed: true, show_images: true, show_pageviews: show_pageviews, truncate: true }) }}
 					{%- else -%}
-						{{ stackItem(item, { hfeed: true, show_category: true, show_collections: true, show_tags: false }) }}
+						{{ stackItem(item, { hfeed: true, show_pageviews: show_pageviews, show_category: true, show_collections: true, show_tags: false }) }}
 					{%- endif %}
 				{% endfor %}
 			</div>

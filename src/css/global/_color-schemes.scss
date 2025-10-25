@@ -30,12 +30,12 @@
 	&:where(.suggested-light),
 	& :where(.suggested-light) {
 		color-scheme: light;
-		color: light-dark(var(--color-kaiser), var(--color-yeti));
+		color: var(--body-color);
 	}
 	&:where(.suggested-dark),
 	& :where(.suggested-dark) {
 		color-scheme: dark;
-		color: light-dark(var(--color-kaiser), var(--color-yeti));
+		color: var(--body-color);
 		@include dark-styles;
 	}
 }
@@ -49,12 +49,12 @@
 :where([data-color-scheme="light"]),
 .light {
 	color-scheme: light;
-	color: light-dark(var(--color-kaiser), var(--color-yeti));
+	color: var(--body-color);
 }
 :where(:root:has([name="color-scheme"] [value="dark"]:checked)),
 :where([data-color-scheme="dark"]),
 .dark {
 	color-scheme: dark;
-	color: light-dark(var(--color-kaiser), var(--color-yeti));
+	color: var(--body-color);
 	@include dark-styles;
 }

@@ -1,5 +1,7 @@
-import { getWebmentions } from "@chrisburnell/eleventy-cache-webmentions";
+dotenv.config({ quiet: true });
 import dotenv from "dotenv";
+
+import { getWebmentions } from "@chrisburnell/eleventy-cache-webmentions";
 import configWebmentions from "../eleventy/config/webmentions.js";
 import analytics from "../eleventy/data/analytics.js";
 import { url as siteURL } from "../eleventy/data/site.js";
@@ -10,7 +12,8 @@ import {
 import { getHost } from "../eleventy/filters/urls.js";
 import { getMetaImage, getMetaTitle } from "../functions/collections.js";
 import { stripHTML } from "../functions/strings.js";
-dotenv.config({ quiet: true });
+
+const { pageviews } = await analytics();
 
 export default {
 	layout: "page",
@@ -38,9 +41,8 @@ export default {
 						configWebmentions.domain + data.page.url,
 					)
 				: [],
-		pageviews: async (data) => {
-			const summary = await analytics();
-			return summary[data.page.url] || {};
+		pageviews: (data) => {
+			return pageviews[data.page.url] || {};
 		},
 	},
 };

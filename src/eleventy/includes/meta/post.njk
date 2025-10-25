@@ -144,6 +144,13 @@
 				{%- endfor -%}
 			</li>
 		{% endif %}
+		{% if pageviews.total > 1000 %}
+			<li class=" [ pageviews ] ">
+				<c-emoji>👀</c-emoji>
+				<strong>{{ (pageviews.total | toNearest(1000, true)) / 1000 }}k</strong>
+				<small>pageviews</small>
+			</li>
+		{% endif %}
 		{% if syndicate_to.length %}
 			<li class=" [ syndicate-to ] ">
 				<c-emoji>⤴️</c-emoji>

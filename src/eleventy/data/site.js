@@ -33,6 +33,7 @@ export const limits = {
 	rssOnlyDays: 3,
 	minimumResponsesRequired: 5,
 	minimumPageviewsRequired: 100,
+	minimumPageviewsDisplay: 1000,
 };
 
 export const sitemap = {

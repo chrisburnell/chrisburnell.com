@@ -44,13 +44,13 @@ redirect_from:
 		<div class=" [ h-feed ] [ flow ] ">
 			<div class=" [ deck ] ">
 				{% for item in collections.pinned %}
-					{{ deckItem(item, { hfeed: true, truncate: true, show_pinned: true }) }}
+					{{ deckItem(item, { show_pinned: true, hfeed: true, show_pageviews: false, truncate: true }) }}
 				{% endfor %}
-				{{ deckItem(firstpost, { hfeed: true, show_images: true, truncate: true }) }}
+				{{ deckItem(firstpost, { hfeed: true, show_images: true, show_pageviews: false, truncate: true }) }}
 			</div>
 			<div class=" [ stack ] ">
 				{% for i in range(1, posts | length) %}
-					{{ stackItem(posts[i], { hfeed: true, show_category: true, show_collections: true, show_tags: false }) }}
+					{{ stackItem(posts[i], { hfeed: true, show_pageviews: false, show_category: true, show_collections: true, show_tags: false }) }}
 				{% endfor %}
 			</div>
 		</div>

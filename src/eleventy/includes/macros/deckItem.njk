@@ -77,12 +77,14 @@
 						{{ responses_array | join(' &amp; ') | safe }}
 					</li>
 				{% endif %}
-				<li title="{{ item.data.pageviews.total | toNearest(100, true) }} Pageviews" style="font-variant-numeric: tabular-nums;"><c-emoji>👀</c-emoji> {{ item.data.pageviews.total }}</li>
+				{% if params.show_hotness !== false and item.data.rank.hot and item.data.rank.hot <= 10 -%}
+					<li title="#{{ item.data.rank.hot }} Hottest Page" style="font-variant-numeric: tabular-nums;"><c-emoji>🔥</c-emoji> #{{ item.data.rank.hot }}</li>
+				{%- endif %}
 				{% if params.show_popularity !== false and item.data.rank.popular and item.data.rank.popular <= 10 -%}
 					<li title="#{{ item.data.rank.popular }} Most Popular Page" style="font-variant-numeric: tabular-nums;"><c-emoji>📈</c-emoji> #{{ item.data.rank.popular }}</li>
 				{%- endif %}
-				{% if params.show_hotness !== false and item.data.rank.hot and item.data.rank.hot <= 10 -%}
-					<li title="#{{ item.data.rank.hot }} Hottest Page" style="font-variant-numeric: tabular-nums;"><c-emoji>🔥</c-emoji> #{{ item.data.rank.hot }}</li>
+				{% if params.show_pageviews and item.data.pageviews.total >= 1000 -%}
+					<li title="{{ (item.data.pageviews.total | toNearest(1000, true)) / 1000 }}k Pageviews" style="font-variant-numeric: tabular-nums;"><c-emoji>👀</c-emoji> {{ (item.data.pageviews.total | toNearest(1000, true)) / 1000 }}k</li>
 				{%- endif %}
 			</ul>
 		{%- endif %}

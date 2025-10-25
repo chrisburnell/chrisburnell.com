@@ -9,7 +9,7 @@
 	--padding-inline: var(--size-small);
 
 	max-inline-size: 100%;
-	color: light-dark(var(--color-kaiser), var(--color-yeti));
+	color: var(--body-color);
 	display: block;
 	margin-block-start: var(--size-gap);
 	font-weight: var(--font-weight-semibold);

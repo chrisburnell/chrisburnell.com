@@ -26,6 +26,8 @@
 	@each $name, $value in map.merge(tokens.$colors-secondary, tokens.$colors-tertiary) {
 		#{"--color-" + $name}: #{$value};
 	}
+	--body-background-color: light-dark(color-mix(in oklab, var(--color-bear), var(--color-snowy) 90%), color-mix(in oklab, var(--color-mineshaft), var(--color-wolf) 40%));
+	--body-color: light-dark(var(--color-kaiser), var(--color-yeti));
 
 	@each $name, $value in tokens.$opacities {
 		#{"--opacity-" + $name}: #{$value};
@@ -45,7 +47,7 @@
 	@each $name, $data in tokens.$sizes {
 		@each $other-name, $other-data in $sizes-seen {
 			#{"--size-" + $other-name + "-" + $name}: #{utopia.calculateClamp((
-				"minWidth": map.get($data, "minWidth"),
+				"minWidth": map.get($other-data, "minWidth"),
 				"maxWidth": map.get($data, "maxWidth"),
 				"minSize": map.get($other-data, "minSize"),
 				"maxSize": map.get($data, "maxSize"),
@@ -59,10 +61,6 @@
 	@each $name, $value in tokens.$breakpoints {
 		#{"--size-breakpoint-" + $name}: #{$value};
 	}
-	// disable sticky header
-	// @media (height > #{map.get($breakpoints, "small")}) {
-	// 	--size-header: calc(var(--size-logo-small) + var(--size-small) * 2);
-	// }
 
 	@each $name, $value in tokens.$font-families {
 		#{"--font-family-" + $name}: #{$value};
@@ -78,18 +76,18 @@
 		))};
 		#{"--font-size-" + $name + "-max"}: #{math.div(map.get($data, "maxSize"), 16) * 1rem};
 	}
-	// $font-sizes-seen: ();
-	// @each $name, $data in $sizes {
-	// 	@each $other-name, $other-data in $font-sizes {
-	// 		#{"--size-" + $other-name + "-" + $name}: #{utopia.calculateClamp((
-	// 			"minWidth": map.get($data, "minWidth"),
-	// 			"maxWidth": map.get($data, "maxWidth"),
-	// 			"minSize": map.get($other-data, "minSize"),
-	// 			"maxSize": map.get($data, "maxSize"),
-	// 		))};
-	// 	}
-	// 	$font-sizes-seen: map.set($font-sizes-seen, $name, $data);
-	// }
+	$font-sizes-seen: ();
+	@each $name, $data in tokens.$font-sizes {
+		@each $other-name, $other-data in tokens.$font-sizes {
+			#{"--font-size-" + $other-name + "-" + $name}: #{utopia.calculateClamp((
+				"minWidth": map.get($other-data, "minWidth"),
+				"maxWidth": map.get($data, "maxWidth"),
+				"minSize": map.get($other-data, "minSize"),
+				"maxSize": map.get($data, "maxSize"),
+			))};
+		}
+		$font-sizes-seen: map.set($font-sizes-seen, $name, $data);
+	}
 
 	@each $name, $value in tokens.$font-weights {
 		#{"--font-weight-" + $name}: #{$value};

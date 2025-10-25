@@ -36,7 +36,7 @@ blockquote {
 	}
 
 	& cite {
-		color: light-dark(var(--color-kaiser), var(--color-yeti));
+		color: var(--body-color);
 		display: block;
 		margin-block-start: var(--size-medium);
 		text-align: end;
