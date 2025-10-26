@@ -68,7 +68,7 @@
 					<a href="{{ item.url }}#respond" title="Jump to responses for this {{ item.data.categoryProper | default(item.data.category) }}" class=" [ pill ] ">{{ webmentions_size }} response{{ 's' if webmentions_size > 1 }}</a>
 				{%- endif %}
 				{% if show_rss_only -%}
-					<span class=" [ pill ] "><c-emoji><svg width="14" height="14" aria-hidden="true" focusable="false" style="vertical-align: baseline;"><use href="#svg--rss"></use></svg></c-emoji> RSS Club</span>
+					<a href="https://daverupert.com/rss-club/" rel="external" target="_blank" class=" [ pill ] "><c-emoji><svg width="14" height="14" aria-hidden="true" focusable="false" style="vertical-align: baseline;"><use href="#svg--rss"></use></svg></c-emoji> RSS Club</a>
 				{%- endif %}
 				{% if show_popularity -%}
 					<span class=" [ pill ] " title="#{{ item.data.rank.popular }} Most Popular Page"><c-emoji>📈</c-emoji> <span class=" [ ordinal ] "{% if item.data.rank.popular <= 3 %} style="color: color-mix(in oklab, currentColor, {% if item.data.rank.popular == 1 %}gold{% elif item.data.rank.popular == 2 %}silver{% else %}darkorange{% endif %}); font-weight: var(--font-weight-semibold);"{% endif %}>#{{ item.data.rank.popular }}</span></span>
