@@ -32,10 +32,11 @@
 					<small>by</small> {{ item.data.reply_author_string | replace('<a ', '<a tabindex="-1"') | safe }}
 				{% endif %}
 			{%- else -%}
-				<a href="{{ item.url }}">Untitled {{ item.data.category and (item.data.categoryProper | default(item.data.category) | supertitle) or 'Page' }}{# {{ item.data.categoryProper | default(item.data.category) | default('page') | supertitle }}#}</a>
+				<a href="{{ item.url }}">Untitled {{ item.data.category and (item.data.categoryProper | default(item.data.category) | supertitle) or 'Page' }}</a>
 			{%- endif %}
 		</h1>
-		{% if show_pinned or show_category or show_collections or show_tags or show_responses or show_rss_only or show_popularity or show_hotness or show_pageviews -%}
+		{# MISSING: show_collections, show_tags -#}
+		{% if show_pinned or show_category or show_responses or show_rss_only or show_popularity or show_hotness or show_pageviews -%}
 			<div class=" [ pills ] " data-pagefind-ignore>
 				{% if show_pinned -%}
 					<span class=" [ pill ] "><c-emoji>📌</c-emoji> Pinned</span>
@@ -43,16 +44,15 @@
 				{% if show_category -%}
 					{% if item.data.rsvp -%}
 						<a href="/rsvps/" class=" [ pill ] "><strong>RSVP</strong></a>
-					{%- else -%}
+					{%- elif 'writing' in item.data.tags -%}
+						<a href="/writing/" class=" [ pill ] "><strong>Writing</strong></a>
+					{%- else %}
 						<a href="/{{ item.data.categoryPlural | default(item.data.category) }}/" class=" [ pill ] "><strong>{{ item.data.categoryProper | default(item.data.category) | supertitle }}</strong></a>
 					{%- endif %}
 				{%- endif %}
-				{% if show_collections -%}
-					{% if 'writing' in item.data.tags -%}
-						<a href="/writing/" class=" [ pill ] "><strong>Writing</strong></a>
-					{%- endif %}
-				{%- endif %}
 				{#
+				{% if show_collections -%}
+				{%- endif %}
 				{% if show_tags -%}
 					{% if 'css' in item.data.tags -%}
 						<a href="/tag/css/" class=" [ pill ] ">#CSS</a>

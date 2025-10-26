@@ -7,22 +7,6 @@
 @use "../generated/tokens";
 
 ///
-/// Visually hide an element properly.
-///
-@mixin visually-hidden() {
-	inline-size: 1px !important;
-	block-size: 1px !important;
-	padding: 0 !important;
-	margin: -1px !important;
-	border: 0 !important;
-	overflow: hidden !important;
-	position: absolute !important;
-	white-space: nowrap !important;
-	clip: rect(0 0 0 0) !important;
-	clip-path: inset(100%) !important;
-}
-
-///
 /// Nest an inline-size-based container query.
 ///
 @mixin cqi($name, $min: null, $max: null) {
@@ -58,6 +42,22 @@
 			@content;
 		}
 	}
+}
+
+///
+/// Visually hide an element properly.
+///
+@mixin visually-hidden() {
+	inline-size: 1px !important;
+	block-size: 1px !important;
+	padding: 0 !important;
+	margin: -1px !important;
+	border: 0 !important;
+	overflow: hidden !important;
+	position: absolute !important;
+	white-space: nowrap !important;
+	clip: rect(0 0 0 0) !important;
+	clip-path: inset(100%) !important;
 }
 
 ///
