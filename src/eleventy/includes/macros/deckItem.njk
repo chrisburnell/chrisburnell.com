@@ -1,13 +1,14 @@
 {% macro deckItem(item, params) -%}
 	{% set title = item.data.title | default(item.data.of_title) | default(item.data.of_title_fallback) -%}
 	{% set stargazers = item.data.stargazers | default(0) -%}
-	{% set show_updated = item.data.updated and (item.data.updated | friendlyDate) !== (item.data.date | friendlyDate) -%}
-	{% set show_responses = (item.data.show_responses and item.data.webmentions.length) or stargazers > 0 -%}
 
-	{% set show_pinned = params.show_pinned !== false and item.data.tags and 'pinned' in item.data.tags -%}
-	{% set show_rss_only = params.show_rss_only !== false and item.data.tags and 'rss-only' in item.data.tags -%}
-	{% set show_popularity = params.show_popularity !== false and item.data.rank.popular and item.data.rank.popular <= 10 -%}
-	{% set show_hotness = params.show_hotness !== false and item.data.rank.hot and item.data.rank.hot <= 10 -%}
+	{% set show_updated = item.data.updated and ((item.data.updated | friendlyDate) !== (item.data.date | friendlyDate)) -%}
+	{% set show_responses = (item.data.show_responses != false and (item.data.show_replies != false or item.data.show_reactions != false) and item.data.webmentions.length) or (item.data.show_stargazers != false and stargazers > 0) -%}
+	{% set show_stargazers = item.data.show_stargazers != false and stargazers > 0 -%}
+	{% set show_pinned = params.show_pinned != false and item.data.tags and 'pinned' in item.data.tags -%}
+	{% set show_rss_only = params.show_rss_only != false and item.data.tags and 'rss-only' in item.data.tags -%}
+	{% set show_popularity = params.show_popularity != false and item.data.rank.popular and item.data.rank.popular <= 10 -%}
+	{% set show_hotness = params.show_hotness != false and item.data.rank.hot and item.data.rank.hot <= 10 -%}
 	{% set show_pageviews = params.show_pageviews and item.data.pageviews.total >= 1000 -%}
 	{#
 	{% set show_category = params.show_category and item.data.category -%}
@@ -17,7 +18,7 @@
 
 	<article {% if params.index %}id="index-{{ params.index }}"{% endif %} class=" [ flow ]{% if params.hfeed and item.data.mf_root %} [ h-{{ item.data.mf_root }} ] {% endif %}">
 		{% if show_pinned -%}
-			<p class=" [ deck__pinned ] [ ignore-flow ] " aria-hidden="true" data-pagefind-ignore><c-emoji style="margin-inline-end: 1ex;">📌</c-emoji> Pinned</p>
+			<p class=" [ deck__pinned ] [ ignore-flow ] " aria-hidden="true" data-pagefind-ignore><c-emoji style="margin-inline-end: 1ex;">📌</c-emoji>Pinned</p>
 		{%- endif %}
 		{% if item.data.reply_url -%}
 			<div class=" [ deck__context ] ">
@@ -69,40 +70,38 @@
 					</li>
 				{% endif %}
 				{% if show_responses %}
-					{%- set bookmarks = item.data.webmentions | getWebmentionsByTypes(['bookmark-of']) -%}
-					{%- set likes = item.data.webmentions | getWebmentionsByTypes(['like-of']) -%}
-					{%- set reposts = item.data.webmentions | getWebmentionsByTypes(['repost-of']) -%}
-					{%- set links = item.data.webmentions | getWebmentionsByTypes(['mention-of']) -%}
-					{%- set socialReplies = item.data.webmentions | getSocialReplies -%}
-					{%- set reactions = bookmarks.concat(likes).concat(reposts).concat(socialReplies).concat(links) -%}
-					{%- set directReplies = item.data.webmentions | getDirectReplies -%}
-					{%- set responsesLength = reactions.length + directReplies.length -%}
+					{% set replies = item.data.webmentions.directReplies -%}
+					{% set reactions = item.data.webmentions.bookmarks.concat(item.data.webmentions.likes).concat(item.data.webmentions.reposts).concat(item.data.webmentions.links).concat(item.data.webmentions.socialReplies) -%}
 					<li>
 						{% set responses_array = [] -%}
-						{% if item.data.show_responses and item.data.webmentions.length -%}
-							{% set responses_item -%}<a href="{{ item.url }}#respond" title="Jump to responses for this {{ item.data.categoryProper | default(item.data.category) | default('page') }}">{{ responsesLength }} response{{ 's' if responsesLength > 1 }}</a>{%- endset -%}
+						{% if item.data.show_replies != false and replies.length -%}
+							{% set responses_item -%}<a href="{{ item.url }}#replies" title="Jump to replies for this {{ item.data.categoryProper | default(item.data.category) | default('page') }}"><c-emoji>💬</c-emoji>{{ replies.length }} {{ replies.length > 1 and 'replies' or 'reply' }}</a>{%- endset -%}
 							{% set responses_array = (responses_array.push(responses_item), responses_array) -%}
 						{% endif -%}
-						{% if stargazers > 0 -%}
+						{% if item.data.show_reactions != false and reactions.length -%}
+							{% set responses_item -%}<a href="{{ item.url }}#reactions" title="Jump to reactions for this {{ item.data.categoryProper | default(item.data.category) | default('page') }}"><c-emoji>{{ item.data.webmentions.likes and '♥️' or item.data.webmentions.socialReplies and '⤴️' or '🔗' }}</c-emoji>{{ reactions.length }} reaction{{ 's' if reactions.length > 1 }}</a>{%- endset -%}
+							{% set responses_array = (responses_array.push(responses_item), responses_array) -%}
+						{% endif -%}
+						{% if show_stargazers -%}
 							{%- set github_user = item.data.github.split('/')[0] -%}
 							{%- set github_repo = item.data.github.split('/')[1] -%}
-							{% set responses_item -%}<a href="https://github.com/{{ github_user }}/{{ github_repo }}">{{ stargazers }} stargazer{{ 's' if stargazers > 1 }}</a>{%- endset -%}
+							{% set responses_item -%}<a href="https://github.com/{{ github_user }}/{{ github_repo }}"><c-emoji>✨</c-emoji>{{ stargazers }} stargazer{{ 's' if stargazers > 1 }}</a>{%- endset -%}
 							{% set responses_array = (responses_array.push(responses_item), responses_array) -%}
 						{% endif -%}
-						{{ responses_array | join(' &amp; ') | safe }}
+						{{ responses_array | conjunction | safe }}
 					</li>
 				{% endif %}
 				{% if show_rss_only -%}
-					<li><c-emoji style="vertical-align: baseline;"><svg width="18" height="18" aria-hidden="true" focusable="false" style="vertical-align: middle;"><use href="#svg--rss"></use></svg></c-emoji> <a href="https://daverupert.com/rss-club/" rel="external" target="_blank">RSS Club</a></li>
+					<li><c-emoji style="vertical-align: baseline;"><svg width="18" height="18" aria-hidden="true" focusable="false" style="vertical-align: middle;"><use href="#svg--rss"></use></svg></c-emoji><a href="https://daverupert.com/rss-club/" rel="external" target="_blank">RSS Club</a></li>
 				{%- endif %}
 				{% if show_popularity -%}
-					<li title="#{{ item.data.rank.popular }} Most Popular Page"><c-emoji>📊</c-emoji> <span class=" [ ordinal ] "{% if item.data.rank.popular <= 3 %} style="color: color-mix(in oklab, currentColor, {% if item.data.rank.popular == 1 %}gold{% elif item.data.rank.popular == 2 %}silver{% else %}darkorange{% endif %}); font-weight: var(--font-weight-semibold);"{% endif %}>#{{ item.data.rank.popular }}</span></li>
+					<li title="#{{ item.data.rank.popular }} Most Popular Page"><c-emoji>📊</c-emoji><span class=" [ ordinal ] "{% if item.data.rank.popular <= 3 %} style="color: color-mix(in oklab, currentColor, {% if item.data.rank.popular == 1 %}gold{% elif item.data.rank.popular == 2 %}silver{% else %}darkorange{% endif %}); font-weight: var(--font-weight-semibold);"{% endif %}>#{{ item.data.rank.popular }}</span></li>
 				{%- endif %}
 				{% if show_hotness -%}
-					<li title="#{{ item.data.rank.hot }} Hottest Page"><c-emoji>🔥</c-emoji> <span class=" [ ordinal ] "{% if item.data.rank.hot <= 3 %} style="color: color-mix(in oklab, currentColor, {% if item.data.rank.hot == 1 %}gold{% elif item.data.rank.hot == 2 %}silver{% else %}darkorange{% endif %}); font-weight: var(--font-weight-semibold);"{% endif %}>#{{ item.data.rank.hot }}</span></li>
+					<li title="#{{ item.data.rank.hot }} Hottest Page"><c-emoji>🔥</c-emoji><span class=" [ ordinal ] "{% if item.data.rank.hot <= 3 %} style="color: color-mix(in oklab, currentColor, {% if item.data.rank.hot == 1 %}gold{% elif item.data.rank.hot == 2 %}silver{% else %}darkorange{% endif %}); font-weight: var(--font-weight-semibold);"{% endif %}>#{{ item.data.rank.hot }}</span></li>
 				{%- endif %}
 				{% if show_pageviews -%}
-					<li title="{{ (item.data.pageviews.total | toNearest(1000, true)) / 1000 }}k Pageviews"><c-emoji>👀</c-emoji> <span class=" [ ordinal ] ">{{ (item.data.pageviews.total | toNearest(1000, true)) / 1000 }}k</span></li>
+					<li title="{{ (item.data.pageviews.total | toNearest(1000, true)) / 1000 }}k Pageviews"><c-emoji>👀</c-emoji><span class=" [ ordinal ] ">{{ (item.data.pageviews.total | toNearest(1000, true)) / 1000 }}k</span></li>
 				{%- endif %}
 			</ul>
 		{%- endif %}

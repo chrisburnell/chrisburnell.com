@@ -127,8 +127,8 @@ export const actionFromHash = (hashes, action) => {
 
 /**
  * Ensure fetch response is OK.
- * @param {object} response
- * @returns {object}
+ * @param {Object} response
+ * @returns {Object}
  * @throws Response must return correctly.
  */
 export const getFetchResponse = (response) => {
@@ -224,7 +224,7 @@ export const since = (datetime) => {
 
 /**
  * Search for a value within all nodes of an Object.
- * @param {object} object
+ * @param {Object} object
  * @param {any} searchValue
  * @param {boolean} [caseSensitive]
  * @returns {boolean}

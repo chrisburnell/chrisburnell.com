@@ -23,13 +23,18 @@
 	text-decoration: none;
 	white-space: nowrap;
 
-	&[href]:is(:hover, :focus, :active) {
-		color: inherit;
-		border-color: var(--color-maple);
-		z-index: var(--z-index-above);
-	}
-	&[href]:active {
-		outline: calc(var(--size-border-thin) / 2) solid var(--color-maple);
+	&[href] {
+		font-weight: var(--font-weight-semibold);
+
+		&:is(:hover, :focus, :active) {
+			color: inherit;
+			border-color: var(--color-maple);
+			z-index: var(--z-index-above);
+		}
+
+		&:active {
+			outline: calc(var(--size-border-thin) / 2) solid var(--color-maple);
+		}
 	}
 
 	&[title]:not([href]) {
@@ -38,7 +43,8 @@
 	}
 
 	& .emoji {
-		vertical-align: initial;
+		padding-inline-end: 0.625ch;
+		vertical-align: initial !important;
 	}
 
 	:target & {

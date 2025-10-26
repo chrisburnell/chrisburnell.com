@@ -1,7 +1,10 @@
 import dotenv from "dotenv";
 dotenv.config({ quiet: true });
 
-import { getWebmentions } from "@chrisburnell/eleventy-cache-webmentions";
+import {
+	getWebmentions,
+	getWebmentionsByType,
+} from "@chrisburnell/eleventy-cache-webmentions";
 import configWebmentions from "../eleventy/config/webmentions.js";
 import analytics from "../eleventy/data/analytics.js";
 import { untappd } from "../eleventy/data/author.js";
@@ -12,6 +15,11 @@ import {
 	replaceLineBreaks,
 } from "../eleventy/filters/strings.js";
 import { getHost } from "../eleventy/filters/urls.js";
+import {
+	getDirectReplies,
+	getSocialReplies,
+	replaceWebmentions,
+} from "../eleventy/filters/utils.js";
 import {
 	getAuthors,
 	getAuthorsString,
@@ -30,6 +38,7 @@ import {
 import { stripHTML } from "../functions/strings.js";
 
 const { pageviews } = await analytics();
+const webmentionsCache = new Map();
 
 export default {
 	layout: "post",
@@ -37,7 +46,6 @@ export default {
 	list: "stack",
 	mf_root: "entry",
 	show_responses: true,
-	rank: {},
 	pre_includes: [],
 	post_includes: [],
 	eleventyComputed: {
@@ -80,15 +88,48 @@ export default {
 			}
 			return data.syndicate_to || [];
 		},
-		webmentions: (data) =>
-			process.env.WEBMENTION_IO_TOKEN
-				? getWebmentions(
-						configWebmentions,
-						configWebmentions.domain + data.page.url,
+		webmentions: async (data) => {
+			if (webmentionsCache.has(data.page.url)) {
+				return webmentionsCache.get(data.page.url);
+			}
+			const webmentions = process.env.WEBMENTION_IO_TOKEN
+				? replaceWebmentions(
+						await getWebmentions(
+							configWebmentions,
+							configWebmentions.domain + data.page.url,
+						),
 					)
-				: [],
+				: [];
+			const bookmarks = getWebmentionsByType(webmentions, "bookmark-of");
+			const likes = getWebmentionsByType(webmentions, "like-of");
+			const reposts = getWebmentionsByType(webmentions, "repost-of");
+			const links = getWebmentionsByType(webmentions, "mention-of");
+			const socialReplies = getSocialReplies(webmentions);
+			const directReplies = getDirectReplies(webmentions);
+			const all = [
+				...bookmarks,
+				...likes,
+				...reposts,
+				...links,
+				...socialReplies,
+				...directReplies,
+			];
+			const webmentionData = {
+				bookmarks: bookmarks,
+				likes: likes,
+				reposts: reposts,
+				links: links,
+				socialReplies: socialReplies,
+				directReplies: directReplies,
+				all: all,
+				length: all.length,
+			};
+			webmentionsCache.set(data.page.url, webmentionData);
+			return webmentionData;
+		},
 		pageviews: (data) => {
 			return pageviews[data.page.url] || {};
 		},
+		rank: (data) => data.rank || {},
 	},
 };

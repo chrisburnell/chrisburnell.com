@@ -190,8 +190,8 @@ export const epoch = (dateString) => {
 };
 
 /**
- * @param {object} a
- * @param {object} b
+ * @param {Object} a
+ * @param {Object} b
  * @returns {number}
  */
 export const dateSort = (a, b) => {

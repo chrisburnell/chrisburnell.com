@@ -1,43 +1,36 @@
-{% if show_responses %}
+{% if show_responses and (show_replies != false or show_reactions != false) %}
+	{% set replies = webmentions.directReplies -%}
+	{% set reactions = webmentions.bookmarks.concat(webmentions.likes).concat(webmentions.reposts).concat(webmentions.links).concat(webmentions.socialReplies) -%}
+	{%- set stargazers = stargazers | default(0) -%}
 	<div id="respond" class=" [ box ] [ flow ] [ responses ] " data-pagefind-ignore>
 		{% if webmentions.length or stargazers > 0 %}
-			{%- set webmentions = webmentions | replaceWebmentions -%}
-			{%- set bookmarks = webmentions | getWebmentionsByTypes(['bookmark-of']) -%}
-			{%- set likes = webmentions | getWebmentionsByTypes(['like-of']) -%}
-			{%- set reposts = webmentions | getWebmentionsByTypes(['repost-of']) -%}
-			{%- set links = webmentions | getWebmentionsByTypes(['mention-of']) -%}
-			{%- set socialReplies = webmentions | getSocialReplies -%}
-			{%- set reactions = bookmarks.concat(likes).concat(reposts).concat(links).concat(socialReplies) -%}
-			{%- set directReplies = webmentions | getDirectReplies -%}
-			{%- set stargazers = stargazers | default(0) -%}
-			{%- set responsesLength = reactions.length + directReplies.length + stargazers -%}
 			<div id="responses" class=" [ responses__thread ] [ flow ] ">
-				<h2 class=" [ no-fragment ] [ sticky ] ">{{ responsesLength }} Response{{ 's' if responsesLength > 1 }}</h2>
+				<h2 class=" [ no-fragment ] [ sticky ] ">{{ webmentions.length }} Response{{ 's' if webmentions.length > 1 }}</h2>
 				{% if reactions.length or stargazers %}
 					<ol id="reactions" class=" [ reactions ] [ cluster ] [ strong ] ">
-						{% if bookmarks.length -%}
-							<li><c-emoji>🔖</c-emoji> {{ bookmarks.length }} Bookmark{{ 's' if bookmarks.length > 1 }}</li>
+						{% if webmentions.bookmarks.length -%}
+							<li><c-emoji>🔖</c-emoji> {{ webmentions.bookmarks.length }} Bookmark{{ 's' if webmentions.bookmarks.length > 1 }}</li>
 						{%- endif %}
-						{% if likes.length -%}
-							<li><c-emoji>❤️</c-emoji> {{ likes.length }} Like{{ 's' if likes.length > 1 }}</li>
+						{% if webmentions.likes.length -%}
+							<li><c-emoji>❤️</c-emoji> {{ webmentions.likes.length }} Like{{ 's' if webmentions.likes.length > 1 }}</li>
 						{%- endif %}
-						{% if reposts.length -%}
-							<li><c-emoji>🔄️</c-emoji> {{ reposts.length }} Repost{{ 's' if reposts.length > 1 }}</li>
+						{% if webmentions.reposts.length -%}
+							<li><c-emoji>🔄️</c-emoji> {{ webmentions.reposts.length }} Repost{{ 's' if webmentions.reposts.length > 1 }}</li>
 						{%- endif %}
-						{% if links.length -%}
-							<li><c-emoji>🔗</c-emoji> {{ links.length }} Link{{ 's' if links.length > 1 }}</li>
+						{% if webmentions.links.length -%}
+							<li><c-emoji>🔗</c-emoji> {{ webmentions.links.length }} Link{{ 's' if webmentions.links.length > 1 }}</li>
 						{%- endif %}
-						{% if socialReplies.length -%}
-							<li><c-emoji>⤴️</c-emoji> {{ socialReplies.length }} Social {% if socialReplies.length > 1 %}Replies{% else %}Reply{% endif %}{% if syndicate_to.length %} <small>(on {% for syndication in syndicate_to -%}<a href="{{ syndication | tweetback }}" rel="external noopener">{{ syndication | getSyndicationTitle }}</a>{%- if not loop.last %}, {% endif %}{%- endfor %})</small>{% endif %}</li>
+						{% if webmentions.socialReplies.length -%}
+							<li><c-emoji>⤴️</c-emoji> {{ webmentions.socialReplies.length }} Social {% if webmentions.socialReplies.length > 1 %}Replies{% else %}Reply{% endif %}{% if syndicate_to.length %} <small>(on {% for syndication in syndicate_to -%}<a href="{{ syndication | tweetback }}" rel="external noopener">{{ syndication | getSyndicationTitle }}</a>{%- if not loop.last %}, {% endif %}{%- endfor %})</small>{% endif %}</li>
 						{%- endif %}
 						{% if stargazers -%}
 							<li><c-emoji>✨</c-emoji> <a href="https://github.com/{{ github }}">{{ stargazers }} Stargazer{{ 's' if stargazers > 1 }}</a></li>
 						{%- endif %}
 					</ol>
 				{% endif %}
-				{% if directReplies.length %}
+				{% if replies.length %}
 					<ol id="replies" class=" [ replies ] [ flow ] ">
-						{% for webmention in directReplies %}
+						{% for webmention in replies %}
 							{%- set wmId = webmention['wm-id'] -%}
 							{%- set wmType = webmention | getWebmentionType -%}
 							{%- set wmDate = webmention | getWebmentionPublished -%}

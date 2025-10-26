@@ -3,7 +3,6 @@ import {
 	getWebmentionPublished,
 	getWebmentionSource,
 	getWebmentionType,
-	getWebmentionsByType,
 } from "@chrisburnell/eleventy-cache-webmentions";
 import merge from "deepmerge";
 import webmentionReplacements from "../config/webmentionReplacements.js";
@@ -75,7 +74,7 @@ export const modulo = (value, operand) => {
 };
 
 /**
- * @param {object} object
+ * @param {Object} object
  * @param {string} key
  * @returns {any}
  */
@@ -87,7 +86,7 @@ export const keyValue = (object, key) => {
 };
 
 /**
- * @param {object} object
+ * @param {Object} object
  * @param {string} key
  * @param {any} check
  * @param {boolean} [caseSensitive=true]
@@ -249,7 +248,7 @@ export const limit = (array, limit) => {
 };
 
 /**
- * @param {object} item
+ * @param {Object} item
  * @returns {boolean}
  */
 const isBackfeed = (item) => {
@@ -260,12 +259,12 @@ const isBackfeed = (item) => {
 };
 
 /**
- * @param {object[]} array
- * @returns {object[]}
+ * @param {import("@chrisburnell/eleventy-cache-webmentions").import("@chrisburnell/eleventy-cache-webmentions").Webmention[]} webmentions
+ * @returns {import("@chrisburnell/eleventy-cache-webmentions").import("@chrisburnell/eleventy-cache-webmentions").Webmention[]}
  */
-export const getSocialReplies = (array) => {
+export const getSocialReplies = (webmentions) => {
 	return (
-		array
+		webmentions
 			// Only "in-reply-to" types
 			.filter((item) => {
 				return getWebmentionType(item) === "in-reply-to";
@@ -278,12 +277,12 @@ export const getSocialReplies = (array) => {
 };
 
 /**
- * @param {object[]} array
- * @returns {object[]}
+ * @param {import("@chrisburnell/eleventy-cache-webmentions").Webmention[]} webmentions
+ * @returns {import("@chrisburnell/eleventy-cache-webmentions").Webmention[]}
  */
-export const getDirectReplies = (array) => {
+export const getDirectReplies = (webmentions) => {
 	return (
-		array
+		webmentions
 			// Only "in-reply-to" types
 			.filter((item) => {
 				return getWebmentionType(item) === "in-reply-to";
@@ -301,17 +300,19 @@ export const getDirectReplies = (array) => {
 	);
 };
 
-export const getWebmentionsSize = (webmentions) => {
-	const interactions = getWebmentionsByType(webmentions, [
-		"bookmark-of",
-		"like-of",
-		"repost-of",
-		"mention-of",
-	]);
-	const socialReplies = getSocialReplies(webmentions);
-	const directReplies = getDirectReplies(webmentions);
-
-	return interactions.length + socialReplies.length + directReplies.length;
+/**
+ * @param {import("@chrisburnell/eleventy-cache-webmentions").Webmention[]} webmentions
+ * @returns {import("@chrisburnell/eleventy-cache-webmentions").Webmention[]}
+ */
+export const replaceWebmentions = (webmentions) => {
+	return webmentions.map((webmention) => {
+		const replacement =
+			webmentionReplacements[getWebmentionSource(webmention)];
+		if (replacement) {
+			return merge(webmention, replacement);
+		}
+		return webmention;
+	});
 };
 
 /**
@@ -434,21 +435,6 @@ export const isString = (value) => {
 	return typeof value === "string";
 };
 
-/**
- * @param {object[]} webmentions
- * @returns {object[]}
- */
-export const replaceWebmentions = (webmentions) => {
-	return webmentions.map((webmention) => {
-		const replacement =
-			webmentionReplacements[getWebmentionSource(webmention)];
-		if (replacement) {
-			return merge(webmention, replacement);
-		}
-		return webmention;
-	});
-};
-
 export default {
 	minDecimals,
 	maxDecimals,
@@ -470,11 +456,10 @@ export default {
 	limit,
 	getSocialReplies,
 	getDirectReplies,
-	getWebmentionsSize,
+	replaceWebmentions,
 	getPlace,
 	getPostingMethodTitle,
 	getSyndicationTitle,
 	getConsole,
 	isString,
-	replaceWebmentions,
 };

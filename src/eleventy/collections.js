@@ -490,7 +490,7 @@ export const hot = (collection) => {
 		})
 		.sort(dateSort)
 		.map((item) => {
-			const emaWebmentions = item.data.webmentions.reduce(
+			const emaWebmentions = item.data.webmentions.all.reduce(
 				(accumulator, webmention) => {
 					return exponentialMovingAverage(
 						epoch(getWebmentionPublished(webmention)) / durationDay,

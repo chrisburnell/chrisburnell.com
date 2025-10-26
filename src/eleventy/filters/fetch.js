@@ -4,7 +4,7 @@ import { cacheDurations } from "../data/site.js";
 
 /**
  * @param {string} repository
- * @returns {object}
+ * @returns {Object}
  */
 export const githubData = async (repository) => {
 	const url = `https://api.github.com/repos/${repository}`;
@@ -26,7 +26,7 @@ export const stargazers = async (repository) => {
 
 /**
  * @param {string} repository
- * @returns {object}
+ * @returns {Object}
  */
 export const githubTagData = async (repository) => {
 	const url = `https://api.github.com/repos/${repository}/tags`;
