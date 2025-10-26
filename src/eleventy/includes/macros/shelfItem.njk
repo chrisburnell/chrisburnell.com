@@ -1,5 +1,5 @@
 {% macro shelfItem(item, params) -%}
-	<article class=" [ flow ] {% if params.hfeed and item.data.mf_root %}[ h-{{ item.data.mf_root }} ] {% endif %}">
+	<article {% if params.index %}id="index-{{ params.index }}"{% endif %} class=" [ flow ] {% if params.hfeed and item.data.mf_root %}[ h-{{ item.data.mf_root }} ] {% endif %}">
 		{% if item.data.cover %}
 			{% if item.url and item.data.tags and 'clickthrough' in item.data.tags %}
 				<a href="{{ item.data.of_url | default(item.url) | striptags(true) | safe }}" class=" [ cover-anchor ] " aria-hidden="true" tabindex="-1">

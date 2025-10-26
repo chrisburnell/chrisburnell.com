@@ -53,6 +53,7 @@ layout: base
 		{%- endif %}
 
 		{%- if by_year -%}
+			{% set i = 1 -%}
 			{% for year, posts in collection | groupby('data.year') | dictsort | reverse -%}
 				{% set posts = posts | rssOnlyFilter -%}
 				{% if posts | length -%}
@@ -62,10 +63,11 @@ layout: base
 					<div id="list-{{ year }}" class=" [ {{ list_type }} ] ">
 						{% for item in posts -%}
 							{% if list_type == 'deck' -%}
-								{{ deckItem(item, { hfeed: true, show_images: show_images, show_pageviews: show_pageviews, show_hotness: show_hotness, show_popularity: show_popularity, truncate: true }) }}
+								{{ deckItem(item, { index: i, hfeed: true, show_images: show_images, show_pageviews: show_pageviews, show_hotness: show_hotness, show_popularity: show_popularity, truncate: true }) }}
 							{%- else -%}
-								{{ stackItem(item, { hfeed: true, show_pageviews: show_pageviews, show_hotness: show_hotness, show_popularity: show_popularity, show_category: show_category, show_collections: show_collections, show_tags: show_tags }) }}
+								{{ stackItem(item, { index: i, hfeed: true, show_pageviews: show_pageviews, show_hotness: show_hotness, show_popularity: show_popularity, show_category: show_category, show_collections: show_collections, show_tags: show_tags }) }}
 							{%- endif %}
+							{% set i = i + 1 -%}
 						{%- endfor %}
 					</div>
 				{%- endif %}
@@ -74,9 +76,9 @@ layout: base
 			<div class=" [ {{ list_type }} ] ">
 				{% for item in collection | rssOnlyFilter %}
 					{% if list_type == 'deck' -%}
-						{{ deckItem(item, { hfeed: true, show_images: show_images, show_pageviews: show_pageviews, show_hotness: show_hotness, show_popularity: show_popularity, truncate: true }) }}
+						{{ deckItem(item, { index: loop.index, hfeed: true, show_images: show_images, show_pageviews: show_pageviews, show_hotness: show_hotness, show_popularity: show_popularity, truncate: true }) }}
 					{%- else -%}
-						{{ stackItem(item, { hfeed: true, show_pageviews: show_pageviews, show_hotness: show_hotness, show_popularity: show_popularity, show_category: show_category, show_collections: show_collections, show_tags: show_tags }) }}
+						{{ stackItem(item, { index: loop.index, hfeed: true, show_pageviews: show_pageviews, show_hotness: show_hotness, show_popularity: show_popularity, show_category: show_category, show_collections: show_collections, show_tags: show_tags }) }}
 					{%- endif %}
 				{% endfor %}
 			</div>
