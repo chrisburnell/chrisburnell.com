@@ -92,7 +92,7 @@
 					</li>
 				{% endif %}
 				{% if show_rss_only -%}
-					<li><a href="https://daverupert.com/rss-club/" rel="external" target="_blank"><c-emoji style="vertical-align: baseline;"><svg width="18" height="18" aria-hidden="true" focusable="false" style="vertical-align: middle;"><use href="#svg--rss"></use></svg></c-emoji>RSS Club</a></li>
+					<li><a href="https://daverupert.com/rss-club/" title="This {{ item.data.categoryProper | default(item.data.category) }} is part of RSS Club" rel="external" target="_blank"><c-emoji style="vertical-align: baseline;"><svg width="18" height="18" aria-hidden="true" focusable="false" style="vertical-align: middle;"><use href="#svg--rss"></use></svg></c-emoji>RSS Club</a></li>
 				{%- endif %}
 				{% if show_popularity -%}
 					<li title="#{{ item.data.rank.popular }} Most Popular Page"><c-emoji>📊</c-emoji> <span class=" [ ordinal ] "{% if item.data.rank.popular <= 3 %} style="color: color-mix(in oklab, currentColor, {% if item.data.rank.popular == 1 %}gold{% elif item.data.rank.popular == 2 %}silver{% else %}darkorange{% endif %}); font-weight: var(--font-weight-semibold);"{% endif %}>#{{ item.data.rank.popular }}</span></li>
