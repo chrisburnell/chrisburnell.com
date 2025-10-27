@@ -6,7 +6,7 @@ const analyticsCache = new Map();
 export default async function () {
 	const url = `${urls.fathom}/summary?key=${process.env.FATHOM_SUMMARY_KEY}`;
 	const pageviews = await EleventyFetch(url, {
-		duration: cacheDurations.daily,
+		duration: cacheDurations.hourly,
 		type: "json",
 	});
 

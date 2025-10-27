@@ -33,4 +33,6 @@ export default {
 	"seocommunity.social": {},
 	"todon.eu": {},
 	"mastodon.sg": {},
+	"neighborhood.11ty.dev": {},
+	"zachleat.com": {},
 };

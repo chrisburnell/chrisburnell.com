@@ -6,5 +6,6 @@ export default {
 		exclude: true,
 	},
 	excludeFromSearch: true,
-	noServiceWorker: true,
+	excludeServiceWorker: true,
+	excludeAnalytics: true,
 };

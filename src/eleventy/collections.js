@@ -9,7 +9,8 @@ import { limits } from "./data/site.js";
 import { dateSort, epoch, isFuture, isUpcoming } from "./filters/dates.js";
 
 const durationDay = 24 * 60 * 60 * 1000;
-const pageviewsCoefficient = 0.6;
+const pageviewsCoefficient = 0.8;
+const hotnessCoefficient = 1.6;
 
 let cachedCollections = new Map();
 
@@ -491,18 +492,16 @@ export const hot = (collection) => {
 		.sort(dateSort)
 		.map((item) => {
 			const emaWebmentions = item.data.webmentions.all.reduce(
-				(accumulator, webmention) => {
-					return exponentialMovingAverage(
+				(accumulator, webmention) =>
+					exponentialMovingAverage(
 						epoch(getWebmentionPublished(webmention)) / durationDay,
 						accumulator,
-						pageviewsCoefficient,
-					);
-				},
+					),
 				0,
 			);
 			item.data.rank.hotScore =
 				Math.log1p(emaWebmentions) +
-				pageviewsCoefficient * Math.log1p(item.data.pageviews.hotness);
+				hotnessCoefficient * Math.log1p(item.data.pageviews.hotness);
 			return item;
 		})
 		.sort((a, b) => {

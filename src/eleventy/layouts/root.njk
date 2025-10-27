@@ -130,7 +130,7 @@
 
 		{{- content | safe -}}
 
-		{% if eleventy.env.runMode === 'build' and not noServiceWorker -%}
+		{% if eleventy.env.runMode === 'build' and not excludeServiceWorker -%}
 		{# ServiceWorker -#}
 		<script>{% include '../../js/navigator.js' %}</script>
 		{%- endif %}
