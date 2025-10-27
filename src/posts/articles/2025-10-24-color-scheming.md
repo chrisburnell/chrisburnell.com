@@ -58,7 +58,7 @@ This, alone, allows us to write CSS that responds dynamically to the *OS/Browser
 Also, because we’ve written `light dark`, we have indicated that where an *OS/Browser-level Preference* does not exist, we should default to the first value. This means that in the absense of all preferences and overrides, the default colour scheme will be the `light` one. If we had instead written `dark light`, the `dark` colour scheme would be the default.
 
 
-<h3 id="part-2">1/2. Element-level & Page-level Overrides</h3>
+<h3 id="part-2">1 & 2. Element-level & Page-level Overrides</h3>
 
 <ol style="line-height: var(--line-height-small);" aria-hidden="true">
     <li class="strong">Element-level Override</li>

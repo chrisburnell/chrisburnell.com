@@ -1,10 +1,10 @@
 <h2 id="settings">Settings</h2>
 <storage-form class=" [ flow ] " style="--flow-space: 1em; display: block;">
 	<form autocomplete="off">
-		{% if eleventy.env.runMode !== 'build' -%}
-		<label for="analytics-toggler">Analytics:</label>
-		<input type="hidden" name="analytics" value="false" />
-		<input type="checkbox" id="analytics-toggler" name="analytics" value="" checked />
+		{% if eleventy.env.runMode === 'build' -%}
+			<label for="analytics-toggler">Analytics:</label>
+			<input type="hidden" name="analytics" value="false" />
+			<input type="checkbox" id="analytics-toggler" name="analytics" value="" checked />
 		{%- endif %}
 		{% if not global.isCSSNakedDay -%}
 			<label for="theme-selector">Theme:</label>
