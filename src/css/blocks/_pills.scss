@@ -15,9 +15,6 @@
 	padding: 0.25em 0.5em;
 	border: calc(var(--size-border-thin) / 2) solid oklch(from currentColor l c h / 0.5);
 	border-radius: 1rem;
-	box-shadow:
-		0.25em 0 0 var(--body-background-color),
-		-0.25em 0 0 var(--body-background-color);
 	font-size: var(--font-size-small);
 	line-height: 1;
 	text-decoration: none;
@@ -45,19 +42,5 @@
 	& .emoji {
 		padding-inline-end: 0.625ch;
 		vertical-align: initial !important;
-	}
-
-	:target & {
-		animation: var(--animation-duration) var(--transition-function) var(--transition-duration-short) target-pill;
-	}
-}
-
-@keyframes target-pill {
-	0%, 33.333% {
-		background-color: var(--color-aspen);
-		color: var(--color-thunder);
-		box-shadow:
-			0.25em 0 0 var(--color-aspen),
-			-0.25em 0 0 var(--color-aspen);
 	}
 }
