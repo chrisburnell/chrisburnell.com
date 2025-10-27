@@ -36,7 +36,7 @@ Passionate about the open web, having published over {{ technical_articles_count
 
 <hr>
 
-<h2 style="break-before: page;">Professional Experience</h2>
+## Professional Experience
 
 <div class=" [ role ] ">
     <h3>Software Engineer</h3>
@@ -116,7 +116,7 @@ Passionate about the open web, having published over {{ technical_articles_count
 
 <hr>
 
-<h2 style="break-before: page;">Community Experience</h2>
+## Community Experience
 
 <div class=" [ role ] ">
     <h3>Conference Organiser</h3>
@@ -192,6 +192,8 @@ Author of numerous open-source software packages, accumulating over {{ package_d
 </nav>
 
 {#-
+<hr>
+
 ## Testimonials
 
 {% include 'testimonials.njk' %}

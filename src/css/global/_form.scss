@@ -11,6 +11,12 @@ form {
 	position: relative;
 }
 
+legend {
+	font-size: var(--font-size-default);
+	font-weight: var(--font-weight-regular);
+	text-align: start;
+}
+
 fieldset {
 	border-width: 0;
 }
