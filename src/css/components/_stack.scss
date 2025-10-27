@@ -43,20 +43,6 @@
 			:target & {
 				animation: var(--animation-duration) var(--transition-function) var(--transition-duration-short) target-stack-title;
 			}
-
-			&:last-of-type::after {
-				content: "";
-				background-color: var(--body-background-color);
-				inline-size: var(--size-medium);
-				block-size: 1lh;
-				position: absolute;
-				inset-block-start: 0;
-				inset-inline-start: 100%;
-
-				:target & {
-					animation: var(--animation-duration) var(--transition-function) var(--transition-duration-short) target;
-				}
-			}
 		}
 
 		& span {
