@@ -5,6 +5,10 @@
 
 @use "../abstracts/mixins";
 
+:is(.pills, .pill) {
+	@include mixins.non-selectable;
+}
+
 .pills {
 	text-wrap: balance;
 }

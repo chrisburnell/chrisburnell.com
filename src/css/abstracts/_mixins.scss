@@ -90,7 +90,6 @@
 ///
 @mixin non-selectable() {
 	user-select: none;
-	-webkit-touch-callout: default;
 	-webkit-touch-callout: none;
 }
 
