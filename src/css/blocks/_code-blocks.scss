@@ -22,7 +22,7 @@
 	}
 }
 
-pre[class*="language-"] {
+pre[data-language] {
 	--flow-space: var(--size-large);
 	background-color: light-dark(var(--color-mineshaft), var(--color-thunder));
 	border-block-start: var(--size-border-thin) solid var(--border-color, var(--color-raven));
@@ -52,61 +52,58 @@ pre[class*="language-"] {
 	}
 }
 
-pre.language-none {
-	padding-block-start: var(--size-gutter);
+pre[data-language-friendly]:not([data-language-friendly=""]) {
+	&::before {
+		content: attr(data-language-friendly);
+	}
+
+	&[data-filename]:not([data-filename=""])::before {
+		content: attr(data-language-friendly) " · " attr(data-filename);
+	}
 }
 
-pre[class*="-bash"]::before {
-	content: "Terminal";
+pre:is(
+	[data-language-friendly="bash" i],
+	[data-language-friendly="plaintext" i]
+)::before {
 	color: var(--color-yeti);
 }
-pre[class*="-css"]::before {
-	content: "CSS";
+pre[data-language-friendly="css" i]::before {
 	color: var(--color-css);
 }
-pre[class*="-html"]::before {
-	content: "HTML";
+pre[data-language-friendly="html" i]::before {
 	color: var(--color-html);
 }
-pre[class*="-javascript"]::before {
-	content: "JavaScript";
+pre[data-language-friendly="javascript" i]::before {
 	color: var(--color-javascript);
 }
-pre[class*="-json"]::before {
-	content: "JSON";
+pre[data-language-friendly="json" i]::before {
 	color: var(--color-json);
 }
-pre[class*="-liquid"]::before {
-	content: "Liquid";
+pre[data-language-friendly="liquid" i]::before {
 	color: var(--color-liquid);
 }
-pre[class*="-markdown"]::before {
-	content: "Markdown";
+pre[data-language-friendly="markdown" i]::before {
 	color: var(--color-snowy);
 }
-pre:is([class*="-nunjucks"], [class*="-twig"])::before {
-	content: "Nunjucks";
+pre[data-language-friendly="nunjucks" i]::before {
 	color: var(--color-nunjucks);
 }
-pre[class*="-php"]::before {
-	content: "PHP";
+pre[data-language-friendly="php" i]::before {
 	color: var(--color-php);
 }
-pre[class*="-scss"]::before {
-	content: "SCSS";
+pre[data-language-friendly="scss" i]::before {
 	color: var(--color-scss);
 }
-pre[class*="-webc"]::before {
-	content: "WebC";
+pre[data-language-friendly="webc" i]::before {
 	color: var(--color-webc);
 }
-pre[class*="-yaml"]::before {
-	content: "YAML";
+pre[data-language-friendly="yaml" i]::before {
 	color: var(--color-yaml);
 }
-pre:is([class*="-plaintext"], [class*="-text"])::before {
-	content: "Plaintext";
-	color: var(--color-yeti);
+
+pre.language-none {
+	padding-block-start: var(--size-gutter);
 }
 
 /**
@@ -172,12 +169,11 @@ pre.language-css .token.string,
 	color: #eab538;
 }
 
-pre[class*="language-diff-"] code {
+pre:has(.token:is(.inserted, .deleted):not(.prefix)) code {
 	padding-inline-start: 3ch;
 }
 
-.token.inserted:not(.prefix),
-.token.deleted:not(.prefix) {
+.token:is(.inserted, .deleted):not(.prefix) {
 	display: block;
 	padding-inline-start: 3ch;
 	margin-inline-start: -3ch;
@@ -191,17 +187,14 @@ pre[class*="language-diff-"] code {
 	@include mixins.non-selectable;
 }
 
-.token.prefix.unchanged,
-.token.prefix.inserted,
-.token.prefix.deleted {
+.token.prefix:is(.unchanged, .inserted, .deleted) {
 	position: absolute;
 	left: 0;
 	padding-inline: 1ch;
 	@include mixins.non-selectable;
 }
 
-.token.important,
-.token.bold {
+.token:is(.important, .bold) {
 	font-weight: var(--font-weight-semibold);
 }
 .token.italic {

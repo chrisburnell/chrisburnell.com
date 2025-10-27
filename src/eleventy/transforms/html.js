@@ -86,8 +86,19 @@ export default async function (value, outputPath) {
 		// Make sure <ul> elements are accessible even with `list-style: none`
 		$("ul").attr("role", "list");
 
+		// Clean up languages/filenames for code blocks with empty values
+		$(`[data-language=""]`).each((_, element) => {
+			$(element).removeAttr("data-language");
+		});
+		$(`[data-language-friendly=""]`).each((_, element) => {
+			$(element).removeAttr("data-language-friendly");
+		});
+		$(`[data-filename=""]`).each((_, element) => {
+			$(element).removeAttr("data-filename");
+		});
+
 		// Add markup around fenced code blocks
-		$(`pre[class*="language-"]`).each((i, element) => {
+		$(`pre[class*="language-"]`).each((_, element) => {
 			$(element).wrap(
 				`<div class=" [ code-block ] " style="position: relative;"></div>`,
 			);

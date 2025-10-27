@@ -32,7 +32,6 @@
 		box-shadow: var(--box-shadow, var(--box-shadow-medium));
 		overflow-x: hidden;
 		overflow-y: auto;
-		overscroll-behavior: contain;
 		scrollbar-gutter: stable;
 		animation: toc-shadow-inside linear;
 		animation-timeline: scroll(self block);
