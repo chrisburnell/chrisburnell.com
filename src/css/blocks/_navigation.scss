@@ -37,7 +37,6 @@
 		font-weight: var(--font-weight-bold);
 		text-align: center;
 		text-decoration: none;
-		transition: all var(--transition-duration) var(--transition-function);
 		z-index: var(--z-index-root);
 
 		@media not print {
@@ -61,7 +60,9 @@
 			box-shadow: var(--box-shadow-low);
 			transform: scaleY(0);
 			transform-origin: top;
-			transition: all var(--transition-duration) ease-out;
+			transition:
+				opacity var(--transition-duration) ease-out,
+				transform var(--transition-duration) ease-out;
 		}
 
 		&[aria-current="page"],

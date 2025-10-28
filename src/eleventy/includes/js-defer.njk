@@ -1,6 +1,6 @@
 {# Deferred JS -#}
-<script type="module" src="{% getBundleFileUrl 'js', 'deferred' %}"></script>
-<script src="{% getBundleFileUrl 'js' %}"></script>
+<script type="module" src="{% getBundleFileUrl 'js', 'deferred' %}" defer></script>
+<script src="{% getBundleFileUrl 'js' %}" defer></script>
 
 {%- js 'deferred' -%}{% renderFile 'src/js/defer.js' %}{%- endjs -%}
 {%- js -%}{% renderFile 'src/js/imports/settings.js' %}{%- endjs -%}
@@ -23,7 +23,7 @@
 	const scriptElement = document.createElement("script");
 	scriptElement.id = "fathom-script";
 	scriptElement.src = "{{ site.urls.fathom }}/tracker.js";
-	scriptElement.async = true;
+	scriptElement.defer = true;
 	document.head.appendChild(scriptElement);
 	fathom("set", "siteId", "{{ site.fathom_siteid }}");
 	fathom("trackPageview");

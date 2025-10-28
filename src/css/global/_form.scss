@@ -61,7 +61,7 @@ textarea {
 		border-color: var(--outline-color, Highlight);
 	}
 
-	&:not([disabled]):focus {
+	&:not([disabled]):is(:focus, :focus-visible) {
 		outline-color: var(--outline-color, Highlight);
 		z-index: var(--z-index-above);
 	}
@@ -121,7 +121,12 @@ textarea {
 	margin-block-start: calc(1ex - 1cap);
 	position: relative;
 	cursor: pointer;
-	transition: all var(--transition-duration) var(--transition-function);
+	transition:
+		opacity var(--transition-duration) var(--transition-function),
+		background-color var(--transition-duration) var(--transition-function),
+		color var(--transition-duration) var(--transition-function),
+		border-color var(--transition-duration) var(--transition-function),
+		outline-color var(--transition-duration) var(--transition-function);
 
 	&:checked {
 		color: var(--color-raven);

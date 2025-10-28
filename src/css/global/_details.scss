@@ -8,10 +8,12 @@
 details {
 	inline-size: 100%;
 	overflow-x: auto;
-	transition: height var(--transition-duration) var(--transition-function);
+	transition:
+		block-size var(--transition-duration) var(--transition-function),
+		content-visibility var(--transition-duration) var(--transition-function);
 
 	&[open] {
-		height: calc-size(auto, size);
+		block-size: calc-size(auto, size);
 	}
 
 	// add spacing around non-summary children
@@ -38,7 +40,7 @@ summary {
 	text-decoration-thickness: var(--size-border-thin);
 	text-decoration-skip-ink: auto;
 	text-underline-offset: 0.125em;
-	transition: all var(--transition-duration) var(--transition-function);
+	transition: text-decoration-color var(--transition-duration) var(--transition-function);
 	list-style: "+ " inside;
 
 	&::marker {

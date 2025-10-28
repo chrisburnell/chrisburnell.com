@@ -10,7 +10,6 @@ is-land:has(details-utils, seven-minute-tabs) {
 }
 
 :is(details-utils, seven-minute-tabs) {
-	height: calc-size(auto);
 	display: block;
 	transition: height var(--transition-duration) var(--transition-function);
 }
