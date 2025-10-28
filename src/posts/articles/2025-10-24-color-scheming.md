@@ -218,14 +218,22 @@ Based on the hierarchy that we want, the specificity of the class-based controls
 
 Let’s consider the specificity of the three selectors in each group:
 
-<dl>
-    <dt><code style="white-space: pre-wrap;">:root:has([name=color-scheme] [value=light]:checked)</code></dt>
-    <dd>(0,4,0)</dd>
-    <dt><code style="white-space: pre-wrap;">[data-color-scheme=light]</code></dt>
-    <dd>(0,1,0)</dd>
-    <dt><code style="white-space: pre-wrap;">.light</code></dt>
-    <dd>(0,1,0)</dd>
-</dl>
+<table class=" [ zebra ] ">
+    <tbody>
+        <tr>
+            <th><code style="white-space: pre-wrap;">:root:has([name=color-scheme] [value=light]:checked)</code></th>
+            <td>(0,4,0)</td>
+        </tr>
+        <tr>
+            <th><code style="white-space: pre-wrap;">[data-color-scheme=light]</code></th>
+            <td>(0,1,0)</td>
+        </tr>
+        <tr>
+            <th><code style="white-space: pre-wrap;">.light</code></th>
+            <td>(0,1,0)</td>
+        </tr>
+    </tbody>
+</table>
 
 Given that their specificities don’t align with what we want, we can leverage a second important feature of CSS, source order.
 
