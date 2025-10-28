@@ -5,6 +5,8 @@ description: "It’s been about a year and a half since I changed how colour sch
 tags:
   - color
   - css
+  - javascript
+  - web-components
   - writing
   - rss-only
 redirect_from:
