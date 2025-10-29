@@ -4,7 +4,7 @@ import { cacheDurations } from "../data/site.js";
 
 /**
  * @param {string} repository
- * @returns {Object}
+ * @returns {object}
  */
 export const githubData = async (repository) => {
 	const url = `https://api.github.com/repos/${repository}`;
@@ -26,7 +26,7 @@ export const stargazers = async (repository) => {
 
 /**
  * @param {string} repository
- * @returns {Object}
+ * @returns {object}
  */
 export const githubTagData = async (repository) => {
 	const url = `https://api.github.com/repos/${repository}/tags`;
@@ -48,6 +48,7 @@ export const latestTag = async (repository) => {
 
 /**
  * @param {string} npmPackage
+ * @param {string} published
  * @returns {number}
  */
 export const npmDownloads = async (npmPackage, published) => {

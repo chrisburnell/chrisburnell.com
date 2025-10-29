@@ -128,8 +128,8 @@ And because I reuse this pattern so often, and it's a bit unwieldy, I ended up c
 ///
 /// Return an HLS(A) color
 ///
-/// @param {String} $value - key from `hsl` map
-/// @param {String} $opacity [null] - key from `opacity` map
+/// @param {string} $value - key from `hsl` map
+/// @param {string} $opacity [null] - key from `opacity` map
 ///
 /// @throw Error if no parameter is passed.
 ///

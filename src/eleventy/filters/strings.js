@@ -141,7 +141,8 @@ export const stripImages = (string) => {
 };
 
 /**
- * @param {string} input
+ * @param {string} string
+ * @param {string} replacement
  * @returns {string}
  */
 export const replaceLineBreaks = (string, replacement = " ") => {
@@ -188,6 +189,7 @@ export const maxChars = (string, count, condition = true) => {
 
 /**
  * @param {number} number
+ * @param {boolean} forceNumeral
  * @returns {string}
  */
 export const numberStringFormat = (number, forceNumeral = false) => {
@@ -206,7 +208,8 @@ export const markdownFormat = (string) => {
 };
 
 /**
- * @param string} string
+ * @param {string} string
+ * @param {boolean} keepImages
  * @returns {string}
  */
 export const excerptize = (string, keepImages = false) => {
@@ -251,6 +254,7 @@ export const spongebob = (string) => {
 
 /**
  * @param {string} string
+ * @param {number} threshold
  * @returns {string}
  */
 export const sentimentCheck = (string, threshold = -0.3) => {

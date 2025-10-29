@@ -12,6 +12,12 @@ export const nowISO = `${year.toString().padStart(4, "0")}-${month.toString().pa
 
 export const currentYear = new Date().getFullYear();
 
+export const flexibleSorting = {
+	numeric: true,
+	ignorePunctuation: true,
+	sensitivity: "base",
+};
+
 const cssNakedDayStart = `${currentYear}-04-09T00:00:00+14:00`;
 const cssNakedDayEnd = `${currentYear}-04-09T23:59:59-12:00`;
 const cssNakedDayStartEpoch = new Date(cssNakedDayStart).getTime();
@@ -34,6 +40,7 @@ export const random = `${segment()}-${segment()}-${segment()}`;
 export default {
 	personalApiKeyForLocal,
 	currentYear,
+	flexibleSorting,
 	nowEpoch,
 	nowISO,
 	isCSSNakedDay,

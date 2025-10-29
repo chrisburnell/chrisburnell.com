@@ -8,13 +8,11 @@ layout: root
 		</a>
 		<nav class=" [ navigation ] " aria-label="Website">
 			<ol class=" [ navigation__list ] ">
-				{% for link in navigation %}
-					{% if link.header %}
-						<li>
-							<a href="{{ link.url }}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title | safe }}</a>
-						</li>
-					{% endif %}
-				{% endfor %}
+				{% for link in navigation -%}
+					{% if link.header -%}
+						<li><a href="{{ link.url }}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title | safe }}</a></li>
+					{%- endif %}
+				{%- endfor %}
 			</ol>
 			<button class=" [ anchor ] [ popover-settings-button ] [ requires-js ] " popovertarget="popover-settings" title="Open Settings">
 				<svg width="24" height="24" aria-hidden="true" focusable="false"><use href="#svg--settings"></use></svg>
@@ -35,13 +33,11 @@ layout: root
 		<div popover id="popover-navigation" class=" [ popover-navigation ] [ flow ] [ gamma ] ">
 			<h2 id="navigation">Navigation</h2>
 			<ol class=" [ navigation__list ] ">
-				{% for link in navigation %}
-					{% if link.header %}
-						<li>
-							<a href="{{ link.url }}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title | safe }}</a>
-						</li>
-					{% endif %}
-				{% endfor %}
+				{% for link in navigation -%}
+					{% if link.header -%}
+						<li><a href="{{ link.url }}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title | safe }}</a></li>
+					{%- endif %}
+				{%- endfor %}
 			</ol>
 			<div class=" [ navigator ] ">
 				<button popovertarget="popover-navigation" class=" [ button--small ] " style="font-size: inherit;">Close</button>
@@ -62,11 +58,11 @@ layout: root
 	<div class=" [ wrap ] [ footer__grid ] ">
 		{% include 'author.njk' %}
 		<ul class=" [ cluster ] [ footer__navigation ] [ strong ] ">
-			{%- for link in navigation -%}
-				{%- if link.footer -%}
+			{% for link in navigation -%}
+				{% if link.footer -%}
 					<li><a href="{{ link.url }}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title | safe }}</a></li>
-				{%- endif -%}
-			{%- endfor -%}
+				{%- endif %}
+			{%- endfor %}
 		</ul>
 		<ul class=" [ cluster ] [ footer__navigation ] ">
 			<li class=" [ requires-js ] "><button class=" [ anchor ] " popovertarget="popover-settings"><c-emoji><svg width="16" height="16" aria-hidden="true" focusable="false" style="fill: var(--color-raven);"><use href="#svg--settings"></use></svg></c-emoji>Open Settings</button></li><li><a href="https://github.com/{{ author.github }}/{{ site.repository }}/tree/{{ site.branch }}/{{ page.inputPath }}" id="edit" rel="edit"><c-emoji><svg width="16" height="16" aria-hidden="true" focusable="false" style="fill: var(--color-raven);"><use href="#svg--edit"></use></svg></c-emoji>Edit this page</a></li><li class=" [ requires-js ] ">{% include 'share.njk' %}</li>

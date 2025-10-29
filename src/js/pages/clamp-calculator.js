@@ -1,8 +1,10 @@
 /**
  * Clamp Calculator
- * @class
  */
 class ClampCalculator {
+	/**
+	 * @class
+	 */
 	constructor() {
 		this.inputs = {
 			"size-min": null,
@@ -20,9 +22,9 @@ class ClampCalculator {
 
 	/**
 	 * Force a number to a specific number of decimal places.
-	 * @param {Number} value
-	 * @param {Number} decimals
-	 * @returns {Number}
+	 * @param {number} number
+	 * @param {number} decimals
+	 * @returns {number}
 	 */
 	maxDecimals(number, decimals = 3) {
 		return +number.toFixed(decimals);
@@ -30,9 +32,9 @@ class ClampCalculator {
 
 	/**
 	 * Converts a value from units in pixels to rems.
-	 * @param {Number} px
-	 * @param {Number} base
-	 * @returns {Number}
+	 * @param {number} px
+	 * @param {number} base
+	 * @returns {number}
 	 */
 	toRem(px, base = 16) {
 		return this.maxDecimals(px / base);

@@ -7,6 +7,8 @@ export default {
 	categoryProper: "beer review",
 	categoryProperPlural: "beer reviews",
 	categoryCode: "b",
+	categoryFull: true,
+	categoryMasonry: true,
 	tags: ["beer", "review"],
 	emoji: "🍺",
 };

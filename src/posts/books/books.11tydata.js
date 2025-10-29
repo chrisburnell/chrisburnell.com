@@ -9,6 +9,7 @@ export default {
 	categoryProper: "book review",
 	categoryProperPlural: "book reviews",
 	categoryCode: "r",
+	categoryFull: true,
 	tags: ["book", "review"],
 	emoji: "📖",
 };

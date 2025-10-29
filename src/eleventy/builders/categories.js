@@ -25,7 +25,8 @@ export default async function (collection) {
 							? item.data.categoryPlural
 							: item.data.category,
 				review: item.data.mf_root === "review",
-				full: "full" in item.data,
+				full: "categoryFull" in item.data || "full" in item.data,
+				masonry: "categoryMasonry" in item.data,
 			};
 		})
 		// Remove duplicates based on `title`
@@ -39,6 +40,10 @@ export default async function (collection) {
 		})
 		// Sort based on `title`
 		.sort((a, b) => {
-			return a.title.localeCompare(b.title);
+			return a.title.localeCompare(b.title, undefined, {
+				numeric: true,
+				ignorePunctuation: true,
+				sensitivity: "base",
+			});
 		});
 }

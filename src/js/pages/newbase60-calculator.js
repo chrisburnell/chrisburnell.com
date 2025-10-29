@@ -1,10 +1,9 @@
 /**
  * NewBase60 Calculator
- * @class
  */
 class NewBase60Calculator {
 	/**
-	 * @constructor
+	 * @class
 	 */
 	constructor() {
 		this.SEQUENCE =
@@ -22,8 +21,8 @@ class NewBase60Calculator {
 	}
 
 	/**
-	 * @param {Number} value
-	 * @returns {String}
+	 * @param {number} value
+	 * @returns {string}
 	 */
 	DecimalToSexagesimal(value) {
 		if (value === undefined || value === 0) {
@@ -39,8 +38,8 @@ class NewBase60Calculator {
 	}
 
 	/**
-	 * @param {String} value
-	 * @returns {Number}
+	 * @param {string} value
+	 * @returns {number}
 	 */
 	SexagesimalToDecimal(value) {
 		let output = 0;
@@ -73,8 +72,8 @@ class NewBase60Calculator {
 	}
 
 	/**
-	 * @param {Number} value
-	 * @returns {DateTime}
+	 * @param {number} value
+	 * @returns {string}
 	 */
 	DecimalToDate(value) {
 		let dateObject = new Date(parseInt(value) * 86400 * 1000);

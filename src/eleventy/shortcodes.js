@@ -4,8 +4,8 @@ import { getCollectionCountByYear } from "./filters/collections.js";
 /**
  * @param {object[]} collection
  * @param {number} start
- * @param {boolean} [animate=true]
- * @param {boolean} [curve=true]
+ * @param {boolean} [animate]
+ * @param {boolean} [curve]
  * @returns {string}
  */
 const sparkline = (collection, start, animate = false, curve = true) => {

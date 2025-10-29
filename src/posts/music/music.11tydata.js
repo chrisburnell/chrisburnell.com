@@ -8,6 +8,7 @@ export default {
 	categoryProper: "music review",
 	categoryProperPlural: "music reviews",
 	categoryCode: "m",
+	categoryFull: true,
 	tags: ["music", "review"],
 	emoji: "🎶",
 	post_includes: ["post/listen-of.njk"],

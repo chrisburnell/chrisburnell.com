@@ -1,10 +1,9 @@
 /**
  * Interactive Sparkline
- * @class
  */
 class InteractiveSparkline {
 	/**
-	 * @constructor
+	 * @class
 	 */
 	constructor() {
 		this.inputs = {
@@ -30,7 +29,7 @@ class InteractiveSparkline {
 
 	/**
 	 * Build the sparkline based on the given input values.
-	 * @param {Object} inputs
+	 * @param {object} inputs
 	 */
 	processSparkline(inputs) {
 		// strip non-numbers from the input

@@ -25,7 +25,7 @@ export const sitemapFilter = (array) => {
 };
 
 /**
- * @param {Object} data
+ * @param {object} data
  * @returns {string}
  */
 export const getCategoryName = (data) => {
@@ -70,8 +70,8 @@ export const noPinnedFilter = (array) => {
 };
 
 /**
- * @param {Object} a
- * @param {Object} b
+ * @param {object} a
+ * @param {object} b
  * @returns {boolean}
  */
 export const pinnedSort = (a, b) => {

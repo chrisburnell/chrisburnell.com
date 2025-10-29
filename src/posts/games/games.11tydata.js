@@ -9,6 +9,7 @@ export default {
 	categoryPlural: "games",
 	categoryProperPlural: "game reviews",
 	categoryCode: "g",
+	categoryFull: true,
 	tags: ["game", "review"],
 	emoji: "🕹️",
 };

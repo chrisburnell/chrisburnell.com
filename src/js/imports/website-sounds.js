@@ -2,11 +2,10 @@ import pentatonic from "@chrisburnell/pentatonic";
 
 /**
  * Website Sounds
- * @class
  */
 class WebsiteSounds {
 	/**
-	 * @constructor
+	 * @class
 	 */
 	constructor() {
 		this.STORAGE_KEY = "user-sounds";

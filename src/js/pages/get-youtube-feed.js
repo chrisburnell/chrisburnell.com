@@ -1,10 +1,9 @@
 /**
  * Get YouTube RSS Feed
- * @class
  */
 class GetYouTubeFeed {
 	/**
-	 * @constructor
+	 * @class
 	 */
 	constructor() {
 		this.form = document.querySelector(".get-youtube-feed");

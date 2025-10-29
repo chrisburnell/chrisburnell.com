@@ -5,5 +5,8 @@ export default [
 		twitter: "hwclondon",
 	},
 ].sort((a, b) => {
-	return a.title.localeCompare(b.title);
+	return a.title.localeCompare(b.title, undefined, {
+		numeric: true,
+		sensitivity: "base",
+	});
 });

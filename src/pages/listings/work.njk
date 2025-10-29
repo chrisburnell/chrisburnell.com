@@ -1,0 +1,187 @@
+---
+title: Work
+description: TODO
+full: true
+redirect_from:
+  - /portfolio
+---
+
+<p class=" [ center  inline-center ] "><a href="https://chrisburnell.com/cv/" class=" [ button ] ">CV / Résumé</a></p>
+
+<hr>
+
+<h2 id="clients">Companies and Organisations I’ve worked with</h2>
+
+{%- for client in clients | sort(false, false, 'title') -%}
+    <article>
+        <a href="{{ client.url }}" title="{{ client.title | safe }}" rel="external noopener">
+            <img src="/images/content/{{ client.image }}"{% if client.darkInvert %} class="dark-invert-colors"{% endif %} alt="" height="80">
+        </a>
+    </article>
+{%- endfor -%}
+
+<hr>
+
+## Testimonials
+
+{% include 'testimonials.njk' %}
+
+<hr>
+
+<h2>Component Library (Squiz)</h2>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum suscipit id nulla vitae maximus. In bibendum risus in commodo fermentum. Vestibulum elementum turpis ac aliquam pulvinar. Nulla vitae varius lorem. Pellentesque elit leo, elementum sit amet posuere a, malesuada non velit. Maecenas blandit rutrum enim eu sodales. Nullam mi lectus, vehicula sed arcu vel, volutpat dignissim mauris. Maecenas ultricies, lacus ut cursus molestie, dui nunc efficitur metus, vel pulvinar eros diam id mi. Phasellus convallis accumsan enim ac tempor. Quisque porta velit quis maximus ullamcorper. Mauris dictum ultrices nisi molestie aliquet. Donec dictum iaculis ante eget semper. In sit amet enim ac risus tempus feugiat non eu augue.</p>
+
+<figure class="browser">
+	<a href="/images/built/components-library-2000.png">{% image './images/work/components-library.png', 'TODO', undefined, [400, 800, 2000] %}</a>
+	<figcaption>
+		<a href="https://web.archive.org/web/20250113140003/https://marketplace.squiz.net/components" title="Squiz DXP Marketplace" rel="external noopener">marketplace.squiz.net</a>
+	</figcaption>
+</figure>
+
+
+<hr>
+
+
+<h2>GCU</h2>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum suscipit id nulla vitae maximus. In bibendum risus in commodo fermentum. Vestibulum elementum turpis ac aliquam pulvinar. Nulla vitae varius lorem. Pellentesque elit leo, elementum sit amet posuere a, malesuada non velit. Maecenas blandit rutrum enim eu sodales. Nullam mi lectus, vehicula sed arcu vel, volutpat dignissim mauris. Maecenas ultricies, lacus ut cursus molestie, dui nunc efficitur metus, vel pulvinar eros diam id mi. Phasellus convallis accumsan enim ac tempor. Quisque porta velit quis maximus ullamcorper. Mauris dictum ultrices nisi molestie aliquet. Donec dictum iaculis ante eget semper. In sit amet enim ac risus tempus feugiat non eu augue.</p>
+
+<h3>Homepage</h3>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--size-large); align-items: start;">
+
+<figure class="browser">
+	<a style="max-block-size: 300px; overflow-y: auto;" href="/images/built/gcu-homepage-old-2000.png" target="_blank">{% image './images/work/gcu-homepage-old.png', 'TODO', undefined, [400, 800, 2000] %}</a>
+	<figcaption>
+		<a href="https://web.archive.org/web/20220115103821/https://www.gcu.ac.uk/" rel="external noopener">Before</a>
+	</figcaption>
+</figure>
+
+<figure class="browser">
+	<a style="max-block-size: 300px; overflow-y: auto;" href="/images/built/gcu-homepage-new-2000.png" target="_blank">{% image './images/work/gcu-homepage-new.png', 'TODO', undefined, [400, 800, 2000] %}</a>
+	<figcaption>
+		<a href="https://web.archive.org/web/20250220100420/https://www.gcu.ac.uk/" rel="external noopener">After</a>
+	</figcaption>
+</figure>
+
+</div>
+
+
+<h3>Study</h3>
+
+<figure class="browser">
+	<a href="/images/built/gcu-study-old-2000.png" target="_blank">{% image './images/work/gcu-study-old.png', 'TODO', undefined, [400, 800, 2000] %}</a>
+	<figcaption>
+		<a href="https://web.archive.org/web/20220120191748/https://www.gcu.ac.uk/study/undergraduate/" rel="external noopener">Internet Archive →</a>
+	</figcaption>
+</figure>
+
+<figure class="browser">
+	<a href="/images/built/gcu-study-new-2000.png" target="_blank">{% image './images/work/gcu-study-new.png', 'TODO', undefined, [400, 800, 2000] %}</a>
+	<figcaption>
+		<a href="https://web.archive.org/web/20250126093142/https://www.gcu.ac.uk/study/undergraduate" rel="external noopener">Internet Archive →</a>
+	</figcaption>
+</figure>
+
+
+<h3>Subjects</h3>
+
+<figure class="browser">
+	<a href="/images/built/gcu-subjects-old-2000.png" target="_blank">{% image './images/work/gcu-subjects-old.png', 'TODO', undefined, [400, 800, 2000] %}</a>
+	<figcaption>
+		<a href="https://web.archive.org/web/20211202181216/https://www.gcu.ac.uk/study/undergraduate/subjects/" rel="external noopener">Internet Archive →</a>
+	</figcaption>
+</figure>
+
+<figure class="browser">
+	<a href="/images/built/gcu-subjects-new-2000.png" target="_blank">{% image './images/work/gcu-subjects-new.png', 'TODO', undefined, [400, 800, 2000] %}</a>
+	<figcaption>
+		<a href="https://web.archive.org/web/20250126131651/https://www.gcu.ac.uk/study/subjects" rel="external noopener">Internet Archive →</a>
+	</figcaption>
+</figure>
+
+<style>
+@layer blocks {
+	.browser {
+		background-color: var(--color-yeti);
+		color: var(--color-mineshaft);
+		background-image:
+			radial-gradient(closest-side, var(--color-maple), var(--color-maple) calc(100% - 2px), oklch(from var(--color-thunder) l c h / var(--opacity-beta)) calc(100% - 2px), transparent),
+			radial-gradient(closest-side, var(--color-aspen), var(--color-aspen) calc(100% - 2px), oklch(from var(--color-thunder) l c h / var(--opacity-beta)) calc(100% - 2px), transparent),
+			radial-gradient(closest-side, var(--color-conifer), var(--color-conifer) calc(100% - 2px), oklch(from var(--color-thunder) l c h / var(--opacity-beta)) calc(100% - 2px), transparent);
+		background-position:
+			top 8px left 8px,
+			top 8px left 32px,
+			top 8px left 56px;
+		background-size: 18px 18px;
+		background-repeat: no-repeat;
+		padding: 34px 8px 8px;
+		border-radius: 12px;
+		position: relative;
+
+		& figcaption {
+			display: block;
+			inline-size: 50%;
+			block-size: 24px;
+			padding: 0;
+			border: 1px solid currentColor;
+			border-radius: 4px;
+			position: absolute;
+			top: 5px;
+			left: 50%;
+			transform: translateX(-50%);
+			font-family: monospace;
+			font-size: var(--font-size-small-min);
+			line-height: 22px;
+			text-align: center;
+
+			& a {
+				color: inherit;
+				display: block;
+				text-decoration: none;
+			}
+		}
+
+		& a:has(img) {
+			overflow: hidden;
+			border-radius: 8px;
+
+			&,
+			& img {
+				display: block;
+			}
+
+			& img {
+				inline-size: 100%;
+				max-block-size: initial;
+				transform-origin: var(--left, 50%) var(--top, 50%);
+				transition: transform calc(2 * var(--transition-duration)) var(--transition-function);
+			}
+
+			&:is(:hover, :focus, :active) img {
+				transform: scale(2);
+			}
+		}
+	}
+}
+</style>
+
+<script>
+const anchors = [...document.querySelectorAll("figure > a")];
+
+anchors.forEach((anchor) => {
+	anchor.addEventListener("mousemove", (event) => {
+		if (!window.matchMedia("(pointer: fine)").matches) {
+			return;
+		}
+
+		const rect = anchor.getBoundingClientRect();
+		const xPercent = ((event.clientX - rect.left) / rect.width) * 100;
+		const yPercent = ((event.clientY - rect.top) / rect.height) * 100;
+
+		anchor.style.setProperty("--left", `${xPercent.toFixed(2)}%`);
+		anchor.style.setProperty("--top", `${yPercent.toFixed(2)}%`);
+	});
+});
+</script>

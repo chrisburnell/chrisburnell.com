@@ -1,6 +1,6 @@
 /**
  * @param {string} url
- * @returns {Object}
+ * @returns {object}
  */
 export const getURLObject = (url) => {
 	try {

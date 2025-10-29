@@ -27,7 +27,11 @@ export default async function (collection) {
 		})
 		// Sort alphabetically
 		.sort((a, b) => {
-			return a.localeCompare(b);
+			return a.localeCompare(b, undefined, {
+				numeric: true,
+				ignorePunctuation: true,
+				sensitivity: "base",
+			});
 		});
 
 	// Filter out categories and ignored tags

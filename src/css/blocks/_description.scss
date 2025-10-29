@@ -12,6 +12,7 @@
 
 	& p {
 		@include mixins.cqi(null, "small") {
+			inline-size: fit-content;
 			margin-inline: auto;
 		}
 	}

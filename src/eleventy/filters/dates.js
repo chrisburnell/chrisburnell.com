@@ -190,8 +190,8 @@ export const epoch = (dateString) => {
 };
 
 /**
- * @param {Object} a
- * @param {Object} b
+ * @param {object} a
+ * @param {object} b
  * @returns {number}
  */
 export const dateSort = (a, b) => {
@@ -327,7 +327,7 @@ const rtfDivisions = [
 ];
 
 /**
- * @param {Datetime} datetime
+ * @param {Date} datetime
  * @param {string} [division]
  * @returns {string}
  */
@@ -416,9 +416,7 @@ export const getRSVPValueHTML = (start, end, value) => {
 };
 
 /**
- * @param {string} start
  * @param {string} end
- * @param {string} value
  * @returns {string}
  */
 export const getRSVPDateString = (end) => {

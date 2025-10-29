@@ -15,7 +15,7 @@ description: "Beer reviews from the 2021 <a href=\"http://corporate.honestbrew.c
 	</ul>
 </c-librarian>
 
-<div class=" [ grid ] [ shelf ] " aria-live="polite">
+<div class=" [ grid ] [ shelf ] " aria-live="polite" data-rows="masonry">
 	{% for item in collection %}
 		{{ shelfItem(item) }}
 	{% endfor %}

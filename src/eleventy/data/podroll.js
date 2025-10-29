@@ -25,5 +25,9 @@ export default [
 		rss: "https://www.youtube.com/feeds/videos.xml?channel_id=UCy6A9WMN43DrtBkID7nMXJw",
 	},
 ].sort((a, b) => {
-	return a.title.localeCompare(b.title);
+	return a.title.localeCompare(b.title, undefined, {
+		numeric: true,
+		ignorePunctuation: true,
+		sensitivity: "base",
+	});
 });

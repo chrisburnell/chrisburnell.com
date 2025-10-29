@@ -1,12 +1,11 @@
 /**
  * Librarian
- * @class
  */
 class Librarian {
 	/**
-	 * @constructor
 	 * @param {string} buttonsSelector - The selector for sorting buttons.
 	 * @param {string} shelfSelector - The selector for the shelf.
+	 * @class
 	 */
 	constructor(buttonsSelector, shelfSelector) {
 		this.buttonsSelector = buttonsSelector || "[data-sort]";
@@ -36,10 +35,15 @@ class Librarian {
 
 	/**
 	 * Methods of sorting used by the librarian.
-	 * @type {Object}
+	 * @type {object}
 	 */
 	sortingMethods = {
-		alphabetical: (a, b) => a.innerText.localeCompare(b.innerText),
+		alphabetical: (a, b) =>
+			a.innerText.localeCompare(b.innerText, {
+				numeric: true,
+				ignorePunctuation: true,
+				sensitivity: "base",
+			}),
 		author: (a, b) => this.compareBy(b, a, ".h-cite"),
 		chronological: (a, b) =>
 			this.compareBy(a, b, ".dt-published", "dateTime"),
@@ -80,7 +84,11 @@ class Librarian {
 			return this.sortingMethods.title(a, b);
 		}
 
-		return valueB.localeCompare(valueA);
+		return valueB.localeCompare(valueA, undefined, {
+			numeric: true,
+			ignorePunctuation: true,
+			sensitivity: "base",
+		});
 	}
 
 	/**

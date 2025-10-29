@@ -5,12 +5,10 @@ import { getWebmentionPublished } from "@chrisburnell/eleventy-cache-webmentions
 import { currentYear, nowEpoch } from "../eleventy/data/global.js";
 import { isPublished, notReply } from "../functions/collections.js";
 import { exponentialMovingAverage } from "../functions/utils.js";
-import { limits } from "./data/site.js";
+import { limits, weights } from "./data/site.js";
 import { dateSort, epoch, isFuture, isUpcoming } from "./filters/dates.js";
 
 const durationDay = 24 * 60 * 60 * 1000;
-const pageviewsCoefficient = 0.8;
-const hotnessCoefficient = 1.6;
 
 let cachedCollections = new Map();
 
@@ -388,7 +386,8 @@ export const popular = (collection) => {
 		.map((item) => {
 			item.data.rank.popularScore =
 				Math.log1p(item.data.webmentions.length) +
-				pageviewsCoefficient * Math.log1p(item.data.pageviews.total);
+				weights.pageviewsCoefficient *
+					Math.log1p(item.data.pageviews.total);
 			return item;
 		})
 		.sort((a, b) => {
@@ -496,12 +495,14 @@ export const hot = (collection) => {
 					exponentialMovingAverage(
 						epoch(getWebmentionPublished(webmention)) / durationDay,
 						accumulator,
+						weights.responsesCoefficient,
 					),
 				0,
 			);
 			item.data.rank.hotScore =
 				Math.log1p(emaWebmentions) +
-				hotnessCoefficient * Math.log1p(item.data.pageviews.hotness);
+				weights.hotnessCoefficient *
+					Math.log1p(item.data.pageviews.hotness);
 			return item;
 		})
 		.sort((a, b) => {

@@ -1,8 +1,15 @@
+/** @type { { string: number } } */
+let currencies = {};
+/** @type { { string: { string: number } } } */
+let datedCurrencies = {};
+
 /**
  * Currency Converter
- * @class
  */
 class CurrencyConverter {
+	/**
+	 * @class
+	 */
 	constructor() {
 		this.STORAGE_KEY = "currencies";
 		this.inputs = [
@@ -18,10 +25,23 @@ class CurrencyConverter {
 		this.init();
 	}
 
+	/**
+	 * @param {number} number
+	 * @param {number} decimals
+	 * @returns {string}
+	 */
 	maxDecimals(number, decimals = 2) {
 		return number.toFixed(decimals);
 	}
 
+	/**
+	 *
+	 * @param {number} amount
+	 * @param {string} from
+	 * @param {string} to
+	 * @param {number} decimals
+	 * @returns {string}
+	 */
 	convert(amount, from, to, decimals) {
 		return this.maxDecimals(
 			(amount / currencies[from]) * currencies[to],
@@ -29,6 +49,11 @@ class CurrencyConverter {
 		);
 	}
 
+	/**
+	 * @param {HTMLInputElement[]} others
+	 * @param {HTMLInputElement} input
+	 * @returns {void}
+	 */
 	convertOthers(others, input) {
 		others.forEach((other) => {
 			other.value = this.convert(
@@ -42,6 +67,12 @@ class CurrencyConverter {
 		});
 	}
 
+	/**
+	 * @param {Event} event
+	 * @param {HTMLInputElement[]} others
+	 * @param {HTMLInputElement} input
+	 * @returns {void}
+	 */
 	handleEvent(event, others, input) {
 		event.preventDefault();
 		if (
@@ -60,6 +91,10 @@ class CurrencyConverter {
 		window.history.replaceState({}, "", url);
 	}
 
+	/**
+	 * @param {string} date
+	 * @returns {void}
+	 */
 	async fetchRatesFromDate(date = "latest") {
 		if (datedCurrencies[date]) {
 			return datedCurrencies[date];
@@ -74,6 +109,9 @@ class CurrencyConverter {
 		return json.rates;
 	}
 
+	/**
+	 * @returns {void}
+	 */
 	async init() {
 		const params = new URLSearchParams(window.location.search);
 
@@ -153,7 +191,7 @@ class CurrencyConverter {
 			});
 		});
 
-		this.dateInput.addEventListener("change", async (event) => {
+		this.dateInput.addEventListener("change", async () => {
 			const url = new URL(window.location.href);
 			if (!this.dateInput.value || this.dateInput.value === "") {
 				url.searchParams.delete("date");
@@ -197,6 +235,6 @@ if ("HTMLElement" in window) {
 }
 
 /**
- * @type {ClampCalculator}
+ * @type {CurrencyConverter}
  */
 export default CurrencyConverter;

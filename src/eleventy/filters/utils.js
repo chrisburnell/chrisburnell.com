@@ -15,8 +15,8 @@ import { getHost } from "../filters/urls.js";
 
 /**
  * @param {number} number
- * @param {number} [decimals=3]
- * @param {boolean} [stripPadding=true]
+ * @param {number} [decimals]
+ * @param {boolean} [stripPadding]
  * @returns {number|string}
  */
 export const minDecimals = (number, decimals = 3, stripPadding = true) => {
@@ -28,8 +28,8 @@ export const minDecimals = (number, decimals = 3, stripPadding = true) => {
 
 /**
  * @param {number} number
- * @param {number} [decimals=3]
- * @param {boolean} [stripPadding=true]
+ * @param {number} [decimals]
+ * @param {boolean} [stripPadding]
  * @returns {number|string}
  */
 export const maxDecimals = (number, decimals = 3, stripPadding = true) => {
@@ -41,8 +41,8 @@ export const maxDecimals = (number, decimals = 3, stripPadding = true) => {
 
 /**
  * @param {number} number
- * @param {number} [decimals=3]
- * @param {boolean} [stripPadding=true]
+ * @param {number} [decimals]
+ * @param {boolean} [stripPadding]
  * @returns {number|string}
  */
 export const setDecimals = (number, decimals = 3, stripPadding = true) => {
@@ -55,7 +55,7 @@ export const setDecimals = (number, decimals = 3, stripPadding = true) => {
 
 /**
  * @param {number} number
- * @param {number} [zeroes=2]
+ * @param {number} [zeroes]
  * @returns {string}
  */
 export const padWithZeroes = (number, zeroes = 2) => {
@@ -74,7 +74,7 @@ export const modulo = (value, operand) => {
 };
 
 /**
- * @param {Object} object
+ * @param {object} object
  * @param {string} key
  * @returns {any}
  */
@@ -86,10 +86,10 @@ export const keyValue = (object, key) => {
 };
 
 /**
- * @param {Object} object
+ * @param {object} object
  * @param {string} key
  * @param {any} check
- * @param {boolean} [caseSensitive=true]
+ * @param {boolean} [caseSensitive]
  * @returns {boolean}
  */
 export const keyValueEquals = (object, key, check, caseSensitive = true) => {
@@ -162,9 +162,14 @@ export const arrayKeyNotSet = (array, key) => {
 /**
  * @param {object[]} array
  * @param {string} key
+ * @param {{ string: any }} [sortOptions]
  * @returns {object[]}
  */
-export const keySort = (array, key) => {
+export const keySort = (
+	array,
+	key,
+	sortOptions = { ignorePunctuation: true },
+) => {
 	const keys = key.split(".");
 	return array.sort((a, b) => {
 		const aValue = keys.reduce((o, k) => {
@@ -173,7 +178,11 @@ export const keySort = (array, key) => {
 		const bValue = keys.reduce((o, k) => {
 			return o[k];
 		}, b);
-		return String(aValue || "").localeCompare(String(bValue || ""));
+		return String(aValue || "").localeCompare(
+			String(bValue || ""),
+			undefined,
+			sortOptions,
+		);
 	});
 };
 
@@ -219,7 +228,7 @@ export const rangeMap = (number, inMin, inMax, outMin, outMax, decimals) => {
 
 /**
  * @param {string} string
- * @param {number} [decimals=1]
+ * @param {number} [decimals]
  * @returns {number}
  */
 export const stringToPercent = (string, decimals = 1) => {
@@ -248,7 +257,7 @@ export const limit = (array, limit) => {
 };
 
 /**
- * @param {Object} item
+ * @param {object} item
  * @returns {boolean}
  */
 const isBackfeed = (item) => {

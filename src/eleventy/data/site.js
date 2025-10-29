@@ -44,6 +44,9 @@ export const sitemap = {
 export const weights = {
 	count: 0.5,
 	deltas: 1,
+	hotnessCoefficient: 1.6,
+	pageviewsCoefficient: 0.8,
+	responsesCoefficient: 0.5,
 };
 
 export const cacheDurations = {

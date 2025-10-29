@@ -45,7 +45,7 @@ export const enableElement = (element, action) => {
 
 /**
  * Format a Date.
- * @param {DateTime} date
+ * @param {Date} date
  * @param {boolean} [includeWeekday]
  * @returns {string}
  */
@@ -88,7 +88,7 @@ export const formatDate = (date, includeWeekday = false) => {
 
 /**
  * Format a Time.
- * @param {DateTime} date
+ * @param {Date} date
  * @param {boolean} [includeSeconds]
  * @param {boolean} [includeMeridiem]
  * @returns {string}
@@ -127,8 +127,8 @@ export const actionFromHash = (hashes, action) => {
 
 /**
  * Ensure fetch response is OK.
- * @param {Object} response
- * @returns {Object}
+ * @param {object} response
+ * @returns {object}
  * @throws Response must return correctly.
  */
 export const getFetchResponse = (response) => {
@@ -185,7 +185,7 @@ export const truncate = (string, maximum = 10) => {
 
 /**
  * Return a string based on the recency of a Datetime.
- * @param {DateTime} datetime
+ * @param {Date} datetime
  * @returns {string}
  */
 export const since = (datetime) => {
@@ -224,7 +224,7 @@ export const since = (datetime) => {
 
 /**
  * Search for a value within all nodes of an Object.
- * @param {Object} object
+ * @param {object} object
  * @param {any} searchValue
  * @param {boolean} [caseSensitive]
  * @returns {boolean}

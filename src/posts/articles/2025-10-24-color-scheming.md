@@ -11,6 +11,9 @@ tags:
   - rss-only
 redirect_from:
   - /article/colour-scheming
+syndicate_to:
+  - https://fediverse.repc.co/@chrisburnell/115448234760009095
+  - https://bsky.app/profile/chrisburnell.com/post/3m47e6ly74s2s
 ---
 
 In this article, I’ll cover *how* to implement a colour-scheming system, gain some understanding of how to control the colour scheme in different ways, and write some CSS that leverages the strengths of the language to build a hierarchy of colour scheme controls.

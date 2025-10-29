@@ -59,38 +59,31 @@
 		{%- endif %}
 		{% if item.data.date or show_updated or show_responses or show_rss_only or show_popularity or show_hotness or show_pageviews -%}
 			<ul class=" [ cluster ] [ deck__meta ] ">
-				{% if item.data.date %}
+				{% if item.data.date -%}
 					<li>
 						<small>published</small> <a href="{{ item.url }}" class=" [ u-url ] "{% if item.data.title or item.data.of_title %} tabindex="-1"{% endif %}><time datetime="{{ item.data.date | rfc3339Date }}" class=" [ dt-published ] ">{{ item.data.date | friendlyDateLong | safe }}</time></a>
 					</li>
-				{% endif %}
-				{% if show_updated %}
+				{%- endif %}
+				{% if show_updated -%}
 					<li>
 						<small>updated</small> <a href="{{ item.url }}{{ '#updated' if item.data.updated_text }}" tabindex="-1"><time datetime="{{ item.data.updated | rfc3339Date }}" class=" [ dt-updated ] ">{{ item.data.updated | friendlyDateLong | safe }}</time></a>
 					</li>
-				{% endif %}
-				{% if show_responses %}
+				{%- endif %}
+				{% if show_responses -%}
 					{% set replies = item.data.webmentions.directReplies -%}
 					{% set reactions = item.data.webmentions.bookmarks.concat(item.data.webmentions.likes).concat(item.data.webmentions.reposts).concat(item.data.webmentions.links).concat(item.data.webmentions.socialReplies) -%}
-					<li>
-						{% set responses_array = [] -%}
-						{% if item.data.show_replies != false and replies.length -%}
-							{% set responses_item -%}<a href="{{ item.url }}#replies" title="Jump to replies for this {{ item.data.categoryProper | default(item.data.category) | default('page') }}"><c-emoji>💬</c-emoji>{{ replies.length }} {{ replies.length > 1 and 'replies' or 'reply' }}</a>{%- endset -%}
-							{% set responses_array = (responses_array.push(responses_item), responses_array) -%}
-						{% endif -%}
-						{% if item.data.show_reactions != false and reactions.length -%}
-							{% set responses_item -%}<a href="{{ item.url }}#reactions" title="Jump to reactions for this {{ item.data.categoryProper | default(item.data.category) | default('page') }}"><c-emoji>{{ item.data.webmentions.likes and '♥️' or item.data.webmentions.socialReplies and '⤴️' or '🔗' }}</c-emoji>{{ reactions.length }} reaction{{ 's' if reactions.length > 1 }}</a>{%- endset -%}
-							{% set responses_array = (responses_array.push(responses_item), responses_array) -%}
-						{% endif -%}
-						{% if show_stargazers -%}
-							{%- set github_user = item.data.github.split('/')[0] -%}
-							{%- set github_repo = item.data.github.split('/')[1] -%}
-							{% set responses_item -%}<a href="https://github.com/{{ github_user }}/{{ github_repo }}"><c-emoji>✨</c-emoji>{{ stargazers }} stargazer{{ 's' if stargazers > 1 }}</a>{%- endset -%}
-							{% set responses_array = (responses_array.push(responses_item), responses_array) -%}
-						{% endif -%}
-						{{ responses_array | conjunction | safe }}
-					</li>
-				{% endif %}
+					{% if item.data.show_replies != false and replies.length -%}
+						<li><a href="{{ item.url }}#replies" title="Jump to replies for this {{ item.data.categoryProper | default(item.data.category) | default('page') }}"><c-emoji>💬</c-emoji>{{ replies.length }} {{ replies.length > 1 and 'replies' or 'reply' }}</a></li>
+					{%- endif -%}
+					{% if item.data.show_reactions != false and reactions.length -%}
+						<li><a href="{{ item.url }}#reactions" title="Jump to reactions for this {{ item.data.categoryProper | default(item.data.category) | default('page') }}"><c-emoji>{{ item.data.webmentions.likes and '♥️' or item.data.webmentions.socialReplies and '⤴️' or '🔗' }}</c-emoji>{{ reactions.length }} reaction{{ 's' if reactions.length > 1 }}</a></li>
+					{%- endif -%}
+					{% if show_stargazers -%}
+						{%- set github_user = item.data.github.split('/')[0] -%}
+						{%- set github_repo = item.data.github.split('/')[1] -%}
+						<li><a href="https://github.com/{{ github_user }}/{{ github_repo }}"><c-emoji>✨</c-emoji>{{ stargazers }} stargazer{{ 's' if stargazers > 1 }}</a></li>
+					{%- endif -%}
+				{%- endif %}
 				{% if show_rss_only -%}
 					<li><a href="https://daverupert.com/rss-club/" title="This {{ item.data.categoryProper | default(item.data.category) }} is part of RSS Club" rel="external" target="_blank"><c-emoji style="vertical-align: baseline;"><svg width="18" height="18" aria-hidden="true" focusable="false" style="vertical-align: middle;"><use href="#svg--rss"></use></svg></c-emoji>RSS Club</a></li>
 				{%- endif %}

@@ -77,15 +77,10 @@ configForms.forEach((configForm) => {
 			setConfigGJ(
 				outputCommonJS,
 				inputDomain.value,
-				serverDomain.value,
+				inputServer.value,
 				"CommonJS",
 			);
-			setConfigGJ(
-				outputESM,
-				inputDomain.value,
-				serverDomain.value,
-				"ESM",
-			);
+			setConfigGJ(outputESM, inputDomain.value, inputServer.value, "ESM");
 		}
 	});
 

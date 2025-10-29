@@ -89,7 +89,7 @@ const getPerson = (title, url) => {
 };
 
 /**
- * @param {Object} item
+ * @param {object} item
  * @returns {boolean}
  */
 export const isPublished = (item) => {
@@ -111,7 +111,7 @@ export const isPublished = (item) => {
 };
 
 /**
- * @param {Object} item
+ * @param {object} item
  * @returns {boolean}
  */
 export const notReply = (item) => {
@@ -127,7 +127,7 @@ export const notReply = (item) => {
 };
 
 /**
- * @param {Object} data
+ * @param {object} data
  * @returns {object | string}
  */
 export const getPropertyData = (data) => {
@@ -144,7 +144,7 @@ export const getPropertyData = (data) => {
 };
 
 /**
- * @param {Object} data
+ * @param {object} data
  * @returns {string}
  */
 export const getPropertyURL = (data) => {
@@ -153,7 +153,7 @@ export const getPropertyURL = (data) => {
 };
 
 /**
- * @param {Object} data
+ * @param {object} data
  * @returns {string | null}
  */
 export const getPropertyTitle = (data) => {
@@ -162,7 +162,7 @@ export const getPropertyTitle = (data) => {
 };
 
 /**
- * @param {Object} data
+ * @param {object} data
  * @returns {string}
  */
 export const getPropertyTitleFallback = (data) => {
@@ -173,7 +173,7 @@ export const getPropertyTitleFallback = (data) => {
 };
 
 /**
- * @param {Object} data
+ * @param {object} data
  * @returns {string}
  */
 export const getPropertyLabel = (data) => {
@@ -192,7 +192,7 @@ export const getPropertyLabel = (data) => {
 };
 
 /**
- * @param {Object} data
+ * @param {object} data
  * @returns {object[]}
  */
 export const getAuthors = (data) => {
@@ -201,7 +201,7 @@ export const getAuthors = (data) => {
 
 /**
  * @param {object | string} author
- * @returns {Object}
+ * @returns {object}
  */
 export const getAuthorData = (author) => {
 	const authorTitle = author?.title || author;
@@ -221,7 +221,7 @@ export const getAuthorData = (author) => {
 };
 
 /**
- * @param {Object} author
+ * @param {object} author
  * @returns {string}
  */
 const authorString = (author) => {
@@ -239,7 +239,7 @@ const authorString = (author) => {
 };
 
 /**
- * @param {Object} data
+ * @param {object} data
  * @returns {string}
  */
 export const getAuthorsString = (data) => {
@@ -252,7 +252,7 @@ export const getAuthorsString = (data) => {
 };
 
 /**
- * @param {Object} data
+ * @param {object} data
  * @returns {object | string}
  */
 const getReplyData = (data) => {
@@ -260,7 +260,7 @@ const getReplyData = (data) => {
 };
 
 /**
- * @param {Object} data
+ * @param {object} data
  * @returns {string | null}
  */
 export const getReplyTitle = (data) => {
@@ -283,7 +283,7 @@ export const getReplyTitle = (data) => {
 };
 
 /**
- * @param {Object} data
+ * @param {object} data
  * @returns {string | null}
  */
 export const getReplyURL = (data) => {
@@ -298,7 +298,7 @@ export const getReplyURL = (data) => {
 };
 
 /**
- * @param {Object} data
+ * @param {object} data
  * @returns {string | null}
  */
 export const getReplyAuthor = (data) => {
@@ -313,7 +313,7 @@ export const getReplyAuthor = (data) => {
 };
 
 /**
- * @param {Object} data
+ * @param {object} data
  * @returns {string | null}
  */
 export const getReplyAuthorString = (data) => {
@@ -325,7 +325,7 @@ export const getReplyAuthorString = (data) => {
 };
 
 /**
- * @param {Object} data
+ * @param {object} data
  * @returns {string | null}
  */
 export const getRSVPString = (data) => {
@@ -389,7 +389,7 @@ export const getInternalTarget = (url) => {
 };
 
 /**
- * @param {Object} data
+ * @param {object} data
  * @returns {string}
  */
 export const getMetaTitle = (data) => {
@@ -407,7 +407,7 @@ export const getMetaTitle = (data) => {
 	return `A page on ${getHost(siteURL)}`;
 };
 /**
- * @param {Object} data
+ * @param {object} data
  * @returns {string}
  */
 export const getMetaImage = (data) => {

@@ -59,6 +59,13 @@ excludeFromSearch: true
 	{%- endif -%}
 {%- endfor -%}
 
+{#-
+{%- set most_popular_page_by_pageviews = collections.popularByPageviews | first -%}
+{%- set most_popular_page_by_responses = collections.popularByResponses | first -%}
+-#}
+{%- set most_popular_page = collections.popular | first -%}
+{%- set most_hot_page = collections.hot | first -%}
+
 {% set package_downloads = 0 -%}
 {% for project in collections.projects -%}
 	{% set package_downloads = package_downloads + (project.data.downloads | default(0)) -%}
@@ -71,7 +78,7 @@ excludeFromSearch: true
 <dl>
 	<dt>№ Posts</dt>
 	<dd>{{ all_posts.length | numberStringFormat }}</dd>
-	<dt>№ Blog Posts <a href="#fn1" id="fnref1"><sup class="footnote-ref">[1]</sup></a></dt>
+	<dt>№ Blog Posts<a href="#fn1" id="fnref1"><sup class="footnote-ref">[1]</sup></a></dt>
 	<dd>{{ blog_count | numberStringFormat }}</dd>
 	<dt>First Blog Post</dt>
 	<dd><a href="{{ first_post | keyValue('url') }}">{{ first_post | keyValue('data.title') | safe }}</a><br><time datetime="{{ first_post | keyValue('data.date') | rfc3339Date | safe }}">{{ first_post | keyValue('data.date') | friendlyDateLong | safe }}</time></dd>
@@ -81,6 +88,16 @@ excludeFromSearch: true
 	<dd>{{ blog_wordcount | numberStringFormat }}</dd>
 	<dt>Most Verbose Post</dt>
 	<dd><a href="{{ blog_posts[wordiest_post_index].url }}">{{ blog_posts[wordiest_post_index].data.title }}</a> <small>with</small> {{ wordiest_blog_post | numberStringFormat }} words</dd>
+	{#
+	<dt>Most Popular Page by Pageviews</dt>
+	<dd><a href="{{ most_popular_page_by_pageviews | keyValue('url') }}">{{ most_popular_page_by_pageviews | keyValue('data.meta_title') | safe }}</a><br><time datetime="{{ most_popular_page_by_pageviews | keyValue('data.date') | rfc3339Date | safe }}">{{ most_popular_page_by_pageviews | keyValue('data.date') | friendlyDateLong | safe }}</time></dd>
+	<dt>Most Popular Page by Responses</dt>
+	<dd><a href="{{ most_popular_page_by_responses | keyValue('url') }}">{{ most_popular_page_by_responses | keyValue('data.meta_title') | safe }}</a><br><time datetime="{{ most_popular_page_by_responses | keyValue('data.date') | rfc3339Date | safe }}">{{ most_popular_page_by_responses | keyValue('data.date') | friendlyDateLong | safe }}</time></dd>
+	-#}
+	<dt>Most Popular Page<a href="#fn2" id="fnref2"><sup class="footnote-ref">[2]</sup></a></dt>
+	<dd><a href="{{ most_popular_page | keyValue('url') }}">{{ most_popular_page | keyValue('data.meta_title') | safe }}</a><br><time datetime="{{ most_popular_page | keyValue('data.date') | rfc3339Date | safe }}">{{ most_popular_page | keyValue('data.date') | friendlyDateLong | safe }}</time></dd>
+	<dt>Hottest Page<a href="#fn3" id="fnref3"><sup class="footnote-ref">[3]</sup></a></dt>
+	<dd><a href="{{ most_hot_page | keyValue('url') }}">{{ most_hot_page | keyValue('data.meta_title') | safe }}</a><br><time datetime="{{ most_hot_page | keyValue('data.date') | rfc3339Date | safe }}">{{ most_hot_page | keyValue('data.date') | friendlyDateLong | safe }}</time></dd>
 	<dt>№ Projects</dt>
 	<dd><a href="/projects/">{{ (projects.web.length + projects.personal.length + collections.projects.length) | numberStringFormat }}</a></dd>
 	<dt>Total Project Downloads</dt>
@@ -184,8 +201,19 @@ excludeFromSearch: true
 <nav aria-label="Footnotes">
 	<ol>
 		<li id="fn1" class=" [ flow ] ">
-			<p>What’s the difference between a <q>post</q> and <q>blog post</q>? </p>
-			<p>Well, there are a number of <a href="/posts/#categories">post categories</a> (e.g. <a href="/music/">music reviews</a>) that aren’t very <q>bloggy</q> per se, so I make the distinction that <strong>blog posts</strong> specifically have a decent heft of written content to them. <a href="#fnref1">↩︎</a></p>
+			<p>What’s the difference between a <q>post</q> and <q>blog post</q>?
+			<br>
+			Well, there are a number of <a href="/posts/#categories">post categories</a> (e.g. <a href="/music/">music reviews</a>) that aren’t very <q>bloggy</q> per se, so I make the distinction that <strong>blog posts</strong> specifically have a decent heft of written content to them. <a href="#fnref1">↩︎</a></p>
+		</li>
+		<li id="fn2" class=" [ flow ] ">
+			<p>Popularity?
+			<br>
+			<q>Popularity</q> is calculated by weighting the number of a page’s pageviews against the number of Webmentions attached to the page (<span class=" [ ordinal ] "><code>α</code> = {{ site.weights.pageviewsCoefficient }}</span>). Pages’ scores are compared and sorted to determine a popularity ranking, and the top 10 are shown on the <a href="/popular/">Popular</a> page. <a href="#fnref2">↩︎</a></p>
+		</li>
+		<li id="fn3" class=" [ flow ] ">
+			<p>Hotness?
+			<br>
+			<q>Hotness</q> is calculated by weighting the <a href="https://en.wikipedia.org/wiki/Moving_average#Exponential_moving_average" rel="external noopener">exponential moving average</a> (<span class=" [ ordinal ] "><code>β</code> = 0.2</span>) of a page’s pageviews over time against the <abbr title="exponential moving average">EMA</abbr> (<span class=" [ ordinal ] "><code>γ</code> = {{ site.weights.responsesCoefficient }}</span>) of Webmentions attached to the page over time (<span class=" [ ordinal ] "><code>α</code> = {{ site.weights.hotnessCoefficient }}</span>). Pages’ scores are compared and sorted to determine a hotness ranking, and the top 10 are shown on the <a href="/hot/">Hot</a> page. <a href="#fnref3">↩︎</a></p>
 		</li>
 	</ol>
 </nav>

@@ -5,8 +5,7 @@
 ////
 
 .shelf {
-	--row-gap: var(--size-gap);
-	--grid-min-inline-size: 10em;
+	--gap: var(--size-gap);
 
 	margin-block-start: var(--size-gap);
 

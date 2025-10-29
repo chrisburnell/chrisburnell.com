@@ -16,7 +16,7 @@ eleventyComputed:
 {%- set latest_year = collection[0].data.year | default(collection[0].year) -%}
 {%- set first_year = collection[count-1].data.year | default(collection[count-1].year) -%}
 {%- set list_type = collection[0].data.list -%}
-<div class=" [ pantheon{% if category.full %}  full{% endif %} ] [ wrap ] [ archive ] ">
+<div class=" [ pantheon{% if category.categoryFull or category.full %}  full{% endif %} ] [ wrap ] [ archive ] ">
 	<ul class=" [ cluster ] [ breadcrumbs ] " data-pagefind-ignore>
 		<li>
 			<a href="/posts/">All Posts</a>
@@ -58,7 +58,7 @@ eleventyComputed:
 					<li><c-librarian-button key="chronological" default="descending">by publish date</c-librarian-button></li>
 				</ul>
 			</c-librarian>
-			<div class=" [ grid ] [ shelf {% if collection[0].data.shelfAlignment %} shelf--{{ collection[0].data.shelfAlignment }} {% endif %}] " aria-live="polite">
+			<div class=" [ grid ] [ shelf {% if collection[0].data.shelfAlignment %} shelf--{{ collection[0].data.shelfAlignment }} {% endif %}] " aria-live="polite"{% if category.masonry %} data-rows="masonry"{% endif %}>
 				{% for item in collection %}
 					{{ shelfItem(item, { hfeed: true, show_images: true, truncate: true }) }}
 				{% endfor %}

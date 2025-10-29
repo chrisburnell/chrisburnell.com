@@ -23,7 +23,7 @@ export const DecimalToSexagesimal = (value) => {
 
 /**
  * Converts a JS Date Object to a Sexagesimal (Base 60) String
- * @param {DateTime} repository
+ * @param {Date} dateObject
  * @returns {string}
  */
 export const DateToSexagesimal = (dateObject) => {
@@ -35,7 +35,7 @@ export const DateToSexagesimal = (dateObject) => {
 let cachedCodes = new Map();
 
 /**
- * @param {DateTime} date
+ * @param {Date} date
  * @param {string} categoryCode
  * @param {object[]} collection
  * @returns {string}

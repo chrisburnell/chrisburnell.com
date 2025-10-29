@@ -37,7 +37,9 @@ window.loadIndieConfig = (function () {
 		if (correctSource && config === undefined) {
 			try {
 				config = JSON.parse(message.data);
-			} catch (ignore) {}
+			} catch (error) {
+				console.log(error);
+			}
 
 			handleConfig();
 		}
