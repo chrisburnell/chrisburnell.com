@@ -9,10 +9,12 @@ import publications from "../eleventy/data/publications.js";
 import {
 	cacheDurations,
 	favicon,
+	limits,
 	url as siteURL,
 } from "../eleventy/data/site.js";
 import { getCategoryName } from "../eleventy/filters/collections.js";
 import {
+	dateSort,
 	epoch,
 	friendlyDate,
 	getRSVPValueHTML,
@@ -45,7 +47,7 @@ const pages = await EleventyFetch("https://chrisburnell.com/all.json", {
 /**
  * @param {string} [title]
  * @param {string} [url]
- * @returns {null | string}
+ * @returns {string|undefined}
  */
 const getPerson = (title, url) => {
 	return allPeople.find((person) => {
@@ -127,8 +129,51 @@ export const notReply = (item) => {
 };
 
 /**
+ * @param {object[]} item
+ * @returns {object[]}
+ */
+export const hasMinimumPageviews = (item) => {
+	return item.data.pageviews.total >= limits.minimumPageviewsRequired;
+};
+
+/**
+ * @param {string|string[]} tags
+ * @param {string} collectionName
+ * @returns {string}
+ */
+export const getCacheKey = (tags, collectionName) => {
+	return collectionName || (Array.isArray(tags) ? tags.join(",") : tags);
+};
+
+/**
+ * @param {object[]} collection
+ * @param {string|string[]} tags
+ * @returns {object[]}
+ */
+export const flattenCollections = (collection, tags) => {
+	const seen = new Set();
+	return tags
+		.flatMap((tag) => collection.getFilteredByTag(tag))
+		.filter((item) => {
+			if (seen.has(item.inputPath)) {
+				return false;
+			}
+			seen.add(item.inputPath);
+			return true;
+		});
+};
+
+/**
+ * @param {object[]} collection
+ * @returns {object[]}
+ */
+export const applyDefaultFilter = (collection) => {
+	return collection.filter(isPublished).sort(dateSort);
+};
+
+/**
  * @param {object} data
- * @returns {object | string}
+ * @returns {object|string}
  */
 export const getPropertyData = (data) => {
 	return (
@@ -154,7 +199,7 @@ export const getPropertyURL = (data) => {
 
 /**
  * @param {object} data
- * @returns {string | null}
+ * @returns {string|null}
  */
 export const getPropertyTitle = (data) => {
 	const propertyData = getPropertyData(data);
@@ -200,7 +245,7 @@ export const getAuthors = (data) => {
 };
 
 /**
- * @param {object | string} author
+ * @param {object|string} author
  * @returns {object}
  */
 export const getAuthorData = (author) => {
@@ -253,7 +298,7 @@ export const getAuthorsString = (data) => {
 
 /**
  * @param {object} data
- * @returns {object | string}
+ * @returns {object|string}
  */
 const getReplyData = (data) => {
 	return data?.in_reply_to;
@@ -261,7 +306,7 @@ const getReplyData = (data) => {
 
 /**
  * @param {object} data
- * @returns {string | null}
+ * @returns {string|null}
  */
 export const getReplyTitle = (data) => {
 	const replyData = getReplyData(data);
@@ -284,7 +329,7 @@ export const getReplyTitle = (data) => {
 
 /**
  * @param {object} data
- * @returns {string | null}
+ * @returns {string|null}
  */
 export const getReplyURL = (data) => {
 	const replyData = getReplyData(data);
@@ -299,7 +344,7 @@ export const getReplyURL = (data) => {
 
 /**
  * @param {object} data
- * @returns {string | null}
+ * @returns {string|null}
  */
 export const getReplyAuthor = (data) => {
 	const replyURL = getReplyURL(data);
@@ -314,7 +359,7 @@ export const getReplyAuthor = (data) => {
 
 /**
  * @param {object} data
- * @returns {string | null}
+ * @returns {string|null}
  */
 export const getReplyAuthorString = (data) => {
 	const replyAuthor = getReplyAuthor(data);
@@ -326,7 +371,7 @@ export const getReplyAuthorString = (data) => {
 
 /**
  * @param {object} data
- * @returns {string | null}
+ * @returns {string|null}
  */
 export const getRSVPString = (data) => {
 	const rsvp = data.rsvp;
@@ -423,6 +468,10 @@ export const getMetaImage = (data) => {
 export default {
 	isPublished,
 	notReply,
+	getCacheKey,
+	flattenCollections,
+	applyDefaultFilter,
+	hasMinimumPageviews,
 	getPropertyData,
 	getPropertyTitle,
 	getPropertyURL,

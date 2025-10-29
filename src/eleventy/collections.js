@@ -3,10 +3,22 @@ dotenv.config({ quiet: true });
 
 import { getWebmentionPublished } from "@chrisburnell/eleventy-cache-webmentions";
 import { currentYear, nowEpoch } from "../eleventy/data/global.js";
-import { isPublished, notReply } from "../functions/collections.js";
+import {
+	applyDefaultFilter,
+	flattenCollections,
+	getCacheKey,
+	hasMinimumPageviews,
+	notReply,
+} from "../functions/collections.js";
 import { exponentialMovingAverage } from "../functions/utils.js";
 import { limits, weights } from "./data/site.js";
-import { dateSort, epoch, isFuture, isUpcoming } from "./filters/dates.js";
+import {
+	dateSort,
+	epoch,
+	isFuture,
+	isUpcoming,
+	scoreSort,
+} from "./filters/dates.js";
 
 const durationDay = 24 * 60 * 60 * 1000;
 
@@ -15,9 +27,9 @@ let cachedCollections = new Map();
 /**
  * @param {object[]} collection
  * @param {string|string[]} tags
- * @param {Function} fn
- * @param {string} collectionName
- * @param {boolean} limit
+ * @param {Function} [fn]
+ * @param {string} [collectionName]
+ * @param {boolean} [limit]
  * @returns {object[]}
  */
 const filterCollection = (
@@ -27,8 +39,7 @@ const filterCollection = (
 	collectionName,
 	limit = false,
 ) => {
-	const cacheKey =
-		collectionName || (Array.isArray(tags) ? tags.join(",") : tags);
+	const cacheKey = getCacheKey(tags, collectionName);
 
 	if (cachedCollections.has(cacheKey)) {
 		return cachedCollections.get(cacheKey);
@@ -37,30 +48,21 @@ const filterCollection = (
 	let filteredCollection;
 
 	if (Array.isArray(tags)) {
-		const seen = new Set();
-		filteredCollection = tags
-			.flatMap((tag) => collection.getFilteredByTag(tag))
-			.filter((item) => {
-				if (seen.has(item.inputPath)) {
-					return false;
-				}
-				seen.add(item.inputPath);
-				return true;
-			});
+		filteredCollection = flattenCollections(collection, tags);
 	} else {
 		filteredCollection = collection.getFilteredByTag(tags);
 	}
 
-	filteredCollection = filteredCollection.filter(isPublished).sort(dateSort);
-
+	// If additional manipulation is required, it is passed in so it can be
+	// cached too. Otherwise, apply default filtering.
 	if (fn !== undefined) {
-		// If additional manipulation is required, it is passed in so it too can
-		// be cached
 		filteredCollection = fn(filteredCollection);
+	} else {
+		filteredCollection = applyDefaultFilter(filteredCollection);
 	}
 
+	// Keep only a few items per collection for performance
 	if (limit && process.env.ELEVENTY_RUN_MODE !== "build") {
-		// Keep only a few items per collection for performance
 		filteredCollection = filteredCollection.slice(0, limits.feed);
 	}
 
@@ -71,11 +73,52 @@ const filterCollection = (
 };
 
 /**
+ * "Popular" sorting is done by totalling pageviews.
+ * @param {object[]} collection
+ * @param {string|string[]} tags
+ * @param {string} collectionName
+ * @param {boolean} [limit]
+ * @returns {object[]}
+ */
+const buildPopularCollection = (
+	collection,
+	tags,
+	collectionName,
+	limit = false,
+) => {
+	return filterCollection(
+		collection,
+		tags,
+		(items) => {
+			return applyDefaultFilter(items)
+				.filter(notReply)
+				.filter(hasMinimumPageviews)
+				.map((item) => {
+					item.data.rank.score =
+						Math.log1p(item.data.webmentions.length) +
+						weights.pageviewsCoefficient *
+							Math.log1p(item.data.pageviews.total);
+					return item;
+				})
+				.sort(scoreSort)
+				.slice(0, limits.feed)
+				.map((item, i) => {
+					delete item.data.rank.score;
+					item.data.rank[collectionName] = i + 1;
+					return item;
+				});
+		},
+		collectionName,
+		limit,
+	);
+};
+
+/**
  * @param {object[]} collection
  * @returns {object[]}
  */
 export const pages = (collection) => {
-	return filterCollection(collection, "page");
+	return filterCollection(collection, "page", undefined, "pages");
 };
 
 /**
@@ -83,7 +126,7 @@ export const pages = (collection) => {
  * @returns {object[]}
  */
 export const posts = (collection) => {
-	return filterCollection(collection, "post");
+	return filterCollection(collection, "post", undefined, "posts");
 };
 
 /**
@@ -92,7 +135,7 @@ export const posts = (collection) => {
  */
 export const blogPosts = (collection) => {
 	return filterCollection(collection, "blog", (items) => {
-		return items.filter((item) => {
+		return applyDefaultFilter(items).filter((item) => {
 			return !item.data.rsvp;
 		});
 	});
@@ -111,7 +154,7 @@ export const pinnedPosts = (collection) => {
  * @returns {object[]}
  */
 export const projects = (collection) => {
-	return filterCollection(collection, "project");
+	return filterCollection(collection, "project", undefined, "projects");
 };
 
 /**
@@ -119,20 +162,20 @@ export const projects = (collection) => {
  * @returns {object[]}
  */
 export const drafts = (collection) => {
-	if (cachedCollections.has("drafts")) {
-		return cachedCollections.get("drafts");
-	}
-
-	const filteredCollection = collection
-		.getFilteredByTag("post")
-		.filter(
-			(item) => item.data.draft === true || item.data.published === false,
-		)
-		.sort(dateSort);
-
-	cachedCollections.set("drafts", filteredCollection);
-
-	return filteredCollection;
+	return filterCollection(
+		collection,
+		"post",
+		(items) => {
+			return items
+				.filter(
+					(item) =>
+						item.data.draft === true ||
+						item.data.published === false,
+				)
+				.sort(dateSort);
+		},
+		"drafts",
+	);
 };
 
 /**
@@ -151,8 +194,8 @@ export const features = (collection) => {
 	return filterCollection(
 		collection,
 		"feature",
-		(filtered) => {
-			return filtered.filter(notReply);
+		(items) => {
+			return applyDefaultFilter(items).filter(notReply);
 		},
 		"features",
 	);
@@ -163,22 +206,16 @@ export const features = (collection) => {
  * @returns {object[]}
  */
 export const attendances = (collection) => {
-	if (cachedCollections.has("attendances")) {
-		return cachedCollections.get("attendances");
-	}
-
-	const conferences = filterCollection(collection, "conference");
-	const meetups = filterCollection(collection, "meetup");
-
-	const filteredCollection = [...conferences, ...meetups]
-		.filter((item) => {
-			return "rsvp" in item.data && item.data.rsvp.value === "yes";
-		})
-		.sort(dateSort);
-
-	cachedCollections.set("attendances", filteredCollection);
-
-	return filteredCollection;
+	return filterCollection(
+		collection,
+		["conference", "meetup"],
+		(items) => {
+			return applyDefaultFilter(items).filter((item) => {
+				return "rsvp" in item.data && item.data.rsvp.value === "yes";
+			});
+		},
+		"attendances",
+	);
 };
 
 /**
@@ -189,8 +226,8 @@ export const checkins = (collection) => {
 	return filterCollection(
 		collection,
 		"post",
-		(filtered) => {
-			return filtered.filter((item) => {
+		(items) => {
+			return applyDefaultFilter(items).filter((item) => {
 				return "checkin" in item.data;
 			});
 		},
@@ -206,8 +243,8 @@ export const replies = (collection) => {
 	return filterCollection(
 		collection,
 		"note",
-		(filtered) => {
-			return filtered
+		(items) => {
+			return applyDefaultFilter(items)
 				.filter((item) => "in_reply_to" in item.data)
 				.filter((item) => !("rsvp" in item.data));
 		},
@@ -223,8 +260,8 @@ export const notesWithoutReplies = (collection) => {
 	return filterCollection(
 		collection,
 		"note",
-		(filtered) => {
-			return filtered.filter(notReply);
+		(items) => {
+			return applyDefaultFilter(items).filter(notReply);
 		},
 		"notesWithoutReplies",
 	);
@@ -238,8 +275,8 @@ export const rsvps = (collection) => {
 	return filterCollection(
 		collection,
 		"post",
-		(filtered) => {
-			return filtered
+		(items) => {
+			return applyDefaultFilter(items)
 				.filter((item) => "rsvp" in item.data)
 				.sort((a, b) => {
 					if (a.data.rsvp.end && b.data.rsvp.end) {
@@ -263,8 +300,8 @@ export const rsvpsToday = (collection) => {
 	return filterCollection(
 		collection,
 		"post",
-		(filtered) => {
-			return filtered
+		(items) => {
+			return applyDefaultFilter(items)
 				.filter((item) => item.data.rsvp)
 				.filter((item) => {
 					// Check that the end isn't in the past
@@ -295,8 +332,8 @@ export const rsvpsUpcoming = (collection) => {
 	return filterCollection(
 		collection,
 		"post",
-		(filtered) => {
-			return filtered
+		(items) => {
+			return applyDefaultFilter(items)
 				.filter((item) => item.data.rsvp)
 				.filter((item) => {
 					// Check that the end isn't in the past
@@ -367,157 +404,69 @@ export const onThisDay = (collection) => {
  * @param {object[]} collection
  * @returns {object[]}
  */
-export const popular = (collection) => {
-	// "Popular" sorting is done by totalling pageviews.
-
-	if (cachedCollections.has("popular")) {
-		return cachedCollections.get("popular");
-	}
-
-	const features = collection.getFilteredByTag("feature");
-	const projects = collection.getFilteredByTag("project");
-	let filteredCollection = [...features, ...projects]
-		.filter(isPublished)
-		.filter(notReply)
-		.filter((item) => {
-			return item.data.pageviews.total >= limits.minimumPageviewsRequired;
-		})
-		.sort(dateSort)
-		.map((item) => {
-			item.data.rank.popularScore =
-				Math.log1p(item.data.webmentions.length) +
-				weights.pageviewsCoefficient *
-					Math.log1p(item.data.pageviews.total);
-			return item;
-		})
-		.sort((a, b) => {
-			return b.data.rank.popularScore - a.data.rank.popularScore;
-		})
-		.map((item, i) => {
-			delete item.data.rank.popularScore;
-			item.data.rank.popular = i + 1;
-			return item;
-		})
-		.slice(0, limits.feed);
-
-	cachedCollections.set("popular", filteredCollection);
-
-	return filteredCollection;
-};
+export const popular = (collection) =>
+	buildPopularCollection(collection, ["feature", "project"], "popular");
 
 /**
  * @param {object[]} collection
  * @returns {object[]}
  */
-export const popularByResponses = (collection) => {
-	if (cachedCollections.has("popularByResponses")) {
-		return cachedCollections.get("popularByResponses");
-	}
-
-	const features = collection.getFilteredByTag("feature");
-	const projects = collection.getFilteredByTag("project");
-	let filteredCollection = [...features, ...projects]
-		.filter(isPublished)
-		.filter(notReply)
-		.filter((item) => {
-			return (
-				item.data.webmentions.length >= limits.minimumResponsesRequired
-			);
-		})
-		.sort(dateSort)
-		.sort((a, b) => {
-			return b.data.webmentions.length - a.data.webmentions.length;
-		})
-		.map((item, i) => {
-			item.data.rank.popularByResponses = i + 1;
-			return item;
-		})
-		.slice(0, limits.feed);
-
-	cachedCollections.set("popularByResponses", filteredCollection);
-
-	return filteredCollection;
-};
+export const popularFeatures = (collection) =>
+	buildPopularCollection(collection, ["feature"], "popularFeatures");
 
 /**
  * @param {object[]} collection
  * @returns {object[]}
  */
-export const popularByPageviews = (collection) => {
-	if (cachedCollections.has("popularByPageviews")) {
-		return cachedCollections.get("popularByPageviews");
-	}
-
-	const features = collection.getFilteredByTag("feature");
-	const projects = collection.getFilteredByTag("project");
-	let filteredCollection = [...features, ...projects]
-		.filter(isPublished)
-		.filter(notReply)
-		.filter((item) => {
-			return item.data.pageviews.total >= limits.minimumPageviewsRequired;
-		})
-		.sort(dateSort)
-		.sort((a, b) => {
-			return b.data.pageviews.total - a.data.pageviews.total;
-		})
-		.map((item, i) => {
-			item.data.rank.popularByPageviews = i + 1;
-			return item;
-		})
-		.slice(0, limits.feed);
-
-	cachedCollections.set("popularByPageviews", filteredCollection);
-
-	return filteredCollection;
-};
+export const popularProjects = (collection) =>
+	buildPopularCollection(collection, ["project"], "popularProjects");
 
 /**
  * @param {object[]} collection
  * @returns {object[]}
  */
 export const hot = (collection) => {
-	if (cachedCollections.has("hot")) {
-		return cachedCollections.get("hot");
-	}
-
-	const features = collection.getFilteredByTag("feature");
-	const projects = collection.getFilteredByTag("project");
-	let filteredCollection = [...features, ...projects]
-		.filter(isPublished)
-		.filter(notReply)
-		.filter((item) => {
-			return item.data.pageviews.total >= limits.minimumPageviewsRequired;
-		})
-		.sort(dateSort)
-		.map((item) => {
-			const emaWebmentions = item.data.webmentions.all.reduce(
-				(accumulator, webmention) =>
-					exponentialMovingAverage(
-						epoch(getWebmentionPublished(webmention)) / durationDay,
-						accumulator,
-						weights.responsesCoefficient,
-					),
-				0,
-			);
-			item.data.rank.hotScore =
-				Math.log1p(emaWebmentions) +
-				weights.hotnessCoefficient *
-					Math.log1p(item.data.pageviews.hotness);
-			return item;
-		})
-		.sort((a, b) => {
-			return b.data.rank.hotScore - a.data.rank.hotScore;
-		})
-		.map((item, i) => {
-			delete item.data.rank.hotScore;
-			item.data.rank.hot = i + 1;
-			return item;
-		})
-		.slice(0, limits.feed);
-
-	cachedCollections.set("hot", filteredCollection);
-
-	return filteredCollection;
+	return filterCollection(
+		collection,
+		["feature", "project"],
+		(items) => {
+			return applyDefaultFilter(items)
+				.filter(notReply)
+				.filter((item) => {
+					return (
+						item.data.pageviews.total >=
+						limits.minimumPageviewsRequired
+					);
+				})
+				.map((item) => {
+					const emaWebmentions = item.data.webmentions.all.reduce(
+						(accumulator, webmention) =>
+							exponentialMovingAverage(
+								epoch(getWebmentionPublished(webmention)) /
+									durationDay,
+								accumulator,
+								weights.responsesCoefficient,
+							),
+						0,
+					);
+					item.data.rank.hotScore =
+						Math.log1p(emaWebmentions) +
+						weights.hotnessCoefficient *
+							Math.log1p(item.data.pageviews.hotness);
+					return item;
+				})
+				.sort((a, b) => {
+					return b.data.rank.hotScore - a.data.rank.hotScore;
+				})
+				.map((item, i) => {
+					delete item.data.rank.hotScore;
+					item.data.rank.hot = i + 1;
+					return item;
+				})
+				.slice(0, limits.feed);
+		},
+		"hot",
+	);
 };
 
 export default {
@@ -538,7 +487,7 @@ export default {
 	rsvpsUpcoming,
 	onThisDay,
 	popular,
-	popularByResponses,
-	popularByPageviews,
+	popularFeatures,
+	popularProjects,
 	hot,
 };

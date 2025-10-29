@@ -207,6 +207,15 @@ export const sortByDate = (array) => {
 };
 
 /**
+ * @param {object} a
+ * @param {object} b
+ * @returns {number}
+ */
+export const scoreSort = (a, b) => {
+	return b.data.rank.score - a.data.rank.score;
+};
+
+/**
  * @param {number} value
  * @returns {number}
  */

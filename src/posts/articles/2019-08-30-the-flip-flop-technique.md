@@ -8,7 +8,6 @@ tags:
   - css
   - css-variables
 syndicate_to:
-  - https://dev.to/chrisburnell/the-flip-flop-technique-2hh4
   - https://mastodon.social/users/chrisburnell/statuses/102705333471640919
   - https://twitter.com/iamchrisburnell/status/1167375436617330693
 ---

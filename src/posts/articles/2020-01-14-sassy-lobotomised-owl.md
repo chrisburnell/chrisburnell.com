@@ -11,7 +11,6 @@ tags:
   - css
   - scss
 syndicate_to:
-  - https://dev.to/chrisburnell/sassy-lobotomised-owl-pfl
   - https://twitter.com/iamchrisburnell/status/1220678282590531584
 redirect_from:
   - /article/sassy-lobotomized-owl

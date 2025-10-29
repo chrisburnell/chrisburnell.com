@@ -1,43 +1,57 @@
+import {
+	bluesky,
+	codepen,
+	github,
+	mastodon_domain,
+	speakerdeck,
+	twitter,
+	untappd,
+} from "./author.js";
+
 export default [
 	{
+		title: "Bluesky",
+		url: `https://bsky.app/profile/${bluesky}`,
+	},
+	{
+		title: "CodePen",
+		url: `https://codepen.io/${codepen}`,
+	},
+	{
 		title: "GitHub",
-		url: "https://github.com/chrisburnell",
+		url: `https://github.com/${github}`,
+	},
+	{
+		title: "GitHub Gist",
+		url: `https://gist.github.com/${github}`,
+	},
+	{
+		title: "Mastodon",
+		url: `https://${mastodon_domain}`,
+	},
+	{
+		title: "Speakerdeck",
+		url: `https://speakerdeck.com/${speakerdeck}`,
 	},
 	{
 		title: "Twitter",
-		url: "https://twitter.com/iamchrisburnell",
+		url: `https://twitter.com/${twitter}`,
+	},
+	{
+		title: "Untappd",
+		url: `https://untappd.com/user/${untappd}`,
 	},
 	{
 		title: "Twitter",
 		url: "https://twitter.chrisburnell.com",
 	},
 	{
-		title: "CodePen",
-		url: "https://codepen.io/chrisburnell",
-	},
-	{
-		title: "Mastodon",
-		url: "https://fediverse.repc.co",
+		title: "Vimeo",
+		url: "https://vimeo.com/chrisburnell",
 	},
 	{
 		title: "Mastodon",
 		url: "https://mastodon.social/users/chrisburnell",
-	},
-	{
-		title: "Untappd",
-		url: "https://untappd.com/user/chrisburnell",
-	},
-	{
-		title: "Speakerdeck",
-		url: "https://speakerdeck.com/chrisburnell",
-	},
-	{
-		title: "DEV.to",
-		url: "https://dev.to/chrisburnell",
-	},
-	{
-		title: "GitHub Gist",
-		url: "https://gist.github.com/chrisburnell",
 	},
 	{
 		title: "IndieNews",
@@ -48,15 +62,11 @@ export default [
 		url: "https://album.link",
 	},
 	{
-		title: "Vimeo",
-		url: "https://vimeo.com/chrisburnell",
+		title: "Open Library",
+		url: "https://openlibrary.org",
 	},
 	{
 		title: "YouTube",
 		url: "https://www.youtube.com",
-	},
-	{
-		title: "Open Library",
-		url: "https://openlibrary.org",
 	},
 ];

@@ -74,9 +74,9 @@ excludeFromSearch: true
 
 			<hr>
 
-			<h2 id="projects">Latest Projects</h2>
+			<h2 id="projects">Popular Projects</h2>
 			<div class=" [ deck ] ">
-				{% for item in collections.projects | limit(site.limits.feature) %}
+				{% for item in collections.popularProjects | limit(site.limits.feature) %}
 					{{ deckItem(item, { show_pageviews: false }) }}
 				{% endfor %}
 			</div>

@@ -57,7 +57,7 @@ class Librarian {
 	 * @param {HTMLElement} element - A given shelf item.
 	 * @param {string} selector - A selector to query a subElement of the shelf item.
 	 * @param {string} property - A property of the subElement.
-	 * @returns {string | null} The value obtained from the subElement.
+	 * @returns {string|null} The value obtained from the subElement.
 	 */
 	getValue(element, selector, property) {
 		const subElement = element.querySelector(selector);

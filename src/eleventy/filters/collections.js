@@ -16,6 +16,16 @@ export const arePublished = (array) => {
  * @param {object[]} array
  * @returns {object[]}
  */
+export const feedFilter = (array) => {
+	return array.filter((item) => {
+		return item.data.tags && !item.data.tags.includes("no-rss");
+	});
+};
+
+/**
+ * @param {object[]} array
+ * @returns {object[]}
+ */
 export const sitemapFilter = (array) => {
 	return array.filter((item) => {
 		return (
@@ -124,6 +134,7 @@ export const getCollectionCountByWeekday = (items, weekday) => {
 
 export default {
 	arePublished,
+	feedFilter,
 	sitemapFilter,
 	getCategoryName,
 	categoryFilter,
