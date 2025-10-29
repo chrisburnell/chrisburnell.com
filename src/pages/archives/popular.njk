@@ -4,8 +4,14 @@ related_collection: popular
 no_feed: true
 by_year: false
 list: deck
-show_popularity: false
 show_hotness: false
 eleventyComputed:
   description: "Top {{ site.limits.feed | numberStringFormat }} pages ordered by pageviews and responses. <br>You can also browse <a href=\"/posts/#latest\">latest posts</a> and <a href=\"/hot/\">hot pages</a>."
 ---
+
+<c-details>
+	<summary>How are pages scored on <q>popularity</q>?</summary>
+	<p>Popularity is calculated by weighting the number of a page’s pageviews against the number of Webmentions attached to the page (<span class=" [ ordinal ] "><code>α</code> = {{ site.weights.pageviewsCoefficient }}</span>). Pages’ scores are compared and sorted to determine a popularity ranking, and the top 10 are shown on this page.</p>
+</c-details>
+
+<hr>

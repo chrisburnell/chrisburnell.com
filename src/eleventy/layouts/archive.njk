@@ -52,6 +52,8 @@ layout: base
 			{% include 'js-naked-day.njk' %}
 		{%- endif %}
 
+		{{- content | safe -}}
+
 		{%- if by_year -%}
 			{% set i = 1 -%}
 			{% for year, posts in collection | groupby('data.year') | dictsort | reverse -%}

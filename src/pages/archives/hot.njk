@@ -5,7 +5,13 @@ no_feed: true
 by_year: false
 list: deck
 show_popularity: false
-show_hotness: false
 eleventyComputed:
   description: "Top {{ site.limits.feed | numberStringFormat }} pages ordered by pageviews and responses over time. <br>You can also browse <a href=\"/posts/#latest\">latest posts</a> and <a href=\"/popular/\">popular pages</a>."
 ---
+
+<c-details>
+	<summary>How are pages scored on <q>hotness</q>?</summary>
+	<p>Hotness is calculated by weighting the <a href="https://en.wikipedia.org/wiki/Moving_average#Exponential_moving_average" rel="external noopener">exponential moving average</a> (<span class=" [ ordinal ] "><code>β</code> = 0.2</span>) of a page’s pageviews over time against the <abbr title="exponential moving average">EMA</abbr> (<span class=" [ ordinal ] "><code>γ</code> = {{ site.weights.responsesCoefficient }}</span>) of its responses (incoming Webmentions) over time (<span class=" [ ordinal ] "><code>α</code> = {{ site.weights.hotnessCoefficient }}</span>). Pages’ scores are compared and sorted to determine a hotness ranking, and the top 10 are shown on this page.</p>
+</c-details>
+
+<hr>
