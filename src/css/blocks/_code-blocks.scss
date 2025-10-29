@@ -22,23 +22,13 @@
 	}
 }
 
-pre[data-language] {
+pre[class*="language-"] {
 	--flow-space: var(--size-large);
-	background-color: light-dark(var(--color-mineshaft), var(--color-thunder));
+	background-color: light-dark(var(--color-mineshaft), color-mix(in oklab, var(--color-mineshaft), var(--color-thunder)));
 	border-block-start: var(--size-border-thin) solid var(--border-color, var(--color-raven));
-	padding: var(--size-gap) var(--size-gutter) 1em;
+	padding: var(--size-gutter);
 	border-radius: 0 0 var(--border-radius, var(--size-border-thin)) var(--border-radius, var(--size-border-thin));
-	box-shadow: var(--box-shadow, var(--box-shadow-medium));
-
-	// Labels
-	&::before {
-		color: var(--color-snowy);
-		position: absolute;
-		inset-block-start: var(--size-tiny);
-		inset-inline-start: var(--size-gutter);
-		font-family: var(--font-family-sans);
-		font-weight: var(--font-weight-semibold);
-	}
+	box-shadow: var(--box-shadow, var(--box-shadow-low));
 
 	& code {
 		color: var(--color-snowy);
@@ -52,12 +42,20 @@ pre[data-language] {
 	}
 }
 
-pre[data-language-friendly]:not([data-language-friendly=""]) {
+pre[data-language-friendly] {
+	padding-block-start: var(--size-gap);
+
 	&::before {
 		content: attr(data-language-friendly);
+		color: var(--color-snowy);
+		position: absolute;
+		inset-block-start: var(--size-tiny);
+		inset-inline-start: var(--size-gutter);
+		font-family: var(--font-family-sans);
+		font-weight: var(--font-weight-semibold);
 	}
 
-	&[data-filename]:not([data-filename=""])::before {
+	&[data-filename]::before {
 		content: attr(data-language-friendly) " · " attr(data-filename);
 	}
 }
