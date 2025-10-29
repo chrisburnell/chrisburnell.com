@@ -1,12 +1,17 @@
 {# Critical CSS -#}
 {%- if eleventy.env.runMode !== 'build' %}
-	{# External files (local dev live reload will refresh without page reload) -#}
+	{# File Reference (local dev live reload will refresh without page reload) -#}
 	<link rel="stylesheet" href="{% getBundleFileUrl 'css', 'critical' %}">
 	<link rel="stylesheet" href="{% getBundleFileUrl 'css' %}">
 {%- else %}
 	{# Inlined CSS (fastest site performance on live) -#}
 	<style>{% getBundle 'css', 'critical' %}{% getBundle 'css' %}</style>
 {%- endif %}
+
+{# CSS Includes -#}
+{% for css_include in (css_includes | toArray) -%}
+	<link rel="stylesheet" href="/css{{ css_include }}">
+{%- endfor %}
 
 {# Deferred CSS -#}
 <link rel="stylesheet" href="{% getBundleFileUrl 'css', 'defer' %}" media="print" onload="this.media='all'">

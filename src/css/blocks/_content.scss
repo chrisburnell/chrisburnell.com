@@ -9,9 +9,3 @@
 	min-inline-size: 0;
 	margin-block-start: var(--size-gap);
 }
-
-:is(.deck, .shelf, .stack) {
-	& + & {
-		margin-block-start: var(--size-large);
-	}
-}

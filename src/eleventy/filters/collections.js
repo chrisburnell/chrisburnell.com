@@ -29,7 +29,9 @@ export const feedFilter = (array) => {
 export const sitemapFilter = (array) => {
 	return array.filter((item) => {
 		return (
-			item.data?.sitemap?.exclude !== true && item.data?.noindex !== true
+			item.data?.excludeFromSitemap !== true &&
+			item.data?.sitemap?.exclude !== true &&
+			item.data?.noindex !== true
 		);
 	});
 };

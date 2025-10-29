@@ -42,7 +42,7 @@
     "build": "cross-env NODE_OPTIONS=--max-old-space-size=8192 npx @11ty/eleventy",
     "build:dev": "npm run setup && cross-env NODE_OPTIONS=--max-old-space-size=8192 DEV_MODE=true GENERATE_OG_IMAGES=true npx @11ty/eleventy",
     "build:live": "npm run setup && cross-env NODE_OPTIONS=--max-old-space-size=8192 GENERATE_OG_IMAGES=true npx @11ty/eleventy",
-    "build:css": "npx sass src/css:_site/css --style=expanded --no-source-map --color",
+    "build:css": "npx sass src/css:_site/css --style=expanded --no-source-map --color --quiet",
     "postbuild:css": "npx postcss \"_site/css/**/*.css\" --replace --no-map",
     "check": "node cli/index.js check",
     "check:css": "node cli/index.js calculateCSSComplexity",
@@ -58,7 +58,7 @@
     "pregenerate": "npm run setup && cross-env NODE_OPTIONS=--max-old-space-size=8192 PREGENERATE_IMAGES=true npx @11ty/eleventy",
     "prettier": "npx prettier --write --list-different src",
     "setup": "npm run tokens && npm run prettier && npx update-browserslist-db@latest && npm run build:css",
-    "start": "cross-env NODE_OPTIONS=--max-old-space-size=8192 npx @11ty/eleventy --incremental --serve",
+    "start": "npm run build:css && cross-env NODE_OPTIONS=--max-old-space-size=8192 npx @11ty/eleventy --incremental --serve",
     "test": "npx vitest run",
     "tokens": "npx json-to-scss './src/eleventy/data/designTokens/*.json' ./src/css/generated/_tokens.scss && npx prettier --write src/css/generated/_tokens.scss",
     "wizard": "npm run cli"

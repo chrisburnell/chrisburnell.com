@@ -1,10 +1,9 @@
 /**
  * Welcome
- * @class
  */
 class Welcome {
 	/**
-	 * @constructor
+	 * @class
 	 */
 	constructor() {
 		const serviceWorkerStatus =

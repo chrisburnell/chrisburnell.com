@@ -2,9 +2,11 @@
 date: 2025-02-07T11:32:16-0400
 title: "Currency Converter"
 description: "Simple utility to convert between a couple of different currencies"
+emoji: 💸
 tags:
   - calculator
-emoji: 💸
+css_includes:
+  - /pages/currency-calculator.css
 webmanifest: "/currency-converter.webmanifest"
 eleventyComputed:
   updated: "{{ (currencies.date + 'T00:00:00+0000') }}"
@@ -204,7 +206,6 @@ eleventyComputed:
 	<p class=" [ full-span ] [ center  italic ] ">Currency data last updated on <time datetime="{{ (currencies.date + 'T00:00:00+0000') | rfc3339Date }}">{{ (currencies.date + 'T00:00:00+0000') | friendlyDateLong | safe }}</time>.</p>
 </form>
 
-{% css -%}{% renderFile 'src/css/pages/currency-converter.scss' %}{%- endcss -%}
 <script>
 const datedCurrencies = {};
 let currencies = { {%- for code, value in currencies.rates %}

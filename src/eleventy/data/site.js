@@ -23,7 +23,8 @@ export const fathom_siteid = "NMGWH";
 export const limits = {
 	deck: 2,
 	shelf: 3,
-	feature: 2,
+	stack: 3,
+	related: 2,
 	latest: 20,
 	feed: 10,
 	sparkline: 15,

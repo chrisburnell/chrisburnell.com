@@ -7,7 +7,7 @@ sitemap:
 theme: dark
 ---
 
-<main class=" [ main ] "{% if not excludeFromSearch and not sitemap.exclude and not draft and published !== false and not 'ignore' in tags and not 'like' in tags %} data-pagefind-body{% endif %}>
+<main class=" [ main ] "{% if not excludeFromSearch and not excludeFromSitemap and not sitemap.exclude and not noindex and not draft and published !== false and not 'ignore' in tags and not 'like' in tags %} data-pagefind-body{% endif %}>
 	<article id="content" class="[ page ]">
 		<div class="[ full-space ] [ flow ] ">
 			<h1>Cryptic Crosswords</h1>

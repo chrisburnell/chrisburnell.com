@@ -3,11 +3,13 @@ date: 2022-11-11T21:38:00+0000
 updated: 2023-12-09T20:49:17+0000
 title: "clamp() Calculator"
 description: "Handy little tool for calculating viewport/container-based clamped values for use in CSS"
+emoji: 🗜
 tags:
   - css
   - calculator
   - design-systems
-emoji: 🗜
+css_includes:
+  - /pages/clamp-calculator.css
 webmanifest: "/clamp-calculator.webmanifest"
 ---
 
@@ -174,5 +176,4 @@ Maximum Size ≈ 18px</code></pre>
 
 <p>Shoutout to <a href="https://www.hustlersquad.net/">James Gilyead</a> and <a href="https://www.trysmudford.com/">Trys Mudford</a> for building <a href="https://utopia.fyi/">Utopia</a> which first introduced me to this amazing technique! <em>Utopia</em> helps you in calculating fluid type, space, and grids for fluid responsive designs, and includes tonnes of great information about <em>Utopian Design</em>.</p>
 
-{% css -%}{% renderFile 'src/css/pages/styleguide.scss' %}{%- endcss -%}
 <script type="module">{% include '../../../js/pages/clamp-calculator.js' %}</script>

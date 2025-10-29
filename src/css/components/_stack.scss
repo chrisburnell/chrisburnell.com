@@ -12,15 +12,37 @@
 
 	& article {
 		display: grid;
-		grid-template-columns: [title-start] auto [title-end spacer-start] 1fr [spacer-end pills-start] auto [pills-end time-start] auto [time-end];
-		grid-template-rows: [top-start bottom-start] auto [bottom-end top-end];
+		grid-template-columns:
+			[description-start pills-start title-start]
+			auto
+			[title-end spacer-start]
+			1fr
+			[spacer-end time-start]
+			auto
+			[time-end description-end pills-end];
+		grid-template-rows:
+			[top-start]
+			auto
+			[top-end middle-start]
+			auto
+			[middle-end bottom-start]
+			auto
+			[bottom-end];
 		align-items: baseline;
 		column-gap: var(--size-medium);
 		break-inside: avoid;
 
-		@include mixins.cqi(null, null, "small") {
-			grid-template-columns: [title-start pills-start] auto [title-end spacer-start] 1fr [spacer-end time-start] auto [time-end pills-end];
-			grid-template-rows: [top-start] auto [top-end bottom-start] auto [bottom-end];
+		@include mixins.cqi(null, "small") {
+			grid-template-columns:
+				[description-start title-start]
+				auto
+				[title-end spacer-start]
+				1fr
+				[spacer-end pills-start]
+				auto
+				[pills-end time-start]
+				auto
+				[time-end description-end];
 		}
 
 		&::after {
@@ -34,16 +56,36 @@
 
 	& h1 {
 		grid-column: title;
-		grid-row: top / bottom;
+		grid-row: top;
 		position: relative;
 		font-size: var(--font-size-delta);
 		text-wrap: initial;
+
+		@include mixins.cqi(null, "small") {
+			grid-row: top / middle;
+		}
 	}
 
 	& .pills {
 		grid-column: pills;
 		grid-row: bottom;
+
+		@include mixins.cqi(null, "small") {
+			grid-row: top / middle;
+			text-align: end;
+		}
+	}
+	& a:has(time) + .pills {
 		text-align: end;
+	}
+	& p + .pills {
+		@include mixins.cqi(null, "small") {
+			padding-block-start: var(--size-tiny);
+		}
+	}
+
+	& .pill {
+		color: inherit;
 	}
 
 	& a:has(time) {
@@ -65,6 +107,16 @@
 	& :is(a:not(.button), .anchor) {
 		&:not(:hover, :focus, :active) {
 			color: inherit;
+		}
+	}
+
+	& p {
+		grid-column: description;
+		grid-row: middle;
+		display: none;
+
+		@include mixins.cqi(null, "small") {
+			grid-row: bottom;
 		}
 	}
 }

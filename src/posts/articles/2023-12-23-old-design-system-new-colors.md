@@ -10,9 +10,9 @@ tags:
   - writing
 syndicate_to:
   - https://fediverse.repc.co/@chrisburnell/111691333492575973
+css_includes:
+  - /pages/styleguide.css
 ---
-
-{% css -%}{% renderFile 'src/css/pages/styleguide.scss' %}{%- endcss -%}
 
 ## Hexidecimal / RGB
 

@@ -9,11 +9,20 @@ sitemap:
   changefreq: daily
   priority: 1.0
 excludeFromSearch: true
+css_includes:
+  - /pages/homepage.css
 ---
 {%- from 'macros/deckItem.njk' import deckItem -%}
 {# {%- from "macros/shelfItem.njk" import shelfItem -%} #}
 {%- from 'macros/stackItem.njk' import stackItem -%}
-<article class=" [ pantheon ] [ wrap ] [ page ] [ perch ] ">
+{% set popular_projects = collections.popularProjects | limit(site.limits.stack) -%}
+{% set popular_projects_seen = [] -%}
+{% for item in popular_projects -%}
+	{% set popular_projects_seen = (popular_projects_seen.push(item.data.page.url), popular_projects_seen) -%}
+{%- endfor -%}
+{% set popular_pages = collections.popular | limit(2 * site.limits.stack) -%}
+
+<article class=" [ pantheon  full ] [ wrap ] [ page ] [ perch ] ">
 	<h1 id="title" class=" [ title{% if title_error %}  title--negative{% elif title_success %}  title--positive{% endif %} ] ">
 		<span class=" [ p-name ] ">{% if global.isCSSNakedDay %}{{ tagline | replace('CSS', '<s>CSS</s>') | safe }}{% else %}{{ tagline | safe }}{% endif %}</span>
 	</h1>
@@ -31,105 +40,100 @@ excludeFromSearch: true
 			{% include 'lfw.njk' %}
 		{%- endif %}
 
-		{% if site.conferences.sotb.date | isUpcoming(14) -%}
+		{% if site.conferences.sotb.date | isUpcoming(site.limits.recentDays) -%}
 			{% include 'state-of-the-browser.njk' %}
 		{%- endif %}
 
-		<div id="content" class=" [ flow ] [ e-content ] ">
-
+		<div id="content" class=" [ e-content ] ">
 			{% if collections.rsvpsToday.length %}
-				<div class=" [ box  box--line-length ] [ flow ] ">
-					<h2 id="today-rsvps">
-						<a href="/rsvps/">Events I’m attending</a>
+				<div id="today-rsvps" class=" [ box  box--line-length ] [ flow ] ">
+					<h2>
+						<a href="/rsvps/">Events I’m attending today</a>
 					</h2>
 					<div class=" [ deck ] ">
-						{% for item in collections.rsvpsToday %}
+						{% for item in collections.rsvpsToday -%}
 							{{ deckItem(item, { show_pageviews: false, truncate: true }) }}
-						{% endfor %}
+						{%- endfor %}
 					</div>
 				</div>
-
-				<hr>
 			{% endif %}
 
-			<h2 id="latest">Latest Posts</h2>
-			{% set posts = collections.features | noPinnedFilter | rssOnlyFilter | limit(site.limits.feed - (collections.pinned.length | default(0))) -%}
-			{% set firstpost = posts | first -%}
-			<div class=" [ flow ] [ h-feed ] ">
-				<div class=" [ deck ] ">
-					{% for item in collections.pinned %}
-						{{ deckItem(item, { hfeed: true, show_pinned: true, show_pageviews: false, truncate: true }) }}
-					{% endfor %}
-					{{ deckItem(firstpost, { hfeed: true, show_pageviews: false, truncate: true }) }}
+			<div id="latest" class=" [ flow ] ">
+				<h2>Latest Posts</h2>
+				{% set posts = collections.features | noPinnedFilter | rssOnlyFilter | limit(site.limits.feed - (collections.pinned.length | default(0))) -%}
+				<div class=" [ flow ] [ h-feed ] ">
+					<div class=" [ deck ] ">
+						{% for item in collections.pinned -%}
+							{{ deckItem(item, { hfeed: true, show_pinned: true, show_pageviews: false, truncate: true }) }}
+						{%- endfor %}
+					</div>
+					<div class=" [ stack ] ">
+						{% for item in posts -%}
+							{{ stackItem(item, { hfeed: true, show_pageviews: false, show_category: true, show_collections: true, show_tags: false }) }}
+						{%- endfor %}
+					</div>
 				</div>
+				<nav class=" [ grid ] [ navigator ] " aria-label="Writing Navigation">
+					<a href="/posts/#latest" class=" [ button ] "><c-emoji>📄</c-emoji>Browse Posts</a>
+				</nav>
+			</div>
+
+			<div id="projects" class=" [ flow ] ">
+				<h2 class=" [ gamma ] ">Popular Projects</h2>
 				<div class=" [ stack ] ">
-					{% for i in range(1, posts | length) %}
-						{{ stackItem(posts[i], { hfeed: true, show_pageviews: false, show_category: true, show_collections: true, show_tags: false }) }}
-					{% endfor %}
+					{% for item in popular_projects -%}
+						{{ stackItem(item, { show_pageviews: false, show_popularity: false, show_hotness: false, show_category: true, show_collections: true, show_tags: false }) }}
+					{%- endfor %}
 				</div>
+				<nav class=" [ grid ] [ navigator ] " aria-label="Projects Navigation">
+					<a href="/projects/" class=" [ button ] "><c-emoji>💻</c-emoji>Browse Projects</a>
+				</nav>
 			</div>
-			<nav class=" [ grid ] [ navigator ] " aria-label="Writing Navigation">
-				<a href="/posts/#latest" class=" [ button ] ">Browse Posts</a>
-			</nav>
 
-			<hr>
-
-			<h2 id="projects">Popular Projects</h2>
-			<div class=" [ deck ] ">
-				{% for item in collections.popularProjects | limit(site.limits.feature) %}
-					{{ deckItem(item, { show_pageviews: false }) }}
-				{% endfor %}
+			<div id="popular" class=" [ flow ] ">
+				<h2 class=" [ gamma ] ">Popular Pages</h2>
+				<div class=" [ stack ] ">
+					{% set popular_pages_count = 0 -%}
+					{% for item in popular_pages -%}
+						{% if popular_pages_count < site.limits.stack and not item.data.page.url in popular_projects_seen -%}
+							{{ stackItem(item, { show_pageviews: false, show_popularity: false, show_hotness: false, show_category: true, show_collections: true, show_tags: false }) }}
+							{% set popular_pages_count = popular_pages_count + 1 -%}
+						{%- endif %}
+					{%- endfor %}
+				</div>
+				<nav class=" [ grid ] [ navigator ] " aria-label="Popular Navigation">
+					<a href="/popular/" class=" [ button ] "><c-emoji>📊</c-emoji>Browse Popular</a>
+					<a href="/hot/" class=" [ button ] "><c-emoji>🔥</c-emoji>Browse Hot</a>
+				</nav>
 			</div>
-			<nav class=" [ grid ] [ navigator ] " aria-label="Projects Navigation">
-				<a href="/projects/" class=" [ button ] ">Browse Projects</a>
-			</nav>
 
-			<hr>
-
-			<h2 id="popular">
-				<a href="/popular/">Popular Pages</a>
-			</h2>
-			<div class=" [ deck ] ">
-				{% for item in collections.popular | limit(site.limits.feature) %}
-					{{ deckItem(item, { show_pageviews: false, show_popularity: false, show_hotness: false, truncate: true }) }}
-				{% endfor %}
-			</div>
+			{% include 'meta/index.njk' %}
 
 			{% if collections.rsvpsUpcoming.length %}
-				<hr>
-
-				<div class=" [ box  box--line-length ] [ flow ] ">
-					<h2 id="upcoming-rsvps">
+				<div id="upcoming-rsvps" class=" [ box  box--line-length ] [ flow ] ">
+					<h2>
 						<a href="/rsvps/">Upcoming events I’m attending</a>
 					</h2>
 					<div class=" [ deck ] ">
-						{% for item in collections.rsvpsUpcoming %}
+						{% for item in collections.rsvpsUpcoming -%}
 							{{ deckItem(item, { show_pageviews: false, truncate: true }) }}
-						{% endfor %}
+						{%- endfor %}
 					</div>
 				</div>
 			{% endif %}
 
 			{#
 			{% if collections.onThisDay.length %}
-				<hr>
-
-				<div class=" [ box  box--line-length ] [ flow ] ">
-					<h2 id="on-this-day">On this day</h2>
+				<div id="on-this-day" class=" [ box  box--line-length ] [ flow ] ">
+					<h2>On this day</h2>
 					<div class=" [ deck ] ">
-						{% for item in collections.onThisDay %}
+						{% for item in collections.onThisDay -%}
 							{{ deckItem(item, { show_pageviews: false, truncate: true }) }}
-						{% endfor %}
+						{%- endfor %}
 					</div>
 				</div>
 			{% endif %}
 			#}
-		</div>
-	</div>
-
-	<div class=" [ meta ] " data-pagefind-ignore>
-		<div class=" [ grid ] " data-rows="masonry">
-			{% include 'meta/index.njk' %}
 		</div>
 	</div>
 </article>

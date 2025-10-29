@@ -18,7 +18,7 @@
 		<h1 style="view-transition-name: title-{{ item.data.page.fileSlug }};">
 			{% if title -%}
 				<a href="{% if item.data.tags and 'clickthrough' in item.data.tags %}{{ item.data.of_url | default(item.url) | safe }}{% else %}{{ item.url | safe }}{% endif %}" class=" [ p-name ] "{% if item.data.tags and 'clickthrough' in item.data.tags %} rel="external noopener"{% endif %}>
-					{{ title | default(item.data.meta_title) | striptags(true) | safe }}
+					{% if item.data.emoji %}<c-emoji>{{ item.data.emoji }}</c-emoji>{% endif %}{{ title | default(item.data.meta_title) | striptags(true) | safe }}
 				</a>
 			{%- elif item.data.reply_url -%}
 				{% if item.data.rsvp %}
@@ -35,7 +35,24 @@
 				<a href="{{ item.url }}">Untitled {{ item.data.category and (item.data.categoryProper | default(item.data.category) | supertitle) or 'Page' }}</a>
 			{%- endif %}
 		</h1>
-		{# MISSING: show_collections, show_tags -#}
+		{% if item.data.rsvp.date -%}
+			<a href="{{ item.url }}" tabindex="-1"><relative-time{% if item.data.rsvp.date | isUpcoming(2) %} max-division="hour"{% elif item.data.rsvp.date | isUpcoming(item.data.rsvp.upcoming_days_lead) %} max-division="day"{% endif %}><time datetime="{{ item.data.rsvp.date | rfc3339Date }}" class=" [ dt-start ] ">{{ item.data.rsvp.date | formattedDate | safe }} @ {{ item.data.rsvp.date | friendlyTime | safe }}</time></relative-time></a>
+			<data class=" [ dt-published ] " value="{{ item.data.date | rfc3339Date }}" hidden></data>
+		{%- else -%}
+			<a href="{{ item.url }}" tabindex="-1"><time datetime="{{ item.data.date | rfc3339Date }}" class=" [ dt-published ] [ ordinal ] "><span class="visually-hidden">published </span>{{ item.data.date | formattedDate | safe }}</time></a>
+		{%- endif %}
+		{% if params.show_description -%}
+			{% if item.data.excerpt or item.data.description -%}
+				<p class=" [ line-clamp ] [ p-summary ] ">{{ item.data.excerpt | default(item.data.description) | markdownFormat | excerptize(params.show_images) | safe }}</p>
+			{%- elif ['bookmark', 'like', 'note', 'talk'].includes(item.data.category) and item.content -%}
+				<p class=" [ line-clamp ] [ p-summary ] ">{{ item.content | markdownFormat | excerptize(params.show_images) | maxWords(undefined, params.truncate) | safe }}</p>
+			{%- elif item.data.category == 'code' -%}
+				<p class=" [ p-summary ] ">One of my code demos.</p>
+			{%- elif item.data.category == 'recipe' -%}
+				<p class=" [ p-summary ] ">A {{ item.data.categoryProper | default(item.data.category) }}{% if item.data.authors %} by {{ item.data.meta_authors_string | safe }}{% endif %}</p>
+			{%- endif %}
+		{%- endif %}
+		{# Not currently using: show_collections, show_tags -#}
 		{% if show_pinned or show_category or show_responses or show_rss_only or show_popularity or show_hotness or show_pageviews -%}
 			<div class=" [ pills ] " data-pagefind-ignore>
 				{% if show_pinned -%}
@@ -94,12 +111,6 @@
 					<span class=" [ pill ] " title="{{ pageviews }}+ Pageviews"><c-emoji>👀</c-emoji>{{ (pageviews) + 'k' }}</span>
 				{%- endif %}
 			</div>
-		{%- endif %}
-		{% if item.data.rsvp.date -%}
-			<a href="{{ item.url }}" tabindex="-1"><relative-time{% if item.data.rsvp.date | isUpcoming(2) %} max-division="hour"{% elif item.data.rsvp.date | isUpcoming(item.data.rsvp.upcoming_days_lead) %} max-division="day"{% endif %}><time datetime="{{ item.data.rsvp.date | rfc3339Date }}" class=" [ dt-start ] ">{{ item.data.rsvp.date | formattedDate | safe }} @ {{ item.data.rsvp.date | friendlyTime | safe }}</time></relative-time></a>
-			<data class=" [ dt-published ] " value="{{ item.data.date | rfc3339Date }}" hidden></data>
-		{%- else -%}
-			<a href="{{ item.url }}" tabindex="-1"><time datetime="{{ item.data.date | rfc3339Date }}" class=" [ dt-published ] [ ordinal ] "><span class="visually-hidden">published </span>{{ item.data.date | formattedDate | safe }}</time></a>
 		{%- endif %}
 		{% if show_updated -%}
 			<data class=" [ dt-updated ] " value="{{ item.data.updated | rfc3339Date }}" hidden></data>

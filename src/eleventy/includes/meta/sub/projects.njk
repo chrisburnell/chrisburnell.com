@@ -2,7 +2,7 @@
 <ul class=" [ grid ] [ small ] " style="--grid-min-inline-size: 100%; --row-gap: 1em;">
 	{%- set count = 0 -%}
 	{% for lookup in collections.projects %}
-	{% if page.url != lookup.url and count < site.limits.feature %}
+	{% if page.url != lookup.url and count < site.limits.related %}
 	<li>
 		<a href="{{ lookup.url }}" class=" [ riza ] "><c-emoji>{{ lookup.data.emoji }}</c-emoji>{{ lookup.data.title | striptags(true) | safe }}</a>
 		{{ lookup.data.description | markdownFormat | safe }}

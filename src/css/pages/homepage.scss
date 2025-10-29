@@ -1,0 +1,104 @@
+////
+/// Homepage
+/// @group pages
+/// @link https://chrisburnell.com/
+////
+
+@use "../abstracts/mixins";
+
+@layer pages {
+	:is(.title, .description, .meta) {
+		inline-size: 100%;
+		max-inline-size: var(--size-breakpoint-gigantic);
+		margin-inline: auto;
+	}
+
+	.pantheon {
+		@include mixins.cqi("main", "medium", "gigantic") {
+			--indent-size: 1fr;
+			--indent-gap: var(--size-gap);
+			--outdent-gap: var(--size-gap);
+			--outdent-size: 1fr;
+		}
+
+		@include mixins.cqi("main", "gigantic") {
+			max-inline-size: var(--size-breakpoint-behemoth);
+		}
+	}
+
+	[id="content"] {
+		display: grid;
+		grid-template-columns: [left-start] 1fr [left-end right-start] 1fr [right-end];
+		column-gap: calc(2 * var(--size-medium-gigantic));
+		row-gap: var(--size-gigantic);
+		align-items: start;
+
+		& > .box {
+			--box-max-inline-size: var(--size-line-length);
+		}
+
+		@include mixins.cqi("main", null, "gigantic") {
+			& > div {
+				grid-column: 1 / -1;
+			}
+		}
+
+		@include mixins.cqi("main", "large", "gigantic") {
+			& :is([id="collections"], [id="pages"]) {
+				grid-column: span 1;
+			}
+		}
+
+		@include mixins.cqi("main", "gigantic") {
+			grid-template-rows: repeat(var(--rows, 4), auto);
+
+			&:has(> div:nth-child(6)) {
+				--rows: 5;
+			}
+			&:has(> div:nth-child(7)) {
+				--rows: 6;
+			}
+			&:has(> div:nth-child(8)) {
+				--rows: 7;
+			}
+
+			& > [id="latest"] {
+				grid-column: left;
+				grid-row: 1 / -1;
+			}
+
+			// Adjusts non-box sections to have underlines line up when Latest
+			// Posts come first
+			& > [id="latest"]:first-child + div:has(.deck, .shelf, .stack) h2 {
+				margin-block-start: 0.5rem;
+			}
+
+			// TODO: Revisit this when CSS-controlled source order is stable
+			// & > [id="today-rsvps"] {
+			// 	order: 1;
+			// }
+			// & > [id="projects"] {
+			// 	order: 2;
+			// }
+			// & > [id="collections"] {
+			// 	order: 3;
+			// }
+			// & > [id="popular"] {
+			// 	order: 4;
+			// }
+			// & > [id="pages"] {
+			// 	order: 5;
+			// }
+			// & > [id="upcoming-rsvps"] {
+			// 	order: 6;
+			// }
+			// & > [id="on-this-day"] {
+			// 	order: 7;
+			// }
+		}
+
+		.navigator {
+			--flow-space: var(--size-medium-large);
+		}
+	}
+}

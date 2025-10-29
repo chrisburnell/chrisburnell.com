@@ -100,9 +100,9 @@
 // Components
 @layer components {
 	@include meta.load-css("components/sparklines");
-	@include meta.load-css("components/stack");
 	@include meta.load-css("components/deck");
 	@include meta.load-css("components/shelf");
+	@include meta.load-css("components/stack");
 	@include meta.load-css("components/storage-form");
 	@include meta.load-css("components/badges");
 	@include meta.load-css("components/updated");

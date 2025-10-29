@@ -5,7 +5,7 @@
 {%- js 'deferred' -%}{% renderFile 'src/js/defer.js' %}{%- endjs -%}
 {%- js -%}{% renderFile 'src/js/imports/settings.js' %}{%- endjs -%}
 {%- js -%}{% renderFile 'src/js/imports/masonry-polyfill.js' %}{%- endjs -%}
-{%- if eleventy.env.runMode === 'build' and not excludeAnalytics -%}
+{%- if eleventy.env.runMode === 'build' and not excludeFromAnalytics -%}
 <script defer>
 (function () {
 	if (

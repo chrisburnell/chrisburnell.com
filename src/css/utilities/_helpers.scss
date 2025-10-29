@@ -335,6 +335,13 @@
 	}
 }
 
+// Main List Types Spacing
+:is(.deck, .shelf, .stack) {
+	& + & {
+		margin-block-start: var(--size-large);
+	}
+}
+
 // Scroll Snapping
 html:has(.full-space) {
 	@media (prefers-reduced-motion: no-preference) and (width > 700px) {

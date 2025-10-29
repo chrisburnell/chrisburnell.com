@@ -44,18 +44,8 @@ const navigation = [
 		footer: true,
 	},
 	{
-		title: "License",
-		url: "/license/",
-		footer: true,
-	},
-	{
 		title: "Privacy Policy",
 		url: "/privacy/",
-		footer: true,
-	},
-	{
-		title: "Want my help?",
-		url: "/help/",
 		footer: true,
 	},
 ];

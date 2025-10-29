@@ -34,7 +34,7 @@ Work roles have involved creating design systems and tools to enable teams to bu
 
 Passionate about the open web, having published over {{ technical_articles_count | toNearest(5, true) }} technical articles, and author of open-source software used by thousands of developers worldwide. Actively involved in the web community with many years of experience in organising conferences and meet-ups.
 
-<hr>
+--------
 
 ## Professional Experience
 
@@ -114,7 +114,7 @@ Passionate about the open web, having published over {{ technical_articles_count
 
 - Set up and organised learning initiatives for developers, including *Implementor Scrum*, an opportunity for developers to explore best practices and emerging web technologies in a casual group setting.
 
-<hr>
+--------
 
 ## Community Experience
 
@@ -150,7 +150,7 @@ Launched a web development blog and have since created [{{ collections.projects.
 
 - **[Sassy Lobotomised Owl](https://chrisburnell.com/article/sassy-lobotomised-owl/)**<br>Managing spacing between elements and components on your page can be a tiring task if undertaken manually. This is where the lobotomised owl comes in: a short, simple snippet of CSS that simplifies this whole process for you. In this article I’ll explain how I make use of it in a more dynamic way using a SCSS mixin.
 
-- **[Web Components from early 2024](https://chrisburnell.com/note/early-2024-web-components/)**<br>I’ve been having a lot of fun creating reusable Web Components, so here are three that I’ve built and been using this so far this year.
+- **[Web Components from Early 2024](https://chrisburnell.com/note/early-2024-web-components/)**<br>I’ve been having a lot of fun creating reusable Web Components, so here are three that I’ve built and been using this so far this year.
 
 - **[How I shaved 1.5 minutes off my Eleventy build time](https://chrisburnell.com/article/memoizing-asset-bundles/)**<br>I had a revelation earlier today that solved a long-standing performance issue I’ve been having with the initial build of my Eleventy website, and here’s how it saved me a bunch of time!
 
@@ -192,7 +192,25 @@ Author of numerous open-source software packages, accumulating over {{ package_d
 </nav>
 
 {#-
-<hr>
+--------
+
+## Skills
+
+<ul class="grid">
+    <li>HTML</li>
+    <li>CSS, SCSS</li>
+    <li>JavaScript, Typescript, Node.js</li>
+    <li>React, Vue, Eleventy, Astro</li>
+    <li>JSX, Nunjucks, Liquid, Handlebars</li>
+    <li>nginx</li>
+    <li>SQLite, MySQL, PosteSQL</li>
+    <li>Design Systems, Design Tokens</li>
+    <li>Mentorship, Learning & Development</li>
+    <li>Accessibility</li>
+    <li>UX</li>
+</ul>
+
+--------
 
 ## Testimonials
 

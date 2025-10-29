@@ -31,7 +31,7 @@
 			}
 		}
 
-		&:has(.responses) :has(> .meta__information) {
+		&:has(.responses) .box:has(> .meta__information) {
 			@include mixins.cqi(null, "medium") {
 				grid-row: 1;
 				grid-column: 1 / 3 !important;

@@ -46,7 +46,7 @@ layout: root
 	{%- endif %}
 </header>
 
-<main class=" [ main ] [ flow ] "{% if not excludeFromSearch and not sitemap.exclude and not draft and published !== false and not 'ignore' in tags and not 'like' in tags %} data-pagefind-body{% endif %}>
+<main class=" [ main ] [ flow ] "{% if not excludeFromSearch and not excludeFromSitemap and not sitemap.exclude and not noindex and not draft and published !== false and not 'ignore' in tags and not 'like' in tags %} data-pagefind-body{% endif %}>
 	{% if global.isCSSNakedDay -%}
 		{% include 'css-naked-day.njk' %}
 	{%- endif %}
@@ -71,6 +71,7 @@ layout: root
 			<li><a href="/license/" id="copyright" rel="license"><strong>©</strong> {{ site.established }}–{{ global.currentYear }} <span class=" [ canada ] ">{{ author.name }}</span></a></li>
 			<li><a href="/feed.xml" rel="me"><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false"><use href="#svg--rss"></use></svg></c-emoji>RSS</a></li>
 			<li><a href="/about/#contact"><c-emoji>📧</c-emoji>Contact <span class=" [ canada ] ">me</span></a></li>
+			<li><a href="/help/"><c-emoji>❓</c-emoji>Want <span class=" [ canada ] ">my</span> help?</a></li>
 			<li><a href="/links/"><c-emoji>🔗</c-emoji>Find <span class=" [ canada ] ">me</span> elsewhere</a></li>
 		</ul>
 		{% include 'badges-88x31.njk' %}

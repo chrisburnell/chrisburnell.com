@@ -63,9 +63,9 @@
 @include meta.load-css("blocks/author");
 
 // Components
-@include meta.load-css("components/stack");
 @include meta.load-css("components/deck");
 @include meta.load-css("components/updated");
+@include meta.load-css("components/stack");
 
 // Utilities
 @include meta.load-css("utilities/flow");
