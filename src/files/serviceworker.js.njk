@@ -188,13 +188,13 @@ self.addEventListener("fetch", (event) => {
 						if (responseFromFetch.type === "opaqueredirect") {
 							resolveWithResponse(responseFromFetch);
 						}
-						// Stash a copy of this page in the PAGES cache if the
+						// Stash a copy of this page in the PAGES caches if the
 						// Content-Type that comes back from the response matches
 						else if (copy.headers.get("Content-Type").includes("text/html")) {
 							try {
 								event.waitUntil(
 									stashInCache(
-										CORE_PAGES.includes(url.pathname)
+										CORE_PAGES.includes(cleanURL.pathname)
 											? CORE_PAGES_CACHE
 											: PAGES_CACHE,
 										cleanRequest,
