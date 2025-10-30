@@ -75,10 +75,10 @@
 			text-align: end;
 		}
 	}
-	& a:has(time) + .pills {
+	& article:not(:has(> p)) .pills {
 		text-align: end;
 	}
-	& p + .pills {
+	& article:has(> p) .pills {
 		@include mixins.cqi(null, "small") {
 			padding-block-start: var(--size-tiny);
 		}
@@ -110,7 +110,7 @@
 		}
 	}
 
-	& p {
+	& article > p {
 		grid-column: description;
 		grid-row: middle;
 		display: none;
