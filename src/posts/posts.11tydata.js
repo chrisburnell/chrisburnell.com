@@ -46,7 +46,6 @@ export default {
 	list: "stack",
 	mf_root: "entry",
 	show_responses: true,
-	css_includes: [],
 	pre_includes: [],
 	post_includes: [],
 	eleventyComputed: {
@@ -132,5 +131,10 @@ export default {
 			return pageviews[data.page.url] || {};
 		},
 		rank: (data) => data.rank || {},
+		css_includes: (data) => {
+			return [...data.css_includes].map((css_include) =>
+				css_include.replace(/\.css$/i, ".scss"),
+			);
+		},
 	},
 };

@@ -13,8 +13,6 @@ tags:
 
 {% include 'package.njk' %}
 
-<p class=" [ center  inline-center ] "><strong>This project is a work-in-progress.</strong></p>
-
 Adapted from the [check-html-links package](https://www.npmjs.com/package/check-html-links).
 
 ## Installation

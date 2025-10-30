@@ -7,6 +7,11 @@ export default async function (value, outputPath) {
 	if (outputPath && outputPath.endsWith(".html")) {
 		const $ = load(value);
 
+		// Remove stylesheet <link> elements with empty `href` attributes
+		$(`link[rel="stylesheet"][href=""]`).each((_, element) => {
+			$(element).remove();
+		});
+
 		// We have to process headings from table of contents before adding
 		// the permalink to them later, or the links will include the text of
 		// the permalink.
@@ -70,21 +75,35 @@ export default async function (value, outputPath) {
 		});
 
 		// Strip .no-fragment classes
-		$(".no-fragment").removeClass("no-fragment");
+		$(".no-fragment").each((_, element) => {
+			$(element).removeClass("no-fragment");
+		});
 
 		// Strip wordcount attributes
-		$(".skip-wordcount").removeClass("skip-wordcount");
-		$("[data-skip-wordcount]").removeAttr("data-skip-wordcount");
+		$(".skip-wordcount").each((_, element) => {
+			$(element).removeClass("skip-wordcount");
+		});
+		$("[data-skip-wordcount]").each((_, element) => {
+			$(element).removeAttr("data-skip-wordcount");
+		});
 
 		// Strip RSS-excluding attributes
-		$(".no-rss").removeClass("no-rss");
-		$("[data-no-rss]").removeAttr("data-no-rss");
+		$(".no-rss").each((_, element) => {
+			$(element).removeClass("no-rss");
+		});
+		$("[data-no-rss]").each((_, element) => {
+			$(element).removeAttr("data-no-rss");
+		});
 
 		// Remove content that is intended for RSS only
-		$(".rss-only, [data-rss-only]").remove();
+		$(".rss-only, [data-rss-only]").each((_, element) => {
+			$(element).remove();
+		});
 
 		// Make sure <ul> elements are accessible even with `list-style: none`
-		$("ul").attr("role", "list");
+		$("ul").each((_, element) => {
+			$(element).attr("role", "list");
+		});
 
 		// Clean up languages/filenames for code blocks with empty values
 		$(`pre[data-language=""]`).each((_, element) => {

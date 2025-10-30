@@ -10,7 +10,8 @@
 
 {# CSS Includes -#}
 {% for css_include in (css_includes | toArray) -%}
-	<link rel="stylesheet" href="/css{{ css_include }}">
+	{% set css_include_path = 'src/css' + css_include -%}
+	<style>{% renderFile css_include_path %}</style>
 {%- endfor %}
 
 {# Deferred CSS -#}
