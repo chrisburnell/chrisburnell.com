@@ -100,23 +100,23 @@ export const friendlyTime = (dateString, showTimezone = true) => {
 	})
 		.replace(
 			/(GMT|UTC)\+8/g,
-			`<abbr title="Singapore Time">SGT <span aria-hidden="true">🇸🇬</span></abbr>`,
+			`<abbr title="Singapore Time (UTC+8)">SGT <span aria-hidden="true">🇸🇬</span></abbr>`,
 		)
 		.replace(
 			/(GMT|UTC)\+1/g,
-			`<abbr title="British Summer Time">BST <span aria-hidden="true">🇬🇧</span></abbr>`,
+			`<abbr title="British Summer Time (UTC+1)">BST <span aria-hidden="true">🇬🇧</span></abbr>`,
 		)
 		.replace(
 			/(GMT|UTC)$/g,
-			`<abbr title="Greenwich Mean Time">GMT <span aria-hidden="true">🇬🇧</span></abbr>`,
+			`<abbr title="Greenwich Mean Time (UTC)">GMT <span aria-hidden="true">🇬🇧</span></abbr>`,
 		)
 		.replace(
 			/(GMT|UTC)-3/g,
-			`<abbr title="Atlantic Daylight Time">ADT <span aria-hidden="true">🇨🇦</span></abbr>`,
+			`<abbr title="Atlantic Daylight Time (UTC-3)">ADT <span aria-hidden="true">🇨🇦</span></abbr>`,
 		)
 		.replace(
 			/(GMT|UTC)-4/g,
-			`<abbr title="Atlantic Standard Time">AST <span aria-hidden="true">🇨🇦</span></abbr>`,
+			`<abbr title="Atlantic Standard Time (UTC-4)">AST <span aria-hidden="true">🇨🇦</span></abbr>`,
 		);
 };
 

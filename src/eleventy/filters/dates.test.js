@@ -29,7 +29,7 @@ describe("Filters: Dates", () => {
 			"13:21",
 		);
 		expect(dates.friendlyTime("2013-06-15T13:21:00+01:00")).toBe(
-			`13:21 <abbr title="British Summer Time">BST <span aria-hidden="true">🇬🇧</span></abbr>`,
+			`13:21 <abbr title="British Summer Time (UTC+1)">BST <span aria-hidden="true">🇬🇧</span></abbr>`,
 		);
 	});
 
