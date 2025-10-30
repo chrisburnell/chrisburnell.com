@@ -4,18 +4,20 @@ import { trakt } from "./author.js";
 import { cacheDurations } from "./site.js";
 dotenv.config({ quiet: true });
 
+const fetchOptions = {
+	headers: {
+		"Content-Type": "application/json",
+		"trakt-api-version": 2,
+		"trakt-api-key": process.env.TRAKT_CLIENT_ID,
+	},
+};
+
 const movies = async function () {
 	const url = `https://api.trakt.tv/users/${trakt}/history/movies?page=1&limit=20`;
 	const json = await EleventyFetch(url, {
 		duration: cacheDurations.hourly,
 		type: "json",
-		fetchOptions: {
-			headers: {
-				"Content-Type": "application/json",
-				"trakt-api-version": 2,
-				"trakt-api-key": process.env.TRAKT_CLIENT_ID,
-			},
-		},
+		fetchOptions,
 	});
 	return json;
 };
@@ -25,13 +27,7 @@ const shows = async function () {
 	const json = await EleventyFetch(url, {
 		duration: cacheDurations.hourly,
 		type: "json",
-		fetchOptions: {
-			headers: {
-				"Content-Type": "application/json",
-				"trakt-api-version": 2,
-				"trakt-api-key": process.env.TRAKT_CLIENT_ID,
-			},
-		},
+		fetchOptions,
 	});
 	return json;
 };

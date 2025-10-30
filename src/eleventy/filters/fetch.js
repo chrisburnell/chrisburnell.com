@@ -12,7 +12,7 @@ import { cacheDurations } from "../data/site.js";
 export const githubData = async (repository) => {
 	const headers = {
 		Accept: "application/vnd.github.v3+json",
-		Authorization: `token ${process.env.GITHUB_TOKEN || ""}`,
+		Authorization: `token ${process.env.GH_TOKEN || ""}`,
 	};
 	const url = `https://api.github.com/repos/${repository}`;
 	const json = await EleventyFetch(url, {
@@ -37,10 +37,15 @@ export const stargazers = async (repository) => {
  * @returns {object}
  */
 export const githubTagData = async (repository) => {
+	const headers = {
+		Accept: "application/vnd.github.v3+json",
+		Authorization: `token ${process.env.GH_TOKEN || ""}`,
+	};
 	const url = `https://api.github.com/repos/${repository}/tags`;
 	const json = await EleventyFetch(url, {
 		duration: cacheDurations.daily,
 		type: "json",
+		fetchOptions: { headers },
 	});
 	return json;
 };
