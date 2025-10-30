@@ -145,11 +145,17 @@ self.addEventListener("fetch", (event) => {
 		return;
 	}
 
-	const retrieveFromCache = caches.match(request);
+	// Remove hash and search parameters
+	const cleanURL = new URL(url);
+	cleanURL.hash = "";
+	cleanURL.search = "";
+	const cleanRequest = new Request(cleanURL, request);
+
+	const retrieveFromCache = caches.match(cleanRequest);
 
 	// For HTML requests, try the network first, fall back to the cache, finally the offline page
 	// Warning: This can also match when the user navigates directly to an asset
-	if (request.headers.get("Accept").includes("text/html")) {
+	if (cleanRequest.headers.get("Accept").includes("text/html")) {
 		event.respondWith(
 			new Promise((resolveWithResponse) => {
 				const timer = setTimeout(() => {
@@ -161,14 +167,14 @@ self.addEventListener("fetch", (event) => {
 					});
 				}, TIMEOUT);
 
-				const formattedRequest = new Request(request.url, {
+				const formattedRequest = new Request(cleanRequest.url, {
 					method: "GET",
-					headers: request.headers,
-					mode: request.mode === "navigate" ? "cors" : request.mode,
-					cache: request.cache,
-					credentials: request.credentials,
-					redirect: request.redirect,
-					type: request.type,
+					headers: cleanRequest.headers,
+					mode: cleanRequest.mode === "navigate" ? "cors" : cleanRequest.mode,
+					cache: cleanRequest.cache,
+					credentials: cleanRequest.credentials,
+					redirect: cleanRequest.redirect,
+					type: cleanRequest.type,
 				});
 				const retrieveFromFetch =
 					event.preloadResponse || fetch(formattedRequest);
@@ -191,7 +197,7 @@ self.addEventListener("fetch", (event) => {
 										CORE_PAGES.includes(url.pathname)
 											? CORE_PAGES_CACHE
 											: PAGES_CACHE,
-										request,
+										cleanRequest,
 										copy
 									)
 								);
@@ -200,17 +206,17 @@ self.addEventListener("fetch", (event) => {
 							}
 						}
 						// Stash a copy of this page in the ASSETS cache
-						else if (request.url.match(ASSETS_REGEX)) {
+						else if (cleanRequest.url.match(ASSETS_REGEX)) {
 							try {
-								event.waitUntil(stashInCache(ASSETS_CACHE, request, copy));
+								event.waitUntil(stashInCache(ASSETS_CACHE, cleanRequest, copy));
 							} catch (error) {
 								console.error(error);
 							}
 						}
 						// Stash a copy of this asset in the IMAGES cache
-						else if (request.url.match(IMAGES_REGEX)) {
+						else if (cleanRequest.url.match(IMAGES_REGEX)) {
 							try {
-								event.waitUntil(stashInCache(IMAGES_CACHE, request, copy));
+								event.waitUntil(stashInCache(IMAGES_CACHE, cleanRequest, copy));
 							} catch (error) {
 								console.error(error);
 							}
@@ -236,14 +242,14 @@ self.addEventListener("fetch", (event) => {
 	event.respondWith(
 		retrieveFromCache.then((responseFromCache) => {
 			// CACHE
-			const formattedRequest = new Request(request.url, {
+			const formattedRequest = new Request(cleanRequest.url, {
 				method: "GET",
-				headers: request.headers,
-				mode: request.mode === "navigate" ? "cors" : request.mode,
-				cache: request.cache,
-				credentials: request.credentials,
-				redirect: request.redirect,
-				type: request.type,
+				headers: cleanRequest.headers,
+				mode: cleanRequest.mode === "navigate" ? "cors" : cleanRequest.mode,
+				cache: cleanRequest.cache,
+				credentials: cleanRequest.credentials,
+				redirect: cleanRequest.redirect,
+				type: cleanRequest.type,
 			});
 			return (
 				responseFromCache ||
@@ -256,17 +262,17 @@ self.addEventListener("fetch", (event) => {
 							return responseFromFetch;
 						}
 						// Stash a copy of this asset in the ASSETS cache
-						else if (request.url.match(ASSETS_REGEX)) {
+						else if (cleanRequest.url.match(ASSETS_REGEX)) {
 							try {
-								event.waitUntil(stashInCache(ASSETS_CACHE, request, copy));
+								event.waitUntil(stashInCache(ASSETS_CACHE, cleanRequest, copy));
 							} catch (error) {
 								console.error(error);
 							}
 						}
 						// Stash a copy of this asset in the IMAGES cache
-						else if (request.url.match(IMAGES_REGEX)) {
+						else if (cleanRequest.url.match(IMAGES_REGEX)) {
 							try {
-								event.waitUntil(stashInCache(IMAGES_CACHE, request, copy));
+								event.waitUntil(stashInCache(IMAGES_CACHE, cleanRequest, copy));
 							} catch (error) {
 								console.error(error);
 							}
@@ -277,7 +283,7 @@ self.addEventListener("fetch", (event) => {
 						console.error(error);
 						// FALLBACK
 						// show an offline placeholder image
-						if (request.url.match(IMAGES_REGEX)) {
+						if (cleanRequest.url.match(IMAGES_REGEX)) {
 							return new Response(
 								'<svg role="img" aria-labelledby="offline-title" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><title id="offline-title">Offline</title><g fill="none" fill-rule="evenodd"><path fill="#D8D8D8" d="M0 0h400v300H0z" /><text fill="#9B9B9B" font-family="Helvetica Neue,Arial,Helvetica,sans-serif" font-size="72" font-weight="bold"><tspan x="93" y="172">offline</tspan></text></g></svg>',
 								{

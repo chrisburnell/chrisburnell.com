@@ -1,6 +1,6 @@
 {
   "name": "chrisburnell",
-  "version": "4.0.13",
+  "version": "4.0.14",
   "description": "Some real sweet codestuffs.",
   "license": "CC-BY-NC-SA-4.0",
   "repository": {
@@ -93,7 +93,7 @@
     "@daviddarnes/link-peek": "^1.1.0",
     "@daviddarnes/storage-form": "^2.0.1",
     "@js-temporal/polyfill": "^0.5.1",
-    "@mdn/browser-compat-data": "^7.1.15",
+    "@mdn/browser-compat-data": "^7.1.17",
     "@sindresorhus/slugify": "^3.0.0",
     "@tweetback/canonical": "^2.0.48",
     "@zachleat/details-utils": "^2.0.2",
@@ -138,17 +138,17 @@
     "@inquirer/select": "^4.4.0",
     "@projectwallace/css-code-quality": "^3.0.2",
     "check-html-links": "^0.2.4",
-    "commander": "^14.0.1",
+    "commander": "^14.0.2",
     "cross-env": "^10.1.0",
     "eslint": "^9.38.0",
-    "eslint-plugin-jsdoc": "^61.1.5",
+    "eslint-plugin-jsdoc": "^61.1.11",
     "json-to-scss": "^1.6.2",
     "pagefind": "^1.4.0",
     "prettier": "^3.6.2",
     "prettier-plugin-jinja-template": "^2.1.0",
     "release-it": "^19.0.5",
     "rimraf": "^6.0.1",
-    "vitest": "^4.0.1"
+    "vitest": "^4.0.5"
   },
   "imports": {
     "#data": "./src/eleventy/data/*.js",
