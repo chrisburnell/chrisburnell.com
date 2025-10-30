@@ -129,8 +129,8 @@ export const notReply = (item) => {
 };
 
 /**
- * @param {object[]} item
- * @returns {object[]}
+ * @param {Array<object>} item
+ * @returns {Array<object>}
  */
 export const hasMinimumPageviews = (item) => {
 	return item.data.pageviews.total >= limits.minimumPageviewsRequired;
@@ -146,9 +146,9 @@ export const getCacheKey = (tags, collectionName) => {
 };
 
 /**
- * @param {object[]} collection
+ * @param {Array<object>} collection
  * @param {string|string[]} tags
- * @returns {object[]}
+ * @returns {Array<object>}
  */
 export const flattenCollections = (collection, tags) => {
 	const seen = new Set();
@@ -164,8 +164,8 @@ export const flattenCollections = (collection, tags) => {
 };
 
 /**
- * @param {object[]} collection
- * @returns {object[]}
+ * @param {Array<object>} collection
+ * @returns {Array<object>}
  */
 export const applyDefaultFilter = (collection) => {
 	return collection.filter(isPublished).sort(dateSort);
@@ -238,7 +238,7 @@ export const getPropertyLabel = (data) => {
 
 /**
  * @param {object} data
- * @returns {object[]}
+ * @returns {Array<object>}
  */
 export const getAuthors = (data) => {
 	return data?.authors || getPropertyData(data)?.authors;

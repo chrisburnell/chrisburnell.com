@@ -25,12 +25,12 @@ const durationDay = 24 * 60 * 60 * 1000;
 let cachedCollections = new Map();
 
 /**
- * @param {object[]} collection
+ * @param {Array<object>} collection
  * @param {string|string[]} tags
  * @param {Function} [fn]
  * @param {string} [collectionName]
  * @param {boolean} [limit]
- * @returns {object[]}
+ * @returns {Array<object>}
  */
 const filterCollection = (
 	collection,
@@ -74,11 +74,11 @@ const filterCollection = (
 
 /**
  * "Popular" sorting is done by totalling pageviews.
- * @param {object[]} collection
+ * @param {Array<object>} collection
  * @param {string|string[]} tags
  * @param {string} collectionName
  * @param {boolean} [limit]
- * @returns {object[]}
+ * @returns {Array<object>}
  */
 const buildPopularCollection = (
 	collection,
@@ -114,24 +114,24 @@ const buildPopularCollection = (
 };
 
 /**
- * @param {object[]} collection
- * @returns {object[]}
+ * @param {Array<object>} collection
+ * @returns {Array<object>}
  */
 export const pages = (collection) => {
 	return filterCollection(collection, "page", undefined, "pages");
 };
 
 /**
- * @param {object[]} collection
- * @returns {object[]}
+ * @param {Array<object>} collection
+ * @returns {Array<object>}
  */
 export const posts = (collection) => {
 	return filterCollection(collection, "post", undefined, "posts");
 };
 
 /**
- * @param {object[]} collection
- * @returns {object[]}
+ * @param {Array<object>} collection
+ * @returns {Array<object>}
  */
 export const blogPosts = (collection) => {
 	return filterCollection(collection, "blog", (items) => {
@@ -142,24 +142,24 @@ export const blogPosts = (collection) => {
 };
 
 /**
- * @param {object[]} collection
- * @returns {object[]}
+ * @param {Array<object>} collection
+ * @returns {Array<object>}
  */
 export const pinnedPosts = (collection) => {
 	return filterCollection(collection, "pinned");
 };
 
 /**
- * @param {object[]} collection
- * @returns {object[]}
+ * @param {Array<object>} collection
+ * @returns {Array<object>}
  */
 export const projects = (collection) => {
 	return filterCollection(collection, "project", undefined, "projects");
 };
 
 /**
- * @param {object[]} collection
- * @returns {object[]}
+ * @param {Array<object>} collection
+ * @returns {Array<object>}
  */
 export const drafts = (collection) => {
 	return filterCollection(
@@ -179,16 +179,16 @@ export const drafts = (collection) => {
 };
 
 /**
- * @param {object[]} collection
- * @returns {object[]}
+ * @param {Array<object>} collection
+ * @returns {Array<object>}
  */
 export const writings = (collection) => {
 	return filterCollection(collection, "writing");
 };
 
 /**
- * @param {object[]} collection
- * @returns {object[]}
+ * @param {Array<object>} collection
+ * @returns {Array<object>}
  */
 export const features = (collection) => {
 	return filterCollection(
@@ -202,8 +202,8 @@ export const features = (collection) => {
 };
 
 /**
- * @param {object[]} collection
- * @returns {object[]}
+ * @param {Array<object>} collection
+ * @returns {Array<object>}
  */
 export const attendances = (collection) => {
 	return filterCollection(
@@ -219,8 +219,8 @@ export const attendances = (collection) => {
 };
 
 /**
- * @param {object[]} collection
- * @returns {object[]}
+ * @param {Array<object>} collection
+ * @returns {Array<object>}
  */
 export const checkins = (collection) => {
 	return filterCollection(
@@ -236,8 +236,8 @@ export const checkins = (collection) => {
 };
 
 /**
- * @param {object[]} collection
- * @returns {object[]}
+ * @param {Array<object>} collection
+ * @returns {Array<object>}
  */
 export const replies = (collection) => {
 	return filterCollection(
@@ -253,8 +253,8 @@ export const replies = (collection) => {
 };
 
 /**
- * @param {object[]} collection
- * @returns {object[]}
+ * @param {Array<object>} collection
+ * @returns {Array<object>}
  */
 export const notesWithoutReplies = (collection) => {
 	return filterCollection(
@@ -268,8 +268,8 @@ export const notesWithoutReplies = (collection) => {
 };
 
 /**
- * @param {object[]} collection
- * @returns {object[]}
+ * @param {Array<object>} collection
+ * @returns {Array<object>}
  */
 export const rsvps = (collection) => {
 	return filterCollection(
@@ -293,8 +293,8 @@ export const rsvps = (collection) => {
 };
 
 /**
- * @param {object[]} collection
- * @returns {object[]}
+ * @param {Array<object>} collection
+ * @returns {Array<object>}
  */
 export const rsvpsToday = (collection) => {
 	return filterCollection(
@@ -325,8 +325,8 @@ export const rsvpsToday = (collection) => {
 };
 
 /**
- * @param {object[]} collection
- * @returns {object[]}
+ * @param {Array<object>} collection
+ * @returns {Array<object>}
  */
 export const rsvpsUpcoming = (collection) => {
 	return filterCollection(
@@ -367,8 +367,8 @@ export const rsvpsUpcoming = (collection) => {
 };
 
 /**
- * @param {object[]} collection
- * @returns {object[]}
+ * @param {Array<object>} collection
+ * @returns {Array<object>}
  */
 export const onThisDay = (collection) => {
 	// Blog posts made on this day and month in previous years.
@@ -401,29 +401,29 @@ export const onThisDay = (collection) => {
 };
 
 /**
- * @param {object[]} collection
- * @returns {object[]}
+ * @param {Array<object>} collection
+ * @returns {Array<object>}
  */
 export const popular = (collection) =>
 	buildPopularCollection(collection, ["feature", "project"], "popular");
 
 /**
- * @param {object[]} collection
- * @returns {object[]}
+ * @param {Array<object>} collection
+ * @returns {Array<object>}
  */
 export const popularFeatures = (collection) =>
 	buildPopularCollection(collection, ["feature"], "popularFeatures");
 
 /**
- * @param {object[]} collection
- * @returns {object[]}
+ * @param {Array<object>} collection
+ * @returns {Array<object>}
  */
 export const popularProjects = (collection) =>
 	buildPopularCollection(collection, ["project"], "popularProjects");
 
 /**
- * @param {object[]} collection
- * @returns {object[]}
+ * @param {Array<object>} collection
+ * @returns {Array<object>}
  */
 export const hot = (collection) => {
 	return filterCollection(

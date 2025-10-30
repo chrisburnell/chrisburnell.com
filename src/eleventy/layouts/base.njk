@@ -3,14 +3,14 @@ layout: root
 ---
 <header class=" [ header ] ">
 	<div class=" [ wrap ] ">
-		<a href="/" rel="home" class=" [ logo ] [ canada ] ">
+		<a href="/" rel="home me" class=" [ logo ] [ canada ] ">
 			<img src="{{ site.logo }}" alt="chrisburnell.com logo, to the homepage" width="120" height="120">
 		</a>
 		<nav class=" [ navigation ] " aria-label="Website">
 			<ol class=" [ navigation__list ] ">
 				{% for link in navigation -%}
 					{% if link.header -%}
-						<li><a href="{{ link.url }}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title | safe }}</a></li>
+						<li><a href="{{ link.url }}"{% if link.rel %} rel="{{ link.rel }}"{% endif %}{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title | safe }}</a></li>
 					{%- endif %}
 				{%- endfor %}
 			</ol>
@@ -35,7 +35,7 @@ layout: root
 			<ol class=" [ navigation__list ] ">
 				{% for link in navigation -%}
 					{% if link.header -%}
-						<li><a href="{{ link.url }}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title | safe }}</a></li>
+						<li><a href="{{ link.url }}"{% if link.rel %} rel="{{ link.rel }}"{% endif %}{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title | safe }}</a></li>
 					{%- endif %}
 				{%- endfor %}
 			</ol>
@@ -60,7 +60,7 @@ layout: root
 		<ul class=" [ cluster ] [ footer__navigation ] [ strong ] ">
 			{% for link in navigation -%}
 				{% if link.footer -%}
-					<li><a href="{{ link.url }}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title | safe }}</a></li>
+					<li><a href="{{ link.url }}"{% if link.rel %} rel="{{ link.rel }}"{% endif %}{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title | safe }}</a></li>
 				{%- endif %}
 			{%- endfor %}
 		</ul>

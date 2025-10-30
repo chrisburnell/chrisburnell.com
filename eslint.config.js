@@ -1,9 +1,19 @@
 import js from "@eslint/js";
 import jsdoc from "eslint-plugin-jsdoc";
+import { defineConfig, globalIgnores } from "eslint/config";
 import globals from "globals";
 
-export default [
+export default defineConfig([
 	js.configs.recommended,
+	globalIgnores([
+		"**/*.min.js",
+		"**/*.test.js",
+		"src/eleventy/plugins/tmdbImage.js",
+		"src/js/imports/cal-embed.js",
+		"src/js/imports/masonry-polyfill.js",
+		"src/js/imports/pagefind-search.js",
+		"src/js/imports/speedlify-score.js",
+	]),
 	{
 		files: ["src/**/*.js"],
 		plugins: { jsdoc },
@@ -40,4 +50,4 @@ export default [
 			"jsdoc/require-returns-type": "warn",
 		},
 	},
-];
+]);

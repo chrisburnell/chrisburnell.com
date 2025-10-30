@@ -2,7 +2,7 @@ import { currentYear } from "./data/global.js";
 import { getCollectionCountByYear } from "./filters/collections.js";
 
 /**
- * @param {object[]} collection
+ * @param {Array<object>} collection
  * @param {number} start
  * @param {boolean} [animate]
  * @param {boolean} [curve]

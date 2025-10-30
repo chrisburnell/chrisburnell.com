@@ -75,6 +75,7 @@ class PagefindSearch extends HTMLElement {
 		}
 
 		let options = Object.assign({}, this.options, customOptions);
+		// eslint-disable-next-line no-undef
 		this.pagefindUI = new PagefindUI(options);
 
 		let input = this.querySelector(

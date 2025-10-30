@@ -39,7 +39,7 @@ const sentimentAnalyzer = new Natural.SentimentAnalyzer(
 );
 
 /**
- * @param {string[]} strings
+ * @param {Array<string>} strings
  * @returns {string}
  */
 export const conjunction = (strings) => {
@@ -47,7 +47,7 @@ export const conjunction = (strings) => {
 };
 
 /**
- * @param {string[]} strings
+ * @param {Array<string>} strings
  * @returns {string}
  */
 export const disjunction = (strings) => {

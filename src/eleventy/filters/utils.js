@@ -103,11 +103,11 @@ export const keyValueEquals = (object, key, check, caseSensitive = true) => {
 };
 
 /**
- * @param {object[]} array
+ * @param {Array<object>} array
  * @param {string} key
  * @param {any} check
  * @param {boolean} [caseSensitive]
- * @returns {object[]}
+ * @returns {Array<object>}
  */
 export const arrayKeyValueEquals = (array, key, check, caseSensitive) => {
 	return array.filter((item) => {
@@ -116,7 +116,7 @@ export const arrayKeyValueEquals = (array, key, check, caseSensitive) => {
 };
 
 /**
- * @param {object[]} array
+ * @param {Array<object>} array
  * @param {string} key
  * @param {any} value
  * @returns {boolean}
@@ -132,9 +132,9 @@ export const arrayKeyIncludes = (array, key, value) => {
 };
 
 /**
- * @param {object[]} array
+ * @param {Array<object>} array
  * @param {string} key
- * @returns {object[]}
+ * @returns {Array<object>}
  */
 export const arrayKeySet = (array, key) => {
 	return array.filter((item) => {
@@ -146,9 +146,9 @@ export const arrayKeySet = (array, key) => {
 };
 
 /**
- * @param {object[]} array
+ * @param {Array<object>} array
  * @param {string} key
- * @returns {object[]}
+ * @returns {Array<object>}
  */
 export const arrayKeyNotSet = (array, key) => {
 	return array.filter((item) => {
@@ -160,10 +160,10 @@ export const arrayKeyNotSet = (array, key) => {
 };
 
 /**
- * @param {object[]} array
+ * @param {Array<object>} array
  * @param {string} key
  * @param {{ string: any }} [sortOptions]
- * @returns {object[]}
+ * @returns {Array<object>}
  */
 export const keySort = (
 	array,
@@ -188,7 +188,7 @@ export const keySort = (
 
 /**
  * @param {any} value
- * @returns {object[]}
+ * @returns {Array<object>}
  */
 export const toArray = (value) => {
 	if (Array.isArray(value)) {
@@ -248,9 +248,9 @@ export const getRGB = (hex) => {
 };
 
 /**
- * @param {object[]} array
+ * @param {Array<object>} array
  * @param {number} limit
- * @returns {object[]}
+ * @returns {Array<object>}
  */
 export const limit = (array, limit) => {
 	return array.slice(0, limit);

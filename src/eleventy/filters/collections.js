@@ -5,16 +5,16 @@ import categories from "../data/categories.js";
 import ignoredTags from "../data/ignoredTags.js";
 
 /**
- * @param {object[]} array
- * @returns {object[]}
+ * @param {Array<object>} array
+ * @returns {Array<object>}
  */
 export const arePublished = (array) => {
 	return array.filter(isPublished);
 };
 
 /**
- * @param {object[]} array
- * @returns {object[]}
+ * @param {Array<object>} array
+ * @returns {Array<object>}
  */
 export const feedFilter = (array) => {
 	return array.filter((item) => {
@@ -23,8 +23,8 @@ export const feedFilter = (array) => {
 };
 
 /**
- * @param {object[]} array
- * @returns {object[]}
+ * @param {Array<object>} array
+ * @returns {Array<object>}
  */
 export const sitemapFilter = (array) => {
 	return array.filter((item) => {
@@ -45,25 +45,25 @@ export const getCategoryName = (data) => {
 };
 
 /**
- * @param {object[]} tags
- * @returns {object[]}
+ * @param {Array<object>} tags
+ * @returns {Array<object>}
  */
 export const categoryFilter = (tags) => {
 	return filterOut(tags, categories);
 };
 
 /**
- * @param {object[]} tags
- * @param {string[]} [filterList]
- * @returns {object[]}
+ * @param {Array<object>} tags
+ * @param {Array<string>} [filterList]
+ * @returns {Array<object>}
  */
 export const tagFilter = (tags, filterList = ignoredTags) => {
 	return filterOut(tags, filterList);
 };
 
 /**
- * @param {object[]} tags
- * @returns {object[]}
+ * @param {Array<object>} tags
+ * @returns {Array<object>}
  */
 export const noYearTagFilter = (tags) => {
 	return tags.filter((item) => {
@@ -72,8 +72,8 @@ export const noYearTagFilter = (tags) => {
 };
 
 /**
- * @param {object[]} array
- * @returns {object[]}
+ * @param {Array<object>} array
+ * @returns {Array<object>}
  */
 export const noPinnedFilter = (array) => {
 	return array.filter((item) => {
@@ -93,7 +93,7 @@ export const pinnedSort = (a, b) => {
 };
 
 /**
- * @param {object[]} items
+ * @param {Array<object>} items
  * @returns {number}
  */
 export const getCollectionCount = (items) => {
@@ -101,7 +101,7 @@ export const getCollectionCount = (items) => {
 };
 
 /**
- * @param {object[]} items
+ * @param {Array<object>} items
  * @param {string} year
  * @returns {number}
  */
@@ -122,7 +122,7 @@ const weekdays = [
 ];
 
 /**
- * @param {object[]} items
+ * @param {Array<object>} items
  * @param {string} weekday
  * @returns {number}
  */

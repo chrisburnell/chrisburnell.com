@@ -37,7 +37,7 @@ let cachedCodes = new Map();
 /**
  * @param {Date} date
  * @param {string} categoryCode
- * @param {object[]} collection
+ * @param {Array<object>} collection
  * @returns {string}
  */
 export const NewBase60 = (date, categoryCode, collection) => {

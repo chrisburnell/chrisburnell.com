@@ -21,6 +21,7 @@ const getImageOptions = (name) => {
 		sharpOptions: {
 			quality: 100,
 		},
+		// eslint-disable-next-line no-unused-vars
 		filenameFormat: (id, src, width, format, options) => {
 			return `${String(name).toLowerCase()}.${format}`;
 		},

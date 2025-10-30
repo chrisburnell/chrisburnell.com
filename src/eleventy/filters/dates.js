@@ -199,8 +199,8 @@ export const dateSort = (a, b) => {
 };
 
 /**
- * @param {object[]} array
- * @returns {object[]}
+ * @param {Array<object>} array
+ * @returns {Array<object>}
  */
 export const sortByDate = (array) => {
 	return array.sort(dateSort);
@@ -260,10 +260,10 @@ export const isRecent = (value, days = limits.recentDays) => {
 };
 
 /**
- * @param {object[]} array
+ * @param {Array<object>} array
  * @param {string} key
  * @param {number} [days]
- * @returns {object[]}
+ * @returns {Array<object>}
  */
 export const recentFilter = (array, key, days = limits.recentDays) => {
 	return array.filter((item) => {
@@ -276,9 +276,9 @@ export const recentFilter = (array, key, days = limits.recentDays) => {
 };
 
 /**
- * @param {object[]} array
+ * @param {Array<object>} array
  * @param {number} [days]
- * @returns {object[]}
+ * @returns {Array<object>}
  */
 export const rssOnlyFilter = (array, days = limits.rssOnlyDays) => {
 	return array.filter((item) => {

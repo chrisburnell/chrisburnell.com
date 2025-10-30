@@ -27,6 +27,7 @@ export default function (eleventyConfig) {
 					animated: true,
 					quality: 100,
 				},
+				// eslint-disable-next-line no-unused-vars
 				filenameFormat: (id, src, width, format, options) => {
 					const extension = path.extname(src);
 					const name = path.basename(src, extension);

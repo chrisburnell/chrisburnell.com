@@ -1,9 +1,9 @@
 import mastodonInstances from "../eleventy/data/mastodonInstances.js";
 
 /**
- * @param {object[]} array
- * @param {object[]} filterList
- * @returns {object[]}
+ * @param {Array<object>} array
+ * @param {Array<object>} filterList
+ * @returns {Array<object>}
  */
 export const filterOut = (array, filterList) => {
 	return array.filter((item) => {

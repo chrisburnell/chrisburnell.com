@@ -113,7 +113,7 @@ export const formatTime = (
 
 /**
  * Perform an action based on the hash in the URL.
- * @param {string[]} hashes
+ * @param {Array<string>} hashes
  * @param {Function} action
  * @returns {void}
  */

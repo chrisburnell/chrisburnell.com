@@ -21,6 +21,7 @@ export default async function () {
 			sharpOptions: {
 				quality: 100,
 			},
+			// eslint-disable-next-line no-unused-vars
 			filenameFormat: (id, src, width, format, options) => {
 				const extension = path.extname(src);
 				const name = path.basename(src, extension);
@@ -39,6 +40,7 @@ export default async function () {
 			sharpOptions: {
 				quality: 100,
 			},
+			// eslint-disable-next-line no-unused-vars
 			filenameFormat: (id, src, width, format, options) => {
 				return `avatar${width > 100 ? `@${width / 100}x` : ``}.${format}`;
 			},
@@ -56,6 +58,7 @@ export default async function () {
 			sharpOptions: {
 				quality: 100,
 			},
+			// eslint-disable-next-line no-unused-vars
 			filenameFormat: (id, src, width, format, options) => {
 				const extension = path.extname(src);
 				const name = path.basename(src, extension);
