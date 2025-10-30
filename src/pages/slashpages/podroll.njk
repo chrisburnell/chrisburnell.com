@@ -4,7 +4,7 @@ tagline: Podroll
 description: A list of podcasts that I enjoy.
 ---
 
-<div class=" [ grid ] [ shelf ] " style="--grid-min-inline-size: 12em;">
+<div class=" [ grid ] [ shelf  shelf--thin ] " style="--grid-min-inline-size: 12em;">
 {% for podcast in podroll %}
 	<article id="{{ podcast.title | slugify }}" class=" [ person ] ">
 		<div class=" [ person__avatar ] ">

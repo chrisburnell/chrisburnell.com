@@ -59,7 +59,7 @@ redirect_from:
 
 		<h2>Collections</h2>
 
-		<ul class=" [ grid ] [ shelf ] ">
+		<ul class=" [ grid ] [ shelf  shelf--thin ] ">
 			<li>
 				<a href="/writing/" class=" [ gamma ] "><c-emoji>✍️</c-emoji>Writing <sup>{{ collections.writings | rssOnlyFilter | getCollectionCount }}</sup></a>
 				<p>A more serious collection of ideas and bits of prose.</p>
@@ -90,7 +90,7 @@ redirect_from:
 
 		<h2>Categories</h2>
 
-		<ul class=" [ grid ] [ shelf ] " data-layout="natural" style="--row-gap: var(--size-medium);">
+		<ul class=" [ grid ] [ shelf  shelf--thin ] " data-layout="natural" style="--row-gap: var(--size-medium);">
 			{%- for item in collections.categories -%}
 				{%- set count = collections[item.title] | arePublished | rssOnlyFilter | getCollectionCount -%}
 				<li>
@@ -104,7 +104,7 @@ redirect_from:
 
 		<h2>Tags</h2>
 
-		<ul class=" [ grid ] [ shelf ] " data-layout="natural" style="--row-gap: var(--size-small);">
+		<ul class=" [ grid ] [ shelf  shelf--thin ] " data-layout="natural" style="--row-gap: var(--size-small);">
 			{%- set lowest = Infinity -%}
 			{%- set highest = 0 -%}
 			{%- for item in collections.tags | sort -%}

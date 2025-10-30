@@ -28,6 +28,7 @@ export default {
 	layout: "page",
 	tags: ["page"],
 	permalink: "/{{ page.fileSlug }}/index.html",
+	css_includes: [],
 	pre_includes: [],
 	post_includes: [],
 	eleventyComputed: {

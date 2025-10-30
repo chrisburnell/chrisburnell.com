@@ -17,6 +17,6 @@
 <link rel="stylesheet" href="{% getBundleFileUrl 'css', 'defer' %}" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="{% getBundleFileUrl 'css', 'defer' %}"></noscript>
 
+{# Render out Critical & Deferred CSS -#}
 {%- css 'critical' -%}{% renderFile 'src/css/critical.scss' %}{%- endcss -%}
 {%- css 'defer' -%}{% renderFile 'src/css/defer.scss' %}{%- endcss -%}
-{%- css -%}{% renderFile 'src/css/defer.scss' %}{%- endcss -%}

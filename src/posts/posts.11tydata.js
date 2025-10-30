@@ -46,6 +46,7 @@ export default {
 	list: "stack",
 	mf_root: "entry",
 	show_responses: true,
+	css_includes: [],
 	pre_includes: [],
 	post_includes: [],
 	eleventyComputed: {

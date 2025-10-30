@@ -80,12 +80,12 @@ let updateCorePagesCache = () => {
 };
 
 let stashInCache = (cacheName, request, response) => {
-	caches.open(cacheName).then((cache) => cache.put(request, response));
+	return caches.open(cacheName).then((cache) => cache.put(request, response));
 };
 
 // Limit the number of items in a specified cache.
 let trimCache = (cacheName, maxItems) => {
-	caches.open(cacheName).then((cache) => {
+	return caches.open(cacheName).then((cache) => {
 		cache.keys().then((keys) => {
 			if (keys.length > maxItems) {
 				cache.delete(keys[0]).then(() => {
@@ -191,27 +191,20 @@ self.addEventListener("fetch", (event) => {
 						// Stash a copy of this page in the PAGES caches if the
 						// Content-Type that comes back from the response matches
 						else if (copy.headers.get("Content-Type").includes("text/html")) {
-							try {
-								event.waitUntil(
-									stashInCache(
-										CORE_PAGES.includes(cleanURL.pathname)
-											? CORE_PAGES_CACHE
-											: PAGES_CACHE,
-										cleanRequest,
-										copy
-									)
-								);
-							} catch (error) {
-								console.error(error);
-							}
+							const cacheName = CORE_PAGES.includes(cleanURL.pathname)
+										? CORE_PAGES_CACHE
+										: PAGES_CACHE;
+							event.waitUntil(
+								stashInCache(cacheName, cleanRequest, copy)
+									.catch((error) =>console.error(error))
+							);
 						}
 						// Stash a copy of this page in the ASSETS cache
 						else if (cleanRequest.url.match(ASSETS_REGEX)) {
-							try {
-								event.waitUntil(stashInCache(ASSETS_CACHE, cleanRequest, copy));
-							} catch (error) {
-								console.error(error);
-							}
+							event.waitUntil(
+								stashInCache(ASSETS_CACHE, cleanRequest, copy)
+									.catch((error) => console.error(error))
+							);
 						}
 						// Stash a copy of this asset in the IMAGES cache
 						else if (cleanRequest.url.match(IMAGES_REGEX)) {

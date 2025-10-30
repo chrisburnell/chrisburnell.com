@@ -6,7 +6,6 @@
 
 .shelf {
 	--gap: var(--size-gap);
-
 	margin-block-start: var(--size-gap);
 
 	& article {
@@ -51,6 +50,10 @@
 		outline: var(--outline-width, var(--size-border-thin)) solid var(--outline-color, Highlight);
 		outline-offset: var(--outline-offset, var(--size-border-thin));
 	}
+}
+
+.shelf--thin {
+	--grid-min-inline-size: 10em;
 }
 
 .shelf--portrait {
