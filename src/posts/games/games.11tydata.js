@@ -12,4 +12,5 @@ export default {
 	categoryFull: true,
 	tags: ["game", "review"],
 	emoji: "🕹️",
+	searchWeight: 0.25,
 };

@@ -6,4 +6,5 @@ export default {
 	categoryCode: "c",
 	tags: ["code", "blog"],
 	emoji: "💾",
+	searchWeight: 0.8,
 };

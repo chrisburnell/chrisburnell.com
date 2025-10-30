@@ -6,7 +6,7 @@
 {%- js -%}{% renderFile 'src/js/imports/settings.js' %}{%- endjs -%}
 {%- js -%}{% renderFile 'src/js/imports/masonry-polyfill.js' %}{%- endjs -%}
 {%- if eleventy.env.runMode === 'build' and not excludeFromAnalytics -%}
-<script defer>
+{%- js 'deferred' -%}
 (function () {
 	if (
 		navigator.doNotTrack === "1" ||
@@ -28,7 +28,7 @@
 	fathom("set", "siteId", "{{ site.fathom_siteid }}");
 	fathom("trackPageview");
 })();
-</script>
+{%- endjs -%}
 {%- endif -%}
 
 

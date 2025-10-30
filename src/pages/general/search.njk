@@ -40,8 +40,22 @@ pagefind-search {
 }
 {%- endcss %}
 
-{% if not global.isCSSNakedDay -%}
-	<script type="module">{% include '../../../node_modules/@zachleat/pagefind-search/pagefind-search.js' %}</script>
-{%- else -%}
-	<script type="module">{% include '../js/imports/pagefind-search.js' %}</script>
-{%- endif %}
+<script type="module">
+const isCSSNakedDay = {{ global.isCSSNakedDay | safe }};
+
+const original = customElements.define;
+customElements.define = (name, constructor, options) => {
+	if (name === "pagefind-search") {
+		console.log("Skip original pagefind-search");
+		return;
+	}
+	original(name, constructor, options);
+};
+
+{% include '../../../node_modules/@zachleat/pagefind-search/pagefind-search.js' %}
+
+customElements.define = original;
+
+{% include '../../js/imports/pagefind-search-cb.js' %}
+
+PagefindSearchCB.register();</script>

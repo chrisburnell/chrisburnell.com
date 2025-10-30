@@ -8,4 +8,5 @@ export default {
 	excludeFromSearch: true,
 	noindex: true,
 	emoji: "🔖",
+	searchWeight: 0.333,
 };
