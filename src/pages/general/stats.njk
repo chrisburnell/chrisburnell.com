@@ -3,8 +3,8 @@ title: Stats
 description: Numbers, cause why not?
 excludeFromSearch: true
 ---
-{%- set all_posts = collections.posts | rssOnlyFilter -%}
-{%- set blog_posts = collections.blogPosts | rssOnlyFilter -%}
+{%- set all_posts = collections.posts | noRSSOnlyFilter -%}
+{%- set blog_posts = collections.blogPosts | noRSSOnlyFilter -%}
 
 {%- set count = all_posts.length -%}
 {%- set first_year = 2013 -%}
@@ -45,7 +45,7 @@ excludeFromSearch: true
 
 {%- set blog_count_highest_per_category = 0 -%}
 {%- for item in collections.categories -%}
-	{%- set count = collections[item.title] | arePublished | rssOnlyFilter | getCollectionCount -%}
+	{%- set count = collections[item.title] | arePublished | noRSSOnlyFilter | getCollectionCount -%}
 	{%- if count > blog_count_highest_per_category -%}
 		{%- set blog_count_highest_per_category = count -%}
 	{%- endif -%}
@@ -53,7 +53,7 @@ excludeFromSearch: true
 
 {%- set blog_count_highest_per_tag = 0 -%}
 {%- for item in collections.tags -%}
-	{%- set count = collections[item] | arePublished | rssOnlyFilter | getCollectionCount -%}
+	{%- set count = collections[item] | arePublished | noRSSOnlyFilter | getCollectionCount -%}
 	{%- if count > blog_count_highest_per_tag -%}
 		{%- set blog_count_highest_per_tag = count -%}
 	{%- endif -%}
@@ -155,7 +155,7 @@ excludeFromSearch: true
 	<table style="border-block-start: 0; font-size: var(--font-size-small);">
 		<tbody>
 			{% for item in collections.categories -%}
-				{%- set count = collections[item.title] | arePublished | rssOnlyFilter | getCollectionCount -%}
+				{%- set count = collections[item.title] | arePublished | noRSSOnlyFilter | getCollectionCount -%}
 				<tr>
 					<th style="white-space: nowrap;">{{ item.properPlural | supertitle }}</th>
 					<td class=" [ numeral  strong ] " style="padding-inline-start: 1lh; padding-inline-end: var(--size-medium);">{{ count }}</td>
@@ -173,7 +173,7 @@ excludeFromSearch: true
 	<table style="border-block-start: 0; font-size: var(--font-size-small);">
 		<tbody>
 			{% for item in collections.tags | sort -%}
-				{%- set count = collections[item] | arePublished | rssOnlyFilter | getCollectionCount -%}
+				{%- set count = collections[item] | arePublished | noRSSOnlyFilter | getCollectionCount -%}
 				<tr>
 					<th style="white-space: nowrap;">{{ item }}</th>
 					<td class=" [ numeral  strong ] " style="padding-inline-start: 1lh; padding-inline-end: var(--size-medium);">{{ count }}</td>

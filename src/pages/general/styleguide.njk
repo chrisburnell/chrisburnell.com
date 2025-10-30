@@ -644,7 +644,7 @@ p q r s t u v w x y z { | } ~</pre>
 <h2>Deck</h2>
 
 <div id="list-deck" class=" [ deck ] ">
-{% for item in collections.hot | rssOnlyFilter | limit(site.limits.deck) %}
+{% for item in collections.hot | noRSSOnlyFilter | limit(site.limits.deck) %}
 	{{ deckItem(item, { show_pageviews: false, truncate: true }) }}
 {% endfor %}
 </div>
@@ -670,7 +670,7 @@ p q r s t u v w x y z { | } ~</pre>
 <h2>Stack</h2>
 
 <div id="list-stack" class=" [ stack ] ">
-{% for item in collections.features | rssOnlyFilter | limit(site.limits.shelf) %}
+{% for item in collections.features | noRSSOnlyFilter | limit(site.limits.shelf) %}
 	{{ stackItem(item, { show_pageviews: false, show_category: true, show_collections: true, show_tags: false }) }}
 {% endfor %}
 </div>

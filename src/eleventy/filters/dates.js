@@ -280,7 +280,7 @@ export const recentFilter = (array, key, days = limits.recentDays) => {
  * @param {number} [days]
  * @returns {Array<object>}
  */
-export const rssOnlyFilter = (array, days = limits.rssOnlyDays) => {
+export const noRSSOnlyFilter = (array, days = limits.rssOnlyDays) => {
 	return array.filter((item) => {
 		if (item.data.tags && item.data.tags.includes("rss-only")) {
 			return !isRecent(item.data.date, item.data.rss_only_days || days);
@@ -458,7 +458,7 @@ export default {
 	isUpcoming,
 	isRecent,
 	recentFilter,
-	rssOnlyFilter,
+	noRSSOnlyFilter,
 	getRelativeTime,
 	getRSVPValueString,
 	getRSVPValueHTML,

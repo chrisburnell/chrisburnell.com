@@ -102,8 +102,8 @@ describe("Filters: Dates", () => {
 		expect(typeof dates.recentFilter).toBe("function");
 	});
 
-	it("rssOnlyFilter() should TODO", () => {
-		expect(typeof dates.rssOnlyFilter).toBe("function");
+	it("noRSSOnlyFilter() should TODO", () => {
+		expect(typeof dates.noRSSOnlyFilter).toBe("function");
 	});
 
 	it("getRelativeTime() should TODO", () => {

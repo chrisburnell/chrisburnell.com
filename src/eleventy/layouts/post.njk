@@ -12,9 +12,9 @@ layout: base
 	<div class=" [ context ] [ flow ] ">
 		<p data-pagefind-ignore>
 			{%- if rsvp %}
-				This <a href="/rsvps/" class=" [ u-category ] ">RSVP</a>
+				This <a href="/rsvps/" class=" [ u-tag ] " data-pagefind-sort="tag" data-pagefind-filter="tag">RSVP</a>
 			{%- else %}
-				This <a href="/{{ categoryPlural | default(category) }}/">{{ categoryProper | default(category) }}</a>{% if 'writing' in tags %}, part of the <a href="/writing/">writing</a> collection{% if not in_reply_to %},{% endif %}{% endif %}
+				This <a href="/{{ categoryPlural | default(category) }}/" class=" [ u-category ] " data-pagefind-sort="category" data-pagefind-filter="category">{{ categoryProper | default(category) }}</a>{% if 'writing' in tags %}, part of the <a href="/writing/" class=" [ u-tag ] " data-pagefind-filter="tag" data-pagefind-filter="tag">writing</a> collection{% if not in_reply_to %},{% endif %}{% endif %}
 			{%- endif -%}
 			{%- if draft %}
 				has not yet been published
@@ -26,7 +26,7 @@ layout: base
 						by {{ reply_author_string | safe }}
 					{%- endif %},
 				{%- endif %}
-				was published on <time datetime="{{ date | rfc3339Date }}" class=" [ dt-published ] ">{{ date | friendlyDateLong | safe }}</time>{% if updated %}, last updated on <time datetime="{{ updated | rfc3339Date }}" class=" [ dt-updated ] ">{{ updated | friendlyDateLong | safe }}</time>{% endif %}
+				was published on <time datetime="{{ date | rfc3339Date }}" class=" [ dt-published ] " data-pagefind-meta="date[datetime]" data-pagefind-sort="date[datetime]">{{ date | friendlyDateLong | safe }}</time>{% if updated %}, last updated on <time datetime="{{ updated | rfc3339Date }}" class=" [ dt-updated ] ">{{ updated | friendlyDateLong | safe }}</time>{% endif %}
 			{%- endif %}
 			{%- if content_wordcount -%}
 				{{ ',' if updated }} and has ~{{ content_wordcount }} words
@@ -41,7 +41,7 @@ layout: base
 	</div>
 
 	<h1 id="title" class=" [ title{% if title_error %} title--negative{% elif title_success %} title--positive{% endif %} ] {{ '[ visually-hidden ] ' if not title and not of_title }}" style="view-transition-name: title-{{ page.fileSlug }};"{% if not title and not of_title %} aria-hidden="true"{% endif %}>
-		<span class=" [ p-name ] ">{{ title | default(of_title) | default(of_title_fallback) | default(meta_title) | striptags(true) | safe }}</span>
+		<span class=" [ p-name ] " data-pagefind-meta="title" data-pagefind-sort="title">{{ title | default(of_title) | default(of_title_fallback) | default(meta_title) | striptags(true) | safe }}</span>
 	</h1>
 
 	<div class=" [ content ] [ flow ] {% if toc %}generate-toc{% endif %}">

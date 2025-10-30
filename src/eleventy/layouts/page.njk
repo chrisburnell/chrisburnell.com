@@ -12,7 +12,7 @@ layout: base
 		{% if 'project' in tags and emoji -%}
 			<c-emoji>{{ emoji | safe }}</c-emoji>
 		{% endif -%}
-		<span class=" [ p-name ] ">{{ tagline | default(title) | safe }}</span>
+		<span class=" [ p-name ] " data-pagefind-meta="title">{{ tagline | default(title) | safe }}</span>
 	</h1>
 
 	<div class=" [ description ] [ flow ] [ p-summary ] ">

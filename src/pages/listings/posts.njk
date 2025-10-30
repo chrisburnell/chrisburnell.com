@@ -39,7 +39,7 @@ redirect_from:
 
 		<h2 id="latest">Latest Posts</h2>
 
-		{% set posts = collections.features | noPinnedFilter | rssOnlyFilter | limit(site.limits.latest - (collections.pinned.length | default(0))) -%}
+		{% set posts = collections.features | noPinnedFilter | noRSSOnlyFilter | limit(site.limits.latest - (collections.pinned.length | default(0))) -%}
 		{% set firstpost = posts | first -%}
 		<div class=" [ h-feed ] [ flow ] ">
 			<div class=" [ deck ] ">
@@ -61,19 +61,19 @@ redirect_from:
 
 		<ul class=" [ grid ] [ shelf  shelf--thin ] ">
 			<li>
-				<a href="/writing/" class=" [ gamma ] "><c-emoji>✍️</c-emoji>Writing <sup>{{ collections.writings | rssOnlyFilter | getCollectionCount }}</sup></a>
+				<a href="/writing/" class=" [ gamma ] "><c-emoji>✍️</c-emoji>Writing <sup>{{ collections.writings | noRSSOnlyFilter | getCollectionCount }}</sup></a>
 				<p>A more serious collection of ideas and bits of prose.</p>
 			</li>
 			<li>
-				<a href="/blog/" class=" [ gamma ] "><c-emoji>📄</c-emoji>Blog <sup>{{ collections.blogPosts | rssOnlyFilter | getCollectionCount }}</sup></a>
+				<a href="/blog/" class=" [ gamma ] "><c-emoji>📄</c-emoji>Blog <sup>{{ collections.blogPosts | noRSSOnlyFilter | getCollectionCount }}</sup></a>
 				<p>A broader collection of blog posts.</p>
 			</li>
 			<li>
-				<a href="/replies/" class=" [ gamma ] "><c-emoji>↪️</c-emoji>Replies <sup>{{ collections.replies | rssOnlyFilter | getCollectionCount }}</sup></a>
+				<a href="/replies/" class=" [ gamma ] "><c-emoji>↪️</c-emoji>Replies <sup>{{ collections.replies | noRSSOnlyFilter | getCollectionCount }}</sup></a>
 				<p>Replies I’ve made to other people.</p>
 			</li>
 			<li>
-				<a href="/rsvps/" class=" [ gamma ] "><c-emoji>📩</c-emoji>RSVPs <sup>{{ collections.rsvps | rssOnlyFilter | getCollectionCount }}</sup></a>
+				<a href="/rsvps/" class=" [ gamma ] "><c-emoji>📩</c-emoji>RSVPs <sup>{{ collections.rsvps | noRSSOnlyFilter | getCollectionCount }}</sup></a>
 				<p>A record of RSVPs to conferences and meet-ups.</p>
 			</li>
 			<li>
@@ -92,7 +92,7 @@ redirect_from:
 
 		<ul class=" [ grid ] [ shelf  shelf--thin ] " data-layout="natural" style="--row-gap: var(--size-medium);">
 			{%- for item in collections.categories -%}
-				{%- set count = collections[item.title] | arePublished | rssOnlyFilter | getCollectionCount -%}
+				{%- set count = collections[item.title] | arePublished | noRSSOnlyFilter | getCollectionCount -%}
 				<li>
 					<a href="/{{ item.plural }}/" class=" [ gamma ] "><c-emoji>{{ item.emoji | default('📄') }}</c-emoji>{{ item.properPlural | title }} <sup>{{ count }}</sup></a>
 					<p>
@@ -108,7 +108,7 @@ redirect_from:
 			{%- set lowest = Infinity -%}
 			{%- set highest = 0 -%}
 			{%- for item in collections.tags | sort -%}
-				{%- set count = collections[item] | arePublished | rssOnlyFilter | getCollectionCount -%}
+				{%- set count = collections[item] | arePublished | noRSSOnlyFilter | getCollectionCount -%}
 				{%- if count < lowest -%}
 					{%- set lowest = count -%}
 				{%- elif count > highest -%}
@@ -116,7 +116,7 @@ redirect_from:
 				{%- endif -%}
 			{%- endfor -%}
 			{%- for item in collections.tags | sort -%}
-				{%- set count = collections[item] | arePublished | rssOnlyFilter | getCollectionCount -%}
+				{%- set count = collections[item] | arePublished | noRSSOnlyFilter | getCollectionCount -%}
 				{# map range from lowest–highest to 1–1.5, 3 decimal places #}
 				{%- set fontSize = count | rangeMap(lowest, highest, 1, 1.5, 3) -%}
 				<li><a href="/tag/{{ item }}/" class=" [ strong ] " style="font-size: {{ fontSize }}em;">{{ item }} <sup>{{ count }}</sup></a></li>

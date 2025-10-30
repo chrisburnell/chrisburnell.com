@@ -11,7 +11,7 @@ eleventyComputed:
 {%- from 'macros/deckItem.njk' import deckItem -%}
 {%- from "macros/shelfItem.njk" import shelfItem -%}
 {%- from 'macros/stackItem.njk' import stackItem -%}
-{%- set collection = collections[category.title] | arePublished | rssOnlyFilter | reverse -%}
+{%- set collection = collections[category.title] | arePublished | noRSSOnlyFilter | reverse -%}
 {%- set count = collection.length -%}
 {%- set latest_year = collection[0].data.year | default(collection[0].year) -%}
 {%- set first_year = collection[count-1].data.year | default(collection[count-1].year) -%}

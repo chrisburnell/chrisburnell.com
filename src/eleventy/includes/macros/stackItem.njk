@@ -18,7 +18,7 @@
 		<h1 style="view-transition-name: title-{{ item.data.page.fileSlug }};">
 			{% if title -%}
 				<a href="{% if item.data.tags and 'clickthrough' in item.data.tags %}{{ item.data.of_url | default(item.url) | safe }}{% else %}{{ item.url | safe }}{% endif %}" class=" [ p-name ] "{% if item.data.tags and 'clickthrough' in item.data.tags %} rel="external noopener"{% endif %}>
-					{% if item.data.emoji %}<c-emoji>{{ item.data.emoji }}</c-emoji>{% endif %}{{ title | default(item.data.meta_title) | striptags(true) | safe }}
+					{% if item.data.emoji %}<c-emoji>{{ item.data.emoji }}</c-emoji>{% endif %}{{ title | striptags(true) | safe }}
 				</a>
 			{%- elif item.data.reply_url -%}
 				{% if item.data.rsvp %}

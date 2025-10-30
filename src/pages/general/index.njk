@@ -60,7 +60,7 @@ css_includes:
 
 			<div id="latest" class=" [ flow ] ">
 				<h2>Latest Posts</h2>
-				{% set posts = collections.features | noPinnedFilter | rssOnlyFilter | limit(site.limits.feed - (collections.pinned.length | default(0))) -%}
+				{% set posts = collections.features | noPinnedFilter | noRSSOnlyFilter | limit(site.limits.feed - (collections.pinned.length | default(0))) -%}
 				{% set firstpost = posts | first -%}
 				<div class=" [ flow ] [ h-feed ] ">
 					<div class=" [ deck ] ">

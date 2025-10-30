@@ -57,7 +57,7 @@ layout: base
 		{%- if by_year -%}
 			{% set i = 1 -%}
 			{% for year, posts in collection | groupby('data.year') | dictsort | reverse -%}
-				{% set posts = posts | rssOnlyFilter -%}
+				{% set posts = posts | noRSSOnlyFilter -%}
 				{% if posts | length -%}
 					<h2 id="{{ year }}">
 						{{ year }} <small>{{ posts | length }} post{{ 's' if posts | length > 1 }}</small>
@@ -76,7 +76,7 @@ layout: base
 			{%- endfor %}
 		{%- else -%}
 			<div class=" [ {{ list_type }} ] ">
-				{% for item in collection | rssOnlyFilter %}
+				{% for item in collection | noRSSOnlyFilter %}
 					{% if list_type == 'deck' -%}
 						{{ deckItem(item, { index: loop.index, hfeed: true, show_images: show_images, show_pageviews: show_pageviews, show_hotness: show_hotness, show_popularity: show_popularity, truncate: true }) }}
 					{%- else -%}

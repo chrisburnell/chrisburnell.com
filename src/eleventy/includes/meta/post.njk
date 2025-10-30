@@ -10,8 +10,8 @@
 				<a href="{{ reply_url }}" class=" [ h-cite  u-in-reply-to ] ">{{ reply_title }}</a>
 				<data class=" [ p-rsvp ] " value="{{ rsvp.value }}" hidden></data>
 			</li>
-		{% endif %}
-		{% if rsvp %}
+		{%- endif %}
+		{% if rsvp -%}
 			<li class=" [ rsvp ] ">
 				<c-emoji>🗓️</c-emoji>
 				<small data-end="{{ rsvp.end | rfc3339Date }}" data-relative-rsvp-date>{{ rsvp.end | getRSVPDateString }}</small>
@@ -19,42 +19,42 @@
 				–
 				<time datetime="{{ rsvp.end | rfc3339Date }}" class=" [ dt-end ] ">{% if rsvp.date | friendlyDate != rsvp.end | friendlyDate %}{{ rsvp.end | friendlyDate | safe }} @ {% endif %}{{ rsvp.end | friendlyTime | safe }}</time>
 			</li>
-		{% endif %}
-		{% if content_wordcount %}
+		{%- endif %}
+		{% if content_wordcount -%}
 			<li class=" [ reading-length ] ">
 				<c-emoji>📚</c-emoji>
 				<strong>~{{ content_wordcount }}</strong>
 				<small>words</small>
 			</li>
-		{% endif %}
-		{% if category %}
+		{%- endif %}
+		{% if category -%}
 			<li class=" [ category ] ">
 				<c-emoji>{{ emoji | default('📄') | safe }}</c-emoji>
 				<small>category</small>
 				<a href="/{{ categoryPlural | default(category) }}/" class=" [ u-category ] ">{{ categoryProper | default(category) | supertitle }}</a>
 			</li>
-		{% endif %}
-		{%- set tags_filtered = tags | categoryFilter | tagFilter | sort -%}
-		{% if tags_filtered.length %}
+		{%- endif %}
+		{% set tags_filtered = tags | categoryFilter | tagFilter | sort -%}
+		{% if tags_filtered.length -%}
 			<li class=" [ tags ] ">
 				<c-emoji>🏷️</c-emoji>
 				<small>tagged</small>
 				{% set tags_array = [] -%}
 				{% for tag in tags_filtered -%}
-					{%- set tags_item -%}<a href="/tag/{{ tag }}/" class=" [ p-tag ] ">{{ tag }}</a>{%- endset -%}
+					{%- set tags_item -%}<a href="/tag/{{ tag }}/" class=" [ u-tag ] " data-pagefind-filter="tag">{{ tag }}</a>{%- endset -%}
 					{% set tags_array = (tags_array.push(tags_item), tags_array) -%}
 				{%- endfor -%}
 				{{ tags_array | conjunction("narrow") | wrapTextNodes("small") | safe }}
 			</li>
-		{% endif %}
-		{% if style %}
+		{%- endif %}
+		{% if style -%}
 			<li>
 				<c-emoji>🎨</c-emoji>
 				<small>style</small>
 				<strong>{{ style | replace(' - Other', '') | safe }}</strong>
 			</li>
-		{% endif %}
-		{% if authors.length %}
+		{%- endif %}
+		{% if authors.length -%}
 			<li class=" [ authors ] ">
 				{% if category == 'beer' %}
 					<c-emoji>🍻</c-emoji>
@@ -81,29 +81,29 @@
 					<strong>{{ console | getConsole | safe }}</strong>
 				{% endif %}
 			</li>
-		{% endif %}
-		{% if release %}
+		{%- endif %}
+		{% if release -%}
 			<li class=" [ date-released ] ">
 				<c-emoji>🗓️</c-emoji>
 				<small>released</small>
 				<time datetime="{{ release | rfc3339Date }}" class=" [ dt-released ] ">{{ release | friendlyDate }}</time>
 			</li>
-		{% endif %}
-		{% if 'audiobook' in tags %}
+		{%- endif %}
+		{% if 'audiobook' in tags -%}
 			<li>
 				<c-emoji>🎧</c-emoji>
 				<small>listen{% if rating %}ed{% else %}ing{% endif %} as an</small>
 				<strong>audiobook</strong>
 			</li>
-		{% endif %}
-		{% if not rating and progress %}
+		{%- endif %}
+		{% if not rating and progress -%}
 			<li>
 				<c-emoji>🌱</c-emoji>
 				<small>progress</small>
 				<strong>{{ progress | stringToPercent }}%</strong>
 			</li>
-		{% endif %}
-		{#
+		{%- endif %}
+		{# Exists in post layout now
 		{% if rating %}
 			<li class=" [ review-rating ] ">
 				<c-emoji>✨</c-emoji>
@@ -117,38 +117,38 @@
 				{% endif %}
 			</li>
 		{% endif %}
-		#}
-		{% if checkin %}
+		-#}
+		{% if checkin -%}
 			<li class=" [ checkin ] ">
 				<c-emoji>📍</c-emoji>
 				<small>check-in</small>
-				{% set checkin = checkin | getPlace('object') %}
-				{% if checkin.url %}
+				{% set checkin = checkin | getPlace('object') -%}
+				{% if checkin.url -%}
 					<a href="{{ checkin.url }}" class=" [ u-location ] ">{{ checkin.title }}</a>
-				{% elif checkin.lat and checkin.long %}
+				{%- elif checkin.lat and checkin.long -%}
 					<a href="http://www.openstreetmap.org/#map=13/{{ checkin.lat }}/{{ checkin.long }}" class=" [ u-location ] ">{{ checkin.title }}</a>
-				{% else %}
+				{%- else -%}
 					<strong class=" [ p-location ] ">{{ checkin.title | default(checkin) }}</strong>
-				{% endif %}
+				{%- endif %}
 			</li>
-		{% endif %}
-		{% if badges %}
+		{%- endif %}
+		{% if badges -%}
 			<li class=" [ badges ] ">
 				<c-emoji>🏆</c-emoji>
 				<small><span class=" [ visually-hidden ] ">earning</span> badges</small>
 				{% set badges_array = [] -%}
 				{% for badge in badges -%}
-					{%- if badge.id -%}
+					{% if badge.id -%}
 						{% set badge_item -%}<a href="https://untappd.com/user/{{ author.untappd }}/badges/{{ badge.id }}">{{ badge.title | default(badge) }}</a>{%- endset -%}
 					{%- else -%}
 						{% set badge_item -%}<strong>{{ badge.title | default(badge) }}</strong>{%- endset -%}
-					{%- endif -%}
+					{%- endif %}
 					{% set badges_array = (badges_array.push(badge_item), badges_array) -%}
-				{%- endfor -%}
+				{%- endfor %}
 				{{ badges_array | conjunction("narrow") | wrapTextNodes("small") | safe }}
 			</li>
-		{% endif %}
-		{#
+		{%- endif %}
+		{# Unused for now
 		{% if pageviews.total > 1000 %}
 			<li class=" [ pageviews ] ">
 				<c-emoji>👀</c-emoji>
@@ -157,7 +157,7 @@
 			</li>
 		{% endif %}
 		-#}
-		{% if syndicate_to.length %}
+		{% if syndicate_to.length -%}
 			<li class=" [ syndicate-to ] ">
 				<c-emoji>⤴️</c-emoji>
 				<small>also on</small>
@@ -168,28 +168,28 @@
 				{%- endfor -%}
 				{{ syndication_array | conjunction("narrow") | wrapTextNodes("small") | safe }}
 			</li>
-		{% endif %}
-		{% if posting_method %}
+		{%- endif %}
+		{% if posting_method -%}
 			<li class=" [ posting-method ] ">
 				<c-emoji>🖋️</c-emoji>
 				<small>posted with</small>
 				<a href="{{ posting_method }}">{{ posting_method | getPostingMethodTitle }}</a>
 			</li>
-		{% endif %}
-		{% if rank.popular and rank.popular <= 10%}
+		{%- endif %}
+		{% if rank.popular and rank.popular <= 10 -%}
 			<li class=" [ popularity ] ">
 				<c-emoji>📊</c-emoji>
 				<small>most popular page</small>
 				<a href="/popular/#index-{{ rank.popular }}" class=" [ ordinal ] ">#{{ rank.popular }}</a>
 			</li>
-		{% endif %}
-		{% if rank.hot and rank.hot <= 10%}
+		{%- endif %}
+		{% if rank.hot and rank.hot <= 10 -%}
 			<li class=" [ hotness ] ">
 				<c-emoji>🔥</c-emoji>
 				<small>hottest page</small>
 				<a href="/hot/#index-{{ rank.hot }}" class=" [ ordinal ] ">#{{ rank.hot }}</a>
 			</li>
-		{% endif %}
+		{%- endif %}
 		{# Removed shorturls for now
 		{% if eleventy.env.runMode === 'build' and not draft and published !== false and not 'ignore' in tags %}
 			<li class=" [ shorturl ] ">
@@ -199,15 +199,17 @@
 				<a href="https://repc.co/{{ shorturl_id }}">repc.co/{{ shorturl_id }}</a>
 			</li>
 		{% endif %}
-		#}
-		<li hidden>
-			<a href="https://fed.brid.gy"></a>
-		</li>
+		-#}
 	</ul>
-	{% if title or of.title %}
-		<data class=" [ p-name ] " value="{{ title | default(of.title) | safe }}" hidden></data>
-	{% endif %}
-	<data class=" [ u-url ] " value="{{ page.url }}" hidden></data>
+	<div hidden>
+		{% if rsvp -%}
+			<a href="/{{ categoryPlural | default(category) }}/" class=" [ u-category ] " data-pagefind-sort="category" data-pagefind-filter="category">{{ categoryProper | default(category) }}</a>
+		{%- endif %}
+		{% if title or of.title -%}
+			<data class=" [ p-name ] " value="{{ title | default(of.title) | safe }}" hidden></data>
+		{%- endif %}
+		<data class=" [ u-url ] " value="{{ page.url }}" hidden></data>
+	</div>
 	<div class=" [ h-card  p-author ] " hidden>
 		<data class=" [ p-name ] " value="{{ author.name }}"></data>
 		<data class=" [ u-url  u-uid ] " value="/"></data>
