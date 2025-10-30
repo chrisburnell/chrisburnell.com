@@ -21,7 +21,14 @@
 							<li><c-emoji>🔗</c-emoji> {{ webmentions.links.length }} Link{{ 's' if webmentions.links.length > 1 }}</li>
 						{%- endif %}
 						{% if webmentions.socialReplies.length -%}
-							<li><c-emoji>⤴️</c-emoji> {{ webmentions.socialReplies.length }} Social {% if webmentions.socialReplies.length > 1 %}Replies{% else %}Reply{% endif %}{% if syndicate_to.length %} <small>(on {% for syndication in syndicate_to -%}<a href="{{ syndication | tweetback }}" rel="external noopener">{{ syndication | getSyndicationTitle }}</a>{%- if not loop.last %}, {% endif %}{%- endfor %})</small>{% endif %}</li>
+							{% set syndication_array = [] -%}
+							{% if syndicate_to.length -%}
+								{% for syndication in syndicate_to -%}
+									{% set syndication_item -%}<a href="{{ syndication | tweetback }}" target="_blank">{{ syndication | getSyndicationTitle }}</a>{%- endset -%}
+									{% set syndication_array = (syndication_array.push(syndication_item), syndication_array) -%}
+								{%- endfor -%}
+							{%- endif -%}
+							<li><c-emoji>⤴️</c-emoji> {{ webmentions.socialReplies.length }} Social {% if webmentions.socialReplies.length > 1 %}Replies{% else %}Reply{% endif %}{% if syndicate_to.length %} <small>(on {{ syndication_array | conjunction("narrow") | safe }})</small>{% endif %}</li>
 						{%- endif %}
 						{% if stargazers -%}
 							<li><c-emoji>✨</c-emoji> <a href="https://github.com/{{ github }}">{{ stargazers }} Stargazer{{ 's' if stargazers > 1 }}</a></li>

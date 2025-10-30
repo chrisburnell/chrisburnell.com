@@ -341,12 +341,15 @@ export const getPlace = (value, intent) => {
 			url = value.url;
 		}
 		if ("lat" in value) {
+			// eslint-disable-next-line no-unused-vars
 			lat = value.lat;
 		}
 		if ("long" in value) {
+			// eslint-disable-next-line no-unused-vars
 			long = value.long;
 		}
 		if ("address" in value) {
+			// eslint-disable-next-line no-unused-vars
 			address = value.address;
 		}
 	} else {
@@ -401,7 +404,7 @@ export const getPostingMethodTitle = (url) => {
 			return postingMethod.url.includes(getHost(url));
 		});
 		return knownPostingMethod.title;
-	} catch (error) {
+	} catch {
 		return url;
 	}
 };
@@ -418,7 +421,7 @@ export const getSyndicationTitle = (url) => {
 			},
 		);
 		return knownSyndication.title;
-	} catch (error) {
+	} catch {
 		return url;
 	}
 };

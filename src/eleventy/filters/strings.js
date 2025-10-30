@@ -6,7 +6,7 @@ import randomCase from "random-case";
 import truncate from "truncate-html";
 import markdown from "../config/markdown.js";
 import capitalizers from "../data/capitalizers.js";
-import { limits, locale } from "../data/site.js";
+import { limits } from "../data/site.js";
 dotenv.config({ quiet: true });
 
 const stringNumbers = [
@@ -22,16 +22,6 @@ const stringNumbers = [
 	"nine",
 ];
 
-const conjunctionFormat = new Intl.ListFormat(locale, {
-	style: "long",
-	type: "conjunction",
-});
-
-const disjunctionFormat = new Intl.ListFormat(locale, {
-	style: "long",
-	type: "disjunction",
-});
-
 const sentimentAnalyzer = new Natural.SentimentAnalyzer(
 	"English",
 	Natural.PorterStemmer,
@@ -40,17 +30,29 @@ const sentimentAnalyzer = new Natural.SentimentAnalyzer(
 
 /**
  * @param {Array<string>} strings
+ * @param {string} style
  * @returns {string}
  */
-export const conjunction = (strings) => {
+export const conjunction = (strings, style = "long") => {
+	// en-US is used because (for some reason) it’s need for Oxford commas
+	const conjunctionFormat = new Intl.ListFormat("en-US", {
+		style: style,
+		type: "conjunction",
+	});
 	return conjunctionFormat.format(strings);
 };
 
 /**
  * @param {Array<string>} strings
+ * @param {string} style
  * @returns {string}
  */
-export const disjunction = (strings) => {
+export const disjunction = (strings, style = "long") => {
+	// en-US is used because (for some reason) it’s need for Oxford commas
+	const disjunctionFormat = new Intl.ListFormat("en-US", {
+		style: style,
+		type: "disjunction",
+	});
 	return disjunctionFormat.format(strings);
 };
 
@@ -81,6 +83,24 @@ export const supertitle = (string) => {
 export const cleanTags = (string) => {
 	const $ = load(string, null, false);
 	$("pre, form, link, s, script, style, .support, .palette").remove();
+	return $.html().trim();
+};
+
+/**
+ * @param {string} string
+ * @param {string} tagName
+ * @returns {string}
+ */
+export const wrapTextNodes = (string, tagName) => {
+	const $ = load(string, null, false);
+	$.root()
+		.contents()
+		.each((_, node) => {
+			if (node.type === "text" && node.data.trim() !== "") {
+				const element = $(`<${tagName}></${tagName}>`).text(node.data);
+				$(node).replaceWith(element);
+			}
+		});
 	return $.html().trim();
 };
 
@@ -315,6 +335,7 @@ export default {
 	disjunction,
 	supertitle,
 	cleanTags,
+	wrapTextNodes,
 	removeTagsForWordcount,
 	cleanTagsForRSS,
 	encodeHTML,

@@ -8,7 +8,7 @@ import { getURLObject } from "../../functions/urls.js";
 export const tweetback = (url) => {
 	try {
 		return transform(url);
-	} catch (error) {
+	} catch {
 		return url;
 	}
 };

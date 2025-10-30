@@ -14,6 +14,7 @@ const navigation = [
 		url: "/about/",
 		header: true,
 		footer: true,
+		rel: "me",
 	},
 	{
 		title: `<span class=" [ canada ] ">CV</span>`,

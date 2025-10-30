@@ -1,5 +1,5 @@
 <div class=" [ author ] [ h-card  p-author ] ">
-	<a href="{{ site.url }}/about/" class=" [ author__information ] [ flow ] [ u-url u-uid ] " rel="author me">
+	<a href="{{ site.url }}/about/" class=" [ author__information ] [ flow ] " rel="author">
 		<picture>
 			<source srcset="/images/avatar.avif 1x,
 							/images/avatar@2x.avif 2x,
@@ -28,8 +28,9 @@
 	<div class=" [ author__biography ] [ flow ] ">
 		<p style="text-wrap: balance;"><a href="/cv/">I’m looking for new work opportunities in <span class=" [ canada ] " style="white-space: nowrap;">Halifax, Canada <c-emoji>🇨🇦</c-emoji></span> or remotely!</a></a>
 		<p class=" [ p-note ] ">{{ author.description | safe }}</p>
+		<data class=" [ u-url u-uid ] " value="{{ site.url + '/' }}" hidden> </data>
+		<data class=" [ p-x-pronoun-nominative ] " value="he" hidden> </data>
 		<data class=" [ p-x-pronoun-nominative ] " value="he" hidden> </data>
 		<data class=" [ p-x-pronoun-oblique ] " value="him" hidden> </data>
-		<data class=" [ p-x-pronoun-possessive ] " value="his" hidden> </data>
 	</div>
 </div>

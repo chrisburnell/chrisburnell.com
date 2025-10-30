@@ -39,10 +39,12 @@
 			<li class=" [ tags ] ">
 				<c-emoji>🏷️</c-emoji>
 				<small>tagged</small>
+				{% set tags_array = [] -%}
 				{% for tag in tags_filtered -%}
-					<a href="/tag/{{ tag }}/" class=" [ p-tag ] ">{{ tag }}</a>
-					{%- if not loop.last %}, {% endif %}
-				{%- endfor %}
+					{%- set tags_item -%}<a href="/tag/{{ tag }}/" class=" [ p-tag ] ">{{ tag }}</a>{%- endset -%}
+					{% set tags_array = (tags_array.push(tags_item), tags_array) -%}
+				{%- endfor -%}
+				{{ tags_array | conjunction("narrow") | wrapTextNodes("small") | safe }}
 			</li>
 		{% endif %}
 		{% if style %}
@@ -134,14 +136,16 @@
 			<li class=" [ badges ] ">
 				<c-emoji>🏆</c-emoji>
 				<small><span class=" [ visually-hidden ] ">earning</span> badges</small>
+				{% set badges_array = [] -%}
 				{% for badge in badges -%}
 					{%- if badge.id -%}
-						<a href="https://untappd.com/user/{{ author.untappd }}/badges/{{ badge.id }}">{{ badge.title | default(badge) }}</a>
+						{% set badge_item -%}<a href="https://untappd.com/user/{{ author.untappd }}/badges/{{ badge.id }}">{{ badge.title | default(badge) }}</a>{%- endset -%}
 					{%- else -%}
-						<strong>{{ badge.title | default(badge) }}</strong>
+						{% set badge_item -%}<strong>{{ badge.title | default(badge) }}</strong>{%- endset -%}
 					{%- endif -%}
-					{% if not loop.last %}, {% endif %}
+					{% set badges_array = (badges_array.push(badge_item), badges_array) -%}
 				{%- endfor -%}
+				{{ badges_array | conjunction("narrow") | wrapTextNodes("small") | safe }}
 			</li>
 		{% endif %}
 		{#
@@ -157,10 +161,12 @@
 			<li class=" [ syndicate-to ] ">
 				<c-emoji>⤴️</c-emoji>
 				<small>also on</small>
+				{% set syndication_array = [] -%}
 				{% for syndication in syndicate_to -%}
-					<a href="{{ syndication | tweetback }}">{{ syndication | getSyndicationTitle }}</a>
-					{%- if not loop.last %}, {% endif %}
-				{%- endfor %}
+					{% set syndication_item -%}<a href="{{ syndication | tweetback }}" rel="syndication" class=" [ u-syndication ] ">{{ syndication | getSyndicationTitle }}</a>{%- endset -%}
+					{% set syndication_array = (syndication_array.push(syndication_item), syndication_array) -%}
+				{%- endfor -%}
+				{{ syndication_array | conjunction("narrow") | wrapTextNodes("small") | safe }}
 			</li>
 		{% endif %}
 		{% if posting_method %}
