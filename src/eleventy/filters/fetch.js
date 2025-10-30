@@ -1,3 +1,6 @@
+import dotenv from "dotenv";
+dotenv.config({ quiet: true });
+
 import EleventyFetch from "@11ty/eleventy-fetch";
 import stats from "download-stats";
 import { cacheDurations } from "../data/site.js";
@@ -7,10 +10,15 @@ import { cacheDurations } from "../data/site.js";
  * @returns {object}
  */
 export const githubData = async (repository) => {
+	const headers = {
+		Accept: "application/vnd.github.v3+json",
+		Authorization: `token ${process.env.GITHUB_TOKEN || ""}`,
+	};
 	const url = `https://api.github.com/repos/${repository}`;
 	const json = await EleventyFetch(url, {
 		duration: cacheDurations.daily,
 		type: "json",
+		fetchOptions: { headers },
 	});
 	return json;
 };
