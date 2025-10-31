@@ -12,6 +12,8 @@ post_includes:
   - weblogpomo2024.njk
 syndicate_to:
   - https://fediverse.repc.co/@chrisburnell/112371549706920942
+css_includes:
+  - src/css/pages/early-2024-web-components.scss
 ---
 
 <h2 id="relative-time"><span class=" [ gamma  monospace ] ">&lt;relative-time&gt;</span></h2>
@@ -122,35 +124,3 @@ Now, this web component is *probably* better suited to be composed using only HT
 </figure>
 
 This Web Component comes with a number of attributes to control the `background-color` of the stamp, the padding between the image and the edge of the stamp, and the size and spacing of the perforations along the stamp’s edge.
-
-{% css -%}
-paper-stamp {
-    background-image:
-        radial-gradient(
-            4px,
-            transparent 95%,
-            antiquewhite
-        ),
-        linear-gradient(antiquewhite 0 0);
-    background-size:
-        calc(8px * 3.5 / 2) calc(8px * 3.5 / 2),
-        calc(100% - 8px * 3.5 / 2) calc(100% - 8px * 3.5 / 2);
-    background-position:
-        calc(8px * 3.5 / -4) calc(8px * 3.5 / -4),
-        50%;
-    background-repeat:
-        round,
-        no-repeat;
-    max-inline-size: 100%;
-    display: inline-block;
-    image-rendering: pixelated;
-}
-:is(paper-stamp, paper-stamp-nojs) img {
-    display: block;
-    margin: 15px;
-}
-paper-stamp-nojs {
-    background-color: antiquewhite;
-    display: inline-block;
-}
-{%- endcss %}

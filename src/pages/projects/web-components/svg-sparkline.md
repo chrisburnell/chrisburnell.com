@@ -12,6 +12,10 @@ tags:
   - web-components
 syndicate_to:
   - https://fediverse.repc.co/@chrisburnell/111812123566491440
+css_includes:
+  - src/css/pages/svg-sparkline.scss
+js_module_includes:
+  - node_modules/@chrisburnell/svg-sparkline/svg-sparkline.js
 ---
 
 <figure>
@@ -59,7 +63,7 @@ syndicate_to:
 You can begin using the <code>&lt;svg-sparkline&gt;</code> Web Component by including a <code>&lt;script&gt;</code> tag in your HTML and setting a <code>values</code> attribute containing comma-separated numbers to build into a sparkline:
 
 ```html
-<script type="module" src="svg-sparkline.js"></script>
+<script type="module" src="/svg-sparkline.js"></script>
 
 <svg-sparkline values="8,3,2,7,9,1,5,6,4,10,3,8,2,7,1,9"></svg-sparkline>
 ```
@@ -214,25 +218,3 @@ There are also a handful of CSS variables that you can set which will override t
 You can check out the full documentation, source code, demos, and provide feedback and report bugs on GitHub:
 
 [https://github.com/chrisburnell/svg-sparkline](https://github.com/chrisburnell/svg-sparkline)
-
-{%- css %}
-@layer overrides {
-    .sparkline-dark {
-        background-color: var(--color-kaiser);
-        color: var(--color-snowy);
-    }
-    @media (prefers-color-scheme: dark) {
-        :root:not(:has([name="color-scheme"] [value*="light"]:checked), .light, [data-color-scheme*="light"]) .sparkline-dark {
-            background-color: var(--color-snowy);
-            color: var(--color-kaiser);
-        }
-    }
-    :root:has([name="color-scheme"] [value*="dark"]:checked):not(.light, [data-color-scheme*="light"]) .sparkline-dark,
-    [data-color-scheme*="dark"] .sparkline-dark,
-    .dark .sparkline-dark {
-        background-color: var(--color-snowy);
-        color: var(--color-kaiser);
-    }
-}
-{% endcss %}
-<script type="module">{% include '../../../../node_modules/@chrisburnell/svg-sparkline/svg-sparkline.js' %}</script>

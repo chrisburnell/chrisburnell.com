@@ -1,0 +1,16 @@
+////
+/// CV / Résumé
+/// @group pages
+/// @link https://chrisburnell.com/cv/
+////
+
+.role {
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-auto-rows: auto;
+	column-gap: 1em;
+	row-gap: 0.5em;
+}
+.role > :nth-child(2n) {
+	text-align: end;
+}

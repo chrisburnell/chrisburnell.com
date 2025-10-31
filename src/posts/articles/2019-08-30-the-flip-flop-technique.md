@@ -10,6 +10,8 @@ tags:
 syndicate_to:
   - https://mastodon.social/users/chrisburnell/statuses/102705333471640919
   - https://twitter.com/iamchrisburnell/status/1167375436617330693
+css_includes:
+  - src/css/pages/the-flip-flop-technique.scss
 ---
 
 I highly recommend you read [Andy’s post](https://hankchizljaw.com/wrote/create-a-user-controlled-dark-or-light-mode/) first! Come back after, this page isn’t going anywhere…
@@ -147,43 +149,3 @@ video {
 Maybe someone knowledgable about colours or filters on the web has an idea of what’s going on here, but I can’t seem to get the emoji to return to its original colour using any combination of filters to try to flip-flop back to its unaltered state.
 
 I’m definitely missing *something*, but it’s *close*.
-
-{% css %}
-@layer overrides {
-	.figure--dragon div {
-		background-color: #f9f9f9;
-		background-image: linear-gradient(to bottom right, transparent 50%, #5f8aa6 50%, #5f8aa6);
-		width: 10rem;
-		height: 10rem;
-		font-size: 5rem;
-		line-height: 10rem;
-		text-align: center;
-	}
-	[data-color-scheme="dark"] .figure--dragon {
-		filter: hue-rotate(180deg) invert(1);
-	}
-	[data-color-scheme="dark"] .figure--dragon .emoji {
-		filter: none;
-	}
-	.figure--dragon--animate {
-		flex-direction: row;
-		cursor: col-resize;
-	}
-	.figure--dragon--animate div {
-		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-		transition: all 0.5s ease;
-	}
-	.figure--dragon--animate:hover div:first-child,
-	.figure--dragon--animate:focus div:first-child,
-	.figure--dragon--animate:active div:first-child {
-		clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
-		transform: translateX(50%);
-	}
-	.figure--dragon--animate:hover div:last-child,
-	.figure--dragon--animate:focus div:last-child,
-	.figure--dragon--animate:active div:last-child {
-		clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
-		transform: translateX(-50%);
-	}
-}
-{% endcss %}

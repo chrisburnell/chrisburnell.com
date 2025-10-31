@@ -1,0 +1,43 @@
+////
+/// The Flip-Flop Technique
+/// @group pages
+/// @link https://chrisburnell.com/article/the-flip-flop-technique/
+////
+
+@layer pages {
+	.figure--dragon div {
+		background-color: #f9f9f9;
+		background-image: linear-gradient(to bottom right, transparent 50%, #5f8aa6 50%, #5f8aa6);
+		width: 10rem;
+		height: 10rem;
+		font-size: 5rem;
+		line-height: 10rem;
+		text-align: center;
+	}
+	[data-color-scheme="dark"] .figure--dragon {
+		filter: hue-rotate(180deg) invert(1);
+	}
+	[data-color-scheme="dark"] .figure--dragon .emoji {
+		filter: none;
+	}
+	.figure--dragon--animate {
+		flex-direction: row;
+		cursor: col-resize;
+	}
+	.figure--dragon--animate div {
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+		transition: all 0.5s ease;
+	}
+	.figure--dragon--animate:hover div:first-child,
+	.figure--dragon--animate:focus div:first-child,
+	.figure--dragon--animate:active div:first-child {
+		clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+		transform: translateX(50%);
+	}
+	.figure--dragon--animate:hover div:last-child,
+	.figure--dragon--animate:focus div:last-child,
+	.figure--dragon--animate:active div:last-child {
+		clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+		transform: translateX(-50%);
+	}
+}

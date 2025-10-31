@@ -1,12 +1,25 @@
-{# Deferred JS -#}
-<script type="module" src="{% getBundleFileUrl 'js', 'deferred' %}" defer></script>
-<script src="{% getBundleFileUrl 'js' %}" defer></script>
+		{# Deferred JS -#}
+		<script type="module" src="{% getBundleFileUrl 'js', 'module' %}" defer></script>
+		<script src="{% getBundleFileUrl 'js' %}" defer></script>
 
-{%- js 'deferred' -%}{% renderFile 'src/js/defer.js' %}{%- endjs -%}
-{%- js -%}{% renderFile 'src/js/imports/settings.js' %}{%- endjs -%}
-{%- js -%}{% renderFile 'src/js/imports/masonry-polyfill.js' %}{%- endjs -%}
+{# JS Module Includes -#}
+{%- if (js_module_includes | toArray) | length %}
+		{%- for js_module_include in (js_module_includes | toArray) %}
+		{%- js js_module_include -%}{% renderFile js_module_include %}{%- endjs %}
+		<script src="{% getBundleFileUrl 'js', js_module_include %}" type="module" defer></script>
+		{%- endfor -%}
+{%- endif %}
+
+{# JS Includes -#}
+{%- if (js_includes | toArray) | length %}
+		{%- for js_include in (js_includes | toArray) %}
+		{%- js js_include -%}{% renderFile js_include %}{%- endjs %}
+		<script src="{% getBundleFileUrl 'js', js_include %}" defer></script>
+		{%- endfor -%}
+{%- endif %}
+
 {%- if eleventy.env.runMode === 'build' and not excludeFromAnalytics -%}
-{%- js 'deferred' -%}
+<script defer>
 (function () {
 	if (
 		navigator.doNotTrack === "1" ||
@@ -27,8 +40,10 @@
 	document.head.appendChild(scriptElement);
 	fathom("set", "siteId", "{{ site.fathom_siteid }}");
 	fathom("trackPageview");
-})();
-{%- endjs -%}
+</script>
 {%- endif -%}
 
-
+{# Render out Deferred JS -#}
+{%- js 'module' -%}{% renderFile 'src/js/defer.js' %}{%- endjs -%}
+{%- js -%}{% renderFile 'src/js/imports/settings.js' %}{%- endjs -%}
+{%- js -%}{% renderFile 'src/js/imports/masonry-polyfill.js' %}{%- endjs -%}

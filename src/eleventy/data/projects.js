@@ -56,7 +56,6 @@ export default {
 			},
 		},
 	],
-
 	previousVersions: [
 		{
 			url: "https://v3.chrisburnell.com",
@@ -92,7 +91,6 @@ export default {
 			},
 		},
 	],
-
 	web: [
 		{
 			url: "https://weather.chrisburnell.com",

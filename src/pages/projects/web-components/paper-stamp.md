@@ -10,6 +10,10 @@ tags:
   - javascript
   - package
   - web-components
+css_includes:
+  - src/css/pages/paper-stamp.scss
+js_module_includes:
+  - node_modules/@chrisburnell/paper-stamp/paper-stamp.js
 ---
 
 <figure>
@@ -37,7 +41,7 @@ tags:
 You can begin using the <code>&lt;paper-stamp&gt;</code> Web Component by including a <code>&lt;script&gt;</code> tag in your HTML, with the component itself wrapping a <code>&lt;img&gt;</code>:
 
 ```html
-<script type="module" src="paper-stamp.js"></script>
+<script type="module" src="/paper-stamp.js"></script>
 
 <paper-stamp>
 	<img src="/image.png" alt="...">
@@ -101,18 +105,3 @@ There are also a handful of attributes you can set which will override the appea
 	<img src="/image.png" alt="...">
 </paper-stamp>
 ```
-
-{% css -%}
-    @layer components {
-        paper-stamp:not(:defined) {
-            background-color: antiquewhite;
-            display: inline-block;
-            padding: 15px;
-        }
-
-        paper-stamp:not(:defined) img {
-            display: block;
-        }
-    }
-{%- endcss %}
-<script type="module">{% include '../../../../node_modules/@chrisburnell/paper-stamp/paper-stamp.js' %}</script>

@@ -1,3 +1,6 @@
+import dotenv from "dotenv";
+dotenv.config({ quiet: true });
+
 import esbuild from "esbuild";
 
 let cachedJS = new Map();
@@ -17,7 +20,10 @@ export default function (eleventyConfig) {
 		read: false,
 		compile: async function (inputContent, inputPath) {
 			// Ignore anything outside the front end JS folder
-			if (!inputPath.includes("src/js/")) {
+			if (
+				!inputPath.includes("src/js/") &&
+				!inputPath.includes("node_modules/")
+			) {
 				return;
 			}
 
@@ -31,12 +37,15 @@ export default function (eleventyConfig) {
 				// Pass JS through esbuild to resolve imports and minify
 				const esbuildResult = await esbuild.build({
 					entryPoints: [inputPath],
-					nodePaths: ["src/js", "node_modules"],
+					nodePaths: [".", "src/js", "node_modules"],
 					external: ["fs"],
 					format: "esm",
 					bundle: true,
-					minify: true,
-					keepNames: true,
+					minify: process.env.ELEVENTY_RUN_MODE === "build",
+					// keepNames: true,
+					// minifySyntax: true,
+					// minifyWhitespace: true,
+					// minifyIdentifiers: false,
 					write: false,
 					define: {
 						"import.meta.url": "import.meta.url",

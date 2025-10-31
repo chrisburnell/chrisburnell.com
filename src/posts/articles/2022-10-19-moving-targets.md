@@ -9,6 +9,10 @@ tags:
   - motion
 syndicate_to:
   - https://twitter.com/iamchrisburnell/status/1583014193909096448
+css_includes:
+  - src/css/pages/moving-targets.scss
+js_includes:
+  - src/js/pages/moving-targets.js
 ---
 
 ## Choose your own adventure
@@ -16,8 +20,8 @@ syndicate_to:
 <div class=" [ box  box--line-length  box--ancient ] [ flow ] ">
     <p>You’ve gone to the library to check out a book. You browse the many shelves on wildly-differing topics, themes, tones, and so on, until you find the one you’re looking for. Stained and tattered, you know this book must be good, or at least it’s seen some use!</p>
     <p>When you open the pages you find scrawlings in the columns from anonymous authors, and there are even sticky notes sticking out along the side. On <em>these</em> pages, someone has highlighted a sentence here and there, and another, in pen, has put an enormous exclamation point in the column of the page.</p>
-    <p class="italic">To put the book down and find something else to read, <button class=" [ anchor ] [ js-end-adventure ] ">click here</button></p>
-    <p class="italic">To turn to the first marked page and start reading, <a href="#the-url">click here</a></p>
+    <p class="italic">To turn to the first marked page and start reading, <a href="#the-url">click here</a>.</p>
+    <p class="italic">To put the book down and find something else to read, <button class=" [ anchor ] [ js-end-adventure ] ">click here</button>.</p>
 </div>
 
 ## The URL
@@ -144,38 +148,3 @@ These terse, twelve lines mean that we won’t have to remember to check reduced
 How do you handle `:target` styles? What about `<mark>`? Let me know, I’d love to see other example!
 
 And check out other selectors like [`::selection`](https://developer.mozilla.org/en-US/docs/Web/CSS/::selection) for cursor-highlighted text or even the newer [`::target-text`](https://developer.mozilla.org/en-US/docs/Web/CSS/::target-text); although, make sure you’re content with the [browser support](/feature-watch/#array-at) before you get too deep!
-
-{% css %}
-@layer overrides {
-    .box--ancient {
-        --flow-space: 2em;
-        --box-background-color: #e7cb91;
-        color: var(--color-mineshaft);
-        border-width: 11px;
-        border-style: solid;
-        border-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAA8CAMAAADG+c2+AAAAAXNSR0IArs4c6QAAAIpQTFRFFyA4JTpePF6LT4+6c77TpN3bGTMtJVYuRoIydadDqMpY0NqRTSsyekhBrXdXwJRz17WU59WzNBwnYCwsiEsrvncr3p5B6MFwJBUnQR0xdSQ4pTAwz1c82oY+Hh05QCdRejZ7oj6MxlGX34SlCQoUEBQfFR0oIC43OUpQV3J3gZeWqLWyx8/M6+3pGwlVKwAAAC50Uk5TAP///////////////////////////////////////////////////////////1KX8FIAAAB5SURBVFiF7dcxDsAwCENRbmC4/2WrKAp4DnSo6t8lXZ4a0QUzs9hZIyYifNcQkwh6mQCXkWf3e7CM+AIIP08DTGSB2T1YRpw/aKz7r1JKKaWUUkqp3za+mmF2ecQLYO26DZAQzG70MBIHQBiBrSuzAUyBOdfukFl4AFFcHnPlv4frAAAAAElFTkSuQmCC) 11;
-        border-image-outset: 9px 0;
-        font-family: var(--font-family-serif);
-    }
-    .box--ancient :is(a, .anchor):not(:active) {
-        color: inherit !important;
-        text-decoration-color: currentColor;
-    }
-}
-{% endcss %}
-
-{% js -%}
-const endButton = document.querySelector(".js-end-adventure")
-
-if (endButton) {
-    endButton.addEventListener("click", (event) => {
-        event.preventDefault()
-
-        if (window.confirm("Are you sure you wish to end this chapter?")) {
-            window.open("", "_self", "")
-            window.close()
-            history.back(-1)
-        }
-    })
-}
-{%- endjs %}

@@ -6,6 +6,8 @@ tags:
   - weblogpomo
   - weblogpomo2024
   - javascript
+js_includes:
+  - src/js/pages/vigenere-cipher.js
 post_includes:
   - weblogpomo2024.njk
 ---
@@ -235,5 +237,3 @@ td {
 	transform: scale(1.1);
 }
 </style>
-
-<script>{% include '../../js/pages/vigenere-cipher.js' %}</script>

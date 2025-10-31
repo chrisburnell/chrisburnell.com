@@ -1,7 +1,4 @@
-/** @type { { string: number } } */
-let currencies = {};
-/** @type { { string: { string: number } } } */
-let datedCurrencies = {};
+/* eslint-disable no-undef */
 
 /**
  * Currency Converter
@@ -56,14 +53,16 @@ class CurrencyConverter {
 	 */
 	convertOthers(others, input) {
 		others.forEach((other) => {
-			other.value = this.convert(
-				input.value,
-				input.id,
-				other.id,
-				other.dataset.decimals
-					? Number(other.dataset.decimals)
-					: undefined,
-			);
+			if (currencies[input.id] && currencies[other.id]) {
+				other.value = this.convert(
+					input.value,
+					input.id,
+					other.id,
+					other.dataset.decimals
+						? Number(other.dataset.decimals)
+						: undefined,
+				);
+			}
 		});
 	}
 
@@ -138,7 +137,12 @@ class CurrencyConverter {
 				return check.id !== input.id;
 			});
 
-			input.placeholder = this.maxDecimals(currencies[input.id]);
+			if (currencies[input.id]) {
+				input.placeholder = this.maxDecimals(currencies[input.id]);
+			} else {
+				input.disabled = true;
+				fieldset.setAttribute("hidden", true);
+			}
 
 			input.addEventListener("change", (event) => {
 				this.handleEvent(event, others, input);

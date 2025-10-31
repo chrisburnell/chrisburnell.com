@@ -1,23 +1,35 @@
 {# Critical CSS -#}
 {%- if eleventy.env.runMode !== 'build' %}
-	{# File Reference (local dev live reload will refresh without page reload) -#}
-	<link rel="stylesheet" href="{% getBundleFileUrl 'css', 'critical' %}">
-	<link rel="stylesheet" href="{% getBundleFileUrl 'css' %}">
+		{# File Reference (local dev live reload will refresh without page reload) -#}
+		<link rel="stylesheet" href="{% getBundleFileUrl 'css', 'critical' %}">
+		<link rel="stylesheet" href="{% getBundleFileUrl 'css' %}">
 {%- else %}
-	{# Inlined CSS (fastest site performance on live) -#}
-	<style>{% getBundle 'css', 'critical' %}{% getBundle 'css' %}</style>
+		{# Inlined CSS (fastest site performance on live) -#}
+		<style>{% getBundle 'css', 'critical' %}{% getBundle 'css' %}</style>
 {%- endif %}
 
+		{# Deferred CSS -#}
+		<link rel="stylesheet" href="{% getBundleFileUrl 'css', 'defer' %}" media="print" onload="this.media='all'">
+		<noscript><link rel="stylesheet" href="{% getBundleFileUrl 'css', 'defer' %}"></noscript>
+
 {# CSS Includes -#}
-{% for css_include in (css_includes | toArray) -%}
-	{% set css_include_path = 'src/css' + css_include -%}
-	<style>{% renderFile css_include_path %}</style>
-{%- endfor %}
+{%- if (css_includes | toArray) | length %}
+	{%- if eleventy.env.runMode !== 'build' %}
+		{# File Reference (local dev live reload will refresh without page reload) -#}
+		<link rel="stylesheet" href="{% getBundleFileUrl 'css', 'includes' %}">
+	{%- else %}
+		{# Inlined CSS (fastest site performance on live) -#}
+		<style>{% getBundle 'css', 'includes' %}</style>
+	{%- endif %}
+{%- endif %}
 
-{# Deferred CSS -#}
-<link rel="stylesheet" href="{% getBundleFileUrl 'css', 'defer' %}" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="{% getBundleFileUrl 'css', 'defer' %}"></noscript>
-
-{# Render out Critical & Deferred CSS -#}
+{# Render out Critical CSS -#}
 {%- css 'critical' -%}{% renderFile 'src/css/critical.scss' %}{%- endcss -%}
+
+{# Render out Deferred CSS -#}
 {%- css 'defer' -%}{% renderFile 'src/css/defer.scss' %}{%- endcss -%}
+
+{# Render out CSS Includes -#}
+{%- for css_include in (css_includes | toArray) -%}
+	{%- css 'includes' -%}{% renderFile css_include %}{%- endcss -%}
+{%- endfor -%}

@@ -96,9 +96,3 @@ What methodologies do *you* use when authoring CSS? Do you have any compositions
 		</li>
 	</ol>
 </nav>
-
-{% css -%}
-[class="language-html"] {
-    margin-block-end: 0;
-}
-{%- endcss %}

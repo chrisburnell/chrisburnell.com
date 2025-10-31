@@ -7,6 +7,8 @@ tags:
   - css
   - weblogpomo
   - weblogpomo2024
+js_includes:
+  - src/js/pages/interpolating-colors.js
 post_includes:
   - weblogpomo2024.njk
 ---
@@ -246,5 +248,3 @@ The other values (`shorter hue`, `decreasing hue`, and `increasing hue`) are oth
     --hue-interpolation-method: increasing hue;
 }
 </style>
-
-<script>{% include '../../js/pages/interpolating-colors.js' %}</script>

@@ -4,9 +4,9 @@ pagination:
   size: 1
   alias: tag
 permalink: /{{ tag }}.xml
+tag_collection: true
 eleventyComputed:
   title: "{{ tag | supertitle | replace('-', ' ') }}"
   description: "All of my posts tagged “{{ tag }}”."
   related_collection: "{{ tag }}"
-tag_collection: true
 ---

@@ -56,27 +56,26 @@ redirect_from:
 
 <p>Please feel free to <a href="https://github.com/{{ author.github }}/{{ site.repository }}/tree/{{ site.branch }}/src/eleventy/data/browserFeatures.js">suggest new features</a> or even <a href="https://github.com/{{ author.github }}/{{ site.repository }}/tree/{{ site.branch }}/src/eleventy/data/browsersByType.js">other browsers</a>.</p>
 
-{%- set utilities_css -%}
+<style>
 @layer utilities {
-	{%- for feature in browserFeaturesSorted -%}
-		{%- if feature.supports -%}
+	{%- for feature in browserFeaturesSorted %}
+		{%- if feature.supports %}
 			@supports ({{ feature.supports}}) {
 				[id="support-{{ feature.id }}"] {
 					display: inline;
 				}
 			}
-		{%- endif %}
-	{%- endfor -%}
+		{%- endif -%}
+	{%- endfor %}
 }
-{%- endset -%}
-{%- css %}{{ utilities_css }}{% endcss -%}
+</style>
 
-{%- for feature in browserFeaturesSorted -%}
-	{%- if feature.supportsJS -%}
-		{%- js -%}
+<script>
+	{%- for feature in browserFeaturesSorted %}
+		{%- if feature.supportsJS %}
 			if (window["{{ feature.supportsJS }}"]) {
 				document.getElementById("support-{{ feature.id }}").style.display = "inline"
 			}
-		{%- endjs -%}
-	{%- endif %}
-{%- endfor -%}
+		{%- endif -%}
+	{%- endfor -%}
+</script>

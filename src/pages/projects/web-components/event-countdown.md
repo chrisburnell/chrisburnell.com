@@ -10,6 +10,8 @@ tags:
   - javascript
   - package
   - web-components
+js_module_includes:
+  - node_modules/@chrisburnell/event-countdown/event-countdown.js
 ---
 
 <noscript><p class=" [ box  box--error ] ">Unfortunately, this Web Component requires JavaScript to function correctly!</p></noscript>
@@ -37,7 +39,7 @@ tags:
 You start using the <code>&lt;event-countdown&gt;</code> Web Component by including a <code>&lt;script&gt;</code> tag in your HTML:
 
 ```html
-<script type="module" src="event-countdown.js"></script>
+<script type="module" src="/event-countdown.js"></script>
 ```
 
 ### General usage example
@@ -117,5 +119,3 @@ You can also override the maximum unit of time used by providing a `max-division
     CSS Naked Day starts on <time start datetime="2024-04-09T00:00:00+14:00">9 April 2024 00:00:00 UTC+14</time>.
 </event-countdown>
 ```
-
-<script type="module">{% include '../../../../node_modules/@chrisburnell/event-countdown/event-countdown.js' %}</script>

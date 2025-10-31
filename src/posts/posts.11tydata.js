@@ -46,8 +46,6 @@ export default {
 	list: "stack",
 	mf_root: "entry",
 	show_responses: true,
-	pre_includes: [],
-	post_includes: [],
 	eleventyComputed: {
 		canonical: (data) => siteURL + data.page.url,
 		year: (data) => new Date(data.date).getFullYear(),
@@ -132,9 +130,19 @@ export default {
 		},
 		rank: (data) => data.rank || {},
 		css_includes: (data) => {
-			return [...data.css_includes].map((css_include) =>
-				css_include.replace(/\.css$/i, ".scss"),
-			);
+			return [...new Set([...data.css_includes])];
+		},
+		js_includes: (data) => {
+			return [...new Set([...data.js_includes])];
+		},
+		js_module_includes: (data) => {
+			return [...new Set([...data.js_module_includes])];
+		},
+		pre_includes: (data) => {
+			return [...new Set([...data.pre_includes])];
+		},
+		post_includes: (data) => {
+			return [...new Set([...data.post_includes])];
 		},
 	},
 };

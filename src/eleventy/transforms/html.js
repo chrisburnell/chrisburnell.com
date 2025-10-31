@@ -12,13 +12,30 @@ export default async function (value, outputPath) {
 			$(element).remove();
 		});
 
+		// Remove <style> elements with no content
+		$("style").each((_, element) => {
+			const content = $(element).html().trim();
+			if (content === "") {
+				$(element).remove();
+			}
+		});
+
+		// Remove <script> elements with empty `src` attributes and no content
+		$("script").each((_, element) => {
+			const src = $(element).attr("src");
+			const content = $(element).html().trim();
+			if ((!src || src === "") && content === "") {
+				$(element).remove();
+			}
+		});
+
 		// We have to process headings from table of contents before adding
 		// the permalink to them later, or the links will include the text of
 		// the permalink.
 		const tocHeadings = $(".generate-toc h2:not(.no-fragment)");
 		if (tocHeadings.length) {
 			let tocHtml = `
-				<div class=" [ toc ] "" data-pagefind-ignore>
+				<div class=" [ toc ] " data-pagefind-ignore>
 					<is-land>
 						<details-utils force-close="(max-width: 850px)" force-restore>
 							<details open class=" [ table-of-contents ] ">

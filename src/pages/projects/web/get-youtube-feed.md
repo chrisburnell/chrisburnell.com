@@ -2,6 +2,8 @@
 published: false
 title: Get YouTube Feed
 description: Paste a YouTube channel URL and get the URL to the equivalent Atom Feed for use in your Microsub setup.
+js_module_includes:
+  - src/js/pages/get-youtube-feed.js
 ---
 
 <noscript><p>Unfortunately, this page requires JavaScript for the form to function correctly.</p></noscript>
@@ -16,5 +18,3 @@ Expects a URL in the following format:
     <input type="text" inputmode="url" id="url">
     <button type="submit">Submit</button>
 </form>
-
-<script type="module">{% include '../../../js/pages/get-youtube-feed.js' %}</script>

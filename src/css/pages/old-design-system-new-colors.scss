@@ -1,0 +1,117 @@
+////
+/// Can you teach an old design system new colours?
+/// @group pages
+/// @link https://chrisburnell.com/article/old-design-system-new-colors/
+////
+
+@layer pages {
+    .palette li {
+        flex-grow: 0;
+        white-space: normal;
+    }
+    .output-color {
+        block-size: 4rem;
+    }
+    .output-opacity {
+        background-image: url("/images/built/annoying-navigation-css.png");
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    }
+    .output-opacity::before {
+        content: "";
+        background-color: color-mix(in oklab, var(--color-thunder), transparent calc(100% - var(--output-opacity, 75%)));
+        inline-size: 50%;
+        block-size: 100%;
+        position: absolute;
+        inset-block-start: 0;
+        inset-inline-start: 0;
+    }
+    .rgb-hue-gradient,
+    .oklch-hue-gradient {
+        inline-size: min(14em, 66vmin);
+        block-size: min(14em, 66vmin);
+        float: right;
+        margin-inline-start: var(--size-medium);
+        margin-block-end: var(--size-small);
+        border-radius: 50%;
+        border-width: 0;
+    }
+    .rgb-hue-gradient {
+        background-image:
+            radial-gradient(circle at center, #000000 0, #000000 43%, transparent 44%, transparent),
+            conic-gradient(#ff1a1a, #ffff1a, #1aff1a, #1affff, #1a1aff, #ff1aff, #ff1a1a);
+    }
+    .oklch-hue-gradient {
+        background-image:
+            radial-gradient(circle at center, #000000 0, #000000 43%, transparent 44%, transparent),
+            conic-gradient(oklch(65% 65% 0), oklch(75% 40% 60), oklch(90% 50% 120), oklch(90% 35% 180), oklch(70% 40% 240), oklch(55% 70% 300), oklch(65% 65% 0));
+    }
+    .rgb-saturation-gradient,
+    .rgb-lightness-gradient,
+    .hsl-ugly-gradient,
+    .hsl-lightness-block,
+    .oklch-lightness-gradient,
+    .oklch-chroma-gradient {
+        inline-size: 6rem;
+        block-size: min(14em, 66vmin);
+        float: right;
+        margin-inline-start: var(--size-medium);
+        margin-block-end: var(--size-small);
+    }
+    .rgb-saturation-gradient {
+        background-image:
+            linear-gradient(to bottom, hsl(204 0% 50%), hsl(204 100% 50%));
+    }
+    .rgb-lightness-gradient {
+        background-image:
+            linear-gradient(to bottom, hsl(204 100% 0%), hsl(204 100% 50%), hsl(204 100% 100%));
+    }
+    .hsl-lightness-block {
+        background-image:
+            linear-gradient(to bottom right, hsl(180 100% 50%), hsl(180 100% 50%) 49.5%, hsl(240 100% 50%) 50.25%, hsl(240 100% 50%));
+    }
+    .hsl-ugly-gradient {
+        background-image:
+            linear-gradient(to bottom, hsl(0 100% 50%), hsl(180 100% 50%));
+        position: relative;
+    }
+    .hsl-ugly-gradient::before {
+        content: "";
+        background-image:
+            linear-gradient(to bottom, hsl(0 3% 50%), hsl(188 3% 50%));
+        inline-size: 4rem;
+        block-size: 4rem;
+        border-radius: 50%;
+        border: 2px solid white;
+        box-shadow: 0 2px 4px black, inset 0 0 4px black;
+        display: block;
+        position: absolute;
+        inset-block-start: 50%;
+        inset-inline-start: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+    .oklch-lightness-gradient {
+        background-image:
+            linear-gradient(to bottom, oklch(0% 0.4 237.73), oklch(100% 0.4 237.73));
+    }
+    .oklch-chroma-gradient {
+        background-image:
+            linear-gradient(to bottom, oklch(61.29% 0 237.73), oklch(61.29% 0.4 237.73));
+    }
+    .output-palette {
+        --color-snowy: oklch(var(--snowy-lightness) var(--monochrome-chroma) var(--monochrome-hue));
+        --color-thunder: oklch(var(--thunder-lightness) var(--monochrome-chroma) var(--monochrome-hue));
+        --color-mineshaft: color-mix(in oklab, var(--color-snowy), var(--color-thunder) 83.6%);
+        --color-kaiser: color-mix(in oklab, var(--color-snowy), var(--color-thunder) 66.6%);
+        --color-nickel: color-mix(in oklab, var(--color-snowy), var(--color-thunder) 51.8%);
+        --color-yeti: color-mix(in oklab, var(--color-snowy), var(--color-thunder) 10.2%);
+        --color-raven: oklch(var(--raven-lightness) var(--raven-chroma) var(--raven-hue));
+        --color-lynx: color-mix(in oklab, var(--color-raven), var(--color-thunder) 75%);
+        --color-wolf: color-mix(in oklab, var(--color-raven), var(--color-thunder) 54%);
+        --color-bowhead: color-mix(in oklab, var(--color-raven), var(--color-thunder) 33%);
+        --color-highland: color-mix(in oklab, var(--color-raven), var(--color-snowy) 33%);
+        --color-coyote: color-mix(in oklab, var(--color-raven), var(--color-snowy) 54%);
+        --color-bear: color-mix(in oklab, var(--color-raven), var(--color-snowy) 75%);
+    }
+}

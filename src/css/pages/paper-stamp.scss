@@ -1,0 +1,17 @@
+////
+/// <paper-stamp>
+/// @group pages
+/// @link https://chrisburnell.com/paper-stamp/
+////
+
+@layer pages {
+	paper-stamp:not(:defined) {
+		background-color: antiquewhite;
+		display: inline-block;
+		padding: 15px;
+	}
+
+	paper-stamp:not(:defined) img {
+		display: block;
+	}
+}

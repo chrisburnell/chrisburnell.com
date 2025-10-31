@@ -10,6 +10,8 @@ tags:
   - javascript
   - package
   - web-components
+js_module_includes:
+  - node_modules/@chrisburnell/url-input/url-input.js
 ---
 
 <noscript><p class=" [ box  box--error ] ">Unfortunately, this Web Component requires JavaScript to function correctly!</p></noscript>
@@ -36,7 +38,7 @@ tags:
 You start using the <code>&lt;url-input&gt;</code> Web Component by including a <code>&lt;script&gt;</code> tag in your HTML:
 
 ```html
-<script type="module" src="url-input.js"></script>
+<script type="module" src="/url-input.js"></script>
 ```
 
 ### General usage example
@@ -50,5 +52,3 @@ You start using the <code>&lt;url-input&gt;</code> Web Component by including a 
 ```html
 <url-input force-https><input type="url"></url-input>
 ```
-
-<script type="module" src="/js/components/url-input.js"></script>

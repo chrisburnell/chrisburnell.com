@@ -1,0 +1,37 @@
+////
+/// Web Components from Early 2024
+/// @group pages
+/// @link https://chrisburnell.com/note/early-2024-web-components/
+////
+
+@layer pages {
+	paper-stamp {
+		background-image:
+			radial-gradient(
+				4px,
+				transparent 95%,
+				antiquewhite
+			),
+			linear-gradient(antiquewhite 0 0);
+		background-size:
+			calc(8px * 3.5 / 2) calc(8px * 3.5 / 2),
+			calc(100% - 8px * 3.5 / 2) calc(100% - 8px * 3.5 / 2);
+		background-position:
+			calc(8px * 3.5 / -4) calc(8px * 3.5 / -4),
+			50%;
+		background-repeat:
+			round,
+			no-repeat;
+		max-inline-size: 100%;
+		display: inline-block;
+		image-rendering: pixelated;
+	}
+	:is(paper-stamp, paper-stamp-nojs) img {
+		display: block;
+		margin: 15px;
+	}
+	paper-stamp-nojs {
+		background-color: antiquewhite;
+		display: inline-block;
+	}
+}

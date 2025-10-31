@@ -4,6 +4,8 @@ title: WeblogPoMo 2024 Wrap Up
 description: It’s officially June now, which means <a href="/tag/weblogpomo2024/">#WeblogPoMo2024</a> has come to a close! Let’s review what I wrote about and what I’m taking away from participating in this event.
 tags:
   - weblogpomo
+js_module_includes:
+  - node_modules/@chrisburnell/svg-sparkline/svg-sparkline.js
 ---
 
 *Somehow* I managed to post every single day this month. It was oftentimes tiring and some days a real struggle to get things done and published, but I’m really happy that I managed to stay committed and see it through to the end.
@@ -44,7 +46,6 @@ Based on [my stats page](/stats/), this month’s posts account for a whopping *
 
 <figure class="requires-js">
     <svg-sparkline values="{% for item in (collections.weblogpomo2024 | arePublished) %}{% if page.url != item.url %}{% if not loop.first %},{% endif %}{{ item.content | removeTagsForWordcount | striptags | safe | wordcount }}{% endif %}{% endfor %}" fill="true" start-label="Word Count"></svg-sparkline>
-    <is-land class=" [ visually-hidden ] "><template webc:raw data-island="once"><script type="module" src="/js/components/svg-sparkline.js"></script></template></is-land>
 </figure>
 
 

@@ -1,14 +1,16 @@
 ---
 title: Curriculum Vitae / Résumé
-eleventyComputed:
-  tagline: '<span class=" [ canada ] " data-pagefind-meta="title:CV / Résumé">{{ author.name }}</span>'
-  description: "{{ author.role | title }}{% if not author.employer %} and Software Engineer{% else %}, Software Engineer, and {{ author.employer.role | title }} at {{ author.employer.title }}{% endif %}"
 content_class: h-resume
 og_image: /images/avatar@2x.jpeg
 toc: true
 redirect_from:
   - /resume
   - /work
+css_includes:
+  - src/css/pages/cv.scss
+eleventyComputed:
+  tagline: '<span class=" [ canada ] " data-pagefind-meta="title:CV / Résumé">{{ author.name }}</span>'
+  description: "{{ author.role | title }}{% if not author.employer %} and Software Engineer{% else %}, Software Engineer, and {{ author.employer.role | title }} at {{ author.employer.title }}{% endif %}"
 ---
 
 {% if author.employer.title != '' -%}
@@ -217,15 +219,3 @@ Author of numerous open-source software packages, accumulating over {{ package_d
 {% include 'testimonials.njk' %}
 #}
 
-<style>
-.role {
-	display: grid;
-	grid-template-columns: auto auto;
-	grid-auto-rows: auto;
-	column-gap: 1em;
-	row-gap: 0.5em;
-}
-.role > :nth-child(2n) {
-	text-align: end;
-}
-</style>

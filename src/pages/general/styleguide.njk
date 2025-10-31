@@ -3,7 +3,9 @@ title: Style Guide
 description: The style guide for <span class="canada">this website</span>.
 toc: true
 css_includes:
-  - /pages/styleguide.css
+  - src/css/pages/styleguide.scss
+js_module_includes:
+  - node_modules/@chrisburnell/svg-sparkline/svg-sparkline.js
 ---
 {%- from 'macros/deckItem.njk' import deckItem -%}
 {%- from "macros/shelfItem.njk" import shelfItem -%}
@@ -717,5 +719,3 @@ p q r s t u v w x y z { | } ~</pre>
 {% browserSupport 'css-has' %}
 
 <p class="italic">I keep track of a whole bunch of different browser features over on my <a href="/feature-watch/">Browser Feature Watch</a> project.</p>
-
-<script type="module">{% include '../../../node_modules/@chrisburnell/svg-sparkline/svg-sparkline.js' %}</script>

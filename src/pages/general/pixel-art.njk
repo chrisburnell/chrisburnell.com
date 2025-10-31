@@ -5,6 +5,8 @@ show_responses: true
 theme: dark  nineties
 redirect_from:
   - /pixelart
+css_includes:
+  - src/css/pages/pixel-art.scss
 ---
 
 <div class=" [ showcase ] ">
@@ -33,18 +35,3 @@ redirect_from:
 	<img src="/images/animated/built-with-eleventy-long.gif" alt="Built with Eleventy animated badge" width="88" height="31" loading="lazy" decoding="async">
 	<img src="/images/animated/built-with-eleventy-long-alternate.gif" alt="Built with Eleventy animated badge" width="88" height="31" loading="lazy" decoding="async">
 </div>
-
-<style>
-.showcase {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: start;
-	gap: 2em;
-	margin-inline: auto;
-	image-rendering: pixelated;
-
-	& > img {
-		margin-inline: 0;
-	}
-}
-</style>

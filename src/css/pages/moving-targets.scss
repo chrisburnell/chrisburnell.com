@@ -1,0 +1,22 @@
+////
+/// Moving Targets
+/// @group pages
+/// @link https://chrisburnell.com/article/moving-targets/
+////
+
+@layer pages {
+    .box--ancient {
+        --flow-space: 2em;
+        --box-background-color: #e7cb91;
+        color: var(--color-mineshaft);
+        border-width: 11px;
+        border-style: solid;
+        border-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAA8CAMAAADG+c2+AAAAAXNSR0IArs4c6QAAAIpQTFRFFyA4JTpePF6LT4+6c77TpN3bGTMtJVYuRoIydadDqMpY0NqRTSsyekhBrXdXwJRz17WU59WzNBwnYCwsiEsrvncr3p5B6MFwJBUnQR0xdSQ4pTAwz1c82oY+Hh05QCdRejZ7oj6MxlGX34SlCQoUEBQfFR0oIC43OUpQV3J3gZeWqLWyx8/M6+3pGwlVKwAAAC50Uk5TAP///////////////////////////////////////////////////////////1KX8FIAAAB5SURBVFiF7dcxDsAwCENRbmC4/2WrKAp4DnSo6t8lXZ4a0QUzs9hZIyYifNcQkwh6mQCXkWf3e7CM+AIIP08DTGSB2T1YRpw/aKz7r1JKKaWUUkqp3za+mmF2ecQLYO26DZAQzG70MBIHQBiBrSuzAUyBOdfukFl4AFFcHnPlv4frAAAAAElFTkSuQmCC) 11;
+        border-image-outset: 9px 0;
+        font-family: var(--font-family-serif);
+    }
+    .box--ancient :is(a, .anchor):not(:active) {
+        color: inherit !important;
+        text-decoration-color: currentColor;
+    }
+}

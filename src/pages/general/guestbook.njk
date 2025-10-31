@@ -4,6 +4,10 @@ description: Welcome to my guestbook, powered by <a href="https://indieweb.org/W
 show_responses: true
 theme: dark  nineties
 show_links_as_replies: true
+css_includes:
+  - src/css/pages/guestbook.scss
+js_module_includes:
+  - node_modules/@chrisburnell/cow-pen/cow-pen.js
 ---
 
 <marquee>
@@ -79,15 +83,3 @@ show_links_as_replies: true
 	<img src="/images/animated/guestbook-text.gif" alt="an animated image of the word Guestbook" loading="lazy" decoding="async" class="pixelated" style="margin-inline: 0;">
 	<img src="/images/animated/guestbook.gif" alt="an animated pixel-art image of a quill writing in an open book" loading="lazy" decoding="async" class="pixelated" style="margin-inline: 0;">
 </div>
-
-{%- css -%}
-body > canvas {
-	z-index: var(--z-index-modal);
-}
-@media (prefers-reduced-motion: reduce) {
-	body > canvas {
-		display: none;
-	}
-}
-{%- endcss -%}
-<script type="module">{% include '../../../node_modules/@chrisburnell/cow-pen/cow-pen.js' %}</script>

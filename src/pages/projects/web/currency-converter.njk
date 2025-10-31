@@ -6,7 +6,9 @@ emoji: 💸
 tags:
   - calculator
 css_includes:
-  - /pages/currency-converter.css
+  - src/css/pages/currency-converter.scss
+js_module_includes:
+  - src/js/pages/currency-converter.js
 webmanifest: "/currency-converter.webmanifest"
 eleventyComputed:
   updated: "{{ (currencies.date + 'T00:00:00+0000') }}"
@@ -214,4 +216,3 @@ let currencies = { {%- for code, value in currencies.rates %}
 console.log("latest", currencies);
 datedCurrencies["latest"] = currencies;
 </script>
-<script type="module" defer>{% include '../../../js/pages/currency-converter.js' %}</script>

@@ -6,6 +6,8 @@ tags:
   - calculator
 redirect_from:
   - /article/kaprekars-constant
+js_module_includes:
+  - src/js/pages/kaprekar.js
 ---
 
 <blockquote>
@@ -48,5 +50,3 @@ Following the above steps always leads you to the same number, Kaprekar’s Cons
 		</tr>
 	</tbody>
 </table>
-
-<script type="module">{% include '../../js/pages/kaprekar.js' %}</script>

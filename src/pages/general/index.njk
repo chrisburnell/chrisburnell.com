@@ -2,15 +2,15 @@
 permalink: "/index.html"
 layout: base
 title: The Homepage
-eleventyComputed:
-  tagline: "{{ site.tagline | safe }}"
-  description: "{{ site.description | safe }}"
 sitemap:
   changefreq: daily
   priority: 1.0
 excludeFromSearch: true
 css_includes:
-  - /pages/homepage.css
+  - src/css/pages/homepage.scss
+eleventyComputed:
+  tagline: "{{ site.tagline | safe }}"
+  description: "{{ site.description | safe }}"
 ---
 {%- from 'macros/deckItem.njk' import deckItem -%}
 {# {%- from "macros/shelfItem.njk" import shelfItem -%} -#}

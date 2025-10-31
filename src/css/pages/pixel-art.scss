@@ -1,0 +1,18 @@
+////
+/// Pixel Art
+/// @group pages
+/// @link https://chrisburnell.com/pixel-art/
+////
+
+.showcase {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: start;
+	gap: 2em;
+	margin-inline: auto;
+	image-rendering: pixelated;
+
+	& > img {
+		margin-inline: 0;
+	}
+}

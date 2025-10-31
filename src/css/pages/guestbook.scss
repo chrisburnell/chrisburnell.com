@@ -1,0 +1,16 @@
+////
+/// Guestbook
+/// @group pages
+/// @link https://chrisburnell.com/guestbook/
+////
+
+@layer pages {
+	body > canvas {
+		z-index: var(--z-index-modal);
+	}
+	@media (prefers-reduced-motion: reduce) {
+		body > canvas {
+			display: none;
+		}
+	}
+}

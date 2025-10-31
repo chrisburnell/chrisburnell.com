@@ -5,6 +5,8 @@ description: Here’s a handy CSS technique to make sure your content isn’t ob
 tags:
   - css
   - ux
+css_includes:
+  - src/css/pages/environment-aware-wrapper.scss
 ---
 
 <figure>
@@ -66,39 +68,3 @@ Because we’re using the `max()` function to compare the `env()` and `var()` va
 Since Wrappers are such a common pattern in front end development, this technique could have widespread use, and hopefully you can slide it into your existing code without much trouble!
 
 Let me know if you’ve got other interesting uses for environment variables or ways to handle the <q>notch</q>!
-
-{% css %}
-@layer overrides {
-    .notched {
-        border: var(--size-tiny) solid currentColor;
-        inline-size: 100%;
-        max-inline-size: var(--size-breakpoint-tiny);
-        aspect-ratio: 2532 / 1170;
-        margin-inline: auto;
-        border-radius: 2em;
-        overflow: hidden;
-        position: relative;
-    }
-
-    .notched::before {
-        content: "";
-        background-color: currentColor;
-        inline-size: 5%;
-        block-size: 50%;
-        position: absolute;
-        inset-block-start: 50%;
-        inset-inline-start: 0;
-        transform: translateY(-50%);
-        border-radius: 0 1.5vw 1.5vw 0;
-    }
-
-    .notched .wrap {
-        max-block-size: 100%;
-        overflow-y: hidden;
-    }
-
-    .notched p {
-        max-inline-size: 100%;
-    }
-}
-{% endcss %}

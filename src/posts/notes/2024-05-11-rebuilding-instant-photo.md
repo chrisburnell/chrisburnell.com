@@ -8,6 +8,9 @@ tags:
   - web-components
 post_includes:
   - weblogpomo2024.njk
+js_module_includes:
+  - node_modules/@chrisburnell/instant-photo/instant-photo.js
+  - src/js/pages/rebuilding-instant-photo.js
 ---
 
 <aside class="rss-only"><p>I think the styles and scripts that come with this article are pretty important to the reading experience, so if you want to see the Web Component and its CSS replacement in action, go to the web version: <a href="{{ canonical }}">{{ canonical }}</a>.</p></aside>
@@ -135,39 +138,3 @@ Now we can add both the `develop` and `should-develop` classes, and browsers tha
 </figure>
 
 For all intents and purposes, I’m going to call that complete. I’m taking away from this exercise the lesson that I should probably only reach for Web Components when the core of the functionality I’m looking for can *only* come from JavaScript.
-
-<style>
-.instant-photo {
-	background-color: var(--instant-photo-background-color, #121212);
-	display: inline-block;
-	border-width: calc(var(--instant-photo-size, 3.1in) * 0.0645);
-	border-block-end-width: calc(var(--instant-photo-size, 3.1in) * 0.2903);
-	border-style: solid;
-	border-color: var(--instant-photo-border-color, #ededed);
-}
-.instant-photo img {
-	inline-size: var(--instant-photo-size, 3.1in);
-	block-size: var(--instant-photo-size, 3.1in);
-	display: block;
-}
-.instant-photo.develop img {
-	opacity: 0;
-	filter: contrast(0%) saturate(50%);
-	animation: none;
-}
-.instant-photo:is(.develop:not(.will-develop), .visible) img {
-	animation: instant-photo var(--instant-photo-develop-duration, 10s) linear var(--instant-photo-develop-delay, 1s) forwards;
-}
-@keyframes instant-photo {
-	50% {
-		opacity: 1;
-		filter: contrast(67%) saturate(80%);
-	}
-	100% {
-		opacity: 1;
-		filter: contrast(100%) saturate(100%);
-	}
-}
-</style>
-<script>{% include '../../js/pages/rebuilding-instant-photo.js' %}</script>
-<script type="module">{% include '../../../node_modules/@chrisburnell/instant-photo/instant-photo.js' %}</script>

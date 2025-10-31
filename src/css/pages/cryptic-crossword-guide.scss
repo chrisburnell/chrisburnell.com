@@ -1,0 +1,142 @@
+////
+/// Cryptic Crossword Guide
+/// @group pages
+/// @link https://chrisburnell.com/cryptic-crossword-guide/
+////
+
+@layer pages {
+	.main {
+		padding-block-end: 0;
+	}
+
+	h1,
+	h1 + p {
+		max-inline-size: 80vi;
+		text-align: center;
+		text-wrap: balance;
+	}
+
+	.full-space {
+		scroll-snap-align: initial;
+		outline: 2px solid currentColor;
+		outline-offset: -1px;
+	}
+	.full-space:not(:has(h1)) {
+		min-block-size: 50dvh;
+		grid-template-columns: auto [space-start] min(800px, 100%) [space-end] auto;
+	}
+
+	.full-space > * {
+		grid-column: space;
+	}
+
+	.full-space h2 {
+		padding-block-end: 0;
+		line-height: var(--line-height-small);
+		box-shadow: none;
+	}
+
+	.clue-example {
+		background-color: oklch(from currentColor l c h / 90%);
+		display: grid;
+		gap: 1em;
+		align-items: end;
+		padding: 1em;
+		border-radius: var(--size-border-default);
+	}
+	@container (inline-size > 850px) {
+		.clue-example {
+			grid-template-columns: 3fr 2fr;
+		}
+		.clue-example p,
+		.clue-example-inputs {
+			grid-column: 1 / 3;
+		}
+		.clue-example-controls:last-of-type {
+			text-align: end;
+		}
+	}
+	.clue-example p {
+		font-size: var(--font-size-gamma);
+		font-weight: var(--font-weight-semibold);
+		line-height: var(--line-height-small);
+	}
+	.clue-example-inputs {
+		display: flex;
+		flex-wrap: wrap;
+		column-gap: 2px;
+		row-gap: 0.667em;
+
+		& input {
+			flex: 0 0 3.5rem;
+			aspect-ratio: 1;
+			min-inline-size: 0;
+			display: grid;
+			place-items: center;
+			padding: 0;
+			border: 0;
+			border-radius: 0;
+			font-family: var(--font-family-monospace);
+			font-size: var(--font-size-gamma);
+			font-weight: var(--font-weight-semibold);
+			line-height: 1;
+			text-align: center;
+			text-transform: uppercase;
+			user-select: all;
+
+			&:focus {
+				z-index: var(--z-index-above);
+			}
+		}
+
+		&:not(:has(input:not(:valid))) input,
+		& [disabled] {
+			opacity: 1;
+			color: var(--color-snowy);
+			--raven-hue: 175deg;
+			--color-raven: oklch(var(--raven-lightness) var(--raven-chroma) var(--raven-hue));
+			background-color: color-mix(in oklab, var(--color-raven), var(--color-thunder) 33%);
+		}
+	}
+
+	.clue-example-controls:not(:last-of-type) button {
+		font-size: var(--font-size-small-max);
+	}
+
+	[data-type="reset"] {
+		--raven-hue: 45deg;
+		--color-raven: oklch(var(--raven-lightness) var(--raven-chroma) var(--raven-hue));
+		background-color: color-mix(in oklab, var(--color-raven), var(--color-thunder) 33%);
+	}
+
+	[data-type="solve"] {
+		--raven-hue: 175deg;
+		--color-raven: oklch(var(--raven-lightness) var(--raven-chroma) var(--raven-hue));
+		background-color: color-mix(in oklab, var(--color-raven), var(--color-thunder) 33%);
+	}
+
+	.anagram-demo {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+	}
+	.anagram-demo span {
+		flex: 0 0 4.5rem;
+		order: 999;
+		aspect-ratio: 1;
+		display: grid;
+		place-items: center;
+		outline: 2px solid red;
+		outline-offset: -1px;
+		transition: order 0s linear calc(var(--order, 0) * 0.1s);
+	}
+	.anagram-demo:hover span {
+		order: var(--order);
+	}
+	.anagram-demo:not(:hover) .after,
+	.anagram-demo:hover .before {
+		opacity: 0;
+		inline-size: 0;
+		flex-basis: 0;
+	}
+}

@@ -9,6 +9,8 @@ redirect_from:
     hash: movies
   - from: /tv
     hash: tv
+js_module_includes:
+  - src/js/components/lastfm-listening.js
 ---
 {%- from 'macros/deckItem.njk' import deckItem -%}
 {%- from "macros/shelfItem.njk" import shelfItem -%}
@@ -265,5 +267,3 @@ redirect_from:
 		{%- endfor %}
 	</ol>
 {%- endif %}
-
-<script type="module">{% include '../../js/components/lastfm-listening.js' %}</script>

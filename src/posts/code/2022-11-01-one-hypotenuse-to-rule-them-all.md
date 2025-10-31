@@ -7,6 +7,8 @@ tags:
 codepen_slug: poKgaoR
 syndicate_to:
   - https://codepen.io/chrisburnell/pen/poKgaoR
+css_includes:
+  - src/css/pages/one-hypotenuse-to-rule-them-all.scss
 ---
 
 If a right triangle has two side-lengths both equal to <var>√2 / 2</var>, what is the length of its hypotenuse?
@@ -62,64 +64,3 @@ Which gives us… <var>1</var>
 </figure>
 
 Interesting! 🤔
-
-{% css %}
-@layer overrides {
-    .right-triangle {
-        background-image:
-            linear-gradient(
-                to bottom right,
-                transparent 49.9%,
-                var(--color-raven) 50%
-            );
-        inline-size: 10rem;
-        block-size:  10rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding-inline-end: 1.25rem;
-        padding-block-end:  1.25rem;
-        margin-inline-end: 3.75rem;
-        margin-block-end: 2rem;
-        position: relative;
-        font-weight: var(--font-weight-semibold);
-    }
-
-    .right-triangle::before,
-    .hypotenuse,
-    .opposite,
-    .adjacent {
-        position: absolute;
-        white-space: nowrap;
-    }
-
-    .right-triangle::before {
-        content: "";
-        inline-size: 15%;
-        block-size:  15%;
-        border-width: var(--size-border-thin) 0 0 var(--size-border-thin);
-        border-style: dashed;
-        border-color: var(--color-snowy);
-        inset-inline-end: 0;
-        inset-block-end: 0;
-    }
-
-    .hypotenuse {
-        text-align: end;
-        inset-block-end: 50%;
-        inset-inline-end: 50%;
-    }
-
-    .opposite {
-        inset-inline-start: calc(100% + 0.5rem);
-        inset-block-start: 50%;
-        transform: translateY(-50%);
-    }
-
-    .adjacent {
-        inset-block-start: 100%;
-        inset-inline-start: 50%;
-        transform: translateX(-50%);
-    }
-}
-{% endcss %}

@@ -9,6 +9,8 @@ tags:
   - html
   - javascript
   - web-components
+js_module_includes:
+  - node_modules/@chrisburnell/svg-sparkline/svg-sparkline.js
 ---
 
 To suit my needs, I started with [Jeremy Keith’s Canvas-Sparkline](https://github.com/adactio/Canvas-Sparkline/blob/master/sparkline.js) and made some modifications. I won’t go into detail about how the [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) or the [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API), but there are many resources available if you want a background.
@@ -120,5 +122,3 @@ We can pump these values into the [Web Audio API](https://developer.mozilla.org/
 ## Interactive Demo
 
 Check out my new interactive demo at [spark-line](/spark-line/)!
-
-<script type="module">{% include '../../../node_modules/@chrisburnell/svg-sparkline/svg-sparkline.js' %}</script>

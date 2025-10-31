@@ -20,6 +20,10 @@ syndicate_to:
   - https://twitter.com/iamchrisburnell/status/1467811195981860867
   - https://fediverse.repc.co/@chrisburnell/111754580552087852
 toc: true
+js_includes:
+  - src/js/pages/eleventy-cache-webmentions.js
+js_module_includes:
+  - node_modules/@chrisburnell/url-input/url-input.js
 ---
 
 <figure>
@@ -573,6 +577,3 @@ module<span class="token punctuation">.</span><span class="token function-variab
 
 </div>
 </c-seven-minute-tabs>
-
-<script type="module" src="/js/components/url-input.js"></script>
-<script>{% include '../../../js/pages/eleventy-cache-webmentions.js' %}</script>

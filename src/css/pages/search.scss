@@ -1,0 +1,19 @@
+////
+/// Search
+/// @group pages
+/// @link https://chrisburnell.com/search/
+////
+
+@layer pages {
+	pagefind-search {
+		--pagefind-ui-primary: var(--color-raven);
+		--pagefind-ui-text: currentColor;
+		--pagefind-ui-background: transparent;
+		--pagefind-ui-border: var(--color-nickel);
+		--pagefind-ui-tag: var(--color-nickel);
+		--pagefind-ui-border-width: var(--size-border-thin);
+		--pagefind-ui-border-radius: var(--size-border-thin);
+		--pagefind-ui-image-border-radius: var(--size-border-thin);
+		--pagefind-ui-font: inherit;
+	}
+}

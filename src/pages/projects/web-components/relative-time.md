@@ -37,7 +37,7 @@ tags:
 You start using the <code>&lt;relative-time&gt;</code> Web Component by including a <code>&lt;script&gt;</code> tag in your HTML:
 
 ```html
-<script type="module" src="relative-time.js"></script>
+<script type="module" src="/relative-time.js"></script>
 ```
 
 ### General usage example

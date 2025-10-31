@@ -7,6 +7,8 @@ perch: true
 excludeFromSearch: true
 sitemap:
   exclude: true
+css_includes:
+  - src/css/pages/search.scss
 ---
 
 <search>
@@ -25,36 +27,11 @@ sitemap:
 		</template>
 	</is-land>
 </search>
-
-{% css -%}
-pagefind-search {
-	--pagefind-ui-primary: var(--color-raven);
-	--pagefind-ui-text: currentColor;
-	--pagefind-ui-background: transparent;
-	--pagefind-ui-border: var(--color-nickel);
-	--pagefind-ui-tag: var(--color-nickel);
-	--pagefind-ui-border-width: var(--size-border-thin);
-	--pagefind-ui-border-radius: var(--size-border-thin);
-	--pagefind-ui-image-border-radius: var(--size-border-thin);
-	--pagefind-ui-font: inherit;
-}
-{%- endcss %}
-
 <script type="module">
 const isCSSNakedDay = {{ global.isCSSNakedDay | safe }};
 
-const original = customElements.define;
-customElements.define = (name, constructor, options) => {
-	if (name === "pagefind-search") {
-		console.log("Skip original pagefind-search");
-		return;
-	}
-	original(name, constructor, options);
-};
-
-{% include '../../../node_modules/@zachleat/pagefind-search/pagefind-search.js' %}
-
-customElements.define = original;
+{% set pagefind_original -%}{% include '../../../node_modules/@zachleat/pagefind-search/pagefind-search.js' %}{%- endset -%}
+{{ pagefind_original | replace("PagefindSearch.register();", "") }}
 
 {% include '../../js/imports/pagefind-search-cb.js' %}
 

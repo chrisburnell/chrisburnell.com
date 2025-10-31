@@ -10,6 +10,8 @@ tags:
   - javascript
   - package
   - web-components
+js_module_includes:
+  - node_modules/@chrisburnell/instant-photo/instant-photo.js
 ---
 
 <figure>
@@ -31,7 +33,7 @@ tags:
 You can begin using the <code>&lt;instant-photo&gt;</code> Web Component by including a <code>&lt;script&gt;</code> tag in your HTML, with the component itself wrapping a <code>&lt;img&gt;</code>:
 
 ```html
-<script type="module" src="instant-photo.js"></script>
+<script type="module" src="/instant-photo.js"></script>
 
 <instant-photo>
 	<img src="/image.jpeg" alt="...">
@@ -61,5 +63,3 @@ There are also a handful of CSS variables that you can set which will override t
 You can check out the full documentation, source code, and demos on GitHub, as well as provide feedback and report bugs on GitHub:
 
 [https://github.com/chrisburnell/instant-photo](https://github.com/chrisburnell/instant-photo)
-
-<script type="module">{% include '../../../../node_modules/@chrisburnell/instant-photo/instant-photo.js' %}</script>

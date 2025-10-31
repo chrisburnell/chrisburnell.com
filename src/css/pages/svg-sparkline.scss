@@ -1,0 +1,24 @@
+////
+/// SVG Sparkline (the page)
+/// @group pages
+/// @link https://chrisburnell.com/svg-sparkline/
+////
+
+@layer pages {
+    .sparkline-dark {
+        background-color: var(--color-kaiser);
+        color: var(--color-snowy);
+    }
+    @media (prefers-color-scheme: dark) {
+        :root:not(:has([name="color-scheme"] [value*="light"]:checked), .light, [data-color-scheme*="light"]) .sparkline-dark {
+            background-color: var(--color-snowy);
+            color: var(--color-kaiser);
+        }
+    }
+    :root:has([name="color-scheme"] [value*="dark"]:checked):not(.light, [data-color-scheme*="light"]) .sparkline-dark,
+    [data-color-scheme*="dark"] .sparkline-dark,
+    .dark .sparkline-dark {
+        background-color: var(--color-snowy);
+        color: var(--color-kaiser);
+    }
+}

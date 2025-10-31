@@ -1,4 +1,6 @@
 import dotenv from "dotenv";
+dotenv.config({ quiet: true });
+
 import { styleText } from "node:util";
 import builders from "./src/eleventy/builders.js";
 import collections from "./src/eleventy/collections.js";
@@ -8,7 +10,6 @@ import { filtersAsync, filtersSync } from "./src/eleventy/filters.js";
 import plugins from "./src/eleventy/plugins.js";
 import shortcodes from "./src/eleventy/shortcodes.js";
 import transforms from "./src/eleventy/transforms.js";
-dotenv.config({ quiet: true });
 
 /**
  * @param {import("@11ty/eleventy/src/UserConfig").default} eleventyConfig

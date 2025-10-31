@@ -1,6 +1,8 @@
 ---
 title: Listening
 description: What have I been listening to?
+js_module_includes:
+  - src/js/components/lastfm-listening.js
 ---
 {%- from "macros/shelfItem.njk" import shelfItem -%}
 
@@ -112,5 +114,3 @@ description: What have I been listening to?
 		{%- endfor %}
 	</ol>
 {%- endif %}
-
-<script type="module">{% include '../../js/components/lastfm-listening.js' %}</script>

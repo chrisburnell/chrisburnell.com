@@ -1,12 +1,16 @@
-{% if show_responses and (show_replies != false or show_reactions != false) %}
+{% if not js_module_includes.includes('node_modules/@chrisburnell/url-input/url-input.js') -%}
+	{%- set js_module_includes = (js_module_includes.push('node_modules/@chrisburnell/url-input/url-input.js'), js_module_includes) -%}
+{%- endif -%}
+
+{% if show_responses and (show_replies != false or show_reactions != false) -%}
 	{% set replies = webmentions.directReplies -%}
 	{% set reactions = webmentions.bookmarks.concat(webmentions.likes).concat(webmentions.reposts).concat(webmentions.links).concat(webmentions.socialReplies) -%}
-	{%- set stargazers = stargazers | default(0) -%}
+	{% set stargazers = stargazers | default(0) -%}
 	<div id="respond" class=" [ box ] [ flow ] [ responses ] " data-pagefind-ignore>
-		{% if webmentions.length or stargazers > 0 %}
+		{% if webmentions.length or stargazers > 0 -%}
 			<div id="responses" class=" [ responses__thread ] [ flow ] ">
-				<h2 class=" [ no-fragment ] [ sticky ] ">{{ webmentions.length }} Response{{ 's' if webmentions.length > 1 }}</h2>
-				{% if reactions.length or stargazers %}
+				{% if webmentions.length %}<h2 class=" [ no-fragment ] [ sticky ] ">{{ webmentions.length }} Response{{ 's' if webmentions.length > 1 }}</h2>{% endif %}
+				{% if reactions.length or stargazers -%}
 					<ol id="reactions" class=" [ reactions ] [ cluster ] [ strong ] ">
 						{% if webmentions.bookmarks.length -%}
 							<li><c-emoji>🔖</c-emoji> {{ webmentions.bookmarks.length }} Bookmark{{ 's' if webmentions.bookmarks.length > 1 }}</li>
@@ -26,32 +30,32 @@
 								{% for syndication in syndicate_to -%}
 									{% set syndication_item -%}<a href="{{ syndication | tweetback }}" target="_blank">{{ syndication | getSyndicationTitle }}</a>{%- endset -%}
 									{% set syndication_array = (syndication_array.push(syndication_item), syndication_array) -%}
-								{%- endfor -%}
-							{%- endif -%}
+								{%- endfor %}
+							{%- endif %}
 							<li><c-emoji>⤴️</c-emoji> {{ webmentions.socialReplies.length }} Social {% if webmentions.socialReplies.length > 1 %}Replies{% else %}Reply{% endif %}{% if syndicate_to.length %} <small>(on {{ syndication_array | conjunction("narrow") | safe }})</small>{% endif %}</li>
 						{%- endif %}
 						{% if stargazers -%}
 							<li><c-emoji>✨</c-emoji> <a href="https://github.com/{{ github }}">{{ stargazers }} Stargazer{{ 's' if stargazers > 1 }}</a></li>
 						{%- endif %}
 					</ol>
-				{% endif %}
-				{% if replies.length %}
+				{%- endif %}
+				{% if replies.length -%}
 					<ol id="replies" class=" [ replies ] [ flow ] ">
-						{% for webmention in replies %}
-							{%- set wmId = webmention['wm-id'] -%}
-							{%- set wmType = webmention | getWebmentionType -%}
-							{%- set wmDate = webmention | getWebmentionPublished -%}
-							{%- set wmSource = webmention | getWebmentionSource | tweetback -%}
-							{%- set wmURL = webmention | getWebmentionURL | tweetback -%}
-							{%- set wmContent = webmention | getWebmentionContent -%}
-							{%- set authorPhoto = webmention.author.photo -%}
-							{%- set authorUrl = webmention.author.url | default(wmURL) | tweetback -%}
-							{%- set authorName = webmention.author.name | default('Anonymous') -%}
-							{%- if authorName == '' -%}{% set authorName = 'Anonymous' %}{%- endif -%}
+						{% for webmention in replies -%}
+							{% set wmId = webmention['wm-id'] -%}
+							{% set wmType = webmention | getWebmentionType -%}
+							{% set wmDate = webmention | getWebmentionPublished -%}
+							{% set wmSource = webmention | getWebmentionSource | tweetback -%}
+							{% set wmURL = webmention | getWebmentionURL | tweetback -%}
+							{% set wmContent = webmention | getWebmentionContent -%}
+							{% set authorPhoto = webmention.author.photo -%}
+							{% set authorUrl = webmention.author.url | default(wmURL) | tweetback -%}
+							{% set authorName = webmention.author.name | default('Anonymous') -%}
+							{% if authorName == '' -%}{% set authorName = 'Anonymous' %}{%- endif -%}
 							<li id="response-{{ wmId }}" class=" [ person ] [ h-cite  p-comment ] " data-type="{{ wmType }}">
 								<div class=" [ person__avatar ] ">
 									<a href="{{ authorUrl }}" rel="external nofollow" tabindex="-1">
-										{% avatar authorPhoto, wmURL, authorUrl %}
+										{%- avatar authorPhoto, wmURL, authorUrl -%}
 									</a>
 								</div>
 								<div class=" [ person__meta ] ">
@@ -64,12 +68,12 @@
 									{{ wmContent | safe }}
 								</div>
 							</li>
-						{% endfor %}
+						{%- endfor %}
 					</ol>
-				{% endif %}
+				{%- endif %}
 			</div>
-		{% endif %}
-		{% if show_responses_form != false %}
+		{%- endif %}
+		{% if show_responses_form != false -%}
 			<!-- </textarea> -->
 			<!-- '"´ -->
 			<form id="form" class=" [ responses__form ] " method="post" action="https://webmention.io/{{ site.url | getHost }}/webmention">
@@ -83,7 +87,6 @@
 				<button class=" [ responses__submit ] " type="submit">Send</button>
 				<p>You can also <a href="https://quill.p3k.io/?dontask=1&me=https://commentpara.de&reply={{ canonical }}" class=" [ button  button--small ] " rel="external noopener">send an anonymous reply</a> <small>(using <a href="https://quill.p3k.io" rel="external noopener">Quill</a> and <a href="https://commentpara.de" rel="external noopener">Comment Parade</a>)</small>.</p>
 			</form>
-			<script type="module" src="/js/components/url-input.js"></script>
-		{% endif %}
+		{%- endif %}
 	</div>
-{% endif %}
+{%- endif %}

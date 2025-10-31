@@ -29,7 +29,7 @@ tags:
 You can begin using the <code>&lt;theme-selector&gt;</code> Web Component by including a <code>&lt;script&gt;</code> tag in your HTML, with the component itself wrapping a <code>&lt;select&gt;</code> element containing an <code>&lt;option&gt;</code> for each of the themes you want to provide to the user:
 
 ```html
-<script type="module" src="theme-selector.js"></script>
+<script type="module" src="/theme-selector.js"></script>
 
 <theme-selector>
     <select autocomplete="off">

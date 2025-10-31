@@ -5,6 +5,8 @@ title: Not without sacrifice
 description: With the boom of JavaScript frameworks and legends-come-true like the new CSS parent selector, we’ve borne witness to an explosion of new technologies and ways to build for the web. But what tradeoffs have we made for all these new bells and whistles?
 tags:
   - state-of-the-web
+css_includes:
+  - src/css/pages/not-without-sacrifice.scss
 ---
 
 I recently had the pleasure of watching [Jack Franklin’s](https://www.jackfranklin.co.uk) talk from [All Day Hey! 2023](https://heypresents.com/conferences/2023), [<q>Abstractions, complexities and off-ramps</q>](https://www.youtube.com/watch?v=Siq8eBkgpjY), and a couple of slides [at the end](https://youtu.be/Siq8eBkgpjY?t=2582) got me thinking about the landscape of developer concerns in front end; *a bit cynically, I’ll admit, but it comes back around in the end!*
@@ -47,88 +49,3 @@ This shift hasn’t only just begun; we’ve seen great articles musing on this 
 It’s heartwarming to see concerns about performance, sub-optimal browsing conditions, diversity, and more being brought back to the forefront of our discussions about how we should build for the open and inclusive web that we want.
 
 > A society grows great when there are those who would plant trees under whose shade they know they will never sit.
-
-{% css %}
-@layer overrides {
-    [id*="bars-"],
-    [id*="pie-"] {
-        max-inline-size: 25rem;
-        position: relative;
-    }
-    [id*="bars-"] {
-        min-inline-size: 20rem;
-    }
-    [id*="bars-"] data,
-    [id*="pie-"] data {
-        font-weight: var(--font-weight-bold);
-    }
-    [id*="bars-"]::after,
-    [id*="pie-"]::after {
-        display: none;
-        content: attr(title);
-        font-size: var(--font-size-gamma);
-        font-weight: var(--font-weight-semibold);
-        position: absolute;
-    }
-    [id*="bars-"]::after {
-        inset-inline-end: 0;
-        inset-block-start: 50%;
-        transform: translateY(-50%);
-    }
-    [id*="pie-"]::after {
-        inset-inline-start: 100%;
-        inset-block-start: 50%;
-        transform: translateY(-50%);
-        margin-inline-start: 1em;
-    }
-    [id*="bars-"] data {
-        display: block;
-        padding: 1em;
-        position: relative;
-        text-align: end;
-    }
-    [id*="bars-"] data::before,
-    [id*="pie-"] data::before {
-        content: attr(title);
-    }
-    #bars-1 data,
-    #bars-2 .ux {
-        inline-size: 10rem;
-    }
-    #bars-2 .dx {
-        inline-size: 15rem;
-    }
-    [id*="pie-"] {
-        block-size: 12rem;
-        inline-size: 12rem;
-        border-radius: 50%;
-    }
-    [id*="pie-"] data {
-        position: absolute;
-    }
-    #pie-1 {
-        background-image: conic-gradient(var(--color-maple) 50%, var(--color-highland) 0%);
-    }
-    #pie-2 {
-        background-image: conic-gradient(var(--color-maple) 60%, var(--color-highland) 0%);
-    }
-    #pie-1 .dx {
-        inset-inline-end: 20%;
-        inset-block-start: 50%;
-        transform: translateY(-50%);
-    }
-    #pie-2 .dx {
-        inset-inline-end: 20%;
-        inset-block-end: 33%;
-    }
-    #pie-1 .ux {
-        inset-inline-start: 20%;
-        inset-block-start: 50%;
-        transform: translateY(-50%);
-    }
-    #pie-2 .ux {
-        inset-inline-start: 20%;
-        inset-block-start: 33%;
-    }
-}
-{% endcss %}

@@ -1,0 +1,88 @@
+////
+/// Not without sacrifice
+/// @group pages
+/// @link https://chrisburnell.com/article/not-without-sacrifice/
+////
+
+@layer pages {
+    [id*="bars-"],
+    [id*="pie-"] {
+        max-inline-size: 25rem;
+        position: relative;
+    }
+    [id*="bars-"] {
+        min-inline-size: 20rem;
+    }
+    [id*="bars-"] data,
+    [id*="pie-"] data {
+        font-weight: var(--font-weight-bold);
+    }
+    [id*="bars-"]::after,
+    [id*="pie-"]::after {
+        display: none;
+        content: attr(title);
+        font-size: var(--font-size-gamma);
+        font-weight: var(--font-weight-semibold);
+        position: absolute;
+    }
+    [id*="bars-"]::after {
+        inset-inline-end: 0;
+        inset-block-start: 50%;
+        transform: translateY(-50%);
+    }
+    [id*="pie-"]::after {
+        inset-inline-start: 100%;
+        inset-block-start: 50%;
+        transform: translateY(-50%);
+        margin-inline-start: 1em;
+    }
+    [id*="bars-"] data {
+        display: block;
+        padding: 1em;
+        position: relative;
+        text-align: end;
+    }
+    [id*="bars-"] data::before,
+    [id*="pie-"] data::before {
+        content: attr(title);
+    }
+    #bars-1 data,
+    #bars-2 .ux {
+        inline-size: 10rem;
+    }
+    #bars-2 .dx {
+        inline-size: 15rem;
+    }
+    [id*="pie-"] {
+        block-size: 12rem;
+        inline-size: 12rem;
+        border-radius: 50%;
+    }
+    [id*="pie-"] data {
+        position: absolute;
+    }
+    #pie-1 {
+        background-image: conic-gradient(var(--color-maple) 50%, var(--color-highland) 0%);
+    }
+    #pie-2 {
+        background-image: conic-gradient(var(--color-maple) 60%, var(--color-highland) 0%);
+    }
+    #pie-1 .dx {
+        inset-inline-end: 20%;
+        inset-block-start: 50%;
+        transform: translateY(-50%);
+    }
+    #pie-2 .dx {
+        inset-inline-end: 20%;
+        inset-block-end: 33%;
+    }
+    #pie-1 .ux {
+        inset-inline-start: 20%;
+        inset-block-start: 50%;
+        transform: translateY(-50%);
+    }
+    #pie-2 .ux {
+        inset-inline-start: 20%;
+        inset-block-start: 33%;
+    }
+}

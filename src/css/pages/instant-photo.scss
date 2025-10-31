@@ -1,0 +1,39 @@
+////
+/// <instant-photo>
+/// @group pages
+/// @link https://chrisburnell.com/instant-photo/
+////
+
+@layer pages {
+	.instant-photo {
+		background-color: var(--instant-photo-background-color, #121212);
+		display: inline-block;
+		border-width: calc(var(--instant-photo-size, 3.1in) * 0.0645);
+		border-block-end-width: calc(var(--instant-photo-size, 3.1in) * 0.2903);
+		border-style: solid;
+		border-color: var(--instant-photo-border-color, #ededed);
+	}
+	.instant-photo img {
+		inline-size: var(--instant-photo-size, 3.1in);
+		block-size: var(--instant-photo-size, 3.1in);
+		display: block;
+	}
+	.instant-photo.develop img {
+		opacity: 0;
+		filter: contrast(0%) saturate(50%);
+		animation: none;
+	}
+	.instant-photo:is(.develop:not(.will-develop), .visible) img {
+		animation: instant-photo var(--instant-photo-develop-duration, 10s) linear var(--instant-photo-develop-delay, 1s) forwards;
+	}
+	@keyframes instant-photo {
+		50% {
+			opacity: 1;
+			filter: contrast(67%) saturate(80%);
+		}
+		100% {
+			opacity: 1;
+			filter: contrast(100%) saturate(100%);
+		}
+	}
+}
