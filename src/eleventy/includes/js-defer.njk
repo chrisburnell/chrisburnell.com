@@ -18,6 +18,12 @@
 		{%- endfor -%}
 {%- endif %}
 
+{# Render out Deferred JS -#}
+{%- js 'module' -%}{% renderFile 'src/js/defer.js' %}{%- endjs -%}
+{%- js -%}{% renderFile 'src/js/imports/settings.js' %}{%- endjs -%}
+{%- js -%}{% renderFile 'src/js/imports/masonry-polyfill.js' %}{%- endjs -%}
+
+{# Fathom Analytics -#}
 {%- if eleventy.env.runMode === 'build' and not excludeFromAnalytics -%}
 <script defer>
 (function () {
@@ -40,10 +46,6 @@
 	document.head.appendChild(scriptElement);
 	fathom("set", "siteId", "{{ site.fathom_siteid }}");
 	fathom("trackPageview");
+})();
 </script>
 {%- endif -%}
-
-{# Render out Deferred JS -#}
-{%- js 'module' -%}{% renderFile 'src/js/defer.js' %}{%- endjs -%}
-{%- js -%}{% renderFile 'src/js/imports/settings.js' %}{%- endjs -%}
-{%- js -%}{% renderFile 'src/js/imports/masonry-polyfill.js' %}{%- endjs -%}

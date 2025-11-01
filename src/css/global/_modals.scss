@@ -8,7 +8,7 @@
 	backdrop-filter: blur(1px);
 }
 
-:is(dialog, [popover]) {
+:is(dialog, [popover], :where(.modal)) {
 	--flow-space: var(--size-medium-large);
 
 	background-color: var(--background-color, light-dark(color-mix(in oklab, var(--color-snowy), var(--color-yeti) 80%), color-mix(in oklab, var(--color-thunder), var(--color-mineshaft) 80%)));

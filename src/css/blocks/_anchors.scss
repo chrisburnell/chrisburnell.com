@@ -23,7 +23,7 @@ h2 :is(a:not(.button), .anchor):not(:hover, :focus, :active) {
 	transform: translateX(-50%);
 	font-weight: var(--font-weight-semibold);
 	text-align: center;
-	z-index: var(--z-index-notificaton);
+	z-index: var(--z-index-notification);
 }
 
 // Fragment Anchors inside Headings

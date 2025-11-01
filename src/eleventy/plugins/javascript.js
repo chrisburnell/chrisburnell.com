@@ -41,11 +41,10 @@ export default function (eleventyConfig) {
 					external: ["fs"],
 					format: "esm",
 					bundle: true,
+					keepNames: true, // minify: true nullifies this
+					minifySyntax: true,
+					minifyWhitespace: true,
 					minify: process.env.ELEVENTY_RUN_MODE === "build",
-					// keepNames: true,
-					// minifySyntax: true,
-					// minifyWhitespace: true,
-					// minifyIdentifiers: false,
 					write: false,
 					define: {
 						"import.meta.url": "import.meta.url",
