@@ -1,0 +1,24 @@
+{% js 'analytics' -%}
+(function () {
+	if (
+		navigator.doNotTrack === "1" ||
+		typeof localStorage === "undefined" ||
+		localStorage.getItem("analytics") === "false"
+	) {
+		return;
+	}
+	window.fathom =
+		window.fathom ||
+		function () {
+			(window.fathom.q = window.fathom.q || []).push(arguments);
+		};
+	const scriptElement = document.createElement("script");
+	scriptElement.id = "fathom-script";
+	scriptElement.src = "{{ site.urls.fathom }}/tracker.js";
+	scriptElement.defer = true;
+	document.head.appendChild(scriptElement);
+	fathom("set", "siteId", "{{ site.fathom_siteid }}");
+	fathom("trackPageview");
+})();
+{%- endjs -%}
+<script src="{% getBundleFileUrl 'js', 'analytics' %}" defer></script>

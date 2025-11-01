@@ -44,6 +44,7 @@ export default function (eleventyConfig) {
 					keepNames: true, // minify: true nullifies this
 					minifySyntax: true,
 					minifyWhitespace: true,
+					legalComments: "none",
 					minify: process.env.ELEVENTY_RUN_MODE === "build",
 					write: false,
 					define: {

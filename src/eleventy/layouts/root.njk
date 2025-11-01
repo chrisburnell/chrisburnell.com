@@ -130,12 +130,17 @@
 
 		{{- content | safe -}}
 
-		{% if eleventy.env.runMode === 'build' and not excludeFromServiceWorker -%}
 		{# ServiceWorker -#}
-		<script>{% include '../../js/navigator.js' %}</script>
+		{% if eleventy.env.runMode === 'build' and not excludeFromServiceWorker -%}
+			<script>{% include '../../js/navigator.js' %}</script>
 		{%- endif %}
 
 		{# Deferred JS -#}
 		{% include 'js-defer.njk' %}
+
+		{# Analytics (Fathom) -#}
+		{% if eleventy.env.runMode === 'build' and not excludeFromAnalytics -%}
+			{% include 'analytics.njk' %}
+		{%- endif %}
 	</body>
 </html>

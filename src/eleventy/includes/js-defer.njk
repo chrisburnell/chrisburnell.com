@@ -22,30 +22,3 @@
 {%- js 'module' -%}{% renderFile 'src/js/defer.js' %}{%- endjs -%}
 {%- js -%}{% renderFile 'src/js/imports/settings.js' %}{%- endjs -%}
 {%- js -%}{% renderFile 'src/js/imports/masonry-polyfill.js' %}{%- endjs -%}
-
-{# Fathom Analytics -#}
-{%- if eleventy.env.runMode === 'build' and not excludeFromAnalytics -%}
-<script defer>
-(function () {
-	if (
-		navigator.doNotTrack === "1" ||
-		typeof localStorage === "undefined" ||
-		localStorage.getItem("analytics") === "false"
-	) {
-		return;
-	}
-	window.fathom =
-		window.fathom ||
-		function () {
-			(window.fathom.q = window.fathom.q || []).push(arguments);
-		};
-	const scriptElement = document.createElement("script");
-	scriptElement.id = "fathom-script";
-	scriptElement.src = "{{ site.urls.fathom }}/tracker.js";
-	scriptElement.defer = true;
-	document.head.appendChild(scriptElement);
-	fathom("set", "siteId", "{{ site.fathom_siteid }}");
-	fathom("trackPageview");
-})();
-</script>
-{%- endif -%}
