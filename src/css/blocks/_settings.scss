@@ -126,6 +126,15 @@
 	}
 }
 
+.navigator:has(+ p) .settings-reset {
+	&::after {
+		content: "*";
+		inline-size: 0;
+		display: inline-block;
+		padding-inline-start: 0.333ch;
+	}
+}
+
 // Hide custom hue input unless Custom theme is selected
 :root:has([name="theme"] [value*="custom"]:not(:checked)) :is([for*="custom-hue"], [name="custom-hue"], [for*="custom-chroma"], [name="custom-chroma"]) {
 	display: none;

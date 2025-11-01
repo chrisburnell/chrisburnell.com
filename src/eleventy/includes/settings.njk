@@ -53,3 +53,6 @@
 	<button popovertarget="popover-settings" style="font-size: var(--font-size-default);">Close</button>
 	<button class=" [ settings-reset ] " style="font-size: var(--font-size-default);">Reset All</button>
 </div>
+{% if eleventy.env.runMode === 'build' -%}
+	<p class=" [ small ] " style="--flow-space: 0;">* except Analytics</p>
+{%- endif %}
