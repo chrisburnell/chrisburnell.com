@@ -268,8 +268,8 @@ const isBackfeed = (item) => {
 };
 
 /**
- * @param {import("@chrisburnell/eleventy-cache-webmentions").import("@chrisburnell/eleventy-cache-webmentions").Webmention[]} webmentions
- * @returns {import("@chrisburnell/eleventy-cache-webmentions").import("@chrisburnell/eleventy-cache-webmentions").Webmention[]}
+ * @param {import("@chrisburnell/eleventy-cache-webmentions").Webmention[]} webmentions
+ * @returns {import("@chrisburnell/eleventy-cache-webmentions").Webmention[]}
  */
 export const getSocialReplies = (webmentions) => {
 	return (
