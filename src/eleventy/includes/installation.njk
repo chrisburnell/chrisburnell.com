@@ -1,5 +1,5 @@
 {% if npm -%}
-Install the package, which is [available on npm](https://www.npmjs.com/package/{{ npm }}):
+Install the package, which is <a href="https://www.npmjs.com/package/{{ npm }}" rel="external noopener">available on npm</a>:
 
 ```bash
 npm install {{ npm }}{% if dev %} --save-dev{% endif %}
@@ -7,7 +7,7 @@ npm install {{ npm }}{% if dev %} --save-dev{% endif %}
 {%- endif %}
 
 {% if github -%}
-You can also download it directly [from GitHub](https://github.com/{{ github }}):
+You can also download it directly <a href="https://github.com/{{ github }}" rel="external noopener">from GitHub</a>:
 
-<samp>[https://github.com/{{ github }}/archive/{{ branch | default('main')}}.zip](https://github.com/{{ github }}/archive/{{ branch | default('main')}}.zip)</samp>
+<samp><a href="https://github.com/{{ github }}/archive/{{ branch | default('main')}}.zip" rel="external noopener">https://github.com/{{ github }}/archive/{{ branch | default('main')}}.zip</a></samp>
 {%- endif %}
