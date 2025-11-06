@@ -2,7 +2,6 @@ import dotenv from "dotenv";
 dotenv.config({ quiet: true });
 
 import EleventyFetch from "@11ty/eleventy-fetch";
-import stats from "download-stats";
 import { cacheDurations } from "../data/site.js";
 
 /**
@@ -59,29 +58,41 @@ export const latestTag = async (repository) => {
 	return tagData.length ? tagData[0].name : null;
 };
 
+const getNPMDownloadsForYear = async (npmPackage, year) => {
+	const isCurrentYear = new Date().getFullYear() === year;
+	const url = `https://api.npmjs.org/downloads/point/${year}-01-01:${year}-12-31/${npmPackage}`;
+	const json = await EleventyFetch(url, {
+		duration: isCurrentYear ? cacheDurations.daily : "*",
+		type: "json",
+	});
+	return json.downloads;
+};
+
 /**
  * @param {string} npmPackage
  * @param {string} published
  * @returns {number}
  */
 export const npmDownloads = async (npmPackage, published) => {
-	const start = new Date(published);
-	return new Promise((resolve, reject) => {
-		try {
-			let downloads = 0;
-			stats
-				.get(start, new Date(), npmPackage)
-				.on("data", (data) => {
-					downloads += data.downloads;
-				})
-				.on("end", () => {
-					resolve(downloads);
-				});
-		} catch (error) {
-			console.error(error);
-			reject(error);
+	const startYear = new Date(published).getFullYear();
+
+	try {
+		let downloads = 0;
+		for (
+			let year = startYear, endYear = new Date().getFullYear();
+			year <= endYear;
+			year++
+		) {
+			downloads += await getNPMDownloadsForYear(npmPackage, year);
 		}
-	});
+		return downloads;
+	} catch (error) {
+		if (process.env.ELEVENTY_RUN_MODE === "build") {
+			return Promise.reject(error);
+		}
+		console.log("Failed getting npm downloads", error);
+		return 0;
+	}
 };
 
 export default {
