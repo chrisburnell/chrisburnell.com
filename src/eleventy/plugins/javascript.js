@@ -3,8 +3,13 @@ dotenv.config({ quiet: true });
 
 import esbuild from "esbuild";
 
+/** @type {Map<[key: string]: Array<object>>} */
 let cachedJS = new Map();
 
+/**
+ * @param {import("@11ty/eleventy/src/UserConfig").default} eleventyConfig
+ * @returns {void}
+ */
 export default function (eleventyConfig) {
 	// Recognise JS as a "template language"
 	eleventyConfig.addTemplateFormats("js");

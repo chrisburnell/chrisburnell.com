@@ -20,13 +20,15 @@ import {
 	scoreSort,
 } from "./filters/dates.js";
 
+/** @type {number} */
 const durationDay = 24 * 60 * 60 * 1000;
 
+/** @type {Map<[key: string]: Array<object>>} */
 let cachedCollections = new Map();
 
 /**
  * @param {Array<object>} collection
- * @param {string|string[]} tags
+ * @param {string|Array<string>} tags
  * @param {Function} [fn]
  * @param {string} [collectionName]
  * @param {boolean} [limit]
@@ -75,7 +77,7 @@ const filterCollection = (
 /**
  * "Popular" sorting is done by totalling pageviews.
  * @param {Array<object>} collection
- * @param {string|string[]} tags
+ * @param {string|Array<string>} tags
  * @param {string} collectionName
  * @param {boolean} [limit]
  * @returns {Array<object>}

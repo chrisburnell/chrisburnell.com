@@ -1,13 +1,21 @@
-import Image from "@11ty/eleventy-img";
 import dotenv from "dotenv";
+dotenv.config({ quiet: true });
+
+import Image from "@11ty/eleventy-img";
 import { getMastodonHandle } from "../../functions/utils.js";
 import { cacheDurations, url as siteURL } from "../data/site.js";
 import { getHost } from "../filters/urls.js";
-dotenv.config({ quiet: true });
 
-// Avatar Dimensions
+/**
+ * Avatar Dimensions
+ * @type {number}
+ */
 const size = 96; // 48 * 2
 
+/**
+ * @param {string} name
+ * @returns {{ widths: Array<number>, formats: Array<string>, urlPath: string, outputDir: string, duration: string, sharpOptions: object, filenameFormat: Function }}
+ */
 const getImageOptions = (name) => {
 	return {
 		widths: [size],
@@ -28,6 +36,11 @@ const getImageOptions = (name) => {
 	};
 };
 
+/**
+ * @param {object} options
+ * @param {string} src
+ * @returns {void}
+ */
 const fetchImageData = (options, src) => {
 	if (!src) {
 		throw new Error("src property required in `image` shortcode.");
@@ -38,6 +51,11 @@ const fetchImageData = (options, src) => {
 	});
 };
 
+/**
+ * @param {string} id
+ * @param {string} classes
+ * @returns {string}
+ */
 const storeAvatar = async (id, classes = "") => {
 	// We know where the images will be
 	const fakeUrl = `/images/avatars/${id}.jpeg`;
@@ -67,6 +85,10 @@ const storeAvatar = async (id, classes = "") => {
 	return markup;
 };
 
+/**
+ * @param {import("@11ty/eleventy/src/UserConfig").default} eleventyConfig
+ * @returns {void}
+ */
 export default function (eleventyConfig) {
 	let mastodonHandles, domains;
 

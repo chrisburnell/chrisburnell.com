@@ -1,4 +1,10 @@
+/**
+ * Relative Times
+ */
 class RelativeTime {
+	/**
+	 * @class
+	 */
 	constructor() {
 		this.nonRelativeTimeElements = document.querySelectorAll(
 			":not(relative-time) > [datetime]",

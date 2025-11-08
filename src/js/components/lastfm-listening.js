@@ -8,6 +8,9 @@ class LastFMListening extends HTMLElement {
 		}
 	}
 
+	/**
+	 * @class
+	 */
 	connectedCallback() {
 		if (!this.hasAttribute("url")) {
 			console.error(`Missing \`url\` attribute!`, this);

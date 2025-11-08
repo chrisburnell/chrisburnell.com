@@ -268,8 +268,8 @@ const isBackfeed = (item) => {
 };
 
 /**
- * @param {import("@chrisburnell/eleventy-cache-webmentions").Webmention[]} webmentions
- * @returns {import("@chrisburnell/eleventy-cache-webmentions").Webmention[]}
+ * @param {Array<import("@chrisburnell/eleventy-cache-webmentions").Webmention>} webmentions
+ * @returns {Array<import("@chrisburnell/eleventy-cache-webmentions").Webmention>}
  */
 export const getSocialReplies = (webmentions) => {
 	return (
@@ -286,8 +286,8 @@ export const getSocialReplies = (webmentions) => {
 };
 
 /**
- * @param {import("@chrisburnell/eleventy-cache-webmentions").Webmention[]} webmentions
- * @returns {import("@chrisburnell/eleventy-cache-webmentions").Webmention[]}
+ * @param {Array<import("@chrisburnell/eleventy-cache-webmentions").Webmention>} webmentions
+ * @returns {Array<import("@chrisburnell/eleventy-cache-webmentions").Webmention>}
  */
 export const getDirectReplies = (webmentions) => {
 	return (
@@ -310,8 +310,8 @@ export const getDirectReplies = (webmentions) => {
 };
 
 /**
- * @param {import("@chrisburnell/eleventy-cache-webmentions").Webmention[]} webmentions
- * @returns {import("@chrisburnell/eleventy-cache-webmentions").Webmention[]}
+ * @param {Array<import("@chrisburnell/eleventy-cache-webmentions").Webmention>} webmentions
+ * @returns {Array<import("@chrisburnell/eleventy-cache-webmentions").Webmention>}
  */
 export const replaceWebmentions = (webmentions) => {
 	return webmentions.map((webmention) => {

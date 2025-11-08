@@ -1,3 +1,19 @@
+/**
+ * @typedef Category
+ * @property {string} title
+ * @property {string} [emoji]
+ * @property {string} proper
+ * @property {string} plural
+ * @property {string} properPlural
+ * @property {boolean} review
+ * @property {boolean} full
+ * @property {boolean} masonry
+ */
+
+/**
+ * @param {import("@11ty/eleventy").CollectionApi} collection
+ * @returns {Promise<Array<Category>>}
+ */
 export default async function (collection) {
 	return await collection
 		.getAll()

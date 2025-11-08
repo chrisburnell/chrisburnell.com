@@ -5,6 +5,9 @@ import Image from "@11ty/eleventy-img";
 import { glob } from "node:fs/promises";
 import path from "node:path";
 
+/**
+ * @returns {void}
+ */
 export default async function () {
 	const options = {
 		urlPath: "/images/",

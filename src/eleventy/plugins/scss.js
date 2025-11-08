@@ -6,8 +6,13 @@ import postcss from "postcss";
 import * as sass from "sass";
 import postcssConfig from "../../../postcss.config.js";
 
+/** @type {Map<[key: string]: Array<object>>} */
 let cachedCSS = new Map();
 
+/**
+ * @param {import("@11ty/eleventy/src/UserConfig").default} eleventyConfig
+ * @returns {void}
+ */
 export default function (eleventyConfig) {
 	// Recognise SCSS as a "template language"
 	eleventyConfig.addTemplateFormats("scss");

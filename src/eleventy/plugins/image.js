@@ -2,6 +2,10 @@ import Image from "@11ty/eleventy-img";
 import path from "path";
 import { cacheDurations } from "../data/site.js";
 
+/**
+ * @param {import("@11ty/eleventy/src/UserConfig").default} eleventyConfig
+ * @returns {void}
+ */
 export default function (eleventyConfig) {
 	eleventyConfig.addNunjucksShortcode(
 		"image",

@@ -58,6 +58,11 @@ export const latestTag = async (repository) => {
 	return tagData.length ? tagData[0].name : null;
 };
 
+/**
+ * @param {string} npmPackage
+ * @param {number} year
+ * @returns {number}
+ */
 const getNPMDownloadsForYear = async (npmPackage, year) => {
 	const isCurrentYear = new Date().getFullYear() === year;
 	const url = `https://api.npmjs.org/downloads/point/${year}-01-01:${year}-12-31/${npmPackage}`;
@@ -75,14 +80,11 @@ const getNPMDownloadsForYear = async (npmPackage, year) => {
  */
 export const npmDownloads = async (npmPackage, published) => {
 	const startYear = new Date(published).getFullYear();
+	const endYear = new Date().getFullYear();
 
 	try {
 		let downloads = 0;
-		for (
-			let year = startYear, endYear = new Date().getFullYear();
-			year <= endYear;
-			year++
-		) {
+		for (let year = startYear; year <= endYear; year++) {
 			downloads += await getNPMDownloadsForYear(npmPackage, year);
 		}
 		return downloads;

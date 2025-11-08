@@ -654,13 +654,13 @@ export default [
 		],
 	},
 	{
-		id: "mdn-css_properties_appearance_base-select",
+		id: "wf-reading-flow",
 		language: "css",
-		supports: "appearance: base-select",
+		supports: "reading-flow: grid-columns",
 		type: "properties",
-		key: "css-base-select",
-		title: "Custom Selects",
+		key: "css-reading-flow",
+		title: "reading-flow",
 		description:
-			"Provides greater (read: basically, any) control over the styling of select elements.",
+			"Allows control over reading flow (including order of implicit tab index) that differs from DOM source order. Useful to combining with flex/grid items, particularly when manipulating the order of elements using <code>order</code>.",
 	},
 ];

@@ -4,6 +4,7 @@ import { trakt } from "./author.js";
 import { cacheDurations } from "./site.js";
 dotenv.config({ quiet: true });
 
+/** @type {{ headers: { [key: string: string|number] } }} */
 const fetchOptions = {
 	headers: {
 		"Content-Type": "application/json",
@@ -12,6 +13,9 @@ const fetchOptions = {
 	},
 };
 
+/**
+ * @returns {Promise<Array<object>>}
+ */
 const movies = async function () {
 	const url = `https://api.trakt.tv/users/${trakt}/history/movies?page=1&limit=20`;
 	const json = await EleventyFetch(url, {
@@ -22,6 +26,9 @@ const movies = async function () {
 	return json;
 };
 
+/**
+ * @returns {Promise<Array<object>>}
+ */
 const shows = async function () {
 	const url = `https://api.trakt.tv/users/${trakt}/history/shows?page=1&limit=20`;
 	const json = await EleventyFetch(url, {
@@ -32,6 +39,9 @@ const shows = async function () {
 	return json;
 };
 
+/**
+ * @returns {{ movies: Array<object>, shows: Array<object> }}
+ */
 export default async function () {
 	if (process.env.TRAKT_CLIENT_ID) {
 		return {

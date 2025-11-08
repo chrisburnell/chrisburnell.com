@@ -10,9 +10,12 @@ import { formattedDate, friendlyDate } from "../filters/dates.js";
 const require = createRequire(import.meta.url);
 const mdnBrowserData = require("../../../node_modules/@mdn/browser-compat-data/data.json");
 // import mdnBrowserData from "@mdn/browser-compat-data" assert { type: "json" }
-
 const pkg = require("../../../package.json");
 
+/**
+ * @param {string} feature
+ * @returns {object}
+ */
 const getCaniuseSupport = async (feature) => {
 	let asset = new AssetCache(`caniuse_${feature}`, ".cache");
 
@@ -25,6 +28,10 @@ const getCaniuseSupport = async (feature) => {
 	return caniuseSupport;
 };
 
+/**
+ * @param {string} feature
+ * @returns {object}
+ */
 const getBrowserslistSupport = async (feature) => {
 	const featureData = browserFeatures.filter(
 		(browserFeature) => feature === browserFeature.id,
@@ -38,6 +45,10 @@ const getBrowserslistSupport = async (feature) => {
 	return browserslistData["__compat"]["support"];
 };
 
+/**
+ * @param {import("@11ty/eleventy/src/UserConfig").default} eleventyConfig
+ * @returns {void}
+ */
 export default function (eleventyConfig) {
 	eleventyConfig.addNunjucksAsyncShortcode(
 		"browserSupport",

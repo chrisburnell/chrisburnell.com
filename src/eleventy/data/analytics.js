@@ -1,8 +1,12 @@
 import EleventyFetch from "@11ty/eleventy-fetch";
 import { cacheDurations, urls } from "./site.js";
 
+/** @type {Map<[key: string]: Array<object>>} */
 const analyticsCache = new Map();
 
+/**
+ * @returns {{ pageviews: object, subs: object, medians: object }}
+ */
 export default async function () {
 	const url = `${urls.fathom}/summary?key=${process.env.FATHOM_SUMMARY_KEY}`;
 	const pageviews = await EleventyFetch(url, {

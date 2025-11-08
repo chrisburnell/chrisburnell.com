@@ -137,7 +137,7 @@ export const hasMinimumPageviews = (item) => {
 };
 
 /**
- * @param {string|string[]} tags
+ * @param {string|Array<string>} tags
  * @param {string} collectionName
  * @returns {string}
  */
@@ -147,7 +147,7 @@ export const getCacheKey = (tags, collectionName) => {
 
 /**
  * @param {Array<object>} collection
- * @param {string|string[]} tags
+ * @param {string|Array<string>} tags
  * @returns {Array<object>}
  */
 export const flattenCollections = (collection, tags) => {

@@ -47,7 +47,7 @@ class CurrencyConverter {
 	}
 
 	/**
-	 * @param {HTMLInputElement[]} others
+	 * @param {Array<HTMLInputElement>} others
 	 * @param {HTMLInputElement} input
 	 * @returns {void}
 	 */
@@ -68,7 +68,7 @@ class CurrencyConverter {
 
 	/**
 	 * @param {Event} event
-	 * @param {HTMLInputElement[]} others
+	 * @param {Array<HTMLInputElement>} others
 	 * @param {HTMLInputElement} input
 	 * @returns {void}
 	 */

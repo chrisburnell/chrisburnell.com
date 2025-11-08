@@ -3,6 +3,11 @@ import { load } from "cheerio";
 import striptags from "striptags";
 import { isCSSNakedDay, isJSNakedDay } from "../data/global.js";
 
+/**
+ * @param {string} value
+ * @param {string} outputPath
+ * @returns {string}
+ */
 export default async function (value, outputPath) {
 	if (outputPath && outputPath.endsWith(".html")) {
 		const $ = load(value);

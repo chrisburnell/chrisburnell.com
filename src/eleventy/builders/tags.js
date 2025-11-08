@@ -1,5 +1,9 @@
 import { categoryFilter, tagFilter } from "../filters/collections.js";
 
+/**
+ * @param {import("@11ty/eleventy").CollectionApi} collection
+ * @returns {Promise<Array<string>>}
+ */
 export default async function (collection) {
 	const allTags = await collection
 		.getAll()

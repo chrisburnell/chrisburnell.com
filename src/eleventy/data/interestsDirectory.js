@@ -4,6 +4,9 @@ dotenv.config({ quiet: true });
 import EleventyFetch from "@11ty/eleventy-fetch";
 import { cacheDurations } from "./site.js";
 
+/**
+ * @returns {Promise<Array<object>>}
+ */
 const interestsDirectoryData = async function () {
 	const headers = {
 		Accept: "application/vnd.github.v3+json",
@@ -19,6 +22,9 @@ const interestsDirectoryData = async function () {
 	return json;
 };
 
+/**
+ * @returns {{ raw: Array<object>, count: number }}
+ */
 export default async function () {
 	const data = await interestsDirectoryData();
 

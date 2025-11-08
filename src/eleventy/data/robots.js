@@ -3,6 +3,9 @@
 import { AssetCache } from "@11ty/eleventy-fetch";
 import { cacheDurations } from "./site.js";
 
+/**
+ * @returns {{ text: string, nginx: string }}
+ */
 export default async function () {
 	let asset = new AssetCache("robots.txt");
 
