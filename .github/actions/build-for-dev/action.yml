@@ -10,8 +10,17 @@ runs:
       with:
         path: |
           .cache
-          _site
+          _site/*
+          !_site/og-images
         key: site-cache-dev
+
+    - name: Use the OG images cache
+      id: og-images-cache
+      uses: actions/cache@v4
+      with:
+        path: |
+          _site/og-images
+        key: og-images-cache-dev
 
     - name: Build website
       run: npm run build:dev
