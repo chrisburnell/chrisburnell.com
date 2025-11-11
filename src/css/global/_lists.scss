@@ -42,7 +42,7 @@
 }
 ol:not([class]),
 ol.default-list {
-	list-style: decimal;
+	list-style: decimal-leading-zero;
 
 	// TODO Investigate:
 	// https://developer.mozilla.org/en-US/docs/Web/CSS/@property
@@ -62,7 +62,7 @@ ol.default-list {
 
 	& & > li {
 		&::marker {
-			content: counters(ordered-list, "-", var(--ordered-list-type, decimal)) ".";
+			content: counters(ordered-list, "-", var(--ordered-list-type, decimal-leading-zero)) ".";
 		}
 	}
 
