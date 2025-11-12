@@ -36,7 +36,7 @@ layout: base
 		{% if 'rss-only' in tags -%}
 			{% set recent = date | isRecent(rssOnlyDays) -%}
 			{% set adjusted = date | adjustDatetime({ days: rssOnlyDays }) -%}
-			<p>This {{ categoryProper | default(category) }} is also part of <a href="https://daverupert.com/rss-club/" rel="external noopener">RSS Club</a>, which means it {{ 'appears' if recent else 'appeared' }} <em>only</em> in my RSS feeds for {{ rssOnlyDays }} days ({{ 'until' if recent else 'released' }} <time datetime="{{ adjusted | rfc3339Date }}">{{ adjusted | friendlyDateLong }}</time>), rewarding folks who use RSS with knowing about this post early!</p>
+			<p>This {{ categoryProper | default(category) }} is also part of <a href="https://daverupert.com/rss-club/" rel="external noopener">RSS Club</a>, which means it {{ 'appears' if recent else 'appeared' }} <em>only</em> in my RSS feeds for {{ rssOnlyDays }} days ({{ 'until' if recent else 'released' }} <time datetime="{{ adjusted | rfc3339Date }}">{{ adjusted | friendlyDateLong }}</time>), rewarding folks who <a href="/feeds/">subscribe to my RSS feeds</a> with knowing about this post early!</p>
 		{%- endif %}
 	</div>
 
