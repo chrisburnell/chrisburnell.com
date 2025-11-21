@@ -7,7 +7,12 @@
 
 .footer {
 	container: footer / inline-size;
-	background-color: var(--background-color, light-dark(var(--color-mineshaft), color-mix(in oklab, var(--color-thunder), var(--color-mineshaft) 80%)));
+	background-color: var(--background-color, color-mix(in oklab, var(--color-thunder), var(--color-mineshaft) 80%));
+	background-image: radial-gradient(circle at center,
+		var(--background-color, color-mix(in oklab, var(--color-thunder), var(--color-mineshaft) 40%)),
+		var(--background-color, color-mix(in oklab, var(--color-thunder), var(--color-mineshaft) 80%))
+	);
+	background-attachment: fixed;
 	padding-block: var(--size-large);
 	border-block-start: var(--size-border-thin) solid var(--border-color, var(--color-raven));
 	z-index: var(--z-index-menu);

@@ -7,12 +7,6 @@
 @use "../abstracts/mixins";
 
 @layer pages {
-	:is(.title, .description, .meta) {
-		inline-size: 100%;
-		max-inline-size: var(--size-breakpoint-gigantic);
-		margin-inline: auto;
-	}
-
 	.pantheon {
 		@include mixins.cqi("main", "medium", "gigantic") {
 			--indent-size: 1fr;
@@ -24,6 +18,12 @@
 		@include mixins.cqi("main", "gigantic") {
 			max-inline-size: var(--size-breakpoint-behemoth);
 		}
+	}
+
+	:is(.title, .description, .meta) {
+		inline-size: 100%;
+		max-inline-size: var(--size-breakpoint-gigantic);
+		margin-inline: auto;
 	}
 
 	[id="content"] {
