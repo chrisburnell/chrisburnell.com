@@ -13,6 +13,7 @@
 		var(--background-color, color-mix(in oklab, var(--color-thunder), var(--color-mineshaft) 80%))
 	);
 	background-attachment: fixed;
+	background-size: 100% 250%;
 	padding-block: var(--size-large);
 	border-block-start: var(--size-border-thin) solid var(--border-color, var(--color-raven));
 	z-index: var(--z-index-menu);
