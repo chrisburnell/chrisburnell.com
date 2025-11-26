@@ -6,6 +6,7 @@
 ::backdrop {
 	background-color: oklch(from var(--color-thunder) l c h / var(--opacity-beta));
 	backdrop-filter: blur(1px);
+	overscroll-behavior: contain;
 }
 
 :is(dialog, [popover], :where(.modal)) {
@@ -14,10 +15,12 @@
 	background-color: var(--background-color, light-dark(color-mix(in oklab, var(--color-snowy), var(--color-yeti) 80%), color-mix(in oklab, var(--color-thunder), var(--color-mineshaft) 80%)));
 	color: inherit;
 	max-inline-size: 100vi;
-	padding: var(--size-medium-large) var(--size-small-medium);
+	padding: var(--size-medium-large);
 	border-block-start: var(--size-border-thin) solid var(--color-raven);
 	border-radius: 0 0 var(--border-radius, var(--size-border-thin)) var(--border-radius, var(--size-border-thin));
 	box-shadow: var(--box-shadow-medium);
+	overflow-x: hidden;
+	overflow-y: auto;
 	position: fixed;
 	inset: initial;
 	inset-block-start: 50%;
