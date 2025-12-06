@@ -4,9 +4,11 @@
 
     Name: {{ author.name }}
     Email: {{ author.email }}
+    Bluesky: https://bsky.app/profile/{{ author.bluesky }}
     CodePen: https://codepen.io/{{ author.codepen }}
+	Git (Self-Hosted): {{ author.git }}/{{ author.git_user }}
     GitHub: https://github.com/{{ author.github }}
-    Mastodon: https://{{ author.mastodon_domain }}/@{{ author.mastodon.split('@')[1] }}
+    Mastodon: {{ author.mastodon_domain }}/@{{ author.mastodon.split('@')[1] }}
     PGP: {{ author.pgp }}
 
 /* SITE */

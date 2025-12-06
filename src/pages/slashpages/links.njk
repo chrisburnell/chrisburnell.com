@@ -65,6 +65,16 @@ description: Find me all over the web (mostly)!
 		</h1>
 	</article>
 	<article class=" [ flow ] ">
+		<img src="https://v1.indieweb-avatar.11ty.dev/{{ author.git | urlencode }}/" class=" [ avatar ] " width="30" height="30" loading="lazy" decoding="async">
+		<h1>
+			<a href="{{ author.git }}/{{ author.git_user }}" rel="me external noopener">
+				Git (Self-Hosted)
+				<br>
+				<small>{{ author.git_user }}</small>
+			</a>
+		</h1>
+	</article>
+	<article class=" [ flow ] ">
 		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://github.com' | urlencode }}/" class=" [ avatar ] " width="30" height="30" loading="lazy" decoding="async">
 		<h1>
 			<a href="https://github.com/{{ author.github }}" rel="me external noopener">
@@ -117,7 +127,7 @@ description: Find me all over the web (mostly)!
 	<article class=" [ flow ] ">
 		<img src="https://v1.indieweb-avatar.11ty.dev/{{ ('https://' + author.mastodon_domain) | urlencode }}/" class=" [ avatar ] " width="30" height="30" loading="lazy" decoding="async">
 		<h1>
-			<a href="https://{{ author.mastodon_domain }}/@{{ author.mastodon.split('@')[1] }}" rel="me external noopener">
+			<a href="{{ author.mastodon_domain }}/@{{ author.mastodon.split('@')[1] }}" rel="me external noopener">
 				Mastodon
 				<br>
 				<small>{{ author.mastodon }}</small>
