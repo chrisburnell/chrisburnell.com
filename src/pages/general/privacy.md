@@ -7,7 +7,7 @@ description: Your right to privacy on this website.
 
 I’m currently using [Fathom Lite](https://usefathom.com/) [(self-hosted)](https://logs.chrisburnell.com) as a means of keeping track of popular pages and page referrals, mostly to see what pages are popular, make sure those pages are functioning as intended, and to see where my referral traffic is coming from. It presents the following metrics: page views, unique visitors, average time spent on the website, bounce rate, and referrals.
 
-*Fathom Lite* sets a (first-party) cookie in your browser in order to keep track of page visits and distinguish unique visitors. You can <a href="#settings">open the settings modal</a> to <a href="#analytics-toggle">disable analytics</a> which will prevent the network requests that go out to my Fathom server. I also welcome you to completely disable cookies on my website and/or block network requests to `logs.chrisburnell.com`.
+*Fathom Lite* sets a (first-party) cookie in your browser in order to keep track of page visits and distinguish unique visitors. You can <a href="#settings">open the settings modal</a> to <a href="#analytics-toggler">disable analytics</a> which will prevent the network requests that go out to my Fathom server. I also welcome you to completely disable cookies on my website and/or block network requests to `logs.chrisburnell.com`.
 
 While I don’t necessarily recommend disabling JavaScript sitewide, doing so will *also* disable tracking completely. On some pages where I unfortunately rely upon JS to render dynamic content or to add functionality to demos/calculators/etc., I’ve attempted to always include `<noscript>` tags to signal sections that require it to function correctly/at all.
 

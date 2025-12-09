@@ -591,12 +591,6 @@ export default [
 		mastodon: "setstudio@mastodon.design",
 	},
 	{
-		title: "Alwyn Soh",
-		url: "https://sohwatt.com",
-		rss: "https://sohwatt.com/rss/",
-		mastodon: "alwynispat@mastodon.sg",
-	},
-	{
 		title: "Chen Hui Jing",
 		url: "https://chenhuijing.com",
 		rss: "https://chenhuijing.com/feed.xml",

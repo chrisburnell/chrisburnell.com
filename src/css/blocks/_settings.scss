@@ -11,10 +11,6 @@
 	max-block-size: 100vb;
 	max-block-size: 100dvb;
 
-	& [id="sounds-toggle"] {
-		color: inherit !important; // override themes
-	}
-
 	& legend {
 		grid-column: 1 / -1;
 	}

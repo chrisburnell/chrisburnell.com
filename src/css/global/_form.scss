@@ -115,7 +115,7 @@ textarea {
 	aspect-ratio: 1;
 	inline-size: 2em;
 	block-size: 2em;
-	color: transparent;
+	color: transparent !important;
 	vertical-align: middle;
 	border-width: var(--size-border-thin);
 	margin-block-start: calc(1ex - 1cap);
@@ -129,7 +129,7 @@ textarea {
 		outline-color var(--transition-duration) var(--transition-function);
 
 	&:checked {
-		color: var(--color-raven);
+		color: var(--color-raven) !important;
 	}
 }
 
