@@ -39,6 +39,7 @@
 		<link rel="micropub" href="{{ site.urls.micropub }}">
 		<link rel="openid.delegate" href="{{ site.url }}">
 		<link rel="openid.server" href="{{ site.urls.openid }}">{% if page.url == '/' %}
+		<link rel="me" href="{{ author.git }}/{{ author.git_user }}">
 		<link rel="me" href="https://github.com/{{ author.github }}">{% endif %}
 
 		<link rel="author" href="/humans.txt">
