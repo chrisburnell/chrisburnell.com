@@ -46,7 +46,7 @@ eleventyComputed:
 			<h2 id="{{ year }}">
 				{{ year }} <small>{{ posts | length }} post{{ 's' if posts | length > 1 }}</small>
 			</h2>
-			<div id="list-{{ year }}" class=" [ {{ list_type }} ] ">
+			<div id="list-{{ year }}" class=" [ {{ list_type | default('stack') }} ] ">
 				{% for item in posts %}
 					{% if list_type == 'deck' -%}
 						{{ deckItem(item, { hfeed: true, show_images: true, show_pageviews: show_pageviews, truncate: true }) }}

@@ -62,7 +62,7 @@ layout: base
 					<h2 id="{{ year }}">
 						{{ year }} <small>{{ posts | length }} post{{ 's' if posts | length > 1 }}</small>
 					</h2>
-					<div id="list-{{ year }}" class=" [ {{ list_type }} ] ">
+					<div id="list-{{ year }}" class=" [ {{ list_type | default('stack') }} ] ">
 						{% for item in posts -%}
 							{% if list_type == 'deck' -%}
 								{{ deckItem(item, { index: i, hfeed: true, show_images: show_images, show_pageviews: show_pageviews, show_hotness: show_hotness, show_popularity: show_popularity, truncate: true }) }}
@@ -75,7 +75,7 @@ layout: base
 				{%- endif %}
 			{%- endfor %}
 		{%- else -%}
-			<div class=" [ {{ list_type }} ] ">
+			<div class=" [ {{ list_type | default('stack') }} ] ">
 				{% for item in collection | noRSSOnlyFilter %}
 					{% if list_type == 'deck' -%}
 						{{ deckItem(item, { index: loop.index, hfeed: true, show_images: show_images, show_pageviews: show_pageviews, show_hotness: show_hotness, show_popularity: show_popularity, truncate: true }) }}

@@ -59,30 +59,34 @@ const fetchImageData = (options, src) => {
 const storeAvatar = async (id, classes = "") => {
 	// We know where the images will be
 	const fakeUrl = `/images/avatars/${id}.jpeg`;
-	const metadata = Image.statsByDimensionsSync(
-		fakeUrl,
-		size,
-		size,
-		getImageOptions(id),
-	);
-	const markup = Image.generateHTML(
-		metadata,
-		{
-			alt: `${id}’s avatar`,
-			title: `${id}’s avatar`,
-			class:
-				" [ avatar ] [ u-author ] " +
-				(classes ? `[ ${classes} ] ` : ""),
-			sizes: "100vw",
-			loading: "lazy",
-			decoding: "async",
-		},
-		{
-			whitespaceMode: "inline",
-		},
-	);
+	try {
+		const metadata = Image.statsByDimensionsSync(
+			fakeUrl,
+			size,
+			size,
+			getImageOptions(id),
+		);
+		const markup = Image.generateHTML(
+			metadata,
+			{
+				alt: `${id}’s avatar`,
+				title: `${id}’s avatar`,
+				class:
+					" [ avatar ] [ u-author ] " +
+					(classes ? `[ ${classes} ] ` : ""),
+				sizes: "100vw",
+				loading: "lazy",
+				decoding: "async",
+			},
+			{
+				whitespaceMode: "inline",
+			},
+		);
 
-	return markup;
+		return markup;
+	} catch {
+		return `<picture><source type="image/avif" srcset="/images/default-profile.avif 48w"><source type="image/webp" srcset="/images/default-profile.webp 48w"><img src="/images/default-profile.jpeg" alt="default/anonymous avatar" class="[ avatar ]" loading="lazy" decoding="async" width="48" height="48"></picture>`;
+	}
 };
 
 /**
