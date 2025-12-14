@@ -65,7 +65,7 @@ eleventyComputed:
     <figcaption>a photo of my partner, Rachel, and <span class="canada">myself</span></figcaption>
 </figure>
 
-I’m originally from [<span class=" [ canada ] ">Halifax, Nova Scotia</span>](https://www.openstreetmap.org/#map=13/44.6463/-63.6162), started my career and lived in [London, England](https://www.openstreetmap.org/#map=10/51.4898/-0.0882) for 12 years, spent a year and change in [Singapore](https://www.openstreetmap.org/#map=14/1.3156/103.9425), and now I live in <span class="canada">Halifax</span> again!
+I’m from [<span class=" [ canada ] ">Halifax, Nova Scotia</span>](https://www.openstreetmap.org/#map=13/44.6463/-63.6162); although, I started my career and lived in [London, England](https://www.openstreetmap.org/#map=10/51.4898/-0.0882) for 12 years, spent a year and change in [Singapore](https://www.openstreetmap.org/#map=14/1.3156/103.9425), and now I live in <span class="canada">Halifax</span> again!
 
 Although I’ve been building websites since 2006, I’ve had my personal website since 2008, and it’s definitely my favourite thing that I own. My passion for the web drives me to help build a better web for tomorrow, and I pursue that through specialising in web &amp; front end development (CSS in particular), design systems, learning and mentorship, technical writing and speaking, and conference/event organisation.
 
