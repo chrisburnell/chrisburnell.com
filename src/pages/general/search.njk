@@ -31,7 +31,7 @@ css_includes:
 const isCSSNakedDay = {{ global.isCSSNakedDay | safe }};
 
 {% set pagefind_original -%}{% include '../../../node_modules/@zachleat/pagefind-search/pagefind-search.js' %}{%- endset -%}
-{{ pagefind_original | replace("PagefindSearch.register();", "") }}
+{{ pagefind_original | replace("PagefindSearch.register();", "") | safe }}
 
 {% include '../../js/imports/pagefind-search-cb.js' %}
 
