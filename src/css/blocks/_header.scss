@@ -6,7 +6,6 @@
 .header {
 	container: header / inline-size;
 	background-color: var(--background-color, light-dark(color-mix(in oklab, var(--color-bear), var(--color-snowy)), color-mix(in oklab, var(--color-thunder), var(--color-mineshaft) 80%)));
-	border-block-start: var(--size-border-thin) solid var(--color-raven);
 	overflow-y: hidden;
 	box-shadow: var(--box-shadow-low);
 	z-index: var(--z-index-menu);

@@ -8,12 +8,23 @@
 details {
 	inline-size: 100%;
 	overflow-x: auto;
-	transition:
-		block-size var(--transition-duration) var(--transition-function),
-		content-visibility var(--transition-duration) var(--transition-function);
+
+	&::details-content {
+		transition:
+			opacity var(--transition-duration) var(--transition-function),
+			block-size var(--transition-duration) var(--transition-function),
+			content-visibility var(--transition-duration) var(--transition-function);
+		transition-behavior: allow-discrete;
+
+		@starting-style {
+			block-size: 0;
+		}
+	}
 
 	&[open] {
-		block-size: calc-size(auto, size);
+		&::details-content {
+			block-size: calc-size(auto, size);
+		}
 	}
 
 	// add spacing around non-summary children
@@ -42,6 +53,7 @@ summary {
 	text-underline-offset: 0.125em;
 	transition: text-decoration-color var(--transition-duration) var(--transition-function);
 	list-style: "+ " inside;
+	cursor: pointer;
 
 	&::marker {
 		font-family: var(--font-family-monospace);
