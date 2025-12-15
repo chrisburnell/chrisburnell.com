@@ -8,6 +8,14 @@ const analyticsCache = new Map();
  * @returns {{ pageviews: object, subs: object, medians: object }}
  */
 export default async function () {
+	if (!process.env.FATHOM_SUMMARY_KEY) {
+		return {
+			pageviews: {},
+			sums: {},
+			medians: {},
+		};
+	}
+
 	const url = `${urls.fathom}/summary?key=${process.env.FATHOM_SUMMARY_KEY}`;
 	const pageviews = await EleventyFetch(url, {
 		duration: cacheDurations.hourly,

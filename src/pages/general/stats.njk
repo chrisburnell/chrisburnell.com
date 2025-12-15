@@ -60,7 +60,7 @@ excludeFromSearch: true
 {%- endfor -%}
 
 {%- set most_popular_page = collections.popular | first -%}
-{%- set most_hot_page = collections.hot | first -%}
+{%- set hottest_page = collections.hot | first -%}
 
 {% set package_downloads = 0 -%}
 {% for project in collections.projects -%}
@@ -84,10 +84,14 @@ excludeFromSearch: true
 	<dd>{{ blog_wordcount | numberStringFormat }}</dd>
 	<dt>Most Verbose Post</dt>
 	<dd><a href="{{ blog_posts[wordiest_post_index].url }}">{{ blog_posts[wordiest_post_index].data.title }}</a> <small>with</small> {{ wordiest_blog_post | numberStringFormat }} words</dd>
+	{% if most_popular_page -%}
 	<dt>Most Popular Page<a href="#fn2" id="fnref2"><sup class="footnote-ref">[2]</sup></a></dt>
 	<dd><a href="{{ most_popular_page | keyValue('url') }}">{{ most_popular_page | keyValue('data.meta_title') | safe }}</a><br><time datetime="{{ most_popular_page | keyValue('data.date') | rfc3339Date | safe }}">{{ most_popular_page | keyValue('data.date') | friendlyDateLong | safe }}</time></dd>
+	{%- endif %}
+	{% if hottest_page -%}
 	<dt>Hottest Page<a href="#fn3" id="fnref3"><sup class="footnote-ref">[3]</sup></a></dt>
-	<dd><a href="{{ most_hot_page | keyValue('url') }}">{{ most_hot_page | keyValue('data.meta_title') | safe }}</a><br><time datetime="{{ most_hot_page | keyValue('data.date') | rfc3339Date | safe }}">{{ most_hot_page | keyValue('data.date') | friendlyDateLong | safe }}</time></dd>
+	<dd><a href="{{ hottest_page | keyValue('url') }}">{{ hottest_page | keyValue('data.meta_title') | safe }}</a><br><time datetime="{{ hottest_page | keyValue('data.date') | rfc3339Date | safe }}">{{ hottest_page | keyValue('data.date') | friendlyDateLong | safe }}</time></dd>
+	{%- endif %}
 	<dt>№ Projects</dt>
 	<dd><a href="/projects/">{{ (projects.web.length + projects.personal.length + collections.projects.length) | numberStringFormat }}</a></dd>
 	<dt>№ Project Downloads</dt>

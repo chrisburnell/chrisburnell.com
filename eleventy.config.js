@@ -62,7 +62,9 @@ export default async function (eleventyConfig) {
 	eleventyConfig.addPlugin(plugins.scss);
 	eleventyConfig.addPlugin(plugins.syntaxHighlight, config.syntaxHighlight);
 	eleventyConfig.addPlugin(plugins.webc, config.webc);
-	eleventyConfig.addPlugin(plugins.webmentions, config.webmentions);
+	if (process.env.WEBMENTION_IO_TOKEN) {
+		eleventyConfig.addPlugin(plugins.webmentions, config.webmentions);
+	}
 	// if (process.env.ELEVENTY_RUN_MODE === "build") {
 	// 	eleventyConfig.addPlugin(plugins.eleventyImageTransformPlugin, {
 	// 		// which file extensions to process
