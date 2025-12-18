@@ -11,4 +11,5 @@
 	--raven-lightness: 58.5%;
 	--raven-chroma: 0.0725;
 	--raven-hue: 294.53;
+	--color-raven: oklch(var(--raven-lightness) var(--raven-chroma) var(--raven-hue));
 }

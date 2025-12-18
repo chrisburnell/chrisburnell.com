@@ -11,7 +11,10 @@
 	// apply slight yellow-filter to monochrome colours
 	--monochrome-chroma: 0.06;
 	--monochrome-hue: 90;
+	--color-snowy: oklch(var(--snowy-lightness) var(--monochrome-chroma) var(--monochrome-hue));
+	--color-thunder: oklch(var(--thunder-lightness) var(--monochrome-chroma) var(--monochrome-hue));
 	// apply slight yellow-filter to raven-based colours
 	--raven-chroma: 0.034;
 	--raven-hue: 180;
+	--color-raven: oklch(var(--raven-lightness) var(--raven-chroma) var(--raven-hue));
 }

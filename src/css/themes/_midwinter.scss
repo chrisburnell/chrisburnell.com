@@ -7,6 +7,7 @@
 [data-theme*="midwinter"],
 .midwinter {
 	--raven-hue: 165;
+	--color-raven: oklch(var(--raven-lightness) var(--raven-chroma) var(--raven-hue));
 
 	&:is(html) {
 		scrollbar-color: var(--color-maple) var(--body-background-color);
