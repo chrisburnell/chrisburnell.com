@@ -44,16 +44,16 @@
 		#{"--size-" + $name + "-max"}: #{math.div(map.get($data, "maxSize"), 16) * 1rem};
 	}
 	$sizes-seen: ();
-	@each $name, $data in tokens.$sizes {
-		@each $other-name, $other-data in $sizes-seen {
-			#{"--size-" + $other-name + "-" + $name}: #{utopia.calculateClamp((
-				"minWidth": map.get($other-data, "minWidth"),
-				"maxWidth": map.get($data, "maxWidth"),
-				"minSize": map.get($other-data, "minSize"),
-				"maxSize": map.get($data, "maxSize"),
+	@each $a-name, $a-data in tokens.$sizes {
+		@each $b-name, $b-data in $sizes-seen {
+			#{"--size-" + $b-name + "-" + $a-name}: #{utopia.calculateClamp((
+				"minWidth": map.get($b-data, "minWidth"),
+				"maxWidth": map.get($a-data, "maxWidth"),
+				"minSize": map.get($b-data, "minSize"),
+				"maxSize": map.get($a-data, "maxSize"),
 			))};
 		}
-		$sizes-seen: map.set($sizes-seen, $name, $data);
+		$sizes-seen: map.set($sizes-seen, $a-name, $a-data);
 	}
 	@each $name, $value in tokens.$sizes-extra {
 		#{"--size-" + $name}: #{$value};
@@ -77,16 +77,16 @@
 		#{"--font-size-" + $name + "-max"}: #{math.div(map.get($data, "maxSize"), 16) * 1rem};
 	}
 	$font-sizes-seen: ();
-	@each $name, $data in tokens.$font-sizes {
-		@each $other-name, $other-data in tokens.$font-sizes {
-			#{"--font-size-" + $other-name + "-" + $name}: #{utopia.calculateClamp((
-				"minWidth": map.get($other-data, "minWidth"),
-				"maxWidth": map.get($data, "maxWidth"),
-				"minSize": map.get($other-data, "minSize"),
-				"maxSize": map.get($data, "maxSize"),
+	@each $a-name, $a-data in tokens.$font-sizes {
+		@each $b-name, $b-data in $font-sizes-seen {
+			#{"--font-size-" + $b-name + "-" + $a-name}: #{utopia.calculateClamp((
+				"minWidth": map.get($b-data, "minWidth"),
+				"maxWidth": map.get($a-data, "maxWidth"),
+				"minSize": map.get($b-data, "minSize"),
+				"maxSize": map.get($a-data, "maxSize"),
 			))};
 		}
-		$font-sizes-seen: map.set($font-sizes-seen, $name, $data);
+		$font-sizes-seen: map.set($font-sizes-seen, $a-name, $a-data);
 	}
 
 	@each $name, $value in tokens.$font-weights {

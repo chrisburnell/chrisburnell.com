@@ -160,7 +160,9 @@ export default async function (eleventyConfig) {
 	/**
 	 * Build Settings
 	 */
+	eleventyConfig.addBundle("css");
 	eleventyConfig.addWatchTarget("./src/css");
+	eleventyConfig.addBundle("js");
 	eleventyConfig.addWatchTarget("./src/js");
 	eleventyConfig.setDataDeepMerge(true);
 	eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
