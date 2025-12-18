@@ -47,7 +47,17 @@
 
 		&::after {
 			content: " ";
-			border-block-end: 1px solid oklch(from currentColor l c h/var(--opacity-gamma));
+			background-image: repeating-linear-gradient(
+				90deg,
+				oklch(from currentColor l c h / var(--opacity-beta)),
+				oklch(from currentColor l c h / var(--opacity-beta)) var(--size-border-thin),
+				transparent var(--size-border-thin),
+				transparent var(--size-small)
+			);
+			background-position: left bottom;
+			background-repeat: repeat-x;
+			background-size: 100% var(--size-border-thin);
+			block-size: var(--size-border-thin);
 			align-self: center;
 			grid-column: spacer;
 			grid-row: top;

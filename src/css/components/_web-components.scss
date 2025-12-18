@@ -66,3 +66,13 @@ share-button:defined a {
 :where(url-input) {
 	display: contents;
 }
+
+snow-fall {
+	display: none;
+
+	:root:has([name="theme"] [value*="midwinter"]:checked) &,
+	[data-theme*="midwinter"] &,
+	.midwinter & {
+		display: initial;
+	}
+}

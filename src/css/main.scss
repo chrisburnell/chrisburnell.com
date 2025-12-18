@@ -116,10 +116,10 @@
 @layer themes {
 	@include meta.load-css("themes/high-contrast");
 	@include meta.load-css("themes/sepia");
-	@include meta.load-css("themes/christmas");
 	@include meta.load-css("themes/red-alert");
 	@include meta.load-css("themes/koala");
 	@include meta.load-css("themes/matrix");
+	@include meta.load-css("themes/midwinter");
 	@include meta.load-css("themes/nineties");
 }
 

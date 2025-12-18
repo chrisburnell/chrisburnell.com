@@ -11,7 +11,6 @@
 	--raven-lightness: 60.6%;
 	--raven-chroma: 0.082;
 	--raven-hue: 142.62;
-	@include mixins.setup-raven-colors;
 
 	@media not print {
 		color-scheme: dark;
@@ -19,7 +18,7 @@
 
 	& .logo,
 	& .perch::after {
-		filter: hue-rotate(270deg) saturate(300%);
+		filter: hue-rotate(270deg) saturate(200%);
 	}
 
 	& main,

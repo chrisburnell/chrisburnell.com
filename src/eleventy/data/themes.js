@@ -1,7 +1,10 @@
+import { isMidwinterPeriod } from "./global.js";
+
 export default [
 	{
-		id: "",
+		id: isMidwinterPeriod ? "ravenous" : "",
 		title: "Ravenous",
+		selected: !isMidwinterPeriod,
 	},
 	{
 		id: "sepia",
@@ -22,6 +25,11 @@ export default [
 	{
 		id: "matrix",
 		title: "Rabbit Hole",
+	},
+	{
+		id: "midwinter",
+		title: "Midwinter",
+		selected: isMidwinterPeriod,
 	},
 	{
 		id: "custom",

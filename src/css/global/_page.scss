@@ -5,7 +5,7 @@
 
 html {
 	background-color: var(--color-kaiser);
-	scrollbar-color: var(--color-raven) light-dark(var(--color-snowy), var(--color-mineshaft));
+	scrollbar-color: var(--color-raven) var(--body-background-color);
 	accent-color: var(--color-raven);
 	font-size: 100%;
 	font-variant: common-ligatures proportional-nums;

@@ -1,0 +1,21 @@
+////
+/// Midwinter
+/// @group themes
+////
+
+:root:has([name="theme"] [value*="midwinter"]:checked),
+[data-theme*="midwinter"],
+.midwinter {
+	--raven-lightness: 70%;
+	--raven-chroma: 0.08;
+	--raven-hue: 185;
+
+	&:is(html) {
+		scrollbar-color: var(--color-maple) var(--body-background-color);
+	}
+
+	& .logo,
+	& .perch::after {
+		filter: hue-rotate(155deg);
+	}
+}

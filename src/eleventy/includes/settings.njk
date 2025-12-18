@@ -11,7 +11,7 @@
 			<select id="theme-selector" name="theme">
 				<optgroup label="Select a theme">
 					{% for theme in themes -%}
-						<option value="{{ theme.id }}">{{ theme.title }}</option>
+						<option value="{{ theme.id }}"{% if theme.selected %} selected{% endif %}>{{ theme.title }}</option>
 					{% endfor -%}
 				</optgroup>
 			</select>

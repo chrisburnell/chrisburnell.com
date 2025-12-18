@@ -10,43 +10,57 @@
 @use "../generated/tokens";
 
 :root {
-	// Build the Monochrome colors
+	// Monochrome colors components
 	--snowy-lightness: 98.21%;
 	--thunder-lightness: 14.96%;
 	--monochrome-chroma: 0;
 	--monochrome-hue: 0;
-	@include mixins.setup-monochrome-colors;
+	// Monochrome colors
+	--color-snowy: oklch(var(--snowy-lightness) var(--monochrome-chroma) var(--monochrome-hue));
+	--color-thunder: oklch(var(--thunder-lightness) var(--monochrome-chroma) var(--monochrome-hue));
+	--color-mineshaft: color-mix(in oklab, var(--color-snowy), var(--color-thunder) 83.6%);
+	--color-kaiser: color-mix(in oklab, var(--color-snowy), var(--color-thunder) 66.6%);
+	--color-nickel: color-mix(in oklab, var(--color-snowy), var(--color-thunder) 51.8%);
+	--color-yeti: color-mix(in oklab, var(--color-snowy), var(--color-thunder) 10.2%);
 
-	// Build the Raven colors
+	// Raven color components
 	--raven-lightness: 61.29%;
 	--raven-chroma: 0.064;
 	--raven-hue: 237.73;
-	@include mixins.setup-raven-colors;
+	// Raven & Raven-based colors
+	--color-raven: oklch(var(--raven-lightness) var(--raven-chroma) var(--raven-hue));
+	--color-lynx: color-mix(in oklab, var(--color-raven), var(--color-thunder) 75%);
+	--color-wolf: color-mix(in oklab, var(--color-raven), var(--color-thunder) 54%);
+	--color-bowhead: color-mix(in oklab, var(--color-raven), var(--color-thunder) 33%);
+	--color-highland: color-mix(in oklab, var(--color-raven), var(--color-snowy) 33%);
+	--color-coyote: color-mix(in oklab, var(--color-raven), var(--color-snowy) 54%);
+	--color-bear: color-mix(in oklab, var(--color-raven), var(--color-snowy) 75%);
 
 	@each $name, $value in map.merge(tokens.$colors-secondary, tokens.$colors-tertiary) {
-		#{"--color-" + $name}: #{$value};
+		--color-#{$name}: #{$value};
 	}
 	--body-background-color: light-dark(color-mix(in oklab, var(--color-bear), var(--color-snowy) 90%), color-mix(in oklab, var(--color-mineshaft), var(--color-wolf) 40%));
 	--body-color: light-dark(var(--color-kaiser), var(--color-yeti));
 
-	@each $name, $value in tokens.$opacities {
-		#{"--opacity-" + $name}: #{$value};
+	@for $x from 1 through 9 {
+		--opacity-#{$x * 10}: #{math.div($x * 10, 100)};
 	}
+	--opacity-5: 0.05;
 
 	@each $name, $data in tokens.$sizes {
-		#{"--size-" + $name + "-min"}: #{math.div(map.get($data, "minSize"), 16) * 1rem};
-		#{"--size-" + $name}: #{utopia.calculateClamp((
+		--size-#{$name}-min: #{math.div(map.get($data, "minSize"), 16) * 1rem};
+		--size-#{$name}: #{utopia.calculateClamp((
 			"minWidth": map.get($data, "minWidth"),
 			"maxWidth": map.get($data, "maxWidth"),
 			"minSize": map.get($data, "minSize"),
 			"maxSize": map.get($data, "maxSize"),
 		))};
-		#{"--size-" + $name + "-max"}: #{math.div(map.get($data, "maxSize"), 16) * 1rem};
+		--size-#{$name}-max: #{math.div(map.get($data, "maxSize"), 16) * 1rem};
 	}
 	$sizes-seen: ();
 	@each $a-name, $a-data in tokens.$sizes {
 		@each $b-name, $b-data in $sizes-seen {
-			#{"--size-" + $b-name + "-" + $a-name}: #{utopia.calculateClamp((
+			--size-#{$b-name}-#{$a-name}: #{utopia.calculateClamp((
 				"minWidth": map.get($b-data, "minWidth"),
 				"maxWidth": map.get($a-data, "maxWidth"),
 				"minSize": map.get($b-data, "minSize"),
@@ -56,30 +70,30 @@
 		$sizes-seen: map.set($sizes-seen, $a-name, $a-data);
 	}
 	@each $name, $value in tokens.$sizes-extra {
-		#{"--size-" + $name}: #{$value};
+		--size-#{$name}: #{$value};
 	}
 	@each $name, $value in tokens.$breakpoints {
-		#{"--size-breakpoint-" + $name}: #{$value};
+		--size-breakpoint-#{$name}: #{$value};
 	}
 
 	@each $name, $value in tokens.$font-families {
-		#{"--font-family-" + $name}: #{$value};
+		--font-family-#{$name}: #{$value};
 	}
 
 	@each $name, $data in tokens.$font-sizes {
-		#{"--font-size-" + $name + "-min"}: #{math.div(map.get($data, "minSize"), 16) * 1rem};
-		#{"--font-size-" + $name}: #{utopia.calculateClamp((
+		--font-size-#{$name}-min: #{math.div(map.get($data, "minSize"), 16) * 1rem};
+		--font-size-#{$name}: #{utopia.calculateClamp((
 			"minWidth": map.get($data, "minWidth"),
 			"maxWidth": map.get($data, "maxWidth"),
 			"minSize": map.get($data, "minSize"),
 			"maxSize": map.get($data, "maxSize"),
 		))};
-		#{"--font-size-" + $name + "-max"}: #{math.div(map.get($data, "maxSize"), 16) * 1rem};
+		--font-size-#{$name}-max: #{math.div(map.get($data, "maxSize"), 16) * 1rem};
 	}
 	$font-sizes-seen: ();
 	@each $a-name, $a-data in tokens.$font-sizes {
 		@each $b-name, $b-data in $font-sizes-seen {
-			#{"--font-size-" + $b-name + "-" + $a-name}: #{utopia.calculateClamp((
+			--font-size-#{$b-name}-#{$a-name}: #{utopia.calculateClamp((
 				"minWidth": map.get($b-data, "minWidth"),
 				"maxWidth": map.get($a-data, "maxWidth"),
 				"minSize": map.get($b-data, "minSize"),
@@ -90,15 +104,15 @@
 	}
 
 	@each $name, $value in tokens.$font-weights {
-		#{"--font-weight-" + $name}: #{$value};
+		--font-weight-#{$name}: #{$value};
 	}
 
 	@each $name, $value in tokens.$line-heights {
-		#{"--line-height-" + $name}: #{$value};
+		--line-height-#{$name}: #{$value};
 	}
 
 	@each $name, $value in tokens.$z-indexes {
-		#{"--z-index-" + $name}: #{$value};
+		--z-index-#{$name}: #{$value};
 	}
 
 	--animation-duration: 2s;

@@ -1,7 +1,17 @@
 document.documentElement.classList.remove("no-js");
 
+const now = Date.now();
+const currentYear = new Date().getFullYear();
+const midwinterPeriodStart = `${currentYear}-12-01T00:00:00+14:00`;
+const midwinterPeriodEnd = `${currentYear}-12-31T23:59:59-12:00`;
+const isMidwinterPeriod =
+	new Date(midwinterPeriodStart).getTime() <= now &&
+	now <= new Date(midwinterPeriodEnd).getTime();
 const THEME = localStorage.getItem("theme");
 if (THEME) {
+	if (!isMidwinterPeriod && THEME === "ravenous") {
+		localStorage.removeItem("theme");
+	}
 	document.documentElement.setAttribute("data-theme", THEME);
 }
 
