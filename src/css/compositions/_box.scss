@@ -39,17 +39,17 @@
 }
 
 .box--success {
-	--box-background-color: light-dark(oklch(from var(--color-conifer) l c h / var(--opacity-delta)), color-mix(in oklab, var(--color-mineshaft), var(--color-conifer) 10%));
+	--box-background-color: light-dark(oklch(from var(--color-conifer) l c h / var(--opacity-05)), color-mix(in oklab, var(--color-mineshaft), var(--color-conifer) 10%));
 	--box-border-color: var(--color-conifer);
 }
 
 .box--warning {
-	--box-background-color: light-dark(oklch(from var(--color-aspen) l c h / var(--opacity-delta)), color-mix(in oklab, var(--color-mineshaft), var(--color-aspen) 10%));
+	--box-background-color: light-dark(oklch(from var(--color-aspen) l c h / var(--opacity-05)), color-mix(in oklab, var(--color-mineshaft), var(--color-aspen) 10%));
 	--box-border-color: var(--color-aspen);
 }
 
 .box--error {
-	--box-background-color: light-dark(oklch(from var(--color-maple) l c h / var(--opacity-delta)), color-mix(in oklab, var(--color-mineshaft), var(--color-maple) 10%));
+	--box-background-color: light-dark(oklch(from var(--color-maple) l c h / var(--opacity-05)), color-mix(in oklab, var(--color-mineshaft), var(--color-maple) 10%));
 	--box-border-color: var(--color-maple);
 }
 
