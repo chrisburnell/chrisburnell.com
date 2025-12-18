@@ -167,7 +167,10 @@ export default async function (eleventyConfig) {
 	eleventyConfig.setQuietMode(true);
 	eleventyConfig.on("beforeBuild", () => {
 		console.log(
-			`${styleText("grey", `[${filtersSync.urls.getHost(siteURL)}]`)} Building...`,
+			styleText(
+				"grey",
+				`[${filtersSync.urls.getHost(siteURL)}] Building...`,
+			),
 		);
 	});
 
