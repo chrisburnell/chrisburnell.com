@@ -32,6 +32,12 @@ const jsNakedDayEndEpoch = new Date(jsNakedDayEnd).getTime();
 export const isJSNakedDay =
 	jsNakedDayStartEpoch <= nowEpoch && nowEpoch <= jsNakedDayEndEpoch;
 
+const snowyPeriodStart = `${currentYear}-12-01T00:00:00+14:00`;
+const snowyPeriodEnd = `${currentYear + 1}-01-07T23:59:59-12:00`;
+export const isSnowyPeriod =
+	new Date(snowyPeriodStart).getTime() <= nowEpoch &&
+	nowEpoch <= new Date(snowyPeriodEnd).getTime();
+
 const segment = () => {
 	return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
 };

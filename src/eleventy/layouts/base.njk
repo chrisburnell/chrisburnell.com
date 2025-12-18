@@ -52,6 +52,15 @@ layout: root
 	{%- endif %}
 
 	{{- content | safe -}}
+
+	{% if global.isSnowyPeriod -%}
+		<is-land on:media="(prefers-reduced-motion: no-preference)">
+			<template data-island="once">
+				<script type="module" src="/js/components/snow-fall.js"></script>
+			</template>
+			<snow-fall></snow-fall>
+		</is-land>
+	{%- endif %}
 </main>
 
 <footer class=" [ footer ] ">

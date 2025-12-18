@@ -99,6 +99,7 @@
     "@zachleat/details-utils": "^2.0.2",
     "@zachleat/pagefind-search": "^1.0.3",
     "@zachleat/seven-minute-tabs": "^3.0.3",
+    "@zachleat/snow-fall": "^1.0.3",
     "@zachleat/webcare-webshare": "^1.0.3",
     "autoprefixer": "^10.4.23",
     "browserslist": "^4.28.1",
