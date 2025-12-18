@@ -6,11 +6,6 @@
 			<input type="hidden" name="analytics" value="false" />
 			<input type="checkbox" id="analytics-toggler" name="analytics" value="" checked />
 		{%- endif %}
-		{% if global.isEarlyMidwinterPeriod or global.isMidwinterPeriod -%}
-			<label for="snow-toggler" class="[ requires-motion ] ">Snow:</label>
-			<input type="hidden" name="snow" value="false" />
-			<input type="checkbox" name="snow" class=" [ requires-motion ] " id="snow-toggler" value="" checked />
-		{%- endif %}
 		{% if not global.isCSSNakedDay -%}
 			<label for="theme-selector">Theme:</label>
 			<select id="theme-selector" name="theme">
@@ -52,6 +47,11 @@
 		<label for="user-sounds-toggler">Website Sounds:</label>
 		<input type="hidden" name="user-sounds" value />
 		<input type="checkbox" id="user-sounds-toggler" name="user-sounds" value="true" />
+		{% if global.isEarlyMidwinterPeriod or global.isMidwinterPeriod -%}
+			<label for="snow-toggler" class="[ requires-motion ] ">Snow:</label>
+			<input type="hidden" name="snow" value="false" />
+			<input type="checkbox" name="snow" class=" [ requires-motion ] " id="snow-toggler" value="" checked />
+		{%- endif %}
 	</form>
 </storage-form>
 <div class=" [ navigator ] ">
