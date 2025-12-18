@@ -60,7 +60,7 @@
 		border-width: 0;
 	}
 
-	& :is(.header, .footer) {
+	& :is(.header, .main, .footer) {
 		max-inline-size: var(--size-breakpoint-gigantic);
 	}
 
