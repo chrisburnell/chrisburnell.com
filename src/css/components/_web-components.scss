@@ -70,9 +70,9 @@ share-button:defined a {
 snow-fall {
 	display: none;
 
-	:root:has([name="theme"] [value*="midwinter"]:checked) &,
-	[data-theme*="midwinter"] &,
-	.midwinter & {
-		display: initial;
+	:root:has([name="snow"]:checked) & {
+		@media (prefers-reduced-motion: no-preference) {
+			display: initial;
+		}
 	}
 }

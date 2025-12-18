@@ -15,6 +15,7 @@ const selectSmoothScroll = document.querySelector(
 const inputUserSounds = document.querySelector(
 	`[type="checkbox"][name="user-sounds"]`,
 );
+const inputSnow = document.querySelector(`[type="checkbox"][name="snow"]`);
 const buttonSettingsReset = document.querySelector(".settings-reset");
 
 if (selectTheme && inputCustomHue && inputCustomChroma) {
@@ -66,6 +67,7 @@ if (buttonSettingsReset) {
 		localStorage.removeItem("high-contrast");
 		localStorage.removeItem("smooth-scroll");
 		localStorage.removeItem("user-sounds");
+		localStorage.removeItem("snow");
 		document.documentElement.style.removeProperty("--raven-hue");
 		document.documentElement.style.removeProperty("--raven-chroma");
 		if (selectTheme) {
@@ -88,6 +90,9 @@ if (buttonSettingsReset) {
 		}
 		if (inputUserSounds) {
 			inputUserSounds.checked = false;
+		}
+		if (inputSnow) {
+			inputSnow.checked = true;
 		}
 	});
 }

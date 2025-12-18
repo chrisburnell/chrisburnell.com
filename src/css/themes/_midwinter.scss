@@ -6,9 +6,7 @@
 :root:has([name="theme"] [value*="midwinter"]:checked),
 [data-theme*="midwinter"],
 .midwinter {
-	--raven-lightness: 70%;
-	--raven-chroma: 0.08;
-	--raven-hue: 185;
+	--raven-hue: 165;
 
 	&:is(html) {
 		scrollbar-color: var(--color-maple) var(--body-background-color);
@@ -16,6 +14,6 @@
 
 	& .logo,
 	& .perch::after {
-		filter: hue-rotate(155deg);
+		filter: hue-rotate(calc(165deg - 237.73deg)) saturate(66.6%);
 	}
 }

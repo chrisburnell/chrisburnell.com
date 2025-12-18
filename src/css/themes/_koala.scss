@@ -14,6 +14,6 @@
 
 	& .logo,
 	& .perch::after {
-		filter: hue-rotate(62deg);
+		filter: hue-rotate(calc(294.53deg - 237.73deg)) saturate(110%);
 	}
 }

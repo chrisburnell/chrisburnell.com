@@ -15,6 +15,11 @@
 		color-scheme: dark;
 	}
 
+	& .logo,
+	& .perch::after {
+		filter: saturate(150%) contrast(110%);
+	}
+
 	&,
 	& *,
 	& *::before,

@@ -1,6 +1,19 @@
-import { Temporal } from "@js-temporal/polyfill";
 import dotenv from "dotenv";
 dotenv.config({ quiet: true });
+
+import { Temporal } from "@js-temporal/polyfill";
+import {
+	isCSSNakedDay,
+	isEarlyMidwinterPeriod,
+	isJSNakedDay,
+	isMidwinterPeriod,
+} from "./timeRanges.js";
+export {
+	isCSSNakedDay,
+	isEarlyMidwinterPeriod,
+	isJSNakedDay,
+	isMidwinterPeriod,
+} from "./timeRanges.js";
 
 export const personalApiKeyForLocal = process.env.PERSONAL_API_KEY_FOR_LOCAL;
 
@@ -18,26 +31,6 @@ export const flexibleSorting = {
 	sensitivity: "base",
 };
 
-const cssNakedDayStart = `${currentYear}-04-09T00:00:00+14:00`;
-const cssNakedDayEnd = `${currentYear}-04-09T23:59:59-12:00`;
-const cssNakedDayStartEpoch = new Date(cssNakedDayStart).getTime();
-const cssNakedDayEndEpoch = new Date(cssNakedDayEnd).getTime();
-export const isCSSNakedDay =
-	cssNakedDayStartEpoch <= nowEpoch && nowEpoch <= cssNakedDayEndEpoch;
-
-const jsNakedDayStart = `${currentYear}-04-24T00:00:00+14:00`;
-const jsNakedDayEnd = `${currentYear}-04-24T23:59:59-12:00`;
-const jsNakedDayStartEpoch = new Date(jsNakedDayStart).getTime();
-const jsNakedDayEndEpoch = new Date(jsNakedDayEnd).getTime();
-export const isJSNakedDay =
-	jsNakedDayStartEpoch <= nowEpoch && nowEpoch <= jsNakedDayEndEpoch;
-
-const midwinterPeriodStart = `${currentYear}-12-01T00:00:00+14:00`;
-const midwinterPeriodEnd = `${currentYear}-12-31T23:59:59-12:00`;
-export const isMidwinterPeriod =
-	new Date(midwinterPeriodStart).getTime() <= nowEpoch &&
-	nowEpoch <= new Date(midwinterPeriodEnd).getTime();
-
 const segment = () => {
 	return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
 };
@@ -51,5 +44,7 @@ export default {
 	nowISO,
 	isCSSNakedDay,
 	isJSNakedDay,
+	isEarlyMidwinterPeriod,
+	isMidwinterPeriod,
 	random,
 };
