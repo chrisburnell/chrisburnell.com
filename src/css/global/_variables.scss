@@ -45,7 +45,7 @@
 	@for $x from 1 through 9 {
 		--opacity-#{$x * 10}: #{math.div($x * 10, 100)};
 	}
-	--opacity-5: 0.05;
+	--opacity-05: 0.05;
 
 	@each $name, $data in tokens.$sizes {
 		--size-#{$name}-min: #{math.div(map.get($data, "minSize"), 16) * 1rem};

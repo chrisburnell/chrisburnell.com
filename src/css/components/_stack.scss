@@ -49,8 +49,8 @@
 			content: " ";
 			background-image: repeating-linear-gradient(
 				90deg,
-				oklch(from currentColor l c h / var(--opacity-beta)),
-				oklch(from currentColor l c h / var(--opacity-beta)) var(--size-border-thin),
+				oklch(from currentColor l c h / var(--opacity-50)),
+				oklch(from currentColor l c h / var(--opacity-50)) var(--size-border-thin),
 				transparent var(--size-border-thin),
 				transparent var(--size-small)
 			);

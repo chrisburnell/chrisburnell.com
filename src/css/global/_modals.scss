@@ -4,7 +4,7 @@
 ////
 
 ::backdrop {
-	background-color: oklch(from var(--color-thunder) l c h / var(--opacity-beta));
+	background-color: oklch(from var(--color-thunder) l c h / var(--opacity-50));
 	backdrop-filter: blur(1px);
 	overscroll-behavior: contain;
 }

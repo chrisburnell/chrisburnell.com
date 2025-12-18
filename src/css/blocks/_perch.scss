@@ -13,7 +13,7 @@
 		content: "";
 		background-image: url("/images/raven.svg");
 		background-repeat: no-repeat;
-		opacity: var(--opacity-gamma);
+		opacity: var(--opacity-10);
 		inline-size: var(--size-logo);
 		// depends on the specific dimensions of raven.svg
 		block-size: calc(var(--size-logo) / 1.205);

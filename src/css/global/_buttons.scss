@@ -27,7 +27,7 @@ button {
 
 	&[disabled] {
 		@include mixins.non-selectable;
-		opacity: var(--opacity-beta);
+		opacity: var(--opacity-50);
 		cursor: not-allowed;
 	}
 }

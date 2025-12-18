@@ -20,13 +20,13 @@ table {
 	&.zebra,
 	&.zebra--horizontal {
 		tbody tr:nth-child(even) td {
-			background-color: oklch(from var(--color-thunder) l c h / var(--opacity-delta));
+			background-color: oklch(from var(--color-thunder) l c h / var(--opacity-05));
 		}
 	}
 	&.zebra,
 	&.zebra--vertical {
 		tbody td:nth-child(odd) {
-			background-color: oklch(from var(--color-thunder) l c h / var(--opacity-delta));
+			background-color: oklch(from var(--color-thunder) l c h / var(--opacity-05));
 		}
 	}
 }

@@ -181,12 +181,6 @@ $line-heights: (
   medium: 1.429,
   code: 2
 );
-$opacities: (
-  alpha: 90%,
-  beta: 50%,
-  gamma: 10%,
-  delta: 5%
-);
 $sizes-extra: (
   gutter: var(--size-medium),
   gap: calc(var(--size-gutter) * 2),

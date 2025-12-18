@@ -45,7 +45,7 @@
 	padding: var(--size-tiny);
 	margin-inline-start: 1ex;
 	border-radius: 50%;
-	filter: drop-shadow(0 0 var(--size-border-thin) oklch(from var(--color-thunder) l c h / var(--opacity-beta)));
+	filter: drop-shadow(0 0 var(--size-border-thin) oklch(from var(--color-thunder) l c h / var(--opacity-50)));
 
 	svg {
 		@include mixins.non-interactive;

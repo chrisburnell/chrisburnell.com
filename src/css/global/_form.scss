@@ -54,7 +54,7 @@ textarea {
 
 	&[disabled] {
 		@include mixins.non-interactive;
-		opacity: var(--opacity-beta);
+		opacity: var(--opacity-50);
 	}
 
 	&:not([disabled], :focus):hover {
