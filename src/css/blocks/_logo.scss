@@ -8,6 +8,7 @@
 	block-size: var(--size-logo-small);
 	inline-size: var(--size-logo-small);
 	display: flex;
+	filter: hue-rotate(calc((var(--raven-hue) - 237.73) * 1deg)) saturate(calc(var(--raven-chroma) / 0.064 * 100%));
 
 	& :is(img, input[type=image], svg) {
 		max-block-size: 100%;

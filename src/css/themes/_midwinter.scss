@@ -11,9 +11,4 @@
 	&:is(html) {
 		scrollbar-color: var(--color-maple) var(--body-background-color);
 	}
-
-	& .logo,
-	& .perch::after {
-		filter: hue-rotate(calc(165deg - 237.73deg)) saturate(66.6%);
-	}
 }

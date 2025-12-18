@@ -14,9 +14,4 @@
 	// apply slight yellow-filter to raven-based colours
 	--raven-chroma: 0.034;
 	--raven-hue: 180;
-
-	& .logo,
-	& .perch::after {
-		filter: hue-rotate(calc(180deg - 237.73deg)) saturate(80%);
-	}
 }

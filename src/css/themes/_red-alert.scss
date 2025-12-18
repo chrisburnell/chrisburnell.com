@@ -11,9 +11,4 @@
 	--raven-lightness: 54.3%;
 	--raven-chroma: 0.076;
 	--raven-hue: 26.565;
-
-	& .logo,
-	& .perch::after {
-		filter: hue-rotate(calc(26.565deg - 237.73deg));
-	}
 }

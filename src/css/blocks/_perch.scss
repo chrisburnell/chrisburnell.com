@@ -21,6 +21,7 @@
 		inset-inline-end: var(--size-gutter);
 		inset-block-start: 0;
 		transform: scaleX(-1) translateY(-20%);
+		filter: hue-rotate(calc((var(--raven-hue) - 237.73) * 1deg)) saturate(calc(var(--raven-chroma) / 0.064 * 100%));
 	}
 
 	&.title::after {

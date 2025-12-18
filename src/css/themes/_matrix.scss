@@ -16,11 +16,6 @@
 		color-scheme: dark;
 	}
 
-	& .logo,
-	& .perch::after {
-		filter: hue-rotate(calc(142.62deg - 237.73deg)) saturate(120%);
-	}
-
 	& main,
 	&.themed-section {
 		@media (prefers-reduced-motion: no-preference) {

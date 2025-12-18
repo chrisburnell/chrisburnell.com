@@ -9,7 +9,7 @@
 		{% if global.isEarlyMidwinterPeriod or global.isMidwinterPeriod -%}
 			<label for="snow-toggler" class="[ requires-motion ] ">Snow:</label>
 			<input type="hidden" name="snow" value="false" />
-			<input type="checkbox" name="snow" class=" [ requires-motion ] " id="snow-toggler" value="true" checked />
+			<input type="checkbox" name="snow" class=" [ requires-motion ] " id="snow-toggler" value="" checked />
 		{%- endif %}
 		{% if not global.isCSSNakedDay -%}
 			<label for="theme-selector">Theme:</label>
