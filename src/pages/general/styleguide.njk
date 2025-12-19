@@ -655,13 +655,13 @@ p q r s t u v w x y z { | } ~</pre>
 
 <h2>Shelf</h2>
 
-<div id="list-shelf-beer" class=" [ grid ] [ shelf ] " style="--grid-inline-size: 10em;">
+<div id="list-shelf-beer" class=" [ grid ] [ shelf ] ">
 {% for item in collections.beer | arePublished | keySort('data.rating', global.flexibleSorting) | reverse | limit(site.limits.shelf) %}
 	{{ shelfItem(item, { show_images: true, truncate: true }) }}
 {% endfor %}
 </div>
 
-<div id="list-shelf-music" class=" [ grid ] [ shelf  shelf--square ] " style="--grid-inline-size: 10em;">
+<div id="list-shelf-music" class=" [ grid ] [ shelf  shelf--square ] ">
 {% for item in collections.music | arePublished | keySort('data.rating', global.flexibleSorting) | reverse | limit(site.limits.shelf) %}
 	{{ shelfItem(item, { show_images: true, truncate: true }) }}
 {% endfor %}

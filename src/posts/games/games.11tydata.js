@@ -1,6 +1,7 @@
 export default {
 	permalink: "game/{{ page.fileSlug }}/",
 	list: "shelf",
+	shelfWide: true,
 	shelfAlignment: "square",
 	mf_root: "review",
 	mf_property: "play-of",

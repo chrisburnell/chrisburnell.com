@@ -52,7 +52,7 @@ I do, however, know that I tend to jump between a handful of broad genres, liste
 
 ### Top 20 Albums of All Time
 
-<ol class="[ grid ] [ shelf  shelf--thin ] " style="--row-gap: 1rem">
+<ol class="[ grid ] [ shelf  shelf--square ] ">
     <li>
         <a href="https://www.last.fm/music/Kid+Cudi/Plain+Pat+&amp;+Emile+Presents+a+KiD+named+CuDi" rel="external noopener"><strong>Plain Pat &amp; Emile Presents a KiD named CuDi</strong></a><br><small>by</small> <a href="https://www.last.fm/music/Kid+Cudi" rel="external noopener">Kid Cudi</a>
     </li>

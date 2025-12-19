@@ -17,7 +17,7 @@ description: Beer reviews from Pig's Ear CAMRA Beer & Cider Festival in 2021
 	</ul>
 </c-librarian>
 
-<div class=" [ grid ] [ shelf  shelf--thin ] " aria-live="polite" data-rows="masonry">
+<div class=" [ grid ] [ shelf ] " aria-live="polite" data-rows="masonry">
 	{% for item in collection %}
 		{{ shelfItem(item) }}
 	{% endfor %}

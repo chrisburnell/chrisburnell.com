@@ -58,7 +58,7 @@ eleventyComputed:
 					<li><c-librarian-button key="chronological" default="descending">by publish date</c-librarian-button></li>
 				</ul>
 			</c-librarian>
-			<div class=" [ grid ] [ shelf {% if collection[0].data.shelfThin %} shelf--thin {% endif %}{% if collection[0].data.shelfAlignment %} shelf--{{ collection[0].data.shelfAlignment }} {% endif %}] " aria-live="polite"{% if category.masonry %} data-rows="masonry"{% endif %}>
+			<div class=" [ grid ] [ shelf {% if collection[0].data.shelfWide %} shelf--wide {% endif %}{% if collection[0].data.shelfAlignment %} shelf--{{ collection[0].data.shelfAlignment }} {% endif %}] " aria-live="polite"{% if category.masonry %} data-rows="masonry"{% endif %}>
 				{% for item in collection %}
 					{{ shelfItem(item, { hfeed: true, show_images: true, truncate: true }) }}
 				{% endfor %}

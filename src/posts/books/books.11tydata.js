@@ -1,6 +1,7 @@
 export default {
 	permalink: "/book/{{ page.fileSlug }}/index.html",
 	list: "shelf",
+	shelfWide: true,
 	shelfAlignment: "portrait",
 	mf_root: "review",
 	mf_property: "read-of",

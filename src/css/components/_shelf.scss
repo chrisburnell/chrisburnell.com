@@ -5,6 +5,7 @@
 ////
 
 .shelf {
+	--grid-min-inline-size: 10em;
 	--gap: var(--size-gap);
 	margin-block-start: var(--size-gap);
 
@@ -26,6 +27,7 @@
 	& .cover {
 		object-fit: cover;
 		object-position: center;
+		margin-inline: 0;
 		transition: transform var(--transition-duration) var(--transition-function);
 	}
 
@@ -52,8 +54,8 @@
 	}
 }
 
-.shelf--thin {
-	--grid-min-inline-size: 10em;
+.shelf--wide {
+	--grid-min-inline-size: 12em;
 }
 
 .shelf--portrait {

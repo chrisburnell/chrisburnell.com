@@ -29,7 +29,7 @@ redirect_from:
 			<c-emoji><svg width="32" height="32" aria-hidden="true" focusable="false"><use href="#svg--rss"></use></svg></c-emoji> Collections
 		</h2>
 
-		<ul class=" [ grid ] [ shelf  shelf--thin ] " style="--grid-min-inline-size: 12em;">
+		<ul class=" [ grid ] [ shelf  shelf--wide ] ">
 			<li>
 				<a href="{{ site.url + '/feed.xml' }}" class=" [ gamma ] "><c-emoji>🆕</c-emoji>Latest Posts <sup>{{ site.limits.feed }}</sup></a>
 				<p>Latest posts on the blog.</p>
@@ -54,7 +54,7 @@ redirect_from:
 			<c-emoji><svg width="32" height="32" aria-hidden="true" focusable="false"><use href="#svg--rss"></use></svg></c-emoji> Categories
 		</h2>
 
-		<ul class=" [ grid ] [ shelf  shelf--thin ] " data-layout="natural" style="--row-gap: var(--size-medium);">
+		<ul class=" [ grid ] [ shelf ] " data-layout="natural" style="--row-gap: var(--size-medium);">
 		{% for item in collections.categories -%}
 			{%- set count = collections[item.title] | arePublished | getCollectionCount -%}
 			<li><a href="{{ site.url }}/{{ item.plural }}.xml" class=" [ gamma ] "><c-emoji>{{ item.emoji | default('📄') }}</c-emoji>{{ item.properPlural | title }} <sup>{{ count }}</sup></a></li>
@@ -67,7 +67,7 @@ redirect_from:
 			<c-emoji><svg width="32" height="32" aria-hidden="true" focusable="false"><use href="#svg--rss"></use></svg></c-emoji>Tags
 		</h2>
 
-		<ul class=" [ grid ] [ shelf  shelf--thin ] " data-layout="natural" style="--row-gap: var(--size-small);">
+		<ul class=" [ grid ] [ shelf ] " data-layout="natural" style="--row-gap: var(--size-small);">
 		{%- set lowest = Infinity -%}
 		{%- set highest = 0 -%}
 		{%- for item in collections.tags | sort -%}

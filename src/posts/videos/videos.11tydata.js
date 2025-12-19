@@ -1,6 +1,7 @@
 export default {
 	permalink: "video/{{ page.fileSlug }}/",
 	list: "shelf",
+	shelfWide: true,
 	category: "video",
 	categoryPlural: "videos",
 	categoryCode: "v",

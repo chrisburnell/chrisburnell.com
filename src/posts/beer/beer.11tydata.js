@@ -1,7 +1,6 @@
 export default {
 	permalink: "beer/{{ page.fileSlug }}/",
 	list: "shelf",
-	shelfThin: true,
 	mf_root: "review",
 	mf_property: "pk-drank",
 	category: "beer",

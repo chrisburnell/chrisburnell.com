@@ -1,6 +1,7 @@
 export default {
 	permalink: "music/{{ page.fileSlug }}/",
 	list: "shelf",
+	shelfWide: true,
 	shelfAlignment: "square",
 	mf_root: "review",
 	mf_property: "listen-of",
