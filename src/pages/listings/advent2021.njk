@@ -5,6 +5,8 @@ description: "Beer reviews from the 2021 <a href=\"http://corporate.honestbrew.c
 {%- from "macros/shelfItem.njk" import shelfItem -%}
 {%- set collection = collections.advent2021 | arePublished | reverse -%}
 
+<p>{{ categoryIntroductions.beer | join(" ") | safe }}</p>
+
 <c-librarian>
 	<p>You can sort these beer reviews:</p>
 	<ul class=" [ cluster ] ">

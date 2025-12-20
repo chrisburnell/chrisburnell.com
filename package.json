@@ -65,7 +65,7 @@
   },
   "keywords": [],
   "dependencies": {
-    "@11ty/eleventy": "^3.1.2",
+    "@11ty/eleventy": "3.1.0",
     "@11ty/eleventy-fetch": "^5.1.1",
     "@11ty/eleventy-img": "^6.0.4",
     "@11ty/eleventy-plugin-directory-output": "^1.0.2",
