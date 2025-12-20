@@ -7,10 +7,4 @@ describe("Functions: URLs", () => {
 			urls.getURLObject(`https://chrisburnell.com/about/`).length,
 		).toBe(new URL("https://chrisburnell.com/about/").length);
 	});
-
-	it("getPathname() returns a URL's pathname", () => {
-		expect(urls.getPathname(`https://chrisburnell.com/about/`)).toBe(
-			"/about/",
-		);
-	});
 });

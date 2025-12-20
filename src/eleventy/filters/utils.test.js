@@ -27,6 +27,12 @@ describe("Filters: Utils", () => {
 		expect(utils.modulo(8, 4)).toBe(0);
 	});
 
+	it("keyValue() returns a nested value from an object using dot notation", () => {
+		const obj = { data: { title: "Test", nested: { value: 42 } } };
+		expect(utils.keyValue(obj, "data.title")).toBe("Test");
+		expect(utils.keyValue(obj, "data.nested.value")).toBe(42);
+	});
+
 	it("keyValueEquals() checks if nested key equals value", () => {
 		const obj = { data: { title: "Test" } };
 		expect(utils.keyValueEquals(obj, "data.title", "Test")).toBe(true);
@@ -133,5 +139,24 @@ describe("Filters: Utils", () => {
 		expect(utils.isString("test")).toBe(true);
 		expect(utils.isString(123)).toBe(false);
 		expect(utils.isString(null)).toBe(false);
+	});
+
+	it("getPagefindWeight() calculates search weight with three-tiered priority", () => {
+		expect(utils.getPagefindWeight({ data: { searchWeight: 2.5 } })).toBe(
+			2.5,
+		);
+
+		expect(utils.getPagefindWeight({ data: { rank: { hot: 1 } } })).toBe(
+			Math.log2(11),
+		);
+		expect(
+			utils.getPagefindWeight({ data: { rank: { popular: 3 } } }),
+		).toBe(Math.log2(9));
+
+		expect(
+			utils.getPagefindWeight({ data: { searchCollectionWeight: 1.8 } }),
+		).toBe(1.8);
+
+		expect(utils.getPagefindWeight({ data: {} })).toBe(null);
 	});
 });

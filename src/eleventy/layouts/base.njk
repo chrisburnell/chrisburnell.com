@@ -46,7 +46,8 @@ layout: root
 	{%- endif %}
 </header>
 
-<main class=" [ main ] [ flow ] "{% if not excludeFromSearch and not excludeFromSitemap and not sitemap.exclude and not noindex and not draft and published !== false and not 'ignore' in tags and not 'like' in tags %} data-pagefind-body {% if searchWeight %}data-pagefind-weight="{{ searchWeight }}"{% endif %}{% endif %}>
+{% set pagefindWeight = page | getPagefindWeight -%}
+<main class=" [ main ] [ flow ] "{% if not excludeFromSearch and not excludeFromSitemap and not sitemap.exclude and not noindex and not draft and published !== false and not 'ignore' in tags and not 'like' in tags %} data-pagefind-body {% if pagefindWeight %}data-pagefind-weight="{{ pagefindWeight }}"{% endif %}{% endif %}>
 	{% if global.isCSSNakedDay -%}
 		{% include 'css-naked-day.njk' %}
 	{%- endif %}

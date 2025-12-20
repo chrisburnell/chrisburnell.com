@@ -5,7 +5,6 @@ import {
 	getWebmentionType,
 } from "@chrisburnell/eleventy-cache-webmentions";
 import merge from "deepmerge";
-import { keyValue } from "../../functions/utils.js";
 import webmentionReplacements from "../config/webmentionReplacements.js";
 import consoles from "../data/consoles.js";
 import places from "../data/places.js";
@@ -72,6 +71,15 @@ export const padWithZeroes = (number, zeroes = 2) => {
  */
 export const modulo = (value, operand) => {
 	return value % operand;
+};
+
+/**
+ * @param {object} object
+ * @param {string} keyPath
+ * @returns {any}
+ */
+export const keyValue = (object, keyPath) => {
+	return keyPath.split(".").reduce((o, k) => o[k], object);
 };
 
 /**
@@ -422,6 +430,27 @@ export const isString = (value) => {
 	return typeof value === "string";
 };
 
+/**
+ * @param {object} item
+ * @returns {number|null}
+ */
+export const getPagefindWeight = (item) => {
+	if (item.data?.searchWeight) {
+		return item.data.searchWeight;
+	}
+
+	if (item.data?.rank?.hot || item.data?.rank?.popular) {
+		const score = Math.max(item.data.rank?.hot || item.data.rank?.popular);
+		return Math.log2(12 - score);
+	}
+
+	if (item.data?.searchCollectionWeight) {
+		return item.data.searchCollectionWeight;
+	}
+
+	return null;
+};
+
 export default {
 	minDecimals,
 	maxDecimals,
@@ -449,4 +478,5 @@ export default {
 	getSyndicationTitle,
 	getConsole,
 	isString,
+	getPagefindWeight,
 };

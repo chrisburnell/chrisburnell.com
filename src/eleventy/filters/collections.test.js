@@ -21,6 +21,25 @@ describe("Filters: Collections", () => {
 		).toBe(1);
 	});
 
+	it("feedFilter() returns an array excluding no-rss tagged items", () => {
+		expect(
+			collections.feedFilter([
+				{
+					url: "https://example.com/a/",
+					data: {
+						tags: ["article"],
+					},
+				},
+				{
+					url: "https://example.com/b/",
+					data: {
+						tags: ["article", "no-rss"],
+					},
+				},
+			]).length,
+		).toBe(1);
+	});
+
 	it("sitemapFilter() returns an array of items that should be included in sitemap", () => {
 		expect(
 			collections.sitemapFilter([

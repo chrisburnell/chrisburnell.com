@@ -13,5 +13,5 @@ export default {
 	tags: ["music", "review"],
 	emoji: "🎶",
 	post_includes: ["post/listen-of.njk"],
-	searchWeight: 0.8,
+	searchCollectionWeight: 0.8,
 };

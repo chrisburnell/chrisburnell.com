@@ -11,10 +11,6 @@ const farPast = new Date(Date.now() - oneDay * 365);
 const farFuture = new Date(Date.now() + oneDay * 365);
 
 describe("Filters: Dates", () => {
-	it("formatDatetime() returns a formatted date string", () => {
-		expect(dates.formatDatetime(past)).toBe("15 June 2013");
-	});
-
 	it("ordinal() converts a number to a string with a superscript ordinal", () => {
 		expect(dates.ordinal(1)).toBe("1<sup>st</sup>");
 	});

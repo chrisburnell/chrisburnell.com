@@ -11,5 +11,5 @@ export default {
 	categoryMasonry: true,
 	tags: ["beer", "review"],
 	emoji: "🍺",
-	searchWeight: 0.8,
+	searchCollectionWeight: 0.8,
 };

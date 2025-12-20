@@ -1,7 +1,7 @@
 import { Temporal } from "@js-temporal/polyfill";
-import { keyValue } from "../../functions/utils.js";
 import { nowEpoch } from "../data/global.js";
 import { limits, localeSpecific } from "../data/site.js";
+import { keyValue } from "./utils.js";
 
 const cachedFriendlyDates = new Map();
 const cachedFriendlyLongDates = new Map();
@@ -18,7 +18,7 @@ const tidyDateString = (dateString) => {
 	return dateString;
 };
 
-export const zonedDatetime = (dateString) => {
+const zonedDatetime = (dateString) => {
 	dateString = tidyDateString(dateString);
 
 	const offset = dateString.match(/([+-]\d{2}:\d{2})/)?.[1] || "UTC";
@@ -33,7 +33,7 @@ const optionsDefault = {
 	day: "numeric",
 };
 
-export const formatDatetime = (dateString, options = optionsDefault) => {
+const formatDatetime = (dateString, options = optionsDefault) => {
 	const { epochMilliseconds, timeZoneId } = zonedDatetime(dateString);
 	const dateObject = new Date(epochMilliseconds);
 
@@ -227,15 +227,6 @@ export const dateSort = (a, b) => {
  */
 export const sortByDate = (array) => {
 	return array.sort(dateSort);
-};
-
-/**
- * @param {object} a
- * @param {object} b
- * @returns {number}
- */
-export const scoreSort = (a, b) => {
-	return b.data.rank.score - a.data.rank.score;
 };
 
 /**
@@ -437,8 +428,6 @@ export const getRSVPDateString = (end) => {
 };
 
 export default {
-	zonedDatetime,
-	formatDatetime,
 	adjustDatetime,
 	ordinal,
 	friendlyDate,

@@ -1,11 +1,5 @@
 import { transform } from "@tweetback/canonical";
-import {
-	getURLObject,
-	getPathname,
-	getHost,
-	getOrigin,
-	getProtocol,
-} from "../../functions/urls.js";
+import { getURLObject } from "../../functions/urls.js";
 
 /**
  * @param {string} url
@@ -19,11 +13,40 @@ export const tweetback = (url) => {
 	}
 };
 
-export { getURLObject, getPathname, getHost, getOrigin, getProtocol };
+/**
+ * @param {string} url
+ * @returns {string}
+ */
+export const getPathname = (url) => {
+	return getURLObject(url).pathname || url;
+};
+
+/**
+ * @param {string} url
+ * @returns {string}
+ */
+export const getHost = (url) => {
+	return getURLObject(url).hostname || url;
+};
+
+/**
+ * @param {string} url
+ * @returns {string}
+ */
+export const getOrigin = (url) => {
+	return getURLObject(url).origin || url;
+};
+
+/**
+ * @param {string} url
+ * @returns {string}
+ */
+export const getProtocol = (url) => {
+	return getURLObject(url).protocol || url;
+};
 
 export default {
 	tweetback,
-	getURLObject,
 	getPathname,
 	getHost,
 	getOrigin,

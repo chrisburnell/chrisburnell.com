@@ -20,10 +20,9 @@ import {
 	getRSVPValueHTML,
 } from "../eleventy/filters/dates.js";
 import { conjunction } from "../eleventy/filters/strings.js";
-import { getHost, tweetback } from "../eleventy/filters/urls.js";
+import { getHost, getPathname, tweetback } from "../eleventy/filters/urls.js";
 import { getSyndicationTitle, toArray } from "../eleventy/filters/utils.js";
 import { stripHTML } from "./strings.js";
-import { getPathname } from "./urls.js";
 import { getMastodonHandle, getTwitterHandle } from "./utils.js";
 
 // Create an array of references

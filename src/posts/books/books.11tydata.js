@@ -13,5 +13,5 @@ export default {
 	categoryFull: true,
 	tags: ["book", "review"],
 	emoji: "📖",
-	searchWeight: 0.333,
+	searchCollectionWeight: 0.333,
 };

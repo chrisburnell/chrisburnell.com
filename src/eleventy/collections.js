@@ -12,19 +12,22 @@ import {
 } from "../functions/collections.js";
 import { exponentialMovingAverage } from "../functions/utils.js";
 import { limits, weights } from "./data/site.js";
-import {
-	dateSort,
-	epoch,
-	isFuture,
-	isUpcoming,
-	scoreSort,
-} from "./filters/dates.js";
+import { dateSort, epoch, isFuture, isUpcoming } from "./filters/dates.js";
 
 /** @type {number} */
 const durationDay = 24 * 60 * 60 * 1000;
 
 /** @type {Map<[key: string]: Array<object>>} */
 let cachedCollections = new Map();
+
+/**
+ * @param {object} a
+ * @param {object} b
+ * @returns {number}
+ */
+const scoreSort = (a, b) => {
+	return b.data.rank.score - a.data.rank.score;
+};
 
 /**
  * @param {Array<object>} collection

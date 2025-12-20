@@ -51,4 +51,12 @@ describe("Functions: Utils", () => {
 		expect(utils.exponentialMovingAverage(9001, 1)).toBe(4501);
 		expect(utils.exponentialMovingAverage(9001, 1, 1.618)).toBe(14563);
 	});
+
+	it("toRoman() converts a number to Roman numerals", () => {
+		expect(utils.toRoman(1)).toBe("I");
+		expect(utils.toRoman(4)).toBe("IV");
+		expect(utils.toRoman(9)).toBe("IX");
+		expect(utils.toRoman(58)).toBe("LVIII");
+		expect(utils.toRoman(1994)).toBe("MCMXCIV");
+	});
 });

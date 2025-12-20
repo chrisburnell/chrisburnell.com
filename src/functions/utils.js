@@ -1,15 +1,6 @@
 import mastodonInstances from "../eleventy/data/mastodonInstances.js";
 
 /**
- * @param {object} object
- * @param {string} keyPath
- * @returns {any}
- */
-export const keyValue = (object, keyPath) => {
-	return keyPath.split(".").reduce((o, k) => o[k], object);
-};
-
-/**
  * @param {Array<object>} array
  * @param {Array<object>} filterList
  * @returns {Array<object>}
@@ -187,7 +178,6 @@ export const toRoman = (number) => {
 };
 
 export default {
-	keyValue,
 	filterOut,
 	getMastodonHandle,
 	getTwitterHandle,
