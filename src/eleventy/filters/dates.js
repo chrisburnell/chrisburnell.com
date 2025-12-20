@@ -2,6 +2,10 @@ import { Temporal } from "@js-temporal/polyfill";
 import { nowEpoch } from "../data/global.js";
 import { limits, localeSpecific } from "../data/site.js";
 
+const cachedFriendlyDates = new Map();
+const cachedFriendlyLongDates = new Map();
+const cachedRFC3339Dates = new Map();
+
 const tidyDateString = (dateString) => {
 	dateString = dateString
 		.replace(/(\.\d+)/g, "")
@@ -70,21 +74,33 @@ export const ordinal = (number) => {
  * @param {string} [format]
  * @returns {string}
  */
-export const friendlyDate = (dateString, format) =>
-	formatDatetime(dateString, format);
+export const friendlyDate = (dateString, format) => {
+	const cacheKey = `${dateString}-${format}`;
+	if (cachedFriendlyDates.has(cacheKey)) {
+		return cachedFriendlyDates.get(cacheKey);
+	}
+	const result = formatDatetime(dateString, format);
+	cachedFriendlyDates.set(cacheKey, result);
+	return result;
+};
 
 /**
  * @param {string} dateString
  * @returns {string}
  */
 export const friendlyDateLong = (dateString) => {
-	return `${formatDatetime(dateString, {
+	if (cachedFriendlyLongDates.has(dateString)) {
+		return cachedFriendlyLongDates.get(dateString);
+	}
+	const result = `${formatDatetime(dateString, {
 		weekday: "long",
 	})}, ${formatDatetime(dateString, {
 		year: "numeric",
 		month: "long",
 		day: "numeric",
 	})}`;
+	cachedFriendlyLongDates.set(dateString, result);
+	return result;
 };
 
 /**
@@ -156,7 +172,13 @@ export const formattedTimezone = (dateString) => {
  * @returns {string}
  */
 export const rfc3339Date = (dateString, showTimezone = true) => {
-	return `${formattedDate(dateString)}T${formattedTime(dateString)}${showTimezone ? formattedTimezone(dateString) : ""}`;
+	const cacheKey = `${dateString}-${showTimezone}`;
+	if (cachedRFC3339Dates.has(cacheKey)) {
+		return cachedRFC3339Dates.get(cacheKey);
+	}
+	const result = `${formattedDate(dateString)}T${formattedTime(dateString)}${showTimezone ? formattedTimezone(dateString) : ""}`;
+	cachedRFC3339Dates.set(cacheKey, result);
+	return result;
 };
 
 /**

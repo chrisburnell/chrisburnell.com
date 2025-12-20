@@ -3,7 +3,7 @@ import { nowEpoch } from "../eleventy/data/global.js";
 import collections from "./collections.js";
 
 describe("Functions: Collections", () => {
-	it("isPublished() should return a boolean", () => {
+	it("isPublished() returns a boolean indicating if an item is published", () => {
 		expect(collections.isPublished({})).toBe(false);
 		expect(
 			collections.isPublished({
@@ -44,7 +44,7 @@ describe("Functions: Collections", () => {
 		).toBe(false);
 	});
 
-	it("notReply() should return a boolean based on reply data", () => {
+	it("notReply() returns a boolean based on reply data", () => {
 		expect(collections.notReply({})).toBe(true);
 		expect(
 			collections.notReply({
@@ -62,7 +62,7 @@ describe("Functions: Collections", () => {
 		).toBe(false);
 	});
 
-	it("getPropertyData() should return *_of data", () => {
+	it("getPropertyData() returns *_of data", () => {
 		expect(
 			collections.getPropertyData({
 				bookmark_of: {},
@@ -71,7 +71,7 @@ describe("Functions: Collections", () => {
 		expect(collections.getPropertyData({})).toBe(null);
 	});
 
-	it("getPropertyTitle() should return a *_of title", () => {
+	it("getPropertyTitle() returns a *_of title", () => {
 		expect(
 			collections.getPropertyTitle({
 				bookmark_of: {
@@ -86,7 +86,7 @@ describe("Functions: Collections", () => {
 		).toBe(null);
 	});
 
-	it("getPropertyURL() should return a *_of URL or data object", () => {
+	it("getPropertyURL() returns a *_of URL or data object", () => {
 		expect(
 			collections.getPropertyURL({
 				bookmark_of: {
@@ -104,7 +104,7 @@ describe("Functions: Collections", () => {
 		).toBe(data);
 	});
 
-	it("getAuthors() should return an array of authors", () => {
+	it("getAuthors() returns an array of authors", () => {
 		const data = ["Author A", "Author B"];
 		expect(
 			collections.getAuthors({
@@ -113,7 +113,7 @@ describe("Functions: Collections", () => {
 		).toBe(data);
 	});
 
-	it("getAuthorData() should return an author data object", () => {
+	it("getAuthorData() returns an author data object", () => {
 		expect(
 			collections.getAuthorData({
 				title: "Author A",
@@ -128,7 +128,7 @@ describe("Functions: Collections", () => {
 		).toBe("https://example.com");
 	});
 
-	it("getAuthorsString() should return a string of comma-delimited author titles and URLs", () => {
+	it("getAuthorsString() returns a comma-delimited string of author titles and URLs", () => {
 		expect(
 			collections.getAuthorsString({
 				authors: [
@@ -149,7 +149,7 @@ describe("Functions: Collections", () => {
 		);
 	});
 
-	it("getReplyTitle() should return an in_reply_to title", () => {
+	it("getReplyTitle() returns an in_reply_to title", () => {
 		expect(
 			collections.getReplyTitle({
 				in_reply_to: {
@@ -159,7 +159,7 @@ describe("Functions: Collections", () => {
 		).toBe("Example");
 	});
 
-	it("getReplyURL() should return an in_reply_to URL", () => {
+	it("getReplyURL() returns an in_reply_to URL", () => {
 		expect(
 			collections.getReplyTitle({
 				in_reply_to: {
@@ -169,7 +169,7 @@ describe("Functions: Collections", () => {
 		).toBe("https://example.com");
 	});
 
-	it("getReplyAuthor() should return an in_reply_to author data object", () => {
+	it("getReplyAuthor() returns an in_reply_to author data object", () => {
 		expect(
 			collections.getReplyAuthor({
 				in_reply_to: "https://flamedfury.com",
@@ -177,7 +177,7 @@ describe("Functions: Collections", () => {
 		).toBe("fLaMEd");
 	});
 
-	it("getReplyAuthorString() should return a formatted string based on reply author data", () => {
+	it("getReplyAuthorString() returns a formatted string based on reply author data", () => {
 		expect(
 			collections.getReplyAuthorString({
 				in_reply_to: "https://flamedfury.com",
@@ -187,7 +187,7 @@ describe("Functions: Collections", () => {
 		);
 	});
 
-	it("getRSVPString() should return", () => {
+	it("getRSVPString() returns an RSVP string with data attributes", () => {
 		expect(
 			collections.getRSVPString({
 				rsvp: {
@@ -201,7 +201,7 @@ describe("Functions: Collections", () => {
 		);
 	});
 
-	it("getMetaTitle() should return a string based on property data", () => {
+	it("getMetaTitle() returns a meta title string based on property data", () => {
 		expect(
 			collections.getMetaTitle({
 				title: "Example",
@@ -262,7 +262,7 @@ describe("Functions: Collections", () => {
 		expect(collections.getMetaTitle({})).toBe("A page on chrisburnell.com");
 	});
 
-	it("getMetaImage() should return a string containing the meta image URL for a page", () => {
+	it("getMetaImage() returns the meta image URL for a page", () => {
 		expect(
 			collections.getMetaImage({
 				og_image: "/example.jpeg",

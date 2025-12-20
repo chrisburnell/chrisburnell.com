@@ -44,13 +44,21 @@ const pages = await EleventyFetch("https://chrisburnell.com/all.json", {
 	},
 });
 
+const cachedPeople = new Map();
+const mastodonHosts = Object.keys(mastodonInstances);
+
 /**
  * @param {string} [title]
  * @param {string} [url]
  * @returns {string|undefined}
  */
 const getPerson = (title, url) => {
-	return allPeople.find((person) => {
+	const cacheKey = `${title || ""}:${url || ""}`;
+	if (cachedPeople.has(cacheKey)) {
+		return cachedPeople.get(cacheKey);
+	}
+
+	const result = allPeople.find((person) => {
 		// Match by Title
 		if (
 			title &&
@@ -61,11 +69,7 @@ const getPerson = (title, url) => {
 			return true;
 		}
 		// Match by Mastodon handle
-		if (
-			url &&
-			person.mastodon &&
-			Object.keys(mastodonInstances).includes(getHost(url))
-		) {
+		if (url && person.mastodon && mastodonHosts.includes(getHost(url))) {
 			return toArray(person.mastodon).find((personMastodon) => {
 				return getMastodonHandle(url) === `@${personMastodon}`;
 			});
@@ -88,6 +92,9 @@ const getPerson = (title, url) => {
 		}
 		return false;
 	});
+
+	cachedPeople.set(cacheKey, result);
+	return result;
 };
 
 /**
@@ -141,7 +148,7 @@ export const hasMinimumPageviews = (item) => {
  * @param {string} collectionName
  * @returns {string}
  */
-export const getCacheKey = (tags, collectionName) => {
+export const getCollectionCacheKey = (tags, collectionName) => {
 	return collectionName || (Array.isArray(tags) ? tags.join(",") : tags);
 };
 
@@ -176,7 +183,11 @@ export const applyDefaultFilter = (collection) => {
  * @returns {object|string}
  */
 export const getPropertyData = (data) => {
-	return (
+	if (data._cachedPropertyData !== undefined) {
+		return data._cachedPropertyData;
+	}
+
+	const result =
 		data?.bookmark_of ||
 		data?.drink_of ||
 		data?.like_of ||
@@ -184,8 +195,10 @@ export const getPropertyData = (data) => {
 		data?.play_of ||
 		data?.read_of ||
 		data?.watch_of ||
-		null
-	);
+		null;
+
+	data._cachedPropertyData = result;
+	return result;
 };
 
 /**
@@ -332,14 +345,21 @@ export const getReplyTitle = (data) => {
  * @returns {string|null}
  */
 export const getReplyURL = (data) => {
+	if (data._cachedReplyURL !== undefined) {
+		return data._cachedReplyURL;
+	}
+
 	const replyData = getReplyData(data);
+	let result = null;
 	if (replyData) {
 		const replyURL = replyData?.url || replyData;
 		if (replyURL) {
-			return tweetback(replyURL);
+			result = tweetback(replyURL);
 		}
 	}
-	return null;
+
+	data._cachedReplyURL = result;
+	return result;
 };
 
 /**
@@ -347,14 +367,21 @@ export const getReplyURL = (data) => {
  * @returns {string|null}
  */
 export const getReplyAuthor = (data) => {
+	if (data._cachedReplyAuthor !== undefined) {
+		return data._cachedReplyAuthor;
+	}
+
 	const replyURL = getReplyURL(data);
+	let result = null;
 	if (replyURL) {
 		const person = getPerson(null, replyURL);
 		if (person) {
-			return person;
+			result = person;
 		}
 	}
-	return null;
+
+	data._cachedReplyAuthor = result;
+	return result;
 };
 
 /**
@@ -394,7 +421,7 @@ export const getInternalTarget = (url) => {
 		return "a previous Mastodon post";
 	}
 	// Mastodon, external
-	else if (Object.keys(mastodonInstances).includes(getHost(url))) {
+	else if (mastodonHosts.includes(getHost(url))) {
 		return getMastodonHandle(url);
 	}
 	// Twitter
@@ -468,7 +495,7 @@ export const getMetaImage = (data) => {
 export default {
 	isPublished,
 	notReply,
-	getCacheKey,
+	getCollectionCacheKey,
 	flattenCollections,
 	applyDefaultFilter,
 	hasMinimumPageviews,

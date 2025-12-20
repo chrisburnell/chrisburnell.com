@@ -44,8 +44,7 @@ ol:not([class]),
 ol.default-list {
 	list-style: decimal-leading-zero;
 
-	// TODO Investigate:
-	// https://developer.mozilla.org/en-US/docs/Web/CSS/@property
+	// TODO Investigate https://developer.mozilla.org/en-US/docs/Web/CSS/@property
 	&[style*="--start:"] {
 		counter-increment: ordered-list var(--start);
 	}

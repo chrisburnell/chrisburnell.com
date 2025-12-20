@@ -39,9 +39,9 @@
     "node": ">=18"
   },
   "scripts": {
-    "build": "cross-env NODE_OPTIONS=--max-old-space-size=8192 npx @11ty/eleventy",
-    "build:dev": "npm run setup && cross-env NODE_OPTIONS=--max-old-space-size=8192 DEV_MODE=true GENERATE_OG_IMAGES=true npx @11ty/eleventy",
-    "build:live": "npm run setup && cross-env NODE_OPTIONS=--max-old-space-size=8192 GENERATE_OG_IMAGES=true npx @11ty/eleventy",
+    "build": "cross-env NODE_OPTIONS=--max-old-space-size=8192 npx @11ty/eleventy --incremental",
+    "build:dev": "npm run setup && cross-env NODE_OPTIONS=--max-old-space-size=8192 DEV_MODE=true GENERATE_OG_IMAGES=true npx @11ty/eleventy --incremental",
+    "build:live": "npm run setup && cross-env NODE_OPTIONS=--max-old-space-size=8192 GENERATE_OG_IMAGES=true npx @11ty/eleventy --incremental",
     "build:css": "npx sass src/css:_site/css --style=expanded --no-source-map --color --quiet",
     "postbuild:css": "npx postcss \"_site/css/**/*.css\" --replace --no-map",
     "check": "node cli/index.js check",
@@ -52,7 +52,7 @@
     "clean": "npx rimraf .cache && npx rimraf _site",
     "cli": "node cli/index.js wizard",
     "create-search-index": "npx pagefind --site \"_site\" --glob \"**/*.html\"",
-    "debug": "cross-env NODE_OPTIONS=--max-old-space-size=8192 DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
+    "debug": "cross-env NODE_OPTIONS=--max-old-space-size=8192 DEBUG=Eleventy:Benchmark* npx @11ty/eleventy --incremental",
     "lint": "npx eslint \"src/**/*.js\"",
     "now": "cross-env NODE_OPTIONS=--max-old-space-size=8192 npx @11ty/eleventy --ignore-initial --incremental --serve",
     "pregenerate": "npm run setup && cross-env NODE_OPTIONS=--max-old-space-size=8192 PREGENERATE_IMAGES=true npx @11ty/eleventy",

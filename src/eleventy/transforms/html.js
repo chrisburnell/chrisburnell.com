@@ -10,6 +10,22 @@ import { isCSSNakedDay, isJSNakedDay } from "../data/global.js";
  */
 export default async function (value, outputPath) {
 	if (outputPath && outputPath.endsWith(".html")) {
+		const needsProcessing =
+			value.includes('class="content"') ||
+			value.includes('class="generate-toc"') ||
+			value.includes("data-language=") ||
+			value.includes('class="emoji"') ||
+			value.includes('class="no-fragment"') ||
+			value.includes("skip-wordcount") ||
+			value.includes("no-rss") ||
+			value.includes("rss-only") ||
+			isCSSNakedDay ||
+			isJSNakedDay;
+
+		if (!needsProcessing) {
+			return value;
+		}
+
 		const $ = load(value);
 
 		// Remove stylesheet <link> elements with empty `href` attributes
@@ -92,29 +108,16 @@ export default async function (value, outputPath) {
 		});
 
 		// Skip presentational emojis
-		$(".emoji").each((i, element) => {
-			$(element).attr("aria-hidden", true);
+		$(".emoji").attr("aria-hidden", true);
+
+		// Strip utility classes
+		$(".no-fragment, .skip-wordcount, .no-rss").each((_, element) => {
+			$(element).removeClass("no-fragment skip-wordcount no-rss");
 		});
 
-		// Strip .no-fragment classes
-		$(".no-fragment").each((_, element) => {
-			$(element).removeClass("no-fragment");
-		});
-
-		// Strip wordcount attributes
-		$(".skip-wordcount").each((_, element) => {
-			$(element).removeClass("skip-wordcount");
-		});
-		$("[data-skip-wordcount]").each((_, element) => {
-			$(element).removeAttr("data-skip-wordcount");
-		});
-
-		// Strip RSS-excluding attributes
-		$(".no-rss").each((_, element) => {
-			$(element).removeClass("no-rss");
-		});
-		$("[data-no-rss]").each((_, element) => {
-			$(element).removeAttr("data-no-rss");
+		// Strip data attributes
+		$("[data-skip-wordcount], [data-no-rss]").each((_, element) => {
+			$(element).removeAttr("data-skip-wordcount data-no-rss");
 		});
 
 		// Remove content that is intended for RSS only

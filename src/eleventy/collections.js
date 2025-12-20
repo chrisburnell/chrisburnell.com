@@ -6,7 +6,7 @@ import { currentYear, nowEpoch } from "../eleventy/data/global.js";
 import {
 	applyDefaultFilter,
 	flattenCollections,
-	getCacheKey,
+	getCollectionCacheKey,
 	hasMinimumPageviews,
 	notReply,
 } from "../functions/collections.js";
@@ -41,7 +41,7 @@ const filterCollection = (
 	collectionName,
 	limit = false,
 ) => {
-	const cacheKey = getCacheKey(tags, collectionName);
+	const cacheKey = getCollectionCacheKey(tags, collectionName);
 
 	if (cachedCollections.has(cacheKey)) {
 		return cachedCollections.get(cacheKey);
@@ -379,8 +379,9 @@ export const onThisDay = (collection) => {
 		return cachedCollections.get("onThisDay");
 	}
 
-	const currentDay = new Date().getDate();
-	const currentMonth = new Date().getMonth();
+	const now = new Date();
+	const currentDay = now.getDate();
+	const currentMonth = now.getMonth();
 
 	const filteredCollection = blogPosts(collection)
 		.filter((item) => {
@@ -390,10 +391,11 @@ export const onThisDay = (collection) => {
 			return true;
 		})
 		.filter((item) => {
+			const itemDate = new Date(item.data.date);
 			return (
-				new Date(item.data.date).getFullYear() !== currentYear &&
-				new Date(item.data.date).getDate() === currentDay &&
-				new Date(item.data.date).getMonth() === currentMonth
+				itemDate.getFullYear() !== currentYear &&
+				itemDate.getDate() === currentDay &&
+				itemDate.getMonth() === currentMonth
 			);
 		});
 

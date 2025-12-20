@@ -4,12 +4,21 @@ import { filterOut } from "../../functions/utils.js";
 import categories from "../data/categories.js";
 import ignoredTags from "../data/ignoredTags.js";
 
+const cachedPublished = new WeakMap();
+
 /**
  * @param {Array<object>} array
  * @returns {Array<object>}
  */
 export const arePublished = (array) => {
-	return array.filter(isPublished);
+	return array.filter((item) => {
+		if (cachedPublished.has(item)) {
+			return cachedPublished.get(item);
+		}
+		const result = isPublished(item);
+		cachedPublished.set(item, result);
+		return result;
+	});
 };
 
 /**
@@ -107,7 +116,9 @@ export const getCollectionCount = (items) => {
  */
 export const getCollectionCountByYear = (items, year) => {
 	return items.filter(isPublished).filter((item) => {
-		return item.date.getFullYear() === Number(year);
+		return (
+			new Date(item.data.date ?? item.date).getFullYear() === Number(year)
+		);
 	}).length;
 };
 
@@ -129,7 +140,9 @@ const weekdays = [
 export const getCollectionCountByWeekday = (items, weekday) => {
 	return items.filter(isPublished).filter((item) => {
 		return (
-			weekdays[item.date.getDay()].toLowerCase() === weekday.toLowerCase()
+			weekdays[
+				new Date(item.data.date ?? item.date).getDay()
+			].toLowerCase() === weekday.toLowerCase()
 		);
 	}).length;
 };

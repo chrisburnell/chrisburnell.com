@@ -39,6 +39,7 @@ import { stripHTML } from "../functions/strings.js";
 
 const { pageviews } = await analytics();
 const webmentionsCache = new Map();
+const siteHost = getHost(siteURL);
 
 export default {
 	layout: "post",
@@ -65,11 +66,11 @@ export default {
 					stripHTML(markdownFormat(data.excerpt || data.description)),
 				);
 			} else if (data.rsvp) {
-				return `A ${getCategoryName(data)} on ${getHost(siteURL)}`;
+				return `A ${getCategoryName(data)} on ${siteHost}`;
 			} else if (data.in_reply_to) {
-				return `A Reply on ${getHost(siteURL)}`;
+				return `A Reply on ${siteHost}`;
 			}
-			return `A ${getCategoryName(data)} on ${getHost(siteURL)}`;
+			return `A ${getCategoryName(data)} on ${siteHost}`;
 		},
 		meta_authors: async (data) => getAuthors(data),
 		meta_authors_string: async (data) => getAuthorsString(data),
@@ -113,13 +114,13 @@ export default {
 				...directReplies,
 			];
 			const webmentionData = {
-				bookmarks: bookmarks,
-				likes: likes,
-				reposts: reposts,
-				links: links,
-				socialReplies: socialReplies,
-				directReplies: directReplies,
-				all: all,
+				bookmarks,
+				likes,
+				reposts,
+				links,
+				socialReplies,
+				directReplies,
+				all,
 				length: all.length,
 			};
 			webmentionsCache.set(data.page.url, webmentionData);
@@ -129,20 +130,10 @@ export default {
 			return pageviews[data.page.url] || {};
 		},
 		rank: (data) => data.rank || {},
-		css_includes: (data) => {
-			return [...new Set([...data.css_includes])];
-		},
-		js_includes: (data) => {
-			return [...new Set([...data.js_includes])];
-		},
-		js_module_includes: (data) => {
-			return [...new Set([...data.js_module_includes])];
-		},
-		pre_includes: (data) => {
-			return [...new Set([...data.pre_includes])];
-		},
-		post_includes: (data) => {
-			return [...new Set([...data.post_includes])];
-		},
+		css_includes: (data) => [...new Set(data.css_includes)],
+		js_includes: (data) => [...new Set(data.js_includes)],
+		js_module_includes: (data) => [...new Set(data.js_module_includes)],
+		pre_includes: (data) => [...new Set(data.pre_includes)],
+		post_includes: (data) => [...new Set(data.post_includes)],
 	},
 };
