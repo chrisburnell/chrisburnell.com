@@ -16,6 +16,8 @@ jobs:
   build:
     name: Branch Build Test
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Checkout
         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # 4.1.7
@@ -34,7 +36,6 @@ jobs:
         env:
           NODE_OPTIONS: "--max_old_space_size=8192"
           FATHOM_SUMMARY_KEY: ${{ secrets.FATHOM_SUMMARY_KEY }}
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
           LASTFM_API_TOKEN: ${{ secrets.LASTFM_API_TOKEN }}
           MUSICTHREAD_API_KEY: ${{ secrets.MUSICTHREAD_API_KEY }}
           PERSONAL_API_KEY: ${{ secrets.PERSONAL_API_KEY }}

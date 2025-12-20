@@ -4,13 +4,15 @@ dotenv.config({ quiet: true });
 import EleventyFetch from "@11ty/eleventy-fetch";
 import { cacheDurations } from "./site.js";
 
+const token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
+
 /**
  * @returns {Promise<Array<object>>}
  */
 const interestsDirectoryData = async function () {
 	const headers = {
 		Accept: "application/vnd.github.v3+json",
-		Authorization: `token ${process.env.GH_TOKEN || ""}`,
+		...(token && { Authorization: `Bearer ${token}` }),
 	};
 	const url =
 		"https://api.github.com/repos/chrisburnell/interests-directory/contents/_people";

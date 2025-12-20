@@ -4,14 +4,16 @@ dotenv.config({ quiet: true });
 import EleventyFetch from "@11ty/eleventy-fetch";
 import { cacheDurations } from "../data/site.js";
 
+const token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
+
 /**
  * @param {string} repository
- * @returns {object}
+ * @returns {Promise<Array<object>>}
  */
 export const githubData = async (repository) => {
 	const headers = {
 		Accept: "application/vnd.github.v3+json",
-		Authorization: `token ${process.env.GH_TOKEN || ""}`,
+		...(token && { Authorization: `Bearer ${token}` }),
 	};
 	const url = `https://api.github.com/repos/${repository}`;
 	const json = await EleventyFetch(url, {
@@ -33,12 +35,12 @@ export const stargazers = async (repository) => {
 
 /**
  * @param {string} repository
- * @returns {object}
+ * @returns {Promise<Array<object>>}
  */
 export const githubTagData = async (repository) => {
 	const headers = {
 		Accept: "application/vnd.github.v3+json",
-		Authorization: `token ${process.env.GH_TOKEN || ""}`,
+		...(token && { Authorization: `Bearer ${token}` }),
 	};
 	const url = `https://api.github.com/repos/${repository}/tags`;
 	const json = await EleventyFetch(url, {
