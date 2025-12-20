@@ -10,23 +10,24 @@ import { isCSSNakedDay, isJSNakedDay } from "../data/global.js";
  */
 export default async function (value, outputPath) {
 	if (outputPath && outputPath.endsWith(".html")) {
+		const $ = load(value);
+
+		// TODO Is this necessary?
 		const needsProcessing =
-			value.includes('class="content"') ||
-			value.includes('class="generate-toc"') ||
-			value.includes("data-language=") ||
-			value.includes('class="emoji"') ||
-			value.includes('class="no-fragment"') ||
-			value.includes("skip-wordcount") ||
-			value.includes("no-rss") ||
-			value.includes("rss-only") ||
+			$(".content").length ||
+			$(".generate-toc").length ||
+			$("[data-language]").length ||
+			$(".emoji").length ||
+			$(".no-fragment").length ||
+			$(".skip-wordcount").length ||
+			$(".no-rss").length ||
+			$(".rss-only, [data-rss-only]").length ||
 			isCSSNakedDay ||
 			isJSNakedDay;
 
 		if (!needsProcessing) {
 			return value;
 		}
-
-		const $ = load(value);
 
 		// Remove stylesheet <link> elements with empty `href` attributes
 		$(`link[rel="stylesheet"][href=""]`).each((_, element) => {
