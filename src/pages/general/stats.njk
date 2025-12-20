@@ -161,7 +161,7 @@ excludeFromSearch: true
 			{% for item in collections.categories -%}
 				{%- set count = collections[item.title] | arePublished | noRSSOnlyFilter | getCollectionCount -%}
 				<tr>
-					<th style="white-space: nowrap;"><a href="/{{ item.title }}/" tabindex="-1">{{ item.properPlural | supertitle }}</a></th>
+					<th style="white-space: nowrap;"><a href="/{{ item.plural | default(item.title) }}/" tabindex="-1">{{ item.properPlural | supertitle }}</a></th>
 					<td class=" [ numeral  strong ] " style="padding-inline-start: 1lh; padding-inline-end: var(--size-medium);">{{ count }}</td>
 					<td style="inline-size: 100%; padding-inline: 0;">
 						<div class=" [ background--raven ] " style="background-image: linear-gradient(to bottom, transparent, oklch(from var(--color-mineshaft) l c h / var(--opacity-50))); inline-size: {{ (count / blog_count_highest_per_category * 100) | maxDecimals }}%; block-size: 1lh; border-radius: var(--size-border-default);"></div>
