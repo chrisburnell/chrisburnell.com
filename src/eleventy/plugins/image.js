@@ -29,7 +29,7 @@ export default function (eleventyConfig) {
 				duration: cacheDurations.monthly,
 				sharpOptions: {
 					animated: true,
-					quality: 100,
+					quality: 95,
 				},
 				// eslint-disable-next-line no-unused-vars
 				filenameFormat: (id, src, width, format, options) => {

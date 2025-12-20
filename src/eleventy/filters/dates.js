@@ -1,4 +1,5 @@
 import { Temporal } from "@js-temporal/polyfill";
+import { keyValue } from "../../functions/utils.js";
 import { nowEpoch } from "../data/global.js";
 import { limits, localeSpecific } from "../data/site.js";
 
@@ -289,10 +290,7 @@ export const isRecent = (value, days = limits.recentDays) => {
  */
 export const recentFilter = (array, key, days = limits.recentDays) => {
 	return array.filter((item) => {
-		const keys = key.split(".");
-		const value = keys.reduce((o, k) => {
-			return o[k];
-		}, item);
+		const value = keyValue(item, key);
 		return isRecent(value, days);
 	});
 };
@@ -423,27 +421,8 @@ export const getRSVPValueString = (start, end, value) => {
  * @returns {string}
  */
 export const getRSVPValueHTML = (start, end, value) => {
-	const now = Date.now();
-
-	if (value === "yes") {
-		if (epoch(start) > now) {
-			return `<span data-start="${rfc3339Date(start)}" data-end="${rfc3339Date(end)}" data-value="${value}" data-relative-rsvp-value>${getRSVPValueString(start, end, value)}</span>`;
-		}
-		if (epoch(start) <= now && now <= epoch(end)) {
-			return `<span data-start="${rfc3339Date(start)}" data-end="${rfc3339Date(end)}" data-value="${value}" data-relative-rsvp-value>${getRSVPValueString(start, end, value)}</span>`;
-		}
-		return `<span data-start="${rfc3339Date(start)}" data-end="${rfc3339Date(end)}" data-value="${value}" data-relative-rsvp-value>${getRSVPValueString(start, end, value)}</span>`;
-	}
-	if (value === "maybe" || value === "interested") {
-		if (epoch(start) > now) {
-			return `<span data-start="${rfc3339Date(start)}" data-end="${rfc3339Date(end)}" data-value="${value}" data-relative-rsvp-value>${getRSVPValueString(start, end, value)}</span>`;
-		}
-		return `<span data-start="${rfc3339Date(start)}" data-end="${rfc3339Date(end)}" data-value="${value}" data-relative-rsvp-value>${getRSVPValueString(start, end, value)}</span>`;
-	}
-	if (epoch(start) > now) {
-		return `<span data-start="${rfc3339Date(start)}" data-end="${rfc3339Date(end)}" data-value="${value}" data-relative-rsvp-value>${getRSVPValueString(start, end, value)}</span>`;
-	}
-	return `<span data-start="${rfc3339Date(start)}" data-end="${rfc3339Date(end)}" data-value="${value}" data-relative-rsvp-value>${getRSVPValueString(start, end, value)}</span>`;
+	const content = getRSVPValueString(start, end, value);
+	return `<span data-start="${rfc3339Date(start)}" data-end="${rfc3339Date(end)}" data-value="${value}" data-relative-rsvp-value>${content}</span>`;
 };
 
 /**

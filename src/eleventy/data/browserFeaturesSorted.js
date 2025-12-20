@@ -51,7 +51,6 @@ export default async function () {
 		const caniuseSupport = await getCaniuseSupport(feature.id)
 			.then((caniuseSupport) => caniuseSupport)
 			.catch(() => {
-				// console.error("No CanIUse Support", error)
 				return false;
 			});
 
@@ -71,7 +70,6 @@ export default async function () {
 			const browserslistSupport = await getBrowserslistSupport(feature.id)
 				.then((browserslistSupport) => browserslistSupport)
 				.catch(() => {
-					// console.error("No Browserslist Support", error)
 					return false;
 				});
 

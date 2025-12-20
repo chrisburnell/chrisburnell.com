@@ -5,6 +5,7 @@ import {
 	getWebmentionType,
 } from "@chrisburnell/eleventy-cache-webmentions";
 import merge from "deepmerge";
+import { keyValue } from "../../functions/utils.js";
 import webmentionReplacements from "../config/webmentionReplacements.js";
 import consoles from "../data/consoles.js";
 import places from "../data/places.js";
@@ -76,26 +77,12 @@ export const modulo = (value, operand) => {
 /**
  * @param {object} object
  * @param {string} key
- * @returns {any}
- */
-export const keyValue = (object, key) => {
-	const keys = key.split(".");
-	return keys.reduce((o, k) => {
-		return o[k];
-	}, object);
-};
-
-/**
- * @param {object} object
- * @param {string} key
  * @param {any} check
  * @param {boolean} [caseSensitive]
  * @returns {boolean}
  */
 export const keyValueEquals = (object, key, check, caseSensitive = true) => {
-	const value = key.split(".").reduce((o, k) => {
-		return o[k];
-	}, object);
+	const value = keyValue(object, key);
 	if (!caseSensitive) {
 		return value.toLowerCase() === check.toLowerCase();
 	}
@@ -123,10 +110,7 @@ export const arrayKeyValueEquals = (array, key, check, caseSensitive) => {
  */
 export const arrayKeyIncludes = (array, key, value) => {
 	return array.filter((item) => {
-		const keys = key.split(".");
-		const itemValue = keys.reduce((object, key) => {
-			return object[key];
-		}, item);
+		const itemValue = keyValue(item, key);
 		return itemValue.includes(value);
 	});
 };
@@ -138,9 +122,7 @@ export const arrayKeyIncludes = (array, key, value) => {
  */
 export const arrayKeySet = (array, key) => {
 	return array.filter((item) => {
-		const value = key.split(".").reduce((o, k) => {
-			return o[k];
-		}, item);
+		const value = keyValue(item, key);
 		return !!value;
 	});
 };
@@ -152,9 +134,7 @@ export const arrayKeySet = (array, key) => {
  */
 export const arrayKeyNotSet = (array, key) => {
 	return array.filter((item) => {
-		const value = key.split(".").reduce((o, k) => {
-			return o[k];
-		}, item);
+		const value = keyValue(item, key);
 		return !value;
 	});
 };
@@ -170,14 +150,9 @@ export const keySort = (
 	key,
 	sortOptions = { ignorePunctuation: true },
 ) => {
-	const keys = key.split(".");
 	return array.sort((a, b) => {
-		const aValue = keys.reduce((o, k) => {
-			return o[k];
-		}, a);
-		const bValue = keys.reduce((o, k) => {
-			return o[k];
-		}, b);
+		const aValue = keyValue(a, key);
+		const bValue = keyValue(b, key);
 		return String(aValue || "").localeCompare(
 			String(bValue || ""),
 			undefined,
