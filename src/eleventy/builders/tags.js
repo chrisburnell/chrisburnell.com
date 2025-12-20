@@ -5,8 +5,14 @@ import { categoryFilter, tagFilter } from "../filters/collections.js";
  * @returns {Promise<Array<string>>}
  */
 export default async function (collection) {
-	const allTags = await collection
-		.getAll()
+	// Combine pages and posts, but exclude stats.njk to avoid circular dependency
+	const pages = collection.getFilteredByTag("page").filter((item) => {
+		return item.fileSlug !== "stats";
+	});
+	const posts = collection.getFilteredByTag("post");
+	const allItems = [...pages, ...posts];
+
+	const allTags = await allItems
 		// Only select pages with tags
 		.filter((item) => {
 			return "tags" in item.data;

@@ -16,7 +16,7 @@
  */
 export default async function (collection) {
 	return await collection
-		.getAll()
+		.getFilteredByTag("post")
 		// Only select pages with a string-type category
 		.filter((item) => {
 			return typeof item.data?.category === "string";
