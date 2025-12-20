@@ -12,6 +12,7 @@ runs:
           .cache
           _site/*
           !_site/og-images
+          !_site/pagefind
         key: site-cache
 
     - name: Use the OG images cache
