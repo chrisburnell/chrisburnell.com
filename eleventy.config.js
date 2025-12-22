@@ -162,9 +162,9 @@ export default async function (eleventyConfig) {
 	/**
 	 * Build Settings
 	 */
-	eleventyConfig.addBundle("css");
+	eleventyConfig.addBundle("css", { hoist: true });
 	eleventyConfig.addWatchTarget("./src/css");
-	eleventyConfig.addBundle("js");
+	eleventyConfig.addBundle("js", { hoist: true });
 	eleventyConfig.addWatchTarget("./src/js");
 	eleventyConfig.setDataDeepMerge(true);
 	eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
