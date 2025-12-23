@@ -52,4 +52,4 @@ Please see the [Contributing Guide](.github/CONTRIBUTING.md), [Commit Template](
 
 ## License
 
-The contents of this repository, unless otherwise specified, are licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](LICENSE).
+The code and content of this repository, unless otherwise specified, are licensed under a [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)](LICENSE).
