@@ -27,7 +27,7 @@ jobs:
       - name: LFS Checkout
         run: |
           git config lfs.url https://oauth2:${{ secrets.FORGEJO_TOKEN }}@git.chrisburnell.com/chrisburnell/chrisburnell.com.git/info/lfs
-          git lfs fetch --all
+          GIT_TRACE=1 GIT_CURL_VERBOSE=1 git lfs fetch --all
           git lfs checkout
 
       - name: Setup
