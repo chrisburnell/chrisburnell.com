@@ -10,7 +10,7 @@ runs:
         timezone: America/Halifax
 
     - name: Set the Node version
-      uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b # 4.0.3
+      uses: https://github.com/actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b # 4.0.3
       with:
         cache: npm
         node-version-file: ".nvmrc"

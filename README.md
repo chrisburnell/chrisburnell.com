@@ -4,7 +4,7 @@
 
 The source code for [chrisburnell.com](https://chrisburnell.com/)
 
-[![Deploy](https://github.com/chrisburnell/chrisburnell.com/actions/workflows/deploy-push.yml/badge.svg)](https://github.com/chrisburnell/chrisburnell.com/actions/workflows/deploy-push.yml)
+[![Deploy](https://github.com/chrisburnell/chrisburnell.com/actions/workflows/push-deploy.yml/badge.svg)](https://github.com/chrisburnell/chrisburnell.com/actions/workflows/push-deploy.yml)
 
 ## Table of Contents
 
