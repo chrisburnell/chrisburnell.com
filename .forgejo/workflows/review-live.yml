@@ -1,0 +1,50 @@
+name: Branch Review
+
+on:
+  push:
+    branches-ignore:
+      - "**"
+  pull_request:
+    branches:
+      - main
+
+concurrency:
+  group: review-live
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Branch Build Test
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: https://github.com/actions/checkout # 4.1.7
+        with:
+          lfs: true
+
+      - name: Setup
+        uses: ./.forgejo/actions/setup
+
+      - name: Install
+        uses: ./.forgejo/actions/install
+
+      - name: Test
+        uses: ./.forgejo/actions/test
+
+      - name: Build
+        uses: ./.forgejo/actions/build-for-live
+        env:
+          NODE_OPTIONS: "--max_old_space_size=8192"
+          FATHOM_SUMMARY_KEY: ${{ secrets.FATHOM_SUMMARY_KEY }}
+          LASTFM_API_TOKEN: ${{ secrets.LASTFM_API_TOKEN }}
+          MUSICTHREAD_API_KEY: ${{ secrets.MUSICTHREAD_API_KEY }}
+          PERSONAL_API_KEY: ${{ secrets.PERSONAL_API_KEY }}
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+          TRAKT_CLIENT_ID: ${{ secrets.TRAKT_CLIENT_ID }}
+          VIGENERE_SECRET: ${{ secrets.VIGENERE_SECRET }}
+          WEBMENTION_IO_TOKEN: ${{ secrets.WEBMENTION_IO_TOKEN }}
+
+      - name: Check Build
+        uses: ./.forgejo/actions/check
