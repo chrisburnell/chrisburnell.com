@@ -17,7 +17,7 @@ syndicate_to:
     <p>I’ve added a directory for <code style="white-space: nowrap;">/interests</code> pages! <a href="/note/interests-directory/">Read the blog post</a> or <a href="https://chrisburnell.github.io/interests-directory/" rel="external noopener">visit the directory</a>.</p>
 </div>
 
-You may or may not be aware of the `/about`, `/ideas`, `/now`, and `/uses` page initiatives<a href="#fn1" id="fnref1"><sup class="footnote-ref">[1]</sup></a> <a href="#fn2" id="fnref2"><sup class="footnote-ref">[2]</sup></a>, where website authors are encouraged to create pages on their websites at discoverable URLs for expressing who they are, concepts they’re thinking about, what they’re doing presently, and what hardware/software/things they are using (respectively).
+You may or may not be aware of the `/about`, `/ideas`, `/now`, and `/uses` page initiatives<sup><a href="#fn1" id="fnref1" class="footnote-ref">[1]</a></sup> <sup><a href="#fn2" id="fnref2" class="footnote-ref">[2]</a></sup>, where website authors are encouraged to create pages on their websites at discoverable URLs for expressing who they are, concepts they're thinking about, what they're doing presently, and what hardware/software/things they are using (respectively).
 
 Recently, I’ve been ruminating on an additional way to aid in the discoverability of like-minded folks across the web: the <code class="delta">/interests</code> page.
 

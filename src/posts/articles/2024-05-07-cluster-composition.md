@@ -14,7 +14,7 @@ post_includes:
 
 <p class=" [ rss-only ] "><em>The contents of this post require my website’s CSS to appear properly.<br>See the web version: <a href="{{ canonical }}">{{ canonical }}</a>.</em></p>
 
-In the [*CUBE CSS* methodology](https://cube.fyi), there is the concept of a <q>composition</q>. In short, a composition is a piece of CSS that creates <q>flexible, component-agnostic layout systems that support as many variants of content as possible</q><a href="#fn1" id="fnref1"><sup class="footnote-ref">[1]</sup></a>.
+In the [*CUBE CSS* methodology](https://cube.fyi), there is the concept of a <q>composition</q>. In short, a composition is a piece of CSS that creates <q>flexible, component-agnostic layout systems that support as many variants of content as possible</q><sup><a href="#fn1" id="fnref1" class="footnote-ref">[1]</a></sup>.
 
 While there *is* a layout in [Every Layout](https://every-layout.dev) *also* called [The Cluster](https://every-layout.dev/layouts/cluster/), I’ve built my own version that serves a very similar purpose but achieves it with slightly-different CSS. I’m using my version of the <q>Cluster</q> composition for a number of lists around my website: breadcrumbs, the category/tag lists on post pages, links in the footer, and [response types](https://chrisburnell.com/note/slash-interests/#responses), to name a few.
 

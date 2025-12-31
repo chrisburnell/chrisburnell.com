@@ -73,11 +73,15 @@ h2 :is(a:not(.button), .anchor):not(:hover, :focus, :active) {
 
 // Give footnote anchors more space
 :is([id^="fnref"], [href^="#fnref"]) {
-	letter-spacing: 1px;
+	background-color: var(--body-color);
+    color: oklch(from var(--body-background-color) l 0 0);
+    padding-inline: 0.5ch;
+	outline: var(--size-border-thin) solid transparent;
+    border-radius: var(--size-border-default);
+    text-decoration: none;
 
-	&::before,
-	&::after {
-		content: "\00a0";
+	&:is(:hover, :focus, :active) {
+		outline-color: var(--color-maple);
 	}
 }
 
