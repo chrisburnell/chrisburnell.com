@@ -41,8 +41,8 @@
 }
 
 // Order of selector specificities below:
-// 0,0,0
-// 0,0,0
+// 0,0,0 - applied by source order
+// 0,0,0 - applied by source order
 // 0,1,0
 
 :where(:root:has([name="color-scheme"] [value="light"]:checked)),

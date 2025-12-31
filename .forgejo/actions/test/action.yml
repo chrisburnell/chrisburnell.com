@@ -1,8 +1,0 @@
-name: Test
-description: Run tests
-
-runs:
-  using: composite
-  steps:
-    - run: npm run test
-      shell: bash

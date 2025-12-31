@@ -146,7 +146,7 @@
     "pagefind": "^1.4.0",
     "prettier": "^3.7.4",
     "prettier-plugin-jinja-template": "^2.1.0",
-    "release-it": "^19.1.0",
+    "release-it": "^19.2.2",
     "rimraf": "^6.1.2",
     "vitest": "^4.0.16"
   },
