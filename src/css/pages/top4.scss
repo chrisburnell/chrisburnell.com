@@ -1,0 +1,17 @@
+////
+/// /top4
+/// @group pages
+/// @link https://chrisburnell.com/top4/
+////
+
+.top4 {
+	& > :nth-child(1)::marker {
+		color: color-mix(in oklab, currentColor, gold);
+	}
+	& > :nth-child(2)::marker {
+		color: color-mix(in oklab, currentColor, silver);
+	}
+	& > :nth-child(3)::marker {
+		color: color-mix(in oklab, currentColor, darkorange);
+	}
+}

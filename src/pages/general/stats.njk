@@ -117,7 +117,7 @@ excludeFromSearch: true
 			{% for i in range(first_year, global.currentYear + 1) -%}
 				{% set count = blog_posts | getCollectionCountByYear(i) -%}
 				<tr>
-					<th style="white-space: nowrap;">{{ i }}</th>
+					<th style="vertical-align: middle; white-space: nowrap;">{{ i }}</th>
 					<td class=" [ numeral  strong ] " style="padding-inline-start: 1lh; padding-inline-end: var(--size-medium);">{{ count }}</td>
 					<td style="inline-size: 100%; padding-inline: 0;">
 						<div class=" [ background--raven ] " style="background-image: linear-gradient(to bottom, transparent, oklch(from var(--color-mineshaft) l c h / var(--opacity-50))); inline-size: {{ (count / blog_count_highest_per_year * 100) | maxDecimals }}%; block-size: 1lh; border-radius: var(--size-border-default);"></div>
@@ -143,7 +143,7 @@ excludeFromSearch: true
 			{% for weekday in ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] -%}
 				{% set count = blog_posts | getCollectionCountByWeekday(weekday) -%}
 				<tr>
-					<th style="white-space: nowrap;">{{ weekday }}</th>
+					<th style="vertical-align: middle; white-space: nowrap;">{{ weekday }}</th>
 					<td class=" [ numeral  strong ] " style="padding-inline-start: 1lh; padding-inline-end: var(--size-medium);">{{ count }}</td>
 					<td style="inline-size: 100%; padding-inline: 0;">
 						<div class=" [ background--raven ] " style="background-image: linear-gradient(to bottom, transparent, oklch(from var(--color-mineshaft) l c h / var(--opacity-50))); inline-size: {{ (count / blog_count_highest_per_weekday * 100) | maxDecimals }}%; block-size: 1lh; border-radius: var(--size-border-default);"></div>
@@ -161,7 +161,7 @@ excludeFromSearch: true
 			{% for item in collections.categories -%}
 				{%- set count = collections[item.title] | arePublished | noRSSOnlyFilter | getCollectionCount -%}
 				<tr>
-					<th style="white-space: nowrap;"><a href="/{{ item.plural | default(item.title) }}/" tabindex="-1">{{ item.properPlural | supertitle }}</a></th>
+					<th style="vertical-align: middle; white-space: nowrap;"><a href="/{{ item.plural | default(item.title) }}/" tabindex="-1">{{ item.properPlural | supertitle }}</a></th>
 					<td class=" [ numeral  strong ] " style="padding-inline-start: 1lh; padding-inline-end: var(--size-medium);">{{ count }}</td>
 					<td style="inline-size: 100%; padding-inline: 0;">
 						<div class=" [ background--raven ] " style="background-image: linear-gradient(to bottom, transparent, oklch(from var(--color-mineshaft) l c h / var(--opacity-50))); inline-size: {{ (count / blog_count_highest_per_category * 100) | maxDecimals }}%; block-size: 1lh; border-radius: var(--size-border-default);"></div>
@@ -179,7 +179,7 @@ excludeFromSearch: true
 			{% for item in collections.tags | sort -%}
 				{%- set count = collections[item] | arePublished | noRSSOnlyFilter | getCollectionCount -%}
 				<tr>
-					<th style="white-space: nowrap;"><a href="/tag/{{ item }}/" tabindex="-1">{{ item }}</a></th>
+					<th style="vertical-align: middle; white-space: nowrap;"><a href="/tag/{{ item }}/" tabindex="-1">{{ item }}</a></th>
 					<td class=" [ numeral  strong ] " style="padding-inline-start: 1lh; padding-inline-end: var(--size-medium);">{{ count }}</td>
 					<td style="inline-size: 100%; padding-inline: 0;">
 						<div class=" [ background--raven ] " style="background-image: linear-gradient(to bottom, transparent, oklch(from var(--color-mineshaft) l c h / var(--opacity-50))); inline-size: {{ (count / blog_count_highest_per_tag * 100) | maxDecimals }}%; block-size: 1lh; border-radius: var(--size-border-default);"></div>
