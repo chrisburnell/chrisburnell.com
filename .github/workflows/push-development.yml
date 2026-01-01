@@ -53,7 +53,9 @@ jobs:
       - name: Copy files to server
         run: |
           ssh-keyscan -p ${{ secrets.DEPLOY_PORT }} -H ${{ secrets.DEPLOY_HOST }} >> ~/.ssh/known_hosts
-          rsync -az -e "ssh -p ${{ secrets.DEPLOY_PORT }}" --delete --exclude="pagefind" --exclude="audio" --exclude="fonts" --exclude="static" --size-only ./_site/ --chown=${{ secrets.DEPLOY_CHOWN }} ${{ secrets.DEPLOY_USERNAME }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_PATH_DEV }}html
+          rsync -ahvz --delete --exclude="audio" --exclude="fonts" --exclude="static" --chown=${{ secrets.DEPLOY_CHOWN }} \
+            -e "ssh -p ${{ secrets.DEPLOY_PORT }}" \
+            ./_site/ ${{ secrets.DEPLOY_USERNAME }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_DEV_PATH }}html
 
       - name: Process on server
         uses: appleboy/ssh-action@master
