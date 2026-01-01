@@ -26,21 +26,42 @@ h2 :is(a:not(.button), .anchor):not(:hover, :focus, :active) {
 	z-index: var(--z-index-notification);
 }
 
-// Fragment Anchors inside Headings
+// Give footnote and fragment anchors a distinct appearance
+:is([id^="fnref"], [href^="#fnref"]),
+sup > a:first-child:last-child,
+.fragment-anchor:is(:hover, :focus, :active) {
+	background-color: var(--body-color);
+    color: oklch(from var(--body-background-color) l 0 0) !important;
+}
+:is([id^="fnref"], [href^="#fnref"]),
+sup > a:first-child:last-child,
 .fragment-anchor {
-	color: light-dark(var(--color-nickel), var(--color-yeti));
-	padding-inline: var(--size-small);
+    padding-inline: 0.5ch;
+	outline: var(--size-border-thin) solid transparent;
+    border-radius: var(--size-border-default);
+    text-decoration: none;
+
+	&:is(:hover, :focus, :active) {
+		outline-color: var(--color-maple);
+	}
+}
+
+// Fragment Anchors (permalinks inside headings)
+.fragment-anchor {
+	color: inherit;
 	position: absolute;
 	inset-block-start: 50%;
 	inset-inline-end: 0;
 	transform: translateY(calc(-50% - 0.2cap));
 	font-family: var(--font-family-monospace);
-	font-size: 0.8125em;
 	font-weight: var(--font-weight-semibold);
-	text-transform: lowercase;
 
 	:is(h1, h2, h3, h4, h5, h6):not(:hover, :focus-within) > &:not(:hover, :focus, :active) {
 		@include mixins.visually-hidden;
+	}
+
+	&:is(:hover, :focus, :active) {
+		outline-color: var(--color-maple);
 	}
 }
 
@@ -68,21 +89,6 @@ h2 :is(a:not(.button), .anchor):not(:hover, :focus, :active) {
 			-webkit-text-fill-color: transparent;
 			box-decoration-break: clone;
 		}
-	}
-}
-
-// Give footnote anchors more space
-:is([id^="fnref"], [href^="#fnref"]),
-sup > a:first-child:last-child {
-	background-color: var(--body-color);
-    color: oklch(from var(--body-background-color) l 0 0) !important;
-    padding-inline: 0.5ch;
-	outline: var(--size-border-thin) solid transparent;
-    border-radius: var(--size-border-default);
-    text-decoration: none;
-
-	&:is(:hover, :focus, :active) {
-		outline-color: var(--color-maple);
 	}
 }
 

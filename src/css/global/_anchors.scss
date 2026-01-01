@@ -53,7 +53,7 @@
 	}
 
 	// Force heading anchors to take the color of the heading
-	:is(h1, h2, h3, h4, h5, h6) > &,
+	:is(h1, h2, h3, h4, h5, h6) > &:not(.fragment-anchor),
 	:is(h1, h2, h3, h4, h5, h6) :not(sup) > &,
 	th & {
 		color: inherit !important;
