@@ -72,9 +72,10 @@ h2 :is(a:not(.button), .anchor):not(:hover, :focus, :active) {
 }
 
 // Give footnote anchors more space
-:is([id^="fnref"], [href^="#fnref"]) {
+:is([id^="fnref"], [href^="#fnref"]),
+sup > a:first-child:last-child {
 	background-color: var(--body-color);
-    color: oklch(from var(--body-background-color) l 0 0);
+    color: oklch(from var(--body-background-color) l 0 0) !important;
     padding-inline: 0.5ch;
 	outline: var(--size-border-thin) solid transparent;
     border-radius: var(--size-border-default);
