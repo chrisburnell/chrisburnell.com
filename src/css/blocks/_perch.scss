@@ -33,35 +33,35 @@
 	}
 }
 
-@property --perching-x {
-	syntax: "<length>";
+@property --perching-x-multiplier {
+	syntax: "<number>";
 	inherits: false;
-	initial-value: 0px;
+	initial-value: 0;
 }
-@property --perching-y {
-	syntax: "<length>";
+@property --perching-y-multiplier {
+	syntax: "<number>";
 	inherits: false;
-	initial-value: 0px;
+	initial-value: 0;
 }
 .box:has(> .perching) {
 	position: relative;
 	perspective: var(--size-breakpoint-tiny);
 }
 .perching {
-	--perching-x: -100vi;
-	--perching-y: -22vb;
+	--perching-x-multiplier: 1;
+	--perching-y-multiplier: 1;
 
 	inline-size: 42px;
 	position: absolute;
 	inset-block-end: 100%;
 	inset-inline-start: var(--size-border-default);
-	transform: translate3d(var(--perching-x), var(--perching-y), 0);
+	transform: translate3d(calc(-100vi * var(--perching-x-multiplier)), calc(-22vb * var(--perching-y-multiplier)), 0);
 	transform-origin: center;
 	pointer-events: none;
 
 	.no-js & {
-		--perching-x: 0;
-		--perching-y: 0;
+		--perching-x-multiplier: 0;
+		--perching-y-multiplier: 0;
 	}
 
 	&.visible {
@@ -70,10 +70,10 @@
 	}
 }
 @keyframes perching-x {
-	from { --perching-x: -100vi; }
-	to { --perching-x: 0; }
+	from { --perching-x-multiplier: 1; }
+	to { --perching-x-multiplier: 0; }
 }
 @keyframes perching-y {
-	from { --perching-y: -22vb; }
-	to { --perching-y: 0; }
+	from { --perching-y-multiplier: 1; }
+	to { --perching-y-multiplier: 0; }
 }
