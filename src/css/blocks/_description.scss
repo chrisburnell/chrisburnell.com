@@ -12,7 +12,8 @@
 
 	& p {
 		@include mixins.cqi(null, "small") {
-			inline-size: fit-content;
+			inline-size: 100%;
+			max-inline-size: var(--size-line-length);
 			margin-inline: auto;
 		}
 	}

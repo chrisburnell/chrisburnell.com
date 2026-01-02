@@ -1,8 +1,10 @@
 import env from "./env.js";
 
+import { role } from "./author.js";
+
 export const title = "Chris Burnell" + (env.DEV_MODE ? " (Dev)" : "");
 export const tagline = `<span class=" [ canada ] ">Ravenous</span> for <span class=" [ canada ] ">CSS</span>`;
-export const description = `I’m <span class=" [ canada ] ">Chris Burnell</span>, a <span class="p-job-title">Front End Developer</span> / Software Engineer based in <span class=" [ canada ] [ p-locality ] ">Halifax, Canada</span>. <wbr>This is where I think, write, and share my passion for front end development and the web.`;
+export const description = `I’m <span class=" [ canada ] ">Chris Burnell</span>, a <span class="p-job-title">${role}</span> based in <span class=" [ canada ] [ p-locality ] ">Halifax, Canada</span>. <wbr>This is where I think, write, and share my passion for front end development and the web.`;
 export const catchphrase =
 	"We were riding the crest of a high and meaningless wave";
 export const url = env.DEV_MODE

@@ -131,7 +131,9 @@ export default {
 		},
 		rank: (data) => data.rank || {},
 		css_includes: (data) => [...new Set(data.css_includes)],
-		js_includes: (data) => [...new Set(data.js_includes)],
+		js_includes: (data) => [
+			...new Set([...data.js_includes, "src/js/imports/perching.js"]),
+		],
 		js_module_includes: (data) => [...new Set(data.js_module_includes)],
 		pre_includes: (data) => [...new Set(data.pre_includes)],
 		post_includes: (data) => [...new Set(data.post_includes)],

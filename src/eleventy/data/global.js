@@ -25,6 +25,8 @@ export const nowISO = `${year.toString().padStart(4, "0")}-${month.toString().pa
 
 export const currentYear = new Date().getFullYear();
 
+export const sotbSpeakers = 10 + 9 + 7 + 8 + 8 + 8 + 7 + 7;
+
 export const flexibleSorting = {
 	numeric: true,
 	ignorePunctuation: true,
@@ -39,6 +41,7 @@ export const random = `${segment()}-${segment()}-${segment()}`;
 export default {
 	personalApiKeyForLocal,
 	currentYear,
+	sotbSpeakers,
 	flexibleSorting,
 	nowEpoch,
 	nowISO,

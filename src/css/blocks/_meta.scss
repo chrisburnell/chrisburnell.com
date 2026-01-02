@@ -85,13 +85,3 @@
 	--flow-space: var(--size-small);
 	line-height: var(--line-height-medium);
 }
-
-.box:has(.meta__information) {
-	position: relative;
-
-	& img:first-child {
-		position: absolute;
-		inset-block-end: 100%;
-		inset-inline-start: var(--size-border-default);
-	}
-}
