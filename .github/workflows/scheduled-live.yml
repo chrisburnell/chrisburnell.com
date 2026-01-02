@@ -58,7 +58,7 @@ jobs:
       - name: Copy files to server
         run: |
           ssh-keyscan -p ${{ secrets.DEPLOY_PORT }} -H ${{ secrets.DEPLOY_HOST }} >> ~/.ssh/known_hosts
-          rsync -az --delete --exclude="audio" --exclude="fonts" --exclude="static" --chown=${{ secrets.DEPLOY_CHOWN }} \
+          rsync -azvh --delete --exclude="audio" --exclude="fonts" --exclude="static" --chown=${{ secrets.DEPLOY_CHOWN }} \
             -e "ssh -p ${{ secrets.DEPLOY_PORT }}" \
             ./_site/ ${{ secrets.DEPLOY_USERNAME }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_PATH }}html
 
