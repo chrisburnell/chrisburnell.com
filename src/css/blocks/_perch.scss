@@ -43,11 +43,6 @@
 	inherits: false;
 	initial-value: 0px;
 }
-@property --perching-z {
-	syntax: "<length>";
-	inherits: false;
-	initial-value: 0px;
-}
 .box:has(> .perching) {
 	position: relative;
 	perspective: var(--size-breakpoint-tiny);
@@ -55,28 +50,23 @@
 .perching {
 	--perching-x: -100vi;
 	--perching-y: -22vb;
-	--perching-z: calc(var(--size-large) * -1);
 
 	inline-size: 42px;
 	position: absolute;
 	inset-block-end: 100%;
 	inset-inline-start: var(--size-border-default);
-	transform:
-		translateX(var(--perching-x))
-		translateY(var(--perching-y))
-		translateZ(var(--perching-z));
+	transform: translate3d(var(--perching-x), var(--perching-y), 0);
+	transform-origin: center;
 	pointer-events: none;
 
 	.no-js & {
 		--perching-x: 0;
 		--perching-y: 0;
-		--perching-z: 0;
 	}
 
 	&.visible {
 		animation: perching-x var(--animation-duration-long) cubic-bezier(0.25, 0.45, 0.45, 0.95) forwards,
-		           perching-y var(--animation-duration-long) cubic-bezier(0.3, 2.5, 0.7, 0.15) forwards,
-		           perching-z var(--animation-duration-long) ease-out forwards;
+		           perching-y var(--animation-duration-long) cubic-bezier(0.3, 2.5, 0.7, 0.15) forwards;
 	}
 }
 @keyframes perching-x {
@@ -84,7 +74,4 @@
 }
 @keyframes perching-y {
 	to { --perching-y: 0; }
-}
-@keyframes perching-z {
-	to { --perching-z: 0; }
 }
