@@ -70,8 +70,10 @@
 	}
 }
 @keyframes perching-x {
+	from { --perching-x: -100vi; }
 	to { --perching-x: 0; }
 }
 @keyframes perching-y {
+	from { --perching-y: -22vb; }
 	to { --perching-y: 0; }
 }
