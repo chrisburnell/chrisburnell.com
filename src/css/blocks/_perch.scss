@@ -55,7 +55,10 @@
 	position: absolute;
 	inset-block-end: 100%;
 	inset-inline-start: var(--size-border-default);
-	transform: translate3d(calc(-100vi * var(--perching-x-multiplier)), calc(-22vb * var(--perching-y-multiplier)), 0);
+	transform:
+		translateX(calc(-100vi * var(--perching-x-multiplier)))
+		translateY(calc(-22vb * var(--perching-y-multiplier)))
+		translateZ(0);
 	transform-origin: center;
 	pointer-events: none;
 
@@ -65,6 +68,7 @@
 	}
 
 	&.visible {
+		will-change: transform;
 		animation: perching-x var(--animation-duration-long) cubic-bezier(0.25, 0.45, 0.45, 0.95) forwards,
 		           perching-y var(--animation-duration-long) cubic-bezier(0.3, 2.5, 0.7, 0.15) forwards;
 	}
