@@ -84,7 +84,7 @@ layout: root
 			<li><a href="/help/"><c-emoji>❓</c-emoji>Want <span class=" [ canada ] ">my</span> help?</a></li>
 			<li><a href="/links/"><c-emoji>🔗</c-emoji>Find <span class=" [ canada ] ">me</span> elsewhere</a></li>
 		</ul>
-		{% include 'badges-88x31.njk' %}
+		{% include 'badges.njk' %}
 		{% include 'webrings.njk' %}
 		{% if speedlify[canonical] -%}
 			<p class=" [ speedlify ] "><a href="{{ site.urls.speedlify }}/{{ site.speedlify }}/#site-{{ speedlify[canonical].hash }}" class="[ speedlify-anchor ] " title="Link to this page's Speedlify Score"><c-speedlify-score hash="{{ speedlify[canonical].hash }}" score weight requests></c-speedlify-score></a></p>
