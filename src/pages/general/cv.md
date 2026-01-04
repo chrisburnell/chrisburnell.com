@@ -99,7 +99,7 @@ Passionate about the open web, having published over {{ technical_articles_count
     <small><strong>London, UK</strong></small>
 </div>
 
-- Primary front end development advisor for both the University’s [Main Website](https://city.ac.uk) and [Bayes Business School](https://www.bayes.city.ac.uk/).
+- Primary front end development advisor for the University’s [Main Website](https://city.ac.uk) and [Bayes Business School](https://www.bayes.city.ac.uk/).
 
 - Collaborated with the Digital Marketing and Design teams to oversee the redesign and development of the University’s websites to reflect its major brand refresh.
 
@@ -129,7 +129,7 @@ Passionate about the open web, having published over {{ technical_articles_count
 
 - Organised 8 annual, not-for-profit conferences, showcasing over {{ global.sotbSpeakers | toNearest(5, true) }} speakers with over 150+ in-person attendees each year.
 
-- Liaised with speakers, sponsors, and venues; handled the logistics of running an in-person and online conference.
+- Liaised with speakers, sponsors, and venues, and handled logistics for running in-person and online conferences.
 
 - Sourced sponsorship to fund the events and enable under-represented groups to attend for free.
 
@@ -143,7 +143,7 @@ Passionate about the open web, having published over {{ technical_articles_count
     <p class="delta"><a href="https://chrisburnell.com/"><c-emoji><img src="{{ site.logo }}" class="brand-logo" width="24" height="24" alt="{{ site.title }}" loading="lazy" decoding="async"></c-emoji>chrisburnell.com</a></p>
 </div>
 
-Launched a web development blog and have since created [{{ collections.projects.length + projects.web.length }} web projects](https://chrisburnell.com/projects/) and published over [{{ technical_articles_count | toNearest(5, true) }} technical articles](https://chrisburnell.com/blog/) about accessibility, design systems, CSS, JavaScript, and thoughts on the web.
+Launched a web development blog and have since created [{{ collections.projects.length + projects.web.length }} web projects](https://chrisburnell.com/projects/) and published over [{{ technical_articles_count | toNearest(5, true) }} highly technical articles](https://chrisburnell.com/blog/) about accessibility, design systems, performance, CSS, JavaScript, Node.js, web standards, and musings on the web. Maintaining my own VPS infrastructure has given me experience in Linux system administration, database management (MySQL/PostgreSQL), authentication systems (OAuth/OIDC), and DevOps practices that have complemented my front-end expertise.
 
 <c-details class="no-border" force-restore>
     <summary>Popular Pages & Posts</summary>
@@ -174,7 +174,7 @@ Launched a web development blog and have since created [{{ collections.projects.
     {% set package_downloads = package_downloads + (project.data.downloads | default(0)) -%}
 {%- endfor -%}
 
-Author of numerous open-source software packages, accumulating over {{ package_downloads | toNearest(1000, true) | numberStringFormat }} downloads and having been used on many enterprise client websites across my professional career, including CSS libraries, design system tools, and native web components.
+Author of open-source software, including CSS libraries, design system tools, and native web components, accumulating over {{ package_downloads | toNearest(1000, true) | numberStringFormat }} downloads and having been used in building key enterprise client websites across my professional career.
 
 <c-details class="no-border" force-restore>
     <summary>Popular Projects</summary>
