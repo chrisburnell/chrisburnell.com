@@ -5,7 +5,7 @@ export * from "chrisburnell/src/metadata.js";
 export const firstname = "Chris";
 export const lastname = "Burnell";
 export const shortname = "chrisburnell";
-export const role = "Staff Front End Developer / Design Systems Engineer";
+export const role = "Front End Developer / Design Systems Engineer";
 export const nationality = "Canadian";
 export const email = "me@chrisburnell.com";
 export const avatar = "/images/avatar@4x.jpeg";
