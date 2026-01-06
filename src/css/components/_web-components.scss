@@ -69,10 +69,15 @@ share-button:defined a {
 
 snow-fall {
 	display: none;
-
-	:root:has([name="snow"]:checked) & {
-		@media (prefers-reduced-motion: no-preference) {
+}
+:root:has([name="snow"]:checked) {
+	@media (prefers-reduced-motion: no-preference) {
+		main {
+			z-index: var(--z-index-root);
+		}
+		snow-fall {
 			display: initial;
+			z-index: var(--z-index-below)
 		}
 	}
 }
