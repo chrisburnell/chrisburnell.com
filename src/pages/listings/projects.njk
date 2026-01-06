@@ -2,6 +2,7 @@
 title: Projects
 description: A list of my projects and rabbit hole deep-dives.
 perch: true
+toc: true
 redirect_from:
   - /portfolio
   - /work
@@ -14,6 +15,16 @@ redirect_from:
 		{{ deckItem(item) }}
 	{% endfor %}
 	{% for item in projects.web %}
+		{{ deckItem(item) }}
+	{% endfor %}
+</div>
+
+<hr>
+
+<h2 id="self-hosted"><c-emoji>🗄️</c-emoji>Self-Hosted <small>({{ projects.selfHosted.length }})</small></h2>
+
+<div class=" [ deck ] ">
+	{% for item in projects.selfHosted %}
 		{{ deckItem(item) }}
 	{% endfor %}
 </div>

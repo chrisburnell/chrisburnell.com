@@ -2,6 +2,9 @@ import slugify from "@sindresorhus/slugify";
 import { load } from "cheerio";
 import striptags from "striptags";
 import { isCSSNakedDay, isJSNakedDay } from "../data/global.js";
+import { url as siteURL } from "../data/site.js";
+
+const internalHostname = new URL(siteURL).hostname;
 
 /**
  * @param {string} value
@@ -12,7 +15,7 @@ export default async function (value, outputPath) {
 	if (outputPath && outputPath.endsWith(".html")) {
 		const $ = load(value);
 
-		// TODO Is this necessary?
+		// TODO Is this necessary? Does it really speed things up?
 		const needsProcessing =
 			$(".content").length ||
 			$(".generate-toc").length ||
@@ -154,6 +157,34 @@ export default async function (value, outputPath) {
 
 		// Make <pre> code blocks keyboard-accessible by adding `tabindex="0"`
 		$("pre > code").attr("tabindex", 0);
+
+		// Add rel attributes to external links
+		$("a[href]").each((_, element) => {
+			const rel = $(element).attr("rel");
+			const href = $(element).attr("href");
+
+			if (rel || href.startsWith("#") || href.startsWith("/")) {
+				return;
+			}
+
+			try {
+				const url = new URL(href, siteURL);
+				if (url.hostname !== internalHostname) {
+					if (
+						url.hostname.endsWith(".chrisburnell.com") ||
+						url.hostname.endsWith("ravenous.dev") ||
+						url.hostname.endsWith("realdx.online") ||
+						url.hostname.endsWith("repc.co")
+					) {
+						$(element).attr("rel", "external");
+					} else {
+						$(element).attr("rel", "external noopener");
+					}
+				}
+			} catch {
+				/* Invalid URL → Skip */
+			}
+		});
 
 		// Remove CSS during CSS Naked Day
 		if (isCSSNakedDay) {

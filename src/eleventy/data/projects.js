@@ -91,6 +91,36 @@ export default {
 			},
 		},
 	],
+	selfHosted: [
+		{
+			url: "https://auth.chrisburnell.com/",
+			data: {
+				title: "auth.chrisburnell.com",
+				description: `Personal OAuth/OIDC powered by [Authelia](https://www.authelia.com/)`,
+			},
+		},
+		{
+			url: "https://git.chrisburnell.com/",
+			data: {
+				title: "git.chrisburnell.com",
+				description: `A [git](https://git-scm.com/) server powered by [Forgejo](https://forgejo.org/)`,
+			},
+		},
+		{
+			url: "https://gist.chrisburnell.com/",
+			data: {
+				title: "gist.chrisburnell.com",
+				description: `“Gist” instance powered by [Opengist](https://opengist.io/) (like Git, but for one file/code snippet at a time)`,
+			},
+		},
+		{
+			url: "https://fediverse.repc.co/",
+			data: {
+				title: "fediverse.repc.co",
+				description: `My personal [Mastodon](https://fediverse.repc.co/about) instance`,
+			},
+		},
+	],
 	web: [
 		{
 			url: "https://weather.chrisburnell.com",
