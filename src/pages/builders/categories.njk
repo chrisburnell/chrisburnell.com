@@ -11,7 +11,7 @@ eleventyComputed:
 {%- from 'macros/deckItem.njk' import deckItem -%}
 {%- from "macros/shelfItem.njk" import shelfItem -%}
 {%- from 'macros/stackItem.njk' import stackItem -%}
-{%- set collection = collections[category.title] | arePublished | noRSSOnlyFilter | reverse -%}
+{%- set collection = collections[category.collectionName] | arePublished | noRSSOnlyFilter | reverse -%}
 {%- set count = collection.length -%}
 {%- set latest_year = collection[0].data.year | default(collection[0].year) -%}
 {%- set first_year = collection[count-1].data.year | default(collection[count-1].year) -%}
@@ -52,8 +52,8 @@ eleventyComputed:
 				<p>You can sort these {{ category.properPlural }}:</p>
 				<ul class=" [ cluster ] ">
 					<li><c-librarian-button key="title">by title</c-librarian-button></li>{% if category.review %}
-					<li><c-librarian-button key="author">by {% if category.title == 'beerreview' %}brewery{% elif category.title == 'gamereview' %}publisher{% elif category.title == 'musicreview' %}artist{% else %}author{% endif %}</c-librarian-button></li>
-					<li><c-librarian-button key="rating">by rating</c-librarian-button></li>{% endif %}{% if category.title != 'beerreview' and category.title != 'video' %}
+					<li><c-librarian-button key="author">by {% if category.title == 'beer' %}brewery{% elif category.title == 'game' %}publisher{% elif category.title == 'music' %}artist{% else %}author{% endif %}</c-librarian-button></li>
+					<li><c-librarian-button key="rating">by rating</c-librarian-button></li>{% endif %}{% if category.title != 'beer' and category.title != 'video' %}
 					<li><c-librarian-button key="release">by release date</c-librarian-button></li>{% endif %}
 					<li><c-librarian-button key="chronological" default="descending">by publish date</c-librarian-button></li>
 				</ul>

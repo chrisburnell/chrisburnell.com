@@ -40,6 +40,7 @@ export default async function (collection) {
 						: "categoryPlural" in item.data
 							? item.data.categoryPlural
 							: item.data.category,
+				collectionName: `category${item.data.category.charAt(0).toUpperCase()}${item.data.category.slice(1)}`,
 				review: item.data.mf_root === "review",
 				full: "categoryFull" in item.data || "full" in item.data,
 				masonry: "categoryMasonry" in item.data,

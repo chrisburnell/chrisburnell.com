@@ -7,5 +7,6 @@ permalink: /{{ category.plural }}.xml
 eleventyComputed:
   title: "{{ category.properPlural | title }}"
   description: "All of my {{ category.properPlural }}."
-  related_collection: "{{ category.title }}"
+  related_collection: "{{ category.collectionName }}"
+  related_page_slug: "{{ category.plural }}"
 ---

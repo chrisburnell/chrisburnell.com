@@ -45,7 +45,7 @@ excludeFromSearch: true
 
 {%- set blog_count_highest_per_category = 0 -%}
 {%- for item in collections.categories -%}
-	{%- set count = collections[item.title] | arePublished | noRSSOnlyFilter | getCollectionCount -%}
+	{%- set count = collections[item.collectionName] | arePublished | noRSSOnlyFilter | getCollectionCount -%}
 	{%- if count > blog_count_highest_per_category -%}
 		{%- set blog_count_highest_per_category = count -%}
 	{%- endif -%}
@@ -159,7 +159,7 @@ excludeFromSearch: true
 	<table style="border-block-start: 0; font-size: var(--font-size-small);">
 		<tbody>
 			{% for item in collections.categories -%}
-				{%- set count = collections[item.title] | arePublished | noRSSOnlyFilter | getCollectionCount -%}
+				{%- set count = collections[item.collectionName] | arePublished | noRSSOnlyFilter | getCollectionCount -%}
 				<tr>
 					<th style="vertical-align: middle; white-space: nowrap;"><a href="/{{ item.plural | default(item.title) }}/" tabindex="-1">{{ item.properPlural | supertitle }}</a></th>
 					<td class=" [ numeral  strong ] " style="padding-inline-start: 1lh; padding-inline-end: var(--size-medium);">{{ count }}</td>

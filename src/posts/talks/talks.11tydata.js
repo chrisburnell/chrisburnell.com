@@ -3,6 +3,6 @@ export default {
 	category: "talk",
 	categoryPlural: "talks",
 	categoryCode: "t",
-	tags: ["talk", "blog", "feature"],
+	tags: ["categoryTalk", "blog", "feature"],
 	emoji: "🗣",
 };

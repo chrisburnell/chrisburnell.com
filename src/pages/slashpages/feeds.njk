@@ -56,7 +56,7 @@ redirect_from:
 
 		<ul class=" [ grid ] [ shelf ] " data-layout="natural" style="--row-gap: var(--size-medium);">
 		{% for item in collections.categories -%}
-			{%- set count = collections[item.title] | arePublished | getCollectionCount -%}
+			{%- set count = collections[item.collectionName] | arePublished | getCollectionCount -%}
 			<li><a href="{{ site.url }}/{{ item.plural }}.xml" class=" [ gamma ] "><c-emoji>{{ item.emoji | default('📄') }}</c-emoji>{{ item.properPlural | title }} <sup>{{ count }}</sup></a></li>
 		{%- endfor %}
 		</ul>

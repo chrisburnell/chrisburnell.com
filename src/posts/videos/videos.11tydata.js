@@ -6,6 +6,6 @@ export default {
 	categoryPlural: "videos",
 	categoryCode: "v",
 	categoryFull: true,
-	tags: ["video", "blog", "feature"],
+	tags: ["categoryVideo", "blog", "feature"],
 	emoji: "🎥",
 };

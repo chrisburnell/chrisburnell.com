@@ -172,7 +172,7 @@ description: A great big list of all the pages, projects, posts on my website.
 
 			<ul class=" [ grid ] [ shelf ] " data-layout="natural" style="--row-gap: var(--size-medium);">
 				{%- for item in collections.categories -%}
-					{%- set count = collections[item.title] | arePublished | noRSSOnlyFilter | getCollectionCount -%}
+					{%- set count = collections[item.collectionName] | arePublished | noRSSOnlyFilter | getCollectionCount -%}
 					<li>
 						<a href="/{{ item.plural }}/" class=" [ gamma ] "><c-emoji>{{ item.emoji | default('📄') }}</c-emoji>{{ item.properPlural | title }} <sup>{{ count }}</sup></a>
 						<p>
@@ -240,7 +240,7 @@ description: A great big list of all the pages, projects, posts on my website.
 
 			<ul class=" [ grid ] [ shelf ] " data-layout="natural" style="--row-gap: var(--size-medium);">
 			{% for item in collections.categories -%}
-				{%- set count = collections[item.title] | arePublished | noRSSOnlyFilter | getCollectionCount -%}
+				{%- set count = collections[item.collectionName] | arePublished | noRSSOnlyFilter | getCollectionCount -%}
 				<li><a href="{{ site.url }}/{{ item.plural }}.xml" class=" [ gamma ] "><c-emoji>{{ item.emoji | default('📄') }}</c-emoji>{{ item.properPlural | title }} <sup>{{ count }}</sup></a></li>
 			{%- endfor %}
 			</ul>

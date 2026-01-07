@@ -58,7 +58,10 @@ export const getCategoryName = (data) => {
  * @returns {Array<object>}
  */
 export const categoryFilter = (tags) => {
-	return filterOut(tags, categories);
+	return filterOut(
+		tags,
+		categories.map((category) => `category${category}`),
+	);
 };
 
 /**

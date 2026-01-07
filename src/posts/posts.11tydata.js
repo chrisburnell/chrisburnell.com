@@ -48,6 +48,8 @@ export default {
 	mf_root: "entry",
 	show_responses: true,
 	eleventyComputed: {
+		categoryCollectionName: (data) =>
+			`category${data.category.charAt(0).toUpperCase()}${data.category.slice(1)}`,
 		canonical: (data) => siteURL + data.page.url,
 		year: (data) => new Date(data.date).getFullYear(),
 		of_url: async (data) => getPropertyURL(data),

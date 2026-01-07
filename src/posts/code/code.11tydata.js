@@ -4,7 +4,7 @@ export default {
 	categoryProper: "code demo",
 	categoryProperPlural: "code demos",
 	categoryCode: "c",
-	tags: ["code", "blog"],
+	tags: ["categoryCode", "blog"],
 	emoji: "💾",
 	searchCollectionWeight: 0.8,
 };

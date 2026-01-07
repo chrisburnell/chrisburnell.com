@@ -4,7 +4,7 @@ export default {
 	category: "like",
 	categoryPlural: "likes",
 	categoryCode: "f",
-	tags: ["like", "clickthrough"],
+	tags: ["categoryLike", "clickthrough"],
 	excludeFromSearch: true,
 	noindex: true,
 	emoji: "♥️",

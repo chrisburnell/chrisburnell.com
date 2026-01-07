@@ -1,6 +1,6 @@
 {
   "name": "chrisburnell",
-  "version": "4.0.16",
+  "version": "4.0.17",
   "description": "Some real sweet codestuffs.",
   "license": "CC-BY-NC-ND-4.0",
   "repository": {
@@ -93,7 +93,7 @@
     "@daviddarnes/link-peek": "^1.1.0",
     "@daviddarnes/storage-form": "^2.0.1",
     "@js-temporal/polyfill": "^0.5.1",
-    "@mdn/browser-compat-data": "^7.2.2",
+    "@mdn/browser-compat-data": "^7.2.3",
     "@sindresorhus/slugify": "^3.0.0",
     "@tweetback/canonical": "^2.0.48",
     "@zachleat/details-utils": "^2.0.2",
@@ -124,7 +124,7 @@
     "postcss-scss": "^4.0.9",
     "postcss-utopia": "^1.1.0",
     "random-case": "^1.0.0",
-    "sass": "^1.97.1",
+    "sass": "^1.97.2",
     "striptags": "^3.2.0",
     "tab-guard": "^0.1.0",
     "truncate-html": "^1.2.2",
@@ -145,7 +145,7 @@
     "pagefind": "^1.4.0",
     "prettier": "^3.7.4",
     "prettier-plugin-jinja-template": "^2.1.0",
-    "release-it": "^19.2.2",
+    "release-it": "^19.2.3",
     "rimraf": "^6.1.2",
     "vitest": "^4.0.16"
   },

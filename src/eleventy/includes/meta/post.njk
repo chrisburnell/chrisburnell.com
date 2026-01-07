@@ -57,16 +57,16 @@
 		{%- endif %}
 		{% if authors.length -%}
 			<li class=" [ authors ] ">
-				{% if category == 'beerreview' %}
+				{% if category == 'beer' %}
 					<c-emoji>🍻</c-emoji>
 					<small>brewed by</small>
-				{% elif category == 'bookreview' %}
+				{% elif category == 'book' %}
 					<c-emoji>✍️</c-emoji>
 					<small>written by</small>
-				{% elif category == 'gamereview' %}
+				{% elif category == 'game' %}
 					<c-emoji>🎮</c-emoji>
 					<small>produced by</small>
-				{% elif category == 'musicreview' %}
+				{% elif category == 'music' %}
 					<c-emoji>🎼</c-emoji>
 					<small>created by</small>
 				{% elif category == 'recipe' %}
@@ -194,7 +194,7 @@
 		{# Removed shorturls for now
 		{% if eleventy.env.runMode === 'build' and not draft and published !== false and not 'ignore' in tags %}
 			<li class=" [ shorturl ] ">
-				{% set shorturl_id = date | NewBase60(categoryCode, collections[category]) -%}
+				{% set shorturl_id = date | NewBase60(categoryCode, collections[categoryCollectionName]) -%}
 				<c-emoji>🔗</c-emoji>
 				<small>shorturl</small>
 				<a href="https://repc.co/{{ shorturl_id }}">repc.co/{{ shorturl_id }}</a>

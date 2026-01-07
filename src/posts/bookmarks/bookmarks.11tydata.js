@@ -4,7 +4,7 @@ export default {
 	category: "bookmark",
 	categoryPlural: "bookmarks",
 	categoryCode: "h",
-	tags: ["bookmark", "clickthrough"],
+	tags: ["categoryBookmark", "clickthrough"],
 	excludeFromSearch: true,
 	noindex: true,
 	emoji: "🔖",

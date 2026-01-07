@@ -92,7 +92,7 @@ redirect_from:
 
 		<ul class=" [ grid ] [ shelf ] " data-layout="natural" style="--row-gap: var(--size-medium);">
 			{%- for item in collections.categories -%}
-				{%- set count = collections[item.title] | arePublished | noRSSOnlyFilter | getCollectionCount -%}
+				{%- set count = collections[item.collectionName] | arePublished | noRSSOnlyFilter | getCollectionCount -%}
 				<li>
 					<a href="/{{ item.plural }}/" class=" [ gamma ] "><c-emoji>{{ item.emoji | default('📄') }}</c-emoji>{{ item.properPlural | title }} <sup>{{ count }}</sup></a>
 					<p>

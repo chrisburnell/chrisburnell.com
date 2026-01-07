@@ -3,5 +3,5 @@ export default {
 	category: "note",
 	categoryPlural: "notes",
 	categoryCode: "n",
-	tags: ["note", "blog", "feature"],
+	tags: ["categoryNote", "blog", "feature"],
 };
