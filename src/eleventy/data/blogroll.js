@@ -834,6 +834,12 @@ export default [
 		rss: "https://cybercultural.com/feed.xml",
 		mastodon: "ricmac@mastodon.social",
 	},
+	{
+		title: "Nathan Knowler",
+		url: "https://knowler.dev",
+		rss: "https://knowler.dev/feed.xml",
+		mastodon: "knowler@sunny.garden",
+	},
 ].sort((a, b) => {
 	return a.title.localeCompare(b.title, undefined, {
 		numeric: true,
