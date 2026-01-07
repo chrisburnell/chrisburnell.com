@@ -12,6 +12,6 @@ export default {
 	categoryFull: true,
 	tags: ["music", "review"],
 	emoji: "🎶",
-	post_includes: ["post/listen-of.njk"],
+	post_includes: ["listen-of.njk"],
 	searchCollectionWeight: 0.8,
 };

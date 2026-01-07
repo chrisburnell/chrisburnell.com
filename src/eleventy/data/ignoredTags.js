@@ -24,6 +24,7 @@ export default [
 	"pigsear2022",
 	"pigsear2023",
 	"advent2021",
+	"unusualrotations",
 	"weblogpomo",
 	"work",
 ];

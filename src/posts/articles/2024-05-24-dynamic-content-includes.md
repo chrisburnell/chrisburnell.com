@@ -29,13 +29,13 @@ I really wanted a smoother way to do this, and in doing some refactoring of my [
 {% raw %}
 ```twig
 {% if category == 'recipe' %}
-	{% include 'post/recipe.njk' %}
+	{% include 'recipe.njk' %}
 {% endif %}
 
 {{ content | safe }}
 
 {% if category == 'music' -%}
-	{% include 'post/listen-of.njk' %}
+	{% include 'listen-of.njk' %}
 {%- endif %}
 ```
 {% endraw %}
@@ -107,16 +107,16 @@ For example, instead of the previous `category == 'recipe'` check in my post lay
 ```javascript
 export default {
 	// ...
-	pre_includes: ["post/recipe.njk"],
+	pre_includes: ["recipe.njk"],
 }
 ```
 
-And in `music.11tydata.js`, I can set a value to the `post_includes` array to use the `post/listen-of.njk` include:
+And in `music.11tydata.js`, I can set a value to the `post_includes` array to use the `listen-of.njk` include:
 
 ```javascript
 export default {
 	// ...
-	post_includes: ["post/listen-of.njk"],
+	post_includes: ["listen-of.njk"],
 }
 ```
 
@@ -129,7 +129,7 @@ post_includes:
 
 Using [Eleventy’s Data Deep Merge](https://www.11ty.dev/docs/data-deep-merge/) allows the values I set in these arrays to be *merged* as you traverse down the tree from `posts.11tydata.js` to `music.11tydata.js` to an individual post.
 
-This means that I don’t have to redefine values in the `post_includes` array for posts that should inherit some value(s) defined in a `*.11tydata.js` file. [Yesterday’s post in the Music category](/music/endtroducing/) is an example of this, where the value `post/listen-of.njk` is added by `music.11tydata.js` and I can *append* `weblogpomo2024.njk` to this array in the front matter (as above).
+This means that I don’t have to redefine values in the `post_includes` array for posts that should inherit some value(s) defined in a `*.11tydata.js` file. [Yesterday’s post in the Music category](/music/endtroducing/) is an example of this, where the value `listen-of.njk` is added by `music.11tydata.js` and I can *append* `weblogpomo2024.njk` to this array in the front matter (as above).
 
 If I want to, I can also prefix either of these two new properties with `override:` which will cut off the Data Deep Merge for that post:
 

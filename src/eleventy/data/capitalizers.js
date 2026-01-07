@@ -24,6 +24,7 @@ export default [
 	"State-of-the-Web",
 	"SVG",
 	"TTRPG",
+	"UnusualRotations",
 	"UX",
 	"Web-Components",
 	"WebC",

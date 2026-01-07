@@ -7,6 +7,6 @@ export default {
 	categoryCode: "d",
 	tags: ["recipe", "blog", "feature"],
 	emoji: "📝",
-	pre_includes: ["post/recipe.njk"],
+	pre_includes: ["recipe.njk"],
 	searchCollectionWeight: 0.8,
 };
