@@ -3,7 +3,7 @@ pagination:
   data: collections.tags
   size: 1
   alias: tag
-permalink: /{{ tag }}.xml
+permalink: /tag/{{ tag }}.xml
 tag_collection: true
 eleventyComputed:
   title: "{{ tag | supertitle | replace('-', ' ') }}"

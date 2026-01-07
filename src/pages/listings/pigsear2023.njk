@@ -5,7 +5,7 @@ description: Beer reviews from Pig's Ear CAMRA Beer & Cider Festival in 2023
 {%- from "macros/shelfItem.njk" import shelfItem -%}
 {%- set collection = collections.pigsear2023 | arePublished | keySort('data.rating', global.flexibleSorting) | reverse -%}
 
-<p>{{ categoryIntroductions.beer | join(" ") | safe }}</p>
+<p>{{ categoryIntroductions.beerreview | join(" ") | safe }}</p>
 
 <c-librarian>
 	<p>You can sort these beer reviews:</p>

@@ -40,7 +40,7 @@ js_module_includes:
 
 	<div class=" [ grid ] [ shelf  shelf--square ] ">
 		{% for album in (lastfm.topAlbums | limit(8)) -%}
-			{%- set item = collections.music | arePublished | arrayKeyValueEquals('data.title', album.name, false) | first -%}
+			{%- set item = collections.musicreview | arePublished | arrayKeyValueEquals('data.title', album.name, false) | first -%}
 			{% if item -%}
 				{{ shelfItem(item) }}
 			{%- else -%}
@@ -67,7 +67,7 @@ js_module_includes:
 
 	<div class=" [ grid ] [ shelf  shelf--square ] ">
 		{% for album in (lastfm.topAlbumsAll | limit(8)) -%}
-			{%- set item = collections.music | arePublished | arrayKeyValueEquals('data.title', album.name, false) | first -%}
+			{%- set item = collections.musicreview | arePublished | arrayKeyValueEquals('data.title', album.name, false) | first -%}
 			{% if item -%}
 				{{ shelfItem(item) }}
 			{%- else -%}

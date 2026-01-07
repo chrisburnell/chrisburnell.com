@@ -110,7 +110,7 @@ export default {
 			url: "https://gist.chrisburnell.com/",
 			data: {
 				title: "gist.chrisburnell.com",
-				description: `“Gist” instance powered by [Opengist](https://opengist.io/) (like Git, but for one file/code snippet at a time)`,
+				description: `A pastebin instance powered by [Opengist](https://opengist.io/) (like Git, but for one file/code snippet at a time)`,
 			},
 		},
 		{

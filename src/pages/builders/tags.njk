@@ -37,7 +37,7 @@ eleventyComputed:
 	<div class=" [ description ] [ flow ] ">
 		<p>
 			<span class=" [ p-summary ] ">{% if count > 1 %}All {{ count | numberStringFormat }}{% else %}Just the one{% endif %} of my posts tagged <q>{{ tag }}</q>{% if first_year != latest_year %}, dating from {% if list_type == 'shelf' %}<span class=" [ no-wrap ] ">{{ first_year }}–{{ latest_year }}</span>{% else %}<span class=" [ no-wrap ] "><a href="#{{ first_year }}">{{ first_year }}</a>–<a href="#{{ latest_year }}">{{ latest_year }}</a></span>{% endif %}{% endif %}.</span>
-			<a href="{{ site.url }}/{{ tag }}.xml" title="{{ tag | supertitle }} Tag Feed" class=" [ icon-anchor ] "><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false"><use href="#svg--rss"></use></svg></c-emoji></a>
+			<a href="{{ site.url }}/tag/{{ tag }}.xml" title="{{ tag | supertitle }} Tag Feed" class=" [ icon-anchor ] "><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false"><use href="#svg--rss"></use></svg></c-emoji></a>
 		</p>
 	</div>
 
@@ -60,7 +60,7 @@ eleventyComputed:
 		<hr>
 
 		<div class=" [ grid ] [ navigator ] ">
-			<a href="/{{ tag }}.xml" class=" [ button ] ">
+			<a href="/tag/{{ tag }}.xml" class=" [ button ] ">
 				<c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false"><use href="#svg--rss"></use></svg></c-emoji>{{ title | safe }} Feed
 			</a>
 		</div>

@@ -32,7 +32,7 @@
 	<ul role="list" class=" [ cluster ] [ small ] ">
 		{% for item in collections.tags | sort -%}
 			<li>
-				<a href="{{ site.url }}/{{ item }}.xml">{{ item }}</a>
+				<a href="{{ site.url }}/tag/{{ item }}.xml">{{ item }}</a>
 			</li>
 		{%- endfor %}
 	</ul>

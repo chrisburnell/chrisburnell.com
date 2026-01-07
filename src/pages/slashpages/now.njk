@@ -72,8 +72,8 @@ js_module_includes:
 	{%- endif %}
 {%- endif %}
 
-{% set currentlyReading = collections.book | arePublished | arrayKeyNotSet('data.end') | sortByDate -%}
-{% set recentlyRead = collections.book | arePublished | arrayKeySet('data.end') | recentFilter('data.end') | sortByDate -%}
+{% set currentlyReading = collections.bookreview | arePublished | arrayKeyNotSet('data.end') | sortByDate -%}
+{% set recentlyRead = collections.bookreview | arePublished | arrayKeySet('data.end') | recentFilter('data.end') | sortByDate -%}
 {% if currentlyReading.length or recentlyRead.length -%}
 	<hr>
 
@@ -100,8 +100,8 @@ js_module_includes:
 	{% endif %}
 {%- endif %}
 
-{% set currentlyPlaying = collections.game | arePublished | arrayKeyNotSet('data.rating') | sortByDate -%}
-{% set recentlyPlayed = collections.game | arePublished | arrayKeySet('data.rating') | arrayKeySet('data.end') | recentFilter('data.end') | sortByDate -%}
+{% set currentlyPlaying = collections.gamereview | arePublished | arrayKeyNotSet('data.rating') | sortByDate -%}
+{% set recentlyPlayed = collections.gamereview | arePublished | arrayKeySet('data.rating') | arrayKeySet('data.end') | recentFilter('data.end') | sortByDate -%}
 {% if currentlyPlaying.length or recentlyPlayed.length -%}
 	<hr>
 
@@ -188,7 +188,7 @@ js_module_includes:
 	<a href="/music/">Music</a>
 </h2>
 
-{% set currentlyListening = collections.music | arePublished | arrayKeyNotSet('data.rating') | sortByDate -%}
+{% set currentlyListening = collections.musicreview | arePublished | arrayKeyNotSet('data.rating') | sortByDate -%}
 {% if currentlyListening.length -%}
 	<h3 id="currently-listening">Currently reviewing</h3>
 	<div class=" [ grid ] [ shelf  shelf--square ] ">
@@ -198,7 +198,7 @@ js_module_includes:
 	</div>
 {%- endif %}
 
-{% set recentlyListened = collections.music | arePublished | arrayKeySet('data.rating') | recentFilter('data.date') | sortByDate -%}
+{% set recentlyListened = collections.musicreview | arePublished | arrayKeySet('data.rating') | recentFilter('data.date') | sortByDate -%}
 {% if recentlyListened.length -%}
 	<h3 id="recently-listened">Recently reviewed</h3>
 	<div class=" [ grid ] [ shelf  shelf--square ] ">
@@ -236,7 +236,7 @@ js_module_includes:
 
 	<div class=" [ grid ] [ shelf  shelf--square ] ">
 		{% for album in (lastfm.topAlbums | limit(3)) -%}
-			{%- set item = collections.music | arePublished | arrayKeyValueEquals('data.title', album.name, false) | first -%}
+			{%- set item = collections.musicreview | arePublished | arrayKeyValueEquals('data.title', album.name, false) | first -%}
 			{% if item -%}
 				{{ shelfItem(item) }}
 			{%- else -%}
