@@ -247,7 +247,7 @@ export const checkins = (collection) => {
 export const replies = (collection) => {
 	return filterCollection(
 		collection,
-		"note",
+		"categoryNote",
 		(items) => {
 			return applyDefaultFilter(items)
 				.filter((item) => "in_reply_to" in item.data)
