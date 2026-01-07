@@ -8,6 +8,8 @@ tags:
   - unusualrotations2026
 post_includes:
   - unusualrotation2026.njk
+syndicate_to:
+  - https://fediverse.repc.co/@chrisburnell/115854792913948824
 ---
 
 Towards the end of 2025, I came up with this idea to expand the horizons of my musical tastes.
