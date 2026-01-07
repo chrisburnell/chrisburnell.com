@@ -27,13 +27,13 @@ describe("Filters: Collections", () => {
 				{
 					url: "https://example.com/a/",
 					data: {
-						tags: ["article"],
+						tags: ["categoryArticle"],
 					},
 				},
 				{
 					url: "https://example.com/b/",
 					data: {
-						tags: ["article", "no-rss"],
+						tags: ["categoryArticle", "no-rss"],
 					},
 				},
 			]).length,
@@ -86,12 +86,12 @@ describe("Filters: Collections", () => {
 	});
 
 	it("categoryFilter() returns an array with category tags removed", () => {
-		const tags = ["article", "tag1", "note", "tag2"];
+		const tags = ["categoryArticle", "tag1", "categoryNote", "tag2"];
 		const filtered = collections.categoryFilter(tags);
 		expect(filtered).toContain("tag1");
 		expect(filtered).toContain("tag2");
-		expect(filtered).not.toContain("article");
-		expect(filtered).not.toContain("note");
+		expect(filtered).not.toContain("categoryArticle");
+		expect(filtered).not.toContain("categoryNote");
 	});
 
 	it("tagFilter() returns an array with ignored tags removed", () => {
@@ -113,12 +113,12 @@ describe("Filters: Collections", () => {
 			collections.noPinnedFilter([
 				{
 					data: {
-						tags: ["article"],
+						tags: ["categoryArticle"],
 					},
 				},
 				{
 					data: {
-						tags: ["article", "pinned"],
+						tags: ["categoryArticle", "pinned"],
 					},
 				},
 			]).length,
@@ -129,12 +129,12 @@ describe("Filters: Collections", () => {
 		const items = [
 			{
 				data: {
-					tags: ["article"],
+					tags: ["categoryArticle"],
 				},
 			},
 			{
 				data: {
-					tags: ["article", "pinned"],
+					tags: ["categoryArticle", "pinned"],
 				},
 			},
 		];
