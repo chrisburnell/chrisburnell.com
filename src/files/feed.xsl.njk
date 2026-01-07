@@ -127,7 +127,7 @@ sitemap:
         <xsl:attribute name="datetime">
           <xsl:value-of select="atom:published" />
         </xsl:attribute>
-        <xsl:value-of select="atom:link[@type='publishedFriendly']/@href" />
+        <xsl:value-of select="atom:publishedFriendly" />
       </time>
     </article>
   </xsl:template>

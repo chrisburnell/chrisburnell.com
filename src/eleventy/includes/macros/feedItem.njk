@@ -4,6 +4,7 @@
 		<link href="{{ item.data.canonical }}" />
 		<title>{{ item.data.meta_title }}</title>
 		<published>{{ item.data.date | rfc3339Date }}</published>
+		<publishedFriendly>{{ item.data.date | friendlyDate }}</publishedFriendly>
 		<updated>{{ item.data.updated | default(item.data.date) | default(global.nowISO) | rfc3339Date }}</updated>
 		{% if item.data.category -%}
 		{# Category -#}
@@ -58,7 +59,6 @@
 				<p>You can read <a href="{{ item.data.canonical }}">this post</a> and others <a href="https://chrisburnell.com/posts/">on my website</a>.</p>
 			{%- endset %}{{ to_escape | escape }}
 		</content>
-		<link type="publishedFriendly" href="{{ item.data.date | friendlyDate }}" />
 		{% if item.data.of_url -%}
 		<link rel="related" href="{{ item.data.of_url }}" />
 		{%- endif %}
