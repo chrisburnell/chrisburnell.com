@@ -62,10 +62,9 @@ export const cacheDurations = {
 export const urls = {
 	fathom: "https://logs.chrisburnell.com",
 	license: "https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode",
-	indieauth_endpoint: "https://indieauth.com/auth",
-	indieauth_token: "https://tokens.indieauth.com/token",
+	authorization_endpoint: "https://indieauth.com/auth",
+	token_endpoint: "https://tokens.indieauth.com/token",
 	micropub: "https://corvus.chrisburnell.com",
-	openid: "https://openid.indieauth.com/openid",
 	speedlify: "https://speedlify.chrisburnell.com",
 	superfeedr: "https://chrisburnell.superfeedr.com",
 	switchboard: "https://switchboard.p3k.io",

@@ -3,7 +3,7 @@
 	{% if item.data.category == 'beer' -%}
 		{% set item_url = 'https://untappd.com/user/chrisburnell/checkin/' + item.data.page.fileSlug %}
 	{%- else -%}
-		{% set item_url = (item.data.of_url | default(item.url)) if item.data.clickthrough else item.url -%}
+		{% set item_url = item.data.of_url if (not item.url and item.data.clickthrough) else item.url -%}
 	{%- endif -%}
 	{% set stargazers = item.data.stargazers | default(0) -%}
 	{% set show_updated = item.data.updated and ((item.data.updated | friendlyDate) !== (item.data.date | friendlyDate)) -%}
