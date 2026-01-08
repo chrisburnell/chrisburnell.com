@@ -7,9 +7,26 @@
 @use "../abstracts/mixins-scss" as *;
 @use "../generated/tokens" as *;
 
+:is(.popover-settings, .popover-navigation) {
+	@supports (position-anchor: --example) {
+		position-anchor: --anchor-header;
+		inset: initial;
+		inset-block-start: anchor(bottom);
+		inset-inline-end: calc(anchor(right) + var(--gutter-start, var(--gutter, var(--size-gutter))));
+		transform: none;
+
+		@starting-style {
+			transform: translateY(var(--size-medium));
+		}
+	}
+}
+
 .popover-settings {
 	max-block-size: 100vb;
 	max-block-size: 100dvb;
+
+	@supports (position-anchor: --example) {
+	}
 
 	& legend {
 		grid-column: 1 / -1;

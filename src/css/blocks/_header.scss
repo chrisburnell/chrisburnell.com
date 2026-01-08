@@ -4,6 +4,7 @@
 ////
 
 .header {
+	anchor-name: --anchor-header;
 	container: header / inline-size;
 	background-color: var(--background-color, light-dark(color-mix(in oklab, var(--color-bear), var(--color-snowy)), color-mix(in oklab, var(--color-thunder), var(--color-mineshaft) 80%)));
 	overflow-y: hidden;
