@@ -13,7 +13,7 @@
 ///     Defines the line height of the button.
 ////
 
-@use "../abstracts/mixins";
+@use "../abstracts/mixins-scss" as *;
 
 button {
 	appearance: none;
@@ -26,7 +26,7 @@ button {
 	user-select: text;
 
 	&[disabled] {
-		@include mixins.non-selectable;
+		@include non-selectable;
 		opacity: var(--opacity-50);
 		cursor: not-allowed;
 	}
@@ -35,7 +35,7 @@ button {
 :is(button:not(.anchor), .button, [type=button], [role=tab]) {
 	--outline-color: var(--color-raven);
 
-	@include mixins.non-selectable;
+	@include non-selectable;
 	background-color: var(--color-bowhead);
 	color: var(--color-snowy) !important;
 	min-inline-size: max(fit-content, var(--button-min-inline-size, 8em));
@@ -81,7 +81,7 @@ button {
 	}
 
 	& svg {
-		@include mixins.non-interactive;
+		@include non-interactive;
 	}
 }
 

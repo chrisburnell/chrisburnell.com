@@ -4,7 +4,7 @@
 /// @link https://chrisburnell.com/styleguide/#inline-elements
 ////
 
-@use "../abstracts/mixins";
+@use "../abstracts/mixins-scss" as *;
 
 :is(a:not(.button), .anchor) {
 	--outline-color: var(--color-raven);
@@ -30,7 +30,7 @@
 		text-underline-offset var(--transition-duration-short) var(--transition-function);
 
 	&[disabled] {
-		@include mixins.non-selectable;
+		@include non-selectable;
 		opacity: var(--opacity-50);
 		cursor: not-allowed;
 	}

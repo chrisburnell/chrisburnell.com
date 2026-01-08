@@ -17,8 +17,8 @@
 ///     Defines how wide each item should be, ideally, as a maximum.
 ////
 
-@use "../abstracts/mixins";
-@use "../generated/tokens";
+@use "../abstracts/mixins-scss" as *;
+@use "../generated/tokens" as *;
 
 .grid,
 %grid {
@@ -46,12 +46,12 @@
 		--grid-min-inline-size: clamp(8rem, 50% - var(--column-gap, var(--gap, var(--size-gutter))), 16rem);
 	}
 
-	@each $name, $value in tokens.$breakpoints {
+	@each $name, $value in $breakpoints {
 		&[data-layout="50-50-#{$name}"] {
-			@include mixins.cqi(null, null, $name) {
+			@include cqi(null, null, $name) {
 				--grid-min-inline-size: 100%;
 			}
-			@include mixins.cqi(null, $name) {
+			@include cqi(null, $name) {
 				--grid-min-inline-size: clamp(8rem, 50% - var(--column-gap, var(--gap, var(--size-gutter))), 16rem);
 			}
 		}

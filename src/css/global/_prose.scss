@@ -3,7 +3,7 @@
 /// @group global
 ////
 
-@use "../abstracts/mixins";
+@use "../abstracts/mixins-scss" as *;
 
 :is(p, blockquote, details, table, dl, ol, ul, figure:not([class])) {
 	break-inside: avoid;
@@ -15,7 +15,7 @@
 }
 
 :is(abbr, dfn)[title] {
-	@include mixins.italic;
+	@include italic;
 	text-decoration: underline;
 	text-decoration-color: var(--color-nickel);
 	text-decoration-style: dotted;
@@ -57,7 +57,7 @@ mark {
 	font-variation-settings: "ital" 125 !important;
 }
 .soft-italic {
-	@include mixins.soft-italic;
+	@include soft-italic;
 }
 
 :is(b, strong),

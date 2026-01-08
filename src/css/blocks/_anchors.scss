@@ -3,7 +3,7 @@
 /// @group blocks
 ////
 
-@use "../abstracts/mixins";
+@use "../abstracts/mixins-scss" as *;
 
 h2 :is(a:not(.button), .anchor):not(:hover, :focus, :active) {
 	text-decoration: none;
@@ -57,7 +57,7 @@ sup > a:first-child:last-child,
 	font-weight: var(--font-weight-semibold);
 
 	:is(h1, h2, h3, h4, h5, h6):not(:hover, :focus-within) > &:not(:hover, :focus, :active) {
-		@include mixins.visually-hidden;
+		@include visually-hidden;
 	}
 
 	&:is(:hover, :focus, :active) {

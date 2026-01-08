@@ -3,7 +3,7 @@
 /// @group global
 ////
 
-@use "../abstracts/mixins";
+@use "../abstracts/mixins-scss" as *;
 
 figure {
 	max-inline-size: 100%;
@@ -46,6 +46,6 @@ figure {
 
 	& > a figcaption {
 		color: light-dark(var(--color-nickel), var(--color-yeti));
-		@include mixins.italic;
+		@include italic;
 	}
 }

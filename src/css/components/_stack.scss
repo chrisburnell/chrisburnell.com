@@ -3,7 +3,7 @@
 /// @group components
 ////
 
-@use "../abstracts/mixins";
+@use "../abstracts/mixins-scss" as *;
 
 .stack {
 	display: grid;
@@ -32,7 +32,7 @@
 		column-gap: var(--size-medium);
 		break-inside: avoid;
 
-		@include mixins.cqi(null, "small") {
+		@include cqi(null, "small") {
 			grid-template-columns:
 				[description-start title-start]
 				auto
@@ -71,7 +71,7 @@
 		font-size: var(--font-size-delta);
 		text-wrap: initial;
 
-		@include mixins.cqi(null, "small") {
+		@include cqi(null, "small") {
 			grid-row: top / middle;
 		}
 	}
@@ -80,7 +80,7 @@
 		grid-column: pills;
 		grid-row: bottom;
 
-		@include mixins.cqi(null, "small") {
+		@include cqi(null, "small") {
 			grid-row: top / middle;
 			text-align: end;
 		}
@@ -89,7 +89,7 @@
 		text-align: end;
 	}
 	& article:has(> p) .pills {
-		@include mixins.cqi(null, "small") {
+		@include cqi(null, "small") {
 			padding-block-start: var(--size-tiny);
 		}
 	}
@@ -109,7 +109,7 @@
 	}
 
 	& time {
-		@include mixins.italic;
+		@include italic;
 		text-align: end;
 		white-space: nowrap;
 	}
@@ -125,7 +125,7 @@
 		grid-row: middle;
 		display: none;
 
-		@include mixins.cqi(null, "small") {
+		@include cqi(null, "small") {
 			grid-row: bottom;
 		}
 	}

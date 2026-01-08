@@ -3,7 +3,7 @@
 /// @group blocks
 ////
 
-@use "../abstracts/mixins";
+@use "../abstracts/mixins-scss" as *;
 
 .footer {
 	container: footer / inline-size;
@@ -45,13 +45,13 @@
 }
 
 .footer__grid {
-	@include mixins.cqi(null, null, "medium") {
+	@include cqi(null, null, "medium") {
 		display: flex;
 		flex-direction: column;
 		gap: var(--size-gutter);
 	}
 
-	@include mixins.cqi(null, "medium") {
+	@include cqi(null, "medium") {
 		display: grid;
 		grid-template-columns:
 			[left-start]
@@ -94,17 +94,17 @@
 	& .badges {
 		column-gap: var(--size-small);
 
-		@include mixins.cqi(null, "medium") {
+		@include cqi(null, "medium") {
 			justify-content: end;
 		}
 
-		@include mixins.cqi(null, null, "medium") {
+		@include cqi(null, null, "medium") {
 			margin-block-start: var(--size-small-medium);
 		}
 	}
 
 	& .speedlify {
-		@include mixins.cqi(null, "medium") {
+		@include cqi(null, "medium") {
 			text-align: end;
 		}
 	}

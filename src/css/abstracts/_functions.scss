@@ -14,8 +14,8 @@
 }
 
 /**
- * @param {number} --value
- * @returns {number}
+ * @param {length|number} --value
+ * @returns {length|number}
  * @example margin-inline: --negate(1em);
  */
 @function --negate(--value type(<length> | <number>)) returns type(<length> | <number>) {
@@ -89,20 +89,15 @@
 
 /**
  * @param {color} --color
- * @param {string} [--level]
  * @returns {color}
- * @example color: --contrasting-color(rebeccapurple);
- * @example color: --contrasting-color(rebeccapurple, aaa);
+ * @example color: --contrast-color(rebeccapurple);
  */
-@function --contrasting-color(--color <color>, --level <string>: aa) returns <color> {
-	result: contrast-color(var(--color) tbd-bg wcag(var(--level)),
-		oklch(from var(--color) 0   c h / alpha),
-		oklch(from var(--color) 0.2 c h / alpha),
-		oklch(from var(--color) 0.4 c h / alpha),
-		oklch(from var(--color) 0.6 c h / alpha),
-		oklch(from var(--color) 0.8 c h / alpha),
-		oklch(from var(--color) 1   c h / alpha)
-	);
+@function --contrast-color(--color <color>) returns <color> {
+	@supports not (color: contrast-color(rebeccapurple)) {
+		--l: clamp(0, (l / var(--l-threshold, 0.623) - 1) * -infinity, 1);
+		result: oklch(from var(--color) var(--l) 0 h);
+	}
+	result: color-contrast(var(--color));
 }
 
 /**

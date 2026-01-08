@@ -3,7 +3,7 @@
 /// @group global
 ////
 
-@use "../abstracts/mixins";
+@use "../abstracts/mixins-scss" as *;
 
 :is(ol, ul) {
 	list-style-type: ""; // preferred over list-style: none; as it preserves semantics
@@ -113,7 +113,7 @@ dl {
 	margin-block-start: 0;
 	overflow: hidden;
 
-	@include mixins.cqi(null, "tiny") {
+	@include cqi(null, "tiny") {
 		grid-template-columns: minmax(min-content, 33.33%) 1fr;
 	}
 }

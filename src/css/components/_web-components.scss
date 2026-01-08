@@ -3,7 +3,7 @@
 /// @group components
 ////
 
-@use "../abstracts/mixins";
+@use "../abstracts/mixins-scss" as *;
 
 is-land:has(details-utils, seven-minute-tabs) {
 	display: block;
@@ -25,7 +25,7 @@ seven-minute-tabs {
 		&[hidden] {
 			opacity: 0;
 			visibility: hidden;
-			@include mixins.non-interactive;
+			@include non-interactive;
 		}
 	}
 
@@ -33,7 +33,7 @@ seven-minute-tabs {
 		& [role="tabpanel"]:first-of-type {
 			opacity: 0;
 			visibility: hidden;
-			@include mixins.non-interactive;
+			@include non-interactive;
 		}
 	}
 }

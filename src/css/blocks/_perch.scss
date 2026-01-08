@@ -3,13 +3,13 @@
 /// @group blocks
 ////
 
-@use "../abstracts/mixins";
+@use "../abstracts/mixins-scss" as *;
 
 .perch {
 	position: relative;
 
 	&::after {
-		@include mixins.non-interactive;
+		@include non-interactive;
 		content: "";
 		background-image: url("/images/raven.svg");
 		background-repeat: no-repeat;

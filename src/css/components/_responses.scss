@@ -3,7 +3,7 @@
 /// @group components
 ////
 
-@use "../abstracts/mixins";
+@use "../abstracts/mixins-scss" as *;
 
 .responses {
 	--flow-space: var(--size-medium);
@@ -23,11 +23,11 @@
 	grid-gap: var(--size-small-medium);
 	line-height: var(--line-height-medium);
 
-	@include mixins.cqi(null, null, "small") {
+	@include cqi(null, null, "small") {
 		grid-template-columns: 1fr min-content;
 	}
 
-	@include mixins.cqi(null, "small") {
+	@include cqi(null, "small") {
 		grid-template-columns: minmax(40cqi, auto) 1fr min-content;
 	}
 
@@ -39,18 +39,18 @@
 		grid-column: 1 / -1;
 		max-inline-size: 100%;
 
-		@include mixins.cqi(null, "small") {
+		@include cqi(null, "small") {
 			grid-column: 2 / -1;
 		}
 	}
 }
 
 .responses__label {
-	@include mixins.cqi(null, null, "small") {
+	@include cqi(null, null, "small") {
 		grid-column: 1 / -1;
 	}
 
-	@include mixins.cqi(null, "small") {
+	@include cqi(null, "small") {
 		grid-row: span 2;
 		padding-inline-end: var(--size-small-medium);
 	}

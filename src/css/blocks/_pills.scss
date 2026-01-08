@@ -3,10 +3,10 @@
 /// @group blocks
 ////
 
-@use "../abstracts/mixins";
+@use "../abstracts/mixins-scss" as *;
 
 :is(.pills, .pill) {
-	@include mixins.non-selectable;
+	@include non-selectable;
 }
 
 .pills {
@@ -39,7 +39,7 @@
 	}
 
 	&[title]:not([href]) {
-		@include mixins.soft-italic;
+		@include soft-italic;
 		cursor: help;
 	}
 

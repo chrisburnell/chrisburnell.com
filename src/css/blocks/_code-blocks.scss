@@ -3,7 +3,7 @@
 /// @group blocks
 ////
 
-@use "../abstracts/mixins";
+@use "../abstracts/mixins-scss" as *;
 
 .code-block {
 	position: relative;
@@ -182,21 +182,21 @@ pre:has(.token:is(.inserted, .deleted):not(.prefix)) code {
 }
 .token.deleted:not(.prefix) {
 	background-color: oklch(from var(--color-maple) l c h / 0.333);
-	@include mixins.non-selectable;
+	@include non-selectable;
 }
 
 .token.prefix:is(.unchanged, .inserted, .deleted) {
 	position: absolute;
 	left: 0;
 	padding-inline: 1ch;
-	@include mixins.non-selectable;
+	@include non-selectable;
 }
 
 .token:is(.important, .bold) {
 	font-weight: var(--font-weight-semibold);
 }
 .token.italic {
-	@include mixins.italic;
+	@include italic;
 }
 
 .token.entity {

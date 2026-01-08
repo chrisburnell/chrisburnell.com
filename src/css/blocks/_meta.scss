@@ -3,7 +3,7 @@
 /// @group blocks
 ////
 
-@use "../abstracts/mixins";
+@use "../abstracts/mixins-scss" as *;
 
 .meta {
 	container: meta / inline-size;
@@ -21,7 +21,7 @@
 		}
 
 		&:has(.meta__information):has(.responses) {
-			@include mixins.cqi(null, "medium") {
+			@include cqi(null, "medium") {
 				grid-template-columns: repeat(6, 1fr);
 				grid-template-rows: auto;
 
@@ -32,7 +32,7 @@
 		}
 
 		&:has(.responses) .box:has(> .meta__information) {
-			@include mixins.cqi(null, "medium") {
+			@include cqi(null, "medium") {
 				grid-row: 1;
 				grid-column: 1 / 3 !important;
 			}
@@ -43,10 +43,10 @@
 			grid-column: 1 / -1;
 		}
 		&:has(.meta__information) .responses {
-			@include mixins.cqi(null, null, "medium") {
+			@include cqi(null, null, "medium") {
 				grid-row: 2;
 			}
-			@include mixins.cqi(null, "medium") {
+			@include cqi(null, "medium") {
 				grid-column: 3 / -1 !important;
 			}
 		}

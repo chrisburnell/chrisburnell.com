@@ -4,7 +4,7 @@
 /// @link https://chrisburnell.com/styleguide/
 ////
 
-@use "../abstracts/mixins";
+@use "../abstracts/mixins-scss" as *;
 
 @layer pages {
 	.palette {
@@ -12,7 +12,7 @@
 		display: flex;
 		flex-wrap: wrap;
 
-		@include mixins.cqi(null, null, "tiny") {
+		@include cqi(null, null, "tiny") {
 			flex-direction: column;
 		}
 
@@ -25,11 +25,11 @@
 			break-inside: avoid;
 			font-variant-numeric: tabular-nums;
 
-			@include mixins.cqi(null, null, "tiny") {
+			@include cqi(null, null, "tiny") {
 				flex: 1 0 100%;
 			}
 
-			@include mixins.cqi(null, "tiny") {
+			@include cqi(null, "tiny") {
 				flex: 1 0 50%;
 			}
 
@@ -40,7 +40,7 @@
 
 		&.thirds li,
 		& .third {
-			@include mixins.cqi(null, "tiny") {
+			@include cqi(null, "tiny") {
 				flex: 1 0 33.333%;
 			}
 		}

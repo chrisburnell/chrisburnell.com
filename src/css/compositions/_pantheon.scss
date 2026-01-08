@@ -14,7 +14,7 @@
 ///     Defines the inline-size of the outdent.
 ////
 
-@use "../abstracts/mixins";
+@use "../abstracts/mixins-scss" as *;
 
 .pantheon {
 	display: grid;
@@ -57,7 +57,7 @@
 	&:not(.full) {
 		// Only show indent & outdent above medium on non-full-inline-size
 		// pages. This effeectively shortens the inline-size of the content.
-		@include mixins.cqi(null, "medium") {
+		@include cqi(null, "medium") {
 			--indent-size: 1fr;
 			--indent-gap: var(--size-gap);
 			--outdent-gap: var(--size-gap);
@@ -66,7 +66,7 @@
 	}
 
 	&:has(.toc) {
-		@include mixins.cqi(null, "large") {
+		@include cqi(null, "large") {
 			@media screen {
 				--indent-size: var(--size-aside);
 				--outdent-gap: 0;
@@ -85,7 +85,7 @@
 	grid-column: indent / outdent;
 
 	.pantheon:has(> svg-sparkline) & {
-		@include mixins.cqi(null, "medium") {
+		@include cqi(null, "medium") {
 			grid-column: indent / content-left;
 			align-self: center;
 		}
@@ -97,11 +97,11 @@
 	grid-column: indent / outdent;
 	margin-block-start: var(--size-small);
 
-	@include mixins.cqi(null, "small") {
+	@include cqi(null, "small") {
 		justify-self: center;
 	}
 }
-@include mixins.cqi(null, "medium") {
+@include cqi(null, "medium") {
 	.pantheon:has(> .breadcrumbs) {
 		& > svg-sparkline {
 			grid-row: breadcrumbs;
@@ -131,7 +131,7 @@
 	grid-column: content;
 	grid-row: toc;
 
-	@include mixins.cqi(null, "large") {
+	@include cqi(null, "large") {
 		grid-column: indent;
 		grid-row: description / content;
 	}

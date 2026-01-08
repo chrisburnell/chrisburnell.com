@@ -3,7 +3,7 @@
 /// @group components
 ////
 
-@use "../abstracts/mixins";
+@use "../abstracts/mixins-scss" as *;
 
 .deck {
 	& :not(.box) > .deck {
@@ -56,12 +56,12 @@
 
 .deck__context {
 	font-family: var(--font-family-serif);
-	@include mixins.italic;
+	@include italic;
 }
 
 .deck__meta {
 	& time {
-		@include mixins.italic;
+		@include italic;
 
 		& sup::before {
 			content: " ";

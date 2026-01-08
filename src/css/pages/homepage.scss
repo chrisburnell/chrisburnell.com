@@ -4,18 +4,18 @@
 /// @link https://chrisburnell.com/
 ////
 
-@use "../abstracts/mixins";
+@use "../abstracts/mixins-scss" as *;
 
 @layer pages {
 	.pantheon {
-		@include mixins.cqi("main", "medium", "gigantic") {
+		@include cqi("main", "medium", "gigantic") {
 			--indent-size: 1fr;
 			--indent-gap: var(--size-gap);
 			--outdent-gap: var(--size-gap);
 			--outdent-size: 1fr;
 		}
 
-		@include mixins.cqi("main", "gigantic") {
+		@include cqi("main", "gigantic") {
 			max-inline-size: var(--size-breakpoint-behemoth);
 		}
 	}
@@ -37,19 +37,19 @@
 			--box-max-inline-size: var(--size-line-length);
 		}
 
-		@include mixins.cqi("main", null, "gigantic") {
+		@include cqi("main", null, "gigantic") {
 			& > div {
 				grid-column: 1 / -1;
 			}
 		}
 
-		@include mixins.cqi("main", "large", "gigantic") {
+		@include cqi("main", "large", "gigantic") {
 			& :is([id="collections"], [id="pages"]) {
 				grid-column: span 1;
 			}
 		}
 
-		@include mixins.cqi("main", "gigantic") {
+		@include cqi("main", "gigantic") {
 			grid-template-rows: repeat(var(--rows, 4), auto);
 
 			& > [id="latest"] {

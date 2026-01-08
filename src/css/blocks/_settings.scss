@@ -4,8 +4,8 @@
 ////
 
 @use "sass:map";
-@use "../abstracts/mixins";
-@use "../generated/tokens";
+@use "../abstracts/mixins-scss" as *;
+@use "../generated/tokens" as *;
 
 .popover-settings {
 	max-block-size: 100vb;
@@ -19,7 +19,7 @@
 .popover-navigation {
 	padding-inline: var(--size-large);
 
-	@media (width > #{map.get(tokens.$breakpoints, "tiny")}) {
+	@media (width > #{map.get($breakpoints, "tiny")}) {
 		display: none;
 	}
 
@@ -48,7 +48,7 @@
 	filter: drop-shadow(0 0 var(--size-border-thin) oklch(from var(--color-thunder) l c h / var(--opacity-50)));
 
 	svg {
-		@include mixins.non-interactive;
+		@include non-interactive;
 		fill: var(--color-snowy);
 		min-inline-size: calc(var(--font-size-default) * var(--line-height-default));
 		min-block-size: calc(var(--font-size-default) * var(--line-height-default));
@@ -70,7 +70,7 @@
 }
 
 .popover-navigation-button {
-	@media (width > #{map.get(tokens.$breakpoints, "tiny")}) {
+	@media (width > #{map.get($breakpoints, "tiny")}) {
 		display: none;
 	}
 
@@ -91,22 +91,22 @@
 	place-items: center;
 	gap: 1em;
 
-	@include mixins.cqi(null, "small") {
+	@include cqi(null, "small") {
 		grid-template-columns: max-content auto;
 	}
 
-	@include mixins.cqi(null, null, "small") {
+	@include cqi(null, null, "small") {
 		min-inline-size: 66vi;
 	}
 
 	label {
 		inline-size: 100%;
 
-		@include mixins.cqi(null, null, "small") {
+		@include cqi(null, null, "small") {
 			text-align: start;
 		}
 
-		@include mixins.cqi(null, "small") {
+		@include cqi(null, "small") {
 			text-align: end;
 		}
 	}

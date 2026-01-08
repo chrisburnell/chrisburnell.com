@@ -3,8 +3,8 @@
 /// @group utilities
 ////
 
-@use "../abstracts/mixins";
-@use "../generated/tokens";
+@use "../abstracts/mixins-scss" as *;
+@use "../generated/tokens" as *;
 
 // Full Bleed
 .full-bleed {
@@ -48,17 +48,17 @@
 // oooooong text
 .hyphen,
 .hyphenate {
-	@include mixins.hyphenate;
+	@include hyphenate;
 }
 
 // Make things non-selectable
 .non-selectable {
-	@include mixins.non-selectable;
+	@include non-selectable;
 }
 
 // Make things non-interactive
 .non-interactive {
-	@include mixins.non-interactive;
+	@include non-interactive;
 }
 
 // Turn off motion (for reduced-motion-like cases)
@@ -97,7 +97,7 @@
 // Make text serifed and italicised
 .fancy {
 	font-family: var(--font-family-serif);
-	@include mixins.italic;
+	@include italic;
 }
 
 // For salty/silly remarks
@@ -242,7 +242,7 @@
 // Set an appropriately-accessible text colour for each colour in the palette
 // TODO: Uses "pseudo" color-contrast() using relative color syntax until
 // color-contrast() has more widespread adoption
-@each $name, $_ in tokens.$colors {
+@each $name, $_ in $colors {
 	.background--#{$name} {
 		background-color: var(--color-#{$name});
 		color: oklch(
@@ -268,7 +268,7 @@
 	display: block;
 	box-shadow: inset 0 0 0 var(--size-border-thin) currentColor;
 }
-@each $name, $_ in tokens.$sizes {
+@each $name, $_ in $sizes {
 	.size-example--#{$name} {
 		inline-size: var(--size-#{$name});
 		block-size: var(--size-#{$name});

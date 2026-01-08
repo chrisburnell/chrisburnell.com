@@ -4,7 +4,7 @@
 /// @link https://chrisburnell.com/styleguide/#code-block
 ////
 
-@use "../abstracts/mixins";
+@use "../abstracts/mixins-scss" as *;
 
 :is(code, kbd, samp, var, .monospace) {
 	font-family: var(--font-family-monospace);
@@ -56,7 +56,7 @@ pre {
 	overflow: hidden;
 	position: relative;
 
-	@include mixins.cqi(null, "small") {
+	@include cqi(null, "small") {
 		tab-size: 4;
 	}
 

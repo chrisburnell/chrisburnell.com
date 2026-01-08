@@ -3,7 +3,7 @@
 /// @group blocks
 ////
 
-@use "../abstracts/mixins";
+@use "../abstracts/mixins-scss" as *;
 
 .description {
 	font-size: var(--font-size-gamma);
@@ -11,7 +11,7 @@
 	text-wrap: balance;
 
 	& p {
-		@include mixins.cqi(null, "small") {
+		@include cqi(null, "small") {
 			inline-size: 100%;
 			max-inline-size: var(--size-line-length);
 			margin-inline: auto;
@@ -23,7 +23,7 @@
 	}
 
 	& time {
-		@include mixins.italic;
+		@include italic;
 
 		& sup::before {
 			content: " ";

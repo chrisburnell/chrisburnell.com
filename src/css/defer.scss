@@ -5,14 +5,7 @@
 /// @link https://github.com/chrisburnell/chrisburnell.com/tree/main/src/css
 ////
 
-@use "sass:color";
-@use "sass:math";
 @use "sass:meta";
-
-@use "abstracts/mixins";
-
-// Design Tokens
-@use "generated/tokens";
 
 // Abstracts
 // @include meta.load-css("abstracts/functions");

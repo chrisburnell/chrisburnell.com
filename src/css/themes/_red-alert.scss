@@ -3,7 +3,7 @@
 /// @group themes
 ////
 
-@use "../abstracts/mixins";
+@use "../abstracts/mixins-scss" as *;
 
 :root:has([name="theme"] [value*="red-alert"]:checked),
 [data-theme*="red-alert"],

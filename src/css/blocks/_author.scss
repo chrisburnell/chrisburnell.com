@@ -3,7 +3,7 @@
 /// @group blocks
 ////
 
-@use "../abstracts/mixins";
+@use "../abstracts/mixins-scss" as *;
 
 .author {
 	display: flex;
@@ -22,17 +22,17 @@
 	margin-block-end: var(--size-small);
 	font-family: var(--font-family-serif);
 	font-size: var(--font-size-small);
-	@include mixins.italic;
+	@include italic;
 	line-height: var(--line-height-medium);
 	text-align: center;
 	text-decoration: none;
 
-	@include mixins.cqi(null, "medium") {
+	@include cqi(null, "medium") {
 		order: 2;
 	}
 
 	&::before {
-		@include mixins.non-interactive;
+		@include non-interactive;
 		content: "";
 		opacity: 0;
 		background-image: url("/images/avatar-pixelated.png");
@@ -147,7 +147,7 @@
 
 	font-size: var(--font-size-small);
 
-	@include mixins.cqi(null, "medium") {
+	@include cqi(null, "medium") {
 		text-align: end;
 	}
 }

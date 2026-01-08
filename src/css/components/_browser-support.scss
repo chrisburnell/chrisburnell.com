@@ -3,14 +3,14 @@
 /// @group components
 ////
 
-@use "../abstracts/mixins";
+@use "../abstracts/mixins-scss" as *;
 
 .support,
 .support__meta {
 	display: flex;
 	gap: var(--size-gutter);
 
-	@include mixins.cqi(null, "small") {
+	@include cqi(null, "small") {
 		gap: var(--size-large);
 	}
 }
@@ -18,7 +18,7 @@
 .support {
 	flex-direction: column-reverse;
 
-	@include mixins.cqi(null, "small") {
+	@include cqi(null, "small") {
 		flex-direction: row-reverse;
 	}
 }

@@ -6,8 +6,8 @@
 @use "sass:map";
 @use "sass:math";
 @use "../../../node_modules/utopia-core-scss/src/utopia" as utopia;
-@use "../abstracts/mixins";
-@use "../generated/tokens";
+@use "../abstracts/mixins-scss" as *;
+@use "../generated/tokens" as *;
 
 :root {
 	// Monochrome colors components
@@ -36,7 +36,7 @@
 	--color-coyote: color-mix(in oklab, var(--color-raven), var(--color-snowy) 54%);
 	--color-bear: color-mix(in oklab, var(--color-raven), var(--color-snowy) 75%);
 
-	@each $name, $value in map.merge(tokens.$colors-secondary, tokens.$colors-tertiary) {
+	@each $name, $value in map.merge($colors-secondary, $colors-tertiary) {
 		--color-#{$name}: #{$value};
 	}
 	--body-background-color: light-dark(color-mix(in oklab, var(--color-bear), var(--color-snowy) 90%), color-mix(in oklab, var(--color-mineshaft), var(--color-wolf) 40%));
@@ -47,7 +47,7 @@
 	}
 	--opacity-05: 0.05;
 
-	@each $name, $data in tokens.$sizes {
+	@each $name, $data in $sizes {
 		--size-#{$name}-min: #{math.div(map.get($data, "minSize"), 16) * 1rem};
 		--size-#{$name}: #{utopia.calculateClamp((
 			"minWidth": map.get($data, "minWidth"),
@@ -58,7 +58,7 @@
 		--size-#{$name}-max: #{math.div(map.get($data, "maxSize"), 16) * 1rem};
 	}
 	$sizes-seen: ();
-	@each $a-name, $a-data in tokens.$sizes {
+	@each $a-name, $a-data in $sizes {
 		@each $b-name, $b-data in $sizes-seen {
 			--size-#{$b-name}-#{$a-name}: #{utopia.calculateClamp((
 				"minWidth": map.get($b-data, "minWidth"),
@@ -69,18 +69,18 @@
 		}
 		$sizes-seen: map.set($sizes-seen, $a-name, $a-data);
 	}
-	@each $name, $value in tokens.$sizes-extra {
+	@each $name, $value in $sizes-extra {
 		--size-#{$name}: #{$value};
 	}
-	@each $name, $value in tokens.$breakpoints {
+	@each $name, $value in $breakpoints {
 		--size-breakpoint-#{$name}: #{$value};
 	}
 
-	@each $name, $value in tokens.$font-families {
+	@each $name, $value in $font-families {
 		--font-family-#{$name}: #{$value};
 	}
 
-	@each $name, $data in tokens.$font-sizes {
+	@each $name, $data in $font-sizes {
 		--font-size-#{$name}-min: #{math.div(map.get($data, "minSize"), 16) * 1rem};
 		--font-size-#{$name}: #{utopia.calculateClamp((
 			"minWidth": map.get($data, "minWidth"),
@@ -91,7 +91,7 @@
 		--font-size-#{$name}-max: #{math.div(map.get($data, "maxSize"), 16) * 1rem};
 	}
 	$font-sizes-seen: ();
-	@each $a-name, $a-data in tokens.$font-sizes {
+	@each $a-name, $a-data in $font-sizes {
 		@each $b-name, $b-data in $font-sizes-seen {
 			--font-size-#{$b-name}-#{$a-name}: #{utopia.calculateClamp((
 				"minWidth": map.get($b-data, "minWidth"),
@@ -103,15 +103,15 @@
 		$font-sizes-seen: map.set($font-sizes-seen, $a-name, $a-data);
 	}
 
-	@each $name, $value in tokens.$font-weights {
+	@each $name, $value in $font-weights {
 		--font-weight-#{$name}: #{$value};
 	}
 
-	@each $name, $value in tokens.$line-heights {
+	@each $name, $value in $line-heights {
 		--line-height-#{$name}: #{$value};
 	}
 
-	@each $name, $value in tokens.$z-indexes {
+	@each $name, $value in $z-indexes {
 		--z-index-#{$name}: #{$value};
 	}
 
