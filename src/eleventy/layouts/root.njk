@@ -37,7 +37,9 @@
 		<link rel="authorization_endpoint" href="{{ site.urls.authorization_endpoint }}">
 		<link rel="token_endpoint" href="{{ site.urls.token_endpoint }}">
 		<link rel="micropub" href="{{ site.urls.micropub }}">{% if page.url == '/' %}
+		<link rel="me" href="https://auth.chrisburnell.com">
 		<link rel="me" href="https://github.com/{{ author.github }}">
+		<link rel="me" href="{{ author.git }}/{{ author.git_user }}">
 		<link rel="me atproto" href="https://bsky.app/profile/{{ author.bluesky }}">{% endif %}
 
 		<link rel="author" href="/humans.txt">

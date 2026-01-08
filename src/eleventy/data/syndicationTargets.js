@@ -1,6 +1,10 @@
 import {
 	bluesky,
 	codepen,
+	gist,
+	gist_user,
+	git,
+	git_user,
 	github,
 	mastodon_domain,
 	speakerdeck,
@@ -16,6 +20,14 @@ export default [
 	{
 		title: "CodePen",
 		url: `https://codepen.io/${codepen}`,
+	},
+	{
+		title: "Git",
+		url: `${git}/${git_user}`,
+	},
+	{
+		title: "Gist",
+		url: `${gist}/${gist_user}`,
 	},
 	{
 		title: "GitHub",

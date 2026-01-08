@@ -105,7 +105,7 @@
     "browserslist": "^4.28.1",
     "caniuse-api": "^3.0.0",
     "cheerio": "^1.1.2",
-    "chrisburnell": "^35.0.7",
+    "chrisburnell": "^35.0.8",
     "deepmerge": "^4.3.1",
     "dotenv": "^17.2.3",
     "eleventy-plugin-og-image": "^4.2.1",

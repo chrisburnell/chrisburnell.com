@@ -65,12 +65,32 @@ description: Find me all over the web (mostly)!
 		</h1>
 	</article>
 	<article class=" [ flow ] ">
+		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://echofeed.app' | urlencode }}/" class=" [ avatar ] " width="30" height="30" loading="lazy" decoding="async">
+		<h1>
+			<a href="https://echofeed.app/@{{ author.echofeed }}" rel="me external noopener">
+				EchoFeed
+				<br>
+				<small>{{ author.echofeed }}</small>
+			</a>
+		</h1>
+	</article>
+	<article class=" [ flow ] ">
 		<img src="https://v1.indieweb-avatar.11ty.dev/{{ author.git | urlencode }}/" class=" [ avatar ] " width="30" height="30" loading="lazy" decoding="async">
 		<h1>
 			<a href="{{ author.git }}/{{ author.git_user }}" rel="me external noopener">
 				Git (Self-Hosted)
 				<br>
 				<small>{{ author.git_user }}</small>
+			</a>
+		</h1>
+	</article>
+	<article class=" [ flow ] ">
+		<img src="https://v1.indieweb-avatar.11ty.dev/{{ author.gist | urlencode }}/" class=" [ avatar ] " width="30" height="30" loading="lazy" decoding="async">
+		<h1>
+			<a href="{{ author.gist }}/{{ author.gist_user }}" rel="me external noopener">
+				Pastebin/Gist (Self-Hosted)
+				<br>
+				<small>{{ author.gist_user }}</small>
 			</a>
 		</h1>
 	</article>
@@ -111,6 +131,16 @@ description: Find me all over the web (mostly)!
 				Last.fm
 				<br>
 				<small>{{ author.lastfm }}</small>
+			</a>
+		</h1>
+	</article>
+	<article class=" [ flow ] ">
+		<img src="https://v1.indieweb-avatar.11ty.dev/{{ 'https://libre.fm' | urlencode }}/" class=" [ avatar ] " width="30" height="30" loading="lazy" decoding="async">
+		<h1>
+			<a href="https://libre.fm/user/{{ author.librefm }}" rel="me external noopener">
+				Libre.fm
+				<br>
+				<small>{{ author.libfrefm }}</small>
 			</a>
 		</h1>
 	</article>
