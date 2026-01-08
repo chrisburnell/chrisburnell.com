@@ -41,6 +41,7 @@ export default async function (collection) {
 							? item.data.categoryPlural
 							: item.data.category,
 				collectionName: `category${item.data.category.charAt(0).toUpperCase()}${item.data.category.slice(1)}`,
+				clickthrough: !item.url && item.data.clickthrough,
 				review: item.data.mf_root === "review",
 				full: "categoryFull" in item.data || "full" in item.data,
 				masonry: "categoryMasonry" in item.data,

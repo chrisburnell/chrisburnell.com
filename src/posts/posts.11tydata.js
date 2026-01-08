@@ -50,7 +50,8 @@ export default {
 	eleventyComputed: {
 		categoryCollectionName: (data) =>
 			`category${data.category.charAt(0).toUpperCase()}${data.category.slice(1)}`,
-		canonical: (data) => siteURL + data.page.url,
+		canonical: (data) =>
+			data.page.url ? siteURL + data.page.url : undefined,
 		year: (data) => new Date(data.date).getFullYear(),
 		of_url: async (data) => getPropertyURL(data),
 		of_title: async (data) => getPropertyTitle(data),

@@ -5,44 +5,46 @@ description: "All the pages on this website."
 excludeFromSearch: true
 ---
 
-{% set projects = collections.projects | sitemapFilter | noRSSOnlyFilter -%}
-
 <div class="monospace">
-<a href="/">Homepage</a><br>
-├── <a href="/search/">Search</a><br>
-├── <a href="/explore/">Explore</a><br>
-├── <a href="/posts/">Posts <sup>({{ collections.posts | arePublished | sitemapFilter | noRSSOnlyFilter | getCollectionCount | numberStringFormat(true) }})</sup></a><br>
-│&nbsp;&nbsp;&nbsp;├── <a href="/posts/#categories">Categories <sup>({{ collections.categories.length | numberStringFormat(true) }})</sup></a><br>
-│&nbsp;&nbsp;&nbsp;├── <a href="/posts/#tags">Tags <sup>({{ collections.tags.length | numberStringFormat(true) }})</sup></a><br>
-│&nbsp;&nbsp;&nbsp;├── <a href="/writing/">Writing <sup>({{ collections.writings | arePublished | sitemapFilter | noRSSOnlyFilter | getCollectionCount | numberStringFormat(true) }})</sup></a><br>
-│&nbsp;&nbsp;&nbsp;├── <a href="/blog/">Blog <sup>({{ collections.blogPosts | arePublished | sitemapFilter | noRSSOnlyFilter | getCollectionCount | numberStringFormat(true) }})</sup></a><br>
-│&nbsp;&nbsp;&nbsp;├── <a href="/replies/">Replies <sup>({{ collections.replies | arePublished | sitemapFilter | noRSSOnlyFilter | getCollectionCount | numberStringFormat(true) }})</sup></a><br>
-│&nbsp;&nbsp;&nbsp;├── <a href="/rsvps/">RSVPs <sup>({{ collections.rsvps | arePublished | sitemapFilter | noRSSOnlyFilter | getCollectionCount | numberStringFormat(true) }})</sup></a><br>
-│&nbsp;&nbsp;&nbsp;├── <a href="/hot/">Hot Pages <sup>({{ site.limits.feed | numberStringFormat(true) }})</sup></a><br>
-│&nbsp;&nbsp;&nbsp;├── <a href="/popular/">Popular Pages <sup>({{ site.limits.feed | numberStringFormat(true) }})</sup></a><br>
+<a href="/">Homepage</a>
+├── <a href="/search/">Search</a>
+├── <a href="/explore/">Explore</a>
+├── <a href="/posts/">Posts <sup>({{ collections.posts | arePublished | sitemapFilter | noRSSOnlyFilter | getCollectionCount | numberStringFormat(true) }})</sup></a>
+│&nbsp;&nbsp;&nbsp;├── <a href="/posts/#categories">Categories <sup>({{ collections.categories.length | numberStringFormat(true) }})</sup></a>
+│&nbsp;&nbsp;&nbsp;├── <a href="/posts/#tags">Tags <sup>({{ collections.tags.length | numberStringFormat(true) }})</sup></a>
+│&nbsp;&nbsp;&nbsp;├── <a href="/writing/">Writing <sup>({{ collections.writings | arePublished | sitemapFilter | noRSSOnlyFilter | getCollectionCount | numberStringFormat(true) }})</sup></a>
+│&nbsp;&nbsp;&nbsp;├── <a href="/blog/">Blog <sup>({{ collections.blogPosts | arePublished | sitemapFilter | noRSSOnlyFilter | getCollectionCount | numberStringFormat(true) }})</sup></a>
+│&nbsp;&nbsp;&nbsp;├── <a href="/replies/">Replies <sup>({{ collections.replies | arePublished | sitemapFilter | noRSSOnlyFilter | getCollectionCount | numberStringFormat(true) }})</sup></a>
+│&nbsp;&nbsp;&nbsp;├── <a href="/rsvps/">RSVPs <sup>({{ collections.rsvps | arePublished | sitemapFilter | noRSSOnlyFilter | getCollectionCount | numberStringFormat(true) }})</sup></a>
+│&nbsp;&nbsp;&nbsp;├── <a href="/hot/">Hot Pages <sup>({{ site.limits.feed | numberStringFormat(true) }})</sup></a>
+│&nbsp;&nbsp;&nbsp;├── <a href="/popular/">Popular Pages <sup>({{ site.limits.feed | numberStringFormat(true) }})</sup></a>
 {% for item in collections.categories -%}
-│&nbsp;&nbsp;&nbsp;{% if loop.last %}└{% else %}├{% endif %}── <a href="/{{ item.plural }}/">{{ item.properPlural | title | safe }} <sup>({{ collections[item.collectionName] | arePublished | noRSSOnlyFilter | getCollectionCount | numberStringFormat(true) }})</sup></a><br>
+│&nbsp;&nbsp;&nbsp;{% if loop.last %}└{% else %}├{% endif %}── <a href="/{{ item.plural }}/">{{ item.properPlural | title | safe }} <sup>({{ collections[item.collectionName] | arePublished | noRSSOnlyFilter | getCollectionCount | numberStringFormat(true) }})</sup></a>
 {% endfor -%}
-├── <a href="/projects/">Projects <sup>({{ ((projects | getCollectionCount) + projects.personal.length + projects.previousVersions.length) | numberStringFormat(true) }})</sup></a><br>
-│&nbsp;&nbsp;&nbsp;├── <a href="/projects/#web">Web Projects <sup>({{ projects | getCollectionCount | numberStringFormat(true) }})</sup></a><br>
-{% for item in projects -%}
-│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;{% if loop.last %}└{% else %}├{% endif %}── <a href="{{ item.url }}">{{ item.data.title | safe }}</a><br>
+├── <a href="/projects/">Projects <sup>({{ ((collections.projects | sitemapFilter | noRSSOnlyFilter | getCollectionCount) + projects.personal.length + projects.selfHosted.length + projects.previousVersions.length) | numberStringFormat(true) }})</sup></a>
+│&nbsp;&nbsp;&nbsp;├── <a href="/projects/#web">Web Projects <sup>({{ collections.projects | sitemapFilter | noRSSOnlyFilter | getCollectionCount | numberStringFormat(true) }})</sup></a>
+{% for item in (collections.projects | sitemapFilter | noRSSOnlyFilter) -%}
+│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;{% if loop.last %}└{% else %}├{% endif %}── <a href="{{ item.url }}">{{ item.data.title | safe }}</a>
 {% endfor -%}
-│&nbsp;&nbsp;&nbsp;├── <a href="/projects/#personal">Personal Projects <sup>({{ projects.personal.length | numberStringFormat(true) }})</sup></a><br>
+│&nbsp;&nbsp;&nbsp;├── <a href="/projects/#self-hosted">Self-hosted Projects <sup>({{ projects.selfHosted.length | numberStringFormat(true) }})</sup></a>
+{% for item in projects.selfHosted -%}
+│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;{% if loop.last %}└{% else %}├{% endif %}── <a href="{{ item.url }}">{{ item.data.title | safe }}</a>
+{% endfor -%}
+│&nbsp;&nbsp;&nbsp;├── <a href="/projects/#personal">Personal Projects <sup>({{ projects.personal.length | numberStringFormat(true) }})</sup></a>
 {% for item in projects.personal -%}
-│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;{% if loop.last %}└{% else %}├{% endif %}── <a href="{{ item.url }}">{{ item.data.title | safe }}</a><br>
+│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;{% if loop.last %}└{% else %}├{% endif %}── <a href="{{ item.url }}">{{ item.data.title | safe }}</a>
 {% endfor -%}
-│&nbsp;&nbsp;&nbsp;└── <a href="/projects/#personal">Previous Website Versions <sup>({{ projects.previousVersions.length | numberStringFormat(true) }})</sup></a><br>
+│&nbsp;&nbsp;&nbsp;└── <a href="/projects/#personal">Previous Website Versions <sup>({{ projects.previousVersions.length | numberStringFormat(true) }})</sup></a>
 {% for item in projects.previousVersions -%}
-│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{% if loop.last %}└{% else %}├{% endif %}── <a href="{{ item.url }}">{{ item.data.title | safe }}</a><br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{% if loop.last %}└{% else %}├{% endif %}── <a href="{{ item.url }}">{{ item.data.title | safe }}</a>
 {% endfor -%}
 {% set slash_pages = [{ url: '/about/', label: '/about' }, { url: '/blogroll/', label: '/blogroll' }, { url: '/about/#colophon', label: '/colophon' }, { url: '/about/#contact', label: '/about' }, { url: '/feeds/', label: '/feeds' }, { url: '/ideas/', label: '/ideas' }, { url: '/interests/', label: '/interests' }, { url: '/links/', label: '/links' }, { url: '/now/', label: '/now' }, { url: '/podroll/', label: '/podroll' }, { url: '#content', label: '/sitemap' }, { url: '/tip/', label: '/tip' }, { url: '/uses/', label: '/uses' }] -%}
-├── <a href="/slashes/">Slash Pages <sup>({{ slash_pages.length | numberStringFormat(true) }})</sup></a><br>
+├── <a href="/slashes/">Slash Pages <sup>({{ slash_pages.length | numberStringFormat(true) }})</sup></a>
 {% for item in slash_pages -%}
-│&nbsp;&nbsp;&nbsp;{% if loop.last %}└{% else %}├{% endif %}── <a href="{{ item.url }}">{{ item.label }}</a><br>
+│&nbsp;&nbsp;&nbsp;{% if loop.last %}└{% else %}├{% endif %}── <a href="{{ item.url }}">{{ item.label }}</a>
 {% endfor -%}
 {% set other_pages = [{ url: '/88x31/', label: '88x31' }, { url: '/ghoti/', label: 'The Absurdity of English' }, { url: '/css-naked-day/', label: 'CSS Naked Day' }, { url: '/cv/', label: 'Curriculum Vitae' }, { url: '/guestbook/', label: 'Guestbook' }, { url: '/helloworld/', label: 'Hello world!' }, { url: '/help/', label: 'Help!' }, { url: '/indieweb/', label: 'IndieWeb' }, { url: '/js-naked-day/', label: 'JS Naked Day' }, { url: '/license/', label: 'License' }, { url: '/listening/', label: 'Listening' }, { url: '/privacy/', label: 'Privacy Policy' }, { url: '/the-raven/', label: 'The Raven' }, { url: '/stats/', label: 'Stats' }, { url: '/styleguide/', label: 'Style Guide' }, { url: '/32-bit-cafe-code-jam-3/', label: 'What has creating a website done for me?' }, { url: '/blogroll.opml', label: 'blogroll.opml' }, { url: '/chrisburnell.vcf', label: 'chrisburnell.vcf' },{ url: '/humans.txt', label: 'humans.txt' }, { url: '/Ravenous.gpl', label: 'Ravenous.gpl' }, { url: '/robots.txt', label: 'robots.txt' },{ url: '/security.txt', label: 'security.txt' }, { url: '/sitemap.xml', label: 'sitemap.xml' }, { url: '/blank/', label: 'This page intentionally left blank.' }] -%}
 {% for item in other_pages -%}
-{% if loop.last %}└{% else %}├{% endif %}── <a href="{{ item.url }}">{{ item.label }}</a><br>
+{% if loop.last %}└{% else %}├{% endif %}── <a href="{{ item.url }}">{{ item.label }}</a>
 {% endfor -%}
 </div>

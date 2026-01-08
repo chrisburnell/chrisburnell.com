@@ -115,7 +115,7 @@ export const isPublished = (item) => {
 			return false;
 		}
 	}
-	return !!item.url;
+	return !!item.url || !!item.data?.clickthrough;
 };
 
 /**

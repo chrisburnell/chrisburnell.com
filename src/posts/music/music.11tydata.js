@@ -1,5 +1,6 @@
 export default {
 	permalink: "music/{{ page.fileSlug }}/",
+	clickthrough: true,
 	list: "shelf",
 	shelfWide: true,
 	shelfAlignment: "square",

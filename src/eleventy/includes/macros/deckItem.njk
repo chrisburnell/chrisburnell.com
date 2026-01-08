@@ -1,7 +1,11 @@
 {% macro deckItem(item, params) -%}
 	{% set title = item.data.title | default(item.data.of_title) | default(item.data.of_title_fallback) -%}
+	{% if item.data.category == 'beer' -%}
+		{% set item_url = 'https://untappd.com/user/chrisburnell/checkin/' + item.data.page.fileSlug %}
+	{%- else -%}
+		{% set item_url = (item.data.of_url | default(item.url)) if item.data.clickthrough else item.url -%}
+	{%- endif -%}
 	{% set stargazers = item.data.stargazers | default(0) -%}
-
 	{% set show_updated = item.data.updated and ((item.data.updated | friendlyDate) !== (item.data.date | friendlyDate)) -%}
 	{% set show_responses = (item.data.show_responses != false and (item.data.show_replies != false or item.data.show_reactions != false) and item.data.webmentions.length) or (item.data.show_stargazers != false and stargazers > 0) -%}
 	{% set show_stargazers = item.data.show_stargazers != false and stargazers > 0 -%}
@@ -40,7 +44,7 @@
 		{%- endif %}
 		{% if title -%}
 			<h1 style="view-transition-name: title-{{ item.data.page.fileSlug }};">
-				<a href="{% if item.data.tags and 'clickthrough' in item.data.tags %}{{ item.data.of_url | default(item.url) | safe }}{% else %}{{ item.url | safe }}{% endif %}" class=" [ p-name ] "{% if item.data.tags and 'clickthrough' in item.data.tags %} rel="external noopener"{% endif %}>
+				<a href="{{ item_url }}" class=" [ p-name ] "{% if item.data.clickthrough %} rel="external noopener"{% endif %}>
 					{% if item.data.emoji %}<c-emoji>{{ item.data.emoji }}</c-emoji>{% endif %}{{ title | striptags(true) | safe }}
 				</a>
 			</h1>
@@ -61,15 +65,15 @@
 			<ul class=" [ cluster ] [ deck__meta ] ">
 				{% if item.data.date -%}
 					<li>
-						<small>published</small> <a href="{{ item.url }}" class=" [ u-url ] "{% if item.data.title or item.data.of_title %} tabindex="-1"{% endif %}><time datetime="{{ item.data.date | rfc3339Date }}" class=" [ dt-published ] ">{{ item.data.date | friendlyDateLong | safe }}</time></a>
+						<small>published</small> {% if item.url %}<a href="{{ item.url }}" class=" [ u-url ] "{% if item.data.title or item.data.of_title %} tabindex="-1"{% endif %}>{% endif %}<time datetime="{{ item.data.date | rfc3339Date }}" class=" [ dt-published ] ">{{ item.data.date | friendlyDateLong | safe }}</time>{% if item.url %}</a>{% endif %}
 					</li>
 				{%- endif %}
 				{% if show_updated -%}
 					<li>
-						<small>updated</small> <a href="{{ item.url }}{{ '#updated' if item.data.updated_text }}" tabindex="-1"><time datetime="{{ item.data.updated | rfc3339Date }}" class=" [ dt-updated ] ">{{ item.data.updated | friendlyDateLong | safe }}</time></a>
+						<small>updated</small> {% if item.url %}<a href="{{ item.url }}{{ '#updated' if item.data.updated_text }}" tabindex="-1">{% endif %}<time datetime="{{ item.data.updated | rfc3339Date }}" class=" [ dt-updated ] ">{{ item.data.updated | friendlyDateLong | safe }}</time>{% if item.url %}</a>{% endif %}
 					</li>
 				{%- endif %}
-				{% if show_responses -%}
+				{% if item.url and show_responses -%}
 					{% set replies = item.data.webmentions.directReplies -%}
 					{% set reactions = item.data.webmentions.bookmarks.concat(item.data.webmentions.likes).concat(item.data.webmentions.reposts).concat(item.data.webmentions.links).concat(item.data.webmentions.socialReplies) -%}
 					{% if item.data.show_replies != false and replies.length -%}

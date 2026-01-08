@@ -30,7 +30,8 @@ export default {
 	tags: ["page"],
 	permalink: "/{{ page.fileSlug }}/index.html",
 	eleventyComputed: {
-		canonical: (data) => siteURL + data.page.url,
+		canonical: (data) =>
+			data.page.url ? siteURL + data.page.url : undefined,
 		meta_title: (data) => getMetaTitle(data),
 		meta_description: (data) => {
 			if (data.excerpt || data.description) {

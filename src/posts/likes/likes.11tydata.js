@@ -1,10 +1,11 @@
 export default {
-	permalink: "/like/{{ page.fileSlug }}/index.html",
+	permalink: false,
+	clickthrough: true,
 	mf_property: "like-of",
 	category: "like",
 	categoryPlural: "likes",
 	categoryCode: "f",
-	tags: ["categoryLike", "clickthrough"],
+	tags: ["categoryLike"],
 	excludeFromSearch: true,
 	noindex: true,
 	emoji: "♥️",

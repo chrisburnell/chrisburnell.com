@@ -1,12 +1,12 @@
 ---
 bookmark_of: https://media.chrisburnell.com
+clickthrough: true
 title: Media Controls
 description: Play native web media and use keyboard controls à la YouTube.
 emoji: 🎧
 github: chrisburnell/mediaControls
 branch: master
 tags:
-  - clickthrough
   - javascript
 ---
 

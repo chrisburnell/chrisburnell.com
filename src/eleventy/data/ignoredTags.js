@@ -7,7 +7,6 @@ export default [
 	"project",
 	"post",
 	"blog",
-	"clickthrough",
 	"feature",
 	"ignore",
 	"indieweb-carnival",

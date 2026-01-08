@@ -1,10 +1,13 @@
 {% macro shelfItem(item, params) -%}
+	{% if item.data.category == 'beer' -%}
+		{% set item_url = 'https://untappd.com/user/chrisburnell/checkin/' + item.data.page.fileSlug %}
+	{%- else -%}
+		{% set item_url = (item.data.of_url | default(item.url)) if item.data.clickthrough else item.url -%}
+	{%- endif -%}
 	<article {% if params.index %}id="index-{{ params.index }}"{% endif %} class=" [ flow ] {% if params.hfeed and item.data.mf_root %}[ h-{{ item.data.mf_root }} ] {% endif %}">
 		{% if item.data.cover %}
-			{% if item.url and item.data.tags and 'clickthrough' in item.data.tags %}
-				<a href="{{ item.data.of_url | default(item.url) | striptags(true) | safe }}" class=" [ cover-anchor ] " aria-hidden="true" tabindex="-1">
-			{% elif item.url %}
-				<a href="{{ item.url | striptags(true) | safe }}" class=" [ cover-anchor ] " aria-hidden="true" tabindex="-1">
+			{% if item_url %}
+				<a href="{{ item_url | striptags(true) | safe }}" class=" [ cover-anchor ] " aria-hidden="true" tabindex="-1">
 			{% endif %}
 			<picture>
 				{% if eleventy.env.runMode === 'build' %}
@@ -13,18 +16,16 @@
 				<source type="image/webp" srcset="/images/built/{{ item.data.cover | replace('jpeg', 'webp') | replace('png', 'webp') }}">
 				<img src="/images/built/{{ item.data.cover | replace('jpeg', 'jpeg') }}" alt="Art for {{ item.data.title }}" class=" [ cover ] [ u-photo ] " {% if item.data.cover_position %}style="object-position: {{ item.data.cover_position }};"{% endif %} loading="lazy" decoding="async">
 			</picture>
-			{% if item.url %}
+			{% if item_url %}
 				</a>
 			{% endif %}
 		{% endif %}
 		<h1>
-			{% if item.url and item.data.tags and 'clickthrough' in item.data.tags %}
-				<a href="{{ item.data.of_url | default(item.url) | striptags(true) | safe }}">
-			{% elif item.url %}
-				<a href="{{ item.url | striptags(true) | safe }}">
+			{% if item_url %}
+				<a href="{{ item_url | striptags(true) | safe }}">
 			{% endif %}
 				{% if 'audiobook' in item.data.tags %}<c-emoji title="Audiobook">🎧</c-emoji>{% endif %}{{ item.data.title | default(item.data.of_title) | default(item.data.of_title_fallback) | striptags(true) | safe }}
-			{% if item.url %}
+			{% if item_url %}
 				</a>
 			{% endif %}
 		</h1>
@@ -78,7 +79,9 @@
 		{% if item.data.category %}
 			<data class=" [ u-category ] " value="/{{ item.data.categoryPlural | default(item.data.category) }}/" hidden>{{ item.data.category }}</data>
 		{% endif %}
-		<data class=" [ u-url ] " value="{{ item.url }}" hidden></data>
+		{% if item.url %}
+			<data class=" [ u-url ] " value="{{ item.url }}" hidden></data>
+		{% endif %}
 		<data class=" [ u-author ] " value="/" hidden></data>
 	</article>
 {%- endmacro %}

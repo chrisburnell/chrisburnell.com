@@ -1,10 +1,20 @@
 # Dynamic Category Redirects
-{% for category in collections.categories %}{% if category.title != category.plural -%}
+{%- for category in collections.categories %}
+{%- if category.title != category.plural %}
 rewrite ^/{{ category.title }}/?$ /{{ category.plural }}/ permanent;
+{%- if category.clickthrough %}
+rewrite ^/{{ category.title }}/([a-z0-9]+(?:-[a-z0-9]+)*)/?$ /{{ category.plural }}/ permanent;
+rewrite ^/{{ category.plural }}/([a-z0-9]+(?:-[a-z0-9]+)*)/?$ /{{ category.plural }}/ permanent;
+{%- else %}
 rewrite ^/{{ category.plural }}/([a-z0-9]+(?:-[a-z0-9]+)*)/?$ /{{ category.title }}/$1/ permanent;
-{% endif %}{% endfor %}
+{%- endif %}
+{%- elif category.clickthrough %}
+rewrite ^/{{ category.title }}/([a-z0-9]+(?:-[a-z0-9]+)*)/?$ /{{ category.title }}/ permanent;
+{%- endif %}
+{%- endfor %}
 
 # Category Redirects
+rewrite ^/beerfridge/?$ /beer/ redirect;
 rewrite ^/bookshelf/?$ /books/ redirect;
 rewrite ^/code-demos/?$ /code/ redirect;
 
@@ -12,6 +22,7 @@ rewrite ^/code-demos/?$ /code/ redirect;
 rewrite ^/tag/a11y/?$ /tag/accessibility/ permanent;
 rewrite ^/tag/conferences/?$ /tag/conference/ permanent;
 rewrite ^/tag/meetups/?$ /tag/meetup/ permanent;
+rewrite ^/tag/ur2026/?$ /tag/unusualrotations2026/ permanent;
 
 # Page Redirects
 {% for item in collections.pages %}{% if item.url and item.data.redirect_from %}{% for request in item.data.redirect_from -%}

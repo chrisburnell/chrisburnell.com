@@ -1,5 +1,6 @@
 export default {
-	permalink: "beer/{{ page.fileSlug }}/",
+	permalink: false,
+	clickthrough: true,
 	list: "shelf",
 	mf_root: "review",
 	mf_property: "pk-drank",
