@@ -58,10 +58,10 @@ const fetchImageData = (options, src) => {
  */
 const storeAvatar = async (id, classes = "") => {
 	// We know where the images will be
-	const fakeUrl = `/images/avatars/${id}.jpeg`;
+	const fakePath = `_site/images/avatars/${id}.jpeg`;
 	try {
 		const metadata = Image.statsByDimensionsSync(
-			fakeUrl,
+			fakePath,
 			size,
 			size,
 			getImageOptions(id),
