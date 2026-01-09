@@ -1,0 +1,52 @@
+---
+layout: null
+title: "#5f8aa6"
+description: "I’ve been using <code>#5f8aa6</code> as my website colour since ~2008."
+sitemap:
+  exclude: true
+---
+<!DOCTYPE html>
+<html>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+	<title>{{ title }}</title>
+	<style>
+		*, *::before, *::after {
+			box-sizing: border-box;
+		}
+		:where(body) {
+			background-color: #5f8aa6;
+			color: #0b0b0b;
+			min-block-size: 100vb;
+			min-block-size: 100dvb;
+			display: grid;
+			place-items: center;
+			margin: 0;
+			font-family: sans-serif;
+			font-weight: 600;
+		}
+		h1 {
+			font-family: monospace;
+			font-size: max(24px, 10cqmin);
+		}
+		p {
+			font-size: max(14px, 2cqmin);
+			user-select: none;
+		}
+		::selection {
+			background-color: #e0161b;
+			color: #f9f9f9;
+		}
+	</style>
+	<link rel="icon" href="/images/favicon.ico" sizes="16x16 32x32 48x48 64x64">
+	<link rel="icon" href="{{ site.logo }}" type="image/svg+xml">
+	<link rel="author" href="/humans.txt">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="canonical" href="{{ canonical }}">
+	<meta name="author" content="{{ author.name }}">
+	<meta name="description" content="{{ title }}">
+	<meta name="generator" content="{{ eleventy.generator }}">
+	<meta name="color-scheme" content="light dark">
+</head>
+<body><h1>{{ title }}</h1><p>{{ description | safe }}</p></body>
+</html>
