@@ -9,8 +9,6 @@ export default defineConfig([
 		"**/*.min.js",
 		"**/*.test.js",
 		"src/eleventy/plugins/tmdbImage.js",
-		"src/js/imports/cal-embed.js",
-		"src/js/imports/masonry-polyfill.js",
 		"src/js/imports/speedlify-score.js",
 	]),
 	{
