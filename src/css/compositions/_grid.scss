@@ -35,6 +35,7 @@
 	row-gap: var(--row-gap, var(--gap, var(--size-gutter)));
 
 	&[data-rows="masonry"] {
+		align-items: start;
 		display: grid-lanes;
 	}
 
