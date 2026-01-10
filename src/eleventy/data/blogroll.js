@@ -707,11 +707,6 @@ export default [
 		mastodon: "lars@mastodon.social",
 	},
 	{
-		title: "starbreaker",
-		url: "https://starbreaker.org",
-		rss: "https://starbreaker.org/feeds/recent.xml",
-	},
-	{
 		title: "Lou Plummer",
 		url: "https://amerpie.lol",
 		rss: "https://amerpie.lol/feed.xml",

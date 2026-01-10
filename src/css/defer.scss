@@ -29,8 +29,12 @@
 
 // Blocks
 @layer blocks {
-	@include meta.load-css("blocks/cover");
+	@include meta.load-css("blocks/settings");
+	@include meta.load-css("blocks/pills");
 	@include meta.load-css("blocks/navigator");
+	@include meta.load-css("blocks/meta");
+	@include meta.load-css("blocks/table-of-contents");
+	@include meta.load-css("blocks/cover");
 	@include meta.load-css("blocks/rating");
 	@include meta.load-css("blocks/footer");
 	@include meta.load-css("blocks/author");
@@ -41,14 +45,21 @@
 	@include meta.load-css("blocks/browse");
 }
 
+// Utilities
+@layer utilities {
+	@include meta.load-css("utilities/canada");
+}
+
 // Components
 @layer components {
+	@include meta.load-css("components/sparklines");
 	@include meta.load-css("components/badges");
 	@include meta.load-css("components/updated");
 	@include meta.load-css("components/librarian");
 	@include meta.load-css("components/responses");
 	@include meta.load-css("components/browser-support");
 	@include meta.load-css("components/storage-form");
+	@include meta.load-css("components/web-components");
 }
 
 // Overrides

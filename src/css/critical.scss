@@ -52,16 +52,12 @@
 	@include meta.load-css("blocks/anchors");
 	@include meta.load-css("blocks/header");
 	@include meta.load-css("blocks/navigation");
-	@include meta.load-css("blocks/settings");
 	@include meta.load-css("blocks/main");
 	@include meta.load-css("blocks/content");
 	@include meta.load-css("blocks/breadcrumbs");
 	@include meta.load-css("blocks/context");
 	@include meta.load-css("blocks/title");
 	@include meta.load-css("blocks/description");
-	@include meta.load-css("blocks/pills");
-	@include meta.load-css("blocks/meta");
-	@include meta.load-css("blocks/table-of-contents");
 }
 
 // Utilities
@@ -69,16 +65,13 @@
 	@include meta.load-css("utilities/flow");
 	@include meta.load-css("utilities/helpers");
 	@include meta.load-css("utilities/fit-text");
-	@include meta.load-css("utilities/canada");
 }
 
 // Components
 @layer components {
-	@include meta.load-css("components/sparklines");
 	@include meta.load-css("components/deck");
 	@include meta.load-css("components/shelf");
 	@include meta.load-css("components/stack");
-	@include meta.load-css("components/web-components");
 }
 
 // Themes

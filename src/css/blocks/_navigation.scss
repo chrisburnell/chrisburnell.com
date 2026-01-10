@@ -8,7 +8,6 @@
 @use "../generated/tokens" as *;
 
 .navigation {
-	anchor-name: --anchor-navigation;
 	display: flex;
 	align-content: start;
 	column-gap: var(--size-medium);

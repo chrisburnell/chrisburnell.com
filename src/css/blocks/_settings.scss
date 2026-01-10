@@ -25,9 +25,6 @@
 	max-block-size: 100vb;
 	max-block-size: 100dvb;
 
-	@supports (position-anchor: --example) {
-	}
-
 	& legend {
 		grid-column: 1 / -1;
 	}

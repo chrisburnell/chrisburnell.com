@@ -6,76 +6,62 @@ class Welcome {
 	 * @class
 	 */
 	constructor() {
-		const serviceWorkerStatus =
+		const serviceWorkerState =
 			navigator?.serviceWorker?.controller?.state || "pending";
-
-		const operatingSystemString = `OS:              ${navigator.oscpu}`;
-		const languageString = `Language:        ${navigator.language}`;
-		const networkString = `Network:         ${navigator.onLine === true ? "Online" : "Offline"}`;
-		const serviceWorkerString = `Service Worker:  ${serviceWorkerStatus.charAt(0).toUpperCase() + serviceWorkerStatus.slice(1)}`;
-
-		const divider = "-".repeat(
-			Math.max(
-				operatingSystemString.length,
-				languageString.length,
-				networkString.length,
-				serviceWorkerString.length,
-			),
-		);
+		const info = [
+			`OS:              ${navigator.oscpu}`,
+			`Language:        ${navigator.language}`,
+			`Network:         ${navigator.onLine ? "Online" : "Offline"}`,
+			`Service Worker:  ${serviceWorkerState.charAt(0).toUpperCase() + serviceWorkerState.slice(1)}`,
+		];
+		const divider = "-".repeat(Math.max(...info.map((s) => s.length)));
 
 		// prettier-ignore
-		const raven = [
-			`%c                       ░█░█       %cchrisburnell.com`,
-			`%c ██░░░░░█░             █████      %c${divider}`,
-			`%c  ░▓▓██▓███▓█░       ██▒░▓███     %c${operatingSystemString}`,
-			`%c    ░░█▓▒██▓░░█░   █▓░██▓██▓██░░  %c${languageString}`,
-			`%c     ░█░███▓▓██░█░█▓███░░█▓██░█   %c${networkString}`,
-			`%c       ░░▒██▓░▒█░██▓███▓▓██▓░     %c${serviceWorkerString}`,
-			`%c          ░░▓██████▒█▓▒▓▒░░`,
-			`%c            ░███▓▒▓▒░░▓▓░░░`,
-			`%c▒█▒▓▒▓▓▓▓▓██▓▓░░▓░░▓▒░███▒░`,
-			`%c ░▓███▓██░▒▒░░▒██▒▓█     █▒`,
-			`%c     ░██▒░░░██░▒▓█░       ░`,
-			`%c             ░▒█▓░░▓█░`,
-			`%c              ░▒▓░░▒░░░\n`,
-			`%cChecking out the source code, %ceh%c?\n`,
-			`%cGet in touch with me if you want to know more! https://chrisburnell.com/about/#contact`,
-		]
+		const logo = [
+			"                       ░█░█       ",
+			" ██░░░░░█░             █████      ",
+			"  ░▓▓██▓███▓█░       ██▒░▓███     ",
+			"    ░░█▓▒██▓░░█░   █▓░██▓██▓██░░  ",
+			"     ░█░███▓▓██░█░█▓███░░█▓██░█   ",
+			"       ░░▒██▓░▒█░██▓███▓▓██▓░     ",
+			"          ░░▓██████▒█▓▒▓▒░░",
+			"            ░███▓▒▓▒░░▓▓░░░",
+			"▒█▒▓▒▓▓▓▓▓██▓▓░░▓░░▓▒░███▒░",
+			" ░▓███▓██░▒▒░░▒██▒▓█     █▒",
+			"     ░██▒░░░██░▒▓█░       ░",
+			"             ░▒█▓░░▓█░",
+			"              ░▒▓░░▒░░░",
+		];
 
-		console.log(
-			raven.join("\n"),
-			"color: #5f8aa6",
-			"color: inherit",
-			"color: #5f8aa6",
-			"color: inherit",
-			"color: #5f8aa6",
-			"color: inherit",
-			"color: #5f8aa6",
-			"color: inherit",
-			"color: #5f8aa6",
-			"color: inherit",
-			"color: #5f8aa6",
-			"color: inherit",
-			"color: #5f8aa6",
-			"color: #5f8aa6",
-			"color: #5f8aa6",
-			"color: #5f8aa6",
-			"color: #5f8aa6",
-			"color: #5f8aa6",
-			"color: #5f8aa6",
-			"color: inherit",
-			"color: #e0151f",
-			"color: inherit",
-			"color: inherit",
+		const raven = "color: #5f8aa6";
+		const maple = "color: #e0151f";
+
+		const lines = logo.map((line, i) => {
+			const label =
+				i === 0 ? "chrisburnell.com" : i === 1 ? divider : info[i - 2];
+			return label ? `%c${line}%c${label}` : `%c${line}`;
+		});
+		lines.push(`%cChecking out the source code, %ceh%c?`);
+		lines.push(
+			`%cGet in touch with me if you want to know more! https://chrisburnell.com/about/#contact`,
 		);
+
+		const styles = logo.flatMap((_, i) => (i < 6 ? [raven, ""] : [raven]));
+		styles.push("", maple, "");
+		styles.push("");
+
+		console.log(lines.join("\n"), ...styles);
 	}
 }
 
 if ("HTMLElement" in window) {
-	/**
-	 * @type {Welcome}
-	 */
-	window.Welcome = new Welcome();
+	if ("requestIdleCallback" in window) {
+		requestIdleCallback(() => {
+			window.Welcome = new Welcome();
+		});
+	} else {
+		window.Welcome = new Welcome();
+	}
 }
 
 /**
