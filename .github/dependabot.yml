@@ -1,0 +1,18 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
+    versioning-strategy: increase
+    allow:
+      - dependency-type: "production"
+
+  - package-ecosystem: github-actions
+    directories: [".github/actions/**", ".github/workflows/**"]
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
