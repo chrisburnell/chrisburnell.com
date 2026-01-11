@@ -10,7 +10,6 @@ on:
 
 concurrency:
   group: review-live
-  cancel-in-progress: true
 
 jobs:
   build:
@@ -32,7 +31,7 @@ jobs:
         uses: ./.github/actions/test
 
       - name: Build
-        uses: ./.github/actions/build-for-live
+        uses: ./.github/actions/build-for-review
         env:
           NODE_OPTIONS: "--max_old_space_size=8192"
           FATHOM_SUMMARY_KEY: ${{ secrets.FATHOM_SUMMARY_KEY }}
