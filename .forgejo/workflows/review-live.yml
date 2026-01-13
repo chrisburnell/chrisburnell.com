@@ -1,0 +1,47 @@
+name: Branch Review
+
+on:
+  push:
+    branches-ignore:
+      - "**"
+  pull_request:
+    branches:
+      - main
+
+concurrency:
+  group: review-live
+
+jobs:
+  build:
+    name: Branch Build Test
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # 6.0.1
+
+      - name: Setup
+        uses: ./.github/actions/setup
+
+      - name: Install
+        uses: ./.github/actions/install
+
+      - name: Test
+        uses: ./.github/actions/test
+
+      - name: Build
+        uses: ./.github/actions/build-for-review
+        env:
+          NODE_OPTIONS: "--max_old_space_size=8192"
+          FATHOM_SUMMARY_KEY: ${{ secrets.FATHOM_SUMMARY_KEY }}
+          LASTFM_API_TOKEN: ${{ secrets.LASTFM_API_TOKEN }}
+          MUSICTHREAD_API_KEY: ${{ secrets.MUSICTHREAD_API_KEY }}
+          PERSONAL_API_KEY: ${{ secrets.PERSONAL_API_KEY }}
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+          TRAKT_CLIENT_ID: ${{ secrets.TRAKT_CLIENT_ID }}
+          VIGENERE_SECRET: ${{ secrets.VIGENERE_SECRET }}
+          WEBMENTION_IO_TOKEN: ${{ secrets.WEBMENTION_IO_TOKEN }}
+
+      - name: Check Build
+        uses: ./.github/actions/check

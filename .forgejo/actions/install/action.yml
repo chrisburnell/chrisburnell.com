@@ -1,0 +1,17 @@
+name: Install
+description: Install dependencies
+
+runs:
+  using: composite
+  steps:
+    - name: Install the latest version of npm
+      run: npm install -g npm@latest
+      shell: bash
+
+    - name: Install Node Modules
+      run: npm ci --include=optional
+      shell: bash
+
+    - name: Install optional dependencies
+      run: npm install --include=optional pagefind @pagefind/linux-x64 sharp @resvg/resvg-js
+      shell: bash

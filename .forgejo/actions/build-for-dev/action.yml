@@ -1,0 +1,31 @@
+name: Build
+description: Build the site for development
+
+runs:
+  using: composite
+  steps:
+    - name: Use the dev site cache
+      id: site-cache
+      uses: actions/cache@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
+      with:
+        path: |
+          .cache
+          _site/*
+          !_site/og-images
+        key: site-cache-dev
+
+    - name: Use the OG images cache
+      id: og-images-cache
+      uses: actions/cache@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
+      with:
+        path: |
+          _site/og-images
+        key: og-images-cache-dev
+
+    - name: Build website
+      run: npm run build:dev
+      shell: bash
+
+    - name: Build search index
+      run: npm run create-search-index
+      shell: bash

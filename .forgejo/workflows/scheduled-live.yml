@@ -1,17 +1,22 @@
-name: Push Deploy (Dev)
+name: Scheduled Deploy
 
 on:
-  push:
-    branches:
-      - development
+  schedule:
+    # https://crontab.guru/#33_1/6_*_*_*
+    - cron: "33 1/6 * * *"
+    # CSS Naked Day
+    - cron: "0 10 8 4 *"
+    - cron: "0 12 10 4 *"
+    # JS Naked Day
+    - cron: "0 10 23 4 *"
+    - cron: "0 12 25 4 *"
 
 concurrency:
-  group: deploy-dev
-  cancel-in-progress: true
+  group: deploy-live
 
 jobs:
   build:
-    name: Push Deploy
+    name: Scheduled Deploy
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -29,7 +34,7 @@ jobs:
         uses: ./.github/actions/test
 
       - name: Build
-        uses: ./.github/actions/build-for-dev
+        uses: ./.github/actions/build-for-live
         env:
           NODE_OPTIONS: "--max_old_space_size=8192"
           FATHOM_SUMMARY_KEY: ${{ secrets.FATHOM_SUMMARY_KEY }}
@@ -45,7 +50,7 @@ jobs:
         uses: ./.github/actions/check
 
       - name: Install SSH Key
-        uses: shimataro/ssh-key-action@v2
+        uses: https://github.com/shimataro/ssh-key-action@v2
         with:
           key: ${{ secrets.DEPLOY_KEY }}
           known_hosts: "unnecessary"
@@ -55,10 +60,10 @@ jobs:
           ssh-keyscan -p ${{ secrets.DEPLOY_PORT }} -H ${{ secrets.DEPLOY_HOST }} >> ~/.ssh/known_hosts
           rsync -azh --delete --exclude="audio" --exclude="fonts" --exclude="static" --chown=${{ secrets.DEPLOY_CHOWN }} \
             -e "ssh -p ${{ secrets.DEPLOY_PORT }}" \
-            ./_site/ ${{ secrets.DEPLOY_USERNAME }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_DEV_PATH }}html
+            ./_site/ ${{ secrets.DEPLOY_USERNAME }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_PATH }}html
 
       - name: Process on server
-        uses: appleboy/ssh-action@master
+        uses: https://github.com/appleboy/ssh-action@master
         with:
           host: ${{ secrets.DEPLOY_HOST }}
           port: ${{ secrets.DEPLOY_PORT }}
