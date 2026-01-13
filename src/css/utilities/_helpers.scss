@@ -71,14 +71,14 @@
 // Hide things which require motion when prefers-reduced-motion is on
 .requires-motion {
 	@media (prefers-reduced-motion: reduce) {
-		display: none;
+		display: none !important;
 	}
 }
 
 // Hide things when prefers-reduced-motion is off
 .requires-static {
 	@media (prefers-reduced-motion: no-preference) {
-		display: none;
+		display: none !important;
 	}
 }
 

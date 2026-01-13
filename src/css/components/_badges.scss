@@ -3,6 +3,16 @@
 /// @group components
 ////
 
+.badges {
+	& a {
+		display: block;
+	}
+}
+
+:where(.badges img) {
+	display: block;
+}
+
 .badge {
 	min-inline-size: 88px;
 	block-size: 49px;
