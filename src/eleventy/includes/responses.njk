@@ -9,7 +9,7 @@
 	<div id="respond" class=" [ box ] [ flow ] [ responses ] " data-pagefind-ignore>
 		{% if webmentions.length or stargazers > 0 -%}
 			<div id="responses" class=" [ responses__thread ] [ flow ] ">
-				{% if webmentions.length %}<h2 class=" [ no-fragment ] [ sticky ] ">{{ webmentions.length }} Response{{ 's' if webmentions.length > 1 }}</h2>{% endif %}
+				{% if webmentions.length %}<h2 class=" [ sticky ] [ no-fragment ] ">{{ webmentions.length }} Response{{ 's' if webmentions.length > 1 }}</h2>{% endif %}
 				{% if reactions.length or stargazers -%}
 					<ol id="reactions" class=" [ reactions ] [ cluster ] [ strong ] ">
 						{% if webmentions.bookmarks.length -%}

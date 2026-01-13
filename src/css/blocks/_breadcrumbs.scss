@@ -12,7 +12,6 @@
 	color: var(--body-color);
 	display: block;
 	margin-block-start: var(--size-gap);
-	font-weight: var(--font-weight-semibold);
 
 	@media print {
 		display: none;
@@ -24,5 +23,6 @@
 
 	& :is(a:not(.button), .anchor) {
 		color: inherit;
+		font-weight: var(--font-weight-semibold);
 	}
 }
