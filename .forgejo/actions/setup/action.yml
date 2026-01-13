@@ -9,9 +9,15 @@ runs:
       shell: bash
 
     - name: Set the timezone
-      uses: https://github.com/zcong1993/setup-timezone@master
-      with:
-        timezone: America/Halifax
+      run: |
+        echo "Before: $(date '+%Z %:z %H:%M')"
+        echo "TZ=America/Halifax" >> $GITHUB_ENV
+      shell: bash
+
+    - name: Verify timezone
+      run: |
+        echo "After: $(date '+%Z %:z %H:%M')"
+      shell: bash
 
     - name: Debug Middle
       run: echo "Timezone set"
