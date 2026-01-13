@@ -5,7 +5,7 @@ runs:
   using: composite
   steps:
     - name: Set the timezone
-      uses: zcong1993/setup-timezone@master
+      uses: https://github.com/zcong1993/setup-timezone@master
       with:
         timezone: America/Halifax
 

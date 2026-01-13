@@ -45,7 +45,7 @@ jobs:
         uses: ./.github/actions/check
 
       - name: Install SSH Key
-        uses: shimataro/ssh-key-action@v2
+        uses: https://github.com/shimataro/ssh-key-action@v2
         with:
           key: ${{ secrets.DEPLOY_KEY }}
           known_hosts: "unnecessary"
@@ -58,7 +58,7 @@ jobs:
             ./_site/ ${{ secrets.DEPLOY_USERNAME }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_DEV_PATH }}html
 
       - name: Process on server
-        uses: appleboy/ssh-action@master
+        uses: https://github.com/appleboy/ssh-action@master
         with:
           host: ${{ secrets.DEPLOY_HOST }}
           port: ${{ secrets.DEPLOY_PORT }}
