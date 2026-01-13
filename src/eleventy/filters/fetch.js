@@ -6,6 +6,16 @@ import { cacheDurations } from "../data/site.js";
 
 const token = process.env.GH_TOKEN || process.env.GITHUB_TOKEN;
 
+let npmLastRequest = 0;
+const npmRateLimit = async () => {
+	const now = Date.now();
+	const wait = Math.max(0, npmLastRequest - now + 125);
+	if (wait > 0) {
+		await new Promise((resolve) => setTimeout(resolve, wait));
+	}
+	npmLastRequest = Date.now();
+};
+
 /**
  * @param {string} repository
  * @returns {Promise<Array<object>>}
@@ -66,6 +76,7 @@ export const latestTag = async (repository) => {
  * @returns {number}
  */
 const getNPMDownloadsForYear = async (npmPackage, year) => {
+	await npmRateLimit();
 	const isCurrentYear = new Date().getFullYear() === year;
 	const url = `https://api.npmjs.org/downloads/point/${year}-01-01:${year}-12-31/${npmPackage}`;
 	const json = await EleventyFetch(url, {
@@ -87,9 +98,6 @@ export const npmDownloads = async (npmPackage, published) => {
 	try {
 		let downloads = 0;
 		for (let year = startYear; year <= endYear; year++) {
-			if (year > startYear) {
-				await new Promise((resolve) => setTimeout(resolve, 250));
-			}
 			downloads += await getNPMDownloadsForYear(npmPackage, year);
 		}
 		return downloads;
