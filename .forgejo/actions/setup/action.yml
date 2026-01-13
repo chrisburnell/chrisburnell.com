@@ -4,30 +4,14 @@ description: Setup for build
 runs:
   using: composite
   steps:
-    - name: Debug Start
-      run: echo "Starting setup"
-      shell: bash
-
     - name: Set the timezone
       run: |
         echo "Before: $(date '+%Z %:z %H:%M')"
         echo "TZ=America/Halifax" >> $GITHUB_ENV
       shell: bash
 
-    - name: Verify timezone
-      run: |
-        echo "After: $(date '+%Z %:z %H:%M')"
-      shell: bash
-
-    - name: Debug Middle
-      run: echo "Timezone set"
-      shell: bash
-
     - name: Set the Node version
       uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.3.0
       with:
+        cache: npm
         node-version-file: ".nvmrc"
-
-    - name: Debug End
-      run: echo "Node version set"
-      shell: bash
