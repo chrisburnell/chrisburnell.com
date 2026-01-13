@@ -23,6 +23,12 @@ runs:
           _site/og-images
         key: og-images-cache
 
+    - name: Debug env
+      run: |
+        echo "GH_TOKEN is set: $([[ -n "$GH_TOKEN" ]] && echo 'yes' || echo 'no')"
+        echo "GITHUB_TOKEN is set: $([[ -n "$GITHUB_TOKEN" ]] && echo 'yes' || echo 'no')"
+      shell: bash
+
     - name: Build website
       run: npm run build:live
       shell: bash
