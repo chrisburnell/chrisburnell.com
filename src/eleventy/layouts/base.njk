@@ -25,9 +25,7 @@ layout: root
 		</nav>
 	</div>
 
-	<div popover id="popover-settings" class=" [ popover-settings ] [ flow ] [ gamma ] [ requires-js ] ">
-		{%- include 'settings.njk' -%}
-	</div>
+	{%- include 'settings.njk' -%}
 
 	{% if not global.isCSSNakedDay -%}
 		<div popover id="popover-navigation" class=" [ popover-navigation ] [ flow ] [ gamma ] ">

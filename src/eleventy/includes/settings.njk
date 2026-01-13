@@ -1,63 +1,65 @@
-<h2 id="settings">Settings</h2>
-<storage-form class=" [ flow ] " style="--flow-space: 1em; display: block;">
-	<form autocomplete="off">
-		{% if eleventy.env.runMode === 'build' -%}
-			<label for="analytics-toggler">Analytics:</label>
-			<input type="hidden" name="analytics" value="false" />
-			<input type="checkbox" id="analytics-toggler" name="analytics" value="" checked />
-		{%- endif %}
-		{% if not global.isCSSNakedDay -%}
-			<label for="theme-selector">Theme:</label>
-			<select id="theme-selector" name="theme">
-				<optgroup label="Select a theme">
-					{% for theme in themes -%}
-						<option value="{{ theme.id }}"{% if theme.selected %} selected{% endif %}>{{ theme.title }}</option>
-					{% endfor -%}
-				</optgroup>
-			</select>
-			<label for="custom-hue-selector">Hue:</label>
-			<input type="range" id="custom-hue-selector" name="custom-hue" min="0" max="359.99" step="0.01" value="237.73" />
-			<label for="custom-chroma-selector">Chroma:</label>
-			<input type="range" id="custom-chroma-selector" name="custom-chroma" min="0" max="0.4" step="0.0001" value="0.0636" />
-			<label for="color-scheme-selector">Light/Dark:</label>
-			<select id="color-scheme-selector" name="color-scheme">
-				<optgroup label="Select a colour scheme">
-					<option value="" selected>OS Default</option>
-					<option value="light">Light</option>
-					<option value="dark">Dark</option>
-				</optgroup>
-			</select>
-			<label for="high-contrast-selector">High Contrast:</label>
-			<select id="high-contrast-selector" name="high-contrast">
-				<optgroup label="Select a high contrast setting">
-					<option value="" selected>OS Default</option>
-					<option value="true">Enabled</option>
-					<option value="false">Disabled</option>
-				</optgroup>
-			</select>
-			<label for="smooth-scroll-selector">Smooth Scroll:</label>
-			<select id="smooth-scroll-selector" name="smooth-scroll">
-				<optgroup label="Select a smooth scroll setting">
-					<option value="" selected>OS Default</option>
-					<option value="true">Enabled</option>
-					<option value="false">Disabled</option>
-				</optgroup>
-			</select>
-		{%- endif %}
-		<label for="user-sounds-toggler">Website Sounds:</label>
-		<input type="hidden" name="user-sounds" value />
-		<input type="checkbox" id="user-sounds-toggler" name="user-sounds" value="true" />
-		{% if global.isEarlyMidwinterPeriod or global.isMidwinterPeriod -%}
-			<label for="snow-toggler" class="[ requires-motion ] ">Snow:</label>
-			<input type="hidden" name="snow" value="false" />
-			<input type="checkbox" name="snow" class=" [ requires-motion ] " id="snow-toggler" value="" checked />
-		{%- endif %}
-	</form>
-</storage-form>
-<div class=" [ navigator ] ">
-	<button popovertarget="popover-settings" style="font-size: var(--font-size-default);">Close</button>
-	<button class=" [ settings-reset ] " style="font-size: var(--font-size-default);">Reset All</button>
+<div popover id="popover-settings" class=" [ popover-settings ] [ flow ] [ gamma ] [ requires-js ] ">
+	<h2 id="settings">Settings</h2>
+	<storage-form class=" [ flow ] " style="--flow-space: 1em; display: block;">
+		<form autocomplete="off">
+			{% if eleventy.env.runMode === 'build' -%}
+				<label for="analytics-toggler">Analytics:</label>
+				<input type="hidden" name="analytics" value="false" />
+				<input type="checkbox" id="analytics-toggler" name="analytics" value="" checked />
+			{%- endif %}
+			{% if not global.isCSSNakedDay -%}
+				<label for="theme-selector">Theme:</label>
+				<select id="theme-selector" name="theme">
+					<optgroup label="Select a theme">
+						{% for theme in themes -%}
+							<option value="{{ theme.id }}"{% if theme.selected %} selected{% endif %}>{{ theme.title }}</option>
+						{% endfor -%}
+					</optgroup>
+				</select>
+				<label for="custom-hue-selector">Hue:</label>
+				<input type="range" id="custom-hue-selector" name="custom-hue" min="0" max="359.99" step="0.01" value="237.73" />
+				<label for="custom-chroma-selector">Chroma:</label>
+				<input type="range" id="custom-chroma-selector" name="custom-chroma" min="0" max="0.4" step="0.0001" value="0.0636" />
+				<label for="color-scheme-selector">Light/Dark:</label>
+				<select id="color-scheme-selector" name="color-scheme">
+					<optgroup label="Select a colour scheme">
+						<option value="" selected>OS Default</option>
+						<option value="light">Light</option>
+						<option value="dark">Dark</option>
+					</optgroup>
+				</select>
+				<label for="high-contrast-selector">High Contrast:</label>
+				<select id="high-contrast-selector" name="high-contrast">
+					<optgroup label="Select a high contrast setting">
+						<option value="" selected>OS Default</option>
+						<option value="true">Enabled</option>
+						<option value="false">Disabled</option>
+					</optgroup>
+				</select>
+				<label for="smooth-scroll-selector">Smooth Scroll:</label>
+				<select id="smooth-scroll-selector" name="smooth-scroll">
+					<optgroup label="Select a smooth scroll setting">
+						<option value="" selected>OS Default</option>
+						<option value="true">Enabled</option>
+						<option value="false">Disabled</option>
+					</optgroup>
+				</select>
+			{%- endif %}
+			<label for="user-sounds-toggler">Website Sounds:</label>
+			<input type="hidden" name="user-sounds" value />
+			<input type="checkbox" id="user-sounds-toggler" name="user-sounds" value="true" />
+			{% if global.isEarlyMidwinterPeriod or global.isMidwinterPeriod -%}
+				<label for="snow-toggler" class="[ requires-motion ] ">Snow:</label>
+				<input type="hidden" name="snow" value="false" />
+				<input type="checkbox" name="snow" class=" [ requires-motion ] " id="snow-toggler" value="" checked />
+			{%- endif %}
+		</form>
+	</storage-form>
+	<div class=" [ navigator ] ">
+		<button popovertarget="popover-settings" style="font-size: var(--font-size-default);">Close</button>
+		<button class=" [ settings-reset ] " style="font-size: var(--font-size-default);">Reset All</button>
+	</div>
+	{% if eleventy.env.runMode === 'build' -%}
+		<p class=" [ small ] " style="--flow-space: 0;">* except Analytics</p>
+	{%- endif %}
 </div>
-{% if eleventy.env.runMode === 'build' -%}
-	<p class=" [ small ] " style="--flow-space: 0;">* except Analytics</p>
-{%- endif %}
