@@ -6,7 +6,7 @@ runs:
   steps:
     - name: Use the site cache
       id: site-cache
-      uses: actions/cache@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
+      uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
       with:
         path: |
           .cache
@@ -17,7 +17,7 @@ runs:
 
     - name: Use the OG images cache
       id: og-images-cache
-      uses: actions/cache@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
+      uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
       with:
         path: |
           _site/og-images
