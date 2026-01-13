@@ -87,6 +87,9 @@ export const npmDownloads = async (npmPackage, published) => {
 	try {
 		let downloads = 0;
 		for (let year = startYear; year <= endYear; year++) {
+			if (year > startYear) {
+				await new Promise((resolve) => setTimeout(resolve, 250));
+			}
 			downloads += await getNPMDownloadsForYear(npmPackage, year);
 		}
 		return downloads;
