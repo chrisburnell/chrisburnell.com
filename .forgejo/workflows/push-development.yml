@@ -20,16 +20,16 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
       - name: Setup
-        uses: ./.github/actions/setup
+        uses: ./.forgejo/actions/setup
 
       - name: Install
-        uses: ./.github/actions/install
+        uses: ./.forgejo/actions/install
 
       - name: Test
-        uses: ./.github/actions/test
+        uses: ./.forgejo/actions/test
 
       - name: Build
-        uses: ./.github/actions/build-for-dev
+        uses: ./.forgejo/actions/build-for-dev
         env:
           NODE_OPTIONS: "--max_old_space_size=8192"
           FATHOM_SUMMARY_KEY: ${{ secrets.FATHOM_SUMMARY_KEY }}
@@ -42,7 +42,7 @@ jobs:
           WEBMENTION_IO_TOKEN: ${{ secrets.WEBMENTION_IO_TOKEN }}
 
       - name: Check Build
-        uses: ./.github/actions/check
+        uses: ./.forgejo/actions/check
 
       - name: Install SSH Key
         uses: https://github.com/shimataro/ssh-key-action@v2
