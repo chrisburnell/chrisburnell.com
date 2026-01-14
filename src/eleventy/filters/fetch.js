@@ -6,14 +6,15 @@ import { cacheDurations } from "../data/site.js";
 
 const token = process.env.GH_TOKEN || process.env.GITHUB_TOKEN;
 
-let npmLastRequest = 0;
+let npmNextAvailable = 0;
 const npmRateLimit = async () => {
 	const now = Date.now();
-	const wait = Math.max(0, npmLastRequest - now + 125);
+	const slow = Math.max(now, npmNextAvailable);
+	npmNextAvailable = slow + 125;
+	const wait = slow - now;
 	if (wait > 0) {
 		await new Promise((resolve) => setTimeout(resolve, wait));
 	}
-	npmLastRequest = Date.now();
 };
 
 /**
