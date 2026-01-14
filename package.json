@@ -39,9 +39,9 @@
     "node": ">=18"
   },
   "scripts": {
-    "build": "npx @11ty/eleventy --incremental",
-    "build:dev": "npm run setup && cross-env DEV_MODE=true GENERATE_OG_IMAGES=true npx @11ty/eleventy --incremental",
-    "build:live": "npm run setup && cross-env GENERATE_OG_IMAGES=true npx @11ty/eleventy --incremental",
+    "build": "npx @11ty/eleventy",
+    "build:dev": "npm run setup && cross-env DEV_MODE=true GENERATE_OG_IMAGES=true npx @11ty/eleventy",
+    "build:live": "npm run setup && cross-env GENERATE_OG_IMAGES=true npx @11ty/eleventy",
     "build:css": "npx sass src/css:_site/css --style=expanded --no-source-map --color --quiet",
     "postbuild:css": "npx postcss \"_site/css/**/*.css\" --replace --no-map",
     "check": "node cli/index.js check",
