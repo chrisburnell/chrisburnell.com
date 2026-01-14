@@ -33,26 +33,25 @@ jobs:
         with:
           path: .cache
           key: eleventy-cache-dev
-          restore-keys: eleventy-cache-dev-
+          restore-keys: eleventy-cache-dev
 
       - name: Restore Site cache
         uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
         with:
           path: _site
           key: site-cache-dev
-          restore-keys: site-cache-dev-
+          restore-keys: site-cache-dev
 
       - name: Restore OG images cache
         uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
         with:
           path: _site/og-images
           key: og-images-cache-dev
-          restore-keys: og-images-cache-dev-
+          restore-keys: og-images-cache-dev
 
       - name: Build
         uses: ./.github/actions/build-for-dev
         env:
-          NODE_OPTIONS: "--max_old_space_size=8192"
           FATHOM_SUMMARY_KEY: ${{ secrets.FATHOM_SUMMARY_KEY }}
           LASTFM_API_TOKEN: ${{ secrets.LASTFM_API_TOKEN }}
           MUSICTHREAD_API_KEY: ${{ secrets.MUSICTHREAD_API_KEY }}
@@ -67,22 +66,23 @@ jobs:
         uses: actions/cache/save@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
         with:
           path: .cache
-          key: eleventy-cache-dev-${{ github.run_id }}
+          key: eleventy-cache-dev
 
       - name: Save Site cache
         uses: actions/cache/save@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
         with:
           path: |
-            _site/*
+            _site
             !_site/og-images
-          key: site-cache-dev-${{ github.run_id }}
+            !_site/pagefind
+          key: site-cache-dev
 
       - name: Save OG images cache
         uses: actions/cache/save@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
         with:
           path: |
             _site/og-images
-          key: og-images-cache-dev-${{ github.run_id }}
+          key: og-images-cache-dev
 
       - name: Check Build
         uses: ./.github/actions/check

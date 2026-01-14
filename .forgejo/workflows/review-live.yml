@@ -35,26 +35,25 @@ jobs:
         with:
           path: .cache
           key: eleventy-cache
-          restore-keys: eleventy-cache-
+          restore-keys: eleventy-cache
 
       - name: Restore Site cache
         uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           path: _site
           key: site-cache
-          restore-keys: site-cache-
+          restore-keys: site-cache
 
       - name: Restore OG images cache
         uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           path: _site/og-images
           key: og-images-cache
-          restore-keys: og-images-cache-
+          restore-keys: og-images-cache
 
       - name: Build
         uses: ./.forgejo/actions/build-for-live
         env:
-          NODE_OPTIONS: "--max_old_space_size=8192"
           FATHOM_SUMMARY_KEY: ${{ secrets.FATHOM_SUMMARY_KEY }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           LASTFM_API_TOKEN: ${{ secrets.LASTFM_API_TOKEN }}
