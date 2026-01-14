@@ -60,57 +60,17 @@ $colors-tertiary: (
 $colors: (
   thunder: oklch(14.96% 0 0),
   snowy: oklch(98.21% 0 0),
-  mineshaft: color-mix(
-	in oklab,
-	var(--color-snowy),
-	var(--color-thunder) 83.6%
-),
-  kaiser: color-mix(
-	in oklab,
-	var(--color-snowy),
-	var(--color-thunder) 66.6%
-),
-  nickel: color-mix(
-	in oklab,
-	var(--color-snowy),
-	var(--color-thunder) 51.8%
-),
-  yeti: color-mix(
-	in oklab,
-	var(--color-snowy),
-	var(--color-thunder) 10.2%
-),
+  mineshaft: color-mix(in oklab, var(--color-snowy), var(--color-thunder) 83.6%),
+  kaiser: color-mix(in oklab, var(--color-snowy), var(--color-thunder) 66.6%),
+  nickel: color-mix(in oklab, var(--color-snowy), var(--color-thunder) 51.8%),
+  yeti: color-mix(in oklab, var(--color-snowy), var(--color-thunder) 10.2%),
   raven: oklch(61.29% 0.0636 237.73),
-  lynx: color-mix(
-	in oklab,
-	var(--color-raven),
-	var(--color-thunder) 75%
-),
-  wolf: color-mix(
-	in oklab,
-	var(--color-raven),
-	var(--color-thunder) 54%
-),
-  bowhead: color-mix(
-	in oklab,
-	var(--color-raven),
-	var(--color-thunder) 33%
-),
-  highland: color-mix(
-	in oklab,
-	var(--color-raven),
-	var(--color-snowy) 33%
-),
-  coyote: color-mix(
-	in oklab,
-	var(--color-raven),
-	var(--color-snowy) 54%
-),
-  bear: color-mix(
-	in oklab,
-	var(--color-raven),
-	var(--color-snowy) 75%
-),
+  lynx: oklch(from var(--color-raven) calc(l * (1 - 0.6)) calc(c * 0.3) h),
+  wolf: oklch(from var(--color-raven) calc(l * (1 - 0.4)) calc(c * 0.6) h),
+  bowhead: oklch(from var(--color-raven) calc(l * (1 - 0.2)) calc(c * 0.8) h),
+  highland: oklch(from var(--color-raven) calc(l * (1 + 0.2)) calc(c * 0.8) h),
+  coyote: oklch(from var(--color-raven) calc(l * (1 + 0.4)) calc(c * 0.6) h),
+  bear: oklch(from var(--color-raven) calc(l * (1 + 0.6)) calc(c * 0.3) h),
   aspen: oklch(80.1% 0.1469 83.99),
   conifer: oklch(54.1% 0.1285 142.09),
   maple: oklch(57.6% 0.2269 27.72)

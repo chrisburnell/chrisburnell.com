@@ -27,14 +27,15 @@
 	--raven-lightness: 61.29%;
 	--raven-chroma: 0.064;
 	--raven-hue: 237.73;
-	// Raven & Raven-based colors
+	// Raven
 	--color-raven: oklch(var(--raven-lightness) var(--raven-chroma) var(--raven-hue));
-	--color-lynx: color-mix(in oklab, var(--color-raven), var(--color-thunder) 75%);
-	--color-wolf: color-mix(in oklab, var(--color-raven), var(--color-thunder) 54%);
-	--color-bowhead: color-mix(in oklab, var(--color-raven), var(--color-thunder) 33%);
-	--color-highland: color-mix(in oklab, var(--color-raven), var(--color-snowy) 33%);
-	--color-coyote: color-mix(in oklab, var(--color-raven), var(--color-snowy) 54%);
-	--color-bear: color-mix(in oklab, var(--color-raven), var(--color-snowy) 75%);
+	// Raven-based colors
+	--color-lynx: oklch(from var(--color-raven) calc(l * (1 - 0.6)) calc(c * 0.3) h);
+    --color-wolf: oklch(from var(--color-raven) calc(l * (1 - 0.4)) calc(c * 0.6) h);
+    --color-bowhead: oklch(from var(--color-raven) calc(l * (1 - 0.2)) calc(c * 0.8) h);
+    --color-highland: oklch(from var(--color-raven) calc(l * (1 + 0.2)) calc(c * 0.8) h);
+    --color-coyote: oklch(from var(--color-raven) calc(l * (1 + 0.4)) calc(c * 0.6) h);
+    --color-bear: oklch(from var(--color-raven) calc(l * (1 + 0.6)) calc(c * 0.3) h);
 
 	@each $name, $value in map.merge($colors-secondary, $colors-tertiary) {
 		--color-#{$name}: #{$value};
