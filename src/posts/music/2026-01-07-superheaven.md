@@ -8,7 +8,7 @@ authors:
     url: https://www.last.fm/music/Superheaven
 listen_of: https://album.link/i/1782953369
 cover: superheaven.jpeg
-rating: 3.5
+rating: 3.25
 tags:
   - unusualrotations2026
 ---
