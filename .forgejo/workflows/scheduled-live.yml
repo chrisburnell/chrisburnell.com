@@ -33,26 +33,26 @@ jobs:
       - name: Test
         uses: ./.forgejo/actions/test
 
-      - name: Restore eleventy cache
+      - name: Restore 11ty cache
         uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           path: .cache
           key: eleventy-cache
-          restore-keys: eleventy-cache
+          restore-keys: eleventy-cache-
 
-      - name: Restore site cache
+      - name: Restore Site cache
         uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           path: _site
           key: site-cache
-          restore-keys: site-cache
+          restore-keys: site-cache-
 
       - name: Restore OG images cache
         uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           path: _site/og-images
           key: og-images-cache
-          restore-keys: og-images-cache
+          restore-keys: og-images-cache-
 
       - name: Build
         uses: ./.forgejo/actions/build-for-live
@@ -68,14 +68,14 @@ jobs:
           VIGENERE_SECRET: ${{ secrets.VIGENERE_SECRET }}
           WEBMENTION_IO_TOKEN: ${{ secrets.WEBMENTION_IO_TOKEN }}
 
-      - name: Save eleventy cache
+      - name: Save 11ty cache
         if: always()
         uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           path: .cache
           key: eleventy-cache-${{ github.run_id }}
 
-      - name: Save site cache
+      - name: Save Site cache
         uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           path: |

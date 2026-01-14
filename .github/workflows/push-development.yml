@@ -28,26 +28,26 @@ jobs:
       - name: Test
         uses: ./.github/actions/test
 
-      - name: Restore eleventy cache
+      - name: Restore 11ty cache
         uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
         with:
           path: .cache
           key: eleventy-cache-dev
-          restore-keys: eleventy-cache-dev
+          restore-keys: eleventy-cache-dev-
 
-      - name: Restore dev site cache
+      - name: Restore Site cache
         uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
         with:
           path: _site
           key: site-cache-dev
-          restore-keys: site-cache-dev
+          restore-keys: site-cache-dev-
 
       - name: Restore OG images cache
         uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
         with:
           path: _site/og-images
           key: og-images-cache-dev
-          restore-keys: og-images-cache-dev
+          restore-keys: og-images-cache-dev-
 
       - name: Build
         uses: ./.github/actions/build-for-dev
@@ -62,14 +62,14 @@ jobs:
           VIGENERE_SECRET: ${{ secrets.VIGENERE_SECRET }}
           WEBMENTION_IO_TOKEN: ${{ secrets.WEBMENTION_IO_TOKEN }}
 
-      - name: Save eleventy cache
+      - name: Save 11ty cache
         if: always()
         uses: actions/cache/save@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
         with:
           path: .cache
           key: eleventy-cache-dev-${{ github.run_id }}
 
-      - name: Save dev site cache
+      - name: Save Site cache
         uses: actions/cache/save@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
         with:
           path: |
