@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
 dotenv.config({ quiet: true });
 
-import EleventyFetch from "@11ty/eleventy-fetch";
+import EleventyFetch, { AssetCache } from "@11ty/eleventy-fetch";
 import { cacheDurations } from "../data/site.js";
 
 const token = process.env.GH_TOKEN || process.env.GITHUB_TOKEN;
@@ -10,7 +10,7 @@ let npmNextAvailable = 0;
 const npmRateLimit = async () => {
 	const now = Date.now();
 	const slow = Math.max(now, npmNextAvailable);
-	npmNextAvailable = slow + 125;
+	npmNextAvailable = slow + 200;
 	const wait = slow - now;
 	if (wait > 0) {
 		await new Promise((resolve) => setTimeout(resolve, wait));
@@ -77,11 +77,15 @@ export const latestTag = async (repository) => {
  * @returns {number}
  */
 const getNPMDownloadsForYear = async (npmPackage, year) => {
-	await npmRateLimit();
 	const isCurrentYear = new Date().getFullYear() === year;
 	const url = `https://api.npmjs.org/downloads/point/${year}-01-01:${year}-12-31/${npmPackage}`;
+	const duration = isCurrentYear ? cacheDurations.daily : "*";
+	const cache = new AssetCache(url);
+	if (!cache.isCacheValid(duration)) {
+		await npmRateLimit();
+	}
 	const json = await EleventyFetch(url, {
-		duration: isCurrentYear ? cacheDurations.daily : "*",
+		duration,
 		type: "json",
 	});
 	return json.downloads;
