@@ -40,7 +40,10 @@ jobs:
       - name: Restore Site cache
         uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
         with:
-          path: _site
+          path: |
+            _site
+            !_site/og-images
+            !_site/pagefind
           key: site-cache
           restore-keys: site-cache
 

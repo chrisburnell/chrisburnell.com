@@ -43,7 +43,10 @@ jobs:
       - name: Restore Site cache
         uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
-          path: _site
+          path: |
+            _site
+            !_site/og-images
+            !_site/pagefind
           key: site-cache
           restore-keys: site-cache
 
@@ -86,8 +89,7 @@ jobs:
       - name: Save OG images cache
         uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
-          path: |
-            _site/og-images
+          path: _site/og-images
           key: og-images-cache
 
       - name: Check Build
