@@ -5,7 +5,9 @@ runs:
   using: composite
   steps:
     - name: Build website
-      run: npm run build:live
+      run: |
+        set -e
+        npm run build:live
       shell: bash
 
     - name: Build search index
