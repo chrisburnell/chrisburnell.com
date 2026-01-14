@@ -4,24 +4,6 @@ description: Build the site for development
 runs:
   using: composite
   steps:
-    - name: Use the dev site cache
-      id: site-cache
-      uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
-      with:
-        path: |
-          .cache
-          _site/*
-          !_site/og-images
-        key: site-cache-dev
-
-    - name: Use the OG images cache
-      id: og-images-cache
-      uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
-      with:
-        path: |
-          _site/og-images
-        key: og-images-cache-dev
-
     - name: Build website
       run: npm run build:dev
       shell: bash

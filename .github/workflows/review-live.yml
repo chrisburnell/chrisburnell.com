@@ -30,8 +30,29 @@ jobs:
       - name: Test
         uses: ./.github/actions/test
 
+      - name: Restore eleventy cache
+        uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
+        with:
+          path: .cache
+          key: eleventy-cache
+          restore-keys: eleventy-cache
+
+      - name: Restore site cache
+        uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
+        with:
+          path: _site
+          key: site-cache
+          restore-keys: site-cache
+
+      - name: Restore OG images cache
+        uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
+        with:
+          path: _site/og-images
+          key: og-images-cache
+          restore-keys: og-images-cache
+
       - name: Build
-        uses: ./.github/actions/build-for-review
+        uses: ./.github/actions/build-for-live
         env:
           NODE_OPTIONS: "--max_old_space_size=8192"
           FATHOM_SUMMARY_KEY: ${{ secrets.FATHOM_SUMMARY_KEY }}
