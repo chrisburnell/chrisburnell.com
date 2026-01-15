@@ -30,12 +30,12 @@
 	// Raven
 	--color-raven: oklch(var(--raven-lightness) var(--raven-chroma) var(--raven-hue));
 	// Raven-based colors
-	--color-lynx: oklch(from var(--color-raven) calc(l * (1 - 0.6)) calc(c * 0.3) h);
+	--color-lynx: oklch(from var(--color-raven) calc(l * (1 - 0.6)) calc(c * 0.25) h);
     --color-wolf: oklch(from var(--color-raven) calc(l * (1 - 0.4)) calc(c * 0.6) h);
     --color-bowhead: oklch(from var(--color-raven) calc(l * (1 - 0.2)) calc(c * 0.8) h);
     --color-highland: oklch(from var(--color-raven) calc(l * (1 + 0.2)) calc(c * 0.8) h);
     --color-coyote: oklch(from var(--color-raven) calc(l * (1 + 0.4)) calc(c * 0.6) h);
-    --color-bear: oklch(from var(--color-raven) calc(l * (1 + 0.6)) calc(c * 0.3) h);
+    --color-bear: oklch(from var(--color-raven) calc(l * (1 + 0.6)) calc(c * 0.333) h);
 
 	@each $name, $value in map.merge($colors-secondary, $colors-tertiary) {
 		--color-#{$name}: #{$value};
