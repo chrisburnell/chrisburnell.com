@@ -141,3 +141,10 @@
 ::view-transition {
 	pointer-events: none;
 }
+
+@media (forced-colors: active) {
+	mark {
+		color: HighlightText;
+		background-color: Highlight;
+	}
+}

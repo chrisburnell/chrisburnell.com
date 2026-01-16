@@ -6,6 +6,11 @@
 .badges {
 	& a {
 		display: block;
+
+		&:active img {
+			outline: 1px solid var(--color-active-border, transparent);
+			outline-offset: -1px;
+		}
 	}
 }
 
