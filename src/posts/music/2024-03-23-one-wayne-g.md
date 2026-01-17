@@ -5,7 +5,7 @@ release: 2023-05-21T12:00:00+0000
 authors:
   - title: Mac DeMarco
     url: https://www.last.fm/music/Mac+DeMarco
-listen_of: https://album.link/y/OLAK5uy_lNdQ0ay1BXtrOPy2ar7Z6uIRmgoFTnehw
+listen_of: https://album.link/s/70hX7IYqmUGV97OXs2v848
 cover: one-wayne-g.jpeg
 rating: 4.5
 ---

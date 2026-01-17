@@ -5,6 +5,8 @@ description: My first ever talk, given at London Web Standards.
 checkin:
   title: London Web Standards
   url: http://londonwebstandards.org/2016/04/lws-18-april-2016-animation-chats-lwsaniquery/
+tags:
+  - ignore
 ---
 
 I wrote about this talk in the article, [April LWS Talk](/article/april-lws-talk/), if you’re interested in more detail or want to read about what I learned from giving my first public talk.

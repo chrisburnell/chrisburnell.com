@@ -2,7 +2,7 @@
 title: "/now"
 tagline: Now
 description: Stuff that I’m doing now (or at least recently)!
-last_updated: 2025-05-03T14:41:27+0800
+last_updated: 2026-01-16T20:52:05-0400
 toc: true
 redirect_from:
   - from: /movies
@@ -22,29 +22,14 @@ js_module_includes:
 
 <p><strong>Last updated:</strong> <time datetime="{{ last_updated | rfc3339Date }}">{{ last_updated | friendlyDate | safe }} @ {{ last_updated | friendlyTime | safe }}</time></p>
 
-<p>You can read more things I’d like to work on <a href="/ideas/">my /ideas page</a>, which is kind of like my To-do list for this website.</p>
-
 <h3 id="writing">Writing</h3>
 
 <ul>
-	<li>Review drafts (perpetually on-going)</li>
-	<li>Get around to adding more to my /interests page</li>
+	<li>review drafts (perpetually on-going)</li>
+	<li>get around to adding more to my /interests page</li>
 </ul>
 
-<h3 id="website-admin">Website Admin</h3>
-
-<ul>
-	<li>upgrade to latest version of <code>eleventy-img</code> and explore using the new transform function instead of my image shortcode</li>
-	<li>work out how to feature more tags/collections in the post meta description (alongside `writing`-tagged posts)</li>
-	<li>finish transcript for <q>Middle Out in CSS</q></li>
-	<li>use APIs to pull in cover images for:
-		<ul>
-			<li>books</li>
-			<li>music albums</li>
-			<li>movies & TV shows</li>
-		</ul>
-	</li>
-</ul>
+<p>You can read more things I’d like to work on <a href="/ideas/">my /ideas page</a>, which is kind of like my To-do list for this website.</p>
 
 {% if collections.rsvpsToday.length or collections.rsvpsUpcoming.length -%}
 	<hr>

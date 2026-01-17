@@ -140,7 +140,7 @@
     "commander": "^14.0.2",
     "cross-env": "^10.1.0",
     "eslint": "^9.39.2",
-    "eslint-plugin-jsdoc": "^61.5.0",
+    "eslint-plugin-jsdoc": "^62.0.0",
     "json-to-scss": "^1.6.2",
     "pagefind": "^1.4.0",
     "prettier": "^3.7.4",

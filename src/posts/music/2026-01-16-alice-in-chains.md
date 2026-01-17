@@ -1,14 +1,14 @@
 ---
-title: "Dirt"
-date: 2026-01-07T19:43:03-0400
-end: 2026-01-16T22:07:06-0400
-release: 1992-09-29T12:00:00+0000
+title: "Alice in Chains"
+date: 2026-01-16T23:21:52-0400
+# end:
+release: 1995-11-07T12:00:00+0000
 authors:
   - title: Alice in Chains
     url: https://www.last.fm/music/Alice+in+Chains
-listen_of: https://album.link/s/2VNui22dikp6XEMdK8j8Xs
-cover: dirt.jpeg
-rating: 4
+listen_of: https://album.link/s/49R4Qye4UUwzjPPQhtCkRe
+cover: alice-in-chains.jpeg
+# rating:
 tags:
   - unusualrotations2026
 ---

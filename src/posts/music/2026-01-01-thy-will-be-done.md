@@ -6,7 +6,7 @@ release: 2025-12-25T12:00:00+0000
 authors:
   - title: $uicideBoy$
     url: https://last.fm/music/$uicideBoy$
-listen_of: https://album.link/y/OLAK5uy_kRAqF2tvi-GK5d-b2mNpNfrNMplzsJykY
+listen_of: https://album.link/s/7jtViL0H9WMUkCrsafE4xo
 cover: thy-will-be-done.jpeg
 rating: 3.75
 ---

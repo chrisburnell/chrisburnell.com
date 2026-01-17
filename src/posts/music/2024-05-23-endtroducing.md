@@ -6,7 +6,7 @@ release: 1996-09-16T12:00:00+0000
 authors:
   - title: DJ Shadow
     url: https://www.last.fm/music/DJ+Shadow
-listen_of: https://album.link/y/OLAK5uy_lrFnP8nXwQth3kE7mO4YHyS4o7CTdA7Y0
+listen_of: https://album.link/s/4tUVkNYSFrrEqqrxBQW9PN
 cover: endtroducing.jpeg
 rating: 5
 description: DJ Shadow’s *Endtroducing.....* is, beyond a shadow of a doubt, one of the greatest albums of all time, and certainly one of my favourites.
