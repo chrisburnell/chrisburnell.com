@@ -20,7 +20,7 @@ class Librarian {
 	init() {
 		this.buttons = document.querySelectorAll(this.buttonsSelector);
 		this.shelf = document.querySelector(this.shelfSelector);
-		this.content = document.getElementById("content");
+		this.librarian = document.querySelector(".librarian");
 
 		this.buttons.forEach((button) => {
 			button.setAttribute(
@@ -123,7 +123,7 @@ class Librarian {
 					? "ascending"
 					: "descending",
 		);
-		this.content.scrollIntoView();
+		window.scrollTo({ top: this.librarian.offsetTop });
 	}
 }
 
