@@ -11,7 +11,7 @@ class ClampCalculator {
 			"size-max": null,
 			"viewport-min": null,
 			"viewport-max": null,
-			"viewport-units": null,
+			"relative-units": null,
 			"font-size-root": null,
 			"rounding-strategy": null,
 			"rounding-value": null,
@@ -49,7 +49,7 @@ class ClampCalculator {
 		const viewportMin = this.inputs["viewport-min"].value;
 		const viewportMax = this.inputs["viewport-max"].value;
 		const fontSizeRoot = this.inputs["font-size-root"].value;
-		const viewportUnits = this.inputs["viewport-units"].value;
+		const relativeUnits = this.inputs["relative-units"].value;
 		const roundingStrategy = this.inputs["rounding-strategy"].value;
 		const roundingValue = this.inputs["rounding-value"].value;
 
@@ -67,9 +67,9 @@ class ClampCalculator {
 		const computedMin = this.toRem(sizeMin, fontSizeRoot);
 		const computedMax = this.toRem(sizeMax, fontSizeRoot);
 
-		let computedValue = `clamp(${computedMin}rem, ${preferredSize}rem + ${variableSize}${viewportUnits}, ${computedMax}rem)`;
+		let computedValue = `clamp(${computedMin}rem, ${preferredSize}rem + ${variableSize}${relativeUnits}, ${computedMax}rem)`;
 		if (roundingStrategy !== "none") {
-			computedValue = `clamp(${computedMin}rem, round(${roundingStrategy !== "nearest" ? `${roundingStrategy}, ` : ""}${preferredSize}rem + ${variableSize}${viewportUnits}, ${roundingValue}), ${computedMax}rem)`;
+			computedValue = `clamp(${computedMin}rem, round(${roundingStrategy !== "nearest" ? `${roundingStrategy}, ` : ""}${preferredSize}rem + ${variableSize}${relativeUnits}, ${roundingValue}), ${computedMax}rem)`;
 		}
 
 		this.output.value = computedValue;
@@ -92,15 +92,15 @@ Change = ${this.maxDecimals(change, 5)}`;
 A = ${sizeMax}px - ${viewportMax}px * ${this.maxDecimals(change, 5)}
 A = ${preferredSizePixels}px = ${preferredSize}rem`;
 
-		this.howB.innerHTML = `B = 100${viewportUnits} * Change
-B = 100${viewportUnits} * ${this.maxDecimals(change, 5)}
-B = ${variableSize}${viewportUnits}`;
+		this.howB.innerHTML = `B = 100${relativeUnits} * Change
+B = 100${relativeUnits} * ${this.maxDecimals(change, 5)}
+B = ${variableSize}${relativeUnits}`;
 
 		this.howResult.innerHTML = `Result = clamp(sizeMin, A + B, sizeMax)
 Result = ${computedValue}`;
 
-		this.howCheck.innerHTML = `A + B = ${preferredSize}rem + ${variableSize}${viewportUnits}
-A + B = ${preferredSizePixels}px + ${variableSize}${viewportUnits}
+		this.howCheck.innerHTML = `A + B = ${preferredSize}rem + ${variableSize}${relativeUnits}
+A + B = ${preferredSizePixels}px + ${variableSize}${relativeUnits}
 
 Minimum Size ≈ ${preferredSizePixels}px + (${this.maxDecimals(change, 5)} * ${viewportMin}px)
 Minimum Size ≈ ${preferredSizePixels}px + ${this.maxDecimals(change, 5) * viewportMin}px
@@ -132,14 +132,14 @@ Maximum Size ≈ ${this.maxDecimals(sizeMax - viewportMax * change + viewportMax
 			history.replaceState(
 				{},
 				document.title,
-				`${location.protocol}//${location.host}${location.pathname}?font-size-root=${this.inputs["font-size-root"].value}&size-min=${this.inputs["size-min"].value}&size-max=${this.inputs["size-max"].value}&viewport-min=${this.inputs["viewport-min"].value}&viewport-max=${this.inputs["viewport-max"].value}&viewport-units=${this.inputs["viewport-units"].value}&rounding-strategy=${this.inputs["rounding-strategy"].value}&rounding-value=${this.inputs["rounding-value"].value}`,
+				`${location.protocol}//${location.host}${location.pathname}?font-size-root=${this.inputs["font-size-root"].value}&size-min=${this.inputs["size-min"].value}&size-max=${this.inputs["size-max"].value}&viewport-min=${this.inputs["viewport-min"].value}&viewport-max=${this.inputs["viewport-max"].value}&relative-units=${this.inputs["relative-units"].value}&rounding-strategy=${this.inputs["rounding-strategy"].value}&rounding-value=${this.inputs["rounding-value"].value}`,
 			);
 		} else {
 			this.inputs["rounding-value"].disabled = true;
 			history.replaceState(
 				{},
 				document.title,
-				`${location.protocol}//${location.host}${location.pathname}?font-size-root=${this.inputs["font-size-root"].value}&size-min=${this.inputs["size-min"].value}&size-max=${this.inputs["size-max"].value}&viewport-min=${this.inputs["viewport-min"].value}&viewport-max=${this.inputs["viewport-max"].value}&viewport-units=${this.inputs["viewport-units"].value}`,
+				`${location.protocol}//${location.host}${location.pathname}?font-size-root=${this.inputs["font-size-root"].value}&size-min=${this.inputs["size-min"].value}&size-max=${this.inputs["size-max"].value}&viewport-min=${this.inputs["viewport-min"].value}&viewport-max=${this.inputs["viewport-max"].value}&relative-units=${this.inputs["relative-units"].value}`,
 			);
 		}
 	}
@@ -157,12 +157,16 @@ Maximum Size ≈ ${this.maxDecimals(sizeMax - viewportMax * change + viewportMax
 			}
 		});
 
+		if (params.get("viewport-units")) {
+			this.inputs["relative-units"].value = params.get("viewport-units");
+		}
+
 		if (this.inputs["rounding-strategy"].value !== "none") {
 			this.inputs["rounding-value"].removeAttribute("disabled");
 			document.getElementById("optional-rounding").open = true;
 		}
 
-		this.inputs["viewport-units"].addEventListener("change", (event) => {
+		this.inputs["relative-units"].addEventListener("change", (event) => {
 			event.preventDefault();
 			this.calculate();
 			this.updateHistory();
@@ -183,7 +187,7 @@ Maximum Size ≈ ${this.maxDecimals(sizeMax - viewportMax * change + viewportMax
 		});
 		this.form.addEventListener("reset", (event) => {
 			event.preventDefault();
-			this.inputs["viewport-units"].querySelector(
+			this.inputs["relative-units"].querySelector(
 				"[data-default]",
 			).selected = true;
 			this.inputs["rounding-strategy"].querySelector(

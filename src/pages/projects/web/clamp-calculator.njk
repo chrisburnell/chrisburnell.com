@@ -44,38 +44,48 @@ webmanifest: "/clamp-calculator.webmanifest"
 		<input id="font-size-root" class=" [ center  monospace ] " style="inline-size: 100%; line-height: 3;" type="number" step="0.001" min="0" inputmode="numeric" pattern="^[1-9]\d*(\.\d+)?$" lang="en" value="16" data-default="16"></input>
 	</fieldset>
 	<fieldset class=" [ clamp-calculator__fieldset ] ">
-		<label for="viewport-units" class=" [ center  delta ] ">Viewport Units</label>
-		<select id="viewport-units" class=" [ center  monospace ] " style="inline-size: 100%; padding-block: 0.86rem;" lang="en">
-			<option value="vw">Width (vw)</opton>
-			<option value="vh">Height (vh)</opton>
-			<option value="vi" selected data-default="true">Inline (vi)</opton>
-			<option value="vb">Block (vb)</opton>
-			<option value="vmin">Minimum (vmin)</opton>
-			<option value="vmax">Maximum (vmax)</opton>
-			<option value="svw">Small Width (svw)</opton>
-			<option value="svh">Small Height (svh)</opton>
-			<option value="svi">Small Inline (svi)</opton>
-			<option value="svb">Small Block (svb)</opton>
-			<option value="svmin">Small Minimum (svmin)</opton>
-			<option value="svmax">Small Maximum (svmax)</opton>
-			<option value="lvw">Large Width (lvw)</opton>
-			<option value="lvh">Large Height (lvh)</opton>
-			<option value="lvi">Large Inline (lvi)</opton>
-			<option value="lvb">Large Block (lvb)</opton>
-			<option value="lvmin">Large Minimum (lvmin)</opton>
-			<option value="lvmax">Large Maximum (lvmax)</opton>
-			<option value="dvw">Dynamic Width (dvw)</opton>
-			<option value="dvh">Dynamic Height (dvh)</opton>
-			<option value="dvi">Dynamic Inline (dvi)</opton>
-			<option value="dvb">Dynamic Block (dvb)</opton>
-			<option value="dvmin">Dynamic Minimum (dvmin)</opton>
-			<option value="dvmax">Dynamic Maximum (dvmax)</opton>
-			<option value="cqw">Container Width (cqw)</opton>
-			<option value="cqh">Container Height (cqh)</opton>
-			<option value="cqi">Container Inline (cqi)</opton>
-			<option value="cqb">Container Block (cqb)</opton>
-			<option value="cqmin">Container Minimum (cqmin)</opton>
-			<option value="cqmax">Container Maximum (cqmax)</opton>
+		<label for="relative-units" class=" [ center  delta ] ">Relative Units</label>
+		<select id="relative-units" class=" [ center  monospace ] " style="inline-size: 100%; padding-block: 0.86rem;" lang="en">
+			<optgroup label="Viewport">
+				<option value="vw">vw: Width</option>
+				<option value="vh">vh: Height</option>
+				<option value="vi" selected data-default="true">vi: Inline Size</option>
+				<option value="vb">vb: Block Size</option>
+				<option value="vmin">vmin: Minimum Size</option>
+				<option value="vmax">vmax: Maximum Size</option>
+			</optgroup>
+			<optgroup label="Small Viewport">
+				<option value="svw">svw: Small Width</option>
+				<option value="svh">svh: Small Height</option>
+				<option value="svi">svi: Small Inline Size</option>
+				<option value="svb">svb: Small Block Size</option>
+				<option value="svmin">svmin: Small Minimum Size</option>
+				<option value="svmax">svmax: Small Maximum Size</option>
+			</optgroup>
+			<optgroup label="Large Viewport">
+				<option value="lvw">lvw: Large Width</option>
+				<option value="lvh">lvh: Large Height</option>
+				<option value="lvi">lvi: Large Inline Size</option>
+				<option value="lvb">lvb: Large Block Size</option>
+				<option value="lvmin">lvmin: Large Minimum Size</option>
+				<option value="lvmax">lvmax: Large Maximum Size</option>
+			</optgroup>
+			<optgroup label="Dynamic Viewport">
+				<option value="dvw">dvw: Dynamic Width</option>
+				<option value="dvh">dvh: Dynamic Height</option>
+				<option value="dvi">dvi: Dynamic Inline Size</option>
+				<option value="dvb">dvb: Dynamic Block Size</option>
+				<option value="dvmin">dvmin: Dynamic Minimum Size</option>
+				<option value="dvmax">dvmax: Dynamic Maximum Size</option>
+			</optgroup>
+			<optgroup label="Container Query">
+				<option value="cqw">cqw: Container Width</option>
+				<option value="cqh">cqh: Container Height</option>
+				<option value="cqi">cqi: Container Inline Size</option>
+				<option value="cqb">cqb: Container Block Size</option>
+				<option value="cqmin">cqmin: Container Minimum Size</option>
+				<option value="cqmax">cqmax: Container Maximum Size</option>
+			</optgroup>
 		</select>
 	</fieldset>
 	<details id="optional-rounding" class=" [ no-border  no-padding ] " style="grid-column: span 2;">
@@ -84,11 +94,11 @@ webmanifest: "/clamp-calculator.webmanifest"
 			<fieldset class=" [ clamp-calculator__fieldset ] ">
 				<label for="rounding-strategy" class=" [ center  delta ] ">Rounding Strategy</label>
 				<select id="rounding-strategy" class=" [ center  monospace ] " style="inline-size: 100%; padding-block: 0.86rem;" lang="en">
-					<option value="none" selected data-default="true">None</opton>
-					<option value="up">Up</opton>
-					<option value="down">Down</opton>
-					<option value="nearest">Nearest</opton>
-					<option value="to-zero">To Zero</opton>
+					<option value="none" selected data-default="true">None</option>
+					<option value="up">Up</option>
+					<option value="down">Down</option>
+					<option value="nearest">Nearest</option>
+					<option value="to-zero">To Zero</option>
 				</select>
 			</fieldset>
 			<fieldset class=" [ clamp-calculator__fieldset ] ">

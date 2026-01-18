@@ -174,6 +174,10 @@ select {
 	@supports (appearance: base-select) {
 		appearance: base-select;
 	}
+
+	&.monospace {
+		font-size: var(--font-size-small);
+	}
 }
 
 address {
