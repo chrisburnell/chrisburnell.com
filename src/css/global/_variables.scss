@@ -43,29 +43,41 @@
 	--body-background-color: light-dark(color-mix(in oklab, var(--color-bear), var(--color-snowy) 90%), color-mix(in oklab, var(--color-mineshaft), var(--color-wolf) 40%));
 	--body-color: light-dark(var(--color-kaiser), var(--color-yeti));
 
+	--opacity-05: 0.05;
 	@for $x from 1 through 9 {
 		--opacity-#{$x * 10}: #{math.div($x * 10, 100)};
 	}
-	--opacity-05: 0.05;
 
-	@each $name, $data in $sizes {
-		--size-#{$name}-min: #{math.div(map.get($data, "minSize"), 16) * 1rem};
-		--size-#{$name}: #{utopia.calculateClamp((
-			"minWidth": map.get($data, "minWidth"),
-			"maxWidth": map.get($data, "maxWidth"),
-			"minSize": map.get($data, "minSize"),
-			"maxSize": map.get($data, "maxSize"),
-		))};
-		--size-#{$name}-max: #{math.div(map.get($data, "maxSize"), 16) * 1rem};
-	}
 	$sizes-seen: ();
 	@each $a-name, $a-data in $sizes {
+		--size-#{$a-name}-min: #{math.div(map.get($a-data, "minSize"), 16) * 1rem};
+		--size-#{$a-name}-max: #{math.div(map.get($a-data, "maxSize"), 16) * 1rem};
+		--size-#{$a-name}: #{utopia.calculateClamp((
+			"minWidth": map.get($a-data, "minWidth"),
+			"maxWidth": map.get($a-data, "maxWidth"),
+			"minSize": map.get($a-data, "minSize"),
+			"maxSize": map.get($a-data, "maxSize"),
+		))};
+		--container-size-#{$a-name}: #{utopia.calculateClamp((
+			"minWidth": map.get($a-data, "minWidth"),
+			"maxWidth": map.get($a-data, "maxWidth"),
+			"minSize": map.get($a-data, "minSize"),
+			"maxSize": map.get($a-data, "maxSize"),
+			"relativeTo": "container",
+		))};
 		@each $b-name, $b-data in $sizes-seen {
 			--size-#{$b-name}-#{$a-name}: #{utopia.calculateClamp((
 				"minWidth": map.get($b-data, "minWidth"),
 				"maxWidth": map.get($a-data, "maxWidth"),
 				"minSize": map.get($b-data, "minSize"),
 				"maxSize": map.get($a-data, "maxSize"),
+			))};
+			--container-size-#{$b-name}-#{$a-name}: #{utopia.calculateClamp((
+				"minWidth": map.get($b-data, "minWidth"),
+				"maxWidth": map.get($a-data, "maxWidth"),
+				"minSize": map.get($b-data, "minSize"),
+				"maxSize": map.get($a-data, "maxSize"),
+				"relativeTo": "container",
 			))};
 		}
 		$sizes-seen: map.set($sizes-seen, $a-name, $a-data);
@@ -81,24 +93,36 @@
 		--font-family-#{$name}: #{$value};
 	}
 
-	@each $name, $data in $font-sizes {
-		--font-size-#{$name}-min: #{math.div(map.get($data, "minSize"), 16) * 1rem};
-		--font-size-#{$name}: #{utopia.calculateClamp((
-			"minWidth": map.get($data, "minWidth"),
-			"maxWidth": map.get($data, "maxWidth"),
-			"minSize": map.get($data, "minSize"),
-			"maxSize": map.get($data, "maxSize"),
-		))};
-		--font-size-#{$name}-max: #{math.div(map.get($data, "maxSize"), 16) * 1rem};
-	}
 	$font-sizes-seen: ();
 	@each $a-name, $a-data in $font-sizes {
+		--font-size-#{$a-name}-min: #{math.div(map.get($a-data, "minSize"), 16) * 1rem};
+		--font-size-#{$a-name}-max: #{math.div(map.get($a-data, "maxSize"), 16) * 1rem};
+		--font-size-#{$a-name}: #{utopia.calculateClamp((
+			"minWidth": map.get($a-data, "minWidth"),
+			"maxWidth": map.get($a-data, "maxWidth"),
+			"minSize": map.get($a-data, "minSize"),
+			"maxSize": map.get($a-data, "maxSize"),
+		))};
+		--container-font-size-#{$a-name}: #{utopia.calculateClamp((
+			"minWidth": map.get($a-data, "minWidth"),
+			"maxWidth": map.get($a-data, "maxWidth"),
+			"minSize": map.get($a-data, "minSize"),
+			"maxSize": map.get($a-data, "maxSize"),
+			"relativeTo": "container",
+		))};
 		@each $b-name, $b-data in $font-sizes-seen {
 			--font-size-#{$b-name}-#{$a-name}: #{utopia.calculateClamp((
 				"minWidth": map.get($b-data, "minWidth"),
 				"maxWidth": map.get($a-data, "maxWidth"),
 				"minSize": map.get($b-data, "minSize"),
 				"maxSize": map.get($a-data, "maxSize"),
+			))};
+			--container-font-size-#{$b-name}-#{$a-name}: #{utopia.calculateClamp((
+				"minWidth": map.get($b-data, "minWidth"),
+				"maxWidth": map.get($a-data, "maxWidth"),
+				"minSize": map.get($b-data, "minSize"),
+				"maxSize": map.get($a-data, "maxSize"),
+				"relativeTo": "container",
 			))};
 		}
 		$font-sizes-seen: map.set($font-sizes-seen, $a-name, $a-data);
