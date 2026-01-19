@@ -32,8 +32,8 @@ jobs:
         uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
         with:
           path: .cache
-          key: eleventy-cache-dev
-          restore-keys: eleventy-cache-dev
+          key: eleventy-cache-dev-${{ github.run_id }}
+          restore-keys: eleventy-cache-dev-
 
       - name: Restore Site cache
         uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
@@ -42,15 +42,15 @@ jobs:
             _site
             !_site/og-images
             !_site/pagefind
-          key: site-cache-dev
-          restore-keys: site-cache-dev
+          key: site-cache-dev-${{ github.run_id }}
+          restore-keys: site-cache-dev-
 
       - name: Restore OG images cache
         uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
         with:
           path: _site/og-images
-          key: og-images-cache-dev
-          restore-keys: og-images-cache-dev
+          key: og-images-cache-dev-${{ github.run_id }}
+          restore-keys: og-images-cache-dev-
 
       - name: Build
         uses: ./.github/actions/build-for-dev
@@ -69,7 +69,7 @@ jobs:
         uses: actions/cache/save@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
         with:
           path: .cache
-          key: eleventy-cache-dev
+          key: eleventy-cache-dev-${{ github.run_id }}
 
       - name: Save Site cache
         uses: actions/cache/save@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
@@ -78,13 +78,13 @@ jobs:
             _site
             !_site/og-images
             !_site/pagefind
-          key: site-cache-dev
+          key: site-cache-dev-${{ github.run_id }}
 
       - name: Save OG images cache
         uses: actions/cache/save@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
         with:
           path: _site/og-images
-          key: og-images-cache-dev
+          key: og-images-cache-dev-${{ github.run_id }}
 
       - name: Check Build
         uses: ./.github/actions/check
