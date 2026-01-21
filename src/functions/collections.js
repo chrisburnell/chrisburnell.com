@@ -25,15 +25,6 @@ import { getSyndicationTitle, toArray } from "../eleventy/filters/utils.js";
 import { stripHTML } from "./strings.js";
 import { getMastodonHandle, getTwitterHandle } from "./utils.js";
 
-// Create an array of references
-const allPeople = [
-	...blogroll,
-	...breweries,
-	...publications,
-	...gamePublishers,
-	...meetups,
-];
-
 // Get data about all pages
 const pages = await EleventyFetch("https://chrisburnell.com/all.json", {
 	duration: cacheDurations.hourly,
@@ -43,8 +34,48 @@ const pages = await EleventyFetch("https://chrisburnell.com/all.json", {
 	},
 });
 
+// Create an array of references
+const allPeople = [
+	...blogroll,
+	...breweries,
+	...publications,
+	...gamePublishers,
+	...meetups,
+];
+
 const cachedPeople = new Map();
+const peopleByTitle = new Map();
+const peopleByUrl = new Map();
+const peopleByMastodon = new Map();
+const peopleByTwitter = new Map();
+const peopleByHost = new Map();
 const mastodonHosts = Object.keys(mastodonInstances);
+
+allPeople.forEach((person) => {
+	if (person.title) {
+		peopleByTitle.set(person.title.toLowerCase(), person);
+	}
+
+	if (person.url) {
+		toArray(person.url).forEach((url) => {
+			const host = getHost(url);
+			peopleByUrl.set(url, person);
+			peopleByHost.set(host, person);
+		});
+	}
+
+	if (person.mastodon) {
+		toArray(person.mastodon).forEach((handle) => {
+			peopleByMastodon.set(handle.toLowerCase(), person);
+		});
+	}
+
+	if (person.twitter) {
+		toArray(person.twitter).forEach((handle) => {
+			peopleByTwitter.set(handle.toLowerCase(), person);
+		});
+	}
+});
 
 /**
  * @param {string} [title]
@@ -57,40 +88,57 @@ const getPerson = (title, url) => {
 		return cachedPeople.get(cacheKey);
 	}
 
-	const result = allPeople.find((person) => {
-		// Match by Title
-		if (
-			title &&
-			title.localeCompare(person.title, undefined, {
-				sensitivity: "accent",
-			}) === 0
-		) {
-			return true;
-		}
-		// Match by Mastodon handle
-		if (url && person.mastodon && mastodonHosts.includes(getHost(url))) {
-			return toArray(person.mastodon).find((personMastodon) => {
-				return getMastodonHandle(url) === `@${personMastodon}`;
-			});
-		}
-		// Match by Twitter handle
-		if (url && person.twitter && url.includes("https://twitter.com")) {
-			return toArray(person.twitter).find((personTwitter) => {
-				return getTwitterHandle(url) === `@${personTwitter}`;
-			});
-		}
-		// Match by URL
-		if (url && person.url) {
-			return toArray(person.url).find((personURL) => {
-				if (getHost(url) === getHost(personURL)) {
-					return true;
-				}
+	let result = null;
 
-				return false;
-			});
+	// Match by Title
+	if (title) {
+		result = peopleByTitle.get(title.toLowerCase());
+		if (result) {
+			cachedPeople.set(cacheKey, result);
+			return result;
 		}
-		return false;
-	});
+	}
+
+	// Match by URL
+	if (url) {
+		result = peopleByUrl.get(url);
+		if (result) {
+			cachedPeople.set(cacheKey, result);
+			return result;
+		}
+
+		// Match by URL host
+		const host = getHost(url);
+		result = peopleByHost.get(host);
+		if (result) {
+			cachedPeople.set(cacheKey, result);
+			return result;
+		}
+
+		// Match by Mastodon handle
+		if (mastodonHosts.includes(host)) {
+			const mastodonHandle = getMastodonHandle(url);
+			if (mastodonHandle) {
+				result = peopleByMastodon.get(mastodonHandle.toLowerCase());
+				if (result) {
+					cachedPeople.set(cacheKey, result);
+					return result;
+				}
+			}
+		}
+
+		// Match by Twitter handle
+		if (url.includes("https://twitter.com")) {
+			const twitterHandle = getTwitterHandle(url);
+			if (twitterHandle) {
+				result = peopleByTwitter.get(twitterHandle.toLowerCase());
+				if (result) {
+					cachedPeople.set(cacheKey, result);
+					return result;
+				}
+			}
+		}
+	}
 
 	cachedPeople.set(cacheKey, result);
 	return result;

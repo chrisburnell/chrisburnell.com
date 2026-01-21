@@ -2,7 +2,12 @@ import dotenv from "dotenv";
 dotenv.config({ quiet: true });
 
 import { getWebmentionPublished } from "@chrisburnell/eleventy-cache-webmentions";
-import { currentYear, nowEpoch } from "../eleventy/data/global.js";
+import {
+	currentDay,
+	currentMonth,
+	currentYear,
+	nowEpoch,
+} from "../eleventy/data/global.js";
 import {
 	applyDefaultFilter,
 	flattenCollections,
@@ -376,31 +381,28 @@ export const rsvpsUpcoming = (collection) => {
  * @returns {Array<object>}
  */
 export const onThisDay = (collection) => {
-	// Blog posts made on this day and month in previous years.
-
 	if (cachedCollections.has("onThisDay")) {
 		return cachedCollections.get("onThisDay");
 	}
 
-	const now = new Date();
-	const currentDay = now.getDate();
-	const currentMonth = now.getMonth();
+	const filteredCollection = [];
+	const blogPostsCollection = blogPosts(collection);
 
-	const filteredCollection = blogPosts(collection)
-		.filter((item) => {
-			if (item.data.rsvp || item.data.in_reply_to) {
-				return false;
-			}
-			return true;
-		})
-		.filter((item) => {
-			const itemDate = new Date(item.data.date);
-			return (
-				itemDate.getFullYear() !== currentYear &&
-				itemDate.getDate() === currentDay &&
-				itemDate.getMonth() === currentMonth
-			);
-		});
+	for (const item of blogPostsCollection) {
+		if (item.data.rsvp || item.data.in_reply_to) {
+			continue;
+		}
+
+		const itemDate = new Date(item.data.date);
+
+		if (
+			itemDate.getFullYear() !== currentYear &&
+			itemDate.getDate() === currentDay &&
+			itemDate.getMonth() === currentMonth
+		) {
+			filteredCollection.push(item);
+		}
+	}
 
 	cachedCollections.set("onThisDay", filteredCollection);
 

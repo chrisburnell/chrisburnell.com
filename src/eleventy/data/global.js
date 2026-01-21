@@ -17,13 +17,16 @@ export {
 
 export const personalApiKeyForLocal = process.env.PERSONAL_API_KEY_FOR_LOCAL;
 
+const now = new Date();
+export const currentYear = now.getFullYear();
+export const currentMonth = now.getMonth();
+export const currentDay = now.getDate();
+
 export const nowEpoch = Date.now();
 
 const { year, month, day, hour, minute, second, offset } =
 	Temporal.Now.zonedDateTimeISO();
 export const nowISO = `${year.toString().padStart(4, "0")}-${month.toString().padStart(2, "0")}-${day.toString().padStart(2, "0")}T${hour.toString().padStart(2, "0")}:${minute.toString().padStart(2, "0")}:${second.toString().padStart(2, "0")}${offset}`;
-
-export const currentYear = new Date().getFullYear();
 
 export const sotbSpeakers = 10 + 9 + 7 + 8 + 8 + 8 + 7 + 7;
 
@@ -41,6 +44,8 @@ export const random = `${segment()}-${segment()}-${segment()}`;
 export default {
 	personalApiKeyForLocal,
 	currentYear,
+	currentMonth,
+	currentDay,
 	sotbSpeakers,
 	flexibleSorting,
 	nowEpoch,
