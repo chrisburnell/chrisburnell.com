@@ -96,21 +96,49 @@ export default {
 			url: "https://auth.chrisburnell.com/",
 			data: {
 				title: "auth.chrisburnell.com",
-				description: `Personal OAuth/OIDC powered by [Authelia](https://www.authelia.com/)`,
+				description: `Personal authentication/authorisation and OIDC provider powered by [Authelia](https://www.authelia.com)`,
+			},
+		},
+		{
+			url: "https://drop.chrisburnell.com/",
+			data: {
+				title: "drop.chrisburnell.com",
+				description: `A file server powered by [copyparty](https://github.com/9001/copyparty)`,
 			},
 		},
 		{
 			url: "https://git.chrisburnell.com/",
 			data: {
 				title: "git.chrisburnell.com",
-				description: `A [git](https://git-scm.com/) server powered by [Forgejo](https://forgejo.org/)`,
+				description: `A [git](https://git-scm.com) server powered by [Forgejo](https://forgejo.org)`,
 			},
 		},
 		{
 			url: "https://gist.chrisburnell.com/",
 			data: {
 				title: "gist.chrisburnell.com",
-				description: `A pastebin instance powered by [Opengist](https://opengist.io/) (like Git, but for one file/code snippet at a time)`,
+				description: `A <q>pastebin</q> instance powered by [Opengist](https://opengist.io) (like Git, but for one file/code snippet at a time)`,
+			},
+		},
+		{
+			url: "https://logs.chrisburnell.com/",
+			data: {
+				title: "logs.chrisburnell.com",
+				description: `A [Fathom Lite](https://github.com/usefathom/fathom) instance used for web analytics`,
+			},
+		},
+		{
+			url: "https://rss.chrisburnell.com/",
+			data: {
+				title: "rss.chrisburnell.com",
+				description: `A feed aggregator powered by [FreshRSS](https://freshrss.org)`,
+			},
+		},
+		{
+			url: "https://speedlify.chrisburnell.com",
+			data: {
+				title: "speedlify.chrisburnell.com",
+				description: `Periodic website performance measuring powered by [Speedlify](https://github.com/zachleat/speedlify)`,
 			},
 		},
 		{
