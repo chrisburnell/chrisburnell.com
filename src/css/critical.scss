@@ -18,12 +18,12 @@
 
 // Reset
 @layer reset {
-	@include meta.load-css("global/variables");
 	@include meta.load-css("global/reset");
 }
 
 // Global
 @layer global {
+	@include meta.load-css("global/variables");
 	@include meta.load-css("global/page");
 	@include meta.load-css("global/color-schemes");
 	@include meta.load-css("global/modals");

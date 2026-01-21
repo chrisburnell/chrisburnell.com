@@ -52,3 +52,32 @@
 .fsociety {
 	filter: url("/images/fsociety.svg#fsociety");
 }
+
+.emoji {
+	font-family: var(--font-family-sans);
+	font-style: normal;
+	font-variation-settings: normal;
+	font-variant-emoji: emoji;
+	vertical-align: middle;
+	margin-block-start: calc(1ex - 1cap);
+	text-shadow: none;
+
+	:is(a:not(.button), .anchor):not(.icon-anchor) > &:first-child,
+	:is(button:not(.anchor), .button, [type="button"], [role="tab"]):not(
+			.icon-anchor
+		)
+		> &:first-child {
+		display: inline-block;
+		padding-inline-end: 0.625ch;
+	}
+
+	& svg {
+		vertical-align: middle;
+		margin-block-start: calc(1ex - 1cap);
+
+		&:not([width], [height]) {
+			max-inline-size: 1em;
+			max-block-size: 1em;
+		}
+	}
+}

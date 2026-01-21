@@ -46,8 +46,8 @@
 }
 
 :where(:focus-visible) {
-	outline: var(--outline-width, var(--size-border-thin)) solid var(--outline-color, Highlight);
-	outline-offset: var(--outline-offset, var(--size-border-thin));
+	outline: var(--outline-width, var(--size-border-thin, 1px)) solid var(--outline-color, Highlight);
+	outline-offset: var(--outline-offset, var(--size-border-thin, 1px));
 }
 
 :where(img, picture, svg, input[type="image"]) {

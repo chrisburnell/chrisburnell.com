@@ -16,9 +16,9 @@
 
 // Reset
 @include meta.load-css("global/reset");
-@include meta.load-css("global/variables");
 
 // Global
+@include meta.load-css("global/variables");
 @include meta.load-css("global/page");
 @include meta.load-css("global/color-schemes");
 @include meta.load-css("global/anchors");
