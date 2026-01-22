@@ -2,19 +2,6 @@
  * Radio Reloj Chronograph
  */
 class RadioReloj {
-	/**
-	 * @class
-	 */
-	constructor() {
-		this.#audioContext = new (
-			window.AudioContext || window.webkitAudioContext
-		)();
-
-		this.#setupEventListeners();
-
-		this.start();
-	}
-
 	static #TONE = "triangle";
 	static #TICK = 220;
 	static #MORSE = 880;
@@ -28,6 +15,21 @@ class RadioReloj {
 	#running = false;
 	#timer = null;
 	#keySequenceIndex = 0;
+	#kbdButton;
+
+	/**
+	 * @class
+	 */
+	constructor() {
+		this.#audioContext = new (
+			window.AudioContext || window.webkitAudioContext
+		)();
+
+		this.#kbdButton = document.getElementById("radio-reloj-toggle");
+		this.#setupEventListeners();
+
+		this.start();
+	}
 
 	start() {
 		if (this.#running) return;
@@ -146,6 +148,7 @@ class RadioReloj {
 
 	#setupEventListeners() {
 		document.addEventListener("keydown", (e) => this.#handleKeydown(e));
+		this.#kbdButton.addEventListener("click", () => this.toggle());
 	}
 
 	#handleKeydown(e) {

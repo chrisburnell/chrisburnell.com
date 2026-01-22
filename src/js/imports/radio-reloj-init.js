@@ -1,4 +1,5 @@
 (() => {
+	const kbdButton = document.getElementById("radio-reloj-toggle");
 	const KEY_SEQUENCE = ["c", "b"];
 	let sequenceIndex = 0;
 	let mainScriptLoaded = false;
@@ -22,7 +23,10 @@
 	};
 
 	const loadMainScript = () => {
-		if (mainScriptLoaded) return;
+		if (mainScriptLoaded) {
+			return;
+		}
+
 		mainScriptLoaded = true;
 
 		const script = document.createElement("script");
@@ -30,7 +34,9 @@
 		script.type = "module";
 		document.head.appendChild(script);
 		document.removeEventListener("keydown", handleKeys);
+		kbdButton.removeEventListener("click", loadMainScript);
 	};
 
 	document.addEventListener("keydown", handleKeys);
+	kbdButton.addEventListener("click", loadMainScript);
 })();
