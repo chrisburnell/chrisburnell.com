@@ -22,9 +22,10 @@
 }
 
 .popover-settings {
+	max-inline-size: calc(100vi - (2.75 * max(env(safe-area-inset-right),var(--gutter-end, var(--gutter, var(--size-gutter))))));
 	max-inline-size: calc(100dvi - (2.75 * max(env(safe-area-inset-right),var(--gutter-end, var(--gutter, var(--size-gutter))))));
-	max-block-size: 100vb;
-	max-block-size: 100dvb;
+	max-block-size: 90vb;
+	max-block-size: 90dvb;
 	font-size: var(--font-size-delta-gamma);
     overflow-x: auto;
 

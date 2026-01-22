@@ -16,7 +16,7 @@ class RadioReloj {
 	}
 
 	static #TONE = "triangle";
-	static #TICK = 164.81;
+	static #TICK = 220;
 	static #MORSE = 880;
 	static #DIT = 0.06;
 	static #DAH = RadioReloj.#DIT * 3;
