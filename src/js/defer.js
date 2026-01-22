@@ -17,3 +17,5 @@ import "./imports/preload-links";
 import "./imports/modal-hash-opener";
 
 import "./imports/copy-code";
+
+import "./imports/radio-reloj-init";
