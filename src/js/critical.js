@@ -42,4 +42,7 @@ window.addEventListener("load", () => {
 	document.documentElement.removeAttribute("data-theme");
 	document.documentElement.removeAttribute("data-color-scheme");
 	document.documentElement.classList.remove("hide-lfw");
+	if (document.cookie.includes("auth_session=")) {
+		document.documentElement.classList.add("authenticated");
+	}
 });

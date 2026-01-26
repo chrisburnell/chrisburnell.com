@@ -8,4 +8,18 @@
 	& :is(a:not(.button), .anchor) {
 		color: var(--color-snowy);
 	}
+
+	.authenticated & {
+		position: relative;
+
+		&::after {
+			content: '✓';
+			color: var(--color-conifer);
+			position: absolute;
+			inset-block-end: var(--size-small);
+			inset-inline-end: var(--size-small);
+			line-height: 1;
+			pointer-events: none;
+		}
+	}
 }
