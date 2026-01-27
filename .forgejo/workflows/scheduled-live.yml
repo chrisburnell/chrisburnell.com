@@ -70,28 +70,6 @@ jobs:
           VIGENERE_SECRET: ${{ secrets.VIGENERE_SECRET }}
           WEBMENTION_IO_TOKEN: ${{ secrets.WEBMENTION_IO_TOKEN }}
 
-      - name: Save 11ty cache
-        if: always()
-        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
-        with:
-          path: .cache
-          key: eleventy-cache-${{ forgejo.run_id }}
-
-      - name: Save Site cache
-        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
-        with:
-          path: |
-            _site
-            !_site/og-images
-            !_site/pagefind
-          key: site-cache-${{ forgejo.run_id }}
-
-      - name: Save OG images cache
-        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
-        with:
-          path: _site/og-images
-          key: og-images-cache-${{ forgejo.run_id }}
-
       - name: Check Build
         uses: ./.forgejo/actions/check
 
@@ -116,3 +94,25 @@ jobs:
           username: ${{ secrets.DEPLOY_USERNAME }}
           key: ${{ secrets.DEPLOY_KEY }}
           script: "${{ secrets.DEPLOY_PATH }}${{ secrets.DEPLOY_FILE }}"
+
+      - name: Save 11ty cache
+        if: always()
+        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        with:
+          path: .cache
+          key: eleventy-cache-${{ forgejo.run_id }}
+
+      - name: Save Site cache
+        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        with:
+          path: |
+            _site
+            !_site/og-images
+            !_site/pagefind
+          key: site-cache-${{ forgejo.run_id }}
+
+      - name: Save OG images cache
+        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        with:
+          path: _site/og-images
+          key: og-images-cache-${{ forgejo.run_id }}

@@ -64,28 +64,6 @@ jobs:
           VIGENERE_SECRET: ${{ secrets.VIGENERE_SECRET }}
           WEBMENTION_IO_TOKEN: ${{ secrets.WEBMENTION_IO_TOKEN }}
 
-      - name: Save 11ty cache
-        if: always()
-        uses: actions/cache/save@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
-        with:
-          path: .cache
-          key: eleventy-cache-dev-${{ github.run_id }}
-
-      - name: Save Site cache
-        uses: actions/cache/save@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
-        with:
-          path: |
-            _site
-            !_site/og-images
-            !_site/pagefind
-          key: site-cache-dev-${{ github.run_id }}
-
-      - name: Save OG images cache
-        uses: actions/cache/save@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
-        with:
-          path: _site/og-images
-          key: og-images-cache-dev-${{ github.run_id }}
-
       - name: Check Build
         uses: ./.github/actions/check
 
@@ -110,3 +88,25 @@ jobs:
           username: ${{ secrets.DEPLOY_USERNAME }}
           key: ${{ secrets.DEPLOY_KEY }}
           script: "${{ secrets.DEPLOY_PATH }}${{ secrets.DEPLOY_FILE }}"
+
+      - name: Save 11ty cache
+        if: always()
+        uses: actions/cache/save@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
+        with:
+          path: .cache
+          key: eleventy-cache-dev-${{ github.run_id }}
+
+      - name: Save Site cache
+        uses: actions/cache/save@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
+        with:
+          path: |
+            _site
+            !_site/og-images
+            !_site/pagefind
+          key: site-cache-dev-${{ github.run_id }}
+
+      - name: Save OG images cache
+        uses: actions/cache/save@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
+        with:
+          path: _site/og-images
+          key: og-images-cache-dev-${{ github.run_id }}
