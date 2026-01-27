@@ -34,6 +34,7 @@ jobs:
         uses: ./.forgejo/actions/test
 
       - name: Restore 11ty cache
+        id: eleventy-cache
         uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           path: .cache
@@ -41,6 +42,7 @@ jobs:
           restore-keys: eleventy-cache-
 
       - name: Restore Site cache
+        id: site-cache
         uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           path: |
@@ -51,6 +53,7 @@ jobs:
           restore-keys: site-cache-
 
       - name: Restore OG images cache
+        id: og-images-cache
         uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           path: _site/og-images
@@ -58,6 +61,7 @@ jobs:
           restore-keys: og-images-cache-
 
       - name: Build
+        if: steps.site-cache.outputs.cache-hit != 'true'
         uses: ./.forgejo/actions/build-for-live
         env:
           FATHOM_SUMMARY_KEY: ${{ secrets.FATHOM_SUMMARY_KEY }}
@@ -71,6 +75,7 @@ jobs:
           WEBMENTION_IO_TOKEN: ${{ secrets.WEBMENTION_IO_TOKEN }}
 
       - name: Check Build
+        if: steps.site-cache.outputs.cache-hit != 'true'
         uses: ./.forgejo/actions/check
 
       - name: Install SSH Key
@@ -96,13 +101,14 @@ jobs:
           script: "${{ secrets.DEPLOY_PATH }}${{ secrets.DEPLOY_FILE }}"
 
       - name: Save 11ty cache
-        if: always()
+        if: always() && steps.eleventy-cache.outputs.cache-hit != 'true'
         uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           path: .cache
           key: eleventy-cache-${{ forgejo.run_id }}
 
       - name: Save Site cache
+        if: steps.site-cache.outputs.cache-hit != 'true'
         uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           path: |
@@ -112,6 +118,7 @@ jobs:
           key: site-cache-${{ forgejo.run_id }}
 
       - name: Save OG images cache
+        if: steps.og-images-cache.outputs.cache-hit != 'true'
         uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           path: _site/og-images

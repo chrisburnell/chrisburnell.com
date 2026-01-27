@@ -29,6 +29,7 @@ jobs:
         uses: ./.github/actions/test
 
       - name: Restore 11ty cache
+        id: eleventy-cache
         uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
         with:
           path: .cache
@@ -36,6 +37,7 @@ jobs:
           restore-keys: eleventy-cache-dev-
 
       - name: Restore Site cache
+        id: site-cache
         uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
         with:
           path: |
@@ -46,6 +48,7 @@ jobs:
           restore-keys: site-cache-dev-
 
       - name: Restore OG images cache
+        id: og-images-cache
         uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
         with:
           path: _site/og-images
@@ -53,6 +56,7 @@ jobs:
           restore-keys: og-images-cache-dev-
 
       - name: Build
+        if: steps.site-cache.outputs.cache-hit != 'true'
         uses: ./.github/actions/build-for-dev
         env:
           FATHOM_SUMMARY_KEY: ${{ secrets.FATHOM_SUMMARY_KEY }}
@@ -65,6 +69,7 @@ jobs:
           WEBMENTION_IO_TOKEN: ${{ secrets.WEBMENTION_IO_TOKEN }}
 
       - name: Check Build
+        if: steps.site-cache.outputs.cache-hit != 'true'
         uses: ./.github/actions/check
 
       - name: Install SSH Key
@@ -90,13 +95,14 @@ jobs:
           script: "${{ secrets.DEPLOY_PATH }}${{ secrets.DEPLOY_FILE }}"
 
       - name: Save 11ty cache
-        if: always()
+        if: always() && steps.eleventy-cache.outputs.cache-hit != 'true'
         uses: actions/cache/save@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
         with:
           path: .cache
           key: eleventy-cache-dev-${{ github.run_id }}
 
       - name: Save Site cache
+        if: steps.site-cache.outputs.cache-hit != 'true'
         uses: actions/cache/save@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
         with:
           path: |
@@ -106,6 +112,7 @@ jobs:
           key: site-cache-dev-${{ github.run_id }}
 
       - name: Save OG images cache
+        if: steps.og-images-cache.outputs.cache-hit != 'true'
         uses: actions/cache/save@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
         with:
           path: _site/og-images
