@@ -10,7 +10,6 @@ import {
 } from "../eleventy/data/global.js";
 import {
 	applyDefaultFilter,
-	flattenCollections,
 	getCollectionCacheKey,
 	hasMinimumPageviews,
 	notReply,
@@ -32,6 +31,24 @@ let cachedCollections = new Map();
  */
 const scoreSort = (a, b) => {
 	return b.data.rank.score - a.data.rank.score;
+};
+
+/**
+ * @param {Array<object>} collection
+ * @param {string|Array<string>} tags
+ * @returns {Array<object>}
+ */
+const flattenCollections = (collection, tags) => {
+	const seen = new Set();
+	return tags
+		.flatMap((tag) => collection.getFilteredByTag(tag))
+		.filter((item) => {
+			if (seen.has(item.inputPath)) {
+				return false;
+			}
+			seen.add(item.inputPath);
+			return true;
+		});
 };
 
 /**
@@ -204,9 +221,7 @@ export const features = (collection) => {
 	return filterCollection(
 		collection,
 		"feature",
-		(items) => {
-			return applyDefaultFilter(items).filter(notReply);
-		},
+		(items) => applyDefaultFilter(items),
 		"features",
 	);
 };

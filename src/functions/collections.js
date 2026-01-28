@@ -201,24 +201,6 @@ export const getCollectionCacheKey = (tags, collectionName) => {
 
 /**
  * @param {Array<object>} collection
- * @param {string|Array<string>} tags
- * @returns {Array<object>}
- */
-export const flattenCollections = (collection, tags) => {
-	const seen = new Set();
-	return tags
-		.flatMap((tag) => collection.getFilteredByTag(tag))
-		.filter((item) => {
-			if (seen.has(item.inputPath)) {
-				return false;
-			}
-			seen.add(item.inputPath);
-			return true;
-		});
-};
-
-/**
- * @param {Array<object>} collection
  * @returns {Array<object>}
  */
 export const applyDefaultFilter = (collection) => {
@@ -543,7 +525,6 @@ export default {
 	isPublished,
 	notReply,
 	getCollectionCacheKey,
-	flattenCollections,
 	applyDefaultFilter,
 	hasMinimumPageviews,
 	getPropertyData,

@@ -40,7 +40,7 @@ eleventyComputed:
 			{% include 'lfw.njk' %}
 		{%- endif %}
 
-		{% if site.conferences.sotb.date | isUpcoming(site.limits.recentDays) -%}
+		{% if site.conferences.sotb.date | isUpcoming(31) -%}
 			{% include 'state-of-the-browser.njk' %}
 		{%- endif %}
 

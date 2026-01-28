@@ -33,9 +33,11 @@ if (HIDE_LFW) {
 	document.documentElement.classList.add("hide-lfw");
 }
 
-const HIDE_SOTB = localStorage.getItem("hide-sotb");
+// TODO: This date should come from site.js
+const sotbKey = `hide-sotb-${new Date("2026-02-28T09:30:00+0000").getFullYear()}`;
+const HIDE_SOTB = localStorage.getItem(sotbKey);
 if (HIDE_SOTB) {
-	document.documentElement.classList.add("hide-sotb");
+	document.documentElement.classList.add(sotbKey);
 }
 
 window.addEventListener("load", () => {

@@ -130,7 +130,7 @@
 	aspect-ratio: 1;
 	inline-size: var(--size-avatar);
 	block-size: var(--size-avatar);
-	border-radius: 50%;
+	border-radius: var(--size-border-default);
 }
 
 .author__biography {
