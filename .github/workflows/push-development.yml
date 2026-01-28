@@ -33,8 +33,10 @@ jobs:
         uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
         with:
           path: .cache
-          key: eleventy-cache-dev-${{ github.run_id }}
-          restore-keys: eleventy-cache-dev-
+          key: eleventy-cache-dev-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            eleventy-cache-dev-${{ github.run_id }}-
+            eleventy-cache-dev-
 
       - name: Restore Site cache
         id: site-cache
@@ -95,11 +97,11 @@ jobs:
           script: "${{ secrets.DEPLOY_PATH }}${{ secrets.DEPLOY_FILE }}"
 
       - name: Save 11ty cache
-        if: always() && steps.eleventy-cache.outputs.cache-hit != 'true'
+        if: always()
         uses: actions/cache/save@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
         with:
           path: .cache
-          key: eleventy-cache-dev-${{ github.run_id }}
+          key: eleventy-cache-dev-${{ github.run_id }}-${{ github.run_attempt }}
 
       - name: Save Site cache
         if: steps.site-cache.outputs.cache-hit != 'true'

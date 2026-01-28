@@ -34,8 +34,10 @@ jobs:
         uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
         with:
           path: .cache
-          key: eleventy-cache-${{ github.run_id }}
-          restore-keys: eleventy-cache-
+          key: eleventy-cache-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            eleventy-cache-${{ github.run_id }}-
+            eleventy-cache-
 
       - name: Restore Site cache
         uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
