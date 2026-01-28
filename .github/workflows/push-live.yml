@@ -30,7 +30,7 @@ jobs:
 
       - name: Restore 11ty cache
         id: eleventy-cache
-        uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
+        uses: actions/cache/restore@8b402f58fbc84540c8b491a91e594a4576fec3d7 # 5.0.2
         with:
           path: .cache
           key: eleventy-cache-${{ github.run_id }}-${{ github.run_attempt }}
@@ -40,7 +40,7 @@ jobs:
 
       - name: Restore Site cache
         id: site-cache
-        uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
+        uses: actions/cache/restore@8b402f58fbc84540c8b491a91e594a4576fec3d7 # 5.0.2
         with:
           path: |
             _site
@@ -51,7 +51,7 @@ jobs:
 
       - name: Restore OG images cache
         id: og-images-cache
-        uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
+        uses: actions/cache/restore@8b402f58fbc84540c8b491a91e594a4576fec3d7 # 5.0.2
         with:
           path: _site/og-images
           key: og-images-cache-${{ github.run_id }}
@@ -98,14 +98,14 @@ jobs:
 
       - name: Save 11ty cache
         if: always()
-        uses: actions/cache/save@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
+        uses: actions/cache/save@8b402f58fbc84540c8b491a91e594a4576fec3d7 # 5.0.2
         with:
           path: .cache
           key: eleventy-cache-${{ github.run_id }}-${{ github.run_attempt }}
 
       - name: Save Site cache
         if: steps.site-cache.outputs.cache-hit != 'true'
-        uses: actions/cache/save@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
+        uses: actions/cache/save@8b402f58fbc84540c8b491a91e594a4576fec3d7 # 5.0.2
         with:
           path: |
             _site
@@ -115,7 +115,7 @@ jobs:
 
       - name: Save OG images cache
         if: steps.og-images-cache.outputs.cache-hit != 'true'
-        uses: actions/cache/save@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
+        uses: actions/cache/save@8b402f58fbc84540c8b491a91e594a4576fec3d7 # 5.0.2
         with:
           path: _site/og-images
           key: og-images-cache-${{ github.run_id }}

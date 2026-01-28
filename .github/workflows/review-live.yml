@@ -31,7 +31,7 @@ jobs:
         uses: ./.github/actions/test
 
       - name: Restore 11ty cache
-        uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
+        uses: actions/cache/restore@8b402f58fbc84540c8b491a91e594a4576fec3d7 # 5.0.2
         with:
           path: .cache
           key: eleventy-cache-${{ github.run_id }}-${{ github.run_attempt }}
@@ -40,7 +40,7 @@ jobs:
             eleventy-cache-
 
       - name: Restore Site cache
-        uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
+        uses: actions/cache/restore@8b402f58fbc84540c8b491a91e594a4576fec3d7 # 5.0.2
         with:
           path: |
             _site
@@ -50,7 +50,7 @@ jobs:
           restore-keys: site-cache-
 
       - name: Restore OG images cache
-        uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
+        uses: actions/cache/restore@8b402f58fbc84540c8b491a91e594a4576fec3d7 # 5.0.2
         with:
           path: _site/og-images
           key: og-images-cache-${{ github.run_id }}
