@@ -1,8 +1,10 @@
-name: Scheduled Deploy
+name: Push Deploy
 
 on:
+  push:
+    branches:
+      - main
   schedule:
-    # https://crontab.guru/#33_1/6_*_*_*
     - cron: "33 1/6 * * *"
     # CSS Naked Day
     - cron: "0 10 8 4 *"
@@ -12,11 +14,12 @@ on:
     - cron: "0 12 25 4 *"
 
 concurrency:
-  group: deploy-live
+  group: production
+  cancel-in-progress: ${{ github.event_name != 'schedule' }}
 
 jobs:
   build:
-    name: Scheduled Deploy
+    name: Push Deploy
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -64,7 +67,7 @@ jobs:
 
       - name: Build
         if: steps.site-cache.outputs.cache-hit != 'true'
-        uses: ./.forgejo/actions/build-for-live
+        uses: ./.forgejo/actions/build-production
         env:
           FATHOM_SUMMARY_KEY: ${{ secrets.FATHOM_SUMMARY_KEY }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}

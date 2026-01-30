@@ -1,22 +1,17 @@
-name: Scheduled Deploy
+name: Push Deploy (Dev)
 
 on:
-  schedule:
-    # https://crontab.guru/#33_1/6_*_*_*
-    - cron: "33 1/6 * * *"
-    # CSS Naked Day
-    - cron: "0 10 8 4 *"
-    - cron: "0 12 10 4 *"
-    # JS Naked Day
-    - cron: "0 10 23 4 *"
-    - cron: "0 12 25 4 *"
+  push:
+    branches:
+      - development
 
 concurrency:
-  group: deploy-live
+  group: development
+  cancel-in-progress: true
 
 jobs:
   build:
-    name: Scheduled Deploy
+    name: Push Deploy
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -38,10 +33,10 @@ jobs:
         uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
         with:
           path: .cache
-          key: eleventy-cache-${{ github.run_id }}-${{ github.run_attempt }}
+          key: eleventy-cache-dev-${{ github.run_id }}-${{ github.run_attempt }}
           restore-keys: |
-            eleventy-cache-${{ github.run_id }}-
-            eleventy-cache-
+            eleventy-cache-dev-${{ github.run_id }}-
+            eleventy-cache-dev-
 
       - name: Restore Site cache
         id: site-cache
@@ -51,20 +46,20 @@ jobs:
             _site
             !_site/og-images
             !_site/pagefind
-          key: site-cache-${{ github.run_id }}
-          restore-keys: site-cache-
+          key: site-cache-dev-${{ github.run_id }}
+          restore-keys: site-cache-dev-
 
       - name: Restore OG images cache
         id: og-images-cache
         uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
         with:
           path: _site/og-images
-          key: og-images-cache-${{ github.run_id }}
-          restore-keys: og-images-cache-
+          key: og-images-cache-dev-${{ github.run_id }}
+          restore-keys: og-images-cache-dev-
 
       - name: Build
         if: steps.site-cache.outputs.cache-hit != 'true'
-        uses: ./.github/actions/build-for-live
+        uses: ./.github/actions/build-development
         env:
           FATHOM_SUMMARY_KEY: ${{ secrets.FATHOM_SUMMARY_KEY }}
           LASTFM_API_TOKEN: ${{ secrets.LASTFM_API_TOKEN }}
@@ -90,7 +85,7 @@ jobs:
           ssh-keyscan -p ${{ secrets.DEPLOY_PORT }} -H ${{ secrets.DEPLOY_HOST }} >> ~/.ssh/known_hosts
           rsync -azh --delete --exclude="audio" --exclude="fonts" --exclude="static" --chown=${{ secrets.DEPLOY_CHOWN }} \
             -e "ssh -p ${{ secrets.DEPLOY_PORT }}" \
-            ./_site/ ${{ secrets.DEPLOY_USERNAME }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_PATH }}html
+            ./_site/ ${{ secrets.DEPLOY_USERNAME }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_DEV_PATH }}html
 
       - name: Process on server
         uses: appleboy/ssh-action@master
@@ -106,7 +101,7 @@ jobs:
         uses: actions/cache/save@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
         with:
           path: .cache
-          key: eleventy-cache-${{ github.run_id }}-${{ github.run_attempt }}
+          key: eleventy-cache-dev-${{ github.run_id }}-${{ github.run_attempt }}
 
       - name: Save Site cache
         if: steps.site-cache.outputs.cache-hit != 'true'
@@ -116,11 +111,11 @@ jobs:
             _site
             !_site/og-images
             !_site/pagefind
-          key: site-cache-${{ github.run_id }}
+          key: site-cache-dev-${{ github.run_id }}
 
       - name: Save OG images cache
         if: steps.og-images-cache.outputs.cache-hit != 'true'
         uses: actions/cache/save@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
         with:
           path: _site/og-images
-          key: og-images-cache-${{ github.run_id }}
+          key: og-images-cache-dev-${{ github.run_id }}

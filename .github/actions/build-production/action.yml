@@ -7,7 +7,7 @@ runs:
     - name: Build website
       run: |
         set -e
-        npm run build:live
+        npm run build:prod
       shell: bash
 
     - name: Build search index

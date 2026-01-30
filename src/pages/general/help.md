@@ -23,8 +23,6 @@ You get in touch with me and briefly describe what you want me to help with:
         <dd><a href="{{ author.mastodon_domain }}/@{{ author.mastodon.split('@')[1] }}" class=" [ canada ] " title="{{ author.name }} on Mastodon">{{ author.mastodon }}</a></dd>
         <dt><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false" style="margin-inline-end: 1ex;"><use href="#svg--linkedin"></use></svg></c-emoji>LinkedIn:</dt>
         <dd><a href="https://www.linkedin.com/in/{{ author.linkedin }}" class=" [ canada ] " title="{{ author.name }} on LinkedIn">{{ author.linkedin }}</a></dd>
-        <dt><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false" style="margin-inline-end: 1ex;"><use href="#svg--xmpp"></use></svg></c-emoji>XMPP:</dt>
-        <dd><a href="xmpp:{{ author.xmpp }}" class=" [ canada ] " title="{{ author.name }} on XMPP">{{ author.xmpp }}</a></dd>
     </dl>
 </address>
 

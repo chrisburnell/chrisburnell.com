@@ -1,9 +1,11 @@
 export default [
 	"AI",
+	"CI",
 	"CodePen",
 	"CSS",
 	"Design-Systems",
 	"Developer-Relations",
+	"EchoFeed",
 	"Eleventy",
 	"GitHub",
 	"HTML",
