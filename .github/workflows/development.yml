@@ -1,4 +1,4 @@
-name: Push Deploy (Dev)
+name: Development
 
 on:
   push:
@@ -11,10 +11,11 @@ concurrency:
 
 jobs:
   build:
-    name: Push Deploy
+    name: Development
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      actions: write
     steps:
       - name: Checkout
         uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # 6.0.1
@@ -29,7 +30,7 @@ jobs:
         uses: ./.github/actions/test
 
       - name: Restore 11ty cache
-        id: eleventy-cache
+        id: restore-eleventy-cache
         uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
         with:
           path: .cache
@@ -39,7 +40,7 @@ jobs:
             eleventy-cache-dev-
 
       - name: Restore Site cache
-        id: site-cache
+        id: restore-site-cache
         uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
         with:
           path: |
@@ -50,7 +51,7 @@ jobs:
           restore-keys: site-cache-dev-
 
       - name: Restore OG images cache
-        id: og-images-cache
+        id: restore-og-images-cache
         uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
         with:
           path: _site/og-images
@@ -58,7 +59,7 @@ jobs:
           restore-keys: og-images-cache-dev-
 
       - name: Build
-        if: steps.site-cache.outputs.cache-hit != 'true'
+        if: steps.restore-site-cache.outputs.cache-hit != 'true'
         uses: ./.github/actions/build-development
         env:
           FATHOM_SUMMARY_KEY: ${{ secrets.FATHOM_SUMMARY_KEY }}
@@ -71,7 +72,7 @@ jobs:
           WEBMENTION_IO_TOKEN: ${{ secrets.WEBMENTION_IO_TOKEN }}
 
       - name: Check Build
-        if: steps.site-cache.outputs.cache-hit != 'true'
+        if: steps.restore-site-cache.outputs.cache-hit != 'true'
         uses: ./.github/actions/check
 
       - name: Install SSH Key
@@ -97,14 +98,22 @@ jobs:
           script: "${{ secrets.DEPLOY_PATH }}${{ secrets.DEPLOY_FILE }}"
 
       - name: Save 11ty cache
+        id: save-eleventy-cache
         if: always()
         uses: actions/cache/save@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
         with:
           path: .cache
           key: eleventy-cache-dev-${{ github.run_id }}-${{ github.run_attempt }}
 
+      - name: Delete old 11ty cache
+        if: steps.save-eleventy-cache.outcome == 'success' && steps.restore-eleventy-cache.outputs.cache-matched-key
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh cache delete "${{ steps.restore-eleventy-cache.outputs.cache-matched-key }}" --repo ${{ github.repository }} || true
+
       - name: Save Site cache
-        if: steps.site-cache.outputs.cache-hit != 'true'
+        id: save-site-cache
+        if: steps.restore-site-cache.outputs.cache-hit != 'true'
         uses: actions/cache/save@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
         with:
           path: |
@@ -113,9 +122,22 @@ jobs:
             !_site/pagefind
           key: site-cache-dev-${{ github.run_id }}
 
+      - name: Delete old Site cache
+        if: steps.save-site-cache.outcome == 'success' && steps.restore-site-cache.outputs.cache-matched-key
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh cache delete "${{ steps.restore-site-cache.outputs.cache-matched-key }}" --repo ${{ github.repository }} || true
+
       - name: Save OG images cache
-        if: steps.og-images-cache.outputs.cache-hit != 'true'
+        id: save-og-images-cache
+        if: steps.restore-og-images-cache.outputs.cache-hit != 'true'
         uses: actions/cache/save@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
         with:
           path: _site/og-images
           key: og-images-cache-dev-${{ github.run_id }}
+
+      - name: Delete old OG images cache
+        if: steps.save-og-images-cache.outcome == 'success' && steps.restore-og-images-cache.outputs.cache-matched-key
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh cache delete "${{ steps.restore-og-images-cache.outputs.cache-matched-key }}" --repo ${{ github.repository }} || true

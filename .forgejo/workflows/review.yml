@@ -1,4 +1,4 @@
-name: Branch Review
+name: Review
 
 on:
   push:
@@ -13,7 +13,7 @@ concurrency:
 
 jobs:
   build:
-    name: Branch Build Test
+    name: Review
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -31,6 +31,7 @@ jobs:
         uses: ./.forgejo/actions/test
 
       - name: Restore 11ty cache
+        id: restore-eleventy-cache
         uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           path: .cache
@@ -40,6 +41,7 @@ jobs:
             eleventy-cache-
 
       - name: Restore Site cache
+        id: restore-site-cache
         uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           path: |
@@ -50,6 +52,7 @@ jobs:
           restore-keys: site-cache-
 
       - name: Restore OG images cache
+        id: restore-og-images-cache
         uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           path: _site/og-images
