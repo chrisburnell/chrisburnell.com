@@ -1,4 +1,5 @@
 import EleventyFetch from "@11ty/eleventy-fetch";
+import { readFileSync } from "node:fs";
 import blogroll from "../eleventy/data/blogroll.js";
 import breweries from "../eleventy/data/breweries.js";
 import gamePublishers from "../eleventy/data/gamePublishers.js";
@@ -25,14 +26,19 @@ import { getSyndicationTitle, toArray } from "../eleventy/filters/utils.js";
 import { stripHTML } from "./strings.js";
 import { getMastodonHandle, getTwitterHandle } from "./utils.js";
 
-// Get data about all pages
-const pages = await EleventyFetch("https://chrisburnell.com/all.json", {
-	duration: cacheDurations.hourly,
-	type: "json",
-	fetchOptions: {
-		method: "GET",
-	},
-});
+let pages = [];
+try {
+	pages = JSON.parse(readFileSync("_site/all.json", "utf-8"));
+	console.log("AYOOOO");
+} catch {
+	pages = await EleventyFetch("https://chrisburnell.com/all.json", {
+		duration: cacheDurations.hourly,
+		type: "json",
+		fetchOptions: {
+			method: "GET",
+		},
+	});
+}
 
 // Create an array of references
 const allPeople = [
