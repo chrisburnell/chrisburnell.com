@@ -771,11 +771,6 @@ export default [
 		mastodon: "darylsun@social.lol",
 	},
 	{
-		title: "Manuel Moreale",
-		url: "https://manuelmoreale.com",
-		rss: "https://manuelmoreale.com/feed/rss",
-	},
-	{
 		title: "Anh",
 		url: "https://anhvn.com",
 		rss: "https://anhvn.com/feed.xml",
