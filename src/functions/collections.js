@@ -29,7 +29,6 @@ import { getMastodonHandle, getTwitterHandle } from "./utils.js";
 let pages = [];
 try {
 	pages = JSON.parse(readFileSync("_site/all.json", "utf-8"));
-	console.log("AYOOOO");
 } catch {
 	pages = await EleventyFetch("https://chrisburnell.com/all.json", {
 		duration: cacheDurations.hourly,
