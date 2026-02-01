@@ -104,8 +104,8 @@
     "autoprefixer": "^10.4.23",
     "browserslist": "^4.28.1",
     "caniuse-api": "^3.0.0",
-    "cheerio": "^1.1.2",
-    "chrisburnell": "^35.0.8",
+    "cheerio": "^1.2.0",
+    "chrisburnell": "^35.0.11",
     "deepmerge": "^4.3.1",
     "dotenv": "^17.2.3",
     "eleventy-plugin-og-image": "^4.2.1",
@@ -124,7 +124,7 @@
     "postcss-scss": "^4.0.9",
     "postcss-utopia": "^1.1.0",
     "random-case": "^1.0.0",
-    "sass": "^1.97.2",
+    "sass": "^1.97.3",
     "striptags": "^3.2.0",
     "tab-guard": "^0.1.0",
     "truncate-html": "^1.2.2",
@@ -147,7 +147,7 @@
     "prettier-plugin-jinja-template": "^2.1.0",
     "release-it": "^19.2.4",
     "rimraf": "^6.1.2",
-    "vitest": "^4.0.16"
+    "vitest": "^4.0.18"
   },
   "imports": {
     "#data": "./src/eleventy/data/*.js",
