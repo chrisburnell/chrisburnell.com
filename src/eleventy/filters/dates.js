@@ -379,6 +379,7 @@ const emojiNotGoing = `<span class=" [ emoji ] " aria-hidden="true">🤞</span>`
  * @param {string} start
  * @param {string} end
  * @param {string} value
+ * @param {boolean} [showEmoji]
  * @returns {string}
  */
 export const getRSVPValueString = (start, end, value, showEmoji = false) => {
@@ -409,10 +410,11 @@ export const getRSVPValueString = (start, end, value, showEmoji = false) => {
  * @param {string} start
  * @param {string} end
  * @param {string} value
+ * @param {boolean} [showEmoji]
  * @returns {string}
  */
-export const getRSVPValueHTML = (start, end, value) => {
-	const content = getRSVPValueString(start, end, value);
+export const getRSVPValueHTML = (start, end, value, showEmoji = false) => {
+	const content = getRSVPValueString(start, end, value, showEmoji);
 	return `<span data-start="${rfc3339Date(start)}" data-end="${rfc3339Date(end)}" data-value="${value}" data-relative-rsvp-value>${content}</span>`;
 };
 

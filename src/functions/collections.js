@@ -437,7 +437,12 @@ export const getReplyAuthorString = (data) => {
 export const getRSVPString = (data) => {
 	const rsvp = data.rsvp;
 	if (rsvp) {
-		return getRSVPValueHTML(rsvp.date, rsvp.end, rsvp.value);
+		return getRSVPValueHTML(
+			rsvp.date,
+			rsvp.end,
+			rsvp.value,
+			rsvp?.showEmoji,
+		);
 	}
 	return null;
 };

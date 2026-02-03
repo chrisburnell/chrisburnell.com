@@ -197,6 +197,21 @@ describe("Functions: Collections", () => {
 				},
 			}),
 		).toBe(
+			`<span data-start="2024-05-09T23:00:00+08:00" data-end="2024-05-10T05:00:00+08:00" data-value="yes" data-relative-rsvp-value><small>attended</small></span>`,
+		);
+	});
+
+	it("getRSVPString() returns an RSVP string with data attributes and an emoji", () => {
+		expect(
+			collections.getRSVPString({
+				rsvp: {
+					value: "yes",
+					date: "2024-05-09T23:00:00+0800",
+					end: "2024-05-10T05:00:00+0800",
+					showEmoji: true,
+				},
+			}),
+		).toBe(
 			`<span data-start="2024-05-09T23:00:00+08:00" data-end="2024-05-10T05:00:00+08:00" data-value="yes" data-relative-rsvp-value><span class=" [ emoji ] " aria-hidden="true">✅</span> <small>attended</small></span>`,
 		);
 	});
