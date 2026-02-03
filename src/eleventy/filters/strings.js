@@ -60,7 +60,7 @@ export const supertitle = (string) => {
 		.join(" ");
 
 	capitalizers.forEach((word) => {
-		const regex = new RegExp(word, "gi");
+		const regex = new RegExp(`\\b${word}\\b`, "gi");
 		if (formatted.match(regex)) {
 			formatted = formatted.replace(regex, word);
 		}

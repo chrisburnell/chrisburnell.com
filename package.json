@@ -87,7 +87,7 @@
     "@chrisburnell/pentatonic": "^1.1.4",
     "@chrisburnell/relative-time": "^1.0.9",
     "@chrisburnell/spark-line": "^1.2.6",
-    "@chrisburnell/svg-sparkline": "^1.0.15",
+    "@chrisburnell/svg-sparkline": "^1.0.16",
     "@chrisburnell/theme-selector": "^1.0.1",
     "@chrisburnell/url-input": "^1.0.0",
     "@daviddarnes/link-peek": "^1.1.0",

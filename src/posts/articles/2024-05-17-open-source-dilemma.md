@@ -6,9 +6,6 @@ tags:
   - weblogpomo
   - weblogpomo2024
   - ai
-  - github
-  - jekyll
-  - eleventy
   - personal
   - state-of-the-web
 post_includes:

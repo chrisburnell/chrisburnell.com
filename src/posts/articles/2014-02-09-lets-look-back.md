@@ -4,7 +4,6 @@ title: Let’s Look Back
 description: I haven't published a new article in a while now, but I haven't been twiddling my thumbs. Let's look at what happened behind-the-scenes in the last eight months since my first article.
 tags:
   - css
-  - github
   - scss
 banner:
   url: lets-look-back.png

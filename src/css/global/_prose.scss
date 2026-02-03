@@ -101,6 +101,7 @@ small,
 }
 
 :is(sub, sup) {
+	margin-inline: 0.5ch;
 	position: relative;
 	font-size: 0.8125em;
 	line-height: 0;

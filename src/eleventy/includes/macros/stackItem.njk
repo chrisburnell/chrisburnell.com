@@ -26,12 +26,12 @@
 				</a>
 			{%- elif item.data.reply_url -%}
 				{% if item.data.rsvp %}
-					<a href="{{ item_url }}">RSVP</a> {{ item.data.rsvp_string | safe }}
+					{{ item.data.rsvp_string | safe }}
 					<data class=" [ p-rsvp ] " value="{{ item.data.rsvp.value }}" hidden></data>
 				{% else %}
 					<a href="{{ item_url }}">Reply</a> <small>to</small>
 				{% endif %}
-				<a href="{{ item.data.reply_url }}" class=" [ h-cite  u-in-reply-to ] " tabindex="-1">{{ item.data.reply_title | safe }}</a>
+				<a href="{{ item.data.reply_url }}" class=" [ h-cite  u-in-reply-to ] "{% if not item.data.rsvp %} tabindex="-1"{% endif %}>{{ item.data.reply_title | safe }}</a>
 				{% if item.data.reply_author_string and (item.data.reply_author_string | striptags) != item.data.reply_title %}
 					<small>by</small> {{ item.data.reply_author_string | replace('<a ', '<a tabindex="-1"') | safe }}
 				{% endif %}
@@ -40,7 +40,7 @@
 			{%- endif %}
 		</h1>
 		{% if item.data.rsvp.date -%}
-			<a href="{{ item.url }}" tabindex="-1"><relative-time{% if item.data.rsvp.date | isUpcoming(2) %} max-division="hour"{% elif item.data.rsvp.date | isUpcoming(item.data.rsvp.upcoming_days_lead) %} max-division="day"{% endif %}><time datetime="{{ item.data.rsvp.date | rfc3339Date }}" class=" [ dt-start ] ">{{ item.data.rsvp.date | formattedDate | safe }} @ {{ item.data.rsvp.date | friendlyTime | safe }}</time></relative-time></a>
+			<a href="{{ item.url }}"><relative-time{% if item.data.rsvp.date | isUpcoming(2) %} max-division="hour"{% elif item.data.rsvp.date | isUpcoming(item.data.rsvp.upcoming_days_lead) %} max-division="day"{% endif %}><time datetime="{{ item.data.rsvp.date | rfc3339Date }}" class=" [ dt-start ] ">{{ item.data.rsvp.date | formattedDate | safe }} @ {{ item.data.rsvp.date | friendlyTime | safe }}</time></relative-time></a>
 			<data class=" [ dt-published ] " value="{{ item.data.date | rfc3339Date }}" hidden></data>
 		{%- else -%}
 			{% if item.url -%}

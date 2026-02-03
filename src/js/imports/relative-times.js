@@ -28,31 +28,31 @@ class RelativeTime {
 	static emojiHopefully = `<span class=" [ emoji ] " aria-hidden="true">🤞</span>`;
 	static emojiNotGoing = `<span class=" [ emoji ] " aria-hidden="true">😔</span>`;
 
-	getRSVPValueString(start, end, value) {
+	getRSVPValueString(start, end, value, showEmoji = false) {
 		const now = Date.now();
 
 		if (value === "yes") {
 			if (new Date(start).getTime() > now) {
-				return `${RelativeTime.emojiFuture} <small>attending</small>`;
+				return `${showEmoji ? RelativeTime.emojiFuture + " " : ""} <small>attending</small>`;
 			}
 			if (
 				new Date(start).getTime() <= now &&
 				now <= new Date(end).getTime()
 			) {
-				return `${RelativeTime.emojiGoing} <small class=" [ currently-attending ] ">currently attending</small>`;
+				return `${showEmoji ? RelativeTime.emojiGoing + " " : ""} <small class=" [ currently-attending ] ">currently attending</small>`;
 			}
-			return `${RelativeTime.emojiGoing} <small>attended</small>`;
+			return `${showEmoji ? RelativeTime.emojiGoing + " " : ""} <small>attended</small>`;
 		}
 		if (value === "maybe" || value === "interested") {
 			if (new Date(start).getTime() > now) {
-				return `${RelativeTime.emojiHopefully} <small>hoping to attend</small>`;
+				return `${showEmoji ? RelativeTime.emojiHopefully + " " : ""} <small>hoping to attend</small>`;
 			}
-			return `${RelativeTime.emojiHopefully} <small>was hoping to attend</small>`;
+			return `${showEmoji ? RelativeTime.emojiHopefully + " " : ""} <small>was hoping to attend</small>`;
 		}
 		if (new Date(start).getTime() > now) {
-			return `${RelativeTime.emojiNotGoing} <small>unable to attend</small>`;
+			return `${showEmoji ? RelativeTime.emojiNotGoing + " " : ""} <small>unable to attend</small>`;
 		}
-		return `${RelativeTime.emojiNotGoing} <small>was unable to attend</small>`;
+		return `${showEmoji ? RelativeTime.emojiNotGoing + " " : ""} <small>was unable to attend</small>`;
 	}
 
 	getRSVPDateString(end) {

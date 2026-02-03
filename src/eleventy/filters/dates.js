@@ -381,28 +381,28 @@ const emojiNotGoing = `<span class=" [ emoji ] " aria-hidden="true">🤞</span>`
  * @param {string} value
  * @returns {string}
  */
-export const getRSVPValueString = (start, end, value) => {
+export const getRSVPValueString = (start, end, value, showEmoji = false) => {
 	const now = Date.now();
 
 	if (value === "yes") {
 		if (epoch(start) > now) {
-			return `${emojiFuture} <small>attending</small>`;
+			return `${showEmoji ? emojiFuture + " " : ""}<small>attending</small>`;
 		}
 		if (epoch(start) <= now && now <= epoch(end)) {
-			return `${emojiGoing} <small class=" [ currently-attending ] ">currently attending</small>`;
+			return `${showEmoji ? emojiGoing + " " : ""}<small class=" [ currently-attending ] ">currently attending</small>`;
 		}
-		return `${emojiGoing} <small>attended</small>`;
+		return `${showEmoji ? emojiGoing + " " : ""}<small>attended</small>`;
 	}
 	if (value === "maybe" || value === "interested") {
 		if (epoch(start) > now) {
-			return `${emojiHopefully} <small>hoping to attend</small>`;
+			return `${showEmoji ? emojiHopefully + " " : ""}<small>hoping to attend</small>`;
 		}
-		return `${emojiHopefully} <small>was hoping to attend</small>`;
+		return `${showEmoji ? emojiHopefully + " " : ""}<small>was hoping to attend</small>`;
 	}
 	if (epoch(start) > now) {
-		return `${emojiNotGoing} <small>unable to attend</small>`;
+		return `${showEmoji ? emojiNotGoing + " " : ""}<small>unable to attend</small>`;
 	}
-	return `${emojiNotGoing} <small>was unable to attend</small>`;
+	return `${showEmoji ? emojiNotGoing + " " : ""}<small>was unable to attend</small>`;
 };
 
 /**

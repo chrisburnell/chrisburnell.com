@@ -5,7 +5,6 @@ description: Well, I've finally gotten my site up and running to a point where I
 tags:
   - conference
   - css
-  - github
   - jekyll
   - sotb
 banner:
