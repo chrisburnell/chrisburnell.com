@@ -21,8 +21,8 @@ import { dateSort, epoch, isFuture, isUpcoming } from "./filters/dates.js";
 /** @type {number} */
 const durationDay = 24 * 60 * 60 * 1000;
 
-/** @type {Map<[key: string]: Array<object>>} */
-let cachedCollections = new Map();
+/** @type {Map<string, Array<object>>} */
+const cachedCollections = new Map();
 
 /**
  * @param {object} a
@@ -400,24 +400,17 @@ export const onThisDay = (collection) => {
 		return cachedCollections.get("onThisDay");
 	}
 
-	const filteredCollection = [];
-	const blogPostsCollection = blogPosts(collection);
-
-	for (const item of blogPostsCollection) {
+	const filteredCollection = blogPosts(collection).filter((item) => {
 		if (item.data.rsvp || item.data.in_reply_to) {
-			continue;
+			return false;
 		}
-
 		const itemDate = new Date(item.data.date);
-
-		if (
+		return (
 			itemDate.getFullYear() !== currentYear &&
 			itemDate.getDate() === currentDay &&
 			itemDate.getMonth() === currentMonth
-		) {
-			filteredCollection.push(item);
-		}
-	}
+		);
+	});
 
 	cachedCollections.set("onThisDay", filteredCollection);
 

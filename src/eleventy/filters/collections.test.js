@@ -205,4 +205,24 @@ describe("Filters: Collections", () => {
 			),
 		).toBe(1);
 	});
+
+	it("getByUrl() returns an item by its URL", () => {
+		const collection = [
+			{ url: "/posts/first/", data: { title: "First Post" } },
+			{ url: "/posts/second/", data: { title: "Second Post" } },
+			{ url: "/about/", data: { title: "About" } },
+		];
+
+		expect(collections.getByUrl(collection, "/posts/second/")).toEqual({
+			url: "/posts/second/",
+			data: { title: "Second Post" },
+		});
+		expect(collections.getByUrl(collection, "/about/")).toEqual({
+			url: "/about/",
+			data: { title: "About" },
+		});
+		expect(
+			collections.getByUrl(collection, "/nonexistent/"),
+		).toBeUndefined();
+	});
 });

@@ -32,7 +32,7 @@ export const DateToSexagesimal = (dateObject) => {
 	return DecimalToSexagesimal(epochDays);
 };
 
-let cachedCodes = new Map();
+const cachedCodes = new Map();
 
 /**
  * @param {Date} date

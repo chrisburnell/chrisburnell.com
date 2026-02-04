@@ -13,6 +13,29 @@ import { localeSpecific } from "../data/site.js";
 import syndicationTargets from "../data/syndicationTargets.js";
 import { getHost } from "../filters/urls.js";
 
+const placesByTitle = new Map(places.map((p) => [p.title, p]));
+const placesByUrlFragment = new Map();
+places.forEach((place) => {
+	if (place.url) {
+		const urls = Array.isArray(place.url) ? place.url : [place.url];
+		urls.forEach((url) => placesByUrlFragment.set(url, place));
+	}
+});
+
+const postingMethodsByHost = new Map();
+postingMethods.forEach((pm) => {
+	const urls = Array.isArray(pm.url) ? pm.url : [pm.url];
+	urls.forEach((url) => postingMethodsByHost.set(getHost(url), pm));
+});
+
+const syndicationsByHost = new Map();
+syndicationTargets.forEach((st) => {
+	const urls = Array.isArray(st.url) ? st.url : [st.url];
+	urls.forEach((url) => syndicationsByHost.set(getHost(url), st));
+});
+
+const consolesByTitle = new Map(consoles.map((c) => [c.title, c]));
+
 /**
  * @param {number} number
  * @param {number} [decimals]
@@ -313,68 +336,38 @@ export const replaceWebmentions = (webmentions) => {
  * @returns {any}
  */
 export const getPlace = (value, intent) => {
-	// Default metadata to the passed value (string/object)
-	let title, url, lat, long, address;
-	// Extract bits of metadata if they exist
-	if (typeof value === "object") {
-		if ("title" in value) {
-			title = value.title;
-		}
-		if ("url" in value) {
-			url = value.url;
-		}
-		if ("lat" in value) {
-			// eslint-disable-next-line no-unused-vars
-			lat = value.lat;
-		}
-		if ("long" in value) {
-			// eslint-disable-next-line no-unused-vars
-			long = value.long;
-		}
-		if ("address" in value) {
-			// eslint-disable-next-line no-unused-vars
-			address = value.address;
-		}
-	} else {
-		title = value;
-		url = value;
-	}
-	// Loop through known places to make matches based on:
-	// - title
-	// - url
-	for (let place of places) {
-		// Check title
-		if (place.title === title) {
-			title = place.title;
-			value = place;
-			break;
-		}
-		// Check url
-		if (url && "url" in place) {
-			// Parse URL for place match
-			for (let place_url of toArray(place.url)) {
-				if (url.includes(place_url)) {
-					url = toArray(place.url)[0];
-					value = place;
-					break;
-				}
+	const title = typeof value === "object" ? value.title : value;
+	const url = typeof value === "object" ? value.url : value;
+
+	let place = placesByTitle.get(title);
+
+	if (!place && url) {
+		for (const [fragment, p] of placesByUrlFragment) {
+			if (url.includes(fragment)) {
+				place = p;
+				break;
 			}
 		}
 	}
-	// Spit out specific bits of metadata
-	if (intent == "object") {
-		return value;
+
+	const result = place || value;
+
+	if (intent === "object") {
+		return result;
 	}
-	if (intent == "url") {
-		return value.url || value;
-	} else if (intent == "lat") {
-		return value.lat || value;
-	} else if (intent == "long") {
-		return value.long || value;
-	} else if (intent == "address") {
-		return value.address || value;
+	if (intent === "url") {
+		return result.url || result;
 	}
-	return value.title || value;
+	if (intent === "lat") {
+		return result.lat || result;
+	}
+	if (intent === "long") {
+		return result.long || result;
+	}
+	if (intent === "address") {
+		return result.address || result;
+	}
+	return result.title || result;
 };
 
 /**
@@ -382,14 +375,8 @@ export const getPlace = (value, intent) => {
  * @returns {string}
  */
 export const getPostingMethodTitle = (url) => {
-	try {
-		const knownPostingMethod = postingMethods.find((postingMethod) => {
-			return postingMethod.url.includes(getHost(url));
-		});
-		return knownPostingMethod.title;
-	} catch {
-		return url;
-	}
+	const host = getHost(url);
+	return postingMethodsByHost.get(host)?.title || url;
 };
 
 /**
@@ -397,16 +384,8 @@ export const getPostingMethodTitle = (url) => {
  * @returns {string}
  */
 export const getSyndicationTitle = (url) => {
-	try {
-		const knownSyndication = syndicationTargets.find(
-			(syndicationTarget) => {
-				return syndicationTarget.url.includes(getHost(url));
-			},
-		);
-		return knownSyndication.title;
-	} catch {
-		return url;
-	}
+	const host = getHost(url);
+	return syndicationsByHost.get(host)?.title || url;
 };
 
 /**
@@ -414,10 +393,9 @@ export const getSyndicationTitle = (url) => {
  * @returns {string}
  */
 export const getConsole = (value) => {
-	for (let console of consoles) {
-		if (value == console.title) {
-			return `<abbr title="${console.abbreviation}">${console.title}</abbr>`;
-		}
+	const console = consolesByTitle.get(value);
+	if (console) {
+		return `<abbr title="${console.abbreviation}">${console.title}</abbr>`;
 	}
 	return value;
 };

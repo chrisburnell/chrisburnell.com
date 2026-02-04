@@ -5,6 +5,7 @@ import categories from "../data/categories.js";
 import ignoredTags from "../data/ignoredTags.js";
 
 const cachedPublished = new WeakMap();
+const cachedByUrl = new WeakMap();
 
 /**
  * @param {Array<object>} array
@@ -150,6 +151,22 @@ export const getCollectionCountByWeekday = (items, weekday) => {
 	}).length;
 };
 
+/**
+ * Get a collection item by its URL
+ * @param {Array<object>} collection
+ * @param {string} url
+ * @returns {object|undefined}
+ */
+export const getByUrl = (collection, url) => {
+	if (!cachedByUrl.has(collection)) {
+		cachedByUrl.set(
+			collection,
+			new Map(collection.map((item) => [item.url, item])),
+		);
+	}
+	return cachedByUrl.get(collection).get(url);
+};
+
 export default {
 	arePublished,
 	feedFilter,
@@ -163,4 +180,5 @@ export default {
 	getCollectionCount,
 	getCollectionCountByYear,
 	getCollectionCountByWeekday,
+	getByUrl,
 };

@@ -6,5 +6,6 @@ export default defineConfig({
 			...configDefaults.exclude,
 			"src/eleventy/filters/fetch.test.js",
 		],
+		setupFiles: ["./vitest.setup.js"],
 	},
 });

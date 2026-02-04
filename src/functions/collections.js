@@ -38,8 +38,10 @@ try {
 		},
 	});
 }
+const pagesByPathname = new Map(
+	pages.map((page) => [getPathname(page.url), page]),
+);
 
-// Create an array of references
 const allPeople = [
 	...blogroll,
 	...breweries,
@@ -47,7 +49,6 @@ const allPeople = [
 	...gamePublishers,
 	...meetups,
 ];
-
 const cachedPeople = new Map();
 const peopleByTitle = new Map();
 const peopleByUrl = new Map();
@@ -476,9 +477,7 @@ export const getInternalTarget = (url) => {
 	}
 	// Internal URL
 	else if (url.includes(siteURL) || url.includes("localhost")) {
-		const matchingPage = pages.find((page) => {
-			return getPathname(url) === getPathname(page.url);
-		});
+		const matchingPage = pagesByPathname.get(getPathname(url));
 		if (matchingPage) {
 			// Posts with a `title` and `category`
 			if ("title" in matchingPage && "category" in matchingPage) {
