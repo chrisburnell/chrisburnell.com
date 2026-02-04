@@ -128,10 +128,24 @@ export default {
 			},
 		},
 		{
+			url: "https://ntfy.chrisburnell.com/",
+			data: {
+				title: "ntfy.chrisburnell.com",
+				description: `A [ntfy](https://ntfy.sh) instance used for sending push notifications`,
+			},
+		},
+		{
 			url: "https://rss.chrisburnell.com/",
 			data: {
 				title: "rss.chrisburnell.com",
 				description: `A feed aggregator powered by [FreshRSS](https://freshrss.org)`,
+			},
+		},
+		{
+			url: "https://status.chrisburnell.com/",
+			data: {
+				title: "status.chrisburnell.com",
+				description: `Uptime monitoring powered by [Uptime Kuma](https://uptimekuma.org)`,
 			},
 		},
 		{
