@@ -85,6 +85,10 @@
 	overflow: visible;
 }
 
+:where([role="button"], a, area, button, input, label, select, summary, textarea) {
+	touch-action: manipulation;
+}
+
 :where(:disabled) {
 	cursor: not-allowed;
 }

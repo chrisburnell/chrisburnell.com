@@ -35,9 +35,9 @@ jobs:
         uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           path: .cache
-          key: eleventy-cache-${{ forgejo.run_id }}-${{ forgejo.run_attempt }}
+          key: eleventy-cache-${{ env.FORGEJO_RUN_ID }}-${{ env.FORGEJO_RUN_ATTEMPT }}
           restore-keys: |
-            eleventy-cache-${{ forgejo.run_id }}-
+            eleventy-cache-${{ env.FORGEJO_RUN_ID }}-
             eleventy-cache-
 
       - name: Restore Site cache
@@ -48,7 +48,7 @@ jobs:
             _site
             !_site/og-images
             !_site/pagefind
-          key: site-cache-${{ forgejo.run_id }}
+          key: site-cache-${{ env.FORGEJO_RUN_ID }}
           restore-keys: site-cache-
 
       - name: Restore OG images cache
@@ -56,7 +56,7 @@ jobs:
         uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           path: _site/og-images
-          key: og-images-cache-${{ forgejo.run_id }}
+          key: og-images-cache-${{ env.FORGEJO_RUN_ID }}
           restore-keys: og-images-cache-
 
       - name: Build

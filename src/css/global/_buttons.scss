@@ -54,7 +54,6 @@ button {
 	line-height: var(--line-height, var(--line-height-medium));
 	text-align: center;
 	text-decoration: none;
-	touch-action: manipulation;
 	transition: outline-color var(--transition-duration) var(--transition-function);
 
 	&:not([disabled]):is(:hover, :focus, :active, [aria-selected="true"]) {
