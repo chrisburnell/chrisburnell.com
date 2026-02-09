@@ -31,7 +31,7 @@ jobs:
 
       - name: Restore 11ty cache
         id: restore-eleventy-cache
-        uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
+        uses: actions/cache/restore@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # 5.0.3
         with:
           path: .cache
           key: eleventy-cache-dev-${{ github.run_id }}-${{ github.run_attempt }}
@@ -41,7 +41,7 @@ jobs:
 
       - name: Restore Site cache
         id: restore-site-cache
-        uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
+        uses: actions/cache/restore@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # 5.0.3
         with:
           path: |
             _site
@@ -52,7 +52,7 @@ jobs:
 
       - name: Restore OG images cache
         id: restore-og-images-cache
-        uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
+        uses: actions/cache/restore@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # 5.0.3
         with:
           path: _site/og-images
           key: og-images-cache-dev-${{ github.run_id }}
@@ -100,7 +100,7 @@ jobs:
       - name: Save 11ty cache
         id: save-eleventy-cache
         if: always()
-        uses: actions/cache/save@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
+        uses: actions/cache/save@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # 5.0.3
         with:
           path: .cache
           key: eleventy-cache-dev-${{ github.run_id }}-${{ github.run_attempt }}
@@ -114,7 +114,7 @@ jobs:
       - name: Save Site cache
         id: save-site-cache
         if: steps.restore-site-cache.outputs.cache-hit != 'true'
-        uses: actions/cache/save@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
+        uses: actions/cache/save@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # 5.0.3
         with:
           path: |
             _site
@@ -131,7 +131,7 @@ jobs:
       - name: Save OG images cache
         id: save-og-images-cache
         if: steps.restore-og-images-cache.outputs.cache-hit != 'true'
-        uses: actions/cache/save@9255dc7a253b0ccc959486e2bca901246202afeb # 5.0.1
+        uses: actions/cache/save@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # 5.0.3
         with:
           path: _site/og-images
           key: og-images-cache-dev-${{ github.run_id }}
