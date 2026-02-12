@@ -106,7 +106,7 @@ jobs:
           key: eleventy-cache-dev-${{ github.run_id }}-${{ github.run_attempt }}
 
       - name: Delete old 11ty cache
-        if: steps.save-eleventy-cache.outcome == 'success' && steps.restore-eleventy-cache.outputs.cache-matched-key
+        if: always() && steps.save-eleventy-cache.outcome == 'success' && steps.restore-eleventy-cache.outputs.cache-matched-key
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh cache delete "${{ steps.restore-eleventy-cache.outputs.cache-matched-key }}" --repo ${{ github.repository }} || true
