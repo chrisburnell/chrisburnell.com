@@ -18,7 +18,7 @@ jobs:
       actions: write
     steps:
       - name: Checkout
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # 6.0.2
 
       - name: Setup
         uses: ./.forgejo/actions/setup
@@ -31,7 +31,7 @@ jobs:
 
       - name: Restore 11ty cache
         id: restore-eleventy-cache
-        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        uses: actions/cache/restore@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # 5.0.3
         with:
           path: .cache
           key: eleventy-cache-dev-${{ env.FORGEJO_RUN_ID }}-${{ env.FORGEJO_RUN_ATTEMPT }}
@@ -41,7 +41,7 @@ jobs:
 
       - name: Restore Site cache
         id: restore-site-cache
-        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        uses: actions/cache/restore@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # 5.0.3
         with:
           path: |
             _site
@@ -52,7 +52,7 @@ jobs:
 
       - name: Restore OG images cache
         id: restore-og-images-cache
-        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        uses: actions/cache/restore@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # 5.0.3
         with:
           path: _site/og-images
           key: og-images-cache-dev-${{ env.FORGEJO_RUN_ID }}
@@ -101,7 +101,7 @@ jobs:
       - name: Save 11ty cache
         id: save-eleventy-cache
         if: always()
-        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        uses: actions/cache/save@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # 5.0.3
         with:
           path: .cache
           key: eleventy-cache-dev-${{ env.FORGEJO_RUN_ID }}-${{ env.FORGEJO_RUN_ATTEMPT }}
@@ -109,7 +109,7 @@ jobs:
       - name: Save Site cache
         id: save-site-cache
         if: steps.restore-site-cache.outputs.cache-hit != 'true'
-        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        uses: actions/cache/save@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # 5.0.3
         with:
           path: |
             _site
@@ -120,7 +120,7 @@ jobs:
       - name: Save OG images cache
         id: save-og-images-cache
         if: steps.restore-og-images-cache.outputs.cache-hit != 'true'
-        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        uses: actions/cache/save@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # 5.0.3
         with:
           path: _site/og-images
           key: og-images-cache-dev-${{ env.FORGEJO_RUN_ID }}
