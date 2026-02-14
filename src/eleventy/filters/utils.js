@@ -23,18 +23,28 @@ places.forEach((place) => {
 });
 
 const postingMethodsByHost = new Map();
-postingMethods.forEach((pm) => {
-	const urls = Array.isArray(pm.url) ? pm.url : [pm.url];
-	urls.forEach((url) => postingMethodsByHost.set(getHost(url), pm));
+postingMethods.forEach((postingMethod) => {
+	const urls = Array.isArray(postingMethod.url)
+		? postingMethod.url
+		: [postingMethod.url];
+	urls.forEach((url) =>
+		postingMethodsByHost.set(getHost(url), postingMethod),
+	);
 });
 
 const syndicationsByHost = new Map();
-syndicationTargets.forEach((st) => {
-	const urls = Array.isArray(st.url) ? st.url : [st.url];
-	urls.forEach((url) => syndicationsByHost.set(getHost(url), st));
+syndicationTargets.forEach((syndicationTarget) => {
+	const urls = Array.isArray(syndicationTarget.url)
+		? syndicationTarget.url
+		: [syndicationTarget.url];
+	urls.forEach((url) =>
+		syndicationsByHost.set(getHost(url), syndicationTarget),
+	);
 });
 
-const consolesByTitle = new Map(consoles.map((c) => [c.title, c]));
+const consolesByTitle = new Map(
+	consoles.map((console) => [console.title, console]),
+);
 
 /**
  * @param {number} number

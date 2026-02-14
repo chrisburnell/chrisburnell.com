@@ -39,7 +39,7 @@ export default [
 	},
 	{
 		title: "Mastodon",
-		url: `https://${mastodon_domain}`,
+		url: mastodon_domain,
 	},
 	{
 		title: "Speakerdeck",
