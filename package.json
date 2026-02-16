@@ -109,7 +109,7 @@
     "deepmerge": "^4.3.1",
     "dotenv": "^17.2.3",
     "eleventy-plugin-og-image": "^4.2.1",
-    "esbuild": "^0.27.2",
+    "esbuild": "^0.27.3",
     "fs-extra": "^11.3.3",
     "globals": "^17.3.0",
     "he": "^1.2.0",
