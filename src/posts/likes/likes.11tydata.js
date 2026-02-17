@@ -1,4 +1,5 @@
 export default {
+	permalink: "like/{{ page.fileSlug }}/",
 	clickthrough: true,
 	mf_property: "like-of",
 	category: "like",
