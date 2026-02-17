@@ -9,6 +9,8 @@ runs:
         set -e
         npm run build:prod
       shell: bash
+      env:
+        NODE_OPTIONS: "--max-old-space-size=8192"
 
     - name: Build search index
       run: npm run create-search-index
