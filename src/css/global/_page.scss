@@ -53,11 +53,3 @@ body {
 	size: Letter portrait;
 	margin: 0;
 }
-
-@view-transition {
-	navigation: auto;
-}
-::view-transition-group(*) {
-	animation-duration: var(--transition-duration);
-	animation-timing-function: var(--transition-function);
-}

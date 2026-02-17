@@ -122,28 +122,30 @@
 	overflow: clip;
 }
 
+@view-transition {
+	navigation: auto;
+}
+::view-transition-group(*) {
+	animation-duration: var(--transition-duration);
+	animation-timing-function: var(--transition-function);
+}
+
 @media (prefers-reduced-motion: reduce) {
+	@view-transition {
+		navigation: none;
+	}
 	*,
 	*::before,
 	*::after {
 		background-attachment: initial !important;
-		animation-delay: 0s !important;
-		animation-duration: 0s !important;
+		animation-delay: -1ms !important;
+		animation-duration: 1ms !important;
 		animation-iteration-count: 1 !important;
-		transition: none !important;
+		transition-delay: -1ms !important;
+		transition-duration: 1ms !important;
+		scroll-behavior: auto !important;
+		view-transition-name: none !important;
 	}
-	::view-transition-old(*),
-	::view-transition-new(*) {
-		background-attachment: initial !important;
-		animation-delay: 0s !important;
-		animation-duration: 0s !important;
-		animation-iteration-count: 1 !important;
-		transition: none !important;
-	}
-}
-
-::view-transition {
-	pointer-events: none;
 }
 
 @media (forced-colors: active) {
