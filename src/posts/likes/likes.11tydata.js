@@ -1,5 +1,4 @@
 export default {
-	permalink: false,
 	clickthrough: true,
 	mf_property: "like-of",
 	category: "like",
