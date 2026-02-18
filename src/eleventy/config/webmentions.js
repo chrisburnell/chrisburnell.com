@@ -10,8 +10,6 @@ export default {
 	domain: siteURL,
 	feed: `https://webmention.io/api/mentions.jf2?domain=${getHost(siteURL)}&token=${process.env.WEBMENTION_IO_TOKEN}`,
 	key: "children",
-	// feed: `https://jam.chrisburnell.com/webmention/chrisburnell.com/${process.env.GO_JAMMING_TOKEN}`,
-	// key: "json",
 	duration: cacheDurations.hourly,
 	allowedHTML: {
 		allowedTags: [
@@ -38,4 +36,5 @@ export default {
 	maximumHtmlText: "Mentioned this:",
 	allowlist: [],
 	blocklist: blocklist,
+	refresh: true,
 };
