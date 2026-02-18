@@ -36,5 +36,4 @@ export default {
 	maximumHtmlText: "Mentioned this:",
 	allowlist: [],
 	blocklist: blocklist,
-	refresh: true,
 };
