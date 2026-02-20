@@ -48,7 +48,7 @@ This is what it looks like when you’re writing it:
 
 <aside><p>Again, if you have any suggestions as far as the source code or post content goes, please fork <a href="https://github.com/{{ author.github }}/{{ site.repository }}" rel="external noopener">the <em>GitHub</em> repository</a> and send me a push request with your changes!</p></aside>
 
-The CSS for this latest iteration of chrisburnell.com was also a labour of love. Really being fed up with the older version of my site and having grown immensely since I pushed that update in February 2011, I started working on this design a few months ago and tinkered away at it here and there when my spare time allowed it. I did, in fact, rewrite the bulk of it twice before I got to the current state it is in.
+The CSS for this latest iteration of [chrisburnell.com](https://chrisburnell.com/) was also a labour of love. Really being fed up with the older version of my site and having grown immensely since I pushed that update in February 2011, I started working on this design a few months ago and tinkered away at it here and there when my spare time allowed it. I did, in fact, rewrite the bulk of it twice before I got to the current state it is in.
 
 <h2 id="brass-tacks">Let’s get down to brass tacks</h2>
 
