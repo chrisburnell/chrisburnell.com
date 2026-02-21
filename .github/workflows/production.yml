@@ -83,6 +83,7 @@ jobs:
           WEBMENTION_IO_TOKEN: ${{ secrets.WEBMENTION_IO_TOKEN }}
 
       - name: Check Build
+        id: check-build
         if: steps.restore-site-cache.outputs.cache-hit != 'true'
         uses: ./.github/actions/check
 
@@ -123,7 +124,7 @@ jobs:
 
       - name: Save Site cache
         id: save-site-cache
-        if: steps.restore-site-cache.outputs.cache-hit != 'true'
+        if: always() && steps.check-build.outcome == 'success'
         uses: actions/cache/save@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # 5.0.3
         with:
           path: |
@@ -133,21 +134,21 @@ jobs:
           key: site-cache-${{ github.run_id }}
 
       - name: Delete old Site cache
-        if: steps.save-site-cache.outcome == 'success' && steps.restore-site-cache.outputs.cache-matched-key
+        if: always() && steps.save-site-cache.outcome == 'success' && steps.restore-site-cache.outputs.cache-matched-key
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh cache delete "${{ steps.restore-site-cache.outputs.cache-matched-key }}" --repo ${{ github.repository }} || true
 
       - name: Save OG images cache
         id: save-og-images-cache
-        if: steps.restore-og-images-cache.outputs.cache-hit != 'true'
+        if: always() && steps.restore-og-images-cache.outputs.cache-hit != 'true'
         uses: actions/cache/save@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # 5.0.3
         with:
           path: _site/og-images
           key: og-images-cache-${{ github.run_id }}
 
       - name: Delete old OG images cache
-        if: steps.save-og-images-cache.outcome == 'success' && steps.restore-og-images-cache.outputs.cache-matched-key
+        if: always() && steps.save-og-images-cache.outcome == 'success' && steps.restore-og-images-cache.outputs.cache-matched-key
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh cache delete "${{ steps.restore-og-images-cache.outputs.cache-matched-key }}" --repo ${{ github.repository }} || true

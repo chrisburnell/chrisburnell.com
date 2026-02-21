@@ -73,6 +73,7 @@ jobs:
           WEBMENTION_IO_TOKEN: ${{ secrets.WEBMENTION_IO_TOKEN }}
 
       - name: Check Build
+        id: check-build
         if: steps.restore-site-cache.outputs.cache-hit != 'true'
         uses: ./.forgejo/actions/check
 
@@ -107,7 +108,7 @@ jobs:
 
       - name: Save Site cache
         id: save-site-cache
-        if: steps.restore-site-cache.outputs.cache-hit != 'true'
+        if: always() && steps.check-build.outcome == 'success'
         uses: actions/cache/save@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # 5.0.3
         with:
           path: |
@@ -118,7 +119,7 @@ jobs:
 
       - name: Save OG images cache
         id: save-og-images-cache
-        if: steps.restore-og-images-cache.outputs.cache-hit != 'true'
+        if: always() && steps.restore-og-images-cache.outputs.cache-hit != 'true'
         uses: actions/cache/save@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # 5.0.3
         with:
           path: _site/og-images
