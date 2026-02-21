@@ -90,11 +90,10 @@ jobs:
         uses: shimataro/ssh-key-action@v2
         with:
           key: ${{ secrets.DEPLOY_KEY }}
-          known_hosts: "unnecessary"
+          known_hosts: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
 
       - name: Copy files to server
         run: |
-          ssh-keyscan -p ${{ secrets.DEPLOY_PORT }} -H ${{ secrets.DEPLOY_HOST }} >> ~/.ssh/known_hosts
           rsync -azh --delete --exclude="audio" --exclude="fonts" --exclude="static" --chown=${{ secrets.DEPLOY_CHOWN }} \
             -e "ssh -p ${{ secrets.DEPLOY_PORT }}" \
             ./_site/ ${{ secrets.DEPLOY_USERNAME }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_PATH }}html
