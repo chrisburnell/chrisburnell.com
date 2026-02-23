@@ -96,9 +96,13 @@ jobs:
 
       - name: Copy files to server
         run: |
-          rsync -azh --delete --exclude="audio" --exclude="fonts" --exclude="static" --chown=${{ secrets.DEPLOY_CHOWN }} \
-            -e "ssh -p ${{ secrets.DEPLOY_PORT }}" \
-            ./_site/ ${{ secrets.DEPLOY_USERNAME }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_PATH }}html
+          for i in 1 2 3; do
+            rsync -azh --delete --exclude="audio" --exclude="fonts" --exclude="static" --chown=${{ secrets.DEPLOY_CHOWN }} \
+              -e "ssh -p ${{ secrets.DEPLOY_PORT }}" \
+              ./_site/ ${{ secrets.DEPLOY_USERNAME }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_PATH }}html && break
+            echo "Attempt $i failed, retrying in 15s..."
+            sleep 15
+          done
 
       - name: Process on server
         uses: https://github.com/appleboy/ssh-action@master
