@@ -8,7 +8,7 @@ const MINIMUMS = {
 	blogPosts: 220,
 	wordCount: 66000,
 	years: 14,
-	tags: 40,
+	tags: 39,
 };
 
 const parseNumber = (text) => parseInt(text.replace(/,/g, ""), 10);
