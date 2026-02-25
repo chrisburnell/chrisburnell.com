@@ -4,7 +4,7 @@
 
 The source code for [chrisburnell.com](https://chrisburnell.com/)
 
-[![Deploy](https://github.com/chrisburnell/chrisburnell.com/actions/workflows/production.yml/badge.svg)](https://github.com/chrisburnell/chrisburnell.com/actions/workflows/production.yml)
+[![Production Deploy](https://github.com/chrisburnell/chrisburnell.com/actions/workflows/production.yml/badge.svg)](https://github.com/chrisburnell/chrisburnell.com/actions/workflows/production.yml) [![Uptime](https://uptime.chrisburnell.com/api/badge/2/uptime)]([https://github.com/chrisburnell/chrisburnell.com/actions/workflows/production.yml](https://status.chrisburnell.com/))
 
 ## Table of Contents
 
