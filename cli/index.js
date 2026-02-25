@@ -1,3 +1,4 @@
+/* global console */
 // Adapted from Robb Knight’s work:
 // https://github.com/rknightuk/rknight.me
 
@@ -8,6 +9,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 import calculateCSSComplexity from "./commands/calculateCSSComplexity.js";
+import checkBuild from "./commands/checkBuild.js";
 import checkDates from "./commands/checkDates.js";
 import checkLinks from "./commands/checkLinks.js";
 import createArticle from "./commands/createArticle.js";
@@ -50,6 +52,11 @@ const wizard = async () => {
 				name: "Calculate: CSS Complexity",
 				value: "calculateCSSComplexity",
 				description: "Calculate the complexity of CSS.",
+			},
+			{
+				name: "Check: Build",
+				value: "checkBuild",
+				description: "Check that Eleventy built correctly.",
 			},
 			{
 				name: "Check: Dates",
@@ -98,6 +105,9 @@ const wizard = async () => {
 		case "calculateCSSComplexity":
 			calculateCSSComplexity();
 			break;
+		case "checkBuild":
+			checkBuild();
+			break;
 		case "checkDates":
 			checkDates();
 			break;
@@ -136,9 +146,16 @@ program
 
 program
 	.command("check")
-	.description("⚠️  Check Build")
+	.description("⚠️  Perform all checks")
 	.action(() => {
 		performChecks();
+	});
+
+program
+	.command("checkBuild")
+	.description("⚠️  Check build for Eleventy errors")
+	.action(async () => {
+		await checkBuild();
 	});
 
 program

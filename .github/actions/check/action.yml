@@ -4,6 +4,14 @@ description: Check build for errors
 runs:
   using: composite
   steps:
+    - name: Check Build
+      run: npm run check:build
+      shell: bash
+
     - name: Check DateTimes
       run: npm run check:datetimes
+      shell: bash
+
+    - name: Check Links
+      run: npm run check:links
       shell: bash

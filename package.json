@@ -45,6 +45,7 @@
     "css": "npx sass src/css:_site/css --style=expanded --no-source-map --color --quiet",
     "postcss": "npx postcss \"_site/css/**/*.css\" --replace --no-map",
     "check": "node cli/index.js check",
+    "check:build": "node cli/index.js checkBuild",
     "check:css": "node cli/index.js calculateCSSComplexity",
     "check:datetimes": "node cli/index.js checkDates",
     "check:links": "node cli/index.js checkLinks",
