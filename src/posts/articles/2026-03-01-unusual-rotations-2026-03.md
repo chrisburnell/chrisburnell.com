@@ -1,6 +1,6 @@
 ---
 date: 2026-03-01T22:23:11+0000
-title: "Unusual Rotations (March 2026): Baroque"
+title: "Unusual Rotations (March 2026): Baroque/Classical/Romantic"
 description: "Reflecting on February and looking ahead to March’s genre(s), Baroque/Classical/Romantic."
 tags:
   - music
