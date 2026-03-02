@@ -101,11 +101,14 @@ small,
 }
 
 :is(sub, sup) {
-	margin-inline: 0.5ch;
 	position: relative;
 	font-size: 0.8125em;
 	line-height: 0;
 	text-transform: initial;
+
+	&:has(> a) {
+		margin-inline: 0.5ch;
+	}
 }
 sub {
 	inset-block-end: 0;
