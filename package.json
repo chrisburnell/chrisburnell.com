@@ -112,7 +112,7 @@
     "eleventy-plugin-og-image": "^4.2.1",
     "esbuild": "^0.27.3",
     "fs-extra": "^11.3.3",
-    "globals": "^17.3.0",
+    "globals": "^17.4.0",
     "he": "^1.2.0",
     "html-minifier": "^4.0.0",
     "lite-youtube-embed": "^0.3.4",
