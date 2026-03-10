@@ -69,6 +69,10 @@ jobs:
           key: og-images-cache-${{ github.run_id }}
           restore-keys: og-images-cache-
 
+      - name: Rebuild OG Images
+        run: |
+          rm -f _site/og-images/article-unusual-rotations-2026-03.png
+
       - name: Build
         if: steps.restore-site-cache.outputs.cache-hit != 'true'
         uses: ./.github/actions/build-production
