@@ -31,10 +31,10 @@ redirect_from:
 
 ## Development
 
-- [Visual Studio Code](https://code.visualstudio.com/) — My *current* preferred text editor.
+- [VSCodium](https://vscodium.com/) — My *current* preferred text editor. (I used [Visual Studio Code](https://code.visualstudio.com/) before this.)
 - [iTerm 2](https://iterm2.com/) — My preferred console / terminal.
   - [Z shell/zsh](https://www.zsh.org) — My preferred terminal shell.
-- [Cobalt 2 Colour Theme](https://marketplace.visualstudio.com/items?itemName=wesbos.theme-cobalt2) — A dark theme for text editors by [Wes Bos](https://wesbos.com).
+- [Kanagawa](https://github.com/rebelot/kanagawa.nvim) — A set of colours adapted from the painting, *The Great Wave off Kanagawa*, by Katsushika Hokusai.
 - [Menlo](https://en.wikipedia.org/wiki/Menlo_(typeface)) / [Menlo for Powerline](https://github.com/abertsch/Menlo-for-Powerline) — I’ve been using this font for like a decade. Text doesn’t look right without it anymore! 😅
 
 --------
