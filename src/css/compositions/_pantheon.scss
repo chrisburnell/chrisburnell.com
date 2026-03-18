@@ -114,7 +114,7 @@
 
 .context {
 	grid-row: context;
-	grid-column: content;
+	grid-column: indent / outdent;
 }
 
 .title {
@@ -128,8 +128,8 @@
 }
 
 .toc {
-	grid-column: content;
 	grid-row: toc;
+	grid-column: content;
 
 	@include cqi(null, "large") {
 		grid-column: indent;
