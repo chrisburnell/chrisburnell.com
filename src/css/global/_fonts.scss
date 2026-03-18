@@ -4,6 +4,12 @@
 ////
 
 @font-face {
+    font-family: "Adjusted Arial Fallback";
+    src: local(Arial);
+    ascent-override: 80%;
+}
+
+@font-face {
 	font-family: "Proxima Vara";
 	font-display: swap;
 	font-weight: 100 900;

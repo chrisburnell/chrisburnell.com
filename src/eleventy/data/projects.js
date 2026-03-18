@@ -121,13 +121,6 @@ export default {
 			},
 		},
 		{
-			url: "https://logs.chrisburnell.com/",
-			data: {
-				title: "logs.chrisburnell.com",
-				description: `A [Fathom Lite](https://github.com/usefathom/fathom) instance used for web analytics`,
-			},
-		},
-		{
 			url: "https://ntfy.chrisburnell.com/",
 			data: {
 				title: "ntfy.chrisburnell.com",
