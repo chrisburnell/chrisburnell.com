@@ -1,7 +1,7 @@
 ---
 date: 2026-03-01T22:23:11+0000
-title: "Unusual Rotations (March 2026): Baroque/Classical/Romantic"
-description: "Reflecting on February and looking ahead to March’s genre(s), Baroque/Classical/Romantic."
+title: "Unusual Rotations (March 2026): Baroque"
+description: "Reflecting on February and looking ahead to March’s genre(s), Baroque."
 tags:
   - music
   - unusualrotations
@@ -47,7 +47,7 @@ There are far too many genres that were born from this time and from very simila
 
 --------
 
-## March: Baroque/Classical/Romantic
+## March: Baroque
 
 I spent a lot of my youth learning piano, mostly baroque and classical pieces, and have been trying to pick it back up as an adult. My parents are both big fans of these genres, and I’ve been very familiar throughout my life (as a result), so this month, again, will probably be more about the depth of my exploration rather than breadth.
 
