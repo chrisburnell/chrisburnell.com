@@ -830,6 +830,18 @@ export default [
 		rss: "https://knowler.dev/feed.xml",
 		mastodon: "knowler@sunny.garden",
 	},
+	{
+		title: "Naty",
+		url: "https://burgeonlab.com",
+		rss: "https://burgeonlab.com/all/feed.xml",
+		mastodon: "eclecticpassions@fosstodon.org",
+	},
+	{
+		title: "Brennan Kenneth Brown",
+		url: "https://brennan.day",
+		rss: "https://brennan.day/feed.xml",
+		mastodon: "brennan@social.lol",
+	},
 ].sort((a, b) => {
 	return a.title.localeCompare(b.title, undefined, {
 		numeric: true,
