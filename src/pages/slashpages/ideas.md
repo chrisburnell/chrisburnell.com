@@ -2,7 +2,7 @@
 title: "/ideas"
 tagline: Ideas
 description: Things I’d like to work on.
-last_updated: 2026-01-16T20:52:11-0400
+last_updated: 2026-03-28T13:58:42+0800
 toc: true
 redirect_from:
   - /todo
@@ -17,12 +17,11 @@ redirect_from:
 
 ## CSS
 
-- figure out how to resize code elements with `font-size-adjust: from-font;"
 - figure out how to de-dupe `navigation__list` for the popover
 
 ## JS
 
-- refactor getPlace()
+- *empty*
 
 ## Eleventy Build
 

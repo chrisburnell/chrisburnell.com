@@ -34,15 +34,19 @@ redirect_from:
 - [VSCodium](https://vscodium.com/) — My *current* preferred text editor. (I used [Visual Studio Code](https://code.visualstudio.com/) before this.)
 - [iTerm 2](https://iterm2.com/) — My preferred console / terminal.
   - [Z shell/zsh](https://www.zsh.org) — My preferred terminal shell.
+  - [Oh My Zsh](https://ohmyz.sh/) — A framework for managing my *zsh* shell.
+  - [Powerlevel10k](https://github.com/romkatv/powerlevel10k) — An <q>out-of-the-box</q> theming system for *zsh*.
 - [Kanagawa](https://github.com/rebelot/kanagawa.nvim) — A set of colours adapted from the painting, *The Great Wave off Kanagawa*, by Katsushika Hokusai.
-- [Menlo](https://en.wikipedia.org/wiki/Menlo_(typeface)) / [Menlo for Powerline](https://github.com/abertsch/Menlo-for-Powerline) — I’ve been using this font for like a decade. Text doesn’t look right without it anymore! 😅
+- [Maple Mono](https://font.subf.dev/en/) for editing code and [Menlo for Powerline](https://github.com/abertsch/Menlo-for-Powerline) for command line stuff.
 
 --------
 
 ## Services
 
 - [Corvus](https://corvus.chrisburnell.com) — My personal [Micropub](https://indieweb.org/Micropub) server which allows me to create posts on my website from external services (authenticated through [IndieAuth](https://indieweb.org/indieauth)) across all [categories](/posts/#categories) and syndicate them out to social networks if I choose.
+- [Forgejo](https://forgejo.org/) — A self-hosted git server, which I’m now using as the main source-of-truth for my projects and syncing changes out to other git providers.
 - [FreshRSS](https://www.freshrss.org/) — A self-hosted RSS aggregator. Helps me keep track of many RSS feeds, and I mostly enjoy its built-in reader; although, it still makes it easy to jump into a browser to read a post.
+- [Opengist](https://opengist.io/) — A self-hosted pastebin server. I’m really just using this as an alternative to hosting my <q>gists</q> on GitHub.
 - [Quill](https://quill.p3k.io/) — My preferred web app for posting to my website through my Micropub server.
 
 --------
