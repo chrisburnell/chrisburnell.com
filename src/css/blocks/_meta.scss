@@ -85,3 +85,7 @@
 	--flow-space: var(--size-small);
 	line-height: var(--line-height-medium);
 }
+
+li:has(> .iine-button:empty) {
+	display: none;
+}

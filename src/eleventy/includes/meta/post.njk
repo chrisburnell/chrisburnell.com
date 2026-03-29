@@ -2,6 +2,7 @@
 	<img class=" [ perching ] " src="/images/raven.svg" alt="chrisburnell.com logo of a blue raven" width="42" height="35" role="presentation">
 	<h2 class=" [ visually-hidden ] ">Post Metadata</h2>
 	<ul class=" [ meta__information ] [ flow ] ">
+		<li><button class=" [ button--small ] [ iine-button ] " data-id="{{ canonical }}" data-icon="👍" aria-hidden="true"><span class="icon">👍</span><span class="counter"> Loading…</span></button></li>
 		{% if subtitle -%}
 			<li>{{ subtitle | safe }}</li>
 		{%- endif %}

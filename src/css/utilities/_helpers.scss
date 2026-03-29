@@ -57,6 +57,7 @@
 }
 
 // Make things non-interactive
+.exhausted,
 .non-interactive {
 	@include non-interactive;
 }
@@ -327,6 +328,11 @@ html:has(.full-space) {
 	@media (prefers-reduced-motion: no-preference) and (width > 700px) {
 		scroll-snap-align: start;
 	}
+}
+
+// iine reaction buttons
+.iine-button {
+	padding: 0.5em 0.75em;
 }
 
 // Low Quality Image Previews (LQIP)
