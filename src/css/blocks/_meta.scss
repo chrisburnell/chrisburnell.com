@@ -86,6 +86,6 @@
 	line-height: var(--line-height-medium);
 }
 
-li:has(> .iine-button:empty) {
+:is(div, li):has(> .iine-button:empty) {
 	display: none;
 }

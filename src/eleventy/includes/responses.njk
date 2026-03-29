@@ -12,6 +12,7 @@
 				{% if webmentions.length %}<h2 class=" [ sticky ] [ no-fragment ] ">{{ webmentions.length }} Response{{ 's' if webmentions.length > 1 }}</h2>{% endif %}
 				{% if reactions.length or stargazers -%}
 					<ol id="reactions" class=" [ reactions ] [ cluster ] [ strong ] ">
+						<li><button class=" [ button--small ] [ iine-button ] " data-id="{{ canonical }}" data-icon="👍" aria-hidden="true"><span class="icon">👍</span><span class="counter"> Loading…</span></button></li>
 						{% if webmentions.bookmarks.length -%}
 							<li><c-emoji>🔖</c-emoji> {{ webmentions.bookmarks.length }} Bookmark{{ 's' if webmentions.bookmarks.length > 1 }}</li>
 						{%- endif %}
@@ -38,6 +39,10 @@
 							<li><c-emoji>✨</c-emoji> <a href="https://github.com/{{ github }}">{{ stargazers }} Stargazer{{ 's' if stargazers > 1 }}</a></li>
 						{%- endif %}
 					</ol>
+				{%- else %}
+					<div>
+						<button class=" [ button--small ] [ iine-button ] " data-id="{{ canonical }}" data-icon="👍" aria-hidden="true"><span class="icon">👍</span><span class="counter"> Loading…</span></button>
+					</div>
 				{%- endif %}
 				{% if replies.length -%}
 					<ol id="replies" class=" [ replies ] [ flow ] ">
@@ -71,6 +76,10 @@
 						{%- endfor %}
 					</ol>
 				{%- endif %}
+			</div>
+		{%- else %}
+			<div>
+				<button class=" [ button--small ] [ iine-button ] " data-id="{{ canonical }}" data-icon="👍" aria-hidden="true"><span class="icon">👍</span><span class="counter"> Loading…</span></button>
 			</div>
 		{%- endif %}
 		{% if show_responses_form != false -%}
