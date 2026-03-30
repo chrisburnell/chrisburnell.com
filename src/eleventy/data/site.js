@@ -60,10 +60,11 @@ export const cacheDurations = {
 };
 
 export const urls = {
+	indieauth_authorization: "https://indieauth.com/auth",
+	indieauth_token: "https://tokens.indieauth.com/token",
 	fathom: "https://logs.chrisburnell.com",
+	iine: "https://iine.chrisburnell.com",
 	license: "https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode",
-	authorization_endpoint: "https://indieauth.com/auth",
-	token_endpoint: "https://tokens.indieauth.com/token",
 	micropub: "https://corvus.chrisburnell.com",
 	speedlify: "https://speedlify.chrisburnell.com",
 	superfeedr: "https://chrisburnell.superfeedr.com",
