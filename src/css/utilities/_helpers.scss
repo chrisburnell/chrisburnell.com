@@ -332,7 +332,15 @@ html:has(.full-space) {
 
 // iine reaction buttons
 .iine-button {
+	min-inline-size: 5em;
 	padding: 0.5em 0.75em;
+
+	& .counter {
+		font-variant-numeric: tabular-nums;
+	}
+}
+:is(div, li):not([class]):has(> .iine-button:empty) {
+	display: none;
 }
 
 // Low Quality Image Previews (LQIP)
