@@ -18,13 +18,13 @@ class WebsiteSounds {
 			keyLimit: 12,
 			keyIntervals: [2, 2, 3, 2, 3],
 		};
-		// Header-only defaults
-		this.headerDefaults = {
+		// Navigation defaults
+		this.navigationDefaults = {
 			duration: 150,
 			volume: 0.1,
 			keyLimit: 4,
 		};
-		// "PhonemeAh" waveform
+		// Roboty-Human Voice Singing "PhonemeAh" waveform
 		this.waveform = {
 			real: new Float32Array([
 				0, 0.246738, 0.08389, 0.095378, 0.087885, 0.165621, 0.287369,
@@ -44,16 +44,48 @@ class WebsiteSounds {
 			]),
 		};
 
-		this.pentatonicElements = null;
-		this.logo = null;
-		this.primaryNavigation = null;
-		this.nameButtons = null;
-
 		this.nameAudio = null;
 		this.nameAudioPath = "/audio/name.mp3";
+		this.cawAudio = null;
+		this.cawAudioPath = "/audio/caw.mp3";
+		this.wacAudio = null;
+		this.wacAudioPath = "/audio/wac.mp3";
 		this.isPlaying = false;
+		this.timeout = 50;
 
 		this.init();
+	}
+
+	/**
+	 * Plays the raven’s caw.
+	 */
+	playCaw() {
+		if (!this.isPlaying) {
+			if (!this.cawAudio) {
+				this.cawAudio = new Audio(this.cawAudioPath);
+			}
+			this.isPlaying = true;
+			this.cawAudio.play();
+			window.setTimeout(() => {
+				this.isPlaying = false;
+			}, this.cawAudio.duration);
+		}
+	}
+
+	/**
+	 * .wac s'nevar eht syalP
+	 */
+	playWac() {
+		if (!this.isPlaying) {
+			if (!this.wacAudio) {
+				this.wacAudio = new Audio(this.wacAudioPath);
+			}
+			this.isPlaying = true;
+			this.wacAudio.play();
+			window.setTimeout(() => {
+				this.isPlaying = false;
+			}, this.wacAudio.duration);
+		}
 	}
 
 	/**
@@ -77,8 +109,8 @@ class WebsiteSounds {
 	 */
 	init() {
 		// Content + Sparklines
-		this.pentatonicElements = document.querySelectorAll(".pentatonic");
-		this.pentatonicElements.forEach((element) => {
+		const pentatonicElements = document.querySelectorAll(".pentatonic");
+		pentatonicElements.forEach((element) => {
 			element.addEventListener("click", () => {
 				let target = element;
 				if (
@@ -132,50 +164,75 @@ class WebsiteSounds {
 			});
 		});
 
-		// Tonics
-		this.tonics = document.querySelectorAll(".logo, .author__information");
-		this.tonics.forEach((tonic) => {
-			tonic.addEventListener("mouseenter", () => {
+		// Navigation
+		const navigationElements = document.querySelectorAll(
+			".navigation a, .navigation button, .badges a img",
+		);
+		navigationElements.forEach((element) => {
+			let navigationTimeout = null;
+			element.addEventListener("mouseenter", () => {
 				if (localStorage.getItem(this.STORAGE_KEY) === "true") {
-					pentatonic(
-						[0],
-						this.headerDefaults.duration,
-						this.headerDefaults.volume,
-						this.defaults.keyStart - this.defaults.keyLimit,
-						undefined,
-						undefined,
-						this.waveform,
-					);
+					navigationTimeout = window.setTimeout(() => {
+						const randomKey = Math.floor(
+							Math.random() * this.navigationDefaults.keyLimit,
+						);
+						pentatonic(
+							[randomKey],
+							this.navigationDefaults.duration,
+							this.navigationDefaults.volume,
+							undefined,
+							undefined,
+							undefined,
+							this.waveform,
+						);
+					}, this.timeout);
 				}
+			});
+			element.addEventListener("mouseleave", () => {
+				window.clearTimeout(navigationTimeout);
 			});
 		});
 
-		// Primary Navigation
-		this.primaryNavigation = document.querySelectorAll(
-			".navigation a, .navigation button",
+		// Logo & Badges
+		const tonics = document.querySelectorAll(".logo, .badges li > img");
+		tonics.forEach((tonic) => {
+			let cawTimeout = null;
+			tonic.addEventListener("mouseenter", () => {
+				if (localStorage.getItem(this.STORAGE_KEY) === "true") {
+					cawTimeout = window.setTimeout(() => {
+						this.playCaw();
+					}, this.timeout);
+				}
+			});
+			tonic.addEventListener("mouseleave", () => {
+				window.clearTimeout(cawTimeout);
+			});
+		});
+		if (location.hash === "#caw") {
+			this.playCaw();
+		}
+
+		// Author
+		const authorElements = document.querySelectorAll(
+			".author__information, .footer__navigation [href='/license/']",
 		);
-		this.primaryNavigation.forEach((element) => {
+		authorElements.forEach((element) => {
+			let wacTimeout = null;
 			element.addEventListener("mouseenter", () => {
 				if (localStorage.getItem(this.STORAGE_KEY) === "true") {
-					const randomKey = Math.floor(
-						Math.random() * this.headerDefaults.keyLimit,
-					);
-					pentatonic(
-						[randomKey],
-						this.headerDefaults.duration,
-						this.headerDefaults.volume,
-						undefined,
-						undefined,
-						undefined,
-						this.waveform,
-					);
+					wacTimeout = window.setTimeout(() => {
+						this.playWac();
+					}, this.timeout);
 				}
+			});
+			element.addEventListener("mouseleave", () => {
+				window.clearTimeout(wacTimeout);
 			});
 		});
 
 		// Author Name
-		this.nameButtons = document.querySelectorAll(".js-name-button");
-		this.nameButtons.forEach((button) => {
+		const nameButtons = document.querySelectorAll(".js-name-button");
+		nameButtons.forEach((button) => {
 			button.addEventListener("click", () => {
 				this.playName();
 			});
