@@ -103,7 +103,7 @@
     "@zachleat/snow-fall": "^1.0.3",
     "@zachleat/webcare-webshare": "^1.0.3",
     "autoprefixer": "^10.4.27",
-    "browserslist": "^4.28.1",
+    "browserslist": "^4.28.2",
     "caniuse-api": "^3.0.0",
     "cheerio": "^1.2.0",
     "chrisburnell": "^36.0.0",
