@@ -51,3 +51,6 @@ _site/
 /static
 /video
 /.cache
+
+# Prevent drafts from breaking through
+src/**/drafts/*.md

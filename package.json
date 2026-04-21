@@ -36,7 +36,7 @@
   "private": true,
   "main": "index.html",
   "engines": {
-    "node": ">=18"
+    "node": ">=24"
   },
   "scripts": {
     "build": "npx @11ty/eleventy --incremental",

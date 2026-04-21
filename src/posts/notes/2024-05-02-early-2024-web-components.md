@@ -1,7 +1,7 @@
 ---
 date: 2024-05-02T12:00:00+0800
 title: Web Components from Early 2024
-description: I’ve been having a lot of fun creating reusable Web Components, so here are three that I’ve built and been using this so far this year.
+description: I’ve been having a lot of fun creating reusable Web Components, so here are three that I’ve built and been using so far this year.
 tags:
   - weblogpomo
   - weblogpomo2024
