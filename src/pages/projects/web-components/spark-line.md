@@ -1,7 +1,7 @@
 ---
 title: "&lt;spark-line&gt;"
 emoji: 📉
-github: chrisburnell/spark-line
+git: chrisburnell/spark-line
 branch: main
 npm: "@chrisburnell/spark-line"
 license: CC0

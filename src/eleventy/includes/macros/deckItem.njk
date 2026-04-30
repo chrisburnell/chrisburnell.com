@@ -83,9 +83,9 @@
 						<li><a href="{{ item.url }}#reactions" title="Jump to reactions for this {{ item.data.categoryProper | default(item.data.category) | default('page') }}"><c-emoji>{{ item.data.webmentions.likes and '♥️' or item.data.webmentions.socialReplies and '⤴️' or '🔗' }}</c-emoji>{{ reactions.length }} reaction{{ 's' if reactions.length > 1 }}</a></li>
 					{%- endif -%}
 					{% if show_stargazers -%}
-						{%- set github_user = item.data.github.split('/')[0] -%}
-						{%- set github_repo = item.data.github.split('/')[1] -%}
-						<li><a href="https://github.com/{{ github_user }}/{{ github_repo }}"><c-emoji>✨</c-emoji>{{ stargazers }} stargazer{{ 's' if stargazers > 1 }}</a></li>
+						{%- set git_user = item.data.git.split('/')[0] -%}
+						{%- set git_repo = item.data.git.split('/')[1] -%}
+						<li><a href="https://github.com/{{ git_user }}/{{ git_repo }}"><c-emoji>✨</c-emoji>{{ stargazers }} stargazer{{ 's' if stargazers > 1 }}</a></li>
 					{%- endif -%}
 				{%- endif %}
 				{% if show_rss_only -%}

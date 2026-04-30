@@ -3,7 +3,7 @@ date: 2024-05-08T23:57:11+0800
 title: "The /interests Directory"
 description: "A directory of /interests pages by people across the web"
 emoji: ⭐
-github: chrisburnell/interests-directory
+git: chrisburnell/interests-directory
 branch: main
 ---
 

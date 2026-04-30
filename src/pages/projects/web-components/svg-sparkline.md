@@ -1,7 +1,7 @@
 ---
 title: "&lt;svg-sparkline&gt;"
 emoji: 📈
-github: chrisburnell/svg-sparkline
+git: chrisburnell/svg-sparkline
 branch: main
 npm: "@chrisburnell/svg-sparkline"
 license: MIT

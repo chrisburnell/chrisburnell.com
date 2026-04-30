@@ -36,7 +36,7 @@
 							<li><c-emoji>⤴️</c-emoji> {{ webmentions.socialReplies.length }} Social {% if webmentions.socialReplies.length > 1 %}Replies{% else %}Reply{% endif %}{% if syndicate_to.length %} <small>(on {{ syndication_array | conjunction("narrow") | safe }})</small>{% endif %}</li>
 						{%- endif %}
 						{% if stargazers -%}
-							<li><c-emoji>✨</c-emoji> <a href="https://github.com/{{ github }}">{{ stargazers }} Stargazer{{ 's' if stargazers > 1 }}</a></li>
+							<li><c-emoji>✨</c-emoji> <a href="https://github.com/{{ git }}">{{ stargazers }} Stargazer{{ 's' if stargazers > 1 }}</a></li>
 						{%- endif %}
 					</ol>
 				{%- else %}

@@ -4,7 +4,7 @@ photo:
   url: eleventy-cache-webmentions.png
   alt: A hand emblazoned with a tattoo reading, “Cache up Sucker” with a dollar sign in the middle
 emoji: 💬
-github: chrisburnell/eleventy-cache-webmentions
+git: chrisburnell/eleventy-cache-webmentions
 branch: main
 dev: true
 npm: "@chrisburnell/eleventy-cache-webmentions"

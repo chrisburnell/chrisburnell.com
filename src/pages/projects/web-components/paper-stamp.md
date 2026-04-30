@@ -1,6 +1,6 @@
 ---
 title: "&lt;paper-stamp&gt;"
-github: chrisburnell/paper-stamp
+git: chrisburnell/paper-stamp
 branch: main
 npm: "@chrisburnell/paper-stamp"
 emoji: 📬

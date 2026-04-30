@@ -6,8 +6,8 @@ npm install {{ npm }}{% if dev %} --save-dev{% endif %}
 ```
 {%- endif %}
 
-{% if github -%}
-You can also download it directly <a href="https://github.com/{{ github }}" rel="external noopener">from GitHub</a>:
+{% if git -%}
+You can also download it directly <a href="https://github.com/{{ git }}" rel="external noopener">from GitHub</a>:
 
-<samp><a href="https://github.com/{{ github }}/archive/{{ branch | default('main')}}.zip" rel="external noopener">https://github.com/{{ github }}/archive/{{ branch | default('main')}}.zip</a></samp>
+<samp><a href="https://github.com/{{ git }}/archive/{{ branch | default('main')}}.zip" rel="external noopener">https://github.com/{{ git }}/archive/{{ branch | default('main')}}.zip</a></samp>
 {%- endif %}

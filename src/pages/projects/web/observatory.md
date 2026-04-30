@@ -1,7 +1,7 @@
 ---
 title: Observatory
 emoji: 🔭
-github: chrisburnell/observatory
+git: chrisburnell/observatory
 branch: main
 npm: "@chrisburnell/observatory"
 license: MIT

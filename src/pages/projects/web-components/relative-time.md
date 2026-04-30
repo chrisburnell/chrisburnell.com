@@ -1,6 +1,6 @@
 ---
 title: "&lt;relative-time&gt;"
-github: chrisburnell/relative-time
+git: chrisburnell/relative-time
 branch: main
 npm: "@chrisburnell/relative-time"
 emoji: 🕦

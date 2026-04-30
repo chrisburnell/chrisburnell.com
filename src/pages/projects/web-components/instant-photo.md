@@ -1,7 +1,7 @@
 ---
 title: "&lt;instant-photo&gt;"
 emoji: 🌃
-github: chrisburnell/instant-photo
+git: chrisburnell/instant-photo
 branch: main
 npm: "@chrisburnell/instant-photo"
 license: MIT

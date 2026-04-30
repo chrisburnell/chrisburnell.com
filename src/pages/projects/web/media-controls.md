@@ -4,7 +4,7 @@ clickthrough: true
 title: Media Controls
 description: Play native web media and use keyboard controls à la YouTube.
 emoji: 🎧
-github: chrisburnell/mediaControls
+git: chrisburnell/mediaControls
 branch: master
 tags:
   - javascript

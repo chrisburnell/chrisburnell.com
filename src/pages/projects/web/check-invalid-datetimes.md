@@ -1,7 +1,7 @@
 ---
 title: check-invalid-datetimes
 emoji: 📅
-github: chrisburnell/check-invalid-datetimes
+git: chrisburnell/check-invalid-datetimes
 branch: main
 dev: true
 npm: "@chrisburnell/check-invalid-datetimes"

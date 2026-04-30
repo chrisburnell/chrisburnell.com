@@ -1,6 +1,6 @@
 ---
 title: "&lt;url-input&gt;"
-github: chrisburnell/url-input
+git: chrisburnell/url-input
 branch: main
 npm: "@chrisburnell/url-input"
 emoji: 🔗

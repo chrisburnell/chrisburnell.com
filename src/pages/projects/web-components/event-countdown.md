@@ -1,6 +1,6 @@
 ---
 title: "&lt;event-countdown&gt;"
-github: chrisburnell/event-countdown
+git: chrisburnell/event-countdown
 branch: main
 npm: "@chrisburnell/event-countdown"
 emoji: ⏱️
