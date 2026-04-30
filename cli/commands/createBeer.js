@@ -1,6 +1,5 @@
+import { postTitle, buildFrontmatter, writeAndOpen } from "../utils.js";
 import { input } from "@inquirer/prompts";
-import fs from "fs-extra";
-import { postTitle } from "../utils.js";
 
 export default async (__siteroot) => {
 	const date = await input({ message: "Date" });
@@ -9,27 +8,19 @@ export default async (__siteroot) => {
 	const author = await input({ message: "Author" });
 	const rating = await input({ message: "Rating" });
 	const style = await input({ message: "Style" });
-	const url = await input({ message: "URL" });
+	const url = await input({ message: "Beer URL" });
 
-	let meta = `---
-date: ${date}
-title: "${title}"
-authors:
-  - "${author}"
-rating: ${rating}
-style: "${style}"
-drink_of: ${url}
-badges:
-  - title: "XYZ"
-    id: 12341234`;
+	const meta = buildFrontmatter({
+		date,
+		title,
+		authors: [author],
+		rating,
+		style,
+		drink_of: url,
+		badges: [{ title: "XYZ", id: 12341234 }],
+	});
 
-	meta += `\n---\n`;
+	const filepath = `${__siteroot}/src/posts/beer/${date.split("T")[0]}-${slug}.md`;
 
-	const postSlugDate = date.split("T")[0];
-
-	fs.writeFileSync(
-		`${__siteroot}/src/posts/beer/${postSlugDate}-${slug}.md`,
-		meta,
-		{ flag: "wx" },
-	);
+	writeAndOpen(filepath, meta);
 };

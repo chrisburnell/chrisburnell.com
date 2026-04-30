@@ -1,12 +1,13 @@
 import { input } from "@inquirer/prompts";
-import fs from "fs-extra";
 import {
+	buildFrontmatter,
 	postDate,
 	postDescription,
 	postSlug,
 	postSlugDate,
 	postTags,
 	postTitle,
+	writeAndOpen,
 } from "../utils.js";
 
 export default async (__siteroot) => {
@@ -20,23 +21,15 @@ export default async (__siteroot) => {
 	const bookmarkURL = await input({ message: "Bookmark · URL" });
 	const tags = await postTags();
 
-	let meta = `---
-date: ${postDate}
-title: "${title}"
-description: ${description || "TODO"}
-bookmark_of:
-  title: ${bookmarkTitle}
-  url: ${bookmarkURL}`;
+	const meta = buildFrontmatter({
+		date: postDate,
+		title,
+		description,
+		bookmark_of: { title: bookmarkTitle, url: bookmarkURL },
+		tags,
+	});
 
-	if (tags.length > 0) {
-		meta = `${meta}\ntags:\n${tags.map((tag) => `  - ${tag}`).join("\n")}`;
-	}
+	const filepath = `${__siteroot}/src/posts/bookmarks/${postSlugDate}-${slug}.md`;
 
-	meta += `\n---\n`;
-
-	fs.writeFileSync(
-		`${__siteroot}/src/posts/bookmarks/${postSlugDate}-${slug}.md`,
-		meta,
-		{ flag: "wx" },
-	);
+	writeAndOpen(filepath, meta);
 };

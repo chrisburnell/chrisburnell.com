@@ -1,4 +1,3 @@
-import fs from "fs-extra";
 import {
 	postDate,
 	postDescription,
@@ -6,6 +5,8 @@ import {
 	postSlugDate,
 	postTags,
 	postTitle,
+	buildFrontmatter,
+	writeAndOpen,
 } from "../utils.js";
 
 export default async (__siteroot) => {
@@ -14,30 +15,14 @@ export default async (__siteroot) => {
 	const description = await postDescription();
 	const tags = await postTags();
 
-	let meta = `---
-date: ${postDate}`;
+	const meta = buildFrontmatter({
+		date: postDate,
+		title,
+		description,
+		tags,
+	});
 
-	if (title.match(/[:"#]/g)) {
-		meta += `\ntitle: "${title.replace(/"/g, `\\"`)}"`;
-	} else {
-		meta += `\ntitle: ${title || "TODO"}`;
-	}
+	const filepath = `${__siteroot}/src/posts/articles/drafts/${postSlugDate}-${slug}.md`;
 
-	if (description.match(/[:"#]/g)) {
-		meta += `\ndescription: "${description.replace(/"/g, `\\"`)}"`;
-	} else {
-		meta += `\ndescription: ${description || "TODO"}`;
-	}
-
-	if (tags.length > 0) {
-		meta = `${meta}\ntags:\n${tags.map((tag) => `  - ${tag}`).join("\n")}`;
-	}
-
-	meta += `\n---\n`;
-
-	fs.writeFileSync(
-		`${__siteroot}/src/posts/articles/${postSlugDate}-${slug}.md`,
-		meta,
-		{ flag: "wx" },
-	);
+	writeAndOpen(filepath, meta);
 };
