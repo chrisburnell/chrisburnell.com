@@ -104,7 +104,7 @@
 					{% if show_stargazers -%}
 						{% set git_user = item.data.git.split('/')[0] -%}
 						{% set git_repo = item.data.git.split('/')[1] -%}
-						<a href="https://github.com/{{ git_user }}/{{ git_repo }}" title="Jump to this project’s git repository" class=" [ pill ] "><c-emoji>✨</c-emoji><span class=" [ ordinal ] ">{{ stargazers }}</span></a>
+						<a href="https://github.com/{{ git_user }}/{{ git_repo }}" title="Jump to this project’s GitHub repository" class=" [ pill ] "><c-emoji>✨</c-emoji><span class=" [ ordinal ] ">{{ stargazers }}</span></a>
 					{%- endif %}
 				{%- endif %}
 				{% if show_rss_only -%}
