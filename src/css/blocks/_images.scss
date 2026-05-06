@@ -72,7 +72,7 @@
 	}
 	:not(h1, h2, h3, h4, h5, h6) > :is(a:not(.button), .anchor):not(.icon-anchor, :hover, :focus, :active) > &:first-child,
 	:not(h1, h2, h3, h4, h5, h6) > :is(button:not(.anchor), .button, [type="button"], [role="tab"]):not(.icon-anchor, :hover, :focus, :active) > &:first-child {
-		opacity: var(--opacity-80);
+		opacity: var(--opacity-60);
 	}
 
 	& svg {
