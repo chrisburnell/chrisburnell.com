@@ -14,16 +14,16 @@
 					<ol id="reactions" class=" [ reactions ] [ cluster ] [ strong ] ">
 						<li><button class=" [ button--small ] [ iine-button ] " data-id="{{ canonical }}" data-icon="👍" aria-hidden="true"><span class="icon">👍</span><span class="counter"> Loading…</span></button></li>
 						{% if webmentions.bookmarks.length -%}
-							<li><c-emoji>🔖</c-emoji> {{ webmentions.bookmarks.length }} Bookmark{{ 's' if webmentions.bookmarks.length > 1 }}</li>
+							<li><c-emoji><i class="fas fa-bookmark"></i></c-emoji> {{ webmentions.bookmarks.length }} Bookmark{{ 's' if webmentions.bookmarks.length > 1 }}</li>
 						{%- endif %}
 						{% if webmentions.likes.length -%}
-							<li><c-emoji>❤️</c-emoji> {{ webmentions.likes.length }} Like{{ 's' if webmentions.likes.length > 1 }}</li>
+							<li><c-emoji><i class="fas fa-heart"></i></c-emoji> {{ webmentions.likes.length }} Like{{ 's' if webmentions.likes.length > 1 }}</li>
 						{%- endif %}
 						{% if webmentions.reposts.length -%}
-							<li><c-emoji>🔄️</c-emoji> {{ webmentions.reposts.length }} Repost{{ 's' if webmentions.reposts.length > 1 }}</li>
+							<li><c-emoji><i class="fas fa-retweet"></i></c-emoji> {{ webmentions.reposts.length }} Repost{{ 's' if webmentions.reposts.length > 1 }}</li>
 						{%- endif %}
 						{% if webmentions.links.length -%}
-							<li><c-emoji>🔗</c-emoji> {{ webmentions.links.length }} Link{{ 's' if webmentions.links.length > 1 }}</li>
+							<li><c-emoji><i class="fas fa-link"></i></c-emoji> {{ webmentions.links.length }} Link{{ 's' if webmentions.links.length > 1 }}</li>
 						{%- endif %}
 						{% if webmentions.socialReplies.length -%}
 							{% set syndication_array = [] -%}
@@ -33,10 +33,10 @@
 									{% set syndication_array = (syndication_array.push(syndication_item), syndication_array) -%}
 								{%- endfor %}
 							{%- endif %}
-							<li><c-emoji>⤴️</c-emoji> {{ webmentions.socialReplies.length }} Social {% if webmentions.socialReplies.length > 1 %}Replies{% else %}Reply{% endif %}{% if syndicate_to.length %} <small>(on {{ syndication_array | conjunction("narrow") | safe }})</small>{% endif %}</li>
+							<li><c-emoji><i class="fas fa-reply"></i></c-emoji> {{ webmentions.socialReplies.length }} Social {% if webmentions.socialReplies.length > 1 %}Replies{% else %}Reply{% endif %}{% if syndicate_to.length %} <small>(on {{ syndication_array | conjunction("narrow") | safe }})</small>{% endif %}</li>
 						{%- endif %}
 						{% if stargazers -%}
-							<li><c-emoji>✨</c-emoji> <a href="https://github.com/{{ git }}">{{ stargazers }} Stargazer{{ 's' if stargazers > 1 }}</a></li>
+							<li><c-emoji><i class="fas fa-star"></i></c-emoji> <a href="https://github.com/{{ git }}">{{ stargazers }} Stargazer{{ 's' if stargazers > 1 }}</a></li>
 						{%- endif %}
 					</ol>
 				{%- else %}

@@ -141,6 +141,9 @@
 		{# Deferred JS -#}
 		{% include 'js-defer.njk' %}
 
+		{# Font Awesome #}
+		{% getBundle 'fontawesome' %}
+
 		{# Analytics (Fathom) -#}
 		{% if eleventy.env.runMode === 'build' and not excludeFromAnalytics -%}
 			{% include 'analytics.njk' %}

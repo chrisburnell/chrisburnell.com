@@ -13,6 +13,7 @@ export default {
 	categoryCode: "m",
 	categoryFull: true,
 	tags: ["categoryMusic", "review"],
+	icon: "music",
 	emoji: "🎶",
 	post_includes: ["listen-of.njk"],
 	searchCollectionWeight: 0.8,

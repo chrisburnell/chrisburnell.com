@@ -61,22 +61,28 @@
 	vertical-align: middle;
 	margin-block-start: calc(1ex - 1cap);
 	text-shadow: none;
+	transition:
+		color var(--transition-duration) var(--transition-function),
+		opacity var(--transition-duration) var(--transition-function);
 
 	:is(a:not(.button), .anchor):not(.icon-anchor) > &:first-child,
-	:is(button:not(.anchor), .button, [type="button"], [role="tab"]):not(
-			.icon-anchor
-		)
-		> &:first-child {
+	:is(button:not(.anchor), .button, [type="button"], [role="tab"]):not(.icon-anchor) > &:first-child {
 		display: inline-block;
 		padding-inline-end: 0.625ch;
+	}
+	:not(h1, h2, h3, h4, h5, h6) > :is(a:not(.button), .anchor):not(.icon-anchor, :hover, :focus, :active) > &:first-child,
+	:not(h1, h2, h3, h4, h5, h6) > :is(button:not(.anchor), .button, [type="button"], [role="tab"]):not(.icon-anchor, :hover, :focus, :active) > &:first-child {
+		opacity: var(--opacity-80);
 	}
 
 	& svg {
 		vertical-align: middle;
 		margin-block-start: calc(1ex - 1cap);
 
-		&:not([width], [height]) {
+		&:not([width]) {
 			max-inline-size: 1em;
+		}
+		&:not([height]) {
 			max-block-size: 1em;
 		}
 	}

@@ -5,6 +5,7 @@ import inclusiveLanguage from "@11ty/eleventy-plugin-inclusive-language";
 import rss from "@11ty/eleventy-plugin-rss";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import webc from "@11ty/eleventy-plugin-webc";
+import fontawesome from "@11ty/font-awesome";
 import webmentions from "@chrisburnell/eleventy-cache-webmentions";
 import ogImage from "eleventy-plugin-og-image";
 import avatar from "./plugins/avatar.js";
@@ -26,6 +27,7 @@ export default {
 	webmentions,
 	avatar,
 	browserSupport,
+	fontawesome,
 	image,
 	javascript,
 	ogImage,

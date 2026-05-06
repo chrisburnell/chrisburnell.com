@@ -8,6 +8,7 @@ export default {
 	tags: ["categoryLike"],
 	excludeFromSearch: true,
 	noindex: true,
+	icon: "heart",
 	emoji: "♥️",
 	searchCollectionWeight: 0.333,
 };

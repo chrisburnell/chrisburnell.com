@@ -54,6 +54,7 @@ export default async function (eleventyConfig) {
 	eleventyConfig.addPlugin(plugins.avatar);
 	eleventyConfig.addPlugin(plugins.browserSupport);
 	eleventyConfig.addPlugin(plugins.EleventyRenderPlugin);
+	eleventyConfig.addPlugin(plugins.fontawesome, config.fontawesome);
 	eleventyConfig.addPlugin(plugins.image);
 	eleventyConfig.addPlugin(plugins.javascript);
 	eleventyConfig.addPlugin(plugins.markdown);

@@ -7,13 +7,13 @@
     GPG: {{ author.GPG }}
     Bluesky: https://bsky.app/profile/{{ author.bluesky }}
     CodePen: https://codepen.io/{{ author.codepen }}
-	Git (Self-Hosted): {{ author.git }}/{{ author.git_user }}
+    Git (Self-Hosted): {{ author.git }}/{{ author.git_user }}
     GitHub: https://github.com/{{ author.github }}
     Mastodon: {{ author.mastodon_domain }}/@{{ author.mastodon.split('@')[1] }}
 
 /* SITE */
 
-    Last updated:  {{ global.nowISO | friendlyDate | safe }} {{ global.nowISO | friendlyTime(false) | safe }}
+    Last updated:  {{ global.nowISO | friendlyDate | safe }} {{ global.nowISO | friendlyTime | safe }}
     URL:           {{ site.url }}
     Language:      {{ site.locale }}
     Doctype:       HTML5

@@ -1,9 +1,9 @@
 <script webc:setup>
-	function getInlineSize(count, items) {
+	export function getInlineSize(count, items) {
 		const maxCount = Math.max(...items.map((item) => Number(item.count)));
 		return +((count / maxCount) * 100).toFixed(3);
 	}
-	function formatCount(count) {
+	export function formatCount(count) {
 		return Number(count).toLocaleString();
 	}
 </script>

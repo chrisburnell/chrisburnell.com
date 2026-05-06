@@ -12,6 +12,7 @@ export default {
 	categoryFull: true,
 	categoryMasonry: true,
 	tags: ["categoryBeer", "review"],
+	icon: "beer-mug-empty",
 	emoji: "🍺",
 	searchCollectionWeight: 0.8,
 };

@@ -7,5 +7,6 @@ export default {
 	categoryCode: "v",
 	categoryFull: true,
 	tags: ["categoryVideo", "blog", "feature"],
+	icon: "film",
 	emoji: "🎥",
 };

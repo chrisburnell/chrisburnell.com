@@ -20,7 +20,7 @@
 
 	<article {% if params.index %}id="index-{{ params.index }}"{% endif %} class=" [ flow ]{% if params.hfeed and item.data.mf_root %} [ h-{{ item.data.mf_root }} ] {% endif %}">
 		{% if show_pinned -%}
-			<p class=" [ deck__pinned ] [ ignore-flow ] " aria-hidden="true" data-pagefind-ignore><c-emoji style="margin-inline-end: 1ex;">📌</c-emoji>Pinned</p>
+			<p class=" [ deck__pinned ] [ ignore-flow ] " aria-hidden="true" data-pagefind-ignore><c-emoji style="margin-inline-end: 1ex;"><i class="fas fa-thumbtack"></i></c-emoji>Pinned</p>
 		{%- endif %}
 		{% if item.data.reply_url -%}
 			<div class=" [ deck__context ] ">
@@ -43,7 +43,7 @@
 		{% if title -%}
 			<h1 style="view-transition-name: title-{{ item.data.page.fileSlug }};">
 				<a href="{{ item_url }}" class=" [ p-name ] "{% if item.data.clickthrough %} rel="external noopener"{% endif %}>
-					{% if item.data.emoji %}<c-emoji>{{ item.data.emoji }}</c-emoji>{% endif %}{{ title | striptags(true) | safe }}
+					{% if item.data.icon %}<c-emoji><i class="fas fa-{{ item.data.icon }}"></i></c-emoji>{% elif item.data.emoji %}<c-emoji>{{ item.data.emoji }}</c-emoji>{% endif %}{{ title | striptags(true) | safe }}
 				</a>
 			</h1>
 		{%- endif %}
@@ -75,23 +75,24 @@
 					{% set replies = item.data.webmentions.directReplies -%}
 					{% set reactions = item.data.webmentions.bookmarks.concat(item.data.webmentions.likes).concat(item.data.webmentions.reposts).concat(item.data.webmentions.links).concat(item.data.webmentions.socialReplies) -%}
 					{% if item.data.show_replies != false and replies.length -%}
-						<li><a href="{{ item.url }}#replies" title="Jump to replies for this {{ item.data.categoryProper | default(item.data.category) | default('page') }}"><c-emoji>💬</c-emoji>{{ replies.length }} {{ replies.length > 1 and 'replies' or 'reply' }}</a></li>
+						<li><a href="{{ item.url }}#replies" title="Jump to replies for this {{ item.data.categoryProper | default(item.data.category) | default('page') }}"><c-emoji><i class="fas fa-comment"></i></c-emoji>{{ replies.length }} {{ replies.length > 1 and 'replies' or 'reply' }}</a></li>
 					{%- endif -%}
 					{% if item.data.show_reactions != false and reactions.length -%}
-						<li><a href="{{ item.url }}#reactions" title="Jump to reactions for this {{ item.data.categoryProper | default(item.data.category) | default('page') }}"><c-emoji>{{ item.data.webmentions.likes and '♥️' or item.data.webmentions.socialReplies and '⤴️' or '🔗' }}</c-emoji>{{ reactions.length }} reaction{{ 's' if reactions.length > 1 }}</a></li>
+						{% set icon = item.data.webmentions.likes and 'heart' or item.data.webmentions.socialReplies and 'reply' or 'link' -%}
+						<li><a href="{{ item.url }}#reactions" title="Jump to reactions for this {{ item.data.categoryProper | default(item.data.category) | default('page') }}"><c-emoji><i class="fas fa-{{ icon }}"></i></c-emoji>{{ reactions.length }} reaction{{ 's' if reactions.length > 1 }}</a></li>
 					{%- endif -%}
 				{%- endif %}
 				{% if show_rss_only -%}
-					<li><a href="https://daverupert.com/rss-club/" title="This {{ item.data.categoryProper | default(item.data.category) }} is part of RSS Club" rel="external" target="_blank"><c-emoji style="vertical-align: baseline;"><svg width="18" height="18" aria-hidden="true" focusable="false" style="vertical-align: middle;"><use href="#svg--rss"></use></svg></c-emoji>RSS Club</a></li>
+					<li><a href="https://daverupert.com/rss-club/" title="This {{ item.data.categoryProper | default(item.data.category) }} is part of RSS Club" rel="external" target="_blank"><c-emoji><i class="fas fa-rss"></i></c-emoji>RSS Club</a></li>
 				{%- endif %}
 				{% if show_popularity -%}
-					<li><a href="/popular/#index-{{ item.data.rank.popular }}" title="#{{ item.data.rank.popular }} Most Popular Page"><c-emoji>📊</c-emoji> <span class=" [ ordinal ] "{% if item.data.rank.popular <= 3 %} style="color: color-mix(in oklab, currentColor, {% if item.data.rank.popular == 1 %}gold{% elif item.data.rank.popular == 2 %}silver{% else %}darkorange{% endif %}); font-weight: var(--font-weight-semibold);"{% endif %}>#{{ item.data.rank.popular }}</span></a></li>
+					<li><a href="/popular/#index-{{ item.data.rank.popular }}" title="#{{ item.data.rank.popular }} Most Popular Page"><c-emoji><i class="fas fa-chart-line"></i></c-emoji><span class=" [ ordinal ] "{% if item.data.rank.popular <= 3 %} style="color: color-mix(in oklab, currentColor, {% if item.data.rank.popular == 1 %}gold{% elif item.data.rank.popular == 2 %}silver{% else %}darkorange{% endif %}); font-weight: var(--font-weight-semibold);"{% endif %}>#{{ item.data.rank.popular }}</span></a></li>
 				{%- endif %}
 				{% if show_hotness -%}
-					<li><a href="/hot/#index-{{ item.data.rank.hot }}" title="#{{ item.data.rank.hot }} Hottest Page"><c-emoji>🔥</c-emoji> <span class=" [ ordinal ] "{% if item.data.rank.hot <= 3 %} style="color: color-mix(in oklab, currentColor, {% if item.data.rank.hot == 1 %}gold{% elif item.data.rank.hot == 2 %}silver{% else %}darkorange{% endif %}); font-weight: var(--font-weight-semibold);"{% endif %}>#{{ item.data.rank.hot }}</span></a></li>
+					<li><a href="/hot/#index-{{ item.data.rank.hot }}" title="#{{ item.data.rank.hot }} Hottest Page"><c-emoji><i class="fas fa-fire"></i></c-emoji><span class=" [ ordinal ] "{% if item.data.rank.hot <= 3 %} style="color: color-mix(in oklab, currentColor, {% if item.data.rank.hot == 1 %}gold{% elif item.data.rank.hot == 2 %}silver{% else %}darkorange{% endif %}); font-weight: var(--font-weight-semibold);"{% endif %}>#{{ item.data.rank.hot }}</span></a></li>
 				{%- endif %}
 				{% if show_pageviews -%}
-					<li title="{{ (item.data.pageviews.total | toNearest(1000, true)) / 1000 }}k Pageviews"><c-emoji>👀</c-emoji> <span class=" [ ordinal ] ">{{ (item.data.pageviews.total | toNearest(1000, true)) / 1000 }}k</span></li>
+					<li title="{{ (item.data.pageviews.total | toNearest(1000, true)) / 1000 }}k Pageviews"><c-emoji><i class="fas fa-face-grin-stars"></i></c-emoji><span class=" [ ordinal ] ">{{ (item.data.pageviews.total | toNearest(1000, true)) / 1000 }}k</span></li>
 				{%- endif %}
 			</ul>
 		{%- endif %}

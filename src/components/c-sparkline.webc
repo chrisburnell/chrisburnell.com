@@ -1,18 +1,18 @@
 <script webc:setup>
-	function getValues(string) {
+	export function getValues(string) {
 		return string.split(",");
 	}
-	function maxDecimals(number, decimals = 2) {
+	export function maxDecimals(number, decimals = 2) {
 		return +number.toFixed(decimals);
 	}
-	function getViewBox(string) {
+	export function getViewBox(string) {
 		const values = getValues(string);
 		return `0 0 ${values.length - 1} ${Math.max(...values) + 2}`;
 	}
-	function lineCommand(point, i) {
+	export function lineCommand(point, i) {
 		return `L ${i},${point}`;
 	}
-	function line(ax, ay, bx, by) {
+	export function line(ax, ay, bx, by) {
 		const lengthX = bx - ax;
 		const lengthY = by - ay;
 
@@ -21,7 +21,7 @@
 			angle: Math.atan2(lengthY, lengthX),
 		};
 	}
-	function controlPoint(cx, cy, px, py, nx, ny, reverse) {
+	export function controlPoint(cx, cy, px, py, nx, ny, reverse) {
 		// When the current is the first or last point of the array, previous and
 		// next don't exist. Replace with current.
 		px = px || cx;
@@ -41,7 +41,7 @@
 
 		return [x, y];
 	}
-	function bezierCommand(point, i, a) {
+	export function bezierCommand(point, i, a) {
 		const [csx, csy] = controlPoint(
 			i - 1,
 			a[i - 1],
@@ -61,7 +61,7 @@
 		);
 		return `C ${maxDecimals(csx)},${maxDecimals(csy)} ${maxDecimals(cex)},${maxDecimals(cey)} ${i},${point}`;
 	}
-	function getPath(values, command = lineCommand) {
+	export function getPath(values, command = lineCommand) {
 		return (
 			getValues(values)
 				// flips each point in the vertical range
@@ -74,13 +74,13 @@
 				}, "")
 		);
 	}
-	function getFinalX(values) {
+	export function getFinalX(values) {
 		return values.length - 1;
 	}
-	function getFinalY(values) {
+	export function getFinalY(values) {
 		return Math.max(...values) - values[values.length - 1] + 1;
 	}
-	function getHighestY(values) {
+	export function getHighestY(values) {
 		return Math.max(...values) + 2;
 	}
 </script>

@@ -1,7 +1,7 @@
 ---
 layout: base
 title: Feeds
-tagline: '<c-emoji><svg width="60" height="60" aria-hidden="true" focusable="false" style="margin-inline-end: 0.5ch; vertical-align: baseline;"><use href="#svg--rss"></use></svg></c-emoji>Feeds'
+tagline: '<c-emoji><i class="fas fa-rss"></i></c-emoji>Feeds'
 description: You can follow my posts from different web feeds, depending on what content you'd like to see.
 perch: true
 redirect_from:
@@ -26,24 +26,24 @@ redirect_from:
 		{%- endif %}
 
 		<h2 id="collections">
-			<c-emoji><svg width="32" height="32" aria-hidden="true" focusable="false"><use href="#svg--rss"></use></svg></c-emoji> Collections
+			<c-emoji><i class="fas fa-rss"></i></c-emoji>Collections
 		</h2>
 
 		<ul class=" [ grid ] [ shelf  shelf--wide ] ">
 			<li>
-				<a href="{{ site.url + '/feed.xml' }}" class=" [ gamma ] "><c-emoji>🆕</c-emoji>Latest Posts <sup>{{ site.limits.feed }}</sup></a>
+				<a href="{{ site.url + '/feed.xml' }}" class=" [ gamma ] "><c-emoji><i class="fas fa-newspaper"></i></c-emoji>Latest Posts <sup>{{ site.limits.feed }}</sup></a>
 				<p>Latest posts on the blog.</p>
 			</li>
 			<li>
-				<a href="{{ site.url + '/writing.xml' }}" class=" [ gamma ] "><c-emoji>✍️</c-emoji>Writing <sup>{{ site.limits.feed }}</sup></a>
+				<a href="{{ site.url + '/writing.xml' }}" class=" [ gamma ] "><c-emoji><i class="fas fa-feather-pointed"></i></c-emoji>Writing <sup>{{ site.limits.feed }}</sup></a>
 				<p>A more serious collection of ideas and bits of prose.</p>
 			</li>
 			<li>
-				<a href="{{ site.url + '/replies.xml' }}" class=" [ gamma ] "><c-emoji>↪️</c-emoji>Replies <sup>{{ site.limits.feed }}</sup></a>
+				<a href="{{ site.url + '/replies.xml' }}" class=" [ gamma ] "><c-emoji><i class="fas fa-reply"></i></c-emoji>Replies <sup>{{ site.limits.feed }}</sup></a>
 				<p>Replies I’ve made to other people.</p>
 			</li>
 			<li>
-				<a href="{{ site.url + '/rsvps.xml' }}" class=" [ gamma ] "><c-emoji>📩</c-emoji>RSVPs <sup>{{ site.limits.feed }}</sup></a>
+				<a href="{{ site.url + '/rsvps.xml' }}" class=" [ gamma ] "><c-emoji><i class="fas fa-envelope"></i></c-emoji>RSVPs <sup>{{ site.limits.feed }}</sup></a>
 				<p>A record of RSVPs to conferences and meet-ups.</p>
 			</li>
 		</ul>
@@ -51,20 +51,20 @@ redirect_from:
 		<hr>
 
 		<h2 id="categories">
-			<c-emoji><svg width="32" height="32" aria-hidden="true" focusable="false"><use href="#svg--rss"></use></svg></c-emoji> Categories
+			<c-emoji><i class="fas fa-rss"></i></c-emoji>Categories
 		</h2>
 
 		<ul class=" [ grid ] [ shelf ] " data-layout="natural" style="--row-gap: var(--size-medium);">
 		{% for item in collections.categories -%}
 			{%- set count = collections[item.collectionName] | arePublished | getCollectionCount -%}
-			<li><a href="{{ site.url }}/{{ item.plural }}.xml" class=" [ gamma ] "><c-emoji>{{ item.emoji | default('📄') }}</c-emoji>{{ item.properPlural | title }} <sup>{{ count }}</sup></a></li>
+			<li><a href="{{ site.url }}/{{ item.plural }}.xml" class=" [ gamma ] "><c-emoji><i class="fas fa-{{ item.icon | default('file') | safe }}"></i></c-emoji>{{ item.properPlural | title }} <sup>{{ count }}</sup></a></li>
 		{%- endfor %}
 		</ul>
 
 		<hr>
 
 		<h2 id="tags">
-			<c-emoji><svg width="32" height="32" aria-hidden="true" focusable="false"><use href="#svg--rss"></use></svg></c-emoji>Tags
+			<c-emoji><i class="fas fa-rss"></i></c-emoji>Tags
 		</h2>
 
 		<ul class=" [ grid ] [ shelf ] " data-layout="natural" style="--row-gap: var(--size-small);">

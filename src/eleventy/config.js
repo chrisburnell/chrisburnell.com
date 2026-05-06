@@ -4,6 +4,7 @@ import ogImage from "./config/ogImage.js";
 import syntaxHighlight from "./config/syntaxHighlight.js";
 import webc from "./config/webc.js";
 import webmentions from "./config/webmentions.js";
+import fontawesome from "./config/fontawesome.js";
 
 export default {
 	directoryOutput,
@@ -12,4 +13,5 @@ export default {
 	syntaxHighlight,
 	webc,
 	webmentions,
+	fontawesome,
 };

@@ -6,6 +6,7 @@ export default {
 	categoryPlural: "recipes",
 	categoryCode: "d",
 	tags: ["categoryRecipe", "blog", "feature"],
+	icon: "table-list",
 	emoji: "📝",
 	pre_includes: ["recipe.njk"],
 	searchCollectionWeight: 0.8,

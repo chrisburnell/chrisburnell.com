@@ -12,6 +12,7 @@ export default {
 	categoryCode: "g",
 	categoryFull: true,
 	tags: ["categoryGame", "review"],
+	icon: "gamepad",
 	emoji: "🕹️",
 	searchCollectionWeight: 0.25,
 };

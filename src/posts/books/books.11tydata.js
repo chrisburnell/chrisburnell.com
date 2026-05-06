@@ -12,6 +12,7 @@ export default {
 	categoryCode: "r",
 	categoryFull: true,
 	tags: ["categoryBook", "review"],
+	icon: "book-open",
 	emoji: "📖",
 	searchCollectionWeight: 0.333,
 };

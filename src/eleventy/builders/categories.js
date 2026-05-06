@@ -25,6 +25,7 @@ export default async function (collection) {
 		.map((item) => {
 			return {
 				title: item.data.category,
+				icon: item.data.icon,
 				emoji: item.data.emoji,
 				proper:
 					"categoryProper" in item.data
