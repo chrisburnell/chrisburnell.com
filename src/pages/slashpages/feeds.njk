@@ -1,7 +1,7 @@
 ---
 layout: base
 title: Feeds
-tagline: '<c-emoji><i class="fas fa-rss"></i></c-emoji>Feeds'
+tagline: '<c-emoji style="color:var(--fill,#ff8c01);"><i class="fas fa-rss"></i></c-emoji>Feeds'
 description: You can follow my posts from different web feeds, depending on what content you'd like to see.
 perch: true
 redirect_from:
@@ -26,7 +26,7 @@ redirect_from:
 		{%- endif %}
 
 		<h2 id="collections">
-			<c-emoji><i class="fas fa-rss"></i></c-emoji>Collections
+			<c-emoji style="color:var(--fill,#ff8c01);"><i class="fas fa-rss"></i></c-emoji>Collections
 		</h2>
 
 		<ul class=" [ grid ] [ shelf  shelf--wide ] ">
@@ -51,7 +51,7 @@ redirect_from:
 		<hr>
 
 		<h2 id="categories">
-			<c-emoji><i class="fas fa-rss"></i></c-emoji>Categories
+			<c-emoji style="color:var(--fill,#ff8c01);"><i class="fas fa-rss"></i></c-emoji>Categories
 		</h2>
 
 		<ul class=" [ grid ] [ shelf ] " data-layout="natural" style="--row-gap: var(--size-medium);">
@@ -64,11 +64,11 @@ redirect_from:
 		<hr>
 
 		<h2 id="tags">
-			<c-emoji><i class="fas fa-rss"></i></c-emoji>Tags
+			<c-emoji style="color:var(--fill,#ff8c01);"><i class="fas fa-rss"></i></c-emoji>Tags
 		</h2>
 
 		<ul class=" [ grid ] [ shelf ] " data-layout="natural" style="--row-gap: var(--size-small);">
-		{%- set lowest = Infinity -%}
+		{%- set lowest = collections.all.length -%}
 		{%- set highest = 0 -%}
 		{%- for item in collections.tags | sort -%}
 			{%- set count = collections[item] | arePublished | getCollectionCount -%}

@@ -70,7 +70,7 @@
 		display: inline-block;
 		padding-inline-end: 0.625ch;
 	}
-	:not(h1, h2, h3, h4, h5, h6) > :is(a:not(.button), .anchor):not(.icon-anchor, :hover, :focus, :active) > &:first-child {
+	:not(h1, h2, h3, h4, h5, h6) > :is(a:not(.button), .anchor):not(.icon-anchor, :hover, :focus, :active) > &:has(svg):first-child {
 		opacity: var(--opacity-70);
 		color: color-mix(in oklab, currentColor, var(--color-raven));
 	}

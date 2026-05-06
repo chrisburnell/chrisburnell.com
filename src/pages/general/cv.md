@@ -4,28 +4,28 @@ content_class: h-resume
 og_image: /images/avatar@2x.jpeg
 toc: true
 redirect_from:
-  - /resume
-  - /work
+- /resume
+- /work
 css_includes:
-  - src/css/pages/cv.scss
+- src/css/pages/cv.scss
 eleventyComputed:
   tagline: '<span class=" [ canada ] " data-pagefind-meta="title:CV / Résumé">{{ author.name }}</span>'
   description: "{{ author.role | title }}{% if author.employer %} and {{ author.employer.role | title }} at {{ author.employer.title }}{% endif %}"
 ---
 
 {% if author.employer.title != '' -%}
-    {% include 'lfw.njk' %}
+{% include 'lfw.njk' %}
 {%- endif %}
 
 <ul class=" [ cluster ] ">
-    <li class="no-print"><a href="https://chrisburnell.com/cv.pdf"><c-emoji><i class="fas fa-download"></i></c-emoji>Download PDF</a></li><li><!--email_off--><a href="mailto:{{ author.email }}"><c-emoji><i class="fas fa-address-card"></i></c-emoji>Email</a><!--/email_off--></li><li><a href="https://github.com/{{ author.github }}"><c-emoji><i class="fas fa-github"></i></c-emoji>GitHub</a></li><li><a href="https://www.linkedin.com/in/{{ author.linkedin }}"><c-emoji><i class="fas fa-linkedin"></i></c-emoji>LinkedIn</a></li><li><a href="https://npmjs.com/~{{ author.npm }}"><c-emoji><i class="fas fa-npm"></i></c-emoji>npm</a></li>
+<li class="no-print"><a href="https://chrisburnell.com/cv.pdf"><c-emoji><i class="fas fa-download"></i></c-emoji>Download PDF</a></li><li><!--email_off--><a href="mailto:{{ author.email }}"><c-emoji><i class="fas fa-at"></i></c-emoji>Email</a><!--/email_off--></li><li><a href="https://github.com/{{ author.github }}"><c-emoji><i class="fab fa-github"></i></c-emoji>GitHub</a></li><li><a href="https://www.linkedin.com/in/{{ author.linkedin }}"><c-emoji><i class="fab fa-linkedin"></i></c-emoji>LinkedIn</a></li><li><a href="https://npmjs.com/~{{ author.npm }}"><c-emoji><i class="fab fa-npm"></i></c-emoji>npm</a></li>
 </ul>
 
 {% set technical_articles_count = 0 -%}
 {% for item in collections.posts -%}
-    {% if 'writing' in item.data.tags or 'accessibility' in item.data.tags or 'css' in item.data.tags or 'css-variables' in item.data.tags or 'javascript' in item.data.tags or 'eleventy' in item.data.tags or 'html' in item.data.tags or 'indieweb' in item.data.tags or 'performance' in item.data.tags or 'php' in item.data.tags or 'scss' in item.data.tags or 'svg' in item.data.tags or 'ux' in item.data.tags or 'web-components' in item.data.tags -%}
-        {%- set technical_articles_count = technical_articles_count + 1 -%}
-    {%- endif -%}
+{% if 'writing' in item.data.tags or 'accessibility' in item.data.tags or 'css' in item.data.tags or 'css-variables' in item.data.tags or 'javascript' in item.data.tags or 'eleventy' in item.data.tags or 'html' in item.data.tags or 'indieweb' in item.data.tags or 'performance' in item.data.tags or 'php' in item.data.tags or 'scss' in item.data.tags or 'svg' in item.data.tags or 'ux' in item.data.tags or 'web-components' in item.data.tags -%}
+    {%- set technical_articles_count = technical_articles_count + 1 -%}
+{%- endif -%}
 {%- endfor -%}
 
 ## Summary
@@ -41,10 +41,10 @@ Passionate about the open web, having published over {{ technical_articles_count
 ## Professional Experience
 
 <div class=" [ role ] ">
-    <h3>Software Engineer</h3>
-    <small><strong>Jan. 2023 – Dec. 2023</strong></small>
-    <p class="delta"><a href="https://squiz.net"><c-emoji>{% image './images/content/squiz-logo.svg', 'Squiz’s logo', 'brand-logo' %}</c-emoji>Squiz</a></p>
-    <small><strong>London, UK</strong></small>
+<h3>Software Engineer</h3>
+<small><strong>Jan. 2023 – Dec. 2023</strong></small>
+<p class="delta"><a href="https://squiz.net"><c-emoji>{% image './images/content/squiz-logo.svg', 'Squiz’s logo', 'brand-logo' %}</c-emoji>Squiz</a></p>
+<small><strong>London, UK</strong></small>
 </div>
 
 - Built, maintained, and published a library of React components to enable developers to build accessible and customised client websites quickly that have been fully-tested and are production-ready.
@@ -52,10 +52,10 @@ Passionate about the open web, having published over {{ technical_articles_count
 - Responsible for keeping track of web standards and keeping my team up-to-date on how we can use stable, new technologies to simplify and enhance the library of components.
 
 <div class=" [ role ] " style="margin-block-start: var(--size-large);">
-    <h3>Lead Developer & Chapter Lead</h3>
-    <small><strong>May 2022 – Jan. 2023</strong></small>
-    <p class="delta"><a href="https://squiz.net"><c-emoji>{% image './images/content/squiz-logo.svg', 'Squiz’s logo', 'brand-logo' %}</c-emoji>Squiz</a></p>
-    <small><strong>London, UK</strong></small>
+<h3>Lead Developer & Chapter Lead</h3>
+<small><strong>May 2022 – Jan. 2023</strong></small>
+<p class="delta"><a href="https://squiz.net"><c-emoji>{% image './images/content/squiz-logo.svg', 'Squiz’s logo', 'brand-logo' %}</c-emoji>Squiz</a></p>
+<small><strong>London, UK</strong></small>
 </div>
 
 - Lead Developer and primary technical contact for 8 key clients, defining their complete technical implementation and standard of quality, with a focus on higher-education and government websites.
@@ -67,10 +67,10 @@ Passionate about the open web, having published over {{ technical_articles_count
 - Established a robust design system for projects which *reduced development times by over 50%* and enabled both technical and non-technical stakeholders to understand and participate in dialogue about the complex intersection between design and development.
 
 <div class=" [ role ] " style="margin-block-start: var(--size-large);">
-    <h3>Lead Developer</h3>
-    <small><strong>Feb. 2021 – May 2022</strong></small>
-    <p class="delta"><a href="https://squiz.net"><c-emoji>{% image './images/content/squiz-logo.svg', 'Squiz’s logo', 'brand-logo' %}</c-emoji>Squiz</a></p>
-    <small><strong>London, UK</strong></small>
+<h3>Lead Developer</h3>
+<small><strong>Feb. 2021 – May 2022</strong></small>
+<p class="delta"><a href="https://squiz.net"><c-emoji>{% image './images/content/squiz-logo.svg', 'Squiz’s logo', 'brand-logo' %}</c-emoji>Squiz</a></p>
+<small><strong>London, UK</strong></small>
 </div>
 
 - Implemented modern web standards by redefining best practices, which led to higher code quality and reduced context-switching for developers working across multiple projects.
@@ -80,10 +80,10 @@ Passionate about the open web, having published over {{ technical_articles_count
 - Mentored a Junior Developer for 20 hours a week over the course of a 6-week project and was able to deliver the project in *50% of the estimated time* and achieved *perfect Lighthouse and WCAG AA scores*.
 
 <div class=" [ role ] " style="margin-block-start: var(--size-large);">
-    <h3>Front End Developer</h3>
-    <small><strong>Feb. 2018 – July 2020</strong></small>
-    <p class="delta"><a href="https://squiz.net"><c-emoji>{% image './images/content/squiz-logo.svg', 'Squiz’s logo', 'brand-logo' %}</c-emoji>Squiz</a></p>
-    <small><strong>London, UK</strong></small>
+<h3>Front End Developer</h3>
+<small><strong>Feb. 2018 – July 2020</strong></small>
+<p class="delta"><a href="https://squiz.net"><c-emoji>{% image './images/content/squiz-logo.svg', 'Squiz’s logo', 'brand-logo' %}</c-emoji>Squiz</a></p>
+<small><strong>London, UK</strong></small>
 </div>
 
 - Contributed to both the front end and content management implementations for client work and was the key advisor for expertise on front end development, particularly to do with CSS, and was consulted on dozens of projects for this knowledge.
@@ -93,10 +93,10 @@ Passionate about the open web, having published over {{ technical_articles_count
 - Single-handedly developed the UK’s first design system which is now used by more than 10 enterprise-level projects, leading to more coherent codebases and a significant reduction in bugs and turnaround time for ad hoc work.
 
 <div class=" [ role ] " style="margin-block-start: var(--size-large);">
-    <h3>Web Developer</h3>
-    <small><strong>June 2014 – Feb. 2018</strong></small>
-    <p class="delta"><a href="https://city.ac.uk"><c-emoji>{% image './images/content/city-logo.svg', 'City, University of London’s logo', 'brand-logo' %}</c-emoji>City, University of London</a></p>
-    <small><strong>London, UK</strong></small>
+<h3>Web Developer</h3>
+<small><strong>June 2014 – Feb. 2018</strong></small>
+<p class="delta"><a href="https://city.ac.uk"><c-emoji>{% image './images/content/city-logo.svg', 'City, University of London’s logo', 'brand-logo' %}</c-emoji>City, University of London</a></p>
+<small><strong>London, UK</strong></small>
 </div>
 
 - Primary front end development advisor for the University’s [Main Website](https://city.ac.uk) and [Bayes Business School](https://www.bayes.city.ac.uk/).
@@ -106,10 +106,10 @@ Passionate about the open web, having published over {{ technical_articles_count
 - Overhauled the University’s [Clearing Website](https://clearing.city.ac.uk/) to simplify the user journey and automate backend processes required for incoming applications, reducing processing times and dependence on staff. This led to significant cost and time savings for the University, and continues to be used to this day.
 
 <div class=" [ role ] " style="margin-block-start: var(--size-large);">
-    <h3>Front End Web & UI Developer</h3>
-    <small><strong>Apr. 2012 – Jan. 2014</strong></small>
-    <p class="delta"><a href="https://squiz.net"><c-emoji>{% image './images/content/squiz-logo.svg', 'Squiz’s logo', 'brand-logo' %}</c-emoji>Squiz</a></p>
-    <small><strong>London, UK</strong></small>
+<h3>Front End Web & UI Developer</h3>
+<small><strong>Apr. 2012 – Jan. 2014</strong></small>
+<p class="delta"><a href="https://squiz.net"><c-emoji>{% image './images/content/squiz-logo.svg', 'Squiz’s logo', 'brand-logo' %}</c-emoji>Squiz</a></p>
+<small><strong>London, UK</strong></small>
 </div>
 
 - Built both the front end and content management implementations for client work, specialising particularly in cross-browser compatibility.
@@ -121,10 +121,10 @@ Passionate about the open web, having published over {{ technical_articles_count
 ## Community Experience
 
 <div class=" [ role ] ">
-    <h3>Conference Organiser</h3>
-    <small><strong>May 2018 – present</strong></small>
-    <p class="delta"><a href="https://stateofthebrowser.com" rel="external noopener"><c-emoji>{% image './images/content/sotb-logo.png', 'State of the Browser’s logo', 'brand-logo', ['auto'] %}</c-emoji>State of the Browser</a></p>
-    <small><strong>London, UK</strong></small>
+<h3>Conference Organiser</h3>
+<small><strong>May 2018 – present</strong></small>
+<p class="delta"><a href="https://stateofthebrowser.com" rel="external noopener"><c-emoji>{% image './images/content/sotb-logo.png', 'State of the Browser’s logo', 'brand-logo', ['auto'] %}</c-emoji>State of the Browser</a></p>
+<small><strong>London, UK</strong></small>
 </div>
 
 - Organised 8 annual, not-for-profit conferences, showcasing over {{ global.sotbSpeakers | toNearest(5, true) }} speakers with over 150+ in-person attendees each year.
@@ -138,15 +138,15 @@ Passionate about the open web, having published over {{ technical_articles_count
 **Annual conference websites:** [2018](https://2018.stateofthebrowser.com), [2019](https://2019.stateofthebrowser.com), [2021](https://2021.stateofthebrowser.com), [2022](https://2022.stateofthebrowser.com), [2023](https://2023.stateofthebrowser.com), [2024](https://2024.stateofthebrowser.com), [2025](https://2025.stateofthebrowser.com), [2026](https://2026.stateofthebrowser.com)
 
 <div class=" [ role ] " style="margin-block-start: var(--size-large);">
-    <h3>Technical Writer</h3>
-    <small><strong>2013 – present</strong></small>
-    <p class="delta"><a href="https://chrisburnell.com/"><c-emoji><img src="{{ site.logo }}" class="brand-logo" width="24" height="24" alt="{{ site.title }}" loading="lazy" decoding="async"></c-emoji>chrisburnell.com</a></p>
+<h3>Technical Writer</h3>
+<small><strong>2013 – present</strong></small>
+<p class="delta"><a href="https://chrisburnell.com/"><c-emoji><img src="{{ site.logo }}" class="brand-logo" width="24" height="24" alt="{{ site.title }}" loading="lazy" decoding="async"></c-emoji>chrisburnell.com</a></p>
 </div>
 
 Launched a web development blog and have since created [{{ collections.projects.length + projects.web.length }} web projects](https://chrisburnell.com/projects/) and published over [{{ technical_articles_count | toNearest(5, true) }} highly technical articles](https://chrisburnell.com/blog/) about accessibility, design systems, performance, CSS, JavaScript, Node.js, web standards, and musings on the web. Maintaining my own VPS infrastructure has given me experience in Linux system administration, database management (MySQL/PostgreSQL), authentication systems (OAuth/OIDC), and DevOps practices that have complemented my front-end expertise.
 
 <c-details class="no-border" force-restore>
-    <summary>Popular Pages & Posts</summary>
+<summary>Popular Pages & Posts</summary>
 
 - **[clamp() Calculator](https://chrisburnell.com/clamp-calculator/)** <br>A simple online tool for calculating and container-based clamped values for use in CSS.
 
@@ -161,27 +161,27 @@ Launched a web development blog and have since created [{{ collections.projects.
 </c-details>
 
 <nav class=" [ grid ] [ navigator ] " style="margin-block-start: 1em;">
-    <a href="https://chrisburnell.com/posts/" class=" [ button ] " style="font-size: 1rem;">Read more of my posts</a>
+<a href="https://chrisburnell.com/posts/" class=" [ button ] " style="font-size: 1rem;">Read more of my posts</a>
 </nav>
 
 <div class=" [ role ] " style="margin-block-start: var(--size-large);">
-    <h3>Open Source Author</h3>
-    <small><strong>2013 – present</strong></small>
+<h3>Open Source Author</h3>
+<small><strong>2013 – present</strong></small>
 </div>
 
 {% set package_downloads = 0 -%}
 {% for project in collections.projects -%}
-    {% set package_downloads = package_downloads + (project.data.downloads | default(0)) -%}
+{% set package_downloads = package_downloads + (project.data.downloads | default(0)) -%}
 {%- endfor -%}
 
 Author of open-source software, including CSS libraries, design system tools, and native web components, accumulating over {{ package_downloads | toNearest(1000, true) | numberStringFormat }} downloads and having been used in building key enterprise client websites across my professional career.
 
 <c-details class="no-border" force-restore>
-    <summary>Popular Projects</summary>
+<summary>Popular Projects</summary>
 
 - **[<c-emoji><i class="fas fa-comment"></i></c-emoji>eleventy-cache-webmentions](https://chrisburnell.com/eleventy-cache-webmentions/)** <small>([{{ 'chrisburnell/eleventy-cache-webmentions' | stargazers }} ★ on GitHub](https://github.com/chrisburnell/eleventy-cache-webmentions) · [{{ '@chrisburnell/eleventy-cache-webmentions' | npmDownloads('2021-12-05') | toNearest(100, true) | numberStringFormat }}+ npm downloads](https://www.npmjs.com/package/@chrisburnell/eleventy-cache-webmentions))</small><br>A plugin for the popular static site generator, [Eleventy](https://11ty.dev/), that allows the caching of Webmentions and makes them available to use throughout one’s website.
 
-- **[<c-emoji><i class="fas fa-cursor"></i></c-emoji>Bowhead](https://chrisburnell.com/bowhead/)** <small>([{{ 'chrisburnell/bowhead' | stargazers }} ★ on GitHub](https://github.com/chrisburnell/bowhead) · [{{ '@chrisburnell/bowhead' | npmDownloads('2020-08-10') | toNearest(100, true) | numberStringFormat }}+ npm downloads](https://www.npmjs.com/package/@chrisburnell/bowhead))</small><br>A SCSS framework for integrating design tokens into a CSS codebase with support for CSS Variables. This project has been a key component for 6 client websites during my time at Squiz.
+- **[<c-emoji><i class="fas fa-swatchbook"></i></c-emoji>Bowhead](https://chrisburnell.com/bowhead/)** <small>([{{ 'chrisburnell/bowhead' | stargazers }} ★ on GitHub](https://github.com/chrisburnell/bowhead) · [{{ '@chrisburnell/bowhead' | npmDownloads('2020-08-10') | toNearest(100, true) | numberStringFormat }}+ npm downloads](https://www.npmjs.com/package/@chrisburnell/bowhead))</small><br>A SCSS framework for integrating design tokens into a CSS codebase with support for CSS Variables. This project has been a key component for 6 client websites during my time at Squiz.
 
 - **[<c-emoji><i class="fas fa-arrow-trend-up"></i></c-emoji>&lt;svg-sparkline&gt;](https://chrisburnell.com/svg-sparkline/)** <small>([{{ 'chrisburnell/svg-sparkline' | stargazers }} ★ on GitHub](https://github.com/chrisburnell/svg-sparkline) · [{{ '@chrisburnell/svg-sparkline' | npmDownloads('2024-01-21') | toNearest(100, true) | numberStringFormat }}+ npm downloads](https://www.npmjs.com/package/@chrisburnell/svg-sparkline))</small><br>A Web Component for building an SVG Sparkline.
 
@@ -190,7 +190,7 @@ Author of open-source software, including CSS libraries, design system tools, an
 </c-details>
 
 <nav class=" [ grid ] [ navigator ] " style="margin-block-start: 1em;">
-    <a href="https://chrisburnell.com/projects/" class=" [ button ] " style="font-size: 1rem;">See more of my projects</a>
+<a href="https://chrisburnell.com/projects/" class=" [ button ] " style="font-size: 1rem;">See more of my projects</a>
 </nav>
 
 {#-
@@ -199,17 +199,17 @@ Author of open-source software, including CSS libraries, design system tools, an
 ## Skills
 
 <ul class="grid">
-    <li>HTML</li>
-    <li>CSS, SCSS</li>
-    <li>JavaScript, Typescript, Node.js</li>
-    <li>React, Vue, Eleventy, Astro</li>
-    <li>JSX, Nunjucks, Liquid, Handlebars</li>
-    <li>nginx</li>
-    <li>SQLite, MySQL, PosteSQL</li>
-    <li>Design Systems, Design Tokens</li>
-    <li>Mentorship, Learning & Development</li>
-    <li>Accessibility</li>
-    <li>UX</li>
+<li>HTML</li>
+<li>CSS, SCSS</li>
+<li>JavaScript, Typescript, Node.js</li>
+<li>React, Vue, Eleventy, Astro</li>
+<li>JSX, Nunjucks, Liquid, Handlebars</li>
+<li>nginx</li>
+<li>SQLite, MySQL, PosteSQL</li>
+<li>Design Systems, Design Tokens</li>
+<li>Mentorship, Learning & Development</li>
+<li>Accessibility</li>
+<li>UX</li>
 </ul>
 
 --------

@@ -3,6 +3,7 @@ title: Bowhead
 photo:
   url: bowhead.png
   alt: A pixel art graphic of a bowhead whale, which is coming towards the viewer, its tail fading into the dark water around it
+icon: swatchbook
 emoji: 🐋
 git: chrisburnell/bowhead
 branch: master

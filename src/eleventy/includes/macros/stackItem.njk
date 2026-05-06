@@ -102,7 +102,7 @@
 					{%- endif %}
 				{%- endif %}
 				{% if show_rss_only -%}
-					<a href="https://daverupert.com/rss-club/" title="This {{ item.data.categoryProper | default(item.data.category) }} is part of RSS Club" rel="external" target="_blank" class=" [ pill ] "><c-emoji><i class="fas fa-rss"></i></c-emoji>RSS Club</a>
+					<a href="https://daverupert.com/rss-club/" title="This {{ item.data.categoryProper | default(item.data.category) }} is part of RSS Club" rel="external" target="_blank" class=" [ pill ] "><c-emoji style="color:var(--fill,#ff8c01);"><i class="fas fa-rss"></i></c-emoji>RSS Club</a>
 				{%- endif %}
 				{% if show_popularity -%}
 					<a href="/popular/#index-{{ item.data.rank.popular }}" class=" [ pill ] " title="#{{ item.data.rank.popular }} Most Popular Page"><c-emoji><i class="fas fa-chart-line"></i></c-emoji><span class=" [ ordinal ] "{% if item.data.rank.popular <= 3 %} style="color: color-mix(in oklab, currentColor, {% if item.data.rank.popular == 1 %}gold{% elif item.data.rank.popular == 2 %}silver{% else %}darkorange{% endif %}); font-weight: var(--font-weight-semibold);"{% endif %}>#{{ item.data.rank.popular }}</span></a>
