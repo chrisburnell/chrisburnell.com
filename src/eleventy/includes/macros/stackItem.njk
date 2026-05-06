@@ -20,7 +20,7 @@
 		<h1 style="view-transition-name: title-{{ item.data.page.fileSlug }};">
 			{% if title -%}
 				<a href="{% if item.data.clickthrough %}{{ item.data.of_url | default(item.url) | safe }}{% else %}{{ item.url | safe }}{% endif %}" class=" [ p-name ] "{% if item.data.clickthrough %} rel="external noopener"{% endif %}>
-					{% if item.data.icon %}<c-emoji><i class="fas fa-{{ item.data.icon }}"></i></c-emoji>{% elif item.data.in_reply_to or item.data.rsvp %}<c-emoji><i class="fas fa-reply"></i></c-emoji>{% endif %}{{ title | striptags(true) | safe }}
+					{% if item.data.icon %}<c-emoji><i class="fas fa-{{ item.data.icon }}"></i></c-emoji>{% elif item.data.in_reply_to or item.data.rsvp %}<c-emoji><i class="fas fa-reply"></i></c-emoji>{% elif item.data.emoji %}<c-emoji>{{ item.data.emoji }}</c-emoji>{% endif %}{{ title | striptags(true) | safe }}
 				</a>
 			{%- elif item.data.reply_url -%}
 				{% if item.data.rsvp %}
