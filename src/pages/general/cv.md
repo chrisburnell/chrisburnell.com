@@ -18,7 +18,7 @@ eleventyComputed:
 {%- endif %}
 
 <ul class=" [ cluster ] ">
-    <li class="no-print"><a href="https://chrisburnell.com/cv.pdf"><c-emoji><i class="fas fa-download"></i></c-emoji>Download PDF</a></li><li><!--email_off--><a href="mailto:{{ author.email }}"><c-emoji><i class="fas fa-address-card"></i></c-emoji>Email</a><!--/email_off--></li><li><a href="https://github.com/{{ author.github }}"><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false"><use href="#svg--github"></use></svg></c-emoji>GitHub</a></li><li><a href="https://www.linkedin.com/in/{{ author.linkedin }}"><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false"><use href="#svg--linkedin"></use></svg></c-emoji>LinkedIn</a></li><li><a href="https://npmjs.com/~{{ author.npm }}"><c-emoji><svg width="24" height="24" aria-hidden="true" focusable="false"><use href="#svg--npm"></use></svg></c-emoji>npm</a></li>
+    <li class="no-print"><a href="https://chrisburnell.com/cv.pdf"><c-emoji><i class="fas fa-download"></i></c-emoji>Download PDF</a></li><li><!--email_off--><a href="mailto:{{ author.email }}"><c-emoji><i class="fas fa-address-card"></i></c-emoji>Email</a><!--/email_off--></li><li><a href="https://github.com/{{ author.github }}"><c-emoji><i class="fas fa-github"></i></c-emoji>GitHub</a></li><li><a href="https://www.linkedin.com/in/{{ author.linkedin }}"><c-emoji><i class="fas fa-linkedin"></i></c-emoji>LinkedIn</a></li><li><a href="https://npmjs.com/~{{ author.npm }}"><c-emoji><i class="fas fa-npm"></i></c-emoji>npm</a></li>
 </ul>
 
 {% set technical_articles_count = 0 -%}
