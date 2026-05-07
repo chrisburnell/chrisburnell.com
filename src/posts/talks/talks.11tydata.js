@@ -4,5 +4,5 @@ export default {
 	categoryPlural: "talks",
 	categoryCode: "t",
 	tags: ["categoryTalk", "blog", "feature"],
-	icon: "microphone-lines",
+	icon: "person-chalkboard",
 };
