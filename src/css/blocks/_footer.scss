@@ -61,7 +61,7 @@
 			[right-end];
 		grid-auto-rows: auto;
 		column-gap: var(--size-gap);
-		row-gap: var(--size-gutter);
+		row-gap: var(--size-gap);
 	}
 
 	& .footer__navigation {
@@ -79,7 +79,7 @@
 
 	& .author {
 		grid-column: right;
-		grid-row: 1/4;
+		grid-row: 1 / 3;
 	}
 
 	& .webrings {
