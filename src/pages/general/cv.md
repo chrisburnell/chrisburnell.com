@@ -18,7 +18,7 @@ eleventyComputed:
 {%- endif %}
 
 <ul class=" [ cluster ] ">
-<li class="no-print"><a href="https://chrisburnell.com/cv.pdf"><c-emoji><i class="fas fa-download"></i></c-emoji>Download PDF</a></li><li><!--email_off--><a href="mailto:{{ author.email }}"><c-emoji><i class="fas fa-at"></i></c-emoji>Email</a><!--/email_off--></li><li><a href="https://github.com/{{ author.github }}"><c-emoji><i class="fab fa-github"></i></c-emoji>GitHub</a></li><li><a href="https://www.linkedin.com/in/{{ author.linkedin }}"><c-emoji><i class="fab fa-linkedin"></i></c-emoji>LinkedIn</a></li><li><a href="https://npmjs.com/~{{ author.npm }}"><c-emoji><i class="fab fa-npm"></i></c-emoji>npm</a></li>
+<li class="no-print"><a href="https://chrisburnell.com/cv.pdf"><c-icon><i class="fas fa-download"></i></c-icon>Download PDF</a></li><li><!--email_off--><a href="mailto:{{ author.email }}"><c-icon><i class="fas fa-at"></i></c-icon>Email</a><!--/email_off--></li><li><a href="https://github.com/{{ author.github }}"><c-icon><i class="fab fa-github"></i></c-icon>GitHub</a></li><li><a href="https://www.linkedin.com/in/{{ author.linkedin }}"><c-icon><i class="fab fa-linkedin"></i></c-icon>LinkedIn</a></li><li><a href="https://npmjs.com/~{{ author.npm }}"><c-icon><i class="fab fa-npm"></i></c-icon>npm</a></li>
 </ul>
 
 {% set technical_articles_count = 0 -%}
@@ -43,7 +43,7 @@ Passionate about the open web, having published over {{ technical_articles_count
 <div class=" [ role ] ">
 <h3>Software Engineer</h3>
 <small><strong>Jan. 2023 – Dec. 2023</strong></small>
-<p class="delta"><a href="https://squiz.net"><c-emoji>{% image './images/content/squiz-logo.svg', 'Squiz’s logo', 'brand-logo' %}</c-emoji>Squiz</a></p>
+<p class="delta"><a href="https://squiz.net"><c-icon>{% image './images/content/squiz-logo.svg', 'Squiz’s logo', 'brand-logo' %}</c-icon>Squiz</a></p>
 <small><strong>London, UK</strong></small>
 </div>
 
@@ -54,7 +54,7 @@ Passionate about the open web, having published over {{ technical_articles_count
 <div class=" [ role ] " style="margin-block-start: var(--size-large);">
 <h3>Lead Developer & Chapter Lead</h3>
 <small><strong>May 2022 – Jan. 2023</strong></small>
-<p class="delta"><a href="https://squiz.net"><c-emoji>{% image './images/content/squiz-logo.svg', 'Squiz’s logo', 'brand-logo' %}</c-emoji>Squiz</a></p>
+<p class="delta"><a href="https://squiz.net"><c-icon>{% image './images/content/squiz-logo.svg', 'Squiz’s logo', 'brand-logo' %}</c-icon>Squiz</a></p>
 <small><strong>London, UK</strong></small>
 </div>
 
@@ -69,7 +69,7 @@ Passionate about the open web, having published over {{ technical_articles_count
 <div class=" [ role ] " style="margin-block-start: var(--size-large);">
 <h3>Lead Developer</h3>
 <small><strong>Feb. 2021 – May 2022</strong></small>
-<p class="delta"><a href="https://squiz.net"><c-emoji>{% image './images/content/squiz-logo.svg', 'Squiz’s logo', 'brand-logo' %}</c-emoji>Squiz</a></p>
+<p class="delta"><a href="https://squiz.net"><c-icon>{% image './images/content/squiz-logo.svg', 'Squiz’s logo', 'brand-logo' %}</c-icon>Squiz</a></p>
 <small><strong>London, UK</strong></small>
 </div>
 
@@ -82,7 +82,7 @@ Passionate about the open web, having published over {{ technical_articles_count
 <div class=" [ role ] " style="margin-block-start: var(--size-large);">
 <h3>Front End Developer</h3>
 <small><strong>Feb. 2018 – July 2020</strong></small>
-<p class="delta"><a href="https://squiz.net"><c-emoji>{% image './images/content/squiz-logo.svg', 'Squiz’s logo', 'brand-logo' %}</c-emoji>Squiz</a></p>
+<p class="delta"><a href="https://squiz.net"><c-icon>{% image './images/content/squiz-logo.svg', 'Squiz’s logo', 'brand-logo' %}</c-icon>Squiz</a></p>
 <small><strong>London, UK</strong></small>
 </div>
 
@@ -95,7 +95,7 @@ Passionate about the open web, having published over {{ technical_articles_count
 <div class=" [ role ] " style="margin-block-start: var(--size-large);">
 <h3>Web Developer</h3>
 <small><strong>June 2014 – Feb. 2018</strong></small>
-<p class="delta"><a href="https://city.ac.uk"><c-emoji>{% image './images/content/city-logo.svg', 'City, University of London’s logo', 'brand-logo' %}</c-emoji>City, University of London</a></p>
+<p class="delta"><a href="https://city.ac.uk"><c-icon>{% image './images/content/city-logo.svg', 'City, University of London’s logo', 'brand-logo' %}</c-icon>City, University of London</a></p>
 <small><strong>London, UK</strong></small>
 </div>
 
@@ -108,7 +108,7 @@ Passionate about the open web, having published over {{ technical_articles_count
 <div class=" [ role ] " style="margin-block-start: var(--size-large);">
 <h3>Front End Web & UI Developer</h3>
 <small><strong>Apr. 2012 – Jan. 2014</strong></small>
-<p class="delta"><a href="https://squiz.net"><c-emoji>{% image './images/content/squiz-logo.svg', 'Squiz’s logo', 'brand-logo' %}</c-emoji>Squiz</a></p>
+<p class="delta"><a href="https://squiz.net"><c-icon>{% image './images/content/squiz-logo.svg', 'Squiz’s logo', 'brand-logo' %}</c-icon>Squiz</a></p>
 <small><strong>London, UK</strong></small>
 </div>
 
@@ -123,7 +123,7 @@ Passionate about the open web, having published over {{ technical_articles_count
 <div class=" [ role ] ">
 <h3>Conference Organiser</h3>
 <small><strong>May 2018 – present</strong></small>
-<p class="delta"><a href="https://stateofthebrowser.com" rel="external noopener"><c-emoji>{% image './images/content/sotb-logo.png', 'State of the Browser’s logo', 'brand-logo', ['auto'] %}</c-emoji>State of the Browser</a></p>
+<p class="delta"><a href="https://stateofthebrowser.com" rel="external noopener"><c-icon>{% image './images/content/sotb-logo.png', 'State of the Browser’s logo', 'brand-logo', ['auto'] %}</c-icon>State of the Browser</a></p>
 <small><strong>London, UK</strong></small>
 </div>
 
@@ -140,7 +140,7 @@ Passionate about the open web, having published over {{ technical_articles_count
 <div class=" [ role ] " style="margin-block-start: var(--size-large);">
 <h3>Technical Writer</h3>
 <small><strong>2013 – present</strong></small>
-<p class="delta"><a href="https://chrisburnell.com/"><c-emoji><img src="{{ site.logo }}" class="brand-logo" width="24" height="24" alt="{{ site.title }}" loading="lazy" decoding="async"></c-emoji>chrisburnell.com</a></p>
+<p class="delta"><a href="https://chrisburnell.com/"><c-icon><img src="{{ site.logo }}" class="brand-logo" width="24" height="24" alt="{{ site.title }}" loading="lazy" decoding="async"></c-icon>chrisburnell.com</a></p>
 </div>
 
 Launched a web development blog and have since created [{{ collections.projects.length + projects.web.length }} web projects](https://chrisburnell.com/projects/) and published over [{{ technical_articles_count | toNearest(5, true) }} highly technical articles](https://chrisburnell.com/blog/) about accessibility, design systems, performance, CSS, JavaScript, Node.js, web standards, and musings on the web. Maintaining my own VPS infrastructure has given me experience in Linux system administration, database management (MySQL/PostgreSQL), authentication systems (OAuth/OIDC), and DevOps practices that have complemented my front-end expertise.

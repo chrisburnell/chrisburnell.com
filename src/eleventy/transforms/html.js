@@ -71,7 +71,7 @@ export default async function (value, outputPath) {
 				const headingHTML = striptags(
 					$(element)
 						.html()
-						.replace(/<c-emoji>.*?<\/c-emoji>/g, "")
+						.replace(/<c-icon>.*?<\/c-icon>/g, "")
 						.replace(/\s+<small>.*<\/small>$/g, "")
 						.replace("&amp;", "and"),
 				);

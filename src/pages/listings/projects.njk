@@ -8,7 +8,7 @@ redirect_from:
   - /work
 ---
 {%- from 'macros/deckItem.njk' import deckItem -%}
-<h2 id="web"><c-emoji><i class="fas fa-server"></i></c-emoji>Web Projects <small>({{ collections.projects.length + projects.web.length }})</small></h2>
+<h2 id="web"><c-icon><i class="fas fa-server"></i></c-icon>Web Projects <small>({{ collections.projects.length + projects.web.length }})</small></h2>
 
 <div class=" [ deck ] ">
 	{% for item in collections.projects %}
@@ -21,7 +21,7 @@ redirect_from:
 
 <hr>
 
-<h2 id="self-hosted"><c-emoji><i class="fas fa-database"></i></c-emoji>Self-Hosted <small>({{ projects.selfHosted.length }})</small></h2>
+<h2 id="self-hosted"><c-icon><i class="fas fa-database"></i></c-icon>Self-Hosted <small>({{ projects.selfHosted.length }})</small></h2>
 
 <div class=" [ deck ] ">
 	{% for item in projects.selfHosted %}
@@ -31,7 +31,7 @@ redirect_from:
 
 <hr>
 
-<h2 id="personal"><c-emoji><i class="fas fa-crow"></i></c-emoji>Personal Projects <small>({{ projects.personal.length }})</small></h2>
+<h2 id="personal"><c-icon><i class="fas fa-crow"></i></c-icon>Personal Projects <small>({{ projects.personal.length }})</small></h2>
 
 <div class=" [ deck ] ">
 	{% for item in projects.personal %}
@@ -41,7 +41,7 @@ redirect_from:
 
 <hr>
 
-<h2 id="past-versions"><c-emoji><i class="fas fa-scroll"></i></c-emoji>{{ site.url | getHost }} in the past <small>({{ projects.previousVersions.length }})</small></h2>
+<h2 id="past-versions"><c-icon><i class="fas fa-scroll"></i></c-icon>{{ site.url | getHost }} in the past <small>({{ projects.previousVersions.length }})</small></h2>
 
 <div class=" [ deck ] ">
 	{% for item in projects.previousVersions %}

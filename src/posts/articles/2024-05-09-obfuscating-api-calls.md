@@ -23,7 +23,7 @@ Unfortunately, this isn’t possible in front end JavaScript, so anyone could lo
 fetch("https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracksuser&api_key=njJql0lKXnotreal4x3Wmd&username=chrisburnell&format=json")
 ```
 
-If my API key was `njJql0lKXnotreal4x3Wmd` (which it isn’t <c-emoji>😜</c-emoji>), malicious people could abuse the LastFM API by using my key, and *I* would be penalised (probably by having my key revoked).
+If my API key was `njJql0lKXnotreal4x3Wmd` (which it isn’t <c-icon>😜</c-icon>), malicious people could abuse the LastFM API by using my key, and *I* would be penalised (probably by having my key revoked).
 
 To circumvent this issue, I built a short snippet of PHP code that lives on my server to make the same API calls on my behalf:
 

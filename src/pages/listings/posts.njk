@@ -61,27 +61,27 @@ redirect_from:
 
 		<ul class=" [ grid ] [ shelf  shelf--wide ] ">
 			<li>
-				<a href="/writing/" class=" [ gamma ] "><c-emoji><i class="fas fa-feather-pointed"></i></c-emoji>Writing <sup>{{ collections.writings | noRSSOnlyFilter | getCollectionCount }}</sup></a>
+				<a href="/writing/" class=" [ gamma ] "><c-icon><i class="fas fa-feather-pointed"></i></c-icon>Writing <sup>{{ collections.writings | noRSSOnlyFilter | getCollectionCount }}</sup></a>
 				<p>A more serious collection of ideas and bits of prose.</p>
 			</li>
 			<li>
-				<a href="/blog/" class=" [ gamma ] "><c-emoji><i class="fas fa-file"></i></c-emoji>Blog <sup>{{ collections.blogPosts | noRSSOnlyFilter | getCollectionCount }}</sup></a>
+				<a href="/blog/" class=" [ gamma ] "><c-icon><i class="fas fa-file"></i></c-icon>Blog <sup>{{ collections.blogPosts | noRSSOnlyFilter | getCollectionCount }}</sup></a>
 				<p>A broader collection of blog posts.</p>
 			</li>
 			<li>
-				<a href="/replies/" class=" [ gamma ] "><c-emoji><i class="fas fa-reply"></i></c-emoji>Replies <sup>{{ collections.replies | noRSSOnlyFilter | getCollectionCount }}</sup></a>
+				<a href="/replies/" class=" [ gamma ] "><c-icon><i class="fas fa-reply"></i></c-icon>Replies <sup>{{ collections.replies | noRSSOnlyFilter | getCollectionCount }}</sup></a>
 				<p>Replies I’ve made to other people.</p>
 			</li>
 			<li>
-				<a href="/rsvps/" class=" [ gamma ] "><c-emoji><i class="fas fa-envelope"></i></c-emoji>RSVPs <sup>{{ collections.rsvps | noRSSOnlyFilter | getCollectionCount }}</sup></a>
+				<a href="/rsvps/" class=" [ gamma ] "><c-icon><i class="fas fa-envelope"></i></c-icon>RSVPs <sup>{{ collections.rsvps | noRSSOnlyFilter | getCollectionCount }}</sup></a>
 				<p>A record of RSVPs to conferences and meet-ups.</p>
 			</li>
 			<li>
-				<a href="/hot/" class=" [ gamma ] "><c-emoji style="--color-icon-active: var(--color-html);"><i class="fas fa-fire"></i></c-emoji>Hot Pages <sup>{{ site.limits.feed }}</sup></a>
+				<a href="/hot/" class=" [ gamma ] "><c-icon style="--color-icon-active: var(--color-html);"><i class="fas fa-fire"></i></c-icon>Hot Pages <sup>{{ site.limits.feed }}</sup></a>
 				<p>Top pages ordered by pageviews and responses over time.</p>
 			</li>
 			<li>
-				<a href="/popular/" class=" [ gamma ] "><c-emoji style="--color-icon-active: var(--color-css);"><i class="fas fa-chart-line"></i></c-emoji>Popular Pages <sup>{{ site.limits.feed }}</sup></a>
+				<a href="/popular/" class=" [ gamma ] "><c-icon style="--color-icon-active: var(--color-css);"><i class="fas fa-chart-line"></i></c-icon>Popular Pages <sup>{{ site.limits.feed }}</sup></a>
 				<p>Top pages ordered by pageviews and responses.</p>
 			</li>
 		</ul>
@@ -94,7 +94,7 @@ redirect_from:
 			{%- for item in collections.categories -%}
 				{%- set count = collections[item.collectionName] | arePublished | noRSSOnlyFilter | getCollectionCount -%}
 				<li>
-					<a href="/{{ item.plural }}/" class=" [ gamma ] "><c-emoji><i class="fas fa-{{ item.icon | default('file') | safe }}"></i></c-emoji>{{ item.properPlural | title }} <sup>{{ count }}</sup></a>
+					<a href="/{{ item.plural }}/" class=" [ gamma ] "><c-icon><i class="fas fa-{{ item.icon | default('file') | safe }}"></i></c-icon>{{ item.properPlural | title }} <sup>{{ count }}</sup></a>
 					<p>
 				</li>
 			{%- endfor -%}
@@ -127,7 +127,7 @@ redirect_from:
 
 		<div class=" [ grid ] [ navigator ] ">
 			<a href="/feeds/" class=" [ button ] ">
-				<c-emoji style="--color-icon: var(--color-rss);"><i class="fas fa-rss"></i></c-emoji>Browse Feeds
+				<c-icon style="--color-icon: var(--color-rss);"><i class="fas fa-rss"></i></c-icon>Browse Feeds
 			</a>
 		</div>
 	</div>

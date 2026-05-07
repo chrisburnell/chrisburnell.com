@@ -4,7 +4,7 @@
 	{% for lookup in collections.projects %}
 	{% if page.url != lookup.url and count < site.limits.related %}
 	<li>
-		<a href="{{ lookup.url }}" class=" [ riza ] ">{% if lookup.data.icon %}<c-emoji><i class="fas fa-{{ lookup.data.icon }}"></i></c-emoji>{% elif lookup.data.emoji %}<c-emoji>{{ lookup.data.emoji }}</c-emoji>{% endif %}{{ lookup.data.title | striptags(true) | safe }}</a>
+		<a href="{{ lookup.url }}" class=" [ riza ] ">{% if lookup.data.icon %}<c-icon><i class="fas fa-{{ lookup.data.icon }}"></i></c-icon>{% elif lookup.data.emoji %}<c-icon>{{ lookup.data.emoji }}</c-icon>{% endif %}{{ lookup.data.title | striptags(true) | safe }}</a>
 		{{ lookup.data.description | markdownFormat | safe }}
 	</li>
 	{%- set count = count + 1 -%}

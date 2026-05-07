@@ -73,14 +73,14 @@ layout: root
 			{%- endfor %}
 		</ul>
 		<ul class=" [ cluster ] [ footer__navigation ] ">
-			<li class=" [ requires-js ] "><button class=" [ anchor ] " popovertarget="popover-settings"><c-emoji><svg width="16" height="16" aria-hidden="true" focusable="false" style="fill: var(--color-raven);"><use href="#svg--settings"></use></svg></c-emoji>Open Settings</button></li><li><a href="https://github.com/{{ author.github }}/{{ site.repository }}/tree/{{ site.branch }}/{{ page.inputPath }}" id="edit" rel="edit"><c-emoji><i class="fas fa-feather-pointed"></i></c-emoji>Edit this page</a></li><li><a href="https://share.joinmastodon.org/#text={{ tagline | default(title) | default(of.title) | striptags(true) | safe }}%0A{{ canonical }}" target="_blank" rel="external noopener"><c-emoji><i class="fab fa-mastodon"></i></c-emoji>Share on Mastodon</a></li><li class=" [ requires-js ] ">{% include 'share.njk' %}</li>
+			<li class=" [ requires-js ] "><button class=" [ anchor ] " popovertarget="popover-settings"><c-icon><svg width="16" height="16" aria-hidden="true" focusable="false" style="fill: var(--color-raven);"><use href="#svg--settings"></use></svg></c-icon>Open Settings</button></li><li><a href="https://github.com/{{ author.github }}/{{ site.repository }}/tree/{{ site.branch }}/{{ page.inputPath }}" id="edit" rel="edit"><c-icon><i class="fas fa-feather-pointed"></i></c-icon>Edit this page</a></li><li><a href="https://share.joinmastodon.org/#text={{ tagline | default(title) | default(of.title) | striptags(true) | safe }}%0A{{ canonical }}" target="_blank" rel="external noopener"><c-icon><i class="fab fa-mastodon"></i></c-icon>Share on Mastodon</a></li><li class=" [ requires-js ] ">{% include 'share.njk' %}</li>
 		</ul>
 		<ul class=" [ cluster ] [ footer__navigation ] ">
 			<li><a href="/license/" id="copyright" rel="license"><strong>©</strong> {{ site.established }}–{{ global.currentYear }} <span class=" [ canada ] ">{{ author.name }}</span></a></li>
-			<li><a href="/feed.xml" rel="me"><c-emoji style="--color-icon: var(--color-rss);"><i class="fas fa-rss"></i></c-emoji>RSS</a></li>
-			<li><a href="/about/#contact"><c-emoji><i class="fas fa-at"></i></c-emoji>Contact <span class=" [ canada ] ">me</span></a></li>
-			<li><a href="/links/"><c-emoji><i class="fas fa-link"></i></c-emoji>Find <span class=" [ canada ] ">me</span> elsewhere</a></li>
-			<li><a href="https://status.chrisburnell.com"><c-emoji><i class="fas fa-chart-column"></i></c-emoji>Server status</a></li>
+			<li><a href="/feed.xml" rel="me"><c-icon style="--color-icon: var(--color-rss);"><i class="fas fa-rss"></i></c-icon>RSS</a></li>
+			<li><a href="/about/#contact"><c-icon><i class="fas fa-at"></i></c-icon>Contact <span class=" [ canada ] ">me</span></a></li>
+			<li><a href="/links/"><c-icon><i class="fas fa-link"></i></c-icon>Find <span class=" [ canada ] ">me</span> elsewhere</a></li>
+			<li><a href="https://status.chrisburnell.com"><c-icon><i class="fas fa-chart-column"></i></c-icon>Server status</a></li>
 		</ul>
 		{% include 'badges.njk' %}
 		{% include 'webrings.njk' %}

@@ -24,7 +24,7 @@
 			{% if item_url %}
 				<a href="{{ item_url | striptags(true) | safe }}">
 			{% endif %}
-				{% if 'audiobook' in item.data.tags %}<c-emoji title="Audiobook"><i class="fas fa-headphones"></i></c-emoji>{% endif %}{{ item.data.title | default(item.data.of_title) | default(item.data.of_title_fallback) | striptags(true) | safe }}
+				{% if 'audiobook' in item.data.tags %}<c-icon title="Audiobook"><i class="fas fa-headphones"></i></c-icon>{% endif %}{{ item.data.title | default(item.data.of_title) | default(item.data.of_title_fallback) | striptags(true) | safe }}
 			{% if item_url %}
 				</a>
 			{% endif %}

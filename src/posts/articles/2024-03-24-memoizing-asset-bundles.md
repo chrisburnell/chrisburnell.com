@@ -27,7 +27,7 @@ Well, I felt like breaking things. If it meant the end result would be more main
 
 It wasn’t much of a chore at all to convert things over to the ESM syntax, so a majority of the work ahead of me had more to do with brushing aside cobwebs and picking apart code that had been left untouched for a long time.
 
-Reviewing all the code that makes up my Eleventy build *was* a slow and sometimes tedious process but also a cathartic one, and I’m glad I took the time to do it. I’m even more proud of my website as a result. <c-emoji>☺️</c-emoji>
+Reviewing all the code that makes up my Eleventy build *was* a slow and sometimes tedious process but also a cathartic one, and I’m glad I took the time to do it. I’m even more proud of my website as a result. <c-icon>☺️</c-icon>
 
 But after a *tonne* of refactoring, I found my build times getting bigger and bigger.
 
@@ -94,7 +94,7 @@ const myFunction = (value) => {
 
 I had already been memoizing bits and pieces in my Eleventy build like custom [Collections](https://www.11ty.dev/docs/collections/). For example, my [Replies](/replies/) collection was an area where memoization definitely saved some computing power. The collection is populated by pages containing an `in_reply_to` key, rather than having a specific tag (for which Eleventy would automatically build a collection) or being in a specific location in the file system, so by generating the contents of this collection once and serving future `collections.replies` calls from the cache, I was seeing some not-insignificant performance gains.
 
-<p style="font-size: var(--font-size-gamma-min); font-weight: var(--font-weight-bold);"><c-emoji style="font-size: var(--font-size-beta-max);">⚡</c-emoji> Hold on…</p>
+<p style="font-size: var(--font-size-gamma-min); font-weight: var(--font-weight-bold);"><c-icon style="font-size: var(--font-size-beta-max);">⚡</c-icon> Hold on…</p>
 
 Something finally clicked in my brain and I realised this would be a perfect opportunity to introduce memoization to asset bundling! Because *most* pages on my website reference the exact same set of CSS and/or JavaScript, the first page to be built with a given set of CSS/JS would be computed, the result saved to a cache, and all other pages referencing the same set of CSS/JS could skip the costly ~50ms of computation.
 

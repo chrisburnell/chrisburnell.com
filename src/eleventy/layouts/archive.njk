@@ -30,14 +30,14 @@ layout: base
 			<p class=" [ p-summary ] ">
 				{{ description | replace('.', '') | safe }}{% if first_year != latest_year %}, dating from <span class=" [ no-wrap ] "><a href="#{{ first_year }}">{{ first_year }}</a>–<a href="#{{ latest_year }}">{{ latest_year }}</a></a>{% endif %}.
 				{% if 'archive' in tags -%}
-					<a href="{{ site.url }}/{{ feed_name | default(related_collection) }}.xml" title="{{ title | safe }} Feed" class=" [ icon-anchor ] "><c-emoji style="--color-icon: var(--color-rss);"><i class="fas fa-rss"></i></c-emoji></a>
+					<a href="{{ site.url }}/{{ feed_name | default(related_collection) }}.xml" title="{{ title | safe }} Feed" class=" [ icon-anchor ] "><c-icon style="--color-icon: var(--color-rss);"><i class="fas fa-rss"></i></c-icon></a>
 				{%- endif %}
 			</p>
 		{% else %}
 			<p class=" [ p-summary ] ">
 				{{ description.split('<br>') | first | safe }}
 				{% if 'archive' in tags -%}
-					<a href="{{ site.url }}/{{ feed_name | default(related_collection) }}.xml" title="{{ title | safe }} Feed" class=" [ icon-anchor ] "><c-emoji style="--color-icon: var(--color-rss);"><i class="fas fa-rss"></i></c-emoji></a>
+					<a href="{{ site.url }}/{{ feed_name | default(related_collection) }}.xml" title="{{ title | safe }} Feed" class=" [ icon-anchor ] "><c-icon style="--color-icon: var(--color-rss);"><i class="fas fa-rss"></i></c-icon></a>
 				{%- endif %}
 				{% if description.includes('<br>') -%}
 					<br>
@@ -91,7 +91,7 @@ layout: base
 		{% if not no_feed %}
 			<div class=" [ grid ] [ navigator ] ">
 				<a href="/{{ feed_name | default(related_collection) }}.xml" class=" [ button ] ">
-					<c-emoji style="--color-icon: var(--color-rss);"><i class="fas fa-rss"></i></c-emoji>{{ title | safe }} Feed
+					<c-icon style="--color-icon: var(--color-rss);"><i class="fas fa-rss"></i></c-icon>{{ title | safe }} Feed
 				</a>
 			</div>
 		{% endif %}

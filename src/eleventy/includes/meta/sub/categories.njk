@@ -7,7 +7,7 @@
 			{%- else -%}
 				<strong>
 			{%- endif %}
-				<c-emoji><i class="fas fa-{{ lookup.icon | default('file') }}"></i></c-emoji>{{ lookup.properPlural | title }}
+				<c-icon><i class="fas fa-{{ lookup.icon | default('file') }}"></i></c-icon>{{ lookup.properPlural | title }}
 			{% if page.url != '/' + lookup.plural + '/' -%}
 				</a>
 			{%- else -%}

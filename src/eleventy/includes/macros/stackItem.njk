@@ -20,14 +20,14 @@
 		<h1 style="view-transition-name: title-{{ item.data.page.fileSlug }};">
 			{% if title -%}
 				<a href="{% if item.data.clickthrough %}{{ item.data.of_url | default(item.url) | safe }}{% else %}{{ item.url | safe }}{% endif %}" class=" [ p-name ] "{% if item.data.clickthrough %} rel="external noopener"{% endif %}>
-					{% if item.data.icon %}<c-emoji><i class="fas fa-{{ item.data.icon }}"></i></c-emoji>{% elif item.data.rsvp %}<c-emoji><i class="fas fa-{{ 'ticket' if item.data.rsvp.value == 'yes' and 'conference' in item.data.tags else ('calendar-check' if item.data.rsvp.value == 'yes' else 'calendar') }}"></i></c-emoji>{% elif item.data.in_reply_to %}<c-emoji><i class="fas fa-reply"></i></c-emoji>{% elif item.data.emoji %}<c-emoji>{{ item.data.emoji }}</c-emoji>{% endif %}{{ title | striptags(true) | safe }}
+					{% if item.data.icon %}<c-icon><i class="fas fa-{{ item.data.icon }}"></i></c-icon>{% elif item.data.rsvp %}<c-icon><i class="fas fa-{{ 'ticket' if item.data.rsvp.value == 'yes' and 'conference' in item.data.tags else ('calendar-check' if item.data.rsvp.value == 'yes' else 'calendar') }}"></i></c-icon>{% elif item.data.in_reply_to %}<c-icon><i class="fas fa-reply"></i></c-icon>{% elif item.data.emoji %}<c-icon>{{ item.data.emoji }}</c-icon>{% endif %}{{ title | striptags(true) | safe }}
 				</a>
 			{%- elif item.data.reply_url -%}
 				{% if item.data.rsvp %}
-					<c-emoji style="vertical-align: baseline;"><i class="fas fa-{{ 'ticket' if item.data.rsvp.value == 'yes' and 'conference' in item.data.tags else ('calendar-check' if item.data.rsvp.value == 'yes' else 'calendar') }}"></i></c-emoji>{{ item.data.rsvp_string | safe }}
+					<c-icon style="vertical-align: baseline;"><i class="fas fa-{{ 'ticket' if item.data.rsvp.value == 'yes' and 'conference' in item.data.tags else ('calendar-check' if item.data.rsvp.value == 'yes' else 'calendar') }}"></i></c-icon>{{ item.data.rsvp_string | safe }}
 					<data class=" [ p-rsvp ] " value="{{ item.data.rsvp.value }}" hidden></data>
 				{% else %}
-					<a href="{{ item_url }}"><c-emoji><i class="fas fa-reply"></i></c-emoji>Reply</a> <small>to</small>
+					<a href="{{ item_url }}"><c-icon><i class="fas fa-reply"></i></c-icon>Reply</a> <small>to</small>
 				{% endif %}
 				<a href="{{ item.data.reply_url }}" class=" [ h-cite  u-in-reply-to ] "{% if not item.data.rsvp %} tabindex="-1"{% endif %}>{{ item.data.reply_title | safe }}</a>
 				{% if item.data.reply_author_string and (item.data.reply_author_string | striptags) != item.data.reply_title %}
@@ -64,7 +64,7 @@
 		{% if show_pinned or show_category or show_responses or show_rss_only or show_popularity or show_hotness or show_pageviews -%}
 			<div class=" [ pills ] " data-pagefind-ignore>
 				{% if show_pinned -%}
-					<span class=" [ pill ] "><c-emoji><i class="fas fa-thumbtack"></i></c-emoji>Pinned</span>
+					<span class=" [ pill ] "><c-icon><i class="fas fa-thumbtack"></i></c-icon>Pinned</span>
 				{%- endif %}
 				{% if show_category -%}
 					{% if item.data.rsvp -%}
@@ -94,25 +94,25 @@
 					{% set reactions = item.data.webmentions.bookmarks.concat(item.data.webmentions.likes).concat(item.data.webmentions.reposts).concat(item.data.webmentions.links).concat(item.data.webmentions.socialReplies) -%}
 					{% set replies = item.data.webmentions.directReplies -%}
 					{% if item.data.show_replies != false and replies.length -%}
-						<a href="{{ item.url }}#replies" title="Jump to replies for this {{ item.data.categoryProper | default(item.data.category) }}" class=" [ pill ] "><c-emoji><i class="fas fa-comment"></i></c-emoji><span class=" [ ordinal ] ">{{ replies.length }}</span></a>
+						<a href="{{ item.url }}#replies" title="Jump to replies for this {{ item.data.categoryProper | default(item.data.category) }}" class=" [ pill ] "><c-icon><i class="fas fa-comment"></i></c-icon><span class=" [ ordinal ] ">{{ replies.length }}</span></a>
 					{%- endif %}
 					{% if item.data.show_reactions != false and reactions.length -%}
 						{% set icon = item.data.webmentions.likes and 'heart' or item.data.webmentions.socialReplies and 'reply' or 'link' -%}
-						<a href="{{ item.url }}#reactions" title="Jump to reactions for this {{ item.data.categoryProper | default(item.data.category) }}" class=" [ pill ] "><c-emoji style="--color-icon-active: var(--color-maple);"><i class="fas fa-{{ icon }}"></i></c-emoji><span class=" [ ordinal ] ">{{ reactions.length }}</span></a>
+						<a href="{{ item.url }}#reactions" title="Jump to reactions for this {{ item.data.categoryProper | default(item.data.category) }}" class=" [ pill ] "><c-icon style="--color-icon-active: var(--color-maple);"><i class="fas fa-{{ icon }}"></i></c-icon><span class=" [ ordinal ] ">{{ reactions.length }}</span></a>
 					{%- endif %}
 				{%- endif %}
 				{% if show_rss_only -%}
-					<a href="https://daverupert.com/rss-club/" title="This {{ item.data.categoryProper | default(item.data.category) }} is part of RSS Club" rel="external" target="_blank" class=" [ pill ] "><c-emoji style="--color-icon: var(--color-rss);"><i class="fas fa-rss"></i></c-emoji>RSS Club</a>
+					<a href="https://daverupert.com/rss-club/" title="This {{ item.data.categoryProper | default(item.data.category) }} is part of RSS Club" rel="external" target="_blank" class=" [ pill ] "><c-icon style="--color-icon: var(--color-rss);"><i class="fas fa-rss"></i></c-icon>RSS Club</a>
 				{%- endif %}
 				{% if show_popularity -%}
-					<a href="/popular/#index-{{ item.data.rank.popular }}" class=" [ pill ] " title="#{{ item.data.rank.popular }} Most Popular Page"><c-emoji style="--color-icon-active: var(--color-css);"><i class="fas fa-chart-line"></i></c-emoji><span class=" [ ordinal ] "{% if item.data.rank.popular <= 3 %} style="color: color-mix(in oklab, currentColor, {% if item.data.rank.popular == 1 %}gold{% elif item.data.rank.popular == 2 %}silver{% else %}darkorange{% endif %}); font-weight: var(--font-weight-semibold);"{% endif %}>#{{ item.data.rank.popular }}</span></a>
+					<a href="/popular/#index-{{ item.data.rank.popular }}" class=" [ pill ] " title="#{{ item.data.rank.popular }} Most Popular Page"><c-icon style="--color-icon-active: var(--color-css);"><i class="fas fa-chart-line"></i></c-icon><span class=" [ ordinal ] "{% if item.data.rank.popular <= 3 %} style="color: color-mix(in oklab, currentColor, {% if item.data.rank.popular == 1 %}gold{% elif item.data.rank.popular == 2 %}silver{% else %}darkorange{% endif %}); font-weight: var(--font-weight-semibold);"{% endif %}>#{{ item.data.rank.popular }}</span></a>
 				{%- endif %}
 				{% if show_hotness -%}
-					<a href="/hot/#index-{{ item.data.rank.hot }}" class=" [ pill ] " title="#{{ item.data.rank.hot }} Hottest Page"><c-emoji style="--color-icon-active: var(--color-html);"><i class="fas fa-fire"></i></c-emoji><span class=" [ ordinal ] "{% if item.data.rank.hot <= 3 %} style="color: color-mix(in oklab, currentColor, {% if item.data.rank.hot == 1 %}gold{% elif item.data.rank.hot == 2 %}silver{% else %}darkorange{% endif %}); font-weight: var(--font-weight-semibold);"{% endif %}>#{{ item.data.rank.hot }}</span></a>
+					<a href="/hot/#index-{{ item.data.rank.hot }}" class=" [ pill ] " title="#{{ item.data.rank.hot }} Hottest Page"><c-icon style="--color-icon-active: var(--color-html);"><i class="fas fa-fire"></i></c-icon><span class=" [ ordinal ] "{% if item.data.rank.hot <= 3 %} style="color: color-mix(in oklab, currentColor, {% if item.data.rank.hot == 1 %}gold{% elif item.data.rank.hot == 2 %}silver{% else %}darkorange{% endif %}); font-weight: var(--font-weight-semibold);"{% endif %}>#{{ item.data.rank.hot }}</span></a>
 				{%- endif %}
 				{% if show_pageviews -%}
 					{% set pageviews = item.data.pageviews.total | toNearest(1000, true) -%}
-					<span class=" [ pill ] " title="{{ pageviews }}+ Pageviews"><c-emoji><i class="fas fa-face-grin-stars"></i></c-emoji>{{ (pageviews) + 'k' }}</span>
+					<span class=" [ pill ] " title="{{ pageviews }}+ Pageviews"><c-icon><i class="fas fa-face-grin-stars"></i></c-icon>{{ (pageviews) + 'k' }}</span>
 				{%- endif %}
 			</div>
 		{%- endif %}
