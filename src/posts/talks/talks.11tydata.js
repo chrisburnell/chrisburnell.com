@@ -5,5 +5,4 @@ export default {
 	categoryCode: "t",
 	tags: ["categoryTalk", "blog", "feature"],
 	icon: "microphone-lines",
-	emoji: "🗣",
 };

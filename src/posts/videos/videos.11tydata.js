@@ -8,5 +8,4 @@ export default {
 	categoryFull: true,
 	tags: ["categoryVideo", "blog", "feature"],
 	icon: "film",
-	emoji: "🎥",
 };

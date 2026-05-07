@@ -194,11 +194,7 @@ export const drafts = (collection) => {
 		"post",
 		(items) => {
 			return items
-				.filter(
-					(item) =>
-						item.data.draft === true ||
-						item.data.published === false,
-				)
+				.filter((item) => item.data.draft === true)
 				.sort(dateSort);
 		},
 		"drafts",

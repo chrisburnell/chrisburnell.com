@@ -71,7 +71,7 @@ eleventyComputed:
 					</div>
 					<div class=" [ stack ] ">
 						{% for i in range(1, posts | length) %}
-							{{ stackItem(posts[i], { hfeed: true, show_pageviews: false, show_category: true, show_collections: true, show_tags: false }) }}
+							{{ stackItem(posts[i], { hfeed: true, show_pageviews: false, show_category: true, show_category_icon: false, show_collections: true, show_tags: false }) }}
 						{%- endfor %}
 					</div>
 				</div>
@@ -98,7 +98,7 @@ eleventyComputed:
 					{% set popular_pages_count = 0 -%}
 					{% for item in popular_pages -%}
 						{% if popular_pages_count < site.limits.stack and not item.data.page.url in popular_projects_seen -%}
-							{{ stackItem(item, { show_pageviews: false, show_popularity: false, show_hotness: false, show_category: true, show_collections: true, show_tags: false }) }}
+							{{ stackItem(item, { show_pageviews: false, show_popularity: false, show_hotness: false, show_category: true, show_category_icon: false, show_collections: true, show_tags: false }) }}
 							{% set popular_pages_count = popular_pages_count + 1 -%}
 						{%- endif %}
 					{%- endfor %}

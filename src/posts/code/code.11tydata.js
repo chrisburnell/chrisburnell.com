@@ -6,6 +6,5 @@ export default {
 	categoryCode: "c",
 	tags: ["categoryCode", "blog"],
 	icon: "floppy-disk",
-	emoji: "💾",
 	searchCollectionWeight: 0.8,
 };

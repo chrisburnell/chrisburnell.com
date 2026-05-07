@@ -9,6 +9,5 @@ export default {
 	excludeFromSearch: true,
 	noindex: true,
 	icon: "heart",
-	emoji: "♥️",
 	searchCollectionWeight: 0.333,
 };

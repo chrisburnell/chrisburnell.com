@@ -13,6 +13,7 @@
 	{% set show_hotness = params.show_hotness != false and item.data.rank.hot and item.data.rank.hot <= 10 -%}
 	{% set show_pageviews = params.show_pageviews and item.data.pageviews.total >= 1000 -%}
 	{% set show_category = params.show_category and item.data.category -%}
+	{% set show_category_icon = params.show_category_icon != false -%}
 	{% set show_collections = params.show_collections and ('writing' in item.data.tags) -%}
 	{% set show_tags = params.show_tags -%}
 
@@ -20,7 +21,7 @@
 		<h1 style="view-transition-name: title-{{ item.data.page.fileSlug }};">
 			{% if title -%}
 				<a href="{% if item.data.clickthrough %}{{ item.data.of_url | default(item.url) | safe }}{% else %}{{ item.url | safe }}{% endif %}" class=" [ p-name ] "{% if item.data.clickthrough %} rel="external noopener"{% endif %}>
-					{% if item.data.icon %}<c-icon><i class="fas fa-{{ item.data.icon }}"></i></c-icon>{% elif item.data.rsvp %}<c-icon><i class="fas fa-{{ 'ticket' if item.data.rsvp.value == 'yes' and 'conference' in item.data.tags else ('calendar-check' if item.data.rsvp.value == 'yes' else 'calendar') }}"></i></c-icon>{% elif item.data.in_reply_to %}<c-icon><i class="fas fa-reply"></i></c-icon>{% elif item.data.emoji %}<c-icon>{{ item.data.emoji }}</c-icon>{% endif %}{{ title | striptags(true) | safe }}
+					{% if show_category_icon and item.data.icon %}<c-icon><i class="fas fa-{{ item.data.icon }}"></i></c-icon>{% elif item.data.rsvp %}<c-icon><i class="fas fa-{{ 'ticket' if item.data.rsvp.value == 'yes' and 'conference' in item.data.tags else ('calendar-check' if item.data.rsvp.value == 'yes' else 'calendar') }}"></i></c-icon>{% elif item.data.in_reply_to %}<c-icon><i class="fas fa-reply"></i></c-icon>{% elif item.data.emoji %}<c-icon>{{ item.data.emoji }}</c-icon>{% endif %}{{ title | striptags(true) | safe }}
 				</a>
 			{%- elif item.data.reply_url -%}
 				{% if item.data.rsvp %}
@@ -72,7 +73,7 @@
 					{%- elif 'writing' in item.data.tags -%}
 						<a href="/writing/" class=" [ pill ] "><strong>Writing</strong></a>
 					{%- else %}
-						<a href="/{{ item.data.categoryPlural | default(item.data.category) }}/" class=" [ pill ] "><strong>{{ item.data.categoryProper | default(item.data.category) | supertitle }}</strong></a>
+						<a href="/{{ item.data.categoryPlural | default(item.data.category) }}/" class=" [ pill ] "><strong>{{ item.data.categoryPlural | default(item.data.category) | supertitle }}</strong></a>
 					{%- endif %}
 				{%- endif %}
 				{#
