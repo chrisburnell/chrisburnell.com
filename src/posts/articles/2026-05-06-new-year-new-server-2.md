@@ -1,14 +1,11 @@
 ---
 date: 2026-05-06T18:52:16-0300
 title: "New Year, New Server 2: Electric Boogaloo"
+description: I got to really put my recently-practised and newly-learned systems administration skills to the test again, mere months after my my last update about migrating the server that hosts my websites. Why’s that, you ask? Because the server host that I switched to has been a major disappointment.
 tags:
   - personal
   - sysadmin
 ---
-
-I got to really put my recently-practised and newly-learned systems administration skills to the test again, mere months after my my last update about migrating the server that hosts my websites. Why’s that, you ask? Because the server host that I switched to has been a major disappointment.
-
-<!-- end excerpt -->
 
 To cut a long story short—*although, I never seem to be able to tell short stories*—the server host that I switched to at the end of last year employs deceptive pricing tactics.
 
