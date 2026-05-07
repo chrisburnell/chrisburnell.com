@@ -106,7 +106,7 @@ export default async function (value, outputPath) {
 				$(element).attr("title") || $(element).text().trim();
 			$(element).html(`
 				${$(element).html()}
-				<a href="#${headingID}" class=" [ fragment-anchor ] " title="Permalink for ${headingTitle}" data-pagefind-ignore><small class="visually-hidden">Permalink </small>¶</a>
+				<a href="#${headingID}" class=" [ fragment-anchor ] " title="Permalink for ${headingTitle}" data-pagefind-ignore><small class="visually-hidden">Permalink </small><svg width="24" height="24" aria-hidden="true" focusable="false"><use href="#svg--paragraph"></use></svg></a>
 			`);
 			$(element).removeAttr("title");
 			$(element).attr("id", headingID);
