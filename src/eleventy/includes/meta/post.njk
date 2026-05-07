@@ -177,18 +177,18 @@
 				<a href="{{ posting_method }}">{{ posting_method | getPostingMethodTitle }}</a>
 			</li>
 		{%- endif %}
-		{% if rank.popular and rank.popular <= 10 -%}
-			<li class=" [ popularity ] ">
-				<c-icon style="margin-inline-end: 1ex;"><i class="fas fa-chart-line"></i></c-icon>
-				<small>most popular page</small>
-				<a href="/popular/#index-{{ rank.popular }}" class=" [ ordinal ] ">#{{ rank.popular }}</a>
-			</li>
-		{%- endif %}
 		{% if rank.hot and rank.hot <= 10 -%}
 			<li class=" [ hotness ] ">
 				<c-icon style="margin-inline-end: 1ex;"><i class="fas fa-fire"></i></c-icon>
 				<small>hottest page</small>
 				<a href="/hot/#index-{{ rank.hot }}" class=" [ ordinal ] ">#{{ rank.hot }}</a>
+			</li>
+		{%- endif %}
+		{% if rank.popular and rank.popular <= 10 -%}
+			<li class=" [ popularity ] ">
+				<c-icon style="margin-inline-end: 1ex;"><i class="fas fa-chart-line"></i></c-icon>
+				<small>most popular page</small>
+				<a href="/popular/#index-{{ rank.popular }}" class=" [ ordinal ] ">#{{ rank.popular }}</a>
 			</li>
 		{%- endif %}
 		{# Removed shorturls for now
