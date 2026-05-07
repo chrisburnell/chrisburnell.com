@@ -24,3 +24,5 @@ It was also a fun learning experience, as I decided to use [Docker](https://www.
 Because I spent so much time learning what I was *actually* doing last migration, this one went really smoothly. Things were in places that I expected them to be, I had put effort into organising things, and I was able to reach *real* deep and pull out memories of the migration from four months ago. I’m pretty confident I’ll be able to pull everything that would be missed from my scorned server before it’s decommissioned at the end of this month.
 
 *Cue a post from me in June lamenting tremendous data loss…*
+
+It was great to watch the sparklines on my uptime tracker shoot downward as I migrated my different websites. Across the board I saw response times to uptime pings decrease by ~10&times;! So far so good! 
