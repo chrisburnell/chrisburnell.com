@@ -78,6 +78,7 @@
 	}
 
 	:is(a, button, [type="button"], [role="tab"]):is(:hover, :focus, :active) &[style*="--color-icon-active:"],
+	[style*="--color-icon-active:"]:is(a, button, [type="button"], [role="tab"]):is(:hover, :focus, :active) &,
 	&[style*="--color-icon-active:"]:is(:hover, :focus, :active) {
 		color: var(--color-icon-active);
 	}
