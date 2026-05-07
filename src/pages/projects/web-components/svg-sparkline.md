@@ -1,6 +1,5 @@
 ---
 title: "&lt;svg-sparkline&gt;"
-icon: arrow-trend-up
 emoji: 📈
 git: chrisburnell/svg-sparkline
 branch: main

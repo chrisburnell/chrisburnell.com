@@ -1,6 +1,24 @@
 export default {
 	personal: [
 		{
+			url: "https://sw.chrisburnell.com",
+			data: {
+				title: "Stopwatch",
+				description:
+					"Single-page app stopwatch that uses local storage to persist your stopwatch(es).",
+				emoji: "⏱️",
+			},
+		},
+		{
+			url: "https://timer.chrisburnell.com",
+			data: {
+				title: "Timer",
+				description:
+					"Single-page app timer that uses local storage to persist your timer(s) and can connect to *ntfy* to send notifications.",
+				emoji: "⏰",
+			},
+		},
+		{
 			url: "https://dnd.chrisburnell.com",
 			data: {
 				date: "2021-04-26T12:00:00+0000",
@@ -42,17 +60,8 @@ export default {
 			url: "https://gifs.chrisburnell.com",
 			data: {
 				title: "GIFs on GIFs on GIFs",
-				description: "A curated list of sick GIFs.",
+				description: "A curated list of excellent GIFs.",
 				emoji: "🌠",
-			},
-		},
-		{
-			url: "https://dizzy.chrisburnell.com",
-			data: {
-				title: "Feelin’ Dizzy",
-				description:
-					"Feelin’ dizzy or blue? This should sort you right out.",
-				emoji: "🌪️",
 			},
 		},
 	],
@@ -138,7 +147,7 @@ export default {
 			url: "https://status.chrisburnell.com/",
 			data: {
 				title: "status.chrisburnell.com",
-				description: `Uptime monitoring powered by [Uptime Kuma](https://uptimekuma.org)`,
+				description: `Simple uptime monitoring powered by [website-monitor](https://source.tube/neatnik/website-monitor) by [Adam Newbold](https://www.neatnik.net)`,
 			},
 		},
 		{

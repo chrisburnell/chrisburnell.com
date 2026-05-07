@@ -25,10 +25,10 @@
 		{% if item.data.reply_url -%}
 			<div class=" [ deck__context ] ">
 				{% if item.data.rsvp %}
-					{{ item.data.rsvp_string | safe }}
+					<c-emoji style="vertical-align: baseline;"><i class="fas fa-{{ 'ticket' if item.data.rsvp.value == 'yes' and 'conference' in item.data.tags else ('calendar-check' if item.data.rsvp.value == 'yes' else 'calendar') }}"></i></c-emoji>{{ item.data.rsvp_string | safe }}
 					<data class=" [ p-rsvp ] " value="{{ item.data.rsvp.value }}" hidden></data>
 				{% else %}
-					<small>in reply to</small>
+					<c-emoji><i class="fas fa-reply"></i></c-emoji><small>in reply to</small>
 				{% endif %}
 				<a href="{{ item.data.reply_url }}" class=" [ h-cite  u-in-reply-to ] ">{{ item.data.reply_title | safe }}</a>
 				{# Author #}
@@ -43,7 +43,7 @@
 		{% if title -%}
 			<h1 style="view-transition-name: title-{{ item.data.page.fileSlug }};">
 				<a href="{{ item_url }}" class=" [ p-name ] "{% if item.data.clickthrough %} rel="external noopener"{% endif %}>
-					{% if item.data.icon %}<c-emoji><i class="fas fa-{{ item.data.icon }}"></i></c-emoji>{% elif item.data.in_reply_to or item.data.rsvp %}<c-emoji><i class="fas fa-reply"></i></c-emoji>{% elif item.data.emoji %}<c-emoji>{{ item.data.emoji }}</c-emoji>{% endif %}{{ title | striptags(true) | safe }}
+					{% if item.data.icon %}<c-emoji><i class="fas fa-{{ item.data.icon }}"></i></c-emoji>{% elif item.data.rsvp %}<c-emoji><i class="fas fa-{{ 'ticket' if item.data.rsvp.value == 'yes' and 'conference' in item.data.tags else ('calendar-check' if item.data.rsvp.value == 'yes' else 'calendar') }}"></i></c-emoji>{% elif item.data.in_reply_to %}<c-emoji><i class="fas fa-reply"></i></c-emoji>{% elif item.data.emoji %}<c-emoji>{{ item.data.emoji }}</c-emoji>{% endif %}{{ title | striptags(true) | safe }}
 				</a>
 			</h1>
 		{%- endif %}

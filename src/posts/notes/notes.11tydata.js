@@ -6,6 +6,7 @@ export default {
 	categoryPlural: "notes",
 	categoryCode: "n",
 	tags: ["categoryNote", "blog"],
+	icon: "note-sticky",
 	eleventyComputed: {
 		tags: (data) => {
 			const baseTags = data.tags || [];
