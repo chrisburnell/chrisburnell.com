@@ -53,7 +53,8 @@
 	filter: url("/images/fsociety.svg#fsociety");
 }
 
-.emoji {
+:is(.emoji, .icon) {
+	color: var(--color-icon, currentColor);
 	font-family: var(--font-family-sans);
 	font-style: normal;
 	font-variation-settings: normal;
@@ -73,7 +74,12 @@
 	:not(h1, h2, h3, h4, h5, h6) > :is(a:not(.button), .anchor):not(.icon-anchor, :hover, :focus, :active) > &:has(svg):first-child,
 	.meta__information & {
 		opacity: var(--opacity-70);
-		color: color-mix(in oklab, currentColor, var(--color-raven));
+		color: var(--color-icon, color-mix(in oklab, currentColor, var(--color-raven)));
+	}
+
+	:is(a, button, [type="button"], [role="tab"]):is(:hover, :focus, :active) &[style*="--color-icon-active:"],
+	&[style*="--color-icon-active:"]:is(:hover, :focus, :active) {
+		color: var(--color-icon-active);
 	}
 
 	& svg {

@@ -79,17 +79,17 @@
 					{%- endif -%}
 					{% if item.data.show_reactions != false and reactions.length -%}
 						{% set icon = item.data.webmentions.likes and 'heart' or item.data.webmentions.socialReplies and 'reply' or 'link' -%}
-						<li><a href="{{ item.url }}#reactions" title="Jump to reactions for this {{ item.data.categoryProper | default(item.data.category) | default('page') }}"><c-emoji><i class="fas fa-{{ icon }}"></i></c-emoji>{{ reactions.length }} reaction{{ 's' if reactions.length > 1 }}</a></li>
+						<li><a href="{{ item.url }}#reactions" title="Jump to reactions for this {{ item.data.categoryProper | default(item.data.category) | default('page') }}"><c-emoji style="--color-icon-active: var(--color-maple);"><i class="fas fa-{{ icon }}"></i></c-emoji>{{ reactions.length }} reaction{{ 's' if reactions.length > 1 }}</a></li>
 					{%- endif -%}
 				{%- endif %}
 				{% if show_rss_only -%}
-					<li><a href="https://daverupert.com/rss-club/" title="This {{ item.data.categoryProper | default(item.data.category) }} is part of RSS Club" rel="external" target="_blank"><c-emoji style="color:var(--fill,#ff8c01);"><i class="fas fa-rss"></i></c-emoji>RSS Club</a></li>
+					<li><a href="https://daverupert.com/rss-club/" title="This {{ item.data.categoryProper | default(item.data.category) }} is part of RSS Club" rel="external" target="_blank"><c-emoji style="--color-icon: var(--color-rss);"><i class="fas fa-rss"></i></c-emoji>RSS Club</a></li>
 				{%- endif %}
 				{% if show_popularity -%}
-					<li><a href="/popular/#index-{{ item.data.rank.popular }}" title="#{{ item.data.rank.popular }} Most Popular Page"><c-emoji><i class="fas fa-chart-line"></i></c-emoji><span class=" [ ordinal ] "{% if item.data.rank.popular <= 3 %} style="color: color-mix(in oklab, currentColor, {% if item.data.rank.popular == 1 %}gold{% elif item.data.rank.popular == 2 %}silver{% else %}darkorange{% endif %}); font-weight: var(--font-weight-semibold);"{% endif %}>#{{ item.data.rank.popular }}</span></a></li>
+					<li><a href="/popular/#index-{{ item.data.rank.popular }}" title="#{{ item.data.rank.popular }} Most Popular Page"><c-emoji style="--color-icon-active: var(--color-css);"><i class="fas fa-chart-line"></i></c-emoji><span class=" [ ordinal ] "{% if item.data.rank.popular <= 3 %} style="color: color-mix(in oklab, currentColor, {% if item.data.rank.popular == 1 %}gold{% elif item.data.rank.popular == 2 %}silver{% else %}darkorange{% endif %}); font-weight: var(--font-weight-semibold);"{% endif %}>#{{ item.data.rank.popular }}</span></a></li>
 				{%- endif %}
 				{% if show_hotness -%}
-					<li><a href="/hot/#index-{{ item.data.rank.hot }}" title="#{{ item.data.rank.hot }} Hottest Page"><c-emoji><i class="fas fa-fire"></i></c-emoji><span class=" [ ordinal ] "{% if item.data.rank.hot <= 3 %} style="color: color-mix(in oklab, currentColor, {% if item.data.rank.hot == 1 %}gold{% elif item.data.rank.hot == 2 %}silver{% else %}darkorange{% endif %}); font-weight: var(--font-weight-semibold);"{% endif %}>#{{ item.data.rank.hot }}</span></a></li>
+					<li><a href="/hot/#index-{{ item.data.rank.hot }}" title="#{{ item.data.rank.hot }} Hottest Page"><c-emoji style="--color-icon-active: var(--color-html);"><i class="fas fa-fire"></i></c-emoji><span class=" [ ordinal ] "{% if item.data.rank.hot <= 3 %} style="color: color-mix(in oklab, currentColor, {% if item.data.rank.hot == 1 %}gold{% elif item.data.rank.hot == 2 %}silver{% else %}darkorange{% endif %}); font-weight: var(--font-weight-semibold);"{% endif %}>#{{ item.data.rank.hot }}</span></a></li>
 				{%- endif %}
 				{% if show_pageviews -%}
 					<li title="{{ (item.data.pageviews.total | toNearest(1000, true)) / 1000 }}k Pageviews"><c-emoji><i class="fas fa-face-grin-stars"></i></c-emoji><span class=" [ ordinal ] ">{{ (item.data.pageviews.total | toNearest(1000, true)) / 1000 }}k</span></li>

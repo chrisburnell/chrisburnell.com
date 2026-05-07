@@ -13,7 +13,7 @@ You get in touch with me and briefly describe what you want me to help with:
 
 <address>
     <dl>
-        <dt><c-emoji style="margin-inline-end: 1ex;">📧</c-emoji>Email:</dt>
+        <dt><c-emoji style="margin-inline-end: 1ex;"><i class="fas fa-at"></i></c-emoji>Email:</dt>
         <dd><a href="mailto:{{ author.email }}" class=" [ canada ] ">{{ author.email }}</a></dd>
         <dt><c-emoji><i class="fab fa-bluesky"></i></c-emoji>Bluesky:</dt>
         <dd><a href="https://bsky.app/profile/{{ author.bluesky }}" class=" [ canada ] " title="{{ author.name }} on Bluesky">{{ author.bluesky }}</a></dd>

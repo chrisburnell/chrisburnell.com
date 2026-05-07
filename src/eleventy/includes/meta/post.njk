@@ -179,14 +179,14 @@
 		{%- endif %}
 		{% if rank.popular and rank.popular <= 10 -%}
 			<li class=" [ popularity ] ">
-				<c-emoji><i class="fas fa-chart-line"></i></c-emoji>
+				<c-emoji style="--color-icon-active: var(--color-css);"><i class="fas fa-chart-line"></i></c-emoji>
 				<small>most popular page</small>
 				<a href="/popular/#index-{{ rank.popular }}" class=" [ ordinal ] ">#{{ rank.popular }}</a>
 			</li>
 		{%- endif %}
 		{% if rank.hot and rank.hot <= 10 -%}
 			<li class=" [ hotness ] ">
-				<c-emoji><i class="fas fa-fire"></i></c-emoji>
+				<c-emoji style="--color-icon-active: var(--color-html);"><i class="fas fa-fire"></i></c-emoji>
 				<small>hottest page</small>
 				<a href="/hot/#index-{{ rank.hot }}" class=" [ ordinal ] ">#{{ rank.hot }}</a>
 			</li>

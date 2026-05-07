@@ -31,15 +31,15 @@ description: A great big list of all the pages, projects, posts on my website.
 					<p>Learn more about me.</p>
 				</li>
 				<li>
-					<a href="/cv/" class=" [ gamma ] "><c-emoji><i class="fas fa-address-card"></i></c-emoji>CV</a>
+					<a href="/cv/" class=" [ gamma ] "><c-emoji style="--color-icon-active: var(--color-maple);"><i class="fas fa-address-card"></i></c-emoji>CV</a>
 					<p>My curriculum vitae / résumé.</p>
 				</li>
 				<li>
-					<a href="/blogroll/" class=" [ gamma ] "><c-emoji><i class="fas fa-heart-circle-plus"></i></c-emoji>Blogroll</a>
+					<a href="/blogroll/" class=" [ gamma ] "><c-emoji style="--color-icon-active: var(--color-maple);"><i class="fas fa-heart-circle-plus"></i></c-emoji>Blogroll</a>
 					<p>Blogs that I follow.</p>
 				</li>
 				<li>
-					<a href="/feeds/" class=" [ gamma ] "><c-emoji style="color:var(--fill,#ff8c01);"><i class="fas fa-rss"></i></c-emoji>Feeds</a>
+					<a href="/feeds/" class=" [ gamma ] "><c-emoji style="--color-icon: var(--color-rss);"><i class="fas fa-rss"></i></c-emoji>Feeds</a>
 					<p>You can follow my posts from different web feeds, depending on what content you'd like to see.</p>
 				</li>
 				<li>
@@ -91,7 +91,7 @@ description: A great big list of all the pages, projects, posts on my website.
 					<p>The style guide for this website.</p>
 				</li>
 				<li>
-					<a href="/indieweb/" class=" [ gamma ] "><c-emoji>{% image './images/content/indiewebcamp.svg', 'IndieWebCamp logo', '', ['auto'], 'inline-size: 1em; block-size: 1em; object-fit: contain;' %}</c-emoji>IndieWeb</a>
+					<a href="/indieweb/" class=" [ gamma ] "><c-emoji>{% image './images/content/indiewebcamp.svg', 'IndieWebCamp logo', '', ['auto'], 'inline-size: 1em; block-size: 1em; object-fit: contain; filter: sepia(100%) hue-rotate(160deg); vertical-align: middle;' %}</c-emoji>IndieWeb</a>
 					<p>How I've implemented and interact with the IndieWeb.</p>
 				</li>
 				<li>
@@ -157,12 +157,12 @@ description: A great big list of all the pages, projects, posts on my website.
 					<p>A record of RSVPs to conferences and meet-ups.</p>
 				</li>
 				<li>
-					<a href="/popular/" class=" [ gamma ] "><c-emoji><i class="fas fa-chart-line"></i></c-emoji>Popular Pages <sup>{{ site.limits.feed }}</sup></a>
-					<p>Top pages ordered by pageviews and responses.</p>
+					<a href="/hot/" class=" [ gamma ] "><c-emoji style="--color-icon-active: var(--color-html);"><i class="fas fa-fire"></i></c-emoji>Hot Pages <sup>{{ site.limits.feed }}</sup></a>
+					<p>Top pages ordered by pageviews and responses over time.</p>
 				</li>
 				<li>
-					<a href="/hot/" class=" [ gamma ] "><c-emoji><i class="fas fa-fire"></i></c-emoji>Hot Pages <sup>{{ site.limits.feed }}</sup></a>
-					<p>Top pages ordered by pageviews and responses over time.</p>
+					<a href="/popular/" class=" [ gamma ] "><c-emoji style="--color-icon-active: var(--color-css);"><i class="fas fa-chart-line"></i></c-emoji>Popular Pages <sup>{{ site.limits.feed }}</sup></a>
+					<p>Top pages ordered by pageviews and responses.</p>
 				</li>
 			</ul>
 
@@ -207,7 +207,7 @@ description: A great big list of all the pages, projects, posts on my website.
 
 			<h2>
 				<a href="/feeds/#collections">
-					<c-emoji style="color:var(--fill,#ff8c01);"><i class="fas fa-rss"></i></c-emoji>Collection Feeds
+					<c-emoji style="--color-icon-active: var(--color-rss);"><i class="fas fa-rss"></i></c-emoji>Collection Feeds
 				</a>
 			</h2>
 
@@ -234,7 +234,7 @@ description: A great big list of all the pages, projects, posts on my website.
 
 			<h2>
 				<a href="/feeds/#categories">
-					<c-emoji style="color:var(--fill,#ff8c01);"><i class="fas fa-rss"></i></c-emoji>Category Feeds
+					<c-emoji style="--color-icon: var(--color-rss);"><i class="fas fa-rss"></i></c-emoji>Category Feeds
 				</a>
 			</h2>
 
@@ -249,7 +249,7 @@ description: A great big list of all the pages, projects, posts on my website.
 
 			<h2>
 				<a href="/feeds/#tags">
-					<c-emoji style="color:var(--fill,#ff8c01);"><i class="fas fa-rss"></i></c-emoji>Tag Feeds
+					<c-emoji style="--color-icon: var(--color-rss);"><i class="fas fa-rss"></i></c-emoji>Tag Feeds
 				</a>
 			</h2>
 

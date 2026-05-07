@@ -1,12 +1,12 @@
 <h2>Browse collections</h2>
-<ul class=" [ cluster ] ">
-	{%- if eleventy.env.runMode !== 'build' and page.url != '/drafts/' %}<li><a href="/drafts/">Drafts</a></li>{% endif -%}
-	{%- if page.url != '/posts/' %}<li><a href="/posts/">All Posts</a></li>{% endif -%}
-	{%- if page.url != '/posts/' %}<li><a href="/posts/#latest">Latest Posts</a></li>{% endif -%}
-	{%- if page.url != '/posts/' %}<li><a href="/posts/#categories">Categories</a></li>{% endif -%}
-	{%- if page.url != '/posts/' %}<li><a href="/posts/#tags">Tags</a></li>{% endif -%}
-	{%- if page.url != '/writing/' %}<li><a href="/writing/">Writing</a></li>{% endif -%}
-	{%- if page.url != '/rsvps/' %}<li><a href="/rsvps/">RSVPs</a></li>{% endif -%}
-	{%- if page.url != '/hot/' %}<li><a href="/hot/">Hot Pages</a></li>{% endif -%}
-	{%- if page.url != '/popular/' %}<li><a href="/popular/">Popular Pages</a></li>{% endif -%}
+<ul class=" [ cluster ] " style="line-height: var(--line-height-code);">
+	{%- if eleventy.env.runMode !== 'build' and page.url != '/drafts/' %}<li><a href="/drafts/"><c-emoji><i class="fas fa-file-pen"></i></c-emoji>Drafts</a></li>{% endif -%}
+	{%- if page.url != '/posts/' %}<li><a href="/posts/"><c-emoji><i class="fas fa-table-list"></i></c-emoji>All Posts</a></li>{% endif -%}
+	{%- if page.url != '/posts/' %}<li><a href="/posts/#latest"><c-emoji><i class="fas fa-newspaper"></i></c-emoji>Latest Posts</a></li>{% endif -%}
+	{%- if page.url != '/posts/' %}<li><a href="/posts/#categories"><c-emoji><i class="fas fa-layer-group"></i></c-emoji>Categories</a></li>{% endif -%}
+	{%- if page.url != '/posts/' %}<li><a href="/posts/#tags"><c-emoji><i class="fas fa-tags"></i></c-emoji>Tags</a></li>{% endif -%}
+	{%- if page.url != '/writing/' %}<li><a href="/writing/"><c-emoji><i class="fas fa-feather-pointed"></i></c-emoji>Writing</a></li>{% endif -%}
+	{%- if page.url != '/rsvps/' %}<li><a href="/rsvps/"><c-emoji><i class="fas fa-envelope"></i></c-emoji>RSVPs</a></li>{% endif -%}
+	{%- if page.url != '/hot/' %}<li><a href="/hot/"><c-emoji style="--color-icon-active: var(--color-html);"><i class="fas fa-fire"></i></c-emoji>Hot Pages</a></li>{% endif -%}
+	{%- if page.url != '/popular/' %}<li><a href="/popular/"><c-emoji style="--color-icon-active: var(--color-css);"><i class="fas fa-chart-line"></i></c-emoji>Popular Pages</a></li>{% endif -%}
 </ul>

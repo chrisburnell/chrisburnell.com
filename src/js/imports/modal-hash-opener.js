@@ -16,3 +16,11 @@ const handleHashTarget = () => {
 
 window.addEventListener("hashchange", handleHashTarget);
 window.addEventListener("DOMContentLoaded", handleHashTarget);
+
+document
+	.getElementById("popover-settings")
+	.addEventListener("toggle", (event) => {
+		if (event.newState === "open") {
+			window.scrollTo({ top: 0, behavior: "smooth" });
+		}
+	});

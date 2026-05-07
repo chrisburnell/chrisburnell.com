@@ -37,7 +37,7 @@ eleventyComputed:
 	<div class=" [ description ] [ flow ] ">
 		<p>
 			<span class=" [ p-summary ] ">{% if count > 1 %}All {{ count | numberStringFormat }}{% else %}Just the one{% endif %} of my posts tagged <q>{{ tag }}</q>{% if first_year != latest_year %}, dating from {% if list_type == 'shelf' %}<span class=" [ no-wrap ] ">{{ first_year }}–{{ latest_year }}</span>{% else %}<span class=" [ no-wrap ] "><a href="#{{ first_year }}">{{ first_year }}</a>–<a href="#{{ latest_year }}">{{ latest_year }}</a></span>{% endif %}{% endif %}.</span>
-			<a href="{{ site.url }}/tag/{{ tag }}.xml" title="{{ tag | supertitle }} Tag Feed" class=" [ icon-anchor ] "><c-emoji style="color:var(--fill,#ff8c01);"><i class="fas fa-rss"></i></c-emoji></a>
+			<a href="{{ site.url }}/tag/{{ tag }}.xml" title="{{ tag | supertitle }} Tag Feed" class=" [ icon-anchor ] "><c-emoji style="--color-icon: var(--color-rss);"><i class="fas fa-rss"></i></c-emoji></a>
 		</p>
 	</div>
 
@@ -61,7 +61,7 @@ eleventyComputed:
 
 		<div class=" [ grid ] [ navigator ] ">
 			<a href="/tag/{{ tag }}.xml" class=" [ button ] ">
-				<c-emoji style="color:var(--fill,#ff8c01);"><i class="fas fa-rss"></i></c-emoji>{{ title | safe }} Feed
+				<c-emoji style="--color-icon: var(--color-rss);"><i class="fas fa-rss"></i></c-emoji>{{ title | safe }} Feed
 			</a>
 		</div>
 	</div>

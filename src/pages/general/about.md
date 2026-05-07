@@ -93,7 +93,7 @@ I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link
 
 <address>
     <dl>
-        <dt><c-emoji style="margin-inline-end: 1ex;">📧</c-emoji>Email:</dt>
+        <dt><c-emoji style="margin-inline-end: 1ex;"><i class="fas fa-fa"></i></c-emoji>Email:</dt>
         <dd><a href="mailto:{{ author.email }}" class=" [ canada ] ">{{ author.email }}</a></dd>
         <dt><c-emoji><i class="fab fa-bluesky"></i></c-emoji>Bluesky:</dt>
         <dd><a href="https://bsky.app/profile/{{ author.bluesky }}" class=" [ canada ] " title="{{ author.name }} on Bluesky">{{ author.bluesky }}</a></dd>
@@ -103,7 +103,7 @@ I also love <a href="https://chrisburnell.com/note/1510316111/" title="this link
         <dd><a href="{{ author.mastodon_domain }}/@{{ author.mastodon.split('@')[1] }}" class=" [ canada ] " title="{{ author.name }} on Mastodon">{{ author.mastodon }}</a></dd>
         <dt><c-emoji><i class="fab fa-linkedin"></i></c-emoji>LinkedIn:</dt>
         <dd><a href="https://www.linkedin.com/in/{{ author.linkedin }}" class=" [ canada ] " title="{{ author.name }} on LinkedIn">{{ author.linkedin }}</a></dd>
-        <dt><c-emoji style="margin-inline-end: 1ex;">🪪</c-emoji>vCard:</dt>
+        <dt><c-emoji style="margin-inline-end: 1ex;"><i class="fas fa-address-card"></i></c-emoji>vCard:</dt>
         <dd><a href="/chrisburnell.vcf" class=" [ canada ] ">chrisburnell.vcf</a></dd>
     </dl>
 </address>

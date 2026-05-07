@@ -20,7 +20,7 @@
 				// TODO Revisit when support for fallbacks is better.
 				// https://caniuse.com/mdn-css_types_attr_fallback
 				// content: var(--delineator, attr(data-delineator, "·"));
-				padding-inline: var(--padding-inline, calc(var(--size-tiny-small) * 1.5));
+				padding-inline: var(--padding-inline, calc(var(--size-small) * 1.5));
 				font-size: var(--font-size, 1em);
 				font-weight: var(--font-weight, var(--font-weight-bold));
 				line-height: 0;
