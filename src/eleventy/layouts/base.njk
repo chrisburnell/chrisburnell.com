@@ -68,7 +68,7 @@ layout: root
 		<ul class=" [ cluster ] [ footer__navigation ] [ strong ] ">
 			{% for link in navigation -%}
 				{% if link.footer -%}
-					<li><a href="{{ link.url }}"{% if link.rel %} rel="{{ link.rel }}"{% endif %}{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title | safe }}</a></li>
+					<li><a href="{{ link.url }}"{% if link.rel %} rel="{{ link.rel }}"{% endif %}{% if page.url == link.url %} aria-current="page"{% endif %}>{% if link.icon %}<c-icon>{{ link.icon | safe }}</c-icon>{% endif %}{{ link.title | safe }}</a></li>
 				{%- endif %}
 			{%- endfor %}
 		</ul>
