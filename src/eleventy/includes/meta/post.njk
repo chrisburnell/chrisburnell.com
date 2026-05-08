@@ -39,7 +39,7 @@
 		{% if tags_filtered.length -%}
 			{% set tags_array = [] -%}
 			{% for tag in tags_filtered -%}
-				{%- set tags_item -%}<a href="/tag/{{ tag }}/" class=" [ u-tag ] " data-pagefind-filter="tag">{{ tag }}</a>{%- endset -%}
+				{%- set tags_item -%}<a href="/tag/{{ tag }}/" class=" [ u-tag ] " data-pagefind-filter="tag">#{{ tag }}</a>{%- endset -%}
 				{% set tags_array = (tags_array.push(tags_item), tags_array) -%}
 			{%- endfor -%}
 			<li class=" [ tags ] ">

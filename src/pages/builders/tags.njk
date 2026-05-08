@@ -5,8 +5,8 @@ pagination:
   alias: tag
 permalink: /tag/{{ tag }}/
 eleventyComputed:
-  title: "{{ tag | replace('-', ' ') | supertitle }}"
-  description: "All of my posts tagged with <q>{{ tag }}</q>."
+  title: "#{{ tag }}"
+  description: "All of my posts tagged with {{ tag }}."
 ---
 {%- from 'macros/deckItem.njk' import deckItem -%}
 {%- from 'macros/stackItem.njk' import stackItem -%}
@@ -36,7 +36,7 @@ eleventyComputed:
 
 	<div class=" [ description ] [ flow ] ">
 		<p>
-			<span class=" [ p-summary ] ">{% if count > 1 %}All {{ count | numberStringFormat }}{% else %}Just the one{% endif %} of my posts tagged <q>{{ tag }}</q>{% if first_year != latest_year %}, dating from {% if list_type == 'shelf' %}<span class=" [ no-wrap ] ">{{ first_year }}–{{ latest_year }}</span>{% else %}<span class=" [ no-wrap ] "><a href="#{{ first_year }}">{{ first_year }}</a>–<a href="#{{ latest_year }}">{{ latest_year }}</a></span>{% endif %}{% endif %}.</span>
+			<span class=" [ p-summary ] ">{% if count > 1 %}All {{ count | numberStringFormat }}{% else %}Just the one{% endif %} of my posts tagged with {{ title }}{% if first_year != latest_year %}, dating from {% if list_type == 'shelf' %}<span class=" [ no-wrap ] ">{{ first_year }}–{{ latest_year }}</span>{% else %}<span class=" [ no-wrap ] "><a href="#{{ first_year }}">{{ first_year }}</a>–<a href="#{{ latest_year }}">{{ latest_year }}</a></span>{% endif %}{% endif %}.</span>
 			<a href="{{ site.url }}/tag/{{ tag }}.xml" title="{{ tag | supertitle }} Tag Feed" class=" [ icon-anchor ] "><c-icon style="--color-icon: var(--color-rss);"><i class="fas fa-rss"></i></c-icon></a>
 		</p>
 	</div>
