@@ -15,9 +15,7 @@ const navigation = [
 		title: `<span class=" [ canada ] ">About</span>`,
 		url: "/about/",
 		rel: "me",
-		icon: `<picture><source srcset="/images/avatar-emoji.avif" type="image/avif"><source srcset="/images/avatar-emoji.webp" type="image/webp"><img src="/images/avatar-emoji.png" alt="" style="inline-size: 20px; block-size: 20px; object-fit: contain;"></picture>`,
 		header: true,
-		footer: true,
 	},
 	{
 		title: `<span class=" [ canada ] ">CV</span>`,
