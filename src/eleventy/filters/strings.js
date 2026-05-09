@@ -114,6 +114,10 @@ export const removeTagsForWordcount = (string) => {
 export const cleanTagsForRSS = (string) => {
 	const $ = load(string, null, false);
 	$("link, script, style, .no-rss, [data-no-rss]").remove();
+	$("c-details").each((_, e) => {
+		const element = $(e);
+		element.replaceWith(`<details>${element.html()}</details>`);
+	});
 	const attributes = [
 		"class",
 		"style",
