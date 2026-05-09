@@ -27,7 +27,12 @@ markdown.renderer.rules.fence = (tokens, idx, options) => {
 	}
 
 	if (filename) {
-		highlighted = highlighted.replace(/data-filename="[^"]*"/, `data-filename="${filename}"`);
+		highlighted = highlighted.replace(
+			/data-filename="[^"]*"/,
+			`data-filename="${filename}"`,
+		);
+	} else {
+		highlighted = highlighted.replace(/\s*data-filename(="[^"]*")?/, "");
 	}
 
 	return `${highlighted}\n`;

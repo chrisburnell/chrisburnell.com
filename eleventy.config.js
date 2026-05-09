@@ -2,10 +2,10 @@ import dotenv from "dotenv";
 dotenv.config({ quiet: true });
 
 import { styleText } from "node:util";
+import { url as siteURL } from "./src/eleventy/data/site.js";
 import builders from "./src/eleventy/builders.js";
 import collections from "./src/eleventy/collections.js";
 import config from "./src/eleventy/config.js";
-import { url as siteURL } from "./src/eleventy/data/site.js";
 import { filtersAsync, filtersSync } from "./src/eleventy/filters.js";
 import plugins from "./src/eleventy/plugins.js";
 import shortcodes from "./src/eleventy/shortcodes.js";
@@ -117,7 +117,9 @@ export default async function (eleventyConfig) {
 	/**
 	 * Transforms
 	 */
-	eleventyConfig.addTransform("html", transforms.html);
+	Object.keys(transforms).forEach((transformName) => {
+		eleventyConfig.addTransform(transformName, transforms[transformName]);
+	});
 
 	/**
 	 * Static Files

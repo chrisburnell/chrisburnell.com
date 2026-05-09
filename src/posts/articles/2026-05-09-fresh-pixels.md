@@ -97,7 +97,7 @@ imagegif($image);
 
 <p>And while we’re at it, here’s how I’m serving my PHP file as if it’s a GIF in <em>nginx</em>:</p>
 
-```nginx /etc/nginx/sites-available/chrisburnell.com
+```nginx /etc/nginx/sites-available/example.com
 location = /images/uptime.gif {
     include fastcgi_params;
     fastcgi_param SCRIPT_FILENAME /absolute/path/to/uptime.php;

@@ -8,7 +8,7 @@ import { getCollectionCountByYear } from "./filters/collections.js";
  * @param {boolean} [curve]
  * @returns {string}
  */
-const sparkline = (collection, start, animate = false, curve = true) => {
+export const sparkline = (collection, start, animate = false, curve = true) => {
 	let values = [];
 	// Loop through years
 	for (let year = Number(start); year <= Number(currentYear); year++) {

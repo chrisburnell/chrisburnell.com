@@ -1,7 +1,7 @@
 ---
 layout: null
 title: "#5f8aa6"
-description: "I’ve been using <code>#5f8aa6</code> as my website colour since ~2008."
+description: "I’ve been using #5f8aa6 as my website colour since 2008."
 sitemap:
   exclude: true
 ---
@@ -11,6 +11,36 @@ sitemap:
 	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 	<title>{{ title }}</title>
 	<style>
+		@font-face {
+			font-family: "Proxima Vara";
+			font-display: swap;
+			font-weight: 100 900;
+			src:
+				local("Proxima Vara"),
+				url("/fonts/proxima-vara-subset.woff2") format("woff2-variations"),
+				url("/fonts/proxima-vara-subset.woff2") format("woff2"),
+				url("/fonts/proxima-vara-subset.woff") format("woff");
+			unicode-range:
+				U+0020-007D,
+				U+007F-00FF,
+				U+0131,
+				U+0152-0153,
+				U+02C6,
+				U+02DA,
+				U+02DC,
+				U+2000-206F,
+				U+2074,
+				U+20AC,
+				U+2212,
+				U+2215,
+				U+E0FF,
+				U+EFFD,
+				U+F000;
+		}
+		:root {
+			--font-family-monospace: "Maple Mono", ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+			--size-line-length: clamp(26em, 100vi, 32em);
+		}
 		*, *::before, *::after {
 			box-sizing: border-box;
 		}
@@ -22,16 +52,40 @@ sitemap:
 			display: grid;
 			place-items: center;
 			margin: 0;
-			font-family: sans-serif;
+			font-family: 'Proxima Vara', sans-serif;
 			font-weight: 600;
+			line-height: 1.5;
 		}
 		h1 {
+			margin-block: 2.5em;
 			font-family: monospace;
-			font-size: max(24px, 10cqmin);
+			font-size: max(48px, 10cqmin);
 		}
 		p {
-			font-size: max(14px, 2cqmin);
+			font-size: max(18px, 4cqmin);
 			user-select: none;
+		}
+		li {
+			font-size: max(16px, 3cqmin);
+		}
+		code {
+			font-family: var(--font-family-monospace);
+
+			&.marked {
+				background-color: #44657a;
+				color: #f9f9f9;
+				padding: 0.1em 0.3em;
+				border-radius: 4px;
+				font-weight: 400;
+			}
+		}
+		em {
+			font-style: italic;
+			font-synthesis: none;
+			font-variation-settings: "ital" 50;
+		}
+		.flow > * + * {
+			margin-block-start: 1em;
 		}
 		::selection {
 			background-color: #e0161b;
@@ -48,5 +102,24 @@ sitemap:
 	<meta name="generator" content="{{ eleventy.generator }}">
 	<meta name="color-scheme" content="light dark">
 </head>
-<body><h1>{{ title }}</h1><p>{{ description | safe }}</p></body>
+<body>
+	<h1 style="font-family: var(--font-family-monospace);">{{ title }}</h1>
+	<div class="flow" style="max-inline-size: var(--size-line-length);">
+		<p><em>a.k.a.</em></p>
+			<ul class="flow">
+				<li><code style="user-select: all;">rgb(95, 138, 166)</code></li>
+				<li><code style="user-select: all;">hsl(203.7, 28.5%, 51.2%)</code></li>
+				<li><code style="user-select: all;">hsv(203.66, 42.77%, 65.10%)</code></li>
+				<li><code style="user-select: all;">hwb(203.7 37.3% 34.9%)</code></li>
+				<li><code style="user-select: all;">lch(55.16 22.03 244.26)</code></li>
+				<li><code style="user-select: all;">oklch(61.29% 0.0636 237.73)</code></li>
+				<li><code style="user-select: all;">oklab(0.613 -0.034 -0.054)</code></li>
+			</ul>
+		<p>Fun facts about <code class="marked">#5f8aa6</code></p>
+		<ul class="flow" style="margin-block-end: 3em;">
+			<li>Based on its <code class="marked">RGB</code> values, we can deduce that it is mostly made up blue, then a little less green, and then quite a bit less red, all floating around the midway point between black and white.</li>
+			<li>I’ve been using <code class="marked">#5f8aa6</code> as my website colour since 2008.</li>
+			<li>It has its own dedicated <q>fun facts</q> list (read at your own risk).</li>
+		</ul>
+	</body>
 </html>

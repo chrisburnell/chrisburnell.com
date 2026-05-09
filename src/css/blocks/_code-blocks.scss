@@ -23,8 +23,8 @@
 		}
 	}
 
-	& pre > code {
-		anchor-name: --code-block;
+	& pre {
+		anchor-scope: none !important;
 	}
 }
 
@@ -35,12 +35,14 @@ pre[class*="language-"] {
 	padding: var(--size-gutter);
 	border-radius: 0 0 var(--border-radius, var(--size-border-thin)) var(--border-radius, var(--size-border-thin));
 	box-shadow: var(--box-shadow, var(--box-shadow-low));
+	anchor-scope: all;
 
 	& code {
 		color: var(--color-snowy);
 		padding: 0;
 		line-height: var(--line-height-code);
 		white-space: pre-wrap;
+		anchor-name: --code-block;
 	}
 
 	.flow > * + & {
