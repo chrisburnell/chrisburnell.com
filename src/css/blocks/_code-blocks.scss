@@ -91,6 +91,9 @@ pre[data-language-friendly="liquid" i]::before {
 pre[data-language-friendly="markdown" i]::before {
 	color: var(--color-snowy);
 }
+pre[data-language-friendly="nginx" i]::before {
+	color: var(--color-nginx);
+}
 pre[data-language-friendly="nunjucks" i]::before {
 	color: var(--color-nunjucks);
 }

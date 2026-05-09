@@ -6,6 +6,7 @@
   "javascript": "oklch(84.1% 0.144 88.57)",
   "json": "oklch(73.5% 0 0)",
   "liquid": "oklch(71.2% 0.136 132.27)",
+  "nginx": "oklch(59.65% 0.14 144.22)",
   "nunjucks": "oklch(58.3% 0.14 141.86)",
   "php": "oklch(62.81% 0.071 276.67)",
   "scss": "oklch(60.6% 0.1586 7.66)",
