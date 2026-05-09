@@ -152,7 +152,7 @@ export default async function (value, outputPath) {
 				`<div class=" [ code-block ] " style="position: relative;"></div>`,
 			);
 			$(element).before(
-				`<button class=" [ anchor ] [ requires-js  copy-code ] " tabindex="-1">Copy</button>`,
+				`<button class=" [ anchor ] [ requires-js  copy-code ] " tabindex="-1"><span class=" [ icon ] "><svg width="20" height="20" aria-hidden="true" focusable="false"><use href="#svg--copy"></use></svg></span><span>Copy</span></button>`,
 			);
 		});
 

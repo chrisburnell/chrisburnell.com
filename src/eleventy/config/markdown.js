@@ -11,6 +11,28 @@ const markdown = markdownParser({
 	.use(markdownFootnote)
 	.disable("code");
 
+markdown.renderer.rules.fence = (tokens, idx, options) => {
+	const token = tokens[idx];
+	const info = token.info ? token.info.trim() : "";
+	const [lang, ...rest] = info.split(/\s+/);
+	const filename = rest.join(" ");
+
+	let highlighted = "";
+	if (options.highlight) {
+		highlighted = options.highlight(token.content, lang, info) || "";
+	}
+
+	if (!highlighted) {
+		return `<pre><code>${token.content}</code></pre>\n`;
+	}
+
+	if (filename) {
+		highlighted = highlighted.replace(/data-filename="[^"]*"/, `data-filename="${filename}"`);
+	}
+
+	return `${highlighted}\n`;
+};
+
 markdown.renderer.rules.footnote_block_open = () => {
 	return `<hr style="--rule-space: var(--size-medium);">
 	<nav aria-label="Footnotes">

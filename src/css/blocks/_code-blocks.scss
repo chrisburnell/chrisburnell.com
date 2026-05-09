@@ -6,19 +6,25 @@
 @use "../abstracts/mixins-scss" as *;
 
 .code-block {
+	anchor-scope: all;
 	position: relative;
 
-	button {
+	& button {
 		color: var(--color-yeti);
+		position-anchor: --code-block;
+		position-area: top span-left;
+		position-visibility: always;
 		position: absolute;
-		inset-block-start: var(--size-tiny);
-		inset-inline-end: var(--size-gutter);
 		font-weight: var(--font-weight-medium);
 		z-index: var(--z-index-default);
 
 		&:not(:is(:hover, :focus, :active)) {
 			text-decoration-color: transparent;
 		}
+	}
+
+	& pre > code {
+		anchor-name: --code-block;
 	}
 }
 
@@ -48,9 +54,10 @@ pre[data-language-friendly] {
 	&::before {
 		content: attr(data-language-friendly);
 		color: var(--color-snowy);
+		position-anchor: --code-block;
+		position-area: top span-right;
+		position-visibility: always;
 		position: absolute;
-		inset-block-start: var(--size-tiny);
-		inset-inline-start: var(--size-gutter);
 		font-family: var(--font-family-sans);
 		font-weight: var(--font-weight-semibold);
 	}

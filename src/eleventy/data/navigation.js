@@ -18,12 +18,6 @@ const navigation = [
 		header: true,
 	},
 	{
-		title: `<span class=" [ canada ] ">CV</span>`,
-		url: "/cv/",
-		icon: `<i class="fas fa-address-book"></i>`,
-		footer: true,
-	},
-	{
 		title: "Explore",
 		url: "/explore/",
 		icon: `<i class="fas fa-binoculars"></i>`,
@@ -48,6 +42,12 @@ const navigation = [
 		title: "Style Guide",
 		url: "/styleguide/",
 		icon: `<i class="fas fa-palette"></i>`,
+		footer: true,
+	},
+	{
+		title: `<span class=" [ canada ] ">CV</span>`,
+		url: "/cv/",
+		icon: `<i class="fas fa-address-book"></i>`,
 		footer: true,
 	},
 	{

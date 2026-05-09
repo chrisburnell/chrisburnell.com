@@ -36,14 +36,15 @@
 			</li>
 		{%- endif %}
 		{% set tags_filtered = tags | categoryFilter | tagFilter | sort -%}
+		{% if 'writing' in tags %}{% set tags_filtered = (tags_filtered.push('writing'), tags_filtered) | sort %}{% endif -%}
 		{% if tags_filtered.length -%}
 			{% set tags_array = [] -%}
 			{% for tag in tags_filtered -%}
-				{%- set tags_item -%}<a href="/tag/{{ tag }}/" class=" [ u-tag ] " data-pagefind-filter="tag">#{{ tag }}</a>{%- endset -%}
+				{%- set tags_item -%}<a href="/{% if not tag == 'writing' %}tag/{% endif %}{{ tag }}/" class=" [ u-tag ] " data-pagefind-filter="tag">#{{ tag }}</a>{%- endset -%}
 				{% set tags_array = (tags_array.push(tags_item), tags_array) -%}
 			{%- endfor -%}
 			<li class=" [ tags ] ">
-				<c-icon style="margin-inline-end: 1ex;"><i class="fas fa-{{ 'tags' if tags_filtered > 1 else 'tag' }}"></i></c-icon>
+				<c-icon style="margin-inline-end: 1ex;"><i class="fas fa-{{ 'tags' if tags_filtered.length > 1 else 'tag' }}"></i></c-icon>
 				<small>tagged</small>
 				{{ tags_array | conjunction("narrow") | wrapTextNodes("small") | safe }}
 			</li>

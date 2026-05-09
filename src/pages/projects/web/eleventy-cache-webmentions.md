@@ -80,7 +80,7 @@ Create a configuration file in your project (e.g. `configWebmentions.js`):
     </ol>
     <div id="config-commonjs" role="tabpanel">
 
-```javascript
+```javascript configWebmentions.js
 module.exports = {
 	// These 3 fields are all required!
 	domain: "https://example.com",
@@ -92,7 +92,7 @@ module.exports = {
 </div>
 <div id="config-esm" role="tabpanel">
 
-```javascript
+```javascript configWebmentions.js
 export default {
 	// These 3 fields are all required!
 	domain: "https://example.com",
@@ -183,7 +183,7 @@ Inside your Eleventy config file, use the `addPlugin()` function to attach the p
     </ol>
     <div id="addplugin-commonjs" role="tabpanel">
 
-```javascript
+```javascript eleventy.config.js
 const pluginWebmentions = require("@chrisburnell/eleventy-cache-webmentions");
 const configWebmentions = require("./configWebmentions.js");
 
@@ -195,7 +195,7 @@ module.exports = function (eleventyConfig) {
 </div>
 <div id="addplugin-esm" role="tabpanel">
 
-```javascript
+```javascript eleventy.config.js
 import pluginWebmentions from "@chrisburnell/eleventy-cache-webmentions";
 import configWebmentions from "./configWebmentions.js";
 
@@ -220,7 +220,7 @@ For example, if you have a folder, `/pages/`, and want to attach Webmentions to 
     </ol>
     <div id="directory-data-commonjs" role="tabpanel">
 
-```javascript
+```javascript pages.11tydata.js
 const { getWebmentions } = require("@chrisburnell/eleventy-cache-webmentions");
 
 module.exports = {
@@ -236,7 +236,7 @@ module.exports = {
 </div>
 <div id="directory-data-esm" role="tabpanel">
 
-```javascript
+```javascript pages.11tydata.js
 import { getWebmentions } from "@chrisburnell/eleventy-cache-webmentions";
 
 export default {
@@ -253,6 +253,8 @@ export default {
 </c-seven-minute-tabs>
 
 This attaches an Array containing Webmentions to each page (based on its URL).
+
+--------
 
 ## Usage
 
@@ -460,6 +462,8 @@ If you need it, the plugin also makes available an Object containing your cached
 ```
 {% endraw %}
 
+--------
+
 <h2 id="webmention-io">Webmention.io</h2>
 
 [Webmention.io](https://webmention.io) is a in-place Webmention receiver solution that you can use by authenticating yourself via [IndieAuth](https://indieauth.com/) (or host it yourself), and, like *so much* other publicly-available IndieWeb software, is built and hosted by [Aaron Parecki](https://aaronparecki.com/).
@@ -517,6 +521,8 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 </c-seven-minute-tabs>
 
 If you want to use the JSON format instead, make sure that you replace `mentions.jf2` in the URL with `mentions.json` and change the value of the key from `children` to `links`.
+
+--------
 
 ## go-jamming
 
