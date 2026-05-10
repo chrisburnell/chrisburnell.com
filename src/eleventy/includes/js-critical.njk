@@ -5,6 +5,9 @@
 {%- else %}
 		{# Inlined (fastest site performance on live) -#}
 		<script>{% getBundle 'js', 'critical' %}</script>
+		{# Preload deferred JS #}
+		<link rel="modulepreload" href="{% getBundleFileUrl 'js', 'module' %}">
+		<link rel="preload" as="script" href="{% getBundleFileUrl 'js' %}">
 {%- endif -%}
 
 {# Render out Critical JS -#}

@@ -2,7 +2,7 @@ const navigation = [
 	{
 		title: "Home",
 		url: "/",
-		icon: `<img width="20" height="20" src="/images/raven.svg" alt="chrisburnell.com logo of a blue raven" role="presentation">`,
+		icon: `<img width="20" height="20" src="/images/raven.svg" alt="chrisburnell.com logo of a blue raven" aria-hidden="true">`,
 		footer: true,
 	},
 	{
