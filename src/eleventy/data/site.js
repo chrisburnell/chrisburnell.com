@@ -19,7 +19,6 @@ export const timezone = "America/Halifax";
 export const established = "2008";
 export const favicon = "/images/favicon-256.png";
 export const logo = "/images/raven.svg";
-export const speedlify = "chrisburnell";
 export const fathom_siteid = "NMGWH";
 
 export const limits = {
@@ -66,7 +65,6 @@ export const urls = {
 	iine: "https://iine.chrisburnell.com",
 	license: "https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode",
 	micropub: "https://corvus.chrisburnell.com",
-	speedlify: "https://speedlify.chrisburnell.com",
 	superfeedr: "https://chrisburnell.superfeedr.com",
 	switchboard: "https://switchboard.p3k.io",
 	treo: "https://treo.sh/sitespeed/chrisburnell.com",
@@ -94,7 +92,6 @@ export default {
 	established,
 	favicon,
 	logo,
-	speedlify,
 	limits,
 	sitemap,
 	weights,

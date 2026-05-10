@@ -9,7 +9,6 @@ export default defineConfig([
 		"**/*.min.js",
 		"**/*.test.js",
 		"src/eleventy/plugins/tmdbImage.js",
-		"src/js/imports/speedlify-score.js",
 	]),
 	{
 		files: ["src/**/*.js"],

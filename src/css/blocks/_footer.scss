@@ -87,11 +87,8 @@
 		grid-row: 4;
 	}
 
-	& :is(.badges, .speedlify) {
-		grid-column: right;
-	}
-
 	& .badges {
+		grid-column: right;
 		column-gap: var(--size-small);
 
 		@include cqi(null, "medium") {
@@ -100,12 +97,6 @@
 
 		@include cqi(null, null, "medium") {
 			margin-block-start: var(--size-small-medium);
-		}
-	}
-
-	& .speedlify {
-		@include cqi(null, "medium") {
-			text-align: end;
 		}
 	}
 
