@@ -117,33 +117,37 @@ pre.language-none {
 }
 
 /**
- * a11y-dark theme for JavaScript, CSS, and HTML
- * Based on the okaidia theme: https://github.com/PrismJS/prism/blob/gh-pages/themes/prism-okaidia.css
- * @author ericwbailey
+ * Based on the Kanagawa colorscheme: https://github.com/rebelot/kanagawa.nvim
  */
 
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-	color: #d4d0ab;
+	color: #727169;
 }
 
 .token.punctuation {
-	color: #fefefe;
+	color: #dcd7ba;
 }
 
-.token.property,
 .token.tag,
-.token.constant,
-.token.symbol,
 .token.deleted {
-	color: #ffa07a;
+	color: #e46876;
+}
+
+.token.property {
+	color: #7e9cd8;
+}
+
+.token.constant,
+.token.symbol {
+	color: #ffa066;
 }
 
 .token.boolean,
 .token.number {
-	color: #00e0e0;
+	color: #d27e99;
 }
 
 .token.selector,
@@ -152,7 +156,7 @@ pre.language-none {
 .token.char,
 .token.builtin,
 .token.inserted {
-	color: #abe338;
+	color: #98bb6c;
 }
 
 .token.operator,
@@ -161,22 +165,22 @@ pre.language-none {
 pre.language-css .token.string,
 .style .token.string,
 .token.variable {
-	color: #00e0e0;
+	color: #c0a36e;
 }
 
 .token.atrule,
 .token.attr-value,
 .token.function {
-	color: #eab538;
+	color: #7e9cd8;
 }
 
 .token.keyword {
-	color: #00e0e0;
+	color: #957fb8;
 }
 
 .token.regex,
 .token.important {
-	color: #eab538;
+	color: #ffa066;
 }
 
 pre:has(.token:is(.inserted, .deleted):not(.prefix)) code {
@@ -190,10 +194,10 @@ pre:has(.token:is(.inserted, .deleted):not(.prefix)) code {
 	position: relative;
 }
 .token.inserted:not(.prefix) {
-	background-color: oklch(from var(--color-conifer) l c h / 0.333);
+	background-color: oklch(from #98bb6c l c h / 0.333);
 }
 .token.deleted:not(.prefix) {
-	background-color: oklch(from var(--color-maple) l c h / 0.333);
+	background-color: oklch(from #e46876 l c h / 0.333);
 	@include non-selectable;
 }
 
