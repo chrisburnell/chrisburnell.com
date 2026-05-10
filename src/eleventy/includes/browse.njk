@@ -8,7 +8,7 @@
 				{% if previous_post %}
 					<li>
 						<a href="{{ previous_post.url }}" class=" [ browse__previous ] ">
-							<strong>← Older</strong>
+							<strong><c-icon style="margin-inline-end: 1ex; vertical-align: baseline;"><i class="fas fa-arrow-left"></i></c-icon>Older</strong>
 							<br>
 							{% if previous_post.data.title or previous_post.data.of_title or previous_post.data.of_title_fallback -%}
 								{{ previous_post.data.title | default(previous_post.data.of_title) | default(previous_post.data.of_title_fallback) | default(previous_post.data.meta_title) | default('Untitled') | striptags(true) | safe }}
@@ -23,7 +23,7 @@
 				{% if next_post %}
 					<li>
 						<a href="{{ next_post.url }}" class=" [ browse__next ] ">
-							<strong>Newer →</strong>
+							<strong>Newer<c-icon style="margin-inline-start: 1ex; vertical-align: baseline;"><i class="fas fa-arrow-right"></i></c-icon></strong>
 							<br>
 							{% if next_post.data.title or next_post.data.of_title or next_post.data.of_title_fallback -%}
 								{{ next_post.data.title | default(next_post.data.of_title) | default(next_post.data.of_title_fallback) | default(next_post.data.meta_title) | striptags(true) | safe }}

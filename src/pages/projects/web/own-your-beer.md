@@ -15,5 +15,5 @@ tags:
 </div>
 
 <nav class=" [ grid ] [ navigator ] ">
-    <a href="{{ bookmark_of }}" class="[ button ] ">Check out OwnYourBeer →</a>
+    <a href="{{ bookmark_of }}" class="[ button ] ">Check out OwnYourBeer<c-icon style="margin-inline-start: 1ex;"><i class="fas fa-arrow-right"></i></c-icon></a>
 </nav>

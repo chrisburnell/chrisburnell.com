@@ -11,5 +11,5 @@ tags:
 ---
 
 <nav class=" [ grid ] [ navigator ] ">
-    <a href="{{ bookmark_of }}" class="[ button ] ">Check out Media Controls →</a>
+    <a href="{{ bookmark_of }}" class="[ button ] ">Check out Media Controls<c-icon style="margin-inline-start: 1ex;"><i class="fas fa-arrow-right"></i></c-icon></a>
 </nav>

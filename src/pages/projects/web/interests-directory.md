@@ -10,5 +10,5 @@ branch: main
 This project was born after I [proposed the idea](/note/slash-interests/) for website authors to create <code style="white-space: nowrap;">/interests</code> pages on their websites, a place to list out and talk about things they’re passionate about!
 
 <nav class=" [ grid ] [ navigator ] ">
-    <a href="https://chrisburnell.github.io/interests-directory/" class="[ button ] " rel="external noopener">The /interests Directory →</a>
+    <a href="https://chrisburnell.github.io/interests-directory/" class="[ button ] " rel="external noopener">The /interests Directory<c-icon style="margin-inline-start: 1ex;"><i class="fas fa-arrow-right"></i></c-icon></a>
 </nav>

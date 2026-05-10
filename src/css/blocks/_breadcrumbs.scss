@@ -5,7 +5,6 @@
 ////
 
 .breadcrumbs {
-	--delineator: "→";
 	--padding-inline: var(--size-small);
 
 	max-inline-size: 100%;
@@ -17,8 +16,18 @@
 		display: none;
 	}
 
-	& li::marker {
-		color: light-dark(var(--color-bowhead), var(--color-yeti));
+	& > :not(:last-child)::after {
+		content: "";
+		background-color: currentColor;
+		color: light-dark(var(--color-wolf), var(--color-bear));
+		mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBkPSJNNTAyLjYgMjc4LjZjMTIuNS0xMi41IDEyLjUtMzIuOCAwLTQ1LjNsLTE2MC0xNjBjLTEyLjUtMTIuNS0zMi44LTEyLjUtNDUuMyAwcy0xMi41IDMyLjggMCA0NS4zTDQwMi43IDIyNCAzMiAyMjRjLTE3LjcgMC0zMiAxNC4zLTMyIDMyczE0LjMgMzIgMzIgMzJsMzcwLjcgMC0xMDUuNCAxMDUuNGMtMTIuNSAxMi41LTEyLjUgMzIuOCAwIDQ1LjNzMzIuOCAxMi41IDQ1LjMgMGwxNjAtMTYweiIvPjwvc3ZnPg==");
+		mask-size: contain;
+		mask-position: center;
+		mask-repeat: no-repeat;
+		inline-size: var(--size-large-gigantic);
+		block-size: 1em;
+		display: inline-block;
+		vertical-align: center;
 	}
 
 	& :is(a:not(.button), .anchor) {

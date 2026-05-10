@@ -24,10 +24,10 @@ It was during a pair programming exercise recently that I had a moment of enligh
 First, we need to run through a checklist to make sure we’re prepared to build the collection:
 
 1. Set yourself up with [IndieAuth](https://indieauth.com/) and [Webmention.io](https://webmention.io/)
-2. [Pull in Webmentions as cached data into your repository](https://gist.github.com/chrisburnell/4e29dcf84431808b6c915d87a3b5790e)
-    - Make sure you've set your `WEBMENTION_IO_TOKEN` environment variable, like in a `.env` file.
-    - This is heavily inspired and in places downright taken from [Sia Karamalegos](https://sia.codes/posts/webmentions-eleventy-in-depth/), [Max Böck](https://github.com/maxboeck/eleventy-webmentions/blob/master/_data/webmentions.js), and [Zach Leatherman](https://github.com/zachleat/zachleat.com/blob/master/_data/webmentions.js)—many thanks to them for putting most of the work here!
-3. [Implement a way to pair Webmentions with posts](https://gist.github.com/chrisburnell/36134bbb26234a4d92423e352a693f44)
+2. <s>Pull in Webmentions as cached data into your repository</s>
+    - <s>Make sure you've set your `WEBMENTION_IO_TOKEN` environment variable, like in a `.env` file.</s>
+3. <s>Implement a way to pair Webmentions with posts</s>
+2. Use my plugin, [eleventy-cache-webmentions](/eleventy-cache-webmentions/)!
 
 ## Fetching and caching Webmentions
 

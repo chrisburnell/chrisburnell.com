@@ -24,7 +24,7 @@
 		{% if content_wordcount -%}
 			<li class=" [ reading-length ] ">
 				<c-icon style="margin-inline-end: 1ex;"><i class="fas fa-book-open-reader"></i></c-icon>
-				<strong>~{{ content_wordcount }}</strong>
+				<strong><span style="font-family: var(--font-family-monospace);">~</span>{{ content_wordcount }}</strong>
 				<small>words</small>
 			</li>
 		{%- endif %}
@@ -65,7 +65,7 @@
 					<c-icon style="margin-inline-end: 1ex;"><i class="fas fa-pen-fancy"></i></c-icon>
 					<small>written by</small>
 				{% elif category == 'game' %}
-					<c-icon style="margin-inline-end: 1ex;"><i class="fas fa-gamepad"></i></c-icon>
+					<c-icon style="margin-inline-end: 1ex;"><i class="fas fa-file-code"></i></c-icon>
 					<small>produced by</small>
 				{% elif category == 'music' %}
 					<c-icon style="margin-inline-end: 1ex;"><i class="fas fa-music"></i></c-icon>
