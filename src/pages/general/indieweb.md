@@ -12,19 +12,19 @@ description: How I've implemented and interact with the <a href="https://indiewe
 I author posts of various *types* on this website, some of which I syndicate to silos around the web.
 
 <dl>
-    <dt><a href="/articles/">Articles</a></dt>
+    <dt><a href="/articles/"><c-icon><i class="fas fa-file"></i></c-icon>Articles</a></dt>
     <dd><a href="https://indieweb.org/PESOS" rel="external noopener"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> the description to <a href="{{ author.mastodon_domain }}/@{{ author.mastodon.split('@')[1] }}" rel="external noopener">Mastodon</a> and then to this website.</dd>
-    <dt><a href="/notes/">Notes</a></dt>
+    <dt><a href="/notes/"><c-icon><i class="fas fa-note-sticky"></i></c-icon>Notes</a></dt>
     <dd><a href="https://indieweb.org/PESOS" rel="external noopener"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> the content to <a href="{{ author.mastodon_domain }}/@{{ author.mastodon.split('@')[1] }}" rel="external noopener">Mastodon</a> and then to this website.</dd>
-    <dt><a href="/bookmarks/">Bookmarks</a></dt>
+    <dt><a href="/bookmarks/"><c-icon><i class="fas fa-bookmark"></i></c-icon>Bookmarks</a></dt>
     <dd><a href="https://indieweb.org/PESOS" rel="external noopener"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> the URL and content to <a href="{{ author.mastodon_domain }}/@{{ author.mastodon.split('@')[1] }}" rel="external noopener">Mastodon</a> and then to this website.</dd>
-    <dt><a href="/code/">Pens</a></dt>
+    <dt><a href="/code/"><c-icon><i class="fas fa-floppy-disk"></i></c-icon>Code</a></dt>
     <dd>Ones that I’m especially proud of I will cross-post, manually, to this website.</dd>
-    <dt><a href="/beer/">Beer</a></dt>
+    <dt><a href="/beer/"><c-icon><i class="fas fa-beer-mug-empty"></i></c-icon>Beer</a></dt>
     <dd><a href="https://indieweb.org/PESOS" rel="external noopener"><abbr title="Publish Elsewhere, Syndicate on Own Site">PESOS</abbr></a> the check-in data from <a href="https://untappd.com" rel="external noopener">Untappd</a> using my project, <a href="https://ownyourbeer.chrisburnell.com" rel="external noopener">OwnYourBeer</a>, to this website.</dd>
-    <dt><a href="/books/">Books</a></dt>
+    <dt><a href="/books/"><c-icon><i class="fas fa-book-open"></i></c-icon>Books</a></dt>
     <dd>Typically posted only on this website.</dd>
-    <dt><a href="/music/">Music</a></dt>
+    <dt><a href="/music/"><c-icon><i class="fas fa-music"></i></c-icon>Music</a></dt>
     <dd>Typically posted only on this website.</dd>
 </dl>
 
