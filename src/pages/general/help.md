@@ -15,13 +15,13 @@ You get in touch with me and briefly describe what you want me to help with:
     <dl>
         <dt><c-icon style="margin-inline-end: 1ex;"><i class="fas fa-at"></i></c-icon>Email:</dt>
         <dd><a href="mailto:{{ author.email }}" class=" [ canada ] ">{{ author.email }}</a></dd>
-        <dt><c-icon><i class="fab fa-bluesky"></i></c-icon>Bluesky:</dt>
+        <dt><c-icon style="margin-inline-end: 1ex;"><i class="fab fa-bluesky"></i></c-icon>Bluesky:</dt>
         <dd><a href="https://bsky.app/profile/{{ author.bluesky }}" class=" [ canada ] " title="{{ author.name }} on Bluesky">{{ author.bluesky }}</a></dd>
-        <dt><c-icon><i class="fab fa-discord"></i></c-icon>Discord:</dt>
+        <dt><c-icon style="margin-inline-end: 1ex;"><i class="fab fa-discord"></i></c-icon>Discord:</dt>
         <dd><a href="https://discordapp.com/users/{{ author.discord_id }}" class=" [ canada ] " title="{{ author.name }} on Discord">{{ author.discord }}</a></dd>
-        <dt><c-icon><i class="fab fa-mastodon"></i></c-icon>Mastodon:</dt>
+        <dt><c-icon style="margin-inline-end: 1ex;"><i class="fab fa-mastodon"></i></c-icon>Mastodon:</dt>
         <dd><a href="{{ author.mastodon_domain }}/@{{ author.mastodon.split('@')[1] }}" class=" [ canada ] " title="{{ author.name }} on Mastodon">{{ author.mastodon }}</a></dd>
-        <dt><c-icon><i class="fab fa-linkedin"></i></c-icon>LinkedIn:</dt>
+        <dt><c-icon style="margin-inline-end: 1ex;"><i class="fab fa-linkedin"></i></c-icon>LinkedIn:</dt>
         <dd><a href="https://www.linkedin.com/in/{{ author.linkedin }}" class=" [ canada ] " title="{{ author.name }} on LinkedIn">{{ author.linkedin }}</a></dd>
     </dl>
 </address>

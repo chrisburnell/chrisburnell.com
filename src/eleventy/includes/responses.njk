@@ -12,18 +12,20 @@
 				{% if webmentions.length %}<h2 class=" [ sticky ] [ no-fragment ] ">{{ webmentions.length }} Response{{ 's' if webmentions.length > 1 }}</h2>{% endif %}
 				{% if reactions.length or stargazers -%}
 					<ol id="reactions" class=" [ reactions ] [ cluster ] [ strong ] ">
-						<li><button class=" [ button--small ] [ iine-button ] " data-id="{{ canonical }}" aria-hidden="true"><span class="counter">Loading…</span></button></li>
+						{% if not env.ELEVENTY_RUN_MODE == 'build' -%}
+							<li><button class=" [ button--small ] [ iine-button ] " data-id="{{ canonical }}" aria-hidden="true"><span class="counter">Loading…</span></button></li>
+						{%- endif -%}
 						{% if webmentions.bookmarks.length -%}
-							<li><c-icon><i class="fas fa-bookmark"></i></c-icon> {{ webmentions.bookmarks.length }} Bookmark{{ 's' if webmentions.bookmarks.length > 1 }}</li>
+							<li><c-icon style="margin-inline-end: 1ex; vertical-align: center;"><i class="fas fa-bookmark"></i></c-icon>{{ webmentions.bookmarks.length }} Bookmark{{ 's' if webmentions.bookmarks.length > 1 }}</li>
 						{%- endif %}
 						{% if webmentions.likes.length -%}
-							<li><c-icon><i class="fas fa-heart"></i></c-icon> {{ webmentions.likes.length }} Like{{ 's' if webmentions.likes.length > 1 }}</li>
+							<li><c-icon style="margin-inline-end: 1ex; vertical-align: center;"><i class="fas fa-heart"></i></c-icon>{{ webmentions.likes.length }} Like{{ 's' if webmentions.likes.length > 1 }}</li>
 						{%- endif %}
 						{% if webmentions.reposts.length -%}
-							<li><c-icon><i class="fas fa-retweet"></i></c-icon> {{ webmentions.reposts.length }} Repost{{ 's' if webmentions.reposts.length > 1 }}</li>
+							<li><c-icon style="margin-inline-end: 1ex; vertical-align: center;"><i class="fas fa-retweet"></i></c-icon>{{ webmentions.reposts.length }} Repost{{ 's' if webmentions.reposts.length > 1 }}</li>
 						{%- endif %}
 						{% if webmentions.links.length -%}
-							<li><c-icon><i class="fas fa-link"></i></c-icon> {{ webmentions.links.length }} Link{{ 's' if webmentions.links.length > 1 }}</li>
+							<li><c-icon style="margin-inline-end: 1ex; vertical-align: center;"><i class="fas fa-link"></i></c-icon>{{ webmentions.links.length }} Link{{ 's' if webmentions.links.length > 1 }}</li>
 						{%- endif %}
 						{% if webmentions.socialReplies.length -%}
 							{% set syndication_array = [] -%}
@@ -33,13 +35,13 @@
 									{% set syndication_array = (syndication_array.push(syndication_item), syndication_array) -%}
 								{%- endfor %}
 							{%- endif %}
-							<li><c-icon><i class="fas fa-reply"></i></c-icon> {{ webmentions.socialReplies.length }} Social {% if webmentions.socialReplies.length > 1 %}Replies{% else %}Reply{% endif %}{% if syndicate_to.length %} <small>(on {{ syndication_array | conjunction("narrow") | safe }})</small>{% endif %}</li>
+							<li><c-icon style="margin-inline-end: 1ex; vertical-align: center;"><i class="fas fa-reply"></i></c-icon>{{ webmentions.socialReplies.length }} Social {% if webmentions.socialReplies.length > 1 %}Replies{% else %}Reply{% endif %}{% if syndicate_to.length %} <small>(on {{ syndication_array | conjunction("narrow") | safe }})</small>{% endif %}</li>
 						{%- endif %}
 						{% if stargazers -%}
-							<li><c-icon><i class="fas fa-star"></i></c-icon> <a href="https://github.com/{{ git }}">{{ stargazers }} Stargazer{{ 's' if stargazers > 1 }}</a></li>
+							<li><a href="https://github.com/{{ git }}" rel="external noopener"><c-icon style="vertical-align: center;"><i class="fas fa-star"></i></c-icon>{{ stargazers }} Stargazer{{ 's' if stargazers > 1 }}</a></li>
 						{%- endif %}
 					</ol>
-				{%- else %}
+				{%- elif not env.ELEVENTY_RUN_MODE == 'build' %}
 					<div>
 						<button class=" [ button--small ] [ iine-button ] " data-id="{{ canonical }}" aria-hidden="true"><span class="counter">Loading…</span></button>
 					</div>
@@ -77,7 +79,7 @@
 					</ol>
 				{%- endif %}
 			</div>
-		{%- else %}
+		{%- elif not env.ELEVENTY_RUN_MODE == 'build' %}
 			<div>
 				<button class=" [ button--small ] [ iine-button ] " data-id="{{ canonical }}" aria-hidden="true"><span class="counter">Loading…</span></button>
 			</div>
