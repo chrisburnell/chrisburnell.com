@@ -217,7 +217,7 @@ html {
 **You can view the final stylesheet that I’m using on my personal pastebin:**
 
 <nav class=" [ grid ] [ navigator ] ">
-    <a href="https://gist.chrisburnell.com/chrisburnell/5ad5527ea032488b9ea99d9cb4f6b7e2" class="button">gist.chrisburnell.com<c-icon style="margin-inline-start: 1ex;"><i class="fas fa-arrow-right"></i></c-icon></a>
+    <a href="https://pastebin.chrisburnell.com/chrisburnell/5ad5527ea032488b9ea99d9cb4f6b7e2" class="button">pastebin.chrisburnell.com<c-icon style="margin-inline-start: 1ex;"><i class="fas fa-arrow-right"></i></c-icon></a>
 </nav>
 
 ## Conclusion

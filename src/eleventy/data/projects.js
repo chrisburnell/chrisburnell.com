@@ -123,13 +123,6 @@ export default {
 			},
 		},
 		{
-			url: "https://gist.chrisburnell.com/",
-			data: {
-				title: "gist.chrisburnell.com",
-				description: `A <q>pastebin</q> instance powered by [Opengist](https://opengist.io) (like Git, but for one file/code snippet at a time)`,
-			},
-		},
-		{
 			url: "https://ntfy.chrisburnell.com/",
 			data: {
 				title: "ntfy.chrisburnell.com",
@@ -144,10 +137,10 @@ export default {
 			},
 		},
 		{
-			url: "https://status.chrisburnell.com/",
+			url: "https://pastebin.chrisburnell.com/",
 			data: {
-				title: "status.chrisburnell.com",
-				description: `Simple uptime monitoring powered by [website-monitor](https://source.tube/neatnik/website-monitor) by [Adam Newbold](https://www.neatnik.net)`,
+				title: "pastebin.chrisburnell.com",
+				description: `A <q>pastebin</q> instance powered by [Opengist](https://opengist.io) (like Git, but for one file/code snippet at a time)`,
 			},
 		},
 		{
@@ -155,6 +148,13 @@ export default {
 			data: {
 				title: "speedlify.chrisburnell.com",
 				description: `Periodic website performance measuring powered by [Speedlify](https://github.com/zachleat/speedlify)`,
+			},
+		},
+		{
+			url: "https://status.chrisburnell.com/",
+			data: {
+				title: "status.chrisburnell.com",
+				description: `Simple uptime monitoring powered by [website-monitor](https://source.tube/neatnik/website-monitor) by [Adam Newbold](https://www.neatnik.net)`,
 			},
 		},
 		{
