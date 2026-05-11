@@ -79,7 +79,7 @@ The gist of the plugin is that you can define CSS styles and apply them to pages
 </style>
 ```
 
-<aside><p>I actually wish that the way in which styles are saved and stored could be improved—after switching to <a href="https://git-scm.com" rel="external noopener">git</a>, I have a tendency to want to add versioning to all of my projects. If there was some sort of <a href="https://gist.github.com" rel="external noopener">GitHub Gist</a> hook or something—Let me know <a href="#respond">in the comments</a> if you know of anything like what I’m looking for!</p></aside>The injected CSS actually refreshes as well, à la [LiveReload](http://livereload.com), so you don’t need to refresh your browser when saving changes. The in-browser code editor isn’t terrible either; it’s running on [CodeMirror](http://codemirror.net).
+<aside><p>I actually wish that the way in which styles are saved and stored could be improved—after switching to <a href="https://git-scm.com" rel="external noopener">git</a>, I have a tendency to want to add versioning to all of my projects. If there was some sort of <a href="https://gist.github.com" rel="external noopener">GitHub Gist</a> hook or something—Let me know <a href="#respond">in the comments</a> if you know of anything like what I’m looking for!</p></aside>The injected CSS actually refreshes as well, à la <a href="http://livereload.com" rel="external noopener">LiveReload</a>, so you don’t need to refresh your browser when saving changes. The in-browser code editor isn’t terrible either; it’s running on <a href="http://codemirror.net" rel="external noopener">CodeMirror</a>.
 
 <h2 id="brass-tacks">Good old Brass Tacks</h2>
 
