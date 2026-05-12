@@ -12,7 +12,7 @@
 				{% if webmentions.length %}<h2 class=" [ sticky ] [ no-fragment ] ">{{ webmentions.length }} Response{{ 's' if webmentions.length > 1 }}</h2>{% endif %}
 				{% if reactions.length or stargazers -%}
 					<ol id="reactions" class=" [ reactions ] [ cluster ] [ strong ] ">
-						{% if env.ELEVENTY_RUN_MODE == 'build' -%}
+						{% if eleventy.env.runMode === 'build' -%}
 							<li><button class=" [ button--small ] [ iine-button ] " data-id="{{ canonical }}" aria-hidden="true"><span class="counter">Loading…</span></button></li>
 						{%- endif -%}
 						{% if webmentions.bookmarks.length -%}
@@ -41,7 +41,7 @@
 							<li><a href="https://github.com/{{ git }}" rel="external noopener"><c-icon style="vertical-align: center;"><i class="fas fa-star"></i></c-icon>{{ stargazers }} Stargazer{{ 's' if stargazers > 1 }}</a></li>
 						{%- endif %}
 					</ol>
-				{%- elif env.ELEVENTY_RUN_MODE == 'build' %}
+				{%- elif eleventy.env.runMode === 'build' %}
 					<div>
 						<button class=" [ button--small ] [ iine-button ] " data-id="{{ canonical }}" aria-hidden="true"><span class="counter">Loading…</span></button>
 					</div>
@@ -79,7 +79,7 @@
 					</ol>
 				{%- endif %}
 			</div>
-		{%- elif env.ELEVENTY_RUN_MODE == 'build' %}
+		{%- elif eleventy.env.runMode === 'build' %}
 			<div>
 				<button class=" [ button--small ] [ iine-button ] " data-id="{{ canonical }}" aria-hidden="true"><span class="counter">Loading…</span></button>
 			</div>

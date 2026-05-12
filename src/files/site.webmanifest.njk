@@ -4,7 +4,7 @@
   "default_locale": "{{ site.locale }}",
   "name": "{{ site.title | striptags(true) | safe }}",
   "short_name": "{{ site.url | getHost }}",
-  "description": "{{ site.description | striptags(true) | safe }}",
+  "description": "{{ site.description | striptags(true) | replace("’", "'") | safe }}",
   "display": "standalone",
   "orientation": "any",
   "start_url": "{{ site.url }}",

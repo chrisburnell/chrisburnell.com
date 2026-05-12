@@ -138,7 +138,7 @@
 
 		{# ServiceWorker -#}
 		{% if eleventy.env.runMode === 'build' and not excludeFromServiceWorker -%}
-			<script>{% include '../../js/navigator.js' %}</script>
+			<script defer>{% include '../../js/navigator.js' %}</script>
 		{%- endif %}
 
 		{# Deferred JS -#}
