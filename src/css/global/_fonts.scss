@@ -6,7 +6,10 @@
 @font-face {
 	font-family: "Adjusted Arial Fallback";
 	src: local(Arial);
-	ascent-override: 80%;
+	size-adjust: 98%;
+	ascent-override: 100%;
+	descent-override: normal;
+	line-gap-override: normal;
 	// prettier-ignore
 	unicode-range:
 		U+0020-007D,

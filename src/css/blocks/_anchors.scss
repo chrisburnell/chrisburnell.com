@@ -31,15 +31,15 @@ h2 :is(a:not(.button), .anchor):not(:hover, :focus, :active) {
 sup > a:first-child:last-child,
 .fragment-anchor:is(:hover, :focus, :active) {
 	background-color: var(--body-color);
-    color: oklch(from var(--body-background-color) l 0 0) !important;
+	color: oklch(from var(--body-background-color) l 0 0) !important;
 }
 :is([id^="fnref"], [href^="#fnref"]),
 sup > a:first-child:last-child,
 .fragment-anchor {
-    padding-inline: 0.5ch;
+	padding-inline: 0.5ch;
 	outline: var(--size-border-thin) solid transparent;
-    border-radius: var(--size-border-default);
-    text-decoration: none;
+	border-radius: var(--size-border-default);
+	text-decoration: none;
 
 	&:is(:hover, :focus, :active) {
 		outline-color: var(--color-maple);
