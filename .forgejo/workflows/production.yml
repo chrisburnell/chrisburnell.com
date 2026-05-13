@@ -45,9 +45,9 @@ jobs:
         uses: actions/cache/restore@d4323d4df104b026a6aa633fdb11d772146be0bf # 4.2.2
         with:
           path: .cache
-          key: eleventy-cache-${{ env.FORGEJO_RUN_ID }}-${{ env.FORGEJO_RUN_ATTEMPT }}
+          key: eleventy-cache-${{ github.run_id }}-${{ github.run_attempt }}
           restore-keys: |
-            eleventy-cache-${{ env.FORGEJO_RUN_ID }}-
+            eleventy-cache-${{ github.run_id }}-
             eleventy-cache-
 
       - name: Restore Site cache
@@ -58,7 +58,7 @@ jobs:
             _site
             !_site/og-images
             !_site/pagefind
-          key: site-cache-${{ env.FORGEJO_RUN_ID }}
+          key: site-cache-${{ github.run_id }}
           restore-keys: site-cache-
 
       - name: Restore OG images cache
@@ -66,7 +66,7 @@ jobs:
         uses: actions/cache/restore@d4323d4df104b026a6aa633fdb11d772146be0bf # 4.2.2
         with:
           path: _site/og-images
-          key: og-images-cache-${{ env.FORGEJO_RUN_ID }}
+          key: og-images-cache-${{ github.run_id }}
           restore-keys: og-images-cache-
 
       - name: Build
@@ -116,7 +116,7 @@ jobs:
         uses: actions/cache/save@d4323d4df104b026a6aa633fdb11d772146be0bf # 4.2.2
         with:
           path: .cache
-          key: eleventy-cache-${{ env.FORGEJO_RUN_ID }}-${{ env.FORGEJO_RUN_ATTEMPT }}
+          key: eleventy-cache-${{ github.run_id }}-${{ github.run_attempt }}
 
       - name: Save Site cache
         id: save-site-cache
@@ -127,7 +127,7 @@ jobs:
             _site
             !_site/og-images
             !_site/pagefind
-          key: site-cache-${{ env.FORGEJO_RUN_ID }}
+          key: site-cache-${{ github.run_id }}
 
       - name: Save OG images cache
         id: save-og-images-cache
@@ -135,4 +135,4 @@ jobs:
         uses: actions/cache/save@d4323d4df104b026a6aa633fdb11d772146be0bf # 4.2.2
         with:
           path: _site/og-images
-          key: og-images-cache-${{ env.FORGEJO_RUN_ID }}
+          key: og-images-cache-${{ github.run_id }}
