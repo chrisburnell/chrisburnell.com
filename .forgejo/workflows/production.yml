@@ -89,7 +89,7 @@ jobs:
         uses: ./.forgejo/actions/check
 
       - name: Install SSH Key
-        uses: https://github.com/shimataro/ssh-key-action@87a8f067114a8ce263df83e9ed5c849953548bc3 # 2.8.1
+        uses: https://github.com/shimataro/ssh-key-action@d4fffb50872869abe2d9a9098a6d9c5aa7d16be4 # 2.7.0
         with:
           key: ${{ secrets.DEPLOY_KEY }}
           known_hosts: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
