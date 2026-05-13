@@ -18,7 +18,7 @@ on:
 
 concurrency:
   group: production
-  cancel-in-progress: ${{ env.FORGEJO_EVENT_NAME != 'schedule' }}
+  cancel-in-progress: ${{ github.event_name != 'schedule' }}
 
 jobs:
   build:
