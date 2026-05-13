@@ -20,7 +20,7 @@ const fetchOptions = {
 const movies = async function () {
 	const url = `https://api.trakt.tv/users/${trakt}/history/movies?page=1&limit=20`;
 	const json = await EleventyFetch(url, {
-		duration: cacheDurations.hourly,
+		duration: cacheDurations.daily,
 		type: "json",
 		fetchOptions,
 	});
@@ -33,7 +33,7 @@ const movies = async function () {
 const shows = async function () {
 	const url = `https://api.trakt.tv/users/${trakt}/history/shows?page=1&limit=20`;
 	const json = await EleventyFetch(url, {
-		duration: cacheDurations.hourly,
+		duration: cacheDurations.daily,
 		type: "json",
 		fetchOptions,
 	});
@@ -45,10 +45,14 @@ const shows = async function () {
  */
 export default async function () {
 	if (process.env.TRAKT_CLIENT_ID) {
-		return {
-			movies: await movies(),
-			shows: await shows(),
-		};
+		try {
+			return {
+				movies: await movies(),
+				shows: await shows(),
+			};
+		} catch (error) {
+			console.error("Trakt fetch failed", error);
+		}
 	}
 	return {
 		movies: [],
