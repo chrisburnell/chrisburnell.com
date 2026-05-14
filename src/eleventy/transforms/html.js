@@ -29,7 +29,7 @@ export default async function (value, outputPath) {
 			isJSNakedDay;
 
 		if (!needsProcessing) {
-			return value;
+			return $.root().html();
 		}
 
 		// Remove stylesheet <link> elements with empty `href` attributes

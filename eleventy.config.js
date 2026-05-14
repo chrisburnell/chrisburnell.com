@@ -179,6 +179,12 @@ export default async function (eleventyConfig) {
 				`[${filtersSync.urls.getHost(siteURL)}] Building...`,
 			),
 		);
+		// Clean up stray SVG elements in the sprites SVG output
+		eleventyConfig
+			.getBundleManagers()
+			[
+				"fontawesome"
+			]?.setTransforms([(content) => content.replace(/<svg[^>]*>/g, "").replace(/<\/svg>/g, "")]);
 	});
 
 	return {

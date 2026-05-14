@@ -129,10 +129,8 @@
 
 		{# SVG Sprites -#}
 		{% set svg %}{% include '../../../images/sprites.svg' %}{% endset -%}
-		{{ svg | replace('<?xml version="1.0" encoding="utf-8"?>', '') | replace('<svg', '<svg display="none" aria-hidden="true"') | safe }}
-
-		{# Font Awesome SVG Sprites #}
-		{% getBundle 'fontawesome' %}
+		{% set icons %}{% getBundle 'fontawesome' %}{% endset %}
+		{{ svg | replace('<?xml version="1.0" encoding="utf-8"?>', '') | replace('<svg', '<svg display="none" aria-hidden="true"') | replace('</svg>', icons + '</svg>') | safe }}
 
 		{{- content | safe -}}
 
