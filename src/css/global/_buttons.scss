@@ -58,6 +58,10 @@ button {
 
 	&:not([disabled]):is(:hover, :focus, :active, [aria-selected="true"]) {
 		outline-color: var(--outline-color, Highlight);
+
+		& :is(.emoji, .icon) {
+			transform: scale(1.2);
+		}
 	}
 
 	&:not([disabled]):active {

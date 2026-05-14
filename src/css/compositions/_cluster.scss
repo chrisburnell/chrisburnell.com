@@ -32,4 +32,8 @@
 	&[data-delineator] {
 		--delineator: attr(data-delineator);
 	}
+
+	& [href]:is(:hover, :focus, :active) :is(.emoji, .icon) {
+		transform: scale(1.1);
+	}
 }

@@ -31,6 +31,10 @@
 			color: inherit;
 			border-color: var(--color-icon-active, var(--color-maple));
 			z-index: var(--z-index-above);
+
+			& :is(.emoji, .icon) {
+				transform: scale(1.1);
+			}
 		}
 
 		&:active {
@@ -43,7 +47,7 @@
 		cursor: help;
 	}
 
-	& .emoji {
+	& :is(.emoji, .icon) {
 		padding-inline-end: 0.625ch;
 		vertical-align: initial !important;
 	}

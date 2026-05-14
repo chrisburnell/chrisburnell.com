@@ -18,9 +18,9 @@ svg {
 	fill: var(--fill, currentColor);
 
 	:is(a:not(.button), .anchor):is(:hover, :focus, :active) > &,
-	:is(a:not(.button), .anchor):is(:hover, :focus, :active) .emoji &,
+	:is(a:not(.button), .anchor):is(:hover, :focus, :active) :is(.emoji, .icon) &,
 	:is(button:not(.anchor), .button, [type=button], [role=tab]):is(:hover, :focus, :active) > &,
-	:is(button:not(.anchor), .button, [type=button], [role=tab]):is(:hover, :focus, :active) .emoji & {
+	:is(button:not(.anchor), .button, [type=button], [role=tab]):is(:hover, :focus, :active) :is(.emoji, .icon) & {
 		fill: var(--fill-hover, var(--fill, currentColor));
 	}
 }

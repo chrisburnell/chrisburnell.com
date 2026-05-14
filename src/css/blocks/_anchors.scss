@@ -60,8 +60,16 @@ sup > a:first-child:last-child,
 		@include visually-hidden;
 	}
 
+	& svg {
+		vertical-align: center;
+	}
+
 	&:is(:hover, :focus, :active) {
 		outline-color: var(--color-maple);
+
+		& svg {
+			transform: scale(1.1);
+		}
 	}
 }
 

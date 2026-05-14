@@ -20,7 +20,7 @@ export default async function (value, outputPath) {
 			$(".content").length ||
 			$(".generate-toc").length ||
 			$("[data-language]").length ||
-			$(".emoji").length ||
+			$(".emoji, .icon").length ||
 			$(".no-fragment").length ||
 			$(".skip-wordcount").length ||
 			$(".no-rss").length ||
@@ -112,8 +112,8 @@ export default async function (value, outputPath) {
 			$(element).attr("id", headingID);
 		});
 
-		// Skip presentational emojis
-		$(".emoji").attr("aria-hidden", true);
+		// Skip presentational emojis and SVG icons
+		$(".emoji, .icon").attr("aria-hidden", true);
 
 		// Strip utility classes
 		$(".no-fragment, .skip-wordcount, .no-rss").each((_, element) => {

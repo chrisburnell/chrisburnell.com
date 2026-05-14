@@ -53,7 +53,7 @@
 		text-align: end;
 	}
 
-	& .emoji {
+	& :is(.emoji, .icon) {
 		font-size: var(--font-size-gamma-max);
 		line-height: 0;
 		padding-inline-end: 0;
