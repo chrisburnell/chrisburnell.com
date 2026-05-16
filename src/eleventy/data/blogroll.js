@@ -842,6 +842,12 @@ export default [
 		rss: "https://brennan.day/feed.xml",
 		mastodon: "brennan@social.lol",
 	},
+	{
+		title: "Julia Evans",
+		url: "https://jvns.ca",
+		rss: "https://jvns.ca/atom.xml",
+		mastodon: "b0rk@jvns.ca",
+	},
 ].sort((a, b) => {
 	return a.title.localeCompare(b.title, undefined, {
 		numeric: true,
