@@ -1,0 +1,4 @@
+# Block AI bots
+if ($http_user_agent ~* "({{ robots.nginx }})"){
+	return 403;
+}
