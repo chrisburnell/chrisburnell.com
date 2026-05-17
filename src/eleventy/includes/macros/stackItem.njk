@@ -13,7 +13,7 @@
 	{% set show_hotness = params.show_hotness != false and item.data.rank.hot and item.data.rank.hot <= 10 -%}
 	{% set show_category_icon = params.show_category_icon != false -%}
 	{# Default OFF -#}
-	{% set show_pageviews = (params.show_pageviews and item.data.pageviews.total >= 1000) or eleventy.env.runMode !== 'build' -%}
+	{% set show_pageviews = params.show_pageviews and item.data.pageviews.total >= 1000 -%}
 	{% set show_updated = item.data.updated and ((item.data.updated | friendlyDate) != (item.data.date | friendlyDate)) -%}
 	{% set show_category = params.show_category and item.data.category -%}
 	{% set show_collections = params.show_collections and ('writing' in item.data.tags) -%}
