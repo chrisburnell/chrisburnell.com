@@ -1,11 +1,11 @@
 import { AssetCache } from "@11ty/eleventy-fetch";
 import caniuse from "caniuse-api";
 import { createRequire } from "node:module";
-import browserFeatures from "./browserFeatures.js";
-import browsersByType from "./browsersByType.js";
-import { cacheDurations } from "./site.js";
+import browserFeatures from "../browserFeatures.js";
+import browsersByType from "../browsersByType.js";
+import { cacheDurations } from "../site.js";
 const require = createRequire(import.meta.url);
-const mdnBrowserData = require("../../../node_modules/@mdn/browser-compat-data/data.json");
+const mdnBrowserData = require("@mdn/browser-compat-data");
 // import mdnBrowserData from "@mdn/browser-compat-data" assert { type: "json" }
 
 /**

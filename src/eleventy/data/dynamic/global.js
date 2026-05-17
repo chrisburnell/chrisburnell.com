@@ -2,18 +2,6 @@ import dotenv from "dotenv";
 dotenv.config({ quiet: true });
 
 import { Temporal } from "@js-temporal/polyfill";
-import {
-	isCSSNakedDay,
-	isEarlyMidwinterPeriod,
-	isJSNakedDay,
-	isMidwinterPeriod,
-} from "./timeRanges.js";
-export {
-	isCSSNakedDay,
-	isEarlyMidwinterPeriod,
-	isJSNakedDay,
-	isMidwinterPeriod,
-} from "./timeRanges.js";
 
 export const personalApiKeyForLocal = process.env.PERSONAL_API_KEY_FOR_LOCAL;
 
@@ -50,9 +38,5 @@ export default {
 	flexibleSorting,
 	nowEpoch,
 	nowISO,
-	isCSSNakedDay,
-	isJSNakedDay,
-	isEarlyMidwinterPeriod,
-	isMidwinterPeriod,
 	random,
 };

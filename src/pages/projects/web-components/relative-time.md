@@ -15,9 +15,9 @@ tags:
 <noscript><p class=" [ box  box--error ] ">Unfortunately, this Web Component requires JavaScript to function correctly!</p></noscript>
 
 <figure class=" [ box ] [ gamma ] [ requires-js ] ">
-    <p><time datetime="{{ global.currentYear }}-04-09T00:00:00+14:00">9 April {{ global.currentYear }}</p>
+    <p><time datetime="{{ dynamic.global.currentYear }}-04-09T00:00:00+14:00">9 April {{ dynamic.global.currentYear }}</p>
     <p class=" [ requires-js ] " aria-hidden="true">↓</p>
-    <p class=" [ requires-js ] "><relative-time><time datetime="{{ global.currentYear }}-04-09T00:00:00+14:00">9 April {{ global.currentYear }}</relative-time></p>
+    <p class=" [ requires-js ] "><relative-time><time datetime="{{ dynamic.global.currentYear }}-04-09T00:00:00+14:00">9 April {{ dynamic.global.currentYear }}</relative-time></p>
 </figure>
 
 {% include 'package.njk' %}

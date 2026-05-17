@@ -1,4 +1,4 @@
 # Block AI bots
-if ($http_user_agent ~* "({{ robots.nginx }})"){
+if ($http_user_agent ~* "({{ dynamic.robots.nginx }})"){
 	return 403;
 }

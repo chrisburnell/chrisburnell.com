@@ -1,7 +1,7 @@
 // by Robb Knight: https://rknight.me/blog/blocking-bots-with-nginx/
 
 import { AssetCache } from "@11ty/eleventy-fetch";
-import { cacheDurations } from "./site.js";
+import { cacheDurations } from "../site.js";
 
 /**
  * @returns {{ text: string, nginx: string }}

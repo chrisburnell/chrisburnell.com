@@ -45,7 +45,7 @@ layout: base
 	</h1>
 
 	<div class=" [ content ] [ flow ] {% if toc %}generate-toc{% endif %}">
-		{% if global.isJSNakedDay -%}
+		{% if dynamic.timeRanges.isJSNakedDay -%}
 			{% include 'js-naked-day.njk' %}
 		{%- endif %}
 

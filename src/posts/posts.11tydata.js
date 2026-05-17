@@ -6,7 +6,7 @@ import {
 	getWebmentionsByType,
 } from "@chrisburnell/eleventy-cache-webmentions";
 import configWebmentions from "../eleventy/config/webmentions.js";
-import analytics from "../eleventy/data/analytics.js";
+import analytics from "../eleventy/data/dynamic/analytics.js";
 import { untappd } from "../eleventy/data/author.js";
 import { url as siteURL } from "../eleventy/data/site.js";
 import { getCategoryName } from "../eleventy/filters/collections.js";

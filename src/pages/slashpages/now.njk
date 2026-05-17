@@ -114,15 +114,15 @@ js_module_includes:
 	{% endif %}
 {%- endif %}
 
-{% if trakt.shows.length or trakt.movies.length -%}
+{% if dynamic.trakt.shows.length or dynamic.trakt.movies.length -%}
 	<hr>
 
 	<h2 id="movies-tv">Movies & TV</h2>
 
-	{% if trakt.movies.length %}
+	{% if dynamic.trakt.movies.length %}
 		<h3 id="movies">Movies</h3>
 		<div class=" [ grid ] [ shelf  shelf--portait ] ">
-			{% for item in (trakt.movies | limit(6)) -%}
+			{% for item in (dynamic.trakt.movies | limit(6)) -%}
 				<article class=" [ flow ] ">
 					{# <a href="https://trakt.tv/movies/{{ item.movie.ids.slug }}" aria-hidden="true" tabindex="-1" class=" [ cover-anchor ] ">
 						<img src="" alt="" role="presentation" loading="lazy" decoding="async" class=" [ cover ] [ u-photo ] ">
@@ -143,10 +143,10 @@ js_module_includes:
 		</div>
 	{% endif %}
 
-	{% if trakt.shows.length %}
+	{% if dynamic.trakt.shows.length %}
 		<h3 id="tv">TV Shows</h3>
 		<div class=" [ grid ] [ shelf  shelf--portait ] ">
-			{% for item in (trakt.shows | limit(6)) -%}
+			{% for item in (dynamic.trakt.shows | limit(6)) -%}
 				<article class=" [ flow ] ">
 					{# <a href="https://trakt.tv/shows/{{ item.show.ids.slug }}/seasons/{{ item.episode.season }}/episodes/{{ item.episode.number }}" aria-hidden="true" tabindex="-1" class=" [ cover-anchor ] ">
 						<img src="" alt="" role="presentation" loading="lazy" decoding="async" class=" [ cover ] [ u-photo ] ">
@@ -196,9 +196,9 @@ js_module_includes:
 
 <h3 id="listening"><a href="/listening/">Latest listens</a></h3>
 
-<lastfm-listening url="https://api.chrisburnell.com/lastfm-recenttracks?username={{ author.lastfm }}&limit=3{% if global.personalApiKeyForLocal %}&secret={{ global.personalApiKeyForLocal }}{% endif %}" limit="3" aria-live="true">
+<lastfm-listening url="https://api.chrisburnell.com/lastfm-recenttracks?username={{ author.lastfm }}&limit=3{% if dynamic.global.personalApiKeyForLocal %}&secret={{ dynamic.global.personalApiKeyForLocal }}{% endif %}" limit="3" aria-live="true">
 	<div class=" [ grid ] [ shelf  shelf--square ] ">
-		{% for track in (lastfm.recentTracks | limit(3)) -%}
+		{% for track in (dynamic.lastfm.recentTracks | limit(3)) -%}
 			<article class=" [ flow ] ">
 				<a href="{{ track.url }}" aria-hidden="true" tabindex="-1" class=" [ cover-anchor ] ">
 					<img src="{{ track.imageUrl }}" alt="" role="presentation" loading="lazy" decoding="async" class=" [ cover ] [ u-photo ] ">
@@ -217,11 +217,11 @@ js_module_includes:
 	</div>
 </lastfm-listening>
 
-{% if lastfm.topAlbums.length -%}
+{% if dynamic.lastfm.topAlbums.length -%}
 	<h3 id="top-albums">Top Albums <small>of the last 7 days</small></h3>
 
 	<div class=" [ grid ] [ shelf  shelf--square ] ">
-		{% for album in (lastfm.topAlbums | limit(3)) -%}
+		{% for album in (dynamic.lastfm.topAlbums | limit(3)) -%}
 			{%- set item = collections.categoryMusic | arePublished | arrayKeyValueEquals('data.title', album.name, false) | first -%}
 			{% if item -%}
 				{{ shelfItem(item) }}
@@ -242,11 +242,11 @@ js_module_includes:
 	</div>
 {%- endif %}
 
-{% if lastfm.topArtists.length -%}
+{% if dynamic.lastfm.topArtists.length -%}
 	<h3 id="top-artists">Top Artists <small>of the last 7 days</small></h3>
 
 	<ol class=" [ cluster ] ">
-		{% for artist in (lastfm.topArtists | limit(12)) -%}
+		{% for artist in (dynamic.lastfm.topArtists | limit(12)) -%}
 			<li>
 				<a href="{{ artist.url }}">{{ artist.name | safe }}</a>
 			</li>

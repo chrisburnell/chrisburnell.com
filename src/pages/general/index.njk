@@ -24,7 +24,7 @@ eleventyComputed:
 
 <article class=" [ pantheon  full ] [ wrap ] [ page ] [ perch ] ">
 	<h1 id="title" class=" [ title{% if title_error %}  title--negative{% elif title_success %}  title--positive{% endif %} ] ">
-		<span class=" [ p-name ] ">{% if global.isCSSNakedDay %}{{ tagline | replace('CSS', '<s>CSS</s>') | safe }}{% else %}{{ tagline | safe }}{% endif %}</span>
+		<span class=" [ p-name ] ">{% if dynamic.timeRanges.isCSSNakedDay %}{{ tagline | replace('CSS', '<s>CSS</s>') | safe }}{% else %}{{ tagline | safe }}{% endif %}</span>
 	</h1>
 
 	<div class=" [ description ] [ flow ] [ p-summary ] " aria-hidden="true">
@@ -32,7 +32,7 @@ eleventyComputed:
 	</div>
 
 	<div class=" [ content ] [ flow ] ">
-		{% if global.isJSNakedDay -%}
+		{% if dynamic.timeRanges.isJSNakedDay -%}
 			{% include 'js-naked-day.njk' %}
 		{%- endif %}
 

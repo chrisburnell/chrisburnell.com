@@ -13,7 +13,7 @@
 
 /* SITE */
 
-    Last updated:  {{ global.nowISO | friendlyDate | safe }} {{ global.nowISO | friendlyTime | safe }}
+    Last updated:  {{ dynamic.global.nowISO | friendlyDate | safe }} {{ dynamic.global.nowISO | friendlyTime | safe }}
     URL:           {{ site.url }}
     Language:      {{ site.locale }}
     Doctype:       HTML5

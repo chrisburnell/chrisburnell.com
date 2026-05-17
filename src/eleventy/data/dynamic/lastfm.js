@@ -2,8 +2,8 @@ import dotenv from "dotenv";
 dotenv.config({ quiet: true });
 
 import EleventyFetch from "@11ty/eleventy-fetch";
-import { lastfm } from "./author.js";
-import { cacheDurations } from "./site.js";
+import { lastfm } from "../author.js";
+import { cacheDurations } from "../site.js";
 
 /**
  * @returns {Array<object>}

@@ -1,5 +1,5 @@
 import EleventyFetch from "@11ty/eleventy-fetch";
-import { cacheDurations, urls } from "./site.js";
+import { cacheDurations, urls } from "../site.js";
 
 /** @type {Map<[key: string]: Array<object>>} */
 const analyticsCache = new Map();

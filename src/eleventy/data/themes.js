@@ -1,4 +1,4 @@
-import { isMidwinterPeriod } from "./global.js";
+import { isMidwinterPeriod } from "./dynamic/timeRanges.js";
 
 export default [
 	{

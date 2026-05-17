@@ -1,5 +1,5 @@
 import { Temporal } from "@js-temporal/polyfill";
-import { nowEpoch } from "../data/global.js";
+import { nowEpoch } from "../data/dynamic/global.js";
 import { limits, localeSpecific } from "../data/site.js";
 import { keyValue } from "./utils.js";
 

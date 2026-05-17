@@ -7,7 +7,7 @@ import {
 	currentMonth,
 	currentYear,
 	nowEpoch,
-} from "../eleventy/data/global.js";
+} from "./data/dynamic/global.js";
 import {
 	applyDefaultFilter,
 	getCollectionCacheKey,

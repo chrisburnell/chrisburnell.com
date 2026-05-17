@@ -1,7 +1,7 @@
 import EleventyFetch from "@11ty/eleventy-fetch";
 import dotenv from "dotenv";
-import { trakt } from "./author.js";
-import { cacheDurations } from "./site.js";
+import { trakt } from "../author.js";
+import { cacheDurations } from "../site.js";
 dotenv.config({ quiet: true });
 
 /** @type {{ headers: { [key: string: string|number] } }} */

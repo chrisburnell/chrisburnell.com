@@ -1,7 +1,7 @@
 import slugify from "@sindresorhus/slugify";
 import { load } from "cheerio";
 import striptags from "striptags";
-import { isCSSNakedDay, isJSNakedDay } from "../data/global.js";
+import { isCSSNakedDay, isJSNakedDay } from "../data/dynamic/timeRanges.js";
 import { url as siteURL } from "../data/site.js";
 
 const internalHostname = new URL(siteURL).hostname;

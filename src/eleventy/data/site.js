@@ -1,4 +1,4 @@
-import env from "./env.js";
+import env from "./dynamic/env.js";
 
 import { role } from "./author.js";
 

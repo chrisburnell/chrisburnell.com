@@ -12,9 +12,9 @@ js_module_includes:
 
 <h2 id="latest">Latest listens</h2>
 
-<lastfm-listening url="https://api.chrisburnell.com/lastfm-recenttracks?username={{ author.lastfm }}&limit=12{% if global.personalApiKeyForLocal %}&secret={{ global.personalApiKeyForLocal }}{% endif %}" aria-live="true">
+<lastfm-listening url="https://api.chrisburnell.com/lastfm-recenttracks?username={{ author.lastfm }}&limit=12{% if dynamic.global.personalApiKeyForLocal %}&secret={{ dynamic.global.personalApiKeyForLocal }}{% endif %}" aria-live="true">
 	<ol class=" [ grid ] [ shelf  shelf--square ] ">
-		{% for track in (lastfm.recentTracks | limit(12)) %}
+		{% for track in (dynamic.lastfm.recentTracks | limit(12)) %}
 			<article class=" [ flow ] ">
 				<a href="{{ track.url }}" aria-hidden="true" tabindex="-1" class=" [ cover-anchor ] ">
 					<img src="{{ track.imageUrl }}" alt="" role="presentation" loading="lazy" decoding="async" class=" [ cover ] [ u-photo ] " rel="external noopener">
@@ -33,13 +33,13 @@ js_module_includes:
 	</ol>
 </lastfm-listening>
 
-{% if lastfm.topAlbums.length -%}
+{% if dynamic.lastfm.topAlbums.length -%}
 	<hr>
 
 	<h2 id="top-albums">Top Albums <small>of the last 7 days</small></h2>
 
 	<div class=" [ grid ] [ shelf  shelf--square ] ">
-		{% for album in (lastfm.topAlbums | limit(8)) -%}
+		{% for album in (dynamic.lastfm.topAlbums | limit(8)) -%}
 			{%- set item = collections.categoryMusic | arePublished | arrayKeyValueEquals('data.title', album.name, false) | first -%}
 			{% if item -%}
 				{{ shelfItem(item) }}
@@ -60,13 +60,13 @@ js_module_includes:
 	</div>
 {%- endif %}
 
-{% if lastfm.topAlbumsAll.length -%}
+{% if dynamic.lastfm.topAlbumsAll.length -%}
 	<hr>
 
 	<h2 id="top-albums">Top Albums <small>of all time</small></h2>
 
 	<div class=" [ grid ] [ shelf  shelf--square ] ">
-		{% for album in (lastfm.topAlbumsAll | limit(8)) -%}
+		{% for album in (dynamic.lastfm.topAlbumsAll | limit(8)) -%}
 			{%- set item = collections.categoryMusic | arePublished | arrayKeyValueEquals('data.title', album.name, false) | first -%}
 			{% if item -%}
 				{{ shelfItem(item) }}
@@ -87,13 +87,13 @@ js_module_includes:
 	</div>
 {%- endif %}
 
-{% if lastfm.topArtists.length -%}
+{% if dynamic.lastfm.topArtists.length -%}
 	<hr>
 
 	<h2 id="top-artists">Top Artists <small>of the last 7 days</small></h2>
 
 	<ol class=" [ cluster ] ">
-		{% for artist in (lastfm.topArtists | limit(10)) -%}
+		{% for artist in (dynamic.lastfm.topArtists | limit(10)) -%}
 			<li>
 				<a href="{{ artist.url }}">{{ artist.name | safe }}</a>
 			</li>
@@ -101,13 +101,13 @@ js_module_includes:
 	</ol>
 {%- endif %}
 
-{% if lastfm.topArtistsAll.length -%}
+{% if dynamic.lastfm.topArtistsAll.length -%}
 	<hr>
 
 	<h2 id="top-artists">Top Artists <small>of all time</small></h2>
 
 	<ol class=" [ cluster ] ">
-		{% for artist in (lastfm.topArtistsAll | limit(50)) -%}
+		{% for artist in (dynamic.lastfm.topArtistsAll | limit(50)) -%}
 			<li>
 				<a href="{{ artist.url }}">{{ artist.name | safe }}</a>
 			</li>

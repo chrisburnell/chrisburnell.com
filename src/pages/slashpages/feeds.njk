@@ -21,7 +21,7 @@ redirect_from:
 	</div>
 
 	<div id="content" class=" [ content ] [ flow ] ">
-		{% if global.isJSNakedDay -%}
+		{% if dynamic.timeRanges.isJSNakedDay -%}
 			{% include 'js-naked-day.njk' %}
 		{%- endif %}
 

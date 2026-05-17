@@ -48,7 +48,7 @@ layout: base
 	</div>
 
 	<div id="content" class=" [ content ] [ flow ] [ h-feed ] ">
-		{% if global.isJSNakedDay -%}
+		{% if dynamic.timeRanges.isJSNakedDay -%}
 			{% include 'js-naked-day.njk' %}
 		{%- endif %}
 

@@ -1,4 +1,4 @@
-import { currentYear } from "./data/global.js";
+import { currentYear } from "./data/dynamic/global.js";
 import { getCollectionCountByYear } from "./filters/collections.js";
 
 /**

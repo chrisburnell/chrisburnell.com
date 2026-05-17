@@ -3,10 +3,8 @@ import { readFileSync } from "node:fs";
 import blogroll from "../eleventy/data/blogroll.js";
 import breweries from "../eleventy/data/breweries.js";
 import gamePublishers from "../eleventy/data/gamePublishers.js";
-import { nowEpoch } from "../eleventy/data/global.js";
+import { nowEpoch } from "../eleventy/data/dynamic/global.js";
 import mastodonInstances from "../eleventy/data/mastodonInstances.js";
-import meetups from "../eleventy/data/meetups.js";
-import publications from "../eleventy/data/publications.js";
 import {
 	cacheDurations,
 	favicon,
@@ -42,13 +40,7 @@ const pagesByPathname = new Map(
 	pages.map((page) => [getPathname(page.url), page]),
 );
 
-const allPeople = [
-	...blogroll,
-	...breweries,
-	...publications,
-	...gamePublishers,
-	...meetups,
-];
+const allPeople = [...blogroll, ...breweries, ...gamePublishers];
 const cachedPeople = new Map();
 const peopleByTitle = new Map();
 const peopleByUrl = new Map();

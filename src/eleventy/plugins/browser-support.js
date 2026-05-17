@@ -4,7 +4,7 @@ import minifier from "html-minifier";
 import { createRequire } from "node:module";
 import browsersByType from "../../eleventy/data/browsersByType.js";
 import browserFeatures from "../data/browserFeatures.js";
-import { nowISO } from "../data/global.js";
+import { nowISO } from "../data/dynamic/global.js";
 import { cacheDurations } from "../data/site.js";
 import { formattedDate, friendlyDate } from "../filters/dates.js";
 const require = createRequire(import.meta.url);

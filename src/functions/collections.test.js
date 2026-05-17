@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { nowEpoch } from "../eleventy/data/global.js";
+import { nowEpoch } from "../eleventy/data/dynamic/global.js";
 import collections from "./collections.js";
 
 describe("Functions: Collections", () => {

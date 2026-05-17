@@ -1,7 +1,7 @@
-import { github } from "./author.js";
-import { repository } from "./site.js";
+import { github } from "../author.js";
+import { repository } from "../site.js";
 
-import { githubData } from "../filters/fetch.js";
+import { githubData } from "../../filters/fetch.js";
 
 /**
  * @param {string} repository

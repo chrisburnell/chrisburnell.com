@@ -10,7 +10,7 @@
 		<title>{{ item.data.meta_title }}</title>
 		<published>{{ item.data.date | rfc3339Date }}</published>
 		<publishedFriendly>{{ item.data.date | friendlyDate }}</publishedFriendly>
-		<updated>{{ item.data.updated | default(item.data.date) | default(global.nowISO) | rfc3339Date }}</updated>
+		<updated>{{ item.data.updated | default(item.data.date) | default(dynamic.global.nowISO) | rfc3339Date }}</updated>
 		{% if item.data.category -%}
 		{# Category -#}
 		<category term="{{ item.data.category }}" scheme="{{ site.url + '/' + item.data.category + '/' }}" label="{{ item.data | getCategoryName }}" />

@@ -2,7 +2,7 @@ import dotenv from "dotenv";
 dotenv.config({ quiet: true });
 
 import EleventyFetch from "@11ty/eleventy-fetch";
-import { cacheDurations } from "./site.js";
+import { cacheDurations } from "../site.js";
 
 const token = process.env.GH_TOKEN || process.env.GITHUB_TOKEN;
 
