@@ -67,7 +67,6 @@
 	}
 
 	& :is(.emoji, .icon) {
-		inline-size: calc(var(--size-medium) + var(--size-tiny));
 		display: inline-block;
 	}
 
