@@ -26,10 +26,10 @@ rewrite ^/tag/ur2026/?$ /tag/unusualrotations2026/ permanent;
 
 # Page Redirects
 {% for item in collections.pages %}{% if item.url and item.data.redirect_from %}{% for request in item.data.redirect_from -%}
-rewrite ^{{ request.from | default(request) | removeTrailingSlash | safe }}/?$ {{ request.to | default(item.url) | removeTrailingSlash | safe }}/{% if request.hash %}\#{{ request.hash }}{% endif %} redirect;
+rewrite ^{{ request.from | default(request) | removeTrailingSlash | safe }}/?$ "{{ request.to | default(item.url) | removeTrailingSlash | safe }}/{% if request.hash %}#{{ request.hash }}{% endif %}" redirect;
 {% endfor %}{% endif %}{% endfor %}
 
 # Post Redirects
 {% for item in collections.posts %}{% if item.url and item.data.redirect_from %}{% for request in item.data.redirect_from -%}
-rewrite ^{{ request.from | default(request) | removeTrailingSlash | safe }}/?$ {{ request.to | default(item.url) | removeTrailingSlash | safe }}/{% if request.hash %}\#{{ request.hash }}{% endif %} redirect;
+rewrite ^{{ request.from | default(request) | removeTrailingSlash | safe }}/?$ "{{ request.to | default(item.url) | removeTrailingSlash | safe }}/{% if request.hash %}#{{ request.hash }}{% endif %}" redirect;
 {% endfor %}{% endif %}{% endfor %}
