@@ -52,7 +52,7 @@ eleventyComputed:
 					</h2>
 					<div class=" [ deck ] ">
 						{% for item in collections.rsvpsToday -%}
-							{{ deckItem(item, { show_pageviews: false, truncate: true }) }}
+							{{ deckItem(item, { show_pageviews: false, show_category_icon: false, truncate: true }) }}
 						{%- endfor %}
 					</div>
 				</div>
@@ -65,9 +65,9 @@ eleventyComputed:
 				<div class=" [ flow ] [ h-feed ] ">
 					<div class=" [ deck ] ">
 						{% for item in collections.pinned -%}
-							{{ deckItem(item, { hfeed: true, show_pinned: true, show_pageviews: false, truncate: true }) }}
+							{{ deckItem(item, { hfeed: true, show_pinned: true, show_pageviews: false, show_category_icon: false, truncate: true }) }}
 						{%- endfor %}
-					{{ deckItem(firstpost, { hfeed: true, show_pageviews: false, truncate: true }) }}
+					{{ deckItem(firstpost, { hfeed: true, show_pageviews: false, show_category_icon: false, truncate: true }) }}
 					</div>
 					<div class=" [ stack ] ">
 						{% for i in range(1, posts | length) %}
@@ -118,7 +118,7 @@ eleventyComputed:
 					</h2>
 					<div class=" [ deck ] ">
 						{% for item in collections.rsvpsUpcoming -%}
-							{{ deckItem(item, { show_pageviews: false, truncate: true }) }}
+							{{ deckItem(item, { show_pageviews: false, show_category_icon: false, truncate: true }) }}
 						{%- endfor %}
 					</div>
 				</div>
@@ -130,7 +130,7 @@ eleventyComputed:
 					<h2>On this day</h2>
 					<div class=" [ deck ] ">
 						{% for item in collections.onThisDay -%}
-							{{ deckItem(item, { show_pageviews: false, truncate: true }) }}
+							{{ deckItem(item, { show_pageviews: false, show_category_icon: false, truncate: true }) }}
 						{%- endfor %}
 					</div>
 				</div>

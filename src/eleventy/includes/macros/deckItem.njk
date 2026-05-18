@@ -11,7 +11,7 @@
 	{% set show_rss_only = params.show_rss_only != false and item.data.tags and 'rss-only' in item.data.tags -%}
 	{% set show_popularity = params.show_popularity != false and item.data.rank.popular and item.data.rank.popular <= 10 -%}
 	{% set show_hotness = params.show_hotness != false and item.data.rank.hot and item.data.rank.hot <= 10 -%}
-	{# {% set show_category_icon = params.show_category_icon != false -%} -#}
+	{% set show_category_icon = params.show_category_icon != false -%}
 	{# Default OFF -#}
 	{% set show_pageviews = params.show_pageviews and item.data.pageviews.total >= 1000 -%}
 	{% set show_updated = item.data.updated and ((item.data.updated | friendlyDate) !== (item.data.date | friendlyDate)) -%}
@@ -44,7 +44,7 @@
 		{% if title -%}
 			<h1 style="view-transition-name: title-{{ item.data.page.fileSlug }};">
 				<a href="{{ item_url }}" class=" [ p-name ] "{% if item.data.clickthrough %} rel="external noopener"{% endif %}>
-					{% if item.data.icon %}<c-icon><i class="fas fa-{{ item.data.icon }}"></i></c-icon>{% elif item.data.rsvp %}<c-icon><i class="fas fa-{{ 'ticket' if item.data.rsvp.value == 'yes' and 'conference' in item.data.tags else ('calendar-check' if item.data.rsvp.value == 'yes' else 'calendar') }}"></i></c-icon>{% elif item.data.in_reply_to %}<c-icon><i class="fas fa-reply"></i></c-icon>{% elif item.data.emoji %}<c-icon>{{ item.data.emoji }}</c-icon>{% endif %}{{ title | striptags(true) | safe }}
+					{% if show_category_icon and item.data.icon %}<c-icon><i class="fas fa-{{ item.data.icon }}"></i></c-icon>{% elif item.data.rsvp %}<c-icon><i class="fas fa-{{ 'ticket' if item.data.rsvp.value == 'yes' and 'conference' in item.data.tags else ('calendar-check' if item.data.rsvp.value == 'yes' else 'calendar') }}"></i></c-icon>{% elif item.data.in_reply_to %}<c-icon><i class="fas fa-reply"></i></c-icon>{% elif item.data.emoji %}<c-icon>{{ item.data.emoji }}</c-icon>{% endif %}{{ title | striptags(true) | safe }}
 				</a>
 			</h1>
 		{%- endif %}
@@ -84,7 +84,7 @@
 					{%- endif -%}
 				{%- endif %}
 				{% if show_rss_only -%}
-					<li><a href="https://daverupert.com/rss-club/" title="This {{ item.data.categoryProper | default(item.data.category) }} is part of RSS Club" rel="external" target="_blank"><c-icon style="--color-icon-active: var(--color-rss);"><i class="fas fa-rss"></i></c-icon>RSS Club</a></li>
+					<li><a href="/rss-club/" title="This {{ item.data.categoryProper | default(item.data.category) }} is part of RSS Club" rel="external" target="_blank"><c-icon style="--color-icon-active: var(--color-rss);"><i class="fas fa-rss"></i></c-icon>RSS Club</a></li>
 				{%- endif %}
 				{% if show_hotness -%}
 					<li><a href="/hot/#index-{{ item.data.rank.hot }}" title="#{{ item.data.rank.hot }} Hottest Page"><c-icon style="--color-icon-active: var(--color-html);"><i class="fas fa-fire"></i></c-icon><span class=" [ ordinal ] "{% if item.data.rank.hot <= 3 %} style="color: color-mix(in oklab, currentColor, {% if item.data.rank.hot == 1 %}gold{% elif item.data.rank.hot == 2 %}silver{% else %}darkorange{% endif %}); font-weight: var(--font-weight-semibold);"{% endif %}>#{{ item.data.rank.hot }}</span></a></li>

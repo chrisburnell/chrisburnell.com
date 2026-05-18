@@ -105,7 +105,7 @@
 					{%- endif %}
 				{%- endif %}
 				{% if show_rss_only -%}
-					<a href="https://daverupert.com/rss-club/" title="This {{ item.data.categoryProper | default(item.data.category) }} is part of RSS Club" rel="external" target="_blank" class=" [ pill ] " style="--color-icon-active: var(--color-rss);"><c-icon><i class="fas fa-rss"></i></c-icon>RSS Club</a>
+					<a href="/rss-club/" title="This {{ item.data.categoryProper | default(item.data.category) }} is part of RSS Club" rel="external" target="_blank" class=" [ pill ] " style="--color-icon-active: var(--color-rss);"><c-icon><i class="fas fa-rss"></i></c-icon>RSS Club</a>
 				{%- endif %}
 				{% if show_hotness -%}
 					<a href="/hot/#index-{{ item.data.rank.hot }}" class=" [ pill ] " title="#{{ item.data.rank.hot }} Hottest Page" style="--color-icon-active: var(--color-html);"><c-icon><i class="fas fa-fire"></i></c-icon><span class=" [ ordinal ] "{% if item.data.rank.hot <= 3 %} style="color: color-mix(in oklab, currentColor, {% if item.data.rank.hot == 1 %}gold{% elif item.data.rank.hot == 2 %}silver{% else %}darkorange{% endif %}); font-weight: var(--font-weight-semibold);"{% endif %}>#{{ item.data.rank.hot }}</span></a>
