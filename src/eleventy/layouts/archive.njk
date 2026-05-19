@@ -65,9 +65,9 @@ layout: base
 					<div id="list-{{ year }}" class=" [ {{ list_type | default('stack') }} ] ">
 						{% for item in posts -%}
 							{% if list_type == 'deck' -%}
-								{{ deckItem(item, { index: i, hfeed: true, show_images: show_images, show_pageviews: show_pageviews, show_hotness: show_hotness, show_popularity: show_popularity, show_category_icon: show_category_icon, truncate: true }) }}
+								{{ deckItem(item, { index: i, hfeed: true, show_images: show_images, show_pageviews: show_pageviews, show_hotness: show_hotness, show_popularity: show_popularity, show_category_icon: show_category_icon, show_rss_only: show_rss_only, truncate: true }) }}
 							{%- else -%}
-								{{ stackItem(item, { index: i, hfeed: true, show_pageviews: show_pageviews, show_hotness: show_hotness, show_popularity: show_popularity, show_category_icon: show_category_icon, show_category: show_category, show_collections: show_collections, show_tags: show_tags }) }}
+								{{ stackItem(item, { index: i, hfeed: true, show_pageviews: show_pageviews, show_hotness: show_hotness, show_popularity: show_popularity, show_category_icon: show_category_icon, show_category: show_category, show_collections: show_collections, show_tags: show_tags, show_rss_only: show_rss_only }) }}
 							{%- endif %}
 							{% set i = i + 1 -%}
 						{%- endfor %}
@@ -78,9 +78,9 @@ layout: base
 			<div class=" [ {{ list_type | default('stack') }} ] ">
 				{% for item in collection | noRSSOnlyFilter %}
 					{% if list_type == 'deck' -%}
-						{{ deckItem(item, { index: loop.index, hfeed: true, show_images: show_images, show_pageviews: show_pageviews, show_hotness: show_hotness, show_popularity: show_popularity, show_category_icon: show_category_icon, truncate: true }) }}
+						{{ deckItem(item, { index: loop.index, hfeed: true, show_images: show_images, show_pageviews: show_pageviews, show_hotness: show_hotness, show_popularity: show_popularity, show_category_icon: show_category_icon, show_rss_only: show_rss_only, truncate: true }) }}
 					{%- else -%}
-						{{ stackItem(item, { index: loop.index, hfeed: true, show_pageviews: show_pageviews, show_hotness: show_hotness, show_popularity: show_popularity, show_category_icon: show_category_icon, show_category: show_category, show_collections: show_collections, show_tags: show_tags }) }}
+						{{ stackItem(item, { index: loop.index, hfeed: true, show_pageviews: show_pageviews, show_hotness: show_hotness, show_popularity: show_popularity, show_category_icon: show_category_icon, show_category: show_category, show_collections: show_collections, show_tags: show_tags, show_rss_only: show_rss_only }) }}
 					{%- endif %}
 				{% endfor %}
 			</div>
