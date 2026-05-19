@@ -24,3 +24,48 @@ svg {
 		fill: var(--fill-hover, var(--fill, currentColor));
 	}
 }
+
+:is(.emoji, .icon) {
+	color: var(--color-icon, currentColor);
+	font-family: var(--font-family-sans);
+	font-style: normal;
+	font-variation-settings: normal;
+	font-variant-emoji: emoji;
+	vertical-align: middle;
+	margin-block-start: calc(1ex - 1cap);
+	text-shadow: none;
+	transform-origin: center;
+	transition:
+		color var(--transition-duration) var(--transition-function),
+		opacity var(--transition-duration) var(--transition-function),
+		transform var(--transition-duration) var(--transition-function);
+
+	:is(a:not(.button), .anchor):not(.icon-anchor) > &:first-child,
+	:is(button:not(.anchor), .button, [type="button"], [role="tab"]):not(.icon-anchor) > &:first-child {
+		display: inline-block;
+		padding-inline-end: 0.625ch;
+	}
+	:not(h1, h2, h3, h4, h5, h6) > :is(a:not(.button), .anchor):not(.icon-anchor, :hover, :focus, :active) > &:has(svg):first-child,
+	.meta__information & {
+		opacity: var(--opacity-70);
+		color: var(--color-icon, color-mix(in oklab, currentColor, var(--color-raven)));
+	}
+
+	:is(a, button, [type="button"], [role="tab"]):is(:hover, :focus, :active) &[style*="--color-icon-active:"],
+	[style*="--color-icon-active:"]:is(a, button, [type="button"], [role="tab"]):is(:hover, :focus, :active) &,
+	&[style*="--color-icon-active:"]:is(:hover, :focus, :active) {
+		color: var(--color-icon-active);
+	}
+
+	& svg {
+		vertical-align: middle;
+		margin-block-start: calc(1ex - 1cap);
+
+		&:not([width]) {
+			max-inline-size: 1em;
+		}
+		&:not([height]) {
+			max-block-size: 1em;
+		}
+	}
+}
