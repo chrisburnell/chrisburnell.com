@@ -1,0 +1,19 @@
+/**
+ * Canada
+ * @group utilities
+ */
+
+.canada {
+	&,
+	& * {
+		/* For some reason, ::selection and ::target-text don't play well together */
+		&::selection {
+			background-color: var(--color-maple) !important;
+			color: var(--color-snowy) !important;
+		}
+		&::target-text {
+			background-color: var(--color-maple) !important;
+			color: var(--color-snowy) !important;
+		}
+	}
+}

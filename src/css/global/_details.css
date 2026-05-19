@@ -1,0 +1,74 @@
+/**
+ * Details
+ * @group global
+ */
+
+details {
+	inline-size: 100%;
+	overflow-x: auto;
+
+	&::details-content {
+		transition:
+			opacity var(--transition-duration) var(--transition-function),
+			block-size var(--transition-duration) var(--transition-function),
+			content-visibility var(--transition-duration)
+				var(--transition-function);
+		transition-behavior: allow-discrete;
+
+		@starting-style {
+			block-size: 0;
+		}
+	}
+
+	&[open] {
+		&::details-content {
+			block-size: calc-size(auto, size);
+		}
+	}
+
+	/* add spacing around non-summary children */
+	&:not(.no-padding) > :not(summary) {
+		padding: 0 var(--size-gutter) var(--size-small);
+	}
+
+	/* add a border above the first non-summary child */
+	&:not(.no-border) summary + * {
+		margin-block-start: var(--size-small);
+		border-block-start: var(--size-border-thin) solid
+			oklch(from currentColor l c h / 15%);
+		padding-block-start: var(--size-medium);
+	}
+}
+
+summary {
+	--outline-offset: calc(var(--size-border-thin) * -1);
+
+	display: list-item;
+	font-weight: var(--font-weight-semibold);
+	text-decoration: underline;
+	text-decoration-color: oklch(from currentColor l c h / 15%);
+	text-decoration-thickness: var(--size-border-thin);
+	text-decoration-skip-ink: auto;
+	text-underline-offset: 0.125em;
+	transition: text-decoration-color var(--transition-duration)
+		var(--transition-function);
+	list-style: "+ " inside;
+	cursor: pointer;
+	user-select: none;
+	-webkit-touch-callout: none;
+	pointer-events: none;
+
+	&::marker {
+		font-family: var(--font-family-monospace);
+		font-size: var(--font-size-gamma);
+		font-weight: var(--font-weight-heavy);
+	}
+
+	&:is(:hover, :focus, :active) {
+		text-decoration-color: var(--color-maple);
+	}
+
+	[open] > & {
+		list-style: "- " inside;
+	}
+}

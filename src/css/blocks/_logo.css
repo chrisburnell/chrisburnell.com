@@ -1,0 +1,36 @@
+/**
+ * Logo
+ * @group blocks
+ */
+
+.logo {
+	block-size: var(--size-logo-small);
+	inline-size: var(--size-logo-small);
+	display: flex;
+	filter: hue-rotate(calc((var(--raven-hue) - 237.73) * 1deg))
+		saturate(calc(var(--raven-chroma) / 0.064 * 100%));
+
+	& :is(img, input[type="image"], svg) {
+		max-block-size: 100%;
+		object-fit: contain;
+		transition: transform var(--transition-duration)
+			var(--transition-function);
+		filter: drop-shadow(
+			0 0 var(--size-border-thin)
+				oklch(from var(--color-thunder) l c h / var(--opacity-50))
+		);
+	}
+
+	&[href]:is(:hover, :focus, :active) {
+		background: none !important;
+
+		&,
+		& :is(img, input[type="image"], svg) {
+			outline: none;
+		}
+
+		& :is(img, input[type="image"], svg) {
+			transform: scale(1.5) rotate(6deg);
+		}
+	}
+}

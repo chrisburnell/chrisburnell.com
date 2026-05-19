@@ -1,0 +1,19 @@
+/**
+ * Navigator
+ * @group blocks
+ * Extends .grid
+ */
+
+.navigator {
+	--flow-space: var(--size-large);
+	--placement: auto-fit;
+	--grid-max-inline-size: max-content;
+
+	inline-size: 100%;
+	align-items: center;
+	justify-content: center;
+
+	@media print {
+		display: none;
+	}
+}

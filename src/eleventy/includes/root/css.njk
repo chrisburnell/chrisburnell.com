@@ -24,10 +24,10 @@
 {%- endif %}
 
 {# Render out Critical CSS -#}
-{%- css 'critical' -%}{% renderFile 'src/css/critical.scss' %}{%- endcss -%}
+{%- css 'critical' -%}{% renderFile 'src/css/critical.css' %}{%- endcss -%}
 
 {# Render out Deferred CSS -#}
-{%- css 'defer' -%}{% renderFile 'src/css/defer.scss' %}{%- endcss -%}
+{%- css 'defer' -%}{% renderFile 'src/css/defer.css' %}{%- endcss -%}
 
 {# Render out CSS Includes -#}
 {%- for css_include in (css_includes | toArray) -%}

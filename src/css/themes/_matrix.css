@@ -1,0 +1,47 @@
+/**
+ * The Matrix has you...
+ * @group themes
+ */
+
+:root:has([name="theme"] [value*="matrix"]:checked),
+[data-theme*="matrix"],
+.matrix {
+	--raven-lightness: 60.6%;
+	--raven-chroma: 0.082;
+	--raven-hue: 142.62;
+	--color-raven: oklch(
+		var(--raven-lightness) var(--raven-chroma) var(--raven-hue)
+	);
+
+	@media not print {
+		color-scheme: dark;
+	}
+
+	& main,
+	&.themed-section {
+		@media (prefers-reduced-motion: no-preference) {
+			/* This makes the GIF appear 30% transparent through the background */
+			--matrix-overlay: oklch(
+				from
+					color-mix(
+						in oklab,
+						var(--color-mineshaft),
+						var(--color-wolf) 40%
+					)
+					l c h / 70%
+			);
+			background-image:
+				linear-gradient(
+					to bottom,
+					var(--matrix-overlay),
+					var(--matrix-overlay)
+				),
+				url("/images/animated/matrix.gif");
+		}
+	}
+
+	& .avatar,
+	& .author__image {
+		filter: url("/images/fsociety.svg#fsociety");
+	}
+}

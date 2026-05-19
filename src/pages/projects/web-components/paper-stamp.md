@@ -11,7 +11,7 @@ tags:
   - package
   - web-components
 css_includes:
-  - src/css/pages/paper-stamp.scss
+  - src/css/pages/paper-stamp.css
 js_module_includes:
   - node_modules/@chrisburnell/paper-stamp/paper-stamp.js
 ---

@@ -1,0 +1,62 @@
+/**
+ * Table of Contents
+ * extends .meta
+ * @group blocks
+ */
+
+.toc {
+	padding-block: var(--size-gap);
+
+	@media print {
+		display: none;
+	}
+
+	@container main (inline-size > 1000px) {
+		block-size: 100%;
+	}
+
+	& is-land {
+		@container main (inline-size > 1000px) {
+			position: sticky;
+			inset-block-start: calc(var(--size-header, 0px) + 1rem);
+		}
+	}
+}
+
+.table-of-contents {
+	& nav {
+		max-block-size: 40vb;
+		max-block-size: 40dvb;
+		box-shadow: var(--box-shadow, var(--box-shadow-medium));
+		overflow-x: hidden;
+		overflow-y: auto;
+		scrollbar-gutter: stable;
+		animation: toc-shadow-inside linear;
+		animation-timeline: scroll(self block);
+
+		@container main (inline-size > 850px) {
+			max-block-size: calc(
+				100vb - (1em * var(--line-height-default)) - var(--size-small) -
+					var(--size-header, 0px) - (2 * var(--size-medium))
+			);
+			max-block-size: calc(
+				100dvb - (1em * var(--line-height-default)) -
+					var(--size-small) - var(--size-header, 0px) -
+					(2 * var(--size-medium))
+			);
+		}
+	}
+}
+
+@keyframes toc-shadow-inside {
+	from {
+		box-shadow:
+			var(--box-shadow, var(--box-shadow-medium)),
+			inset 0 -1em 1.5em 0 oklch(from var(--color-shadow) l c h / 40%);
+	}
+	to {
+		box-shadow:
+			var(--box-shadow, var(--box-shadow-medium)),
+			inset 0 1em 1.5em 0 oklch(from var(--color-shadow) l c h / 40%);
+	}
+}

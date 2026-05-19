@@ -13,7 +13,7 @@ tags:
 syndicate_to:
   - https://fediverse.repc.co/@chrisburnell/111812123566491440
 css_includes:
-  - src/css/pages/svg-sparkline.scss
+  - src/css/pages/svg-sparkline.css
 js_module_includes:
   - node_modules/@chrisburnell/svg-sparkline/svg-sparkline.js
 ---

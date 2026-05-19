@@ -1,0 +1,45 @@
+/**
+ * Description
+ * @group blocks
+ */
+
+.description {
+	font-size: var(--font-size-gamma);
+	font-weight: var(--font-weight-semibold);
+	text-wrap: balance;
+
+	& p {
+		@container (inline-size > 700px) {
+			inline-size: 100%;
+			max-inline-size: var(--size-line-length);
+			margin-inline: auto;
+		}
+	}
+
+	& :is(a:not(.button), .anchor) {
+		color: inherit;
+	}
+
+	& time {
+		font-style: italic;
+		font-synthesis: none;
+		font-variation-settings: "ital" 125;
+
+		& sup::before {
+			content: " ";
+			font-size: 0.5em;
+		}
+	}
+
+	.title ~ & {
+		margin-block-start: var(--size-gap);
+	}
+
+	.content & {
+		margin-block-end: var(--size-gap);
+	}
+}
+
+.title + .description {
+	margin-block-start: var(--size-gap);
+}

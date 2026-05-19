@@ -8,7 +8,7 @@ codepen_slug: poKgaoR
 syndicate_to:
   - https://codepen.io/chrisburnell/pen/poKgaoR
 css_includes:
-  - src/css/pages/one-hypotenuse-to-rule-them-all.scss
+  - src/css/pages/one-hypotenuse-to-rule-them-all.css
 ---
 
 If a right triangle has two side-lengths both equal to <var>√2 / 2</var>, what is the length of its hypotenuse?

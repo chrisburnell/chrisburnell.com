@@ -6,7 +6,7 @@ description: With the boom of JavaScript frameworks and legends-come-true like t
 tags:
   - state-of-the-web
 css_includes:
-  - src/css/pages/not-without-sacrifice.scss
+  - src/css/pages/not-without-sacrifice.css
 ---
 
 I recently had the pleasure of watching [Jack Franklin’s](https://www.jackfranklin.co.uk) talk from [All Day Hey! 2023](https://heypresents.com/conferences/2023), [<q>Abstractions, complexities and off-ramps</q>](https://www.youtube.com/watch?v=Siq8eBkgpjY), and a couple of slides [at the end](https://youtu.be/Siq8eBkgpjY?t=2582) got me thinking about the landscape of developer concerns in front end; *a bit cynically, I’ll admit, but it comes back around in the end!*

@@ -1,0 +1,188 @@
+/**
+ * Form
+ * @group global
+ * @link https://chrisburnell.com/styleguide/#forms
+ */
+
+form {
+	inline-size: 100%;
+	position: relative;
+}
+
+legend {
+	font-size: var(--font-size-default);
+	font-weight: var(--font-weight-regular);
+	text-align: start;
+}
+
+fieldset {
+	border-width: 0;
+}
+
+:is(input, optgroup, select, textarea) {
+	font-size: var(--font-size-small);
+	line-height: var(--line-height-default);
+
+	&[pattern]:invalid {
+		/* break through layers */
+		border-color: var(--color-maple) !important;
+	}
+}
+
+input,
+textarea,
+[contenteditable] {
+	caret-color: var(--color-raven);
+}
+
+input,
+select,
+textarea {
+	--outline-color: var(--color-raven);
+	box-sizing: inherit !important;
+	background-color: light-dark(var(--color-snowy), var(--color-thunder));
+	color: light-dark(var(--color-thunder), var(--color-yeti));
+	padding: 0 0.4em;
+	border: var(--size-border-thin) solid
+		light-dark(var(--color-yeti), var(--color-kaiser));
+	border-radius: var(--border-radius, var(--size-border-default));
+	outline: var(--outline-width, var(--size-border-thin)) solid transparent;
+	outline-offset: var(--outline-offset, var(--size-border-thin));
+	transition:
+		border-color var(--transition-duration) var(--transition-function),
+		outline-color var(--transition-duration) var(--transition-function);
+
+	&[disabled] {
+		opacity: var(--opacity-50);
+		user-select: none;
+		-webkit-touch-callout: none;
+		pointer-events: none;
+	}
+
+	&:not([disabled], :focus):hover {
+		border-color: var(--outline-color, Highlight);
+	}
+
+	&:not([disabled]):is(:focus, :focus-visible) {
+		outline-color: var(--outline-color, Highlight);
+		z-index: var(--z-index-above);
+	}
+
+	&::-moz-focus-inner {
+		padding: 0;
+		margin: 0;
+	}
+}
+
+input {
+	overflow: visible;
+
+	&[type="number"]::-webkit-inner-spin-button,
+	&[type="number"]::-webkit-outer-spin-button {
+		block-size: auto;
+	}
+
+	&[type="search"],
+	&[type="url"] {
+		margin-block-end: calc(var(--size-border-thin) * 2);
+		/* correct odd appearance in Chrome and Safari */
+		-webkit-appearance: textfield;
+
+		&::-webkit-search-cancel-button,
+		&::-webkit-search-decoration {
+			-webkit-appearance: none;
+		}
+	}
+
+	&::-webkit-file-upload-button {
+		/* correct inability to style clickable types in iOS and Safari */
+		-webkit-appearance: button;
+	}
+
+	&::-webkit-inner-spin-button {
+		opacity: 1;
+	}
+}
+
+textarea {
+	overflow: auto;
+	scrollbar-gutter: stable;
+}
+
+:is([type="checkbox"], [type="radio"], select) {
+	appearance: none;
+}
+
+:is([type="checkbox"], [type="radio"]) {
+	aspect-ratio: 1;
+	inline-size: 2em;
+	block-size: 2em;
+	color: transparent !important;
+	vertical-align: middle;
+	border-width: var(--size-border-thin);
+	margin-block-start: calc(1ex - 1cap);
+	position: relative;
+	cursor: pointer;
+	transition:
+		opacity var(--transition-duration) var(--transition-function),
+		background-color var(--transition-duration) var(--transition-function),
+		color var(--transition-duration) var(--transition-function),
+		border-color var(--transition-duration) var(--transition-function),
+		outline-color var(--transition-duration) var(--transition-function);
+
+	&:checked {
+		color: var(--color-raven) !important;
+	}
+}
+
+[type="checkbox"]:not(:indeterminate) {
+	&::after {
+		content: "✓";
+		position: absolute;
+		inset-block-start: 50%;
+		inset-inline-start: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		font-size: 1.25em;
+		font-weight: var(--font-weight-heavy);
+	}
+}
+
+:is([type="checkbox"]:indeterminate, [type="radio"]) {
+	background-image: linear-gradient(to bottom, currentColor, currentColor);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+[type="checkbox"]:indeterminate {
+	background-size: 1.125em 0.25em;
+}
+
+[type="radio"] {
+	background-size: 0.875em 0.875em;
+}
+
+select {
+	background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='50' fill='%232b2b2b'><polygon points='0,0 100,0 50,50'/></svg>");
+	/* background-image: #{"if(color-scheme(dark): url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='50' fill='%23dddddd'><polygon points='0,0 100,0 50,50'/></svg>\"); else: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='50' fill='%232b2b2b'><polygon points='0,0 100,0 50,50'/></svg>\"))"}; */
+	background-position: right var(--size-tiny) center;
+	background-repeat: no-repeat;
+	background-size: var(--size-small);
+	padding-block: 0.2em;
+	padding-inline-end: var(--size-large);
+	font-size: inherit;
+	line-height: var(--line-height-small);
+	transition: border-color var(--transition-duration)
+		var(--transition-function);
+
+	@supports (appearance: base-select) {
+		appearance: base-select;
+	}
+
+	&.monospace {
+		font-size: var(--font-size-small);
+	}
+}
+
+address {
+	font-style: inherit;
+}

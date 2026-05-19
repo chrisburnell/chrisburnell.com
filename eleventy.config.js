@@ -60,7 +60,7 @@ export default async function (eleventyConfig) {
 	eleventyConfig.addPlugin(plugins.markdown);
 	eleventyConfig.addPlugin(plugins.ogImage, config.ogImage);
 	eleventyConfig.addPlugin(plugins.rss);
-	eleventyConfig.addPlugin(plugins.scss);
+	eleventyConfig.addPlugin(plugins.css);
 	eleventyConfig.addPlugin(plugins.syntaxHighlight, config.syntaxHighlight);
 	eleventyConfig.addPlugin(plugins.webc, config.webc);
 	if (process.env.WEBMENTION_IO_TOKEN) {

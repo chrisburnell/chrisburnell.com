@@ -10,7 +10,7 @@ tags:
 syndicate_to:
   - https://twitter.com/iamchrisburnell/status/1583014193909096448
 css_includes:
-  - src/css/pages/moving-targets.scss
+  - src/css/pages/moving-targets.css
 js_includes:
   - src/js/pages/moving-targets.js
 ---

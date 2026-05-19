@@ -1,0 +1,18 @@
+@charset "UTF-8";
+/**
+ * chrisburnell.com
+ * Deferred CSS
+ * @author Chris Burnell <me@chrisburnell.com>
+ */
+
+@import "global/defer.css" layer(global);
+
+@import "compositions/defer.css" layer(compositions);
+
+@import "blocks/defer.css" layer(blocks);
+
+@import "utilities/defer.css" layer(utilities);
+
+@import "components/defer.css" layer(components);
+
+@import "overrides/main.css" layer(overrides);

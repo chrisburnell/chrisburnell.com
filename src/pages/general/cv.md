@@ -7,7 +7,7 @@ redirect_from:
 - /resume
 - /work
 css_includes:
-- src/css/pages/cv.scss
+- src/css/pages/cv.css
 eleventyComputed:
   tagline: '<span class=" [ canada ] " data-pagefind-meta="title:CV / Résumé">{{ author.name }}</span>'
   description: "{{ author.role | title }}{% if author.employer %} and {{ author.employer.role | title }} at {{ author.employer.title }}{% endif %}"

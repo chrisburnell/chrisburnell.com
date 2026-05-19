@@ -1,0 +1,47 @@
+/**
+ * Rating
+ * @group blocks
+ */
+
+.rating {
+	display: inline-block;
+	position: relative;
+	font-size: var(--rating-font-size, var(--font-size-gamma));
+	font-weight: var(--font-weight-semibold);
+	overflow: hidden;
+	line-height: 1;
+
+	&:not([value], [style*="--rating:"]) {
+		display: none;
+	}
+
+	&::before,
+	&::after {
+		content: "★★★★★";
+		white-space: nowrap;
+	}
+
+	&::before {
+		color: var(
+			--rating-background-color,
+			light-dark(var(--color-yeti), var(--color-kaiser))
+		);
+	}
+
+	&::after {
+		background-color: inherit;
+		color: var(--rating-color, var(--color-aspen));
+		inline-size: calc(var(--rating, 0) * 20%);
+		text-shadow:
+			0 0 1px var(--rating-border, var(--color-nickel)),
+			0 1px 1px var(--rating-border, var(--color-nickel));
+		overflow: hidden;
+		position: absolute;
+		inset-block-start: 0;
+		inset-inline-start: 0;
+	}
+
+	& + strong {
+		vertical-align: top;
+	}
+}

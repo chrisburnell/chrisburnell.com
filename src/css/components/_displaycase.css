@@ -1,0 +1,134 @@
+/**
+ * TODO: Flesh this out or scrap it!
+ * Display Case
+ * @group components
+ */
+
+.display-case {
+	display: grid;
+	row-gap: var(--size-medium-large);
+	overflow-x: hidden;
+
+	& article {
+		display: grid;
+		grid-template-columns:
+			[description-start pills-start title-start]
+			auto
+			[title-end spacer-start]
+			1fr
+			[spacer-end time-start]
+			auto
+			[time-end description-end pills-end];
+		grid-template-rows:
+			[top-start]
+			auto
+			[top-end middle-start]
+			auto
+			[middle-end bottom-start]
+			auto
+			[bottom-end];
+		align-items: baseline;
+		column-gap: var(--size-medium);
+		break-inside: avoid;
+
+		@container (inline-size > 700px) {
+			grid-template-columns:
+				[description-start title-start]
+				auto
+				[title-end spacer-start]
+				1fr
+				[spacer-end pills-start]
+				auto
+				[pills-end time-start]
+				auto
+				[time-end description-end];
+		}
+
+		&::after {
+			content: " ";
+			background-image: repeating-linear-gradient(
+				90deg,
+				oklch(from currentColor l c h / var(--opacity-50)),
+				oklch(from currentColor l c h / var(--opacity-50))
+					var(--size-border-thin),
+				transparent var(--size-border-thin),
+				transparent var(--size-small)
+			);
+			background-position: left bottom;
+			background-repeat: repeat-x;
+			background-size: 100% var(--size-border-thin);
+			block-size: var(--size-border-thin);
+			align-self: center;
+			grid-column: spacer;
+			grid-row: top;
+		}
+	}
+
+	& h1 {
+		grid-column: title;
+		grid-row: top;
+		position: relative;
+		font-size: var(--font-size-delta);
+		text-wrap: initial;
+
+		@container (inline-size > 700px) {
+			grid-row: top / middle;
+		}
+	}
+
+	& .pills {
+		grid-column: pills;
+		grid-row: bottom;
+
+		@container (inline-size > 700px) {
+			grid-row: top / middle;
+			text-align: end;
+		}
+	}
+	& article:not(:has(> p)) .pills {
+		text-align: end;
+	}
+	& article:has(> p) .pills {
+		@container (inline-size > 700px) {
+			padding-block-start: var(--size-tiny);
+		}
+	}
+
+	& .pill {
+		color: inherit;
+	}
+
+	& a:has(time) {
+		grid-column: time;
+		grid-row: top;
+		text-align: end;
+
+		&:not(:hover, :focus, :active) {
+			text-decoration-color: transparent;
+		}
+	}
+
+	& time {
+		font-style: italic;
+		font-synthesis: none;
+		font-variation-settings: "ital" 125;
+		text-align: end;
+		white-space: nowrap;
+	}
+
+	& :is(a:not(.button), .anchor) {
+		&:not(:hover, :focus, :active) {
+			color: inherit;
+		}
+	}
+
+	& article > p {
+		grid-column: description;
+		grid-row: middle;
+		display: none;
+
+		@container (inline-size > 700px) {
+			grid-row: bottom;
+		}
+	}
+}

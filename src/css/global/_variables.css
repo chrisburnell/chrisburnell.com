@@ -1,0 +1,362 @@
+/**
+ * Variables
+ * @group global
+ */
+
+:root {
+	/* Monochrome colors components */
+	--snowy-lightness: 98.21%;
+	--thunder-lightness: 14.96%;
+	--monochrome-chroma: 0;
+	--monochrome-hue: 0;
+	/* Monochrome colors */
+	--color-snowy: oklch(
+		var(--snowy-lightness) var(--monochrome-chroma) var(--monochrome-hue)
+	);
+	--color-thunder: oklch(
+		var(--thunder-lightness) var(--monochrome-chroma) var(--monochrome-hue)
+	);
+	--color-mineshaft: color-mix(
+		in oklab,
+		var(--color-snowy),
+		var(--color-thunder) 83.6%
+	);
+	--color-kaiser: color-mix(
+		in oklab,
+		var(--color-snowy),
+		var(--color-thunder) 66.6%
+	);
+	--color-nickel: color-mix(
+		in oklab,
+		var(--color-snowy),
+		var(--color-thunder) 51.8%
+	);
+	--color-yeti: color-mix(
+		in oklab,
+		var(--color-snowy),
+		var(--color-thunder) 10.2%
+	);
+
+	/* Raven color components */
+	--raven-lightness: 61.29%;
+	--raven-chroma: 0.064;
+	--raven-hue: 237.73;
+	/* Raven */
+	--color-raven: oklch(
+		var(--raven-lightness) var(--raven-chroma) var(--raven-hue)
+	);
+	/* Raven-based colors */
+	--color-lynx: oklch(
+		from var(--color-raven) calc(l * (1 - 0.6)) calc(c * 0.25) h
+	);
+	--color-wolf: oklch(
+		from var(--color-raven) calc(l * (1 - 0.4)) calc(c * 0.6) h
+	);
+	--color-bowhead: oklch(
+		from var(--color-raven) calc(l * (1 - 0.2)) calc(c * 0.8) h
+	);
+	--color-highland: oklch(
+		from var(--color-raven) calc(l * (1 + 0.2)) calc(c * 0.8) h
+	);
+	--color-coyote: oklch(
+		from var(--color-raven) calc(l * (1 + 0.4)) calc(c * 0.6) h
+	);
+	--color-bear: oklch(
+		from var(--color-raven) calc(l * (1 + 0.6)) calc(c * 0.333) h
+	);
+
+	--color-aspen: oklch(80.1% 0.1469 83.99deg);
+	--color-conifer: oklch(54.1% 0.1282 142.13deg);
+	--color-maple: oklch(57.6% 0.2268 27.77deg);
+
+	--color-shadow-light: oklch(66.2% 0 0deg);
+	--color-shadow-dark: oklch(16.8% 0 0deg);
+	--color-css: oklch(59.1% 0.1627 248.29deg);
+	--color-html: oklch(62.6% 0.1981 29.54deg);
+	--color-javascript: oklch(84.1% 0.144 88.57deg);
+	--color-json: oklch(73.5% 0 0deg);
+	--color-liquid: oklch(71.2% 0.136 132.27deg);
+	--color-nginx: oklch(59.65% 0.14 144.22deg);
+	--color-nunjucks: oklch(58.3% 0.14 141.86deg);
+	--color-php: oklch(62.81% 0.071 276.67deg);
+	--color-scss: oklch(60.6% 0.1586 7.66deg);
+	--color-webc: oklch(68.6% 0.0967 164.98deg);
+	--color-yaml: oklch(61.4% 0.2304 18.49deg);
+	--color-rss: oklch(75.05% 0.179 58.28deg);
+
+	--body-background-color: light-dark(
+		color-mix(in oklab, var(--color-bear), var(--color-snowy) 90%),
+		color-mix(in oklab, var(--color-mineshaft), var(--color-wolf) 40%)
+	);
+	--body-color: light-dark(var(--color-kaiser), var(--color-yeti));
+
+	--opacity-05: 0.05;
+	--opacity-10: 0.1;
+	--opacity-20: 0.2;
+	--opacity-30: 0.3;
+	--opacity-40: 0.4;
+	--opacity-50: 0.5;
+	--opacity-60: 0.6;
+	--opacity-70: 0.7;
+	--opacity-80: 0.8;
+	--opacity-90: 0.9;
+
+	--size-tiny-min: 0.3125rem;
+	--size-tiny-max: 0.375rem;
+	--size-tiny: utopia.clamp(5, 6, 700, 1600);
+	--container-size-tiny: utopia.clamp(5, 6, 700, 1600, "container");
+
+	--size-small-min: 0.625rem;
+	--size-small-max: 0.75rem;
+	--size-small: utopia.clamp(10, 12, 700, 1600);
+	--container-size-small: utopia.clamp(10, 12, 700, 1600, "container");
+
+	--size-medium-min: 1.25rem;
+	--size-medium-max: 1.5rem;
+	--size-medium: utopia.clamp(20, 24, 700, 1600);
+	--container-size-medium: utopia.clamp(20, 24, 700, 1600, "container");
+
+	--size-large-min: 2.25rem;
+	--size-large-max: 2.625rem;
+	--size-large: utopia.clamp(36, 42, 700, 1600);
+	--container-size-large: utopia.clamp(36, 42, 700, 1600, "container");
+
+	--size-gigantic-min: 4rem;
+	--size-gigantic-max: 4.5rem;
+	--size-gigantic: utopia.clamp(64, 72, 700, 1600);
+	--container-size-gigantic: utopia.clamp(64, 72, 700, 1600, "container");
+
+	--size-tiny-small: utopia.clamp(5, 12, 700, 1600);
+	--size-tiny-medium: utopia.clamp(5, 24, 700, 1600);
+	--size-tiny-large: utopia.clamp(5, 42, 700, 1600);
+	--size-tiny-gigantic: utopia.clamp(5, 72, 700, 1600);
+	--size-small-medium: utopia.clamp(10, 24, 700, 1600);
+	--size-small-large: utopia.clamp(10, 42, 700, 1600);
+	--size-small-gigantic: utopia.clamp(10, 72, 700, 1600);
+	--size-medium-large: utopia.clamp(20, 42, 700, 1600);
+	--size-medium-gigantic: utopia.clamp(20, 72, 700, 1600);
+	--size-large-gigantic: utopia.clamp(36, 72, 700, 1600);
+
+	--container-size-tiny-small: utopia.clamp(5, 12, 700, 1600, "container");
+	--container-size-tiny-medium: utopia.clamp(5, 24, 700, 1600, "container");
+	--container-size-tiny-large: utopia.clamp(5, 42, 700, 1600, "container");
+	--container-size-tiny-gigantic: utopia.clamp(5, 72, 700, 1600, "container");
+	--container-size-small-medium: utopia.clamp(10, 24, 700, 1600, "container");
+	--container-size-small-large: utopia.clamp(10, 42, 700, 1600, "container");
+	--container-size-small-gigantic: utopia.clamp(
+		10,
+		72,
+		700,
+		1600,
+		"container"
+	);
+	--container-size-medium-large: utopia.clamp(20, 42, 700, 1600, "container");
+	--container-size-medium-gigantic: utopia.clamp(
+		20,
+		72,
+		700,
+		1600,
+		container
+	);
+	--container-size-large-gigantic: utopia.clamp(
+		36,
+		72,
+		700,
+		1600,
+		"container"
+	);
+
+	--size-gutter: var(--size-medium);
+	--size-gap: calc(var(--size-gutter) * 2);
+	--size-space: clamp(1.5em, 0.04rem + 1.86vi, 2.25em);
+	--size-aside: 20rem;
+	--size-avatar: 100px;
+	--size-avatar-small: 48px;
+	--size-logo: clamp(9rem, -3.6rem + 28.8vi, 18rem);
+	--size-logo-small: 4rem;
+	--size-logo-brand: 1.5rem;
+	--size-character-limit: 65ch;
+	--size-line-length: clamp(21em, 100vi, 30em);
+	--size-border-default: 4px;
+	--size-border-thin: 2px;
+	--size-tap: 44px;
+
+	--size-breakpoint-tiny: 500px;
+	--size-breakpoint-small: 700px;
+	--size-breakpoint-medium: 850px;
+	--size-breakpoint-large: 1000px;
+	--size-breakpoint-gigantic: 1200px;
+	--size-breakpoint-behemoth: 1600px;
+
+	--font-family-sans:
+		"Proxima Vara", "Adjusted Arial Fallback", Arial, sans-serif;
+	--font-family-serif:
+		Georgia, Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
+	--font-family-monospace:
+		"Maple Mono", ui-monospace, "Cascadia Code", "Source Code Pro", Menlo,
+		Consolas, "DejaVu Sans Mono", monospace;
+	--font-family-nineties:
+		Verdana, Seravek, "Gill Sans Nova", Ubuntu, Calibri, "DejaVu Sans",
+		source-sans-pro, sans-serif;
+	--font-family-silly: Comic Sans MS, Chalkboard SE, fantasy, serif;
+
+	--font-size-small-min: 0.875rem;
+	--font-size-small-max: 1rem;
+	--font-size-small: utopia.clamp(14, 16);
+	--container-font-size-small: utopia.clamp(14, 16, 500, 1200, "container");
+
+	--font-size-default-min: 1rem;
+	--font-size-default-max: 1.25rem;
+	--font-size-default: utopia.clamp(16, 20);
+	--container-font-size-default: utopia.clamp(16, 20, 500, 1200, "container");
+
+	--font-size-delta-min: 1rem;
+	--font-size-delta-max: 1.375rem;
+	--font-size-delta: utopia.clamp(16, 22);
+	--container-font-size-delta: utopia.clamp(16, 22, 500, 1200, "container");
+
+	--font-size-gamma-min: 1.25rem;
+	--font-size-gamma-max: 1.625rem;
+	--font-size-gamma: utopia.clamp(20, 26);
+	--container-font-size-gamma: utopia.clamp(20, 26, 500, 1200, "container");
+
+	--font-size-beta-min: 1.4375rem;
+	--font-size-beta-max: 2rem;
+	--font-size-beta: utopia.clamp(23, 32);
+	--container-font-size-beta: utopia.clamp(23, 32, 500, 1200, "container");
+
+	--font-size-inbetween-min: 1.75rem;
+	--font-size-inbetween-max: 2.625rem;
+	--font-size-inbetween: utopia.clamp(28, 42);
+	--container-font-size-inbetween: utopia.clamp(
+		28,
+		42,
+		500,
+		1200,
+		"container"
+	);
+
+	--font-size-alpha-min: 2.25rem;
+	--font-size-alpha-max: 5rem;
+	--font-size-alpha: utopia.clamp(36, 80);
+	--container-font-size-alpha: utopia.clamp(36, 80, 500, 1200, "container");
+
+	--font-size-small-default: utopia.clamp(14, 20);
+	--font-size-default-delta: utopia.clamp(16, 22);
+	--font-size-delta-gamma: utopia.clamp(16, 26);
+	--font-size-gamma-beta: utopia.clamp(20, 32);
+	--font-size-beta-inbetween: utopia.clamp(23, 42);
+	--font-size-inbetween-alpha: utopia.clamp(28, 80);
+
+	--container-font-size-small-default: utopia.clamp(
+		14,
+		20,
+		500,
+		1200,
+		container
+	);
+	--container-font-size-default-delta: utopia.clamp(
+		16,
+		22,
+		500,
+		1200,
+		container
+	);
+	--container-font-size-delta-gamma: utopia.clamp(
+		16,
+		26,
+		500,
+		1200,
+		container
+	);
+	--container-font-size-gamma-beta: utopia.clamp(
+		20,
+		32,
+		500,
+		1200,
+		container
+	);
+	--container-font-size-beta-inbetween: utopia.clamp(
+		23,
+		42,
+		500,
+		1200,
+		container
+	);
+	--container-font-size-inbetween-alpha: utopia.clamp(
+		28,
+		80,
+		500,
+		1200,
+		container
+	);
+
+	--font-weight-light: 300;
+	--font-weight-regular: 400;
+	--font-weight-medium: 500;
+	--font-weight-semibold: 600;
+	--font-weight-bold: 700;
+	--font-weight-extrabold: 800;
+	--font-weight-heavy: 900;
+
+	--line-height-default: 1.875;
+	--line-height-small: 1.25;
+	--line-height-medium: 1.429;
+	--line-height-code: 2;
+
+	--z-index-below: -1;
+	--z-index-root: 0;
+	--z-index-default: 1;
+	--z-index-above: 2;
+	--z-index-menu: 3;
+	--z-index-modal: 4;
+	--z-index-dialog: 5;
+	--z-index-notification: 6;
+
+	--animation-duration: 2s;
+	--animation-duration-long: 3.5s;
+
+	--rotation-default: 5deg;
+	--rotation-small: 2.5deg;
+
+	--transition-duration: 0.2s;
+	--transition-duration-short: 120ms;
+	--transition-duration-long: 1s;
+	--transition-function: ease;
+
+	--skew: -2.5deg;
+
+	--line-clamp: 3;
+
+	--aspect-ratio: 16 / 9;
+
+	--contrast-list:
+		var(--color-yeti), var(--color-snowy), var(--color-mineshaft),
+		var(--color-thunder);
+	--contrast-ratio: AA;
+
+	--color-shadow: light-dark(
+		var(--color-shadow-light),
+		var(--color-shadow-dark)
+	);
+
+	/* Generated with: https://www.joshwcomeau.com/shadow-palette/ */
+	--box-shadow-low:
+		0.3px 0.5px 0.7px oklch(from var(--color-shadow) l c h / 64%),
+		0.4px 0.8px 1px -1.2px oklch(from var(--color-shadow) l c h / 64%),
+		1px 2px 2.5px -2.5px oklch(from var(--color-shadow) l c h / 64%);
+	--box-shadow-medium:
+		0.3px 0.5px 0.7px oklch(from var(--color-shadow) l c h / 64%),
+		0.8px 1.6px 2px -0.8px oklch(from var(--color-shadow) l c h / 64%),
+		2.1px 4.1px 5.2px -1.7px oklch(from var(--color-shadow) l c h / 64%),
+		5px 10px 12.6px -2.5px oklch(from var(--color-shadow) l c h / 64%);
+	--box-shadow-high:
+		0.3px 0.5px 0.7px oklch(from var(--color-shadow) l c h / 64%),
+		1.5px 2.9px 3.7px -0.4px oklch(from var(--color-shadow) l c h / 64%),
+		2.7px 5.4px 6.8px -0.7px oklch(from var(--color-shadow) l c h / 64%),
+		4.5px 8.9px 11.2px -1.1px oklch(from var(--color-shadow) l c h / 64%),
+		7.1px 14.3px 18px -1.4px oklch(from var(--color-shadow) l c h / 64%),
+		11.2px 22.3px 28.1px -1.8px oklch(from var(--color-shadow) l c h / 64%),
+		17px 33.9px 42.7px -2.1px oklch(from var(--color-shadow) l c h / 64%),
+		25px 50px 62.9px -2.5px oklch(from var(--color-shadow) l c h / 64%);
+}

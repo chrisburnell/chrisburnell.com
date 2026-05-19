@@ -1,0 +1,34 @@
+/**
+ * Context
+ * @group blocks
+ */
+
+.context {
+	font-size: var(--font-size-default);
+	font-family: var(--font-family-serif);
+	margin-block-start: var(--size-gap);
+
+	@container (inline-size <= 500px) {
+		font-size: var(--font-size-small);
+	}
+
+	@container (inline-size > 700px) {
+		text-align: center;
+	}
+
+	& :is(p, blockquote, details, table, dl, ol, ul, figure:not([class])) {
+		max-inline-size: var(--size-line-length);
+		margin-inline: auto;
+	}
+
+	& time {
+		font-style: italic;
+		font-synthesis: none;
+		font-variation-settings: "ital" 125;
+
+		& sup::before {
+			content: " ";
+			font-size: 0.5em;
+		}
+	}
+}

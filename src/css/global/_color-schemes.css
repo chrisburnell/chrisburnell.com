@@ -1,0 +1,74 @@
+/**
+ * Dark
+ * @group themes
+ */
+
+:where(:root) {
+	color-scheme: light dark;
+
+	@media print {
+		color-scheme: light !important;
+	}
+}
+
+:where(
+	:root:has([name="color-scheme"] [value=""]:checked):not(
+			[data-color-scheme],
+			.light,
+			.dark
+		)
+) {
+	@media (prefers-color-scheme: dark) {
+		& select {
+			background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='50' fill='%23dddddd'><polygon points='0,0 100,0 50,50'/></svg>");
+		}
+		& .dark-invert-colors {
+			filter: invert(1) hue-rotate(180deg);
+		}
+	}
+
+	&:where(.suggested-light),
+	& :where(.suggested-light) {
+		color-scheme: light;
+		color: var(--body-color);
+	}
+	&:where(.suggested-dark),
+	& :where(.suggested-dark) {
+		color-scheme: dark;
+		color: var(--body-color);
+
+		& select {
+			background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='50' fill='%23dddddd'><polygon points='0,0 100,0 50,50'/></svg>");
+		}
+		& .dark-invert-colors {
+			filter: invert(1) hue-rotate(180deg);
+		}
+	}
+}
+
+/**
+ * Order of selector specificities below:
+ * 0,0,0 - applied by source order
+ * 0,0,0 - applied by source order
+ * 0,1,0
+ */
+
+:where(:root:has([name="color-scheme"] [value="light"]:checked)),
+:where([data-color-scheme="light"]),
+.light {
+	color-scheme: light;
+	color: var(--body-color);
+}
+:where(:root:has([name="color-scheme"] [value="dark"]:checked)),
+:where([data-color-scheme="dark"]),
+.dark {
+	color-scheme: dark;
+	color: var(--body-color);
+
+	& select {
+		background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='50' fill='%23dddddd'><polygon points='0,0 100,0 50,50'/></svg>");
+	}
+	& .dark-invert-colors {
+		filter: invert(1) hue-rotate(180deg);
+	}
+}

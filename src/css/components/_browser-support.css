@@ -1,0 +1,54 @@
+/**
+ * Browser Support
+ * @group components
+ */
+
+.support,
+.support__meta {
+	display: flex;
+	gap: var(--size-gutter);
+
+	@container (inline-size > 700px) {
+		gap: var(--size-large);
+	}
+}
+
+.support {
+	flex-direction: column-reverse;
+
+	@container (inline-size > 700px) {
+		flex-direction: row-reverse;
+	}
+}
+
+.support__meta {
+	flex-direction: column;
+	justify-content: center;
+}
+
+.browser-support {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--size-small);
+
+	& li {
+		border-radius: var(--border-radius, var(--size-border-thin));
+		padding-inline: var(--size-small);
+		font-weight: var(--font-weight-semibold);
+	}
+}
+
+.supported {
+	background-color: var(--color-conifer);
+	color: var(--color-snowy);
+}
+
+.partial {
+	background-color: var(--color-aspen);
+	color: var(--color-thunder);
+}
+
+.unsupported {
+	background-color: var(--color-maple);
+	color: var(--color-snowy);
+}

@@ -1,0 +1,26 @@
+@charset "UTF-8";
+/**
+ * chrisburnell.com
+ * Critical CSS
+ * @author Chris Burnell <me@chrisburnell.com>
+ */
+
+/* @import "abstracts/functions.css"; */
+
+@import "global/fonts.css";
+
+@import "global/layers.css";
+
+@import "global/reset.css" layer(reset);
+
+@import "global/critical.css" layer(global);
+
+@import "compositions/critical.css" layer(compositions);
+
+@import "blocks/critical.css" layer(blocks);
+
+@import "utilities/critical.css" layer(utilities);
+
+@import "components/critical.css" layer(components);
+
+@import "themes/main.css" layer(themes);

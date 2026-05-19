@@ -14,7 +14,7 @@ import image from "./plugins/image.js";
 import javascript from "./plugins/javascript.js";
 import markdown from "./plugins/markdown.js";
 import pregenerateImages from "./plugins/pregenerateImages.js";
-import scss from "./plugins/scss.js";
+import css from "./plugins/css.js";
 
 export default {
 	EleventyRenderPlugin,
@@ -33,5 +33,5 @@ export default {
 	ogImage,
 	pregenerateImages,
 	markdown,
-	scss,
+	css,
 };

@@ -1,0 +1,187 @@
+/**
+ * Settings
+ * @group blocks
+ */
+
+:is(.popover-settings, .popover-navigation) {
+	@supports (position-anchor: --example) {
+		position-anchor: --anchor-header;
+		position-area: bottom span-left;
+		position-visibility: always;
+		position: relative;
+		inset: initial;
+		margin-inline-end: var(
+			--gutter-start,
+			var(--gutter, var(--size-gutter))
+		);
+		transform: none;
+
+		@starting-style {
+			transform: translateY(var(--size-medium));
+		}
+	}
+}
+
+.popover-settings {
+	max-inline-size: calc(
+		100vi -
+			(
+				2.75 *
+					max(
+						env(safe-area-inset-right),
+						var(--gutter-end, var(--gutter, var(--size-gutter)))
+					)
+			)
+	);
+	max-inline-size: calc(
+		100dvi -
+			(
+				2.75 *
+					max(
+						env(safe-area-inset-right),
+						var(--gutter-end, var(--gutter, var(--size-gutter)))
+					)
+			)
+	);
+	max-block-size: 90vb;
+	max-block-size: 90dvb;
+	font-size: var(--font-size-delta-gamma);
+	overflow-x: auto;
+
+	& legend {
+		grid-column: 1 / -1;
+	}
+}
+
+.popover-navigation {
+	padding-inline: var(--size-large);
+
+	@media (width > 500px) {
+		display: none;
+	}
+
+	& h2 {
+		padding-inline: 1em;
+	}
+
+	& .navigation__list {
+		flex-direction: column;
+
+		& a {
+			font-size: var(--font-size-gamma);
+			padding-inline: var(--size-small-medium);
+		}
+	}
+}
+
+:is(.popover-settings-button, .popover-navigation-button) {
+	background-color: var(--color-wolf);
+	background-image: linear-gradient(
+		160deg,
+		var(--color-bowhead),
+		var(--color-wolf)
+	);
+	display: grid;
+	place-items: center;
+	padding: var(--size-tiny);
+	margin-inline-start: 1ex;
+	border-radius: 50%;
+	filter: drop-shadow(
+		0 0 var(--size-border-thin)
+			oklch(from var(--color-thunder) l c h / var(--opacity-50))
+	);
+
+	svg {
+		user-select: none;
+		-webkit-touch-callout: none;
+		pointer-events: none;
+		fill: var(--color-snowy);
+		min-inline-size: calc(
+			var(--font-size-default) * var(--line-height-default)
+		);
+		min-block-size: calc(
+			var(--font-size-default) * var(--line-height-default)
+		);
+		transition: transform var(--transition-duration)
+			var(--transition-function);
+		filter: drop-shadow(0 1px 1px var(--color-mineshaft));
+	}
+}
+
+.popover-settings-button {
+	svg {
+		transform: scale(0.8);
+	}
+
+	&:is(:hover, :focus, :active) {
+		svg {
+			transform: scale(1) rotate(60deg);
+		}
+	}
+}
+
+.popover-navigation-button {
+	@media (width > 500px) {
+		display: none;
+	}
+
+	svg {
+		transform: scale(0.6);
+	}
+
+	&:is(:hover, :focus, :active) {
+		svg {
+			transform: scale(0.8);
+		}
+	}
+}
+
+/* Align settings */
+.popover-settings form {
+	display: grid;
+	grid-template-columns: max-content auto;
+	place-items: center;
+	gap: 1em;
+
+	label {
+		inline-size: 100%;
+		text-align: end;
+	}
+
+	select,
+	[type="checkbox"] {
+		margin-inline-end: auto;
+	}
+
+	select,
+	[type="range"] {
+		inline-size: 100%;
+		min-inline-size: min-content;
+	}
+}
+
+.navigator:has(+ p) .settings-reset {
+	&::after {
+		content: "*";
+		inline-size: 0;
+		display: inline-block;
+		padding-inline-start: 0.333ch;
+	}
+}
+
+/* Hide custom hue input unless Custom theme is selected */
+:root:has([name="theme"] [value*="custom"]:not(:checked))
+	:is(
+		[for*="custom-hue"],
+		[name="custom-hue"],
+		[for*="custom-chroma"],
+		[name="custom-chroma"]
+	) {
+	display: none;
+}
+
+/* Hide colour scheme input when 90s or Matrix theme is selected */
+:root:has([name="theme"] :is([value*="nineties"], [value*="matrix"]):checked)
+	:is([for*="color-scheme"], [name="color-scheme"]) {
+	display: none;
+}

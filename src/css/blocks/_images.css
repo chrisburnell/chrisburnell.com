@@ -1,0 +1,56 @@
+/**
+ * Images
+ * @group blocks
+ */
+
+.banner {
+	border-radius: var(--border-radius, var(--size-border-thin));
+}
+
+.avatar {
+	box-sizing: content-box;
+	aspect-ratio: 1;
+	display: inline-block;
+	border-radius: 50%;
+	border: var(--size-border-thin) solid
+		oklch(from var(--color-raven) l c h / var(--opacity-50));
+	box-shadow: var(--box-shadow, var(--box-shadow-low));
+	transition: border-color var(--transition-duration)
+		var(--transition-function);
+
+	[href]:is(:hover, :focus, :active) & {
+		border-color: var(--color-maple);
+	}
+
+	.grid article & {
+		float: left;
+		float: inline-start;
+		margin-inline-end: var(--size-small);
+
+		& + * {
+			margin-block-start: 0;
+		}
+	}
+}
+
+/* Used inside h-resume / CV Page */
+.brand-logo {
+	block-size: var(--size-logo-brand);
+	inline-size: var(--size-logo-brand);
+	display: inline-block;
+	vertical-align: middle;
+	margin-block-start: calc(1ex - 1cap);
+	object-fit: contain;
+}
+
+.pixelated {
+	image-rendering: pixelated;
+}
+
+.dreamy {
+	filter: url("/images/dreamy.svg#dreamy");
+}
+
+.fsociety {
+	filter: url("/images/fsociety.svg#fsociety");
+}

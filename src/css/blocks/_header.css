@@ -1,0 +1,44 @@
+/**
+ * Header
+ * @group blocks
+ */
+
+.header {
+	container: header / inline-size;
+	background-color: var(
+		--background-color,
+		light-dark(
+			color-mix(in oklab, var(--color-bear), var(--color-snowy)),
+			color-mix(
+				in oklab,
+				var(--color-thunder),
+				var(--color-mineshaft) 80%
+			)
+		)
+	);
+	overflow-y: hidden;
+	box-shadow: var(--box-shadow-low);
+	z-index: var(--z-index-menu);
+
+	@media print {
+		display: none;
+	}
+
+	& .wrap {
+		anchor-name: --anchor-header;
+		inline-size: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-block: var(--size-small);
+	}
+
+	& .logo {
+		flex: 0 0 auto;
+	}
+
+	& .navigation {
+		flex: 0 1 auto;
+		margin-inline-start: var(--size-gutter);
+	}
+}

@@ -1,0 +1,67 @@
+/**
+ * Quotes
+ * @group global
+ */
+
+blockquote {
+	background-color: var(--color-bear);
+	inline-size: 100%;
+	max-inline-size: var(--size-line-length);
+	padding: var(--size-medium);
+	border-radius: var(--border-radius, var(--size-border-thin));
+	margin: 0 auto var(--size-medium);
+	hanging-punctuation: first;
+
+	& > * + * {
+		margin-block-start: var(--flow-space, 1em);
+	}
+
+	& p:not(.no-quotes) {
+		font-family: var(--font-family-serif);
+		font-style: italic;
+		font-synthesis: none;
+		font-variation-settings: "ital" 125;
+
+		&::before {
+			content: open-quote;
+		}
+
+		&::after {
+			content: close-quote;
+		}
+
+		&:not(:last-of-type)::after {
+			inline-size: 1px !important;
+			block-size: 1px !important;
+			padding: 0 !important;
+			margin: -1px !important;
+			border: 0 !important;
+			overflow: hidden !important;
+			position: absolute !important;
+			white-space: nowrap !important;
+			clip: rect(0 0 0 0) !important;
+			clip-path: inset(100%) !important;
+		}
+	}
+
+	& cite {
+		color: var(--body-color);
+		display: block;
+		margin-block-start: var(--size-medium);
+		text-align: end;
+
+		&::before {
+			/* EN DASH, NO-BREAK SPACE */
+			content: "– ";
+		}
+	}
+}
+
+cite {
+	font-style: normal;
+	font-variation-settings: normal;
+}
+
+q {
+	hanging-punctuation: first;
+}

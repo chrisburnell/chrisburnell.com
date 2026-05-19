@@ -1,0 +1,22 @@
+/**
+ * Embeds & Media
+ * @group blocks
+ */
+
+/* Codepen Embed, Speaker Deck Embed */
+:is(.cp_embed_wrapper, .speakerdeck-embed-wrapper) {
+	--box-max-inline-size: auto;
+	--gutter: 0;
+
+	padding: 0;
+
+	& iframe {
+		margin-block-end: 0;
+	}
+}
+
+/* CodePen Embeds */
+.cp_embed_wrapper {
+	resize: both;
+	overflow: auto;
+}

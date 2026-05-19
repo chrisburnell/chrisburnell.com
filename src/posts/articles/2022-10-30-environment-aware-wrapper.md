@@ -6,7 +6,7 @@ tags:
   - css
   - ux
 css_includes:
-  - src/css/pages/environment-aware-wrapper.scss
+  - src/css/pages/environment-aware-wrapper.css
 ---
 
 <figure>

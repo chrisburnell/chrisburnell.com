@@ -11,8 +11,8 @@ tags:
 syndicate_to:
   - https://fediverse.repc.co/@chrisburnell/111691333492575973
 css_includes:
-  - src/css/pages/old-design-system-new-colors.scss
-  - src/css/pages/styleguide.scss
+  - src/css/pages/old-design-system-new-colors.css
+  - src/css/pages/styleguide.css
 js_includes:
   - src/js/pages/old-design-system-new-colors.js
 ---

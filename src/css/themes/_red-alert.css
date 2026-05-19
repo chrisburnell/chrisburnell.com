@@ -1,0 +1,15 @@
+/**
+ * Red Alert
+ * @group themes
+ */
+
+:root:has([name="theme"] [value*="red-alert"]:checked),
+[data-theme*="red-alert"],
+.red-alert {
+	--raven-lightness: 54.3%;
+	--raven-chroma: 0.076;
+	--raven-hue: 26.565;
+	--color-raven: oklch(
+		var(--raven-lightness) var(--raven-chroma) var(--raven-hue)
+	);
+}

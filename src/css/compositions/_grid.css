@@ -1,0 +1,66 @@
+/**
+ * Auto Grid
+ * @group compositions
+ */
+
+.grid {
+	display: grid;
+	/* prettier-ignore */
+	grid-template-columns: repeat(
+		var(--placement, auto-fill),
+		var(--grid-inline-size, minmax(
+			var(--grid-min-inline-size, 12em),
+			var(--grid-max-inline-size, 1fr)
+		))
+	);
+	column-gap: var(--column-gap, var(--gap, var(--size-gutter)));
+	row-gap: var(--row-gap, var(--gap, var(--size-gutter)));
+
+	&[data-rows="masonry"] {
+		align-items: start;
+		display: grid-lanes;
+	}
+
+	&[data-layout*="50-50"] {
+		--placement: auto-fit;
+	}
+	&[data-layout="50-50"] {
+		--grid-min-inline-size: clamp(
+			8rem,
+			50% - var(--column-gap, var(--gap, var(--size-gutter))),
+			16rem
+		);
+	}
+	&[data-layout="50-50-small"] {
+		@container (inline-size <= 700px) {
+			--grid-min-inline-size: 100%;
+		}
+		@container (inline-size > 700px) {
+			--grid-min-inline-size: clamp(
+				8rem,
+				50% - var(--column-gap, var(--gap, var(--size-gutter))),
+				16rem
+			);
+		}
+	}
+
+	&[data-layout="natural"] {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: first baseline;
+
+		& > * {
+			flex: 0 1 var(--inline-size, auto);
+		}
+	}
+
+	& .full-span {
+		grid-column: 1 / -1;
+	}
+}
+
+.subgrid {
+	display: grid;
+	grid-template-columns: subgrid;
+	grid-template-rows: subgrid;
+}

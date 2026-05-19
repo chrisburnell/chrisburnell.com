@@ -11,7 +11,7 @@ syndicate_to:
   - https://mastodon.social/users/chrisburnell/statuses/102705333471640919
   - https://twitter.com/iamchrisburnell/status/1167375436617330693
 css_includes:
-  - src/css/pages/the-flip-flop-technique.scss
+  - src/css/pages/the-flip-flop-technique.css
 ---
 
 I highly recommend you read [Andy’s post](https://hankchizljaw.com/wrote/create-a-user-controlled-dark-or-light-mode/) first! Come back after, this page isn’t going anywhere…

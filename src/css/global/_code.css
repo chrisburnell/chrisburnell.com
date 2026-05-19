@@ -1,0 +1,82 @@
+/**
+ * Code
+ * @group global
+ * @link https://chrisburnell.com/styleguide/#code-block
+ */
+
+:is(code, kbd, samp, var, .monospace) {
+	font-family: var(--font-family-monospace);
+	font-variant: no-common-ligatures tabular-nums;
+	white-space: pre-wrap;
+}
+
+:is(code, kbd, samp, var) {
+	font-size: var(--font-size-small);
+	line-height: var(--line-height-medium);
+}
+
+:is(code, kbd, samp, mark) {
+	padding: var(--size-border-default);
+	border-radius: var(--border-radius, var(--size-border-default));
+}
+
+:is(code, samp, kbd) {
+	background-color: var(--color-bear);
+	font-weight: var(--font-weight-regular);
+}
+
+:is(blockquote, code, samp, kbd) {
+	background-color: oklch(from currentColor l c h / 0.05);
+}
+
+kbd {
+	border: 1px solid currentColor;
+	font-size: 0.8125em;
+	font-weight: var(--font-weight-semibold);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+var {
+	color: light-dark(var(--color-bowhead), var(--color-highland));
+	font-size: inherit;
+	font-style: normal;
+	font-variation-settings: normal;
+	font-weight: var(--font-weight-semibold);
+}
+
+pre {
+	min-inline-size: 0;
+	max-inline-size: 100%;
+	tab-size: 2;
+	text-align: start;
+	white-space: pre-wrap;
+	overflow: hidden;
+	position: relative;
+
+	/* TODO replace with variable when possible! */
+	@container (inline-size > 700px) {
+		tab-size: 4;
+	}
+
+	&,
+	& code {
+		display: block;
+		font-family: var(--font-family-monospace);
+		line-height: var(--line-height-code);
+		overflow-wrap: normal;
+		white-space: pre-wrap;
+		word-break: normal;
+		word-spacing: normal;
+		word-wrap: normal;
+	}
+
+	& code {
+		/* break through layers */
+		background-color: transparent !important;
+		padding: 0;
+		border-radius: 0;
+		overflow: auto;
+		scrollbar-color: var(--color-raven) transparent;
+	}
+}

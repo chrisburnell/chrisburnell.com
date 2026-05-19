@@ -1,0 +1,33 @@
+/**
+ * Browse
+ * @group blocks
+ */
+
+.browse__list {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	column-gap: var(--size-medium-gigantic);
+	margin-block-start: var(--size-gap);
+	font-weight: var(--font-weight-semibold);
+
+	@media print {
+		display: none;
+	}
+
+	& li {
+		flex: 0 1 50%;
+	}
+}
+
+.browse__previous,
+.browse__next {
+	display: block;
+}
+
+.browse__next {
+	text-align: end;
+}
+:has(> .browse__next) {
+	margin-inline-start: auto;
+}

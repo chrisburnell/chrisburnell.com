@@ -1,0 +1,55 @@
+/**
+ * Page
+ * @group global
+ */
+
+html {
+	background-color: var(--color-kaiser);
+	scrollbar-color: var(--color-raven) var(--body-background-color);
+	accent-color: var(--color-raven);
+	font-size: 100%;
+	font-variant: common-ligatures proportional-nums;
+	hanging-punctuation: first allow-end last;
+}
+
+body {
+	background-color: var(--body-background-color);
+	color: var(--body-color);
+	display: grid;
+	grid-template-rows:
+		[header-start]
+		auto
+		[header-end main-start]
+		1fr
+		[main-end footer-start]
+		auto
+		[footer-end];
+	font-family: var(--font-family-sans);
+	font-size: var(--font-size-default);
+	font-style: normal;
+	font-variation-settings: normal;
+	font-weight: var(--font-weight-regular);
+	line-height: var(--line-height-default);
+	counter-reset: figureNumber;
+
+	@media print {
+		display: block;
+	}
+}
+
+.header {
+	grid-row: header;
+}
+
+.main {
+	grid-row: main;
+}
+
+.footer {
+	grid-row: footer;
+}
+
+@page {
+	size: Letter portrait;
+	margin: 0;
+}

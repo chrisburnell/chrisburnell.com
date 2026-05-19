@@ -1,0 +1,52 @@
+/**
+ * Title
+ * @group blocks
+ */
+
+.title {
+	display: block;
+	margin-block-start: var(--size-large-gigantic);
+	margin-block-end: var(--size-medium-large);
+	overflow: hidden;
+	position: relative;
+	contain: content; /* helps painting with .perch inside */
+
+	@container (inline-size > 700px) {
+		text-align: center;
+	}
+
+	&:not(.title--positive, .title--negative) .p-name {
+		@media not print {
+			background-image: linear-gradient(
+				to bottom,
+				light-dark(var(--color-kaiser), var(--color-snowy)),
+				light-dark(var(--color-bowhead), var(--color-highland))
+			);
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+			box-decoration-break: clone;
+		}
+	}
+
+	& > :is(.emoji, .icon) {
+		font-size: 0.8125em;
+	}
+}
+
+:is(.title--positive, .title--negative) {
+	background-image: none;
+	background-clip: initial;
+	color: var(--color-snowy);
+
+	& > span {
+		padding: var(--size-tiny) var(--size-small);
+	}
+}
+
+.title--positive > span {
+	background-color: var(--color-conifer);
+}
+
+.title--negative > span {
+	background-color: var(--color-maple);
+}

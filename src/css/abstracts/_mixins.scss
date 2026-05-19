@@ -117,7 +117,12 @@
  * @param {custom-ident} [--name]
  * @param @contents
  */
-@mixin --inline-between(--min <length>, --max <length>, --name <custom-ident>, @contents) {
+@mixin --inline-between(
+	--min <length>,
+	--max <length>,
+	--name <custom-ident>,
+	@contents
+) {
 	@container env(--name) (env(--min) < inline-size <= env(--max)) {
 		@contents;
 	}
@@ -157,7 +162,12 @@
  * @param {custom-ident} [--name]
  * @param @contents
  */
-@mixin --block-between(--min <length>, --max <length>, --name <custom-ident>, @contents) {
+@mixin --block-between(
+	--min <length>,
+	--max <length>,
+	--name <custom-ident>,
+	@contents
+) {
 	@container env(--name) (env(--min) < block-size <= env(--max)) {
 		@contents;
 	}
@@ -168,7 +178,10 @@
  * @param {custom-ident} --name
  * @param {easing-function} [--function]
  */
-@mixin --animation(--name <custom-ident>, --function <easing-function>: var(--animation-function)) {
+@mixin --animation(
+	--name <custom-ident>,
+	--function <easing-function>: var(--animation-function)
+) {
 	animation: --animation(var(--name), var(--function));
 }
 
@@ -179,6 +192,16 @@
  * @param {easing-function} [--function]
  * @param {time} [--delay]
  */
-@mixin --transition(--property <single-transition-property>, --duration <time>: var(--transition-duration), --function <easing-function>: var(--transition-function), --delay <time>: 0) {
-	transition: --transition(var(--property), var(--duration), var(--function), var(--delay));
+@mixin --transition(
+	--property <single-transition-property>,
+	--duration <time>: var(--transition-duration),
+	--function <easing-function>: var(--transition-function),
+	--delay <time>: 0
+) {
+	transition: --transition(
+		var(--property),
+		var(--duration),
+		var(--function),
+		var(--delay)
+	);
 }

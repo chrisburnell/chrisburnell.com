@@ -13,7 +13,7 @@ post_includes:
 syndicate_to:
   - https://fediverse.repc.co/@chrisburnell/112371549706920942
 css_includes:
-  - src/css/pages/early-2024-web-components.scss
+  - src/css/pages/early-2024-web-components.css
 ---
 
 <h2 id="relative-time"><span class=" [ gamma  monospace ] ">&lt;relative-time&gt;</span></h2>
