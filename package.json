@@ -27,10 +27,6 @@
     {
       "type": "buymeacoffee",
       "url": "https://buymeacoffee.com/chrisburnell"
-    },
-    {
-      "type": "github",
-      "url": "https://github.com/sponsors/chrisburnell"
     }
   ],
   "private": true,
