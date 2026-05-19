@@ -54,7 +54,7 @@
     "now": "npx @11ty/eleventy --ignore-initial --incremental --serve",
     "pregenerate": "npm run setup && cross-env PREGENERATE_IMAGES=true npx @11ty/eleventy",
     "prettier": "npx prettier --write --list-different src",
-    "setup": "npm run tokens && npm run prettier && npx update-browserslist-db@latest && npm run css",
+    "setup": "npm run tokens && npx update-browserslist-db@latest && npm run css && npm run prettier",
     "start": "npm run css && npx @11ty/eleventy --incremental --serve",
     "test": "npx vitest run",
     "tokens": "npx json-to-scss './src/eleventy/data/designTokens/*.json' ./src/css/generated/_tokens.scss && npx prettier --write src/css/generated/_tokens.scss",
