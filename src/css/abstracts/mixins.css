@@ -1,7 +1,7 @@
-////
-/// Mixins
-/// @group abstracts
-////
+/**
+ * Mixins
+ * @group abstracts
+ */
 
 /**
  * Applies a background color and a text color that contrasts legibly.
@@ -35,6 +35,14 @@
 	font-style: italic;
 	font-synthesis: none;
 	font-variation-settings: "ital" 125;
+}
+/**
+ * *Slightly* italicise words.
+ */
+@mixin --soft-italic() {
+	font-style: italic;
+	font-synthesis: none;
+	font-variation-settings: "ital" 83;
 }
 
 /**
