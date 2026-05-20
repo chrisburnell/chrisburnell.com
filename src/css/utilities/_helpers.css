@@ -53,6 +53,8 @@
 }
 
 /* Make things non-selectable */
+.exhausted,
+.non-interactive,
 .non-selectable {
 	user-select: none;
 	-webkit-touch-callout: none;
@@ -61,8 +63,6 @@
 /* Make things non-interactive */
 .exhausted,
 .non-interactive {
-	user-select: none;
-	-webkit-touch-callout: none;
 	pointer-events: none;
 }
 
