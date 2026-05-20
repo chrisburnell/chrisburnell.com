@@ -52,7 +52,7 @@ summary {
 	text-underline-offset: 0.125em;
 	transition: text-decoration-color var(--transition-duration)
 		var(--transition-function);
-	list-style: "+ " inside;
+	list-style-position: inside;
 	cursor: pointer;
 	user-select: none;
 	-webkit-touch-callout: none;
@@ -61,6 +61,7 @@ summary {
 		font-family: var(--font-family-monospace);
 		font-size: var(--font-size-gamma);
 		font-weight: var(--font-weight-heavy);
+		content: "+ ";
 	}
 
 	&:is(:hover, :focus, :active) {
@@ -68,6 +69,8 @@ summary {
 	}
 
 	[open] > & {
-		list-style: "- " inside;
+		&::marker {
+			content: "- ";
+		}
 	}
 }
