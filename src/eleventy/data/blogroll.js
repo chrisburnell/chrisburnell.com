@@ -464,12 +464,6 @@ export default [
 		mastodon: "surma@mastodon.social",
 	},
 	{
-		title: "Phil Hawksworth",
-		url: "https://www.hawksworx.com",
-		rss: "https://www.hawksworx.com/feed.xml",
-		mastodon: "philhawksworth@indieweb.social",
-	},
-	{
 		title: "Pelle Wessman",
 		url: "https://voxpelli.com",
 		rss: "https://voxpelli.com/all.xml",
@@ -847,6 +841,12 @@ export default [
 		url: "https://jvns.ca",
 		rss: "https://jvns.ca/atom.xml",
 		mastodon: "b0rk@jvns.ca",
+	},
+	{
+		title: "Joe Crawford",
+		url: "https://artlung.com",
+		rss: "https://artlung.com/feed/",
+		mastodon: "artlung@xoxo.zone",
 	},
 ].sort((a, b) => {
 	return a.title.localeCompare(b.title, undefined, {
