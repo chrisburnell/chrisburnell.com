@@ -17,15 +17,10 @@
 	text-decoration-thickness: var(--size-border-thin);
 	text-decoration-skip-ink: auto;
 	text-underline-offset: 0.125em;
-	/* prettier-ignore */
-	transition:
-		opacity var(--transition-duration) var(--transition-function),
-		background-color var(--transition-duration) var(--transition-function),
-		color var(--transition-duration) var(--transition-function),
-		border-color var(--transition-duration) var(--transition-function),
-		outline-color var(--transition-duration) var(--transition-function),
-		text-decoration-color var(--transition-duration) var(--transition-function),
-		text-underline-offset var(--transition-duration-short) var(--transition-function);
+	transition: var(--transition-duration) var(--transition-function);
+	transition-property:
+		opacity, background-color, color, border-color, outline-color,
+		text-decoration-color, text-underline-offset;
 
 	&[disabled] {
 		user-select: none;

@@ -46,10 +46,8 @@ svg {
 	margin-block-start: calc(1ex - 1cap);
 	text-shadow: none;
 	transform-origin: center;
-	transition:
-		color var(--transition-duration) var(--transition-function),
-		opacity var(--transition-duration) var(--transition-function),
-		transform var(--transition-duration) var(--transition-function);
+	transition: var(--transition-duration) var(--transition-function);
+	transition-property: color, opacity, transform;
 
 	:is(a:not(.button), .anchor):not(.icon-anchor) > &:first-child,
 	:is(button:not(.anchor), .button, [type="button"], [role="tab"]):not(

@@ -48,9 +48,8 @@ textarea {
 	border-radius: var(--border-radius, var(--size-border-default));
 	outline: var(--outline-width, var(--size-border-thin)) solid transparent;
 	outline-offset: var(--outline-offset, var(--size-border-thin));
-	transition:
-		border-color var(--transition-duration) var(--transition-function),
-		outline-color var(--transition-duration) var(--transition-function);
+	transition: var(--transition-duration) var(--transition-function);
+	transition-property: border-color, outline-color;
 
 	&[disabled] {
 		opacity: var(--opacity-50);
@@ -123,12 +122,9 @@ textarea {
 	margin-block-start: calc(1ex - 1cap);
 	position: relative;
 	cursor: pointer;
-	transition:
-		opacity var(--transition-duration) var(--transition-function),
-		background-color var(--transition-duration) var(--transition-function),
-		color var(--transition-duration) var(--transition-function),
-		border-color var(--transition-duration) var(--transition-function),
-		outline-color var(--transition-duration) var(--transition-function);
+	transition: var(--transition-duration) var(--transition-function);
+	transition-property:
+		opacity, background-color, color, border-color, outline-color;
 
 	&:checked {
 		color: var(--color-raven) !important;

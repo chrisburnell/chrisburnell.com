@@ -38,9 +38,8 @@
 	inset: initial;
 	inset-block-start: 50%;
 	inset-inline-start: 50%;
-	transition:
-		opacity var(--transition-duration),
-		transform var(--transition-duration);
+	transition: var(--transition-duration) var(--transition-function);
+	transition-property: opacity, transform;
 	transform: translateX(-50%) translateY(-50%);
 	text-align: center;
 }

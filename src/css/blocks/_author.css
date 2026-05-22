@@ -38,7 +38,6 @@
 		inset-inline-start: 50%;
 		transform: translateX(-50%);
 		image-rendering: pixelated;
-		/* prettier-ignore */
 		transition:
 			opacity var(--transition-duration) var(--transition-function),
 			visibility 0s linear var(--transition-duration);

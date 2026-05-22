@@ -8,11 +8,8 @@ details {
 	overflow-x: auto;
 
 	&::details-content {
-		transition:
-			opacity var(--transition-duration) var(--transition-function),
-			block-size var(--transition-duration) var(--transition-function),
-			content-visibility var(--transition-duration)
-				var(--transition-function);
+		transition: var(--transition-duration) var(--transition-function);
+		transition-property: opacity, block-size, content-visibility;
 		transition-behavior: allow-discrete;
 
 		@starting-style {
