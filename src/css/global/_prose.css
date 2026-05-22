@@ -74,12 +74,6 @@ u,
 	text-decoration: underline !important;
 }
 
-/**
- * Conflicts with .light class for color scheme
- * .light {
- * 	font-weight: var(--font-weight-light) !important;
- * }
- */
 .regular {
 	font-weight: var(--font-weight-regular) !important;
 }
@@ -91,9 +85,6 @@ u,
 }
 .bold {
 	font-weight: var(--font-weight-bold) !important;
-}
-.extrabold {
-	font-weight: var(--font-weight-extrabold) !important;
 }
 .heavy {
 	font-weight: var(--font-weight-heavy) !important;
