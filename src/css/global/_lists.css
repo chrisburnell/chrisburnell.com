@@ -6,6 +6,7 @@
 :is(ol, ul) {
 	/* preferred over list-style: none; as it preserves semantics */
 	list-style-type: "";
+	list-style-position: outside;
 }
 :is(dl, ol, ul):not([class]),
 .default-list {
@@ -16,8 +17,8 @@
 }
 :is(ol, ul):not([class]),
 .default-list {
-	padding-inline-start: var(--size-medium);
-	list-style: initial;
+	margin-inline-start: var(--size-medium);
+	list-style-type: initial;
 
 	& li {
 		padding-inline-start: var(--size-medium);
@@ -41,7 +42,7 @@
 }
 ol:not([class]),
 ol.default-list {
-	list-style: decimal-leading-zero;
+	list-style-type: decimal-leading-zero;
 
 	/* TODO Investigate https://developer.mozilla.org/en-US/docs/Web/CSS/@property */
 	&[style*="--start:"] {
@@ -63,7 +64,7 @@ ol.default-list {
 			content: counters(
 					ordered-list,
 					"-",
-					var(--ordered-list-type, decimal-leading-zero)
+					var(--ordered-list-type, decimal)
 				)
 				".";
 		}

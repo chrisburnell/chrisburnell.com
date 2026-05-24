@@ -17,7 +17,7 @@
 	color: var(--body-color);
 	padding: 0.25em 0.5em;
 	border: calc(var(--size-border-thin) / 2) solid
-		oklch(from currentColor l c h / 0.5);
+		oklch(from currentColor l c h / var(--opacity-50));
 	border-radius: 1rem;
 	font-size: var(--font-size-small);
 	line-height: 1;

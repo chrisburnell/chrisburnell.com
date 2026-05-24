@@ -47,7 +47,7 @@ Passionate about the open web, having published over {{ technical_articles_count
 <small><strong>London, UK</strong></small>
 </div>
 
-- Built, maintained, and published a library of React components to enable developers to build accessible and customised client websites quickly that have been fully-tested and are production-ready.
+- Built, maintained, and published a library of React components to enable developers to build accessible and customised client websites quickly that have been thoroughly-tested (Jest, Cypress) and are production-ready.
 
 - Responsible for keeping track of web standards and keeping my team up-to-date on how we can use stable, new technologies to simplify and enhance the library of components.
 
@@ -143,7 +143,7 @@ Passionate about the open web, having published over {{ technical_articles_count
 <p class="delta"><a href="https://chrisburnell.com/"><c-icon><img src="{{ site.logo }}" class="brand-logo" width="24" height="24" alt="{{ site.title }}" loading="lazy" decoding="async"></c-icon>chrisburnell.com</a></p>
 </div>
 
-Launched a web development blog and have since created [{{ collections.projects.length + projects.web.length }} web projects](https://chrisburnell.com/projects/) and published over [{{ technical_articles_count | toNearest(5, true) }} highly technical articles](https://chrisburnell.com/blog/) about accessibility, design systems, performance, CSS, JavaScript, Node.js, web standards, and musings on the web. Maintaining my own VPS infrastructure has given me experience in Linux system administration, database management (MySQL/PostgreSQL), authentication systems (OAuth/OIDC), and DevOps practices that have complemented my front-end expertise.
+Launched a web development blog and have since created [{{ collections.projects.length + projects.web.length }} web projects](https://chrisburnell.com/projects/) and published over [{{ technical_articles_count | toNearest(5, true) }} highly-technical articles](https://chrisburnell.com/blog/) about accessibility, design systems, performance, CSS, JavaScript, Node.js, web standards, and musings on the web. Maintaining my own VPS infrastructure has given me experience in Linux system administration, database management (MySQL/PostgreSQL), authentication systems (OAuth/OIDC), and DevOps practices that have complemented my front-end expertise.
 
 <c-details class="no-border" force-restore>
 <summary>Popular Pages & Posts</summary>

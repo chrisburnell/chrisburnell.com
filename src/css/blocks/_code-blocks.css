@@ -9,12 +9,20 @@
 
 	& button {
 		color: var(--color-yeti);
-		position-anchor: --code-block;
-		position-area: top span-left;
-		position-visibility: always;
 		position: absolute;
 		font-weight: var(--font-weight-medium);
 		z-index: var(--z-index-default);
+
+		@supports not (position-anchor: --a) {
+			inset-block-start: 0.5em;
+			inset-inline-end: var(--size-gutter);
+		}
+
+		@supports (position-anchor: --a) {
+			position-anchor: --code-block;
+			position-area: top span-left;
+			position-visibility: always;
+		}
 
 		&:not(:is(:hover, :focus, :active)) {
 			text-decoration-color: transparent;
@@ -59,12 +67,19 @@ pre[data-language-friendly] {
 	&::before {
 		content: attr(data-language-friendly);
 		color: var(--color-snowy);
-		position-anchor: --code-block;
-		position-area: top span-right;
-		position-visibility: always;
 		position: absolute;
 		font-family: var(--font-family-sans);
 		font-weight: var(--font-weight-semibold);
+
+		@supports not (position-anchor: --a) {
+			transform: translateY(-100%);
+		}
+
+		@supports (position-anchor: --a) {
+			position-anchor: --code-block;
+			position-area: top span-right;
+			position-visibility: always;
+		}
 	}
 
 	&[data-filename]::before {
