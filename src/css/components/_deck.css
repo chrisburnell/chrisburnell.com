@@ -47,6 +47,10 @@
 			--flow-space: 1em;
 		}
 	}
+
+	& p {
+		text-wrap: balance;
+	}
 }
 
 .deck__pinned {
