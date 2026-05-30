@@ -212,6 +212,6 @@ progress {
 }
 
 .columns {
-	column-count: var(--columns, 2);
-	column-gap: var(--gap, 1em);
+	columns: calc(var(--size-line-length) / 2) var(--columns, 3);
+	column-gap: var(--gap, var(--size-gap));
 }
