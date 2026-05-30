@@ -165,9 +165,9 @@ export default async function (eleventyConfig) {
 	/**
 	 * Build Settings
 	 */
-	eleventyConfig.addBundle("css", { hoist: true });
+	eleventyConfig.addBundle("css", { hoist: true, toFileDirectory: "css" });
 	eleventyConfig.addWatchTarget("./src/css");
-	eleventyConfig.addBundle("js", { hoist: true });
+	eleventyConfig.addBundle("js", { hoist: true, toFileDirectory: "js" });
 	eleventyConfig.addWatchTarget("./src/js");
 	eleventyConfig.setDataDeepMerge(true);
 	eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
