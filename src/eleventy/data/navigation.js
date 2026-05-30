@@ -1,4 +1,4 @@
-const navigation = [
+export default [
 	{
 		title: "Home",
 		url: "/",
@@ -57,5 +57,3 @@ const navigation = [
 		footer: true,
 	},
 ];
-
-export default navigation;

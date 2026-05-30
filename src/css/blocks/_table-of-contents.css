@@ -18,7 +18,7 @@
 	& is-land {
 		@container main (inline-size > 1000px) {
 			position: sticky;
-			inset-block-start: calc(var(--size-header, 0px) + 1rem);
+			inset-block-start: 1rem;
 		}
 	}
 }
@@ -37,12 +37,11 @@
 		@container main (inline-size > 850px) {
 			max-block-size: calc(
 				100vb - (1em * var(--line-height-default)) - var(--size-small) -
-					var(--size-header, 0px) - (2 * var(--size-medium))
+					(2 * var(--size-medium))
 			);
 			max-block-size: calc(
 				100dvb - (1em * var(--line-height-default)) -
-					var(--size-small) - var(--size-header, 0px) -
-					(2 * var(--size-medium))
+					var(--size-small) - (2 * var(--size-medium))
 			);
 		}
 	}

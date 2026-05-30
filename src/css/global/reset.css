@@ -107,7 +107,10 @@
 }
 
 :where(:focus-visible, :target) {
-	scroll-margin-block: max(8vb, calc(var(--size-header, 0px) + 1rem));
+	scroll-margin-block: max(
+		8vb,
+		max(env(safe-area-inset-top, 1rem), env(safe-area-inset-bottom, 1rem))
+	);
 }
 
 :where(.visually-hidden:not(:focus, :focus-within, :active)) {
@@ -144,8 +147,8 @@
 	navigation: auto;
 }
 ::view-transition-group(*) {
-	animation-duration: var(--transition-duration);
-	animation-timing-function: var(--transition-function);
+	animation-duration: var(--transition-duration-long, 1s);
+	animation-timing-function: var(--transition-function, ease);
 }
 
 @media (prefers-reduced-motion: reduce) {

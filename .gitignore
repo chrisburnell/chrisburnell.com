@@ -33,9 +33,6 @@ Thumbs.db
 # Eleventy
 _site/
 
-# Sass
-.sass-cache
-
 # NPM
 **/node_modules/**
 
