@@ -1,8 +1,0 @@
-**/.DS_Store
-.cache/
-.github/
-.vscode/
-.env
-README.md
-LICENSE
-package-lock.json
