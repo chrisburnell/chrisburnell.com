@@ -117,7 +117,7 @@
     "markdown-it": "^14.1.1",
     "markdown-it-abbr": "^2.0.0",
     "markdown-it-footnote": "^4.0.0",
-    "postcss": "^8.5.14",
+    "postcss": "^8.5.15",
     "postcss-cli": "^11.0.1",
     "postcss-import": "^16.1.1",
     "postcss-utopia": "^1.1.0",
