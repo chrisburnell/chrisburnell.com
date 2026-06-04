@@ -61,8 +61,6 @@ As much work as I’ve put into my sections of code, I have to give a massive th
     <dd>for <a href="https://brid.gy" rel="external noopener">Bridgy</a> and <a href="https://fed.brid.gy" rel="external noopener">Bridgy Fed</a></dd>
     <dt><a href="https://keithjgrant.com/" rel="external noopener">Keith J. Grant</a></dt>
     <dd>for <a href="https://omnibear.com/" rel="external noopener">Omnibear</a></dd>
-    <dt><a href="https://rusingh.com" rel="external noopener">Ru Singh</a></dt>
-    <dd>for <a href="https://gocelestial.herokuapp.com" rel="external noopener">Celestial</a></dd>
     <dt><a href="https://brainbaking.com" rel="external noopener">Wouter Groeneveld</a></dt>
     <dd>for <a href="https://git.brainbaking.com/wgroeneveld/go-jamming" rel="external noopener">go-jamming</a></dd>
 </dl>

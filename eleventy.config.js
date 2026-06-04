@@ -148,8 +148,6 @@ export default async function (eleventyConfig) {
 			"js/components/svg-sparkline.js",
 		"node_modules/@chrisburnell/url-input/url-input.js":
 			"js/components/url-input.js",
-		"node_modules/@daviddarnes/link-peek/link-peek.js":
-			"js/components/link-peek.js",
 		"node_modules/@zachleat/details-utils/details-utils.js":
 			"js/components/details-utils.js",
 		"node_modules/@zachleat/seven-minute-tabs/seven-minute-tabs.js":
