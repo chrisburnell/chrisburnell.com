@@ -6,6 +6,7 @@
 [role="tablist"] {
 	display: flex;
 	padding: 0;
+	margin-inline-start: var(--size-border-thin);
 
 	& li {
 		display: inline-block;

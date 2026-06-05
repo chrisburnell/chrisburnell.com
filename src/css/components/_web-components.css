@@ -19,6 +19,7 @@ seven-minute-tabs {
 		grid-column: 1 / -1;
 		grid-row: tabs;
 		display: block;
+		z-index: var(--z-index-default);
 
 		&[hidden] {
 			opacity: 0;

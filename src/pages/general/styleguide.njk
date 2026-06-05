@@ -523,6 +523,16 @@ js_module_includes:
 	<figcaption><p><a href="https://www.pc.gc.ca/apps/dfhd/page_fhbro_eng.aspx?id=3263">Cabot Tower</a> in <a href="https://www.openstreetmap.org/#map=12/47.5651/-52.7860">St. John’s, Newfoundland</a></p></figcaption>
 </figure>
 
+<hr>
+
+<h2>Buttons</h2>
+
+<div class=" [ grid ] [ navigator ] ">
+	<button>Button</button>
+	<button disabled>Disabled</button>
+	<a href="#buttons" class=" [ button ] ">Styled Anchor</a>
+</div>
+
 <!--
 <hr>
 
@@ -611,16 +621,6 @@ WARNING=\'\033[1m\033[33m\'
 
 <hr>
 
-<h2>Buttons</h2>
-
-<div class=" [ grid ] [ navigator ] ">
-	<button>Button</button>
-	<button disabled>Disabled</button>
-	<a href="#buttons" class=" [ button ] ">Styled Anchor</a>
-</div>
-
-<hr>
-
 <h2>Details</h2>
 
 <c-details>
@@ -628,6 +628,73 @@ WARNING=\'\033[1m\033[33m\'
 	<p>A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
 	<p>A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
 </c-details>
+
+<hr>
+
+<h2>Tabbed Content</h2>
+
+<c-seven-minute-tabs>
+	<ol role="tablist" aria-label="Choose a passage of “The Raven” by Edgar Allan Poe">
+		<li><a href="#tabbed-content-1" role="tab">1<sup>st</sup></a></li>
+		<li><a href="#tabbed-content-2" role="tab">2<sup>nd</sup></a></li>
+		<li><a href="#tabbed-content-3" role="tab">3<sup>rd</sup></a></li>
+	</ol>
+	<div id="tabbed-content-1" class=" [ box ] " role="tabpanel" style="inline-size: 100%;">
+		<p>Once upon a midnight dreary, while I pondered, weak and weary,
+			<br>Over many a quaint and curious volume of forgotten lore—
+			<br>&emsp;While I nodded, nearly napping, suddenly there came a tapping,
+			<br>As of some one gently rapping, rapping at my chamber door.
+			<br>“’Tis some visitor,” I muttered, “tapping at my chamber door—
+			<br>&emsp;&emsp;&emsp;Only this and nothing more.”</p>
+	</div>
+	<div id="tabbed-content-2" class=" [ box ] " role="tabpanel" style="inline-size: 100%;">
+		<p>&emsp;Ah, distinctly I remember it was in the bleak December;
+			<br>And each separate dying ember wrought its ghost upon the floor.
+			<br>&emsp;Eagerly I wished the morrow;—vainly I had sought to borrow
+			<br>&emsp;From my books surcease of sorrow—sorrow for the lost Lenore—
+			<br>For the rare and radiant maiden whom the angels name Lenore—
+			<br>&emsp;&emsp;&emsp;Nameless here for evermore.</p>
+	</div>
+	<div id="tabbed-content-3" class=" [ box ] " role="tabpanel" style="inline-size: 100%;">
+		<p>&emsp;And the silken, sad, uncertain rustling of each purple curtain
+			<br>Thrilled me—filled me with fantastic terrors never felt before;
+			<br>&emsp;So that now, to still the beating of my heart, I stood repeating
+			<br>&emsp;“’Tis some visitor entreating entrance at my chamber door—
+			<br>Some late visitor entreating entrance at my chamber door;—
+			<br>&emsp;&emsp;&emsp;This it is and nothing more.”</p>
+	</div>
+</c-seven-minute-tabs>
+
+<c-seven-minute-tabs persist sync>
+	<ol role="tablist" aria-label="Choose a flavour of JavaScript">
+		<li><a href="#addplugin-commonjs" role="tab" data-tabs-persist="js-flavour:commonjs">CommonJS</a></li>
+		<li><a href="#addplugin-esm" role="tab" data-tabs-persist="js-flavour:esm">ESM</a></li>
+	</ol>
+	<div id="addplugin-commonjs" role="tabpanel">
+
+{{ '```javascript eleventy.config.js
+const pluginWebmentions = require("@chrisburnell/eleventy-cache-webmentions");
+const configWebmentions = require("./configWebmentions.js");
+
+module.exports = function (eleventyConfig) {
+	eleventyConfig.addPlugin(pluginWebmentions, configWebmentions);
+};
+```' | markdownFormat | safe }}
+
+</div>
+<div id="addplugin-esm" role="tabpanel">
+
+{{ '```javascript eleventy.config.js
+import pluginWebmentions from "@chrisburnell/eleventy-cache-webmentions";
+import configWebmentions from "./configWebmentions.js";
+
+export default function (eleventyConfig) {
+	eleventyConfig.addPlugin(pluginWebmentions, configWebmentions);
+};
+```' | markdownFormat | safe }}
+
+</div>
+</c-seven-minute-tabs>
 
 <hr>
 

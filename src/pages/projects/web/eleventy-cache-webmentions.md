@@ -74,7 +74,7 @@ Check it out: [Webmention Setup for Eleventy](/article/webmention-eleventy-setup
 Create a configuration file in your project (e.g. `configWebmentions.js`):
 
 <c-seven-minute-tabs persist sync>
-    <ol role="tablist" aria-label="Choose a configuration flavour">
+    <ol role="tablist" aria-label="Choose a flavour of JavaScript">
         <li><a href="#config-commonjs" role="tab" data-tabs-persist="js-flavour:commonjs">CommonJS</a></li>
         <li><a href="#config-esm" role="tab" data-tabs-persist="js-flavour:esm">ESM</a></li>
     </ol>
@@ -177,7 +177,7 @@ export default {
 Inside your Eleventy config file, use the `addPlugin()` function to attach the plugin and your configuration to your project:
 
 <c-seven-minute-tabs persist sync>
-    <ol role="tablist" aria-label="Choose a plugin flavour">
+    <ol role="tablist" aria-label="Choose a flavour of JavaScript">
         <li><a href="#addplugin-commonjs" role="tab" data-tabs-persist="js-flavour:commonjs">CommonJS</a></li>
         <li><a href="#addplugin-esm" role="tab" data-tabs-persist="js-flavour:esm">ESM</a></li>
     </ol>
@@ -214,7 +214,7 @@ Using [Eleventy’s Data Cascade](https://www.11ty.dev/docs/data-cascade/), you 
 For example, if you have a folder, `/pages/`, and want to attach Webmentions to each page, create or add the following to a `pages.11tydata.js` file within the folder:
 
 <c-seven-minute-tabs persist sync>
-    <ol role="tablist" aria-label="Choose a directory data flavour">
+    <ol role="tablist" aria-label="Choose a flavour of JavaScript">
         <li><a href="#directory-data-commonjs" role="tab" data-tabs-persist="js-flavour:commonjs">CommonJS</a></li>
         <li><a href="#directory-data-esm" role="tab" data-tabs-persist="js-flavour:esm">ESM</a></li>
     </ol>
@@ -287,7 +287,7 @@ eleventyConfig.addCollection("popular", (collection) => {
     <summary>JavaScript</summary>
 
 <c-seven-minute-tabs persist sync>
-    <ol role="tablist" aria-label="Choose a global data flavour">
+    <ol role="tablist" aria-label="Choose a flavour of JavaScript">
         <li><a href="#global-data-commonjs" role="tab" data-tabs-persist="js-flavour:commonjs">CommonJS</a></li>
         <li><a href="#global-data-esm" role="tab" data-tabs-persist="js-flavour:esm">ESM</a></li>
     </ol>
@@ -335,7 +335,7 @@ import {
     <summary>JavaScript</summary>
 
 <c-seven-minute-tabs persist sync>
-    <ol role="tablist" aria-label="Choose a filters flavour">
+    <ol role="tablist" aria-label="Choose a flavour of JavaScript">
         <li><a href="#filters-commonjs" role="tab" data-tabs-persist="js-flavour:commonjs">CommonJS</a></li>
         <li><a href="#filters-esm" role="tab" data-tabs-persist="js-flavour:esm">ESM</a></li>
     </ol>
@@ -492,7 +492,7 @@ The key difference between the two feed formats is in the *naming* of the keys: 
 </storage-form>
 
 <c-seven-minute-tabs persist sync>
-    <ol class=" [ requires-js ] " role="tablist" aria-label="Choose a configuration flavour">
+    <ol class=" [ requires-js ] " role="tablist" aria-label="Choose a flavour of JavaScript">
         <li><a href="#webmentionio-config-commonjs" role="tab" data-tabs-persist="js-flavour:commonjs">CommonJS</a></li>
         <li><a href="#webmentionio-config-esm" role="tab" data-tabs-persist="js-flavour:esm">ESM</a></li>
     </ol>
@@ -552,7 +552,7 @@ GO_JAMMING_TOKEN=njJql0lKXnotreal4x3Wmd
 </storage-form>
 
 <c-seven-minute-tabs persist sync>
-    <ol class=" [ requires-js ] " role="tablist" aria-label="Choose a configuration flavour">
+    <ol class=" [ requires-js ] " role="tablist" aria-label="Choose a flavour of JavaScript">
         <li><a href="#gojamming-config-commonjs" role="tab" data-tabs-persist="js-flavour:commonjs">CommonJS</a></li>
         <li><a href="#gojamming-config-esm" role="tab" data-tabs-persist="js-flavour:esm">ESM</a></li>
     </ol>
