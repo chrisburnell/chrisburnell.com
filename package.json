@@ -99,7 +99,7 @@
     "@zachleat/webcare-webshare": "^1.0.3",
     "autoprefixer": "^10.5.0",
     "browserslist": "^4.28.2",
-    "caniuse-api": "^3.0.0",
+    "caniuse-api": "^4.0.0",
     "cheerio": "^1.2.0",
     "chrisburnell": "^36.0.0",
     "cssnano": "^8.0.1",
