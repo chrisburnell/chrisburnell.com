@@ -9,8 +9,8 @@ runs:
       with:
         timezone: America/Halifax
 
-    - name: Install the latest version of npm and pnpm
-      run: npm install -g npm@latest pnpm@latest-11
+    - name: Install pnpm
+      run: npm install -g pnpm@latest-11
       shell: bash
 
     - name: Set the Node version
