@@ -12,5 +12,5 @@ runs:
     - name: Set the Node version
       uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # 6.4.0
       with:
-        cache: npm
+        cache: pnpm
         node-version-file: ".nvmrc"
