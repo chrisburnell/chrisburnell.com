@@ -5,9 +5,9 @@ runs:
   using: composite
   steps:
     - name: Check Build
-      run: npm run check:build
+      run: pnpm run check:build
       shell: bash
 
     - name: Check DateTimes
-      run: npm run check:datetimes
+      run: pnpm run check:datetimes
       shell: bash

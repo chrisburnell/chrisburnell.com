@@ -24,17 +24,17 @@ Adapted from the [check-html-links package](https://www.npmjs.com/package/check-
 ### General
 
 ```bash
-npx @chrisburnell/check-invalid-datetimes _site
+pnx @chrisburnell/check-invalid-datetimes _site
 ```
 
 ### Specific file types
 
 ```bash
-npx @chrisburnell/check-invalid-datetimes --directory=_site --file-types=html,json
+pnx @chrisburnell/check-invalid-datetimes --directory=_site --file-types=html,json
 ```
 
 ### Quiet mode
 
 ```bash
-npx @chrisburnell/check-invalid-datetimes --directory=_site --quiet
+pnx @chrisburnell/check-invalid-datetimes --directory=_site --quiet
 ```

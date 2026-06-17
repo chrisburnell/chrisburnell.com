@@ -7,11 +7,11 @@ runs:
     - name: Build website
       run: |
         set -e
-        npm run build:prod
+        pnpm run build:prod
       shell: bash
       env:
         NODE_OPTIONS: "--max-old-space-size=1536"
 
     - name: Build search index
-      run: npm run create-search-index
+      run: pnpm run create-search-index
       shell: bash

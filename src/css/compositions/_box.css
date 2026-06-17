@@ -30,17 +30,18 @@
 	font-family: var(--font-family-sans);
 	font-style: normal;
 	font-variation-settings: normal;
-	scrollbar-color: var(--color-raven) var(
-		--box-background-color,
-		light-dark(
-			color-mix(in oklab, var(--color-bear), var(--color-snowy)),
-			color-mix(
-				in oklab,
-				var(--color-thunder),
-				var(--color-mineshaft) 80%
+	scrollbar-color: var(--color-raven)
+		var(
+			--box-background-color,
+			light-dark(
+				color-mix(in oklab, var(--color-bear), var(--color-snowy)),
+				color-mix(
+					in oklab,
+					var(--color-thunder),
+					var(--color-mineshaft) 80%
+				)
 			)
-		)
-	);
+		);
 
 	& :is(h1, h2, h3, h4, h5, h6) {
 		font-size: var(--font-size-default);
