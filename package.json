@@ -125,7 +125,8 @@
     "random-case": "^1.0.0",
     "sharp": "^0.35.1",
     "striptags": "^3.2.0",
-    "truncate-html": "^1.2.2"
+    "truncate-html": "^1.2.2",
+    "utopia-core": "^1.6.0"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
