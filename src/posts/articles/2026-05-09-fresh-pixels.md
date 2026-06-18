@@ -6,6 +6,7 @@ tags:
   - art
   - css
   - php
+rkey: 3mnfqqqheia2u
 ---
 
 Yesterday afternoon, I spent some time creating a new [88x31 badge](/88x31/) for my website footer.

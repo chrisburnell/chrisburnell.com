@@ -47,6 +47,24 @@
 		<link rel="human-json" href="/human.json">
 		<link rel="manifest" href="{{ webmanifest | default('/site.webmanifest') }}">
 
+		<link rel="canonical" href="{{ canonical }}">
+		{% if categoryCollectionName -%}
+			{%- set previous_post = collections[categoryCollectionName] | arrayKeyIncludes('data.tags', 'post') | arePublished | noRSSOnlyFilter | getPreviousCollectionItem(page) -%}
+			{%- set next_post = collections[categoryCollectionName] | arrayKeyIncludes('data.tags', 'post') | arePublished | noRSSOnlyFilter | getNextCollectionItem(page) -%}
+		{%- endif -%}
+		{% if previous_post -%}
+		<link rel="prev" href="{{ site.url + previous_post.url }}">
+		{%- endif %}
+		{% if next_post -%}
+		<link rel="next" href="{{ site.url + next_post.url }}">
+		{%- endif %}
+
+		{# ATProto / Standard.site -#}
+		<link rel="site.standard.publication" href="at://did:plc:drvl4knyo5koqwgjkuufkmk2/site.standard.publication/3mnfpcttp5b2u">
+		{% if rkey -%}
+			<link rel="site.standard.document" href="at://did:plc:drvl4knyo5koqwgjkuufkmk2/site.standard.document/{{ rkey }}">
+		{%- endif %}
+
 		<meta name="author" content="{{ author.name }}">
 		<meta name="description" content="{{ meta_description | safe }}">
 		<meta name="generator" content="{{ eleventy.generator }}">
@@ -66,18 +84,6 @@
 		{% elif nofollow -%}
 		<meta name="robots" content="nofollow">
 		{% endif -%}
-
-		<link rel="canonical" href="{{ canonical }}">
-		{% if categoryCollectionName -%}
-			{%- set previous_post = collections[categoryCollectionName] | arrayKeyIncludes('data.tags', 'post') | arePublished | noRSSOnlyFilter | getPreviousCollectionItem(page) -%}
-			{%- set next_post = collections[categoryCollectionName] | arrayKeyIncludes('data.tags', 'post') | arePublished | noRSSOnlyFilter | getNextCollectionItem(page) -%}
-		{%- endif -%}
-		{% if previous_post -%}
-		<link rel="prev" href="{{ site.url + previous_post.url }}">
-		{%- endif %}
-		{% if next_post -%}
-		<link rel="next" href="{{ site.url + next_post.url }}">
-		{%- endif %}
 
 		{# Fediverse -#}
 		<meta property="fediverse:creator" content="@chrisburnell@repc.co">
