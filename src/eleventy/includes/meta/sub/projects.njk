@@ -1,14 +1,14 @@
 <h2>Latest projects</h2>
 <ul class=" [ grid ] [ small ] " style="--grid-min-inline-size: 100%; --row-gap: 1em;">
 	{%- set count = 0 -%}
-	{% for lookup in collections.projects %}
-	{% if page.url != lookup.url and count < site.limits.related %}
+	{% for lookup in collections.projects -%}
+	{% if page.url != lookup.url and count < site.limits.related -%}
 	<li>
 		<a href="{{ lookup.url }}" class=" [ riza ] ">{% if lookup.data.icon %}<c-icon><i class="fas fa-{{ lookup.data.icon }}"></i></c-icon>{% elif lookup.data.emoji %}<c-icon>{{ lookup.data.emoji }}</c-icon>{% endif %}{{ lookup.data.title | striptags(true) | safe }}</a>
 		{{ lookup.data.description | markdownFormat | safe }}
 	</li>
 	{%- set count = count + 1 -%}
-	{% endif %}
-	{% endfor %}
+	{%- endif %}
+	{%- endfor %}
 </ul>
 <p><a href="/projects/">Browse Projects<c-icon style="margin-inline-start: 1ex;"><i class="fas fa-arrow-right"></i></c-icon></a></p>

@@ -51,13 +51,13 @@
 		{% if categoryCollectionName -%}
 			{%- set previous_post = collections[categoryCollectionName] | arrayKeyIncludes('data.tags', 'post') | arePublished | noRSSOnlyFilter | getPreviousCollectionItem(page) -%}
 			{%- set next_post = collections[categoryCollectionName] | arrayKeyIncludes('data.tags', 'post') | arePublished | noRSSOnlyFilter | getNextCollectionItem(page) -%}
+			{% if previous_post -%}
+				<link rel="prev" href="{{ site.url + previous_post.url }}">
+			{%- endif %}
+			{% if next_post -%}
+				<link rel="next" href="{{ site.url + next_post.url }}">
+			{%- endif %}
 		{%- endif -%}
-		{% if previous_post -%}
-		<link rel="prev" href="{{ site.url + previous_post.url }}">
-		{%- endif %}
-		{% if next_post -%}
-		<link rel="next" href="{{ site.url + next_post.url }}">
-		{%- endif %}
 
 		{# ATProto / Standard.site -#}
 		<link rel="site.standard.publication" href="at://did:plc:drvl4knyo5koqwgjkuufkmk2/site.standard.publication/3mnfpcttp5b2u">

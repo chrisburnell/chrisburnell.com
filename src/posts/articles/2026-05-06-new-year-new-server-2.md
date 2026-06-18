@@ -5,6 +5,7 @@ description: I got to really put my recently-practised and newly-learned system 
 tags:
   - personal
   - sysadmin
+rkey: 3molefejzov2c
 ---
 
 To cut a long story short—*although, I never seem to be able to tell short stories*—the server host that I switched to at the end of last year employs deceptive pricing tactics.
