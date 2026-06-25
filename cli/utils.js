@@ -1,4 +1,4 @@
-import { text, autocompleteMultiselect } from "@clack/prompts";
+import { text, autocompleteMultiselect, box } from "@clack/prompts";
 import { Temporal } from "@js-temporal/polyfill";
 import slugify from "@sindresorhus/slugify";
 import { execSync, spawnSync } from "child_process";
@@ -8,14 +8,21 @@ const { year, month, day, hour, minute, second, offset } =
 	Temporal.Now.zonedDateTimeISO();
 export const now = `${year.toString().padStart(4, "0")}-${month.toString().padStart(2, "0")}-${day.toString().padStart(2, "0")}T${hour.toString().padStart(2, "0")}:${minute.toString().padStart(2, "0")}:${second.toString().padStart(2, "0")}${offset}`;
 
-export const postTitle = async () => {
-	return await text({ message: "Title" });
+export const postTitle = async (required = true) => {
+	return await text({
+		message: "Title",
+		validate: (value) => {
+			if (required && (!value || value.length < 2)) {
+				return "Title must be at least 2 characters";
+			}
+			return undefined;
+		},
+	});
 };
 
 export const postSlug = async (title) => {
-	const defaultSlug = slugify(title);
-	const slug = await text({ message: "Slug", placeholder: defaultSlug });
-	return slug.trim() !== "" ? slug : defaultSlug;
+	const defaultSlug = title.trim().length < 1 ? Date.now().toString().slice(0, -3) : slugify(title);
+	return await text({ message: "Slug", placeholder: defaultSlug, defaultValue: defaultSlug });
 };
 
 export const postDescription = async () => {
@@ -139,6 +146,18 @@ export const writeAndOpen = (filepath, content) => {
 		: process.env.EDITOR || process.env.VISUAL || "vi";
 	spawnSync(editor, [filepath], { stdio: "inherit" });
 };
+
+export const reviewBox = ({ filepath, __siteroot, slug, postDate, title, description, tags }) => {
+	box(
+		`Path: ${filepath.replace(__siteroot, ".")}\nURL: https://chrisburnell.com/note/${slug}/\nDate: ${postDate}${title.length ? `\nTitle: ${title}` : ""}${description.length ? `\nDescription: ${description}` : ""}${tags.length ? `\nTags: ${tags.join()}` : ""}`,
+		" File Created ",
+		{
+			titleAlign: "center",
+			width: "auto",
+			rounded: true,
+		}
+	);
+}
 
 export default {
 	now,

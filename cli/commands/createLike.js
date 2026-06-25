@@ -1,4 +1,4 @@
-import { text } from "@clack/prompts";
+import { text, isCancel } from "@clack/prompts";
 import {
 	buildFrontmatter,
 	now,
@@ -10,10 +10,19 @@ import {
 
 export default async (__siteroot) => {
 	const likeTitle = await text({ message: "Like · Title" });
+	if (isCancel(likeTitle)) process.exit(0);
+
 	const likeURL = await text({ message: "Like · URL" });
+	if (isCancel(likeURL)) process.exit(0);
+
 	const likeAuthorName = await text({ message: "Like · Author Name" });
+	if (isCancel(likeAuthorName)) process.exit(0);
+
 	const likeAuthorURL = await text({ message: "Like · Author URL" });
+	if (isCancel(likeAuthorURL)) process.exit(0);
+
 	const tags = await postTags();
+	if (isCancel(tags)) process.exit(0);
 
 	const meta = buildFrontmatter({
 		date: postDate,

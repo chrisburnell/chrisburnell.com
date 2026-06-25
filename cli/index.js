@@ -1,4 +1,4 @@
-import { select } from "@clack/prompts";
+import { autocomplete } from "@clack/prompts";
 import { program } from "commander";
 import { styleText } from "node:util";
 import path from "path";
@@ -41,7 +41,7 @@ const wizard = async () => {
 		),
 	);
 
-	const type = await select({
+	const type = await autocomplete({
 		message: "What do you want to do?",
 		options: [
 			{
@@ -85,6 +85,8 @@ const wizard = async () => {
 				value: "note",
 			},
 		],
+		placeholder: "Type to search...",
+		maxItems: 1,
 	});
 
 	switch (type) {
