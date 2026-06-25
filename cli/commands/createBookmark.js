@@ -37,7 +37,7 @@ export default async (__siteroot) => {
 		title,
 		description,
 		bookmark_of: { title: bookmarkTitle, url: bookmarkURL },
-		tags,
+		tags: tags.sort(),
 	});
 
 	const filepath = `${__siteroot}/src/posts/bookmarks/${postSlugDate}-${slug}.md`;

@@ -34,7 +34,7 @@ export default async (__siteroot) => {
 		date: postDate,
 		title,
 		description,
-		tags,
+		tags: tags.sort(),
 	});
 
 	const filepath = `${__siteroot}/src/posts/notes/${isDraft ? "drafts/" : ""}${postSlugDate}-${slug}.md`;

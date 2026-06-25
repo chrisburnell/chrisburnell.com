@@ -36,7 +36,7 @@ export default async (__siteroot) => {
 				},
 			],
 		},
-		tags,
+		tags: tags.sort(),
 	});
 
 	const filepath = `${__siteroot}/src/posts/likes/${postSlugDate}-${Math.floor(now / 1000)}.md`;

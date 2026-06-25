@@ -38,13 +38,12 @@ export const postDescription = async () => {
 };
 
 export const postTags = async () => {
-	const tags = await autocompleteMultiselect({
+	return await autocompleteMultiselect({
 		message: "Tags",
 		options: allTags.map((tag) => {
 			return { value: tag };
 		}),
 	});
-	return tags.sort();
 };
 
 export const postSlugDate = now.split("T")[0];
