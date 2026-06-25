@@ -1,14 +1,14 @@
 import { postTitle, buildFrontmatter, writeAndOpen } from "../utils.js";
-import { input } from "@inquirer/prompts";
+import { text } from "@clack/prompts";
 
 export default async (__siteroot) => {
-	const date = await input({ message: "Date" });
-	const slug = await input({ message: "Slug" });
+	const date = await text({ message: "Date" });
+	const slug = await text({ message: "Slug" });
 	const title = await postTitle();
-	const author = await input({ message: "Author" });
-	const rating = await input({ message: "Rating" });
-	const style = await input({ message: "Style" });
-	const url = await input({ message: "Beer URL" });
+	const author = await text({ message: "Author" });
+	const rating = await text({ message: "Rating" });
+	const style = await text({ message: "Style" });
+	const url = await text({ message: "Beer URL" });
 
 	const meta = buildFrontmatter({
 		date,

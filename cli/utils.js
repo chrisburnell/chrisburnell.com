@@ -1,4 +1,4 @@
-import { checkbox, input } from "@inquirer/prompts";
+import { text, autocompleteMultiselect } from "@clack/prompts";
 import { Temporal } from "@js-temporal/polyfill";
 import slugify from "@sindresorhus/slugify";
 import { execSync, spawnSync } from "child_process";
@@ -9,21 +9,23 @@ const { year, month, day, hour, minute, second, offset } =
 export const now = `${year.toString().padStart(4, "0")}-${month.toString().padStart(2, "0")}-${day.toString().padStart(2, "0")}T${hour.toString().padStart(2, "0")}:${minute.toString().padStart(2, "0")}:${second.toString().padStart(2, "0")}${offset}`;
 
 export const postTitle = async () => {
-	return await input({ message: "Title" });
+	return await text({ message: "Title" });
 };
 
 export const postSlug = async (title) => {
-	return await input({ message: "Slug", default: slugify(title) });
+	const defaultSlug = slugify(title);
+	const slug = await text({ message: "Slug", placeholder: defaultSlug });
+	return slug.trim() !== "" ? slug : defaultSlug;
 };
 
 export const postDescription = async () => {
-	return await input({ message: "Description" });
+	return await text({ message: "Description" });
 };
 
 export const postTags = async () => {
-	return await checkbox({
+	const tags = await autocompleteMultiselect({
 		message: "Tags",
-		choices: [
+		options: [
 			{ value: "accessibility" },
 			{ value: "ai" },
 			{ value: "art" },
@@ -69,6 +71,7 @@ export const postTags = async () => {
 			{ value: "writing" },
 		],
 	});
+	return tags.sort();
 };
 
 export const postSlugDate = now.split("T")[0];

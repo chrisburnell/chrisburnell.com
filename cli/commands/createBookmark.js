@@ -1,4 +1,4 @@
-import { input } from "@inquirer/prompts";
+import { text } from "@clack/prompts";
 import {
 	buildFrontmatter,
 	postDate,
@@ -14,11 +14,11 @@ export default async (__siteroot) => {
 	const title = await postTitle();
 	const slug = await postSlug(title);
 	const description = await postDescription();
-	const bookmarkTitle = await input({
+	const bookmarkTitle = await text({
 		message: "Bookmark · Title",
 		default: title,
 	});
-	const bookmarkURL = await input({ message: "Bookmark · URL" });
+	const bookmarkURL = await text({ message: "Bookmark · URL" });
 	const tags = await postTags();
 
 	const meta = buildFrontmatter({

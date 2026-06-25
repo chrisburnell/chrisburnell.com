@@ -1,8 +1,4 @@
-/* global console */
-// Adapted from Robb Knight’s work:
-// https://github.com/rknightuk/rknight.me
-
-import select from "@inquirer/select";
+import { select } from "@clack/prompts";
 import { program } from "commander";
 import { styleText } from "node:util";
 import path from "path";
@@ -47,56 +43,46 @@ const wizard = async () => {
 
 	const type = await select({
 		message: "What do you want to do?",
-		choices: [
+		options: [
 			{
-				name: "Calculate: CSS Complexity",
+				label: "Calculate: CSS Complexity",
 				value: "calculateCSSComplexity",
-				description: "Calculate the complexity of CSS.",
+				hint: "Calculate the complexity of CSS and get violations data.",
 			},
 			{
-				name: "Check: Build",
+				label: "Check: Build",
 				value: "checkBuild",
-				description: "Check that Eleventy built correctly.",
+				hint: "Check that Eleventy built correctly.",
 			},
 			{
-				name: "Check: Dates",
+				label: "Check: Dates",
 				value: "checkDates",
-				description: "Check for instances of `Invalid DateTime`.",
+				hint: "Check for instances of `Invalid DateTime`.",
 			},
 			{
-				name: "Check: Links",
+				label: "Check: Links",
 				value: "checkLinks",
-				description: "Check for broken links/references.",
+				hint: "Check for broken links/references.",
 			},
 			{
-				name: "Create: Article",
+				label: "Create: Article",
 				value: "article",
-				description: "Create a new Article",
 			},
 			{
-				name: "Create: Beer",
+				label: "Create: Beer",
 				value: "beer",
-				description: "Checkin a Beer",
 			},
 			{
-				name: "Create: Bookmark",
+				label: "Create: Bookmark",
 				value: "bookmark",
-				description: "Create a new Bookmark",
 			},
 			{
-				name: "Create: Like",
+				label: "Create: Like",
 				value: "like",
-				description: "Create a new Like",
 			},
 			{
-				name: "Create: Note",
+				label: "Create: Note",
 				value: "note",
-				description: "Create a new Note",
-			},
-			{
-				name: "Run Tests",
-				value: "test",
-				description: "Run tests against functionality",
 			},
 		],
 	});
@@ -196,10 +182,5 @@ program
 	.command("note")
 	.description("📝 Create a new Note")
 	.action(() => createNote(__siteroot));
-
-program
-	.command("test")
-	.description("🔨 Run tests against functionality")
-	.action(() => runTests());
 
 program.parse();

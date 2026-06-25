@@ -1,4 +1,4 @@
-import { input } from "@inquirer/prompts";
+import { text } from "@clack/prompts";
 import {
 	buildFrontmatter,
 	now,
@@ -9,10 +9,10 @@ import {
 } from "../utils.js";
 
 export default async (__siteroot) => {
-	const likeTitle = await input({ message: "Like · Title" });
-	const likeURL = await input({ message: "Like · URL" });
-	const likeAuthorName = await input({ message: "Like · Author Name" });
-	const likeAuthorURL = await input({ message: "Like · Author URL" });
+	const likeTitle = await text({ message: "Like · Title" });
+	const likeURL = await text({ message: "Like · URL" });
+	const likeAuthorName = await text({ message: "Like · Author Name" });
+	const likeAuthorURL = await text({ message: "Like · Author URL" });
 	const tags = await postTags();
 
 	const meta = buildFrontmatter({
