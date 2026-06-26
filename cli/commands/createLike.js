@@ -1,45 +1,43 @@
-import { text, isCancel } from "@clack/prompts";
+import { group, text, isCancel } from "@clack/prompts";
 import {
 	buildFrontmatter,
+	epoch,
 	now,
 	postDate,
 	postSlugDate,
 	postTags,
+	reviewBox,
 	writeAndOpen,
 } from "../utils.js";
 
 export default async (__siteroot) => {
-	const likeTitle = await text({ message: "Like · Title" });
-	if (isCancel(likeTitle)) process.exit(0);
-
-	const likeURL = await text({ message: "Like · URL" });
-	if (isCancel(likeURL)) process.exit(0);
-
-	const likeAuthorName = await text({ message: "Like · Author Name" });
-	if (isCancel(likeAuthorName)) process.exit(0);
-
-	const likeAuthorURL = await text({ message: "Like · Author URL" });
-	if (isCancel(likeAuthorURL)) process.exit(0);
-
-	const tags = await postTags();
-	if (isCancel(tags)) process.exit(0);
+	const post = await group({
+		likeTitle: () => text({ message: "Like · Title" }),
+		likeURL: () => text({ message: "Like · URL" }),
+		likeAuthorName: () => text({ message: "Like · Author Name" }),
+		likeAuthorURL: () => text({ message: "Like · Author URL" }),
+		tags: () => postTags(),
+	});
+	if (isCancel(post)) process.exit(0);
 
 	const meta = buildFrontmatter({
 		date: postDate,
 		like_of: {
-			title: likeTitle,
-			url: likeURL,
+			title: post.likeTitle,
+			url: post.likeURL,
 			authors: [
 				{
-					title: likeAuthorName,
-					url: likeAuthorURL,
+					title: post.likeAuthorName,
+					url: post.likeAuthorURL,
 				},
 			],
 		},
-		tags: tags.sort(),
+		tags: post.tags.sort(),
 	});
 
-	const filepath = `${__siteroot}/src/posts/likes/${postSlugDate}-${Math.floor(now / 1000)}.md`;
+	const filepath = `${__siteroot}/src/posts/likes/${postSlugDate}-${epoch}.md`;
+
+	reviewBox({ filepath, __siteroot, slug: post.slug, postDate, title: post.likeTitle, tags: post.tags });
 
 	writeAndOpen(filepath, meta);
 };

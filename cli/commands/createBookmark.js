@@ -1,4 +1,4 @@
-import { text, isCancel } from "@clack/prompts";
+import { group, isCancel, text } from "@clack/prompts";
 import {
 	buildFrontmatter,
 	postDate,
@@ -7,40 +7,35 @@ import {
 	postSlugDate,
 	postTags,
 	postTitle,
+	reviewBox,
 	writeAndOpen,
 } from "../utils.js";
 
 export default async (__siteroot) => {
-	const title = await postTitle();
-	if (isCancel(title)) process.exit(0);
-
-	const slug = await postSlug(title);
-	if (isCancel(slug)) process.exit(0);
-
-	const description = await postDescription();
-	if (isCancel(description)) process.exit(0);
-
-	const bookmarkTitle = await text({
-		message: "Bookmark · Title",
-		default: title,
+	const post = await group({
+		title: () => postTitle(),
+		slug: ({ results }) => postSlug(results.title),
+		description: () => postDescription(),
+		bookmarkTitle: ({ results }) => text({
+			message: "Bookmark · Title",
+			default: results.title,
+		}),
+		bookmarkURL: () => text({ message: "Bookmark · URL" }),
+		tags: () => postTags(),
 	});
-	if (isCancel(bookmarkTitle)) process.exit(0);
-
-	const bookmarkURL = await text({ message: "Bookmark · URL" });
-	if (isCancel(bookmarkURL)) process.exit(0);
-
-	const tags = await postTags();
-	if (isCancel(tags)) process.exit(0);
+	if (isCancel(post)) process.exit(0);
 
 	const meta = buildFrontmatter({
 		date: postDate,
-		title,
-		description,
-		bookmark_of: { title: bookmarkTitle, url: bookmarkURL },
-		tags: tags.sort(),
+		title: post.title,
+		description: post.description,
+		bookmark_of: { title: post.bookmarkTitle, url: post.bookmarkURL },
+		tags: post.tags.sort(),
 	});
 
-	const filepath = `${__siteroot}/src/posts/bookmarks/${postSlugDate}-${slug}.md`;
+	const filepath = `${__siteroot}/src/posts/bookmarks/${postSlugDate}-${post.slug}.md`;
+
+	reviewBox({ filepath, __siteroot, slug: post.slug, postDate, title: post.title, description: post.description, tags: post.tags });
 
 	writeAndOpen(filepath, meta);
 };

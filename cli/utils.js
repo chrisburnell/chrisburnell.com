@@ -1,4 +1,4 @@
-import { text, autocompleteMultiselect, box } from "@clack/prompts";
+import { autocompleteMultiselect, box, confirm, text } from "@clack/prompts";
 import { Temporal } from "@js-temporal/polyfill";
 import slugify from "@sindresorhus/slugify";
 import { execSync, spawnSync } from "child_process";
@@ -8,6 +8,7 @@ import { readFile } from "node:fs/promises";
 const { year, month, day, hour, minute, second, offset } =
 	Temporal.Now.zonedDateTimeISO();
 export const now = `${year.toString().padStart(4, "0")}-${month.toString().padStart(2, "0")}-${day.toString().padStart(2, "0")}T${hour.toString().padStart(2, "0")}:${minute.toString().padStart(2, "0")}:${second.toString().padStart(2, "0")}${offset}`;
+export const epoch = Number(Date.now().toString().slice(0, -3));
 
 let allTags = [];
 const allTagsPath = "_site/tags.json";
@@ -43,6 +44,12 @@ export const postTags = async () => {
 		options: allTags.map((tag) => {
 			return { value: tag };
 		}),
+	});
+};
+
+export const postDraft = async () => {
+	return await confirm({
+		message: "Put in the drafts folder?",
 	});
 };
 
@@ -114,7 +121,7 @@ export const writeAndOpen = (filepath, content) => {
 
 export const reviewBox = ({ filepath, __siteroot, slug, postDate, title, description, tags }) => {
 	box(
-		`Path: ${filepath.replace(__siteroot, ".")}\nURL: https://chrisburnell.com/note/${slug}/\nDate: ${postDate}${title.length ? `\nTitle: ${title}` : ""}${description.length ? `\nDescription: ${description}` : ""}${tags.length ? `\nTags: ${tags.join()}` : ""}`,
+		`Path: ${filepath.replace(__siteroot, ".")}\nURL: https://chrisburnell.com/note/${slug}/\nDate: ${postDate}${title?.length ? `\nTitle: ${title}` : ""}${description?.length ? `\nDescription: ${description}` : ""}${tags?.length ? `\nTags: ${tags.join()}` : ""}`,
 		" File Created ",
 		{
 			titleAlign: "center",
@@ -126,6 +133,7 @@ export const reviewBox = ({ filepath, __siteroot, slug, postDate, title, descrip
 
 export default {
 	now,
+	epoch,
 	postTitle,
 	postSlug,
 	postDescription,

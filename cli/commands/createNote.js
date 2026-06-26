@@ -1,7 +1,6 @@
-import { confirm, isCancel } from "@clack/prompts";
+import { group, isCancel } from "@clack/prompts";
 import {
 	buildFrontmatter,
-	now,
 	postDate,
 	postDescription,
 	postSlug,
@@ -13,33 +12,25 @@ import {
 } from "../utils.js";
 
 export default async (__siteroot) => {
-	const title = await postTitle(false);
-	if (isCancel(title)) process.exit(0);
-
-	const slug = await postSlug(title);
-	if (isCancel(slug)) process.exit(0);
-
-	const description = await postDescription();
-	if (isCancel(description)) process.exit(0);
-
-	const tags = await postTags();
-	if (isCancel(tags)) process.exit(0);
-
-	const isDraft = await confirm({
-		message: "Put in the drafts folder?",
+	const post = await group({
+		title: () => postTitle(false),
+		slug: ({ results }) => postSlug(results.title),
+		description: () => postDescription(),
+		tags: () => postTags(),
+		isDraft: () => postDraft(),
 	});
-	if (isCancel(isDraft)) process.exit(0);
+	if (isCancel(post)) process.exit(0);
 
 	const meta = buildFrontmatter({
 		date: postDate,
-		title,
-		description,
-		tags: tags.sort(),
+		title: post.title,
+		description: post.description,
+		tags: post.tags.sort(),
 	});
 
-	const filepath = `${__siteroot}/src/posts/notes/${isDraft ? "drafts/" : ""}${postSlugDate}-${slug}.md`;
+	const filepath = `${__siteroot}/src/posts/notes/${post.isDraft ? "drafts/" : ""}${postSlugDate}-${post.slug}.md`;
 
-	reviewBox({ filepath, __siteroot, slug, postDate, title, description, tags });
+	reviewBox({ filepath, __siteroot, slug: post.slug, postDate, title: post.title, description: post.description, tags: post.tags });
 
 	writeAndOpen(filepath, meta);
 };

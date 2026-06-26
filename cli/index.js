@@ -4,7 +4,7 @@ import { styleText } from "node:util";
 import path from "path";
 import { fileURLToPath } from "url";
 
-import calculateCSSComplexity from "./commands/calculateCSSComplexity.js";
+import checkCSSComplexity from "./commands/checkCSSComplexity.js";
 import checkBuild from "./commands/checkBuild.js";
 import checkDates from "./commands/checkDates.js";
 import checkLinks from "./commands/checkLinks.js";
@@ -45,24 +45,24 @@ const wizard = async () => {
 		message: "What do you want to do?",
 		options: [
 			{
-				label: "Calculate: CSS Complexity",
-				value: "calculateCSSComplexity",
+				label: "Check: CSS Complexity",
+				value: "checkCSSComplexity",
 				hint: "Calculate the complexity of CSS and get violations data.",
 			},
 			{
 				label: "Check: Build",
 				value: "checkBuild",
-				hint: "Check that Eleventy built correctly.",
+				hint: "Confirm that Eleventy built correctly.",
 			},
 			{
 				label: "Check: Dates",
 				value: "checkDates",
-				hint: "Check for instances of `Invalid DateTime`.",
+				hint: "Look for instances of `Invalid DateTime`.",
 			},
 			{
 				label: "Check: Links",
 				value: "checkLinks",
-				hint: "Check for broken links/references.",
+				hint: "Look for broken links/references.",
 			},
 			{
 				label: "Create: Article",
