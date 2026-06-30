@@ -3,30 +3,30 @@
  * @group global
  */
 
-:is(h1, h2, h3, h4, h5, h6) {
+:is(h1, h2, h3, h4, h5, h6, :heading) {
 	position: relative;
 	font-family: var(--font-family-sans);
 	text-wrap: balance;
 	clear: both;
 }
 
-h1,
+:is(h1, :heading(1)),
 .alpha {
 	font-size: var(--font-size-alpha);
 	font-weight: var(--font-weight-heavy);
 	line-height: var(--line-height-medium);
 }
-h1 {
+:is(h1, :heading(1)) {
 	z-index: var(--z-index-above);
 }
 
-h2,
+:is(h2, :heading(2)),
 .beta {
 	font-size: var(--font-size-beta);
 	font-weight: var(--font-weight-semibold);
 	line-height: var(--line-height-medium);
 }
-h2 {
+:is(h2, :heading(2)) {
 	inline-size: fit-content;
 	display: flex;
 	flex-wrap: wrap;
@@ -39,7 +39,7 @@ h2 {
 		oklch(from currentColor l c h / 15%);
 }
 
-h3,
+:is(h3, :heading(3)),
 .gamma,
 :is(.stack, .deck) h1 {
 	font-size: var(--font-size-gamma);
@@ -47,7 +47,7 @@ h3,
 	line-height: var(--line-height-medium);
 }
 
-h4,
+:is(h4, :heading(4)),
 .delta,
 .shelf h1 {
 	font-size: var(--font-size-default);
@@ -55,14 +55,14 @@ h4,
 	line-height: var(--line-height-default);
 }
 
-h5,
+:is(h5, :heading(5)),
 .epsilon {
 	font-size: var(--font-size-small);
 	font-weight: var(--font-weight-semibold);
 	line-height: var(--line-height-default);
 }
 
-h6,
+:is(h6, :heading(6)),
 .zeta {
 	font-size: var(--font-size-small);
 	font-weight: var(--font-weight-regular);
