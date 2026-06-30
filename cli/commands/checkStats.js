@@ -16,15 +16,19 @@ const parseNumber = (text) => parseInt(text.replace(/,/g, ""), 10);
 /**
  * Check build output stats against known minimums
  */
-export default async (statsPath = "_site/stats/index.html") => {
+export default async (options) => {
+	options = Object.assign({}, { statsPath:  "_site/stats/index.html", quiet: false }, options);
+
 	const start = Date.now();
 
 	let html;
 	try {
-		html = await readFile(statsPath, "utf8");
+		html = await readFile(options.statsPath, "utf8");
 	} catch {
-		console.log(`Check Build Stats\n`);
-		console.error(`  ❌ Could not read ${statsPath}`);
+		if (!options.quiet) {
+			console.log(`Check Build Stats\n`);
+		}
+		console.error(`  ❌ Could not read ${options.statsPath}`);
 		process.exit(1);
 	}
 
@@ -80,14 +84,20 @@ export default async (statsPath = "_site/stats/index.html") => {
 	const elapsed = ((Date.now() - start) / 1000).toFixed(3);
 	const failed = checks.filter(([, actual, min]) => actual < min);
 
-	console.log(`${styleText("bold", "Check Build Stats")}\n`);
+	if (!options.quiet) {
+		console.log(`${styleText("bold", "Check Build Stats")}\n`);
+	}
 	for (const [label, actual, min] of checks) {
 		const icon = actual >= min ? "✅" : "❌";
-		console.log(
-			`  ${icon} ${styleText("bold", label)}: ${actual} (>= ${min})`,
-		);
+		if (!options.quiet || actual < min) {
+			console.log(
+				`  ${icon} ${styleText("bold", label)}: ${actual} (>= ${min})`,
+			);
+		}
 	}
-	console.log(`\n  🕑 Checked ${checks.length} stats in ${elapsed} seconds.`);
+	if (!options.quiet) {
+		console.log(`\n  🕑 Checked ${checks.length} stats in ${elapsed} seconds.`);
+	}
 
 	if (failed.length > 0) {
 		process.exit(1);

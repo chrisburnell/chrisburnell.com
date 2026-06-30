@@ -9,6 +9,7 @@ import {
 	postTitle,
 	reviewBox,
 	writeAndOpen,
+	goodbye,
 } from "../utils.js";
 
 export default async (__siteroot) => {
@@ -23,7 +24,9 @@ export default async (__siteroot) => {
 		bookmarkURL: () => text({ message: "Bookmark · URL" }),
 		tags: () => postTags(),
 	});
-	if (isCancel(post)) process.exit(0);
+	if (isCancel(post)) {
+		goodbye();
+	}
 
 	const meta = buildFrontmatter({
 		date: postDate,

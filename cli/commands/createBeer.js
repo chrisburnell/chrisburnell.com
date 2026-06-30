@@ -1,5 +1,5 @@
 import { group, isCancel, text } from "@clack/prompts";
-import { postTitle, buildFrontmatter, reviewBox, writeAndOpen } from "../utils.js";
+import { postTitle, buildFrontmatter, reviewBox, writeAndOpen, goodbye } from "../utils.js";
 
 export default async (__siteroot) => {
 	const post = await group({
@@ -11,7 +11,9 @@ export default async (__siteroot) => {
 		style: () => text({ message: "Style" }),
 		url: () => text({ message: "Beer URL" }),
 	});
-	if (isCancel(post)) process.exit(0);
+	if (isCancel(post)) {
+		goodbye();
+	}
 
 	const meta = buildFrontmatter({
 		date: post.date,

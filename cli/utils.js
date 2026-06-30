@@ -1,9 +1,10 @@
-import { autocompleteMultiselect, box, confirm, text } from "@clack/prompts";
+import { autocompleteMultiselect, box, confirm, isCancel, outro, text } from "@clack/prompts";
 import { Temporal } from "@js-temporal/polyfill";
 import slugify from "@sindresorhus/slugify";
 import { execSync, spawnSync } from "child_process";
 import fs from "fs-extra";
 import { readFile } from "node:fs/promises";
+import { styleText } from "node:util";
 
 const { year, month, day, hour, minute, second, offset } =
 	Temporal.Now.zonedDateTimeISO();
@@ -18,7 +19,7 @@ if (await fs.pathExists(allTagsPath)) {
 }
 
 export const postTitle = async (required = true) => {
-	return await text({
+	const result = await text({
 		message: "Title",
 		validate: (value) => {
 			if (required && (!value || value.length < 2)) {
@@ -27,30 +28,50 @@ export const postTitle = async (required = true) => {
 			return undefined;
 		},
 	});
+	if (isCancel(result)) {
+		goodbye();
+	}
+	return result;
 };
 
 export const postSlug = async (title) => {
 	const defaultSlug = title.trim().length < 1 ? Date.now().toString().slice(0, -3) : slugify(title);
-	return await text({ message: "Slug", placeholder: defaultSlug, defaultValue: defaultSlug });
+	const result = await text({ message: "Slug", placeholder: defaultSlug, defaultValue: defaultSlug });
+	if (isCancel(result)) {
+		goodbye();
+	}
+	return result;
 };
 
 export const postDescription = async () => {
-	return await text({ message: "Description" });
+	const result = await text({ message: "Description" });
+	if (isCancel(result)) {
+		goodbye();
+	}
+	return result;
 };
 
 export const postTags = async () => {
-	return await autocompleteMultiselect({
+	const result = await autocompleteMultiselect({
 		message: "Tags",
 		options: allTags.map((tag) => {
 			return { value: tag };
 		}),
 	});
+	if (isCancel(result)) {
+		goodbye();
+	}
+	return result;
 };
 
 export const postDraft = async () => {
-	return await confirm({
+	const result = await confirm({
 		message: "Put in the drafts folder?",
 	});
+	if (isCancel(result)) {
+		goodbye();
+	}
+	return result;
 };
 
 export const postSlugDate = now.split("T")[0];
@@ -129,7 +150,12 @@ export const reviewBox = ({ filepath, __siteroot, slug, postDate, title, descrip
 			rounded: true,
 		}
 	);
-}
+};
+
+export const goodbye = async () => {
+	await outro(styleText(["black", "bgBlue"], " Goodbye! "));
+	process.exit(0);
+};
 
 export default {
 	now,
@@ -142,4 +168,5 @@ export default {
 	postDate,
 	buildFrontmatter,
 	writeAndOpen,
+	goodbye,
 };
