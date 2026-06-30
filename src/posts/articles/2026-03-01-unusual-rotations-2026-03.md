@@ -8,6 +8,8 @@ tags:
   - unusualrotations2026
 post_includes:
   - unusualrotation2026.njk
+syndicate_to:
+  - https://bubbles.town/entry/14447
 ---
 {%- from "macros/shelfItem.njk" import shelfItem -%}
 

@@ -5,6 +5,8 @@ description: I got to really put my recently-practised and newly-learned system 
 tags:
   - personal
   - sysadmin
+syndicate_to:
+  - https://bubbles.town/entry/162390
 rkey: 3molefejzov2c
 ---
 

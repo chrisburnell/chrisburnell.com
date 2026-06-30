@@ -18,6 +18,10 @@ export default [
 		url: `https://bsky.app/profile/${bluesky}`,
 	},
 	{
+		title: "Bubbles",
+		url: `https://bubbles.town`,
+	},
+	{
 		title: "CodePen",
 		url: `https://codepen.io/${codepen}`,
 	},

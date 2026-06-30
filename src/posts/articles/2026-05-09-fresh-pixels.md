@@ -6,6 +6,8 @@ tags:
   - art
   - css
   - php
+syndicate_to:
+  - https://bubbles.town/entry/1031029
 rkey: 3mnfqqqheia2u
 ---
 

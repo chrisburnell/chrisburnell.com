@@ -27,8 +27,6 @@ redirect_from:
 
 - figure out how to upgrade past eleventy v3.1.0
     - [https://github.com/11ty/eleventy/issues/4182](https://github.com/11ty/eleventy/issues/4182)
-- use new [eleventy-img transform](https://www.11ty.dev/docs/plugins/image/#html-transform) instead of image shortcode
-    - ~keep an eye on performance here~ to my understanding, the generated images are cached similarly to eleventy-fetch
 - use APIs to pull in cover images for:
     - books
     - music albums
