@@ -4,8 +4,8 @@ description: Check build for errors
 runs:
   using: composite
   steps:
-    - name: Check Build
-      run: pnpm run check:build
+    - name: Check Build Stats
+      run: pnpm run check:stats
       shell: bash
 
     - name: Check DateTimes
