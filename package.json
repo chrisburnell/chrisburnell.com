@@ -86,7 +86,7 @@
     "@chrisburnell/theme-selector": "^1.0.1",
     "@chrisburnell/url-input": "^1.0.0",
     "@daviddarnes/storage-form": "^2.0.1",
-    "@fortawesome/free-brands-svg-icons": "^7.2.0",
+    "@fortawesome/free-brands-svg-icons": "^7.3.0",
     "@fortawesome/free-solid-svg-icons": "^7.2.0",
     "@js-temporal/polyfill": "^0.5.1",
     "@mdn/browser-compat-data": "^8.0.4",
