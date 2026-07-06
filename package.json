@@ -99,7 +99,7 @@
     "@zachleat/seven-minute-tabs": "^3.0.3",
     "@zachleat/snow-fall": "^1.0.3",
     "@zachleat/webcare-webshare": "^1.0.3",
-    "autoprefixer": "^10.5.1",
+    "autoprefixer": "^10.5.2",
     "browserslist": "^4.28.4",
     "caniuse-api": "^4.0.0",
     "cheerio": "^1.2.0",
