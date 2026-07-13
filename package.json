@@ -114,7 +114,7 @@
     "he": "^1.2.0",
     "html-minifier": "^4.0.0",
     "lite-youtube-embed": "^0.3.4",
-    "markdown-it": "^14.2.0",
+    "markdown-it": "^14.3.0",
     "markdown-it-abbr": "^2.0.0",
     "markdown-it-footnote": "^4.0.0",
     "optional": "^0.1.4",
