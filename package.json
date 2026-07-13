@@ -109,7 +109,7 @@
     "dotenv": "^17.4.2",
     "eleventy-plugin-og-image": "^4.2.1",
     "esbuild": "^0.28.1",
-    "fs-extra": "^11.3.5",
+    "fs-extra": "^11.3.6",
     "globals": "^17.7.0",
     "he": "^1.2.0",
     "html-minifier": "^4.0.0",
