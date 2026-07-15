@@ -36,7 +36,7 @@ eleventyComputed:
 			{% include 'js-naked-day.njk' %}
 		{%- endif %}
 
-		{% if author.employer.title != '' -%}
+		{% if author.lfw -%}
 			{% include 'lfw.njk' %}
 		{%- endif %}
 

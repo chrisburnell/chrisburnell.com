@@ -16,11 +16,13 @@ export const gpg_styled = metadata.gpg.replace(
 	`<span style="margin-inline-end: 1ex;">$1</span>`,
 );
 
-export const _employer = {
+export const employer = {
 	title: "",
 	role: "",
 	url: "",
 };
+
+export const lfw = true;
 
 export default {
 	...metadata,
@@ -33,5 +35,6 @@ export default {
 	avatar,
 	description,
 	gpg_styled,
-	_employer,
+	employer,
+	lfw,
 };

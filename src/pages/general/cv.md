@@ -10,10 +10,10 @@ css_includes:
 - src/css/pages/cv.css
 eleventyComputed:
   tagline: '<span class=" [ canada ] " data-pagefind-meta="title:CV / Résumé">{{ author.name }}</span>'
-  description: "{{ author.role | title }}{% if author.employer %} and {{ author.employer.role | title }} at {{ author.employer.title }}{% endif %}"
+  description: "{{ author.role | title }}{% if author.employer.role | length > 0 and author.employer.role != author.role %} and {{ author.employer.role | title }}{% endif %}{% if author.employer.title | length > 0 %} at {{ author.employer.title }}{% endif %}"
 ---
 
-{% if author.employer.title != '' -%}
+{% if author.lfw -%}
 {% include 'lfw.njk' %}
 {%- endif %}
 
