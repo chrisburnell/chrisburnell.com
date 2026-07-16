@@ -22,7 +22,7 @@ export const employer = {
 	url: "",
 };
 
-export const lfw = true;
+export const lfw = false;
 
 export default {
 	...metadata,
