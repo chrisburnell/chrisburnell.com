@@ -89,7 +89,7 @@
     "@fortawesome/free-brands-svg-icons": "^7.3.0",
     "@fortawesome/free-solid-svg-icons": "^7.3.0",
     "@js-temporal/polyfill": "^0.5.1",
-    "@mdn/browser-compat-data": "^8.0.5",
+    "@mdn/browser-compat-data": "^8.0.6",
     "@pagefind/linux-x64": "^1.5.2",
     "@resvg/resvg-js": "^2.6.2",
     "@sindresorhus/slugify": "^3.0.0",
