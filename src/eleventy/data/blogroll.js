@@ -831,12 +831,6 @@ export default [
 		mastodon: "eclecticpassions@fosstodon.org",
 	},
 	{
-		title: "Brennan Kenneth Brown",
-		url: "https://brennan.day",
-		rss: "https://brennan.day/feed.xml",
-		mastodon: "brennan@social.lol",
-	},
-	{
 		title: "Julia Evans",
 		url: "https://jvns.ca",
 		rss: "https://jvns.ca/atom.xml",
