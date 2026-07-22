@@ -842,6 +842,12 @@ export default [
 		rss: "https://artlung.com/feed/",
 		mastodon: "artlung@xoxo.zone",
 	},
+	{
+		title: "Ashur Cabrera",
+		url: "https://multiline.co/mment",
+		rss: "https://multiline.co/mment/feed.xml",
+		mastodon: "ashur@front-end.social",
+	},
 ].sort((a, b) => {
 	return a.title.localeCompare(b.title, undefined, {
 		numeric: true,

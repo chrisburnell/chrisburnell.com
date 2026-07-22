@@ -41,6 +41,13 @@ Passionate about the open web, having published over {{ technical_articles_count
 ## Professional Experience
 
 <div class=" [ role ] ">
+<h3>Consultant</h3>
+<small><strong>July 2026 – Present</strong></small>
+<p class="delta"><a href="https://fictivekin.com"><c-icon>{% image './images/content/fictive-kin-logo.svg', 'Fictive Kin’s logo', 'brand-logo dark-invert-colors', [auto], 'inline-size: 5rem;' %}</c-icon>Fictive Kin</a></p>
+<small><strong>Remote</strong></small>
+</div>
+
+<div class=" [ role ] ">
 <h3>Software Engineer</h3>
 <small><strong>Jan. 2023 – Dec. 2023</strong></small>
 <p class="delta"><a href="https://squiz.net"><c-icon>{% image './images/content/squiz-logo.svg', 'Squiz’s logo', 'brand-logo' %}</c-icon>Squiz</a></p>
