@@ -100,6 +100,7 @@
     "@zachleat/snow-fall": "^1.0.3",
     "@zachleat/webcare-webshare": "^1.0.3",
     "autoprefixer": "^10.5.2",
+    "brace-expansion": "1.1.16",
     "browserslist": "^4.28.6",
     "caniuse-api": "^4.0.0",
     "cheerio": "^1.2.0",
@@ -151,5 +152,6 @@
     "#filters": "./src/eleventy/filters/*.js",
     "#functions": "./src/functions/*.js"
   },
-  "type": "module"
+  "type": "module",
+  "packageManager": "pnpm@10.33.4+sha512.1c67b3b359b2d408119ba1ed289f34b8fc3c6873412bec6fd264fbdc82489e510fcbecb9ce9d22dae7f3b76269d8441046014bdca53b9979cd7a561ad631b800"
 }
