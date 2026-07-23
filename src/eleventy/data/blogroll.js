@@ -848,6 +848,33 @@ export default [
 		rss: "https://multiline.co/mment/feed.xml",
 		mastodon: "ashur@front-end.social",
 	},
+	{
+		title: "Ross A. Baker",
+		url: "https://rossabaker.com",
+		rss: "https://rossabaker.com/index.xml",
+		mastodon: "ross@rossabaker.com",
+	},
+	{
+		title: "Michael Kupietz",
+		url: "https://michaelkupietz.com",
+		rss: "https://michaelkupietz.com/feed/",
+	},
+	{
+		title: "Gregor Morrill",
+		url: "https://gregorlove.com",
+		rss: "https://gregorlove.com/articles.atom",
+		mastodon: "gregorlove.com@gregorlove.com",
+	},
+	{
+		title: "Tabitha",
+		url: "https://tabitha.computer",
+		rss: "https://tabitha.computer/feed/",
+	},
+	{
+		title: "David Shanske",
+		url: "https://david.shanske.com",
+		rss: "https://david.shanske.com/feed/",
+	},
 ].sort((a, b) => {
 	return a.title.localeCompare(b.title, undefined, {
 		numeric: true,
